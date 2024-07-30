@@ -246,6 +246,31 @@ namespace TencentCloud
                      */
                     bool ConfidenceHasBeenSet() const;
 
+                    /**
+                     * 获取资源状态 1：资源可用；2：资源已用尽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceStatus 资源状态 1：资源可用；2：资源已用尽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetResourceStatus() const;
+
+                    /**
+                     * 设置资源状态 1：资源可用；2：资源已用尽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceStatus 资源状态 1：资源可用；2：资源已用尽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceStatus(const uint64_t& _resourceStatus);
+
+                    /**
+                     * 判断参数 ResourceStatus 是否已赋值
+                     * @return ResourceStatus 是否已赋值
+                     * 
+                     */
+                    bool ResourceStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +328,13 @@ namespace TencentCloud
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
+
+                    /**
+                     * 资源状态 1：资源可用；2：资源已用尽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_resourceStatus;
+                    bool m_resourceStatusHasBeenSet;
 
                 };
             }

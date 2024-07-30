@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/ProcedureDebugging.h>
 
 
 namespace TencentCloud
@@ -146,6 +147,56 @@ namespace TencentCloud
                      */
                     bool CountHasBeenSet() const;
 
+                    /**
+                     * 获取调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Debugging 调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ProcedureDebugging GetDebugging() const;
+
+                    /**
+                     * 设置调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _debugging 调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDebugging(const ProcedureDebugging& _debugging);
+
+                    /**
+                     * 判断参数 Debugging 是否已赋值
+                     * @return Debugging 是否已赋值
+                     * 
+                     */
+                    bool DebuggingHasBeenSet() const;
+
+                    /**
+                     * 获取计费资源状态，1：可用，2：不可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceStatus 计费资源状态，1：可用，2：不可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetResourceStatus() const;
+
+                    /**
+                     * 设置计费资源状态，1：可用，2：不可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceStatus 计费资源状态，1：可用，2：不可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceStatus(const uint64_t& _resourceStatus);
+
+                    /**
+                     * 判断参数 ResourceStatus 是否已赋值
+                     * @return ResourceStatus 是否已赋值
+                     * 
+                     */
+                    bool ResourceStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +226,20 @@ namespace TencentCloud
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
+
+                    /**
+                     * 调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ProcedureDebugging m_debugging;
+                    bool m_debuggingHasBeenSet;
+
+                    /**
+                     * 计费资源状态，1：可用，2：不可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_resourceStatus;
+                    bool m_resourceStatusHasBeenSet;
 
                 };
             }

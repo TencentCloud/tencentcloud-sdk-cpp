@@ -26,7 +26,8 @@ KnowledgeQaOutput::KnowledgeQaOutput() :
     m_bareAnswerHasBeenSet(false),
     m_showQuestionClarifyHasBeenSet(false),
     m_useQuestionClarifyHasBeenSet(false),
-    m_questionClarifyKeywordsHasBeenSet(false)
+    m_questionClarifyKeywordsHasBeenSet(false),
+    m_useRecommendedHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,16 @@ CoreInternalOutcome KnowledgeQaOutput::Deserialize(const rapidjson::Value &value
         m_questionClarifyKeywordsHasBeenSet = true;
     }
 
+    if (value.HasMember("UseRecommended") && !value["UseRecommended"].IsNull())
+    {
+        if (!value["UseRecommended"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaOutput.UseRecommended` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useRecommended = value["UseRecommended"].GetBool();
+        m_useRecommendedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +167,14 @@ void KnowledgeQaOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_useRecommendedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseRecommended";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useRecommended, allocator);
     }
 
 }
@@ -255,5 +274,21 @@ void KnowledgeQaOutput::SetQuestionClarifyKeywords(const vector<string>& _questi
 bool KnowledgeQaOutput::QuestionClarifyKeywordsHasBeenSet() const
 {
     return m_questionClarifyKeywordsHasBeenSet;
+}
+
+bool KnowledgeQaOutput::GetUseRecommended() const
+{
+    return m_useRecommended;
+}
+
+void KnowledgeQaOutput::SetUseRecommended(const bool& _useRecommended)
+{
+    m_useRecommended = _useRecommended;
+    m_useRecommendedHasBeenSet = true;
+}
+
+bool KnowledgeQaOutput::UseRecommendedHasBeenSet() const
+{
+    return m_useRecommendedHasBeenSet;
 }
 

@@ -196,6 +196,31 @@ namespace TencentCloud
                      */
                     bool QuestionClarifyKeywordsHasBeenSet() const;
 
+                    /**
+                     * 获取是否打开推荐问题开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UseRecommended 是否打开推荐问题开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetUseRecommended() const;
+
+                    /**
+                     * 设置是否打开推荐问题开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _useRecommended 是否打开推荐问题开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUseRecommended(const bool& _useRecommended);
+
+                    /**
+                     * 判断参数 UseRecommended 是否已赋值
+                     * @return UseRecommended 是否已赋值
+                     * 
+                     */
+                    bool UseRecommendedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +264,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_questionClarifyKeywords;
                     bool m_questionClarifyKeywordsHasBeenSet;
+
+                    /**
+                     * 是否打开推荐问题开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_useRecommended;
+                    bool m_useRecommendedHasBeenSet;
 
                 };
             }

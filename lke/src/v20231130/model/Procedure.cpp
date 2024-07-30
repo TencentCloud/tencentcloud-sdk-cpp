@@ -24,7 +24,9 @@ Procedure::Procedure() :
     m_nameHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_debuggingHasBeenSet(false),
+    m_resourceStatusHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,33 @@ CoreInternalOutcome Procedure::Deserialize(const rapidjson::Value &value)
         m_countHasBeenSet = true;
     }
 
+    if (value.HasMember("Debugging") && !value["Debugging"].IsNull())
+    {
+        if (!value["Debugging"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Procedure.Debugging` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_debugging.Deserialize(value["Debugging"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_debuggingHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceStatus") && !value["ResourceStatus"].IsNull())
+    {
+        if (!value["ResourceStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Procedure.ResourceStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceStatus = value["ResourceStatus"].GetUint64();
+        m_resourceStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +139,23 @@ void Procedure::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);
+    }
+
+    if (m_debuggingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Debugging";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_debugging.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_resourceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resourceStatus, allocator);
     }
 
 }
@@ -177,5 +223,37 @@ void Procedure::SetCount(const uint64_t& _count)
 bool Procedure::CountHasBeenSet() const
 {
     return m_countHasBeenSet;
+}
+
+ProcedureDebugging Procedure::GetDebugging() const
+{
+    return m_debugging;
+}
+
+void Procedure::SetDebugging(const ProcedureDebugging& _debugging)
+{
+    m_debugging = _debugging;
+    m_debuggingHasBeenSet = true;
+}
+
+bool Procedure::DebuggingHasBeenSet() const
+{
+    return m_debuggingHasBeenSet;
+}
+
+uint64_t Procedure::GetResourceStatus() const
+{
+    return m_resourceStatus;
+}
+
+void Procedure::SetResourceStatus(const uint64_t& _resourceStatus)
+{
+    m_resourceStatus = _resourceStatus;
+    m_resourceStatusHasBeenSet = true;
+}
+
+bool Procedure::ResourceStatusHasBeenSet() const
+{
+    return m_resourceStatusHasBeenSet;
 }
 

@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool EncryptListHasBeenSet() const;
 
                     /**
-                     * 获取有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * 获取加密后的对称密钥，关于密钥的生成和使用请查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CiphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * @return CiphertextBlob 加密后的对称密钥，关于密钥的生成和使用请查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCiphertextBlob() const;
 
                     /**
-                     * 设置有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * 设置加密后的对称密钥，关于密钥的生成和使用请查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ciphertextBlob 有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * @param _ciphertextBlob 加密后的对称密钥，关于密钥的生成和使用请查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -181,7 +181,7 @@ namespace TencentCloud
                     bool m_encryptListHasBeenSet;
 
                     /**
-                     * 有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * 加密后的对称密钥，关于密钥的生成和使用请查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ciphertextBlob;

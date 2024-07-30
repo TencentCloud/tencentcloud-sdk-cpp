@@ -68,15 +68,27 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取应用头像
-                     * @return Avatar 应用头像
+                     * 获取应用头像url，在CreateApp和ModifyApp中作为入参必填。
+作为入参传入说明：
+1. 传入的url图片限制为jpeg和png，大小限制为500KB，url链接需允许head请求。
+2. 如果用户没有对象存储，可使用“获取文件上传临时密钥”(DescribeStorageCredential)接口，获取cos临时密钥和上传路径，自行上传头像至cos中并获取访问链接。
+                     * @return Avatar 应用头像url，在CreateApp和ModifyApp中作为入参必填。
+作为入参传入说明：
+1. 传入的url图片限制为jpeg和png，大小限制为500KB，url链接需允许head请求。
+2. 如果用户没有对象存储，可使用“获取文件上传临时密钥”(DescribeStorageCredential)接口，获取cos临时密钥和上传路径，自行上传头像至cos中并获取访问链接。
                      * 
                      */
                     std::string GetAvatar() const;
 
                     /**
-                     * 设置应用头像
-                     * @param _avatar 应用头像
+                     * 设置应用头像url，在CreateApp和ModifyApp中作为入参必填。
+作为入参传入说明：
+1. 传入的url图片限制为jpeg和png，大小限制为500KB，url链接需允许head请求。
+2. 如果用户没有对象存储，可使用“获取文件上传临时密钥”(DescribeStorageCredential)接口，获取cos临时密钥和上传路径，自行上传头像至cos中并获取访问链接。
+                     * @param _avatar 应用头像url，在CreateApp和ModifyApp中作为入参必填。
+作为入参传入说明：
+1. 传入的url图片限制为jpeg和png，大小限制为500KB，url链接需允许head请求。
+2. 如果用户没有对象存储，可使用“获取文件上传临时密钥”(DescribeStorageCredential)接口，获取cos临时密钥和上传路径，自行上传头像至cos中并获取访问链接。
                      * 
                      */
                     void SetAvatar(const std::string& _avatar);
@@ -118,7 +130,10 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 应用头像
+                     * 应用头像url，在CreateApp和ModifyApp中作为入参必填。
+作为入参传入说明：
+1. 传入的url图片限制为jpeg和png，大小限制为500KB，url链接需允许head请求。
+2. 如果用户没有对象存储，可使用“获取文件上传临时密钥”(DescribeStorageCredential)接口，获取cos临时密钥和上传路径，自行上传头像至cos中并获取访问链接。
                      */
                     std::string m_avatar;
                     bool m_avatarHasBeenSet;

@@ -71,6 +71,27 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
+                     * 获取合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
+                     * @return Deadline 合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
+                     * 
+                     */
+                    int64_t GetDeadline() const;
+
+                    /**
+                     * 设置合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
+                     * @param _deadline 合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
+                     * 
+                     */
+                    void SetDeadline(const int64_t& _deadline);
+
+                    /**
+                     * 判断参数 Deadline 是否已赋值
+                     * @return Deadline 是否已赋值
+                     * 
+                     */
+                    bool DeadlineHasBeenSet() const;
+
+                    /**
                      * 获取合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。
                      * @return FlowType 合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。
                      * 
@@ -111,27 +132,6 @@ namespace TencentCloud
                      * 
                      */
                     bool FlowDescriptionHasBeenSet() const;
-
-                    /**
-                     * 获取合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
-                     * @return Deadline 合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
-                     * 
-                     */
-                    int64_t GetDeadline() const;
-
-                    /**
-                     * 设置合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
-                     * @param _deadline 合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
-                     * 
-                     */
-                    void SetDeadline(const int64_t& _deadline);
-
-                    /**
-                     * 判断参数 Deadline 是否已赋值
-                     * @return Deadline 是否已赋值
-                     * 
-                     */
-                    bool DeadlineHasBeenSet() const;
 
                     /**
                      * 获取合同流程的签署顺序类型：
@@ -370,6 +370,12 @@ namespace TencentCloud
                     bool m_flowNameHasBeenSet;
 
                     /**
+                     * 合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
+                     */
+                    int64_t m_deadline;
+                    bool m_deadlineHasBeenSet;
+
+                    /**
                      * 合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。
                      */
                     std::string m_flowType;
@@ -380,12 +386,6 @@ namespace TencentCloud
                      */
                     std::string m_flowDescription;
                     bool m_flowDescriptionHasBeenSet;
-
-                    /**
-                     * 合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。
-                     */
-                    int64_t m_deadline;
-                    bool m_deadlineHasBeenSet;
 
                     /**
                      * 合同流程的签署顺序类型：

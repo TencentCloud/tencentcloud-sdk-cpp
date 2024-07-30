@@ -322,6 +322,31 @@ namespace TencentCloud
                      */
                     bool ProceduresHasBeenSet() const;
 
+                    /**
+                     * 获取执行过程信息TraceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TraceId 执行过程信息TraceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTraceId() const;
+
+                    /**
+                     * 设置执行过程信息TraceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _traceId 执行过程信息TraceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTraceId(const std::string& _traceId);
+
+                    /**
+                     * 判断参数 TraceId 是否已赋值
+                     * @return TraceId 是否已赋值
+                     * 
+                     */
+                    bool TraceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -400,6 +425,13 @@ namespace TencentCloud
                      */
                     std::vector<Procedure> m_procedures;
                     bool m_proceduresHasBeenSet;
+
+                    /**
+                     * 执行过程信息TraceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_traceId;
+                    bool m_traceIdHasBeenSet;
 
                 };
             }

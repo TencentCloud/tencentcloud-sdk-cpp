@@ -31,7 +31,8 @@ TokenStat::TokenStat() :
     m_statusSummaryTitleHasBeenSet(false),
     m_elapsedHasBeenSet(false),
     m_tokenCountHasBeenSet(false),
-    m_proceduresHasBeenSet(false)
+    m_proceduresHasBeenSet(false),
+    m_traceIdHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ CoreInternalOutcome TokenStat::Deserialize(const rapidjson::Value &value)
         m_proceduresHasBeenSet = true;
     }
 
+    if (value.HasMember("TraceId") && !value["TraceId"].IsNull())
+    {
+        if (!value["TraceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TokenStat.TraceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_traceId = string(value["TraceId"].GetString());
+        m_traceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +271,14 @@ void TokenStat::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_traceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_traceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -439,5 +458,21 @@ void TokenStat::SetProcedures(const vector<Procedure>& _procedures)
 bool TokenStat::ProceduresHasBeenSet() const
 {
     return m_proceduresHasBeenSet;
+}
+
+string TokenStat::GetTraceId() const
+{
+    return m_traceId;
+}
+
+void TokenStat::SetTraceId(const string& _traceId)
+{
+    m_traceId = _traceId;
+    m_traceIdHasBeenSet = true;
+}
+
+bool TokenStat::TraceIdHasBeenSet() const
+{
+    return m_traceIdHasBeenSet;
 }
 

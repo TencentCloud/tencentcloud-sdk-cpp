@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取分组所属应用ID。
+                     * @return ApplicationId 分组所属应用ID。
+                     * 
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置分组所属应用ID。
+                     * @param _applicationId 分组所属应用ID。
+                     * 
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     * 
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
+                    /**
                      * 获取搜索字段，模糊搜索groupName字段
                      * @return SearchWord 搜索字段，模糊搜索groupName字段
                      * 
@@ -62,27 +83,6 @@ namespace TencentCloud
                      * 
                      */
                     bool SearchWordHasBeenSet() const;
-
-                    /**
-                     * 获取分组所属应用ID。必填
-                     * @return ApplicationId 分组所属应用ID。必填
-                     * 
-                     */
-                    std::string GetApplicationId() const;
-
-                    /**
-                     * 设置分组所属应用ID。必填
-                     * @param _applicationId 分组所属应用ID。必填
-                     * 
-                     */
-                    void SetApplicationId(const std::string& _applicationId);
-
-                    /**
-                     * 判断参数 ApplicationId 是否已赋值
-                     * @return ApplicationId 是否已赋值
-                     * 
-                     */
-                    bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取排序字段，默认为 createTime字段，支持id， name， createTime
@@ -213,16 +213,16 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 分组所属应用ID。
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
+
+                    /**
                      * 搜索字段，模糊搜索groupName字段
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
-
-                    /**
-                     * 分组所属应用ID。必填
-                     */
-                    std::string m_applicationId;
-                    bool m_applicationIdHasBeenSet;
 
                     /**
                      * 排序字段，默认为 createTime字段，支持id， name， createTime

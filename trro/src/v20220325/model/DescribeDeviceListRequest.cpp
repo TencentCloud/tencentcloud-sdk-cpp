@@ -27,7 +27,8 @@ DescribeDeviceListRequest::DescribeDeviceListRequest() :
     m_deviceTypeHasBeenSet(false),
     m_searchWordsHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_pageNumberHasBeenSet(false)
+    m_pageNumberHasBeenSet(false),
+    m_deviceStatusHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeDeviceListRequest::ToJsonString() const
         string key = "PageNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageNumber, allocator);
+    }
+
+    if (m_deviceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceStatus.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeDeviceListRequest::SetPageNumber(const int64_t& _pageNumber)
 bool DescribeDeviceListRequest::PageNumberHasBeenSet() const
 {
     return m_pageNumberHasBeenSet;
+}
+
+string DescribeDeviceListRequest::GetDeviceStatus() const
+{
+    return m_deviceStatus;
+}
+
+void DescribeDeviceListRequest::SetDeviceStatus(const string& _deviceStatus)
+{
+    m_deviceStatus = _deviceStatus;
+    m_deviceStatusHasBeenSet = true;
+}
+
+bool DescribeDeviceListRequest::DeviceStatusHasBeenSet() const
+{
+    return m_deviceStatusHasBeenSet;
 }
 
 

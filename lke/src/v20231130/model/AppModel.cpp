@@ -25,7 +25,10 @@ AppModel::AppModel() :
     m_descHasBeenSet(false),
     m_contextLimitHasBeenSet(false),
     m_aliasNameHasBeenSet(false),
-    m_tokenBalanceHasBeenSet(false)
+    m_tokenBalanceHasBeenSet(false),
+    m_isUseContextHasBeenSet(false),
+    m_historyLimitHasBeenSet(false),
+    m_usageTypeHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,36 @@ CoreInternalOutcome AppModel::Deserialize(const rapidjson::Value &value)
         m_tokenBalanceHasBeenSet = true;
     }
 
+    if (value.HasMember("IsUseContext") && !value["IsUseContext"].IsNull())
+    {
+        if (!value["IsUseContext"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppModel.IsUseContext` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isUseContext = value["IsUseContext"].GetBool();
+        m_isUseContextHasBeenSet = true;
+    }
+
+    if (value.HasMember("HistoryLimit") && !value["HistoryLimit"].IsNull())
+    {
+        if (!value["HistoryLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppModel.HistoryLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_historyLimit = value["HistoryLimit"].GetUint64();
+        m_historyLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("UsageType") && !value["UsageType"].IsNull())
+    {
+        if (!value["UsageType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppModel.UsageType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_usageType = string(value["UsageType"].GetString());
+        m_usageTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +162,30 @@ void AppModel::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "TokenBalance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tokenBalance, allocator);
+    }
+
+    if (m_isUseContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsUseContext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isUseContext, allocator);
+    }
+
+    if (m_historyLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HistoryLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_historyLimit, allocator);
+    }
+
+    if (m_usageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_usageType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +269,53 @@ void AppModel::SetTokenBalance(const double& _tokenBalance)
 bool AppModel::TokenBalanceHasBeenSet() const
 {
     return m_tokenBalanceHasBeenSet;
+}
+
+bool AppModel::GetIsUseContext() const
+{
+    return m_isUseContext;
+}
+
+void AppModel::SetIsUseContext(const bool& _isUseContext)
+{
+    m_isUseContext = _isUseContext;
+    m_isUseContextHasBeenSet = true;
+}
+
+bool AppModel::IsUseContextHasBeenSet() const
+{
+    return m_isUseContextHasBeenSet;
+}
+
+uint64_t AppModel::GetHistoryLimit() const
+{
+    return m_historyLimit;
+}
+
+void AppModel::SetHistoryLimit(const uint64_t& _historyLimit)
+{
+    m_historyLimit = _historyLimit;
+    m_historyLimitHasBeenSet = true;
+}
+
+bool AppModel::HistoryLimitHasBeenSet() const
+{
+    return m_historyLimitHasBeenSet;
+}
+
+string AppModel::GetUsageType() const
+{
+    return m_usageType;
+}
+
+void AppModel::SetUsageType(const string& _usageType)
+{
+    m_usageType = _usageType;
+    m_usageTypeHasBeenSet = true;
+}
+
+bool AppModel::UsageTypeHasBeenSet() const
+{
+    return m_usageTypeHasBeenSet;
 }
 

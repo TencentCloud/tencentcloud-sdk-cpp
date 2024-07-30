@@ -23,8 +23,8 @@ using namespace TencentCloud::Tsf::V20180326::Model;
 using namespace std;
 
 DescribeContainerGroupsRequest::DescribeContainerGroupsRequest() :
-    m_searchWordHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
+    m_searchWordHasBeenSet(false),
     m_orderByHasBeenSet(false),
     m_orderTypeHasBeenSet(false),
     m_offsetHasBeenSet(false),
@@ -41,20 +41,20 @@ string DescribeContainerGroupsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_searchWordHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SearchWord";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_searchWord.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_applicationIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchWordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchWord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_searchWord.c_str(), allocator).Move(), allocator);
     }
 
     if (m_orderByHasBeenSet)
@@ -113,22 +113,6 @@ string DescribeContainerGroupsRequest::ToJsonString() const
 }
 
 
-string DescribeContainerGroupsRequest::GetSearchWord() const
-{
-    return m_searchWord;
-}
-
-void DescribeContainerGroupsRequest::SetSearchWord(const string& _searchWord)
-{
-    m_searchWord = _searchWord;
-    m_searchWordHasBeenSet = true;
-}
-
-bool DescribeContainerGroupsRequest::SearchWordHasBeenSet() const
-{
-    return m_searchWordHasBeenSet;
-}
-
 string DescribeContainerGroupsRequest::GetApplicationId() const
 {
     return m_applicationId;
@@ -143,6 +127,22 @@ void DescribeContainerGroupsRequest::SetApplicationId(const string& _application
 bool DescribeContainerGroupsRequest::ApplicationIdHasBeenSet() const
 {
     return m_applicationIdHasBeenSet;
+}
+
+string DescribeContainerGroupsRequest::GetSearchWord() const
+{
+    return m_searchWord;
+}
+
+void DescribeContainerGroupsRequest::SetSearchWord(const string& _searchWord)
+{
+    m_searchWord = _searchWord;
+    m_searchWordHasBeenSet = true;
+}
+
+bool DescribeContainerGroupsRequest::SearchWordHasBeenSet() const
+{
+    return m_searchWordHasBeenSet;
 }
 
 string DescribeContainerGroupsRequest::GetOrderBy() const

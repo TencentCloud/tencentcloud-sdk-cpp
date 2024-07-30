@@ -19,106 +19,208 @@ set(cdwdoris_public_header
   )
 
 set(cdwdoris_public_header_model
-  include/tencentcloud/cdwdoris/v20211228/model/ModifyInstanceResponse.h
-  include/tencentcloud/cdwdoris/v20211228/model/DestroyInstanceResponse.h
-  include/tencentcloud/cdwdoris/v20211228/model/DescribeSlowQueryRecordsDownloadRequest.h
-  include/tencentcloud/cdwdoris/v20211228/model/ResizeDiskRequest.h
-  include/tencentcloud/cdwdoris/v20211228/model/NodeInfo.h
-  include/tencentcloud/cdwdoris/v20211228/model/RestartClusterForNodeResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceUsedSubnetsResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceNodesResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceStateRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeClusterConfigsResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/ScaleOutInstanceResponse.h
-  include/tencentcloud/cdwdoris/v20211228/model/SlowQueryRecord.h
-  include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceNodesRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ModifyUserPrivilegesV3Response.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeFederationTokenRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ModifyWorkloadGroupStatusResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/InstanceConfigItem.h
+  include/tencentcloud/cdwdoris/v20211228/model/ModifyWorkloadGroupRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ResourceNodeSpec.h
+  include/tencentcloud/cdwdoris/v20211228/model/UserWorkloadGroup.h
   include/tencentcloud/cdwdoris/v20211228/model/ModifyInstanceRequest.h
-  include/tencentcloud/cdwdoris/v20211228/model/ChargeProperties.h
-  include/tencentcloud/cdwdoris/v20211228/model/InstanceDetail.h
-  include/tencentcloud/cdwdoris/v20211228/model/ClusterConfigsInfoFromEMR.h
-  include/tencentcloud/cdwdoris/v20211228/model/InstanceNode.h
-  include/tencentcloud/cdwdoris/v20211228/model/CreateInstanceNewResponse.h
-  include/tencentcloud/cdwdoris/v20211228/model/DescribeSlowQueryRecordsDownloadResponse.h
-  include/tencentcloud/cdwdoris/v20211228/model/DestroyInstanceRequest.h
-  include/tencentcloud/cdwdoris/v20211228/model/CreateInstanceNewRequest.h
-  include/tencentcloud/cdwdoris/v20211228/model/InstanceInfo.h
+  include/tencentcloud/cdwdoris/v20211228/model/DeleteWorkloadGroupRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/WorkloadGroupConfig.h
+  include/tencentcloud/cdwdoris/v20211228/model/ResourceNodeDiskSpec.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstancesResponse.h
-  include/tencentcloud/cdwdoris/v20211228/model/DescribeInstancesRequest.h
-  include/tencentcloud/cdwdoris/v20211228/model/DescribeSlowQueryRecordsRequest.h
-  include/tencentcloud/cdwdoris/v20211228/model/DescribeClusterConfigsRequest.h
-  include/tencentcloud/cdwdoris/v20211228/model/ResizeDiskResponse.h
-  include/tencentcloud/cdwdoris/v20211228/model/AttachCBSSpec.h
-  include/tencentcloud/cdwdoris/v20211228/model/DataBaseAuditRecord.h
+  include/tencentcloud/cdwdoris/v20211228/model/ReduceInstanceResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/VersionReplicaItem.h
+  include/tencentcloud/cdwdoris/v20211228/model/CreateInstanceNewRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/ScaleOutInstanceRequest.h
-  include/tencentcloud/cdwdoris/v20211228/model/DescribeSlowQueryRecordsResponse.h
-  include/tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditRecordsResponse.h
-  include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceResponse.h
-  include/tencentcloud/cdwdoris/v20211228/model/RestartClusterForNodeRequest.h
-  include/tencentcloud/cdwdoris/v20211228/model/ScaleUpInstanceRequest.h
-  include/tencentcloud/cdwdoris/v20211228/model/NodesSummary.h
+  include/tencentcloud/cdwdoris/v20211228/model/UpdateUserPrivileges.h
   include/tencentcloud/cdwdoris/v20211228/model/NetworkInfo.h
-  include/tencentcloud/cdwdoris/v20211228/model/CreateInstanceSpec.h
-  include/tencentcloud/cdwdoris/v20211228/model/SearchTags.h
-  include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ZoneInfo.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeRestoreTaskDetailResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/ConfigKeyValue.h
   include/tencentcloud/cdwdoris/v20211228/model/Tag.h
+  include/tencentcloud/cdwdoris/v20211228/model/ResizeDiskResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/ModifyInstanceResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeSlowQueryRecordsDownloadRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ModifyUserBindWorkloadGroupRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeRegionZoneRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/NodeInfo.h
+  include/tencentcloud/cdwdoris/v20211228/model/RestartClusterForNodeResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceNodesRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ChargeProperties.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeWorkloadGroupRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/DestroyInstanceResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeSqlApisRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ModifySecurityGroupsRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ModifyUserPrivilegesV3Request.h
+  include/tencentcloud/cdwdoris/v20211228/model/AttachCBSSpec.h
+  include/tencentcloud/cdwdoris/v20211228/model/DataBaseAuditRecord.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeSlowQueryRecordsResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/BindUser.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeRegionZoneResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceStateResponse.h
-  include/tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditRecordsRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceNodesInfoRequest.h
-  include/tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditDownloadResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditDownloadRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeGoodsDetailRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ResizeDiskRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ModifyWorkloadGroupStatusRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeSqlApisResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/SlowQueryRecord.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeSlowQueryRecordsDownloadResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/ModifyInstanceKeyValConfigsResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditRecordsResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/InstanceNode.h
+  include/tencentcloud/cdwdoris/v20211228/model/InstanceInfo.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeUserBindWorkloadGroupRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeInstancesRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/CreateWorkloadGroupResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeClusterConfigsRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/CreateInstanceNewResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/ModifyWorkloadGroupResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeRestoreTaskDetailRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/FitClsLogRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/FitClsLogResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/RestartClusterForNodeRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/SearchTags.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeFederationTokenResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceUsedSubnetsRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/SpecExtra.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditRecordsRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeWorkloadGroupResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/ModifySecurityGroupsResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/DeleteWorkloadGroupResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/ClusterConfigsInfoFromEMR.h
+  include/tencentcloud/cdwdoris/v20211228/model/RegionAreaInfo.h
+  include/tencentcloud/cdwdoris/v20211228/model/DestroyInstanceRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/RegionInfo.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeSlowQueryRecordsRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/CreateWorkloadGroupRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeGoodsDetailResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/RestoreStatus.h
+  include/tencentcloud/cdwdoris/v20211228/model/ModifyInstanceKeyValConfigsRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ModifyUserBindWorkloadGroupResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/ScaleUpInstanceRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeReplicaVersionRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/NodesSummary.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeUserBindWorkloadGroupResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/CreateInstanceSpec.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ReduceInstanceRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/InstanceDetail.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditDownloadResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeReplicaVersionResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceNodesInfoResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/ScaleUpInstanceResponse.h
   )
 
 set(cdwdoris_src
   src/v20211228/CdwdorisClient.cpp
-  src/v20211228/model/ModifyInstanceResponse.cpp
-  src/v20211228/model/DestroyInstanceResponse.cpp
-  src/v20211228/model/DescribeSlowQueryRecordsDownloadRequest.cpp
-  src/v20211228/model/ResizeDiskRequest.cpp
-  src/v20211228/model/NodeInfo.cpp
-  src/v20211228/model/RestartClusterForNodeResponse.cpp
+  src/v20211228/model/DescribeInstanceUsedSubnetsResponse.cpp
   src/v20211228/model/DescribeInstanceNodesResponse.cpp
   src/v20211228/model/DescribeInstanceStateRequest.cpp
   src/v20211228/model/DescribeClusterConfigsResponse.cpp
   src/v20211228/model/ScaleOutInstanceResponse.cpp
-  src/v20211228/model/SlowQueryRecord.cpp
-  src/v20211228/model/DescribeInstanceNodesRequest.cpp
+  src/v20211228/model/ModifyUserPrivilegesV3Response.cpp
+  src/v20211228/model/DescribeFederationTokenRequest.cpp
+  src/v20211228/model/ModifyWorkloadGroupStatusResponse.cpp
+  src/v20211228/model/InstanceConfigItem.cpp
+  src/v20211228/model/ModifyWorkloadGroupRequest.cpp
+  src/v20211228/model/ResourceNodeSpec.cpp
+  src/v20211228/model/UserWorkloadGroup.cpp
   src/v20211228/model/ModifyInstanceRequest.cpp
-  src/v20211228/model/ChargeProperties.cpp
-  src/v20211228/model/InstanceDetail.cpp
-  src/v20211228/model/ClusterConfigsInfoFromEMR.cpp
-  src/v20211228/model/InstanceNode.cpp
-  src/v20211228/model/CreateInstanceNewResponse.cpp
-  src/v20211228/model/DescribeSlowQueryRecordsDownloadResponse.cpp
-  src/v20211228/model/DestroyInstanceRequest.cpp
-  src/v20211228/model/CreateInstanceNewRequest.cpp
-  src/v20211228/model/InstanceInfo.cpp
+  src/v20211228/model/DeleteWorkloadGroupRequest.cpp
+  src/v20211228/model/WorkloadGroupConfig.cpp
+  src/v20211228/model/ResourceNodeDiskSpec.cpp
   src/v20211228/model/DescribeInstancesResponse.cpp
-  src/v20211228/model/DescribeInstancesRequest.cpp
-  src/v20211228/model/DescribeSlowQueryRecordsRequest.cpp
-  src/v20211228/model/DescribeClusterConfigsRequest.cpp
-  src/v20211228/model/ResizeDiskResponse.cpp
-  src/v20211228/model/AttachCBSSpec.cpp
-  src/v20211228/model/DataBaseAuditRecord.cpp
+  src/v20211228/model/ReduceInstanceResponse.cpp
+  src/v20211228/model/VersionReplicaItem.cpp
+  src/v20211228/model/CreateInstanceNewRequest.cpp
   src/v20211228/model/ScaleOutInstanceRequest.cpp
-  src/v20211228/model/DescribeSlowQueryRecordsResponse.cpp
-  src/v20211228/model/DescribeDatabaseAuditRecordsResponse.cpp
-  src/v20211228/model/DescribeInstanceResponse.cpp
-  src/v20211228/model/RestartClusterForNodeRequest.cpp
-  src/v20211228/model/ScaleUpInstanceRequest.cpp
-  src/v20211228/model/NodesSummary.cpp
+  src/v20211228/model/UpdateUserPrivileges.cpp
   src/v20211228/model/NetworkInfo.cpp
-  src/v20211228/model/CreateInstanceSpec.cpp
-  src/v20211228/model/SearchTags.cpp
-  src/v20211228/model/DescribeInstanceRequest.cpp
+  src/v20211228/model/ZoneInfo.cpp
+  src/v20211228/model/DescribeRestoreTaskDetailResponse.cpp
   src/v20211228/model/ConfigKeyValue.cpp
   src/v20211228/model/Tag.cpp
+  src/v20211228/model/ResizeDiskResponse.cpp
+  src/v20211228/model/ModifyInstanceResponse.cpp
+  src/v20211228/model/DescribeSlowQueryRecordsDownloadRequest.cpp
+  src/v20211228/model/ModifyUserBindWorkloadGroupRequest.cpp
+  src/v20211228/model/DescribeRegionZoneRequest.cpp
+  src/v20211228/model/NodeInfo.cpp
+  src/v20211228/model/RestartClusterForNodeResponse.cpp
+  src/v20211228/model/DescribeInstanceNodesRequest.cpp
+  src/v20211228/model/ChargeProperties.cpp
+  src/v20211228/model/DescribeWorkloadGroupRequest.cpp
+  src/v20211228/model/DestroyInstanceResponse.cpp
+  src/v20211228/model/DescribeSqlApisRequest.cpp
+  src/v20211228/model/ModifySecurityGroupsRequest.cpp
+  src/v20211228/model/ModifyUserPrivilegesV3Request.cpp
+  src/v20211228/model/AttachCBSSpec.cpp
+  src/v20211228/model/DataBaseAuditRecord.cpp
+  src/v20211228/model/DescribeSlowQueryRecordsResponse.cpp
+  src/v20211228/model/BindUser.cpp
+  src/v20211228/model/DescribeRegionZoneResponse.cpp
   src/v20211228/model/DescribeInstanceStateResponse.cpp
-  src/v20211228/model/DescribeDatabaseAuditRecordsRequest.cpp
   src/v20211228/model/DescribeInstanceNodesInfoRequest.cpp
-  src/v20211228/model/DescribeDatabaseAuditDownloadResponse.cpp
   src/v20211228/model/DescribeDatabaseAuditDownloadRequest.cpp
+  src/v20211228/model/DescribeGoodsDetailRequest.cpp
+  src/v20211228/model/ResizeDiskRequest.cpp
+  src/v20211228/model/ModifyWorkloadGroupStatusRequest.cpp
+  src/v20211228/model/DescribeSqlApisResponse.cpp
+  src/v20211228/model/SlowQueryRecord.cpp
+  src/v20211228/model/DescribeSlowQueryRecordsDownloadResponse.cpp
+  src/v20211228/model/ModifyInstanceKeyValConfigsResponse.cpp
+  src/v20211228/model/DescribeDatabaseAuditRecordsResponse.cpp
+  src/v20211228/model/InstanceNode.cpp
+  src/v20211228/model/InstanceInfo.cpp
+  src/v20211228/model/DescribeUserBindWorkloadGroupRequest.cpp
+  src/v20211228/model/DescribeInstancesRequest.cpp
+  src/v20211228/model/CreateWorkloadGroupResponse.cpp
+  src/v20211228/model/DescribeClusterConfigsRequest.cpp
+  src/v20211228/model/CreateInstanceNewResponse.cpp
+  src/v20211228/model/ModifyWorkloadGroupResponse.cpp
+  src/v20211228/model/DescribeRestoreTaskDetailRequest.cpp
+  src/v20211228/model/DescribeInstanceResponse.cpp
+  src/v20211228/model/FitClsLogRequest.cpp
+  src/v20211228/model/FitClsLogResponse.cpp
+  src/v20211228/model/RestartClusterForNodeRequest.cpp
+  src/v20211228/model/SearchTags.cpp
+  src/v20211228/model/DescribeFederationTokenResponse.cpp
+  src/v20211228/model/DescribeInstanceUsedSubnetsRequest.cpp
+  src/v20211228/model/SpecExtra.cpp
+  src/v20211228/model/DescribeDatabaseAuditRecordsRequest.cpp
+  src/v20211228/model/DescribeWorkloadGroupResponse.cpp
+  src/v20211228/model/ModifySecurityGroupsResponse.cpp
+  src/v20211228/model/DeleteWorkloadGroupResponse.cpp
+  src/v20211228/model/ClusterConfigsInfoFromEMR.cpp
+  src/v20211228/model/RegionAreaInfo.cpp
+  src/v20211228/model/DestroyInstanceRequest.cpp
+  src/v20211228/model/RegionInfo.cpp
+  src/v20211228/model/DescribeSlowQueryRecordsRequest.cpp
+  src/v20211228/model/CreateWorkloadGroupRequest.cpp
+  src/v20211228/model/DescribeGoodsDetailResponse.cpp
+  src/v20211228/model/RestoreStatus.cpp
+  src/v20211228/model/ModifyInstanceKeyValConfigsRequest.cpp
+  src/v20211228/model/ModifyUserBindWorkloadGroupResponse.cpp
+  src/v20211228/model/ScaleUpInstanceRequest.cpp
+  src/v20211228/model/DescribeReplicaVersionRequest.cpp
+  src/v20211228/model/NodesSummary.cpp
+  src/v20211228/model/DescribeUserBindWorkloadGroupResponse.cpp
+  src/v20211228/model/CreateInstanceSpec.cpp
+  src/v20211228/model/DescribeInstanceRequest.cpp
+  src/v20211228/model/ReduceInstanceRequest.cpp
+  src/v20211228/model/InstanceDetail.cpp
+  src/v20211228/model/DescribeDatabaseAuditDownloadResponse.cpp
+  src/v20211228/model/DescribeReplicaVersionResponse.cpp
   src/v20211228/model/DescribeInstanceNodesInfoResponse.cpp
   src/v20211228/model/ScaleUpInstanceResponse.cpp
   )

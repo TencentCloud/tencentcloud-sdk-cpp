@@ -60,6 +60,7 @@ set(trro_public_header_model
   include/tencentcloud/trro/v20220325/model/SessionDeviceDetail.h
   include/tencentcloud/trro/v20220325/model/GetDeviceLicenseResponse.h
   include/tencentcloud/trro/v20220325/model/CreateDeviceResponse.h
+  include/tencentcloud/trro/v20220325/model/MultiNet.h
   include/tencentcloud/trro/v20220325/model/DescribeSessionStatisticsByIntervalRequest.h
   include/tencentcloud/trro/v20220325/model/CreateDeviceRequest.h
   include/tencentcloud/trro/v20220325/model/DescribeSessionStatisticsResponse.h
@@ -119,6 +120,7 @@ set(trro_src
   src/v20220325/model/SessionDeviceDetail.cpp
   src/v20220325/model/GetDeviceLicenseResponse.cpp
   src/v20220325/model/CreateDeviceResponse.cpp
+  src/v20220325/model/MultiNet.cpp
   src/v20220325/model/DescribeSessionStatisticsByIntervalRequest.cpp
   src/v20220325/model/CreateDeviceRequest.cpp
   src/v20220325/model/DescribeSessionStatisticsResponse.cpp

@@ -23,7 +23,9 @@ using namespace std;
 ModelInfo::ModelInfo() :
     m_modelNameHasBeenSet(false),
     m_modelDescHasBeenSet(false),
-    m_aliasNameHasBeenSet(false)
+    m_aliasNameHasBeenSet(false),
+    m_resourceStatusHasBeenSet(false),
+    m_promptWordsLimitHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         m_aliasNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceStatus") && !value["ResourceStatus"].IsNull())
+    {
+        if (!value["ResourceStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.ResourceStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceStatus = value["ResourceStatus"].GetUint64();
+        m_resourceStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("PromptWordsLimit") && !value["PromptWordsLimit"].IsNull())
+    {
+        if (!value["PromptWordsLimit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.PromptWordsLimit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_promptWordsLimit = string(value["PromptWordsLimit"].GetString());
+        m_promptWordsLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "AliasName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_aliasName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resourceStatus, allocator);
+    }
+
+    if (m_promptWordsLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromptWordsLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_promptWordsLimit.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void ModelInfo::SetAliasName(const string& _aliasName)
 bool ModelInfo::AliasNameHasBeenSet() const
 {
     return m_aliasNameHasBeenSet;
+}
+
+uint64_t ModelInfo::GetResourceStatus() const
+{
+    return m_resourceStatus;
+}
+
+void ModelInfo::SetResourceStatus(const uint64_t& _resourceStatus)
+{
+    m_resourceStatus = _resourceStatus;
+    m_resourceStatusHasBeenSet = true;
+}
+
+bool ModelInfo::ResourceStatusHasBeenSet() const
+{
+    return m_resourceStatusHasBeenSet;
+}
+
+string ModelInfo::GetPromptWordsLimit() const
+{
+    return m_promptWordsLimit;
+}
+
+void ModelInfo::SetPromptWordsLimit(const string& _promptWordsLimit)
+{
+    m_promptWordsLimit = _promptWordsLimit;
+    m_promptWordsLimitHasBeenSet = true;
+}
+
+bool ModelInfo::PromptWordsLimitHasBeenSet() const
+{
+    return m_promptWordsLimitHasBeenSet;
 }
 

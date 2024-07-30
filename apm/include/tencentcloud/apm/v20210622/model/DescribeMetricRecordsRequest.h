@@ -318,6 +318,27 @@ namespace TencentCloud
                      */
                     bool OrFiltersHasBeenSet() const;
 
+                    /**
+                     * 获取数据来源
+                     * @return Type 数据来源
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置数据来源
+                     * @param _type 数据来源
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -397,6 +418,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_orFilters;
                     bool m_orFiltersHasBeenSet;
+
+                    /**
+                     * 数据来源
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trro/v20220325/model/MultiNet.h>
 
 
 namespace TencentCloud
@@ -416,27 +417,27 @@ namespace TencentCloud
                     bool DecodeCostHasBeenSet() const;
 
                     /**
-                     * 获取渲染耗时，单位：ms
+                     * 获取【已废弃，使用RenderCost】
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RenderConst 渲染耗时，单位：ms
+                     * @return RenderConst 【已废弃，使用RenderCost】
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::vector<int64_t> GetRenderConst() const;
 
                     /**
-                     * 设置渲染耗时，单位：ms
+                     * 设置【已废弃，使用RenderCost】
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _renderConst 渲染耗时，单位：ms
+                     * @param _renderConst 【已废弃，使用RenderCost】
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetRenderConst(const std::vector<int64_t>& _renderConst);
 
                     /**
                      * 判断参数 RenderConst 是否已赋值
                      * @return RenderConst 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RenderConstHasBeenSet() const;
 
@@ -640,6 +641,256 @@ namespace TencentCloud
                      */
                     bool CaptureCostHasBeenSet() const;
 
+                    /**
+                     * 获取渲染耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RenderCost 渲染耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetRenderCost() const;
+
+                    /**
+                     * 设置渲染耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _renderCost 渲染耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRenderCost(const std::vector<int64_t>& _renderCost);
+
+                    /**
+                     * 判断参数 RenderCost 是否已赋值
+                     * @return RenderCost 是否已赋值
+                     * 
+                     */
+                    bool RenderCostHasBeenSet() const;
+
+                    /**
+                     * 获取配置宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigWidth 配置宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetConfigWidth() const;
+
+                    /**
+                     * 设置配置宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _configWidth 配置宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConfigWidth(const int64_t& _configWidth);
+
+                    /**
+                     * 判断参数 ConfigWidth 是否已赋值
+                     * @return ConfigWidth 是否已赋值
+                     * 
+                     */
+                    bool ConfigWidthHasBeenSet() const;
+
+                    /**
+                     * 获取配置高度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigHeight 配置高度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetConfigHeight() const;
+
+                    /**
+                     * 设置配置高度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _configHeight 配置高度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConfigHeight(const int64_t& _configHeight);
+
+                    /**
+                     * 判断参数 ConfigHeight 是否已赋值
+                     * @return ConfigHeight 是否已赋值
+                     * 
+                     */
+                    bool ConfigHeightHasBeenSet() const;
+
+                    /**
+                     * 获取平均帧间隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FrameDelta 平均帧间隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetFrameDelta() const;
+
+                    /**
+                     * 设置平均帧间隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _frameDelta 平均帧间隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFrameDelta(const std::vector<int64_t>& _frameDelta);
+
+                    /**
+                     * 判断参数 FrameDelta 是否已赋值
+                     * @return FrameDelta 是否已赋值
+                     * 
+                     */
+                    bool FrameDeltaHasBeenSet() const;
+
+                    /**
+                     * 获取最大帧间隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxFrameDelta 最大帧间隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetMaxFrameDelta() const;
+
+                    /**
+                     * 设置最大帧间隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _maxFrameDelta 最大帧间隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMaxFrameDelta(const std::vector<int64_t>& _maxFrameDelta);
+
+                    /**
+                     * 判断参数 MaxFrameDelta 是否已赋值
+                     * @return MaxFrameDelta 是否已赋值
+                     * 
+                     */
+                    bool MaxFrameDeltaHasBeenSet() const;
+
+                    /**
+                     * 获取总码率评估,单位：kbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalBitrateEstimate 总码率评估,单位：kbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetTotalBitrateEstimate() const;
+
+                    /**
+                     * 设置总码率评估,单位：kbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _totalBitrateEstimate 总码率评估,单位：kbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTotalBitrateEstimate(const std::vector<int64_t>& _totalBitrateEstimate);
+
+                    /**
+                     * 判断参数 TotalBitrateEstimate 是否已赋值
+                     * @return TotalBitrateEstimate 是否已赋值
+                     * 
+                     */
+                    bool TotalBitrateEstimateHasBeenSet() const;
+
+                    /**
+                     * 获取帧间隔大于100ms的卡顿时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Lag100Duration 帧间隔大于100ms的卡顿时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetLag100Duration() const;
+
+                    /**
+                     * 设置帧间隔大于100ms的卡顿时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lag100Duration 帧间隔大于100ms的卡顿时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLag100Duration(const std::vector<int64_t>& _lag100Duration);
+
+                    /**
+                     * 判断参数 Lag100Duration 是否已赋值
+                     * @return Lag100Duration 是否已赋值
+                     * 
+                     */
+                    bool Lag100DurationHasBeenSet() const;
+
+                    /**
+                     * 获取帧间隔大于150ms的卡顿时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Lag150Duration 帧间隔大于150ms的卡顿时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetLag150Duration() const;
+
+                    /**
+                     * 设置帧间隔大于150ms的卡顿时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lag150Duration 帧间隔大于150ms的卡顿时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLag150Duration(const std::vector<int64_t>& _lag150Duration);
+
+                    /**
+                     * 判断参数 Lag150Duration 是否已赋值
+                     * @return Lag150Duration 是否已赋值
+                     * 
+                     */
+                    bool Lag150DurationHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启多网：0 单网，1 多网
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MultiMode 是否开启多网：0 单网，1 多网
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMultiMode() const;
+
+                    /**
+                     * 设置是否开启多网：0 单网，1 多网
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _multiMode 是否开启多网：0 单网，1 多网
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMultiMode(const int64_t& _multiMode);
+
+                    /**
+                     * 判断参数 MultiMode 是否已赋值
+                     * @return MultiMode 是否已赋值
+                     * 
+                     */
+                    bool MultiModeHasBeenSet() const;
+
+                    /**
+                     * 获取多网卡信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MultiNet 多网卡信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<MultiNet> GetMultiNet() const;
+
+                    /**
+                     * 设置多网卡信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _multiNet 多网卡信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMultiNet(const std::vector<MultiNet>& _multiNet);
+
+                    /**
+                     * 判断参数 MultiNet 是否已赋值
+                     * @return MultiNet 是否已赋值
+                     * 
+                     */
+                    bool MultiNetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -748,7 +999,7 @@ namespace TencentCloud
                     bool m_decodeCostHasBeenSet;
 
                     /**
-                     * 渲染耗时，单位：ms
+                     * 【已废弃，使用RenderCost】
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_renderConst;
@@ -809,6 +1060,76 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_captureCost;
                     bool m_captureCostHasBeenSet;
+
+                    /**
+                     * 渲染耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_renderCost;
+                    bool m_renderCostHasBeenSet;
+
+                    /**
+                     * 配置宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_configWidth;
+                    bool m_configWidthHasBeenSet;
+
+                    /**
+                     * 配置高度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_configHeight;
+                    bool m_configHeightHasBeenSet;
+
+                    /**
+                     * 平均帧间隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_frameDelta;
+                    bool m_frameDeltaHasBeenSet;
+
+                    /**
+                     * 最大帧间隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_maxFrameDelta;
+                    bool m_maxFrameDeltaHasBeenSet;
+
+                    /**
+                     * 总码率评估,单位：kbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_totalBitrateEstimate;
+                    bool m_totalBitrateEstimateHasBeenSet;
+
+                    /**
+                     * 帧间隔大于100ms的卡顿时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_lag100Duration;
+                    bool m_lag100DurationHasBeenSet;
+
+                    /**
+                     * 帧间隔大于150ms的卡顿时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_lag150Duration;
+                    bool m_lag150DurationHasBeenSet;
+
+                    /**
+                     * 是否开启多网：0 单网，1 多网
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_multiMode;
+                    bool m_multiModeHasBeenSet;
+
+                    /**
+                     * 多网卡信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<MultiNet> m_multiNet;
+                    bool m_multiNetHasBeenSet;
 
                 };
             }

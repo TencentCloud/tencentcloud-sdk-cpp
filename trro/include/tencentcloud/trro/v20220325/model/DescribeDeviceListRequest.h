@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool PageNumberHasBeenSet() const;
 
+                    /**
+                     * 获取设备状态筛选，不填默认为不过滤。取值：["ready","connected","online"]，online代表ready或connected
+                     * @return DeviceStatus 设备状态筛选，不填默认为不过滤。取值：["ready","connected","online"]，online代表ready或connected
+                     * 
+                     */
+                    std::string GetDeviceStatus() const;
+
+                    /**
+                     * 设置设备状态筛选，不填默认为不过滤。取值：["ready","connected","online"]，online代表ready或connected
+                     * @param _deviceStatus 设备状态筛选，不填默认为不过滤。取值：["ready","connected","online"]，online代表ready或connected
+                     * 
+                     */
+                    void SetDeviceStatus(const std::string& _deviceStatus);
+
+                    /**
+                     * 判断参数 DeviceStatus 是否已赋值
+                     * @return DeviceStatus 是否已赋值
+                     * 
+                     */
+                    bool DeviceStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
+
+                    /**
+                     * 设备状态筛选，不填默认为不过滤。取值：["ready","connected","online"]，online代表ready或connected
+                     */
+                    std::string m_deviceStatus;
+                    bool m_deviceStatusHasBeenSet;
 
                 };
             }

@@ -23,7 +23,9 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 DescribeUpdatableDataEnginesRequest::DescribeUpdatableDataEnginesRequest() :
-    m_dataEngineConfigCommandHasBeenSet(false)
+    m_dataEngineConfigCommandHasBeenSet(false),
+    m_useLakeFsHasBeenSet(false),
+    m_customResultPathHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string DescribeUpdatableDataEnginesRequest::ToJsonString() const
         string key = "DataEngineConfigCommand";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataEngineConfigCommand.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useLakeFsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseLakeFs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useLakeFs, allocator);
+    }
+
+    if (m_customResultPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomResultPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customResultPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +82,38 @@ void DescribeUpdatableDataEnginesRequest::SetDataEngineConfigCommand(const strin
 bool DescribeUpdatableDataEnginesRequest::DataEngineConfigCommandHasBeenSet() const
 {
     return m_dataEngineConfigCommandHasBeenSet;
+}
+
+bool DescribeUpdatableDataEnginesRequest::GetUseLakeFs() const
+{
+    return m_useLakeFs;
+}
+
+void DescribeUpdatableDataEnginesRequest::SetUseLakeFs(const bool& _useLakeFs)
+{
+    m_useLakeFs = _useLakeFs;
+    m_useLakeFsHasBeenSet = true;
+}
+
+bool DescribeUpdatableDataEnginesRequest::UseLakeFsHasBeenSet() const
+{
+    return m_useLakeFsHasBeenSet;
+}
+
+string DescribeUpdatableDataEnginesRequest::GetCustomResultPath() const
+{
+    return m_customResultPath;
+}
+
+void DescribeUpdatableDataEnginesRequest::SetCustomResultPath(const string& _customResultPath)
+{
+    m_customResultPath = _customResultPath;
+    m_customResultPathHasBeenSet = true;
+}
+
+bool DescribeUpdatableDataEnginesRequest::CustomResultPathHasBeenSet() const
+{
+    return m_customResultPathHasBeenSet;
 }
 
 

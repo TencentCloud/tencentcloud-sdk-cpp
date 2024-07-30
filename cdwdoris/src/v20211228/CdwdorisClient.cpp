@@ -83,6 +83,92 @@ CdwdorisClient::CreateInstanceNewOutcomeCallable CdwdorisClient::CreateInstanceN
     return task->get_future();
 }
 
+CdwdorisClient::CreateWorkloadGroupOutcome CdwdorisClient::CreateWorkloadGroup(const CreateWorkloadGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWorkloadGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWorkloadGroupResponse rsp = CreateWorkloadGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWorkloadGroupOutcome(rsp);
+        else
+            return CreateWorkloadGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWorkloadGroupOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::CreateWorkloadGroupAsync(const CreateWorkloadGroupRequest& request, const CreateWorkloadGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWorkloadGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::CreateWorkloadGroupOutcomeCallable CdwdorisClient::CreateWorkloadGroupCallable(const CreateWorkloadGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWorkloadGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWorkloadGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DeleteWorkloadGroupOutcome CdwdorisClient::DeleteWorkloadGroup(const DeleteWorkloadGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWorkloadGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWorkloadGroupResponse rsp = DeleteWorkloadGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWorkloadGroupOutcome(rsp);
+        else
+            return DeleteWorkloadGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWorkloadGroupOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DeleteWorkloadGroupAsync(const DeleteWorkloadGroupRequest& request, const DeleteWorkloadGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteWorkloadGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DeleteWorkloadGroupOutcomeCallable CdwdorisClient::DeleteWorkloadGroupCallable(const DeleteWorkloadGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteWorkloadGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteWorkloadGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwdorisClient::DescribeClusterConfigsOutcome CdwdorisClient::DescribeClusterConfigs(const DescribeClusterConfigsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterConfigs");
@@ -205,6 +291,92 @@ CdwdorisClient::DescribeDatabaseAuditRecordsOutcomeCallable CdwdorisClient::Desc
         [this, request]()
         {
             return this->DescribeDatabaseAuditRecords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeFederationTokenOutcome CdwdorisClient::DescribeFederationToken(const DescribeFederationTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFederationToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFederationTokenResponse rsp = DescribeFederationTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFederationTokenOutcome(rsp);
+        else
+            return DescribeFederationTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFederationTokenOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeFederationTokenAsync(const DescribeFederationTokenRequest& request, const DescribeFederationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFederationToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeFederationTokenOutcomeCallable CdwdorisClient::DescribeFederationTokenCallable(const DescribeFederationTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFederationTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFederationToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeGoodsDetailOutcome CdwdorisClient::DescribeGoodsDetail(const DescribeGoodsDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGoodsDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGoodsDetailResponse rsp = DescribeGoodsDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGoodsDetailOutcome(rsp);
+        else
+            return DescribeGoodsDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGoodsDetailOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeGoodsDetailAsync(const DescribeGoodsDetailRequest& request, const DescribeGoodsDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGoodsDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeGoodsDetailOutcomeCallable CdwdorisClient::DescribeGoodsDetailCallable(const DescribeGoodsDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGoodsDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGoodsDetail(request);
         }
     );
 
@@ -384,6 +556,49 @@ CdwdorisClient::DescribeInstanceStateOutcomeCallable CdwdorisClient::DescribeIns
     return task->get_future();
 }
 
+CdwdorisClient::DescribeInstanceUsedSubnetsOutcome CdwdorisClient::DescribeInstanceUsedSubnets(const DescribeInstanceUsedSubnetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceUsedSubnets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceUsedSubnetsResponse rsp = DescribeInstanceUsedSubnetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceUsedSubnetsOutcome(rsp);
+        else
+            return DescribeInstanceUsedSubnetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceUsedSubnetsOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeInstanceUsedSubnetsAsync(const DescribeInstanceUsedSubnetsRequest& request, const DescribeInstanceUsedSubnetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceUsedSubnets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeInstanceUsedSubnetsOutcomeCallable CdwdorisClient::DescribeInstanceUsedSubnetsCallable(const DescribeInstanceUsedSubnetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceUsedSubnetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceUsedSubnets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwdorisClient::DescribeInstancesOutcome CdwdorisClient::DescribeInstances(const DescribeInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstances");
@@ -420,6 +635,135 @@ CdwdorisClient::DescribeInstancesOutcomeCallable CdwdorisClient::DescribeInstanc
         [this, request]()
         {
             return this->DescribeInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeRegionZoneOutcome CdwdorisClient::DescribeRegionZone(const DescribeRegionZoneRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRegionZone");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRegionZoneResponse rsp = DescribeRegionZoneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRegionZoneOutcome(rsp);
+        else
+            return DescribeRegionZoneOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRegionZoneOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeRegionZoneAsync(const DescribeRegionZoneRequest& request, const DescribeRegionZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRegionZone(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeRegionZoneOutcomeCallable CdwdorisClient::DescribeRegionZoneCallable(const DescribeRegionZoneRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRegionZoneOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRegionZone(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeReplicaVersionOutcome CdwdorisClient::DescribeReplicaVersion(const DescribeReplicaVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReplicaVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReplicaVersionResponse rsp = DescribeReplicaVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReplicaVersionOutcome(rsp);
+        else
+            return DescribeReplicaVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReplicaVersionOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeReplicaVersionAsync(const DescribeReplicaVersionRequest& request, const DescribeReplicaVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReplicaVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeReplicaVersionOutcomeCallable CdwdorisClient::DescribeReplicaVersionCallable(const DescribeReplicaVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReplicaVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReplicaVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeRestoreTaskDetailOutcome CdwdorisClient::DescribeRestoreTaskDetail(const DescribeRestoreTaskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRestoreTaskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRestoreTaskDetailResponse rsp = DescribeRestoreTaskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRestoreTaskDetailOutcome(rsp);
+        else
+            return DescribeRestoreTaskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRestoreTaskDetailOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeRestoreTaskDetailAsync(const DescribeRestoreTaskDetailRequest& request, const DescribeRestoreTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRestoreTaskDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeRestoreTaskDetailOutcomeCallable CdwdorisClient::DescribeRestoreTaskDetailCallable(const DescribeRestoreTaskDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRestoreTaskDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRestoreTaskDetail(request);
         }
     );
 
@@ -513,6 +857,135 @@ CdwdorisClient::DescribeSlowQueryRecordsDownloadOutcomeCallable CdwdorisClient::
     return task->get_future();
 }
 
+CdwdorisClient::DescribeSqlApisOutcome CdwdorisClient::DescribeSqlApis(const DescribeSqlApisRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSqlApis");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSqlApisResponse rsp = DescribeSqlApisResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSqlApisOutcome(rsp);
+        else
+            return DescribeSqlApisOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSqlApisOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeSqlApisAsync(const DescribeSqlApisRequest& request, const DescribeSqlApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSqlApis(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeSqlApisOutcomeCallable CdwdorisClient::DescribeSqlApisCallable(const DescribeSqlApisRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSqlApisOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSqlApis(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeUserBindWorkloadGroupOutcome CdwdorisClient::DescribeUserBindWorkloadGroup(const DescribeUserBindWorkloadGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserBindWorkloadGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserBindWorkloadGroupResponse rsp = DescribeUserBindWorkloadGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserBindWorkloadGroupOutcome(rsp);
+        else
+            return DescribeUserBindWorkloadGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserBindWorkloadGroupOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeUserBindWorkloadGroupAsync(const DescribeUserBindWorkloadGroupRequest& request, const DescribeUserBindWorkloadGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserBindWorkloadGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeUserBindWorkloadGroupOutcomeCallable CdwdorisClient::DescribeUserBindWorkloadGroupCallable(const DescribeUserBindWorkloadGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserBindWorkloadGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserBindWorkloadGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeWorkloadGroupOutcome CdwdorisClient::DescribeWorkloadGroup(const DescribeWorkloadGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkloadGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkloadGroupResponse rsp = DescribeWorkloadGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkloadGroupOutcome(rsp);
+        else
+            return DescribeWorkloadGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkloadGroupOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeWorkloadGroupAsync(const DescribeWorkloadGroupRequest& request, const DescribeWorkloadGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWorkloadGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeWorkloadGroupOutcomeCallable CdwdorisClient::DescribeWorkloadGroupCallable(const DescribeWorkloadGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWorkloadGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWorkloadGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwdorisClient::DestroyInstanceOutcome CdwdorisClient::DestroyInstance(const DestroyInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DestroyInstance");
@@ -556,6 +1029,49 @@ CdwdorisClient::DestroyInstanceOutcomeCallable CdwdorisClient::DestroyInstanceCa
     return task->get_future();
 }
 
+CdwdorisClient::FitClsLogOutcome CdwdorisClient::FitClsLog(const FitClsLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "FitClsLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FitClsLogResponse rsp = FitClsLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FitClsLogOutcome(rsp);
+        else
+            return FitClsLogOutcome(o.GetError());
+    }
+    else
+    {
+        return FitClsLogOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::FitClsLogAsync(const FitClsLogRequest& request, const FitClsLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FitClsLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::FitClsLogOutcomeCallable CdwdorisClient::FitClsLogCallable(const FitClsLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FitClsLogOutcome()>>(
+        [this, request]()
+        {
+            return this->FitClsLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwdorisClient::ModifyInstanceOutcome CdwdorisClient::ModifyInstance(const ModifyInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstance");
@@ -592,6 +1108,307 @@ CdwdorisClient::ModifyInstanceOutcomeCallable CdwdorisClient::ModifyInstanceCall
         [this, request]()
         {
             return this->ModifyInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::ModifyInstanceKeyValConfigsOutcome CdwdorisClient::ModifyInstanceKeyValConfigs(const ModifyInstanceKeyValConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceKeyValConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceKeyValConfigsResponse rsp = ModifyInstanceKeyValConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceKeyValConfigsOutcome(rsp);
+        else
+            return ModifyInstanceKeyValConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceKeyValConfigsOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::ModifyInstanceKeyValConfigsAsync(const ModifyInstanceKeyValConfigsRequest& request, const ModifyInstanceKeyValConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceKeyValConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::ModifyInstanceKeyValConfigsOutcomeCallable CdwdorisClient::ModifyInstanceKeyValConfigsCallable(const ModifyInstanceKeyValConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceKeyValConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceKeyValConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::ModifySecurityGroupsOutcome CdwdorisClient::ModifySecurityGroups(const ModifySecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySecurityGroupsResponse rsp = ModifySecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySecurityGroupsOutcome(rsp);
+        else
+            return ModifySecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::ModifySecurityGroupsAsync(const ModifySecurityGroupsRequest& request, const ModifySecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySecurityGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::ModifySecurityGroupsOutcomeCallable CdwdorisClient::ModifySecurityGroupsCallable(const ModifySecurityGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySecurityGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::ModifyUserBindWorkloadGroupOutcome CdwdorisClient::ModifyUserBindWorkloadGroup(const ModifyUserBindWorkloadGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserBindWorkloadGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserBindWorkloadGroupResponse rsp = ModifyUserBindWorkloadGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserBindWorkloadGroupOutcome(rsp);
+        else
+            return ModifyUserBindWorkloadGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserBindWorkloadGroupOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::ModifyUserBindWorkloadGroupAsync(const ModifyUserBindWorkloadGroupRequest& request, const ModifyUserBindWorkloadGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserBindWorkloadGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::ModifyUserBindWorkloadGroupOutcomeCallable CdwdorisClient::ModifyUserBindWorkloadGroupCallable(const ModifyUserBindWorkloadGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserBindWorkloadGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserBindWorkloadGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::ModifyUserPrivilegesV3Outcome CdwdorisClient::ModifyUserPrivilegesV3(const ModifyUserPrivilegesV3Request &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserPrivilegesV3");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserPrivilegesV3Response rsp = ModifyUserPrivilegesV3Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserPrivilegesV3Outcome(rsp);
+        else
+            return ModifyUserPrivilegesV3Outcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserPrivilegesV3Outcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::ModifyUserPrivilegesV3Async(const ModifyUserPrivilegesV3Request& request, const ModifyUserPrivilegesV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserPrivilegesV3(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::ModifyUserPrivilegesV3OutcomeCallable CdwdorisClient::ModifyUserPrivilegesV3Callable(const ModifyUserPrivilegesV3Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserPrivilegesV3Outcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserPrivilegesV3(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::ModifyWorkloadGroupOutcome CdwdorisClient::ModifyWorkloadGroup(const ModifyWorkloadGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWorkloadGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWorkloadGroupResponse rsp = ModifyWorkloadGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWorkloadGroupOutcome(rsp);
+        else
+            return ModifyWorkloadGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWorkloadGroupOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::ModifyWorkloadGroupAsync(const ModifyWorkloadGroupRequest& request, const ModifyWorkloadGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyWorkloadGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::ModifyWorkloadGroupOutcomeCallable CdwdorisClient::ModifyWorkloadGroupCallable(const ModifyWorkloadGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyWorkloadGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyWorkloadGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::ModifyWorkloadGroupStatusOutcome CdwdorisClient::ModifyWorkloadGroupStatus(const ModifyWorkloadGroupStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWorkloadGroupStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWorkloadGroupStatusResponse rsp = ModifyWorkloadGroupStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWorkloadGroupStatusOutcome(rsp);
+        else
+            return ModifyWorkloadGroupStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWorkloadGroupStatusOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::ModifyWorkloadGroupStatusAsync(const ModifyWorkloadGroupStatusRequest& request, const ModifyWorkloadGroupStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyWorkloadGroupStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::ModifyWorkloadGroupStatusOutcomeCallable CdwdorisClient::ModifyWorkloadGroupStatusCallable(const ModifyWorkloadGroupStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyWorkloadGroupStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyWorkloadGroupStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::ReduceInstanceOutcome CdwdorisClient::ReduceInstance(const ReduceInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReduceInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReduceInstanceResponse rsp = ReduceInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReduceInstanceOutcome(rsp);
+        else
+            return ReduceInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ReduceInstanceOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::ReduceInstanceAsync(const ReduceInstanceRequest& request, const ReduceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReduceInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::ReduceInstanceOutcomeCallable CdwdorisClient::ReduceInstanceCallable(const ReduceInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReduceInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ReduceInstance(request);
         }
     );
 

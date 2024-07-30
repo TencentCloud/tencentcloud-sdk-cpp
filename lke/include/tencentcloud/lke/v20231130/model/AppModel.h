@@ -171,6 +171,81 @@ namespace TencentCloud
                      */
                     bool TokenBalanceHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用上下文指代轮次
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsUseContext 是否使用上下文指代轮次
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsUseContext() const;
+
+                    /**
+                     * 设置是否使用上下文指代轮次
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isUseContext 是否使用上下文指代轮次
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsUseContext(const bool& _isUseContext);
+
+                    /**
+                     * 判断参数 IsUseContext 是否已赋值
+                     * @return IsUseContext 是否已赋值
+                     * 
+                     */
+                    bool IsUseContextHasBeenSet() const;
+
+                    /**
+                     * 获取上下文记忆轮数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HistoryLimit 上下文记忆轮数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetHistoryLimit() const;
+
+                    /**
+                     * 设置上下文记忆轮数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _historyLimit 上下文记忆轮数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHistoryLimit(const uint64_t& _historyLimit);
+
+                    /**
+                     * 判断参数 HistoryLimit 是否已赋值
+                     * @return HistoryLimit 是否已赋值
+                     * 
+                     */
+                    bool HistoryLimitHasBeenSet() const;
+
+                    /**
+                     * 获取使用类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UsageType 使用类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUsageType() const;
+
+                    /**
+                     * 设置使用类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _usageType 使用类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUsageType(const std::string& _usageType);
+
+                    /**
+                     * 判断参数 UsageType 是否已赋值
+                     * @return UsageType 是否已赋值
+                     * 
+                     */
+                    bool UsageTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +282,27 @@ namespace TencentCloud
                      */
                     double m_tokenBalance;
                     bool m_tokenBalanceHasBeenSet;
+
+                    /**
+                     * 是否使用上下文指代轮次
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isUseContext;
+                    bool m_isUseContextHasBeenSet;
+
+                    /**
+                     * 上下文记忆轮数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_historyLimit;
+                    bool m_historyLimitHasBeenSet;
+
+                    /**
+                     * 使用类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_usageType;
+                    bool m_usageTypeHasBeenSet;
 
                 };
             }

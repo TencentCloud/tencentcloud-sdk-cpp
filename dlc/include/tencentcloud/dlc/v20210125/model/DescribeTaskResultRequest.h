@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务唯一ID
-                     * @return TaskId 任务唯一ID
+                     * 获取任务唯一ID，仅支持30天内的任务
+                     * @return TaskId 任务唯一ID，仅支持30天内的任务
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务唯一ID
-                     * @param _taskId 任务唯一ID
+                     * 设置任务唯一ID，仅支持30天内的任务
+                     * @param _taskId 任务唯一ID，仅支持30天内的任务
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务唯一ID
+                     * 任务唯一ID，仅支持30天内的任务
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

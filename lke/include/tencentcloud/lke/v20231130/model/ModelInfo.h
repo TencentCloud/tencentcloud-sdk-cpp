@@ -121,6 +121,56 @@ namespace TencentCloud
                      */
                     bool AliasNameHasBeenSet() const;
 
+                    /**
+                     * 获取资源状态 1：资源可用；2：资源已用尽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceStatus 资源状态 1：资源可用；2：资源已用尽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetResourceStatus() const;
+
+                    /**
+                     * 设置资源状态 1：资源可用；2：资源已用尽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceStatus 资源状态 1：资源可用；2：资源已用尽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceStatus(const uint64_t& _resourceStatus);
+
+                    /**
+                     * 判断参数 ResourceStatus 是否已赋值
+                     * @return ResourceStatus 是否已赋值
+                     * 
+                     */
+                    bool ResourceStatusHasBeenSet() const;
+
+                    /**
+                     * 获取提示词内容字符限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PromptWordsLimit 提示词内容字符限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPromptWordsLimit() const;
+
+                    /**
+                     * 设置提示词内容字符限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _promptWordsLimit 提示词内容字符限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPromptWordsLimit(const std::string& _promptWordsLimit);
+
+                    /**
+                     * 判断参数 PromptWordsLimit 是否已赋值
+                     * @return PromptWordsLimit 是否已赋值
+                     * 
+                     */
+                    bool PromptWordsLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +193,20 @@ namespace TencentCloud
                      */
                     std::string m_aliasName;
                     bool m_aliasNameHasBeenSet;
+
+                    /**
+                     * 资源状态 1：资源可用；2：资源已用尽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_resourceStatus;
+                    bool m_resourceStatusHasBeenSet;
+
+                    /**
+                     * 提示词内容字符限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_promptWordsLimit;
+                    bool m_promptWordsLimitHasBeenSet;
 
                 };
             }

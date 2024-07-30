@@ -22,9 +22,9 @@ using namespace std;
 
 BaseFlowInfo::BaseFlowInfo() :
     m_flowNameHasBeenSet(false),
+    m_deadlineHasBeenSet(false),
     m_flowTypeHasBeenSet(false),
     m_flowDescriptionHasBeenSet(false),
-    m_deadlineHasBeenSet(false),
     m_unorderedHasBeenSet(false),
     m_intelligentStatusHasBeenSet(false),
     m_formFieldsHasBeenSet(false),
@@ -51,6 +51,16 @@ CoreInternalOutcome BaseFlowInfo::Deserialize(const rapidjson::Value &value)
         m_flowNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Deadline") && !value["Deadline"].IsNull())
+    {
+        if (!value["Deadline"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BaseFlowInfo.Deadline` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deadline = value["Deadline"].GetInt64();
+        m_deadlineHasBeenSet = true;
+    }
+
     if (value.HasMember("FlowType") && !value["FlowType"].IsNull())
     {
         if (!value["FlowType"].IsString())
@@ -69,16 +79,6 @@ CoreInternalOutcome BaseFlowInfo::Deserialize(const rapidjson::Value &value)
         }
         m_flowDescription = string(value["FlowDescription"].GetString());
         m_flowDescriptionHasBeenSet = true;
-    }
-
-    if (value.HasMember("Deadline") && !value["Deadline"].IsNull())
-    {
-        if (!value["Deadline"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `BaseFlowInfo.Deadline` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_deadline = value["Deadline"].GetInt64();
-        m_deadlineHasBeenSet = true;
     }
 
     if (value.HasMember("Unordered") && !value["Unordered"].IsNull())
@@ -206,6 +206,14 @@ void BaseFlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_flowName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_deadlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Deadline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deadline, allocator);
+    }
+
     if (m_flowTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -220,14 +228,6 @@ void BaseFlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "FlowDescription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flowDescription.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_deadlineHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Deadline";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_deadline, allocator);
     }
 
     if (m_unorderedHasBeenSet)
@@ -334,6 +334,22 @@ bool BaseFlowInfo::FlowNameHasBeenSet() const
     return m_flowNameHasBeenSet;
 }
 
+int64_t BaseFlowInfo::GetDeadline() const
+{
+    return m_deadline;
+}
+
+void BaseFlowInfo::SetDeadline(const int64_t& _deadline)
+{
+    m_deadline = _deadline;
+    m_deadlineHasBeenSet = true;
+}
+
+bool BaseFlowInfo::DeadlineHasBeenSet() const
+{
+    return m_deadlineHasBeenSet;
+}
+
 string BaseFlowInfo::GetFlowType() const
 {
     return m_flowType;
@@ -364,22 +380,6 @@ void BaseFlowInfo::SetFlowDescription(const string& _flowDescription)
 bool BaseFlowInfo::FlowDescriptionHasBeenSet() const
 {
     return m_flowDescriptionHasBeenSet;
-}
-
-int64_t BaseFlowInfo::GetDeadline() const
-{
-    return m_deadline;
-}
-
-void BaseFlowInfo::SetDeadline(const int64_t& _deadline)
-{
-    m_deadline = _deadline;
-    m_deadlineHasBeenSet = true;
-}
-
-bool BaseFlowInfo::DeadlineHasBeenSet() const
-{
-    return m_deadlineHasBeenSet;
 }
 
 bool BaseFlowInfo::GetUnordered() const
