@@ -133,6 +133,10 @@
 #include <tencentcloud/redis/v20180412/model/DescribeProjectSecurityGroupsResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProxySlowLogRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProxySlowLogResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeRedisClusterOverviewRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeRedisClusterOverviewResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeRedisClustersRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeRedisClustersResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeReplicationGroupRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeReplicationGroupResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeReplicationGroupInstanceRequest.h>
@@ -406,6 +410,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProxySlowLogResponse> DescribeProxySlowLogOutcome;
                 typedef std::future<DescribeProxySlowLogOutcome> DescribeProxySlowLogOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeProxySlowLogRequest&, DescribeProxySlowLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxySlowLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRedisClusterOverviewResponse> DescribeRedisClusterOverviewOutcome;
+                typedef std::future<DescribeRedisClusterOverviewOutcome> DescribeRedisClusterOverviewOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeRedisClusterOverviewRequest&, DescribeRedisClusterOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisClusterOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRedisClustersResponse> DescribeRedisClustersOutcome;
+                typedef std::future<DescribeRedisClustersOutcome> DescribeRedisClustersOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeRedisClustersRequest&, DescribeRedisClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisClustersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReplicationGroupResponse> DescribeReplicationGroupOutcome;
                 typedef std::future<DescribeReplicationGroupOutcome> DescribeReplicationGroupOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeReplicationGroupRequest&, DescribeReplicationGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplicationGroupAsyncHandler;
@@ -1044,6 +1054,24 @@ namespace TencentCloud
                 DescribeProxySlowLogOutcome DescribeProxySlowLog(const Model::DescribeProxySlowLogRequest &request);
                 void DescribeProxySlowLogAsync(const Model::DescribeProxySlowLogRequest& request, const DescribeProxySlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProxySlowLogOutcomeCallable DescribeProxySlowLogCallable(const Model::DescribeProxySlowLogRequest& request);
+
+                /**
+                 *查询Redis独享集群概览信息
+                 * @param req DescribeRedisClusterOverviewRequest
+                 * @return DescribeRedisClusterOverviewOutcome
+                 */
+                DescribeRedisClusterOverviewOutcome DescribeRedisClusterOverview(const Model::DescribeRedisClusterOverviewRequest &request);
+                void DescribeRedisClusterOverviewAsync(const Model::DescribeRedisClusterOverviewRequest& request, const DescribeRedisClusterOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRedisClusterOverviewOutcomeCallable DescribeRedisClusterOverviewCallable(const Model::DescribeRedisClusterOverviewRequest& request);
+
+                /**
+                 *查询Redis独享集群列表
+                 * @param req DescribeRedisClustersRequest
+                 * @return DescribeRedisClustersOutcome
+                 */
+                DescribeRedisClustersOutcome DescribeRedisClusters(const Model::DescribeRedisClustersRequest &request);
+                void DescribeRedisClustersAsync(const Model::DescribeRedisClustersRequest& request, const DescribeRedisClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRedisClustersOutcomeCallable DescribeRedisClustersCallable(const Model::DescribeRedisClustersRequest& request);
 
                 /**
                  *本接口（DescribeReplicationGroup）用于查询复制组。

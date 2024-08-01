@@ -26,7 +26,9 @@ using namespace std;
 DescribeAlertListResponse::DescribeAlertListResponse() :
     m_alertListHasBeenSet(false),
     m_alertTypeCountHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_returnCodeHasBeenSet(false),
+    m_returnMsgHasBeenSet(false)
 {
 }
 
@@ -114,6 +116,26 @@ CoreInternalOutcome DescribeAlertListResponse::Deserialize(const string &payload
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ReturnCode") && !rsp["ReturnCode"].IsNull())
+    {
+        if (!rsp["ReturnCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReturnCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_returnCode = rsp["ReturnCode"].GetInt64();
+        m_returnCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ReturnMsg") && !rsp["ReturnMsg"].IsNull())
+    {
+        if (!rsp["ReturnMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReturnMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_returnMsg = string(rsp["ReturnMsg"].GetString());
+        m_returnMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +184,22 @@ string DescribeAlertListResponse::ToJsonString() const
         value.AddMember(iKey, m_totalCount, allocator);
     }
 
+    if (m_returnCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReturnCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_returnCode, allocator);
+    }
+
+    if (m_returnMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReturnMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_returnMsg.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -202,6 +240,26 @@ uint64_t DescribeAlertListResponse::GetTotalCount() const
 bool DescribeAlertListResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+int64_t DescribeAlertListResponse::GetReturnCode() const
+{
+    return m_returnCode;
+}
+
+bool DescribeAlertListResponse::ReturnCodeHasBeenSet() const
+{
+    return m_returnCodeHasBeenSet;
+}
+
+string DescribeAlertListResponse::GetReturnMsg() const
+{
+    return m_returnMsg;
+}
+
+bool DescribeAlertListResponse::ReturnMsgHasBeenSet() const
+{
+    return m_returnMsgHasBeenSet;
 }
 
 

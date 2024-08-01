@@ -33,7 +33,8 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_toolsHasBeenSet(false),
     m_toolChoiceHasBeenSet(false),
     m_customToolHasBeenSet(false),
-    m_searchInfoHasBeenSet(false)
+    m_searchInfoHasBeenSet(false),
+    m_citationHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,14 @@ string ChatCompletionsRequest::ToJsonString() const
         string key = "SearchInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_searchInfo, allocator);
+    }
+
+    if (m_citationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Citation";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_citation, allocator);
     }
 
 
@@ -329,6 +338,22 @@ void ChatCompletionsRequest::SetSearchInfo(const bool& _searchInfo)
 bool ChatCompletionsRequest::SearchInfoHasBeenSet() const
 {
     return m_searchInfoHasBeenSet;
+}
+
+bool ChatCompletionsRequest::GetCitation() const
+{
+    return m_citation;
+}
+
+void ChatCompletionsRequest::SetCitation(const bool& _citation)
+{
+    m_citation = _citation;
+    m_citationHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::CitationHasBeenSet() const
+{
+    return m_citationHasBeenSet;
 }
 
 

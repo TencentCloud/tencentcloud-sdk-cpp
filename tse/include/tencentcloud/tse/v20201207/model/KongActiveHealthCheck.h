@@ -121,6 +121,31 @@ namespace TencentCloud
                      */
                     bool HttpPathHasBeenSet() const;
 
+                    /**
+                     * 获取GET HTTP 请求的超时时间，单位：秒。默认 60。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Timeout GET HTTP 请求的超时时间，单位：秒。默认 60。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetTimeout() const;
+
+                    /**
+                     * 设置GET HTTP 请求的超时时间，单位：秒。默认 60。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _timeout GET HTTP 请求的超时时间，单位：秒。默认 60。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTimeout(const double& _timeout);
+
+                    /**
+                     * 判断参数 Timeout 是否已赋值
+                     * @return Timeout 是否已赋值
+                     * 
+                     */
+                    bool TimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +168,13 @@ namespace TencentCloud
                      */
                     std::string m_httpPath;
                     bool m_httpPathHasBeenSet;
+
+                    /**
+                     * GET HTTP 请求的超时时间，单位：秒。默认 60。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_timeout;
+                    bool m_timeoutHasBeenSet;
 
                 };
             }

@@ -45,6 +45,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateBatchProductionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateBatchProductionResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateFenceBindRequest.h>
@@ -283,6 +285,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/RemoveUserByRoomIdFromTRTCResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageAIServiceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageAIServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageEventRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageEventResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceRequest.h>
@@ -352,6 +356,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBatchProductionResponse> CreateBatchProductionOutcome;
                 typedef std::future<CreateBatchProductionOutcome> CreateBatchProductionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateBatchProductionRequest&, CreateBatchProductionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchProductionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCloudStorageAIServiceResponse> CreateCloudStorageAIServiceOutcome;
+                typedef std::future<CreateCloudStorageAIServiceOutcome> CreateCloudStorageAIServiceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateCloudStorageAIServiceRequest&, CreateCloudStorageAIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudStorageAIServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDeviceResponse> CreateDeviceOutcome;
                 typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceRequest&, CreateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceAsyncHandler;
@@ -709,6 +716,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetCloudStorageResponse> ResetCloudStorageOutcome;
                 typedef std::future<ResetCloudStorageOutcome> ResetCloudStorageOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ResetCloudStorageRequest&, ResetCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetCloudStorageAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetCloudStorageAIServiceResponse> ResetCloudStorageAIServiceOutcome;
+                typedef std::future<ResetCloudStorageAIServiceOutcome> ResetCloudStorageAIServiceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ResetCloudStorageAIServiceRequest&, ResetCloudStorageAIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetCloudStorageAIServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetCloudStorageEventResponse> ResetCloudStorageEventOutcome;
                 typedef std::future<ResetCloudStorageEventOutcome> ResetCloudStorageEventOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ResetCloudStorageEventRequest&, ResetCloudStorageEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetCloudStorageEventAsyncHandler;
@@ -843,6 +853,15 @@ namespace TencentCloud
                 CreateBatchProductionOutcome CreateBatchProduction(const Model::CreateBatchProductionRequest &request);
                 void CreateBatchProductionAsync(const Model::CreateBatchProductionRequest& request, const CreateBatchProductionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBatchProductionOutcomeCallable CreateBatchProductionCallable(const Model::CreateBatchProductionRequest& request);
+
+                /**
+                 *开通设备云存AI分析服务
+                 * @param req CreateCloudStorageAIServiceRequest
+                 * @return CreateCloudStorageAIServiceOutcome
+                 */
+                CreateCloudStorageAIServiceOutcome CreateCloudStorageAIService(const Model::CreateCloudStorageAIServiceRequest &request);
+                void CreateCloudStorageAIServiceAsync(const Model::CreateCloudStorageAIServiceRequest& request, const CreateCloudStorageAIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudStorageAIServiceOutcomeCallable CreateCloudStorageAIServiceCallable(const Model::CreateCloudStorageAIServiceRequest& request);
 
                 /**
                  *创建设备
@@ -1914,6 +1933,15 @@ namespace TencentCloud
                 ResetCloudStorageOutcome ResetCloudStorage(const Model::ResetCloudStorageRequest &request);
                 void ResetCloudStorageAsync(const Model::ResetCloudStorageRequest& request, const ResetCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetCloudStorageOutcomeCallable ResetCloudStorageCallable(const Model::ResetCloudStorageRequest& request);
+
+                /**
+                 *重置指定设备的云存 AI 服务
+                 * @param req ResetCloudStorageAIServiceRequest
+                 * @return ResetCloudStorageAIServiceOutcome
+                 */
+                ResetCloudStorageAIServiceOutcome ResetCloudStorageAIService(const Model::ResetCloudStorageAIServiceRequest &request);
+                void ResetCloudStorageAIServiceAsync(const Model::ResetCloudStorageAIServiceRequest& request, const ResetCloudStorageAIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetCloudStorageAIServiceOutcomeCallable ResetCloudStorageAIServiceCallable(const Model::ResetCloudStorageAIServiceRequest& request);
 
                 /**
                  *重置云存事件

@@ -21,7 +21,8 @@ using namespace TencentCloud::Trtc::V20190722::Model;
 using namespace std;
 
 McuUserInfoParams::McuUserInfoParams() :
-    m_userInfoHasBeenSet(false)
+    m_userInfoHasBeenSet(false),
+    m_soundLevelHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,16 @@ CoreInternalOutcome McuUserInfoParams::Deserialize(const rapidjson::Value &value
         m_userInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("SoundLevel") && !value["SoundLevel"].IsNull())
+    {
+        if (!value["SoundLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuUserInfoParams.SoundLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_soundLevel = value["SoundLevel"].GetUint64();
+        m_soundLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +72,14 @@ void McuUserInfoParams::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_userInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_soundLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SoundLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_soundLevel, allocator);
     }
 
 }
@@ -80,5 +99,21 @@ void McuUserInfoParams::SetUserInfo(const MixUserInfo& _userInfo)
 bool McuUserInfoParams::UserInfoHasBeenSet() const
 {
     return m_userInfoHasBeenSet;
+}
+
+uint64_t McuUserInfoParams::GetSoundLevel() const
+{
+    return m_soundLevel;
+}
+
+void McuUserInfoParams::SetSoundLevel(const uint64_t& _soundLevel)
+{
+    m_soundLevel = _soundLevel;
+    m_soundLevelHasBeenSet = true;
+}
+
+bool McuUserInfoParams::SoundLevelHasBeenSet() const
+{
+    return m_soundLevelHasBeenSet;
 }
 

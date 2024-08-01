@@ -53,7 +53,9 @@ DescribeRoomResponse::DescribeRoomResponse() :
     m_recordBackgroundHasBeenSet(false),
     m_rTMPStreamingURLHasBeenSet(false),
     m_recordSceneHasBeenSet(false),
-    m_recordLangHasBeenSet(false)
+    m_recordLangHasBeenSet(false),
+    m_recordStreamHasBeenSet(false),
+    m_recordLayoutHasBeenSet(false)
 {
 }
 
@@ -394,6 +396,26 @@ CoreInternalOutcome DescribeRoomResponse::Deserialize(const string &payload)
         m_recordLangHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RecordStream") && !rsp["RecordStream"].IsNull())
+    {
+        if (!rsp["RecordStream"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordStream` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordStream = rsp["RecordStream"].GetUint64();
+        m_recordStreamHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RecordLayout") && !rsp["RecordLayout"].IsNull())
+    {
+        if (!rsp["RecordLayout"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordLayout` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordLayout = rsp["RecordLayout"].GetUint64();
+        m_recordLayoutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -647,6 +669,22 @@ string DescribeRoomResponse::ToJsonString() const
         string key = "RecordLang";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recordLang.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordStreamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordStream";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordStream, allocator);
+    }
+
+    if (m_recordLayoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordLayout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordLayout, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -959,6 +997,26 @@ string DescribeRoomResponse::GetRecordLang() const
 bool DescribeRoomResponse::RecordLangHasBeenSet() const
 {
     return m_recordLangHasBeenSet;
+}
+
+uint64_t DescribeRoomResponse::GetRecordStream() const
+{
+    return m_recordStream;
+}
+
+bool DescribeRoomResponse::RecordStreamHasBeenSet() const
+{
+    return m_recordStreamHasBeenSet;
+}
+
+uint64_t DescribeRoomResponse::GetRecordLayout() const
+{
+    return m_recordLayout;
+}
+
+bool DescribeRoomResponse::RecordLayoutHasBeenSet() const
+{
+    return m_recordLayoutHasBeenSet;
 }
 
 

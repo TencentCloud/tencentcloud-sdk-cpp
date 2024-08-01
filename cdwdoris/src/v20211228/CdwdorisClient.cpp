@@ -40,6 +40,92 @@ CdwdorisClient::CdwdorisClient(const Credential &credential, const string &regio
 }
 
 
+CdwdorisClient::CancelBackupJobOutcome CdwdorisClient::CancelBackupJob(const CancelBackupJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelBackupJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelBackupJobResponse rsp = CancelBackupJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelBackupJobOutcome(rsp);
+        else
+            return CancelBackupJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelBackupJobOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::CancelBackupJobAsync(const CancelBackupJobRequest& request, const CancelBackupJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelBackupJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::CancelBackupJobOutcomeCallable CdwdorisClient::CancelBackupJobCallable(const CancelBackupJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelBackupJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelBackupJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::CreateBackUpScheduleOutcome CdwdorisClient::CreateBackUpSchedule(const CreateBackUpScheduleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBackUpSchedule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBackUpScheduleResponse rsp = CreateBackUpScheduleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBackUpScheduleOutcome(rsp);
+        else
+            return CreateBackUpScheduleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBackUpScheduleOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::CreateBackUpScheduleAsync(const CreateBackUpScheduleRequest& request, const CreateBackUpScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBackUpSchedule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::CreateBackUpScheduleOutcomeCallable CdwdorisClient::CreateBackUpScheduleCallable(const CreateBackUpScheduleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBackUpScheduleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBackUpSchedule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwdorisClient::CreateInstanceNewOutcome CdwdorisClient::CreateInstanceNew(const CreateInstanceNewRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInstanceNew");
@@ -126,6 +212,49 @@ CdwdorisClient::CreateWorkloadGroupOutcomeCallable CdwdorisClient::CreateWorkloa
     return task->get_future();
 }
 
+CdwdorisClient::DeleteBackUpDataOutcome CdwdorisClient::DeleteBackUpData(const DeleteBackUpDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBackUpData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBackUpDataResponse rsp = DeleteBackUpDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBackUpDataOutcome(rsp);
+        else
+            return DeleteBackUpDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBackUpDataOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DeleteBackUpDataAsync(const DeleteBackUpDataRequest& request, const DeleteBackUpDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBackUpData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DeleteBackUpDataOutcomeCallable CdwdorisClient::DeleteBackUpDataCallable(const DeleteBackUpDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBackUpDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBackUpData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwdorisClient::DeleteWorkloadGroupOutcome CdwdorisClient::DeleteWorkloadGroup(const DeleteWorkloadGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteWorkloadGroup");
@@ -169,6 +298,264 @@ CdwdorisClient::DeleteWorkloadGroupOutcomeCallable CdwdorisClient::DeleteWorkloa
     return task->get_future();
 }
 
+CdwdorisClient::DescribeAreaRegionOutcome CdwdorisClient::DescribeAreaRegion(const DescribeAreaRegionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAreaRegion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAreaRegionResponse rsp = DescribeAreaRegionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAreaRegionOutcome(rsp);
+        else
+            return DescribeAreaRegionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAreaRegionOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeAreaRegionAsync(const DescribeAreaRegionRequest& request, const DescribeAreaRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAreaRegion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeAreaRegionOutcomeCallable CdwdorisClient::DescribeAreaRegionCallable(const DescribeAreaRegionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAreaRegionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAreaRegion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeBackUpJobOutcome CdwdorisClient::DescribeBackUpJob(const DescribeBackUpJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackUpJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackUpJobResponse rsp = DescribeBackUpJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackUpJobOutcome(rsp);
+        else
+            return DescribeBackUpJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackUpJobOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeBackUpJobAsync(const DescribeBackUpJobRequest& request, const DescribeBackUpJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackUpJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeBackUpJobOutcomeCallable CdwdorisClient::DescribeBackUpJobCallable(const DescribeBackUpJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackUpJobOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackUpJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeBackUpJobDetailOutcome CdwdorisClient::DescribeBackUpJobDetail(const DescribeBackUpJobDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackUpJobDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackUpJobDetailResponse rsp = DescribeBackUpJobDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackUpJobDetailOutcome(rsp);
+        else
+            return DescribeBackUpJobDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackUpJobDetailOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeBackUpJobDetailAsync(const DescribeBackUpJobDetailRequest& request, const DescribeBackUpJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackUpJobDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeBackUpJobDetailOutcomeCallable CdwdorisClient::DescribeBackUpJobDetailCallable(const DescribeBackUpJobDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackUpJobDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackUpJobDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeBackUpSchedulesOutcome CdwdorisClient::DescribeBackUpSchedules(const DescribeBackUpSchedulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackUpSchedules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackUpSchedulesResponse rsp = DescribeBackUpSchedulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackUpSchedulesOutcome(rsp);
+        else
+            return DescribeBackUpSchedulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackUpSchedulesOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeBackUpSchedulesAsync(const DescribeBackUpSchedulesRequest& request, const DescribeBackUpSchedulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackUpSchedules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeBackUpSchedulesOutcomeCallable CdwdorisClient::DescribeBackUpSchedulesCallable(const DescribeBackUpSchedulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackUpSchedulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackUpSchedules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeBackUpTablesOutcome CdwdorisClient::DescribeBackUpTables(const DescribeBackUpTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackUpTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackUpTablesResponse rsp = DescribeBackUpTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackUpTablesOutcome(rsp);
+        else
+            return DescribeBackUpTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackUpTablesOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeBackUpTablesAsync(const DescribeBackUpTablesRequest& request, const DescribeBackUpTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackUpTables(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeBackUpTablesOutcomeCallable CdwdorisClient::DescribeBackUpTablesCallable(const DescribeBackUpTablesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackUpTablesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackUpTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeBackUpTaskDetailOutcome CdwdorisClient::DescribeBackUpTaskDetail(const DescribeBackUpTaskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackUpTaskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackUpTaskDetailResponse rsp = DescribeBackUpTaskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackUpTaskDetailOutcome(rsp);
+        else
+            return DescribeBackUpTaskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackUpTaskDetailOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeBackUpTaskDetailAsync(const DescribeBackUpTaskDetailRequest& request, const DescribeBackUpTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackUpTaskDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeBackUpTaskDetailOutcomeCallable CdwdorisClient::DescribeBackUpTaskDetailCallable(const DescribeBackUpTaskDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackUpTaskDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackUpTaskDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwdorisClient::DescribeClusterConfigsOutcome CdwdorisClient::DescribeClusterConfigs(const DescribeClusterConfigsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterConfigs");
@@ -205,6 +592,49 @@ CdwdorisClient::DescribeClusterConfigsOutcomeCallable CdwdorisClient::DescribeCl
         [this, request]()
         {
             return this->DescribeClusterConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeClusterConfigsHistoryOutcome CdwdorisClient::DescribeClusterConfigsHistory(const DescribeClusterConfigsHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterConfigsHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterConfigsHistoryResponse rsp = DescribeClusterConfigsHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterConfigsHistoryOutcome(rsp);
+        else
+            return DescribeClusterConfigsHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterConfigsHistoryOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeClusterConfigsHistoryAsync(const DescribeClusterConfigsHistoryRequest& request, const DescribeClusterConfigsHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterConfigsHistory(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeClusterConfigsHistoryOutcomeCallable CdwdorisClient::DescribeClusterConfigsHistoryCallable(const DescribeClusterConfigsHistoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterConfigsHistoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterConfigsHistory(request);
         }
     );
 
@@ -298,6 +728,135 @@ CdwdorisClient::DescribeDatabaseAuditRecordsOutcomeCallable CdwdorisClient::Desc
     return task->get_future();
 }
 
+CdwdorisClient::DescribeDatabaseAuditResourceOutcome CdwdorisClient::DescribeDatabaseAuditResource(const DescribeDatabaseAuditResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDatabaseAuditResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDatabaseAuditResourceResponse rsp = DescribeDatabaseAuditResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDatabaseAuditResourceOutcome(rsp);
+        else
+            return DescribeDatabaseAuditResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDatabaseAuditResourceOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeDatabaseAuditResourceAsync(const DescribeDatabaseAuditResourceRequest& request, const DescribeDatabaseAuditResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDatabaseAuditResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeDatabaseAuditResourceOutcomeCallable CdwdorisClient::DescribeDatabaseAuditResourceCallable(const DescribeDatabaseAuditResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDatabaseAuditResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDatabaseAuditResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeDmsSqlHistoryOutcome CdwdorisClient::DescribeDmsSqlHistory(const DescribeDmsSqlHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDmsSqlHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDmsSqlHistoryResponse rsp = DescribeDmsSqlHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDmsSqlHistoryOutcome(rsp);
+        else
+            return DescribeDmsSqlHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDmsSqlHistoryOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeDmsSqlHistoryAsync(const DescribeDmsSqlHistoryRequest& request, const DescribeDmsSqlHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDmsSqlHistory(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeDmsSqlHistoryOutcomeCallable CdwdorisClient::DescribeDmsSqlHistoryCallable(const DescribeDmsSqlHistoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDmsSqlHistoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDmsSqlHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeDorisMetricFilesOutcome CdwdorisClient::DescribeDorisMetricFiles(const DescribeDorisMetricFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDorisMetricFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDorisMetricFilesResponse rsp = DescribeDorisMetricFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDorisMetricFilesOutcome(rsp);
+        else
+            return DescribeDorisMetricFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDorisMetricFilesOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeDorisMetricFilesAsync(const DescribeDorisMetricFilesRequest& request, const DescribeDorisMetricFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDorisMetricFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeDorisMetricFilesOutcomeCallable CdwdorisClient::DescribeDorisMetricFilesCallable(const DescribeDorisMetricFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDorisMetricFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDorisMetricFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwdorisClient::DescribeFederationTokenOutcome CdwdorisClient::DescribeFederationToken(const DescribeFederationTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFederationToken");
@@ -334,6 +893,49 @@ CdwdorisClient::DescribeFederationTokenOutcomeCallable CdwdorisClient::DescribeF
         [this, request]()
         {
             return this->DescribeFederationToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeFrontEndOutcome CdwdorisClient::DescribeFrontEnd(const DescribeFrontEndRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFrontEnd");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFrontEndResponse rsp = DescribeFrontEndResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFrontEndOutcome(rsp);
+        else
+            return DescribeFrontEndOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFrontEndOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeFrontEndAsync(const DescribeFrontEndRequest& request, const DescribeFrontEndAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFrontEnd(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeFrontEndOutcomeCallable CdwdorisClient::DescribeFrontEndCallable(const DescribeFrontEndRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFrontEndOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFrontEnd(request);
         }
     );
 
@@ -513,6 +1115,92 @@ CdwdorisClient::DescribeInstanceNodesInfoOutcomeCallable CdwdorisClient::Describ
     return task->get_future();
 }
 
+CdwdorisClient::DescribeInstanceNodesRoleOutcome CdwdorisClient::DescribeInstanceNodesRole(const DescribeInstanceNodesRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceNodesRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceNodesRoleResponse rsp = DescribeInstanceNodesRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceNodesRoleOutcome(rsp);
+        else
+            return DescribeInstanceNodesRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceNodesRoleOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeInstanceNodesRoleAsync(const DescribeInstanceNodesRoleRequest& request, const DescribeInstanceNodesRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceNodesRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeInstanceNodesRoleOutcomeCallable CdwdorisClient::DescribeInstanceNodesRoleCallable(const DescribeInstanceNodesRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceNodesRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceNodesRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeInstanceOperationsOutcome CdwdorisClient::DescribeInstanceOperations(const DescribeInstanceOperationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceOperations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceOperationsResponse rsp = DescribeInstanceOperationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceOperationsOutcome(rsp);
+        else
+            return DescribeInstanceOperationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceOperationsOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeInstanceOperationsAsync(const DescribeInstanceOperationsRequest& request, const DescribeInstanceOperationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceOperations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeInstanceOperationsOutcomeCallable CdwdorisClient::DescribeInstanceOperationsCallable(const DescribeInstanceOperationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceOperationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceOperations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwdorisClient::DescribeInstanceStateOutcome CdwdorisClient::DescribeInstanceState(const DescribeInstanceStateRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceState");
@@ -635,6 +1323,49 @@ CdwdorisClient::DescribeInstancesOutcomeCallable CdwdorisClient::DescribeInstanc
         [this, request]()
         {
             return this->DescribeInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeInstancesHealthStateOutcome CdwdorisClient::DescribeInstancesHealthState(const DescribeInstancesHealthStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancesHealthState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesHealthStateResponse rsp = DescribeInstancesHealthStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesHealthStateOutcome(rsp);
+        else
+            return DescribeInstancesHealthStateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesHealthStateOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeInstancesHealthStateAsync(const DescribeInstancesHealthStateRequest& request, const DescribeInstancesHealthStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancesHealthState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeInstancesHealthStateOutcomeCallable CdwdorisClient::DescribeInstancesHealthStateCallable(const DescribeInstancesHealthStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesHealthStateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancesHealthState(request);
         }
     );
 
@@ -850,6 +1581,49 @@ CdwdorisClient::DescribeSlowQueryRecordsDownloadOutcomeCallable CdwdorisClient::
         [this, request]()
         {
             return this->DescribeSlowQueryRecordsDownload(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::DescribeSpecOutcome CdwdorisClient::DescribeSpec(const DescribeSpecRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSpec");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSpecResponse rsp = DescribeSpecResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSpecOutcome(rsp);
+        else
+            return DescribeSpecOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSpecOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeSpecAsync(const DescribeSpecRequest& request, const DescribeSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSpec(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeSpecOutcomeCallable CdwdorisClient::DescribeSpecCallable(const DescribeSpecRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSpecOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSpec(request);
         }
     );
 
@@ -1158,6 +1932,49 @@ CdwdorisClient::ModifyInstanceKeyValConfigsOutcomeCallable CdwdorisClient::Modif
     return task->get_future();
 }
 
+CdwdorisClient::ModifyNodeStatusOutcome CdwdorisClient::ModifyNodeStatus(const ModifyNodeStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNodeStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNodeStatusResponse rsp = ModifyNodeStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNodeStatusOutcome(rsp);
+        else
+            return ModifyNodeStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNodeStatusOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::ModifyNodeStatusAsync(const ModifyNodeStatusRequest& request, const ModifyNodeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNodeStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::ModifyNodeStatusOutcomeCallable CdwdorisClient::ModifyNodeStatusCallable(const ModifyNodeStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNodeStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNodeStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwdorisClient::ModifySecurityGroupsOutcome CdwdorisClient::ModifySecurityGroups(const ModifySecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySecurityGroups");
@@ -1373,6 +2190,92 @@ CdwdorisClient::ModifyWorkloadGroupStatusOutcomeCallable CdwdorisClient::ModifyW
     return task->get_future();
 }
 
+CdwdorisClient::OpenBackUpOutcome CdwdorisClient::OpenBackUp(const OpenBackUpRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenBackUp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenBackUpResponse rsp = OpenBackUpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenBackUpOutcome(rsp);
+        else
+            return OpenBackUpOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenBackUpOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::OpenBackUpAsync(const OpenBackUpRequest& request, const OpenBackUpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenBackUp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::OpenBackUpOutcomeCallable CdwdorisClient::OpenBackUpCallable(const OpenBackUpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenBackUpOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenBackUp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::RecoverBackUpJobOutcome CdwdorisClient::RecoverBackUpJob(const RecoverBackUpJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecoverBackUpJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecoverBackUpJobResponse rsp = RecoverBackUpJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecoverBackUpJobOutcome(rsp);
+        else
+            return RecoverBackUpJobOutcome(o.GetError());
+    }
+    else
+    {
+        return RecoverBackUpJobOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::RecoverBackUpJobAsync(const RecoverBackUpJobRequest& request, const RecoverBackUpJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecoverBackUpJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::RecoverBackUpJobOutcomeCallable CdwdorisClient::RecoverBackUpJobCallable(const RecoverBackUpJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecoverBackUpJobOutcome()>>(
+        [this, request]()
+        {
+            return this->RecoverBackUpJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwdorisClient::ReduceInstanceOutcome CdwdorisClient::ReduceInstance(const ReduceInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "ReduceInstance");
@@ -1452,6 +2355,49 @@ CdwdorisClient::ResizeDiskOutcomeCallable CdwdorisClient::ResizeDiskCallable(con
         [this, request]()
         {
             return this->ResizeDisk(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwdorisClient::RestartClusterForConfigsOutcome CdwdorisClient::RestartClusterForConfigs(const RestartClusterForConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestartClusterForConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestartClusterForConfigsResponse rsp = RestartClusterForConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestartClusterForConfigsOutcome(rsp);
+        else
+            return RestartClusterForConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return RestartClusterForConfigsOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::RestartClusterForConfigsAsync(const RestartClusterForConfigsRequest& request, const RestartClusterForConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestartClusterForConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::RestartClusterForConfigsOutcomeCallable CdwdorisClient::RestartClusterForConfigsCallable(const RestartClusterForConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestartClusterForConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->RestartClusterForConfigs(request);
         }
     );
 

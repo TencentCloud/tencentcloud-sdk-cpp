@@ -27,7 +27,8 @@ SetUserQuotaRequest::SetUserQuotaRequest() :
     m_userTypeHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_capacityHardLimitHasBeenSet(false),
-    m_fileHardLimitHasBeenSet(false)
+    m_fileHardLimitHasBeenSet(false),
+    m_directoryPathHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string SetUserQuotaRequest::ToJsonString() const
         string key = "FileHardLimit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fileHardLimit, allocator);
+    }
+
+    if (m_directoryPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DirectoryPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_directoryPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void SetUserQuotaRequest::SetFileHardLimit(const uint64_t& _fileHardLimit)
 bool SetUserQuotaRequest::FileHardLimitHasBeenSet() const
 {
     return m_fileHardLimitHasBeenSet;
+}
+
+string SetUserQuotaRequest::GetDirectoryPath() const
+{
+    return m_directoryPath;
+}
+
+void SetUserQuotaRequest::SetDirectoryPath(const string& _directoryPath)
+{
+    m_directoryPath = _directoryPath;
+    m_directoryPathHasBeenSet = true;
+}
+
+bool SetUserQuotaRequest::DirectoryPathHasBeenSet() const
+{
+    return m_directoryPathHasBeenSet;
 }
 
 

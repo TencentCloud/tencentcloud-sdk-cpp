@@ -68,6 +68,31 @@ namespace TencentCloud
                      */
                     bool UserInfoHasBeenSet() const;
 
+                    /**
+                     * 获取混音的音量调整：取值范围是0到100，100为原始上行音量，不填默认为100，值越小则音量越低。
+注：该参数只在音量白名单下配置生效，其他场景配置无效。
+                     * @return SoundLevel 混音的音量调整：取值范围是0到100，100为原始上行音量，不填默认为100，值越小则音量越低。
+注：该参数只在音量白名单下配置生效，其他场景配置无效。
+                     * 
+                     */
+                    uint64_t GetSoundLevel() const;
+
+                    /**
+                     * 设置混音的音量调整：取值范围是0到100，100为原始上行音量，不填默认为100，值越小则音量越低。
+注：该参数只在音量白名单下配置生效，其他场景配置无效。
+                     * @param _soundLevel 混音的音量调整：取值范围是0到100，100为原始上行音量，不填默认为100，值越小则音量越低。
+注：该参数只在音量白名单下配置生效，其他场景配置无效。
+                     * 
+                     */
+                    void SetSoundLevel(const uint64_t& _soundLevel);
+
+                    /**
+                     * 判断参数 SoundLevel 是否已赋值
+                     * @return SoundLevel 是否已赋值
+                     * 
+                     */
+                    bool SoundLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -75,6 +100,13 @@ namespace TencentCloud
                      */
                     MixUserInfo m_userInfo;
                     bool m_userInfoHasBeenSet;
+
+                    /**
+                     * 混音的音量调整：取值范围是0到100，100为原始上行音量，不填默认为100，值越小则音量越低。
+注：该参数只在音量白名单下配置生效，其他场景配置无效。
+                     */
+                    uint64_t m_soundLevel;
+                    bool m_soundLevelHasBeenSet;
 
                 };
             }

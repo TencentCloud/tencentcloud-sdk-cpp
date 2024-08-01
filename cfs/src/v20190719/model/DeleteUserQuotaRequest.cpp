@@ -25,7 +25,8 @@ using namespace std;
 DeleteUserQuotaRequest::DeleteUserQuotaRequest() :
     m_fileSystemIdHasBeenSet(false),
     m_userTypeHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_directoryPathHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DeleteUserQuotaRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_directoryPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DirectoryPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_directoryPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DeleteUserQuotaRequest::SetUserId(const string& _userId)
 bool DeleteUserQuotaRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string DeleteUserQuotaRequest::GetDirectoryPath() const
+{
+    return m_directoryPath;
+}
+
+void DeleteUserQuotaRequest::SetDirectoryPath(const string& _directoryPath)
+{
+    m_directoryPath = _directoryPath;
+    m_directoryPathHasBeenSet = true;
+}
+
+bool DeleteUserQuotaRequest::DirectoryPathHasBeenSet() const
+{
+    return m_directoryPathHasBeenSet;
 }
 
 

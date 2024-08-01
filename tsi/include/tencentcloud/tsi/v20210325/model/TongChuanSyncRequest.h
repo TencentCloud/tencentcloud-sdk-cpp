@@ -64,15 +64,35 @@ namespace TencentCloud
                     bool SessionUuidHasBeenSet() const;
 
                     /**
-                     * 获取音频中的语言类型，支持语言列表<li> zh : 中文 </li> <li> en : 英文 </li>
-                     * @return Source 音频中的语言类型，支持语言列表<li> zh : 中文 </li> <li> en : 英文 </li>
+                     * 获取源语言，支持：
+zh：中文
+en：英语
+ja：日语
+ko：韩语
+yue：粤语
+                     * @return Source 源语言，支持：
+zh：中文
+en：英语
+ja：日语
+ko：韩语
+yue：粤语
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置音频中的语言类型，支持语言列表<li> zh : 中文 </li> <li> en : 英文 </li>
-                     * @param _source 音频中的语言类型，支持语言列表<li> zh : 中文 </li> <li> en : 英文 </li>
+                     * 设置源语言，支持：
+zh：中文
+en：英语
+ja：日语
+ko：韩语
+yue：粤语
+                     * @param _source 源语言，支持：
+zh：中文
+en：英语
+ja：日语
+ko：韩语
+yue：粤语
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -85,15 +105,35 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取翻译目标语言类型，支持的语言列表<li> zh : 中文 </li> <li> en : 英文 </li>
-                     * @return Target 翻译目标语言类型，支持的语言列表<li> zh : 中文 </li> <li> en : 英文 </li>
+                     * 获取目标语言，各源语言的目标语言支持列表如下
+<li>zh（中文）：en（英语）、ja（日语）、ko（韩语）、yue（粤语）</li>
+<li>en（英语）：zh（中文）</li>
+<li>ja（日语）：zh（中文）</li>
+<li>ko（韩语）：zh（中文）</li>
+<li>yue（粤语）：zh（中文）</li>
+                     * @return Target 目标语言，各源语言的目标语言支持列表如下
+<li>zh（中文）：en（英语）、ja（日语）、ko（韩语）、yue（粤语）</li>
+<li>en（英语）：zh（中文）</li>
+<li>ja（日语）：zh（中文）</li>
+<li>ko（韩语）：zh（中文）</li>
+<li>yue（粤语）：zh（中文）</li>
                      * 
                      */
                     std::string GetTarget() const;
 
                     /**
-                     * 设置翻译目标语言类型，支持的语言列表<li> zh : 中文 </li> <li> en : 英文 </li>
-                     * @param _target 翻译目标语言类型，支持的语言列表<li> zh : 中文 </li> <li> en : 英文 </li>
+                     * 设置目标语言，各源语言的目标语言支持列表如下
+<li>zh（中文）：en（英语）、ja（日语）、ko（韩语）、yue（粤语）</li>
+<li>en（英语）：zh（中文）</li>
+<li>ja（日语）：zh（中文）</li>
+<li>ko（韩语）：zh（中文）</li>
+<li>yue（粤语）：zh（中文）</li>
+                     * @param _target 目标语言，各源语言的目标语言支持列表如下
+<li>zh（中文）：en（英语）、ja（日语）、ko（韩语）、yue（粤语）</li>
+<li>en（英语）：zh（中文）</li>
+<li>ja（日语）：zh（中文）</li>
+<li>ko（韩语）：zh（中文）</li>
+<li>yue（粤语）：zh（中文）</li>
                      * 
                      */
                     void SetTarget(const std::string& _target);
@@ -240,13 +280,23 @@ namespace TencentCloud
                     bool m_sessionUuidHasBeenSet;
 
                     /**
-                     * 音频中的语言类型，支持语言列表<li> zh : 中文 </li> <li> en : 英文 </li>
+                     * 源语言，支持：
+zh：中文
+en：英语
+ja：日语
+ko：韩语
+yue：粤语
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 翻译目标语言类型，支持的语言列表<li> zh : 中文 </li> <li> en : 英文 </li>
+                     * 目标语言，各源语言的目标语言支持列表如下
+<li>zh（中文）：en（英语）、ja（日语）、ko（韩语）、yue（粤语）</li>
+<li>en（英语）：zh（中文）</li>
+<li>ja（日语）：zh（中文）</li>
+<li>ko（韩语）：zh（中文）</li>
+<li>yue（粤语）：zh（中文）</li>
                      */
                     std::string m_target;
                     bool m_targetHasBeenSet;

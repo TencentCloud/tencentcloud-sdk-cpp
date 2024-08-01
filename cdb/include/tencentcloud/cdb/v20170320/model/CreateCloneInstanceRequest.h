@@ -66,15 +66,19 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取如果需要克隆实例回档到指定时间，则指定该值。时间格式为： yyyy-mm-dd hh:mm:ss 。
-                     * @return SpecifiedRollbackTime 如果需要克隆实例回档到指定时间，则指定该值。时间格式为： yyyy-mm-dd hh:mm:ss 。
+                     * 获取如果需要克隆实例回档到指定时间，则指定该值。时间格式为：yyyy-mm-dd hh:mm:ss。
+说明：此参数和 SpecifiedBackupId 参数需要2选1进行设置。
+                     * @return SpecifiedRollbackTime 如果需要克隆实例回档到指定时间，则指定该值。时间格式为：yyyy-mm-dd hh:mm:ss。
+说明：此参数和 SpecifiedBackupId 参数需要2选1进行设置。
                      * 
                      */
                     std::string GetSpecifiedRollbackTime() const;
 
                     /**
-                     * 设置如果需要克隆实例回档到指定时间，则指定该值。时间格式为： yyyy-mm-dd hh:mm:ss 。
-                     * @param _specifiedRollbackTime 如果需要克隆实例回档到指定时间，则指定该值。时间格式为： yyyy-mm-dd hh:mm:ss 。
+                     * 设置如果需要克隆实例回档到指定时间，则指定该值。时间格式为：yyyy-mm-dd hh:mm:ss。
+说明：此参数和 SpecifiedBackupId 参数需要2选1进行设置。
+                     * @param _specifiedRollbackTime 如果需要克隆实例回档到指定时间，则指定该值。时间格式为：yyyy-mm-dd hh:mm:ss。
+说明：此参数和 SpecifiedBackupId 参数需要2选1进行设置。
                      * 
                      */
                     void SetSpecifiedRollbackTime(const std::string& _specifiedRollbackTime);
@@ -87,15 +91,19 @@ namespace TencentCloud
                     bool SpecifiedRollbackTimeHasBeenSet() const;
 
                     /**
-                     * 获取如果需要克隆实例回档到指定备份的时间点，则指定该值为物理备份的Id。请使用 [查询数据备份文件列表](/document/api/236/15842) 。
-                     * @return SpecifiedBackupId 如果需要克隆实例回档到指定备份的时间点，则指定该值为物理备份的Id。请使用 [查询数据备份文件列表](/document/api/236/15842) 。
+                     * 获取如果需要克隆实例回档到指定备份集，则指定该值为备份文件的 Id。请使用 [查询数据备份文件列表](/document/api/236/15842)。
+说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、集群版实例，备份文件为快照备份。
+                     * @return SpecifiedBackupId 如果需要克隆实例回档到指定备份集，则指定该值为备份文件的 Id。请使用 [查询数据备份文件列表](/document/api/236/15842)。
+说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、集群版实例，备份文件为快照备份。
                      * 
                      */
                     int64_t GetSpecifiedBackupId() const;
 
                     /**
-                     * 设置如果需要克隆实例回档到指定备份的时间点，则指定该值为物理备份的Id。请使用 [查询数据备份文件列表](/document/api/236/15842) 。
-                     * @param _specifiedBackupId 如果需要克隆实例回档到指定备份的时间点，则指定该值为物理备份的Id。请使用 [查询数据备份文件列表](/document/api/236/15842) 。
+                     * 设置如果需要克隆实例回档到指定备份集，则指定该值为备份文件的 Id。请使用 [查询数据备份文件列表](/document/api/236/15842)。
+说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、集群版实例，备份文件为快照备份。
+                     * @param _specifiedBackupId 如果需要克隆实例回档到指定备份集，则指定该值为备份文件的 Id。请使用 [查询数据备份文件列表](/document/api/236/15842)。
+说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、集群版实例，备份文件为快照备份。
                      * 
                      */
                     void SetSpecifiedBackupId(const int64_t& _specifiedBackupId);
@@ -557,13 +565,15 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 如果需要克隆实例回档到指定时间，则指定该值。时间格式为： yyyy-mm-dd hh:mm:ss 。
+                     * 如果需要克隆实例回档到指定时间，则指定该值。时间格式为：yyyy-mm-dd hh:mm:ss。
+说明：此参数和 SpecifiedBackupId 参数需要2选1进行设置。
                      */
                     std::string m_specifiedRollbackTime;
                     bool m_specifiedRollbackTimeHasBeenSet;
 
                     /**
-                     * 如果需要克隆实例回档到指定备份的时间点，则指定该值为物理备份的Id。请使用 [查询数据备份文件列表](/document/api/236/15842) 。
+                     * 如果需要克隆实例回档到指定备份集，则指定该值为备份文件的 Id。请使用 [查询数据备份文件列表](/document/api/236/15842)。
+说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、集群版实例，备份文件为快照备份。
                      */
                     int64_t m_specifiedBackupId;
                     bool m_specifiedBackupIdHasBeenSet;

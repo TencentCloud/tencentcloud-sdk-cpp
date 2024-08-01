@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取指定配额类型，包括Uid、Gid
-                     * @return UserType 指定配额类型，包括Uid、Gid
+                     * 获取指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额
+                     * @return UserType 指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额
                      * 
                      */
                     std::string GetUserType() const;
 
                     /**
-                     * 设置指定配额类型，包括Uid、Gid
-                     * @param _userType 指定配额类型，包括Uid、Gid
+                     * 设置指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额
+                     * @param _userType 指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额
                      * 
                      */
                     void SetUserType(const std::string& _userType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取容量硬限制，单位GiB
-                     * @return CapacityHardLimit 容量硬限制，单位GiB
+                     * 获取容量硬限制，单位GiB。设置范围10-10000000。
+                     * @return CapacityHardLimit 容量硬限制，单位GiB。设置范围10-10000000。
                      * 
                      */
                     uint64_t GetCapacityHardLimit() const;
 
                     /**
-                     * 设置容量硬限制，单位GiB
-                     * @param _capacityHardLimit 容量硬限制，单位GiB
+                     * 设置容量硬限制，单位GiB。设置范围10-10000000。
+                     * @param _capacityHardLimit 容量硬限制，单位GiB。设置范围10-10000000。
                      * 
                      */
                     void SetCapacityHardLimit(const uint64_t& _capacityHardLimit);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CapacityHardLimitHasBeenSet() const;
 
                     /**
-                     * 获取文件硬限制，单位个
-                     * @return FileHardLimit 文件硬限制，单位个
+                     * 获取文件硬限制，单位个。设置范围1000-100000000
+                     * @return FileHardLimit 文件硬限制，单位个。设置范围1000-100000000
                      * 
                      */
                     uint64_t GetFileHardLimit() const;
 
                     /**
-                     * 设置文件硬限制，单位个
-                     * @param _fileHardLimit 文件硬限制，单位个
+                     * 设置文件硬限制，单位个。设置范围1000-100000000
+                     * @param _fileHardLimit 文件硬限制，单位个。设置范围1000-100000000
                      * 
                      */
                     void SetFileHardLimit(const uint64_t& _fileHardLimit);
@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool FileHardLimitHasBeenSet() const;
 
+                    /**
+                     * 获取需设置目录配额的目录绝对路径，不同目录不可存在包含关系
+                     * @return DirectoryPath 需设置目录配额的目录绝对路径，不同目录不可存在包含关系
+                     * 
+                     */
+                    std::string GetDirectoryPath() const;
+
+                    /**
+                     * 设置需设置目录配额的目录绝对路径，不同目录不可存在包含关系
+                     * @param _directoryPath 需设置目录配额的目录绝对路径，不同目录不可存在包含关系
+                     * 
+                     */
+                    void SetDirectoryPath(const std::string& _directoryPath);
+
+                    /**
+                     * 判断参数 DirectoryPath 是否已赋值
+                     * @return DirectoryPath 是否已赋值
+                     * 
+                     */
+                    bool DirectoryPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,7 +177,7 @@ namespace TencentCloud
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 指定配额类型，包括Uid、Gid
+                     * 指定配额类型，包括Uid、Gid，Dir，分别代表用户配额，用户组配额，目录配额
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;
@@ -168,16 +189,22 @@ namespace TencentCloud
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 容量硬限制，单位GiB
+                     * 容量硬限制，单位GiB。设置范围10-10000000。
                      */
                     uint64_t m_capacityHardLimit;
                     bool m_capacityHardLimitHasBeenSet;
 
                     /**
-                     * 文件硬限制，单位个
+                     * 文件硬限制，单位个。设置范围1000-100000000
                      */
                     uint64_t m_fileHardLimit;
                     bool m_fileHardLimitHasBeenSet;
+
+                    /**
+                     * 需设置目录配额的目录绝对路径，不同目录不可存在包含关系
+                     */
+                    std::string m_directoryPath;
+                    bool m_directoryPathHasBeenSet;
 
                 };
             }

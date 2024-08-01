@@ -501,6 +501,34 @@ video 纯视频
                      */
                     bool RecordLangHasBeenSet() const;
 
+                    /**
+                     * 获取录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0
+                     * @return RecordStream 录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0
+                     * 
+                     */
+                    uint64_t GetRecordStream() const;
+
+                    /**
+                     * 判断参数 RecordStream 是否已赋值
+                     * @return RecordStream 是否已赋值
+                     * 
+                     */
+                    bool RecordStreamHasBeenSet() const;
+
+                    /**
+                     * 获取录制模板。房间子类型为视频+白板（SubType=videodoc）时默认为3，房间子类型为纯视频（SubType=video）时默认为0。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
+                     * @return RecordLayout 录制模板。房间子类型为视频+白板（SubType=videodoc）时默认为3，房间子类型为纯视频（SubType=video）时默认为0。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
+                     * 
+                     */
+                    uint64_t GetRecordLayout() const;
+
+                    /**
+                     * 判断参数 RecordLayout 是否已赋值
+                     * @return RecordLayout 是否已赋值
+                     * 
+                     */
+                    bool RecordLayoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -701,6 +729,18 @@ video 纯视频
                      */
                     std::string m_recordLang;
                     bool m_recordLangHasBeenSet;
+
+                    /**
+                     * 录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0
+                     */
+                    uint64_t m_recordStream;
+                    bool m_recordStreamHasBeenSet;
+
+                    /**
+                     * 录制模板。房间子类型为视频+白板（SubType=videodoc）时默认为3，房间子类型为纯视频（SubType=video）时默认为0。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
+                     */
+                    uint64_t m_recordLayout;
+                    bool m_recordLayoutHasBeenSet;
 
                 };
             }

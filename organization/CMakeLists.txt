@@ -86,6 +86,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/DeleteShareUnitMembersResponse.h
   include/tencentcloud/organization/v20210331/model/DescribePolicyResponse.h
   include/tencentcloud/organization/v20210331/model/CreateOrganizationIdentityRequest.h
+  include/tencentcloud/organization/v20210331/model/ListOrganizationServiceResponse.h
   include/tencentcloud/organization/v20210331/model/DeletePolicyResponse.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationResponse.h
   include/tencentcloud/organization/v20210331/model/ListNonCompliantResourceRequest.h
@@ -96,6 +97,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/UpdateOrganizationIdentityRequest.h
   include/tencentcloud/organization/v20210331/model/ShareUnitMember.h
   include/tencentcloud/organization/v20210331/model/CancelOrganizationMemberAuthAccountRequest.h
+  include/tencentcloud/organization/v20210331/model/OrganizationServiceAssign.h
   include/tencentcloud/organization/v20210331/model/DeleteOrganizationResponse.h
   include/tencentcloud/organization/v20210331/model/OrgMemberAuthAccount.h
   include/tencentcloud/organization/v20210331/model/MemberMainInfo.h
@@ -198,6 +200,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/CreateOrganizationMemberAuthIdentityRequest.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationFinancialByMemberRequest.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationFinancialByMonthRequest.h
+  include/tencentcloud/organization/v20210331/model/ListOrganizationServiceRequest.h
   include/tencentcloud/organization/v20210331/model/CreateOrganizationMembersPolicyResponse.h
   include/tencentcloud/organization/v20210331/model/DeleteShareUnitResourcesResponse.h
   include/tencentcloud/organization/v20210331/model/CreateOrganizationIdentityResponse.h
@@ -289,6 +292,7 @@ set(organization_src
   src/v20210331/model/DeleteShareUnitMembersResponse.cpp
   src/v20210331/model/DescribePolicyResponse.cpp
   src/v20210331/model/CreateOrganizationIdentityRequest.cpp
+  src/v20210331/model/ListOrganizationServiceResponse.cpp
   src/v20210331/model/DeletePolicyResponse.cpp
   src/v20210331/model/DescribeOrganizationResponse.cpp
   src/v20210331/model/ListNonCompliantResourceRequest.cpp
@@ -299,6 +303,7 @@ set(organization_src
   src/v20210331/model/UpdateOrganizationIdentityRequest.cpp
   src/v20210331/model/ShareUnitMember.cpp
   src/v20210331/model/CancelOrganizationMemberAuthAccountRequest.cpp
+  src/v20210331/model/OrganizationServiceAssign.cpp
   src/v20210331/model/DeleteOrganizationResponse.cpp
   src/v20210331/model/OrgMemberAuthAccount.cpp
   src/v20210331/model/MemberMainInfo.cpp
@@ -401,6 +406,7 @@ set(organization_src
   src/v20210331/model/CreateOrganizationMemberAuthIdentityRequest.cpp
   src/v20210331/model/DescribeOrganizationFinancialByMemberRequest.cpp
   src/v20210331/model/DescribeOrganizationFinancialByMonthRequest.cpp
+  src/v20210331/model/ListOrganizationServiceRequest.cpp
   src/v20210331/model/CreateOrganizationMembersPolicyResponse.cpp
   src/v20210331/model/DeleteShareUnitResourcesResponse.cpp
   src/v20210331/model/CreateOrganizationIdentityResponse.cpp

@@ -1270,6 +1270,81 @@ namespace TencentCloud
                     bool PolarisServerHasBeenSet() const;
 
                     /**
+                     * 获取CDC Redis集群ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RedisClusterId CDC Redis集群ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRedisClusterId() const;
+
+                    /**
+                     * 设置CDC Redis集群ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _redisClusterId CDC Redis集群ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRedisClusterId(const std::string& _redisClusterId);
+
+                    /**
+                     * 判断参数 RedisClusterId 是否已赋值
+                     * @return RedisClusterId 是否已赋值
+                     * 
+                     */
+                    bool RedisClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取CDC 集群ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DedicatedClusterId CDC 集群ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDedicatedClusterId() const;
+
+                    /**
+                     * 设置CDC 集群ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dedicatedClusterId CDC 集群ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
+
+                    /**
+                     * 判断参数 DedicatedClusterId 是否已赋值
+                     * @return DedicatedClusterId 是否已赋值
+                     * 
+                     */
+                    bool DedicatedClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取产品版本。<ul><li>local：本地盘。</li><li>cloud：云盘版。</li><li>cdc：CDC 集群版本。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductVersion 产品版本。<ul><li>local：本地盘。</li><li>cloud：云盘版。</li><li>cdc：CDC 集群版本。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProductVersion() const;
+
+                    /**
+                     * 设置产品版本。<ul><li>local：本地盘。</li><li>cloud：云盘版。</li><li>cdc：CDC 集群版本。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productVersion 产品版本。<ul><li>local：本地盘。</li><li>cloud：云盘版。</li><li>cdc：CDC 集群版本。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductVersion(const std::string& _productVersion);
+
+                    /**
+                     * 判断参数 ProductVersion 是否已赋值
+                     * @return ProductVersion 是否已赋值
+                     * 
+                     */
+                    bool ProductVersionHasBeenSet() const;
+
+                    /**
                      * 获取实例当前Proxy版本。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentProxyVersion 实例当前Proxy版本。
@@ -1739,6 +1814,27 @@ namespace TencentCloud
                      */
                     std::string m_polarisServer;
                     bool m_polarisServerHasBeenSet;
+
+                    /**
+                     * CDC Redis集群ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_redisClusterId;
+                    bool m_redisClusterIdHasBeenSet;
+
+                    /**
+                     * CDC 集群ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dedicatedClusterId;
+                    bool m_dedicatedClusterIdHasBeenSet;
+
+                    /**
+                     * 产品版本。<ul><li>local：本地盘。</li><li>cloud：云盘版。</li><li>cdc：CDC 集群版本。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productVersion;
+                    bool m_productVersionHasBeenSet;
 
                     /**
                      * 实例当前Proxy版本。

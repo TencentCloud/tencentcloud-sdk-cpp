@@ -87,6 +87,34 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取0：succeed 1：timeout
+                     * @return ReturnCode 0：succeed 1：timeout
+                     * 
+                     */
+                    int64_t GetReturnCode() const;
+
+                    /**
+                     * 判断参数 ReturnCode 是否已赋值
+                     * @return ReturnCode 是否已赋值
+                     * 
+                     */
+                    bool ReturnCodeHasBeenSet() const;
+
+                    /**
+                     * 获取返回状态信息
+                     * @return ReturnMsg 返回状态信息
+                     * 
+                     */
+                    std::string GetReturnMsg() const;
+
+                    /**
+                     * 判断参数 ReturnMsg 是否已赋值
+                     * @return ReturnMsg 是否已赋值
+                     * 
+                     */
+                    bool ReturnMsgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +134,18 @@ namespace TencentCloud
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 0：succeed 1：timeout
+                     */
+                    int64_t m_returnCode;
+                    bool m_returnCodeHasBeenSet;
+
+                    /**
+                     * 返回状态信息
+                     */
+                    std::string m_returnMsg;
+                    bool m_returnMsgHasBeenSet;
 
                 };
             }

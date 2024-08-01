@@ -24,6 +24,10 @@ using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
 DescribeCloudStorageAIServiceResponse::DescribeCloudStorageAIServiceResponse() :
+    m_typeHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_userIdHasBeenSet(false),
     m_enabledHasBeenSet(false),
     m_configHasBeenSet(false),
     m_rOIHasBeenSet(false)
@@ -63,6 +67,46 @@ CoreInternalOutcome DescribeCloudStorageAIServiceResponse::Deserialize(const str
         return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
+
+    if (rsp.HasMember("Type") && !rsp["Type"].IsNull())
+    {
+        if (!rsp["Type"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Type` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = rsp["Type"].GetUint64();
+        m_typeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = rsp["Status"].GetUint64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExpireTime") && !rsp["ExpireTime"].IsNull())
+    {
+        if (!rsp["ExpireTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = rsp["ExpireTime"].GetUint64();
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UserId") && !rsp["UserId"].IsNull())
+    {
+        if (!rsp["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(rsp["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
 
     if (rsp.HasMember("Enabled") && !rsp["Enabled"].IsNull())
     {
@@ -104,6 +148,38 @@ string DescribeCloudStorageAIServiceResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expireTime, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_enabledHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +215,46 @@ string DescribeCloudStorageAIServiceResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeCloudStorageAIServiceResponse::GetType() const
+{
+    return m_type;
+}
+
+bool DescribeCloudStorageAIServiceResponse::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+uint64_t DescribeCloudStorageAIServiceResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribeCloudStorageAIServiceResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+uint64_t DescribeCloudStorageAIServiceResponse::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+bool DescribeCloudStorageAIServiceResponse::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+string DescribeCloudStorageAIServiceResponse::GetUserId() const
+{
+    return m_userId;
+}
+
+bool DescribeCloudStorageAIServiceResponse::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
+}
 
 bool DescribeCloudStorageAIServiceResponse::GetEnabled() const
 {

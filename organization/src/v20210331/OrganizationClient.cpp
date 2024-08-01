@@ -2233,6 +2233,49 @@ OrganizationClient::ListOrganizationIdentityOutcomeCallable OrganizationClient::
     return task->get_future();
 }
 
+OrganizationClient::ListOrganizationServiceOutcome OrganizationClient::ListOrganizationService(const ListOrganizationServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListOrganizationService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListOrganizationServiceResponse rsp = ListOrganizationServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListOrganizationServiceOutcome(rsp);
+        else
+            return ListOrganizationServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ListOrganizationServiceOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::ListOrganizationServiceAsync(const ListOrganizationServiceRequest& request, const ListOrganizationServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListOrganizationService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::ListOrganizationServiceOutcomeCallable OrganizationClient::ListOrganizationServiceCallable(const ListOrganizationServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListOrganizationServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->ListOrganizationService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::ListPoliciesOutcome OrganizationClient::ListPolicies(const ListPoliciesRequest &request)
 {
     auto outcome = MakeRequest(request, "ListPolicies");

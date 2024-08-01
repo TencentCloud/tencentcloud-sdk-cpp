@@ -87,15 +87,23 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取提示信息，扫码后此信息会展示给扫描用户，用来提示用户授权操作的目的
-                     * @return HintText 提示信息，扫码后此信息会展示给扫描用户，用来提示用户授权操作的目的
+                     * 获取提示信息，扫码后此信息会展示给扫描用户，用来提示用户授权操作的目的，会在授权界面下面的位置展示。
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/8436ffd78c20605e6b133ff4bc4d2ac7.png)
+                     * @return HintText 提示信息，扫码后此信息会展示给扫描用户，用来提示用户授权操作的目的，会在授权界面下面的位置展示。
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/8436ffd78c20605e6b133ff4bc4d2ac7.png)
                      * 
                      */
                     std::string GetHintText() const;
 
                     /**
-                     * 设置提示信息，扫码后此信息会展示给扫描用户，用来提示用户授权操作的目的
-                     * @param _hintText 提示信息，扫码后此信息会展示给扫描用户，用来提示用户授权操作的目的
+                     * 设置提示信息，扫码后此信息会展示给扫描用户，用来提示用户授权操作的目的，会在授权界面下面的位置展示。
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/8436ffd78c20605e6b133ff4bc4d2ac7.png)
+                     * @param _hintText 提示信息，扫码后此信息会展示给扫描用户，用来提示用户授权操作的目的，会在授权界面下面的位置展示。
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/8436ffd78c20605e6b133ff4bc4d2ac7.png)
                      * 
                      */
                     void SetHintText(const std::string& _hintText);
@@ -122,7 +130,9 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 提示信息，扫码后此信息会展示给扫描用户，用来提示用户授权操作的目的
+                     * 提示信息，扫码后此信息会展示给扫描用户，用来提示用户授权操作的目的，会在授权界面下面的位置展示。
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/8436ffd78c20605e6b133ff4bc4d2ac7.png)
                      */
                     std::string m_hintText;
                     bool m_hintTextHasBeenSet;

@@ -54,7 +54,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_externalServiceHasBeenSet(false),
     m_versionIDHasBeenSet(false),
     m_multiZoneHasBeenSet(false),
-    m_multiZoneSettingsHasBeenSet(false)
+    m_multiZoneSettingsHasBeenSet(false),
+    m_cosBucketHasBeenSet(false)
 {
 }
 
@@ -363,6 +364,14 @@ string CreateInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cosBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosBucket";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cosBucket.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -883,6 +892,22 @@ void CreateInstanceRequest::SetMultiZoneSettings(const vector<MultiZoneSetting>&
 bool CreateInstanceRequest::MultiZoneSettingsHasBeenSet() const
 {
     return m_multiZoneSettingsHasBeenSet;
+}
+
+string CreateInstanceRequest::GetCosBucket() const
+{
+    return m_cosBucket;
+}
+
+void CreateInstanceRequest::SetCosBucket(const string& _cosBucket)
+{
+    m_cosBucket = _cosBucket;
+    m_cosBucketHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::CosBucketHasBeenSet() const
+{
+    return m_cosBucketHasBeenSet;
 }
 
 

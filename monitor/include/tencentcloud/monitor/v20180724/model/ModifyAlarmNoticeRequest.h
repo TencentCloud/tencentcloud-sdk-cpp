@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool UserNoticesHasBeenSet() const;
 
                     /**
-                     * 获取回调通知 最多3个
-                     * @return URLNotices 回调通知 最多3个
+                     * 获取回调通知 最多6个
+                     * @return URLNotices 回调通知 最多6个
                      * 
                      */
                     std::vector<URLNotice> GetURLNotices() const;
 
                     /**
-                     * 设置回调通知 最多3个
-                     * @param _uRLNotices 回调通知 最多3个
+                     * 设置回调通知 最多6个
+                     * @param _uRLNotices 回调通知 最多6个
                      * 
                      */
                     void SetURLNotices(const std::vector<URLNotice>& _uRLNotices);
@@ -273,7 +273,7 @@ namespace TencentCloud
                     bool m_userNoticesHasBeenSet;
 
                     /**
-                     * 回调通知 最多3个
+                     * 回调通知 最多6个
                      */
                     std::vector<URLNotice> m_uRLNotices;
                     bool m_uRLNoticesHasBeenSet;

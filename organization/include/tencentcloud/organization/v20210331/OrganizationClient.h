@@ -125,6 +125,8 @@
 #include <tencentcloud/organization/v20210331/model/ListNonCompliantResourceResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListOrganizationIdentityRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListOrganizationIdentityResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListOrganizationServiceRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListOrganizationServiceResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListPoliciesRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListPoliciesResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListPoliciesForTargetRequest.h>
@@ -316,6 +318,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListOrganizationIdentityResponse> ListOrganizationIdentityOutcome;
                 typedef std::future<ListOrganizationIdentityOutcome> ListOrganizationIdentityOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListOrganizationIdentityRequest&, ListOrganizationIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListOrganizationIdentityAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListOrganizationServiceResponse> ListOrganizationServiceOutcome;
+                typedef std::future<ListOrganizationServiceOutcome> ListOrganizationServiceOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListOrganizationServiceRequest&, ListOrganizationServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListOrganizationServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListPoliciesResponse> ListPoliciesOutcome;
                 typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListPoliciesRequest&, ListPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPoliciesAsyncHandler;
@@ -813,6 +818,15 @@ namespace TencentCloud
                 ListOrganizationIdentityOutcome ListOrganizationIdentity(const Model::ListOrganizationIdentityRequest &request);
                 void ListOrganizationIdentityAsync(const Model::ListOrganizationIdentityRequest& request, const ListOrganizationIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListOrganizationIdentityOutcomeCallable ListOrganizationIdentityCallable(const Model::ListOrganizationIdentityRequest& request);
+
+                /**
+                 *获取集团服务设置列表
+                 * @param req ListOrganizationServiceRequest
+                 * @return ListOrganizationServiceOutcome
+                 */
+                ListOrganizationServiceOutcome ListOrganizationService(const Model::ListOrganizationServiceRequest &request);
+                void ListOrganizationServiceAsync(const Model::ListOrganizationServiceRequest& request, const ListOrganizationServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListOrganizationServiceOutcomeCallable ListOrganizationServiceCallable(const Model::ListOrganizationServiceRequest& request);
 
                 /**
                  *本接口（ListPolicies）可用于查询查看策略列表数据

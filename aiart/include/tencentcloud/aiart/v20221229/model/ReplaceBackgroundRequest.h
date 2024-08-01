@@ -69,6 +69,31 @@ namespace TencentCloud
                     bool ProductUrlHasBeenSet() const;
 
                     /**
+                     * 获取对新背景的文本描述。
+最多支持256个 utf-8 字符，支持中、英文。
+                     * @return Prompt 对新背景的文本描述。
+最多支持256个 utf-8 字符，支持中、英文。
+                     * 
+                     */
+                    std::string GetPrompt() const;
+
+                    /**
+                     * 设置对新背景的文本描述。
+最多支持256个 utf-8 字符，支持中、英文。
+                     * @param _prompt 对新背景的文本描述。
+最多支持256个 utf-8 字符，支持中、英文。
+                     * 
+                     */
+                    void SetPrompt(const std::string& _prompt);
+
+                    /**
+                     * 判断参数 Prompt 是否已赋值
+                     * @return Prompt 是否已赋值
+                     * 
+                     */
+                    bool PromptHasBeenSet() const;
+
+                    /**
                      * 获取商品 Mask 图 Url，要求背景透明，保留商品主体。
 如果不传，将自动使用内置的商品分割算法得到 Mask。
 支持自定义上传 Mask，如果该参数不为空，则以实际上传的数据为准。
@@ -100,31 +125,6 @@ namespace TencentCloud
                      * 
                      */
                     bool MaskUrlHasBeenSet() const;
-
-                    /**
-                     * 获取对新背景的文本描述。
-最多支持256个 utf-8 字符，支持中、英文。
-                     * @return Prompt 对新背景的文本描述。
-最多支持256个 utf-8 字符，支持中、英文。
-                     * 
-                     */
-                    std::string GetPrompt() const;
-
-                    /**
-                     * 设置对新背景的文本描述。
-最多支持256个 utf-8 字符，支持中、英文。
-                     * @param _prompt 对新背景的文本描述。
-最多支持256个 utf-8 字符，支持中、英文。
-                     * 
-                     */
-                    void SetPrompt(const std::string& _prompt);
-
-                    /**
-                     * 判断参数 Prompt 是否已赋值
-                     * @return Prompt 是否已赋值
-                     * 
-                     */
-                    bool PromptHasBeenSet() const;
 
                     /**
                      * 获取替换背景后生成的商品图分辨率。
@@ -252,6 +252,13 @@ namespace TencentCloud
                     bool m_productUrlHasBeenSet;
 
                     /**
+                     * 对新背景的文本描述。
+最多支持256个 utf-8 字符，支持中、英文。
+                     */
+                    std::string m_prompt;
+                    bool m_promptHasBeenSet;
+
+                    /**
                      * 商品 Mask 图 Url，要求背景透明，保留商品主体。
 如果不传，将自动使用内置的商品分割算法得到 Mask。
 支持自定义上传 Mask，如果该参数不为空，则以实际上传的数据为准。
@@ -259,13 +266,6 @@ namespace TencentCloud
                      */
                     std::string m_maskUrl;
                     bool m_maskUrlHasBeenSet;
-
-                    /**
-                     * 对新背景的文本描述。
-最多支持256个 utf-8 字符，支持中、英文。
-                     */
-                    std::string m_prompt;
-                    bool m_promptHasBeenSet;
 
                     /**
                      * 替换背景后生成的商品图分辨率。

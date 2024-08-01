@@ -44,6 +44,84 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取云存 AI 套餐类型。可能取值：
+
+- `1`：全时套餐
+- `2`：事件套餐
+- `3`：低功耗套餐
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Type 云存 AI 套餐类型。可能取值：
+
+- `1`：全时套餐
+- `2`：事件套餐
+- `3`：低功耗套餐
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetType() const;
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取云存 AI 套餐生效状态。可能取值：
+
+- `0`：未开通或已过期
+- `1`：生效中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 云存 AI 套餐生效状态。可能取值：
+
+- `0`：未开通或已过期
+- `1`：生效中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取云存 AI 套餐过期时间 UNIX 时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExpireTime 云存 AI 套餐过期时间 UNIX 时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetExpireTime() const;
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取用户 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserId 用户 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
+                    /**
                      * 获取视频分析启用状态
                      * @return Enabled 视频分析启用状态
                      * 
@@ -86,6 +164,41 @@ namespace TencentCloud
                     bool ROIHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 云存 AI 套餐类型。可能取值：
+
+- `1`：全时套餐
+- `2`：事件套餐
+- `3`：低功耗套餐
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 云存 AI 套餐生效状态。可能取值：
+
+- `0`：未开通或已过期
+- `1`：生效中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 云存 AI 套餐过期时间 UNIX 时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 用户 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                     /**
                      * 视频分析启用状态

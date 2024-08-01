@@ -92,8 +92,8 @@ namespace TencentCloud
                     bool NoteHasBeenSet() const;
 
                     /**
-                     * 获取本轮对话的 ID。
-                     * @return Id 本轮对话的 ID。
+                     * 获取本次请求的 RequestId。
+                     * @return Id 本次请求的 RequestId。
                      * 
                      */
                     std::string GetId() const;
@@ -187,7 +187,7 @@ namespace TencentCloud
                     bool m_noteHasBeenSet;
 
                     /**
-                     * 本轮对话的 ID。
+                     * 本次请求的 RequestId。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

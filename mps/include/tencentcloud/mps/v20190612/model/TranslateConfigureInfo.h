@@ -117,6 +117,35 @@ namespace TencentCloud
                      */
                     bool DestinationLanguageHasBeenSet() const;
 
+                    /**
+                     * 获取生成的字幕文件格式，填空字符串表示不生成字幕文件，可选值：
+<li>vtt：生成 WebVTT 字幕文件。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubtitleFormat 生成的字幕文件格式，填空字符串表示不生成字幕文件，可选值：
+<li>vtt：生成 WebVTT 字幕文件。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubtitleFormat() const;
+
+                    /**
+                     * 设置生成的字幕文件格式，填空字符串表示不生成字幕文件，可选值：
+<li>vtt：生成 WebVTT 字幕文件。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subtitleFormat 生成的字幕文件格式，填空字符串表示不生成字幕文件，可选值：
+<li>vtt：生成 WebVTT 字幕文件。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubtitleFormat(const std::string& _subtitleFormat);
+
+                    /**
+                     * 判断参数 SubtitleFormat 是否已赋值
+                     * @return SubtitleFormat 是否已赋值
+                     * 
+                     */
+                    bool SubtitleFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -138,6 +167,14 @@ namespace TencentCloud
                      */
                     std::string m_destinationLanguage;
                     bool m_destinationLanguageHasBeenSet;
+
+                    /**
+                     * 生成的字幕文件格式，填空字符串表示不生成字幕文件，可选值：
+<li>vtt：生成 WebVTT 字幕文件。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subtitleFormat;
+                    bool m_subtitleFormatHasBeenSet;
 
                 };
             }

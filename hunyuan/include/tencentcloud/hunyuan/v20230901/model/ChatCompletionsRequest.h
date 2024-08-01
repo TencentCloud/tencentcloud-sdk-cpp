@@ -443,6 +443,43 @@ namespace TencentCloud
                      */
                     bool SearchInfoHasBeenSet() const;
 
+                    /**
+                     * 获取搜索引文角标开关。
+说明：
+1. 配合EnableEnhancement和SearchInfo参数使用。打开后，回答中命中搜索的结果会在片段后增加角标标志，对应SearchInfo列表中的链接。
+2. false：开关关闭，true：开关打开。
+3. 未传值时默认开关关闭（false）。
+                     * @return Citation 搜索引文角标开关。
+说明：
+1. 配合EnableEnhancement和SearchInfo参数使用。打开后，回答中命中搜索的结果会在片段后增加角标标志，对应SearchInfo列表中的链接。
+2. false：开关关闭，true：开关打开。
+3. 未传值时默认开关关闭（false）。
+                     * 
+                     */
+                    bool GetCitation() const;
+
+                    /**
+                     * 设置搜索引文角标开关。
+说明：
+1. 配合EnableEnhancement和SearchInfo参数使用。打开后，回答中命中搜索的结果会在片段后增加角标标志，对应SearchInfo列表中的链接。
+2. false：开关关闭，true：开关打开。
+3. 未传值时默认开关关闭（false）。
+                     * @param _citation 搜索引文角标开关。
+说明：
+1. 配合EnableEnhancement和SearchInfo参数使用。打开后，回答中命中搜索的结果会在片段后增加角标标志，对应SearchInfo列表中的链接。
+2. false：开关关闭，true：开关打开。
+3. 未传值时默认开关关闭（false）。
+                     * 
+                     */
+                    void SetCitation(const bool& _citation);
+
+                    /**
+                     * 判断参数 Citation 是否已赋值
+                     * @return Citation 是否已赋值
+                     * 
+                     */
+                    bool CitationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -552,6 +589,16 @@ namespace TencentCloud
                      */
                     bool m_searchInfo;
                     bool m_searchInfoHasBeenSet;
+
+                    /**
+                     * 搜索引文角标开关。
+说明：
+1. 配合EnableEnhancement和SearchInfo参数使用。打开后，回答中命中搜索的结果会在片段后增加角标标志，对应SearchInfo列表中的链接。
+2. false：开关关闭，true：开关打开。
+3. 未传值时默认开关关闭（false）。
+                     */
+                    bool m_citation;
+                    bool m_citationHasBeenSet;
 
                 };
             }

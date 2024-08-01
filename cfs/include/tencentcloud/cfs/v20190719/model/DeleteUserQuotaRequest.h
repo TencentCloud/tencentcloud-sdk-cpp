@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取指定配额类型，包括Uid、Gid
-                     * @return UserType 指定配额类型，包括Uid、Gid
+                     * 获取指定配额类型，包括Uid、Gid、Dir
+                     * @return UserType 指定配额类型，包括Uid、Gid、Dir
                      * 
                      */
                     std::string GetUserType() const;
 
                     /**
-                     * 设置指定配额类型，包括Uid、Gid
-                     * @param _userType 指定配额类型，包括Uid、Gid
+                     * 设置指定配额类型，包括Uid、Gid、Dir
+                     * @param _userType 指定配额类型，包括Uid、Gid、Dir
                      * 
                      */
                     void SetUserType(const std::string& _userType);
@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取设置目录配额的目录的绝对路径
+                     * @return DirectoryPath 设置目录配额的目录的绝对路径
+                     * 
+                     */
+                    std::string GetDirectoryPath() const;
+
+                    /**
+                     * 设置设置目录配额的目录的绝对路径
+                     * @param _directoryPath 设置目录配额的目录的绝对路径
+                     * 
+                     */
+                    void SetDirectoryPath(const std::string& _directoryPath);
+
+                    /**
+                     * 判断参数 DirectoryPath 是否已赋值
+                     * @return DirectoryPath 是否已赋值
+                     * 
+                     */
+                    bool DirectoryPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -114,7 +135,7 @@ namespace TencentCloud
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 指定配额类型，包括Uid、Gid
+                     * 指定配额类型，包括Uid、Gid、Dir
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 设置目录配额的目录的绝对路径
+                     */
+                    std::string m_directoryPath;
+                    bool m_directoryPathHasBeenSet;
 
                 };
             }

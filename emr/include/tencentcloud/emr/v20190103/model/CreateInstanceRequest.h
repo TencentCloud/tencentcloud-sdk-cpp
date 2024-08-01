@@ -880,6 +880,27 @@ Hadoop-Hbase
                      */
                     bool MultiZoneSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取cos桶路径，创建StarRocks存算分离集群时用到
+                     * @return CosBucket cos桶路径，创建StarRocks存算分离集群时用到
+                     * 
+                     */
+                    std::string GetCosBucket() const;
+
+                    /**
+                     * 设置cos桶路径，创建StarRocks存算分离集群时用到
+                     * @param _cosBucket cos桶路径，创建StarRocks存算分离集群时用到
+                     * 
+                     */
+                    void SetCosBucket(const std::string& _cosBucket);
+
+                    /**
+                     * 判断参数 CosBucket 是否已赋值
+                     * @return CosBucket 是否已赋值
+                     * 
+                     */
+                    bool CosBucketHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1112,6 +1133,12 @@ Hadoop-Hbase
                      */
                     std::vector<MultiZoneSetting> m_multiZoneSettings;
                     bool m_multiZoneSettingsHasBeenSet;
+
+                    /**
+                     * cos桶路径，创建StarRocks存算分离集群时用到
+                     */
+                    std::string m_cosBucket;
+                    bool m_cosBucketHasBeenSet;
 
                 };
             }

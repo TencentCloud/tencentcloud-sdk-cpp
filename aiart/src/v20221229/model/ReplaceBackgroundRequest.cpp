@@ -24,8 +24,8 @@ using namespace std;
 
 ReplaceBackgroundRequest::ReplaceBackgroundRequest() :
     m_productUrlHasBeenSet(false),
-    m_maskUrlHasBeenSet(false),
     m_promptHasBeenSet(false),
+    m_maskUrlHasBeenSet(false),
     m_resolutionHasBeenSet(false),
     m_logoAddHasBeenSet(false),
     m_logoParamHasBeenSet(false),
@@ -48,20 +48,20 @@ string ReplaceBackgroundRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_productUrl.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_maskUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MaskUrl";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_maskUrl.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_promptHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Prompt";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_prompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maskUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaskUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_maskUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resolutionHasBeenSet)
@@ -121,22 +121,6 @@ bool ReplaceBackgroundRequest::ProductUrlHasBeenSet() const
     return m_productUrlHasBeenSet;
 }
 
-string ReplaceBackgroundRequest::GetMaskUrl() const
-{
-    return m_maskUrl;
-}
-
-void ReplaceBackgroundRequest::SetMaskUrl(const string& _maskUrl)
-{
-    m_maskUrl = _maskUrl;
-    m_maskUrlHasBeenSet = true;
-}
-
-bool ReplaceBackgroundRequest::MaskUrlHasBeenSet() const
-{
-    return m_maskUrlHasBeenSet;
-}
-
 string ReplaceBackgroundRequest::GetPrompt() const
 {
     return m_prompt;
@@ -151,6 +135,22 @@ void ReplaceBackgroundRequest::SetPrompt(const string& _prompt)
 bool ReplaceBackgroundRequest::PromptHasBeenSet() const
 {
     return m_promptHasBeenSet;
+}
+
+string ReplaceBackgroundRequest::GetMaskUrl() const
+{
+    return m_maskUrl;
+}
+
+void ReplaceBackgroundRequest::SetMaskUrl(const string& _maskUrl)
+{
+    m_maskUrl = _maskUrl;
+    m_maskUrlHasBeenSet = true;
+}
+
+bool ReplaceBackgroundRequest::MaskUrlHasBeenSet() const
+{
+    return m_maskUrlHasBeenSet;
 }
 
 string ReplaceBackgroundRequest::GetResolution() const

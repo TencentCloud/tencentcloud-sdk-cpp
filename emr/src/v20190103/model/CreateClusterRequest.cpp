@@ -42,7 +42,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_enableCbsEncryptFlagHasBeenSet(false),
     m_metaDBInfoHasBeenSet(false),
     m_dependServiceHasBeenSet(false),
-    m_zoneResourceConfigurationHasBeenSet(false)
+    m_zoneResourceConfigurationHasBeenSet(false),
+    m_cosBucketHasBeenSet(false)
 {
 }
 
@@ -253,6 +254,14 @@ string CreateClusterRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cosBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosBucket";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cosBucket.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -581,6 +590,22 @@ void CreateClusterRequest::SetZoneResourceConfiguration(const vector<ZoneResourc
 bool CreateClusterRequest::ZoneResourceConfigurationHasBeenSet() const
 {
     return m_zoneResourceConfigurationHasBeenSet;
+}
+
+string CreateClusterRequest::GetCosBucket() const
+{
+    return m_cosBucket;
+}
+
+void CreateClusterRequest::SetCosBucket(const string& _cosBucket)
+{
+    m_cosBucket = _cosBucket;
+    m_cosBucketHasBeenSet = true;
+}
+
+bool CreateClusterRequest::CosBucketHasBeenSet() const
+{
+    return m_cosBucketHasBeenSet;
 }
 
 

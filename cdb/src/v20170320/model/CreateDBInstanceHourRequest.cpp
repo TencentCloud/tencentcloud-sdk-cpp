@@ -60,7 +60,9 @@ CreateDBInstanceHourRequest::CreateDBInstanceHourRequest() :
     m_dryRunHasBeenSet(false),
     m_engineTypeHasBeenSet(false),
     m_vipsHasBeenSet(false),
-    m_clusterTopologyHasBeenSet(false)
+    m_dataProtectVolumeHasBeenSet(false),
+    m_clusterTopologyHasBeenSet(false),
+    m_diskTypeHasBeenSet(false)
 {
 }
 
@@ -402,6 +404,14 @@ string CreateDBInstanceHourRequest::ToJsonString() const
         }
     }
 
+    if (m_dataProtectVolumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataProtectVolume";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dataProtectVolume, allocator);
+    }
+
     if (m_clusterTopologyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -409,6 +419,14 @@ string CreateDBInstanceHourRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clusterTopology.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_diskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1011,6 +1029,22 @@ bool CreateDBInstanceHourRequest::VipsHasBeenSet() const
     return m_vipsHasBeenSet;
 }
 
+int64_t CreateDBInstanceHourRequest::GetDataProtectVolume() const
+{
+    return m_dataProtectVolume;
+}
+
+void CreateDBInstanceHourRequest::SetDataProtectVolume(const int64_t& _dataProtectVolume)
+{
+    m_dataProtectVolume = _dataProtectVolume;
+    m_dataProtectVolumeHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::DataProtectVolumeHasBeenSet() const
+{
+    return m_dataProtectVolumeHasBeenSet;
+}
+
 ClusterTopology CreateDBInstanceHourRequest::GetClusterTopology() const
 {
     return m_clusterTopology;
@@ -1025,6 +1059,22 @@ void CreateDBInstanceHourRequest::SetClusterTopology(const ClusterTopology& _clu
 bool CreateDBInstanceHourRequest::ClusterTopologyHasBeenSet() const
 {
     return m_clusterTopologyHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetDiskType() const
+{
+    return m_diskType;
+}
+
+void CreateDBInstanceHourRequest::SetDiskType(const string& _diskType)
+{
+    m_diskType = _diskType;
+    m_diskTypeHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::DiskTypeHasBeenSet() const
+{
+    return m_diskTypeHasBeenSet;
 }
 
 

@@ -23,7 +23,8 @@ using namespace std;
 TranslateConfigureInfo::TranslateConfigureInfo() :
     m_switchHasBeenSet(false),
     m_sourceLanguageHasBeenSet(false),
-    m_destinationLanguageHasBeenSet(false)
+    m_destinationLanguageHasBeenSet(false),
+    m_subtitleFormatHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome TranslateConfigureInfo::Deserialize(const rapidjson::Value &
         m_destinationLanguageHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleFormat") && !value["SubtitleFormat"].IsNull())
+    {
+        if (!value["SubtitleFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranslateConfigureInfo.SubtitleFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleFormat = string(value["SubtitleFormat"].GetString());
+        m_subtitleFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void TranslateConfigureInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "DestinationLanguage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_destinationLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subtitleFormat.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void TranslateConfigureInfo::SetDestinationLanguage(const string& _destinationLa
 bool TranslateConfigureInfo::DestinationLanguageHasBeenSet() const
 {
     return m_destinationLanguageHasBeenSet;
+}
+
+string TranslateConfigureInfo::GetSubtitleFormat() const
+{
+    return m_subtitleFormat;
+}
+
+void TranslateConfigureInfo::SetSubtitleFormat(const string& _subtitleFormat)
+{
+    m_subtitleFormat = _subtitleFormat;
+    m_subtitleFormatHasBeenSet = true;
+}
+
+bool TranslateConfigureInfo::SubtitleFormatHasBeenSet() const
+{
+    return m_subtitleFormatHasBeenSet;
 }
 
