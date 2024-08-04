@@ -27,7 +27,9 @@ UserQuota::UserQuota() :
     m_fileHardLimitHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
     m_capacityUsedHasBeenSet(false),
-    m_fileUsedHasBeenSet(false)
+    m_fileUsedHasBeenSet(false),
+    m_directoryPathHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome UserQuota::Deserialize(const rapidjson::Value &value)
         m_fileUsedHasBeenSet = true;
     }
 
+    if (value.HasMember("DirectoryPath") && !value["DirectoryPath"].IsNull())
+    {
+        if (!value["DirectoryPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserQuota.DirectoryPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_directoryPath = string(value["DirectoryPath"].GetString());
+        m_directoryPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserQuota.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void UserQuota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "FileUsed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fileUsed, allocator);
+    }
+
+    if (m_directoryPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DirectoryPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_directoryPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void UserQuota::SetFileUsed(const uint64_t& _fileUsed)
 bool UserQuota::FileUsedHasBeenSet() const
 {
     return m_fileUsedHasBeenSet;
+}
+
+string UserQuota::GetDirectoryPath() const
+{
+    return m_directoryPath;
+}
+
+void UserQuota::SetDirectoryPath(const string& _directoryPath)
+{
+    m_directoryPath = _directoryPath;
+    m_directoryPathHasBeenSet = true;
+}
+
+bool UserQuota::DirectoryPathHasBeenSet() const
+{
+    return m_directoryPathHasBeenSet;
+}
+
+string UserQuota::GetStatus() const
+{
+    return m_status;
+}
+
+void UserQuota::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool UserQuota::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

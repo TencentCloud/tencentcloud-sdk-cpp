@@ -900,6 +900,49 @@ SqlserverClient::CreateReadOnlyDBInstancesOutcomeCallable SqlserverClient::Creat
     return task->get_future();
 }
 
+SqlserverClient::CutXEventsOutcome SqlserverClient::CutXEvents(const CutXEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CutXEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CutXEventsResponse rsp = CutXEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CutXEventsOutcome(rsp);
+        else
+            return CutXEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return CutXEventsOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::CutXEventsAsync(const CutXEventsRequest& request, const CutXEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CutXEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::CutXEventsOutcomeCallable SqlserverClient::CutXEventsCallable(const CutXEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CutXEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->CutXEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::DeleteAccountOutcome SqlserverClient::DeleteAccount(const DeleteAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccount");

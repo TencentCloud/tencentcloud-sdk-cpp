@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取策略名称，不超过20字符
-                     * @return PolicyName 策略名称，不超过20字符
+                     * 获取策略名称，不超过60字符
+                     * @return PolicyName 策略名称，不超过60字符
                      * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
-                     * 设置策略名称，不超过20字符
-                     * @param _policyName 策略名称，不超过20字符
+                     * 设置策略名称，不超过60字符
+                     * @param _policyName 策略名称，不超过60字符
                      * 
                      */
                     void SetPolicyName(const std::string& _policyName);
@@ -457,7 +457,7 @@ namespace TencentCloud
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 策略名称，不超过20字符
+                     * 策略名称，不超过60字符
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;

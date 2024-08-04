@@ -63,6 +63,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/CreatePublishSubscribeResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/CreateReadOnlyDBInstancesRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/CreateReadOnlyDBInstancesResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/CutXEventsRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/CutXEventsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DeleteAccountRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DeleteAccountResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DeleteBackupMigrationRequest.h>
@@ -389,6 +391,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateReadOnlyDBInstancesResponse> CreateReadOnlyDBInstancesOutcome;
                 typedef std::future<CreateReadOnlyDBInstancesOutcome> CreateReadOnlyDBInstancesOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::CreateReadOnlyDBInstancesRequest&, CreateReadOnlyDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReadOnlyDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CutXEventsResponse> CutXEventsOutcome;
+                typedef std::future<CutXEventsOutcome> CutXEventsOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::CutXEventsRequest&, CutXEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CutXEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAccountResponse> DeleteAccountOutcome;
                 typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DeleteAccountRequest&, DeleteAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
@@ -949,6 +954,15 @@ namespace TencentCloud
                 CreateReadOnlyDBInstancesOutcome CreateReadOnlyDBInstances(const Model::CreateReadOnlyDBInstancesRequest &request);
                 void CreateReadOnlyDBInstancesAsync(const Model::CreateReadOnlyDBInstancesRequest& request, const CreateReadOnlyDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateReadOnlyDBInstancesOutcomeCallable CreateReadOnlyDBInstancesCallable(const Model::CreateReadOnlyDBInstancesRequest& request);
+
+                /**
+                 *本接口(CutXEvents)用于手动切割阻塞日志和死锁日志。
+                 * @param req CutXEventsRequest
+                 * @return CutXEventsOutcome
+                 */
+                CutXEventsOutcome CutXEvents(const Model::CutXEventsRequest &request);
+                void CutXEventsAsync(const Model::CutXEventsRequest& request, const CutXEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CutXEventsOutcomeCallable CutXEventsCallable(const Model::CutXEventsRequest& request);
 
                 /**
                  *本接口（DeleteAccount）用于删除实例账号。

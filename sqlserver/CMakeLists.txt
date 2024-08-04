@@ -97,7 +97,6 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/ModifyMigrationRequest.h
   include/tencentcloud/sqlserver/v20180328/model/CrossBackupAddr.h
   include/tencentcloud/sqlserver/v20180328/model/QueryMigrationCheckProcessRequest.h
-  include/tencentcloud/sqlserver/v20180328/model/ModifyDBRemarkRequest.h
   include/tencentcloud/sqlserver/v20180328/model/RestartDBInstanceResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeRollbackTimeResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeProductSpecResponse.h
@@ -124,6 +123,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DescribeDBInstanceInterResponse.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyPublishSubscribeNameResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DeleteIncrementalMigrationRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/CutXEventsResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeBackupsRequest.h
   include/tencentcloud/sqlserver/v20180328/model/RestoreInstanceRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyDatabaseShrinkMDFRequest.h
@@ -162,7 +162,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DescribeBackupsResponse.h
   include/tencentcloud/sqlserver/v20180328/model/StopMigrationRequest.h
   include/tencentcloud/sqlserver/v20180328/model/TerminateDBInstanceResponse.h
-  include/tencentcloud/sqlserver/v20180328/model/DescribeMigrationDetailRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/ModifyDBRemarkRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeAccountPrivilegeByDBResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DBPrivilegeModifyInfo.h
   include/tencentcloud/sqlserver/v20180328/model/CheckItem.h
@@ -244,6 +244,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DescribeXEventsResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DeleteIncrementalMigrationResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeFlowStatusResponse.h
+  include/tencentcloud/sqlserver/v20180328/model/CutXEventsRequest.h
   include/tencentcloud/sqlserver/v20180328/model/SwitchCloudInstanceHAResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeUploadIncrementalInfoResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DeleteRestoreTaskResponse.h
@@ -278,6 +279,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceProjectRequest.h
   include/tencentcloud/sqlserver/v20180328/model/MigrationStep.h
   include/tencentcloud/sqlserver/v20180328/model/RenewPostpaidDBInstanceRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/DescribeMigrationDetailRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupDetailsRequest.h
   include/tencentcloud/sqlserver/v20180328/model/CreateDBInstancesRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyCrossBackupStrategyRequest.h
@@ -468,7 +470,6 @@ set(sqlserver_src
   src/v20180328/model/ModifyMigrationRequest.cpp
   src/v20180328/model/CrossBackupAddr.cpp
   src/v20180328/model/QueryMigrationCheckProcessRequest.cpp
-  src/v20180328/model/ModifyDBRemarkRequest.cpp
   src/v20180328/model/RestartDBInstanceResponse.cpp
   src/v20180328/model/DescribeRollbackTimeResponse.cpp
   src/v20180328/model/DescribeProductSpecResponse.cpp
@@ -495,6 +496,7 @@ set(sqlserver_src
   src/v20180328/model/DescribeDBInstanceInterResponse.cpp
   src/v20180328/model/ModifyPublishSubscribeNameResponse.cpp
   src/v20180328/model/DeleteIncrementalMigrationRequest.cpp
+  src/v20180328/model/CutXEventsResponse.cpp
   src/v20180328/model/DescribeBackupsRequest.cpp
   src/v20180328/model/RestoreInstanceRequest.cpp
   src/v20180328/model/ModifyDatabaseShrinkMDFRequest.cpp
@@ -533,7 +535,7 @@ set(sqlserver_src
   src/v20180328/model/DescribeBackupsResponse.cpp
   src/v20180328/model/StopMigrationRequest.cpp
   src/v20180328/model/TerminateDBInstanceResponse.cpp
-  src/v20180328/model/DescribeMigrationDetailRequest.cpp
+  src/v20180328/model/ModifyDBRemarkRequest.cpp
   src/v20180328/model/DescribeAccountPrivilegeByDBResponse.cpp
   src/v20180328/model/DBPrivilegeModifyInfo.cpp
   src/v20180328/model/CheckItem.cpp
@@ -615,6 +617,7 @@ set(sqlserver_src
   src/v20180328/model/DescribeXEventsResponse.cpp
   src/v20180328/model/DeleteIncrementalMigrationResponse.cpp
   src/v20180328/model/DescribeFlowStatusResponse.cpp
+  src/v20180328/model/CutXEventsRequest.cpp
   src/v20180328/model/SwitchCloudInstanceHAResponse.cpp
   src/v20180328/model/DescribeUploadIncrementalInfoResponse.cpp
   src/v20180328/model/DeleteRestoreTaskResponse.cpp
@@ -649,6 +652,7 @@ set(sqlserver_src
   src/v20180328/model/ModifyDBInstanceProjectRequest.cpp
   src/v20180328/model/MigrationStep.cpp
   src/v20180328/model/RenewPostpaidDBInstanceRequest.cpp
+  src/v20180328/model/DescribeMigrationDetailRequest.cpp
   src/v20180328/model/DescribeReadOnlyGroupDetailsRequest.cpp
   src/v20180328/model/CreateDBInstancesRequest.cpp
   src/v20180328/model/ModifyCrossBackupStrategyRequest.cpp

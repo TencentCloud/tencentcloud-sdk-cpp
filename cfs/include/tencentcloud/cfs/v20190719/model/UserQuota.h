@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定配额类型，包括Uid、Gid
-                     * @return UserType 指定配额类型，包括Uid、Gid
+                     * 获取指定配额类型，包括Uid、Gid、Dir
+                     * @return UserType 指定配额类型，包括Uid、Gid、Dir
                      * 
                      */
                     std::string GetUserType() const;
 
                     /**
-                     * 设置指定配额类型，包括Uid、Gid
-                     * @param _userType 指定配额类型，包括Uid、Gid
+                     * 设置指定配额类型，包括Uid、Gid、Dir
+                     * @param _userType 指定配额类型，包括Uid、Gid、Dir
                      * 
                      */
                     void SetUserType(const std::string& _userType);
@@ -201,10 +201,60 @@ namespace TencentCloud
                      */
                     bool FileUsedHasBeenSet() const;
 
+                    /**
+                     * 获取目录配额的目录绝对路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DirectoryPath 目录配额的目录绝对路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDirectoryPath() const;
+
+                    /**
+                     * 设置目录配额的目录绝对路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _directoryPath 目录配额的目录绝对路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDirectoryPath(const std::string& _directoryPath);
+
+                    /**
+                     * 判断参数 DirectoryPath 是否已赋值
+                     * @return DirectoryPath 是否已赋值
+                     * 
+                     */
+                    bool DirectoryPathHasBeenSet() const;
+
+                    /**
+                     * 获取配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 指定配额类型，包括Uid、Gid
+                     * 指定配额类型，包括Uid、Gid、Dir
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;
@@ -246,6 +296,20 @@ namespace TencentCloud
                      */
                     uint64_t m_fileUsed;
                     bool m_fileUsedHasBeenSet;
+
+                    /**
+                     * 目录配额的目录绝对路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_directoryPath;
+                    bool m_directoryPathHasBeenSet;
+
+                    /**
+                     * 配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }
