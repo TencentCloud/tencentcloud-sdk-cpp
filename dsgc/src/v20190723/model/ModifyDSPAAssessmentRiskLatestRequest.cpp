@@ -24,8 +24,8 @@ using namespace std;
 
 ModifyDSPAAssessmentRiskLatestRequest::ModifyDSPAAssessmentRiskLatestRequest() :
     m_dspaIdHasBeenSet(false),
-    m_riskLatestTableIdHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_riskLatestTableIdHasBeenSet(false),
     m_noteHasBeenSet(false),
     m_processPeopleHasBeenSet(false),
     m_bathRiskIdListHasBeenSet(false)
@@ -47,20 +47,20 @@ string ModifyDSPAAssessmentRiskLatestRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_dspaId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_riskLatestTableIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RiskLatestTableId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_riskLatestTableId, allocator);
-    }
-
     if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_riskLatestTableIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskLatestTableId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_riskLatestTableId, allocator);
     }
 
     if (m_noteHasBeenSet)
@@ -116,22 +116,6 @@ bool ModifyDSPAAssessmentRiskLatestRequest::DspaIdHasBeenSet() const
     return m_dspaIdHasBeenSet;
 }
 
-uint64_t ModifyDSPAAssessmentRiskLatestRequest::GetRiskLatestTableId() const
-{
-    return m_riskLatestTableId;
-}
-
-void ModifyDSPAAssessmentRiskLatestRequest::SetRiskLatestTableId(const uint64_t& _riskLatestTableId)
-{
-    m_riskLatestTableId = _riskLatestTableId;
-    m_riskLatestTableIdHasBeenSet = true;
-}
-
-bool ModifyDSPAAssessmentRiskLatestRequest::RiskLatestTableIdHasBeenSet() const
-{
-    return m_riskLatestTableIdHasBeenSet;
-}
-
 string ModifyDSPAAssessmentRiskLatestRequest::GetStatus() const
 {
     return m_status;
@@ -146,6 +130,22 @@ void ModifyDSPAAssessmentRiskLatestRequest::SetStatus(const string& _status)
 bool ModifyDSPAAssessmentRiskLatestRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+uint64_t ModifyDSPAAssessmentRiskLatestRequest::GetRiskLatestTableId() const
+{
+    return m_riskLatestTableId;
+}
+
+void ModifyDSPAAssessmentRiskLatestRequest::SetRiskLatestTableId(const uint64_t& _riskLatestTableId)
+{
+    m_riskLatestTableId = _riskLatestTableId;
+    m_riskLatestTableIdHasBeenSet = true;
+}
+
+bool ModifyDSPAAssessmentRiskLatestRequest::RiskLatestTableIdHasBeenSet() const
+{
+    return m_riskLatestTableIdHasBeenSet;
 }
 
 string ModifyDSPAAssessmentRiskLatestRequest::GetNote() const

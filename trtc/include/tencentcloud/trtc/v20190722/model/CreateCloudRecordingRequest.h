@@ -69,14 +69,22 @@ namespace TencentCloud
 
                     /**
                      * 获取TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，录制的TRTC房间所对应的RoomId。
+注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。
+
                      * @return RoomId TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，录制的TRTC房间所对应的RoomId。
+注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。
+
                      * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，录制的TRTC房间所对应的RoomId。
+注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。
+
                      * @param _roomId TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，录制的TRTC房间所对应的RoomId。
+注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。
+
                      * 
                      */
                     void SetRoomId(const std::string& _roomId);
@@ -303,6 +311,8 @@ namespace TencentCloud
 
                     /**
                      * TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，录制的TRTC房间所对应的RoomId。
+注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。
+
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;

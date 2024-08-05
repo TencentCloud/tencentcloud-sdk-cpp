@@ -27,7 +27,12 @@ PrivateNatGateway::PrivateNatGateway() :
     m_statusHasBeenSet(false),
     m_crossDomainHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_directConnectGatewayIdsHasBeenSet(false),
+    m_natTypeHasBeenSet(false),
+    m_crossDomainInfoHasBeenSet(false),
+    m_vpcTypeHasBeenSet(false),
+    m_ccnIdHasBeenSet(false)
 {
 }
 
@@ -116,6 +121,66 @@ CoreInternalOutcome PrivateNatGateway::Deserialize(const rapidjson::Value &value
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("DirectConnectGatewayIds") && !value["DirectConnectGatewayIds"].IsNull())
+    {
+        if (!value["DirectConnectGatewayIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PrivateNatGateway.DirectConnectGatewayIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DirectConnectGatewayIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_directConnectGatewayIds.push_back((*itr).GetString());
+        }
+        m_directConnectGatewayIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("NatType") && !value["NatType"].IsNull())
+    {
+        if (!value["NatType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivateNatGateway.NatType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_natType = string(value["NatType"].GetString());
+        m_natTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CrossDomainInfo") && !value["CrossDomainInfo"].IsNull())
+    {
+        if (!value["CrossDomainInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivateNatGateway.CrossDomainInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_crossDomainInfo.Deserialize(value["CrossDomainInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_crossDomainInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcType") && !value["VpcType"].IsNull())
+    {
+        if (!value["VpcType"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivateNatGateway.VpcType` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcType = value["VpcType"].GetBool();
+        m_vpcTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CcnId") && !value["CcnId"].IsNull())
+    {
+        if (!value["CcnId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivateNatGateway.CcnId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ccnId = string(value["CcnId"].GetString());
+        m_ccnIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +249,52 @@ void PrivateNatGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_directConnectGatewayIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DirectConnectGatewayIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_directConnectGatewayIds.begin(); itr != m_directConnectGatewayIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_natTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NatType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_natType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_crossDomainInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossDomainInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_crossDomainInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_vpcTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vpcType, allocator);
+    }
+
+    if (m_ccnIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcnId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ccnId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +410,85 @@ void PrivateNatGateway::SetTagSet(const vector<Tag>& _tagSet)
 bool PrivateNatGateway::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+vector<string> PrivateNatGateway::GetDirectConnectGatewayIds() const
+{
+    return m_directConnectGatewayIds;
+}
+
+void PrivateNatGateway::SetDirectConnectGatewayIds(const vector<string>& _directConnectGatewayIds)
+{
+    m_directConnectGatewayIds = _directConnectGatewayIds;
+    m_directConnectGatewayIdsHasBeenSet = true;
+}
+
+bool PrivateNatGateway::DirectConnectGatewayIdsHasBeenSet() const
+{
+    return m_directConnectGatewayIdsHasBeenSet;
+}
+
+string PrivateNatGateway::GetNatType() const
+{
+    return m_natType;
+}
+
+void PrivateNatGateway::SetNatType(const string& _natType)
+{
+    m_natType = _natType;
+    m_natTypeHasBeenSet = true;
+}
+
+bool PrivateNatGateway::NatTypeHasBeenSet() const
+{
+    return m_natTypeHasBeenSet;
+}
+
+PrivateNatCrossDomainInfo PrivateNatGateway::GetCrossDomainInfo() const
+{
+    return m_crossDomainInfo;
+}
+
+void PrivateNatGateway::SetCrossDomainInfo(const PrivateNatCrossDomainInfo& _crossDomainInfo)
+{
+    m_crossDomainInfo = _crossDomainInfo;
+    m_crossDomainInfoHasBeenSet = true;
+}
+
+bool PrivateNatGateway::CrossDomainInfoHasBeenSet() const
+{
+    return m_crossDomainInfoHasBeenSet;
+}
+
+bool PrivateNatGateway::GetVpcType() const
+{
+    return m_vpcType;
+}
+
+void PrivateNatGateway::SetVpcType(const bool& _vpcType)
+{
+    m_vpcType = _vpcType;
+    m_vpcTypeHasBeenSet = true;
+}
+
+bool PrivateNatGateway::VpcTypeHasBeenSet() const
+{
+    return m_vpcTypeHasBeenSet;
+}
+
+string PrivateNatGateway::GetCcnId() const
+{
+    return m_ccnId;
+}
+
+void PrivateNatGateway::SetCcnId(const string& _ccnId)
+{
+    m_ccnId = _ccnId;
+    m_ccnIdHasBeenSet = true;
+}
+
+bool PrivateNatGateway::CcnIdHasBeenSet() const
+{
+    return m_ccnIdHasBeenSet;
 }
 

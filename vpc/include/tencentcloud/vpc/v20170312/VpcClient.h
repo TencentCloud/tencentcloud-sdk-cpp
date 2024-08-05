@@ -3019,6 +3019,8 @@ namespace TencentCloud
 
                 /**
                  *本接口（DeleteVpnConnection）用于删除VPN通道。
+>?本接口为异步接口
+>
                  * @param req DeleteVpnConnectionRequest
                  * @return DeleteVpnConnectionOutcome
                  */

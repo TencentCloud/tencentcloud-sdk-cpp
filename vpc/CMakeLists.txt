@@ -479,6 +479,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DownloadVpnGatewaySslClientCertResponse.h
   include/tencentcloud/vpc/v20170312/model/DeleteNetDetectResponse.h
   include/tencentcloud/vpc/v20170312/model/AllocateAddressesRequest.h
+  include/tencentcloud/vpc/v20170312/model/PrivateNatCrossDomainInfo.h
   include/tencentcloud/vpc/v20170312/model/DescribeDhcpIpsResponse.h
   include/tencentcloud/vpc/v20170312/model/ModifyAssistantCidrRequest.h
   include/tencentcloud/vpc/v20170312/model/CreateIp6TranslatorsRequest.h
@@ -1335,6 +1336,7 @@ set(vpc_src
   src/v20170312/model/DownloadVpnGatewaySslClientCertResponse.cpp
   src/v20170312/model/DeleteNetDetectResponse.cpp
   src/v20170312/model/AllocateAddressesRequest.cpp
+  src/v20170312/model/PrivateNatCrossDomainInfo.cpp
   src/v20170312/model/DescribeDhcpIpsResponse.cpp
   src/v20170312/model/ModifyAssistantCidrRequest.cpp
   src/v20170312/model/CreateIp6TranslatorsRequest.cpp

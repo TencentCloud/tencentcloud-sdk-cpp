@@ -446,18 +446,18 @@ namespace TencentCloud
                     bool ResourceAuthAccountHasBeenSet() const;
 
                     /**
-                     * 获取x
+                     * 获取实例类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceType x
+                     * @return InstanceType 实例类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置x
+                     * 设置实例类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceType x
+                     * @param _instanceType 实例类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -471,18 +471,18 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取x
+                     * 获取实例值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceValue x
+                     * @return InstanceValue 实例值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceValue() const;
 
                     /**
-                     * 设置x
+                     * 设置实例值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceValue x
+                     * @param _instanceValue 实例值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -612,14 +612,14 @@ namespace TencentCloud
                     bool m_resourceAuthAccountHasBeenSet;
 
                     /**
-                     * x
+                     * 实例类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * x
+                     * 实例值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceValue;

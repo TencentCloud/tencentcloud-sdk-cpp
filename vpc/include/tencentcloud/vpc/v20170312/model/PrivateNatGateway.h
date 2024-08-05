@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vpc/v20170312/model/Tag.h>
+#include <tencentcloud/vpc/v20170312/model/PrivateNatCrossDomainInfo.h>
 
 
 namespace TencentCloud
@@ -202,6 +203,131 @@ namespace TencentCloud
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取专线网关唯一`ID`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DirectConnectGatewayIds 专线网关唯一`ID`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetDirectConnectGatewayIds() const;
+
+                    /**
+                     * 设置专线网关唯一`ID`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _directConnectGatewayIds 专线网关唯一`ID`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDirectConnectGatewayIds(const std::vector<std::string>& _directConnectGatewayIds);
+
+                    /**
+                     * 判断参数 DirectConnectGatewayIds 是否已赋值
+                     * @return DirectConnectGatewayIds 是否已赋值
+                     * 
+                     */
+                    bool DirectConnectGatewayIdsHasBeenSet() const;
+
+                    /**
+                     * 获取私网网关类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NatType 私网网关类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNatType() const;
+
+                    /**
+                     * 设置私网网关类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _natType 私网网关类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNatType(const std::string& _natType);
+
+                    /**
+                     * 判断参数 NatType 是否已赋值
+                     * @return NatType 是否已赋值
+                     * 
+                     */
+                    bool NatTypeHasBeenSet() const;
+
+                    /**
+                     * 获取私网NAT跨域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CrossDomainInfo 私网NAT跨域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    PrivateNatCrossDomainInfo GetCrossDomainInfo() const;
+
+                    /**
+                     * 设置私网NAT跨域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _crossDomainInfo 私网NAT跨域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCrossDomainInfo(const PrivateNatCrossDomainInfo& _crossDomainInfo);
+
+                    /**
+                     * 判断参数 CrossDomainInfo 是否已赋值
+                     * @return CrossDomainInfo 是否已赋值
+                     * 
+                     */
+                    bool CrossDomainInfoHasBeenSet() const;
+
+                    /**
+                     * 获取是否VPC型私网网关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcType 是否VPC型私网网关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetVpcType() const;
+
+                    /**
+                     * 设置是否VPC型私网网关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vpcType 是否VPC型私网网关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVpcType(const bool& _vpcType);
+
+                    /**
+                     * 判断参数 VpcType 是否已赋值
+                     * @return VpcType 是否已赋值
+                     * 
+                     */
+                    bool VpcTypeHasBeenSet() const;
+
+                    /**
+                     * 获取跨域私网NAT关联的云联网ID	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CcnId 跨域私网NAT关联的云联网ID	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCcnId() const;
+
+                    /**
+                     * 设置跨域私网NAT关联的云联网ID	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ccnId 跨域私网NAT关联的云联网ID	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCcnId(const std::string& _ccnId);
+
+                    /**
+                     * 判断参数 CcnId 是否已赋值
+                     * @return CcnId 是否已赋值
+                     * 
+                     */
+                    bool CcnIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -247,6 +373,41 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 专线网关唯一`ID`
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_directConnectGatewayIds;
+                    bool m_directConnectGatewayIdsHasBeenSet;
+
+                    /**
+                     * 私网网关类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_natType;
+                    bool m_natTypeHasBeenSet;
+
+                    /**
+                     * 私网NAT跨域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PrivateNatCrossDomainInfo m_crossDomainInfo;
+                    bool m_crossDomainInfoHasBeenSet;
+
+                    /**
+                     * 是否VPC型私网网关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_vpcType;
+                    bool m_vpcTypeHasBeenSet;
+
+                    /**
+                     * 跨域私网NAT关联的云联网ID	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ccnId;
+                    bool m_ccnIdHasBeenSet;
 
                 };
             }

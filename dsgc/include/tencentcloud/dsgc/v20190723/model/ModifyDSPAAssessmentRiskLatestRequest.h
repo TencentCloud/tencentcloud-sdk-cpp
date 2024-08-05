@@ -64,27 +64,6 @@ namespace TencentCloud
                     bool DspaIdHasBeenSet() const;
 
                     /**
-                     * 获取最新风险项Id
-                     * @return RiskLatestTableId 最新风险项Id
-                     * @deprecated
-                     */
-                    uint64_t GetRiskLatestTableId() const;
-
-                    /**
-                     * 设置最新风险项Id
-                     * @param _riskLatestTableId 最新风险项Id
-                     * @deprecated
-                     */
-                    void SetRiskLatestTableId(const uint64_t& _riskLatestTableId);
-
-                    /**
-                     * 判断参数 RiskLatestTableId 是否已赋值
-                     * @return RiskLatestTableId 是否已赋值
-                     * @deprecated
-                     */
-                    bool RiskLatestTableIdHasBeenSet() const;
-
-                    /**
                      * 获取风险状态（waiting:待处理，processing:处理中，finished:已处理，ignored:已忽略）
                      * @return Status 风险状态（waiting:待处理，processing:处理中，finished:已处理，ignored:已忽略）
                      * 
@@ -104,6 +83,27 @@ namespace TencentCloud
                      * 
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取最新风险项Id
+                     * @return RiskLatestTableId 最新风险项Id
+                     * @deprecated
+                     */
+                    uint64_t GetRiskLatestTableId() const;
+
+                    /**
+                     * 设置最新风险项Id
+                     * @param _riskLatestTableId 最新风险项Id
+                     * @deprecated
+                     */
+                    void SetRiskLatestTableId(const uint64_t& _riskLatestTableId);
+
+                    /**
+                     * 判断参数 RiskLatestTableId 是否已赋值
+                     * @return RiskLatestTableId 是否已赋值
+                     * @deprecated
+                     */
+                    bool RiskLatestTableIdHasBeenSet() const;
 
                     /**
                      * 获取备注
@@ -177,16 +177,16 @@ namespace TencentCloud
                     bool m_dspaIdHasBeenSet;
 
                     /**
-                     * 最新风险项Id
-                     */
-                    uint64_t m_riskLatestTableId;
-                    bool m_riskLatestTableIdHasBeenSet;
-
-                    /**
                      * 风险状态（waiting:待处理，processing:处理中，finished:已处理，ignored:已忽略）
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 最新风险项Id
+                     */
+                    uint64_t m_riskLatestTableId;
+                    bool m_riskLatestTableIdHasBeenSet;
 
                     /**
                      * 备注
