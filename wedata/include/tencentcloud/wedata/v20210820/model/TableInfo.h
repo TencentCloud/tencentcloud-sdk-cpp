@@ -97,6 +97,31 @@ namespace TencentCloud
                     bool TableNameHasBeenSet() const;
 
                     /**
+                     * 获取表类型，view/table
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableType 表类型，view/table
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTableType() const;
+
+                    /**
+                     * 设置表类型，view/table
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableType 表类型，view/table
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableType(const std::string& _tableType);
+
+                    /**
+                     * 判断参数 TableType 是否已赋值
+                     * @return TableType 是否已赋值
+                     * 
+                     */
+                    bool TableTypeHasBeenSet() const;
+
+                    /**
                      * 获取表databaseName
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginDatabaseName 表databaseName
@@ -161,6 +186,13 @@ namespace TencentCloud
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
+
+                    /**
+                     * 表类型，view/table
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tableType;
+                    bool m_tableTypeHasBeenSet;
 
                     /**
                      * 表databaseName

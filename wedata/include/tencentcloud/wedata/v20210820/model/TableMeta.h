@@ -1404,6 +1404,56 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     bool TablePropertiesHasBeenSet() const;
 
+                    /**
+                     * 获取环境，取值 prod或者 dev
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Environment 环境，取值 prod或者 dev
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEnvironment() const;
+
+                    /**
+                     * 设置环境，取值 prod或者 dev
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _environment 环境，取值 prod或者 dev
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnvironment(const std::string& _environment);
+
+                    /**
+                     * 判断参数 Environment 是否已赋值
+                     * @return Environment 是否已赋值
+                     * 
+                     */
+                    bool EnvironmentHasBeenSet() const;
+
+                    /**
+                     * 获取数据库模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Schema 数据库模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSchema() const;
+
+                    /**
+                     * 设置数据库模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _schema 数据库模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSchema(const std::string& _schema);
+
+                    /**
+                     * 判断参数 Schema 是否已赋值
+                     * @return Schema 是否已赋值
+                     * 
+                     */
+                    bool SchemaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1784,6 +1834,20 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     std::vector<TableMetaProperty> m_tableProperties;
                     bool m_tablePropertiesHasBeenSet;
+
+                    /**
+                     * 环境，取值 prod或者 dev
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_environment;
+                    bool m_environmentHasBeenSet;
+
+                    /**
+                     * 数据库模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_schema;
+                    bool m_schemaHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace std;
 DescribeTableMetaRequest::DescribeTableMetaRequest() :
     m_tableIdHasBeenSet(false),
     m_tableNameFilterHasBeenSet(false),
-    m_tableFilterTypeHasBeenSet(false)
+    m_tableFilterTypeHasBeenSet(false),
+    m_searchNamesHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,19 @@ string DescribeTableMetaRequest::ToJsonString() const
         string key = "TableFilterType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_tableFilterType, allocator);
+    }
+
+    if (m_searchNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_searchNames.begin(); itr != m_searchNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -115,6 +129,22 @@ void DescribeTableMetaRequest::SetTableFilterType(const uint64_t& _tableFilterTy
 bool DescribeTableMetaRequest::TableFilterTypeHasBeenSet() const
 {
     return m_tableFilterTypeHasBeenSet;
+}
+
+vector<string> DescribeTableMetaRequest::GetSearchNames() const
+{
+    return m_searchNames;
+}
+
+void DescribeTableMetaRequest::SetSearchNames(const vector<string>& _searchNames)
+{
+    m_searchNames = _searchNames;
+    m_searchNamesHasBeenSet = true;
+}
+
+bool DescribeTableMetaRequest::SearchNamesHasBeenSet() const
+{
+    return m_searchNamesHasBeenSet;
 }
 
 

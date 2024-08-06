@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OperationHasBeenSet() const;
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceIds 实例Id
+                     * 获取实例Id，每次请求的实例的上限为10。
+                     * @return InstanceIds 实例Id，每次请求的实例的上限为10。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例Id
-                     * @param _instanceIds 实例Id
+                     * 设置实例Id，每次请求的实例的上限为10。
+                     * @param _instanceIds 实例Id，每次请求的实例的上限为10。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_operationHasBeenSet;
 
                     /**
-                     * 实例Id
+                     * 实例Id，每次请求的实例的上限为10。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

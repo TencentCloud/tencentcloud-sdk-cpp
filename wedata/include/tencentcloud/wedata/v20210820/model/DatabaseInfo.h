@@ -271,6 +271,56 @@ namespace TencentCloud
                      */
                     bool DsEnvTypeHasBeenSet() const;
 
+                    /**
+                     * 获取EMR引擎部署方式：CVM/TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterDeployType EMR引擎部署方式：CVM/TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterDeployType() const;
+
+                    /**
+                     * 设置EMR引擎部署方式：CVM/TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterDeployType EMR引擎部署方式：CVM/TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterDeployType(const std::string& _clusterDeployType);
+
+                    /**
+                     * 判断参数 ClusterDeployType 是否已赋值
+                     * @return ClusterDeployType 是否已赋值
+                     * 
+                     */
+                    bool ClusterDeployTypeHasBeenSet() const;
+
+                    /**
+                     * 获取模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SchemaName 模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSchemaName() const;
+
+                    /**
+                     * 设置模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _schemaName 模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSchemaName(const std::string& _schemaName);
+
+                    /**
+                     * 判断参数 SchemaName 是否已赋值
+                     * @return SchemaName 是否已赋值
+                     * 
+                     */
+                    bool SchemaNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +385,20 @@ namespace TencentCloud
                      */
                     int64_t m_dsEnvType;
                     bool m_dsEnvTypeHasBeenSet;
+
+                    /**
+                     * EMR引擎部署方式：CVM/TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterDeployType;
+                    bool m_clusterDeployTypeHasBeenSet;
+
+                    /**
+                     * 模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_schemaName;
+                    bool m_schemaNameHasBeenSet;
 
                 };
             }

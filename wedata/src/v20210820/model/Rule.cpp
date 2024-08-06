@@ -65,7 +65,10 @@ Rule::Rule() :
     m_databaseIdHasBeenSet(false),
     m_monitorStatusHasBeenSet(false),
     m_triggerConditionHasBeenSet(false),
-    m_dsEnvTypeHasBeenSet(false)
+    m_dsEnvTypeHasBeenSet(false),
+    m_datasourceTypeHasBeenSet(false),
+    m_schemaNameHasBeenSet(false),
+    m_targetSchemaNameHasBeenSet(false)
 {
 }
 
@@ -555,6 +558,36 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
         m_dsEnvTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DatasourceType") && !value["DatasourceType"].IsNull())
+    {
+        if (!value["DatasourceType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.DatasourceType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceType = value["DatasourceType"].GetInt64();
+        m_datasourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SchemaName") && !value["SchemaName"].IsNull())
+    {
+        if (!value["SchemaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.SchemaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemaName = string(value["SchemaName"].GetString());
+        m_schemaNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetSchemaName") && !value["TargetSchemaName"].IsNull())
+    {
+        if (!value["TargetSchemaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.TargetSchemaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetSchemaName = string(value["TargetSchemaName"].GetString());
+        m_targetSchemaNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -929,6 +962,30 @@ void Rule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "DsEnvType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dsEnvType, allocator);
+    }
+
+    if (m_datasourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_datasourceType, allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetSchemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetSchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetSchemaName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1652,5 +1709,53 @@ void Rule::SetDsEnvType(const int64_t& _dsEnvType)
 bool Rule::DsEnvTypeHasBeenSet() const
 {
     return m_dsEnvTypeHasBeenSet;
+}
+
+int64_t Rule::GetDatasourceType() const
+{
+    return m_datasourceType;
+}
+
+void Rule::SetDatasourceType(const int64_t& _datasourceType)
+{
+    m_datasourceType = _datasourceType;
+    m_datasourceTypeHasBeenSet = true;
+}
+
+bool Rule::DatasourceTypeHasBeenSet() const
+{
+    return m_datasourceTypeHasBeenSet;
+}
+
+string Rule::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void Rule::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool Rule::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
+}
+
+string Rule::GetTargetSchemaName() const
+{
+    return m_targetSchemaName;
+}
+
+void Rule::SetTargetSchemaName(const string& _targetSchemaName)
+{
+    m_targetSchemaName = _targetSchemaName;
+    m_targetSchemaNameHasBeenSet = true;
+}
+
+bool Rule::TargetSchemaNameHasBeenSet() const
+{
+    return m_targetSchemaNameHasBeenSet;
 }
 

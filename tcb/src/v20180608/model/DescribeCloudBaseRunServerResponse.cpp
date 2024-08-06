@@ -30,7 +30,8 @@ DescribeCloudBaseRunServerResponse::DescribeCloudBaseRunServerResponse() :
     m_isPublicHasBeenSet(false),
     m_imageRepoHasBeenSet(false),
     m_trafficTypeHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false)
+    m_sourceTypeHasBeenSet(false),
+    m_tagHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,16 @@ CoreInternalOutcome DescribeCloudBaseRunServerResponse::Deserialize(const string
         m_sourceTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Tag") && !rsp["Tag"].IsNull())
+    {
+        if (!rsp["Tag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Tag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tag = string(rsp["Tag"].GetString());
+        m_tagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -219,6 +230,14 @@ string DescribeCloudBaseRunServerResponse::ToJsonString() const
         string key = "SourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -301,6 +320,16 @@ string DescribeCloudBaseRunServerResponse::GetSourceType() const
 bool DescribeCloudBaseRunServerResponse::SourceTypeHasBeenSet() const
 {
     return m_sourceTypeHasBeenSet;
+}
+
+string DescribeCloudBaseRunServerResponse::GetTag() const
+{
+    return m_tag;
+}
+
+bool DescribeCloudBaseRunServerResponse::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
 }
 
 

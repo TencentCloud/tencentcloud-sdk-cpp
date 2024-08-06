@@ -34,6 +34,7 @@ RuleGroup::RuleGroup() :
     m_subscriptionHasBeenSet(false),
     m_databaseIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
+    m_schemaNameHasBeenSet(false),
     m_permissionHasBeenSet(false),
     m_ruleCountHasBeenSet(false),
     m_monitorStatusHasBeenSet(false),
@@ -42,7 +43,8 @@ RuleGroup::RuleGroup() :
     m_createTimeHasBeenSet(false),
     m_strategyConfigHasBeenSet(false),
     m_subscribeConfigHasBeenSet(false),
-    m_dsEnvTypeHasBeenSet(false)
+    m_dsEnvTypeHasBeenSet(false),
+    m_clusterDeployTypeHasBeenSet(false)
 {
 }
 
@@ -195,6 +197,16 @@ CoreInternalOutcome RuleGroup::Deserialize(const rapidjson::Value &value)
         m_databaseNameHasBeenSet = true;
     }
 
+    if (value.HasMember("SchemaName") && !value["SchemaName"].IsNull())
+    {
+        if (!value["SchemaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.SchemaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemaName = string(value["SchemaName"].GetString());
+        m_schemaNameHasBeenSet = true;
+    }
+
     if (value.HasMember("Permission") && !value["Permission"].IsNull())
     {
         if (!value["Permission"].IsBool())
@@ -283,6 +295,16 @@ CoreInternalOutcome RuleGroup::Deserialize(const rapidjson::Value &value)
         }
         m_dsEnvType = value["DsEnvType"].GetInt64();
         m_dsEnvTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterDeployType") && !value["ClusterDeployType"].IsNull())
+    {
+        if (!value["ClusterDeployType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.ClusterDeployType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterDeployType = string(value["ClusterDeployType"].GetString());
+        m_clusterDeployTypeHasBeenSet = true;
     }
 
 
@@ -398,6 +420,14 @@ void RuleGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_permissionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -468,6 +498,14 @@ void RuleGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "DsEnvType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dsEnvType, allocator);
+    }
+
+    if (m_clusterDeployTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterDeployType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterDeployType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -681,6 +719,22 @@ bool RuleGroup::DatabaseNameHasBeenSet() const
     return m_databaseNameHasBeenSet;
 }
 
+string RuleGroup::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void RuleGroup::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool RuleGroup::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
+}
+
 bool RuleGroup::GetPermission() const
 {
     return m_permission;
@@ -823,5 +877,21 @@ void RuleGroup::SetDsEnvType(const int64_t& _dsEnvType)
 bool RuleGroup::DsEnvTypeHasBeenSet() const
 {
     return m_dsEnvTypeHasBeenSet;
+}
+
+string RuleGroup::GetClusterDeployType() const
+{
+    return m_clusterDeployType;
+}
+
+void RuleGroup::SetClusterDeployType(const string& _clusterDeployType)
+{
+    m_clusterDeployType = _clusterDeployType;
+    m_clusterDeployTypeHasBeenSet = true;
+}
+
+bool RuleGroup::ClusterDeployTypeHasBeenSet() const
+{
+    return m_clusterDeployTypeHasBeenSet;
 }
 

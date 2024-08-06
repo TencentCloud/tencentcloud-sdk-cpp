@@ -447,6 +447,131 @@ namespace TencentCloud
                      */
                     bool RuleExecResultVOListHasBeenSet() const;
 
+                    /**
+                     * 获取数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatabaseName 数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatabaseName() const;
+
+                    /**
+                     * 设置数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _databaseName 数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatabaseName(const std::string& _databaseName);
+
+                    /**
+                     * 判断参数 DatabaseName 是否已赋值
+                     * @return DatabaseName 是否已赋值
+                     * 
+                     */
+                    bool DatabaseNameHasBeenSet() const;
+
+                    /**
+                     * 获取本地规则表id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleGroupTableId 本地规则表id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRuleGroupTableId() const;
+
+                    /**
+                     * 设置本地规则表id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleGroupTableId 本地规则表id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleGroupTableId(const std::string& _ruleGroupTableId);
+
+                    /**
+                     * 判断参数 RuleGroupTableId 是否已赋值
+                     * @return RuleGroupTableId 是否已赋值
+                     * 
+                     */
+                    bool RuleGroupTableIdHasBeenSet() const;
+
+                    /**
+                     * 获取集群部署类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterDeployType 集群部署类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterDeployType() const;
+
+                    /**
+                     * 设置集群部署类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterDeployType 集群部署类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterDeployType(const std::string& _clusterDeployType);
+
+                    /**
+                     * 判断参数 ClusterDeployType 是否已赋值
+                     * @return ClusterDeployType 是否已赋值
+                     * 
+                     */
+                    bool ClusterDeployTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId 实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceId 实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据库所属环境，0.未定义，1.生产 2.开发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DsEnvType 数据库所属环境，0.未定义，1.生产 2.开发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDsEnvType() const;
+
+                    /**
+                     * 设置数据库所属环境，0.未定义，1.生产 2.开发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dsEnvType 数据库所属环境，0.未定义，1.生产 2.开发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDsEnvType(const std::string& _dsEnvType);
+
+                    /**
+                     * 判断参数 DsEnvType 是否已赋值
+                     * @return DsEnvType 是否已赋值
+                     * 
+                     */
+                    bool DsEnvTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -560,6 +685,41 @@ namespace TencentCloud
                      */
                     std::vector<RuleExecResult> m_ruleExecResultVOList;
                     bool m_ruleExecResultVOListHasBeenSet;
+
+                    /**
+                     * 数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_databaseName;
+                    bool m_databaseNameHasBeenSet;
+
+                    /**
+                     * 本地规则表id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleGroupTableId;
+                    bool m_ruleGroupTableIdHasBeenSet;
+
+                    /**
+                     * 集群部署类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterDeployType;
+                    bool m_clusterDeployTypeHasBeenSet;
+
+                    /**
+                     * 实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 数据库所属环境，0.未定义，1.生产 2.开发
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dsEnvType;
+                    bool m_dsEnvTypeHasBeenSet;
 
                 };
             }

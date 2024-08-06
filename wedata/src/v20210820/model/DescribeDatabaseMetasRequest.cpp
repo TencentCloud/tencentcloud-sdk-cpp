@@ -24,7 +24,9 @@ using namespace std;
 
 DescribeDatabaseMetasRequest::DescribeDatabaseMetasRequest() :
     m_filtersHasBeenSet(false),
-    m_orderFieldsHasBeenSet(false)
+    m_orderFieldsHasBeenSet(false),
+    m_pageSizeHasBeenSet(false),
+    m_pageNumberHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,22 @@ string DescribeDatabaseMetasRequest::ToJsonString() const
         }
     }
 
+    if (m_pageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_pageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageNumber, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -103,6 +121,38 @@ void DescribeDatabaseMetasRequest::SetOrderFields(const vector<OrderField>& _ord
 bool DescribeDatabaseMetasRequest::OrderFieldsHasBeenSet() const
 {
     return m_orderFieldsHasBeenSet;
+}
+
+int64_t DescribeDatabaseMetasRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void DescribeDatabaseMetasRequest::SetPageSize(const int64_t& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool DescribeDatabaseMetasRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
+}
+
+int64_t DescribeDatabaseMetasRequest::GetPageNumber() const
+{
+    return m_pageNumber;
+}
+
+void DescribeDatabaseMetasRequest::SetPageNumber(const int64_t& _pageNumber)
+{
+    m_pageNumber = _pageNumber;
+    m_pageNumberHasBeenSet = true;
+}
+
+bool DescribeDatabaseMetasRequest::PageNumberHasBeenSet() const
+{
+    return m_pageNumberHasBeenSet;
 }
 
 

@@ -24,7 +24,9 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeTableMetaResponse::DescribeTableMetaResponse() :
-    m_tableMetaHasBeenSet(false)
+    m_tableMetaHasBeenSet(false),
+    m_lifecycleInfoHasBeenSet(false),
+    m_tagVoteSumListHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,40 @@ CoreInternalOutcome DescribeTableMetaResponse::Deserialize(const string &payload
         m_tableMetaHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LifecycleInfo") && !rsp["LifecycleInfo"].IsNull())
+    {
+        if (!rsp["LifecycleInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LifecycleInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_lifecycleInfo.Deserialize(rsp["LifecycleInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_lifecycleInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TagVoteSumList") && !rsp["TagVoteSumList"].IsNull())
+    {
+        if (!rsp["TagVoteSumList"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TagVoteSumList` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tagVoteSumList.Deserialize(rsp["TagVoteSumList"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tagVoteSumListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +132,24 @@ string DescribeTableMetaResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tableMeta.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_lifecycleInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LifecycleInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lifecycleInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tagVoteSumListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagVoteSumList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tagVoteSumList.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +172,26 @@ TableMeta DescribeTableMetaResponse::GetTableMeta() const
 bool DescribeTableMetaResponse::TableMetaHasBeenSet() const
 {
     return m_tableMetaHasBeenSet;
+}
+
+LifecycleInfo DescribeTableMetaResponse::GetLifecycleInfo() const
+{
+    return m_lifecycleInfo;
+}
+
+bool DescribeTableMetaResponse::LifecycleInfoHasBeenSet() const
+{
+    return m_lifecycleInfoHasBeenSet;
+}
+
+TagVoteSum DescribeTableMetaResponse::GetTagVoteSumList() const
+{
+    return m_tagVoteSumList;
+}
+
+bool DescribeTableMetaResponse::TagVoteSumListHasBeenSet() const
+{
+    return m_tagVoteSumListHasBeenSet;
 }
 
 

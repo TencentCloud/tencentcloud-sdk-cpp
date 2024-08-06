@@ -86,6 +86,48 @@ namespace TencentCloud
                      */
                     bool OrderFieldsHasBeenSet() const;
 
+                    /**
+                     * 获取pagesize
+                     * @return PageSize pagesize
+                     * 
+                     */
+                    int64_t GetPageSize() const;
+
+                    /**
+                     * 设置pagesize
+                     * @param _pageSize pagesize
+                     * 
+                     */
+                    void SetPageSize(const int64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     * 
+                     */
+                    bool PageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取pageNumber
+                     * @return PageNumber pageNumber
+                     * 
+                     */
+                    int64_t GetPageNumber() const;
+
+                    /**
+                     * 设置pageNumber
+                     * @param _pageNumber pageNumber
+                     * 
+                     */
+                    void SetPageNumber(const int64_t& _pageNumber);
+
+                    /**
+                     * 判断参数 PageNumber 是否已赋值
+                     * @return PageNumber 是否已赋值
+                     * 
+                     */
+                    bool PageNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -99,6 +141,18 @@ namespace TencentCloud
                      */
                     std::vector<OrderField> m_orderFields;
                     bool m_orderFieldsHasBeenSet;
+
+                    /**
+                     * pagesize
+                     */
+                    int64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * pageNumber
+                     */
+                    int64_t m_pageNumber;
+                    bool m_pageNumberHasBeenSet;
 
                 };
             }

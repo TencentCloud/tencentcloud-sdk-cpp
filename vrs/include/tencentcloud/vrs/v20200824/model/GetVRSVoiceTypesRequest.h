@@ -42,7 +42,44 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取复刻类型。
+0 - 除快速声音复刻外其他复刻类型（默认）；
+5 - 一句话声音复刻。
+                     * @return TaskType 复刻类型。
+0 - 除快速声音复刻外其他复刻类型（默认）；
+5 - 一句话声音复刻。
+                     * 
+                     */
+                    int64_t GetTaskType() const;
+
+                    /**
+                     * 设置复刻类型。
+0 - 除快速声音复刻外其他复刻类型（默认）；
+5 - 一句话声音复刻。
+                     * @param _taskType 复刻类型。
+0 - 除快速声音复刻外其他复刻类型（默认）；
+5 - 一句话声音复刻。
+                     * 
+                     */
+                    void SetTaskType(const int64_t& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 复刻类型。
+0 - 除快速声音复刻外其他复刻类型（默认）；
+5 - 一句话声音复刻。
+                     */
+                    int64_t m_taskType;
+                    bool m_taskTypeHasBeenSet;
 
                 };
             }

@@ -22,7 +22,10 @@
 using namespace TencentCloud::Vrs::V20200824::Model;
 using namespace std;
 
-GetTrainingTextRequest::GetTrainingTextRequest()
+GetTrainingTextRequest::GetTrainingTextRequest() :
+    m_taskTypeHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_textLanguageHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string GetTrainingTextRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_domain, allocator);
+    }
+
+    if (m_textLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_textLanguage, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string GetTrainingTextRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t GetTrainingTextRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void GetTrainingTextRequest::SetTaskType(const int64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool GetTrainingTextRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
+}
+
+int64_t GetTrainingTextRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void GetTrainingTextRequest::SetDomain(const int64_t& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool GetTrainingTextRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+int64_t GetTrainingTextRequest::GetTextLanguage() const
+{
+    return m_textLanguage;
+}
+
+void GetTrainingTextRequest::SetTextLanguage(const int64_t& _textLanguage)
+{
+    m_textLanguage = _textLanguage;
+    m_textLanguageHasBeenSet = true;
+}
+
+bool GetTrainingTextRequest::TextLanguageHasBeenSet() const
+{
+    return m_textLanguageHasBeenSet;
+}
 
 

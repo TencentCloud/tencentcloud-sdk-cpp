@@ -29,7 +29,10 @@ DescribeTableSchemaInfoRequest::DescribeTableSchemaInfoRequest() :
     m_datasourceIdHasBeenSet(false),
     m_connectionTypeHasBeenSet(false),
     m_schemaNameHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_envHasBeenSet(false),
+    m_modelHasBeenSet(false),
+    m_devDatasourceIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +97,30 @@ string DescribeTableSchemaInfoRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Env";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_env.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Model";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_devDatasourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DevDatasourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_devDatasourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +241,54 @@ void DescribeTableSchemaInfoRequest::SetProjectId(const string& _projectId)
 bool DescribeTableSchemaInfoRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string DescribeTableSchemaInfoRequest::GetEnv() const
+{
+    return m_env;
+}
+
+void DescribeTableSchemaInfoRequest::SetEnv(const string& _env)
+{
+    m_env = _env;
+    m_envHasBeenSet = true;
+}
+
+bool DescribeTableSchemaInfoRequest::EnvHasBeenSet() const
+{
+    return m_envHasBeenSet;
+}
+
+string DescribeTableSchemaInfoRequest::GetModel() const
+{
+    return m_model;
+}
+
+void DescribeTableSchemaInfoRequest::SetModel(const string& _model)
+{
+    m_model = _model;
+    m_modelHasBeenSet = true;
+}
+
+bool DescribeTableSchemaInfoRequest::ModelHasBeenSet() const
+{
+    return m_modelHasBeenSet;
+}
+
+string DescribeTableSchemaInfoRequest::GetDevDatasourceId() const
+{
+    return m_devDatasourceId;
+}
+
+void DescribeTableSchemaInfoRequest::SetDevDatasourceId(const string& _devDatasourceId)
+{
+    m_devDatasourceId = _devDatasourceId;
+    m_devDatasourceIdHasBeenSet = true;
+}
+
+bool DescribeTableSchemaInfoRequest::DevDatasourceIdHasBeenSet() const
+{
+    return m_devDatasourceIdHasBeenSet;
 }
 
 

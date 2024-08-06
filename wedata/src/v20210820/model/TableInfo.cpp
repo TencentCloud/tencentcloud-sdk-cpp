@@ -23,6 +23,7 @@ using namespace std;
 TableInfo::TableInfo() :
     m_tableIdHasBeenSet(false),
     m_tableNameHasBeenSet(false),
+    m_tableTypeHasBeenSet(false),
     m_originDatabaseNameHasBeenSet(false),
     m_originSchemaNameHasBeenSet(false)
 {
@@ -51,6 +52,16 @@ CoreInternalOutcome TableInfo::Deserialize(const rapidjson::Value &value)
         }
         m_tableName = string(value["TableName"].GetString());
         m_tableNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableType") && !value["TableType"].IsNull())
+    {
+        if (!value["TableType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableInfo.TableType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableType = string(value["TableType"].GetString());
+        m_tableTypeHasBeenSet = true;
     }
 
     if (value.HasMember("OriginDatabaseName") && !value["OriginDatabaseName"].IsNull())
@@ -94,6 +105,14 @@ void TableInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "TableName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_originDatabaseNameHasBeenSet)
@@ -145,6 +164,22 @@ void TableInfo::SetTableName(const string& _tableName)
 bool TableInfo::TableNameHasBeenSet() const
 {
     return m_tableNameHasBeenSet;
+}
+
+string TableInfo::GetTableType() const
+{
+    return m_tableType;
+}
+
+void TableInfo::SetTableType(const string& _tableType)
+{
+    m_tableType = _tableType;
+    m_tableTypeHasBeenSet = true;
+}
+
+bool TableInfo::TableTypeHasBeenSet() const
+{
+    return m_tableTypeHasBeenSet;
 }
 
 string TableInfo::GetOriginDatabaseName() const

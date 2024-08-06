@@ -24,6 +24,7 @@ set(tds_public_header_model
   include/tencentcloud/tds/v20220801/model/DescribeFraudPremiumResponse.h
   include/tencentcloud/tds/v20220801/model/DescribeFraudBaseRequest.h
   include/tencentcloud/tds/v20220801/model/DescribeFraudBaseResponse.h
+  include/tencentcloud/tds/v20220801/model/DataAuthorizationInfo.h
   include/tencentcloud/tds/v20220801/model/DescribeTrustedIDRequest.h
   include/tencentcloud/tds/v20220801/model/DescribeFraudPremiumRequest.h
   include/tencentcloud/tds/v20220801/model/DescribeFraudUltimateResponse.h
@@ -37,6 +38,7 @@ set(tds_src
   src/v20220801/model/DescribeFraudPremiumResponse.cpp
   src/v20220801/model/DescribeFraudBaseRequest.cpp
   src/v20220801/model/DescribeFraudBaseResponse.cpp
+  src/v20220801/model/DataAuthorizationInfo.cpp
   src/v20220801/model/DescribeTrustedIDRequest.cpp
   src/v20220801/model/DescribeFraudPremiumRequest.cpp
   src/v20220801/model/DescribeFraudUltimateResponse.cpp

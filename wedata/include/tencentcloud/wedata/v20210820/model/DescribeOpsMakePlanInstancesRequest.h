@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取实例状态列表
+                     * @return StateList 实例状态列表
+                     * 
+                     */
+                    std::vector<int64_t> GetStateList() const;
+
+                    /**
+                     * 设置实例状态列表
+                     * @param _stateList 实例状态列表
+                     * 
+                     */
+                    void SetStateList(const std::vector<int64_t>& _stateList);
+
+                    /**
+                     * 判断参数 StateList 是否已赋值
+                     * @return StateList 是否已赋值
+                     * 
+                     */
+                    bool StateListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 实例状态列表
+                     */
+                    std::vector<int64_t> m_stateList;
+                    bool m_stateListHasBeenSet;
 
                 };
             }

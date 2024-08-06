@@ -45,7 +45,10 @@ CreateOpsMakePlanRequest::CreateOpsMakePlanRequest() :
     m_schedulerResourceGroupHasBeenSet(false),
     m_integrationResourceGroupHasBeenSet(false),
     m_schedulerResourceGroupNameHasBeenSet(false),
-    m_integrationResourceGroupNameHasBeenSet(false)
+    m_integrationResourceGroupNameHasBeenSet(false),
+    m_makeExtListHasBeenSet(false),
+    m_sameSelfWorkflowDependTypeHasBeenSet(false),
+    m_selfWorkflowDependencyHasBeenSet(false)
 {
 }
 
@@ -257,6 +260,37 @@ string CreateOpsMakePlanRequest::ToJsonString() const
         string key = "IntegrationResourceGroupName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_integrationResourceGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_makeExtListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MakeExtList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_makeExtList.begin(); itr != m_makeExtList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_sameSelfWorkflowDependTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SameSelfWorkflowDependType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sameSelfWorkflowDependType, allocator);
+    }
+
+    if (m_selfWorkflowDependencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelfWorkflowDependency";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_selfWorkflowDependency.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -633,6 +667,54 @@ void CreateOpsMakePlanRequest::SetIntegrationResourceGroupName(const string& _in
 bool CreateOpsMakePlanRequest::IntegrationResourceGroupNameHasBeenSet() const
 {
     return m_integrationResourceGroupNameHasBeenSet;
+}
+
+vector<StrToStrMap> CreateOpsMakePlanRequest::GetMakeExtList() const
+{
+    return m_makeExtList;
+}
+
+void CreateOpsMakePlanRequest::SetMakeExtList(const vector<StrToStrMap>& _makeExtList)
+{
+    m_makeExtList = _makeExtList;
+    m_makeExtListHasBeenSet = true;
+}
+
+bool CreateOpsMakePlanRequest::MakeExtListHasBeenSet() const
+{
+    return m_makeExtListHasBeenSet;
+}
+
+bool CreateOpsMakePlanRequest::GetSameSelfWorkflowDependType() const
+{
+    return m_sameSelfWorkflowDependType;
+}
+
+void CreateOpsMakePlanRequest::SetSameSelfWorkflowDependType(const bool& _sameSelfWorkflowDependType)
+{
+    m_sameSelfWorkflowDependType = _sameSelfWorkflowDependType;
+    m_sameSelfWorkflowDependTypeHasBeenSet = true;
+}
+
+bool CreateOpsMakePlanRequest::SameSelfWorkflowDependTypeHasBeenSet() const
+{
+    return m_sameSelfWorkflowDependTypeHasBeenSet;
+}
+
+string CreateOpsMakePlanRequest::GetSelfWorkflowDependency() const
+{
+    return m_selfWorkflowDependency;
+}
+
+void CreateOpsMakePlanRequest::SetSelfWorkflowDependency(const string& _selfWorkflowDependency)
+{
+    m_selfWorkflowDependency = _selfWorkflowDependency;
+    m_selfWorkflowDependencyHasBeenSet = true;
+}
+
+bool CreateOpsMakePlanRequest::SelfWorkflowDependencyHasBeenSet() const
+{
+    return m_selfWorkflowDependencyHasBeenSet;
 }
 
 

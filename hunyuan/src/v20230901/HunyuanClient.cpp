@@ -40,6 +40,49 @@ HunyuanClient::HunyuanClient(const Credential &credential, const string &region,
 }
 
 
+HunyuanClient::ActivateServiceOutcome HunyuanClient::ActivateService(const ActivateServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ActivateService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ActivateServiceResponse rsp = ActivateServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ActivateServiceOutcome(rsp);
+        else
+            return ActivateServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ActivateServiceOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::ActivateServiceAsync(const ActivateServiceRequest& request, const ActivateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ActivateService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::ActivateServiceOutcomeCallable HunyuanClient::ActivateServiceCallable(const ActivateServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ActivateServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->ActivateService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 HunyuanClient::ChatCompletionsOutcome HunyuanClient::ChatCompletions(const ChatCompletionsRequest &request)
 {
     auto outcome = MakeRequest(request, "ChatCompletions");
@@ -205,6 +248,49 @@ HunyuanClient::QueryHunyuanImageJobOutcomeCallable HunyuanClient::QueryHunyuanIm
         [this, request]()
         {
             return this->QueryHunyuanImageJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HunyuanClient::SetPayModeOutcome HunyuanClient::SetPayMode(const SetPayModeRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetPayMode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetPayModeResponse rsp = SetPayModeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetPayModeOutcome(rsp);
+        else
+            return SetPayModeOutcome(o.GetError());
+    }
+    else
+    {
+        return SetPayModeOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::SetPayModeAsync(const SetPayModeRequest& request, const SetPayModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetPayMode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::SetPayModeOutcomeCallable HunyuanClient::SetPayModeCallable(const SetPayModeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetPayModeOutcome()>>(
+        [this, request]()
+        {
+            return this->SetPayMode(request);
         }
     );
 

@@ -174,14 +174,18 @@ namespace TencentCloud
 
                     /**
                      * 获取音色 ID，包括标准音色与精品音色，精品音色拟真度更高，价格不同于标准音色，请参见[购买指南](https://cloud.tencent.com/document/product/1073/34112)。完整的音色 ID 列表请参见[音色列表](https://cloud.tencent.com/document/product/1073/92668)。
+若使用一句话版声音复刻，请填入固定值“200000000”
                      * @return VoiceType 音色 ID，包括标准音色与精品音色，精品音色拟真度更高，价格不同于标准音色，请参见[购买指南](https://cloud.tencent.com/document/product/1073/34112)。完整的音色 ID 列表请参见[音色列表](https://cloud.tencent.com/document/product/1073/92668)。
+若使用一句话版声音复刻，请填入固定值“200000000”
                      * 
                      */
                     int64_t GetVoiceType() const;
 
                     /**
                      * 设置音色 ID，包括标准音色与精品音色，精品音色拟真度更高，价格不同于标准音色，请参见[购买指南](https://cloud.tencent.com/document/product/1073/34112)。完整的音色 ID 列表请参见[音色列表](https://cloud.tencent.com/document/product/1073/92668)。
+若使用一句话版声音复刻，请填入固定值“200000000”
                      * @param _voiceType 音色 ID，包括标准音色与精品音色，精品音色拟真度更高，价格不同于标准音色，请参见[购买指南](https://cloud.tencent.com/document/product/1073/34112)。完整的音色 ID 列表请参见[音色列表](https://cloud.tencent.com/document/product/1073/92668)。
+若使用一句话版声音复刻，请填入固定值“200000000”
                      * 
                      */
                     void SetVoiceType(const int64_t& _voiceType);
@@ -357,15 +361,15 @@ namespace TencentCloud
                     bool EmotionIntensityHasBeenSet() const;
 
                     /**
-                     * 获取预留参数，暂未使用
-                     * @return FastVoiceType 预留参数，暂未使用
+                     * 获取一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。
+                     * @return FastVoiceType 一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。
                      * 
                      */
                     std::string GetFastVoiceType() const;
 
                     /**
-                     * 设置预留参数，暂未使用
-                     * @param _fastVoiceType 预留参数，暂未使用
+                     * 设置一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。
+                     * @param _fastVoiceType 一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。
                      * 
                      */
                     void SetFastVoiceType(const std::string& _fastVoiceType);
@@ -418,6 +422,7 @@ namespace TencentCloud
 
                     /**
                      * 音色 ID，包括标准音色与精品音色，精品音色拟真度更高，价格不同于标准音色，请参见[购买指南](https://cloud.tencent.com/document/product/1073/34112)。完整的音色 ID 列表请参见[音色列表](https://cloud.tencent.com/document/product/1073/92668)。
+若使用一句话版声音复刻，请填入固定值“200000000”
                      */
                     int64_t m_voiceType;
                     bool m_voiceTypeHasBeenSet;
@@ -469,7 +474,7 @@ namespace TencentCloud
                     bool m_emotionIntensityHasBeenSet;
 
                     /**
-                     * 预留参数，暂未使用
+                     * 一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。
                      */
                     std::string m_fastVoiceType;
                     bool m_fastVoiceTypeHasBeenSet;

@@ -296,6 +296,56 @@ namespace TencentCloud
                      */
                     bool DsEnvTypeHasBeenSet() const;
 
+                    /**
+                     * 获取模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SchemaName 模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSchemaName() const;
+
+                    /**
+                     * 设置模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _schemaName 模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSchemaName(const std::string& _schemaName);
+
+                    /**
+                     * 判断参数 SchemaName 是否已赋值
+                     * @return SchemaName 是否已赋值
+                     * 
+                     */
+                    bool SchemaNameHasBeenSet() const;
+
+                    /**
+                     * 获取规则表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleGroupTableId 规则表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRuleGroupTableId() const;
+
+                    /**
+                     * 设置规则表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleGroupTableId 规则表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleGroupTableId(const std::string& _ruleGroupTableId);
+
+                    /**
+                     * 判断参数 RuleGroupTableId 是否已赋值
+                     * @return RuleGroupTableId 是否已赋值
+                     * 
+                     */
+                    bool RuleGroupTableIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +417,20 @@ namespace TencentCloud
                      */
                     int64_t m_dsEnvType;
                     bool m_dsEnvTypeHasBeenSet;
+
+                    /**
+                     * 模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_schemaName;
+                    bool m_schemaNameHasBeenSet;
+
+                    /**
+                     * 规则表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleGroupTableId;
+                    bool m_ruleGroupTableIdHasBeenSet;
 
                 };
             }

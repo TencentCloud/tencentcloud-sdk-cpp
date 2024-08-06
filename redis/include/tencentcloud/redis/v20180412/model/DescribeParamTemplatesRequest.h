@@ -53,6 +53,8 @@ namespace TencentCloud
 - 9：Redis 5.0 内存版（集群架构）。
 - 15：Redis 6.2 内存版（标准架构）。
 - 16：Redis 6.2 内存版（集群架构）。
+- 17：Redis 7.0 内存版（标准架构）。
+- 18：Redis 7.0 内存版（集群架构）。
                      * @return ProductTypes 产品类型数组。
 - 2：Redis 2.8 内存版（标准架构）。
 - 3：CKV 3.2 内存版（标准架构）。
@@ -63,6 +65,8 @@ namespace TencentCloud
 - 9：Redis 5.0 内存版（集群架构）。
 - 15：Redis 6.2 内存版（标准架构）。
 - 16：Redis 6.2 内存版（集群架构）。
+- 17：Redis 7.0 内存版（标准架构）。
+- 18：Redis 7.0 内存版（集群架构）。
                      * 
                      */
                     std::vector<int64_t> GetProductTypes() const;
@@ -78,6 +82,8 @@ namespace TencentCloud
 - 9：Redis 5.0 内存版（集群架构）。
 - 15：Redis 6.2 内存版（标准架构）。
 - 16：Redis 6.2 内存版（集群架构）。
+- 17：Redis 7.0 内存版（标准架构）。
+- 18：Redis 7.0 内存版（集群架构）。
                      * @param _productTypes 产品类型数组。
 - 2：Redis 2.8 内存版（标准架构）。
 - 3：CKV 3.2 内存版（标准架构）。
@@ -88,6 +94,8 @@ namespace TencentCloud
 - 9：Redis 5.0 内存版（集群架构）。
 - 15：Redis 6.2 内存版（标准架构）。
 - 16：Redis 6.2 内存版（集群架构）。
+- 17：Redis 7.0 内存版（标准架构）。
+- 18：Redis 7.0 内存版（集群架构）。
                      * 
                      */
                     void SetProductTypes(const std::vector<int64_t>& _productTypes);
@@ -100,15 +108,15 @@ namespace TencentCloud
                     bool ProductTypesHasBeenSet() const;
 
                     /**
-                     * 获取模板名称数组。
-                     * @return TemplateNames 模板名称数组。
+                     * 获取模板名称数组。数组最大长度限制为50
+                     * @return TemplateNames 模板名称数组。数组最大长度限制为50
                      * 
                      */
                     std::vector<std::string> GetTemplateNames() const;
 
                     /**
-                     * 设置模板名称数组。
-                     * @param _templateNames 模板名称数组。
+                     * 设置模板名称数组。数组最大长度限制为50
+                     * @param _templateNames 模板名称数组。数组最大长度限制为50
                      * 
                      */
                     void SetTemplateNames(const std::vector<std::string>& _templateNames);
@@ -121,15 +129,15 @@ namespace TencentCloud
                     bool TemplateNamesHasBeenSet() const;
 
                     /**
-                     * 获取模板ID数组。
-                     * @return TemplateIds 模板ID数组。
+                     * 获取模板ID数组。数组最大长度限制为50
+                     * @return TemplateIds 模板ID数组。数组最大长度限制为50
                      * 
                      */
                     std::vector<std::string> GetTemplateIds() const;
 
                     /**
-                     * 设置模板ID数组。
-                     * @param _templateIds 模板ID数组。
+                     * 设置模板ID数组。数组最大长度限制为50
+                     * @param _templateIds 模板ID数组。数组最大长度限制为50
                      * 
                      */
                     void SetTemplateIds(const std::vector<std::string>& _templateIds);
@@ -154,18 +162,20 @@ namespace TencentCloud
 - 9：Redis 5.0 内存版（集群架构）。
 - 15：Redis 6.2 内存版（标准架构）。
 - 16：Redis 6.2 内存版（集群架构）。
+- 17：Redis 7.0 内存版（标准架构）。
+- 18：Redis 7.0 内存版（集群架构）。
                      */
                     std::vector<int64_t> m_productTypes;
                     bool m_productTypesHasBeenSet;
 
                     /**
-                     * 模板名称数组。
+                     * 模板名称数组。数组最大长度限制为50
                      */
                     std::vector<std::string> m_templateNames;
                     bool m_templateNamesHasBeenSet;
 
                     /**
-                     * 模板ID数组。
+                     * 模板ID数组。数组最大长度限制为50
                      */
                     std::vector<std::string> m_templateIds;
                     bool m_templateIdsHasBeenSet;

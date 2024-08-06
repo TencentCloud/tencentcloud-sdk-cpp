@@ -25,7 +25,8 @@ using namespace std;
 AssignIpv6AddressesRequest::AssignIpv6AddressesRequest() :
     m_networkInterfaceIdHasBeenSet(false),
     m_ipv6AddressesHasBeenSet(false),
-    m_ipv6AddressCountHasBeenSet(false)
+    m_ipv6AddressCountHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string AssignIpv6AddressesRequest::ToJsonString() const
         string key = "Ipv6AddressCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ipv6AddressCount, allocator);
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -121,6 +130,22 @@ void AssignIpv6AddressesRequest::SetIpv6AddressCount(const uint64_t& _ipv6Addres
 bool AssignIpv6AddressesRequest::Ipv6AddressCountHasBeenSet() const
 {
     return m_ipv6AddressCountHasBeenSet;
+}
+
+string AssignIpv6AddressesRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void AssignIpv6AddressesRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool AssignIpv6AddressesRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

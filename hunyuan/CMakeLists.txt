@@ -23,6 +23,7 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/LogoParam.h
   include/tencentcloud/hunyuan/v20230901/model/GetEmbeddingRequest.h
   include/tencentcloud/hunyuan/v20230901/model/ImageUrl.h
+  include/tencentcloud/hunyuan/v20230901/model/ActivateServiceRequest.h
   include/tencentcloud/hunyuan/v20230901/model/Content.h
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/Usage.h
@@ -34,11 +35,14 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/EmbeddingData.h
   include/tencentcloud/hunyuan/v20230901/model/ToolFunction.h
   include/tencentcloud/hunyuan/v20230901/model/Delta.h
+  include/tencentcloud/hunyuan/v20230901/model/SetPayModeResponse.h
   include/tencentcloud/hunyuan/v20230901/model/ToolCall.h
   include/tencentcloud/hunyuan/v20230901/model/ToolCallFunction.h
+  include/tencentcloud/hunyuan/v20230901/model/SetPayModeRequest.h
   include/tencentcloud/hunyuan/v20230901/model/LogoRect.h
   include/tencentcloud/hunyuan/v20230901/model/TextToImageLiteRequest.h
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/ActivateServiceResponse.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobResponse.h
   include/tencentcloud/hunyuan/v20230901/model/GetEmbeddingResponse.h
   include/tencentcloud/hunyuan/v20230901/model/ErrorMsg.h
@@ -56,6 +60,7 @@ set(hunyuan_src
   src/v20230901/model/LogoParam.cpp
   src/v20230901/model/GetEmbeddingRequest.cpp
   src/v20230901/model/ImageUrl.cpp
+  src/v20230901/model/ActivateServiceRequest.cpp
   src/v20230901/model/Content.cpp
   src/v20230901/model/SubmitHunyuanImageJobRequest.cpp
   src/v20230901/model/Usage.cpp
@@ -67,11 +72,14 @@ set(hunyuan_src
   src/v20230901/model/EmbeddingData.cpp
   src/v20230901/model/ToolFunction.cpp
   src/v20230901/model/Delta.cpp
+  src/v20230901/model/SetPayModeResponse.cpp
   src/v20230901/model/ToolCall.cpp
   src/v20230901/model/ToolCallFunction.cpp
+  src/v20230901/model/SetPayModeRequest.cpp
   src/v20230901/model/LogoRect.cpp
   src/v20230901/model/TextToImageLiteRequest.cpp
   src/v20230901/model/SubmitHunyuanImageJobResponse.cpp
+  src/v20230901/model/ActivateServiceResponse.cpp
   src/v20230901/model/QueryHunyuanImageJobResponse.cpp
   src/v20230901/model/GetEmbeddingResponse.cpp
   src/v20230901/model/ErrorMsg.cpp

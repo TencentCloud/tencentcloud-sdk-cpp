@@ -210,6 +210,31 @@ namespace TencentCloud
                      */
                     bool CommentHasBeenSet() const;
 
+                    /**
+                     * 获取category
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Category category
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCategory() const;
+
+                    /**
+                     * 设置category
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _category category
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCategory(const std::string& _category);
+
+                    /**
+                     * 判断参数 Category 是否已赋值
+                     * @return Category 是否已赋值
+                     * 
+                     */
+                    bool CategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -257,6 +282,13 @@ namespace TencentCloud
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
+
+                    /**
+                     * category
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_category;
+                    bool m_categoryHasBeenSet;
 
                 };
             }

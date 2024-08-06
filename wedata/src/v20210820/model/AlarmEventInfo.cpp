@@ -46,7 +46,8 @@ AlarmEventInfo::AlarmEventInfo() :
     m_sendResultHasBeenSet(false),
     m_monitorObjectIdHasBeenSet(false),
     m_monitorObjectNameHasBeenSet(false),
-    m_thresholdHasBeenSet(false)
+    m_thresholdHasBeenSet(false),
+    m_alarmReasonHasBeenSet(false)
 {
 }
 
@@ -315,6 +316,16 @@ CoreInternalOutcome AlarmEventInfo::Deserialize(const rapidjson::Value &value)
         m_thresholdHasBeenSet = true;
     }
 
+    if (value.HasMember("AlarmReason") && !value["AlarmReason"].IsNull())
+    {
+        if (!value["AlarmReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmEventInfo.AlarmReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmReason = string(value["AlarmReason"].GetString());
+        m_alarmReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -528,6 +539,14 @@ void AlarmEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Threshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_threshold, allocator);
+    }
+
+    if (m_alarmReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alarmReason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -947,5 +966,21 @@ void AlarmEventInfo::SetThreshold(const double& _threshold)
 bool AlarmEventInfo::ThresholdHasBeenSet() const
 {
     return m_thresholdHasBeenSet;
+}
+
+string AlarmEventInfo::GetAlarmReason() const
+{
+    return m_alarmReason;
+}
+
+void AlarmEventInfo::SetAlarmReason(const string& _alarmReason)
+{
+    m_alarmReason = _alarmReason;
+    m_alarmReasonHasBeenSet = true;
+}
+
+bool AlarmEventInfo::AlarmReasonHasBeenSet() const
+{
+    return m_alarmReasonHasBeenSet;
 }
 

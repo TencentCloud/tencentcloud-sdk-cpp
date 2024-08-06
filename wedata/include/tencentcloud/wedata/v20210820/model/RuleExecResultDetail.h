@@ -297,6 +297,31 @@ namespace TencentCloud
                      */
                     bool DatasourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取集群部署类型，CVM/TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterDeployType 集群部署类型，CVM/TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterDeployType() const;
+
+                    /**
+                     * 设置集群部署类型，CVM/TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterDeployType 集群部署类型，CVM/TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterDeployType(const std::string& _clusterDeployType);
+
+                    /**
+                     * 判断参数 ClusterDeployType 是否已赋值
+                     * @return ClusterDeployType 是否已赋值
+                     * 
+                     */
+                    bool ClusterDeployTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +393,13 @@ namespace TencentCloud
                      */
                     uint64_t m_datasourceType;
                     bool m_datasourceTypeHasBeenSet;
+
+                    /**
+                     * 集群部署类型，CVM/TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterDeployType;
+                    bool m_clusterDeployTypeHasBeenSet;
 
                 };
             }

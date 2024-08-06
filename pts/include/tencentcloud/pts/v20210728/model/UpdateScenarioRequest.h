@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool ScenarioIdHasBeenSet() const;
 
                     /**
-                     * 获取场景名
-                     * @return Name 场景名
+                     * 获取场景名；调用该接口时，请将 Scenario 中不需要修改的字段保持原样也作为接口的入参，否则场景可能会不可用。
+                     * @return Name 场景名；调用该接口时，请将 Scenario 中不需要修改的字段保持原样也作为接口的入参，否则场景可能会不可用。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置场景名
-                     * @param _name 场景名
+                     * 设置场景名；调用该接口时，请将 Scenario 中不需要修改的字段保持原样也作为接口的入参，否则场景可能会不可用。
+                     * @param _name 场景名；调用该接口时，请将 Scenario 中不需要修改的字段保持原样也作为接口的入参，否则场景可能会不可用。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -521,7 +521,7 @@ namespace TencentCloud
                     bool m_scenarioIdHasBeenSet;
 
                     /**
-                     * 场景名
+                     * 场景名；调用该接口时，请将 Scenario 中不需要修改的字段保持原样也作为接口的入参，否则场景可能会不可用。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

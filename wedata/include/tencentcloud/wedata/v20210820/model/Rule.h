@@ -1175,6 +1175,81 @@ namespace TencentCloud
                      */
                     bool DsEnvTypeHasBeenSet() const;
 
+                    /**
+                     * 获取数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceType 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDatasourceType() const;
+
+                    /**
+                     * 设置数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceType 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceType(const int64_t& _datasourceType);
+
+                    /**
+                     * 判断参数 DatasourceType 是否已赋值
+                     * @return DatasourceType 是否已赋值
+                     * 
+                     */
+                    bool DatasourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SchemaName 模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSchemaName() const;
+
+                    /**
+                     * 设置模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _schemaName 模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSchemaName(const std::string& _schemaName);
+
+                    /**
+                     * 判断参数 SchemaName 是否已赋值
+                     * @return SchemaName 是否已赋值
+                     * 
+                     */
+                    bool SchemaNameHasBeenSet() const;
+
+                    /**
+                     * 获取目标模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetSchemaName 目标模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTargetSchemaName() const;
+
+                    /**
+                     * 设置目标模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _targetSchemaName 目标模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTargetSchemaName(const std::string& _targetSchemaName);
+
+                    /**
+                     * 判断参数 TargetSchemaName 是否已赋值
+                     * @return TargetSchemaName 是否已赋值
+                     * 
+                     */
+                    bool TargetSchemaNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1491,6 +1566,27 @@ namespace TencentCloud
                      */
                     int64_t m_dsEnvType;
                     bool m_dsEnvTypeHasBeenSet;
+
+                    /**
+                     * 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_datasourceType;
+                    bool m_datasourceTypeHasBeenSet;
+
+                    /**
+                     * 模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_schemaName;
+                    bool m_schemaNameHasBeenSet;
+
+                    /**
+                     * 目标模式名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_targetSchemaName;
+                    bool m_targetSchemaNameHasBeenSet;
 
                 };
             }

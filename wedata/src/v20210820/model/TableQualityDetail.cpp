@@ -30,7 +30,9 @@ TableQualityDetail::TableQualityDetail() :
     m_databaseScoreHasBeenSet(false),
     m_tableScoreHasBeenSet(false),
     m_lastPeriodRatioHasBeenSet(false),
-    m_dsEnvTypeHasBeenSet(false)
+    m_dsEnvTypeHasBeenSet(false),
+    m_schemaNameHasBeenSet(false),
+    m_ruleGroupTableIdHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,26 @@ CoreInternalOutcome TableQualityDetail::Deserialize(const rapidjson::Value &valu
         m_dsEnvTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SchemaName") && !value["SchemaName"].IsNull())
+    {
+        if (!value["SchemaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableQualityDetail.SchemaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemaName = string(value["SchemaName"].GetString());
+        m_schemaNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleGroupTableId") && !value["RuleGroupTableId"].IsNull())
+    {
+        if (!value["RuleGroupTableId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableQualityDetail.RuleGroupTableId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleGroupTableId = string(value["RuleGroupTableId"].GetString());
+        m_ruleGroupTableIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +246,22 @@ void TableQualityDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "DsEnvType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dsEnvType, allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleGroupTableIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleGroupTableId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleGroupTableId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +425,37 @@ void TableQualityDetail::SetDsEnvType(const int64_t& _dsEnvType)
 bool TableQualityDetail::DsEnvTypeHasBeenSet() const
 {
     return m_dsEnvTypeHasBeenSet;
+}
+
+string TableQualityDetail::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void TableQualityDetail::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool TableQualityDetail::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
+}
+
+string TableQualityDetail::GetRuleGroupTableId() const
+{
+    return m_ruleGroupTableId;
+}
+
+void TableQualityDetail::SetRuleGroupTableId(const string& _ruleGroupTableId)
+{
+    m_ruleGroupTableId = _ruleGroupTableId;
+    m_ruleGroupTableIdHasBeenSet = true;
+}
+
+bool TableQualityDetail::RuleGroupTableIdHasBeenSet() const
+{
+    return m_ruleGroupTableIdHasBeenSet;
 }
 

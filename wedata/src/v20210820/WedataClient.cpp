@@ -6748,6 +6748,49 @@ WedataClient::DescribeTaskByStatusReportOutcomeCallable WedataClient::DescribeTa
     return task->get_future();
 }
 
+WedataClient::DescribeTaskLineageOutcome WedataClient::DescribeTaskLineage(const DescribeTaskLineageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskLineage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskLineageResponse rsp = DescribeTaskLineageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskLineageOutcome(rsp);
+        else
+            return DescribeTaskLineageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskLineageOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeTaskLineageAsync(const DescribeTaskLineageRequest& request, const DescribeTaskLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskLineage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeTaskLineageOutcomeCallable WedataClient::DescribeTaskLineageCallable(const DescribeTaskLineageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskLineageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskLineage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeTaskLockStatusOutcome WedataClient::DescribeTaskLockStatus(const DescribeTaskLockStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskLockStatus");

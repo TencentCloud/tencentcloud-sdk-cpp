@@ -36,7 +36,8 @@ VatElectronicInfo::VatElectronicInfo() :
     m_remarkHasBeenSet(false),
     m_subTotalHasBeenSet(false),
     m_subTaxHasBeenSet(false),
-    m_vatElectronicItemsHasBeenSet(false)
+    m_vatElectronicItemsHasBeenSet(false),
+    m_serviceTypeLabelHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,16 @@ CoreInternalOutcome VatElectronicInfo::Deserialize(const rapidjson::Value &value
         m_vatElectronicItemsHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceTypeLabel") && !value["ServiceTypeLabel"].IsNull())
+    {
+        if (!value["ServiceTypeLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatElectronicInfo.ServiceTypeLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceTypeLabel = string(value["ServiceTypeLabel"].GetString());
+        m_serviceTypeLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +366,14 @@ void VatElectronicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_serviceTypeLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceTypeLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceTypeLabel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -614,5 +633,21 @@ void VatElectronicInfo::SetVatElectronicItems(const vector<VatElectronicItemInfo
 bool VatElectronicInfo::VatElectronicItemsHasBeenSet() const
 {
     return m_vatElectronicItemsHasBeenSet;
+}
+
+string VatElectronicInfo::GetServiceTypeLabel() const
+{
+    return m_serviceTypeLabel;
+}
+
+void VatElectronicInfo::SetServiceTypeLabel(const string& _serviceTypeLabel)
+{
+    m_serviceTypeLabel = _serviceTypeLabel;
+    m_serviceTypeLabelHasBeenSet = true;
+}
+
+bool VatElectronicInfo::ServiceTypeLabelHasBeenSet() const
+{
+    return m_serviceTypeLabelHasBeenSet;
 }
 

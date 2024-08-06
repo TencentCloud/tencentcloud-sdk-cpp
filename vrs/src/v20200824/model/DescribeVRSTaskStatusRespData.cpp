@@ -25,7 +25,9 @@ DescribeVRSTaskStatusRespData::DescribeVRSTaskStatusRespData() :
     m_statusHasBeenSet(false),
     m_statusStrHasBeenSet(false),
     m_voiceTypeHasBeenSet(false),
-    m_errorMsgHasBeenSet(false)
+    m_errorMsgHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_fastVoiceTypeHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome DescribeVRSTaskStatusRespData::Deserialize(const rapidjson::
         m_errorMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeVRSTaskStatusRespData.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(value["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FastVoiceType") && !value["FastVoiceType"].IsNull())
+    {
+        if (!value["FastVoiceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeVRSTaskStatusRespData.FastVoiceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fastVoiceType = string(value["FastVoiceType"].GetString());
+        m_fastVoiceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void DescribeVRSTaskStatusRespData::ToJsonObject(rapidjson::Value &value, rapidj
         string key = "ErrorMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fastVoiceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FastVoiceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fastVoiceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void DescribeVRSTaskStatusRespData::SetErrorMsg(const string& _errorMsg)
 bool DescribeVRSTaskStatusRespData::ErrorMsgHasBeenSet() const
 {
     return m_errorMsgHasBeenSet;
+}
+
+string DescribeVRSTaskStatusRespData::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void DescribeVRSTaskStatusRespData::SetExpireTime(const string& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool DescribeVRSTaskStatusRespData::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+string DescribeVRSTaskStatusRespData::GetFastVoiceType() const
+{
+    return m_fastVoiceType;
+}
+
+void DescribeVRSTaskStatusRespData::SetFastVoiceType(const string& _fastVoiceType)
+{
+    m_fastVoiceType = _fastVoiceType;
+    m_fastVoiceTypeHasBeenSet = true;
+}
+
+bool DescribeVRSTaskStatusRespData::FastVoiceTypeHasBeenSet() const
+{
+    return m_fastVoiceTypeHasBeenSet;
 }
 

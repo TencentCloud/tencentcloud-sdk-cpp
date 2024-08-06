@@ -660,6 +660,31 @@ namespace TencentCloud
                      */
                     bool ThresholdHasBeenSet() const;
 
+                    /**
+                     * 获取告警原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmReason 告警原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlarmReason() const;
+
+                    /**
+                     * 设置告警原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmReason 告警原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmReason(const std::string& _alarmReason);
+
+                    /**
+                     * 判断参数 AlarmReason 是否已赋值
+                     * @return AlarmReason 是否已赋值
+                     * 
+                     */
+                    bool AlarmReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -834,6 +859,13 @@ namespace TencentCloud
                      */
                     double m_threshold;
                     bool m_thresholdHasBeenSet;
+
+                    /**
+                     * 告警原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alarmReason;
+                    bool m_alarmReasonHasBeenSet;
 
                 };
             }

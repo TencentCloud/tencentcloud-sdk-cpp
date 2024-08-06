@@ -156,6 +156,22 @@ namespace TencentCloud
                      */
                     bool SourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取服务标签, function: 托管函数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tag 服务标签, function: 托管函数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTag() const;
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     * 
+                     */
+                    bool TagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +222,13 @@ namespace TencentCloud
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
+
+                    /**
+                     * 服务标签, function: 托管函数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tag;
+                    bool m_tagHasBeenSet;
 
                 };
             }

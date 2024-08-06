@@ -36,7 +36,12 @@ RuleGroupExecResult::RuleGroupExecResult() :
     m_permissionHasBeenSet(false),
     m_execDetailHasBeenSet(false),
     m_engineTypeHasBeenSet(false),
-    m_ruleExecResultVOListHasBeenSet(false)
+    m_ruleExecResultVOListHasBeenSet(false),
+    m_databaseNameHasBeenSet(false),
+    m_ruleGroupTableIdHasBeenSet(false),
+    m_clusterDeployTypeHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_dsEnvTypeHasBeenSet(false)
 {
 }
 
@@ -215,6 +220,56 @@ CoreInternalOutcome RuleGroupExecResult::Deserialize(const rapidjson::Value &val
         m_ruleExecResultVOListHasBeenSet = true;
     }
 
+    if (value.HasMember("DatabaseName") && !value["DatabaseName"].IsNull())
+    {
+        if (!value["DatabaseName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecResult.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseName = string(value["DatabaseName"].GetString());
+        m_databaseNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleGroupTableId") && !value["RuleGroupTableId"].IsNull())
+    {
+        if (!value["RuleGroupTableId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecResult.RuleGroupTableId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleGroupTableId = string(value["RuleGroupTableId"].GetString());
+        m_ruleGroupTableIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterDeployType") && !value["ClusterDeployType"].IsNull())
+    {
+        if (!value["ClusterDeployType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecResult.ClusterDeployType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterDeployType = string(value["ClusterDeployType"].GetString());
+        m_clusterDeployTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecResult.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DsEnvType") && !value["DsEnvType"].IsNull())
+    {
+        if (!value["DsEnvType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecResult.DsEnvType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dsEnvType = string(value["DsEnvType"].GetString());
+        m_dsEnvTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +410,46 @@ void RuleGroupExecResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_databaseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleGroupTableIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleGroupTableId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleGroupTableId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterDeployTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterDeployType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterDeployType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dsEnvTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DsEnvType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dsEnvType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -614,5 +709,85 @@ void RuleGroupExecResult::SetRuleExecResultVOList(const vector<RuleExecResult>& 
 bool RuleGroupExecResult::RuleExecResultVOListHasBeenSet() const
 {
     return m_ruleExecResultVOListHasBeenSet;
+}
+
+string RuleGroupExecResult::GetDatabaseName() const
+{
+    return m_databaseName;
+}
+
+void RuleGroupExecResult::SetDatabaseName(const string& _databaseName)
+{
+    m_databaseName = _databaseName;
+    m_databaseNameHasBeenSet = true;
+}
+
+bool RuleGroupExecResult::DatabaseNameHasBeenSet() const
+{
+    return m_databaseNameHasBeenSet;
+}
+
+string RuleGroupExecResult::GetRuleGroupTableId() const
+{
+    return m_ruleGroupTableId;
+}
+
+void RuleGroupExecResult::SetRuleGroupTableId(const string& _ruleGroupTableId)
+{
+    m_ruleGroupTableId = _ruleGroupTableId;
+    m_ruleGroupTableIdHasBeenSet = true;
+}
+
+bool RuleGroupExecResult::RuleGroupTableIdHasBeenSet() const
+{
+    return m_ruleGroupTableIdHasBeenSet;
+}
+
+string RuleGroupExecResult::GetClusterDeployType() const
+{
+    return m_clusterDeployType;
+}
+
+void RuleGroupExecResult::SetClusterDeployType(const string& _clusterDeployType)
+{
+    m_clusterDeployType = _clusterDeployType;
+    m_clusterDeployTypeHasBeenSet = true;
+}
+
+bool RuleGroupExecResult::ClusterDeployTypeHasBeenSet() const
+{
+    return m_clusterDeployTypeHasBeenSet;
+}
+
+string RuleGroupExecResult::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void RuleGroupExecResult::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool RuleGroupExecResult::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string RuleGroupExecResult::GetDsEnvType() const
+{
+    return m_dsEnvType;
+}
+
+void RuleGroupExecResult::SetDsEnvType(const string& _dsEnvType)
+{
+    m_dsEnvType = _dsEnvType;
+    m_dsEnvTypeHasBeenSet = true;
+}
+
+bool RuleGroupExecResult::DsEnvTypeHasBeenSet() const
+{
+    return m_dsEnvTypeHasBeenSet;
 }
 

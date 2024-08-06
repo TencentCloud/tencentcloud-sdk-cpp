@@ -22,7 +22,8 @@
 using namespace TencentCloud::Vrs::V20200824::Model;
 using namespace std;
 
-GetVRSVoiceTypesRequest::GetVRSVoiceTypesRequest()
+GetVRSVoiceTypesRequest::GetVRSVoiceTypesRequest() :
+    m_taskTypeHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string GetVRSVoiceTypesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskType, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string GetVRSVoiceTypesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t GetVRSVoiceTypesRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void GetVRSVoiceTypesRequest::SetTaskType(const int64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool GetVRSVoiceTypesRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
+}
 
 

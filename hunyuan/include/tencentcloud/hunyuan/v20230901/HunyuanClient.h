@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/hunyuan/v20230901/model/ActivateServiceRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/ActivateServiceResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/ChatCompletionsRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/ChatCompletionsResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/GetEmbeddingRequest.h>
@@ -31,6 +33,8 @@
 #include <tencentcloud/hunyuan/v20230901/model/GetTokenCountResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobResponse.h>
+#include <tencentcloud/hunyuan/v20230901/model/SetPayModeRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/SetPayModeResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/TextToImageLiteRequest.h>
@@ -49,6 +53,9 @@ namespace TencentCloud
                 HunyuanClient(const Credential &credential, const std::string &region);
                 HunyuanClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ActivateServiceResponse> ActivateServiceOutcome;
+                typedef std::future<ActivateServiceOutcome> ActivateServiceOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::ActivateServiceRequest&, ActivateServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChatCompletionsResponse> ChatCompletionsOutcome;
                 typedef std::future<ChatCompletionsOutcome> ChatCompletionsOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::ChatCompletionsRequest&, ChatCompletionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatCompletionsAsyncHandler;
@@ -61,6 +68,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryHunyuanImageJobResponse> QueryHunyuanImageJobOutcome;
                 typedef std::future<QueryHunyuanImageJobOutcome> QueryHunyuanImageJobOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::QueryHunyuanImageJobRequest&, QueryHunyuanImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryHunyuanImageJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetPayModeResponse> SetPayModeOutcome;
+                typedef std::future<SetPayModeOutcome> SetPayModeOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::SetPayModeRequest&, SetPayModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetPayModeAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitHunyuanImageJobResponse> SubmitHunyuanImageJobOutcome;
                 typedef std::future<SubmitHunyuanImageJobOutcome> SubmitHunyuanImageJobOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::SubmitHunyuanImageJobRequest&, SubmitHunyuanImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHunyuanImageJobAsyncHandler;
@@ -69,6 +79,15 @@ namespace TencentCloud
                 typedef std::function<void(const HunyuanClient*, const Model::TextToImageLiteRequest&, TextToImageLiteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToImageLiteAsyncHandler;
 
 
+
+                /**
+                 *开通服务
+                 * @param req ActivateServiceRequest
+                 * @return ActivateServiceOutcome
+                 */
+                ActivateServiceOutcome ActivateService(const Model::ActivateServiceRequest &request);
+                void ActivateServiceAsync(const Model::ActivateServiceRequest& request, const ActivateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ActivateServiceOutcomeCallable ActivateServiceCallable(const Model::ActivateServiceRequest& request);
 
                 /**
                  *腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
@@ -113,6 +132,15 @@ namespace TencentCloud
                 QueryHunyuanImageJobOutcome QueryHunyuanImageJob(const Model::QueryHunyuanImageJobRequest &request);
                 void QueryHunyuanImageJobAsync(const Model::QueryHunyuanImageJobRequest& request, const QueryHunyuanImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryHunyuanImageJobOutcomeCallable QueryHunyuanImageJobCallable(const Model::QueryHunyuanImageJobRequest& request);
+
+                /**
+                 *设置付费模式
+                 * @param req SetPayModeRequest
+                 * @return SetPayModeOutcome
+                 */
+                SetPayModeOutcome SetPayMode(const Model::SetPayModeRequest &request);
+                void SetPayModeAsync(const Model::SetPayModeRequest& request, const SetPayModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetPayModeOutcomeCallable SetPayModeCallable(const Model::SetPayModeRequest& request);
 
                 /**
                  *混元生图接口基于混元大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。

@@ -527,6 +527,69 @@ namespace TencentCloud
                      */
                     bool SourceEngineTypesHasBeenSet() const;
 
+                    /**
+                     * 获取目标库名
+                     * @return TargetDatabaseName 目标库名
+                     * 
+                     */
+                    std::string GetTargetDatabaseName() const;
+
+                    /**
+                     * 设置目标库名
+                     * @param _targetDatabaseName 目标库名
+                     * 
+                     */
+                    void SetTargetDatabaseName(const std::string& _targetDatabaseName);
+
+                    /**
+                     * 判断参数 TargetDatabaseName 是否已赋值
+                     * @return TargetDatabaseName 是否已赋值
+                     * 
+                     */
+                    bool TargetDatabaseNameHasBeenSet() const;
+
+                    /**
+                     * 获取目标模式名
+                     * @return TargetSchemaName 目标模式名
+                     * 
+                     */
+                    std::string GetTargetSchemaName() const;
+
+                    /**
+                     * 设置目标模式名
+                     * @param _targetSchemaName 目标模式名
+                     * 
+                     */
+                    void SetTargetSchemaName(const std::string& _targetSchemaName);
+
+                    /**
+                     * 判断参数 TargetSchemaName 是否已赋值
+                     * @return TargetSchemaName 是否已赋值
+                     * 
+                     */
+                    bool TargetSchemaNameHasBeenSet() const;
+
+                    /**
+                     * 获取目标表名
+                     * @return TargetTableName 目标表名
+                     * 
+                     */
+                    std::string GetTargetTableName() const;
+
+                    /**
+                     * 设置目标表名
+                     * @param _targetTableName 目标表名
+                     * 
+                     */
+                    void SetTargetTableName(const std::string& _targetTableName);
+
+                    /**
+                     * 判断参数 TargetTableName 是否已赋值
+                     * @return TargetTableName 是否已赋值
+                     * 
+                     */
+                    bool TargetTableNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -666,6 +729,24 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_sourceEngineTypes;
                     bool m_sourceEngineTypesHasBeenSet;
+
+                    /**
+                     * 目标库名
+                     */
+                    std::string m_targetDatabaseName;
+                    bool m_targetDatabaseNameHasBeenSet;
+
+                    /**
+                     * 目标模式名
+                     */
+                    std::string m_targetSchemaName;
+                    bool m_targetSchemaNameHasBeenSet;
+
+                    /**
+                     * 目标表名
+                     */
+                    std::string m_targetTableName;
+                    bool m_targetTableNameHasBeenSet;
 
                 };
             }

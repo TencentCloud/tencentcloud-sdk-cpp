@@ -27,7 +27,8 @@ DescribeOpsMakePlanInstancesRequest::DescribeOpsMakePlanInstancesRequest() :
     m_planIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_stateListHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,19 @@ string DescribeOpsMakePlanInstancesRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_stateListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StateList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_stateList.begin(); itr != m_stateList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -164,6 +178,22 @@ void DescribeOpsMakePlanInstancesRequest::SetPageSize(const int64_t& _pageSize)
 bool DescribeOpsMakePlanInstancesRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+vector<int64_t> DescribeOpsMakePlanInstancesRequest::GetStateList() const
+{
+    return m_stateList;
+}
+
+void DescribeOpsMakePlanInstancesRequest::SetStateList(const vector<int64_t>& _stateList)
+{
+    m_stateList = _stateList;
+    m_stateListHasBeenSet = true;
+}
+
+bool DescribeOpsMakePlanInstancesRequest::StateListHasBeenSet() const
+{
+    return m_stateListHasBeenSet;
 }
 
 

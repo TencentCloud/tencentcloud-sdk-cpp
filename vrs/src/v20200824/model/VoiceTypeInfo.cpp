@@ -27,7 +27,9 @@ VoiceTypeInfo::VoiceTypeInfo() :
     m_taskTypeHasBeenSet(false),
     m_taskIDHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
-    m_isDeployedHasBeenSet(false)
+    m_isDeployedHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_fastVoiceTypeHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome VoiceTypeInfo::Deserialize(const rapidjson::Value &value)
         m_isDeployedHasBeenSet = true;
     }
 
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VoiceTypeInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(value["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FastVoiceType") && !value["FastVoiceType"].IsNull())
+    {
+        if (!value["FastVoiceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VoiceTypeInfo.FastVoiceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fastVoiceType = string(value["FastVoiceType"].GetString());
+        m_fastVoiceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void VoiceTypeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "IsDeployed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDeployed, allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fastVoiceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FastVoiceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fastVoiceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void VoiceTypeInfo::SetIsDeployed(const bool& _isDeployed)
 bool VoiceTypeInfo::IsDeployedHasBeenSet() const
 {
     return m_isDeployedHasBeenSet;
+}
+
+string VoiceTypeInfo::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void VoiceTypeInfo::SetExpireTime(const string& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool VoiceTypeInfo::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+string VoiceTypeInfo::GetFastVoiceType() const
+{
+    return m_fastVoiceType;
+}
+
+void VoiceTypeInfo::SetFastVoiceType(const string& _fastVoiceType)
+{
+    m_fastVoiceType = _fastVoiceType;
+    m_fastVoiceTypeHasBeenSet = true;
+}
+
+bool VoiceTypeInfo::FastVoiceTypeHasBeenSet() const
+{
+    return m_fastVoiceTypeHasBeenSet;
 }
 

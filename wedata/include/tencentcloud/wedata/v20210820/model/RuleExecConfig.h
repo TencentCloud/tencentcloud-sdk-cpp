@@ -121,6 +121,31 @@ namespace TencentCloud
                      */
                     bool EngineTypeHasBeenSet() const;
 
+                    /**
+                     * 获取DLC执行引擎资源组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DlcGroupName DLC执行引擎资源组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDlcGroupName() const;
+
+                    /**
+                     * 设置DLC执行引擎资源组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dlcGroupName DLC执行引擎资源组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDlcGroupName(const std::string& _dlcGroupName);
+
+                    /**
+                     * 判断参数 DlcGroupName 是否已赋值
+                     * @return DlcGroupName 是否已赋值
+                     * 
+                     */
+                    bool DlcGroupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +168,13 @@ namespace TencentCloud
                      */
                     std::string m_engineType;
                     bool m_engineTypeHasBeenSet;
+
+                    /**
+                     * DLC执行引擎资源组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dlcGroupName;
+                    bool m_dlcGroupNameHasBeenSet;
 
                 };
             }

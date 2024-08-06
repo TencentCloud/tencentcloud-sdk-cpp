@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/TableMeta.h>
+#include <tencentcloud/wedata/v20210820/model/LifecycleInfo.h>
+#include <tencentcloud/wedata/v20210820/model/TagVoteSum.h>
 
 
 namespace TencentCloud
@@ -60,6 +62,38 @@ namespace TencentCloud
                      */
                     bool TableMetaHasBeenSet() const;
 
+                    /**
+                     * 获取生命周期信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LifecycleInfo 生命周期信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    LifecycleInfo GetLifecycleInfo() const;
+
+                    /**
+                     * 判断参数 LifecycleInfo 是否已赋值
+                     * @return LifecycleInfo 是否已赋值
+                     * 
+                     */
+                    bool LifecycleInfoHasBeenSet() const;
+
+                    /**
+                     * 获取标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagVoteSumList 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TagVoteSum GetTagVoteSumList() const;
+
+                    /**
+                     * 判断参数 TagVoteSumList 是否已赋值
+                     * @return TagVoteSumList 是否已赋值
+                     * 
+                     */
+                    bool TagVoteSumListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -68,6 +102,20 @@ namespace TencentCloud
                      */
                     TableMeta m_tableMeta;
                     bool m_tableMetaHasBeenSet;
+
+                    /**
+                     * 生命周期信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LifecycleInfo m_lifecycleInfo;
+                    bool m_lifecycleInfoHasBeenSet;
+
+                    /**
+                     * 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TagVoteSum m_tagVoteSumList;
+                    bool m_tagVoteSumListHasBeenSet;
 
                 };
             }

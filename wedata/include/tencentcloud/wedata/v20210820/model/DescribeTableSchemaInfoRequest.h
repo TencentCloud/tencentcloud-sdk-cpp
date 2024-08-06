@@ -189,6 +189,69 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取环境信息
+                     * @return Env 环境信息
+                     * 
+                     */
+                    std::string GetEnv() const;
+
+                    /**
+                     * 设置环境信息
+                     * @param _env 环境信息
+                     * 
+                     */
+                    void SetEnv(const std::string& _env);
+
+                    /**
+                     * 判断参数 Env 是否已赋值
+                     * @return Env 是否已赋值
+                     * 
+                     */
+                    bool EnvHasBeenSet() const;
+
+                    /**
+                     * 获取空间模式
+                     * @return Model 空间模式
+                     * 
+                     */
+                    std::string GetModel() const;
+
+                    /**
+                     * 设置空间模式
+                     * @param _model 空间模式
+                     * 
+                     */
+                    void SetModel(const std::string& _model);
+
+                    /**
+                     * 判断参数 Model 是否已赋值
+                     * @return Model 是否已赋值
+                     * 
+                     */
+                    bool ModelHasBeenSet() const;
+
+                    /**
+                     * 获取开发态的datasourceId
+                     * @return DevDatasourceId 开发态的datasourceId
+                     * 
+                     */
+                    std::string GetDevDatasourceId() const;
+
+                    /**
+                     * 设置开发态的datasourceId
+                     * @param _devDatasourceId 开发态的datasourceId
+                     * 
+                     */
+                    void SetDevDatasourceId(const std::string& _devDatasourceId);
+
+                    /**
+                     * 判断参数 DevDatasourceId 是否已赋值
+                     * @return DevDatasourceId 是否已赋值
+                     * 
+                     */
+                    bool DevDatasourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +295,24 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 环境信息
+                     */
+                    std::string m_env;
+                    bool m_envHasBeenSet;
+
+                    /**
+                     * 空间模式
+                     */
+                    std::string m_model;
+                    bool m_modelHasBeenSet;
+
+                    /**
+                     * 开发态的datasourceId
+                     */
+                    std::string m_devDatasourceId;
+                    bool m_devDatasourceIdHasBeenSet;
 
                 };
             }

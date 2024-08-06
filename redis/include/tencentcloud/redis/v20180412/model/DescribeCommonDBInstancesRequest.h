@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取实例ID过滤信息列表
-                     * @return InstanceIds 实例ID过滤信息列表
+                     * 获取实例ID过滤信息列表，数组最大长度限制为100
+                     * @return InstanceIds 实例ID过滤信息列表，数组最大长度限制为100
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例ID过滤信息列表
-                     * @param _instanceIds 实例ID过滤信息列表
+                     * 设置实例ID过滤信息列表，数组最大长度限制为100
+                     * @param _instanceIds 实例ID过滤信息列表，数组最大长度限制为100
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -336,7 +336,7 @@ namespace TencentCloud
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 实例ID过滤信息列表
+                     * 实例ID过滤信息列表，数组最大长度限制为100
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

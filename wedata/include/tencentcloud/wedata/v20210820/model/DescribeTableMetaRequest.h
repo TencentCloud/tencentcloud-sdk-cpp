@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool TableFilterTypeHasBeenSet() const;
 
+                    /**
+                     * 获取查询字段列表
+                     * @return SearchNames 查询字段列表
+                     * 
+                     */
+                    std::vector<std::string> GetSearchNames() const;
+
+                    /**
+                     * 设置查询字段列表
+                     * @param _searchNames 查询字段列表
+                     * 
+                     */
+                    void SetSearchNames(const std::vector<std::string>& _searchNames);
+
+                    /**
+                     * 判断参数 SearchNames 是否已赋值
+                     * @return SearchNames 是否已赋值
+                     * 
+                     */
+                    bool SearchNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     uint64_t m_tableFilterType;
                     bool m_tableFilterTypeHasBeenSet;
+
+                    /**
+                     * 查询字段列表
+                     */
+                    std::vector<std::string> m_searchNames;
+                    bool m_searchNamesHasBeenSet;
 
                 };
             }

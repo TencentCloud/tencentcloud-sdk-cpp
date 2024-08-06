@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool VoiceLanguageHasBeenSet() const;
 
                     /**
-                     * 获取音频ID集合
-                     * @return AudioIdList 音频ID集合
+                     * 获取音频ID集合。（一句话声音复刻仅需填写一个音质检测接口返回的AudioId）
+                     * @return AudioIdList 音频ID集合。（一句话声音复刻仅需填写一个音质检测接口返回的AudioId）
                      * 
                      */
                     std::vector<std::string> GetAudioIdList() const;
 
                     /**
-                     * 设置音频ID集合
-                     * @param _audioIdList 音频ID集合
+                     * 设置音频ID集合。（一句话声音复刻仅需填写一个音质检测接口返回的AudioId）
+                     * @param _audioIdList 音频ID集合。（一句话声音复刻仅需填写一个音质检测接口返回的AudioId）
                      * 
                      */
                     void SetAudioIdList(const std::vector<std::string>& _audioIdList);
@@ -268,15 +268,23 @@ namespace TencentCloud
                     bool ModelTypeHasBeenSet() const;
 
                     /**
-                     * 获取复刻类型。 0 - 轻量版声音复刻（默认）。
-                     * @return TaskType 复刻类型。 0 - 轻量版声音复刻（默认）。
+                     * 获取复刻类型。
+0 - 轻量版声音复刻（默认）；
+5 - 一句话声音复刻。
+                     * @return TaskType 复刻类型。
+0 - 轻量版声音复刻（默认）；
+5 - 一句话声音复刻。
                      * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
-                     * 设置复刻类型。 0 - 轻量版声音复刻（默认）。
-                     * @param _taskType 复刻类型。 0 - 轻量版声音复刻（默认）。
+                     * 设置复刻类型。
+0 - 轻量版声音复刻（默认）；
+5 - 一句话声音复刻。
+                     * @param _taskType 复刻类型。
+0 - 轻量版声音复刻（默认）；
+5 - 一句话声音复刻。
                      * 
                      */
                     void SetTaskType(const int64_t& _taskType);
@@ -289,15 +297,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取校验音频ID。
-                     * @return VPRAudioId 校验音频ID。
+                     * 获取校验音频ID。（仅基础版声音复刻使用）
+                     * @return VPRAudioId 校验音频ID。（仅基础版声音复刻使用）
                      * 
                      */
                     std::string GetVPRAudioId() const;
 
                     /**
-                     * 设置校验音频ID。
-                     * @param _vPRAudioId 校验音频ID。
+                     * 设置校验音频ID。（仅基础版声音复刻使用）
+                     * @param _vPRAudioId 校验音频ID。（仅基础版声音复刻使用）
                      * 
                      */
                     void SetVPRAudioId(const std::string& _vPRAudioId);
@@ -342,7 +350,7 @@ namespace TencentCloud
                     bool m_voiceLanguageHasBeenSet;
 
                     /**
-                     * 音频ID集合
+                     * 音频ID集合。（一句话声音复刻仅需填写一个音质检测接口返回的AudioId）
                      */
                     std::vector<std::string> m_audioIdList;
                     bool m_audioIdListHasBeenSet;
@@ -375,13 +383,15 @@ namespace TencentCloud
                     bool m_modelTypeHasBeenSet;
 
                     /**
-                     * 复刻类型。 0 - 轻量版声音复刻（默认）。
+                     * 复刻类型。
+0 - 轻量版声音复刻（默认）；
+5 - 一句话声音复刻。
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 校验音频ID。
+                     * 校验音频ID。（仅基础版声音复刻使用）
                      */
                     std::string m_vPRAudioId;
                     bool m_vPRAudioIdHasBeenSet;

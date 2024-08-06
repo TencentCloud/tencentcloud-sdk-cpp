@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tds/v20220801/model/DataAuthorizationInfo.h>
 
 
 namespace TencentCloud
@@ -231,6 +232,27 @@ namespace TencentCloud
                      */
                     bool QQOpenIdHasBeenSet() const;
 
+                    /**
+                     * 获取数据授权信息
+                     * @return DataAuthorization 数据授权信息
+                     * 
+                     */
+                    DataAuthorizationInfo GetDataAuthorization() const;
+
+                    /**
+                     * 设置数据授权信息
+                     * @param _dataAuthorization 数据授权信息
+                     * 
+                     */
+                    void SetDataAuthorization(const DataAuthorizationInfo& _dataAuthorization);
+
+                    /**
+                     * 判断参数 DataAuthorization 是否已赋值
+                     * @return DataAuthorization 是否已赋值
+                     * 
+                     */
+                    bool DataAuthorizationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +308,12 @@ namespace TencentCloud
                      */
                     std::string m_qQOpenId;
                     bool m_qQOpenIdHasBeenSet;
+
+                    /**
+                     * 数据授权信息
+                     */
+                    DataAuthorizationInfo m_dataAuthorization;
+                    bool m_dataAuthorizationHasBeenSet;
 
                 };
             }

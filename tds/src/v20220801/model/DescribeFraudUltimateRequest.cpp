@@ -31,7 +31,8 @@ DescribeFraudUltimateRequest::DescribeFraudUltimateRequest() :
     m_weChatOpenIdHasBeenSet(false),
     m_phoneNumberHasBeenSet(false),
     m_clientIPHasBeenSet(false),
-    m_qQOpenIdHasBeenSet(false)
+    m_qQOpenIdHasBeenSet(false),
+    m_dataAuthorizationHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,15 @@ string DescribeFraudUltimateRequest::ToJsonString() const
         string key = "QQOpenId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_qQOpenId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataAuthorizationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataAuthorization";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dataAuthorization.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -264,6 +274,22 @@ void DescribeFraudUltimateRequest::SetQQOpenId(const string& _qQOpenId)
 bool DescribeFraudUltimateRequest::QQOpenIdHasBeenSet() const
 {
     return m_qQOpenIdHasBeenSet;
+}
+
+DataAuthorizationInfo DescribeFraudUltimateRequest::GetDataAuthorization() const
+{
+    return m_dataAuthorization;
+}
+
+void DescribeFraudUltimateRequest::SetDataAuthorization(const DataAuthorizationInfo& _dataAuthorization)
+{
+    m_dataAuthorization = _dataAuthorization;
+    m_dataAuthorizationHasBeenSet = true;
+}
+
+bool DescribeFraudUltimateRequest::DataAuthorizationHasBeenSet() const
+{
+    return m_dataAuthorizationHasBeenSet;
 }
 
 

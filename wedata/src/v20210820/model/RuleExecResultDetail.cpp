@@ -30,7 +30,8 @@ RuleExecResultDetail::RuleExecResultDetail() :
     m_tableNameHasBeenSet(false),
     m_ruleExecResultHasBeenSet(false),
     m_tableOwnerUserIdHasBeenSet(false),
-    m_datasourceTypeHasBeenSet(false)
+    m_datasourceTypeHasBeenSet(false),
+    m_clusterDeployTypeHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,16 @@ CoreInternalOutcome RuleExecResultDetail::Deserialize(const rapidjson::Value &va
         m_datasourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterDeployType") && !value["ClusterDeployType"].IsNull())
+    {
+        if (!value["ClusterDeployType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResultDetail.ClusterDeployType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterDeployType = string(value["ClusterDeployType"].GetString());
+        m_clusterDeployTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +243,14 @@ void RuleExecResultDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "DatasourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_datasourceType, allocator);
+    }
+
+    if (m_clusterDeployTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterDeployType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterDeployType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -395,5 +414,21 @@ void RuleExecResultDetail::SetDatasourceType(const uint64_t& _datasourceType)
 bool RuleExecResultDetail::DatasourceTypeHasBeenSet() const
 {
     return m_datasourceTypeHasBeenSet;
+}
+
+string RuleExecResultDetail::GetClusterDeployType() const
+{
+    return m_clusterDeployType;
+}
+
+void RuleExecResultDetail::SetClusterDeployType(const string& _clusterDeployType)
+{
+    m_clusterDeployType = _clusterDeployType;
+    m_clusterDeployTypeHasBeenSet = true;
+}
+
+bool RuleExecResultDetail::ClusterDeployTypeHasBeenSet() const
+{
+    return m_clusterDeployTypeHasBeenSet;
 }
 

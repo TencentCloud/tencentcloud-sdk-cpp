@@ -29,7 +29,9 @@ DatabaseInfo::DatabaseInfo() :
     m_datasourceTypeHasBeenSet(false),
     m_originDatabaseNameHasBeenSet(false),
     m_originSchemaNameHasBeenSet(false),
-    m_dsEnvTypeHasBeenSet(false)
+    m_dsEnvTypeHasBeenSet(false),
+    m_clusterDeployTypeHasBeenSet(false),
+    m_schemaNameHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome DatabaseInfo::Deserialize(const rapidjson::Value &value)
         m_dsEnvTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterDeployType") && !value["ClusterDeployType"].IsNull())
+    {
+        if (!value["ClusterDeployType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseInfo.ClusterDeployType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterDeployType = string(value["ClusterDeployType"].GetString());
+        m_clusterDeployTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SchemaName") && !value["SchemaName"].IsNull())
+    {
+        if (!value["SchemaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseInfo.SchemaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemaName = string(value["SchemaName"].GetString());
+        m_schemaNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void DatabaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DsEnvType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dsEnvType, allocator);
+    }
+
+    if (m_clusterDeployTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterDeployType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterDeployType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void DatabaseInfo::SetDsEnvType(const int64_t& _dsEnvType)
 bool DatabaseInfo::DsEnvTypeHasBeenSet() const
 {
     return m_dsEnvTypeHasBeenSet;
+}
+
+string DatabaseInfo::GetClusterDeployType() const
+{
+    return m_clusterDeployType;
+}
+
+void DatabaseInfo::SetClusterDeployType(const string& _clusterDeployType)
+{
+    m_clusterDeployType = _clusterDeployType;
+    m_clusterDeployTypeHasBeenSet = true;
+}
+
+bool DatabaseInfo::ClusterDeployTypeHasBeenSet() const
+{
+    return m_clusterDeployTypeHasBeenSet;
+}
+
+string DatabaseInfo::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void DatabaseInfo::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool DatabaseInfo::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
 }
 

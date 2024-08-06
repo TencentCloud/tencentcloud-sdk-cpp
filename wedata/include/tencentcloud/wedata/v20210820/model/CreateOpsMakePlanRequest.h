@@ -539,6 +539,69 @@ namespace TencentCloud
                      */
                     bool IntegrationResourceGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取补录扩展属性
+                     * @return MakeExtList 补录扩展属性
+                     * 
+                     */
+                    std::vector<StrToStrMap> GetMakeExtList() const;
+
+                    /**
+                     * 设置补录扩展属性
+                     * @param _makeExtList 补录扩展属性
+                     * 
+                     */
+                    void SetMakeExtList(const std::vector<StrToStrMap>& _makeExtList);
+
+                    /**
+                     * 判断参数 MakeExtList 是否已赋值
+                     * @return MakeExtList 是否已赋值
+                     * 
+                     */
+                    bool MakeExtListHasBeenSet() const;
+
+                    /**
+                     * 获取补录扩展属性
+                     * @return SameSelfWorkflowDependType 补录扩展属性
+                     * 
+                     */
+                    bool GetSameSelfWorkflowDependType() const;
+
+                    /**
+                     * 设置补录扩展属性
+                     * @param _sameSelfWorkflowDependType 补录扩展属性
+                     * 
+                     */
+                    void SetSameSelfWorkflowDependType(const bool& _sameSelfWorkflowDependType);
+
+                    /**
+                     * 判断参数 SameSelfWorkflowDependType 是否已赋值
+                     * @return SameSelfWorkflowDependType 是否已赋值
+                     * 
+                     */
+                    bool SameSelfWorkflowDependTypeHasBeenSet() const;
+
+                    /**
+                     * 获取补录扩展属性
+                     * @return SelfWorkflowDependency 补录扩展属性
+                     * 
+                     */
+                    std::string GetSelfWorkflowDependency() const;
+
+                    /**
+                     * 设置补录扩展属性
+                     * @param _selfWorkflowDependency 补录扩展属性
+                     * 
+                     */
+                    void SetSelfWorkflowDependency(const std::string& _selfWorkflowDependency);
+
+                    /**
+                     * 判断参数 SelfWorkflowDependency 是否已赋值
+                     * @return SelfWorkflowDependency 是否已赋值
+                     * 
+                     */
+                    bool SelfWorkflowDependencyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -681,6 +744,24 @@ namespace TencentCloud
                      */
                     std::string m_integrationResourceGroupName;
                     bool m_integrationResourceGroupNameHasBeenSet;
+
+                    /**
+                     * 补录扩展属性
+                     */
+                    std::vector<StrToStrMap> m_makeExtList;
+                    bool m_makeExtListHasBeenSet;
+
+                    /**
+                     * 补录扩展属性
+                     */
+                    bool m_sameSelfWorkflowDependType;
+                    bool m_sameSelfWorkflowDependTypeHasBeenSet;
+
+                    /**
+                     * 补录扩展属性
+                     */
+                    std::string m_selfWorkflowDependency;
+                    bool m_selfWorkflowDependencyHasBeenSet;
 
                 };
             }

@@ -383,6 +383,27 @@ namespace TencentCloud
                      */
                     bool VatElectronicItemsHasBeenSet() const;
 
+                    /**
+                     * 获取业务类型标志
+                     * @return ServiceTypeLabel 业务类型标志
+                     * 
+                     */
+                    std::string GetServiceTypeLabel() const;
+
+                    /**
+                     * 设置业务类型标志
+                     * @param _serviceTypeLabel 业务类型标志
+                     * 
+                     */
+                    void SetServiceTypeLabel(const std::string& _serviceTypeLabel);
+
+                    /**
+                     * 判断参数 ServiceTypeLabel 是否已赋值
+                     * @return ServiceTypeLabel 是否已赋值
+                     * 
+                     */
+                    bool ServiceTypeLabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -480,6 +501,12 @@ namespace TencentCloud
                      */
                     std::vector<VatElectronicItemInfo> m_vatElectronicItems;
                     bool m_vatElectronicItemsHasBeenSet;
+
+                    /**
+                     * 业务类型标志
+                     */
+                    std::string m_serviceTypeLabel;
+                    bool m_serviceTypeLabelHasBeenSet;
 
                 };
             }

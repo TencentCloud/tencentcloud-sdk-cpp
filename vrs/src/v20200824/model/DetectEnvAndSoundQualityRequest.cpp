@@ -27,7 +27,8 @@ DetectEnvAndSoundQualityRequest::DetectEnvAndSoundQualityRequest() :
     m_audioDataHasBeenSet(false),
     m_typeIdHasBeenSet(false),
     m_codecHasBeenSet(false),
-    m_sampleRateHasBeenSet(false)
+    m_sampleRateHasBeenSet(false),
+    m_taskTypeHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DetectEnvAndSoundQualityRequest::ToJsonString() const
         string key = "SampleRate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sampleRate, allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskType, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DetectEnvAndSoundQualityRequest::SetSampleRate(const int64_t& _sampleRate)
 bool DetectEnvAndSoundQualityRequest::SampleRateHasBeenSet() const
 {
     return m_sampleRateHasBeenSet;
+}
+
+int64_t DetectEnvAndSoundQualityRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void DetectEnvAndSoundQualityRequest::SetTaskType(const int64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool DetectEnvAndSoundQualityRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
 }
 
 

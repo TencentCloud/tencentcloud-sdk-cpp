@@ -127,23 +127,27 @@ namespace TencentCloud
                     bool CodecHasBeenSet() const;
 
                     /**
-                     * 获取音频采样率：
-
-16000：16k（默认）
-                     * @return SampleRate 音频采样率：
-
-16000：16k（默认）
+                     * 获取音频采样率。
+16000：16k（默认）；
+24000：24k（仅一句话声音复刻支持）；
+48000：48k（仅一句话声音复刻支持）。
+                     * @return SampleRate 音频采样率。
+16000：16k（默认）；
+24000：24k（仅一句话声音复刻支持）；
+48000：48k（仅一句话声音复刻支持）。
                      * 
                      */
                     int64_t GetSampleRate() const;
 
                     /**
-                     * 设置音频采样率：
-
-16000：16k（默认）
-                     * @param _sampleRate 音频采样率：
-
-16000：16k（默认）
+                     * 设置音频采样率。
+16000：16k（默认）；
+24000：24k（仅一句话声音复刻支持）；
+48000：48k（仅一句话声音复刻支持）。
+                     * @param _sampleRate 音频采样率。
+16000：16k（默认）；
+24000：24k（仅一句话声音复刻支持）；
+48000：48k（仅一句话声音复刻支持）。
                      * 
                      */
                     void SetSampleRate(const int64_t& _sampleRate);
@@ -154,6 +158,35 @@ namespace TencentCloud
                      * 
                      */
                     bool SampleRateHasBeenSet() const;
+
+                    /**
+                     * 获取复刻类型。
+0 - 轻量版声音复刻（默认）;
+5 - 一句话声音复刻。
+                     * @return TaskType 复刻类型。
+0 - 轻量版声音复刻（默认）;
+5 - 一句话声音复刻。
+                     * 
+                     */
+                    int64_t GetTaskType() const;
+
+                    /**
+                     * 设置复刻类型。
+0 - 轻量版声音复刻（默认）;
+5 - 一句话声音复刻。
+                     * @param _taskType 复刻类型。
+0 - 轻量版声音复刻（默认）;
+5 - 一句话声音复刻。
+                     * 
+                     */
+                    void SetTaskType(const int64_t& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeHasBeenSet() const;
 
                 private:
 
@@ -182,12 +215,21 @@ namespace TencentCloud
                     bool m_codecHasBeenSet;
 
                     /**
-                     * 音频采样率：
-
-16000：16k（默认）
+                     * 音频采样率。
+16000：16k（默认）；
+24000：24k（仅一句话声音复刻支持）；
+48000：48k（仅一句话声音复刻支持）。
                      */
                     int64_t m_sampleRate;
                     bool m_sampleRateHasBeenSet;
+
+                    /**
+                     * 复刻类型。
+0 - 轻量版声音复刻（默认）;
+5 - 一句话声音复刻。
+                     */
+                    int64_t m_taskType;
+                    bool m_taskTypeHasBeenSet;
 
                 };
             }

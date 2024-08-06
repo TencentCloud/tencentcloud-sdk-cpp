@@ -23,7 +23,8 @@ using namespace std;
 RuleExecConfig::RuleExecConfig() :
     m_queueNameHasBeenSet(false),
     m_executorGroupIdHasBeenSet(false),
-    m_engineTypeHasBeenSet(false)
+    m_engineTypeHasBeenSet(false),
+    m_dlcGroupNameHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome RuleExecConfig::Deserialize(const rapidjson::Value &value)
         m_engineTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DlcGroupName") && !value["DlcGroupName"].IsNull())
+    {
+        if (!value["DlcGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecConfig.DlcGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dlcGroupName = string(value["DlcGroupName"].GetString());
+        m_dlcGroupNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void RuleExecConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "EngineType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dlcGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DlcGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dlcGroupName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void RuleExecConfig::SetEngineType(const string& _engineType)
 bool RuleExecConfig::EngineTypeHasBeenSet() const
 {
     return m_engineTypeHasBeenSet;
+}
+
+string RuleExecConfig::GetDlcGroupName() const
+{
+    return m_dlcGroupName;
+}
+
+void RuleExecConfig::SetDlcGroupName(const string& _dlcGroupName)
+{
+    m_dlcGroupName = _dlcGroupName;
+    m_dlcGroupNameHasBeenSet = true;
+}
+
+bool RuleExecConfig::DlcGroupNameHasBeenSet() const
+{
+    return m_dlcGroupNameHasBeenSet;
 }
 

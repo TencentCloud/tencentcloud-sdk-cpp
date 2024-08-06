@@ -45,7 +45,10 @@ ModifyRuleRequest::ModifyRuleRequest() :
     m_relConditionExprHasBeenSet(false),
     m_fieldConfigHasBeenSet(false),
     m_targetObjectValueHasBeenSet(false),
-    m_sourceEngineTypesHasBeenSet(false)
+    m_sourceEngineTypesHasBeenSet(false),
+    m_targetDatabaseNameHasBeenSet(false),
+    m_targetSchemaNameHasBeenSet(false),
+    m_targetTableNameHasBeenSet(false)
 {
 }
 
@@ -245,6 +248,30 @@ string ModifyRuleRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_targetDatabaseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetDatabaseName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_targetDatabaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetSchemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetSchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_targetSchemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetTableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetTableName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_targetTableName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -621,6 +648,54 @@ void ModifyRuleRequest::SetSourceEngineTypes(const vector<uint64_t>& _sourceEngi
 bool ModifyRuleRequest::SourceEngineTypesHasBeenSet() const
 {
     return m_sourceEngineTypesHasBeenSet;
+}
+
+string ModifyRuleRequest::GetTargetDatabaseName() const
+{
+    return m_targetDatabaseName;
+}
+
+void ModifyRuleRequest::SetTargetDatabaseName(const string& _targetDatabaseName)
+{
+    m_targetDatabaseName = _targetDatabaseName;
+    m_targetDatabaseNameHasBeenSet = true;
+}
+
+bool ModifyRuleRequest::TargetDatabaseNameHasBeenSet() const
+{
+    return m_targetDatabaseNameHasBeenSet;
+}
+
+string ModifyRuleRequest::GetTargetSchemaName() const
+{
+    return m_targetSchemaName;
+}
+
+void ModifyRuleRequest::SetTargetSchemaName(const string& _targetSchemaName)
+{
+    m_targetSchemaName = _targetSchemaName;
+    m_targetSchemaNameHasBeenSet = true;
+}
+
+bool ModifyRuleRequest::TargetSchemaNameHasBeenSet() const
+{
+    return m_targetSchemaNameHasBeenSet;
+}
+
+string ModifyRuleRequest::GetTargetTableName() const
+{
+    return m_targetTableName;
+}
+
+void ModifyRuleRequest::SetTargetTableName(const string& _targetTableName)
+{
+    m_targetTableName = _targetTableName;
+    m_targetTableNameHasBeenSet = true;
+}
+
+bool ModifyRuleRequest::TargetTableNameHasBeenSet() const
+{
+    return m_targetTableNameHasBeenSet;
 }
 
 

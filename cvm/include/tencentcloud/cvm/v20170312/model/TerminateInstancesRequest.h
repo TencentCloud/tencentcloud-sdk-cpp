@@ -65,14 +65,18 @@ namespace TencentCloud
 
                     /**
                      * 获取释放实例挂载的包年包月数据盘。true表示销毁实例同时释放包年包月数据盘，false表示只销毁实例。
+默认值：false
                      * @return ReleasePrepaidDataDisks 释放实例挂载的包年包月数据盘。true表示销毁实例同时释放包年包月数据盘，false表示只销毁实例。
+默认值：false
                      * 
                      */
                     bool GetReleasePrepaidDataDisks() const;
 
                     /**
                      * 设置释放实例挂载的包年包月数据盘。true表示销毁实例同时释放包年包月数据盘，false表示只销毁实例。
+默认值：false
                      * @param _releasePrepaidDataDisks 释放实例挂载的包年包月数据盘。true表示销毁实例同时释放包年包月数据盘，false表示只销毁实例。
+默认值：false
                      * 
                      */
                     void SetReleasePrepaidDataDisks(const bool& _releasePrepaidDataDisks);
@@ -94,6 +98,7 @@ namespace TencentCloud
 
                     /**
                      * 释放实例挂载的包年包月数据盘。true表示销毁实例同时释放包年包月数据盘，false表示只销毁实例。
+默认值：false
                      */
                     bool m_releasePrepaidDataDisks;
                     bool m_releasePrepaidDataDisksHasBeenSet;

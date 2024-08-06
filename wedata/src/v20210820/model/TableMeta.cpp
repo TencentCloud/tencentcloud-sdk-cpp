@@ -74,7 +74,9 @@ TableMeta::TableMeta() :
     m_isPartitionTableHasBeenSet(false),
     m_partitionColumnsHasBeenSet(false),
     m_partitionExpireDaysHasBeenSet(false),
-    m_tablePropertiesHasBeenSet(false)
+    m_tablePropertiesHasBeenSet(false),
+    m_environmentHasBeenSet(false),
+    m_schemaHasBeenSet(false)
 {
 }
 
@@ -666,6 +668,26 @@ CoreInternalOutcome TableMeta::Deserialize(const rapidjson::Value &value)
         m_tablePropertiesHasBeenSet = true;
     }
 
+    if (value.HasMember("Environment") && !value["Environment"].IsNull())
+    {
+        if (!value["Environment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.Environment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_environment = string(value["Environment"].GetString());
+        m_environmentHasBeenSet = true;
+    }
+
+    if (value.HasMember("Schema") && !value["Schema"].IsNull())
+    {
+        if (!value["Schema"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.Schema` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schema = string(value["Schema"].GetString());
+        m_schemaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1134,6 +1156,22 @@ void TableMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Schema";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schema.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2001,5 +2039,37 @@ void TableMeta::SetTableProperties(const vector<TableMetaProperty>& _tableProper
 bool TableMeta::TablePropertiesHasBeenSet() const
 {
     return m_tablePropertiesHasBeenSet;
+}
+
+string TableMeta::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void TableMeta::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool TableMeta::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
+}
+
+string TableMeta::GetSchema() const
+{
+    return m_schema;
+}
+
+void TableMeta::SetSchema(const string& _schema)
+{
+    m_schema = _schema;
+    m_schemaHasBeenSet = true;
+}
+
+bool TableMeta::SchemaHasBeenSet() const
+{
+    return m_schemaHasBeenSet;
 }
 

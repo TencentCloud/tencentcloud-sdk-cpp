@@ -347,6 +347,31 @@ namespace TencentCloud
                      */
                     bool LevelRankHasBeenSet() const;
 
+                    /**
+                     * 获取influxdb字段类别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InfluxCategory influxdb字段类别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInfluxCategory() const;
+
+                    /**
+                     * 设置influxdb字段类别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _influxCategory influxdb字段类别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInfluxCategory(const std::string& _influxCategory);
+
+                    /**
+                     * 判断参数 InfluxCategory 是否已赋值
+                     * @return InfluxCategory 是否已赋值
+                     * 
+                     */
+                    bool InfluxCategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -432,6 +457,13 @@ namespace TencentCloud
                      */
                     int64_t m_levelRank;
                     bool m_levelRankHasBeenSet;
+
+                    /**
+                     * influxdb字段类别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_influxCategory;
+                    bool m_influxCategoryHasBeenSet;
 
                 };
             }
