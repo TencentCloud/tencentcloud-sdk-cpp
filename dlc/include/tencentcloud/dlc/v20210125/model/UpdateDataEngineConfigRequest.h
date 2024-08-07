@@ -84,6 +84,48 @@ namespace TencentCloud
                      */
                     bool DataEngineConfigCommandHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用lakefs作为结果存储
+                     * @return UseLakeFs 是否使用lakefs作为结果存储
+                     * 
+                     */
+                    bool GetUseLakeFs() const;
+
+                    /**
+                     * 设置是否使用lakefs作为结果存储
+                     * @param _useLakeFs 是否使用lakefs作为结果存储
+                     * 
+                     */
+                    void SetUseLakeFs(const bool& _useLakeFs);
+
+                    /**
+                     * 判断参数 UseLakeFs 是否已赋值
+                     * @return UseLakeFs 是否已赋值
+                     * 
+                     */
+                    bool UseLakeFsHasBeenSet() const;
+
+                    /**
+                     * 获取用户自定义结果路径
+                     * @return CustomResultPath 用户自定义结果路径
+                     * 
+                     */
+                    std::string GetCustomResultPath() const;
+
+                    /**
+                     * 设置用户自定义结果路径
+                     * @param _customResultPath 用户自定义结果路径
+                     * 
+                     */
+                    void SetCustomResultPath(const std::string& _customResultPath);
+
+                    /**
+                     * 判断参数 CustomResultPath 是否已赋值
+                     * @return CustomResultPath 是否已赋值
+                     * 
+                     */
+                    bool CustomResultPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +139,18 @@ namespace TencentCloud
                      */
                     std::string m_dataEngineConfigCommand;
                     bool m_dataEngineConfigCommandHasBeenSet;
+
+                    /**
+                     * 是否使用lakefs作为结果存储
+                     */
+                    bool m_useLakeFs;
+                    bool m_useLakeFsHasBeenSet;
+
+                    /**
+                     * 用户自定义结果路径
+                     */
+                    std::string m_customResultPath;
+                    bool m_customResultPathHasBeenSet;
 
                 };
             }

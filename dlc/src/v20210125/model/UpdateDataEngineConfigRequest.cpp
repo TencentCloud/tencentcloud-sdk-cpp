@@ -24,7 +24,9 @@ using namespace std;
 
 UpdateDataEngineConfigRequest::UpdateDataEngineConfigRequest() :
     m_dataEngineIdsHasBeenSet(false),
-    m_dataEngineConfigCommandHasBeenSet(false)
+    m_dataEngineConfigCommandHasBeenSet(false),
+    m_useLakeFsHasBeenSet(false),
+    m_customResultPathHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,22 @@ string UpdateDataEngineConfigRequest::ToJsonString() const
         string key = "DataEngineConfigCommand";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataEngineConfigCommand.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useLakeFsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseLakeFs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useLakeFs, allocator);
+    }
+
+    if (m_customResultPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomResultPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customResultPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +112,38 @@ void UpdateDataEngineConfigRequest::SetDataEngineConfigCommand(const string& _da
 bool UpdateDataEngineConfigRequest::DataEngineConfigCommandHasBeenSet() const
 {
     return m_dataEngineConfigCommandHasBeenSet;
+}
+
+bool UpdateDataEngineConfigRequest::GetUseLakeFs() const
+{
+    return m_useLakeFs;
+}
+
+void UpdateDataEngineConfigRequest::SetUseLakeFs(const bool& _useLakeFs)
+{
+    m_useLakeFs = _useLakeFs;
+    m_useLakeFsHasBeenSet = true;
+}
+
+bool UpdateDataEngineConfigRequest::UseLakeFsHasBeenSet() const
+{
+    return m_useLakeFsHasBeenSet;
+}
+
+string UpdateDataEngineConfigRequest::GetCustomResultPath() const
+{
+    return m_customResultPath;
+}
+
+void UpdateDataEngineConfigRequest::SetCustomResultPath(const string& _customResultPath)
+{
+    m_customResultPath = _customResultPath;
+    m_customResultPathHasBeenSet = true;
+}
+
+bool UpdateDataEngineConfigRequest::CustomResultPathHasBeenSet() const
+{
+    return m_customResultPathHasBeenSet;
 }
 
 

@@ -467,6 +467,31 @@ namespace TencentCloud
                      */
                     bool LogParseTypeHasBeenSet() const;
 
+                    /**
+                     * 获取服务标签, function: 函数托管
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tag 服务标签, function: 函数托管
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTag() const;
+
+                    /**
+                     * 设置服务标签, function: 函数托管
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tag 服务标签, function: 函数托管
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTag(const std::string& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     * 
+                     */
+                    bool TagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -588,6 +613,13 @@ namespace TencentCloud
                      */
                     std::string m_logParseType;
                     bool m_logParseTypeHasBeenSet;
+
+                    /**
+                     * 服务标签, function: 函数托管
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tag;
+                    bool m_tagHasBeenSet;
 
                 };
             }

@@ -22,7 +22,8 @@ using namespace std;
 
 HostNameSettings::HostNameSettings() :
     m_hostNameHasBeenSet(false),
-    m_hostNameStyleHasBeenSet(false)
+    m_hostNameStyleHasBeenSet(false),
+    m_hostNameSuffixHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome HostNameSettings::Deserialize(const rapidjson::Value &value)
         m_hostNameStyleHasBeenSet = true;
     }
 
+    if (value.HasMember("HostNameSuffix") && !value["HostNameSuffix"].IsNull())
+    {
+        if (!value["HostNameSuffix"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostNameSettings.HostNameSuffix` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostNameSuffix = string(value["HostNameSuffix"].GetString());
+        m_hostNameSuffixHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void HostNameSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "HostNameStyle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hostNameStyle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostNameSuffixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostNameSuffix";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostNameSuffix.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void HostNameSettings::SetHostNameStyle(const string& _hostNameStyle)
 bool HostNameSettings::HostNameStyleHasBeenSet() const
 {
     return m_hostNameStyleHasBeenSet;
+}
+
+string HostNameSettings::GetHostNameSuffix() const
+{
+    return m_hostNameSuffix;
+}
+
+void HostNameSettings::SetHostNameSuffix(const string& _hostNameSuffix)
+{
+    m_hostNameSuffix = _hostNameSuffix;
+    m_hostNameSuffixHasBeenSet = true;
+}
+
+bool HostNameSettings::HostNameSuffixHasBeenSet() const
+{
+    return m_hostNameSuffixHasBeenSet;
 }
 

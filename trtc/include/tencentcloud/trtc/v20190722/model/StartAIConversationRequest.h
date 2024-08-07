@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool AgentConfigHasBeenSet() const;
 
                     /**
-                     * 获取调用方传入的唯一Id，服务端用来去重。
-                     * @return SessionId 调用方传入的唯一Id，服务端用来去重。
+                     * 获取调用方传入的唯一Id，可用于客户侧防止重复发起任务以及可以通过该字段查询任务状态。
+                     * @return SessionId 调用方传入的唯一Id，可用于客户侧防止重复发起任务以及可以通过该字段查询任务状态。
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置调用方传入的唯一Id，服务端用来去重。
-                     * @param _sessionId 调用方传入的唯一Id，服务端用来去重。
+                     * 设置调用方传入的唯一Id，可用于客户侧防止重复发起任务以及可以通过该字段查询任务状态。
+                     * @param _sessionId 调用方传入的唯一Id，可用于客户侧防止重复发起任务以及可以通过该字段查询任务状态。
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -245,7 +245,7 @@ namespace TencentCloud
                     bool m_agentConfigHasBeenSet;
 
                     /**
-                     * 调用方传入的唯一Id，服务端用来去重。
+                     * 调用方传入的唯一Id，可用于客户侧防止重复发起任务以及可以通过该字段查询任务状态。
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;

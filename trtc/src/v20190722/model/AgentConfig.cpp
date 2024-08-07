@@ -24,7 +24,8 @@ AgentConfig::AgentConfig() :
     m_userIdHasBeenSet(false),
     m_userSigHasBeenSet(false),
     m_targetUserIdHasBeenSet(false),
-    m_maxIdleTimeHasBeenSet(false)
+    m_maxIdleTimeHasBeenSet(false),
+    m_welcomeMessageHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome AgentConfig::Deserialize(const rapidjson::Value &value)
         m_maxIdleTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("WelcomeMessage") && !value["WelcomeMessage"].IsNull())
+    {
+        if (!value["WelcomeMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.WelcomeMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_welcomeMessage = string(value["WelcomeMessage"].GetString());
+        m_welcomeMessageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void AgentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "MaxIdleTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxIdleTime, allocator);
+    }
+
+    if (m_welcomeMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WelcomeMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_welcomeMessage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void AgentConfig::SetMaxIdleTime(const uint64_t& _maxIdleTime)
 bool AgentConfig::MaxIdleTimeHasBeenSet() const
 {
     return m_maxIdleTimeHasBeenSet;
+}
+
+string AgentConfig::GetWelcomeMessage() const
+{
+    return m_welcomeMessage;
+}
+
+void AgentConfig::SetWelcomeMessage(const string& _welcomeMessage)
+{
+    m_welcomeMessage = _welcomeMessage;
+    m_welcomeMessageHasBeenSet = true;
+}
+
+bool AgentConfig::WelcomeMessageHasBeenSet() const
+{
+    return m_welcomeMessageHasBeenSet;
 }
 

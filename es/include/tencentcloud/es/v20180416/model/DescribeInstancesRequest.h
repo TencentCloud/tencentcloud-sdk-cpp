@@ -295,6 +295,27 @@ namespace TencentCloud
                      */
                     bool VpcIdsHasBeenSet() const;
 
+                    /**
+                     * 获取cdc集群id
+                     * @return CdcId cdc集群id
+                     * 
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置cdc集群id
+                     * @param _cdcId cdc集群id
+                     * 
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     * 
+                     */
+                    bool CdcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +389,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_vpcIds;
                     bool m_vpcIdsHasBeenSet;
+
+                    /**
+                     * cdc集群id
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
 
                 };
             }

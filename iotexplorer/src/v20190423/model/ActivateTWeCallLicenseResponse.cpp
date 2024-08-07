@@ -24,7 +24,9 @@ using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
 ActivateTWeCallLicenseResponse::ActivateTWeCallLicenseResponse() :
-    m_deviceListHasBeenSet(false)
+    m_deviceListHasBeenSet(false),
+    m_failureListHasBeenSet(false),
+    m_successListHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,46 @@ CoreInternalOutcome ActivateTWeCallLicenseResponse::Deserialize(const string &pa
         m_deviceListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FailureList") && !rsp["FailureList"].IsNull())
+    {
+        if (!rsp["FailureList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FailureList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["FailureList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeviceActiveResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_failureList.push_back(item);
+        }
+        m_failureListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SuccessList") && !rsp["SuccessList"].IsNull())
+    {
+        if (!rsp["SuccessList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SuccessList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SuccessList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeviceActiveResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_successList.push_back(item);
+        }
+        m_successListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -101,6 +143,36 @@ string ActivateTWeCallLicenseResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_deviceList.begin(); itr != m_deviceList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_failureListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailureList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_failureList.begin(); itr != m_failureList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_successListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_successList.begin(); itr != m_successList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -127,6 +199,26 @@ vector<DeviceActiveResult> ActivateTWeCallLicenseResponse::GetDeviceList() const
 bool ActivateTWeCallLicenseResponse::DeviceListHasBeenSet() const
 {
     return m_deviceListHasBeenSet;
+}
+
+vector<DeviceActiveResult> ActivateTWeCallLicenseResponse::GetFailureList() const
+{
+    return m_failureList;
+}
+
+bool ActivateTWeCallLicenseResponse::FailureListHasBeenSet() const
+{
+    return m_failureListHasBeenSet;
+}
+
+vector<DeviceActiveResult> ActivateTWeCallLicenseResponse::GetSuccessList() const
+{
+    return m_successList;
+}
+
+bool ActivateTWeCallLicenseResponse::SuccessListHasBeenSet() const
+{
+    return m_successListHasBeenSet;
 }
 
 

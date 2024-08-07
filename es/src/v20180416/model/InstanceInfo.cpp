@@ -108,7 +108,8 @@ InstanceInfo::InstanceInfo() :
     m_customKibanaPrivateUrlHasBeenSet(false),
     m_outboundPublicAclsHasBeenSet(false),
     m_netConnectSchemeHasBeenSet(false),
-    m_disasterRecoverGroupAffinityHasBeenSet(false)
+    m_disasterRecoverGroupAffinityHasBeenSet(false),
+    m_subProductCodeHasBeenSet(false)
 {
 }
 
@@ -1116,6 +1117,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_disasterRecoverGroupAffinityHasBeenSet = true;
     }
 
+    if (value.HasMember("SubProductCode") && !value["SubProductCode"].IsNull())
+    {
+        if (!value["SubProductCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.SubProductCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subProductCode = string(value["SubProductCode"].GetString());
+        m_subProductCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1880,6 +1891,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DisasterRecoverGroupAffinity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_disasterRecoverGroupAffinity, allocator);
+    }
+
+    if (m_subProductCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubProductCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subProductCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3291,5 +3310,21 @@ void InstanceInfo::SetDisasterRecoverGroupAffinity(const uint64_t& _disasterReco
 bool InstanceInfo::DisasterRecoverGroupAffinityHasBeenSet() const
 {
     return m_disasterRecoverGroupAffinityHasBeenSet;
+}
+
+string InstanceInfo::GetSubProductCode() const
+{
+    return m_subProductCode;
+}
+
+void InstanceInfo::SetSubProductCode(const string& _subProductCode)
+{
+    m_subProductCode = _subProductCode;
+    m_subProductCodeHasBeenSet = true;
+}
+
+bool InstanceInfo::SubProductCodeHasBeenSet() const
+{
+    return m_subProductCodeHasBeenSet;
 }
 

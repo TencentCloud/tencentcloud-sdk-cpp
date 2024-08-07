@@ -163,6 +163,31 @@ namespace TencentCloud
                      */
                     bool ClearDisasterRecoverGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否清空实例标签列表，非必填，默认为 false。
+填 true 代表清空实例标签列表，清空后基于此新创建的云主机将不会绑定列表中的标签。
+                     * @return ClearInstanceTags 是否清空实例标签列表，非必填，默认为 false。
+填 true 代表清空实例标签列表，清空后基于此新创建的云主机将不会绑定列表中的标签。
+                     * 
+                     */
+                    bool GetClearInstanceTags() const;
+
+                    /**
+                     * 设置是否清空实例标签列表，非必填，默认为 false。
+填 true 代表清空实例标签列表，清空后基于此新创建的云主机将不会绑定列表中的标签。
+                     * @param _clearInstanceTags 是否清空实例标签列表，非必填，默认为 false。
+填 true 代表清空实例标签列表，清空后基于此新创建的云主机将不会绑定列表中的标签。
+                     * 
+                     */
+                    void SetClearInstanceTags(const bool& _clearInstanceTags);
+
+                    /**
+                     * 判断参数 ClearInstanceTags 是否已赋值
+                     * @return ClearInstanceTags 是否已赋值
+                     * 
+                     */
+                    bool ClearInstanceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,6 +223,13 @@ namespace TencentCloud
                      */
                     bool m_clearDisasterRecoverGroupIds;
                     bool m_clearDisasterRecoverGroupIdsHasBeenSet;
+
+                    /**
+                     * 是否清空实例标签列表，非必填，默认为 false。
+填 true 代表清空实例标签列表，清空后基于此新创建的云主机将不会绑定列表中的标签。
+                     */
+                    bool m_clearInstanceTags;
+                    bool m_clearInstanceTagsHasBeenSet;
 
                 };
             }

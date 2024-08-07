@@ -441,6 +441,27 @@ namespace TencentCloud
                      */
                     bool DevelopmentParamsHasBeenSet() const;
 
+                    /**
+                     * 获取新建数据源的项目ID
+                     * @return ProjectId 新建数据源的项目ID
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置新建数据源的项目ID
+                     * @param _projectId 新建数据源的项目ID
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -556,6 +577,12 @@ namespace TencentCloud
                      */
                     std::string m_developmentParams;
                     bool m_developmentParamsHasBeenSet;
+
+                    /**
+                     * 新建数据源的项目ID
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                 };
             }

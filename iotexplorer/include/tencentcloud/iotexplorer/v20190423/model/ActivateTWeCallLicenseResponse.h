@@ -60,6 +60,38 @@ namespace TencentCloud
                      */
                     bool DeviceListHasBeenSet() const;
 
+                    /**
+                     * 获取设备激活失败返回数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FailureList 设备激活失败返回数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DeviceActiveResult> GetFailureList() const;
+
+                    /**
+                     * 判断参数 FailureList 是否已赋值
+                     * @return FailureList 是否已赋值
+                     * 
+                     */
+                    bool FailureListHasBeenSet() const;
+
+                    /**
+                     * 获取设备激活成功返回数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SuccessList 设备激活成功返回数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DeviceActiveResult> GetSuccessList() const;
+
+                    /**
+                     * 判断参数 SuccessList 是否已赋值
+                     * @return SuccessList 是否已赋值
+                     * 
+                     */
+                    bool SuccessListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -68,6 +100,20 @@ namespace TencentCloud
                      */
                     std::vector<DeviceActiveResult> m_deviceList;
                     bool m_deviceListHasBeenSet;
+
+                    /**
+                     * 设备激活失败返回数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DeviceActiveResult> m_failureList;
+                    bool m_failureListHasBeenSet;
+
+                    /**
+                     * 设备激活成功返回数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DeviceActiveResult> m_successList;
+                    bool m_successListHasBeenSet;
 
                 };
             }

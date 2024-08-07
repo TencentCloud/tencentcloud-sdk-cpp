@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool TargetUserIdHasBeenSet() const;
 
                     /**
-                     * 获取房间内推流用户全部退出后超过MaxIdleTime秒，后台自动关闭任务，默认值是60s。
+                     * 获取房间内超过MaxIdleTime 没有推流，后台自动关闭任务，默认值是60s。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxIdleTime 房间内推流用户全部退出后超过MaxIdleTime秒，后台自动关闭任务，默认值是60s。
+                     * @return MaxIdleTime 房间内超过MaxIdleTime 没有推流，后台自动关闭任务，默认值是60s。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxIdleTime() const;
 
                     /**
-                     * 设置房间内推流用户全部退出后超过MaxIdleTime秒，后台自动关闭任务，默认值是60s。
+                     * 设置房间内超过MaxIdleTime 没有推流，后台自动关闭任务，默认值是60s。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxIdleTime 房间内推流用户全部退出后超过MaxIdleTime秒，后台自动关闭任务，默认值是60s。
+                     * @param _maxIdleTime 房间内超过MaxIdleTime 没有推流，后台自动关闭任务，默认值是60s。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -145,6 +145,31 @@ namespace TencentCloud
                      * 
                      */
                     bool MaxIdleTimeHasBeenSet() const;
+
+                    /**
+                     * 获取机器人的欢迎语
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WelcomeMessage 机器人的欢迎语
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetWelcomeMessage() const;
+
+                    /**
+                     * 设置机器人的欢迎语
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _welcomeMessage 机器人的欢迎语
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWelcomeMessage(const std::string& _welcomeMessage);
+
+                    /**
+                     * 判断参数 WelcomeMessage 是否已赋值
+                     * @return WelcomeMessage 是否已赋值
+                     * 
+                     */
+                    bool WelcomeMessageHasBeenSet() const;
 
                 private:
 
@@ -170,11 +195,18 @@ namespace TencentCloud
                     bool m_targetUserIdHasBeenSet;
 
                     /**
-                     * 房间内推流用户全部退出后超过MaxIdleTime秒，后台自动关闭任务，默认值是60s。
+                     * 房间内超过MaxIdleTime 没有推流，后台自动关闭任务，默认值是60s。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxIdleTime;
                     bool m_maxIdleTimeHasBeenSet;
+
+                    /**
+                     * 机器人的欢迎语
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_welcomeMessage;
+                    bool m_welcomeMessageHasBeenSet;
 
                 };
             }

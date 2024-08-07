@@ -34,7 +34,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_ipListHasBeenSet(false),
     m_zoneListHasBeenSet(false),
     m_healthStatusHasBeenSet(false),
-    m_vpcIdsHasBeenSet(false)
+    m_vpcIdsHasBeenSet(false),
+    m_cdcIdHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,14 @@ string DescribeInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -376,6 +385,22 @@ void DescribeInstancesRequest::SetVpcIds(const vector<string>& _vpcIds)
 bool DescribeInstancesRequest::VpcIdsHasBeenSet() const
 {
     return m_vpcIdsHasBeenSet;
+}
+
+string DescribeInstancesRequest::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void DescribeInstancesRequest::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
 }
 
 

@@ -40,7 +40,8 @@ ServerBaseConfig::ServerBaseConfig() :
     m_logTypeHasBeenSet(false),
     m_logSetIdHasBeenSet(false),
     m_logTopicIdHasBeenSet(false),
-    m_logParseTypeHasBeenSet(false)
+    m_logParseTypeHasBeenSet(false),
+    m_tagHasBeenSet(false)
 {
 }
 
@@ -262,6 +263,16 @@ CoreInternalOutcome ServerBaseConfig::Deserialize(const rapidjson::Value &value)
         m_logParseTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Tag") && !value["Tag"].IsNull())
+    {
+        if (!value["Tag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.Tag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tag = string(value["Tag"].GetString());
+        m_tagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -439,6 +450,14 @@ void ServerBaseConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "LogParseType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logParseType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -762,5 +781,21 @@ void ServerBaseConfig::SetLogParseType(const string& _logParseType)
 bool ServerBaseConfig::LogParseTypeHasBeenSet() const
 {
     return m_logParseTypeHasBeenSet;
+}
+
+string ServerBaseConfig::GetTag() const
+{
+    return m_tag;
+}
+
+void ServerBaseConfig::SetTag(const string& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool ServerBaseConfig::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
 }
 

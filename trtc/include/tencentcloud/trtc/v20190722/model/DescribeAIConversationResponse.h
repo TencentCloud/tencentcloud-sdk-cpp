@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取唯一标识一次任务。
-                     * @return TaskId 唯一标识一次任务。
+                     * 获取任务的唯一标识，在启动任务时生成
+                     * @return TaskId 任务的唯一标识，在启动任务时生成
                      * 
                      */
                     std::string GetTaskId() const;
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 唯一标识一次任务。
+                     * 任务的唯一标识，在启动任务时生成
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

@@ -22,7 +22,8 @@ using namespace std;
 
 ServerPushText::ServerPushText() :
     m_textHasBeenSet(false),
-    m_interruptHasBeenSet(false)
+    m_interruptHasBeenSet(false),
+    m_stopAfterPlayHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ServerPushText::Deserialize(const rapidjson::Value &value)
         m_interruptHasBeenSet = true;
     }
 
+    if (value.HasMember("StopAfterPlay") && !value["StopAfterPlay"].IsNull())
+    {
+        if (!value["StopAfterPlay"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerPushText.StopAfterPlay` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_stopAfterPlay = value["StopAfterPlay"].GetBool();
+        m_stopAfterPlayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ServerPushText::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Interrupt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_interrupt, allocator);
+    }
+
+    if (m_stopAfterPlayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StopAfterPlay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_stopAfterPlay, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ServerPushText::SetInterrupt(const bool& _interrupt)
 bool ServerPushText::InterruptHasBeenSet() const
 {
     return m_interruptHasBeenSet;
+}
+
+bool ServerPushText::GetStopAfterPlay() const
+{
+    return m_stopAfterPlay;
+}
+
+void ServerPushText::SetStopAfterPlay(const bool& _stopAfterPlay)
+{
+    m_stopAfterPlay = _stopAfterPlay;
+    m_stopAfterPlayHasBeenSet = true;
+}
+
+bool ServerPushText::StopAfterPlayHasBeenSet() const
+{
+    return m_stopAfterPlayHasBeenSet;
 }
 

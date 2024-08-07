@@ -287,6 +287,81 @@ namespace TencentCloud
                      */
                     bool SeekSecondHasBeenSet() const;
 
+                    /**
+                     * 获取开启自动旁路推流，请确认控制台已经开启该功能。
+                     * @return AutoPush 开启自动旁路推流，请确认控制台已经开启该功能。
+                     * 
+                     */
+                    bool GetAutoPush() const;
+
+                    /**
+                     * 设置开启自动旁路推流，请确认控制台已经开启该功能。
+                     * @param _autoPush 开启自动旁路推流，请确认控制台已经开启该功能。
+                     * 
+                     */
+                    void SetAutoPush(const bool& _autoPush);
+
+                    /**
+                     * 判断参数 AutoPush 是否已赋值
+                     * @return AutoPush 是否已赋值
+                     * 
+                     */
+                    bool AutoPushHasBeenSet() const;
+
+                    /**
+                     * 获取循环播放次数, 取值范围[-1, 1000],  默认1次。
+ - 0 无效值
+ - -1 循环播放, 需要主动调用停止接口或设置MaxDuration
+
+                     * @return RepeatNum 循环播放次数, 取值范围[-1, 1000],  默认1次。
+ - 0 无效值
+ - -1 循环播放, 需要主动调用停止接口或设置MaxDuration
+
+                     * 
+                     */
+                    int64_t GetRepeatNum() const;
+
+                    /**
+                     * 设置循环播放次数, 取值范围[-1, 1000],  默认1次。
+ - 0 无效值
+ - -1 循环播放, 需要主动调用停止接口或设置MaxDuration
+
+                     * @param _repeatNum 循环播放次数, 取值范围[-1, 1000],  默认1次。
+ - 0 无效值
+ - -1 循环播放, 需要主动调用停止接口或设置MaxDuration
+
+                     * 
+                     */
+                    void SetRepeatNum(const int64_t& _repeatNum);
+
+                    /**
+                     * 判断参数 RepeatNum 是否已赋值
+                     * @return RepeatNum 是否已赋值
+                     * 
+                     */
+                    bool RepeatNumHasBeenSet() const;
+
+                    /**
+                     * 获取循环播放最大时长,仅支持RepeatNum设置-1时生效，取值范围[1, 10080]，单位分钟。
+                     * @return MaxDuration 循环播放最大时长,仅支持RepeatNum设置-1时生效，取值范围[1, 10080]，单位分钟。
+                     * 
+                     */
+                    int64_t GetMaxDuration() const;
+
+                    /**
+                     * 设置循环播放最大时长,仅支持RepeatNum设置-1时生效，取值范围[1, 10080]，单位分钟。
+                     * @param _maxDuration 循环播放最大时长,仅支持RepeatNum设置-1时生效，取值范围[1, 10080]，单位分钟。
+                     * 
+                     */
+                    void SetMaxDuration(const int64_t& _maxDuration);
+
+                    /**
+                     * 判断参数 MaxDuration 是否已赋值
+                     * @return MaxDuration 是否已赋值
+                     * 
+                     */
+                    bool MaxDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -357,6 +432,27 @@ namespace TencentCloud
                      */
                     int64_t m_seekSecond;
                     bool m_seekSecondHasBeenSet;
+
+                    /**
+                     * 开启自动旁路推流，请确认控制台已经开启该功能。
+                     */
+                    bool m_autoPush;
+                    bool m_autoPushHasBeenSet;
+
+                    /**
+                     * 循环播放次数, 取值范围[-1, 1000],  默认1次。
+ - 0 无效值
+ - -1 循环播放, 需要主动调用停止接口或设置MaxDuration
+
+                     */
+                    int64_t m_repeatNum;
+                    bool m_repeatNumHasBeenSet;
+
+                    /**
+                     * 循环播放最大时长,仅支持RepeatNum设置-1时生效，取值范围[1, 10080]，单位分钟。
+                     */
+                    int64_t m_maxDuration;
+                    bool m_maxDurationHasBeenSet;
 
                 };
             }

@@ -31,6 +31,7 @@
 #include <tencentcloud/as/v20180419/model/EnhancedService.h>
 #include <tencentcloud/as/v20180419/model/IPv6InternetAccessible.h>
 #include <tencentcloud/as/v20180419/model/LoginSettings.h>
+#include <tencentcloud/as/v20180419/model/InstanceTag.h>
 
 
 namespace TencentCloud
@@ -121,15 +122,13 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
 
                     /**
                      * 获取实例类型校验策略，在实际修改 InstanceTypes 时发挥作用，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
-
+<li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li> 
+<li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li> 
 实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。
 如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。
                      * @return InstanceTypesCheckPolicy 实例类型校验策略，在实际修改 InstanceTypes 时发挥作用，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
-
+<li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li> 
+<li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li> 
 实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。
 如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。
                      * 
@@ -138,15 +137,13 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
 
                     /**
                      * 设置实例类型校验策略，在实际修改 InstanceTypes 时发挥作用，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
-
+<li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li> 
+<li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li> 
 实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。
 如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。
                      * @param _instanceTypesCheckPolicy 实例类型校验策略，在实际修改 InstanceTypes 时发挥作用，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
-
+<li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li> 
+<li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li> 
 实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。
 如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。
                      * 
@@ -254,26 +251,26 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
 
                     /**
                      * 获取实例计费类型。具体取值范围如下：
-<br><li>POSTPAID_BY_HOUR：按小时后付费
-<br><li>SPOTPAID：竞价付费
-<br><li>PREPAID：预付费，即包年包月
+<li>POSTPAID_BY_HOUR：按小时后付费</li>
+<li>SPOTPAID：竞价付费</li>
+<li>PREPAID：预付费，即包年包月</li>
                      * @return InstanceChargeType 实例计费类型。具体取值范围如下：
-<br><li>POSTPAID_BY_HOUR：按小时后付费
-<br><li>SPOTPAID：竞价付费
-<br><li>PREPAID：预付费，即包年包月
+<li>POSTPAID_BY_HOUR：按小时后付费</li>
+<li>SPOTPAID：竞价付费</li>
+<li>PREPAID：预付费，即包年包月</li>
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
                      * 设置实例计费类型。具体取值范围如下：
-<br><li>POSTPAID_BY_HOUR：按小时后付费
-<br><li>SPOTPAID：竞价付费
-<br><li>PREPAID：预付费，即包年包月
+<li>POSTPAID_BY_HOUR：按小时后付费</li>
+<li>SPOTPAID：竞价付费</li>
+<li>PREPAID：预付费，即包年包月</li>
                      * @param _instanceChargeType 实例计费类型。具体取值范围如下：
-<br><li>POSTPAID_BY_HOUR：按小时后付费
-<br><li>SPOTPAID：竞价付费
-<br><li>PREPAID：预付费，即包年包月
+<li>POSTPAID_BY_HOUR：按小时后付费</li>
+<li>SPOTPAID：竞价付费</li>
+<li>PREPAID：预付费，即包年包月</li>
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -353,22 +350,22 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
 
                     /**
                      * 获取云盘类型选择策略，取值范围：
-<br><li>ORIGINAL：使用设置的云盘类型。
-<br><li>AUTOMATIC：自动选择当前可用的云盘类型。
+<li>ORIGINAL：使用设置的云盘类型。</li>
+<li>AUTOMATIC：自动选择当前可用的云盘类型。</li>
                      * @return DiskTypePolicy 云盘类型选择策略，取值范围：
-<br><li>ORIGINAL：使用设置的云盘类型。
-<br><li>AUTOMATIC：自动选择当前可用的云盘类型。
+<li>ORIGINAL：使用设置的云盘类型。</li>
+<li>AUTOMATIC：自动选择当前可用的云盘类型。</li>
                      * 
                      */
                     std::string GetDiskTypePolicy() const;
 
                     /**
                      * 设置云盘类型选择策略，取值范围：
-<br><li>ORIGINAL：使用设置的云盘类型。
-<br><li>AUTOMATIC：自动选择当前可用的云盘类型。
+<li>ORIGINAL：使用设置的云盘类型。</li>
+<li>AUTOMATIC：自动选择当前可用的云盘类型。</li>
                      * @param _diskTypePolicy 云盘类型选择策略，取值范围：
-<br><li>ORIGINAL：使用设置的云盘类型。
-<br><li>AUTOMATIC：自动选择当前可用的云盘类型。
+<li>ORIGINAL：使用设置的云盘类型。</li>
+<li>AUTOMATIC：自动选择当前可用的云盘类型。</li>
                      * 
                      */
                     void SetDiskTypePolicy(const std::string& _diskTypePolicy);
@@ -618,6 +615,31 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      */
                     bool LoginSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取实例标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。
+该参数会覆盖原有的实例标签列表，如需新增标签，需将新标签和原有标签一并传入。
+                     * @return InstanceTags 实例标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。
+该参数会覆盖原有的实例标签列表，如需新增标签，需将新标签和原有标签一并传入。
+                     * 
+                     */
+                    std::vector<InstanceTag> GetInstanceTags() const;
+
+                    /**
+                     * 设置实例标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。
+该参数会覆盖原有的实例标签列表，如需新增标签，需将新标签和原有标签一并传入。
+                     * @param _instanceTags 实例标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。
+该参数会覆盖原有的实例标签列表，如需新增标签，需将新标签和原有标签一并传入。
+                     * 
+                     */
+                    void SetInstanceTags(const std::vector<InstanceTag>& _instanceTags);
+
+                    /**
+                     * 判断参数 InstanceTags 是否已赋值
+                     * @return InstanceTags 是否已赋值
+                     * 
+                     */
+                    bool InstanceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -641,9 +663,8 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
 
                     /**
                      * 实例类型校验策略，在实际修改 InstanceTypes 时发挥作用，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
-
+<li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。</li> 
+<li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。</li> 
 实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。
 如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。
                      */
@@ -678,9 +699,9 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
 
                     /**
                      * 实例计费类型。具体取值范围如下：
-<br><li>POSTPAID_BY_HOUR：按小时后付费
-<br><li>SPOTPAID：竞价付费
-<br><li>PREPAID：预付费，即包年包月
+<li>POSTPAID_BY_HOUR：按小时后付费</li>
+<li>SPOTPAID：竞价付费</li>
+<li>PREPAID：预付费，即包年包月</li>
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
@@ -705,8 +726,8 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
 
                     /**
                      * 云盘类型选择策略，取值范围：
-<br><li>ORIGINAL：使用设置的云盘类型。
-<br><li>AUTOMATIC：自动选择当前可用的云盘类型。
+<li>ORIGINAL：使用设置的云盘类型。</li>
+<li>AUTOMATIC：自动选择当前可用的云盘类型。</li>
                      */
                     std::string m_diskTypePolicy;
                     bool m_diskTypePolicyHasBeenSet;
@@ -777,6 +798,13 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      */
                     LoginSettings m_loginSettings;
                     bool m_loginSettingsHasBeenSet;
+
+                    /**
+                     * 实例标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。
+该参数会覆盖原有的实例标签列表，如需新增标签，需将新标签和原有标签一并传入。
+                     */
+                    std::vector<InstanceTag> m_instanceTags;
+                    bool m_instanceTagsHasBeenSet;
 
                 };
             }

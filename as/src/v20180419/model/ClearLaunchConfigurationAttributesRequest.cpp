@@ -27,7 +27,8 @@ ClearLaunchConfigurationAttributesRequest::ClearLaunchConfigurationAttributesReq
     m_clearDataDisksHasBeenSet(false),
     m_clearHostNameSettingsHasBeenSet(false),
     m_clearInstanceNameSettingsHasBeenSet(false),
-    m_clearDisasterRecoverGroupIdsHasBeenSet(false)
+    m_clearDisasterRecoverGroupIdsHasBeenSet(false),
+    m_clearInstanceTagsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ClearLaunchConfigurationAttributesRequest::ToJsonString() const
         string key = "ClearDisasterRecoverGroupIds";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_clearDisasterRecoverGroupIds, allocator);
+    }
+
+    if (m_clearInstanceTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClearInstanceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_clearInstanceTags, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ClearLaunchConfigurationAttributesRequest::SetClearDisasterRecoverGroupIds(
 bool ClearLaunchConfigurationAttributesRequest::ClearDisasterRecoverGroupIdsHasBeenSet() const
 {
     return m_clearDisasterRecoverGroupIdsHasBeenSet;
+}
+
+bool ClearLaunchConfigurationAttributesRequest::GetClearInstanceTags() const
+{
+    return m_clearInstanceTags;
+}
+
+void ClearLaunchConfigurationAttributesRequest::SetClearInstanceTags(const bool& _clearInstanceTags)
+{
+    m_clearInstanceTags = _clearInstanceTags;
+    m_clearInstanceTagsHasBeenSet = true;
+}
+
+bool ClearLaunchConfigurationAttributesRequest::ClearInstanceTagsHasBeenSet() const
+{
+    return m_clearInstanceTagsHasBeenSet;
 }
 
 

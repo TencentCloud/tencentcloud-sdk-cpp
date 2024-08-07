@@ -58,7 +58,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_diskEnhanceHasBeenSet(false),
     m_enableDiagnoseHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
-    m_disasterRecoverGroupAffinityHasBeenSet(false)
+    m_disasterRecoverGroupAffinityHasBeenSet(false),
+    m_subProductCodeHasBeenSet(false)
 {
 }
 
@@ -383,6 +384,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "DisasterRecoverGroupAffinity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disasterRecoverGroupAffinity, allocator);
+    }
+
+    if (m_subProductCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubProductCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subProductCode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -967,6 +976,22 @@ void CreateInstanceRequest::SetDisasterRecoverGroupAffinity(const uint64_t& _dis
 bool CreateInstanceRequest::DisasterRecoverGroupAffinityHasBeenSet() const
 {
     return m_disasterRecoverGroupAffinityHasBeenSet;
+}
+
+string CreateInstanceRequest::GetSubProductCode() const
+{
+    return m_subProductCode;
+}
+
+void CreateInstanceRequest::SetSubProductCode(const string& _subProductCode)
+{
+    m_subProductCode = _subProductCode;
+    m_subProductCodeHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::SubProductCodeHasBeenSet() const
+{
+    return m_subProductCodeHasBeenSet;
 }
 
 

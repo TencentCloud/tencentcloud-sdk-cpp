@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool InterruptHasBeenSet() const;
 
+                    /**
+                     * 获取播报完文本后，是否自动关闭对话任务
+                     * @return StopAfterPlay 播报完文本后，是否自动关闭对话任务
+                     * 
+                     */
+                    bool GetStopAfterPlay() const;
+
+                    /**
+                     * 设置播报完文本后，是否自动关闭对话任务
+                     * @param _stopAfterPlay 播报完文本后，是否自动关闭对话任务
+                     * 
+                     */
+                    void SetStopAfterPlay(const bool& _stopAfterPlay);
+
+                    /**
+                     * 判断参数 StopAfterPlay 是否已赋值
+                     * @return StopAfterPlay 是否已赋值
+                     * 
+                     */
+                    bool StopAfterPlayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     bool m_interrupt;
                     bool m_interruptHasBeenSet;
+
+                    /**
+                     * 播报完文本后，是否自动关闭对话任务
+                     */
+                    bool m_stopAfterPlay;
+                    bool m_stopAfterPlayHasBeenSet;
 
                 };
             }

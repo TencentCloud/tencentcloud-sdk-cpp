@@ -41,7 +41,8 @@ CreateDataSourceRequest::CreateDataSourceRequest() :
     m_cOSBucketHasBeenSet(false),
     m_cOSRegionHasBeenSet(false),
     m_connectResultHasBeenSet(false),
-    m_developmentParamsHasBeenSet(false)
+    m_developmentParamsHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,14 @@ string CreateDataSourceRequest::ToJsonString() const
         string key = "DevelopmentParams";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_developmentParams.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -514,6 +523,22 @@ void CreateDataSourceRequest::SetDevelopmentParams(const string& _developmentPar
 bool CreateDataSourceRequest::DevelopmentParamsHasBeenSet() const
 {
     return m_developmentParamsHasBeenSet;
+}
+
+string CreateDataSourceRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void CreateDataSourceRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool CreateDataSourceRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

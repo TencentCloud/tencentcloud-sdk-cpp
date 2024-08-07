@@ -33,7 +33,10 @@ StartStreamIngestRequest::StartStreamIngestRequest() :
     m_videoEncodeParamsHasBeenSet(false),
     m_audioEncodeParamsHasBeenSet(false),
     m_sourceUrlHasBeenSet(false),
-    m_seekSecondHasBeenSet(false)
+    m_seekSecondHasBeenSet(false),
+    m_autoPushHasBeenSet(false),
+    m_repeatNumHasBeenSet(false),
+    m_maxDurationHasBeenSet(false)
 {
 }
 
@@ -137,6 +140,30 @@ string StartStreamIngestRequest::ToJsonString() const
         string key = "SeekSecond";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_seekSecond, allocator);
+    }
+
+    if (m_autoPushHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoPush";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoPush, allocator);
+    }
+
+    if (m_repeatNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepeatNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_repeatNum, allocator);
+    }
+
+    if (m_maxDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxDuration, allocator);
     }
 
 
@@ -321,6 +348,54 @@ void StartStreamIngestRequest::SetSeekSecond(const int64_t& _seekSecond)
 bool StartStreamIngestRequest::SeekSecondHasBeenSet() const
 {
     return m_seekSecondHasBeenSet;
+}
+
+bool StartStreamIngestRequest::GetAutoPush() const
+{
+    return m_autoPush;
+}
+
+void StartStreamIngestRequest::SetAutoPush(const bool& _autoPush)
+{
+    m_autoPush = _autoPush;
+    m_autoPushHasBeenSet = true;
+}
+
+bool StartStreamIngestRequest::AutoPushHasBeenSet() const
+{
+    return m_autoPushHasBeenSet;
+}
+
+int64_t StartStreamIngestRequest::GetRepeatNum() const
+{
+    return m_repeatNum;
+}
+
+void StartStreamIngestRequest::SetRepeatNum(const int64_t& _repeatNum)
+{
+    m_repeatNum = _repeatNum;
+    m_repeatNumHasBeenSet = true;
+}
+
+bool StartStreamIngestRequest::RepeatNumHasBeenSet() const
+{
+    return m_repeatNumHasBeenSet;
+}
+
+int64_t StartStreamIngestRequest::GetMaxDuration() const
+{
+    return m_maxDuration;
+}
+
+void StartStreamIngestRequest::SetMaxDuration(const int64_t& _maxDuration)
+{
+    m_maxDuration = _maxDuration;
+    m_maxDurationHasBeenSet = true;
+}
+
+bool StartStreamIngestRequest::MaxDurationHasBeenSet() const
+{
+    return m_maxDurationHasBeenSet;
 }
 
 
