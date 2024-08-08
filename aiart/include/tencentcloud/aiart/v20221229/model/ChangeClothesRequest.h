@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/aiart/v20221229/model/LogoParam.h>
 
 
 namespace TencentCloud
@@ -195,6 +196,31 @@ Dress：连衣裙
                     bool LogoAddHasBeenSet() const;
 
                     /**
+                     * 获取标识内容设置。
+默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * @return LogoParam 标识内容设置。
+默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 
+                     */
+                    LogoParam GetLogoParam() const;
+
+                    /**
+                     * 设置标识内容设置。
+默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * @param _logoParam 标识内容设置。
+默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 
+                     */
+                    void SetLogoParam(const LogoParam& _logoParam);
+
+                    /**
+                     * 判断参数 LogoParam 是否已赋值
+                     * @return LogoParam 是否已赋值
+                     * 
+                     */
+                    bool LogoParamHasBeenSet() const;
+
+                    /**
                      * 获取返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
 生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。
                      * @return RspImgType 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
@@ -261,6 +287,13 @@ Dress：连衣裙
                      */
                     int64_t m_logoAdd;
                     bool m_logoAddHasBeenSet;
+
+                    /**
+                     * 标识内容设置。
+默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     */
+                    LogoParam m_logoParam;
+                    bool m_logoParamHasBeenSet;
 
                     /**
                      * 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。

@@ -26,7 +26,8 @@ DescribeComplianceAssetPolicyItemListRequest::DescribeComplianceAssetPolicyItemL
     m_customerAssetIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_assetTypeHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string DescribeComplianceAssetPolicyItemListRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_assetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_assetType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +155,22 @@ void DescribeComplianceAssetPolicyItemListRequest::SetFilters(const vector<Compl
 bool DescribeComplianceAssetPolicyItemListRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeComplianceAssetPolicyItemListRequest::GetAssetType() const
+{
+    return m_assetType;
+}
+
+void DescribeComplianceAssetPolicyItemListRequest::SetAssetType(const string& _assetType)
+{
+    m_assetType = _assetType;
+    m_assetTypeHasBeenSet = true;
+}
+
+bool DescribeComplianceAssetPolicyItemListRequest::AssetTypeHasBeenSet() const
+{
+    return m_assetTypeHasBeenSet;
 }
 
 

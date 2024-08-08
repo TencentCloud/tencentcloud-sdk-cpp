@@ -43,6 +43,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTMessageListResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTProductSKUListRequest.h
   include/tencentcloud/trocket/v20230308/model/ImportSourceClusterConsumerGroupsRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeConsumerLagRequest.h
   include/tencentcloud/trocket/v20230308/model/Tag.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTMessageResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTInstanceListResponse.h
@@ -50,7 +51,6 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeInstanceListResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/CreateConsumerGroupRequest.h
-  include/tencentcloud/trocket/v20230308/model/ModifyMQTTTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/MQTTMessageItem.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTClientRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTInsVPCEndpointsResponse.h
@@ -102,10 +102,11 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/CreateInstanceRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerGroupResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyTopicResponse.h
+  include/tencentcloud/trocket/v20230308/model/DescribeConsumerLagResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTInsPublicEndpointsRequest.h
   include/tencentcloud/trocket/v20230308/model/DeleteRoleResponse.h
   include/tencentcloud/trocket/v20230308/model/Filter.h
-  include/tencentcloud/trocket/v20230308/model/DescribeMQTTInstanceCertResponse.h
+  include/tencentcloud/trocket/v20230308/model/ModifyMQTTTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTTopicListRequest.h
   include/tencentcloud/trocket/v20230308/model/MQTTClientSubscription.h
   include/tencentcloud/trocket/v20230308/model/ModifyTopicRequest.h
@@ -131,6 +132,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/Endpoint.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTTopicRequest.h
   include/tencentcloud/trocket/v20230308/model/StatisticsReport.h
+  include/tencentcloud/trocket/v20230308/model/IpRule.h
   include/tencentcloud/trocket/v20230308/model/RoleItem.h
   include/tencentcloud/trocket/v20230308/model/MQTTTopicItem.h
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerGroupListResponse.h
@@ -138,11 +140,11 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/CreateMQTTInsPublicEndpointRequest.h
   include/tencentcloud/trocket/v20230308/model/CreateMQTTTopicRequest.h
   include/tencentcloud/trocket/v20230308/model/DeleteTopicResponse.h
-  include/tencentcloud/trocket/v20230308/model/DescribeMQTTMessageListRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeMQTTInstanceCertResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeInstanceRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeProductSKUsResponse.h
-  include/tencentcloud/trocket/v20230308/model/IpRule.h
+  include/tencentcloud/trocket/v20230308/model/DescribeMQTTMessageListRequest.h
   )
 
 set(trocket_src
@@ -171,6 +173,7 @@ set(trocket_src
   src/v20230308/model/DescribeMQTTMessageListResponse.cpp
   src/v20230308/model/DescribeMQTTProductSKUListRequest.cpp
   src/v20230308/model/ImportSourceClusterConsumerGroupsRequest.cpp
+  src/v20230308/model/DescribeConsumerLagRequest.cpp
   src/v20230308/model/Tag.cpp
   src/v20230308/model/DescribeMQTTMessageResponse.cpp
   src/v20230308/model/DescribeMQTTInstanceListResponse.cpp
@@ -178,7 +181,6 @@ set(trocket_src
   src/v20230308/model/DescribeInstanceListResponse.cpp
   src/v20230308/model/ModifyInstanceResponse.cpp
   src/v20230308/model/CreateConsumerGroupRequest.cpp
-  src/v20230308/model/ModifyMQTTTopicResponse.cpp
   src/v20230308/model/MQTTMessageItem.cpp
   src/v20230308/model/DescribeMQTTClientRequest.cpp
   src/v20230308/model/DescribeMQTTInsVPCEndpointsResponse.cpp
@@ -230,10 +232,11 @@ set(trocket_src
   src/v20230308/model/CreateInstanceRequest.cpp
   src/v20230308/model/DescribeConsumerGroupResponse.cpp
   src/v20230308/model/ModifyTopicResponse.cpp
+  src/v20230308/model/DescribeConsumerLagResponse.cpp
   src/v20230308/model/DescribeMQTTInsPublicEndpointsRequest.cpp
   src/v20230308/model/DeleteRoleResponse.cpp
   src/v20230308/model/Filter.cpp
-  src/v20230308/model/DescribeMQTTInstanceCertResponse.cpp
+  src/v20230308/model/ModifyMQTTTopicResponse.cpp
   src/v20230308/model/DescribeMQTTTopicListRequest.cpp
   src/v20230308/model/MQTTClientSubscription.cpp
   src/v20230308/model/ModifyTopicRequest.cpp
@@ -259,6 +262,7 @@ set(trocket_src
   src/v20230308/model/Endpoint.cpp
   src/v20230308/model/ModifyMQTTTopicRequest.cpp
   src/v20230308/model/StatisticsReport.cpp
+  src/v20230308/model/IpRule.cpp
   src/v20230308/model/RoleItem.cpp
   src/v20230308/model/MQTTTopicItem.cpp
   src/v20230308/model/DescribeConsumerGroupListResponse.cpp
@@ -266,11 +270,11 @@ set(trocket_src
   src/v20230308/model/CreateMQTTInsPublicEndpointRequest.cpp
   src/v20230308/model/CreateMQTTTopicRequest.cpp
   src/v20230308/model/DeleteTopicResponse.cpp
-  src/v20230308/model/DescribeMQTTMessageListRequest.cpp
+  src/v20230308/model/DescribeMQTTInstanceCertResponse.cpp
   src/v20230308/model/DescribeMQTTTopicResponse.cpp
   src/v20230308/model/DescribeInstanceRequest.cpp
   src/v20230308/model/DescribeProductSKUsResponse.cpp
-  src/v20230308/model/IpRule.cpp
+  src/v20230308/model/DescribeMQTTMessageListRequest.cpp
   )
 
 set(trocket_include

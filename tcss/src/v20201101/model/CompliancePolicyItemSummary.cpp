@@ -38,7 +38,8 @@ CompliancePolicyItemSummary::CompliancePolicyItemSummary() :
     m_benchmarkStandardIdHasBeenSet(false),
     m_applicableVersionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_auditProcedureHasBeenSet(false)
+    m_auditProcedureHasBeenSet(false),
+    m_isEnableHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome CompliancePolicyItemSummary::Deserialize(const rapidjson::Va
         m_auditProcedureHasBeenSet = true;
     }
 
+    if (value.HasMember("IsEnable") && !value["IsEnable"].IsNull())
+    {
+        if (!value["IsEnable"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompliancePolicyItemSummary.IsEnable` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isEnable = value["IsEnable"].GetUint64();
+        m_isEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void CompliancePolicyItemSummary::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "AuditProcedure";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_auditProcedure.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isEnable, allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void CompliancePolicyItemSummary::SetAuditProcedure(const string& _auditProcedur
 bool CompliancePolicyItemSummary::AuditProcedureHasBeenSet() const
 {
     return m_auditProcedureHasBeenSet;
+}
+
+uint64_t CompliancePolicyItemSummary::GetIsEnable() const
+{
+    return m_isEnable;
+}
+
+void CompliancePolicyItemSummary::SetIsEnable(const uint64_t& _isEnable)
+{
+    m_isEnable = _isEnable;
+    m_isEnableHasBeenSet = true;
+}
+
+bool CompliancePolicyItemSummary::IsEnableHasBeenSet() const
+{
+    return m_isEnableHasBeenSet;
 }
 

@@ -496,6 +496,39 @@ RESULT_FAILED: 未通过
                      */
                     bool AuditProcedureHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启
+<li>0 关闭</li>
+<li>1 开启</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsEnable 是否开启
+<li>0 关闭</li>
+<li>1 开启</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetIsEnable() const;
+
+                    /**
+                     * 设置是否开启
+<li>0 关闭</li>
+<li>1 开启</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isEnable 是否开启
+<li>0 关闭</li>
+<li>1 开启</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsEnable(const uint64_t& _isEnable);
+
+                    /**
+                     * 判断参数 IsEnable 是否已赋值
+                     * @return IsEnable 是否已赋值
+                     * 
+                     */
+                    bool IsEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -623,6 +656,15 @@ RESULT_FAILED: 未通过
                      */
                     std::string m_auditProcedure;
                     bool m_auditProcedureHasBeenSet;
+
+                    /**
+                     * 是否开启
+<li>0 关闭</li>
+<li>1 开启</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isEnable;
+                    bool m_isEnableHasBeenSet;
 
                 };
             }

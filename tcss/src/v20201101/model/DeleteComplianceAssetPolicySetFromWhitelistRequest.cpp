@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteComplianceAssetPolicySetFromWhitelistRequest::DeleteComplianceAssetPolicySetFromWhitelistRequest() :
     m_assetItemIdHasBeenSet(false),
-    m_customerPolicyItemIdSetHasBeenSet(false)
+    m_customerPolicyItemIdSetHasBeenSet(false),
+    m_assetTypeHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string DeleteComplianceAssetPolicySetFromWhitelistRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_assetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_assetType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +103,22 @@ void DeleteComplianceAssetPolicySetFromWhitelistRequest::SetCustomerPolicyItemId
 bool DeleteComplianceAssetPolicySetFromWhitelistRequest::CustomerPolicyItemIdSetHasBeenSet() const
 {
     return m_customerPolicyItemIdSetHasBeenSet;
+}
+
+string DeleteComplianceAssetPolicySetFromWhitelistRequest::GetAssetType() const
+{
+    return m_assetType;
+}
+
+void DeleteComplianceAssetPolicySetFromWhitelistRequest::SetAssetType(const string& _assetType)
+{
+    m_assetType = _assetType;
+    m_assetTypeHasBeenSet = true;
+}
+
+bool DeleteComplianceAssetPolicySetFromWhitelistRequest::AssetTypeHasBeenSet() const
+{
+    return m_assetTypeHasBeenSet;
 }
 
 

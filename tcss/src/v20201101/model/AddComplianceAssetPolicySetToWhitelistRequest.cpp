@@ -23,7 +23,8 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 AddComplianceAssetPolicySetToWhitelistRequest::AddComplianceAssetPolicySetToWhitelistRequest() :
-    m_assetPolicySetListHasBeenSet(false)
+    m_assetPolicySetListHasBeenSet(false),
+    m_assetTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string AddComplianceAssetPolicySetToWhitelistRequest::ToJsonString() const
         }
     }
 
+    if (m_assetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_assetType.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -71,6 +80,22 @@ void AddComplianceAssetPolicySetToWhitelistRequest::SetAssetPolicySetList(const 
 bool AddComplianceAssetPolicySetToWhitelistRequest::AssetPolicySetListHasBeenSet() const
 {
     return m_assetPolicySetListHasBeenSet;
+}
+
+string AddComplianceAssetPolicySetToWhitelistRequest::GetAssetType() const
+{
+    return m_assetType;
+}
+
+void AddComplianceAssetPolicySetToWhitelistRequest::SetAssetType(const string& _assetType)
+{
+    m_assetType = _assetType;
+    m_assetTypeHasBeenSet = true;
+}
+
+bool AddComplianceAssetPolicySetToWhitelistRequest::AssetTypeHasBeenSet() const
+{
+    return m_assetTypeHasBeenSet;
 }
 
 

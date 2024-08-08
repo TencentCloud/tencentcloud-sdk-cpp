@@ -23,7 +23,8 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 ScanComplianceScanFailedAssetsRequest::ScanComplianceScanFailedAssetsRequest() :
-    m_customerAssetIdSetHasBeenSet(false)
+    m_customerAssetIdSetHasBeenSet(false),
+    m_assetTypeHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string ScanComplianceScanFailedAssetsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_assetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_assetType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -69,6 +78,22 @@ void ScanComplianceScanFailedAssetsRequest::SetCustomerAssetIdSet(const vector<u
 bool ScanComplianceScanFailedAssetsRequest::CustomerAssetIdSetHasBeenSet() const
 {
     return m_customerAssetIdSetHasBeenSet;
+}
+
+string ScanComplianceScanFailedAssetsRequest::GetAssetType() const
+{
+    return m_assetType;
+}
+
+void ScanComplianceScanFailedAssetsRequest::SetAssetType(const string& _assetType)
+{
+    m_assetType = _assetType;
+    m_assetTypeHasBeenSet = true;
+}
+
+bool ScanComplianceScanFailedAssetsRequest::AssetTypeHasBeenSet() const
+{
+    return m_assetTypeHasBeenSet;
 }
 
 

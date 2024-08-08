@@ -470,6 +470,49 @@ OrganizationClient::CheckAccountDeleteOutcomeCallable OrganizationClient::CheckA
     return task->get_future();
 }
 
+OrganizationClient::CreateOrgServiceAssignOutcome OrganizationClient::CreateOrgServiceAssign(const CreateOrgServiceAssignRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrgServiceAssign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrgServiceAssignResponse rsp = CreateOrgServiceAssignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrgServiceAssignOutcome(rsp);
+        else
+            return CreateOrgServiceAssignOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrgServiceAssignOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::CreateOrgServiceAssignAsync(const CreateOrgServiceAssignRequest& request, const CreateOrgServiceAssignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOrgServiceAssign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::CreateOrgServiceAssignOutcomeCallable OrganizationClient::CreateOrgServiceAssignCallable(const CreateOrgServiceAssignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOrgServiceAssignOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOrgServiceAssign(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::CreateOrganizationOutcome OrganizationClient::CreateOrganization(const CreateOrganizationRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOrganization");
@@ -807,6 +850,49 @@ OrganizationClient::DeleteAccountOutcomeCallable OrganizationClient::DeleteAccou
         [this, request]()
         {
             return this->DeleteAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::DeleteOrgServiceAssignOutcome OrganizationClient::DeleteOrgServiceAssign(const DeleteOrgServiceAssignRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteOrgServiceAssign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteOrgServiceAssignResponse rsp = DeleteOrgServiceAssignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteOrgServiceAssignOutcome(rsp);
+        else
+            return DeleteOrgServiceAssignOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteOrgServiceAssignOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DeleteOrgServiceAssignAsync(const DeleteOrgServiceAssignRequest& request, const DeleteOrgServiceAssignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteOrgServiceAssign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DeleteOrgServiceAssignOutcomeCallable OrganizationClient::DeleteOrgServiceAssignCallable(const DeleteOrgServiceAssignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteOrgServiceAssignOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteOrgServiceAssign(request);
         }
     );
 
@@ -2183,6 +2269,49 @@ OrganizationClient::ListNonCompliantResourceOutcomeCallable OrganizationClient::
         [this, request]()
         {
             return this->ListNonCompliantResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::ListOrgServiceAssignMemberOutcome OrganizationClient::ListOrgServiceAssignMember(const ListOrgServiceAssignMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListOrgServiceAssignMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListOrgServiceAssignMemberResponse rsp = ListOrgServiceAssignMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListOrgServiceAssignMemberOutcome(rsp);
+        else
+            return ListOrgServiceAssignMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return ListOrgServiceAssignMemberOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::ListOrgServiceAssignMemberAsync(const ListOrgServiceAssignMemberRequest& request, const ListOrgServiceAssignMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListOrgServiceAssignMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::ListOrgServiceAssignMemberOutcomeCallable OrganizationClient::ListOrgServiceAssignMemberCallable(const ListOrgServiceAssignMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListOrgServiceAssignMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->ListOrgServiceAssignMember(request);
         }
     );
 

@@ -43,6 +43,8 @@
 #include <tencentcloud/cls/v20201016/model/CreateConfigResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateConfigExtraRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateConfigExtraResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateConsoleSharingRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateConsoleSharingResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateCosRechargeRequest.h>
@@ -81,6 +83,8 @@
 #include <tencentcloud/cls/v20201016/model/DeleteConfigExtraResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigFromMachineGroupRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigFromMachineGroupResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteConsoleSharingRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteConsoleSharingResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteDashboardSubscribeRequest.h>
@@ -119,6 +123,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeConfigMachineGroupsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigsResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeConsoleSharingListRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeConsoleSharingListResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeCosRechargesRequest.h>
@@ -173,6 +179,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyConfigResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConfigExtraRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConfigExtraResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyConsoleSharingRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyConsoleSharingResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyCosRechargeRequest.h>
@@ -261,6 +269,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateConfigExtraResponse> CreateConfigExtraOutcome;
                 typedef std::future<CreateConfigExtraOutcome> CreateConfigExtraOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateConfigExtraRequest&, CreateConfigExtraOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigExtraAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateConsoleSharingResponse> CreateConsoleSharingOutcome;
+                typedef std::future<CreateConsoleSharingOutcome> CreateConsoleSharingOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateConsoleSharingRequest&, CreateConsoleSharingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsoleSharingAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConsumerResponse> CreateConsumerOutcome;
                 typedef std::future<CreateConsumerOutcome> CreateConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateConsumerRequest&, CreateConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsumerAsyncHandler;
@@ -318,6 +329,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteConfigFromMachineGroupResponse> DeleteConfigFromMachineGroupOutcome;
                 typedef std::future<DeleteConfigFromMachineGroupOutcome> DeleteConfigFromMachineGroupOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteConfigFromMachineGroupRequest&, DeleteConfigFromMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigFromMachineGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteConsoleSharingResponse> DeleteConsoleSharingOutcome;
+                typedef std::future<DeleteConsoleSharingOutcome> DeleteConsoleSharingOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteConsoleSharingRequest&, DeleteConsoleSharingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConsoleSharingAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteConsumerResponse> DeleteConsumerOutcome;
                 typedef std::future<DeleteConsumerOutcome> DeleteConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteConsumerRequest&, DeleteConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConsumerAsyncHandler;
@@ -375,6 +389,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeConfigsResponse> DescribeConfigsOutcome;
                 typedef std::future<DescribeConfigsOutcome> DescribeConfigsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeConfigsRequest&, DescribeConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConsoleSharingListResponse> DescribeConsoleSharingListOutcome;
+                typedef std::future<DescribeConsoleSharingListOutcome> DescribeConsoleSharingListOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeConsoleSharingListRequest&, DescribeConsoleSharingListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsoleSharingListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConsumerResponse> DescribeConsumerOutcome;
                 typedef std::future<DescribeConsumerOutcome> DescribeConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeConsumerRequest&, DescribeConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerAsyncHandler;
@@ -456,6 +473,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyConfigExtraResponse> ModifyConfigExtraOutcome;
                 typedef std::future<ModifyConfigExtraOutcome> ModifyConfigExtraOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyConfigExtraRequest&, ModifyConfigExtraOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConfigExtraAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyConsoleSharingResponse> ModifyConsoleSharingOutcome;
+                typedef std::future<ModifyConsoleSharingOutcome> ModifyConsoleSharingOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyConsoleSharingRequest&, ModifyConsoleSharingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConsoleSharingAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConsumerResponse> ModifyConsumerOutcome;
                 typedef std::future<ModifyConsumerOutcome> ModifyConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyConsumerRequest&, ModifyConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConsumerAsyncHandler;
@@ -614,6 +634,15 @@ namespace TencentCloud
                 CreateConfigExtraOutcome CreateConfigExtra(const Model::CreateConfigExtraRequest &request);
                 void CreateConfigExtraAsync(const Model::CreateConfigExtraRequest& request, const CreateConfigExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateConfigExtraOutcomeCallable CreateConfigExtraCallable(const Model::CreateConfigExtraRequest& request);
+
+                /**
+                 *创建控制台分享
+                 * @param req CreateConsoleSharingRequest
+                 * @return CreateConsoleSharingOutcome
+                 */
+                CreateConsoleSharingOutcome CreateConsoleSharing(const Model::CreateConsoleSharingRequest &request);
+                void CreateConsoleSharingAsync(const Model::CreateConsoleSharingRequest& request, const CreateConsoleSharingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConsoleSharingOutcomeCallable CreateConsoleSharingCallable(const Model::CreateConsoleSharingRequest& request);
 
                 /**
                  *本接口用于创建投递CKafka任务
@@ -787,6 +816,15 @@ namespace TencentCloud
                 DeleteConfigFromMachineGroupOutcomeCallable DeleteConfigFromMachineGroupCallable(const Model::DeleteConfigFromMachineGroupRequest& request);
 
                 /**
+                 *删除控制台分享
+                 * @param req DeleteConsoleSharingRequest
+                 * @return DeleteConsoleSharingOutcome
+                 */
+                DeleteConsoleSharingOutcome DeleteConsoleSharing(const Model::DeleteConsoleSharingRequest &request);
+                void DeleteConsoleSharingAsync(const Model::DeleteConsoleSharingRequest& request, const DeleteConsoleSharingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteConsoleSharingOutcomeCallable DeleteConsoleSharingCallable(const Model::DeleteConsoleSharingRequest& request);
+
+                /**
                  *本接口用于删除投递配置
                  * @param req DeleteConsumerRequest
                  * @return DeleteConsumerOutcome
@@ -956,6 +994,15 @@ namespace TencentCloud
                 DescribeConfigsOutcome DescribeConfigs(const Model::DescribeConfigsRequest &request);
                 void DescribeConfigsAsync(const Model::DescribeConfigsRequest& request, const DescribeConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeConfigsOutcomeCallable DescribeConfigsCallable(const Model::DescribeConfigsRequest& request);
+
+                /**
+                 *批量查询控制台分享列表
+                 * @param req DescribeConsoleSharingListRequest
+                 * @return DescribeConsoleSharingListOutcome
+                 */
+                DescribeConsoleSharingListOutcome DescribeConsoleSharingList(const Model::DescribeConsoleSharingListRequest &request);
+                void DescribeConsoleSharingListAsync(const Model::DescribeConsoleSharingListRequest& request, const DescribeConsoleSharingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConsoleSharingListOutcomeCallable DescribeConsoleSharingListCallable(const Model::DescribeConsoleSharingListRequest& request);
 
                 /**
                  *本接口用于获取投递配置
@@ -1200,6 +1247,15 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyConfigExtraOutcome ModifyConfigExtra(const Model::ModifyConfigExtraRequest &request);
                 void ModifyConfigExtraAsync(const Model::ModifyConfigExtraRequest& request, const ModifyConfigExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyConfigExtraOutcomeCallable ModifyConfigExtraCallable(const Model::ModifyConfigExtraRequest& request);
+
+                /**
+                 *修改控制台分享，目前仅允许修改有效期
+                 * @param req ModifyConsoleSharingRequest
+                 * @return ModifyConsoleSharingOutcome
+                 */
+                ModifyConsoleSharingOutcome ModifyConsoleSharing(const Model::ModifyConsoleSharingRequest &request);
+                void ModifyConsoleSharingAsync(const Model::ModifyConsoleSharingRequest& request, const ModifyConsoleSharingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyConsoleSharingOutcomeCallable ModifyConsoleSharingCallable(const Model::ModifyConsoleSharingRequest& request);
 
                 /**
                  *本接口用于修改投递Ckafka任务

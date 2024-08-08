@@ -23,7 +23,8 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DescribeComplianceAssetDetailInfoRequest::DescribeComplianceAssetDetailInfoRequest() :
-    m_customerAssetIdHasBeenSet(false)
+    m_customerAssetIdHasBeenSet(false),
+    m_assetTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeComplianceAssetDetailInfoRequest::ToJsonString() const
         string key = "CustomerAssetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_customerAssetId, allocator);
+    }
+
+    if (m_assetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_assetType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeComplianceAssetDetailInfoRequest::SetCustomerAssetId(const uint64_t
 bool DescribeComplianceAssetDetailInfoRequest::CustomerAssetIdHasBeenSet() const
 {
     return m_customerAssetIdHasBeenSet;
+}
+
+string DescribeComplianceAssetDetailInfoRequest::GetAssetType() const
+{
+    return m_assetType;
+}
+
+void DescribeComplianceAssetDetailInfoRequest::SetAssetType(const string& _assetType)
+{
+    m_assetType = _assetType;
+    m_assetTypeHasBeenSet = true;
+}
+
+bool DescribeComplianceAssetDetailInfoRequest::AssetTypeHasBeenSet() const
+{
+    return m_assetTypeHasBeenSet;
 }
 
 

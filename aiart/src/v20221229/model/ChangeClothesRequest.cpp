@@ -27,6 +27,7 @@ ChangeClothesRequest::ChangeClothesRequest() :
     m_clothesUrlHasBeenSet(false),
     m_clothesTypeHasBeenSet(false),
     m_logoAddHasBeenSet(false),
+    m_logoParamHasBeenSet(false),
     m_rspImgTypeHasBeenSet(false)
 {
 }
@@ -68,6 +69,15 @@ string ChangeClothesRequest::ToJsonString() const
         string key = "LogoAdd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_logoAdd, allocator);
+    }
+
+    if (m_logoParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogoParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logoParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_rspImgTypeHasBeenSet)
@@ -148,6 +158,22 @@ void ChangeClothesRequest::SetLogoAdd(const int64_t& _logoAdd)
 bool ChangeClothesRequest::LogoAddHasBeenSet() const
 {
     return m_logoAddHasBeenSet;
+}
+
+LogoParam ChangeClothesRequest::GetLogoParam() const
+{
+    return m_logoParam;
+}
+
+void ChangeClothesRequest::SetLogoParam(const LogoParam& _logoParam)
+{
+    m_logoParam = _logoParam;
+    m_logoParamHasBeenSet = true;
+}
+
+bool ChangeClothesRequest::LogoParamHasBeenSet() const
+{
+    return m_logoParamHasBeenSet;
 }
 
 string ChangeClothesRequest::GetRspImgType() const

@@ -470,6 +470,49 @@ ClsClient::CreateConfigExtraOutcomeCallable ClsClient::CreateConfigExtraCallable
     return task->get_future();
 }
 
+ClsClient::CreateConsoleSharingOutcome ClsClient::CreateConsoleSharing(const CreateConsoleSharingRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConsoleSharing");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConsoleSharingResponse rsp = CreateConsoleSharingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConsoleSharingOutcome(rsp);
+        else
+            return CreateConsoleSharingOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConsoleSharingOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateConsoleSharingAsync(const CreateConsoleSharingRequest& request, const CreateConsoleSharingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConsoleSharing(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateConsoleSharingOutcomeCallable ClsClient::CreateConsoleSharingCallable(const CreateConsoleSharingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConsoleSharingOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConsoleSharing(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CreateConsumerOutcome ClsClient::CreateConsumer(const CreateConsumerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConsumer");
@@ -1287,6 +1330,49 @@ ClsClient::DeleteConfigFromMachineGroupOutcomeCallable ClsClient::DeleteConfigFr
     return task->get_future();
 }
 
+ClsClient::DeleteConsoleSharingOutcome ClsClient::DeleteConsoleSharing(const DeleteConsoleSharingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConsoleSharing");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConsoleSharingResponse rsp = DeleteConsoleSharingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConsoleSharingOutcome(rsp);
+        else
+            return DeleteConsoleSharingOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConsoleSharingOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteConsoleSharingAsync(const DeleteConsoleSharingRequest& request, const DeleteConsoleSharingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteConsoleSharing(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteConsoleSharingOutcomeCallable ClsClient::DeleteConsoleSharingCallable(const DeleteConsoleSharingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteConsoleSharingOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteConsoleSharing(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DeleteConsumerOutcome ClsClient::DeleteConsumer(const DeleteConsumerRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteConsumer");
@@ -2097,6 +2183,49 @@ ClsClient::DescribeConfigsOutcomeCallable ClsClient::DescribeConfigsCallable(con
         [this, request]()
         {
             return this->DescribeConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DescribeConsoleSharingListOutcome ClsClient::DescribeConsoleSharingList(const DescribeConsoleSharingListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConsoleSharingList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConsoleSharingListResponse rsp = DescribeConsoleSharingListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConsoleSharingListOutcome(rsp);
+        else
+            return DescribeConsoleSharingListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConsoleSharingListOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeConsoleSharingListAsync(const DescribeConsoleSharingListRequest& request, const DescribeConsoleSharingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConsoleSharingList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeConsoleSharingListOutcomeCallable ClsClient::DescribeConsoleSharingListCallable(const DescribeConsoleSharingListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConsoleSharingListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConsoleSharingList(request);
         }
     );
 
@@ -3258,6 +3387,49 @@ ClsClient::ModifyConfigExtraOutcomeCallable ClsClient::ModifyConfigExtraCallable
         [this, request]()
         {
             return this->ModifyConfigExtra(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::ModifyConsoleSharingOutcome ClsClient::ModifyConsoleSharing(const ModifyConsoleSharingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyConsoleSharing");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyConsoleSharingResponse rsp = ModifyConsoleSharingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyConsoleSharingOutcome(rsp);
+        else
+            return ModifyConsoleSharingOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyConsoleSharingOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyConsoleSharingAsync(const ModifyConsoleSharingRequest& request, const ModifyConsoleSharingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyConsoleSharing(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyConsoleSharingOutcomeCallable ClsClient::ModifyConsoleSharingCallable(const ModifyConsoleSharingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyConsoleSharingOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyConsoleSharing(request);
         }
     );
 

@@ -139,27 +139,15 @@ ASSET_K8S, K8S资产
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件。
-Name - String
-Name 可取值：ItemType, StandardId,  RiskLevel。
-当为K8S资产时，还可取ClusterName。
-                     * @return Filters 过滤条件。
-Name - String
-Name 可取值：ItemType, StandardId,  RiskLevel。
-当为K8S资产时，还可取ClusterName。
+                     * 获取过滤条件 <li>Name      string 检测项名字</li> <li>ItemType  string 检测项类型</li> <li>RiskLevel string 威胁等级</li> <li>IsOpen    int    是否开启</li>
+                     * @return Filters 过滤条件 <li>Name      string 检测项名字</li> <li>ItemType  string 检测项类型</li> <li>RiskLevel string 威胁等级</li> <li>IsOpen    int    是否开启</li>
                      * 
                      */
                     std::vector<ComplianceFilters> GetFilters() const;
 
                     /**
-                     * 设置过滤条件。
-Name - String
-Name 可取值：ItemType, StandardId,  RiskLevel。
-当为K8S资产时，还可取ClusterName。
-                     * @param _filters 过滤条件。
-Name - String
-Name 可取值：ItemType, StandardId,  RiskLevel。
-当为K8S资产时，还可取ClusterName。
+                     * 设置过滤条件 <li>Name      string 检测项名字</li> <li>ItemType  string 检测项类型</li> <li>RiskLevel string 威胁等级</li> <li>IsOpen    int    是否开启</li>
+                     * @param _filters 过滤条件 <li>Name      string 检测项名字</li> <li>ItemType  string 检测项类型</li> <li>RiskLevel string 威胁等级</li> <li>IsOpen    int    是否开启</li>
                      * 
                      */
                     void SetFilters(const std::vector<ComplianceFilters>& _filters);
@@ -200,10 +188,7 @@ ASSET_K8S, K8S资产
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤条件。
-Name - String
-Name 可取值：ItemType, StandardId,  RiskLevel。
-当为K8S资产时，还可取ClusterName。
+                     * 过滤条件 <li>Name      string 检测项名字</li> <li>ItemType  string 检测项类型</li> <li>RiskLevel string 威胁等级</li> <li>IsOpen    int    是否开启</li>
                      */
                     std::vector<ComplianceFilters> m_filters;
                     bool m_filtersHasBeenSet;

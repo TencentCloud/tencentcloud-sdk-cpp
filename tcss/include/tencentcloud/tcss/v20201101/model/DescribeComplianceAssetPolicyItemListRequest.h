@@ -108,18 +108,18 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤器列表。Name字段支持
-RiskLevel
+RiskLevel， AppId
                      * @return Filters 过滤器列表。Name字段支持
-RiskLevel
+RiskLevel， AppId
                      * 
                      */
                     std::vector<ComplianceFilters> GetFilters() const;
 
                     /**
                      * 设置过滤器列表。Name字段支持
-RiskLevel
+RiskLevel， AppId
                      * @param _filters 过滤器列表。Name字段支持
-RiskLevel
+RiskLevel， AppId
                      * 
                      */
                     void SetFilters(const std::vector<ComplianceFilters>& _filters);
@@ -130,6 +130,27 @@ RiskLevel
                      * 
                      */
                     bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>
+                     * @return AssetType 资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>
+                     * 
+                     */
+                    std::string GetAssetType() const;
+
+                    /**
+                     * 设置资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>
+                     * @param _assetType 资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>
+                     * 
+                     */
+                    void SetAssetType(const std::string& _assetType);
+
+                    /**
+                     * 判断参数 AssetType 是否已赋值
+                     * @return AssetType 是否已赋值
+                     * 
+                     */
+                    bool AssetTypeHasBeenSet() const;
 
                 private:
 
@@ -153,10 +174,16 @@ RiskLevel
 
                     /**
                      * 过滤器列表。Name字段支持
-RiskLevel
+RiskLevel， AppId
                      */
                     std::vector<ComplianceFilters> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>
+                     */
+                    std::string m_assetType;
+                    bool m_assetTypeHasBeenSet;
 
                 };
             }

@@ -40,7 +40,10 @@ ComplianceAssetSummary::ComplianceAssetSummary() :
     m_lastCheckTimeHasBeenSet(false),
     m_periodRuleHasBeenSet(false),
     m_openPolicyItemCountHasBeenSet(false),
-    m_ignoredPolicyItemCountHasBeenSet(false)
+    m_ignoredPolicyItemCountHasBeenSet(false),
+    m_totalPolicyItemCountHasBeenSet(false),
+    m_detectHostCountHasBeenSet(false),
+    m_leftTimeHasBeenSet(false)
 {
 }
 
@@ -256,6 +259,36 @@ CoreInternalOutcome ComplianceAssetSummary::Deserialize(const rapidjson::Value &
         m_ignoredPolicyItemCountHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalPolicyItemCount") && !value["TotalPolicyItemCount"].IsNull())
+    {
+        if (!value["TotalPolicyItemCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComplianceAssetSummary.TotalPolicyItemCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalPolicyItemCount = value["TotalPolicyItemCount"].GetUint64();
+        m_totalPolicyItemCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("DetectHostCount") && !value["DetectHostCount"].IsNull())
+    {
+        if (!value["DetectHostCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComplianceAssetSummary.DetectHostCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_detectHostCount = value["DetectHostCount"].GetUint64();
+        m_detectHostCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("LeftTime") && !value["LeftTime"].IsNull())
+    {
+        if (!value["LeftTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComplianceAssetSummary.LeftTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_leftTime = value["LeftTime"].GetUint64();
+        m_leftTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -422,6 +455,30 @@ void ComplianceAssetSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "IgnoredPolicyItemCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ignoredPolicyItemCount, allocator);
+    }
+
+    if (m_totalPolicyItemCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalPolicyItemCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalPolicyItemCount, allocator);
+    }
+
+    if (m_detectHostCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetectHostCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_detectHostCount, allocator);
+    }
+
+    if (m_leftTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LeftTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_leftTime, allocator);
     }
 
 }
@@ -745,5 +802,53 @@ void ComplianceAssetSummary::SetIgnoredPolicyItemCount(const uint64_t& _ignoredP
 bool ComplianceAssetSummary::IgnoredPolicyItemCountHasBeenSet() const
 {
     return m_ignoredPolicyItemCountHasBeenSet;
+}
+
+uint64_t ComplianceAssetSummary::GetTotalPolicyItemCount() const
+{
+    return m_totalPolicyItemCount;
+}
+
+void ComplianceAssetSummary::SetTotalPolicyItemCount(const uint64_t& _totalPolicyItemCount)
+{
+    m_totalPolicyItemCount = _totalPolicyItemCount;
+    m_totalPolicyItemCountHasBeenSet = true;
+}
+
+bool ComplianceAssetSummary::TotalPolicyItemCountHasBeenSet() const
+{
+    return m_totalPolicyItemCountHasBeenSet;
+}
+
+uint64_t ComplianceAssetSummary::GetDetectHostCount() const
+{
+    return m_detectHostCount;
+}
+
+void ComplianceAssetSummary::SetDetectHostCount(const uint64_t& _detectHostCount)
+{
+    m_detectHostCount = _detectHostCount;
+    m_detectHostCountHasBeenSet = true;
+}
+
+bool ComplianceAssetSummary::DetectHostCountHasBeenSet() const
+{
+    return m_detectHostCountHasBeenSet;
+}
+
+uint64_t ComplianceAssetSummary::GetLeftTime() const
+{
+    return m_leftTime;
+}
+
+void ComplianceAssetSummary::SetLeftTime(const uint64_t& _leftTime)
+{
+    m_leftTime = _leftTime;
+    m_leftTimeHasBeenSet = true;
+}
+
+bool ComplianceAssetSummary::LeftTimeHasBeenSet() const
+{
+    return m_leftTimeHasBeenSet;
 }
 

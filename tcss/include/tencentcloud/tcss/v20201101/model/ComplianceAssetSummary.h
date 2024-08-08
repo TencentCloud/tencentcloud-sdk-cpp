@@ -527,6 +527,81 @@ CHECK_FAILED, 检测失败
                      */
                     bool IgnoredPolicyItemCountHasBeenSet() const;
 
+                    /**
+                     * 获取总检测项数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalPolicyItemCount 总检测项数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetTotalPolicyItemCount() const;
+
+                    /**
+                     * 设置总检测项数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _totalPolicyItemCount 总检测项数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTotalPolicyItemCount(const uint64_t& _totalPolicyItemCount);
+
+                    /**
+                     * 判断参数 TotalPolicyItemCount 是否已赋值
+                     * @return TotalPolicyItemCount 是否已赋值
+                     * 
+                     */
+                    bool TotalPolicyItemCountHasBeenSet() const;
+
+                    /**
+                     * 获取检测主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DetectHostCount 检测主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetDetectHostCount() const;
+
+                    /**
+                     * 设置检测主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _detectHostCount 检测主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDetectHostCount(const uint64_t& _detectHostCount);
+
+                    /**
+                     * 判断参数 DetectHostCount 是否已赋值
+                     * @return DetectHostCount 是否已赋值
+                     * 
+                     */
+                    bool DetectHostCountHasBeenSet() const;
+
+                    /**
+                     * 获取当前任务剩余时间，单位秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LeftTime 当前任务剩余时间，单位秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetLeftTime() const;
+
+                    /**
+                     * 设置当前任务剩余时间，单位秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _leftTime 当前任务剩余时间，单位秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLeftTime(const uint64_t& _leftTime);
+
+                    /**
+                     * 判断参数 LeftTime 是否已赋值
+                     * @return LeftTime 是否已赋值
+                     * 
+                     */
+                    bool LeftTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -663,6 +738,27 @@ CHECK_FAILED, 检测失败
                      */
                     uint64_t m_ignoredPolicyItemCount;
                     bool m_ignoredPolicyItemCountHasBeenSet;
+
+                    /**
+                     * 总检测项数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_totalPolicyItemCount;
+                    bool m_totalPolicyItemCountHasBeenSet;
+
+                    /**
+                     * 检测主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_detectHostCount;
+                    bool m_detectHostCountHasBeenSet;
+
+                    /**
+                     * 当前任务剩余时间，单位秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_leftTime;
+                    bool m_leftTimeHasBeenSet;
 
                 };
             }

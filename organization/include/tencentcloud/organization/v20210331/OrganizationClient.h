@@ -43,6 +43,8 @@
 #include <tencentcloud/organization/v20210331/model/CancelOrganizationMemberAuthAccountResponse.h>
 #include <tencentcloud/organization/v20210331/model/CheckAccountDeleteRequest.h>
 #include <tencentcloud/organization/v20210331/model/CheckAccountDeleteResponse.h>
+#include <tencentcloud/organization/v20210331/model/CreateOrgServiceAssignRequest.h>
+#include <tencentcloud/organization/v20210331/model/CreateOrgServiceAssignResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationRequest.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationIdentityRequest.h>
@@ -59,6 +61,8 @@
 #include <tencentcloud/organization/v20210331/model/CreatePolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteAccountRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteAccountResponse.h>
+#include <tencentcloud/organization/v20210331/model/DeleteOrgServiceAssignRequest.h>
+#include <tencentcloud/organization/v20210331/model/DeleteOrgServiceAssignResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteOrganizationRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteOrganizationResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteOrganizationIdentityRequest.h>
@@ -123,6 +127,8 @@
 #include <tencentcloud/organization/v20210331/model/EnablePolicyTypeResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListNonCompliantResourceRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListNonCompliantResourceResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListOrgServiceAssignMemberRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListOrgServiceAssignMemberResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListOrganizationIdentityRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListOrganizationIdentityResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListOrganizationServiceRequest.h>
@@ -195,6 +201,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckAccountDeleteResponse> CheckAccountDeleteOutcome;
                 typedef std::future<CheckAccountDeleteOutcome> CheckAccountDeleteOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::CheckAccountDeleteRequest&, CheckAccountDeleteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAccountDeleteAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOrgServiceAssignResponse> CreateOrgServiceAssignOutcome;
+                typedef std::future<CreateOrgServiceAssignOutcome> CreateOrgServiceAssignOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::CreateOrgServiceAssignRequest&, CreateOrgServiceAssignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrgServiceAssignAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOrganizationResponse> CreateOrganizationOutcome;
                 typedef std::future<CreateOrganizationOutcome> CreateOrganizationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::CreateOrganizationRequest&, CreateOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationAsyncHandler;
@@ -219,6 +228,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAccountResponse> DeleteAccountOutcome;
                 typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteAccountRequest&, DeleteAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteOrgServiceAssignResponse> DeleteOrgServiceAssignOutcome;
+                typedef std::future<DeleteOrgServiceAssignOutcome> DeleteOrgServiceAssignOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DeleteOrgServiceAssignRequest&, DeleteOrgServiceAssignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOrgServiceAssignAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteOrganizationResponse> DeleteOrganizationOutcome;
                 typedef std::future<DeleteOrganizationOutcome> DeleteOrganizationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteOrganizationRequest&, DeleteOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOrganizationAsyncHandler;
@@ -315,6 +327,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListNonCompliantResourceResponse> ListNonCompliantResourceOutcome;
                 typedef std::future<ListNonCompliantResourceOutcome> ListNonCompliantResourceOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListNonCompliantResourceRequest&, ListNonCompliantResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListNonCompliantResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListOrgServiceAssignMemberResponse> ListOrgServiceAssignMemberOutcome;
+                typedef std::future<ListOrgServiceAssignMemberOutcome> ListOrgServiceAssignMemberOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListOrgServiceAssignMemberRequest&, ListOrgServiceAssignMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListOrgServiceAssignMemberAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListOrganizationIdentityResponse> ListOrganizationIdentityOutcome;
                 typedef std::future<ListOrganizationIdentityOutcome> ListOrganizationIdentityOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListOrganizationIdentityRequest&, ListOrganizationIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListOrganizationIdentityAsyncHandler;
@@ -451,6 +466,15 @@ namespace TencentCloud
                 CheckAccountDeleteOutcomeCallable CheckAccountDeleteCallable(const Model::CheckAccountDeleteRequest& request);
 
                 /**
+                 *添加集团服务委派管理员
+                 * @param req CreateOrgServiceAssignRequest
+                 * @return CreateOrgServiceAssignOutcome
+                 */
+                CreateOrgServiceAssignOutcome CreateOrgServiceAssign(const Model::CreateOrgServiceAssignRequest &request);
+                void CreateOrgServiceAssignAsync(const Model::CreateOrgServiceAssignRequest& request, const CreateOrgServiceAssignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOrgServiceAssignOutcomeCallable CreateOrgServiceAssignCallable(const Model::CreateOrgServiceAssignRequest& request);
+
+                /**
                  *创建企业组织
                  * @param req CreateOrganizationRequest
                  * @return CreateOrganizationOutcome
@@ -521,6 +545,15 @@ namespace TencentCloud
                 DeleteAccountOutcome DeleteAccount(const Model::DeleteAccountRequest &request);
                 void DeleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAccountOutcomeCallable DeleteAccountCallable(const Model::DeleteAccountRequest& request);
+
+                /**
+                 *删除集团服务委派管理员
+                 * @param req DeleteOrgServiceAssignRequest
+                 * @return DeleteOrgServiceAssignOutcome
+                 */
+                DeleteOrgServiceAssignOutcome DeleteOrgServiceAssign(const Model::DeleteOrgServiceAssignRequest &request);
+                void DeleteOrgServiceAssignAsync(const Model::DeleteOrgServiceAssignRequest& request, const DeleteOrgServiceAssignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteOrgServiceAssignOutcomeCallable DeleteOrgServiceAssignCallable(const Model::DeleteOrgServiceAssignRequest& request);
 
                 /**
                  *删除企业组织
@@ -809,6 +842,15 @@ namespace TencentCloud
                 ListNonCompliantResourceOutcome ListNonCompliantResource(const Model::ListNonCompliantResourceRequest &request);
                 void ListNonCompliantResourceAsync(const Model::ListNonCompliantResourceRequest& request, const ListNonCompliantResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListNonCompliantResourceOutcomeCallable ListNonCompliantResourceCallable(const Model::ListNonCompliantResourceRequest& request);
+
+                /**
+                 *获取集团服务委派管理员列表
+                 * @param req ListOrgServiceAssignMemberRequest
+                 * @return ListOrgServiceAssignMemberOutcome
+                 */
+                ListOrgServiceAssignMemberOutcome ListOrgServiceAssignMember(const Model::ListOrgServiceAssignMemberRequest &request);
+                void ListOrgServiceAssignMemberAsync(const Model::ListOrgServiceAssignMemberRequest& request, const ListOrgServiceAssignMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListOrgServiceAssignMemberOutcomeCallable ListOrgServiceAssignMemberCallable(const Model::ListOrgServiceAssignMemberRequest& request);
 
                 /**
                  *获取组织成员访问身份列表

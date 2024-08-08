@@ -64,6 +64,27 @@ namespace TencentCloud
                      */
                     bool AssetPolicySetListHasBeenSet() const;
 
+                    /**
+                     * 获取扫描资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>
+                     * @return AssetType 扫描资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>
+                     * 
+                     */
+                    std::string GetAssetType() const;
+
+                    /**
+                     * 设置扫描资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>
+                     * @param _assetType 扫描资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>
+                     * 
+                     */
+                    void SetAssetType(const std::string& _assetType);
+
+                    /**
+                     * 判断参数 AssetType 是否已赋值
+                     * @return AssetType 是否已赋值
+                     * 
+                     */
+                    bool AssetTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +92,12 @@ namespace TencentCloud
                      */
                     std::vector<ComplianceAssetPolicySetItem> m_assetPolicySetList;
                     bool m_assetPolicySetListHasBeenSet;
+
+                    /**
+                     * 扫描资产类型 <li>ASSET_CONTAINER Docker容器</li> <li>ASSET_IMAGE Docker镜像</li> <li>ASSET_HOST Docker主机</li> <li>ASSET_K8S Kubernetes</li> <li>ASSET_CONTAINERD Containerd主机</li> <li>ASSET_CONTAINERD_CONTAINER Containerd容器</li>
+                     */
+                    std::string m_assetType;
+                    bool m_assetTypeHasBeenSet;
 
                 };
             }

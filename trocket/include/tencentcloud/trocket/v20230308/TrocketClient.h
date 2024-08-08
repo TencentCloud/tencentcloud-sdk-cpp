@@ -59,6 +59,8 @@
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerLagRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerLagResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeFusionInstanceListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeFusionInstanceListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceRequest.h>
@@ -187,6 +189,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeConsumerGroupListResponse> DescribeConsumerGroupListOutcome;
                 typedef std::future<DescribeConsumerGroupListOutcome> DescribeConsumerGroupListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerGroupListRequest&, DescribeConsumerGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerGroupListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConsumerLagResponse> DescribeConsumerLagOutcome;
+                typedef std::future<DescribeConsumerLagOutcome> DescribeConsumerLagOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerLagRequest&, DescribeConsumerLagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerLagAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFusionInstanceListResponse> DescribeFusionInstanceListOutcome;
                 typedef std::future<DescribeFusionInstanceListOutcome> DescribeFusionInstanceListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeFusionInstanceListRequest&, DescribeFusionInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFusionInstanceListAsyncHandler;
@@ -444,6 +449,15 @@ namespace TencentCloud
                 DescribeConsumerGroupListOutcome DescribeConsumerGroupList(const Model::DescribeConsumerGroupListRequest &request);
                 void DescribeConsumerGroupListAsync(const Model::DescribeConsumerGroupListRequest& request, const DescribeConsumerGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeConsumerGroupListOutcomeCallable DescribeConsumerGroupListCallable(const Model::DescribeConsumerGroupListRequest& request);
+
+                /**
+                 *查询指定消费组堆积数。
+                 * @param req DescribeConsumerLagRequest
+                 * @return DescribeConsumerLagOutcome
+                 */
+                DescribeConsumerLagOutcome DescribeConsumerLag(const Model::DescribeConsumerLagRequest &request);
+                void DescribeConsumerLagAsync(const Model::DescribeConsumerLagRequest& request, const DescribeConsumerLagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConsumerLagOutcomeCallable DescribeConsumerLagCallable(const Model::DescribeConsumerLagRequest& request);
 
                 /**
                  *获取实例列表，Filters参数使用说明如下：

@@ -814,6 +814,49 @@ TrocketClient::DescribeConsumerGroupListOutcomeCallable TrocketClient::DescribeC
     return task->get_future();
 }
 
+TrocketClient::DescribeConsumerLagOutcome TrocketClient::DescribeConsumerLag(const DescribeConsumerLagRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConsumerLag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConsumerLagResponse rsp = DescribeConsumerLagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConsumerLagOutcome(rsp);
+        else
+            return DescribeConsumerLagOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConsumerLagOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeConsumerLagAsync(const DescribeConsumerLagRequest& request, const DescribeConsumerLagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConsumerLag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeConsumerLagOutcomeCallable TrocketClient::DescribeConsumerLagCallable(const DescribeConsumerLagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConsumerLagOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConsumerLag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrocketClient::DescribeFusionInstanceListOutcome TrocketClient::DescribeFusionInstanceList(const DescribeFusionInstanceListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFusionInstanceList");
