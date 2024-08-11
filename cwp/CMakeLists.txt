@@ -610,6 +610,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/CKafkaInstanceInfo.h
   include/tencentcloud/cwp/v20180228/model/ExportProtectDirListResponse.h
   include/tencentcloud/cwp/v20180228/model/ModifyWebPageProtectDirRequest.h
+  include/tencentcloud/cwp/v20180228/model/ModifyReverseShellRulesAggregationResponse.h
   include/tencentcloud/cwp/v20180228/model/AssetWebFrameBaseInfo.h
   include/tencentcloud/cwp/v20180228/model/ModifyJavaMemShellsStatusRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeFileTamperRuleInfoRequest.h
@@ -1159,6 +1160,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/AssetWebAppBaseInfo.h
   include/tencentcloud/cwp/v20180228/model/DescribeRiskDnsInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineRuleDetectListResponse.h
+  include/tencentcloud/cwp/v20180228/model/UpdateBaselineStrategyRequest.h
   include/tencentcloud/cwp/v20180228/model/AssetCoreModuleParam.h
   include/tencentcloud/cwp/v20180228/model/DescribeMachineLicenseDetailResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeHostInfoRequest.h
@@ -1270,7 +1272,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/UpdateMachineTagsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineItemDetectListResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeScanTaskDetailsResponse.h
-  include/tencentcloud/cwp/v20180228/model/UpdateBaselineStrategyRequest.h
+  include/tencentcloud/cwp/v20180228/model/ModifyReverseShellRulesAggregationRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeHostLoginListResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribePublicProxyInstallCommandResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeAttackTopRequest.h
@@ -1903,6 +1905,7 @@ set(cwp_src
   src/v20180228/model/CKafkaInstanceInfo.cpp
   src/v20180228/model/ExportProtectDirListResponse.cpp
   src/v20180228/model/ModifyWebPageProtectDirRequest.cpp
+  src/v20180228/model/ModifyReverseShellRulesAggregationResponse.cpp
   src/v20180228/model/AssetWebFrameBaseInfo.cpp
   src/v20180228/model/ModifyJavaMemShellsStatusRequest.cpp
   src/v20180228/model/DescribeFileTamperRuleInfoRequest.cpp
@@ -2452,6 +2455,7 @@ set(cwp_src
   src/v20180228/model/AssetWebAppBaseInfo.cpp
   src/v20180228/model/DescribeRiskDnsInfoRequest.cpp
   src/v20180228/model/DescribeBaselineRuleDetectListResponse.cpp
+  src/v20180228/model/UpdateBaselineStrategyRequest.cpp
   src/v20180228/model/AssetCoreModuleParam.cpp
   src/v20180228/model/DescribeMachineLicenseDetailResponse.cpp
   src/v20180228/model/DescribeHostInfoRequest.cpp
@@ -2563,7 +2567,7 @@ set(cwp_src
   src/v20180228/model/UpdateMachineTagsRequest.cpp
   src/v20180228/model/DescribeBaselineItemDetectListResponse.cpp
   src/v20180228/model/DescribeScanTaskDetailsResponse.cpp
-  src/v20180228/model/UpdateBaselineStrategyRequest.cpp
+  src/v20180228/model/ModifyReverseShellRulesAggregationRequest.cpp
   src/v20180228/model/DescribeHostLoginListResponse.cpp
   src/v20180228/model/DescribePublicProxyInstallCommandResponse.cpp
   src/v20180228/model/DescribeAttackTopRequest.cpp

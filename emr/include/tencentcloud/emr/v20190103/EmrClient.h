@@ -69,12 +69,16 @@
 #include <tencentcloud/emr/v20190103/model/DescribeJobFlowResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeServiceNodeInfosRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeServiceNodeInfosResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeTrinoQueryInfoRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeTrinoQueryInfoResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeYarnApplicationsRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeYarnApplicationsResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeYarnScheduleHistoryRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeYarnScheduleHistoryResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquirePriceRenewEmrRequest.h>
 #include <tencentcloud/emr/v20190103/model/InquirePriceRenewEmrResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h>
@@ -97,6 +101,8 @@
 #include <tencentcloud/emr/v20190103/model/ModifyResourcesTagsResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyUserManagerPwdRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyUserManagerPwdResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyYarnDeployRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyYarnDeployResponse.h>
 #include <tencentcloud/emr/v20190103/model/RunJobFlowRequest.h>
 #include <tencentcloud/emr/v20190103/model/RunJobFlowResponse.h>
 #include <tencentcloud/emr/v20190103/model/ScaleOutClusterRequest.h>
@@ -196,6 +202,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeResourceScheduleResponse> DescribeResourceScheduleOutcome;
                 typedef std::future<DescribeResourceScheduleOutcome> DescribeResourceScheduleOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeResourceScheduleRequest&, DescribeResourceScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceScheduleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServiceNodeInfosResponse> DescribeServiceNodeInfosOutcome;
+                typedef std::future<DescribeServiceNodeInfosOutcome> DescribeServiceNodeInfosOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeServiceNodeInfosRequest&, DescribeServiceNodeInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceNodeInfosAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrinoQueryInfoResponse> DescribeTrinoQueryInfoOutcome;
                 typedef std::future<DescribeTrinoQueryInfoOutcome> DescribeTrinoQueryInfoOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeTrinoQueryInfoRequest&, DescribeTrinoQueryInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrinoQueryInfoAsyncHandler;
@@ -205,6 +214,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeYarnApplicationsResponse> DescribeYarnApplicationsOutcome;
                 typedef std::future<DescribeYarnApplicationsOutcome> DescribeYarnApplicationsOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeYarnApplicationsRequest&, DescribeYarnApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeYarnApplicationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeYarnScheduleHistoryResponse> DescribeYarnScheduleHistoryOutcome;
+                typedef std::future<DescribeYarnScheduleHistoryOutcome> DescribeYarnScheduleHistoryOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeYarnScheduleHistoryRequest&, DescribeYarnScheduleHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeYarnScheduleHistoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceRenewEmrResponse> InquirePriceRenewEmrOutcome;
                 typedef std::future<InquirePriceRenewEmrOutcome> InquirePriceRenewEmrOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::InquirePriceRenewEmrRequest&, InquirePriceRenewEmrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewEmrAsyncHandler;
@@ -238,6 +250,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyUserManagerPwdResponse> ModifyUserManagerPwdOutcome;
                 typedef std::future<ModifyUserManagerPwdOutcome> ModifyUserManagerPwdOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyUserManagerPwdRequest&, ModifyUserManagerPwdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserManagerPwdAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyYarnDeployResponse> ModifyYarnDeployOutcome;
+                typedef std::future<ModifyYarnDeployOutcome> ModifyYarnDeployOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyYarnDeployRequest&, ModifyYarnDeployOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyYarnDeployAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunJobFlowResponse> RunJobFlowOutcome;
                 typedef std::future<RunJobFlowOutcome> RunJobFlowOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::RunJobFlowRequest&, RunJobFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunJobFlowAsyncHandler;
@@ -474,6 +489,15 @@ namespace TencentCloud
                 DescribeResourceScheduleOutcomeCallable DescribeResourceScheduleCallable(const Model::DescribeResourceScheduleRequest& request);
 
                 /**
+                 *查询服务进程信息
+                 * @param req DescribeServiceNodeInfosRequest
+                 * @return DescribeServiceNodeInfosOutcome
+                 */
+                DescribeServiceNodeInfosOutcome DescribeServiceNodeInfos(const Model::DescribeServiceNodeInfosRequest &request);
+                void DescribeServiceNodeInfosAsync(const Model::DescribeServiceNodeInfosRequest& request, const DescribeServiceNodeInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServiceNodeInfosOutcomeCallable DescribeServiceNodeInfosCallable(const Model::DescribeServiceNodeInfosRequest& request);
+
+                /**
                  *获取trino查询结果
                  * @param req DescribeTrinoQueryInfoRequest
                  * @return DescribeTrinoQueryInfoOutcome
@@ -500,6 +524,15 @@ namespace TencentCloud
                 DescribeYarnApplicationsOutcome DescribeYarnApplications(const Model::DescribeYarnApplicationsRequest &request);
                 void DescribeYarnApplicationsAsync(const Model::DescribeYarnApplicationsRequest& request, const DescribeYarnApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeYarnApplicationsOutcomeCallable DescribeYarnApplicationsCallable(const Model::DescribeYarnApplicationsRequest& request);
+
+                /**
+                 *查看yarn资源调度的调度历史
+                 * @param req DescribeYarnScheduleHistoryRequest
+                 * @return DescribeYarnScheduleHistoryOutcome
+                 */
+                DescribeYarnScheduleHistoryOutcome DescribeYarnScheduleHistory(const Model::DescribeYarnScheduleHistoryRequest &request);
+                void DescribeYarnScheduleHistoryAsync(const Model::DescribeYarnScheduleHistoryRequest& request, const DescribeYarnScheduleHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeYarnScheduleHistoryOutcomeCallable DescribeYarnScheduleHistoryCallable(const Model::DescribeYarnScheduleHistoryRequest& request);
 
                 /**
                  *集群续费询价。
@@ -599,6 +632,15 @@ namespace TencentCloud
                 ModifyUserManagerPwdOutcome ModifyUserManagerPwd(const Model::ModifyUserManagerPwdRequest &request);
                 void ModifyUserManagerPwdAsync(const Model::ModifyUserManagerPwdRequest& request, const ModifyUserManagerPwdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUserManagerPwdOutcomeCallable ModifyUserManagerPwdCallable(const Model::ModifyUserManagerPwdRequest& request);
+
+                /**
+                 *部署生效
+                 * @param req ModifyYarnDeployRequest
+                 * @return ModifyYarnDeployOutcome
+                 */
+                ModifyYarnDeployOutcome ModifyYarnDeploy(const Model::ModifyYarnDeployRequest &request);
+                void ModifyYarnDeployAsync(const Model::ModifyYarnDeployRequest& request, const ModifyYarnDeployAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyYarnDeployOutcomeCallable ModifyYarnDeployCallable(const Model::ModifyYarnDeployRequest& request);
 
                 /**
                  *创建流程作业

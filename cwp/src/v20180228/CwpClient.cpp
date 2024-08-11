@@ -20207,6 +20207,49 @@ CwpClient::ModifyRansomDefenseStrategyStatusOutcomeCallable CwpClient::ModifyRan
     return task->get_future();
 }
 
+CwpClient::ModifyReverseShellRulesAggregationOutcome CwpClient::ModifyReverseShellRulesAggregation(const ModifyReverseShellRulesAggregationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyReverseShellRulesAggregation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyReverseShellRulesAggregationResponse rsp = ModifyReverseShellRulesAggregationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyReverseShellRulesAggregationOutcome(rsp);
+        else
+            return ModifyReverseShellRulesAggregationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyReverseShellRulesAggregationOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ModifyReverseShellRulesAggregationAsync(const ModifyReverseShellRulesAggregationRequest& request, const ModifyReverseShellRulesAggregationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyReverseShellRulesAggregation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ModifyReverseShellRulesAggregationOutcomeCallable CwpClient::ModifyReverseShellRulesAggregationCallable(const ModifyReverseShellRulesAggregationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyReverseShellRulesAggregationOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyReverseShellRulesAggregation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::ModifyRiskDnsPolicyOutcome CwpClient::ModifyRiskDnsPolicy(const ModifyRiskDnsPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRiskDnsPolicy");

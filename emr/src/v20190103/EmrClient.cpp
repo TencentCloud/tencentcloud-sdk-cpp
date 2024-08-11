@@ -1029,6 +1029,49 @@ EmrClient::DescribeResourceScheduleOutcomeCallable EmrClient::DescribeResourceSc
     return task->get_future();
 }
 
+EmrClient::DescribeServiceNodeInfosOutcome EmrClient::DescribeServiceNodeInfos(const DescribeServiceNodeInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServiceNodeInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServiceNodeInfosResponse rsp = DescribeServiceNodeInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServiceNodeInfosOutcome(rsp);
+        else
+            return DescribeServiceNodeInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServiceNodeInfosOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeServiceNodeInfosAsync(const DescribeServiceNodeInfosRequest& request, const DescribeServiceNodeInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServiceNodeInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeServiceNodeInfosOutcomeCallable EmrClient::DescribeServiceNodeInfosCallable(const DescribeServiceNodeInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServiceNodeInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServiceNodeInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeTrinoQueryInfoOutcome EmrClient::DescribeTrinoQueryInfo(const DescribeTrinoQueryInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTrinoQueryInfo");
@@ -1151,6 +1194,49 @@ EmrClient::DescribeYarnApplicationsOutcomeCallable EmrClient::DescribeYarnApplic
         [this, request]()
         {
             return this->DescribeYarnApplications(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::DescribeYarnScheduleHistoryOutcome EmrClient::DescribeYarnScheduleHistory(const DescribeYarnScheduleHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeYarnScheduleHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeYarnScheduleHistoryResponse rsp = DescribeYarnScheduleHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeYarnScheduleHistoryOutcome(rsp);
+        else
+            return DescribeYarnScheduleHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeYarnScheduleHistoryOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeYarnScheduleHistoryAsync(const DescribeYarnScheduleHistoryRequest& request, const DescribeYarnScheduleHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeYarnScheduleHistory(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeYarnScheduleHistoryOutcomeCallable EmrClient::DescribeYarnScheduleHistoryCallable(const DescribeYarnScheduleHistoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeYarnScheduleHistoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeYarnScheduleHistory(request);
         }
     );
 
@@ -1624,6 +1710,49 @@ EmrClient::ModifyUserManagerPwdOutcomeCallable EmrClient::ModifyUserManagerPwdCa
         [this, request]()
         {
             return this->ModifyUserManagerPwd(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::ModifyYarnDeployOutcome EmrClient::ModifyYarnDeploy(const ModifyYarnDeployRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyYarnDeploy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyYarnDeployResponse rsp = ModifyYarnDeployResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyYarnDeployOutcome(rsp);
+        else
+            return ModifyYarnDeployOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyYarnDeployOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyYarnDeployAsync(const ModifyYarnDeployRequest& request, const ModifyYarnDeployAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyYarnDeploy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ModifyYarnDeployOutcomeCallable EmrClient::ModifyYarnDeployCallable(const ModifyYarnDeployRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyYarnDeployOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyYarnDeploy(request);
         }
     );
 

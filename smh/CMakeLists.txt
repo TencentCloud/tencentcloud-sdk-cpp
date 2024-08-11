@@ -19,56 +19,78 @@ set(smh_public_header
   )
 
 set(smh_public_header_model
+  include/tencentcloud/smh/v20210712/model/DescribeUserLifecycleResponse.h
   include/tencentcloud/smh/v20210712/model/ModifyLibraryResponse.h
   include/tencentcloud/smh/v20210712/model/DescribeLibrariesResponse.h
   include/tencentcloud/smh/v20210712/model/SendSmsCodeResponse.h
   include/tencentcloud/smh/v20210712/model/Instance.h
+  include/tencentcloud/smh/v20210712/model/DeleteUserRequest.h
   include/tencentcloud/smh/v20210712/model/TrafficPackage.h
   include/tencentcloud/smh/v20210712/model/DeleteLibraryRequest.h
   include/tencentcloud/smh/v20210712/model/DescribeTrafficPackagesRequest.h
   include/tencentcloud/smh/v20210712/model/DescribeTrafficPackagesResponse.h
+  include/tencentcloud/smh/v20210712/model/CreateUserResponse.h
   include/tencentcloud/smh/v20210712/model/DescribeLibrarySecretRequest.h
   include/tencentcloud/smh/v20210712/model/DescribeLibrarySecretResponse.h
   include/tencentcloud/smh/v20210712/model/SendSmsCodeRequest.h
-  include/tencentcloud/smh/v20210712/model/DescribeOfficialInstancesRequest.h
+  include/tencentcloud/smh/v20210712/model/DeleteUserResponse.h
   include/tencentcloud/smh/v20210712/model/DescribeLibrariesRequest.h
   include/tencentcloud/smh/v20210712/model/LibraryExtension.h
+  include/tencentcloud/smh/v20210712/model/ModifyUserResponse.h
   include/tencentcloud/smh/v20210712/model/VerifySmsCodeResponse.h
   include/tencentcloud/smh/v20210712/model/ModifyLibraryRequest.h
   include/tencentcloud/smh/v20210712/model/DescribeOfficialOverviewRequest.h
   include/tencentcloud/smh/v20210712/model/DeleteLibraryResponse.h
   include/tencentcloud/smh/v20210712/model/DescribeOfficialInstancesResponse.h
+  include/tencentcloud/smh/v20210712/model/DescribeUserLifecycleRequest.h
   include/tencentcloud/smh/v20210712/model/VerifySmsCodeRequest.h
+  include/tencentcloud/smh/v20210712/model/DescribeOfficialInstancesRequest.h
+  include/tencentcloud/smh/v20210712/model/CreateUserRequest.h
+  include/tencentcloud/smh/v20210712/model/CreateUserLifecycleResponse.h
   include/tencentcloud/smh/v20210712/model/CreateLibraryResponse.h
+  include/tencentcloud/smh/v20210712/model/UserFilter.h
   include/tencentcloud/smh/v20210712/model/Library.h
+  include/tencentcloud/smh/v20210712/model/CreateUserLifecycleRequest.h
+  include/tencentcloud/smh/v20210712/model/ModifyUserRequest.h
   include/tencentcloud/smh/v20210712/model/CreateLibraryRequest.h
   include/tencentcloud/smh/v20210712/model/DescribeOfficialOverviewResponse.h
   )
 
 set(smh_src
   src/v20210712/SmhClient.cpp
+  src/v20210712/model/DescribeUserLifecycleResponse.cpp
   src/v20210712/model/ModifyLibraryResponse.cpp
   src/v20210712/model/DescribeLibrariesResponse.cpp
   src/v20210712/model/SendSmsCodeResponse.cpp
   src/v20210712/model/Instance.cpp
+  src/v20210712/model/DeleteUserRequest.cpp
   src/v20210712/model/TrafficPackage.cpp
   src/v20210712/model/DeleteLibraryRequest.cpp
   src/v20210712/model/DescribeTrafficPackagesRequest.cpp
   src/v20210712/model/DescribeTrafficPackagesResponse.cpp
+  src/v20210712/model/CreateUserResponse.cpp
   src/v20210712/model/DescribeLibrarySecretRequest.cpp
   src/v20210712/model/DescribeLibrarySecretResponse.cpp
   src/v20210712/model/SendSmsCodeRequest.cpp
-  src/v20210712/model/DescribeOfficialInstancesRequest.cpp
+  src/v20210712/model/DeleteUserResponse.cpp
   src/v20210712/model/DescribeLibrariesRequest.cpp
   src/v20210712/model/LibraryExtension.cpp
+  src/v20210712/model/ModifyUserResponse.cpp
   src/v20210712/model/VerifySmsCodeResponse.cpp
   src/v20210712/model/ModifyLibraryRequest.cpp
   src/v20210712/model/DescribeOfficialOverviewRequest.cpp
   src/v20210712/model/DeleteLibraryResponse.cpp
   src/v20210712/model/DescribeOfficialInstancesResponse.cpp
+  src/v20210712/model/DescribeUserLifecycleRequest.cpp
   src/v20210712/model/VerifySmsCodeRequest.cpp
+  src/v20210712/model/DescribeOfficialInstancesRequest.cpp
+  src/v20210712/model/CreateUserRequest.cpp
+  src/v20210712/model/CreateUserLifecycleResponse.cpp
   src/v20210712/model/CreateLibraryResponse.cpp
+  src/v20210712/model/UserFilter.cpp
   src/v20210712/model/Library.cpp
+  src/v20210712/model/CreateUserLifecycleRequest.cpp
+  src/v20210712/model/ModifyUserRequest.cpp
   src/v20210712/model/CreateLibraryRequest.cpp
   src/v20210712/model/DescribeOfficialOverviewResponse.cpp
   )

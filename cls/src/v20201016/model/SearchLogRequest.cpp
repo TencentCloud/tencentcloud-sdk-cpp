@@ -29,8 +29,9 @@ SearchLogRequest::SearchLogRequest() :
     m_syntaxRuleHasBeenSet(false),
     m_topicIdHasBeenSet(false),
     m_topicsHasBeenSet(false),
-    m_limitHasBeenSet(false),
     m_sortHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_samplingRateHasBeenSet(false),
     m_useNewAnalysisHasBeenSet(false)
@@ -99,6 +100,14 @@ string SearchLogRequest::ToJsonString() const
         }
     }
 
+    if (m_sortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sort.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -107,12 +116,12 @@ string SearchLogRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
-    if (m_sortHasBeenSet)
+    if (m_offsetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Sort";
+        string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_sort.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
     if (m_contextHasBeenSet)
@@ -243,6 +252,22 @@ bool SearchLogRequest::TopicsHasBeenSet() const
     return m_topicsHasBeenSet;
 }
 
+string SearchLogRequest::GetSort() const
+{
+    return m_sort;
+}
+
+void SearchLogRequest::SetSort(const string& _sort)
+{
+    m_sort = _sort;
+    m_sortHasBeenSet = true;
+}
+
+bool SearchLogRequest::SortHasBeenSet() const
+{
+    return m_sortHasBeenSet;
+}
+
 int64_t SearchLogRequest::GetLimit() const
 {
     return m_limit;
@@ -259,20 +284,20 @@ bool SearchLogRequest::LimitHasBeenSet() const
     return m_limitHasBeenSet;
 }
 
-string SearchLogRequest::GetSort() const
+uint64_t SearchLogRequest::GetOffset() const
 {
-    return m_sort;
+    return m_offset;
 }
 
-void SearchLogRequest::SetSort(const string& _sort)
+void SearchLogRequest::SetOffset(const uint64_t& _offset)
 {
-    m_sort = _sort;
-    m_sortHasBeenSet = true;
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
 }
 
-bool SearchLogRequest::SortHasBeenSet() const
+bool SearchLogRequest::OffsetHasBeenSet() const
 {
-    return m_sortHasBeenSet;
+    return m_offsetHasBeenSet;
 }
 
 string SearchLogRequest::GetContext() const

@@ -202,39 +202,6 @@ namespace TencentCloud
                     bool TopicsHasBeenSet() const;
 
                     /**
-                     * 获取表示单次查询返回的原始日志条数，默认为100，最大值为1000，获取后续日志需使用Context参数
-注意：
-* 仅当检索分析语句(Query)不包含SQL时有效
-* SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
-                     * @return Limit 表示单次查询返回的原始日志条数，默认为100，最大值为1000，获取后续日志需使用Context参数
-注意：
-* 仅当检索分析语句(Query)不包含SQL时有效
-* SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
-                     * 
-                     */
-                    int64_t GetLimit() const;
-
-                    /**
-                     * 设置表示单次查询返回的原始日志条数，默认为100，最大值为1000，获取后续日志需使用Context参数
-注意：
-* 仅当检索分析语句(Query)不包含SQL时有效
-* SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
-                     * @param _limit 表示单次查询返回的原始日志条数，默认为100，最大值为1000，获取后续日志需使用Context参数
-注意：
-* 仅当检索分析语句(Query)不包含SQL时有效
-* SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
-                     * 
-                     */
-                    void SetLimit(const int64_t& _limit);
-
-                    /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
-                     * 
-                     */
-                    bool LimitHasBeenSet() const;
-
-                    /**
                      * 获取原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
 注意：
 * 仅当检索分析语句(Query)不包含SQL时有效
@@ -266,6 +233,92 @@ namespace TencentCloud
                      * 
                      */
                     bool SortHasBeenSet() const;
+
+                    /**
+                     * 获取表示单次查询返回的原始日志条数，默认为100，最大值为1000。
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
+
+可通过两种方式获取后续更多日志：
+* Context:透传上次接口返回的Context值，获取后续更多日志，总计最多可获取1万条原始日志
+* Offset:偏移量，表示从第几行开始返回原始日志，无日志条数限制
+                     * @return Limit 表示单次查询返回的原始日志条数，默认为100，最大值为1000。
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
+
+可通过两种方式获取后续更多日志：
+* Context:透传上次接口返回的Context值，获取后续更多日志，总计最多可获取1万条原始日志
+* Offset:偏移量，表示从第几行开始返回原始日志，无日志条数限制
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置表示单次查询返回的原始日志条数，默认为100，最大值为1000。
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
+
+可通过两种方式获取后续更多日志：
+* Context:透传上次接口返回的Context值，获取后续更多日志，总计最多可获取1万条原始日志
+* Offset:偏移量，表示从第几行开始返回原始日志，无日志条数限制
+                     * @param _limit 表示单次查询返回的原始日志条数，默认为100，最大值为1000。
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
+
+可通过两种方式获取后续更多日志：
+* Context:透传上次接口返回的Context值，获取后续更多日志，总计最多可获取1万条原始日志
+* Offset:偏移量，表示从第几行开始返回原始日志，无日志条数限制
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取查询原始日志的偏移量，表示从第几行开始返回原始日志，默认为0。 
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* 不能与Context参数同时使用
+* 仅适用于单日志主题检索
+                     * @return Offset 查询原始日志的偏移量，表示从第几行开始返回原始日志，默认为0。 
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* 不能与Context参数同时使用
+* 仅适用于单日志主题检索
+                     * 
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置查询原始日志的偏移量，表示从第几行开始返回原始日志，默认为0。 
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* 不能与Context参数同时使用
+* 仅适用于单日志主题检索
+                     * @param _offset 查询原始日志的偏移量，表示从第几行开始返回原始日志，默认为0。 
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* 不能与Context参数同时使用
+* 仅适用于单日志主题检索
+                     * 
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。
@@ -417,15 +470,6 @@ namespace TencentCloud
                     bool m_topicsHasBeenSet;
 
                     /**
-                     * 表示单次查询返回的原始日志条数，默认为100，最大值为1000，获取后续日志需使用Context参数
-注意：
-* 仅当检索分析语句(Query)不包含SQL时有效
-* SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
-                     */
-                    int64_t m_limit;
-                    bool m_limitHasBeenSet;
-
-                    /**
                      * 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
 注意：
 * 仅当检索分析语句(Query)不包含SQL时有效
@@ -433,6 +477,29 @@ namespace TencentCloud
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;
+
+                    /**
+                     * 表示单次查询返回的原始日志条数，默认为100，最大值为1000。
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
+
+可通过两种方式获取后续更多日志：
+* Context:透传上次接口返回的Context值，获取后续更多日志，总计最多可获取1万条原始日志
+* Offset:偏移量，表示从第几行开始返回原始日志，无日志条数限制
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 查询原始日志的偏移量，表示从第几行开始返回原始日志，默认为0。 
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* 不能与Context参数同时使用
+* 仅适用于单日志主题检索
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                     /**
                      * 透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。

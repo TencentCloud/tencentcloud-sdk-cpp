@@ -21,7 +21,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 EditMediaTEHDConfig::EditMediaTEHDConfig() :
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_maxVideoBitrateHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome EditMediaTEHDConfig::Deserialize(const rapidjson::Value &val
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxVideoBitrate") && !value["MaxVideoBitrate"].IsNull())
+    {
+        if (!value["MaxVideoBitrate"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EditMediaTEHDConfig.MaxVideoBitrate` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxVideoBitrate = value["MaxVideoBitrate"].GetUint64();
+        m_maxVideoBitrateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void EditMediaTEHDConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxVideoBitrateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxVideoBitrate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxVideoBitrate, allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void EditMediaTEHDConfig::SetType(const string& _type)
 bool EditMediaTEHDConfig::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+uint64_t EditMediaTEHDConfig::GetMaxVideoBitrate() const
+{
+    return m_maxVideoBitrate;
+}
+
+void EditMediaTEHDConfig::SetMaxVideoBitrate(const uint64_t& _maxVideoBitrate)
+{
+    m_maxVideoBitrate = _maxVideoBitrate;
+    m_maxVideoBitrateHasBeenSet = true;
+}
+
+bool EditMediaTEHDConfig::MaxVideoBitrateHasBeenSet() const
+{
+    return m_maxVideoBitrateHasBeenSet;
 }
 

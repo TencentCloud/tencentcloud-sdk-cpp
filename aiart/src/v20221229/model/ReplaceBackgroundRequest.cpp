@@ -25,6 +25,7 @@ using namespace std;
 ReplaceBackgroundRequest::ReplaceBackgroundRequest() :
     m_productUrlHasBeenSet(false),
     m_promptHasBeenSet(false),
+    m_productHasBeenSet(false),
     m_maskUrlHasBeenSet(false),
     m_resolutionHasBeenSet(false),
     m_logoAddHasBeenSet(false),
@@ -54,6 +55,14 @@ string ReplaceBackgroundRequest::ToJsonString() const
         string key = "Prompt";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_prompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maskUrlHasBeenSet)
@@ -135,6 +144,22 @@ void ReplaceBackgroundRequest::SetPrompt(const string& _prompt)
 bool ReplaceBackgroundRequest::PromptHasBeenSet() const
 {
     return m_promptHasBeenSet;
+}
+
+string ReplaceBackgroundRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void ReplaceBackgroundRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool ReplaceBackgroundRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 string ReplaceBackgroundRequest::GetMaskUrl() const

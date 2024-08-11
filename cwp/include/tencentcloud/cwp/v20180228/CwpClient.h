@@ -961,6 +961,8 @@
 #include <tencentcloud/cwp/v20180228/model/ModifyRansomDefenseEventsStatusResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyRansomDefenseStrategyStatusRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyRansomDefenseStrategyStatusResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyReverseShellRulesAggregationRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyReverseShellRulesAggregationResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyRiskDnsPolicyRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyRiskDnsPolicyResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyRiskDnsPolicyStatusRequest.h>
@@ -2474,6 +2476,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRansomDefenseStrategyStatusResponse> ModifyRansomDefenseStrategyStatusOutcome;
                 typedef std::future<ModifyRansomDefenseStrategyStatusOutcome> ModifyRansomDefenseStrategyStatusOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyRansomDefenseStrategyStatusRequest&, ModifyRansomDefenseStrategyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRansomDefenseStrategyStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyReverseShellRulesAggregationResponse> ModifyReverseShellRulesAggregationOutcome;
+                typedef std::future<ModifyReverseShellRulesAggregationOutcome> ModifyReverseShellRulesAggregationOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ModifyReverseShellRulesAggregationRequest&, ModifyReverseShellRulesAggregationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReverseShellRulesAggregationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRiskDnsPolicyResponse> ModifyRiskDnsPolicyOutcome;
                 typedef std::future<ModifyRiskDnsPolicyOutcome> ModifyRiskDnsPolicyOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyRiskDnsPolicyRequest&, ModifyRiskDnsPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRiskDnsPolicyAsyncHandler;
@@ -2733,7 +2738,9 @@ namespace TencentCloud
                 CreateBuyBindTaskOutcomeCallable CreateBuyBindTaskCallable(const Model::CreateBuyBindTaskRequest& request);
 
                 /**
-                 *云护航服务使用完成后，该接口可以确认收货
+                 *云护航计费产品已下线
+
+云护航服务使用完成后，该接口可以确认收货
                  * @param req CreateCloudProtectServiceOrderRecordRequest
                  * @return CreateCloudProtectServiceOrderRecordOutcome
                  */
@@ -6839,6 +6846,15 @@ namespace TencentCloud
                 ModifyRansomDefenseStrategyStatusOutcome ModifyRansomDefenseStrategyStatus(const Model::ModifyRansomDefenseStrategyStatusRequest &request);
                 void ModifyRansomDefenseStrategyStatusAsync(const Model::ModifyRansomDefenseStrategyStatusRequest& request, const ModifyRansomDefenseStrategyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRansomDefenseStrategyStatusOutcomeCallable ModifyRansomDefenseStrategyStatusCallable(const Model::ModifyRansomDefenseStrategyStatusRequest& request);
+
+                /**
+                 *编辑反弹Shell规则（支持多服务器选择）
+                 * @param req ModifyReverseShellRulesAggregationRequest
+                 * @return ModifyReverseShellRulesAggregationOutcome
+                 */
+                ModifyReverseShellRulesAggregationOutcome ModifyReverseShellRulesAggregation(const Model::ModifyReverseShellRulesAggregationRequest &request);
+                void ModifyReverseShellRulesAggregationAsync(const Model::ModifyReverseShellRulesAggregationRequest& request, const ModifyReverseShellRulesAggregationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyReverseShellRulesAggregationOutcomeCallable ModifyReverseShellRulesAggregationCallable(const Model::ModifyReverseShellRulesAggregationRequest& request);
 
                 /**
                  *更改恶意请求策略

@@ -91,7 +91,8 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取私有化默认分组id-名称-操作系统
+                     * 获取【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配）
+id-名称-操作系统
 1	全网终端	Win
 2	未分组终端	Win
 30000000	服务器	Win
@@ -105,7 +106,8 @@ namespace TencentCloud
 40000402	未分组终端	Android
 40000501	全网终端	iOS
 40000502	未分组终端	iOS
-                     * @return GroupId 私有化默认分组id-名称-操作系统
+                     * @return GroupId 【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配）
+id-名称-操作系统
 1	全网终端	Win
 2	未分组终端	Win
 30000000	服务器	Win
@@ -124,7 +126,8 @@ namespace TencentCloud
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置私有化默认分组id-名称-操作系统
+                     * 设置【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配）
+id-名称-操作系统
 1	全网终端	Win
 2	未分组终端	Win
 30000000	服务器	Win
@@ -138,7 +141,8 @@ namespace TencentCloud
 40000402	未分组终端	Android
 40000501	全网终端	iOS
 40000502	未分组终端	iOS
-                     * @param _groupId 私有化默认分组id-名称-操作系统
+                     * @param _groupId 【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配）
+id-名称-操作系统
 1	全网终端	Win
 2	未分组终端	Win
 30000000	服务器	Win
@@ -164,15 +168,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
-                     * @return OsType 系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
+                     * 获取【必填】操作系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
+                     * @return OsType 【必填】操作系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
-                     * @param _osType 系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
+                     * 设置【必填】操作系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
+                     * @param _osType 【必填】操作系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -185,15 +189,15 @@ namespace TencentCloud
                     bool OsTypeHasBeenSet() const;
 
                     /**
-                     * 获取在线状态 2 在线 0，1 离线
-                     * @return OnlineStatus 在线状态 2 在线 0，1 离线
+                     * 获取在线状态 （2表示在线，0或者1表示离线）
+                     * @return OnlineStatus 在线状态 （2表示在线，0或者1表示离线）
                      * 
                      */
                     int64_t GetOnlineStatus() const;
 
                     /**
-                     * 设置在线状态 2 在线 0，1 离线
-                     * @param _onlineStatus 在线状态 2 在线 0，1 离线
+                     * 设置在线状态 （2表示在线，0或者1表示离线）
+                     * @param _onlineStatus 在线状态 （2表示在线，0或者1表示离线）
                      * 
                      */
                     void SetOnlineStatus(const int64_t& _onlineStatus);
@@ -248,15 +252,15 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取获取第几页--兼容旧接口,参数同Condition(只支持32位)
-                     * @return PageNum 获取第几页--兼容旧接口,参数同Condition(只支持32位)
+                     * 获取获取第几页--兼容旧接口,参数同Condition
+                     * @return PageNum 获取第几页--兼容旧接口,参数同Condition
                      * 
                      */
                     int64_t GetPageNum() const;
 
                     /**
-                     * 设置获取第几页--兼容旧接口,参数同Condition(只支持32位)
-                     * @param _pageNum 获取第几页--兼容旧接口,参数同Condition(只支持32位)
+                     * 设置获取第几页--兼容旧接口,参数同Condition
+                     * @param _pageNum 获取第几页--兼容旧接口,参数同Condition
                      * 
                      */
                     void SetPageNum(const int64_t& _pageNum);
@@ -269,15 +273,15 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取每页获取数--兼容旧接口,参数同Condition(只支持32位)
-                     * @return PageSize 每页获取数--兼容旧接口,参数同Condition(只支持32位)
+                     * 获取每页获取数--兼容旧接口,参数同Condition
+                     * @return PageSize 每页获取数--兼容旧接口,参数同Condition
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页获取数--兼容旧接口,参数同Condition(只支持32位)
-                     * @param _pageSize 每页获取数--兼容旧接口,参数同Condition(只支持32位)
+                     * 设置每页获取数--兼容旧接口,参数同Condition
+                     * @param _pageSize 每页获取数--兼容旧接口,参数同Condition
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -325,7 +329,8 @@ namespace TencentCloud
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 私有化默认分组id-名称-操作系统
+                     * 【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配）
+id-名称-操作系统
 1	全网终端	Win
 2	未分组终端	Win
 30000000	服务器	Win
@@ -344,13 +349,13 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）
+                     * 【必填】操作系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;
 
                     /**
-                     * 在线状态 2 在线 0，1 离线
+                     * 在线状态 （2表示在线，0或者1表示离线）
                      */
                     int64_t m_onlineStatus;
                     bool m_onlineStatusHasBeenSet;
@@ -368,13 +373,13 @@ namespace TencentCloud
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 获取第几页--兼容旧接口,参数同Condition(只支持32位)
+                     * 获取第几页--兼容旧接口,参数同Condition
                      */
                     int64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 每页获取数--兼容旧接口,参数同Condition(只支持32位)
+                     * 每页获取数--兼容旧接口,参数同Condition
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

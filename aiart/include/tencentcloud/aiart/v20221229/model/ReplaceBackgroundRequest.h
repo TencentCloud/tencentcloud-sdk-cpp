@@ -94,6 +94,31 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
+                     * 获取商品图中的商品主体名称。
+建议说明商品主体，否则影响生成效果。
+                     * @return Product 商品图中的商品主体名称。
+建议说明商品主体，否则影响生成效果。
+                     * 
+                     */
+                    std::string GetProduct() const;
+
+                    /**
+                     * 设置商品图中的商品主体名称。
+建议说明商品主体，否则影响生成效果。
+                     * @param _product 商品图中的商品主体名称。
+建议说明商品主体，否则影响生成效果。
+                     * 
+                     */
+                    void SetProduct(const std::string& _product);
+
+                    /**
+                     * 判断参数 Product 是否已赋值
+                     * @return Product 是否已赋值
+                     * 
+                     */
+                    bool ProductHasBeenSet() const;
+
+                    /**
                      * 获取商品 Mask 图 Url，要求背景透明，保留商品主体。
 如果不传，将自动使用内置的商品分割算法得到 Mask。
 支持自定义上传 Mask，如果该参数不为空，则以实际上传的数据为准。
@@ -257,6 +282,13 @@ namespace TencentCloud
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
+
+                    /**
+                     * 商品图中的商品主体名称。
+建议说明商品主体，否则影响生成效果。
+                     */
+                    std::string m_product;
+                    bool m_productHasBeenSet;
 
                     /**
                      * 商品 Mask 图 Url，要求背景透明，保留商品主体。

@@ -25,8 +25,14 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/smh/v20210712/model/CreateLibraryRequest.h>
 #include <tencentcloud/smh/v20210712/model/CreateLibraryResponse.h>
+#include <tencentcloud/smh/v20210712/model/CreateUserRequest.h>
+#include <tencentcloud/smh/v20210712/model/CreateUserResponse.h>
+#include <tencentcloud/smh/v20210712/model/CreateUserLifecycleRequest.h>
+#include <tencentcloud/smh/v20210712/model/CreateUserLifecycleResponse.h>
 #include <tencentcloud/smh/v20210712/model/DeleteLibraryRequest.h>
 #include <tencentcloud/smh/v20210712/model/DeleteLibraryResponse.h>
+#include <tencentcloud/smh/v20210712/model/DeleteUserRequest.h>
+#include <tencentcloud/smh/v20210712/model/DeleteUserResponse.h>
 #include <tencentcloud/smh/v20210712/model/DescribeLibrariesRequest.h>
 #include <tencentcloud/smh/v20210712/model/DescribeLibrariesResponse.h>
 #include <tencentcloud/smh/v20210712/model/DescribeLibrarySecretRequest.h>
@@ -37,8 +43,12 @@
 #include <tencentcloud/smh/v20210712/model/DescribeOfficialOverviewResponse.h>
 #include <tencentcloud/smh/v20210712/model/DescribeTrafficPackagesRequest.h>
 #include <tencentcloud/smh/v20210712/model/DescribeTrafficPackagesResponse.h>
+#include <tencentcloud/smh/v20210712/model/DescribeUserLifecycleRequest.h>
+#include <tencentcloud/smh/v20210712/model/DescribeUserLifecycleResponse.h>
 #include <tencentcloud/smh/v20210712/model/ModifyLibraryRequest.h>
 #include <tencentcloud/smh/v20210712/model/ModifyLibraryResponse.h>
+#include <tencentcloud/smh/v20210712/model/ModifyUserRequest.h>
+#include <tencentcloud/smh/v20210712/model/ModifyUserResponse.h>
 #include <tencentcloud/smh/v20210712/model/SendSmsCodeRequest.h>
 #include <tencentcloud/smh/v20210712/model/SendSmsCodeResponse.h>
 #include <tencentcloud/smh/v20210712/model/VerifySmsCodeRequest.h>
@@ -60,9 +70,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLibraryResponse> CreateLibraryOutcome;
                 typedef std::future<CreateLibraryOutcome> CreateLibraryOutcomeCallable;
                 typedef std::function<void(const SmhClient*, const Model::CreateLibraryRequest&, CreateLibraryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLibraryAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
+                typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
+                typedef std::function<void(const SmhClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserLifecycleResponse> CreateUserLifecycleOutcome;
+                typedef std::future<CreateUserLifecycleOutcome> CreateUserLifecycleOutcomeCallable;
+                typedef std::function<void(const SmhClient*, const Model::CreateUserLifecycleRequest&, CreateUserLifecycleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserLifecycleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLibraryResponse> DeleteLibraryOutcome;
                 typedef std::future<DeleteLibraryOutcome> DeleteLibraryOutcomeCallable;
                 typedef std::function<void(const SmhClient*, const Model::DeleteLibraryRequest&, DeleteLibraryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLibraryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteUserResponse> DeleteUserOutcome;
+                typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
+                typedef std::function<void(const SmhClient*, const Model::DeleteUserRequest&, DeleteUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLibrariesResponse> DescribeLibrariesOutcome;
                 typedef std::future<DescribeLibrariesOutcome> DescribeLibrariesOutcomeCallable;
                 typedef std::function<void(const SmhClient*, const Model::DescribeLibrariesRequest&, DescribeLibrariesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLibrariesAsyncHandler;
@@ -78,9 +97,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTrafficPackagesResponse> DescribeTrafficPackagesOutcome;
                 typedef std::future<DescribeTrafficPackagesOutcome> DescribeTrafficPackagesOutcomeCallable;
                 typedef std::function<void(const SmhClient*, const Model::DescribeTrafficPackagesRequest&, DescribeTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrafficPackagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserLifecycleResponse> DescribeUserLifecycleOutcome;
+                typedef std::future<DescribeUserLifecycleOutcome> DescribeUserLifecycleOutcomeCallable;
+                typedef std::function<void(const SmhClient*, const Model::DescribeUserLifecycleRequest&, DescribeUserLifecycleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserLifecycleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLibraryResponse> ModifyLibraryOutcome;
                 typedef std::future<ModifyLibraryOutcome> ModifyLibraryOutcomeCallable;
                 typedef std::function<void(const SmhClient*, const Model::ModifyLibraryRequest&, ModifyLibraryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLibraryAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
+                typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
+                typedef std::function<void(const SmhClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::SendSmsCodeResponse> SendSmsCodeOutcome;
                 typedef std::future<SendSmsCodeOutcome> SendSmsCodeOutcomeCallable;
                 typedef std::function<void(const SmhClient*, const Model::SendSmsCodeRequest&, SendSmsCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendSmsCodeAsyncHandler;
@@ -100,6 +125,24 @@ namespace TencentCloud
                 CreateLibraryOutcomeCallable CreateLibraryCallable(const Model::CreateLibraryRequest& request);
 
                 /**
+                 *新建用户。
+                 * @param req CreateUserRequest
+                 * @return CreateUserOutcome
+                 */
+                CreateUserOutcome CreateUser(const Model::CreateUserRequest &request);
+                void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request);
+
+                /**
+                 *设置用户生命周期。如果指定的用户已经设置了生命周期，重复调用此接口将覆盖已有的设置。也可用于清除指定用户的生命周期。
+                 * @param req CreateUserLifecycleRequest
+                 * @return CreateUserLifecycleOutcome
+                 */
+                CreateUserLifecycleOutcome CreateUserLifecycle(const Model::CreateUserLifecycleRequest &request);
+                void CreateUserLifecycleAsync(const Model::CreateUserLifecycleRequest& request, const CreateUserLifecycleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserLifecycleOutcomeCallable CreateUserLifecycleCallable(const Model::CreateUserLifecycleRequest& request);
+
+                /**
                  *删除 PaaS 服务媒体库
                  * @param req DeleteLibraryRequest
                  * @return DeleteLibraryOutcome
@@ -107,6 +150,15 @@ namespace TencentCloud
                 DeleteLibraryOutcome DeleteLibrary(const Model::DeleteLibraryRequest &request);
                 void DeleteLibraryAsync(const Model::DeleteLibraryRequest& request, const DeleteLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteLibraryOutcomeCallable DeleteLibraryCallable(const Model::DeleteLibraryRequest& request);
+
+                /**
+                 *一次删除多个用户。
+                 * @param req DeleteUserRequest
+                 * @return DeleteUserOutcome
+                 */
+                DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest &request);
+                void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request);
 
                 /**
                  *查询 PaaS 服务媒体库列表
@@ -154,6 +206,15 @@ namespace TencentCloud
                 DescribeTrafficPackagesOutcomeCallable DescribeTrafficPackagesCallable(const Model::DescribeTrafficPackagesRequest& request);
 
                 /**
+                 *查询用户生命周期。
+                 * @param req DescribeUserLifecycleRequest
+                 * @return DescribeUserLifecycleOutcome
+                 */
+                DescribeUserLifecycleOutcome DescribeUserLifecycle(const Model::DescribeUserLifecycleRequest &request);
+                void DescribeUserLifecycleAsync(const Model::DescribeUserLifecycleRequest& request, const DescribeUserLifecycleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserLifecycleOutcomeCallable DescribeUserLifecycleCallable(const Model::DescribeUserLifecycleRequest& request);
+
+                /**
                  *修改 PaaS 服务媒体库配置项
                  * @param req ModifyLibraryRequest
                  * @return ModifyLibraryOutcome
@@ -161,6 +222,15 @@ namespace TencentCloud
                 ModifyLibraryOutcome ModifyLibrary(const Model::ModifyLibraryRequest &request);
                 void ModifyLibraryAsync(const Model::ModifyLibraryRequest& request, const ModifyLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLibraryOutcomeCallable ModifyLibraryCallable(const Model::ModifyLibraryRequest& request);
+
+                /**
+                 *更新用户信息。
+                 * @param req ModifyUserRequest
+                 * @return ModifyUserOutcome
+                 */
+                ModifyUserOutcome ModifyUser(const Model::ModifyUserRequest &request);
+                void ModifyUserAsync(const Model::ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserOutcomeCallable ModifyUserCallable(const Model::ModifyUserRequest& request);
 
                 /**
                  *发送用于换绑官方云盘实例的超级管理员账号的短信验证码

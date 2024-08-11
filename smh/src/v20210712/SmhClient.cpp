@@ -83,6 +83,92 @@ SmhClient::CreateLibraryOutcomeCallable SmhClient::CreateLibraryCallable(const C
     return task->get_future();
 }
 
+SmhClient::CreateUserOutcome SmhClient::CreateUser(const CreateUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserResponse rsp = CreateUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserOutcome(rsp);
+        else
+            return CreateUserOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserOutcome(outcome.GetError());
+    }
+}
+
+void SmhClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmhClient::CreateUserOutcomeCallable SmhClient::CreateUserCallable(const CreateUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUserOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SmhClient::CreateUserLifecycleOutcome SmhClient::CreateUserLifecycle(const CreateUserLifecycleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserLifecycle");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserLifecycleResponse rsp = CreateUserLifecycleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserLifecycleOutcome(rsp);
+        else
+            return CreateUserLifecycleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserLifecycleOutcome(outcome.GetError());
+    }
+}
+
+void SmhClient::CreateUserLifecycleAsync(const CreateUserLifecycleRequest& request, const CreateUserLifecycleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUserLifecycle(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmhClient::CreateUserLifecycleOutcomeCallable SmhClient::CreateUserLifecycleCallable(const CreateUserLifecycleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUserLifecycleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUserLifecycle(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SmhClient::DeleteLibraryOutcome SmhClient::DeleteLibrary(const DeleteLibraryRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteLibrary");
@@ -119,6 +205,49 @@ SmhClient::DeleteLibraryOutcomeCallable SmhClient::DeleteLibraryCallable(const D
         [this, request]()
         {
             return this->DeleteLibrary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SmhClient::DeleteUserOutcome SmhClient::DeleteUser(const DeleteUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUserResponse rsp = DeleteUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUserOutcome(rsp);
+        else
+            return DeleteUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUserOutcome(outcome.GetError());
+    }
+}
+
+void SmhClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmhClient::DeleteUserOutcomeCallable SmhClient::DeleteUserCallable(const DeleteUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteUserOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteUser(request);
         }
     );
 
@@ -341,6 +470,49 @@ SmhClient::DescribeTrafficPackagesOutcomeCallable SmhClient::DescribeTrafficPack
     return task->get_future();
 }
 
+SmhClient::DescribeUserLifecycleOutcome SmhClient::DescribeUserLifecycle(const DescribeUserLifecycleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserLifecycle");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserLifecycleResponse rsp = DescribeUserLifecycleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserLifecycleOutcome(rsp);
+        else
+            return DescribeUserLifecycleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserLifecycleOutcome(outcome.GetError());
+    }
+}
+
+void SmhClient::DescribeUserLifecycleAsync(const DescribeUserLifecycleRequest& request, const DescribeUserLifecycleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserLifecycle(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmhClient::DescribeUserLifecycleOutcomeCallable SmhClient::DescribeUserLifecycleCallable(const DescribeUserLifecycleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserLifecycleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserLifecycle(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SmhClient::ModifyLibraryOutcome SmhClient::ModifyLibrary(const ModifyLibraryRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyLibrary");
@@ -377,6 +549,49 @@ SmhClient::ModifyLibraryOutcomeCallable SmhClient::ModifyLibraryCallable(const M
         [this, request]()
         {
             return this->ModifyLibrary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SmhClient::ModifyUserOutcome SmhClient::ModifyUser(const ModifyUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserResponse rsp = ModifyUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserOutcome(rsp);
+        else
+            return ModifyUserOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserOutcome(outcome.GetError());
+    }
+}
+
+void SmhClient::ModifyUserAsync(const ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmhClient::ModifyUserOutcomeCallable SmhClient::ModifyUserCallable(const ModifyUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUser(request);
         }
     );
 
