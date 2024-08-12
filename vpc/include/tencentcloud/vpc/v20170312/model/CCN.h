@@ -511,6 +511,31 @@ namespace TencentCloud
                      */
                     bool DirectConnectAccelerateChannelFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持ipv6路由表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ipv6Flag 是否支持ipv6路由表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIpv6Flag() const;
+
+                    /**
+                     * 设置是否支持ipv6路由表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ipv6Flag 是否支持ipv6路由表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIpv6Flag(const std::string& _ipv6Flag);
+
+                    /**
+                     * 判断参数 Ipv6Flag 是否已赋值
+                     * @return Ipv6Flag 是否已赋值
+                     * 
+                     */
+                    bool Ipv6FlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -643,6 +668,13 @@ namespace TencentCloud
                      */
                     bool m_directConnectAccelerateChannelFlag;
                     bool m_directConnectAccelerateChannelFlagHasBeenSet;
+
+                    /**
+                     * 是否支持ipv6路由表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ipv6Flag;
+                    bool m_ipv6FlagHasBeenSet;
 
                 };
             }

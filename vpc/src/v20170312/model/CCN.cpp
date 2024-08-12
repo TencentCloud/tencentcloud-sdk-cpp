@@ -40,7 +40,8 @@ CCN::CCN() :
     m_routeOverlapFlagHasBeenSet(false),
     m_trafficMarkingPolicyFlagHasBeenSet(false),
     m_routeSelectPolicyFlagHasBeenSet(false),
-    m_directConnectAccelerateChannelFlagHasBeenSet(false)
+    m_directConnectAccelerateChannelFlagHasBeenSet(false),
+    m_ipv6FlagHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,16 @@ CoreInternalOutcome CCN::Deserialize(const rapidjson::Value &value)
         m_directConnectAccelerateChannelFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6Flag") && !value["Ipv6Flag"].IsNull())
+    {
+        if (!value["Ipv6Flag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCN.Ipv6Flag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6Flag = string(value["Ipv6Flag"].GetString());
+        m_ipv6FlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -431,6 +442,14 @@ void CCN::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "DirectConnectAccelerateChannelFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_directConnectAccelerateChannelFlag, allocator);
+    }
+
+    if (m_ipv6FlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6Flag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipv6Flag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -754,5 +773,21 @@ void CCN::SetDirectConnectAccelerateChannelFlag(const bool& _directConnectAccele
 bool CCN::DirectConnectAccelerateChannelFlagHasBeenSet() const
 {
     return m_directConnectAccelerateChannelFlagHasBeenSet;
+}
+
+string CCN::GetIpv6Flag() const
+{
+    return m_ipv6Flag;
+}
+
+void CCN::SetIpv6Flag(const string& _ipv6Flag)
+{
+    m_ipv6Flag = _ipv6Flag;
+    m_ipv6FlagHasBeenSet = true;
+}
+
+bool CCN::Ipv6FlagHasBeenSet() const
+{
+    return m_ipv6FlagHasBeenSet;
 }
 

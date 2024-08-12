@@ -319,6 +319,56 @@ namespace TencentCloud
                      */
                     bool InstanceExtraNameHasBeenSet() const;
 
+                    /**
+                     * 获取实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AliasType 实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAliasType() const;
+
+                    /**
+                     * 设置实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aliasType 实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAliasType(const std::string& _aliasType);
+
+                    /**
+                     * 判断参数 AliasType 是否已赋值
+                     * @return AliasType 是否已赋值
+                     * 
+                     */
+                    bool AliasTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AliasInstanceId 实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAliasInstanceId() const;
+
+                    /**
+                     * 设置实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aliasInstanceId 实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAliasInstanceId(const std::string& _aliasInstanceId);
+
+                    /**
+                     * 判断参数 AliasInstanceId 是否已赋值
+                     * @return AliasInstanceId 是否已赋值
+                     * 
+                     */
+                    bool AliasInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +448,20 @@ namespace TencentCloud
                      */
                     std::string m_instanceExtraName;
                     bool m_instanceExtraNameHasBeenSet;
+
+                    /**
+                     * 实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_aliasType;
+                    bool m_aliasTypeHasBeenSet;
+
+                    /**
+                     * 实例id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_aliasInstanceId;
+                    bool m_aliasInstanceIdHasBeenSet;
 
                 };
             }
