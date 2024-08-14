@@ -171,6 +171,56 @@ namespace TencentCloud
                      */
                     bool WelcomeMessageHasBeenSet() const;
 
+                    /**
+                     * 获取智能打断模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InterruptMode 智能打断模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetInterruptMode() const;
+
+                    /**
+                     * 设置智能打断模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _interruptMode 智能打断模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInterruptMode(const uint64_t& _interruptMode);
+
+                    /**
+                     * 判断参数 InterruptMode 是否已赋值
+                     * @return InterruptMode 是否已赋值
+                     * 
+                     */
+                    bool InterruptModeHasBeenSet() const;
+
+                    /**
+                     * 获取InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InterruptSpeechDuration InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetInterruptSpeechDuration() const;
+
+                    /**
+                     * 设置InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _interruptSpeechDuration InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInterruptSpeechDuration(const uint64_t& _interruptSpeechDuration);
+
+                    /**
+                     * 判断参数 InterruptSpeechDuration 是否已赋值
+                     * @return InterruptSpeechDuration 是否已赋值
+                     * 
+                     */
+                    bool InterruptSpeechDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +257,20 @@ namespace TencentCloud
                      */
                     std::string m_welcomeMessage;
                     bool m_welcomeMessageHasBeenSet;
+
+                    /**
+                     * 智能打断模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_interruptMode;
+                    bool m_interruptModeHasBeenSet;
+
+                    /**
+                     * InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_interruptSpeechDuration;
+                    bool m_interruptSpeechDurationHasBeenSet;
 
                 };
             }

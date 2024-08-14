@@ -23,7 +23,9 @@ using namespace std;
 SmartOptimizerLifecyclePolicy::SmartOptimizerLifecyclePolicy() :
     m_lifecycleEnableHasBeenSet(false),
     m_expirationHasBeenSet(false),
-    m_dropTableHasBeenSet(false)
+    m_dropTableHasBeenSet(false),
+    m_expiredFieldHasBeenSet(false),
+    m_expiredFieldFormatHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome SmartOptimizerLifecyclePolicy::Deserialize(const rapidjson::
         m_dropTableHasBeenSet = true;
     }
 
+    if (value.HasMember("ExpiredField") && !value["ExpiredField"].IsNull())
+    {
+        if (!value["ExpiredField"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartOptimizerLifecyclePolicy.ExpiredField` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expiredField = string(value["ExpiredField"].GetString());
+        m_expiredFieldHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpiredFieldFormat") && !value["ExpiredFieldFormat"].IsNull())
+    {
+        if (!value["ExpiredFieldFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartOptimizerLifecyclePolicy.ExpiredFieldFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expiredFieldFormat = string(value["ExpiredFieldFormat"].GetString());
+        m_expiredFieldFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void SmartOptimizerLifecyclePolicy::ToJsonObject(rapidjson::Value &value, rapidj
         string key = "DropTable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dropTable, allocator);
+    }
+
+    if (m_expiredFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredField";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expiredField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiredFieldFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredFieldFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expiredFieldFormat.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void SmartOptimizerLifecyclePolicy::SetDropTable(const bool& _dropTable)
 bool SmartOptimizerLifecyclePolicy::DropTableHasBeenSet() const
 {
     return m_dropTableHasBeenSet;
+}
+
+string SmartOptimizerLifecyclePolicy::GetExpiredField() const
+{
+    return m_expiredField;
+}
+
+void SmartOptimizerLifecyclePolicy::SetExpiredField(const string& _expiredField)
+{
+    m_expiredField = _expiredField;
+    m_expiredFieldHasBeenSet = true;
+}
+
+bool SmartOptimizerLifecyclePolicy::ExpiredFieldHasBeenSet() const
+{
+    return m_expiredFieldHasBeenSet;
+}
+
+string SmartOptimizerLifecyclePolicy::GetExpiredFieldFormat() const
+{
+    return m_expiredFieldFormat;
+}
+
+void SmartOptimizerLifecyclePolicy::SetExpiredFieldFormat(const string& _expiredFieldFormat)
+{
+    m_expiredFieldFormat = _expiredFieldFormat;
+    m_expiredFieldFormatHasBeenSet = true;
+}
+
+bool SmartOptimizerLifecyclePolicy::ExpiredFieldFormatHasBeenSet() const
+{
+    return m_expiredFieldFormatHasBeenSet;
 }
 

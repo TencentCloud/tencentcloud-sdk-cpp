@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取域名类型，0:拉流域名 1:推流域名
+                     * @return DomainType 域名类型，0:拉流域名 1:推流域名
+                     * 
+                     */
+                    int64_t GetDomainType() const;
+
+                    /**
+                     * 设置域名类型，0:拉流域名 1:推流域名
+                     * @param _domainType 域名类型，0:拉流域名 1:推流域名
+                     * 
+                     */
+                    void SetDomainType(const int64_t& _domainType);
+
+                    /**
+                     * 判断参数 DomainType 是否已赋值
+                     * @return DomainType 是否已赋值
+                     * 
+                     */
+                    bool DomainTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 域名类型，0:拉流域名 1:推流域名
+                     */
+                    int64_t m_domainType;
+                    bool m_domainTypeHasBeenSet;
 
                 };
             }

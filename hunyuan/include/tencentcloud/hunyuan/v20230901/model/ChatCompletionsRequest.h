@@ -472,6 +472,27 @@ namespace TencentCloud
                      */
                     bool CitationHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启极速版搜索，默认false，不开启；在开启且命中搜索时，会启用极速版搜索，流式输出首字返回更快。
+                     * @return EnableSpeedSearch 是否开启极速版搜索，默认false，不开启；在开启且命中搜索时，会启用极速版搜索，流式输出首字返回更快。
+                     * 
+                     */
+                    bool GetEnableSpeedSearch() const;
+
+                    /**
+                     * 设置是否开启极速版搜索，默认false，不开启；在开启且命中搜索时，会启用极速版搜索，流式输出首字返回更快。
+                     * @param _enableSpeedSearch 是否开启极速版搜索，默认false，不开启；在开启且命中搜索时，会启用极速版搜索，流式输出首字返回更快。
+                     * 
+                     */
+                    void SetEnableSpeedSearch(const bool& _enableSpeedSearch);
+
+                    /**
+                     * 判断参数 EnableSpeedSearch 是否已赋值
+                     * @return EnableSpeedSearch 是否已赋值
+                     * 
+                     */
+                    bool EnableSpeedSearchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -589,6 +610,12 @@ namespace TencentCloud
                      */
                     bool m_citation;
                     bool m_citationHasBeenSet;
+
+                    /**
+                     * 是否开启极速版搜索，默认false，不开启；在开启且命中搜索时，会启用极速版搜索，流式输出首字返回更快。
+                     */
+                    bool m_enableSpeedSearch;
+                    bool m_enableSpeedSearchHasBeenSet;
 
                 };
             }

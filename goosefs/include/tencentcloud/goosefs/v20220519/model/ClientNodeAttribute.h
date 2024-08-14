@@ -109,6 +109,94 @@ namespace TencentCloud
                      */
                     bool ClientTypeHasBeenSet() const;
 
+                    /**
+                     * 获取节点所属vpcid	
+                     * @return VpcId 节点所属vpcid	
+                     * 
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置节点所属vpcid	
+                     * @param _vpcId 节点所属vpcid	
+                     * 
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     * 
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取节点所属子网id
+                     * @return SubnetId 节点所属子网id
+                     * 
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置节点所属子网id
+                     * @param _subnetId 节点所属子网id
+                     * 
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     * 
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取cvmId
+                     * @return InstanceId cvmId
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置cvmId
+                     * @param _instanceId cvmId
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取自定义挂载点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MountPoint 自定义挂载点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMountPoint() const;
+
+                    /**
+                     * 设置自定义挂载点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mountPoint 自定义挂载点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMountPoint(const std::string& _mountPoint);
+
+                    /**
+                     * 判断参数 MountPoint 是否已赋值
+                     * @return MountPoint 是否已赋值
+                     * 
+                     */
+                    bool MountPointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +216,31 @@ namespace TencentCloud
                      */
                     std::string m_clientType;
                     bool m_clientTypeHasBeenSet;
+
+                    /**
+                     * 节点所属vpcid	
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 节点所属子网id
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * cvmId
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 自定义挂载点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_mountPoint;
+                    bool m_mountPointHasBeenSet;
 
                 };
             }

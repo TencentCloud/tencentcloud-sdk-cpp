@@ -27,7 +27,9 @@ TColumn::TColumn() :
     m_defaultHasBeenSet(false),
     m_notNullHasBeenSet(false),
     m_precisionHasBeenSet(false),
-    m_scaleHasBeenSet(false)
+    m_scaleHasBeenSet(false),
+    m_positionHasBeenSet(false),
+    m_isPartitionHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome TColumn::Deserialize(const rapidjson::Value &value)
         m_scaleHasBeenSet = true;
     }
 
+    if (value.HasMember("Position") && !value["Position"].IsNull())
+    {
+        if (!value["Position"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TColumn.Position` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_position = value["Position"].GetInt64();
+        m_positionHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsPartition") && !value["IsPartition"].IsNull())
+    {
+        if (!value["IsPartition"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TColumn.IsPartition` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPartition = value["IsPartition"].GetBool();
+        m_isPartitionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void TColumn::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Scale";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scale, allocator);
+    }
+
+    if (m_positionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Position";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_position, allocator);
+    }
+
+    if (m_isPartitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPartition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPartition, allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void TColumn::SetScale(const int64_t& _scale)
 bool TColumn::ScaleHasBeenSet() const
 {
     return m_scaleHasBeenSet;
+}
+
+int64_t TColumn::GetPosition() const
+{
+    return m_position;
+}
+
+void TColumn::SetPosition(const int64_t& _position)
+{
+    m_position = _position;
+    m_positionHasBeenSet = true;
+}
+
+bool TColumn::PositionHasBeenSet() const
+{
+    return m_positionHasBeenSet;
+}
+
+bool TColumn::GetIsPartition() const
+{
+    return m_isPartition;
+}
+
+void TColumn::SetIsPartition(const bool& _isPartition)
+{
+    m_isPartition = _isPartition;
+    m_isPartitionHasBeenSet = true;
+}
+
+bool TColumn::IsPartitionHasBeenSet() const
+{
+    return m_isPartitionHasBeenSet;
 }
 

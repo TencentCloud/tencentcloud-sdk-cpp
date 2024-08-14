@@ -750,6 +750,56 @@ namespace TencentCloud
                      */
                     bool SubscribeSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取RTMP推流地址自定义appName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppName RTMP推流地址自定义appName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppName() const;
+
+                    /**
+                     * 设置RTMP推流地址自定义appName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appName RTMP推流地址自定义appName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppName(const std::string& _appName);
+
+                    /**
+                     * 判断参数 AppName 是否已赋值
+                     * @return AppName 是否已赋值
+                     * 
+                     */
+                    bool AppNameHasBeenSet() const;
+
+                    /**
+                     * 获取RTMP推流地址自定义streamName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StreamName RTMP推流地址自定义streamName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStreamName() const;
+
+                    /**
+                     * 设置RTMP推流地址自定义streamName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _streamName RTMP推流地址自定义streamName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStreamName(const std::string& _streamName);
+
+                    /**
+                     * 判断参数 StreamName 是否已赋值
+                     * @return StreamName 是否已赋值
+                     * 
+                     */
+                    bool StreamNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -948,6 +998,20 @@ namespace TencentCloud
                      */
                     int64_t m_subscribeSwitch;
                     bool m_subscribeSwitchHasBeenSet;
+
+                    /**
+                     * RTMP推流地址自定义appName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appName;
+                    bool m_appNameHasBeenSet;
+
+                    /**
+                     * RTMP推流地址自定义streamName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_streamName;
+                    bool m_streamNameHasBeenSet;
 
                 };
             }

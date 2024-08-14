@@ -25,7 +25,9 @@ AgentConfig::AgentConfig() :
     m_userSigHasBeenSet(false),
     m_targetUserIdHasBeenSet(false),
     m_maxIdleTimeHasBeenSet(false),
-    m_welcomeMessageHasBeenSet(false)
+    m_welcomeMessageHasBeenSet(false),
+    m_interruptModeHasBeenSet(false),
+    m_interruptSpeechDurationHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome AgentConfig::Deserialize(const rapidjson::Value &value)
         m_welcomeMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("InterruptMode") && !value["InterruptMode"].IsNull())
+    {
+        if (!value["InterruptMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.InterruptMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_interruptMode = value["InterruptMode"].GetUint64();
+        m_interruptModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InterruptSpeechDuration") && !value["InterruptSpeechDuration"].IsNull())
+    {
+        if (!value["InterruptSpeechDuration"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.InterruptSpeechDuration` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_interruptSpeechDuration = value["InterruptSpeechDuration"].GetUint64();
+        m_interruptSpeechDurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void AgentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "WelcomeMessage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_welcomeMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_interruptModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InterruptMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_interruptMode, allocator);
+    }
+
+    if (m_interruptSpeechDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InterruptSpeechDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_interruptSpeechDuration, allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void AgentConfig::SetWelcomeMessage(const string& _welcomeMessage)
 bool AgentConfig::WelcomeMessageHasBeenSet() const
 {
     return m_welcomeMessageHasBeenSet;
+}
+
+uint64_t AgentConfig::GetInterruptMode() const
+{
+    return m_interruptMode;
+}
+
+void AgentConfig::SetInterruptMode(const uint64_t& _interruptMode)
+{
+    m_interruptMode = _interruptMode;
+    m_interruptModeHasBeenSet = true;
+}
+
+bool AgentConfig::InterruptModeHasBeenSet() const
+{
+    return m_interruptModeHasBeenSet;
+}
+
+uint64_t AgentConfig::GetInterruptSpeechDuration() const
+{
+    return m_interruptSpeechDuration;
+}
+
+void AgentConfig::SetInterruptSpeechDuration(const uint64_t& _interruptSpeechDuration)
+{
+    m_interruptSpeechDuration = _interruptSpeechDuration;
+    m_interruptSpeechDurationHasBeenSet = true;
+}
+
+bool AgentConfig::InterruptSpeechDurationHasBeenSet() const
+{
+    return m_interruptSpeechDurationHasBeenSet;
 }
 

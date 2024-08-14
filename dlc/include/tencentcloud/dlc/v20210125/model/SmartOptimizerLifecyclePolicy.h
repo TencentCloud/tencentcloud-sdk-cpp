@@ -121,6 +121,56 @@ namespace TencentCloud
                      */
                     bool DropTableHasBeenSet() const;
 
+                    /**
+                     * 获取过期字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExpiredField 过期字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExpiredField() const;
+
+                    /**
+                     * 设置过期字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _expiredField 过期字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExpiredField(const std::string& _expiredField);
+
+                    /**
+                     * 判断参数 ExpiredField 是否已赋值
+                     * @return ExpiredField 是否已赋值
+                     * 
+                     */
+                    bool ExpiredFieldHasBeenSet() const;
+
+                    /**
+                     * 获取过期字段格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExpiredFieldFormat 过期字段格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExpiredFieldFormat() const;
+
+                    /**
+                     * 设置过期字段格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _expiredFieldFormat 过期字段格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExpiredFieldFormat(const std::string& _expiredFieldFormat);
+
+                    /**
+                     * 判断参数 ExpiredFieldFormat 是否已赋值
+                     * @return ExpiredFieldFormat 是否已赋值
+                     * 
+                     */
+                    bool ExpiredFieldFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +193,20 @@ namespace TencentCloud
                      */
                     bool m_dropTable;
                     bool m_dropTableHasBeenSet;
+
+                    /**
+                     * 过期字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_expiredField;
+                    bool m_expiredFieldHasBeenSet;
+
+                    /**
+                     * 过期字段格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_expiredFieldFormat;
+                    bool m_expiredFieldFormatHasBeenSet;
 
                 };
             }

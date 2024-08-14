@@ -31,7 +31,8 @@ Recipient::Recipient() :
     m_routingOrderHasBeenSet(false),
     m_isPromoterHasBeenSet(false),
     m_approverVerifyTypesHasBeenSet(false),
-    m_approverSignTypesHasBeenSet(false)
+    m_approverSignTypesHasBeenSet(false),
+    m_noTransferHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,16 @@ CoreInternalOutcome Recipient::Deserialize(const rapidjson::Value &value)
         m_approverSignTypesHasBeenSet = true;
     }
 
+    if (value.HasMember("NoTransfer") && !value["NoTransfer"].IsNull())
+    {
+        if (!value["NoTransfer"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Recipient.NoTransfer` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_noTransfer = value["NoTransfer"].GetBool();
+        m_noTransferHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +270,14 @@ void Recipient::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_noTransferHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoTransfer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_noTransfer, allocator);
     }
 
 }
@@ -438,5 +457,21 @@ void Recipient::SetApproverSignTypes(const vector<int64_t>& _approverSignTypes)
 bool Recipient::ApproverSignTypesHasBeenSet() const
 {
     return m_approverSignTypesHasBeenSet;
+}
+
+bool Recipient::GetNoTransfer() const
+{
+    return m_noTransfer;
+}
+
+void Recipient::SetNoTransfer(const bool& _noTransfer)
+{
+    m_noTransfer = _noTransfer;
+    m_noTransferHasBeenSet = true;
+}
+
+bool Recipient::NoTransferHasBeenSet() const
+{
+    return m_noTransferHasBeenSet;
 }
 

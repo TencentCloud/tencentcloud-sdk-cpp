@@ -43,7 +43,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/AuthInfoDetail.h
   include/tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoResponse.h
   include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h
-  include/tencentcloud/ess/v20201111/model/FlowApproverUrlInfo.h
+  include/tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsRequest.h
   include/tencentcloud/ess/v20201111/model/ReviewerInfo.h
   include/tencentcloud/ess/v20201111/model/FlowBrief.h
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h
@@ -128,6 +128,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/UserThreeFactor.h
   include/tencentcloud/ess/v20201111/model/SignQrCode.h
   include/tencentcloud/ess/v20201111/model/CreateSealPolicyResponse.h
+  include/tencentcloud/ess/v20201111/model/FlowApproverUrlInfo.h
   include/tencentcloud/ess/v20201111/model/DisableUserAutoSignRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesResponse.h
   include/tencentcloud/ess/v20201111/model/SuccessDeleteStaffData.h
@@ -266,6 +267,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/RelieveInfo.h
   include/tencentcloud/ess/v20201111/model/UserFlowType.h
   include/tencentcloud/ess/v20201111/model/EmbedUrlOption.h
+  include/tencentcloud/ess/v20201111/model/CreateBatchOrganizationAuthorizationUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h
   include/tencentcloud/ess/v20201111/model/WebThemeConfig.h
   include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h
@@ -273,7 +275,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeFlowInfoRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteExtendedServiceAuthInfosRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthInfosResponse.h
-  include/tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateBatchOrganizationAuthorizationUrlResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowInfoResponse.h
   include/tencentcloud/ess/v20201111/model/RenewAutoSignLicenseResponse.h
   include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeResponse.h
@@ -316,7 +318,7 @@ set(ess_src
   src/v20201111/model/AuthInfoDetail.cpp
   src/v20201111/model/ModifyApplicationCallbackInfoResponse.cpp
   src/v20201111/model/CreateMultiFlowSignQRCodeResponse.cpp
-  src/v20201111/model/FlowApproverUrlInfo.cpp
+  src/v20201111/model/DescribeIntegrationDepartmentsRequest.cpp
   src/v20201111/model/ReviewerInfo.cpp
   src/v20201111/model/FlowBrief.cpp
   src/v20201111/model/DescribeThirdPartyAuthCodeResponse.cpp
@@ -401,6 +403,7 @@ set(ess_src
   src/v20201111/model/UserThreeFactor.cpp
   src/v20201111/model/SignQrCode.cpp
   src/v20201111/model/CreateSealPolicyResponse.cpp
+  src/v20201111/model/FlowApproverUrlInfo.cpp
   src/v20201111/model/DisableUserAutoSignRequest.cpp
   src/v20201111/model/DescribeIntegrationEmployeesResponse.cpp
   src/v20201111/model/SuccessDeleteStaffData.cpp
@@ -539,6 +542,7 @@ set(ess_src
   src/v20201111/model/RelieveInfo.cpp
   src/v20201111/model/UserFlowType.cpp
   src/v20201111/model/EmbedUrlOption.cpp
+  src/v20201111/model/CreateBatchOrganizationAuthorizationUrlRequest.cpp
   src/v20201111/model/CreateBatchCancelFlowUrlRequest.cpp
   src/v20201111/model/WebThemeConfig.cpp
   src/v20201111/model/CreateMultiFlowSignQRCodeRequest.cpp
@@ -546,7 +550,7 @@ set(ess_src
   src/v20201111/model/DescribeFlowInfoRequest.cpp
   src/v20201111/model/DeleteExtendedServiceAuthInfosRequest.cpp
   src/v20201111/model/DescribeExtendedServiceAuthInfosResponse.cpp
-  src/v20201111/model/DescribeIntegrationDepartmentsRequest.cpp
+  src/v20201111/model/CreateBatchOrganizationAuthorizationUrlResponse.cpp
   src/v20201111/model/DescribeFlowInfoResponse.cpp
   src/v20201111/model/RenewAutoSignLicenseResponse.cpp
   src/v20201111/model/CancelMultiFlowSignQRCodeResponse.cpp

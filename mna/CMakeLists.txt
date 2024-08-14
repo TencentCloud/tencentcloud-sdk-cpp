@@ -29,6 +29,7 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/UpdateL3SwitchRequest.h
   include/tencentcloud/mna/v20210119/model/DescribeQosResponse.h
   include/tencentcloud/mna/v20210119/model/AddL3ConnRequest.h
+  include/tencentcloud/mna/v20210119/model/OrderPerLicenseResponse.h
   include/tencentcloud/mna/v20210119/model/GetFlowPackagesRequest.h
   include/tencentcloud/mna/v20210119/model/SetNotifyUrlResponse.h
   include/tencentcloud/mna/v20210119/model/UpdateL3CidrResponse.h
@@ -95,6 +96,7 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/FlowPackageInfo.h
   include/tencentcloud/mna/v20210119/model/GetHardwareListResponse.h
   include/tencentcloud/mna/v20210119/model/AddDeviceRequest.h
+  include/tencentcloud/mna/v20210119/model/OrderPerLicenseRequest.h
   include/tencentcloud/mna/v20210119/model/UpdateGroupRequest.h
   include/tencentcloud/mna/v20210119/model/GetFlowStatisticResponse.h
   include/tencentcloud/mna/v20210119/model/UpdateHardwareRequest.h
@@ -136,6 +138,7 @@ set(mna_src
   src/v20210119/model/UpdateL3SwitchRequest.cpp
   src/v20210119/model/DescribeQosResponse.cpp
   src/v20210119/model/AddL3ConnRequest.cpp
+  src/v20210119/model/OrderPerLicenseResponse.cpp
   src/v20210119/model/GetFlowPackagesRequest.cpp
   src/v20210119/model/SetNotifyUrlResponse.cpp
   src/v20210119/model/UpdateL3CidrResponse.cpp
@@ -202,6 +205,7 @@ set(mna_src
   src/v20210119/model/FlowPackageInfo.cpp
   src/v20210119/model/GetHardwareListResponse.cpp
   src/v20210119/model/AddDeviceRequest.cpp
+  src/v20210119/model/OrderPerLicenseRequest.cpp
   src/v20210119/model/UpdateGroupRequest.cpp
   src/v20210119/model/GetFlowStatisticResponse.cpp
   src/v20210119/model/UpdateHardwareRequest.cpp

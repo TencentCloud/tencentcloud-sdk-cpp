@@ -336,6 +336,48 @@ namespace TencentCloud
                      */
                     bool SNCodeHasBeenSet() const;
 
+                    /**
+                     * 获取RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     * @return AppName RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     * 
+                     */
+                    std::string GetAppName() const;
+
+                    /**
+                     * 设置RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     * @param _appName RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     * 
+                     */
+                    void SetAppName(const std::string& _appName);
+
+                    /**
+                     * 判断参数 AppName 是否已赋值
+                     * @return AppName 是否已赋值
+                     * 
+                     */
+                    bool AppNameHasBeenSet() const;
+
+                    /**
+                     * 获取RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     * @return StreamName RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     * 
+                     */
+                    std::string GetStreamName() const;
+
+                    /**
+                     * 设置RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     * @param _streamName RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     * 
+                     */
+                    void SetStreamName(const std::string& _streamName);
+
+                    /**
+                     * 判断参数 StreamName 是否已赋值
+                     * @return StreamName 是否已赋值
+                     * 
+                     */
+                    bool StreamNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -421,6 +463,18 @@ namespace TencentCloud
                      */
                     std::string m_sNCode;
                     bool m_sNCodeHasBeenSet;
+
+                    /**
+                     * RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     */
+                    std::string m_appName;
+                    bool m_appNameHasBeenSet;
+
+                    /**
+                     * RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     */
+                    std::string m_streamName;
+                    bool m_streamNameHasBeenSet;
 
                 };
             }

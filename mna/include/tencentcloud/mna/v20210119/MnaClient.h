@@ -89,6 +89,8 @@
 #include <tencentcloud/mna/v20210119/model/ModifyPackageRenewFlagResponse.h>
 #include <tencentcloud/mna/v20210119/model/OrderFlowPackageRequest.h>
 #include <tencentcloud/mna/v20210119/model/OrderFlowPackageResponse.h>
+#include <tencentcloud/mna/v20210119/model/OrderPerLicenseRequest.h>
+#include <tencentcloud/mna/v20210119/model/OrderPerLicenseResponse.h>
 #include <tencentcloud/mna/v20210119/model/SetNotifyUrlRequest.h>
 #include <tencentcloud/mna/v20210119/model/SetNotifyUrlResponse.h>
 #include <tencentcloud/mna/v20210119/model/UpdateDeviceRequest.h>
@@ -216,6 +218,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OrderFlowPackageResponse> OrderFlowPackageOutcome;
                 typedef std::future<OrderFlowPackageOutcome> OrderFlowPackageOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::OrderFlowPackageRequest&, OrderFlowPackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OrderFlowPackageAsyncHandler;
+                typedef Outcome<Core::Error, Model::OrderPerLicenseResponse> OrderPerLicenseOutcome;
+                typedef std::future<OrderPerLicenseOutcome> OrderPerLicenseOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::OrderPerLicenseRequest&, OrderPerLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OrderPerLicenseAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetNotifyUrlResponse> SetNotifyUrlOutcome;
                 typedef std::future<SetNotifyUrlOutcome> SetNotifyUrlOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::SetNotifyUrlRequest&, SetNotifyUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetNotifyUrlAsyncHandler;
@@ -536,6 +541,15 @@ namespace TencentCloud
                 OrderFlowPackageOutcome OrderFlowPackage(const Model::OrderFlowPackageRequest &request);
                 void OrderFlowPackageAsync(const Model::OrderFlowPackageRequest& request, const OrderFlowPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OrderFlowPackageOutcomeCallable OrderFlowPackageCallable(const Model::OrderFlowPackageRequest& request);
+
+                /**
+                 *购买一次性授权License
+                 * @param req OrderPerLicenseRequest
+                 * @return OrderPerLicenseOutcome
+                 */
+                OrderPerLicenseOutcome OrderPerLicense(const Model::OrderPerLicenseRequest &request);
+                void OrderPerLicenseAsync(const Model::OrderPerLicenseRequest& request, const OrderPerLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OrderPerLicenseOutcomeCallable OrderPerLicenseCallable(const Model::OrderPerLicenseRequest& request);
 
                 /**
                  *设置用户流量告警信息接口，通过该接口设置流量包告警阈值以及告警时回调的url和key

@@ -1459,6 +1459,49 @@ MnaClient::OrderFlowPackageOutcomeCallable MnaClient::OrderFlowPackageCallable(c
     return task->get_future();
 }
 
+MnaClient::OrderPerLicenseOutcome MnaClient::OrderPerLicense(const OrderPerLicenseRequest &request)
+{
+    auto outcome = MakeRequest(request, "OrderPerLicense");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OrderPerLicenseResponse rsp = OrderPerLicenseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OrderPerLicenseOutcome(rsp);
+        else
+            return OrderPerLicenseOutcome(o.GetError());
+    }
+    else
+    {
+        return OrderPerLicenseOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::OrderPerLicenseAsync(const OrderPerLicenseRequest& request, const OrderPerLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OrderPerLicense(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::OrderPerLicenseOutcomeCallable MnaClient::OrderPerLicenseCallable(const OrderPerLicenseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OrderPerLicenseOutcome()>>(
+        [this, request]()
+        {
+            return this->OrderPerLicense(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::SetNotifyUrlOutcome MnaClient::SetNotifyUrl(const SetNotifyUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "SetNotifyUrl");

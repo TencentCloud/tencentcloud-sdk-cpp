@@ -345,6 +345,39 @@ false-否
                      */
                     bool ApproverSignTypesHasBeenSet() const;
 
+                    /**
+                     * 获取签署方是否可以转他人处理
+
+<ul><li> **false** : ( 默认)可以转他人处理</li>
+<li> **true** :不可以转他人处理</li></ul>
+                     * @return NoTransfer 签署方是否可以转他人处理
+
+<ul><li> **false** : ( 默认)可以转他人处理</li>
+<li> **true** :不可以转他人处理</li></ul>
+                     * 
+                     */
+                    bool GetNoTransfer() const;
+
+                    /**
+                     * 设置签署方是否可以转他人处理
+
+<ul><li> **false** : ( 默认)可以转他人处理</li>
+<li> **true** :不可以转他人处理</li></ul>
+                     * @param _noTransfer 签署方是否可以转他人处理
+
+<ul><li> **false** : ( 默认)可以转他人处理</li>
+<li> **true** :不可以转他人处理</li></ul>
+                     * 
+                     */
+                    void SetNoTransfer(const bool& _noTransfer);
+
+                    /**
+                     * 判断参数 NoTransfer 是否已赋值
+                     * @return NoTransfer 是否已赋值
+                     * 
+                     */
+                    bool NoTransferHasBeenSet() const;
+
                 private:
 
                     /**
@@ -429,6 +462,15 @@ false-否
                      */
                     std::vector<int64_t> m_approverSignTypes;
                     bool m_approverSignTypesHasBeenSet;
+
+                    /**
+                     * 签署方是否可以转他人处理
+
+<ul><li> **false** : ( 默认)可以转他人处理</li>
+<li> **true** :不可以转他人处理</li></ul>
+                     */
+                    bool m_noTransfer;
+                    bool m_noTransferHasBeenSet;
 
                 };
             }

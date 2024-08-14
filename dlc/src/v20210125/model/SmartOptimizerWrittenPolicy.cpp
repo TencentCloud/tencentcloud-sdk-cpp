@@ -20,7 +20,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-SmartOptimizerWrittenPolicy::SmartOptimizerWrittenPolicy()
+SmartOptimizerWrittenPolicy::SmartOptimizerWrittenPolicy() :
+    m_writtenEnableHasBeenSet(false)
 {
 }
 
@@ -29,6 +30,16 @@ CoreInternalOutcome SmartOptimizerWrittenPolicy::Deserialize(const rapidjson::Va
     string requestId = "";
 
 
+    if (value.HasMember("WrittenEnable") && !value["WrittenEnable"].IsNull())
+    {
+        if (!value["WrittenEnable"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartOptimizerWrittenPolicy.WrittenEnable` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_writtenEnable = string(value["WrittenEnable"].GetString());
+        m_writtenEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +47,30 @@ CoreInternalOutcome SmartOptimizerWrittenPolicy::Deserialize(const rapidjson::Va
 void SmartOptimizerWrittenPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_writtenEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WrittenEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_writtenEnable.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+string SmartOptimizerWrittenPolicy::GetWrittenEnable() const
+{
+    return m_writtenEnable;
+}
+
+void SmartOptimizerWrittenPolicy::SetWrittenEnable(const string& _writtenEnable)
+{
+    m_writtenEnable = _writtenEnable;
+    m_writtenEnableHasBeenSet = true;
+}
+
+bool SmartOptimizerWrittenPolicy::WrittenEnableHasBeenSet() const
+{
+    return m_writtenEnableHasBeenSet;
+}
 

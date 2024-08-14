@@ -48,7 +48,9 @@ DescribeDeviceData::DescribeDeviceData() :
     m_regionHasBeenSet(false),
     m_manufacturerHasBeenSet(false),
     m_audioSwitchHasBeenSet(false),
-    m_subscribeSwitchHasBeenSet(false)
+    m_subscribeSwitchHasBeenSet(false),
+    m_appNameHasBeenSet(false),
+    m_streamNameHasBeenSet(false)
 {
 }
 
@@ -337,6 +339,26 @@ CoreInternalOutcome DescribeDeviceData::Deserialize(const rapidjson::Value &valu
         m_subscribeSwitchHasBeenSet = true;
     }
 
+    if (value.HasMember("AppName") && !value["AppName"].IsNull())
+    {
+        if (!value["AppName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceData.AppName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appName = string(value["AppName"].GetString());
+        m_appNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("StreamName") && !value["StreamName"].IsNull())
+    {
+        if (!value["StreamName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceData.StreamName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_streamName = string(value["StreamName"].GetString());
+        m_streamNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -566,6 +588,22 @@ void DescribeDeviceData::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SubscribeSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_subscribeSwitch, allocator);
+    }
+
+    if (m_appNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_streamNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StreamName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_streamName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1017,5 +1055,37 @@ void DescribeDeviceData::SetSubscribeSwitch(const int64_t& _subscribeSwitch)
 bool DescribeDeviceData::SubscribeSwitchHasBeenSet() const
 {
     return m_subscribeSwitchHasBeenSet;
+}
+
+string DescribeDeviceData::GetAppName() const
+{
+    return m_appName;
+}
+
+void DescribeDeviceData::SetAppName(const string& _appName)
+{
+    m_appName = _appName;
+    m_appNameHasBeenSet = true;
+}
+
+bool DescribeDeviceData::AppNameHasBeenSet() const
+{
+    return m_appNameHasBeenSet;
+}
+
+string DescribeDeviceData::GetStreamName() const
+{
+    return m_streamName;
+}
+
+void DescribeDeviceData::SetStreamName(const string& _streamName)
+{
+    m_streamName = _streamName;
+    m_streamNameHasBeenSet = true;
+}
+
+bool DescribeDeviceData::StreamNameHasBeenSet() const
+{
+    return m_streamNameHasBeenSet;
 }
 

@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool LinuxClientNodeIpHasBeenSet() const;
 
+                    /**
+                     * 获取自定义挂载点
+                     * @return MountPoint 自定义挂载点
+                     * 
+                     */
+                    std::string GetMountPoint() const;
+
+                    /**
+                     * 设置自定义挂载点
+                     * @param _mountPoint 自定义挂载点
+                     * 
+                     */
+                    void SetMountPoint(const std::string& _mountPoint);
+
+                    /**
+                     * 判断参数 MountPoint 是否已赋值
+                     * @return MountPoint 是否已赋值
+                     * 
+                     */
+                    bool MountPointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_linuxClientNodeIp;
                     bool m_linuxClientNodeIpHasBeenSet;
+
+                    /**
+                     * 自定义挂载点
+                     */
+                    std::string m_mountPoint;
+                    bool m_mountPointHasBeenSet;
 
                 };
             }

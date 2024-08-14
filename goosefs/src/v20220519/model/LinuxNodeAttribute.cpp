@@ -24,7 +24,8 @@ LinuxNodeAttribute::LinuxNodeAttribute() :
     m_instanceIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_linuxClientNodeIpHasBeenSet(false)
+    m_linuxClientNodeIpHasBeenSet(false),
+    m_mountPointHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome LinuxNodeAttribute::Deserialize(const rapidjson::Value &valu
         m_linuxClientNodeIpHasBeenSet = true;
     }
 
+    if (value.HasMember("MountPoint") && !value["MountPoint"].IsNull())
+    {
+        if (!value["MountPoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LinuxNodeAttribute.MountPoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mountPoint = string(value["MountPoint"].GetString());
+        m_mountPointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void LinuxNodeAttribute::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "LinuxClientNodeIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_linuxClientNodeIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mountPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MountPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountPoint.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void LinuxNodeAttribute::SetLinuxClientNodeIp(const string& _linuxClientNodeIp)
 bool LinuxNodeAttribute::LinuxClientNodeIpHasBeenSet() const
 {
     return m_linuxClientNodeIpHasBeenSet;
+}
+
+string LinuxNodeAttribute::GetMountPoint() const
+{
+    return m_mountPoint;
+}
+
+void LinuxNodeAttribute::SetMountPoint(const string& _mountPoint)
+{
+    m_mountPoint = _mountPoint;
+    m_mountPointHasBeenSet = true;
+}
+
+bool LinuxNodeAttribute::MountPointHasBeenSet() const
+{
+    return m_mountPointHasBeenSet;
 }
 

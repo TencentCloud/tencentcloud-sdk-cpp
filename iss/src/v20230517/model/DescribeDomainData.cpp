@@ -28,7 +28,8 @@ DescribeDomainData::DescribeDomainData() :
     m_clusterIdHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_appIdHasBeenSet(false),
-    m_certIdHasBeenSet(false)
+    m_certIdHasBeenSet(false),
+    m_domainTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome DescribeDomainData::Deserialize(const rapidjson::Value &valu
         m_certIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DomainType") && !value["DomainType"].IsNull())
+    {
+        if (!value["DomainType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDomainData.DomainType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_domainType = value["DomainType"].GetInt64();
+        m_domainTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void DescribeDomainData::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "CertId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_domainType, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void DescribeDomainData::SetCertId(const string& _certId)
 bool DescribeDomainData::CertIdHasBeenSet() const
 {
     return m_certIdHasBeenSet;
+}
+
+int64_t DescribeDomainData::GetDomainType() const
+{
+    return m_domainType;
+}
+
+void DescribeDomainData::SetDomainType(const int64_t& _domainType)
+{
+    m_domainType = _domainType;
+    m_domainTypeHasBeenSet = true;
+}
+
+bool DescribeDomainData::DomainTypeHasBeenSet() const
+{
+    return m_domainTypeHasBeenSet;
 }
 

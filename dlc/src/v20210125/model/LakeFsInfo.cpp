@@ -24,7 +24,11 @@ LakeFsInfo::LakeFsInfo() :
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_spaceUsedSizeHasBeenSet(false),
-    m_createTimeStampHasBeenSet(false)
+    m_createTimeStampHasBeenSet(false),
+    m_defaultBucketHasBeenSet(false),
+    m_shortNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -73,6 +77,46 @@ CoreInternalOutcome LakeFsInfo::Deserialize(const rapidjson::Value &value)
         m_createTimeStampHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultBucket") && !value["DefaultBucket"].IsNull())
+    {
+        if (!value["DefaultBucket"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LakeFsInfo.DefaultBucket` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultBucket = value["DefaultBucket"].GetInt64();
+        m_defaultBucketHasBeenSet = true;
+    }
+
+    if (value.HasMember("ShortName") && !value["ShortName"].IsNull())
+    {
+        if (!value["ShortName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LakeFsInfo.ShortName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_shortName = string(value["ShortName"].GetString());
+        m_shortNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LakeFsInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LakeFsInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +154,38 @@ void LakeFsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CreateTimeStamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTimeStamp, allocator);
+    }
+
+    if (m_defaultBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultBucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultBucket, allocator);
+    }
+
+    if (m_shortNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShortName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shortName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +253,69 @@ void LakeFsInfo::SetCreateTimeStamp(const int64_t& _createTimeStamp)
 bool LakeFsInfo::CreateTimeStampHasBeenSet() const
 {
     return m_createTimeStampHasBeenSet;
+}
+
+int64_t LakeFsInfo::GetDefaultBucket() const
+{
+    return m_defaultBucket;
+}
+
+void LakeFsInfo::SetDefaultBucket(const int64_t& _defaultBucket)
+{
+    m_defaultBucket = _defaultBucket;
+    m_defaultBucketHasBeenSet = true;
+}
+
+bool LakeFsInfo::DefaultBucketHasBeenSet() const
+{
+    return m_defaultBucketHasBeenSet;
+}
+
+string LakeFsInfo::GetShortName() const
+{
+    return m_shortName;
+}
+
+void LakeFsInfo::SetShortName(const string& _shortName)
+{
+    m_shortName = _shortName;
+    m_shortNameHasBeenSet = true;
+}
+
+bool LakeFsInfo::ShortNameHasBeenSet() const
+{
+    return m_shortNameHasBeenSet;
+}
+
+string LakeFsInfo::GetDescription() const
+{
+    return m_description;
+}
+
+void LakeFsInfo::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool LakeFsInfo::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+string LakeFsInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void LakeFsInfo::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool LakeFsInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
