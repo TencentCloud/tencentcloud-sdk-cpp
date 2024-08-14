@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool IndexIdHasBeenSet() const;
 
                     /**
-                     * 获取指标类型，暂时只支持Storage
-                     * @return MetricType 指标类型，暂时只支持Storage
+                     * 获取指标类型，暂时只支持Storage(存储大小),AllMetric(所有存储指标：索引流量、存储大小、文档数量、读请求和写请求)
+                     * @return MetricType 指标类型，暂时只支持Storage(存储大小),AllMetric(所有存储指标：索引流量、存储大小、文档数量、读请求和写请求)
                      * 
                      */
                     std::vector<std::string> GetMetricType() const;
 
                     /**
-                     * 设置指标类型，暂时只支持Storage
-                     * @param _metricType 指标类型，暂时只支持Storage
+                     * 设置指标类型，暂时只支持Storage(存储大小),AllMetric(所有存储指标：索引流量、存储大小、文档数量、读请求和写请求)
+                     * @param _metricType 指标类型，暂时只支持Storage(存储大小),AllMetric(所有存储指标：索引流量、存储大小、文档数量、读请求和写请求)
                      * 
                      */
                     void SetMetricType(const std::vector<std::string>& _metricType);
@@ -104,6 +104,27 @@ namespace TencentCloud
                      * 
                      */
                     bool MetricTypeHasBeenSet() const;
+
+                    /**
+                     * 获取时间长度类型DurationType(1: 3小时, 2: 昨天1天,3: 今日0点到现在)
+                     * @return DurationType 时间长度类型DurationType(1: 3小时, 2: 昨天1天,3: 今日0点到现在)
+                     * 
+                     */
+                    int64_t GetDurationType() const;
+
+                    /**
+                     * 设置时间长度类型DurationType(1: 3小时, 2: 昨天1天,3: 今日0点到现在)
+                     * @param _durationType 时间长度类型DurationType(1: 3小时, 2: 昨天1天,3: 今日0点到现在)
+                     * 
+                     */
+                    void SetDurationType(const int64_t& _durationType);
+
+                    /**
+                     * 判断参数 DurationType 是否已赋值
+                     * @return DurationType 是否已赋值
+                     * 
+                     */
+                    bool DurationTypeHasBeenSet() const;
 
                 private:
 
@@ -120,10 +141,16 @@ namespace TencentCloud
                     bool m_indexIdHasBeenSet;
 
                     /**
-                     * 指标类型，暂时只支持Storage
+                     * 指标类型，暂时只支持Storage(存储大小),AllMetric(所有存储指标：索引流量、存储大小、文档数量、读请求和写请求)
                      */
                     std::vector<std::string> m_metricType;
                     bool m_metricTypeHasBeenSet;
+
+                    /**
+                     * 时间长度类型DurationType(1: 3小时, 2: 昨天1天,3: 今日0点到现在)
+                     */
+                    int64_t m_durationType;
+                    bool m_durationTypeHasBeenSet;
 
                 };
             }

@@ -33,6 +33,8 @@
 #include <tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateBatchInitOrganizationUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateBatchInitOrganizationUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchOrganizationRegistrationTasksResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchQuickSignUrlRequest.h>
@@ -228,6 +230,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBatchCancelFlowUrlResponse> CreateBatchCancelFlowUrlOutcome;
                 typedef std::future<CreateBatchCancelFlowUrlOutcome> CreateBatchCancelFlowUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateBatchCancelFlowUrlRequest&, CreateBatchCancelFlowUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchCancelFlowUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBatchInitOrganizationUrlResponse> CreateBatchInitOrganizationUrlOutcome;
+                typedef std::future<CreateBatchInitOrganizationUrlOutcome> CreateBatchInitOrganizationUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateBatchInitOrganizationUrlRequest&, CreateBatchInitOrganizationUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchInitOrganizationUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBatchOrganizationRegistrationTasksResponse> CreateBatchOrganizationRegistrationTasksOutcome;
                 typedef std::future<CreateBatchOrganizationRegistrationTasksOutcome> CreateBatchOrganizationRegistrationTasksOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateBatchOrganizationRegistrationTasksRequest&, CreateBatchOrganizationRegistrationTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchOrganizationRegistrationTasksAsyncHandler;
@@ -561,6 +566,22 @@ namespace TencentCloud
                 CreateBatchCancelFlowUrlOutcome CreateBatchCancelFlowUrl(const Model::CreateBatchCancelFlowUrlRequest &request);
                 void CreateBatchCancelFlowUrlAsync(const Model::CreateBatchCancelFlowUrlRequest& request, const CreateBatchCancelFlowUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBatchCancelFlowUrlOutcomeCallable CreateBatchCancelFlowUrlCallable(const Model::CreateBatchCancelFlowUrlRequest& request);
+
+                /**
+                 *支持企业进行批量初始化操作：
+
+此接口存在以下限制：
+1. 若批量操作中包含<font  color="red">加入集团企业</font>操作,则调用此接口的员工须有<font  color="red">集团企业管理权限</font>。
+2. 批量操作的企业需要已经完成电子签的认证流程。
+3. 通过此接口生成的链接在小程序端进行操作时，操作人需要是<font  color="red">所有企业的超管或法人</font>。
+4. 批量操作的企业，需要是<a href="https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthUrl" target="_blank">通过平台方引导认证</a>的企业。
+5. <font  color="red">操作链接过期时间默认为生成链接后7天。</font>
+                 * @param req CreateBatchInitOrganizationUrlRequest
+                 * @return CreateBatchInitOrganizationUrlOutcome
+                 */
+                CreateBatchInitOrganizationUrlOutcome CreateBatchInitOrganizationUrl(const Model::CreateBatchInitOrganizationUrlRequest &request);
+                void CreateBatchInitOrganizationUrlAsync(const Model::CreateBatchInitOrganizationUrlRequest& request, const CreateBatchInitOrganizationUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBatchInitOrganizationUrlOutcomeCallable CreateBatchInitOrganizationUrlCallable(const Model::CreateBatchInitOrganizationUrlRequest& request);
 
                 /**
                  *本接口（CreateBatchOrganizationRegistrationTasks）用于批量创建企业认证链接

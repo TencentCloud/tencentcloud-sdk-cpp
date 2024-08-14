@@ -27,6 +27,7 @@
 #include <tencentcloud/es/v20180416/model/EsAcl.h>
 #include <tencentcloud/es/v20180416/model/DiData.h>
 #include <tencentcloud/es/v20180416/model/VpcInfo.h>
+#include <tencentcloud/es/v20180416/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -504,6 +505,31 @@ namespace TencentCloud
                      */
                     bool ClusterTypeHasBeenSet() const;
 
+                    /**
+                     * 获取key:value
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagList key:value
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TagInfo> GetTagList() const;
+
+                    /**
+                     * 设置key:value
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagList key:value
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagList(const std::vector<TagInfo>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -633,6 +659,13 @@ namespace TencentCloud
                      */
                     int64_t m_clusterType;
                     bool m_clusterTypeHasBeenSet;
+
+                    /**
+                     * key:value
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagInfo> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

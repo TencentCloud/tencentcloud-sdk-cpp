@@ -27,7 +27,8 @@ CreateServerlessSpaceV2Request::CreateServerlessSpaceV2Request() :
     m_spaceNameHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_kibanaWhiteIpListHasBeenSet(false),
-    m_zoneIdHasBeenSet(false)
+    m_zoneIdHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,21 @@ string CreateServerlessSpaceV2Request::ToJsonString() const
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_zoneId, allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -176,6 +192,22 @@ void CreateServerlessSpaceV2Request::SetZoneId(const uint64_t& _zoneId)
 bool CreateServerlessSpaceV2Request::ZoneIdHasBeenSet() const
 {
     return m_zoneIdHasBeenSet;
+}
+
+vector<TagInfo> CreateServerlessSpaceV2Request::GetTagList() const
+{
+    return m_tagList;
+}
+
+void CreateServerlessSpaceV2Request::SetTagList(const vector<TagInfo>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool CreateServerlessSpaceV2Request::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 
 

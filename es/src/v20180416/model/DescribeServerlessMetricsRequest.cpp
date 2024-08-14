@@ -25,7 +25,8 @@ using namespace std;
 DescribeServerlessMetricsRequest::DescribeServerlessMetricsRequest() :
     m_spaceIdHasBeenSet(false),
     m_indexIdHasBeenSet(false),
-    m_metricTypeHasBeenSet(false)
+    m_metricTypeHasBeenSet(false),
+    m_durationTypeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string DescribeServerlessMetricsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_durationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DurationType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_durationType, allocator);
     }
 
 
@@ -119,6 +128,22 @@ void DescribeServerlessMetricsRequest::SetMetricType(const vector<string>& _metr
 bool DescribeServerlessMetricsRequest::MetricTypeHasBeenSet() const
 {
     return m_metricTypeHasBeenSet;
+}
+
+int64_t DescribeServerlessMetricsRequest::GetDurationType() const
+{
+    return m_durationType;
+}
+
+void DescribeServerlessMetricsRequest::SetDurationType(const int64_t& _durationType)
+{
+    m_durationType = _durationType;
+    m_durationTypeHasBeenSet = true;
+}
+
+bool DescribeServerlessMetricsRequest::DurationTypeHasBeenSet() const
+{
+    return m_durationTypeHasBeenSet;
 }
 
 

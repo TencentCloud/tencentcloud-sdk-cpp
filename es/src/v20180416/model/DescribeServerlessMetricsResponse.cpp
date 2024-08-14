@@ -24,7 +24,11 @@ using namespace TencentCloud::Es::V20180416::Model;
 using namespace std;
 
 DescribeServerlessMetricsResponse::DescribeServerlessMetricsResponse() :
-    m_storageHasBeenSet(false)
+    m_storageHasBeenSet(false),
+    m_indexTrafficHasBeenSet(false),
+    m_readReqTimesHasBeenSet(false),
+    m_writeReqTimesHasBeenSet(false),
+    m_docCountHasBeenSet(false)
 {
 }
 
@@ -72,6 +76,46 @@ CoreInternalOutcome DescribeServerlessMetricsResponse::Deserialize(const string 
         m_storageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IndexTraffic") && !rsp["IndexTraffic"].IsNull())
+    {
+        if (!rsp["IndexTraffic"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexTraffic` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexTraffic = rsp["IndexTraffic"].GetDouble();
+        m_indexTrafficHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ReadReqTimes") && !rsp["ReadReqTimes"].IsNull())
+    {
+        if (!rsp["ReadReqTimes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReadReqTimes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_readReqTimes = rsp["ReadReqTimes"].GetInt64();
+        m_readReqTimesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WriteReqTimes") && !rsp["WriteReqTimes"].IsNull())
+    {
+        if (!rsp["WriteReqTimes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WriteReqTimes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_writeReqTimes = rsp["WriteReqTimes"].GetInt64();
+        m_writeReqTimesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DocCount") && !rsp["DocCount"].IsNull())
+    {
+        if (!rsp["DocCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_docCount = rsp["DocCount"].GetInt64();
+        m_docCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +132,38 @@ string DescribeServerlessMetricsResponse::ToJsonString() const
         string key = "Storage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_storage, allocator);
+    }
+
+    if (m_indexTrafficHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexTraffic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_indexTraffic, allocator);
+    }
+
+    if (m_readReqTimesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadReqTimes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_readReqTimes, allocator);
+    }
+
+    if (m_writeReqTimesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WriteReqTimes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_writeReqTimes, allocator);
+    }
+
+    if (m_docCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DocCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_docCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +186,46 @@ double DescribeServerlessMetricsResponse::GetStorage() const
 bool DescribeServerlessMetricsResponse::StorageHasBeenSet() const
 {
     return m_storageHasBeenSet;
+}
+
+double DescribeServerlessMetricsResponse::GetIndexTraffic() const
+{
+    return m_indexTraffic;
+}
+
+bool DescribeServerlessMetricsResponse::IndexTrafficHasBeenSet() const
+{
+    return m_indexTrafficHasBeenSet;
+}
+
+int64_t DescribeServerlessMetricsResponse::GetReadReqTimes() const
+{
+    return m_readReqTimes;
+}
+
+bool DescribeServerlessMetricsResponse::ReadReqTimesHasBeenSet() const
+{
+    return m_readReqTimesHasBeenSet;
+}
+
+int64_t DescribeServerlessMetricsResponse::GetWriteReqTimes() const
+{
+    return m_writeReqTimes;
+}
+
+bool DescribeServerlessMetricsResponse::WriteReqTimesHasBeenSet() const
+{
+    return m_writeReqTimesHasBeenSet;
+}
+
+int64_t DescribeServerlessMetricsResponse::GetDocCount() const
+{
+    return m_docCount;
+}
+
+bool DescribeServerlessMetricsResponse::DocCountHasBeenSet() const
+{
+    return m_docCountHasBeenSet;
 }
 
 

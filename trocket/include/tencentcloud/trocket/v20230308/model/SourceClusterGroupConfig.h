@@ -187,6 +187,106 @@ AlreadyExists 已存在
                      */
                     bool ImportStatusHasBeenSet() const;
 
+                    /**
+                     * 获取4.x的命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NamespaceV4 4.x的命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNamespaceV4() const;
+
+                    /**
+                     * 设置4.x的命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _namespaceV4 4.x的命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNamespaceV4(const std::string& _namespaceV4);
+
+                    /**
+                     * 判断参数 NamespaceV4 是否已赋值
+                     * @return NamespaceV4 是否已赋值
+                     * 
+                     */
+                    bool NamespaceV4HasBeenSet() const;
+
+                    /**
+                     * 获取4.x的消费组名，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupNameV4 4.x的消费组名，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGroupNameV4() const;
+
+                    /**
+                     * 设置4.x的消费组名，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _groupNameV4 4.x的消费组名，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGroupNameV4(const std::string& _groupNameV4);
+
+                    /**
+                     * 判断参数 GroupNameV4 是否已赋值
+                     * @return GroupNameV4 是否已赋值
+                     * 
+                     */
+                    bool GroupNameV4HasBeenSet() const;
+
+                    /**
+                     * 获取4.x的完整命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FullNamespaceV4 4.x的完整命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFullNamespaceV4() const;
+
+                    /**
+                     * 设置4.x的完整命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fullNamespaceV4 4.x的完整命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFullNamespaceV4(const std::string& _fullNamespaceV4);
+
+                    /**
+                     * 判断参数 FullNamespaceV4 是否已赋值
+                     * @return FullNamespaceV4 是否已赋值
+                     * 
+                     */
+                    bool FullNamespaceV4HasBeenSet() const;
+
+                    /**
+                     * 获取是否为顺序投递，5.0有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConsumeMessageOrderly 是否为顺序投递，5.0有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetConsumeMessageOrderly() const;
+
+                    /**
+                     * 设置是否为顺序投递，5.0有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _consumeMessageOrderly 是否为顺序投递，5.0有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConsumeMessageOrderly(const bool& _consumeMessageOrderly);
+
+                    /**
+                     * 判断参数 ConsumeMessageOrderly 是否已赋值
+                     * @return ConsumeMessageOrderly 是否已赋值
+                     * 
+                     */
+                    bool ConsumeMessageOrderlyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -227,6 +327,34 @@ AlreadyExists 已存在
                      */
                     std::string m_importStatus;
                     bool m_importStatusHasBeenSet;
+
+                    /**
+                     * 4.x的命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_namespaceV4;
+                    bool m_namespaceV4HasBeenSet;
+
+                    /**
+                     * 4.x的消费组名，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupNameV4;
+                    bool m_groupNameV4HasBeenSet;
+
+                    /**
+                     * 4.x的完整命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fullNamespaceV4;
+                    bool m_fullNamespaceV4HasBeenSet;
+
+                    /**
+                     * 是否为顺序投递，5.0有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_consumeMessageOrderly;
+                    bool m_consumeMessageOrderlyHasBeenSet;
 
                 };
             }

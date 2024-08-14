@@ -113,6 +113,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelUpdateSealStatusResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateBatchInitOrganizationUrlRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateBatchInitOrganizationUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateBatchOrganizationRegistrationTasksRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateBatchOrganizationRegistrationTasksResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportRequest.h>
@@ -324,6 +326,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelVerifyPdfResponse> ChannelVerifyPdfOutcome;
                 typedef std::future<ChannelVerifyPdfOutcome> ChannelVerifyPdfOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelVerifyPdfRequest&, ChannelVerifyPdfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelVerifyPdfAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBatchInitOrganizationUrlResponse> CreateBatchInitOrganizationUrlOutcome;
+                typedef std::future<CreateBatchInitOrganizationUrlOutcome> CreateBatchInitOrganizationUrlOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::CreateBatchInitOrganizationUrlRequest&, CreateBatchInitOrganizationUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchInitOrganizationUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBatchOrganizationRegistrationTasksResponse> CreateBatchOrganizationRegistrationTasksOutcome;
                 typedef std::future<CreateBatchOrganizationRegistrationTasksOutcome> CreateBatchOrganizationRegistrationTasksOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateBatchOrganizationRegistrationTasksRequest&, CreateBatchOrganizationRegistrationTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchOrganizationRegistrationTasksAsyncHandler;
@@ -1262,6 +1267,21 @@ namespace TencentCloud
                 ChannelVerifyPdfOutcome ChannelVerifyPdf(const Model::ChannelVerifyPdfRequest &request);
                 void ChannelVerifyPdfAsync(const Model::ChannelVerifyPdfRequest& request, const ChannelVerifyPdfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelVerifyPdfOutcomeCallable ChannelVerifyPdfCallable(const Model::ChannelVerifyPdfRequest& request);
+
+                /**
+                 *支持企业进行批量初始化操作：
+
+此接口存在以下限制：
+1. 批量操作的企业需要已经完成电子签的认证流程。
+2. 通过此接口生成的链接在小程序端进行操作时，操作人需要是<font  color="red">所有企业的超管或法人</font>。
+3. 批量操作的企业，需要是本方第三方应用下的企业。
+4. <font  color="red">操作链接过期时间默认为生成链接后7天。</font>
+                 * @param req CreateBatchInitOrganizationUrlRequest
+                 * @return CreateBatchInitOrganizationUrlOutcome
+                 */
+                CreateBatchInitOrganizationUrlOutcome CreateBatchInitOrganizationUrl(const Model::CreateBatchInitOrganizationUrlRequest &request);
+                void CreateBatchInitOrganizationUrlAsync(const Model::CreateBatchInitOrganizationUrlRequest& request, const CreateBatchInitOrganizationUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBatchInitOrganizationUrlOutcomeCallable CreateBatchInitOrganizationUrlCallable(const Model::CreateBatchInitOrganizationUrlRequest& request);
 
                 /**
                  *该接口用于批量创建企业认证链接， 可以支持PC浏览器，H5和小程序三种途径。

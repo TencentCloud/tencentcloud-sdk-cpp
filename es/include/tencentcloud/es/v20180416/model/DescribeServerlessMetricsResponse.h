@@ -57,6 +57,62 @@ namespace TencentCloud
                      */
                     bool StorageHasBeenSet() const;
 
+                    /**
+                     * 获取IndexTraffic指标值，单位byte
+                     * @return IndexTraffic IndexTraffic指标值，单位byte
+                     * 
+                     */
+                    double GetIndexTraffic() const;
+
+                    /**
+                     * 判断参数 IndexTraffic 是否已赋值
+                     * @return IndexTraffic 是否已赋值
+                     * 
+                     */
+                    bool IndexTrafficHasBeenSet() const;
+
+                    /**
+                     * 获取读请求数，单位次数
+                     * @return ReadReqTimes 读请求数，单位次数
+                     * 
+                     */
+                    int64_t GetReadReqTimes() const;
+
+                    /**
+                     * 判断参数 ReadReqTimes 是否已赋值
+                     * @return ReadReqTimes 是否已赋值
+                     * 
+                     */
+                    bool ReadReqTimesHasBeenSet() const;
+
+                    /**
+                     * 获取写请求数，单位次数
+                     * @return WriteReqTimes 写请求数，单位次数
+                     * 
+                     */
+                    int64_t GetWriteReqTimes() const;
+
+                    /**
+                     * 判断参数 WriteReqTimes 是否已赋值
+                     * @return WriteReqTimes 是否已赋值
+                     * 
+                     */
+                    bool WriteReqTimesHasBeenSet() const;
+
+                    /**
+                     * 获取文档数量，单位个数
+                     * @return DocCount 文档数量，单位个数
+                     * 
+                     */
+                    int64_t GetDocCount() const;
+
+                    /**
+                     * 判断参数 DocCount 是否已赋值
+                     * @return DocCount 是否已赋值
+                     * 
+                     */
+                    bool DocCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +120,30 @@ namespace TencentCloud
                      */
                     double m_storage;
                     bool m_storageHasBeenSet;
+
+                    /**
+                     * IndexTraffic指标值，单位byte
+                     */
+                    double m_indexTraffic;
+                    bool m_indexTrafficHasBeenSet;
+
+                    /**
+                     * 读请求数，单位次数
+                     */
+                    int64_t m_readReqTimes;
+                    bool m_readReqTimesHasBeenSet;
+
+                    /**
+                     * 写请求数，单位次数
+                     */
+                    int64_t m_writeReqTimes;
+                    bool m_writeReqTimesHasBeenSet;
+
+                    /**
+                     * 文档数量，单位个数
+                     */
+                    int64_t m_docCount;
+                    bool m_docCountHasBeenSet;
 
                 };
             }

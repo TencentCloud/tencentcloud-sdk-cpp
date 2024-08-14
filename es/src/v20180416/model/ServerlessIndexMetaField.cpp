@@ -37,7 +37,8 @@ ServerlessIndexMetaField::ServerlessIndexMetaField() :
     m_spaceIdHasBeenSet(false),
     m_spaceNameHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_indexTrafficHasBeenSet(false)
 {
 }
 
@@ -247,6 +248,16 @@ CoreInternalOutcome ServerlessIndexMetaField::Deserialize(const rapidjson::Value
         m_tagListHasBeenSet = true;
     }
 
+    if (value.HasMember("IndexTraffic") && !value["IndexTraffic"].IsNull())
+    {
+        if (!value["IndexTraffic"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerlessIndexMetaField.IndexTraffic` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexTraffic = value["IndexTraffic"].GetDouble();
+        m_indexTrafficHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -398,6 +409,14 @@ void ServerlessIndexMetaField::ToJsonObject(rapidjson::Value &value, rapidjson::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_indexTrafficHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexTraffic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_indexTraffic, allocator);
     }
 
 }
@@ -673,5 +692,21 @@ void ServerlessIndexMetaField::SetTagList(const vector<TagInfo>& _tagList)
 bool ServerlessIndexMetaField::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+double ServerlessIndexMetaField::GetIndexTraffic() const
+{
+    return m_indexTraffic;
+}
+
+void ServerlessIndexMetaField::SetIndexTraffic(const double& _indexTraffic)
+{
+    m_indexTraffic = _indexTraffic;
+    m_indexTrafficHasBeenSet = true;
+}
+
+bool ServerlessIndexMetaField::IndexTrafficHasBeenSet() const
+{
+    return m_indexTrafficHasBeenSet;
 }
 

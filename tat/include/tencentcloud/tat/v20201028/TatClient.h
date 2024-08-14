@@ -61,6 +61,8 @@
 #include <tencentcloud/tat/v20201028/model/DescribeRegisterCodesResponse.h>
 #include <tencentcloud/tat/v20201028/model/DescribeRegisterInstancesRequest.h>
 #include <tencentcloud/tat/v20201028/model/DescribeRegisterInstancesResponse.h>
+#include <tencentcloud/tat/v20201028/model/DescribeScenesRequest.h>
+#include <tencentcloud/tat/v20201028/model/DescribeScenesResponse.h>
 #include <tencentcloud/tat/v20201028/model/DisableInvokerRequest.h>
 #include <tencentcloud/tat/v20201028/model/DisableInvokerResponse.h>
 #include <tencentcloud/tat/v20201028/model/DisableRegisterCodesRequest.h>
@@ -150,6 +152,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRegisterInstancesResponse> DescribeRegisterInstancesOutcome;
                 typedef std::future<DescribeRegisterInstancesOutcome> DescribeRegisterInstancesOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::DescribeRegisterInstancesRequest&, DescribeRegisterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegisterInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScenesResponse> DescribeScenesOutcome;
+                typedef std::future<DescribeScenesOutcome> DescribeScenesOutcomeCallable;
+                typedef std::function<void(const TatClient*, const Model::DescribeScenesRequest&, DescribeScenesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScenesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableInvokerResponse> DisableInvokerOutcome;
                 typedef std::future<DisableInvokerOutcome> DisableInvokerOutcomeCallable;
                 typedef std::function<void(const TatClient*, const Model::DisableInvokerRequest&, DisableInvokerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableInvokerAsyncHandler;
@@ -355,6 +360,15 @@ RegionState 为 AVAILABLE，代表该地域的 TAT 后台服务已经可用；�
                 DescribeRegisterInstancesOutcome DescribeRegisterInstances(const Model::DescribeRegisterInstancesRequest &request);
                 void DescribeRegisterInstancesAsync(const Model::DescribeRegisterInstancesRequest& request, const DescribeRegisterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRegisterInstancesOutcomeCallable DescribeRegisterInstancesCallable(const Model::DescribeRegisterInstancesRequest& request);
+
+                /**
+                 *此接口用于查询场景详情。
+                 * @param req DescribeScenesRequest
+                 * @return DescribeScenesOutcome
+                 */
+                DescribeScenesOutcome DescribeScenes(const Model::DescribeScenesRequest &request);
+                void DescribeScenesAsync(const Model::DescribeScenesRequest& request, const DescribeScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScenesOutcomeCallable DescribeScenesCallable(const Model::DescribeScenesRequest& request);
 
                 /**
                  *此接口用于停止执行器。

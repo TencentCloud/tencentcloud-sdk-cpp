@@ -39,7 +39,8 @@ ServerlessSpace::ServerlessSpace() :
     m_enableKibanaPrivateAccessHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_kibanaLanguageHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false)
+    m_clusterTypeHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -262,6 +263,26 @@ CoreInternalOutcome ServerlessSpace::Deserialize(const rapidjson::Value &value)
         m_clusterTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("TagList") && !value["TagList"].IsNull())
+    {
+        if (!value["TagList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServerlessSpace.TagList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagList.push_back(item);
+        }
+        m_tagListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -428,6 +449,21 @@ void ServerlessSpace::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ClusterType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clusterType, allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -735,5 +771,21 @@ void ServerlessSpace::SetClusterType(const int64_t& _clusterType)
 bool ServerlessSpace::ClusterTypeHasBeenSet() const
 {
     return m_clusterTypeHasBeenSet;
+}
+
+vector<TagInfo> ServerlessSpace::GetTagList() const
+{
+    return m_tagList;
+}
+
+void ServerlessSpace::SetTagList(const vector<TagInfo>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool ServerlessSpace::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 

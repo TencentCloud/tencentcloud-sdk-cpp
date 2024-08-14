@@ -96,6 +96,206 @@ namespace TencentCloud
                      */
                     bool SubProductNameHasBeenSet() const;
 
+                    /**
+                     * 获取产品码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductCode 产品码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProductCode() const;
+
+                    /**
+                     * 设置产品码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productCode 产品码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductCode(const std::string& _productCode);
+
+                    /**
+                     * 判断参数 ProductCode 是否已赋值
+                     * @return ProductCode 是否已赋值
+                     * 
+                     */
+                    bool ProductCodeHasBeenSet() const;
+
+                    /**
+                     * 获取子产品码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubProductCode 子产品码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubProductCode() const;
+
+                    /**
+                     * 设置子产品码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subProductCode 子产品码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubProductCode(const std::string& _subProductCode);
+
+                    /**
+                     * 判断参数 SubProductCode 是否已赋值
+                     * @return SubProductCode 是否已赋值
+                     * 
+                     */
+                    bool SubProductCodeHasBeenSet() const;
+
+                    /**
+                     * 获取计费项码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillingItemCode 计费项码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBillingItemCode() const;
+
+                    /**
+                     * 设置计费项码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _billingItemCode 计费项码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBillingItemCode(const std::string& _billingItemCode);
+
+                    /**
+                     * 判断参数 BillingItemCode 是否已赋值
+                     * @return BillingItemCode 是否已赋值
+                     * 
+                     */
+                    bool BillingItemCodeHasBeenSet() const;
+
+                    /**
+                     * 获取计费细项码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubBillingItemCode 计费细项码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubBillingItemCode() const;
+
+                    /**
+                     * 设置计费细项码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subBillingItemCode 计费细项码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubBillingItemCode(const std::string& _subBillingItemCode);
+
+                    /**
+                     * 判断参数 SubBillingItemCode 是否已赋值
+                     * @return SubBillingItemCode 是否已赋值
+                     * 
+                     */
+                    bool SubBillingItemCodeHasBeenSet() const;
+
+                    /**
+                     * 获取产品英文名	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductEnName 产品英文名	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProductEnName() const;
+
+                    /**
+                     * 设置产品英文名	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productEnName 产品英文名	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductEnName(const std::string& _productEnName);
+
+                    /**
+                     * 判断参数 ProductEnName 是否已赋值
+                     * @return ProductEnName 是否已赋值
+                     * 
+                     */
+                    bool ProductEnNameHasBeenSet() const;
+
+                    /**
+                     * 获取子产品英文名	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubProductEnName 子产品英文名	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubProductEnName() const;
+
+                    /**
+                     * 设置子产品英文名	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subProductEnName 子产品英文名	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubProductEnName(const std::string& _subProductEnName);
+
+                    /**
+                     * 判断参数 SubProductEnName 是否已赋值
+                     * @return SubProductEnName 是否已赋值
+                     * 
+                     */
+                    bool SubProductEnNameHasBeenSet() const;
+
+                    /**
+                     * 获取结算周期	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CalcUnit 结算周期	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCalcUnit() const;
+
+                    /**
+                     * 设置结算周期	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _calcUnit 结算周期	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCalcUnit(const std::string& _calcUnit);
+
+                    /**
+                     * 判断参数 CalcUnit 是否已赋值
+                     * @return CalcUnit 是否已赋值
+                     * 
+                     */
+                    bool CalcUnitHasBeenSet() const;
+
+                    /**
+                     * 获取payMode为prepay 且 payScene为common的情况下存在
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Action payMode为prepay 且 payScene为common的情况下存在
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAction() const;
+
+                    /**
+                     * 设置payMode为prepay 且 payScene为common的情况下存在
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _action payMode为prepay 且 payScene为common的情况下存在
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAction(const std::string& _action);
+
+                    /**
+                     * 判断参数 Action 是否已赋值
+                     * @return Action 是否已赋值
+                     * 
+                     */
+                    bool ActionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +311,62 @@ namespace TencentCloud
                      */
                     std::string m_subProductName;
                     bool m_subProductNameHasBeenSet;
+
+                    /**
+                     * 产品码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productCode;
+                    bool m_productCodeHasBeenSet;
+
+                    /**
+                     * 子产品码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subProductCode;
+                    bool m_subProductCodeHasBeenSet;
+
+                    /**
+                     * 计费项码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_billingItemCode;
+                    bool m_billingItemCodeHasBeenSet;
+
+                    /**
+                     * 计费细项码	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subBillingItemCode;
+                    bool m_subBillingItemCodeHasBeenSet;
+
+                    /**
+                     * 产品英文名	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productEnName;
+                    bool m_productEnNameHasBeenSet;
+
+                    /**
+                     * 子产品英文名	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subProductEnName;
+                    bool m_subProductEnNameHasBeenSet;
+
+                    /**
+                     * 结算周期	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_calcUnit;
+                    bool m_calcUnitHasBeenSet;
+
+                    /**
+                     * payMode为prepay 且 payScene为common的情况下存在
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_action;
+                    bool m_actionHasBeenSet;
 
                 };
             }

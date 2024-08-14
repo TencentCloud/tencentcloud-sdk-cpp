@@ -114,6 +114,102 @@ namespace TencentCloud
                      */
                     bool UsageDetailsHasBeenSet() const;
 
+                    /**
+                     * 获取付费模式
+                     * @return PayMode 付费模式
+                     * 
+                     */
+                    std::string GetPayMode() const;
+
+                    /**
+                     * 设置付费模式
+                     * @param _payMode 付费模式
+                     * 
+                     */
+                    void SetPayMode(const std::string& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     * 
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取查询的券id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VoucherId 查询的券id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVoucherId() const;
+
+                    /**
+                     * 设置查询的券id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _voucherId 查询的券id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVoucherId(const std::string& _voucherId);
+
+                    /**
+                     * 判断参数 VoucherId 是否已赋值
+                     * @return VoucherId 是否已赋值
+                     * 
+                     */
+                    bool VoucherIdHasBeenSet() const;
+
+                    /**
+                     * 获取交易场景：（adjust：调账、common：正常交易场景）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayScene 交易场景：（adjust：调账、common：正常交易场景）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPayScene() const;
+
+                    /**
+                     * 设置交易场景：（adjust：调账、common：正常交易场景）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _payScene 交易场景：（adjust：调账、common：正常交易场景）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPayScene(const std::string& _payScene);
+
+                    /**
+                     * 判断参数 PayScene 是否已赋值
+                     * @return PayScene 是否已赋值
+                     * 
+                     */
+                    bool PaySceneHasBeenSet() const;
+
+                    /**
+                     * 获取唯一id,对应交易:预付费的dealName,调账/后付费的outTradeNo
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SeqId 唯一id,对应交易:预付费的dealName,调账/后付费的outTradeNo
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSeqId() const;
+
+                    /**
+                     * 设置唯一id,对应交易:预付费的dealName,调账/后付费的outTradeNo
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _seqId 唯一id,对应交易:预付费的dealName,调账/后付费的outTradeNo
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSeqId(const std::string& _seqId);
+
+                    /**
+                     * 判断参数 SeqId 是否已赋值
+                     * @return SeqId 是否已赋值
+                     * 
+                     */
+                    bool SeqIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +230,33 @@ namespace TencentCloud
                      */
                     std::vector<UsageDetails> m_usageDetails;
                     bool m_usageDetailsHasBeenSet;
+
+                    /**
+                     * 付费模式
+                     */
+                    std::string m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * 查询的券id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_voucherId;
+                    bool m_voucherIdHasBeenSet;
+
+                    /**
+                     * 交易场景：（adjust：调账、common：正常交易场景）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payScene;
+                    bool m_paySceneHasBeenSet;
+
+                    /**
+                     * 唯一id,对应交易:预付费的dealName,调账/后付费的outTradeNo
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_seqId;
+                    bool m_seqIdHasBeenSet;
 
                 };
             }

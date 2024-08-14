@@ -857,6 +857,49 @@ TatClient::DescribeRegisterInstancesOutcomeCallable TatClient::DescribeRegisterI
     return task->get_future();
 }
 
+TatClient::DescribeScenesOutcome TatClient::DescribeScenes(const DescribeScenesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScenes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScenesResponse rsp = DescribeScenesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScenesOutcome(rsp);
+        else
+            return DescribeScenesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScenesOutcome(outcome.GetError());
+    }
+}
+
+void TatClient::DescribeScenesAsync(const DescribeScenesRequest& request, const DescribeScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScenes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TatClient::DescribeScenesOutcomeCallable TatClient::DescribeScenesCallable(const DescribeScenesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScenesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScenes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TatClient::DisableInvokerOutcome TatClient::DisableInvoker(const DisableInvokerRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableInvoker");

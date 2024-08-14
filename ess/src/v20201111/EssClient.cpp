@@ -255,6 +255,49 @@ EssClient::CreateBatchCancelFlowUrlOutcomeCallable EssClient::CreateBatchCancelF
     return task->get_future();
 }
 
+EssClient::CreateBatchInitOrganizationUrlOutcome EssClient::CreateBatchInitOrganizationUrl(const CreateBatchInitOrganizationUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchInitOrganizationUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchInitOrganizationUrlResponse rsp = CreateBatchInitOrganizationUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchInitOrganizationUrlOutcome(rsp);
+        else
+            return CreateBatchInitOrganizationUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchInitOrganizationUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateBatchInitOrganizationUrlAsync(const CreateBatchInitOrganizationUrlRequest& request, const CreateBatchInitOrganizationUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchInitOrganizationUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateBatchInitOrganizationUrlOutcomeCallable EssClient::CreateBatchInitOrganizationUrlCallable(const CreateBatchInitOrganizationUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchInitOrganizationUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchInitOrganizationUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateBatchOrganizationRegistrationTasksOutcome EssClient::CreateBatchOrganizationRegistrationTasks(const CreateBatchOrganizationRegistrationTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBatchOrganizationRegistrationTasks");

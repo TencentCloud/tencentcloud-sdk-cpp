@@ -30,6 +30,7 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_tagListHasBeenSet(false),
     m_vpcListHasBeenSet(false),
     m_enablePublicHasBeenSet(false),
+    m_billingFlowHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
     m_ipRulesHasBeenSet(false),
     m_messageRetentionHasBeenSet(false),
@@ -115,6 +116,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "EnablePublic";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enablePublic, allocator);
+    }
+
+    if (m_billingFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingFlow";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_billingFlow, allocator);
     }
 
     if (m_bandwidthHasBeenSet)
@@ -298,6 +307,22 @@ void CreateInstanceRequest::SetEnablePublic(const bool& _enablePublic)
 bool CreateInstanceRequest::EnablePublicHasBeenSet() const
 {
     return m_enablePublicHasBeenSet;
+}
+
+bool CreateInstanceRequest::GetBillingFlow() const
+{
+    return m_billingFlow;
+}
+
+void CreateInstanceRequest::SetBillingFlow(const bool& _billingFlow)
+{
+    m_billingFlow = _billingFlow;
+    m_billingFlowHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::BillingFlowHasBeenSet() const
+{
+    return m_billingFlowHasBeenSet;
 }
 
 int64_t CreateInstanceRequest::GetBandwidth() const

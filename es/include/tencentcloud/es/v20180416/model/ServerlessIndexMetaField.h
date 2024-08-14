@@ -471,6 +471,31 @@ namespace TencentCloud
                      */
                     bool TagListHasBeenSet() const;
 
+                    /**
+                     * 获取3782478.47
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndexTraffic 3782478.47
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetIndexTraffic() const;
+
+                    /**
+                     * 设置3782478.47
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _indexTraffic 3782478.47
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIndexTraffic(const double& _indexTraffic);
+
+                    /**
+                     * 判断参数 IndexTraffic 是否已赋值
+                     * @return IndexTraffic 是否已赋值
+                     * 
+                     */
+                    bool IndexTrafficHasBeenSet() const;
+
                 private:
 
                     /**
@@ -590,6 +615,13 @@ namespace TencentCloud
                      */
                     std::vector<TagInfo> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * 3782478.47
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_indexTraffic;
+                    bool m_indexTrafficHasBeenSet;
 
                 };
             }

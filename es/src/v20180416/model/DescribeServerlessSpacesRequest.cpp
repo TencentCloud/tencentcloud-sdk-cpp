@@ -29,7 +29,8 @@ DescribeServerlessSpacesRequest::DescribeServerlessSpacesRequest() :
     m_orderByHasBeenSet(false),
     m_vpcIdsHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,21 @@ string DescribeServerlessSpacesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -229,6 +245,22 @@ void DescribeServerlessSpacesRequest::SetLimit(const int64_t& _limit)
 bool DescribeServerlessSpacesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<TagInfo> DescribeServerlessSpacesRequest::GetTagList() const
+{
+    return m_tagList;
+}
+
+void DescribeServerlessSpacesRequest::SetTagList(const vector<TagInfo>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool DescribeServerlessSpacesRequest::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 
 

@@ -23,7 +23,11 @@ using namespace std;
 UsageRecords::UsageRecords() :
     m_usedAmountHasBeenSet(false),
     m_usedTimeHasBeenSet(false),
-    m_usageDetailsHasBeenSet(false)
+    m_usageDetailsHasBeenSet(false),
+    m_payModeHasBeenSet(false),
+    m_voucherIdHasBeenSet(false),
+    m_paySceneHasBeenSet(false),
+    m_seqIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +76,46 @@ CoreInternalOutcome UsageRecords::Deserialize(const rapidjson::Value &value)
         m_usageDetailsHasBeenSet = true;
     }
 
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageRecords.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = string(value["PayMode"].GetString());
+        m_payModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("VoucherId") && !value["VoucherId"].IsNull())
+    {
+        if (!value["VoucherId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageRecords.VoucherId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_voucherId = string(value["VoucherId"].GetString());
+        m_voucherIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayScene") && !value["PayScene"].IsNull())
+    {
+        if (!value["PayScene"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageRecords.PayScene` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payScene = string(value["PayScene"].GetString());
+        m_paySceneHasBeenSet = true;
+    }
+
+    if (value.HasMember("SeqId") && !value["SeqId"].IsNull())
+    {
+        if (!value["SeqId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageRecords.SeqId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_seqId = string(value["SeqId"].GetString());
+        m_seqIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +152,38 @@ void UsageRecords::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voucherIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoucherId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_voucherId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paySceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayScene";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_seqIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SeqId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_seqId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -159,5 +235,69 @@ void UsageRecords::SetUsageDetails(const vector<UsageDetails>& _usageDetails)
 bool UsageRecords::UsageDetailsHasBeenSet() const
 {
     return m_usageDetailsHasBeenSet;
+}
+
+string UsageRecords::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void UsageRecords::SetPayMode(const string& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool UsageRecords::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
+}
+
+string UsageRecords::GetVoucherId() const
+{
+    return m_voucherId;
+}
+
+void UsageRecords::SetVoucherId(const string& _voucherId)
+{
+    m_voucherId = _voucherId;
+    m_voucherIdHasBeenSet = true;
+}
+
+bool UsageRecords::VoucherIdHasBeenSet() const
+{
+    return m_voucherIdHasBeenSet;
+}
+
+string UsageRecords::GetPayScene() const
+{
+    return m_payScene;
+}
+
+void UsageRecords::SetPayScene(const string& _payScene)
+{
+    m_payScene = _payScene;
+    m_paySceneHasBeenSet = true;
+}
+
+bool UsageRecords::PaySceneHasBeenSet() const
+{
+    return m_paySceneHasBeenSet;
+}
+
+string UsageRecords::GetSeqId() const
+{
+    return m_seqId;
+}
+
+void UsageRecords::SetSeqId(const string& _seqId)
+{
+    m_seqId = _seqId;
+    m_seqIdHasBeenSet = true;
+}
+
+bool UsageRecords::SeqIdHasBeenSet() const
+{
+    return m_seqIdHasBeenSet;
 }
 

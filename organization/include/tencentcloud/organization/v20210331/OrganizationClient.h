@@ -25,16 +25,22 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/organization/v20210331/model/AcceptJoinShareUnitInvitationRequest.h>
 #include <tencentcloud/organization/v20210331/model/AcceptJoinShareUnitInvitationResponse.h>
+#include <tencentcloud/organization/v20210331/model/AddExternalSAMLIdPCertificateRequest.h>
+#include <tencentcloud/organization/v20210331/model/AddExternalSAMLIdPCertificateResponse.h>
 #include <tencentcloud/organization/v20210331/model/AddOrganizationMemberEmailRequest.h>
 #include <tencentcloud/organization/v20210331/model/AddOrganizationMemberEmailResponse.h>
 #include <tencentcloud/organization/v20210331/model/AddOrganizationNodeRequest.h>
 #include <tencentcloud/organization/v20210331/model/AddOrganizationNodeResponse.h>
+#include <tencentcloud/organization/v20210331/model/AddPermissionPolicyToRoleConfigurationRequest.h>
+#include <tencentcloud/organization/v20210331/model/AddPermissionPolicyToRoleConfigurationResponse.h>
 #include <tencentcloud/organization/v20210331/model/AddShareUnitRequest.h>
 #include <tencentcloud/organization/v20210331/model/AddShareUnitResponse.h>
 #include <tencentcloud/organization/v20210331/model/AddShareUnitMembersRequest.h>
 #include <tencentcloud/organization/v20210331/model/AddShareUnitMembersResponse.h>
 #include <tencentcloud/organization/v20210331/model/AddShareUnitResourcesRequest.h>
 #include <tencentcloud/organization/v20210331/model/AddShareUnitResourcesResponse.h>
+#include <tencentcloud/organization/v20210331/model/AddUserToGroupRequest.h>
+#include <tencentcloud/organization/v20210331/model/AddUserToGroupResponse.h>
 #include <tencentcloud/organization/v20210331/model/AttachPolicyRequest.h>
 #include <tencentcloud/organization/v20210331/model/AttachPolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/BindOrganizationMemberAuthAccountRequest.h>
@@ -43,6 +49,10 @@
 #include <tencentcloud/organization/v20210331/model/CancelOrganizationMemberAuthAccountResponse.h>
 #include <tencentcloud/organization/v20210331/model/CheckAccountDeleteRequest.h>
 #include <tencentcloud/organization/v20210331/model/CheckAccountDeleteResponse.h>
+#include <tencentcloud/organization/v20210331/model/ClearExternalSAMLIdentityProviderRequest.h>
+#include <tencentcloud/organization/v20210331/model/ClearExternalSAMLIdentityProviderResponse.h>
+#include <tencentcloud/organization/v20210331/model/CreateGroupRequest.h>
+#include <tencentcloud/organization/v20210331/model/CreateGroupResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrgServiceAssignRequest.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrgServiceAssignResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationRequest.h>
@@ -59,8 +69,18 @@
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationMembersPolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreatePolicyRequest.h>
 #include <tencentcloud/organization/v20210331/model/CreatePolicyResponse.h>
+#include <tencentcloud/organization/v20210331/model/CreateRoleAssignmentRequest.h>
+#include <tencentcloud/organization/v20210331/model/CreateRoleAssignmentResponse.h>
+#include <tencentcloud/organization/v20210331/model/CreateRoleConfigurationRequest.h>
+#include <tencentcloud/organization/v20210331/model/CreateRoleConfigurationResponse.h>
+#include <tencentcloud/organization/v20210331/model/CreateUserRequest.h>
+#include <tencentcloud/organization/v20210331/model/CreateUserResponse.h>
+#include <tencentcloud/organization/v20210331/model/CreateUserSyncProvisioningRequest.h>
+#include <tencentcloud/organization/v20210331/model/CreateUserSyncProvisioningResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteAccountRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteAccountResponse.h>
+#include <tencentcloud/organization/v20210331/model/DeleteGroupRequest.h>
+#include <tencentcloud/organization/v20210331/model/DeleteGroupResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteOrgServiceAssignRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteOrgServiceAssignResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteOrganizationRequest.h>
@@ -77,14 +97,24 @@
 #include <tencentcloud/organization/v20210331/model/DeleteOrganizationNodesResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeletePolicyRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeletePolicyResponse.h>
+#include <tencentcloud/organization/v20210331/model/DeleteRoleAssignmentRequest.h>
+#include <tencentcloud/organization/v20210331/model/DeleteRoleAssignmentResponse.h>
+#include <tencentcloud/organization/v20210331/model/DeleteRoleConfigurationRequest.h>
+#include <tencentcloud/organization/v20210331/model/DeleteRoleConfigurationResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitMembersRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitMembersResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitResourcesRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitResourcesResponse.h>
+#include <tencentcloud/organization/v20210331/model/DeleteUserRequest.h>
+#include <tencentcloud/organization/v20210331/model/DeleteUserResponse.h>
+#include <tencentcloud/organization/v20210331/model/DeleteUserSyncProvisioningRequest.h>
+#include <tencentcloud/organization/v20210331/model/DeleteUserSyncProvisioningResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeEffectivePolicyRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeEffectivePolicyResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribeIdentityCenterRequest.h>
+#include <tencentcloud/organization/v20210331/model/DescribeIdentityCenterResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationAuthNodeRequest.h>
@@ -123,8 +153,36 @@
 #include <tencentcloud/organization/v20210331/model/DetachPolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/DisablePolicyTypeRequest.h>
 #include <tencentcloud/organization/v20210331/model/DisablePolicyTypeResponse.h>
+#include <tencentcloud/organization/v20210331/model/DismantleRoleConfigurationRequest.h>
+#include <tencentcloud/organization/v20210331/model/DismantleRoleConfigurationResponse.h>
 #include <tencentcloud/organization/v20210331/model/EnablePolicyTypeRequest.h>
 #include <tencentcloud/organization/v20210331/model/EnablePolicyTypeResponse.h>
+#include <tencentcloud/organization/v20210331/model/GetExternalSAMLIdentityProviderRequest.h>
+#include <tencentcloud/organization/v20210331/model/GetExternalSAMLIdentityProviderResponse.h>
+#include <tencentcloud/organization/v20210331/model/GetGroupRequest.h>
+#include <tencentcloud/organization/v20210331/model/GetGroupResponse.h>
+#include <tencentcloud/organization/v20210331/model/GetProvisioningTaskStatusRequest.h>
+#include <tencentcloud/organization/v20210331/model/GetProvisioningTaskStatusResponse.h>
+#include <tencentcloud/organization/v20210331/model/GetRoleConfigurationRequest.h>
+#include <tencentcloud/organization/v20210331/model/GetRoleConfigurationResponse.h>
+#include <tencentcloud/organization/v20210331/model/GetTaskStatusRequest.h>
+#include <tencentcloud/organization/v20210331/model/GetTaskStatusResponse.h>
+#include <tencentcloud/organization/v20210331/model/GetUserRequest.h>
+#include <tencentcloud/organization/v20210331/model/GetUserResponse.h>
+#include <tencentcloud/organization/v20210331/model/GetUserSyncProvisioningRequest.h>
+#include <tencentcloud/organization/v20210331/model/GetUserSyncProvisioningResponse.h>
+#include <tencentcloud/organization/v20210331/model/GetZoneSAMLServiceProviderInfoRequest.h>
+#include <tencentcloud/organization/v20210331/model/GetZoneSAMLServiceProviderInfoResponse.h>
+#include <tencentcloud/organization/v20210331/model/GetZoneStatisticsRequest.h>
+#include <tencentcloud/organization/v20210331/model/GetZoneStatisticsResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListExternalSAMLIdPCertificatesRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListExternalSAMLIdPCertificatesResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListGroupMembersRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListGroupMembersResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListGroupsRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListGroupsResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListJoinedGroupsForUserRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListJoinedGroupsForUserResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListNonCompliantResourceRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListNonCompliantResourceResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListOrgServiceAssignMemberRequest.h>
@@ -133,18 +191,46 @@
 #include <tencentcloud/organization/v20210331/model/ListOrganizationIdentityResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListOrganizationServiceRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListOrganizationServiceResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListPermissionPoliciesInRoleConfigurationRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListPermissionPoliciesInRoleConfigurationResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListPoliciesRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListPoliciesResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListPoliciesForTargetRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListPoliciesForTargetResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListRoleAssignmentsRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListRoleAssignmentsResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListRoleConfigurationProvisioningsRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListRoleConfigurationProvisioningsResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListRoleConfigurationsRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListRoleConfigurationsResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListTargetsForPolicyRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListTargetsForPolicyResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListTasksRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListTasksResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListUserSyncProvisioningsRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListUserSyncProvisioningsResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListUsersRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListUsersResponse.h>
 #include <tencentcloud/organization/v20210331/model/MoveOrganizationNodeMembersRequest.h>
 #include <tencentcloud/organization/v20210331/model/MoveOrganizationNodeMembersResponse.h>
+#include <tencentcloud/organization/v20210331/model/OpenIdentityCenterRequest.h>
+#include <tencentcloud/organization/v20210331/model/OpenIdentityCenterResponse.h>
+#include <tencentcloud/organization/v20210331/model/ProvisionRoleConfigurationRequest.h>
+#include <tencentcloud/organization/v20210331/model/ProvisionRoleConfigurationResponse.h>
 #include <tencentcloud/organization/v20210331/model/QuitOrganizationRequest.h>
 #include <tencentcloud/organization/v20210331/model/QuitOrganizationResponse.h>
 #include <tencentcloud/organization/v20210331/model/RejectJoinShareUnitInvitationRequest.h>
 #include <tencentcloud/organization/v20210331/model/RejectJoinShareUnitInvitationResponse.h>
+#include <tencentcloud/organization/v20210331/model/RemoveExternalSAMLIdPCertificateRequest.h>
+#include <tencentcloud/organization/v20210331/model/RemoveExternalSAMLIdPCertificateResponse.h>
+#include <tencentcloud/organization/v20210331/model/RemovePermissionPolicyFromRoleConfigurationRequest.h>
+#include <tencentcloud/organization/v20210331/model/RemovePermissionPolicyFromRoleConfigurationResponse.h>
+#include <tencentcloud/organization/v20210331/model/RemoveUserFromGroupRequest.h>
+#include <tencentcloud/organization/v20210331/model/RemoveUserFromGroupResponse.h>
+#include <tencentcloud/organization/v20210331/model/SetExternalSAMLIdentityProviderRequest.h>
+#include <tencentcloud/organization/v20210331/model/SetExternalSAMLIdentityProviderResponse.h>
+#include <tencentcloud/organization/v20210331/model/UpdateGroupRequest.h>
+#include <tencentcloud/organization/v20210331/model/UpdateGroupResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationIdentityRequest.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationIdentityResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationMemberRequest.h>
@@ -155,8 +241,18 @@
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationNodeResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdatePolicyRequest.h>
 #include <tencentcloud/organization/v20210331/model/UpdatePolicyResponse.h>
+#include <tencentcloud/organization/v20210331/model/UpdateRoleConfigurationRequest.h>
+#include <tencentcloud/organization/v20210331/model/UpdateRoleConfigurationResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateShareUnitRequest.h>
 #include <tencentcloud/organization/v20210331/model/UpdateShareUnitResponse.h>
+#include <tencentcloud/organization/v20210331/model/UpdateUserRequest.h>
+#include <tencentcloud/organization/v20210331/model/UpdateUserResponse.h>
+#include <tencentcloud/organization/v20210331/model/UpdateUserStatusRequest.h>
+#include <tencentcloud/organization/v20210331/model/UpdateUserStatusResponse.h>
+#include <tencentcloud/organization/v20210331/model/UpdateUserSyncProvisioningRequest.h>
+#include <tencentcloud/organization/v20210331/model/UpdateUserSyncProvisioningResponse.h>
+#include <tencentcloud/organization/v20210331/model/UpdateZoneRequest.h>
+#include <tencentcloud/organization/v20210331/model/UpdateZoneResponse.h>
 
 
 namespace TencentCloud
@@ -174,12 +270,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AcceptJoinShareUnitInvitationResponse> AcceptJoinShareUnitInvitationOutcome;
                 typedef std::future<AcceptJoinShareUnitInvitationOutcome> AcceptJoinShareUnitInvitationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::AcceptJoinShareUnitInvitationRequest&, AcceptJoinShareUnitInvitationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AcceptJoinShareUnitInvitationAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddExternalSAMLIdPCertificateResponse> AddExternalSAMLIdPCertificateOutcome;
+                typedef std::future<AddExternalSAMLIdPCertificateOutcome> AddExternalSAMLIdPCertificateOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::AddExternalSAMLIdPCertificateRequest&, AddExternalSAMLIdPCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddExternalSAMLIdPCertificateAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddOrganizationMemberEmailResponse> AddOrganizationMemberEmailOutcome;
                 typedef std::future<AddOrganizationMemberEmailOutcome> AddOrganizationMemberEmailOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::AddOrganizationMemberEmailRequest&, AddOrganizationMemberEmailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddOrganizationMemberEmailAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddOrganizationNodeResponse> AddOrganizationNodeOutcome;
                 typedef std::future<AddOrganizationNodeOutcome> AddOrganizationNodeOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::AddOrganizationNodeRequest&, AddOrganizationNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddOrganizationNodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddPermissionPolicyToRoleConfigurationResponse> AddPermissionPolicyToRoleConfigurationOutcome;
+                typedef std::future<AddPermissionPolicyToRoleConfigurationOutcome> AddPermissionPolicyToRoleConfigurationOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::AddPermissionPolicyToRoleConfigurationRequest&, AddPermissionPolicyToRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddPermissionPolicyToRoleConfigurationAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddShareUnitResponse> AddShareUnitOutcome;
                 typedef std::future<AddShareUnitOutcome> AddShareUnitOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::AddShareUnitRequest&, AddShareUnitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddShareUnitAsyncHandler;
@@ -189,6 +291,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddShareUnitResourcesResponse> AddShareUnitResourcesOutcome;
                 typedef std::future<AddShareUnitResourcesOutcome> AddShareUnitResourcesOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::AddShareUnitResourcesRequest&, AddShareUnitResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddShareUnitResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddUserToGroupResponse> AddUserToGroupOutcome;
+                typedef std::future<AddUserToGroupOutcome> AddUserToGroupOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::AddUserToGroupRequest&, AddUserToGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUserToGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::AttachPolicyResponse> AttachPolicyOutcome;
                 typedef std::future<AttachPolicyOutcome> AttachPolicyOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::AttachPolicyRequest&, AttachPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachPolicyAsyncHandler;
@@ -201,6 +306,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckAccountDeleteResponse> CheckAccountDeleteOutcome;
                 typedef std::future<CheckAccountDeleteOutcome> CheckAccountDeleteOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::CheckAccountDeleteRequest&, CheckAccountDeleteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAccountDeleteAsyncHandler;
+                typedef Outcome<Core::Error, Model::ClearExternalSAMLIdentityProviderResponse> ClearExternalSAMLIdentityProviderOutcome;
+                typedef std::future<ClearExternalSAMLIdentityProviderOutcome> ClearExternalSAMLIdentityProviderOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ClearExternalSAMLIdentityProviderRequest&, ClearExternalSAMLIdentityProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearExternalSAMLIdentityProviderAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGroupResponse> CreateGroupOutcome;
+                typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::CreateGroupRequest&, CreateGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOrgServiceAssignResponse> CreateOrgServiceAssignOutcome;
                 typedef std::future<CreateOrgServiceAssignOutcome> CreateOrgServiceAssignOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::CreateOrgServiceAssignRequest&, CreateOrgServiceAssignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrgServiceAssignAsyncHandler;
@@ -225,9 +336,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePolicyResponse> CreatePolicyOutcome;
                 typedef std::future<CreatePolicyOutcome> CreatePolicyOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::CreatePolicyRequest&, CreatePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRoleAssignmentResponse> CreateRoleAssignmentOutcome;
+                typedef std::future<CreateRoleAssignmentOutcome> CreateRoleAssignmentOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::CreateRoleAssignmentRequest&, CreateRoleAssignmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoleAssignmentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRoleConfigurationResponse> CreateRoleConfigurationOutcome;
+                typedef std::future<CreateRoleConfigurationOutcome> CreateRoleConfigurationOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::CreateRoleConfigurationRequest&, CreateRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoleConfigurationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
+                typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserSyncProvisioningResponse> CreateUserSyncProvisioningOutcome;
+                typedef std::future<CreateUserSyncProvisioningOutcome> CreateUserSyncProvisioningOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::CreateUserSyncProvisioningRequest&, CreateUserSyncProvisioningOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserSyncProvisioningAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAccountResponse> DeleteAccountOutcome;
                 typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteAccountRequest&, DeleteAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGroupResponse> DeleteGroupOutcome;
+                typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DeleteGroupRequest&, DeleteGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteOrgServiceAssignResponse> DeleteOrgServiceAssignOutcome;
                 typedef std::future<DeleteOrgServiceAssignOutcome> DeleteOrgServiceAssignOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteOrgServiceAssignRequest&, DeleteOrgServiceAssignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOrgServiceAssignAsyncHandler;
@@ -252,6 +378,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePolicyResponse> DeletePolicyOutcome;
                 typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeletePolicyRequest&, DeletePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRoleAssignmentResponse> DeleteRoleAssignmentOutcome;
+                typedef std::future<DeleteRoleAssignmentOutcome> DeleteRoleAssignmentOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DeleteRoleAssignmentRequest&, DeleteRoleAssignmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleAssignmentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRoleConfigurationResponse> DeleteRoleConfigurationOutcome;
+                typedef std::future<DeleteRoleConfigurationOutcome> DeleteRoleConfigurationOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DeleteRoleConfigurationRequest&, DeleteRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleConfigurationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteShareUnitResponse> DeleteShareUnitOutcome;
                 typedef std::future<DeleteShareUnitOutcome> DeleteShareUnitOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteShareUnitRequest&, DeleteShareUnitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteShareUnitAsyncHandler;
@@ -261,9 +393,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteShareUnitResourcesResponse> DeleteShareUnitResourcesOutcome;
                 typedef std::future<DeleteShareUnitResourcesOutcome> DeleteShareUnitResourcesOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteShareUnitResourcesRequest&, DeleteShareUnitResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteShareUnitResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteUserResponse> DeleteUserOutcome;
+                typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DeleteUserRequest&, DeleteUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteUserSyncProvisioningResponse> DeleteUserSyncProvisioningOutcome;
+                typedef std::future<DeleteUserSyncProvisioningOutcome> DeleteUserSyncProvisioningOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DeleteUserSyncProvisioningRequest&, DeleteUserSyncProvisioningOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserSyncProvisioningAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEffectivePolicyResponse> DescribeEffectivePolicyOutcome;
                 typedef std::future<DescribeEffectivePolicyOutcome> DescribeEffectivePolicyOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeEffectivePolicyRequest&, DescribeEffectivePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEffectivePolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIdentityCenterResponse> DescribeIdentityCenterOutcome;
+                typedef std::future<DescribeIdentityCenterOutcome> DescribeIdentityCenterOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DescribeIdentityCenterRequest&, DescribeIdentityCenterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIdentityCenterAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrganizationResponse> DescribeOrganizationOutcome;
                 typedef std::future<DescribeOrganizationOutcome> DescribeOrganizationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationRequest&, DescribeOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationAsyncHandler;
@@ -321,9 +462,51 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisablePolicyTypeResponse> DisablePolicyTypeOutcome;
                 typedef std::future<DisablePolicyTypeOutcome> DisablePolicyTypeOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DisablePolicyTypeRequest&, DisablePolicyTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisablePolicyTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DismantleRoleConfigurationResponse> DismantleRoleConfigurationOutcome;
+                typedef std::future<DismantleRoleConfigurationOutcome> DismantleRoleConfigurationOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DismantleRoleConfigurationRequest&, DismantleRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismantleRoleConfigurationAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnablePolicyTypeResponse> EnablePolicyTypeOutcome;
                 typedef std::future<EnablePolicyTypeOutcome> EnablePolicyTypeOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::EnablePolicyTypeRequest&, EnablePolicyTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnablePolicyTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetExternalSAMLIdentityProviderResponse> GetExternalSAMLIdentityProviderOutcome;
+                typedef std::future<GetExternalSAMLIdentityProviderOutcome> GetExternalSAMLIdentityProviderOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::GetExternalSAMLIdentityProviderRequest&, GetExternalSAMLIdentityProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetExternalSAMLIdentityProviderAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetGroupResponse> GetGroupOutcome;
+                typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::GetGroupRequest&, GetGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetProvisioningTaskStatusResponse> GetProvisioningTaskStatusOutcome;
+                typedef std::future<GetProvisioningTaskStatusOutcome> GetProvisioningTaskStatusOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::GetProvisioningTaskStatusRequest&, GetProvisioningTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetProvisioningTaskStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetRoleConfigurationResponse> GetRoleConfigurationOutcome;
+                typedef std::future<GetRoleConfigurationOutcome> GetRoleConfigurationOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::GetRoleConfigurationRequest&, GetRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRoleConfigurationAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetTaskStatusResponse> GetTaskStatusOutcome;
+                typedef std::future<GetTaskStatusOutcome> GetTaskStatusOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::GetTaskStatusRequest&, GetTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetUserResponse> GetUserOutcome;
+                typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::GetUserRequest&, GetUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetUserSyncProvisioningResponse> GetUserSyncProvisioningOutcome;
+                typedef std::future<GetUserSyncProvisioningOutcome> GetUserSyncProvisioningOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::GetUserSyncProvisioningRequest&, GetUserSyncProvisioningOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUserSyncProvisioningAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetZoneSAMLServiceProviderInfoResponse> GetZoneSAMLServiceProviderInfoOutcome;
+                typedef std::future<GetZoneSAMLServiceProviderInfoOutcome> GetZoneSAMLServiceProviderInfoOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::GetZoneSAMLServiceProviderInfoRequest&, GetZoneSAMLServiceProviderInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetZoneSAMLServiceProviderInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetZoneStatisticsResponse> GetZoneStatisticsOutcome;
+                typedef std::future<GetZoneStatisticsOutcome> GetZoneStatisticsOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::GetZoneStatisticsRequest&, GetZoneStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetZoneStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListExternalSAMLIdPCertificatesResponse> ListExternalSAMLIdPCertificatesOutcome;
+                typedef std::future<ListExternalSAMLIdPCertificatesOutcome> ListExternalSAMLIdPCertificatesOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListExternalSAMLIdPCertificatesRequest&, ListExternalSAMLIdPCertificatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListExternalSAMLIdPCertificatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListGroupMembersResponse> ListGroupMembersOutcome;
+                typedef std::future<ListGroupMembersOutcome> ListGroupMembersOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListGroupMembersRequest&, ListGroupMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListGroupMembersAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListGroupsResponse> ListGroupsOutcome;
+                typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListGroupsRequest&, ListGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListJoinedGroupsForUserResponse> ListJoinedGroupsForUserOutcome;
+                typedef std::future<ListJoinedGroupsForUserOutcome> ListJoinedGroupsForUserOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListJoinedGroupsForUserRequest&, ListJoinedGroupsForUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListJoinedGroupsForUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListNonCompliantResourceResponse> ListNonCompliantResourceOutcome;
                 typedef std::future<ListNonCompliantResourceOutcome> ListNonCompliantResourceOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListNonCompliantResourceRequest&, ListNonCompliantResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListNonCompliantResourceAsyncHandler;
@@ -336,24 +519,66 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListOrganizationServiceResponse> ListOrganizationServiceOutcome;
                 typedef std::future<ListOrganizationServiceOutcome> ListOrganizationServiceOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListOrganizationServiceRequest&, ListOrganizationServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListOrganizationServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListPermissionPoliciesInRoleConfigurationResponse> ListPermissionPoliciesInRoleConfigurationOutcome;
+                typedef std::future<ListPermissionPoliciesInRoleConfigurationOutcome> ListPermissionPoliciesInRoleConfigurationOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListPermissionPoliciesInRoleConfigurationRequest&, ListPermissionPoliciesInRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPermissionPoliciesInRoleConfigurationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListPoliciesResponse> ListPoliciesOutcome;
                 typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListPoliciesRequest&, ListPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListPoliciesForTargetResponse> ListPoliciesForTargetOutcome;
                 typedef std::future<ListPoliciesForTargetOutcome> ListPoliciesForTargetOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListPoliciesForTargetRequest&, ListPoliciesForTargetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPoliciesForTargetAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListRoleAssignmentsResponse> ListRoleAssignmentsOutcome;
+                typedef std::future<ListRoleAssignmentsOutcome> ListRoleAssignmentsOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListRoleAssignmentsRequest&, ListRoleAssignmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListRoleAssignmentsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListRoleConfigurationProvisioningsResponse> ListRoleConfigurationProvisioningsOutcome;
+                typedef std::future<ListRoleConfigurationProvisioningsOutcome> ListRoleConfigurationProvisioningsOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListRoleConfigurationProvisioningsRequest&, ListRoleConfigurationProvisioningsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListRoleConfigurationProvisioningsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListRoleConfigurationsResponse> ListRoleConfigurationsOutcome;
+                typedef std::future<ListRoleConfigurationsOutcome> ListRoleConfigurationsOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListRoleConfigurationsRequest&, ListRoleConfigurationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListRoleConfigurationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTargetsForPolicyResponse> ListTargetsForPolicyOutcome;
                 typedef std::future<ListTargetsForPolicyOutcome> ListTargetsForPolicyOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListTargetsForPolicyRequest&, ListTargetsForPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTargetsForPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTasksResponse> ListTasksOutcome;
+                typedef std::future<ListTasksOutcome> ListTasksOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListTasksRequest&, ListTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListUserSyncProvisioningsResponse> ListUserSyncProvisioningsOutcome;
+                typedef std::future<ListUserSyncProvisioningsOutcome> ListUserSyncProvisioningsOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListUserSyncProvisioningsRequest&, ListUserSyncProvisioningsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUserSyncProvisioningsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListUsersResponse> ListUsersOutcome;
+                typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListUsersRequest&, ListUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::MoveOrganizationNodeMembersResponse> MoveOrganizationNodeMembersOutcome;
                 typedef std::future<MoveOrganizationNodeMembersOutcome> MoveOrganizationNodeMembersOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::MoveOrganizationNodeMembersRequest&, MoveOrganizationNodeMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MoveOrganizationNodeMembersAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenIdentityCenterResponse> OpenIdentityCenterOutcome;
+                typedef std::future<OpenIdentityCenterOutcome> OpenIdentityCenterOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::OpenIdentityCenterRequest&, OpenIdentityCenterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenIdentityCenterAsyncHandler;
+                typedef Outcome<Core::Error, Model::ProvisionRoleConfigurationResponse> ProvisionRoleConfigurationOutcome;
+                typedef std::future<ProvisionRoleConfigurationOutcome> ProvisionRoleConfigurationOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ProvisionRoleConfigurationRequest&, ProvisionRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProvisionRoleConfigurationAsyncHandler;
                 typedef Outcome<Core::Error, Model::QuitOrganizationResponse> QuitOrganizationOutcome;
                 typedef std::future<QuitOrganizationOutcome> QuitOrganizationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::QuitOrganizationRequest&, QuitOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuitOrganizationAsyncHandler;
                 typedef Outcome<Core::Error, Model::RejectJoinShareUnitInvitationResponse> RejectJoinShareUnitInvitationOutcome;
                 typedef std::future<RejectJoinShareUnitInvitationOutcome> RejectJoinShareUnitInvitationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::RejectJoinShareUnitInvitationRequest&, RejectJoinShareUnitInvitationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RejectJoinShareUnitInvitationAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveExternalSAMLIdPCertificateResponse> RemoveExternalSAMLIdPCertificateOutcome;
+                typedef std::future<RemoveExternalSAMLIdPCertificateOutcome> RemoveExternalSAMLIdPCertificateOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::RemoveExternalSAMLIdPCertificateRequest&, RemoveExternalSAMLIdPCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveExternalSAMLIdPCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemovePermissionPolicyFromRoleConfigurationResponse> RemovePermissionPolicyFromRoleConfigurationOutcome;
+                typedef std::future<RemovePermissionPolicyFromRoleConfigurationOutcome> RemovePermissionPolicyFromRoleConfigurationOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::RemovePermissionPolicyFromRoleConfigurationRequest&, RemovePermissionPolicyFromRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemovePermissionPolicyFromRoleConfigurationAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveUserFromGroupResponse> RemoveUserFromGroupOutcome;
+                typedef std::future<RemoveUserFromGroupOutcome> RemoveUserFromGroupOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::RemoveUserFromGroupRequest&, RemoveUserFromGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserFromGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetExternalSAMLIdentityProviderResponse> SetExternalSAMLIdentityProviderOutcome;
+                typedef std::future<SetExternalSAMLIdentityProviderOutcome> SetExternalSAMLIdentityProviderOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::SetExternalSAMLIdentityProviderRequest&, SetExternalSAMLIdentityProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetExternalSAMLIdentityProviderAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateGroupResponse> UpdateGroupOutcome;
+                typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::UpdateGroupRequest&, UpdateGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateOrganizationIdentityResponse> UpdateOrganizationIdentityOutcome;
                 typedef std::future<UpdateOrganizationIdentityOutcome> UpdateOrganizationIdentityOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::UpdateOrganizationIdentityRequest&, UpdateOrganizationIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOrganizationIdentityAsyncHandler;
@@ -369,9 +594,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdatePolicyResponse> UpdatePolicyOutcome;
                 typedef std::future<UpdatePolicyOutcome> UpdatePolicyOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::UpdatePolicyRequest&, UpdatePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateRoleConfigurationResponse> UpdateRoleConfigurationOutcome;
+                typedef std::future<UpdateRoleConfigurationOutcome> UpdateRoleConfigurationOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::UpdateRoleConfigurationRequest&, UpdateRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRoleConfigurationAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateShareUnitResponse> UpdateShareUnitOutcome;
                 typedef std::future<UpdateShareUnitOutcome> UpdateShareUnitOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::UpdateShareUnitRequest&, UpdateShareUnitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateShareUnitAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateUserResponse> UpdateUserOutcome;
+                typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::UpdateUserRequest&, UpdateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateUserStatusResponse> UpdateUserStatusOutcome;
+                typedef std::future<UpdateUserStatusOutcome> UpdateUserStatusOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::UpdateUserStatusRequest&, UpdateUserStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateUserSyncProvisioningResponse> UpdateUserSyncProvisioningOutcome;
+                typedef std::future<UpdateUserSyncProvisioningOutcome> UpdateUserSyncProvisioningOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::UpdateUserSyncProvisioningRequest&, UpdateUserSyncProvisioningOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserSyncProvisioningAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateZoneResponse> UpdateZoneOutcome;
+                typedef std::future<UpdateZoneOutcome> UpdateZoneOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::UpdateZoneRequest&, UpdateZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateZoneAsyncHandler;
 
 
 
@@ -383,6 +623,15 @@ namespace TencentCloud
                 AcceptJoinShareUnitInvitationOutcome AcceptJoinShareUnitInvitation(const Model::AcceptJoinShareUnitInvitationRequest &request);
                 void AcceptJoinShareUnitInvitationAsync(const Model::AcceptJoinShareUnitInvitationRequest& request, const AcceptJoinShareUnitInvitationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AcceptJoinShareUnitInvitationOutcomeCallable AcceptJoinShareUnitInvitationCallable(const Model::AcceptJoinShareUnitInvitationRequest& request);
+
+                /**
+                 *添加SAML签名证书
+                 * @param req AddExternalSAMLIdPCertificateRequest
+                 * @return AddExternalSAMLIdPCertificateOutcome
+                 */
+                AddExternalSAMLIdPCertificateOutcome AddExternalSAMLIdPCertificate(const Model::AddExternalSAMLIdPCertificateRequest &request);
+                void AddExternalSAMLIdPCertificateAsync(const Model::AddExternalSAMLIdPCertificateRequest& request, const AddExternalSAMLIdPCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddExternalSAMLIdPCertificateOutcomeCallable AddExternalSAMLIdPCertificateCallable(const Model::AddExternalSAMLIdPCertificateRequest& request);
 
                 /**
                  *添加组织成员邮箱
@@ -401,6 +650,15 @@ namespace TencentCloud
                 AddOrganizationNodeOutcome AddOrganizationNode(const Model::AddOrganizationNodeRequest &request);
                 void AddOrganizationNodeAsync(const Model::AddOrganizationNodeRequest& request, const AddOrganizationNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddOrganizationNodeOutcomeCallable AddOrganizationNodeCallable(const Model::AddOrganizationNodeRequest& request);
+
+                /**
+                 *为权限配置添加策略
+                 * @param req AddPermissionPolicyToRoleConfigurationRequest
+                 * @return AddPermissionPolicyToRoleConfigurationOutcome
+                 */
+                AddPermissionPolicyToRoleConfigurationOutcome AddPermissionPolicyToRoleConfiguration(const Model::AddPermissionPolicyToRoleConfigurationRequest &request);
+                void AddPermissionPolicyToRoleConfigurationAsync(const Model::AddPermissionPolicyToRoleConfigurationRequest& request, const AddPermissionPolicyToRoleConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddPermissionPolicyToRoleConfigurationOutcomeCallable AddPermissionPolicyToRoleConfigurationCallable(const Model::AddPermissionPolicyToRoleConfigurationRequest& request);
 
                 /**
                  *创建共享单元。
@@ -428,6 +686,15 @@ namespace TencentCloud
                 AddShareUnitResourcesOutcome AddShareUnitResources(const Model::AddShareUnitResourcesRequest &request);
                 void AddShareUnitResourcesAsync(const Model::AddShareUnitResourcesRequest& request, const AddShareUnitResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddShareUnitResourcesOutcomeCallable AddShareUnitResourcesCallable(const Model::AddShareUnitResourcesRequest& request);
+
+                /**
+                 *为用户组添加用户
+                 * @param req AddUserToGroupRequest
+                 * @return AddUserToGroupOutcome
+                 */
+                AddUserToGroupOutcome AddUserToGroup(const Model::AddUserToGroupRequest &request);
+                void AddUserToGroupAsync(const Model::AddUserToGroupRequest& request, const AddUserToGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddUserToGroupOutcomeCallable AddUserToGroupCallable(const Model::AddUserToGroupRequest& request);
 
                 /**
                  *绑定策略
@@ -464,6 +731,24 @@ namespace TencentCloud
                 CheckAccountDeleteOutcome CheckAccountDelete(const Model::CheckAccountDeleteRequest &request);
                 void CheckAccountDeleteAsync(const Model::CheckAccountDeleteRequest& request, const CheckAccountDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckAccountDeleteOutcomeCallable CheckAccountDeleteCallable(const Model::CheckAccountDeleteRequest& request);
+
+                /**
+                 *清空SAML身份提供商配置信息
+                 * @param req ClearExternalSAMLIdentityProviderRequest
+                 * @return ClearExternalSAMLIdentityProviderOutcome
+                 */
+                ClearExternalSAMLIdentityProviderOutcome ClearExternalSAMLIdentityProvider(const Model::ClearExternalSAMLIdentityProviderRequest &request);
+                void ClearExternalSAMLIdentityProviderAsync(const Model::ClearExternalSAMLIdentityProviderRequest& request, const ClearExternalSAMLIdentityProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ClearExternalSAMLIdentityProviderOutcomeCallable ClearExternalSAMLIdentityProviderCallable(const Model::ClearExternalSAMLIdentityProviderRequest& request);
+
+                /**
+                 *创建用户组
+                 * @param req CreateGroupRequest
+                 * @return CreateGroupOutcome
+                 */
+                CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest &request);
+                void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request);
 
                 /**
                  *添加集团服务委派管理员
@@ -538,6 +823,42 @@ namespace TencentCloud
                 CreatePolicyOutcomeCallable CreatePolicyCallable(const Model::CreatePolicyRequest& request);
 
                 /**
+                 *在成员账号上授权
+                 * @param req CreateRoleAssignmentRequest
+                 * @return CreateRoleAssignmentOutcome
+                 */
+                CreateRoleAssignmentOutcome CreateRoleAssignment(const Model::CreateRoleAssignmentRequest &request);
+                void CreateRoleAssignmentAsync(const Model::CreateRoleAssignmentRequest& request, const CreateRoleAssignmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRoleAssignmentOutcomeCallable CreateRoleAssignmentCallable(const Model::CreateRoleAssignmentRequest& request);
+
+                /**
+                 *创建权限配置
+                 * @param req CreateRoleConfigurationRequest
+                 * @return CreateRoleConfigurationOutcome
+                 */
+                CreateRoleConfigurationOutcome CreateRoleConfiguration(const Model::CreateRoleConfigurationRequest &request);
+                void CreateRoleConfigurationAsync(const Model::CreateRoleConfigurationRequest& request, const CreateRoleConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRoleConfigurationOutcomeCallable CreateRoleConfigurationCallable(const Model::CreateRoleConfigurationRequest& request);
+
+                /**
+                 *创建用户
+                 * @param req CreateUserRequest
+                 * @return CreateUserOutcome
+                 */
+                CreateUserOutcome CreateUser(const Model::CreateUserRequest &request);
+                void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request);
+
+                /**
+                 *创建子用户同步任务
+                 * @param req CreateUserSyncProvisioningRequest
+                 * @return CreateUserSyncProvisioningOutcome
+                 */
+                CreateUserSyncProvisioningOutcome CreateUserSyncProvisioning(const Model::CreateUserSyncProvisioningRequest &request);
+                void CreateUserSyncProvisioningAsync(const Model::CreateUserSyncProvisioningRequest& request, const CreateUserSyncProvisioningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserSyncProvisioningOutcomeCallable CreateUserSyncProvisioningCallable(const Model::CreateUserSyncProvisioningRequest& request);
+
+                /**
                  *删除成员账号
                  * @param req DeleteAccountRequest
                  * @return DeleteAccountOutcome
@@ -545,6 +866,15 @@ namespace TencentCloud
                 DeleteAccountOutcome DeleteAccount(const Model::DeleteAccountRequest &request);
                 void DeleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAccountOutcomeCallable DeleteAccountCallable(const Model::DeleteAccountRequest& request);
+
+                /**
+                 *删除用户组
+                 * @param req DeleteGroupRequest
+                 * @return DeleteGroupOutcome
+                 */
+                DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest &request);
+                void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request);
 
                 /**
                  *删除集团服务委派管理员
@@ -619,6 +949,24 @@ namespace TencentCloud
                 DeletePolicyOutcomeCallable DeletePolicyCallable(const Model::DeletePolicyRequest& request);
 
                 /**
+                 *移除成员账号上的授权
+                 * @param req DeleteRoleAssignmentRequest
+                 * @return DeleteRoleAssignmentOutcome
+                 */
+                DeleteRoleAssignmentOutcome DeleteRoleAssignment(const Model::DeleteRoleAssignmentRequest &request);
+                void DeleteRoleAssignmentAsync(const Model::DeleteRoleAssignmentRequest& request, const DeleteRoleAssignmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoleAssignmentOutcomeCallable DeleteRoleAssignmentCallable(const Model::DeleteRoleAssignmentRequest& request);
+
+                /**
+                 *删除权限配置信息
+                 * @param req DeleteRoleConfigurationRequest
+                 * @return DeleteRoleConfigurationOutcome
+                 */
+                DeleteRoleConfigurationOutcome DeleteRoleConfiguration(const Model::DeleteRoleConfigurationRequest &request);
+                void DeleteRoleConfigurationAsync(const Model::DeleteRoleConfigurationRequest& request, const DeleteRoleConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoleConfigurationOutcomeCallable DeleteRoleConfigurationCallable(const Model::DeleteRoleConfigurationRequest& request);
+
+                /**
                  *删除共享单元。
                  * @param req DeleteShareUnitRequest
                  * @return DeleteShareUnitOutcome
@@ -646,6 +994,24 @@ namespace TencentCloud
                 DeleteShareUnitResourcesOutcomeCallable DeleteShareUnitResourcesCallable(const Model::DeleteShareUnitResourcesRequest& request);
 
                 /**
+                 *删除用户
+                 * @param req DeleteUserRequest
+                 * @return DeleteUserOutcome
+                 */
+                DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest &request);
+                void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request);
+
+                /**
+                 *删除子用户同步任务
+                 * @param req DeleteUserSyncProvisioningRequest
+                 * @return DeleteUserSyncProvisioningOutcome
+                 */
+                DeleteUserSyncProvisioningOutcome DeleteUserSyncProvisioning(const Model::DeleteUserSyncProvisioningRequest &request);
+                void DeleteUserSyncProvisioningAsync(const Model::DeleteUserSyncProvisioningRequest& request, const DeleteUserSyncProvisioningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUserSyncProvisioningOutcomeCallable DeleteUserSyncProvisioningCallable(const Model::DeleteUserSyncProvisioningRequest& request);
+
+                /**
                  *查询目标关联的有效策略
                  * @param req DescribeEffectivePolicyRequest
                  * @return DescribeEffectivePolicyOutcome
@@ -653,6 +1019,15 @@ namespace TencentCloud
                 DescribeEffectivePolicyOutcome DescribeEffectivePolicy(const Model::DescribeEffectivePolicyRequest &request);
                 void DescribeEffectivePolicyAsync(const Model::DescribeEffectivePolicyRequest& request, const DescribeEffectivePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEffectivePolicyOutcomeCallable DescribeEffectivePolicyCallable(const Model::DescribeEffectivePolicyRequest& request);
+
+                /**
+                 *获取cam身份中心服务信息
+                 * @param req DescribeIdentityCenterRequest
+                 * @return DescribeIdentityCenterOutcome
+                 */
+                DescribeIdentityCenterOutcome DescribeIdentityCenter(const Model::DescribeIdentityCenterRequest &request);
+                void DescribeIdentityCenterAsync(const Model::DescribeIdentityCenterRequest& request, const DescribeIdentityCenterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIdentityCenterOutcomeCallable DescribeIdentityCenterCallable(const Model::DescribeIdentityCenterRequest& request);
 
                 /**
                  *获取企业组织信息
@@ -826,6 +1201,15 @@ namespace TencentCloud
                 DisablePolicyTypeOutcomeCallable DisablePolicyTypeCallable(const Model::DisablePolicyTypeRequest& request);
 
                 /**
+                 *解除权限配置在成员账号上的部署
+                 * @param req DismantleRoleConfigurationRequest
+                 * @return DismantleRoleConfigurationOutcome
+                 */
+                DismantleRoleConfigurationOutcome DismantleRoleConfiguration(const Model::DismantleRoleConfigurationRequest &request);
+                void DismantleRoleConfigurationAsync(const Model::DismantleRoleConfigurationRequest& request, const DismantleRoleConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DismantleRoleConfigurationOutcomeCallable DismantleRoleConfigurationCallable(const Model::DismantleRoleConfigurationRequest& request);
+
+                /**
                  *启用策略类型
                  * @param req EnablePolicyTypeRequest
                  * @return EnablePolicyTypeOutcome
@@ -833,6 +1217,123 @@ namespace TencentCloud
                 EnablePolicyTypeOutcome EnablePolicyType(const Model::EnablePolicyTypeRequest &request);
                 void EnablePolicyTypeAsync(const Model::EnablePolicyTypeRequest& request, const EnablePolicyTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnablePolicyTypeOutcomeCallable EnablePolicyTypeCallable(const Model::EnablePolicyTypeRequest& request);
+
+                /**
+                 *查询SAML身份提供商配置信息
+                 * @param req GetExternalSAMLIdentityProviderRequest
+                 * @return GetExternalSAMLIdentityProviderOutcome
+                 */
+                GetExternalSAMLIdentityProviderOutcome GetExternalSAMLIdentityProvider(const Model::GetExternalSAMLIdentityProviderRequest &request);
+                void GetExternalSAMLIdentityProviderAsync(const Model::GetExternalSAMLIdentityProviderRequest& request, const GetExternalSAMLIdentityProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetExternalSAMLIdentityProviderOutcomeCallable GetExternalSAMLIdentityProviderCallable(const Model::GetExternalSAMLIdentityProviderRequest& request);
+
+                /**
+                 *查询用户组信息
+                 * @param req GetGroupRequest
+                 * @return GetGroupOutcome
+                 */
+                GetGroupOutcome GetGroup(const Model::GetGroupRequest &request);
+                void GetGroupAsync(const Model::GetGroupRequest& request, const GetGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetGroupOutcomeCallable GetGroupCallable(const Model::GetGroupRequest& request);
+
+                /**
+                 *查询用户同步异步任务的状态
+                 * @param req GetProvisioningTaskStatusRequest
+                 * @return GetProvisioningTaskStatusOutcome
+                 */
+                GetProvisioningTaskStatusOutcome GetProvisioningTaskStatus(const Model::GetProvisioningTaskStatusRequest &request);
+                void GetProvisioningTaskStatusAsync(const Model::GetProvisioningTaskStatusRequest& request, const GetProvisioningTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetProvisioningTaskStatusOutcomeCallable GetProvisioningTaskStatusCallable(const Model::GetProvisioningTaskStatusRequest& request);
+
+                /**
+                 *查询权限配置信息
+                 * @param req GetRoleConfigurationRequest
+                 * @return GetRoleConfigurationOutcome
+                 */
+                GetRoleConfigurationOutcome GetRoleConfiguration(const Model::GetRoleConfigurationRequest &request);
+                void GetRoleConfigurationAsync(const Model::GetRoleConfigurationRequest& request, const GetRoleConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetRoleConfigurationOutcomeCallable GetRoleConfigurationCallable(const Model::GetRoleConfigurationRequest& request);
+
+                /**
+                 *查询异步任务的状态
+                 * @param req GetTaskStatusRequest
+                 * @return GetTaskStatusOutcome
+                 */
+                GetTaskStatusOutcome GetTaskStatus(const Model::GetTaskStatusRequest &request);
+                void GetTaskStatusAsync(const Model::GetTaskStatusRequest& request, const GetTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetTaskStatusOutcomeCallable GetTaskStatusCallable(const Model::GetTaskStatusRequest& request);
+
+                /**
+                 *查询用户信息
+                 * @param req GetUserRequest
+                 * @return GetUserOutcome
+                 */
+                GetUserOutcome GetUser(const Model::GetUserRequest &request);
+                void GetUserAsync(const Model::GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetUserOutcomeCallable GetUserCallable(const Model::GetUserRequest& request);
+
+                /**
+                 *查询CAM用户同步
+                 * @param req GetUserSyncProvisioningRequest
+                 * @return GetUserSyncProvisioningOutcome
+                 */
+                GetUserSyncProvisioningOutcome GetUserSyncProvisioning(const Model::GetUserSyncProvisioningRequest &request);
+                void GetUserSyncProvisioningAsync(const Model::GetUserSyncProvisioningRequest& request, const GetUserSyncProvisioningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetUserSyncProvisioningOutcomeCallable GetUserSyncProvisioningCallable(const Model::GetUserSyncProvisioningRequest& request);
+
+                /**
+                 *查询SAML服务提供商配置信息
+                 * @param req GetZoneSAMLServiceProviderInfoRequest
+                 * @return GetZoneSAMLServiceProviderInfoOutcome
+                 */
+                GetZoneSAMLServiceProviderInfoOutcome GetZoneSAMLServiceProviderInfo(const Model::GetZoneSAMLServiceProviderInfoRequest &request);
+                void GetZoneSAMLServiceProviderInfoAsync(const Model::GetZoneSAMLServiceProviderInfoRequest& request, const GetZoneSAMLServiceProviderInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetZoneSAMLServiceProviderInfoOutcomeCallable GetZoneSAMLServiceProviderInfoCallable(const Model::GetZoneSAMLServiceProviderInfoRequest& request);
+
+                /**
+                 *查询空间的统计信息
+                 * @param req GetZoneStatisticsRequest
+                 * @return GetZoneStatisticsOutcome
+                 */
+                GetZoneStatisticsOutcome GetZoneStatistics(const Model::GetZoneStatisticsRequest &request);
+                void GetZoneStatisticsAsync(const Model::GetZoneStatisticsRequest& request, const GetZoneStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetZoneStatisticsOutcomeCallable GetZoneStatisticsCallable(const Model::GetZoneStatisticsRequest& request);
+
+                /**
+                 *查询SAML签名证书列表
+                 * @param req ListExternalSAMLIdPCertificatesRequest
+                 * @return ListExternalSAMLIdPCertificatesOutcome
+                 */
+                ListExternalSAMLIdPCertificatesOutcome ListExternalSAMLIdPCertificates(const Model::ListExternalSAMLIdPCertificatesRequest &request);
+                void ListExternalSAMLIdPCertificatesAsync(const Model::ListExternalSAMLIdPCertificatesRequest& request, const ListExternalSAMLIdPCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListExternalSAMLIdPCertificatesOutcomeCallable ListExternalSAMLIdPCertificatesCallable(const Model::ListExternalSAMLIdPCertificatesRequest& request);
+
+                /**
+                 *查询用户组中的用户列表
+                 * @param req ListGroupMembersRequest
+                 * @return ListGroupMembersOutcome
+                 */
+                ListGroupMembersOutcome ListGroupMembers(const Model::ListGroupMembersRequest &request);
+                void ListGroupMembersAsync(const Model::ListGroupMembersRequest& request, const ListGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListGroupMembersOutcomeCallable ListGroupMembersCallable(const Model::ListGroupMembersRequest& request);
+
+                /**
+                 *查询用户组列表
+                 * @param req ListGroupsRequest
+                 * @return ListGroupsOutcome
+                 */
+                ListGroupsOutcome ListGroups(const Model::ListGroupsRequest &request);
+                void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListGroupsOutcomeCallable ListGroupsCallable(const Model::ListGroupsRequest& request);
+
+                /**
+                 *查询用户加入的用户组
+                 * @param req ListJoinedGroupsForUserRequest
+                 * @return ListJoinedGroupsForUserOutcome
+                 */
+                ListJoinedGroupsForUserOutcome ListJoinedGroupsForUser(const Model::ListJoinedGroupsForUserRequest &request);
+                void ListJoinedGroupsForUserAsync(const Model::ListJoinedGroupsForUserRequest& request, const ListJoinedGroupsForUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListJoinedGroupsForUserOutcomeCallable ListJoinedGroupsForUserCallable(const Model::ListJoinedGroupsForUserRequest& request);
 
                 /**
                  *获取成员标签检测不合规资源列表
@@ -871,6 +1372,15 @@ namespace TencentCloud
                 ListOrganizationServiceOutcomeCallable ListOrganizationServiceCallable(const Model::ListOrganizationServiceRequest& request);
 
                 /**
+                 *获取权限配置中的策略列表
+                 * @param req ListPermissionPoliciesInRoleConfigurationRequest
+                 * @return ListPermissionPoliciesInRoleConfigurationOutcome
+                 */
+                ListPermissionPoliciesInRoleConfigurationOutcome ListPermissionPoliciesInRoleConfiguration(const Model::ListPermissionPoliciesInRoleConfigurationRequest &request);
+                void ListPermissionPoliciesInRoleConfigurationAsync(const Model::ListPermissionPoliciesInRoleConfigurationRequest& request, const ListPermissionPoliciesInRoleConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListPermissionPoliciesInRoleConfigurationOutcomeCallable ListPermissionPoliciesInRoleConfigurationCallable(const Model::ListPermissionPoliciesInRoleConfigurationRequest& request);
+
+                /**
                  *本接口（ListPolicies）可用于查询查看策略列表数据
                  * @param req ListPoliciesRequest
                  * @return ListPoliciesOutcome
@@ -889,6 +1399,33 @@ namespace TencentCloud
                 ListPoliciesForTargetOutcomeCallable ListPoliciesForTargetCallable(const Model::ListPoliciesForTargetRequest& request);
 
                 /**
+                 *查询授权列表
+                 * @param req ListRoleAssignmentsRequest
+                 * @return ListRoleAssignmentsOutcome
+                 */
+                ListRoleAssignmentsOutcome ListRoleAssignments(const Model::ListRoleAssignmentsRequest &request);
+                void ListRoleAssignmentsAsync(const Model::ListRoleAssignmentsRequest& request, const ListRoleAssignmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListRoleAssignmentsOutcomeCallable ListRoleAssignmentsCallable(const Model::ListRoleAssignmentsRequest& request);
+
+                /**
+                 *查询权限配置部署列表
+                 * @param req ListRoleConfigurationProvisioningsRequest
+                 * @return ListRoleConfigurationProvisioningsOutcome
+                 */
+                ListRoleConfigurationProvisioningsOutcome ListRoleConfigurationProvisionings(const Model::ListRoleConfigurationProvisioningsRequest &request);
+                void ListRoleConfigurationProvisioningsAsync(const Model::ListRoleConfigurationProvisioningsRequest& request, const ListRoleConfigurationProvisioningsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListRoleConfigurationProvisioningsOutcomeCallable ListRoleConfigurationProvisioningsCallable(const Model::ListRoleConfigurationProvisioningsRequest& request);
+
+                /**
+                 *查询权限配置列表
+                 * @param req ListRoleConfigurationsRequest
+                 * @return ListRoleConfigurationsOutcome
+                 */
+                ListRoleConfigurationsOutcome ListRoleConfigurations(const Model::ListRoleConfigurationsRequest &request);
+                void ListRoleConfigurationsAsync(const Model::ListRoleConfigurationsRequest& request, const ListRoleConfigurationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListRoleConfigurationsOutcomeCallable ListRoleConfigurationsCallable(const Model::ListRoleConfigurationsRequest& request);
+
+                /**
                  *本接口（ListTargetsForPolicy）查询某个指定策略关联的目标列表
                  * @param req ListTargetsForPolicyRequest
                  * @return ListTargetsForPolicyOutcome
@@ -898,6 +1435,33 @@ namespace TencentCloud
                 ListTargetsForPolicyOutcomeCallable ListTargetsForPolicyCallable(const Model::ListTargetsForPolicyRequest& request);
 
                 /**
+                 *查询异步任务列表
+                 * @param req ListTasksRequest
+                 * @return ListTasksOutcome
+                 */
+                ListTasksOutcome ListTasks(const Model::ListTasksRequest &request);
+                void ListTasksAsync(const Model::ListTasksRequest& request, const ListTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTasksOutcomeCallable ListTasksCallable(const Model::ListTasksRequest& request);
+
+                /**
+                 *查询CAM用户同步列表
+                 * @param req ListUserSyncProvisioningsRequest
+                 * @return ListUserSyncProvisioningsOutcome
+                 */
+                ListUserSyncProvisioningsOutcome ListUserSyncProvisionings(const Model::ListUserSyncProvisioningsRequest &request);
+                void ListUserSyncProvisioningsAsync(const Model::ListUserSyncProvisioningsRequest& request, const ListUserSyncProvisioningsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListUserSyncProvisioningsOutcomeCallable ListUserSyncProvisioningsCallable(const Model::ListUserSyncProvisioningsRequest& request);
+
+                /**
+                 *查询用户列表
+                 * @param req ListUsersRequest
+                 * @return ListUsersOutcome
+                 */
+                ListUsersOutcome ListUsers(const Model::ListUsersRequest &request);
+                void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListUsersOutcomeCallable ListUsersCallable(const Model::ListUsersRequest& request);
+
+                /**
                  *移动成员到指定企业组织节点
                  * @param req MoveOrganizationNodeMembersRequest
                  * @return MoveOrganizationNodeMembersOutcome
@@ -905,6 +1469,24 @@ namespace TencentCloud
                 MoveOrganizationNodeMembersOutcome MoveOrganizationNodeMembers(const Model::MoveOrganizationNodeMembersRequest &request);
                 void MoveOrganizationNodeMembersAsync(const Model::MoveOrganizationNodeMembersRequest& request, const MoveOrganizationNodeMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 MoveOrganizationNodeMembersOutcomeCallable MoveOrganizationNodeMembersCallable(const Model::MoveOrganizationNodeMembersRequest& request);
+
+                /**
+                 *开通CIC服务
+                 * @param req OpenIdentityCenterRequest
+                 * @return OpenIdentityCenterOutcome
+                 */
+                OpenIdentityCenterOutcome OpenIdentityCenter(const Model::OpenIdentityCenterRequest &request);
+                void OpenIdentityCenterAsync(const Model::OpenIdentityCenterRequest& request, const OpenIdentityCenterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenIdentityCenterOutcomeCallable OpenIdentityCenterCallable(const Model::OpenIdentityCenterRequest& request);
+
+                /**
+                 *将权限配置部署到成员账号上
+                 * @param req ProvisionRoleConfigurationRequest
+                 * @return ProvisionRoleConfigurationOutcome
+                 */
+                ProvisionRoleConfigurationOutcome ProvisionRoleConfiguration(const Model::ProvisionRoleConfigurationRequest &request);
+                void ProvisionRoleConfigurationAsync(const Model::ProvisionRoleConfigurationRequest& request, const ProvisionRoleConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ProvisionRoleConfigurationOutcomeCallable ProvisionRoleConfigurationCallable(const Model::ProvisionRoleConfigurationRequest& request);
 
                 /**
                  *退出企业组织
@@ -923,6 +1505,51 @@ namespace TencentCloud
                 RejectJoinShareUnitInvitationOutcome RejectJoinShareUnitInvitation(const Model::RejectJoinShareUnitInvitationRequest &request);
                 void RejectJoinShareUnitInvitationAsync(const Model::RejectJoinShareUnitInvitationRequest& request, const RejectJoinShareUnitInvitationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RejectJoinShareUnitInvitationOutcomeCallable RejectJoinShareUnitInvitationCallable(const Model::RejectJoinShareUnitInvitationRequest& request);
+
+                /**
+                 *移除SAML签名证书
+                 * @param req RemoveExternalSAMLIdPCertificateRequest
+                 * @return RemoveExternalSAMLIdPCertificateOutcome
+                 */
+                RemoveExternalSAMLIdPCertificateOutcome RemoveExternalSAMLIdPCertificate(const Model::RemoveExternalSAMLIdPCertificateRequest &request);
+                void RemoveExternalSAMLIdPCertificateAsync(const Model::RemoveExternalSAMLIdPCertificateRequest& request, const RemoveExternalSAMLIdPCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveExternalSAMLIdPCertificateOutcomeCallable RemoveExternalSAMLIdPCertificateCallable(const Model::RemoveExternalSAMLIdPCertificateRequest& request);
+
+                /**
+                 *为权限配置移除策略
+                 * @param req RemovePermissionPolicyFromRoleConfigurationRequest
+                 * @return RemovePermissionPolicyFromRoleConfigurationOutcome
+                 */
+                RemovePermissionPolicyFromRoleConfigurationOutcome RemovePermissionPolicyFromRoleConfiguration(const Model::RemovePermissionPolicyFromRoleConfigurationRequest &request);
+                void RemovePermissionPolicyFromRoleConfigurationAsync(const Model::RemovePermissionPolicyFromRoleConfigurationRequest& request, const RemovePermissionPolicyFromRoleConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemovePermissionPolicyFromRoleConfigurationOutcomeCallable RemovePermissionPolicyFromRoleConfigurationCallable(const Model::RemovePermissionPolicyFromRoleConfigurationRequest& request);
+
+                /**
+                 *从用户组中移除用户
+                 * @param req RemoveUserFromGroupRequest
+                 * @return RemoveUserFromGroupOutcome
+                 */
+                RemoveUserFromGroupOutcome RemoveUserFromGroup(const Model::RemoveUserFromGroupRequest &request);
+                void RemoveUserFromGroupAsync(const Model::RemoveUserFromGroupRequest& request, const RemoveUserFromGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveUserFromGroupOutcomeCallable RemoveUserFromGroupCallable(const Model::RemoveUserFromGroupRequest& request);
+
+                /**
+                 *配置SAML身份提供商信息
+                 * @param req SetExternalSAMLIdentityProviderRequest
+                 * @return SetExternalSAMLIdentityProviderOutcome
+                 */
+                SetExternalSAMLIdentityProviderOutcome SetExternalSAMLIdentityProvider(const Model::SetExternalSAMLIdentityProviderRequest &request);
+                void SetExternalSAMLIdentityProviderAsync(const Model::SetExternalSAMLIdentityProviderRequest& request, const SetExternalSAMLIdentityProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetExternalSAMLIdentityProviderOutcomeCallable SetExternalSAMLIdentityProviderCallable(const Model::SetExternalSAMLIdentityProviderRequest& request);
+
+                /**
+                 *修改用户组信息
+                 * @param req UpdateGroupRequest
+                 * @return UpdateGroupOutcome
+                 */
+                UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest &request);
+                void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateGroupOutcomeCallable UpdateGroupCallable(const Model::UpdateGroupRequest& request);
 
                 /**
                  *更新组织身份
@@ -970,6 +1597,15 @@ namespace TencentCloud
                 UpdatePolicyOutcomeCallable UpdatePolicyCallable(const Model::UpdatePolicyRequest& request);
 
                 /**
+                 *修改权限配置信息
+                 * @param req UpdateRoleConfigurationRequest
+                 * @return UpdateRoleConfigurationOutcome
+                 */
+                UpdateRoleConfigurationOutcome UpdateRoleConfiguration(const Model::UpdateRoleConfigurationRequest &request);
+                void UpdateRoleConfigurationAsync(const Model::UpdateRoleConfigurationRequest& request, const UpdateRoleConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateRoleConfigurationOutcomeCallable UpdateRoleConfigurationCallable(const Model::UpdateRoleConfigurationRequest& request);
+
+                /**
                  *更新共享单元。
                  * @param req UpdateShareUnitRequest
                  * @return UpdateShareUnitOutcome
@@ -977,6 +1613,42 @@ namespace TencentCloud
                 UpdateShareUnitOutcome UpdateShareUnit(const Model::UpdateShareUnitRequest &request);
                 void UpdateShareUnitAsync(const Model::UpdateShareUnitRequest& request, const UpdateShareUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateShareUnitOutcomeCallable UpdateShareUnitCallable(const Model::UpdateShareUnitRequest& request);
+
+                /**
+                 *修改用户信息
+                 * @param req UpdateUserRequest
+                 * @return UpdateUserOutcome
+                 */
+                UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest &request);
+                void UpdateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateUserOutcomeCallable UpdateUserCallable(const Model::UpdateUserRequest& request);
+
+                /**
+                 *修改用户状态
+                 * @param req UpdateUserStatusRequest
+                 * @return UpdateUserStatusOutcome
+                 */
+                UpdateUserStatusOutcome UpdateUserStatus(const Model::UpdateUserStatusRequest &request);
+                void UpdateUserStatusAsync(const Model::UpdateUserStatusRequest& request, const UpdateUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateUserStatusOutcomeCallable UpdateUserStatusCallable(const Model::UpdateUserStatusRequest& request);
+
+                /**
+                 *创建子用户同步任务
+                 * @param req UpdateUserSyncProvisioningRequest
+                 * @return UpdateUserSyncProvisioningOutcome
+                 */
+                UpdateUserSyncProvisioningOutcome UpdateUserSyncProvisioning(const Model::UpdateUserSyncProvisioningRequest &request);
+                void UpdateUserSyncProvisioningAsync(const Model::UpdateUserSyncProvisioningRequest& request, const UpdateUserSyncProvisioningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateUserSyncProvisioningOutcomeCallable UpdateUserSyncProvisioningCallable(const Model::UpdateUserSyncProvisioningRequest& request);
+
+                /**
+                 *更新用户空间名
+                 * @param req UpdateZoneRequest
+                 * @return UpdateZoneOutcome
+                 */
+                UpdateZoneOutcome UpdateZone(const Model::UpdateZoneRequest &request);
+                void UpdateZoneAsync(const Model::UpdateZoneRequest& request, const UpdateZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateZoneOutcomeCallable UpdateZoneCallable(const Model::UpdateZoneRequest& request);
 
             };
         }

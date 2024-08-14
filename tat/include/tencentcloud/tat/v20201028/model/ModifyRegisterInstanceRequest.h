@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名。
-                     * @return InstanceName 实例名。
+                     * 获取实例名称。有效长度为 1～60 字符。
+                     * @return InstanceName 实例名称。有效长度为 1～60 字符。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名。
-                     * @param _instanceName 实例名。
+                     * 设置实例名称。有效长度为 1～60 字符。
+                     * @param _instanceName 实例名称。有效长度为 1～60 字符。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名。
+                     * 实例名称。有效长度为 1～60 字符。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;

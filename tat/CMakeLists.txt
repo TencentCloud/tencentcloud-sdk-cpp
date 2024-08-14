@@ -46,6 +46,7 @@ set(tat_public_header_model
   include/tencentcloud/tat/v20201028/model/DescribeQuotasRequest.h
   include/tencentcloud/tat/v20201028/model/EnableInvokerRequest.h
   include/tencentcloud/tat/v20201028/model/DefaultParameterConf.h
+  include/tencentcloud/tat/v20201028/model/DescribeScenesResponse.h
   include/tencentcloud/tat/v20201028/model/DescribeRegisterInstancesResponse.h
   include/tencentcloud/tat/v20201028/model/ModifyCommandResponse.h
   include/tencentcloud/tat/v20201028/model/RegionInfo.h
@@ -80,6 +81,8 @@ set(tat_public_header_model
   include/tencentcloud/tat/v20201028/model/DescribeRegisterCodesRequest.h
   include/tencentcloud/tat/v20201028/model/DeleteCommandRequest.h
   include/tencentcloud/tat/v20201028/model/DeleteCommandsResponse.h
+  include/tencentcloud/tat/v20201028/model/Scene.h
+  include/tencentcloud/tat/v20201028/model/DescribeScenesRequest.h
   include/tencentcloud/tat/v20201028/model/DeleteRegisterCodesResponse.h
   include/tencentcloud/tat/v20201028/model/DescribeInvokerRecordsRequest.h
   include/tencentcloud/tat/v20201028/model/DeleteInvokerRequest.h
@@ -123,6 +126,7 @@ set(tat_src
   src/v20201028/model/DescribeQuotasRequest.cpp
   src/v20201028/model/EnableInvokerRequest.cpp
   src/v20201028/model/DefaultParameterConf.cpp
+  src/v20201028/model/DescribeScenesResponse.cpp
   src/v20201028/model/DescribeRegisterInstancesResponse.cpp
   src/v20201028/model/ModifyCommandResponse.cpp
   src/v20201028/model/RegionInfo.cpp
@@ -157,6 +161,8 @@ set(tat_src
   src/v20201028/model/DescribeRegisterCodesRequest.cpp
   src/v20201028/model/DeleteCommandRequest.cpp
   src/v20201028/model/DeleteCommandsResponse.cpp
+  src/v20201028/model/Scene.cpp
+  src/v20201028/model/DescribeScenesRequest.cpp
   src/v20201028/model/DeleteRegisterCodesResponse.cpp
   src/v20201028/model/DescribeInvokerRecordsRequest.cpp
   src/v20201028/model/DeleteInvokerRequest.cpp

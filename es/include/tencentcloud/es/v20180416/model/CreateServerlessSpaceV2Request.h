@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/es/v20180416/model/VpcInfo.h>
+#include <tencentcloud/es/v20180416/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -148,6 +149,27 @@ namespace TencentCloud
                      */
                     bool ZoneIdHasBeenSet() const;
 
+                    /**
+                     * 获取标签信息
+                     * @return TagList 标签信息
+                     * 
+                     */
+                    std::vector<TagInfo> GetTagList() const;
+
+                    /**
+                     * 设置标签信息
+                     * @param _tagList 标签信息
+                     * 
+                     */
+                    void SetTagList(const std::vector<TagInfo>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +201,12 @@ namespace TencentCloud
                      */
                     uint64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 标签信息
+                     */
+                    std::vector<TagInfo> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

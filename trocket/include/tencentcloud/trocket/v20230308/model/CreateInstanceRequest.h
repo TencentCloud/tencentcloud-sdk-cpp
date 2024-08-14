@@ -83,15 +83,15 @@ PLATINUM 铂金版
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return Name 实例名称
+                     * 获取集群名称
+                     * @return Name 集群名称
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _name 实例名称
+                     * 设置集群名称
+                     * @param _name 集群名称
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -167,15 +167,15 @@ PLATINUM 铂金版
                     bool TagListHasBeenSet() const;
 
                     /**
-                     * 获取实例绑定的VPC信息
-                     * @return VpcList 实例绑定的VPC信息
+                     * 获取集群绑定的VPC信息，必填
+                     * @return VpcList 集群绑定的VPC信息，必填
                      * 
                      */
                     std::vector<VpcInfo> GetVpcList() const;
 
                     /**
-                     * 设置实例绑定的VPC信息
-                     * @param _vpcList 实例绑定的VPC信息
+                     * 设置集群绑定的VPC信息，必填
+                     * @param _vpcList 集群绑定的VPC信息，必填
                      * 
                      */
                     void SetVpcList(const std::vector<VpcInfo>& _vpcList);
@@ -188,15 +188,15 @@ PLATINUM 铂金版
                     bool VpcListHasBeenSet() const;
 
                     /**
-                     * 获取是否开启公网
-                     * @return EnablePublic 是否开启公网
+                     * 获取是否开启公网，默认值为false表示不开启
+                     * @return EnablePublic 是否开启公网，默认值为false表示不开启
                      * 
                      */
                     bool GetEnablePublic() const;
 
                     /**
-                     * 设置是否开启公网
-                     * @param _enablePublic 是否开启公网
+                     * 设置是否开启公网，默认值为false表示不开启
+                     * @param _enablePublic 是否开启公网，默认值为false表示不开启
                      * 
                      */
                     void SetEnablePublic(const bool& _enablePublic);
@@ -209,15 +209,36 @@ PLATINUM 铂金版
                     bool EnablePublicHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽（单位：兆）
-                     * @return Bandwidth 公网带宽（单位：兆）
+                     * 获取公网是否按流量计费，默认值为false表示不按流量计费
+                     * @return BillingFlow 公网是否按流量计费，默认值为false表示不按流量计费
+                     * 
+                     */
+                    bool GetBillingFlow() const;
+
+                    /**
+                     * 设置公网是否按流量计费，默认值为false表示不按流量计费
+                     * @param _billingFlow 公网是否按流量计费，默认值为false表示不按流量计费
+                     * 
+                     */
+                    void SetBillingFlow(const bool& _billingFlow);
+
+                    /**
+                     * 判断参数 BillingFlow 是否已赋值
+                     * @return BillingFlow 是否已赋值
+                     * 
+                     */
+                    bool BillingFlowHasBeenSet() const;
+
+                    /**
+                     * 获取公网带宽（单位：兆），默认值为0。如果开启公网，该字段必须为大于0的正整数
+                     * @return Bandwidth 公网带宽（单位：兆），默认值为0。如果开启公网，该字段必须为大于0的正整数
                      * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
-                     * 设置公网带宽（单位：兆）
-                     * @param _bandwidth 公网带宽（单位：兆）
+                     * 设置公网带宽（单位：兆），默认值为0。如果开启公网，该字段必须为大于0的正整数
+                     * @param _bandwidth 公网带宽（单位：兆），默认值为0。如果开启公网，该字段必须为大于0的正整数
                      * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
@@ -272,15 +293,15 @@ PLATINUM 铂金版
                     bool MessageRetentionHasBeenSet() const;
 
                     /**
-                     * 获取付费模式（0: 后付费；1: 预付费）
-                     * @return PayMode 付费模式（0: 后付费；1: 预付费）
+                     * 获取付费模式（0: 后付费；1: 预付费），默认值为0
+                     * @return PayMode 付费模式（0: 后付费；1: 预付费），默认值为0
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置付费模式（0: 后付费；1: 预付费）
-                     * @param _payMode 付费模式（0: 后付费；1: 预付费）
+                     * 设置付费模式（0: 后付费；1: 预付费），默认值为0
+                     * @param _payMode 付费模式（0: 后付费；1: 预付费），默认值为0
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -293,15 +314,15 @@ PLATINUM 铂金版
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费（0: 不自动续费；1: 自动续费）
-                     * @return RenewFlag 是否自动续费（0: 不自动续费；1: 自动续费）
+                     * 获取是否自动续费（0: 不自动续费；1: 自动续费），默认值为0
+                     * @return RenewFlag 是否自动续费（0: 不自动续费；1: 自动续费），默认值为0
                      * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
-                     * 设置是否自动续费（0: 不自动续费；1: 自动续费）
-                     * @param _renewFlag 是否自动续费（0: 不自动续费；1: 自动续费）
+                     * 设置是否自动续费（0: 不自动续费；1: 自动续费），默认值为0
+                     * @param _renewFlag 是否自动续费（0: 不自动续费；1: 自动续费），默认值为0
                      * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
@@ -314,15 +335,15 @@ PLATINUM 铂金版
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取购买时长（单位：月）
-                     * @return TimeSpan 购买时长（单位：月）
+                     * 获取购买时长（单位：月），默认值为1
+                     * @return TimeSpan 购买时长（单位：月），默认值为1
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
-                     * 设置购买时长（单位：月）
-                     * @param _timeSpan 购买时长（单位：月）
+                     * 设置购买时长（单位：月），默认值为1
+                     * @param _timeSpan 购买时长（单位：月），默认值为1
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -368,7 +389,7 @@ PLATINUM 铂金版
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * 集群名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -392,19 +413,25 @@ PLATINUM 铂金版
                     bool m_tagListHasBeenSet;
 
                     /**
-                     * 实例绑定的VPC信息
+                     * 集群绑定的VPC信息，必填
                      */
                     std::vector<VpcInfo> m_vpcList;
                     bool m_vpcListHasBeenSet;
 
                     /**
-                     * 是否开启公网
+                     * 是否开启公网，默认值为false表示不开启
                      */
                     bool m_enablePublic;
                     bool m_enablePublicHasBeenSet;
 
                     /**
-                     * 公网带宽（单位：兆）
+                     * 公网是否按流量计费，默认值为false表示不按流量计费
+                     */
+                    bool m_billingFlow;
+                    bool m_billingFlowHasBeenSet;
+
+                    /**
+                     * 公网带宽（单位：兆），默认值为0。如果开启公网，该字段必须为大于0的正整数
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
@@ -422,19 +449,19 @@ PLATINUM 铂金版
                     bool m_messageRetentionHasBeenSet;
 
                     /**
-                     * 付费模式（0: 后付费；1: 预付费）
+                     * 付费模式（0: 后付费；1: 预付费），默认值为0
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 是否自动续费（0: 不自动续费；1: 自动续费）
+                     * 是否自动续费（0: 不自动续费；1: 自动续费），默认值为0
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 购买时长（单位：月）
+                     * 购买时长（单位：月），默认值为1
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
