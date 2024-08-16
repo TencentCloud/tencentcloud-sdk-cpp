@@ -24,7 +24,8 @@ CanFixVulInfo::CanFixVulInfo() :
     m_vulIdHasBeenSet(false),
     m_vulNameHasBeenSet(false),
     m_hostListHasBeenSet(false),
-    m_fixTagHasBeenSet(false)
+    m_fixTagHasBeenSet(false),
+    m_vulCategoryHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,16 @@ CoreInternalOutcome CanFixVulInfo::Deserialize(const rapidjson::Value &value)
         m_fixTagHasBeenSet = true;
     }
 
+    if (value.HasMember("VulCategory") && !value["VulCategory"].IsNull())
+    {
+        if (!value["VulCategory"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CanFixVulInfo.VulCategory` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vulCategory = value["VulCategory"].GetUint64();
+        m_vulCategoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -135,6 +146,14 @@ void CanFixVulInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_vulCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vulCategory, allocator);
     }
 
 }
@@ -202,5 +221,21 @@ void CanFixVulInfo::SetFixTag(const vector<string>& _fixTag)
 bool CanFixVulInfo::FixTagHasBeenSet() const
 {
     return m_fixTagHasBeenSet;
+}
+
+uint64_t CanFixVulInfo::GetVulCategory() const
+{
+    return m_vulCategory;
+}
+
+void CanFixVulInfo::SetVulCategory(const uint64_t& _vulCategory)
+{
+    m_vulCategory = _vulCategory;
+    m_vulCategoryHasBeenSet = true;
+}
+
+bool CanFixVulInfo::VulCategoryHasBeenSet() const
+{
+    return m_vulCategoryHasBeenSet;
 }
 

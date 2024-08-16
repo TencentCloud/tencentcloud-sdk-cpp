@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool RspImgTypeHasBeenSet() const;
 
                     /**
-                     * 获取用户人脸图片、素材模板图的人脸位置信息。
-                     * @return MergeInfos 用户人脸图片、素材模板图的人脸位置信息。
+                     * 获取用户人脸图片、素材模板图的人脸位置信息。不能超过6个。
+                     * @return MergeInfos 用户人脸图片、素材模板图的人脸位置信息。不能超过6个。
                      * 
                      */
                     std::vector<MergeInfo> GetMergeInfos() const;
 
                     /**
-                     * 设置用户人脸图片、素材模板图的人脸位置信息。
-                     * @param _mergeInfos 用户人脸图片、素材模板图的人脸位置信息。
+                     * 设置用户人脸图片、素材模板图的人脸位置信息。不能超过6个。
+                     * @param _mergeInfos 用户人脸图片、素材模板图的人脸位置信息。不能超过6个。
                      * 
                      */
                     void SetMergeInfos(const std::vector<MergeInfo>& _mergeInfos);
@@ -283,7 +283,7 @@ namespace TencentCloud
                     bool m_rspImgTypeHasBeenSet;
 
                     /**
-                     * 用户人脸图片、素材模板图的人脸位置信息。
+                     * 用户人脸图片、素材模板图的人脸位置信息。不能超过6个。
                      */
                     std::vector<MergeInfo> m_mergeInfos;
                     bool m_mergeInfosHasBeenSet;

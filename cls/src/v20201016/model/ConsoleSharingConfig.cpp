@@ -32,7 +32,8 @@ ConsoleSharingConfig::ConsoleSharingConfig() :
     m_nowTimeHasBeenSet(false),
     m_paramsHasBeenSet(false),
     m_isLockTimeRangeHasBeenSet(false),
-    m_isLockQueryHasBeenSet(false)
+    m_isLockQueryHasBeenSet(false),
+    m_isSupportLogExportHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,16 @@ CoreInternalOutcome ConsoleSharingConfig::Deserialize(const rapidjson::Value &va
         m_isLockQueryHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportLogExport") && !value["IsSupportLogExport"].IsNull())
+    {
+        if (!value["IsSupportLogExport"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsoleSharingConfig.IsSupportLogExport` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportLogExport = value["IsSupportLogExport"].GetBool();
+        m_isSupportLogExportHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,6 +298,14 @@ void ConsoleSharingConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "IsLockQuery";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isLockQuery, allocator);
+    }
+
+    if (m_isSupportLogExportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportLogExport";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportLogExport, allocator);
     }
 
 }
@@ -482,5 +501,21 @@ void ConsoleSharingConfig::SetIsLockQuery(const bool& _isLockQuery)
 bool ConsoleSharingConfig::IsLockQueryHasBeenSet() const
 {
     return m_isLockQueryHasBeenSet;
+}
+
+bool ConsoleSharingConfig::GetIsSupportLogExport() const
+{
+    return m_isSupportLogExport;
+}
+
+void ConsoleSharingConfig::SetIsSupportLogExport(const bool& _isSupportLogExport)
+{
+    m_isSupportLogExport = _isSupportLogExport;
+    m_isSupportLogExportHasBeenSet = true;
+}
+
+bool ConsoleSharingConfig::IsSupportLogExportHasBeenSet() const
+{
+    return m_isSupportLogExportHasBeenSet;
 }
 

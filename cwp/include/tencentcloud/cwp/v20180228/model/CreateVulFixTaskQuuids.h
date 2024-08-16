@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool QuuidsHasBeenSet() const;
 
+                    /**
+                     * 获取修复方式 0组件更新或者安装补丁,1禁用服务
+                     * @return FixMethod 修复方式 0组件更新或者安装补丁,1禁用服务
+                     * 
+                     */
+                    uint64_t GetFixMethod() const;
+
+                    /**
+                     * 设置修复方式 0组件更新或者安装补丁,1禁用服务
+                     * @param _fixMethod 修复方式 0组件更新或者安装补丁,1禁用服务
+                     * 
+                     */
+                    void SetFixMethod(const uint64_t& _fixMethod);
+
+                    /**
+                     * 判断参数 FixMethod 是否已赋值
+                     * @return FixMethod 是否已赋值
+                     * 
+                     */
+                    bool FixMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_quuids;
                     bool m_quuidsHasBeenSet;
+
+                    /**
+                     * 修复方式 0组件更新或者安装补丁,1禁用服务
+                     */
+                    uint64_t m_fixMethod;
+                    bool m_fixMethodHasBeenSet;
 
                 };
             }

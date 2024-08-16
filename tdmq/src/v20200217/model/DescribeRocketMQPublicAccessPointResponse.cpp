@@ -29,7 +29,8 @@ DescribeRocketMQPublicAccessPointResponse::DescribeRocketMQPublicAccessPointResp
     m_accessUrlHasBeenSet(false),
     m_rulesHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_billingFlowHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,16 @@ CoreInternalOutcome DescribeRocketMQPublicAccessPointResponse::Deserialize(const
         m_payModeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BillingFlow") && !rsp["BillingFlow"].IsNull())
+    {
+        if (!rsp["BillingFlow"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillingFlow` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingFlow = rsp["BillingFlow"].GetBool();
+        m_billingFlowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -200,6 +211,14 @@ string DescribeRocketMQPublicAccessPointResponse::ToJsonString() const
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_billingFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingFlow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_billingFlow, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -272,6 +291,16 @@ int64_t DescribeRocketMQPublicAccessPointResponse::GetPayMode() const
 bool DescribeRocketMQPublicAccessPointResponse::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+bool DescribeRocketMQPublicAccessPointResponse::GetBillingFlow() const
+{
+    return m_billingFlow;
+}
+
+bool DescribeRocketMQPublicAccessPointResponse::BillingFlowHasBeenSet() const
+{
+    return m_billingFlowHasBeenSet;
 }
 
 

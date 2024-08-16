@@ -24,7 +24,11 @@ CcnRouteTableBroadcastPolicy::CcnRouteTableBroadcastPolicy() :
     m_routeConditionsHasBeenSet(false),
     m_broadcastConditionsHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_operateAsPathHasBeenSet(false),
+    m_asPathOperateModeHasBeenSet(false),
+    m_operateCommunitySetHasBeenSet(false),
+    m_communityOperateModeHasBeenSet(false)
 {
 }
 
@@ -93,6 +97,49 @@ CoreInternalOutcome CcnRouteTableBroadcastPolicy::Deserialize(const rapidjson::V
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("OperateAsPath") && !value["OperateAsPath"].IsNull())
+    {
+        if (!value["OperateAsPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnRouteTableBroadcastPolicy.OperateAsPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operateAsPath = string(value["OperateAsPath"].GetString());
+        m_operateAsPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("AsPathOperateMode") && !value["AsPathOperateMode"].IsNull())
+    {
+        if (!value["AsPathOperateMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnRouteTableBroadcastPolicy.AsPathOperateMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_asPathOperateMode = string(value["AsPathOperateMode"].GetString());
+        m_asPathOperateModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperateCommunitySet") && !value["OperateCommunitySet"].IsNull())
+    {
+        if (!value["OperateCommunitySet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CcnRouteTableBroadcastPolicy.OperateCommunitySet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OperateCommunitySet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_operateCommunitySet.push_back((*itr).GetString());
+        }
+        m_operateCommunitySetHasBeenSet = true;
+    }
+
+    if (value.HasMember("CommunityOperateMode") && !value["CommunityOperateMode"].IsNull())
+    {
+        if (!value["CommunityOperateMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnRouteTableBroadcastPolicy.CommunityOperateMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_communityOperateMode = string(value["CommunityOperateMode"].GetString());
+        m_communityOperateModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -144,6 +191,43 @@ void CcnRouteTableBroadcastPolicy::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operateAsPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperateAsPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operateAsPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_asPathOperateModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsPathOperateMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_asPathOperateMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operateCommunitySetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperateCommunitySet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_operateCommunitySet.begin(); itr != m_operateCommunitySet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_communityOperateModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CommunityOperateMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_communityOperateMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -211,5 +295,69 @@ void CcnRouteTableBroadcastPolicy::SetDescription(const string& _description)
 bool CcnRouteTableBroadcastPolicy::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string CcnRouteTableBroadcastPolicy::GetOperateAsPath() const
+{
+    return m_operateAsPath;
+}
+
+void CcnRouteTableBroadcastPolicy::SetOperateAsPath(const string& _operateAsPath)
+{
+    m_operateAsPath = _operateAsPath;
+    m_operateAsPathHasBeenSet = true;
+}
+
+bool CcnRouteTableBroadcastPolicy::OperateAsPathHasBeenSet() const
+{
+    return m_operateAsPathHasBeenSet;
+}
+
+string CcnRouteTableBroadcastPolicy::GetAsPathOperateMode() const
+{
+    return m_asPathOperateMode;
+}
+
+void CcnRouteTableBroadcastPolicy::SetAsPathOperateMode(const string& _asPathOperateMode)
+{
+    m_asPathOperateMode = _asPathOperateMode;
+    m_asPathOperateModeHasBeenSet = true;
+}
+
+bool CcnRouteTableBroadcastPolicy::AsPathOperateModeHasBeenSet() const
+{
+    return m_asPathOperateModeHasBeenSet;
+}
+
+vector<string> CcnRouteTableBroadcastPolicy::GetOperateCommunitySet() const
+{
+    return m_operateCommunitySet;
+}
+
+void CcnRouteTableBroadcastPolicy::SetOperateCommunitySet(const vector<string>& _operateCommunitySet)
+{
+    m_operateCommunitySet = _operateCommunitySet;
+    m_operateCommunitySetHasBeenSet = true;
+}
+
+bool CcnRouteTableBroadcastPolicy::OperateCommunitySetHasBeenSet() const
+{
+    return m_operateCommunitySetHasBeenSet;
+}
+
+string CcnRouteTableBroadcastPolicy::GetCommunityOperateMode() const
+{
+    return m_communityOperateMode;
+}
+
+void CcnRouteTableBroadcastPolicy::SetCommunityOperateMode(const string& _communityOperateMode)
+{
+    m_communityOperateMode = _communityOperateMode;
+    m_communityOperateModeHasBeenSet = true;
+}
+
+bool CcnRouteTableBroadcastPolicy::CommunityOperateModeHasBeenSet() const
+{
+    return m_communityOperateModeHasBeenSet;
 }
 

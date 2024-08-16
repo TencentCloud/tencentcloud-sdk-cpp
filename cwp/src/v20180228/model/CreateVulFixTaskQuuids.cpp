@@ -22,7 +22,8 @@ using namespace std;
 
 CreateVulFixTaskQuuids::CreateVulFixTaskQuuids() :
     m_vulIdHasBeenSet(false),
-    m_quuidsHasBeenSet(false)
+    m_quuidsHasBeenSet(false),
+    m_fixMethodHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,16 @@ CoreInternalOutcome CreateVulFixTaskQuuids::Deserialize(const rapidjson::Value &
         m_quuidsHasBeenSet = true;
     }
 
+    if (value.HasMember("FixMethod") && !value["FixMethod"].IsNull())
+    {
+        if (!value["FixMethod"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateVulFixTaskQuuids.FixMethod` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fixMethod = value["FixMethod"].GetUint64();
+        m_fixMethodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void CreateVulFixTaskQuuids::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_fixMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FixMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fixMethod, allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void CreateVulFixTaskQuuids::SetQuuids(const vector<string>& _quuids)
 bool CreateVulFixTaskQuuids::QuuidsHasBeenSet() const
 {
     return m_quuidsHasBeenSet;
+}
+
+uint64_t CreateVulFixTaskQuuids::GetFixMethod() const
+{
+    return m_fixMethod;
+}
+
+void CreateVulFixTaskQuuids::SetFixMethod(const uint64_t& _fixMethod)
+{
+    m_fixMethod = _fixMethod;
+    m_fixMethodHasBeenSet = true;
+}
+
+bool CreateVulFixTaskQuuids::FixMethodHasBeenSet() const
+{
+    return m_fixMethodHasBeenSet;
 }
 

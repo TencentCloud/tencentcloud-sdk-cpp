@@ -110,6 +110,56 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取as-path操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperateAsPath as-path操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOperateAsPath() const;
+
+                    /**
+                     * 设置as-path操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _operateAsPath as-path操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOperateAsPath(const std::string& _operateAsPath);
+
+                    /**
+                     * 判断参数 OperateAsPath 是否已赋值
+                     * @return OperateAsPath 是否已赋值
+                     * 
+                     */
+                    bool OperateAsPathHasBeenSet() const;
+
+                    /**
+                     * 获取as-path操作模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AsPathOperateMode as-path操作模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAsPathOperateMode() const;
+
+                    /**
+                     * 设置as-path操作模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _asPathOperateMode as-path操作模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAsPathOperateMode(const std::string& _asPathOperateMode);
+
+                    /**
+                     * 判断参数 AsPathOperateMode 是否已赋值
+                     * @return AsPathOperateMode 是否已赋值
+                     * 
+                     */
+                    bool AsPathOperateModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +179,20 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * as-path操作
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_operateAsPath;
+                    bool m_operateAsPathHasBeenSet;
+
+                    /**
+                     * as-path操作模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_asPathOperateMode;
+                    bool m_asPathOperateModeHasBeenSet;
 
                 };
             }

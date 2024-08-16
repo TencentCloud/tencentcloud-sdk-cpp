@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取元数据
-                     * @return MetaData 元数据
+                     * 获取元数据，个数不能大于1。
+                     * @return MetaData 元数据，个数不能大于1。
                      * 
                      */
                     std::vector<MetaData> GetMetaData() const;
 
                     /**
-                     * 设置元数据
-                     * @param _metaData 元数据
+                     * 设置元数据，个数不能大于1。
+                     * @param _metaData 元数据，个数不能大于1。
                      * 
                      */
                     void SetMetaData(const std::vector<MetaData>& _metaData);
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 元数据
+                     * 元数据，个数不能大于1。
                      */
                     std::vector<MetaData> m_metaData;
                     bool m_metaDataHasBeenSet;

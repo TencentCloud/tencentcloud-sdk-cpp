@@ -193,6 +193,31 @@ namespace TencentCloud
                      */
                     bool FixSuccessCntHasBeenSet() const;
 
+                    /**
+                     * 获取修复方式 0组件更新或者安装补丁,1禁用服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FixMethod 修复方式 0组件更新或者安装补丁,1禁用服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetFixMethod() const;
+
+                    /**
+                     * 设置修复方式 0组件更新或者安装补丁,1禁用服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fixMethod 修复方式 0组件更新或者安装补丁,1禁用服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFixMethod(const uint64_t& _fixMethod);
+
+                    /**
+                     * 判断参数 FixMethod 是否已赋值
+                     * @return FixMethod 是否已赋值
+                     * 
+                     */
+                    bool FixMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +260,13 @@ namespace TencentCloud
                      */
                     uint64_t m_fixSuccessCnt;
                     bool m_fixSuccessCntHasBeenSet;
+
+                    /**
+                     * 修复方式 0组件更新或者安装补丁,1禁用服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_fixMethod;
+                    bool m_fixMethodHasBeenSet;
 
                 };
             }

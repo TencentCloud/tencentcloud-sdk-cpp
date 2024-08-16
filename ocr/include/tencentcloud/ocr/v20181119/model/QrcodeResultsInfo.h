@@ -48,15 +48,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取类型（二维码、条形码）
-                     * @return TypeName 类型（二维码、条形码）
+                     * 获取类型包括
+二维码：QR_CODE
+一维码：EAN-13、EAN-8、EAN-2、UPC-A、UPC-E、CODE-39、CODE-93、CODE-128 
+PDF：PDF_417
+DataMatrix：DATA_MATRIX
+小程序码：WX_CODE
+                     * @return TypeName 类型包括
+二维码：QR_CODE
+一维码：EAN-13、EAN-8、EAN-2、UPC-A、UPC-E、CODE-39、CODE-93、CODE-128 
+PDF：PDF_417
+DataMatrix：DATA_MATRIX
+小程序码：WX_CODE
                      * 
                      */
                     std::string GetTypeName() const;
 
                     /**
-                     * 设置类型（二维码、条形码）
-                     * @param _typeName 类型（二维码、条形码）
+                     * 设置类型包括
+二维码：QR_CODE
+一维码：EAN-13、EAN-8、EAN-2、UPC-A、UPC-E、CODE-39、CODE-93、CODE-128 
+PDF：PDF_417
+DataMatrix：DATA_MATRIX
+小程序码：WX_CODE
+                     * @param _typeName 类型包括
+二维码：QR_CODE
+一维码：EAN-13、EAN-8、EAN-2、UPC-A、UPC-E、CODE-39、CODE-93、CODE-128 
+PDF：PDF_417
+DataMatrix：DATA_MATRIX
+小程序码：WX_CODE
                      * 
                      */
                     void SetTypeName(const std::string& _typeName);
@@ -113,7 +133,12 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 类型（二维码、条形码）
+                     * 类型包括
+二维码：QR_CODE
+一维码：EAN-13、EAN-8、EAN-2、UPC-A、UPC-E、CODE-39、CODE-93、CODE-128 
+PDF：PDF_417
+DataMatrix：DATA_MATRIX
+小程序码：WX_CODE
                      */
                     std::string m_typeName;
                     bool m_typeNameHasBeenSet;

@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取仪表盘订阅记录id。
+                     * @return Id 仪表盘订阅记录id。
+                     * 
+                     */
+                    uint64_t GetId() const;
+
+                    /**
+                     * 设置仪表盘订阅记录id。
+                     * @param _id 仪表盘订阅记录id。
+                     * 
+                     */
+                    void SetId(const uint64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 仪表盘订阅记录id。
+                     */
+                    uint64_t m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }

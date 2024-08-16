@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool RulesHasBeenSet() const;
 
+                    /**
+                     * 获取公网是否按流量计费
+                     * @return BillingFlow 公网是否按流量计费
+                     * 
+                     */
+                    bool GetBillingFlow() const;
+
+                    /**
+                     * 设置公网是否按流量计费
+                     * @param _billingFlow 公网是否按流量计费
+                     * 
+                     */
+                    void SetBillingFlow(const bool& _billingFlow);
+
+                    /**
+                     * 判断参数 BillingFlow 是否已赋值
+                     * @return BillingFlow 是否已赋值
+                     * 
+                     */
+                    bool BillingFlowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +200,12 @@ namespace TencentCloud
                      */
                     std::vector<PublicAccessRule> m_rules;
                     bool m_rulesHasBeenSet;
+
+                    /**
+                     * 公网是否按流量计费
+                     */
+                    bool m_billingFlow;
+                    bool m_billingFlowHasBeenSet;
 
                 };
             }

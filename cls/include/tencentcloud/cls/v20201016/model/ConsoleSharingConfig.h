@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool VerifyCodeHasBeenSet() const;
 
                     /**
-                     * 获取开始时间，支持绝对时间(13位时间戳字符串)/相对时间字符串
-                     * @return StartTime 开始时间，支持绝对时间(13位时间戳字符串)/相对时间字符串
+                     * 获取默认查询范围的开始时间点，支持绝对时间(13位Unix时间戳)或相对时间表达式
+                     * @return StartTime 默认查询范围的开始时间点，支持绝对时间(13位Unix时间戳)或相对时间表达式
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间，支持绝对时间(13位时间戳字符串)/相对时间字符串
-                     * @param _startTime 开始时间，支持绝对时间(13位时间戳字符串)/相对时间字符串
+                     * 设置默认查询范围的开始时间点，支持绝对时间(13位Unix时间戳)或相对时间表达式
+                     * @param _startTime 默认查询范围的开始时间点，支持绝对时间(13位Unix时间戳)或相对时间表达式
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，支持绝对时间(13位时间戳字符串)/相对时间字符串
-                     * @return EndTime 结束时间，支持绝对时间(13位时间戳字符串)/相对时间字符串
+                     * 获取默认查询范围的结束时间点，支持绝对时间(13位Unix时间戳)或相对时间表达式。注意，结束时间点要大于开始时间点
+                     * @return EndTime 默认查询范围的结束时间点，支持绝对时间(13位Unix时间戳)或相对时间表达式。注意，结束时间点要大于开始时间点
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，支持绝对时间(13位时间戳字符串)/相对时间字符串
-                     * @param _endTime 结束时间，支持绝对时间(13位时间戳字符串)/相对时间字符串
+                     * 设置默认查询范围的结束时间点，支持绝对时间(13位Unix时间戳)或相对时间表达式。注意，结束时间点要大于开始时间点
+                     * @param _endTime 默认查询范围的结束时间点，支持绝对时间(13位Unix时间戳)或相对时间表达式。注意，结束时间点要大于开始时间点
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -232,18 +232,18 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取当StartTime/EndTime为相对时间时，基于NowTime计算绝对时间，默认为创建时间
+                     * 获取仅当StartTime/EndTime为相对时间时使用，基于NowTime计算绝对时间，默认为创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NowTime 当StartTime/EndTime为相对时间时，基于NowTime计算绝对时间，默认为创建时间
+                     * @return NowTime 仅当StartTime/EndTime为相对时间时使用，基于NowTime计算绝对时间，默认为创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNowTime() const;
 
                     /**
-                     * 设置当StartTime/EndTime为相对时间时，基于NowTime计算绝对时间，默认为创建时间
+                     * 设置仅当StartTime/EndTime为相对时间时使用，基于NowTime计算绝对时间，默认为创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nowTime 当StartTime/EndTime为相对时间时，基于NowTime计算绝对时间，默认为创建时间
+                     * @param _nowTime 仅当StartTime/EndTime为相对时间时使用，基于NowTime计算绝对时间，默认为创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -257,18 +257,18 @@ namespace TencentCloud
                     bool NowTimeHasBeenSet() const;
 
                     /**
-                     * 获取params参数列表，当Type为2时支持
+                     * 获取默认的检索分析语句，仅当Type为2时使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Params params参数列表，当Type为2时支持
+                     * @return Params 默认的检索分析语句，仅当Type为2时使用
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ConsoleSharingParam> GetParams() const;
 
                     /**
-                     * 设置params参数列表，当Type为2时支持
+                     * 设置默认的检索分析语句，仅当Type为2时使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _params params参数列表，当Type为2时支持
+                     * @param _params 默认的检索分析语句，仅当Type为2时使用
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -282,15 +282,15 @@ namespace TencentCloud
                     bool ParamsHasBeenSet() const;
 
                     /**
-                     * 获取是否允许访问者自行修改检索分析时间范围，默认不锁定
-                     * @return IsLockTimeRange 是否允许访问者自行修改检索分析时间范围，默认不锁定
+                     * 获取是否允许访问者自行修改检索分析时间范围。默认不锁定（false）
+                     * @return IsLockTimeRange 是否允许访问者自行修改检索分析时间范围。默认不锁定（false）
                      * 
                      */
                     bool GetIsLockTimeRange() const;
 
                     /**
-                     * 设置是否允许访问者自行修改检索分析时间范围，默认不锁定
-                     * @param _isLockTimeRange 是否允许访问者自行修改检索分析时间范围，默认不锁定
+                     * 设置是否允许访问者自行修改检索分析时间范围。默认不锁定（false）
+                     * @param _isLockTimeRange 是否允许访问者自行修改检索分析时间范围。默认不锁定（false）
                      * 
                      */
                     void SetIsLockTimeRange(const bool& _isLockTimeRange);
@@ -303,15 +303,15 @@ namespace TencentCloud
                     bool IsLockTimeRangeHasBeenSet() const;
 
                     /**
-                     * 获取是否允许访问者自行修改日志检索语句。在检索页分享中表示检索语句锁定状态；在仪表盘中表示过滤变量锁定状态
-                     * @return IsLockQuery 是否允许访问者自行修改日志检索语句。在检索页分享中表示检索语句锁定状态；在仪表盘中表示过滤变量锁定状态
+                     * 获取是否允许访问者自行修改日志检索语句。在检索页分享中表示检索语句锁定状态；在仪表盘中表示过滤变量锁定状态。默认不锁定（false）
+                     * @return IsLockQuery 是否允许访问者自行修改日志检索语句。在检索页分享中表示检索语句锁定状态；在仪表盘中表示过滤变量锁定状态。默认不锁定（false）
                      * 
                      */
                     bool GetIsLockQuery() const;
 
                     /**
-                     * 设置是否允许访问者自行修改日志检索语句。在检索页分享中表示检索语句锁定状态；在仪表盘中表示过滤变量锁定状态
-                     * @param _isLockQuery 是否允许访问者自行修改日志检索语句。在检索页分享中表示检索语句锁定状态；在仪表盘中表示过滤变量锁定状态
+                     * 设置是否允许访问者自行修改日志检索语句。在检索页分享中表示检索语句锁定状态；在仪表盘中表示过滤变量锁定状态。默认不锁定（false）
+                     * @param _isLockQuery 是否允许访问者自行修改日志检索语句。在检索页分享中表示检索语句锁定状态；在仪表盘中表示过滤变量锁定状态。默认不锁定（false）
                      * 
                      */
                     void SetIsLockQuery(const bool& _isLockQuery);
@@ -322,6 +322,31 @@ namespace TencentCloud
                      * 
                      */
                     bool IsLockQueryHasBeenSet() const;
+
+                    /**
+                     * 获取检索页分享是否允许访问者下载日志，默认不允许（false）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSupportLogExport 检索页分享是否允许访问者下载日志，默认不允许（false）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsSupportLogExport() const;
+
+                    /**
+                     * 设置检索页分享是否允许访问者下载日志，默认不允许（false）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isSupportLogExport 检索页分享是否允许访问者下载日志，默认不允许（false）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsSupportLogExport(const bool& _isSupportLogExport);
+
+                    /**
+                     * 判断参数 IsSupportLogExport 是否已赋值
+                     * @return IsSupportLogExport 是否已赋值
+                     * 
+                     */
+                    bool IsSupportLogExportHasBeenSet() const;
 
                 private:
 
@@ -366,42 +391,49 @@ namespace TencentCloud
                     bool m_verifyCodeHasBeenSet;
 
                     /**
-                     * 开始时间，支持绝对时间(13位时间戳字符串)/相对时间字符串
+                     * 默认查询范围的开始时间点，支持绝对时间(13位Unix时间戳)或相对时间表达式
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间，支持绝对时间(13位时间戳字符串)/相对时间字符串
+                     * 默认查询范围的结束时间点，支持绝对时间(13位Unix时间戳)或相对时间表达式。注意，结束时间点要大于开始时间点
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 当StartTime/EndTime为相对时间时，基于NowTime计算绝对时间，默认为创建时间
+                     * 仅当StartTime/EndTime为相对时间时使用，基于NowTime计算绝对时间，默认为创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_nowTime;
                     bool m_nowTimeHasBeenSet;
 
                     /**
-                     * params参数列表，当Type为2时支持
+                     * 默认的检索分析语句，仅当Type为2时使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ConsoleSharingParam> m_params;
                     bool m_paramsHasBeenSet;
 
                     /**
-                     * 是否允许访问者自行修改检索分析时间范围，默认不锁定
+                     * 是否允许访问者自行修改检索分析时间范围。默认不锁定（false）
                      */
                     bool m_isLockTimeRange;
                     bool m_isLockTimeRangeHasBeenSet;
 
                     /**
-                     * 是否允许访问者自行修改日志检索语句。在检索页分享中表示检索语句锁定状态；在仪表盘中表示过滤变量锁定状态
+                     * 是否允许访问者自行修改日志检索语句。在检索页分享中表示检索语句锁定状态；在仪表盘中表示过滤变量锁定状态。默认不锁定（false）
                      */
                     bool m_isLockQuery;
                     bool m_isLockQueryHasBeenSet;
+
+                    /**
+                     * 检索页分享是否允许访问者下载日志，默认不允许（false）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isSupportLogExport;
+                    bool m_isSupportLogExportHasBeenSet;
 
                 };
             }

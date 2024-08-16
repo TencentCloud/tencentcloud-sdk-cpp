@@ -34,7 +34,8 @@ TemplateGroupAction::TemplateGroupAction() :
     m_executeIdHasBeenSet(false),
     m_actionApiTypeHasBeenSet(false),
     m_actionAttributeHasBeenSet(false),
-    m_actionTypeHasBeenSet(false)
+    m_actionTypeHasBeenSet(false),
+    m_actionRiskHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome TemplateGroupAction::Deserialize(const rapidjson::Value &val
         m_actionTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ActionRisk") && !value["ActionRisk"].IsNull())
+    {
+        if (!value["ActionRisk"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateGroupAction.ActionRisk` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_actionRisk = string(value["ActionRisk"].GetString());
+        m_actionRiskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void TemplateGroupAction::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ActionType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_actionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_actionRiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActionRisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_actionRisk.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void TemplateGroupAction::SetActionType(const string& _actionType)
 bool TemplateGroupAction::ActionTypeHasBeenSet() const
 {
     return m_actionTypeHasBeenSet;
+}
+
+string TemplateGroupAction::GetActionRisk() const
+{
+    return m_actionRisk;
+}
+
+void TemplateGroupAction::SetActionRisk(const string& _actionRisk)
+{
+    m_actionRisk = _actionRisk;
+    m_actionRiskHasBeenSet = true;
+}
+
+bool TemplateGroupAction::ActionRiskHasBeenSet() const
+{
+    return m_actionRiskHasBeenSet;
 }
 

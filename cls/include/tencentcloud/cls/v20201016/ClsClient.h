@@ -1023,7 +1023,7 @@ namespace TencentCloud
                 DescribeCosRechargesOutcomeCallable DescribeCosRechargesCallable(const Model::DescribeCosRechargesRequest& request);
 
                 /**
-                 * 本接口用于获取仪表盘订阅列表，支持分页
+                 *本接口用于获取仪表盘订阅列表，支持分页
                  * @param req DescribeDashboardSubscribesRequest
                  * @return DescribeDashboardSubscribesOutcome
                  */

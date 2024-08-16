@@ -427,6 +427,49 @@ OcrClient::ClassifyDetectOCROutcomeCallable OcrClient::ClassifyDetectOCRCallable
     return task->get_future();
 }
 
+OcrClient::ClassifyStoreNameOutcome OcrClient::ClassifyStoreName(const ClassifyStoreNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "ClassifyStoreName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ClassifyStoreNameResponse rsp = ClassifyStoreNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ClassifyStoreNameOutcome(rsp);
+        else
+            return ClassifyStoreNameOutcome(o.GetError());
+    }
+    else
+    {
+        return ClassifyStoreNameOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::ClassifyStoreNameAsync(const ClassifyStoreNameRequest& request, const ClassifyStoreNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ClassifyStoreName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::ClassifyStoreNameOutcomeCallable OcrClient::ClassifyStoreNameCallable(const ClassifyStoreNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ClassifyStoreNameOutcome()>>(
+        [this, request]()
+        {
+            return this->ClassifyStoreName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::CreateAIFormTaskOutcome OcrClient::CreateAIFormTask(const CreateAIFormTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAIFormTask");
@@ -2570,6 +2613,49 @@ OcrClient::RecognizePhilippinesVoteIDOCROutcomeCallable OcrClient::RecognizePhil
         [this, request]()
         {
             return this->RecognizePhilippinesVoteIDOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OcrClient::RecognizeStoreNameOutcome OcrClient::RecognizeStoreName(const RecognizeStoreNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeStoreName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeStoreNameResponse rsp = RecognizeStoreNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeStoreNameOutcome(rsp);
+        else
+            return RecognizeStoreNameOutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeStoreNameOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeStoreNameAsync(const RecognizeStoreNameRequest& request, const RecognizeStoreNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeStoreName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeStoreNameOutcomeCallable OcrClient::RecognizeStoreNameCallable(const RecognizeStoreNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeStoreNameOutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeStoreName(request);
         }
     );
 

@@ -227,6 +227,64 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取指定排序字段 。取值范围： "EXPIRED_TIME"：依据实例的到期时间排序。 
+ 不传入此字段时, 优先返回实例状态为“待回收”的实例, 其余实例以“创建时间”倒序返回。
+                     * @return OrderField 指定排序字段 。取值范围： "EXPIRED_TIME"：依据实例的到期时间排序。 
+ 不传入此字段时, 优先返回实例状态为“待回收”的实例, 其余实例以“创建时间”倒序返回。
+                     * 
+                     */
+                    std::string GetOrderField() const;
+
+                    /**
+                     * 设置指定排序字段 。取值范围： "EXPIRED_TIME"：依据实例的到期时间排序。 
+ 不传入此字段时, 优先返回实例状态为“待回收”的实例, 其余实例以“创建时间”倒序返回。
+                     * @param _orderField 指定排序字段 。取值范围： "EXPIRED_TIME"：依据实例的到期时间排序。 
+ 不传入此字段时, 优先返回实例状态为“待回收”的实例, 其余实例以“创建时间”倒序返回。
+                     * 
+                     */
+                    void SetOrderField(const std::string& _orderField);
+
+                    /**
+                     * 判断参数 OrderField 是否已赋值
+                     * @return OrderField 是否已赋值
+                     * 
+                     */
+                    bool OrderFieldHasBeenSet() const;
+
+                    /**
+                     * 获取输出实例列表的排列顺序。取值范围：
+"ASC"：升序排列。
+"DESC"：降序排列。
+默认按升序排序。当传入该字段时，必须指定OrderField。
+                     * @return Order 输出实例列表的排列顺序。取值范围：
+"ASC"：升序排列。
+"DESC"：降序排列。
+默认按升序排序。当传入该字段时，必须指定OrderField。
+                     * 
+                     */
+                    std::string GetOrder() const;
+
+                    /**
+                     * 设置输出实例列表的排列顺序。取值范围：
+"ASC"：升序排列。
+"DESC"：降序排列。
+默认按升序排序。当传入该字段时，必须指定OrderField。
+                     * @param _order 输出实例列表的排列顺序。取值范围：
+"ASC"：升序排列。
+"DESC"：降序排列。
+默认按升序排序。当传入该字段时，必须指定OrderField。
+                     * 
+                     */
+                    void SetOrder(const std::string& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     * 
+                     */
+                    bool OrderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -277,6 +335,22 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 指定排序字段 。取值范围： "EXPIRED_TIME"：依据实例的到期时间排序。 
+ 不传入此字段时, 优先返回实例状态为“待回收”的实例, 其余实例以“创建时间”倒序返回。
+                     */
+                    std::string m_orderField;
+                    bool m_orderFieldHasBeenSet;
+
+                    /**
+                     * 输出实例列表的排列顺序。取值范围：
+"ASC"：升序排列。
+"DESC"：降序排列。
+默认按升序排序。当传入该字段时，必须指定OrderField。
+                     */
+                    std::string m_order;
+                    bool m_orderHasBeenSet;
 
                 };
             }

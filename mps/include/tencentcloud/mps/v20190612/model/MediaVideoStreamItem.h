@@ -276,6 +276,56 @@ namespace TencentCloud
                      */
                     bool CodecsHasBeenSet() const;
 
+                    /**
+                     * 获取帧率分子部分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FpsNumerator 帧率分子部分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetFpsNumerator() const;
+
+                    /**
+                     * 设置帧率分子部分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fpsNumerator 帧率分子部分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFpsNumerator(const int64_t& _fpsNumerator);
+
+                    /**
+                     * 判断参数 FpsNumerator 是否已赋值
+                     * @return FpsNumerator 是否已赋值
+                     * 
+                     */
+                    bool FpsNumeratorHasBeenSet() const;
+
+                    /**
+                     * 获取帧率分母部分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FpsDenominator 帧率分母部分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetFpsDenominator() const;
+
+                    /**
+                     * 设置帧率分母部分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fpsDenominator 帧率分母部分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFpsDenominator(const int64_t& _fpsDenominator);
+
+                    /**
+                     * 判断参数 FpsDenominator 是否已赋值
+                     * @return FpsDenominator 是否已赋值
+                     * 
+                     */
+                    bool FpsDenominatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -342,6 +392,20 @@ namespace TencentCloud
                      */
                     std::string m_codecs;
                     bool m_codecsHasBeenSet;
+
+                    /**
+                     * 帧率分子部分
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_fpsNumerator;
+                    bool m_fpsNumeratorHasBeenSet;
+
+                    /**
+                     * 帧率分母部分
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_fpsDenominator;
+                    bool m_fpsDenominatorHasBeenSet;
 
                 };
             }

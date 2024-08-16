@@ -536,6 +536,56 @@ namespace TencentCloud
                      */
                     bool Ipv6FlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持路由表聚合策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MrtbAggregatePolicyFlag 是否支持路由表聚合策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetMrtbAggregatePolicyFlag() const;
+
+                    /**
+                     * 设置是否支持路由表聚合策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mrtbAggregatePolicyFlag 是否支持路由表聚合策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMrtbAggregatePolicyFlag(const bool& _mrtbAggregatePolicyFlag);
+
+                    /**
+                     * 判断参数 MrtbAggregatePolicyFlag 是否已赋值
+                     * @return MrtbAggregatePolicyFlag 是否已赋值
+                     * 
+                     */
+                    bool MrtbAggregatePolicyFlagHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持策略值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MrtbPolicyValueFlag 是否支持策略值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetMrtbPolicyValueFlag() const;
+
+                    /**
+                     * 设置是否支持策略值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mrtbPolicyValueFlag 是否支持策略值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMrtbPolicyValueFlag(const bool& _mrtbPolicyValueFlag);
+
+                    /**
+                     * 判断参数 MrtbPolicyValueFlag 是否已赋值
+                     * @return MrtbPolicyValueFlag 是否已赋值
+                     * 
+                     */
+                    bool MrtbPolicyValueFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -675,6 +725,20 @@ namespace TencentCloud
                      */
                     std::string m_ipv6Flag;
                     bool m_ipv6FlagHasBeenSet;
+
+                    /**
+                     * 是否支持路由表聚合策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_mrtbAggregatePolicyFlag;
+                    bool m_mrtbAggregatePolicyFlagHasBeenSet;
+
+                    /**
+                     * 是否支持策略值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_mrtbPolicyValueFlag;
+                    bool m_mrtbPolicyValueFlagHasBeenSet;
 
                 };
             }

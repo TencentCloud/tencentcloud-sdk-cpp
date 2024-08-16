@@ -32,7 +32,8 @@ CloudStorageAIServiceTask::CloudStorageAIServiceTask() :
     m_resultHasBeenSet(false),
     m_filesHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_customIdHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,16 @@ CoreInternalOutcome CloudStorageAIServiceTask::Deserialize(const rapidjson::Valu
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomId") && !value["CustomId"].IsNull())
+    {
+        if (!value["CustomId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudStorageAIServiceTask.CustomId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customId = string(value["CustomId"].GetString());
+        m_customIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +281,14 @@ void CloudStorageAIServiceTask::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
+    }
+
+    if (m_customIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -465,5 +484,21 @@ void CloudStorageAIServiceTask::SetUpdateTime(const int64_t& _updateTime)
 bool CloudStorageAIServiceTask::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string CloudStorageAIServiceTask::GetCustomId() const
+{
+    return m_customId;
+}
+
+void CloudStorageAIServiceTask::SetCustomId(const string& _customId)
+{
+    m_customId = _customId;
+    m_customIdHasBeenSet = true;
+}
+
+bool CloudStorageAIServiceTask::CustomIdHasBeenSet() const
+{
+    return m_customIdHasBeenSet;
 }
 

@@ -147,6 +147,31 @@ namespace TencentCloud
                      */
                     bool FixTagHasBeenSet() const;
 
+                    /**
+                     * 获取漏洞分类1 web cms漏洞,2应用漏洞,4linux软件漏洞,5windows系统漏洞
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VulCategory 漏洞分类1 web cms漏洞,2应用漏洞,4linux软件漏洞,5windows系统漏洞
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetVulCategory() const;
+
+                    /**
+                     * 设置漏洞分类1 web cms漏洞,2应用漏洞,4linux软件漏洞,5windows系统漏洞
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vulCategory 漏洞分类1 web cms漏洞,2应用漏洞,4linux软件漏洞,5windows系统漏洞
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVulCategory(const uint64_t& _vulCategory);
+
+                    /**
+                     * 判断参数 VulCategory 是否已赋值
+                     * @return VulCategory 是否已赋值
+                     * 
+                     */
+                    bool VulCategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -176,6 +201,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_fixTag;
                     bool m_fixTagHasBeenSet;
+
+                    /**
+                     * 漏洞分类1 web cms漏洞,2应用漏洞,4linux软件漏洞,5windows系统漏洞
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_vulCategory;
+                    bool m_vulCategoryHasBeenSet;
 
                 };
             }

@@ -372,6 +372,31 @@ namespace TencentCloud
                      */
                     bool ActionTypeHasBeenSet() const;
 
+                    /**
+                     * 获取动作风险等级，1:低风险 2:中风险 3:高风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ActionRisk 动作风险等级，1:低风险 2:中风险 3:高风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetActionRisk() const;
+
+                    /**
+                     * 设置动作风险等级，1:低风险 2:中风险 3:高风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _actionRisk 动作风险等级，1:低风险 2:中风险 3:高风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetActionRisk(const std::string& _actionRisk);
+
+                    /**
+                     * 判断参数 ActionRisk 是否已赋值
+                     * @return ActionRisk 是否已赋值
+                     * 
+                     */
+                    bool ActionRiskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -465,6 +490,13 @@ namespace TencentCloud
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
+
+                    /**
+                     * 动作风险等级，1:低风险 2:中风险 3:高风险
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_actionRisk;
+                    bool m_actionRiskHasBeenSet;
 
                 };
             }

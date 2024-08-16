@@ -22,7 +22,10 @@
 using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
-DescribeDashboardSubscribesRequest::DescribeDashboardSubscribesRequest()
+DescribeDashboardSubscribesRequest::DescribeDashboardSubscribesRequest() :
+    m_filtersHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,37 @@ string DescribeDashboardSubscribesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +74,53 @@ string DescribeDashboardSubscribesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<Filter> DescribeDashboardSubscribesRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeDashboardSubscribesRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeDashboardSubscribesRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+uint64_t DescribeDashboardSubscribesRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeDashboardSubscribesRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeDashboardSubscribesRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeDashboardSubscribesRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeDashboardSubscribesRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeDashboardSubscribesRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
 
 

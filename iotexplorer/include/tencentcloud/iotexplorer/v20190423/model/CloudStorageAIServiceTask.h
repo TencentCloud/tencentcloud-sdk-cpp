@@ -133,11 +133,11 @@ namespace TencentCloud
                     /**
                      * 获取云存 AI 服务类型。可能取值：
 
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * @return ServiceType 云存 AI 服务类型。可能取值：
 
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * 
                      */
@@ -146,11 +146,11 @@ namespace TencentCloud
                     /**
                      * 设置云存 AI 服务类型。可能取值：
 
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * @param _serviceType 云存 AI 服务类型。可能取值：
 
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * 
                      */
@@ -310,6 +310,27 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取自定义任务 ID
+                     * @return CustomId 自定义任务 ID
+                     * 
+                     */
+                    std::string GetCustomId() const;
+
+                    /**
+                     * 设置自定义任务 ID
+                     * @param _customId 自定义任务 ID
+                     * 
+                     */
+                    void SetCustomId(const std::string& _customId);
+
+                    /**
+                     * 判断参数 CustomId 是否已赋值
+                     * @return CustomId 是否已赋值
+                     * 
+                     */
+                    bool CustomIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -339,7 +360,7 @@ namespace TencentCloud
                     /**
                      * 云存 AI 服务类型。可能取值：
 
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      */
                     std::string m_serviceType;
@@ -386,6 +407,12 @@ namespace TencentCloud
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 自定义任务 ID
+                     */
+                    std::string m_customId;
+                    bool m_customIdHasBeenSet;
 
                 };
             }

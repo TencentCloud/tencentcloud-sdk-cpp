@@ -41,6 +41,8 @@
 #include <tencentcloud/ocr/v20181119/model/CarInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ClassifyDetectOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ClassifyDetectOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/ClassifyStoreNameRequest.h>
+#include <tencentcloud/ocr/v20181119/model/ClassifyStoreNameResponse.h>
 #include <tencentcloud/ocr/v20181119/model/CreateAIFormTaskRequest.h>
 #include <tencentcloud/ocr/v20181119/model/CreateAIFormTaskResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRRequest.h>
@@ -141,6 +143,8 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesUMIDOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesVoteIDOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesVoteIDOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeStoreNameRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeStoreNameResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRRequest.h>
@@ -234,6 +238,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ClassifyDetectOCRResponse> ClassifyDetectOCROutcome;
                 typedef std::future<ClassifyDetectOCROutcome> ClassifyDetectOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ClassifyDetectOCRRequest&, ClassifyDetectOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClassifyDetectOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::ClassifyStoreNameResponse> ClassifyStoreNameOutcome;
+                typedef std::future<ClassifyStoreNameOutcome> ClassifyStoreNameOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::ClassifyStoreNameRequest&, ClassifyStoreNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClassifyStoreNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAIFormTaskResponse> CreateAIFormTaskOutcome;
                 typedef std::future<CreateAIFormTaskOutcome> CreateAIFormTaskOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::CreateAIFormTaskRequest&, CreateAIFormTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAIFormTaskAsyncHandler;
@@ -384,6 +391,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizePhilippinesVoteIDOCRResponse> RecognizePhilippinesVoteIDOCROutcome;
                 typedef std::future<RecognizePhilippinesVoteIDOCROutcome> RecognizePhilippinesVoteIDOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizePhilippinesVoteIDOCRRequest&, RecognizePhilippinesVoteIDOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePhilippinesVoteIDOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeStoreNameResponse> RecognizeStoreNameOutcome;
+                typedef std::future<RecognizeStoreNameOutcome> RecognizeStoreNameOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeStoreNameRequest&, RecognizeStoreNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeStoreNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeTableAccurateOCRResponse> RecognizeTableAccurateOCROutcome;
                 typedef std::future<RecognizeTableAccurateOCROutcome> RecognizeTableAccurateOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeTableAccurateOCRRequest&, RecognizeTableAccurateOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTableAccurateOCRAsyncHandler;
@@ -565,6 +575,15 @@ namespace TencentCloud
                 ClassifyDetectOCROutcome ClassifyDetectOCR(const Model::ClassifyDetectOCRRequest &request);
                 void ClassifyDetectOCRAsync(const Model::ClassifyDetectOCRRequest& request, const ClassifyDetectOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ClassifyDetectOCROutcomeCallable ClassifyDetectOCRCallable(const Model::ClassifyDetectOCRRequest& request);
+
+                /**
+                 *本接口用于识别门头照分类标签信息
+                 * @param req ClassifyStoreNameRequest
+                 * @return ClassifyStoreNameOutcome
+                 */
+                ClassifyStoreNameOutcome ClassifyStoreName(const Model::ClassifyStoreNameRequest &request);
+                void ClassifyStoreNameAsync(const Model::ClassifyStoreNameRequest& request, const ClassifyStoreNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ClassifyStoreNameOutcomeCallable ClassifyStoreNameCallable(const Model::ClassifyStoreNameRequest& request);
 
                 /**
                  *本接口可创建智能表单录入任务，支持多个识别图片和PDF的URL上传，返回含有识别内容的操作页面URL。
@@ -1534,6 +1553,15 @@ namespace TencentCloud
                 RecognizePhilippinesVoteIDOCROutcome RecognizePhilippinesVoteIDOCR(const Model::RecognizePhilippinesVoteIDOCRRequest &request);
                 void RecognizePhilippinesVoteIDOCRAsync(const Model::RecognizePhilippinesVoteIDOCRRequest& request, const RecognizePhilippinesVoteIDOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizePhilippinesVoteIDOCROutcomeCallable RecognizePhilippinesVoteIDOCRCallable(const Model::RecognizePhilippinesVoteIDOCRRequest& request);
+
+                /**
+                 *本接口用于识别门头照文字识别结果以及对应分类标签信息
+                 * @param req RecognizeStoreNameRequest
+                 * @return RecognizeStoreNameOutcome
+                 */
+                RecognizeStoreNameOutcome RecognizeStoreName(const Model::RecognizeStoreNameRequest &request);
+                void RecognizeStoreNameAsync(const Model::RecognizeStoreNameRequest& request, const RecognizeStoreNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeStoreNameOutcomeCallable RecognizeStoreNameCallable(const Model::RecognizeStoreNameRequest& request);
 
                 /**
                  *本接口支持中英文图片/PDF内常规表格、无线表格、多表格的检测和识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。识别效果比表格识别V2更好，覆盖场景更加广泛，对表格难例场景，如无线表格、嵌套表格（有线表格中包含无线表格）的识别效果均优于表格识别V2。点击[立即体验](https://cloud.tencent.com/act/event/ocrdemo)。

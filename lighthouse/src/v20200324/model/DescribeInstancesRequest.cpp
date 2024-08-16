@@ -26,7 +26,9 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_instanceIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_orderFieldHasBeenSet(false),
+    m_orderHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,22 @@ string DescribeInstancesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -151,6 +169,38 @@ void DescribeInstancesRequest::SetLimit(const int64_t& _limit)
 bool DescribeInstancesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeInstancesRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeInstancesRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
+}
+
+string DescribeInstancesRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void DescribeInstancesRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
 }
 
 

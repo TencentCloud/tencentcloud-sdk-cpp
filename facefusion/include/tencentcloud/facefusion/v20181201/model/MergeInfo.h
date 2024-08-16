@@ -49,14 +49,26 @@ namespace TencentCloud
 
                     /**
                      * 获取输入图片base64。
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。
+●支持图片格式：支持jpg或png。
                      * @return Image 输入图片base64。
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。
+●支持图片格式：支持jpg或png。
                      * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置输入图片base64。
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。
+●支持图片格式：支持jpg或png。
                      * @param _image 输入图片base64。
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。
+●支持图片格式：支持jpg或png。
                      * 
                      */
                     void SetImage(const std::string& _image);
@@ -70,18 +82,26 @@ namespace TencentCloud
 
                     /**
                      * 获取输入图片url。
-Url、Image必须提供一个，如果都提供，只使用 Url。
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。
+●支持图片格式：支持jpg或png。
                      * @return Url 输入图片url。
-Url、Image必须提供一个，如果都提供，只使用 Url。
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。
+●支持图片格式：支持jpg或png。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置输入图片url。
-Url、Image必须提供一个，如果都提供，只使用 Url。
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。
+●支持图片格式：支持jpg或png。
                      * @param _url 输入图片url。
-Url、Image必须提供一个，如果都提供，只使用 Url。
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。
+●支持图片格式：支持jpg或png。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -95,14 +115,18 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 
                     /**
                      * 获取输入图片人脸位置信息（人脸框）。不填默认取输入图中最大人脸。
+Width、Height >= 30。
                      * @return InputImageFaceRect 输入图片人脸位置信息（人脸框）。不填默认取输入图中最大人脸。
+Width、Height >= 30。
                      * 
                      */
                     FaceRect GetInputImageFaceRect() const;
 
                     /**
                      * 设置输入图片人脸位置信息（人脸框）。不填默认取输入图中最大人脸。
+Width、Height >= 30。
                      * @param _inputImageFaceRect 输入图片人脸位置信息（人脸框）。不填默认取输入图中最大人脸。
+Width、Height >= 30。
                      * 
                      */
                     void SetInputImageFaceRect(const FaceRect& _inputImageFaceRect);
@@ -139,19 +163,25 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 
                     /**
                      * 输入图片base64。
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。
+●支持图片格式：支持jpg或png。
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
 
                     /**
                      * 输入图片url。
-Url、Image必须提供一个，如果都提供，只使用 Url。
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●素材图片限制：图片中面部尺寸大于34 * 34；图片尺寸大于64 * 64。（图片编码之后可能会大30%左右，建议合理控制图片大小）。
+●支持图片格式：支持jpg或png。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
                      * 输入图片人脸位置信息（人脸框）。不填默认取输入图中最大人脸。
+Width、Height >= 30。
                      */
                     FaceRect m_inputImageFaceRect;
                     bool m_inputImageFaceRectHasBeenSet;

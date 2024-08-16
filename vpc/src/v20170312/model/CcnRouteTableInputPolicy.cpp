@@ -23,7 +23,9 @@ using namespace std;
 CcnRouteTableInputPolicy::CcnRouteTableInputPolicy() :
     m_routeConditionsHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_operateAsPathHasBeenSet(false),
+    m_asPathOperateModeHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome CcnRouteTableInputPolicy::Deserialize(const rapidjson::Value
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("OperateAsPath") && !value["OperateAsPath"].IsNull())
+    {
+        if (!value["OperateAsPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnRouteTableInputPolicy.OperateAsPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operateAsPath = string(value["OperateAsPath"].GetString());
+        m_operateAsPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("AsPathOperateMode") && !value["AsPathOperateMode"].IsNull())
+    {
+        if (!value["AsPathOperateMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnRouteTableInputPolicy.AsPathOperateMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_asPathOperateMode = string(value["AsPathOperateMode"].GetString());
+        m_asPathOperateModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +130,22 @@ void CcnRouteTableInputPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operateAsPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperateAsPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operateAsPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_asPathOperateModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsPathOperateMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_asPathOperateMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -159,5 +197,37 @@ void CcnRouteTableInputPolicy::SetDescription(const string& _description)
 bool CcnRouteTableInputPolicy::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string CcnRouteTableInputPolicy::GetOperateAsPath() const
+{
+    return m_operateAsPath;
+}
+
+void CcnRouteTableInputPolicy::SetOperateAsPath(const string& _operateAsPath)
+{
+    m_operateAsPath = _operateAsPath;
+    m_operateAsPathHasBeenSet = true;
+}
+
+bool CcnRouteTableInputPolicy::OperateAsPathHasBeenSet() const
+{
+    return m_operateAsPathHasBeenSet;
+}
+
+string CcnRouteTableInputPolicy::GetAsPathOperateMode() const
+{
+    return m_asPathOperateMode;
+}
+
+void CcnRouteTableInputPolicy::SetAsPathOperateMode(const string& _asPathOperateMode)
+{
+    m_asPathOperateMode = _asPathOperateMode;
+    m_asPathOperateModeHasBeenSet = true;
+}
+
+bool CcnRouteTableInputPolicy::AsPathOperateModeHasBeenSet() const
+{
+    return m_asPathOperateModeHasBeenSet;
 }
 

@@ -27,7 +27,8 @@ SetRocketMQPublicAccessPointRequest::SetRocketMQPublicAccessPointRequest() :
     m_enabledHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
     m_payModeHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_billingFlowHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string SetRocketMQPublicAccessPointRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_billingFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingFlow";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_billingFlow, allocator);
     }
 
 
@@ -171,6 +180,22 @@ void SetRocketMQPublicAccessPointRequest::SetRules(const vector<PublicAccessRule
 bool SetRocketMQPublicAccessPointRequest::RulesHasBeenSet() const
 {
     return m_rulesHasBeenSet;
+}
+
+bool SetRocketMQPublicAccessPointRequest::GetBillingFlow() const
+{
+    return m_billingFlow;
+}
+
+void SetRocketMQPublicAccessPointRequest::SetBillingFlow(const bool& _billingFlow)
+{
+    m_billingFlow = _billingFlow;
+    m_billingFlowHasBeenSet = true;
+}
+
+bool SetRocketMQPublicAccessPointRequest::BillingFlowHasBeenSet() const
+{
+    return m_billingFlowHasBeenSet;
 }
 
 

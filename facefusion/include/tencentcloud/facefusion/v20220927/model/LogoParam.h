@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
-                     * @return LogoRect 标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
+                     * 获取标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配。
+                     * @return LogoRect 标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配。
                      * 
                      */
                     FaceRect GetLogoRect() const;
 
                     /**
-                     * 设置标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
-                     * @param _logoRect 标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
+                     * 设置标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配。
+                     * @param _logoRect 标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配。
                      * 
                      */
                     void SetLogoRect(const FaceRect& _logoRect);
@@ -69,15 +69,23 @@ namespace TencentCloud
                     bool LogoRectHasBeenSet() const;
 
                     /**
-                     * 获取标识图片Url地址
-                     * @return LogoUrl 标识图片Url地址
+                     * 获取标识图片Url地址。
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●支持图片格式：支持jpg或png。
+                     * @return LogoUrl 标识图片Url地址。
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●支持图片格式：支持jpg或png。
                      * 
                      */
                     std::string GetLogoUrl() const;
 
                     /**
-                     * 设置标识图片Url地址
-                     * @param _logoUrl 标识图片Url地址
+                     * 设置标识图片Url地址。
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●支持图片格式：支持jpg或png。
+                     * @param _logoUrl 标识图片Url地址。
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●支持图片格式：支持jpg或png。
                      * 
                      */
                     void SetLogoUrl(const std::string& _logoUrl);
@@ -91,14 +99,22 @@ namespace TencentCloud
 
                     /**
                      * 获取标识图片base64
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●支持图片格式：支持jpg或png。
                      * @return LogoImage 标识图片base64
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●支持图片格式：支持jpg或png。
                      * 
                      */
                     std::string GetLogoImage() const;
 
                     /**
                      * 设置标识图片base64
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●支持图片格式：支持jpg或png。
                      * @param _logoImage 标识图片base64
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●支持图片格式：支持jpg或png。
                      * 
                      */
                     void SetLogoImage(const std::string& _logoImage);
@@ -113,19 +129,23 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
+                     * 标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配。
                      */
                     FaceRect m_logoRect;
                     bool m_logoRectHasBeenSet;
 
                     /**
-                     * 标识图片Url地址
+                     * 标识图片Url地址。
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●支持图片格式：支持jpg或png。
                      */
                     std::string m_logoUrl;
                     bool m_logoUrlHasBeenSet;
 
                     /**
                      * 标识图片base64
+●base64 和 url 必须提供一个，如果都提供以 url 为准。
+●支持图片格式：支持jpg或png。
                      */
                     std::string m_logoImage;
                     bool m_logoImageHasBeenSet;

@@ -28,6 +28,7 @@ ModifyStaffRequest::ModifyStaffRequest() :
     m_nameHasBeenSet(false),
     m_phoneHasBeenSet(false),
     m_nickHasBeenSet(false),
+    m_staffNoHasBeenSet(false),
     m_skillGroupIdsHasBeenSet(false),
     m_useMobileCallOutHasBeenSet(false),
     m_useMobileAcceptHasBeenSet(false)
@@ -79,6 +80,14 @@ string ModifyStaffRequest::ToJsonString() const
         string key = "Nick";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_nick.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_staffNoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StaffNo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_staffNo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_skillGroupIdsHasBeenSet)
@@ -196,6 +205,22 @@ void ModifyStaffRequest::SetNick(const string& _nick)
 bool ModifyStaffRequest::NickHasBeenSet() const
 {
     return m_nickHasBeenSet;
+}
+
+string ModifyStaffRequest::GetStaffNo() const
+{
+    return m_staffNo;
+}
+
+void ModifyStaffRequest::SetStaffNo(const string& _staffNo)
+{
+    m_staffNo = _staffNo;
+    m_staffNoHasBeenSet = true;
+}
+
+bool ModifyStaffRequest::StaffNoHasBeenSet() const
+{
+    return m_staffNoHasBeenSet;
 }
 
 vector<int64_t> ModifyStaffRequest::GetSkillGroupIds() const

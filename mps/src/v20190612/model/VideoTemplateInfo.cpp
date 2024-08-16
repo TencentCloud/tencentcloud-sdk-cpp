@@ -30,7 +30,8 @@ VideoTemplateInfo::VideoTemplateInfo() :
     m_gopHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
     m_vcrfHasBeenSet(false),
-    m_segmentTypeHasBeenSet(false)
+    m_segmentTypeHasBeenSet(false),
+    m_fpsDenominatorHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome VideoTemplateInfo::Deserialize(const rapidjson::Value &value
         m_segmentTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("FpsDenominator") && !value["FpsDenominator"].IsNull())
+    {
+        if (!value["FpsDenominator"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfo.FpsDenominator` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fpsDenominator = value["FpsDenominator"].GetInt64();
+        m_fpsDenominatorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void VideoTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "SegmentType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_segmentType, allocator);
+    }
+
+    if (m_fpsDenominatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FpsDenominator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fpsDenominator, allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void VideoTemplateInfo::SetSegmentType(const int64_t& _segmentType)
 bool VideoTemplateInfo::SegmentTypeHasBeenSet() const
 {
     return m_segmentTypeHasBeenSet;
+}
+
+int64_t VideoTemplateInfo::GetFpsDenominator() const
+{
+    return m_fpsDenominator;
+}
+
+void VideoTemplateInfo::SetFpsDenominator(const int64_t& _fpsDenominator)
+{
+    m_fpsDenominator = _fpsDenominator;
+    m_fpsDenominatorHasBeenSet = true;
+}
+
+bool VideoTemplateInfo::FpsDenominatorHasBeenSet() const
+{
+    return m_fpsDenominatorHasBeenSet;
 }
 

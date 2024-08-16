@@ -26,7 +26,8 @@ VulFixStatusInfo::VulFixStatusInfo() :
     m_progressHasBeenSet(false),
     m_hostListHasBeenSet(false),
     m_failCntHasBeenSet(false),
-    m_fixSuccessCntHasBeenSet(false)
+    m_fixSuccessCntHasBeenSet(false),
+    m_fixMethodHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome VulFixStatusInfo::Deserialize(const rapidjson::Value &value)
         m_fixSuccessCntHasBeenSet = true;
     }
 
+    if (value.HasMember("FixMethod") && !value["FixMethod"].IsNull())
+    {
+        if (!value["FixMethod"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixStatusInfo.FixMethod` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fixMethod = value["FixMethod"].GetUint64();
+        m_fixMethodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +176,14 @@ void VulFixStatusInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "FixSuccessCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fixSuccessCnt, allocator);
+    }
+
+    if (m_fixMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FixMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fixMethod, allocator);
     }
 
 }
@@ -264,5 +283,21 @@ void VulFixStatusInfo::SetFixSuccessCnt(const uint64_t& _fixSuccessCnt)
 bool VulFixStatusInfo::FixSuccessCntHasBeenSet() const
 {
     return m_fixSuccessCntHasBeenSet;
+}
+
+uint64_t VulFixStatusInfo::GetFixMethod() const
+{
+    return m_fixMethod;
+}
+
+void VulFixStatusInfo::SetFixMethod(const uint64_t& _fixMethod)
+{
+    m_fixMethod = _fixMethod;
+    m_fixMethodHasBeenSet = true;
+}
+
+bool VulFixStatusInfo::FixMethodHasBeenSet() const
+{
+    return m_fixMethodHasBeenSet;
 }
 

@@ -124,19 +124,27 @@ namespace TencentCloud
                     bool CodecHasBeenSet() const;
 
                     /**
-                     * 获取视频帧率，取值范围：[0, 120]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。
-注意：自适应码率时取值范围是 [0, 60]
-                     * @return Fps 视频帧率，取值范围：[0, 120]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。
-注意：自适应码率时取值范围是 [0, 60]
+                     * 获取视频帧率，取值范围：
+当FpsDenominator的值为空时，范围：[0, 120]，单位：Hz；
+当FpsDenominator的值不为空时，Fps/FpsDenominator的范围：[0,120]
+当取值为 0，表示帧率和原始视频保持一致。
+                     * @return Fps 视频帧率，取值范围：
+当FpsDenominator的值为空时，范围：[0, 120]，单位：Hz；
+当FpsDenominator的值不为空时，Fps/FpsDenominator的范围：[0,120]
+当取值为 0，表示帧率和原始视频保持一致。
                      * 
                      */
                     int64_t GetFps() const;
 
                     /**
-                     * 设置视频帧率，取值范围：[0, 120]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。
-注意：自适应码率时取值范围是 [0, 60]
-                     * @param _fps 视频帧率，取值范围：[0, 120]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。
-注意：自适应码率时取值范围是 [0, 60]
+                     * 设置视频帧率，取值范围：
+当FpsDenominator的值为空时，范围：[0, 120]，单位：Hz；
+当FpsDenominator的值不为空时，Fps/FpsDenominator的范围：[0,120]
+当取值为 0，表示帧率和原始视频保持一致。
+                     * @param _fps 视频帧率，取值范围：
+当FpsDenominator的值为空时，范围：[0, 120]，单位：Hz；
+当FpsDenominator的值不为空时，Fps/FpsDenominator的范围：[0,120]
+当取值为 0，表示帧率和原始视频保持一致。
                      * 
                      */
                     void SetFps(const int64_t& _fps);
@@ -149,18 +157,18 @@ namespace TencentCloud
                     bool FpsHasBeenSet() const;
 
                     /**
-                     * 获取视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
+                     * 获取视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。
 当取值为 0，表示视频码率和原始视频保持一致。
-                     * @return Bitrate 视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
+                     * @return Bitrate 视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。
 当取值为 0，表示视频码率和原始视频保持一致。
                      * 
                      */
                     int64_t GetBitrate() const;
 
                     /**
-                     * 设置视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
+                     * 设置视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。
 当取值为 0，表示视频码率和原始视频保持一致。
-                     * @param _bitrate 视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
+                     * @param _bitrate 视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。
 当取值为 0，表示视频码率和原始视频保持一致。
                      * 
                      */
@@ -436,6 +444,35 @@ namespace TencentCloud
                      */
                     bool SegmentTypeHasBeenSet() const;
 
+                    /**
+                     * 获取帧率分母部分
+注意：值必须大于0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FpsDenominator 帧率分母部分
+注意：值必须大于0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetFpsDenominator() const;
+
+                    /**
+                     * 设置帧率分母部分
+注意：值必须大于0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fpsDenominator 帧率分母部分
+注意：值必须大于0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFpsDenominator(const int64_t& _fpsDenominator);
+
+                    /**
+                     * 判断参数 FpsDenominator 是否已赋值
+                     * @return FpsDenominator 是否已赋值
+                     * 
+                     */
+                    bool FpsDenominatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -459,14 +496,16 @@ namespace TencentCloud
                     bool m_codecHasBeenSet;
 
                     /**
-                     * 视频帧率，取值范围：[0, 120]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。
-注意：自适应码率时取值范围是 [0, 60]
+                     * 视频帧率，取值范围：
+当FpsDenominator的值为空时，范围：[0, 120]，单位：Hz；
+当FpsDenominator的值不为空时，Fps/FpsDenominator的范围：[0,120]
+当取值为 0，表示帧率和原始视频保持一致。
                      */
                     int64_t m_fps;
                     bool m_fpsHasBeenSet;
 
                     /**
-                     * 视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。
+                     * 视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。
 当取值为 0，表示视频码率和原始视频保持一致。
                      */
                     int64_t m_bitrate;
@@ -542,6 +581,14 @@ namespace TencentCloud
                      */
                     int64_t m_segmentType;
                     bool m_segmentTypeHasBeenSet;
+
+                    /**
+                     * 帧率分母部分
+注意：值必须大于0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_fpsDenominator;
+                    bool m_fpsDenominatorHasBeenSet;
 
                 };
             }

@@ -41,7 +41,9 @@ CCN::CCN() :
     m_trafficMarkingPolicyFlagHasBeenSet(false),
     m_routeSelectPolicyFlagHasBeenSet(false),
     m_directConnectAccelerateChannelFlagHasBeenSet(false),
-    m_ipv6FlagHasBeenSet(false)
+    m_ipv6FlagHasBeenSet(false),
+    m_mrtbAggregatePolicyFlagHasBeenSet(false),
+    m_mrtbPolicyValueFlagHasBeenSet(false)
 {
 }
 
@@ -270,6 +272,26 @@ CoreInternalOutcome CCN::Deserialize(const rapidjson::Value &value)
         m_ipv6FlagHasBeenSet = true;
     }
 
+    if (value.HasMember("MrtbAggregatePolicyFlag") && !value["MrtbAggregatePolicyFlag"].IsNull())
+    {
+        if (!value["MrtbAggregatePolicyFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCN.MrtbAggregatePolicyFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_mrtbAggregatePolicyFlag = value["MrtbAggregatePolicyFlag"].GetBool();
+        m_mrtbAggregatePolicyFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("MrtbPolicyValueFlag") && !value["MrtbPolicyValueFlag"].IsNull())
+    {
+        if (!value["MrtbPolicyValueFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCN.MrtbPolicyValueFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_mrtbPolicyValueFlag = value["MrtbPolicyValueFlag"].GetBool();
+        m_mrtbPolicyValueFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +472,22 @@ void CCN::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "Ipv6Flag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ipv6Flag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mrtbAggregatePolicyFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MrtbAggregatePolicyFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mrtbAggregatePolicyFlag, allocator);
+    }
+
+    if (m_mrtbPolicyValueFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MrtbPolicyValueFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mrtbPolicyValueFlag, allocator);
     }
 
 }
@@ -789,5 +827,37 @@ void CCN::SetIpv6Flag(const string& _ipv6Flag)
 bool CCN::Ipv6FlagHasBeenSet() const
 {
     return m_ipv6FlagHasBeenSet;
+}
+
+bool CCN::GetMrtbAggregatePolicyFlag() const
+{
+    return m_mrtbAggregatePolicyFlag;
+}
+
+void CCN::SetMrtbAggregatePolicyFlag(const bool& _mrtbAggregatePolicyFlag)
+{
+    m_mrtbAggregatePolicyFlag = _mrtbAggregatePolicyFlag;
+    m_mrtbAggregatePolicyFlagHasBeenSet = true;
+}
+
+bool CCN::MrtbAggregatePolicyFlagHasBeenSet() const
+{
+    return m_mrtbAggregatePolicyFlagHasBeenSet;
+}
+
+bool CCN::GetMrtbPolicyValueFlag() const
+{
+    return m_mrtbPolicyValueFlag;
+}
+
+void CCN::SetMrtbPolicyValueFlag(const bool& _mrtbPolicyValueFlag)
+{
+    m_mrtbPolicyValueFlag = _mrtbPolicyValueFlag;
+    m_mrtbPolicyValueFlagHasBeenSet = true;
+}
+
+bool CCN::MrtbPolicyValueFlagHasBeenSet() const
+{
+    return m_mrtbPolicyValueFlagHasBeenSet;
 }
 
