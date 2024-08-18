@@ -58,6 +58,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListResponse.h
   include/tencentcloud/dbbrain/v20210527/model/UpdateMonitorSwitchRequest.h
   include/tencentcloud/dbbrain/v20210527/model/SessionItem.h
+  include/tencentcloud/dbbrain/v20210527/model/StatisticDataInfo.h
   include/tencentcloud/dbbrain/v20210527/model/HealthStatus.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTablesResponse.h
   include/tencentcloud/dbbrain/v20210527/model/TaskInfo.h
@@ -135,6 +136,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/MySqlProcess.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeNoPrimaryKeyTablesRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/StatDimension.h
   include/tencentcloud/dbbrain/v20210527/model/AlarmProfileList.h
   include/tencentcloud/dbbrain/v20210527/model/InstanceInfo.h
   include/tencentcloud/dbbrain/v20210527/model/TemplateInfo.h
@@ -171,6 +173,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/VerifyUserAccountResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTimeSeriesStatsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeProxyProcessStatisticsRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/StatisticInfo.h
   include/tencentcloud/dbbrain/v20210527/model/MonitorFloatMetric.h
   include/tencentcloud/dbbrain/v20210527/model/ModifyAlarmPolicyRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeRedisTopKeyPrefixListResponse.h
@@ -329,6 +332,7 @@ set(dbbrain_src
   src/v20210527/model/DescribeMySqlProcessListResponse.cpp
   src/v20210527/model/UpdateMonitorSwitchRequest.cpp
   src/v20210527/model/SessionItem.cpp
+  src/v20210527/model/StatisticDataInfo.cpp
   src/v20210527/model/HealthStatus.cpp
   src/v20210527/model/DescribeTopSpaceTablesResponse.cpp
   src/v20210527/model/TaskInfo.cpp
@@ -406,6 +410,7 @@ set(dbbrain_src
   src/v20210527/model/MySqlProcess.cpp
   src/v20210527/model/DescribeDBDiagEventRequest.cpp
   src/v20210527/model/DescribeNoPrimaryKeyTablesRequest.cpp
+  src/v20210527/model/StatDimension.cpp
   src/v20210527/model/AlarmProfileList.cpp
   src/v20210527/model/InstanceInfo.cpp
   src/v20210527/model/TemplateInfo.cpp
@@ -442,6 +447,7 @@ set(dbbrain_src
   src/v20210527/model/VerifyUserAccountResponse.cpp
   src/v20210527/model/DescribeSlowLogTimeSeriesStatsResponse.cpp
   src/v20210527/model/DescribeProxyProcessStatisticsRequest.cpp
+  src/v20210527/model/StatisticInfo.cpp
   src/v20210527/model/MonitorFloatMetric.cpp
   src/v20210527/model/ModifyAlarmPolicyRequest.cpp
   src/v20210527/model/DescribeRedisTopKeyPrefixListResponse.cpp

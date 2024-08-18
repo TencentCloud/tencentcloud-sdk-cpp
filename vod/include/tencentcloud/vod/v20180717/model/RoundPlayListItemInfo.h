@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 轮播媒体文件信息
+                * 轮播播放节目信息
                 */
                 class RoundPlayListItemInfo : public AbstractModel
                 {
@@ -101,6 +101,27 @@ Type 对应的格式必须为 HLS 格式。
                     bool AudioVideoTypeHasBeenSet() const;
 
                     /**
+                     * 获取播放节目的 ID，由系统分配。
+                     * @return ItemId 播放节目的 ID，由系统分配。
+                     * 
+                     */
+                    std::string GetItemId() const;
+
+                    /**
+                     * 设置播放节目的 ID，由系统分配。
+                     * @param _itemId 播放节目的 ID，由系统分配。
+                     * 
+                     */
+                    void SetItemId(const std::string& _itemId);
+
+                    /**
+                     * 判断参数 ItemId 是否已赋值
+                     * @return ItemId 是否已赋值
+                     * 
+                     */
+                    bool ItemIdHasBeenSet() const;
+
+                    /**
                      * 获取指定播放的转码模版，当 AudioVideoType 为 Transcode 时必须指定。
                      * @return Definition 指定播放的转码模版，当 AudioVideoType 为 Transcode 时必须指定。
                      * 
@@ -137,6 +158,12 @@ Type 对应的格式必须为 HLS 格式。
                      */
                     std::string m_audioVideoType;
                     bool m_audioVideoTypeHasBeenSet;
+
+                    /**
+                     * 播放节目的 ID，由系统分配。
+                     */
+                    std::string m_itemId;
+                    bool m_itemIdHasBeenSet;
 
                     /**
                      * 指定播放的转码模版，当 AudioVideoType 为 Transcode 时必须指定。

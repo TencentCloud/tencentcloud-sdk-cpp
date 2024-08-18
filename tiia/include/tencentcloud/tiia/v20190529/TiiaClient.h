@@ -55,8 +55,6 @@
 #include <tencentcloud/tiia/v20190529/model/DetectPetResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectProductRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectProductResponse.h>
-#include <tencentcloud/tiia/v20190529/model/DetectProductBetaRequest.h>
-#include <tencentcloud/tiia/v20190529/model/DetectProductBetaResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectSecurityRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectSecurityResponse.h>
 #include <tencentcloud/tiia/v20190529/model/EnhanceImageRequest.h>
@@ -131,9 +129,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetectProductResponse> DetectProductOutcome;
                 typedef std::future<DetectProductOutcome> DetectProductOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectProductRequest&, DetectProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectProductAsyncHandler;
-                typedef Outcome<Core::Error, Model::DetectProductBetaResponse> DetectProductBetaOutcome;
-                typedef std::future<DetectProductBetaOutcome> DetectProductBetaOutcomeCallable;
-                typedef std::function<void(const TiiaClient*, const Model::DetectProductBetaRequest&, DetectProductBetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectProductBetaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetectSecurityResponse> DetectSecurityOutcome;
                 typedef std::future<DetectSecurityOutcome> DetectSecurityOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectSecurityRequest&, DetectSecurityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectSecurityAsyncHandler;
@@ -407,21 +402,6 @@ namespace TencentCloud
                 DetectProductOutcome DetectProduct(const Model::DetectProductRequest &request);
                 void DetectProductAsync(const Model::DetectProductRequest& request, const DetectProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectProductOutcomeCallable DetectProductCallable(const Model::DetectProductRequest& request);
-
-                /**
-                 *产品不再维护，准备下线。
-
-商品识别-微信识物版，基于人工智能技术、海量训练图片、亿级商品库，可以实现全覆盖、细粒度、高准确率的商品识别和商品推荐功能。
-本服务可以识别出图片中的主体位置、主体商品类型，覆盖亿级SKU，输出具体商品的价格、型号等详细信息。
-客户无需自建商品库，即可快速实现商品识别、拍照搜商品等功能。
->?   
-- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。
-                 * @param req DetectProductBetaRequest
-                 * @return DetectProductBetaOutcome
-                 */
-                DetectProductBetaOutcome DetectProductBeta(const Model::DetectProductBetaRequest &request);
-                void DetectProductBetaAsync(const Model::DetectProductBetaRequest& request, const DetectProductBetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DetectProductBetaOutcomeCallable DetectProductBetaCallable(const Model::DetectProductBetaRequest& request);
 
                 /**
                  *安全属性识别可对图片中人体安全防护属性进行识别，支持识别安全帽，反光衣，护目镜，工服，手套，工地安全带，口罩，抽烟，玩手机等多种属性。

@@ -24,7 +24,8 @@ AccountPrivilegeModifyInfo::AccountPrivilegeModifyInfo() :
     m_userNameHasBeenSet(false),
     m_dBPrivilegesHasBeenSet(false),
     m_isAdminHasBeenSet(false),
-    m_accountTypeHasBeenSet(false)
+    m_accountTypeHasBeenSet(false),
+    m_accAllDBHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,23 @@ CoreInternalOutcome AccountPrivilegeModifyInfo::Deserialize(const rapidjson::Val
         m_accountTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AccAllDB") && !value["AccAllDB"].IsNull())
+    {
+        if (!value["AccAllDB"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccountPrivilegeModifyInfo.AccAllDB` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_accAllDB.Deserialize(value["AccAllDB"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_accAllDBHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +145,15 @@ void AccountPrivilegeModifyInfo::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "AccountType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accAllDBHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccAllDB";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_accAllDB.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -194,5 +221,21 @@ void AccountPrivilegeModifyInfo::SetAccountType(const string& _accountType)
 bool AccountPrivilegeModifyInfo::AccountTypeHasBeenSet() const
 {
     return m_accountTypeHasBeenSet;
+}
+
+SelectAllDB AccountPrivilegeModifyInfo::GetAccAllDB() const
+{
+    return m_accAllDB;
+}
+
+void AccountPrivilegeModifyInfo::SetAccAllDB(const SelectAllDB& _accAllDB)
+{
+    m_accAllDB = _accAllDB;
+    m_accAllDBHasBeenSet = true;
+}
+
+bool AccountPrivilegeModifyInfo::AccAllDBHasBeenSet() const
+{
+    return m_accAllDBHasBeenSet;
 }
 

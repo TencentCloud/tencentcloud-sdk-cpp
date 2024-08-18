@@ -79,6 +79,59 @@ namespace TencentCloud
                      */
                     bool TableResultTypeHasBeenSet() const;
 
+                    /**
+                     * 获取智能文档解析返回结果的格式
+0：只返回全文MD；
+1：只返回每一页的OCR原始Json；
+2：只返回每一页的MD，
+3：返回全文MD + 每一页的OCR原始Json；
+4：返回全文MD + 每一页的MD，
+默认值为3（返回全文MD + 每一页的OCR原始Json）
+
+
+                     * @return ResultType 智能文档解析返回结果的格式
+0：只返回全文MD；
+1：只返回每一页的OCR原始Json；
+2：只返回每一页的MD，
+3：返回全文MD + 每一页的OCR原始Json；
+4：返回全文MD + 每一页的MD，
+默认值为3（返回全文MD + 每一页的OCR原始Json）
+
+
+                     * 
+                     */
+                    std::string GetResultType() const;
+
+                    /**
+                     * 设置智能文档解析返回结果的格式
+0：只返回全文MD；
+1：只返回每一页的OCR原始Json；
+2：只返回每一页的MD，
+3：返回全文MD + 每一页的OCR原始Json；
+4：返回全文MD + 每一页的MD，
+默认值为3（返回全文MD + 每一页的OCR原始Json）
+
+
+                     * @param _resultType 智能文档解析返回结果的格式
+0：只返回全文MD；
+1：只返回每一页的OCR原始Json；
+2：只返回每一页的MD，
+3：返回全文MD + 每一页的OCR原始Json；
+4：返回全文MD + 每一页的MD，
+默认值为3（返回全文MD + 每一页的OCR原始Json）
+
+
+                     * 
+                     */
+                    void SetResultType(const std::string& _resultType);
+
+                    /**
+                     * 判断参数 ResultType 是否已赋值
+                     * @return ResultType 是否已赋值
+                     * 
+                     */
+                    bool ResultTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -89,6 +142,20 @@ namespace TencentCloud
                      */
                     std::string m_tableResultType;
                     bool m_tableResultTypeHasBeenSet;
+
+                    /**
+                     * 智能文档解析返回结果的格式
+0：只返回全文MD；
+1：只返回每一页的OCR原始Json；
+2：只返回每一页的MD，
+3：返回全文MD + 每一页的OCR原始Json；
+4：返回全文MD + 每一页的MD，
+默认值为3（返回全文MD + 每一页的OCR原始Json）
+
+
+                     */
+                    std::string m_resultType;
+                    bool m_resultTypeHasBeenSet;
 
                 };
             }

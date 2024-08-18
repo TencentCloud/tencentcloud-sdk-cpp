@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/faceid/v20180301/model/Encryption.h>
 
 
 namespace TencentCloud
@@ -136,6 +137,48 @@ Base64编码后的大小不超过8M，支持mp4、avi、flv格式。
                      */
                     bool FaceInputTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要对请求信息进行全包体加密； 支持的加密算法:AES-256-CBC、SM4-GCM； 有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @return Encryption 是否需要对请求信息进行全包体加密； 支持的加密算法:AES-256-CBC、SM4-GCM； 有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 
+                     */
+                    Encryption GetEncryption() const;
+
+                    /**
+                     * 设置是否需要对请求信息进行全包体加密； 支持的加密算法:AES-256-CBC、SM4-GCM； 有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @param _encryption 是否需要对请求信息进行全包体加密； 支持的加密算法:AES-256-CBC、SM4-GCM； 有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 
+                     */
+                    void SetEncryption(const Encryption& _encryption);
+
+                    /**
+                     * 判断参数 Encryption 是否已赋值
+                     * @return Encryption 是否已赋值
+                     * 
+                     */
+                    bool EncryptionHasBeenSet() const;
+
+                    /**
+                     * 获取加密后的密文； 加密前的数据格式如下:{"FaceInput":"AAAAA","FaceInputType":1}
+                     * @return EncryptedBody 加密后的密文； 加密前的数据格式如下:{"FaceInput":"AAAAA","FaceInputType":1}
+                     * 
+                     */
+                    std::string GetEncryptedBody() const;
+
+                    /**
+                     * 设置加密后的密文； 加密前的数据格式如下:{"FaceInput":"AAAAA","FaceInputType":1}
+                     * @param _encryptedBody 加密后的密文； 加密前的数据格式如下:{"FaceInput":"AAAAA","FaceInputType":1}
+                     * 
+                     */
+                    void SetEncryptedBody(const std::string& _encryptedBody);
+
+                    /**
+                     * 判断参数 EncryptedBody 是否已赋值
+                     * @return EncryptedBody 是否已赋值
+                     * 
+                     */
+                    bool EncryptedBodyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -162,6 +205,18 @@ Base64编码后的大小不超过8M，支持mp4、avi、flv格式。
                      */
                     int64_t m_faceInputType;
                     bool m_faceInputTypeHasBeenSet;
+
+                    /**
+                     * 是否需要对请求信息进行全包体加密； 支持的加密算法:AES-256-CBC、SM4-GCM； 有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     */
+                    Encryption m_encryption;
+                    bool m_encryptionHasBeenSet;
+
+                    /**
+                     * 加密后的密文； 加密前的数据格式如下:{"FaceInput":"AAAAA","FaceInputType":1}
+                     */
+                    std::string m_encryptedBody;
+                    bool m_encryptedBodyHasBeenSet;
 
                 };
             }

@@ -728,49 +728,6 @@ TiiaClient::DetectProductOutcomeCallable TiiaClient::DetectProductCallable(const
     return task->get_future();
 }
 
-TiiaClient::DetectProductBetaOutcome TiiaClient::DetectProductBeta(const DetectProductBetaRequest &request)
-{
-    auto outcome = MakeRequest(request, "DetectProductBeta");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DetectProductBetaResponse rsp = DetectProductBetaResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DetectProductBetaOutcome(rsp);
-        else
-            return DetectProductBetaOutcome(o.GetError());
-    }
-    else
-    {
-        return DetectProductBetaOutcome(outcome.GetError());
-    }
-}
-
-void TiiaClient::DetectProductBetaAsync(const DetectProductBetaRequest& request, const DetectProductBetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectProductBeta(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TiiaClient::DetectProductBetaOutcomeCallable TiiaClient::DetectProductBetaCallable(const DetectProductBetaRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DetectProductBetaOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectProductBeta(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TiiaClient::DetectSecurityOutcome TiiaClient::DetectSecurity(const DetectSecurityRequest &request)
 {
     auto outcome = MakeRequest(request, "DetectSecurity");

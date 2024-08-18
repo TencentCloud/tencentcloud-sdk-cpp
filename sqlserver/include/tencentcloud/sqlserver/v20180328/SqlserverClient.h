@@ -257,6 +257,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseCTResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseMdfRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseMdfResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDatabasePrivilegeRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDatabasePrivilegeResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseShrinkMDFRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseShrinkMDFResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyIncrementalMigrationRequest.h>
@@ -682,6 +684,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDatabaseMdfResponse> ModifyDatabaseMdfOutcome;
                 typedef std::future<ModifyDatabaseMdfOutcome> ModifyDatabaseMdfOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyDatabaseMdfRequest&, ModifyDatabaseMdfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseMdfAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDatabasePrivilegeResponse> ModifyDatabasePrivilegeOutcome;
+                typedef std::future<ModifyDatabasePrivilegeOutcome> ModifyDatabasePrivilegeOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::ModifyDatabasePrivilegeRequest&, ModifyDatabasePrivilegeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabasePrivilegeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDatabaseShrinkMDFResponse> ModifyDatabaseShrinkMDFOutcome;
                 typedef std::future<ModifyDatabaseShrinkMDFOutcome> ModifyDatabaseShrinkMDFOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyDatabaseShrinkMDFRequest&, ModifyDatabaseShrinkMDFOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseShrinkMDFAsyncHandler;
@@ -1827,6 +1832,15 @@ namespace TencentCloud
                 ModifyDatabaseMdfOutcome ModifyDatabaseMdf(const Model::ModifyDatabaseMdfRequest &request);
                 void ModifyDatabaseMdfAsync(const Model::ModifyDatabaseMdfRequest& request, const ModifyDatabaseMdfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDatabaseMdfOutcomeCallable ModifyDatabaseMdfCallable(const Model::ModifyDatabaseMdfRequest& request);
+
+                /**
+                 *本接口（ModifyDatabasePrivilege）用于修改实例数据库权限。
+                 * @param req ModifyDatabasePrivilegeRequest
+                 * @return ModifyDatabasePrivilegeOutcome
+                 */
+                ModifyDatabasePrivilegeOutcome ModifyDatabasePrivilege(const Model::ModifyDatabasePrivilegeRequest &request);
+                void ModifyDatabasePrivilegeAsync(const Model::ModifyDatabasePrivilegeRequest& request, const ModifyDatabasePrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDatabasePrivilegeOutcomeCallable ModifyDatabasePrivilegeCallable(const Model::ModifyDatabasePrivilegeRequest& request);
 
                 /**
                  *本接口(ModifyDatabaseShrinkDMF)用于收缩数据库mdf(Shrink mdf)。

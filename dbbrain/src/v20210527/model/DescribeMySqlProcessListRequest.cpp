@@ -33,7 +33,8 @@ DescribeMySqlProcessListRequest::DescribeMySqlProcessListRequest() :
     m_timeHasBeenSet(false),
     m_infoHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_productHasBeenSet(false)
+    m_productHasBeenSet(false),
+    m_statDimensionsHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,21 @@ string DescribeMySqlProcessListRequest::ToJsonString() const
         string key = "Product";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statDimensionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatDimensions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_statDimensions.begin(); itr != m_statDimensions.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -314,6 +330,22 @@ void DescribeMySqlProcessListRequest::SetProduct(const string& _product)
 bool DescribeMySqlProcessListRequest::ProductHasBeenSet() const
 {
     return m_productHasBeenSet;
+}
+
+vector<StatDimension> DescribeMySqlProcessListRequest::GetStatDimensions() const
+{
+    return m_statDimensions;
+}
+
+void DescribeMySqlProcessListRequest::SetStatDimensions(const vector<StatDimension>& _statDimensions)
+{
+    m_statDimensions = _statDimensions;
+    m_statDimensionsHasBeenSet = true;
+}
+
+bool DescribeMySqlProcessListRequest::StatDimensionsHasBeenSet() const
+{
+    return m_statDimensionsHasBeenSet;
 }
 
 

@@ -120,6 +120,7 @@ set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/ModifySecurityGroupsResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/InstanceInfo.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeUserBindWorkloadGroupRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ScaleUpInstanceRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstancesRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeBackUpSchedulesRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeClusterConfigsRequest.h
@@ -141,6 +142,7 @@ set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/ModifyMetricFileStructNew.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeBackUpJobDetailResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeBackUpJobDetailRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeTableListRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeWorkloadGroupResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/ModifyMetricFileStruct.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceRequest.h
@@ -162,7 +164,7 @@ set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/BackUpJobDisplay.h
   include/tencentcloud/cdwdoris/v20211228/model/ModifyUserBindWorkloadGroupResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/RecoverBackUpJobResponse.h
-  include/tencentcloud/cdwdoris/v20211228/model/ScaleUpInstanceRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeTableListResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeReplicaVersionRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/NodesSummary.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditDownloadRequest.h
@@ -283,6 +285,7 @@ set(cdwdoris_src
   src/v20211228/model/ModifySecurityGroupsResponse.cpp
   src/v20211228/model/InstanceInfo.cpp
   src/v20211228/model/DescribeUserBindWorkloadGroupRequest.cpp
+  src/v20211228/model/ScaleUpInstanceRequest.cpp
   src/v20211228/model/DescribeInstancesRequest.cpp
   src/v20211228/model/DescribeBackUpSchedulesRequest.cpp
   src/v20211228/model/DescribeClusterConfigsRequest.cpp
@@ -304,6 +307,7 @@ set(cdwdoris_src
   src/v20211228/model/ModifyMetricFileStructNew.cpp
   src/v20211228/model/DescribeBackUpJobDetailResponse.cpp
   src/v20211228/model/DescribeBackUpJobDetailRequest.cpp
+  src/v20211228/model/DescribeTableListRequest.cpp
   src/v20211228/model/DescribeWorkloadGroupResponse.cpp
   src/v20211228/model/ModifyMetricFileStruct.cpp
   src/v20211228/model/DescribeInstanceRequest.cpp
@@ -325,7 +329,7 @@ set(cdwdoris_src
   src/v20211228/model/BackUpJobDisplay.cpp
   src/v20211228/model/ModifyUserBindWorkloadGroupResponse.cpp
   src/v20211228/model/RecoverBackUpJobResponse.cpp
-  src/v20211228/model/ScaleUpInstanceRequest.cpp
+  src/v20211228/model/DescribeTableListResponse.cpp
   src/v20211228/model/DescribeReplicaVersionRequest.cpp
   src/v20211228/model/NodesSummary.cpp
   src/v20211228/model/DescribeDatabaseAuditDownloadRequest.cpp

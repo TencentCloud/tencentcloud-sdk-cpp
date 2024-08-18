@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/sqlserver/v20180328/model/DBPrivilegeModifyInfo.h>
+#include <tencentcloud/sqlserver/v20180328/model/SelectAllDB.h>
 
 
 namespace TencentCloud
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取账号权限变更信息
-                     * @return DBPrivileges 账号权限变更信息
+                     * 获取账号权限变更信息。参数DBPrivileges和AccAllDB只能二选一
+                     * @return DBPrivileges 账号权限变更信息。参数DBPrivileges和AccAllDB只能二选一
                      * 
                      */
                     std::vector<DBPrivilegeModifyInfo> GetDBPrivileges() const;
 
                     /**
-                     * 设置账号权限变更信息
-                     * @param _dBPrivileges 账号权限变更信息
+                     * 设置账号权限变更信息。参数DBPrivileges和AccAllDB只能二选一
+                     * @param _dBPrivileges 账号权限变更信息。参数DBPrivileges和AccAllDB只能二选一
                      * 
                      */
                     void SetDBPrivileges(const std::vector<DBPrivilegeModifyInfo>& _dBPrivileges);
@@ -131,6 +132,27 @@ namespace TencentCloud
                      */
                     bool AccountTypeHasBeenSet() const;
 
+                    /**
+                     * 获取全量修改指定账号下的所有DB权限，只支持特殊权限账号和普通权限账号。参数DBPrivileges和AccAllDB只能二选一
+                     * @return AccAllDB 全量修改指定账号下的所有DB权限，只支持特殊权限账号和普通权限账号。参数DBPrivileges和AccAllDB只能二选一
+                     * 
+                     */
+                    SelectAllDB GetAccAllDB() const;
+
+                    /**
+                     * 设置全量修改指定账号下的所有DB权限，只支持特殊权限账号和普通权限账号。参数DBPrivileges和AccAllDB只能二选一
+                     * @param _accAllDB 全量修改指定账号下的所有DB权限，只支持特殊权限账号和普通权限账号。参数DBPrivileges和AccAllDB只能二选一
+                     * 
+                     */
+                    void SetAccAllDB(const SelectAllDB& _accAllDB);
+
+                    /**
+                     * 判断参数 AccAllDB 是否已赋值
+                     * @return AccAllDB 是否已赋值
+                     * 
+                     */
+                    bool AccAllDBHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,7 +162,7 @@ namespace TencentCloud
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 账号权限变更信息
+                     * 账号权限变更信息。参数DBPrivileges和AccAllDB只能二选一
                      */
                     std::vector<DBPrivilegeModifyInfo> m_dBPrivileges;
                     bool m_dBPrivilegesHasBeenSet;
@@ -156,6 +178,12 @@ namespace TencentCloud
                      */
                     std::string m_accountType;
                     bool m_accountTypeHasBeenSet;
+
+                    /**
+                     * 全量修改指定账号下的所有DB权限，只支持特殊权限账号和普通权限账号。参数DBPrivileges和AccAllDB只能二选一
+                     */
+                    SelectAllDB m_accAllDB;
+                    bool m_accAllDBHasBeenSet;
 
                 };
             }

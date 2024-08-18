@@ -1674,6 +1674,49 @@ CdwdorisClient::DescribeSqlApisOutcomeCallable CdwdorisClient::DescribeSqlApisCa
     return task->get_future();
 }
 
+CdwdorisClient::DescribeTableListOutcome CdwdorisClient::DescribeTableList(const DescribeTableListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTableList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTableListResponse rsp = DescribeTableListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTableListOutcome(rsp);
+        else
+            return DescribeTableListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTableListOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::DescribeTableListAsync(const DescribeTableListRequest& request, const DescribeTableListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTableList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::DescribeTableListOutcomeCallable CdwdorisClient::DescribeTableListCallable(const DescribeTableListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTableListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTableList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwdorisClient::DescribeUserBindWorkloadGroupOutcome CdwdorisClient::DescribeUserBindWorkloadGroup(const DescribeUserBindWorkloadGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserBindWorkloadGroup");

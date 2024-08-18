@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/TimeRange.h>
 
 
 namespace TencentCloud
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取轮播播单标识过滤条件，数组长度限制：100。
-                     * @return RoundPlayIds 轮播播单标识过滤条件，数组长度限制：100。
+                     * 获取过滤条件：轮播播单标识，数组长度限制：100。
+                     * @return RoundPlayIds 过滤条件：轮播播单标识，数组长度限制：100。
                      * 
                      */
                     std::vector<std::string> GetRoundPlayIds() const;
 
                     /**
-                     * 设置轮播播单标识过滤条件，数组长度限制：100。
-                     * @param _roundPlayIds 轮播播单标识过滤条件，数组长度限制：100。
+                     * 设置过滤条件：轮播播单标识，数组长度限制：100。
+                     * @param _roundPlayIds 过滤条件：轮播播单标识，数组长度限制：100。
                      * 
                      */
                     void SetRoundPlayIds(const std::vector<std::string>& _roundPlayIds);
@@ -85,15 +86,99 @@ namespace TencentCloud
                     bool RoundPlayIdsHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，默认值：0。
-                     * @return Offset 分页偏移量，默认值：0。
+                     * 获取过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li>
+                     * @return Status 过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li>
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li>
+                     * @param _status 过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li>
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取过滤条件：轮播播单创建时间。
+                     * @return CreateTime 过滤条件：轮播播单创建时间。
+                     * 
+                     */
+                    TimeRange GetCreateTime() const;
+
+                    /**
+                     * 设置过滤条件：轮播播单创建时间。
+                     * @param _createTime 过滤条件：轮播播单创建时间。
+                     * 
+                     */
+                    void SetCreateTime(const TimeRange& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取过滤条件：轮播播单更新时间。
+                     * @return UpdateTime 过滤条件：轮播播单更新时间。
+                     * 
+                     */
+                    TimeRange GetUpdateTime() const;
+
+                    /**
+                     * 设置过滤条件：轮播播单更新时间。
+                     * @param _updateTime 过滤条件：轮播播单更新时间。
+                     * 
+                     */
+                    void SetUpdateTime(const TimeRange& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。
+                     * @return ScrollToken 翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。
+                     * 
+                     */
+                    std::string GetScrollToken() const;
+
+                    /**
+                     * 设置翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。
+                     * @param _scrollToken 翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。
+                     * 
+                     */
+                    void SetScrollToken(const std::string& _scrollToken);
+
+                    /**
+                     * 判断参数 ScrollToken 是否已赋值
+                     * @return ScrollToken 是否已赋值
+                     * 
+                     */
+                    bool ScrollTokenHasBeenSet() const;
+
+                    /**
+                     * 获取分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
+                     * @return Offset 分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，默认值：0。
-                     * @param _offset 分页偏移量，默认值：0。
+                     * 设置分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
+                     * @param _offset 分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -135,13 +220,37 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 轮播播单标识过滤条件，数组长度限制：100。
+                     * 过滤条件：轮播播单标识，数组长度限制：100。
                      */
                     std::vector<std::string> m_roundPlayIds;
                     bool m_roundPlayIdsHasBeenSet;
 
                     /**
-                     * 分页偏移量，默认值：0。
+                     * 过滤条件，轮播播单状态，可选值： <li>Enabled：启动状态；</li> <li>Disabled：停止状态。</li>
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 过滤条件：轮播播单创建时间。
+                     */
+                    TimeRange m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 过滤条件：轮播播单更新时间。
+                     */
+                    TimeRange m_updateTime;
+                    bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。
+                     */
+                    std::string m_scrollToken;
+                    bool m_scrollTokenHasBeenSet;
+
+                    /**
+                     * 分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

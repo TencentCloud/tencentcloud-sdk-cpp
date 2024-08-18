@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dbbrain/v20210527/model/MySqlProcess.h>
+#include <tencentcloud/dbbrain/v20210527/model/StatisticInfo.h>
 
 
 namespace TencentCloud
@@ -58,6 +59,22 @@ namespace TencentCloud
                      */
                     bool ProcessListHasBeenSet() const;
 
+                    /**
+                     * 获取sql会话统计信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Statistics sql会话统计信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<StatisticInfo> GetStatistics() const;
+
+                    /**
+                     * 判断参数 Statistics 是否已赋值
+                     * @return Statistics 是否已赋值
+                     * 
+                     */
+                    bool StatisticsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +82,13 @@ namespace TencentCloud
                      */
                     std::vector<MySqlProcess> m_processList;
                     bool m_processListHasBeenSet;
+
+                    /**
+                     * sql会话统计信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<StatisticInfo> m_statistics;
+                    bool m_statisticsHasBeenSet;
 
                 };
             }

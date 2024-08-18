@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeRoundPlaysResponse::DescribeRoundPlaysResponse() :
     m_totalCountHasBeenSet(false),
-    m_roundPlaySetHasBeenSet(false)
+    m_roundPlaySetHasBeenSet(false),
+    m_scrollTokenHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeRoundPlaysResponse::Deserialize(const string &payloa
         m_roundPlaySetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ScrollToken") && !rsp["ScrollToken"].IsNull())
+    {
+        if (!rsp["ScrollToken"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScrollToken` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scrollToken = string(rsp["ScrollToken"].GetString());
+        m_scrollTokenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeRoundPlaysResponse::ToJsonString() const
         }
     }
 
+    if (m_scrollTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScrollToken";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scrollToken.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ vector<RoundPlayInfo> DescribeRoundPlaysResponse::GetRoundPlaySet() const
 bool DescribeRoundPlaysResponse::RoundPlaySetHasBeenSet() const
 {
     return m_roundPlaySetHasBeenSet;
+}
+
+string DescribeRoundPlaysResponse::GetScrollToken() const
+{
+    return m_scrollToken;
+}
+
+bool DescribeRoundPlaysResponse::ScrollTokenHasBeenSet() const
+{
+    return m_scrollTokenHasBeenSet;
 }
 
 

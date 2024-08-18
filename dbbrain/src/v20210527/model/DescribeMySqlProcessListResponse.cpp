@@ -24,7 +24,8 @@ using namespace TencentCloud::Dbbrain::V20210527::Model;
 using namespace std;
 
 DescribeMySqlProcessListResponse::DescribeMySqlProcessListResponse() :
-    m_processListHasBeenSet(false)
+    m_processListHasBeenSet(false),
+    m_statisticsHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,26 @@ CoreInternalOutcome DescribeMySqlProcessListResponse::Deserialize(const string &
         m_processListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Statistics") && !rsp["Statistics"].IsNull())
+    {
+        if (!rsp["Statistics"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Statistics` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Statistics"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StatisticInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_statistics.push_back(item);
+        }
+        m_statisticsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -101,6 +122,21 @@ string DescribeMySqlProcessListResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_processList.begin(); itr != m_processList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_statisticsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Statistics";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_statistics.begin(); itr != m_statistics.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -127,6 +163,16 @@ vector<MySqlProcess> DescribeMySqlProcessListResponse::GetProcessList() const
 bool DescribeMySqlProcessListResponse::ProcessListHasBeenSet() const
 {
     return m_processListHasBeenSet;
+}
+
+vector<StatisticInfo> DescribeMySqlProcessListResponse::GetStatistics() const
+{
+    return m_statistics;
+}
+
+bool DescribeMySqlProcessListResponse::StatisticsHasBeenSet() const
+{
+    return m_statisticsHasBeenSet;
 }
 
 

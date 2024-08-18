@@ -23,6 +23,7 @@ using namespace std;
 RoundPlayListItemInfo::RoundPlayListItemInfo() :
     m_fileIdHasBeenSet(false),
     m_audioVideoTypeHasBeenSet(false),
+    m_itemIdHasBeenSet(false),
     m_definitionHasBeenSet(false)
 {
 }
@@ -50,6 +51,16 @@ CoreInternalOutcome RoundPlayListItemInfo::Deserialize(const rapidjson::Value &v
         }
         m_audioVideoType = string(value["AudioVideoType"].GetString());
         m_audioVideoTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ItemId") && !value["ItemId"].IsNull())
+    {
+        if (!value["ItemId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoundPlayListItemInfo.ItemId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_itemId = string(value["ItemId"].GetString());
+        m_itemIdHasBeenSet = true;
     }
 
     if (value.HasMember("Definition") && !value["Definition"].IsNull())
@@ -83,6 +94,14 @@ void RoundPlayListItemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "AudioVideoType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_audioVideoType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_itemIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ItemId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_itemId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_definitionHasBeenSet)
@@ -126,6 +145,22 @@ void RoundPlayListItemInfo::SetAudioVideoType(const string& _audioVideoType)
 bool RoundPlayListItemInfo::AudioVideoTypeHasBeenSet() const
 {
     return m_audioVideoTypeHasBeenSet;
+}
+
+string RoundPlayListItemInfo::GetItemId() const
+{
+    return m_itemId;
+}
+
+void RoundPlayListItemInfo::SetItemId(const string& _itemId)
+{
+    m_itemId = _itemId;
+    m_itemIdHasBeenSet = true;
+}
+
+bool RoundPlayListItemInfo::ItemIdHasBeenSet() const
+{
+    return m_itemIdHasBeenSet;
 }
 
 int64_t RoundPlayListItemInfo::GetDefinition() const

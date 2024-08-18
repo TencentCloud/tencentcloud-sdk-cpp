@@ -25,6 +25,10 @@ using namespace std;
 DescribeRoundPlaysRequest::DescribeRoundPlaysRequest() :
     m_subAppIdHasBeenSet(false),
     m_roundPlayIdsHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_scrollTokenHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -56,6 +60,40 @@ string DescribeRoundPlaysRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_createTime.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_updateTime.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_scrollTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScrollToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scrollToken.c_str(), allocator).Move(), allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -112,6 +150,70 @@ void DescribeRoundPlaysRequest::SetRoundPlayIds(const vector<string>& _roundPlay
 bool DescribeRoundPlaysRequest::RoundPlayIdsHasBeenSet() const
 {
     return m_roundPlayIdsHasBeenSet;
+}
+
+string DescribeRoundPlaysRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void DescribeRoundPlaysRequest::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DescribeRoundPlaysRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+TimeRange DescribeRoundPlaysRequest::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void DescribeRoundPlaysRequest::SetCreateTime(const TimeRange& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool DescribeRoundPlaysRequest::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+TimeRange DescribeRoundPlaysRequest::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void DescribeRoundPlaysRequest::SetUpdateTime(const TimeRange& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool DescribeRoundPlaysRequest::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
+string DescribeRoundPlaysRequest::GetScrollToken() const
+{
+    return m_scrollToken;
+}
+
+void DescribeRoundPlaysRequest::SetScrollToken(const string& _scrollToken)
+{
+    m_scrollToken = _scrollToken;
+    m_scrollTokenHasBeenSet = true;
+}
+
+bool DescribeRoundPlaysRequest::ScrollTokenHasBeenSet() const
+{
+    return m_scrollTokenHasBeenSet;
 }
 
 int64_t DescribeRoundPlaysRequest::GetOffset() const

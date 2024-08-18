@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dbbrain/v20210527/model/StatDimension.h>
 
 
 namespace TencentCloud
@@ -273,6 +274,27 @@ namespace TencentCloud
                      */
                     bool ProductHasBeenSet() const;
 
+                    /**
+                     * 获取会话统计的维度信息,可以多个维度。
+                     * @return StatDimensions 会话统计的维度信息,可以多个维度。
+                     * 
+                     */
+                    std::vector<StatDimension> GetStatDimensions() const;
+
+                    /**
+                     * 设置会话统计的维度信息,可以多个维度。
+                     * @param _statDimensions 会话统计的维度信息,可以多个维度。
+                     * 
+                     */
+                    void SetStatDimensions(const std::vector<StatDimension>& _statDimensions);
+
+                    /**
+                     * 判断参数 StatDimensions 是否已赋值
+                     * @return StatDimensions 是否已赋值
+                     * 
+                     */
+                    bool StatDimensionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +362,12 @@ namespace TencentCloud
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
+
+                    /**
+                     * 会话统计的维度信息,可以多个维度。
+                     */
+                    std::vector<StatDimension> m_statDimensions;
+                    bool m_statDimensionsHasBeenSet;
 
                 };
             }

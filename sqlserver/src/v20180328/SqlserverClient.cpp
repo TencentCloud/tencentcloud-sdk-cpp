@@ -5071,6 +5071,49 @@ SqlserverClient::ModifyDatabaseMdfOutcomeCallable SqlserverClient::ModifyDatabas
     return task->get_future();
 }
 
+SqlserverClient::ModifyDatabasePrivilegeOutcome SqlserverClient::ModifyDatabasePrivilege(const ModifyDatabasePrivilegeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDatabasePrivilege");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDatabasePrivilegeResponse rsp = ModifyDatabasePrivilegeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDatabasePrivilegeOutcome(rsp);
+        else
+            return ModifyDatabasePrivilegeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDatabasePrivilegeOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::ModifyDatabasePrivilegeAsync(const ModifyDatabasePrivilegeRequest& request, const ModifyDatabasePrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDatabasePrivilege(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::ModifyDatabasePrivilegeOutcomeCallable SqlserverClient::ModifyDatabasePrivilegeCallable(const ModifyDatabasePrivilegeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDatabasePrivilegeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDatabasePrivilege(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::ModifyDatabaseShrinkMDFOutcome SqlserverClient::ModifyDatabaseShrinkMDF(const ModifyDatabaseShrinkMDFRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDatabaseShrinkMDF");

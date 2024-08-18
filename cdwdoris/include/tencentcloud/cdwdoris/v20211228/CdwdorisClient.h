@@ -99,6 +99,8 @@
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeSpecResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeSqlApisRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeSqlApisResponse.h>
+#include <tencentcloud/cdwdoris/v20211228/model/DescribeTableListRequest.h>
+#include <tencentcloud/cdwdoris/v20211228/model/DescribeTableListResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeUserBindWorkloadGroupRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeUserBindWorkloadGroupResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeWorkloadGroupRequest.h>
@@ -267,6 +269,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSqlApisResponse> DescribeSqlApisOutcome;
                 typedef std::future<DescribeSqlApisOutcome> DescribeSqlApisOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::DescribeSqlApisRequest&, DescribeSqlApisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlApisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTableListResponse> DescribeTableListOutcome;
+                typedef std::future<DescribeTableListOutcome> DescribeTableListOutcomeCallable;
+                typedef std::function<void(const CdwdorisClient*, const Model::DescribeTableListRequest&, DescribeTableListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserBindWorkloadGroupResponse> DescribeUserBindWorkloadGroupOutcome;
                 typedef std::future<DescribeUserBindWorkloadGroupOutcome> DescribeUserBindWorkloadGroupOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::DescribeUserBindWorkloadGroupRequest&, DescribeUserBindWorkloadGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserBindWorkloadGroupAsyncHandler;
@@ -671,6 +676,15 @@ namespace TencentCloud
                 DescribeSqlApisOutcome DescribeSqlApis(const Model::DescribeSqlApisRequest &request);
                 void DescribeSqlApisAsync(const Model::DescribeSqlApisRequest& request, const DescribeSqlApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSqlApisOutcomeCallable DescribeSqlApisCallable(const Model::DescribeSqlApisRequest& request);
+
+                /**
+                 *获取指定数据源和库下的表列表
+                 * @param req DescribeTableListRequest
+                 * @return DescribeTableListOutcome
+                 */
+                DescribeTableListOutcome DescribeTableList(const Model::DescribeTableListRequest &request);
+                void DescribeTableListAsync(const Model::DescribeTableListRequest& request, const DescribeTableListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTableListOutcomeCallable DescribeTableListCallable(const Model::DescribeTableListRequest& request);
 
                 /**
                  *获取当前集群各用户绑定的资源信息

@@ -21,7 +21,8 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 CreateReconstructDocumentFlowConfig::CreateReconstructDocumentFlowConfig() :
-    m_tableResultTypeHasBeenSet(false)
+    m_tableResultTypeHasBeenSet(false),
+    m_resultTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome CreateReconstructDocumentFlowConfig::Deserialize(const rapid
         m_tableResultTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ResultType") && !value["ResultType"].IsNull())
+    {
+        if (!value["ResultType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateReconstructDocumentFlowConfig.ResultType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultType = string(value["ResultType"].GetString());
+        m_resultTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void CreateReconstructDocumentFlowConfig::ToJsonObject(rapidjson::Value &value, 
         string key = "TableResultType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tableResultType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void CreateReconstructDocumentFlowConfig::SetTableResultType(const string& _tabl
 bool CreateReconstructDocumentFlowConfig::TableResultTypeHasBeenSet() const
 {
     return m_tableResultTypeHasBeenSet;
+}
+
+string CreateReconstructDocumentFlowConfig::GetResultType() const
+{
+    return m_resultType;
+}
+
+void CreateReconstructDocumentFlowConfig::SetResultType(const string& _resultType)
+{
+    m_resultType = _resultType;
+    m_resultTypeHasBeenSet = true;
+}
+
+bool CreateReconstructDocumentFlowConfig::ResultTypeHasBeenSet() const
+{
+    return m_resultTypeHasBeenSet;
 }
 

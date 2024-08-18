@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合过滤条件的轮播播单总数。
-                     * @return TotalCount 符合过滤条件的轮播播单总数。
+                     * 获取符合过滤条件的轮播播单总数。已经废弃，分批次查询请请使用 ScrollToken 参数。
+                     * @return TotalCount 符合过滤条件的轮播播单总数。已经废弃，分批次查询请请使用 ScrollToken 参数。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -72,10 +72,24 @@ namespace TencentCloud
                      */
                     bool RoundPlaySetHasBeenSet() const;
 
+                    /**
+                     * 获取翻页标识，当请求未返回所有数据，该字段表示下一条记录的 ID。当该字段为空，说明已无更多数据。
+                     * @return ScrollToken 翻页标识，当请求未返回所有数据，该字段表示下一条记录的 ID。当该字段为空，说明已无更多数据。
+                     * 
+                     */
+                    std::string GetScrollToken() const;
+
+                    /**
+                     * 判断参数 ScrollToken 是否已赋值
+                     * @return ScrollToken 是否已赋值
+                     * 
+                     */
+                    bool ScrollTokenHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 符合过滤条件的轮播播单总数。
+                     * 符合过滤条件的轮播播单总数。已经废弃，分批次查询请请使用 ScrollToken 参数。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
@@ -85,6 +99,12 @@ namespace TencentCloud
                      */
                     std::vector<RoundPlayInfo> m_roundPlaySet;
                     bool m_roundPlaySetHasBeenSet;
+
+                    /**
+                     * 翻页标识，当请求未返回所有数据，该字段表示下一条记录的 ID。当该字段为空，说明已无更多数据。
+                     */
+                    std::string m_scrollToken;
+                    bool m_scrollTokenHasBeenSet;
 
                 };
             }

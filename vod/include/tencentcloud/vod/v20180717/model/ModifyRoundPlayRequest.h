@@ -174,23 +174,15 @@ namespace TencentCloud
                     bool DescHasBeenSet() const;
 
                     /**
-                     * 获取播放状态，可选值：
-<li>Disabled：结束播放，结束后轮播任务不能再次启动。</li>
-
-                     * @return Status 播放状态，可选值：
-<li>Disabled：结束播放，结束后轮播任务不能再次启动。</li>
-
+                     * 获取播放状态，可选值：<li>Disabled：停止播放。</li><li>Enabled：启播时长到达后启动播放。</li>
+                     * @return Status 播放状态，可选值：<li>Disabled：停止播放。</li><li>Enabled：启播时长到达后启动播放。</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置播放状态，可选值：
-<li>Disabled：结束播放，结束后轮播任务不能再次启动。</li>
-
-                     * @param _status 播放状态，可选值：
-<li>Disabled：结束播放，结束后轮播任务不能再次启动。</li>
-
+                     * 设置播放状态，可选值：<li>Disabled：停止播放。</li><li>Enabled：启播时长到达后启动播放。</li>
+                     * @param _status 播放状态，可选值：<li>Disabled：停止播放。</li><li>Enabled：启播时长到达后启动播放。</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -271,9 +263,7 @@ namespace TencentCloud
                     bool m_descHasBeenSet;
 
                     /**
-                     * 播放状态，可选值：
-<li>Disabled：结束播放，结束后轮播任务不能再次启动。</li>
-
+                     * 播放状态，可选值：<li>Disabled：停止播放。</li><li>Enabled：启播时长到达后启动播放。</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
