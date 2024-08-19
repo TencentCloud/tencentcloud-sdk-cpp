@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源ID，如果ResourceType为USERDEFINED，可以为空
-                     * @return ResourceId 资源ID，如果ResourceType为USERDEFINED，可以为空
+                     * 获取资源ID，如果ResourceType为USERDEFINED，可以为空字符串
+                     * @return ResourceId 资源ID，如果ResourceType为USERDEFINED，可以为空字符串
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID，如果ResourceType为USERDEFINED，可以为空
-                     * @param _resourceId 资源ID，如果ResourceType为USERDEFINED，可以为空
+                     * 设置资源ID，如果ResourceType为USERDEFINED，可以为空字符串
+                     * @param _resourceId 资源ID，如果ResourceType为USERDEFINED，可以为空字符串
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -254,7 +254,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源ID，如果ResourceType为USERDEFINED，可以为空
+                     * 资源ID，如果ResourceType为USERDEFINED，可以为空字符串
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;

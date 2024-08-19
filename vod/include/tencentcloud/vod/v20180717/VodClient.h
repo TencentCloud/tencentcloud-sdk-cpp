@@ -169,6 +169,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeClientUploadAccelerationUsageDataResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeContentReviewTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeContentReviewTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCurrentPlaylistRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCurrentPlaylistResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDailyMediaPlayStatRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDailyMediaPlayStatResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDailyMostPlayedStatRequest.h>
@@ -261,8 +263,12 @@
 #include <tencentcloud/vod/v20180717/model/ExtractCopyRightWatermarkResponse.h>
 #include <tencentcloud/vod/v20180717/model/ExtractTraceWatermarkRequest.h>
 #include <tencentcloud/vod/v20180717/model/ExtractTraceWatermarkResponse.h>
+#include <tencentcloud/vod/v20180717/model/FastEditMediaRequest.h>
+#include <tencentcloud/vod/v20180717/model/FastEditMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/ForbidMediaDistributionRequest.h>
 #include <tencentcloud/vod/v20180717/model/ForbidMediaDistributionResponse.h>
+#include <tencentcloud/vod/v20180717/model/HandleCurrentPlaylistRequest.h>
+#include <tencentcloud/vod/v20180717/model/HandleCurrentPlaylistResponse.h>
 #include <tencentcloud/vod/v20180717/model/InspectMediaQualityRequest.h>
 #include <tencentcloud/vod/v20180717/model/InspectMediaQualityResponse.h>
 #include <tencentcloud/vod/v20180717/model/LiveRealTimeClipRequest.h>
@@ -610,6 +616,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeContentReviewTemplatesResponse> DescribeContentReviewTemplatesOutcome;
                 typedef std::future<DescribeContentReviewTemplatesOutcome> DescribeContentReviewTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeContentReviewTemplatesRequest&, DescribeContentReviewTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContentReviewTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCurrentPlaylistResponse> DescribeCurrentPlaylistOutcome;
+                typedef std::future<DescribeCurrentPlaylistOutcome> DescribeCurrentPlaylistOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeCurrentPlaylistRequest&, DescribeCurrentPlaylistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCurrentPlaylistAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDailyMediaPlayStatResponse> DescribeDailyMediaPlayStatOutcome;
                 typedef std::future<DescribeDailyMediaPlayStatOutcome> DescribeDailyMediaPlayStatOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeDailyMediaPlayStatRequest&, DescribeDailyMediaPlayStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDailyMediaPlayStatAsyncHandler;
@@ -748,9 +757,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExtractTraceWatermarkResponse> ExtractTraceWatermarkOutcome;
                 typedef std::future<ExtractTraceWatermarkOutcome> ExtractTraceWatermarkOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ExtractTraceWatermarkRequest&, ExtractTraceWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExtractTraceWatermarkAsyncHandler;
+                typedef Outcome<Core::Error, Model::FastEditMediaResponse> FastEditMediaOutcome;
+                typedef std::future<FastEditMediaOutcome> FastEditMediaOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::FastEditMediaRequest&, FastEditMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FastEditMediaAsyncHandler;
                 typedef Outcome<Core::Error, Model::ForbidMediaDistributionResponse> ForbidMediaDistributionOutcome;
                 typedef std::future<ForbidMediaDistributionOutcome> ForbidMediaDistributionOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ForbidMediaDistributionRequest&, ForbidMediaDistributionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ForbidMediaDistributionAsyncHandler;
+                typedef Outcome<Core::Error, Model::HandleCurrentPlaylistResponse> HandleCurrentPlaylistOutcome;
+                typedef std::future<HandleCurrentPlaylistOutcome> HandleCurrentPlaylistOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::HandleCurrentPlaylistRequest&, HandleCurrentPlaylistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> HandleCurrentPlaylistAsyncHandler;
                 typedef Outcome<Core::Error, Model::InspectMediaQualityResponse> InspectMediaQualityOutcome;
                 typedef std::future<InspectMediaQualityOutcome> InspectMediaQualityOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::InspectMediaQualityRequest&, InspectMediaQualityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InspectMediaQualityAsyncHandler;
@@ -1638,6 +1653,15 @@ namespace TencentCloud
                 DescribeContentReviewTemplatesOutcomeCallable DescribeContentReviewTemplatesCallable(const Model::DescribeContentReviewTemplatesRequest& request);
 
                 /**
+                 *查询轮播当前播放列表。
+                 * @param req DescribeCurrentPlaylistRequest
+                 * @return DescribeCurrentPlaylistOutcome
+                 */
+                DescribeCurrentPlaylistOutcome DescribeCurrentPlaylist(const Model::DescribeCurrentPlaylistRequest &request);
+                void DescribeCurrentPlaylistAsync(const Model::DescribeCurrentPlaylistRequest& request, const DescribeCurrentPlaylistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCurrentPlaylistOutcomeCallable DescribeCurrentPlaylistCallable(const Model::DescribeCurrentPlaylistRequest& request);
+
+                /**
                  *该接口用于查询指定日期范围内每天的播放统计数据。
 * 可以查询最近一年的播放统计数据。
 * 结束日期和起始日期的时间跨度最大为90天。
@@ -2132,6 +2156,15 @@ namespace TencentCloud
                 ExtractTraceWatermarkOutcomeCallable ExtractTraceWatermarkCallable(const Model::ExtractTraceWatermarkRequest& request);
 
                 /**
+                 *对 HLS 视频实现快速拼接和快速剪辑，生成新的 HLS 格式的媒体。
+                 * @param req FastEditMediaRequest
+                 * @return FastEditMediaOutcome
+                 */
+                FastEditMediaOutcome FastEditMedia(const Model::FastEditMediaRequest &request);
+                void FastEditMediaAsync(const Model::FastEditMediaRequest& request, const FastEditMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FastEditMediaOutcomeCallable FastEditMediaCallable(const Model::FastEditMediaRequest& request);
+
+                /**
                  ** 对媒体禁播后，除了点播控制台预览，其他场景访问视频各种资源的 URL（原始文件、转码输出文件、截图等）均会返回 403。
   禁播/解禁操作全网生效时间约 5~10 分钟。
                  * @param req ForbidMediaDistributionRequest
@@ -2140,6 +2173,15 @@ namespace TencentCloud
                 ForbidMediaDistributionOutcome ForbidMediaDistribution(const Model::ForbidMediaDistributionRequest &request);
                 void ForbidMediaDistributionAsync(const Model::ForbidMediaDistributionRequest& request, const ForbidMediaDistributionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ForbidMediaDistributionOutcomeCallable ForbidMediaDistributionCallable(const Model::ForbidMediaDistributionRequest& request);
+
+                /**
+                 *操作轮播当前播放列表。支持的操作有：<li> Insert：向当前播列表插入播放节目。</li><li> Delete：删除播列表中的播放节目。</li>
+                 * @param req HandleCurrentPlaylistRequest
+                 * @return HandleCurrentPlaylistOutcome
+                 */
+                HandleCurrentPlaylistOutcome HandleCurrentPlaylist(const Model::HandleCurrentPlaylistRequest &request);
+                void HandleCurrentPlaylistAsync(const Model::HandleCurrentPlaylistRequest& request, const HandleCurrentPlaylistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                HandleCurrentPlaylistOutcomeCallable HandleCurrentPlaylistCallable(const Model::HandleCurrentPlaylistRequest& request);
 
                 /**
                  *对点播中的音视频媒体发起音画质检测任务。

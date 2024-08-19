@@ -2362,3 +2362,46 @@ TrtcClient::UpdatePublishCdnStreamOutcomeCallable TrtcClient::UpdatePublishCdnSt
     return task->get_future();
 }
 
+TrtcClient::UpdateStreamIngestOutcome TrtcClient::UpdateStreamIngest(const UpdateStreamIngestRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateStreamIngest");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateStreamIngestResponse rsp = UpdateStreamIngestResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateStreamIngestOutcome(rsp);
+        else
+            return UpdateStreamIngestOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateStreamIngestOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::UpdateStreamIngestAsync(const UpdateStreamIngestRequest& request, const UpdateStreamIngestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateStreamIngest(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::UpdateStreamIngestOutcomeCallable TrtcClient::UpdateStreamIngestCallable(const UpdateStreamIngestRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateStreamIngestOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateStreamIngest(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

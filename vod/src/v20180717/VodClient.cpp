@@ -3179,6 +3179,49 @@ VodClient::DescribeContentReviewTemplatesOutcomeCallable VodClient::DescribeCont
     return task->get_future();
 }
 
+VodClient::DescribeCurrentPlaylistOutcome VodClient::DescribeCurrentPlaylist(const DescribeCurrentPlaylistRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCurrentPlaylist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCurrentPlaylistResponse rsp = DescribeCurrentPlaylistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCurrentPlaylistOutcome(rsp);
+        else
+            return DescribeCurrentPlaylistOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCurrentPlaylistOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeCurrentPlaylistAsync(const DescribeCurrentPlaylistRequest& request, const DescribeCurrentPlaylistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCurrentPlaylist(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeCurrentPlaylistOutcomeCallable VodClient::DescribeCurrentPlaylistCallable(const DescribeCurrentPlaylistRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCurrentPlaylistOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCurrentPlaylist(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeDailyMediaPlayStatOutcome VodClient::DescribeDailyMediaPlayStat(const DescribeDailyMediaPlayStatRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDailyMediaPlayStat");
@@ -5157,6 +5200,49 @@ VodClient::ExtractTraceWatermarkOutcomeCallable VodClient::ExtractTraceWatermark
     return task->get_future();
 }
 
+VodClient::FastEditMediaOutcome VodClient::FastEditMedia(const FastEditMediaRequest &request)
+{
+    auto outcome = MakeRequest(request, "FastEditMedia");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FastEditMediaResponse rsp = FastEditMediaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FastEditMediaOutcome(rsp);
+        else
+            return FastEditMediaOutcome(o.GetError());
+    }
+    else
+    {
+        return FastEditMediaOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::FastEditMediaAsync(const FastEditMediaRequest& request, const FastEditMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FastEditMedia(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::FastEditMediaOutcomeCallable VodClient::FastEditMediaCallable(const FastEditMediaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FastEditMediaOutcome()>>(
+        [this, request]()
+        {
+            return this->FastEditMedia(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ForbidMediaDistributionOutcome VodClient::ForbidMediaDistribution(const ForbidMediaDistributionRequest &request)
 {
     auto outcome = MakeRequest(request, "ForbidMediaDistribution");
@@ -5193,6 +5279,49 @@ VodClient::ForbidMediaDistributionOutcomeCallable VodClient::ForbidMediaDistribu
         [this, request]()
         {
             return this->ForbidMediaDistribution(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::HandleCurrentPlaylistOutcome VodClient::HandleCurrentPlaylist(const HandleCurrentPlaylistRequest &request)
+{
+    auto outcome = MakeRequest(request, "HandleCurrentPlaylist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        HandleCurrentPlaylistResponse rsp = HandleCurrentPlaylistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return HandleCurrentPlaylistOutcome(rsp);
+        else
+            return HandleCurrentPlaylistOutcome(o.GetError());
+    }
+    else
+    {
+        return HandleCurrentPlaylistOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::HandleCurrentPlaylistAsync(const HandleCurrentPlaylistRequest& request, const HandleCurrentPlaylistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->HandleCurrentPlaylist(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::HandleCurrentPlaylistOutcomeCallable VodClient::HandleCurrentPlaylistCallable(const HandleCurrentPlaylistRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<HandleCurrentPlaylistOutcome()>>(
+        [this, request]()
+        {
+            return this->HandleCurrentPlaylist(request);
         }
     );
 

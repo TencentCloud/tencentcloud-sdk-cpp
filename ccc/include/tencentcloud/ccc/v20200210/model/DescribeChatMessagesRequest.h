@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID（废弃）
-                     * @return InstanceId 实例 ID（废弃）
-                     * @deprecated
-                     */
-                    int64_t GetInstanceId() const;
-
-                    /**
-                     * 设置实例 ID（废弃）
-                     * @param _instanceId 实例 ID（废弃）
-                     * @deprecated
-                     */
-                    void SetInstanceId(const int64_t& _instanceId);
-
-                    /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
-                     * @deprecated
-                     */
-                    bool InstanceIdHasBeenSet() const;
-
-                    /**
                      * 获取应用 ID，可以查看 https://console.cloud.tencent.com/ccc
                      * @return SdkAppId 应用 ID，可以查看 https://console.cloud.tencent.com/ccc
                      * 
@@ -83,6 +62,27 @@ namespace TencentCloud
                      * 
                      */
                     bool SdkAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例 ID（废弃）
+                     * @return InstanceId 实例 ID（废弃）
+                     * @deprecated
+                     */
+                    int64_t GetInstanceId() const;
+
+                    /**
+                     * 设置实例 ID（废弃）
+                     * @param _instanceId 实例 ID（废弃）
+                     * @deprecated
+                     */
+                    void SetInstanceId(const int64_t& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * @deprecated
+                     */
+                    bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取服务记录ID（废弃）
@@ -192,16 +192,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID（废弃）
-                     */
-                    int64_t m_instanceId;
-                    bool m_instanceIdHasBeenSet;
-
-                    /**
                      * 应用 ID，可以查看 https://console.cloud.tencent.com/ccc
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
+
+                    /**
+                     * 实例 ID（废弃）
+                     */
+                    int64_t m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                     /**
                      * 服务记录ID（废弃）

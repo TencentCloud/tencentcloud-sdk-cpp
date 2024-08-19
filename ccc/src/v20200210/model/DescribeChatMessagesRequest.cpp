@@ -23,8 +23,8 @@ using namespace TencentCloud::Ccc::V20200210::Model;
 using namespace std;
 
 DescribeChatMessagesRequest::DescribeChatMessagesRequest() :
-    m_instanceIdHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_cdrIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
@@ -40,20 +40,20 @@ string DescribeChatMessagesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_instanceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_instanceId, allocator);
-    }
-
     if (m_sdkAppIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sdkAppId, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceId, allocator);
     }
 
     if (m_cdrIdHasBeenSet)
@@ -104,22 +104,6 @@ string DescribeChatMessagesRequest::ToJsonString() const
 }
 
 
-int64_t DescribeChatMessagesRequest::GetInstanceId() const
-{
-    return m_instanceId;
-}
-
-void DescribeChatMessagesRequest::SetInstanceId(const int64_t& _instanceId)
-{
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
-}
-
-bool DescribeChatMessagesRequest::InstanceIdHasBeenSet() const
-{
-    return m_instanceIdHasBeenSet;
-}
-
 int64_t DescribeChatMessagesRequest::GetSdkAppId() const
 {
     return m_sdkAppId;
@@ -134,6 +118,22 @@ void DescribeChatMessagesRequest::SetSdkAppId(const int64_t& _sdkAppId)
 bool DescribeChatMessagesRequest::SdkAppIdHasBeenSet() const
 {
     return m_sdkAppIdHasBeenSet;
+}
+
+int64_t DescribeChatMessagesRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribeChatMessagesRequest::SetInstanceId(const int64_t& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribeChatMessagesRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 string DescribeChatMessagesRequest::GetCdrId() const

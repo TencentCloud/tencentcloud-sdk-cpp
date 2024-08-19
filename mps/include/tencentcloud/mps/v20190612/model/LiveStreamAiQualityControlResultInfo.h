@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 直播流质检结果
+                * 直播流媒体质检结果
                 */
                 class LiveStreamAiQualityControlResultInfo : public AbstractModel
                 {
@@ -49,27 +49,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取质检结果列表。
+                     * 获取内容质检结果列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QualityControlResults 质检结果列表。
+                     * @return QualityControlResults 内容质检结果列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::vector<QualityControlResult> GetQualityControlResults() const;
 
                     /**
-                     * 设置质检结果列表。
+                     * 设置内容质检结果列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qualityControlResults 质检结果列表。
+                     * @param _qualityControlResults 内容质检结果列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetQualityControlResults(const std::vector<QualityControlResult>& _qualityControlResults);
 
                     /**
                      * 判断参数 QualityControlResults 是否已赋值
                      * @return QualityControlResults 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool QualityControlResultsHasBeenSet() const;
 
@@ -78,7 +78,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiagnoseResults 格式诊断结果列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::vector<DiagnoseResult> GetDiagnoseResults() const;
 
@@ -87,21 +87,71 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diagnoseResults 格式诊断结果列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetDiagnoseResults(const std::vector<DiagnoseResult>& _diagnoseResults);
 
                     /**
                      * 判断参数 DiagnoseResults 是否已赋值
                      * @return DiagnoseResults 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DiagnoseResultsHasBeenSet() const;
+
+                    /**
+                     * 获取内容质检结果列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QualityControlResultSet 内容质检结果列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<QualityControlResult> GetQualityControlResultSet() const;
+
+                    /**
+                     * 设置内容质检结果列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _qualityControlResultSet 内容质检结果列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQualityControlResultSet(const std::vector<QualityControlResult>& _qualityControlResultSet);
+
+                    /**
+                     * 判断参数 QualityControlResultSet 是否已赋值
+                     * @return QualityControlResultSet 是否已赋值
+                     * 
+                     */
+                    bool QualityControlResultSetHasBeenSet() const;
+
+                    /**
+                     * 获取格式诊断结果列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiagnoseResultSet 格式诊断结果列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DiagnoseResult> GetDiagnoseResultSet() const;
+
+                    /**
+                     * 设置格式诊断结果列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _diagnoseResultSet 格式诊断结果列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDiagnoseResultSet(const std::vector<DiagnoseResult>& _diagnoseResultSet);
+
+                    /**
+                     * 判断参数 DiagnoseResultSet 是否已赋值
+                     * @return DiagnoseResultSet 是否已赋值
+                     * 
+                     */
+                    bool DiagnoseResultSetHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 质检结果列表。
+                     * 内容质检结果列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<QualityControlResult> m_qualityControlResults;
@@ -113,6 +163,20 @@ namespace TencentCloud
                      */
                     std::vector<DiagnoseResult> m_diagnoseResults;
                     bool m_diagnoseResultsHasBeenSet;
+
+                    /**
+                     * 内容质检结果列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<QualityControlResult> m_qualityControlResultSet;
+                    bool m_qualityControlResultSetHasBeenSet;
+
+                    /**
+                     * 格式诊断结果列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DiagnoseResult> m_diagnoseResultSet;
+                    bool m_diagnoseResultSetHasBeenSet;
 
                 };
             }

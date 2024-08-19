@@ -131,6 +131,8 @@
 #include <tencentcloud/trtc/v20190722/model/SummarizeTranscriptionResponse.h>
 #include <tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamRequest.h>
 #include <tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamResponse.h>
+#include <tencentcloud/trtc/v20190722/model/UpdateStreamIngestRequest.h>
+#include <tencentcloud/trtc/v20190722/model/UpdateStreamIngestResponse.h>
 
 
 namespace TencentCloud
@@ -307,6 +309,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdatePublishCdnStreamResponse> UpdatePublishCdnStreamOutcome;
                 typedef std::future<UpdatePublishCdnStreamOutcome> UpdatePublishCdnStreamOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::UpdatePublishCdnStreamRequest&, UpdatePublishCdnStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePublishCdnStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateStreamIngestResponse> UpdateStreamIngestOutcome;
+                typedef std::future<UpdateStreamIngestOutcome> UpdateStreamIngestOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::UpdateStreamIngestRequest&, UpdateStreamIngestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateStreamIngestAsyncHandler;
 
 
 
@@ -1003,6 +1008,15 @@ MCU 混流转码费用，请参考文档：[云端混流转码计费说明](http
                 UpdatePublishCdnStreamOutcome UpdatePublishCdnStream(const Model::UpdatePublishCdnStreamRequest &request);
                 void UpdatePublishCdnStreamAsync(const Model::UpdatePublishCdnStreamRequest& request, const UpdatePublishCdnStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdatePublishCdnStreamOutcomeCallable UpdatePublishCdnStreamCallable(const Model::UpdatePublishCdnStreamRequest& request);
+
+                /**
+                 *更新输入在线媒体流任务的StreamUrl
+                 * @param req UpdateStreamIngestRequest
+                 * @return UpdateStreamIngestOutcome
+                 */
+                UpdateStreamIngestOutcome UpdateStreamIngest(const Model::UpdateStreamIngestRequest &request);
+                void UpdateStreamIngestAsync(const Model::UpdateStreamIngestRequest& request, const UpdateStreamIngestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateStreamIngestOutcomeCallable UpdateStreamIngestCallable(const Model::UpdateStreamIngestRequest& request);
 
             };
         }

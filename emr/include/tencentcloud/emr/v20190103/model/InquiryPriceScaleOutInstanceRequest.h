@@ -322,6 +322,27 @@ namespace TencentCloud
                      */
                     bool ComputeResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取扩容资源类型
+                     * @return HardwareResourceType 扩容资源类型
+                     * 
+                     */
+                    std::string GetHardwareResourceType() const;
+
+                    /**
+                     * 设置扩容资源类型
+                     * @param _hardwareResourceType 扩容资源类型
+                     * 
+                     */
+                    void SetHardwareResourceType(const std::string& _hardwareResourceType);
+
+                    /**
+                     * 判断参数 HardwareResourceType 是否已赋值
+                     * @return HardwareResourceType 是否已赋值
+                     * 
+                     */
+                    bool HardwareResourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -402,6 +423,12 @@ namespace TencentCloud
                      */
                     std::string m_computeResourceId;
                     bool m_computeResourceIdHasBeenSet;
+
+                    /**
+                     * 扩容资源类型
+                     */
+                    std::string m_hardwareResourceType;
+                    bool m_hardwareResourceTypeHasBeenSet;
 
                 };
             }

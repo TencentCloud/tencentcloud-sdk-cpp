@@ -22,7 +22,9 @@ using namespace std;
 
 LiveStreamAiQualityControlResultInfo::LiveStreamAiQualityControlResultInfo() :
     m_qualityControlResultsHasBeenSet(false),
-    m_diagnoseResultsHasBeenSet(false)
+    m_diagnoseResultsHasBeenSet(false),
+    m_qualityControlResultSetHasBeenSet(false),
+    m_diagnoseResultSetHasBeenSet(false)
 {
 }
 
@@ -71,6 +73,46 @@ CoreInternalOutcome LiveStreamAiQualityControlResultInfo::Deserialize(const rapi
         m_diagnoseResultsHasBeenSet = true;
     }
 
+    if (value.HasMember("QualityControlResultSet") && !value["QualityControlResultSet"].IsNull())
+    {
+        if (!value["QualityControlResultSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiQualityControlResultInfo.QualityControlResultSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["QualityControlResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            QualityControlResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_qualityControlResultSet.push_back(item);
+        }
+        m_qualityControlResultSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiagnoseResultSet") && !value["DiagnoseResultSet"].IsNull())
+    {
+        if (!value["DiagnoseResultSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiQualityControlResultInfo.DiagnoseResultSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DiagnoseResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DiagnoseResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_diagnoseResultSet.push_back(item);
+        }
+        m_diagnoseResultSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -102,6 +144,36 @@ void LiveStreamAiQualityControlResultInfo::ToJsonObject(rapidjson::Value &value,
 
         int i=0;
         for (auto itr = m_diagnoseResults.begin(); itr != m_diagnoseResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_qualityControlResultSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualityControlResultSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_qualityControlResultSet.begin(); itr != m_qualityControlResultSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_diagnoseResultSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiagnoseResultSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_diagnoseResultSet.begin(); itr != m_diagnoseResultSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -141,5 +213,37 @@ void LiveStreamAiQualityControlResultInfo::SetDiagnoseResults(const vector<Diagn
 bool LiveStreamAiQualityControlResultInfo::DiagnoseResultsHasBeenSet() const
 {
     return m_diagnoseResultsHasBeenSet;
+}
+
+vector<QualityControlResult> LiveStreamAiQualityControlResultInfo::GetQualityControlResultSet() const
+{
+    return m_qualityControlResultSet;
+}
+
+void LiveStreamAiQualityControlResultInfo::SetQualityControlResultSet(const vector<QualityControlResult>& _qualityControlResultSet)
+{
+    m_qualityControlResultSet = _qualityControlResultSet;
+    m_qualityControlResultSetHasBeenSet = true;
+}
+
+bool LiveStreamAiQualityControlResultInfo::QualityControlResultSetHasBeenSet() const
+{
+    return m_qualityControlResultSetHasBeenSet;
+}
+
+vector<DiagnoseResult> LiveStreamAiQualityControlResultInfo::GetDiagnoseResultSet() const
+{
+    return m_diagnoseResultSet;
+}
+
+void LiveStreamAiQualityControlResultInfo::SetDiagnoseResultSet(const vector<DiagnoseResult>& _diagnoseResultSet)
+{
+    m_diagnoseResultSet = _diagnoseResultSet;
+    m_diagnoseResultSetHasBeenSet = true;
+}
+
+bool LiveStreamAiQualityControlResultInfo::DiagnoseResultSetHasBeenSet() const
+{
+    return m_diagnoseResultSetHasBeenSet;
 }
 

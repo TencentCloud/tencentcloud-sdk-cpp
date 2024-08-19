@@ -1717,6 +1717,49 @@ CynosdbClient::DescribeBackupListOutcomeCallable CynosdbClient::DescribeBackupLi
     return task->get_future();
 }
 
+CynosdbClient::DescribeBinlogConfigOutcome CynosdbClient::DescribeBinlogConfig(const DescribeBinlogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBinlogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBinlogConfigResponse rsp = DescribeBinlogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBinlogConfigOutcome(rsp);
+        else
+            return DescribeBinlogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBinlogConfigOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeBinlogConfigAsync(const DescribeBinlogConfigRequest& request, const DescribeBinlogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBinlogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeBinlogConfigOutcomeCallable CynosdbClient::DescribeBinlogConfigCallable(const DescribeBinlogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBinlogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBinlogConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeBinlogDownloadUrlOutcome CynosdbClient::DescribeBinlogDownloadUrl(const DescribeBinlogDownloadUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBinlogDownloadUrl");
@@ -4075,6 +4118,49 @@ CynosdbClient::ModifyBackupNameOutcomeCallable CynosdbClient::ModifyBackupNameCa
         [this, request]()
         {
             return this->ModifyBackupName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::ModifyBinlogConfigOutcome CynosdbClient::ModifyBinlogConfig(const ModifyBinlogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBinlogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBinlogConfigResponse rsp = ModifyBinlogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBinlogConfigOutcome(rsp);
+        else
+            return ModifyBinlogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBinlogConfigOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyBinlogConfigAsync(const ModifyBinlogConfigRequest& request, const ModifyBinlogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBinlogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyBinlogConfigOutcomeCallable CynosdbClient::ModifyBinlogConfigCallable(const ModifyBinlogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBinlogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBinlogConfig(request);
         }
     );
 

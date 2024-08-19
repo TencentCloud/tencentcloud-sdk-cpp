@@ -25,8 +25,12 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cdwdoris/v20211228/model/CancelBackupJobRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/CancelBackupJobResponse.h>
+#include <tencentcloud/cdwdoris/v20211228/model/CheckCoolDownWorkingVariableConfigCorrectRequest.h>
+#include <tencentcloud/cdwdoris/v20211228/model/CheckCoolDownWorkingVariableConfigCorrectResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/CreateBackUpScheduleRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/CreateBackUpScheduleResponse.h>
+#include <tencentcloud/cdwdoris/v20211228/model/CreateCoolDownPolicyRequest.h>
+#include <tencentcloud/cdwdoris/v20211228/model/CreateCoolDownPolicyResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/CreateInstanceNewRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/CreateInstanceNewResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/CreateWorkloadGroupRequest.h>
@@ -51,22 +55,16 @@
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeClusterConfigsResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeClusterConfigsHistoryRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeClusterConfigsHistoryResponse.h>
+#include <tencentcloud/cdwdoris/v20211228/model/DescribeCoolDownBackendsRequest.h>
+#include <tencentcloud/cdwdoris/v20211228/model/DescribeCoolDownBackendsResponse.h>
+#include <tencentcloud/cdwdoris/v20211228/model/DescribeCoolDownPoliciesRequest.h>
+#include <tencentcloud/cdwdoris/v20211228/model/DescribeCoolDownPoliciesResponse.h>
+#include <tencentcloud/cdwdoris/v20211228/model/DescribeCoolDownTableDataRequest.h>
+#include <tencentcloud/cdwdoris/v20211228/model/DescribeCoolDownTableDataResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditDownloadRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditDownloadResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditRecordsRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditRecordsResponse.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditResourceRequest.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditResourceResponse.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeDmsSqlHistoryRequest.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeDmsSqlHistoryResponse.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeDorisMetricFilesRequest.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeDorisMetricFilesResponse.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeFederationTokenRequest.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeFederationTokenResponse.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeFrontEndRequest.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeFrontEndResponse.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeGoodsDetailRequest.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeGoodsDetailResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeInstanceRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeInstanceResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeInstanceNodesRequest.h>
@@ -85,10 +83,6 @@
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeInstancesResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeInstancesHealthStateRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeInstancesHealthStateResponse.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeRegionZoneRequest.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeRegionZoneResponse.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeReplicaVersionRequest.h>
-#include <tencentcloud/cdwdoris/v20211228/model/DescribeReplicaVersionResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeRestoreTaskDetailRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeRestoreTaskDetailResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeSlowQueryRecordsRequest.h>
@@ -107,8 +101,8 @@
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeWorkloadGroupResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DestroyInstanceRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DestroyInstanceResponse.h>
-#include <tencentcloud/cdwdoris/v20211228/model/FitClsLogRequest.h>
-#include <tencentcloud/cdwdoris/v20211228/model/FitClsLogResponse.h>
+#include <tencentcloud/cdwdoris/v20211228/model/ModifyCoolDownPolicyRequest.h>
+#include <tencentcloud/cdwdoris/v20211228/model/ModifyCoolDownPolicyResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/ModifyInstanceRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/ModifyInstanceResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/ModifyInstanceKeyValConfigsRequest.h>
@@ -125,8 +119,10 @@
 #include <tencentcloud/cdwdoris/v20211228/model/ModifyWorkloadGroupResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/ModifyWorkloadGroupStatusRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/ModifyWorkloadGroupStatusResponse.h>
-#include <tencentcloud/cdwdoris/v20211228/model/OpenBackUpRequest.h>
-#include <tencentcloud/cdwdoris/v20211228/model/OpenBackUpResponse.h>
+#include <tencentcloud/cdwdoris/v20211228/model/OpenCoolDownRequest.h>
+#include <tencentcloud/cdwdoris/v20211228/model/OpenCoolDownResponse.h>
+#include <tencentcloud/cdwdoris/v20211228/model/OpenCoolDownPolicyRequest.h>
+#include <tencentcloud/cdwdoris/v20211228/model/OpenCoolDownPolicyResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/RecoverBackUpJobRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/RecoverBackUpJobResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/ReduceInstanceRequest.h>
@@ -141,6 +137,8 @@
 #include <tencentcloud/cdwdoris/v20211228/model/ScaleOutInstanceResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/ScaleUpInstanceRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/ScaleUpInstanceResponse.h>
+#include <tencentcloud/cdwdoris/v20211228/model/UpdateCoolDownRequest.h>
+#include <tencentcloud/cdwdoris/v20211228/model/UpdateCoolDownResponse.h>
 
 
 namespace TencentCloud
@@ -158,9 +156,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelBackupJobResponse> CancelBackupJobOutcome;
                 typedef std::future<CancelBackupJobOutcome> CancelBackupJobOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::CancelBackupJobRequest&, CancelBackupJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelBackupJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckCoolDownWorkingVariableConfigCorrectResponse> CheckCoolDownWorkingVariableConfigCorrectOutcome;
+                typedef std::future<CheckCoolDownWorkingVariableConfigCorrectOutcome> CheckCoolDownWorkingVariableConfigCorrectOutcomeCallable;
+                typedef std::function<void(const CdwdorisClient*, const Model::CheckCoolDownWorkingVariableConfigCorrectRequest&, CheckCoolDownWorkingVariableConfigCorrectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCoolDownWorkingVariableConfigCorrectAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBackUpScheduleResponse> CreateBackUpScheduleOutcome;
                 typedef std::future<CreateBackUpScheduleOutcome> CreateBackUpScheduleOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::CreateBackUpScheduleRequest&, CreateBackUpScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackUpScheduleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCoolDownPolicyResponse> CreateCoolDownPolicyOutcome;
+                typedef std::future<CreateCoolDownPolicyOutcome> CreateCoolDownPolicyOutcomeCallable;
+                typedef std::function<void(const CdwdorisClient*, const Model::CreateCoolDownPolicyRequest&, CreateCoolDownPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCoolDownPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstanceNewResponse> CreateInstanceNewOutcome;
                 typedef std::future<CreateInstanceNewOutcome> CreateInstanceNewOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::CreateInstanceNewRequest&, CreateInstanceNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceNewAsyncHandler;
@@ -197,30 +201,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterConfigsHistoryResponse> DescribeClusterConfigsHistoryOutcome;
                 typedef std::future<DescribeClusterConfigsHistoryOutcome> DescribeClusterConfigsHistoryOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::DescribeClusterConfigsHistoryRequest&, DescribeClusterConfigsHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterConfigsHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCoolDownBackendsResponse> DescribeCoolDownBackendsOutcome;
+                typedef std::future<DescribeCoolDownBackendsOutcome> DescribeCoolDownBackendsOutcomeCallable;
+                typedef std::function<void(const CdwdorisClient*, const Model::DescribeCoolDownBackendsRequest&, DescribeCoolDownBackendsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCoolDownBackendsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCoolDownPoliciesResponse> DescribeCoolDownPoliciesOutcome;
+                typedef std::future<DescribeCoolDownPoliciesOutcome> DescribeCoolDownPoliciesOutcomeCallable;
+                typedef std::function<void(const CdwdorisClient*, const Model::DescribeCoolDownPoliciesRequest&, DescribeCoolDownPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCoolDownPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCoolDownTableDataResponse> DescribeCoolDownTableDataOutcome;
+                typedef std::future<DescribeCoolDownTableDataOutcome> DescribeCoolDownTableDataOutcomeCallable;
+                typedef std::function<void(const CdwdorisClient*, const Model::DescribeCoolDownTableDataRequest&, DescribeCoolDownTableDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCoolDownTableDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatabaseAuditDownloadResponse> DescribeDatabaseAuditDownloadOutcome;
                 typedef std::future<DescribeDatabaseAuditDownloadOutcome> DescribeDatabaseAuditDownloadOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::DescribeDatabaseAuditDownloadRequest&, DescribeDatabaseAuditDownloadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseAuditDownloadAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatabaseAuditRecordsResponse> DescribeDatabaseAuditRecordsOutcome;
                 typedef std::future<DescribeDatabaseAuditRecordsOutcome> DescribeDatabaseAuditRecordsOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::DescribeDatabaseAuditRecordsRequest&, DescribeDatabaseAuditRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseAuditRecordsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeDatabaseAuditResourceResponse> DescribeDatabaseAuditResourceOutcome;
-                typedef std::future<DescribeDatabaseAuditResourceOutcome> DescribeDatabaseAuditResourceOutcomeCallable;
-                typedef std::function<void(const CdwdorisClient*, const Model::DescribeDatabaseAuditResourceRequest&, DescribeDatabaseAuditResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseAuditResourceAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeDmsSqlHistoryResponse> DescribeDmsSqlHistoryOutcome;
-                typedef std::future<DescribeDmsSqlHistoryOutcome> DescribeDmsSqlHistoryOutcomeCallable;
-                typedef std::function<void(const CdwdorisClient*, const Model::DescribeDmsSqlHistoryRequest&, DescribeDmsSqlHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDmsSqlHistoryAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeDorisMetricFilesResponse> DescribeDorisMetricFilesOutcome;
-                typedef std::future<DescribeDorisMetricFilesOutcome> DescribeDorisMetricFilesOutcomeCallable;
-                typedef std::function<void(const CdwdorisClient*, const Model::DescribeDorisMetricFilesRequest&, DescribeDorisMetricFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDorisMetricFilesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeFederationTokenResponse> DescribeFederationTokenOutcome;
-                typedef std::future<DescribeFederationTokenOutcome> DescribeFederationTokenOutcomeCallable;
-                typedef std::function<void(const CdwdorisClient*, const Model::DescribeFederationTokenRequest&, DescribeFederationTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFederationTokenAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeFrontEndResponse> DescribeFrontEndOutcome;
-                typedef std::future<DescribeFrontEndOutcome> DescribeFrontEndOutcomeCallable;
-                typedef std::function<void(const CdwdorisClient*, const Model::DescribeFrontEndRequest&, DescribeFrontEndOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFrontEndAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeGoodsDetailResponse> DescribeGoodsDetailOutcome;
-                typedef std::future<DescribeGoodsDetailOutcome> DescribeGoodsDetailOutcomeCallable;
-                typedef std::function<void(const CdwdorisClient*, const Model::DescribeGoodsDetailRequest&, DescribeGoodsDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGoodsDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceResponse> DescribeInstanceOutcome;
                 typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::DescribeInstanceRequest&, DescribeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAsyncHandler;
@@ -248,12 +243,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesHealthStateResponse> DescribeInstancesHealthStateOutcome;
                 typedef std::future<DescribeInstancesHealthStateOutcome> DescribeInstancesHealthStateOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::DescribeInstancesHealthStateRequest&, DescribeInstancesHealthStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesHealthStateAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRegionZoneResponse> DescribeRegionZoneOutcome;
-                typedef std::future<DescribeRegionZoneOutcome> DescribeRegionZoneOutcomeCallable;
-                typedef std::function<void(const CdwdorisClient*, const Model::DescribeRegionZoneRequest&, DescribeRegionZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionZoneAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeReplicaVersionResponse> DescribeReplicaVersionOutcome;
-                typedef std::future<DescribeReplicaVersionOutcome> DescribeReplicaVersionOutcomeCallable;
-                typedef std::function<void(const CdwdorisClient*, const Model::DescribeReplicaVersionRequest&, DescribeReplicaVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplicaVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRestoreTaskDetailResponse> DescribeRestoreTaskDetailOutcome;
                 typedef std::future<DescribeRestoreTaskDetailOutcome> DescribeRestoreTaskDetailOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::DescribeRestoreTaskDetailRequest&, DescribeRestoreTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreTaskDetailAsyncHandler;
@@ -281,9 +270,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyInstanceResponse> DestroyInstanceOutcome;
                 typedef std::future<DestroyInstanceOutcome> DestroyInstanceOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::DestroyInstanceRequest&, DestroyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyInstanceAsyncHandler;
-                typedef Outcome<Core::Error, Model::FitClsLogResponse> FitClsLogOutcome;
-                typedef std::future<FitClsLogOutcome> FitClsLogOutcomeCallable;
-                typedef std::function<void(const CdwdorisClient*, const Model::FitClsLogRequest&, FitClsLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FitClsLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCoolDownPolicyResponse> ModifyCoolDownPolicyOutcome;
+                typedef std::future<ModifyCoolDownPolicyOutcome> ModifyCoolDownPolicyOutcomeCallable;
+                typedef std::function<void(const CdwdorisClient*, const Model::ModifyCoolDownPolicyRequest&, ModifyCoolDownPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCoolDownPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceResponse> ModifyInstanceOutcome;
                 typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::ModifyInstanceRequest&, ModifyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
@@ -308,9 +297,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyWorkloadGroupStatusResponse> ModifyWorkloadGroupStatusOutcome;
                 typedef std::future<ModifyWorkloadGroupStatusOutcome> ModifyWorkloadGroupStatusOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::ModifyWorkloadGroupStatusRequest&, ModifyWorkloadGroupStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkloadGroupStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::OpenBackUpResponse> OpenBackUpOutcome;
-                typedef std::future<OpenBackUpOutcome> OpenBackUpOutcomeCallable;
-                typedef std::function<void(const CdwdorisClient*, const Model::OpenBackUpRequest&, OpenBackUpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenBackUpAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenCoolDownResponse> OpenCoolDownOutcome;
+                typedef std::future<OpenCoolDownOutcome> OpenCoolDownOutcomeCallable;
+                typedef std::function<void(const CdwdorisClient*, const Model::OpenCoolDownRequest&, OpenCoolDownOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenCoolDownAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenCoolDownPolicyResponse> OpenCoolDownPolicyOutcome;
+                typedef std::future<OpenCoolDownPolicyOutcome> OpenCoolDownPolicyOutcomeCallable;
+                typedef std::function<void(const CdwdorisClient*, const Model::OpenCoolDownPolicyRequest&, OpenCoolDownPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenCoolDownPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecoverBackUpJobResponse> RecoverBackUpJobOutcome;
                 typedef std::future<RecoverBackUpJobOutcome> RecoverBackUpJobOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::RecoverBackUpJobRequest&, RecoverBackUpJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecoverBackUpJobAsyncHandler;
@@ -332,6 +324,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ScaleUpInstanceResponse> ScaleUpInstanceOutcome;
                 typedef std::future<ScaleUpInstanceOutcome> ScaleUpInstanceOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::ScaleUpInstanceRequest&, ScaleUpInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleUpInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateCoolDownResponse> UpdateCoolDownOutcome;
+                typedef std::future<UpdateCoolDownOutcome> UpdateCoolDownOutcomeCallable;
+                typedef std::function<void(const CdwdorisClient*, const Model::UpdateCoolDownRequest&, UpdateCoolDownOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCoolDownAsyncHandler;
 
 
 
@@ -345,6 +340,15 @@ namespace TencentCloud
                 CancelBackupJobOutcomeCallable CancelBackupJobCallable(const Model::CancelBackupJobRequest& request);
 
                 /**
+                 *查询冷热分层生效变量和配置是否正确
+                 * @param req CheckCoolDownWorkingVariableConfigCorrectRequest
+                 * @return CheckCoolDownWorkingVariableConfigCorrectOutcome
+                 */
+                CheckCoolDownWorkingVariableConfigCorrectOutcome CheckCoolDownWorkingVariableConfigCorrect(const Model::CheckCoolDownWorkingVariableConfigCorrectRequest &request);
+                void CheckCoolDownWorkingVariableConfigCorrectAsync(const Model::CheckCoolDownWorkingVariableConfigCorrectRequest& request, const CheckCoolDownWorkingVariableConfigCorrectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckCoolDownWorkingVariableConfigCorrectOutcomeCallable CheckCoolDownWorkingVariableConfigCorrectCallable(const Model::CheckCoolDownWorkingVariableConfigCorrectRequest& request);
+
+                /**
                  *创建或者修改备份策略
                  * @param req CreateBackUpScheduleRequest
                  * @return CreateBackUpScheduleOutcome
@@ -352,6 +356,15 @@ namespace TencentCloud
                 CreateBackUpScheduleOutcome CreateBackUpSchedule(const Model::CreateBackUpScheduleRequest &request);
                 void CreateBackUpScheduleAsync(const Model::CreateBackUpScheduleRequest& request, const CreateBackUpScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBackUpScheduleOutcomeCallable CreateBackUpScheduleCallable(const Model::CreateBackUpScheduleRequest& request);
+
+                /**
+                 *创建冷热分层策略
+                 * @param req CreateCoolDownPolicyRequest
+                 * @return CreateCoolDownPolicyOutcome
+                 */
+                CreateCoolDownPolicyOutcome CreateCoolDownPolicy(const Model::CreateCoolDownPolicyRequest &request);
+                void CreateCoolDownPolicyAsync(const Model::CreateCoolDownPolicyRequest& request, const CreateCoolDownPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCoolDownPolicyOutcomeCallable CreateCoolDownPolicyCallable(const Model::CreateCoolDownPolicyRequest& request);
 
                 /**
                  *通过API创建集群
@@ -462,6 +475,33 @@ namespace TencentCloud
                 DescribeClusterConfigsHistoryOutcomeCallable DescribeClusterConfigsHistoryCallable(const Model::DescribeClusterConfigsHistoryRequest& request);
 
                 /**
+                 *查询冷热分层backend节点信息列表
+                 * @param req DescribeCoolDownBackendsRequest
+                 * @return DescribeCoolDownBackendsOutcome
+                 */
+                DescribeCoolDownBackendsOutcome DescribeCoolDownBackends(const Model::DescribeCoolDownBackendsRequest &request);
+                void DescribeCoolDownBackendsAsync(const Model::DescribeCoolDownBackendsRequest& request, const DescribeCoolDownBackendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCoolDownBackendsOutcomeCallable DescribeCoolDownBackendsCallable(const Model::DescribeCoolDownBackendsRequest& request);
+
+                /**
+                 *查询冷热分层策略列表
+                 * @param req DescribeCoolDownPoliciesRequest
+                 * @return DescribeCoolDownPoliciesOutcome
+                 */
+                DescribeCoolDownPoliciesOutcome DescribeCoolDownPolicies(const Model::DescribeCoolDownPoliciesRequest &request);
+                void DescribeCoolDownPoliciesAsync(const Model::DescribeCoolDownPoliciesRequest& request, const DescribeCoolDownPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCoolDownPoliciesOutcomeCallable DescribeCoolDownPoliciesCallable(const Model::DescribeCoolDownPoliciesRequest& request);
+
+                /**
+                 *查询冷热分层Table数据
+                 * @param req DescribeCoolDownTableDataRequest
+                 * @return DescribeCoolDownTableDataOutcome
+                 */
+                DescribeCoolDownTableDataOutcome DescribeCoolDownTableData(const Model::DescribeCoolDownTableDataRequest &request);
+                void DescribeCoolDownTableDataAsync(const Model::DescribeCoolDownTableDataRequest& request, const DescribeCoolDownTableDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCoolDownTableDataOutcomeCallable DescribeCoolDownTableDataCallable(const Model::DescribeCoolDownTableDataRequest& request);
+
+                /**
                  *下载数据库审计日志
                  * @param req DescribeDatabaseAuditDownloadRequest
                  * @return DescribeDatabaseAuditDownloadOutcome
@@ -478,60 +518,6 @@ namespace TencentCloud
                 DescribeDatabaseAuditRecordsOutcome DescribeDatabaseAuditRecords(const Model::DescribeDatabaseAuditRecordsRequest &request);
                 void DescribeDatabaseAuditRecordsAsync(const Model::DescribeDatabaseAuditRecordsRequest& request, const DescribeDatabaseAuditRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDatabaseAuditRecordsOutcomeCallable DescribeDatabaseAuditRecordsCallable(const Model::DescribeDatabaseAuditRecordsRequest& request);
-
-                /**
-                 *数据库审计数据库、用户等
-                 * @param req DescribeDatabaseAuditResourceRequest
-                 * @return DescribeDatabaseAuditResourceOutcome
-                 */
-                DescribeDatabaseAuditResourceOutcome DescribeDatabaseAuditResource(const Model::DescribeDatabaseAuditResourceRequest &request);
-                void DescribeDatabaseAuditResourceAsync(const Model::DescribeDatabaseAuditResourceRequest& request, const DescribeDatabaseAuditResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeDatabaseAuditResourceOutcomeCallable DescribeDatabaseAuditResourceCallable(const Model::DescribeDatabaseAuditResourceRequest& request);
-
-                /**
-                 *查询sql工作区历史运行记录
-                 * @param req DescribeDmsSqlHistoryRequest
-                 * @return DescribeDmsSqlHistoryOutcome
-                 */
-                DescribeDmsSqlHistoryOutcome DescribeDmsSqlHistory(const Model::DescribeDmsSqlHistoryRequest &request);
-                void DescribeDmsSqlHistoryAsync(const Model::DescribeDmsSqlHistoryRequest& request, const DescribeDmsSqlHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeDmsSqlHistoryOutcomeCallable DescribeDmsSqlHistoryCallable(const Model::DescribeDmsSqlHistoryRequest& request);
-
-                /**
-                 *展示监控指标文件
-                 * @param req DescribeDorisMetricFilesRequest
-                 * @return DescribeDorisMetricFilesOutcome
-                 */
-                DescribeDorisMetricFilesOutcome DescribeDorisMetricFiles(const Model::DescribeDorisMetricFilesRequest &request);
-                void DescribeDorisMetricFilesAsync(const Model::DescribeDorisMetricFilesRequest& request, const DescribeDorisMetricFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeDorisMetricFilesOutcomeCallable DescribeDorisMetricFilesCallable(const Model::DescribeDorisMetricFilesRequest& request);
-
-                /**
-                 *获取联合身份临时访问凭证
-                 * @param req DescribeFederationTokenRequest
-                 * @return DescribeFederationTokenOutcome
-                 */
-                DescribeFederationTokenOutcome DescribeFederationToken(const Model::DescribeFederationTokenRequest &request);
-                void DescribeFederationTokenAsync(const Model::DescribeFederationTokenRequest& request, const DescribeFederationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeFederationTokenOutcomeCallable DescribeFederationTokenCallable(const Model::DescribeFederationTokenRequest& request);
-
-                /**
-                 *查询前端内容
-                 * @param req DescribeFrontEndRequest
-                 * @return DescribeFrontEndOutcome
-                 */
-                DescribeFrontEndOutcome DescribeFrontEnd(const Model::DescribeFrontEndRequest &request);
-                void DescribeFrontEndAsync(const Model::DescribeFrontEndRequest& request, const DescribeFrontEndAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeFrontEndOutcomeCallable DescribeFrontEndCallable(const Model::DescribeFrontEndRequest& request);
-
-                /**
-                 *生成计费相关接口的GoodsDetail结构
-                 * @param req DescribeGoodsDetailRequest
-                 * @return DescribeGoodsDetailOutcome
-                 */
-                DescribeGoodsDetailOutcome DescribeGoodsDetail(const Model::DescribeGoodsDetailRequest &request);
-                void DescribeGoodsDetailAsync(const Model::DescribeGoodsDetailRequest& request, const DescribeGoodsDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeGoodsDetailOutcomeCallable DescribeGoodsDetailCallable(const Model::DescribeGoodsDetailRequest& request);
 
                 /**
                  *根据集群ID查询某个集群的具体信息
@@ -615,24 +601,6 @@ namespace TencentCloud
                 DescribeInstancesHealthStateOutcomeCallable DescribeInstancesHealthStateCallable(const Model::DescribeInstancesHealthStateRequest& request);
 
                 /**
-                 *购买页获取地域及可用区列表、内核版本、网络规则等
-                 * @param req DescribeRegionZoneRequest
-                 * @return DescribeRegionZoneOutcome
-                 */
-                DescribeRegionZoneOutcome DescribeRegionZone(const Model::DescribeRegionZoneRequest &request);
-                void DescribeRegionZoneAsync(const Model::DescribeRegionZoneRequest& request, const DescribeRegionZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRegionZoneOutcomeCallable DescribeRegionZoneCallable(const Model::DescribeRegionZoneRequest& request);
-
-                /**
-                 *检查内核版本是否支持新的备份恢复语法
-                 * @param req DescribeReplicaVersionRequest
-                 * @return DescribeReplicaVersionOutcome
-                 */
-                DescribeReplicaVersionOutcome DescribeReplicaVersion(const Model::DescribeReplicaVersionRequest &request);
-                void DescribeReplicaVersionAsync(const Model::DescribeReplicaVersionRequest& request, const DescribeReplicaVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeReplicaVersionOutcomeCallable DescribeReplicaVersionCallable(const Model::DescribeReplicaVersionRequest& request);
-
-                /**
                  *查询恢复任务进度详情
                  * @param req DescribeRestoreTaskDetailRequest
                  * @return DescribeRestoreTaskDetailOutcome
@@ -714,13 +682,13 @@ namespace TencentCloud
                 DestroyInstanceOutcomeCallable DestroyInstanceCallable(const Model::DestroyInstanceRequest& request);
 
                 /**
-                 *给已存在集群，配置日志服务
-                 * @param req FitClsLogRequest
-                 * @return FitClsLogOutcome
+                 *修改冷热分层策略
+                 * @param req ModifyCoolDownPolicyRequest
+                 * @return ModifyCoolDownPolicyOutcome
                  */
-                FitClsLogOutcome FitClsLog(const Model::FitClsLogRequest &request);
-                void FitClsLogAsync(const Model::FitClsLogRequest& request, const FitClsLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                FitClsLogOutcomeCallable FitClsLogCallable(const Model::FitClsLogRequest& request);
+                ModifyCoolDownPolicyOutcome ModifyCoolDownPolicy(const Model::ModifyCoolDownPolicyRequest &request);
+                void ModifyCoolDownPolicyAsync(const Model::ModifyCoolDownPolicyRequest& request, const ModifyCoolDownPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCoolDownPolicyOutcomeCallable ModifyCoolDownPolicyCallable(const Model::ModifyCoolDownPolicyRequest& request);
 
                 /**
                  *修改集群名称
@@ -795,13 +763,22 @@ namespace TencentCloud
                 ModifyWorkloadGroupStatusOutcomeCallable ModifyWorkloadGroupStatusCallable(const Model::ModifyWorkloadGroupStatusRequest& request);
 
                 /**
-                 *开启或者关闭策略
-                 * @param req OpenBackUpRequest
-                 * @return OpenBackUpOutcome
+                 *开始启用冷热分层
+                 * @param req OpenCoolDownRequest
+                 * @return OpenCoolDownOutcome
                  */
-                OpenBackUpOutcome OpenBackUp(const Model::OpenBackUpRequest &request);
-                void OpenBackUpAsync(const Model::OpenBackUpRequest& request, const OpenBackUpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                OpenBackUpOutcomeCallable OpenBackUpCallable(const Model::OpenBackUpRequest& request);
+                OpenCoolDownOutcome OpenCoolDown(const Model::OpenCoolDownRequest &request);
+                void OpenCoolDownAsync(const Model::OpenCoolDownRequest& request, const OpenCoolDownAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenCoolDownOutcomeCallable OpenCoolDownCallable(const Model::OpenCoolDownRequest& request);
+
+                /**
+                 *开通、描述降冷策略接口
+                 * @param req OpenCoolDownPolicyRequest
+                 * @return OpenCoolDownPolicyOutcome
+                 */
+                OpenCoolDownPolicyOutcome OpenCoolDownPolicy(const Model::OpenCoolDownPolicyRequest &request);
+                void OpenCoolDownPolicyAsync(const Model::OpenCoolDownPolicyRequest& request, const OpenCoolDownPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenCoolDownPolicyOutcomeCallable OpenCoolDownPolicyCallable(const Model::OpenCoolDownPolicyRequest& request);
 
                 /**
                  *备份恢复
@@ -865,6 +842,15 @@ namespace TencentCloud
                 ScaleUpInstanceOutcome ScaleUpInstance(const Model::ScaleUpInstanceRequest &request);
                 void ScaleUpInstanceAsync(const Model::ScaleUpInstanceRequest& request, const ScaleUpInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ScaleUpInstanceOutcomeCallable ScaleUpInstanceCallable(const Model::ScaleUpInstanceRequest& request);
+
+                /**
+                 *更新集群冷热分层信息
+                 * @param req UpdateCoolDownRequest
+                 * @return UpdateCoolDownOutcome
+                 */
+                UpdateCoolDownOutcome UpdateCoolDown(const Model::UpdateCoolDownRequest &request);
+                void UpdateCoolDownAsync(const Model::UpdateCoolDownRequest& request, const UpdateCoolDownAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateCoolDownOutcomeCallable UpdateCoolDownCallable(const Model::UpdateCoolDownRequest& request);
 
             };
         }

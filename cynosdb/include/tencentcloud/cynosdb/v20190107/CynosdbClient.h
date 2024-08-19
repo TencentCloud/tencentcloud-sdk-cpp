@@ -101,6 +101,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBackupDownloadUrlResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBackupListRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBackupListResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogConfigRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogConfigResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogDownloadUrlRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogDownloadUrlResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogSaveDaysRequest.h>
@@ -211,6 +213,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/ModifyBackupConfigResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyBackupNameRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyBackupNameResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyBinlogConfigRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyBinlogConfigResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyBinlogSaveDaysRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyBinlogSaveDaysResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterDatabaseRequest.h>
@@ -442,6 +446,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupListResponse> DescribeBackupListOutcome;
                 typedef std::future<DescribeBackupListOutcome> DescribeBackupListOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeBackupListRequest&, DescribeBackupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBinlogConfigResponse> DescribeBinlogConfigOutcome;
+                typedef std::future<DescribeBinlogConfigOutcome> DescribeBinlogConfigOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeBinlogConfigRequest&, DescribeBinlogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBinlogConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBinlogDownloadUrlResponse> DescribeBinlogDownloadUrlOutcome;
                 typedef std::future<DescribeBinlogDownloadUrlOutcome> DescribeBinlogDownloadUrlOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeBinlogDownloadUrlRequest&, DescribeBinlogDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBinlogDownloadUrlAsyncHandler;
@@ -607,6 +614,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBackupNameResponse> ModifyBackupNameOutcome;
                 typedef std::future<ModifyBackupNameOutcome> ModifyBackupNameOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyBackupNameRequest&, ModifyBackupNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBinlogConfigResponse> ModifyBinlogConfigOutcome;
+                typedef std::future<ModifyBinlogConfigOutcome> ModifyBinlogConfigOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyBinlogConfigRequest&, ModifyBinlogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBinlogConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyBinlogSaveDaysResponse> ModifyBinlogSaveDaysOutcome;
                 typedef std::future<ModifyBinlogSaveDaysOutcome> ModifyBinlogSaveDaysOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyBinlogSaveDaysRequest&, ModifyBinlogSaveDaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBinlogSaveDaysAsyncHandler;
@@ -1112,6 +1122,15 @@ namespace TencentCloud
                 DescribeBackupListOutcomeCallable DescribeBackupListCallable(const Model::DescribeBackupListRequest& request);
 
                 /**
+                 *该接口（DescribeBinlogConfig）用于查询binlog配置
+                 * @param req DescribeBinlogConfigRequest
+                 * @return DescribeBinlogConfigOutcome
+                 */
+                DescribeBinlogConfigOutcome DescribeBinlogConfig(const Model::DescribeBinlogConfigRequest &request);
+                void DescribeBinlogConfigAsync(const Model::DescribeBinlogConfigRequest& request, const DescribeBinlogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBinlogConfigOutcomeCallable DescribeBinlogConfigCallable(const Model::DescribeBinlogConfigRequest& request);
+
+                /**
                  *此接口（DescribeBinlogDownloadUrl）用于查询Binlog的下载地址。
                  * @param req DescribeBinlogDownloadUrlRequest
                  * @return DescribeBinlogDownloadUrlOutcome
@@ -1607,6 +1626,15 @@ namespace TencentCloud
                 ModifyBackupNameOutcome ModifyBackupName(const Model::ModifyBackupNameRequest &request);
                 void ModifyBackupNameAsync(const Model::ModifyBackupNameRequest& request, const ModifyBackupNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBackupNameOutcomeCallable ModifyBackupNameCallable(const Model::ModifyBackupNameRequest& request);
+
+                /**
+                 *该接口（ModifyBinlogConfig）用于修改Binlog配置
+                 * @param req ModifyBinlogConfigRequest
+                 * @return ModifyBinlogConfigOutcome
+                 */
+                ModifyBinlogConfigOutcome ModifyBinlogConfig(const Model::ModifyBinlogConfigRequest &request);
+                void ModifyBinlogConfigAsync(const Model::ModifyBinlogConfigRequest& request, const ModifyBinlogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBinlogConfigOutcomeCallable ModifyBinlogConfigCallable(const Model::ModifyBinlogConfigRequest& request);
 
                 /**
                  *此接口（ModifyBinlogSaveDays）用于修改集群Binlog保留天数。
