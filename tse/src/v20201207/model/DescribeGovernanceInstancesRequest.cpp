@@ -33,7 +33,8 @@ DescribeGovernanceInstancesRequest::DescribeGovernanceInstancesRequest() :
     m_isolateHasBeenSet(false),
     m_metadatasHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,15 @@ string DescribeGovernanceInstancesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_locationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Location";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_location.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -321,6 +331,22 @@ void DescribeGovernanceInstancesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeGovernanceInstancesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+Location DescribeGovernanceInstancesRequest::GetLocation() const
+{
+    return m_location;
+}
+
+void DescribeGovernanceInstancesRequest::SetLocation(const Location& _location)
+{
+    m_location = _location;
+    m_locationHasBeenSet = true;
+}
+
+bool DescribeGovernanceInstancesRequest::LocationHasBeenSet() const
+{
+    return m_locationHasBeenSet;
 }
 
 

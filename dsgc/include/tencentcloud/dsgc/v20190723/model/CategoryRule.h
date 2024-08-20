@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dsgc/v20190723/model/RuleEffectItem.h>
 
 
 namespace TencentCloud
@@ -222,6 +223,56 @@ namespace TencentCloud
                      */
                     bool AliasRuleNameHasBeenSet() const;
 
+                    /**
+                     * 获取各类分类分级规则数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleEffectItems 各类分类分级规则数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<RuleEffectItem> GetRuleEffectItems() const;
+
+                    /**
+                     * 设置各类分类分级规则数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleEffectItems 各类分类分级规则数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleEffectItems(const std::vector<RuleEffectItem>& _ruleEffectItems);
+
+                    /**
+                     * 判断参数 RuleEffectItems 是否已赋值
+                     * @return RuleEffectItems 是否已赋值
+                     * 
+                     */
+                    bool RuleEffectItemsHasBeenSet() const;
+
+                    /**
+                     * 获取规则状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleStatus 规则状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRuleStatus() const;
+
+                    /**
+                     * 设置规则状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleStatus 规则状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleStatus(const int64_t& _ruleStatus);
+
+                    /**
+                     * 判断参数 RuleStatus 是否已赋值
+                     * @return RuleStatus 是否已赋值
+                     * 
+                     */
+                    bool RuleStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,6 +324,20 @@ namespace TencentCloud
                      */
                     std::string m_aliasRuleName;
                     bool m_aliasRuleNameHasBeenSet;
+
+                    /**
+                     * 各类分类分级规则数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RuleEffectItem> m_ruleEffectItems;
+                    bool m_ruleEffectItemsHasBeenSet;
+
+                    /**
+                     * 规则状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_ruleStatus;
+                    bool m_ruleStatusHasBeenSet;
 
                 };
             }

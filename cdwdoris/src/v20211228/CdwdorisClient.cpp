@@ -40,6 +40,49 @@ CdwdorisClient::CdwdorisClient(const Credential &credential, const string &regio
 }
 
 
+CdwdorisClient::ActionAlterUserOutcome CdwdorisClient::ActionAlterUser(const ActionAlterUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "ActionAlterUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ActionAlterUserResponse rsp = ActionAlterUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ActionAlterUserOutcome(rsp);
+        else
+            return ActionAlterUserOutcome(o.GetError());
+    }
+    else
+    {
+        return ActionAlterUserOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::ActionAlterUserAsync(const ActionAlterUserRequest& request, const ActionAlterUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ActionAlterUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::ActionAlterUserOutcomeCallable CdwdorisClient::ActionAlterUserCallable(const ActionAlterUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ActionAlterUserOutcome()>>(
+        [this, request]()
+        {
+            return this->ActionAlterUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwdorisClient::CancelBackupJobOutcome CdwdorisClient::CancelBackupJob(const CancelBackupJobRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelBackupJob");

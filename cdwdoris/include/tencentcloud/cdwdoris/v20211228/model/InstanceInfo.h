@@ -1277,6 +1277,56 @@ Modify 集群变更中；
                      */
                     bool DetailsHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用DLC 0:关闭 1:开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableDlc 是否启用DLC 0:关闭 1:开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetEnableDlc() const;
+
+                    /**
+                     * 设置是否启用DLC 0:关闭 1:开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableDlc 是否启用DLC 0:关闭 1:开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableDlc(const int64_t& _enableDlc);
+
+                    /**
+                     * 判断参数 EnableDlc 是否已赋值
+                     * @return EnableDlc 是否已赋值
+                     * 
+                     */
+                    bool EnableDlcHasBeenSet() const;
+
+                    /**
+                     * 获取账户类型 0:普通用户 1:CAM用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccountType 账户类型 0:普通用户 1:CAM用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAccountType() const;
+
+                    /**
+                     * 设置账户类型 0:普通用户 1:CAM用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _accountType 账户类型 0:普通用户 1:CAM用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAccountType(const int64_t& _accountType);
+
+                    /**
+                     * 判断参数 AccountType 是否已赋值
+                     * @return AccountType 是否已赋值
+                     * 
+                     */
+                    bool AccountTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1621,6 +1671,20 @@ Modify 集群变更中；
                      */
                     InstanceDetail m_details;
                     bool m_detailsHasBeenSet;
+
+                    /**
+                     * 是否启用DLC 0:关闭 1:开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_enableDlc;
+                    bool m_enableDlcHasBeenSet;
+
+                    /**
+                     * 账户类型 0:普通用户 1:CAM用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_accountType;
+                    bool m_accountTypeHasBeenSet;
 
                 };
             }

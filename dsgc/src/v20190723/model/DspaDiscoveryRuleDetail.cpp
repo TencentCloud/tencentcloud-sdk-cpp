@@ -26,7 +26,8 @@ DspaDiscoveryRuleDetail::DspaDiscoveryRuleDetail() :
     m_descriptionHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_rDBRulesHasBeenSet(false),
-    m_cOSRulesHasBeenSet(false)
+    m_cOSRulesHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,16 @@ CoreInternalOutcome DspaDiscoveryRuleDetail::Deserialize(const rapidjson::Value 
         m_cOSRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaDiscoveryRuleDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +175,14 @@ void DspaDiscoveryRuleDetail::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cOSRules.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -263,5 +282,21 @@ void DspaDiscoveryRuleDetail::SetCOSRules(const DspaDiscoveryCOSRules& _cOSRules
 bool DspaDiscoveryRuleDetail::COSRulesHasBeenSet() const
 {
     return m_cOSRulesHasBeenSet;
+}
+
+int64_t DspaDiscoveryRuleDetail::GetStatus() const
+{
+    return m_status;
+}
+
+void DspaDiscoveryRuleDetail::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DspaDiscoveryRuleDetail::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

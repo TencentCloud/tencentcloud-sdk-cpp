@@ -33,7 +33,8 @@ EndPointService::EndPointService() :
     m_createTimeHasBeenSet(false),
     m_serviceTypeHasBeenSet(false),
     m_serviceUinHasBeenSet(false),
-    m_businessIpTypeHasBeenSet(false)
+    m_businessIpTypeHasBeenSet(false),
+    m_tagSetHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,26 @@ CoreInternalOutcome EndPointService::Deserialize(const rapidjson::Value &value)
         m_businessIpTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EndPointService.TagSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +319,21 @@ void EndPointService::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "BusinessIpType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_businessIpType, allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -509,5 +545,21 @@ void EndPointService::SetBusinessIpType(const int64_t& _businessIpType)
 bool EndPointService::BusinessIpTypeHasBeenSet() const
 {
     return m_businessIpTypeHasBeenSet;
+}
+
+vector<Tag> EndPointService::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void EndPointService::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool EndPointService::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
 }
 

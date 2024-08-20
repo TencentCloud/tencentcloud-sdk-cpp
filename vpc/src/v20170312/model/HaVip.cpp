@@ -34,7 +34,8 @@ HaVip::HaVip() :
     m_businessHasBeenSet(false),
     m_haVipAssociationSetHasBeenSet(false),
     m_checkAssociateHasBeenSet(false),
-    m_flushedTimeHasBeenSet(false)
+    m_flushedTimeHasBeenSet(false),
+    m_tagSetHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,26 @@ CoreInternalOutcome HaVip::Deserialize(const rapidjson::Value &value)
         m_flushedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `HaVip.TagSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +338,21 @@ void HaVip::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "FlushedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flushedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -544,5 +580,21 @@ void HaVip::SetFlushedTime(const string& _flushedTime)
 bool HaVip::FlushedTimeHasBeenSet() const
 {
     return m_flushedTimeHasBeenSet;
+}
+
+vector<Tag> HaVip::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void HaVip::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool HaVip::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
 }
 

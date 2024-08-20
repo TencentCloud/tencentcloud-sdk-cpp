@@ -28,7 +28,8 @@ ModifyDSPADiscoveryRuleRequest::ModifyDSPADiscoveryRuleRequest() :
     m_ruleIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_rDBRulesHasBeenSet(false),
-    m_cOSRulesHasBeenSet(false)
+    m_cOSRulesHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,14 @@ string ModifyDSPADiscoveryRuleRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cOSRules.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_status, allocator);
     }
 
 
@@ -191,6 +200,22 @@ void ModifyDSPADiscoveryRuleRequest::SetCOSRules(const ScanTaskCOSRules& _cOSRul
 bool ModifyDSPADiscoveryRuleRequest::COSRulesHasBeenSet() const
 {
     return m_cOSRulesHasBeenSet;
+}
+
+int64_t ModifyDSPADiscoveryRuleRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void ModifyDSPADiscoveryRuleRequest::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool ModifyDSPADiscoveryRuleRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

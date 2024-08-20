@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/Metadata.h>
+#include <tencentcloud/tse/v20201207/model/Location.h>
 
 
 namespace TencentCloud
@@ -274,6 +275,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取地域
+                     * @return Location 地域
+                     * 
+                     */
+                    Location GetLocation() const;
+
+                    /**
+                     * 设置地域
+                     * @param _location 地域
+                     * 
+                     */
+                    void SetLocation(const Location& _location);
+
+                    /**
+                     * 判断参数 Location 是否已赋值
+                     * @return Location 是否已赋值
+                     * 
+                     */
+                    bool LocationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +363,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 地域
+                     */
+                    Location m_location;
+                    bool m_locationHasBeenSet;
 
                 };
             }

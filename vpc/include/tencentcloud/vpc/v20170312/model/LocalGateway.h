@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取本地网关实例ID
-                     * @return UniqLocalGwId 本地网关实例ID
+                     * 获取本地网关实例ID（计划弃用）
+                     * @return UniqLocalGwId 本地网关实例ID（计划弃用）
                      * 
                      */
                     std::string GetUniqLocalGwId() const;
 
                     /**
-                     * 设置本地网关实例ID
-                     * @param _uniqLocalGwId 本地网关实例ID
+                     * 设置本地网关实例ID（计划弃用）
+                     * @param _uniqLocalGwId 本地网关实例ID（计划弃用）
                      * 
                      */
                     void SetUniqLocalGwId(const std::string& _uniqLocalGwId);
@@ -172,6 +173,52 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取标签键值对。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagSet 标签键值对。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Tag> GetTagSet() const;
+
+                    /**
+                     * 设置标签键值对。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagSet 标签键值对。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagSet(const std::vector<Tag>& _tagSet);
+
+                    /**
+                     * 判断参数 TagSet 是否已赋值
+                     * @return TagSet 是否已赋值
+                     * 
+                     */
+                    bool TagSetHasBeenSet() const;
+
+                    /**
+                     * 获取本地网关实例ID（计划起用）
+                     * @return LocalGatewayId 本地网关实例ID（计划起用）
+                     * 
+                     */
+                    std::string GetLocalGatewayId() const;
+
+                    /**
+                     * 设置本地网关实例ID（计划起用）
+                     * @param _localGatewayId 本地网关实例ID（计划起用）
+                     * 
+                     */
+                    void SetLocalGatewayId(const std::string& _localGatewayId);
+
+                    /**
+                     * 判断参数 LocalGatewayId 是否已赋值
+                     * @return LocalGatewayId 是否已赋值
+                     * 
+                     */
+                    bool LocalGatewayIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,7 +234,7 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 本地网关实例ID
+                     * 本地网关实例ID（计划弃用）
                      */
                     std::string m_uniqLocalGwId;
                     bool m_uniqLocalGwIdHasBeenSet;
@@ -209,6 +256,19 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 标签键值对。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tagSet;
+                    bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 本地网关实例ID（计划起用）
+                     */
+                    std::string m_localGatewayId;
+                    bool m_localGatewayIdHasBeenSet;
 
                 };
             }

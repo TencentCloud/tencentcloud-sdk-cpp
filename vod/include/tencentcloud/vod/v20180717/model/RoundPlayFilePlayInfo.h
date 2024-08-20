@@ -135,18 +135,18 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取播放进度，单位为妙。
+                     * 获取播放进度，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Progress 播放进度，单位为妙。
+                     * @return Progress 播放进度，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetProgress() const;
 
                     /**
-                     * 设置播放进度，单位为妙。
+                     * 设置播放进度，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _progress 播放进度，单位为妙。
+                     * @param _progress 播放进度，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -187,7 +187,7 @@ namespace TencentCloud
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 播放进度，单位为妙。
+                     * 播放进度，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_progress;

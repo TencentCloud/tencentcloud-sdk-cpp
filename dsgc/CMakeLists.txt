@@ -365,6 +365,7 @@ set(dsgc_public_header_model
   include/tencentcloud/dsgc/v20190723/model/ModifyDSPACOSTaskResultRequest.h
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPASupportedMetasRequest.h
   include/tencentcloud/dsgc/v20190723/model/ExportAssetDetailDataResponse.h
+  include/tencentcloud/dsgc/v20190723/model/RuleEffectItem.h
   include/tencentcloud/dsgc/v20190723/model/CategoryRule.h
   include/tencentcloud/dsgc/v20190723/model/CreateDSPAMetaResourcesRequest.h
   include/tencentcloud/dsgc/v20190723/model/RiskCountInfo.h
@@ -781,6 +782,7 @@ set(dsgc_src
   src/v20190723/model/ModifyDSPACOSTaskResultRequest.cpp
   src/v20190723/model/DescribeDSPASupportedMetasRequest.cpp
   src/v20190723/model/ExportAssetDetailDataResponse.cpp
+  src/v20190723/model/RuleEffectItem.cpp
   src/v20190723/model/CategoryRule.cpp
   src/v20190723/model/CreateDSPAMetaResourcesRequest.cpp
   src/v20190723/model/RiskCountInfo.cpp

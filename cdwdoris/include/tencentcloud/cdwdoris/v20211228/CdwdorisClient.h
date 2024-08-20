@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/cdwdoris/v20211228/model/ActionAlterUserRequest.h>
+#include <tencentcloud/cdwdoris/v20211228/model/ActionAlterUserResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/CancelBackupJobRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/CancelBackupJobResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/CheckCoolDownWorkingVariableConfigCorrectRequest.h>
@@ -153,6 +155,9 @@ namespace TencentCloud
                 CdwdorisClient(const Credential &credential, const std::string &region);
                 CdwdorisClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ActionAlterUserResponse> ActionAlterUserOutcome;
+                typedef std::future<ActionAlterUserOutcome> ActionAlterUserOutcomeCallable;
+                typedef std::function<void(const CdwdorisClient*, const Model::ActionAlterUserRequest&, ActionAlterUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActionAlterUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::CancelBackupJobResponse> CancelBackupJobOutcome;
                 typedef std::future<CancelBackupJobOutcome> CancelBackupJobOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::CancelBackupJobRequest&, CancelBackupJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelBackupJobAsyncHandler;
@@ -329,6 +334,15 @@ namespace TencentCloud
                 typedef std::function<void(const CdwdorisClient*, const Model::UpdateCoolDownRequest&, UpdateCoolDownOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCoolDownAsyncHandler;
 
 
+
+                /**
+                 *新增和修改用户接口
+                 * @param req ActionAlterUserRequest
+                 * @return ActionAlterUserOutcome
+                 */
+                ActionAlterUserOutcome ActionAlterUser(const Model::ActionAlterUserRequest &request);
+                void ActionAlterUserAsync(const Model::ActionAlterUserRequest& request, const ActionAlterUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ActionAlterUserOutcomeCallable ActionAlterUserCallable(const Model::ActionAlterUserRequest& request);
 
                 /**
                  *取消对应的备份实例任务

@@ -25,7 +25,8 @@ ServiceTemplate::ServiceTemplate() :
     m_serviceTemplateNameHasBeenSet(false),
     m_serviceSetHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_serviceExtraSetHasBeenSet(false)
+    m_serviceExtraSetHasBeenSet(false),
+    m_tagSetHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,26 @@ CoreInternalOutcome ServiceTemplate::Deserialize(const rapidjson::Value &value)
         m_serviceExtraSetHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceTemplate.TagSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -150,6 +171,21 @@ void ServiceTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
 
         int i=0;
         for (auto itr = m_serviceExtraSet.begin(); itr != m_serviceExtraSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -237,5 +273,21 @@ void ServiceTemplate::SetServiceExtraSet(const vector<ServicesInfo>& _serviceExt
 bool ServiceTemplate::ServiceExtraSetHasBeenSet() const
 {
     return m_serviceExtraSetHasBeenSet;
+}
+
+vector<Tag> ServiceTemplate::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void ServiceTemplate::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool ServiceTemplate::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
 }
 

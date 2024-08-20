@@ -42,6 +42,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/ControlAIConversationResponse.h
   include/tencentcloud/trtc/v20190722/model/StopAITranscriptionRequest.h
   include/tencentcloud/trtc/v20190722/model/VideoEncodeParams.h
+  include/tencentcloud/trtc/v20190722/model/UpdateAIConversationResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeUserEventResponse.h
   include/tencentcloud/trtc/v20190722/model/VideoEncode.h
   include/tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeByStrRoomIdResponse.h
@@ -198,6 +199,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribeAITranscriptionResponse.h
   include/tencentcloud/trtc/v20190722/model/McuWaterMarkParams.h
   include/tencentcloud/trtc/v20190722/model/AbnormalExperience.h
+  include/tencentcloud/trtc/v20190722/model/UpdateAIConversationRequest.h
   include/tencentcloud/trtc/v20190722/model/RoomState.h
   include/tencentcloud/trtc/v20190722/model/CreatePictureResponse.h
   include/tencentcloud/trtc/v20190722/model/StartAITranscriptionResponse.h
@@ -229,6 +231,7 @@ set(trtc_src
   src/v20190722/model/ControlAIConversationResponse.cpp
   src/v20190722/model/StopAITranscriptionRequest.cpp
   src/v20190722/model/VideoEncodeParams.cpp
+  src/v20190722/model/UpdateAIConversationResponse.cpp
   src/v20190722/model/DescribeUserEventResponse.cpp
   src/v20190722/model/VideoEncode.cpp
   src/v20190722/model/StopMCUMixTranscodeByStrRoomIdResponse.cpp
@@ -385,6 +388,7 @@ set(trtc_src
   src/v20190722/model/DescribeAITranscriptionResponse.cpp
   src/v20190722/model/McuWaterMarkParams.cpp
   src/v20190722/model/AbnormalExperience.cpp
+  src/v20190722/model/UpdateAIConversationRequest.cpp
   src/v20190722/model/RoomState.cpp
   src/v20190722/model/CreatePictureResponse.cpp
   src/v20190722/model/StartAITranscriptionResponse.cpp

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取访问配置名称。格式：包含英文字母、数字或短划线（-）。 长度：最大 128 个字符。
-                     * @return RoleConfigurationName 访问配置名称。格式：包含英文字母、数字或短划线（-）。 长度：最大 128 个字符。
+                     * 获取权限配置名称。格式：包含英文字母、数字或短划线（-）。 长度：最大 128 个字符。
+                     * @return RoleConfigurationName 权限配置名称。格式：包含英文字母、数字或短划线（-）。 长度：最大 128 个字符。
                      * 
                      */
                     std::string GetRoleConfigurationName() const;
 
                     /**
-                     * 设置访问配置名称。格式：包含英文字母、数字或短划线（-）。 长度：最大 128 个字符。
-                     * @param _roleConfigurationName 访问配置名称。格式：包含英文字母、数字或短划线（-）。 长度：最大 128 个字符。
+                     * 设置权限配置名称。格式：包含英文字母、数字或短划线（-）。 长度：最大 128 个字符。
+                     * @param _roleConfigurationName 权限配置名称。格式：包含英文字母、数字或短划线（-）。 长度：最大 128 个字符。
                      * 
                      */
                     void SetRoleConfigurationName(const std::string& _roleConfigurationName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RoleConfigurationNameHasBeenSet() const;
 
                     /**
-                     * 获取访问配置的描述。 长度：最大 1024 个字符。
-                     * @return Description 访问配置的描述。 长度：最大 1024 个字符。
+                     * 获取权限配置的描述。 长度：最大 1024 个字符。
+                     * @return Description 权限配置的描述。 长度：最大 1024 个字符。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置访问配置的描述。 长度：最大 1024 个字符。
-                     * @param _description 访问配置的描述。 长度：最大 1024 个字符。
+                     * 设置权限配置的描述。 长度：最大 1024 个字符。
+                     * @param _description 权限配置的描述。 长度：最大 1024 个字符。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取会话持续时间。 CIC用户使用访问配置访问集团账号目标账号时，会话最多保持的时间。 单位：秒。 取值范围：900~43200（15 分钟~12 小时）。 默认值：3600（1 小时）。
-                     * @return SessionDuration 会话持续时间。 CIC用户使用访问配置访问集团账号目标账号时，会话最多保持的时间。 单位：秒。 取值范围：900~43200（15 分钟~12 小时）。 默认值：3600（1 小时）。
+                     * 获取会话持续时间。 CIC用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。 单位：秒。 取值范围：900 ~ 43200（15 分钟~12 小时）。 默认值：3600（1 小时）。
+                     * @return SessionDuration 会话持续时间。 CIC用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。 单位：秒。 取值范围：900 ~ 43200（15 分钟~12 小时）。 默认值：3600（1 小时）。
                      * 
                      */
                     int64_t GetSessionDuration() const;
 
                     /**
-                     * 设置会话持续时间。 CIC用户使用访问配置访问集团账号目标账号时，会话最多保持的时间。 单位：秒。 取值范围：900~43200（15 分钟~12 小时）。 默认值：3600（1 小时）。
-                     * @param _sessionDuration 会话持续时间。 CIC用户使用访问配置访问集团账号目标账号时，会话最多保持的时间。 单位：秒。 取值范围：900~43200（15 分钟~12 小时）。 默认值：3600（1 小时）。
+                     * 设置会话持续时间。 CIC用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。 单位：秒。 取值范围：900 ~ 43200（15 分钟~12 小时）。 默认值：3600（1 小时）。
+                     * @param _sessionDuration 会话持续时间。 CIC用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。 单位：秒。 取值范围：900 ~ 43200（15 分钟~12 小时）。 默认值：3600（1 小时）。
                      * 
                      */
                     void SetSessionDuration(const int64_t& _sessionDuration);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SessionDurationHasBeenSet() const;
 
                     /**
-                     * 获取初始访问页面。 CIC用户使用访问配置访问集团账号目标账号时，初始访问的页面地址。 该页面必须是腾讯云控制台页面。默认为空，表示跳转到腾讯云控制台首页。
-                     * @return RelayState 初始访问页面。 CIC用户使用访问配置访问集团账号目标账号时，初始访问的页面地址。 该页面必须是腾讯云控制台页面。默认为空，表示跳转到腾讯云控制台首页。
+                     * 获取初始访问页面。 CIC用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。 该页面必须是腾讯云控制台页面。默认为空，表示跳转到腾讯云控制台首页。
+                     * @return RelayState 初始访问页面。 CIC用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。 该页面必须是腾讯云控制台页面。默认为空，表示跳转到腾讯云控制台首页。
                      * 
                      */
                     std::string GetRelayState() const;
 
                     /**
-                     * 设置初始访问页面。 CIC用户使用访问配置访问集团账号目标账号时，初始访问的页面地址。 该页面必须是腾讯云控制台页面。默认为空，表示跳转到腾讯云控制台首页。
-                     * @param _relayState 初始访问页面。 CIC用户使用访问配置访问集团账号目标账号时，初始访问的页面地址。 该页面必须是腾讯云控制台页面。默认为空，表示跳转到腾讯云控制台首页。
+                     * 设置初始访问页面。 CIC用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。 该页面必须是腾讯云控制台页面。默认为空，表示跳转到腾讯云控制台首页。
+                     * @param _relayState 初始访问页面。 CIC用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。 该页面必须是腾讯云控制台页面。默认为空，表示跳转到腾讯云控制台首页。
                      * 
                      */
                     void SetRelayState(const std::string& _relayState);
@@ -156,25 +156,25 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 访问配置名称。格式：包含英文字母、数字或短划线（-）。 长度：最大 128 个字符。
+                     * 权限配置名称。格式：包含英文字母、数字或短划线（-）。 长度：最大 128 个字符。
                      */
                     std::string m_roleConfigurationName;
                     bool m_roleConfigurationNameHasBeenSet;
 
                     /**
-                     * 访问配置的描述。 长度：最大 1024 个字符。
+                     * 权限配置的描述。 长度：最大 1024 个字符。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 会话持续时间。 CIC用户使用访问配置访问集团账号目标账号时，会话最多保持的时间。 单位：秒。 取值范围：900~43200（15 分钟~12 小时）。 默认值：3600（1 小时）。
+                     * 会话持续时间。 CIC用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。 单位：秒。 取值范围：900 ~ 43200（15 分钟~12 小时）。 默认值：3600（1 小时）。
                      */
                     int64_t m_sessionDuration;
                     bool m_sessionDurationHasBeenSet;
 
                     /**
-                     * 初始访问页面。 CIC用户使用访问配置访问集团账号目标账号时，初始访问的页面地址。 该页面必须是腾讯云控制台页面。默认为空，表示跳转到腾讯云控制台首页。
+                     * 初始访问页面。 CIC用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。 该页面必须是腾讯云控制台页面。默认为空，表示跳转到腾讯云控制台首页。
                      */
                     std::string m_relayState;
                     bool m_relayStateHasBeenSet;

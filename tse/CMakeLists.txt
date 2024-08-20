@@ -118,6 +118,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayRoutesResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeWafProtectionResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeZookeeperReplicasRequest.h
+  include/tencentcloud/tse/v20201207/model/Location.h
   include/tencentcloud/tse/v20201207/model/DeleteGovernanceInstancesResponse.h
   include/tencentcloud/tse/v20201207/model/UpdateUpstreamTargetsRequest.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayServiceResponse.h
@@ -461,6 +462,7 @@ set(tse_src
   src/v20201207/model/DescribeCloudNativeAPIGatewayRoutesResponse.cpp
   src/v20201207/model/DescribeWafProtectionResponse.cpp
   src/v20201207/model/DescribeZookeeperReplicasRequest.cpp
+  src/v20201207/model/Location.cpp
   src/v20201207/model/DeleteGovernanceInstancesResponse.cpp
   src/v20201207/model/UpdateUpstreamTargetsRequest.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayServiceResponse.cpp

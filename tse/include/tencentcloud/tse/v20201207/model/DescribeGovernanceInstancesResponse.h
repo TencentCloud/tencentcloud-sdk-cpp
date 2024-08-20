@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/GovernanceInstance.h>
+#include <tencentcloud/tse/v20201207/model/Location.h>
 
 
 namespace TencentCloud
@@ -72,6 +73,20 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取地域
+                     * @return Location 地域
+                     * 
+                     */
+                    Location GetLocation() const;
+
+                    /**
+                     * 判断参数 Location 是否已赋值
+                     * @return Location 是否已赋值
+                     * 
+                     */
+                    bool LocationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +100,12 @@ namespace TencentCloud
                      */
                     std::vector<GovernanceInstance> m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 地域
+                     */
+                    Location m_location;
+                    bool m_locationHasBeenSet;
 
                 };
             }

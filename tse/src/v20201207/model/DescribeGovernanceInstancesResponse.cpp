@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeGovernanceInstancesResponse::DescribeGovernanceInstancesResponse() :
     m_totalCountHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,23 @@ CoreInternalOutcome DescribeGovernanceInstancesResponse::Deserialize(const strin
         m_contentHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Location") && !rsp["Location"].IsNull())
+    {
+        if (!rsp["Location"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Location` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_location.Deserialize(rsp["Location"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_locationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +144,15 @@ string DescribeGovernanceInstancesResponse::ToJsonString() const
         }
     }
 
+    if (m_locationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Location";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_location.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +183,16 @@ vector<GovernanceInstance> DescribeGovernanceInstancesResponse::GetContent() con
 bool DescribeGovernanceInstancesResponse::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+Location DescribeGovernanceInstancesResponse::GetLocation() const
+{
+    return m_location;
+}
+
+bool DescribeGovernanceInstancesResponse::LocationHasBeenSet() const
+{
+    return m_locationHasBeenSet;
 }
 
 

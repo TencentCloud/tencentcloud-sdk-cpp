@@ -2319,6 +2319,49 @@ TrtcClient::SummarizeTranscriptionOutcomeCallable TrtcClient::SummarizeTranscrip
     return task->get_future();
 }
 
+TrtcClient::UpdateAIConversationOutcome TrtcClient::UpdateAIConversation(const UpdateAIConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAIConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAIConversationResponse rsp = UpdateAIConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAIConversationOutcome(rsp);
+        else
+            return UpdateAIConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAIConversationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::UpdateAIConversationAsync(const UpdateAIConversationRequest& request, const UpdateAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAIConversation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::UpdateAIConversationOutcomeCallable TrtcClient::UpdateAIConversationCallable(const UpdateAIConversationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAIConversationOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAIConversation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::UpdatePublishCdnStreamOutcome TrtcClient::UpdatePublishCdnStream(const UpdatePublishCdnStreamRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdatePublishCdnStream");

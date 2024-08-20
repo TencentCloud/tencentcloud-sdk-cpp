@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vpc/v20170312/model/EndPoint.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -336,6 +337,31 @@ namespace TencentCloud
                      */
                     bool BusinessIpTypeHasBeenSet() const;
 
+                    /**
+                     * 获取标签键值对。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagSet 标签键值对。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Tag> GetTagSet() const;
+
+                    /**
+                     * 设置标签键值对。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagSet 标签键值对。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagSet(const std::vector<Tag>& _tagSet);
+
+                    /**
+                     * 判断参数 TagSet 是否已赋值
+                     * @return TagSet 是否已赋值
+                     * 
+                     */
+                    bool TagSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -419,6 +445,13 @@ namespace TencentCloud
                      */
                     int64_t m_businessIpType;
                     bool m_businessIpTypeHasBeenSet;
+
+                    /**
+                     * 标签键值对。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tagSet;
+                    bool m_tagSetHasBeenSet;
 
                 };
             }

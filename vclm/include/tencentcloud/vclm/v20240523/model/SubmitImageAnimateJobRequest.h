@@ -142,6 +142,27 @@ namespace TencentCloud
                      */
                     bool EnableAudioHasBeenSet() const;
 
+                    /**
+                     * 获取是否检测输入图人体12个身体部位（头部、颈部、右肩、右肘、右腕、左肩、左肘、左腕、右髋、左髋,、左膝、右膝）。默认不检测。
+                     * @return EnableBodyJoins 是否检测输入图人体12个身体部位（头部、颈部、右肩、右肘、右腕、左肩、左肘、左腕、右髋、左髋,、左膝、右膝）。默认不检测。
+                     * 
+                     */
+                    bool GetEnableBodyJoins() const;
+
+                    /**
+                     * 设置是否检测输入图人体12个身体部位（头部、颈部、右肩、右肘、右腕、左肩、左肘、左腕、右髋、左髋,、左膝、右膝）。默认不检测。
+                     * @param _enableBodyJoins 是否检测输入图人体12个身体部位（头部、颈部、右肩、右肘、右腕、左肩、左肘、左腕、右髋、左髋,、左膝、右膝）。默认不检测。
+                     * 
+                     */
+                    void SetEnableBodyJoins(const bool& _enableBodyJoins);
+
+                    /**
+                     * 判断参数 EnableBodyJoins 是否已赋值
+                     * @return EnableBodyJoins 是否已赋值
+                     * 
+                     */
+                    bool EnableBodyJoinsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -171,6 +192,12 @@ namespace TencentCloud
                      */
                     bool m_enableAudio;
                     bool m_enableAudioHasBeenSet;
+
+                    /**
+                     * 是否检测输入图人体12个身体部位（头部、颈部、右肩、右肘、右腕、左肩、左肘、左腕、右髋、左髋,、左膝、右膝）。默认不检测。
+                     */
+                    bool m_enableBodyJoins;
+                    bool m_enableBodyJoinsHasBeenSet;
 
                 };
             }

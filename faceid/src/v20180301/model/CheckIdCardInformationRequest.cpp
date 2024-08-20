@@ -26,7 +26,9 @@ CheckIdCardInformationRequest::CheckIdCardInformationRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_configHasBeenSet(false),
-    m_isEncryptHasBeenSet(false)
+    m_isEncryptHasBeenSet(false),
+    m_isEncryptResponseHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,23 @@ string CheckIdCardInformationRequest::ToJsonString() const
         string key = "IsEncrypt";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isEncrypt, allocator);
+    }
+
+    if (m_isEncryptResponseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsEncryptResponse";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isEncryptResponse, allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -139,6 +158,38 @@ void CheckIdCardInformationRequest::SetIsEncrypt(const bool& _isEncrypt)
 bool CheckIdCardInformationRequest::IsEncryptHasBeenSet() const
 {
     return m_isEncryptHasBeenSet;
+}
+
+bool CheckIdCardInformationRequest::GetIsEncryptResponse() const
+{
+    return m_isEncryptResponse;
+}
+
+void CheckIdCardInformationRequest::SetIsEncryptResponse(const bool& _isEncryptResponse)
+{
+    m_isEncryptResponse = _isEncryptResponse;
+    m_isEncryptResponseHasBeenSet = true;
+}
+
+bool CheckIdCardInformationRequest::IsEncryptResponseHasBeenSet() const
+{
+    return m_isEncryptResponseHasBeenSet;
+}
+
+Encryption CheckIdCardInformationRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void CheckIdCardInformationRequest::SetEncryption(const Encryption& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool CheckIdCardInformationRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 

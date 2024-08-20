@@ -28,7 +28,9 @@ CategoryRule::CategoryRule() :
     m_levelNameHasBeenSet(false),
     m_idHasBeenSet(false),
     m_aliasRuleIdHasBeenSet(false),
-    m_aliasRuleNameHasBeenSet(false)
+    m_aliasRuleNameHasBeenSet(false),
+    m_ruleEffectItemsHasBeenSet(false),
+    m_ruleStatusHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,36 @@ CoreInternalOutcome CategoryRule::Deserialize(const rapidjson::Value &value)
         m_aliasRuleNameHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleEffectItems") && !value["RuleEffectItems"].IsNull())
+    {
+        if (!value["RuleEffectItems"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CategoryRule.RuleEffectItems` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RuleEffectItems"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RuleEffectItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ruleEffectItems.push_back(item);
+        }
+        m_ruleEffectItemsHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleStatus") && !value["RuleStatus"].IsNull())
+    {
+        if (!value["RuleStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CategoryRule.RuleStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleStatus = value["RuleStatus"].GetInt64();
+        m_ruleStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +218,29 @@ void CategoryRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AliasRuleName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_aliasRuleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleEffectItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleEffectItems";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ruleEffectItems.begin(); itr != m_ruleEffectItems.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ruleStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleStatus, allocator);
     }
 
 }
@@ -317,5 +372,37 @@ void CategoryRule::SetAliasRuleName(const string& _aliasRuleName)
 bool CategoryRule::AliasRuleNameHasBeenSet() const
 {
     return m_aliasRuleNameHasBeenSet;
+}
+
+vector<RuleEffectItem> CategoryRule::GetRuleEffectItems() const
+{
+    return m_ruleEffectItems;
+}
+
+void CategoryRule::SetRuleEffectItems(const vector<RuleEffectItem>& _ruleEffectItems)
+{
+    m_ruleEffectItems = _ruleEffectItems;
+    m_ruleEffectItemsHasBeenSet = true;
+}
+
+bool CategoryRule::RuleEffectItemsHasBeenSet() const
+{
+    return m_ruleEffectItemsHasBeenSet;
+}
+
+int64_t CategoryRule::GetRuleStatus() const
+{
+    return m_ruleStatus;
+}
+
+void CategoryRule::SetRuleStatus(const int64_t& _ruleStatus)
+{
+    m_ruleStatus = _ruleStatus;
+    m_ruleStatusHasBeenSet = true;
+}
+
+bool CategoryRule::RuleStatusHasBeenSet() const
+{
+    return m_ruleStatusHasBeenSet;
 }
 

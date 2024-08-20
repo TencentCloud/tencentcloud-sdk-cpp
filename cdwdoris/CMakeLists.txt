@@ -20,7 +20,7 @@ set(cdwdoris_public_header
 
 set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceUsedSubnetsResponse.h
-  include/tencentcloud/cdwdoris/v20211228/model/CreateInstanceNewResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceNodesResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeClusterConfigsHistoryResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceOperationsRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeClusterConfigsResponse.h
@@ -73,7 +73,7 @@ set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/CheckCoolDownWorkingVariableConfigCorrectRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/InstanceOperation.h
   include/tencentcloud/cdwdoris/v20211228/model/BackupTableContent.h
-  include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceNodesResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/CreateInstanceNewResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeSqlApisRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/ModifySecurityGroupsRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/CreateInstanceNewRequest.h
@@ -88,6 +88,7 @@ set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/ClusterConfigsHistory.h
   include/tencentcloud/cdwdoris/v20211228/model/InstanceConfigItem.h
   include/tencentcloud/cdwdoris/v20211228/model/CreateBackUpScheduleRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ActionAlterUserResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeSpecRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeClusterConfigsHistoryRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/CreateWorkloadGroupRequest.h
@@ -128,6 +129,7 @@ set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/RestartClusterForNodeRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/BackupStatus.h
   include/tencentcloud/cdwdoris/v20211228/model/SearchTags.h
+  include/tencentcloud/cdwdoris/v20211228/model/UserInfo.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceUsedSubnetsRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditRecordsRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeBackUpJobDetailResponse.h
@@ -144,7 +146,7 @@ set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/OpenCoolDownPolicyResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/ReduceInstanceRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DeleteWorkloadGroupResponse.h
-  include/tencentcloud/cdwdoris/v20211228/model/ResourceSpec.h
+  include/tencentcloud/cdwdoris/v20211228/model/InstanceDetail.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeCoolDownTableDataResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/RestartClusterForConfigsRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/RegionAreaInfo.h
@@ -153,6 +155,7 @@ set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/CreateWorkloadGroupResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceStateResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeCoolDownPoliciesRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ResourceSpec.h
   include/tencentcloud/cdwdoris/v20211228/model/RestoreStatus.h
   include/tencentcloud/cdwdoris/v20211228/model/DeleteBackUpDataResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/ModifyInstanceKeyValConfigsRequest.h
@@ -167,7 +170,7 @@ set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/CreateInstanceSpec.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeBackUpJobRequest.h
-  include/tencentcloud/cdwdoris/v20211228/model/InstanceDetail.h
+  include/tencentcloud/cdwdoris/v20211228/model/ActionAlterUserRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeBackUpTablesRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceNodesRoleRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditDownloadResponse.h
@@ -179,7 +182,7 @@ set(cdwdoris_public_header_model
 set(cdwdoris_src
   src/v20211228/CdwdorisClient.cpp
   src/v20211228/model/DescribeInstanceUsedSubnetsResponse.cpp
-  src/v20211228/model/CreateInstanceNewResponse.cpp
+  src/v20211228/model/DescribeInstanceNodesResponse.cpp
   src/v20211228/model/DescribeClusterConfigsHistoryResponse.cpp
   src/v20211228/model/DescribeInstanceOperationsRequest.cpp
   src/v20211228/model/DescribeClusterConfigsResponse.cpp
@@ -232,7 +235,7 @@ set(cdwdoris_src
   src/v20211228/model/CheckCoolDownWorkingVariableConfigCorrectRequest.cpp
   src/v20211228/model/InstanceOperation.cpp
   src/v20211228/model/BackupTableContent.cpp
-  src/v20211228/model/DescribeInstanceNodesResponse.cpp
+  src/v20211228/model/CreateInstanceNewResponse.cpp
   src/v20211228/model/DescribeSqlApisRequest.cpp
   src/v20211228/model/ModifySecurityGroupsRequest.cpp
   src/v20211228/model/CreateInstanceNewRequest.cpp
@@ -247,6 +250,7 @@ set(cdwdoris_src
   src/v20211228/model/ClusterConfigsHistory.cpp
   src/v20211228/model/InstanceConfigItem.cpp
   src/v20211228/model/CreateBackUpScheduleRequest.cpp
+  src/v20211228/model/ActionAlterUserResponse.cpp
   src/v20211228/model/DescribeSpecRequest.cpp
   src/v20211228/model/DescribeClusterConfigsHistoryRequest.cpp
   src/v20211228/model/CreateWorkloadGroupRequest.cpp
@@ -287,6 +291,7 @@ set(cdwdoris_src
   src/v20211228/model/RestartClusterForNodeRequest.cpp
   src/v20211228/model/BackupStatus.cpp
   src/v20211228/model/SearchTags.cpp
+  src/v20211228/model/UserInfo.cpp
   src/v20211228/model/DescribeInstanceUsedSubnetsRequest.cpp
   src/v20211228/model/DescribeDatabaseAuditRecordsRequest.cpp
   src/v20211228/model/DescribeBackUpJobDetailResponse.cpp
@@ -303,7 +308,7 @@ set(cdwdoris_src
   src/v20211228/model/OpenCoolDownPolicyResponse.cpp
   src/v20211228/model/ReduceInstanceRequest.cpp
   src/v20211228/model/DeleteWorkloadGroupResponse.cpp
-  src/v20211228/model/ResourceSpec.cpp
+  src/v20211228/model/InstanceDetail.cpp
   src/v20211228/model/DescribeCoolDownTableDataResponse.cpp
   src/v20211228/model/RestartClusterForConfigsRequest.cpp
   src/v20211228/model/RegionAreaInfo.cpp
@@ -312,6 +317,7 @@ set(cdwdoris_src
   src/v20211228/model/CreateWorkloadGroupResponse.cpp
   src/v20211228/model/DescribeInstanceStateResponse.cpp
   src/v20211228/model/DescribeCoolDownPoliciesRequest.cpp
+  src/v20211228/model/ResourceSpec.cpp
   src/v20211228/model/RestoreStatus.cpp
   src/v20211228/model/DeleteBackUpDataResponse.cpp
   src/v20211228/model/ModifyInstanceKeyValConfigsRequest.cpp
@@ -326,7 +332,7 @@ set(cdwdoris_src
   src/v20211228/model/CreateInstanceSpec.cpp
   src/v20211228/model/DescribeInstanceRequest.cpp
   src/v20211228/model/DescribeBackUpJobRequest.cpp
-  src/v20211228/model/InstanceDetail.cpp
+  src/v20211228/model/ActionAlterUserRequest.cpp
   src/v20211228/model/DescribeBackUpTablesRequest.cpp
   src/v20211228/model/DescribeInstanceNodesRoleRequest.cpp
   src/v20211228/model/DescribeDatabaseAuditDownloadResponse.cpp

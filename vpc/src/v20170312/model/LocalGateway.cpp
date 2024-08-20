@@ -26,7 +26,9 @@ LocalGateway::LocalGateway() :
     m_uniqLocalGwIdHasBeenSet(false),
     m_localGatewayNameHasBeenSet(false),
     m_localGwIpHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_tagSetHasBeenSet(false),
+    m_localGatewayIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,36 @@ CoreInternalOutcome LocalGateway::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LocalGateway.TagSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("LocalGatewayId") && !value["LocalGatewayId"].IsNull())
+    {
+        if (!value["LocalGatewayId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LocalGateway.LocalGatewayId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_localGatewayId = string(value["LocalGatewayId"].GetString());
+        m_localGatewayIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +180,29 @@ void LocalGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_localGatewayIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocalGatewayId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_localGatewayId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +302,37 @@ void LocalGateway::SetCreateTime(const string& _createTime)
 bool LocalGateway::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+vector<Tag> LocalGateway::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void LocalGateway::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool LocalGateway::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
+}
+
+string LocalGateway::GetLocalGatewayId() const
+{
+    return m_localGatewayId;
+}
+
+void LocalGateway::SetLocalGatewayId(const string& _localGatewayId)
+{
+    m_localGatewayId = _localGatewayId;
+    m_localGatewayIdHasBeenSet = true;
+}
+
+bool LocalGateway::LocalGatewayIdHasBeenSet() const
+{
+    return m_localGatewayIdHasBeenSet;
 }
 

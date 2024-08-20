@@ -246,6 +246,20 @@ namespace TencentCloud
                      */
                     bool EncryptionHasBeenSet() const;
 
+                    /**
+                     * 获取加密后的数据
+                     * @return EncryptedBody 加密后的数据
+                     * 
+                     */
+                    std::string GetEncryptedBody() const;
+
+                    /**
+                     * 判断参数 EncryptedBody 是否已赋值
+                     * @return EncryptedBody 是否已赋值
+                     * 
+                     */
+                    bool EncryptedBodyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +349,12 @@ namespace TencentCloud
                      */
                     Encryption m_encryption;
                     bool m_encryptionHasBeenSet;
+
+                    /**
+                     * 加密后的数据
+                     */
+                    std::string m_encryptedBody;
+                    bool m_encryptedBodyHasBeenSet;
 
                 };
             }

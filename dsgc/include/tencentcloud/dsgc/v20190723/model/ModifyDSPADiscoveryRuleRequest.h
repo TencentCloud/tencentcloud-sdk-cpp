@@ -170,6 +170,27 @@ namespace TencentCloud
                      */
                     bool COSRulesHasBeenSet() const;
 
+                    /**
+                     * 获取规则状态
+                     * @return Status 规则状态
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置规则状态
+                     * @param _status 规则状态
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +228,12 @@ namespace TencentCloud
                      */
                     ScanTaskCOSRules m_cOSRules;
                     bool m_cOSRulesHasBeenSet;
+
+                    /**
+                     * 规则状态
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

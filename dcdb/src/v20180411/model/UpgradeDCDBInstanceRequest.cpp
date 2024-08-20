@@ -30,7 +30,10 @@ UpgradeDCDBInstanceRequest::UpgradeDCDBInstanceRequest() :
     m_splitShardConfigHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_voucherIdsHasBeenSet(false),
-    m_zonesHasBeenSet(false)
+    m_zonesHasBeenSet(false),
+    m_switchStartTimeHasBeenSet(false),
+    m_switchEndTimeHasBeenSet(false),
+    m_switchAutoRetryHasBeenSet(false)
 {
 }
 
@@ -116,6 +119,30 @@ string UpgradeDCDBInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_switchStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_switchStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_switchEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_switchEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_switchAutoRetryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchAutoRetry";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_switchAutoRetry, allocator);
     }
 
 
@@ -252,6 +279,54 @@ void UpgradeDCDBInstanceRequest::SetZones(const vector<string>& _zones)
 bool UpgradeDCDBInstanceRequest::ZonesHasBeenSet() const
 {
     return m_zonesHasBeenSet;
+}
+
+string UpgradeDCDBInstanceRequest::GetSwitchStartTime() const
+{
+    return m_switchStartTime;
+}
+
+void UpgradeDCDBInstanceRequest::SetSwitchStartTime(const string& _switchStartTime)
+{
+    m_switchStartTime = _switchStartTime;
+    m_switchStartTimeHasBeenSet = true;
+}
+
+bool UpgradeDCDBInstanceRequest::SwitchStartTimeHasBeenSet() const
+{
+    return m_switchStartTimeHasBeenSet;
+}
+
+string UpgradeDCDBInstanceRequest::GetSwitchEndTime() const
+{
+    return m_switchEndTime;
+}
+
+void UpgradeDCDBInstanceRequest::SetSwitchEndTime(const string& _switchEndTime)
+{
+    m_switchEndTime = _switchEndTime;
+    m_switchEndTimeHasBeenSet = true;
+}
+
+bool UpgradeDCDBInstanceRequest::SwitchEndTimeHasBeenSet() const
+{
+    return m_switchEndTimeHasBeenSet;
+}
+
+int64_t UpgradeDCDBInstanceRequest::GetSwitchAutoRetry() const
+{
+    return m_switchAutoRetry;
+}
+
+void UpgradeDCDBInstanceRequest::SetSwitchAutoRetry(const int64_t& _switchAutoRetry)
+{
+    m_switchAutoRetry = _switchAutoRetry;
+    m_switchAutoRetryHasBeenSet = true;
+}
+
+bool UpgradeDCDBInstanceRequest::SwitchAutoRetryHasBeenSet() const
+{
+    return m_switchAutoRetryHasBeenSet;
 }
 
 

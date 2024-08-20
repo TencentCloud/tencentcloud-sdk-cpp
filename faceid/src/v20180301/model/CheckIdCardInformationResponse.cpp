@@ -36,7 +36,8 @@ CheckIdCardInformationResponse::CheckIdCardInformationResponse() :
     m_portraitHasBeenSet(false),
     m_warningsHasBeenSet(false),
     m_qualityHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+    m_encryptionHasBeenSet(false),
+    m_encryptedBodyHasBeenSet(false)
 {
 }
 
@@ -211,6 +212,16 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
         m_encryptionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EncryptedBody") && !rsp["EncryptedBody"].IsNull())
+    {
+        if (!rsp["EncryptedBody"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EncryptedBody` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptedBody = string(rsp["EncryptedBody"].GetString());
+        m_encryptedBodyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -324,6 +335,14 @@ string CheckIdCardInformationResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_encryption.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_encryptedBodyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptedBody";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptedBody.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -466,6 +485,16 @@ Encryption CheckIdCardInformationResponse::GetEncryption() const
 bool CheckIdCardInformationResponse::EncryptionHasBeenSet() const
 {
     return m_encryptionHasBeenSet;
+}
+
+string CheckIdCardInformationResponse::GetEncryptedBody() const
+{
+    return m_encryptedBody;
+}
+
+bool CheckIdCardInformationResponse::EncryptedBodyHasBeenSet() const
+{
+    return m_encryptedBodyHasBeenSet;
 }
 
 

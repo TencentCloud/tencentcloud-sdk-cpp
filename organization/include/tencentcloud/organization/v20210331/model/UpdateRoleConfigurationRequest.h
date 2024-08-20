@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RoleConfigurationIdHasBeenSet() const;
 
                     /**
-                     * 获取新的访问配置描述。  长度：最大 1024 个字符。
-                     * @return NewDescription 新的访问配置描述。  长度：最大 1024 个字符。
+                     * 获取新的权限配置描述。  长度：最大 1024 个字符。
+                     * @return NewDescription 新的权限配置描述。  长度：最大 1024 个字符。
                      * 
                      */
                     std::string GetNewDescription() const;
 
                     /**
-                     * 设置新的访问配置描述。  长度：最大 1024 个字符。
-                     * @param _newDescription 新的访问配置描述。  长度：最大 1024 个字符。
+                     * 设置新的权限配置描述。  长度：最大 1024 个字符。
+                     * @param _newDescription 新的权限配置描述。  长度：最大 1024 个字符。
                      * 
                      */
                     void SetNewDescription(const std::string& _newDescription);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NewDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取新的会话持续时间。  CIC 用户使用访问配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。
-                     * @return NewSessionDuration 新的会话持续时间。  CIC 用户使用访问配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。
+                     * 获取新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。
+                     * @return NewSessionDuration 新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。
                      * 
                      */
                     int64_t GetNewSessionDuration() const;
 
                     /**
-                     * 设置新的会话持续时间。  CIC 用户使用访问配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。
-                     * @param _newSessionDuration 新的会话持续时间。  CIC 用户使用访问配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。
+                     * 设置新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。
+                     * @param _newSessionDuration 新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。
                      * 
                      */
                     void SetNewSessionDuration(const int64_t& _newSessionDuration);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool NewSessionDurationHasBeenSet() const;
 
                     /**
-                     * 获取新的初始访问页面。  CIC 用户使用访问配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。
-                     * @return NewRelayState 新的初始访问页面。  CIC 用户使用访问配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。
+                     * 获取新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。
+                     * @return NewRelayState 新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。
                      * 
                      */
                     std::string GetNewRelayState() const;
 
                     /**
-                     * 设置新的初始访问页面。  CIC 用户使用访问配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。
-                     * @param _newRelayState 新的初始访问页面。  CIC 用户使用访问配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。
+                     * 设置新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。
+                     * @param _newRelayState 新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。
                      * 
                      */
                     void SetNewRelayState(const std::string& _newRelayState);
@@ -162,19 +162,19 @@ namespace TencentCloud
                     bool m_roleConfigurationIdHasBeenSet;
 
                     /**
-                     * 新的访问配置描述。  长度：最大 1024 个字符。
+                     * 新的权限配置描述。  长度：最大 1024 个字符。
                      */
                     std::string m_newDescription;
                     bool m_newDescriptionHasBeenSet;
 
                     /**
-                     * 新的会话持续时间。  CIC 用户使用访问配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。
+                     * 新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。
                      */
                     int64_t m_newSessionDuration;
                     bool m_newSessionDurationHasBeenSet;
 
                     /**
-                     * 新的初始访问页面。  CIC 用户使用访问配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。
+                     * 新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。
                      */
                     std::string m_newRelayState;
                     bool m_newRelayStateHasBeenSet;

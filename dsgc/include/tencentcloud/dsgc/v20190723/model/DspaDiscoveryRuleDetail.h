@@ -198,6 +198,31 @@ namespace TencentCloud
                      */
                     bool COSRulesHasBeenSet() const;
 
+                    /**
+                     * 获取0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +266,13 @@ namespace TencentCloud
                      */
                     DspaDiscoveryCOSRules m_cOSRules;
                     bool m_cOSRulesHasBeenSet;
+
+                    /**
+                     * 0关闭，1开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

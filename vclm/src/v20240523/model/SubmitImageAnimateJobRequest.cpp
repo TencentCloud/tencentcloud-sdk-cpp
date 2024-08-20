@@ -26,7 +26,8 @@ SubmitImageAnimateJobRequest::SubmitImageAnimateJobRequest() :
     m_imageUrlHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
     m_templateIdHasBeenSet(false),
-    m_enableAudioHasBeenSet(false)
+    m_enableAudioHasBeenSet(false),
+    m_enableBodyJoinsHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string SubmitImageAnimateJobRequest::ToJsonString() const
         string key = "EnableAudio";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableAudio, allocator);
+    }
+
+    if (m_enableBodyJoinsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBodyJoins";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableBodyJoins, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void SubmitImageAnimateJobRequest::SetEnableAudio(const bool& _enableAudio)
 bool SubmitImageAnimateJobRequest::EnableAudioHasBeenSet() const
 {
     return m_enableAudioHasBeenSet;
+}
+
+bool SubmitImageAnimateJobRequest::GetEnableBodyJoins() const
+{
+    return m_enableBodyJoins;
+}
+
+void SubmitImageAnimateJobRequest::SetEnableBodyJoins(const bool& _enableBodyJoins)
+{
+    m_enableBodyJoins = _enableBodyJoins;
+    m_enableBodyJoinsHasBeenSet = true;
+}
+
+bool SubmitImageAnimateJobRequest::EnableBodyJoinsHasBeenSet() const
+{
+    return m_enableBodyJoinsHasBeenSet;
 }
 
 

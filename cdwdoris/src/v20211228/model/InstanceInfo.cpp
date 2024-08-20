@@ -68,7 +68,9 @@ InstanceInfo::InstanceInfo() :
     m_userNetworkInfosHasBeenSet(false),
     m_enableCoolDownHasBeenSet(false),
     m_coolDownBucketHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_enableDlcHasBeenSet(false),
+    m_accountTypeHasBeenSet(false)
 {
 }
 
@@ -594,6 +596,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_detailsHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableDlc") && !value["EnableDlc"].IsNull())
+    {
+        if (!value["EnableDlc"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EnableDlc` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableDlc = value["EnableDlc"].GetInt64();
+        m_enableDlcHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccountType") && !value["AccountType"].IsNull())
+    {
+        if (!value["AccountType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.AccountType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_accountType = value["AccountType"].GetInt64();
+        m_accountTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1003,6 +1025,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_details.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_enableDlcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDlc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableDlc, allocator);
+    }
+
+    if (m_accountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accountType, allocator);
     }
 
 }
@@ -1774,5 +1812,37 @@ void InstanceInfo::SetDetails(const InstanceDetail& _details)
 bool InstanceInfo::DetailsHasBeenSet() const
 {
     return m_detailsHasBeenSet;
+}
+
+int64_t InstanceInfo::GetEnableDlc() const
+{
+    return m_enableDlc;
+}
+
+void InstanceInfo::SetEnableDlc(const int64_t& _enableDlc)
+{
+    m_enableDlc = _enableDlc;
+    m_enableDlcHasBeenSet = true;
+}
+
+bool InstanceInfo::EnableDlcHasBeenSet() const
+{
+    return m_enableDlcHasBeenSet;
+}
+
+int64_t InstanceInfo::GetAccountType() const
+{
+    return m_accountType;
+}
+
+void InstanceInfo::SetAccountType(const int64_t& _accountType)
+{
+    m_accountType = _accountType;
+    m_accountTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::AccountTypeHasBeenSet() const
+{
+    return m_accountTypeHasBeenSet;
 }
 

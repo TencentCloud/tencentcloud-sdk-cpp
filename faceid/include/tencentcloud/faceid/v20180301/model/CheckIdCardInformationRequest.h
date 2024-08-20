@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/faceid/v20180301/model/Encryption.h>
 
 
 namespace TencentCloud
@@ -206,6 +207,48 @@ Config = {"CopyWarn":true,"ReshootWarn":true}
                      */
                     bool IsEncryptHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要对响应体加密
+                     * @return IsEncryptResponse 是否需要对响应体加密
+                     * 
+                     */
+                    bool GetIsEncryptResponse() const;
+
+                    /**
+                     * 设置是否需要对响应体加密
+                     * @param _isEncryptResponse 是否需要对响应体加密
+                     * 
+                     */
+                    void SetIsEncryptResponse(const bool& _isEncryptResponse);
+
+                    /**
+                     * 判断参数 IsEncryptResponse 是否已赋值
+                     * @return IsEncryptResponse 是否已赋值
+                     * 
+                     */
+                    bool IsEncryptResponseHasBeenSet() const;
+
+                    /**
+                     * 获取是否需要对返回中的敏感信息进行加密,需指定加密算法Algorithm、CBC加密的初始向量、加密后的对称密钥。
+                     * @return Encryption 是否需要对返回中的敏感信息进行加密,需指定加密算法Algorithm、CBC加密的初始向量、加密后的对称密钥。
+                     * 
+                     */
+                    Encryption GetEncryption() const;
+
+                    /**
+                     * 设置是否需要对返回中的敏感信息进行加密,需指定加密算法Algorithm、CBC加密的初始向量、加密后的对称密钥。
+                     * @param _encryption 是否需要对返回中的敏感信息进行加密,需指定加密算法Algorithm、CBC加密的初始向量、加密后的对称密钥。
+                     * 
+                     */
+                    void SetEncryption(const Encryption& _encryption);
+
+                    /**
+                     * 判断参数 Encryption 是否已赋值
+                     * @return Encryption 是否已赋值
+                     * 
+                     */
+                    bool EncryptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -251,6 +294,18 @@ Config = {"CopyWarn":true,"ReshootWarn":true}
                      */
                     bool m_isEncrypt;
                     bool m_isEncryptHasBeenSet;
+
+                    /**
+                     * 是否需要对响应体加密
+                     */
+                    bool m_isEncryptResponse;
+                    bool m_isEncryptResponseHasBeenSet;
+
+                    /**
+                     * 是否需要对返回中的敏感信息进行加密,需指定加密算法Algorithm、CBC加密的初始向量、加密后的对称密钥。
+                     */
+                    Encryption m_encryption;
+                    bool m_encryptionHasBeenSet;
 
                 };
             }
