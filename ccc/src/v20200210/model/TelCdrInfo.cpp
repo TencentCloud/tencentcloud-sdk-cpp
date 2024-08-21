@@ -52,6 +52,7 @@ TelCdrInfo::TelCdrInfo() :
     m_uUIHasBeenSet(false),
     m_iVRKeyPressedExHasBeenSet(false),
     m_asrUrlHasBeenSet(false),
+    m_asrStatusHasBeenSet(false),
     m_customRecordURLHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_queuedSkillGroupNameHasBeenSet(false),
@@ -415,6 +416,16 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
         m_asrUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("AsrStatus") && !value["AsrStatus"].IsNull())
+    {
+        if (!value["AsrStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.AsrStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_asrStatus = string(value["AsrStatus"].GetString());
+        m_asrStatusHasBeenSet = true;
+    }
+
     if (value.HasMember("CustomRecordURL") && !value["CustomRecordURL"].IsNull())
     {
         if (!value["CustomRecordURL"].IsString())
@@ -751,6 +762,14 @@ void TelCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AsrUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_asrUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_asrStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsrStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_asrStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_customRecordURLHasBeenSet)
@@ -1300,6 +1319,22 @@ void TelCdrInfo::SetAsrUrl(const string& _asrUrl)
 bool TelCdrInfo::AsrUrlHasBeenSet() const
 {
     return m_asrUrlHasBeenSet;
+}
+
+string TelCdrInfo::GetAsrStatus() const
+{
+    return m_asrStatus;
+}
+
+void TelCdrInfo::SetAsrStatus(const string& _asrStatus)
+{
+    m_asrStatus = _asrStatus;
+    m_asrStatusHasBeenSet = true;
+}
+
+bool TelCdrInfo::AsrStatusHasBeenSet() const
+{
+    return m_asrStatusHasBeenSet;
 }
 
 string TelCdrInfo::GetCustomRecordURL() const

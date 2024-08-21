@@ -31,7 +31,8 @@ DescribeBGPIPL7RulesRequest::DescribeBGPIPL7RulesRequest() :
     m_offsetHasBeenSet(false),
     m_protocolListHasBeenSet(false),
     m_cnameHasBeenSet(false),
-    m_exportHasBeenSet(false)
+    m_exportHasBeenSet(false),
+    m_sourceHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,14 @@ string DescribeBGPIPL7RulesRequest::ToJsonString() const
         string key = "Export";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_export, allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -274,6 +283,22 @@ void DescribeBGPIPL7RulesRequest::SetExport(const bool& _export)
 bool DescribeBGPIPL7RulesRequest::ExportHasBeenSet() const
 {
     return m_exportHasBeenSet;
+}
+
+string DescribeBGPIPL7RulesRequest::GetSource() const
+{
+    return m_source;
+}
+
+void DescribeBGPIPL7RulesRequest::SetSource(const string& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool DescribeBGPIPL7RulesRequest::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
 }
 
 

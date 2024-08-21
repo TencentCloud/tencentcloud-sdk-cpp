@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool ActionCommandHasBeenSet() const;
 
                     /**
-                     * 获取动作类型( 0 -- tat   1 -- 云API）
-                     * @return ActionCommandType 动作类型( 0 -- tat   1 -- 云API）
+                     * 获取动作类型（0 -- tat   1 -- 云API）
+                     * @return ActionCommandType 动作类型（0 -- tat   1 -- 云API）
                      * 
                      */
                     uint64_t GetActionCommandType() const;
 
                     /**
-                     * 设置动作类型( 0 -- tat   1 -- 云API）
-                     * @param _actionCommandType 动作类型( 0 -- tat   1 -- 云API）
+                     * 设置动作类型（0 -- tat   1 -- 云API）
+                     * @param _actionCommandType 动作类型（0 -- tat   1 -- 云API）
                      * 
                      */
                     void SetActionCommandType(const uint64_t& _actionCommandType);
@@ -563,7 +563,7 @@ namespace TencentCloud
                     bool m_actionCommandHasBeenSet;
 
                     /**
-                     * 动作类型( 0 -- tat   1 -- 云API）
+                     * 动作类型（0 -- tat   1 -- 云API）
                      */
                     uint64_t m_actionCommandType;
                     bool m_actionCommandTypeHasBeenSet;

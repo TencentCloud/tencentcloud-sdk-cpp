@@ -580,18 +580,18 @@ namespace TencentCloud
                     bool BasicPlusFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否是商业模式优化-普惠版
+                     * 获取是否标准版2.0 0: 包含标准版2.0 1: 只查询标准版2.0 2: 不查标准版2.0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PlanCntFlag 是否是商业模式优化-普惠版
+                     * @return PlanCntFlag 是否标准版2.0 0: 包含标准版2.0 1: 只查询标准版2.0 2: 不查标准版2.0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPlanCntFlag() const;
 
                     /**
-                     * 设置是否是商业模式优化-普惠版
+                     * 设置是否标准版2.0 0: 包含标准版2.0 1: 只查询标准版2.0 2: 不查标准版2.0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _planCntFlag 是否是商业模式优化-普惠版
+                     * @param _planCntFlag 是否标准版2.0 0: 包含标准版2.0 1: 只查询标准版2.0 2: 不查标准版2.0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -830,7 +830,7 @@ namespace TencentCloud
                     bool m_basicPlusFlagHasBeenSet;
 
                     /**
-                     * 是否是商业模式优化-普惠版
+                     * 是否标准版2.0 0: 包含标准版2.0 1: 只查询标准版2.0 2: 不查标准版2.0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_planCntFlag;

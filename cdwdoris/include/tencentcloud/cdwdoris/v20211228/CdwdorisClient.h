@@ -103,6 +103,8 @@
 #include <tencentcloud/cdwdoris/v20211228/model/DescribeWorkloadGroupResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DestroyInstanceRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DestroyInstanceResponse.h>
+#include <tencentcloud/cdwdoris/v20211228/model/ModifyClusterConfigsRequest.h>
+#include <tencentcloud/cdwdoris/v20211228/model/ModifyClusterConfigsResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/ModifyCoolDownPolicyRequest.h>
 #include <tencentcloud/cdwdoris/v20211228/model/ModifyCoolDownPolicyResponse.h>
 #include <tencentcloud/cdwdoris/v20211228/model/ModifyInstanceRequest.h>
@@ -275,6 +277,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyInstanceResponse> DestroyInstanceOutcome;
                 typedef std::future<DestroyInstanceOutcome> DestroyInstanceOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::DestroyInstanceRequest&, DestroyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterConfigsResponse> ModifyClusterConfigsOutcome;
+                typedef std::future<ModifyClusterConfigsOutcome> ModifyClusterConfigsOutcomeCallable;
+                typedef std::function<void(const CdwdorisClient*, const Model::ModifyClusterConfigsRequest&, ModifyClusterConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterConfigsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCoolDownPolicyResponse> ModifyCoolDownPolicyOutcome;
                 typedef std::future<ModifyCoolDownPolicyOutcome> ModifyCoolDownPolicyOutcomeCallable;
                 typedef std::function<void(const CdwdorisClient*, const Model::ModifyCoolDownPolicyRequest&, ModifyCoolDownPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCoolDownPolicyAsyncHandler;
@@ -694,6 +699,15 @@ namespace TencentCloud
                 DestroyInstanceOutcome DestroyInstance(const Model::DestroyInstanceRequest &request);
                 void DestroyInstanceAsync(const Model::DestroyInstanceRequest& request, const DestroyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DestroyInstanceOutcomeCallable DestroyInstanceCallable(const Model::DestroyInstanceRequest& request);
+
+                /**
+                 *在集群配置页面修改集群配置文件接口，xml模式
+                 * @param req ModifyClusterConfigsRequest
+                 * @return ModifyClusterConfigsOutcome
+                 */
+                ModifyClusterConfigsOutcome ModifyClusterConfigs(const Model::ModifyClusterConfigsRequest &request);
+                void ModifyClusterConfigsAsync(const Model::ModifyClusterConfigsRequest& request, const ModifyClusterConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterConfigsOutcomeCallable ModifyClusterConfigsCallable(const Model::ModifyClusterConfigsRequest& request);
 
                 /**
                  *修改冷热分层策略

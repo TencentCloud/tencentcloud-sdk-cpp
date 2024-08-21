@@ -30,7 +30,8 @@ CreateDataTransformRequest::CreateDataTransformRequest() :
     m_taskTypeHasBeenSet(false),
     m_dstResourcesHasBeenSet(false),
     m_enableFlagHasBeenSet(false),
-    m_previewLogStatisticsHasBeenSet(false)
+    m_previewLogStatisticsHasBeenSet(false),
+    m_dataTransformTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string CreateDataTransformRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dataTransformTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataTransformType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dataTransformType, allocator);
     }
 
 
@@ -253,6 +262,22 @@ void CreateDataTransformRequest::SetPreviewLogStatistics(const vector<PreviewLog
 bool CreateDataTransformRequest::PreviewLogStatisticsHasBeenSet() const
 {
     return m_previewLogStatisticsHasBeenSet;
+}
+
+uint64_t CreateDataTransformRequest::GetDataTransformType() const
+{
+    return m_dataTransformType;
+}
+
+void CreateDataTransformRequest::SetDataTransformType(const uint64_t& _dataTransformType)
+{
+    m_dataTransformType = _dataTransformType;
+    m_dataTransformTypeHasBeenSet = true;
+}
+
+bool CreateDataTransformRequest::DataTransformTypeHasBeenSet() const
+{
+    return m_dataTransformTypeHasBeenSet;
 }
 
 

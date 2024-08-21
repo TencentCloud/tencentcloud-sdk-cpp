@@ -1760,6 +1760,49 @@ CdwdorisClient::DestroyInstanceOutcomeCallable CdwdorisClient::DestroyInstanceCa
     return task->get_future();
 }
 
+CdwdorisClient::ModifyClusterConfigsOutcome CdwdorisClient::ModifyClusterConfigs(const ModifyClusterConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterConfigsResponse rsp = ModifyClusterConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterConfigsOutcome(rsp);
+        else
+            return ModifyClusterConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterConfigsOutcome(outcome.GetError());
+    }
+}
+
+void CdwdorisClient::ModifyClusterConfigsAsync(const ModifyClusterConfigsRequest& request, const ModifyClusterConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwdorisClient::ModifyClusterConfigsOutcomeCallable CdwdorisClient::ModifyClusterConfigsCallable(const ModifyClusterConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwdorisClient::ModifyCoolDownPolicyOutcome CdwdorisClient::ModifyCoolDownPolicy(const ModifyCoolDownPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCoolDownPolicy");

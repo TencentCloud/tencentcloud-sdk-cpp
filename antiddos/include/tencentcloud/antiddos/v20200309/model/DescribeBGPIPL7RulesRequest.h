@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool ExportHasBeenSet() const;
 
+                    /**
+                     * 获取源站，模糊查询
+                     * @return Source 源站，模糊查询
+                     * 
+                     */
+                    std::string GetSource() const;
+
+                    /**
+                     * 设置源站，模糊查询
+                     * @param _source 源站，模糊查询
+                     * 
+                     */
+                    void SetSource(const std::string& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     * 
+                     */
+                    bool SourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     bool m_export;
                     bool m_exportHasBeenSet;
+
+                    /**
+                     * 源站，模糊查询
+                     */
+                    std::string m_source;
+                    bool m_sourceHasBeenSet;
 
                 };
             }

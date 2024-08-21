@@ -236,6 +236,27 @@ namespace TencentCloud
                      */
                     bool PreviewLogStatisticsHasBeenSet() const;
 
+                    /**
+                     * 获取数据加工类型。0：标准加工任务； 1：前置加工任务。前置加工任务将采集的日志处理完成后，再写入日志主题。
+                     * @return DataTransformType 数据加工类型。0：标准加工任务； 1：前置加工任务。前置加工任务将采集的日志处理完成后，再写入日志主题。
+                     * 
+                     */
+                    uint64_t GetDataTransformType() const;
+
+                    /**
+                     * 设置数据加工类型。0：标准加工任务； 1：前置加工任务。前置加工任务将采集的日志处理完成后，再写入日志主题。
+                     * @param _dataTransformType 数据加工类型。0：标准加工任务； 1：前置加工任务。前置加工任务将采集的日志处理完成后，再写入日志主题。
+                     * 
+                     */
+                    void SetDataTransformType(const uint64_t& _dataTransformType);
+
+                    /**
+                     * 判断参数 DataTransformType 是否已赋值
+                     * @return DataTransformType 是否已赋值
+                     * 
+                     */
+                    bool DataTransformTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +312,12 @@ namespace TencentCloud
                      */
                     std::vector<PreviewLogStatistic> m_previewLogStatistics;
                     bool m_previewLogStatisticsHasBeenSet;
+
+                    /**
+                     * 数据加工类型。0：标准加工任务； 1：前置加工任务。前置加工任务将采集的日志处理完成后，再写入日志主题。
+                     */
+                    uint64_t m_dataTransformType;
+                    bool m_dataTransformTypeHasBeenSet;
 
                 };
             }

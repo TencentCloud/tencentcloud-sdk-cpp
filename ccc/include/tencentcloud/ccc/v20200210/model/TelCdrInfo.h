@@ -1209,6 +1209,51 @@ namespace TencentCloud
                     bool AsrUrlHasBeenSet() const;
 
                     /**
+                     * 获取AsrUrl的状态：Complete
+已完成;
+Processing
+正在生成中;
+NotExists
+无记录(未开启生成离线asr或者无套餐包)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AsrStatus AsrUrl的状态：Complete
+已完成;
+Processing
+正在生成中;
+NotExists
+无记录(未开启生成离线asr或者无套餐包)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAsrStatus() const;
+
+                    /**
+                     * 设置AsrUrl的状态：Complete
+已完成;
+Processing
+正在生成中;
+NotExists
+无记录(未开启生成离线asr或者无套餐包)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _asrStatus AsrUrl的状态：Complete
+已完成;
+Processing
+正在生成中;
+NotExists
+无记录(未开启生成离线asr或者无套餐包)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAsrStatus(const std::string& _asrStatus);
+
+                    /**
+                     * 判断参数 AsrStatus 是否已赋值
+                     * @return AsrStatus 是否已赋值
+                     * 
+                     */
+                    bool AsrStatusHasBeenSet() const;
+
+                    /**
                      * 获取录音转存第三方COS地址
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomRecordURL 录音转存第三方COS地址
@@ -1647,6 +1692,18 @@ namespace TencentCloud
                      */
                     std::string m_asrUrl;
                     bool m_asrUrlHasBeenSet;
+
+                    /**
+                     * AsrUrl的状态：Complete
+已完成;
+Processing
+正在生成中;
+NotExists
+无记录(未开启生成离线asr或者无套餐包)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_asrStatus;
+                    bool m_asrStatusHasBeenSet;
 
                     /**
                      * 录音转存第三方COS地址
