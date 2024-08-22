@@ -368,7 +368,6 @@ namespace TencentCloud
 
                 /**
                  *用于查询已建立的标签列表。
-
                  * @param req DescribeTagsSeqRequest
                  * @return DescribeTagsSeqOutcome
                  */

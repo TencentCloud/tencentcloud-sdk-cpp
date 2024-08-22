@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取播放者的 ID，以十六进制表示，共6位，该参数用于 [溯源水印](https://cloud.tencent.com/document/product/266/75789) 使用场景。
-                     * @return Uv 播放者的 ID，以十六进制表示，共6位，该参数用于 [溯源水印](https://cloud.tencent.com/document/product/266/75789) 使用场景。
+                     * 获取播放者的 ID，以十六进制表示，共6位。
+                     * @return Uv 播放者的 ID，以十六进制表示，共6位。
                      * 
                      */
                     std::string GetUv() const;
 
                     /**
-                     * 设置播放者的 ID，以十六进制表示，共6位，该参数用于 [溯源水印](https://cloud.tencent.com/document/product/266/75789) 使用场景。
-                     * @param _uv 播放者的 ID，以十六进制表示，共6位，该参数用于 [溯源水印](https://cloud.tencent.com/document/product/266/75789) 使用场景。
+                     * 设置播放者的 ID，以十六进制表示，共6位。
+                     * @param _uv 播放者的 ID，以十六进制表示，共6位。
                      * 
                      */
                     void SetUv(const std::string& _uv);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 播放者的 ID，以十六进制表示，共6位，该参数用于 [溯源水印](https://cloud.tencent.com/document/product/266/75789) 使用场景。
+                     * 播放者的 ID，以十六进制表示，共6位。
                      */
                     std::string m_uv;
                     bool m_uvHasBeenSet;

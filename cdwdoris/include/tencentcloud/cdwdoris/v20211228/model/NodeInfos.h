@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点在doris中明朝n
-                     * @return NodeName 节点在doris中明朝n
+                     * 获取节点名称
+                     * @return NodeName 节点名称
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
-                     * 设置节点在doris中明朝n
-                     * @param _nodeName 节点在doris中明朝n
+                     * 设置节点名称
+                     * @param _nodeName 节点名称
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -175,7 +175,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点在doris中明朝n
+                     * 节点名称
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;

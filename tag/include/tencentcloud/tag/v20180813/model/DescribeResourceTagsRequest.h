@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建者uin
-                     * @return CreateUin 创建者uin
+                     * 获取资源创建者UIN
+                     * @return CreateUin 资源创建者UIN
                      * 
                      */
                     uint64_t GetCreateUin() const;
 
                     /**
-                     * 设置创建者uin
-                     * @param _createUin 创建者uin
+                     * 设置资源创建者UIN
+                     * @param _createUin 资源创建者UIN
                      * 
                      */
                     void SetCreateUin(const uint64_t& _createUin);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CreateUinHasBeenSet() const;
 
                     /**
-                     * 获取资源所在地域
-                     * @return ResourceRegion 资源所在地域
+                     * 获取资源所在地域，示例：ap-guangzhou 。不区分地域的资源则不需要传入该字段，区分地域的资源必填
+                     * @return ResourceRegion 资源所在地域，示例：ap-guangzhou 。不区分地域的资源则不需要传入该字段，区分地域的资源必填
                      * 
                      */
                     std::string GetResourceRegion() const;
 
                     /**
-                     * 设置资源所在地域
-                     * @param _resourceRegion 资源所在地域
+                     * 设置资源所在地域，示例：ap-guangzhou 。不区分地域的资源则不需要传入该字段，区分地域的资源必填
+                     * @param _resourceRegion 资源所在地域，示例：ap-guangzhou 。不区分地域的资源则不需要传入该字段，区分地域的资源必填
                      * 
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ResourceRegionHasBeenSet() const;
 
                     /**
-                     * 获取业务类型
-                     * @return ServiceType 业务类型
+                     * 获取业务类型，示例 ckafka。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka
+                     * @return ServiceType 业务类型，示例 ckafka。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置业务类型
-                     * @param _serviceType 业务类型
+                     * 设置业务类型，示例 ckafka。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka
+                     * @param _serviceType 业务类型，示例 ckafka。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源前缀
-                     * @return ResourcePrefix 资源前缀
+                     * 获取该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId
+                     * @return ResourcePrefix 该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId
                      * 
                      */
                     std::string GetResourcePrefix() const;
 
                     /**
-                     * 设置资源前缀
-                     * @param _resourcePrefix 资源前缀
+                     * 设置该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId
+                     * @param _resourcePrefix 该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId
                      * 
                      */
                     void SetResourcePrefix(const std::string& _resourcePrefix);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ResourcePrefixHasBeenSet() const;
 
                     /**
-                     * 获取资源唯一标识。只输入ResourceId进行查询可能会查询较慢，或者无法匹配到结果，建议在输入ResourceId的同时也输入ServiceType、ResourcePrefix和ResourceRegion（不区分地域的资源可忽略该参数）
-                     * @return ResourceId 资源唯一标识。只输入ResourceId进行查询可能会查询较慢，或者无法匹配到结果，建议在输入ResourceId的同时也输入ServiceType、ResourcePrefix和ResourceRegion（不区分地域的资源可忽略该参数）
+                     * 获取资源唯一标识（资源六段式中最后一段"/"后面的部分）。注：只输入ResourceId查询时，如资源量大可能较慢，或无法匹配到结果，建议在输入ResourceId的同时也输入ServiceType、ResourcePrefix和ResourceRegion（不区分地域的资源可忽略该参数）。若传入的是cos资源的Id，则CosResourceId 字段请同时传1。
+                     * @return ResourceId 资源唯一标识（资源六段式中最后一段"/"后面的部分）。注：只输入ResourceId查询时，如资源量大可能较慢，或无法匹配到结果，建议在输入ResourceId的同时也输入ServiceType、ResourcePrefix和ResourceRegion（不区分地域的资源可忽略该参数）。若传入的是cos资源的Id，则CosResourceId 字段请同时传1。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源唯一标识。只输入ResourceId进行查询可能会查询较慢，或者无法匹配到结果，建议在输入ResourceId的同时也输入ServiceType、ResourcePrefix和ResourceRegion（不区分地域的资源可忽略该参数）
-                     * @param _resourceId 资源唯一标识。只输入ResourceId进行查询可能会查询较慢，或者无法匹配到结果，建议在输入ResourceId的同时也输入ServiceType、ResourcePrefix和ResourceRegion（不区分地域的资源可忽略该参数）
+                     * 设置资源唯一标识（资源六段式中最后一段"/"后面的部分）。注：只输入ResourceId查询时，如资源量大可能较慢，或无法匹配到结果，建议在输入ResourceId的同时也输入ServiceType、ResourcePrefix和ResourceRegion（不区分地域的资源可忽略该参数）。若传入的是cos资源的Id，则CosResourceId 字段请同时传1。
+                     * @param _resourceId 资源唯一标识（资源六段式中最后一段"/"后面的部分）。注：只输入ResourceId查询时，如资源量大可能较慢，或无法匹配到结果，建议在输入ResourceId的同时也输入ServiceType、ResourcePrefix和ResourceRegion（不区分地域的资源可忽略该参数）。若传入的是cos资源的Id，则CosResourceId 字段请同时传1。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取是否是cos的资源（0或者1），输入的ResourceId为cos资源时必填
-                     * @return CosResourceId 是否是cos的资源（0或者1），输入的ResourceId为cos资源时必填
+                     * 获取是否为cos的资源，取值 0 表示：非cos资源。取值1 表示：cos资源，且此时ResourceId也为必填。不填则默认为 0 
+                     * @return CosResourceId 是否为cos的资源，取值 0 表示：非cos资源。取值1 表示：cos资源，且此时ResourceId也为必填。不填则默认为 0 
                      * 
                      */
                     uint64_t GetCosResourceId() const;
 
                     /**
-                     * 设置是否是cos的资源（0或者1），输入的ResourceId为cos资源时必填
-                     * @param _cosResourceId 是否是cos的资源（0或者1），输入的ResourceId为cos资源时必填
+                     * 设置是否为cos的资源，取值 0 表示：非cos资源。取值1 表示：cos资源，且此时ResourceId也为必填。不填则默认为 0 
+                     * @param _cosResourceId 是否为cos的资源，取值 0 表示：非cos资源。取值1 表示：cos资源，且此时ResourceId也为必填。不填则默认为 0 
                      * 
                      */
                     void SetCosResourceId(const uint64_t& _cosResourceId);
@@ -213,31 +213,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建者uin
+                     * 资源创建者UIN
                      */
                     uint64_t m_createUin;
                     bool m_createUinHasBeenSet;
 
                     /**
-                     * 资源所在地域
+                     * 资源所在地域，示例：ap-guangzhou 。不区分地域的资源则不需要传入该字段，区分地域的资源必填
                      */
                     std::string m_resourceRegion;
                     bool m_resourceRegionHasBeenSet;
 
                     /**
-                     * 业务类型
+                     * 业务类型，示例 ckafka。指资源所属业务类型，也是资源六段式中的第三段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中业务类型为ckafka
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * 资源前缀
+                     * 该业务类型对应的资源前缀，示例 cvm对应instance、image、volume等。也是资源六段式中的第六段，例如qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584中资源前缀为ckafkaId
                      */
                     std::string m_resourcePrefix;
                     bool m_resourcePrefixHasBeenSet;
 
                     /**
-                     * 资源唯一标识。只输入ResourceId进行查询可能会查询较慢，或者无法匹配到结果，建议在输入ResourceId的同时也输入ServiceType、ResourcePrefix和ResourceRegion（不区分地域的资源可忽略该参数）
+                     * 资源唯一标识（资源六段式中最后一段"/"后面的部分）。注：只输入ResourceId查询时，如资源量大可能较慢，或无法匹配到结果，建议在输入ResourceId的同时也输入ServiceType、ResourcePrefix和ResourceRegion（不区分地域的资源可忽略该参数）。若传入的是cos资源的Id，则CosResourceId 字段请同时传1。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 是否是cos的资源（0或者1），输入的ResourceId为cos资源时必填
+                     * 是否为cos的资源，取值 0 表示：非cos资源。取值1 表示：cos资源，且此时ResourceId也为必填。不填则默认为 0 
                      */
                     uint64_t m_cosResourceId;
                     bool m_cosResourceIdHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源所属业务名称（资源六段式中的第三段）
-                     * @return ServiceType 资源所属业务名称（资源六段式中的第三段）
+                     * 获取业务类型，示例 cvm 。资源所属业务名称（资源六段式中的第三段）
+                     * @return ServiceType 业务类型，示例 cvm 。资源所属业务名称（资源六段式中的第三段）
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置资源所属业务名称（资源六段式中的第三段）
-                     * @param _serviceType 资源所属业务名称（资源六段式中的第三段）
+                     * 设置业务类型，示例 cvm 。资源所属业务名称（资源六段式中的第三段）
+                     * @param _serviceType 业务类型，示例 cvm 。资源所属业务名称（资源六段式中的第三段）
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TagValueHasBeenSet() const;
 
                     /**
-                     * 获取资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填
-                     * @return ResourceRegion 资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填
+                     * 获取资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填
+                     * @return ResourceRegion 资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填
                      * 
                      */
                     std::string GetResourceRegion() const;
 
                     /**
-                     * 设置资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填
-                     * @param _resourceRegion 资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填
+                     * 设置资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填
+                     * @param _resourceRegion 资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填
                      * 
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ResourceRegionHasBeenSet() const;
 
                     /**
-                     * 获取资源前缀（资源六段式中最后一段"/"前面的部分），cos存储桶不需要传入该字段，其他云资源必填
-                     * @return ResourcePrefix 资源前缀（资源六段式中最后一段"/"前面的部分），cos存储桶不需要传入该字段，其他云资源必填
+                     * 获取资源前缀（资源六段式中最后一段"/"前面的部分），例如“qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584” 中资源前缀为ckafkaId），cos存储桶不需要传入该字段，其他云资源必填
+                     * @return ResourcePrefix 资源前缀（资源六段式中最后一段"/"前面的部分），例如“qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584” 中资源前缀为ckafkaId），cos存储桶不需要传入该字段，其他云资源必填
                      * 
                      */
                     std::string GetResourcePrefix() const;
 
                     /**
-                     * 设置资源前缀（资源六段式中最后一段"/"前面的部分），cos存储桶不需要传入该字段，其他云资源必填
-                     * @param _resourcePrefix 资源前缀（资源六段式中最后一段"/"前面的部分），cos存储桶不需要传入该字段，其他云资源必填
+                     * 设置资源前缀（资源六段式中最后一段"/"前面的部分），例如“qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584” 中资源前缀为ckafkaId），cos存储桶不需要传入该字段，其他云资源必填
+                     * @param _resourcePrefix 资源前缀（资源六段式中最后一段"/"前面的部分），例如“qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584” 中资源前缀为ckafkaId），cos存储桶不需要传入该字段，其他云资源必填
                      * 
                      */
                     void SetResourcePrefix(const std::string& _resourcePrefix);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源所属业务名称（资源六段式中的第三段）
+                     * 业务类型，示例 cvm 。资源所属业务名称（资源六段式中的第三段）
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
@@ -195,13 +195,13 @@ namespace TencentCloud
                     bool m_tagValueHasBeenSet;
 
                     /**
-                     * 资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填
+                     * 资源所在地域，示例：ap-guangzhou 不区分地域的资源不需要传入该字段，区分地域的资源必填
                      */
                     std::string m_resourceRegion;
                     bool m_resourceRegionHasBeenSet;
 
                     /**
-                     * 资源前缀（资源六段式中最后一段"/"前面的部分），cos存储桶不需要传入该字段，其他云资源必填
+                     * 资源前缀（资源六段式中最后一段"/"前面的部分），例如“qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584” 中资源前缀为ckafkaId），cos存储桶不需要传入该字段，其他云资源必填
                      */
                     std::string m_resourcePrefix;
                     bool m_resourcePrefixHasBeenSet;

@@ -27,7 +27,8 @@ ModifyWarningHostConfigRequest::ModifyWarningHostConfigRequest() :
     m_hostRangeHasBeenSet(false),
     m_itemLabelsHasBeenSet(false),
     m_quuidsHasBeenSet(false),
-    m_itemLabelIdsHasBeenSet(false)
+    m_itemLabelIdsHasBeenSet(false),
+    m_excludedQuuidsHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,19 @@ string ModifyWarningHostConfigRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_itemLabelIds.begin(); itr != m_itemLabelIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_excludedQuuidsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludedQuuids";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludedQuuids.begin(); itr != m_excludedQuuids.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -179,6 +193,22 @@ void ModifyWarningHostConfigRequest::SetItemLabelIds(const vector<string>& _item
 bool ModifyWarningHostConfigRequest::ItemLabelIdsHasBeenSet() const
 {
     return m_itemLabelIdsHasBeenSet;
+}
+
+vector<string> ModifyWarningHostConfigRequest::GetExcludedQuuids() const
+{
+    return m_excludedQuuids;
+}
+
+void ModifyWarningHostConfigRequest::SetExcludedQuuids(const vector<string>& _excludedQuuids)
+{
+    m_excludedQuuids = _excludedQuuids;
+    m_excludedQuuidsHasBeenSet = true;
+}
+
+bool ModifyWarningHostConfigRequest::ExcludedQuuidsHasBeenSet() const
+{
+    return m_excludedQuuidsHasBeenSet;
 }
 
 

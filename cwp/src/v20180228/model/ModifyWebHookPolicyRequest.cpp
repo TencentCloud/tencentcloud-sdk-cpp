@@ -31,7 +31,8 @@ ModifyWebHookPolicyRequest::ModifyWebHookPolicyRequest() :
     m_formatHasBeenSet(false),
     m_customFieldsHasBeenSet(false),
     m_isDisabledHasBeenSet(false),
-    m_quuidsHasBeenSet(false)
+    m_quuidsHasBeenSet(false),
+    m_excludedQuuidsHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,19 @@ string ModifyWebHookPolicyRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_quuids.begin(); itr != m_quuids.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_excludedQuuidsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludedQuuids";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludedQuuids.begin(); itr != m_excludedQuuids.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -297,6 +311,22 @@ void ModifyWebHookPolicyRequest::SetQuuids(const vector<string>& _quuids)
 bool ModifyWebHookPolicyRequest::QuuidsHasBeenSet() const
 {
     return m_quuidsHasBeenSet;
+}
+
+vector<string> ModifyWebHookPolicyRequest::GetExcludedQuuids() const
+{
+    return m_excludedQuuids;
+}
+
+void ModifyWebHookPolicyRequest::SetExcludedQuuids(const vector<string>& _excludedQuuids)
+{
+    m_excludedQuuids = _excludedQuuids;
+    m_excludedQuuidsHasBeenSet = true;
+}
+
+bool ModifyWebHookPolicyRequest::ExcludedQuuidsHasBeenSet() const
+{
+    return m_excludedQuuidsHasBeenSet;
 }
 
 

@@ -121,6 +121,20 @@ namespace TencentCloud
                      */
                     bool ItemLabelIdsHasBeenSet() const;
 
+                    /**
+                     * 获取需排除的机器列表
+                     * @return ExcludedQuuids 需排除的机器列表
+                     * 
+                     */
+                    std::vector<std::string> GetExcludedQuuids() const;
+
+                    /**
+                     * 判断参数 ExcludedQuuids 是否已赋值
+                     * @return ExcludedQuuids 是否已赋值
+                     * 
+                     */
+                    bool ExcludedQuuidsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +170,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_itemLabelIds;
                     bool m_itemLabelIdsHasBeenSet;
+
+                    /**
+                     * 需排除的机器列表
+                     */
+                    std::vector<std::string> m_excludedQuuids;
+                    bool m_excludedQuuidsHasBeenSet;
 
                 };
             }

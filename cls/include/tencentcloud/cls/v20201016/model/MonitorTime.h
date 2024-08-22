@@ -47,27 +47,31 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行周期， 可选值：`Period`、`Fixed`。
+                     * 获取执行周期， 可选值：`Period`、`Fixed`、`Cron`。
 
 - Period：固定频率
 - Fixed：固定时间
-                     * @return Type 执行周期， 可选值：`Period`、`Fixed`。
+- Cron：Cron表达式
+                     * @return Type 执行周期， 可选值：`Period`、`Fixed`、`Cron`。
 
 - Period：固定频率
 - Fixed：固定时间
+- Cron：Cron表达式
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置执行周期， 可选值：`Period`、`Fixed`。
+                     * 设置执行周期， 可选值：`Period`、`Fixed`、`Cron`。
 
 - Period：固定频率
 - Fixed：固定时间
-                     * @param _type 执行周期， 可选值：`Period`、`Fixed`。
+- Cron：Cron表达式
+                     * @param _type 执行周期， 可选值：`Period`、`Fixed`、`Cron`。
 
 - Period：固定频率
 - Fixed：固定时间
+- Cron：Cron表达式
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -107,10 +111,11 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行周期， 可选值：`Period`、`Fixed`。
+                     * 执行周期， 可选值：`Period`、`Fixed`、`Cron`。
 
 - Period：固定频率
 - Fixed：固定时间
+- Cron：Cron表达式
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

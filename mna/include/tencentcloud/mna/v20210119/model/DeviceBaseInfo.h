@@ -297,6 +297,56 @@ namespace TencentCloud
                      */
                     bool FlowTruncHasBeenSet() const;
 
+                    /**
+                     * 获取设备sn
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Sn 设备sn
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSn() const;
+
+                    /**
+                     * 设置设备sn
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sn 设备sn
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSn(const std::string& _sn);
+
+                    /**
+                     * 判断参数 Sn 是否已赋值
+                     * @return Sn 是否已赋值
+                     * 
+                     */
+                    bool SnHasBeenSet() const;
+
+                    /**
+                     * 获取厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Vendor 厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVendor() const;
+
+                    /**
+                     * 设置厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vendor 厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVendor(const std::string& _vendor);
+
+                    /**
+                     * 判断参数 Vendor 是否已赋值
+                     * @return Vendor 是否已赋值
+                     * 
+                     */
+                    bool VendorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -369,6 +419,20 @@ namespace TencentCloud
                      */
                     int64_t m_flowTrunc;
                     bool m_flowTruncHasBeenSet;
+
+                    /**
+                     * 设备sn
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sn;
+                    bool m_snHasBeenSet;
+
+                    /**
+                     * 厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vendor;
+                    bool m_vendorHasBeenSet;
 
                 };
             }

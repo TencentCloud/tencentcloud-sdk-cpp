@@ -31,7 +31,8 @@ ScanVulSettingRequest::ScanVulSettingRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_enableScanHasBeenSet(false),
-    m_uuidsHasBeenSet(false)
+    m_uuidsHasBeenSet(false),
+    m_scanMethodHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,14 @@ string ScanVulSettingRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_scanMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scanMethod, allocator);
     }
 
 
@@ -279,6 +288,22 @@ void ScanVulSettingRequest::SetUuids(const vector<string>& _uuids)
 bool ScanVulSettingRequest::UuidsHasBeenSet() const
 {
     return m_uuidsHasBeenSet;
+}
+
+uint64_t ScanVulSettingRequest::GetScanMethod() const
+{
+    return m_scanMethod;
+}
+
+void ScanVulSettingRequest::SetScanMethod(const uint64_t& _scanMethod)
+{
+    m_scanMethod = _scanMethod;
+    m_scanMethodHasBeenSet = true;
+}
+
+bool ScanVulSettingRequest::ScanMethodHasBeenSet() const
+{
+    return m_scanMethodHasBeenSet;
 }
 
 

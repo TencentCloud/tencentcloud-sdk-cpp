@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool WatermarkSetHasBeenSet() const;
 
                     /**
-                     * 获取溯源水印。
-                     * @return TraceWatermark 溯源水印。
+                     * 获取溯源水印，该功能已不再支持使用。
+                     * @return TraceWatermark 溯源水印，该功能已不再支持使用。
                      * 
                      */
                     TraceWatermarkInput GetTraceWatermark() const;
 
                     /**
-                     * 设置溯源水印。
-                     * @param _traceWatermark 溯源水印。
+                     * 设置溯源水印，该功能已不再支持使用。
+                     * @param _traceWatermark 溯源水印，该功能已不再支持使用。
                      * 
                      */
                     void SetTraceWatermark(const TraceWatermarkInput& _traceWatermark);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool TraceWatermarkHasBeenSet() const;
 
                     /**
-                     * 获取版权水印。
-                     * @return CopyRightWatermark 版权水印。
+                     * 获取版权水印，该功能已不再支持使用。
+                     * @return CopyRightWatermark 版权水印，该功能已不再支持使用。
                      * 
                      */
                     CopyRightWatermarkInput GetCopyRightWatermark() const;
 
                     /**
-                     * 设置版权水印。
-                     * @param _copyRightWatermark 版权水印。
+                     * 设置版权水印，该功能已不再支持使用。
+                     * @param _copyRightWatermark 版权水印，该功能已不再支持使用。
                      * 
                      */
                     void SetCopyRightWatermark(const CopyRightWatermarkInput& _copyRightWatermark);
@@ -169,13 +169,13 @@ namespace TencentCloud
                     bool m_watermarkSetHasBeenSet;
 
                     /**
-                     * 溯源水印。
+                     * 溯源水印，该功能已不再支持使用。
                      */
                     TraceWatermarkInput m_traceWatermark;
                     bool m_traceWatermarkHasBeenSet;
 
                     /**
-                     * 版权水印。
+                     * 版权水印，该功能已不再支持使用。
                      */
                     CopyRightWatermarkInput m_copyRightWatermark;
                     bool m_copyRightWatermarkHasBeenSet;

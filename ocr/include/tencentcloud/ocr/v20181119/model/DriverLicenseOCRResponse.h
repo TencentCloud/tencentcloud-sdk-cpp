@@ -363,6 +363,24 @@ WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
                      */
                     bool BackPageCardCodeHasBeenSet() const;
 
+                    /**
+                     * 获取驾驶证类型
+电子驾驶证：Electronic
+普通驾驶证：Normal
+                     * @return DriverLicenseType 驾驶证类型
+电子驾驶证：Electronic
+普通驾驶证：Normal
+                     * 
+                     */
+                    std::string GetDriverLicenseType() const;
+
+                    /**
+                     * 判断参数 DriverLicenseType 是否已赋值
+                     * @return DriverLicenseType 是否已赋值
+                     * 
+                     */
+                    bool DriverLicenseTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -503,6 +521,14 @@ WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
                      */
                     std::string m_backPageCardCode;
                     bool m_backPageCardCodeHasBeenSet;
+
+                    /**
+                     * 驾驶证类型
+电子驾驶证：Electronic
+普通驾驶证：Normal
+                     */
+                    std::string m_driverLicenseType;
+                    bool m_driverLicenseTypeHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ DescribeWarningHostConfigResponse::DescribeWarningHostConfigResponse() :
     m_itemLabelsHasBeenSet(false),
     m_quuidsHasBeenSet(false),
     m_totalCountHasBeenSet(false),
-    m_itemLabelIdsHasBeenSet(false)
+    m_itemLabelIdsHasBeenSet(false),
+    m_excludedQuuidsHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,19 @@ CoreInternalOutcome DescribeWarningHostConfigResponse::Deserialize(const string 
         m_itemLabelIdsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExcludedQuuids") && !rsp["ExcludedQuuids"].IsNull())
+    {
+        if (!rsp["ExcludedQuuids"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExcludedQuuids` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ExcludedQuuids"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_excludedQuuids.push_back((*itr).GetString());
+        }
+        m_excludedQuuidsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -190,6 +204,19 @@ string DescribeWarningHostConfigResponse::ToJsonString() const
         }
     }
 
+    if (m_excludedQuuidsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludedQuuids";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludedQuuids.begin(); itr != m_excludedQuuids.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -250,6 +277,16 @@ vector<string> DescribeWarningHostConfigResponse::GetItemLabelIds() const
 bool DescribeWarningHostConfigResponse::ItemLabelIdsHasBeenSet() const
 {
     return m_itemLabelIdsHasBeenSet;
+}
+
+vector<string> DescribeWarningHostConfigResponse::GetExcludedQuuids() const
+{
+    return m_excludedQuuids;
+}
+
+bool DescribeWarningHostConfigResponse::ExcludedQuuidsHasBeenSet() const
+{
+    return m_excludedQuuidsHasBeenSet;
 }
 
 

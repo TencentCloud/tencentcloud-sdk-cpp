@@ -44,7 +44,8 @@ DriverLicenseOCRResponse::DriverLicenseOCRResponse() :
     m_currentTimeHasBeenSet(false),
     m_generateTimeHasBeenSet(false),
     m_backPageNameHasBeenSet(false),
-    m_backPageCardCodeHasBeenSet(false)
+    m_backPageCardCodeHasBeenSet(false),
+    m_driverLicenseTypeHasBeenSet(false)
 {
 }
 
@@ -298,6 +299,16 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
         m_backPageCardCodeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DriverLicenseType") && !rsp["DriverLicenseType"].IsNull())
+    {
+        if (!rsp["DriverLicenseType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DriverLicenseType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_driverLicenseType = string(rsp["DriverLicenseType"].GetString());
+        m_driverLicenseTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -484,6 +495,14 @@ string DriverLicenseOCRResponse::ToJsonString() const
         string key = "BackPageCardCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backPageCardCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_driverLicenseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DriverLicenseType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_driverLicenseType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -706,6 +725,16 @@ string DriverLicenseOCRResponse::GetBackPageCardCode() const
 bool DriverLicenseOCRResponse::BackPageCardCodeHasBeenSet() const
 {
     return m_backPageCardCodeHasBeenSet;
+}
+
+string DriverLicenseOCRResponse::GetDriverLicenseType() const
+{
+    return m_driverLicenseType;
+}
+
+bool DriverLicenseOCRResponse::DriverLicenseTypeHasBeenSet() const
+{
+    return m_driverLicenseTypeHasBeenSet;
 }
 
 

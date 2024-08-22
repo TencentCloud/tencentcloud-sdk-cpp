@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TriggerNameHasBeenSet() const;
 
                     /**
-                     * 获取触发器类型
-                     * @return Type 触发器类型
+                     * 获取触发器类型，触发器类型，目前只支持 timer、 cos  、 ckafka三种类型
+                     * @return Type 触发器类型，触发器类型，目前只支持 timer、 cos  、 ckafka三种类型
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置触发器类型
-                     * @param _type 触发器类型
+                     * 设置触发器类型，触发器类型，目前只支持 timer、 cos  、 ckafka三种类型
+                     * @param _type 触发器类型，触发器类型，目前只支持 timer、 cos  、 ckafka三种类型
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取函数的版本，默认为 $LATEST，建议填写 [$DEFAULT](https://cloud.tencent.com/document/product/583/36149#.E9.BB.98.E8.AE.A4.E5.88.AB.E5.90.8D)方便后续进行版本的灰度发布。
-                     * @return Qualifier 函数的版本，默认为 $LATEST，建议填写 [$DEFAULT](https://cloud.tencent.com/document/product/583/36149#.E9.BB.98.E8.AE.A4.E5.88.AB.E5.90.8D)方便后续进行版本的灰度发布。
+                     * 获取触发器在创建时所指向的触发别名或版本，默认值为$LATEST
+                     * @return Qualifier 触发器在创建时所指向的触发别名或版本，默认值为$LATEST
                      * 
                      */
                     std::string GetQualifier() const;
 
                     /**
-                     * 设置函数的版本，默认为 $LATEST，建议填写 [$DEFAULT](https://cloud.tencent.com/document/product/583/36149#.E9.BB.98.E8.AE.A4.E5.88.AB.E5.90.8D)方便后续进行版本的灰度发布。
-                     * @param _qualifier 函数的版本，默认为 $LATEST，建议填写 [$DEFAULT](https://cloud.tencent.com/document/product/583/36149#.E9.BB.98.E8.AE.A4.E5.88.AB.E5.90.8D)方便后续进行版本的灰度发布。
+                     * 设置触发器在创建时所指向的触发别名或版本，默认值为$LATEST
+                     * @param _qualifier 触发器在创建时所指向的触发别名或版本，默认值为$LATEST
                      * 
                      */
                     void SetQualifier(const std::string& _qualifier);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool QualifierHasBeenSet() const;
 
                     /**
-                     * 获取函数的命名空间
-                     * @return Namespace 函数的命名空间
+                     * 获取函数所在的命名空间，默认值为default
+                     * @return Namespace 函数所在的命名空间，默认值为default
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置函数的命名空间
-                     * @param _namespace 函数的命名空间
+                     * 设置函数所在的命名空间，默认值为default
+                     * @param _namespace 函数所在的命名空间，默认值为default
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -210,19 +210,19 @@ namespace TencentCloud
                     bool m_triggerNameHasBeenSet;
 
                     /**
-                     * 触发器类型
+                     * 触发器类型，触发器类型，目前只支持 timer、 cos  、 ckafka三种类型
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 函数的版本，默认为 $LATEST，建议填写 [$DEFAULT](https://cloud.tencent.com/document/product/583/36149#.E9.BB.98.E8.AE.A4.E5.88.AB.E5.90.8D)方便后续进行版本的灰度发布。
+                     * 触发器在创建时所指向的触发别名或版本，默认值为$LATEST
                      */
                     std::string m_qualifier;
                     bool m_qualifierHasBeenSet;
 
                     /**
-                     * 函数的命名空间
+                     * 函数所在的命名空间，默认值为default
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;

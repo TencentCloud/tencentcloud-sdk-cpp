@@ -396,6 +396,31 @@ namespace TencentCloud
                      */
                     bool OnCallFormIDsHasBeenSet() const;
 
+                    /**
+                     * 获取电话按键确认
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VoiceConfirmKey 电话按键确认
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVoiceConfirmKey() const;
+
+                    /**
+                     * 设置电话按键确认
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _voiceConfirmKey 电话按键确认
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVoiceConfirmKey(const std::string& _voiceConfirmKey);
+
+                    /**
+                     * 判断参数 VoiceConfirmKey 是否已赋值
+                     * @return VoiceConfirmKey 是否已赋值
+                     * 
+                     */
+                    bool VoiceConfirmKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -495,6 +520,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_onCallFormIDs;
                     bool m_onCallFormIDsHasBeenSet;
+
+                    /**
+                     * 电话按键确认
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_voiceConfirmKey;
+                    bool m_voiceConfirmKeyHasBeenSet;
 
                 };
             }

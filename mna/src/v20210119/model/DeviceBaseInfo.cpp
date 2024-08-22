@@ -31,7 +31,9 @@ DeviceBaseInfo::DeviceBaseInfo() :
     m_payerHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_flowTruncHasBeenSet(false)
+    m_flowTruncHasBeenSet(false),
+    m_snHasBeenSet(false),
+    m_vendorHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome DeviceBaseInfo::Deserialize(const rapidjson::Value &value)
         m_flowTruncHasBeenSet = true;
     }
 
+    if (value.HasMember("Sn") && !value["Sn"].IsNull())
+    {
+        if (!value["Sn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceBaseInfo.Sn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sn = string(value["Sn"].GetString());
+        m_snHasBeenSet = true;
+    }
+
+    if (value.HasMember("Vendor") && !value["Vendor"].IsNull())
+    {
+        if (!value["Vendor"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceBaseInfo.Vendor` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vendor = string(value["Vendor"].GetString());
+        m_vendorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +265,22 @@ void DeviceBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "FlowTrunc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowTrunc, allocator);
+    }
+
+    if (m_snHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vendorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vendor";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vendor.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +460,37 @@ void DeviceBaseInfo::SetFlowTrunc(const int64_t& _flowTrunc)
 bool DeviceBaseInfo::FlowTruncHasBeenSet() const
 {
     return m_flowTruncHasBeenSet;
+}
+
+string DeviceBaseInfo::GetSn() const
+{
+    return m_sn;
+}
+
+void DeviceBaseInfo::SetSn(const string& _sn)
+{
+    m_sn = _sn;
+    m_snHasBeenSet = true;
+}
+
+bool DeviceBaseInfo::SnHasBeenSet() const
+{
+    return m_snHasBeenSet;
+}
+
+string DeviceBaseInfo::GetVendor() const
+{
+    return m_vendor;
+}
+
+void DeviceBaseInfo::SetVendor(const string& _vendor)
+{
+    m_vendor = _vendor;
+    m_vendorHasBeenSet = true;
+}
+
+bool DeviceBaseInfo::VendorHasBeenSet() const
+{
+    return m_vendorHasBeenSet;
 }
 

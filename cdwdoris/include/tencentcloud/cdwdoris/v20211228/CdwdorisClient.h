@@ -656,7 +656,7 @@ namespace TencentCloud
                 DescribeSpecOutcomeCallable DescribeSpecCallable(const Model::DescribeSpecRequest& request);
 
                 /**
-                 *针对驱动sql命令查询ck集群接口
+                 *针对驱动sql命令查询集群接口
                  * @param req DescribeSqlApisRequest
                  * @return DescribeSqlApisOutcome
                  */

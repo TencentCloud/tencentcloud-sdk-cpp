@@ -2138,7 +2138,7 @@ namespace TencentCloud
                 ExecuteFunctionOutcomeCallable ExecuteFunctionCallable(const Model::ExecuteFunctionRequest& request);
 
                 /**
-                 *提取版权水印信息。
+                 *该 API 已经<font color='red'>不再维护</font>。如果有盗录溯源需求，请参考 [幽灵水印](https://cloud.tencent.com/document/product/266/94228)。
                  * @param req ExtractCopyRightWatermarkRequest
                  * @return ExtractCopyRightWatermarkOutcome
                  */
@@ -2147,7 +2147,7 @@ namespace TencentCloud
                 ExtractCopyRightWatermarkOutcomeCallable ExtractCopyRightWatermarkCallable(const Model::ExtractCopyRightWatermarkRequest& request);
 
                 /**
-                 *用于提取溯源水印。
+                 *该 API 已经<font color='red'>不再维护</font>。如果有盗录溯源需求，请参考 [幽灵水印](https://cloud.tencent.com/document/product/266/94228)。
                  * @param req ExtractTraceWatermarkRequest
                  * @return ExtractTraceWatermarkOutcome
                  */

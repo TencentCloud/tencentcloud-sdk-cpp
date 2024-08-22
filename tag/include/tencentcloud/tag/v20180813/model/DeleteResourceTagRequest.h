@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TagKeyHasBeenSet() const;
 
                     /**
-                     * 获取[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)
-                     * @return Resource [ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)
+                     * 获取资源六段式。示例：qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584
+                     * @return Resource 资源六段式。示例：qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
-                     * 设置[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)
-                     * @param _resource [ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)
+                     * 设置资源六段式。示例：qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584
+                     * @param _resource 资源六段式。示例：qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_tagKeyHasBeenSet;
 
                     /**
-                     * [ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)
+                     * 资源六段式。示例：qcs::ckafka:ap-shanghai:uin/123456789:ckafkaId/ckafka-o85jq584
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;

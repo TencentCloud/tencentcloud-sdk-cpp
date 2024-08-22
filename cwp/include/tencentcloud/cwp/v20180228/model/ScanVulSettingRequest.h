@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool UuidsHasBeenSet() const;
 
+                    /**
+                     * 获取0版本比对，2版本比对+poc
+                     * @return ScanMethod 0版本比对，2版本比对+poc
+                     * 
+                     */
+                    uint64_t GetScanMethod() const;
+
+                    /**
+                     * 设置0版本比对，2版本比对+poc
+                     * @param _scanMethod 0版本比对，2版本比对+poc
+                     * 
+                     */
+                    void SetScanMethod(const uint64_t& _scanMethod);
+
+                    /**
+                     * 判断参数 ScanMethod 是否已赋值
+                     * @return ScanMethod 是否已赋值
+                     * 
+                     */
+                    bool ScanMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_uuids;
                     bool m_uuidsHasBeenSet;
+
+                    /**
+                     * 0版本比对，2版本比对+poc
+                     */
+                    uint64_t m_scanMethod;
+                    bool m_scanMethodHasBeenSet;
 
                 };
             }

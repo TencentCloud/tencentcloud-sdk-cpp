@@ -33,7 +33,8 @@ DescribeScanVulSettingResponse::DescribeScanVulSettingResponse() :
     m_enableScanHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_clickTimeoutHasBeenSet(false),
-    m_uuidsHasBeenSet(false)
+    m_uuidsHasBeenSet(false),
+    m_scanMethodHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,16 @@ CoreInternalOutcome DescribeScanVulSettingResponse::Deserialize(const string &pa
         m_uuidsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ScanMethod") && !rsp["ScanMethod"].IsNull())
+    {
+        if (!rsp["ScanMethod"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanMethod` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanMethod = rsp["ScanMethod"].GetUint64();
+        m_scanMethodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -267,6 +278,14 @@ string DescribeScanVulSettingResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_scanMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scanMethod, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -379,6 +398,16 @@ vector<string> DescribeScanVulSettingResponse::GetUuids() const
 bool DescribeScanVulSettingResponse::UuidsHasBeenSet() const
 {
     return m_uuidsHasBeenSet;
+}
+
+uint64_t DescribeScanVulSettingResponse::GetScanMethod() const
+{
+    return m_scanMethod;
+}
+
+bool DescribeScanVulSettingResponse::ScanMethodHasBeenSet() const
+{
+    return m_scanMethodHasBeenSet;
 }
 
 

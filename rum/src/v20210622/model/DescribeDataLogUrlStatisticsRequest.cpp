@@ -43,7 +43,8 @@ DescribeDataLogUrlStatisticsRequest::DescribeDataLogUrlStatisticsRequest() :
     m_isAbroadHasBeenSet(false),
     m_osHasBeenSet(false),
     m_browserHasBeenSet(false),
-    m_envHasBeenSet(false)
+    m_envHasBeenSet(false),
+    m_errorMsgHasBeenSet(false)
 {
 }
 
@@ -220,6 +221,14 @@ string DescribeDataLogUrlStatisticsRequest::ToJsonString() const
         string key = "Env";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_env.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -564,6 +573,22 @@ void DescribeDataLogUrlStatisticsRequest::SetEnv(const string& _env)
 bool DescribeDataLogUrlStatisticsRequest::EnvHasBeenSet() const
 {
     return m_envHasBeenSet;
+}
+
+string DescribeDataLogUrlStatisticsRequest::GetErrorMsg() const
+{
+    return m_errorMsg;
+}
+
+void DescribeDataLogUrlStatisticsRequest::SetErrorMsg(const string& _errorMsg)
+{
+    m_errorMsg = _errorMsg;
+    m_errorMsgHasBeenSet = true;
+}
+
+bool DescribeDataLogUrlStatisticsRequest::ErrorMsgHasBeenSet() const
+{
+    return m_errorMsgHasBeenSet;
 }
 
 

@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool TagKeysHasBeenSet() const;
 
                     /**
-                     * 获取是否展现项目标签
-                     * @return ShowProject 是否展现项目标签
+                     * 获取是否展现项目标签。1:展示  0:不展示
+                     * @return ShowProject 是否展现项目标签。1:展示  0:不展示
                      * 
                      */
                     uint64_t GetShowProject() const;
 
                     /**
-                     * 设置是否展现项目标签
-                     * @param _showProject 是否展现项目标签
+                     * 设置是否展现项目标签。1:展示  0:不展示
+                     * @param _showProject 是否展现项目标签。1:展示  0:不展示
                      * 
                      */
                     void SetShowProject(const uint64_t& _showProject);
@@ -228,7 +228,7 @@ namespace TencentCloud
                     bool m_tagKeysHasBeenSet;
 
                     /**
-                     * 是否展现项目标签
+                     * 是否展现项目标签。1:展示  0:不展示
                      */
                     uint64_t m_showProject;
                     bool m_showProjectHasBeenSet;

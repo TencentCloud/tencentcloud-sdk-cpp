@@ -34,7 +34,8 @@ UserNotice::UserNotice() :
     m_needPhoneArriveNoticeHasBeenSet(false),
     m_phoneCallTypeHasBeenSet(false),
     m_weekdayHasBeenSet(false),
-    m_onCallFormIDsHasBeenSet(false)
+    m_onCallFormIDsHasBeenSet(false),
+    m_voiceConfirmKeyHasBeenSet(false)
 {
 }
 
@@ -201,6 +202,16 @@ CoreInternalOutcome UserNotice::Deserialize(const rapidjson::Value &value)
         m_onCallFormIDsHasBeenSet = true;
     }
 
+    if (value.HasMember("VoiceConfirmKey") && !value["VoiceConfirmKey"].IsNull())
+    {
+        if (!value["VoiceConfirmKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserNotice.VoiceConfirmKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_voiceConfirmKey = string(value["VoiceConfirmKey"].GetString());
+        m_voiceConfirmKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -348,6 +359,14 @@ void UserNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_voiceConfirmKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoiceConfirmKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_voiceConfirmKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -575,5 +594,21 @@ void UserNotice::SetOnCallFormIDs(const vector<string>& _onCallFormIDs)
 bool UserNotice::OnCallFormIDsHasBeenSet() const
 {
     return m_onCallFormIDsHasBeenSet;
+}
+
+string UserNotice::GetVoiceConfirmKey() const
+{
+    return m_voiceConfirmKey;
+}
+
+void UserNotice::SetVoiceConfirmKey(const string& _voiceConfirmKey)
+{
+    m_voiceConfirmKey = _voiceConfirmKey;
+    m_voiceConfirmKeyHasBeenSet = true;
+}
+
+bool UserNotice::VoiceConfirmKeyHasBeenSet() const
+{
+    return m_voiceConfirmKeyHasBeenSet;
 }
 
