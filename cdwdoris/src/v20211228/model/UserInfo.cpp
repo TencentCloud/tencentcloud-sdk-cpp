@@ -27,7 +27,8 @@ UserInfo::UserInfo() :
     m_whiteHostHasBeenSet(false),
     m_oldWhiteHostHasBeenSet(false),
     m_describeHasBeenSet(false),
-    m_oldPwdHasBeenSet(false)
+    m_oldPwdHasBeenSet(false),
+    m_camUinHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
         m_oldPwdHasBeenSet = true;
     }
 
+    if (value.HasMember("CamUin") && !value["CamUin"].IsNull())
+    {
+        if (!value["CamUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserInfo.CamUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_camUin = string(value["CamUin"].GetString());
+        m_camUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void UserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "OldPwd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_oldPwd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_camUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CamUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_camUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void UserInfo::SetOldPwd(const string& _oldPwd)
 bool UserInfo::OldPwdHasBeenSet() const
 {
     return m_oldPwdHasBeenSet;
+}
+
+string UserInfo::GetCamUin() const
+{
+    return m_camUin;
+}
+
+void UserInfo::SetCamUin(const string& _camUin)
+{
+    m_camUin = _camUin;
+    m_camUinHasBeenSet = true;
+}
+
+bool UserInfo::CamUinHasBeenSet() const
+{
+    return m_camUinHasBeenSet;
 }
 

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取"" 或者  某个集群Id
-                     * @return Input "" 或者  某个集群Id
+                     * 获取为空：代表当前appId下所有集群 或者  某个集群Id
+                     * @return Input 为空：代表当前appId下所有集群 或者  某个集群Id
                      * 
                      */
                     std::string GetInput() const;
 
                     /**
-                     * 设置"" 或者  某个集群Id
-                     * @param _input "" 或者  某个集群Id
+                     * 设置为空：代表当前appId下所有集群 或者  某个集群Id
+                     * @param _input 为空：代表当前appId下所有集群 或者  某个集群Id
                      * 
                      */
                     void SetInput(const std::string& _input);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * "" 或者  某个集群Id
+                     * 为空：代表当前appId下所有集群 或者  某个集群Id
                      */
                     std::string m_input;
                     bool m_inputHasBeenSet;

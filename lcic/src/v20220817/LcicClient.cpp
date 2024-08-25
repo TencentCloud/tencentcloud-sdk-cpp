@@ -1459,6 +1459,49 @@ LcicClient::DescribeQuestionListOutcomeCallable LcicClient::DescribeQuestionList
     return task->get_future();
 }
 
+LcicClient::DescribeRecordStreamOutcome LcicClient::DescribeRecordStream(const DescribeRecordStreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordStream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordStreamResponse rsp = DescribeRecordStreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordStreamOutcome(rsp);
+        else
+            return DescribeRecordStreamOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordStreamOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeRecordStreamAsync(const DescribeRecordStreamRequest& request, const DescribeRecordStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecordStream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeRecordStreamOutcomeCallable LcicClient::DescribeRecordStreamCallable(const DescribeRecordStreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecordStreamOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecordStream(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::DescribeRoomOutcome LcicClient::DescribeRoom(const DescribeRoomRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRoom");

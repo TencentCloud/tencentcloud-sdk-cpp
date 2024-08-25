@@ -1262,6 +1262,31 @@ pause
                      */
                     bool DeviceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取实例存储类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceStorageType 实例存储类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceStorageType() const;
+
+                    /**
+                     * 设置实例存储类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceStorageType 实例存储类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceStorageType(const std::string& _instanceStorageType);
+
+                    /**
+                     * 判断参数 InstanceStorageType 是否已赋值
+                     * @return InstanceStorageType 是否已赋值
+                     * 
+                     */
+                    bool InstanceStorageTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1607,6 +1632,13 @@ pause
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
+
+                    /**
+                     * 实例存储类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceStorageType;
+                    bool m_instanceStorageTypeHasBeenSet;
 
                 };
             }

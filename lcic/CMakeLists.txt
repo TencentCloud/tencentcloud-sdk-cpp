@@ -86,6 +86,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/DescribeRoomForbiddenUserRequest.h
   include/tencentcloud/lcic/v20220817/model/EventInfo.h
   include/tencentcloud/lcic/v20220817/model/DescribeScoreListRequest.h
+  include/tencentcloud/lcic/v20220817/model/DescribeRecordStreamRequest.h
   include/tencentcloud/lcic/v20220817/model/AppConfig.h
   include/tencentcloud/lcic/v20220817/model/DeleteRecordResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeAnswerListRequest.h
@@ -109,6 +110,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/BatchAddGroupMemberRequest.h
   include/tencentcloud/lcic/v20220817/model/TransferItem.h
   include/tencentcloud/lcic/v20220817/model/DescribeRoomResponse.h
+  include/tencentcloud/lcic/v20220817/model/DescribeRecordStreamResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeCurrentMemberListRequest.h
   include/tencentcloud/lcic/v20220817/model/SendRoomNotificationMessageRequest.h
   include/tencentcloud/lcic/v20220817/model/DescribeSdkAppIdUsersResponse.h
@@ -130,6 +132,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/MutedAccountList.h
   include/tencentcloud/lcic/v20220817/model/GroupBaseInfo.h
   include/tencentcloud/lcic/v20220817/model/LoginUserRequest.h
+  include/tencentcloud/lcic/v20220817/model/SingleStreamInfo.h
   include/tencentcloud/lcic/v20220817/model/ImageMsgContent.h
   include/tencentcloud/lcic/v20220817/model/AnswerStat.h
   include/tencentcloud/lcic/v20220817/model/SendRoomNormalMessageResponse.h
@@ -243,6 +246,7 @@ set(lcic_src
   src/v20220817/model/DescribeRoomForbiddenUserRequest.cpp
   src/v20220817/model/EventInfo.cpp
   src/v20220817/model/DescribeScoreListRequest.cpp
+  src/v20220817/model/DescribeRecordStreamRequest.cpp
   src/v20220817/model/AppConfig.cpp
   src/v20220817/model/DeleteRecordResponse.cpp
   src/v20220817/model/DescribeAnswerListRequest.cpp
@@ -266,6 +270,7 @@ set(lcic_src
   src/v20220817/model/BatchAddGroupMemberRequest.cpp
   src/v20220817/model/TransferItem.cpp
   src/v20220817/model/DescribeRoomResponse.cpp
+  src/v20220817/model/DescribeRecordStreamResponse.cpp
   src/v20220817/model/DescribeCurrentMemberListRequest.cpp
   src/v20220817/model/SendRoomNotificationMessageRequest.cpp
   src/v20220817/model/DescribeSdkAppIdUsersResponse.cpp
@@ -287,6 +292,7 @@ set(lcic_src
   src/v20220817/model/MutedAccountList.cpp
   src/v20220817/model/GroupBaseInfo.cpp
   src/v20220817/model/LoginUserRequest.cpp
+  src/v20220817/model/SingleStreamInfo.cpp
   src/v20220817/model/ImageMsgContent.cpp
   src/v20220817/model/AnswerStat.cpp
   src/v20220817/model/SendRoomNormalMessageResponse.cpp

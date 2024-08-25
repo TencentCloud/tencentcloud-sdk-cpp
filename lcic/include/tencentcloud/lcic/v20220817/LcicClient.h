@@ -89,6 +89,8 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupMemberListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeQuestionListRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeQuestionListResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeRecordStreamRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeRecordStreamResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomForbiddenUserRequest.h>
@@ -258,6 +260,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeQuestionListResponse> DescribeQuestionListOutcome;
                 typedef std::future<DescribeQuestionListOutcome> DescribeQuestionListOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeQuestionListRequest&, DescribeQuestionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuestionListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordStreamResponse> DescribeRecordStreamOutcome;
+                typedef std::future<DescribeRecordStreamOutcome> DescribeRecordStreamOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeRecordStreamRequest&, DescribeRecordStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordStreamAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRoomResponse> DescribeRoomOutcome;
                 typedef std::future<DescribeRoomOutcome> DescribeRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeRoomRequest&, DescribeRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomAsyncHandler;
@@ -643,6 +648,15 @@ namespace TencentCloud
                 DescribeQuestionListOutcome DescribeQuestionList(const Model::DescribeQuestionListRequest &request);
                 void DescribeQuestionListAsync(const Model::DescribeQuestionListRequest& request, const DescribeQuestionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeQuestionListOutcomeCallable DescribeQuestionListCallable(const Model::DescribeQuestionListRequest& request);
+
+                /**
+                 *录制流查询
+                 * @param req DescribeRecordStreamRequest
+                 * @return DescribeRecordStreamOutcome
+                 */
+                DescribeRecordStreamOutcome DescribeRecordStream(const Model::DescribeRecordStreamRequest &request);
+                void DescribeRecordStreamAsync(const Model::DescribeRecordStreamRequest& request, const DescribeRecordStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordStreamOutcomeCallable DescribeRecordStreamCallable(const Model::DescribeRecordStreamRequest& request);
 
                 /**
                  *获取房间配置信息

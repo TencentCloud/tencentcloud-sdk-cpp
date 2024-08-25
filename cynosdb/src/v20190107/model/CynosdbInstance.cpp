@@ -75,7 +75,8 @@ CynosdbInstance::CynosdbInstance() :
     m_resourcePackagesHasBeenSet(false),
     m_instanceIndexModeHasBeenSet(false),
     m_instanceAbilityHasBeenSet(false),
-    m_deviceTypeHasBeenSet(false)
+    m_deviceTypeHasBeenSet(false),
+    m_instanceStorageTypeHasBeenSet(false)
 {
 }
 
@@ -684,6 +685,16 @@ CoreInternalOutcome CynosdbInstance::Deserialize(const rapidjson::Value &value)
         m_deviceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceStorageType") && !value["InstanceStorageType"].IsNull())
+    {
+        if (!value["InstanceStorageType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstance.InstanceStorageType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceStorageType = string(value["InstanceStorageType"].GetString());
+        m_instanceStorageTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1163,6 +1174,14 @@ void CynosdbInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "DeviceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceStorageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceStorageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceStorageType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2046,5 +2065,21 @@ void CynosdbInstance::SetDeviceType(const string& _deviceType)
 bool CynosdbInstance::DeviceTypeHasBeenSet() const
 {
     return m_deviceTypeHasBeenSet;
+}
+
+string CynosdbInstance::GetInstanceStorageType() const
+{
+    return m_instanceStorageType;
+}
+
+void CynosdbInstance::SetInstanceStorageType(const string& _instanceStorageType)
+{
+    m_instanceStorageType = _instanceStorageType;
+    m_instanceStorageTypeHasBeenSet = true;
+}
+
+bool CynosdbInstance::InstanceStorageTypeHasBeenSet() const
+{
+    return m_instanceStorageTypeHasBeenSet;
 }
 

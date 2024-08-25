@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool OldPwdHasBeenSet() const;
 
+                    /**
+                     * 获取绑定的子用户uin
+                     * @return CamUin 绑定的子用户uin
+                     * 
+                     */
+                    std::string GetCamUin() const;
+
+                    /**
+                     * 设置绑定的子用户uin
+                     * @param _camUin 绑定的子用户uin
+                     * 
+                     */
+                    void SetCamUin(const std::string& _camUin);
+
+                    /**
+                     * 判断参数 CamUin 是否已赋值
+                     * @return CamUin 是否已赋值
+                     * 
+                     */
+                    bool CamUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     std::string m_oldPwd;
                     bool m_oldPwdHasBeenSet;
+
+                    /**
+                     * 绑定的子用户uin
+                     */
+                    std::string m_camUin;
+                    bool m_camUinHasBeenSet;
 
                 };
             }

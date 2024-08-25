@@ -35,7 +35,8 @@ ClusterInstanceDetail::ClusterInstanceDetail() :
     m_maintainWeekDaysHasBeenSet(false),
     m_serverlessStatusHasBeenSet(false),
     m_instanceTasksHasBeenSet(false),
-    m_instanceDeviceTypeHasBeenSet(false)
+    m_instanceDeviceTypeHasBeenSet(false),
+    m_instanceStorageTypeHasBeenSet(false)
 {
 }
 
@@ -207,6 +208,16 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         m_instanceDeviceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceStorageType") && !value["InstanceStorageType"].IsNull())
+    {
+        if (!value["InstanceStorageType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.InstanceStorageType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceStorageType = string(value["InstanceStorageType"].GetString());
+        m_instanceStorageTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -344,6 +355,14 @@ void ClusterInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "InstanceDeviceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceDeviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceStorageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceStorageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceStorageType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -587,5 +606,21 @@ void ClusterInstanceDetail::SetInstanceDeviceType(const string& _instanceDeviceT
 bool ClusterInstanceDetail::InstanceDeviceTypeHasBeenSet() const
 {
     return m_instanceDeviceTypeHasBeenSet;
+}
+
+string ClusterInstanceDetail::GetInstanceStorageType() const
+{
+    return m_instanceStorageType;
+}
+
+void ClusterInstanceDetail::SetInstanceStorageType(const string& _instanceStorageType)
+{
+    m_instanceStorageType = _instanceStorageType;
+    m_instanceStorageTypeHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::InstanceStorageTypeHasBeenSet() const
+{
+    return m_instanceStorageTypeHasBeenSet;
 }
 
