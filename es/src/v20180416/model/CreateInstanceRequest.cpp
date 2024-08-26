@@ -59,7 +59,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_enableDiagnoseHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
     m_disasterRecoverGroupAffinityHasBeenSet(false),
-    m_subProductCodeHasBeenSet(false)
+    m_subProductCodeHasBeenSet(false),
+    m_readWriteModeHasBeenSet(false)
 {
 }
 
@@ -392,6 +393,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "SubProductCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subProductCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_readWriteModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadWriteMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_readWriteMode, allocator);
     }
 
 
@@ -992,6 +1001,22 @@ void CreateInstanceRequest::SetSubProductCode(const string& _subProductCode)
 bool CreateInstanceRequest::SubProductCodeHasBeenSet() const
 {
     return m_subProductCodeHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetReadWriteMode() const
+{
+    return m_readWriteMode;
+}
+
+void CreateInstanceRequest::SetReadWriteMode(const int64_t& _readWriteMode)
+{
+    m_readWriteMode = _readWriteMode;
+    m_readWriteModeHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::ReadWriteModeHasBeenSet() const
+{
+    return m_readWriteModeHasBeenSet;
 }
 
 

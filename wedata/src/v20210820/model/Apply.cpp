@@ -37,7 +37,8 @@ Apply::Apply() :
     m_applyNameHasBeenSet(false),
     m_approverIdHasBeenSet(false),
     m_approverNameHasBeenSet(false),
-    m_approveProjectNameHasBeenSet(false)
+    m_approveProjectNameHasBeenSet(false),
+    m_applyIdHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,16 @@ CoreInternalOutcome Apply::Deserialize(const rapidjson::Value &value)
         m_approveProjectNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplyId") && !value["ApplyId"].IsNull())
+    {
+        if (!value["ApplyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Apply.ApplyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applyId = string(value["ApplyId"].GetString());
+        m_applyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void Apply::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "ApproveProjectName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approveProjectName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applyId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -632,5 +651,21 @@ void Apply::SetApproveProjectName(const string& _approveProjectName)
 bool Apply::ApproveProjectNameHasBeenSet() const
 {
     return m_approveProjectNameHasBeenSet;
+}
+
+string Apply::GetApplyId() const
+{
+    return m_applyId;
+}
+
+void Apply::SetApplyId(const string& _applyId)
+{
+    m_applyId = _applyId;
+    m_applyIdHasBeenSet = true;
+}
+
+bool Apply::ApplyIdHasBeenSet() const
+{
+    return m_applyIdHasBeenSet;
 }
 

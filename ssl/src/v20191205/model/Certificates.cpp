@@ -73,7 +73,8 @@ Certificates::Certificates() :
     m_isDNSPODResolveHasBeenSet(false),
     m_isPackageHasBeenSet(false),
     m_keyPasswordCustomFlagHasBeenSet(false),
-    m_supportDownloadTypeHasBeenSet(false)
+    m_supportDownloadTypeHasBeenSet(false),
+    m_certRevokedTimeHasBeenSet(false)
 {
 }
 
@@ -668,6 +669,16 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
         m_supportDownloadTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CertRevokedTime") && !value["CertRevokedTime"].IsNull())
+    {
+        if (!value["CertRevokedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.CertRevokedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certRevokedTime = string(value["CertRevokedTime"].GetString());
+        m_certRevokedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1138,6 +1149,14 @@ void Certificates::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_supportDownloadType.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_certRevokedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertRevokedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certRevokedTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1989,5 +2008,21 @@ void Certificates::SetSupportDownloadType(const SupportDownloadType& _supportDow
 bool Certificates::SupportDownloadTypeHasBeenSet() const
 {
     return m_supportDownloadTypeHasBeenSet;
+}
+
+string Certificates::GetCertRevokedTime() const
+{
+    return m_certRevokedTime;
+}
+
+void Certificates::SetCertRevokedTime(const string& _certRevokedTime)
+{
+    m_certRevokedTime = _certRevokedTime;
+    m_certRevokedTimeHasBeenSet = true;
+}
+
+bool Certificates::CertRevokedTimeHasBeenSet() const
+{
+    return m_certRevokedTimeHasBeenSet;
 }
 

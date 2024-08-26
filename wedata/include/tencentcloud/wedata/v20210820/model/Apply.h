@@ -431,6 +431,31 @@ namespace TencentCloud
                      */
                     bool ApproveProjectNameHasBeenSet() const;
 
+                    /**
+                     * 获取审批id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplyId 审批id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApplyId() const;
+
+                    /**
+                     * 设置审批id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _applyId 审批id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApplyId(const std::string& _applyId);
+
+                    /**
+                     * 判断参数 ApplyId 是否已赋值
+                     * @return ApplyId 是否已赋值
+                     * 
+                     */
+                    bool ApplyIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -541,6 +566,13 @@ namespace TencentCloud
                      */
                     std::string m_approveProjectName;
                     bool m_approveProjectNameHasBeenSet;
+
+                    /**
+                     * 审批id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applyId;
+                    bool m_applyIdHasBeenSet;
 
                 };
             }

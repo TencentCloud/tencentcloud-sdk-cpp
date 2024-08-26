@@ -27,7 +27,8 @@ DescribeUserAutoSignStatusResponse::DescribeUserAutoSignStatusResponse() :
     m_isOpenHasBeenSet(false),
     m_licenseFromHasBeenSet(false),
     m_licenseToHasBeenSet(false),
-    m_licenseTypeHasBeenSet(false)
+    m_licenseTypeHasBeenSet(false),
+    m_sealIdHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome DescribeUserAutoSignStatusResponse::Deserialize(const string
         m_licenseTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SealId") && !rsp["SealId"].IsNull())
+    {
+        if (!rsp["SealId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SealId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sealId = string(rsp["SealId"].GetString());
+        m_sealIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ string DescribeUserAutoSignStatusResponse::ToJsonString() const
         string key = "LicenseType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_licenseType, allocator);
+    }
+
+    if (m_sealIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sealId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +216,16 @@ int64_t DescribeUserAutoSignStatusResponse::GetLicenseType() const
 bool DescribeUserAutoSignStatusResponse::LicenseTypeHasBeenSet() const
 {
     return m_licenseTypeHasBeenSet;
+}
+
+string DescribeUserAutoSignStatusResponse::GetSealId() const
+{
+    return m_sealId;
+}
+
+bool DescribeUserAutoSignStatusResponse::SealIdHasBeenSet() const
+{
+    return m_sealIdHasBeenSet;
 }
 
 

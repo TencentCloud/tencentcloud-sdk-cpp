@@ -975,6 +975,27 @@ CLOSE 关闭
                      */
                     bool ShardAllocationBytesHasBeenSet() const;
 
+                    /**
+                     * 获取读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离
+                     * @return ReadWriteMode 读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离
+                     * 
+                     */
+                    int64_t GetReadWriteMode() const;
+
+                    /**
+                     * 设置读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离
+                     * @param _readWriteMode 读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离
+                     * 
+                     */
+                    void SetReadWriteMode(const int64_t& _readWriteMode);
+
+                    /**
+                     * 判断参数 ReadWriteMode 是否已赋值
+                     * @return ReadWriteMode 是否已赋值
+                     * 
+                     */
+                    bool ReadWriteModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1237,6 +1258,12 @@ CLOSE 关闭
                      */
                     uint64_t m_shardAllocationBytes;
                     bool m_shardAllocationBytesHasBeenSet;
+
+                    /**
+                     * 读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离
+                     */
+                    int64_t m_readWriteMode;
+                    bool m_readWriteModeHasBeenSet;
 
                 };
             }

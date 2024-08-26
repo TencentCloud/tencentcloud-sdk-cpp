@@ -2160,6 +2160,56 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool SubProductCodeHasBeenSet() const;
 
+                    /**
+                     * 获取存算分离cos用量，单位M
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CosBucketStorageSize 存算分离cos用量，单位M
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetCosBucketStorageSize() const;
+
+                    /**
+                     * 设置存算分离cos用量，单位M
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cosBucketStorageSize 存算分离cos用量，单位M
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCosBucketStorageSize(const uint64_t& _cosBucketStorageSize);
+
+                    /**
+                     * 判断参数 CosBucketStorageSize 是否已赋值
+                     * @return CosBucketStorageSize 是否已赋值
+                     * 
+                     */
+                    bool CosBucketStorageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReadWriteMode 读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetReadWriteMode() const;
+
+                    /**
+                     * 设置读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _readWriteMode 读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReadWriteMode(const int64_t& _readWriteMode);
+
+                    /**
+                     * 判断参数 ReadWriteMode 是否已赋值
+                     * @return ReadWriteMode 是否已赋值
+                     * 
+                     */
+                    bool ReadWriteModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2753,6 +2803,20 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     std::string m_subProductCode;
                     bool m_subProductCodeHasBeenSet;
+
+                    /**
+                     * 存算分离cos用量，单位M
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_cosBucketStorageSize;
+                    bool m_cosBucketStorageSizeHasBeenSet;
+
+                    /**
+                     * 读写分离模式：0-不开启，1-本地读写分离，2-远端读写分离
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_readWriteMode;
+                    bool m_readWriteModeHasBeenSet;
 
                 };
             }

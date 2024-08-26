@@ -25,6 +25,8 @@ using namespace std;
 DescribeDSPARDBDataAssetDetailRequest::DescribeDSPARDBDataAssetDetailRequest() :
     m_dspaIdHasBeenSet(false),
     m_complianceIdHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
     m_creditScoreHasBeenSet(false)
 {
 }
@@ -50,6 +52,22 @@ string DescribeDSPARDBDataAssetDetailRequest::ToJsonString() const
         string key = "ComplianceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_complianceId, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
     if (m_creditScoreHasBeenSet)
@@ -98,6 +116,38 @@ void DescribeDSPARDBDataAssetDetailRequest::SetComplianceId(const int64_t& _comp
 bool DescribeDSPARDBDataAssetDetailRequest::ComplianceIdHasBeenSet() const
 {
     return m_complianceIdHasBeenSet;
+}
+
+int64_t DescribeDSPARDBDataAssetDetailRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeDSPARDBDataAssetDetailRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeDSPARDBDataAssetDetailRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeDSPARDBDataAssetDetailRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeDSPARDBDataAssetDetailRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeDSPARDBDataAssetDetailRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 string DescribeDSPARDBDataAssetDetailRequest::GetCreditScore() const

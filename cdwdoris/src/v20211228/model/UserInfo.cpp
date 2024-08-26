@@ -28,7 +28,8 @@ UserInfo::UserInfo() :
     m_oldWhiteHostHasBeenSet(false),
     m_describeHasBeenSet(false),
     m_oldPwdHasBeenSet(false),
-    m_camUinHasBeenSet(false)
+    m_camUinHasBeenSet(false),
+    m_camRangerGroupIdsHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,19 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
         m_camUinHasBeenSet = true;
     }
 
+    if (value.HasMember("CamRangerGroupIds") && !value["CamRangerGroupIds"].IsNull())
+    {
+        if (!value["CamRangerGroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserInfo.CamRangerGroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CamRangerGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_camRangerGroupIds.push_back((*itr).GetInt64());
+        }
+        m_camRangerGroupIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +200,19 @@ void UserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CamUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_camUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_camRangerGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CamRangerGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_camRangerGroupIds.begin(); itr != m_camRangerGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -317,5 +344,21 @@ void UserInfo::SetCamUin(const string& _camUin)
 bool UserInfo::CamUinHasBeenSet() const
 {
     return m_camUinHasBeenSet;
+}
+
+vector<int64_t> UserInfo::GetCamRangerGroupIds() const
+{
+    return m_camRangerGroupIds;
+}
+
+void UserInfo::SetCamRangerGroupIds(const vector<int64_t>& _camRangerGroupIds)
+{
+    m_camRangerGroupIds = _camRangerGroupIds;
+    m_camRangerGroupIdsHasBeenSet = true;
+}
+
+bool UserInfo::CamRangerGroupIdsHasBeenSet() const
+{
+    return m_camRangerGroupIdsHasBeenSet;
 }
 

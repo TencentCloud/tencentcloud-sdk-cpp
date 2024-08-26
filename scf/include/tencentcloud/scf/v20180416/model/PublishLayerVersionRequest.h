@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/scf/v20180416/model/Code.h>
+#include <tencentcloud/scf/v20180416/model/Tag.h>
 
 
 namespace TencentCloud
@@ -148,6 +149,27 @@ namespace TencentCloud
                      */
                     bool LicenseInfoHasBeenSet() const;
 
+                    /**
+                     * 获取层Tag 参数，以键值对数组形式传入
+                     * @return Tags 层Tag 参数，以键值对数组形式传入
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置层Tag 参数，以键值对数组形式传入
+                     * @param _tags 层Tag 参数，以键值对数组形式传入
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +201,12 @@ namespace TencentCloud
                      */
                     std::string m_licenseInfo;
                     bool m_licenseInfoHasBeenSet;
+
+                    /**
+                     * 层Tag 参数，以键值对数组形式传入
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

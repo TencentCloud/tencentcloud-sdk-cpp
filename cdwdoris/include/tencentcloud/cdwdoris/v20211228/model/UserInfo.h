@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool CamUinHasBeenSet() const;
 
+                    /**
+                     * 获取ranger group id列表
+                     * @return CamRangerGroupIds ranger group id列表
+                     * 
+                     */
+                    std::vector<int64_t> GetCamRangerGroupIds() const;
+
+                    /**
+                     * 设置ranger group id列表
+                     * @param _camRangerGroupIds ranger group id列表
+                     * 
+                     */
+                    void SetCamRangerGroupIds(const std::vector<int64_t>& _camRangerGroupIds);
+
+                    /**
+                     * 判断参数 CamRangerGroupIds 是否已赋值
+                     * @return CamRangerGroupIds 是否已赋值
+                     * 
+                     */
+                    bool CamRangerGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     std::string m_camUin;
                     bool m_camUinHasBeenSet;
+
+                    /**
+                     * ranger group id列表
+                     */
+                    std::vector<int64_t> m_camRangerGroupIds;
+                    bool m_camRangerGroupIdsHasBeenSet;
 
                 };
             }

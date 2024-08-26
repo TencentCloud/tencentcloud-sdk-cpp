@@ -109,7 +109,9 @@ InstanceInfo::InstanceInfo() :
     m_outboundPublicAclsHasBeenSet(false),
     m_netConnectSchemeHasBeenSet(false),
     m_disasterRecoverGroupAffinityHasBeenSet(false),
-    m_subProductCodeHasBeenSet(false)
+    m_subProductCodeHasBeenSet(false),
+    m_cosBucketStorageSizeHasBeenSet(false),
+    m_readWriteModeHasBeenSet(false)
 {
 }
 
@@ -1127,6 +1129,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_subProductCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("CosBucketStorageSize") && !value["CosBucketStorageSize"].IsNull())
+    {
+        if (!value["CosBucketStorageSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CosBucketStorageSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosBucketStorageSize = value["CosBucketStorageSize"].GetUint64();
+        m_cosBucketStorageSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReadWriteMode") && !value["ReadWriteMode"].IsNull())
+    {
+        if (!value["ReadWriteMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ReadWriteMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_readWriteMode = value["ReadWriteMode"].GetInt64();
+        m_readWriteModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1899,6 +1921,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SubProductCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subProductCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosBucketStorageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosBucketStorageSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cosBucketStorageSize, allocator);
+    }
+
+    if (m_readWriteModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadWriteMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_readWriteMode, allocator);
     }
 
 }
@@ -3326,5 +3364,37 @@ void InstanceInfo::SetSubProductCode(const string& _subProductCode)
 bool InstanceInfo::SubProductCodeHasBeenSet() const
 {
     return m_subProductCodeHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetCosBucketStorageSize() const
+{
+    return m_cosBucketStorageSize;
+}
+
+void InstanceInfo::SetCosBucketStorageSize(const uint64_t& _cosBucketStorageSize)
+{
+    m_cosBucketStorageSize = _cosBucketStorageSize;
+    m_cosBucketStorageSizeHasBeenSet = true;
+}
+
+bool InstanceInfo::CosBucketStorageSizeHasBeenSet() const
+{
+    return m_cosBucketStorageSizeHasBeenSet;
+}
+
+int64_t InstanceInfo::GetReadWriteMode() const
+{
+    return m_readWriteMode;
+}
+
+void InstanceInfo::SetReadWriteMode(const int64_t& _readWriteMode)
+{
+    m_readWriteMode = _readWriteMode;
+    m_readWriteModeHasBeenSet = true;
+}
+
+bool InstanceInfo::ReadWriteModeHasBeenSet() const
+{
+    return m_readWriteModeHasBeenSet;
 }
 

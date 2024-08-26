@@ -62,7 +62,8 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_outboundPublicAccessHasBeenSet(false),
     m_cvmDelayOnlineTimeHasBeenSet(false),
     m_shardAllocationConcurrentsHasBeenSet(false),
-    m_shardAllocationBytesHasBeenSet(false)
+    m_shardAllocationBytesHasBeenSet(false),
+    m_readWriteModeHasBeenSet(false)
 {
 }
 
@@ -418,6 +419,14 @@ string UpdateInstanceRequest::ToJsonString() const
         string key = "ShardAllocationBytes";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shardAllocationBytes, allocator);
+    }
+
+    if (m_readWriteModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadWriteMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_readWriteMode, allocator);
     }
 
 
@@ -1066,6 +1075,22 @@ void UpdateInstanceRequest::SetShardAllocationBytes(const uint64_t& _shardAlloca
 bool UpdateInstanceRequest::ShardAllocationBytesHasBeenSet() const
 {
     return m_shardAllocationBytesHasBeenSet;
+}
+
+int64_t UpdateInstanceRequest::GetReadWriteMode() const
+{
+    return m_readWriteMode;
+}
+
+void UpdateInstanceRequest::SetReadWriteMode(const int64_t& _readWriteMode)
+{
+    m_readWriteMode = _readWriteMode;
+    m_readWriteModeHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::ReadWriteModeHasBeenSet() const
+{
+    return m_readWriteModeHasBeenSet;
 }
 
 

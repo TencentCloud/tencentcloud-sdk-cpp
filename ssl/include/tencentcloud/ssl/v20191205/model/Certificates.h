@@ -1380,6 +1380,31 @@ namespace TencentCloud
                      */
                     bool SupportDownloadTypeHasBeenSet() const;
 
+                    /**
+                     * 获取证书吊销完成时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CertRevokedTime 证书吊销完成时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCertRevokedTime() const;
+
+                    /**
+                     * 设置证书吊销完成时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _certRevokedTime 证书吊销完成时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCertRevokedTime(const std::string& _certRevokedTime);
+
+                    /**
+                     * 判断参数 CertRevokedTime 是否已赋值
+                     * @return CertRevokedTime 是否已赋值
+                     * 
+                     */
+                    bool CertRevokedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1753,6 +1778,13 @@ namespace TencentCloud
                      */
                     SupportDownloadType m_supportDownloadType;
                     bool m_supportDownloadTypeHasBeenSet;
+
+                    /**
+                     * 证书吊销完成时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_certRevokedTime;
+                    bool m_certRevokedTimeHasBeenSet;
 
                 };
             }

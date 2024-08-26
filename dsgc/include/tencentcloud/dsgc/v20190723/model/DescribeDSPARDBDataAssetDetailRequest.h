@@ -85,6 +85,48 @@ namespace TencentCloud
                     bool ComplianceIdHasBeenSet() const;
 
                     /**
+                     * 获取偏移量，默认为0。
+                     * @return Offset 偏移量，默认为0。
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取返回数量，默认为20，最大值为100。
+                     * @return Limit 返回数量，默认为20，最大值为100。
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置返回数量，默认为20，最大值为100。
+                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
                      * 获取可信分排序，ASC-升序
 DESC降序
                      * @return CreditScore 可信分排序，ASC-升序
@@ -122,6 +164,18 @@ DESC降序
                      */
                     int64_t m_complianceId;
                     bool m_complianceIdHasBeenSet;
+
+                    /**
+                     * 偏移量，默认为0。
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 返回数量，默认为20，最大值为100。
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                     /**
                      * 可信分排序，ASC-升序
