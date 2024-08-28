@@ -30,6 +30,7 @@
 #include <tencentcloud/cdb/v20170320/model/MasterInfo.h>
 #include <tencentcloud/cdb/v20170320/model/DrInfo.h>
 #include <tencentcloud/cdb/v20170320/model/TagInfoItem.h>
+#include <tencentcloud/cdb/v20170320/model/ClusterInfo.h>
 
 
 namespace TencentCloud
@@ -1087,6 +1088,31 @@ namespace TencentCloud
                      */
                     bool ExpandCpuHasBeenSet() const;
 
+                    /**
+                     * 获取实例集群版节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterInfo 实例集群版节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ClusterInfo> GetClusterInfo() const;
+
+                    /**
+                     * 设置实例集群版节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterInfo 实例集群版节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterInfo(const std::vector<ClusterInfo>& _clusterInfo);
+
+                    /**
+                     * 判断参数 ClusterInfo 是否已赋值
+                     * @return ClusterInfo 是否已赋值
+                     * 
+                     */
+                    bool ClusterInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1382,6 +1408,13 @@ namespace TencentCloud
                      */
                     int64_t m_expandCpu;
                     bool m_expandCpuHasBeenSet;
+
+                    /**
+                     * 实例集群版节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClusterInfo> m_clusterInfo;
+                    bool m_clusterInfoHasBeenSet;
 
                 };
             }

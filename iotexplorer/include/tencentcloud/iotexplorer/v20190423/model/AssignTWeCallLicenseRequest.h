@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MiniProgramAppIdHasBeenSet() const;
 
                     /**
-                     * 获取License数
-                     * @return DeductNum License数
+                     * 获取License数，只支持50,500,1000,5000,10000,20000,50000
+                     * @return DeductNum License数，只支持50,500,1000,5000,10000,20000,50000
                      * 
                      */
                     int64_t GetDeductNum() const;
 
                     /**
-                     * 设置License数
-                     * @param _deductNum License数
+                     * 设置License数，只支持50,500,1000,5000,10000,20000,50000
+                     * @param _deductNum License数，只支持50,500,1000,5000,10000,20000,50000
                      * 
                      */
                     void SetDeductNum(const int64_t& _deductNum);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_miniProgramAppIdHasBeenSet;
 
                     /**
-                     * License数
+                     * License数，只支持50,500,1000,5000,10000,20000,50000
                      */
                     int64_t m_deductNum;
                     bool m_deductNumHasBeenSet;

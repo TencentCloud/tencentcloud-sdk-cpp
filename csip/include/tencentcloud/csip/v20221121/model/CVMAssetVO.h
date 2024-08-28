@@ -38,6 +38,15 @@ namespace TencentCloud
             {
                 /**
                 * 主机资产信息
+
+主机防护状态枚举，左边是常量，右边是显示
+0：未安装
+1：基础版防护中
+2：普惠版防护中
+3：专业版防护中
+4：旗舰版防护中
+5：已离线
+6：已关机
                 */
                 class CVMAssetVO : public AbstractModel
                 {
@@ -1673,6 +1682,84 @@ namespace TencentCloud
                      */
                     bool CloudTypeHasBeenSet() const;
 
+                    /**
+                     * 获取主机防护状态枚举
+0：未安装
+1：基础版防护中
+2：普惠版防护中
+3：专业版防护中
+4：旗舰版防护中
+5：已离线
+6：已关机
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProtectStatus 主机防护状态枚举
+0：未安装
+1：基础版防护中
+2：普惠版防护中
+3：专业版防护中
+4：旗舰版防护中
+5：已离线
+6：已关机
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetProtectStatus() const;
+
+                    /**
+                     * 设置主机防护状态枚举
+0：未安装
+1：基础版防护中
+2：普惠版防护中
+3：专业版防护中
+4：旗舰版防护中
+5：已离线
+6：已关机
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _protectStatus 主机防护状态枚举
+0：未安装
+1：基础版防护中
+2：普惠版防护中
+3：专业版防护中
+4：旗舰版防护中
+5：已离线
+6：已关机
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProtectStatus(const int64_t& _protectStatus);
+
+                    /**
+                     * 判断参数 ProtectStatus 是否已赋值
+                     * @return ProtectStatus 是否已赋值
+                     * 
+                     */
+                    bool ProtectStatusHasBeenSet() const;
+
+                    /**
+                     * 获取最后离线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OfflineTime 最后离线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOfflineTime() const;
+
+                    /**
+                     * 设置最后离线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _offlineTime 最后离线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOfflineTime(const std::string& _offlineTime);
+
+                    /**
+                     * 判断参数 OfflineTime 是否已赋值
+                     * @return OfflineTime 是否已赋值
+                     * 
+                     */
+                    bool OfflineTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2129,6 +2216,27 @@ namespace TencentCloud
                      */
                     int64_t m_cloudType;
                     bool m_cloudTypeHasBeenSet;
+
+                    /**
+                     * 主机防护状态枚举
+0：未安装
+1：基础版防护中
+2：普惠版防护中
+3：专业版防护中
+4：旗舰版防护中
+5：已离线
+6：已关机
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_protectStatus;
+                    bool m_protectStatusHasBeenSet;
+
+                    /**
+                     * 最后离线时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_offlineTime;
+                    bool m_offlineTimeHasBeenSet;
 
                 };
             }

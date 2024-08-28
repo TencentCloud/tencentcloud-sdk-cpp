@@ -254,6 +254,22 @@ namespace TencentCloud
                      */
                     bool PublicPrivateAttrHasBeenSet() const;
 
+                    /**
+                     * 获取主机防护状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProtectStatusList 主机防护状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FilterDataObject> GetProtectStatusList() const;
+
+                    /**
+                     * 判断参数 ProtectStatusList 是否已赋值
+                     * @return ProtectStatusList 是否已赋值
+                     * 
+                     */
+                    bool ProtectStatusListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,6 +362,13 @@ namespace TencentCloud
                      */
                     std::vector<FilterDataObject> m_publicPrivateAttr;
                     bool m_publicPrivateAttrHasBeenSet;
+
+                    /**
+                     * 主机防护状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FilterDataObject> m_protectStatusList;
+                    bool m_protectStatusListHasBeenSet;
 
                 };
             }

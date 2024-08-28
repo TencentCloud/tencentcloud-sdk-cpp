@@ -102,7 +102,13 @@ TaskOpsDto::TaskOpsDto() :
     m_tasksStrHasBeenSet(false),
     m_submitHasBeenSet(false),
     m_executorGroupIdHasBeenSet(false),
-    m_executorGroupNameHasBeenSet(false)
+    m_executorGroupNameHasBeenSet(false),
+    m_taskExtInfoHasBeenSet(false),
+    m_eventListenerInfosHasBeenSet(false),
+    m_scriptInfoHasBeenSet(false),
+    m_dLCResourceConfigHasBeenSet(false),
+    m_parentTaskInfosHasBeenSet(false),
+    m_extResourceFlagHasBeenSet(false)
 {
 }
 
@@ -945,6 +951,104 @@ CoreInternalOutcome TaskOpsDto::Deserialize(const rapidjson::Value &value)
         m_executorGroupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskExtInfo") && !value["TaskExtInfo"].IsNull())
+    {
+        if (!value["TaskExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.TaskExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskExtInfo = string(value["TaskExtInfo"].GetString());
+        m_taskExtInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("EventListenerInfos") && !value["EventListenerInfos"].IsNull())
+    {
+        if (!value["EventListenerInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.EventListenerInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["EventListenerInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AiOpsEventListenerDTO item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_eventListenerInfos.push_back(item);
+        }
+        m_eventListenerInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScriptInfo") && !value["ScriptInfo"].IsNull())
+    {
+        if (!value["ScriptInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.ScriptInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_scriptInfo.Deserialize(value["ScriptInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_scriptInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("DLCResourceConfig") && !value["DLCResourceConfig"].IsNull())
+    {
+        if (!value["DLCResourceConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.DLCResourceConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dLCResourceConfig.Deserialize(value["DLCResourceConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dLCResourceConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentTaskInfos") && !value["ParentTaskInfos"].IsNull())
+    {
+        if (!value["ParentTaskInfos"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.ParentTaskInfos` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_parentTaskInfos.Deserialize(value["ParentTaskInfos"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_parentTaskInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtResourceFlag") && !value["ExtResourceFlag"].IsNull())
+    {
+        if (!value["ExtResourceFlag"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.ExtResourceFlag` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extResourceFlag.Deserialize(value["ExtResourceFlag"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extResourceFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1608,6 +1712,65 @@ void TaskOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ExecutorGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_executorGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskExtInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskExtInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventListenerInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventListenerInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_eventListenerInfos.begin(); itr != m_eventListenerInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_scriptInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScriptInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scriptInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dLCResourceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DLCResourceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dLCResourceConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_parentTaskInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentTaskInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_parentTaskInfos.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_extResourceFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtResourceFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extResourceFlag.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2923,5 +3086,101 @@ void TaskOpsDto::SetExecutorGroupName(const string& _executorGroupName)
 bool TaskOpsDto::ExecutorGroupNameHasBeenSet() const
 {
     return m_executorGroupNameHasBeenSet;
+}
+
+string TaskOpsDto::GetTaskExtInfo() const
+{
+    return m_taskExtInfo;
+}
+
+void TaskOpsDto::SetTaskExtInfo(const string& _taskExtInfo)
+{
+    m_taskExtInfo = _taskExtInfo;
+    m_taskExtInfoHasBeenSet = true;
+}
+
+bool TaskOpsDto::TaskExtInfoHasBeenSet() const
+{
+    return m_taskExtInfoHasBeenSet;
+}
+
+vector<AiOpsEventListenerDTO> TaskOpsDto::GetEventListenerInfos() const
+{
+    return m_eventListenerInfos;
+}
+
+void TaskOpsDto::SetEventListenerInfos(const vector<AiOpsEventListenerDTO>& _eventListenerInfos)
+{
+    m_eventListenerInfos = _eventListenerInfos;
+    m_eventListenerInfosHasBeenSet = true;
+}
+
+bool TaskOpsDto::EventListenerInfosHasBeenSet() const
+{
+    return m_eventListenerInfosHasBeenSet;
+}
+
+AiopsScriptInfo TaskOpsDto::GetScriptInfo() const
+{
+    return m_scriptInfo;
+}
+
+void TaskOpsDto::SetScriptInfo(const AiopsScriptInfo& _scriptInfo)
+{
+    m_scriptInfo = _scriptInfo;
+    m_scriptInfoHasBeenSet = true;
+}
+
+bool TaskOpsDto::ScriptInfoHasBeenSet() const
+{
+    return m_scriptInfoHasBeenSet;
+}
+
+AiopsDLCResourceConfigDto TaskOpsDto::GetDLCResourceConfig() const
+{
+    return m_dLCResourceConfig;
+}
+
+void TaskOpsDto::SetDLCResourceConfig(const AiopsDLCResourceConfigDto& _dLCResourceConfig)
+{
+    m_dLCResourceConfig = _dLCResourceConfig;
+    m_dLCResourceConfigHasBeenSet = true;
+}
+
+bool TaskOpsDto::DLCResourceConfigHasBeenSet() const
+{
+    return m_dLCResourceConfigHasBeenSet;
+}
+
+AiopsSimpleTaskDto TaskOpsDto::GetParentTaskInfos() const
+{
+    return m_parentTaskInfos;
+}
+
+void TaskOpsDto::SetParentTaskInfos(const AiopsSimpleTaskDto& _parentTaskInfos)
+{
+    m_parentTaskInfos = _parentTaskInfos;
+    m_parentTaskInfosHasBeenSet = true;
+}
+
+bool TaskOpsDto::ParentTaskInfosHasBeenSet() const
+{
+    return m_parentTaskInfosHasBeenSet;
+}
+
+ExtResourceFlagDto TaskOpsDto::GetExtResourceFlag() const
+{
+    return m_extResourceFlag;
+}
+
+void TaskOpsDto::SetExtResourceFlag(const ExtResourceFlagDto& _extResourceFlag)
+{
+    m_extResourceFlag = _extResourceFlag;
+    m_extResourceFlagHasBeenSet = true;
+}
+
+bool TaskOpsDto::ExtResourceFlagHasBeenSet() const
+{
+    return m_extResourceFlagHasBeenSet;
 }
 

@@ -43,7 +43,8 @@ RuleOutput::RuleOutput() :
     m_trpcFuncHasBeenSet(false),
     m_quicStatusHasBeenSet(false),
     m_domainsHasBeenSet(false),
-    m_targetGroupListHasBeenSet(false)
+    m_targetGroupListHasBeenSet(false),
+    m_oAuthHasBeenSet(false)
 {
 }
 
@@ -323,6 +324,23 @@ CoreInternalOutcome RuleOutput::Deserialize(const rapidjson::Value &value)
         m_targetGroupListHasBeenSet = true;
     }
 
+    if (value.HasMember("OAuth") && !value["OAuth"].IsNull())
+    {
+        if (!value["OAuth"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleOutput.OAuth` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_oAuth.Deserialize(value["OAuth"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_oAuthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -528,6 +546,15 @@ void RuleOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_oAuthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OAuth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_oAuth.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -899,5 +926,21 @@ void RuleOutput::SetTargetGroupList(const vector<BasicTargetGroupInfo>& _targetG
 bool RuleOutput::TargetGroupListHasBeenSet() const
 {
     return m_targetGroupListHasBeenSet;
+}
+
+OAuth RuleOutput::GetOAuth() const
+{
+    return m_oAuth;
+}
+
+void RuleOutput::SetOAuth(const OAuth& _oAuth)
+{
+    m_oAuth = _oAuth;
+    m_oAuthHasBeenSet = true;
+}
+
+bool RuleOutput::OAuthHasBeenSet() const
+{
+    return m_oAuthHasBeenSet;
 }
 

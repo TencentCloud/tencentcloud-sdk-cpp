@@ -25,7 +25,9 @@ using namespace std;
 DescribeSqlApisRequest::DescribeSqlApisRequest() :
     m_whiteHostHasBeenSet(false),
     m_catalogHasBeenSet(false),
-    m_catalogsHasBeenSet(false)
+    m_catalogsHasBeenSet(false),
+    m_databaseNameHasBeenSet(false),
+    m_tableNameHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,22 @@ string DescribeSqlApisRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_databaseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +137,38 @@ void DescribeSqlApisRequest::SetCatalogs(const vector<string>& _catalogs)
 bool DescribeSqlApisRequest::CatalogsHasBeenSet() const
 {
     return m_catalogsHasBeenSet;
+}
+
+string DescribeSqlApisRequest::GetDatabaseName() const
+{
+    return m_databaseName;
+}
+
+void DescribeSqlApisRequest::SetDatabaseName(const string& _databaseName)
+{
+    m_databaseName = _databaseName;
+    m_databaseNameHasBeenSet = true;
+}
+
+bool DescribeSqlApisRequest::DatabaseNameHasBeenSet() const
+{
+    return m_databaseNameHasBeenSet;
+}
+
+string DescribeSqlApisRequest::GetTableName() const
+{
+    return m_tableName;
+}
+
+void DescribeSqlApisRequest::SetTableName(const string& _tableName)
+{
+    m_tableName = _tableName;
+    m_tableNameHasBeenSet = true;
+}
+
+bool DescribeSqlApisRequest::TableNameHasBeenSet() const
+{
+    return m_tableNameHasBeenSet;
 }
 
 

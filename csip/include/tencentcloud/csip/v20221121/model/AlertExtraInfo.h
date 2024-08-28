@@ -1781,6 +1781,531 @@ namespace TencentCloud
                      */
                     bool HitStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取进程名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProcessName 进程名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProcessName() const;
+
+                    /**
+                     * 设置进程名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _processName 进程名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProcessName(const std::string& _processName);
+
+                    /**
+                     * 判断参数 ProcessName 是否已赋值
+                     * @return ProcessName 是否已赋值
+                     * 
+                     */
+                    bool ProcessNameHasBeenSet() const;
+
+                    /**
+                     * 获取PID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PID PID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPID() const;
+
+                    /**
+                     * 设置PID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _pID PID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPID(const std::string& _pID);
+
+                    /**
+                     * 判断参数 PID 是否已赋值
+                     * @return PID 是否已赋值
+                     * 
+                     */
+                    bool PIDHasBeenSet() const;
+
+                    /**
+                     * 获取容器Pod名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodName 容器Pod名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPodName() const;
+
+                    /**
+                     * 设置容器Pod名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _podName 容器Pod名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPodName(const std::string& _podName);
+
+                    /**
+                     * 判断参数 PodName 是否已赋值
+                     * @return PodName 是否已赋值
+                     * 
+                     */
+                    bool PodNameHasBeenSet() const;
+
+                    /**
+                     * 获取容器PodID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodID 容器PodID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPodID() const;
+
+                    /**
+                     * 设置容器PodID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _podID 容器PodID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPodID(const std::string& _podID);
+
+                    /**
+                     * 判断参数 PodID 是否已赋值
+                     * @return PodID 是否已赋值
+                     * 
+                     */
+                    bool PodIDHasBeenSet() const;
+
+                    /**
+                     * 获取Http响应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Response Http响应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResponse() const;
+
+                    /**
+                     * 设置Http响应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _response Http响应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResponse(const std::string& _response);
+
+                    /**
+                     * 判断参数 Response 是否已赋值
+                     * @return Response 是否已赋值
+                     * 
+                     */
+                    bool ResponseHasBeenSet() const;
+
+                    /**
+                     * 获取系统调用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SystemCall 系统调用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSystemCall() const;
+
+                    /**
+                     * 设置系统调用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _systemCall 系统调用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSystemCall(const std::string& _systemCall);
+
+                    /**
+                     * 判断参数 SystemCall 是否已赋值
+                     * @return SystemCall 是否已赋值
+                     * 
+                     */
+                    bool SystemCallHasBeenSet() const;
+
+                    /**
+                     * 获取操作类型verb
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Verb 操作类型verb
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVerb() const;
+
+                    /**
+                     * 设置操作类型verb
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _verb 操作类型verb
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVerb(const std::string& _verb);
+
+                    /**
+                     * 判断参数 Verb 是否已赋值
+                     * @return Verb 是否已赋值
+                     * 
+                     */
+                    bool VerbHasBeenSet() const;
+
+                    /**
+                     * 获取日志ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogID 日志ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLogID() const;
+
+                    /**
+                     * 设置日志ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _logID 日志ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLogID(const std::string& _logID);
+
+                    /**
+                     * 判断参数 LogID 是否已赋值
+                     * @return LogID 是否已赋值
+                     * 
+                     */
+                    bool LogIDHasBeenSet() const;
+
+                    /**
+                     * 获取变更内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Different 变更内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDifferent() const;
+
+                    /**
+                     * 设置变更内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _different 变更内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDifferent(const std::string& _different);
+
+                    /**
+                     * 判断参数 Different 是否已赋值
+                     * @return Different 是否已赋值
+                     * 
+                     */
+                    bool DifferentHasBeenSet() const;
+
+                    /**
+                     * 获取事件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EventType 事件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEventType() const;
+
+                    /**
+                     * 设置事件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _eventType 事件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEventType(const std::string& _eventType);
+
+                    /**
+                     * 判断参数 EventType 是否已赋值
+                     * @return EventType 是否已赋值
+                     * 
+                     */
+                    bool EventTypeHasBeenSet() const;
+
+                    /**
+                     * 获取事件描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 事件描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置事件描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _description 事件描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取目标地址(容器反弹shell)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetAddress 目标地址(容器反弹shell)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTargetAddress() const;
+
+                    /**
+                     * 设置目标地址(容器反弹shell)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _targetAddress 目标地址(容器反弹shell)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTargetAddress(const std::string& _targetAddress);
+
+                    /**
+                     * 判断参数 TargetAddress 是否已赋值
+                     * @return TargetAddress 是否已赋值
+                     * 
+                     */
+                    bool TargetAddressHasBeenSet() const;
+
+                    /**
+                     * 获取恶意请求域名(容器恶意外联)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaliciousRequestDomain 恶意请求域名(容器恶意外联)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMaliciousRequestDomain() const;
+
+                    /**
+                     * 设置恶意请求域名(容器恶意外联)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _maliciousRequestDomain 恶意请求域名(容器恶意外联)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMaliciousRequestDomain(const std::string& _maliciousRequestDomain);
+
+                    /**
+                     * 判断参数 MaliciousRequestDomain 是否已赋值
+                     * @return MaliciousRequestDomain 是否已赋值
+                     * 
+                     */
+                    bool MaliciousRequestDomainHasBeenSet() const;
+
+                    /**
+                     * 获取规则类型(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleType 规则类型(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRuleType() const;
+
+                    /**
+                     * 设置规则类型(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleType 规则类型(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleType(const std::string& _ruleType);
+
+                    /**
+                     * 判断参数 RuleType 是否已赋值
+                     * @return RuleType 是否已赋值
+                     * 
+                     */
+                    bool RuleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取请求资源(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RequestURI 请求资源(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRequestURI() const;
+
+                    /**
+                     * 设置请求资源(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _requestURI 请求资源(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRequestURI(const std::string& _requestURI);
+
+                    /**
+                     * 判断参数 RequestURI 是否已赋值
+                     * @return RequestURI 是否已赋值
+                     * 
+                     */
+                    bool RequestURIHasBeenSet() const;
+
+                    /**
+                     * 获取发起请求用户(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RequestUser 发起请求用户(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRequestUser() const;
+
+                    /**
+                     * 设置发起请求用户(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _requestUser 发起请求用户(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRequestUser(const std::string& _requestUser);
+
+                    /**
+                     * 判断参数 RequestUser 是否已赋值
+                     * @return RequestUser 是否已赋值
+                     * 
+                     */
+                    bool RequestUserHasBeenSet() const;
+
+                    /**
+                     * 获取请求对象(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RequestObject 请求对象(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRequestObject() const;
+
+                    /**
+                     * 设置请求对象(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _requestObject 请求对象(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRequestObject(const std::string& _requestObject);
+
+                    /**
+                     * 判断参数 RequestObject 是否已赋值
+                     * @return RequestObject 是否已赋值
+                     * 
+                     */
+                    bool RequestObjectHasBeenSet() const;
+
+                    /**
+                     * 获取响应对象(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResponseObject 响应对象(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResponseObject() const;
+
+                    /**
+                     * 设置响应对象(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _responseObject 响应对象(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResponseObject(const std::string& _responseObject);
+
+                    /**
+                     * 判断参数 ResponseObject 是否已赋值
+                     * @return ResponseObject 是否已赋值
+                     * 
+                     */
+                    bool ResponseObjectHasBeenSet() const;
+
+                    /**
+                     * 获取文件类型(容器文件篡改)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileType 文件类型(容器文件篡改)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFileType() const;
+
+                    /**
+                     * 设置文件类型(容器文件篡改)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fileType 文件类型(容器文件篡改)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFileType(const std::string& _fileType);
+
+                    /**
+                     * 判断参数 FileType 是否已赋值
+                     * @return FileType 是否已赋值
+                     * 
+                     */
+                    bool FileTypeHasBeenSet() const;
+
+                    /**
+                     * 获取标签特征(容器恶意外联)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TIType 标签特征(容器恶意外联)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTIType() const;
+
+                    /**
+                     * 设置标签特征(容器恶意外联)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tIType 标签特征(容器恶意外联)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTIType(const std::string& _tIType);
+
+                    /**
+                     * 判断参数 TIType 是否已赋值
+                     * @return TIType 是否已赋值
+                     * 
+                     */
+                    bool TITypeHasBeenSet() const;
+
+                    /**
+                     * 获取来源IP(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SourceIP 来源IP(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSourceIP() const;
+
+                    /**
+                     * 设置来源IP(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sourceIP 来源IP(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSourceIP(const std::string& _sourceIP);
+
+                    /**
+                     * 判断参数 SourceIP 是否已赋值
+                     * @return SourceIP 是否已赋值
+                     * 
+                     */
+                    bool SourceIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2267,6 +2792,153 @@ namespace TencentCloud
                      */
                     std::string m_hitStrategy;
                     bool m_hitStrategyHasBeenSet;
+
+                    /**
+                     * 进程名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_processName;
+                    bool m_processNameHasBeenSet;
+
+                    /**
+                     * PID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pID;
+                    bool m_pIDHasBeenSet;
+
+                    /**
+                     * 容器Pod名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_podName;
+                    bool m_podNameHasBeenSet;
+
+                    /**
+                     * 容器PodID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_podID;
+                    bool m_podIDHasBeenSet;
+
+                    /**
+                     * Http响应
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_response;
+                    bool m_responseHasBeenSet;
+
+                    /**
+                     * 系统调用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_systemCall;
+                    bool m_systemCallHasBeenSet;
+
+                    /**
+                     * 操作类型verb
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_verb;
+                    bool m_verbHasBeenSet;
+
+                    /**
+                     * 日志ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logID;
+                    bool m_logIDHasBeenSet;
+
+                    /**
+                     * 变更内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_different;
+                    bool m_differentHasBeenSet;
+
+                    /**
+                     * 事件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eventType;
+                    bool m_eventTypeHasBeenSet;
+
+                    /**
+                     * 事件描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 目标地址(容器反弹shell)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_targetAddress;
+                    bool m_targetAddressHasBeenSet;
+
+                    /**
+                     * 恶意请求域名(容器恶意外联)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_maliciousRequestDomain;
+                    bool m_maliciousRequestDomainHasBeenSet;
+
+                    /**
+                     * 规则类型(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleType;
+                    bool m_ruleTypeHasBeenSet;
+
+                    /**
+                     * 请求资源(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_requestURI;
+                    bool m_requestURIHasBeenSet;
+
+                    /**
+                     * 发起请求用户(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_requestUser;
+                    bool m_requestUserHasBeenSet;
+
+                    /**
+                     * 请求对象(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_requestObject;
+                    bool m_requestObjectHasBeenSet;
+
+                    /**
+                     * 响应对象(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_responseObject;
+                    bool m_responseObjectHasBeenSet;
+
+                    /**
+                     * 文件类型(容器文件篡改)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fileType;
+                    bool m_fileTypeHasBeenSet;
+
+                    /**
+                     * 标签特征(容器恶意外联)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tIType;
+                    bool m_tITypeHasBeenSet;
+
+                    /**
+                     * 来源IP(容器K8sAPI异常请求)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sourceIP;
+                    bool m_sourceIPHasBeenSet;
 
                 };
             }

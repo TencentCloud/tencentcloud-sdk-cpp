@@ -269,6 +269,31 @@ namespace TencentCloud
                      */
                     bool BillingLabelVersionHasBeenSet() const;
 
+                    /**
+                     * 获取实例到期时间戳，毫秒级精度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExpireTime 实例到期时间戳，毫秒级精度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetExpireTime() const;
+
+                    /**
+                     * 设置实例到期时间戳，毫秒级精度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _expireTime 实例到期时间戳，毫秒级精度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExpireTime(const int64_t& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -333,6 +358,13 @@ namespace TencentCloud
                      */
                     std::string m_billingLabelVersion;
                     bool m_billingLabelVersionHasBeenSet;
+
+                    /**
+                     * 实例到期时间戳，毫秒级精度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_expireTime;
+                    bool m_expireTimeHasBeenSet;
 
                 };
             }

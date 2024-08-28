@@ -26,6 +26,11 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/TaskTypeOpsDto.h>
 #include <tencentcloud/wedata/v20210820/model/LinkOpsDto.h>
+#include <tencentcloud/wedata/v20210820/model/AiOpsEventListenerDTO.h>
+#include <tencentcloud/wedata/v20210820/model/AiopsScriptInfo.h>
+#include <tencentcloud/wedata/v20210820/model/AiopsDLCResourceConfigDto.h>
+#include <tencentcloud/wedata/v20210820/model/AiopsSimpleTaskDto.h>
+#include <tencentcloud/wedata/v20210820/model/ExtResourceFlagDto.h>
 
 
 namespace TencentCloud
@@ -2098,6 +2103,156 @@ namespace TencentCloud
                      */
                     bool ExecutorGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取任务扩展信息(目前返沪离线同步的任务详情)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskExtInfo 任务扩展信息(目前返沪离线同步的任务详情)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTaskExtInfo() const;
+
+                    /**
+                     * 设置任务扩展信息(目前返沪离线同步的任务详情)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskExtInfo 任务扩展信息(目前返沪离线同步的任务详情)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskExtInfo(const std::string& _taskExtInfo);
+
+                    /**
+                     * 判断参数 TaskExtInfo 是否已赋值
+                     * @return TaskExtInfo 是否已赋值
+                     * 
+                     */
+                    bool TaskExtInfoHasBeenSet() const;
+
+                    /**
+                     * 获取任务绑定的事件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EventListenerInfos 任务绑定的事件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AiOpsEventListenerDTO> GetEventListenerInfos() const;
+
+                    /**
+                     * 设置任务绑定的事件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _eventListenerInfos 任务绑定的事件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEventListenerInfos(const std::vector<AiOpsEventListenerDTO>& _eventListenerInfos);
+
+                    /**
+                     * 判断参数 EventListenerInfos 是否已赋值
+                     * @return EventListenerInfos 是否已赋值
+                     * 
+                     */
+                    bool EventListenerInfosHasBeenSet() const;
+
+                    /**
+                     * 获取脚本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScriptInfo 脚本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiopsScriptInfo GetScriptInfo() const;
+
+                    /**
+                     * 设置脚本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scriptInfo 脚本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScriptInfo(const AiopsScriptInfo& _scriptInfo);
+
+                    /**
+                     * 判断参数 ScriptInfo 是否已赋值
+                     * @return ScriptInfo 是否已赋值
+                     * 
+                     */
+                    bool ScriptInfoHasBeenSet() const;
+
+                    /**
+                     * 获取DLC资源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DLCResourceConfig DLC资源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiopsDLCResourceConfigDto GetDLCResourceConfig() const;
+
+                    /**
+                     * 设置DLC资源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dLCResourceConfig DLC资源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDLCResourceConfig(const AiopsDLCResourceConfigDto& _dLCResourceConfig);
+
+                    /**
+                     * 判断参数 DLCResourceConfig 是否已赋值
+                     * @return DLCResourceConfig 是否已赋值
+                     * 
+                     */
+                    bool DLCResourceConfigHasBeenSet() const;
+
+                    /**
+                     * 获取父任务simple信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParentTaskInfos 父任务simple信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiopsSimpleTaskDto GetParentTaskInfos() const;
+
+                    /**
+                     * 设置父任务simple信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _parentTaskInfos 父任务simple信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetParentTaskInfos(const AiopsSimpleTaskDto& _parentTaskInfos);
+
+                    /**
+                     * 判断参数 ParentTaskInfos 是否已赋值
+                     * @return ParentTaskInfos 是否已赋值
+                     * 
+                     */
+                    bool ParentTaskInfosHasBeenSet() const;
+
+                    /**
+                     * 获取资源获取标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtResourceFlag 资源获取标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ExtResourceFlagDto GetExtResourceFlag() const;
+
+                    /**
+                     * 设置资源获取标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extResourceFlag 资源获取标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtResourceFlag(const ExtResourceFlagDto& _extResourceFlag);
+
+                    /**
+                     * 判断参数 ExtResourceFlag 是否已赋值
+                     * @return ExtResourceFlag 是否已赋值
+                     * 
+                     */
+                    bool ExtResourceFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2673,6 +2828,48 @@ namespace TencentCloud
                      */
                     std::string m_executorGroupName;
                     bool m_executorGroupNameHasBeenSet;
+
+                    /**
+                     * 任务扩展信息(目前返沪离线同步的任务详情)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskExtInfo;
+                    bool m_taskExtInfoHasBeenSet;
+
+                    /**
+                     * 任务绑定的事件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AiOpsEventListenerDTO> m_eventListenerInfos;
+                    bool m_eventListenerInfosHasBeenSet;
+
+                    /**
+                     * 脚本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiopsScriptInfo m_scriptInfo;
+                    bool m_scriptInfoHasBeenSet;
+
+                    /**
+                     * DLC资源配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiopsDLCResourceConfigDto m_dLCResourceConfig;
+                    bool m_dLCResourceConfigHasBeenSet;
+
+                    /**
+                     * 父任务simple信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiopsSimpleTaskDto m_parentTaskInfos;
+                    bool m_parentTaskInfosHasBeenSet;
+
+                    /**
+                     * 资源获取标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExtResourceFlagDto m_extResourceFlag;
+                    bool m_extResourceFlagHasBeenSet;
 
                 };
             }

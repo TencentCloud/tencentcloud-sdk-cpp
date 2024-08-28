@@ -572,6 +572,56 @@ namespace TencentCloud
                      */
                     bool FromLogAnalysisDataHasBeenSet() const;
 
+                    /**
+                     * 获取容器名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerName 容器名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetContainerName() const;
+
+                    /**
+                     * 设置容器名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _containerName 容器名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetContainerName(const std::string& _containerName);
+
+                    /**
+                     * 判断参数 ContainerName 是否已赋值
+                     * @return ContainerName 是否已赋值
+                     * 
+                     */
+                    bool ContainerNameHasBeenSet() const;
+
+                    /**
+                     * 获取容器ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerID 容器ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetContainerID() const;
+
+                    /**
+                     * 设置容器ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _containerID 容器ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetContainerID(const std::string& _containerID);
+
+                    /**
+                     * 判断参数 ContainerID 是否已赋值
+                     * @return ContainerID 是否已赋值
+                     * 
+                     */
+                    bool ContainerIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -720,6 +770,20 @@ namespace TencentCloud
                      */
                     std::vector<KeyValue> m_fromLogAnalysisData;
                     bool m_fromLogAnalysisDataHasBeenSet;
+
+                    /**
+                     * 容器名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_containerName;
+                    bool m_containerNameHasBeenSet;
+
+                    /**
+                     * 容器ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_containerID;
+                    bool m_containerIDHasBeenSet;
 
                 };
             }

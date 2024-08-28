@@ -38,10 +38,8 @@ set(tms_public_header_model
   include/tencentcloud/tms/v20200713/model/DescribeTextStatResponse.h
   include/tencentcloud/tms/v20200713/model/TextModerationResponse.h
   include/tencentcloud/tms/v20200713/model/User.h
-  include/tencentcloud/tms/v20201229/model/AnswerQuestionRequest.h
-  include/tencentcloud/tms/v20201229/model/AnswerQuestionResponse.h
-  include/tencentcloud/tms/v20201229/model/Tag.h
   include/tencentcloud/tms/v20201229/model/LabelGrade.h
+  include/tencentcloud/tms/v20201229/model/Tag.h
   include/tencentcloud/tms/v20201229/model/SentimentAnalysis.h
   include/tencentcloud/tms/v20201229/model/Positions.h
   include/tencentcloud/tms/v20201229/model/RiskDetails.h
@@ -80,10 +78,8 @@ set(tms_src
   src/v20200713/model/DescribeTextStatResponse.cpp
   src/v20200713/model/TextModerationResponse.cpp
   src/v20200713/model/User.cpp
-  src/v20201229/model/AnswerQuestionRequest.cpp
-  src/v20201229/model/AnswerQuestionResponse.cpp
-  src/v20201229/model/Tag.cpp
   src/v20201229/model/LabelGrade.cpp
+  src/v20201229/model/Tag.cpp
   src/v20201229/model/SentimentAnalysis.cpp
   src/v20201229/model/Positions.cpp
   src/v20201229/model/RiskDetails.cpp

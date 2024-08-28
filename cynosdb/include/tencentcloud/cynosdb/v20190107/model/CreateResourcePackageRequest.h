@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例类型
-                     * @return InstanceType 实例类型
+                     * 获取实例类型，目前固定传cynosdb-serverless
+                     * @return InstanceType 实例类型，目前固定传cynosdb-serverless
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型
-                     * @param _instanceType 实例类型
+                     * 设置实例类型，目前固定传cynosdb-serverless
+                     * @param _instanceType 实例类型，目前固定传cynosdb-serverless
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -64,19 +64,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源包使用地域
-china-中国内地通用，overseas-港澳台及海外通用
-                     * @return PackageRegion 资源包使用地域
-china-中国内地通用，overseas-港澳台及海外通用
+                     * 获取资源包使用地域chineseMainland-中国内地通用，overseas-港澳台及海外通用
+                     * @return PackageRegion 资源包使用地域chineseMainland-中国内地通用，overseas-港澳台及海外通用
                      * 
                      */
                     std::string GetPackageRegion() const;
 
                     /**
-                     * 设置资源包使用地域
-china-中国内地通用，overseas-港澳台及海外通用
-                     * @param _packageRegion 资源包使用地域
-china-中国内地通用，overseas-港澳台及海外通用
+                     * 设置资源包使用地域chineseMainland-中国内地通用，overseas-港澳台及海外通用
+                     * @param _packageRegion 资源包使用地域chineseMainland-中国内地通用，overseas-港澳台及海外通用
                      * 
                      */
                     void SetPackageRegion(const std::string& _packageRegion);
@@ -221,14 +217,13 @@ base-基础版本，common-通用版本，enterprise-企业版本
                 private:
 
                     /**
-                     * 实例类型
+                     * 实例类型，目前固定传cynosdb-serverless
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 资源包使用地域
-china-中国内地通用，overseas-港澳台及海外通用
+                     * 资源包使用地域chineseMainland-中国内地通用，overseas-港澳台及海外通用
                      */
                     std::string m_packageRegion;
                     bool m_packageRegionHasBeenSet;

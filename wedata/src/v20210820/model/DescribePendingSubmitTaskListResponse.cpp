@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tms/v20201229/model/AnswerQuestionResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribePendingSubmitTaskListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tms::V20201229::Model;
+using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
-AnswerQuestionResponse::AnswerQuestionResponse() :
-    m_answerHasBeenSet(false)
+DescribePendingSubmitTaskListResponse::DescribePendingSubmitTaskListResponse() :
+    m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome AnswerQuestionResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribePendingSubmitTaskListResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,49 @@ CoreInternalOutcome AnswerQuestionResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Answer") && !rsp["Answer"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["Answer"].IsString())
+        if (!rsp["Data"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Data"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `Answer` IsString=false incorrectly").SetRequestId(requestId));
+            DescribePendingSubmitTaskInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_data.push_back(item);
         }
-        m_answer = string(rsp["Answer"].GetString());
-        m_answerHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string AnswerQuestionResponse::ToJsonString() const
+string DescribePendingSubmitTaskListResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_answerHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Answer";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_answer.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +119,14 @@ string AnswerQuestionResponse::ToJsonString() const
 }
 
 
-string AnswerQuestionResponse::GetAnswer() const
+vector<DescribePendingSubmitTaskInfo> DescribePendingSubmitTaskListResponse::GetData() const
 {
-    return m_answer;
+    return m_data;
 }
 
-bool AnswerQuestionResponse::AnswerHasBeenSet() const
+bool DescribePendingSubmitTaskListResponse::DataHasBeenSet() const
 {
-    return m_answerHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

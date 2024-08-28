@@ -30,7 +30,8 @@ PulsarProClusterInfo::PulsarProClusterInfo() :
     m_nodeDistributionHasBeenSet(false),
     m_maxStorageHasBeenSet(false),
     m_canEditRouteHasBeenSet(false),
-    m_billingLabelVersionHasBeenSet(false)
+    m_billingLabelVersionHasBeenSet(false),
+    m_expireTimeHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome PulsarProClusterInfo::Deserialize(const rapidjson::Value &va
         m_billingLabelVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterInfo.ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = value["ExpireTime"].GetInt64();
+        m_expireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +252,14 @@ void PulsarProClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "BillingLabelVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_billingLabelVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expireTime, allocator);
     }
 
 }
@@ -404,5 +423,21 @@ void PulsarProClusterInfo::SetBillingLabelVersion(const string& _billingLabelVer
 bool PulsarProClusterInfo::BillingLabelVersionHasBeenSet() const
 {
     return m_billingLabelVersionHasBeenSet;
+}
+
+int64_t PulsarProClusterInfo::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void PulsarProClusterInfo::SetExpireTime(const int64_t& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool PulsarProClusterInfo::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
 }
 

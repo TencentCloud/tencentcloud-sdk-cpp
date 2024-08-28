@@ -393,6 +393,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeAuditRuleTemplatesResponse.h
   include/tencentcloud/cdb/v20170320/model/RollbackInstancesInfo.h
   include/tencentcloud/cdb/v20170320/model/CreateCloneInstanceRequest.h
+  include/tencentcloud/cdb/v20170320/model/ClusterInfo.h
   include/tencentcloud/cdb/v20170320/model/CloseCDBProxyRequest.h
   include/tencentcloud/cdb/v20170320/model/DeleteBackupResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeProjectSecurityGroupsResponse.h
@@ -840,6 +841,7 @@ set(cdb_src
   src/v20170320/model/DescribeAuditRuleTemplatesResponse.cpp
   src/v20170320/model/RollbackInstancesInfo.cpp
   src/v20170320/model/CreateCloneInstanceRequest.cpp
+  src/v20170320/model/ClusterInfo.cpp
   src/v20170320/model/CloseCDBProxyRequest.cpp
   src/v20170320/model/DeleteBackupResponse.cpp
   src/v20170320/model/DescribeProjectSecurityGroupsResponse.cpp

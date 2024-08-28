@@ -47,7 +47,9 @@ AlertInfo::AlertInfo() :
     m_uinHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_riskInvestigationHasBeenSet(false),
-    m_riskTreatmentHasBeenSet(false)
+    m_riskTreatmentHasBeenSet(false),
+    m_logTypeHasBeenSet(false),
+    m_logSearchHasBeenSet(false)
 {
 }
 
@@ -347,6 +349,26 @@ CoreInternalOutcome AlertInfo::Deserialize(const rapidjson::Value &value)
         m_riskTreatmentHasBeenSet = true;
     }
 
+    if (value.HasMember("LogType") && !value["LogType"].IsNull())
+    {
+        if (!value["LogType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertInfo.LogType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logType = string(value["LogType"].GetString());
+        m_logTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogSearch") && !value["LogSearch"].IsNull())
+    {
+        if (!value["LogSearch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertInfo.LogSearch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logSearch = string(value["LogSearch"].GetString());
+        m_logSearchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -571,6 +593,22 @@ void AlertInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "RiskTreatment";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_riskTreatment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logSearchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogSearch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logSearch.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1006,5 +1044,37 @@ void AlertInfo::SetRiskTreatment(const string& _riskTreatment)
 bool AlertInfo::RiskTreatmentHasBeenSet() const
 {
     return m_riskTreatmentHasBeenSet;
+}
+
+string AlertInfo::GetLogType() const
+{
+    return m_logType;
+}
+
+void AlertInfo::SetLogType(const string& _logType)
+{
+    m_logType = _logType;
+    m_logTypeHasBeenSet = true;
+}
+
+bool AlertInfo::LogTypeHasBeenSet() const
+{
+    return m_logTypeHasBeenSet;
+}
+
+string AlertInfo::GetLogSearch() const
+{
+    return m_logSearch;
+}
+
+void AlertInfo::SetLogSearch(const string& _logSearch)
+{
+    m_logSearch = _logSearch;
+    m_logSearchHasBeenSet = true;
+}
+
+bool AlertInfo::LogSearchHasBeenSet() const
+{
+    return m_logSearchHasBeenSet;
 }
 

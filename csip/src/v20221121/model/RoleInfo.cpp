@@ -41,7 +41,9 @@ RoleInfo::RoleInfo() :
     m_mD5HasBeenSet(false),
     m_fileNameHasBeenSet(false),
     m_assetTypeHasBeenSet(false),
-    m_fromLogAnalysisDataHasBeenSet(false)
+    m_fromLogAnalysisDataHasBeenSet(false),
+    m_containerNameHasBeenSet(false),
+    m_containerIDHasBeenSet(false)
 {
 }
 
@@ -270,6 +272,26 @@ CoreInternalOutcome RoleInfo::Deserialize(const rapidjson::Value &value)
         m_fromLogAnalysisDataHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerName") && !value["ContainerName"].IsNull())
+    {
+        if (!value["ContainerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoleInfo.ContainerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerName = string(value["ContainerName"].GetString());
+        m_containerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerID") && !value["ContainerID"].IsNull())
+    {
+        if (!value["ContainerID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoleInfo.ContainerID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerID = string(value["ContainerID"].GetString());
+        m_containerIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +472,22 @@ void RoleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_containerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -789,5 +827,37 @@ void RoleInfo::SetFromLogAnalysisData(const vector<KeyValue>& _fromLogAnalysisDa
 bool RoleInfo::FromLogAnalysisDataHasBeenSet() const
 {
     return m_fromLogAnalysisDataHasBeenSet;
+}
+
+string RoleInfo::GetContainerName() const
+{
+    return m_containerName;
+}
+
+void RoleInfo::SetContainerName(const string& _containerName)
+{
+    m_containerName = _containerName;
+    m_containerNameHasBeenSet = true;
+}
+
+bool RoleInfo::ContainerNameHasBeenSet() const
+{
+    return m_containerNameHasBeenSet;
+}
+
+string RoleInfo::GetContainerID() const
+{
+    return m_containerID;
+}
+
+void RoleInfo::SetContainerID(const string& _containerID)
+{
+    m_containerID = _containerID;
+    m_containerIDHasBeenSet = true;
+}
+
+bool RoleInfo::ContainerIDHasBeenSet() const
+{
+    return m_containerIDHasBeenSet;
 }
 

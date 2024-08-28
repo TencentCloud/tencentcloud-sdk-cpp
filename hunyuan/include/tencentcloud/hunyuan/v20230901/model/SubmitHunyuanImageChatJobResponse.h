@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TMS_V20201229_MODEL_ANSWERQUESTIONRESPONSE_H_
-#define TENCENTCLOUD_TMS_V20201229_MODEL_ANSWERQUESTIONRESPONSE_H_
+#ifndef TENCENTCLOUD_HUNYUAN_V20230901_MODEL_SUBMITHUNYUANIMAGECHATJOBRESPONSE_H_
+#define TENCENTCLOUD_HUNYUAN_V20230901_MODEL_SUBMITHUNYUANIMAGECHATJOBRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Tms
+    namespace Hunyuan
     {
-        namespace V20201229
+        namespace V20230901
         {
             namespace Model
             {
                 /**
-                * AnswerQuestion返回参数结构体
+                * SubmitHunyuanImageChatJob返回参数结构体
                 */
-                class AnswerQuestionResponse : public AbstractModel
+                class SubmitHunyuanImageChatJobResponse : public AbstractModel
                 {
                 public:
-                    AnswerQuestionResponse();
-                    ~AnswerQuestionResponse() = default;
+                    SubmitHunyuanImageChatJobResponse();
+                    ~SubmitHunyuanImageChatJobResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取匹配到的答案
-                     * @return Answer 匹配到的答案
+                     * 获取任务 ID。
+                     * @return JobId 任务 ID。
                      * 
                      */
-                    std::string GetAnswer() const;
+                    std::string GetJobId() const;
 
                     /**
-                     * 判断参数 Answer 是否已赋值
-                     * @return Answer 是否已赋值
+                     * 判断参数 JobId 是否已赋值
+                     * @return JobId 是否已赋值
                      * 
                      */
-                    bool AnswerHasBeenSet() const;
+                    bool JobIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 匹配到的答案
+                     * 任务 ID。
                      */
-                    std::string m_answer;
-                    bool m_answerHasBeenSet;
+                    std::string m_jobId;
+                    bool m_jobIdHasBeenSet;
 
                 };
             }
@@ -71,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TMS_V20201229_MODEL_ANSWERQUESTIONRESPONSE_H_
+#endif // !TENCENTCLOUD_HUNYUAN_V20230901_MODEL_SUBMITHUNYUANIMAGECHATJOBRESPONSE_H_

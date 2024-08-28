@@ -763,6 +763,56 @@ CSIP:云安全中心
                      */
                     bool RiskTreatmentHasBeenSet() const;
 
+                    /**
+                     * 获取日志类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogType 日志类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLogType() const;
+
+                    /**
+                     * 设置日志类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _logType 日志类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLogType(const std::string& _logType);
+
+                    /**
+                     * 判断参数 LogType 是否已赋值
+                     * @return LogType 是否已赋值
+                     * 
+                     */
+                    bool LogTypeHasBeenSet() const;
+
+                    /**
+                     * 获取语句检索
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogSearch 语句检索
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLogSearch() const;
+
+                    /**
+                     * 设置语句检索
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _logSearch 语句检索
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLogSearch(const std::string& _logSearch);
+
+                    /**
+                     * 判断参数 LogSearch 是否已赋值
+                     * @return LogSearch 是否已赋值
+                     * 
+                     */
+                    bool LogSearchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -963,6 +1013,20 @@ CSIP:云安全中心
                      */
                     std::string m_riskTreatment;
                     bool m_riskTreatmentHasBeenSet;
+
+                    /**
+                     * 日志类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logType;
+                    bool m_logTypeHasBeenSet;
+
+                    /**
+                     * 语句检索
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logSearch;
+                    bool m_logSearchHasBeenSet;
 
                 };
             }

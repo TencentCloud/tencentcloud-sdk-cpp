@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TMS_V20201229_MODEL_ANSWERQUESTIONREQUEST_H_
-#define TENCENTCLOUD_TMS_V20201229_MODEL_ANSWERQUESTIONREQUEST_H_
+#ifndef TENCENTCLOUD_WEDATA_V20210820_MODEL_JUDGERESOURCEFILERESPONSE_H_
+#define TENCENTCLOUD_WEDATA_V20210820_MODEL_JUDGERESOURCEFILERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,51 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Tms
+    namespace Wedata
     {
-        namespace V20201229
+        namespace V20210820
         {
             namespace Model
             {
                 /**
-                * AnswerQuestion请求参数结构体
+                * JudgeResourceFile返回参数结构体
                 */
-                class AnswerQuestionRequest : public AbstractModel
+                class JudgeResourceFileResponse : public AbstractModel
                 {
                 public:
-                    AnswerQuestionRequest();
-                    ~AnswerQuestionRequest() = default;
+                    JudgeResourceFileResponse();
+                    ~JudgeResourceFileResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取用户问题
-                     * @return Question 用户问题
+                     * 获取资源文件完整路径
+                     * @return Data 资源文件完整路径
                      * 
                      */
-                    std::string GetQuestion() const;
+                    std::string GetData() const;
 
                     /**
-                     * 设置用户问题
-                     * @param _question 用户问题
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    void SetQuestion(const std::string& _question);
-
-                    /**
-                     * 判断参数 Question 是否已赋值
-                     * @return Question 是否已赋值
-                     * 
-                     */
-                    bool QuestionHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 用户问题
+                     * 资源文件完整路径
                      */
-                    std::string m_question;
-                    bool m_questionHasBeenSet;
+                    std::string m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }
@@ -77,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TMS_V20201229_MODEL_ANSWERQUESTIONREQUEST_H_
+#endif // !TENCENTCLOUD_WEDATA_V20210820_MODEL_JUDGERESOURCEFILERESPONSE_H_

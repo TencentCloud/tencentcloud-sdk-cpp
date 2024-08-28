@@ -28,6 +28,7 @@
 #include <tencentcloud/clb/v20180317/model/CertificateOutput.h>
 #include <tencentcloud/clb/v20180317/model/RewriteTarget.h>
 #include <tencentcloud/clb/v20180317/model/BasicTargetGroupInfo.h>
+#include <tencentcloud/clb/v20180317/model/OAuth.h>
 
 
 namespace TencentCloud
@@ -585,6 +586,31 @@ WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Has
                      */
                     bool TargetGroupListHasBeenSet() const;
 
+                    /**
+                     * 获取OAuth配置状态信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OAuth OAuth配置状态信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    OAuth GetOAuth() const;
+
+                    /**
+                     * 设置OAuth配置状态信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _oAuth OAuth配置状态信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOAuth(const OAuth& _oAuth);
+
+                    /**
+                     * 判断参数 OAuth 是否已赋值
+                     * @return OAuth 是否已赋值
+                     * 
+                     */
+                    bool OAuthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -737,6 +763,13 @@ WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Has
                      */
                     std::vector<BasicTargetGroupInfo> m_targetGroupList;
                     bool m_targetGroupListHasBeenSet;
+
+                    /**
+                     * OAuth配置状态信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OAuth m_oAuth;
+                    bool m_oAuthHasBeenSet;
 
                 };
             }

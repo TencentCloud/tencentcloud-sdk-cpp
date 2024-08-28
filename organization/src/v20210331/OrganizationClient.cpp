@@ -4426,6 +4426,49 @@ OrganizationClient::RemoveUserFromGroupOutcomeCallable OrganizationClient::Remov
     return task->get_future();
 }
 
+OrganizationClient::SendOrgMemberAccountBindEmailOutcome OrganizationClient::SendOrgMemberAccountBindEmail(const SendOrgMemberAccountBindEmailRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendOrgMemberAccountBindEmail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendOrgMemberAccountBindEmailResponse rsp = SendOrgMemberAccountBindEmailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendOrgMemberAccountBindEmailOutcome(rsp);
+        else
+            return SendOrgMemberAccountBindEmailOutcome(o.GetError());
+    }
+    else
+    {
+        return SendOrgMemberAccountBindEmailOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::SendOrgMemberAccountBindEmailAsync(const SendOrgMemberAccountBindEmailRequest& request, const SendOrgMemberAccountBindEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SendOrgMemberAccountBindEmail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::SendOrgMemberAccountBindEmailOutcomeCallable OrganizationClient::SendOrgMemberAccountBindEmailCallable(const SendOrgMemberAccountBindEmailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SendOrgMemberAccountBindEmailOutcome()>>(
+        [this, request]()
+        {
+            return this->SendOrgMemberAccountBindEmail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::SetExternalSAMLIdentityProviderOutcome OrganizationClient::SetExternalSAMLIdentityProvider(const SetExternalSAMLIdentityProviderRequest &request)
 {
     auto outcome = MakeRequest(request, "SetExternalSAMLIdentityProvider");

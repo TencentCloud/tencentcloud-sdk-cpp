@@ -67,7 +67,8 @@ InstanceInfo::InstanceInfo() :
     m_engineTypeHasBeenSet(false),
     m_maxDelayTimeHasBeenSet(false),
     m_diskTypeHasBeenSet(false),
-    m_expandCpuHasBeenSet(false)
+    m_expandCpuHasBeenSet(false),
+    m_clusterInfoHasBeenSet(false)
 {
 }
 
@@ -597,6 +598,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_expandCpuHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterInfo") && !value["ClusterInfo"].IsNull())
+    {
+        if (!value["ClusterInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ClusterInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ClusterInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ClusterInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clusterInfo.push_back(item);
+        }
+        m_clusterInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1002,6 +1023,21 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ExpandCpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expandCpu, allocator);
+    }
+
+    if (m_clusterInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clusterInfo.begin(); itr != m_clusterInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1757,5 +1793,21 @@ void InstanceInfo::SetExpandCpu(const int64_t& _expandCpu)
 bool InstanceInfo::ExpandCpuHasBeenSet() const
 {
     return m_expandCpuHasBeenSet;
+}
+
+vector<ClusterInfo> InstanceInfo::GetClusterInfo() const
+{
+    return m_clusterInfo;
+}
+
+void InstanceInfo::SetClusterInfo(const vector<ClusterInfo>& _clusterInfo)
+{
+    m_clusterInfo = _clusterInfo;
+    m_clusterInfoHasBeenSet = true;
+}
+
+bool InstanceInfo::ClusterInfoHasBeenSet() const
+{
+    return m_clusterInfoHasBeenSet;
 }
 

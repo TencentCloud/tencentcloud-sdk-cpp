@@ -227,6 +227,8 @@
 #include <tencentcloud/organization/v20210331/model/RemovePermissionPolicyFromRoleConfigurationResponse.h>
 #include <tencentcloud/organization/v20210331/model/RemoveUserFromGroupRequest.h>
 #include <tencentcloud/organization/v20210331/model/RemoveUserFromGroupResponse.h>
+#include <tencentcloud/organization/v20210331/model/SendOrgMemberAccountBindEmailRequest.h>
+#include <tencentcloud/organization/v20210331/model/SendOrgMemberAccountBindEmailResponse.h>
 #include <tencentcloud/organization/v20210331/model/SetExternalSAMLIdentityProviderRequest.h>
 #include <tencentcloud/organization/v20210331/model/SetExternalSAMLIdentityProviderResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateGroupRequest.h>
@@ -573,6 +575,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveUserFromGroupResponse> RemoveUserFromGroupOutcome;
                 typedef std::future<RemoveUserFromGroupOutcome> RemoveUserFromGroupOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::RemoveUserFromGroupRequest&, RemoveUserFromGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserFromGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::SendOrgMemberAccountBindEmailResponse> SendOrgMemberAccountBindEmailOutcome;
+                typedef std::future<SendOrgMemberAccountBindEmailOutcome> SendOrgMemberAccountBindEmailOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::SendOrgMemberAccountBindEmailRequest&, SendOrgMemberAccountBindEmailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendOrgMemberAccountBindEmailAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetExternalSAMLIdentityProviderResponse> SetExternalSAMLIdentityProviderOutcome;
                 typedef std::future<SetExternalSAMLIdentityProviderOutcome> SetExternalSAMLIdentityProviderOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::SetExternalSAMLIdentityProviderRequest&, SetExternalSAMLIdentityProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetExternalSAMLIdentityProviderAsyncHandler;
@@ -1532,6 +1537,15 @@ namespace TencentCloud
                 RemoveUserFromGroupOutcome RemoveUserFromGroup(const Model::RemoveUserFromGroupRequest &request);
                 void RemoveUserFromGroupAsync(const Model::RemoveUserFromGroupRequest& request, const RemoveUserFromGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveUserFromGroupOutcomeCallable RemoveUserFromGroupCallable(const Model::RemoveUserFromGroupRequest& request);
+
+                /**
+                 *重新发送成员绑定邮箱激活邮件
+                 * @param req SendOrgMemberAccountBindEmailRequest
+                 * @return SendOrgMemberAccountBindEmailOutcome
+                 */
+                SendOrgMemberAccountBindEmailOutcome SendOrgMemberAccountBindEmail(const Model::SendOrgMemberAccountBindEmailRequest &request);
+                void SendOrgMemberAccountBindEmailAsync(const Model::SendOrgMemberAccountBindEmailRequest& request, const SendOrgMemberAccountBindEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendOrgMemberAccountBindEmailOutcomeCallable SendOrgMemberAccountBindEmailCallable(const Model::SendOrgMemberAccountBindEmailRequest& request);
 
                 /**
                  *配置SAML身份提供商信息

@@ -42,7 +42,88 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取集群ID
+                     * @return ClusterId 集群ID
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置集群ID
+                     * @param _clusterId 集群ID
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取端口
+                     * @return Port 端口
+                     * 
+                     */
+                    std::string GetPort() const;
+
+                    /**
+                     * 设置端口
+                     * @param _port 端口
+                     * 
+                     */
+                    void SetPort(const std::string& _port);
+
+                    /**
+                     * 判断参数 Port 是否已赋值
+                     * @return Port 是否已赋值
+                     * 
+                     */
+                    bool PortHasBeenSet() const;
+
+                    /**
+                     * 获取安全组ID 
+                     * @return SecurityGroupIds 安全组ID 
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置安全组ID 
+                     * @param _securityGroupIds 安全组ID 
+                     * 
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 集群ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 端口
+                     */
+                    std::string m_port;
+                    bool m_portHasBeenSet;
+
+                    /**
+                     * 安全组ID 
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
 
                 };
             }

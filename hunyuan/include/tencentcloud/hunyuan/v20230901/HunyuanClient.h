@@ -31,10 +31,14 @@
 #include <tencentcloud/hunyuan/v20230901/model/GetEmbeddingResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/GetTokenCountRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/GetTokenCountResponse.h>
+#include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageChatJobRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageChatJobResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/SetPayModeRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/SetPayModeResponse.h>
+#include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/TextToImageLiteRequest.h>
@@ -65,12 +69,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetTokenCountResponse> GetTokenCountOutcome;
                 typedef std::future<GetTokenCountOutcome> GetTokenCountOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::GetTokenCountRequest&, GetTokenCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTokenCountAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryHunyuanImageChatJobResponse> QueryHunyuanImageChatJobOutcome;
+                typedef std::future<QueryHunyuanImageChatJobOutcome> QueryHunyuanImageChatJobOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::QueryHunyuanImageChatJobRequest&, QueryHunyuanImageChatJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryHunyuanImageChatJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryHunyuanImageJobResponse> QueryHunyuanImageJobOutcome;
                 typedef std::future<QueryHunyuanImageJobOutcome> QueryHunyuanImageJobOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::QueryHunyuanImageJobRequest&, QueryHunyuanImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryHunyuanImageJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetPayModeResponse> SetPayModeOutcome;
                 typedef std::future<SetPayModeOutcome> SetPayModeOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::SetPayModeRequest&, SetPayModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetPayModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitHunyuanImageChatJobResponse> SubmitHunyuanImageChatJobOutcome;
+                typedef std::future<SubmitHunyuanImageChatJobOutcome> SubmitHunyuanImageChatJobOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::SubmitHunyuanImageChatJobRequest&, SubmitHunyuanImageChatJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHunyuanImageChatJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitHunyuanImageJobResponse> SubmitHunyuanImageJobOutcome;
                 typedef std::future<SubmitHunyuanImageJobOutcome> SubmitHunyuanImageJobOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::SubmitHunyuanImageJobRequest&, SubmitHunyuanImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHunyuanImageJobAsyncHandler;
@@ -122,6 +132,18 @@ namespace TencentCloud
                 GetTokenCountOutcomeCallable GetTokenCountCallable(const Model::GetTokenCountRequest& request);
 
                 /**
+                 *混元生图（多轮对话）接口基于混元大模型，将根据输入的文本描述生成图像，支持通过多轮对话的方式不断调整图像内容。分为提交任务和查询任务2个接口。
+提交任务：输入文本和前置对话 ID 等，提交一个混元生图多轮对话异步任务，获得任务 ID。
+查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得在上一轮对话基础上继续生成的图像结果。
+混元生图（多轮对话）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req QueryHunyuanImageChatJobRequest
+                 * @return QueryHunyuanImageChatJobOutcome
+                 */
+                QueryHunyuanImageChatJobOutcome QueryHunyuanImageChatJob(const Model::QueryHunyuanImageChatJobRequest &request);
+                void QueryHunyuanImageChatJobAsync(const Model::QueryHunyuanImageChatJobRequest& request, const QueryHunyuanImageChatJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryHunyuanImageChatJobOutcomeCallable QueryHunyuanImageChatJobCallable(const Model::QueryHunyuanImageChatJobRequest& request);
+
+                /**
                  *混元生图接口基于混元大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。
 提交任务：输入文本等，提交一个混元生图异步任务，获得任务 ID。
 查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。
@@ -141,6 +163,18 @@ namespace TencentCloud
                 SetPayModeOutcome SetPayMode(const Model::SetPayModeRequest &request);
                 void SetPayModeAsync(const Model::SetPayModeRequest& request, const SetPayModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetPayModeOutcomeCallable SetPayModeCallable(const Model::SetPayModeRequest& request);
+
+                /**
+                 *混元生图（多轮对话）接口基于混元大模型，将根据输入的文本描述生成图像，支持通过多轮对话的方式不断调整图像内容。分为提交任务和查询任务2个接口。
+提交任务：输入文本和前置对话 ID 等，提交一个混元生图多轮对话异步任务，获得任务 ID。
+查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得在上一轮对话基础上继续生成的图像结果。
+混元生图（多轮对话）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req SubmitHunyuanImageChatJobRequest
+                 * @return SubmitHunyuanImageChatJobOutcome
+                 */
+                SubmitHunyuanImageChatJobOutcome SubmitHunyuanImageChatJob(const Model::SubmitHunyuanImageChatJobRequest &request);
+                void SubmitHunyuanImageChatJobAsync(const Model::SubmitHunyuanImageChatJobRequest& request, const SubmitHunyuanImageChatJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitHunyuanImageChatJobOutcomeCallable SubmitHunyuanImageChatJobCallable(const Model::SubmitHunyuanImageChatJobRequest& request);
 
                 /**
                  *混元生图接口基于混元大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。

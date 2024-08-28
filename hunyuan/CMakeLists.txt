@@ -27,11 +27,15 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/Content.h
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/Usage.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageChatJobRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/Tool.h
   include/tencentcloud/hunyuan/v20230901/model/SearchResult.h
   include/tencentcloud/hunyuan/v20230901/model/Choice.h
   include/tencentcloud/hunyuan/v20230901/model/GetTokenCountResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageChatJobResponse.h
   include/tencentcloud/hunyuan/v20230901/model/EmbeddingData.h
   include/tencentcloud/hunyuan/v20230901/model/ToolFunction.h
   include/tencentcloud/hunyuan/v20230901/model/Delta.h
@@ -44,6 +48,7 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobResponse.h
   include/tencentcloud/hunyuan/v20230901/model/ActivateServiceResponse.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/History.h
   include/tencentcloud/hunyuan/v20230901/model/GetEmbeddingResponse.h
   include/tencentcloud/hunyuan/v20230901/model/ErrorMsg.h
   include/tencentcloud/hunyuan/v20230901/model/SearchInfo.h
@@ -64,11 +69,15 @@ set(hunyuan_src
   src/v20230901/model/Content.cpp
   src/v20230901/model/SubmitHunyuanImageJobRequest.cpp
   src/v20230901/model/Usage.cpp
+  src/v20230901/model/SubmitHunyuanImageChatJobResponse.cpp
+  src/v20230901/model/QueryHunyuanImageChatJobRequest.cpp
+  src/v20230901/model/SubmitHunyuanImageChatJobRequest.cpp
   src/v20230901/model/QueryHunyuanImageJobRequest.cpp
   src/v20230901/model/Tool.cpp
   src/v20230901/model/SearchResult.cpp
   src/v20230901/model/Choice.cpp
   src/v20230901/model/GetTokenCountResponse.cpp
+  src/v20230901/model/QueryHunyuanImageChatJobResponse.cpp
   src/v20230901/model/EmbeddingData.cpp
   src/v20230901/model/ToolFunction.cpp
   src/v20230901/model/Delta.cpp
@@ -81,6 +90,7 @@ set(hunyuan_src
   src/v20230901/model/SubmitHunyuanImageJobResponse.cpp
   src/v20230901/model/ActivateServiceResponse.cpp
   src/v20230901/model/QueryHunyuanImageJobResponse.cpp
+  src/v20230901/model/History.cpp
   src/v20230901/model/GetEmbeddingResponse.cpp
   src/v20230901/model/ErrorMsg.cpp
   src/v20230901/model/SearchInfo.cpp

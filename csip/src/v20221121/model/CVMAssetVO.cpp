@@ -85,7 +85,9 @@ CVMAssetVO::CVMAssetVO() :
     m_agentMemRssHasBeenSet(false),
     m_agentCpuPerHasBeenSet(false),
     m_realAppidHasBeenSet(false),
-    m_cloudTypeHasBeenSet(false)
+    m_cloudTypeHasBeenSet(false),
+    m_protectStatusHasBeenSet(false),
+    m_offlineTimeHasBeenSet(false)
 {
 }
 
@@ -777,6 +779,26 @@ CoreInternalOutcome CVMAssetVO::Deserialize(const rapidjson::Value &value)
         m_cloudTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProtectStatus") && !value["ProtectStatus"].IsNull())
+    {
+        if (!value["ProtectStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.ProtectStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_protectStatus = value["ProtectStatus"].GetInt64();
+        m_protectStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("OfflineTime") && !value["OfflineTime"].IsNull())
+    {
+        if (!value["OfflineTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.OfflineTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_offlineTime = string(value["OfflineTime"].GetString());
+        m_offlineTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1328,6 +1350,22 @@ void CVMAssetVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CloudType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cloudType, allocator);
+    }
+
+    if (m_protectStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protectStatus, allocator);
+    }
+
+    if (m_offlineTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OfflineTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_offlineTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2371,5 +2409,37 @@ void CVMAssetVO::SetCloudType(const int64_t& _cloudType)
 bool CVMAssetVO::CloudTypeHasBeenSet() const
 {
     return m_cloudTypeHasBeenSet;
+}
+
+int64_t CVMAssetVO::GetProtectStatus() const
+{
+    return m_protectStatus;
+}
+
+void CVMAssetVO::SetProtectStatus(const int64_t& _protectStatus)
+{
+    m_protectStatus = _protectStatus;
+    m_protectStatusHasBeenSet = true;
+}
+
+bool CVMAssetVO::ProtectStatusHasBeenSet() const
+{
+    return m_protectStatusHasBeenSet;
+}
+
+string CVMAssetVO::GetOfflineTime() const
+{
+    return m_offlineTime;
+}
+
+void CVMAssetVO::SetOfflineTime(const string& _offlineTime)
+{
+    m_offlineTime = _offlineTime;
+    m_offlineTimeHasBeenSet = true;
+}
+
+bool CVMAssetVO::OfflineTimeHasBeenSet() const
+{
+    return m_offlineTimeHasBeenSet;
 }
 

@@ -89,7 +89,28 @@ AlertExtraInfo::AlertExtraInfo() :
     m_userNameAndPwdHasBeenSet(false),
     m_strategyIDHasBeenSet(false),
     m_strategyNameHasBeenSet(false),
-    m_hitStrategyHasBeenSet(false)
+    m_hitStrategyHasBeenSet(false),
+    m_processNameHasBeenSet(false),
+    m_pIDHasBeenSet(false),
+    m_podNameHasBeenSet(false),
+    m_podIDHasBeenSet(false),
+    m_responseHasBeenSet(false),
+    m_systemCallHasBeenSet(false),
+    m_verbHasBeenSet(false),
+    m_logIDHasBeenSet(false),
+    m_differentHasBeenSet(false),
+    m_eventTypeHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_targetAddressHasBeenSet(false),
+    m_maliciousRequestDomainHasBeenSet(false),
+    m_ruleTypeHasBeenSet(false),
+    m_requestURIHasBeenSet(false),
+    m_requestUserHasBeenSet(false),
+    m_requestObjectHasBeenSet(false),
+    m_responseObjectHasBeenSet(false),
+    m_fileTypeHasBeenSet(false),
+    m_tITypeHasBeenSet(false),
+    m_sourceIPHasBeenSet(false)
 {
 }
 
@@ -805,6 +826,216 @@ CoreInternalOutcome AlertExtraInfo::Deserialize(const rapidjson::Value &value)
         m_hitStrategyHasBeenSet = true;
     }
 
+    if (value.HasMember("ProcessName") && !value["ProcessName"].IsNull())
+    {
+        if (!value["ProcessName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.ProcessName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_processName = string(value["ProcessName"].GetString());
+        m_processNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PID") && !value["PID"].IsNull())
+    {
+        if (!value["PID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.PID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pID = string(value["PID"].GetString());
+        m_pIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodName") && !value["PodName"].IsNull())
+    {
+        if (!value["PodName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.PodName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podName = string(value["PodName"].GetString());
+        m_podNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodID") && !value["PodID"].IsNull())
+    {
+        if (!value["PodID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.PodID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podID = string(value["PodID"].GetString());
+        m_podIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("Response") && !value["Response"].IsNull())
+    {
+        if (!value["Response"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.Response` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_response = string(value["Response"].GetString());
+        m_responseHasBeenSet = true;
+    }
+
+    if (value.HasMember("SystemCall") && !value["SystemCall"].IsNull())
+    {
+        if (!value["SystemCall"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.SystemCall` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_systemCall = string(value["SystemCall"].GetString());
+        m_systemCallHasBeenSet = true;
+    }
+
+    if (value.HasMember("Verb") && !value["Verb"].IsNull())
+    {
+        if (!value["Verb"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.Verb` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_verb = string(value["Verb"].GetString());
+        m_verbHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogID") && !value["LogID"].IsNull())
+    {
+        if (!value["LogID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.LogID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logID = string(value["LogID"].GetString());
+        m_logIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("Different") && !value["Different"].IsNull())
+    {
+        if (!value["Different"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.Different` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_different = string(value["Different"].GetString());
+        m_differentHasBeenSet = true;
+    }
+
+    if (value.HasMember("EventType") && !value["EventType"].IsNull())
+    {
+        if (!value["EventType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.EventType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventType = string(value["EventType"].GetString());
+        m_eventTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetAddress") && !value["TargetAddress"].IsNull())
+    {
+        if (!value["TargetAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.TargetAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetAddress = string(value["TargetAddress"].GetString());
+        m_targetAddressHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaliciousRequestDomain") && !value["MaliciousRequestDomain"].IsNull())
+    {
+        if (!value["MaliciousRequestDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.MaliciousRequestDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_maliciousRequestDomain = string(value["MaliciousRequestDomain"].GetString());
+        m_maliciousRequestDomainHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleType") && !value["RuleType"].IsNull())
+    {
+        if (!value["RuleType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleType = string(value["RuleType"].GetString());
+        m_ruleTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RequestURI") && !value["RequestURI"].IsNull())
+    {
+        if (!value["RequestURI"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.RequestURI` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestURI = string(value["RequestURI"].GetString());
+        m_requestURIHasBeenSet = true;
+    }
+
+    if (value.HasMember("RequestUser") && !value["RequestUser"].IsNull())
+    {
+        if (!value["RequestUser"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.RequestUser` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestUser = string(value["RequestUser"].GetString());
+        m_requestUserHasBeenSet = true;
+    }
+
+    if (value.HasMember("RequestObject") && !value["RequestObject"].IsNull())
+    {
+        if (!value["RequestObject"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.RequestObject` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestObject = string(value["RequestObject"].GetString());
+        m_requestObjectHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResponseObject") && !value["ResponseObject"].IsNull())
+    {
+        if (!value["ResponseObject"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.ResponseObject` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_responseObject = string(value["ResponseObject"].GetString());
+        m_responseObjectHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileType") && !value["FileType"].IsNull())
+    {
+        if (!value["FileType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.FileType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileType = string(value["FileType"].GetString());
+        m_fileTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TIType") && !value["TIType"].IsNull())
+    {
+        if (!value["TIType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.TIType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tIType = string(value["TIType"].GetString());
+        m_tITypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceIP") && !value["SourceIP"].IsNull())
+    {
+        if (!value["SourceIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertExtraInfo.SourceIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceIP = string(value["SourceIP"].GetString());
+        m_sourceIPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1370,6 +1601,174 @@ void AlertExtraInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "HitStrategy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hitStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_responseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Response";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_response.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_systemCallHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemCall";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_systemCall.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_verbHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Verb";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_verb.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_differentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Different";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_different.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maliciousRequestDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaliciousRequestDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maliciousRequestDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestURIHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestURI";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestURI.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestUser";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestUser.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestObjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestObject";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestObject.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_responseObjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseObject";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_responseObject.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tITypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TIType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tIType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceIP.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2477,5 +2876,341 @@ void AlertExtraInfo::SetHitStrategy(const string& _hitStrategy)
 bool AlertExtraInfo::HitStrategyHasBeenSet() const
 {
     return m_hitStrategyHasBeenSet;
+}
+
+string AlertExtraInfo::GetProcessName() const
+{
+    return m_processName;
+}
+
+void AlertExtraInfo::SetProcessName(const string& _processName)
+{
+    m_processName = _processName;
+    m_processNameHasBeenSet = true;
+}
+
+bool AlertExtraInfo::ProcessNameHasBeenSet() const
+{
+    return m_processNameHasBeenSet;
+}
+
+string AlertExtraInfo::GetPID() const
+{
+    return m_pID;
+}
+
+void AlertExtraInfo::SetPID(const string& _pID)
+{
+    m_pID = _pID;
+    m_pIDHasBeenSet = true;
+}
+
+bool AlertExtraInfo::PIDHasBeenSet() const
+{
+    return m_pIDHasBeenSet;
+}
+
+string AlertExtraInfo::GetPodName() const
+{
+    return m_podName;
+}
+
+void AlertExtraInfo::SetPodName(const string& _podName)
+{
+    m_podName = _podName;
+    m_podNameHasBeenSet = true;
+}
+
+bool AlertExtraInfo::PodNameHasBeenSet() const
+{
+    return m_podNameHasBeenSet;
+}
+
+string AlertExtraInfo::GetPodID() const
+{
+    return m_podID;
+}
+
+void AlertExtraInfo::SetPodID(const string& _podID)
+{
+    m_podID = _podID;
+    m_podIDHasBeenSet = true;
+}
+
+bool AlertExtraInfo::PodIDHasBeenSet() const
+{
+    return m_podIDHasBeenSet;
+}
+
+string AlertExtraInfo::GetResponse() const
+{
+    return m_response;
+}
+
+void AlertExtraInfo::SetResponse(const string& _response)
+{
+    m_response = _response;
+    m_responseHasBeenSet = true;
+}
+
+bool AlertExtraInfo::ResponseHasBeenSet() const
+{
+    return m_responseHasBeenSet;
+}
+
+string AlertExtraInfo::GetSystemCall() const
+{
+    return m_systemCall;
+}
+
+void AlertExtraInfo::SetSystemCall(const string& _systemCall)
+{
+    m_systemCall = _systemCall;
+    m_systemCallHasBeenSet = true;
+}
+
+bool AlertExtraInfo::SystemCallHasBeenSet() const
+{
+    return m_systemCallHasBeenSet;
+}
+
+string AlertExtraInfo::GetVerb() const
+{
+    return m_verb;
+}
+
+void AlertExtraInfo::SetVerb(const string& _verb)
+{
+    m_verb = _verb;
+    m_verbHasBeenSet = true;
+}
+
+bool AlertExtraInfo::VerbHasBeenSet() const
+{
+    return m_verbHasBeenSet;
+}
+
+string AlertExtraInfo::GetLogID() const
+{
+    return m_logID;
+}
+
+void AlertExtraInfo::SetLogID(const string& _logID)
+{
+    m_logID = _logID;
+    m_logIDHasBeenSet = true;
+}
+
+bool AlertExtraInfo::LogIDHasBeenSet() const
+{
+    return m_logIDHasBeenSet;
+}
+
+string AlertExtraInfo::GetDifferent() const
+{
+    return m_different;
+}
+
+void AlertExtraInfo::SetDifferent(const string& _different)
+{
+    m_different = _different;
+    m_differentHasBeenSet = true;
+}
+
+bool AlertExtraInfo::DifferentHasBeenSet() const
+{
+    return m_differentHasBeenSet;
+}
+
+string AlertExtraInfo::GetEventType() const
+{
+    return m_eventType;
+}
+
+void AlertExtraInfo::SetEventType(const string& _eventType)
+{
+    m_eventType = _eventType;
+    m_eventTypeHasBeenSet = true;
+}
+
+bool AlertExtraInfo::EventTypeHasBeenSet() const
+{
+    return m_eventTypeHasBeenSet;
+}
+
+string AlertExtraInfo::GetDescription() const
+{
+    return m_description;
+}
+
+void AlertExtraInfo::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool AlertExtraInfo::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+string AlertExtraInfo::GetTargetAddress() const
+{
+    return m_targetAddress;
+}
+
+void AlertExtraInfo::SetTargetAddress(const string& _targetAddress)
+{
+    m_targetAddress = _targetAddress;
+    m_targetAddressHasBeenSet = true;
+}
+
+bool AlertExtraInfo::TargetAddressHasBeenSet() const
+{
+    return m_targetAddressHasBeenSet;
+}
+
+string AlertExtraInfo::GetMaliciousRequestDomain() const
+{
+    return m_maliciousRequestDomain;
+}
+
+void AlertExtraInfo::SetMaliciousRequestDomain(const string& _maliciousRequestDomain)
+{
+    m_maliciousRequestDomain = _maliciousRequestDomain;
+    m_maliciousRequestDomainHasBeenSet = true;
+}
+
+bool AlertExtraInfo::MaliciousRequestDomainHasBeenSet() const
+{
+    return m_maliciousRequestDomainHasBeenSet;
+}
+
+string AlertExtraInfo::GetRuleType() const
+{
+    return m_ruleType;
+}
+
+void AlertExtraInfo::SetRuleType(const string& _ruleType)
+{
+    m_ruleType = _ruleType;
+    m_ruleTypeHasBeenSet = true;
+}
+
+bool AlertExtraInfo::RuleTypeHasBeenSet() const
+{
+    return m_ruleTypeHasBeenSet;
+}
+
+string AlertExtraInfo::GetRequestURI() const
+{
+    return m_requestURI;
+}
+
+void AlertExtraInfo::SetRequestURI(const string& _requestURI)
+{
+    m_requestURI = _requestURI;
+    m_requestURIHasBeenSet = true;
+}
+
+bool AlertExtraInfo::RequestURIHasBeenSet() const
+{
+    return m_requestURIHasBeenSet;
+}
+
+string AlertExtraInfo::GetRequestUser() const
+{
+    return m_requestUser;
+}
+
+void AlertExtraInfo::SetRequestUser(const string& _requestUser)
+{
+    m_requestUser = _requestUser;
+    m_requestUserHasBeenSet = true;
+}
+
+bool AlertExtraInfo::RequestUserHasBeenSet() const
+{
+    return m_requestUserHasBeenSet;
+}
+
+string AlertExtraInfo::GetRequestObject() const
+{
+    return m_requestObject;
+}
+
+void AlertExtraInfo::SetRequestObject(const string& _requestObject)
+{
+    m_requestObject = _requestObject;
+    m_requestObjectHasBeenSet = true;
+}
+
+bool AlertExtraInfo::RequestObjectHasBeenSet() const
+{
+    return m_requestObjectHasBeenSet;
+}
+
+string AlertExtraInfo::GetResponseObject() const
+{
+    return m_responseObject;
+}
+
+void AlertExtraInfo::SetResponseObject(const string& _responseObject)
+{
+    m_responseObject = _responseObject;
+    m_responseObjectHasBeenSet = true;
+}
+
+bool AlertExtraInfo::ResponseObjectHasBeenSet() const
+{
+    return m_responseObjectHasBeenSet;
+}
+
+string AlertExtraInfo::GetFileType() const
+{
+    return m_fileType;
+}
+
+void AlertExtraInfo::SetFileType(const string& _fileType)
+{
+    m_fileType = _fileType;
+    m_fileTypeHasBeenSet = true;
+}
+
+bool AlertExtraInfo::FileTypeHasBeenSet() const
+{
+    return m_fileTypeHasBeenSet;
+}
+
+string AlertExtraInfo::GetTIType() const
+{
+    return m_tIType;
+}
+
+void AlertExtraInfo::SetTIType(const string& _tIType)
+{
+    m_tIType = _tIType;
+    m_tITypeHasBeenSet = true;
+}
+
+bool AlertExtraInfo::TITypeHasBeenSet() const
+{
+    return m_tITypeHasBeenSet;
+}
+
+string AlertExtraInfo::GetSourceIP() const
+{
+    return m_sourceIP;
+}
+
+void AlertExtraInfo::SetSourceIP(const string& _sourceIP)
+{
+    m_sourceIP = _sourceIP;
+    m_sourceIPHasBeenSet = true;
+}
+
+bool AlertExtraInfo::SourceIPHasBeenSet() const
+{
+    return m_sourceIPHasBeenSet;
 }
 

@@ -212,6 +212,49 @@ HunyuanClient::GetTokenCountOutcomeCallable HunyuanClient::GetTokenCountCallable
     return task->get_future();
 }
 
+HunyuanClient::QueryHunyuanImageChatJobOutcome HunyuanClient::QueryHunyuanImageChatJob(const QueryHunyuanImageChatJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryHunyuanImageChatJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryHunyuanImageChatJobResponse rsp = QueryHunyuanImageChatJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryHunyuanImageChatJobOutcome(rsp);
+        else
+            return QueryHunyuanImageChatJobOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryHunyuanImageChatJobOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::QueryHunyuanImageChatJobAsync(const QueryHunyuanImageChatJobRequest& request, const QueryHunyuanImageChatJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryHunyuanImageChatJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::QueryHunyuanImageChatJobOutcomeCallable HunyuanClient::QueryHunyuanImageChatJobCallable(const QueryHunyuanImageChatJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryHunyuanImageChatJobOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryHunyuanImageChatJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 HunyuanClient::QueryHunyuanImageJobOutcome HunyuanClient::QueryHunyuanImageJob(const QueryHunyuanImageJobRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryHunyuanImageJob");
@@ -291,6 +334,49 @@ HunyuanClient::SetPayModeOutcomeCallable HunyuanClient::SetPayModeCallable(const
         [this, request]()
         {
             return this->SetPayMode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HunyuanClient::SubmitHunyuanImageChatJobOutcome HunyuanClient::SubmitHunyuanImageChatJob(const SubmitHunyuanImageChatJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitHunyuanImageChatJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitHunyuanImageChatJobResponse rsp = SubmitHunyuanImageChatJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitHunyuanImageChatJobOutcome(rsp);
+        else
+            return SubmitHunyuanImageChatJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitHunyuanImageChatJobOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::SubmitHunyuanImageChatJobAsync(const SubmitHunyuanImageChatJobRequest& request, const SubmitHunyuanImageChatJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitHunyuanImageChatJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::SubmitHunyuanImageChatJobOutcomeCallable HunyuanClient::SubmitHunyuanImageChatJobCallable(const SubmitHunyuanImageChatJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitHunyuanImageChatJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitHunyuanImageChatJob(request);
         }
     );
 

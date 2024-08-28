@@ -186,6 +186,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/AddOrganizationNodeRequest.h
   include/tencentcloud/organization/v20210331/model/AddShareUnitMembersRequest.h
   include/tencentcloud/organization/v20210331/model/AddShareUnitRequest.h
+  include/tencentcloud/organization/v20210331/model/SendOrgMemberAccountBindEmailResponse.h
   include/tencentcloud/organization/v20210331/model/OrgMemberFinancial.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationAuthNodeRequest.h
   include/tencentcloud/organization/v20210331/model/OpenIdentityCenterRequest.h
@@ -216,6 +217,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/DetachPolicyRequest.h
   include/tencentcloud/organization/v20210331/model/UpdateOrganizationIdentityRequest.h
   include/tencentcloud/organization/v20210331/model/ListOrgServiceAssignMemberResponse.h
+  include/tencentcloud/organization/v20210331/model/SendOrgMemberAccountBindEmailRequest.h
   include/tencentcloud/organization/v20210331/model/DeleteRoleAssignmentResponse.h
   include/tencentcloud/organization/v20210331/model/DisablePolicyTypeRequest.h
   include/tencentcloud/organization/v20210331/model/DescribeEffectivePolicyResponse.h
@@ -516,6 +518,7 @@ set(organization_src
   src/v20210331/model/AddOrganizationNodeRequest.cpp
   src/v20210331/model/AddShareUnitMembersRequest.cpp
   src/v20210331/model/AddShareUnitRequest.cpp
+  src/v20210331/model/SendOrgMemberAccountBindEmailResponse.cpp
   src/v20210331/model/OrgMemberFinancial.cpp
   src/v20210331/model/DescribeOrganizationAuthNodeRequest.cpp
   src/v20210331/model/OpenIdentityCenterRequest.cpp
@@ -546,6 +549,7 @@ set(organization_src
   src/v20210331/model/DetachPolicyRequest.cpp
   src/v20210331/model/UpdateOrganizationIdentityRequest.cpp
   src/v20210331/model/ListOrgServiceAssignMemberResponse.cpp
+  src/v20210331/model/SendOrgMemberAccountBindEmailRequest.cpp
   src/v20210331/model/DeleteRoleAssignmentResponse.cpp
   src/v20210331/model/DisablePolicyTypeRequest.cpp
   src/v20210331/model/DescribeEffectivePolicyResponse.cpp

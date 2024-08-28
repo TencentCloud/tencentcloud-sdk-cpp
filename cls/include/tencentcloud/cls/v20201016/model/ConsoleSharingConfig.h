@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool DurationMillisecondsHasBeenSet() const;
 
                     /**
-                     * 获取允许访问的资源列表
-                     * @return Resources 允许访问的资源列表
+                     * 获取允许访问的资源列表，目前仅支持一个Resource
+                     * @return Resources 允许访问的资源列表，目前仅支持一个Resource
                      * 
                      */
                     std::vector<std::string> GetResources() const;
 
                     /**
-                     * 设置允许访问的资源列表
-                     * @param _resources 允许访问的资源列表
+                     * 设置允许访问的资源列表，目前仅支持一个Resource
+                     * @param _resources 允许访问的资源列表，目前仅支持一个Resource
                      * 
                      */
                     void SetResources(const std::vector<std::string>& _resources);
@@ -369,7 +369,7 @@ namespace TencentCloud
                     bool m_durationMillisecondsHasBeenSet;
 
                     /**
-                     * 允许访问的资源列表
+                     * 允许访问的资源列表，目前仅支持一个Resource
                      */
                     std::vector<std::string> m_resources;
                     bool m_resourcesHasBeenSet;

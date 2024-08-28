@@ -255,15 +255,15 @@ lo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（�
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取需要翻译文件url，长度不超过256字符。文件限制如下：docx/xIsx/html/markdown文件不超过800万字符，doc/pdf/pptx文件不超过300页，txt/po文件不超过10MB，pdf/docx/pptx/xlsx不超过40MB
-                     * @return Url 需要翻译文件url，长度不超过256字符。文件限制如下：docx/xIsx/html/markdown文件不超过800万字符，doc/pdf/pptx文件不超过300页，txt/po文件不超过10MB，pdf/docx/pptx/xlsx不超过40MB
+                     * 获取需要翻译文件url，URL长度不能超过1000字符。文件限制如下：docx/xIsx/html/markdown文件不超过800万字符，doc/pdf/pptx文件不超过300页，txt/po文件不超过10MB，pdf/docx/pptx/xlsx不超过40MB
+                     * @return Url 需要翻译文件url，URL长度不能超过1000字符。文件限制如下：docx/xIsx/html/markdown文件不超过800万字符，doc/pdf/pptx文件不超过300页，txt/po文件不超过10MB，pdf/docx/pptx/xlsx不超过40MB
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置需要翻译文件url，长度不超过256字符。文件限制如下：docx/xIsx/html/markdown文件不超过800万字符，doc/pdf/pptx文件不超过300页，txt/po文件不超过10MB，pdf/docx/pptx/xlsx不超过40MB
-                     * @param _url 需要翻译文件url，长度不超过256字符。文件限制如下：docx/xIsx/html/markdown文件不超过800万字符，doc/pdf/pptx文件不超过300页，txt/po文件不超过10MB，pdf/docx/pptx/xlsx不超过40MB
+                     * 设置需要翻译文件url，URL长度不能超过1000字符。文件限制如下：docx/xIsx/html/markdown文件不超过800万字符，doc/pdf/pptx文件不超过300页，txt/po文件不超过10MB，pdf/docx/pptx/xlsx不超过40MB
+                     * @param _url 需要翻译文件url，URL长度不能超过1000字符。文件限制如下：docx/xIsx/html/markdown文件不超过800万字符，doc/pdf/pptx文件不超过300页，txt/po文件不超过10MB，pdf/docx/pptx/xlsx不超过40MB
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -297,15 +297,15 @@ lo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（�
                     bool BasicDocumentTypeHasBeenSet() const;
 
                     /**
-                     * 获取回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。
-                     * @return CallbackUrl 回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。
+                     * 获取回调url，URL长度不能超过256字符。文件大于10MB或字符较多时，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。
+                     * @return CallbackUrl 回调url，URL长度不能超过256字符。文件大于10MB或字符较多时，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。
                      * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。
-                     * @param _callbackUrl 回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。
+                     * 设置回调url，URL长度不能超过256字符。文件大于10MB或字符较多时，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。
+                     * @param _callbackUrl 回调url，URL长度不能超过256字符。文件大于10MB或字符较多时，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。
                      * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
@@ -397,7 +397,7 @@ lo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（�
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 需要翻译文件url，长度不超过256字符。文件限制如下：docx/xIsx/html/markdown文件不超过800万字符，doc/pdf/pptx文件不超过300页，txt/po文件不超过10MB，pdf/docx/pptx/xlsx不超过40MB
+                     * 需要翻译文件url，URL长度不能超过1000字符。文件限制如下：docx/xIsx/html/markdown文件不超过800万字符，doc/pdf/pptx文件不超过300页，txt/po文件不超过10MB，pdf/docx/pptx/xlsx不超过40MB
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
@@ -409,7 +409,7 @@ lo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（�
                     bool m_basicDocumentTypeHasBeenSet;
 
                     /**
-                     * 回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。
+                     * 回调url，URL长度不能超过256字符。文件大于10MB或字符较多时，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;

@@ -23,8 +23,6 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/tms/v20201229/model/AnswerQuestionRequest.h>
-#include <tencentcloud/tms/v20201229/model/AnswerQuestionResponse.h>
 #include <tencentcloud/tms/v20201229/model/ModerateTextRequest.h>
 #include <tencentcloud/tms/v20201229/model/ModerateTextResponse.h>
 #include <tencentcloud/tms/v20201229/model/TextModerationRequest.h>
@@ -43,9 +41,6 @@ namespace TencentCloud
                 TmsClient(const Credential &credential, const std::string &region);
                 TmsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Core::Error, Model::AnswerQuestionResponse> AnswerQuestionOutcome;
-                typedef std::future<AnswerQuestionOutcome> AnswerQuestionOutcomeCallable;
-                typedef std::function<void(const TmsClient*, const Model::AnswerQuestionRequest&, AnswerQuestionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AnswerQuestionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModerateTextResponse> ModerateTextOutcome;
                 typedef std::future<ModerateTextOutcome> ModerateTextOutcomeCallable;
                 typedef std::function<void(const TmsClient*, const Model::ModerateTextRequest&, ModerateTextOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModerateTextAsyncHandler;
@@ -54,15 +49,6 @@ namespace TencentCloud
                 typedef std::function<void(const TmsClient*, const Model::TextModerationRequest&, TextModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextModerationAsyncHandler;
 
 
-
-                /**
-                 *"AIGC代答"产品帮助客户在其AIGC场景下，对于敏感类的问题，不是由客户的大模型机器人来回答，而是我们来进行代答，尽最大可能帮助客户规避风险。
-                 * @param req AnswerQuestionRequest
-                 * @return AnswerQuestionOutcome
-                 */
-                AnswerQuestionOutcome AnswerQuestion(const Model::AnswerQuestionRequest &request);
-                void AnswerQuestionAsync(const Model::AnswerQuestionRequest& request, const AnswerQuestionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                AnswerQuestionOutcomeCallable AnswerQuestionCallable(const Model::AnswerQuestionRequest& request);
 
                 /**
                  *天御文本内容安全定制标签文本审核接口为定制接口，会按照客户定制标签输出审核结果，如需使用请联系商务经理或[在线客服](https://cloud.tencent.com/online-service?from=doc_1125)咨询。

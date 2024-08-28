@@ -36,7 +36,8 @@ DescribeCVMAssetsResponse::DescribeCVMAssetsResponse() :
     m_zoneListHasBeenSet(false),
     m_osListHasBeenSet(false),
     m_assetMapInstanceTypeListHasBeenSet(false),
-    m_publicPrivateAttrHasBeenSet(false)
+    m_publicPrivateAttrHasBeenSet(false),
+    m_protectStatusListHasBeenSet(false)
 {
 }
 
@@ -324,6 +325,26 @@ CoreInternalOutcome DescribeCVMAssetsResponse::Deserialize(const string &payload
         m_publicPrivateAttrHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ProtectStatusList") && !rsp["ProtectStatusList"].IsNull())
+    {
+        if (!rsp["ProtectStatusList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ProtectStatusList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ProtectStatusList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FilterDataObject item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_protectStatusList.push_back(item);
+        }
+        m_protectStatusListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -522,6 +543,21 @@ string DescribeCVMAssetsResponse::ToJsonString() const
         }
     }
 
+    if (m_protectStatusListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectStatusList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_protectStatusList.begin(); itr != m_protectStatusList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -662,6 +698,16 @@ vector<FilterDataObject> DescribeCVMAssetsResponse::GetPublicPrivateAttr() const
 bool DescribeCVMAssetsResponse::PublicPrivateAttrHasBeenSet() const
 {
     return m_publicPrivateAttrHasBeenSet;
+}
+
+vector<FilterDataObject> DescribeCVMAssetsResponse::GetProtectStatusList() const
+{
+    return m_protectStatusList;
+}
+
+bool DescribeCVMAssetsResponse::ProtectStatusListHasBeenSet() const
+{
+    return m_protectStatusListHasBeenSet;
 }
 
 

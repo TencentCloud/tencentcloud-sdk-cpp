@@ -32,7 +32,8 @@ ModifyRuleRequest::ModifyRuleRequest() :
     m_sessionExpireTimeHasBeenSet(false),
     m_forwardTypeHasBeenSet(false),
     m_trpcCalleeHasBeenSet(false),
-    m_trpcFuncHasBeenSet(false)
+    m_trpcFuncHasBeenSet(false),
+    m_oAuthHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,15 @@ string ModifyRuleRequest::ToJsonString() const
         string key = "TrpcFunc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_trpcFunc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_oAuthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OAuth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_oAuth.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -290,6 +300,22 @@ void ModifyRuleRequest::SetTrpcFunc(const string& _trpcFunc)
 bool ModifyRuleRequest::TrpcFuncHasBeenSet() const
 {
     return m_trpcFuncHasBeenSet;
+}
+
+OAuth ModifyRuleRequest::GetOAuth() const
+{
+    return m_oAuth;
+}
+
+void ModifyRuleRequest::SetOAuth(const OAuth& _oAuth)
+{
+    m_oAuth = _oAuth;
+    m_oAuthHasBeenSet = true;
+}
+
+bool ModifyRuleRequest::OAuthHasBeenSet() const
+{
+    return m_oAuthHasBeenSet;
 }
 
 

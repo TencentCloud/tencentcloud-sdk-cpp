@@ -778,6 +778,27 @@ namespace TencentCloud
                      */
                     bool EngineTypesHasBeenSet() const;
 
+                    /**
+                     * 获取是否获取集群版实例节点信息，可填：true或false
+                     * @return QueryClusterInfo 是否获取集群版实例节点信息，可填：true或false
+                     * 
+                     */
+                    bool GetQueryClusterInfo() const;
+
+                    /**
+                     * 设置是否获取集群版实例节点信息，可填：true或false
+                     * @param _queryClusterInfo 是否获取集群版实例节点信息，可填：true或false
+                     * 
+                     */
+                    void SetQueryClusterInfo(const bool& _queryClusterInfo);
+
+                    /**
+                     * 判断参数 QueryClusterInfo 是否已赋值
+                     * @return QueryClusterInfo 是否已赋值
+                     * 
+                     */
+                    bool QueryClusterInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -989,6 +1010,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_engineTypes;
                     bool m_engineTypesHasBeenSet;
+
+                    /**
+                     * 是否获取集群版实例节点信息，可填：true或false
+                     */
+                    bool m_queryClusterInfo;
+                    bool m_queryClusterInfoHasBeenSet;
 
                 };
             }

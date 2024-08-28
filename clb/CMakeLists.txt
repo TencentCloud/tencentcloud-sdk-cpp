@@ -241,6 +241,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DescribeIdleLoadBalancersRequest.h
   include/tencentcloud/clb/v20180317/model/DeleteLoadBalancerSnatIpsRequest.h
   include/tencentcloud/clb/v20180317/model/InternetAccessible.h
+  include/tencentcloud/clb/v20180317/model/OAuth.h
   include/tencentcloud/clb/v20180317/model/DescribeClassicalLBTargetsResponse.h
   include/tencentcloud/clb/v20180317/model/RewriteLocationMap.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetPortRequest.h
@@ -487,6 +488,7 @@ set(clb_src
   src/v20180317/model/DescribeIdleLoadBalancersRequest.cpp
   src/v20180317/model/DeleteLoadBalancerSnatIpsRequest.cpp
   src/v20180317/model/InternetAccessible.cpp
+  src/v20180317/model/OAuth.cpp
   src/v20180317/model/DescribeClassicalLBTargetsResponse.cpp
   src/v20180317/model/RewriteLocationMap.cpp
   src/v20180317/model/ModifyTargetPortRequest.cpp

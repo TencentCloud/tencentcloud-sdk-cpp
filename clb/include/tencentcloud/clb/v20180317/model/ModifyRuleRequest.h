@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/HealthCheck.h>
+#include <tencentcloud/clb/v20180317/model/OAuth.h>
 
 
 namespace TencentCloud
@@ -257,6 +258,27 @@ namespace TencentCloud
                      */
                     bool TrpcFuncHasBeenSet() const;
 
+                    /**
+                     * 获取OAuth配置信息。
+                     * @return OAuth OAuth配置信息。
+                     * 
+                     */
+                    OAuth GetOAuth() const;
+
+                    /**
+                     * 设置OAuth配置信息。
+                     * @param _oAuth OAuth配置信息。
+                     * 
+                     */
+                    void SetOAuth(const OAuth& _oAuth);
+
+                    /**
+                     * 判断参数 OAuth 是否已赋值
+                     * @return OAuth 是否已赋值
+                     * 
+                     */
+                    bool OAuthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -319,6 +341,12 @@ namespace TencentCloud
                      */
                     std::string m_trpcFunc;
                     bool m_trpcFuncHasBeenSet;
+
+                    /**
+                     * OAuth配置信息。
+                     */
+                    OAuth m_oAuth;
+                    bool m_oAuthHasBeenSet;
 
                 };
             }

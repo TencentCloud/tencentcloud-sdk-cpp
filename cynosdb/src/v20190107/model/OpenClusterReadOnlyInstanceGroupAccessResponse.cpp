@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
-OpenClusterReadOnlyInstanceGroupAccessResponse::OpenClusterReadOnlyInstanceGroupAccessResponse()
+OpenClusterReadOnlyInstanceGroupAccessResponse::OpenClusterReadOnlyInstanceGroupAccessResponse() :
+    m_flowIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome OpenClusterReadOnlyInstanceGroupAccessResponse::Deserialize(
     }
 
 
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
+    {
+        if (!rsp["FlowId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = string(rsp["FlowId"].GetString());
+        m_flowIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string OpenClusterReadOnlyInstanceGroupAccessResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string OpenClusterReadOnlyInstanceGroupAccessResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string OpenClusterReadOnlyInstanceGroupAccessResponse::GetFlowId() const
+{
+    return m_flowId;
+}
+
+bool OpenClusterReadOnlyInstanceGroupAccessResponse::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
+}
 
 

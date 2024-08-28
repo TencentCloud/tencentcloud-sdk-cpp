@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tms/v20201229/model/AnswerQuestionRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageChatJobRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Tms::V20201229::Model;
+using namespace TencentCloud::Hunyuan::V20230901::Model;
 using namespace std;
 
-AnswerQuestionRequest::AnswerQuestionRequest() :
-    m_questionHasBeenSet(false)
+QueryHunyuanImageChatJobRequest::QueryHunyuanImageChatJobRequest() :
+    m_jobIdHasBeenSet(false)
 {
 }
 
-string AnswerQuestionRequest::ToJsonString() const
+string QueryHunyuanImageChatJobRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_questionHasBeenSet)
+    if (m_jobIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Question";
+        string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_question.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -50,20 +50,20 @@ string AnswerQuestionRequest::ToJsonString() const
 }
 
 
-string AnswerQuestionRequest::GetQuestion() const
+string QueryHunyuanImageChatJobRequest::GetJobId() const
 {
-    return m_question;
+    return m_jobId;
 }
 
-void AnswerQuestionRequest::SetQuestion(const string& _question)
+void QueryHunyuanImageChatJobRequest::SetJobId(const string& _jobId)
 {
-    m_question = _question;
-    m_questionHasBeenSet = true;
+    m_jobId = _jobId;
+    m_jobIdHasBeenSet = true;
 }
 
-bool AnswerQuestionRequest::QuestionHasBeenSet() const
+bool QueryHunyuanImageChatJobRequest::JobIdHasBeenSet() const
 {
-    return m_questionHasBeenSet;
+    return m_jobIdHasBeenSet;
 }
 
 

@@ -57,7 +57,8 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_tagsHasBeenSet(false),
     m_proxyVipsHasBeenSet(false),
     m_proxyIdsHasBeenSet(false),
-    m_engineTypesHasBeenSet(false)
+    m_engineTypesHasBeenSet(false),
+    m_queryClusterInfoHasBeenSet(false)
 {
 }
 
@@ -458,6 +459,14 @@ string DescribeDBInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_queryClusterInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryClusterInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_queryClusterInfo, allocator);
     }
 
 
@@ -1026,6 +1035,22 @@ void DescribeDBInstancesRequest::SetEngineTypes(const vector<string>& _engineTyp
 bool DescribeDBInstancesRequest::EngineTypesHasBeenSet() const
 {
     return m_engineTypesHasBeenSet;
+}
+
+bool DescribeDBInstancesRequest::GetQueryClusterInfo() const
+{
+    return m_queryClusterInfo;
+}
+
+void DescribeDBInstancesRequest::SetQueryClusterInfo(const bool& _queryClusterInfo)
+{
+    m_queryClusterInfo = _queryClusterInfo;
+    m_queryClusterInfoHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::QueryClusterInfoHasBeenSet() const
+{
+    return m_queryClusterInfoHasBeenSet;
 }
 
 

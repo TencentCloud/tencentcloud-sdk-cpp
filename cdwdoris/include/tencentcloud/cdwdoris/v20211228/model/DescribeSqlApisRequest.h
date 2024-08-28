@@ -105,6 +105,48 @@ namespace TencentCloud
                      */
                     bool CatalogsHasBeenSet() const;
 
+                    /**
+                     * 获取数据库名
+                     * @return DatabaseName 数据库名
+                     * 
+                     */
+                    std::string GetDatabaseName() const;
+
+                    /**
+                     * 设置数据库名
+                     * @param _databaseName 数据库名
+                     * 
+                     */
+                    void SetDatabaseName(const std::string& _databaseName);
+
+                    /**
+                     * 判断参数 DatabaseName 是否已赋值
+                     * @return DatabaseName 是否已赋值
+                     * 
+                     */
+                    bool DatabaseNameHasBeenSet() const;
+
+                    /**
+                     * 获取表名
+                     * @return TableName 表名
+                     * 
+                     */
+                    std::string GetTableName() const;
+
+                    /**
+                     * 设置表名
+                     * @param _tableName 表名
+                     * 
+                     */
+                    void SetTableName(const std::string& _tableName);
+
+                    /**
+                     * 判断参数 TableName 是否已赋值
+                     * @return TableName 是否已赋值
+                     * 
+                     */
+                    bool TableNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +166,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_catalogs;
                     bool m_catalogsHasBeenSet;
+
+                    /**
+                     * 数据库名
+                     */
+                    std::string m_databaseName;
+                    bool m_databaseNameHasBeenSet;
+
+                    /**
+                     * 表名
+                     */
+                    std::string m_tableName;
+                    bool m_tableNameHasBeenSet;
 
                 };
             }
