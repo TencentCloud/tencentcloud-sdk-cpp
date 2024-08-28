@@ -52,7 +52,8 @@ Resource::Resource() :
     m_logDeliveryArgsHasBeenSet(false),
     m_clbSetHasBeenSet(false),
     m_domainCountHasBeenSet(false),
-    m_usedDomainCountHasBeenSet(false)
+    m_usedDomainCountHasBeenSet(false),
+    m_trialHasBeenSet(false)
 {
 }
 
@@ -400,6 +401,16 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_usedDomainCountHasBeenSet = true;
     }
 
+    if (value.HasMember("Trial") && !value["Trial"].IsNull())
+    {
+        if (!value["Trial"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.Trial` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_trial = value["Trial"].GetUint64();
+        m_trialHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -683,6 +694,14 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "UsedDomainCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usedDomainCount, allocator);
+    }
+
+    if (m_trialHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Trial";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_trial, allocator);
     }
 
 }
@@ -1198,5 +1217,21 @@ void Resource::SetUsedDomainCount(const uint64_t& _usedDomainCount)
 bool Resource::UsedDomainCountHasBeenSet() const
 {
     return m_usedDomainCountHasBeenSet;
+}
+
+uint64_t Resource::GetTrial() const
+{
+    return m_trial;
+}
+
+void Resource::SetTrial(const uint64_t& _trial)
+{
+    m_trial = _trial;
+    m_trialHasBeenSet = true;
+}
+
+bool Resource::TrialHasBeenSet() const
+{
+    return m_trialHasBeenSet;
 }
 

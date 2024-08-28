@@ -735,6 +735,31 @@ namespace TencentCloud
                      */
                     bool UsedDomainCountHasBeenSet() const;
 
+                    /**
+                     * 获取0 非试用版，1 试用版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Trial 0 非试用版，1 试用版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetTrial() const;
+
+                    /**
+                     * 设置0 非试用版，1 试用版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _trial 0 非试用版，1 试用版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTrial(const uint64_t& _trial);
+
+                    /**
+                     * 判断参数 Trial 是否已赋值
+                     * @return Trial 是否已赋值
+                     * 
+                     */
+                    bool TrialHasBeenSet() const;
+
                 private:
 
                     /**
@@ -932,6 +957,13 @@ namespace TencentCloud
                      */
                     uint64_t m_usedDomainCount;
                     bool m_usedDomainCountHasBeenSet;
+
+                    /**
+                     * 0 非试用版，1 试用版
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_trial;
+                    bool m_trialHasBeenSet;
 
                 };
             }

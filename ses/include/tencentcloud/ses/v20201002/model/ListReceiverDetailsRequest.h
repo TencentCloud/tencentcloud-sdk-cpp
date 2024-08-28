@@ -126,6 +126,69 @@ namespace TencentCloud
                      */
                     bool EmailHasBeenSet() const;
 
+                    /**
+                     * 获取搜索开始时间
+                     * @return CreateTimeBegin 搜索开始时间
+                     * 
+                     */
+                    std::string GetCreateTimeBegin() const;
+
+                    /**
+                     * 设置搜索开始时间
+                     * @param _createTimeBegin 搜索开始时间
+                     * 
+                     */
+                    void SetCreateTimeBegin(const std::string& _createTimeBegin);
+
+                    /**
+                     * 判断参数 CreateTimeBegin 是否已赋值
+                     * @return CreateTimeBegin 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeBeginHasBeenSet() const;
+
+                    /**
+                     * 获取搜索结束时间
+                     * @return CreateTimeEnd 搜索结束时间
+                     * 
+                     */
+                    std::string GetCreateTimeEnd() const;
+
+                    /**
+                     * 设置搜索结束时间
+                     * @param _createTimeEnd 搜索结束时间
+                     * 
+                     */
+                    void SetCreateTimeEnd(const std::string& _createTimeEnd);
+
+                    /**
+                     * 判断参数 CreateTimeEnd 是否已赋值
+                     * @return CreateTimeEnd 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeEndHasBeenSet() const;
+
+                    /**
+                     * 获取1:有效，2:无效
+                     * @return Status 1:有效，2:无效
+                     * 
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 设置1:有效，2:无效
+                     * @param _status 1:有效，2:无效
+                     * 
+                     */
+                    void SetStatus(const uint64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +214,24 @@ namespace TencentCloud
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
+
+                    /**
+                     * 搜索开始时间
+                     */
+                    std::string m_createTimeBegin;
+                    bool m_createTimeBeginHasBeenSet;
+
+                    /**
+                     * 搜索结束时间
+                     */
+                    std::string m_createTimeEnd;
+                    bool m_createTimeEndHasBeenSet;
+
+                    /**
+                     * 1:有效，2:无效
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

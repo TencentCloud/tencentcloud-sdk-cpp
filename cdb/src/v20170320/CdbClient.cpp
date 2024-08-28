@@ -3738,6 +3738,49 @@ CdbClient::DescribeInstanceParamsOutcomeCallable CdbClient::DescribeInstancePara
     return task->get_future();
 }
 
+CdbClient::DescribeInstanceUpgradeCheckJobOutcome CdbClient::DescribeInstanceUpgradeCheckJob(const DescribeInstanceUpgradeCheckJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceUpgradeCheckJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceUpgradeCheckJobResponse rsp = DescribeInstanceUpgradeCheckJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceUpgradeCheckJobOutcome(rsp);
+        else
+            return DescribeInstanceUpgradeCheckJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceUpgradeCheckJobOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeInstanceUpgradeCheckJobAsync(const DescribeInstanceUpgradeCheckJobRequest& request, const DescribeInstanceUpgradeCheckJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceUpgradeCheckJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeInstanceUpgradeCheckJobOutcomeCallable CdbClient::DescribeInstanceUpgradeCheckJobCallable(const DescribeInstanceUpgradeCheckJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceUpgradeCheckJobOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceUpgradeCheckJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeInstanceUpgradeTypeOutcome CdbClient::DescribeInstanceUpgradeType(const DescribeInstanceUpgradeTypeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceUpgradeType");
@@ -6913,6 +6956,49 @@ CdbClient::StopRollbackOutcomeCallable CdbClient::StopRollbackCallable(const Sto
         [this, request]()
         {
             return this->StopRollback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::SubmitInstanceUpgradeCheckJobOutcome CdbClient::SubmitInstanceUpgradeCheckJob(const SubmitInstanceUpgradeCheckJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitInstanceUpgradeCheckJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitInstanceUpgradeCheckJobResponse rsp = SubmitInstanceUpgradeCheckJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitInstanceUpgradeCheckJobOutcome(rsp);
+        else
+            return SubmitInstanceUpgradeCheckJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitInstanceUpgradeCheckJobOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::SubmitInstanceUpgradeCheckJobAsync(const SubmitInstanceUpgradeCheckJobRequest& request, const SubmitInstanceUpgradeCheckJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitInstanceUpgradeCheckJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::SubmitInstanceUpgradeCheckJobOutcomeCallable CdbClient::SubmitInstanceUpgradeCheckJobCallable(const SubmitInstanceUpgradeCheckJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitInstanceUpgradeCheckJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitInstanceUpgradeCheckJob(request);
         }
     );
 

@@ -180,6 +180,31 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取无效收件人数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InvalidCount 无效收件人数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetInvalidCount() const;
+
+                    /**
+                     * 设置无效收件人数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _invalidCount 无效收件人数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInvalidCount(const uint64_t& _invalidCount);
+
+                    /**
+                     * 判断参数 InvalidCount 是否已赋值
+                     * @return InvalidCount 是否已赋值
+                     * 
+                     */
+                    bool InvalidCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -219,6 +244,13 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 无效收件人数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_invalidCount;
+                    bool m_invalidCountHasBeenSet;
 
                 };
             }

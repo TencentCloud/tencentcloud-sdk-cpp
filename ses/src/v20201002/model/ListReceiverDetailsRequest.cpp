@@ -26,7 +26,10 @@ ListReceiverDetailsRequest::ListReceiverDetailsRequest() :
     m_receiverIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_emailHasBeenSet(false)
+    m_emailHasBeenSet(false),
+    m_createTimeBeginHasBeenSet(false),
+    m_createTimeEndHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -67,6 +70,30 @@ string ListReceiverDetailsRequest::ToJsonString() const
         string key = "Email";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_email.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeBeginHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTimeBegin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_createTimeBegin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeEndHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTimeEnd";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_createTimeEnd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_status, allocator);
     }
 
 
@@ -139,6 +166,54 @@ void ListReceiverDetailsRequest::SetEmail(const string& _email)
 bool ListReceiverDetailsRequest::EmailHasBeenSet() const
 {
     return m_emailHasBeenSet;
+}
+
+string ListReceiverDetailsRequest::GetCreateTimeBegin() const
+{
+    return m_createTimeBegin;
+}
+
+void ListReceiverDetailsRequest::SetCreateTimeBegin(const string& _createTimeBegin)
+{
+    m_createTimeBegin = _createTimeBegin;
+    m_createTimeBeginHasBeenSet = true;
+}
+
+bool ListReceiverDetailsRequest::CreateTimeBeginHasBeenSet() const
+{
+    return m_createTimeBeginHasBeenSet;
+}
+
+string ListReceiverDetailsRequest::GetCreateTimeEnd() const
+{
+    return m_createTimeEnd;
+}
+
+void ListReceiverDetailsRequest::SetCreateTimeEnd(const string& _createTimeEnd)
+{
+    m_createTimeEnd = _createTimeEnd;
+    m_createTimeEndHasBeenSet = true;
+}
+
+bool ListReceiverDetailsRequest::CreateTimeEndHasBeenSet() const
+{
+    return m_createTimeEndHasBeenSet;
+}
+
+uint64_t ListReceiverDetailsRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void ListReceiverDetailsRequest::SetStatus(const uint64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool ListReceiverDetailsRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool DisasterRecoverGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架
-                     * @return Type 分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架
+                     * 获取分散置放群组类型，取值范围：<br><li>HOST：物理机</li><li>SW：交换机</li><li>RACK：机架</li>
+                     * @return Type 分散置放群组类型，取值范围：<br><li>HOST：物理机</li><li>SW：交换机</li><li>RACK：机架</li>
                      * 
                      */
                     std::string GetType() const;
@@ -136,7 +136,7 @@ namespace TencentCloud
                     bool m_disasterRecoverGroupIdHasBeenSet;
 
                     /**
-                     * 分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架
+                     * 分散置放群组类型，取值范围：<br><li>HOST：物理机</li><li>SW：交换机</li><li>RACK：机架</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -72,6 +72,34 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取有效邮件地址数
+                     * @return ValidCount 有效邮件地址数
+                     * 
+                     */
+                    uint64_t GetValidCount() const;
+
+                    /**
+                     * 判断参数 ValidCount 是否已赋值
+                     * @return ValidCount 是否已赋值
+                     * 
+                     */
+                    bool ValidCountHasBeenSet() const;
+
+                    /**
+                     * 获取无效邮件地址数
+                     * @return InvalidCount 无效邮件地址数
+                     * 
+                     */
+                    uint64_t GetInvalidCount() const;
+
+                    /**
+                     * 判断参数 InvalidCount 是否已赋值
+                     * @return InvalidCount 是否已赋值
+                     * 
+                     */
+                    bool InvalidCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +113,18 @@ namespace TencentCloud
                      */
                     std::vector<ReceiverDetail> m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 有效邮件地址数
+                     */
+                    uint64_t m_validCount;
+                    bool m_validCountHasBeenSet;
+
+                    /**
+                     * 无效邮件地址数
+                     */
+                    uint64_t m_invalidCount;
+                    bool m_invalidCountHasBeenSet;
 
                 };
             }

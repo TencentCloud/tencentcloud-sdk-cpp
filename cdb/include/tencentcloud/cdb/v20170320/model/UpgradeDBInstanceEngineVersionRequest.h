@@ -149,6 +149,27 @@ namespace TencentCloud
                     bool MaxDelayTimeHasBeenSet() const;
 
                     /**
+                     * 获取5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略
+                     * @return IgnoreErrKeyword 5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略
+                     * 
+                     */
+                    int64_t GetIgnoreErrKeyword() const;
+
+                    /**
+                     * 设置5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略
+                     * @param _ignoreErrKeyword 5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略
+                     * 
+                     */
+                    void SetIgnoreErrKeyword(const int64_t& _ignoreErrKeyword);
+
+                    /**
+                     * 判断参数 IgnoreErrKeyword 是否已赋值
+                     * @return IgnoreErrKeyword 是否已赋值
+                     * 
+                     */
+                    bool IgnoreErrKeywordHasBeenSet() const;
+
+                    /**
                      * 获取版本升级支持指定参数
                      * @return ParamList 版本升级支持指定参数
                      * 
@@ -200,6 +221,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxDelayTime;
                     bool m_maxDelayTimeHasBeenSet;
+
+                    /**
+                     * 5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略
+                     */
+                    int64_t m_ignoreErrKeyword;
+                    bool m_ignoreErrKeywordHasBeenSet;
 
                     /**
                      * 版本升级支持指定参数

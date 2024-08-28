@@ -109,6 +109,81 @@ namespace TencentCloud
                      */
                     bool TemplateDataHasBeenSet() const;
 
+                    /**
+                     * 获取无效原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Reason 无效原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetReason() const;
+
+                    /**
+                     * 设置无效原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _reason 无效原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReason(const std::string& _reason);
+
+                    /**
+                     * 判断参数 Reason 是否已赋值
+                     * @return Reason 是否已赋值
+                     * 
+                     */
+                    bool ReasonHasBeenSet() const;
+
+                    /**
+                     * 获取1:有效，2:无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 1:有效，2:无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 设置1:有效，2:无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 1:有效，2:无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const uint64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取收件人地址id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EmailId 收件人地址id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetEmailId() const;
+
+                    /**
+                     * 设置收件人地址id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _emailId 收件人地址id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEmailId(const uint64_t& _emailId);
+
+                    /**
+                     * 判断参数 EmailId 是否已赋值
+                     * @return EmailId 是否已赋值
+                     * 
+                     */
+                    bool EmailIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +203,27 @@ namespace TencentCloud
                      */
                     std::string m_templateData;
                     bool m_templateDataHasBeenSet;
+
+                    /**
+                     * 无效原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reason;
+                    bool m_reasonHasBeenSet;
+
+                    /**
+                     * 1:有效，2:无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 收件人地址id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_emailId;
+                    bool m_emailIdHasBeenSet;
 
                 };
             }

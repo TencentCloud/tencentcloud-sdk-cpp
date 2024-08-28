@@ -28,6 +28,7 @@ UpgradeDBInstanceEngineVersionRequest::UpgradeDBInstanceEngineVersionRequest() :
     m_waitSwitchHasBeenSet(false),
     m_upgradeSubversionHasBeenSet(false),
     m_maxDelayTimeHasBeenSet(false),
+    m_ignoreErrKeywordHasBeenSet(false),
     m_paramListHasBeenSet(false)
 {
 }
@@ -77,6 +78,14 @@ string UpgradeDBInstanceEngineVersionRequest::ToJsonString() const
         string key = "MaxDelayTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxDelayTime, allocator);
+    }
+
+    if (m_ignoreErrKeywordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreErrKeyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ignoreErrKeyword, allocator);
     }
 
     if (m_paramListHasBeenSet)
@@ -180,6 +189,22 @@ void UpgradeDBInstanceEngineVersionRequest::SetMaxDelayTime(const int64_t& _maxD
 bool UpgradeDBInstanceEngineVersionRequest::MaxDelayTimeHasBeenSet() const
 {
     return m_maxDelayTimeHasBeenSet;
+}
+
+int64_t UpgradeDBInstanceEngineVersionRequest::GetIgnoreErrKeyword() const
+{
+    return m_ignoreErrKeyword;
+}
+
+void UpgradeDBInstanceEngineVersionRequest::SetIgnoreErrKeyword(const int64_t& _ignoreErrKeyword)
+{
+    m_ignoreErrKeyword = _ignoreErrKeyword;
+    m_ignoreErrKeywordHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceEngineVersionRequest::IgnoreErrKeywordHasBeenSet() const
+{
+    return m_ignoreErrKeywordHasBeenSet;
 }
 
 vector<UpgradeEngineVersionParams> UpgradeDBInstanceEngineVersionRequest::GetParamList() const

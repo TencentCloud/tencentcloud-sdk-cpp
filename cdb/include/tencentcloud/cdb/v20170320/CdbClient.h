@@ -195,6 +195,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeInstanceUpgradeCheckJobRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeInstanceUpgradeCheckJobResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceUpgradeTypeRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceUpgradeTypeResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeLocalBinlogConfigRequest.h>
@@ -343,6 +345,8 @@
 #include <tencentcloud/cdb/v20170320/model/StopReplicationResponse.h>
 #include <tencentcloud/cdb/v20170320/model/StopRollbackRequest.h>
 #include <tencentcloud/cdb/v20170320/model/StopRollbackResponse.h>
+#include <tencentcloud/cdb/v20170320/model/SubmitInstanceUpgradeCheckJobRequest.h>
+#include <tencentcloud/cdb/v20170320/model/SubmitInstanceUpgradeCheckJobResponse.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchCDBProxyRequest.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchCDBProxyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchDBInstanceMasterSlaveRequest.h>
@@ -631,6 +635,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceParamsResponse> DescribeInstanceParamsOutcome;
                 typedef std::future<DescribeInstanceParamsOutcome> DescribeInstanceParamsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeInstanceParamsRequest&, DescribeInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceUpgradeCheckJobResponse> DescribeInstanceUpgradeCheckJobOutcome;
+                typedef std::future<DescribeInstanceUpgradeCheckJobOutcome> DescribeInstanceUpgradeCheckJobOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeInstanceUpgradeCheckJobRequest&, DescribeInstanceUpgradeCheckJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceUpgradeCheckJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceUpgradeTypeResponse> DescribeInstanceUpgradeTypeOutcome;
                 typedef std::future<DescribeInstanceUpgradeTypeOutcome> DescribeInstanceUpgradeTypeOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeInstanceUpgradeTypeRequest&, DescribeInstanceUpgradeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceUpgradeTypeAsyncHandler;
@@ -853,6 +860,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopRollbackResponse> StopRollbackOutcome;
                 typedef std::future<StopRollbackOutcome> StopRollbackOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::StopRollbackRequest&, StopRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRollbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitInstanceUpgradeCheckJobResponse> SubmitInstanceUpgradeCheckJobOutcome;
+                typedef std::future<SubmitInstanceUpgradeCheckJobOutcome> SubmitInstanceUpgradeCheckJobOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::SubmitInstanceUpgradeCheckJobRequest&, SubmitInstanceUpgradeCheckJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitInstanceUpgradeCheckJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SwitchCDBProxyResponse> SwitchCDBProxyOutcome;
                 typedef std::future<SwitchCDBProxyOutcome> SwitchCDBProxyOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::SwitchCDBProxyRequest&, SwitchCDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchCDBProxyAsyncHandler;
@@ -1677,6 +1687,15 @@ namespace TencentCloud
                 DescribeInstanceParamsOutcomeCallable DescribeInstanceParamsCallable(const Model::DescribeInstanceParamsRequest& request);
 
                 /**
+                 *该接口（DescribeInstanceUpgradeCheckJob）查询实例版本升级校验任务。
+                 * @param req DescribeInstanceUpgradeCheckJobRequest
+                 * @return DescribeInstanceUpgradeCheckJobOutcome
+                 */
+                DescribeInstanceUpgradeCheckJobOutcome DescribeInstanceUpgradeCheckJob(const Model::DescribeInstanceUpgradeCheckJobRequest &request);
+                void DescribeInstanceUpgradeCheckJobAsync(const Model::DescribeInstanceUpgradeCheckJobRequest& request, const DescribeInstanceUpgradeCheckJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceUpgradeCheckJobOutcomeCallable DescribeInstanceUpgradeCheckJobCallable(const Model::DescribeInstanceUpgradeCheckJobRequest& request);
+
+                /**
                  *本接口(DescribeInstanceUpgradeType)用于查询数据库实例升级类型。
                  * @param req DescribeInstanceUpgradeTypeRequest
                  * @return DescribeInstanceUpgradeTypeOutcome
@@ -2367,6 +2386,15 @@ namespace TencentCloud
                 StopRollbackOutcome StopRollback(const Model::StopRollbackRequest &request);
                 void StopRollbackAsync(const Model::StopRollbackRequest& request, const StopRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopRollbackOutcomeCallable StopRollbackCallable(const Model::StopRollbackRequest& request);
+
+                /**
+                 *该接口（SubmitInstanceUpgradeCheckJob）提交实例版本升级校验任务。
+                 * @param req SubmitInstanceUpgradeCheckJobRequest
+                 * @return SubmitInstanceUpgradeCheckJobOutcome
+                 */
+                SubmitInstanceUpgradeCheckJobOutcome SubmitInstanceUpgradeCheckJob(const Model::SubmitInstanceUpgradeCheckJobRequest &request);
+                void SubmitInstanceUpgradeCheckJobAsync(const Model::SubmitInstanceUpgradeCheckJobRequest& request, const SubmitInstanceUpgradeCheckJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitInstanceUpgradeCheckJobOutcomeCallable SubmitInstanceUpgradeCheckJobCallable(const Model::SubmitInstanceUpgradeCheckJobRequest& request);
 
                 /**
                  *数据库代理配置变更或则升级版本后手动发起立即切换

@@ -26,7 +26,8 @@ ReceiverData::ReceiverData() :
     m_countHasBeenSet(false),
     m_descHasBeenSet(false),
     m_receiversStatusHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_invalidCountHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ReceiverData::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("InvalidCount") && !value["InvalidCount"].IsNull())
+    {
+        if (!value["InvalidCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReceiverData.InvalidCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalidCount = value["InvalidCount"].GetUint64();
+        m_invalidCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ReceiverData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invalidCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvalidCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_invalidCount, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ReceiverData::SetCreateTime(const string& _createTime)
 bool ReceiverData::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+uint64_t ReceiverData::GetInvalidCount() const
+{
+    return m_invalidCount;
+}
+
+void ReceiverData::SetInvalidCount(const uint64_t& _invalidCount)
+{
+    m_invalidCount = _invalidCount;
+    m_invalidCountHasBeenSet = true;
+}
+
+bool ReceiverData::InvalidCountHasBeenSet() const
+{
+    return m_invalidCountHasBeenSet;
 }
 

@@ -23,7 +23,12 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ses::V20201002::Model;
 using namespace std;
 
-CreateReceiverDetailWithDataResponse::CreateReceiverDetailWithDataResponse()
+CreateReceiverDetailWithDataResponse::CreateReceiverDetailWithDataResponse() :
+    m_totalCountHasBeenSet(false),
+    m_validCountHasBeenSet(false),
+    m_tooLongCountHasBeenSet(false),
+    m_emptyEmailCountHasBeenSet(false),
+    m_repeatCountHasBeenSet(false)
 {
 }
 
@@ -61,6 +66,56 @@ CoreInternalOutcome CreateReceiverDetailWithDataResponse::Deserialize(const stri
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ValidCount") && !rsp["ValidCount"].IsNull())
+    {
+        if (!rsp["ValidCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ValidCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_validCount = rsp["ValidCount"].GetUint64();
+        m_validCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TooLongCount") && !rsp["TooLongCount"].IsNull())
+    {
+        if (!rsp["TooLongCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TooLongCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tooLongCount = rsp["TooLongCount"].GetUint64();
+        m_tooLongCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EmptyEmailCount") && !rsp["EmptyEmailCount"].IsNull())
+    {
+        if (!rsp["EmptyEmailCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmptyEmailCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_emptyEmailCount = rsp["EmptyEmailCount"].GetUint64();
+        m_emptyEmailCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RepeatCount") && !rsp["RepeatCount"].IsNull())
+    {
+        if (!rsp["RepeatCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RepeatCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_repeatCount = rsp["RepeatCount"].GetUint64();
+        m_repeatCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +125,46 @@ string CreateReceiverDetailWithDataResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_validCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_validCount, allocator);
+    }
+
+    if (m_tooLongCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TooLongCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tooLongCount, allocator);
+    }
+
+    if (m_emptyEmailCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmptyEmailCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_emptyEmailCount, allocator);
+    }
+
+    if (m_repeatCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepeatCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_repeatCount, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +177,55 @@ string CreateReceiverDetailWithDataResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t CreateReceiverDetailWithDataResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool CreateReceiverDetailWithDataResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+uint64_t CreateReceiverDetailWithDataResponse::GetValidCount() const
+{
+    return m_validCount;
+}
+
+bool CreateReceiverDetailWithDataResponse::ValidCountHasBeenSet() const
+{
+    return m_validCountHasBeenSet;
+}
+
+uint64_t CreateReceiverDetailWithDataResponse::GetTooLongCount() const
+{
+    return m_tooLongCount;
+}
+
+bool CreateReceiverDetailWithDataResponse::TooLongCountHasBeenSet() const
+{
+    return m_tooLongCountHasBeenSet;
+}
+
+uint64_t CreateReceiverDetailWithDataResponse::GetEmptyEmailCount() const
+{
+    return m_emptyEmailCount;
+}
+
+bool CreateReceiverDetailWithDataResponse::EmptyEmailCountHasBeenSet() const
+{
+    return m_emptyEmailCountHasBeenSet;
+}
+
+uint64_t CreateReceiverDetailWithDataResponse::GetRepeatCount() const
+{
+    return m_repeatCount;
+}
+
+bool CreateReceiverDetailWithDataResponse::RepeatCountHasBeenSet() const
+{
+    return m_repeatCountHasBeenSet;
+}
 
 

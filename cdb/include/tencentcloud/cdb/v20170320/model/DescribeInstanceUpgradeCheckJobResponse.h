@@ -1,0 +1,94 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_DESCRIBEINSTANCEUPGRADECHECKJOBRESPONSE_H_
+#define TENCENTCLOUD_CDB_V20170320_MODEL_DESCRIBEINSTANCEUPGRADECHECKJOBRESPONSE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Cdb
+    {
+        namespace V20170320
+        {
+            namespace Model
+            {
+                /**
+                * DescribeInstanceUpgradeCheckJob返回参数结构体
+                */
+                class DescribeInstanceUpgradeCheckJobResponse : public AbstractModel
+                {
+                public:
+                    DescribeInstanceUpgradeCheckJobResponse();
+                    ~DescribeInstanceUpgradeCheckJobResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取24小时内是否存在历史升级校验任务
+                     * @return ExistUpgradeCheckJob 24小时内是否存在历史升级校验任务
+                     * 
+                     */
+                    bool GetExistUpgradeCheckJob() const;
+
+                    /**
+                     * 判断参数 ExistUpgradeCheckJob 是否已赋值
+                     * @return ExistUpgradeCheckJob 是否已赋值
+                     * 
+                     */
+                    bool ExistUpgradeCheckJobHasBeenSet() const;
+
+                    /**
+                     * 获取任务id
+                     * @return JobId 任务id
+                     * 
+                     */
+                    int64_t GetJobId() const;
+
+                    /**
+                     * 判断参数 JobId 是否已赋值
+                     * @return JobId 是否已赋值
+                     * 
+                     */
+                    bool JobIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 24小时内是否存在历史升级校验任务
+                     */
+                    bool m_existUpgradeCheckJob;
+                    bool m_existUpgradeCheckJobHasBeenSet;
+
+                    /**
+                     * 任务id
+                     */
+                    int64_t m_jobId;
+                    bool m_jobIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_DESCRIBEINSTANCEUPGRADECHECKJOBRESPONSE_H_

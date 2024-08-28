@@ -75,7 +75,8 @@ LoadBalancer::LoadBalancer() :
     m_clusterIdsHasBeenSet(false),
     m_attributeFlagsHasBeenSet(false),
     m_loadBalancerDomainHasBeenSet(false),
-    m_egressHasBeenSet(false)
+    m_egressHasBeenSet(false),
+    m_exclusiveHasBeenSet(false)
 {
 }
 
@@ -721,6 +722,16 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_egressHasBeenSet = true;
     }
 
+    if (value.HasMember("Exclusive") && !value["Exclusive"].IsNull())
+    {
+        if (!value["Exclusive"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.Exclusive` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_exclusive = value["Exclusive"].GetUint64();
+        m_exclusiveHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1218,6 +1229,14 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Egress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_egress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exclusiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Exclusive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_exclusive, allocator);
     }
 
 }
@@ -2101,5 +2120,21 @@ void LoadBalancer::SetEgress(const string& _egress)
 bool LoadBalancer::EgressHasBeenSet() const
 {
     return m_egressHasBeenSet;
+}
+
+uint64_t LoadBalancer::GetExclusive() const
+{
+    return m_exclusive;
+}
+
+void LoadBalancer::SetExclusive(const uint64_t& _exclusive)
+{
+    m_exclusive = _exclusive;
+    m_exclusiveHasBeenSet = true;
+}
+
+bool LoadBalancer::ExclusiveHasBeenSet() const
+{
+    return m_exclusiveHasBeenSet;
 }
 

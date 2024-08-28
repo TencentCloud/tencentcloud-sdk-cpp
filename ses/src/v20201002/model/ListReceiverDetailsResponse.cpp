@@ -25,7 +25,9 @@ using namespace std;
 
 ListReceiverDetailsResponse::ListReceiverDetailsResponse() :
     m_totalCountHasBeenSet(false),
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_validCountHasBeenSet(false),
+    m_invalidCountHasBeenSet(false)
 {
 }
 
@@ -93,6 +95,26 @@ CoreInternalOutcome ListReceiverDetailsResponse::Deserialize(const string &paylo
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ValidCount") && !rsp["ValidCount"].IsNull())
+    {
+        if (!rsp["ValidCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ValidCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_validCount = rsp["ValidCount"].GetUint64();
+        m_validCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InvalidCount") && !rsp["InvalidCount"].IsNull())
+    {
+        if (!rsp["InvalidCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InvalidCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalidCount = rsp["InvalidCount"].GetUint64();
+        m_invalidCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +148,22 @@ string ListReceiverDetailsResponse::ToJsonString() const
         }
     }
 
+    if (m_validCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_validCount, allocator);
+    }
+
+    if (m_invalidCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvalidCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_invalidCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +194,26 @@ vector<ReceiverDetail> ListReceiverDetailsResponse::GetData() const
 bool ListReceiverDetailsResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+uint64_t ListReceiverDetailsResponse::GetValidCount() const
+{
+    return m_validCount;
+}
+
+bool ListReceiverDetailsResponse::ValidCountHasBeenSet() const
+{
+    return m_validCountHasBeenSet;
+}
+
+uint64_t ListReceiverDetailsResponse::GetInvalidCount() const
+{
+    return m_invalidCount;
+}
+
+bool ListReceiverDetailsResponse::InvalidCountHasBeenSet() const
+{
+    return m_invalidCountHasBeenSet;
 }
 
 
