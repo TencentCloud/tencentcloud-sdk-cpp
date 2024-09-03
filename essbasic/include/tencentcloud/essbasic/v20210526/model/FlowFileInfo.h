@@ -175,23 +175,23 @@ namespace TencentCloud
                     bool FlowTypeHasBeenSet() const;
 
                     /**
-                     * 获取签署流程回调地址，长度不超过255个字符
-                     * @return CallbackUrl 签署流程回调地址，长度不超过255个字符
-                     * 
+                     * 获取已废弃，请使用【应用号配置】中的回调地址统一接收消息
+                     * @return CallbackUrl 已废弃，请使用【应用号配置】中的回调地址统一接收消息
+                     * @deprecated
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置签署流程回调地址，长度不超过255个字符
-                     * @param _callbackUrl 签署流程回调地址，长度不超过255个字符
-                     * 
+                     * 设置已废弃，请使用【应用号配置】中的回调地址统一接收消息
+                     * @param _callbackUrl 已废弃，请使用【应用号配置】中的回调地址统一接收消息
+                     * @deprecated
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CallbackUrlHasBeenSet() const;
 
@@ -339,7 +339,7 @@ namespace TencentCloud
                     bool m_flowTypeHasBeenSet;
 
                     /**
-                     * 签署流程回调地址，长度不超过255个字符
+                     * 已废弃，请使用【应用号配置】中的回调地址统一接收消息
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;

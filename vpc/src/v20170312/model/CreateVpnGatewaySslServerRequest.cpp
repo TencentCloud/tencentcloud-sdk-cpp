@@ -34,7 +34,8 @@ CreateVpnGatewaySslServerRequest::CreateVpnGatewaySslServerRequest() :
     m_compressHasBeenSet(false),
     m_ssoEnabledHasBeenSet(false),
     m_accessPolicyEnabledHasBeenSet(false),
-    m_samlDataHasBeenSet(false)
+    m_samlDataHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,21 @@ string CreateVpnGatewaySslServerRequest::ToJsonString() const
         string key = "SamlData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_samlData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -344,6 +360,22 @@ void CreateVpnGatewaySslServerRequest::SetSamlData(const string& _samlData)
 bool CreateVpnGatewaySslServerRequest::SamlDataHasBeenSet() const
 {
     return m_samlDataHasBeenSet;
+}
+
+vector<Tag> CreateVpnGatewaySslServerRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateVpnGatewaySslServerRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateVpnGatewaySslServerRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

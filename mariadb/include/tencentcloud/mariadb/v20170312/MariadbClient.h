@@ -55,6 +55,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeBackupFilesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeBackupTimeRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeBackupTimeResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeBinlogTimeRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeBinlogTimeResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBEncryptAttributesRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBEncryptAttributesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBInstanceDetailRequest.h>
@@ -231,6 +233,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupTimeResponse> DescribeBackupTimeOutcome;
                 typedef std::future<DescribeBackupTimeOutcome> DescribeBackupTimeOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeBackupTimeRequest&, DescribeBackupTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupTimeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBinlogTimeResponse> DescribeBinlogTimeOutcome;
+                typedef std::future<DescribeBinlogTimeOutcome> DescribeBinlogTimeOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::DescribeBinlogTimeRequest&, DescribeBinlogTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBinlogTimeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBEncryptAttributesResponse> DescribeDBEncryptAttributesOutcome;
                 typedef std::future<DescribeDBEncryptAttributesOutcome> DescribeDBEncryptAttributesOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDBEncryptAttributesRequest&, DescribeDBEncryptAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBEncryptAttributesAsyncHandler;
@@ -550,6 +555,15 @@ namespace TencentCloud
                 DescribeBackupTimeOutcome DescribeBackupTime(const Model::DescribeBackupTimeRequest &request);
                 void DescribeBackupTimeAsync(const Model::DescribeBackupTimeRequest& request, const DescribeBackupTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupTimeOutcomeCallable DescribeBackupTimeCallable(const Model::DescribeBackupTimeRequest& request);
+
+                /**
+                 *本接口（DescribeBinlogTime）用于查询可回档时间范围。
+                 * @param req DescribeBinlogTimeRequest
+                 * @return DescribeBinlogTimeOutcome
+                 */
+                DescribeBinlogTimeOutcome DescribeBinlogTime(const Model::DescribeBinlogTimeRequest &request);
+                void DescribeBinlogTimeAsync(const Model::DescribeBinlogTimeRequest& request, const DescribeBinlogTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBinlogTimeOutcomeCallable DescribeBinlogTimeCallable(const Model::DescribeBinlogTimeRequest& request);
 
                 /**
                  *本接口(DescribeDBEncryptAttributes)用于查询实例数据加密状态。

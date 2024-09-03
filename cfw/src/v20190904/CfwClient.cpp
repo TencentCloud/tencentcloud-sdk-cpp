@@ -1158,6 +1158,49 @@ CfwClient::DeleteNatFwInstanceOutcomeCallable CfwClient::DeleteNatFwInstanceCall
     return task->get_future();
 }
 
+CfwClient::DeleteRemoteAccessDomainOutcome CfwClient::DeleteRemoteAccessDomain(const DeleteRemoteAccessDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRemoteAccessDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRemoteAccessDomainResponse rsp = DeleteRemoteAccessDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRemoteAccessDomainOutcome(rsp);
+        else
+            return DeleteRemoteAccessDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRemoteAccessDomainOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DeleteRemoteAccessDomainAsync(const DeleteRemoteAccessDomainRequest& request, const DeleteRemoteAccessDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRemoteAccessDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DeleteRemoteAccessDomainOutcomeCallable CfwClient::DeleteRemoteAccessDomainCallable(const DeleteRemoteAccessDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRemoteAccessDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRemoteAccessDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DeleteResourceGroupOutcome CfwClient::DeleteResourceGroup(const DeleteResourceGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteResourceGroup");

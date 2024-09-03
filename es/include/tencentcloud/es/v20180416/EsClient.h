@@ -91,6 +91,8 @@
 #include <tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesResponse.h>
 #include <tencentcloud/es/v20180416/model/InquirePriceRenewInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/InquirePriceRenewInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/InstallInstanceModelRequest.h>
+#include <tencentcloud/es/v20180416/model/InstallInstanceModelResponse.h>
 #include <tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupRequest.h>
 #include <tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartInstanceRequest.h>
@@ -249,6 +251,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquirePriceRenewInstanceResponse> InquirePriceRenewInstanceOutcome;
                 typedef std::future<InquirePriceRenewInstanceOutcome> InquirePriceRenewInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::InquirePriceRenewInstanceRequest&, InquirePriceRenewInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::InstallInstanceModelResponse> InstallInstanceModelOutcome;
+                typedef std::future<InstallInstanceModelOutcome> InstallInstanceModelOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::InstallInstanceModelRequest&, InstallInstanceModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallInstanceModelAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEsVipSecurityGroupResponse> ModifyEsVipSecurityGroupOutcome;
                 typedef std::future<ModifyEsVipSecurityGroupOutcome> ModifyEsVipSecurityGroupOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::ModifyEsVipSecurityGroupRequest&, ModifyEsVipSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEsVipSecurityGroupAsyncHandler;
@@ -621,6 +626,15 @@ namespace TencentCloud
                 InquirePriceRenewInstanceOutcome InquirePriceRenewInstance(const Model::InquirePriceRenewInstanceRequest &request);
                 void InquirePriceRenewInstanceAsync(const Model::InquirePriceRenewInstanceRequest& request, const InquirePriceRenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquirePriceRenewInstanceOutcomeCallable InquirePriceRenewInstanceCallable(const Model::InquirePriceRenewInstanceRequest& request);
+
+                /**
+                 *ES集群安装模型接口
+                 * @param req InstallInstanceModelRequest
+                 * @return InstallInstanceModelOutcome
+                 */
+                InstallInstanceModelOutcome InstallInstanceModel(const Model::InstallInstanceModelRequest &request);
+                void InstallInstanceModelAsync(const Model::InstallInstanceModelRequest& request, const InstallInstanceModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InstallInstanceModelOutcomeCallable InstallInstanceModelCallable(const Model::InstallInstanceModelRequest& request);
 
                 /**
                  *修改绑定VIP的安全组，传安全组id列表

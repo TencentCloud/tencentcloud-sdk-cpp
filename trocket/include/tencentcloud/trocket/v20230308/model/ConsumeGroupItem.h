@@ -176,6 +176,106 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取4.x的集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterIdV4 4.x的集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterIdV4() const;
+
+                    /**
+                     * 设置4.x的集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterIdV4 4.x的集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterIdV4(const std::string& _clusterIdV4);
+
+                    /**
+                     * 判断参数 ClusterIdV4 是否已赋值
+                     * @return ClusterIdV4 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdV4HasBeenSet() const;
+
+                    /**
+                     * 获取4.x的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NamespaceV4 4.x的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNamespaceV4() const;
+
+                    /**
+                     * 设置4.x的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _namespaceV4 4.x的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNamespaceV4(const std::string& _namespaceV4);
+
+                    /**
+                     * 判断参数 NamespaceV4 是否已赋值
+                     * @return NamespaceV4 是否已赋值
+                     * 
+                     */
+                    bool NamespaceV4HasBeenSet() const;
+
+                    /**
+                     * 获取4.x的消费组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConsumerGroupV4 4.x的消费组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetConsumerGroupV4() const;
+
+                    /**
+                     * 设置4.x的消费组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _consumerGroupV4 4.x的消费组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConsumerGroupV4(const std::string& _consumerGroupV4);
+
+                    /**
+                     * 判断参数 ConsumerGroupV4 是否已赋值
+                     * @return ConsumerGroupV4 是否已赋值
+                     * 
+                     */
+                    bool ConsumerGroupV4HasBeenSet() const;
+
+                    /**
+                     * 获取4.x的完整命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FullNamespaceV4 4.x的完整命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFullNamespaceV4() const;
+
+                    /**
+                     * 设置4.x的完整命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fullNamespaceV4 4.x的完整命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFullNamespaceV4(const std::string& _fullNamespaceV4);
+
+                    /**
+                     * 判断参数 FullNamespaceV4 是否已赋值
+                     * @return FullNamespaceV4 是否已赋值
+                     * 
+                     */
+                    bool FullNamespaceV4HasBeenSet() const;
+
                 private:
 
                     /**
@@ -214,6 +314,34 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 4.x的集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterIdV4;
+                    bool m_clusterIdV4HasBeenSet;
+
+                    /**
+                     * 4.x的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_namespaceV4;
+                    bool m_namespaceV4HasBeenSet;
+
+                    /**
+                     * 4.x的消费组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_consumerGroupV4;
+                    bool m_consumerGroupV4HasBeenSet;
+
+                    /**
+                     * 4.x的完整命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fullNamespaceV4;
+                    bool m_fullNamespaceV4HasBeenSet;
 
                 };
             }

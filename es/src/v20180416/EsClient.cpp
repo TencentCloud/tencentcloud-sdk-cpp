@@ -1502,6 +1502,49 @@ EsClient::InquirePriceRenewInstanceOutcomeCallable EsClient::InquirePriceRenewIn
     return task->get_future();
 }
 
+EsClient::InstallInstanceModelOutcome EsClient::InstallInstanceModel(const InstallInstanceModelRequest &request)
+{
+    auto outcome = MakeRequest(request, "InstallInstanceModel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InstallInstanceModelResponse rsp = InstallInstanceModelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InstallInstanceModelOutcome(rsp);
+        else
+            return InstallInstanceModelOutcome(o.GetError());
+    }
+    else
+    {
+        return InstallInstanceModelOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::InstallInstanceModelAsync(const InstallInstanceModelRequest& request, const InstallInstanceModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InstallInstanceModel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::InstallInstanceModelOutcomeCallable EsClient::InstallInstanceModelCallable(const InstallInstanceModelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InstallInstanceModelOutcome()>>(
+        [this, request]()
+        {
+            return this->InstallInstanceModel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::ModifyEsVipSecurityGroupOutcome EsClient::ModifyEsVipSecurityGroup(const ModifyEsVipSecurityGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyEsVipSecurityGroup");

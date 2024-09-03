@@ -728,6 +728,49 @@ MariadbClient::DescribeBackupTimeOutcomeCallable MariadbClient::DescribeBackupTi
     return task->get_future();
 }
 
+MariadbClient::DescribeBinlogTimeOutcome MariadbClient::DescribeBinlogTime(const DescribeBinlogTimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBinlogTime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBinlogTimeResponse rsp = DescribeBinlogTimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBinlogTimeOutcome(rsp);
+        else
+            return DescribeBinlogTimeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBinlogTimeOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::DescribeBinlogTimeAsync(const DescribeBinlogTimeRequest& request, const DescribeBinlogTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBinlogTime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::DescribeBinlogTimeOutcomeCallable MariadbClient::DescribeBinlogTimeCallable(const DescribeBinlogTimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBinlogTimeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBinlogTime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::DescribeDBEncryptAttributesOutcome MariadbClient::DescribeDBEncryptAttributes(const DescribeDBEncryptAttributesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBEncryptAttributes");

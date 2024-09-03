@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取物理专线的ID。
-                     * @return DirectConnectId 物理专线的ID。
+                     * 获取物理专线ID。
+                     * @return DirectConnectId 物理专线ID。
                      * 
                      */
                     std::string GetDirectConnectId() const;
 
                     /**
-                     * 设置物理专线的ID。
-                     * @param _directConnectId 物理专线的ID。
+                     * 设置物理专线ID。
+                     * @param _directConnectId 物理专线ID。
                      * 
                      */
                     void SetDirectConnectId(const std::string& _directConnectId);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool FaultReportContactNumberHasBeenSet() const;
 
                     /**
-                     * 获取物理专线申请者补签用户使用协议
-                     * @return SignLaw 物理专线申请者补签用户使用协议
+                     * 获取物理专线申请者补签用户使用协议。
+                     * @return SignLaw 物理专线申请者补签用户使用协议。
                      * 
                      */
                     bool GetSignLaw() const;
 
                     /**
-                     * 设置物理专线申请者补签用户使用协议
-                     * @param _signLaw 物理专线申请者补签用户使用协议
+                     * 设置物理专线申请者补签用户使用协议。
+                     * @param _signLaw 物理专线申请者补签用户使用协议。
                      * 
                      */
                     void SetSignLaw(const bool& _signLaw);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool SignLawHasBeenSet() const;
 
                     /**
-                     * 获取物理专线带宽
-                     * @return Bandwidth 物理专线带宽
+                     * 获取物理专线带宽。
+                     * @return Bandwidth 物理专线带宽。
                      * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
-                     * 设置物理专线带宽
-                     * @param _bandwidth 物理专线带宽
+                     * 设置物理专线带宽。
+                     * @param _bandwidth 物理专线带宽。
                      * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
@@ -318,7 +318,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 物理专线的ID。
+                     * 物理专线ID。
                      */
                     std::string m_directConnectId;
                     bool m_directConnectIdHasBeenSet;
@@ -384,13 +384,13 @@ namespace TencentCloud
                     bool m_faultReportContactNumberHasBeenSet;
 
                     /**
-                     * 物理专线申请者补签用户使用协议
+                     * 物理专线申请者补签用户使用协议。
                      */
                     bool m_signLaw;
                     bool m_signLawHasBeenSet;
 
                     /**
-                     * 物理专线带宽
+                     * 物理专线带宽。
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;

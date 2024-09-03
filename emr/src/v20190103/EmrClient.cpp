@@ -1459,6 +1459,49 @@ EmrClient::InquiryPriceUpdateInstanceOutcomeCallable EmrClient::InquiryPriceUpda
     return task->get_future();
 }
 
+EmrClient::ModifyAutoRenewFlagOutcome EmrClient::ModifyAutoRenewFlag(const ModifyAutoRenewFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAutoRenewFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAutoRenewFlagResponse rsp = ModifyAutoRenewFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAutoRenewFlagOutcome(rsp);
+        else
+            return ModifyAutoRenewFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAutoRenewFlagOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyAutoRenewFlagAsync(const ModifyAutoRenewFlagRequest& request, const ModifyAutoRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAutoRenewFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ModifyAutoRenewFlagOutcomeCallable EmrClient::ModifyAutoRenewFlagCallable(const ModifyAutoRenewFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAutoRenewFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAutoRenewFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::ModifyAutoScaleStrategyOutcome EmrClient::ModifyAutoScaleStrategy(const ModifyAutoScaleStrategyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAutoScaleStrategy");

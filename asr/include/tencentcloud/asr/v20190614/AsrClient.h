@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/asr/v20190614/model/CloseAsyncRecognitionTaskRequest.h>
 #include <tencentcloud/asr/v20190614/model/CloseAsyncRecognitionTaskResponse.h>
+#include <tencentcloud/asr/v20190614/model/CreateAsrKeyWordLibRequest.h>
+#include <tencentcloud/asr/v20190614/model/CreateAsrKeyWordLibResponse.h>
 #include <tencentcloud/asr/v20190614/model/CreateAsrVocabRequest.h>
 #include <tencentcloud/asr/v20190614/model/CreateAsrVocabResponse.h>
 #include <tencentcloud/asr/v20190614/model/CreateAsyncRecognitionTaskRequest.h>
@@ -33,6 +35,8 @@
 #include <tencentcloud/asr/v20190614/model/CreateCustomizationResponse.h>
 #include <tencentcloud/asr/v20190614/model/CreateRecTaskRequest.h>
 #include <tencentcloud/asr/v20190614/model/CreateRecTaskResponse.h>
+#include <tencentcloud/asr/v20190614/model/DeleteAsrKeyWordLibRequest.h>
+#include <tencentcloud/asr/v20190614/model/DeleteAsrKeyWordLibResponse.h>
 #include <tencentcloud/asr/v20190614/model/DeleteAsrVocabRequest.h>
 #include <tencentcloud/asr/v20190614/model/DeleteAsrVocabResponse.h>
 #include <tencentcloud/asr/v20190614/model/DeleteCustomizationRequest.h>
@@ -45,6 +49,8 @@
 #include <tencentcloud/asr/v20190614/model/DownloadAsrVocabResponse.h>
 #include <tencentcloud/asr/v20190614/model/DownloadCustomizationRequest.h>
 #include <tencentcloud/asr/v20190614/model/DownloadCustomizationResponse.h>
+#include <tencentcloud/asr/v20190614/model/GetAsrKeyWordLibListRequest.h>
+#include <tencentcloud/asr/v20190614/model/GetAsrKeyWordLibListResponse.h>
 #include <tencentcloud/asr/v20190614/model/GetAsrVocabRequest.h>
 #include <tencentcloud/asr/v20190614/model/GetAsrVocabResponse.h>
 #include <tencentcloud/asr/v20190614/model/GetAsrVocabListRequest.h>
@@ -61,6 +67,8 @@
 #include <tencentcloud/asr/v20190614/model/SentenceRecognitionResponse.h>
 #include <tencentcloud/asr/v20190614/model/SetVocabStateRequest.h>
 #include <tencentcloud/asr/v20190614/model/SetVocabStateResponse.h>
+#include <tencentcloud/asr/v20190614/model/UpdateAsrKeyWordLibRequest.h>
+#include <tencentcloud/asr/v20190614/model/UpdateAsrKeyWordLibResponse.h>
 #include <tencentcloud/asr/v20190614/model/UpdateAsrVocabRequest.h>
 #include <tencentcloud/asr/v20190614/model/UpdateAsrVocabResponse.h>
 #include <tencentcloud/asr/v20190614/model/VoicePrintCompareRequest.h>
@@ -94,6 +102,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CloseAsyncRecognitionTaskResponse> CloseAsyncRecognitionTaskOutcome;
                 typedef std::future<CloseAsyncRecognitionTaskOutcome> CloseAsyncRecognitionTaskOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::CloseAsyncRecognitionTaskRequest&, CloseAsyncRecognitionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseAsyncRecognitionTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAsrKeyWordLibResponse> CreateAsrKeyWordLibOutcome;
+                typedef std::future<CreateAsrKeyWordLibOutcome> CreateAsrKeyWordLibOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::CreateAsrKeyWordLibRequest&, CreateAsrKeyWordLibOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAsrKeyWordLibAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAsrVocabResponse> CreateAsrVocabOutcome;
                 typedef std::future<CreateAsrVocabOutcome> CreateAsrVocabOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::CreateAsrVocabRequest&, CreateAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAsrVocabAsyncHandler;
@@ -106,6 +117,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRecTaskResponse> CreateRecTaskOutcome;
                 typedef std::future<CreateRecTaskOutcome> CreateRecTaskOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::CreateRecTaskRequest&, CreateRecTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAsrKeyWordLibResponse> DeleteAsrKeyWordLibOutcome;
+                typedef std::future<DeleteAsrKeyWordLibOutcome> DeleteAsrKeyWordLibOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::DeleteAsrKeyWordLibRequest&, DeleteAsrKeyWordLibOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAsrKeyWordLibAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAsrVocabResponse> DeleteAsrVocabOutcome;
                 typedef std::future<DeleteAsrVocabOutcome> DeleteAsrVocabOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::DeleteAsrVocabRequest&, DeleteAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAsrVocabAsyncHandler;
@@ -124,6 +138,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DownloadCustomizationResponse> DownloadCustomizationOutcome;
                 typedef std::future<DownloadCustomizationOutcome> DownloadCustomizationOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::DownloadCustomizationRequest&, DownloadCustomizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadCustomizationAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetAsrKeyWordLibListResponse> GetAsrKeyWordLibListOutcome;
+                typedef std::future<GetAsrKeyWordLibListOutcome> GetAsrKeyWordLibListOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::GetAsrKeyWordLibListRequest&, GetAsrKeyWordLibListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAsrKeyWordLibListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetAsrVocabResponse> GetAsrVocabOutcome;
                 typedef std::future<GetAsrVocabOutcome> GetAsrVocabOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::GetAsrVocabRequest&, GetAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAsrVocabAsyncHandler;
@@ -148,6 +165,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetVocabStateResponse> SetVocabStateOutcome;
                 typedef std::future<SetVocabStateOutcome> SetVocabStateOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::SetVocabStateRequest&, SetVocabStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetVocabStateAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateAsrKeyWordLibResponse> UpdateAsrKeyWordLibOutcome;
+                typedef std::future<UpdateAsrKeyWordLibOutcome> UpdateAsrKeyWordLibOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::UpdateAsrKeyWordLibRequest&, UpdateAsrKeyWordLibOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAsrKeyWordLibAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateAsrVocabResponse> UpdateAsrVocabOutcome;
                 typedef std::future<UpdateAsrVocabOutcome> UpdateAsrVocabOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::UpdateAsrVocabRequest&, UpdateAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAsrVocabAsyncHandler;
@@ -183,6 +203,19 @@ namespace TencentCloud
                 CloseAsyncRecognitionTaskOutcome CloseAsyncRecognitionTask(const Model::CloseAsyncRecognitionTaskRequest &request);
                 void CloseAsyncRecognitionTaskAsync(const Model::CloseAsyncRecognitionTaskRequest& request, const CloseAsyncRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CloseAsyncRecognitionTaskOutcomeCallable CloseAsyncRecognitionTaskCallable(const Model::CloseAsyncRecognitionTaskRequest& request);
+
+                /**
+                 *用户通过本接口进行关键字词表的创建。
+<br>•   默认每个用户最多可创建30个关键字词表。
+<br>•   每个关键词词表最多可添加100个词，每个词最多5个汉字或15个字符。
+<br>•   词表通过本地文件形式上传。
+<br>•   本地文件必须为UTF-8编码格式，每行仅添加一个词且不能包含标点和特殊字符。
+                 * @param req CreateAsrKeyWordLibRequest
+                 * @return CreateAsrKeyWordLibOutcome
+                 */
+                CreateAsrKeyWordLibOutcome CreateAsrKeyWordLib(const Model::CreateAsrKeyWordLibRequest &request);
+                void CreateAsrKeyWordLibAsync(const Model::CreateAsrKeyWordLibRequest& request, const CreateAsrKeyWordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAsrKeyWordLibOutcomeCallable CreateAsrKeyWordLibCallable(const Model::CreateAsrKeyWordLibRequest& request);
 
                 /**
                  *用户通过本接口进行热词表的创建。
@@ -241,6 +274,15 @@ namespace TencentCloud
                 CreateRecTaskOutcome CreateRecTask(const Model::CreateRecTaskRequest &request);
                 void CreateRecTaskAsync(const Model::CreateRecTaskRequest& request, const CreateRecTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRecTaskOutcomeCallable CreateRecTaskCallable(const Model::CreateRecTaskRequest& request);
+
+                /**
+                 *用户通过本接口进行关键词表的删除。
+                 * @param req DeleteAsrKeyWordLibRequest
+                 * @return DeleteAsrKeyWordLibOutcome
+                 */
+                DeleteAsrKeyWordLibOutcome DeleteAsrKeyWordLib(const Model::DeleteAsrKeyWordLibRequest &request);
+                void DeleteAsrKeyWordLibAsync(const Model::DeleteAsrKeyWordLibRequest& request, const DeleteAsrKeyWordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAsrKeyWordLibOutcomeCallable DeleteAsrKeyWordLibCallable(const Model::DeleteAsrKeyWordLibRequest& request);
 
                 /**
                  *用户通过本接口进行热词表的删除。
@@ -302,6 +344,15 @@ namespace TencentCloud
                 DownloadCustomizationOutcome DownloadCustomization(const Model::DownloadCustomizationRequest &request);
                 void DownloadCustomizationAsync(const Model::DownloadCustomizationRequest& request, const DownloadCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DownloadCustomizationOutcomeCallable DownloadCustomizationCallable(const Model::DownloadCustomizationRequest& request);
+
+                /**
+                 *用户通过该接口，可获得所有的关键词表及其信息。
+                 * @param req GetAsrKeyWordLibListRequest
+                 * @return GetAsrKeyWordLibListOutcome
+                 */
+                GetAsrKeyWordLibListOutcome GetAsrKeyWordLibList(const Model::GetAsrKeyWordLibListRequest &request);
+                void GetAsrKeyWordLibListAsync(const Model::GetAsrKeyWordLibListRequest& request, const GetAsrKeyWordLibListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetAsrKeyWordLibListOutcomeCallable GetAsrKeyWordLibListCallable(const Model::GetAsrKeyWordLibListRequest& request);
 
                 /**
                  *用户根据词表的ID可以获取对应的热词表信息
@@ -380,6 +431,15 @@ namespace TencentCloud
                 SetVocabStateOutcome SetVocabState(const Model::SetVocabStateRequest &request);
                 void SetVocabStateAsync(const Model::SetVocabStateRequest& request, const SetVocabStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetVocabStateOutcomeCallable SetVocabStateCallable(const Model::SetVocabStateRequest& request);
+
+                /**
+                 *用户通过本接口进行对应的关键词表信息更新。
+                 * @param req UpdateAsrKeyWordLibRequest
+                 * @return UpdateAsrKeyWordLibOutcome
+                 */
+                UpdateAsrKeyWordLibOutcome UpdateAsrKeyWordLib(const Model::UpdateAsrKeyWordLibRequest &request);
+                void UpdateAsrKeyWordLibAsync(const Model::UpdateAsrKeyWordLibRequest& request, const UpdateAsrKeyWordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateAsrKeyWordLibOutcomeCallable UpdateAsrKeyWordLibCallable(const Model::UpdateAsrKeyWordLibRequest& request);
 
                 /**
                  *用户通过本接口进行对应的词表信息更新。

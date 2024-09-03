@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdwdoris::V20211228::Model;
 using namespace std;
 
-DescribeSqlApisResponse::DescribeSqlApisResponse()
+DescribeSqlApisResponse::DescribeSqlApisResponse() :
+    m_returnDataHasBeenSet(false),
+    m_errorMsgHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome DescribeSqlApisResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("ReturnData") && !rsp["ReturnData"].IsNull())
+    {
+        if (!rsp["ReturnData"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReturnData` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_returnData = string(rsp["ReturnData"].GetString());
+        m_returnDataHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    {
+        if (!rsp["ErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMsg = string(rsp["ErrorMsg"].GetString());
+        m_errorMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string DescribeSqlApisResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_returnDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReturnData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_returnData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string DescribeSqlApisResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeSqlApisResponse::GetReturnData() const
+{
+    return m_returnData;
+}
+
+bool DescribeSqlApisResponse::ReturnDataHasBeenSet() const
+{
+    return m_returnDataHasBeenSet;
+}
+
+string DescribeSqlApisResponse::GetErrorMsg() const
+{
+    return m_errorMsg;
+}
+
+bool DescribeSqlApisResponse::ErrorMsgHasBeenSet() const
+{
+    return m_errorMsgHasBeenSet;
+}
 
 

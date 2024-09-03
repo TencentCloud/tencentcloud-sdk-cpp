@@ -47,7 +47,8 @@ DescribeQAResponse::DescribeQAResponse() :
     m_attrRangeHasBeenSet(false),
     m_attrLabelsHasBeenSet(false),
     m_expireStartHasBeenSet(false),
-    m_expireEndHasBeenSet(false)
+    m_expireEndHasBeenSet(false),
+    m_similarQuestionsHasBeenSet(false)
 {
 }
 
@@ -345,6 +346,26 @@ CoreInternalOutcome DescribeQAResponse::Deserialize(const string &payload)
         m_expireEndHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SimilarQuestions") && !rsp["SimilarQuestions"].IsNull())
+    {
+        if (!rsp["SimilarQuestions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SimilarQuestions` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SimilarQuestions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SimilarQuestion item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_similarQuestions.push_back(item);
+        }
+        m_similarQuestionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -559,6 +580,21 @@ string DescribeQAResponse::ToJsonString() const
         string key = "ExpireEnd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_expireEnd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_similarQuestionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SimilarQuestions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_similarQuestions.begin(); itr != m_similarQuestions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -811,6 +847,16 @@ string DescribeQAResponse::GetExpireEnd() const
 bool DescribeQAResponse::ExpireEndHasBeenSet() const
 {
     return m_expireEndHasBeenSet;
+}
+
+vector<SimilarQuestion> DescribeQAResponse::GetSimilarQuestions() const
+{
+    return m_similarQuestions;
+}
+
+bool DescribeQAResponse::SimilarQuestionsHasBeenSet() const
+{
+    return m_similarQuestionsHasBeenSet;
 }
 
 

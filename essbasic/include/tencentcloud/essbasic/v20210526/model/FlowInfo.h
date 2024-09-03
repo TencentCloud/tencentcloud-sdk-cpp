@@ -227,35 +227,23 @@ namespace TencentCloud
                     bool FormFieldsHasBeenSet() const;
 
                     /**
-                     * 获取合同状态变动结的通知回调URL，该URL仅支持HTTP或HTTPS协议，建议采用HTTPS协议以保证数据传输的安全性，最大长度1000个字符。
-
-腾讯电子签服务器将通过POST方式，application/json格式通知执行结果，请确保外网可以正常访问该URL。
-回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/partner/callback_data_types" target="_blank">回调通知</a>模块
-                     * @return CallbackUrl 合同状态变动结的通知回调URL，该URL仅支持HTTP或HTTPS协议，建议采用HTTPS协议以保证数据传输的安全性，最大长度1000个字符。
-
-腾讯电子签服务器将通过POST方式，application/json格式通知执行结果，请确保外网可以正常访问该URL。
-回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/partner/callback_data_types" target="_blank">回调通知</a>模块
-                     * 
+                     * 获取该字段已废弃，请使用【应用号配置】中的回调地址统一接口消息
+                     * @return CallbackUrl 该字段已废弃，请使用【应用号配置】中的回调地址统一接口消息
+                     * @deprecated
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置合同状态变动结的通知回调URL，该URL仅支持HTTP或HTTPS协议，建议采用HTTPS协议以保证数据传输的安全性，最大长度1000个字符。
-
-腾讯电子签服务器将通过POST方式，application/json格式通知执行结果，请确保外网可以正常访问该URL。
-回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/partner/callback_data_types" target="_blank">回调通知</a>模块
-                     * @param _callbackUrl 合同状态变动结的通知回调URL，该URL仅支持HTTP或HTTPS协议，建议采用HTTPS协议以保证数据传输的安全性，最大长度1000个字符。
-
-腾讯电子签服务器将通过POST方式，application/json格式通知执行结果，请确保外网可以正常访问该URL。
-回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/partner/callback_data_types" target="_blank">回调通知</a>模块
-                     * 
+                     * 设置该字段已废弃，请使用【应用号配置】中的回调地址统一接口消息
+                     * @param _callbackUrl 该字段已废弃，请使用【应用号配置】中的回调地址统一接口消息
+                     * @deprecated
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CallbackUrlHasBeenSet() const;
 
@@ -586,10 +574,7 @@ namespace TencentCloud
                     bool m_formFieldsHasBeenSet;
 
                     /**
-                     * 合同状态变动结的通知回调URL，该URL仅支持HTTP或HTTPS协议，建议采用HTTPS协议以保证数据传输的安全性，最大长度1000个字符。
-
-腾讯电子签服务器将通过POST方式，application/json格式通知执行结果，请确保外网可以正常访问该URL。
-回调的相关说明可参考开发者中心的<a href="https://qian.tencent.com/developers/partner/callback_data_types" target="_blank">回调通知</a>模块
+                     * 该字段已废弃，请使用【应用号配置】中的回调地址统一接口消息
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;

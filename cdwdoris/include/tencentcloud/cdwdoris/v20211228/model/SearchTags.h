@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TagValueHasBeenSet() const;
 
                     /**
-                     * 获取1表示只输入标签的键，没有输入值；0表示输入键时且输入值
-                     * @return AllValue 1表示只输入标签的键，没有输入值；0表示输入键时且输入值
+                     * 获取1表示只输入标签的键，没有输入值；非1则表示输入键时且输入值
+                     * @return AllValue 1表示只输入标签的键，没有输入值；非1则表示输入键时且输入值
                      * 
                      */
                     int64_t GetAllValue() const;
 
                     /**
-                     * 设置1表示只输入标签的键，没有输入值；0表示输入键时且输入值
-                     * @param _allValue 1表示只输入标签的键，没有输入值；0表示输入键时且输入值
+                     * 设置1表示只输入标签的键，没有输入值；非1则表示输入键时且输入值
+                     * @param _allValue 1表示只输入标签的键，没有输入值；非1则表示输入键时且输入值
                      * 
                      */
                     void SetAllValue(const int64_t& _allValue);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_tagValueHasBeenSet;
 
                     /**
-                     * 1表示只输入标签的键，没有输入值；0表示输入键时且输入值
+                     * 1表示只输入标签的键，没有输入值；非1则表示输入键时且输入值
                      */
                     int64_t m_allValue;
                     bool m_allValueHasBeenSet;

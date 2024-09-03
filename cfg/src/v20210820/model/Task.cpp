@@ -49,7 +49,11 @@ Task::Task() :
     m_alarmPolicyHasBeenSet(false),
     m_apmServiceListHasBeenSet(false),
     m_verifyIdHasBeenSet(false),
-    m_policyDealTypeHasBeenSet(false)
+    m_policyDealTypeHasBeenSet(false),
+    m_taskPlanStartTimeHasBeenSet(false),
+    m_taskPlanEndTimeHasBeenSet(false),
+    m_taskOrgHasBeenSet(false),
+    m_taskIssueHasBeenSet(false)
 {
 }
 
@@ -398,6 +402,56 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
         m_policyDealTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskPlanStartTime") && !value["TaskPlanStartTime"].IsNull())
+    {
+        if (!value["TaskPlanStartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Task.TaskPlanStartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskPlanStartTime = string(value["TaskPlanStartTime"].GetString());
+        m_taskPlanStartTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskPlanEndTime") && !value["TaskPlanEndTime"].IsNull())
+    {
+        if (!value["TaskPlanEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Task.TaskPlanEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskPlanEndTime = string(value["TaskPlanEndTime"].GetString());
+        m_taskPlanEndTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskOrg") && !value["TaskOrg"].IsNull())
+    {
+        if (!value["TaskOrg"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Task.TaskOrg` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TaskOrg"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TaskOrg item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_taskOrg.push_back(item);
+        }
+        m_taskOrgHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskIssue") && !value["TaskIssue"].IsNull())
+    {
+        if (!value["TaskIssue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Task.TaskIssue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskIssue = string(value["TaskIssue"].GetString());
+        m_taskIssueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -669,6 +723,45 @@ void Task::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "PolicyDealType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_policyDealType, allocator);
+    }
+
+    if (m_taskPlanStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskPlanStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskPlanStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskPlanEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskPlanEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskPlanEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskOrgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskOrg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_taskOrg.begin(); itr != m_taskOrg.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_taskIssueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskIssue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskIssue.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1136,5 +1229,69 @@ void Task::SetPolicyDealType(const int64_t& _policyDealType)
 bool Task::PolicyDealTypeHasBeenSet() const
 {
     return m_policyDealTypeHasBeenSet;
+}
+
+string Task::GetTaskPlanStartTime() const
+{
+    return m_taskPlanStartTime;
+}
+
+void Task::SetTaskPlanStartTime(const string& _taskPlanStartTime)
+{
+    m_taskPlanStartTime = _taskPlanStartTime;
+    m_taskPlanStartTimeHasBeenSet = true;
+}
+
+bool Task::TaskPlanStartTimeHasBeenSet() const
+{
+    return m_taskPlanStartTimeHasBeenSet;
+}
+
+string Task::GetTaskPlanEndTime() const
+{
+    return m_taskPlanEndTime;
+}
+
+void Task::SetTaskPlanEndTime(const string& _taskPlanEndTime)
+{
+    m_taskPlanEndTime = _taskPlanEndTime;
+    m_taskPlanEndTimeHasBeenSet = true;
+}
+
+bool Task::TaskPlanEndTimeHasBeenSet() const
+{
+    return m_taskPlanEndTimeHasBeenSet;
+}
+
+vector<TaskOrg> Task::GetTaskOrg() const
+{
+    return m_taskOrg;
+}
+
+void Task::SetTaskOrg(const vector<TaskOrg>& _taskOrg)
+{
+    m_taskOrg = _taskOrg;
+    m_taskOrgHasBeenSet = true;
+}
+
+bool Task::TaskOrgHasBeenSet() const
+{
+    return m_taskOrgHasBeenSet;
+}
+
+string Task::GetTaskIssue() const
+{
+    return m_taskIssue;
+}
+
+void Task::SetTaskIssue(const string& _taskIssue)
+{
+    m_taskIssue = _taskIssue;
+    m_taskIssueHasBeenSet = true;
+}
+
+bool Task::TaskIssueHasBeenSet() const
+{
+    return m_taskIssueHasBeenSet;
 }
 

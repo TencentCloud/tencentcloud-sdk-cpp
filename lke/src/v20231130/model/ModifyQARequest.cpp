@@ -33,7 +33,8 @@ ModifyQARequest::ModifyQARequest() :
     m_docBizIdHasBeenSet(false),
     m_cateBizIdHasBeenSet(false),
     m_expireStartHasBeenSet(false),
-    m_expireEndHasBeenSet(false)
+    m_expireEndHasBeenSet(false),
+    m_similarQuestionModifyHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,15 @@ string ModifyQARequest::ToJsonString() const
         string key = "ExpireEnd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_expireEnd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_similarQuestionModifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SimilarQuestionModify";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_similarQuestionModify.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -321,6 +331,22 @@ void ModifyQARequest::SetExpireEnd(const string& _expireEnd)
 bool ModifyQARequest::ExpireEndHasBeenSet() const
 {
     return m_expireEndHasBeenSet;
+}
+
+SimilarQuestionModify ModifyQARequest::GetSimilarQuestionModify() const
+{
+    return m_similarQuestionModify;
+}
+
+void ModifyQARequest::SetSimilarQuestionModify(const SimilarQuestionModify& _similarQuestionModify)
+{
+    m_similarQuestionModify = _similarQuestionModify;
+    m_similarQuestionModifyHasBeenSet = true;
+}
+
+bool ModifyQARequest::SimilarQuestionModifyHasBeenSet() const
+{
+    return m_similarQuestionModifyHasBeenSet;
 }
 
 

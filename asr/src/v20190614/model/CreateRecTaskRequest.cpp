@@ -44,7 +44,8 @@ CreateRecTaskRequest::CreateRecTaskRequest() :
     m_filterModalHasBeenSet(false),
     m_sentenceMaxLengthHasBeenSet(false),
     m_extraHasBeenSet(false),
-    m_hotwordListHasBeenSet(false)
+    m_hotwordListHasBeenSet(false),
+    m_keyWordLibIdListHasBeenSet(false)
 {
 }
 
@@ -229,6 +230,19 @@ string CreateRecTaskRequest::ToJsonString() const
         string key = "HotwordList";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_hotwordList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyWordLibIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyWordLibIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keyWordLibIdList.begin(); itr != m_keyWordLibIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -589,6 +603,22 @@ void CreateRecTaskRequest::SetHotwordList(const string& _hotwordList)
 bool CreateRecTaskRequest::HotwordListHasBeenSet() const
 {
     return m_hotwordListHasBeenSet;
+}
+
+vector<string> CreateRecTaskRequest::GetKeyWordLibIdList() const
+{
+    return m_keyWordLibIdList;
+}
+
+void CreateRecTaskRequest::SetKeyWordLibIdList(const vector<string>& _keyWordLibIdList)
+{
+    m_keyWordLibIdList = _keyWordLibIdList;
+    m_keyWordLibIdListHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::KeyWordLibIdListHasBeenSet() const
+{
+    return m_keyWordLibIdListHasBeenSet;
 }
 
 

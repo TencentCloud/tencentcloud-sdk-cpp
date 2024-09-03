@@ -83,6 +83,49 @@ AsrClient::CloseAsyncRecognitionTaskOutcomeCallable AsrClient::CloseAsyncRecogni
     return task->get_future();
 }
 
+AsrClient::CreateAsrKeyWordLibOutcome AsrClient::CreateAsrKeyWordLib(const CreateAsrKeyWordLibRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAsrKeyWordLib");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAsrKeyWordLibResponse rsp = CreateAsrKeyWordLibResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAsrKeyWordLibOutcome(rsp);
+        else
+            return CreateAsrKeyWordLibOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAsrKeyWordLibOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::CreateAsrKeyWordLibAsync(const CreateAsrKeyWordLibRequest& request, const CreateAsrKeyWordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAsrKeyWordLib(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::CreateAsrKeyWordLibOutcomeCallable AsrClient::CreateAsrKeyWordLibCallable(const CreateAsrKeyWordLibRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAsrKeyWordLibOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAsrKeyWordLib(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsrClient::CreateAsrVocabOutcome AsrClient::CreateAsrVocab(const CreateAsrVocabRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAsrVocab");
@@ -248,6 +291,49 @@ AsrClient::CreateRecTaskOutcomeCallable AsrClient::CreateRecTaskCallable(const C
         [this, request]()
         {
             return this->CreateRecTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsrClient::DeleteAsrKeyWordLibOutcome AsrClient::DeleteAsrKeyWordLib(const DeleteAsrKeyWordLibRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAsrKeyWordLib");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAsrKeyWordLibResponse rsp = DeleteAsrKeyWordLibResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAsrKeyWordLibOutcome(rsp);
+        else
+            return DeleteAsrKeyWordLibOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAsrKeyWordLibOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::DeleteAsrKeyWordLibAsync(const DeleteAsrKeyWordLibRequest& request, const DeleteAsrKeyWordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAsrKeyWordLib(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::DeleteAsrKeyWordLibOutcomeCallable AsrClient::DeleteAsrKeyWordLibCallable(const DeleteAsrKeyWordLibRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAsrKeyWordLibOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAsrKeyWordLib(request);
         }
     );
 
@@ -506,6 +592,49 @@ AsrClient::DownloadCustomizationOutcomeCallable AsrClient::DownloadCustomization
         [this, request]()
         {
             return this->DownloadCustomization(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsrClient::GetAsrKeyWordLibListOutcome AsrClient::GetAsrKeyWordLibList(const GetAsrKeyWordLibListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAsrKeyWordLibList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAsrKeyWordLibListResponse rsp = GetAsrKeyWordLibListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAsrKeyWordLibListOutcome(rsp);
+        else
+            return GetAsrKeyWordLibListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAsrKeyWordLibListOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::GetAsrKeyWordLibListAsync(const GetAsrKeyWordLibListRequest& request, const GetAsrKeyWordLibListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetAsrKeyWordLibList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::GetAsrKeyWordLibListOutcomeCallable AsrClient::GetAsrKeyWordLibListCallable(const GetAsrKeyWordLibListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetAsrKeyWordLibListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetAsrKeyWordLibList(request);
         }
     );
 
@@ -850,6 +979,49 @@ AsrClient::SetVocabStateOutcomeCallable AsrClient::SetVocabStateCallable(const S
         [this, request]()
         {
             return this->SetVocabState(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsrClient::UpdateAsrKeyWordLibOutcome AsrClient::UpdateAsrKeyWordLib(const UpdateAsrKeyWordLibRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAsrKeyWordLib");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAsrKeyWordLibResponse rsp = UpdateAsrKeyWordLibResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAsrKeyWordLibOutcome(rsp);
+        else
+            return UpdateAsrKeyWordLibOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAsrKeyWordLibOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::UpdateAsrKeyWordLibAsync(const UpdateAsrKeyWordLibRequest& request, const UpdateAsrKeyWordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAsrKeyWordLib(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::UpdateAsrKeyWordLibOutcomeCallable AsrClient::UpdateAsrKeyWordLibCallable(const UpdateAsrKeyWordLibRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAsrKeyWordLibOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAsrKeyWordLib(request);
         }
     );
 

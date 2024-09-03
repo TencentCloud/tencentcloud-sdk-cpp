@@ -90,21 +90,21 @@ CoreInternalOutcome SlowLogInfoItem::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("QueryTime") && !value["QueryTime"].IsNull())
     {
-        if (!value["QueryTime"].IsInt64())
+        if (!value["QueryTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `SlowLogInfoItem.QueryTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogInfoItem.QueryTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_queryTime = value["QueryTime"].GetInt64();
+        m_queryTime = value["QueryTime"].GetDouble();
         m_queryTimeHasBeenSet = true;
     }
 
     if (value.HasMember("LockTime") && !value["LockTime"].IsNull())
     {
-        if (!value["LockTime"].IsInt64())
+        if (!value["LockTime"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `SlowLogInfoItem.LockTime` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SlowLogInfoItem.LockTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_lockTime = value["LockTime"].GetInt64();
+        m_lockTime = value["LockTime"].GetDouble();
         m_lockTimeHasBeenSet = true;
     }
 
@@ -290,12 +290,12 @@ bool SlowLogInfoItem::UserHostHasBeenSet() const
     return m_userHostHasBeenSet;
 }
 
-int64_t SlowLogInfoItem::GetQueryTime() const
+double SlowLogInfoItem::GetQueryTime() const
 {
     return m_queryTime;
 }
 
-void SlowLogInfoItem::SetQueryTime(const int64_t& _queryTime)
+void SlowLogInfoItem::SetQueryTime(const double& _queryTime)
 {
     m_queryTime = _queryTime;
     m_queryTimeHasBeenSet = true;
@@ -306,12 +306,12 @@ bool SlowLogInfoItem::QueryTimeHasBeenSet() const
     return m_queryTimeHasBeenSet;
 }
 
-int64_t SlowLogInfoItem::GetLockTime() const
+double SlowLogInfoItem::GetLockTime() const
 {
     return m_lockTime;
 }
 
-void SlowLogInfoItem::SetLockTime(const int64_t& _lockTime)
+void SlowLogInfoItem::SetLockTime(const double& _lockTime)
 {
     m_lockTime = _lockTime;
     m_lockTimeHasBeenSet = true;

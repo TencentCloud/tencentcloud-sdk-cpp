@@ -75,7 +75,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/CopyAccountPrivilegesResponse.h
   include/tencentcloud/mariadb/v20170312/model/DCNReplicaStatus.h
   include/tencentcloud/mariadb/v20170312/model/CloneAccountRequest.h
-  include/tencentcloud/mariadb/v20170312/model/DescribeDatabaseObjectsRequest.h
+  include/tencentcloud/mariadb/v20170312/model/DescribePriceRequest.h
   include/tencentcloud/mariadb/v20170312/model/SlowLogData.h
   include/tencentcloud/mariadb/v20170312/model/ParamModifyResult.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBInstancesRequest.h
@@ -91,7 +91,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ViewPrivileges.h
   include/tencentcloud/mariadb/v20170312/model/ResetAccountPasswordResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBInstanceDetailResponse.h
-  include/tencentcloud/mariadb/v20170312/model/DescribePriceRequest.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeDatabaseObjectsRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateDBInstanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyRealServerAccessStrategyRequest.h
   include/tencentcloud/mariadb/v20170312/model/ZonesInfo.h
@@ -106,6 +106,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeDBEncryptAttributesRequest.h
   include/tencentcloud/mariadb/v20170312/model/Deal.h
   include/tencentcloud/mariadb/v20170312/model/GrantAccountPrivilegesRequest.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeBinlogTimeRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateDedicatedClusterDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/SwitchDBInstanceHARequest.h
   include/tencentcloud/mariadb/v20170312/model/DBParamValue.h
@@ -125,6 +126,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeDatabaseObjectsResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameRequest.h
   include/tencentcloud/mariadb/v20170312/model/DeleteAccountRequest.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeBinlogTimeResponse.h
   include/tencentcloud/mariadb/v20170312/model/UpgradeHourDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/TableColumn.h
   include/tencentcloud/mariadb/v20170312/model/CreateTmpInstancesResponse.h
@@ -265,7 +267,7 @@ set(mariadb_src
   src/v20170312/model/CopyAccountPrivilegesResponse.cpp
   src/v20170312/model/DCNReplicaStatus.cpp
   src/v20170312/model/CloneAccountRequest.cpp
-  src/v20170312/model/DescribeDatabaseObjectsRequest.cpp
+  src/v20170312/model/DescribePriceRequest.cpp
   src/v20170312/model/SlowLogData.cpp
   src/v20170312/model/ParamModifyResult.cpp
   src/v20170312/model/DescribeDBInstancesRequest.cpp
@@ -281,7 +283,7 @@ set(mariadb_src
   src/v20170312/model/ViewPrivileges.cpp
   src/v20170312/model/ResetAccountPasswordResponse.cpp
   src/v20170312/model/DescribeDBInstanceDetailResponse.cpp
-  src/v20170312/model/DescribePriceRequest.cpp
+  src/v20170312/model/DescribeDatabaseObjectsRequest.cpp
   src/v20170312/model/CreateDBInstanceResponse.cpp
   src/v20170312/model/ModifyRealServerAccessStrategyRequest.cpp
   src/v20170312/model/ZonesInfo.cpp
@@ -296,6 +298,7 @@ set(mariadb_src
   src/v20170312/model/DescribeDBEncryptAttributesRequest.cpp
   src/v20170312/model/Deal.cpp
   src/v20170312/model/GrantAccountPrivilegesRequest.cpp
+  src/v20170312/model/DescribeBinlogTimeRequest.cpp
   src/v20170312/model/CreateDedicatedClusterDBInstanceRequest.cpp
   src/v20170312/model/SwitchDBInstanceHARequest.cpp
   src/v20170312/model/DBParamValue.cpp
@@ -315,6 +318,7 @@ set(mariadb_src
   src/v20170312/model/DescribeDatabaseObjectsResponse.cpp
   src/v20170312/model/ModifyDBInstanceNameRequest.cpp
   src/v20170312/model/DeleteAccountRequest.cpp
+  src/v20170312/model/DescribeBinlogTimeResponse.cpp
   src/v20170312/model/UpgradeHourDBInstanceRequest.cpp
   src/v20170312/model/TableColumn.cpp
   src/v20170312/model/CreateTmpInstancesResponse.cpp

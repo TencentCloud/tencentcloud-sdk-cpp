@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取文件数据
+                     * 获取文件数据，目标文件必须小于50M，否则请通过回调方式请求文件翻译接口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileData 文件数据
+                     * @return FileData 文件数据，目标文件必须小于50M，否则请通过回调方式请求文件翻译接口
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileData() const;
 
                     /**
-                     * 设置文件数据
+                     * 设置文件数据，目标文件必须小于50M，否则请通过回调方式请求文件翻译接口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileData 文件数据
+                     * @param _fileData 文件数据，目标文件必须小于50M，否则请通过回调方式请求文件翻译接口
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 文件数据
+                     * 文件数据，目标文件必须小于50M，否则请通过回调方式请求文件翻译接口
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileData;

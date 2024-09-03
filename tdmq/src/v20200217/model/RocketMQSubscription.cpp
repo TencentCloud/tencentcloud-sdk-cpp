@@ -35,7 +35,8 @@ RocketMQSubscription::RocketMQSubscription() :
     m_consistencyHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
     m_maxRetryTimesHasBeenSet(false),
-    m_clientProtocolHasBeenSet(false)
+    m_clientProtocolHasBeenSet(false),
+    m_clientSubscriptionInfosHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,26 @@ CoreInternalOutcome RocketMQSubscription::Deserialize(const rapidjson::Value &va
         m_clientProtocolHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientSubscriptionInfos") && !value["ClientSubscriptionInfos"].IsNull())
+    {
+        if (!value["ClientSubscriptionInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RocketMQSubscription.ClientSubscriptionInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ClientSubscriptionInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ClientSubscriptionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clientSubscriptionInfos.push_back(item);
+        }
+        m_clientSubscriptionInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +340,21 @@ void RocketMQSubscription::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ClientProtocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clientProtocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientSubscriptionInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientSubscriptionInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clientSubscriptionInfos.begin(); itr != m_clientSubscriptionInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -562,5 +598,21 @@ void RocketMQSubscription::SetClientProtocol(const string& _clientProtocol)
 bool RocketMQSubscription::ClientProtocolHasBeenSet() const
 {
     return m_clientProtocolHasBeenSet;
+}
+
+vector<ClientSubscriptionInfo> RocketMQSubscription::GetClientSubscriptionInfos() const
+{
+    return m_clientSubscriptionInfos;
+}
+
+void RocketMQSubscription::SetClientSubscriptionInfos(const vector<ClientSubscriptionInfo>& _clientSubscriptionInfos)
+{
+    m_clientSubscriptionInfos = _clientSubscriptionInfos;
+    m_clientSubscriptionInfosHasBeenSet = true;
+}
+
+bool RocketMQSubscription::ClientSubscriptionInfosHasBeenSet() const
+{
+    return m_clientSubscriptionInfosHasBeenSet;
 }
 

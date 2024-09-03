@@ -40,7 +40,8 @@ CreateInstancePostRequest::CreateInstancePostRequest() :
     m_multiZoneFlagHasBeenSet(false),
     m_zoneIdsHasBeenSet(false),
     m_instanceNumHasBeenSet(false),
-    m_publicNetworkMonthlyHasBeenSet(false)
+    m_publicNetworkMonthlyHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -198,6 +199,21 @@ string CreateInstancePostRequest::ToJsonString() const
         string key = "PublicNetworkMonthly";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_publicNetworkMonthly, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -494,6 +510,22 @@ void CreateInstancePostRequest::SetPublicNetworkMonthly(const int64_t& _publicNe
 bool CreateInstancePostRequest::PublicNetworkMonthlyHasBeenSet() const
 {
     return m_publicNetworkMonthlyHasBeenSet;
+}
+
+vector<Tag> CreateInstancePostRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateInstancePostRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateInstancePostRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

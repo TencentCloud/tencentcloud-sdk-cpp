@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/ClientSubscriptionInfo.h>
 
 
 namespace TencentCloud
@@ -457,6 +458,31 @@ DeadLetter 死信
                      */
                     bool ClientProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取客户端订阅详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientSubscriptionInfos 客户端订阅详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ClientSubscriptionInfo> GetClientSubscriptionInfos() const;
+
+                    /**
+                     * 设置客户端订阅详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clientSubscriptionInfos 客户端订阅详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClientSubscriptionInfos(const std::vector<ClientSubscriptionInfo>& _clientSubscriptionInfos);
+
+                    /**
+                     * 判断参数 ClientSubscriptionInfos 是否已赋值
+                     * @return ClientSubscriptionInfos 是否已赋值
+                     * 
+                     */
+                    bool ClientSubscriptionInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -572,6 +598,13 @@ DeadLetter 死信
                      */
                     std::string m_clientProtocol;
                     bool m_clientProtocolHasBeenSet;
+
+                    /**
+                     * 客户端订阅详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClientSubscriptionInfo> m_clientSubscriptionInfos;
+                    bool m_clientSubscriptionInfosHasBeenSet;
 
                 };
             }

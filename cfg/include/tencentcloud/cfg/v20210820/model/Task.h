@@ -29,6 +29,7 @@
 #include <tencentcloud/cfg/v20210820/model/DescribePolicy.h>
 #include <tencentcloud/cfg/v20210820/model/TagWithDescribe.h>
 #include <tencentcloud/cfg/v20210820/model/ApmServiceInfo.h>
+#include <tencentcloud/cfg/v20210820/model/TaskOrg.h>
 
 
 namespace TencentCloud
@@ -732,6 +733,106 @@ namespace TencentCloud
                      */
                     bool PolicyDealTypeHasBeenSet() const;
 
+                    /**
+                     * 获取计划开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskPlanStartTime 计划开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTaskPlanStartTime() const;
+
+                    /**
+                     * 设置计划开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskPlanStartTime 计划开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskPlanStartTime(const std::string& _taskPlanStartTime);
+
+                    /**
+                     * 判断参数 TaskPlanStartTime 是否已赋值
+                     * @return TaskPlanStartTime 是否已赋值
+                     * 
+                     */
+                    bool TaskPlanStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取计划结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskPlanEndTime 计划结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTaskPlanEndTime() const;
+
+                    /**
+                     * 设置计划结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskPlanEndTime 计划结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskPlanEndTime(const std::string& _taskPlanEndTime);
+
+                    /**
+                     * 判断参数 TaskPlanEndTime 是否已赋值
+                     * @return TaskPlanEndTime 是否已赋值
+                     * 
+                     */
+                    bool TaskPlanEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取人员组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskOrg 人员组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TaskOrg> GetTaskOrg() const;
+
+                    /**
+                     * 设置人员组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskOrg 人员组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskOrg(const std::vector<TaskOrg>& _taskOrg);
+
+                    /**
+                     * 判断参数 TaskOrg 是否已赋值
+                     * @return TaskOrg 是否已赋值
+                     * 
+                     */
+                    bool TaskOrgHasBeenSet() const;
+
+                    /**
+                     * 获取问题和改进
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskIssue 问题和改进
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTaskIssue() const;
+
+                    /**
+                     * 设置问题和改进
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskIssue 问题和改进
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskIssue(const std::string& _taskIssue);
+
+                    /**
+                     * 判断参数 TaskIssue 是否已赋值
+                     * @return TaskIssue 是否已赋值
+                     * 
+                     */
+                    bool TaskIssueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -925,6 +1026,34 @@ namespace TencentCloud
                      */
                     int64_t m_policyDealType;
                     bool m_policyDealTypeHasBeenSet;
+
+                    /**
+                     * 计划开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskPlanStartTime;
+                    bool m_taskPlanStartTimeHasBeenSet;
+
+                    /**
+                     * 计划结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskPlanEndTime;
+                    bool m_taskPlanEndTimeHasBeenSet;
+
+                    /**
+                     * 人员组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TaskOrg> m_taskOrg;
+                    bool m_taskOrgHasBeenSet;
+
+                    /**
+                     * 问题和改进
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskIssue;
+                    bool m_taskIssueHasBeenSet;
 
                 };
             }

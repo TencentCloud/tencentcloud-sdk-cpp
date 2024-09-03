@@ -262,6 +262,34 @@ Block 建议屏蔽；
                      */
                     bool DurationHasBeenSet() const;
 
+                    /**
+                     * 获取是否命中(0:否, 1: 是)
+                     * @return HitFlag 是否命中(0:否, 1: 是)
+                     * 
+                     */
+                    int64_t GetHitFlag() const;
+
+                    /**
+                     * 判断参数 HitFlag 是否已赋值
+                     * @return HitFlag 是否已赋值
+                     * 
+                     */
+                    bool HitFlagHasBeenSet() const;
+
+                    /**
+                     * 获取得分
+                     * @return Score 得分
+                     * 
+                     */
+                    int64_t GetScore() const;
+
+                    /**
+                     * 判断参数 Score 是否已赋值
+                     * @return Score 是否已赋值
+                     * 
+                     */
+                    bool ScoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -357,6 +385,18 @@ Block 建议屏蔽；
                      */
                     std::string m_duration;
                     bool m_durationHasBeenSet;
+
+                    /**
+                     * 是否命中(0:否, 1: 是)
+                     */
+                    int64_t m_hitFlag;
+                    bool m_hitFlagHasBeenSet;
+
+                    /**
+                     * 得分
+                     */
+                    int64_t m_score;
+                    bool m_scoreHasBeenSet;
 
                 };
             }

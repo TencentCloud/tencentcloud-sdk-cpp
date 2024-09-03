@@ -25,7 +25,8 @@ using namespace std;
 CreateVpnGatewaySslClientRequest::CreateVpnGatewaySslClientRequest() :
     m_sslVpnServerIdHasBeenSet(false),
     m_sslVpnClientNameHasBeenSet(false),
-    m_sslVpnClientNamesHasBeenSet(false)
+    m_sslVpnClientNamesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,21 @@ string CreateVpnGatewaySslClientRequest::ToJsonString() const
         for (auto itr = m_sslVpnClientNames.begin(); itr != m_sslVpnClientNames.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -119,6 +135,22 @@ void CreateVpnGatewaySslClientRequest::SetSslVpnClientNames(const vector<string>
 bool CreateVpnGatewaySslClientRequest::SslVpnClientNamesHasBeenSet() const
 {
     return m_sslVpnClientNamesHasBeenSet;
+}
+
+vector<Tag> CreateVpnGatewaySslClientRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateVpnGatewaySslClientRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateVpnGatewaySslClientRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

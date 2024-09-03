@@ -156,23 +156,23 @@ namespace TencentCloud
                     bool SealImgCallbackHasBeenSet() const;
 
                     /**
-                     * 获取回调链接，如果渠道已经配置了，可以不传
-                     * @return CallbackUrl 回调链接，如果渠道已经配置了，可以不传
-                     * 
+                     * 获取该字段已废弃，请使用【应用号配置】中的回调地址统一接口消息
+                     * @return CallbackUrl 该字段已废弃，请使用【应用号配置】中的回调地址统一接口消息
+                     * @deprecated
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置回调链接，如果渠道已经配置了，可以不传
-                     * @param _callbackUrl 回调链接，如果渠道已经配置了，可以不传
-                     * 
+                     * 设置该字段已废弃，请使用【应用号配置】中的回调地址统一接口消息
+                     * @param _callbackUrl 该字段已废弃，请使用【应用号配置】中的回调地址统一接口消息
+                     * @deprecated
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CallbackUrlHasBeenSet() const;
 
@@ -344,7 +344,7 @@ namespace TencentCloud
                     bool m_sealImgCallbackHasBeenSet;
 
                     /**
-                     * 回调链接，如果渠道已经配置了，可以不传
+                     * 该字段已废弃，请使用【应用号配置】中的回调地址统一接口消息
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;

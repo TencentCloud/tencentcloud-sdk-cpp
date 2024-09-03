@@ -1056,6 +1056,31 @@ namespace TencentCloud
                      */
                     bool HotwordListHasBeenSet() const;
 
+                    /**
+                     * 获取关键词识别ID列表，默认空为不进行识别，最多10个
+
+                     * @return KeyWordLibIdList 关键词识别ID列表，默认空为不进行识别，最多10个
+
+                     * 
+                     */
+                    std::vector<std::string> GetKeyWordLibIdList() const;
+
+                    /**
+                     * 设置关键词识别ID列表，默认空为不进行识别，最多10个
+
+                     * @param _keyWordLibIdList 关键词识别ID列表，默认空为不进行识别，最多10个
+
+                     * 
+                     */
+                    void SetKeyWordLibIdList(const std::vector<std::string>& _keyWordLibIdList);
+
+                    /**
+                     * 判断参数 KeyWordLibIdList 是否已赋值
+                     * @return KeyWordLibIdList 是否已赋值
+                     * 
+                     */
+                    bool KeyWordLibIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1327,6 +1352,13 @@ namespace TencentCloud
                      */
                     std::string m_hotwordList;
                     bool m_hotwordListHasBeenSet;
+
+                    /**
+                     * 关键词识别ID列表，默认空为不进行识别，最多10个
+
+                     */
+                    std::vector<std::string> m_keyWordLibIdList;
+                    bool m_keyWordLibIdListHasBeenSet;
 
                 };
             }

@@ -47,7 +47,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/LogstashBindedES.h
   include/tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsRequest.h
   include/tencentcloud/es/v20180416/model/DeleteServerlessInstanceResponse.h
-  include/tencentcloud/es/v20180416/model/VpcInfo.h
+  include/tencentcloud/es/v20180416/model/InstallInstanceModelResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsResponse.h
   include/tencentcloud/es/v20180416/model/LogstashPipeline.h
   include/tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesResponse.h
@@ -83,6 +83,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/UpdateLogstashInstanceRequest.h
   include/tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesRequest.h
   include/tencentcloud/es/v20180416/model/DescribeLogstashInstancesResponse.h
+  include/tencentcloud/es/v20180416/model/InstallInstanceModelRequest.h
   include/tencentcloud/es/v20180416/model/DiDataSinkServerless.h
   include/tencentcloud/es/v20180416/model/DeleteInstanceResponse.h
   include/tencentcloud/es/v20180416/model/SettingDetail.h
@@ -185,6 +186,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/DescribeServerlessMetricsResponse.h
   include/tencentcloud/es/v20180416/model/StopLogstashPipelinesResponse.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessInstancesRequest.h
+  include/tencentcloud/es/v20180416/model/VpcInfo.h
   include/tencentcloud/es/v20180416/model/KibanaNodeInfo.h
   include/tencentcloud/es/v20180416/model/StartLogstashPipelinesResponse.h
   include/tencentcloud/es/v20180416/model/GetDiagnoseSettingsRequest.h
@@ -230,7 +232,7 @@ set(es_src
   src/v20180416/model/LogstashBindedES.cpp
   src/v20180416/model/UpdateDiagnoseSettingsRequest.cpp
   src/v20180416/model/DeleteServerlessInstanceResponse.cpp
-  src/v20180416/model/VpcInfo.cpp
+  src/v20180416/model/InstallInstanceModelResponse.cpp
   src/v20180416/model/DescribeInstanceOperationsResponse.cpp
   src/v20180416/model/LogstashPipeline.cpp
   src/v20180416/model/UpdateRequestTargetNodeTypesResponse.cpp
@@ -266,6 +268,7 @@ set(es_src
   src/v20180416/model/UpdateLogstashInstanceRequest.cpp
   src/v20180416/model/UpdateRequestTargetNodeTypesRequest.cpp
   src/v20180416/model/DescribeLogstashInstancesResponse.cpp
+  src/v20180416/model/InstallInstanceModelRequest.cpp
   src/v20180416/model/DiDataSinkServerless.cpp
   src/v20180416/model/DeleteInstanceResponse.cpp
   src/v20180416/model/SettingDetail.cpp
@@ -368,6 +371,7 @@ set(es_src
   src/v20180416/model/DescribeServerlessMetricsResponse.cpp
   src/v20180416/model/StopLogstashPipelinesResponse.cpp
   src/v20180416/model/DescribeServerlessInstancesRequest.cpp
+  src/v20180416/model/VpcInfo.cpp
   src/v20180416/model/KibanaNodeInfo.cpp
   src/v20180416/model/StartLogstashPipelinesResponse.cpp
   src/v20180416/model/GetDiagnoseSettingsRequest.cpp

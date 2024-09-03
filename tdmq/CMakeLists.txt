@@ -230,6 +230,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DescribeCmqTopicDetailResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQSubscriptionsResponse.h
+  include/tencentcloud/tdmq/v20200217/model/ClientSubscriptionInfo.h
   include/tencentcloud/tdmq/v20200217/model/DescribeCmqSubscriptionDetailResponse.h
   include/tencentcloud/tdmq/v20200217/model/VpcBindRecord.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQMsgResponse.h
@@ -605,6 +606,7 @@ set(tdmq_src
   src/v20200217/model/DescribeCmqTopicDetailResponse.cpp
   src/v20200217/model/DescribeRocketMQTopicsRequest.cpp
   src/v20200217/model/DescribeRocketMQSubscriptionsResponse.cpp
+  src/v20200217/model/ClientSubscriptionInfo.cpp
   src/v20200217/model/DescribeCmqSubscriptionDetailResponse.cpp
   src/v20200217/model/VpcBindRecord.cpp
   src/v20200217/model/DescribeRocketMQMsgResponse.cpp

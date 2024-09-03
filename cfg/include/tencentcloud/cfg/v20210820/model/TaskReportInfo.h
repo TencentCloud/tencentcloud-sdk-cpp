@@ -180,6 +180,48 @@ namespace TencentCloud
                      */
                     bool LogHasBeenSet() const;
 
+                    /**
+                     * 获取0--未开始，1--正在归档，2--归档成功，3--归档失败
+                     * @return ArchiveStage 0--未开始，1--正在归档，2--归档成功，3--归档失败
+                     * 
+                     */
+                    int64_t GetArchiveStage() const;
+
+                    /**
+                     * 设置0--未开始，1--正在归档，2--归档成功，3--归档失败
+                     * @param _archiveStage 0--未开始，1--正在归档，2--归档成功，3--归档失败
+                     * 
+                     */
+                    void SetArchiveStage(const int64_t& _archiveStage);
+
+                    /**
+                     * 判断参数 ArchiveStage 是否已赋值
+                     * @return ArchiveStage 是否已赋值
+                     * 
+                     */
+                    bool ArchiveStageHasBeenSet() const;
+
+                    /**
+                     * 获取归档时间
+                     * @return ArchiveTime 归档时间
+                     * 
+                     */
+                    std::string GetArchiveTime() const;
+
+                    /**
+                     * 设置归档时间
+                     * @param _archiveTime 归档时间
+                     * 
+                     */
+                    void SetArchiveTime(const std::string& _archiveTime);
+
+                    /**
+                     * 判断参数 ArchiveTime 是否已赋值
+                     * @return ArchiveTime 是否已赋值
+                     * 
+                     */
+                    bool ArchiveTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -219,6 +261,18 @@ namespace TencentCloud
                      */
                     std::string m_log;
                     bool m_logHasBeenSet;
+
+                    /**
+                     * 0--未开始，1--正在归档，2--归档成功，3--归档失败
+                     */
+                    int64_t m_archiveStage;
+                    bool m_archiveStageHasBeenSet;
+
+                    /**
+                     * 归档时间
+                     */
+                    std::string m_archiveTime;
+                    bool m_archiveTimeHasBeenSet;
 
                 };
             }

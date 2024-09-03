@@ -26,7 +26,8 @@ ModifyTaskRunStatusRequest::ModifyTaskRunStatusRequest() :
     m_taskIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_isExpectHasBeenSet(false),
-    m_summaryHasBeenSet(false)
+    m_summaryHasBeenSet(false),
+    m_issueHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifyTaskRunStatusRequest::ToJsonString() const
         string key = "Summary";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_summary.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_issueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Issue";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_issue.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifyTaskRunStatusRequest::SetSummary(const string& _summary)
 bool ModifyTaskRunStatusRequest::SummaryHasBeenSet() const
 {
     return m_summaryHasBeenSet;
+}
+
+string ModifyTaskRunStatusRequest::GetIssue() const
+{
+    return m_issue;
+}
+
+void ModifyTaskRunStatusRequest::SetIssue(const string& _issue)
+{
+    m_issue = _issue;
+    m_issueHasBeenSet = true;
+}
+
+bool ModifyTaskRunStatusRequest::IssueHasBeenSet() const
+{
+    return m_issueHasBeenSet;
 }
 
 

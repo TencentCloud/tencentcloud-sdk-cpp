@@ -114,6 +114,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/PodNewParameter.h
   include/tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesResponse.h
   include/tencentcloud/emr/v20190103/model/ModifyResourcesTagsResponse.h
+  include/tencentcloud/emr/v20190103/model/ModifyAutoRenewFlagResponse.h
   include/tencentcloud/emr/v20190103/model/ScaleOutServiceConfGroupsInfo.h
   include/tencentcloud/emr/v20190103/model/DescribeYarnScheduleHistoryResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeAutoScaleGroupGlobalConfResponse.h
@@ -149,6 +150,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/UserAndGroup.h
   include/tencentcloud/emr/v20190103/model/AddMetricScaleStrategyResponse.h
   include/tencentcloud/emr/v20190103/model/BootstrapAction.h
+  include/tencentcloud/emr/v20190103/model/ScaleOutClusterRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeClusterNodesRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeCvmQuotaRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeImpalaQueriesRequest.h
@@ -190,7 +192,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/ApplicationStatics.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/MultiZoneSetting.h
-  include/tencentcloud/emr/v20190103/model/ScaleOutClusterRequest.h
+  include/tencentcloud/emr/v20190103/model/ModifyAutoRenewFlagRequest.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigRequest.h
   include/tencentcloud/emr/v20190103/model/UserInfoForUserManager.h
   include/tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsRequest.h
@@ -333,6 +335,7 @@ set(emr_src
   src/v20190103/model/PodNewParameter.cpp
   src/v20190103/model/DescribeInstanceRenewNodesResponse.cpp
   src/v20190103/model/ModifyResourcesTagsResponse.cpp
+  src/v20190103/model/ModifyAutoRenewFlagResponse.cpp
   src/v20190103/model/ScaleOutServiceConfGroupsInfo.cpp
   src/v20190103/model/DescribeYarnScheduleHistoryResponse.cpp
   src/v20190103/model/DescribeAutoScaleGroupGlobalConfResponse.cpp
@@ -368,6 +371,7 @@ set(emr_src
   src/v20190103/model/UserAndGroup.cpp
   src/v20190103/model/AddMetricScaleStrategyResponse.cpp
   src/v20190103/model/BootstrapAction.cpp
+  src/v20190103/model/ScaleOutClusterRequest.cpp
   src/v20190103/model/DescribeClusterNodesRequest.cpp
   src/v20190103/model/DescribeCvmQuotaRequest.cpp
   src/v20190103/model/DescribeImpalaQueriesRequest.cpp
@@ -409,7 +413,7 @@ set(emr_src
   src/v20190103/model/ApplicationStatics.cpp
   src/v20190103/model/InquiryPriceCreateInstanceRequest.cpp
   src/v20190103/model/MultiZoneSetting.cpp
-  src/v20190103/model/ScaleOutClusterRequest.cpp
+  src/v20190103/model/ModifyAutoRenewFlagRequest.cpp
   src/v20190103/model/ModifyResourceScheduleConfigRequest.cpp
   src/v20190103/model/UserInfoForUserManager.cpp
   src/v20190103/model/DescribeEmrOverviewMetricsRequest.cpp

@@ -97,27 +97,15 @@ namespace TencentCloud
                     bool InternationalHasBeenSet() const;
 
                     /**
-                     * 获取申请签名状态。其中：
-0：表示审核通过。
-1：表示审核中。
--1：表示审核未通过或审核失败。
-                     * @return StatusCode 申请签名状态。其中：
-0：表示审核通过。
-1：表示审核中。
--1：表示审核未通过或审核失败。
+                     * 获取申请签名状态。其中0表示审核通过且已生效，1表示审核中，2表示审核通过待生效，-1表示审核未通过或审核失败。
+                     * @return StatusCode 申请签名状态。其中0表示审核通过且已生效，1表示审核中，2表示审核通过待生效，-1表示审核未通过或审核失败。
                      * 
                      */
                     int64_t GetStatusCode() const;
 
                     /**
-                     * 设置申请签名状态。其中：
-0：表示审核通过。
-1：表示审核中。
--1：表示审核未通过或审核失败。
-                     * @param _statusCode 申请签名状态。其中：
-0：表示审核通过。
-1：表示审核中。
--1：表示审核未通过或审核失败。
+                     * 设置申请签名状态。其中0表示审核通过且已生效，1表示审核中，2表示审核通过待生效，-1表示审核未通过或审核失败。
+                     * @param _statusCode 申请签名状态。其中0表示审核通过且已生效，1表示审核中，2表示审核通过待生效，-1表示审核未通过或审核失败。
                      * 
                      */
                     void SetStatusCode(const int64_t& _statusCode);
@@ -209,10 +197,7 @@ namespace TencentCloud
                     bool m_internationalHasBeenSet;
 
                     /**
-                     * 申请签名状态。其中：
-0：表示审核通过。
-1：表示审核中。
--1：表示审核未通过或审核失败。
+                     * 申请签名状态。其中0表示审核通过且已生效，1表示审核中，2表示审核通过待生效，-1表示审核未通过或审核失败。
                      */
                     int64_t m_statusCode;
                     bool m_statusCodeHasBeenSet;

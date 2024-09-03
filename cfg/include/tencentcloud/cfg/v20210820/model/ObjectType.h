@@ -182,6 +182,56 @@ namespace TencentCloud
                      */
                     bool ObjectHasNewActionHasBeenSet() const;
 
+                    /**
+                     * 获取对应在平台架构图中的资源类型名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ObjectPlatformName 对应在平台架构图中的资源类型名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetObjectPlatformName() const;
+
+                    /**
+                     * 设置对应在平台架构图中的资源类型名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _objectPlatformName 对应在平台架构图中的资源类型名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetObjectPlatformName(const std::string& _objectPlatformName);
+
+                    /**
+                     * 判断参数 ObjectPlatformName 是否已赋值
+                     * @return ObjectPlatformName 是否已赋值
+                     * 
+                     */
+                    bool ObjectPlatformNameHasBeenSet() const;
+
+                    /**
+                     * 获取1：平台支持的对象 2：应用支持的部分对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ObjectSupportType 1：平台支持的对象 2：应用支持的部分对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetObjectSupportType() const;
+
+                    /**
+                     * 设置1：平台支持的对象 2：应用支持的部分对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _objectSupportType 1：平台支持的对象 2：应用支持的部分对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetObjectSupportType(const int64_t& _objectSupportType);
+
+                    /**
+                     * 判断参数 ObjectSupportType 是否已赋值
+                     * @return ObjectSupportType 是否已赋值
+                     * 
+                     */
+                    bool ObjectSupportTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,6 +271,20 @@ namespace TencentCloud
                      */
                     bool m_objectHasNewAction;
                     bool m_objectHasNewActionHasBeenSet;
+
+                    /**
+                     * 对应在平台架构图中的资源类型名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_objectPlatformName;
+                    bool m_objectPlatformNameHasBeenSet;
+
+                    /**
+                     * 1：平台支持的对象 2：应用支持的部分对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_objectSupportType;
+                    bool m_objectSupportTypeHasBeenSet;
 
                 };
             }

@@ -1136,6 +1136,31 @@ namespace TencentCloud
                      */
                     bool BillingResourceModeHasBeenSet() const;
 
+                    /**
+                     * 获取Cu比例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MemRatio Cu比例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMemRatio() const;
+
+                    /**
+                     * 设置Cu比例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _memRatio Cu比例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMemRatio(const int64_t& _memRatio);
+
+                    /**
+                     * 判断参数 MemRatio 是否已赋值
+                     * @return MemRatio 是否已赋值
+                     * 
+                     */
+                    bool MemRatioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1442,6 +1467,13 @@ namespace TencentCloud
                      */
                     std::string m_billingResourceMode;
                     bool m_billingResourceModeHasBeenSet;
+
+                    /**
+                     * Cu比例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_memRatio;
+                    bool m_memRatioHasBeenSet;
 
                 };
             }

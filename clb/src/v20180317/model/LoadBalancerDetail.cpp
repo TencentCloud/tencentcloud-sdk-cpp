@@ -59,7 +59,10 @@ LoadBalancerDetail::LoadBalancerDetail() :
     m_zonesHasBeenSet(false),
     m_sniSwitchHasBeenSet(false),
     m_loadBalancerDomainHasBeenSet(false),
-    m_egressHasBeenSet(false)
+    m_egressHasBeenSet(false),
+    m_attributeFlagsHasBeenSet(false),
+    m_slaTypeHasBeenSet(false),
+    m_exclusiveHasBeenSet(false)
 {
 }
 
@@ -498,6 +501,39 @@ CoreInternalOutcome LoadBalancerDetail::Deserialize(const rapidjson::Value &valu
         m_egressHasBeenSet = true;
     }
 
+    if (value.HasMember("AttributeFlags") && !value["AttributeFlags"].IsNull())
+    {
+        if (!value["AttributeFlags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerDetail.AttributeFlags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AttributeFlags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_attributeFlags.push_back((*itr).GetString());
+        }
+        m_attributeFlagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("SlaType") && !value["SlaType"].IsNull())
+    {
+        if (!value["SlaType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerDetail.SlaType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_slaType = string(value["SlaType"].GetString());
+        m_slaTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Exclusive") && !value["Exclusive"].IsNull())
+    {
+        if (!value["Exclusive"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerDetail.Exclusive` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_exclusive = value["Exclusive"].GetUint64();
+        m_exclusiveHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -840,6 +876,35 @@ void LoadBalancerDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Egress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_egress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attributeFlagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttributeFlags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_attributeFlags.begin(); itr != m_attributeFlags.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_slaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_slaType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exclusiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Exclusive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_exclusive, allocator);
     }
 
 }
@@ -1467,5 +1532,53 @@ void LoadBalancerDetail::SetEgress(const string& _egress)
 bool LoadBalancerDetail::EgressHasBeenSet() const
 {
     return m_egressHasBeenSet;
+}
+
+vector<string> LoadBalancerDetail::GetAttributeFlags() const
+{
+    return m_attributeFlags;
+}
+
+void LoadBalancerDetail::SetAttributeFlags(const vector<string>& _attributeFlags)
+{
+    m_attributeFlags = _attributeFlags;
+    m_attributeFlagsHasBeenSet = true;
+}
+
+bool LoadBalancerDetail::AttributeFlagsHasBeenSet() const
+{
+    return m_attributeFlagsHasBeenSet;
+}
+
+string LoadBalancerDetail::GetSlaType() const
+{
+    return m_slaType;
+}
+
+void LoadBalancerDetail::SetSlaType(const string& _slaType)
+{
+    m_slaType = _slaType;
+    m_slaTypeHasBeenSet = true;
+}
+
+bool LoadBalancerDetail::SlaTypeHasBeenSet() const
+{
+    return m_slaTypeHasBeenSet;
+}
+
+uint64_t LoadBalancerDetail::GetExclusive() const
+{
+    return m_exclusive;
+}
+
+void LoadBalancerDetail::SetExclusive(const uint64_t& _exclusive)
+{
+    m_exclusive = _exclusive;
+    m_exclusiveHasBeenSet = true;
+}
+
+bool LoadBalancerDetail::ExclusiveHasBeenSet() const
+{
+    return m_exclusiveHasBeenSet;
 }
 

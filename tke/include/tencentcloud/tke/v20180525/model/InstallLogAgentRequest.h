@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool KubeletRootDirHasBeenSet() const;
 
+                    /**
+                     * 获取集群类型 tke/eks，默认tke
+                     * @return ClusterType 集群类型 tke/eks，默认tke
+                     * 
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置集群类型 tke/eks，默认tke
+                     * @param _clusterType 集群类型 tke/eks，默认tke
+                     * 
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_kubeletRootDir;
                     bool m_kubeletRootDirHasBeenSet;
+
+                    /**
+                     * 集群类型 tke/eks，默认tke
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
 
                 };
             }

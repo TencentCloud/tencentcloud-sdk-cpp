@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取搜索标签列表
-                     * @return SearchTags 搜索标签列表
+                     * 获取搜索标签列表，没匹配到则不过滤集群列表
+                     * @return SearchTags 搜索标签列表，没匹配到则不过滤集群列表
                      * 
                      */
                     std::vector<SearchTags> GetSearchTags() const;
 
                     /**
-                     * 设置搜索标签列表
-                     * @param _searchTags 搜索标签列表
+                     * 设置搜索标签列表，没匹配到则不过滤集群列表
+                     * @param _searchTags 搜索标签列表，没匹配到则不过滤集群列表
                      * 
                      */
                     void SetSearchTags(const std::vector<SearchTags>& _searchTags);
@@ -175,7 +175,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 搜索标签列表
+                     * 搜索标签列表，没匹配到则不过滤集群列表
                      */
                     std::vector<SearchTags> m_searchTags;
                     bool m_searchTagsHasBeenSet;

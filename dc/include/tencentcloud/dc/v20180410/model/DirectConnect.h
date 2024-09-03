@@ -831,6 +831,56 @@ namespace TencentCloud
                      */
                     bool MinBandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取建设模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Construct 建设模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetConstruct() const;
+
+                    /**
+                     * 设置建设模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _construct 建设模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConstruct(const uint64_t& _construct);
+
+                    /**
+                     * 判断参数 Construct 是否已赋值
+                     * @return Construct 是否已赋值
+                     * 
+                     */
+                    bool ConstructHasBeenSet() const;
+
+                    /**
+                     * 获取物理专线的接入点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessPointName 物理专线的接入点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAccessPointName() const;
+
+                    /**
+                     * 设置物理专线的接入点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _accessPointName 物理专线的接入点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAccessPointName(const std::string& _accessPointName);
+
+                    /**
+                     * 判断参数 AccessPointName 是否已赋值
+                     * @return AccessPointName 是否已赋值
+                     * 
+                     */
+                    bool AccessPointNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1052,6 +1102,20 @@ namespace TencentCloud
                      */
                     uint64_t m_minBandwidth;
                     bool m_minBandwidthHasBeenSet;
+
+                    /**
+                     * 建设模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_construct;
+                    bool m_constructHasBeenSet;
+
+                    /**
+                     * 物理专线的接入点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_accessPointName;
+                    bool m_accessPointNameHasBeenSet;
 
                 };
             }

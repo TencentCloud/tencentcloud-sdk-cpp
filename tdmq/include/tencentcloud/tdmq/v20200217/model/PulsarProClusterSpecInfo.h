@@ -176,6 +176,35 @@ namespace TencentCloud
                      */
                     bool ScalableTpsHasBeenSet() const;
 
+                    /**
+                     * 获取32或者128
+当前集群topic的最大分区数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxPartitions 32或者128
+当前集群topic的最大分区数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetMaxPartitions() const;
+
+                    /**
+                     * 设置32或者128
+当前集群topic的最大分区数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _maxPartitions 32或者128
+当前集群topic的最大分区数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMaxPartitions(const uint64_t& _maxPartitions);
+
+                    /**
+                     * 判断参数 MaxPartitions 是否已赋值
+                     * @return MaxPartitions 是否已赋值
+                     * 
+                     */
+                    bool MaxPartitionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -214,6 +243,14 @@ namespace TencentCloud
                      */
                     uint64_t m_scalableTps;
                     bool m_scalableTpsHasBeenSet;
+
+                    /**
+                     * 32或者128
+当前集群topic的最大分区数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_maxPartitions;
+                    bool m_maxPartitionsHasBeenSet;
 
                 };
             }

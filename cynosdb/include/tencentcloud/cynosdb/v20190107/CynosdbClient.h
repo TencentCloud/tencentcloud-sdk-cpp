@@ -173,6 +173,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeRangeResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeValidityRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeValidityResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeServerlessStrategyRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeServerlessStrategyResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeSupportProxyVersionRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeSupportProxyVersionResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeTasksRequest.h>
@@ -251,6 +253,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/ModifyResourcePackageNameResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyResourcePackagesDeductionPriorityRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyResourcePackagesDeductionPriorityResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyServerlessStrategyRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyServerlessStrategyResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyVipVportRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyVipVportResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineClusterRequest.h>
@@ -554,6 +558,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRollbackTimeValidityResponse> DescribeRollbackTimeValidityOutcome;
                 typedef std::future<DescribeRollbackTimeValidityOutcome> DescribeRollbackTimeValidityOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeRollbackTimeValidityRequest&, DescribeRollbackTimeValidityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRollbackTimeValidityAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServerlessStrategyResponse> DescribeServerlessStrategyOutcome;
+                typedef std::future<DescribeServerlessStrategyOutcome> DescribeServerlessStrategyOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeServerlessStrategyRequest&, DescribeServerlessStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSupportProxyVersionResponse> DescribeSupportProxyVersionOutcome;
                 typedef std::future<DescribeSupportProxyVersionOutcome> DescribeSupportProxyVersionOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeSupportProxyVersionRequest&, DescribeSupportProxyVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSupportProxyVersionAsyncHandler;
@@ -671,6 +678,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyResourcePackagesDeductionPriorityResponse> ModifyResourcePackagesDeductionPriorityOutcome;
                 typedef std::future<ModifyResourcePackagesDeductionPriorityOutcome> ModifyResourcePackagesDeductionPriorityOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyResourcePackagesDeductionPriorityRequest&, ModifyResourcePackagesDeductionPriorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourcePackagesDeductionPriorityAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyServerlessStrategyResponse> ModifyServerlessStrategyOutcome;
+                typedef std::future<ModifyServerlessStrategyOutcome> ModifyServerlessStrategyOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyServerlessStrategyRequest&, ModifyServerlessStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServerlessStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVipVportResponse> ModifyVipVportOutcome;
                 typedef std::future<ModifyVipVportOutcome> ModifyVipVportOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyVipVportRequest&, ModifyVipVportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVipVportAsyncHandler;
@@ -1448,6 +1458,15 @@ namespace TencentCloud
                 DescribeRollbackTimeValidityOutcomeCallable DescribeRollbackTimeValidityCallable(const Model::DescribeRollbackTimeValidityRequest& request);
 
                 /**
+                 *查询serverless策略
+                 * @param req DescribeServerlessStrategyRequest
+                 * @return DescribeServerlessStrategyOutcome
+                 */
+                DescribeServerlessStrategyOutcome DescribeServerlessStrategy(const Model::DescribeServerlessStrategyRequest &request);
+                void DescribeServerlessStrategyAsync(const Model::DescribeServerlessStrategyRequest& request, const DescribeServerlessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServerlessStrategyOutcomeCallable DescribeServerlessStrategyCallable(const Model::DescribeServerlessStrategyRequest& request);
+
+                /**
                  *查询支持的数据库代理版本
                  * @param req DescribeSupportProxyVersionRequest
                  * @return DescribeSupportProxyVersionOutcome
@@ -1797,6 +1816,15 @@ namespace TencentCloud
                 ModifyResourcePackagesDeductionPriorityOutcome ModifyResourcePackagesDeductionPriority(const Model::ModifyResourcePackagesDeductionPriorityRequest &request);
                 void ModifyResourcePackagesDeductionPriorityAsync(const Model::ModifyResourcePackagesDeductionPriorityRequest& request, const ModifyResourcePackagesDeductionPriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyResourcePackagesDeductionPriorityOutcomeCallable ModifyResourcePackagesDeductionPriorityCallable(const Model::ModifyResourcePackagesDeductionPriorityRequest& request);
+
+                /**
+                 *修改serverless策略
+                 * @param req ModifyServerlessStrategyRequest
+                 * @return ModifyServerlessStrategyOutcome
+                 */
+                ModifyServerlessStrategyOutcome ModifyServerlessStrategy(const Model::ModifyServerlessStrategyRequest &request);
+                void ModifyServerlessStrategyAsync(const Model::ModifyServerlessStrategyRequest& request, const ModifyServerlessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyServerlessStrategyOutcomeCallable ModifyServerlessStrategyCallable(const Model::ModifyServerlessStrategyRequest& request);
 
                 /**
                  *修改实例组ip，端口

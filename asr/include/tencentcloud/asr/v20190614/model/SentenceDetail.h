@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/asr/v20190614/model/SentenceWords.h>
+#include <tencentcloud/asr/v20190614/model/KeyWordResult.h>
 
 
 namespace TencentCloud
@@ -347,6 +348,31 @@ namespace TencentCloud
                      */
                     bool EmotionTypeHasBeenSet() const;
 
+                    /**
+                     * 获取关键词识别结果列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KeyWordResults 关键词识别结果列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<KeyWordResult> GetKeyWordResults() const;
+
+                    /**
+                     * 设置关键词识别结果列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _keyWordResults 关键词识别结果列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetKeyWordResults(const std::vector<KeyWordResult>& _keyWordResults);
+
+                    /**
+                     * 判断参数 KeyWordResults 是否已赋值
+                     * @return KeyWordResults 是否已赋值
+                     * 
+                     */
+                    bool KeyWordResultsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -432,6 +458,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_emotionType;
                     bool m_emotionTypeHasBeenSet;
+
+                    /**
+                     * 关键词识别结果列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KeyWordResult> m_keyWordResults;
+                    bool m_keyWordResultsHasBeenSet;
 
                 };
             }

@@ -66,7 +66,8 @@ Cluster::Cluster() :
     m_subEksHasBeenSet(false),
     m_agentSerialIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_billingResourceModeHasBeenSet(false)
+    m_billingResourceModeHasBeenSet(false),
+    m_memRatioHasBeenSet(false)
 {
 }
 
@@ -609,6 +610,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_billingResourceModeHasBeenSet = true;
     }
 
+    if (value.HasMember("MemRatio") && !value["MemRatio"].IsNull())
+    {
+        if (!value["MemRatio"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.MemRatio` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_memRatio = value["MemRatio"].GetInt64();
+        m_memRatioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1026,6 +1037,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "BillingResourceMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_billingResourceMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memRatio, allocator);
     }
 
 }
@@ -1765,5 +1784,21 @@ void Cluster::SetBillingResourceMode(const string& _billingResourceMode)
 bool Cluster::BillingResourceModeHasBeenSet() const
 {
     return m_billingResourceModeHasBeenSet;
+}
+
+int64_t Cluster::GetMemRatio() const
+{
+    return m_memRatio;
+}
+
+void Cluster::SetMemRatio(const int64_t& _memRatio)
+{
+    m_memRatio = _memRatio;
+    m_memRatioHasBeenSet = true;
+}
+
+bool Cluster::MemRatioHasBeenSet() const
+{
+    return m_memRatioHasBeenSet;
 }
 

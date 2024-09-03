@@ -26,7 +26,9 @@ ObjectType::ObjectType() :
     m_objectTypeLevelOneHasBeenSet(false),
     m_objectTypeParamsHasBeenSet(false),
     m_objectTypeJsonParseHasBeenSet(false),
-    m_objectHasNewActionHasBeenSet(false)
+    m_objectHasNewActionHasBeenSet(false),
+    m_objectPlatformNameHasBeenSet(false),
+    m_objectSupportTypeHasBeenSet(false)
 {
 }
 
@@ -109,6 +111,26 @@ CoreInternalOutcome ObjectType::Deserialize(const rapidjson::Value &value)
         m_objectHasNewActionHasBeenSet = true;
     }
 
+    if (value.HasMember("ObjectPlatformName") && !value["ObjectPlatformName"].IsNull())
+    {
+        if (!value["ObjectPlatformName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ObjectType.ObjectPlatformName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_objectPlatformName = string(value["ObjectPlatformName"].GetString());
+        m_objectPlatformNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ObjectSupportType") && !value["ObjectSupportType"].IsNull())
+    {
+        if (!value["ObjectSupportType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ObjectType.ObjectSupportType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_objectSupportType = value["ObjectSupportType"].GetInt64();
+        m_objectSupportTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +186,22 @@ void ObjectType::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ObjectHasNewAction";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_objectHasNewAction, allocator);
+    }
+
+    if (m_objectPlatformNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ObjectPlatformName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_objectPlatformName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_objectSupportTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ObjectSupportType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_objectSupportType, allocator);
     }
 
 }
@@ -263,5 +301,37 @@ void ObjectType::SetObjectHasNewAction(const bool& _objectHasNewAction)
 bool ObjectType::ObjectHasNewActionHasBeenSet() const
 {
     return m_objectHasNewActionHasBeenSet;
+}
+
+string ObjectType::GetObjectPlatformName() const
+{
+    return m_objectPlatformName;
+}
+
+void ObjectType::SetObjectPlatformName(const string& _objectPlatformName)
+{
+    m_objectPlatformName = _objectPlatformName;
+    m_objectPlatformNameHasBeenSet = true;
+}
+
+bool ObjectType::ObjectPlatformNameHasBeenSet() const
+{
+    return m_objectPlatformNameHasBeenSet;
+}
+
+int64_t ObjectType::GetObjectSupportType() const
+{
+    return m_objectSupportType;
+}
+
+void ObjectType::SetObjectSupportType(const int64_t& _objectSupportType)
+{
+    m_objectSupportType = _objectSupportType;
+    m_objectSupportTypeHasBeenSet = true;
+}
+
+bool ObjectType::ObjectSupportTypeHasBeenSet() const
+{
+    return m_objectSupportTypeHasBeenSet;
 }
 

@@ -159,6 +159,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/AppModel.h
   include/tencentcloud/lke/v20231130/model/ClassifyLabel.h
   include/tencentcloud/lke/v20231130/model/ReconstructDocumentRequest.h
+  include/tencentcloud/lke/v20231130/model/SimilarQuestionModify.h
   include/tencentcloud/lke/v20231130/model/RetryDocAuditResponse.h
   include/tencentcloud/lke/v20231130/model/GetReconstructDocumentResultResponse.h
   include/tencentcloud/lke/v20231130/model/RejectedQuestion.h
@@ -200,6 +201,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/DocumentElement.h
   include/tencentcloud/lke/v20231130/model/BaseConfig.h
   include/tencentcloud/lke/v20231130/model/DescribeSegmentsResponse.h
+  include/tencentcloud/lke/v20231130/model/SimilarQuestion.h
   include/tencentcloud/lke/v20231130/model/ClassifyConfig.h
   include/tencentcloud/lke/v20231130/model/UploadAttributeLabelRequest.h
   include/tencentcloud/lke/v20231130/model/ExportAttributeLabelRequest.h
@@ -393,6 +395,7 @@ set(lke_src
   src/v20231130/model/AppModel.cpp
   src/v20231130/model/ClassifyLabel.cpp
   src/v20231130/model/ReconstructDocumentRequest.cpp
+  src/v20231130/model/SimilarQuestionModify.cpp
   src/v20231130/model/RetryDocAuditResponse.cpp
   src/v20231130/model/GetReconstructDocumentResultResponse.cpp
   src/v20231130/model/RejectedQuestion.cpp
@@ -434,6 +437,7 @@ set(lke_src
   src/v20231130/model/DocumentElement.cpp
   src/v20231130/model/BaseConfig.cpp
   src/v20231130/model/DescribeSegmentsResponse.cpp
+  src/v20231130/model/SimilarQuestion.cpp
   src/v20231130/model/ClassifyConfig.cpp
   src/v20231130/model/UploadAttributeLabelRequest.cpp
   src/v20231130/model/ExportAttributeLabelRequest.cpp

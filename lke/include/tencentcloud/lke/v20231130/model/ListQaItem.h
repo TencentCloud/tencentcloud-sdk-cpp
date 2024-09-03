@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/AttrLabel.h>
 
 
 namespace TencentCloud
@@ -382,6 +383,111 @@ namespace TencentCloud
                      */
                     bool QaCharSizeHasBeenSet() const;
 
+                    /**
+                     * 获取有效开始时间，unix时间戳
+                     * @return ExpireStart 有效开始时间，unix时间戳
+                     * 
+                     */
+                    std::string GetExpireStart() const;
+
+                    /**
+                     * 设置有效开始时间，unix时间戳
+                     * @param _expireStart 有效开始时间，unix时间戳
+                     * 
+                     */
+                    void SetExpireStart(const std::string& _expireStart);
+
+                    /**
+                     * 判断参数 ExpireStart 是否已赋值
+                     * @return ExpireStart 是否已赋值
+                     * 
+                     */
+                    bool ExpireStartHasBeenSet() const;
+
+                    /**
+                     * 获取有效结束时间，unix时间戳，0代表永久有效
+                     * @return ExpireEnd 有效结束时间，unix时间戳，0代表永久有效
+                     * 
+                     */
+                    std::string GetExpireEnd() const;
+
+                    /**
+                     * 设置有效结束时间，unix时间戳，0代表永久有效
+                     * @param _expireEnd 有效结束时间，unix时间戳，0代表永久有效
+                     * 
+                     */
+                    void SetExpireEnd(const std::string& _expireEnd);
+
+                    /**
+                     * 判断参数 ExpireEnd 是否已赋值
+                     * @return ExpireEnd 是否已赋值
+                     * 
+                     */
+                    bool ExpireEndHasBeenSet() const;
+
+                    /**
+                     * 获取属性标签适用范围 1：全部，2：按条件
+                     * @return AttrRange 属性标签适用范围 1：全部，2：按条件
+                     * 
+                     */
+                    int64_t GetAttrRange() const;
+
+                    /**
+                     * 设置属性标签适用范围 1：全部，2：按条件
+                     * @param _attrRange 属性标签适用范围 1：全部，2：按条件
+                     * 
+                     */
+                    void SetAttrRange(const int64_t& _attrRange);
+
+                    /**
+                     * 判断参数 AttrRange 是否已赋值
+                     * @return AttrRange 是否已赋值
+                     * 
+                     */
+                    bool AttrRangeHasBeenSet() const;
+
+                    /**
+                     * 获取属性标签
+                     * @return AttrLabels 属性标签
+                     * 
+                     */
+                    std::vector<AttrLabel> GetAttrLabels() const;
+
+                    /**
+                     * 设置属性标签
+                     * @param _attrLabels 属性标签
+                     * 
+                     */
+                    void SetAttrLabels(const std::vector<AttrLabel>& _attrLabels);
+
+                    /**
+                     * 判断参数 AttrLabels 是否已赋值
+                     * @return AttrLabels 是否已赋值
+                     * 
+                     */
+                    bool AttrLabelsHasBeenSet() const;
+
+                    /**
+                     * 获取相似问个数
+                     * @return SimilarQuestionNum 相似问个数
+                     * 
+                     */
+                    uint64_t GetSimilarQuestionNum() const;
+
+                    /**
+                     * 设置相似问个数
+                     * @param _similarQuestionNum 相似问个数
+                     * 
+                     */
+                    void SetSimilarQuestionNum(const uint64_t& _similarQuestionNum);
+
+                    /**
+                     * 判断参数 SimilarQuestionNum 是否已赋值
+                     * @return SimilarQuestionNum 是否已赋值
+                     * 
+                     */
+                    bool SimilarQuestionNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -479,6 +585,36 @@ namespace TencentCloud
                      */
                     std::string m_qaCharSize;
                     bool m_qaCharSizeHasBeenSet;
+
+                    /**
+                     * 有效开始时间，unix时间戳
+                     */
+                    std::string m_expireStart;
+                    bool m_expireStartHasBeenSet;
+
+                    /**
+                     * 有效结束时间，unix时间戳，0代表永久有效
+                     */
+                    std::string m_expireEnd;
+                    bool m_expireEndHasBeenSet;
+
+                    /**
+                     * 属性标签适用范围 1：全部，2：按条件
+                     */
+                    int64_t m_attrRange;
+                    bool m_attrRangeHasBeenSet;
+
+                    /**
+                     * 属性标签
+                     */
+                    std::vector<AttrLabel> m_attrLabels;
+                    bool m_attrLabelsHasBeenSet;
+
+                    /**
+                     * 相似问个数
+                     */
+                    uint64_t m_similarQuestionNum;
+                    bool m_similarQuestionNumHasBeenSet;
 
                 };
             }

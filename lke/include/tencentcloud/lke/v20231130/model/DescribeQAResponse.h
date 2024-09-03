@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/Highlight.h>
 #include <tencentcloud/lke/v20231130/model/AttrLabel.h>
+#include <tencentcloud/lke/v20231130/model/SimilarQuestion.h>
 
 
 namespace TencentCloud
@@ -417,6 +418,20 @@ namespace TencentCloud
                      */
                     bool ExpireEndHasBeenSet() const;
 
+                    /**
+                     * 获取相似问列表信息
+                     * @return SimilarQuestions 相似问列表信息
+                     * 
+                     */
+                    std::vector<SimilarQuestion> GetSimilarQuestions() const;
+
+                    /**
+                     * 判断参数 SimilarQuestions 是否已赋值
+                     * @return SimilarQuestions 是否已赋值
+                     * 
+                     */
+                    bool SimilarQuestionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -580,6 +595,12 @@ namespace TencentCloud
                      */
                     std::string m_expireEnd;
                     bool m_expireEndHasBeenSet;
+
+                    /**
+                     * 相似问列表信息
+                     */
+                    std::vector<SimilarQuestion> m_similarQuestions;
+                    bool m_similarQuestionsHasBeenSet;
 
                 };
             }

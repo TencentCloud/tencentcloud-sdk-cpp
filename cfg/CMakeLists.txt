@@ -57,6 +57,7 @@ set(cfg_public_header_model
   include/tencentcloud/cfg/v20210820/model/ObjectType.h
   include/tencentcloud/cfg/v20210820/model/DescribeTaskPolicyTriggerLogRequest.h
   include/tencentcloud/cfg/v20210820/model/Task.h
+  include/tencentcloud/cfg/v20210820/model/TaskOrg.h
   include/tencentcloud/cfg/v20210820/model/TaskReportInfo.h
   include/tencentcloud/cfg/v20210820/model/CreateTaskFromTemplateRequest.h
   include/tencentcloud/cfg/v20210820/model/TriggerPolicyRequest.h
@@ -124,6 +125,7 @@ set(cfg_src
   src/v20210820/model/ObjectType.cpp
   src/v20210820/model/DescribeTaskPolicyTriggerLogRequest.cpp
   src/v20210820/model/Task.cpp
+  src/v20210820/model/TaskOrg.cpp
   src/v20210820/model/TaskReportInfo.cpp
   src/v20210820/model/CreateTaskFromTemplateRequest.cpp
   src/v20210820/model/TriggerPolicyRequest.cpp

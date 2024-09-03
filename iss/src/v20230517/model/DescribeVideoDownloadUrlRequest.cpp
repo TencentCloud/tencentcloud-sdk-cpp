@@ -28,7 +28,9 @@ DescribeVideoDownloadUrlRequest::DescribeVideoDownloadUrlRequest() :
     m_endTimeHasBeenSet(false),
     m_fileTypeHasBeenSet(false),
     m_isRespActualTimeHasBeenSet(false),
-    m_isInternalHasBeenSet(false)
+    m_isInternalHasBeenSet(false),
+    m_expiresHasBeenSet(false),
+    m_isSupportG711HasBeenSet(false)
 {
 }
 
@@ -85,6 +87,22 @@ string DescribeVideoDownloadUrlRequest::ToJsonString() const
         string key = "IsInternal";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isInternal, allocator);
+    }
+
+    if (m_expiresHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Expires";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expires, allocator);
+    }
+
+    if (m_isSupportG711HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportG711";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isSupportG711, allocator);
     }
 
 
@@ -189,6 +207,38 @@ void DescribeVideoDownloadUrlRequest::SetIsInternal(const bool& _isInternal)
 bool DescribeVideoDownloadUrlRequest::IsInternalHasBeenSet() const
 {
     return m_isInternalHasBeenSet;
+}
+
+int64_t DescribeVideoDownloadUrlRequest::GetExpires() const
+{
+    return m_expires;
+}
+
+void DescribeVideoDownloadUrlRequest::SetExpires(const int64_t& _expires)
+{
+    m_expires = _expires;
+    m_expiresHasBeenSet = true;
+}
+
+bool DescribeVideoDownloadUrlRequest::ExpiresHasBeenSet() const
+{
+    return m_expiresHasBeenSet;
+}
+
+bool DescribeVideoDownloadUrlRequest::GetIsSupportG711() const
+{
+    return m_isSupportG711;
+}
+
+void DescribeVideoDownloadUrlRequest::SetIsSupportG711(const bool& _isSupportG711)
+{
+    m_isSupportG711 = _isSupportG711;
+    m_isSupportG711HasBeenSet = true;
+}
+
+bool DescribeVideoDownloadUrlRequest::IsSupportG711HasBeenSet() const
+{
+    return m_isSupportG711HasBeenSet;
 }
 
 

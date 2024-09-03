@@ -32,7 +32,8 @@ CreateQARequest::CreateQARequest() :
     m_docBizIdHasBeenSet(false),
     m_cateBizIdHasBeenSet(false),
     m_expireStartHasBeenSet(false),
-    m_expireEndHasBeenSet(false)
+    m_expireEndHasBeenSet(false),
+    m_similarQuestionsHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,19 @@ string CreateQARequest::ToJsonString() const
         string key = "ExpireEnd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_expireEnd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_similarQuestionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SimilarQuestions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_similarQuestions.begin(); itr != m_similarQuestions.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -296,6 +310,22 @@ void CreateQARequest::SetExpireEnd(const string& _expireEnd)
 bool CreateQARequest::ExpireEndHasBeenSet() const
 {
     return m_expireEndHasBeenSet;
+}
+
+vector<string> CreateQARequest::GetSimilarQuestions() const
+{
+    return m_similarQuestions;
+}
+
+void CreateQARequest::SetSimilarQuestions(const vector<string>& _similarQuestions)
+{
+    m_similarQuestions = _similarQuestions;
+    m_similarQuestionsHasBeenSet = true;
+}
+
+bool CreateQARequest::SimilarQuestionsHasBeenSet() const
+{
+    return m_similarQuestionsHasBeenSet;
 }
 
 

@@ -253,6 +253,27 @@ namespace TencentCloud
                      */
                     bool ExpireEndHasBeenSet() const;
 
+                    /**
+                     * 获取相似问内容
+                     * @return SimilarQuestions 相似问内容
+                     * 
+                     */
+                    std::vector<std::string> GetSimilarQuestions() const;
+
+                    /**
+                     * 设置相似问内容
+                     * @param _similarQuestions 相似问内容
+                     * 
+                     */
+                    void SetSimilarQuestions(const std::vector<std::string>& _similarQuestions);
+
+                    /**
+                     * 判断参数 SimilarQuestions 是否已赋值
+                     * @return SimilarQuestions 是否已赋值
+                     * 
+                     */
+                    bool SimilarQuestionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +335,12 @@ namespace TencentCloud
                      */
                     std::string m_expireEnd;
                     bool m_expireEndHasBeenSet;
+
+                    /**
+                     * 相似问内容
+                     */
+                    std::vector<std::string> m_similarQuestions;
+                    bool m_similarQuestionsHasBeenSet;
 
                 };
             }

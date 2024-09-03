@@ -32,7 +32,8 @@ SentenceDetail::SentenceDetail() :
     m_speakerIdHasBeenSet(false),
     m_emotionalEnergyHasBeenSet(false),
     m_silenceTimeHasBeenSet(false),
-    m_emotionTypeHasBeenSet(false)
+    m_emotionTypeHasBeenSet(false),
+    m_keyWordResultsHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,26 @@ CoreInternalOutcome SentenceDetail::Deserialize(const rapidjson::Value &value)
         m_emotionTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("KeyWordResults") && !value["KeyWordResults"].IsNull())
+    {
+        if (!value["KeyWordResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SentenceDetail.KeyWordResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KeyWordResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KeyWordResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_keyWordResults.push_back(item);
+        }
+        m_keyWordResultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -286,6 +307,21 @@ void SentenceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         for (auto itr = m_emotionType.begin(); itr != m_emotionType.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_keyWordResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyWordResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_keyWordResults.begin(); itr != m_keyWordResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -482,5 +518,21 @@ void SentenceDetail::SetEmotionType(const vector<string>& _emotionType)
 bool SentenceDetail::EmotionTypeHasBeenSet() const
 {
     return m_emotionTypeHasBeenSet;
+}
+
+vector<KeyWordResult> SentenceDetail::GetKeyWordResults() const
+{
+    return m_keyWordResults;
+}
+
+void SentenceDetail::SetKeyWordResults(const vector<KeyWordResult>& _keyWordResults)
+{
+    m_keyWordResults = _keyWordResults;
+    m_keyWordResultsHasBeenSet = true;
+}
+
+bool SentenceDetail::KeyWordResultsHasBeenSet() const
+{
+    return m_keyWordResultsHasBeenSet;
 }
 

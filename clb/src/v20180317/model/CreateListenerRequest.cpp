@@ -41,7 +41,8 @@ CreateListenerRequest::CreateListenerRequest() :
     m_maxConnHasBeenSet(false),
     m_maxCpsHasBeenSet(false),
     m_idleConnectTimeoutHasBeenSet(false),
-    m_snatEnableHasBeenSet(false)
+    m_snatEnableHasBeenSet(false),
+    m_fullEndPortsHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,19 @@ string CreateListenerRequest::ToJsonString() const
         string key = "SnatEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_snatEnable, allocator);
+    }
+
+    if (m_fullEndPortsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullEndPorts";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_fullEndPorts.begin(); itr != m_fullEndPorts.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -527,6 +541,22 @@ void CreateListenerRequest::SetSnatEnable(const bool& _snatEnable)
 bool CreateListenerRequest::SnatEnableHasBeenSet() const
 {
     return m_snatEnableHasBeenSet;
+}
+
+vector<int64_t> CreateListenerRequest::GetFullEndPorts() const
+{
+    return m_fullEndPorts;
+}
+
+void CreateListenerRequest::SetFullEndPorts(const vector<int64_t>& _fullEndPorts)
+{
+    m_fullEndPorts = _fullEndPorts;
+    m_fullEndPortsHasBeenSet = true;
+}
+
+bool CreateListenerRequest::FullEndPortsHasBeenSet() const
+{
+    return m_fullEndPortsHasBeenSet;
 }
 
 

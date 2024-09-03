@@ -325,6 +325,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeTableMetaResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableMetasRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableMetasResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTablePartitionsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTablePartitionsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableQualityDetailsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableQualityDetailsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableSchemaInfoRequest.h>
@@ -954,6 +956,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTableMetasResponse> DescribeTableMetasOutcome;
                 typedef std::future<DescribeTableMetasOutcome> DescribeTableMetasOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTableMetasRequest&, DescribeTableMetasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableMetasAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTablePartitionsResponse> DescribeTablePartitionsOutcome;
+                typedef std::future<DescribeTablePartitionsOutcome> DescribeTablePartitionsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTablePartitionsRequest&, DescribeTablePartitionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablePartitionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTableQualityDetailsResponse> DescribeTableQualityDetailsOutcome;
                 typedef std::future<DescribeTableQualityDetailsOutcome> DescribeTableQualityDetailsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTableQualityDetailsRequest&, DescribeTableQualityDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableQualityDetailsAsyncHandler;
@@ -2561,6 +2566,15 @@ namespace TencentCloud
                 DescribeTableMetasOutcome DescribeTableMetas(const Model::DescribeTableMetasRequest &request);
                 void DescribeTableMetasAsync(const Model::DescribeTableMetasRequest& request, const DescribeTableMetasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTableMetasOutcomeCallable DescribeTableMetasCallable(const Model::DescribeTableMetasRequest& request);
+
+                /**
+                 *查询表的分区详情信息
+                 * @param req DescribeTablePartitionsRequest
+                 * @return DescribeTablePartitionsOutcome
+                 */
+                DescribeTablePartitionsOutcome DescribeTablePartitions(const Model::DescribeTablePartitionsRequest &request);
+                void DescribeTablePartitionsAsync(const Model::DescribeTablePartitionsRequest& request, const DescribeTablePartitionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTablePartitionsOutcomeCallable DescribeTablePartitionsCallable(const Model::DescribeTablePartitionsRequest& request);
 
                 /**
                  *质量报告-查询表质量详情

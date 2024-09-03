@@ -36,7 +36,12 @@ ListQaItem::ListQaItem() :
     m_isAllowAcceptHasBeenSet(false),
     m_fileNameHasBeenSet(false),
     m_fileTypeHasBeenSet(false),
-    m_qaCharSizeHasBeenSet(false)
+    m_qaCharSizeHasBeenSet(false),
+    m_expireStartHasBeenSet(false),
+    m_expireEndHasBeenSet(false),
+    m_attrRangeHasBeenSet(false),
+    m_attrLabelsHasBeenSet(false),
+    m_similarQuestionNumHasBeenSet(false)
 {
 }
 
@@ -205,6 +210,66 @@ CoreInternalOutcome ListQaItem::Deserialize(const rapidjson::Value &value)
         m_qaCharSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("ExpireStart") && !value["ExpireStart"].IsNull())
+    {
+        if (!value["ExpireStart"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListQaItem.ExpireStart` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireStart = string(value["ExpireStart"].GetString());
+        m_expireStartHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpireEnd") && !value["ExpireEnd"].IsNull())
+    {
+        if (!value["ExpireEnd"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListQaItem.ExpireEnd` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireEnd = string(value["ExpireEnd"].GetString());
+        m_expireEndHasBeenSet = true;
+    }
+
+    if (value.HasMember("AttrRange") && !value["AttrRange"].IsNull())
+    {
+        if (!value["AttrRange"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListQaItem.AttrRange` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_attrRange = value["AttrRange"].GetInt64();
+        m_attrRangeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AttrLabels") && !value["AttrLabels"].IsNull())
+    {
+        if (!value["AttrLabels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ListQaItem.AttrLabels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AttrLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AttrLabel item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_attrLabels.push_back(item);
+        }
+        m_attrLabelsHasBeenSet = true;
+    }
+
+    if (value.HasMember("SimilarQuestionNum") && !value["SimilarQuestionNum"].IsNull())
+    {
+        if (!value["SimilarQuestionNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListQaItem.SimilarQuestionNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_similarQuestionNum = value["SimilarQuestionNum"].GetUint64();
+        m_similarQuestionNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +403,53 @@ void ListQaItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "QaCharSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_qaCharSize.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireStartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireStart";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireStart.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireEndHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireEnd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireEnd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attrRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttrRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_attrRange, allocator);
+    }
+
+    if (m_attrLabelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttrLabels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_attrLabels.begin(); itr != m_attrLabels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_similarQuestionNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SimilarQuestionNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_similarQuestionNum, allocator);
     }
 
 }
@@ -597,5 +709,85 @@ void ListQaItem::SetQaCharSize(const string& _qaCharSize)
 bool ListQaItem::QaCharSizeHasBeenSet() const
 {
     return m_qaCharSizeHasBeenSet;
+}
+
+string ListQaItem::GetExpireStart() const
+{
+    return m_expireStart;
+}
+
+void ListQaItem::SetExpireStart(const string& _expireStart)
+{
+    m_expireStart = _expireStart;
+    m_expireStartHasBeenSet = true;
+}
+
+bool ListQaItem::ExpireStartHasBeenSet() const
+{
+    return m_expireStartHasBeenSet;
+}
+
+string ListQaItem::GetExpireEnd() const
+{
+    return m_expireEnd;
+}
+
+void ListQaItem::SetExpireEnd(const string& _expireEnd)
+{
+    m_expireEnd = _expireEnd;
+    m_expireEndHasBeenSet = true;
+}
+
+bool ListQaItem::ExpireEndHasBeenSet() const
+{
+    return m_expireEndHasBeenSet;
+}
+
+int64_t ListQaItem::GetAttrRange() const
+{
+    return m_attrRange;
+}
+
+void ListQaItem::SetAttrRange(const int64_t& _attrRange)
+{
+    m_attrRange = _attrRange;
+    m_attrRangeHasBeenSet = true;
+}
+
+bool ListQaItem::AttrRangeHasBeenSet() const
+{
+    return m_attrRangeHasBeenSet;
+}
+
+vector<AttrLabel> ListQaItem::GetAttrLabels() const
+{
+    return m_attrLabels;
+}
+
+void ListQaItem::SetAttrLabels(const vector<AttrLabel>& _attrLabels)
+{
+    m_attrLabels = _attrLabels;
+    m_attrLabelsHasBeenSet = true;
+}
+
+bool ListQaItem::AttrLabelsHasBeenSet() const
+{
+    return m_attrLabelsHasBeenSet;
+}
+
+uint64_t ListQaItem::GetSimilarQuestionNum() const
+{
+    return m_similarQuestionNum;
+}
+
+void ListQaItem::SetSimilarQuestionNum(const uint64_t& _similarQuestionNum)
+{
+    m_similarQuestionNum = _similarQuestionNum;
+    m_similarQuestionNumHasBeenSet = true;
+}
+
+bool ListQaItem::SimilarQuestionNumHasBeenSet() const
+{
+    return m_similarQuestionNumHasBeenSet;
 }
 

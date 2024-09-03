@@ -176,6 +176,64 @@ namespace TencentCloud
                      */
                     bool IsInternalHasBeenSet() const;
 
+                    /**
+                     * 获取设置URL的有效期, 最小值是1秒, 最大值是86400秒, 不设置的话, 默认是600秒
+                     * @return Expires 设置URL的有效期, 最小值是1秒, 最大值是86400秒, 不设置的话, 默认是600秒
+                     * 
+                     */
+                    int64_t GetExpires() const;
+
+                    /**
+                     * 设置设置URL的有效期, 最小值是1秒, 最大值是86400秒, 不设置的话, 默认是600秒
+                     * @param _expires 设置URL的有效期, 最小值是1秒, 最大值是86400秒, 不设置的话, 默认是600秒
+                     * 
+                     */
+                    void SetExpires(const int64_t& _expires);
+
+                    /**
+                     * 判断参数 Expires 是否已赋值
+                     * @return Expires 是否已赋值
+                     * 
+                     */
+                    bool ExpiresHasBeenSet() const;
+
+                    /**
+                     * 获取下载的MP4文件是否支持G711音频编码. 
+注意: 如果云端录像中的音频编码为AAC, 那么下载的MP4默认是支持AAC编码的
+如果云端录像中的音频编码为G711且 IsSupportG711设置为true时, 下载的MP4是支持G711音频编码
+如果云端录像中的音频编码为G711且 IsSupportG711设置为false时, 下载的MP4是不支持G711音频编码
+该参数只对FileType为mp4才有效, 不设置的话, 默认是false
+                     * @return IsSupportG711 下载的MP4文件是否支持G711音频编码. 
+注意: 如果云端录像中的音频编码为AAC, 那么下载的MP4默认是支持AAC编码的
+如果云端录像中的音频编码为G711且 IsSupportG711设置为true时, 下载的MP4是支持G711音频编码
+如果云端录像中的音频编码为G711且 IsSupportG711设置为false时, 下载的MP4是不支持G711音频编码
+该参数只对FileType为mp4才有效, 不设置的话, 默认是false
+                     * 
+                     */
+                    bool GetIsSupportG711() const;
+
+                    /**
+                     * 设置下载的MP4文件是否支持G711音频编码. 
+注意: 如果云端录像中的音频编码为AAC, 那么下载的MP4默认是支持AAC编码的
+如果云端录像中的音频编码为G711且 IsSupportG711设置为true时, 下载的MP4是支持G711音频编码
+如果云端录像中的音频编码为G711且 IsSupportG711设置为false时, 下载的MP4是不支持G711音频编码
+该参数只对FileType为mp4才有效, 不设置的话, 默认是false
+                     * @param _isSupportG711 下载的MP4文件是否支持G711音频编码. 
+注意: 如果云端录像中的音频编码为AAC, 那么下载的MP4默认是支持AAC编码的
+如果云端录像中的音频编码为G711且 IsSupportG711设置为true时, 下载的MP4是支持G711音频编码
+如果云端录像中的音频编码为G711且 IsSupportG711设置为false时, 下载的MP4是不支持G711音频编码
+该参数只对FileType为mp4才有效, 不设置的话, 默认是false
+                     * 
+                     */
+                    void SetIsSupportG711(const bool& _isSupportG711);
+
+                    /**
+                     * 判断参数 IsSupportG711 是否已赋值
+                     * @return IsSupportG711 是否已赋值
+                     * 
+                     */
+                    bool IsSupportG711HasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +273,22 @@ namespace TencentCloud
                      */
                     bool m_isInternal;
                     bool m_isInternalHasBeenSet;
+
+                    /**
+                     * 设置URL的有效期, 最小值是1秒, 最大值是86400秒, 不设置的话, 默认是600秒
+                     */
+                    int64_t m_expires;
+                    bool m_expiresHasBeenSet;
+
+                    /**
+                     * 下载的MP4文件是否支持G711音频编码. 
+注意: 如果云端录像中的音频编码为AAC, 那么下载的MP4默认是支持AAC编码的
+如果云端录像中的音频编码为G711且 IsSupportG711设置为true时, 下载的MP4是支持G711音频编码
+如果云端录像中的音频编码为G711且 IsSupportG711设置为false时, 下载的MP4是不支持G711音频编码
+该参数只对FileType为mp4才有效, 不设置的话, 默认是false
+                     */
+                    bool m_isSupportG711;
+                    bool m_isSupportG711HasBeenSet;
 
                 };
             }

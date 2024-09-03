@@ -42,7 +42,8 @@ CreateDirectConnectTunnelRequest::CreateDirectConnectTunnelRequest() :
     m_bfdEnableHasBeenSet(false),
     m_nqaEnableHasBeenSet(false),
     m_bfdInfoHasBeenSet(false),
-    m_nqaInfoHasBeenSet(false)
+    m_nqaInfoHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -221,6 +222,21 @@ string CreateDirectConnectTunnelRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_nqaInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -549,6 +565,22 @@ void CreateDirectConnectTunnelRequest::SetNqaInfo(const NQAInfo& _nqaInfo)
 bool CreateDirectConnectTunnelRequest::NqaInfoHasBeenSet() const
 {
     return m_nqaInfoHasBeenSet;
+}
+
+vector<Tag> CreateDirectConnectTunnelRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateDirectConnectTunnelRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateDirectConnectTunnelRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

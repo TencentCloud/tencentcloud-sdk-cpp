@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取实例id
+                     * @return InstanceId 实例id
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例id
+                     * @param _instanceId 实例id
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
                      * 获取修改时间
                      * @return DelayTime 修改时间
                      * 
@@ -64,6 +85,12 @@ namespace TencentCloud
                     bool DelayTimeHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 实例id
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                     /**
                      * 修改时间

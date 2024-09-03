@@ -52,7 +52,9 @@ DirectConnect::DirectConnect() :
     m_localZoneHasBeenSet(false),
     m_vlanZeroDirectConnectTunnelCountHasBeenSet(false),
     m_otherVlanDirectConnectTunnelCountHasBeenSet(false),
-    m_minBandwidthHasBeenSet(false)
+    m_minBandwidthHasBeenSet(false),
+    m_constructHasBeenSet(false),
+    m_accessPointNameHasBeenSet(false)
 {
 }
 
@@ -391,6 +393,26 @@ CoreInternalOutcome DirectConnect::Deserialize(const rapidjson::Value &value)
         m_minBandwidthHasBeenSet = true;
     }
 
+    if (value.HasMember("Construct") && !value["Construct"].IsNull())
+    {
+        if (!value["Construct"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnect.Construct` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_construct = value["Construct"].GetUint64();
+        m_constructHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessPointName") && !value["AccessPointName"].IsNull())
+    {
+        if (!value["AccessPointName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnect.AccessPointName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessPointName = string(value["AccessPointName"].GetString());
+        m_accessPointNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -659,6 +681,22 @@ void DirectConnect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "MinBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minBandwidth, allocator);
+    }
+
+    if (m_constructHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Construct";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_construct, allocator);
+    }
+
+    if (m_accessPointNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessPointName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessPointName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1174,5 +1212,37 @@ void DirectConnect::SetMinBandwidth(const uint64_t& _minBandwidth)
 bool DirectConnect::MinBandwidthHasBeenSet() const
 {
     return m_minBandwidthHasBeenSet;
+}
+
+uint64_t DirectConnect::GetConstruct() const
+{
+    return m_construct;
+}
+
+void DirectConnect::SetConstruct(const uint64_t& _construct)
+{
+    m_construct = _construct;
+    m_constructHasBeenSet = true;
+}
+
+bool DirectConnect::ConstructHasBeenSet() const
+{
+    return m_constructHasBeenSet;
+}
+
+string DirectConnect::GetAccessPointName() const
+{
+    return m_accessPointName;
+}
+
+void DirectConnect::SetAccessPointName(const string& _accessPointName)
+{
+    m_accessPointName = _accessPointName;
+    m_accessPointNameHasBeenSet = true;
+}
+
+bool DirectConnect::AccessPointNameHasBeenSet() const
+{
+    return m_accessPointNameHasBeenSet;
 }
 

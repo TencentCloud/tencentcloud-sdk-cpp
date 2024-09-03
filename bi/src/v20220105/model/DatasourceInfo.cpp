@@ -55,7 +55,8 @@ DatasourceInfo::DatasourceInfo() :
     m_dataOriginHasBeenSet(false),
     m_dataOriginProjectIdHasBeenSet(false),
     m_dataOriginDatasourceIdHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_dbTypeNameHasBeenSet(false)
 {
 }
 
@@ -434,6 +435,16 @@ CoreInternalOutcome DatasourceInfo::Deserialize(const rapidjson::Value &value)
         m_clusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DbTypeName") && !value["DbTypeName"].IsNull())
+    {
+        if (!value["DbTypeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasourceInfo.DbTypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbTypeName = string(value["DbTypeName"].GetString());
+        m_dbTypeNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -732,6 +743,14 @@ void DatasourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbTypeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbTypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dbTypeName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1295,5 +1314,21 @@ void DatasourceInfo::SetClusterId(const string& _clusterId)
 bool DatasourceInfo::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string DatasourceInfo::GetDbTypeName() const
+{
+    return m_dbTypeName;
+}
+
+void DatasourceInfo::SetDbTypeName(const string& _dbTypeName)
+{
+    m_dbTypeName = _dbTypeName;
+    m_dbTypeNameHasBeenSet = true;
+}
+
+bool DatasourceInfo::DbTypeNameHasBeenSet() const
+{
+    return m_dbTypeNameHasBeenSet;
 }
 

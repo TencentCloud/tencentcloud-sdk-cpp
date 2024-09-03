@@ -26,7 +26,9 @@ TaskReportInfo::TaskReportInfo() :
     m_expirationTimeHasBeenSet(false),
     m_expiredHasBeenSet(false),
     m_cosUrlHasBeenSet(false),
-    m_logHasBeenSet(false)
+    m_logHasBeenSet(false),
+    m_archiveStageHasBeenSet(false),
+    m_archiveTimeHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome TaskReportInfo::Deserialize(const rapidjson::Value &value)
         m_logHasBeenSet = true;
     }
 
+    if (value.HasMember("ArchiveStage") && !value["ArchiveStage"].IsNull())
+    {
+        if (!value["ArchiveStage"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskReportInfo.ArchiveStage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_archiveStage = value["ArchiveStage"].GetInt64();
+        m_archiveStageHasBeenSet = true;
+    }
+
+    if (value.HasMember("ArchiveTime") && !value["ArchiveTime"].IsNull())
+    {
+        if (!value["ArchiveTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskReportInfo.ArchiveTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_archiveTime = string(value["ArchiveTime"].GetString());
+        m_archiveTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void TaskReportInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Log";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_log.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_archiveStageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchiveStage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_archiveStage, allocator);
+    }
+
+    if (m_archiveTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchiveTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_archiveTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void TaskReportInfo::SetLog(const string& _log)
 bool TaskReportInfo::LogHasBeenSet() const
 {
     return m_logHasBeenSet;
+}
+
+int64_t TaskReportInfo::GetArchiveStage() const
+{
+    return m_archiveStage;
+}
+
+void TaskReportInfo::SetArchiveStage(const int64_t& _archiveStage)
+{
+    m_archiveStage = _archiveStage;
+    m_archiveStageHasBeenSet = true;
+}
+
+bool TaskReportInfo::ArchiveStageHasBeenSet() const
+{
+    return m_archiveStageHasBeenSet;
+}
+
+string TaskReportInfo::GetArchiveTime() const
+{
+    return m_archiveTime;
+}
+
+void TaskReportInfo::SetArchiveTime(const string& _archiveTime)
+{
+    m_archiveTime = _archiveTime;
+    m_archiveTimeHasBeenSet = true;
+}
+
+bool TaskReportInfo::ArchiveTimeHasBeenSet() const
+{
+    return m_archiveTimeHasBeenSet;
 }
 

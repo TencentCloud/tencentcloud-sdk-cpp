@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/AttrLabelRefer.h>
+#include <tencentcloud/lke/v20231130/model/SimilarQuestionModify.h>
 
 
 namespace TencentCloud
@@ -274,6 +275,27 @@ namespace TencentCloud
                      */
                     bool ExpireEndHasBeenSet() const;
 
+                    /**
+                     * 获取相似问修改信息(相似问没有修改则不传)
+                     * @return SimilarQuestionModify 相似问修改信息(相似问没有修改则不传)
+                     * 
+                     */
+                    SimilarQuestionModify GetSimilarQuestionModify() const;
+
+                    /**
+                     * 设置相似问修改信息(相似问没有修改则不传)
+                     * @param _similarQuestionModify 相似问修改信息(相似问没有修改则不传)
+                     * 
+                     */
+                    void SetSimilarQuestionModify(const SimilarQuestionModify& _similarQuestionModify);
+
+                    /**
+                     * 判断参数 SimilarQuestionModify 是否已赋值
+                     * @return SimilarQuestionModify 是否已赋值
+                     * 
+                     */
+                    bool SimilarQuestionModifyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +363,12 @@ namespace TencentCloud
                      */
                     std::string m_expireEnd;
                     bool m_expireEndHasBeenSet;
+
+                    /**
+                     * 相似问修改信息(相似问没有修改则不传)
+                     */
+                    SimilarQuestionModify m_similarQuestionModify;
+                    bool m_similarQuestionModifyHasBeenSet;
 
                 };
             }

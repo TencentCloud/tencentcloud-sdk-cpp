@@ -43,6 +43,89 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取实例id
+                     * @return InstanceId 实例id
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例id
+                     * @param _instanceId 实例id
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取GetUsers：获取用户列表；
+GetDatabases：获取数据库列表；
+GetTables：获取数据库表列表；
+GetUserPrivilegesV2：获取用户下的权限，粒度到表级别；
+DeleteUser：删除用户；
+GetCatalog：获取Catalog列表；
+                     * @return ApiType GetUsers：获取用户列表；
+GetDatabases：获取数据库列表；
+GetTables：获取数据库表列表；
+GetUserPrivilegesV2：获取用户下的权限，粒度到表级别；
+DeleteUser：删除用户；
+GetCatalog：获取Catalog列表；
+                     * 
+                     */
+                    std::string GetApiType() const;
+
+                    /**
+                     * 设置GetUsers：获取用户列表；
+GetDatabases：获取数据库列表；
+GetTables：获取数据库表列表；
+GetUserPrivilegesV2：获取用户下的权限，粒度到表级别；
+DeleteUser：删除用户；
+GetCatalog：获取Catalog列表；
+                     * @param _apiType GetUsers：获取用户列表；
+GetDatabases：获取数据库列表；
+GetTables：获取数据库表列表；
+GetUserPrivilegesV2：获取用户下的权限，粒度到表级别；
+DeleteUser：删除用户；
+GetCatalog：获取Catalog列表；
+                     * 
+                     */
+                    void SetApiType(const std::string& _apiType);
+
+                    /**
+                     * 判断参数 ApiType 是否已赋值
+                     * @return ApiType 是否已赋值
+                     * 
+                     */
+                    bool ApiTypeHasBeenSet() const;
+
+                    /**
+                     * 获取用户名称
+                     * @return UserName 用户名称
+                     * 
+                     */
+                    std::string GetUserName() const;
+
+                    /**
+                     * 设置用户名称
+                     * @param _userName 用户名称
+                     * 
+                     */
+                    void SetUserName(const std::string& _userName);
+
+                    /**
+                     * 判断参数 UserName 是否已赋值
+                     * @return UserName 是否已赋值
+                     * 
+                     */
+                    bool UserNameHasBeenSet() const;
+
+                    /**
                      * 获取用户链接来自的 IP
                      * @return WhiteHost 用户链接来自的 IP
                      * 
@@ -148,6 +231,29 @@ namespace TencentCloud
                     bool TableNameHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 实例id
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * GetUsers：获取用户列表；
+GetDatabases：获取数据库列表；
+GetTables：获取数据库表列表；
+GetUserPrivilegesV2：获取用户下的权限，粒度到表级别；
+DeleteUser：删除用户；
+GetCatalog：获取Catalog列表；
+                     */
+                    std::string m_apiType;
+                    bool m_apiTypeHasBeenSet;
+
+                    /**
+                     * 用户名称
+                     */
+                    std::string m_userName;
+                    bool m_userNameHasBeenSet;
 
                     /**
                      * 用户链接来自的 IP

@@ -25,6 +25,7 @@
 #include <tencentcloud/dc/v20180410/model/RouteFilterPrefix.h>
 #include <tencentcloud/dc/v20180410/model/BFDInfo.h>
 #include <tencentcloud/dc/v20180410/model/NQAInfo.h>
+#include <tencentcloud/dc/v20180410/model/Tag.h>
 
 
 namespace TencentCloud
@@ -114,15 +115,15 @@ namespace TencentCloud
                     bool DirectConnectOwnerAccountHasBeenSet() const;
 
                     /**
-                     * 获取网络类型，枚举：VPC、BMVPC、CCN；默认为VPC。VPC：私有网络；BMVPC：黑石网络；CCN：云联网）。
-                     * @return NetworkType 网络类型，枚举：VPC、BMVPC、CCN；默认为VPC。VPC：私有网络；BMVPC：黑石网络；CCN：云联网）。
+                     * 获取网络类型，枚举：VPC、CCN、NAT；默认为VPC。VPC：私有网络；CCN：云联网；NAT：NAT网络）。
+                     * @return NetworkType 网络类型，枚举：VPC、CCN、NAT；默认为VPC。VPC：私有网络；CCN：云联网；NAT：NAT网络）。
                      * 
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置网络类型，枚举：VPC、BMVPC、CCN；默认为VPC。VPC：私有网络；BMVPC：黑石网络；CCN：云联网）。
-                     * @param _networkType 网络类型，枚举：VPC、BMVPC、CCN；默认为VPC。VPC：私有网络；BMVPC：黑石网络；CCN：云联网）。
+                     * 设置网络类型，枚举：VPC、CCN、NAT；默认为VPC。VPC：私有网络；CCN：云联网；NAT：NAT网络）。
+                     * @param _networkType 网络类型，枚举：VPC、CCN、NAT；默认为VPC。VPC：私有网络；CCN：云联网；NAT：NAT网络）。
                      * 
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -156,15 +157,15 @@ namespace TencentCloud
                     bool NetworkRegionHasBeenSet() const;
 
                     /**
-                     * 获取私有网络统一ID或黑石网络统一ID。
-                     * @return VpcId 私有网络统一ID或黑石网络统一ID。
+                     * 获取私有网络统一ID，在NetworkType为VPC时必填，且与专线网关所属的VPCID一致；NetworkType为其它组网类型时可不填，内部会统一处理。
+                     * @return VpcId 私有网络统一ID，在NetworkType为VPC时必填，且与专线网关所属的VPCID一致；NetworkType为其它组网类型时可不填，内部会统一处理。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络统一ID或黑石网络统一ID。
-                     * @param _vpcId 私有网络统一ID或黑石网络统一ID。
+                     * 设置私有网络统一ID，在NetworkType为VPC时必填，且与专线网关所属的VPCID一致；NetworkType为其它组网类型时可不填，内部会统一处理。
+                     * @param _vpcId 私有网络统一ID，在NetworkType为VPC时必填，且与专线网关所属的VPCID一致；NetworkType为其它组网类型时可不填，内部会统一处理。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -474,6 +475,27 @@ namespace TencentCloud
                      */
                     bool NqaInfoHasBeenSet() const;
 
+                    /**
+                     * 获取标签键值对
+                     * @return Tags 标签键值对
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签键值对
+                     * @param _tags 标签键值对
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -496,7 +518,7 @@ namespace TencentCloud
                     bool m_directConnectOwnerAccountHasBeenSet;
 
                     /**
-                     * 网络类型，枚举：VPC、BMVPC、CCN；默认为VPC。VPC：私有网络；BMVPC：黑石网络；CCN：云联网）。
+                     * 网络类型，枚举：VPC、CCN、NAT；默认为VPC。VPC：私有网络；CCN：云联网；NAT：NAT网络）。
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
@@ -508,7 +530,7 @@ namespace TencentCloud
                     bool m_networkRegionHasBeenSet;
 
                     /**
-                     * 私有网络统一ID或黑石网络统一ID。
+                     * 私有网络统一ID，在NetworkType为VPC时必填，且与专线网关所属的VPCID一致；NetworkType为其它组网类型时可不填，内部会统一处理。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -597,6 +619,12 @@ namespace TencentCloud
                      */
                     NQAInfo m_nqaInfo;
                     bool m_nqaInfoHasBeenSet;
+
+                    /**
+                     * 标签键值对
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

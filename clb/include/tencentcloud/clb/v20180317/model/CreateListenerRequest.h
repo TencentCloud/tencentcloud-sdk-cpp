@@ -448,6 +448,27 @@ namespace TencentCloud
                      */
                     bool SnatEnableHasBeenSet() const;
 
+                    /**
+                     * 获取全端口段监听器的结束端口
+                     * @return FullEndPorts 全端口段监听器的结束端口
+                     * 
+                     */
+                    std::vector<int64_t> GetFullEndPorts() const;
+
+                    /**
+                     * 设置全端口段监听器的结束端口
+                     * @param _fullEndPorts 全端口段监听器的结束端口
+                     * 
+                     */
+                    void SetFullEndPorts(const std::vector<int64_t>& _fullEndPorts);
+
+                    /**
+                     * 判断参数 FullEndPorts 是否已赋值
+                     * @return FullEndPorts 是否已赋值
+                     * 
+                     */
+                    bool FullEndPortsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -564,6 +585,12 @@ namespace TencentCloud
                      */
                     bool m_snatEnable;
                     bool m_snatEnableHasBeenSet;
+
+                    /**
+                     * 全端口段监听器的结束端口
+                     */
+                    std::vector<int64_t> m_fullEndPorts;
+                    bool m_fullEndPortsHasBeenSet;
 
                 };
             }

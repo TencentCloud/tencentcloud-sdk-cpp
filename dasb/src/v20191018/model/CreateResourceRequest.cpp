@@ -32,7 +32,8 @@ CreateResourceRequest::CreateResourceRequest() :
     m_timeSpanHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
-    m_deployZoneHasBeenSet(false)
+    m_deployZoneHasBeenSet(false),
+    m_trialHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string CreateResourceRequest::ToJsonString() const
         string key = "DeployZone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deployZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trialHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Trial";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_trial, allocator);
     }
 
 
@@ -289,6 +298,22 @@ void CreateResourceRequest::SetDeployZone(const string& _deployZone)
 bool CreateResourceRequest::DeployZoneHasBeenSet() const
 {
     return m_deployZoneHasBeenSet;
+}
+
+uint64_t CreateResourceRequest::GetTrial() const
+{
+    return m_trial;
+}
+
+void CreateResourceRequest::SetTrial(const uint64_t& _trial)
+{
+    m_trial = _trial;
+    m_trialHasBeenSet = true;
+}
+
+bool CreateResourceRequest::TrialHasBeenSet() const
+{
+    return m_trialHasBeenSet;
 }
 
 

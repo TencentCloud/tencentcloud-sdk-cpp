@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool SummaryHasBeenSet() const;
 
+                    /**
+                     * 获取问题以及改进
+                     * @return Issue 问题以及改进
+                     * 
+                     */
+                    std::string GetIssue() const;
+
+                    /**
+                     * 设置问题以及改进
+                     * @param _issue 问题以及改进
+                     * 
+                     */
+                    void SetIssue(const std::string& _issue);
+
+                    /**
+                     * 判断参数 Issue 是否已赋值
+                     * @return Issue 是否已赋值
+                     * 
+                     */
+                    bool IssueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_summary;
                     bool m_summaryHasBeenSet;
+
+                    /**
+                     * 问题以及改进
+                     */
+                    std::string m_issue;
+                    bool m_issueHasBeenSet;
 
                 };
             }

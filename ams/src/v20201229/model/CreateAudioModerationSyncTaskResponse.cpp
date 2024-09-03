@@ -36,7 +36,9 @@ CreateAudioModerationSyncTaskResponse::CreateAudioModerationSyncTaskResponse() :
     m_languageResultsHasBeenSet(false),
     m_speakerResultsHasBeenSet(false),
     m_recognitionResultsHasBeenSet(false),
-    m_durationHasBeenSet(false)
+    m_durationHasBeenSet(false),
+    m_hitFlagHasBeenSet(false),
+    m_scoreHasBeenSet(false)
 {
 }
 
@@ -254,6 +256,26 @@ CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const str
         m_durationHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HitFlag") && !rsp["HitFlag"].IsNull())
+    {
+        if (!rsp["HitFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HitFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hitFlag = rsp["HitFlag"].GetInt64();
+        m_hitFlagHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Score") && !rsp["Score"].IsNull())
+    {
+        if (!rsp["Score"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Score` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_score = rsp["Score"].GetInt64();
+        m_scoreHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -403,6 +425,22 @@ string CreateAudioModerationSyncTaskResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_duration.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_hitFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hitFlag, allocator);
+    }
+
+    if (m_scoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Score";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_score, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -543,6 +581,26 @@ string CreateAudioModerationSyncTaskResponse::GetDuration() const
 bool CreateAudioModerationSyncTaskResponse::DurationHasBeenSet() const
 {
     return m_durationHasBeenSet;
+}
+
+int64_t CreateAudioModerationSyncTaskResponse::GetHitFlag() const
+{
+    return m_hitFlag;
+}
+
+bool CreateAudioModerationSyncTaskResponse::HitFlagHasBeenSet() const
+{
+    return m_hitFlagHasBeenSet;
+}
+
+int64_t CreateAudioModerationSyncTaskResponse::GetScore() const
+{
+    return m_score;
+}
+
+bool CreateAudioModerationSyncTaskResponse::ScoreHasBeenSet() const
+{
+    return m_scoreHasBeenSet;
 }
 
 

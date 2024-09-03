@@ -26,7 +26,8 @@ PulsarProClusterSpecInfo::PulsarProClusterSpecInfo() :
     m_maxBandWidthHasBeenSet(false),
     m_maxNamespacesHasBeenSet(false),
     m_maxTopicsHasBeenSet(false),
-    m_scalableTpsHasBeenSet(false)
+    m_scalableTpsHasBeenSet(false),
+    m_maxPartitionsHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome PulsarProClusterSpecInfo::Deserialize(const rapidjson::Value
         m_scalableTpsHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxPartitions") && !value["MaxPartitions"].IsNull())
+    {
+        if (!value["MaxPartitions"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterSpecInfo.MaxPartitions` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxPartitions = value["MaxPartitions"].GetUint64();
+        m_maxPartitionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void PulsarProClusterSpecInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "ScalableTps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scalableTps, allocator);
+    }
+
+    if (m_maxPartitionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxPartitions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxPartitions, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void PulsarProClusterSpecInfo::SetScalableTps(const uint64_t& _scalableTps)
 bool PulsarProClusterSpecInfo::ScalableTpsHasBeenSet() const
 {
     return m_scalableTpsHasBeenSet;
+}
+
+uint64_t PulsarProClusterSpecInfo::GetMaxPartitions() const
+{
+    return m_maxPartitions;
+}
+
+void PulsarProClusterSpecInfo::SetMaxPartitions(const uint64_t& _maxPartitions)
+{
+    m_maxPartitions = _maxPartitions;
+    m_maxPartitionsHasBeenSet = true;
+}
+
+bool PulsarProClusterSpecInfo::MaxPartitionsHasBeenSet() const
+{
+    return m_maxPartitionsHasBeenSet;
 }
 

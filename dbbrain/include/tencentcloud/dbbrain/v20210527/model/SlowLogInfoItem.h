@@ -164,14 +164,14 @@ namespace TencentCloud
                      * @return QueryTime 执行时间,单位秒
                      * 
                      */
-                    int64_t GetQueryTime() const;
+                    double GetQueryTime() const;
 
                     /**
                      * 设置执行时间,单位秒
                      * @param _queryTime 执行时间,单位秒
                      * 
                      */
-                    void SetQueryTime(const int64_t& _queryTime);
+                    void SetQueryTime(const double& _queryTime);
 
                     /**
                      * 判断参数 QueryTime 是否已赋值
@@ -187,7 +187,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    int64_t GetLockTime() const;
+                    double GetLockTime() const;
 
                     /**
                      * 设置锁时间,单位秒
@@ -196,7 +196,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetLockTime(const int64_t& _lockTime);
+                    void SetLockTime(const double& _lockTime);
 
                     /**
                      * 判断参数 LockTime 是否已赋值
@@ -292,14 +292,14 @@ namespace TencentCloud
                     /**
                      * 执行时间,单位秒
                      */
-                    int64_t m_queryTime;
+                    double m_queryTime;
                     bool m_queryTimeHasBeenSet;
 
                     /**
                      * 锁时间,单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_lockTime;
+                    double m_lockTime;
                     bool m_lockTimeHasBeenSet;
 
                     /**

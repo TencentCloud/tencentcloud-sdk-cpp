@@ -23,6 +23,9 @@ using namespace TencentCloud::Cdwdoris::V20211228::Model;
 using namespace std;
 
 DescribeSqlApisRequest::DescribeSqlApisRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_apiTypeHasBeenSet(false),
+    m_userNameHasBeenSet(false),
     m_whiteHostHasBeenSet(false),
     m_catalogHasBeenSet(false),
     m_catalogsHasBeenSet(false),
@@ -37,6 +40,30 @@ string DescribeSqlApisRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apiTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_apiType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_whiteHostHasBeenSet)
     {
@@ -90,6 +117,54 @@ string DescribeSqlApisRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeSqlApisRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribeSqlApisRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribeSqlApisRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string DescribeSqlApisRequest::GetApiType() const
+{
+    return m_apiType;
+}
+
+void DescribeSqlApisRequest::SetApiType(const string& _apiType)
+{
+    m_apiType = _apiType;
+    m_apiTypeHasBeenSet = true;
+}
+
+bool DescribeSqlApisRequest::ApiTypeHasBeenSet() const
+{
+    return m_apiTypeHasBeenSet;
+}
+
+string DescribeSqlApisRequest::GetUserName() const
+{
+    return m_userName;
+}
+
+void DescribeSqlApisRequest::SetUserName(const string& _userName)
+{
+    m_userName = _userName;
+    m_userNameHasBeenSet = true;
+}
+
+bool DescribeSqlApisRequest::UserNameHasBeenSet() const
+{
+    return m_userNameHasBeenSet;
+}
 
 string DescribeSqlApisRequest::GetWhiteHost() const
 {

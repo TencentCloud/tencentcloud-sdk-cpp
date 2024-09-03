@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取机器人ID
-                     * @return BotBizId 机器人ID
+                     * 获取应用ID
+                     * @return BotBizId 应用ID
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置机器人ID
-                     * @param _botBizId 机器人ID
+                     * 设置应用ID
+                     * @param _botBizId 应用ID
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool AcceptStatusHasBeenSet() const;
 
                     /**
-                     * 获取发布状态(2待发布 3发布中 4已发布 7审核中 8审核失败 9人工申述中 11人工申述失败)
-                     * @return ReleaseStatus 发布状态(2待发布 3发布中 4已发布 7审核中 8审核失败 9人工申述中 11人工申述失败)
+                     * 获取发布状态(2待发布 3发布中 4已发布 7审核中 8审核失败 9人工申述中 11人工申述失败 12已过期 13超量失效 14超量失效恢复)
+                     * @return ReleaseStatus 发布状态(2待发布 3发布中 4已发布 7审核中 8审核失败 9人工申述中 11人工申述失败 12已过期 13超量失效 14超量失效恢复)
                      * 
                      */
                     std::vector<int64_t> GetReleaseStatus() const;
 
                     /**
-                     * 设置发布状态(2待发布 3发布中 4已发布 7审核中 8审核失败 9人工申述中 11人工申述失败)
-                     * @param _releaseStatus 发布状态(2待发布 3发布中 4已发布 7审核中 8审核失败 9人工申述中 11人工申述失败)
+                     * 设置发布状态(2待发布 3发布中 4已发布 7审核中 8审核失败 9人工申述中 11人工申述失败 12已过期 13超量失效 14超量失效恢复)
+                     * @param _releaseStatus 发布状态(2待发布 3发布中 4已发布 7审核中 8审核失败 9人工申述中 11人工申述失败 12已过期 13超量失效 14超量失效恢复)
                      * 
                      */
                     void SetReleaseStatus(const std::vector<int64_t>& _releaseStatus);
@@ -255,7 +255,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 机器人ID
+                     * 应用ID
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
@@ -285,7 +285,7 @@ namespace TencentCloud
                     bool m_acceptStatusHasBeenSet;
 
                     /**
-                     * 发布状态(2待发布 3发布中 4已发布 7审核中 8审核失败 9人工申述中 11人工申述失败)
+                     * 发布状态(2待发布 3发布中 4已发布 7审核中 8审核失败 9人工申述中 11人工申述失败 12已过期 13超量失效 14超量失效恢复)
                      */
                     std::vector<int64_t> m_releaseStatus;
                     bool m_releaseStatusHasBeenSet;

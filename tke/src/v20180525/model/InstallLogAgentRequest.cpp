@@ -24,7 +24,8 @@ using namespace std;
 
 InstallLogAgentRequest::InstallLogAgentRequest() :
     m_clusterIdHasBeenSet(false),
-    m_kubeletRootDirHasBeenSet(false)
+    m_kubeletRootDirHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string InstallLogAgentRequest::ToJsonString() const
         string key = "KubeletRootDir";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_kubeletRootDir.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void InstallLogAgentRequest::SetKubeletRootDir(const string& _kubeletRootDir)
 bool InstallLogAgentRequest::KubeletRootDirHasBeenSet() const
 {
     return m_kubeletRootDirHasBeenSet;
+}
+
+string InstallLogAgentRequest::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void InstallLogAgentRequest::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool InstallLogAgentRequest::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 
 

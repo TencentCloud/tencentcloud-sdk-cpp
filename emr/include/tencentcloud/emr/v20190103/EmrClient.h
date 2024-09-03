@@ -89,6 +89,8 @@
 #include <tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyAutoRenewFlagRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyAutoRenewFlagResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyAutoScaleStrategyRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyAutoScaleStrategyResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyResourcePoolsRequest.h>
@@ -232,6 +234,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquiryPriceUpdateInstanceResponse> InquiryPriceUpdateInstanceOutcome;
                 typedef std::future<InquiryPriceUpdateInstanceOutcome> InquiryPriceUpdateInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::InquiryPriceUpdateInstanceRequest&, InquiryPriceUpdateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceUpdateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAutoRenewFlagResponse> ModifyAutoRenewFlagOutcome;
+                typedef std::future<ModifyAutoRenewFlagOutcome> ModifyAutoRenewFlagOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyAutoRenewFlagRequest&, ModifyAutoRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoRenewFlagAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAutoScaleStrategyResponse> ModifyAutoScaleStrategyOutcome;
                 typedef std::future<ModifyAutoScaleStrategyOutcome> ModifyAutoScaleStrategyOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyAutoScaleStrategyRequest&, ModifyAutoScaleStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoScaleStrategyAsyncHandler;
@@ -578,6 +583,16 @@ namespace TencentCloud
                 InquiryPriceUpdateInstanceOutcome InquiryPriceUpdateInstance(const Model::InquiryPriceUpdateInstanceRequest &request);
                 void InquiryPriceUpdateInstanceAsync(const Model::InquiryPriceUpdateInstanceRequest& request, const InquiryPriceUpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquiryPriceUpdateInstanceOutcomeCallable InquiryPriceUpdateInstanceCallable(const Model::InquiryPriceUpdateInstanceRequest& request);
+
+                /**
+                 *前提：预付费集群
+资源级别开启或关闭自动续费
+                 * @param req ModifyAutoRenewFlagRequest
+                 * @return ModifyAutoRenewFlagOutcome
+                 */
+                ModifyAutoRenewFlagOutcome ModifyAutoRenewFlag(const Model::ModifyAutoRenewFlagRequest &request);
+                void ModifyAutoRenewFlagAsync(const Model::ModifyAutoRenewFlagRequest& request, const ModifyAutoRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAutoRenewFlagOutcomeCallable ModifyAutoRenewFlagCallable(const Model::ModifyAutoRenewFlagRequest& request);
 
                 /**
                  *修改自动扩缩容规则

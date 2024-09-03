@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,27 @@ namespace TencentCloud
                      */
                     bool SslVpnClientNamesHasBeenSet() const;
 
+                    /**
+                     * 获取指定绑定的标签列表
+                     * @return Tags 指定绑定的标签列表
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置指定绑定的标签列表
+                     * @param _tags 指定绑定的标签列表
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +146,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_sslVpnClientNames;
                     bool m_sslVpnClientNamesHasBeenSet;
+
+                    /**
+                     * 指定绑定的标签列表
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

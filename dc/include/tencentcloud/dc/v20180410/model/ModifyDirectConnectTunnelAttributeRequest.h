@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取专用通道ID
-                     * @return DirectConnectTunnelId 专用通道ID
+                     * 获取专用通道ID。
+                     * @return DirectConnectTunnelId 专用通道ID。
                      * 
                      */
                     std::string GetDirectConnectTunnelId() const;
 
                     /**
-                     * 设置专用通道ID
-                     * @param _directConnectTunnelId 专用通道ID
+                     * 设置专用通道ID。
+                     * @param _directConnectTunnelId 专用通道ID。
                      * 
                      */
                     void SetDirectConnectTunnelId(const std::string& _directConnectTunnelId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool DirectConnectTunnelIdHasBeenSet() const;
 
                     /**
-                     * 获取专用通道名称
-                     * @return DirectConnectTunnelName 专用通道名称
+                     * 获取专用通道名称。
+                     * @return DirectConnectTunnelName 专用通道名称。
                      * 
                      */
                     std::string GetDirectConnectTunnelName() const;
 
                     /**
-                     * 设置专用通道名称
-                     * @param _directConnectTunnelName 专用通道名称
+                     * 设置专用通道名称。
+                     * @param _directConnectTunnelName 专用通道名称。
                      * 
                      */
                     void SetDirectConnectTunnelName(const std::string& _directConnectTunnelName);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool DirectConnectTunnelNameHasBeenSet() const;
 
                     /**
-                     * 获取用户侧BGP，包括Asn，AuthKey
-                     * @return BgpPeer 用户侧BGP，包括Asn，AuthKey
+                     * 获取用户侧BGP，包括Asn，AuthKey。
+                     * @return BgpPeer 用户侧BGP，包括Asn，AuthKey。
                      * 
                      */
                     BgpPeer GetBgpPeer() const;
 
                     /**
-                     * 设置用户侧BGP，包括Asn，AuthKey
-                     * @param _bgpPeer 用户侧BGP，包括Asn，AuthKey
+                     * 设置用户侧BGP，包括Asn，AuthKey。
+                     * @param _bgpPeer 用户侧BGP，包括Asn，AuthKey。
                      * 
                      */
                     void SetBgpPeer(const BgpPeer& _bgpPeer);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool BgpPeerHasBeenSet() const;
 
                     /**
-                     * 获取用户侧网段地址
-                     * @return RouteFilterPrefixes 用户侧网段地址
+                     * 获取用户侧网段地址。
+                     * @return RouteFilterPrefixes 用户侧网段地址。
                      * 
                      */
                     std::vector<RouteFilterPrefix> GetRouteFilterPrefixes() const;
 
                     /**
-                     * 设置用户侧网段地址
-                     * @param _routeFilterPrefixes 用户侧网段地址
+                     * 设置用户侧网段地址。
+                     * @param _routeFilterPrefixes 用户侧网段地址。
                      * 
                      */
                     void SetRouteFilterPrefixes(const std::vector<RouteFilterPrefix>& _routeFilterPrefixes);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool RouteFilterPrefixesHasBeenSet() const;
 
                     /**
-                     * 获取腾讯侧互联IP
-                     * @return TencentAddress 腾讯侧互联IP
+                     * 获取腾讯侧互联IP。
+                     * @return TencentAddress 腾讯侧互联IP。
                      * 
                      */
                     std::string GetTencentAddress() const;
 
                     /**
-                     * 设置腾讯侧互联IP
-                     * @param _tencentAddress 腾讯侧互联IP
+                     * 设置腾讯侧互联IP。
+                     * @param _tencentAddress 腾讯侧互联IP。
                      * 
                      */
                     void SetTencentAddress(const std::string& _tencentAddress);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool TencentAddressHasBeenSet() const;
 
                     /**
-                     * 获取用户侧互联IP
-                     * @return CustomerAddress 用户侧互联IP
+                     * 获取用户侧互联IP。
+                     * @return CustomerAddress 用户侧互联IP。
                      * 
                      */
                     std::string GetCustomerAddress() const;
 
                     /**
-                     * 设置用户侧互联IP
-                     * @param _customerAddress 用户侧互联IP
+                     * 设置用户侧互联IP。
+                     * @param _customerAddress 用户侧互联IP。
                      * 
                      */
                     void SetCustomerAddress(const std::string& _customerAddress);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取腾讯侧备用互联IP
-                     * @return TencentBackupAddress 腾讯侧备用互联IP
+                     * 获取腾讯侧备用互联IP。
+                     * @return TencentBackupAddress 腾讯侧备用互联IP。
                      * 
                      */
                     std::string GetTencentBackupAddress() const;
 
                     /**
-                     * 设置腾讯侧备用互联IP
-                     * @param _tencentBackupAddress 腾讯侧备用互联IP
+                     * 设置腾讯侧备用互联IP。
+                     * @param _tencentBackupAddress 腾讯侧备用互联IP。
                      * 
                      */
                     void SetTencentBackupAddress(const std::string& _tencentBackupAddress);
@@ -215,37 +215,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 专用通道ID
+                     * 专用通道ID。
                      */
                     std::string m_directConnectTunnelId;
                     bool m_directConnectTunnelIdHasBeenSet;
 
                     /**
-                     * 专用通道名称
+                     * 专用通道名称。
                      */
                     std::string m_directConnectTunnelName;
                     bool m_directConnectTunnelNameHasBeenSet;
 
                     /**
-                     * 用户侧BGP，包括Asn，AuthKey
+                     * 用户侧BGP，包括Asn，AuthKey。
                      */
                     BgpPeer m_bgpPeer;
                     bool m_bgpPeerHasBeenSet;
 
                     /**
-                     * 用户侧网段地址
+                     * 用户侧网段地址。
                      */
                     std::vector<RouteFilterPrefix> m_routeFilterPrefixes;
                     bool m_routeFilterPrefixesHasBeenSet;
 
                     /**
-                     * 腾讯侧互联IP
+                     * 腾讯侧互联IP。
                      */
                     std::string m_tencentAddress;
                     bool m_tencentAddressHasBeenSet;
 
                     /**
-                     * 用户侧互联IP
+                     * 用户侧互联IP。
                      */
                     std::string m_customerAddress;
                     bool m_customerAddressHasBeenSet;
@@ -257,7 +257,7 @@ namespace TencentCloud
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 腾讯侧备用互联IP
+                     * 腾讯侧备用互联IP。
                      */
                     std::string m_tencentBackupAddress;
                     bool m_tencentBackupAddressHasBeenSet;

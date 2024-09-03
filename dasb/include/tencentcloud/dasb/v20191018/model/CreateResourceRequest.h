@@ -252,6 +252,27 @@ namespace TencentCloud
                      */
                     bool DeployZoneHasBeenSet() const;
 
+                    /**
+                     * 获取0非试用版，1试用版
+                     * @return Trial 0非试用版，1试用版
+                     * 
+                     */
+                    uint64_t GetTrial() const;
+
+                    /**
+                     * 设置0非试用版，1试用版
+                     * @param _trial 0非试用版，1试用版
+                     * 
+                     */
+                    void SetTrial(const uint64_t& _trial);
+
+                    /**
+                     * 判断参数 Trial 是否已赋值
+                     * @return Trial 是否已赋值
+                     * 
+                     */
+                    bool TrialHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +334,12 @@ namespace TencentCloud
                      */
                     std::string m_deployZone;
                     bool m_deployZoneHasBeenSet;
+
+                    /**
+                     * 0非试用版，1试用版
+                     */
+                    uint64_t m_trial;
+                    bool m_trialHasBeenSet;
 
                 };
             }

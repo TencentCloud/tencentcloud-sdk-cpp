@@ -3265,6 +3265,49 @@ CynosdbClient::DescribeRollbackTimeValidityOutcomeCallable CynosdbClient::Descri
     return task->get_future();
 }
 
+CynosdbClient::DescribeServerlessStrategyOutcome CynosdbClient::DescribeServerlessStrategy(const DescribeServerlessStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServerlessStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServerlessStrategyResponse rsp = DescribeServerlessStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServerlessStrategyOutcome(rsp);
+        else
+            return DescribeServerlessStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServerlessStrategyOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeServerlessStrategyAsync(const DescribeServerlessStrategyRequest& request, const DescribeServerlessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServerlessStrategy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeServerlessStrategyOutcomeCallable CynosdbClient::DescribeServerlessStrategyCallable(const DescribeServerlessStrategyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServerlessStrategyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServerlessStrategy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeSupportProxyVersionOutcome CynosdbClient::DescribeSupportProxyVersion(const DescribeSupportProxyVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSupportProxyVersion");
@@ -4935,6 +4978,49 @@ CynosdbClient::ModifyResourcePackagesDeductionPriorityOutcomeCallable CynosdbCli
         [this, request]()
         {
             return this->ModifyResourcePackagesDeductionPriority(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::ModifyServerlessStrategyOutcome CynosdbClient::ModifyServerlessStrategy(const ModifyServerlessStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyServerlessStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyServerlessStrategyResponse rsp = ModifyServerlessStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyServerlessStrategyOutcome(rsp);
+        else
+            return ModifyServerlessStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyServerlessStrategyOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyServerlessStrategyAsync(const ModifyServerlessStrategyRequest& request, const ModifyServerlessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyServerlessStrategy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyServerlessStrategyOutcomeCallable CynosdbClient::ModifyServerlessStrategyCallable(const ModifyServerlessStrategyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyServerlessStrategyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyServerlessStrategy(request);
         }
     );
 

@@ -986,6 +986,49 @@ DcdbClient::DescribeDBTmpInstancesOutcomeCallable DcdbClient::DescribeDBTmpInsta
     return task->get_future();
 }
 
+DcdbClient::DescribeDCDBBinlogTimeOutcome DcdbClient::DescribeDCDBBinlogTime(const DescribeDCDBBinlogTimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDCDBBinlogTime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDCDBBinlogTimeResponse rsp = DescribeDCDBBinlogTimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDCDBBinlogTimeOutcome(rsp);
+        else
+            return DescribeDCDBBinlogTimeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDCDBBinlogTimeOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::DescribeDCDBBinlogTimeAsync(const DescribeDCDBBinlogTimeRequest& request, const DescribeDCDBBinlogTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDCDBBinlogTime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::DescribeDCDBBinlogTimeOutcomeCallable DcdbClient::DescribeDCDBBinlogTimeCallable(const DescribeDCDBBinlogTimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDCDBBinlogTimeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDCDBBinlogTime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::DescribeDCDBInstanceDetailOutcome DcdbClient::DescribeDCDBInstanceDetail(const DescribeDCDBInstanceDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDCDBInstanceDetail");

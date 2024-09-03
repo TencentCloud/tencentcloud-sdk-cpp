@@ -94,10 +94,10 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡实例的网络类型：
-Public：公网属性， Private：内网属性。
+OPEN：公网属性，INTERNAL：内网属性。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerType 负载均衡实例的网络类型：
-Public：公网属性， Private：内网属性。
+OPEN：公网属性，INTERNAL：内网属性。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -105,10 +105,10 @@ Public：公网属性， Private：内网属性。
 
                     /**
                      * 设置负载均衡实例的网络类型：
-Public：公网属性， Private：内网属性。
+OPEN：公网属性，INTERNAL：内网属性。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadBalancerType 负载均衡实例的网络类型：
-Public：公网属性， Private：内网属性。
+OPEN：公网属性，INTERNAL：内网属性。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1025,6 +1025,85 @@ Public：公网属性， Private：内网属性。
                      */
                     bool EgressHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttributeFlags 负载均衡的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetAttributeFlags() const;
+
+                    /**
+                     * 设置负载均衡的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _attributeFlags 负载均衡的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAttributeFlags(const std::vector<std::string>& _attributeFlags);
+
+                    /**
+                     * 判断参数 AttributeFlags 是否已赋值
+                     * @return AttributeFlags 是否已赋值
+                     * 
+                     */
+                    bool AttributeFlagsHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡实例的规格类型信息<ul><li> clb.c1.small：简约型规格 </li><li>clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>""：非性能容量型实例</li></ul>
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlaType 负载均衡实例的规格类型信息<ul><li> clb.c1.small：简约型规格 </li><li>clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>""：非性能容量型实例</li></ul>
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSlaType() const;
+
+                    /**
+                     * 设置负载均衡实例的规格类型信息<ul><li> clb.c1.small：简约型规格 </li><li>clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>""：非性能容量型实例</li></ul>
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _slaType 负载均衡实例的规格类型信息<ul><li> clb.c1.small：简约型规格 </li><li>clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>""：非性能容量型实例</li></ul>
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSlaType(const std::string& _slaType);
+
+                    /**
+                     * 判断参数 SlaType 是否已赋值
+                     * @return SlaType 是否已赋值
+                     * 
+                     */
+                    bool SlaTypeHasBeenSet() const;
+
+                    /**
+                     * 获取0：表示非独占型实例，1：表示独占型态实例。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Exclusive 0：表示非独占型实例，1：表示独占型态实例。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetExclusive() const;
+
+                    /**
+                     * 设置0：表示非独占型实例，1：表示独占型态实例。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _exclusive 0：表示非独占型实例，1：表示独占型态实例。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExclusive(const uint64_t& _exclusive);
+
+                    /**
+                     * 判断参数 Exclusive 是否已赋值
+                     * @return Exclusive 是否已赋值
+                     * 
+                     */
+                    bool ExclusiveHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1041,7 +1120,7 @@ Public：公网属性， Private：内网属性。
 
                     /**
                      * 负载均衡实例的网络类型：
-Public：公网属性， Private：内网属性。
+OPEN：公网属性，INTERNAL：内网属性。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loadBalancerType;
@@ -1299,6 +1378,28 @@ Public：公网属性， Private：内网属性。
                      */
                     std::string m_egress;
                     bool m_egressHasBeenSet;
+
+                    /**
+                     * 负载均衡的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_attributeFlags;
+                    bool m_attributeFlagsHasBeenSet;
+
+                    /**
+                     * 负载均衡实例的规格类型信息<ul><li> clb.c1.small：简约型规格 </li><li>clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>""：非性能容量型实例</li></ul>
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_slaType;
+                    bool m_slaTypeHasBeenSet;
+
+                    /**
+                     * 0：表示非独占型实例，1：表示独占型态实例。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_exclusive;
+                    bool m_exclusiveHasBeenSet;
 
                 };
             }

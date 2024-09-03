@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ckafka/v20190819/model/Tag.h>
 
 
 namespace TencentCloud
@@ -190,15 +191,15 @@ namespace TencentCloud
                     bool KafkaVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例类型。"standard"：标准版，"profession"：专业版
-                     * @return SpecificationsType 实例类型。"standard"：标准版，"profession"：专业版
+                     * 获取实例类型。"standard"：标准版，"profession"：专业版。  (标准版仅国际站支持，国内站目前支持专业版)
+                     * @return SpecificationsType 实例类型。"standard"：标准版，"profession"：专业版。  (标准版仅国际站支持，国内站目前支持专业版)
                      * 
                      */
                     std::string GetSpecificationsType() const;
 
                     /**
-                     * 设置实例类型。"standard"：标准版，"profession"：专业版
-                     * @param _specificationsType 实例类型。"standard"：标准版，"profession"：专业版
+                     * 设置实例类型。"standard"：标准版，"profession"：专业版。  (标准版仅国际站支持，国内站目前支持专业版)
+                     * @param _specificationsType 实例类型。"standard"：标准版，"profession"：专业版。  (标准版仅国际站支持，国内站目前支持专业版)
                      * 
                      */
                     void SetSpecificationsType(const std::string& _specificationsType);
@@ -420,6 +421,27 @@ namespace TencentCloud
                      */
                     bool PublicNetworkMonthlyHasBeenSet() const;
 
+                    /**
+                     * 获取标签
+                     * @return Tags 标签
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签
+                     * @param _tags 标签
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -465,7 +487,7 @@ namespace TencentCloud
                     bool m_kafkaVersionHasBeenSet;
 
                     /**
-                     * 实例类型。"standard"：标准版，"profession"：专业版
+                     * 实例类型。"standard"：标准版，"profession"：专业版。  (标准版仅国际站支持，国内站目前支持专业版)
                      */
                     std::string m_specificationsType;
                     bool m_specificationsTypeHasBeenSet;
@@ -529,6 +551,12 @@ namespace TencentCloud
                      */
                     int64_t m_publicNetworkMonthly;
                     bool m_publicNetworkMonthlyHasBeenSet;
+
+                    /**
+                     * 标签
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

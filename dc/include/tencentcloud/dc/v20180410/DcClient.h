@@ -185,8 +185,7 @@ namespace TencentCloud
                 CreateDirectConnectTunnelOutcomeCallable CreateDirectConnectTunnelCallable(const Model::CreateDirectConnectTunnelRequest& request);
 
                 /**
-                 *删除物理专线。
-只能删除处于已连接状态的物理专线。
+                 *删除物理专线。只能删除处于已连接状态的物理专线。
                  * @param req DeleteDirectConnectRequest
                  * @return DeleteDirectConnectOutcome
                  */
@@ -195,7 +194,7 @@ namespace TencentCloud
                 DeleteDirectConnectOutcomeCallable DeleteDirectConnectCallable(const Model::DeleteDirectConnectRequest& request);
 
                 /**
-                 *删除专用通道
+                 *删除专用通道。
                  * @param req DeleteDirectConnectTunnelRequest
                  * @return DeleteDirectConnectTunnelOutcome
                  */
@@ -304,7 +303,7 @@ namespace TencentCloud
                 ModifyDirectConnectAttributeOutcomeCallable ModifyDirectConnectAttributeCallable(const Model::ModifyDirectConnectAttributeRequest& request);
 
                 /**
-                 *修改专用通道属性
+                 *修改专用通道属性。
                  * @param req ModifyDirectConnectTunnelAttributeRequest
                  * @return ModifyDirectConnectTunnelAttributeOutcome
                  */

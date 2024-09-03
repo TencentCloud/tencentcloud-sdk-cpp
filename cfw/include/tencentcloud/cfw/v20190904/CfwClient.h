@@ -75,6 +75,8 @@
 #include <tencentcloud/cfw/v20190904/model/DeleteIdsWhiteRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteNatFwInstanceRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteNatFwInstanceResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteRemoteAccessDomainRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteRemoteAccessDomainResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteResourceGroupRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteResourceGroupResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupRuleRequest.h>
@@ -343,6 +345,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteNatFwInstanceResponse> DeleteNatFwInstanceOutcome;
                 typedef std::future<DeleteNatFwInstanceOutcome> DeleteNatFwInstanceOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteNatFwInstanceRequest&, DeleteNatFwInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNatFwInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRemoteAccessDomainResponse> DeleteRemoteAccessDomainOutcome;
+                typedef std::future<DeleteRemoteAccessDomainOutcome> DeleteRemoteAccessDomainOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DeleteRemoteAccessDomainRequest&, DeleteRemoteAccessDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRemoteAccessDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteResourceGroupResponse> DeleteResourceGroupOutcome;
                 typedef std::future<DeleteResourceGroupOutcome> DeleteResourceGroupOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteResourceGroupRequest&, DeleteResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceGroupAsyncHandler;
@@ -843,6 +848,15 @@ namespace TencentCloud
                 DeleteNatFwInstanceOutcome DeleteNatFwInstance(const Model::DeleteNatFwInstanceRequest &request);
                 void DeleteNatFwInstanceAsync(const Model::DeleteNatFwInstanceRequest& request, const DeleteNatFwInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteNatFwInstanceOutcomeCallable DeleteNatFwInstanceCallable(const Model::DeleteNatFwInstanceRequest& request);
+
+                /**
+                 *删除远程运维域名
+                 * @param req DeleteRemoteAccessDomainRequest
+                 * @return DeleteRemoteAccessDomainOutcome
+                 */
+                DeleteRemoteAccessDomainOutcome DeleteRemoteAccessDomain(const Model::DeleteRemoteAccessDomainRequest &request);
+                void DeleteRemoteAccessDomainAsync(const Model::DeleteRemoteAccessDomainRequest& request, const DeleteRemoteAccessDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRemoteAccessDomainOutcomeCallable DeleteRemoteAccessDomainCallable(const Model::DeleteRemoteAccessDomainRequest& request);
 
                 /**
                  *DeleteResourceGroup-资产中心资产组删除
