@@ -24,6 +24,7 @@
 #include <tencentcloud/cdwdoris/v20211228/model/BackupTableContent.h>
 #include <tencentcloud/cdwdoris/v20211228/model/DorisSourceInfo.h>
 #include <tencentcloud/cdwdoris/v20211228/model/CosSourceInfo.h>
+#include <tencentcloud/cdwdoris/v20211228/model/ScheduleInfo.h>
 
 
 namespace TencentCloud
@@ -44,6 +45,48 @@ namespace TencentCloud
                     ~CreateBackUpScheduleRequest() = default;
                     std::string ToJsonString() const;
 
+
+                    /**
+                     * 获取集群id
+                     * @return InstanceId 集群id
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置集群id
+                     * @param _instanceId 集群id
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取操作类型 create(创建) update(编辑修改)
+                     * @return OperationType 操作类型 create(创建) update(编辑修改)
+                     * 
+                     */
+                    std::string GetOperationType() const;
+
+                    /**
+                     * 设置操作类型 create(创建) update(编辑修改)
+                     * @param _operationType 操作类型 create(创建) update(编辑修改)
+                     * 
+                     */
+                    void SetOperationType(const std::string& _operationType);
+
+                    /**
+                     * 判断参数 OperationType 是否已赋值
+                     * @return OperationType 是否已赋值
+                     * 
+                     */
+                    bool OperationTypeHasBeenSet() const;
 
                     /**
                      * 获取编辑时需要传
@@ -263,7 +306,115 @@ namespace TencentCloud
                      */
                     bool CosSourceInfoHasBeenSet() const;
 
+                    /**
+                     * 获取调度任务名
+                     * @return ScheduleName 调度任务名
+                     * 
+                     */
+                    std::string GetScheduleName() const;
+
+                    /**
+                     * 设置调度任务名
+                     * @param _scheduleName 调度任务名
+                     * 
+                     */
+                    void SetScheduleName(const std::string& _scheduleName);
+
+                    /**
+                     * 判断参数 ScheduleName 是否已赋值
+                     * @return ScheduleName 是否已赋值
+                     * 
+                     */
+                    bool ScheduleNameHasBeenSet() const;
+
+                    /**
+                     * 获取调度信息
+                     * @return ScheduleInfo 调度信息
+                     * 
+                     */
+                    ScheduleInfo GetScheduleInfo() const;
+
+                    /**
+                     * 设置调度信息
+                     * @param _scheduleInfo 调度信息
+                     * 
+                     */
+                    void SetScheduleInfo(const ScheduleInfo& _scheduleInfo);
+
+                    /**
+                     * 判断参数 ScheduleInfo 是否已赋值
+                     * @return ScheduleInfo 是否已赋值
+                     * 
+                     */
+                    bool ScheduleInfoHasBeenSet() const;
+
+                    /**
+                     * 获取更新任务状态：
+3-暂停,
+2-删除,
+1-启动
+                     * @return UpdateStatus 更新任务状态：
+3-暂停,
+2-删除,
+1-启动
+                     * 
+                     */
+                    int64_t GetUpdateStatus() const;
+
+                    /**
+                     * 设置更新任务状态：
+3-暂停,
+2-删除,
+1-启动
+                     * @param _updateStatus 更新任务状态：
+3-暂停,
+2-删除,
+1-启动
+                     * 
+                     */
+                    void SetUpdateStatus(const int64_t& _updateStatus);
+
+                    /**
+                     * 判断参数 UpdateStatus 是否已赋值
+                     * @return UpdateStatus 是否已赋值
+                     * 
+                     */
+                    bool UpdateStatusHasBeenSet() const;
+
+                    /**
+                     * 获取当前任务的cos桶信息
+                     * @return CosBucket 当前任务的cos桶信息
+                     * 
+                     */
+                    std::string GetCosBucket() const;
+
+                    /**
+                     * 设置当前任务的cos桶信息
+                     * @param _cosBucket 当前任务的cos桶信息
+                     * 
+                     */
+                    void SetCosBucket(const std::string& _cosBucket);
+
+                    /**
+                     * 判断参数 CosBucket 是否已赋值
+                     * @return CosBucket 是否已赋值
+                     * 
+                     */
+                    bool CosBucketHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 集群id
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 操作类型 create(创建) update(编辑修改)
+                     */
+                    std::string m_operationType;
+                    bool m_operationTypeHasBeenSet;
 
                     /**
                      * 编辑时需要传
@@ -326,6 +477,33 @@ namespace TencentCloud
                      */
                     CosSourceInfo m_cosSourceInfo;
                     bool m_cosSourceInfoHasBeenSet;
+
+                    /**
+                     * 调度任务名
+                     */
+                    std::string m_scheduleName;
+                    bool m_scheduleNameHasBeenSet;
+
+                    /**
+                     * 调度信息
+                     */
+                    ScheduleInfo m_scheduleInfo;
+                    bool m_scheduleInfoHasBeenSet;
+
+                    /**
+                     * 更新任务状态：
+3-暂停,
+2-删除,
+1-启动
+                     */
+                    int64_t m_updateStatus;
+                    bool m_updateStatusHasBeenSet;
+
+                    /**
+                     * 当前任务的cos桶信息
+                     */
+                    std::string m_cosBucket;
+                    bool m_cosBucketHasBeenSet;
 
                 };
             }

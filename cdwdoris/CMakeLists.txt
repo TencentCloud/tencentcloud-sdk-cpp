@@ -28,6 +28,7 @@ set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/ModifyUserPrivilegesV3Response.h
   include/tencentcloud/cdwdoris/v20211228/model/ModifyUserPrivilegesV3Request.h
   include/tencentcloud/cdwdoris/v20211228/model/DestroyInstanceRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/ScheduleInfo.h
   include/tencentcloud/cdwdoris/v20211228/model/BindUser.h
   include/tencentcloud/cdwdoris/v20211228/model/CancelBackupJobRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/ModifyWorkloadGroupRequest.h
@@ -193,6 +194,7 @@ set(cdwdoris_src
   src/v20211228/model/ModifyUserPrivilegesV3Response.cpp
   src/v20211228/model/ModifyUserPrivilegesV3Request.cpp
   src/v20211228/model/DestroyInstanceRequest.cpp
+  src/v20211228/model/ScheduleInfo.cpp
   src/v20211228/model/BindUser.cpp
   src/v20211228/model/CancelBackupJobRequest.cpp
   src/v20211228/model/ModifyWorkloadGroupRequest.cpp

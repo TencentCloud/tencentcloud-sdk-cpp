@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取作业名称列表
+                     * @return JobNames 作业名称列表
+                     * 
+                     */
+                    std::vector<std::string> GetJobNames() const;
+
+                    /**
+                     * 设置作业名称列表
+                     * @param _jobNames 作业名称列表
+                     * 
+                     */
+                    void SetJobNames(const std::vector<std::string>& _jobNames);
+
+                    /**
+                     * 判断参数 JobNames 是否已赋值
+                     * @return JobNames 是否已赋值
+                     * 
+                     */
+                    bool JobNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;
+
+                    /**
+                     * 作业名称列表
+                     */
+                    std::vector<std::string> m_jobNames;
+                    bool m_jobNamesHasBeenSet;
 
                 };
             }

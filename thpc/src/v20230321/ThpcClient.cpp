@@ -255,6 +255,49 @@ ThpcClient::CreateClusterOutcomeCallable ThpcClient::CreateClusterCallable(const
     return task->get_future();
 }
 
+ThpcClient::CreateWorkspacesOutcome ThpcClient::CreateWorkspaces(const CreateWorkspacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWorkspaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWorkspacesResponse rsp = CreateWorkspacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWorkspacesOutcome(rsp);
+        else
+            return CreateWorkspacesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWorkspacesOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::CreateWorkspacesAsync(const CreateWorkspacesRequest& request, const CreateWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWorkspaces(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::CreateWorkspacesOutcomeCallable ThpcClient::CreateWorkspacesCallable(const CreateWorkspacesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWorkspacesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWorkspaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::DeleteClusterOutcome ThpcClient::DeleteCluster(const DeleteClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCluster");

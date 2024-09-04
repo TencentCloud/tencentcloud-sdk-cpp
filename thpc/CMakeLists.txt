@@ -110,6 +110,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20220401/model/DeleteQueueResponse.h
   include/tencentcloud/thpc/v20220401/model/AddNodesResponse.h
   include/tencentcloud/thpc/v20230321/model/DescribeAutoScalingConfigurationResponse.h
+  include/tencentcloud/thpc/v20230321/model/SpaceChargePrepaid.h
   include/tencentcloud/thpc/v20230321/model/DescribeClusterStorageOptionRequest.h
   include/tencentcloud/thpc/v20230321/model/ClusterOverview.h
   include/tencentcloud/thpc/v20230321/model/QueueOverview.h
@@ -117,6 +118,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationRequest.h
   include/tencentcloud/thpc/v20230321/model/DetachNodesRequest.h
   include/tencentcloud/thpc/v20230321/model/NodeOverview.h
+  include/tencentcloud/thpc/v20230321/model/SpaceDataDisk.h
   include/tencentcloud/thpc/v20230321/model/DescribeNodesRequest.h
   include/tencentcloud/thpc/v20230321/model/DeleteNodesResponse.h
   include/tencentcloud/thpc/v20230321/model/AddClusterStorageOptionResponse.h
@@ -126,10 +128,11 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/NodeActivity.h
   include/tencentcloud/thpc/v20230321/model/Placement.h
   include/tencentcloud/thpc/v20230321/model/AddQueueRequest.h
-  include/tencentcloud/thpc/v20230321/model/InternetAccessible.h
+  include/tencentcloud/thpc/v20230321/model/CreateWorkspacesResponse.h
   include/tencentcloud/thpc/v20230321/model/AttachNodesResponse.h
   include/tencentcloud/thpc/v20230321/model/ClusterActivity.h
   include/tencentcloud/thpc/v20230321/model/CreateClusterResponse.h
+  include/tencentcloud/thpc/v20230321/model/SpaceVirtualPrivateCloud.h
   include/tencentcloud/thpc/v20230321/model/RunSecurityServiceEnabled.h
   include/tencentcloud/thpc/v20230321/model/DescribeQueuesRequest.h
   include/tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationResponse.h
@@ -139,6 +142,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/CFSOption.h
   include/tencentcloud/thpc/v20230321/model/GooseFSOptionOverview.h
   include/tencentcloud/thpc/v20230321/model/EnhancedService.h
+  include/tencentcloud/thpc/v20230321/model/CreateWorkspacesRequest.h
   include/tencentcloud/thpc/v20230321/model/InstanceChargePrepaid.h
   include/tencentcloud/thpc/v20230321/model/LoginNodeOverview.h
   include/tencentcloud/thpc/v20230321/model/LoginNode.h
@@ -146,6 +150,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/NodeScript.h
   include/tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsResponse.h
   include/tencentcloud/thpc/v20230321/model/ManagerNodeOverview.h
+  include/tencentcloud/thpc/v20230321/model/SpaceSystemDisk.h
   include/tencentcloud/thpc/v20230321/model/ManagerNode.h
   include/tencentcloud/thpc/v20230321/model/DeleteClusterRequest.h
   include/tencentcloud/thpc/v20230321/model/ComputeNodeOverview.h
@@ -156,9 +161,12 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/RunAutomationServiceEnabled.h
   include/tencentcloud/thpc/v20230321/model/DescribeClusterActivitiesRequest.h
   include/tencentcloud/thpc/v20230321/model/QueueConfig.h
+  include/tencentcloud/thpc/v20230321/model/VirtualPrivateCloud.h
   include/tencentcloud/thpc/v20230321/model/DeleteQueueRequest.h
   include/tencentcloud/thpc/v20230321/model/Filter.h
+  include/tencentcloud/thpc/v20230321/model/SpaceInternetAccessible.h
   include/tencentcloud/thpc/v20230321/model/AddNodesRequest.h
+  include/tencentcloud/thpc/v20230321/model/InternetAccessible.h
   include/tencentcloud/thpc/v20230321/model/CFSOptionOverview.h
   include/tencentcloud/thpc/v20230321/model/DeleteClusterStorageOptionRequest.h
   include/tencentcloud/thpc/v20230321/model/AddClusterStorageOptionRequest.h
@@ -166,7 +174,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/RunMonitorServiceEnabled.h
   include/tencentcloud/thpc/v20230321/model/QueueConfigOverview.h
   include/tencentcloud/thpc/v20230321/model/DescribeQueuesResponse.h
-  include/tencentcloud/thpc/v20230321/model/VirtualPrivateCloud.h
+  include/tencentcloud/thpc/v20230321/model/SpacePlacement.h
   include/tencentcloud/thpc/v20230321/model/ExpansionNodeConfigOverview.h
   include/tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsRequest.h
   include/tencentcloud/thpc/v20230321/model/GooseFSxOptionOverview.h
@@ -183,6 +191,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/DescribeInitNodeScriptsResponse.h
   include/tencentcloud/thpc/v20230321/model/DataDisk.h
   include/tencentcloud/thpc/v20230321/model/DeleteQueueResponse.h
+  include/tencentcloud/thpc/v20230321/model/TagSpecification.h
   include/tencentcloud/thpc/v20230321/model/AddNodesResponse.h
   )
 
@@ -279,6 +288,7 @@ set(thpc_src
   src/v20220401/model/DeleteQueueResponse.cpp
   src/v20220401/model/AddNodesResponse.cpp
   src/v20230321/model/DescribeAutoScalingConfigurationResponse.cpp
+  src/v20230321/model/SpaceChargePrepaid.cpp
   src/v20230321/model/DescribeClusterStorageOptionRequest.cpp
   src/v20230321/model/ClusterOverview.cpp
   src/v20230321/model/QueueOverview.cpp
@@ -286,6 +296,7 @@ set(thpc_src
   src/v20230321/model/SetAutoScalingConfigurationRequest.cpp
   src/v20230321/model/DetachNodesRequest.cpp
   src/v20230321/model/NodeOverview.cpp
+  src/v20230321/model/SpaceDataDisk.cpp
   src/v20230321/model/DescribeNodesRequest.cpp
   src/v20230321/model/DeleteNodesResponse.cpp
   src/v20230321/model/AddClusterStorageOptionResponse.cpp
@@ -295,10 +306,11 @@ set(thpc_src
   src/v20230321/model/NodeActivity.cpp
   src/v20230321/model/Placement.cpp
   src/v20230321/model/AddQueueRequest.cpp
-  src/v20230321/model/InternetAccessible.cpp
+  src/v20230321/model/CreateWorkspacesResponse.cpp
   src/v20230321/model/AttachNodesResponse.cpp
   src/v20230321/model/ClusterActivity.cpp
   src/v20230321/model/CreateClusterResponse.cpp
+  src/v20230321/model/SpaceVirtualPrivateCloud.cpp
   src/v20230321/model/RunSecurityServiceEnabled.cpp
   src/v20230321/model/DescribeQueuesRequest.cpp
   src/v20230321/model/SetAutoScalingConfigurationResponse.cpp
@@ -308,6 +320,7 @@ set(thpc_src
   src/v20230321/model/CFSOption.cpp
   src/v20230321/model/GooseFSOptionOverview.cpp
   src/v20230321/model/EnhancedService.cpp
+  src/v20230321/model/CreateWorkspacesRequest.cpp
   src/v20230321/model/InstanceChargePrepaid.cpp
   src/v20230321/model/LoginNodeOverview.cpp
   src/v20230321/model/LoginNode.cpp
@@ -315,6 +328,7 @@ set(thpc_src
   src/v20230321/model/NodeScript.cpp
   src/v20230321/model/ModifyInitNodeScriptsResponse.cpp
   src/v20230321/model/ManagerNodeOverview.cpp
+  src/v20230321/model/SpaceSystemDisk.cpp
   src/v20230321/model/ManagerNode.cpp
   src/v20230321/model/DeleteClusterRequest.cpp
   src/v20230321/model/ComputeNodeOverview.cpp
@@ -325,9 +339,12 @@ set(thpc_src
   src/v20230321/model/RunAutomationServiceEnabled.cpp
   src/v20230321/model/DescribeClusterActivitiesRequest.cpp
   src/v20230321/model/QueueConfig.cpp
+  src/v20230321/model/VirtualPrivateCloud.cpp
   src/v20230321/model/DeleteQueueRequest.cpp
   src/v20230321/model/Filter.cpp
+  src/v20230321/model/SpaceInternetAccessible.cpp
   src/v20230321/model/AddNodesRequest.cpp
+  src/v20230321/model/InternetAccessible.cpp
   src/v20230321/model/CFSOptionOverview.cpp
   src/v20230321/model/DeleteClusterStorageOptionRequest.cpp
   src/v20230321/model/AddClusterStorageOptionRequest.cpp
@@ -335,7 +352,7 @@ set(thpc_src
   src/v20230321/model/RunMonitorServiceEnabled.cpp
   src/v20230321/model/QueueConfigOverview.cpp
   src/v20230321/model/DescribeQueuesResponse.cpp
-  src/v20230321/model/VirtualPrivateCloud.cpp
+  src/v20230321/model/SpacePlacement.cpp
   src/v20230321/model/ExpansionNodeConfigOverview.cpp
   src/v20230321/model/ModifyInitNodeScriptsRequest.cpp
   src/v20230321/model/GooseFSxOptionOverview.cpp
@@ -352,6 +369,7 @@ set(thpc_src
   src/v20230321/model/DescribeInitNodeScriptsResponse.cpp
   src/v20230321/model/DataDisk.cpp
   src/v20230321/model/DeleteQueueResponse.cpp
+  src/v20230321/model/TagSpecification.cpp
   src/v20230321/model/AddNodesResponse.cpp
   )
 

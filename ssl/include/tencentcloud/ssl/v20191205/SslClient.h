@@ -31,6 +31,8 @@
 #include <tencentcloud/ssl/v20191205/model/CancelCertificateOrderResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CheckCertificateChainRequest.h>
 #include <tencentcloud/ssl/v20191205/model/CheckCertificateChainResponse.h>
+#include <tencentcloud/ssl/v20191205/model/CheckCertificateDomainVerificationRequest.h>
+#include <tencentcloud/ssl/v20191205/model/CheckCertificateDomainVerificationResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CommitCertificateInformationRequest.h>
 #include <tencentcloud/ssl/v20191205/model/CommitCertificateInformationResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CompleteCertificateRequest.h>
@@ -167,6 +169,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckCertificateChainResponse> CheckCertificateChainOutcome;
                 typedef std::future<CheckCertificateChainOutcome> CheckCertificateChainOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::CheckCertificateChainRequest&, CheckCertificateChainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCertificateChainAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckCertificateDomainVerificationResponse> CheckCertificateDomainVerificationOutcome;
+                typedef std::future<CheckCertificateDomainVerificationOutcome> CheckCertificateDomainVerificationOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::CheckCertificateDomainVerificationRequest&, CheckCertificateDomainVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCertificateDomainVerificationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CommitCertificateInformationResponse> CommitCertificateInformationOutcome;
                 typedef std::future<CommitCertificateInformationOutcome> CommitCertificateInformationOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::CommitCertificateInformationRequest&, CommitCertificateInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommitCertificateInformationAsyncHandler;
@@ -370,6 +375,15 @@ namespace TencentCloud
                 CheckCertificateChainOutcome CheckCertificateChain(const Model::CheckCertificateChainRequest &request);
                 void CheckCertificateChainAsync(const Model::CheckCertificateChainRequest& request, const CheckCertificateChainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckCertificateChainOutcomeCallable CheckCertificateChainCallable(const Model::CheckCertificateChainRequest& request);
+
+                /**
+                 *检查证书域名验证
+                 * @param req CheckCertificateDomainVerificationRequest
+                 * @return CheckCertificateDomainVerificationOutcome
+                 */
+                CheckCertificateDomainVerificationOutcome CheckCertificateDomainVerification(const Model::CheckCertificateDomainVerificationRequest &request);
+                void CheckCertificateDomainVerificationAsync(const Model::CheckCertificateDomainVerificationRequest& request, const CheckCertificateDomainVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckCertificateDomainVerificationOutcomeCallable CheckCertificateDomainVerificationCallable(const Model::CheckCertificateDomainVerificationRequest& request);
 
                 /**
                  *提交证书订单。

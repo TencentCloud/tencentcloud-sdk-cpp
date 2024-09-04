@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取
-                     * @return AppType 应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取
+                     * 获取应用类型；knowledge_qa-知识问答管理
+                     * @return AppType 应用类型；knowledge_qa-知识问答管理
                      * 
                      */
                     std::string GetAppType() const;
 
                     /**
-                     * 设置应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取
-                     * @param _appType 应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取
+                     * 设置应用类型；knowledge_qa-知识问答管理
+                     * @param _appType 应用类型；knowledge_qa-知识问答管理
                      * 
                      */
                     void SetAppType(const std::string& _appType);
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取
+                     * 应用类型；knowledge_qa-知识问答管理
                      */
                     std::string m_appType;
                     bool m_appTypeHasBeenSet;

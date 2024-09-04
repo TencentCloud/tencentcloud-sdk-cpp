@@ -23,6 +23,8 @@ using namespace TencentCloud::Cdwdoris::V20211228::Model;
 using namespace std;
 
 CreateBackUpScheduleRequest::CreateBackUpScheduleRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_operationTypeHasBeenSet(false),
     m_scheduleIdHasBeenSet(false),
     m_weekDaysHasBeenSet(false),
     m_executeHourHasBeenSet(false),
@@ -32,7 +34,11 @@ CreateBackUpScheduleRequest::CreateBackUpScheduleRequest() :
     m_backupTimeTypeHasBeenSet(false),
     m_restoreTypeHasBeenSet(false),
     m_authTypeHasBeenSet(false),
-    m_cosSourceInfoHasBeenSet(false)
+    m_cosSourceInfoHasBeenSet(false),
+    m_scheduleNameHasBeenSet(false),
+    m_scheduleInfoHasBeenSet(false),
+    m_updateStatusHasBeenSet(false),
+    m_cosBucketHasBeenSet(false)
 {
 }
 
@@ -42,6 +48,22 @@ string CreateBackUpScheduleRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationType.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_scheduleIdHasBeenSet)
     {
@@ -132,6 +154,39 @@ string CreateBackUpScheduleRequest::ToJsonString() const
         m_cosSourceInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_scheduleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scheduleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scheduleInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_updateStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_updateStatus, allocator);
+    }
+
+    if (m_cosBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosBucket";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cosBucket.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -139,6 +194,38 @@ string CreateBackUpScheduleRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateBackUpScheduleRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void CreateBackUpScheduleRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool CreateBackUpScheduleRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string CreateBackUpScheduleRequest::GetOperationType() const
+{
+    return m_operationType;
+}
+
+void CreateBackUpScheduleRequest::SetOperationType(const string& _operationType)
+{
+    m_operationType = _operationType;
+    m_operationTypeHasBeenSet = true;
+}
+
+bool CreateBackUpScheduleRequest::OperationTypeHasBeenSet() const
+{
+    return m_operationTypeHasBeenSet;
+}
 
 int64_t CreateBackUpScheduleRequest::GetScheduleId() const
 {
@@ -298,6 +385,70 @@ void CreateBackUpScheduleRequest::SetCosSourceInfo(const CosSourceInfo& _cosSour
 bool CreateBackUpScheduleRequest::CosSourceInfoHasBeenSet() const
 {
     return m_cosSourceInfoHasBeenSet;
+}
+
+string CreateBackUpScheduleRequest::GetScheduleName() const
+{
+    return m_scheduleName;
+}
+
+void CreateBackUpScheduleRequest::SetScheduleName(const string& _scheduleName)
+{
+    m_scheduleName = _scheduleName;
+    m_scheduleNameHasBeenSet = true;
+}
+
+bool CreateBackUpScheduleRequest::ScheduleNameHasBeenSet() const
+{
+    return m_scheduleNameHasBeenSet;
+}
+
+ScheduleInfo CreateBackUpScheduleRequest::GetScheduleInfo() const
+{
+    return m_scheduleInfo;
+}
+
+void CreateBackUpScheduleRequest::SetScheduleInfo(const ScheduleInfo& _scheduleInfo)
+{
+    m_scheduleInfo = _scheduleInfo;
+    m_scheduleInfoHasBeenSet = true;
+}
+
+bool CreateBackUpScheduleRequest::ScheduleInfoHasBeenSet() const
+{
+    return m_scheduleInfoHasBeenSet;
+}
+
+int64_t CreateBackUpScheduleRequest::GetUpdateStatus() const
+{
+    return m_updateStatus;
+}
+
+void CreateBackUpScheduleRequest::SetUpdateStatus(const int64_t& _updateStatus)
+{
+    m_updateStatus = _updateStatus;
+    m_updateStatusHasBeenSet = true;
+}
+
+bool CreateBackUpScheduleRequest::UpdateStatusHasBeenSet() const
+{
+    return m_updateStatusHasBeenSet;
+}
+
+string CreateBackUpScheduleRequest::GetCosBucket() const
+{
+    return m_cosBucket;
+}
+
+void CreateBackUpScheduleRequest::SetCosBucket(const string& _cosBucket)
+{
+    m_cosBucket = _cosBucket;
+    m_cosBucketHasBeenSet = true;
+}
+
+bool CreateBackUpScheduleRequest::CosBucketHasBeenSet() const
+{
+    return m_cosBucketHasBeenSet;
 }
 
 

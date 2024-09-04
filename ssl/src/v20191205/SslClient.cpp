@@ -212,6 +212,49 @@ SslClient::CheckCertificateChainOutcomeCallable SslClient::CheckCertificateChain
     return task->get_future();
 }
 
+SslClient::CheckCertificateDomainVerificationOutcome SslClient::CheckCertificateDomainVerification(const CheckCertificateDomainVerificationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckCertificateDomainVerification");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckCertificateDomainVerificationResponse rsp = CheckCertificateDomainVerificationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckCertificateDomainVerificationOutcome(rsp);
+        else
+            return CheckCertificateDomainVerificationOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckCertificateDomainVerificationOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::CheckCertificateDomainVerificationAsync(const CheckCertificateDomainVerificationRequest& request, const CheckCertificateDomainVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckCertificateDomainVerification(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::CheckCertificateDomainVerificationOutcomeCallable SslClient::CheckCertificateDomainVerificationCallable(const CheckCertificateDomainVerificationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckCertificateDomainVerificationOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckCertificateDomainVerification(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::CommitCertificateInformationOutcome SslClient::CommitCertificateInformation(const CommitCertificateInformationRequest &request)
 {
     auto outcome = MakeRequest(request, "CommitCertificateInformation");

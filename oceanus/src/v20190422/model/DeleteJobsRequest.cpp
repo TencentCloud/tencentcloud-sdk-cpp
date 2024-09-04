@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteJobsRequest::DeleteJobsRequest() :
     m_jobIdsHasBeenSet(false),
-    m_workSpaceIdHasBeenSet(false)
+    m_workSpaceIdHasBeenSet(false),
+    m_jobNamesHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,19 @@ string DeleteJobsRequest::ToJsonString() const
         string key = "WorkSpaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_jobNames.begin(); itr != m_jobNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -94,6 +108,22 @@ void DeleteJobsRequest::SetWorkSpaceId(const string& _workSpaceId)
 bool DeleteJobsRequest::WorkSpaceIdHasBeenSet() const
 {
     return m_workSpaceIdHasBeenSet;
+}
+
+vector<string> DeleteJobsRequest::GetJobNames() const
+{
+    return m_jobNames;
+}
+
+void DeleteJobsRequest::SetJobNames(const vector<string>& _jobNames)
+{
+    m_jobNames = _jobNames;
+    m_jobNamesHasBeenSet = true;
+}
+
+bool DeleteJobsRequest::JobNamesHasBeenSet() const
+{
+    return m_jobNamesHasBeenSet;
 }
 
 

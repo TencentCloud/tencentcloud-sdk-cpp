@@ -33,6 +33,8 @@
 #include <tencentcloud/thpc/v20230321/model/AttachNodesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/CreateClusterRequest.h>
 #include <tencentcloud/thpc/v20230321/model/CreateClusterResponse.h>
+#include <tencentcloud/thpc/v20230321/model/CreateWorkspacesRequest.h>
+#include <tencentcloud/thpc/v20230321/model/CreateWorkspacesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DeleteClusterRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DeleteClusterResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DeleteClusterStorageOptionRequest.h>
@@ -90,6 +92,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWorkspacesResponse> CreateWorkspacesOutcome;
+                typedef std::future<CreateWorkspacesOutcome> CreateWorkspacesOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::CreateWorkspacesRequest&, CreateWorkspacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkspacesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteClusterResponse> DeleteClusterOutcome;
                 typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DeleteClusterRequest&, DeleteClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsyncHandler;
@@ -183,6 +188,15 @@ namespace TencentCloud
                 CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest &request);
                 void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request);
+
+                /**
+                 *本接口 (CreateWorkspaces) 用于创建工作空间。
+                 * @param req CreateWorkspacesRequest
+                 * @return CreateWorkspacesOutcome
+                 */
+                CreateWorkspacesOutcome CreateWorkspaces(const Model::CreateWorkspacesRequest &request);
+                void CreateWorkspacesAsync(const Model::CreateWorkspacesRequest& request, const CreateWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWorkspacesOutcomeCallable CreateWorkspacesCallable(const Model::CreateWorkspacesRequest& request);
 
                 /**
                  *本接口（DeleteCluster）用于删除一个指定的集群。
