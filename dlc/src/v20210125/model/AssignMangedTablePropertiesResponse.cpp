@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-AssignMangedTablePropertiesResponse::AssignMangedTablePropertiesResponse()
+AssignMangedTablePropertiesResponse::AssignMangedTablePropertiesResponse() :
+    m_propertiesHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome AssignMangedTablePropertiesResponse::Deserialize(const strin
     }
 
 
+    if (rsp.HasMember("Properties") && !rsp["Properties"].IsNull())
+    {
+        if (!rsp["Properties"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Properties` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Properties"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Property item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_properties.push_back(item);
+        }
+        m_propertiesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string AssignMangedTablePropertiesResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_propertiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Properties";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_properties.begin(); itr != m_properties.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string AssignMangedTablePropertiesResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<Property> AssignMangedTablePropertiesResponse::GetProperties() const
+{
+    return m_properties;
+}
+
+bool AssignMangedTablePropertiesResponse::PropertiesHasBeenSet() const
+{
+    return m_propertiesHasBeenSet;
+}
 
 

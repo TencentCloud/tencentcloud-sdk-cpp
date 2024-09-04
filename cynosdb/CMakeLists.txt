@@ -349,6 +349,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterStorageResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyInstanceUpgradeLimitDaysRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CloseClusterPasswordComplexityRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeIsolatedInstancesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAccountParamsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/AuditLogFile.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditRuleTemplatesResponse.h
@@ -404,6 +405,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditLogFilesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/SaleRegion.h
   include/tencentcloud/cynosdb/v20190107/model/DeleteAuditLogFileRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeIsolatedInstancesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/GrantAccountPrivilegesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ClusterParamModifyLog.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyBinlogConfigResponse.h
@@ -757,6 +759,7 @@ set(cynosdb_src
   src/v20190107/model/ModifyClusterStorageResponse.cpp
   src/v20190107/model/ModifyInstanceUpgradeLimitDaysRequest.cpp
   src/v20190107/model/CloseClusterPasswordComplexityRequest.cpp
+  src/v20190107/model/DescribeIsolatedInstancesRequest.cpp
   src/v20190107/model/ModifyAccountParamsRequest.cpp
   src/v20190107/model/AuditLogFile.cpp
   src/v20190107/model/DescribeAuditRuleTemplatesResponse.cpp
@@ -812,6 +815,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeAuditLogFilesRequest.cpp
   src/v20190107/model/SaleRegion.cpp
   src/v20190107/model/DeleteAuditLogFileRequest.cpp
+  src/v20190107/model/DescribeIsolatedInstancesResponse.cpp
   src/v20190107/model/GrantAccountPrivilegesResponse.cpp
   src/v20190107/model/ClusterParamModifyLog.cpp
   src/v20190107/model/ModifyBinlogConfigResponse.cpp

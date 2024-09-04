@@ -273,6 +273,31 @@ namespace TencentCloud
                      */
                     bool RowFilterInfoHasBeenSet() const;
 
+                    /**
+                     * 获取账号类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccountType 账号类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAccountType() const;
+
+                    /**
+                     * 设置账号类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _accountType 账号类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAccountType(const std::string& _accountType);
+
+                    /**
+                     * 判断参数 AccountType 是否已赋值
+                     * @return AccountType 是否已赋值
+                     * 
+                     */
+                    bool AccountTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +362,13 @@ namespace TencentCloud
                      */
                     Policys m_rowFilterInfo;
                     bool m_rowFilterInfoHasBeenSet;
+
+                    /**
+                     * 账号类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_accountType;
+                    bool m_accountTypeHasBeenSet;
 
                 };
             }

@@ -2706,6 +2706,49 @@ CynosdbClient::DescribeInstancesOutcomeCallable CynosdbClient::DescribeInstances
     return task->get_future();
 }
 
+CynosdbClient::DescribeIsolatedInstancesOutcome CynosdbClient::DescribeIsolatedInstances(const DescribeIsolatedInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIsolatedInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIsolatedInstancesResponse rsp = DescribeIsolatedInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIsolatedInstancesOutcome(rsp);
+        else
+            return DescribeIsolatedInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIsolatedInstancesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeIsolatedInstancesAsync(const DescribeIsolatedInstancesRequest& request, const DescribeIsolatedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIsolatedInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeIsolatedInstancesOutcomeCallable CynosdbClient::DescribeIsolatedInstancesCallable(const DescribeIsolatedInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIsolatedInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIsolatedInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeMaintainPeriodOutcome CynosdbClient::DescribeMaintainPeriod(const DescribeMaintainPeriodRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMaintainPeriod");

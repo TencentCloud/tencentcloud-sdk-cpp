@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取说明修改参数配置是否成功。<br><li>true：指修改成功；<br><li>false：指修改失败。<br>
-                     * @return Changed 说明修改参数配置是否成功。<br><li>true：指修改成功；<br><li>false：指修改失败。<br>
+                     * 获取说明修改参数配置是否成功。<br><li>true：指修改成功；</li><li>false：指修改失败。</li>
+                     * @return Changed 说明修改参数配置是否成功。<br><li>true：指修改成功；</li><li>false：指修改失败。</li>
                      * 
                      */
                     bool GetChanged() const;
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 说明修改参数配置是否成功。<br><li>true：指修改成功；<br><li>false：指修改失败。<br>
+                     * 说明修改参数配置是否成功。<br><li>true：指修改成功；</li><li>false：指修改失败。</li>
                      */
                     bool m_changed;
                     bool m_changedHasBeenSet;

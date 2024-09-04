@@ -25,6 +25,7 @@ using namespace std;
 DescribeDSPARDBDataAssetDetailRequest::DescribeDSPARDBDataAssetDetailRequest() :
     m_dspaIdHasBeenSet(false),
     m_complianceIdHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_creditScoreHasBeenSet(false)
@@ -52,6 +53,21 @@ string DescribeDSPARDBDataAssetDetailRequest::ToJsonString() const
         string key = "ComplianceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_complianceId, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_offsetHasBeenSet)
@@ -116,6 +132,22 @@ void DescribeDSPARDBDataAssetDetailRequest::SetComplianceId(const int64_t& _comp
 bool DescribeDSPARDBDataAssetDetailRequest::ComplianceIdHasBeenSet() const
 {
     return m_complianceIdHasBeenSet;
+}
+
+vector<Filter> DescribeDSPARDBDataAssetDetailRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeDSPARDBDataAssetDetailRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeDSPARDBDataAssetDetailRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 int64_t DescribeDSPARDBDataAssetDetailRequest::GetOffset() const

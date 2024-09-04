@@ -80,8 +80,7 @@ namespace TencentCloud
                 DescribeTaskOutcomeCallable DescribeTaskCallable(const Model::DescribeTaskRequest& request);
 
                 /**
-                 *接口请求域名： ecc.tencentcloudapi.com 
-纯文本英语作文批改
+                 *纯文本英语作文批改
                  * @param req ECCRequest
                  * @return ECCOutcome
                  */

@@ -405,15 +405,15 @@ namespace TencentCloud
                     bool RemoteInfoHasBeenSet() const;
 
                     /**
-                     * 获取存储方式，0-常规存储，1-归档存储，默认为0
-                     * @return CosStorageType 存储方式，0-常规存储，1-归档存储，默认为0
+                     * 获取存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0
+                     * @return CosStorageType 存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0
                      * 
                      */
                     int64_t GetCosStorageType() const;
 
                     /**
-                     * 设置存储方式，0-常规存储，1-归档存储，默认为0
-                     * @param _cosStorageType 存储方式，0-常规存储，1-归档存储，默认为0
+                     * 设置存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0
+                     * @param _cosStorageType 存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0
                      * 
                      */
                     void SetCosStorageType(const int64_t& _cosStorageType);
@@ -601,7 +601,7 @@ namespace TencentCloud
                     bool m_remoteInfoHasBeenSet;
 
                     /**
-                     * 存储方式，0-常规存储，1-归档存储，默认为0
+                     * 存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0
                      */
                     int64_t m_cosStorageType;
                     bool m_cosStorageTypeHasBeenSet;

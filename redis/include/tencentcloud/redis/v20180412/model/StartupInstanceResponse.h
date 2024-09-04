@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id
-                     * @return TaskId 任务id
+                     * 获取该字段已废弃，请通过查询实例接口获取到的状态来判断实例是否已解隔离
+                     * @return TaskId 该字段已废弃，请通过查询实例接口获取到的状态来判断实例是否已解隔离
                      * 
                      */
                     int64_t GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务id
+                     * 该字段已废弃，请通过查询实例接口获取到的状态来判断实例是否已解隔离
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;

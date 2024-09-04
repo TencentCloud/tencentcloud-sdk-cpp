@@ -57,12 +57,18 @@
 #include <tencentcloud/thpc/v20230321/model/DescribeNodesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeQueuesRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeQueuesResponse.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeWorkspacesRequest.h>
+#include <tencentcloud/thpc/v20230321/model/DescribeWorkspacesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DetachNodesRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DetachNodesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsRequest.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsResponse.h>
+#include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesAttributeRequest.h>
+#include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesAttributeResponse.h>
 #include <tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationRequest.h>
 #include <tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationResponse.h>
+#include <tencentcloud/thpc/v20230321/model/TerminateWorkspacesRequest.h>
+#include <tencentcloud/thpc/v20230321/model/TerminateWorkspacesResponse.h>
 
 
 namespace TencentCloud
@@ -128,15 +134,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeQueuesResponse> DescribeQueuesOutcome;
                 typedef std::future<DescribeQueuesOutcome> DescribeQueuesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeQueuesRequest&, DescribeQueuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQueuesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkspacesResponse> DescribeWorkspacesOutcome;
+                typedef std::future<DescribeWorkspacesOutcome> DescribeWorkspacesOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DescribeWorkspacesRequest&, DescribeWorkspacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkspacesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetachNodesResponse> DetachNodesOutcome;
                 typedef std::future<DetachNodesOutcome> DetachNodesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DetachNodesRequest&, DetachNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachNodesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInitNodeScriptsResponse> ModifyInitNodeScriptsOutcome;
                 typedef std::future<ModifyInitNodeScriptsOutcome> ModifyInitNodeScriptsOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::ModifyInitNodeScriptsRequest&, ModifyInitNodeScriptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInitNodeScriptsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyWorkspacesAttributeResponse> ModifyWorkspacesAttributeOutcome;
+                typedef std::future<ModifyWorkspacesAttributeOutcome> ModifyWorkspacesAttributeOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::ModifyWorkspacesAttributeRequest&, ModifyWorkspacesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkspacesAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetAutoScalingConfigurationResponse> SetAutoScalingConfigurationOutcome;
                 typedef std::future<SetAutoScalingConfigurationOutcome> SetAutoScalingConfigurationOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::SetAutoScalingConfigurationRequest&, SetAutoScalingConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAutoScalingConfigurationAsyncHandler;
+                typedef Outcome<Core::Error, Model::TerminateWorkspacesResponse> TerminateWorkspacesOutcome;
+                typedef std::future<TerminateWorkspacesOutcome> TerminateWorkspacesOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::TerminateWorkspacesRequest&, TerminateWorkspacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateWorkspacesAsyncHandler;
 
 
 
@@ -301,6 +316,15 @@ namespace TencentCloud
                 DescribeQueuesOutcomeCallable DescribeQueuesCallable(const Model::DescribeQueuesRequest& request);
 
                 /**
+                 *本接口（DescribeWorkspaces）用于查询工作空间列表。
+                 * @param req DescribeWorkspacesRequest
+                 * @return DescribeWorkspacesOutcome
+                 */
+                DescribeWorkspacesOutcome DescribeWorkspaces(const Model::DescribeWorkspacesRequest &request);
+                void DescribeWorkspacesAsync(const Model::DescribeWorkspacesRequest& request, const DescribeWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkspacesOutcomeCallable DescribeWorkspacesCallable(const Model::DescribeWorkspacesRequest& request);
+
+                /**
                  *本接口 (DetachNodes) 用于将一个或者多个计算节点从集群中移除，但是不销毁指定计算资源。
                  * @param req DetachNodesRequest
                  * @return DetachNodesOutcome
@@ -319,6 +343,15 @@ namespace TencentCloud
                 ModifyInitNodeScriptsOutcomeCallable ModifyInitNodeScriptsCallable(const Model::ModifyInitNodeScriptsRequest& request);
 
                 /**
+                 *本接口 (ModifyWorkspacesAttribute) 用于修改工作空间的属性（目前只支持修改工作空间的名称）。
+                 * @param req ModifyWorkspacesAttributeRequest
+                 * @return ModifyWorkspacesAttributeOutcome
+                 */
+                ModifyWorkspacesAttributeOutcome ModifyWorkspacesAttribute(const Model::ModifyWorkspacesAttributeRequest &request);
+                void ModifyWorkspacesAttributeAsync(const Model::ModifyWorkspacesAttributeRequest& request, const ModifyWorkspacesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyWorkspacesAttributeOutcomeCallable ModifyWorkspacesAttributeCallable(const Model::ModifyWorkspacesAttributeRequest& request);
+
+                /**
                  *本接口(SetAutoScalingConfiguration)用于为集群设置集群弹性伸缩配置信息。
                  * @param req SetAutoScalingConfigurationRequest
                  * @return SetAutoScalingConfigurationOutcome
@@ -326,6 +359,15 @@ namespace TencentCloud
                 SetAutoScalingConfigurationOutcome SetAutoScalingConfiguration(const Model::SetAutoScalingConfigurationRequest &request);
                 void SetAutoScalingConfigurationAsync(const Model::SetAutoScalingConfigurationRequest& request, const SetAutoScalingConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetAutoScalingConfigurationOutcomeCallable SetAutoScalingConfigurationCallable(const Model::SetAutoScalingConfigurationRequest& request);
+
+                /**
+                 *本接口 (TerminateWorkspaces) 用于主动退还工作空间。
+                 * @param req TerminateWorkspacesRequest
+                 * @return TerminateWorkspacesOutcome
+                 */
+                TerminateWorkspacesOutcome TerminateWorkspaces(const Model::TerminateWorkspacesRequest &request);
+                void TerminateWorkspacesAsync(const Model::TerminateWorkspacesRequest& request, const TerminateWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateWorkspacesOutcomeCallable TerminateWorkspacesCallable(const Model::TerminateWorkspacesRequest& request);
 
             };
         }

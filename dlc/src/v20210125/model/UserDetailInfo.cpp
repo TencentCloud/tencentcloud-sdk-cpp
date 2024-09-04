@@ -29,7 +29,8 @@ UserDetailInfo::UserDetailInfo() :
     m_enginePolicyInfoHasBeenSet(false),
     m_workGroupInfoHasBeenSet(false),
     m_userAliasHasBeenSet(false),
-    m_rowFilterInfoHasBeenSet(false)
+    m_rowFilterInfoHasBeenSet(false),
+    m_accountTypeHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,16 @@ CoreInternalOutcome UserDetailInfo::Deserialize(const rapidjson::Value &value)
         m_rowFilterInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("AccountType") && !value["AccountType"].IsNull())
+    {
+        if (!value["AccountType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserDetailInfo.AccountType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accountType = string(value["AccountType"].GetString());
+        m_accountTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -237,6 +248,14 @@ void UserDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rowFilterInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_accountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -384,5 +403,21 @@ void UserDetailInfo::SetRowFilterInfo(const Policys& _rowFilterInfo)
 bool UserDetailInfo::RowFilterInfoHasBeenSet() const
 {
     return m_rowFilterInfoHasBeenSet;
+}
+
+string UserDetailInfo::GetAccountType() const
+{
+    return m_accountType;
+}
+
+void UserDetailInfo::SetAccountType(const string& _accountType)
+{
+    m_accountType = _accountType;
+    m_accountTypeHasBeenSet = true;
+}
+
+bool UserDetailInfo::AccountTypeHasBeenSet() const
+{
+    return m_accountTypeHasBeenSet;
 }
 

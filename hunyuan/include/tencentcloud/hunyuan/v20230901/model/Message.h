@@ -141,18 +141,18 @@ namespace TencentCloud
                     bool ToolCallIdHasBeenSet() const;
 
                     /**
-                     * 获取模型生成的工具调用，仅 hunyuan-functioncall 模型支持
+                     * 获取模型生成的工具调用，仅 hunyuan-pro 或者 hunyuan-functioncall 模型支持
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ToolCalls 模型生成的工具调用，仅 hunyuan-functioncall 模型支持
+                     * @return ToolCalls 模型生成的工具调用，仅 hunyuan-pro 或者 hunyuan-functioncall 模型支持
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ToolCall> GetToolCalls() const;
 
                     /**
-                     * 设置模型生成的工具调用，仅 hunyuan-functioncall 模型支持
+                     * 设置模型生成的工具调用，仅 hunyuan-pro 或者 hunyuan-functioncall 模型支持
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _toolCalls 模型生成的工具调用，仅 hunyuan-functioncall 模型支持
+                     * @param _toolCalls 模型生成的工具调用，仅 hunyuan-pro 或者 hunyuan-functioncall 模型支持
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -194,7 +194,7 @@ namespace TencentCloud
                     bool m_toolCallIdHasBeenSet;
 
                     /**
-                     * 模型生成的工具调用，仅 hunyuan-functioncall 模型支持
+                     * 模型生成的工具调用，仅 hunyuan-pro 或者 hunyuan-functioncall 模型支持
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ToolCall> m_toolCalls;

@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool AppUserIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启手机验证码登录（0 关闭，1 开启）
+                     * @return LoginSecurityStatus 是否开启手机验证码登录（0 关闭，1 开启）
+                     * 
+                     */
+                    int64_t GetLoginSecurityStatus() const;
+
+                    /**
+                     * 设置是否开启手机验证码登录（0 关闭，1 开启）
+                     * @param _loginSecurityStatus 是否开启手机验证码登录（0 关闭，1 开启）
+                     * 
+                     */
+                    void SetLoginSecurityStatus(const int64_t& _loginSecurityStatus);
+
+                    /**
+                     * 判断参数 LoginSecurityStatus 是否已赋值
+                     * @return LoginSecurityStatus 是否已赋值
+                     * 
+                     */
+                    bool LoginSecurityStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_appUserId;
                     bool m_appUserIdHasBeenSet;
+
+                    /**
+                     * 是否开启手机验证码登录（0 关闭，1 开启）
+                     */
+                    int64_t m_loginSecurityStatus;
+                    bool m_loginSecurityStatusHasBeenSet;
 
                 };
             }

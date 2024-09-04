@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/Property.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取分配的原生表表属性
+                     * @return Properties 分配的原生表表属性
+                     * 
+                     */
+                    std::vector<Property> GetProperties() const;
+
+                    /**
+                     * 判断参数 Properties 是否已赋值
+                     * @return Properties 是否已赋值
+                     * 
+                     */
+                    bool PropertiesHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 分配的原生表表属性
+                     */
+                    std::vector<Property> m_properties;
+                    bool m_propertiesHasBeenSet;
 
                 };
             }

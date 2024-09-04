@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限
-                     * @return Type 查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限
+                     * 获取必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限
+                     * @return Type 必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限
-                     * @param _type 查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限
+                     * 设置必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限
+                     * @param _type 必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -295,7 +295,7 @@ engine-name：库表的模糊搜索。
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限
+                     * 必传字段，查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限 RowFilter：行级别权限
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -29,7 +29,8 @@ ModifyUserRoleRequest::ModifyUserRoleRequest() :
     m_userNameHasBeenSet(false),
     m_phoneNumberHasBeenSet(false),
     m_areaCodeHasBeenSet(false),
-    m_appUserIdHasBeenSet(false)
+    m_appUserIdHasBeenSet(false),
+    m_loginSecurityStatusHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,14 @@ string ModifyUserRoleRequest::ToJsonString() const
         string key = "AppUserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_appUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loginSecurityStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginSecurityStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_loginSecurityStatus, allocator);
     }
 
 
@@ -219,6 +228,22 @@ void ModifyUserRoleRequest::SetAppUserId(const string& _appUserId)
 bool ModifyUserRoleRequest::AppUserIdHasBeenSet() const
 {
     return m_appUserIdHasBeenSet;
+}
+
+int64_t ModifyUserRoleRequest::GetLoginSecurityStatus() const
+{
+    return m_loginSecurityStatus;
+}
+
+void ModifyUserRoleRequest::SetLoginSecurityStatus(const int64_t& _loginSecurityStatus)
+{
+    m_loginSecurityStatus = _loginSecurityStatus;
+    m_loginSecurityStatusHasBeenSet = true;
+}
+
+bool ModifyUserRoleRequest::LoginSecurityStatusHasBeenSet() const
+{
+    return m_loginSecurityStatusHasBeenSet;
 }
 
 

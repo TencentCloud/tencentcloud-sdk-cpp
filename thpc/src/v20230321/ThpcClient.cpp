@@ -771,6 +771,49 @@ ThpcClient::DescribeQueuesOutcomeCallable ThpcClient::DescribeQueuesCallable(con
     return task->get_future();
 }
 
+ThpcClient::DescribeWorkspacesOutcome ThpcClient::DescribeWorkspaces(const DescribeWorkspacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkspaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkspacesResponse rsp = DescribeWorkspacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkspacesOutcome(rsp);
+        else
+            return DescribeWorkspacesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkspacesOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeWorkspacesAsync(const DescribeWorkspacesRequest& request, const DescribeWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWorkspaces(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::DescribeWorkspacesOutcomeCallable ThpcClient::DescribeWorkspacesCallable(const DescribeWorkspacesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWorkspacesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWorkspaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::DetachNodesOutcome ThpcClient::DetachNodes(const DetachNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DetachNodes");
@@ -857,6 +900,49 @@ ThpcClient::ModifyInitNodeScriptsOutcomeCallable ThpcClient::ModifyInitNodeScrip
     return task->get_future();
 }
 
+ThpcClient::ModifyWorkspacesAttributeOutcome ThpcClient::ModifyWorkspacesAttribute(const ModifyWorkspacesAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWorkspacesAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWorkspacesAttributeResponse rsp = ModifyWorkspacesAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWorkspacesAttributeOutcome(rsp);
+        else
+            return ModifyWorkspacesAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWorkspacesAttributeOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::ModifyWorkspacesAttributeAsync(const ModifyWorkspacesAttributeRequest& request, const ModifyWorkspacesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyWorkspacesAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::ModifyWorkspacesAttributeOutcomeCallable ThpcClient::ModifyWorkspacesAttributeCallable(const ModifyWorkspacesAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyWorkspacesAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyWorkspacesAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::SetAutoScalingConfigurationOutcome ThpcClient::SetAutoScalingConfiguration(const SetAutoScalingConfigurationRequest &request)
 {
     auto outcome = MakeRequest(request, "SetAutoScalingConfiguration");
@@ -893,6 +979,49 @@ ThpcClient::SetAutoScalingConfigurationOutcomeCallable ThpcClient::SetAutoScalin
         [this, request]()
         {
             return this->SetAutoScalingConfiguration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ThpcClient::TerminateWorkspacesOutcome ThpcClient::TerminateWorkspaces(const TerminateWorkspacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateWorkspaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateWorkspacesResponse rsp = TerminateWorkspacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateWorkspacesOutcome(rsp);
+        else
+            return TerminateWorkspacesOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateWorkspacesOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::TerminateWorkspacesAsync(const TerminateWorkspacesRequest& request, const TerminateWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminateWorkspaces(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::TerminateWorkspacesOutcomeCallable ThpcClient::TerminateWorkspacesCallable(const TerminateWorkspacesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminateWorkspacesOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminateWorkspaces(request);
         }
     );
 

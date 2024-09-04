@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询的域名，全部域名不指定
-                     * @return Domain 查询的域名，全部域名不指定
+                     * 获取查询的域名，全部域名填all
+                     * @return Domain 查询的域名，全部域名填all
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置查询的域名，全部域名不指定
-                     * @param _domain 查询的域名，全部域名不指定
+                     * 设置查询的域名，全部域名填all
+                     * @param _domain 查询的域名，全部域名填all
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 查询的域名，全部域名不指定
+                     * 查询的域名，全部域名填all
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
