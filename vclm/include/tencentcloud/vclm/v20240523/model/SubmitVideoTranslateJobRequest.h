@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool LipSyncHasBeenSet() const;
 
+                    /**
+                     * 获取音色 Id
+                     * @return VoiceType 音色 Id
+                     * 
+                     */
+                    std::string GetVoiceType() const;
+
+                    /**
+                     * 设置音色 Id
+                     * @param _voiceType 音色 Id
+                     * 
+                     */
+                    void SetVoiceType(const std::string& _voiceType);
+
+                    /**
+                     * 判断参数 VoiceType 是否已赋值
+                     * @return VoiceType 是否已赋值
+                     * 
+                     */
+                    bool VoiceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     int64_t m_lipSync;
                     bool m_lipSyncHasBeenSet;
+
+                    /**
+                     * 音色 Id
+                     */
+                    std::string m_voiceType;
+                    bool m_voiceTypeHasBeenSet;
 
                 };
             }

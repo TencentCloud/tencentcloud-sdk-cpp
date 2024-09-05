@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取MetaData的Key
-                     * @return MetaKey MetaData的Key
+                     * 获取MetaData的Key，字符长度不能超过32
+                     * @return MetaKey MetaData的Key，字符长度不能超过32
                      * 
                      */
                     std::string GetMetaKey() const;
 
                     /**
-                     * 设置MetaData的Key
-                     * @param _metaKey MetaData的Key
+                     * 设置MetaData的Key，字符长度不能超过32
+                     * @param _metaKey MetaData的Key，字符长度不能超过32
                      * 
                      */
                     void SetMetaKey(const std::string& _metaKey);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool MetaKeyHasBeenSet() const;
 
                     /**
-                     * 获取MetaData的Value
-                     * @return MetaValue MetaData的Value
+                     * 获取MetaData的Value，字符长度不能超过256
+                     * @return MetaValue MetaData的Value，字符长度不能超过256
                      * 
                      */
                     std::string GetMetaValue() const;
 
                     /**
-                     * 设置MetaData的Value
-                     * @param _metaValue MetaData的Value
+                     * 设置MetaData的Value，字符长度不能超过256
+                     * @param _metaValue MetaData的Value，字符长度不能超过256
                      * 
                      */
                     void SetMetaValue(const std::string& _metaValue);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * MetaData的Key
+                     * MetaData的Key，字符长度不能超过32
                      */
                     std::string m_metaKey;
                     bool m_metaKeyHasBeenSet;
 
                     /**
-                     * MetaData的Value
+                     * MetaData的Value，字符长度不能超过256
                      */
                     std::string m_metaValue;
                     bool m_metaValueHasBeenSet;

@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取密码
-                     * @return PassWord 密码
+                     * 获取base64加密后的密码
+                     * @return PassWord base64加密后的密码
                      * 
                      */
                     std::string GetPassWord() const;
 
                     /**
-                     * 设置密码
-                     * @param _passWord 密码
+                     * 设置base64加密后的密码
+                     * @param _passWord base64加密后的密码
                      * 
                      */
                     void SetPassWord(const std::string& _passWord);
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 密码
+                     * base64加密后的密码
                      */
                     std::string m_passWord;
                     bool m_passWordHasBeenSet;

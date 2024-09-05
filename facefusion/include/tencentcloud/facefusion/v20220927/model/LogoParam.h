@@ -49,14 +49,18 @@ namespace TencentCloud
 
                     /**
                      * 获取标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配。
+Width、Height <= 2160。
                      * @return LogoRect 标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配。
+Width、Height <= 2160。
                      * 
                      */
                     FaceRect GetLogoRect() const;
 
                     /**
                      * 设置标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配。
+Width、Height <= 2160。
                      * @param _logoRect 标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配。
+Width、Height <= 2160。
                      * 
                      */
                     void SetLogoRect(const FaceRect& _logoRect);
@@ -69,23 +73,35 @@ namespace TencentCloud
                     bool LogoRectHasBeenSet() const;
 
                     /**
-                     * 获取标识图片Url地址。
+                     * 获取标识图片Url地址
+
 ●base64 和 url 必须提供一个，如果都提供以 url 为准。
-●支持图片格式：支持jpg或png。
-                     * @return LogoUrl 标识图片Url地址。
+●支持图片格式：支持jpg或png
+专业版：base64 编码后大小不超过10M。
+非专业版：base64 编码后大小不超过5M。
+                     * @return LogoUrl 标识图片Url地址
+
 ●base64 和 url 必须提供一个，如果都提供以 url 为准。
-●支持图片格式：支持jpg或png。
+●支持图片格式：支持jpg或png
+专业版：base64 编码后大小不超过10M。
+非专业版：base64 编码后大小不超过5M。
                      * 
                      */
                     std::string GetLogoUrl() const;
 
                     /**
-                     * 设置标识图片Url地址。
+                     * 设置标识图片Url地址
+
 ●base64 和 url 必须提供一个，如果都提供以 url 为准。
-●支持图片格式：支持jpg或png。
-                     * @param _logoUrl 标识图片Url地址。
+●支持图片格式：支持jpg或png
+专业版：base64 编码后大小不超过10M。
+非专业版：base64 编码后大小不超过5M。
+                     * @param _logoUrl 标识图片Url地址
+
 ●base64 和 url 必须提供一个，如果都提供以 url 为准。
-●支持图片格式：支持jpg或png。
+●支持图片格式：支持jpg或png
+专业版：base64 编码后大小不超过10M。
+非专业版：base64 编码后大小不超过5M。
                      * 
                      */
                     void SetLogoUrl(const std::string& _logoUrl);
@@ -98,23 +114,31 @@ namespace TencentCloud
                     bool LogoUrlHasBeenSet() const;
 
                     /**
-                     * 获取标识图片base64
+                     * 获取输入图片base64。
 ●base64 和 url 必须提供一个，如果都提供以 url 为准。
-●支持图片格式：支持jpg或png。
-                     * @return LogoImage 标识图片base64
+●支持图片格式：支持jpg或png
+专业版：base64 编码后大小不超过10M。
+非专业版：base64 编码后大小不超过5M。
+                     * @return LogoImage 输入图片base64。
 ●base64 和 url 必须提供一个，如果都提供以 url 为准。
-●支持图片格式：支持jpg或png。
+●支持图片格式：支持jpg或png
+专业版：base64 编码后大小不超过10M。
+非专业版：base64 编码后大小不超过5M。
                      * 
                      */
                     std::string GetLogoImage() const;
 
                     /**
-                     * 设置标识图片base64
+                     * 设置输入图片base64。
 ●base64 和 url 必须提供一个，如果都提供以 url 为准。
-●支持图片格式：支持jpg或png。
-                     * @param _logoImage 标识图片base64
+●支持图片格式：支持jpg或png
+专业版：base64 编码后大小不超过10M。
+非专业版：base64 编码后大小不超过5M。
+                     * @param _logoImage 输入图片base64。
 ●base64 和 url 必须提供一个，如果都提供以 url 为准。
-●支持图片格式：支持jpg或png。
+●支持图片格式：支持jpg或png
+专业版：base64 编码后大小不超过10M。
+非专业版：base64 编码后大小不超过5M。
                      * 
                      */
                     void SetLogoImage(const std::string& _logoImage);
@@ -130,22 +154,28 @@ namespace TencentCloud
 
                     /**
                      * 标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配。
+Width、Height <= 2160。
                      */
                     FaceRect m_logoRect;
                     bool m_logoRectHasBeenSet;
 
                     /**
-                     * 标识图片Url地址。
+                     * 标识图片Url地址
+
 ●base64 和 url 必须提供一个，如果都提供以 url 为准。
-●支持图片格式：支持jpg或png。
+●支持图片格式：支持jpg或png
+专业版：base64 编码后大小不超过10M。
+非专业版：base64 编码后大小不超过5M。
                      */
                     std::string m_logoUrl;
                     bool m_logoUrlHasBeenSet;
 
                     /**
-                     * 标识图片base64
+                     * 输入图片base64。
 ●base64 和 url 必须提供一个，如果都提供以 url 为准。
-●支持图片格式：支持jpg或png。
+●支持图片格式：支持jpg或png
+专业版：base64 编码后大小不超过10M。
+非专业版：base64 编码后大小不超过5M。
                      */
                     std::string m_logoImage;
                     bool m_logoImageHasBeenSet;

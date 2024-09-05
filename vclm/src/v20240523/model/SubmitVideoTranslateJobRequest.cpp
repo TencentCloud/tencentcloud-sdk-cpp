@@ -28,7 +28,8 @@ SubmitVideoTranslateJobRequest::SubmitVideoTranslateJobRequest() :
     m_dstLangHasBeenSet(false),
     m_audioUrlHasBeenSet(false),
     m_confirmHasBeenSet(false),
-    m_lipSyncHasBeenSet(false)
+    m_lipSyncHasBeenSet(false),
+    m_voiceTypeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string SubmitVideoTranslateJobRequest::ToJsonString() const
         string key = "LipSync";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_lipSync, allocator);
+    }
+
+    if (m_voiceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_voiceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void SubmitVideoTranslateJobRequest::SetLipSync(const int64_t& _lipSync)
 bool SubmitVideoTranslateJobRequest::LipSyncHasBeenSet() const
 {
     return m_lipSyncHasBeenSet;
+}
+
+string SubmitVideoTranslateJobRequest::GetVoiceType() const
+{
+    return m_voiceType;
+}
+
+void SubmitVideoTranslateJobRequest::SetVoiceType(const string& _voiceType)
+{
+    m_voiceType = _voiceType;
+    m_voiceTypeHasBeenSet = true;
+}
+
+bool SubmitVideoTranslateJobRequest::VoiceTypeHasBeenSet() const
+{
+    return m_voiceTypeHasBeenSet;
 }
 
 
