@@ -1330,49 +1330,6 @@ CfwClient::DeleteVpcFwGroupOutcomeCallable CfwClient::DeleteVpcFwGroupCallable(c
     return task->get_future();
 }
 
-CfwClient::DeleteVpcInstanceOutcome CfwClient::DeleteVpcInstance(const DeleteVpcInstanceRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteVpcInstance");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteVpcInstanceResponse rsp = DeleteVpcInstanceResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteVpcInstanceOutcome(rsp);
-        else
-            return DeleteVpcInstanceOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteVpcInstanceOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::DeleteVpcInstanceAsync(const DeleteVpcInstanceRequest& request, const DeleteVpcInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteVpcInstance(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::DeleteVpcInstanceOutcomeCallable CfwClient::DeleteVpcInstanceCallable(const DeleteVpcInstanceRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteVpcInstanceOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteVpcInstance(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CfwClient::DescribeAcListsOutcome CfwClient::DescribeAcLists(const DescribeAcListsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAcLists");

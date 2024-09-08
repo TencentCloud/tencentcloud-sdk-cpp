@@ -83,8 +83,6 @@
 #include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteVpcFwGroupRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteVpcFwGroupResponse.h>
-#include <tencentcloud/cfw/v20190904/model/DeleteVpcInstanceRequest.h>
-#include <tencentcloud/cfw/v20190904/model/DeleteVpcInstanceResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAcListsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAcListsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAclRuleRequest.h>
@@ -357,9 +355,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteVpcFwGroupResponse> DeleteVpcFwGroupOutcome;
                 typedef std::future<DeleteVpcFwGroupOutcome> DeleteVpcFwGroupOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteVpcFwGroupRequest&, DeleteVpcFwGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcFwGroupAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteVpcInstanceResponse> DeleteVpcInstanceOutcome;
-                typedef std::future<DeleteVpcInstanceOutcome> DeleteVpcInstanceOutcomeCallable;
-                typedef std::function<void(const CfwClient*, const Model::DeleteVpcInstanceRequest&, DeleteVpcInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAcListsResponse> DescribeAcListsOutcome;
                 typedef std::future<DescribeAcListsOutcome> DescribeAcListsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeAcListsRequest&, DescribeAcListsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAcListsAsyncHandler;
@@ -884,17 +879,6 @@ namespace TencentCloud
                 DeleteVpcFwGroupOutcome DeleteVpcFwGroup(const Model::DeleteVpcFwGroupRequest &request);
                 void DeleteVpcFwGroupAsync(const Model::DeleteVpcFwGroupRequest& request, const DeleteVpcFwGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteVpcFwGroupOutcomeCallable DeleteVpcFwGroupCallable(const Model::DeleteVpcFwGroupRequest& request);
-
-                /**
-                 *接口废弃
-
-删除防火墙实例
-                 * @param req DeleteVpcInstanceRequest
-                 * @return DeleteVpcInstanceOutcome
-                 */
-                DeleteVpcInstanceOutcome DeleteVpcInstance(const Model::DeleteVpcInstanceRequest &request);
-                void DeleteVpcInstanceAsync(const Model::DeleteVpcInstanceRequest& request, const DeleteVpcInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteVpcInstanceOutcomeCallable DeleteVpcInstanceCallable(const Model::DeleteVpcInstanceRequest& request);
 
                 /**
                  *访问控制列表

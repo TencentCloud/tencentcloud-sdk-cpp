@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool AllHasBeenSet() const;
 
                     /**
-                     * 获取0：待处理 1：已处理 2： 已加白 3： 已忽略 4：已删除 
-                     * @return Status 0：待处理 1：已处理 2： 已加白 3： 已忽略 4：已删除 
+                     * 获取0：待处理 1：已处理 3： 已忽略 4：已删除 
+                     * @return Status 0：待处理 1：已处理 3： 已忽略 4：已删除 
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置0：待处理 1：已处理 2： 已加白 3： 已忽略 4：已删除 
-                     * @param _status 0：待处理 1：已处理 2： 已加白 3： 已忽略 4：已删除 
+                     * 设置0：待处理 1：已处理 3： 已忽略 4：已删除 
+                     * @param _status 0：待处理 1：已处理 3： 已忽略 4：已删除 
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_allHasBeenSet;
 
                     /**
-                     * 0：待处理 1：已处理 2： 已加白 3： 已忽略 4：已删除 
+                     * 0：待处理 1：已处理 3： 已忽略 4：已删除 
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

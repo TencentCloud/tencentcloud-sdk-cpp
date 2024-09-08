@@ -298,6 +298,49 @@ EmrClient::DeleteUserManagerUserListOutcomeCallable EmrClient::DeleteUserManager
     return task->get_future();
 }
 
+EmrClient::DeployYarnConfOutcome EmrClient::DeployYarnConf(const DeployYarnConfRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeployYarnConf");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeployYarnConfResponse rsp = DeployYarnConfResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeployYarnConfOutcome(rsp);
+        else
+            return DeployYarnConfOutcome(o.GetError());
+    }
+    else
+    {
+        return DeployYarnConfOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DeployYarnConfAsync(const DeployYarnConfRequest& request, const DeployYarnConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeployYarnConf(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DeployYarnConfOutcomeCallable EmrClient::DeployYarnConfCallable(const DeployYarnConfRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeployYarnConfOutcome()>>(
+        [this, request]()
+        {
+            return this->DeployYarnConf(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeAutoScaleGroupGlobalConfOutcome EmrClient::DescribeAutoScaleGroupGlobalConf(const DescribeAutoScaleGroupGlobalConfRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAutoScaleGroupGlobalConf");
@@ -1201,6 +1244,49 @@ EmrClient::DescribeYarnApplicationsOutcomeCallable EmrClient::DescribeYarnApplic
     return task->get_future();
 }
 
+EmrClient::DescribeYarnQueueOutcome EmrClient::DescribeYarnQueue(const DescribeYarnQueueRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeYarnQueue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeYarnQueueResponse rsp = DescribeYarnQueueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeYarnQueueOutcome(rsp);
+        else
+            return DescribeYarnQueueOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeYarnQueueOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeYarnQueueAsync(const DescribeYarnQueueRequest& request, const DescribeYarnQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeYarnQueue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeYarnQueueOutcomeCallable EmrClient::DescribeYarnQueueCallable(const DescribeYarnQueueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeYarnQueueOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeYarnQueue(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeYarnScheduleHistoryOutcome EmrClient::DescribeYarnScheduleHistory(const DescribeYarnScheduleHistoryRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeYarnScheduleHistory");
@@ -1796,6 +1882,92 @@ EmrClient::ModifyYarnDeployOutcomeCallable EmrClient::ModifyYarnDeployCallable(c
         [this, request]()
         {
             return this->ModifyYarnDeploy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::ModifyYarnQueueV2Outcome EmrClient::ModifyYarnQueueV2(const ModifyYarnQueueV2Request &request)
+{
+    auto outcome = MakeRequest(request, "ModifyYarnQueueV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyYarnQueueV2Response rsp = ModifyYarnQueueV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyYarnQueueV2Outcome(rsp);
+        else
+            return ModifyYarnQueueV2Outcome(o.GetError());
+    }
+    else
+    {
+        return ModifyYarnQueueV2Outcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyYarnQueueV2Async(const ModifyYarnQueueV2Request& request, const ModifyYarnQueueV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyYarnQueueV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ModifyYarnQueueV2OutcomeCallable EmrClient::ModifyYarnQueueV2Callable(const ModifyYarnQueueV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyYarnQueueV2Outcome()>>(
+        [this, request]()
+        {
+            return this->ModifyYarnQueueV2(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::ResetYarnConfigOutcome EmrClient::ResetYarnConfig(const ResetYarnConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetYarnConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetYarnConfigResponse rsp = ResetYarnConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetYarnConfigOutcome(rsp);
+        else
+            return ResetYarnConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetYarnConfigOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ResetYarnConfigAsync(const ResetYarnConfigRequest& request, const ResetYarnConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetYarnConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ResetYarnConfigOutcomeCallable EmrClient::ResetYarnConfigCallable(const ResetYarnConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetYarnConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetYarnConfig(request);
         }
     );
 

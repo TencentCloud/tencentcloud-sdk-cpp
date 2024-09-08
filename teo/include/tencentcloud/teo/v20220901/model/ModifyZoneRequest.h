@@ -66,22 +66,26 @@ namespace TencentCloud
 
                     /**
                      * 获取站点接入方式，取值有：
-<li> full：NS 接入；</li>
-<li> partial：CNAME 接入，如果站点当前是无域名接入，仅支持切换到CNAME接入。</li>不填写保持原有配置。
+<li>full：NS 接入；</li>
+<li>partial：CNAME 接入，如果站点当前是无域名接入，仅支持切换到 CNAME 接入；</li>
+<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内。</li>不填写保持原有配置。
                      * @return Type 站点接入方式，取值有：
-<li> full：NS 接入；</li>
-<li> partial：CNAME 接入，如果站点当前是无域名接入，仅支持切换到CNAME接入。</li>不填写保持原有配置。
+<li>full：NS 接入；</li>
+<li>partial：CNAME 接入，如果站点当前是无域名接入，仅支持切换到 CNAME 接入；</li>
+<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内。</li>不填写保持原有配置。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置站点接入方式，取值有：
-<li> full：NS 接入；</li>
-<li> partial：CNAME 接入，如果站点当前是无域名接入，仅支持切换到CNAME接入。</li>不填写保持原有配置。
+<li>full：NS 接入；</li>
+<li>partial：CNAME 接入，如果站点当前是无域名接入，仅支持切换到 CNAME 接入；</li>
+<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内。</li>不填写保持原有配置。
                      * @param _type 站点接入方式，取值有：
-<li> full：NS 接入；</li>
-<li> partial：CNAME 接入，如果站点当前是无域名接入，仅支持切换到CNAME接入。</li>不填写保持原有配置。
+<li>full：NS 接入；</li>
+<li>partial：CNAME 接入，如果站点当前是无域名接入，仅支持切换到 CNAME 接入；</li>
+<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内。</li>不填写保持原有配置。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -199,8 +203,9 @@ namespace TencentCloud
 
                     /**
                      * 站点接入方式，取值有：
-<li> full：NS 接入；</li>
-<li> partial：CNAME 接入，如果站点当前是无域名接入，仅支持切换到CNAME接入。</li>不填写保持原有配置。
+<li>full：NS 接入；</li>
+<li>partial：CNAME 接入，如果站点当前是无域名接入，仅支持切换到 CNAME 接入；</li>
+<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内。</li>不填写保持原有配置。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

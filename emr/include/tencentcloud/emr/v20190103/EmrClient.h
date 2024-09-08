@@ -35,6 +35,8 @@
 #include <tencentcloud/emr/v20190103/model/DeleteAutoScaleStrategyResponse.h>
 #include <tencentcloud/emr/v20190103/model/DeleteUserManagerUserListRequest.h>
 #include <tencentcloud/emr/v20190103/model/DeleteUserManagerUserListResponse.h>
+#include <tencentcloud/emr/v20190103/model/DeployYarnConfRequest.h>
+#include <tencentcloud/emr/v20190103/model/DeployYarnConfResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeAutoScaleGroupGlobalConfRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeAutoScaleGroupGlobalConfResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeAutoScaleRecordsRequest.h>
@@ -77,6 +79,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeYarnApplicationsRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeYarnApplicationsResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeYarnQueueRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeYarnQueueResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeYarnScheduleHistoryRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeYarnScheduleHistoryResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquirePriceRenewEmrRequest.h>
@@ -105,6 +109,10 @@
 #include <tencentcloud/emr/v20190103/model/ModifyUserManagerPwdResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyYarnDeployRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyYarnDeployResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyYarnQueueV2Request.h>
+#include <tencentcloud/emr/v20190103/model/ModifyYarnQueueV2Response.h>
+#include <tencentcloud/emr/v20190103/model/ResetYarnConfigRequest.h>
+#include <tencentcloud/emr/v20190103/model/ResetYarnConfigResponse.h>
 #include <tencentcloud/emr/v20190103/model/RunJobFlowRequest.h>
 #include <tencentcloud/emr/v20190103/model/RunJobFlowResponse.h>
 #include <tencentcloud/emr/v20190103/model/ScaleOutClusterRequest.h>
@@ -153,6 +161,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUserManagerUserListResponse> DeleteUserManagerUserListOutcome;
                 typedef std::future<DeleteUserManagerUserListOutcome> DeleteUserManagerUserListOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DeleteUserManagerUserListRequest&, DeleteUserManagerUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserManagerUserListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeployYarnConfResponse> DeployYarnConfOutcome;
+                typedef std::future<DeployYarnConfOutcome> DeployYarnConfOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DeployYarnConfRequest&, DeployYarnConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployYarnConfAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAutoScaleGroupGlobalConfResponse> DescribeAutoScaleGroupGlobalConfOutcome;
                 typedef std::future<DescribeAutoScaleGroupGlobalConfOutcome> DescribeAutoScaleGroupGlobalConfOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeAutoScaleGroupGlobalConfRequest&, DescribeAutoScaleGroupGlobalConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScaleGroupGlobalConfAsyncHandler;
@@ -216,6 +227,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeYarnApplicationsResponse> DescribeYarnApplicationsOutcome;
                 typedef std::future<DescribeYarnApplicationsOutcome> DescribeYarnApplicationsOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeYarnApplicationsRequest&, DescribeYarnApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeYarnApplicationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeYarnQueueResponse> DescribeYarnQueueOutcome;
+                typedef std::future<DescribeYarnQueueOutcome> DescribeYarnQueueOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeYarnQueueRequest&, DescribeYarnQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeYarnQueueAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeYarnScheduleHistoryResponse> DescribeYarnScheduleHistoryOutcome;
                 typedef std::future<DescribeYarnScheduleHistoryOutcome> DescribeYarnScheduleHistoryOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeYarnScheduleHistoryRequest&, DescribeYarnScheduleHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeYarnScheduleHistoryAsyncHandler;
@@ -258,6 +272,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyYarnDeployResponse> ModifyYarnDeployOutcome;
                 typedef std::future<ModifyYarnDeployOutcome> ModifyYarnDeployOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyYarnDeployRequest&, ModifyYarnDeployOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyYarnDeployAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyYarnQueueV2Response> ModifyYarnQueueV2Outcome;
+                typedef std::future<ModifyYarnQueueV2Outcome> ModifyYarnQueueV2OutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyYarnQueueV2Request&, ModifyYarnQueueV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyYarnQueueV2AsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetYarnConfigResponse> ResetYarnConfigOutcome;
+                typedef std::future<ResetYarnConfigOutcome> ResetYarnConfigOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ResetYarnConfigRequest&, ResetYarnConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetYarnConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunJobFlowResponse> RunJobFlowOutcome;
                 typedef std::future<RunJobFlowOutcome> RunJobFlowOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::RunJobFlowRequest&, RunJobFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunJobFlowAsyncHandler;
@@ -339,6 +359,15 @@ namespace TencentCloud
                 DeleteUserManagerUserListOutcome DeleteUserManagerUserList(const Model::DeleteUserManagerUserListRequest &request);
                 void DeleteUserManagerUserListAsync(const Model::DeleteUserManagerUserListRequest& request, const DeleteUserManagerUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteUserManagerUserListOutcomeCallable DeleteUserManagerUserListCallable(const Model::DeleteUserManagerUserListRequest& request);
+
+                /**
+                 *yarn资源调度-部署生效
+                 * @param req DeployYarnConfRequest
+                 * @return DeployYarnConfOutcome
+                 */
+                DeployYarnConfOutcome DeployYarnConf(const Model::DeployYarnConfRequest &request);
+                void DeployYarnConfAsync(const Model::DeployYarnConfRequest& request, const DeployYarnConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeployYarnConfOutcomeCallable DeployYarnConfCallable(const Model::DeployYarnConfRequest& request);
 
                 /**
                  *获取自动扩缩容全局配置
@@ -485,7 +514,7 @@ namespace TencentCloud
                 DescribeJobFlowOutcomeCallable DescribeJobFlowCallable(const Model::DescribeJobFlowRequest& request);
 
                 /**
-                 *查询YARN资源调度数据信息
+                 *查询YARN资源调度数据信息。已废弃，请使用`DescribeYarnQueue`去查询队列信息。
                  * @param req DescribeResourceScheduleRequest
                  * @return DescribeResourceScheduleOutcome
                  */
@@ -531,7 +560,16 @@ namespace TencentCloud
                 DescribeYarnApplicationsOutcomeCallable DescribeYarnApplicationsCallable(const Model::DescribeYarnApplicationsRequest& request);
 
                 /**
-                 *查看yarn资源调度的调度历史
+                 *获取资源调度中的队列信息
+                 * @param req DescribeYarnQueueRequest
+                 * @return DescribeYarnQueueOutcome
+                 */
+                DescribeYarnQueueOutcome DescribeYarnQueue(const Model::DescribeYarnQueueRequest &request);
+                void DescribeYarnQueueAsync(const Model::DescribeYarnQueueRequest& request, const DescribeYarnQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeYarnQueueOutcomeCallable DescribeYarnQueueCallable(const Model::DescribeYarnQueueRequest& request);
+
+                /**
+                 *查看yarn资源调度的调度历史。废弃，请使用流程中心查看历史记录。
                  * @param req DescribeYarnScheduleHistoryRequest
                  * @return DescribeYarnScheduleHistoryOutcome
                  */
@@ -604,7 +642,7 @@ namespace TencentCloud
                 ModifyAutoScaleStrategyOutcomeCallable ModifyAutoScaleStrategyCallable(const Model::ModifyAutoScaleStrategyRequest& request);
 
                 /**
-                 *刷新YARN的动态资源池
+                 *刷新YARN的动态资源池。已废弃，请使用`DeployYarnConf`
                  * @param req ModifyResourcePoolsRequest
                  * @return ModifyResourcePoolsOutcome
                  */
@@ -613,7 +651,7 @@ namespace TencentCloud
                 ModifyResourcePoolsOutcomeCallable ModifyResourcePoolsCallable(const Model::ModifyResourcePoolsRequest& request);
 
                 /**
-                 *修改YARN资源调度的资源配置
+                 *修改YARN资源调度的资源配置。已废弃，请使用`ModifyYarnQueueV2`来修改队列配置
                  * @param req ModifyResourceScheduleConfigRequest
                  * @return ModifyResourceScheduleConfigOutcome
                  */
@@ -622,7 +660,7 @@ namespace TencentCloud
                 ModifyResourceScheduleConfigOutcomeCallable ModifyResourceScheduleConfigCallable(const Model::ModifyResourceScheduleConfigRequest& request);
 
                 /**
-                 *修改了yarn的资源调度器，点击部署生效
+                 *修改了yarn的资源调度器，点击部署生效。
                  * @param req ModifyResourceSchedulerRequest
                  * @return ModifyResourceSchedulerOutcome
                  */
@@ -649,13 +687,31 @@ namespace TencentCloud
                 ModifyUserManagerPwdOutcomeCallable ModifyUserManagerPwdCallable(const Model::ModifyUserManagerPwdRequest& request);
 
                 /**
-                 *部署生效
+                 *部署生效。已废弃，请使用`DeployYarnConf`接口进行部署生效
                  * @param req ModifyYarnDeployRequest
                  * @return ModifyYarnDeployOutcome
                  */
                 ModifyYarnDeployOutcome ModifyYarnDeploy(const Model::ModifyYarnDeployRequest &request);
                 void ModifyYarnDeployAsync(const Model::ModifyYarnDeployRequest& request, const ModifyYarnDeployAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyYarnDeployOutcomeCallable ModifyYarnDeployCallable(const Model::ModifyYarnDeployRequest& request);
+
+                /**
+                 *修改资源调度中队列信息
+                 * @param req ModifyYarnQueueV2Request
+                 * @return ModifyYarnQueueV2Outcome
+                 */
+                ModifyYarnQueueV2Outcome ModifyYarnQueueV2(const Model::ModifyYarnQueueV2Request &request);
+                void ModifyYarnQueueV2Async(const Model::ModifyYarnQueueV2Request& request, const ModifyYarnQueueV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyYarnQueueV2OutcomeCallable ModifyYarnQueueV2Callable(const Model::ModifyYarnQueueV2Request& request);
+
+                /**
+                 *修改YARN资源调度的资源配置
+                 * @param req ResetYarnConfigRequest
+                 * @return ResetYarnConfigOutcome
+                 */
+                ResetYarnConfigOutcome ResetYarnConfig(const Model::ResetYarnConfigRequest &request);
+                void ResetYarnConfigAsync(const Model::ResetYarnConfigRequest& request, const ResetYarnConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetYarnConfigOutcomeCallable ResetYarnConfigCallable(const Model::ResetYarnConfigRequest& request);
 
                 /**
                  *创建流程作业

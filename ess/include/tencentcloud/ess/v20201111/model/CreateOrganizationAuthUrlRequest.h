@@ -66,26 +66,38 @@ namespace TencentCloud
 
                     /**
                      * 获取指定授权方式 支持多选:
-1-上传授权书方式
-2- 法人授权方式
-3- 法人身份认证方式
+
+<ul>
+<li><strong>1</strong>:上传授权书方式</li>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>3</strong>: 法人身份认证方式</li>
+</ul>
                      * @return AuthorizationTypes 指定授权方式 支持多选:
-1-上传授权书方式
-2- 法人授权方式
-3- 法人身份认证方式
+
+<ul>
+<li><strong>1</strong>:上传授权书方式</li>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>3</strong>: 法人身份认证方式</li>
+</ul>
                      * 
                      */
                     std::vector<uint64_t> GetAuthorizationTypes() const;
 
                     /**
                      * 设置指定授权方式 支持多选:
-1-上传授权书方式
-2- 法人授权方式
-3- 法人身份认证方式
+
+<ul>
+<li><strong>1</strong>:上传授权书方式</li>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>3</strong>: 法人身份认证方式</li>
+</ul>
                      * @param _authorizationTypes 指定授权方式 支持多选:
-1-上传授权书方式
-2- 法人授权方式
-3- 法人身份认证方式
+
+<ul>
+<li><strong>1</strong>:上传授权书方式</li>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>3</strong>: 法人身份认证方式</li>
+</ul>
                      * 
                      */
                     void SetAuthorizationTypes(const std::vector<uint64_t>& _authorizationTypes);
@@ -98,22 +110,42 @@ namespace TencentCloud
                     bool AuthorizationTypesHasBeenSet() const;
 
                     /**
-                     * 获取企业名称
-EndPointType=“H5”或者"SHORT_H5"时，该参数必填
+                     * 获取认证企业名称，请确认该名称与企业营业执照中注册的名称一致。
 
-                     * @return OrganizationName 企业名称
-EndPointType=“H5”或者"SHORT_H5"时，该参数必填
+注：
+
+1. `如果名称中包含英文括号()，请使用中文括号（）代替。`
+
+2. `EndPointType=“H5”或者"SHORT_H5"时，该参数必填`
+
+                     * @return OrganizationName 认证企业名称，请确认该名称与企业营业执照中注册的名称一致。
+
+注：
+
+1. `如果名称中包含英文括号()，请使用中文括号（）代替。`
+
+2. `EndPointType=“H5”或者"SHORT_H5"时，该参数必填`
 
                      * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置企业名称
-EndPointType=“H5”或者"SHORT_H5"时，该参数必填
+                     * 设置认证企业名称，请确认该名称与企业营业执照中注册的名称一致。
 
-                     * @param _organizationName 企业名称
-EndPointType=“H5”或者"SHORT_H5"时，该参数必填
+注：
+
+1. `如果名称中包含英文括号()，请使用中文括号（）代替。`
+
+2. `EndPointType=“H5”或者"SHORT_H5"时，该参数必填`
+
+                     * @param _organizationName 认证企业名称，请确认该名称与企业营业执照中注册的名称一致。
+
+注：
+
+1. `如果名称中包含英文括号()，请使用中文括号（）代替。`
+
+2. `EndPointType=“H5”或者"SHORT_H5"时，该参数必填`
 
                      * 
                      */
@@ -148,15 +180,15 @@ EndPointType=“H5”或者"SHORT_H5"时，该参数必填
                     bool UniformSocialCreditCodeHasBeenSet() const;
 
                     /**
-                     * 获取法人姓名
-                     * @return LegalName 法人姓名
+                     * 获取企业法人的姓名
+                     * @return LegalName 企业法人的姓名
                      * 
                      */
                     std::string GetLegalName() const;
 
                     /**
-                     * 设置法人姓名
-                     * @param _legalName 法人姓名
+                     * 设置企业法人的姓名
+                     * @param _legalName 企业法人的姓名
                      * 
                      */
                     void SetLegalName(const std::string& _legalName);
@@ -169,15 +201,15 @@ EndPointType=“H5”或者"SHORT_H5"时，该参数必填
                     bool LegalNameHasBeenSet() const;
 
                     /**
-                     * 获取认证完成跳转链接
-                     * @return AutoJumpUrl 认证完成跳转链接
+                     * 获取认证完成跳回的链接，最长500个字符
+                     * @return AutoJumpUrl 认证完成跳回的链接，最长500个字符
                      * 
                      */
                     std::string GetAutoJumpUrl() const;
 
                     /**
-                     * 设置认证完成跳转链接
-                     * @param _autoJumpUrl 认证完成跳转链接
+                     * 设置认证完成跳回的链接，最长500个字符
+                     * @param _autoJumpUrl 认证完成跳回的链接，最长500个字符
                      * 
                      */
                     void SetAutoJumpUrl(const std::string& _autoJumpUrl);
@@ -191,18 +223,14 @@ EndPointType=“H5”或者"SHORT_H5"时，该参数必填
 
                     /**
                      * 获取营业执照企业地址
-示例：xx省xx市xx县/区xx街道
                      * @return OrganizationAddress 营业执照企业地址
-示例：xx省xx市xx县/区xx街道
                      * 
                      */
                     std::string GetOrganizationAddress() const;
 
                     /**
                      * 设置营业执照企业地址
-示例：xx省xx市xx县/区xx街道
                      * @param _organizationAddress 营业执照企业地址
-示例：xx省xx市xx县/区xx街道
                      * 
                      */
                     void SetOrganizationAddress(const std::string& _organizationAddress);
@@ -278,34 +306,30 @@ EndPointType=“H5”或者"SHORT_H5"时，该参数必填
                     bool AdminIdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取认证人证件类型
-支持以下类型
-<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+                     * 获取认证人证件类型， 支持以下类型
+<ul><li><b>ID_CARD</b> : 中国大陆居民身份证  (默认值)</li>
+<li><b>HONGKONG_AND_MACAO</b>  : 港澳居民来往内地通行证</li>
+<li><b>HONGKONG_MACAO_AND_TAIWAN</b>  : 港澳台居民居住证(格式同居民身份证)</li></ul>
 
-                     * @return AdminIdCardType 认证人证件类型
-支持以下类型
-<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+                     * @return AdminIdCardType 认证人证件类型， 支持以下类型
+<ul><li><b>ID_CARD</b> : 中国大陆居民身份证  (默认值)</li>
+<li><b>HONGKONG_AND_MACAO</b>  : 港澳居民来往内地通行证</li>
+<li><b>HONGKONG_MACAO_AND_TAIWAN</b>  : 港澳台居民居住证(格式同居民身份证)</li></ul>
 
                      * 
                      */
                     std::string GetAdminIdCardType() const;
 
                     /**
-                     * 设置认证人证件类型
-支持以下类型
-<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+                     * 设置认证人证件类型， 支持以下类型
+<ul><li><b>ID_CARD</b> : 中国大陆居民身份证  (默认值)</li>
+<li><b>HONGKONG_AND_MACAO</b>  : 港澳居民来往内地通行证</li>
+<li><b>HONGKONG_MACAO_AND_TAIWAN</b>  : 港澳台居民居住证(格式同居民身份证)</li></ul>
 
-                     * @param _adminIdCardType 认证人证件类型
-支持以下类型
-<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+                     * @param _adminIdCardType 认证人证件类型， 支持以下类型
+<ul><li><b>ID_CARD</b> : 中国大陆居民身份证  (默认值)</li>
+<li><b>HONGKONG_AND_MACAO</b>  : 港澳居民来往内地通行证</li>
+<li><b>HONGKONG_MACAO_AND_TAIWAN</b>  : 港澳台居民居住证(格式同居民身份证)</li></ul>
 
                      * 
                      */
@@ -319,23 +343,15 @@ EndPointType=“H5”或者"SHORT_H5"时，该参数必填
                     bool AdminIdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取营业执照的社会信用代码保持一致
-false 关闭-默认
-true 开启
-                     * @return UniformSocialCreditCodeSame 营业执照的社会信用代码保持一致
-false 关闭-默认
-true 开启
+                     * 获取对方打开链接认证时，对方填写的营业执照的社会信用代码是否与接口上传上来的要保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+                     * @return UniformSocialCreditCodeSame 对方打开链接认证时，对方填写的营业执照的社会信用代码是否与接口上传上来的要保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
                      * 
                      */
                     bool GetUniformSocialCreditCodeSame() const;
 
                     /**
-                     * 设置营业执照的社会信用代码保持一致
-false 关闭-默认
-true 开启
-                     * @param _uniformSocialCreditCodeSame 营业执照的社会信用代码保持一致
-false 关闭-默认
-true 开启
+                     * 设置对方打开链接认证时，对方填写的营业执照的社会信用代码是否与接口上传上来的要保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+                     * @param _uniformSocialCreditCodeSame 对方打开链接认证时，对方填写的营业执照的社会信用代码是否与接口上传上来的要保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
                      * 
                      */
                     void SetUniformSocialCreditCodeSame(const bool& _uniformSocialCreditCodeSame);
@@ -348,23 +364,15 @@ true 开启
                     bool UniformSocialCreditCodeSameHasBeenSet() const;
 
                     /**
-                     * 获取法人姓名保持一致
-false 关闭-默认
-true 开启
-                     * @return LegalNameSame 法人姓名保持一致
-false 关闭-默认
-true 开启
+                     * 获取对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+                     * @return LegalNameSame 对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
                      * 
                      */
                     bool GetLegalNameSame() const;
 
                     /**
-                     * 设置法人姓名保持一致
-false 关闭-默认
-true 开启
-                     * @param _legalNameSame 法人姓名保持一致
-false 关闭-默认
-true 开启
+                     * 设置对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+                     * @param _legalNameSame 对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
                      * 
                      */
                     void SetLegalNameSame(const bool& _legalNameSame);
@@ -377,31 +385,15 @@ true 开启
                     bool LegalNameSameHasBeenSet() const;
 
                     /**
-                     * 获取认证人姓名一致
-false 关闭-默认
-true 开启
-注意：
-开启后在认证过程前会校验拦截
-                     * @return AdminNameSame 认证人姓名一致
-false 关闭-默认
-true 开启
-注意：
-开启后在认证过程前会校验拦截
+                     * 获取对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+                     * @return AdminNameSame 对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
                      * 
                      */
                     bool GetAdminNameSame() const;
 
                     /**
-                     * 设置认证人姓名一致
-false 关闭-默认
-true 开启
-注意：
-开启后在认证过程前会校验拦截
-                     * @param _adminNameSame 认证人姓名一致
-false 关闭-默认
-true 开启
-注意：
-开启后在认证过程前会校验拦截
+                     * 设置对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+                     * @param _adminNameSame 对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
                      * 
                      */
                     void SetAdminNameSame(const bool& _adminNameSame);
@@ -414,31 +406,15 @@ true 开启
                     bool AdminNameSameHasBeenSet() const;
 
                     /**
-                     * 获取认证人居民身份证件号一致
-false 关闭-默认
-true 开启
-注意：
-开启后在认证过程前会校验拦截
-                     * @return AdminIdCardNumberSame 认证人居民身份证件号一致
-false 关闭-默认
-true 开启
-注意：
-开启后在认证过程前会校验拦截
+                     * 获取对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+                     * @return AdminIdCardNumberSame 对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
                      * 
                      */
                     bool GetAdminIdCardNumberSame() const;
 
                     /**
-                     * 设置认证人居民身份证件号一致
-false 关闭-默认
-true 开启
-注意：
-开启后在认证过程前会校验拦截
-                     * @param _adminIdCardNumberSame 认证人居民身份证件号一致
-false 关闭-默认
-true 开启
-注意：
-开启后在认证过程前会校验拦截
+                     * 设置对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+                     * @param _adminIdCardNumberSame 对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
                      * 
                      */
                     void SetAdminIdCardNumberSame(const bool& _adminIdCardNumberSame);
@@ -451,31 +427,27 @@ true 开启
                     bool AdminIdCardNumberSameHasBeenSet() const;
 
                     /**
-                     * 获取认证人手机号一致
-false 关闭-默认
-true 开启
-注意：
-开启后在认证过程前会校验拦截
-                     * @return AdminMobileSame 认证人手机号一致
-false 关闭-默认
-true 开启
-注意：
-开启后在认证过程前会校验拦截
+                     * 获取对方打开链接认证时，认证人手机号是否要与接口传递上来的保持一致。<ul>
+<li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>
+<li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>
+</ul>
+                     * @return AdminMobileSame 对方打开链接认证时，认证人手机号是否要与接口传递上来的保持一致。<ul>
+<li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>
+<li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>
+</ul>
                      * 
                      */
                     bool GetAdminMobileSame() const;
 
                     /**
-                     * 设置认证人手机号一致
-false 关闭-默认
-true 开启
-注意：
-开启后在认证过程前会校验拦截
-                     * @param _adminMobileSame 认证人手机号一致
-false 关闭-默认
-true 开启
-注意：
-开启后在认证过程前会校验拦截
+                     * 设置对方打开链接认证时，认证人手机号是否要与接口传递上来的保持一致。<ul>
+<li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>
+<li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>
+</ul>
+                     * @param _adminMobileSame 对方打开链接认证时，认证人手机号是否要与接口传递上来的保持一致。<ul>
+<li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>
+<li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>
+</ul>
                      * 
                      */
                     void SetAdminMobileSame(const bool& _adminMobileSame);
@@ -488,23 +460,15 @@ true 开启
                     bool AdminMobileSameHasBeenSet() const;
 
                     /**
-                     * 获取企业名称保持一致
-false 关闭-默认
-true 开启
-                     * @return OrganizationNameSame 企业名称保持一致
-false 关闭-默认
-true 开启
+                     * 获取对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+                     * @return OrganizationNameSame 对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
                      * 
                      */
                     bool GetOrganizationNameSame() const;
 
                     /**
-                     * 设置企业名称保持一致
-false 关闭-默认
-true 开启
-                     * @param _organizationNameSame 企业名称保持一致
-false 关闭-默认
-true 开启
+                     * 设置对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+                     * @param _organizationNameSame 对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
                      * 
                      */
                     void SetOrganizationNameSame(const bool& _organizationNameSame);
@@ -517,15 +481,15 @@ true 开启
                     bool OrganizationNameSameHasBeenSet() const;
 
                     /**
-                     * 获取营业执照正面照(PNG或JPG) base64格式, 大小不超过5M
-                     * @return BusinessLicense 营业执照正面照(PNG或JPG) base64格式, 大小不超过5M
+                     * 获取营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。
+                     * @return BusinessLicense 营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。
                      * 
                      */
                     std::string GetBusinessLicense() const;
 
                     /**
-                     * 设置营业执照正面照(PNG或JPG) base64格式, 大小不超过5M
-                     * @param _businessLicense 营业执照正面照(PNG或JPG) base64格式, 大小不超过5M
+                     * 设置营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。
+                     * @param _businessLicense 营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。
                      * 
                      */
                     void SetBusinessLicense(const std::string& _businessLicense);
@@ -539,30 +503,50 @@ true 开启
 
                     /**
                      * 获取跳转链接类型：
-"PC"-PC端认证链接 
-"APP"-全屏或半屏跳转小程序链接
-“H5”-H5页面认证链接 "SHORT_H5"- H5认证短链
-"SHORT_URL"- 跳转小程序短链	
+
+<ul>
+<li><b>PC</b>：适用于PC端的认证链接</li>
+<li><b>APP</b>：用于全屏或半屏跳转的小程序链接</li>
+<li><b>SHORT_URL</b>：跳转小程序的链接的短链形式</li>
+<li><b>H5</b>：适用于H5页面的认证链接</li>
+<li><b>SHORT_H5</b>：H5认证链接的短链形式</li>
+</ul>
+
                      * @return Endpoint 跳转链接类型：
-"PC"-PC端认证链接 
-"APP"-全屏或半屏跳转小程序链接
-“H5”-H5页面认证链接 "SHORT_H5"- H5认证短链
-"SHORT_URL"- 跳转小程序短链	
+
+<ul>
+<li><b>PC</b>：适用于PC端的认证链接</li>
+<li><b>APP</b>：用于全屏或半屏跳转的小程序链接</li>
+<li><b>SHORT_URL</b>：跳转小程序的链接的短链形式</li>
+<li><b>H5</b>：适用于H5页面的认证链接</li>
+<li><b>SHORT_H5</b>：H5认证链接的短链形式</li>
+</ul>
+
                      * 
                      */
                     std::string GetEndpoint() const;
 
                     /**
                      * 设置跳转链接类型：
-"PC"-PC端认证链接 
-"APP"-全屏或半屏跳转小程序链接
-“H5”-H5页面认证链接 "SHORT_H5"- H5认证短链
-"SHORT_URL"- 跳转小程序短链	
+
+<ul>
+<li><b>PC</b>：适用于PC端的认证链接</li>
+<li><b>APP</b>：用于全屏或半屏跳转的小程序链接</li>
+<li><b>SHORT_URL</b>：跳转小程序的链接的短链形式</li>
+<li><b>H5</b>：适用于H5页面的认证链接</li>
+<li><b>SHORT_H5</b>：H5认证链接的短链形式</li>
+</ul>
+
                      * @param _endpoint 跳转链接类型：
-"PC"-PC端认证链接 
-"APP"-全屏或半屏跳转小程序链接
-“H5”-H5页面认证链接 "SHORT_H5"- H5认证短链
-"SHORT_URL"- 跳转小程序短链	
+
+<ul>
+<li><b>PC</b>：适用于PC端的认证链接</li>
+<li><b>APP</b>：用于全屏或半屏跳转的小程序链接</li>
+<li><b>SHORT_URL</b>：跳转小程序的链接的短链形式</li>
+<li><b>H5</b>：适用于H5页面的认证链接</li>
+<li><b>SHORT_H5</b>：H5认证链接的短链形式</li>
+</ul>
+
                      * 
                      */
                     void SetEndpoint(const std::string& _endpoint);
@@ -584,16 +568,24 @@ true 开启
 
                     /**
                      * 指定授权方式 支持多选:
-1-上传授权书方式
-2- 法人授权方式
-3- 法人身份认证方式
+
+<ul>
+<li><strong>1</strong>:上传授权书方式</li>
+<li><strong>2</strong>: 法人授权方式</li>
+<li><strong>3</strong>: 法人身份认证方式</li>
+</ul>
                      */
                     std::vector<uint64_t> m_authorizationTypes;
                     bool m_authorizationTypesHasBeenSet;
 
                     /**
-                     * 企业名称
-EndPointType=“H5”或者"SHORT_H5"时，该参数必填
+                     * 认证企业名称，请确认该名称与企业营业执照中注册的名称一致。
+
+注：
+
+1. `如果名称中包含英文括号()，请使用中文括号（）代替。`
+
+2. `EndPointType=“H5”或者"SHORT_H5"时，该参数必填`
 
                      */
                     std::string m_organizationName;
@@ -606,20 +598,19 @@ EndPointType=“H5”或者"SHORT_H5"时，该参数必填
                     bool m_uniformSocialCreditCodeHasBeenSet;
 
                     /**
-                     * 法人姓名
+                     * 企业法人的姓名
                      */
                     std::string m_legalName;
                     bool m_legalNameHasBeenSet;
 
                     /**
-                     * 认证完成跳转链接
+                     * 认证完成跳回的链接，最长500个字符
                      */
                     std::string m_autoJumpUrl;
                     bool m_autoJumpUrlHasBeenSet;
 
                     /**
                      * 营业执照企业地址
-示例：xx省xx市xx县/区xx街道
                      */
                     std::string m_organizationAddress;
                     bool m_organizationAddressHasBeenSet;
@@ -643,82 +634,71 @@ EndPointType=“H5”或者"SHORT_H5"时，该参数必填
                     bool m_adminIdCardNumberHasBeenSet;
 
                     /**
-                     * 认证人证件类型
-支持以下类型
-<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
-<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
-<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+                     * 认证人证件类型， 支持以下类型
+<ul><li><b>ID_CARD</b> : 中国大陆居民身份证  (默认值)</li>
+<li><b>HONGKONG_AND_MACAO</b>  : 港澳居民来往内地通行证</li>
+<li><b>HONGKONG_MACAO_AND_TAIWAN</b>  : 港澳台居民居住证(格式同居民身份证)</li></ul>
 
                      */
                     std::string m_adminIdCardType;
                     bool m_adminIdCardTypeHasBeenSet;
 
                     /**
-                     * 营业执照的社会信用代码保持一致
-false 关闭-默认
-true 开启
+                     * 对方打开链接认证时，对方填写的营业执照的社会信用代码是否与接口上传上来的要保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
                      */
                     bool m_uniformSocialCreditCodeSame;
                     bool m_uniformSocialCreditCodeSameHasBeenSet;
 
                     /**
-                     * 法人姓名保持一致
-false 关闭-默认
-true 开启
+                     * 对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
                      */
                     bool m_legalNameSame;
                     bool m_legalNameSameHasBeenSet;
 
                     /**
-                     * 认证人姓名一致
-false 关闭-默认
-true 开启
-注意：
-开启后在认证过程前会校验拦截
+                     * 对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
                      */
                     bool m_adminNameSame;
                     bool m_adminNameSameHasBeenSet;
 
                     /**
-                     * 认证人居民身份证件号一致
-false 关闭-默认
-true 开启
-注意：
-开启后在认证过程前会校验拦截
+                     * 对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
                      */
                     bool m_adminIdCardNumberSame;
                     bool m_adminIdCardNumberSameHasBeenSet;
 
                     /**
-                     * 认证人手机号一致
-false 关闭-默认
-true 开启
-注意：
-开启后在认证过程前会校验拦截
+                     * 对方打开链接认证时，认证人手机号是否要与接口传递上来的保持一致。<ul>
+<li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>
+<li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>
+</ul>
                      */
                     bool m_adminMobileSame;
                     bool m_adminMobileSameHasBeenSet;
 
                     /**
-                     * 企业名称保持一致
-false 关闭-默认
-true 开启
+                     * 对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
                      */
                     bool m_organizationNameSame;
                     bool m_organizationNameSameHasBeenSet;
 
                     /**
-                     * 营业执照正面照(PNG或JPG) base64格式, 大小不超过5M
+                     * 营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。
                      */
                     std::string m_businessLicense;
                     bool m_businessLicenseHasBeenSet;
 
                     /**
                      * 跳转链接类型：
-"PC"-PC端认证链接 
-"APP"-全屏或半屏跳转小程序链接
-“H5”-H5页面认证链接 "SHORT_H5"- H5认证短链
-"SHORT_URL"- 跳转小程序短链	
+
+<ul>
+<li><b>PC</b>：适用于PC端的认证链接</li>
+<li><b>APP</b>：用于全屏或半屏跳转的小程序链接</li>
+<li><b>SHORT_URL</b>：跳转小程序的链接的短链形式</li>
+<li><b>H5</b>：适用于H5页面的认证链接</li>
+<li><b>SHORT_H5</b>：H5认证链接的短链形式</li>
+</ul>
+
                      */
                     std::string m_endpoint;
                     bool m_endpointHasBeenSet;

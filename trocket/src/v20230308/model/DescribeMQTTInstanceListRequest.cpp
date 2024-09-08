@@ -25,7 +25,8 @@ using namespace std;
 DescribeMQTTInstanceListRequest::DescribeMQTTInstanceListRequest() :
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_includeNewHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string DescribeMQTTInstanceListRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_includeNewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeNew";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_includeNew, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void DescribeMQTTInstanceListRequest::SetLimit(const int64_t& _limit)
 bool DescribeMQTTInstanceListRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+bool DescribeMQTTInstanceListRequest::GetIncludeNew() const
+{
+    return m_includeNew;
+}
+
+void DescribeMQTTInstanceListRequest::SetIncludeNew(const bool& _includeNew)
+{
+    m_includeNew = _includeNew;
+    m_includeNewHasBeenSet = true;
+}
+
+bool DescribeMQTTInstanceListRequest::IncludeNewHasBeenSet() const
+{
+    return m_includeNewHasBeenSet;
 }
 
 

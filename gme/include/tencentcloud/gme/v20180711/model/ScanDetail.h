@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool KeyWordHasBeenSet() const;
 
                     /**
-                     * 获取关键字在音频的开始时间，从0开始的偏移量，单位为毫秒
-                     * @return StartTime 关键字在音频的开始时间，从0开始的偏移量，单位为毫秒
+                     * 获取关键字在音频的开始时间，从0开始的偏移量，单位为毫秒，Label=moan时有效
+                     * @return StartTime 关键字在音频的开始时间，从0开始的偏移量，单位为毫秒，Label=moan时有效
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置关键字在音频的开始时间，从0开始的偏移量，单位为毫秒
-                     * @param _startTime 关键字在音频的开始时间，从0开始的偏移量，单位为毫秒
+                     * 设置关键字在音频的开始时间，从0开始的偏移量，单位为毫秒，Label=moan时有效
+                     * @param _startTime 关键字在音频的开始时间，从0开始的偏移量，单位为毫秒，Label=moan时有效
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取关键字在音频的结束时间，从0开始的偏移量,，单位为毫秒
-                     * @return EndTime 关键字在音频的结束时间，从0开始的偏移量,，单位为毫秒
+                     * 获取关键字在音频的结束时间，从0开始的偏移量,，单位为毫秒，Label=moan时有效
+                     * @return EndTime 关键字在音频的结束时间，从0开始的偏移量,，单位为毫秒，Label=moan时有效
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置关键字在音频的结束时间，从0开始的偏移量,，单位为毫秒
-                     * @param _endTime 关键字在音频的结束时间，从0开始的偏移量,，单位为毫秒
+                     * 设置关键字在音频的结束时间，从0开始的偏移量,，单位为毫秒，Label=moan时有效
+                     * @param _endTime 关键字在音频的结束时间，从0开始的偏移量,，单位为毫秒，Label=moan时有效
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -172,13 +172,13 @@ namespace TencentCloud
                     bool m_keyWordHasBeenSet;
 
                     /**
-                     * 关键字在音频的开始时间，从0开始的偏移量，单位为毫秒
+                     * 关键字在音频的开始时间，从0开始的偏移量，单位为毫秒，Label=moan时有效
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 关键字在音频的结束时间，从0开始的偏移量,，单位为毫秒
+                     * 关键字在音频的结束时间，从0开始的偏移量,，单位为毫秒，Label=moan时有效
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;

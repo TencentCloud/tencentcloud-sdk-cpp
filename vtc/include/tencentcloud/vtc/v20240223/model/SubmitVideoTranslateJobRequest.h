@@ -44,14 +44,30 @@ namespace TencentCloud
 
                     /**
                      * 获取视频地址URL。
+格式要求：支持 mp4、mov 。
+时长要求：【10-300】秒。
+fps 要求：【15-60】fps
+分辨率要求：单边像素要求在 【540~1920】 之间。
                      * @return VideoUrl 视频地址URL。
+格式要求：支持 mp4、mov 。
+时长要求：【10-300】秒。
+fps 要求：【15-60】fps
+分辨率要求：单边像素要求在 【540~1920】 之间。
                      * 
                      */
                     std::string GetVideoUrl() const;
 
                     /**
                      * 设置视频地址URL。
+格式要求：支持 mp4、mov 。
+时长要求：【10-300】秒。
+fps 要求：【15-60】fps
+分辨率要求：单边像素要求在 【540~1920】 之间。
                      * @param _videoUrl 视频地址URL。
+格式要求：支持 mp4、mov 。
+时长要求：【10-300】秒。
+fps 要求：【15-60】fps
+分辨率要求：单边像素要求在 【540~1920】 之间。
                      * 
                      */
                     void SetVideoUrl(const std::string& _videoUrl);
@@ -64,15 +80,15 @@ namespace TencentCloud
                     bool VideoUrlHasBeenSet() const;
 
                     /**
-                     * 获取源语言：zh, en
-                     * @return SrcLang 源语言：zh, en
+                     * 获取源语言：zh(中文), en(英文)
+                     * @return SrcLang 源语言：zh(中文), en(英文)
                      * 
                      */
                     std::string GetSrcLang() const;
 
                     /**
-                     * 设置源语言：zh, en
-                     * @param _srcLang 源语言：zh, en
+                     * 设置源语言：zh(中文), en(英文)
+                     * @param _srcLang 源语言：zh(中文), en(英文)
                      * 
                      */
                     void SetSrcLang(const std::string& _srcLang);
@@ -85,15 +101,23 @@ namespace TencentCloud
                     bool SrcLangHasBeenSet() const;
 
                     /**
-                     * 获取目标语言：zh, en
-                     * @return DstLang 目标语言：zh, en
+                     * 获取目标语种：
+zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)
+示例值：ar(阿拉伯语)
+                     * @return DstLang 目标语种：
+zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)
+示例值：ar(阿拉伯语)
                      * 
                      */
                     std::string GetDstLang() const;
 
                     /**
-                     * 设置目标语言：zh, en
-                     * @param _dstLang 目标语言：zh, en
+                     * 设置目标语种：
+zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)
+示例值：ar(阿拉伯语)
+                     * @param _dstLang 目标语种：
+zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)
+示例值：ar(阿拉伯语)
                      * 
                      */
                     void SetDstLang(const std::string& _dstLang);
@@ -106,15 +130,31 @@ namespace TencentCloud
                     bool DstLangHasBeenSet() const;
 
                     /**
-                     * 获取当音频 URL 不为空时，默认以音频驱动视频任务口型
-                     * @return AudioUrl 当音频 URL 不为空时，默认以音频驱动视频任务口型
+                     * 获取当音频 URL 不为空时，默认以音频驱动视频任务口型。
+格式要求：支持 mp3、m4a、acc、wav 格式。
+时长要求：【10~300】秒
+大小要求：不超过 100M。
+示例值：http://xxx/audio.mp3
+                     * @return AudioUrl 当音频 URL 不为空时，默认以音频驱动视频任务口型。
+格式要求：支持 mp3、m4a、acc、wav 格式。
+时长要求：【10~300】秒
+大小要求：不超过 100M。
+示例值：http://xxx/audio.mp3
                      * 
                      */
                     std::string GetAudioUrl() const;
 
                     /**
-                     * 设置当音频 URL 不为空时，默认以音频驱动视频任务口型
-                     * @param _audioUrl 当音频 URL 不为空时，默认以音频驱动视频任务口型
+                     * 设置当音频 URL 不为空时，默认以音频驱动视频任务口型。
+格式要求：支持 mp3、m4a、acc、wav 格式。
+时长要求：【10~300】秒
+大小要求：不超过 100M。
+示例值：http://xxx/audio.mp3
+                     * @param _audioUrl 当音频 URL 不为空时，默认以音频驱动视频任务口型。
+格式要求：支持 mp3、m4a、acc、wav 格式。
+时长要求：【10~300】秒
+大小要求：不超过 100M。
+示例值：http://xxx/audio.mp3
                      * 
                      */
                     void SetAudioUrl(const std::string& _audioUrl);
@@ -169,15 +209,31 @@ namespace TencentCloud
                     bool LipSyncHasBeenSet() const;
 
                     /**
-                     * 获取音色 ID
-                     * @return VoiceType 音色 ID
+                     * 获取音色种别：一种音色种别对应一种不同区域的音色
+1）目标语种为小语种(非zh,en)时，该项为必填
+2）目标语种为zh,en时，该项为非必填，若填入，则对应填入的音色
+
+具体音色包含请见“支持音色种别列表”
+                     * @return VoiceType 音色种别：一种音色种别对应一种不同区域的音色
+1）目标语种为小语种(非zh,en)时，该项为必填
+2）目标语种为zh,en时，该项为非必填，若填入，则对应填入的音色
+
+具体音色包含请见“支持音色种别列表”
                      * 
                      */
                     std::string GetVoiceType() const;
 
                     /**
-                     * 设置音色 ID
-                     * @param _voiceType 音色 ID
+                     * 设置音色种别：一种音色种别对应一种不同区域的音色
+1）目标语种为小语种(非zh,en)时，该项为必填
+2）目标语种为zh,en时，该项为非必填，若填入，则对应填入的音色
+
+具体音色包含请见“支持音色种别列表”
+                     * @param _voiceType 音色种别：一种音色种别对应一种不同区域的音色
+1）目标语种为小语种(非zh,en)时，该项为必填
+2）目标语种为zh,en时，该项为非必填，若填入，则对应填入的音色
+
+具体音色包含请见“支持音色种别列表”
                      * 
                      */
                     void SetVoiceType(const std::string& _voiceType);
@@ -193,24 +249,34 @@ namespace TencentCloud
 
                     /**
                      * 视频地址URL。
+格式要求：支持 mp4、mov 。
+时长要求：【10-300】秒。
+fps 要求：【15-60】fps
+分辨率要求：单边像素要求在 【540~1920】 之间。
                      */
                     std::string m_videoUrl;
                     bool m_videoUrlHasBeenSet;
 
                     /**
-                     * 源语言：zh, en
+                     * 源语言：zh(中文), en(英文)
                      */
                     std::string m_srcLang;
                     bool m_srcLangHasBeenSet;
 
                     /**
-                     * 目标语言：zh, en
+                     * 目标语种：
+zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)
+示例值：ar(阿拉伯语)
                      */
                     std::string m_dstLang;
                     bool m_dstLangHasBeenSet;
 
                     /**
-                     * 当音频 URL 不为空时，默认以音频驱动视频任务口型
+                     * 当音频 URL 不为空时，默认以音频驱动视频任务口型。
+格式要求：支持 mp3、m4a、acc、wav 格式。
+时长要求：【10~300】秒
+大小要求：不超过 100M。
+示例值：http://xxx/audio.mp3
                      */
                     std::string m_audioUrl;
                     bool m_audioUrlHasBeenSet;
@@ -228,7 +294,11 @@ namespace TencentCloud
                     bool m_lipSyncHasBeenSet;
 
                     /**
-                     * 音色 ID
+                     * 音色种别：一种音色种别对应一种不同区域的音色
+1）目标语种为小语种(非zh,en)时，该项为必填
+2）目标语种为zh,en时，该项为非必填，若填入，则对应填入的音色
+
+具体音色包含请见“支持音色种别列表”
                      */
                     std::string m_voiceType;
                     bool m_voiceTypeHasBeenSet;
