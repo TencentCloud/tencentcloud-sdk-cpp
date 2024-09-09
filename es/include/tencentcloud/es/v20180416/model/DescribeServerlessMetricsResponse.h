@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/es/v20180416/model/MetricMapByIndexId.h>
 
 
 namespace TencentCloud
@@ -113,6 +114,22 @@ namespace TencentCloud
                      */
                     bool DocCountHasBeenSet() const;
 
+                    /**
+                     * 获取指标数据数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetricMapList 指标数据数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<MetricMapByIndexId> GetMetricMapList() const;
+
+                    /**
+                     * 判断参数 MetricMapList 是否已赋值
+                     * @return MetricMapList 是否已赋值
+                     * 
+                     */
+                    bool MetricMapListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +161,13 @@ namespace TencentCloud
                      */
                     int64_t m_docCount;
                     bool m_docCountHasBeenSet;
+
+                    /**
+                     * 指标数据数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<MetricMapByIndexId> m_metricMapList;
+                    bool m_metricMapListHasBeenSet;
 
                 };
             }

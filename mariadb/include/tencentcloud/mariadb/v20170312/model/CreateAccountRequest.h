@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取是否创建为只读账号，0：否:； 1：只读账号，该账号的sql请求优先选择备机执行，备机延迟时选择主机执行；2：只读账号，优先选择备机执行，备机延迟时操作报错；3：只读账号，优先选择备机执行，忽略备机延迟只读备机；
-                     * @return ReadOnly 是否创建为只读账号，0：否:； 1：只读账号，该账号的sql请求优先选择备机执行，备机延迟时选择主机执行；2：只读账号，优先选择备机执行，备机延迟时操作报错；3：只读账号，优先选择备机执行，忽略备机延迟只读备机；
+                     * 获取是否创建为只读账号，0：否； 1：只读账号，该账号的sql请求优先选择备机执行，备机延迟时选择主机执行；2：只读账号，优先选择备机执行，备机延迟时操作报错；3：只读账号，优先选择备机执行，忽略备机延迟只读备机；
+                     * @return ReadOnly 是否创建为只读账号，0：否； 1：只读账号，该账号的sql请求优先选择备机执行，备机延迟时选择主机执行；2：只读账号，优先选择备机执行，备机延迟时操作报错；3：只读账号，优先选择备机执行，忽略备机延迟只读备机；
                      * 
                      */
                     int64_t GetReadOnly() const;
 
                     /**
-                     * 设置是否创建为只读账号，0：否:； 1：只读账号，该账号的sql请求优先选择备机执行，备机延迟时选择主机执行；2：只读账号，优先选择备机执行，备机延迟时操作报错；3：只读账号，优先选择备机执行，忽略备机延迟只读备机；
-                     * @param _readOnly 是否创建为只读账号，0：否:； 1：只读账号，该账号的sql请求优先选择备机执行，备机延迟时选择主机执行；2：只读账号，优先选择备机执行，备机延迟时操作报错；3：只读账号，优先选择备机执行，忽略备机延迟只读备机；
+                     * 设置是否创建为只读账号，0：否； 1：只读账号，该账号的sql请求优先选择备机执行，备机延迟时选择主机执行；2：只读账号，优先选择备机执行，备机延迟时操作报错；3：只读账号，优先选择备机执行，忽略备机延迟只读备机；
+                     * @param _readOnly 是否创建为只读账号，0：否； 1：只读账号，该账号的sql请求优先选择备机执行，备机延迟时选择主机执行；2：只读账号，优先选择备机执行，备机延迟时操作报错；3：只读账号，优先选择备机执行，忽略备机延迟只读备机；
                      * 
                      */
                     void SetReadOnly(const int64_t& _readOnly);
@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool MaxUserConnectionsHasBeenSet() const;
 
+                    /**
+                     * 获取使用GetPublicKey返回的RSA2048公钥加密后的密码
+                     * @return EncryptedPassword 使用GetPublicKey返回的RSA2048公钥加密后的密码
+                     * 
+                     */
+                    std::string GetEncryptedPassword() const;
+
+                    /**
+                     * 设置使用GetPublicKey返回的RSA2048公钥加密后的密码
+                     * @param _encryptedPassword 使用GetPublicKey返回的RSA2048公钥加密后的密码
+                     * 
+                     */
+                    void SetEncryptedPassword(const std::string& _encryptedPassword);
+
+                    /**
+                     * 判断参数 EncryptedPassword 是否已赋值
+                     * @return EncryptedPassword 是否已赋值
+                     * 
+                     */
+                    bool EncryptedPasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -258,7 +279,7 @@ namespace TencentCloud
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 是否创建为只读账号，0：否:； 1：只读账号，该账号的sql请求优先选择备机执行，备机延迟时选择主机执行；2：只读账号，优先选择备机执行，备机延迟时操作报错；3：只读账号，优先选择备机执行，忽略备机延迟只读备机；
+                     * 是否创建为只读账号，0：否； 1：只读账号，该账号的sql请求优先选择备机执行，备机延迟时选择主机执行；2：只读账号，优先选择备机执行，备机延迟时操作报错；3：只读账号，优先选择备机执行，忽略备机延迟只读备机；
                      */
                     int64_t m_readOnly;
                     bool m_readOnlyHasBeenSet;
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     uint64_t m_maxUserConnections;
                     bool m_maxUserConnectionsHasBeenSet;
+
+                    /**
+                     * 使用GetPublicKey返回的RSA2048公钥加密后的密码
+                     */
+                    std::string m_encryptedPassword;
+                    bool m_encryptedPasswordHasBeenSet;
 
                 };
             }

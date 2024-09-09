@@ -115,6 +115,8 @@
 #include <tencentcloud/dlc/v20210125/model/DeleteScriptResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteSparkAppRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteSparkAppResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteTableRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteThirdPartyAccessUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteThirdPartyAccessUserResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteUserRequest.h>
@@ -269,6 +271,8 @@
 #include <tencentcloud/dlc/v20210125/model/ModifyUserTypeResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyWorkGroupRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyWorkGroupResponse.h>
+#include <tencentcloud/dlc/v20210125/model/QueryInternalTableWarehouseRequest.h>
+#include <tencentcloud/dlc/v20210125/model/QueryInternalTableWarehouseResponse.h>
 #include <tencentcloud/dlc/v20210125/model/QueryResultRequest.h>
 #include <tencentcloud/dlc/v20210125/model/QueryResultResponse.h>
 #include <tencentcloud/dlc/v20210125/model/QueryTaskCostDetailRequest.h>
@@ -457,6 +461,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSparkAppResponse> DeleteSparkAppOutcome;
                 typedef std::future<DeleteSparkAppOutcome> DeleteSparkAppOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteSparkAppRequest&, DeleteSparkAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSparkAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTableResponse> DeleteTableOutcome;
+                typedef std::future<DeleteTableOutcome> DeleteTableOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DeleteTableRequest&, DeleteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteThirdPartyAccessUserResponse> DeleteThirdPartyAccessUserOutcome;
                 typedef std::future<DeleteThirdPartyAccessUserOutcome> DeleteThirdPartyAccessUserOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteThirdPartyAccessUserRequest&, DeleteThirdPartyAccessUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteThirdPartyAccessUserAsyncHandler;
@@ -688,6 +695,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyWorkGroupResponse> ModifyWorkGroupOutcome;
                 typedef std::future<ModifyWorkGroupOutcome> ModifyWorkGroupOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifyWorkGroupRequest&, ModifyWorkGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryInternalTableWarehouseResponse> QueryInternalTableWarehouseOutcome;
+                typedef std::future<QueryInternalTableWarehouseOutcome> QueryInternalTableWarehouseOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::QueryInternalTableWarehouseRequest&, QueryInternalTableWarehouseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryInternalTableWarehouseAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryResultResponse> QueryResultOutcome;
                 typedef std::future<QueryResultOutcome> QueryResultOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::QueryResultRequest&, QueryResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryResultAsyncHandler;
@@ -1158,6 +1168,15 @@ namespace TencentCloud
                 DeleteSparkAppOutcome DeleteSparkApp(const Model::DeleteSparkAppRequest &request);
                 void DeleteSparkAppAsync(const Model::DeleteSparkAppRequest& request, const DeleteSparkAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSparkAppOutcomeCallable DeleteSparkAppCallable(const Model::DeleteSparkAppRequest& request);
+
+                /**
+                 *删除表
+                 * @param req DeleteTableRequest
+                 * @return DeleteTableOutcome
+                 */
+                DeleteTableOutcome DeleteTable(const Model::DeleteTableRequest &request);
+                void DeleteTableAsync(const Model::DeleteTableRequest& request, const DeleteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTableOutcomeCallable DeleteTableCallable(const Model::DeleteTableRequest& request);
 
                 /**
                  *本接口（RegisterThirdPartyAccessUser）用于移除第三方平台访问
@@ -1851,6 +1870,15 @@ namespace TencentCloud
                 ModifyWorkGroupOutcome ModifyWorkGroup(const Model::ModifyWorkGroupRequest &request);
                 void ModifyWorkGroupAsync(const Model::ModifyWorkGroupRequest& request, const ModifyWorkGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyWorkGroupOutcomeCallable ModifyWorkGroupCallable(const Model::ModifyWorkGroupRequest& request);
+
+                /**
+                 *本接口（QueryInternalTableWarehouse）用于获取原生表warehouse路径
+                 * @param req QueryInternalTableWarehouseRequest
+                 * @return QueryInternalTableWarehouseOutcome
+                 */
+                QueryInternalTableWarehouseOutcome QueryInternalTableWarehouse(const Model::QueryInternalTableWarehouseRequest &request);
+                void QueryInternalTableWarehouseAsync(const Model::QueryInternalTableWarehouseRequest& request, const QueryInternalTableWarehouseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryInternalTableWarehouseOutcomeCallable QueryInternalTableWarehouseCallable(const Model::QueryInternalTableWarehouseRequest& request);
 
                 /**
                  *获取任务结果查询

@@ -1072,6 +1072,49 @@ EmrClient::DescribeResourceScheduleOutcomeCallable EmrClient::DescribeResourceSc
     return task->get_future();
 }
 
+EmrClient::DescribeResourceScheduleDiffDetailOutcome EmrClient::DescribeResourceScheduleDiffDetail(const DescribeResourceScheduleDiffDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceScheduleDiffDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceScheduleDiffDetailResponse rsp = DescribeResourceScheduleDiffDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceScheduleDiffDetailOutcome(rsp);
+        else
+            return DescribeResourceScheduleDiffDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceScheduleDiffDetailOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeResourceScheduleDiffDetailAsync(const DescribeResourceScheduleDiffDetailRequest& request, const DescribeResourceScheduleDiffDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceScheduleDiffDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeResourceScheduleDiffDetailOutcomeCallable EmrClient::DescribeResourceScheduleDiffDetailCallable(const DescribeResourceScheduleDiffDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceScheduleDiffDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceScheduleDiffDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeServiceNodeInfosOutcome EmrClient::DescribeServiceNodeInfos(const DescribeServiceNodeInfosRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeServiceNodeInfos");

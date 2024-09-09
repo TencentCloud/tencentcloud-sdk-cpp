@@ -2018,6 +2018,49 @@ DlcClient::DeleteSparkAppOutcomeCallable DlcClient::DeleteSparkAppCallable(const
     return task->get_future();
 }
 
+DlcClient::DeleteTableOutcome DlcClient::DeleteTable(const DeleteTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTableResponse rsp = DeleteTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTableOutcome(rsp);
+        else
+            return DeleteTableOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTableOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DeleteTableOutcomeCallable DlcClient::DeleteTableCallable(const DeleteTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTableOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DeleteThirdPartyAccessUserOutcome DlcClient::DeleteThirdPartyAccessUser(const DeleteThirdPartyAccessUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteThirdPartyAccessUser");
@@ -5322,6 +5365,49 @@ DlcClient::ModifyWorkGroupOutcomeCallable DlcClient::ModifyWorkGroupCallable(con
         [this, request]()
         {
             return this->ModifyWorkGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::QueryInternalTableWarehouseOutcome DlcClient::QueryInternalTableWarehouse(const QueryInternalTableWarehouseRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryInternalTableWarehouse");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryInternalTableWarehouseResponse rsp = QueryInternalTableWarehouseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryInternalTableWarehouseOutcome(rsp);
+        else
+            return QueryInternalTableWarehouseOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryInternalTableWarehouseOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::QueryInternalTableWarehouseAsync(const QueryInternalTableWarehouseRequest& request, const QueryInternalTableWarehouseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryInternalTableWarehouse(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::QueryInternalTableWarehouseOutcomeCallable DlcClient::QueryInternalTableWarehouseCallable(const QueryInternalTableWarehouseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryInternalTableWarehouseOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryInternalTableWarehouse(request);
         }
     );
 

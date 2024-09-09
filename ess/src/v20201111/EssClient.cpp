@@ -3050,6 +3050,49 @@ EssClient::DescribeIntegrationRolesOutcomeCallable EssClient::DescribeIntegratio
     return task->get_future();
 }
 
+EssClient::DescribeOrganizationAuthStatusOutcome EssClient::DescribeOrganizationAuthStatus(const DescribeOrganizationAuthStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrganizationAuthStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrganizationAuthStatusResponse rsp = DescribeOrganizationAuthStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrganizationAuthStatusOutcome(rsp);
+        else
+            return DescribeOrganizationAuthStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrganizationAuthStatusOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeOrganizationAuthStatusAsync(const DescribeOrganizationAuthStatusRequest& request, const DescribeOrganizationAuthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrganizationAuthStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeOrganizationAuthStatusOutcomeCallable EssClient::DescribeOrganizationAuthStatusCallable(const DescribeOrganizationAuthStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrganizationAuthStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrganizationAuthStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DescribeOrganizationGroupOrganizationsOutcome EssClient::DescribeOrganizationGroupOrganizations(const DescribeOrganizationGroupOrganizationsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrganizationGroupOrganizations");

@@ -123,27 +123,6 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取请求路径
-                     * @return Path 请求路径
-                     * 
-                     */
-                    std::string GetPath() const;
-
-                    /**
-                     * 设置请求路径
-                     * @param _path 请求路径
-                     * 
-                     */
-                    void SetPath(const std::string& _path);
-
-                    /**
-                     * 判断参数 Path 是否已赋值
-                     * @return Path 是否已赋值
-                     * 
-                     */
-                    bool PathHasBeenSet() const;
-
-                    /**
                      * 获取超时时间，单位ms
                      * @return Timeout 超时时间，单位ms
                      * 
@@ -268,6 +247,27 @@ namespace TencentCloud
                      */
                     bool IDHasBeenSet() const;
 
+                    /**
+                     * 获取请求路径
+                     * @return Path 请求路径
+                     * 
+                     */
+                    std::string GetPath() const;
+
+                    /**
+                     * 设置请求路径
+                     * @param _path 请求路径
+                     * 
+                     */
+                    void SetPath(const std::string& _path);
+
+                    /**
+                     * 判断参数 Path 是否已赋值
+                     * @return Path 是否已赋值
+                     * 
+                     */
+                    bool PathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,12 +291,6 @@ namespace TencentCloud
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
-
-                    /**
-                     * 请求路径
-                     */
-                    std::string m_path;
-                    bool m_pathHasBeenSet;
 
                     /**
                      * 超时时间，单位ms
@@ -332,6 +326,12 @@ namespace TencentCloud
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
+
+                    /**
+                     * 请求路径
+                     */
+                    std::string m_path;
+                    bool m_pathHasBeenSet;
 
                 };
             }

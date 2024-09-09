@@ -31,7 +31,8 @@ CreateAccountRequest::CreateAccountRequest() :
     m_descriptionHasBeenSet(false),
     m_delayThreshHasBeenSet(false),
     m_slaveConstHasBeenSet(false),
-    m_maxUserConnectionsHasBeenSet(false)
+    m_maxUserConnectionsHasBeenSet(false),
+    m_encryptedPasswordHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string CreateAccountRequest::ToJsonString() const
         string key = "MaxUserConnections";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxUserConnections, allocator);
+    }
+
+    if (m_encryptedPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptedPassword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptedPassword.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void CreateAccountRequest::SetMaxUserConnections(const uint64_t& _maxUserConnect
 bool CreateAccountRequest::MaxUserConnectionsHasBeenSet() const
 {
     return m_maxUserConnectionsHasBeenSet;
+}
+
+string CreateAccountRequest::GetEncryptedPassword() const
+{
+    return m_encryptedPassword;
+}
+
+void CreateAccountRequest::SetEncryptedPassword(const string& _encryptedPassword)
+{
+    m_encryptedPassword = _encryptedPassword;
+    m_encryptedPasswordHasBeenSet = true;
+}
+
+bool CreateAccountRequest::EncryptedPasswordHasBeenSet() const
+{
+    return m_encryptedPasswordHasBeenSet;
 }
 
 

@@ -22,7 +22,8 @@ using namespace std;
 
 STTConfig::STTConfig() :
     m_languageHasBeenSet(false),
-    m_alternativeLanguageHasBeenSet(false)
+    m_alternativeLanguageHasBeenSet(false),
+    m_vadSilenceTimeHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,16 @@ CoreInternalOutcome STTConfig::Deserialize(const rapidjson::Value &value)
         m_alternativeLanguageHasBeenSet = true;
     }
 
+    if (value.HasMember("VadSilenceTime") && !value["VadSilenceTime"].IsNull())
+    {
+        if (!value["VadSilenceTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `STTConfig.VadSilenceTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vadSilenceTime = value["VadSilenceTime"].GetUint64();
+        m_vadSilenceTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void STTConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_vadSilenceTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VadSilenceTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vadSilenceTime, allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void STTConfig::SetAlternativeLanguage(const vector<string>& _alternativeLanguag
 bool STTConfig::AlternativeLanguageHasBeenSet() const
 {
     return m_alternativeLanguageHasBeenSet;
+}
+
+uint64_t STTConfig::GetVadSilenceTime() const
+{
+    return m_vadSilenceTime;
+}
+
+void STTConfig::SetVadSilenceTime(const uint64_t& _vadSilenceTime)
+{
+    m_vadSilenceTime = _vadSilenceTime;
+    m_vadSilenceTimeHasBeenSet = true;
+}
+
+bool STTConfig::VadSilenceTimeHasBeenSet() const
+{
+    return m_vadSilenceTimeHasBeenSet;
 }
 

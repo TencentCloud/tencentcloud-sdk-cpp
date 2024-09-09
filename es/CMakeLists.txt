@@ -36,7 +36,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/DeleteLogstashPipelinesResponse.h
   include/tencentcloud/es/v20180416/model/TagInfo.h
   include/tencentcloud/es/v20180416/model/KeyValue.h
-  include/tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsResponse.h
+  include/tencentcloud/es/v20180416/model/MetricMapByIndexId.h
   include/tencentcloud/es/v20180416/model/UpdateLogstashPipelineDescResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstancesResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceLogsResponse.h
@@ -59,6 +59,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/ServerlessSpace.h
   include/tencentcloud/es/v20180416/model/SubTaskDetail.h
   include/tencentcloud/es/v20180416/model/CheckMigrateIndexMetaDataResponse.h
+  include/tencentcloud/es/v20180416/model/MetricAllData.h
   include/tencentcloud/es/v20180416/model/EsConfigSetInfo.h
   include/tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesResponse.h
   include/tencentcloud/es/v20180416/model/Operation.h
@@ -91,6 +92,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/CreateIndexRequest.h
   include/tencentcloud/es/v20180416/model/LogstashPipelineInfo.h
   include/tencentcloud/es/v20180416/model/UpdatePluginsRequest.h
+  include/tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsResponse.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessSpaceUserRequest.h
   include/tencentcloud/es/v20180416/model/Dimension.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessSpacesResponse.h
@@ -221,7 +223,7 @@ set(es_src
   src/v20180416/model/DeleteLogstashPipelinesResponse.cpp
   src/v20180416/model/TagInfo.cpp
   src/v20180416/model/KeyValue.cpp
-  src/v20180416/model/UpdateDiagnoseSettingsResponse.cpp
+  src/v20180416/model/MetricMapByIndexId.cpp
   src/v20180416/model/UpdateLogstashPipelineDescResponse.cpp
   src/v20180416/model/DescribeInstancesResponse.cpp
   src/v20180416/model/DescribeInstanceLogsResponse.cpp
@@ -244,6 +246,7 @@ set(es_src
   src/v20180416/model/ServerlessSpace.cpp
   src/v20180416/model/SubTaskDetail.cpp
   src/v20180416/model/CheckMigrateIndexMetaDataResponse.cpp
+  src/v20180416/model/MetricAllData.cpp
   src/v20180416/model/EsConfigSetInfo.cpp
   src/v20180416/model/GetRequestTargetNodeTypesResponse.cpp
   src/v20180416/model/Operation.cpp
@@ -276,6 +279,7 @@ set(es_src
   src/v20180416/model/CreateIndexRequest.cpp
   src/v20180416/model/LogstashPipelineInfo.cpp
   src/v20180416/model/UpdatePluginsRequest.cpp
+  src/v20180416/model/UpdateDiagnoseSettingsResponse.cpp
   src/v20180416/model/DescribeServerlessSpaceUserRequest.cpp
   src/v20180416/model/Dimension.cpp
   src/v20180416/model/DescribeServerlessSpacesResponse.cpp

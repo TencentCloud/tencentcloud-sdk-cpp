@@ -33,6 +33,8 @@
 #include <tencentcloud/cvm/v20170312/model/ConfigureChcAssistVpcResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ConfigureChcDeployVpcRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ConfigureChcDeployVpcResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ConvertOperatingSystemsRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ConvertOperatingSystemsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/CreateDisasterRecoverGroupRequest.h>
 #include <tencentcloud/cvm/v20170312/model/CreateDisasterRecoverGroupResponse.h>
 #include <tencentcloud/cvm/v20170312/model/CreateHpcClusterRequest.h>
@@ -250,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ConfigureChcDeployVpcResponse> ConfigureChcDeployVpcOutcome;
                 typedef std::future<ConfigureChcDeployVpcOutcome> ConfigureChcDeployVpcOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ConfigureChcDeployVpcRequest&, ConfigureChcDeployVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConfigureChcDeployVpcAsyncHandler;
+                typedef Outcome<Core::Error, Model::ConvertOperatingSystemsResponse> ConvertOperatingSystemsOutcome;
+                typedef std::future<ConvertOperatingSystemsOutcome> ConvertOperatingSystemsOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ConvertOperatingSystemsRequest&, ConvertOperatingSystemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConvertOperatingSystemsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDisasterRecoverGroupResponse> CreateDisasterRecoverGroupOutcome;
                 typedef std::future<CreateDisasterRecoverGroupOutcome> CreateDisasterRecoverGroupOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::CreateDisasterRecoverGroupRequest&, CreateDisasterRecoverGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDisasterRecoverGroupAsyncHandler;
@@ -589,6 +594,15 @@ namespace TencentCloud
                 ConfigureChcDeployVpcOutcome ConfigureChcDeployVpc(const Model::ConfigureChcDeployVpcRequest &request);
                 void ConfigureChcDeployVpcAsync(const Model::ConfigureChcDeployVpcRequest& request, const ConfigureChcDeployVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ConfigureChcDeployVpcOutcomeCallable ConfigureChcDeployVpcCallable(const Model::ConfigureChcDeployVpcRequest& request);
+
+                /**
+                 *本接口(ConvertOperatingSystem)用于转换实例的操作系统，仅支持源操作系统为 CentOS 7、CentOS 8 的实例。
+                 * @param req ConvertOperatingSystemsRequest
+                 * @return ConvertOperatingSystemsOutcome
+                 */
+                ConvertOperatingSystemsOutcome ConvertOperatingSystems(const Model::ConvertOperatingSystemsRequest &request);
+                void ConvertOperatingSystemsAsync(const Model::ConvertOperatingSystemsRequest& request, const ConvertOperatingSystemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ConvertOperatingSystemsOutcomeCallable ConvertOperatingSystemsCallable(const Model::ConvertOperatingSystemsRequest& request);
 
                 /**
                  *本接口 (CreateDisasterRecoverGroup)用于创建[分散置放群组](https://cloud.tencent.com/document/product/213/15486)。创建好的置放群组，可在[创建实例](https://cloud.tencent.com/document/api/213/15730)时指定。

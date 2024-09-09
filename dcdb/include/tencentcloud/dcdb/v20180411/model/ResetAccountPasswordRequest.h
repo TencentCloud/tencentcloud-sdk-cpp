@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool PasswordHasBeenSet() const;
 
+                    /**
+                     * 获取使用GetPublicKey返回的RSA2048公钥加密后的密码，加密算法是PKCS1v15
+                     * @return EncryptedPassword 使用GetPublicKey返回的RSA2048公钥加密后的密码，加密算法是PKCS1v15
+                     * 
+                     */
+                    std::string GetEncryptedPassword() const;
+
+                    /**
+                     * 设置使用GetPublicKey返回的RSA2048公钥加密后的密码，加密算法是PKCS1v15
+                     * @param _encryptedPassword 使用GetPublicKey返回的RSA2048公钥加密后的密码，加密算法是PKCS1v15
+                     * 
+                     */
+                    void SetEncryptedPassword(const std::string& _encryptedPassword);
+
+                    /**
+                     * 判断参数 EncryptedPassword 是否已赋值
+                     * @return EncryptedPassword 是否已赋值
+                     * 
+                     */
+                    bool EncryptedPasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
+
+                    /**
+                     * 使用GetPublicKey返回的RSA2048公钥加密后的密码，加密算法是PKCS1v15
+                     */
+                    std::string m_encryptedPassword;
+                    bool m_encryptedPasswordHasBeenSet;
 
                 };
             }

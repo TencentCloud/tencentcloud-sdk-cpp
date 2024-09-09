@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool AccessPointSetHasBeenSet() const;
 
                     /**
-                     * 获取符合接入点数量。
-                     * @return TotalCount 符合接入点数量。
+                     * 获取接入点总数量。
+                     * @return TotalCount 接入点总数量。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_accessPointSetHasBeenSet;
 
                     /**
-                     * 符合接入点数量。
+                     * 接入点总数量。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

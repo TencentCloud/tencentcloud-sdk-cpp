@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool MaxUserConnectionsHasBeenSet() const;
 
+                    /**
+                     * 获取使用GetPublicKey返回的RSA2048公钥加密后的密码
+                     * @return EncryptedPassword 使用GetPublicKey返回的RSA2048公钥加密后的密码
+                     * 
+                     */
+                    std::string GetEncryptedPassword() const;
+
+                    /**
+                     * 设置使用GetPublicKey返回的RSA2048公钥加密后的密码
+                     * @param _encryptedPassword 使用GetPublicKey返回的RSA2048公钥加密后的密码
+                     * 
+                     */
+                    void SetEncryptedPassword(const std::string& _encryptedPassword);
+
+                    /**
+                     * 判断参数 EncryptedPassword 是否已赋值
+                     * @return EncryptedPassword 是否已赋值
+                     * 
+                     */
+                    bool EncryptedPasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +312,12 @@ namespace TencentCloud
                      */
                     uint64_t m_maxUserConnections;
                     bool m_maxUserConnectionsHasBeenSet;
+
+                    /**
+                     * 使用GetPublicKey返回的RSA2048公钥加密后的密码
+                     */
+                    std::string m_encryptedPassword;
+                    bool m_encryptedPasswordHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ DescribeServerlessMetricsResponse::DescribeServerlessMetricsResponse() :
     m_indexTrafficHasBeenSet(false),
     m_readReqTimesHasBeenSet(false),
     m_writeReqTimesHasBeenSet(false),
-    m_docCountHasBeenSet(false)
+    m_docCountHasBeenSet(false),
+    m_metricMapListHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,26 @@ CoreInternalOutcome DescribeServerlessMetricsResponse::Deserialize(const string 
         m_docCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MetricMapList") && !rsp["MetricMapList"].IsNull())
+    {
+        if (!rsp["MetricMapList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MetricMapList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["MetricMapList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MetricMapByIndexId item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_metricMapList.push_back(item);
+        }
+        m_metricMapListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +185,21 @@ string DescribeServerlessMetricsResponse::ToJsonString() const
         string key = "DocCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_docCount, allocator);
+    }
+
+    if (m_metricMapListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricMapList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metricMapList.begin(); itr != m_metricMapList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -226,6 +262,16 @@ int64_t DescribeServerlessMetricsResponse::GetDocCount() const
 bool DescribeServerlessMetricsResponse::DocCountHasBeenSet() const
 {
     return m_docCountHasBeenSet;
+}
+
+vector<MetricMapByIndexId> DescribeServerlessMetricsResponse::GetMetricMapList() const
+{
+    return m_metricMapList;
+}
+
+bool DescribeServerlessMetricsResponse::MetricMapListHasBeenSet() const
+{
+    return m_metricMapListHasBeenSet;
 }
 
 

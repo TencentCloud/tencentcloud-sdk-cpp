@@ -255,6 +255,49 @@ CvmClient::ConfigureChcDeployVpcOutcomeCallable CvmClient::ConfigureChcDeployVpc
     return task->get_future();
 }
 
+CvmClient::ConvertOperatingSystemsOutcome CvmClient::ConvertOperatingSystems(const ConvertOperatingSystemsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ConvertOperatingSystems");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ConvertOperatingSystemsResponse rsp = ConvertOperatingSystemsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ConvertOperatingSystemsOutcome(rsp);
+        else
+            return ConvertOperatingSystemsOutcome(o.GetError());
+    }
+    else
+    {
+        return ConvertOperatingSystemsOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::ConvertOperatingSystemsAsync(const ConvertOperatingSystemsRequest& request, const ConvertOperatingSystemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ConvertOperatingSystems(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::ConvertOperatingSystemsOutcomeCallable CvmClient::ConvertOperatingSystemsCallable(const ConvertOperatingSystemsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ConvertOperatingSystemsOutcome()>>(
+        [this, request]()
+        {
+            return this->ConvertOperatingSystems(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::CreateDisasterRecoverGroupOutcome CvmClient::CreateDisasterRecoverGroup(const CreateDisasterRecoverGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDisasterRecoverGroup");

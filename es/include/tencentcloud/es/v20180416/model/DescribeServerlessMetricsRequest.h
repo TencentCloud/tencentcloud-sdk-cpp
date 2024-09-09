@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool DurationTypeHasBeenSet() const;
 
+                    /**
+                     * 获取索引数据
+                     * @return BatchIndexList 索引数据
+                     * 
+                     */
+                    std::vector<std::string> GetBatchIndexList() const;
+
+                    /**
+                     * 设置索引数据
+                     * @param _batchIndexList 索引数据
+                     * 
+                     */
+                    void SetBatchIndexList(const std::vector<std::string>& _batchIndexList);
+
+                    /**
+                     * 判断参数 BatchIndexList 是否已赋值
+                     * @return BatchIndexList 是否已赋值
+                     * 
+                     */
+                    bool BatchIndexListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     int64_t m_durationType;
                     bool m_durationTypeHasBeenSet;
+
+                    /**
+                     * 索引数据
+                     */
+                    std::vector<std::string> m_batchIndexList;
+                    bool m_batchIndexListHasBeenSet;
 
                 };
             }

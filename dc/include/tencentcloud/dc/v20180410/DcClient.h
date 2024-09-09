@@ -146,7 +146,7 @@ namespace TencentCloud
 
 
                 /**
-                 *接受专用通道申请
+                 *接受专用通道申请。
                  * @param req AcceptDirectConnectTunnelRequest
                  * @return AcceptDirectConnectTunnelOutcome
                  */
@@ -203,8 +203,7 @@ namespace TencentCloud
                 DeleteDirectConnectTunnelOutcomeCallable DeleteDirectConnectTunnelCallable(const Model::DeleteDirectConnectTunnelRequest& request);
 
                 /**
-                 *查询物理专线接入点
-
+                 *查询物理专线接入点。
                  * @param req DescribeAccessPointsRequest
                  * @return DescribeAccessPointsOutcome
                  */
@@ -213,7 +212,7 @@ namespace TencentCloud
                 DescribeAccessPointsOutcomeCallable DescribeAccessPointsCallable(const Model::DescribeAccessPointsRequest& request);
 
                 /**
-                 *本接口（DescribeDirectConnectTunnelExtra）用于查询专用通道扩展信息
+                 *查询专用通道扩展信息。
                  * @param req DescribeDirectConnectTunnelExtraRequest
                  * @return DescribeDirectConnectTunnelExtraOutcome
                  */
@@ -321,7 +320,7 @@ namespace TencentCloud
                 ModifyDirectConnectTunnelExtraOutcomeCallable ModifyDirectConnectTunnelExtraCallable(const Model::ModifyDirectConnectTunnelExtraRequest& request);
 
                 /**
-                 *拒绝专用通道申请
+                 *拒绝专用通道申请。
                  * @param req RejectDirectConnectTunnelRequest
                  * @return RejectDirectConnectTunnelOutcome
                  */

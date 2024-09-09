@@ -200,6 +200,31 @@ namespace TencentCloud
                      */
                     bool AlternativeLanguageHasBeenSet() const;
 
+                    /**
+                     * 获取语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VadSilenceTime 语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetVadSilenceTime() const;
+
+                    /**
+                     * 设置语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vadSilenceTime 语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVadSilenceTime(const uint64_t& _vadSilenceTime);
+
+                    /**
+                     * 判断参数 VadSilenceTime 是否已赋值
+                     * @return VadSilenceTime 是否已赋值
+                     * 
+                     */
+                    bool VadSilenceTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +266,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_alternativeLanguage;
                     bool m_alternativeLanguageHasBeenSet;
+
+                    /**
+                     * 语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_vadSilenceTime;
+                    bool m_vadSilenceTimeHasBeenSet;
 
                 };
             }

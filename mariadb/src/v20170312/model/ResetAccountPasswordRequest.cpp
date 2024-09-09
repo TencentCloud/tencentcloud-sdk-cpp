@@ -26,7 +26,8 @@ ResetAccountPasswordRequest::ResetAccountPasswordRequest() :
     m_instanceIdHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_hostHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_encryptedPasswordHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ResetAccountPasswordRequest::ToJsonString() const
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptedPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptedPassword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptedPassword.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ResetAccountPasswordRequest::SetPassword(const string& _password)
 bool ResetAccountPasswordRequest::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+string ResetAccountPasswordRequest::GetEncryptedPassword() const
+{
+    return m_encryptedPassword;
+}
+
+void ResetAccountPasswordRequest::SetEncryptedPassword(const string& _encryptedPassword)
+{
+    m_encryptedPassword = _encryptedPassword;
+    m_encryptedPasswordHasBeenSet = true;
+}
+
+bool ResetAccountPasswordRequest::EncryptedPasswordHasBeenSet() const
+{
+    return m_encryptedPasswordHasBeenSet;
 }
 
 

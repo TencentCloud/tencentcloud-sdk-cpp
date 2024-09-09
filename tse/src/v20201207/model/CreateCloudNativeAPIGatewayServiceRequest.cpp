@@ -26,11 +26,11 @@ CreateCloudNativeAPIGatewayServiceRequest::CreateCloudNativeAPIGatewayServiceReq
     m_gatewayIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_pathHasBeenSet(false),
     m_timeoutHasBeenSet(false),
     m_retriesHasBeenSet(false),
     m_upstreamTypeHasBeenSet(false),
-    m_upstreamInfoHasBeenSet(false)
+    m_upstreamInfoHasBeenSet(false),
+    m_pathHasBeenSet(false)
 {
 }
 
@@ -65,14 +65,6 @@ string CreateCloudNativeAPIGatewayServiceRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_pathHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Path";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_timeoutHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -104,6 +96,14 @@ string CreateCloudNativeAPIGatewayServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_upstreamInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_pathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Path";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -160,22 +160,6 @@ void CreateCloudNativeAPIGatewayServiceRequest::SetProtocol(const string& _proto
 bool CreateCloudNativeAPIGatewayServiceRequest::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
-}
-
-string CreateCloudNativeAPIGatewayServiceRequest::GetPath() const
-{
-    return m_path;
-}
-
-void CreateCloudNativeAPIGatewayServiceRequest::SetPath(const string& _path)
-{
-    m_path = _path;
-    m_pathHasBeenSet = true;
-}
-
-bool CreateCloudNativeAPIGatewayServiceRequest::PathHasBeenSet() const
-{
-    return m_pathHasBeenSet;
 }
 
 int64_t CreateCloudNativeAPIGatewayServiceRequest::GetTimeout() const
@@ -240,6 +224,22 @@ void CreateCloudNativeAPIGatewayServiceRequest::SetUpstreamInfo(const KongUpstre
 bool CreateCloudNativeAPIGatewayServiceRequest::UpstreamInfoHasBeenSet() const
 {
     return m_upstreamInfoHasBeenSet;
+}
+
+string CreateCloudNativeAPIGatewayServiceRequest::GetPath() const
+{
+    return m_path;
+}
+
+void CreateCloudNativeAPIGatewayServiceRequest::SetPath(const string& _path)
+{
+    m_path = _path;
+    m_pathHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayServiceRequest::PathHasBeenSet() const
+{
+    return m_pathHasBeenSet;
 }
 
 

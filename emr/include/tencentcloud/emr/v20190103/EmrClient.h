@@ -71,6 +71,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeJobFlowResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleDiffDetailRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleDiffDetailResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeServiceNodeInfosRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeServiceNodeInfosResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeTrinoQueryInfoRequest.h>
@@ -215,6 +217,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeResourceScheduleResponse> DescribeResourceScheduleOutcome;
                 typedef std::future<DescribeResourceScheduleOutcome> DescribeResourceScheduleOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeResourceScheduleRequest&, DescribeResourceScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceScheduleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceScheduleDiffDetailResponse> DescribeResourceScheduleDiffDetailOutcome;
+                typedef std::future<DescribeResourceScheduleDiffDetailOutcome> DescribeResourceScheduleDiffDetailOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeResourceScheduleDiffDetailRequest&, DescribeResourceScheduleDiffDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceScheduleDiffDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServiceNodeInfosResponse> DescribeServiceNodeInfosOutcome;
                 typedef std::future<DescribeServiceNodeInfosOutcome> DescribeServiceNodeInfosOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeServiceNodeInfosRequest&, DescribeServiceNodeInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceNodeInfosAsyncHandler;
@@ -521,6 +526,15 @@ namespace TencentCloud
                 DescribeResourceScheduleOutcome DescribeResourceSchedule(const Model::DescribeResourceScheduleRequest &request);
                 void DescribeResourceScheduleAsync(const Model::DescribeResourceScheduleRequest& request, const DescribeResourceScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeResourceScheduleOutcomeCallable DescribeResourceScheduleCallable(const Model::DescribeResourceScheduleRequest& request);
+
+                /**
+                 *YARN资源调度-变更详情
+                 * @param req DescribeResourceScheduleDiffDetailRequest
+                 * @return DescribeResourceScheduleDiffDetailOutcome
+                 */
+                DescribeResourceScheduleDiffDetailOutcome DescribeResourceScheduleDiffDetail(const Model::DescribeResourceScheduleDiffDetailRequest &request);
+                void DescribeResourceScheduleDiffDetailAsync(const Model::DescribeResourceScheduleDiffDetailRequest& request, const DescribeResourceScheduleDiffDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceScheduleDiffDetailOutcomeCallable DescribeResourceScheduleDiffDetailCallable(const Model::DescribeResourceScheduleDiffDetailRequest& request);
 
                 /**
                  *查询服务进程信息

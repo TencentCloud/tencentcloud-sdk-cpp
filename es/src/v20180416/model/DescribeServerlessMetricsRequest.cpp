@@ -26,7 +26,8 @@ DescribeServerlessMetricsRequest::DescribeServerlessMetricsRequest() :
     m_spaceIdHasBeenSet(false),
     m_indexIdHasBeenSet(false),
     m_metricTypeHasBeenSet(false),
-    m_durationTypeHasBeenSet(false)
+    m_durationTypeHasBeenSet(false),
+    m_batchIndexListHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,19 @@ string DescribeServerlessMetricsRequest::ToJsonString() const
         string key = "DurationType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_durationType, allocator);
+    }
+
+    if (m_batchIndexListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchIndexList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_batchIndexList.begin(); itr != m_batchIndexList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -144,6 +158,22 @@ void DescribeServerlessMetricsRequest::SetDurationType(const int64_t& _durationT
 bool DescribeServerlessMetricsRequest::DurationTypeHasBeenSet() const
 {
     return m_durationTypeHasBeenSet;
+}
+
+vector<string> DescribeServerlessMetricsRequest::GetBatchIndexList() const
+{
+    return m_batchIndexList;
+}
+
+void DescribeServerlessMetricsRequest::SetBatchIndexList(const vector<string>& _batchIndexList)
+{
+    m_batchIndexList = _batchIndexList;
+    m_batchIndexListHasBeenSet = true;
+}
+
+bool DescribeServerlessMetricsRequest::BatchIndexListHasBeenSet() const
+{
+    return m_batchIndexListHasBeenSet;
 }
 
 

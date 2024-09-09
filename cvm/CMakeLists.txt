@@ -107,6 +107,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/RenewHostsRequest.h
   include/tencentcloud/cvm/v20170312/model/CreateDisasterRecoverGroupResponse.h
   include/tencentcloud/cvm/v20170312/model/RemoveChcAssistVpcRequest.h
+  include/tencentcloud/cvm/v20170312/model/ConvertOperatingSystemsRequest.h
   include/tencentcloud/cvm/v20170312/model/StartInstancesRequest.h
   include/tencentcloud/cvm/v20170312/model/Tag.h
   include/tencentcloud/cvm/v20170312/model/ProgramFpgaImageResponse.h
@@ -150,10 +151,12 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/OperationCountLimit.h
   include/tencentcloud/cvm/v20170312/model/ReservedInstanceConfigInfoItem.h
   include/tencentcloud/cvm/v20170312/model/LaunchTemplateVersionData.h
+  include/tencentcloud/cvm/v20170312/model/TargetOS.h
   include/tencentcloud/cvm/v20170312/model/DeleteDisasterRecoverGroupsResponse.h
   include/tencentcloud/cvm/v20170312/model/HostItem.h
   include/tencentcloud/cvm/v20170312/model/OsVersion.h
   include/tencentcloud/cvm/v20170312/model/Externals.h
+  include/tencentcloud/cvm/v20170312/model/ConvertOperatingSystemsResponse.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceModifyInstancesChargeTypeRequest.h
   include/tencentcloud/cvm/v20170312/model/CreateImageRequest.h
   include/tencentcloud/cvm/v20170312/model/Instance.h
@@ -380,6 +383,7 @@ set(cvm_src
   src/v20170312/model/RenewHostsRequest.cpp
   src/v20170312/model/CreateDisasterRecoverGroupResponse.cpp
   src/v20170312/model/RemoveChcAssistVpcRequest.cpp
+  src/v20170312/model/ConvertOperatingSystemsRequest.cpp
   src/v20170312/model/StartInstancesRequest.cpp
   src/v20170312/model/Tag.cpp
   src/v20170312/model/ProgramFpgaImageResponse.cpp
@@ -423,10 +427,12 @@ set(cvm_src
   src/v20170312/model/OperationCountLimit.cpp
   src/v20170312/model/ReservedInstanceConfigInfoItem.cpp
   src/v20170312/model/LaunchTemplateVersionData.cpp
+  src/v20170312/model/TargetOS.cpp
   src/v20170312/model/DeleteDisasterRecoverGroupsResponse.cpp
   src/v20170312/model/HostItem.cpp
   src/v20170312/model/OsVersion.cpp
   src/v20170312/model/Externals.cpp
+  src/v20170312/model/ConvertOperatingSystemsResponse.cpp
   src/v20170312/model/InquiryPriceModifyInstancesChargeTypeRequest.cpp
   src/v20170312/model/CreateImageRequest.cpp
   src/v20170312/model/Instance.cpp
