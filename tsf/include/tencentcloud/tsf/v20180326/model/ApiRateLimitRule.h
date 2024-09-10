@@ -296,6 +296,81 @@ namespace TencentCloud
                      */
                     bool UpdatedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取分页参数limit
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Limit 分页参数limit
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置分页参数limit
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _limit 分页参数limit
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取分页参数offset
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Offset 分页参数offset
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置分页参数offset
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _offset 分页参数offset
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppId AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppId() const;
+
+                    /**
+                     * 设置AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appId AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppId(const std::string& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +442,27 @@ namespace TencentCloud
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
+
+                    /**
+                     * 分页参数limit
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 分页参数offset
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appId;
+                    bool m_appIdHasBeenSet;
 
                 };
             }

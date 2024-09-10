@@ -25,7 +25,8 @@ using namespace std;
 ModifyAutoRenewFlagRequest::ModifyAutoRenewFlagRequest() :
     m_instanceIdHasBeenSet(false),
     m_resourceIdsHasBeenSet(false),
-    m_renewFlagHasBeenSet(false)
+    m_renewFlagHasBeenSet(false),
+    m_computeResourceIdHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string ModifyAutoRenewFlagRequest::ToJsonString() const
         string key = "RenewFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_renewFlag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_computeResourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void ModifyAutoRenewFlagRequest::SetRenewFlag(const string& _renewFlag)
 bool ModifyAutoRenewFlagRequest::RenewFlagHasBeenSet() const
 {
     return m_renewFlagHasBeenSet;
+}
+
+string ModifyAutoRenewFlagRequest::GetComputeResourceId() const
+{
+    return m_computeResourceId;
+}
+
+void ModifyAutoRenewFlagRequest::SetComputeResourceId(const string& _computeResourceId)
+{
+    m_computeResourceId = _computeResourceId;
+    m_computeResourceIdHasBeenSet = true;
+}
+
+bool ModifyAutoRenewFlagRequest::ComputeResourceIdHasBeenSet() const
+{
+    return m_computeResourceIdHasBeenSet;
 }
 
 

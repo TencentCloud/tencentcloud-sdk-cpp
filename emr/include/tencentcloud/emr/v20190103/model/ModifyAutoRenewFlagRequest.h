@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool RenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取计算资源id
+                     * @return ComputeResourceId 计算资源id
+                     * 
+                     */
+                    std::string GetComputeResourceId() const;
+
+                    /**
+                     * 设置计算资源id
+                     * @param _computeResourceId 计算资源id
+                     * 
+                     */
+                    void SetComputeResourceId(const std::string& _computeResourceId);
+
+                    /**
+                     * 判断参数 ComputeResourceId 是否已赋值
+                     * @return ComputeResourceId 是否已赋值
+                     * 
+                     */
+                    bool ComputeResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * 计算资源id
+                     */
+                    std::string m_computeResourceId;
+                    bool m_computeResourceIdHasBeenSet;
 
                 };
             }

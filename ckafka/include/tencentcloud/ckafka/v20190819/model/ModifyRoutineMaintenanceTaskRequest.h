@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MaintenanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取自动化运维子类别
-                     * @return MaintenanceSubtype 自动化运维子类别
+                     * 获取INSTANCE_STORAGE_CAPACITY(磁盘自动扩容)/MESSAGE_RETENTION_PERIOD(磁盘动态消息保留策略)
+                     * @return MaintenanceSubtype INSTANCE_STORAGE_CAPACITY(磁盘自动扩容)/MESSAGE_RETENTION_PERIOD(磁盘动态消息保留策略)
                      * 
                      */
                     std::string GetMaintenanceSubtype() const;
 
                     /**
-                     * 设置自动化运维子类别
-                     * @param _maintenanceSubtype 自动化运维子类别
+                     * 设置INSTANCE_STORAGE_CAPACITY(磁盘自动扩容)/MESSAGE_RETENTION_PERIOD(磁盘动态消息保留策略)
+                     * @param _maintenanceSubtype INSTANCE_STORAGE_CAPACITY(磁盘自动扩容)/MESSAGE_RETENTION_PERIOD(磁盘动态消息保留策略)
                      * 
                      */
                     void SetMaintenanceSubtype(const std::string& _maintenanceSubtype);
@@ -288,7 +288,7 @@ namespace TencentCloud
                     bool m_maintenanceTypeHasBeenSet;
 
                     /**
-                     * 自动化运维子类别
+                     * INSTANCE_STORAGE_CAPACITY(磁盘自动扩容)/MESSAGE_RETENTION_PERIOD(磁盘动态消息保留策略)
                      */
                     std::string m_maintenanceSubtype;
                     bool m_maintenanceSubtypeHasBeenSet;

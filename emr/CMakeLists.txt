@@ -45,7 +45,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/KeyValue.h
   include/tencentcloud/emr/v20190103/model/DescribeAutoScaleGroupGlobalConfRequest.h
   include/tencentcloud/emr/v20190103/model/EmrProductConfigDetail.h
-  include/tencentcloud/emr/v20190103/model/DayRepeatStrategy.h
+  include/tencentcloud/emr/v20190103/model/DescribeInstancesResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeTrinoQueryInfoResponse.h
   include/tencentcloud/emr/v20190103/model/PriceResult.h
   include/tencentcloud/emr/v20190103/model/TrinoQueryInfo.h
@@ -55,10 +55,11 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/OverviewRow.h
   include/tencentcloud/emr/v20190103/model/DiskSpec.h
   include/tencentcloud/emr/v20190103/model/LoadAutoScaleStrategy.h
+  include/tencentcloud/emr/v20190103/model/SLInstanceInfo.h
   include/tencentcloud/emr/v20190103/model/ModifyUserManagerPwdRequest.h
   include/tencentcloud/emr/v20190103/model/COSSettings.h
   include/tencentcloud/emr/v20190103/model/ClusterInstancesInfo.h
-  include/tencentcloud/emr/v20190103/model/SubnetInfo.h
+  include/tencentcloud/emr/v20190103/model/CreateSLInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/ScaleOutInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/ResetYarnConfigRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeHBaseTableOverviewResponse.h
@@ -71,11 +72,13 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/NodeDetailPriceResult.h
   include/tencentcloud/emr/v20190103/model/Tag.h
   include/tencentcloud/emr/v20190103/model/HealthStatus.h
+  include/tencentcloud/emr/v20190103/model/TerminateSLInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/Arg.h
-  include/tencentcloud/emr/v20190103/model/DiffDetail.h
+  include/tencentcloud/emr/v20190103/model/ClusterIDToFlowID.h
   include/tencentcloud/emr/v20190103/model/EmrListInstance.h
   include/tencentcloud/emr/v20190103/model/ServiceNodeDetailInfo.h
   include/tencentcloud/emr/v20190103/model/AddUsersForUserManagerResponse.h
+  include/tencentcloud/emr/v20190103/model/SearchItem.h
   include/tencentcloud/emr/v20190103/model/DescribeResourceScheduleDiffDetailResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeYarnQueueResponse.h
   include/tencentcloud/emr/v20190103/model/TopologyInfo.h
@@ -87,7 +90,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DiffHeader.h
   include/tencentcloud/emr/v20190103/model/DescribeInstancesListResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesRequest.h
-  include/tencentcloud/emr/v20190103/model/YarnApplication.h
+  include/tencentcloud/emr/v20190103/model/ResetYarnConfigResponse.h
   include/tencentcloud/emr/v20190103/model/JobResult.h
   include/tencentcloud/emr/v20190103/model/Resource.h
   include/tencentcloud/emr/v20190103/model/FlowParam.h
@@ -104,6 +107,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/JobFlowResourceSpec.h
   include/tencentcloud/emr/v20190103/model/Configuration.h
   include/tencentcloud/emr/v20190103/model/DescribeResourceScheduleRequest.h
+  include/tencentcloud/emr/v20190103/model/ZoneSetting.h
   include/tencentcloud/emr/v20190103/model/AllNodeResourceSpec.h
   include/tencentcloud/emr/v20190103/model/Placement.h
   include/tencentcloud/emr/v20190103/model/QuotaEntity.h
@@ -112,7 +116,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DescribeClusterFlowStatusDetailRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerRequest.h
   include/tencentcloud/emr/v20190103/model/ConfigSetInfo.h
-  include/tencentcloud/emr/v20190103/model/ClusterIDToFlowID.h
+  include/tencentcloud/emr/v20190103/model/DiffDetail.h
   include/tencentcloud/emr/v20190103/model/DescribeInsightListRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeYarnScheduleHistoryRequest.h
   include/tencentcloud/emr/v20190103/model/StartStopServiceOrMonitorResponse.h
@@ -123,6 +127,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/ModifyResourcesTagsResponse.h
   include/tencentcloud/emr/v20190103/model/ModifyAutoRenewFlagResponse.h
   include/tencentcloud/emr/v20190103/model/ScaleOutServiceConfGroupsInfo.h
+  include/tencentcloud/emr/v20190103/model/CreateSLInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/UserManagerUserBriefInfo.h
   include/tencentcloud/emr/v20190103/model/DescribeYarnScheduleHistoryResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeAutoScaleGroupGlobalConfResponse.h
@@ -148,16 +153,18 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/GroupGlobalConfs.h
   include/tencentcloud/emr/v20190103/model/PriceResource.h
   include/tencentcloud/emr/v20190103/model/TimeAutoScaleStrategy.h
+  include/tencentcloud/emr/v20190103/model/ModifySLInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeInsightListResponse.h
   include/tencentcloud/emr/v20190103/model/CustomServiceDefine.h
   include/tencentcloud/emr/v20190103/model/StageInfoDetail.h
   include/tencentcloud/emr/v20190103/model/CreateClusterResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeAutoScaleRecordsResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeCvmQuotaResponse.h
-  include/tencentcloud/emr/v20190103/model/SearchItem.h
+  include/tencentcloud/emr/v20190103/model/DescribeSLInstanceListRequest.h
   include/tencentcloud/emr/v20190103/model/CreateClusterRequest.h
   include/tencentcloud/emr/v20190103/model/UserAndGroup.h
   include/tencentcloud/emr/v20190103/model/AddMetricScaleStrategyResponse.h
+  include/tencentcloud/emr/v20190103/model/SubnetInfo.h
   include/tencentcloud/emr/v20190103/model/BootstrapAction.h
   include/tencentcloud/emr/v20190103/model/ScaleOutClusterRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeClusterNodesRequest.h
@@ -169,11 +176,13 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DiffDetailItem.h
   include/tencentcloud/emr/v20190103/model/MetaDbInfo.h
   include/tencentcloud/emr/v20190103/model/Execution.h
+  include/tencentcloud/emr/v20190103/model/DescribeSLInstanceListResponse.h
   include/tencentcloud/emr/v20190103/model/UpdateInstanceSettings.h
-  include/tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsResponse.h
+  include/tencentcloud/emr/v20190103/model/DescribeSLInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/ScriptBootstrapActionConfig.h
   include/tencentcloud/emr/v20190103/model/DescribeInstancesRequest.h
   include/tencentcloud/emr/v20190103/model/NotRepeatStrategy.h
+  include/tencentcloud/emr/v20190103/model/TerminateSLInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/PodNewSpec.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeAutoScaleStrategiesRequest.h
@@ -190,9 +199,10 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DeleteUserManagerUserListResponse.h
   include/tencentcloud/emr/v20190103/model/ModifyResourcePoolsResponse.h
   include/tencentcloud/emr/v20190103/model/TerminateTasksResponse.h
-  include/tencentcloud/emr/v20190103/model/DescribeInstancesResponse.h
+  include/tencentcloud/emr/v20190103/model/DayRepeatStrategy.h
   include/tencentcloud/emr/v20190103/model/DescribeYarnApplicationsResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerResponse.h
+  include/tencentcloud/emr/v20190103/model/YarnApplication.h
   include/tencentcloud/emr/v20190103/model/DescribeResourceScheduleDiffDetailRequest.h
   include/tencentcloud/emr/v20190103/model/FlowExtraDetail.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceRenewInstanceRequest.h
@@ -203,9 +213,11 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/AddUsersForUserManagerRequest.h
   include/tencentcloud/emr/v20190103/model/ZoneResourceConfiguration.h
   include/tencentcloud/emr/v20190103/model/SyncPodStateRequest.h
+  include/tencentcloud/emr/v20190103/model/DescribeSLInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/CustomMetaInfo.h
   include/tencentcloud/emr/v20190103/model/ApplicationStatics.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h
+  include/tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsResponse.h
   include/tencentcloud/emr/v20190103/model/MultiZoneSetting.h
   include/tencentcloud/emr/v20190103/model/ModifyAutoRenewFlagRequest.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigRequest.h
@@ -223,7 +235,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/SoftDependInfo.h
   include/tencentcloud/emr/v20190103/model/ModifyAutoScaleStrategyResponse.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceRequest.h
-  include/tencentcloud/emr/v20190103/model/ResetYarnConfigResponse.h
+  include/tencentcloud/emr/v20190103/model/ModifySLInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/LoadMetricsConditions.h
   include/tencentcloud/emr/v20190103/model/JobFlowResource.h
   include/tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsResponse.h
@@ -283,7 +295,7 @@ set(emr_src
   src/v20190103/model/KeyValue.cpp
   src/v20190103/model/DescribeAutoScaleGroupGlobalConfRequest.cpp
   src/v20190103/model/EmrProductConfigDetail.cpp
-  src/v20190103/model/DayRepeatStrategy.cpp
+  src/v20190103/model/DescribeInstancesResponse.cpp
   src/v20190103/model/DescribeTrinoQueryInfoResponse.cpp
   src/v20190103/model/PriceResult.cpp
   src/v20190103/model/TrinoQueryInfo.cpp
@@ -293,10 +305,11 @@ set(emr_src
   src/v20190103/model/OverviewRow.cpp
   src/v20190103/model/DiskSpec.cpp
   src/v20190103/model/LoadAutoScaleStrategy.cpp
+  src/v20190103/model/SLInstanceInfo.cpp
   src/v20190103/model/ModifyUserManagerPwdRequest.cpp
   src/v20190103/model/COSSettings.cpp
   src/v20190103/model/ClusterInstancesInfo.cpp
-  src/v20190103/model/SubnetInfo.cpp
+  src/v20190103/model/CreateSLInstanceRequest.cpp
   src/v20190103/model/ScaleOutInstanceRequest.cpp
   src/v20190103/model/ResetYarnConfigRequest.cpp
   src/v20190103/model/DescribeHBaseTableOverviewResponse.cpp
@@ -309,11 +322,13 @@ set(emr_src
   src/v20190103/model/NodeDetailPriceResult.cpp
   src/v20190103/model/Tag.cpp
   src/v20190103/model/HealthStatus.cpp
+  src/v20190103/model/TerminateSLInstanceRequest.cpp
   src/v20190103/model/Arg.cpp
-  src/v20190103/model/DiffDetail.cpp
+  src/v20190103/model/ClusterIDToFlowID.cpp
   src/v20190103/model/EmrListInstance.cpp
   src/v20190103/model/ServiceNodeDetailInfo.cpp
   src/v20190103/model/AddUsersForUserManagerResponse.cpp
+  src/v20190103/model/SearchItem.cpp
   src/v20190103/model/DescribeResourceScheduleDiffDetailResponse.cpp
   src/v20190103/model/DescribeYarnQueueResponse.cpp
   src/v20190103/model/TopologyInfo.cpp
@@ -325,7 +340,7 @@ set(emr_src
   src/v20190103/model/DiffHeader.cpp
   src/v20190103/model/DescribeInstancesListResponse.cpp
   src/v20190103/model/DescribeInstanceRenewNodesRequest.cpp
-  src/v20190103/model/YarnApplication.cpp
+  src/v20190103/model/ResetYarnConfigResponse.cpp
   src/v20190103/model/JobResult.cpp
   src/v20190103/model/Resource.cpp
   src/v20190103/model/FlowParam.cpp
@@ -342,6 +357,7 @@ set(emr_src
   src/v20190103/model/JobFlowResourceSpec.cpp
   src/v20190103/model/Configuration.cpp
   src/v20190103/model/DescribeResourceScheduleRequest.cpp
+  src/v20190103/model/ZoneSetting.cpp
   src/v20190103/model/AllNodeResourceSpec.cpp
   src/v20190103/model/Placement.cpp
   src/v20190103/model/QuotaEntity.cpp
@@ -350,7 +366,7 @@ set(emr_src
   src/v20190103/model/DescribeClusterFlowStatusDetailRequest.cpp
   src/v20190103/model/DescribeUsersForUserManagerRequest.cpp
   src/v20190103/model/ConfigSetInfo.cpp
-  src/v20190103/model/ClusterIDToFlowID.cpp
+  src/v20190103/model/DiffDetail.cpp
   src/v20190103/model/DescribeInsightListRequest.cpp
   src/v20190103/model/DescribeYarnScheduleHistoryRequest.cpp
   src/v20190103/model/StartStopServiceOrMonitorResponse.cpp
@@ -361,6 +377,7 @@ set(emr_src
   src/v20190103/model/ModifyResourcesTagsResponse.cpp
   src/v20190103/model/ModifyAutoRenewFlagResponse.cpp
   src/v20190103/model/ScaleOutServiceConfGroupsInfo.cpp
+  src/v20190103/model/CreateSLInstanceResponse.cpp
   src/v20190103/model/UserManagerUserBriefInfo.cpp
   src/v20190103/model/DescribeYarnScheduleHistoryResponse.cpp
   src/v20190103/model/DescribeAutoScaleGroupGlobalConfResponse.cpp
@@ -386,16 +403,18 @@ set(emr_src
   src/v20190103/model/GroupGlobalConfs.cpp
   src/v20190103/model/PriceResource.cpp
   src/v20190103/model/TimeAutoScaleStrategy.cpp
+  src/v20190103/model/ModifySLInstanceRequest.cpp
   src/v20190103/model/DescribeInsightListResponse.cpp
   src/v20190103/model/CustomServiceDefine.cpp
   src/v20190103/model/StageInfoDetail.cpp
   src/v20190103/model/CreateClusterResponse.cpp
   src/v20190103/model/DescribeAutoScaleRecordsResponse.cpp
   src/v20190103/model/DescribeCvmQuotaResponse.cpp
-  src/v20190103/model/SearchItem.cpp
+  src/v20190103/model/DescribeSLInstanceListRequest.cpp
   src/v20190103/model/CreateClusterRequest.cpp
   src/v20190103/model/UserAndGroup.cpp
   src/v20190103/model/AddMetricScaleStrategyResponse.cpp
+  src/v20190103/model/SubnetInfo.cpp
   src/v20190103/model/BootstrapAction.cpp
   src/v20190103/model/ScaleOutClusterRequest.cpp
   src/v20190103/model/DescribeClusterNodesRequest.cpp
@@ -407,11 +426,13 @@ set(emr_src
   src/v20190103/model/DiffDetailItem.cpp
   src/v20190103/model/MetaDbInfo.cpp
   src/v20190103/model/Execution.cpp
+  src/v20190103/model/DescribeSLInstanceListResponse.cpp
   src/v20190103/model/UpdateInstanceSettings.cpp
-  src/v20190103/model/DescribeEmrOverviewMetricsResponse.cpp
+  src/v20190103/model/DescribeSLInstanceResponse.cpp
   src/v20190103/model/ScriptBootstrapActionConfig.cpp
   src/v20190103/model/DescribeInstancesRequest.cpp
   src/v20190103/model/NotRepeatStrategy.cpp
+  src/v20190103/model/TerminateSLInstanceResponse.cpp
   src/v20190103/model/PodNewSpec.cpp
   src/v20190103/model/InquiryPriceUpdateInstanceRequest.cpp
   src/v20190103/model/DescribeAutoScaleStrategiesRequest.cpp
@@ -428,9 +449,10 @@ set(emr_src
   src/v20190103/model/DeleteUserManagerUserListResponse.cpp
   src/v20190103/model/ModifyResourcePoolsResponse.cpp
   src/v20190103/model/TerminateTasksResponse.cpp
-  src/v20190103/model/DescribeInstancesResponse.cpp
+  src/v20190103/model/DayRepeatStrategy.cpp
   src/v20190103/model/DescribeYarnApplicationsResponse.cpp
   src/v20190103/model/DescribeUsersForUserManagerResponse.cpp
+  src/v20190103/model/YarnApplication.cpp
   src/v20190103/model/DescribeResourceScheduleDiffDetailRequest.cpp
   src/v20190103/model/FlowExtraDetail.cpp
   src/v20190103/model/InquiryPriceRenewInstanceRequest.cpp
@@ -441,9 +463,11 @@ set(emr_src
   src/v20190103/model/AddUsersForUserManagerRequest.cpp
   src/v20190103/model/ZoneResourceConfiguration.cpp
   src/v20190103/model/SyncPodStateRequest.cpp
+  src/v20190103/model/DescribeSLInstanceRequest.cpp
   src/v20190103/model/CustomMetaInfo.cpp
   src/v20190103/model/ApplicationStatics.cpp
   src/v20190103/model/InquiryPriceCreateInstanceRequest.cpp
+  src/v20190103/model/DescribeEmrOverviewMetricsResponse.cpp
   src/v20190103/model/MultiZoneSetting.cpp
   src/v20190103/model/ModifyAutoRenewFlagRequest.cpp
   src/v20190103/model/ModifyResourceScheduleConfigRequest.cpp
@@ -461,7 +485,7 @@ set(emr_src
   src/v20190103/model/SoftDependInfo.cpp
   src/v20190103/model/ModifyAutoScaleStrategyResponse.cpp
   src/v20190103/model/InquiryPriceScaleOutInstanceRequest.cpp
-  src/v20190103/model/ResetYarnConfigResponse.cpp
+  src/v20190103/model/ModifySLInstanceResponse.cpp
   src/v20190103/model/LoadMetricsConditions.cpp
   src/v20190103/model/JobFlowResource.cpp
   src/v20190103/model/DescribeEmrApplicationStaticsResponse.cpp

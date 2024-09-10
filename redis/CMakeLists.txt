@@ -56,6 +56,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeBackupUrlRequest.h
   include/tencentcloud/redis/v20180412/model/DeleteParamTemplateResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstancesResponse.h
+  include/tencentcloud/redis/v20180412/model/TaskInfoDetail.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceZoneInfoResponse.h
   include/tencentcloud/redis/v20180412/model/Account.h
   include/tencentcloud/redis/v20180412/model/InstanceProxySlowlogDetail.h
@@ -80,12 +81,13 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeProjectSecurityGroupRequest.h
   include/tencentcloud/redis/v20180412/model/ParameterDetail.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceShardsResponse.h
-  include/tencentcloud/redis/v20180412/model/DestroyPrepaidInstanceRequest.h
+  include/tencentcloud/redis/v20180412/model/DescribeRedisClusterOverviewResponse.h
   include/tencentcloud/redis/v20180412/model/DisableReplicaReadonlyRequest.h
   include/tencentcloud/redis/v20180412/model/CDCResource.h
-  include/tencentcloud/redis/v20180412/model/TaskInfoDetail.h
+  include/tencentcloud/redis/v20180412/model/ModifyInstanceLogDeliveryResponse.h
   include/tencentcloud/redis/v20180412/model/ModifyBackupDownloadRestrictionRequest.h
   include/tencentcloud/redis/v20180412/model/DisableReplicaReadonlyResponse.h
+  include/tencentcloud/redis/v20180412/model/DestroyPrepaidInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/CreateParamTemplateResponse.h
   include/tencentcloud/redis/v20180412/model/InstanceTagInfo.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceDTSInfoResponse.h
@@ -111,6 +113,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeBackupUrlResponse.h
   include/tencentcloud/redis/v20180412/model/InquiryPriceRenewInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsRequest.h
+  include/tencentcloud/redis/v20180412/model/ModifyInstanceLogDeliveryRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeProductInfoRequest.h
   include/tencentcloud/redis/v20180412/model/InquiryPriceCreateInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/InstanceSecurityGroupDetail.h
@@ -141,7 +144,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeySizeDistRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceAccountRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceTextParam.h
-  include/tencentcloud/redis/v20180412/model/DescribeRedisClusterOverviewResponse.h
+  include/tencentcloud/redis/v20180412/model/DescribeInstanceLogDeliveryResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceParamRecordsRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeTaskListRequest.h
   include/tencentcloud/redis/v20180412/model/ChangeMasterInstanceResponse.h
@@ -187,7 +190,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/TradeDealDetail.h
   include/tencentcloud/redis/v20180412/model/ResourceTag.h
   include/tencentcloud/redis/v20180412/model/AssociateSecurityGroupsResponse.h
-  include/tencentcloud/redis/v20180412/model/ReplicaGroup.h
+  include/tencentcloud/redis/v20180412/model/LogDeliveryInfo.h
   include/tencentcloud/redis/v20180412/model/DescribeTaskInfoResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeyTypeDistResponse.h
   include/tencentcloud/redis/v20180412/model/DeleteReplicationInstanceResponse.h
@@ -224,6 +227,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeyTypeDistRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTopNCmdTookRequest.h
   include/tencentcloud/redis/v20180412/model/DestroyPrepaidInstanceResponse.h
+  include/tencentcloud/redis/v20180412/model/ReplicaGroup.h
   include/tencentcloud/redis/v20180412/model/DescribeRedisClusterOverviewRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeCommonDBInstancesResponse.h
   include/tencentcloud/redis/v20180412/model/InquiryPriceCreateInstanceRequest.h
@@ -237,6 +241,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceNodeInfoRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceSupportFeatureResponse.h
+  include/tencentcloud/redis/v20180412/model/DescribeInstanceLogDeliveryRequest.h
   include/tencentcloud/redis/v20180412/model/AddReplicationInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceClusterNode.h
   include/tencentcloud/redis/v20180412/model/DescribeSSLStatusResponse.h
@@ -321,6 +326,7 @@ set(redis_src
   src/v20180412/model/DescribeBackupUrlRequest.cpp
   src/v20180412/model/DeleteParamTemplateResponse.cpp
   src/v20180412/model/DescribeInstancesResponse.cpp
+  src/v20180412/model/TaskInfoDetail.cpp
   src/v20180412/model/DescribeInstanceZoneInfoResponse.cpp
   src/v20180412/model/Account.cpp
   src/v20180412/model/InstanceProxySlowlogDetail.cpp
@@ -345,12 +351,13 @@ set(redis_src
   src/v20180412/model/DescribeProjectSecurityGroupRequest.cpp
   src/v20180412/model/ParameterDetail.cpp
   src/v20180412/model/DescribeInstanceShardsResponse.cpp
-  src/v20180412/model/DestroyPrepaidInstanceRequest.cpp
+  src/v20180412/model/DescribeRedisClusterOverviewResponse.cpp
   src/v20180412/model/DisableReplicaReadonlyRequest.cpp
   src/v20180412/model/CDCResource.cpp
-  src/v20180412/model/TaskInfoDetail.cpp
+  src/v20180412/model/ModifyInstanceLogDeliveryResponse.cpp
   src/v20180412/model/ModifyBackupDownloadRestrictionRequest.cpp
   src/v20180412/model/DisableReplicaReadonlyResponse.cpp
+  src/v20180412/model/DestroyPrepaidInstanceRequest.cpp
   src/v20180412/model/CreateParamTemplateResponse.cpp
   src/v20180412/model/InstanceTagInfo.cpp
   src/v20180412/model/DescribeInstanceDTSInfoResponse.cpp
@@ -376,6 +383,7 @@ set(redis_src
   src/v20180412/model/DescribeBackupUrlResponse.cpp
   src/v20180412/model/InquiryPriceRenewInstanceResponse.cpp
   src/v20180412/model/DescribeDBSecurityGroupsRequest.cpp
+  src/v20180412/model/ModifyInstanceLogDeliveryRequest.cpp
   src/v20180412/model/DescribeProductInfoRequest.cpp
   src/v20180412/model/InquiryPriceCreateInstanceResponse.cpp
   src/v20180412/model/InstanceSecurityGroupDetail.cpp
@@ -406,7 +414,7 @@ set(redis_src
   src/v20180412/model/DescribeInstanceMonitorBigKeySizeDistRequest.cpp
   src/v20180412/model/DescribeInstanceAccountRequest.cpp
   src/v20180412/model/InstanceTextParam.cpp
-  src/v20180412/model/DescribeRedisClusterOverviewResponse.cpp
+  src/v20180412/model/DescribeInstanceLogDeliveryResponse.cpp
   src/v20180412/model/DescribeInstanceParamRecordsRequest.cpp
   src/v20180412/model/DescribeTaskListRequest.cpp
   src/v20180412/model/ChangeMasterInstanceResponse.cpp
@@ -452,7 +460,7 @@ set(redis_src
   src/v20180412/model/TradeDealDetail.cpp
   src/v20180412/model/ResourceTag.cpp
   src/v20180412/model/AssociateSecurityGroupsResponse.cpp
-  src/v20180412/model/ReplicaGroup.cpp
+  src/v20180412/model/LogDeliveryInfo.cpp
   src/v20180412/model/DescribeTaskInfoResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorBigKeyTypeDistResponse.cpp
   src/v20180412/model/DeleteReplicationInstanceResponse.cpp
@@ -489,6 +497,7 @@ set(redis_src
   src/v20180412/model/DescribeInstanceMonitorBigKeyTypeDistRequest.cpp
   src/v20180412/model/DescribeInstanceMonitorTopNCmdTookRequest.cpp
   src/v20180412/model/DestroyPrepaidInstanceResponse.cpp
+  src/v20180412/model/ReplicaGroup.cpp
   src/v20180412/model/DescribeRedisClusterOverviewRequest.cpp
   src/v20180412/model/DescribeCommonDBInstancesResponse.cpp
   src/v20180412/model/InquiryPriceCreateInstanceRequest.cpp
@@ -502,6 +511,7 @@ set(redis_src
   src/v20180412/model/DescribeInstanceNodeInfoRequest.cpp
   src/v20180412/model/DescribeMaintenanceWindowRequest.cpp
   src/v20180412/model/DescribeInstanceSupportFeatureResponse.cpp
+  src/v20180412/model/DescribeInstanceLogDeliveryRequest.cpp
   src/v20180412/model/AddReplicationInstanceRequest.cpp
   src/v20180412/model/InstanceClusterNode.cpp
   src/v20180412/model/DescribeSSLStatusResponse.cpp

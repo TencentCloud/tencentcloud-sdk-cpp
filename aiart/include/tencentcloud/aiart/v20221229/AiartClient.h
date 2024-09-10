@@ -37,6 +37,8 @@
 #include <tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/ReplaceBackgroundRequest.h>
 #include <tencentcloud/aiart/v20221229/model/ReplaceBackgroundResponse.h>
+#include <tencentcloud/aiart/v20221229/model/SketchToImageRequest.h>
+#include <tencentcloud/aiart/v20221229/model/SketchToImageResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitDrawPortraitJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitDrawPortraitJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobRequest.h>
@@ -82,6 +84,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReplaceBackgroundResponse> ReplaceBackgroundOutcome;
                 typedef std::future<ReplaceBackgroundOutcome> ReplaceBackgroundOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::ReplaceBackgroundRequest&, ReplaceBackgroundOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceBackgroundAsyncHandler;
+                typedef Outcome<Core::Error, Model::SketchToImageResponse> SketchToImageOutcome;
+                typedef std::future<SketchToImageOutcome> SketchToImageOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::SketchToImageRequest&, SketchToImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SketchToImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitDrawPortraitJobResponse> SubmitDrawPortraitJobOutcome;
                 typedef std::future<SubmitDrawPortraitJobOutcome> SubmitDrawPortraitJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::SubmitDrawPortraitJobRequest&, SubmitDrawPortraitJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitDrawPortraitJobAsyncHandler;
@@ -180,6 +185,16 @@ namespace TencentCloud
                 ReplaceBackgroundOutcome ReplaceBackground(const Model::ReplaceBackgroundRequest &request);
                 void ReplaceBackgroundAsync(const Model::ReplaceBackgroundRequest& request, const ReplaceBackgroundAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReplaceBackgroundOutcomeCallable ReplaceBackgroundCallable(const Model::ReplaceBackgroundRequest& request);
+
+                /**
+                 *线稿生图接口支持上传一张黑白线稿图，按照指定的主体对象以及样式、颜色、材质、风格等的文本描述prompt ，对线稿图进行色彩填充与细节描绘，得到一张完整绘制的图像。生成图分辨率默认为1024:1024。
+线稿生图默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req SketchToImageRequest
+                 * @return SketchToImageOutcome
+                 */
+                SketchToImageOutcome SketchToImage(const Model::SketchToImageRequest &request);
+                void SketchToImageAsync(const Model::SketchToImageRequest& request, const SketchToImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SketchToImageOutcomeCallable SketchToImageCallable(const Model::SketchToImageRequest& request);
 
                 /**
                  *AI 写真提供 AI 写真形象照的训练与生成能力，分为上传训练图片、训练模型、生成图片3个环节，需要依次调用对应接口。

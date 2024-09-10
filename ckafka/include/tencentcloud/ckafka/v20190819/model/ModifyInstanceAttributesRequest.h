@@ -195,21 +195,21 @@ namespace TencentCloud
                     /**
                      * 获取动态硬盘扩容策略配置
                      * @return DynamicDiskConfig 动态硬盘扩容策略配置
-                     * 
+                     * @deprecated
                      */
                     DynamicDiskConfig GetDynamicDiskConfig() const;
 
                     /**
                      * 设置动态硬盘扩容策略配置
                      * @param _dynamicDiskConfig 动态硬盘扩容策略配置
-                     * 
+                     * @deprecated
                      */
                     void SetDynamicDiskConfig(const DynamicDiskConfig& _dynamicDiskConfig);
 
                     /**
                      * 判断参数 DynamicDiskConfig 是否已赋值
                      * @return DynamicDiskConfig 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DynamicDiskConfigHasBeenSet() const;
 

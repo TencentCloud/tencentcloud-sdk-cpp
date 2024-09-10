@@ -341,6 +341,49 @@ AiartClient::ReplaceBackgroundOutcomeCallable AiartClient::ReplaceBackgroundCall
     return task->get_future();
 }
 
+AiartClient::SketchToImageOutcome AiartClient::SketchToImage(const SketchToImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "SketchToImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SketchToImageResponse rsp = SketchToImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SketchToImageOutcome(rsp);
+        else
+            return SketchToImageOutcome(o.GetError());
+    }
+    else
+    {
+        return SketchToImageOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::SketchToImageAsync(const SketchToImageRequest& request, const SketchToImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SketchToImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::SketchToImageOutcomeCallable AiartClient::SketchToImageCallable(const SketchToImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SketchToImageOutcome()>>(
+        [this, request]()
+        {
+            return this->SketchToImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::SubmitDrawPortraitJobOutcome AiartClient::SubmitDrawPortraitJob(const SubmitDrawPortraitJobRequest &request)
 {
     auto outcome = MakeRequest(request, "SubmitDrawPortraitJob");

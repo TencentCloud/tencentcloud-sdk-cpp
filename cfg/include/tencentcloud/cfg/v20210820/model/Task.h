@@ -833,6 +833,31 @@ namespace TencentCloud
                      */
                     bool TaskIssueHasBeenSet() const;
 
+                    /**
+                     * 获取region信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskRegionName region信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTaskRegionName() const;
+
+                    /**
+                     * 设置region信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskRegionName region信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskRegionName(const std::string& _taskRegionName);
+
+                    /**
+                     * 判断参数 TaskRegionName 是否已赋值
+                     * @return TaskRegionName 是否已赋值
+                     * 
+                     */
+                    bool TaskRegionNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1054,6 +1079,13 @@ namespace TencentCloud
                      */
                     std::string m_taskIssue;
                     bool m_taskIssueHasBeenSet;
+
+                    /**
+                     * region信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskRegionName;
+                    bool m_taskRegionNameHasBeenSet;
 
                 };
             }

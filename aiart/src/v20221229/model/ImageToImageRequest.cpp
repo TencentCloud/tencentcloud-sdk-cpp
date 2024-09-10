@@ -32,7 +32,9 @@ ImageToImageRequest::ImageToImageRequest() :
     m_logoAddHasBeenSet(false),
     m_logoParamHasBeenSet(false),
     m_strengthHasBeenSet(false),
-    m_rspImgTypeHasBeenSet(false)
+    m_rspImgTypeHasBeenSet(false),
+    m_enhanceImageHasBeenSet(false),
+    m_restoreFaceHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,22 @@ string ImageToImageRequest::ToJsonString() const
         string key = "RspImgType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_rspImgType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enhanceImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnhanceImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enhanceImage, allocator);
+    }
+
+    if (m_restoreFaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestoreFace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_restoreFace, allocator);
     }
 
 
@@ -296,6 +314,38 @@ void ImageToImageRequest::SetRspImgType(const string& _rspImgType)
 bool ImageToImageRequest::RspImgTypeHasBeenSet() const
 {
     return m_rspImgTypeHasBeenSet;
+}
+
+int64_t ImageToImageRequest::GetEnhanceImage() const
+{
+    return m_enhanceImage;
+}
+
+void ImageToImageRequest::SetEnhanceImage(const int64_t& _enhanceImage)
+{
+    m_enhanceImage = _enhanceImage;
+    m_enhanceImageHasBeenSet = true;
+}
+
+bool ImageToImageRequest::EnhanceImageHasBeenSet() const
+{
+    return m_enhanceImageHasBeenSet;
+}
+
+int64_t ImageToImageRequest::GetRestoreFace() const
+{
+    return m_restoreFace;
+}
+
+void ImageToImageRequest::SetRestoreFace(const int64_t& _restoreFace)
+{
+    m_restoreFace = _restoreFace;
+    m_restoreFaceHasBeenSet = true;
+}
+
+bool ImageToImageRequest::RestoreFaceHasBeenSet() const
+{
+    return m_restoreFaceHasBeenSet;
 }
 
 

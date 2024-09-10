@@ -338,6 +338,64 @@ Strength 值越小，生成图和原图越接近，取值范围(0, 1]，不传�
                      */
                     bool RspImgTypeHasBeenSet() const;
 
+                    /**
+                     * 获取画质增强开关，默认关闭。
+1：开启
+0：关闭
+开启后将增强图像的画质清晰度，生成耗时有所增加。
+                     * @return EnhanceImage 画质增强开关，默认关闭。
+1：开启
+0：关闭
+开启后将增强图像的画质清晰度，生成耗时有所增加。
+                     * 
+                     */
+                    int64_t GetEnhanceImage() const;
+
+                    /**
+                     * 设置画质增强开关，默认关闭。
+1：开启
+0：关闭
+开启后将增强图像的画质清晰度，生成耗时有所增加。
+                     * @param _enhanceImage 画质增强开关，默认关闭。
+1：开启
+0：关闭
+开启后将增强图像的画质清晰度，生成耗时有所增加。
+                     * 
+                     */
+                    void SetEnhanceImage(const int64_t& _enhanceImage);
+
+                    /**
+                     * 判断参数 EnhanceImage 是否已赋值
+                     * @return EnhanceImage 是否已赋值
+                     * 
+                     */
+                    bool EnhanceImageHasBeenSet() const;
+
+                    /**
+                     * 获取细节优化的面部数量上限，支持0 ~ 6，默认为0。
+若上传大于0的值，将以此为上限对每张图片中面积占比较小的面部进行细节修复，生成耗时根据实际优化的面部个数有所增加。
+                     * @return RestoreFace 细节优化的面部数量上限，支持0 ~ 6，默认为0。
+若上传大于0的值，将以此为上限对每张图片中面积占比较小的面部进行细节修复，生成耗时根据实际优化的面部个数有所增加。
+                     * 
+                     */
+                    int64_t GetRestoreFace() const;
+
+                    /**
+                     * 设置细节优化的面部数量上限，支持0 ~ 6，默认为0。
+若上传大于0的值，将以此为上限对每张图片中面积占比较小的面部进行细节修复，生成耗时根据实际优化的面部个数有所增加。
+                     * @param _restoreFace 细节优化的面部数量上限，支持0 ~ 6，默认为0。
+若上传大于0的值，将以此为上限对每张图片中面积占比较小的面部进行细节修复，生成耗时根据实际优化的面部个数有所增加。
+                     * 
+                     */
+                    void SetRestoreFace(const int64_t& _restoreFace);
+
+                    /**
+                     * 判断参数 RestoreFace 是否已赋值
+                     * @return RestoreFace 是否已赋值
+                     * 
+                     */
+                    bool RestoreFaceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -420,6 +478,22 @@ Strength 值越小，生成图和原图越接近，取值范围(0, 1]，不传�
                      */
                     std::string m_rspImgType;
                     bool m_rspImgTypeHasBeenSet;
+
+                    /**
+                     * 画质增强开关，默认关闭。
+1：开启
+0：关闭
+开启后将增强图像的画质清晰度，生成耗时有所增加。
+                     */
+                    int64_t m_enhanceImage;
+                    bool m_enhanceImageHasBeenSet;
+
+                    /**
+                     * 细节优化的面部数量上限，支持0 ~ 6，默认为0。
+若上传大于0的值，将以此为上限对每张图片中面积占比较小的面部进行细节修复，生成耗时根据实际优化的面部个数有所增加。
+                     */
+                    int64_t m_restoreFace;
+                    bool m_restoreFaceHasBeenSet;
 
                 };
             }

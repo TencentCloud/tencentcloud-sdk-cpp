@@ -119,6 +119,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/SignUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/CommonFlowApprover.h
   include/tencentcloud/essbasic/v20210526/model/FillApproverInfo.h
+  include/tencentcloud/essbasic/v20210526/model/CreatePersonAuthCertificateImageResponse.h
   include/tencentcloud/essbasic/v20210526/model/IntentionActionResultDetail.h
   include/tencentcloud/essbasic/v20210526/model/CreateEmployeeQualificationSealQrCodeRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignSealUrlRequest.h
@@ -165,6 +166,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeBillUsageDetailResponse.h
   include/tencentcloud/essbasic/v20210526/model/IntentionActionResult.h
   include/tencentcloud/essbasic/v20210526/model/FlowDetailInfo.h
+  include/tencentcloud/essbasic/v20210526/model/CreatePersonAuthCertificateImageRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateRoleResponse.h
@@ -485,6 +487,7 @@ set(essbasic_src
   src/v20210526/model/SignUrlInfo.cpp
   src/v20210526/model/CommonFlowApprover.cpp
   src/v20210526/model/FillApproverInfo.cpp
+  src/v20210526/model/CreatePersonAuthCertificateImageResponse.cpp
   src/v20210526/model/IntentionActionResultDetail.cpp
   src/v20210526/model/CreateEmployeeQualificationSealQrCodeRequest.cpp
   src/v20210526/model/ChannelCreateUserAutoSignSealUrlRequest.cpp
@@ -531,6 +534,7 @@ set(essbasic_src
   src/v20210526/model/ChannelDescribeBillUsageDetailResponse.cpp
   src/v20210526/model/IntentionActionResult.cpp
   src/v20210526/model/FlowDetailInfo.cpp
+  src/v20210526/model/CreatePersonAuthCertificateImageRequest.cpp
   src/v20210526/model/CreateFlowsByTemplatesResponse.cpp
   src/v20210526/model/DescribeChannelFlowEvidenceReportRequest.cpp
   src/v20210526/model/ChannelCreateRoleResponse.cpp

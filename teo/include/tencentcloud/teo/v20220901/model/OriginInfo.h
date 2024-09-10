@@ -223,21 +223,21 @@ namespace TencentCloud
                     /**
                      * 获取VODEO 子应用 ID。该参数当 OriginType = VODEO 时必填。
                      * @return VodeoSubAppId VODEO 子应用 ID。该参数当 OriginType = VODEO 时必填。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetVodeoSubAppId() const;
 
                     /**
                      * 设置VODEO 子应用 ID。该参数当 OriginType = VODEO 时必填。
                      * @param _vodeoSubAppId VODEO 子应用 ID。该参数当 OriginType = VODEO 时必填。
-                     * 
+                     * @deprecated
                      */
                     void SetVodeoSubAppId(const int64_t& _vodeoSubAppId);
 
                     /**
                      * 判断参数 VodeoSubAppId 是否已赋值
                      * @return VodeoSubAppId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool VodeoSubAppIdHasBeenSet() const;
 
@@ -248,7 +248,7 @@ namespace TencentCloud
                      * @return VodeoDistributionRange VODEO 分发范围，该参数当 OriginType = VODEO 时必填。取值有： 
 <li>All：当前应用下所有存储桶；</li> 
 <li>Bucket：指定的某一个存储桶。</li>
-                     * 
+                     * @deprecated
                      */
                     std::string GetVodeoDistributionRange() const;
 
@@ -259,35 +259,35 @@ namespace TencentCloud
                      * @param _vodeoDistributionRange VODEO 分发范围，该参数当 OriginType = VODEO 时必填。取值有： 
 <li>All：当前应用下所有存储桶；</li> 
 <li>Bucket：指定的某一个存储桶。</li>
-                     * 
+                     * @deprecated
                      */
                     void SetVodeoDistributionRange(const std::string& _vodeoDistributionRange);
 
                     /**
                      * 判断参数 VodeoDistributionRange 是否已赋值
                      * @return VodeoDistributionRange 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool VodeoDistributionRangeHasBeenSet() const;
 
                     /**
                      * 获取VODEO 存储桶 ID，该参数当 OriginType = VODEO 且 VodeoDistributionRange = Bucket 时必填。
                      * @return VodeoBucketId VODEO 存储桶 ID，该参数当 OriginType = VODEO 且 VodeoDistributionRange = Bucket 时必填。
-                     * 
+                     * @deprecated
                      */
                     std::string GetVodeoBucketId() const;
 
                     /**
                      * 设置VODEO 存储桶 ID，该参数当 OriginType = VODEO 且 VodeoDistributionRange = Bucket 时必填。
                      * @param _vodeoBucketId VODEO 存储桶 ID，该参数当 OriginType = VODEO 且 VodeoDistributionRange = Bucket 时必填。
-                     * 
+                     * @deprecated
                      */
                     void SetVodeoBucketId(const std::string& _vodeoBucketId);
 
                     /**
                      * 判断参数 VodeoBucketId 是否已赋值
                      * @return VodeoBucketId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool VodeoBucketIdHasBeenSet() const;
 

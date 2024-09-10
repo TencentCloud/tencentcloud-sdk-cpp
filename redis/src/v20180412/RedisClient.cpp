@@ -1373,6 +1373,49 @@ RedisClient::DescribeInstanceEventsOutcomeCallable RedisClient::DescribeInstance
     return task->get_future();
 }
 
+RedisClient::DescribeInstanceLogDeliveryOutcome RedisClient::DescribeInstanceLogDelivery(const DescribeInstanceLogDeliveryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceLogDelivery");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceLogDeliveryResponse rsp = DescribeInstanceLogDeliveryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceLogDeliveryOutcome(rsp);
+        else
+            return DescribeInstanceLogDeliveryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceLogDeliveryOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeInstanceLogDeliveryAsync(const DescribeInstanceLogDeliveryRequest& request, const DescribeInstanceLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceLogDelivery(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeInstanceLogDeliveryOutcomeCallable RedisClient::DescribeInstanceLogDeliveryCallable(const DescribeInstanceLogDeliveryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceLogDeliveryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceLogDelivery(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::DescribeInstanceMonitorBigKeyOutcome RedisClient::DescribeInstanceMonitorBigKey(const DescribeInstanceMonitorBigKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceMonitorBigKey");
@@ -3602,6 +3645,49 @@ RedisClient::ModifyInstanceEventOutcomeCallable RedisClient::ModifyInstanceEvent
         [this, request]()
         {
             return this->ModifyInstanceEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::ModifyInstanceLogDeliveryOutcome RedisClient::ModifyInstanceLogDelivery(const ModifyInstanceLogDeliveryRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceLogDelivery");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceLogDeliveryResponse rsp = ModifyInstanceLogDeliveryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceLogDeliveryOutcome(rsp);
+        else
+            return ModifyInstanceLogDeliveryOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceLogDeliveryOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::ModifyInstanceLogDeliveryAsync(const ModifyInstanceLogDeliveryRequest& request, const ModifyInstanceLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceLogDelivery(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::ModifyInstanceLogDeliveryOutcomeCallable RedisClient::ModifyInstanceLogDeliveryCallable(const ModifyInstanceLogDeliveryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceLogDeliveryOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceLogDelivery(request);
         }
     );
 

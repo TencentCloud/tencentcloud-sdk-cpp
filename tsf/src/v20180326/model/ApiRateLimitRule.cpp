@@ -30,7 +30,10 @@ ApiRateLimitRule::ApiRateLimitRule() :
     m_tsfRuleIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false)
+    m_updatedTimeHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_appIdHasBeenSet(false)
 {
 }
 
@@ -139,6 +142,36 @@ CoreInternalOutcome ApiRateLimitRule::Deserialize(const rapidjson::Value &value)
         m_updatedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Limit") && !value["Limit"].IsNull())
+    {
+        if (!value["Limit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiRateLimitRule.Limit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_limit = value["Limit"].GetInt64();
+        m_limitHasBeenSet = true;
+    }
+
+    if (value.HasMember("Offset") && !value["Offset"].IsNull())
+    {
+        if (!value["Offset"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiRateLimitRule.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_offset = value["Offset"].GetInt64();
+        m_offsetHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiRateLimitRule.AppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = string(value["AppId"].GetString());
+        m_appIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +257,30 @@ void ApiRateLimitRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "UpdatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updatedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +444,53 @@ void ApiRateLimitRule::SetUpdatedTime(const string& _updatedTime)
 bool ApiRateLimitRule::UpdatedTimeHasBeenSet() const
 {
     return m_updatedTimeHasBeenSet;
+}
+
+int64_t ApiRateLimitRule::GetLimit() const
+{
+    return m_limit;
+}
+
+void ApiRateLimitRule::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool ApiRateLimitRule::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t ApiRateLimitRule::GetOffset() const
+{
+    return m_offset;
+}
+
+void ApiRateLimitRule::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool ApiRateLimitRule::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+string ApiRateLimitRule::GetAppId() const
+{
+    return m_appId;
+}
+
+void ApiRateLimitRule::SetAppId(const string& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool ApiRateLimitRule::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
 }
 

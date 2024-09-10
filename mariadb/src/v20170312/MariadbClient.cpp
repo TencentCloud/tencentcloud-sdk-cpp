@@ -642,6 +642,49 @@ MariadbClient::DescribeAccountsOutcomeCallable MariadbClient::DescribeAccountsCa
     return task->get_future();
 }
 
+MariadbClient::DescribeBackupConfigsOutcome MariadbClient::DescribeBackupConfigs(const DescribeBackupConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupConfigsResponse rsp = DescribeBackupConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupConfigsOutcome(rsp);
+        else
+            return DescribeBackupConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupConfigsOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::DescribeBackupConfigsAsync(const DescribeBackupConfigsRequest& request, const DescribeBackupConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::DescribeBackupConfigsOutcomeCallable MariadbClient::DescribeBackupConfigsCallable(const DescribeBackupConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::DescribeBackupFilesOutcome MariadbClient::DescribeBackupFiles(const DescribeBackupFilesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupFiles");
@@ -2269,6 +2312,49 @@ MariadbClient::ModifyAccountPrivilegesOutcomeCallable MariadbClient::ModifyAccou
         [this, request]()
         {
             return this->ModifyAccountPrivileges(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MariadbClient::ModifyBackupConfigsOutcome MariadbClient::ModifyBackupConfigs(const ModifyBackupConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBackupConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBackupConfigsResponse rsp = ModifyBackupConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBackupConfigsOutcome(rsp);
+        else
+            return ModifyBackupConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBackupConfigsOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::ModifyBackupConfigsAsync(const ModifyBackupConfigsRequest& request, const ModifyBackupConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBackupConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::ModifyBackupConfigsOutcomeCallable MariadbClient::ModifyBackupConfigsCallable(const ModifyBackupConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBackupConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBackupConfigs(request);
         }
     );
 

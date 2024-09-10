@@ -51,6 +51,8 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeAccountPrivilegesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeAccountsRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeAccountsResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeBackupConfigsRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeBackupConfigsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeBackupFilesRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeBackupFilesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBEncryptAttributesRequest.h>
@@ -135,6 +137,8 @@
 #include <tencentcloud/dcdb/v20180411/model/ModifyAccountDescriptionResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyAccountPrivilegesRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyAccountPrivilegesResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyBackupConfigsRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyBackupConfigsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyDBEncryptAttributesRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyDBEncryptAttributesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyDBInstanceNameRequest.h>
@@ -227,6 +231,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
                 typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeAccountsRequest&, DescribeAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupConfigsResponse> DescribeBackupConfigsOutcome;
+                typedef std::future<DescribeBackupConfigsOutcome> DescribeBackupConfigsOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DescribeBackupConfigsRequest&, DescribeBackupConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupConfigsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupFilesResponse> DescribeBackupFilesOutcome;
                 typedef std::future<DescribeBackupFilesOutcome> DescribeBackupFilesOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeBackupFilesRequest&, DescribeBackupFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupFilesAsyncHandler;
@@ -353,6 +360,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAccountPrivilegesResponse> ModifyAccountPrivilegesOutcome;
                 typedef std::future<ModifyAccountPrivilegesOutcome> ModifyAccountPrivilegesOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::ModifyAccountPrivilegesRequest&, ModifyAccountPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountPrivilegesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBackupConfigsResponse> ModifyBackupConfigsOutcome;
+                typedef std::future<ModifyBackupConfigsOutcome> ModifyBackupConfigsOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::ModifyBackupConfigsRequest&, ModifyBackupConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupConfigsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBEncryptAttributesResponse> ModifyDBEncryptAttributesOutcome;
                 typedef std::future<ModifyDBEncryptAttributesOutcome> ModifyDBEncryptAttributesOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::ModifyDBEncryptAttributesRequest&, ModifyDBEncryptAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBEncryptAttributesAsyncHandler;
@@ -537,6 +547,15 @@ namespace TencentCloud
                 DescribeAccountsOutcome DescribeAccounts(const Model::DescribeAccountsRequest &request);
                 void DescribeAccountsAsync(const Model::DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccountsOutcomeCallable DescribeAccountsCallable(const Model::DescribeAccountsRequest& request);
+
+                /**
+                 *本接口(DescribeBackupConfigs)用于查询数据库备份配置信息。
+                 * @param req DescribeBackupConfigsRequest
+                 * @return DescribeBackupConfigsOutcome
+                 */
+                DescribeBackupConfigsOutcome DescribeBackupConfigs(const Model::DescribeBackupConfigsRequest &request);
+                void DescribeBackupConfigsAsync(const Model::DescribeBackupConfigsRequest& request, const DescribeBackupConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupConfigsOutcomeCallable DescribeBackupConfigsCallable(const Model::DescribeBackupConfigsRequest& request);
 
                 /**
                  *本接口(DescribeBackupFiles)用于查看备份文件列表。
@@ -923,6 +942,17 @@ namespace TencentCloud
                 ModifyAccountPrivilegesOutcome ModifyAccountPrivileges(const Model::ModifyAccountPrivilegesRequest &request);
                 void ModifyAccountPrivilegesAsync(const Model::ModifyAccountPrivilegesRequest& request, const ModifyAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAccountPrivilegesOutcomeCallable ModifyAccountPrivilegesCallable(const Model::ModifyAccountPrivilegesRequest& request);
+
+                /**
+                 *本接口(ModifyBackupConfigs)用于修改数据库备份配置信息。
+
+1. 修改数据库超期备份配置，目前按年、按月、按日只支持一种，存在互斥关系，如当前策略按年备份，如果传入按月备份策略将会覆盖当前的按年备份策略，务必注意。
+                 * @param req ModifyBackupConfigsRequest
+                 * @return ModifyBackupConfigsOutcome
+                 */
+                ModifyBackupConfigsOutcome ModifyBackupConfigs(const Model::ModifyBackupConfigsRequest &request);
+                void ModifyBackupConfigsAsync(const Model::ModifyBackupConfigsRequest& request, const ModifyBackupConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBackupConfigsOutcomeCallable ModifyBackupConfigsCallable(const Model::ModifyBackupConfigsRequest& request);
 
                 /**
                  *本接口(ModifyDBEncryptAttributes)用于修改实例数据加密。

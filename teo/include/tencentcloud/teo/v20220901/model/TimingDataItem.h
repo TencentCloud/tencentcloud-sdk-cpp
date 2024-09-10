@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回数据对应时间点，采用unix秒级时间戳。
-                     * @return Timestamp 返回数据对应时间点，采用unix秒级时间戳。
+                     * 获取返回数据对应时间点，采用 unix 秒级时间戳。
+                     * @return Timestamp 返回数据对应时间点，采用 unix 秒级时间戳。
                      * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
-                     * 设置返回数据对应时间点，采用unix秒级时间戳。
-                     * @param _timestamp 返回数据对应时间点，采用unix秒级时间戳。
+                     * 设置返回数据对应时间点，采用 unix 秒级时间戳。
+                     * @param _timestamp 返回数据对应时间点，采用 unix 秒级时间戳。
                      * 
                      */
                     void SetTimestamp(const int64_t& _timestamp);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回数据对应时间点，采用unix秒级时间戳。
+                     * 返回数据对应时间点，采用 unix 秒级时间戳。
                      */
                     int64_t m_timestamp;
                     bool m_timestampHasBeenSet;

@@ -79,6 +79,8 @@
 #include <tencentcloud/es/v20180416/model/DescribeServerlessSpaceUserResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeServerlessSpacesRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeServerlessSpacesResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeSpaceKibanaToolsRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeSpaceKibanaToolsResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeUserCosSnapshotListRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeUserCosSnapshotListResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeViewsRequest.h>
@@ -233,6 +235,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServerlessSpacesResponse> DescribeServerlessSpacesOutcome;
                 typedef std::future<DescribeServerlessSpacesOutcome> DescribeServerlessSpacesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeServerlessSpacesRequest&, DescribeServerlessSpacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessSpacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSpaceKibanaToolsResponse> DescribeSpaceKibanaToolsOutcome;
+                typedef std::future<DescribeSpaceKibanaToolsOutcome> DescribeSpaceKibanaToolsOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeSpaceKibanaToolsRequest&, DescribeSpaceKibanaToolsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpaceKibanaToolsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserCosSnapshotListResponse> DescribeUserCosSnapshotListOutcome;
                 typedef std::future<DescribeUserCosSnapshotListOutcome> DescribeUserCosSnapshotListOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeUserCosSnapshotListRequest&, DescribeUserCosSnapshotListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserCosSnapshotListAsyncHandler;
@@ -572,6 +577,15 @@ namespace TencentCloud
                 DescribeServerlessSpacesOutcome DescribeServerlessSpaces(const Model::DescribeServerlessSpacesRequest &request);
                 void DescribeServerlessSpacesAsync(const Model::DescribeServerlessSpacesRequest& request, const DescribeServerlessSpacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServerlessSpacesOutcomeCallable DescribeServerlessSpacesCallable(const Model::DescribeServerlessSpacesRequest& request);
+
+                /**
+                 *space维度的kibana获取登录token
+                 * @param req DescribeSpaceKibanaToolsRequest
+                 * @return DescribeSpaceKibanaToolsOutcome
+                 */
+                DescribeSpaceKibanaToolsOutcome DescribeSpaceKibanaTools(const Model::DescribeSpaceKibanaToolsRequest &request);
+                void DescribeSpaceKibanaToolsAsync(const Model::DescribeSpaceKibanaToolsRequest& request, const DescribeSpaceKibanaToolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSpaceKibanaToolsOutcomeCallable DescribeSpaceKibanaToolsCallable(const Model::DescribeSpaceKibanaToolsRequest& request);
 
                 /**
                  *查询快照信息接口

@@ -89,6 +89,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainPurviewResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainShareInfoRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainShareInfoResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainShareUserListRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainShareUserListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainWhoisRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainWhoisResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribePackageDetailRequest.h>
@@ -284,6 +286,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainShareInfoResponse> DescribeDomainShareInfoOutcome;
                 typedef std::future<DescribeDomainShareInfoOutcome> DescribeDomainShareInfoOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainShareInfoRequest&, DescribeDomainShareInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainShareInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainShareUserListResponse> DescribeDomainShareUserListOutcome;
+                typedef std::future<DescribeDomainShareUserListOutcome> DescribeDomainShareUserListOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeDomainShareUserListRequest&, DescribeDomainShareUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainShareUserListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainWhoisResponse> DescribeDomainWhoisOutcome;
                 typedef std::future<DescribeDomainWhoisOutcome> DescribeDomainWhoisOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainWhoisRequest&, DescribeDomainWhoisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainWhoisAsyncHandler;
@@ -709,6 +714,15 @@ namespace TencentCloud
                 DescribeDomainShareInfoOutcome DescribeDomainShareInfo(const Model::DescribeDomainShareInfoRequest &request);
                 void DescribeDomainShareInfoAsync(const Model::DescribeDomainShareInfoRequest& request, const DescribeDomainShareInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainShareInfoOutcomeCallable DescribeDomainShareInfoCallable(const Model::DescribeDomainShareInfoRequest& request);
+
+                /**
+                 *获取指定域名的已共享列表
+                 * @param req DescribeDomainShareUserListRequest
+                 * @return DescribeDomainShareUserListOutcome
+                 */
+                DescribeDomainShareUserListOutcome DescribeDomainShareUserList(const Model::DescribeDomainShareUserListRequest &request);
+                void DescribeDomainShareUserListAsync(const Model::DescribeDomainShareUserListRequest& request, const DescribeDomainShareUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainShareUserListOutcomeCallable DescribeDomainShareUserListCallable(const Model::DescribeDomainShareUserListRequest& request);
 
                 /**
                  *获取域名Whois信息

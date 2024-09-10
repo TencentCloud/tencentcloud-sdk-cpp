@@ -85,6 +85,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceDealDetailResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceEventsRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceEventsResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceLogDeliveryRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceLogDeliveryResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeyRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeyResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeySizeDistRequest.h>
@@ -189,6 +191,8 @@
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceAvailabilityZonesResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceEventRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceEventResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstanceLogDeliveryRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstanceLogDeliveryResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceParamsRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceParamsResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceReadOnlyRequest.h>
@@ -338,6 +342,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceEventsResponse> DescribeInstanceEventsOutcome;
                 typedef std::future<DescribeInstanceEventsOutcome> DescribeInstanceEventsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceEventsRequest&, DescribeInstanceEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceEventsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceLogDeliveryResponse> DescribeInstanceLogDeliveryOutcome;
+                typedef std::future<DescribeInstanceLogDeliveryOutcome> DescribeInstanceLogDeliveryOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeInstanceLogDeliveryRequest&, DescribeInstanceLogDeliveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceLogDeliveryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceMonitorBigKeyResponse> DescribeInstanceMonitorBigKeyOutcome;
                 typedef std::future<DescribeInstanceMonitorBigKeyOutcome> DescribeInstanceMonitorBigKeyOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceMonitorBigKeyRequest&, DescribeInstanceMonitorBigKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceMonitorBigKeyAsyncHandler;
@@ -494,6 +501,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceEventResponse> ModifyInstanceEventOutcome;
                 typedef std::future<ModifyInstanceEventOutcome> ModifyInstanceEventOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstanceEventRequest&, ModifyInstanceEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceEventAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceLogDeliveryResponse> ModifyInstanceLogDeliveryOutcome;
+                typedef std::future<ModifyInstanceLogDeliveryOutcome> ModifyInstanceLogDeliveryOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyInstanceLogDeliveryRequest&, ModifyInstanceLogDeliveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceLogDeliveryAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceParamsResponse> ModifyInstanceParamsOutcome;
                 typedef std::future<ModifyInstanceParamsOutcome> ModifyInstanceParamsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstanceParamsRequest&, ModifyInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceParamsAsyncHandler;
@@ -838,6 +848,15 @@ namespace TencentCloud
                 DescribeInstanceEventsOutcome DescribeInstanceEvents(const Model::DescribeInstanceEventsRequest &request);
                 void DescribeInstanceEventsAsync(const Model::DescribeInstanceEventsRequest& request, const DescribeInstanceEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceEventsOutcomeCallable DescribeInstanceEventsCallable(const Model::DescribeInstanceEventsRequest& request);
+
+                /**
+                 *本接口（DescribeInstanceLogDelivery）用于查询实例的日志投递配置。
+                 * @param req DescribeInstanceLogDeliveryRequest
+                 * @return DescribeInstanceLogDeliveryOutcome
+                 */
+                DescribeInstanceLogDeliveryOutcome DescribeInstanceLogDelivery(const Model::DescribeInstanceLogDeliveryRequest &request);
+                void DescribeInstanceLogDeliveryAsync(const Model::DescribeInstanceLogDeliveryRequest& request, const DescribeInstanceLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceLogDeliveryOutcomeCallable DescribeInstanceLogDeliveryCallable(const Model::DescribeInstanceLogDeliveryRequest& request);
 
                 /**
                  *腾讯云数据库 Redis 已经于2022年10月31日下线查询实例大 Key 接口。具体公告，请参见[查询实例大 Key 接口下线公告](https://cloud.tencent.com/document/product/239/81005)。
@@ -1306,6 +1325,15 @@ namespace TencentCloud
                 ModifyInstanceEventOutcome ModifyInstanceEvent(const Model::ModifyInstanceEventRequest &request);
                 void ModifyInstanceEventAsync(const Model::ModifyInstanceEventRequest& request, const ModifyInstanceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceEventOutcomeCallable ModifyInstanceEventCallable(const Model::ModifyInstanceEventRequest& request);
+
+                /**
+                 *本接口（ModifyInstanceLogDelivery）用于开启或关闭投递实例日志到CLS。
+                 * @param req ModifyInstanceLogDeliveryRequest
+                 * @return ModifyInstanceLogDeliveryOutcome
+                 */
+                ModifyInstanceLogDeliveryOutcome ModifyInstanceLogDelivery(const Model::ModifyInstanceLogDeliveryRequest &request);
+                void ModifyInstanceLogDeliveryAsync(const Model::ModifyInstanceLogDeliveryRequest& request, const ModifyInstanceLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceLogDeliveryOutcomeCallable ModifyInstanceLogDeliveryCallable(const Model::ModifyInstanceLogDeliveryRequest& request);
 
                 /**
                  *本接口(ModifyInstanceParams)用于修改Redis实例的参数配置。

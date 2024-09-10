@@ -24,7 +24,8 @@ using namespace std;
 
 CreateAllGatewayApiAsyncRequest::CreateAllGatewayApiAsyncRequest() :
     m_groupIdHasBeenSet(false),
-    m_microserviceIdHasBeenSet(false)
+    m_microserviceIdHasBeenSet(false),
+    m_namespaceIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CreateAllGatewayApiAsyncRequest::ToJsonString() const
         string key = "MicroserviceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_microserviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NamespaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_namespaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CreateAllGatewayApiAsyncRequest::SetMicroserviceId(const string& _microserv
 bool CreateAllGatewayApiAsyncRequest::MicroserviceIdHasBeenSet() const
 {
     return m_microserviceIdHasBeenSet;
+}
+
+string CreateAllGatewayApiAsyncRequest::GetNamespaceId() const
+{
+    return m_namespaceId;
+}
+
+void CreateAllGatewayApiAsyncRequest::SetNamespaceId(const string& _namespaceId)
+{
+    m_namespaceId = _namespaceId;
+    m_namespaceIdHasBeenSet = true;
+}
+
+bool CreateAllGatewayApiAsyncRequest::NamespaceIdHasBeenSet() const
+{
+    return m_namespaceIdHasBeenSet;
 }
 
 

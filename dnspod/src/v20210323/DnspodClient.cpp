@@ -1459,6 +1459,49 @@ DnspodClient::DescribeDomainShareInfoOutcomeCallable DnspodClient::DescribeDomai
     return task->get_future();
 }
 
+DnspodClient::DescribeDomainShareUserListOutcome DnspodClient::DescribeDomainShareUserList(const DescribeDomainShareUserListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainShareUserList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainShareUserListResponse rsp = DescribeDomainShareUserListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainShareUserListOutcome(rsp);
+        else
+            return DescribeDomainShareUserListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainShareUserListOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeDomainShareUserListAsync(const DescribeDomainShareUserListRequest& request, const DescribeDomainShareUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainShareUserList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeDomainShareUserListOutcomeCallable DnspodClient::DescribeDomainShareUserListCallable(const DescribeDomainShareUserListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainShareUserListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainShareUserList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DescribeDomainWhoisOutcome DnspodClient::DescribeDomainWhois(const DescribeDomainWhoisRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDomainWhois");

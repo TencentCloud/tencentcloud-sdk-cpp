@@ -1244,6 +1244,49 @@ EsClient::DescribeServerlessSpacesOutcomeCallable EsClient::DescribeServerlessSp
     return task->get_future();
 }
 
+EsClient::DescribeSpaceKibanaToolsOutcome EsClient::DescribeSpaceKibanaTools(const DescribeSpaceKibanaToolsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSpaceKibanaTools");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSpaceKibanaToolsResponse rsp = DescribeSpaceKibanaToolsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSpaceKibanaToolsOutcome(rsp);
+        else
+            return DescribeSpaceKibanaToolsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSpaceKibanaToolsOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeSpaceKibanaToolsAsync(const DescribeSpaceKibanaToolsRequest& request, const DescribeSpaceKibanaToolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSpaceKibanaTools(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DescribeSpaceKibanaToolsOutcomeCallable EsClient::DescribeSpaceKibanaToolsCallable(const DescribeSpaceKibanaToolsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSpaceKibanaToolsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSpaceKibanaTools(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::DescribeUserCosSnapshotListOutcome EsClient::DescribeUserCosSnapshotList(const DescribeUserCosSnapshotListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserCosSnapshotList");

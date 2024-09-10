@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目的网段，取值不能在私有网络网段内，例如：112.20.51.0/24。
-                     * @return DestinationCidrBlock 目的网段，取值不能在私有网络网段内，例如：112.20.51.0/24。
+                     * 获取创建IPv4目的网段，取值不能在私有网络网段内，例如：112.20.51.0/24。
+                     * @return DestinationCidrBlock 创建IPv4目的网段，取值不能在私有网络网段内，例如：112.20.51.0/24。
                      * 
                      */
                     std::string GetDestinationCidrBlock() const;
 
                     /**
-                     * 设置目的网段，取值不能在私有网络网段内，例如：112.20.51.0/24。
-                     * @param _destinationCidrBlock 目的网段，取值不能在私有网络网段内，例如：112.20.51.0/24。
+                     * 设置创建IPv4目的网段，取值不能在私有网络网段内，例如：112.20.51.0/24。
+                     * @param _destinationCidrBlock 创建IPv4目的网段，取值不能在私有网络网段内，例如：112.20.51.0/24。
                      * 
                      */
                     void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
@@ -74,20 +74,26 @@ VPN：VPN网关；
 DIRECTCONNECT：专线网关；
 PEERCONNECTION：对等连接；
 HAVIP：高可用虚拟IP；
-NAT：NAT网关; 
+NAT：公网NAT网关; 
 NORMAL_CVM：普通云服务器；
 EIP：云服务器的公网IP；
-LOCAL_GATEWAY：本地网关。
+LOCAL_GATEWAY：CDC本地网关；
+INTRANAT：私网NAT网关；
+USER_CCN；云联网（自定义路由）。
+
                      * @return GatewayType 下一跳类型，目前我们支持的类型有：
 CVM：公网网关类型的云服务器；
 VPN：VPN网关；
 DIRECTCONNECT：专线网关；
 PEERCONNECTION：对等连接；
 HAVIP：高可用虚拟IP；
-NAT：NAT网关; 
+NAT：公网NAT网关; 
 NORMAL_CVM：普通云服务器；
 EIP：云服务器的公网IP；
-LOCAL_GATEWAY：本地网关。
+LOCAL_GATEWAY：CDC本地网关；
+INTRANAT：私网NAT网关；
+USER_CCN；云联网（自定义路由）。
+
                      * 
                      */
                     std::string GetGatewayType() const;
@@ -99,20 +105,26 @@ VPN：VPN网关；
 DIRECTCONNECT：专线网关；
 PEERCONNECTION：对等连接；
 HAVIP：高可用虚拟IP；
-NAT：NAT网关; 
+NAT：公网NAT网关; 
 NORMAL_CVM：普通云服务器；
 EIP：云服务器的公网IP；
-LOCAL_GATEWAY：本地网关。
+LOCAL_GATEWAY：CDC本地网关；
+INTRANAT：私网NAT网关；
+USER_CCN；云联网（自定义路由）。
+
                      * @param _gatewayType 下一跳类型，目前我们支持的类型有：
 CVM：公网网关类型的云服务器；
 VPN：VPN网关；
 DIRECTCONNECT：专线网关；
 PEERCONNECTION：对等连接；
 HAVIP：高可用虚拟IP；
-NAT：NAT网关; 
+NAT：公网NAT网关; 
 NORMAL_CVM：普通云服务器；
 EIP：云服务器的公网IP；
-LOCAL_GATEWAY：本地网关。
+LOCAL_GATEWAY：CDC本地网关；
+INTRANAT：私网NAT网关；
+USER_CCN；云联网（自定义路由）。
+
                      * 
                      */
                     void SetGatewayType(const std::string& _gatewayType);
@@ -283,18 +295,18 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
                     bool RouteTableIdHasBeenSet() const;
 
                     /**
-                     * 获取目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
+                     * 获取创建IPv6目的网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DestinationIpv6CidrBlock 目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
+                     * @return DestinationIpv6CidrBlock 创建IPv6目的网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDestinationIpv6CidrBlock() const;
 
                     /**
-                     * 设置目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
+                     * 设置创建IPv6目的网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _destinationIpv6CidrBlock 目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
+                     * @param _destinationIpv6CidrBlock 创建IPv6目的网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -329,18 +341,18 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
                     bool RouteItemIdHasBeenSet() const;
 
                     /**
-                     * 获取路由策略是否发布到云联网。
+                     * 获取路由策略是否发布到云联网。该字段仅做出参使用，作为入参字段时此参数不生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublishedToVbc 路由策略是否发布到云联网。
+                     * @return PublishedToVbc 路由策略是否发布到云联网。该字段仅做出参使用，作为入参字段时此参数不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetPublishedToVbc() const;
 
                     /**
-                     * 设置路由策略是否发布到云联网。
+                     * 设置路由策略是否发布到云联网。该字段仅做出参使用，作为入参字段时此参数不生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _publishedToVbc 路由策略是否发布到云联网。
+                     * @param _publishedToVbc 路由策略是否发布到云联网。该字段仅做出参使用，作为入参字段时此参数不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -377,7 +389,7 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
                 private:
 
                     /**
-                     * 目的网段，取值不能在私有网络网段内，例如：112.20.51.0/24。
+                     * 创建IPv4目的网段，取值不能在私有网络网段内，例如：112.20.51.0/24。
                      */
                     std::string m_destinationCidrBlock;
                     bool m_destinationCidrBlockHasBeenSet;
@@ -389,10 +401,13 @@ VPN：VPN网关；
 DIRECTCONNECT：专线网关；
 PEERCONNECTION：对等连接；
 HAVIP：高可用虚拟IP；
-NAT：NAT网关; 
+NAT：公网NAT网关; 
 NORMAL_CVM：普通云服务器；
 EIP：云服务器的公网IP；
-LOCAL_GATEWAY：本地网关。
+LOCAL_GATEWAY：CDC本地网关；
+INTRANAT：私网NAT网关；
+USER_CCN；云联网（自定义路由）。
+
                      */
                     std::string m_gatewayType;
                     bool m_gatewayTypeHasBeenSet;
@@ -442,7 +457,7 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
                     bool m_routeTableIdHasBeenSet;
 
                     /**
-                     * 目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
+                     * 创建IPv6目的网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_destinationIpv6CidrBlock;
@@ -455,7 +470,7 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
                     bool m_routeItemIdHasBeenSet;
 
                     /**
-                     * 路由策略是否发布到云联网。
+                     * 路由策略是否发布到云联网。该字段仅做出参使用，作为入参字段时此参数不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_publishedToVbc;

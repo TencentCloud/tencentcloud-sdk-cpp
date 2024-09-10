@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool MicroserviceIdHasBeenSet() const;
 
+                    /**
+                     * 获取命名空间ID
+                     * @return NamespaceId 命名空间ID
+                     * 
+                     */
+                    std::string GetNamespaceId() const;
+
+                    /**
+                     * 设置命名空间ID
+                     * @param _namespaceId 命名空间ID
+                     * 
+                     */
+                    void SetNamespaceId(const std::string& _namespaceId);
+
+                    /**
+                     * 判断参数 NamespaceId 是否已赋值
+                     * @return NamespaceId 是否已赋值
+                     * 
+                     */
+                    bool NamespaceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_microserviceId;
                     bool m_microserviceIdHasBeenSet;
+
+                    /**
+                     * 命名空间ID
+                     */
+                    std::string m_namespaceId;
+                    bool m_namespaceIdHasBeenSet;
 
                 };
             }

@@ -642,6 +642,49 @@ DcdbClient::DescribeAccountsOutcomeCallable DcdbClient::DescribeAccountsCallable
     return task->get_future();
 }
 
+DcdbClient::DescribeBackupConfigsOutcome DcdbClient::DescribeBackupConfigs(const DescribeBackupConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupConfigsResponse rsp = DescribeBackupConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupConfigsOutcome(rsp);
+        else
+            return DescribeBackupConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupConfigsOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::DescribeBackupConfigsAsync(const DescribeBackupConfigsRequest& request, const DescribeBackupConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::DescribeBackupConfigsOutcomeCallable DcdbClient::DescribeBackupConfigsCallable(const DescribeBackupConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::DescribeBackupFilesOutcome DcdbClient::DescribeBackupFiles(const DescribeBackupFilesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupFiles");
@@ -2441,6 +2484,49 @@ DcdbClient::ModifyAccountPrivilegesOutcomeCallable DcdbClient::ModifyAccountPriv
         [this, request]()
         {
             return this->ModifyAccountPrivileges(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DcdbClient::ModifyBackupConfigsOutcome DcdbClient::ModifyBackupConfigs(const ModifyBackupConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBackupConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBackupConfigsResponse rsp = ModifyBackupConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBackupConfigsOutcome(rsp);
+        else
+            return ModifyBackupConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBackupConfigsOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::ModifyBackupConfigsAsync(const ModifyBackupConfigsRequest& request, const ModifyBackupConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBackupConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::ModifyBackupConfigsOutcomeCallable DcdbClient::ModifyBackupConfigsCallable(const ModifyBackupConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBackupConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBackupConfigs(request);
         }
     );
 

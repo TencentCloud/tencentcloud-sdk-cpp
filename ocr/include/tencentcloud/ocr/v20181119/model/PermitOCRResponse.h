@@ -169,6 +169,20 @@ namespace TencentCloud
                      */
                     bool PortraitImageHasBeenSet() const;
 
+                    /**
+                     * 获取返回类型
+                     * @return Type 返回类型
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -224,6 +238,12 @@ namespace TencentCloud
                      */
                     std::string m_portraitImage;
                     bool m_portraitImageHasBeenSet;
+
+                    /**
+                     * 返回类型
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

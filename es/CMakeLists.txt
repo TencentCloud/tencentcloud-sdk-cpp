@@ -34,6 +34,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/CreateInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceLogsRequest.h
   include/tencentcloud/es/v20180416/model/DeleteLogstashPipelinesResponse.h
+  include/tencentcloud/es/v20180416/model/DescribeSpaceKibanaToolsRequest.h
   include/tencentcloud/es/v20180416/model/TagInfo.h
   include/tencentcloud/es/v20180416/model/KeyValue.h
   include/tencentcloud/es/v20180416/model/MetricMapByIndexId.h
@@ -174,6 +175,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/UpdateLogstashPipelineDescRequest.h
   include/tencentcloud/es/v20180416/model/UpdateServerlessInstanceRequest.h
   include/tencentcloud/es/v20180416/model/NodeView.h
+  include/tencentcloud/es/v20180416/model/DescribeSpaceKibanaToolsResponse.h
   include/tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupResponse.h
   include/tencentcloud/es/v20180416/model/UpdateInstanceRequest.h
   include/tencentcloud/es/v20180416/model/CreateServerlessInstanceResponse.h
@@ -221,6 +223,7 @@ set(es_src
   src/v20180416/model/CreateInstanceResponse.cpp
   src/v20180416/model/DescribeInstanceLogsRequest.cpp
   src/v20180416/model/DeleteLogstashPipelinesResponse.cpp
+  src/v20180416/model/DescribeSpaceKibanaToolsRequest.cpp
   src/v20180416/model/TagInfo.cpp
   src/v20180416/model/KeyValue.cpp
   src/v20180416/model/MetricMapByIndexId.cpp
@@ -361,6 +364,7 @@ set(es_src
   src/v20180416/model/UpdateLogstashPipelineDescRequest.cpp
   src/v20180416/model/UpdateServerlessInstanceRequest.cpp
   src/v20180416/model/NodeView.cpp
+  src/v20180416/model/DescribeSpaceKibanaToolsResponse.cpp
   src/v20180416/model/ModifyEsVipSecurityGroupResponse.cpp
   src/v20180416/model/UpdateInstanceRequest.cpp
   src/v20180416/model/CreateServerlessInstanceResponse.cpp

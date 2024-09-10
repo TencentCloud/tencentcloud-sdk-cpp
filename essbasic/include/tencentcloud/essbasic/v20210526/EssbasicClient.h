@@ -135,6 +135,8 @@
 #include <tencentcloud/essbasic/v20210526/model/CreateLegalSealQrCodeResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreatePartnerAutoSignAuthUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreatePartnerAutoSignAuthUrlResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/CreatePersonAuthCertificateImageRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/CreatePersonAuthCertificateImageResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateSealByImageRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateSealByImageResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateSignUrlsRequest.h>
@@ -359,6 +361,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePartnerAutoSignAuthUrlResponse> CreatePartnerAutoSignAuthUrlOutcome;
                 typedef std::future<CreatePartnerAutoSignAuthUrlOutcome> CreatePartnerAutoSignAuthUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreatePartnerAutoSignAuthUrlRequest&, CreatePartnerAutoSignAuthUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePartnerAutoSignAuthUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePersonAuthCertificateImageResponse> CreatePersonAuthCertificateImageOutcome;
+                typedef std::future<CreatePersonAuthCertificateImageOutcome> CreatePersonAuthCertificateImageOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::CreatePersonAuthCertificateImageRequest&, CreatePersonAuthCertificateImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePersonAuthCertificateImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSealByImageResponse> CreateSealByImageOutcome;
                 typedef std::future<CreateSealByImageOutcome> CreateSealByImageOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateSealByImageRequest&, CreateSealByImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSealByImageAsyncHandler;
@@ -1593,6 +1598,25 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
                 CreatePartnerAutoSignAuthUrlOutcome CreatePartnerAutoSignAuthUrl(const Model::CreatePartnerAutoSignAuthUrlRequest &request);
                 void CreatePartnerAutoSignAuthUrlAsync(const Model::CreatePartnerAutoSignAuthUrlRequest& request, const CreatePartnerAutoSignAuthUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePartnerAutoSignAuthUrlOutcomeCallable CreatePartnerAutoSignAuthUrlCallable(const Model::CreatePartnerAutoSignAuthUrlRequest& request);
+
+                /**
+                 *获取个人用户认证证书图片下载URL
+
+个人用户认证证书图片样式如下图
+
+![image](https://dyn.ess.tencent.cn/guide/capi/CreatePersonAuthCertificateImage.png)
+
+注:  
+<ul>
+<li>只能获取个人用户证明图片, 企业员工的暂不支持</li>
+<li>处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。  </li>
+</ul>
+                 * @param req CreatePersonAuthCertificateImageRequest
+                 * @return CreatePersonAuthCertificateImageOutcome
+                 */
+                CreatePersonAuthCertificateImageOutcome CreatePersonAuthCertificateImage(const Model::CreatePersonAuthCertificateImageRequest &request);
+                void CreatePersonAuthCertificateImageAsync(const Model::CreatePersonAuthCertificateImageRequest& request, const CreatePersonAuthCertificateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePersonAuthCertificateImageOutcomeCallable CreatePersonAuthCertificateImageCallable(const Model::CreatePersonAuthCertificateImageRequest& request);
 
                 /**
                  *1. 可以**通过图片**为子客企业代创建印章，图片最大5MB
