@@ -37,7 +37,10 @@ NatSwitchListData::NatSwitchListData() :
     m_natInsIdHasBeenSet(false),
     m_natInsNameHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_abnormalHasBeenSet(false)
+    m_abnormalHasBeenSet(false),
+    m_oRTableIdHasBeenSet(false),
+    m_oRTableNameHasBeenSet(false),
+    m_ohavipsHasBeenSet(false)
 {
 }
 
@@ -216,6 +219,39 @@ CoreInternalOutcome NatSwitchListData::Deserialize(const rapidjson::Value &value
         m_abnormalHasBeenSet = true;
     }
 
+    if (value.HasMember("ORTableId") && !value["ORTableId"].IsNull())
+    {
+        if (!value["ORTableId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatSwitchListData.ORTableId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_oRTableId = string(value["ORTableId"].GetString());
+        m_oRTableIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ORTableName") && !value["ORTableName"].IsNull())
+    {
+        if (!value["ORTableName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatSwitchListData.ORTableName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_oRTableName = string(value["ORTableName"].GetString());
+        m_oRTableNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Ohavips") && !value["Ohavips"].IsNull())
+    {
+        if (!value["Ohavips"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NatSwitchListData.Ohavips` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Ohavips"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_ohavips.push_back((*itr).GetString());
+        }
+        m_ohavipsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +393,35 @@ void NatSwitchListData::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Abnormal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_abnormal, allocator);
+    }
+
+    if (m_oRTableIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ORTableId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oRTableId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_oRTableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ORTableName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oRTableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ohavipsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ohavips";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ohavips.begin(); itr != m_ohavips.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -632,5 +697,53 @@ void NatSwitchListData::SetAbnormal(const int64_t& _abnormal)
 bool NatSwitchListData::AbnormalHasBeenSet() const
 {
     return m_abnormalHasBeenSet;
+}
+
+string NatSwitchListData::GetORTableId() const
+{
+    return m_oRTableId;
+}
+
+void NatSwitchListData::SetORTableId(const string& _oRTableId)
+{
+    m_oRTableId = _oRTableId;
+    m_oRTableIdHasBeenSet = true;
+}
+
+bool NatSwitchListData::ORTableIdHasBeenSet() const
+{
+    return m_oRTableIdHasBeenSet;
+}
+
+string NatSwitchListData::GetORTableName() const
+{
+    return m_oRTableName;
+}
+
+void NatSwitchListData::SetORTableName(const string& _oRTableName)
+{
+    m_oRTableName = _oRTableName;
+    m_oRTableNameHasBeenSet = true;
+}
+
+bool NatSwitchListData::ORTableNameHasBeenSet() const
+{
+    return m_oRTableNameHasBeenSet;
+}
+
+vector<string> NatSwitchListData::GetOhavips() const
+{
+    return m_ohavips;
+}
+
+void NatSwitchListData::SetOhavips(const vector<string>& _ohavips)
+{
+    m_ohavips = _ohavips;
+    m_ohavipsHasBeenSet = true;
+}
+
+bool NatSwitchListData::OhavipsHasBeenSet() const
+{
+    return m_ohavipsHasBeenSet;
 }
 

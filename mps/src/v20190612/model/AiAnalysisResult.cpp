@@ -30,7 +30,8 @@ AiAnalysisResult::AiAnalysisResult() :
     m_deLogoTaskHasBeenSet(false),
     m_segmentTaskHasBeenSet(false),
     m_headTailTaskHasBeenSet(false),
-    m_descriptionTaskHasBeenSet(false)
+    m_descriptionTaskHasBeenSet(false),
+    m_horizontalToVerticalTaskHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,23 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
         m_descriptionTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("HorizontalToVerticalTask") && !value["HorizontalToVerticalTask"].IsNull())
+    {
+        if (!value["HorizontalToVerticalTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.HorizontalToVerticalTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_horizontalToVerticalTask.Deserialize(value["HorizontalToVerticalTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_horizontalToVerticalTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -296,6 +314,15 @@ void AiAnalysisResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_descriptionTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_horizontalToVerticalTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HorizontalToVerticalTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_horizontalToVerticalTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -459,5 +486,21 @@ void AiAnalysisResult::SetDescriptionTask(const AiAnalysisTaskDescriptionResult&
 bool AiAnalysisResult::DescriptionTaskHasBeenSet() const
 {
     return m_descriptionTaskHasBeenSet;
+}
+
+AiAnalysisTaskHorizontalToVerticalResult AiAnalysisResult::GetHorizontalToVerticalTask() const
+{
+    return m_horizontalToVerticalTask;
+}
+
+void AiAnalysisResult::SetHorizontalToVerticalTask(const AiAnalysisTaskHorizontalToVerticalResult& _horizontalToVerticalTask)
+{
+    m_horizontalToVerticalTask = _horizontalToVerticalTask;
+    m_horizontalToVerticalTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::HorizontalToVerticalTaskHasBeenSet() const
+{
+    return m_horizontalToVerticalTaskHasBeenSet;
 }
 

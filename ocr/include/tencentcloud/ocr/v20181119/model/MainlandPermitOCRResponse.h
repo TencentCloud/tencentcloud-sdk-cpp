@@ -199,6 +199,20 @@ namespace TencentCloud
                     bool ProfileHasBeenSet() const;
 
                     /**
+                     * 获取国籍
+                     * @return Nationality 国籍
+                     * 
+                     */
+                    std::string GetNationality() const;
+
+                    /**
+                     * 判断参数 Nationality 是否已赋值
+                     * @return Nationality 是否已赋值
+                     * 
+                     */
+                    bool NationalityHasBeenSet() const;
+
+                    /**
                      * 获取背面字段信息
                      * @return MainlandTravelPermitBackInfos 背面字段信息
                      * 
@@ -279,6 +293,12 @@ namespace TencentCloud
                      */
                     std::string m_profile;
                     bool m_profileHasBeenSet;
+
+                    /**
+                     * 国籍
+                     */
+                    std::string m_nationality;
+                    bool m_nationalityHasBeenSet;
 
                     /**
                      * 背面字段信息

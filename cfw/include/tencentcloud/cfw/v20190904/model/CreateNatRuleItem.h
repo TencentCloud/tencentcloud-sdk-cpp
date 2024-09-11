@@ -340,6 +340,27 @@ namespace TencentCloud
                      */
                     bool InternalUuidHasBeenSet() const;
 
+                    /**
+                     * 获取规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度
+                     * @return Scope 规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度
+                     * 
+                     */
+                    std::string GetScope() const;
+
+                    /**
+                     * 设置规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度
+                     * @param _scope 规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度
+                     * 
+                     */
+                    void SetScope(const std::string& _scope);
+
+                    /**
+                     * 判断参数 Scope 是否已赋值
+                     * @return Scope 是否已赋值
+                     * 
+                     */
+                    bool ScopeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +446,12 @@ namespace TencentCloud
                      */
                     int64_t m_internalUuid;
                     bool m_internalUuidHasBeenSet;
+
+                    /**
+                     * 规则生效的范围：ALL，全局生效；ap-guangzhou，生效的地域；cfwnat-xxx，生效基于实例维度
+                     */
+                    std::string m_scope;
+                    bool m_scopeHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ BanAndAllowRule::BanAndAllowRule() :
     m_directionListHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_customRuleHasBeenSet(false)
+    m_customRuleHasBeenSet(false),
+    m_fwTypeHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,16 @@ CoreInternalOutcome BanAndAllowRule::Deserialize(const rapidjson::Value &value)
         m_customRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("FwType") && !value["FwType"].IsNull())
+    {
+        if (!value["FwType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BanAndAllowRule.FwType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fwType = value["FwType"].GetInt64();
+        m_fwTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +148,14 @@ void BanAndAllowRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_customRule.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_fwTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FwType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fwType, allocator);
     }
 
 }
@@ -220,5 +239,21 @@ void BanAndAllowRule::SetCustomRule(const CustomWhiteRule& _customRule)
 bool BanAndAllowRule::CustomRuleHasBeenSet() const
 {
     return m_customRuleHasBeenSet;
+}
+
+int64_t BanAndAllowRule::GetFwType() const
+{
+    return m_fwType;
+}
+
+void BanAndAllowRule::SetFwType(const int64_t& _fwType)
+{
+    m_fwType = _fwType;
+    m_fwTypeHasBeenSet = true;
+}
+
+bool BanAndAllowRule::FwTypeHasBeenSet() const
+{
+    return m_fwTypeHasBeenSet;
 }
 

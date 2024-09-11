@@ -467,6 +467,81 @@ namespace TencentCloud
                      */
                     bool AbnormalHasBeenSet() const;
 
+                    /**
+                     * 获取nat防火墙出口路由表id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ORTableId nat防火墙出口路由表id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetORTableId() const;
+
+                    /**
+                     * 设置nat防火墙出口路由表id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _oRTableId nat防火墙出口路由表id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetORTableId(const std::string& _oRTableId);
+
+                    /**
+                     * 判断参数 ORTableId 是否已赋值
+                     * @return ORTableId 是否已赋值
+                     * 
+                     */
+                    bool ORTableIdHasBeenSet() const;
+
+                    /**
+                     * 获取nat防火墙出口路由表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ORTableName nat防火墙出口路由表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetORTableName() const;
+
+                    /**
+                     * 设置nat防火墙出口路由表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _oRTableName nat防火墙出口路由表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetORTableName(const std::string& _oRTableName);
+
+                    /**
+                     * 判断参数 ORTableName 是否已赋值
+                     * @return ORTableName 是否已赋值
+                     * 
+                     */
+                    bool ORTableNameHasBeenSet() const;
+
+                    /**
+                     * 获取出口Snat Ip列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ohavips 出口Snat Ip列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetOhavips() const;
+
+                    /**
+                     * 设置出口Snat Ip列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ohavips 出口Snat Ip列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOhavips(const std::vector<std::string>& _ohavips);
+
+                    /**
+                     * 判断参数 Ohavips 是否已赋值
+                     * @return Ohavips 是否已赋值
+                     * 
+                     */
+                    bool OhavipsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -586,6 +661,27 @@ namespace TencentCloud
                      */
                     int64_t m_abnormal;
                     bool m_abnormalHasBeenSet;
+
+                    /**
+                     * nat防火墙出口路由表id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_oRTableId;
+                    bool m_oRTableIdHasBeenSet;
+
+                    /**
+                     * nat防火墙出口路由表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_oRTableName;
+                    bool m_oRTableNameHasBeenSet;
+
+                    /**
+                     * 出口Snat Ip列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_ohavips;
+                    bool m_ohavipsHasBeenSet;
 
                 };
             }

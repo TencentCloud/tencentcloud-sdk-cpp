@@ -47,6 +47,7 @@ DescAcItem::DescAcItem() :
     m_statusHasBeenSet(false),
     m_betaListHasBeenSet(false),
     m_scopeHasBeenSet(false),
+    m_scopeDescHasBeenSet(false),
     m_internetBorderUuidHasBeenSet(false),
     m_paramTemplateNameHasBeenSet(false),
     m_paramTemplateIdHasBeenSet(false),
@@ -331,6 +332,16 @@ CoreInternalOutcome DescAcItem::Deserialize(const rapidjson::Value &value)
         m_scopeHasBeenSet = true;
     }
 
+    if (value.HasMember("ScopeDesc") && !value["ScopeDesc"].IsNull())
+    {
+        if (!value["ScopeDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescAcItem.ScopeDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scopeDesc = string(value["ScopeDesc"].GetString());
+        m_scopeDescHasBeenSet = true;
+    }
+
     if (value.HasMember("InternetBorderUuid") && !value["InternetBorderUuid"].IsNull())
     {
         if (!value["InternetBorderUuid"].IsString())
@@ -611,6 +622,14 @@ void DescAcItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Scope";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scope.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scopeDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScopeDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scopeDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_internetBorderUuidHasBeenSet)
@@ -1078,6 +1097,22 @@ void DescAcItem::SetScope(const string& _scope)
 bool DescAcItem::ScopeHasBeenSet() const
 {
     return m_scopeHasBeenSet;
+}
+
+string DescAcItem::GetScopeDesc() const
+{
+    return m_scopeDesc;
+}
+
+void DescAcItem::SetScopeDesc(const string& _scopeDesc)
+{
+    m_scopeDesc = _scopeDesc;
+    m_scopeDescHasBeenSet = true;
+}
+
+bool DescAcItem::ScopeDescHasBeenSet() const
+{
+    return m_scopeDescHasBeenSet;
 }
 
 string DescAcItem::GetInternetBorderUuid() const

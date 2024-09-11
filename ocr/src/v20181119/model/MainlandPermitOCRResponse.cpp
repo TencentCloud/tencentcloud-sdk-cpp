@@ -35,6 +35,7 @@ MainlandPermitOCRResponse::MainlandPermitOCRResponse() :
     m_issueNumberHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_profileHasBeenSet(false),
+    m_nationalityHasBeenSet(false),
     m_mainlandTravelPermitBackInfosHasBeenSet(false)
 {
 }
@@ -183,6 +184,16 @@ CoreInternalOutcome MainlandPermitOCRResponse::Deserialize(const string &payload
         m_profileHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Nationality") && !rsp["Nationality"].IsNull())
+    {
+        if (!rsp["Nationality"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Nationality` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nationality = string(rsp["Nationality"].GetString());
+        m_nationalityHasBeenSet = true;
+    }
+
     if (rsp.HasMember("MainlandTravelPermitBackInfos") && !rsp["MainlandTravelPermitBackInfos"].IsNull())
     {
         if (!rsp["MainlandTravelPermitBackInfos"].IsObject())
@@ -296,6 +307,14 @@ string MainlandPermitOCRResponse::ToJsonString() const
         string key = "Profile";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nationalityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Nationality";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nationality.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mainlandTravelPermitBackInfosHasBeenSet)
@@ -427,6 +446,16 @@ string MainlandPermitOCRResponse::GetProfile() const
 bool MainlandPermitOCRResponse::ProfileHasBeenSet() const
 {
     return m_profileHasBeenSet;
+}
+
+string MainlandPermitOCRResponse::GetNationality() const
+{
+    return m_nationality;
+}
+
+bool MainlandPermitOCRResponse::NationalityHasBeenSet() const
+{
+    return m_nationalityHasBeenSet;
 }
 
 MainlandTravelPermitBackInfos MainlandPermitOCRResponse::GetMainlandTravelPermitBackInfos() const

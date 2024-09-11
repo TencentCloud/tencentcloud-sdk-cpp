@@ -33,6 +33,7 @@
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskSegmentResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskHeadTailResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskDescriptionResult.h>
+#include <tencentcloud/mps/v20190612/model/AiAnalysisTaskHorizontalToVerticalResult.h>
 
 
 namespace TencentCloud
@@ -329,6 +330,31 @@ namespace TencentCloud
                      */
                     bool DescriptionTaskHasBeenSet() const;
 
+                    /**
+                     * 获取视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HorizontalToVerticalTask 视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiAnalysisTaskHorizontalToVerticalResult GetHorizontalToVerticalTask() const;
+
+                    /**
+                     * 设置视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _horizontalToVerticalTask 视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHorizontalToVerticalTask(const AiAnalysisTaskHorizontalToVerticalResult& _horizontalToVerticalTask);
+
+                    /**
+                     * 判断参数 HorizontalToVerticalTask 是否已赋值
+                     * @return HorizontalToVerticalTask 是否已赋值
+                     * 
+                     */
+                    bool HorizontalToVerticalTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -406,6 +432,13 @@ namespace TencentCloud
                      */
                     AiAnalysisTaskDescriptionResult m_descriptionTask;
                     bool m_descriptionTaskHasBeenSet;
+
+                    /**
+                     * 视频内容分析横转竖任务的查询结果，当任务类型为 HorizontalToVertical 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiAnalysisTaskHorizontalToVerticalResult m_horizontalToVerticalTask;
+                    bool m_horizontalToVerticalTaskHasBeenSet;
 
                 };
             }

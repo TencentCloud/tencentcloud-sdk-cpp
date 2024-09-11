@@ -622,6 +622,31 @@ namespace TencentCloud
                      */
                     bool CustomRuleHasBeenSet() const;
 
+                    /**
+                     * 获取1 border 2 nat 4 vpc 8 border-serial
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FwType 1 border 2 nat 4 vpc 8 border-serial
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetFwType() const;
+
+                    /**
+                     * 设置1 border 2 nat 4 vpc 8 border-serial
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fwType 1 border 2 nat 4 vpc 8 border-serial
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFwType(const int64_t& _fwType);
+
+                    /**
+                     * 判断参数 FwType 是否已赋值
+                     * @return FwType 是否已赋值
+                     * 
+                     */
+                    bool FwTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -784,6 +809,13 @@ namespace TencentCloud
                      */
                     CustomWhiteRule m_customRule;
                     bool m_customRuleHasBeenSet;
+
+                    /**
+                     * 1 border 2 nat 4 vpc 8 border-serial
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_fwType;
+                    bool m_fwTypeHasBeenSet;
 
                 };
             }

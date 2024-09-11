@@ -34,7 +34,8 @@ CreateNatRuleItem::CreateNatRuleItem() :
     m_uuidHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_paramTemplateIdHasBeenSet(false),
-    m_internalUuidHasBeenSet(false)
+    m_internalUuidHasBeenSet(false),
+    m_scopeHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome CreateNatRuleItem::Deserialize(const rapidjson::Value &value
         m_internalUuidHasBeenSet = true;
     }
 
+    if (value.HasMember("Scope") && !value["Scope"].IsNull())
+    {
+        if (!value["Scope"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateNatRuleItem.Scope` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scope = string(value["Scope"].GetString());
+        m_scopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void CreateNatRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "InternalUuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_internalUuid, allocator);
+    }
+
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scope.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void CreateNatRuleItem::SetInternalUuid(const int64_t& _internalUuid)
 bool CreateNatRuleItem::InternalUuidHasBeenSet() const
 {
     return m_internalUuidHasBeenSet;
+}
+
+string CreateNatRuleItem::GetScope() const
+{
+    return m_scope;
+}
+
+void CreateNatRuleItem::SetScope(const string& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool CreateNatRuleItem::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
 }
 

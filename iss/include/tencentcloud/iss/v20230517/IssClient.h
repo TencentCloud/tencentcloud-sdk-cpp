@@ -43,6 +43,8 @@
 #include <tencentcloud/iss/v20230517/model/AddUserDeviceResponse.h>
 #include <tencentcloud/iss/v20230517/model/BatchOperateDeviceRequest.h>
 #include <tencentcloud/iss/v20230517/model/BatchOperateDeviceResponse.h>
+#include <tencentcloud/iss/v20230517/model/CallISAPIRequest.h>
+#include <tencentcloud/iss/v20230517/model/CallISAPIResponse.h>
 #include <tencentcloud/iss/v20230517/model/CheckDomainRequest.h>
 #include <tencentcloud/iss/v20230517/model/CheckDomainResponse.h>
 #include <tencentcloud/iss/v20230517/model/ControlDevicePTZRequest.h>
@@ -235,6 +237,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchOperateDeviceResponse> BatchOperateDeviceOutcome;
                 typedef std::future<BatchOperateDeviceOutcome> BatchOperateDeviceOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::BatchOperateDeviceRequest&, BatchOperateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchOperateDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CallISAPIResponse> CallISAPIOutcome;
+                typedef std::future<CallISAPIOutcome> CallISAPIOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::CallISAPIRequest&, CallISAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallISAPIAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckDomainResponse> CheckDomainOutcome;
                 typedef std::future<CheckDomainOutcome> CheckDomainOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::CheckDomainRequest&, CheckDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckDomainAsyncHandler;
@@ -552,6 +557,15 @@ namespace TencentCloud
                 BatchOperateDeviceOutcome BatchOperateDevice(const Model::BatchOperateDeviceRequest &request);
                 void BatchOperateDeviceAsync(const Model::BatchOperateDeviceRequest& request, const BatchOperateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchOperateDeviceOutcomeCallable BatchOperateDeviceCallable(const Model::BatchOperateDeviceRequest& request);
+
+                /**
+                 *本接口可基于海康ISUP 5.0协议实现透传ISAPI的请求数据，调用接口前需确保设备采用ISUP协议成功注册至本平台
+                 * @param req CallISAPIRequest
+                 * @return CallISAPIOutcome
+                 */
+                CallISAPIOutcome CallISAPI(const Model::CallISAPIRequest &request);
+                void CallISAPIAsync(const Model::CallISAPIRequest& request, const CallISAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CallISAPIOutcomeCallable CallISAPICallable(const Model::CallISAPIRequest& request);
 
                 /**
                  *用于检测域名是否备案。

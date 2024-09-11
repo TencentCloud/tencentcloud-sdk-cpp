@@ -40,6 +40,49 @@ TkeClient::TkeClient(const Credential &credential, const string &region, const C
 }
 
 
+TkeClient::CreateHealthCheckPolicyOutcome TkeClient::CreateHealthCheckPolicy(const CreateHealthCheckPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateHealthCheckPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateHealthCheckPolicyResponse rsp = CreateHealthCheckPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateHealthCheckPolicyOutcome(rsp);
+        else
+            return CreateHealthCheckPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateHealthCheckPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateHealthCheckPolicyAsync(const CreateHealthCheckPolicyRequest& request, const CreateHealthCheckPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateHealthCheckPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateHealthCheckPolicyOutcomeCallable TkeClient::CreateHealthCheckPolicyCallable(const CreateHealthCheckPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateHealthCheckPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateHealthCheckPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CreateNodePoolOutcome TkeClient::CreateNodePool(const CreateNodePoolRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNodePool");
@@ -76,6 +119,49 @@ TkeClient::CreateNodePoolOutcomeCallable TkeClient::CreateNodePoolCallable(const
         [this, request]()
         {
             return this->CreateNodePool(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeleteHealthCheckPolicyOutcome TkeClient::DeleteHealthCheckPolicy(const DeleteHealthCheckPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteHealthCheckPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteHealthCheckPolicyResponse rsp = DeleteHealthCheckPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteHealthCheckPolicyOutcome(rsp);
+        else
+            return DeleteHealthCheckPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteHealthCheckPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteHealthCheckPolicyAsync(const DeleteHealthCheckPolicyRequest& request, const DeleteHealthCheckPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteHealthCheckPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteHealthCheckPolicyOutcomeCallable TkeClient::DeleteHealthCheckPolicyCallable(const DeleteHealthCheckPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteHealthCheckPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteHealthCheckPolicy(request);
         }
     );
 
@@ -169,6 +255,135 @@ TkeClient::DescribeClusterInstancesOutcomeCallable TkeClient::DescribeClusterIns
     return task->get_future();
 }
 
+TkeClient::DescribeHealthCheckPoliciesOutcome TkeClient::DescribeHealthCheckPolicies(const DescribeHealthCheckPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHealthCheckPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHealthCheckPoliciesResponse rsp = DescribeHealthCheckPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHealthCheckPoliciesOutcome(rsp);
+        else
+            return DescribeHealthCheckPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHealthCheckPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeHealthCheckPoliciesAsync(const DescribeHealthCheckPoliciesRequest& request, const DescribeHealthCheckPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHealthCheckPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeHealthCheckPoliciesOutcomeCallable TkeClient::DescribeHealthCheckPoliciesCallable(const DescribeHealthCheckPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHealthCheckPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHealthCheckPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeHealthCheckPolicyBindingsOutcome TkeClient::DescribeHealthCheckPolicyBindings(const DescribeHealthCheckPolicyBindingsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHealthCheckPolicyBindings");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHealthCheckPolicyBindingsResponse rsp = DescribeHealthCheckPolicyBindingsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHealthCheckPolicyBindingsOutcome(rsp);
+        else
+            return DescribeHealthCheckPolicyBindingsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHealthCheckPolicyBindingsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeHealthCheckPolicyBindingsAsync(const DescribeHealthCheckPolicyBindingsRequest& request, const DescribeHealthCheckPolicyBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHealthCheckPolicyBindings(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeHealthCheckPolicyBindingsOutcomeCallable TkeClient::DescribeHealthCheckPolicyBindingsCallable(const DescribeHealthCheckPolicyBindingsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHealthCheckPolicyBindingsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHealthCheckPolicyBindings(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeHealthCheckTemplateOutcome TkeClient::DescribeHealthCheckTemplate(const DescribeHealthCheckTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHealthCheckTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHealthCheckTemplateResponse rsp = DescribeHealthCheckTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHealthCheckTemplateOutcome(rsp);
+        else
+            return DescribeHealthCheckTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHealthCheckTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeHealthCheckTemplateAsync(const DescribeHealthCheckTemplateRequest& request, const DescribeHealthCheckTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHealthCheckTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeHealthCheckTemplateOutcomeCallable TkeClient::DescribeHealthCheckTemplateCallable(const DescribeHealthCheckTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHealthCheckTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHealthCheckTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeNodePoolsOutcome TkeClient::DescribeNodePools(const DescribeNodePoolsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNodePools");
@@ -205,6 +420,49 @@ TkeClient::DescribeNodePoolsOutcomeCallable TkeClient::DescribeNodePoolsCallable
         [this, request]()
         {
             return this->DescribeNodePools(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ModifyHealthCheckPolicyOutcome TkeClient::ModifyHealthCheckPolicy(const ModifyHealthCheckPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyHealthCheckPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyHealthCheckPolicyResponse rsp = ModifyHealthCheckPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyHealthCheckPolicyOutcome(rsp);
+        else
+            return ModifyHealthCheckPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyHealthCheckPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyHealthCheckPolicyAsync(const ModifyHealthCheckPolicyRequest& request, const ModifyHealthCheckPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyHealthCheckPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyHealthCheckPolicyOutcomeCallable TkeClient::ModifyHealthCheckPolicyCallable(const ModifyHealthCheckPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyHealthCheckPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyHealthCheckPolicy(request);
         }
     );
 

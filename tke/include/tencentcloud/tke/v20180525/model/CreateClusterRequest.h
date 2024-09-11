@@ -239,6 +239,27 @@ namespace TencentCloud
                      */
                     bool ExtensionAddonsHasBeenSet() const;
 
+                    /**
+                     * 获取本地专用集群Id
+                     * @return CdcId 本地专用集群Id
+                     * 
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置本地专用集群Id
+                     * @param _cdcId 本地专用集群Id
+                     * 
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     * 
+                     */
+                    bool CdcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -294,6 +315,12 @@ namespace TencentCloud
                      */
                     std::vector<ExtensionAddon> m_extensionAddons;
                     bool m_extensionAddonsHasBeenSet;
+
+                    /**
+                     * 本地专用集群Id
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
 
                 };
             }

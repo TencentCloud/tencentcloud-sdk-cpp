@@ -38,6 +38,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/SetForbidPlayChannelsRequest.h
   include/tencentcloud/iss/v20230517/model/SubTaskData.h
   include/tencentcloud/iss/v20230517/model/DescribeCNAMEResponse.h
+  include/tencentcloud/iss/v20230517/model/ISAPIOutputData.h
   include/tencentcloud/iss/v20230517/model/UpdateOrganizationResponse.h
   include/tencentcloud/iss/v20230517/model/AddOrgData.h
   include/tencentcloud/iss/v20230517/model/ListAITasksResponse.h
@@ -112,6 +113,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/RecordPlanOptData.h
   include/tencentcloud/iss/v20230517/model/DescribeRecordPlanResponse.h
   include/tencentcloud/iss/v20230517/model/ListGatewaysData.h
+  include/tencentcloud/iss/v20230517/model/CallISAPIRequest.h
   include/tencentcloud/iss/v20230517/model/AddRecordRetrieveTaskRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeRecordPlanRequest.h
   include/tencentcloud/iss/v20230517/model/ControlDevicePresetResponse.h
@@ -122,8 +124,9 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/DescribeDomainRequest.h
   include/tencentcloud/iss/v20230517/model/BatchOperateDeviceData.h
   include/tencentcloud/iss/v20230517/model/RecordPlaybackUrl.h
-  include/tencentcloud/iss/v20230517/model/ListOrganizationChannelNumbersData.h
   include/tencentcloud/iss/v20230517/model/ListSubTasksData.h
+  include/tencentcloud/iss/v20230517/model/ListOrganizationChannelNumbersData.h
+  include/tencentcloud/iss/v20230517/model/CallISAPIResponse.h
   include/tencentcloud/iss/v20230517/model/ListRecordPlanDevicesRequest.h
   include/tencentcloud/iss/v20230517/model/ListTasksResponse.h
   include/tencentcloud/iss/v20230517/model/AddStreamAuthResponse.h
@@ -301,6 +304,7 @@ set(iss_src
   src/v20230517/model/SetForbidPlayChannelsRequest.cpp
   src/v20230517/model/SubTaskData.cpp
   src/v20230517/model/DescribeCNAMEResponse.cpp
+  src/v20230517/model/ISAPIOutputData.cpp
   src/v20230517/model/UpdateOrganizationResponse.cpp
   src/v20230517/model/AddOrgData.cpp
   src/v20230517/model/ListAITasksResponse.cpp
@@ -375,6 +379,7 @@ set(iss_src
   src/v20230517/model/RecordPlanOptData.cpp
   src/v20230517/model/DescribeRecordPlanResponse.cpp
   src/v20230517/model/ListGatewaysData.cpp
+  src/v20230517/model/CallISAPIRequest.cpp
   src/v20230517/model/AddRecordRetrieveTaskRequest.cpp
   src/v20230517/model/DescribeRecordPlanRequest.cpp
   src/v20230517/model/ControlDevicePresetResponse.cpp
@@ -385,8 +390,9 @@ set(iss_src
   src/v20230517/model/DescribeDomainRequest.cpp
   src/v20230517/model/BatchOperateDeviceData.cpp
   src/v20230517/model/RecordPlaybackUrl.cpp
-  src/v20230517/model/ListOrganizationChannelNumbersData.cpp
   src/v20230517/model/ListSubTasksData.cpp
+  src/v20230517/model/ListOrganizationChannelNumbersData.cpp
+  src/v20230517/model/CallISAPIResponse.cpp
   src/v20230517/model/ListRecordPlanDevicesRequest.cpp
   src/v20230517/model/ListTasksResponse.cpp
   src/v20230517/model/AddStreamAuthResponse.cpp

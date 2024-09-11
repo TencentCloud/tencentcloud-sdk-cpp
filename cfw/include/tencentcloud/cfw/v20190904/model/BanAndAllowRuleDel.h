@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool IocHasBeenSet() const;
 
                     /**
-                     * 获取0互联网出站 1互联网入站 5内网访问源 6内网访问目的
+                     * 获取0互联网出站 1互联网入站 5内网访问源 6内网访问目的 （DeleteBlockIgnoreRuleNew接口，该字段无效）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DirectionList 0互联网出站 1互联网入站 5内网访问源 6内网访问目的
+                     * @return DirectionList 0互联网出站 1互联网入站 5内网访问源 6内网访问目的 （DeleteBlockIgnoreRuleNew接口，该字段无效）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDirectionList() const;
 
                     /**
-                     * 设置0互联网出站 1互联网入站 5内网访问源 6内网访问目的
+                     * 设置0互联网出站 1互联网入站 5内网访问源 6内网访问目的 （DeleteBlockIgnoreRuleNew接口，该字段无效）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _directionList 0互联网出站 1互联网入站 5内网访问源 6内网访问目的
+                     * @param _directionList 0互联网出站 1互联网入站 5内网访问源 6内网访问目的 （DeleteBlockIgnoreRuleNew接口，该字段无效）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -131,7 +131,7 @@ namespace TencentCloud
                     bool m_iocHasBeenSet;
 
                     /**
-                     * 0互联网出站 1互联网入站 5内网访问源 6内网访问目的
+                     * 0互联网出站 1互联网入站 5内网访问源 6内网访问目的 （DeleteBlockIgnoreRuleNew接口，该字段无效）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_directionList;

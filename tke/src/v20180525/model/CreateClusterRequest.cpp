@@ -31,7 +31,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_instanceAdvancedSettingsHasBeenSet(false),
     m_existedInstancesForNodeHasBeenSet(false),
     m_instanceDataDiskMountSettingsHasBeenSet(false),
-    m_extensionAddonsHasBeenSet(false)
+    m_extensionAddonsHasBeenSet(false),
+    m_cdcIdHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,14 @@ string CreateClusterRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -296,6 +305,22 @@ void CreateClusterRequest::SetExtensionAddons(const vector<ExtensionAddon>& _ext
 bool CreateClusterRequest::ExtensionAddonsHasBeenSet() const
 {
     return m_extensionAddonsHasBeenSet;
+}
+
+string CreateClusterRequest::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void CreateClusterRequest::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool CreateClusterRequest::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
 }
 
 

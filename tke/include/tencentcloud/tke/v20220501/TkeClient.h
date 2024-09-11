@@ -23,14 +23,26 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tke/v20220501/model/CreateHealthCheckPolicyRequest.h>
+#include <tencentcloud/tke/v20220501/model/CreateHealthCheckPolicyResponse.h>
 #include <tencentcloud/tke/v20220501/model/CreateNodePoolRequest.h>
 #include <tencentcloud/tke/v20220501/model/CreateNodePoolResponse.h>
+#include <tencentcloud/tke/v20220501/model/DeleteHealthCheckPolicyRequest.h>
+#include <tencentcloud/tke/v20220501/model/DeleteHealthCheckPolicyResponse.h>
 #include <tencentcloud/tke/v20220501/model/DeleteNodePoolRequest.h>
 #include <tencentcloud/tke/v20220501/model/DeleteNodePoolResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20220501/model/DescribeClusterInstancesResponse.h>
+#include <tencentcloud/tke/v20220501/model/DescribeHealthCheckPoliciesRequest.h>
+#include <tencentcloud/tke/v20220501/model/DescribeHealthCheckPoliciesResponse.h>
+#include <tencentcloud/tke/v20220501/model/DescribeHealthCheckPolicyBindingsRequest.h>
+#include <tencentcloud/tke/v20220501/model/DescribeHealthCheckPolicyBindingsResponse.h>
+#include <tencentcloud/tke/v20220501/model/DescribeHealthCheckTemplateRequest.h>
+#include <tencentcloud/tke/v20220501/model/DescribeHealthCheckTemplateResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeNodePoolsRequest.h>
 #include <tencentcloud/tke/v20220501/model/DescribeNodePoolsResponse.h>
+#include <tencentcloud/tke/v20220501/model/ModifyHealthCheckPolicyRequest.h>
+#include <tencentcloud/tke/v20220501/model/ModifyHealthCheckPolicyResponse.h>
 #include <tencentcloud/tke/v20220501/model/ModifyNodePoolRequest.h>
 #include <tencentcloud/tke/v20220501/model/ModifyNodePoolResponse.h>
 
@@ -47,23 +59,50 @@ namespace TencentCloud
                 TkeClient(const Credential &credential, const std::string &region);
                 TkeClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateHealthCheckPolicyResponse> CreateHealthCheckPolicyOutcome;
+                typedef std::future<CreateHealthCheckPolicyOutcome> CreateHealthCheckPolicyOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::CreateHealthCheckPolicyRequest&, CreateHealthCheckPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHealthCheckPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateNodePoolResponse> CreateNodePoolOutcome;
                 typedef std::future<CreateNodePoolOutcome> CreateNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateNodePoolRequest&, CreateNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNodePoolAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteHealthCheckPolicyResponse> DeleteHealthCheckPolicyOutcome;
+                typedef std::future<DeleteHealthCheckPolicyOutcome> DeleteHealthCheckPolicyOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DeleteHealthCheckPolicyRequest&, DeleteHealthCheckPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHealthCheckPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteNodePoolResponse> DeleteNodePoolOutcome;
                 typedef std::future<DeleteNodePoolOutcome> DeleteNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteNodePoolRequest&, DeleteNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNodePoolAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterInstancesResponse> DescribeClusterInstancesOutcome;
                 typedef std::future<DescribeClusterInstancesOutcome> DescribeClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterInstancesRequest&, DescribeClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHealthCheckPoliciesResponse> DescribeHealthCheckPoliciesOutcome;
+                typedef std::future<DescribeHealthCheckPoliciesOutcome> DescribeHealthCheckPoliciesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeHealthCheckPoliciesRequest&, DescribeHealthCheckPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHealthCheckPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHealthCheckPolicyBindingsResponse> DescribeHealthCheckPolicyBindingsOutcome;
+                typedef std::future<DescribeHealthCheckPolicyBindingsOutcome> DescribeHealthCheckPolicyBindingsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeHealthCheckPolicyBindingsRequest&, DescribeHealthCheckPolicyBindingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHealthCheckPolicyBindingsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHealthCheckTemplateResponse> DescribeHealthCheckTemplateOutcome;
+                typedef std::future<DescribeHealthCheckTemplateOutcome> DescribeHealthCheckTemplateOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeHealthCheckTemplateRequest&, DescribeHealthCheckTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHealthCheckTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNodePoolsResponse> DescribeNodePoolsOutcome;
                 typedef std::future<DescribeNodePoolsOutcome> DescribeNodePoolsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeNodePoolsRequest&, DescribeNodePoolsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodePoolsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyHealthCheckPolicyResponse> ModifyHealthCheckPolicyOutcome;
+                typedef std::future<ModifyHealthCheckPolicyOutcome> ModifyHealthCheckPolicyOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyHealthCheckPolicyRequest&, ModifyHealthCheckPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHealthCheckPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNodePoolResponse> ModifyNodePoolOutcome;
                 typedef std::future<ModifyNodePoolOutcome> ModifyNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyNodePoolRequest&, ModifyNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNodePoolAsyncHandler;
 
 
+
+                /**
+                 *创建健康检测策略
+                 * @param req CreateHealthCheckPolicyRequest
+                 * @return CreateHealthCheckPolicyOutcome
+                 */
+                CreateHealthCheckPolicyOutcome CreateHealthCheckPolicy(const Model::CreateHealthCheckPolicyRequest &request);
+                void CreateHealthCheckPolicyAsync(const Model::CreateHealthCheckPolicyRequest& request, const CreateHealthCheckPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateHealthCheckPolicyOutcomeCallable CreateHealthCheckPolicyCallable(const Model::CreateHealthCheckPolicyRequest& request);
 
                 /**
                  *创建 TKE 节点池
@@ -73,6 +112,15 @@ namespace TencentCloud
                 CreateNodePoolOutcome CreateNodePool(const Model::CreateNodePoolRequest &request);
                 void CreateNodePoolAsync(const Model::CreateNodePoolRequest& request, const CreateNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateNodePoolOutcomeCallable CreateNodePoolCallable(const Model::CreateNodePoolRequest& request);
+
+                /**
+                 *删除健康检测策略
+                 * @param req DeleteHealthCheckPolicyRequest
+                 * @return DeleteHealthCheckPolicyOutcome
+                 */
+                DeleteHealthCheckPolicyOutcome DeleteHealthCheckPolicy(const Model::DeleteHealthCheckPolicyRequest &request);
+                void DeleteHealthCheckPolicyAsync(const Model::DeleteHealthCheckPolicyRequest& request, const DeleteHealthCheckPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteHealthCheckPolicyOutcomeCallable DeleteHealthCheckPolicyCallable(const Model::DeleteHealthCheckPolicyRequest& request);
 
                 /**
                  *删除 TKE 节点池
@@ -93,6 +141,33 @@ namespace TencentCloud
                 DescribeClusterInstancesOutcomeCallable DescribeClusterInstancesCallable(const Model::DescribeClusterInstancesRequest& request);
 
                 /**
+                 *查询健康检测策略
+                 * @param req DescribeHealthCheckPoliciesRequest
+                 * @return DescribeHealthCheckPoliciesOutcome
+                 */
+                DescribeHealthCheckPoliciesOutcome DescribeHealthCheckPolicies(const Model::DescribeHealthCheckPoliciesRequest &request);
+                void DescribeHealthCheckPoliciesAsync(const Model::DescribeHealthCheckPoliciesRequest& request, const DescribeHealthCheckPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHealthCheckPoliciesOutcomeCallable DescribeHealthCheckPoliciesCallable(const Model::DescribeHealthCheckPoliciesRequest& request);
+
+                /**
+                 *查询健康检测策略绑定关系
+                 * @param req DescribeHealthCheckPolicyBindingsRequest
+                 * @return DescribeHealthCheckPolicyBindingsOutcome
+                 */
+                DescribeHealthCheckPolicyBindingsOutcome DescribeHealthCheckPolicyBindings(const Model::DescribeHealthCheckPolicyBindingsRequest &request);
+                void DescribeHealthCheckPolicyBindingsAsync(const Model::DescribeHealthCheckPolicyBindingsRequest& request, const DescribeHealthCheckPolicyBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHealthCheckPolicyBindingsOutcomeCallable DescribeHealthCheckPolicyBindingsCallable(const Model::DescribeHealthCheckPolicyBindingsRequest& request);
+
+                /**
+                 *查询健康检测策略模板
+                 * @param req DescribeHealthCheckTemplateRequest
+                 * @return DescribeHealthCheckTemplateOutcome
+                 */
+                DescribeHealthCheckTemplateOutcome DescribeHealthCheckTemplate(const Model::DescribeHealthCheckTemplateRequest &request);
+                void DescribeHealthCheckTemplateAsync(const Model::DescribeHealthCheckTemplateRequest& request, const DescribeHealthCheckTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHealthCheckTemplateOutcomeCallable DescribeHealthCheckTemplateCallable(const Model::DescribeHealthCheckTemplateRequest& request);
+
+                /**
                  *查询 TKE 节点池列表
                  * @param req DescribeNodePoolsRequest
                  * @return DescribeNodePoolsOutcome
@@ -100,6 +175,15 @@ namespace TencentCloud
                 DescribeNodePoolsOutcome DescribeNodePools(const Model::DescribeNodePoolsRequest &request);
                 void DescribeNodePoolsAsync(const Model::DescribeNodePoolsRequest& request, const DescribeNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNodePoolsOutcomeCallable DescribeNodePoolsCallable(const Model::DescribeNodePoolsRequest& request);
+
+                /**
+                 *修改健康检测策略
+                 * @param req ModifyHealthCheckPolicyRequest
+                 * @return ModifyHealthCheckPolicyOutcome
+                 */
+                ModifyHealthCheckPolicyOutcome ModifyHealthCheckPolicy(const Model::ModifyHealthCheckPolicyRequest &request);
+                void ModifyHealthCheckPolicyAsync(const Model::ModifyHealthCheckPolicyRequest& request, const ModifyHealthCheckPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyHealthCheckPolicyOutcomeCallable ModifyHealthCheckPolicyCallable(const Model::ModifyHealthCheckPolicyRequest& request);
 
                 /**
                  *更新 TKE 节点池

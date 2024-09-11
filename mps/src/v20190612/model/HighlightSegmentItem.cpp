@@ -23,7 +23,8 @@ using namespace std;
 HighlightSegmentItem::HighlightSegmentItem() :
     m_confidenceHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
-    m_endTimeOffsetHasBeenSet(false)
+    m_endTimeOffsetHasBeenSet(false),
+    m_segmentTagsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,19 @@ CoreInternalOutcome HighlightSegmentItem::Deserialize(const rapidjson::Value &va
         m_endTimeOffsetHasBeenSet = true;
     }
 
+    if (value.HasMember("SegmentTags") && !value["SegmentTags"].IsNull())
+    {
+        if (!value["SegmentTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `HighlightSegmentItem.SegmentTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SegmentTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_segmentTags.push_back((*itr).GetString());
+        }
+        m_segmentTagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +105,19 @@ void HighlightSegmentItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);
+    }
+
+    if (m_segmentTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_segmentTags.begin(); itr != m_segmentTags.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -142,5 +169,21 @@ void HighlightSegmentItem::SetEndTimeOffset(const double& _endTimeOffset)
 bool HighlightSegmentItem::EndTimeOffsetHasBeenSet() const
 {
     return m_endTimeOffsetHasBeenSet;
+}
+
+vector<string> HighlightSegmentItem::GetSegmentTags() const
+{
+    return m_segmentTags;
+}
+
+void HighlightSegmentItem::SetSegmentTags(const vector<string>& _segmentTags)
+{
+    m_segmentTags = _segmentTags;
+    m_segmentTagsHasBeenSet = true;
+}
+
+bool HighlightSegmentItem::SegmentTagsHasBeenSet() const
+{
+    return m_segmentTagsHasBeenSet;
 }
 

@@ -43,7 +43,8 @@ BlockIgnoreRule::BlockIgnoreRule() :
     m_countryHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_lastHitTimeHasBeenSet(false),
-    m_customRuleHasBeenSet(false)
+    m_customRuleHasBeenSet(false),
+    m_fwTypeHasBeenSet(false)
 {
 }
 
@@ -289,6 +290,16 @@ CoreInternalOutcome BlockIgnoreRule::Deserialize(const rapidjson::Value &value)
         m_customRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("FwType") && !value["FwType"].IsNull())
+    {
+        if (!value["FwType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BlockIgnoreRule.FwType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fwType = value["FwType"].GetInt64();
+        m_fwTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -479,6 +490,14 @@ void BlockIgnoreRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_customRule.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_fwTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FwType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fwType, allocator);
     }
 
 }
@@ -850,5 +869,21 @@ void BlockIgnoreRule::SetCustomRule(const CustomWhiteRule& _customRule)
 bool BlockIgnoreRule::CustomRuleHasBeenSet() const
 {
     return m_customRuleHasBeenSet;
+}
+
+int64_t BlockIgnoreRule::GetFwType() const
+{
+    return m_fwType;
+}
+
+void BlockIgnoreRule::SetFwType(const int64_t& _fwType)
+{
+    m_fwType = _fwType;
+    m_fwTypeHasBeenSet = true;
+}
+
+bool BlockIgnoreRule::FwTypeHasBeenSet() const
+{
+    return m_fwTypeHasBeenSet;
 }
 

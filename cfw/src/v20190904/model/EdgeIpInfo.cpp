@@ -42,7 +42,8 @@ EdgeIpInfo::EdgeIpInfo() :
     m_endpointIpHasBeenSet(false),
     m_switchModeHasBeenSet(false),
     m_switchWeightHasBeenSet(false),
-    m_domainHasBeenSet(false)
+    m_domainHasBeenSet(false),
+    m_overUsedStatusHasBeenSet(false)
 {
 }
 
@@ -271,6 +272,16 @@ CoreInternalOutcome EdgeIpInfo::Deserialize(const rapidjson::Value &value)
         m_domainHasBeenSet = true;
     }
 
+    if (value.HasMember("OverUsedStatus") && !value["OverUsedStatus"].IsNull())
+    {
+        if (!value["OverUsedStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeIpInfo.OverUsedStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_overUsedStatus = value["OverUsedStatus"].GetInt64();
+        m_overUsedStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -452,6 +463,14 @@ void EdgeIpInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_overUsedStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OverUsedStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_overUsedStatus, allocator);
     }
 
 }
@@ -807,5 +826,21 @@ void EdgeIpInfo::SetDomain(const string& _domain)
 bool EdgeIpInfo::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
+}
+
+int64_t EdgeIpInfo::GetOverUsedStatus() const
+{
+    return m_overUsedStatus;
+}
+
+void EdgeIpInfo::SetOverUsedStatus(const int64_t& _overUsedStatus)
+{
+    m_overUsedStatus = _overUsedStatus;
+    m_overUsedStatusHasBeenSet = true;
+}
+
+bool EdgeIpInfo::OverUsedStatusHasBeenSet() const
+{
+    return m_overUsedStatusHasBeenSet;
 }
 

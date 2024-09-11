@@ -172,6 +172,31 @@ namespace TencentCloud
                      */
                     bool CustomRuleHasBeenSet() const;
 
+                    /**
+                     * 获取放通的引擎: 1针对互联网边界 2针对nat防火墙 4针对vpc防火墙
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FwType 放通的引擎: 1针对互联网边界 2针对nat防火墙 4针对vpc防火墙
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetFwType() const;
+
+                    /**
+                     * 设置放通的引擎: 1针对互联网边界 2针对nat防火墙 4针对vpc防火墙
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fwType 放通的引擎: 1针对互联网边界 2针对nat防火墙 4针对vpc防火墙
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFwType(const int64_t& _fwType);
+
+                    /**
+                     * 判断参数 FwType 是否已赋值
+                     * @return FwType 是否已赋值
+                     * 
+                     */
+                    bool FwTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,6 +233,13 @@ namespace TencentCloud
                      */
                     CustomWhiteRule m_customRule;
                     bool m_customRuleHasBeenSet;
+
+                    /**
+                     * 放通的引擎: 1针对互联网边界 2针对nat防火墙 4针对vpc防火墙
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_fwType;
+                    bool m_fwTypeHasBeenSet;
 
                 };
             }

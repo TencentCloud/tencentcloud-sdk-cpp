@@ -648,6 +648,31 @@ namespace TencentCloud
                      */
                     bool DomainHasBeenSet() const;
 
+                    /**
+                     * 获取IP超量状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OverUsedStatus IP超量状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetOverUsedStatus() const;
+
+                    /**
+                     * 设置IP超量状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _overUsedStatus IP超量状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOverUsedStatus(const int64_t& _overUsedStatus);
+
+                    /**
+                     * 判断参数 OverUsedStatus 是否已赋值
+                     * @return OverUsedStatus 是否已赋值
+                     * 
+                     */
+                    bool OverUsedStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -816,6 +841,13 @@ namespace TencentCloud
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
+
+                    /**
+                     * IP超量状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_overUsedStatus;
+                    bool m_overUsedStatusHasBeenSet;
 
                 };
             }

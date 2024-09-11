@@ -470,6 +470,49 @@ IssClient::BatchOperateDeviceOutcomeCallable IssClient::BatchOperateDeviceCallab
     return task->get_future();
 }
 
+IssClient::CallISAPIOutcome IssClient::CallISAPI(const CallISAPIRequest &request)
+{
+    auto outcome = MakeRequest(request, "CallISAPI");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CallISAPIResponse rsp = CallISAPIResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CallISAPIOutcome(rsp);
+        else
+            return CallISAPIOutcome(o.GetError());
+    }
+    else
+    {
+        return CallISAPIOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::CallISAPIAsync(const CallISAPIRequest& request, const CallISAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CallISAPI(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::CallISAPIOutcomeCallable IssClient::CallISAPICallable(const CallISAPIRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CallISAPIOutcome()>>(
+        [this, request]()
+        {
+            return this->CallISAPI(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IssClient::CheckDomainOutcome IssClient::CheckDomain(const CheckDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckDomain");
