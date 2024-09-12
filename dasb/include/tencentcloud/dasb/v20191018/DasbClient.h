@@ -93,6 +93,8 @@
 #include <tencentcloud/dasb/v20191018/model/DescribeDeviceGroupsResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeDevicesRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeDevicesResponse.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeDomainsRequest.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeDomainsResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeLoginEventRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeLoginEventResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeOperationEventRequest.h>
@@ -266,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDevicesResponse> DescribeDevicesOutcome;
                 typedef std::future<DescribeDevicesOutcome> DescribeDevicesOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DescribeDevicesRequest&, DescribeDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainsResponse> DescribeDomainsOutcome;
+                typedef std::future<DescribeDomainsOutcome> DescribeDomainsOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::DescribeDomainsRequest&, DescribeDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLoginEventResponse> DescribeLoginEventOutcome;
                 typedef std::future<DescribeLoginEventOutcome> DescribeLoginEventOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DescribeLoginEventRequest&, DescribeLoginEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoginEventAsyncHandler;
@@ -664,6 +669,15 @@ namespace TencentCloud
                 DescribeDevicesOutcome DescribeDevices(const Model::DescribeDevicesRequest &request);
                 void DescribeDevicesAsync(const Model::DescribeDevicesRequest& request, const DescribeDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDevicesOutcomeCallable DescribeDevicesCallable(const Model::DescribeDevicesRequest& request);
+
+                /**
+                 *查询网络域
+                 * @param req DescribeDomainsRequest
+                 * @return DescribeDomainsOutcome
+                 */
+                DescribeDomainsOutcome DescribeDomains(const Model::DescribeDomainsRequest &request);
+                void DescribeDomainsAsync(const Model::DescribeDomainsRequest& request, const DescribeDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainsOutcomeCallable DescribeDomainsCallable(const Model::DescribeDomainsRequest& request);
 
                 /**
                  *查询登录日志

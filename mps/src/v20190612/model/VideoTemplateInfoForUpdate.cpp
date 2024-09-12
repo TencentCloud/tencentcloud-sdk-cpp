@@ -32,7 +32,8 @@ VideoTemplateInfoForUpdate::VideoTemplateInfoForUpdate() :
     m_vcrfHasBeenSet(false),
     m_contentAdaptStreamHasBeenSet(false),
     m_segmentTypeHasBeenSet(false),
-    m_fpsDenominatorHasBeenSet(false)
+    m_fpsDenominatorHasBeenSet(false),
+    m_stereo3dTypeHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome VideoTemplateInfoForUpdate::Deserialize(const rapidjson::Val
         m_fpsDenominatorHasBeenSet = true;
     }
 
+    if (value.HasMember("Stereo3dType") && !value["Stereo3dType"].IsNull())
+    {
+        if (!value["Stereo3dType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfoForUpdate.Stereo3dType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stereo3dType = string(value["Stereo3dType"].GetString());
+        m_stereo3dTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void VideoTemplateInfoForUpdate::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "FpsDenominator";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fpsDenominator, allocator);
+    }
+
+    if (m_stereo3dTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Stereo3dType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stereo3dType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void VideoTemplateInfoForUpdate::SetFpsDenominator(const int64_t& _fpsDenominato
 bool VideoTemplateInfoForUpdate::FpsDenominatorHasBeenSet() const
 {
     return m_fpsDenominatorHasBeenSet;
+}
+
+string VideoTemplateInfoForUpdate::GetStereo3dType() const
+{
+    return m_stereo3dType;
+}
+
+void VideoTemplateInfoForUpdate::SetStereo3dType(const string& _stereo3dType)
+{
+    m_stereo3dType = _stereo3dType;
+    m_stereo3dTypeHasBeenSet = true;
+}
+
+bool VideoTemplateInfoForUpdate::Stereo3dTypeHasBeenSet() const
+{
+    return m_stereo3dTypeHasBeenSet;
 }
 

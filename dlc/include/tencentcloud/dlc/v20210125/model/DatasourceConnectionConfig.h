@@ -30,6 +30,7 @@
 #include <tencentcloud/dlc/v20210125/model/OtherDatasourceConnection.h>
 #include <tencentcloud/dlc/v20210125/model/DataSourceInfo.h>
 #include <tencentcloud/dlc/v20210125/model/ElasticsearchInfo.h>
+#include <tencentcloud/dlc/v20210125/model/TCHouseD.h>
 
 
 namespace TencentCloud
@@ -277,6 +278,31 @@ namespace TencentCloud
                      */
                     bool TDSQLPostgreSqlHasBeenSet() const;
 
+                    /**
+                     * 获取Doris数据源连接的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TCHouseD Doris数据源连接的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TCHouseD GetTCHouseD() const;
+
+                    /**
+                     * 设置Doris数据源连接的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tCHouseD Doris数据源连接的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTCHouseD(const TCHouseD& _tCHouseD);
+
+                    /**
+                     * 判断参数 TCHouseD 是否已赋值
+                     * @return TCHouseD 是否已赋值
+                     * 
+                     */
+                    bool TCHouseDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +367,13 @@ namespace TencentCloud
                      */
                     DataSourceInfo m_tDSQLPostgreSql;
                     bool m_tDSQLPostgreSqlHasBeenSet;
+
+                    /**
+                     * Doris数据源连接的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TCHouseD m_tCHouseD;
+                    bool m_tCHouseDHasBeenSet;
 
                 };
             }

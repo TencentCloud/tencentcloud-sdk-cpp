@@ -43,7 +43,8 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_customShowMapHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_autoSignSceneHasBeenSet(false),
-    m_needSignReviewHasBeenSet(false)
+    m_needSignReviewHasBeenSet(false),
+    m_flowDisplayTypeHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
         string key = "NeedSignReview";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needSignReview, allocator);
+    }
+
+    if (m_flowDisplayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowDisplayType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flowDisplayType, allocator);
     }
 
 
@@ -592,6 +601,22 @@ void CreateFlowByFilesRequest::SetNeedSignReview(const bool& _needSignReview)
 bool CreateFlowByFilesRequest::NeedSignReviewHasBeenSet() const
 {
     return m_needSignReviewHasBeenSet;
+}
+
+int64_t CreateFlowByFilesRequest::GetFlowDisplayType() const
+{
+    return m_flowDisplayType;
+}
+
+void CreateFlowByFilesRequest::SetFlowDisplayType(const int64_t& _flowDisplayType)
+{
+    m_flowDisplayType = _flowDisplayType;
+    m_flowDisplayTypeHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::FlowDisplayTypeHasBeenSet() const
+{
+    return m_flowDisplayTypeHasBeenSet;
 }
 
 

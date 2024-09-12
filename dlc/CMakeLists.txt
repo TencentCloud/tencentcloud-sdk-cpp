@@ -46,6 +46,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeAdvancedStoreLocationRequest.h
   include/tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementBatchResponse.h
   include/tencentcloud/dlc/v20210125/model/BatchSqlTask.h
+  include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionRequest.h
   include/tencentcloud/dlc/v20210125/model/UpdateDataEngineRequest.h
   include/tencentcloud/dlc/v20210125/model/SmartOptimizerWrittenPolicy.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkAppJobsRequest.h
@@ -138,7 +139,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeForbiddenTableProRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateDataEngineResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeDataEngineRequest.h
-  include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionRequest.h
+  include/tencentcloud/dlc/v20210125/model/GroupInfo.h
   include/tencentcloud/dlc/v20210125/model/KerberosInfo.h
   include/tencentcloud/dlc/v20210125/model/CreateDataEngineRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionRequest.h
@@ -316,6 +317,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/WorkGroupMessage.h
   include/tencentcloud/dlc/v20210125/model/DescribeUserDataEngineConfigResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkAppJobRequest.h
+  include/tencentcloud/dlc/v20210125/model/TCHouseD.h
   include/tencentcloud/dlc/v20210125/model/CreateResultDownloadResponse.h
   include/tencentcloud/dlc/v20210125/model/RestartDataEngineRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionResponse.h
@@ -354,6 +356,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DataSourceInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionsResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeEngineUsageInfoRequest.h
+  include/tencentcloud/dlc/v20210125/model/DataMaskStrategyInfo.h
   include/tencentcloud/dlc/v20210125/model/RollbackDataEngineImageResponse.h
   include/tencentcloud/dlc/v20210125/model/AddOptimizerEnginesRequest.h
   include/tencentcloud/dlc/v20210125/model/Partition.h
@@ -444,6 +447,7 @@ set(dlc_src
   src/v20210125/model/DescribeAdvancedStoreLocationRequest.cpp
   src/v20210125/model/CancelNotebookSessionStatementBatchResponse.cpp
   src/v20210125/model/BatchSqlTask.cpp
+  src/v20210125/model/CreateNotebookSessionRequest.cpp
   src/v20210125/model/UpdateDataEngineRequest.cpp
   src/v20210125/model/SmartOptimizerWrittenPolicy.cpp
   src/v20210125/model/DescribeSparkAppJobsRequest.cpp
@@ -536,7 +540,7 @@ set(dlc_src
   src/v20210125/model/DescribeForbiddenTableProRequest.cpp
   src/v20210125/model/CreateDataEngineResponse.cpp
   src/v20210125/model/DescribeDataEngineRequest.cpp
-  src/v20210125/model/CreateNotebookSessionRequest.cpp
+  src/v20210125/model/GroupInfo.cpp
   src/v20210125/model/KerberosInfo.cpp
   src/v20210125/model/CreateDataEngineRequest.cpp
   src/v20210125/model/DescribeNotebookSessionRequest.cpp
@@ -714,6 +718,7 @@ set(dlc_src
   src/v20210125/model/WorkGroupMessage.cpp
   src/v20210125/model/DescribeUserDataEngineConfigResponse.cpp
   src/v20210125/model/DescribeSparkAppJobRequest.cpp
+  src/v20210125/model/TCHouseD.cpp
   src/v20210125/model/CreateResultDownloadResponse.cpp
   src/v20210125/model/RestartDataEngineRequest.cpp
   src/v20210125/model/DescribeNotebookSessionResponse.cpp
@@ -752,6 +757,7 @@ set(dlc_src
   src/v20210125/model/DataSourceInfo.cpp
   src/v20210125/model/DescribeNotebookSessionsResponse.cpp
   src/v20210125/model/DescribeEngineUsageInfoRequest.cpp
+  src/v20210125/model/DataMaskStrategyInfo.cpp
   src/v20210125/model/RollbackDataEngineImageResponse.cpp
   src/v20210125/model/AddOptimizerEnginesRequest.cpp
   src/v20210125/model/Partition.cpp

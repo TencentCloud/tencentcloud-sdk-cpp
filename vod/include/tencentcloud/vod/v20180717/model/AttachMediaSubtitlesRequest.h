@@ -135,6 +135,27 @@ namespace TencentCloud
                     bool SubtitleIdsHasBeenSet() const;
 
                     /**
+                     * 获取默认字幕的唯一标识。不填则不设置默认字幕。
+                     * @return DefaultSubtitleId 默认字幕的唯一标识。不填则不设置默认字幕。
+                     * 
+                     */
+                    std::string GetDefaultSubtitleId() const;
+
+                    /**
+                     * 设置默认字幕的唯一标识。不填则不设置默认字幕。
+                     * @param _defaultSubtitleId 默认字幕的唯一标识。不填则不设置默认字幕。
+                     * 
+                     */
+                    void SetDefaultSubtitleId(const std::string& _defaultSubtitleId);
+
+                    /**
+                     * 判断参数 DefaultSubtitleId 是否已赋值
+                     * @return DefaultSubtitleId 是否已赋值
+                     * 
+                     */
+                    bool DefaultSubtitleIdHasBeenSet() const;
+
+                    /**
                      * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
                      * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
                      * 
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_subtitleIds;
                     bool m_subtitleIdsHasBeenSet;
+
+                    /**
+                     * 默认字幕的唯一标识。不填则不设置默认字幕。
+                     */
+                    std::string m_defaultSubtitleId;
+                    bool m_defaultSubtitleIdHasBeenSet;
 
                     /**
                      * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>

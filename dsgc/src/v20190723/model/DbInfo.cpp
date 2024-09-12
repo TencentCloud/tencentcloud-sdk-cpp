@@ -22,7 +22,8 @@ using namespace std;
 
 DbInfo::DbInfo() :
     m_dbNameHasBeenSet(false),
-    m_validStatusHasBeenSet(false)
+    m_validStatusHasBeenSet(false),
+    m_bindTypeHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome DbInfo::Deserialize(const rapidjson::Value &value)
         m_validStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("BindType") && !value["BindType"].IsNull())
+    {
+        if (!value["BindType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DbInfo.BindType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bindType = string(value["BindType"].GetString());
+        m_bindTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void DbInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "ValidStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_validStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bindTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BindType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bindType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void DbInfo::SetValidStatus(const string& _validStatus)
 bool DbInfo::ValidStatusHasBeenSet() const
 {
     return m_validStatusHasBeenSet;
+}
+
+string DbInfo::GetBindType() const
+{
+    return m_bindType;
+}
+
+void DbInfo::SetBindType(const string& _bindType)
+{
+    m_bindType = _bindType;
+    m_bindTypeHasBeenSet = true;
+}
+
+bool DbInfo::BindTypeHasBeenSet() const
+{
+    return m_bindTypeHasBeenSet;
 }
 

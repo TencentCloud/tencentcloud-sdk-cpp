@@ -42,7 +42,88 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取limit
+                     * @return Limit limit
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置limit
+                     * @param _limit limit
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取offset
+                     * @return Offset offset
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置offset
+                     * @param _offset offset
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取component
+                     * @return Component component
+                     * 
+                     */
+                    std::string GetComponent() const;
+
+                    /**
+                     * 设置component
+                     * @param _component component
+                     * 
+                     */
+                    void SetComponent(const std::string& _component);
+
+                    /**
+                     * 判断参数 Component 是否已赋值
+                     * @return Component 是否已赋值
+                     * 
+                     */
+                    bool ComponentHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * limit
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * offset
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * component
+                     */
+                    std::string m_component;
+                    bool m_componentHasBeenSet;
 
                 };
             }

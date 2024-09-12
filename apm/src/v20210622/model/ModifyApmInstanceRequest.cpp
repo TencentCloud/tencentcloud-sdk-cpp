@@ -40,7 +40,8 @@ ModifyApmInstanceRequest::ModifyApmInstanceRequest() :
     m_logSetHasBeenSet(false),
     m_logSourceHasBeenSet(false),
     m_customShowTagsHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_responseDurationWarningThresholdHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,14 @@ string ModifyApmInstanceRequest::ToJsonString() const
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_responseDurationWarningThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseDurationWarningThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_responseDurationWarningThreshold, allocator);
     }
 
 
@@ -501,6 +510,22 @@ void ModifyApmInstanceRequest::SetPayMode(const int64_t& _payMode)
 bool ModifyApmInstanceRequest::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetResponseDurationWarningThreshold() const
+{
+    return m_responseDurationWarningThreshold;
+}
+
+void ModifyApmInstanceRequest::SetResponseDurationWarningThreshold(const int64_t& _responseDurationWarningThreshold)
+{
+    m_responseDurationWarningThreshold = _responseDurationWarningThreshold;
+    m_responseDurationWarningThresholdHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::ResponseDurationWarningThresholdHasBeenSet() const
+{
+    return m_responseDurationWarningThresholdHasBeenSet;
 }
 
 

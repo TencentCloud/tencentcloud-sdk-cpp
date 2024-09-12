@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/MediaSubStreamInfoItem.h>
+#include <tencentcloud/vod/v20180717/model/MediaSubtitleItem.h>
 
 
 namespace TencentCloud
@@ -247,6 +248,48 @@ namespace TencentCloud
                      */
                     bool CopyRightWatermarkTextHasBeenSet() const;
 
+                    /**
+                     * 获取字幕信息列表。
+                     * @return SubtitleSet 字幕信息列表。
+                     * 
+                     */
+                    std::vector<MediaSubtitleItem> GetSubtitleSet() const;
+
+                    /**
+                     * 设置字幕信息列表。
+                     * @param _subtitleSet 字幕信息列表。
+                     * 
+                     */
+                    void SetSubtitleSet(const std::vector<MediaSubtitleItem>& _subtitleSet);
+
+                    /**
+                     * 判断参数 SubtitleSet 是否已赋值
+                     * @return SubtitleSet 是否已赋值
+                     * 
+                     */
+                    bool SubtitleSetHasBeenSet() const;
+
+                    /**
+                     * 获取默认字幕的唯一标识。
+                     * @return DefaultSubtitleId 默认字幕的唯一标识。
+                     * 
+                     */
+                    std::string GetDefaultSubtitleId() const;
+
+                    /**
+                     * 设置默认字幕的唯一标识。
+                     * @param _defaultSubtitleId 默认字幕的唯一标识。
+                     * 
+                     */
+                    void SetDefaultSubtitleId(const std::string& _defaultSubtitleId);
+
+                    /**
+                     * 判断参数 DefaultSubtitleId 是否已赋值
+                     * @return DefaultSubtitleId 是否已赋值
+                     * 
+                     */
+                    bool DefaultSubtitleIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -304,6 +347,18 @@ namespace TencentCloud
                      */
                     std::string m_copyRightWatermarkText;
                     bool m_copyRightWatermarkTextHasBeenSet;
+
+                    /**
+                     * 字幕信息列表。
+                     */
+                    std::vector<MediaSubtitleItem> m_subtitleSet;
+                    bool m_subtitleSetHasBeenSet;
+
+                    /**
+                     * 默认字幕的唯一标识。
+                     */
+                    std::string m_defaultSubtitleId;
+                    bool m_defaultSubtitleIdHasBeenSet;
 
                 };
             }

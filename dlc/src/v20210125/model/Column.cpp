@@ -30,7 +30,8 @@ Column::Column() :
     m_positionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_modifiedTimeHasBeenSet(false),
-    m_isPartitionHasBeenSet(false)
+    m_isPartitionHasBeenSet(false),
+    m_dataMaskStrategyInfoHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,23 @@ CoreInternalOutcome Column::Deserialize(const rapidjson::Value &value)
         m_isPartitionHasBeenSet = true;
     }
 
+    if (value.HasMember("DataMaskStrategyInfo") && !value["DataMaskStrategyInfo"].IsNull())
+    {
+        if (!value["DataMaskStrategyInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Column.DataMaskStrategyInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dataMaskStrategyInfo.Deserialize(value["DataMaskStrategyInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataMaskStrategyInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +242,15 @@ void Column::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "IsPartition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isPartition, allocator);
+    }
+
+    if (m_dataMaskStrategyInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataMaskStrategyInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dataMaskStrategyInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -387,5 +414,21 @@ void Column::SetIsPartition(const bool& _isPartition)
 bool Column::IsPartitionHasBeenSet() const
 {
     return m_isPartitionHasBeenSet;
+}
+
+DataMaskStrategyInfo Column::GetDataMaskStrategyInfo() const
+{
+    return m_dataMaskStrategyInfo;
+}
+
+void Column::SetDataMaskStrategyInfo(const DataMaskStrategyInfo& _dataMaskStrategyInfo)
+{
+    m_dataMaskStrategyInfo = _dataMaskStrategyInfo;
+    m_dataMaskStrategyInfoHasBeenSet = true;
+}
+
+bool Column::DataMaskStrategyInfoHasBeenSet() const
+{
+    return m_dataMaskStrategyInfoHasBeenSet;
 }
 

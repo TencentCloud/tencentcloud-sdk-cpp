@@ -241,6 +241,27 @@ namespace TencentCloud
                      */
                     bool TranscodeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取转码模板标识过滤条件，长度限制：64 个字符。	
+                     * @return Name 转码模板标识过滤条件，长度限制：64 个字符。	
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置转码模板标识过滤条件，长度限制：64 个字符。	
+                     * @param _name 转码模板标识过滤条件，长度限制：64 个字符。	
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -297,6 +318,12 @@ namespace TencentCloud
                      */
                     std::string m_transcodeType;
                     bool m_transcodeTypeHasBeenSet;
+
+                    /**
+                     * 转码模板标识过滤条件，长度限制：64 个字符。	
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取法人姓名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return LegalName 法人姓名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLegalName() const;
 
                     /**
                      * 设置法人姓名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _legalName 法人姓名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLegalName(const std::string& _legalName);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取社会统一信用代码
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uscc 社会统一信用代码
+注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     std::string GetUscc() const;
 
                     /**
                      * 设置社会统一信用代码
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uscc 社会统一信用代码
+注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     void SetUscc(const std::string& _uscc);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取社会统一信用代码
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnifiedSocialCreditCode 社会统一信用代码
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnifiedSocialCreditCode() const;
 
                     /**
                      * 设置社会统一信用代码
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unifiedSocialCreditCode 社会统一信用代码
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnifiedSocialCreditCode(const std::string& _unifiedSocialCreditCode);
@@ -113,18 +125,21 @@ namespace TencentCloud
 
                     /**
                      * 法人姓名
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_legalName;
                     bool m_legalNameHasBeenSet;
 
                     /**
                      * 社会统一信用代码
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uscc;
                     bool m_usccHasBeenSet;
 
                     /**
                      * 社会统一信用代码
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unifiedSocialCreditCode;
                     bool m_unifiedSocialCreditCodeHasBeenSet;

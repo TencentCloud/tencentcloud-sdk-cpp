@@ -155,6 +155,27 @@ namespace TencentCloud
                      */
                     bool PureAudioHasBeenSet() const;
 
+                    /**
+                     * 获取自适应转码模板标识过滤条件，长度限制：64 个字符
+                     * @return Name 自适应转码模板标识过滤条件，长度限制：64 个字符
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置自适应转码模板标识过滤条件，长度限制：64 个字符
+                     * @param _name 自适应转码模板标识过滤条件，长度限制：64 个字符
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +209,12 @@ namespace TencentCloud
                      */
                     uint64_t m_pureAudio;
                     bool m_pureAudioHasBeenSet;
+
+                    /**
+                     * 自适应转码模板标识过滤条件，长度限制：64 个字符
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

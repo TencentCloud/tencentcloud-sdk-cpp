@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/DataMaskStrategyInfo.h>
 
 
 namespace TencentCloud
@@ -68,19 +69,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取列类型，支持如下类型定义:
-string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|binary|array<data_type>|map<primitive_type, data_type>|struct<col_name : data_type [COMMENT col_comment], ...>|uniontype<data_type, data_type, ...>。
-                     * @return Type 列类型，支持如下类型定义:
-string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|binary|array<data_type>|map<primitive_type, data_type>|struct<col_name : data_type [COMMENT col_comment], ...>|uniontype<data_type, data_type, ...>。
+                     * 获取string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|binary|array|map|struct|uniontype
+                     * @return Type string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|binary|array|map|struct|uniontype
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置列类型，支持如下类型定义:
-string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|binary|array<data_type>|map<primitive_type, data_type>|struct<col_name : data_type [COMMENT col_comment], ...>|uniontype<data_type, data_type, ...>。
-                     * @param _type 列类型，支持如下类型定义:
-string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|binary|array<data_type>|map<primitive_type, data_type>|struct<col_name : data_type [COMMENT col_comment], ...>|uniontype<data_type, data_type, ...>。
+                     * 设置string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|binary|array|map|struct|uniontype
+                     * @param _type string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|binary|array|map|struct|uniontype
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -292,6 +289,31 @@ string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|b
                      */
                     bool IsPartitionHasBeenSet() const;
 
+                    /**
+                     * 获取数据脱敏策略信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataMaskStrategyInfo 数据脱敏策略信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DataMaskStrategyInfo GetDataMaskStrategyInfo() const;
+
+                    /**
+                     * 设置数据脱敏策略信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataMaskStrategyInfo 数据脱敏策略信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataMaskStrategyInfo(const DataMaskStrategyInfo& _dataMaskStrategyInfo);
+
+                    /**
+                     * 判断参数 DataMaskStrategyInfo 是否已赋值
+                     * @return DataMaskStrategyInfo 是否已赋值
+                     * 
+                     */
+                    bool DataMaskStrategyInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -301,8 +323,7 @@ string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|b
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 列类型，支持如下类型定义:
-string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|binary|array<data_type>|map<primitive_type, data_type>|struct<col_name : data_type [COMMENT col_comment], ...>|uniontype<data_type, data_type, ...>。
+                     * string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|binary|array|map|struct|uniontype
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -362,6 +383,13 @@ string|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|b
                      */
                     bool m_isPartition;
                     bool m_isPartitionHasBeenSet;
+
+                    /**
+                     * 数据脱敏策略信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DataMaskStrategyInfo m_dataMaskStrategyInfo;
+                    bool m_dataMaskStrategyInfoHasBeenSet;
 
                 };
             }

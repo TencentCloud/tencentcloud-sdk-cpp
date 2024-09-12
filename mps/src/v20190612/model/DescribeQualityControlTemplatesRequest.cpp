@@ -26,7 +26,8 @@ DescribeQualityControlTemplatesRequest::DescribeQualityControlTemplatesRequest()
     m_definitionsHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string DescribeQualityControlTemplatesRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +153,22 @@ void DescribeQualityControlTemplatesRequest::SetType(const string& _type)
 bool DescribeQualityControlTemplatesRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string DescribeQualityControlTemplatesRequest::GetName() const
+{
+    return m_name;
+}
+
+void DescribeQualityControlTemplatesRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool DescribeQualityControlTemplatesRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 
 

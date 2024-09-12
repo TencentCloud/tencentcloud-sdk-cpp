@@ -41,7 +41,8 @@ ChannelCreateFlowByFilesRequest::ChannelCreateFlowByFilesRequest() :
     m_ccInfosHasBeenSet(false),
     m_ccNotifyTypeHasBeenSet(false),
     m_autoSignSceneHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_flowDisplayTypeHasBeenSet(false)
 {
 }
 
@@ -230,6 +231,14 @@ string ChannelCreateFlowByFilesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_flowDisplayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowDisplayType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flowDisplayType, allocator);
     }
 
 
@@ -542,6 +551,22 @@ void ChannelCreateFlowByFilesRequest::SetOperator(const UserInfo& _operator)
 bool ChannelCreateFlowByFilesRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+int64_t ChannelCreateFlowByFilesRequest::GetFlowDisplayType() const
+{
+    return m_flowDisplayType;
+}
+
+void ChannelCreateFlowByFilesRequest::SetFlowDisplayType(const int64_t& _flowDisplayType)
+{
+    m_flowDisplayType = _flowDisplayType;
+    m_flowDisplayTypeHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::FlowDisplayTypeHasBeenSet() const
+{
+    return m_flowDisplayTypeHasBeenSet;
 }
 
 

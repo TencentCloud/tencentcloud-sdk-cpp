@@ -264,15 +264,15 @@ namespace TencentCloud
                     bool HealthStateIdHasBeenSet() const;
 
                     /**
-                     * 获取服务组件名称，都是大写比如YARN
-                     * @return ServiceName 服务组件名称，都是大写比如YARN
+                     * 获取服务组件名称，都是大写例如YARN
+                     * @return ServiceName 服务组件名称，都是大写例如YARN
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置服务组件名称，都是大写比如YARN
-                     * @param _serviceName 服务组件名称，都是大写比如YARN
+                     * 设置服务组件名称，都是大写例如YARN
+                     * @param _serviceName 服务组件名称，都是大写例如YARN
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -443,7 +443,7 @@ router
                     bool m_healthStateIdHasBeenSet;
 
                     /**
-                     * 服务组件名称，都是大写比如YARN
+                     * 服务组件名称，都是大写例如YARN
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;

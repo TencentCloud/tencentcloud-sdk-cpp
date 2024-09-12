@@ -90,9 +90,9 @@ namespace TencentCloud
                     bool ReasonHasBeenSet() const;
 
                     /**
-                     * 获取临时AK
+                     * 获取临时SecretId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecretId 临时AK
+                     * @return SecretId 临时SecretId
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -106,9 +106,9 @@ namespace TencentCloud
                     bool SecretIdHasBeenSet() const;
 
                     /**
-                     * 获取临时SK
+                     * 获取临时SecretKey
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecretKey 临时SK
+                     * @return SecretKey 临时SecretKey
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -160,14 +160,14 @@ namespace TencentCloud
                     bool m_reasonHasBeenSet;
 
                     /**
-                     * 临时AK
+                     * 临时SecretId
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretId;
                     bool m_secretIdHasBeenSet;
 
                     /**
-                     * 临时SK
+                     * 临时SecretKey
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretKey;

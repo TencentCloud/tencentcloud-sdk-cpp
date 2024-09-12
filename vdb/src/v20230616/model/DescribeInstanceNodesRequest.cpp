@@ -22,7 +22,10 @@
 using namespace TencentCloud::Vdb::V20230616::Model;
 using namespace std;
 
-DescribeInstanceNodesRequest::DescribeInstanceNodesRequest()
+DescribeInstanceNodesRequest::DescribeInstanceNodesRequest() :
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_componentHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string DescribeInstanceNodesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_componentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Component";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_component.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string DescribeInstanceNodesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeInstanceNodesRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeInstanceNodesRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeInstanceNodesRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t DescribeInstanceNodesRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeInstanceNodesRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeInstanceNodesRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+string DescribeInstanceNodesRequest::GetComponent() const
+{
+    return m_component;
+}
+
+void DescribeInstanceNodesRequest::SetComponent(const string& _component)
+{
+    m_component = _component;
+    m_componentHasBeenSet = true;
+}
+
+bool DescribeInstanceNodesRequest::ComponentHasBeenSet() const
+{
+    return m_componentHasBeenSet;
+}
 
 

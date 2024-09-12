@@ -96,6 +96,31 @@ namespace TencentCloud
                      */
                     bool ValidStatusHasBeenSet() const;
 
+                    /**
+                     * 获取绑定的类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BindType 绑定的类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBindType() const;
+
+                    /**
+                     * 设置绑定的类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bindType 绑定的类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBindType(const std::string& _bindType);
+
+                    /**
+                     * 判断参数 BindType 是否已赋值
+                     * @return BindType 是否已赋值
+                     * 
+                     */
+                    bool BindTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +136,13 @@ namespace TencentCloud
                      */
                     std::string m_validStatus;
                     bool m_validStatusHasBeenSet;
+
+                    /**
+                     * 绑定的类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bindType;
+                    bool m_bindTypeHasBeenSet;
 
                 };
             }

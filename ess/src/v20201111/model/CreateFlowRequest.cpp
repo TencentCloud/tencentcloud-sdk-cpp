@@ -39,7 +39,8 @@ CreateFlowRequest::CreateFlowRequest() :
     m_ccInfosHasBeenSet(false),
     m_autoSignSceneHasBeenSet(false),
     m_relatedFlowIdHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false)
+    m_callbackUrlHasBeenSet(false),
+    m_flowDisplayTypeHasBeenSet(false)
 {
 }
 
@@ -200,6 +201,14 @@ string CreateFlowRequest::ToJsonString() const
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowDisplayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowDisplayType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flowDisplayType, allocator);
     }
 
 
@@ -480,6 +489,22 @@ void CreateFlowRequest::SetCallbackUrl(const string& _callbackUrl)
 bool CreateFlowRequest::CallbackUrlHasBeenSet() const
 {
     return m_callbackUrlHasBeenSet;
+}
+
+int64_t CreateFlowRequest::GetFlowDisplayType() const
+{
+    return m_flowDisplayType;
+}
+
+void CreateFlowRequest::SetFlowDisplayType(const int64_t& _flowDisplayType)
+{
+    m_flowDisplayType = _flowDisplayType;
+    m_flowDisplayTypeHasBeenSet = true;
+}
+
+bool CreateFlowRequest::FlowDisplayTypeHasBeenSet() const
+{
+    return m_flowDisplayTypeHasBeenSet;
 }
 
 

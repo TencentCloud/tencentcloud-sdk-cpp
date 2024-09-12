@@ -1545,6 +1545,49 @@ DasbClient::DescribeDevicesOutcomeCallable DasbClient::DescribeDevicesCallable(c
     return task->get_future();
 }
 
+DasbClient::DescribeDomainsOutcome DasbClient::DescribeDomains(const DescribeDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainsResponse rsp = DescribeDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainsOutcome(rsp);
+        else
+            return DescribeDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainsOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::DescribeDomainsAsync(const DescribeDomainsRequest& request, const DescribeDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomains(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::DescribeDomainsOutcomeCallable DasbClient::DescribeDomainsCallable(const DescribeDomainsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomains(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DasbClient::DescribeLoginEventOutcome DasbClient::DescribeLoginEvent(const DescribeLoginEventRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLoginEvent");

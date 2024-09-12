@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同流程关联的填写控件信息，按照参与方进行分类返回。
+                     * 获取合同流程关联的填写控件信息，包括填写控件的归属方以及是否填写等内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecipientComponentInfos 合同流程关联的填写控件信息，按照参与方进行分类返回。
+                     * @return RecipientComponentInfos 合同流程关联的填写控件信息，包括填写控件的归属方以及是否填写等内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同流程关联的填写控件信息，按照参与方进行分类返回。
+                     * 合同流程关联的填写控件信息，包括填写控件的归属方以及是否填写等内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RecipientComponentInfo> m_recipientComponentInfos;

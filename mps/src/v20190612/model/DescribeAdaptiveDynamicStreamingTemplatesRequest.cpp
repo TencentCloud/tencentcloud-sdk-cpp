@@ -27,7 +27,8 @@ DescribeAdaptiveDynamicStreamingTemplatesRequest::DescribeAdaptiveDynamicStreami
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_pureAudioHasBeenSet(false)
+    m_pureAudioHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string DescribeAdaptiveDynamicStreamingTemplatesRequest::ToJsonString() const
         string key = "PureAudio";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pureAudio, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -169,6 +178,22 @@ void DescribeAdaptiveDynamicStreamingTemplatesRequest::SetPureAudio(const uint64
 bool DescribeAdaptiveDynamicStreamingTemplatesRequest::PureAudioHasBeenSet() const
 {
     return m_pureAudioHasBeenSet;
+}
+
+string DescribeAdaptiveDynamicStreamingTemplatesRequest::GetName() const
+{
+    return m_name;
+}
+
+void DescribeAdaptiveDynamicStreamingTemplatesRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool DescribeAdaptiveDynamicStreamingTemplatesRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 
 

@@ -142,6 +142,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取水印模板标识过滤条件，长度限制：64 个字符。
+                     * @return Name 水印模板标识过滤条件，长度限制：64 个字符。
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置水印模板标识过滤条件，长度限制：64 个字符。
+                     * @param _name 水印模板标识过滤条件，长度限制：64 个字符。
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -171,6 +192,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 水印模板标识过滤条件，长度限制：64 个字符。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

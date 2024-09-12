@@ -900,6 +900,49 @@ CamClient::DeleteGroupOutcomeCallable CamClient::DeleteGroupCallable(const Delet
     return task->get_future();
 }
 
+CamClient::DeleteMessageReceiverOutcome CamClient::DeleteMessageReceiver(const DeleteMessageReceiverRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMessageReceiver");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMessageReceiverResponse rsp = DeleteMessageReceiverResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMessageReceiverOutcome(rsp);
+        else
+            return DeleteMessageReceiverOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMessageReceiverOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DeleteMessageReceiverAsync(const DeleteMessageReceiverRequest& request, const DeleteMessageReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteMessageReceiver(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DeleteMessageReceiverOutcomeCallable CamClient::DeleteMessageReceiverCallable(const DeleteMessageReceiverRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteMessageReceiverOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteMessageReceiver(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::DeleteOIDCConfigOutcome CamClient::DeleteOIDCConfig(const DeleteOIDCConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteOIDCConfig");
@@ -2871,6 +2914,49 @@ CamClient::ListPolicyVersionsOutcomeCallable CamClient::ListPolicyVersionsCallab
         [this, request]()
         {
             return this->ListPolicyVersions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::ListReceiverOutcome CamClient::ListReceiver(const ListReceiverRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListReceiver");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListReceiverResponse rsp = ListReceiverResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListReceiverOutcome(rsp);
+        else
+            return ListReceiverOutcome(o.GetError());
+    }
+    else
+    {
+        return ListReceiverOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::ListReceiverAsync(const ListReceiverRequest& request, const ListReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListReceiver(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::ListReceiverOutcomeCallable CamClient::ListReceiverCallable(const ListReceiverRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListReceiverOutcome()>>(
+        [this, request]()
+        {
+            return this->ListReceiver(request);
         }
     );
 

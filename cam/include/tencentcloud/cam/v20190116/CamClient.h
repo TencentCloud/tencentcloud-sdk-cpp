@@ -63,6 +63,8 @@
 #include <tencentcloud/cam/v20190116/model/DeleteAccessKeyResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeleteGroupResponse.h>
+#include <tencentcloud/cam/v20190116/model/DeleteMessageReceiverRequest.h>
+#include <tencentcloud/cam/v20190116/model/DeleteMessageReceiverResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteOIDCConfigRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeleteOIDCConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeletePolicyRequest.h>
@@ -155,6 +157,8 @@
 #include <tencentcloud/cam/v20190116/model/ListPoliciesGrantingServiceAccessResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListPolicyVersionsRequest.h>
 #include <tencentcloud/cam/v20190116/model/ListPolicyVersionsResponse.h>
+#include <tencentcloud/cam/v20190116/model/ListReceiverRequest.h>
+#include <tencentcloud/cam/v20190116/model/ListReceiverResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListSAMLProvidersRequest.h>
 #include <tencentcloud/cam/v20190116/model/ListSAMLProvidersResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListUsersRequest.h>
@@ -273,6 +277,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteGroupResponse> DeleteGroupOutcome;
                 typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeleteGroupRequest&, DeleteGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteMessageReceiverResponse> DeleteMessageReceiverOutcome;
+                typedef std::future<DeleteMessageReceiverOutcome> DeleteMessageReceiverOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::DeleteMessageReceiverRequest&, DeleteMessageReceiverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMessageReceiverAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteOIDCConfigResponse> DeleteOIDCConfigOutcome;
                 typedef std::future<DeleteOIDCConfigOutcome> DeleteOIDCConfigOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeleteOIDCConfigRequest&, DeleteOIDCConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOIDCConfigAsyncHandler;
@@ -411,6 +418,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListPolicyVersionsResponse> ListPolicyVersionsOutcome;
                 typedef std::future<ListPolicyVersionsOutcome> ListPolicyVersionsOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ListPolicyVersionsRequest&, ListPolicyVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPolicyVersionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListReceiverResponse> ListReceiverOutcome;
+                typedef std::future<ListReceiverOutcome> ListReceiverOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::ListReceiverRequest&, ListReceiverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListReceiverAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListSAMLProvidersResponse> ListSAMLProvidersOutcome;
                 typedef std::future<ListSAMLProvidersOutcome> ListSAMLProvidersOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ListSAMLProvidersRequest&, ListSAMLProvidersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListSAMLProvidersAsyncHandler;
@@ -660,6 +670,15 @@ namespace TencentCloud
                 DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest &request);
                 void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request);
+
+                /**
+                 *删除消息接收人
+                 * @param req DeleteMessageReceiverRequest
+                 * @return DeleteMessageReceiverOutcome
+                 */
+                DeleteMessageReceiverOutcome DeleteMessageReceiver(const Model::DeleteMessageReceiverRequest &request);
+                void DeleteMessageReceiverAsync(const Model::DeleteMessageReceiverRequest& request, const DeleteMessageReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteMessageReceiverOutcomeCallable DeleteMessageReceiverCallable(const Model::DeleteMessageReceiverRequest& request);
 
                 /**
                  *删除OIDC身份提供商
@@ -1074,6 +1093,15 @@ namespace TencentCloud
                 ListPolicyVersionsOutcome ListPolicyVersions(const Model::ListPolicyVersionsRequest &request);
                 void ListPolicyVersionsAsync(const Model::ListPolicyVersionsRequest& request, const ListPolicyVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListPolicyVersionsOutcomeCallable ListPolicyVersionsCallable(const Model::ListPolicyVersionsRequest& request);
+
+                /**
+                 *获取消息接收人列表
+                 * @param req ListReceiverRequest
+                 * @return ListReceiverOutcome
+                 */
+                ListReceiverOutcome ListReceiver(const Model::ListReceiverRequest &request);
+                void ListReceiverAsync(const Model::ListReceiverRequest& request, const ListReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListReceiverOutcomeCallable ListReceiverCallable(const Model::ListReceiverRequest& request);
 
                 /**
                  *查询SAML身份提供商列表

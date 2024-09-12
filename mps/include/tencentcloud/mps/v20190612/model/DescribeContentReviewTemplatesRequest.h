@@ -134,6 +134,27 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取智能审核模板标识过滤条件，长度限制：64 个字符。
+                     * @return Name 智能审核模板标识过滤条件，长度限制：64 个字符。
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置智能审核模板标识过滤条件，长度限制：64 个字符。
+                     * @param _name 智能审核模板标识过滤条件，长度限制：64 个字符。
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,6 +182,12 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 智能审核模板标识过滤条件，长度限制：64 个字符。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

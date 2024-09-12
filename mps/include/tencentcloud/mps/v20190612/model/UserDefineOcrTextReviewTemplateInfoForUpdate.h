@@ -82,7 +82,7 @@ namespace TencentCloud
 标签个数最多 10 个，每个标签长度最多 16 个字符。
                      * 
                      */
-                    std::string GetLabelSet() const;
+                    std::vector<std::string> GetLabelSet() const;
 
                     /**
                      * 设置用户自定义文本过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回。如果要使用标签过滤功能，添加自定义文本关键词素材时需要添加对应标签。
@@ -91,7 +91,7 @@ namespace TencentCloud
 标签个数最多 10 个，每个标签长度最多 16 个字符。
                      * 
                      */
-                    void SetLabelSet(const std::string& _labelSet);
+                    void SetLabelSet(const std::vector<std::string>& _labelSet);
 
                     /**
                      * 判断参数 LabelSet 是否已赋值
@@ -156,7 +156,7 @@ namespace TencentCloud
                      * 用户自定义文本过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回。如果要使用标签过滤功能，添加自定义文本关键词素材时需要添加对应标签。
 标签个数最多 10 个，每个标签长度最多 16 个字符。
                      */
-                    std::string m_labelSet;
+                    std::vector<std::string> m_labelSet;
                     bool m_labelSetHasBeenSet;
 
                     /**

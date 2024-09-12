@@ -305,6 +305,31 @@ namespace TencentCloud
                     bool DefaultParameterConfsHasBeenSet() const;
 
                     /**
+                     * 获取命令关联的场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Scenes 命令关联的场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetScenes() const;
+
+                    /**
+                     * 设置命令关联的场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scenes 命令关联的场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScenes(const std::vector<std::string>& _scenes);
+
+                    /**
+                     * 判断参数 Scenes 是否已赋值
+                     * @return Scenes 是否已赋值
+                     * 
+                     */
+                    bool ScenesHasBeenSet() const;
+
+                    /**
                      * 获取命令的结构化描述。公共命令有值，用户命令为空字符串。
                      * @return FormattedDescription 命令的结构化描述。公共命令有值，用户命令为空字符串。
                      * 
@@ -504,6 +529,13 @@ namespace TencentCloud
                      */
                     std::vector<DefaultParameterConf> m_defaultParameterConfs;
                     bool m_defaultParameterConfsHasBeenSet;
+
+                    /**
+                     * 命令关联的场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_scenes;
+                    bool m_scenesHasBeenSet;
 
                     /**
                      * 命令的结构化描述。公共命令有值，用户命令为空字符串。

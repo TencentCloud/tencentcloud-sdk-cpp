@@ -23,6 +23,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/ListAttachedRolePoliciesResponse.h
   include/tencentcloud/cam/v20190116/model/CreateMessageReceiverRequest.h
   include/tencentcloud/cam/v20190116/model/UpdateUserOIDCConfigResponse.h
+  include/tencentcloud/cam/v20190116/model/Receiver.h
   include/tencentcloud/cam/v20190116/model/ListAccessKeysRequest.h
   include/tencentcloud/cam/v20190116/model/SetMfaFlagResponse.h
   include/tencentcloud/cam/v20190116/model/UpdateSAMLProviderRequest.h
@@ -56,6 +57,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/GetCustomMFATokenInfoRequest.h
   include/tencentcloud/cam/v20190116/model/DescribeRoleListRequest.h
   include/tencentcloud/cam/v20190116/model/DescribeUserSAMLConfigRequest.h
+  include/tencentcloud/cam/v20190116/model/DeleteMessageReceiverResponse.h
   include/tencentcloud/cam/v20190116/model/DeleteAccessKeyResponse.h
   include/tencentcloud/cam/v20190116/model/PutRolePermissionsBoundaryRequest.h
   include/tencentcloud/cam/v20190116/model/GetGroupRequest.h
@@ -122,6 +124,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/SubAccountInfo.h
   include/tencentcloud/cam/v20190116/model/CreateGroupRequest.h
   include/tencentcloud/cam/v20190116/model/SAMLProviderInfo.h
+  include/tencentcloud/cam/v20190116/model/ListReceiverRequest.h
   include/tencentcloud/cam/v20190116/model/DisableUserSSORequest.h
   include/tencentcloud/cam/v20190116/model/ListPoliciesGrantingServiceAccessRequest.h
   include/tencentcloud/cam/v20190116/model/UpdateSAMLProviderResponse.h
@@ -145,6 +148,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/CreateOIDCConfigRequest.h
   include/tencentcloud/cam/v20190116/model/AccessKey.h
   include/tencentcloud/cam/v20190116/model/GetGroupResponse.h
+  include/tencentcloud/cam/v20190116/model/ListReceiverResponse.h
   include/tencentcloud/cam/v20190116/model/UpdateOIDCConfigResponse.h
   include/tencentcloud/cam/v20190116/model/UntagRoleRequest.h
   include/tencentcloud/cam/v20190116/model/AttachGroupPolicyRequest.h
@@ -212,6 +216,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/UpdateUserSAMLConfigResponse.h
   include/tencentcloud/cam/v20190116/model/AttachUserPolicyResponse.h
   include/tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagCollResponse.h
+  include/tencentcloud/cam/v20190116/model/DeleteMessageReceiverRequest.h
   include/tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagCollRequest.h
   include/tencentcloud/cam/v20190116/model/PutRolePermissionsBoundaryResponse.h
   include/tencentcloud/cam/v20190116/model/SetMfaFlagRequest.h
@@ -232,6 +237,7 @@ set(cam_src
   src/v20190116/model/ListAttachedRolePoliciesResponse.cpp
   src/v20190116/model/CreateMessageReceiverRequest.cpp
   src/v20190116/model/UpdateUserOIDCConfigResponse.cpp
+  src/v20190116/model/Receiver.cpp
   src/v20190116/model/ListAccessKeysRequest.cpp
   src/v20190116/model/SetMfaFlagResponse.cpp
   src/v20190116/model/UpdateSAMLProviderRequest.cpp
@@ -265,6 +271,7 @@ set(cam_src
   src/v20190116/model/GetCustomMFATokenInfoRequest.cpp
   src/v20190116/model/DescribeRoleListRequest.cpp
   src/v20190116/model/DescribeUserSAMLConfigRequest.cpp
+  src/v20190116/model/DeleteMessageReceiverResponse.cpp
   src/v20190116/model/DeleteAccessKeyResponse.cpp
   src/v20190116/model/PutRolePermissionsBoundaryRequest.cpp
   src/v20190116/model/GetGroupRequest.cpp
@@ -331,6 +338,7 @@ set(cam_src
   src/v20190116/model/SubAccountInfo.cpp
   src/v20190116/model/CreateGroupRequest.cpp
   src/v20190116/model/SAMLProviderInfo.cpp
+  src/v20190116/model/ListReceiverRequest.cpp
   src/v20190116/model/DisableUserSSORequest.cpp
   src/v20190116/model/ListPoliciesGrantingServiceAccessRequest.cpp
   src/v20190116/model/UpdateSAMLProviderResponse.cpp
@@ -354,6 +362,7 @@ set(cam_src
   src/v20190116/model/CreateOIDCConfigRequest.cpp
   src/v20190116/model/AccessKey.cpp
   src/v20190116/model/GetGroupResponse.cpp
+  src/v20190116/model/ListReceiverResponse.cpp
   src/v20190116/model/UpdateOIDCConfigResponse.cpp
   src/v20190116/model/UntagRoleRequest.cpp
   src/v20190116/model/AttachGroupPolicyRequest.cpp
@@ -421,6 +430,7 @@ set(cam_src
   src/v20190116/model/UpdateUserSAMLConfigResponse.cpp
   src/v20190116/model/AttachUserPolicyResponse.cpp
   src/v20190116/model/DescribeSafeAuthFlagCollResponse.cpp
+  src/v20190116/model/DeleteMessageReceiverRequest.cpp
   src/v20190116/model/DescribeSafeAuthFlagCollRequest.cpp
   src/v20190116/model/PutRolePermissionsBoundaryResponse.cpp
   src/v20190116/model/SetMfaFlagRequest.cpp

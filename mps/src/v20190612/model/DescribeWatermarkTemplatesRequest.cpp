@@ -26,7 +26,8 @@ DescribeWatermarkTemplatesRequest::DescribeWatermarkTemplatesRequest() :
     m_definitionsHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string DescribeWatermarkTemplatesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +153,22 @@ void DescribeWatermarkTemplatesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeWatermarkTemplatesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeWatermarkTemplatesRequest::GetName() const
+{
+    return m_name;
+}
+
+void DescribeWatermarkTemplatesRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool DescribeWatermarkTemplatesRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 
 

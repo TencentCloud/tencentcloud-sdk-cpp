@@ -772,6 +772,31 @@ namespace TencentCloud
                      */
                     bool PayModeEffectiveHasBeenSet() const;
 
+                    /**
+                     * 获取响应时间满意阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResponseDurationWarningThreshold 响应时间满意阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetResponseDurationWarningThreshold() const;
+
+                    /**
+                     * 设置响应时间满意阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _responseDurationWarningThreshold 响应时间满意阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResponseDurationWarningThreshold(const int64_t& _responseDurationWarningThreshold);
+
+                    /**
+                     * 判断参数 ResponseDurationWarningThreshold 是否已赋值
+                     * @return ResponseDurationWarningThreshold 是否已赋值
+                     * 
+                     */
+                    bool ResponseDurationWarningThresholdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -976,6 +1001,13 @@ namespace TencentCloud
                      */
                     bool m_payModeEffective;
                     bool m_payModeEffectiveHasBeenSet;
+
+                    /**
+                     * 响应时间满意阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_responseDurationWarningThreshold;
+                    bool m_responseDurationWarningThresholdHasBeenSet;
 
                 };
             }

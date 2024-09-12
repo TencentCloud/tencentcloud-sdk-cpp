@@ -45,11 +45,14 @@ CoreInternalOutcome UserDefineOcrTextReviewTemplateInfoForUpdate::Deserialize(co
 
     if (value.HasMember("LabelSet") && !value["LabelSet"].IsNull())
     {
-        if (!value["LabelSet"].IsString())
+        if (!value["LabelSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserDefineOcrTextReviewTemplateInfoForUpdate.LabelSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LabelSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `UserDefineOcrTextReviewTemplateInfoForUpdate.LabelSet` IsString=false incorrectly").SetRequestId(requestId));
+            m_labelSet.push_back((*itr).GetString());
         }
-        m_labelSet = string(value["LabelSet"].GetString());
         m_labelSetHasBeenSet = true;
     }
 
@@ -93,7 +96,12 @@ void UserDefineOcrTextReviewTemplateInfoForUpdate::ToJsonObject(rapidjson::Value
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LabelSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_labelSet.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_labelSet.begin(); itr != m_labelSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_blockConfidenceHasBeenSet)
@@ -131,12 +139,12 @@ bool UserDefineOcrTextReviewTemplateInfoForUpdate::SwitchHasBeenSet() const
     return m_switchHasBeenSet;
 }
 
-string UserDefineOcrTextReviewTemplateInfoForUpdate::GetLabelSet() const
+vector<string> UserDefineOcrTextReviewTemplateInfoForUpdate::GetLabelSet() const
 {
     return m_labelSet;
 }
 
-void UserDefineOcrTextReviewTemplateInfoForUpdate::SetLabelSet(const string& _labelSet)
+void UserDefineOcrTextReviewTemplateInfoForUpdate::SetLabelSet(const vector<string>& _labelSet)
 {
     m_labelSet = _labelSet;
     m_labelSetHasBeenSet = true;

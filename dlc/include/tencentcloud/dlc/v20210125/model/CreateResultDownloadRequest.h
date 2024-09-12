@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FormatHasBeenSet() const;
 
                     /**
-                     * 获取是否重新生成下载文件，仅当之前任务为 Timout | Error 时有效
-                     * @return Force 是否重新生成下载文件，仅当之前任务为 Timout | Error 时有效
+                     * 获取是否重新生成下载文件，仅当之前任务状态为 timeout | error 时有效
+                     * @return Force 是否重新生成下载文件，仅当之前任务状态为 timeout | error 时有效
                      * 
                      */
                     bool GetForce() const;
 
                     /**
-                     * 设置是否重新生成下载文件，仅当之前任务为 Timout | Error 时有效
-                     * @param _force 是否重新生成下载文件，仅当之前任务为 Timout | Error 时有效
+                     * 设置是否重新生成下载文件，仅当之前任务状态为 timeout | error 时有效
+                     * @param _force 是否重新生成下载文件，仅当之前任务状态为 timeout | error 时有效
                      * 
                      */
                     void SetForce(const bool& _force);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_formatHasBeenSet;
 
                     /**
-                     * 是否重新生成下载文件，仅当之前任务为 Timout | Error 时有效
+                     * 是否重新生成下载文件，仅当之前任务状态为 timeout | error 时有效
                      */
                     bool m_force;
                     bool m_forceHasBeenSet;

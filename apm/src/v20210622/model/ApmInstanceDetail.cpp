@@ -49,7 +49,8 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_metricDurationHasBeenSet(false),
     m_customShowTagsHasBeenSet(false),
     m_payModeHasBeenSet(false),
-    m_payModeEffectiveHasBeenSet(false)
+    m_payModeEffectiveHasBeenSet(false),
+    m_responseDurationWarningThresholdHasBeenSet(false)
 {
 }
 
@@ -361,6 +362,16 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_payModeEffectiveHasBeenSet = true;
     }
 
+    if (value.HasMember("ResponseDurationWarningThreshold") && !value["ResponseDurationWarningThreshold"].IsNull())
+    {
+        if (!value["ResponseDurationWarningThreshold"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.ResponseDurationWarningThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_responseDurationWarningThreshold = value["ResponseDurationWarningThreshold"].GetInt64();
+        m_responseDurationWarningThresholdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -610,6 +621,14 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "PayModeEffective";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_payModeEffective, allocator);
+    }
+
+    if (m_responseDurationWarningThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseDurationWarningThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_responseDurationWarningThreshold, allocator);
     }
 
 }
@@ -1077,5 +1096,21 @@ void ApmInstanceDetail::SetPayModeEffective(const bool& _payModeEffective)
 bool ApmInstanceDetail::PayModeEffectiveHasBeenSet() const
 {
     return m_payModeEffectiveHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetResponseDurationWarningThreshold() const
+{
+    return m_responseDurationWarningThreshold;
+}
+
+void ApmInstanceDetail::SetResponseDurationWarningThreshold(const int64_t& _responseDurationWarningThreshold)
+{
+    m_responseDurationWarningThreshold = _responseDurationWarningThreshold;
+    m_responseDurationWarningThresholdHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::ResponseDurationWarningThresholdHasBeenSet() const
+{
+    return m_responseDurationWarningThresholdHasBeenSet;
 }
 
