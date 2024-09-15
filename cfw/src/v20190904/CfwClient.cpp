@@ -1846,6 +1846,49 @@ CfwClient::DescribeEnterpriseSecurityGroupRuleOutcomeCallable CfwClient::Describ
     return task->get_future();
 }
 
+CfwClient::DescribeEnterpriseSecurityGroupRuleListOutcome CfwClient::DescribeEnterpriseSecurityGroupRuleList(const DescribeEnterpriseSecurityGroupRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnterpriseSecurityGroupRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnterpriseSecurityGroupRuleListResponse rsp = DescribeEnterpriseSecurityGroupRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnterpriseSecurityGroupRuleListOutcome(rsp);
+        else
+            return DescribeEnterpriseSecurityGroupRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnterpriseSecurityGroupRuleListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeEnterpriseSecurityGroupRuleListAsync(const DescribeEnterpriseSecurityGroupRuleListRequest& request, const DescribeEnterpriseSecurityGroupRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEnterpriseSecurityGroupRuleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeEnterpriseSecurityGroupRuleListOutcomeCallable CfwClient::DescribeEnterpriseSecurityGroupRuleListCallable(const DescribeEnterpriseSecurityGroupRuleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEnterpriseSecurityGroupRuleListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEnterpriseSecurityGroupRuleList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeFwEdgeIpsOutcome CfwClient::DescribeFwEdgeIps(const DescribeFwEdgeIpsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFwEdgeIps");

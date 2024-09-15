@@ -163,6 +163,8 @@
 #include <tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/FetchMessageListByOffsetRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/FetchMessageListByOffsetResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/FetchMessageListByTimestampRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/FetchMessageListByTimestampResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/InstanceScalingDownRequest.h>
@@ -415,6 +417,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::FetchMessageListByOffsetResponse> FetchMessageListByOffsetOutcome;
                 typedef std::future<FetchMessageListByOffsetOutcome> FetchMessageListByOffsetOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::FetchMessageListByOffsetRequest&, FetchMessageListByOffsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchMessageListByOffsetAsyncHandler;
+                typedef Outcome<Core::Error, Model::FetchMessageListByTimestampResponse> FetchMessageListByTimestampOutcome;
+                typedef std::future<FetchMessageListByTimestampOutcome> FetchMessageListByTimestampOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::FetchMessageListByTimestampRequest&, FetchMessageListByTimestampOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchMessageListByTimestampAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquireCkafkaPriceResponse> InquireCkafkaPriceOutcome;
                 typedef std::future<InquireCkafkaPriceOutcome> InquireCkafkaPriceOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::InquireCkafkaPriceRequest&, InquireCkafkaPriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquireCkafkaPriceAsyncHandler;
@@ -1090,6 +1095,15 @@ namespace TencentCloud
                 FetchMessageListByOffsetOutcome FetchMessageListByOffset(const Model::FetchMessageListByOffsetRequest &request);
                 void FetchMessageListByOffsetAsync(const Model::FetchMessageListByOffsetRequest& request, const FetchMessageListByOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 FetchMessageListByOffsetOutcomeCallable FetchMessageListByOffsetCallable(const Model::FetchMessageListByOffsetRequest& request);
+
+                /**
+                 *根据时间戳查询消息列表
+                 * @param req FetchMessageListByTimestampRequest
+                 * @return FetchMessageListByTimestampOutcome
+                 */
+                FetchMessageListByTimestampOutcome FetchMessageListByTimestamp(const Model::FetchMessageListByTimestampRequest &request);
+                void FetchMessageListByTimestampAsync(const Model::FetchMessageListByTimestampRequest& request, const FetchMessageListByTimestampAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FetchMessageListByTimestampOutcomeCallable FetchMessageListByTimestampCallable(const Model::FetchMessageListByTimestampRequest& request);
 
                 /**
                  *Ckafka实例购买/续费询价

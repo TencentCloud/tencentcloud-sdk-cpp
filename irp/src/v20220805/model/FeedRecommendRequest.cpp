@@ -28,7 +28,8 @@ FeedRecommendRequest::FeedRecommendRequest() :
     m_userIdHasBeenSet(false),
     m_userIdListHasBeenSet(false),
     m_itemCntHasBeenSet(false),
-    m_currentItemIdHasBeenSet(false)
+    m_currentItemIdHasBeenSet(false),
+    m_extensionHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string FeedRecommendRequest::ToJsonString() const
         string key = "CurrentItemId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_currentItemId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extensionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extension";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extension.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +205,22 @@ void FeedRecommendRequest::SetCurrentItemId(const string& _currentItemId)
 bool FeedRecommendRequest::CurrentItemIdHasBeenSet() const
 {
     return m_currentItemIdHasBeenSet;
+}
+
+string FeedRecommendRequest::GetExtension() const
+{
+    return m_extension;
+}
+
+void FeedRecommendRequest::SetExtension(const string& _extension)
+{
+    m_extension = _extension;
+    m_extensionHasBeenSet = true;
+}
+
+bool FeedRecommendRequest::ExtensionHasBeenSet() const
+{
+    return m_extensionHasBeenSet;
 }
 
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。
-                     * @return NetworkInterfaceIds 弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。
+                     * 获取弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。本接口不支持主网卡绑定安全组。
+                     * @return NetworkInterfaceIds 弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。本接口不支持主网卡绑定安全组。
                      * 
                      */
                     std::vector<std::string> GetNetworkInterfaceIds() const;
 
                     /**
-                     * 设置弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。
-                     * @param _networkInterfaceIds 弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。
+                     * 设置弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。本接口不支持主网卡绑定安全组。
+                     * @param _networkInterfaceIds 弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。本接口不支持主网卡绑定安全组。
                      * 
                      */
                     void SetNetworkInterfaceIds(const std::vector<std::string>& _networkInterfaceIds);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。
+                     * 弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。本接口不支持主网卡绑定安全组。
                      */
                     std::vector<std::string> m_networkInterfaceIds;
                     bool m_networkInterfaceIdsHasBeenSet;

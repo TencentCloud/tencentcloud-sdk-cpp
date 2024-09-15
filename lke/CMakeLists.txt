@@ -121,7 +121,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/GetEmbeddingResponse.h
   include/tencentcloud/lke/v20231130/model/ExportUnsatisfiedReplyRequest.h
   include/tencentcloud/lke/v20231130/model/GroupQAResponse.h
-  include/tencentcloud/lke/v20231130/model/RetryReleaseRequest.h
+  include/tencentcloud/lke/v20231130/model/QuoteInfo.h
   include/tencentcloud/lke/v20231130/model/CreateAppRequest.h
   include/tencentcloud/lke/v20231130/model/AppConfig.h
   include/tencentcloud/lke/v20231130/model/DescribeReleaseRequest.h
@@ -188,6 +188,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/QueryRewriteRequest.h
   include/tencentcloud/lke/v20231130/model/ModifyAppRequest.h
   include/tencentcloud/lke/v20231130/model/DeleteAttributeLabelResponse.h
+  include/tencentcloud/lke/v20231130/model/RetryReleaseRequest.h
   include/tencentcloud/lke/v20231130/model/VerifyQARequest.h
   include/tencentcloud/lke/v20231130/model/DeleteQACateRequest.h
   include/tencentcloud/lke/v20231130/model/GenerateQARequest.h
@@ -357,7 +358,7 @@ set(lke_src
   src/v20231130/model/GetEmbeddingResponse.cpp
   src/v20231130/model/ExportUnsatisfiedReplyRequest.cpp
   src/v20231130/model/GroupQAResponse.cpp
-  src/v20231130/model/RetryReleaseRequest.cpp
+  src/v20231130/model/QuoteInfo.cpp
   src/v20231130/model/CreateAppRequest.cpp
   src/v20231130/model/AppConfig.cpp
   src/v20231130/model/DescribeReleaseRequest.cpp
@@ -424,6 +425,7 @@ set(lke_src
   src/v20231130/model/QueryRewriteRequest.cpp
   src/v20231130/model/ModifyAppRequest.cpp
   src/v20231130/model/DeleteAttributeLabelResponse.cpp
+  src/v20231130/model/RetryReleaseRequest.cpp
   src/v20231130/model/VerifyQARequest.cpp
   src/v20231130/model/DeleteQACateRequest.cpp
   src/v20231130/model/GenerateQARequest.cpp

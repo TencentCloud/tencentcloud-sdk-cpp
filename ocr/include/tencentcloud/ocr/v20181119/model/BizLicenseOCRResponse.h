@@ -349,6 +349,20 @@ WARN_RESHOOT_CARD翻拍件告警
                      */
                     bool RegistrationAuthorityHasBeenSet() const;
 
+                    /**
+                     * 获取是否是电子营业执照。0为不是，1为是。
+                     * @return Electronic 是否是电子营业执照。0为不是，1为是。
+                     * 
+                     */
+                    bool GetElectronic() const;
+
+                    /**
+                     * 判断参数 Electronic 是否已赋值
+                     * @return Electronic 是否已赋值
+                     * 
+                     */
+                    bool ElectronicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -482,6 +496,12 @@ WARN_RESHOOT_CARD翻拍件告警
                      */
                     std::string m_registrationAuthority;
                     bool m_registrationAuthorityHasBeenSet;
+
+                    /**
+                     * 是否是电子营业执照。0为不是，1为是。
+                     */
+                    bool m_electronic;
+                    bool m_electronicHasBeenSet;
 
                 };
             }

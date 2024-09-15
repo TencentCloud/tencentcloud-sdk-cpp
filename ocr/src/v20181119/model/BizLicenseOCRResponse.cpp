@@ -44,7 +44,8 @@ BizLicenseOCRResponse::BizLicenseOCRResponse() :
     m_sealHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
-    m_registrationAuthorityHasBeenSet(false)
+    m_registrationAuthorityHasBeenSet(false),
+    m_electronicHasBeenSet(false)
 {
 }
 
@@ -298,6 +299,16 @@ CoreInternalOutcome BizLicenseOCRResponse::Deserialize(const string &payload)
         m_registrationAuthorityHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Electronic") && !rsp["Electronic"].IsNull())
+    {
+        if (!rsp["Electronic"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Electronic` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_electronic = rsp["Electronic"].GetBool();
+        m_electronicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -484,6 +495,14 @@ string BizLicenseOCRResponse::ToJsonString() const
         string key = "RegistrationAuthority";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_registrationAuthority.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_electronicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Electronic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_electronic, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -706,6 +725,16 @@ string BizLicenseOCRResponse::GetRegistrationAuthority() const
 bool BizLicenseOCRResponse::RegistrationAuthorityHasBeenSet() const
 {
     return m_registrationAuthorityHasBeenSet;
+}
+
+bool BizLicenseOCRResponse::GetElectronic() const
+{
+    return m_electronic;
+}
+
+bool BizLicenseOCRResponse::ElectronicHasBeenSet() const
+{
+    return m_electronicHasBeenSet;
 }
 
 

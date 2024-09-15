@@ -273,6 +273,27 @@ namespace TencentCloud
                      */
                     bool InstTypeHasBeenSet() const;
 
+                    /**
+                     * 获取节点ID
+                     * @return OpResourceId 节点ID
+                     * 
+                     */
+                    std::string GetOpResourceId() const;
+
+                    /**
+                     * 设置节点ID
+                     * @param _opResourceId 节点ID
+                     * 
+                     */
+                    void SetOpResourceId(const std::string& _opResourceId);
+
+                    /**
+                     * 判断参数 OpResourceId 是否已赋值
+                     * @return OpResourceId 是否已赋值
+                     * 
+                     */
+                    bool OpResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +361,12 @@ namespace TencentCloud
                      */
                     std::string m_instType;
                     bool m_instTypeHasBeenSet;
+
+                    /**
+                     * 节点ID
+                     */
+                    std::string m_opResourceId;
+                    bool m_opResourceIdHasBeenSet;
 
                 };
             }

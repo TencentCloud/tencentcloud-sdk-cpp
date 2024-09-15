@@ -1104,7 +1104,7 @@ namespace TencentCloud
                 QueryRewriteOutcomeCallable QueryRewriteCallable(const Model::QueryRewriteRequest& request);
 
                 /**
-                 *是否意图转人工
+                 *点赞点踩消息
                  * @param req RateMsgRecordRequest
                  * @return RateMsgRecordOutcome
                  */

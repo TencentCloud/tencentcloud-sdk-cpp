@@ -30,7 +30,10 @@ ReferDetail::ReferDetail() :
     m_confidenceHasBeenSet(false),
     m_markHasBeenSet(false),
     m_highlightsHasBeenSet(false),
-    m_orgDataHasBeenSet(false)
+    m_orgDataHasBeenSet(false),
+    m_pageInfosHasBeenSet(false),
+    m_sheetInfosHasBeenSet(false),
+    m_docBizIdHasBeenSet(false)
 {
 }
 
@@ -149,6 +152,42 @@ CoreInternalOutcome ReferDetail::Deserialize(const rapidjson::Value &value)
         m_orgDataHasBeenSet = true;
     }
 
+    if (value.HasMember("PageInfos") && !value["PageInfos"].IsNull())
+    {
+        if (!value["PageInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ReferDetail.PageInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PageInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_pageInfos.push_back((*itr).GetUint64());
+        }
+        m_pageInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("SheetInfos") && !value["SheetInfos"].IsNull())
+    {
+        if (!value["SheetInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ReferDetail.SheetInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SheetInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sheetInfos.push_back((*itr).GetString());
+        }
+        m_sheetInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("DocBizId") && !value["DocBizId"].IsNull())
+    {
+        if (!value["DocBizId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReferDetail.DocBizId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_docBizId = string(value["DocBizId"].GetString());
+        m_docBizIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +280,40 @@ void ReferDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "OrgData";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_orgData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_pageInfos.begin(); itr != m_pageInfos.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_sheetInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SheetInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sheetInfos.begin(); itr != m_sheetInfos.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_docBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DocBizId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_docBizId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -404,5 +477,53 @@ void ReferDetail::SetOrgData(const string& _orgData)
 bool ReferDetail::OrgDataHasBeenSet() const
 {
     return m_orgDataHasBeenSet;
+}
+
+vector<uint64_t> ReferDetail::GetPageInfos() const
+{
+    return m_pageInfos;
+}
+
+void ReferDetail::SetPageInfos(const vector<uint64_t>& _pageInfos)
+{
+    m_pageInfos = _pageInfos;
+    m_pageInfosHasBeenSet = true;
+}
+
+bool ReferDetail::PageInfosHasBeenSet() const
+{
+    return m_pageInfosHasBeenSet;
+}
+
+vector<string> ReferDetail::GetSheetInfos() const
+{
+    return m_sheetInfos;
+}
+
+void ReferDetail::SetSheetInfos(const vector<string>& _sheetInfos)
+{
+    m_sheetInfos = _sheetInfos;
+    m_sheetInfosHasBeenSet = true;
+}
+
+bool ReferDetail::SheetInfosHasBeenSet() const
+{
+    return m_sheetInfosHasBeenSet;
+}
+
+string ReferDetail::GetDocBizId() const
+{
+    return m_docBizId;
+}
+
+void ReferDetail::SetDocBizId(const string& _docBizId)
+{
+    m_docBizId = _docBizId;
+    m_docBizIdHasBeenSet = true;
+}
+
+bool ReferDetail::DocBizIdHasBeenSet() const
+{
+    return m_docBizIdHasBeenSet;
 }
 

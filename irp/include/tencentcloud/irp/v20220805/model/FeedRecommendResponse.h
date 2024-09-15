@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取推荐返回的内容信息列表
-                     * @return DataList 推荐返回的内容信息列表
+                     * 获取推荐返回的内容信息列表，返回结果已按策略规则做好了排序
+                     * @return DataList 推荐返回的内容信息列表，返回结果已按策略规则做好了排序
                      * 
                      */
                     std::vector<RecItemData> GetDataList() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 推荐返回的内容信息列表
+                     * 推荐返回的内容信息列表，返回结果已按策略规则做好了排序
                      */
                     std::vector<RecItemData> m_dataList;
                     bool m_dataListHasBeenSet;

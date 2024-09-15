@@ -148,13 +148,11 @@ namespace TencentCloud
 
                     /**
                      * 获取Nextflow引擎版本，取值范围：
-- 22.10.4
-- 22.10.8 
+- 22.10.7
 - 23.10.1
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NFVersion Nextflow引擎版本，取值范围：
-- 22.10.4
-- 22.10.8 
+- 22.10.7
 - 23.10.1
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -163,13 +161,11 @@ namespace TencentCloud
 
                     /**
                      * 设置Nextflow引擎版本，取值范围：
-- 22.10.4
-- 22.10.8 
+- 22.10.7
 - 23.10.1
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nFVersion Nextflow引擎版本，取值范围：
-- 22.10.4
-- 22.10.8 
+- 22.10.7
 - 23.10.1
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -182,6 +178,31 @@ namespace TencentCloud
                      * 
                      */
                     bool NFVersionHasBeenSet() const;
+
+                    /**
+                     * 获取启动路径。可填写指定缓存卷内的绝对路径，nextflow run 命令将在此路径执行。当WorkDir为COS路径时必填；当WorkDir为缓存卷路径时选填，不填默认使用WorkDir作为LaunchDir。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LaunchDir 启动路径。可填写指定缓存卷内的绝对路径，nextflow run 命令将在此路径执行。当WorkDir为COS路径时必填；当WorkDir为缓存卷路径时选填，不填默认使用WorkDir作为LaunchDir。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLaunchDir() const;
+
+                    /**
+                     * 设置启动路径。可填写指定缓存卷内的绝对路径，nextflow run 命令将在此路径执行。当WorkDir为COS路径时必填；当WorkDir为缓存卷路径时选填，不填默认使用WorkDir作为LaunchDir。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _launchDir 启动路径。可填写指定缓存卷内的绝对路径，nextflow run 命令将在此路径执行。当WorkDir为COS路径时必填；当WorkDir为缓存卷路径时选填，不填默认使用WorkDir作为LaunchDir。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLaunchDir(const std::string& _launchDir);
+
+                    /**
+                     * 判断参数 LaunchDir 是否已赋值
+                     * @return LaunchDir 是否已赋值
+                     * 
+                     */
+                    bool LaunchDirHasBeenSet() const;
 
                 private:
 
@@ -215,13 +236,19 @@ namespace TencentCloud
 
                     /**
                      * Nextflow引擎版本，取值范围：
-- 22.10.4
-- 22.10.8 
+- 22.10.7
 - 23.10.1
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nFVersion;
                     bool m_nFVersionHasBeenSet;
+
+                    /**
+                     * 启动路径。可填写指定缓存卷内的绝对路径，nextflow run 命令将在此路径执行。当WorkDir为COS路径时必填；当WorkDir为缓存卷路径时选填，不填默认使用WorkDir作为LaunchDir。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_launchDir;
+                    bool m_launchDirHasBeenSet;
 
                 };
             }

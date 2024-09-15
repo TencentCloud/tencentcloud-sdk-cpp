@@ -42,7 +42,8 @@ MsgRecord::MsgRecord() :
     m_replyMethodHasBeenSet(false),
     m_optionCardsHasBeenSet(false),
     m_taskFlowHasBeenSet(false),
-    m_fileInfosHasBeenSet(false)
+    m_fileInfosHasBeenSet(false),
+    m_quoteInfosHasBeenSet(false)
 {
 }
 
@@ -314,6 +315,26 @@ CoreInternalOutcome MsgRecord::Deserialize(const rapidjson::Value &value)
         m_fileInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("QuoteInfos") && !value["QuoteInfos"].IsNull())
+    {
+        if (!value["QuoteInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.QuoteInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["QuoteInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            QuoteInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_quoteInfos.push_back(item);
+        }
+        m_quoteInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -522,6 +543,21 @@ void MsgRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
 
         int i=0;
         for (auto itr = m_fileInfos.begin(); itr != m_fileInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_quoteInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuoteInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_quoteInfos.begin(); itr != m_quoteInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -881,5 +917,21 @@ void MsgRecord::SetFileInfos(const vector<FileInfo>& _fileInfos)
 bool MsgRecord::FileInfosHasBeenSet() const
 {
     return m_fileInfosHasBeenSet;
+}
+
+vector<QuoteInfo> MsgRecord::GetQuoteInfos() const
+{
+    return m_quoteInfos;
+}
+
+void MsgRecord::SetQuoteInfos(const vector<QuoteInfo>& _quoteInfos)
+{
+    m_quoteInfos = _quoteInfos;
+    m_quoteInfosHasBeenSet = true;
+}
+
+bool MsgRecord::QuoteInfosHasBeenSet() const
+{
+    return m_quoteInfosHasBeenSet;
 }
 

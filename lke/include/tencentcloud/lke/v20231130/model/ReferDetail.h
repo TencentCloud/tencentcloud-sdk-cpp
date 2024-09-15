@@ -297,6 +297,81 @@ namespace TencentCloud
                      */
                     bool OrgDataHasBeenSet() const;
 
+                    /**
+                     * 获取页码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PageInfos 页码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<uint64_t> GetPageInfos() const;
+
+                    /**
+                     * 设置页码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _pageInfos 页码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPageInfos(const std::vector<uint64_t>& _pageInfos);
+
+                    /**
+                     * 判断参数 PageInfos 是否已赋值
+                     * @return PageInfos 是否已赋值
+                     * 
+                     */
+                    bool PageInfosHasBeenSet() const;
+
+                    /**
+                     * 获取sheet信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SheetInfos sheet信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetSheetInfos() const;
+
+                    /**
+                     * 设置sheet信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sheetInfos sheet信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSheetInfos(const std::vector<std::string>& _sheetInfos);
+
+                    /**
+                     * 判断参数 SheetInfos 是否已赋值
+                     * @return SheetInfos 是否已赋值
+                     * 
+                     */
+                    bool SheetInfosHasBeenSet() const;
+
+                    /**
+                     * 获取文档ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DocBizId 文档ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDocBizId() const;
+
+                    /**
+                     * 设置文档ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _docBizId 文档ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDocBizId(const std::string& _docBizId);
+
+                    /**
+                     * 判断参数 DocBizId 是否已赋值
+                     * @return DocBizId 是否已赋值
+                     * 
+                     */
+                    bool DocBizIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +443,27 @@ namespace TencentCloud
                      */
                     std::string m_orgData;
                     bool m_orgDataHasBeenSet;
+
+                    /**
+                     * 页码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<uint64_t> m_pageInfos;
+                    bool m_pageInfosHasBeenSet;
+
+                    /**
+                     * sheet信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_sheetInfos;
+                    bool m_sheetInfosHasBeenSet;
+
+                    /**
+                     * 文档ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_docBizId;
+                    bool m_docBizIdHasBeenSet;
 
                 };
             }

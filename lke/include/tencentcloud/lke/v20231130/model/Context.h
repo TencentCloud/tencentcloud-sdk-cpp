@@ -197,6 +197,31 @@ namespace TencentCloud
                      */
                     bool FileInfosHasBeenSet() const;
 
+                    /**
+                     * 获取回复方式，15：澄清确认回复
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReplyMethod 回复方式，15：澄清确认回复
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetReplyMethod() const;
+
+                    /**
+                     * 设置回复方式，15：澄清确认回复
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _replyMethod 回复方式，15：澄清确认回复
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReplyMethod(const uint64_t& _replyMethod);
+
+                    /**
+                     * 判断参数 ReplyMethod 是否已赋值
+                     * @return ReplyMethod 是否已赋值
+                     * 
+                     */
+                    bool ReplyMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,6 +265,13 @@ namespace TencentCloud
                      */
                     std::vector<MsgFileInfo> m_fileInfos;
                     bool m_fileInfosHasBeenSet;
+
+                    /**
+                     * 回复方式，15：澄清确认回复
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_replyMethod;
+                    bool m_replyMethodHasBeenSet;
 
                 };
             }

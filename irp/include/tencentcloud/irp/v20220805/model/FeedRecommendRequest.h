@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool CurrentItemIdHasBeenSet() const;
 
+                    /**
+                     * 获取扩展字段，json字符串，需要base64加密
+                     * @return Extension 扩展字段，json字符串，需要base64加密
+                     * 
+                     */
+                    std::string GetExtension() const;
+
+                    /**
+                     * 设置扩展字段，json字符串，需要base64加密
+                     * @param _extension 扩展字段，json字符串，需要base64加密
+                     * 
+                     */
+                    void SetExtension(const std::string& _extension);
+
+                    /**
+                     * 判断参数 Extension 是否已赋值
+                     * @return Extension 是否已赋值
+                     * 
+                     */
+                    bool ExtensionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     std::string m_currentItemId;
                     bool m_currentItemIdHasBeenSet;
+
+                    /**
+                     * 扩展字段，json字符串，需要base64加密
+                     */
+                    std::string m_extension;
+                    bool m_extensionHasBeenSet;
 
                 };
             }

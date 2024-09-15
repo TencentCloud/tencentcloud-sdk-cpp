@@ -25,7 +25,8 @@ NFOption::NFOption() :
     m_profileHasBeenSet(false),
     m_reportHasBeenSet(false),
     m_resumeHasBeenSet(false),
-    m_nFVersionHasBeenSet(false)
+    m_nFVersionHasBeenSet(false),
+    m_launchDirHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome NFOption::Deserialize(const rapidjson::Value &value)
         m_nFVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("LaunchDir") && !value["LaunchDir"].IsNull())
+    {
+        if (!value["LaunchDir"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NFOption.LaunchDir` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_launchDir = string(value["LaunchDir"].GetString());
+        m_launchDirHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void NFOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "NFVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nFVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_launchDirHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LaunchDir";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_launchDir.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void NFOption::SetNFVersion(const string& _nFVersion)
 bool NFOption::NFVersionHasBeenSet() const
 {
     return m_nFVersionHasBeenSet;
+}
+
+string NFOption::GetLaunchDir() const
+{
+    return m_launchDir;
+}
+
+void NFOption::SetLaunchDir(const string& _launchDir)
+{
+    m_launchDir = _launchDir;
+    m_launchDirHasBeenSet = true;
+}
+
+bool NFOption::LaunchDirHasBeenSet() const
+{
+    return m_launchDirHasBeenSet;
 }
 

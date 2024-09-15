@@ -107,6 +107,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSGRuleProgressResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSecurityGroupRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSecurityGroupRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSecurityGroupRuleListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSecurityGroupRuleListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeFwEdgeIpsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeFwEdgeIpsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeFwGroupInstanceInfoRequest.h>
@@ -391,6 +393,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEnterpriseSecurityGroupRuleResponse> DescribeEnterpriseSecurityGroupRuleOutcome;
                 typedef std::future<DescribeEnterpriseSecurityGroupRuleOutcome> DescribeEnterpriseSecurityGroupRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeEnterpriseSecurityGroupRuleRequest&, DescribeEnterpriseSecurityGroupRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnterpriseSecurityGroupRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEnterpriseSecurityGroupRuleListResponse> DescribeEnterpriseSecurityGroupRuleListOutcome;
+                typedef std::future<DescribeEnterpriseSecurityGroupRuleListOutcome> DescribeEnterpriseSecurityGroupRuleListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeEnterpriseSecurityGroupRuleListRequest&, DescribeEnterpriseSecurityGroupRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnterpriseSecurityGroupRuleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFwEdgeIpsResponse> DescribeFwEdgeIpsOutcome;
                 typedef std::future<DescribeFwEdgeIpsOutcome> DescribeFwEdgeIpsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeFwEdgeIpsRequest&, DescribeFwEdgeIpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFwEdgeIpsAsyncHandler;
@@ -989,6 +994,15 @@ namespace TencentCloud
                 DescribeEnterpriseSecurityGroupRuleOutcome DescribeEnterpriseSecurityGroupRule(const Model::DescribeEnterpriseSecurityGroupRuleRequest &request);
                 void DescribeEnterpriseSecurityGroupRuleAsync(const Model::DescribeEnterpriseSecurityGroupRuleRequest& request, const DescribeEnterpriseSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEnterpriseSecurityGroupRuleOutcomeCallable DescribeEnterpriseSecurityGroupRuleCallable(const Model::DescribeEnterpriseSecurityGroupRuleRequest& request);
+
+                /**
+                 *查询新企业安全组规则  从node接口迁移   原接口DescribeSecurityGroupNewList
+                 * @param req DescribeEnterpriseSecurityGroupRuleListRequest
+                 * @return DescribeEnterpriseSecurityGroupRuleListOutcome
+                 */
+                DescribeEnterpriseSecurityGroupRuleListOutcome DescribeEnterpriseSecurityGroupRuleList(const Model::DescribeEnterpriseSecurityGroupRuleListRequest &request);
+                void DescribeEnterpriseSecurityGroupRuleListAsync(const Model::DescribeEnterpriseSecurityGroupRuleListRequest& request, const DescribeEnterpriseSecurityGroupRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnterpriseSecurityGroupRuleListOutcomeCallable DescribeEnterpriseSecurityGroupRuleListCallable(const Model::DescribeEnterpriseSecurityGroupRuleListRequest& request);
 
                 /**
                  *串行防火墙IP开关列表

@@ -28,6 +28,7 @@
 #include <tencentcloud/lke/v20231130/model/TokenStat.h>
 #include <tencentcloud/lke/v20231130/model/TaskFlowInfo.h>
 #include <tencentcloud/lke/v20231130/model/FileInfo.h>
+#include <tencentcloud/lke/v20231130/model/QuoteInfo.h>
 
 
 namespace TencentCloud
@@ -396,14 +397,18 @@ namespace TencentCloud
 
                     /**
                      * 获取图片链接，可公有读
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageUrls 图片链接，可公有读
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetImageUrls() const;
 
                     /**
                      * 设置图片链接，可公有读
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageUrls 图片链接，可公有读
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageUrls(const std::vector<std::string>& _imageUrls);
@@ -596,6 +601,31 @@ namespace TencentCloud
                      */
                     bool FileInfosHasBeenSet() const;
 
+                    /**
+                     * 获取参考来源引用位置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QuoteInfos 参考来源引用位置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<QuoteInfo> GetQuoteInfos() const;
+
+                    /**
+                     * 设置参考来源引用位置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _quoteInfos 参考来源引用位置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQuoteInfos(const std::vector<QuoteInfo>& _quoteInfos);
+
+                    /**
+                     * 判断参数 QuoteInfos 是否已赋值
+                     * @return QuoteInfos 是否已赋值
+                     * 
+                     */
+                    bool QuoteInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -698,6 +728,7 @@ namespace TencentCloud
 
                     /**
                      * 图片链接，可公有读
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_imageUrls;
                     bool m_imageUrlsHasBeenSet;
@@ -750,6 +781,13 @@ namespace TencentCloud
                      */
                     std::vector<FileInfo> m_fileInfos;
                     bool m_fileInfosHasBeenSet;
+
+                    /**
+                     * 参考来源引用位置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<QuoteInfo> m_quoteInfos;
+                    bool m_quoteInfosHasBeenSet;
 
                 };
             }

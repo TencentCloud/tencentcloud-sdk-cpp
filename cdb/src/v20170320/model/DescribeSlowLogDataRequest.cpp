@@ -33,7 +33,8 @@ DescribeSlowLogDataRequest::DescribeSlowLogDataRequest() :
     m_orderByHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_instTypeHasBeenSet(false)
+    m_instTypeHasBeenSet(false),
+    m_opResourceIdHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,14 @@ string DescribeSlowLogDataRequest::ToJsonString() const
         string key = "InstType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_opResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_opResourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -329,6 +338,22 @@ void DescribeSlowLogDataRequest::SetInstType(const string& _instType)
 bool DescribeSlowLogDataRequest::InstTypeHasBeenSet() const
 {
     return m_instTypeHasBeenSet;
+}
+
+string DescribeSlowLogDataRequest::GetOpResourceId() const
+{
+    return m_opResourceId;
+}
+
+void DescribeSlowLogDataRequest::SetOpResourceId(const string& _opResourceId)
+{
+    m_opResourceId = _opResourceId;
+    m_opResourceIdHasBeenSet = true;
+}
+
+bool DescribeSlowLogDataRequest::OpResourceIdHasBeenSet() const
+{
+    return m_opResourceIdHasBeenSet;
 }
 
 

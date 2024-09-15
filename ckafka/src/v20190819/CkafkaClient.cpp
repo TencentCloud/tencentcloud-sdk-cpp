@@ -3050,6 +3050,49 @@ CkafkaClient::FetchMessageListByOffsetOutcomeCallable CkafkaClient::FetchMessage
     return task->get_future();
 }
 
+CkafkaClient::FetchMessageListByTimestampOutcome CkafkaClient::FetchMessageListByTimestamp(const FetchMessageListByTimestampRequest &request)
+{
+    auto outcome = MakeRequest(request, "FetchMessageListByTimestamp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FetchMessageListByTimestampResponse rsp = FetchMessageListByTimestampResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FetchMessageListByTimestampOutcome(rsp);
+        else
+            return FetchMessageListByTimestampOutcome(o.GetError());
+    }
+    else
+    {
+        return FetchMessageListByTimestampOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::FetchMessageListByTimestampAsync(const FetchMessageListByTimestampRequest& request, const FetchMessageListByTimestampAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FetchMessageListByTimestamp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::FetchMessageListByTimestampOutcomeCallable CkafkaClient::FetchMessageListByTimestampCallable(const FetchMessageListByTimestampRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FetchMessageListByTimestampOutcome()>>(
+        [this, request]()
+        {
+            return this->FetchMessageListByTimestamp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::InquireCkafkaPriceOutcome CkafkaClient::InquireCkafkaPrice(const InquireCkafkaPriceRequest &request)
 {
     auto outcome = MakeRequest(request, "InquireCkafkaPrice");

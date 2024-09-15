@@ -26,7 +26,8 @@ Context::Context() :
     m_nickNameHasBeenSet(false),
     m_avatarHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_fileInfosHasBeenSet(false)
+    m_fileInfosHasBeenSet(false),
+    m_replyMethodHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome Context::Deserialize(const rapidjson::Value &value)
         m_fileInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("ReplyMethod") && !value["ReplyMethod"].IsNull())
+    {
+        if (!value["ReplyMethod"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Context.ReplyMethod` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_replyMethod = value["ReplyMethod"].GetUint64();
+        m_replyMethodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +176,14 @@ void Context::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_replyMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplyMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_replyMethod, allocator);
     }
 
 }
@@ -264,5 +283,21 @@ void Context::SetFileInfos(const vector<MsgFileInfo>& _fileInfos)
 bool Context::FileInfosHasBeenSet() const
 {
     return m_fileInfosHasBeenSet;
+}
+
+uint64_t Context::GetReplyMethod() const
+{
+    return m_replyMethod;
+}
+
+void Context::SetReplyMethod(const uint64_t& _replyMethod)
+{
+    m_replyMethod = _replyMethod;
+    m_replyMethodHasBeenSet = true;
+}
+
+bool Context::ReplyMethodHasBeenSet() const
+{
+    return m_replyMethodHasBeenSet;
 }
 

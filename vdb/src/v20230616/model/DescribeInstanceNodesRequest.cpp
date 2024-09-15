@@ -23,6 +23,7 @@ using namespace TencentCloud::Vdb::V20230616::Model;
 using namespace std;
 
 DescribeInstanceNodesRequest::DescribeInstanceNodesRequest() :
+    m_instanceIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_componentHasBeenSet(false)
@@ -35,6 +36,14 @@ string DescribeInstanceNodesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_limitHasBeenSet)
     {
@@ -67,6 +76,22 @@ string DescribeInstanceNodesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeInstanceNodesRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribeInstanceNodesRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribeInstanceNodesRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
 
 int64_t DescribeInstanceNodesRequest::GetLimit() const
 {

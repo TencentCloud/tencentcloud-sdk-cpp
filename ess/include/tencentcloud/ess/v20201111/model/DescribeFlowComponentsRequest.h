@@ -72,10 +72,10 @@ namespace TencentCloud
                     /**
                      * 获取合同流程ID，为32位字符串。
 
-[点击产看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
+[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
                      * @return FlowId 合同流程ID，为32位字符串。
 
-[点击产看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
+[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
                      * 
                      */
                     std::string GetFlowId() const;
@@ -83,10 +83,10 @@ namespace TencentCloud
                     /**
                      * 设置合同流程ID，为32位字符串。
 
-[点击产看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
+[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
                      * @param _flowId 合同流程ID，为32位字符串。
 
-[点击产看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
+[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     /**
                      * 合同流程ID，为32位字符串。
 
-[点击产看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
+[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
