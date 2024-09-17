@@ -23,10 +23,12 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/LogoParam.h
   include/tencentcloud/hunyuan/v20230901/model/GetEmbeddingRequest.h
   include/tencentcloud/hunyuan/v20230901/model/ImageUrl.h
+  include/tencentcloud/hunyuan/v20230901/model/Multimedia.h
   include/tencentcloud/hunyuan/v20230901/model/ActivateServiceRequest.h
   include/tencentcloud/hunyuan/v20230901/model/Content.h
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/Usage.h
+  include/tencentcloud/hunyuan/v20230901/model/Replace.h
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobResponse.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageChatJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobRequest.h
@@ -65,10 +67,12 @@ set(hunyuan_src
   src/v20230901/model/LogoParam.cpp
   src/v20230901/model/GetEmbeddingRequest.cpp
   src/v20230901/model/ImageUrl.cpp
+  src/v20230901/model/Multimedia.cpp
   src/v20230901/model/ActivateServiceRequest.cpp
   src/v20230901/model/Content.cpp
   src/v20230901/model/SubmitHunyuanImageJobRequest.cpp
   src/v20230901/model/Usage.cpp
+  src/v20230901/model/Replace.cpp
   src/v20230901/model/SubmitHunyuanImageChatJobResponse.cpp
   src/v20230901/model/QueryHunyuanImageChatJobRequest.cpp
   src/v20230901/model/SubmitHunyuanImageChatJobRequest.cpp

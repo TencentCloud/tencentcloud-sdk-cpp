@@ -31,7 +31,8 @@ ChatCompletionsResponse::ChatCompletionsResponse() :
     m_choicesHasBeenSet(false),
     m_errorMsgHasBeenSet(false),
     m_moderationLevelHasBeenSet(false),
-    m_searchInfoHasBeenSet(false)
+    m_searchInfoHasBeenSet(false),
+    m_replacesHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,26 @@ CoreInternalOutcome ChatCompletionsResponse::Deserialize(const string &payload)
         m_searchInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Replaces") && !rsp["Replaces"].IsNull())
+    {
+        if (!rsp["Replaces"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Replaces` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Replaces"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Replace item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_replaces.push_back(item);
+        }
+        m_replacesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +283,21 @@ string ChatCompletionsResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_searchInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_replacesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Replaces";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_replaces.begin(); itr != m_replaces.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -354,6 +390,16 @@ SearchInfo ChatCompletionsResponse::GetSearchInfo() const
 bool ChatCompletionsResponse::SearchInfoHasBeenSet() const
 {
     return m_searchInfoHasBeenSet;
+}
+
+vector<Replace> ChatCompletionsResponse::GetReplaces() const
+{
+    return m_replaces;
+}
+
+bool ChatCompletionsResponse::ReplacesHasBeenSet() const
+{
+    return m_replacesHasBeenSet;
 }
 
 

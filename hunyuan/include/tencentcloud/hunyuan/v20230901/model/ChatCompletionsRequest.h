@@ -336,15 +336,15 @@ namespace TencentCloud
                     bool EnableEnhancementHasBeenSet() const;
 
                     /**
-                     * 获取可调用的工具列表，仅对 hunyuan-functioncall 模型生效。
-                     * @return Tools 可调用的工具列表，仅对 hunyuan-functioncall 模型生效。
+                     * 获取可调用的工具列表，仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
+                     * @return Tools 可调用的工具列表，仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
                      * 
                      */
                     std::vector<Tool> GetTools() const;
 
                     /**
-                     * 设置可调用的工具列表，仅对 hunyuan-functioncall 模型生效。
-                     * @param _tools 可调用的工具列表，仅对 hunyuan-functioncall 模型生效。
+                     * 设置可调用的工具列表，仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
+                     * @param _tools 可调用的工具列表，仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
                      * 
                      */
                     void SetTools(const std::vector<Tool>& _tools);
@@ -359,12 +359,12 @@ namespace TencentCloud
                     /**
                      * 获取工具使用选项，可选值包括 none、auto、custom。
 说明：
-1. 仅对 hunyuan-functioncall 模型生效。
+1. 仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
 2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。
 3. 未设置时，默认值为auto
                      * @return ToolChoice 工具使用选项，可选值包括 none、auto、custom。
 说明：
-1. 仅对 hunyuan-functioncall 模型生效。
+1. 仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
 2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。
 3. 未设置时，默认值为auto
                      * 
@@ -374,12 +374,12 @@ namespace TencentCloud
                     /**
                      * 设置工具使用选项，可选值包括 none、auto、custom。
 说明：
-1. 仅对 hunyuan-functioncall 模型生效。
+1. 仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
 2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。
 3. 未设置时，默认值为auto
                      * @param _toolChoice 工具使用选项，可选值包括 none、auto、custom。
 说明：
-1. 仅对 hunyuan-functioncall 模型生效。
+1. 仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
 2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。
 3. 未设置时，默认值为auto
                      * 
@@ -493,6 +493,47 @@ namespace TencentCloud
                      */
                     bool EnableSpeedSearchHasBeenSet() const;
 
+                    /**
+                     * 获取图文并茂开关。
+说明：
+1. 该参数仅在功能增强（如搜索）开关开启（EnableEnhancement=true）时生效。
+2. hunyuan-lite 无图文并茂能力，该参数对 hunyuan-lite 版本不生效。
+3. 未传值时默认关闭。
+4. 开启并搜索到对应的多媒体信息时，会输出对应的多媒体地址，可以定制个性化的图文消息。
+                     * @return EnableMultimedia 图文并茂开关。
+说明：
+1. 该参数仅在功能增强（如搜索）开关开启（EnableEnhancement=true）时生效。
+2. hunyuan-lite 无图文并茂能力，该参数对 hunyuan-lite 版本不生效。
+3. 未传值时默认关闭。
+4. 开启并搜索到对应的多媒体信息时，会输出对应的多媒体地址，可以定制个性化的图文消息。
+                     * 
+                     */
+                    bool GetEnableMultimedia() const;
+
+                    /**
+                     * 设置图文并茂开关。
+说明：
+1. 该参数仅在功能增强（如搜索）开关开启（EnableEnhancement=true）时生效。
+2. hunyuan-lite 无图文并茂能力，该参数对 hunyuan-lite 版本不生效。
+3. 未传值时默认关闭。
+4. 开启并搜索到对应的多媒体信息时，会输出对应的多媒体地址，可以定制个性化的图文消息。
+                     * @param _enableMultimedia 图文并茂开关。
+说明：
+1. 该参数仅在功能增强（如搜索）开关开启（EnableEnhancement=true）时生效。
+2. hunyuan-lite 无图文并茂能力，该参数对 hunyuan-lite 版本不生效。
+3. 未传值时默认关闭。
+4. 开启并搜索到对应的多媒体信息时，会输出对应的多媒体地址，可以定制个性化的图文消息。
+                     * 
+                     */
+                    void SetEnableMultimedia(const bool& _enableMultimedia);
+
+                    /**
+                     * 判断参数 EnableMultimedia 是否已赋值
+                     * @return EnableMultimedia 是否已赋值
+                     * 
+                     */
+                    bool EnableMultimediaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -574,7 +615,7 @@ namespace TencentCloud
                     bool m_enableEnhancementHasBeenSet;
 
                     /**
-                     * 可调用的工具列表，仅对 hunyuan-functioncall 模型生效。
+                     * 可调用的工具列表，仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
                      */
                     std::vector<Tool> m_tools;
                     bool m_toolsHasBeenSet;
@@ -582,7 +623,7 @@ namespace TencentCloud
                     /**
                      * 工具使用选项，可选值包括 none、auto、custom。
 说明：
-1. 仅对 hunyuan-functioncall 模型生效。
+1. 仅对 hunyuan-pro、hunyuan-turbo、hunyuan-functioncall 模型生效。
 2. none：不调用工具；auto：模型自行选择生成回复或调用工具；custom：强制模型调用指定的工具。
 3. 未设置时，默认值为auto
                      */
@@ -616,6 +657,17 @@ namespace TencentCloud
                      */
                     bool m_enableSpeedSearch;
                     bool m_enableSpeedSearchHasBeenSet;
+
+                    /**
+                     * 图文并茂开关。
+说明：
+1. 该参数仅在功能增强（如搜索）开关开启（EnableEnhancement=true）时生效。
+2. hunyuan-lite 无图文并茂能力，该参数对 hunyuan-lite 版本不生效。
+3. 未传值时默认关闭。
+4. 开启并搜索到对应的多媒体信息时，会输出对应的多媒体地址，可以定制个性化的图文消息。
+                     */
+                    bool m_enableMultimedia;
+                    bool m_enableMultimediaHasBeenSet;
 
                 };
             }

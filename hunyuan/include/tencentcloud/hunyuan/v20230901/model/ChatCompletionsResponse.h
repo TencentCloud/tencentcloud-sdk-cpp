@@ -25,6 +25,7 @@
 #include <tencentcloud/hunyuan/v20230901/model/Choice.h>
 #include <tencentcloud/hunyuan/v20230901/model/ErrorMsg.h>
 #include <tencentcloud/hunyuan/v20230901/model/SearchInfo.h>
+#include <tencentcloud/hunyuan/v20230901/model/Replace.h>
 
 
 namespace TencentCloud
@@ -165,6 +166,26 @@ namespace TencentCloud
                      */
                     bool SearchInfoHasBeenSet() const;
 
+                    /**
+                     * 获取多媒体信息。
+说明：
+1. 可以用多媒体信息替换回复内容里的占位符，得到完整的图文信息。
+2. 可能会出现回复内容里存在占位符，但是因为审核等原因没有返回多媒体信息。
+                     * @return Replaces 多媒体信息。
+说明：
+1. 可以用多媒体信息替换回复内容里的占位符，得到完整的图文信息。
+2. 可能会出现回复内容里存在占位符，但是因为审核等原因没有返回多媒体信息。
+                     * 
+                     */
+                    std::vector<Replace> GetReplaces() const;
+
+                    /**
+                     * 判断参数 Replaces 是否已赋值
+                     * @return Replaces 是否已赋值
+                     * 
+                     */
+                    bool ReplacesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +238,15 @@ namespace TencentCloud
                      */
                     SearchInfo m_searchInfo;
                     bool m_searchInfoHasBeenSet;
+
+                    /**
+                     * 多媒体信息。
+说明：
+1. 可以用多媒体信息替换回复内容里的占位符，得到完整的图文信息。
+2. 可能会出现回复内容里存在占位符，但是因为审核等原因没有返回多媒体信息。
+                     */
+                    std::vector<Replace> m_replaces;
+                    bool m_replacesHasBeenSet;
 
                 };
             }

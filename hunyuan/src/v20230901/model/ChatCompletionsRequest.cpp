@@ -35,7 +35,8 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_customToolHasBeenSet(false),
     m_searchInfoHasBeenSet(false),
     m_citationHasBeenSet(false),
-    m_enableSpeedSearchHasBeenSet(false)
+    m_enableSpeedSearchHasBeenSet(false),
+    m_enableMultimediaHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,14 @@ string ChatCompletionsRequest::ToJsonString() const
         string key = "EnableSpeedSearch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableSpeedSearch, allocator);
+    }
+
+    if (m_enableMultimediaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableMultimedia";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableMultimedia, allocator);
     }
 
 
@@ -379,6 +388,22 @@ void ChatCompletionsRequest::SetEnableSpeedSearch(const bool& _enableSpeedSearch
 bool ChatCompletionsRequest::EnableSpeedSearchHasBeenSet() const
 {
     return m_enableSpeedSearchHasBeenSet;
+}
+
+bool ChatCompletionsRequest::GetEnableMultimedia() const
+{
+    return m_enableMultimedia;
+}
+
+void ChatCompletionsRequest::SetEnableMultimedia(const bool& _enableMultimedia)
+{
+    m_enableMultimedia = _enableMultimedia;
+    m_enableMultimediaHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::EnableMultimediaHasBeenSet() const
+{
+    return m_enableMultimediaHasBeenSet;
 }
 
 
