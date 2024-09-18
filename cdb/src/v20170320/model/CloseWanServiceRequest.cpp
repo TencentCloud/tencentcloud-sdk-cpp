@@ -23,7 +23,8 @@ using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace std;
 
 CloseWanServiceRequest::CloseWanServiceRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_opResourceIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string CloseWanServiceRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_opResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_opResourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void CloseWanServiceRequest::SetInstanceId(const string& _instanceId)
 bool CloseWanServiceRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string CloseWanServiceRequest::GetOpResourceId() const
+{
+    return m_opResourceId;
+}
+
+void CloseWanServiceRequest::SetOpResourceId(const string& _opResourceId)
+{
+    m_opResourceId = _opResourceId;
+    m_opResourceIdHasBeenSet = true;
+}
+
+bool CloseWanServiceRequest::OpResourceIdHasBeenSet() const
+{
+    return m_opResourceIdHasBeenSet;
 }
 
 

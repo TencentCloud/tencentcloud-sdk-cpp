@@ -26,7 +26,8 @@ SwitchDBInstanceMasterSlaveRequest::SwitchDBInstanceMasterSlaveRequest() :
     m_instanceIdHasBeenSet(false),
     m_dstSlaveHasBeenSet(false),
     m_forceSwitchHasBeenSet(false),
-    m_waitSwitchHasBeenSet(false)
+    m_waitSwitchHasBeenSet(false),
+    m_dstNodeIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string SwitchDBInstanceMasterSlaveRequest::ToJsonString() const
         string key = "WaitSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_waitSwitch, allocator);
+    }
+
+    if (m_dstNodeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DstNodeId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dstNodeId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void SwitchDBInstanceMasterSlaveRequest::SetWaitSwitch(const bool& _waitSwitch)
 bool SwitchDBInstanceMasterSlaveRequest::WaitSwitchHasBeenSet() const
 {
     return m_waitSwitchHasBeenSet;
+}
+
+string SwitchDBInstanceMasterSlaveRequest::GetDstNodeId() const
+{
+    return m_dstNodeId;
+}
+
+void SwitchDBInstanceMasterSlaveRequest::SetDstNodeId(const string& _dstNodeId)
+{
+    m_dstNodeId = _dstNodeId;
+    m_dstNodeIdHasBeenSet = true;
+}
+
+bool SwitchDBInstanceMasterSlaveRequest::DstNodeIdHasBeenSet() const
+{
+    return m_dstNodeIdHasBeenSet;
 }
 
 

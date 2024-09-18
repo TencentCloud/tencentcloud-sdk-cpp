@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool ForReadonlyInstanceHasBeenSet() const;
 
+                    /**
+                     * 获取变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。
+                     * @return OpResourceId 变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。
+                     * 
+                     */
+                    std::string GetOpResourceId() const;
+
+                    /**
+                     * 设置变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。
+                     * @param _opResourceId 变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。
+                     * 
+                     */
+                    void SetOpResourceId(const std::string& _opResourceId);
+
+                    /**
+                     * 判断参数 OpResourceId 是否已赋值
+                     * @return OpResourceId 是否已赋值
+                     * 
+                     */
+                    bool OpResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     bool m_forReadonlyInstance;
                     bool m_forReadonlyInstanceHasBeenSet;
+
+                    /**
+                     * 变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。
+                     */
+                    std::string m_opResourceId;
+                    bool m_opResourceIdHasBeenSet;
 
                 };
             }

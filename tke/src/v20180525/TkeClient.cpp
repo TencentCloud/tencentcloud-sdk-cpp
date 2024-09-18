@@ -5243,6 +5243,49 @@ TkeClient::DescribeLogSwitchesOutcomeCallable TkeClient::DescribeLogSwitchesCall
     return task->get_future();
 }
 
+TkeClient::DescribeOpenPolicyListOutcome TkeClient::DescribeOpenPolicyList(const DescribeOpenPolicyListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOpenPolicyList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOpenPolicyListResponse rsp = DescribeOpenPolicyListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOpenPolicyListOutcome(rsp);
+        else
+            return DescribeOpenPolicyListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOpenPolicyListOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeOpenPolicyListAsync(const DescribeOpenPolicyListRequest& request, const DescribeOpenPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOpenPolicyList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeOpenPolicyListOutcomeCallable TkeClient::DescribeOpenPolicyListCallable(const DescribeOpenPolicyListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOpenPolicyListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOpenPolicyList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribePodChargeInfoOutcome TkeClient::DescribePodChargeInfo(const DescribePodChargeInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePodChargeInfo");
@@ -8203,6 +8246,49 @@ TkeClient::ModifyNodePoolInstanceTypesOutcomeCallable TkeClient::ModifyNodePoolI
         [this, request]()
         {
             return this->ModifyNodePoolInstanceTypes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ModifyOpenPolicyListOutcome TkeClient::ModifyOpenPolicyList(const ModifyOpenPolicyListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOpenPolicyList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOpenPolicyListResponse rsp = ModifyOpenPolicyListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOpenPolicyListOutcome(rsp);
+        else
+            return ModifyOpenPolicyListOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOpenPolicyListOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyOpenPolicyListAsync(const ModifyOpenPolicyListRequest& request, const ModifyOpenPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyOpenPolicyList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyOpenPolicyListOutcomeCallable TkeClient::ModifyOpenPolicyListCallable(const ModifyOpenPolicyListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyOpenPolicyListOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyOpenPolicyList(request);
         }
     );
 

@@ -265,6 +265,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeImagesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeLogSwitchesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeLogSwitchesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeOpenPolicyListRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeOpenPolicyListResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePodChargeInfoRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribePodChargeInfoResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePodDeductionRateRequest.h>
@@ -403,6 +405,8 @@
 #include <tencentcloud/tke/v20180525/model/ModifyNodePoolDesiredCapacityAboutAsgResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyNodePoolInstanceTypesRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyNodePoolInstanceTypesResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyOpenPolicyListRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyOpenPolicyListResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusAgentExternalLabelsRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusAgentExternalLabelsResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyPrometheusAlertPolicyRequest.h>
@@ -844,6 +848,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogSwitchesResponse> DescribeLogSwitchesOutcome;
                 typedef std::future<DescribeLogSwitchesOutcome> DescribeLogSwitchesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeLogSwitchesRequest&, DescribeLogSwitchesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogSwitchesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOpenPolicyListResponse> DescribeOpenPolicyListOutcome;
+                typedef std::future<DescribeOpenPolicyListOutcome> DescribeOpenPolicyListOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeOpenPolicyListRequest&, DescribeOpenPolicyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOpenPolicyListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePodChargeInfoResponse> DescribePodChargeInfoOutcome;
                 typedef std::future<DescribePodChargeInfoOutcome> DescribePodChargeInfoOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribePodChargeInfoRequest&, DescribePodChargeInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePodChargeInfoAsyncHandler;
@@ -1051,6 +1058,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyNodePoolInstanceTypesResponse> ModifyNodePoolInstanceTypesOutcome;
                 typedef std::future<ModifyNodePoolInstanceTypesOutcome> ModifyNodePoolInstanceTypesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyNodePoolInstanceTypesRequest&, ModifyNodePoolInstanceTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNodePoolInstanceTypesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOpenPolicyListResponse> ModifyOpenPolicyListOutcome;
+                typedef std::future<ModifyOpenPolicyListOutcome> ModifyOpenPolicyListOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyOpenPolicyListRequest&, ModifyOpenPolicyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOpenPolicyListAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPrometheusAgentExternalLabelsResponse> ModifyPrometheusAgentExternalLabelsOutcome;
                 typedef std::future<ModifyPrometheusAgentExternalLabelsOutcome> ModifyPrometheusAgentExternalLabelsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyPrometheusAgentExternalLabelsRequest&, ModifyPrometheusAgentExternalLabelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusAgentExternalLabelsAsyncHandler;
@@ -2242,6 +2252,15 @@ namespace TencentCloud
                 DescribeLogSwitchesOutcomeCallable DescribeLogSwitchesCallable(const Model::DescribeLogSwitchesRequest& request);
 
                 /**
+                 *查询opa策略列表
+                 * @param req DescribeOpenPolicyListRequest
+                 * @return DescribeOpenPolicyListOutcome
+                 */
+                DescribeOpenPolicyListOutcome DescribeOpenPolicyList(const Model::DescribeOpenPolicyListRequest &request);
+                void DescribeOpenPolicyListAsync(const Model::DescribeOpenPolicyListRequest& request, const DescribeOpenPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOpenPolicyListOutcomeCallable DescribeOpenPolicyListCallable(const Model::DescribeOpenPolicyListRequest& request);
+
+                /**
                  *查询正在运行中Pod的计费信息。可以通过 Namespace 和 Name 来查询某个 Pod 的信息，也可以通过 Pod 的 Uid 批量查询。
                  * @param req DescribePodChargeInfoRequest
                  * @return DescribePodChargeInfoOutcome
@@ -2861,6 +2880,15 @@ namespace TencentCloud
                 ModifyNodePoolInstanceTypesOutcome ModifyNodePoolInstanceTypes(const Model::ModifyNodePoolInstanceTypesRequest &request);
                 void ModifyNodePoolInstanceTypesAsync(const Model::ModifyNodePoolInstanceTypesRequest& request, const ModifyNodePoolInstanceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyNodePoolInstanceTypesOutcomeCallable ModifyNodePoolInstanceTypesCallable(const Model::ModifyNodePoolInstanceTypesRequest& request);
+
+                /**
+                 *批量修改opa策略
+                 * @param req ModifyOpenPolicyListRequest
+                 * @return ModifyOpenPolicyListOutcome
+                 */
+                ModifyOpenPolicyListOutcome ModifyOpenPolicyList(const Model::ModifyOpenPolicyListRequest &request);
+                void ModifyOpenPolicyListAsync(const Model::ModifyOpenPolicyListRequest& request, const ModifyOpenPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOpenPolicyListOutcomeCallable ModifyOpenPolicyListCallable(const Model::ModifyOpenPolicyListRequest& request);
 
                 /**
                  *修改被关联集群的external labels

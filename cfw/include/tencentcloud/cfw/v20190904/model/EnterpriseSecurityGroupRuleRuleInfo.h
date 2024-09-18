@@ -448,18 +448,18 @@ namespace TencentCloud
                     bool IsDelayHasBeenSet() const;
 
                     /**
-                     * 获取服务模版id
+                     * 获取服务模板id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceTemplateId 服务模版id
+                     * @return ServiceTemplateId 服务模板id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceTemplateId() const;
 
                     /**
-                     * 设置服务模版id
+                     * 设置服务模板id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceTemplateId 服务模版id
+                     * @param _serviceTemplateId 服务模板id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -573,18 +573,18 @@ namespace TencentCloud
                     bool SouCidrHasBeenSet() const;
 
                     /**
-                     * 获取源模版名称
+                     * 获取源模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SouParameterName 源模版名称
+                     * @return SouParameterName 源模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSouParameterName() const;
 
                     /**
-                     * 设置源模版名称
+                     * 设置源模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _souParameterName 源模版名称
+                     * @param _souParameterName 源模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -698,18 +698,18 @@ namespace TencentCloud
                     bool CidrHasBeenSet() const;
 
                     /**
-                     * 获取目的模版名称
+                     * 获取目的模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ParameterName 目的模版名称
+                     * @return ParameterName 目的模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParameterName() const;
 
                     /**
-                     * 设置目的模版名称
+                     * 设置目的模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _parameterName 目的模版名称
+                     * @param _parameterName 目的模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -723,18 +723,18 @@ namespace TencentCloud
                     bool ParameterNameHasBeenSet() const;
 
                     /**
-                     * 获取端口模版名称
+                     * 获取端口模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProtocolPortName 端口模版名称
+                     * @return ProtocolPortName 端口模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocolPortName() const;
 
                     /**
-                     * 设置端口模版名称
+                     * 设置端口模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _protocolPortName 端口模版名称
+                     * @param _protocolPortName 端口模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -912,7 +912,7 @@ namespace TencentCloud
                     bool m_isDelayHasBeenSet;
 
                     /**
-                     * 服务模版id
+                     * 服务模板id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceTemplateId;
@@ -947,7 +947,7 @@ namespace TencentCloud
                     bool m_souCidrHasBeenSet;
 
                     /**
-                     * 源模版名称
+                     * 源模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_souParameterName;
@@ -982,14 +982,14 @@ namespace TencentCloud
                     bool m_cidrHasBeenSet;
 
                     /**
-                     * 目的模版名称
+                     * 目的模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parameterName;
                     bool m_parameterNameHasBeenSet;
 
                     /**
-                     * 端口模版名称
+                     * 端口模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocolPortName;

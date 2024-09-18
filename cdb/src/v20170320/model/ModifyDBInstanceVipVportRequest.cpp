@@ -28,7 +28,8 @@ ModifyDBInstanceVipVportRequest::ModifyDBInstanceVipVportRequest() :
     m_dstPortHasBeenSet(false),
     m_uniqVpcIdHasBeenSet(false),
     m_uniqSubnetIdHasBeenSet(false),
-    m_releaseDurationHasBeenSet(false)
+    m_releaseDurationHasBeenSet(false),
+    m_opResourceIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string ModifyDBInstanceVipVportRequest::ToJsonString() const
         string key = "ReleaseDuration";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_releaseDuration, allocator);
+    }
+
+    if (m_opResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_opResourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void ModifyDBInstanceVipVportRequest::SetReleaseDuration(const int64_t& _release
 bool ModifyDBInstanceVipVportRequest::ReleaseDurationHasBeenSet() const
 {
     return m_releaseDurationHasBeenSet;
+}
+
+string ModifyDBInstanceVipVportRequest::GetOpResourceId() const
+{
+    return m_opResourceId;
+}
+
+void ModifyDBInstanceVipVportRequest::SetOpResourceId(const string& _opResourceId)
+{
+    m_opResourceId = _opResourceId;
+    m_opResourceIdHasBeenSet = true;
+}
+
+bool ModifyDBInstanceVipVportRequest::OpResourceIdHasBeenSet() const
+{
+    return m_opResourceIdHasBeenSet;
 }
 
 

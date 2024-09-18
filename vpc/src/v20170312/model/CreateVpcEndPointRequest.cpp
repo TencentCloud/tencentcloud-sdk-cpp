@@ -28,7 +28,8 @@ CreateVpcEndPointRequest::CreateVpcEndPointRequest() :
     m_endPointNameHasBeenSet(false),
     m_endPointServiceIdHasBeenSet(false),
     m_endPointVipHasBeenSet(false),
-    m_securityGroupIdHasBeenSet(false)
+    m_securityGroupIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,21 @@ string CreateVpcEndPointRequest::ToJsonString() const
         string key = "SecurityGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_securityGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -189,6 +205,22 @@ void CreateVpcEndPointRequest::SetSecurityGroupId(const string& _securityGroupId
 bool CreateVpcEndPointRequest::SecurityGroupIdHasBeenSet() const
 {
     return m_securityGroupIdHasBeenSet;
+}
+
+vector<Tag> CreateVpcEndPointRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateVpcEndPointRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateVpcEndPointRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

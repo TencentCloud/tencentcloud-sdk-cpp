@@ -44,7 +44,8 @@ Cluster::Cluster() :
     m_autoUpgradeClusterLevelHasBeenSet(false),
     m_qGPUShareEnableHasBeenSet(false),
     m_runtimeVersionHasBeenSet(false),
-    m_clusterEtcdNodeNumHasBeenSet(false)
+    m_clusterEtcdNodeNumHasBeenSet(false),
+    m_cdcIdHasBeenSet(false)
 {
 }
 
@@ -310,6 +311,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_clusterEtcdNodeNumHasBeenSet = true;
     }
 
+    if (value.HasMember("CdcId") && !value["CdcId"].IsNull())
+    {
+        if (!value["CdcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.CdcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcId = string(value["CdcId"].GetString());
+        m_cdcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -515,6 +526,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ClusterEtcdNodeNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clusterEtcdNodeNum, allocator);
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -902,5 +921,21 @@ void Cluster::SetClusterEtcdNodeNum(const uint64_t& _clusterEtcdNodeNum)
 bool Cluster::ClusterEtcdNodeNumHasBeenSet() const
 {
     return m_clusterEtcdNodeNumHasBeenSet;
+}
+
+string Cluster::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void Cluster::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool Cluster::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
 }
 

@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool WaitSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取集群版实例指定节点id发起主从切换。
+                     * @return DstNodeId 集群版实例指定节点id发起主从切换。
+                     * 
+                     */
+                    std::string GetDstNodeId() const;
+
+                    /**
+                     * 设置集群版实例指定节点id发起主从切换。
+                     * @param _dstNodeId 集群版实例指定节点id发起主从切换。
+                     * 
+                     */
+                    void SetDstNodeId(const std::string& _dstNodeId);
+
+                    /**
+                     * 判断参数 DstNodeId 是否已赋值
+                     * @return DstNodeId 是否已赋值
+                     * 
+                     */
+                    bool DstNodeIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     bool m_waitSwitch;
                     bool m_waitSwitchHasBeenSet;
+
+                    /**
+                     * 集群版实例指定节点id发起主从切换。
+                     */
+                    std::string m_dstNodeId;
+                    bool m_dstNodeIdHasBeenSet;
 
                 };
             }

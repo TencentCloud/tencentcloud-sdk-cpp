@@ -233,8 +233,8 @@ namespace TencentCloud
                     bool EnabledPublicConnectHasBeenSet() const;
 
                     /**
-                     * 获取公网连接地址
-                     * @return PublicConnectUrl 公网连接地址
+                     * 获取注册节点公网版公网连接地址
+                     * @return PublicConnectUrl 注册节点公网版公网连接地址
                      * 
                      */
                     std::string GetPublicConnectUrl() const;
@@ -245,6 +245,22 @@ namespace TencentCloud
                      * 
                      */
                     bool PublicConnectUrlHasBeenSet() const;
+
+                    /**
+                     * 获取注册节点公网版自定义域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicCustomDomain 注册节点公网版自定义域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPublicCustomDomain() const;
+
+                    /**
+                     * 判断参数 PublicCustomDomain 是否已赋值
+                     * @return PublicCustomDomain 是否已赋值
+                     * 
+                     */
+                    bool PublicCustomDomainHasBeenSet() const;
 
                 private:
 
@@ -331,10 +347,17 @@ namespace TencentCloud
                     bool m_enabledPublicConnectHasBeenSet;
 
                     /**
-                     * 公网连接地址
+                     * 注册节点公网版公网连接地址
                      */
                     std::string m_publicConnectUrl;
                     bool m_publicConnectUrlHasBeenSet;
+
+                    /**
+                     * 注册节点公网版自定义域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_publicCustomDomain;
+                    bool m_publicCustomDomainHasBeenSet;
 
                 };
             }

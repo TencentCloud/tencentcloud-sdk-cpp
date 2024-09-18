@@ -25,7 +25,8 @@ using namespace std;
 ModifyDBInstanceSecurityGroupsRequest::ModifyDBInstanceSecurityGroupsRequest() :
     m_instanceIdHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_forReadonlyInstanceHasBeenSet(false)
+    m_forReadonlyInstanceHasBeenSet(false),
+    m_opResourceIdHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string ModifyDBInstanceSecurityGroupsRequest::ToJsonString() const
         string key = "ForReadonlyInstance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forReadonlyInstance, allocator);
+    }
+
+    if (m_opResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_opResourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void ModifyDBInstanceSecurityGroupsRequest::SetForReadonlyInstance(const bool& _
 bool ModifyDBInstanceSecurityGroupsRequest::ForReadonlyInstanceHasBeenSet() const
 {
     return m_forReadonlyInstanceHasBeenSet;
+}
+
+string ModifyDBInstanceSecurityGroupsRequest::GetOpResourceId() const
+{
+    return m_opResourceId;
+}
+
+void ModifyDBInstanceSecurityGroupsRequest::SetOpResourceId(const string& _opResourceId)
+{
+    m_opResourceId = _opResourceId;
+    m_opResourceIdHasBeenSet = true;
+}
+
+bool ModifyDBInstanceSecurityGroupsRequest::OpResourceIdHasBeenSet() const
+{
+    return m_opResourceIdHasBeenSet;
 }
 
 

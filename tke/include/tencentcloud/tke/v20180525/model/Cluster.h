@@ -604,6 +604,31 @@ namespace TencentCloud
                      */
                     bool ClusterEtcdNodeNumHasBeenSet() const;
 
+                    /**
+                     * 获取本地专用集群Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CdcId 本地专用集群Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置本地专用集群Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cdcId 本地专用集群Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     * 
+                     */
+                    bool CdcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -762,6 +787,13 @@ namespace TencentCloud
                      */
                     uint64_t m_clusterEtcdNodeNum;
                     bool m_clusterEtcdNodeNumHasBeenSet;
+
+                    /**
+                     * 本地专用集群Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
 
                 };
             }

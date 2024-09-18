@@ -36,7 +36,8 @@ DescribeExternalNodeSupportConfigResponse::DescribeExternalNodeSupportConfigResp
     m_proxyHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_enabledPublicConnectHasBeenSet(false),
-    m_publicConnectUrlHasBeenSet(false)
+    m_publicConnectUrlHasBeenSet(false),
+    m_publicCustomDomainHasBeenSet(false)
 {
 }
 
@@ -214,6 +215,16 @@ CoreInternalOutcome DescribeExternalNodeSupportConfigResponse::Deserialize(const
         m_publicConnectUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PublicCustomDomain") && !rsp["PublicCustomDomain"].IsNull())
+    {
+        if (!rsp["PublicCustomDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PublicCustomDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicCustomDomain = string(rsp["PublicCustomDomain"].GetString());
+        m_publicCustomDomainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -333,6 +344,14 @@ string DescribeExternalNodeSupportConfigResponse::ToJsonString() const
         string key = "PublicConnectUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_publicConnectUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicCustomDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicCustomDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicCustomDomain.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -475,6 +494,16 @@ string DescribeExternalNodeSupportConfigResponse::GetPublicConnectUrl() const
 bool DescribeExternalNodeSupportConfigResponse::PublicConnectUrlHasBeenSet() const
 {
     return m_publicConnectUrlHasBeenSet;
+}
+
+string DescribeExternalNodeSupportConfigResponse::GetPublicCustomDomain() const
+{
+    return m_publicCustomDomain;
+}
+
+bool DescribeExternalNodeSupportConfigResponse::PublicCustomDomainHasBeenSet() const
+{
+    return m_publicCustomDomainHasBeenSet;
 }
 
 
