@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取"Preset"：预设，Custom":客户魔板
-                     * @return Type "Preset"：预设，Custom":客户魔板
+                     * 获取"Preset"：预设，Custom":自定义模板
+                     * @return Type "Preset"：预设，Custom":自定义模板
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置"Preset"：预设，Custom":客户魔板
-                     * @param _type "Preset"：预设，Custom":客户魔板
+                     * 设置"Preset"：预设，Custom":自定义模板
+                     * @param _type "Preset"：预设，Custom":自定义模板
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -178,7 +178,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * "Preset"：预设，Custom":客户魔板
+                     * "Preset"：预设，Custom":自定义模板
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

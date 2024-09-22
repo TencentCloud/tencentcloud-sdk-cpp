@@ -47,15 +47,39 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配额名称，取值范围：<br><li>`TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；<br><li>`DAILY_EIP_APPLY`：用户当前地域下今日申购次数；<br><li>`DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数。
-                     * @return QuotaId 配额名称，取值范围：<br><li>`TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；<br><li>`DAILY_EIP_APPLY`：用户当前地域下今日申购次数；<br><li>`DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数。
+                     * 获取配额名称，取值范围：
+- `TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；
+- `DAILY_EIP_APPLY`：用户当前地域下今日申购次数；
+- `DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数；
+- `TOTAL_EIP6_QUOTA`：用户当前地域下，传统弹性公网IPv6的配额数；
+- `BGP_EIPv6_QUOTA`：用户当前地域下，可申请的 BGP 弹性公网IPv6 的配额数；
+- `SINGLEISP_EIPv6_QUOTA`：用户当前地域下，可申请的静态单线弹性公网IPv6 的配额数；
+                     * @return QuotaId 配额名称，取值范围：
+- `TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；
+- `DAILY_EIP_APPLY`：用户当前地域下今日申购次数；
+- `DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数；
+- `TOTAL_EIP6_QUOTA`：用户当前地域下，传统弹性公网IPv6的配额数；
+- `BGP_EIPv6_QUOTA`：用户当前地域下，可申请的 BGP 弹性公网IPv6 的配额数；
+- `SINGLEISP_EIPv6_QUOTA`：用户当前地域下，可申请的静态单线弹性公网IPv6 的配额数；
                      * 
                      */
                     std::string GetQuotaId() const;
 
                     /**
-                     * 设置配额名称，取值范围：<br><li>`TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；<br><li>`DAILY_EIP_APPLY`：用户当前地域下今日申购次数；<br><li>`DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数。
-                     * @param _quotaId 配额名称，取值范围：<br><li>`TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；<br><li>`DAILY_EIP_APPLY`：用户当前地域下今日申购次数；<br><li>`DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数。
+                     * 设置配额名称，取值范围：
+- `TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；
+- `DAILY_EIP_APPLY`：用户当前地域下今日申购次数；
+- `DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数；
+- `TOTAL_EIP6_QUOTA`：用户当前地域下，传统弹性公网IPv6的配额数；
+- `BGP_EIPv6_QUOTA`：用户当前地域下，可申请的 BGP 弹性公网IPv6 的配额数；
+- `SINGLEISP_EIPv6_QUOTA`：用户当前地域下，可申请的静态单线弹性公网IPv6 的配额数；
+                     * @param _quotaId 配额名称，取值范围：
+- `TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；
+- `DAILY_EIP_APPLY`：用户当前地域下今日申购次数；
+- `DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数；
+- `TOTAL_EIP6_QUOTA`：用户当前地域下，传统弹性公网IPv6的配额数；
+- `BGP_EIPv6_QUOTA`：用户当前地域下，可申请的 BGP 弹性公网IPv6 的配额数；
+- `SINGLEISP_EIPv6_QUOTA`：用户当前地域下，可申请的静态单线弹性公网IPv6 的配额数；
                      * 
                      */
                     void SetQuotaId(const std::string& _quotaId);
@@ -109,10 +133,41 @@ namespace TencentCloud
                      */
                     bool QuotaLimitHasBeenSet() const;
 
+                    /**
+                     * 获取配额所属的网络组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QuotaGroup 配额所属的网络组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetQuotaGroup() const;
+
+                    /**
+                     * 设置配额所属的网络组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _quotaGroup 配额所属的网络组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQuotaGroup(const std::string& _quotaGroup);
+
+                    /**
+                     * 判断参数 QuotaGroup 是否已赋值
+                     * @return QuotaGroup 是否已赋值
+                     * 
+                     */
+                    bool QuotaGroupHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 配额名称，取值范围：<br><li>`TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；<br><li>`DAILY_EIP_APPLY`：用户当前地域下今日申购次数；<br><li>`DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数。
+                     * 配额名称，取值范围：
+- `TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；
+- `DAILY_EIP_APPLY`：用户当前地域下今日申购次数；
+- `DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数；
+- `TOTAL_EIP6_QUOTA`：用户当前地域下，传统弹性公网IPv6的配额数；
+- `BGP_EIPv6_QUOTA`：用户当前地域下，可申请的 BGP 弹性公网IPv6 的配额数；
+- `SINGLEISP_EIPv6_QUOTA`：用户当前地域下，可申请的静态单线弹性公网IPv6 的配额数；
                      */
                     std::string m_quotaId;
                     bool m_quotaIdHasBeenSet;
@@ -128,6 +183,13 @@ namespace TencentCloud
                      */
                     int64_t m_quotaLimit;
                     bool m_quotaLimitHasBeenSet;
+
+                    /**
+                     * 配额所属的网络组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_quotaGroup;
+                    bool m_quotaGroupHasBeenSet;
 
                 };
             }

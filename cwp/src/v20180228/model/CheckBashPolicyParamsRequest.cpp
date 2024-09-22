@@ -27,7 +27,8 @@ CheckBashPolicyParamsRequest::CheckBashPolicyParamsRequest() :
     m_eventIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_ruleHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_rulesHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,15 @@ string CheckBashPolicyParamsRequest::ToJsonString() const
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_id, allocator);
+    }
+
+    if (m_rulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Rules";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rules.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -164,6 +174,22 @@ void CheckBashPolicyParamsRequest::SetId(const uint64_t& _id)
 bool CheckBashPolicyParamsRequest::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+PolicyRules CheckBashPolicyParamsRequest::GetRules() const
+{
+    return m_rules;
+}
+
+void CheckBashPolicyParamsRequest::SetRules(const PolicyRules& _rules)
+{
+    m_rules = _rules;
+    m_rulesHasBeenSet = true;
+}
+
+bool CheckBashPolicyParamsRequest::RulesHasBeenSet() const
+{
+    return m_rulesHasBeenSet;
 }
 
 

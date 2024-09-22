@@ -2448,6 +2448,49 @@ TkeClient::DeleteImageCachesOutcomeCallable TkeClient::DeleteImageCachesCallable
     return task->get_future();
 }
 
+TkeClient::DeleteLogConfigsOutcome TkeClient::DeleteLogConfigs(const DeleteLogConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLogConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLogConfigsResponse rsp = DeleteLogConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLogConfigsOutcome(rsp);
+        else
+            return DeleteLogConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLogConfigsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteLogConfigsAsync(const DeleteLogConfigsRequest& request, const DeleteLogConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLogConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteLogConfigsOutcomeCallable TkeClient::DeleteLogConfigsCallable(const DeleteLogConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLogConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLogConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DeletePrometheusAlertPolicyOutcome TkeClient::DeletePrometheusAlertPolicy(const DeletePrometheusAlertPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "DeletePrometheusAlertPolicy");
@@ -5193,6 +5236,49 @@ TkeClient::DescribeImagesOutcomeCallable TkeClient::DescribeImagesCallable(const
         [this, request]()
         {
             return this->DescribeImages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeLogConfigsOutcome TkeClient::DescribeLogConfigs(const DescribeLogConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogConfigsResponse rsp = DescribeLogConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogConfigsOutcome(rsp);
+        else
+            return DescribeLogConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogConfigsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeLogConfigsAsync(const DescribeLogConfigsRequest& request, const DescribeLogConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeLogConfigsOutcomeCallable TkeClient::DescribeLogConfigsCallable(const DescribeLogConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogConfigs(request);
         }
     );
 

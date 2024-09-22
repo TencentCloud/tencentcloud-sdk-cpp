@@ -27,6 +27,7 @@ ModifyEventConfigRequest::ModifyEventConfigRequest() :
     m_notificationUrlHasBeenSet(false),
     m_uploadMediaCompleteEventSwitchHasBeenSet(false),
     m_deleteMediaCompleteEventSwitchHasBeenSet(false),
+    m_persistenceCompleteEventSwitchHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -68,6 +69,14 @@ string ModifyEventConfigRequest::ToJsonString() const
         string key = "DeleteMediaCompleteEventSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deleteMediaCompleteEventSwitch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_persistenceCompleteEventSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PersistenceCompleteEventSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_persistenceCompleteEventSwitch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -148,6 +157,22 @@ void ModifyEventConfigRequest::SetDeleteMediaCompleteEventSwitch(const string& _
 bool ModifyEventConfigRequest::DeleteMediaCompleteEventSwitchHasBeenSet() const
 {
     return m_deleteMediaCompleteEventSwitchHasBeenSet;
+}
+
+string ModifyEventConfigRequest::GetPersistenceCompleteEventSwitch() const
+{
+    return m_persistenceCompleteEventSwitch;
+}
+
+void ModifyEventConfigRequest::SetPersistenceCompleteEventSwitch(const string& _persistenceCompleteEventSwitch)
+{
+    m_persistenceCompleteEventSwitch = _persistenceCompleteEventSwitch;
+    m_persistenceCompleteEventSwitchHasBeenSet = true;
+}
+
+bool ModifyEventConfigRequest::PersistenceCompleteEventSwitchHasBeenSet() const
+{
+    return m_persistenceCompleteEventSwitchHasBeenSet;
 }
 
 uint64_t ModifyEventConfigRequest::GetSubAppId() const

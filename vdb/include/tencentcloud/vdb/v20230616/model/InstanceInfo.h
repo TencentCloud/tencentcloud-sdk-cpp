@@ -549,6 +549,31 @@ namespace TencentCloud
                     bool EngineVersionHasBeenSet() const;
 
                     /**
+                     * 获取api版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApiVersion api版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApiVersion() const;
+
+                    /**
+                     * 设置api版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _apiVersion api版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApiVersion(const std::string& _apiVersion);
+
+                    /**
+                     * 判断参数 ApiVersion 是否已赋值
+                     * @return ApiVersion 是否已赋值
+                     * 
+                     */
+                    bool ApiVersionHasBeenSet() const;
+
+                    /**
                      * 获取计费模式。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 计费模式。
@@ -864,6 +889,13 @@ namespace TencentCloud
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
+
+                    /**
+                     * api版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_apiVersion;
+                    bool m_apiVersionHasBeenSet;
 
                     /**
                      * 计费模式。

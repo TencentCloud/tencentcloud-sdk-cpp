@@ -857,6 +857,135 @@ LkeClient::DescribeAttributeLabelOutcomeCallable LkeClient::DescribeAttributeLab
     return task->get_future();
 }
 
+LkeClient::DescribeCallStatsGraphOutcome LkeClient::DescribeCallStatsGraph(const DescribeCallStatsGraphRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCallStatsGraph");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCallStatsGraphResponse rsp = DescribeCallStatsGraphResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCallStatsGraphOutcome(rsp);
+        else
+            return DescribeCallStatsGraphOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCallStatsGraphOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeCallStatsGraphAsync(const DescribeCallStatsGraphRequest& request, const DescribeCallStatsGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCallStatsGraph(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeCallStatsGraphOutcomeCallable LkeClient::DescribeCallStatsGraphCallable(const DescribeCallStatsGraphRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCallStatsGraphOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCallStatsGraph(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::DescribeConcurrencyUsageOutcome LkeClient::DescribeConcurrencyUsage(const DescribeConcurrencyUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConcurrencyUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConcurrencyUsageResponse rsp = DescribeConcurrencyUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConcurrencyUsageOutcome(rsp);
+        else
+            return DescribeConcurrencyUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConcurrencyUsageOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeConcurrencyUsageAsync(const DescribeConcurrencyUsageRequest& request, const DescribeConcurrencyUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConcurrencyUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeConcurrencyUsageOutcomeCallable LkeClient::DescribeConcurrencyUsageCallable(const DescribeConcurrencyUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConcurrencyUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConcurrencyUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::DescribeConcurrencyUsageGraphOutcome LkeClient::DescribeConcurrencyUsageGraph(const DescribeConcurrencyUsageGraphRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConcurrencyUsageGraph");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConcurrencyUsageGraphResponse rsp = DescribeConcurrencyUsageGraphResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConcurrencyUsageGraphOutcome(rsp);
+        else
+            return DescribeConcurrencyUsageGraphOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConcurrencyUsageGraphOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeConcurrencyUsageGraphAsync(const DescribeConcurrencyUsageGraphRequest& request, const DescribeConcurrencyUsageGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConcurrencyUsageGraph(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeConcurrencyUsageGraphOutcomeCallable LkeClient::DescribeConcurrencyUsageGraphCallable(const DescribeConcurrencyUsageGraphRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConcurrencyUsageGraphOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConcurrencyUsageGraph(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::DescribeCorpOutcome LkeClient::DescribeCorp(const DescribeCorpRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCorp");
@@ -936,6 +1065,92 @@ LkeClient::DescribeDocOutcomeCallable LkeClient::DescribeDocCallable(const Descr
         [this, request]()
         {
             return this->DescribeDoc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::DescribeKnowledgeUsageOutcome LkeClient::DescribeKnowledgeUsage(const DescribeKnowledgeUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKnowledgeUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKnowledgeUsageResponse rsp = DescribeKnowledgeUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKnowledgeUsageOutcome(rsp);
+        else
+            return DescribeKnowledgeUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKnowledgeUsageOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeKnowledgeUsageAsync(const DescribeKnowledgeUsageRequest& request, const DescribeKnowledgeUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKnowledgeUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeKnowledgeUsageOutcomeCallable LkeClient::DescribeKnowledgeUsageCallable(const DescribeKnowledgeUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKnowledgeUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKnowledgeUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::DescribeKnowledgeUsagePieGraphOutcome LkeClient::DescribeKnowledgeUsagePieGraph(const DescribeKnowledgeUsagePieGraphRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKnowledgeUsagePieGraph");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKnowledgeUsagePieGraphResponse rsp = DescribeKnowledgeUsagePieGraphResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKnowledgeUsagePieGraphOutcome(rsp);
+        else
+            return DescribeKnowledgeUsagePieGraphOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKnowledgeUsagePieGraphOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeKnowledgeUsagePieGraphAsync(const DescribeKnowledgeUsagePieGraphRequest& request, const DescribeKnowledgeUsagePieGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKnowledgeUsagePieGraph(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeKnowledgeUsagePieGraphOutcomeCallable LkeClient::DescribeKnowledgeUsagePieGraphCallable(const DescribeKnowledgeUsagePieGraphRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKnowledgeUsagePieGraphOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKnowledgeUsagePieGraph(request);
         }
     );
 
@@ -1158,6 +1373,49 @@ LkeClient::DescribeRobotBizIDByAppKeyOutcomeCallable LkeClient::DescribeRobotBiz
     return task->get_future();
 }
 
+LkeClient::DescribeSearchStatsGraphOutcome LkeClient::DescribeSearchStatsGraph(const DescribeSearchStatsGraphRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSearchStatsGraph");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSearchStatsGraphResponse rsp = DescribeSearchStatsGraphResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSearchStatsGraphOutcome(rsp);
+        else
+            return DescribeSearchStatsGraphOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSearchStatsGraphOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeSearchStatsGraphAsync(const DescribeSearchStatsGraphRequest& request, const DescribeSearchStatsGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSearchStatsGraph(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeSearchStatsGraphOutcomeCallable LkeClient::DescribeSearchStatsGraphCallable(const DescribeSearchStatsGraphRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSearchStatsGraphOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSearchStatsGraph(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::DescribeSegmentsOutcome LkeClient::DescribeSegments(const DescribeSegmentsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSegments");
@@ -1237,6 +1495,92 @@ LkeClient::DescribeStorageCredentialOutcomeCallable LkeClient::DescribeStorageCr
         [this, request]()
         {
             return this->DescribeStorageCredential(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::DescribeTokenUsageOutcome LkeClient::DescribeTokenUsage(const DescribeTokenUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTokenUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTokenUsageResponse rsp = DescribeTokenUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTokenUsageOutcome(rsp);
+        else
+            return DescribeTokenUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTokenUsageOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeTokenUsageAsync(const DescribeTokenUsageRequest& request, const DescribeTokenUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTokenUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeTokenUsageOutcomeCallable LkeClient::DescribeTokenUsageCallable(const DescribeTokenUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTokenUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTokenUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::DescribeTokenUsageGraphOutcome LkeClient::DescribeTokenUsageGraph(const DescribeTokenUsageGraphRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTokenUsageGraph");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTokenUsageGraphResponse rsp = DescribeTokenUsageGraphResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTokenUsageGraphOutcome(rsp);
+        else
+            return DescribeTokenUsageGraphOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTokenUsageGraphOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeTokenUsageGraphAsync(const DescribeTokenUsageGraphRequest& request, const DescribeTokenUsageGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTokenUsageGraph(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeTokenUsageGraphOutcomeCallable LkeClient::DescribeTokenUsageGraphCallable(const DescribeTokenUsageGraphRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTokenUsageGraphOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTokenUsageGraph(request);
         }
     );
 

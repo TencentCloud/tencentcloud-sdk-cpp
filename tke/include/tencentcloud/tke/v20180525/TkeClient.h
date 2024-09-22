@@ -135,6 +135,8 @@
 #include <tencentcloud/tke/v20180525/model/DeleteEdgeClusterInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteImageCachesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteImageCachesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DeleteLogConfigsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DeleteLogConfigsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeletePrometheusAlertPolicyRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeletePrometheusAlertPolicyResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeletePrometheusAlertRuleRequest.h>
@@ -263,6 +265,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeImageCachesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeImagesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeImagesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeLogConfigsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeLogConfigsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeLogSwitchesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeLogSwitchesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeOpenPolicyListRequest.h>
@@ -653,6 +657,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteImageCachesResponse> DeleteImageCachesOutcome;
                 typedef std::future<DeleteImageCachesOutcome> DeleteImageCachesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteImageCachesRequest&, DeleteImageCachesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageCachesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLogConfigsResponse> DeleteLogConfigsOutcome;
+                typedef std::future<DeleteLogConfigsOutcome> DeleteLogConfigsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DeleteLogConfigsRequest&, DeleteLogConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogConfigsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePrometheusAlertPolicyResponse> DeletePrometheusAlertPolicyOutcome;
                 typedef std::future<DeletePrometheusAlertPolicyOutcome> DeletePrometheusAlertPolicyOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeletePrometheusAlertPolicyRequest&, DeletePrometheusAlertPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrometheusAlertPolicyAsyncHandler;
@@ -845,6 +852,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImagesResponse> DescribeImagesOutcome;
                 typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeImagesRequest&, DescribeImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogConfigsResponse> DescribeLogConfigsOutcome;
+                typedef std::future<DescribeLogConfigsOutcome> DescribeLogConfigsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeLogConfigsRequest&, DescribeLogConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogConfigsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogSwitchesResponse> DescribeLogSwitchesOutcome;
                 typedef std::future<DescribeLogSwitchesOutcome> DescribeLogSwitchesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeLogSwitchesRequest&, DescribeLogSwitchesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogSwitchesAsyncHandler;
@@ -1665,6 +1675,15 @@ namespace TencentCloud
                 DeleteImageCachesOutcomeCallable DeleteImageCachesCallable(const Model::DeleteImageCachesRequest& request);
 
                 /**
+                 *删除集群内采集规则
+                 * @param req DeleteLogConfigsRequest
+                 * @return DeleteLogConfigsOutcome
+                 */
+                DeleteLogConfigsOutcome DeleteLogConfigs(const Model::DeleteLogConfigsRequest &request);
+                void DeleteLogConfigsAsync(const Model::DeleteLogConfigsRequest& request, const DeleteLogConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLogConfigsOutcomeCallable DeleteLogConfigsCallable(const Model::DeleteLogConfigsRequest& request);
+
+                /**
                  *删除2.0实例告警策略
                  * @param req DeletePrometheusAlertPolicyRequest
                  * @return DeletePrometheusAlertPolicyOutcome
@@ -2241,6 +2260,15 @@ namespace TencentCloud
                 DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest &request);
                 void DescribeImagesAsync(const Model::DescribeImagesRequest& request, const DescribeImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImagesOutcomeCallable DescribeImagesCallable(const Model::DescribeImagesRequest& request);
+
+                /**
+                 *查询日志采集规则
+                 * @param req DescribeLogConfigsRequest
+                 * @return DescribeLogConfigsOutcome
+                 */
+                DescribeLogConfigsOutcome DescribeLogConfigs(const Model::DescribeLogConfigsRequest &request);
+                void DescribeLogConfigsAsync(const Model::DescribeLogConfigsRequest& request, const DescribeLogConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogConfigsOutcomeCallable DescribeLogConfigsCallable(const Model::DescribeLogConfigsRequest& request);
 
                 /**
                  *查询集群日志（审计、事件、普通日志）开关列表

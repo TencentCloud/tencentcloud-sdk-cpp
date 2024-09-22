@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取目标处理状态： 0 - 待处理 1 - 已加白 2 - 已删除 3 - 已忽略 4 - 已手动处理
+                     * @return Status 目标处理状态： 0 - 待处理 1 - 已加白 2 - 已删除 3 - 已忽略 4 - 已手动处理
+                     * 
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 设置目标处理状态： 0 - 待处理 1 - 已加白 2 - 已删除 3 - 已忽略 4 - 已手动处理
+                     * @param _status 目标处理状态： 0 - 待处理 1 - 已加白 2 - 已删除 3 - 已忽略 4 - 已手动处理
+                     * 
+                     */
+                    void SetStatus(const uint64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
                      * 获取事件Id数组
                      * @return Ids 事件Id数组
                      * 
@@ -64,27 +85,33 @@ namespace TencentCloud
                     bool IdsHasBeenSet() const;
 
                     /**
-                     * 获取目标处理状态： 0 - 待处理 1 - 已加白 2 - 已删除 3 - 已忽略 4 - 已手动处理
-                     * @return Status 目标处理状态： 0 - 待处理 1 - 已加白 2 - 已删除 3 - 已忽略 4 - 已手动处理
+                     * 获取是否更新全部，只支持忽略、已处理、删除
+                     * @return UpdateAll 是否更新全部，只支持忽略、已处理、删除
                      * 
                      */
-                    uint64_t GetStatus() const;
+                    bool GetUpdateAll() const;
 
                     /**
-                     * 设置目标处理状态： 0 - 待处理 1 - 已加白 2 - 已删除 3 - 已忽略 4 - 已手动处理
-                     * @param _status 目标处理状态： 0 - 待处理 1 - 已加白 2 - 已删除 3 - 已忽略 4 - 已手动处理
+                     * 设置是否更新全部，只支持忽略、已处理、删除
+                     * @param _updateAll 是否更新全部，只支持忽略、已处理、删除
                      * 
                      */
-                    void SetStatus(const uint64_t& _status);
+                    void SetUpdateAll(const bool& _updateAll);
 
                     /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
+                     * 判断参数 UpdateAll 是否已赋值
+                     * @return UpdateAll 是否已赋值
                      * 
                      */
-                    bool StatusHasBeenSet() const;
+                    bool UpdateAllHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 目标处理状态： 0 - 待处理 1 - 已加白 2 - 已删除 3 - 已忽略 4 - 已手动处理
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
 
                     /**
                      * 事件Id数组
@@ -93,10 +120,10 @@ namespace TencentCloud
                     bool m_idsHasBeenSet;
 
                     /**
-                     * 目标处理状态： 0 - 待处理 1 - 已加白 2 - 已删除 3 - 已忽略 4 - 已手动处理
+                     * 是否更新全部，只支持忽略、已处理、删除
                      */
-                    uint64_t m_status;
-                    bool m_statusHasBeenSet;
+                    bool m_updateAll;
+                    bool m_updateAllHasBeenSet;
 
                 };
             }

@@ -23,8 +23,9 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 ModifyJavaMemShellsStatusRequest::ModifyJavaMemShellsStatusRequest() :
+    m_statusHasBeenSet(false),
     m_idsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_updateAllHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,14 @@ string ModifyJavaMemShellsStatusRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_status, allocator);
+    }
 
     if (m_idsHasBeenSet)
     {
@@ -48,12 +57,12 @@ string ModifyJavaMemShellsStatusRequest::ToJsonString() const
         }
     }
 
-    if (m_statusHasBeenSet)
+    if (m_updateAllHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
+        string key = "UpdateAll";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_status, allocator);
+        d.AddMember(iKey, m_updateAll, allocator);
     }
 
 
@@ -63,6 +72,22 @@ string ModifyJavaMemShellsStatusRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t ModifyJavaMemShellsStatusRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void ModifyJavaMemShellsStatusRequest::SetStatus(const uint64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool ModifyJavaMemShellsStatusRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
 
 vector<uint64_t> ModifyJavaMemShellsStatusRequest::GetIds() const
 {
@@ -80,20 +105,20 @@ bool ModifyJavaMemShellsStatusRequest::IdsHasBeenSet() const
     return m_idsHasBeenSet;
 }
 
-uint64_t ModifyJavaMemShellsStatusRequest::GetStatus() const
+bool ModifyJavaMemShellsStatusRequest::GetUpdateAll() const
 {
-    return m_status;
+    return m_updateAll;
 }
 
-void ModifyJavaMemShellsStatusRequest::SetStatus(const uint64_t& _status)
+void ModifyJavaMemShellsStatusRequest::SetUpdateAll(const bool& _updateAll)
 {
-    m_status = _status;
-    m_statusHasBeenSet = true;
+    m_updateAll = _updateAll;
+    m_updateAllHasBeenSet = true;
 }
 
-bool ModifyJavaMemShellsStatusRequest::StatusHasBeenSet() const
+bool ModifyJavaMemShellsStatusRequest::UpdateAllHasBeenSet() const
 {
-    return m_statusHasBeenSet;
+    return m_updateAllHasBeenSet;
 }
 
 

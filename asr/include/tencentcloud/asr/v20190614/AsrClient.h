@@ -59,6 +59,8 @@
 #include <tencentcloud/asr/v20190614/model/GetCustomizationListResponse.h>
 #include <tencentcloud/asr/v20190614/model/GetModelInfoRequest.h>
 #include <tencentcloud/asr/v20190614/model/GetModelInfoResponse.h>
+#include <tencentcloud/asr/v20190614/model/GetUsageByDateRequest.h>
+#include <tencentcloud/asr/v20190614/model/GetUsageByDateResponse.h>
 #include <tencentcloud/asr/v20190614/model/ModifyCustomizationRequest.h>
 #include <tencentcloud/asr/v20190614/model/ModifyCustomizationResponse.h>
 #include <tencentcloud/asr/v20190614/model/ModifyCustomizationStateRequest.h>
@@ -153,6 +155,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetModelInfoResponse> GetModelInfoOutcome;
                 typedef std::future<GetModelInfoOutcome> GetModelInfoOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::GetModelInfoRequest&, GetModelInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetModelInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetUsageByDateResponse> GetUsageByDateOutcome;
+                typedef std::future<GetUsageByDateOutcome> GetUsageByDateOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::GetUsageByDateRequest&, GetUsageByDateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUsageByDateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCustomizationResponse> ModifyCustomizationOutcome;
                 typedef std::future<ModifyCustomizationOutcome> ModifyCustomizationOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::ModifyCustomizationRequest&, ModifyCustomizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomizationAsyncHandler;
@@ -389,6 +394,15 @@ namespace TencentCloud
                 GetModelInfoOutcome GetModelInfo(const Model::GetModelInfoRequest &request);
                 void GetModelInfoAsync(const Model::GetModelInfoRequest& request, const GetModelInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetModelInfoOutcomeCallable GetModelInfoCallable(const Model::GetModelInfoRequest& request);
+
+                /**
+                 *查询用户用量
+                 * @param req GetUsageByDateRequest
+                 * @return GetUsageByDateOutcome
+                 */
+                GetUsageByDateOutcome GetUsageByDate(const Model::GetUsageByDateRequest &request);
+                void GetUsageByDateAsync(const Model::GetUsageByDateRequest& request, const GetUsageByDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetUsageByDateOutcomeCallable GetUsageByDateCallable(const Model::GetUsageByDateRequest& request);
 
                 /**
                  *用户通过该接口可以更新自学习模型，如模型名称、模型类型、模型语料。

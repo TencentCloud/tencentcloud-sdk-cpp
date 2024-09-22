@@ -49,6 +49,7 @@
 #include <tencentcloud/vod/v20180717/model/QualityInspectTask.h>
 #include <tencentcloud/vod/v20180717/model/QualityEnhanceTask.h>
 #include <tencentcloud/vod/v20180717/model/MediaCastEvent.h>
+#include <tencentcloud/vod/v20180717/model/PersistenceCompleteTask.h>
 
 
 namespace TencentCloud
@@ -110,7 +111,8 @@ namespace TencentCloud
 <li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
 <li>QualityInspectComplete：音画质检测完成；</li>
-<li>QualityEnhanceComplete：音画质重生任务完成。</li>
+<li>QualityEnhanceComplete：音画质重生任务完成；</li>
+<li>PersistenceComplete：剪辑固化完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -134,7 +136,8 @@ namespace TencentCloud
 <li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
 <li>QualityInspectComplete：音画质检测完成；</li>
-<li>QualityEnhanceComplete：音画质重生任务完成。</li>
+<li>QualityEnhanceComplete：音画质重生任务完成；</li>
+<li>PersistenceComplete：剪辑固化完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -163,7 +166,8 @@ namespace TencentCloud
 <li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
 <li>QualityInspectComplete：音画质检测完成；</li>
-<li>QualityEnhanceComplete：音画质重生任务完成。</li>
+<li>QualityEnhanceComplete：音画质重生任务完成；</li>
+<li>PersistenceComplete：剪辑固化完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -187,7 +191,8 @@ namespace TencentCloud
 <li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
 <li>QualityInspectComplete：音画质检测完成；</li>
-<li>QualityEnhanceComplete：音画质重生任务完成。</li>
+<li>QualityEnhanceComplete：音画质重生任务完成；</li>
+<li>PersistenceComplete：剪辑固化完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -830,6 +835,31 @@ namespace TencentCloud
                      */
                     bool MediaCastStatusChangedEventHasBeenSet() const;
 
+                    /**
+                     * 获取剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PersistenceCompleteEvent 剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    PersistenceCompleteTask GetPersistenceCompleteEvent() const;
+
+                    /**
+                     * 设置剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _persistenceCompleteEvent 剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPersistenceCompleteEvent(const PersistenceCompleteTask& _persistenceCompleteEvent);
+
+                    /**
+                     * 判断参数 PersistenceCompleteEvent 是否已赋值
+                     * @return PersistenceCompleteEvent 是否已赋值
+                     * 
+                     */
+                    bool PersistenceCompleteEventHasBeenSet() const;
+
                 private:
 
                     /**
@@ -856,7 +886,8 @@ namespace TencentCloud
 <li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
 <li>QualityInspectComplete：音画质检测完成；</li>
-<li>QualityEnhanceComplete：音画质重生任务完成。</li>
+<li>QualityEnhanceComplete：音画质重生任务完成；</li>
+<li>PersistenceComplete：剪辑固化完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -1041,6 +1072,13 @@ namespace TencentCloud
                      */
                     MediaCastEvent m_mediaCastStatusChangedEvent;
                     bool m_mediaCastStatusChangedEventHasBeenSet;
+
+                    /**
+                     * 剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PersistenceCompleteTask m_persistenceCompleteEvent;
+                    bool m_persistenceCompleteEventHasBeenSet;
 
                 };
             }

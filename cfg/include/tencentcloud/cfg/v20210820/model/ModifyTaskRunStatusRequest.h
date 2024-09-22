@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool IssueHasBeenSet() const;
 
+                    /**
+                     * 获取演练记录
+                     * @return Record 演练记录
+                     * 
+                     */
+                    std::string GetRecord() const;
+
+                    /**
+                     * 设置演练记录
+                     * @param _record 演练记录
+                     * 
+                     */
+                    void SetRecord(const std::string& _record);
+
+                    /**
+                     * 判断参数 Record 是否已赋值
+                     * @return Record 是否已赋值
+                     * 
+                     */
+                    bool RecordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_issue;
                     bool m_issueHasBeenSet;
+
+                    /**
+                     * 演练记录
+                     */
+                    std::string m_record;
+                    bool m_recordHasBeenSet;
 
                 };
             }

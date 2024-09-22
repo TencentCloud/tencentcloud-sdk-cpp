@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cwp/v20180228/model/PolicyRules.h>
 
 
 namespace TencentCloud
@@ -35,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 高位命令策略
+                * 高危命令策略
                 */
                 class BashPolicy : public AbstractModel
                 {
@@ -131,15 +132,15 @@ namespace TencentCloud
                     bool BashActionHasBeenSet() const;
 
                     /**
-                     * 获取正则表达式
-                     * @return Rule 正则表达式
+                     * 获取正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine
+                     * @return Rule 正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine
                      * 
                      */
                     std::string GetRule() const;
 
                     /**
-                     * 设置正则表达式
-                     * @param _rule 正则表达式
+                     * 设置正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine
+                     * @param _rule 正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine
                      * 
                      */
                     void SetRule(const std::string& _rule);
@@ -398,6 +399,31 @@ namespace TencentCloud
                      */
                     bool UuidsHasBeenSet() const;
 
+                    /**
+                     * 获取规则表达式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Rules 规则表达式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    PolicyRules GetRules() const;
+
+                    /**
+                     * 设置规则表达式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rules 规则表达式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRules(const PolicyRules& _rules);
+
+                    /**
+                     * 判断参数 Rules 是否已赋值
+                     * @return Rules 是否已赋值
+                     * 
+                     */
+                    bool RulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,7 +451,7 @@ namespace TencentCloud
                     bool m_bashActionHasBeenSet;
 
                     /**
-                     * 正则表达式
+                     * 正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine
                      */
                     std::string m_rule;
                     bool m_ruleHasBeenSet;
@@ -499,6 +525,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_uuids;
                     bool m_uuidsHasBeenSet;
+
+                    /**
+                     * 规则表达式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PolicyRules m_rules;
+                    bool m_rulesHasBeenSet;
 
                 };
             }

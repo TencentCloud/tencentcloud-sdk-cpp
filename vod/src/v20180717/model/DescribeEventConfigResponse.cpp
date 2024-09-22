@@ -27,7 +27,8 @@ DescribeEventConfigResponse::DescribeEventConfigResponse() :
     m_modeHasBeenSet(false),
     m_notificationUrlHasBeenSet(false),
     m_uploadMediaCompleteEventSwitchHasBeenSet(false),
-    m_deleteMediaCompleteEventSwitchHasBeenSet(false)
+    m_deleteMediaCompleteEventSwitchHasBeenSet(false),
+    m_persistenceCompleteEventSwitchHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome DescribeEventConfigResponse::Deserialize(const string &paylo
         m_deleteMediaCompleteEventSwitchHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PersistenceCompleteEventSwitch") && !rsp["PersistenceCompleteEventSwitch"].IsNull())
+    {
+        if (!rsp["PersistenceCompleteEventSwitch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PersistenceCompleteEventSwitch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_persistenceCompleteEventSwitch = string(rsp["PersistenceCompleteEventSwitch"].GetString());
+        m_persistenceCompleteEventSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ string DescribeEventConfigResponse::ToJsonString() const
         string key = "DeleteMediaCompleteEventSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deleteMediaCompleteEventSwitch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_persistenceCompleteEventSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PersistenceCompleteEventSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_persistenceCompleteEventSwitch.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +216,16 @@ string DescribeEventConfigResponse::GetDeleteMediaCompleteEventSwitch() const
 bool DescribeEventConfigResponse::DeleteMediaCompleteEventSwitchHasBeenSet() const
 {
     return m_deleteMediaCompleteEventSwitchHasBeenSet;
+}
+
+string DescribeEventConfigResponse::GetPersistenceCompleteEventSwitch() const
+{
+    return m_persistenceCompleteEventSwitch;
+}
+
+bool DescribeEventConfigResponse::PersistenceCompleteEventSwitchHasBeenSet() const
+{
+    return m_persistenceCompleteEventSwitchHasBeenSet;
 }
 
 

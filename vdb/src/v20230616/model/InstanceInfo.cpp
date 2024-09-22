@@ -41,6 +41,7 @@ InstanceInfo::InstanceInfo() :
     m_statusHasBeenSet(false),
     m_engineNameHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
+    m_apiVersionHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_extendHasBeenSet(false),
     m_expiredAtHasBeenSet(false),
@@ -274,6 +275,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         }
         m_engineVersion = string(value["EngineVersion"].GetString());
         m_engineVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApiVersion") && !value["ApiVersion"].IsNull())
+    {
+        if (!value["ApiVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ApiVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiVersion = string(value["ApiVersion"].GetString());
+        m_apiVersionHasBeenSet = true;
     }
 
     if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
@@ -525,6 +536,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "EngineVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_engineVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apiVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payModeHasBeenSet)
@@ -904,6 +923,22 @@ void InstanceInfo::SetEngineVersion(const string& _engineVersion)
 bool InstanceInfo::EngineVersionHasBeenSet() const
 {
     return m_engineVersionHasBeenSet;
+}
+
+string InstanceInfo::GetApiVersion() const
+{
+    return m_apiVersion;
+}
+
+void InstanceInfo::SetApiVersion(const string& _apiVersion)
+{
+    m_apiVersion = _apiVersion;
+    m_apiVersionHasBeenSet = true;
+}
+
+bool InstanceInfo::ApiVersionHasBeenSet() const
+{
+    return m_apiVersionHasBeenSet;
 }
 
 int64_t InstanceInfo::GetPayMode() const

@@ -121,6 +121,43 @@ WAKE_UP_STOPPED_SCALING：扩容优先开机。扩容时优先对已关机的实
                      */
                     bool ReplaceLoadBalancerUnhealthyHasBeenSet() const;
 
+                    /**
+                     * 获取不健康替换服务的替换模式。取值范围：
+RECREATE：重建实例替代原有不健康实例；
+RESET：对原有不健康实例进行重装系统操作，可保持数据盘、内网IP、实例id等信息不发生变化，实例登录设置、主机名、增强服务和 UserData 与当前启动配置保持一致。
+默认取值：RECREATE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReplaceMode 不健康替换服务的替换模式。取值范围：
+RECREATE：重建实例替代原有不健康实例；
+RESET：对原有不健康实例进行重装系统操作，可保持数据盘、内网IP、实例id等信息不发生变化，实例登录设置、主机名、增强服务和 UserData 与当前启动配置保持一致。
+默认取值：RECREATE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetReplaceMode() const;
+
+                    /**
+                     * 设置不健康替换服务的替换模式。取值范围：
+RECREATE：重建实例替代原有不健康实例；
+RESET：对原有不健康实例进行重装系统操作，可保持数据盘、内网IP、实例id等信息不发生变化，实例登录设置、主机名、增强服务和 UserData 与当前启动配置保持一致。
+默认取值：RECREATE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _replaceMode 不健康替换服务的替换模式。取值范围：
+RECREATE：重建实例替代原有不健康实例；
+RESET：对原有不健康实例进行重装系统操作，可保持数据盘、内网IP、实例id等信息不发生变化，实例登录设置、主机名、增强服务和 UserData 与当前启动配置保持一致。
+默认取值：RECREATE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReplaceMode(const std::string& _replaceMode);
+
+                    /**
+                     * 判断参数 ReplaceMode 是否已赋值
+                     * @return ReplaceMode 是否已赋值
+                     * 
+                     */
+                    bool ReplaceModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +180,16 @@ WAKE_UP_STOPPED_SCALING：扩容优先开机。扩容时优先对已关机的实
                      */
                     bool m_replaceLoadBalancerUnhealthy;
                     bool m_replaceLoadBalancerUnhealthyHasBeenSet;
+
+                    /**
+                     * 不健康替换服务的替换模式。取值范围：
+RECREATE：重建实例替代原有不健康实例；
+RESET：对原有不健康实例进行重装系统操作，可保持数据盘、内网IP、实例id等信息不发生变化，实例登录设置、主机名、增强服务和 UserData 与当前启动配置保持一致。
+默认取值：RECREATE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_replaceMode;
+                    bool m_replaceModeHasBeenSet;
 
                 };
             }

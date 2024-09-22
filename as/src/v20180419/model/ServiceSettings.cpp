@@ -23,7 +23,8 @@ using namespace std;
 ServiceSettings::ServiceSettings() :
     m_replaceMonitorUnhealthyHasBeenSet(false),
     m_scalingModeHasBeenSet(false),
-    m_replaceLoadBalancerUnhealthyHasBeenSet(false)
+    m_replaceLoadBalancerUnhealthyHasBeenSet(false),
+    m_replaceModeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ServiceSettings::Deserialize(const rapidjson::Value &value)
         m_replaceLoadBalancerUnhealthyHasBeenSet = true;
     }
 
+    if (value.HasMember("ReplaceMode") && !value["ReplaceMode"].IsNull())
+    {
+        if (!value["ReplaceMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSettings.ReplaceMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_replaceMode = string(value["ReplaceMode"].GetString());
+        m_replaceModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ServiceSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ReplaceLoadBalancerUnhealthy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_replaceLoadBalancerUnhealthy, allocator);
+    }
+
+    if (m_replaceModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplaceMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replaceMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ServiceSettings::SetReplaceLoadBalancerUnhealthy(const bool& _replaceLoadBa
 bool ServiceSettings::ReplaceLoadBalancerUnhealthyHasBeenSet() const
 {
     return m_replaceLoadBalancerUnhealthyHasBeenSet;
+}
+
+string ServiceSettings::GetReplaceMode() const
+{
+    return m_replaceMode;
+}
+
+void ServiceSettings::SetReplaceMode(const string& _replaceMode)
+{
+    m_replaceMode = _replaceMode;
+    m_replaceModeHasBeenSet = true;
+}
+
+bool ServiceSettings::ReplaceModeHasBeenSet() const
+{
+    return m_replaceModeHasBeenSet;
 }
 

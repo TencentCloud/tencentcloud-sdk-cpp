@@ -814,6 +814,49 @@ AsrClient::GetModelInfoOutcomeCallable AsrClient::GetModelInfoCallable(const Get
     return task->get_future();
 }
 
+AsrClient::GetUsageByDateOutcome AsrClient::GetUsageByDate(const GetUsageByDateRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetUsageByDate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetUsageByDateResponse rsp = GetUsageByDateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetUsageByDateOutcome(rsp);
+        else
+            return GetUsageByDateOutcome(o.GetError());
+    }
+    else
+    {
+        return GetUsageByDateOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::GetUsageByDateAsync(const GetUsageByDateRequest& request, const GetUsageByDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetUsageByDate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::GetUsageByDateOutcomeCallable AsrClient::GetUsageByDateCallable(const GetUsageByDateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetUsageByDateOutcome()>>(
+        [this, request]()
+        {
+            return this->GetUsageByDate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsrClient::ModifyCustomizationOutcome AsrClient::ModifyCustomization(const ModifyCustomizationRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCustomization");

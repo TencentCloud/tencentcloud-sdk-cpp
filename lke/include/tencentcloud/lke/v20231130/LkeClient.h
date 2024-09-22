@@ -61,10 +61,20 @@
 #include <tencentcloud/lke/v20231130/model/DescribeAppResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeAttributeLabelRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeAttributeLabelResponse.h>
+#include <tencentcloud/lke/v20231130/model/DescribeCallStatsGraphRequest.h>
+#include <tencentcloud/lke/v20231130/model/DescribeCallStatsGraphResponse.h>
+#include <tencentcloud/lke/v20231130/model/DescribeConcurrencyUsageRequest.h>
+#include <tencentcloud/lke/v20231130/model/DescribeConcurrencyUsageResponse.h>
+#include <tencentcloud/lke/v20231130/model/DescribeConcurrencyUsageGraphRequest.h>
+#include <tencentcloud/lke/v20231130/model/DescribeConcurrencyUsageGraphResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeCorpRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeCorpResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeDocRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeDocResponse.h>
+#include <tencentcloud/lke/v20231130/model/DescribeKnowledgeUsageRequest.h>
+#include <tencentcloud/lke/v20231130/model/DescribeKnowledgeUsageResponse.h>
+#include <tencentcloud/lke/v20231130/model/DescribeKnowledgeUsagePieGraphRequest.h>
+#include <tencentcloud/lke/v20231130/model/DescribeKnowledgeUsagePieGraphResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeQARequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeQAResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeReferRequest.h>
@@ -75,10 +85,16 @@
 #include <tencentcloud/lke/v20231130/model/DescribeReleaseInfoResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeRobotBizIDByAppKeyRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeRobotBizIDByAppKeyResponse.h>
+#include <tencentcloud/lke/v20231130/model/DescribeSearchStatsGraphRequest.h>
+#include <tencentcloud/lke/v20231130/model/DescribeSearchStatsGraphResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeSegmentsRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeSegmentsResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeStorageCredentialRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeStorageCredentialResponse.h>
+#include <tencentcloud/lke/v20231130/model/DescribeTokenUsageRequest.h>
+#include <tencentcloud/lke/v20231130/model/DescribeTokenUsageResponse.h>
+#include <tencentcloud/lke/v20231130/model/DescribeTokenUsageGraphRequest.h>
+#include <tencentcloud/lke/v20231130/model/DescribeTokenUsageGraphResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeUnsatisfiedReplyContextRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeUnsatisfiedReplyContextResponse.h>
 #include <tencentcloud/lke/v20231130/model/ExportAttributeLabelRequest.h>
@@ -258,12 +274,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAttributeLabelResponse> DescribeAttributeLabelOutcome;
                 typedef std::future<DescribeAttributeLabelOutcome> DescribeAttributeLabelOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeAttributeLabelRequest&, DescribeAttributeLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttributeLabelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCallStatsGraphResponse> DescribeCallStatsGraphOutcome;
+                typedef std::future<DescribeCallStatsGraphOutcome> DescribeCallStatsGraphOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DescribeCallStatsGraphRequest&, DescribeCallStatsGraphOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallStatsGraphAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConcurrencyUsageResponse> DescribeConcurrencyUsageOutcome;
+                typedef std::future<DescribeConcurrencyUsageOutcome> DescribeConcurrencyUsageOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DescribeConcurrencyUsageRequest&, DescribeConcurrencyUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConcurrencyUsageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConcurrencyUsageGraphResponse> DescribeConcurrencyUsageGraphOutcome;
+                typedef std::future<DescribeConcurrencyUsageGraphOutcome> DescribeConcurrencyUsageGraphOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DescribeConcurrencyUsageGraphRequest&, DescribeConcurrencyUsageGraphOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConcurrencyUsageGraphAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCorpResponse> DescribeCorpOutcome;
                 typedef std::future<DescribeCorpOutcome> DescribeCorpOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeCorpRequest&, DescribeCorpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCorpAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDocResponse> DescribeDocOutcome;
                 typedef std::future<DescribeDocOutcome> DescribeDocOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeDocRequest&, DescribeDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDocAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKnowledgeUsageResponse> DescribeKnowledgeUsageOutcome;
+                typedef std::future<DescribeKnowledgeUsageOutcome> DescribeKnowledgeUsageOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DescribeKnowledgeUsageRequest&, DescribeKnowledgeUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKnowledgeUsageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKnowledgeUsagePieGraphResponse> DescribeKnowledgeUsagePieGraphOutcome;
+                typedef std::future<DescribeKnowledgeUsagePieGraphOutcome> DescribeKnowledgeUsagePieGraphOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DescribeKnowledgeUsagePieGraphRequest&, DescribeKnowledgeUsagePieGraphOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKnowledgeUsagePieGraphAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeQAResponse> DescribeQAOutcome;
                 typedef std::future<DescribeQAOutcome> DescribeQAOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeQARequest&, DescribeQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQAAsyncHandler;
@@ -279,12 +310,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRobotBizIDByAppKeyResponse> DescribeRobotBizIDByAppKeyOutcome;
                 typedef std::future<DescribeRobotBizIDByAppKeyOutcome> DescribeRobotBizIDByAppKeyOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeRobotBizIDByAppKeyRequest&, DescribeRobotBizIDByAppKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRobotBizIDByAppKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSearchStatsGraphResponse> DescribeSearchStatsGraphOutcome;
+                typedef std::future<DescribeSearchStatsGraphOutcome> DescribeSearchStatsGraphOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DescribeSearchStatsGraphRequest&, DescribeSearchStatsGraphOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSearchStatsGraphAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSegmentsResponse> DescribeSegmentsOutcome;
                 typedef std::future<DescribeSegmentsOutcome> DescribeSegmentsOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeSegmentsRequest&, DescribeSegmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSegmentsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStorageCredentialResponse> DescribeStorageCredentialOutcome;
                 typedef std::future<DescribeStorageCredentialOutcome> DescribeStorageCredentialOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeStorageCredentialRequest&, DescribeStorageCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStorageCredentialAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTokenUsageResponse> DescribeTokenUsageOutcome;
+                typedef std::future<DescribeTokenUsageOutcome> DescribeTokenUsageOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DescribeTokenUsageRequest&, DescribeTokenUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTokenUsageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTokenUsageGraphResponse> DescribeTokenUsageGraphOutcome;
+                typedef std::future<DescribeTokenUsageGraphOutcome> DescribeTokenUsageGraphOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DescribeTokenUsageGraphRequest&, DescribeTokenUsageGraphOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTokenUsageGraphAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUnsatisfiedReplyContextResponse> DescribeUnsatisfiedReplyContextOutcome;
                 typedef std::future<DescribeUnsatisfiedReplyContextOutcome> DescribeUnsatisfiedReplyContextOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeUnsatisfiedReplyContextRequest&, DescribeUnsatisfiedReplyContextOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnsatisfiedReplyContextAsyncHandler;
@@ -625,6 +665,33 @@ namespace TencentCloud
                 DescribeAttributeLabelOutcomeCallable DescribeAttributeLabelCallable(const Model::DescribeAttributeLabelRequest& request);
 
                 /**
+                 *接口调用折线图
+                 * @param req DescribeCallStatsGraphRequest
+                 * @return DescribeCallStatsGraphOutcome
+                 */
+                DescribeCallStatsGraphOutcome DescribeCallStatsGraph(const Model::DescribeCallStatsGraphRequest &request);
+                void DescribeCallStatsGraphAsync(const Model::DescribeCallStatsGraphRequest& request, const DescribeCallStatsGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCallStatsGraphOutcomeCallable DescribeCallStatsGraphCallable(const Model::DescribeCallStatsGraphRequest& request);
+
+                /**
+                 *并发调用响应
+                 * @param req DescribeConcurrencyUsageRequest
+                 * @return DescribeConcurrencyUsageOutcome
+                 */
+                DescribeConcurrencyUsageOutcome DescribeConcurrencyUsage(const Model::DescribeConcurrencyUsageRequest &request);
+                void DescribeConcurrencyUsageAsync(const Model::DescribeConcurrencyUsageRequest& request, const DescribeConcurrencyUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConcurrencyUsageOutcomeCallable DescribeConcurrencyUsageCallable(const Model::DescribeConcurrencyUsageRequest& request);
+
+                /**
+                 *并发调用折线图
+                 * @param req DescribeConcurrencyUsageGraphRequest
+                 * @return DescribeConcurrencyUsageGraphOutcome
+                 */
+                DescribeConcurrencyUsageGraphOutcome DescribeConcurrencyUsageGraph(const Model::DescribeConcurrencyUsageGraphRequest &request);
+                void DescribeConcurrencyUsageGraphAsync(const Model::DescribeConcurrencyUsageGraphRequest& request, const DescribeConcurrencyUsageGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConcurrencyUsageGraphOutcomeCallable DescribeConcurrencyUsageGraphCallable(const Model::DescribeConcurrencyUsageGraphRequest& request);
+
+                /**
                  *企业详情
                  * @param req DescribeCorpRequest
                  * @return DescribeCorpOutcome
@@ -641,6 +708,24 @@ namespace TencentCloud
                 DescribeDocOutcome DescribeDoc(const Model::DescribeDocRequest &request);
                 void DescribeDocAsync(const Model::DescribeDocRequest& request, const DescribeDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDocOutcomeCallable DescribeDocCallable(const Model::DescribeDocRequest& request);
+
+                /**
+                 *查询知识库用量
+                 * @param req DescribeKnowledgeUsageRequest
+                 * @return DescribeKnowledgeUsageOutcome
+                 */
+                DescribeKnowledgeUsageOutcome DescribeKnowledgeUsage(const Model::DescribeKnowledgeUsageRequest &request);
+                void DescribeKnowledgeUsageAsync(const Model::DescribeKnowledgeUsageRequest& request, const DescribeKnowledgeUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKnowledgeUsageOutcomeCallable DescribeKnowledgeUsageCallable(const Model::DescribeKnowledgeUsageRequest& request);
+
+                /**
+                 *查询企业知识库容量饼图
+                 * @param req DescribeKnowledgeUsagePieGraphRequest
+                 * @return DescribeKnowledgeUsagePieGraphOutcome
+                 */
+                DescribeKnowledgeUsagePieGraphOutcome DescribeKnowledgeUsagePieGraph(const Model::DescribeKnowledgeUsagePieGraphRequest &request);
+                void DescribeKnowledgeUsagePieGraphAsync(const Model::DescribeKnowledgeUsagePieGraphRequest& request, const DescribeKnowledgeUsagePieGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKnowledgeUsagePieGraphOutcomeCallable DescribeKnowledgeUsagePieGraphCallable(const Model::DescribeKnowledgeUsagePieGraphRequest& request);
 
                 /**
                  *问答详情
@@ -688,6 +773,15 @@ namespace TencentCloud
                 DescribeRobotBizIDByAppKeyOutcomeCallable DescribeRobotBizIDByAppKeyCallable(const Model::DescribeRobotBizIDByAppKeyRequest& request);
 
                 /**
+                 *查询搜索服务调用折线图
+                 * @param req DescribeSearchStatsGraphRequest
+                 * @return DescribeSearchStatsGraphOutcome
+                 */
+                DescribeSearchStatsGraphOutcome DescribeSearchStatsGraph(const Model::DescribeSearchStatsGraphRequest &request);
+                void DescribeSearchStatsGraphAsync(const Model::DescribeSearchStatsGraphRequest& request, const DescribeSearchStatsGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSearchStatsGraphOutcomeCallable DescribeSearchStatsGraphCallable(const Model::DescribeSearchStatsGraphRequest& request);
+
+                /**
                  *获取片段详情
                  * @param req DescribeSegmentsRequest
                  * @return DescribeSegmentsOutcome
@@ -704,6 +798,24 @@ namespace TencentCloud
                 DescribeStorageCredentialOutcome DescribeStorageCredential(const Model::DescribeStorageCredentialRequest &request);
                 void DescribeStorageCredentialAsync(const Model::DescribeStorageCredentialRequest& request, const DescribeStorageCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStorageCredentialOutcomeCallable DescribeStorageCredentialCallable(const Model::DescribeStorageCredentialRequest& request);
+
+                /**
+                 *接口调用token详情
+                 * @param req DescribeTokenUsageRequest
+                 * @return DescribeTokenUsageOutcome
+                 */
+                DescribeTokenUsageOutcome DescribeTokenUsage(const Model::DescribeTokenUsageRequest &request);
+                void DescribeTokenUsageAsync(const Model::DescribeTokenUsageRequest& request, const DescribeTokenUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTokenUsageOutcomeCallable DescribeTokenUsageCallable(const Model::DescribeTokenUsageRequest& request);
+
+                /**
+                 *接口调用token折线图
+                 * @param req DescribeTokenUsageGraphRequest
+                 * @return DescribeTokenUsageGraphOutcome
+                 */
+                DescribeTokenUsageGraphOutcome DescribeTokenUsageGraph(const Model::DescribeTokenUsageGraphRequest &request);
+                void DescribeTokenUsageGraphAsync(const Model::DescribeTokenUsageGraphRequest& request, const DescribeTokenUsageGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTokenUsageGraphOutcomeCallable DescribeTokenUsageGraphCallable(const Model::DescribeTokenUsageGraphRequest& request);
 
                 /**
                  *获取不满意回复上下文

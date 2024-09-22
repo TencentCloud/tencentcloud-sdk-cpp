@@ -47,7 +47,8 @@ EventContent::EventContent() :
     m_describeFileAttributesCompleteEventHasBeenSet(false),
     m_qualityInspectCompleteEventHasBeenSet(false),
     m_qualityEnhanceCompleteEventHasBeenSet(false),
-    m_mediaCastStatusChangedEventHasBeenSet(false)
+    m_mediaCastStatusChangedEventHasBeenSet(false),
+    m_persistenceCompleteEventHasBeenSet(false)
 {
 }
 
@@ -501,6 +502,23 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_mediaCastStatusChangedEventHasBeenSet = true;
     }
 
+    if (value.HasMember("PersistenceCompleteEvent") && !value["PersistenceCompleteEvent"].IsNull())
+    {
+        if (!value["PersistenceCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.PersistenceCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_persistenceCompleteEvent.Deserialize(value["PersistenceCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_persistenceCompleteEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -747,6 +765,15 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mediaCastStatusChangedEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_persistenceCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PersistenceCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_persistenceCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1182,5 +1209,21 @@ void EventContent::SetMediaCastStatusChangedEvent(const MediaCastEvent& _mediaCa
 bool EventContent::MediaCastStatusChangedEventHasBeenSet() const
 {
     return m_mediaCastStatusChangedEventHasBeenSet;
+}
+
+PersistenceCompleteTask EventContent::GetPersistenceCompleteEvent() const
+{
+    return m_persistenceCompleteEvent;
+}
+
+void EventContent::SetPersistenceCompleteEvent(const PersistenceCompleteTask& _persistenceCompleteEvent)
+{
+    m_persistenceCompleteEvent = _persistenceCompleteEvent;
+    m_persistenceCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::PersistenceCompleteEventHasBeenSet() const
+{
+    return m_persistenceCompleteEventHasBeenSet;
 }
 

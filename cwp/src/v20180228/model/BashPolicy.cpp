@@ -36,7 +36,8 @@ BashPolicy::BashPolicy() :
     m_categoryHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_uuidsHasBeenSet(false)
+    m_uuidsHasBeenSet(false),
+    m_rulesHasBeenSet(false)
 {
 }
 
@@ -211,6 +212,23 @@ CoreInternalOutcome BashPolicy::Deserialize(const rapidjson::Value &value)
         m_uuidsHasBeenSet = true;
     }
 
+    if (value.HasMember("Rules") && !value["Rules"].IsNull())
+    {
+        if (!value["Rules"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashPolicy.Rules` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rules.Deserialize(value["Rules"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +372,15 @@ void BashPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_rulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Rules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rules.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -613,5 +640,21 @@ void BashPolicy::SetUuids(const vector<string>& _uuids)
 bool BashPolicy::UuidsHasBeenSet() const
 {
     return m_uuidsHasBeenSet;
+}
+
+PolicyRules BashPolicy::GetRules() const
+{
+    return m_rules;
+}
+
+void BashPolicy::SetRules(const PolicyRules& _rules)
+{
+    m_rules = _rules;
+    m_rulesHasBeenSet = true;
+}
+
+bool BashPolicy::RulesHasBeenSet() const
+{
+    return m_rulesHasBeenSet;
 }
 

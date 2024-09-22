@@ -99,6 +99,20 @@ namespace TencentCloud
                      */
                     bool DeleteMediaCompleteEventSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取是否接收剪辑固化完成事件通知，"OFF" 为忽略该事件通知，"ON" 为接收事件通知。
+                     * @return PersistenceCompleteEventSwitch 是否接收剪辑固化完成事件通知，"OFF" 为忽略该事件通知，"ON" 为接收事件通知。
+                     * 
+                     */
+                    std::string GetPersistenceCompleteEventSwitch() const;
+
+                    /**
+                     * 判断参数 PersistenceCompleteEventSwitch 是否已赋值
+                     * @return PersistenceCompleteEventSwitch 是否已赋值
+                     * 
+                     */
+                    bool PersistenceCompleteEventSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +138,12 @@ namespace TencentCloud
                      */
                     std::string m_deleteMediaCompleteEventSwitch;
                     bool m_deleteMediaCompleteEventSwitchHasBeenSet;
+
+                    /**
+                     * 是否接收剪辑固化完成事件通知，"OFF" 为忽略该事件通知，"ON" 为接收事件通知。
+                     */
+                    std::string m_persistenceCompleteEventSwitch;
+                    bool m_persistenceCompleteEventSwitchHasBeenSet;
 
                 };
             }

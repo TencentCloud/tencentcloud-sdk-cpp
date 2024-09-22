@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cwp/v20180228/model/PolicyRules.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取校验内容 Name或Rule ，两个都要校验时逗号分割
-                     * @return CheckField 校验内容 Name或Rule ，两个都要校验时逗号分割
+                     * 获取校验内容字段,如果需要检测多个字段时,用逗号分割
+<li>Name 策略名称</li>
+<li>Process 进程</li>
+<li>Name PProcess 父进程</li>
+<li>Name AProcess 祖先进程</li>
+
+                     * @return CheckField 校验内容字段,如果需要检测多个字段时,用逗号分割
+<li>Name 策略名称</li>
+<li>Process 进程</li>
+<li>Name PProcess 父进程</li>
+<li>Name AProcess 祖先进程</li>
+
                      * 
                      */
                     std::string GetCheckField() const;
 
                     /**
-                     * 设置校验内容 Name或Rule ，两个都要校验时逗号分割
-                     * @param _checkField 校验内容 Name或Rule ，两个都要校验时逗号分割
+                     * 设置校验内容字段,如果需要检测多个字段时,用逗号分割
+<li>Name 策略名称</li>
+<li>Process 进程</li>
+<li>Name PProcess 父进程</li>
+<li>Name AProcess 祖先进程</li>
+
+                     * @param _checkField 校验内容字段,如果需要检测多个字段时,用逗号分割
+<li>Name 策略名称</li>
+<li>Process 进程</li>
+<li>Name PProcess 父进程</li>
+<li>Name AProcess 祖先进程</li>
+
                      * 
                      */
                     void SetCheckField(const std::string& _checkField);
@@ -106,15 +127,19 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取用户填入的正则表达式："正则表达式" 需与 "提交EventId对应的命令内容" 相匹配
-                     * @return Rule 用户填入的正则表达式："正则表达式" 需与 "提交EventId对应的命令内容" 相匹配
+                     * 获取该字段不在维护,如果填入该参数,自动替换到Rules.Process
+
+                     * @return Rule 该字段不在维护,如果填入该参数,自动替换到Rules.Process
+
                      * 
                      */
                     std::string GetRule() const;
 
                     /**
-                     * 设置用户填入的正则表达式："正则表达式" 需与 "提交EventId对应的命令内容" 相匹配
-                     * @param _rule 用户填入的正则表达式："正则表达式" 需与 "提交EventId对应的命令内容" 相匹配
+                     * 设置该字段不在维护,如果填入该参数,自动替换到Rules.Process
+
+                     * @param _rule 该字段不在维护,如果填入该参数,自动替换到Rules.Process
+
                      * 
                      */
                     void SetRule(const std::string& _rule);
@@ -147,10 +172,36 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取规则表达式
+                     * @return Rules 规则表达式
+                     * 
+                     */
+                    PolicyRules GetRules() const;
+
+                    /**
+                     * 设置规则表达式
+                     * @param _rules 规则表达式
+                     * 
+                     */
+                    void SetRules(const PolicyRules& _rules);
+
+                    /**
+                     * 判断参数 Rules 是否已赋值
+                     * @return Rules 是否已赋值
+                     * 
+                     */
+                    bool RulesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 校验内容 Name或Rule ，两个都要校验时逗号分割
+                     * 校验内容字段,如果需要检测多个字段时,用逗号分割
+<li>Name 策略名称</li>
+<li>Process 进程</li>
+<li>Name PProcess 父进程</li>
+<li>Name AProcess 祖先进程</li>
+
                      */
                     std::string m_checkField;
                     bool m_checkFieldHasBeenSet;
@@ -168,7 +219,8 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 用户填入的正则表达式："正则表达式" 需与 "提交EventId对应的命令内容" 相匹配
+                     * 该字段不在维护,如果填入该参数,自动替换到Rules.Process
+
                      */
                     std::string m_rule;
                     bool m_ruleHasBeenSet;
@@ -178,6 +230,12 @@ namespace TencentCloud
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 规则表达式
+                     */
+                    PolicyRules m_rules;
+                    bool m_rulesHasBeenSet;
 
                 };
             }

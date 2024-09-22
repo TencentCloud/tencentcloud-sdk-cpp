@@ -649,6 +649,31 @@ namespace TencentCloud
                      */
                     bool BandwidthPackageIdHasBeenSet() const;
 
+                    /**
+                     * 获取传统弹性公网IPv6所属vpc唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UnVpcId 传统弹性公网IPv6所属vpc唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUnVpcId() const;
+
+                    /**
+                     * 设置传统弹性公网IPv6所属vpc唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _unVpcId 传统弹性公网IPv6所属vpc唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUnVpcId(const std::string& _unVpcId);
+
+                    /**
+                     * 判断参数 UnVpcId 是否已赋值
+                     * @return UnVpcId 是否已赋值
+                     * 
+                     */
+                    bool UnVpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -819,6 +844,13 @@ namespace TencentCloud
                      */
                     std::string m_bandwidthPackageId;
                     bool m_bandwidthPackageIdHasBeenSet;
+
+                    /**
+                     * 传统弹性公网IPv6所属vpc唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_unVpcId;
+                    bool m_unVpcIdHasBeenSet;
 
                 };
             }

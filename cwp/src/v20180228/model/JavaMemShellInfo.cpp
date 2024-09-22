@@ -31,7 +31,12 @@ JavaMemShellInfo::JavaMemShellInfo() :
     m_statusHasBeenSet(false),
     m_quuidHasBeenSet(false),
     m_machineExtraInfoHasBeenSet(false),
-    m_uuidHasBeenSet(false)
+    m_uuidHasBeenSet(false),
+    m_classNameHasBeenSet(false),
+    m_superClassNameHasBeenSet(false),
+    m_interfacesHasBeenSet(false),
+    m_annotationsHasBeenSet(false),
+    m_loaderClassNameHasBeenSet(false)
 {
 }
 
@@ -157,6 +162,56 @@ CoreInternalOutcome JavaMemShellInfo::Deserialize(const rapidjson::Value &value)
         m_uuidHasBeenSet = true;
     }
 
+    if (value.HasMember("ClassName") && !value["ClassName"].IsNull())
+    {
+        if (!value["ClassName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JavaMemShellInfo.ClassName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_className = string(value["ClassName"].GetString());
+        m_classNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SuperClassName") && !value["SuperClassName"].IsNull())
+    {
+        if (!value["SuperClassName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JavaMemShellInfo.SuperClassName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_superClassName = string(value["SuperClassName"].GetString());
+        m_superClassNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Interfaces") && !value["Interfaces"].IsNull())
+    {
+        if (!value["Interfaces"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JavaMemShellInfo.Interfaces` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_interfaces = string(value["Interfaces"].GetString());
+        m_interfacesHasBeenSet = true;
+    }
+
+    if (value.HasMember("Annotations") && !value["Annotations"].IsNull())
+    {
+        if (!value["Annotations"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JavaMemShellInfo.Annotations` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_annotations = string(value["Annotations"].GetString());
+        m_annotationsHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoaderClassName") && !value["LoaderClassName"].IsNull())
+    {
+        if (!value["LoaderClassName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JavaMemShellInfo.LoaderClassName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loaderClassName = string(value["LoaderClassName"].GetString());
+        m_loaderClassNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +306,46 @@ void JavaMemShellInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_classNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClassName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_className.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_superClassNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuperClassName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_superClassName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_interfacesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Interfaces";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_interfaces.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_annotationsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Annotations";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_annotations.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loaderClassNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoaderClassName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loaderClassName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -430,5 +525,85 @@ void JavaMemShellInfo::SetUuid(const string& _uuid)
 bool JavaMemShellInfo::UuidHasBeenSet() const
 {
     return m_uuidHasBeenSet;
+}
+
+string JavaMemShellInfo::GetClassName() const
+{
+    return m_className;
+}
+
+void JavaMemShellInfo::SetClassName(const string& _className)
+{
+    m_className = _className;
+    m_classNameHasBeenSet = true;
+}
+
+bool JavaMemShellInfo::ClassNameHasBeenSet() const
+{
+    return m_classNameHasBeenSet;
+}
+
+string JavaMemShellInfo::GetSuperClassName() const
+{
+    return m_superClassName;
+}
+
+void JavaMemShellInfo::SetSuperClassName(const string& _superClassName)
+{
+    m_superClassName = _superClassName;
+    m_superClassNameHasBeenSet = true;
+}
+
+bool JavaMemShellInfo::SuperClassNameHasBeenSet() const
+{
+    return m_superClassNameHasBeenSet;
+}
+
+string JavaMemShellInfo::GetInterfaces() const
+{
+    return m_interfaces;
+}
+
+void JavaMemShellInfo::SetInterfaces(const string& _interfaces)
+{
+    m_interfaces = _interfaces;
+    m_interfacesHasBeenSet = true;
+}
+
+bool JavaMemShellInfo::InterfacesHasBeenSet() const
+{
+    return m_interfacesHasBeenSet;
+}
+
+string JavaMemShellInfo::GetAnnotations() const
+{
+    return m_annotations;
+}
+
+void JavaMemShellInfo::SetAnnotations(const string& _annotations)
+{
+    m_annotations = _annotations;
+    m_annotationsHasBeenSet = true;
+}
+
+bool JavaMemShellInfo::AnnotationsHasBeenSet() const
+{
+    return m_annotationsHasBeenSet;
+}
+
+string JavaMemShellInfo::GetLoaderClassName() const
+{
+    return m_loaderClassName;
+}
+
+void JavaMemShellInfo::SetLoaderClassName(const string& _loaderClassName)
+{
+    m_loaderClassName = _loaderClassName;
+    m_loaderClassNameHasBeenSet = true;
+}
+
+bool JavaMemShellInfo::LoaderClassNameHasBeenSet() const
+{
+    return m_loaderClassNameHasBeenSet;
 }
 

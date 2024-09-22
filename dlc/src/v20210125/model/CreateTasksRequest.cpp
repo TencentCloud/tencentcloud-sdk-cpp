@@ -27,7 +27,8 @@ CreateTasksRequest::CreateTasksRequest() :
     m_tasksHasBeenSet(false),
     m_datasourceConnectionNameHasBeenSet(false),
     m_dataEngineNameHasBeenSet(false),
-    m_resourceGroupNameHasBeenSet(false)
+    m_resourceGroupNameHasBeenSet(false),
+    m_isMultiStatementHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string CreateTasksRequest::ToJsonString() const
         string key = "ResourceGroupName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isMultiStatementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMultiStatement";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isMultiStatement, allocator);
     }
 
 
@@ -165,6 +174,22 @@ void CreateTasksRequest::SetResourceGroupName(const string& _resourceGroupName)
 bool CreateTasksRequest::ResourceGroupNameHasBeenSet() const
 {
     return m_resourceGroupNameHasBeenSet;
+}
+
+bool CreateTasksRequest::GetIsMultiStatement() const
+{
+    return m_isMultiStatement;
+}
+
+void CreateTasksRequest::SetIsMultiStatement(const bool& _isMultiStatement)
+{
+    m_isMultiStatement = _isMultiStatement;
+    m_isMultiStatementHasBeenSet = true;
+}
+
+bool CreateTasksRequest::IsMultiStatementHasBeenSet() const
+{
+    return m_isMultiStatementHasBeenSet;
 }
 
 

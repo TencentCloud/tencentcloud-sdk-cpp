@@ -139,6 +139,27 @@ namespace TencentCloud
                     bool DeleteMediaCompleteEventSwitchHasBeenSet() const;
 
                     /**
+                     * 获取是否接收剪辑固化完成事件通知，  默认 "OFF" 为忽略该事件通知，"ON" 为接收事件通知。
+                     * @return PersistenceCompleteEventSwitch 是否接收剪辑固化完成事件通知，  默认 "OFF" 为忽略该事件通知，"ON" 为接收事件通知。
+                     * 
+                     */
+                    std::string GetPersistenceCompleteEventSwitch() const;
+
+                    /**
+                     * 设置是否接收剪辑固化完成事件通知，  默认 "OFF" 为忽略该事件通知，"ON" 为接收事件通知。
+                     * @param _persistenceCompleteEventSwitch 是否接收剪辑固化完成事件通知，  默认 "OFF" 为忽略该事件通知，"ON" 为接收事件通知。
+                     * 
+                     */
+                    void SetPersistenceCompleteEventSwitch(const std::string& _persistenceCompleteEventSwitch);
+
+                    /**
+                     * 判断参数 PersistenceCompleteEventSwitch 是否已赋值
+                     * @return PersistenceCompleteEventSwitch 是否已赋值
+                     * 
+                     */
+                    bool PersistenceCompleteEventSwitchHasBeenSet() const;
+
+                    /**
                      * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
                      * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
                      * 
@@ -187,6 +208,12 @@ namespace TencentCloud
                      */
                     std::string m_deleteMediaCompleteEventSwitch;
                     bool m_deleteMediaCompleteEventSwitchHasBeenSet;
+
+                    /**
+                     * 是否接收剪辑固化完成事件通知，  默认 "OFF" 为忽略该事件通知，"ON" 为接收事件通知。
+                     */
+                    std::string m_persistenceCompleteEventSwitch;
+                    bool m_persistenceCompleteEventSwitchHasBeenSet;
 
                     /**
                      * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>

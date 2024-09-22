@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool ResourceGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用multi- statement方式运行一批次任务，true: 是，false: 否
+                     * @return IsMultiStatement 是否使用multi- statement方式运行一批次任务，true: 是，false: 否
+                     * 
+                     */
+                    bool GetIsMultiStatement() const;
+
+                    /**
+                     * 设置是否使用multi- statement方式运行一批次任务，true: 是，false: 否
+                     * @param _isMultiStatement 是否使用multi- statement方式运行一批次任务，true: 是，false: 否
+                     * 
+                     */
+                    void SetIsMultiStatement(const bool& _isMultiStatement);
+
+                    /**
+                     * 判断参数 IsMultiStatement 是否已赋值
+                     * @return IsMultiStatement 是否已赋值
+                     * 
+                     */
+                    bool IsMultiStatementHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +200,12 @@ namespace TencentCloud
                      */
                     std::string m_resourceGroupName;
                     bool m_resourceGroupNameHasBeenSet;
+
+                    /**
+                     * 是否使用multi- statement方式运行一批次任务，true: 是，false: 否
+                     */
+                    bool m_isMultiStatement;
+                    bool m_isMultiStatementHasBeenSet;
 
                 };
             }
