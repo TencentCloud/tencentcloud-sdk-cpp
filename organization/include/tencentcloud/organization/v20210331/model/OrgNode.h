@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/organization/v20210331/model/Tag.h>
 
 
 namespace TencentCloud
@@ -196,6 +197,31 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取成员标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 成员标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置成员标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tags 成员标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +265,13 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 成员标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

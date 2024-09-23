@@ -3308,6 +3308,49 @@ OrganizationClient::GetZoneStatisticsOutcomeCallable OrganizationClient::GetZone
     return task->get_future();
 }
 
+OrganizationClient::InviteOrganizationMemberOutcome OrganizationClient::InviteOrganizationMember(const InviteOrganizationMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "InviteOrganizationMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InviteOrganizationMemberResponse rsp = InviteOrganizationMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InviteOrganizationMemberOutcome(rsp);
+        else
+            return InviteOrganizationMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return InviteOrganizationMemberOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::InviteOrganizationMemberAsync(const InviteOrganizationMemberRequest& request, const InviteOrganizationMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InviteOrganizationMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::InviteOrganizationMemberOutcomeCallable OrganizationClient::InviteOrganizationMemberCallable(const InviteOrganizationMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InviteOrganizationMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->InviteOrganizationMember(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::ListExternalSAMLIdPCertificatesOutcome OrganizationClient::ListExternalSAMLIdPCertificates(const ListExternalSAMLIdPCertificatesRequest &request)
 {
     auto outcome = MakeRequest(request, "ListExternalSAMLIdPCertificates");
@@ -4505,6 +4548,49 @@ OrganizationClient::SetExternalSAMLIdentityProviderOutcomeCallable OrganizationC
         [this, request]()
         {
             return this->SetExternalSAMLIdentityProvider(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::UpdateCustomPolicyForRoleConfigurationOutcome OrganizationClient::UpdateCustomPolicyForRoleConfiguration(const UpdateCustomPolicyForRoleConfigurationRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateCustomPolicyForRoleConfiguration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateCustomPolicyForRoleConfigurationResponse rsp = UpdateCustomPolicyForRoleConfigurationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateCustomPolicyForRoleConfigurationOutcome(rsp);
+        else
+            return UpdateCustomPolicyForRoleConfigurationOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateCustomPolicyForRoleConfigurationOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::UpdateCustomPolicyForRoleConfigurationAsync(const UpdateCustomPolicyForRoleConfigurationRequest& request, const UpdateCustomPolicyForRoleConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateCustomPolicyForRoleConfiguration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::UpdateCustomPolicyForRoleConfigurationOutcomeCallable OrganizationClient::UpdateCustomPolicyForRoleConfigurationCallable(const UpdateCustomPolicyForRoleConfigurationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateCustomPolicyForRoleConfigurationOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateCustomPolicyForRoleConfiguration(request);
         }
     );
 

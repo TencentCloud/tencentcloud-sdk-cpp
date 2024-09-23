@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/organization/v20210331/model/Tag.h>
 
 
 namespace TencentCloud
@@ -252,6 +253,27 @@ namespace TencentCloud
                      */
                     bool AuthRelationIdHasBeenSet() const;
 
+                    /**
+                     * 获取成员标签列表。最大10个
+                     * @return Tags 成员标签列表。最大10个
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置成员标签列表。最大10个
+                     * @param _tags 成员标签列表。最大10个
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +335,12 @@ namespace TencentCloud
                      */
                     int64_t m_authRelationId;
                     bool m_authRelationIdHasBeenSet;
+
+                    /**
+                     * 成员标签列表。最大10个
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RoleConfigurationIdHasBeenSet() const;
 
                     /**
-                     * 获取权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 前期只支持系统策略，自定义策略后期在支持
-                     * @return RolePolicyType 权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 前期只支持系统策略，自定义策略后期在支持
+                     * 获取权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 
+                     * @return RolePolicyType 权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 
                      * 
                      */
                     std::string GetRolePolicyType() const;
 
                     /**
-                     * 设置权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 前期只支持系统策略，自定义策略后期在支持
-                     * @param _rolePolicyType 权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 前期只支持系统策略，自定义策略后期在支持
+                     * 设置权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 
+                     * @param _rolePolicyType 权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 
                      * 
                      */
                     void SetRolePolicyType(const std::string& _rolePolicyType);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool RolePolicyTypeHasBeenSet() const;
 
                     /**
-                     * 获取权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。
-                     * @return RolePolicyNames 权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。
+                     * 获取权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。
+                     * @return RolePolicyNames 权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。
                      * 
                      */
                     std::vector<std::string> GetRolePolicyNames() const;
 
                     /**
-                     * 设置权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。
-                     * @param _rolePolicyNames 权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。
+                     * 设置权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。
+                     * @param _rolePolicyNames 权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。
                      * 
                      */
                     void SetRolePolicyNames(const std::vector<std::string>& _rolePolicyNames);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool RolePolicyNamesHasBeenSet() const;
 
                     /**
-                     * 获取策略详情。
-                     * @return RolePolicies 策略详情。
+                     * 获取添加的系统策略详情。
+                     * @return RolePolicies 添加的系统策略详情。
                      * 
                      */
                     std::vector<PolicyDetail> GetRolePolicies() const;
 
                     /**
-                     * 设置策略详情。
-                     * @param _rolePolicies 策略详情。
+                     * 设置添加的系统策略详情。
+                     * @param _rolePolicies 添加的系统策略详情。
                      * 
                      */
                     void SetRolePolicies(const std::vector<PolicyDetail>& _rolePolicies);
@@ -184,19 +184,19 @@ namespace TencentCloud
                     bool m_roleConfigurationIdHasBeenSet;
 
                     /**
-                     * 权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 前期只支持系统策略，自定义策略后期在支持
+                     * 权限策略类型。取值：  System：系统策略。复用 CAM 的系统策略。 Custom: 自定义策略。按照 CAM 权限策略语法和结构编写的自定义策略。 
                      */
                     std::string m_rolePolicyType;
                     bool m_rolePolicyTypeHasBeenSet;
 
                     /**
-                     * 权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。
+                     * 权限策略名称，长度最大为 20策略，每个策略长度最大32个字符。如果要添加系统策略，建议使用RolePolicies参数。自定义策略时，数组长度最大为1。
                      */
                     std::vector<std::string> m_rolePolicyNames;
                     bool m_rolePolicyNamesHasBeenSet;
 
                     /**
-                     * 策略详情。
+                     * 添加的系统策略详情。
                      */
                     std::vector<PolicyDetail> m_rolePolicies;
                     bool m_rolePoliciesHasBeenSet;

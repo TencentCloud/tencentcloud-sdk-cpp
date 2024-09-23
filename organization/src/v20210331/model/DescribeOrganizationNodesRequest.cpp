@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeOrganizationNodesRequest::DescribeOrganizationNodesRequest() :
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,21 @@ string DescribeOrganizationNodesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -89,6 +105,22 @@ void DescribeOrganizationNodesRequest::SetOffset(const int64_t& _offset)
 bool DescribeOrganizationNodesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+vector<Tag> DescribeOrganizationNodesRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void DescribeOrganizationNodesRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool DescribeOrganizationNodesRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

@@ -32,7 +32,8 @@ CreateOrganizationMemberRequest::CreateOrganizationMemberRequest() :
     m_recordIdHasBeenSet(false),
     m_payUinHasBeenSet(false),
     m_identityRoleIDHasBeenSet(false),
-    m_authRelationIdHasBeenSet(false)
+    m_authRelationIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,21 @@ string CreateOrganizationMemberRequest::ToJsonString() const
         string key = "AuthRelationId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_authRelationId, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -299,6 +315,22 @@ void CreateOrganizationMemberRequest::SetAuthRelationId(const int64_t& _authRela
 bool CreateOrganizationMemberRequest::AuthRelationIdHasBeenSet() const
 {
     return m_authRelationIdHasBeenSet;
+}
+
+vector<Tag> CreateOrganizationMemberRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateOrganizationMemberRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateOrganizationMemberRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

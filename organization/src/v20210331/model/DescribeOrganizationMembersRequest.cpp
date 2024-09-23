@@ -28,7 +28,8 @@ DescribeOrganizationMembersRequest::DescribeOrganizationMembersRequest() :
     m_langHasBeenSet(false),
     m_searchKeyHasBeenSet(false),
     m_authNameHasBeenSet(false),
-    m_productHasBeenSet(false)
+    m_productHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,21 @@ string DescribeOrganizationMembersRequest::ToJsonString() const
         string key = "Product";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -189,6 +205,22 @@ void DescribeOrganizationMembersRequest::SetProduct(const string& _product)
 bool DescribeOrganizationMembersRequest::ProductHasBeenSet() const
 {
     return m_productHasBeenSet;
+}
+
+vector<Tag> DescribeOrganizationMembersRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void DescribeOrganizationMembersRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool DescribeOrganizationMembersRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 
