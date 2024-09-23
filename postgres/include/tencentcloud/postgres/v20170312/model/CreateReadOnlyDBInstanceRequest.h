@@ -154,22 +154,22 @@ namespace TencentCloud
 
                     /**
                      * 获取购买时长，单位：月。
-<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
-<li>后付费：只支持1
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
+<li>后付费：只支持1</li>
                      * @return Period 购买时长，单位：月。
-<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
-<li>后付费：只支持1
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
+<li>后付费：只支持1</li>
                      * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
                      * 设置购买时长，单位：月。
-<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
-<li>后付费：只支持1
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
+<li>后付费：只支持1</li>
                      * @param _period 购买时长，单位：月。
-<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
-<li>后付费：只支持1
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
+<li>后付费：只支持1</li>
                      * 
                      */
                     void SetPeriod(const uint64_t& _period);
@@ -182,15 +182,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
-                     * @return VpcId 私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * 获取私有网络ID，形如vpc-xxxxxxxx（该参数当前必传）。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * @return VpcId 私有网络ID，形如vpc-xxxxxxxx（该参数当前必传）。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
-                     * @param _vpcId 私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * 设置私有网络ID，形如vpc-xxxxxxxx（该参数当前必传）。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * @param _vpcId 私有网络ID，形如vpc-xxxxxxxx（该参数当前必传）。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -203,15 +203,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
-                     * @return SubnetId 私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * 获取私有网络子网ID，形如subnet-xxxxxxxx（该参数当前必传）。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * @return SubnetId 私有网络子网ID，形如subnet-xxxxxxxx（该参数当前必传）。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
-                     * @param _subnetId 私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * 设置私有网络子网ID，形如subnet-xxxxxxxx（该参数当前必传）。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * @param _subnetId 私有网络子网ID，形如subnet-xxxxxxxx（该参数当前必传）。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -225,12 +225,12 @@ namespace TencentCloud
 
                     /**
                      * 获取实例计费类型，目前支持：
-<li>PREPAID：预付费，即包年包月。
-<li>POSTPAID_BY_HOUR：后付费，即按量计费。
+<li>PREPAID：预付费，即包年包月。</li>
+<li>POSTPAID_BY_HOUR：后付费，即按量计费。</li>
 默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。
                      * @return InstanceChargeType 实例计费类型，目前支持：
-<li>PREPAID：预付费，即包年包月。
-<li>POSTPAID_BY_HOUR：后付费，即按量计费。
+<li>PREPAID：预付费，即包年包月。</li>
+<li>POSTPAID_BY_HOUR：后付费，即按量计费。</li>
 默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。
                      * 
                      */
@@ -238,12 +238,12 @@ namespace TencentCloud
 
                     /**
                      * 设置实例计费类型，目前支持：
-<li>PREPAID：预付费，即包年包月。
-<li>POSTPAID_BY_HOUR：后付费，即按量计费。
+<li>PREPAID：预付费，即包年包月。</li>
+<li>POSTPAID_BY_HOUR：后付费，即按量计费。</li>
 默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。
                      * @param _instanceChargeType 实例计费类型，目前支持：
-<li>PREPAID：预付费，即包年包月。
-<li>POSTPAID_BY_HOUR：后付费，即按量计费。
+<li>PREPAID：预付费，即包年包月。</li>
+<li>POSTPAID_BY_HOUR：后付费，即按量计费。</li>
 默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。
                      * 
                      */
@@ -258,12 +258,12 @@ namespace TencentCloud
 
                     /**
                      * 获取是否自动使用代金券：
-<li>0：否
-<li>1：是
+<li>0：否</li>
+<li>1：是</li>
 默认值：0
                      * @return AutoVoucher 是否自动使用代金券：
-<li>0：否
-<li>1：是
+<li>0：否</li>
+<li>1：是</li>
 默认值：0
                      * 
                      */
@@ -271,12 +271,12 @@ namespace TencentCloud
 
                     /**
                      * 设置是否自动使用代金券：
-<li>0：否
-<li>1：是
+<li>0：否</li>
+<li>1：是</li>
 默认值：0
                      * @param _autoVoucher 是否自动使用代金券：
-<li>0：否
-<li>1：是
+<li>0：否</li>
+<li>1：是</li>
 默认值：0
                      * 
                      */
@@ -312,12 +312,12 @@ namespace TencentCloud
 
                     /**
                      * 获取续费标记：
-<li>0：手动续费
-<li>1：自动续费
+<li>0：手动续费</li>
+<li>1：自动续费</li>
 默认值：0
                      * @return AutoRenewFlag 续费标记：
-<li>0：手动续费
-<li>1：自动续费
+<li>0：手动续费</li>
+<li>1：自动续费</li>
 默认值：0
                      * 
                      */
@@ -325,12 +325,12 @@ namespace TencentCloud
 
                     /**
                      * 设置续费标记：
-<li>0：手动续费
-<li>1：自动续费
+<li>0：手动续费</li>
+<li>1：自动续费</li>
 默认值：0
                      * @param _autoRenewFlag 续费标记：
-<li>0：手动续费
-<li>1：自动续费
+<li>0：手动续费</li>
+<li>1：自动续费</li>
 默认值：0
                      * 
                      */
@@ -454,12 +454,12 @@ namespace TencentCloud
 
                     /**
                      * 获取是否需要支持Ipv6：
-<li>0：否
-<li>1：是
+<li>0：否</li>
+<li>1：是</li>
 默认值：0
                      * @return NeedSupportIpv6 是否需要支持Ipv6：
-<li>0：否
-<li>1：是
+<li>0：否</li>
+<li>1：是</li>
 默认值：0
                      * 
                      */
@@ -467,12 +467,12 @@ namespace TencentCloud
 
                     /**
                      * 设置是否需要支持Ipv6：
-<li>0：否
-<li>1：是
+<li>0：否</li>
+<li>1：是</li>
 默认值：0
                      * @param _needSupportIpv6 是否需要支持Ipv6：
-<li>0：否
-<li>1：是
+<li>0：否</li>
+<li>1：是</li>
 默认值：0
                      * 
                      */
@@ -562,28 +562,28 @@ namespace TencentCloud
 
                     /**
                      * 购买时长，单位：月。
-<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
-<li>后付费：只支持1
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
+<li>后付费：只支持1</li>
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * 私有网络ID，形如vpc-xxxxxxxx（该参数当前必传）。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * 私有网络子网ID，形如subnet-xxxxxxxx（该参数当前必传）。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 实例计费类型，目前支持：
-<li>PREPAID：预付费，即包年包月。
-<li>POSTPAID_BY_HOUR：后付费，即按量计费。
+<li>PREPAID：预付费，即包年包月。</li>
+<li>POSTPAID_BY_HOUR：后付费，即按量计费。</li>
 默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。
                      */
                     std::string m_instanceChargeType;
@@ -591,8 +591,8 @@ namespace TencentCloud
 
                     /**
                      * 是否自动使用代金券：
-<li>0：否
-<li>1：是
+<li>0：否</li>
+<li>1：是</li>
 默认值：0
                      */
                     uint64_t m_autoVoucher;
@@ -606,8 +606,8 @@ namespace TencentCloud
 
                     /**
                      * 续费标记：
-<li>0：手动续费
-<li>1：自动续费
+<li>0：手动续费</li>
+<li>1：自动续费</li>
 默认值：0
                      */
                     int64_t m_autoRenewFlag;
@@ -646,8 +646,8 @@ namespace TencentCloud
 
                     /**
                      * 是否需要支持Ipv6：
-<li>0：否
-<li>1：是
+<li>0：否</li>
+<li>1：是</li>
 默认值：0
                      */
                     uint64_t m_needSupportIpv6;

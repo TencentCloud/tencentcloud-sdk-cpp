@@ -65,14 +65,18 @@ namespace TencentCloud
 
                     /**
                      * 获取最大上限(需要拉取的套餐包个数)。
+注：Limit默认最大值为500，可结合Offset实现分页查询。
                      * @return Limit 最大上限(需要拉取的套餐包个数)。
+注：Limit默认最大值为500，可结合Offset实现分页查询。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置最大上限(需要拉取的套餐包个数)。
+注：Limit默认最大值为500，可结合Offset实现分页查询。
                      * @param _limit 最大上限(需要拉取的套餐包个数)。
+注：Limit默认最大值为500，可结合Offset实现分页查询。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -106,18 +110,18 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
+                     * 获取起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。
 注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。
-                     * @return BeginTime 起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
+                     * @return BeginTime 起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。
 注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
+                     * 设置起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。
 注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。
-                     * @param _beginTime 起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
+                     * @param _beginTime 起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。
 注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。
                      * 
                      */
@@ -131,18 +135,18 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
+                     * 获取结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。
 注：EndTime 必须大于 BeginTime 且小于当前时间。
-                     * @return EndTime 结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
+                     * @return EndTime 结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。
 注：EndTime 必须大于 BeginTime 且小于当前时间。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
+                     * 设置结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。
 注：EndTime 必须大于 BeginTime 且小于当前时间。
-                     * @param _endTime 结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
+                     * @param _endTime 结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。
 注：EndTime 必须大于 BeginTime 且小于当前时间。
                      * 
                      */
@@ -165,6 +169,7 @@ namespace TencentCloud
 
                     /**
                      * 最大上限(需要拉取的套餐包个数)。
+注：Limit默认最大值为500，可结合Offset实现分页查询。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -176,14 +181,14 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
+                     * 起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。
 注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
+                     * 结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。
 注：EndTime 必须大于 BeginTime 且小于当前时间。
                      */
                     std::string m_endTime;

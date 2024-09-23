@@ -1846,6 +1846,49 @@ ApigatewayClient::DescribeExclusiveInstanceDetailOutcomeCallable ApigatewayClien
     return task->get_future();
 }
 
+ApigatewayClient::DescribeExclusiveInstanceRegionsOutcome ApigatewayClient::DescribeExclusiveInstanceRegions(const DescribeExclusiveInstanceRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExclusiveInstanceRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExclusiveInstanceRegionsResponse rsp = DescribeExclusiveInstanceRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExclusiveInstanceRegionsOutcome(rsp);
+        else
+            return DescribeExclusiveInstanceRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExclusiveInstanceRegionsOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribeExclusiveInstanceRegionsAsync(const DescribeExclusiveInstanceRegionsRequest& request, const DescribeExclusiveInstanceRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExclusiveInstanceRegions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribeExclusiveInstanceRegionsOutcomeCallable ApigatewayClient::DescribeExclusiveInstanceRegionsCallable(const DescribeExclusiveInstanceRegionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExclusiveInstanceRegionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExclusiveInstanceRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::DescribeExclusiveInstancesOutcome ApigatewayClient::DescribeExclusiveInstances(const DescribeExclusiveInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExclusiveInstances");

@@ -65,14 +65,18 @@ namespace TencentCloud
 
                     /**
                      * 获取最大上限(需要拉取的套餐包个数)。
+注：Limit默认最大值为500，可结合Offset实现分页查询。
                      * @return Limit 最大上限(需要拉取的套餐包个数)。
+注：Limit默认最大值为500，可结合Offset实现分页查询。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置最大上限(需要拉取的套餐包个数)。
+注：Limit默认最大值为500，可结合Offset实现分页查询。
                      * @param _limit 最大上限(需要拉取的套餐包个数)。
+注：Limit默认最大值为500，可结合Offset实现分页查询。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -86,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取偏移量。
-注：目前固定设置为0。
                      * @return Offset 偏移量。
-注：目前固定设置为0。
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量。
-注：目前固定设置为0。
                      * @param _offset 偏移量。
-注：目前固定设置为0。
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -119,13 +119,13 @@ namespace TencentCloud
 
                     /**
                      * 最大上限(需要拉取的套餐包个数)。
+注：Limit默认最大值为500，可结合Offset实现分页查询。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
                      * 偏移量。
-注：目前固定设置为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

@@ -65,18 +65,18 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时
-注：EndDataTime 必须大于 StartDateTime。
+注：EndDataTime 必须大于等于 StartDateTime。
                      * @return EndDataTime 结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时
-注：EndDataTime 必须大于 StartDateTime。
+注：EndDataTime 必须大于等于 StartDateTime。
                      * 
                      */
                     uint64_t GetEndDataTime() const;
 
                     /**
                      * 设置结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时
-注：EndDataTime 必须大于 StartDateTime。
+注：EndDataTime 必须大于等于 StartDateTime。
                      * @param _endDataTime 结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时
-注：EndDataTime 必须大于 StartDateTime。
+注：EndDataTime 必须大于等于 StartDateTime。
                      * 
                      */
                     void SetEndDataTime(const uint64_t& _endDataTime);
@@ -169,7 +169,7 @@ namespace TencentCloud
 
                     /**
                      * 结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时
-注：EndDataTime 必须大于 StartDateTime。
+注：EndDataTime 必须大于等于 StartDateTime。
                      */
                     uint64_t m_endDataTime;
                     bool m_endDataTimeHasBeenSet;

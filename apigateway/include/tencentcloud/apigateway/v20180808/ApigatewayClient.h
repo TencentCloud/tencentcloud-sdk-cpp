@@ -107,6 +107,8 @@
 #include <tencentcloud/apigateway/v20180808/model/DescribeApisStatusResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstanceDetailRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstanceDetailResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstanceRegionsRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstanceRegionsResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstancesRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstancesResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeExclusiveInstancesStatusRequest.h>
@@ -355,6 +357,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExclusiveInstanceDetailResponse> DescribeExclusiveInstanceDetailOutcome;
                 typedef std::future<DescribeExclusiveInstanceDetailOutcome> DescribeExclusiveInstanceDetailOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeExclusiveInstanceDetailRequest&, DescribeExclusiveInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExclusiveInstanceDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExclusiveInstanceRegionsResponse> DescribeExclusiveInstanceRegionsOutcome;
+                typedef std::future<DescribeExclusiveInstanceRegionsOutcome> DescribeExclusiveInstanceRegionsOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DescribeExclusiveInstanceRegionsRequest&, DescribeExclusiveInstanceRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExclusiveInstanceRegionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExclusiveInstancesResponse> DescribeExclusiveInstancesOutcome;
                 typedef std::future<DescribeExclusiveInstancesOutcome> DescribeExclusiveInstancesOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeExclusiveInstancesRequest&, DescribeExclusiveInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExclusiveInstancesAsyncHandler;
@@ -909,6 +914,15 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 DescribeExclusiveInstanceDetailOutcome DescribeExclusiveInstanceDetail(const Model::DescribeExclusiveInstanceDetailRequest &request);
                 void DescribeExclusiveInstanceDetailAsync(const Model::DescribeExclusiveInstanceDetailRequest& request, const DescribeExclusiveInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExclusiveInstanceDetailOutcomeCallable DescribeExclusiveInstanceDetailCallable(const Model::DescribeExclusiveInstanceDetailRequest& request);
+
+                /**
+                 *Get the list of supported regions for dedicated instances
+                 * @param req DescribeExclusiveInstanceRegionsRequest
+                 * @return DescribeExclusiveInstanceRegionsOutcome
+                 */
+                DescribeExclusiveInstanceRegionsOutcome DescribeExclusiveInstanceRegions(const Model::DescribeExclusiveInstanceRegionsRequest &request);
+                void DescribeExclusiveInstanceRegionsAsync(const Model::DescribeExclusiveInstanceRegionsRequest& request, const DescribeExclusiveInstanceRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExclusiveInstanceRegionsOutcomeCallable DescribeExclusiveInstanceRegionsCallable(const Model::DescribeExclusiveInstanceRegionsRequest& request);
 
                 /**
                  *本接口（DescribeExclusiveInstances）用于查询独享实例列表信息。

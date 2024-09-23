@@ -23,6 +23,7 @@ using namespace std;
 MultiDiskMC::MultiDiskMC() :
     m_countHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_sizeHasBeenSet(false),
     m_volumeHasBeenSet(false)
 {
 }
@@ -50,6 +51,16 @@ CoreInternalOutcome MultiDiskMC::Deserialize(const rapidjson::Value &value)
         }
         m_type = value["Type"].GetInt64();
         m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Size") && !value["Size"].IsNull())
+    {
+        if (!value["Size"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MultiDiskMC.Size` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_size = string(value["Size"].GetString());
+        m_sizeHasBeenSet = true;
     }
 
     if (value.HasMember("Volume") && !value["Volume"].IsNull())
@@ -83,6 +94,14 @@ void MultiDiskMC::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_sizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Size";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_size.c_str(), allocator).Move(), allocator);
     }
 
     if (m_volumeHasBeenSet)
@@ -126,6 +145,22 @@ void MultiDiskMC::SetType(const int64_t& _type)
 bool MultiDiskMC::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string MultiDiskMC::GetSize() const
+{
+    return m_size;
+}
+
+void MultiDiskMC::SetSize(const string& _size)
+{
+    m_size = _size;
+    m_sizeHasBeenSet = true;
+}
+
+bool MultiDiskMC::SizeHasBeenSet() const
+{
+    return m_sizeHasBeenSet;
 }
 
 int64_t MultiDiskMC::GetVolume() const

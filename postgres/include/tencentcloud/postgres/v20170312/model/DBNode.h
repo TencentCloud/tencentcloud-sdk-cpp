@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 描述实例节点信息，包括节点类型、节点所在可用区。
+                * 描述实例节点信息，包括节点类型、节点所在可用区、节点所在专属集群。
                 */
                 class DBNode : public AbstractModel
                 {

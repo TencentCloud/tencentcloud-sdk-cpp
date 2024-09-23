@@ -72,7 +72,9 @@ NodeHardwareInfo::NodeHardwareInfo() :
     m_disableApiTerminationHasBeenSet(false),
     m_tradeVersionHasBeenSet(false),
     m_servicesStatusHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_sharedClusterIdHasBeenSet(false),
+    m_sharedClusterIdDescHasBeenSet(false)
 {
 }
 
@@ -635,6 +637,26 @@ CoreInternalOutcome NodeHardwareInfo::Deserialize(const rapidjson::Value &value)
         m_remarkHasBeenSet = true;
     }
 
+    if (value.HasMember("SharedClusterId") && !value["SharedClusterId"].IsNull())
+    {
+        if (!value["SharedClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.SharedClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sharedClusterId = string(value["SharedClusterId"].GetString());
+        m_sharedClusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SharedClusterIdDesc") && !value["SharedClusterIdDesc"].IsNull())
+    {
+        if (!value["SharedClusterIdDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.SharedClusterIdDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sharedClusterIdDesc = string(value["SharedClusterIdDesc"].GetString());
+        m_sharedClusterIdDescHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1072,6 +1094,22 @@ void NodeHardwareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sharedClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SharedClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sharedClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sharedClusterIdDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SharedClusterIdDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sharedClusterIdDesc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1907,5 +1945,37 @@ void NodeHardwareInfo::SetRemark(const string& _remark)
 bool NodeHardwareInfo::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string NodeHardwareInfo::GetSharedClusterId() const
+{
+    return m_sharedClusterId;
+}
+
+void NodeHardwareInfo::SetSharedClusterId(const string& _sharedClusterId)
+{
+    m_sharedClusterId = _sharedClusterId;
+    m_sharedClusterIdHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::SharedClusterIdHasBeenSet() const
+{
+    return m_sharedClusterIdHasBeenSet;
+}
+
+string NodeHardwareInfo::GetSharedClusterIdDesc() const
+{
+    return m_sharedClusterIdDesc;
+}
+
+void NodeHardwareInfo::SetSharedClusterIdDesc(const string& _sharedClusterIdDesc)
+{
+    m_sharedClusterIdDesc = _sharedClusterIdDesc;
+    m_sharedClusterIdDescHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::SharedClusterIdDescHasBeenSet() const
+{
+    return m_sharedClusterIdDescHasBeenSet;
 }
 

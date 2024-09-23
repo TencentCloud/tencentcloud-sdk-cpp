@@ -97,6 +97,31 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
+                     * 获取磁盘大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Size 磁盘大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSize() const;
+
+                    /**
+                     * 设置磁盘大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _size 磁盘大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSize(const std::string& _size);
+
+                    /**
+                     * 判断参数 Size 是否已赋值
+                     * @return Size 是否已赋值
+                     * 
+                     */
+                    bool SizeHasBeenSet() const;
+
+                    /**
                      * 获取云盘大小
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Volume 云盘大小
@@ -136,6 +161,13 @@ namespace TencentCloud
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 磁盘大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_size;
+                    bool m_sizeHasBeenSet;
 
                     /**
                      * 云盘大小

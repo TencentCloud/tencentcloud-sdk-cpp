@@ -24,6 +24,7 @@
 #include <tencentcloud/ess/v20201111/model/FlowCreateApprover.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
+#include <tencentcloud/ess/v20201111/model/FlowBatchUrlInfo.h>
 
 
 namespace TencentCloud
@@ -346,6 +347,27 @@ namespace TencentCloud
                      */
                     bool SignTypeSelectorHasBeenSet() const;
 
+                    /**
+                     * 获取批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
+                     * @return FlowBatchUrlInfo 批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
+                     * 
+                     */
+                    FlowBatchUrlInfo GetFlowBatchUrlInfo() const;
+
+                    /**
+                     * 设置批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
+                     * @param _flowBatchUrlInfo 批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
+                     * 
+                     */
+                    void SetFlowBatchUrlInfo(const FlowBatchUrlInfo& _flowBatchUrlInfo);
+
+                    /**
+                     * 判断参数 FlowBatchUrlInfo 是否已赋值
+                     * @return FlowBatchUrlInfo 是否已赋值
+                     * 
+                     */
+                    bool FlowBatchUrlInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -429,6 +451,12 @@ namespace TencentCloud
                      */
                     uint64_t m_signTypeSelector;
                     bool m_signTypeSelectorHasBeenSet;
+
+                    /**
+                     * 批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
+                     */
+                    FlowBatchUrlInfo m_flowBatchUrlInfo;
+                    bool m_flowBatchUrlInfoHasBeenSet;
 
                 };
             }

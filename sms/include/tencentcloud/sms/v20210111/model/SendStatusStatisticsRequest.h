@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
-                     * @return BeginTime 起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
+                     * 获取起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。
+                     * @return BeginTime 起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
-                     * @param _beginTime 起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
+                     * 设置起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。
+                     * @param _beginTime 起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -64,19 +64,19 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
-注：EndTime 必须大于 BeginTime。
-                     * @return EndTime 结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
-注：EndTime 必须大于 BeginTime。
+                     * 获取结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。
+注：EndTime 必须大于等于 BeginTime。
+                     * @return EndTime 结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。
+注：EndTime 必须大于等于 BeginTime。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
-注：EndTime 必须大于 BeginTime。
-                     * @param _endTime 结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
-注：EndTime 必须大于 BeginTime。
+                     * 设置结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。
+注：EndTime 必须大于等于 BeginTime。
+                     * @param _endTime 结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。
+注：EndTime 必须大于等于 BeginTime。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -162,14 +162,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
+                     * 起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
-注：EndTime 必须大于 BeginTime。
+                     * 结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。
+注：EndTime 必须大于等于 BeginTime。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

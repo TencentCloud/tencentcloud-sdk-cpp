@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeDatabasesResponse::DescribeDatabasesResponse() :
     m_itemsHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_databasesHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,26 @@ CoreInternalOutcome DescribeDatabasesResponse::Deserialize(const string &payload
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Databases") && !rsp["Databases"].IsNull())
+    {
+        if (!rsp["Databases"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Databases` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Databases"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Database item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_databases.push_back(item);
+        }
+        m_databasesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +136,21 @@ string DescribeDatabasesResponse::ToJsonString() const
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_databasesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Databases";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_databases.begin(); itr != m_databases.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +183,16 @@ uint64_t DescribeDatabasesResponse::GetTotalCount() const
 bool DescribeDatabasesResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<Database> DescribeDatabasesResponse::GetDatabases() const
+{
+    return m_databases;
+}
+
+bool DescribeDatabasesResponse::DatabasesHasBeenSet() const
+{
+    return m_databasesHasBeenSet;
 }
 
 

@@ -1354,6 +1354,56 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取共享集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SharedClusterId 共享集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSharedClusterId() const;
+
+                    /**
+                     * 设置共享集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sharedClusterId 共享集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSharedClusterId(const std::string& _sharedClusterId);
+
+                    /**
+                     * 判断参数 SharedClusterId 是否已赋值
+                     * @return SharedClusterId 是否已赋值
+                     * 
+                     */
+                    bool SharedClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取共享集群id描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SharedClusterIdDesc 共享集群id描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSharedClusterIdDesc() const;
+
+                    /**
+                     * 设置共享集群id描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sharedClusterIdDesc 共享集群id描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSharedClusterIdDesc(const std::string& _sharedClusterIdDesc);
+
+                    /**
+                     * 判断参数 SharedClusterIdDesc 是否已赋值
+                     * @return SharedClusterIdDesc 是否已赋值
+                     * 
+                     */
+                    bool SharedClusterIdDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1720,6 +1770,20 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 共享集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sharedClusterId;
+                    bool m_sharedClusterIdHasBeenSet;
+
+                    /**
+                     * 共享集群id描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sharedClusterIdDesc;
+                    bool m_sharedClusterIdDescHasBeenSet;
 
                 };
             }

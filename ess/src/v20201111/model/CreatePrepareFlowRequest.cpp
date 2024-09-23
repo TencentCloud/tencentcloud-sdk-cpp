@@ -41,7 +41,8 @@ CreatePrepareFlowRequest::CreatePrepareFlowRequest() :
     m_ccInfosHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_initiatorComponentsHasBeenSet(false)
+    m_initiatorComponentsHasBeenSet(false),
+    m_flowDisplayTypeHasBeenSet(false)
 {
 }
 
@@ -221,6 +222,14 @@ string CreatePrepareFlowRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_flowDisplayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowDisplayType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flowDisplayType, allocator);
     }
 
 
@@ -533,6 +542,22 @@ void CreatePrepareFlowRequest::SetInitiatorComponents(const vector<Component>& _
 bool CreatePrepareFlowRequest::InitiatorComponentsHasBeenSet() const
 {
     return m_initiatorComponentsHasBeenSet;
+}
+
+int64_t CreatePrepareFlowRequest::GetFlowDisplayType() const
+{
+    return m_flowDisplayType;
+}
+
+void CreatePrepareFlowRequest::SetFlowDisplayType(const int64_t& _flowDisplayType)
+{
+    m_flowDisplayType = _flowDisplayType;
+    m_flowDisplayTypeHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::FlowDisplayTypeHasBeenSet() const
+{
+    return m_flowDisplayTypeHasBeenSet;
 }
 
 

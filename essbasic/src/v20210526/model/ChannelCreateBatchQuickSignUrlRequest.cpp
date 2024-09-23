@@ -30,7 +30,8 @@ ChannelCreateBatchQuickSignUrlRequest::ChannelCreateBatchQuickSignUrlRequest() :
     m_jumpUrlHasBeenSet(false),
     m_signatureTypesHasBeenSet(false),
     m_approverSignTypesHasBeenSet(false),
-    m_signTypeSelectorHasBeenSet(false)
+    m_signTypeSelectorHasBeenSet(false),
+    m_flowBatchUrlInfoHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,15 @@ string ChannelCreateBatchQuickSignUrlRequest::ToJsonString() const
         string key = "SignTypeSelector";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_signTypeSelector, allocator);
+    }
+
+    if (m_flowBatchUrlInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowBatchUrlInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_flowBatchUrlInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -256,6 +266,22 @@ void ChannelCreateBatchQuickSignUrlRequest::SetSignTypeSelector(const uint64_t& 
 bool ChannelCreateBatchQuickSignUrlRequest::SignTypeSelectorHasBeenSet() const
 {
     return m_signTypeSelectorHasBeenSet;
+}
+
+FlowBatchUrlInfo ChannelCreateBatchQuickSignUrlRequest::GetFlowBatchUrlInfo() const
+{
+    return m_flowBatchUrlInfo;
+}
+
+void ChannelCreateBatchQuickSignUrlRequest::SetFlowBatchUrlInfo(const FlowBatchUrlInfo& _flowBatchUrlInfo)
+{
+    m_flowBatchUrlInfo = _flowBatchUrlInfo;
+    m_flowBatchUrlInfoHasBeenSet = true;
+}
+
+bool ChannelCreateBatchQuickSignUrlRequest::FlowBatchUrlInfoHasBeenSet() const
+{
+    return m_flowBatchUrlInfoHasBeenSet;
 }
 
 

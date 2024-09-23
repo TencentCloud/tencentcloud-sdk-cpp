@@ -181,6 +181,31 @@ namespace TencentCloud
                      */
                     bool DiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取额外性能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtraPerformance 额外性能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetExtraPerformance() const;
+
+                    /**
+                     * 设置额外性能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extraPerformance 额外性能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtraPerformance(const int64_t& _extraPerformance);
+
+                    /**
+                     * 判断参数 ExtraPerformance 是否已赋值
+                     * @return ExtraPerformance 是否已赋值
+                     * 
+                     */
+                    bool ExtraPerformanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -218,6 +243,13 @@ namespace TencentCloud
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
+
+                    /**
+                     * 额外性能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_extraPerformance;
+                    bool m_extraPerformanceHasBeenSet;
 
                 };
             }

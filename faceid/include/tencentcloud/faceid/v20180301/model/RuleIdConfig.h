@@ -117,6 +117,43 @@ namespace TencentCloud
                      */
                     bool MouthOpenRecognitionHasBeenSet() const;
 
+                    /**
+                     * 获取意愿核身语音播报速度，配置后问答模式和点头模式的语音播报环节都会生效，默认值为0：
+0：智能语速（根据播报文案的长度自动调整语音播报速度）
+1：固定1倍速
+2：固定1.2倍速
+3：固定1.5倍速
+                     * @return Speed 意愿核身语音播报速度，配置后问答模式和点头模式的语音播报环节都会生效，默认值为0：
+0：智能语速（根据播报文案的长度自动调整语音播报速度）
+1：固定1倍速
+2：固定1.2倍速
+3：固定1.5倍速
+                     * 
+                     */
+                    uint64_t GetSpeed() const;
+
+                    /**
+                     * 设置意愿核身语音播报速度，配置后问答模式和点头模式的语音播报环节都会生效，默认值为0：
+0：智能语速（根据播报文案的长度自动调整语音播报速度）
+1：固定1倍速
+2：固定1.2倍速
+3：固定1.5倍速
+                     * @param _speed 意愿核身语音播报速度，配置后问答模式和点头模式的语音播报环节都会生效，默认值为0：
+0：智能语速（根据播报文案的长度自动调整语音播报速度）
+1：固定1倍速
+2：固定1.2倍速
+3：固定1.5倍速
+                     * 
+                     */
+                    void SetSpeed(const uint64_t& _speed);
+
+                    /**
+                     * 判断参数 Speed 是否已赋值
+                     * @return Speed 是否已赋值
+                     * 
+                     */
+                    bool SpeedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -138,6 +175,16 @@ namespace TencentCloud
                      */
                     bool m_mouthOpenRecognition;
                     bool m_mouthOpenRecognitionHasBeenSet;
+
+                    /**
+                     * 意愿核身语音播报速度，配置后问答模式和点头模式的语音播报环节都会生效，默认值为0：
+0：智能语速（根据播报文案的长度自动调整语音播报速度）
+1：固定1倍速
+2：固定1.2倍速
+3：固定1.5倍速
+                     */
+                    uint64_t m_speed;
+                    bool m_speedHasBeenSet;
 
                 };
             }

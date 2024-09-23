@@ -728,6 +728,49 @@ EmrClient::DescribeEmrOverviewMetricsOutcomeCallable EmrClient::DescribeEmrOverv
     return task->get_future();
 }
 
+EmrClient::DescribeGlobalConfigOutcome EmrClient::DescribeGlobalConfig(const DescribeGlobalConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGlobalConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGlobalConfigResponse rsp = DescribeGlobalConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGlobalConfigOutcome(rsp);
+        else
+            return DescribeGlobalConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGlobalConfigOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeGlobalConfigAsync(const DescribeGlobalConfigRequest& request, const DescribeGlobalConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGlobalConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeGlobalConfigOutcomeCallable EmrClient::DescribeGlobalConfigCallable(const DescribeGlobalConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGlobalConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGlobalConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeHBaseTableOverviewOutcome EmrClient::DescribeHBaseTableOverview(const DescribeHBaseTableOverviewRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHBaseTableOverview");
@@ -1796,6 +1839,49 @@ EmrClient::ModifyAutoScaleStrategyOutcomeCallable EmrClient::ModifyAutoScaleStra
         [this, request]()
         {
             return this->ModifyAutoScaleStrategy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::ModifyGlobalConfigOutcome EmrClient::ModifyGlobalConfig(const ModifyGlobalConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGlobalConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGlobalConfigResponse rsp = ModifyGlobalConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGlobalConfigOutcome(rsp);
+        else
+            return ModifyGlobalConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGlobalConfigOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyGlobalConfigAsync(const ModifyGlobalConfigRequest& request, const ModifyGlobalConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGlobalConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ModifyGlobalConfigOutcomeCallable EmrClient::ModifyGlobalConfigCallable(const ModifyGlobalConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGlobalConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGlobalConfig(request);
         }
     );
 

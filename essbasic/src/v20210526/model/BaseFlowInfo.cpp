@@ -32,7 +32,8 @@ BaseFlowInfo::BaseFlowInfo() :
     m_userDataHasBeenSet(false),
     m_ccInfosHasBeenSet(false),
     m_needCreateReviewHasBeenSet(false),
-    m_componentsHasBeenSet(false)
+    m_componentsHasBeenSet(false),
+    m_flowDisplayTypeHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,16 @@ CoreInternalOutcome BaseFlowInfo::Deserialize(const rapidjson::Value &value)
         m_componentsHasBeenSet = true;
     }
 
+    if (value.HasMember("FlowDisplayType") && !value["FlowDisplayType"].IsNull())
+    {
+        if (!value["FlowDisplayType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BaseFlowInfo.FlowDisplayType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowDisplayType = value["FlowDisplayType"].GetInt64();
+        m_flowDisplayTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -313,6 +324,14 @@ void BaseFlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_flowDisplayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowDisplayType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flowDisplayType, allocator);
     }
 
 }
@@ -508,5 +527,21 @@ void BaseFlowInfo::SetComponents(const vector<Component>& _components)
 bool BaseFlowInfo::ComponentsHasBeenSet() const
 {
     return m_componentsHasBeenSet;
+}
+
+int64_t BaseFlowInfo::GetFlowDisplayType() const
+{
+    return m_flowDisplayType;
+}
+
+void BaseFlowInfo::SetFlowDisplayType(const int64_t& _flowDisplayType)
+{
+    m_flowDisplayType = _flowDisplayType;
+    m_flowDisplayTypeHasBeenSet = true;
+}
+
+bool BaseFlowInfo::FlowDisplayTypeHasBeenSet() const
+{
+    return m_flowDisplayTypeHasBeenSet;
 }
 

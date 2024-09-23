@@ -384,6 +384,49 @@ PostgresClient::CreateDBInstancesOutcomeCallable PostgresClient::CreateDBInstanc
     return task->get_future();
 }
 
+PostgresClient::CreateDatabaseOutcome PostgresClient::CreateDatabase(const CreateDatabaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDatabase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDatabaseResponse rsp = CreateDatabaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDatabaseOutcome(rsp);
+        else
+            return CreateDatabaseOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDatabaseOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CreateDatabaseAsync(const CreateDatabaseRequest& request, const CreateDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDatabase(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::CreateDatabaseOutcomeCallable PostgresClient::CreateDatabaseCallable(const CreateDatabaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDatabaseOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDatabase(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::CreateInstancesOutcome PostgresClient::CreateInstances(const CreateInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInstances");
@@ -3516,6 +3559,49 @@ PostgresClient::ModifyDBInstancesProjectOutcomeCallable PostgresClient::ModifyDB
         [this, request]()
         {
             return this->ModifyDBInstancesProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::ModifyDatabaseOwnerOutcome PostgresClient::ModifyDatabaseOwner(const ModifyDatabaseOwnerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDatabaseOwner");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDatabaseOwnerResponse rsp = ModifyDatabaseOwnerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDatabaseOwnerOutcome(rsp);
+        else
+            return ModifyDatabaseOwnerOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDatabaseOwnerOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyDatabaseOwnerAsync(const ModifyDatabaseOwnerRequest& request, const ModifyDatabaseOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDatabaseOwner(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyDatabaseOwnerOutcomeCallable PostgresClient::ModifyDatabaseOwnerCallable(const ModifyDatabaseOwnerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDatabaseOwnerOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDatabaseOwner(request);
         }
     );
 

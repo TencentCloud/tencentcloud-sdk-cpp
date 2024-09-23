@@ -55,6 +55,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeGlobalConfigRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeGlobalConfigResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHBaseTableOverviewRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHBaseTableOverviewResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHiveQueriesRequest.h>
@@ -105,6 +107,8 @@
 #include <tencentcloud/emr/v20190103/model/ModifyAutoRenewFlagResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyAutoScaleStrategyRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyAutoScaleStrategyResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyGlobalConfigRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyGlobalConfigResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyResourcePoolsRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyResourcePoolsResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigRequest.h>
@@ -203,6 +207,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEmrOverviewMetricsResponse> DescribeEmrOverviewMetricsOutcome;
                 typedef std::future<DescribeEmrOverviewMetricsOutcome> DescribeEmrOverviewMetricsOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeEmrOverviewMetricsRequest&, DescribeEmrOverviewMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmrOverviewMetricsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGlobalConfigResponse> DescribeGlobalConfigOutcome;
+                typedef std::future<DescribeGlobalConfigOutcome> DescribeGlobalConfigOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeGlobalConfigRequest&, DescribeGlobalConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHBaseTableOverviewResponse> DescribeHBaseTableOverviewOutcome;
                 typedef std::future<DescribeHBaseTableOverviewOutcome> DescribeHBaseTableOverviewOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeHBaseTableOverviewRequest&, DescribeHBaseTableOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHBaseTableOverviewAsyncHandler;
@@ -278,6 +285,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAutoScaleStrategyResponse> ModifyAutoScaleStrategyOutcome;
                 typedef std::future<ModifyAutoScaleStrategyOutcome> ModifyAutoScaleStrategyOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyAutoScaleStrategyRequest&, ModifyAutoScaleStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoScaleStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGlobalConfigResponse> ModifyGlobalConfigOutcome;
+                typedef std::future<ModifyGlobalConfigOutcome> ModifyGlobalConfigOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyGlobalConfigRequest&, ModifyGlobalConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyResourcePoolsResponse> ModifyResourcePoolsOutcome;
                 typedef std::future<ModifyResourcePoolsOutcome> ModifyResourcePoolsOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyResourcePoolsRequest&, ModifyResourcePoolsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourcePoolsAsyncHandler;
@@ -481,6 +491,15 @@ namespace TencentCloud
                 DescribeEmrOverviewMetricsOutcome DescribeEmrOverviewMetrics(const Model::DescribeEmrOverviewMetricsRequest &request);
                 void DescribeEmrOverviewMetricsAsync(const Model::DescribeEmrOverviewMetricsRequest& request, const DescribeEmrOverviewMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEmrOverviewMetricsOutcomeCallable DescribeEmrOverviewMetricsCallable(const Model::DescribeEmrOverviewMetricsRequest& request);
+
+                /**
+                 *查询YARN资源调度的全局配置
+                 * @param req DescribeGlobalConfigRequest
+                 * @return DescribeGlobalConfigOutcome
+                 */
+                DescribeGlobalConfigOutcome DescribeGlobalConfig(const Model::DescribeGlobalConfigRequest &request);
+                void DescribeGlobalConfigAsync(const Model::DescribeGlobalConfigRequest& request, const DescribeGlobalConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGlobalConfigOutcomeCallable DescribeGlobalConfigCallable(const Model::DescribeGlobalConfigRequest& request);
 
                 /**
                  *获取Hbase表级监控数据概览接口
@@ -708,6 +727,15 @@ namespace TencentCloud
                 ModifyAutoScaleStrategyOutcome ModifyAutoScaleStrategy(const Model::ModifyAutoScaleStrategyRequest &request);
                 void ModifyAutoScaleStrategyAsync(const Model::ModifyAutoScaleStrategyRequest& request, const ModifyAutoScaleStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAutoScaleStrategyOutcomeCallable ModifyAutoScaleStrategyCallable(const Model::ModifyAutoScaleStrategyRequest& request);
+
+                /**
+                 *修改YARN资源调度的全局配置
+                 * @param req ModifyGlobalConfigRequest
+                 * @return ModifyGlobalConfigOutcome
+                 */
+                ModifyGlobalConfigOutcome ModifyGlobalConfig(const Model::ModifyGlobalConfigRequest &request);
+                void ModifyGlobalConfigAsync(const Model::ModifyGlobalConfigRequest& request, const ModifyGlobalConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGlobalConfigOutcomeCallable ModifyGlobalConfigCallable(const Model::ModifyGlobalConfigRequest& request);
 
                 /**
                  *刷新YARN的动态资源池。已废弃，请使用`DeployYarnConf`

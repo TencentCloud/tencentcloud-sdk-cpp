@@ -39,6 +39,8 @@
 #include <tencentcloud/postgres/v20170312/model/CreateDBInstanceNetworkAccessResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateDBInstancesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CreateDBInstancesResponse.h>
+#include <tencentcloud/postgres/v20170312/model/CreateDatabaseRequest.h>
+#include <tencentcloud/postgres/v20170312/model/CreateDatabaseResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateInstancesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CreateInstancesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateParameterTemplateRequest.h>
@@ -185,6 +187,8 @@
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceSpecResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstancesProjectRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstancesProjectResponse.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDatabaseOwnerRequest.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDatabaseOwnerResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyParameterTemplateRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyParameterTemplateResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyReadOnlyGroupConfigRequest.h>
@@ -257,6 +261,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDBInstancesResponse> CreateDBInstancesOutcome;
                 typedef std::future<CreateDBInstancesOutcome> CreateDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateDBInstancesRequest&, CreateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDatabaseResponse> CreateDatabaseOutcome;
+                typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::CreateDatabaseRequest&, CreateDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstancesResponse> CreateInstancesOutcome;
                 typedef std::future<CreateInstancesOutcome> CreateInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateInstancesRequest&, CreateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancesAsyncHandler;
@@ -476,6 +483,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBInstancesProjectResponse> ModifyDBInstancesProjectOutcome;
                 typedef std::future<ModifyDBInstancesProjectOutcome> ModifyDBInstancesProjectOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstancesProjectRequest&, ModifyDBInstancesProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstancesProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDatabaseOwnerResponse> ModifyDatabaseOwnerOutcome;
+                typedef std::future<ModifyDatabaseOwnerOutcome> ModifyDatabaseOwnerOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::ModifyDatabaseOwnerRequest&, ModifyDatabaseOwnerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseOwnerAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyParameterTemplateResponse> ModifyParameterTemplateOutcome;
                 typedef std::future<ModifyParameterTemplateOutcome> ModifyParameterTemplateOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyParameterTemplateRequest&, ModifyParameterTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParameterTemplateAsyncHandler;
@@ -601,6 +611,15 @@ namespace TencentCloud
                 CreateDBInstancesOutcome CreateDBInstances(const Model::CreateDBInstancesRequest &request);
                 void CreateDBInstancesAsync(const Model::CreateDBInstancesRequest& request, const CreateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBInstancesOutcomeCallable CreateDBInstancesCallable(const Model::CreateDBInstancesRequest& request);
+
+                /**
+                 *此接口用于创建数据库，需指定数据库名及所有者。
+                 * @param req CreateDatabaseRequest
+                 * @return CreateDatabaseOutcome
+                 */
+                CreateDatabaseOutcome CreateDatabase(const Model::CreateDatabaseRequest &request);
+                void CreateDatabaseAsync(const Model::CreateDatabaseRequest& request, const CreateDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDatabaseOutcomeCallable CreateDatabaseCallable(const Model::CreateDatabaseRequest& request);
 
                 /**
                  *本接口 (CreateInstances) 用于创建一个或者多个PostgreSQL实例，通过此接口创建的实例无需进行初始化，可直接使用。
@@ -1264,6 +1283,15 @@ namespace TencentCloud
                 ModifyDBInstancesProjectOutcome ModifyDBInstancesProject(const Model::ModifyDBInstancesProjectRequest &request);
                 void ModifyDBInstancesProjectAsync(const Model::ModifyDBInstancesProjectRequest& request, const ModifyDBInstancesProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBInstancesProjectOutcomeCallable ModifyDBInstancesProjectCallable(const Model::ModifyDBInstancesProjectRequest& request);
+
+                /**
+                 *修改数据库所有者
+                 * @param req ModifyDatabaseOwnerRequest
+                 * @return ModifyDatabaseOwnerOutcome
+                 */
+                ModifyDatabaseOwnerOutcome ModifyDatabaseOwner(const Model::ModifyDatabaseOwnerRequest &request);
+                void ModifyDatabaseOwnerAsync(const Model::ModifyDatabaseOwnerRequest& request, const ModifyDatabaseOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDatabaseOwnerOutcomeCallable ModifyDatabaseOwnerCallable(const Model::ModifyDatabaseOwnerRequest& request);
 
                 /**
                  *本接口（ModifyParameterTemplate）主要用于修改参数模板名称，描述等配置，也可用于管理参数模板中的参数列表。
