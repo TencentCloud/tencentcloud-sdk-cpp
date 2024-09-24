@@ -49,7 +49,8 @@ DescribeAssetSummaryResponse::DescribeAssetSummaryResponse() :
     m_todayNewImageCntHasBeenSet(false),
     m_todayUnsafeImageCntHasBeenSet(false),
     m_recommendedFixImageCntHasBeenSet(false),
-    m_scannedImageCntHasBeenSet(false)
+    m_scannedImageCntHasBeenSet(false),
+    m_unScannedImageCntHasBeenSet(false)
 {
 }
 
@@ -347,6 +348,16 @@ CoreInternalOutcome DescribeAssetSummaryResponse::Deserialize(const string &payl
         m_scannedImageCntHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UnScannedImageCnt") && !rsp["UnScannedImageCnt"].IsNull())
+    {
+        if (!rsp["UnScannedImageCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnScannedImageCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_unScannedImageCnt = rsp["UnScannedImageCnt"].GetUint64();
+        m_unScannedImageCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -563,6 +574,14 @@ string DescribeAssetSummaryResponse::ToJsonString() const
         string key = "ScannedImageCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scannedImageCnt, allocator);
+    }
+
+    if (m_unScannedImageCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnScannedImageCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unScannedImageCnt, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -835,6 +854,16 @@ uint64_t DescribeAssetSummaryResponse::GetScannedImageCnt() const
 bool DescribeAssetSummaryResponse::ScannedImageCntHasBeenSet() const
 {
     return m_scannedImageCntHasBeenSet;
+}
+
+uint64_t DescribeAssetSummaryResponse::GetUnScannedImageCnt() const
+{
+    return m_unScannedImageCnt;
+}
+
+bool DescribeAssetSummaryResponse::UnScannedImageCntHasBeenSet() const
+{
+    return m_unScannedImageCntHasBeenSet;
 }
 
 

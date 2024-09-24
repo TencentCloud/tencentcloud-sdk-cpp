@@ -254,6 +254,36 @@ namespace TencentCloud
                      */
                     bool ExcludeImageAssetIdsHasBeenSet() const;
 
+                    /**
+                     * 获取最近扫描时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastScanTime 最近扫描时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLastScanTime() const;
+
+                    /**
+                     * 判断参数 LastScanTime 是否已赋值
+                     * @return LastScanTime 是否已赋值
+                     * 
+                     */
+                    bool LastScanTimeHasBeenSet() const;
+
+                    /**
+                     * 获取扫描结果(Success|InsufficientLicense|ImageNeedIsEmpty|InternalError)
+                     * @return ScanResult 扫描结果(Success|InsufficientLicense|ImageNeedIsEmpty|InternalError)
+                     * 
+                     */
+                    std::string GetScanResult() const;
+
+                    /**
+                     * 判断参数 ScanResult 是否已赋值
+                     * @return ScanResult 是否已赋值
+                     * 
+                     */
+                    bool ScanResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,6 +376,19 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_excludeImageAssetIds;
                     bool m_excludeImageAssetIdsHasBeenSet;
+
+                    /**
+                     * 最近扫描时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lastScanTime;
+                    bool m_lastScanTimeHasBeenSet;
+
+                    /**
+                     * 扫描结果(Success|InsufficientLicense|ImageNeedIsEmpty|InternalError)
+                     */
+                    std::string m_scanResult;
+                    bool m_scanResultHasBeenSet;
 
                 };
             }

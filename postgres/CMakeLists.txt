@@ -54,6 +54,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/CreateAccountRequest.h
   include/tencentcloud/postgres/v20170312/model/InitDBInstancesResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDefaultParametersRequest.h
+  include/tencentcloud/postgres/v20170312/model/DescribeDedicatedClustersResponse.h
   include/tencentcloud/postgres/v20170312/model/RenewInstanceRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeBackupOverviewRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeRegionsResponse.h
@@ -109,6 +110,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/NetworkAccess.h
   include/tencentcloud/postgres/v20170312/model/ResetAccountPasswordResponse.h
   include/tencentcloud/postgres/v20170312/model/RemoveDBInstanceFromReadOnlyGroupResponse.h
+  include/tencentcloud/postgres/v20170312/model/RawSlowQuery.h
   include/tencentcloud/postgres/v20170312/model/DescribeDatabaseObjectsRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeParameterTemplatesResponse.h
   include/tencentcloud/postgres/v20170312/model/ParamSpecRelation.h
@@ -139,6 +141,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/CreateReadOnlyGroupRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeParamsEventResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceSecurityGroupsRequest.h
+  include/tencentcloud/postgres/v20170312/model/DescribeDedicatedClustersRequest.h
   include/tencentcloud/postgres/v20170312/model/CloseServerlessDBExtranetAccessResponse.h
   include/tencentcloud/postgres/v20170312/model/EventItem.h
   include/tencentcloud/postgres/v20170312/model/RestartDBInstanceRequest.h
@@ -238,7 +241,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/ResetAccountPasswordRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeSlowQueryAnalysisResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceParametersRequest.h
-  include/tencentcloud/postgres/v20170312/model/RawSlowQuery.h
+  include/tencentcloud/postgres/v20170312/model/DedicatedCluster.h
   include/tencentcloud/postgres/v20170312/model/ServerlessDBAccount.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBSlowlogsResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeAccountPrivilegesRequest.h
@@ -304,6 +307,7 @@ set(postgres_src
   src/v20170312/model/CreateAccountRequest.cpp
   src/v20170312/model/InitDBInstancesResponse.cpp
   src/v20170312/model/DescribeDefaultParametersRequest.cpp
+  src/v20170312/model/DescribeDedicatedClustersResponse.cpp
   src/v20170312/model/RenewInstanceRequest.cpp
   src/v20170312/model/DescribeBackupOverviewRequest.cpp
   src/v20170312/model/DescribeRegionsResponse.cpp
@@ -359,6 +363,7 @@ set(postgres_src
   src/v20170312/model/NetworkAccess.cpp
   src/v20170312/model/ResetAccountPasswordResponse.cpp
   src/v20170312/model/RemoveDBInstanceFromReadOnlyGroupResponse.cpp
+  src/v20170312/model/RawSlowQuery.cpp
   src/v20170312/model/DescribeDatabaseObjectsRequest.cpp
   src/v20170312/model/DescribeParameterTemplatesResponse.cpp
   src/v20170312/model/ParamSpecRelation.cpp
@@ -389,6 +394,7 @@ set(postgres_src
   src/v20170312/model/CreateReadOnlyGroupRequest.cpp
   src/v20170312/model/DescribeParamsEventResponse.cpp
   src/v20170312/model/ModifyDBInstanceSecurityGroupsRequest.cpp
+  src/v20170312/model/DescribeDedicatedClustersRequest.cpp
   src/v20170312/model/CloseServerlessDBExtranetAccessResponse.cpp
   src/v20170312/model/EventItem.cpp
   src/v20170312/model/RestartDBInstanceRequest.cpp
@@ -488,7 +494,7 @@ set(postgres_src
   src/v20170312/model/ResetAccountPasswordRequest.cpp
   src/v20170312/model/DescribeSlowQueryAnalysisResponse.cpp
   src/v20170312/model/ModifyDBInstanceParametersRequest.cpp
-  src/v20170312/model/RawSlowQuery.cpp
+  src/v20170312/model/DedicatedCluster.cpp
   src/v20170312/model/ServerlessDBAccount.cpp
   src/v20170312/model/DescribeDBSlowlogsResponse.cpp
   src/v20170312/model/DescribeAccountPrivilegesRequest.cpp

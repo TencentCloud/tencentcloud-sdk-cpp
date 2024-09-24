@@ -115,6 +115,8 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeDatabaseObjectsResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDatabasesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDatabasesResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDedicatedClustersRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDedicatedClustersResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDefaultParametersRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDefaultParametersResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeEncryptionKeysRequest.h>
@@ -375,6 +377,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
                 typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDedicatedClustersResponse> DescribeDedicatedClustersOutcome;
+                typedef std::future<DescribeDedicatedClustersOutcome> DescribeDedicatedClustersOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeDedicatedClustersRequest&, DescribeDedicatedClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDedicatedClustersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDefaultParametersResponse> DescribeDefaultParametersOutcome;
                 typedef std::future<DescribeDefaultParametersOutcome> DescribeDefaultParametersOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDefaultParametersRequest&, DescribeDefaultParametersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultParametersAsyncHandler;
@@ -957,6 +962,15 @@ namespace TencentCloud
                 DescribeDatabasesOutcome DescribeDatabases(const Model::DescribeDatabasesRequest &request);
                 void DescribeDatabasesAsync(const Model::DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDatabasesOutcomeCallable DescribeDatabasesCallable(const Model::DescribeDatabasesRequest& request);
+
+                /**
+                 *查询专属集群
+                 * @param req DescribeDedicatedClustersRequest
+                 * @return DescribeDedicatedClustersOutcome
+                 */
+                DescribeDedicatedClustersOutcome DescribeDedicatedClusters(const Model::DescribeDedicatedClustersRequest &request);
+                void DescribeDedicatedClustersAsync(const Model::DescribeDedicatedClustersRequest& request, const DescribeDedicatedClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDedicatedClustersOutcomeCallable DescribeDedicatedClustersCallable(const Model::DescribeDedicatedClustersRequest& request);
 
                 /**
                  *本接口（DescribeDefaultParameters）主要用于查询某个数据库版本和引擎支持的所有参数。

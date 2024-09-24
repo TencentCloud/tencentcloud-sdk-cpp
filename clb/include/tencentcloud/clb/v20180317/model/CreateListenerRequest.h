@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool SchedulerHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SNI特性，此参数仅适用于HTTPS监听器。0表示开启，1表示未开启。
-                     * @return SniSwitch 是否开启SNI特性，此参数仅适用于HTTPS监听器。0表示开启，1表示未开启。
+                     * 获取是否开启SNI特性，此参数仅适用于HTTPS监听器。0表示未开启，1表示开启。
+                     * @return SniSwitch 是否开启SNI特性，此参数仅适用于HTTPS监听器。0表示未开启，1表示开启。
                      * 
                      */
                     int64_t GetSniSwitch() const;
 
                     /**
-                     * 设置是否开启SNI特性，此参数仅适用于HTTPS监听器。0表示开启，1表示未开启。
-                     * @param _sniSwitch 是否开启SNI特性，此参数仅适用于HTTPS监听器。0表示开启，1表示未开启。
+                     * 设置是否开启SNI特性，此参数仅适用于HTTPS监听器。0表示未开启，1表示开启。
+                     * @param _sniSwitch 是否开启SNI特性，此参数仅适用于HTTPS监听器。0表示未开启，1表示开启。
                      * 
                      */
                     void SetSniSwitch(const int64_t& _sniSwitch);
@@ -469,6 +469,48 @@ namespace TencentCloud
                      */
                     bool FullEndPortsHasBeenSet() const;
 
+                    /**
+                     * 获取内网http监听器开启h2c开关
+                     * @return H2cSwitch 内网http监听器开启h2c开关
+                     * 
+                     */
+                    bool GetH2cSwitch() const;
+
+                    /**
+                     * 设置内网http监听器开启h2c开关
+                     * @param _h2cSwitch 内网http监听器开启h2c开关
+                     * 
+                     */
+                    void SetH2cSwitch(const bool& _h2cSwitch);
+
+                    /**
+                     * 判断参数 H2cSwitch 是否已赋值
+                     * @return H2cSwitch 是否已赋值
+                     * 
+                     */
+                    bool H2cSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关
+                     * @return SslCloseSwitch TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关
+                     * 
+                     */
+                    bool GetSslCloseSwitch() const;
+
+                    /**
+                     * 设置TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关
+                     * @param _sslCloseSwitch TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关
+                     * 
+                     */
+                    void SetSslCloseSwitch(const bool& _sslCloseSwitch);
+
+                    /**
+                     * 判断参数 SslCloseSwitch 是否已赋值
+                     * @return SslCloseSwitch 是否已赋值
+                     * 
+                     */
+                    bool SslCloseSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -521,7 +563,7 @@ namespace TencentCloud
                     bool m_schedulerHasBeenSet;
 
                     /**
-                     * 是否开启SNI特性，此参数仅适用于HTTPS监听器。0表示开启，1表示未开启。
+                     * 是否开启SNI特性，此参数仅适用于HTTPS监听器。0表示未开启，1表示开启。
                      */
                     int64_t m_sniSwitch;
                     bool m_sniSwitchHasBeenSet;
@@ -591,6 +633,18 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_fullEndPorts;
                     bool m_fullEndPortsHasBeenSet;
+
+                    /**
+                     * 内网http监听器开启h2c开关
+                     */
+                    bool m_h2cSwitch;
+                    bool m_h2cSwitchHasBeenSet;
+
+                    /**
+                     * TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关
+                     */
+                    bool m_sslCloseSwitch;
+                    bool m_sslCloseSwitchHasBeenSet;
 
                 };
             }

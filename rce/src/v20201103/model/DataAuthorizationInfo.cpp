@@ -25,9 +25,10 @@ DataAuthorizationInfo::DataAuthorizationInfo() :
     m_dataRecipientNameHasBeenSet(false),
     m_userDataTypeHasBeenSet(false),
     m_isAuthorizeHasBeenSet(false),
-    m_isPersonalDataHasBeenSet(false),
+    m_isOrderHandlingHasBeenSet(false),
     m_authorizationTermHasBeenSet(false),
-    m_privacyPolicyLinkHasBeenSet(false)
+    m_privacyPolicyLinkHasBeenSet(false),
+    m_isPersonalDataHasBeenSet(false)
 {
 }
 
@@ -79,14 +80,14 @@ CoreInternalOutcome DataAuthorizationInfo::Deserialize(const rapidjson::Value &v
         m_isAuthorizeHasBeenSet = true;
     }
 
-    if (value.HasMember("IsPersonalData") && !value["IsPersonalData"].IsNull())
+    if (value.HasMember("IsOrderHandling") && !value["IsOrderHandling"].IsNull())
     {
-        if (!value["IsPersonalData"].IsUint64())
+        if (!value["IsOrderHandling"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `DataAuthorizationInfo.IsPersonalData` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataAuthorizationInfo.IsOrderHandling` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_isPersonalData = value["IsPersonalData"].GetUint64();
-        m_isPersonalDataHasBeenSet = true;
+        m_isOrderHandling = value["IsOrderHandling"].GetUint64();
+        m_isOrderHandlingHasBeenSet = true;
     }
 
     if (value.HasMember("AuthorizationTerm") && !value["AuthorizationTerm"].IsNull())
@@ -107,6 +108,16 @@ CoreInternalOutcome DataAuthorizationInfo::Deserialize(const rapidjson::Value &v
         }
         m_privacyPolicyLink = string(value["PrivacyPolicyLink"].GetString());
         m_privacyPolicyLinkHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsPersonalData") && !value["IsPersonalData"].IsNull())
+    {
+        if (!value["IsPersonalData"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataAuthorizationInfo.IsPersonalData` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPersonalData = value["IsPersonalData"].GetUint64();
+        m_isPersonalDataHasBeenSet = true;
     }
 
 
@@ -153,12 +164,12 @@ void DataAuthorizationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, m_isAuthorize, allocator);
     }
 
-    if (m_isPersonalDataHasBeenSet)
+    if (m_isOrderHandlingHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsPersonalData";
+        string key = "IsOrderHandling";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_isPersonalData, allocator);
+        value.AddMember(iKey, m_isOrderHandling, allocator);
     }
 
     if (m_authorizationTermHasBeenSet)
@@ -175,6 +186,14 @@ void DataAuthorizationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "PrivacyPolicyLink";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_privacyPolicyLink.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPersonalDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPersonalData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPersonalData, allocator);
     }
 
 }
@@ -244,20 +263,20 @@ bool DataAuthorizationInfo::IsAuthorizeHasBeenSet() const
     return m_isAuthorizeHasBeenSet;
 }
 
-uint64_t DataAuthorizationInfo::GetIsPersonalData() const
+uint64_t DataAuthorizationInfo::GetIsOrderHandling() const
 {
-    return m_isPersonalData;
+    return m_isOrderHandling;
 }
 
-void DataAuthorizationInfo::SetIsPersonalData(const uint64_t& _isPersonalData)
+void DataAuthorizationInfo::SetIsOrderHandling(const uint64_t& _isOrderHandling)
 {
-    m_isPersonalData = _isPersonalData;
-    m_isPersonalDataHasBeenSet = true;
+    m_isOrderHandling = _isOrderHandling;
+    m_isOrderHandlingHasBeenSet = true;
 }
 
-bool DataAuthorizationInfo::IsPersonalDataHasBeenSet() const
+bool DataAuthorizationInfo::IsOrderHandlingHasBeenSet() const
 {
-    return m_isPersonalDataHasBeenSet;
+    return m_isOrderHandlingHasBeenSet;
 }
 
 uint64_t DataAuthorizationInfo::GetAuthorizationTerm() const
@@ -290,5 +309,21 @@ void DataAuthorizationInfo::SetPrivacyPolicyLink(const string& _privacyPolicyLin
 bool DataAuthorizationInfo::PrivacyPolicyLinkHasBeenSet() const
 {
     return m_privacyPolicyLinkHasBeenSet;
+}
+
+uint64_t DataAuthorizationInfo::GetIsPersonalData() const
+{
+    return m_isPersonalData;
+}
+
+void DataAuthorizationInfo::SetIsPersonalData(const uint64_t& _isPersonalData)
+{
+    m_isPersonalData = _isPersonalData;
+    m_isPersonalDataHasBeenSet = true;
+}
+
+bool DataAuthorizationInfo::IsPersonalDataHasBeenSet() const
+{
+    return m_isPersonalDataHasBeenSet;
 }
 

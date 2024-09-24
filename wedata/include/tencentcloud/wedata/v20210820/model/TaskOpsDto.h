@@ -2253,6 +2253,31 @@ namespace TencentCloud
                      */
                     bool ExtResourceFlagHasBeenSet() const;
 
+                    /**
+                     * 获取父任务simple信息(新)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NewParentTaskInfos 父任务simple信息(新)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AiopsSimpleTaskDto> GetNewParentTaskInfos() const;
+
+                    /**
+                     * 设置父任务simple信息(新)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _newParentTaskInfos 父任务simple信息(新)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNewParentTaskInfos(const std::vector<AiopsSimpleTaskDto>& _newParentTaskInfos);
+
+                    /**
+                     * 判断参数 NewParentTaskInfos 是否已赋值
+                     * @return NewParentTaskInfos 是否已赋值
+                     * 
+                     */
+                    bool NewParentTaskInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2870,6 +2895,13 @@ namespace TencentCloud
                      */
                     ExtResourceFlagDto m_extResourceFlag;
                     bool m_extResourceFlagHasBeenSet;
+
+                    /**
+                     * 父任务simple信息(新)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AiopsSimpleTaskDto> m_newParentTaskInfos;
+                    bool m_newParentTaskInfosHasBeenSet;
 
                 };
             }

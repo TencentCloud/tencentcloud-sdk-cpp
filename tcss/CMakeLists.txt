@@ -821,6 +821,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeCompliancePolicyItemAffectedAssetListResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeComplianceAssetPolicyItemListRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeABTestConfigResponse.h
+  include/tencentcloud/tcss/v20201101/model/ImageScanInquireInfo.h
   include/tencentcloud/tcss/v20201101/model/SearchTemplate.h
   include/tencentcloud/tcss/v20201101/model/DescribeContainerSecEventSummaryResponse.h
   include/tencentcloud/tcss/v20201101/model/ProcessDetailBaseInfo.h
@@ -1664,6 +1665,7 @@ set(tcss_src
   src/v20201101/model/DescribeCompliancePolicyItemAffectedAssetListResponse.cpp
   src/v20201101/model/DescribeComplianceAssetPolicyItemListRequest.cpp
   src/v20201101/model/DescribeABTestConfigResponse.cpp
+  src/v20201101/model/ImageScanInquireInfo.cpp
   src/v20201101/model/SearchTemplate.cpp
   src/v20201101/model/DescribeContainerSecEventSummaryResponse.cpp
   src/v20201101/model/ProcessDetailBaseInfo.cpp

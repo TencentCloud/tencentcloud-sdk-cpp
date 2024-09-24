@@ -407,6 +407,20 @@ namespace TencentCloud
                      */
                     bool ScannedImageCntHasBeenSet() const;
 
+                    /**
+                     * 获取待扫描镜像个数
+                     * @return UnScannedImageCnt 待扫描镜像个数
+                     * 
+                     */
+                    uint64_t GetUnScannedImageCnt() const;
+
+                    /**
+                     * 判断参数 UnScannedImageCnt 是否已赋值
+                     * @return UnScannedImageCnt 是否已赋值
+                     * 
+                     */
+                    bool UnScannedImageCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -564,6 +578,12 @@ namespace TencentCloud
                      */
                     uint64_t m_scannedImageCnt;
                     bool m_scannedImageCntHasBeenSet;
+
+                    /**
+                     * 待扫描镜像个数
+                     */
+                    uint64_t m_unScannedImageCnt;
+                    bool m_unScannedImageCntHasBeenSet;
 
                 };
             }

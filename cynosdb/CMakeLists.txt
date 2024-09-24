@@ -95,7 +95,6 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageSaleSpecRequest.h
   include/tencentcloud/cynosdb/v20190107/model/UnbindClusterResourcePackagesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/RollBackClusterResponse.h
-  include/tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeValidityRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGrpsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyBackupConfigResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterDatabaseRequest.h
@@ -175,7 +174,6 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/NetAddr.h
   include/tencentcloud/cynosdb/v20190107/model/OpenWanRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAccountPrivilegesResponse.h
-  include/tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeValidityResponse.h
   include/tencentcloud/cynosdb/v20190107/model/InquirePriceCreateRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAuditServiceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterNameResponse.h
@@ -505,7 +503,6 @@ set(cynosdb_src
   src/v20190107/model/DescribeResourcePackageSaleSpecRequest.cpp
   src/v20190107/model/UnbindClusterResourcePackagesResponse.cpp
   src/v20190107/model/RollBackClusterResponse.cpp
-  src/v20190107/model/DescribeRollbackTimeValidityRequest.cpp
   src/v20190107/model/DescribeClusterInstanceGrpsResponse.cpp
   src/v20190107/model/ModifyBackupConfigResponse.cpp
   src/v20190107/model/ModifyClusterDatabaseRequest.cpp
@@ -585,7 +582,6 @@ set(cynosdb_src
   src/v20190107/model/NetAddr.cpp
   src/v20190107/model/OpenWanRequest.cpp
   src/v20190107/model/ModifyAccountPrivilegesResponse.cpp
-  src/v20190107/model/DescribeRollbackTimeValidityResponse.cpp
   src/v20190107/model/InquirePriceCreateRequest.cpp
   src/v20190107/model/ModifyAuditServiceRequest.cpp
   src/v20190107/model/ModifyClusterNameResponse.cpp

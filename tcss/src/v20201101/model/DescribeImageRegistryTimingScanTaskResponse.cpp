@@ -37,7 +37,9 @@ DescribeImageRegistryTimingScanTaskResponse::DescribeImageRegistryTimingScanTask
     m_containerRunningHasBeenSet(false),
     m_scanScopeHasBeenSet(false),
     m_namespaceHasBeenSet(false),
-    m_excludeImageAssetIdsHasBeenSet(false)
+    m_excludeImageAssetIdsHasBeenSet(false),
+    m_lastScanTimeHasBeenSet(false),
+    m_scanResultHasBeenSet(false)
 {
 }
 
@@ -240,6 +242,26 @@ CoreInternalOutcome DescribeImageRegistryTimingScanTaskResponse::Deserialize(con
         m_excludeImageAssetIdsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LastScanTime") && !rsp["LastScanTime"].IsNull())
+    {
+        if (!rsp["LastScanTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LastScanTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastScanTime = string(rsp["LastScanTime"].GetString());
+        m_lastScanTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ScanResult") && !rsp["ScanResult"].IsNull())
+    {
+        if (!rsp["ScanResult"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanResult` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanResult = string(rsp["ScanResult"].GetString());
+        m_scanResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -394,6 +416,22 @@ string DescribeImageRegistryTimingScanTaskResponse::ToJsonString() const
         }
     }
 
+    if (m_lastScanTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastScanTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastScanTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scanResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scanResult.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -544,6 +582,26 @@ vector<uint64_t> DescribeImageRegistryTimingScanTaskResponse::GetExcludeImageAss
 bool DescribeImageRegistryTimingScanTaskResponse::ExcludeImageAssetIdsHasBeenSet() const
 {
     return m_excludeImageAssetIdsHasBeenSet;
+}
+
+string DescribeImageRegistryTimingScanTaskResponse::GetLastScanTime() const
+{
+    return m_lastScanTime;
+}
+
+bool DescribeImageRegistryTimingScanTaskResponse::LastScanTimeHasBeenSet() const
+{
+    return m_lastScanTimeHasBeenSet;
+}
+
+string DescribeImageRegistryTimingScanTaskResponse::GetScanResult() const
+{
+    return m_scanResult;
+}
+
+bool DescribeImageRegistryTimingScanTaskResponse::ScanResultHasBeenSet() const
+{
+    return m_scanResultHasBeenSet;
 }
 
 

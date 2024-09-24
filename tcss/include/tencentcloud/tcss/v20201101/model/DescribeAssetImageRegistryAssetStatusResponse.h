@@ -73,6 +73,20 @@ namespace TencentCloud
                      */
                     bool ErrHasBeenSet() const;
 
+                    /**
+                     * 获取最后一次同步成功时间
+                     * @return LatestSyncSuccessTime 最后一次同步成功时间
+                     * 
+                     */
+                    std::string GetLatestSyncSuccessTime() const;
+
+                    /**
+                     * 判断参数 LatestSyncSuccessTime 是否已赋值
+                     * @return LatestSyncSuccessTime 是否已赋值
+                     * 
+                     */
+                    bool LatestSyncSuccessTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -87,6 +101,12 @@ namespace TencentCloud
                      */
                     std::string m_err;
                     bool m_errHasBeenSet;
+
+                    /**
+                     * 最后一次同步成功时间
+                     */
+                    std::string m_latestSyncSuccessTime;
+                    bool m_latestSyncSuccessTimeHasBeenSet;
 
                 };
             }

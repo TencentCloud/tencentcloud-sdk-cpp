@@ -42,7 +42,8 @@ CreateReadOnlyDBInstanceRequest::CreateReadOnlyDBInstanceRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_needSupportIpv6HasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_dBVersionHasBeenSet(false)
+    m_dBVersionHasBeenSet(false),
+    m_dedicatedClusterIdHasBeenSet(false)
 {
 }
 
@@ -222,6 +223,14 @@ string CreateReadOnlyDBInstanceRequest::ToJsonString() const
         string key = "DBVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dBVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dedicatedClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -550,6 +559,22 @@ void CreateReadOnlyDBInstanceRequest::SetDBVersion(const string& _dBVersion)
 bool CreateReadOnlyDBInstanceRequest::DBVersionHasBeenSet() const
 {
     return m_dBVersionHasBeenSet;
+}
+
+string CreateReadOnlyDBInstanceRequest::GetDedicatedClusterId() const
+{
+    return m_dedicatedClusterId;
+}
+
+void CreateReadOnlyDBInstanceRequest::SetDedicatedClusterId(const string& _dedicatedClusterId)
+{
+    m_dedicatedClusterId = _dedicatedClusterId;
+    m_dedicatedClusterIdHasBeenSet = true;
+}
+
+bool CreateReadOnlyDBInstanceRequest::DedicatedClusterIdHasBeenSet() const
+{
+    return m_dedicatedClusterIdHasBeenSet;
 }
 
 

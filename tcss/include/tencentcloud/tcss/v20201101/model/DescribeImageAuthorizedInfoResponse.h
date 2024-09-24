@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcss/v20201101/model/ImageScanInquireInfo.h>
 
 
 namespace TencentCloud
@@ -183,6 +184,34 @@ namespace TencentCloud
                      */
                     bool CanApplyFreeImageAuthorizeHasBeenSet() const;
 
+                    /**
+                     * 获取镜像扫描计费信息
+                     * @return ImageScanInquireInfo 镜像扫描计费信息
+                     * 
+                     */
+                    ImageScanInquireInfo GetImageScanInquireInfo() const;
+
+                    /**
+                     * 判断参数 ImageScanInquireInfo 是否已赋值
+                     * @return ImageScanInquireInfo 是否已赋值
+                     * 
+                     */
+                    bool ImageScanInquireInfoHasBeenSet() const;
+
+                    /**
+                     * 获取重复镜像数(本地镜像和仓库镜像)
+                     * @return RepeatImageIdCnt 重复镜像数(本地镜像和仓库镜像)
+                     * 
+                     */
+                    uint64_t GetRepeatImageIdCnt() const;
+
+                    /**
+                     * 判断参数 RepeatImageIdCnt 是否已赋值
+                     * @return RepeatImageIdCnt 是否已赋值
+                     * 
+                     */
+                    bool RepeatImageIdCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -244,6 +273,18 @@ namespace TencentCloud
                      */
                     bool m_canApplyFreeImageAuthorize;
                     bool m_canApplyFreeImageAuthorizeHasBeenSet;
+
+                    /**
+                     * 镜像扫描计费信息
+                     */
+                    ImageScanInquireInfo m_imageScanInquireInfo;
+                    bool m_imageScanInquireInfoHasBeenSet;
+
+                    /**
+                     * 重复镜像数(本地镜像和仓库镜像)
+                     */
+                    uint64_t m_repeatImageIdCnt;
+                    bool m_repeatImageIdCntHasBeenSet;
 
                 };
             }

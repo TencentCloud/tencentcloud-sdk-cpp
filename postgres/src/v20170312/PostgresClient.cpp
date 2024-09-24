@@ -2018,6 +2018,49 @@ PostgresClient::DescribeDatabasesOutcomeCallable PostgresClient::DescribeDatabas
     return task->get_future();
 }
 
+PostgresClient::DescribeDedicatedClustersOutcome PostgresClient::DescribeDedicatedClusters(const DescribeDedicatedClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDedicatedClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDedicatedClustersResponse rsp = DescribeDedicatedClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDedicatedClustersOutcome(rsp);
+        else
+            return DescribeDedicatedClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDedicatedClustersOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeDedicatedClustersAsync(const DescribeDedicatedClustersRequest& request, const DescribeDedicatedClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDedicatedClusters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeDedicatedClustersOutcomeCallable PostgresClient::DescribeDedicatedClustersCallable(const DescribeDedicatedClustersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDedicatedClustersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDedicatedClusters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeDefaultParametersOutcome PostgresClient::DescribeDefaultParameters(const DescribeDefaultParametersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDefaultParameters");

@@ -35,7 +35,9 @@ DescribeAssetImageScanSettingResponse::DescribeAssetImageScanSettingResponse() :
     m_containerRunningHasBeenSet(false),
     m_scanScopeHasBeenSet(false),
     m_scanEndTimeHasBeenSet(false),
-    m_excludeImagesHasBeenSet(false)
+    m_excludeImagesHasBeenSet(false),
+    m_lastScanTimeHasBeenSet(false),
+    m_scanResultHasBeenSet(false)
 {
 }
 
@@ -199,6 +201,26 @@ CoreInternalOutcome DescribeAssetImageScanSettingResponse::Deserialize(const str
         m_excludeImagesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LastScanTime") && !rsp["LastScanTime"].IsNull())
+    {
+        if (!rsp["LastScanTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LastScanTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastScanTime = string(rsp["LastScanTime"].GetString());
+        m_lastScanTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ScanResult") && !rsp["ScanResult"].IsNull())
+    {
+        if (!rsp["ScanResult"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanResult` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanResult = string(rsp["ScanResult"].GetString());
+        m_scanResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -313,6 +335,22 @@ string DescribeAssetImageScanSettingResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_lastScanTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastScanTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastScanTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scanResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scanResult.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -445,6 +483,26 @@ vector<string> DescribeAssetImageScanSettingResponse::GetExcludeImages() const
 bool DescribeAssetImageScanSettingResponse::ExcludeImagesHasBeenSet() const
 {
     return m_excludeImagesHasBeenSet;
+}
+
+string DescribeAssetImageScanSettingResponse::GetLastScanTime() const
+{
+    return m_lastScanTime;
+}
+
+bool DescribeAssetImageScanSettingResponse::LastScanTimeHasBeenSet() const
+{
+    return m_lastScanTimeHasBeenSet;
+}
+
+string DescribeAssetImageScanSettingResponse::GetScanResult() const
+{
+    return m_scanResult;
+}
+
+bool DescribeAssetImageScanSettingResponse::ScanResultHasBeenSet() const
+{
+    return m_scanResultHasBeenSet;
 }
 
 

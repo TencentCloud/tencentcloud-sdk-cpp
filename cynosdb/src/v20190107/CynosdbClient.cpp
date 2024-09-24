@@ -3265,49 +3265,6 @@ CynosdbClient::DescribeRollbackTimeRangeOutcomeCallable CynosdbClient::DescribeR
     return task->get_future();
 }
 
-CynosdbClient::DescribeRollbackTimeValidityOutcome CynosdbClient::DescribeRollbackTimeValidity(const DescribeRollbackTimeValidityRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeRollbackTimeValidity");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeRollbackTimeValidityResponse rsp = DescribeRollbackTimeValidityResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeRollbackTimeValidityOutcome(rsp);
-        else
-            return DescribeRollbackTimeValidityOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeRollbackTimeValidityOutcome(outcome.GetError());
-    }
-}
-
-void CynosdbClient::DescribeRollbackTimeValidityAsync(const DescribeRollbackTimeValidityRequest& request, const DescribeRollbackTimeValidityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRollbackTimeValidity(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CynosdbClient::DescribeRollbackTimeValidityOutcomeCallable CynosdbClient::DescribeRollbackTimeValidityCallable(const DescribeRollbackTimeValidityRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeRollbackTimeValidityOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRollbackTimeValidity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CynosdbClient::DescribeServerlessStrategyOutcome CynosdbClient::DescribeServerlessStrategy(const DescribeServerlessStrategyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeServerlessStrategy");

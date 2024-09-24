@@ -29,8 +29,6 @@
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyObjectResponse.h>
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyTagRequest.h>
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyTagResponse.h>
-#include <tencentcloud/monitor/v20180724/model/CheckIsPrometheusNewUserRequest.h>
-#include <tencentcloud/monitor/v20180724/model/CheckIsPrometheusNewUserResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CleanGrafanaInstanceRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CleanGrafanaInstanceResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmNoticeRequest.h>
@@ -211,8 +209,6 @@
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesOverviewRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesOverviewResponse.h>
-#include <tencentcloud/monitor/v20180724/model/DescribePrometheusRecordRuleYamlRequest.h>
-#include <tencentcloud/monitor/v20180724/model/DescribePrometheusRecordRuleYamlResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusRecordRulesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusRecordRulesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusRegionsRequest.h>
@@ -360,9 +356,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindingPolicyTagResponse> BindingPolicyTagOutcome;
                 typedef std::future<BindingPolicyTagOutcome> BindingPolicyTagOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::BindingPolicyTagRequest&, BindingPolicyTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindingPolicyTagAsyncHandler;
-                typedef Outcome<Core::Error, Model::CheckIsPrometheusNewUserResponse> CheckIsPrometheusNewUserOutcome;
-                typedef std::future<CheckIsPrometheusNewUserOutcome> CheckIsPrometheusNewUserOutcomeCallable;
-                typedef std::function<void(const MonitorClient*, const Model::CheckIsPrometheusNewUserRequest&, CheckIsPrometheusNewUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckIsPrometheusNewUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::CleanGrafanaInstanceResponse> CleanGrafanaInstanceOutcome;
                 typedef std::future<CleanGrafanaInstanceOutcome> CleanGrafanaInstanceOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CleanGrafanaInstanceRequest&, CleanGrafanaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CleanGrafanaInstanceAsyncHandler;
@@ -633,9 +626,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePrometheusInstancesOverviewResponse> DescribePrometheusInstancesOverviewOutcome;
                 typedef std::future<DescribePrometheusInstancesOverviewOutcome> DescribePrometheusInstancesOverviewOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusInstancesOverviewRequest&, DescribePrometheusInstancesOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusInstancesOverviewAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribePrometheusRecordRuleYamlResponse> DescribePrometheusRecordRuleYamlOutcome;
-                typedef std::future<DescribePrometheusRecordRuleYamlOutcome> DescribePrometheusRecordRuleYamlOutcomeCallable;
-                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusRecordRuleYamlRequest&, DescribePrometheusRecordRuleYamlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusRecordRuleYamlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrometheusRecordRulesResponse> DescribePrometheusRecordRulesOutcome;
                 typedef std::future<DescribePrometheusRecordRulesOutcome> DescribePrometheusRecordRulesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusRecordRulesRequest&, DescribePrometheusRecordRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusRecordRulesAsyncHandler;
@@ -851,17 +841,6 @@ namespace TencentCloud
                 BindingPolicyTagOutcome BindingPolicyTag(const Model::BindingPolicyTagRequest &request);
                 void BindingPolicyTagAsync(const Model::BindingPolicyTagRequest& request, const BindingPolicyTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindingPolicyTagOutcomeCallable BindingPolicyTagCallable(const Model::BindingPolicyTagRequest& request);
-
-                /**
-                 *接口功能是检查是否为prometheus新用户，已有其他功能更加全面的接口替代
-
-判断用户是否为云原生监控新用户，即在任何地域下均未创建过监控实例的用户
-                 * @param req CheckIsPrometheusNewUserRequest
-                 * @return CheckIsPrometheusNewUserOutcome
-                 */
-                CheckIsPrometheusNewUserOutcome CheckIsPrometheusNewUser(const Model::CheckIsPrometheusNewUserRequest &request);
-                void CheckIsPrometheusNewUserAsync(const Model::CheckIsPrometheusNewUserRequest& request, const CheckIsPrometheusNewUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CheckIsPrometheusNewUserOutcomeCallable CheckIsPrometheusNewUserCallable(const Model::CheckIsPrometheusNewUserRequest& request);
 
                 /**
                  *强制销毁 Grafana 实例
@@ -1687,17 +1666,6 @@ namespace TencentCloud
                 DescribePrometheusInstancesOverviewOutcome DescribePrometheusInstancesOverview(const Model::DescribePrometheusInstancesOverviewRequest &request);
                 void DescribePrometheusInstancesOverviewAsync(const Model::DescribePrometheusInstancesOverviewRequest& request, const DescribePrometheusInstancesOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePrometheusInstancesOverviewOutcomeCallable DescribePrometheusInstancesOverviewCallable(const Model::DescribePrometheusInstancesOverviewRequest& request);
-
-                /**
-                 *DescribePrometheusRecordRules 接口可完全代替该接口。近30天仅有3次调用，且都是报错请求
-
-拉取Prometheus聚合规则yaml列表
-                 * @param req DescribePrometheusRecordRuleYamlRequest
-                 * @return DescribePrometheusRecordRuleYamlOutcome
-                 */
-                DescribePrometheusRecordRuleYamlOutcome DescribePrometheusRecordRuleYaml(const Model::DescribePrometheusRecordRuleYamlRequest &request);
-                void DescribePrometheusRecordRuleYamlAsync(const Model::DescribePrometheusRecordRuleYamlRequest& request, const DescribePrometheusRecordRuleYamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribePrometheusRecordRuleYamlOutcomeCallable DescribePrometheusRecordRuleYamlCallable(const Model::DescribePrometheusRecordRuleYamlRequest& request);
 
                 /**
                  *获取聚合规则列表，包含关联集群内crd资源创建的record rule

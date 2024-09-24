@@ -167,8 +167,6 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeApplicationResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeApplicationAttributeRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeApplicationAttributeResponse.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeApplicationBusinessLogConfigRequest.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeApplicationBusinessLogConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeApplicationsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeApplicationsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeBasicResourceUsageRequest.h>
@@ -699,9 +697,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApplicationAttributeResponse> DescribeApplicationAttributeOutcome;
                 typedef std::future<DescribeApplicationAttributeOutcome> DescribeApplicationAttributeOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeApplicationAttributeRequest&, DescribeApplicationAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationAttributeAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeApplicationBusinessLogConfigResponse> DescribeApplicationBusinessLogConfigOutcome;
-                typedef std::future<DescribeApplicationBusinessLogConfigOutcome> DescribeApplicationBusinessLogConfigOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::DescribeApplicationBusinessLogConfigRequest&, DescribeApplicationBusinessLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationBusinessLogConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApplicationsResponse> DescribeApplicationsOutcome;
                 typedef std::future<DescribeApplicationsOutcome> DescribeApplicationsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeApplicationsRequest&, DescribeApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationsAsyncHandler;
@@ -1803,17 +1798,6 @@ namespace TencentCloud
                 DescribeApplicationAttributeOutcome DescribeApplicationAttribute(const Model::DescribeApplicationAttributeRequest &request);
                 void DescribeApplicationAttributeAsync(const Model::DescribeApplicationAttributeRequest& request, const DescribeApplicationAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApplicationAttributeOutcomeCallable DescribeApplicationAttributeCallable(const Model::DescribeApplicationAttributeRequest& request);
-
-                /**
-                 *接口未使用，废弃录用
-
-查询应用关联日志配置项信息
-                 * @param req DescribeApplicationBusinessLogConfigRequest
-                 * @return DescribeApplicationBusinessLogConfigOutcome
-                 */
-                DescribeApplicationBusinessLogConfigOutcome DescribeApplicationBusinessLogConfig(const Model::DescribeApplicationBusinessLogConfigRequest &request);
-                void DescribeApplicationBusinessLogConfigAsync(const Model::DescribeApplicationBusinessLogConfigRequest& request, const DescribeApplicationBusinessLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeApplicationBusinessLogConfigOutcomeCallable DescribeApplicationBusinessLogConfigCallable(const Model::DescribeApplicationBusinessLogConfigRequest& request);
 
                 /**
                  *获取应用列表

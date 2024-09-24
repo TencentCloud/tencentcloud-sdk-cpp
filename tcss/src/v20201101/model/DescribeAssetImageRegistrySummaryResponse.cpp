@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
-DescribeAssetImageRegistrySummaryResponse::DescribeAssetImageRegistrySummaryResponse()
+DescribeAssetImageRegistrySummaryResponse::DescribeAssetImageRegistrySummaryResponse() :
+    m_unScannedImageCntHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome DescribeAssetImageRegistrySummaryResponse::Deserialize(const
     }
 
 
+    if (rsp.HasMember("UnScannedImageCnt") && !rsp["UnScannedImageCnt"].IsNull())
+    {
+        if (!rsp["UnScannedImageCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnScannedImageCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_unScannedImageCnt = rsp["UnScannedImageCnt"].GetUint64();
+        m_unScannedImageCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string DescribeAssetImageRegistrySummaryResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_unScannedImageCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnScannedImageCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unScannedImageCnt, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string DescribeAssetImageRegistrySummaryResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeAssetImageRegistrySummaryResponse::GetUnScannedImageCnt() const
+{
+    return m_unScannedImageCnt;
+}
+
+bool DescribeAssetImageRegistrySummaryResponse::UnScannedImageCntHasBeenSet() const
+{
+    return m_unScannedImageCntHasBeenSet;
+}
 
 

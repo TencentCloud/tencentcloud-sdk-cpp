@@ -172,6 +172,27 @@ namespace TencentCloud
                      */
                     bool DurationHasBeenSet() const;
 
+                    /**
+                     * 获取卡槽起始时间，单位秒。
+                     * @return StartTime 卡槽起始时间，单位秒。
+                     * 
+                     */
+                    double GetStartTime() const;
+
+                    /**
+                     * 设置卡槽起始时间，单位秒。
+                     * @param _startTime 卡槽起始时间，单位秒。
+                     * 
+                     */
+                    void SetStartTime(const double& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,6 +229,12 @@ namespace TencentCloud
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;
+
+                    /**
+                     * 卡槽起始时间，单位秒。
+                     */
+                    double m_startTime;
+                    bool m_startTimeHasBeenSet;
 
                 };
             }

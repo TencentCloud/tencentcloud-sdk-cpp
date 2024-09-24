@@ -22,7 +22,9 @@ using namespace std;
 
 RuleFilter::RuleFilter() :
     m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_operatorHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,26 @@ CoreInternalOutcome RuleFilter::Deserialize(const rapidjson::Value &value)
         m_valuesHasBeenSet = true;
     }
 
+    if (value.HasMember("Operator") && !value["Operator"].IsNull())
+    {
+        if (!value["Operator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleFilter.Operator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operator = string(value["Operator"].GetString());
+        m_operatorHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleFilter.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +102,22 @@ void RuleFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +153,37 @@ void RuleFilter::SetValues(const vector<string>& _values)
 bool RuleFilter::ValuesHasBeenSet() const
 {
     return m_valuesHasBeenSet;
+}
+
+string RuleFilter::GetOperator() const
+{
+    return m_operator;
+}
+
+void RuleFilter::SetOperator(const string& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool RuleFilter::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
+}
+
+string RuleFilter::GetName() const
+{
+    return m_name;
+}
+
+void RuleFilter::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool RuleFilter::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 

@@ -42,7 +42,9 @@ CreateListenerRequest::CreateListenerRequest() :
     m_maxCpsHasBeenSet(false),
     m_idleConnectTimeoutHasBeenSet(false),
     m_snatEnableHasBeenSet(false),
-    m_fullEndPortsHasBeenSet(false)
+    m_fullEndPortsHasBeenSet(false),
+    m_h2cSwitchHasBeenSet(false),
+    m_sslCloseSwitchHasBeenSet(false)
 {
 }
 
@@ -229,6 +231,22 @@ string CreateListenerRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_h2cSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "H2cSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_h2cSwitch, allocator);
+    }
+
+    if (m_sslCloseSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SslCloseSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sslCloseSwitch, allocator);
     }
 
 
@@ -557,6 +575,38 @@ void CreateListenerRequest::SetFullEndPorts(const vector<int64_t>& _fullEndPorts
 bool CreateListenerRequest::FullEndPortsHasBeenSet() const
 {
     return m_fullEndPortsHasBeenSet;
+}
+
+bool CreateListenerRequest::GetH2cSwitch() const
+{
+    return m_h2cSwitch;
+}
+
+void CreateListenerRequest::SetH2cSwitch(const bool& _h2cSwitch)
+{
+    m_h2cSwitch = _h2cSwitch;
+    m_h2cSwitchHasBeenSet = true;
+}
+
+bool CreateListenerRequest::H2cSwitchHasBeenSet() const
+{
+    return m_h2cSwitchHasBeenSet;
+}
+
+bool CreateListenerRequest::GetSslCloseSwitch() const
+{
+    return m_sslCloseSwitch;
+}
+
+void CreateListenerRequest::SetSslCloseSwitch(const bool& _sslCloseSwitch)
+{
+    m_sslCloseSwitch = _sslCloseSwitch;
+    m_sslCloseSwitchHasBeenSet = true;
+}
+
+bool CreateListenerRequest::SslCloseSwitchHasBeenSet() const
+{
+    return m_sslCloseSwitchHasBeenSet;
 }
 
 

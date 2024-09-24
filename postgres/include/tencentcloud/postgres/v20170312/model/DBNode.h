@@ -96,6 +96,31 @@ Standby，代表备节点。
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取专属集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DedicatedClusterId 专属集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDedicatedClusterId() const;
+
+                    /**
+                     * 设置专属集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dedicatedClusterId 专属集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
+
+                    /**
+                     * 判断参数 DedicatedClusterId 是否已赋值
+                     * @return DedicatedClusterId 是否已赋值
+                     * 
+                     */
+                    bool DedicatedClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +136,13 @@ Standby，代表备节点。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 专属集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dedicatedClusterId;
+                    bool m_dedicatedClusterIdHasBeenSet;
 
                 };
             }

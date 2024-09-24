@@ -24,7 +24,10 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DescribeAssetImageScanTaskResponse::DescribeAssetImageScanTaskResponse() :
-    m_taskIDHasBeenSet(false)
+    m_taskIDHasBeenSet(false),
+    m_lastScanTimeHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_subStatusHasBeenSet(false)
 {
 }
 
@@ -72,6 +75,36 @@ CoreInternalOutcome DescribeAssetImageScanTaskResponse::Deserialize(const string
         m_taskIDHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LastScanTime") && !rsp["LastScanTime"].IsNull())
+    {
+        if (!rsp["LastScanTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LastScanTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastScanTime = string(rsp["LastScanTime"].GetString());
+        m_lastScanTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(rsp["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SubStatus") && !rsp["SubStatus"].IsNull())
+    {
+        if (!rsp["SubStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subStatus = string(rsp["SubStatus"].GetString());
+        m_subStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +121,30 @@ string DescribeAssetImageScanTaskResponse::ToJsonString() const
         string key = "TaskID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastScanTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastScanTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastScanTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subStatus.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +167,36 @@ string DescribeAssetImageScanTaskResponse::GetTaskID() const
 bool DescribeAssetImageScanTaskResponse::TaskIDHasBeenSet() const
 {
     return m_taskIDHasBeenSet;
+}
+
+string DescribeAssetImageScanTaskResponse::GetLastScanTime() const
+{
+    return m_lastScanTime;
+}
+
+bool DescribeAssetImageScanTaskResponse::LastScanTimeHasBeenSet() const
+{
+    return m_lastScanTimeHasBeenSet;
+}
+
+string DescribeAssetImageScanTaskResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribeAssetImageScanTaskResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string DescribeAssetImageScanTaskResponse::GetSubStatus() const
+{
+    return m_subStatus;
+}
+
+bool DescribeAssetImageScanTaskResponse::SubStatusHasBeenSet() const
+{
+    return m_subStatusHasBeenSet;
 }
 
 

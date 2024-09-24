@@ -23,12 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/iecp/v20210914/model/ApplyMarketComponentRequest.h>
-#include <tencentcloud/iecp/v20210914/model/ApplyMarketComponentResponse.h>
 #include <tencentcloud/iecp/v20210914/model/BuildMessageRouteRequest.h>
 #include <tencentcloud/iecp/v20210914/model/BuildMessageRouteResponse.h>
-#include <tencentcloud/iecp/v20210914/model/CreateApplicationVisualizationRequest.h>
-#include <tencentcloud/iecp/v20210914/model/CreateApplicationVisualizationResponse.h>
 #include <tencentcloud/iecp/v20210914/model/CreateConfigMapRequest.h>
 #include <tencentcloud/iecp/v20210914/model/CreateConfigMapResponse.h>
 #include <tencentcloud/iecp/v20210914/model/CreateEdgeNodeRequest.h>
@@ -39,10 +35,6 @@
 #include <tencentcloud/iecp/v20210914/model/CreateEdgeNodeGroupResponse.h>
 #include <tencentcloud/iecp/v20210914/model/CreateEdgeNodeUnitTemplateRequest.h>
 #include <tencentcloud/iecp/v20210914/model/CreateEdgeNodeUnitTemplateResponse.h>
-#include <tencentcloud/iecp/v20210914/model/CreateEdgeUnitApplicationVisualizationRequest.h>
-#include <tencentcloud/iecp/v20210914/model/CreateEdgeUnitApplicationVisualizationResponse.h>
-#include <tencentcloud/iecp/v20210914/model/CreateEdgeUnitApplicationYamlRequest.h>
-#include <tencentcloud/iecp/v20210914/model/CreateEdgeUnitApplicationYamlResponse.h>
 #include <tencentcloud/iecp/v20210914/model/CreateEdgeUnitCloudRequest.h>
 #include <tencentcloud/iecp/v20210914/model/CreateEdgeUnitCloudResponse.h>
 #include <tencentcloud/iecp/v20210914/model/CreateEdgeUnitDevicesRequest.h>
@@ -59,8 +51,6 @@
 #include <tencentcloud/iecp/v20210914/model/CreateUpdateNodeUnitResponse.h>
 #include <tencentcloud/iecp/v20210914/model/CreateUserTokenRequest.h>
 #include <tencentcloud/iecp/v20210914/model/CreateUserTokenResponse.h>
-#include <tencentcloud/iecp/v20210914/model/DeleteApplicationsRequest.h>
-#include <tencentcloud/iecp/v20210914/model/DeleteApplicationsResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteConfigMapRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteConfigMapResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteEdgeNodeGroupRequest.h>
@@ -69,8 +59,6 @@
 #include <tencentcloud/iecp/v20210914/model/DeleteEdgeNodeUnitTemplatesResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteEdgeNodesRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteEdgeNodesResponse.h>
-#include <tencentcloud/iecp/v20210914/model/DeleteEdgeUnitApplicationsRequest.h>
-#include <tencentcloud/iecp/v20210914/model/DeleteEdgeUnitApplicationsResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteEdgeUnitCloudRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteEdgeUnitCloudResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteEdgeUnitDeployGridItemRequest.h>
@@ -91,14 +79,6 @@
 #include <tencentcloud/iecp/v20210914/model/DeleteNodeUnitResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteSecretRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DeleteSecretResponse.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeApplicationVisualizationRequest.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeApplicationVisualizationResponse.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeApplicationYamlRequest.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeApplicationYamlResponse.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeApplicationYamlErrorRequest.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeApplicationYamlErrorResponse.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeApplicationsRequest.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeApplicationsResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeConfigMapRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeConfigMapResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeConfigMapYamlErrorRequest.h>
@@ -127,24 +107,8 @@
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgePodResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeSnNodesRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeSnNodesResponse.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationEventsRequest.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationEventsResponse.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationLogsRequest.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationLogsResponse.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationPodContainersRequest.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationPodContainersResponse.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationPodsRequest.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationPodsResponse.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationVisualizationRequest.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationVisualizationResponse.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationYamlRequest.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationYamlResponse.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationYamlErrorRequest.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationYamlErrorResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationsRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitApplicationsResponse.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitCloudRequest.h>
-#include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitCloudResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitDeployGridRequest.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitDeployGridResponse.h>
 #include <tencentcloud/iecp/v20210914/model/DescribeEdgeUnitDeployGridItemRequest.h>
@@ -195,10 +159,6 @@
 #include <tencentcloud/iecp/v20210914/model/GetMarketComponentResponse.h>
 #include <tencentcloud/iecp/v20210914/model/GetMarketComponentListRequest.h>
 #include <tencentcloud/iecp/v20210914/model/GetMarketComponentListResponse.h>
-#include <tencentcloud/iecp/v20210914/model/ModifyApplicationBasicInfoRequest.h>
-#include <tencentcloud/iecp/v20210914/model/ModifyApplicationBasicInfoResponse.h>
-#include <tencentcloud/iecp/v20210914/model/ModifyApplicationVisualizationRequest.h>
-#include <tencentcloud/iecp/v20210914/model/ModifyApplicationVisualizationResponse.h>
 #include <tencentcloud/iecp/v20210914/model/ModifyConfigMapRequest.h>
 #include <tencentcloud/iecp/v20210914/model/ModifyConfigMapResponse.h>
 #include <tencentcloud/iecp/v20210914/model/ModifyEdgeDracoNodeRequest.h>
@@ -241,15 +201,9 @@ namespace TencentCloud
                 IecpClient(const Credential &credential, const std::string &region);
                 IecpClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Core::Error, Model::ApplyMarketComponentResponse> ApplyMarketComponentOutcome;
-                typedef std::future<ApplyMarketComponentOutcome> ApplyMarketComponentOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::ApplyMarketComponentRequest&, ApplyMarketComponentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyMarketComponentAsyncHandler;
                 typedef Outcome<Core::Error, Model::BuildMessageRouteResponse> BuildMessageRouteOutcome;
                 typedef std::future<BuildMessageRouteOutcome> BuildMessageRouteOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::BuildMessageRouteRequest&, BuildMessageRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BuildMessageRouteAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateApplicationVisualizationResponse> CreateApplicationVisualizationOutcome;
-                typedef std::future<CreateApplicationVisualizationOutcome> CreateApplicationVisualizationOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::CreateApplicationVisualizationRequest&, CreateApplicationVisualizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationVisualizationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConfigMapResponse> CreateConfigMapOutcome;
                 typedef std::future<CreateConfigMapOutcome> CreateConfigMapOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::CreateConfigMapRequest&, CreateConfigMapOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigMapAsyncHandler;
@@ -265,12 +219,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEdgeNodeUnitTemplateResponse> CreateEdgeNodeUnitTemplateOutcome;
                 typedef std::future<CreateEdgeNodeUnitTemplateOutcome> CreateEdgeNodeUnitTemplateOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::CreateEdgeNodeUnitTemplateRequest&, CreateEdgeNodeUnitTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeNodeUnitTemplateAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateEdgeUnitApplicationVisualizationResponse> CreateEdgeUnitApplicationVisualizationOutcome;
-                typedef std::future<CreateEdgeUnitApplicationVisualizationOutcome> CreateEdgeUnitApplicationVisualizationOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::CreateEdgeUnitApplicationVisualizationRequest&, CreateEdgeUnitApplicationVisualizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeUnitApplicationVisualizationAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateEdgeUnitApplicationYamlResponse> CreateEdgeUnitApplicationYamlOutcome;
-                typedef std::future<CreateEdgeUnitApplicationYamlOutcome> CreateEdgeUnitApplicationYamlOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::CreateEdgeUnitApplicationYamlRequest&, CreateEdgeUnitApplicationYamlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeUnitApplicationYamlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateEdgeUnitCloudResponse> CreateEdgeUnitCloudOutcome;
                 typedef std::future<CreateEdgeUnitCloudOutcome> CreateEdgeUnitCloudOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::CreateEdgeUnitCloudRequest&, CreateEdgeUnitCloudOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeUnitCloudAsyncHandler;
@@ -295,9 +243,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserTokenResponse> CreateUserTokenOutcome;
                 typedef std::future<CreateUserTokenOutcome> CreateUserTokenOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::CreateUserTokenRequest&, CreateUserTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserTokenAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteApplicationsResponse> DeleteApplicationsOutcome;
-                typedef std::future<DeleteApplicationsOutcome> DeleteApplicationsOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::DeleteApplicationsRequest&, DeleteApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteConfigMapResponse> DeleteConfigMapOutcome;
                 typedef std::future<DeleteConfigMapOutcome> DeleteConfigMapOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DeleteConfigMapRequest&, DeleteConfigMapOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigMapAsyncHandler;
@@ -310,9 +255,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteEdgeNodesResponse> DeleteEdgeNodesOutcome;
                 typedef std::future<DeleteEdgeNodesOutcome> DeleteEdgeNodesOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DeleteEdgeNodesRequest&, DeleteEdgeNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEdgeNodesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteEdgeUnitApplicationsResponse> DeleteEdgeUnitApplicationsOutcome;
-                typedef std::future<DeleteEdgeUnitApplicationsOutcome> DeleteEdgeUnitApplicationsOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::DeleteEdgeUnitApplicationsRequest&, DeleteEdgeUnitApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEdgeUnitApplicationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteEdgeUnitCloudResponse> DeleteEdgeUnitCloudOutcome;
                 typedef std::future<DeleteEdgeUnitCloudOutcome> DeleteEdgeUnitCloudOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DeleteEdgeUnitCloudRequest&, DeleteEdgeUnitCloudOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEdgeUnitCloudAsyncHandler;
@@ -343,18 +285,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSecretResponse> DeleteSecretOutcome;
                 typedef std::future<DeleteSecretOutcome> DeleteSecretOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DeleteSecretRequest&, DeleteSecretOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecretAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeApplicationVisualizationResponse> DescribeApplicationVisualizationOutcome;
-                typedef std::future<DescribeApplicationVisualizationOutcome> DescribeApplicationVisualizationOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::DescribeApplicationVisualizationRequest&, DescribeApplicationVisualizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationVisualizationAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeApplicationYamlResponse> DescribeApplicationYamlOutcome;
-                typedef std::future<DescribeApplicationYamlOutcome> DescribeApplicationYamlOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::DescribeApplicationYamlRequest&, DescribeApplicationYamlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationYamlAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeApplicationYamlErrorResponse> DescribeApplicationYamlErrorOutcome;
-                typedef std::future<DescribeApplicationYamlErrorOutcome> DescribeApplicationYamlErrorOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::DescribeApplicationYamlErrorRequest&, DescribeApplicationYamlErrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationYamlErrorAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeApplicationsResponse> DescribeApplicationsOutcome;
-                typedef std::future<DescribeApplicationsOutcome> DescribeApplicationsOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::DescribeApplicationsRequest&, DescribeApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConfigMapResponse> DescribeConfigMapOutcome;
                 typedef std::future<DescribeConfigMapOutcome> DescribeConfigMapOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DescribeConfigMapRequest&, DescribeConfigMapOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigMapAsyncHandler;
@@ -397,33 +327,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEdgeSnNodesResponse> DescribeEdgeSnNodesOutcome;
                 typedef std::future<DescribeEdgeSnNodesOutcome> DescribeEdgeSnNodesOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DescribeEdgeSnNodesRequest&, DescribeEdgeSnNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeSnNodesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeEdgeUnitApplicationEventsResponse> DescribeEdgeUnitApplicationEventsOutcome;
-                typedef std::future<DescribeEdgeUnitApplicationEventsOutcome> DescribeEdgeUnitApplicationEventsOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::DescribeEdgeUnitApplicationEventsRequest&, DescribeEdgeUnitApplicationEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeUnitApplicationEventsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeEdgeUnitApplicationLogsResponse> DescribeEdgeUnitApplicationLogsOutcome;
-                typedef std::future<DescribeEdgeUnitApplicationLogsOutcome> DescribeEdgeUnitApplicationLogsOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::DescribeEdgeUnitApplicationLogsRequest&, DescribeEdgeUnitApplicationLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeUnitApplicationLogsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeEdgeUnitApplicationPodContainersResponse> DescribeEdgeUnitApplicationPodContainersOutcome;
-                typedef std::future<DescribeEdgeUnitApplicationPodContainersOutcome> DescribeEdgeUnitApplicationPodContainersOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::DescribeEdgeUnitApplicationPodContainersRequest&, DescribeEdgeUnitApplicationPodContainersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeUnitApplicationPodContainersAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeEdgeUnitApplicationPodsResponse> DescribeEdgeUnitApplicationPodsOutcome;
-                typedef std::future<DescribeEdgeUnitApplicationPodsOutcome> DescribeEdgeUnitApplicationPodsOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::DescribeEdgeUnitApplicationPodsRequest&, DescribeEdgeUnitApplicationPodsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeUnitApplicationPodsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeEdgeUnitApplicationVisualizationResponse> DescribeEdgeUnitApplicationVisualizationOutcome;
-                typedef std::future<DescribeEdgeUnitApplicationVisualizationOutcome> DescribeEdgeUnitApplicationVisualizationOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::DescribeEdgeUnitApplicationVisualizationRequest&, DescribeEdgeUnitApplicationVisualizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeUnitApplicationVisualizationAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeEdgeUnitApplicationYamlResponse> DescribeEdgeUnitApplicationYamlOutcome;
-                typedef std::future<DescribeEdgeUnitApplicationYamlOutcome> DescribeEdgeUnitApplicationYamlOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::DescribeEdgeUnitApplicationYamlRequest&, DescribeEdgeUnitApplicationYamlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeUnitApplicationYamlAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeEdgeUnitApplicationYamlErrorResponse> DescribeEdgeUnitApplicationYamlErrorOutcome;
-                typedef std::future<DescribeEdgeUnitApplicationYamlErrorOutcome> DescribeEdgeUnitApplicationYamlErrorOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::DescribeEdgeUnitApplicationYamlErrorRequest&, DescribeEdgeUnitApplicationYamlErrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeUnitApplicationYamlErrorAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEdgeUnitApplicationsResponse> DescribeEdgeUnitApplicationsOutcome;
                 typedef std::future<DescribeEdgeUnitApplicationsOutcome> DescribeEdgeUnitApplicationsOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DescribeEdgeUnitApplicationsRequest&, DescribeEdgeUnitApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeUnitApplicationsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeEdgeUnitCloudResponse> DescribeEdgeUnitCloudOutcome;
-                typedef std::future<DescribeEdgeUnitCloudOutcome> DescribeEdgeUnitCloudOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::DescribeEdgeUnitCloudRequest&, DescribeEdgeUnitCloudOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeUnitCloudAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEdgeUnitDeployGridResponse> DescribeEdgeUnitDeployGridOutcome;
                 typedef std::future<DescribeEdgeUnitDeployGridOutcome> DescribeEdgeUnitDeployGridOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::DescribeEdgeUnitDeployGridRequest&, DescribeEdgeUnitDeployGridOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeUnitDeployGridAsyncHandler;
@@ -499,12 +405,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetMarketComponentListResponse> GetMarketComponentListOutcome;
                 typedef std::future<GetMarketComponentListOutcome> GetMarketComponentListOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::GetMarketComponentListRequest&, GetMarketComponentListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMarketComponentListAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyApplicationBasicInfoResponse> ModifyApplicationBasicInfoOutcome;
-                typedef std::future<ModifyApplicationBasicInfoOutcome> ModifyApplicationBasicInfoOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::ModifyApplicationBasicInfoRequest&, ModifyApplicationBasicInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationBasicInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyApplicationVisualizationResponse> ModifyApplicationVisualizationOutcome;
-                typedef std::future<ModifyApplicationVisualizationOutcome> ModifyApplicationVisualizationOutcomeCallable;
-                typedef std::function<void(const IecpClient*, const Model::ModifyApplicationVisualizationRequest&, ModifyApplicationVisualizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationVisualizationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConfigMapResponse> ModifyConfigMapOutcome;
                 typedef std::future<ModifyConfigMapOutcome> ModifyConfigMapOutcomeCallable;
                 typedef std::function<void(const IecpClient*, const Model::ModifyConfigMapRequest&, ModifyConfigMapOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConfigMapAsyncHandler;
@@ -551,17 +451,6 @@ namespace TencentCloud
 
 
                 /**
-                 *产品停售，预下线
-
-从组件市场选中组件并添加到应用模板列表
-                 * @param req ApplyMarketComponentRequest
-                 * @return ApplyMarketComponentOutcome
-                 */
-                ApplyMarketComponentOutcome ApplyMarketComponent(const Model::ApplyMarketComponentRequest &request);
-                void ApplyMarketComponentAsync(const Model::ApplyMarketComponentRequest& request, const ApplyMarketComponentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ApplyMarketComponentOutcomeCallable ApplyMarketComponentCallable(const Model::ApplyMarketComponentRequest& request);
-
-                /**
                  *建立消息路由
                  * @param req BuildMessageRouteRequest
                  * @return BuildMessageRouteOutcome
@@ -569,17 +458,6 @@ namespace TencentCloud
                 BuildMessageRouteOutcome BuildMessageRoute(const Model::BuildMessageRouteRequest &request);
                 void BuildMessageRouteAsync(const Model::BuildMessageRouteRequest& request, const BuildMessageRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BuildMessageRouteOutcomeCallable BuildMessageRouteCallable(const Model::BuildMessageRouteRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-创建可视化创建应用模板
-                 * @param req CreateApplicationVisualizationRequest
-                 * @return CreateApplicationVisualizationOutcome
-                 */
-                CreateApplicationVisualizationOutcome CreateApplicationVisualization(const Model::CreateApplicationVisualizationRequest &request);
-                void CreateApplicationVisualizationAsync(const Model::CreateApplicationVisualizationRequest& request, const CreateApplicationVisualizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateApplicationVisualizationOutcomeCallable CreateApplicationVisualizationCallable(const Model::CreateApplicationVisualizationRequest& request);
 
                 /**
                  *创建ConfigMap
@@ -625,28 +503,6 @@ namespace TencentCloud
                 CreateEdgeNodeUnitTemplateOutcome CreateEdgeNodeUnitTemplate(const Model::CreateEdgeNodeUnitTemplateRequest &request);
                 void CreateEdgeNodeUnitTemplateAsync(const Model::CreateEdgeNodeUnitTemplateRequest& request, const CreateEdgeNodeUnitTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEdgeNodeUnitTemplateOutcomeCallable CreateEdgeNodeUnitTemplateCallable(const Model::CreateEdgeNodeUnitTemplateRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-可视化创建应用
-                 * @param req CreateEdgeUnitApplicationVisualizationRequest
-                 * @return CreateEdgeUnitApplicationVisualizationOutcome
-                 */
-                CreateEdgeUnitApplicationVisualizationOutcome CreateEdgeUnitApplicationVisualization(const Model::CreateEdgeUnitApplicationVisualizationRequest &request);
-                void CreateEdgeUnitApplicationVisualizationAsync(const Model::CreateEdgeUnitApplicationVisualizationRequest& request, const CreateEdgeUnitApplicationVisualizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateEdgeUnitApplicationVisualizationOutcomeCallable CreateEdgeUnitApplicationVisualizationCallable(const Model::CreateEdgeUnitApplicationVisualizationRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-yaml方式创建应用
-                 * @param req CreateEdgeUnitApplicationYamlRequest
-                 * @return CreateEdgeUnitApplicationYamlOutcome
-                 */
-                CreateEdgeUnitApplicationYamlOutcome CreateEdgeUnitApplicationYaml(const Model::CreateEdgeUnitApplicationYamlRequest &request);
-                void CreateEdgeUnitApplicationYamlAsync(const Model::CreateEdgeUnitApplicationYamlRequest& request, const CreateEdgeUnitApplicationYamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateEdgeUnitApplicationYamlOutcomeCallable CreateEdgeUnitApplicationYamlCallable(const Model::CreateEdgeUnitApplicationYamlRequest& request);
 
                 /**
                  *创建边缘单元
@@ -721,17 +577,6 @@ yaml方式创建应用
                 CreateUserTokenOutcomeCallable CreateUserTokenCallable(const Model::CreateUserTokenRequest& request);
 
                 /**
-                 *产品停售，预下线
-
-删除应用模板
-                 * @param req DeleteApplicationsRequest
-                 * @return DeleteApplicationsOutcome
-                 */
-                DeleteApplicationsOutcome DeleteApplications(const Model::DeleteApplicationsRequest &request);
-                void DeleteApplicationsAsync(const Model::DeleteApplicationsRequest& request, const DeleteApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteApplicationsOutcomeCallable DeleteApplicationsCallable(const Model::DeleteApplicationsRequest& request);
-
-                /**
                  *删除ConfigMap
                  * @param req DeleteConfigMapRequest
                  * @return DeleteConfigMapOutcome
@@ -766,17 +611,6 @@ yaml方式创建应用
                 DeleteEdgeNodesOutcome DeleteEdgeNodes(const Model::DeleteEdgeNodesRequest &request);
                 void DeleteEdgeNodesAsync(const Model::DeleteEdgeNodesRequest& request, const DeleteEdgeNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteEdgeNodesOutcomeCallable DeleteEdgeNodesCallable(const Model::DeleteEdgeNodesRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-删除应用列表
-                 * @param req DeleteEdgeUnitApplicationsRequest
-                 * @return DeleteEdgeUnitApplicationsOutcome
-                 */
-                DeleteEdgeUnitApplicationsOutcome DeleteEdgeUnitApplications(const Model::DeleteEdgeUnitApplicationsRequest &request);
-                void DeleteEdgeUnitApplicationsAsync(const Model::DeleteEdgeUnitApplicationsRequest& request, const DeleteEdgeUnitApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteEdgeUnitApplicationsOutcomeCallable DeleteEdgeUnitApplicationsCallable(const Model::DeleteEdgeUnitApplicationsRequest& request);
 
                 /**
                  *删除边缘单元
@@ -867,50 +701,6 @@ yaml方式创建应用
                 DeleteSecretOutcome DeleteSecret(const Model::DeleteSecretRequest &request);
                 void DeleteSecretAsync(const Model::DeleteSecretRequest& request, const DeleteSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSecretOutcomeCallable DeleteSecretCallable(const Model::DeleteSecretRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-获取应用模板可视化配置信息
-                 * @param req DescribeApplicationVisualizationRequest
-                 * @return DescribeApplicationVisualizationOutcome
-                 */
-                DescribeApplicationVisualizationOutcome DescribeApplicationVisualization(const Model::DescribeApplicationVisualizationRequest &request);
-                void DescribeApplicationVisualizationAsync(const Model::DescribeApplicationVisualizationRequest& request, const DescribeApplicationVisualizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeApplicationVisualizationOutcomeCallable DescribeApplicationVisualizationCallable(const Model::DescribeApplicationVisualizationRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-查询应用模板Yaml
-                 * @param req DescribeApplicationYamlRequest
-                 * @return DescribeApplicationYamlOutcome
-                 */
-                DescribeApplicationYamlOutcome DescribeApplicationYaml(const Model::DescribeApplicationYamlRequest &request);
-                void DescribeApplicationYamlAsync(const Model::DescribeApplicationYamlRequest& request, const DescribeApplicationYamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeApplicationYamlOutcomeCallable DescribeApplicationYamlCallable(const Model::DescribeApplicationYamlRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-检查应用模板的Yaml配置
-                 * @param req DescribeApplicationYamlErrorRequest
-                 * @return DescribeApplicationYamlErrorOutcome
-                 */
-                DescribeApplicationYamlErrorOutcome DescribeApplicationYamlError(const Model::DescribeApplicationYamlErrorRequest &request);
-                void DescribeApplicationYamlErrorAsync(const Model::DescribeApplicationYamlErrorRequest& request, const DescribeApplicationYamlErrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeApplicationYamlErrorOutcomeCallable DescribeApplicationYamlErrorCallable(const Model::DescribeApplicationYamlErrorRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-获取应用模板列表
-                 * @param req DescribeApplicationsRequest
-                 * @return DescribeApplicationsOutcome
-                 */
-                DescribeApplicationsOutcome DescribeApplications(const Model::DescribeApplicationsRequest &request);
-                void DescribeApplicationsAsync(const Model::DescribeApplicationsRequest& request, const DescribeApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const Model::DescribeApplicationsRequest& request);
 
                 /**
                  *获取ConfigMap详情
@@ -1039,83 +829,6 @@ yaml方式创建应用
                 DescribeEdgeSnNodesOutcomeCallable DescribeEdgeSnNodesCallable(const Model::DescribeEdgeSnNodesRequest& request);
 
                 /**
-                 *产品停售，预下线
-
-获取应用事件列表
-                 * @param req DescribeEdgeUnitApplicationEventsRequest
-                 * @return DescribeEdgeUnitApplicationEventsOutcome
-                 */
-                DescribeEdgeUnitApplicationEventsOutcome DescribeEdgeUnitApplicationEvents(const Model::DescribeEdgeUnitApplicationEventsRequest &request);
-                void DescribeEdgeUnitApplicationEventsAsync(const Model::DescribeEdgeUnitApplicationEventsRequest& request, const DescribeEdgeUnitApplicationEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeEdgeUnitApplicationEventsOutcomeCallable DescribeEdgeUnitApplicationEventsCallable(const Model::DescribeEdgeUnitApplicationEventsRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-获取应用日志
-                 * @param req DescribeEdgeUnitApplicationLogsRequest
-                 * @return DescribeEdgeUnitApplicationLogsOutcome
-                 */
-                DescribeEdgeUnitApplicationLogsOutcome DescribeEdgeUnitApplicationLogs(const Model::DescribeEdgeUnitApplicationLogsRequest &request);
-                void DescribeEdgeUnitApplicationLogsAsync(const Model::DescribeEdgeUnitApplicationLogsRequest& request, const DescribeEdgeUnitApplicationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeEdgeUnitApplicationLogsOutcomeCallable DescribeEdgeUnitApplicationLogsCallable(const Model::DescribeEdgeUnitApplicationLogsRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-获取应用容器状态
-                 * @param req DescribeEdgeUnitApplicationPodContainersRequest
-                 * @return DescribeEdgeUnitApplicationPodContainersOutcome
-                 */
-                DescribeEdgeUnitApplicationPodContainersOutcome DescribeEdgeUnitApplicationPodContainers(const Model::DescribeEdgeUnitApplicationPodContainersRequest &request);
-                void DescribeEdgeUnitApplicationPodContainersAsync(const Model::DescribeEdgeUnitApplicationPodContainersRequest& request, const DescribeEdgeUnitApplicationPodContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeEdgeUnitApplicationPodContainersOutcomeCallable DescribeEdgeUnitApplicationPodContainersCallable(const Model::DescribeEdgeUnitApplicationPodContainersRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-获取应用下Pod状态
-                 * @param req DescribeEdgeUnitApplicationPodsRequest
-                 * @return DescribeEdgeUnitApplicationPodsOutcome
-                 */
-                DescribeEdgeUnitApplicationPodsOutcome DescribeEdgeUnitApplicationPods(const Model::DescribeEdgeUnitApplicationPodsRequest &request);
-                void DescribeEdgeUnitApplicationPodsAsync(const Model::DescribeEdgeUnitApplicationPodsRequest& request, const DescribeEdgeUnitApplicationPodsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeEdgeUnitApplicationPodsOutcomeCallable DescribeEdgeUnitApplicationPodsCallable(const Model::DescribeEdgeUnitApplicationPodsRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-获取单元可视化配置信息
-                 * @param req DescribeEdgeUnitApplicationVisualizationRequest
-                 * @return DescribeEdgeUnitApplicationVisualizationOutcome
-                 */
-                DescribeEdgeUnitApplicationVisualizationOutcome DescribeEdgeUnitApplicationVisualization(const Model::DescribeEdgeUnitApplicationVisualizationRequest &request);
-                void DescribeEdgeUnitApplicationVisualizationAsync(const Model::DescribeEdgeUnitApplicationVisualizationRequest& request, const DescribeEdgeUnitApplicationVisualizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeEdgeUnitApplicationVisualizationOutcomeCallable DescribeEdgeUnitApplicationVisualizationCallable(const Model::DescribeEdgeUnitApplicationVisualizationRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-获取应用的Yaml配置
-                 * @param req DescribeEdgeUnitApplicationYamlRequest
-                 * @return DescribeEdgeUnitApplicationYamlOutcome
-                 */
-                DescribeEdgeUnitApplicationYamlOutcome DescribeEdgeUnitApplicationYaml(const Model::DescribeEdgeUnitApplicationYamlRequest &request);
-                void DescribeEdgeUnitApplicationYamlAsync(const Model::DescribeEdgeUnitApplicationYamlRequest& request, const DescribeEdgeUnitApplicationYamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeEdgeUnitApplicationYamlOutcomeCallable DescribeEdgeUnitApplicationYamlCallable(const Model::DescribeEdgeUnitApplicationYamlRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-检查单元应用的Yaml配置
-                 * @param req DescribeEdgeUnitApplicationYamlErrorRequest
-                 * @return DescribeEdgeUnitApplicationYamlErrorOutcome
-                 */
-                DescribeEdgeUnitApplicationYamlErrorOutcome DescribeEdgeUnitApplicationYamlError(const Model::DescribeEdgeUnitApplicationYamlErrorRequest &request);
-                void DescribeEdgeUnitApplicationYamlErrorAsync(const Model::DescribeEdgeUnitApplicationYamlErrorRequest& request, const DescribeEdgeUnitApplicationYamlErrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeEdgeUnitApplicationYamlErrorOutcomeCallable DescribeEdgeUnitApplicationYamlErrorCallable(const Model::DescribeEdgeUnitApplicationYamlErrorRequest& request);
-
-                /**
                  *获取单元下应用列表
                  * @param req DescribeEdgeUnitApplicationsRequest
                  * @return DescribeEdgeUnitApplicationsOutcome
@@ -1123,17 +836,6 @@ yaml方式创建应用
                 DescribeEdgeUnitApplicationsOutcome DescribeEdgeUnitApplications(const Model::DescribeEdgeUnitApplicationsRequest &request);
                 void DescribeEdgeUnitApplicationsAsync(const Model::DescribeEdgeUnitApplicationsRequest& request, const DescribeEdgeUnitApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEdgeUnitApplicationsOutcomeCallable DescribeEdgeUnitApplicationsCallable(const Model::DescribeEdgeUnitApplicationsRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-查询边缘集群详情
-                 * @param req DescribeEdgeUnitCloudRequest
-                 * @return DescribeEdgeUnitCloudOutcome
-                 */
-                DescribeEdgeUnitCloudOutcome DescribeEdgeUnitCloud(const Model::DescribeEdgeUnitCloudRequest &request);
-                void DescribeEdgeUnitCloudAsync(const Model::DescribeEdgeUnitCloudRequest& request, const DescribeEdgeUnitCloudAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeEdgeUnitCloudOutcomeCallable DescribeEdgeUnitCloudCallable(const Model::DescribeEdgeUnitCloudRequest& request);
 
                 /**
                  *查询边缘单元Grid列表
@@ -1359,28 +1061,6 @@ yaml方式创建应用
                 GetMarketComponentListOutcome GetMarketComponentList(const Model::GetMarketComponentListRequest &request);
                 void GetMarketComponentListAsync(const Model::GetMarketComponentListRequest& request, const GetMarketComponentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetMarketComponentListOutcomeCallable GetMarketComponentListCallable(const Model::GetMarketComponentListRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-修改应用模板基本信息
-                 * @param req ModifyApplicationBasicInfoRequest
-                 * @return ModifyApplicationBasicInfoOutcome
-                 */
-                ModifyApplicationBasicInfoOutcome ModifyApplicationBasicInfo(const Model::ModifyApplicationBasicInfoRequest &request);
-                void ModifyApplicationBasicInfoAsync(const Model::ModifyApplicationBasicInfoRequest& request, const ModifyApplicationBasicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyApplicationBasicInfoOutcomeCallable ModifyApplicationBasicInfoCallable(const Model::ModifyApplicationBasicInfoRequest& request);
-
-                /**
-                 *产品停售，预下线
-
-修改应用模板配置
-                 * @param req ModifyApplicationVisualizationRequest
-                 * @return ModifyApplicationVisualizationOutcome
-                 */
-                ModifyApplicationVisualizationOutcome ModifyApplicationVisualization(const Model::ModifyApplicationVisualizationRequest &request);
-                void ModifyApplicationVisualizationAsync(const Model::ModifyApplicationVisualizationRequest& request, const ModifyApplicationVisualizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyApplicationVisualizationOutcomeCallable ModifyApplicationVisualizationCallable(const Model::ModifyApplicationVisualizationRequest& request);
 
                 /**
                  *修改ConfigMap

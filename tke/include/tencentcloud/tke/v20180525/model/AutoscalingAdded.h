@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 自动扩所容的节点
+                * 自动扩缩容的节点
                 */
                 class AutoscalingAdded : public AbstractModel
                 {

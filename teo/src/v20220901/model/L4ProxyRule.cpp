@@ -32,7 +32,8 @@ L4ProxyRule::L4ProxyRule() :
     m_sessionPersistTimeHasBeenSet(false),
     m_ruleTagHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_buIdHasBeenSet(false)
+    m_buIdHasBeenSet(false),
+    m_remoteAuthHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,23 @@ CoreInternalOutcome L4ProxyRule::Deserialize(const rapidjson::Value &value)
         m_buIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RemoteAuth") && !value["RemoteAuth"].IsNull())
+    {
+        if (!value["RemoteAuth"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `L4ProxyRule.RemoteAuth` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_remoteAuth.Deserialize(value["RemoteAuth"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_remoteAuthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +296,15 @@ void L4ProxyRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "BuId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_buId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remoteAuthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteAuth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_remoteAuth.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -473,5 +500,21 @@ void L4ProxyRule::SetBuId(const string& _buId)
 bool L4ProxyRule::BuIdHasBeenSet() const
 {
     return m_buIdHasBeenSet;
+}
+
+L4ProxyRemoteAuth L4ProxyRule::GetRemoteAuth() const
+{
+    return m_remoteAuth;
+}
+
+void L4ProxyRule::SetRemoteAuth(const L4ProxyRemoteAuth& _remoteAuth)
+{
+    m_remoteAuth = _remoteAuth;
+    m_remoteAuthHasBeenSet = true;
+}
+
+bool L4ProxyRule::RemoteAuthHasBeenSet() const
+{
+    return m_remoteAuthHasBeenSet;
 }
 

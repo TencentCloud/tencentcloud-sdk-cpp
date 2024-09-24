@@ -99,7 +99,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/L4OfflineLog.h
   include/tencentcloud/teo/v20220901/model/ModifyPlanRequest.h
   include/tencentcloud/teo/v20220901/model/CustomErrorPage.h
-  include/tencentcloud/teo/v20220901/model/SecEntryValue.h
+  include/tencentcloud/teo/v20220901/model/MaxAge.h
   include/tencentcloud/teo/v20220901/model/ModifyL4ProxyRulesRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeRulesSettingRequest.h
   include/tencentcloud/teo/v20220901/model/EntityStatus.h
@@ -116,13 +116,14 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyRealtimeLogDeliveryTaskResponse.h
   include/tencentcloud/teo/v20220901/model/AccelerationDomainCertificate.h
   include/tencentcloud/teo/v20220901/model/DescribeSecurityTemplateBindingsRequest.h
+  include/tencentcloud/teo/v20220901/model/L4ProxyRemoteAuth.h
   include/tencentcloud/teo/v20220901/model/AlgDetectResult.h
   include/tencentcloud/teo/v20220901/model/DefaultServerCertInfo.h
   include/tencentcloud/teo/v20220901/model/OfflineCache.h
   include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackTopDataResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteRulesRequest.h
   include/tencentcloud/teo/v20220901/model/ExceptUserRuleCondition.h
-  include/tencentcloud/teo/v20220901/model/MaxAge.h
+  include/tencentcloud/teo/v20220901/model/SecEntryValue.h
   include/tencentcloud/teo/v20220901/model/DescribeCustomErrorPagesResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteApplicationProxyResponse.h
   include/tencentcloud/teo/v20220901/model/AlgDetectRule.h
@@ -501,7 +502,7 @@ set(teo_src
   src/v20220901/model/L4OfflineLog.cpp
   src/v20220901/model/ModifyPlanRequest.cpp
   src/v20220901/model/CustomErrorPage.cpp
-  src/v20220901/model/SecEntryValue.cpp
+  src/v20220901/model/MaxAge.cpp
   src/v20220901/model/ModifyL4ProxyRulesRequest.cpp
   src/v20220901/model/DescribeRulesSettingRequest.cpp
   src/v20220901/model/EntityStatus.cpp
@@ -518,13 +519,14 @@ set(teo_src
   src/v20220901/model/ModifyRealtimeLogDeliveryTaskResponse.cpp
   src/v20220901/model/AccelerationDomainCertificate.cpp
   src/v20220901/model/DescribeSecurityTemplateBindingsRequest.cpp
+  src/v20220901/model/L4ProxyRemoteAuth.cpp
   src/v20220901/model/AlgDetectResult.cpp
   src/v20220901/model/DefaultServerCertInfo.cpp
   src/v20220901/model/OfflineCache.cpp
   src/v20220901/model/DescribeDDoSAttackTopDataResponse.cpp
   src/v20220901/model/DeleteRulesRequest.cpp
   src/v20220901/model/ExceptUserRuleCondition.cpp
-  src/v20220901/model/MaxAge.cpp
+  src/v20220901/model/SecEntryValue.cpp
   src/v20220901/model/DescribeCustomErrorPagesResponse.cpp
   src/v20220901/model/DeleteApplicationProxyResponse.cpp
   src/v20220901/model/AlgDetectRule.cpp

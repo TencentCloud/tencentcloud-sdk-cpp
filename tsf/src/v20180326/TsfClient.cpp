@@ -3136,49 +3136,6 @@ TsfClient::DescribeApplicationAttributeOutcomeCallable TsfClient::DescribeApplic
     return task->get_future();
 }
 
-TsfClient::DescribeApplicationBusinessLogConfigOutcome TsfClient::DescribeApplicationBusinessLogConfig(const DescribeApplicationBusinessLogConfigRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeApplicationBusinessLogConfig");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeApplicationBusinessLogConfigResponse rsp = DescribeApplicationBusinessLogConfigResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeApplicationBusinessLogConfigOutcome(rsp);
-        else
-            return DescribeApplicationBusinessLogConfigOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeApplicationBusinessLogConfigOutcome(outcome.GetError());
-    }
-}
-
-void TsfClient::DescribeApplicationBusinessLogConfigAsync(const DescribeApplicationBusinessLogConfigRequest& request, const DescribeApplicationBusinessLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeApplicationBusinessLogConfig(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TsfClient::DescribeApplicationBusinessLogConfigOutcomeCallable TsfClient::DescribeApplicationBusinessLogConfigCallable(const DescribeApplicationBusinessLogConfigRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeApplicationBusinessLogConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeApplicationBusinessLogConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TsfClient::DescribeApplicationsOutcome TsfClient::DescribeApplications(const DescribeApplicationsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApplications");

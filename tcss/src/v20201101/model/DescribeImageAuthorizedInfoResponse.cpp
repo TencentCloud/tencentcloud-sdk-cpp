@@ -33,7 +33,9 @@ DescribeImageAuthorizedInfoResponse::DescribeImageAuthorizedInfoResponse() :
     m_usedTrialAuthorizedCntHasBeenSet(false),
     m_purchasedAuthorizedCntHasBeenSet(false),
     m_usedPurchasedAuthorizedCntHasBeenSet(false),
-    m_canApplyFreeImageAuthorizeHasBeenSet(false)
+    m_canApplyFreeImageAuthorizeHasBeenSet(false),
+    m_imageScanInquireInfoHasBeenSet(false),
+    m_repeatImageIdCntHasBeenSet(false)
 {
 }
 
@@ -171,6 +173,33 @@ CoreInternalOutcome DescribeImageAuthorizedInfoResponse::Deserialize(const strin
         m_canApplyFreeImageAuthorizeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImageScanInquireInfo") && !rsp["ImageScanInquireInfo"].IsNull())
+    {
+        if (!rsp["ImageScanInquireInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageScanInquireInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageScanInquireInfo.Deserialize(rsp["ImageScanInquireInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageScanInquireInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RepeatImageIdCnt") && !rsp["RepeatImageIdCnt"].IsNull())
+    {
+        if (!rsp["RepeatImageIdCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RepeatImageIdCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_repeatImageIdCnt = rsp["RepeatImageIdCnt"].GetUint64();
+        m_repeatImageIdCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +288,23 @@ string DescribeImageAuthorizedInfoResponse::ToJsonString() const
         string key = "CanApplyFreeImageAuthorize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_canApplyFreeImageAuthorize, allocator);
+    }
+
+    if (m_imageScanInquireInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageScanInquireInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageScanInquireInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_repeatImageIdCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepeatImageIdCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_repeatImageIdCnt, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -371,6 +417,26 @@ bool DescribeImageAuthorizedInfoResponse::GetCanApplyFreeImageAuthorize() const
 bool DescribeImageAuthorizedInfoResponse::CanApplyFreeImageAuthorizeHasBeenSet() const
 {
     return m_canApplyFreeImageAuthorizeHasBeenSet;
+}
+
+ImageScanInquireInfo DescribeImageAuthorizedInfoResponse::GetImageScanInquireInfo() const
+{
+    return m_imageScanInquireInfo;
+}
+
+bool DescribeImageAuthorizedInfoResponse::ImageScanInquireInfoHasBeenSet() const
+{
+    return m_imageScanInquireInfoHasBeenSet;
+}
+
+uint64_t DescribeImageAuthorizedInfoResponse::GetRepeatImageIdCnt() const
+{
+    return m_repeatImageIdCnt;
+}
+
+bool DescribeImageAuthorizedInfoResponse::RepeatImageIdCntHasBeenSet() const
+{
+    return m_repeatImageIdCntHasBeenSet;
 }
 
 

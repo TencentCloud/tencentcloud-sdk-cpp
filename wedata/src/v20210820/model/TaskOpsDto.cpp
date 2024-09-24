@@ -108,7 +108,8 @@ TaskOpsDto::TaskOpsDto() :
     m_scriptInfoHasBeenSet(false),
     m_dLCResourceConfigHasBeenSet(false),
     m_parentTaskInfosHasBeenSet(false),
-    m_extResourceFlagHasBeenSet(false)
+    m_extResourceFlagHasBeenSet(false),
+    m_newParentTaskInfosHasBeenSet(false)
 {
 }
 
@@ -1049,6 +1050,26 @@ CoreInternalOutcome TaskOpsDto::Deserialize(const rapidjson::Value &value)
         m_extResourceFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("NewParentTaskInfos") && !value["NewParentTaskInfos"].IsNull())
+    {
+        if (!value["NewParentTaskInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.NewParentTaskInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NewParentTaskInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AiopsSimpleTaskDto item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_newParentTaskInfos.push_back(item);
+        }
+        m_newParentTaskInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1771,6 +1792,21 @@ void TaskOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extResourceFlag.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_newParentTaskInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewParentTaskInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_newParentTaskInfos.begin(); itr != m_newParentTaskInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -3182,5 +3218,21 @@ void TaskOpsDto::SetExtResourceFlag(const ExtResourceFlagDto& _extResourceFlag)
 bool TaskOpsDto::ExtResourceFlagHasBeenSet() const
 {
     return m_extResourceFlagHasBeenSet;
+}
+
+vector<AiopsSimpleTaskDto> TaskOpsDto::GetNewParentTaskInfos() const
+{
+    return m_newParentTaskInfos;
+}
+
+void TaskOpsDto::SetNewParentTaskInfos(const vector<AiopsSimpleTaskDto>& _newParentTaskInfos)
+{
+    m_newParentTaskInfos = _newParentTaskInfos;
+    m_newParentTaskInfosHasBeenSet = true;
+}
+
+bool TaskOpsDto::NewParentTaskInfosHasBeenSet() const
+{
+    return m_newParentTaskInfosHasBeenSet;
 }
 

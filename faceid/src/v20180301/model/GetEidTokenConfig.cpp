@@ -29,7 +29,8 @@ GetEidTokenConfig::GetEidTokenConfig() :
     m_intentionActionsHasBeenSet(false),
     m_intentionRecognitionHasBeenSet(false),
     m_isSupportHMTResidentPermitOCRHasBeenSet(false),
-    m_mouthOpenRecognitionHasBeenSet(false)
+    m_mouthOpenRecognitionHasBeenSet(false),
+    m_speedHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,16 @@ CoreInternalOutcome GetEidTokenConfig::Deserialize(const rapidjson::Value &value
         m_mouthOpenRecognitionHasBeenSet = true;
     }
 
+    if (value.HasMember("Speed") && !value["Speed"].IsNull())
+    {
+        if (!value["Speed"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GetEidTokenConfig.Speed` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_speed = value["Speed"].GetUint64();
+        m_speedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -239,6 +250,14 @@ void GetEidTokenConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "MouthOpenRecognition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mouthOpenRecognition, allocator);
+    }
+
+    if (m_speedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Speed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_speed, allocator);
     }
 
 }
@@ -386,5 +405,21 @@ void GetEidTokenConfig::SetMouthOpenRecognition(const bool& _mouthOpenRecognitio
 bool GetEidTokenConfig::MouthOpenRecognitionHasBeenSet() const
 {
     return m_mouthOpenRecognitionHasBeenSet;
+}
+
+uint64_t GetEidTokenConfig::GetSpeed() const
+{
+    return m_speed;
+}
+
+void GetEidTokenConfig::SetSpeed(const uint64_t& _speed)
+{
+    m_speed = _speed;
+    m_speedHasBeenSet = true;
+}
+
+bool GetEidTokenConfig::SpeedHasBeenSet() const
+{
+    return m_speedHasBeenSet;
 }
 

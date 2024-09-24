@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/teo/v20220901/model/L4ProxyRemoteAuth.h>
 
 
 namespace TencentCloud
@@ -442,6 +443,35 @@ namespace TencentCloud
                      */
                     bool BuIdHasBeenSet() const;
 
+                    /**
+                     * 获取远程鉴权信息。
+注意：RemoteAuth 在 CreateL4ProxyRules 或 ModifyL4ProxyRules 不可作为入参使用，如有传此参数，会忽略。在 DescribeL4ProxyRules 返回为空时，表示没有开启远程鉴权。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RemoteAuth 远程鉴权信息。
+注意：RemoteAuth 在 CreateL4ProxyRules 或 ModifyL4ProxyRules 不可作为入参使用，如有传此参数，会忽略。在 DescribeL4ProxyRules 返回为空时，表示没有开启远程鉴权。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    L4ProxyRemoteAuth GetRemoteAuth() const;
+
+                    /**
+                     * 设置远程鉴权信息。
+注意：RemoteAuth 在 CreateL4ProxyRules 或 ModifyL4ProxyRules 不可作为入参使用，如有传此参数，会忽略。在 DescribeL4ProxyRules 返回为空时，表示没有开启远程鉴权。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _remoteAuth 远程鉴权信息。
+注意：RemoteAuth 在 CreateL4ProxyRules 或 ModifyL4ProxyRules 不可作为入参使用，如有传此参数，会忽略。在 DescribeL4ProxyRules 返回为空时，表示没有开启远程鉴权。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRemoteAuth(const L4ProxyRemoteAuth& _remoteAuth);
+
+                    /**
+                     * 判断参数 RemoteAuth 是否已赋值
+                     * @return RemoteAuth 是否已赋值
+                     * 
+                     */
+                    bool RemoteAuthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -551,6 +581,14 @@ namespace TencentCloud
                      */
                     std::string m_buId;
                     bool m_buIdHasBeenSet;
+
+                    /**
+                     * 远程鉴权信息。
+注意：RemoteAuth 在 CreateL4ProxyRules 或 ModifyL4ProxyRules 不可作为入参使用，如有传此参数，会忽略。在 DescribeL4ProxyRules 返回为空时，表示没有开启远程鉴权。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    L4ProxyRemoteAuth m_remoteAuth;
+                    bool m_remoteAuthHasBeenSet;
 
                 };
             }

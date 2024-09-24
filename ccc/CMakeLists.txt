@@ -97,6 +97,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/PSTNSessionInfo.h
   include/tencentcloud/ccc/v20200210/model/Message.h
   include/tencentcloud/ccc/v20200210/model/AbortPredictiveDialingCampaignResponse.h
+  include/tencentcloud/ccc/v20200210/model/CreateAICallRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeNumbersRequest.h
   include/tencentcloud/ccc/v20200210/model/ExtensionInfo.h
   include/tencentcloud/ccc/v20200210/model/BindNumberCallOutSkillGroupRequest.h
@@ -141,6 +142,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/UploadIvrAudioFailedInfo.h
   include/tencentcloud/ccc/v20200210/model/DescribeCallInMetricsResponse.h
   include/tencentcloud/ccc/v20200210/model/ModifyCompanyApplyRequest.h
+  include/tencentcloud/ccc/v20200210/model/CreateAICallResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeCompanyListRequest.h
   include/tencentcloud/ccc/v20200210/model/CreateIVRSessionResponse.h
   include/tencentcloud/ccc/v20200210/model/IMSatisfaction.h
@@ -256,6 +258,7 @@ set(ccc_src
   src/v20200210/model/PSTNSessionInfo.cpp
   src/v20200210/model/Message.cpp
   src/v20200210/model/AbortPredictiveDialingCampaignResponse.cpp
+  src/v20200210/model/CreateAICallRequest.cpp
   src/v20200210/model/DescribeNumbersRequest.cpp
   src/v20200210/model/ExtensionInfo.cpp
   src/v20200210/model/BindNumberCallOutSkillGroupRequest.cpp
@@ -300,6 +303,7 @@ set(ccc_src
   src/v20200210/model/UploadIvrAudioFailedInfo.cpp
   src/v20200210/model/DescribeCallInMetricsResponse.cpp
   src/v20200210/model/ModifyCompanyApplyRequest.cpp
+  src/v20200210/model/CreateAICallResponse.cpp
   src/v20200210/model/DescribeCompanyListRequest.cpp
   src/v20200210/model/CreateIVRSessionResponse.cpp
   src/v20200210/model/IMSatisfaction.cpp

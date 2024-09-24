@@ -47,10 +47,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户主体名称。
+                     * 获取数据委托方、需求方：客户主体名称。
 
 示例值：某某有限公司。
-                     * @return DataProviderName 客户主体名称。
+                     * @return DataProviderName 数据委托方、需求方：客户主体名称。
 
 示例值：某某有限公司。
                      * 
@@ -58,10 +58,10 @@ namespace TencentCloud
                     std::string GetDataProviderName() const;
 
                     /**
-                     * 设置客户主体名称。
+                     * 设置数据委托方、需求方：客户主体名称。
 
 示例值：某某有限公司。
-                     * @param _dataProviderName 客户主体名称。
+                     * @param _dataProviderName 数据委托方、需求方：客户主体名称。
 
 示例值：某某有限公司。
                      * 
@@ -76,12 +76,12 @@ namespace TencentCloud
                     bool DataProviderNameHasBeenSet() const;
 
                     /**
-                     * 获取接收方主体名称。
+                     * 获取数据受托方、提供方：腾讯云主体名称。
 
 固定填：腾讯云计算（北京）有限责任公司
 
 示例值：腾讯云计算（北京）有限责任公司
-                     * @return DataRecipientName 接收方主体名称。
+                     * @return DataRecipientName 数据受托方、提供方：腾讯云主体名称。
 
 固定填：腾讯云计算（北京）有限责任公司
 
@@ -91,12 +91,12 @@ namespace TencentCloud
                     std::string GetDataRecipientName() const;
 
                     /**
-                     * 设置接收方主体名称。
+                     * 设置数据受托方、提供方：腾讯云主体名称。
 
 固定填：腾讯云计算（北京）有限责任公司
 
 示例值：腾讯云计算（北京）有限责任公司
-                     * @param _dataRecipientName 接收方主体名称。
+                     * @param _dataRecipientName 数据受托方、提供方：腾讯云主体名称。
 
 固定填：腾讯云计算（北京）有限责任公司
 
@@ -113,7 +113,7 @@ namespace TencentCloud
                     bool DataRecipientNameHasBeenSet() const;
 
                     /**
-                     * 获取客户请求RCE所涉及的用户敏感数据类型，支持多选。实际以接口请求传参为准。
+                     * 获取客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。
 
 1-手机号；
 
@@ -122,13 +122,11 @@ namespace TencentCloud
 3-QQ开放账号；
 
 4-IP地址；
-
-5-设备指纹；
 
 999-其它；
 
 示例值：[1, 4]
-                     * @return UserDataType 客户请求RCE所涉及的用户敏感数据类型，支持多选。实际以接口请求传参为准。
+                     * @return UserDataType 客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。
 
 1-手机号；
 
@@ -137,8 +135,6 @@ namespace TencentCloud
 3-QQ开放账号；
 
 4-IP地址；
-
-5-设备指纹；
 
 999-其它；
 
@@ -148,7 +144,7 @@ namespace TencentCloud
                     std::vector<uint64_t> GetUserDataType() const;
 
                     /**
-                     * 设置客户请求RCE所涉及的用户敏感数据类型，支持多选。实际以接口请求传参为准。
+                     * 设置客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。
 
 1-手机号；
 
@@ -157,13 +153,11 @@ namespace TencentCloud
 3-QQ开放账号；
 
 4-IP地址；
-
-5-设备指纹；
 
 999-其它；
 
 示例值：[1, 4]
-                     * @param _userDataType 客户请求RCE所涉及的用户敏感数据类型，支持多选。实际以接口请求传参为准。
+                     * @param _userDataType 客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。
 
 1-手机号；
 
@@ -172,8 +166,6 @@ namespace TencentCloud
 3-QQ开放账号；
 
 4-IP地址；
-
-5-设备指纹；
 
 999-其它；
 
@@ -190,30 +182,22 @@ namespace TencentCloud
                     bool UserDataTypeHasBeenSet() const;
 
                     /**
-                     * 获取客户是否已经获取用户授权。
-
+                     * 获取客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意客户委托腾讯云处理入参信息
 1-已授权；其它值为未授权。
-
 示例值：1
-                     * @return IsAuthorize 客户是否已经获取用户授权。
-
+                     * @return IsAuthorize 客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意客户委托腾讯云处理入参信息
 1-已授权；其它值为未授权。
-
 示例值：1
                      * 
                      */
                     uint64_t GetIsAuthorize() const;
 
                     /**
-                     * 设置客户是否已经获取用户授权。
-
+                     * 设置客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意客户委托腾讯云处理入参信息
 1-已授权；其它值为未授权。
-
 示例值：1
-                     * @param _isAuthorize 客户是否已经获取用户授权。
-
+                     * @param _isAuthorize 客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意客户委托腾讯云处理入参信息
 1-已授权；其它值为未授权。
-
 示例值：1
                      * 
                      */
@@ -227,41 +211,33 @@ namespace TencentCloud
                     bool IsAuthorizeHasBeenSet() const;
 
                     /**
-                     * 获取是否是用户个人敏感数据。
-
-固定填：1。
-
+                     * 获取客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意腾讯云结合客户提供的信息，对已合法收集的用户数据进行必要处理得出服务结果，并返回给客户。
+1-已授权；其它值为未授权。
 示例值：1
-                     * @return IsPersonalData 是否是用户个人敏感数据。
-
-固定填：1。
-
+                     * @return IsOrderHandling 客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意腾讯云结合客户提供的信息，对已合法收集的用户数据进行必要处理得出服务结果，并返回给客户。
+1-已授权；其它值为未授权。
 示例值：1
                      * 
                      */
-                    uint64_t GetIsPersonalData() const;
+                    uint64_t GetIsOrderHandling() const;
 
                     /**
-                     * 设置是否是用户个人敏感数据。
-
-固定填：1。
-
+                     * 设置客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意腾讯云结合客户提供的信息，对已合法收集的用户数据进行必要处理得出服务结果，并返回给客户。
+1-已授权；其它值为未授权。
 示例值：1
-                     * @param _isPersonalData 是否是用户个人敏感数据。
-
-固定填：1。
-
+                     * @param _isOrderHandling 客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意腾讯云结合客户提供的信息，对已合法收集的用户数据进行必要处理得出服务结果，并返回给客户。
+1-已授权；其它值为未授权。
 示例值：1
                      * 
                      */
-                    void SetIsPersonalData(const uint64_t& _isPersonalData);
+                    void SetIsOrderHandling(const uint64_t& _isOrderHandling);
 
                     /**
-                     * 判断参数 IsPersonalData 是否已赋值
-                     * @return IsPersonalData 是否已赋值
+                     * 判断参数 IsOrderHandling 是否已赋值
+                     * @return IsOrderHandling 是否已赋值
                      * 
                      */
-                    bool IsPersonalDataHasBeenSet() const;
+                    bool IsOrderHandlingHasBeenSet() const;
 
                     /**
                      * 获取客户获得的用户授权期限时间戳（单位秒）。
@@ -301,23 +277,27 @@ namespace TencentCloud
                     bool AuthorizationTermHasBeenSet() const;
 
                     /**
-                     * 获取客户获得用户授权所依赖的协议地址。
+                     * 获取	
+客户获得用户授权所依赖的协议地址。
 
-示例值：https://www.*****.com/*****
-                     * @return PrivacyPolicyLink 客户获得用户授权所依赖的协议地址。
+示例值：https://www.*****.com/*
+                     * @return PrivacyPolicyLink 	
+客户获得用户授权所依赖的协议地址。
 
-示例值：https://www.*****.com/*****
+示例值：https://www.*****.com/*
                      * 
                      */
                     std::string GetPrivacyPolicyLink() const;
 
                     /**
-                     * 设置客户获得用户授权所依赖的协议地址。
+                     * 设置	
+客户获得用户授权所依赖的协议地址。
 
-示例值：https://www.*****.com/*****
-                     * @param _privacyPolicyLink 客户获得用户授权所依赖的协议地址。
+示例值：https://www.*****.com/*
+                     * @param _privacyPolicyLink 	
+客户获得用户授权所依赖的协议地址。
 
-示例值：https://www.*****.com/*****
+示例值：https://www.*****.com/*
                      * 
                      */
                     void SetPrivacyPolicyLink(const std::string& _privacyPolicyLink);
@@ -329,10 +309,47 @@ namespace TencentCloud
                      */
                     bool PrivacyPolicyLinkHasBeenSet() const;
 
+                    /**
+                     * 获取是否是用户个人敏感数据。
+
+固定填：1。
+
+示例值：1
+                     * @return IsPersonalData 是否是用户个人敏感数据。
+
+固定填：1。
+
+示例值：1
+                     * 
+                     */
+                    uint64_t GetIsPersonalData() const;
+
+                    /**
+                     * 设置是否是用户个人敏感数据。
+
+固定填：1。
+
+示例值：1
+                     * @param _isPersonalData 是否是用户个人敏感数据。
+
+固定填：1。
+
+示例值：1
+                     * 
+                     */
+                    void SetIsPersonalData(const uint64_t& _isPersonalData);
+
+                    /**
+                     * 判断参数 IsPersonalData 是否已赋值
+                     * @return IsPersonalData 是否已赋值
+                     * 
+                     */
+                    bool IsPersonalDataHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 客户主体名称。
+                     * 数据委托方、需求方：客户主体名称。
 
 示例值：某某有限公司。
                      */
@@ -340,7 +357,7 @@ namespace TencentCloud
                     bool m_dataProviderNameHasBeenSet;
 
                     /**
-                     * 接收方主体名称。
+                     * 数据受托方、提供方：腾讯云主体名称。
 
 固定填：腾讯云计算（北京）有限责任公司
 
@@ -350,7 +367,7 @@ namespace TencentCloud
                     bool m_dataRecipientNameHasBeenSet;
 
                     /**
-                     * 客户请求RCE所涉及的用户敏感数据类型，支持多选。实际以接口请求传参为准。
+                     * 客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。
 
 1-手机号；
 
@@ -360,8 +377,6 @@ namespace TencentCloud
 
 4-IP地址；
 
-5-设备指纹；
-
 999-其它；
 
 示例值：[1, 4]
@@ -370,24 +385,20 @@ namespace TencentCloud
                     bool m_userDataTypeHasBeenSet;
 
                     /**
-                     * 客户是否已经获取用户授权。
-
+                     * 客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意客户委托腾讯云处理入参信息
 1-已授权；其它值为未授权。
-
 示例值：1
                      */
                     uint64_t m_isAuthorize;
                     bool m_isAuthorizeHasBeenSet;
 
                     /**
-                     * 是否是用户个人敏感数据。
-
-固定填：1。
-
+                     * 客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意腾讯云结合客户提供的信息，对已合法收集的用户数据进行必要处理得出服务结果，并返回给客户。
+1-已授权；其它值为未授权。
 示例值：1
                      */
-                    uint64_t m_isPersonalData;
-                    bool m_isPersonalDataHasBeenSet;
+                    uint64_t m_isOrderHandling;
+                    bool m_isOrderHandlingHasBeenSet;
 
                     /**
                      * 客户获得的用户授权期限时间戳（单位秒）。
@@ -400,12 +411,23 @@ namespace TencentCloud
                     bool m_authorizationTermHasBeenSet;
 
                     /**
-                     * 客户获得用户授权所依赖的协议地址。
+                     * 	
+客户获得用户授权所依赖的协议地址。
 
-示例值：https://www.*****.com/*****
+示例值：https://www.*****.com/*
                      */
                     std::string m_privacyPolicyLink;
                     bool m_privacyPolicyLinkHasBeenSet;
+
+                    /**
+                     * 是否是用户个人敏感数据。
+
+固定填：1。
+
+示例值：1
+                     */
+                    uint64_t m_isPersonalData;
+                    bool m_isPersonalDataHasBeenSet;
 
                 };
             }

@@ -149,7 +149,6 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/TaskLastExecuteStatus.h
   include/tencentcloud/tsf/v20180326/model/DescribeProgramsRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribePublicConfigRequest.h
-  include/tencentcloud/tsf/v20180326/model/AddClusterInstancesResponse.h
   include/tencentcloud/tsf/v20180326/model/ImageRepository.h
   include/tencentcloud/tsf/v20180326/model/DescribeOverviewInvocationResponse.h
   include/tencentcloud/tsf/v20180326/model/CreatePublicConfigResponse.h
@@ -232,7 +231,6 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribeContainerEventsRequest.h
   include/tencentcloud/tsf/v20180326/model/DisableUnitRuleRequest.h
   include/tencentcloud/tsf/v20180326/model/Namespace.h
-  include/tencentcloud/tsf/v20180326/model/DescribeApplicationBusinessLogConfigResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeGroupResponse.h
   include/tencentcloud/tsf/v20180326/model/Env.h
   include/tencentcloud/tsf/v20180326/model/ModifyClusterRequest.h
@@ -462,7 +460,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribeInvocationMetricScatterPlotRequest.h
   include/tencentcloud/tsf/v20180326/model/CreateTaskFlowResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeMicroservicesRequest.h
-  include/tencentcloud/tsf/v20180326/model/DescribeApplicationBusinessLogConfigRequest.h
+  include/tencentcloud/tsf/v20180326/model/AddClusterInstancesResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeInvocationMetricDataCurveRequest.h
   include/tencentcloud/tsf/v20180326/model/VmGroupOther.h
   include/tencentcloud/tsf/v20180326/model/DescribeTaskLastStatusResponse.h
@@ -780,7 +778,6 @@ set(tsf_src
   src/v20180326/model/TaskLastExecuteStatus.cpp
   src/v20180326/model/DescribeProgramsRequest.cpp
   src/v20180326/model/DescribePublicConfigRequest.cpp
-  src/v20180326/model/AddClusterInstancesResponse.cpp
   src/v20180326/model/ImageRepository.cpp
   src/v20180326/model/DescribeOverviewInvocationResponse.cpp
   src/v20180326/model/CreatePublicConfigResponse.cpp
@@ -863,7 +860,6 @@ set(tsf_src
   src/v20180326/model/DescribeContainerEventsRequest.cpp
   src/v20180326/model/DisableUnitRuleRequest.cpp
   src/v20180326/model/Namespace.cpp
-  src/v20180326/model/DescribeApplicationBusinessLogConfigResponse.cpp
   src/v20180326/model/DescribeGroupResponse.cpp
   src/v20180326/model/Env.cpp
   src/v20180326/model/ModifyClusterRequest.cpp
@@ -1093,7 +1089,7 @@ set(tsf_src
   src/v20180326/model/DescribeInvocationMetricScatterPlotRequest.cpp
   src/v20180326/model/CreateTaskFlowResponse.cpp
   src/v20180326/model/DescribeMicroservicesRequest.cpp
-  src/v20180326/model/DescribeApplicationBusinessLogConfigRequest.cpp
+  src/v20180326/model/AddClusterInstancesResponse.cpp
   src/v20180326/model/DescribeInvocationMetricDataCurveRequest.cpp
   src/v20180326/model/VmGroupOther.cpp
   src/v20180326/model/DescribeTaskLastStatusResponse.cpp

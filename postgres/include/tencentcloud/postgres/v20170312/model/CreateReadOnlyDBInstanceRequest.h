@@ -527,6 +527,27 @@ namespace TencentCloud
                      */
                     bool DBVersionHasBeenSet() const;
 
+                    /**
+                     * 获取专属集群ID
+                     * @return DedicatedClusterId 专属集群ID
+                     * 
+                     */
+                    std::string GetDedicatedClusterId() const;
+
+                    /**
+                     * 设置专属集群ID
+                     * @param _dedicatedClusterId 专属集群ID
+                     * 
+                     */
+                    void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
+
+                    /**
+                     * 判断参数 DedicatedClusterId 是否已赋值
+                     * @return DedicatedClusterId 是否已赋值
+                     * 
+                     */
+                    bool DedicatedClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -664,6 +685,12 @@ namespace TencentCloud
                      */
                     std::string m_dBVersion;
                     bool m_dBVersionHasBeenSet;
+
+                    /**
+                     * 专属集群ID
+                     */
+                    std::string m_dedicatedClusterId;
+                    bool m_dedicatedClusterIdHasBeenSet;
 
                 };
             }

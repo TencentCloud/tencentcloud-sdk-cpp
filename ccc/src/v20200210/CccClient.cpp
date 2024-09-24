@@ -169,6 +169,49 @@ CccClient::BindStaffSkillGroupListOutcomeCallable CccClient::BindStaffSkillGroup
     return task->get_future();
 }
 
+CccClient::CreateAICallOutcome CccClient::CreateAICall(const CreateAICallRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAICall");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAICallResponse rsp = CreateAICallResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAICallOutcome(rsp);
+        else
+            return CreateAICallOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAICallOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::CreateAICallAsync(const CreateAICallRequest& request, const CreateAICallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAICall(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::CreateAICallOutcomeCallable CccClient::CreateAICallCallable(const CreateAICallRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAICallOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAICall(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::CreateAdminURLOutcome CccClient::CreateAdminURL(const CreateAdminURLRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAdminURL");
