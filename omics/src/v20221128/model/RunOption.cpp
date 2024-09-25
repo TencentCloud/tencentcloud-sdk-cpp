@@ -25,7 +25,8 @@ RunOption::RunOption() :
     m_useCallCacheHasBeenSet(false),
     m_useErrorOnHoldHasBeenSet(false),
     m_finalWorkflowOutputsDirHasBeenSet(false),
-    m_useRelativeOutputPathsHasBeenSet(false)
+    m_useRelativeOutputPathsHasBeenSet(false),
+    m_addRunInfoToOutputDirHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome RunOption::Deserialize(const rapidjson::Value &value)
         m_useRelativeOutputPathsHasBeenSet = true;
     }
 
+    if (value.HasMember("AddRunInfoToOutputDir") && !value["AddRunInfoToOutputDir"].IsNull())
+    {
+        if (!value["AddRunInfoToOutputDir"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunOption.AddRunInfoToOutputDir` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_addRunInfoToOutputDir = value["AddRunInfoToOutputDir"].GetBool();
+        m_addRunInfoToOutputDirHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void RunOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "UseRelativeOutputPaths";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useRelativeOutputPaths, allocator);
+    }
+
+    if (m_addRunInfoToOutputDirHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddRunInfoToOutputDir";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_addRunInfoToOutputDir, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void RunOption::SetUseRelativeOutputPaths(const bool& _useRelativeOutputPaths)
 bool RunOption::UseRelativeOutputPathsHasBeenSet() const
 {
     return m_useRelativeOutputPathsHasBeenSet;
+}
+
+bool RunOption::GetAddRunInfoToOutputDir() const
+{
+    return m_addRunInfoToOutputDir;
+}
+
+void RunOption::SetAddRunInfoToOutputDir(const bool& _addRunInfoToOutputDir)
+{
+    m_addRunInfoToOutputDir = _addRunInfoToOutputDir;
+    m_addRunInfoToOutputDirHasBeenSet = true;
+}
+
+bool RunOption::AddRunInfoToOutputDirHasBeenSet() const
+{
+    return m_addRunInfoToOutputDirHasBeenSet;
 }
 

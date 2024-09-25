@@ -4437,7 +4437,9 @@ namespace TencentCloud
                 DescribeImportMachineInfoOutcomeCallable DescribeImportMachineInfoCallable(const Model::DescribeImportMachineInfoRequest& request);
 
                 /**
-                 *获取索引列表
+                 *接口已废弃
+
+获取索引列表
                  * @param req DescribeIndexListRequest
                  * @return DescribeIndexListOutcome
                  */

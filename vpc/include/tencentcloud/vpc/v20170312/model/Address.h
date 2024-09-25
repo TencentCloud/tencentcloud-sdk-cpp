@@ -674,6 +674,31 @@ namespace TencentCloud
                      */
                     bool UnVpcIdHasBeenSet() const;
 
+                    /**
+                     * 获取CDC唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DedicatedClusterId CDC唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDedicatedClusterId() const;
+
+                    /**
+                     * 设置CDC唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dedicatedClusterId CDC唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
+
+                    /**
+                     * 判断参数 DedicatedClusterId 是否已赋值
+                     * @return DedicatedClusterId 是否已赋值
+                     * 
+                     */
+                    bool DedicatedClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -851,6 +876,13 @@ namespace TencentCloud
                      */
                     std::string m_unVpcId;
                     bool m_unVpcIdHasBeenSet;
+
+                    /**
+                     * CDC唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dedicatedClusterId;
+                    bool m_dedicatedClusterIdHasBeenSet;
 
                 };
             }

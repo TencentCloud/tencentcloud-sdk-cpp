@@ -617,6 +617,27 @@ namespace TencentCloud
                      */
                     bool AllowAccessCredentialHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许记录键盘
+                     * @return AllowKeyboardLogger 是否允许记录键盘
+                     * 
+                     */
+                    bool GetAllowKeyboardLogger() const;
+
+                    /**
+                     * 设置是否允许记录键盘
+                     * @param _allowKeyboardLogger 是否允许记录键盘
+                     * 
+                     */
+                    void SetAllowKeyboardLogger(const bool& _allowKeyboardLogger);
+
+                    /**
+                     * 判断参数 AllowKeyboardLogger 是否已赋值
+                     * @return AllowKeyboardLogger 是否已赋值
+                     * 
+                     */
+                    bool AllowKeyboardLoggerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -782,6 +803,12 @@ namespace TencentCloud
                      */
                     bool m_allowAccessCredential;
                     bool m_allowAccessCredentialHasBeenSet;
+
+                    /**
+                     * 是否允许记录键盘
+                     */
+                    bool m_allowKeyboardLogger;
+                    bool m_allowKeyboardLoggerHasBeenSet;
 
                 };
             }

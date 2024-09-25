@@ -356,6 +356,27 @@ AnycastEIP是否用于绑定负载均衡。
                     bool AddressNameHasBeenSet() const;
 
                     /**
+                     * 获取CDC唯一ID
+                     * @return DedicatedClusterId CDC唯一ID
+                     * 
+                     */
+                    std::string GetDedicatedClusterId() const;
+
+                    /**
+                     * 设置CDC唯一ID
+                     * @param _dedicatedClusterId CDC唯一ID
+                     * 
+                     */
+                    void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
+
+                    /**
+                     * 判断参数 DedicatedClusterId 是否已赋值
+                     * @return DedicatedClusterId 是否已赋值
+                     * 
+                     */
+                    bool DedicatedClusterIdHasBeenSet() const;
+
+                    /**
                      * 获取网络出口，当前仅支持精品BGP、静态单线，这2种IP 地址类型的指定出口传入，默认值：center_egress1，其它可选值：center_egress2、center_egress3
                      * @return Egress 网络出口，当前仅支持精品BGP、静态单线，这2种IP 地址类型的指定出口传入，默认值：center_egress1，其它可选值：center_egress2、center_egress3
                      * 
@@ -505,6 +526,12 @@ AnycastEIP是否用于绑定负载均衡。
                      */
                     std::string m_addressName;
                     bool m_addressNameHasBeenSet;
+
+                    /**
+                     * CDC唯一ID
+                     */
+                    std::string m_dedicatedClusterId;
+                    bool m_dedicatedClusterIdHasBeenSet;
 
                     /**
                      * 网络出口，当前仅支持精品BGP、静态单线，这2种IP 地址类型的指定出口传入，默认值：center_egress1，其它可选值：center_egress2、center_egress3

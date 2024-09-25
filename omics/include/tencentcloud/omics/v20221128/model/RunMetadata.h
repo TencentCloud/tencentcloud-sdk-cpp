@@ -497,6 +497,31 @@ namespace TencentCloud
                     bool CallCachedHasBeenSet() const;
 
                     /**
+                     * 获取工作目录。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkDir 工作目录。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetWorkDir() const;
+
+                    /**
+                     * 设置工作目录。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workDir 工作目录。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkDir(const std::string& _workDir);
+
+                    /**
+                     * 判断参数 WorkDir 是否已赋值
+                     * @return WorkDir 是否已赋值
+                     * 
+                     */
+                    bool WorkDirHasBeenSet() const;
+
+                    /**
                      * 获取标准输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Stdout 标准输出。
@@ -698,6 +723,13 @@ namespace TencentCloud
                      */
                     bool m_callCached;
                     bool m_callCachedHasBeenSet;
+
+                    /**
+                     * 工作目录。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_workDir;
+                    bool m_workDirHasBeenSet;
 
                     /**
                      * 标准输出。

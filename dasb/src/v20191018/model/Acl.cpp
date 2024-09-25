@@ -50,7 +50,8 @@ Acl::Acl() :
     m_departmentHasBeenSet(false),
     m_allowAccessCredentialHasBeenSet(false),
     m_aCTemplateSetHasBeenSet(false),
-    m_whiteCmdsHasBeenSet(false)
+    m_whiteCmdsHasBeenSet(false),
+    m_allowKeyboardLoggerHasBeenSet(false)
 {
 }
 
@@ -432,6 +433,16 @@ CoreInternalOutcome Acl::Deserialize(const rapidjson::Value &value)
         m_whiteCmdsHasBeenSet = true;
     }
 
+    if (value.HasMember("AllowKeyboardLogger") && !value["AllowKeyboardLogger"].IsNull())
+    {
+        if (!value["AllowKeyboardLogger"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Acl.AllowKeyboardLogger` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowKeyboardLogger = value["AllowKeyboardLogger"].GetBool();
+        m_allowKeyboardLoggerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -730,6 +741,14 @@ void Acl::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_allowKeyboardLoggerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowKeyboardLogger";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allowKeyboardLogger, allocator);
     }
 
 }
@@ -1213,5 +1232,21 @@ void Acl::SetWhiteCmds(const vector<string>& _whiteCmds)
 bool Acl::WhiteCmdsHasBeenSet() const
 {
     return m_whiteCmdsHasBeenSet;
+}
+
+bool Acl::GetAllowKeyboardLogger() const
+{
+    return m_allowKeyboardLogger;
+}
+
+void Acl::SetAllowKeyboardLogger(const bool& _allowKeyboardLogger)
+{
+    m_allowKeyboardLogger = _allowKeyboardLogger;
+    m_allowKeyboardLoggerHasBeenSet = true;
+}
+
+bool Acl::AllowKeyboardLoggerHasBeenSet() const
+{
+    return m_allowKeyboardLoggerHasBeenSet;
 }
 

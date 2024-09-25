@@ -28,7 +28,8 @@ DeleteCloudBaseRunServerVersionRequest::DeleteCloudBaseRunServerVersionRequest()
     m_versionNameHasBeenSet(false),
     m_isDeleteServerHasBeenSet(false),
     m_isDeleteImageHasBeenSet(false),
-    m_operatorRemarkHasBeenSet(false)
+    m_operatorRemarkHasBeenSet(false),
+    m_delayedDeletionTimeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DeleteCloudBaseRunServerVersionRequest::ToJsonString() const
         string key = "OperatorRemark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_operatorRemark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_delayedDeletionTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayedDeletionTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_delayedDeletionTime, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DeleteCloudBaseRunServerVersionRequest::SetOperatorRemark(const string& _op
 bool DeleteCloudBaseRunServerVersionRequest::OperatorRemarkHasBeenSet() const
 {
     return m_operatorRemarkHasBeenSet;
+}
+
+int64_t DeleteCloudBaseRunServerVersionRequest::GetDelayedDeletionTime() const
+{
+    return m_delayedDeletionTime;
+}
+
+void DeleteCloudBaseRunServerVersionRequest::SetDelayedDeletionTime(const int64_t& _delayedDeletionTime)
+{
+    m_delayedDeletionTime = _delayedDeletionTime;
+    m_delayedDeletionTimeHasBeenSet = true;
+}
+
+bool DeleteCloudBaseRunServerVersionRequest::DelayedDeletionTimeHasBeenSet() const
+{
+    return m_delayedDeletionTimeHasBeenSet;
 }
 
 

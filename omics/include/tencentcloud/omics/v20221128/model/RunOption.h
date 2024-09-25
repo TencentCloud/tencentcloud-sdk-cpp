@@ -167,6 +167,31 @@ namespace TencentCloud
                      */
                     bool UseRelativeOutputPathsHasBeenSet() const;
 
+                    /**
+                     * 获取是否添加运行信息到输出目录中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AddRunInfoToOutputDir 是否添加运行信息到输出目录中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAddRunInfoToOutputDir() const;
+
+                    /**
+                     * 设置是否添加运行信息到输出目录中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _addRunInfoToOutputDir 是否添加运行信息到输出目录中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAddRunInfoToOutputDir(const bool& _addRunInfoToOutputDir);
+
+                    /**
+                     * 判断参数 AddRunInfoToOutputDir 是否已赋值
+                     * @return AddRunInfoToOutputDir 是否已赋值
+                     * 
+                     */
+                    bool AddRunInfoToOutputDirHasBeenSet() const;
+
                 private:
 
                     /**
@@ -202,6 +227,13 @@ namespace TencentCloud
                      */
                     bool m_useRelativeOutputPaths;
                     bool m_useRelativeOutputPathsHasBeenSet;
+
+                    /**
+                     * 是否添加运行信息到输出目录中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_addRunInfoToOutputDir;
+                    bool m_addRunInfoToOutputDirHasBeenSet;
 
                 };
             }

@@ -706,6 +706,31 @@ namespace TencentCloud
                      */
                     bool WhiteCmdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许记录键盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AllowKeyboardLogger 是否允许记录键盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAllowKeyboardLogger() const;
+
+                    /**
+                     * 设置是否允许记录键盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _allowKeyboardLogger 是否允许记录键盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAllowKeyboardLogger(const bool& _allowKeyboardLogger);
+
+                    /**
+                     * 判断参数 AllowKeyboardLogger 是否已赋值
+                     * @return AllowKeyboardLogger 是否已赋值
+                     * 
+                     */
+                    bool AllowKeyboardLoggerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -893,6 +918,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_whiteCmds;
                     bool m_whiteCmdsHasBeenSet;
+
+                    /**
+                     * 是否允许记录键盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_allowKeyboardLogger;
+                    bool m_allowKeyboardLoggerHasBeenSet;
 
                 };
             }

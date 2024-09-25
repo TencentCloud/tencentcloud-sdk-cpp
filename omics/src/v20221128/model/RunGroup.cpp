@@ -27,25 +27,32 @@ RunGroup::RunGroup() :
     m_applicationIdHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
     m_applicationTypeHasBeenSet(false),
+    m_applicationVersionHasBeenSet(false),
+    m_accessModeHasBeenSet(false),
     m_environmentIdHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_tableIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_workDirHasBeenSet(false),
     m_inputHasBeenSet(false),
+    m_inputTypeHasBeenSet(false),
+    m_inputCosUriHasBeenSet(false),
+    m_inputTemplateIdHasBeenSet(false),
     m_optionHasBeenSet(false),
     m_nFOptionHasBeenSet(false),
+    m_volumesHasBeenSet(false),
     m_totalRunHasBeenSet(false),
     m_runStatusCountsHasBeenSet(false),
     m_executionTimeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
+    m_resultNotifyHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_creatorHasBeenSet(false),
-    m_creatorIdHasBeenSet(false),
-    m_resultNotifyHasBeenSet(false),
-    m_applicationVersionHasBeenSet(false)
+    m_creatorIdHasBeenSet(false)
 {
 }
 
@@ -114,6 +121,33 @@ CoreInternalOutcome RunGroup::Deserialize(const rapidjson::Value &value)
         m_applicationTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationVersion") && !value["ApplicationVersion"].IsNull())
+    {
+        if (!value["ApplicationVersion"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunGroup.ApplicationVersion` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_applicationVersion.Deserialize(value["ApplicationVersion"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_applicationVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessMode") && !value["AccessMode"].IsNull())
+    {
+        if (!value["AccessMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunGroup.AccessMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessMode = string(value["AccessMode"].GetString());
+        m_accessModeHasBeenSet = true;
+    }
+
     if (value.HasMember("EnvironmentId") && !value["EnvironmentId"].IsNull())
     {
         if (!value["EnvironmentId"].IsString())
@@ -174,6 +208,26 @@ CoreInternalOutcome RunGroup::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunGroup.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkDir") && !value["WorkDir"].IsNull())
+    {
+        if (!value["WorkDir"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunGroup.WorkDir` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workDir = string(value["WorkDir"].GetString());
+        m_workDirHasBeenSet = true;
+    }
+
     if (value.HasMember("Input") && !value["Input"].IsNull())
     {
         if (!value["Input"].IsString())
@@ -182,6 +236,36 @@ CoreInternalOutcome RunGroup::Deserialize(const rapidjson::Value &value)
         }
         m_input = string(value["Input"].GetString());
         m_inputHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputType") && !value["InputType"].IsNull())
+    {
+        if (!value["InputType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunGroup.InputType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputType = string(value["InputType"].GetString());
+        m_inputTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputCosUri") && !value["InputCosUri"].IsNull())
+    {
+        if (!value["InputCosUri"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunGroup.InputCosUri` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputCosUri = string(value["InputCosUri"].GetString());
+        m_inputCosUriHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputTemplateId") && !value["InputTemplateId"].IsNull())
+    {
+        if (!value["InputTemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunGroup.InputTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputTemplateId = string(value["InputTemplateId"].GetString());
+        m_inputTemplateIdHasBeenSet = true;
     }
 
     if (value.HasMember("Option") && !value["Option"].IsNull())
@@ -216,6 +300,26 @@ CoreInternalOutcome RunGroup::Deserialize(const rapidjson::Value &value)
         }
 
         m_nFOptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Volumes") && !value["Volumes"].IsNull())
+    {
+        if (!value["Volumes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RunGroup.Volumes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Volumes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VolumeInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_volumes.push_back(item);
+        }
+        m_volumesHasBeenSet = true;
     }
 
     if (value.HasMember("TotalRun") && !value["TotalRun"].IsNull())
@@ -275,6 +379,16 @@ CoreInternalOutcome RunGroup::Deserialize(const rapidjson::Value &value)
         m_errorMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("ResultNotify") && !value["ResultNotify"].IsNull())
+    {
+        if (!value["ResultNotify"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunGroup.ResultNotify` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultNotify = string(value["ResultNotify"].GetString());
+        m_resultNotifyHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -313,33 +427,6 @@ CoreInternalOutcome RunGroup::Deserialize(const rapidjson::Value &value)
         }
         m_creatorId = string(value["CreatorId"].GetString());
         m_creatorIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("ResultNotify") && !value["ResultNotify"].IsNull())
-    {
-        if (!value["ResultNotify"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `RunGroup.ResultNotify` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_resultNotify = string(value["ResultNotify"].GetString());
-        m_resultNotifyHasBeenSet = true;
-    }
-
-    if (value.HasMember("ApplicationVersion") && !value["ApplicationVersion"].IsNull())
-    {
-        if (!value["ApplicationVersion"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `RunGroup.ApplicationVersion` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_applicationVersion.Deserialize(value["ApplicationVersion"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_applicationVersionHasBeenSet = true;
     }
 
 
@@ -397,6 +484,23 @@ void RunGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, rapidjson::Value(m_applicationType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_applicationVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_applicationVersion.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_accessModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessMode.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_environmentIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -445,12 +549,52 @@ void RunGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workDirHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkDir";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workDir.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_inputHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Input";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_input.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputCosUriHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputCosUri";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputCosUri.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputTemplateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_optionHasBeenSet)
@@ -469,6 +613,21 @@ void RunGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_nFOption.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_volumesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Volumes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_volumes.begin(); itr != m_volumes.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_totalRunHasBeenSet)
@@ -511,6 +670,14 @@ void RunGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, rapidjson::Value(m_errorMessage.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_resultNotifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultNotify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultNotify.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_createTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -541,23 +708,6 @@ void RunGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CreatorId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_creatorId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_resultNotifyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResultNotify";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_resultNotify.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_applicationVersionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ApplicationVersion";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_applicationVersion.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -659,6 +809,38 @@ bool RunGroup::ApplicationTypeHasBeenSet() const
     return m_applicationTypeHasBeenSet;
 }
 
+ApplicationVersion RunGroup::GetApplicationVersion() const
+{
+    return m_applicationVersion;
+}
+
+void RunGroup::SetApplicationVersion(const ApplicationVersion& _applicationVersion)
+{
+    m_applicationVersion = _applicationVersion;
+    m_applicationVersionHasBeenSet = true;
+}
+
+bool RunGroup::ApplicationVersionHasBeenSet() const
+{
+    return m_applicationVersionHasBeenSet;
+}
+
+string RunGroup::GetAccessMode() const
+{
+    return m_accessMode;
+}
+
+void RunGroup::SetAccessMode(const string& _accessMode)
+{
+    m_accessMode = _accessMode;
+    m_accessModeHasBeenSet = true;
+}
+
+bool RunGroup::AccessModeHasBeenSet() const
+{
+    return m_accessModeHasBeenSet;
+}
+
 string RunGroup::GetEnvironmentId() const
 {
     return m_environmentId;
@@ -755,6 +937,38 @@ bool RunGroup::StatusHasBeenSet() const
     return m_statusHasBeenSet;
 }
 
+string RunGroup::GetType() const
+{
+    return m_type;
+}
+
+void RunGroup::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool RunGroup::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string RunGroup::GetWorkDir() const
+{
+    return m_workDir;
+}
+
+void RunGroup::SetWorkDir(const string& _workDir)
+{
+    m_workDir = _workDir;
+    m_workDirHasBeenSet = true;
+}
+
+bool RunGroup::WorkDirHasBeenSet() const
+{
+    return m_workDirHasBeenSet;
+}
+
 string RunGroup::GetInput() const
 {
     return m_input;
@@ -769,6 +983,54 @@ void RunGroup::SetInput(const string& _input)
 bool RunGroup::InputHasBeenSet() const
 {
     return m_inputHasBeenSet;
+}
+
+string RunGroup::GetInputType() const
+{
+    return m_inputType;
+}
+
+void RunGroup::SetInputType(const string& _inputType)
+{
+    m_inputType = _inputType;
+    m_inputTypeHasBeenSet = true;
+}
+
+bool RunGroup::InputTypeHasBeenSet() const
+{
+    return m_inputTypeHasBeenSet;
+}
+
+string RunGroup::GetInputCosUri() const
+{
+    return m_inputCosUri;
+}
+
+void RunGroup::SetInputCosUri(const string& _inputCosUri)
+{
+    m_inputCosUri = _inputCosUri;
+    m_inputCosUriHasBeenSet = true;
+}
+
+bool RunGroup::InputCosUriHasBeenSet() const
+{
+    return m_inputCosUriHasBeenSet;
+}
+
+string RunGroup::GetInputTemplateId() const
+{
+    return m_inputTemplateId;
+}
+
+void RunGroup::SetInputTemplateId(const string& _inputTemplateId)
+{
+    m_inputTemplateId = _inputTemplateId;
+    m_inputTemplateIdHasBeenSet = true;
+}
+
+bool RunGroup::InputTemplateIdHasBeenSet() const
+{
+    return m_inputTemplateIdHasBeenSet;
 }
 
 RunOption RunGroup::GetOption() const
@@ -801,6 +1063,22 @@ void RunGroup::SetNFOption(const NFOption& _nFOption)
 bool RunGroup::NFOptionHasBeenSet() const
 {
     return m_nFOptionHasBeenSet;
+}
+
+vector<VolumeInfo> RunGroup::GetVolumes() const
+{
+    return m_volumes;
+}
+
+void RunGroup::SetVolumes(const vector<VolumeInfo>& _volumes)
+{
+    m_volumes = _volumes;
+    m_volumesHasBeenSet = true;
+}
+
+bool RunGroup::VolumesHasBeenSet() const
+{
+    return m_volumesHasBeenSet;
 }
 
 uint64_t RunGroup::GetTotalRun() const
@@ -867,6 +1145,22 @@ bool RunGroup::ErrorMessageHasBeenSet() const
     return m_errorMessageHasBeenSet;
 }
 
+string RunGroup::GetResultNotify() const
+{
+    return m_resultNotify;
+}
+
+void RunGroup::SetResultNotify(const string& _resultNotify)
+{
+    m_resultNotify = _resultNotify;
+    m_resultNotifyHasBeenSet = true;
+}
+
+bool RunGroup::ResultNotifyHasBeenSet() const
+{
+    return m_resultNotifyHasBeenSet;
+}
+
 string RunGroup::GetCreateTime() const
 {
     return m_createTime;
@@ -929,37 +1223,5 @@ void RunGroup::SetCreatorId(const string& _creatorId)
 bool RunGroup::CreatorIdHasBeenSet() const
 {
     return m_creatorIdHasBeenSet;
-}
-
-string RunGroup::GetResultNotify() const
-{
-    return m_resultNotify;
-}
-
-void RunGroup::SetResultNotify(const string& _resultNotify)
-{
-    m_resultNotify = _resultNotify;
-    m_resultNotifyHasBeenSet = true;
-}
-
-bool RunGroup::ResultNotifyHasBeenSet() const
-{
-    return m_resultNotifyHasBeenSet;
-}
-
-ApplicationVersion RunGroup::GetApplicationVersion() const
-{
-    return m_applicationVersion;
-}
-
-void RunGroup::SetApplicationVersion(const ApplicationVersion& _applicationVersion)
-{
-    m_applicationVersion = _applicationVersion;
-    m_applicationVersionHasBeenSet = true;
-}
-
-bool RunGroup::ApplicationVersionHasBeenSet() const
-{
-    return m_applicationVersionHasBeenSet;
 }
 

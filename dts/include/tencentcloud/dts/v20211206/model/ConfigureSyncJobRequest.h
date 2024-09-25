@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool SrcConnectTypeHasBeenSet() const;
 
                     /**
-                     * 获取源端信息，单节点数据库使用，且SrcNodeType传single
-                     * @return SrcInfo 源端信息，单节点数据库使用，且SrcNodeType传single
+                     * 获取源端信息，单机版类型数据库配置使用，且SrcNodeType传single。例如mysql、percona、mariadb等。
+                     * @return SrcInfo 源端信息，单机版类型数据库配置使用，且SrcNodeType传single。例如mysql、percona、mariadb等。
                      * 
                      */
                     Endpoint GetSrcInfo() const;
 
                     /**
-                     * 设置源端信息，单节点数据库使用，且SrcNodeType传single
-                     * @param _srcInfo 源端信息，单节点数据库使用，且SrcNodeType传single
+                     * 设置源端信息，单机版类型数据库配置使用，且SrcNodeType传single。例如mysql、percona、mariadb等。
+                     * @param _srcInfo 源端信息，单机版类型数据库配置使用，且SrcNodeType传single。例如mysql、percona、mariadb等。
                      * 
                      */
                     void SetSrcInfo(const Endpoint& _srcInfo);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool SrcInfoHasBeenSet() const;
 
                     /**
-                     * 获取源端信息，多节点数据库使用，且SrcNodeType传cluster
-                     * @return SrcInfos 源端信息，多节点数据库使用，且SrcNodeType传cluster
+                     * 获取源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
+                     * @return SrcInfos 源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
                      * 
                      */
                     SyncDBEndpointInfos GetSrcInfos() const;
 
                     /**
-                     * 设置源端信息，多节点数据库使用，且SrcNodeType传cluster
-                     * @param _srcInfos 源端信息，多节点数据库使用，且SrcNodeType传cluster
+                     * 设置源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
+                     * @param _srcInfos 源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
                      * 
                      */
                     void SetSrcInfos(const SyncDBEndpointInfos& _srcInfos);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool SrcNodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标端信息，单节点数据库使用
-                     * @return DstInfo 目标端信息，单节点数据库使用
+                     * 获取目标端信息，单机版类型数据库配置使用，且SrcNodeType传single。例如mysql、percona、mariadb等。
+                     * @return DstInfo 目标端信息，单机版类型数据库配置使用，且SrcNodeType传single。例如mysql、percona、mariadb等。
                      * 
                      */
                     Endpoint GetDstInfo() const;
 
                     /**
-                     * 设置目标端信息，单节点数据库使用
-                     * @param _dstInfo 目标端信息，单节点数据库使用
+                     * 设置目标端信息，单机版类型数据库配置使用，且SrcNodeType传single。例如mysql、percona、mariadb等。
+                     * @param _dstInfo 目标端信息，单机版类型数据库配置使用，且SrcNodeType传single。例如mysql、percona、mariadb等。
                      * 
                      */
                     void SetDstInfo(const Endpoint& _dstInfo);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool DstInfoHasBeenSet() const;
 
                     /**
-                     * 获取目标端信息，多节点数据库使用，且DstNodeType传cluster
-                     * @return DstInfos 目标端信息，多节点数据库使用，且DstNodeType传cluster
+                     * 获取目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
+                     * @return DstInfos 目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
                      * 
                      */
                     SyncDBEndpointInfos GetDstInfos() const;
 
                     /**
-                     * 设置目标端信息，多节点数据库使用，且DstNodeType传cluster
-                     * @param _dstInfos 目标端信息，多节点数据库使用，且DstNodeType传cluster
+                     * 设置目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
+                     * @param _dstInfos 目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
                      * 
                      */
                     void SetDstInfos(const SyncDBEndpointInfos& _dstInfos);
@@ -460,13 +460,13 @@ namespace TencentCloud
                     bool m_srcConnectTypeHasBeenSet;
 
                     /**
-                     * 源端信息，单节点数据库使用，且SrcNodeType传single
+                     * 源端信息，单机版类型数据库配置使用，且SrcNodeType传single。例如mysql、percona、mariadb等。
                      */
                     Endpoint m_srcInfo;
                     bool m_srcInfoHasBeenSet;
 
                     /**
-                     * 源端信息，多节点数据库使用，且SrcNodeType传cluster
+                     * 源端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
                      */
                     SyncDBEndpointInfos m_srcInfos;
                     bool m_srcInfosHasBeenSet;
@@ -478,13 +478,13 @@ namespace TencentCloud
                     bool m_srcNodeTypeHasBeenSet;
 
                     /**
-                     * 目标端信息，单节点数据库使用
+                     * 目标端信息，单机版类型数据库配置使用，且SrcNodeType传single。例如mysql、percona、mariadb等。
                      */
                     Endpoint m_dstInfo;
                     bool m_dstInfoHasBeenSet;
 
                     /**
-                     * 目标端信息，多节点数据库使用，且DstNodeType传cluster
+                     * 目标端信息，分布式类型数据库配置使用，且SrcNodeType传cluster。例如分布式数据库tdsqlmysql等。
                      */
                     SyncDBEndpointInfos m_dstInfos;
                     bool m_dstInfosHasBeenSet;

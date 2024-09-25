@@ -575,6 +575,27 @@ namespace TencentCloud
                      */
                     bool TopNavigationStatusHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动激活子客
+                     * @return AutoActive 是否自动激活子客
+                     * 
+                     */
+                    bool GetAutoActive() const;
+
+                    /**
+                     * 设置是否自动激活子客
+                     * @param _autoActive 是否自动激活子客
+                     * 
+                     */
+                    void SetAutoActive(const bool& _autoActive);
+
+                    /**
+                     * 判断参数 AutoActive 是否已赋值
+                     * @return AutoActive 是否已赋值
+                     * 
+                     */
+                    bool AutoActiveHasBeenSet() const;
+
                 private:
 
                     /**
@@ -720,6 +741,12 @@ namespace TencentCloud
                      */
                     std::string m_topNavigationStatus;
                     bool m_topNavigationStatusHasBeenSet;
+
+                    /**
+                     * 是否自动激活子客
+                     */
+                    bool m_autoActive;
+                    bool m_autoActiveHasBeenSet;
 
                 };
             }

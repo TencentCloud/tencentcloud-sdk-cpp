@@ -39,6 +39,7 @@ RunMetadata::RunMetadata() :
     m_preprocessHasBeenSet(false),
     m_postProcessHasBeenSet(false),
     m_callCachedHasBeenSet(false),
+    m_workDirHasBeenSet(false),
     m_stdoutHasBeenSet(false),
     m_stderrHasBeenSet(false),
     m_metaHasBeenSet(false)
@@ -230,6 +231,16 @@ CoreInternalOutcome RunMetadata::Deserialize(const rapidjson::Value &value)
         m_callCachedHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkDir") && !value["WorkDir"].IsNull())
+    {
+        if (!value["WorkDir"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunMetadata.WorkDir` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workDir = string(value["WorkDir"].GetString());
+        m_workDirHasBeenSet = true;
+    }
+
     if (value.HasMember("Stdout") && !value["Stdout"].IsNull())
     {
         if (!value["Stdout"].IsString())
@@ -409,6 +420,14 @@ void RunMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CallCached";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_callCached, allocator);
+    }
+
+    if (m_workDirHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkDir";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workDir.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stdoutHasBeenSet)
@@ -724,6 +743,22 @@ void RunMetadata::SetCallCached(const bool& _callCached)
 bool RunMetadata::CallCachedHasBeenSet() const
 {
     return m_callCachedHasBeenSet;
+}
+
+string RunMetadata::GetWorkDir() const
+{
+    return m_workDir;
+}
+
+void RunMetadata::SetWorkDir(const string& _workDir)
+{
+    m_workDir = _workDir;
+    m_workDirHasBeenSet = true;
+}
+
+bool RunMetadata::WorkDirHasBeenSet() const
+{
+    return m_workDirHasBeenSet;
 }
 
 string RunMetadata::GetStdout() const

@@ -24,7 +24,8 @@ CloudBaseRunVolumeMount::CloudBaseRunVolumeMount() :
     m_nameHasBeenSet(false),
     m_mountPathHasBeenSet(false),
     m_readOnlyHasBeenSet(false),
-    m_nfsVolumesHasBeenSet(false)
+    m_nfsVolumesHasBeenSet(false),
+    m_mountPropagationHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome CloudBaseRunVolumeMount::Deserialize(const rapidjson::Value 
         m_nfsVolumesHasBeenSet = true;
     }
 
+    if (value.HasMember("MountPropagation") && !value["MountPropagation"].IsNull())
+    {
+        if (!value["MountPropagation"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudBaseRunVolumeMount.MountPropagation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mountPropagation = string(value["MountPropagation"].GetString());
+        m_mountPropagationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +138,14 @@ void CloudBaseRunVolumeMount::ToJsonObject(rapidjson::Value &value, rapidjson::D
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_mountPropagationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MountPropagation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountPropagation.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -194,5 +213,21 @@ void CloudBaseRunVolumeMount::SetNfsVolumes(const vector<CloudBaseRunNfsVolumeSo
 bool CloudBaseRunVolumeMount::NfsVolumesHasBeenSet() const
 {
     return m_nfsVolumesHasBeenSet;
+}
+
+string CloudBaseRunVolumeMount::GetMountPropagation() const
+{
+    return m_mountPropagation;
+}
+
+void CloudBaseRunVolumeMount::SetMountPropagation(const string& _mountPropagation)
+{
+    m_mountPropagation = _mountPropagation;
+    m_mountPropagationHasBeenSet = true;
+}
+
+bool CloudBaseRunVolumeMount::MountPropagationHasBeenSet() const
+{
+    return m_mountPropagationHasBeenSet;
 }
 

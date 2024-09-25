@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/omics/v20221128/model/GitInfo.h>
 
 
 namespace TencentCloud
@@ -251,7 +252,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GitInfo Git信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetGitInfo() const;
 
@@ -260,16 +261,41 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gitInfo Git信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetGitInfo(const std::string& _gitInfo);
 
                     /**
                      * 判断参数 GitInfo 是否已赋值
                      * @return GitInfo 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool GitInfoHasBeenSet() const;
+
+                    /**
+                     * 获取Git信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GitSource Git信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    GitInfo GetGitSource() const;
+
+                    /**
+                     * 设置Git信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gitSource Git信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGitSource(const GitInfo& _gitSource);
+
+                    /**
+                     * 判断参数 GitSource 是否已赋值
+                     * @return GitSource 是否已赋值
+                     * 
+                     */
+                    bool GitSourceHasBeenSet() const;
 
                 private:
 
@@ -335,6 +361,13 @@ namespace TencentCloud
                      */
                     std::string m_gitInfo;
                     bool m_gitInfoHasBeenSet;
+
+                    /**
+                     * Git信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GitInfo m_gitSource;
+                    bool m_gitSourceHasBeenSet;
 
                 };
             }

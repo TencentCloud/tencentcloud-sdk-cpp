@@ -186,6 +186,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/CreateCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/Error.h
   include/tencentcloud/ssl/v20191205/model/DomainValidationResult.h
+  include/tencentcloud/ssl/v20191205/model/HostingConfig.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostApiGatewayInstanceListResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateDetailResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateBindResourceTaskResultResponse.h
@@ -382,6 +383,7 @@ set(ssl_src
   src/v20191205/model/CreateCertificateResponse.cpp
   src/v20191205/model/Error.cpp
   src/v20191205/model/DomainValidationResult.cpp
+  src/v20191205/model/HostingConfig.cpp
   src/v20191205/model/DescribeHostApiGatewayInstanceListResponse.cpp
   src/v20191205/model/DescribeCertificateDetailResponse.cpp
   src/v20191205/model/DescribeCertificateBindResourceTaskResultResponse.cpp

@@ -37,7 +37,8 @@ CreateConsoleLoginUrlRequest::CreateConsoleLoginUrlRequest() :
     m_operatorHasBeenSet(false),
     m_proxyOperatorIdCardNumberHasBeenSet(false),
     m_autoJumpUrlHasBeenSet(false),
-    m_topNavigationStatusHasBeenSet(false)
+    m_topNavigationStatusHasBeenSet(false),
+    m_autoActiveHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,14 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         string key = "TopNavigationStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_topNavigationStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoActiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoActive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoActive, allocator);
     }
 
 
@@ -421,6 +430,22 @@ void CreateConsoleLoginUrlRequest::SetTopNavigationStatus(const string& _topNavi
 bool CreateConsoleLoginUrlRequest::TopNavigationStatusHasBeenSet() const
 {
     return m_topNavigationStatusHasBeenSet;
+}
+
+bool CreateConsoleLoginUrlRequest::GetAutoActive() const
+{
+    return m_autoActive;
+}
+
+void CreateConsoleLoginUrlRequest::SetAutoActive(const bool& _autoActive)
+{
+    m_autoActive = _autoActive;
+    m_autoActiveHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::AutoActiveHasBeenSet() const
+{
+    return m_autoActiveHasBeenSet;
 }
 
 

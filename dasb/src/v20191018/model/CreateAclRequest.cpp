@@ -49,7 +49,8 @@ CreateAclRequest::CreateAclRequest() :
     m_validateFromHasBeenSet(false),
     m_validateToHasBeenSet(false),
     m_departmentIdHasBeenSet(false),
-    m_allowAccessCredentialHasBeenSet(false)
+    m_allowAccessCredentialHasBeenSet(false),
+    m_allowKeyboardLoggerHasBeenSet(false)
 {
 }
 
@@ -309,6 +310,14 @@ string CreateAclRequest::ToJsonString() const
         string key = "AllowAccessCredential";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_allowAccessCredential, allocator);
+    }
+
+    if (m_allowKeyboardLoggerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowKeyboardLogger";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_allowKeyboardLogger, allocator);
     }
 
 
@@ -749,6 +758,22 @@ void CreateAclRequest::SetAllowAccessCredential(const bool& _allowAccessCredenti
 bool CreateAclRequest::AllowAccessCredentialHasBeenSet() const
 {
     return m_allowAccessCredentialHasBeenSet;
+}
+
+bool CreateAclRequest::GetAllowKeyboardLogger() const
+{
+    return m_allowKeyboardLogger;
+}
+
+void CreateAclRequest::SetAllowKeyboardLogger(const bool& _allowKeyboardLogger)
+{
+    m_allowKeyboardLogger = _allowKeyboardLogger;
+    m_allowKeyboardLoggerHasBeenSet = true;
+}
+
+bool CreateAclRequest::AllowKeyboardLoggerHasBeenSet() const
+{
+    return m_allowKeyboardLoggerHasBeenSet;
 }
 
 

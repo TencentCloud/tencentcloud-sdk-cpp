@@ -29,7 +29,8 @@ ApplicationVersion::ApplicationVersion() :
     m_createTimeHasBeenSet(false),
     m_creatorNameHasBeenSet(false),
     m_creatorIdHasBeenSet(false),
-    m_gitInfoHasBeenSet(false)
+    m_gitInfoHasBeenSet(false),
+    m_gitSourceHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,23 @@ CoreInternalOutcome ApplicationVersion::Deserialize(const rapidjson::Value &valu
         m_gitInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("GitSource") && !value["GitSource"].IsNull())
+    {
+        if (!value["GitSource"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationVersion.GitSource` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gitSource.Deserialize(value["GitSource"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gitSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +223,15 @@ void ApplicationVersion::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "GitInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_gitInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gitSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GitSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gitSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -352,5 +379,21 @@ void ApplicationVersion::SetGitInfo(const string& _gitInfo)
 bool ApplicationVersion::GitInfoHasBeenSet() const
 {
     return m_gitInfoHasBeenSet;
+}
+
+GitInfo ApplicationVersion::GetGitSource() const
+{
+    return m_gitSource;
+}
+
+void ApplicationVersion::SetGitSource(const GitInfo& _gitSource)
+{
+    m_gitSource = _gitSource;
+    m_gitSourceHasBeenSet = true;
+}
+
+bool ApplicationVersion::GitSourceHasBeenSet() const
+{
+    return m_gitSourceHasBeenSet;
 }
 

@@ -115,10 +115,14 @@ namespace TencentCloud
 - Name：任务批次名称
 - RunGroupId：任务批次ID
 - Status：任务批次状态
+- ApplicationId：应用ID
+- Type：类型（支持WDL，NEXTFLOW）
                      * @return Filters 过滤器，支持过滤字段：
 - Name：任务批次名称
 - RunGroupId：任务批次ID
 - Status：任务批次状态
+- ApplicationId：应用ID
+- Type：类型（支持WDL，NEXTFLOW）
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
@@ -128,10 +132,14 @@ namespace TencentCloud
 - Name：任务批次名称
 - RunGroupId：任务批次ID
 - Status：任务批次状态
+- ApplicationId：应用ID
+- Type：类型（支持WDL，NEXTFLOW）
                      * @param _filters 过滤器，支持过滤字段：
 - Name：任务批次名称
 - RunGroupId：任务批次ID
 - Status：任务批次状态
+- ApplicationId：应用ID
+- Type：类型（支持WDL，NEXTFLOW）
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -169,6 +177,8 @@ namespace TencentCloud
 - Name：任务批次名称
 - RunGroupId：任务批次ID
 - Status：任务批次状态
+- ApplicationId：应用ID
+- Type：类型（支持WDL，NEXTFLOW）
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

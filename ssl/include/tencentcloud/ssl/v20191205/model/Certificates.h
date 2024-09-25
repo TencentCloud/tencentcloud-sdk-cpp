@@ -29,6 +29,7 @@
 #include <tencentcloud/ssl/v20191205/model/Tags.h>
 #include <tencentcloud/ssl/v20191205/model/PreAuditInfo.h>
 #include <tencentcloud/ssl/v20191205/model/SupportDownloadType.h>
+#include <tencentcloud/ssl/v20191205/model/HostingConfig.h>
 
 
 namespace TencentCloud
@@ -1405,6 +1406,56 @@ namespace TencentCloud
                      */
                     bool CertRevokedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取托管资源类型列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostingResourceTypes 托管资源类型列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetHostingResourceTypes() const;
+
+                    /**
+                     * 设置托管资源类型列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hostingResourceTypes 托管资源类型列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHostingResourceTypes(const std::vector<std::string>& _hostingResourceTypes);
+
+                    /**
+                     * 判断参数 HostingResourceTypes 是否已赋值
+                     * @return HostingResourceTypes 是否已赋值
+                     * 
+                     */
+                    bool HostingResourceTypesHasBeenSet() const;
+
+                    /**
+                     * 获取托管配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostingConfig 托管配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    HostingConfig GetHostingConfig() const;
+
+                    /**
+                     * 设置托管配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hostingConfig 托管配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHostingConfig(const HostingConfig& _hostingConfig);
+
+                    /**
+                     * 判断参数 HostingConfig 是否已赋值
+                     * @return HostingConfig 是否已赋值
+                     * 
+                     */
+                    bool HostingConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1785,6 +1836,20 @@ namespace TencentCloud
                      */
                     std::string m_certRevokedTime;
                     bool m_certRevokedTimeHasBeenSet;
+
+                    /**
+                     * 托管资源类型列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_hostingResourceTypes;
+                    bool m_hostingResourceTypesHasBeenSet;
+
+                    /**
+                     * 托管配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HostingConfig m_hostingConfig;
+                    bool m_hostingConfigHasBeenSet;
 
                 };
             }

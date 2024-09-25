@@ -147,6 +147,31 @@ namespace TencentCloud
                      */
                     bool NfsVolumesHasBeenSet() const;
 
+                    /**
+                     * 获取挂载配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MountPropagation 挂载配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMountPropagation() const;
+
+                    /**
+                     * 设置挂载配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mountPropagation 挂载配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMountPropagation(const std::string& _mountPropagation);
+
+                    /**
+                     * 判断参数 MountPropagation 是否已赋值
+                     * @return MountPropagation 是否已赋值
+                     * 
+                     */
+                    bool MountPropagationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -176,6 +201,13 @@ namespace TencentCloud
                      */
                     std::vector<CloudBaseRunNfsVolumeSource> m_nfsVolumes;
                     bool m_nfsVolumesHasBeenSet;
+
+                    /**
+                     * 挂载配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_mountPropagation;
+                    bool m_mountPropagationHasBeenSet;
 
                 };
             }

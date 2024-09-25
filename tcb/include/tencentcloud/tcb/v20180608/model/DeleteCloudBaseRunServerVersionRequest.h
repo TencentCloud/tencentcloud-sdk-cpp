@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool OperatorRemarkHasBeenSet() const;
 
+                    /**
+                     * 获取延迟删除版本时间
+                     * @return DelayedDeletionTime 延迟删除版本时间
+                     * 
+                     */
+                    int64_t GetDelayedDeletionTime() const;
+
+                    /**
+                     * 设置延迟删除版本时间
+                     * @param _delayedDeletionTime 延迟删除版本时间
+                     * 
+                     */
+                    void SetDelayedDeletionTime(const int64_t& _delayedDeletionTime);
+
+                    /**
+                     * 判断参数 DelayedDeletionTime 是否已赋值
+                     * @return DelayedDeletionTime 是否已赋值
+                     * 
+                     */
+                    bool DelayedDeletionTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_operatorRemark;
                     bool m_operatorRemarkHasBeenSet;
+
+                    /**
+                     * 延迟删除版本时间
+                     */
+                    int64_t m_delayedDeletionTime;
+                    bool m_delayedDeletionTimeHasBeenSet;
 
                 };
             }
