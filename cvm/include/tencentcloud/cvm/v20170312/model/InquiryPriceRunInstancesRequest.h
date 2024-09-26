@@ -31,6 +31,7 @@
 #include <tencentcloud/cvm/v20170312/model/EnhancedService.h>
 #include <tencentcloud/cvm/v20170312/model/TagSpecification.h>
 #include <tencentcloud/cvm/v20170312/model/InstanceMarketOptionsRequest.h>
+#include <tencentcloud/cvm/v20170312/model/CpuTopology.h>
 #include <tencentcloud/cvm/v20170312/model/LaunchTemplate.h>
 
 
@@ -461,6 +462,27 @@ namespace TencentCloud
                     bool HpcClusterIdHasBeenSet() const;
 
                     /**
+                     * 获取描述了实例CPU拓扑结构的相关信息。若不指定该参数，则按系统资源情况决定。
+                     * @return CpuTopology 描述了实例CPU拓扑结构的相关信息。若不指定该参数，则按系统资源情况决定。
+                     * 
+                     */
+                    CpuTopology GetCpuTopology() const;
+
+                    /**
+                     * 设置描述了实例CPU拓扑结构的相关信息。若不指定该参数，则按系统资源情况决定。
+                     * @param _cpuTopology 描述了实例CPU拓扑结构的相关信息。若不指定该参数，则按系统资源情况决定。
+                     * 
+                     */
+                    void SetCpuTopology(const CpuTopology& _cpuTopology);
+
+                    /**
+                     * 判断参数 CpuTopology 是否已赋值
+                     * @return CpuTopology 是否已赋值
+                     * 
+                     */
+                    bool CpuTopologyHasBeenSet() const;
+
+                    /**
                      * 获取实例启动模板。
                      * @return LaunchTemplate 实例启动模板。
                      * 
@@ -598,6 +620,12 @@ namespace TencentCloud
                      */
                     std::string m_hpcClusterId;
                     bool m_hpcClusterIdHasBeenSet;
+
+                    /**
+                     * 描述了实例CPU拓扑结构的相关信息。若不指定该参数，则按系统资源情况决定。
+                     */
+                    CpuTopology m_cpuTopology;
+                    bool m_cpuTopologyHasBeenSet;
 
                     /**
                      * 实例启动模板。

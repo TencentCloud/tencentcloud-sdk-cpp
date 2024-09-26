@@ -43,7 +43,122 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取收件人总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalCount 收件人总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取实际上传数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValidCount 实际上传数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetValidCount() const;
+
+                    /**
+                     * 判断参数 ValidCount 是否已赋值
+                     * @return ValidCount 是否已赋值
+                     * 
+                     */
+                    bool ValidCountHasBeenSet() const;
+
+                    /**
+                     * 获取数据过长数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TooLongCount 数据过长数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetTooLongCount() const;
+
+                    /**
+                     * 判断参数 TooLongCount 是否已赋值
+                     * @return TooLongCount 是否已赋值
+                     * 
+                     */
+                    bool TooLongCountHasBeenSet() const;
+
+                    /**
+                     * 获取重复数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RepeatCount 重复数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetRepeatCount() const;
+
+                    /**
+                     * 判断参数 RepeatCount 是否已赋值
+                     * @return RepeatCount 是否已赋值
+                     * 
+                     */
+                    bool RepeatCountHasBeenSet() const;
+
+                    /**
+                     * 获取格式不正确数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InvalidCount 格式不正确数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetInvalidCount() const;
+
+                    /**
+                     * 判断参数 InvalidCount 是否已赋值
+                     * @return InvalidCount 是否已赋值
+                     * 
+                     */
+                    bool InvalidCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 收件人总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 实际上传数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_validCount;
+                    bool m_validCountHasBeenSet;
+
+                    /**
+                     * 数据过长数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_tooLongCount;
+                    bool m_tooLongCountHasBeenSet;
+
+                    /**
+                     * 重复数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_repeatCount;
+                    bool m_repeatCountHasBeenSet;
+
+                    /**
+                     * 格式不正确数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_invalidCount;
+                    bool m_invalidCountHasBeenSet;
 
                 };
             }

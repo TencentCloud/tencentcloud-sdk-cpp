@@ -39,7 +39,8 @@ MLIDPassportOCRResponse::MLIDPassportOCRResponse() :
     m_surnameHasBeenSet(false),
     m_givenNameHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_passportRecognizeInfosHasBeenSet(false)
+    m_passportRecognizeInfosHasBeenSet(false),
+    m_warnCardInfosHasBeenSet(false)
 {
 }
 
@@ -247,6 +248,19 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
         m_passportRecognizeInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("WarnCardInfos") && !rsp["WarnCardInfos"].IsNull())
+    {
+        if (!rsp["WarnCardInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WarnCardInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["WarnCardInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_warnCardInfos.push_back((*itr).GetInt64());
+        }
+        m_warnCardInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -389,6 +403,19 @@ string MLIDPassportOCRResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_passportRecognizeInfos.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_warnCardInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarnCardInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_warnCardInfos.begin(); itr != m_warnCardInfos.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -561,6 +588,16 @@ PassportRecognizeInfos MLIDPassportOCRResponse::GetPassportRecognizeInfos() cons
 bool MLIDPassportOCRResponse::PassportRecognizeInfosHasBeenSet() const
 {
     return m_passportRecognizeInfosHasBeenSet;
+}
+
+vector<int64_t> MLIDPassportOCRResponse::GetWarnCardInfos() const
+{
+    return m_warnCardInfos;
+}
+
+bool MLIDPassportOCRResponse::WarnCardInfosHasBeenSet() const
+{
+    return m_warnCardInfosHasBeenSet;
 }
 
 

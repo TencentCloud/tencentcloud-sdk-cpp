@@ -338,6 +338,31 @@ namespace TencentCloud
                     bool CheckAssociateHasBeenSet() const;
 
                     /**
+                     * 获取CDC实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CdcId CDC实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置CDC实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cdcId CDC实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     * 
+                     */
+                    bool CdcIdHasBeenSet() const;
+
+                    /**
                      * 获取HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlushedTime HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
@@ -470,6 +495,13 @@ namespace TencentCloud
                      */
                     bool m_checkAssociate;
                     bool m_checkAssociateHasBeenSet;
+
+                    /**
+                     * CDC实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
 
                     /**
                      * HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00

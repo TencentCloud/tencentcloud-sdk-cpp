@@ -330,6 +330,27 @@ namespace TencentCloud
                      */
                     bool SatisfactionHasBeenSet() const;
 
+                    /**
+                     * 获取用户ID
+                     * @return ClientUserId 用户ID
+                     * 
+                     */
+                    std::string GetClientUserId() const;
+
+                    /**
+                     * 设置用户ID
+                     * @param _clientUserId 用户ID
+                     * 
+                     */
+                    void SetClientUserId(const std::string& _clientUserId);
+
+                    /**
+                     * 判断参数 ClientUserId 是否已赋值
+                     * @return ClientUserId 是否已赋值
+                     * 
+                     */
+                    bool ClientUserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -410,6 +431,12 @@ namespace TencentCloud
                      */
                     IMSatisfaction m_satisfaction;
                     bool m_satisfactionHasBeenSet;
+
+                    /**
+                     * 用户ID
+                     */
+                    std::string m_clientUserId;
+                    bool m_clientUserIdHasBeenSet;
 
                 };
             }

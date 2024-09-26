@@ -23,7 +23,12 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ses::V20201002::Model;
 using namespace std;
 
-CreateCustomBlacklistResponse::CreateCustomBlacklistResponse()
+CreateCustomBlacklistResponse::CreateCustomBlacklistResponse() :
+    m_totalCountHasBeenSet(false),
+    m_validCountHasBeenSet(false),
+    m_tooLongCountHasBeenSet(false),
+    m_repeatCountHasBeenSet(false),
+    m_invalidCountHasBeenSet(false)
 {
 }
 
@@ -61,6 +66,56 @@ CoreInternalOutcome CreateCustomBlacklistResponse::Deserialize(const string &pay
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ValidCount") && !rsp["ValidCount"].IsNull())
+    {
+        if (!rsp["ValidCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ValidCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_validCount = rsp["ValidCount"].GetUint64();
+        m_validCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TooLongCount") && !rsp["TooLongCount"].IsNull())
+    {
+        if (!rsp["TooLongCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TooLongCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tooLongCount = rsp["TooLongCount"].GetUint64();
+        m_tooLongCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RepeatCount") && !rsp["RepeatCount"].IsNull())
+    {
+        if (!rsp["RepeatCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RepeatCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_repeatCount = rsp["RepeatCount"].GetUint64();
+        m_repeatCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InvalidCount") && !rsp["InvalidCount"].IsNull())
+    {
+        if (!rsp["InvalidCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InvalidCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalidCount = rsp["InvalidCount"].GetUint64();
+        m_invalidCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +125,46 @@ string CreateCustomBlacklistResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_validCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_validCount, allocator);
+    }
+
+    if (m_tooLongCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TooLongCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tooLongCount, allocator);
+    }
+
+    if (m_repeatCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepeatCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_repeatCount, allocator);
+    }
+
+    if (m_invalidCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvalidCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_invalidCount, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +177,55 @@ string CreateCustomBlacklistResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t CreateCustomBlacklistResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool CreateCustomBlacklistResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+uint64_t CreateCustomBlacklistResponse::GetValidCount() const
+{
+    return m_validCount;
+}
+
+bool CreateCustomBlacklistResponse::ValidCountHasBeenSet() const
+{
+    return m_validCountHasBeenSet;
+}
+
+uint64_t CreateCustomBlacklistResponse::GetTooLongCount() const
+{
+    return m_tooLongCount;
+}
+
+bool CreateCustomBlacklistResponse::TooLongCountHasBeenSet() const
+{
+    return m_tooLongCountHasBeenSet;
+}
+
+uint64_t CreateCustomBlacklistResponse::GetRepeatCount() const
+{
+    return m_repeatCount;
+}
+
+bool CreateCustomBlacklistResponse::RepeatCountHasBeenSet() const
+{
+    return m_repeatCountHasBeenSet;
+}
+
+uint64_t CreateCustomBlacklistResponse::GetInvalidCount() const
+{
+    return m_invalidCount;
+}
+
+bool CreateCustomBlacklistResponse::InvalidCountHasBeenSet() const
+{
+    return m_invalidCountHasBeenSet;
+}
 
 

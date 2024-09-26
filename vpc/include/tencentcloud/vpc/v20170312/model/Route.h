@@ -386,6 +386,31 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
                      */
                     bool CreatedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取CDC 集群唯一 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CdcId CDC 集群唯一 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置CDC 集群唯一 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cdcId CDC 集群唯一 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     * 
+                     */
+                    bool CdcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -481,6 +506,13 @@ CCN：云联网路由，系统默认下发，不可编辑与删除。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * CDC 集群唯一 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
 
                 };
             }

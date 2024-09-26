@@ -32,6 +32,7 @@ EndPointService::EndPointService() :
     m_endPointSetHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_serviceTypeHasBeenSet(false),
+    m_cdcIdHasBeenSet(false),
     m_serviceUinHasBeenSet(false),
     m_businessIpTypeHasBeenSet(false),
     m_tagSetHasBeenSet(false)
@@ -161,6 +162,16 @@ CoreInternalOutcome EndPointService::Deserialize(const rapidjson::Value &value)
         }
         m_serviceType = string(value["ServiceType"].GetString());
         m_serviceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CdcId") && !value["CdcId"].IsNull())
+    {
+        if (!value["CdcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EndPointService.CdcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcId = string(value["CdcId"].GetString());
+        m_cdcIdHasBeenSet = true;
     }
 
     if (value.HasMember("ServiceUin") && !value["ServiceUin"].IsNull())
@@ -303,6 +314,14 @@ void EndPointService::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ServiceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceUinHasBeenSet)
@@ -513,6 +532,22 @@ void EndPointService::SetServiceType(const string& _serviceType)
 bool EndPointService::ServiceTypeHasBeenSet() const
 {
     return m_serviceTypeHasBeenSet;
+}
+
+string EndPointService::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void EndPointService::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool EndPointService::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
 }
 
 string EndPointService::GetServiceUin() const

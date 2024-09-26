@@ -1588,6 +1588,92 @@ VpcClient::CreateCcnRouteTablesOutcomeCallable VpcClient::CreateCcnRouteTablesCa
     return task->get_future();
 }
 
+VpcClient::CreateCdcLDCXListOutcome VpcClient::CreateCdcLDCXList(const CreateCdcLDCXListRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCdcLDCXList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCdcLDCXListResponse rsp = CreateCdcLDCXListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCdcLDCXListOutcome(rsp);
+        else
+            return CreateCdcLDCXListOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCdcLDCXListOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateCdcLDCXListAsync(const CreateCdcLDCXListRequest& request, const CreateCdcLDCXListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCdcLDCXList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateCdcLDCXListOutcomeCallable VpcClient::CreateCdcLDCXListCallable(const CreateCdcLDCXListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCdcLDCXListOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCdcLDCXList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreateCdcNetPlanesOutcome VpcClient::CreateCdcNetPlanes(const CreateCdcNetPlanesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCdcNetPlanes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCdcNetPlanesResponse rsp = CreateCdcNetPlanesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCdcNetPlanesOutcome(rsp);
+        else
+            return CreateCdcNetPlanesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCdcNetPlanesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateCdcNetPlanesAsync(const CreateCdcNetPlanesRequest& request, const CreateCdcNetPlanesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCdcNetPlanes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateCdcNetPlanesOutcomeCallable VpcClient::CreateCdcNetPlanesCallable(const CreateCdcNetPlanesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCdcNetPlanesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCdcNetPlanes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CreateCustomerGatewayOutcome VpcClient::CreateCustomerGateway(const CreateCustomerGatewayRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCustomerGateway");
@@ -1925,6 +2011,92 @@ VpcClient::CreateHaVipOutcomeCallable VpcClient::CreateHaVipCallable(const Creat
         [this, request]()
         {
             return this->CreateHaVip(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreateHighPriorityRouteTableOutcome VpcClient::CreateHighPriorityRouteTable(const CreateHighPriorityRouteTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateHighPriorityRouteTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateHighPriorityRouteTableResponse rsp = CreateHighPriorityRouteTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateHighPriorityRouteTableOutcome(rsp);
+        else
+            return CreateHighPriorityRouteTableOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateHighPriorityRouteTableOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateHighPriorityRouteTableAsync(const CreateHighPriorityRouteTableRequest& request, const CreateHighPriorityRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateHighPriorityRouteTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateHighPriorityRouteTableOutcomeCallable VpcClient::CreateHighPriorityRouteTableCallable(const CreateHighPriorityRouteTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateHighPriorityRouteTableOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateHighPriorityRouteTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreateHighPriorityRoutesOutcome VpcClient::CreateHighPriorityRoutes(const CreateHighPriorityRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateHighPriorityRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateHighPriorityRoutesResponse rsp = CreateHighPriorityRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateHighPriorityRoutesOutcome(rsp);
+        else
+            return CreateHighPriorityRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateHighPriorityRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateHighPriorityRoutesAsync(const CreateHighPriorityRoutesRequest& request, const CreateHighPriorityRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateHighPriorityRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateHighPriorityRoutesOutcomeCallable VpcClient::CreateHighPriorityRoutesCallable(const CreateHighPriorityRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateHighPriorityRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateHighPriorityRoutes(request);
         }
     );
 
@@ -3695,6 +3867,92 @@ VpcClient::DeleteCcnRouteTablesOutcomeCallable VpcClient::DeleteCcnRouteTablesCa
     return task->get_future();
 }
 
+VpcClient::DeleteCdcLDCXListOutcome VpcClient::DeleteCdcLDCXList(const DeleteCdcLDCXListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCdcLDCXList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCdcLDCXListResponse rsp = DeleteCdcLDCXListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCdcLDCXListOutcome(rsp);
+        else
+            return DeleteCdcLDCXListOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCdcLDCXListOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteCdcLDCXListAsync(const DeleteCdcLDCXListRequest& request, const DeleteCdcLDCXListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCdcLDCXList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteCdcLDCXListOutcomeCallable VpcClient::DeleteCdcLDCXListCallable(const DeleteCdcLDCXListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCdcLDCXListOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCdcLDCXList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteCdcNetPlanesOutcome VpcClient::DeleteCdcNetPlanes(const DeleteCdcNetPlanesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCdcNetPlanes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCdcNetPlanesResponse rsp = DeleteCdcNetPlanesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCdcNetPlanesOutcome(rsp);
+        else
+            return DeleteCdcNetPlanesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCdcNetPlanesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteCdcNetPlanesAsync(const DeleteCdcNetPlanesRequest& request, const DeleteCdcNetPlanesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCdcNetPlanes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteCdcNetPlanesOutcomeCallable VpcClient::DeleteCdcNetPlanesCallable(const DeleteCdcNetPlanesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCdcNetPlanesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCdcNetPlanes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DeleteCustomerGatewayOutcome VpcClient::DeleteCustomerGateway(const DeleteCustomerGatewayRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCustomerGateway");
@@ -3946,6 +4204,92 @@ VpcClient::DeleteHaVipOutcomeCallable VpcClient::DeleteHaVipCallable(const Delet
         [this, request]()
         {
             return this->DeleteHaVip(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteHighPriorityRouteTablesOutcome VpcClient::DeleteHighPriorityRouteTables(const DeleteHighPriorityRouteTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteHighPriorityRouteTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteHighPriorityRouteTablesResponse rsp = DeleteHighPriorityRouteTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteHighPriorityRouteTablesOutcome(rsp);
+        else
+            return DeleteHighPriorityRouteTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteHighPriorityRouteTablesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteHighPriorityRouteTablesAsync(const DeleteHighPriorityRouteTablesRequest& request, const DeleteHighPriorityRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteHighPriorityRouteTables(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteHighPriorityRouteTablesOutcomeCallable VpcClient::DeleteHighPriorityRouteTablesCallable(const DeleteHighPriorityRouteTablesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteHighPriorityRouteTablesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteHighPriorityRouteTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteHighPriorityRoutesOutcome VpcClient::DeleteHighPriorityRoutes(const DeleteHighPriorityRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteHighPriorityRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteHighPriorityRoutesResponse rsp = DeleteHighPriorityRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteHighPriorityRoutesOutcome(rsp);
+        else
+            return DeleteHighPriorityRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteHighPriorityRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteHighPriorityRoutesAsync(const DeleteHighPriorityRoutesRequest& request, const DeleteHighPriorityRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteHighPriorityRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteHighPriorityRoutesOutcomeCallable VpcClient::DeleteHighPriorityRoutesCallable(const DeleteHighPriorityRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteHighPriorityRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteHighPriorityRoutes(request);
         }
     );
 
@@ -6146,6 +6490,135 @@ VpcClient::DescribeCcnsOutcomeCallable VpcClient::DescribeCcnsCallable(const Des
     return task->get_future();
 }
 
+VpcClient::DescribeCdcLDCXListOutcome VpcClient::DescribeCdcLDCXList(const DescribeCdcLDCXListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCdcLDCXList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCdcLDCXListResponse rsp = DescribeCdcLDCXListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCdcLDCXListOutcome(rsp);
+        else
+            return DescribeCdcLDCXListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCdcLDCXListOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeCdcLDCXListAsync(const DescribeCdcLDCXListRequest& request, const DescribeCdcLDCXListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCdcLDCXList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeCdcLDCXListOutcomeCallable VpcClient::DescribeCdcLDCXListCallable(const DescribeCdcLDCXListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCdcLDCXListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCdcLDCXList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeCdcNetPlanesOutcome VpcClient::DescribeCdcNetPlanes(const DescribeCdcNetPlanesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCdcNetPlanes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCdcNetPlanesResponse rsp = DescribeCdcNetPlanesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCdcNetPlanesOutcome(rsp);
+        else
+            return DescribeCdcNetPlanesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCdcNetPlanesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeCdcNetPlanesAsync(const DescribeCdcNetPlanesRequest& request, const DescribeCdcNetPlanesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCdcNetPlanes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeCdcNetPlanesOutcomeCallable VpcClient::DescribeCdcNetPlanesCallable(const DescribeCdcNetPlanesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCdcNetPlanesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCdcNetPlanes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeCdcUsedIdcVlanOutcome VpcClient::DescribeCdcUsedIdcVlan(const DescribeCdcUsedIdcVlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCdcUsedIdcVlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCdcUsedIdcVlanResponse rsp = DescribeCdcUsedIdcVlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCdcUsedIdcVlanOutcome(rsp);
+        else
+            return DescribeCdcUsedIdcVlanOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCdcUsedIdcVlanOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeCdcUsedIdcVlanAsync(const DescribeCdcUsedIdcVlanRequest& request, const DescribeCdcUsedIdcVlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCdcUsedIdcVlan(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeCdcUsedIdcVlanOutcomeCallable VpcClient::DescribeCdcUsedIdcVlanCallable(const DescribeCdcUsedIdcVlanRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCdcUsedIdcVlanOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCdcUsedIdcVlan(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeClassicLinkInstancesOutcome VpcClient::DescribeClassicLinkInstances(const DescribeClassicLinkInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClassicLinkInstances");
@@ -6741,6 +7214,92 @@ VpcClient::DescribeHaVipsOutcomeCallable VpcClient::DescribeHaVipsCallable(const
         [this, request]()
         {
             return this->DescribeHaVips(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeHighPriorityRouteTablesOutcome VpcClient::DescribeHighPriorityRouteTables(const DescribeHighPriorityRouteTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHighPriorityRouteTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHighPriorityRouteTablesResponse rsp = DescribeHighPriorityRouteTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHighPriorityRouteTablesOutcome(rsp);
+        else
+            return DescribeHighPriorityRouteTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHighPriorityRouteTablesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeHighPriorityRouteTablesAsync(const DescribeHighPriorityRouteTablesRequest& request, const DescribeHighPriorityRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHighPriorityRouteTables(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeHighPriorityRouteTablesOutcomeCallable VpcClient::DescribeHighPriorityRouteTablesCallable(const DescribeHighPriorityRouteTablesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHighPriorityRouteTablesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHighPriorityRouteTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeHighPriorityRoutesOutcome VpcClient::DescribeHighPriorityRoutes(const DescribeHighPriorityRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHighPriorityRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHighPriorityRoutesResponse rsp = DescribeHighPriorityRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHighPriorityRoutesOutcome(rsp);
+        else
+            return DescribeHighPriorityRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHighPriorityRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeHighPriorityRoutesAsync(const DescribeHighPriorityRoutesRequest& request, const DescribeHighPriorityRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHighPriorityRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeHighPriorityRoutesOutcomeCallable VpcClient::DescribeHighPriorityRoutesCallable(const DescribeHighPriorityRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHighPriorityRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHighPriorityRoutes(request);
         }
     );
 
@@ -7945,6 +8504,49 @@ VpcClient::DescribeRouteTablesOutcomeCallable VpcClient::DescribeRouteTablesCall
         [this, request]()
         {
             return this->DescribeRouteTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeRoutesOutcome VpcClient::DescribeRoutes(const DescribeRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoutesResponse rsp = DescribeRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoutesOutcome(rsp);
+        else
+            return DescribeRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeRoutesAsync(const DescribeRoutesRequest& request, const DescribeRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeRoutesOutcomeCallable VpcClient::DescribeRoutesCallable(const DescribeRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoutes(request);
         }
     );
 
@@ -11607,6 +12209,92 @@ VpcClient::ModifyCcnRouteTablesOutcomeCallable VpcClient::ModifyCcnRouteTablesCa
     return task->get_future();
 }
 
+VpcClient::ModifyCdcLDCXAttributeOutcome VpcClient::ModifyCdcLDCXAttribute(const ModifyCdcLDCXAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCdcLDCXAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCdcLDCXAttributeResponse rsp = ModifyCdcLDCXAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCdcLDCXAttributeOutcome(rsp);
+        else
+            return ModifyCdcLDCXAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCdcLDCXAttributeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyCdcLDCXAttributeAsync(const ModifyCdcLDCXAttributeRequest& request, const ModifyCdcLDCXAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCdcLDCXAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyCdcLDCXAttributeOutcomeCallable VpcClient::ModifyCdcLDCXAttributeCallable(const ModifyCdcLDCXAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCdcLDCXAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCdcLDCXAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyCdcNetPlaneAttributeOutcome VpcClient::ModifyCdcNetPlaneAttribute(const ModifyCdcNetPlaneAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCdcNetPlaneAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCdcNetPlaneAttributeResponse rsp = ModifyCdcNetPlaneAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCdcNetPlaneAttributeOutcome(rsp);
+        else
+            return ModifyCdcNetPlaneAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCdcNetPlaneAttributeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyCdcNetPlaneAttributeAsync(const ModifyCdcNetPlaneAttributeRequest& request, const ModifyCdcNetPlaneAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCdcNetPlaneAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyCdcNetPlaneAttributeOutcomeCallable VpcClient::ModifyCdcNetPlaneAttributeCallable(const ModifyCdcNetPlaneAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCdcNetPlaneAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCdcNetPlaneAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ModifyCustomerGatewayAttributeOutcome VpcClient::ModifyCustomerGatewayAttribute(const ModifyCustomerGatewayAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCustomerGatewayAttribute");
@@ -11858,6 +12546,135 @@ VpcClient::ModifyHaVipAttributeOutcomeCallable VpcClient::ModifyHaVipAttributeCa
         [this, request]()
         {
             return this->ModifyHaVipAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyHighPriorityRouteAttributeOutcome VpcClient::ModifyHighPriorityRouteAttribute(const ModifyHighPriorityRouteAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyHighPriorityRouteAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyHighPriorityRouteAttributeResponse rsp = ModifyHighPriorityRouteAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyHighPriorityRouteAttributeOutcome(rsp);
+        else
+            return ModifyHighPriorityRouteAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyHighPriorityRouteAttributeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyHighPriorityRouteAttributeAsync(const ModifyHighPriorityRouteAttributeRequest& request, const ModifyHighPriorityRouteAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyHighPriorityRouteAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyHighPriorityRouteAttributeOutcomeCallable VpcClient::ModifyHighPriorityRouteAttributeCallable(const ModifyHighPriorityRouteAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyHighPriorityRouteAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyHighPriorityRouteAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyHighPriorityRouteECMPAlgorithmOutcome VpcClient::ModifyHighPriorityRouteECMPAlgorithm(const ModifyHighPriorityRouteECMPAlgorithmRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyHighPriorityRouteECMPAlgorithm");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyHighPriorityRouteECMPAlgorithmResponse rsp = ModifyHighPriorityRouteECMPAlgorithmResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyHighPriorityRouteECMPAlgorithmOutcome(rsp);
+        else
+            return ModifyHighPriorityRouteECMPAlgorithmOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyHighPriorityRouteECMPAlgorithmOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyHighPriorityRouteECMPAlgorithmAsync(const ModifyHighPriorityRouteECMPAlgorithmRequest& request, const ModifyHighPriorityRouteECMPAlgorithmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyHighPriorityRouteECMPAlgorithm(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyHighPriorityRouteECMPAlgorithmOutcomeCallable VpcClient::ModifyHighPriorityRouteECMPAlgorithmCallable(const ModifyHighPriorityRouteECMPAlgorithmRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyHighPriorityRouteECMPAlgorithmOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyHighPriorityRouteECMPAlgorithm(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyHighPriorityRouteTableAttributeOutcome VpcClient::ModifyHighPriorityRouteTableAttribute(const ModifyHighPriorityRouteTableAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyHighPriorityRouteTableAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyHighPriorityRouteTableAttributeResponse rsp = ModifyHighPriorityRouteTableAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyHighPriorityRouteTableAttributeOutcome(rsp);
+        else
+            return ModifyHighPriorityRouteTableAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyHighPriorityRouteTableAttributeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyHighPriorityRouteTableAttributeAsync(const ModifyHighPriorityRouteTableAttributeRequest& request, const ModifyHighPriorityRouteTableAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyHighPriorityRouteTableAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyHighPriorityRouteTableAttributeOutcomeCallable VpcClient::ModifyHighPriorityRouteTableAttributeCallable(const ModifyHighPriorityRouteTableAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyHighPriorityRouteTableAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyHighPriorityRouteTableAttribute(request);
         }
     );
 
@@ -14101,6 +14918,92 @@ VpcClient::ReplaceDirectConnectGatewayCcnRoutesOutcomeCallable VpcClient::Replac
     return task->get_future();
 }
 
+VpcClient::ReplaceHighPriorityRouteTableAssociationOutcome VpcClient::ReplaceHighPriorityRouteTableAssociation(const ReplaceHighPriorityRouteTableAssociationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceHighPriorityRouteTableAssociation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceHighPriorityRouteTableAssociationResponse rsp = ReplaceHighPriorityRouteTableAssociationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceHighPriorityRouteTableAssociationOutcome(rsp);
+        else
+            return ReplaceHighPriorityRouteTableAssociationOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceHighPriorityRouteTableAssociationOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ReplaceHighPriorityRouteTableAssociationAsync(const ReplaceHighPriorityRouteTableAssociationRequest& request, const ReplaceHighPriorityRouteTableAssociationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceHighPriorityRouteTableAssociation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ReplaceHighPriorityRouteTableAssociationOutcomeCallable VpcClient::ReplaceHighPriorityRouteTableAssociationCallable(const ReplaceHighPriorityRouteTableAssociationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceHighPriorityRouteTableAssociationOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceHighPriorityRouteTableAssociation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ReplaceHighPriorityRoutesOutcome VpcClient::ReplaceHighPriorityRoutes(const ReplaceHighPriorityRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceHighPriorityRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceHighPriorityRoutesResponse rsp = ReplaceHighPriorityRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceHighPriorityRoutesOutcome(rsp);
+        else
+            return ReplaceHighPriorityRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceHighPriorityRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ReplaceHighPriorityRoutesAsync(const ReplaceHighPriorityRoutesRequest& request, const ReplaceHighPriorityRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceHighPriorityRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ReplaceHighPriorityRoutesOutcomeCallable VpcClient::ReplaceHighPriorityRoutesCallable(const ReplaceHighPriorityRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceHighPriorityRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceHighPriorityRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ReplaceRouteTableAssociationOutcome VpcClient::ReplaceRouteTableAssociation(const ReplaceRouteTableAssociationRequest &request)
 {
     auto outcome = MakeRequest(request, "ReplaceRouteTableAssociation");
@@ -14309,6 +15212,49 @@ VpcClient::ResetAttachCcnInstancesOutcomeCallable VpcClient::ResetAttachCcnInsta
         [this, request]()
         {
             return this->ResetAttachCcnInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ResetHighPriorityRoutesOutcome VpcClient::ResetHighPriorityRoutes(const ResetHighPriorityRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetHighPriorityRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetHighPriorityRoutesResponse rsp = ResetHighPriorityRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetHighPriorityRoutesOutcome(rsp);
+        else
+            return ResetHighPriorityRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetHighPriorityRoutesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ResetHighPriorityRoutesAsync(const ResetHighPriorityRoutesRequest& request, const ResetHighPriorityRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetHighPriorityRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ResetHighPriorityRoutesOutcomeCallable VpcClient::ResetHighPriorityRoutesCallable(const ResetHighPriorityRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetHighPriorityRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetHighPriorityRoutes(request);
         }
     );
 

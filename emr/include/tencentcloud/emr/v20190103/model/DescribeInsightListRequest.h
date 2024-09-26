@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool PageHasBeenSet() const;
 
+                    /**
+                     * 获取查询类型,支持HIVE,SPARK,MAPREDUCE,TRINO等类型,默认查询全部
+                     * @return Type 查询类型,支持HIVE,SPARK,MAPREDUCE,TRINO等类型,默认查询全部
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置查询类型,支持HIVE,SPARK,MAPREDUCE,TRINO等类型,默认查询全部
+                     * @param _type 查询类型,支持HIVE,SPARK,MAPREDUCE,TRINO等类型,默认查询全部
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;
+
+                    /**
+                     * 查询类型,支持HIVE,SPARK,MAPREDUCE,TRINO等类型,默认查询全部
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

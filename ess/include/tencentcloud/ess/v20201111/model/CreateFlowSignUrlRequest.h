@@ -47,23 +47,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同流程ID，为32位字符串。
-建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
-可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
-                     * @return FlowId 合同流程ID，为32位字符串。
-建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
-可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
+                     * 获取合同流程ID为32位字符串。
+
+您可以登录腾讯电子签控制台，在 "合同" -> "合同中心" 中查看某个合同的FlowId（在页面中展示为合同ID）。[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)。
+
+                     * @return FlowId 合同流程ID为32位字符串。
+
+您可以登录腾讯电子签控制台，在 "合同" -> "合同中心" 中查看某个合同的FlowId（在页面中展示为合同ID）。[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)。
+
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置合同流程ID，为32位字符串。
-建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
-可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
-                     * @param _flowId 合同流程ID，为32位字符串。
-建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
-可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
+                     * 设置合同流程ID为32位字符串。
+
+您可以登录腾讯电子签控制台，在 "合同" -> "合同中心" 中查看某个合同的FlowId（在页面中展示为合同ID）。[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)。
+
+                     * @param _flowId 合同流程ID为32位字符串。
+
+您可以登录腾讯电子签控制台，在 "合同" -> "合同中心" 中查看某个合同的FlowId（在页面中展示为合同ID）。[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)。
+
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -126,31 +130,39 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，企业签署人则需传OrganizationName，其他可不传。
+                     * 获取流程签署人列表中，结构体的ApproverName、ApproverMobile和ApproverType为必传字段。如果是企业签署人，还需传递OrganizationName。
 
-注:
-`1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`
-`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`
-                     * @return FlowApproverInfos 流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，企业签署人则需传OrganizationName，其他可不传。
+注：
+1. 签署人<b>只能使用手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件</b>，其他类型的签署控件暂时不支持。
+2. 生成发起方预览链接时，该字段（FlowApproverInfos）可以传空或者不传。
 
-注:
-`1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`
-`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`
+
+                     * @return FlowApproverInfos 流程签署人列表中，结构体的ApproverName、ApproverMobile和ApproverType为必传字段。如果是企业签署人，还需传递OrganizationName。
+
+注：
+1. 签署人<b>只能使用手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件</b>，其他类型的签署控件暂时不支持。
+2. 生成发起方预览链接时，该字段（FlowApproverInfos）可以传空或者不传。
+
+
                      * 
                      */
                     std::vector<FlowCreateApprover> GetFlowApproverInfos() const;
 
                     /**
-                     * 设置流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，企业签署人则需传OrganizationName，其他可不传。
+                     * 设置流程签署人列表中，结构体的ApproverName、ApproverMobile和ApproverType为必传字段。如果是企业签署人，还需传递OrganizationName。
 
-注:
-`1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`
-`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`
-                     * @param _flowApproverInfos 流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，企业签署人则需传OrganizationName，其他可不传。
+注：
+1. 签署人<b>只能使用手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件</b>，其他类型的签署控件暂时不支持。
+2. 生成发起方预览链接时，该字段（FlowApproverInfos）可以传空或者不传。
 
-注:
-`1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`
-`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`
+
+                     * @param _flowApproverInfos 流程签署人列表中，结构体的ApproverName、ApproverMobile和ApproverType为必传字段。如果是企业签署人，还需传递OrganizationName。
+
+注：
+1. 签署人<b>只能使用手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件</b>，其他类型的签署控件暂时不支持。
+2. 生成发起方预览链接时，该字段（FlowApproverInfos）可以传空或者不传。
+
+
                      * 
                      */
                     void SetFlowApproverInfos(const std::vector<FlowCreateApprover>& _flowApproverInfos);
@@ -209,35 +221,43 @@ namespace TencentCloud
                     bool JumpUrlHasBeenSet() const;
 
                     /**
-                     * 获取链接类型，支持指定以下类型
-<ul><li>0 : 签署链接 (默认值)</li>
-<li>1 : 预览链接</li></ul>
-注:
-`1. 当指定链接类型为1时，链接为预览链接，打开链接无法签署仅支持预览以及查看当前合同状态。`
-`2. 如需生成发起方预览链接，则签署方信息传空，即FlowApproverInfos传空或者不传。`
-                     * @return UrlType 链接类型，支持指定以下类型
-<ul><li>0 : 签署链接 (默认值)</li>
-<li>1 : 预览链接</li></ul>
-注:
-`1. 当指定链接类型为1时，链接为预览链接，打开链接无法签署仅支持预览以及查看当前合同状态。`
-`2. 如需生成发起方预览链接，则签署方信息传空，即FlowApproverInfos传空或者不传。`
+                     * 获取链接类型支持以下指定类型：
+
+<ul><li><b>0</b>: 签署链接（默认值），进入后可以填写或签署合同。</li><li><b>1 </b>: 预览链接，进入后可以预览合同当前的样子。</li></ul>
+
+注：
+
+1. 当指定链接类型为1时，链接为预览链接，打开链接后无法进行签署操作，仅支持预览和查看当前合同状态。
+2. 如需生成发起方预览链接，则签署方信息应传空，即FlowApproverInfos传空或者不传。
+                     * @return UrlType 链接类型支持以下指定类型：
+
+<ul><li><b>0</b>: 签署链接（默认值），进入后可以填写或签署合同。</li><li><b>1 </b>: 预览链接，进入后可以预览合同当前的样子。</li></ul>
+
+注：
+
+1. 当指定链接类型为1时，链接为预览链接，打开链接后无法进行签署操作，仅支持预览和查看当前合同状态。
+2. 如需生成发起方预览链接，则签署方信息应传空，即FlowApproverInfos传空或者不传。
                      * 
                      */
                     int64_t GetUrlType() const;
 
                     /**
-                     * 设置链接类型，支持指定以下类型
-<ul><li>0 : 签署链接 (默认值)</li>
-<li>1 : 预览链接</li></ul>
-注:
-`1. 当指定链接类型为1时，链接为预览链接，打开链接无法签署仅支持预览以及查看当前合同状态。`
-`2. 如需生成发起方预览链接，则签署方信息传空，即FlowApproverInfos传空或者不传。`
-                     * @param _urlType 链接类型，支持指定以下类型
-<ul><li>0 : 签署链接 (默认值)</li>
-<li>1 : 预览链接</li></ul>
-注:
-`1. 当指定链接类型为1时，链接为预览链接，打开链接无法签署仅支持预览以及查看当前合同状态。`
-`2. 如需生成发起方预览链接，则签署方信息传空，即FlowApproverInfos传空或者不传。`
+                     * 设置链接类型支持以下指定类型：
+
+<ul><li><b>0</b>: 签署链接（默认值），进入后可以填写或签署合同。</li><li><b>1 </b>: 预览链接，进入后可以预览合同当前的样子。</li></ul>
+
+注：
+
+1. 当指定链接类型为1时，链接为预览链接，打开链接后无法进行签署操作，仅支持预览和查看当前合同状态。
+2. 如需生成发起方预览链接，则签署方信息应传空，即FlowApproverInfos传空或者不传。
+                     * @param _urlType 链接类型支持以下指定类型：
+
+<ul><li><b>0</b>: 签署链接（默认值），进入后可以填写或签署合同。</li><li><b>1 </b>: 预览链接，进入后可以预览合同当前的样子。</li></ul>
+
+注：
+
+1. 当指定链接类型为1时，链接为预览链接，打开链接后无法进行签署操作，仅支持预览和查看当前合同状态。
+2. 如需生成发起方预览链接，则签署方信息应传空，即FlowApproverInfos传空或者不传。
                      * 
                      */
                     void SetUrlType(const int64_t& _urlType);
@@ -252,9 +272,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同流程ID，为32位字符串。
-建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
-可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
+                     * 合同流程ID为32位字符串。
+
+您可以登录腾讯电子签控制台，在 "合同" -> "合同中心" 中查看某个合同的FlowId（在页面中展示为合同ID）。[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)。
+
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
@@ -274,11 +295,13 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，企业签署人则需传OrganizationName，其他可不传。
+                     * 流程签署人列表中，结构体的ApproverName、ApproverMobile和ApproverType为必传字段。如果是企业签署人，还需传递OrganizationName。
 
-注:
-`1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`
-`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`
+注：
+1. 签署人<b>只能使用手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件</b>，其他类型的签署控件暂时不支持。
+2. 生成发起方预览链接时，该字段（FlowApproverInfos）可以传空或者不传。
+
+
                      */
                     std::vector<FlowCreateApprover> m_flowApproverInfos;
                     bool m_flowApproverInfosHasBeenSet;
@@ -297,12 +320,14 @@ namespace TencentCloud
                     bool m_jumpUrlHasBeenSet;
 
                     /**
-                     * 链接类型，支持指定以下类型
-<ul><li>0 : 签署链接 (默认值)</li>
-<li>1 : 预览链接</li></ul>
-注:
-`1. 当指定链接类型为1时，链接为预览链接，打开链接无法签署仅支持预览以及查看当前合同状态。`
-`2. 如需生成发起方预览链接，则签署方信息传空，即FlowApproverInfos传空或者不传。`
+                     * 链接类型支持以下指定类型：
+
+<ul><li><b>0</b>: 签署链接（默认值），进入后可以填写或签署合同。</li><li><b>1 </b>: 预览链接，进入后可以预览合同当前的样子。</li></ul>
+
+注：
+
+1. 当指定链接类型为1时，链接为预览链接，打开链接后无法进行签署操作，仅支持预览和查看当前合同状态。
+2. 如需生成发起方预览链接，则签署方信息应传空，即FlowApproverInfos传空或者不传。
                      */
                     int64_t m_urlType;
                     bool m_urlTypeHasBeenSet;

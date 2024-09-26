@@ -34,6 +34,7 @@ EndPoint::EndPoint() :
     m_createTimeHasBeenSet(false),
     m_groupSetHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
+    m_cdcIdHasBeenSet(false),
     m_tagSetHasBeenSet(false)
 {
 }
@@ -176,6 +177,16 @@ CoreInternalOutcome EndPoint::Deserialize(const rapidjson::Value &value)
         m_serviceNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CdcId") && !value["CdcId"].IsNull())
+    {
+        if (!value["CdcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EndPoint.CdcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcId = string(value["CdcId"].GetString());
+        m_cdcIdHasBeenSet = true;
+    }
+
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
     {
         if (!value["TagSet"].IsArray())
@@ -310,6 +321,14 @@ void EndPoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ServiceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagSetHasBeenSet)
@@ -536,6 +555,22 @@ void EndPoint::SetServiceName(const string& _serviceName)
 bool EndPoint::ServiceNameHasBeenSet() const
 {
     return m_serviceNameHasBeenSet;
+}
+
+string EndPoint::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void EndPoint::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool EndPoint::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
 }
 
 vector<Tag> EndPoint::GetTagSet() const

@@ -288,6 +288,31 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
+                     * 获取CDC 集群唯一 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CdcId CDC 集群唯一 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置CDC 集群唯一 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cdcId CDC 集群唯一 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     * 
+                     */
+                    bool CdcIdHasBeenSet() const;
+
+                    /**
                      * 获取Uin
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceUin Uin
@@ -431,6 +456,13 @@ namespace TencentCloud
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
+
+                    /**
+                     * CDC 集群唯一 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
 
                     /**
                      * Uin

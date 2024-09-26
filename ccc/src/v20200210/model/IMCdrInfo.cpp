@@ -31,7 +31,8 @@ IMCdrInfo::IMCdrInfo() :
     m_sessionIdHasBeenSet(false),
     m_skillGroupIdHasBeenSet(false),
     m_skillGroupNameHasBeenSet(false),
-    m_satisfactionHasBeenSet(false)
+    m_satisfactionHasBeenSet(false),
+    m_clientUserIdHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,16 @@ CoreInternalOutcome IMCdrInfo::Deserialize(const rapidjson::Value &value)
         m_satisfactionHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientUserId") && !value["ClientUserId"].IsNull())
+    {
+        if (!value["ClientUserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IMCdrInfo.ClientUserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientUserId = string(value["ClientUserId"].GetString());
+        m_clientUserIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void IMCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_satisfaction.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_clientUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientUserId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -430,5 +449,21 @@ void IMCdrInfo::SetSatisfaction(const IMSatisfaction& _satisfaction)
 bool IMCdrInfo::SatisfactionHasBeenSet() const
 {
     return m_satisfactionHasBeenSet;
+}
+
+string IMCdrInfo::GetClientUserId() const
+{
+    return m_clientUserId;
+}
+
+void IMCdrInfo::SetClientUserId(const string& _clientUserId)
+{
+    m_clientUserId = _clientUserId;
+    m_clientUserIdHasBeenSet = true;
+}
+
+bool IMCdrInfo::ClientUserIdHasBeenSet() const
+{
+    return m_clientUserIdHasBeenSet;
 }
 

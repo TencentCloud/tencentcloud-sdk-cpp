@@ -42,6 +42,7 @@ InquiryPriceRunInstancesRequest::InquiryPriceRunInstancesRequest() :
     m_tagSpecificationHasBeenSet(false),
     m_instanceMarketOptionsHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
+    m_cpuTopologyHasBeenSet(false),
     m_launchTemplateHasBeenSet(false)
 {
 }
@@ -230,6 +231,15 @@ string InquiryPriceRunInstancesRequest::ToJsonString() const
         string key = "HpcClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_hpcClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cpuTopologyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuTopology";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cpuTopology.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_launchTemplateHasBeenSet)
@@ -551,6 +561,22 @@ void InquiryPriceRunInstancesRequest::SetHpcClusterId(const string& _hpcClusterI
 bool InquiryPriceRunInstancesRequest::HpcClusterIdHasBeenSet() const
 {
     return m_hpcClusterIdHasBeenSet;
+}
+
+CpuTopology InquiryPriceRunInstancesRequest::GetCpuTopology() const
+{
+    return m_cpuTopology;
+}
+
+void InquiryPriceRunInstancesRequest::SetCpuTopology(const CpuTopology& _cpuTopology)
+{
+    m_cpuTopology = _cpuTopology;
+    m_cpuTopologyHasBeenSet = true;
+}
+
+bool InquiryPriceRunInstancesRequest::CpuTopologyHasBeenSet() const
+{
+    return m_cpuTopologyHasBeenSet;
 }
 
 LaunchTemplate InquiryPriceRunInstancesRequest::GetLaunchTemplate() const

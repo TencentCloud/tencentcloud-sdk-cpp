@@ -25,7 +25,8 @@ CacheConfigCache::CacheConfigCache() :
     m_cacheTimeHasBeenSet(false),
     m_compareMaxAgeHasBeenSet(false),
     m_ignoreCacheControlHasBeenSet(false),
-    m_ignoreSetCookieHasBeenSet(false)
+    m_ignoreSetCookieHasBeenSet(false),
+    m_originMtimeCheckTypeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome CacheConfigCache::Deserialize(const rapidjson::Value &value)
         m_ignoreSetCookieHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginMtimeCheckType") && !value["OriginMtimeCheckType"].IsNull())
+    {
+        if (!value["OriginMtimeCheckType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CacheConfigCache.OriginMtimeCheckType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originMtimeCheckType = string(value["OriginMtimeCheckType"].GetString());
+        m_originMtimeCheckTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void CacheConfigCache::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "IgnoreSetCookie";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ignoreSetCookie.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originMtimeCheckTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginMtimeCheckType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originMtimeCheckType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void CacheConfigCache::SetIgnoreSetCookie(const string& _ignoreSetCookie)
 bool CacheConfigCache::IgnoreSetCookieHasBeenSet() const
 {
     return m_ignoreSetCookieHasBeenSet;
+}
+
+string CacheConfigCache::GetOriginMtimeCheckType() const
+{
+    return m_originMtimeCheckType;
+}
+
+void CacheConfigCache::SetOriginMtimeCheckType(const string& _originMtimeCheckType)
+{
+    m_originMtimeCheckType = _originMtimeCheckType;
+    m_originMtimeCheckTypeHasBeenSet = true;
+}
+
+bool CacheConfigCache::OriginMtimeCheckTypeHasBeenSet() const
+{
+    return m_originMtimeCheckTypeHasBeenSet;
 }
 

@@ -34,6 +34,7 @@ HaVip::HaVip() :
     m_businessHasBeenSet(false),
     m_haVipAssociationSetHasBeenSet(false),
     m_checkAssociateHasBeenSet(false),
+    m_cdcIdHasBeenSet(false),
     m_flushedTimeHasBeenSet(false),
     m_tagSetHasBeenSet(false)
 {
@@ -184,6 +185,16 @@ CoreInternalOutcome HaVip::Deserialize(const rapidjson::Value &value)
         m_checkAssociateHasBeenSet = true;
     }
 
+    if (value.HasMember("CdcId") && !value["CdcId"].IsNull())
+    {
+        if (!value["CdcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HaVip.CdcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcId = string(value["CdcId"].GetString());
+        m_cdcIdHasBeenSet = true;
+    }
+
     if (value.HasMember("FlushedTime") && !value["FlushedTime"].IsNull())
     {
         if (!value["FlushedTime"].IsString())
@@ -330,6 +341,14 @@ void HaVip::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "CheckAssociate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_checkAssociate, allocator);
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flushedTimeHasBeenSet)
@@ -564,6 +583,22 @@ void HaVip::SetCheckAssociate(const bool& _checkAssociate)
 bool HaVip::CheckAssociateHasBeenSet() const
 {
     return m_checkAssociateHasBeenSet;
+}
+
+string HaVip::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void HaVip::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool HaVip::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
 }
 
 string HaVip::GetFlushedTime() const

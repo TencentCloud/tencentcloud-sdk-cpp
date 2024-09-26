@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例组ID
-                     * @return InstanceId 实例组ID
+                     * 获取网络组id(cynosdbmysql-grp-前缀开头)或集群id
+                     * @return InstanceId 网络组id(cynosdbmysql-grp-前缀开头)或集群id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例组ID
-                     * @param _instanceId 实例组ID
+                     * 设置网络组id(cynosdbmysql-grp-前缀开头)或集群id
+                     * @param _instanceId 网络组id(cynosdbmysql-grp-前缀开头)或集群id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例组ID
+                     * 网络组id(cynosdbmysql-grp-前缀开头)或集群id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

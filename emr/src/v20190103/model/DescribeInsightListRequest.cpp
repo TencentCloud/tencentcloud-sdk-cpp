@@ -27,7 +27,8 @@ DescribeInsightListRequest::DescribeInsightListRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_pageHasBeenSet(false)
+    m_pageHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeInsightListRequest::ToJsonString() const
         string key = "Page";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_page, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeInsightListRequest::SetPage(const int64_t& _page)
 bool DescribeInsightListRequest::PageHasBeenSet() const
 {
     return m_pageHasBeenSet;
+}
+
+string DescribeInsightListRequest::GetType() const
+{
+    return m_type;
+}
+
+void DescribeInsightListRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DescribeInsightListRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 
