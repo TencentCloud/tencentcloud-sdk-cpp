@@ -513,6 +513,92 @@ TeoClient::CreateCustomizeErrorPageOutcomeCallable TeoClient::CreateCustomizeErr
     return task->get_future();
 }
 
+TeoClient::CreateFunctionOutcome TeoClient::CreateFunction(const CreateFunctionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFunction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFunctionResponse rsp = CreateFunctionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFunctionOutcome(rsp);
+        else
+            return CreateFunctionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFunctionOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateFunctionAsync(const CreateFunctionRequest& request, const CreateFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFunction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateFunctionOutcomeCallable TeoClient::CreateFunctionCallable(const CreateFunctionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFunctionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFunction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::CreateFunctionRuleOutcome TeoClient::CreateFunctionRule(const CreateFunctionRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFunctionRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFunctionRuleResponse rsp = CreateFunctionRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFunctionRuleOutcome(rsp);
+        else
+            return CreateFunctionRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFunctionRuleOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateFunctionRuleAsync(const CreateFunctionRuleRequest& request, const CreateFunctionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFunctionRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateFunctionRuleOutcomeCallable TeoClient::CreateFunctionRuleCallable(const CreateFunctionRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFunctionRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFunctionRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreateL4ProxyOutcome TeoClient::CreateL4Proxy(const CreateL4ProxyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateL4Proxy");
@@ -1237,6 +1323,92 @@ TeoClient::DeleteCustomErrorPageOutcomeCallable TeoClient::DeleteCustomErrorPage
         [this, request]()
         {
             return this->DeleteCustomErrorPage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DeleteFunctionOutcome TeoClient::DeleteFunction(const DeleteFunctionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFunction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFunctionResponse rsp = DeleteFunctionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFunctionOutcome(rsp);
+        else
+            return DeleteFunctionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFunctionOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteFunctionAsync(const DeleteFunctionRequest& request, const DeleteFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteFunction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteFunctionOutcomeCallable TeoClient::DeleteFunctionCallable(const DeleteFunctionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteFunctionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteFunction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DeleteFunctionRulesOutcome TeoClient::DeleteFunctionRules(const DeleteFunctionRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFunctionRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFunctionRulesResponse rsp = DeleteFunctionRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFunctionRulesOutcome(rsp);
+        else
+            return DeleteFunctionRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFunctionRulesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteFunctionRulesAsync(const DeleteFunctionRulesRequest& request, const DeleteFunctionRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteFunctionRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteFunctionRulesOutcomeCallable TeoClient::DeleteFunctionRulesCallable(const DeleteFunctionRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteFunctionRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteFunctionRules(request);
         }
     );
 
@@ -2269,6 +2441,135 @@ TeoClient::DescribeEnvironmentsOutcomeCallable TeoClient::DescribeEnvironmentsCa
         [this, request]()
         {
             return this->DescribeEnvironments(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeFunctionRulesOutcome TeoClient::DescribeFunctionRules(const DescribeFunctionRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFunctionRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFunctionRulesResponse rsp = DescribeFunctionRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFunctionRulesOutcome(rsp);
+        else
+            return DescribeFunctionRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFunctionRulesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeFunctionRulesAsync(const DescribeFunctionRulesRequest& request, const DescribeFunctionRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFunctionRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeFunctionRulesOutcomeCallable TeoClient::DescribeFunctionRulesCallable(const DescribeFunctionRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFunctionRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFunctionRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeFunctionRuntimeEnvironmentOutcome TeoClient::DescribeFunctionRuntimeEnvironment(const DescribeFunctionRuntimeEnvironmentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFunctionRuntimeEnvironment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFunctionRuntimeEnvironmentResponse rsp = DescribeFunctionRuntimeEnvironmentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFunctionRuntimeEnvironmentOutcome(rsp);
+        else
+            return DescribeFunctionRuntimeEnvironmentOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFunctionRuntimeEnvironmentOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeFunctionRuntimeEnvironmentAsync(const DescribeFunctionRuntimeEnvironmentRequest& request, const DescribeFunctionRuntimeEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFunctionRuntimeEnvironment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeFunctionRuntimeEnvironmentOutcomeCallable TeoClient::DescribeFunctionRuntimeEnvironmentCallable(const DescribeFunctionRuntimeEnvironmentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFunctionRuntimeEnvironmentOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFunctionRuntimeEnvironment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeFunctionsOutcome TeoClient::DescribeFunctions(const DescribeFunctionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFunctions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFunctionsResponse rsp = DescribeFunctionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFunctionsOutcome(rsp);
+        else
+            return DescribeFunctionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFunctionsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeFunctionsAsync(const DescribeFunctionsRequest& request, const DescribeFunctionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFunctions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeFunctionsOutcomeCallable TeoClient::DescribeFunctionsCallable(const DescribeFunctionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFunctionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFunctions(request);
         }
     );
 
@@ -3394,6 +3695,49 @@ TeoClient::DownloadL7LogsOutcomeCallable TeoClient::DownloadL7LogsCallable(const
     return task->get_future();
 }
 
+TeoClient::HandleFunctionRuntimeEnvironmentOutcome TeoClient::HandleFunctionRuntimeEnvironment(const HandleFunctionRuntimeEnvironmentRequest &request)
+{
+    auto outcome = MakeRequest(request, "HandleFunctionRuntimeEnvironment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        HandleFunctionRuntimeEnvironmentResponse rsp = HandleFunctionRuntimeEnvironmentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return HandleFunctionRuntimeEnvironmentOutcome(rsp);
+        else
+            return HandleFunctionRuntimeEnvironmentOutcome(o.GetError());
+    }
+    else
+    {
+        return HandleFunctionRuntimeEnvironmentOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::HandleFunctionRuntimeEnvironmentAsync(const HandleFunctionRuntimeEnvironmentRequest& request, const HandleFunctionRuntimeEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->HandleFunctionRuntimeEnvironment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::HandleFunctionRuntimeEnvironmentOutcomeCallable TeoClient::HandleFunctionRuntimeEnvironmentCallable(const HandleFunctionRuntimeEnvironmentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<HandleFunctionRuntimeEnvironmentOutcome()>>(
+        [this, request]()
+        {
+            return this->HandleFunctionRuntimeEnvironment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::IdentifyZoneOutcome TeoClient::IdentifyZone(const IdentifyZoneRequest &request)
 {
     auto outcome = MakeRequest(request, "IdentifyZone");
@@ -3860,6 +4204,135 @@ TeoClient::ModifyCustomErrorPageOutcomeCallable TeoClient::ModifyCustomErrorPage
         [this, request]()
         {
             return this->ModifyCustomErrorPage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyFunctionOutcome TeoClient::ModifyFunction(const ModifyFunctionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFunction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFunctionResponse rsp = ModifyFunctionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFunctionOutcome(rsp);
+        else
+            return ModifyFunctionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFunctionOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyFunctionAsync(const ModifyFunctionRequest& request, const ModifyFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyFunction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyFunctionOutcomeCallable TeoClient::ModifyFunctionCallable(const ModifyFunctionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyFunctionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyFunction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyFunctionRuleOutcome TeoClient::ModifyFunctionRule(const ModifyFunctionRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFunctionRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFunctionRuleResponse rsp = ModifyFunctionRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFunctionRuleOutcome(rsp);
+        else
+            return ModifyFunctionRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFunctionRuleOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyFunctionRuleAsync(const ModifyFunctionRuleRequest& request, const ModifyFunctionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyFunctionRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyFunctionRuleOutcomeCallable TeoClient::ModifyFunctionRuleCallable(const ModifyFunctionRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyFunctionRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyFunctionRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyFunctionRulePriorityOutcome TeoClient::ModifyFunctionRulePriority(const ModifyFunctionRulePriorityRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFunctionRulePriority");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFunctionRulePriorityResponse rsp = ModifyFunctionRulePriorityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFunctionRulePriorityOutcome(rsp);
+        else
+            return ModifyFunctionRulePriorityOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFunctionRulePriorityOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyFunctionRulePriorityAsync(const ModifyFunctionRulePriorityRequest& request, const ModifyFunctionRulePriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyFunctionRulePriority(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyFunctionRulePriorityOutcomeCallable TeoClient::ModifyFunctionRulePriorityCallable(const ModifyFunctionRulePriorityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyFunctionRulePriorityOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyFunctionRulePriority(request);
         }
     );
 
