@@ -289,18 +289,18 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取ip地址
+                     * 获取IP地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ip ip地址
+                     * @return Ip IP地址
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置ip地址
+                     * 设置IP地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ip ip地址
+                     * @param _ip IP地址
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -501,7 +501,7 @@ namespace TencentCloud
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * ip地址
+                     * IP地址
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;

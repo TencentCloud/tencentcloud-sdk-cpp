@@ -31,7 +31,8 @@ CreateVpcPeeringConnectionRequest::CreateVpcPeeringConnectionRequest() :
     m_bandwidthHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
-    m_qosLevelHasBeenSet(false)
+    m_qosLevelHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,21 @@ string CreateVpcPeeringConnectionRequest::ToJsonString() const
         string key = "QosLevel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_qosLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -264,6 +280,22 @@ void CreateVpcPeeringConnectionRequest::SetQosLevel(const string& _qosLevel)
 bool CreateVpcPeeringConnectionRequest::QosLevelHasBeenSet() const
 {
     return m_qosLevelHasBeenSet;
+}
+
+vector<Tags> CreateVpcPeeringConnectionRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateVpcPeeringConnectionRequest::SetTags(const vector<Tags>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateVpcPeeringConnectionRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

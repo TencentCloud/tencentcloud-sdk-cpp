@@ -27,7 +27,9 @@ ReservedInstancePriceItem::ReservedInstancePriceItem() :
     m_reservedInstancesOfferingIdHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_durationHasBeenSet(false),
-    m_productDescriptionHasBeenSet(false)
+    m_productDescriptionHasBeenSet(false),
+    m_discountUsagePriceHasBeenSet(false),
+    m_discountFixedPriceHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome ReservedInstancePriceItem::Deserialize(const rapidjson::Valu
         m_productDescriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("DiscountUsagePrice") && !value["DiscountUsagePrice"].IsNull())
+    {
+        if (!value["DiscountUsagePrice"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReservedInstancePriceItem.DiscountUsagePrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountUsagePrice = value["DiscountUsagePrice"].GetDouble();
+        m_discountUsagePriceHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiscountFixedPrice") && !value["DiscountFixedPrice"].IsNull())
+    {
+        if (!value["DiscountFixedPrice"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReservedInstancePriceItem.DiscountFixedPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountFixedPrice = value["DiscountFixedPrice"].GetDouble();
+        m_discountFixedPriceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void ReservedInstancePriceItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "ProductDescription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_productDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_discountUsagePriceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiscountUsagePrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_discountUsagePrice, allocator);
+    }
+
+    if (m_discountFixedPriceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiscountFixedPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_discountFixedPrice, allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void ReservedInstancePriceItem::SetProductDescription(const string& _productDesc
 bool ReservedInstancePriceItem::ProductDescriptionHasBeenSet() const
 {
     return m_productDescriptionHasBeenSet;
+}
+
+double ReservedInstancePriceItem::GetDiscountUsagePrice() const
+{
+    return m_discountUsagePrice;
+}
+
+void ReservedInstancePriceItem::SetDiscountUsagePrice(const double& _discountUsagePrice)
+{
+    m_discountUsagePrice = _discountUsagePrice;
+    m_discountUsagePriceHasBeenSet = true;
+}
+
+bool ReservedInstancePriceItem::DiscountUsagePriceHasBeenSet() const
+{
+    return m_discountUsagePriceHasBeenSet;
+}
+
+double ReservedInstancePriceItem::GetDiscountFixedPrice() const
+{
+    return m_discountFixedPrice;
+}
+
+void ReservedInstancePriceItem::SetDiscountFixedPrice(const double& _discountFixedPrice)
+{
+    m_discountFixedPrice = _discountFixedPrice;
+    m_discountFixedPriceHasBeenSet = true;
+}
+
+bool ReservedInstancePriceItem::DiscountFixedPriceHasBeenSet() const
+{
+    return m_discountFixedPriceHasBeenSet;
 }
 

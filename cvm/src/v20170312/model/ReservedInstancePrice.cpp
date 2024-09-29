@@ -24,7 +24,9 @@ ReservedInstancePrice::ReservedInstancePrice() :
     m_originalFixedPriceHasBeenSet(false),
     m_discountFixedPriceHasBeenSet(false),
     m_originalUsagePriceHasBeenSet(false),
-    m_discountUsagePriceHasBeenSet(false)
+    m_discountUsagePriceHasBeenSet(false),
+    m_fixedPriceDiscountHasBeenSet(false),
+    m_usagePriceDiscountHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome ReservedInstancePrice::Deserialize(const rapidjson::Value &v
         m_discountUsagePriceHasBeenSet = true;
     }
 
+    if (value.HasMember("FixedPriceDiscount") && !value["FixedPriceDiscount"].IsNull())
+    {
+        if (!value["FixedPriceDiscount"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReservedInstancePrice.FixedPriceDiscount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_fixedPriceDiscount = value["FixedPriceDiscount"].GetDouble();
+        m_fixedPriceDiscountHasBeenSet = true;
+    }
+
+    if (value.HasMember("UsagePriceDiscount") && !value["UsagePriceDiscount"].IsNull())
+    {
+        if (!value["UsagePriceDiscount"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReservedInstancePrice.UsagePriceDiscount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_usagePriceDiscount = value["UsagePriceDiscount"].GetDouble();
+        m_usagePriceDiscountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void ReservedInstancePrice::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "DiscountUsagePrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountUsagePrice, allocator);
+    }
+
+    if (m_fixedPriceDiscountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FixedPriceDiscount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fixedPriceDiscount, allocator);
+    }
+
+    if (m_usagePriceDiscountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsagePriceDiscount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usagePriceDiscount, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void ReservedInstancePrice::SetDiscountUsagePrice(const double& _discountUsagePr
 bool ReservedInstancePrice::DiscountUsagePriceHasBeenSet() const
 {
     return m_discountUsagePriceHasBeenSet;
+}
+
+double ReservedInstancePrice::GetFixedPriceDiscount() const
+{
+    return m_fixedPriceDiscount;
+}
+
+void ReservedInstancePrice::SetFixedPriceDiscount(const double& _fixedPriceDiscount)
+{
+    m_fixedPriceDiscount = _fixedPriceDiscount;
+    m_fixedPriceDiscountHasBeenSet = true;
+}
+
+bool ReservedInstancePrice::FixedPriceDiscountHasBeenSet() const
+{
+    return m_fixedPriceDiscountHasBeenSet;
+}
+
+double ReservedInstancePrice::GetUsagePriceDiscount() const
+{
+    return m_usagePriceDiscount;
+}
+
+void ReservedInstancePrice::SetUsagePriceDiscount(const double& _usagePriceDiscount)
+{
+    m_usagePriceDiscount = _usagePriceDiscount;
+    m_usagePriceDiscountHasBeenSet = true;
+}
+
+bool ReservedInstancePrice::UsagePriceDiscountHasBeenSet() const
+{
+    return m_usagePriceDiscountHasBeenSet;
 }
 

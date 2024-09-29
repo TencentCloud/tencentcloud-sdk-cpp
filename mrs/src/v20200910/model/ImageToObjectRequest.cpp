@@ -28,7 +28,8 @@ ImageToObjectRequest::ImageToObjectRequest() :
     m_typeHasBeenSet(false),
     m_isUsedClassifyHasBeenSet(false),
     m_userTypeHasBeenSet(false),
-    m_reportTypeVersionHasBeenSet(false)
+    m_reportTypeVersionHasBeenSet(false),
+    m_ocrInfoListHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,21 @@ string ImageToObjectRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_reportTypeVersion.begin(); itr != m_reportTypeVersion.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ocrInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OcrInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ocrInfoList.begin(); itr != m_ocrInfoList.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -204,6 +220,22 @@ void ImageToObjectRequest::SetReportTypeVersion(const vector<ReportTypeVersion>&
 bool ImageToObjectRequest::ReportTypeVersionHasBeenSet() const
 {
     return m_reportTypeVersionHasBeenSet;
+}
+
+vector<OcrInfo> ImageToObjectRequest::GetOcrInfoList() const
+{
+    return m_ocrInfoList;
+}
+
+void ImageToObjectRequest::SetOcrInfoList(const vector<OcrInfo>& _ocrInfoList)
+{
+    m_ocrInfoList = _ocrInfoList;
+    m_ocrInfoListHasBeenSet = true;
+}
+
+bool ImageToObjectRequest::OcrInfoListHasBeenSet() const
+{
+    return m_ocrInfoListHasBeenSet;
 }
 
 

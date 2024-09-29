@@ -591,6 +591,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/CreateNatGatewayDestinationIpPortTranslationNatRuleRequest.h
   include/tencentcloud/vpc/v20170312/model/CreateFlowLogRequest.h
   include/tencentcloud/vpc/v20170312/model/UsedDetail.h
+  include/tencentcloud/vpc/v20170312/model/Tags.h
   include/tencentcloud/vpc/v20170312/model/InquirePriceCreateDirectConnectGatewayRequest.h
   include/tencentcloud/vpc/v20170312/model/AttachNetworkInterfaceResponse.h
   include/tencentcloud/vpc/v20170312/model/DisassociateNatGatewayAddressRequest.h
@@ -1496,6 +1497,7 @@ set(vpc_src
   src/v20170312/model/CreateNatGatewayDestinationIpPortTranslationNatRuleRequest.cpp
   src/v20170312/model/CreateFlowLogRequest.cpp
   src/v20170312/model/UsedDetail.cpp
+  src/v20170312/model/Tags.cpp
   src/v20170312/model/InquirePriceCreateDirectConnectGatewayRequest.cpp
   src/v20170312/model/AttachNetworkInterfaceResponse.cpp
   src/v20170312/model/DisassociateNatGatewayAddressRequest.cpp

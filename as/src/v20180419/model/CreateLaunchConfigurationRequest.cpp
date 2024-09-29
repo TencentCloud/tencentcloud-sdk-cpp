@@ -47,7 +47,8 @@ CreateLaunchConfigurationRequest::CreateLaunchConfigurationRequest() :
     m_diskTypePolicyHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
     m_iPv6InternetAccessibleHasBeenSet(false),
-    m_disasterRecoverGroupIdsHasBeenSet(false)
+    m_disasterRecoverGroupIdsHasBeenSet(false),
+    m_imageFamilyHasBeenSet(false)
 {
 }
 
@@ -301,6 +302,14 @@ string CreateLaunchConfigurationRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_imageFamilyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageFamily";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageFamily.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -709,6 +718,22 @@ void CreateLaunchConfigurationRequest::SetDisasterRecoverGroupIds(const vector<s
 bool CreateLaunchConfigurationRequest::DisasterRecoverGroupIdsHasBeenSet() const
 {
     return m_disasterRecoverGroupIdsHasBeenSet;
+}
+
+string CreateLaunchConfigurationRequest::GetImageFamily() const
+{
+    return m_imageFamily;
+}
+
+void CreateLaunchConfigurationRequest::SetImageFamily(const string& _imageFamily)
+{
+    m_imageFamily = _imageFamily;
+    m_imageFamilyHasBeenSet = true;
+}
+
+bool CreateLaunchConfigurationRequest::ImageFamilyHasBeenSet() const
+{
+    return m_imageFamilyHasBeenSet;
 }
 
 

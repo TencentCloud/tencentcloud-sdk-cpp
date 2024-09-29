@@ -201,6 +201,48 @@ namespace TencentCloud
                      */
                     bool ProductDescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取预支合计费用，单位：元。
+                     * @return DiscountUsagePrice 预支合计费用，单位：元。
+                     * 
+                     */
+                    double GetDiscountUsagePrice() const;
+
+                    /**
+                     * 设置预支合计费用，单位：元。
+                     * @param _discountUsagePrice 预支合计费用，单位：元。
+                     * 
+                     */
+                    void SetDiscountUsagePrice(const double& _discountUsagePrice);
+
+                    /**
+                     * 判断参数 DiscountUsagePrice 是否已赋值
+                     * @return DiscountUsagePrice 是否已赋值
+                     * 
+                     */
+                    bool DiscountUsagePriceHasBeenSet() const;
+
+                    /**
+                     * 获取后续合计费用的折扣价，单位：元/小时
+                     * @return DiscountFixedPrice 后续合计费用的折扣价，单位：元/小时
+                     * 
+                     */
+                    double GetDiscountFixedPrice() const;
+
+                    /**
+                     * 设置后续合计费用的折扣价，单位：元/小时
+                     * @param _discountFixedPrice 后续合计费用的折扣价，单位：元/小时
+                     * 
+                     */
+                    void SetDiscountFixedPrice(const double& _discountFixedPrice);
+
+                    /**
+                     * 判断参数 DiscountFixedPrice 是否已赋值
+                     * @return DiscountFixedPrice 是否已赋值
+                     * 
+                     */
+                    bool DiscountFixedPriceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +288,18 @@ namespace TencentCloud
                      */
                     std::string m_productDescription;
                     bool m_productDescriptionHasBeenSet;
+
+                    /**
+                     * 预支合计费用，单位：元。
+                     */
+                    double m_discountUsagePrice;
+                    bool m_discountUsagePriceHasBeenSet;
+
+                    /**
+                     * 后续合计费用的折扣价，单位：元/小时
+                     */
+                    double m_discountFixedPrice;
+                    bool m_discountFixedPriceHasBeenSet;
 
                 };
             }

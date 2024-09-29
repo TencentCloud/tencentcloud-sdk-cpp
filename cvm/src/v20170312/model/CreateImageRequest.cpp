@@ -31,7 +31,8 @@ CreateImageRequest::CreateImageRequest() :
     m_dataDiskIdsHasBeenSet(false),
     m_snapshotIdsHasBeenSet(false),
     m_dryRunHasBeenSet(false),
-    m_tagSpecificationHasBeenSet(false)
+    m_tagSpecificationHasBeenSet(false),
+    m_imageFamilyHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,14 @@ string CreateImageRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_imageFamilyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageFamily";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageFamily.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -281,6 +290,22 @@ void CreateImageRequest::SetTagSpecification(const vector<TagSpecification>& _ta
 bool CreateImageRequest::TagSpecificationHasBeenSet() const
 {
     return m_tagSpecificationHasBeenSet;
+}
+
+string CreateImageRequest::GetImageFamily() const
+{
+    return m_imageFamily;
+}
+
+void CreateImageRequest::SetImageFamily(const string& _imageFamily)
+{
+    m_imageFamily = _imageFamily;
+    m_imageFamilyHasBeenSet = true;
+}
+
+bool CreateImageRequest::ImageFamilyHasBeenSet() const
+{
+    return m_imageFamilyHasBeenSet;
 }
 
 

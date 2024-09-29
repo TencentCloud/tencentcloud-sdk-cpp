@@ -37,7 +37,9 @@ Image::Image() :
     m_isSupportCloudinitHasBeenSet(false),
     m_snapshotSetHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_licenseTypeHasBeenSet(false)
+    m_licenseTypeHasBeenSet(false),
+    m_imageFamilyHasBeenSet(false),
+    m_imageDeprecatedHasBeenSet(false)
 {
 }
 
@@ -236,6 +238,26 @@ CoreInternalOutcome Image::Deserialize(const rapidjson::Value &value)
         m_licenseTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageFamily") && !value["ImageFamily"].IsNull())
+    {
+        if (!value["ImageFamily"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Image.ImageFamily` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageFamily = string(value["ImageFamily"].GetString());
+        m_imageFamilyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageDeprecated") && !value["ImageDeprecated"].IsNull())
+    {
+        if (!value["ImageDeprecated"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Image.ImageDeprecated` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageDeprecated = value["ImageDeprecated"].GetBool();
+        m_imageDeprecatedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -391,6 +413,22 @@ void Image::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "LicenseType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_licenseType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageFamilyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageFamily";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageFamily.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageDeprecatedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageDeprecated";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_imageDeprecated, allocator);
     }
 
 }
@@ -666,5 +704,37 @@ void Image::SetLicenseType(const string& _licenseType)
 bool Image::LicenseTypeHasBeenSet() const
 {
     return m_licenseTypeHasBeenSet;
+}
+
+string Image::GetImageFamily() const
+{
+    return m_imageFamily;
+}
+
+void Image::SetImageFamily(const string& _imageFamily)
+{
+    m_imageFamily = _imageFamily;
+    m_imageFamilyHasBeenSet = true;
+}
+
+bool Image::ImageFamilyHasBeenSet() const
+{
+    return m_imageFamilyHasBeenSet;
+}
+
+bool Image::GetImageDeprecated() const
+{
+    return m_imageDeprecated;
+}
+
+void Image::SetImageDeprecated(const bool& _imageDeprecated)
+{
+    m_imageDeprecated = _imageDeprecated;
+    m_imageDeprecatedHasBeenSet = true;
+}
+
+bool Image::ImageDeprecatedHasBeenSet() const
+{
+    return m_imageDeprecatedHasBeenSet;
 }
 

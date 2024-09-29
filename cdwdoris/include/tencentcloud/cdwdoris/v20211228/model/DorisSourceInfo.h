@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取doris集群的密码
+                     * 获取base64编码的doris集群对应用户的密码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Password doris集群的密码
+                     * @return Password base64编码的doris集群对应用户的密码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置doris集群的密码
+                     * 设置base64编码的doris集群对应用户的密码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _password doris集群的密码
+                     * @param _password base64编码的doris集群对应用户的密码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -170,7 +170,7 @@ namespace TencentCloud
                     bool m_userHasBeenSet;
 
                     /**
-                     * doris集群的密码
+                     * base64编码的doris集群对应用户的密码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;

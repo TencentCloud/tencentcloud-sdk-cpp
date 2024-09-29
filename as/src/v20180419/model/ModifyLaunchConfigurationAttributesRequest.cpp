@@ -45,7 +45,8 @@ ModifyLaunchConfigurationAttributesRequest::ModifyLaunchConfigurationAttributesR
     m_iPv6InternetAccessibleHasBeenSet(false),
     m_disasterRecoverGroupIdsHasBeenSet(false),
     m_loginSettingsHasBeenSet(false),
-    m_instanceTagsHasBeenSet(false)
+    m_instanceTagsHasBeenSet(false),
+    m_imageFamilyHasBeenSet(false)
 {
 }
 
@@ -276,6 +277,14 @@ string ModifyLaunchConfigurationAttributesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_imageFamilyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageFamily";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageFamily.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -652,6 +661,22 @@ void ModifyLaunchConfigurationAttributesRequest::SetInstanceTags(const vector<In
 bool ModifyLaunchConfigurationAttributesRequest::InstanceTagsHasBeenSet() const
 {
     return m_instanceTagsHasBeenSet;
+}
+
+string ModifyLaunchConfigurationAttributesRequest::GetImageFamily() const
+{
+    return m_imageFamily;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetImageFamily(const string& _imageFamily)
+{
+    m_imageFamily = _imageFamily;
+    m_imageFamilyHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::ImageFamilyHasBeenSet() const
+{
+    return m_imageFamilyHasBeenSet;
 }
 
 

@@ -25,7 +25,9 @@ using namespace std;
 ModifyImageAttributeRequest::ModifyImageAttributeRequest() :
     m_imageIdHasBeenSet(false),
     m_imageNameHasBeenSet(false),
-    m_imageDescriptionHasBeenSet(false)
+    m_imageDescriptionHasBeenSet(false),
+    m_imageFamilyHasBeenSet(false),
+    m_imageDeprecatedHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string ModifyImageAttributeRequest::ToJsonString() const
         string key = "ImageDescription";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageFamilyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageFamily";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageFamily.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageDeprecatedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageDeprecated";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_imageDeprecated, allocator);
     }
 
 
@@ -114,6 +132,38 @@ void ModifyImageAttributeRequest::SetImageDescription(const string& _imageDescri
 bool ModifyImageAttributeRequest::ImageDescriptionHasBeenSet() const
 {
     return m_imageDescriptionHasBeenSet;
+}
+
+string ModifyImageAttributeRequest::GetImageFamily() const
+{
+    return m_imageFamily;
+}
+
+void ModifyImageAttributeRequest::SetImageFamily(const string& _imageFamily)
+{
+    m_imageFamily = _imageFamily;
+    m_imageFamilyHasBeenSet = true;
+}
+
+bool ModifyImageAttributeRequest::ImageFamilyHasBeenSet() const
+{
+    return m_imageFamilyHasBeenSet;
+}
+
+bool ModifyImageAttributeRequest::GetImageDeprecated() const
+{
+    return m_imageDeprecated;
+}
+
+void ModifyImageAttributeRequest::SetImageDeprecated(const bool& _imageDeprecated)
+{
+    m_imageDeprecated = _imageDeprecated;
+    m_imageDeprecatedHasBeenSet = true;
+}
+
+bool ModifyImageAttributeRequest::ImageDeprecatedHasBeenSet() const
+{
+    return m_imageDeprecatedHasBeenSet;
 }
 
 

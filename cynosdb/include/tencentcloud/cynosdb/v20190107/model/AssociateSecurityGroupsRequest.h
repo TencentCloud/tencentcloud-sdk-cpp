@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例组ID数组
-                     * @return InstanceIds 实例组ID数组
+                     * 获取实例组 ID 数组，cynosdbmysql-grp-前缀开头或集群 ID。
+说明：要获取集群的实例组 ID，可通过 [查询集群实例组](https://cloud.tencent.com/document/product/1003/103934) 进行。
+                     * @return InstanceIds 实例组 ID 数组，cynosdbmysql-grp-前缀开头或集群 ID。
+说明：要获取集群的实例组 ID，可通过 [查询集群实例组](https://cloud.tencent.com/document/product/1003/103934) 进行。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例组ID数组
-                     * @param _instanceIds 实例组ID数组
+                     * 设置实例组 ID 数组，cynosdbmysql-grp-前缀开头或集群 ID。
+说明：要获取集群的实例组 ID，可通过 [查询集群实例组](https://cloud.tencent.com/document/product/1003/103934) 进行。
+                     * @param _instanceIds 实例组 ID 数组，cynosdbmysql-grp-前缀开头或集群 ID。
+说明：要获取集群的实例组 ID，可通过 [查询集群实例组](https://cloud.tencent.com/document/product/1003/103934) 进行。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -108,7 +112,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例组ID数组
+                     * 实例组 ID 数组，cynosdbmysql-grp-前缀开头或集群 ID。
+说明：要获取集群的实例组 ID，可通过 [查询集群实例组](https://cloud.tencent.com/document/product/1003/103934) 进行。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

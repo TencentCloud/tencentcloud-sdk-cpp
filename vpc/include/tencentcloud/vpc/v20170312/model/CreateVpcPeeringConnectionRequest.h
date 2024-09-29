@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Tags.h>
 
 
 namespace TencentCloud
@@ -231,6 +232,27 @@ namespace TencentCloud
                      */
                     bool QosLevelHasBeenSet() const;
 
+                    /**
+                     * 获取标签键值对
+                     * @return Tags 标签键值对
+                     * 
+                     */
+                    std::vector<Tags> GetTags() const;
+
+                    /**
+                     * 设置标签键值对
+                     * @param _tags 标签键值对
+                     * 
+                     */
+                    void SetTags(const std::vector<Tags>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +308,12 @@ namespace TencentCloud
                      */
                     std::string m_qosLevel;
                     bool m_qosLevelHasBeenSet;
+
+                    /**
+                     * 标签键值对
+                     */
+                    std::vector<Tags> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

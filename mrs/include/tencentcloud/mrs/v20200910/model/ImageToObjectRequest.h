@@ -24,6 +24,7 @@
 #include <tencentcloud/mrs/v20200910/model/ImageInfo.h>
 #include <tencentcloud/mrs/v20200910/model/HandleParam.h>
 #include <tencentcloud/mrs/v20200910/model/ReportTypeVersion.h>
+#include <tencentcloud/mrs/v20200910/model/OcrInfo.h>
 
 
 namespace TencentCloud
@@ -187,6 +188,27 @@ namespace TencentCloud
                      */
                     bool ReportTypeVersionHasBeenSet() const;
 
+                    /**
+                     * 获取可选。 图片OCR信息列表，每一个元素是一张图片的OCR结果。适用于不想将医疗报告图片传入腾讯云的客户，客户可对图片OCR信息中的敏感信息去除之后再传入。与 ImageInfoList 二选一，同时存在则使用OcrInfoList
+                     * @return OcrInfoList 可选。 图片OCR信息列表，每一个元素是一张图片的OCR结果。适用于不想将医疗报告图片传入腾讯云的客户，客户可对图片OCR信息中的敏感信息去除之后再传入。与 ImageInfoList 二选一，同时存在则使用OcrInfoList
+                     * 
+                     */
+                    std::vector<OcrInfo> GetOcrInfoList() const;
+
+                    /**
+                     * 设置可选。 图片OCR信息列表，每一个元素是一张图片的OCR结果。适用于不想将医疗报告图片传入腾讯云的客户，客户可对图片OCR信息中的敏感信息去除之后再传入。与 ImageInfoList 二选一，同时存在则使用OcrInfoList
+                     * @param _ocrInfoList 可选。 图片OCR信息列表，每一个元素是一张图片的OCR结果。适用于不想将医疗报告图片传入腾讯云的客户，客户可对图片OCR信息中的敏感信息去除之后再传入。与 ImageInfoList 二选一，同时存在则使用OcrInfoList
+                     * 
+                     */
+                    void SetOcrInfoList(const std::vector<OcrInfo>& _ocrInfoList);
+
+                    /**
+                     * 判断参数 OcrInfoList 是否已赋值
+                     * @return OcrInfoList 是否已赋值
+                     * 
+                     */
+                    bool OcrInfoListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -228,6 +250,12 @@ namespace TencentCloud
                      */
                     std::vector<ReportTypeVersion> m_reportTypeVersion;
                     bool m_reportTypeVersionHasBeenSet;
+
+                    /**
+                     * 可选。 图片OCR信息列表，每一个元素是一张图片的OCR结果。适用于不想将医疗报告图片传入腾讯云的客户，客户可对图片OCR信息中的敏感信息去除之后再传入。与 ImageInfoList 二选一，同时存在则使用OcrInfoList
+                     */
+                    std::vector<OcrInfo> m_ocrInfoList;
+                    bool m_ocrInfoListHasBeenSet;
 
                 };
             }

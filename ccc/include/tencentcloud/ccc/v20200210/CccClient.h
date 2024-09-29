@@ -47,6 +47,8 @@
 #include <tencentcloud/ccc/v20200210/model/CreateExtensionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateIVRSessionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateIVRSessionResponse.h>
+#include <tencentcloud/ccc/v20200210/model/CreateOwnNumberApplyRequest.h>
+#include <tencentcloud/ccc/v20200210/model/CreateOwnNumberApplyResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreatePredictiveDialingCampaignRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreatePredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenRequest.h>
@@ -119,6 +121,8 @@
 #include <tencentcloud/ccc/v20200210/model/ModifyCompanyApplyResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyExtensionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyExtensionResponse.h>
+#include <tencentcloud/ccc/v20200210/model/ModifyOwnNumberApplyRequest.h>
+#include <tencentcloud/ccc/v20200210/model/ModifyOwnNumberApplyResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffPasswordRequest.h>
@@ -191,6 +195,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateIVRSessionResponse> CreateIVRSessionOutcome;
                 typedef std::future<CreateIVRSessionOutcome> CreateIVRSessionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateIVRSessionRequest&, CreateIVRSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIVRSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOwnNumberApplyResponse> CreateOwnNumberApplyOutcome;
+                typedef std::future<CreateOwnNumberApplyOutcome> CreateOwnNumberApplyOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::CreateOwnNumberApplyRequest&, CreateOwnNumberApplyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOwnNumberApplyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePredictiveDialingCampaignResponse> CreatePredictiveDialingCampaignOutcome;
                 typedef std::future<CreatePredictiveDialingCampaignOutcome> CreatePredictiveDialingCampaignOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreatePredictiveDialingCampaignRequest&, CreatePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePredictiveDialingCampaignAsyncHandler;
@@ -299,6 +306,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyExtensionResponse> ModifyExtensionOutcome;
                 typedef std::future<ModifyExtensionOutcome> ModifyExtensionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ModifyExtensionRequest&, ModifyExtensionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyExtensionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOwnNumberApplyResponse> ModifyOwnNumberApplyOutcome;
+                typedef std::future<ModifyOwnNumberApplyOutcome> ModifyOwnNumberApplyOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::ModifyOwnNumberApplyRequest&, ModifyOwnNumberApplyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwnNumberApplyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyStaffResponse> ModifyStaffOutcome;
                 typedef std::future<ModifyStaffOutcome> ModifyStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ModifyStaffRequest&, ModifyStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStaffAsyncHandler;
@@ -442,6 +452,15 @@ namespace TencentCloud
                 CreateIVRSessionOutcome CreateIVRSession(const Model::CreateIVRSessionRequest &request);
                 void CreateIVRSessionAsync(const Model::CreateIVRSessionRequest& request, const CreateIVRSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateIVRSessionOutcomeCallable CreateIVRSessionCallable(const Model::CreateIVRSessionRequest& request);
+
+                /**
+                 *创建客户自携号码接入审核
+                 * @param req CreateOwnNumberApplyRequest
+                 * @return CreateOwnNumberApplyOutcome
+                 */
+                CreateOwnNumberApplyOutcome CreateOwnNumberApply(const Model::CreateOwnNumberApplyRequest &request);
+                void CreateOwnNumberApplyAsync(const Model::CreateOwnNumberApplyRequest& request, const CreateOwnNumberApplyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOwnNumberApplyOutcomeCallable CreateOwnNumberApplyCallable(const Model::CreateOwnNumberApplyRequest& request);
 
                 /**
                  *创建预测式外呼任务
@@ -768,6 +787,15 @@ namespace TencentCloud
                 ModifyExtensionOutcome ModifyExtension(const Model::ModifyExtensionRequest &request);
                 void ModifyExtensionAsync(const Model::ModifyExtensionRequest& request, const ModifyExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyExtensionOutcomeCallable ModifyExtensionCallable(const Model::ModifyExtensionRequest& request);
+
+                /**
+                 *修改客户自携号码审批单
+                 * @param req ModifyOwnNumberApplyRequest
+                 * @return ModifyOwnNumberApplyOutcome
+                 */
+                ModifyOwnNumberApplyOutcome ModifyOwnNumberApply(const Model::ModifyOwnNumberApplyRequest &request);
+                void ModifyOwnNumberApplyAsync(const Model::ModifyOwnNumberApplyRequest& request, const ModifyOwnNumberApplyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOwnNumberApplyOutcomeCallable ModifyOwnNumberApplyCallable(const Model::ModifyOwnNumberApplyRequest& request);
 
                 /**
                  *修改客服账号

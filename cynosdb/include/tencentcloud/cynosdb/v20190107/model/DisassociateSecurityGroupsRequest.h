@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例组ID数组
-                     * @return InstanceIds 实例组ID数组
+                     * 获取实例组 ID 数组，cynosdbmysql-grp-前缀开头或集群 ID。
+说明：要获取集群的实例组 ID，可通过 [查询集群实例组](https://cloud.tencent.com/document/product/1003/103934) 进行。
+                     * @return InstanceIds 实例组 ID 数组，cynosdbmysql-grp-前缀开头或集群 ID。
+说明：要获取集群的实例组 ID，可通过 [查询集群实例组](https://cloud.tencent.com/document/product/1003/103934) 进行。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例组ID数组
-                     * @param _instanceIds 实例组ID数组
+                     * 设置实例组 ID 数组，cynosdbmysql-grp-前缀开头或集群 ID。
+说明：要获取集群的实例组 ID，可通过 [查询集群实例组](https://cloud.tencent.com/document/product/1003/103934) 进行。
+                     * @param _instanceIds 实例组 ID 数组，cynosdbmysql-grp-前缀开头或集群 ID。
+说明：要获取集群的实例组 ID，可通过 [查询集群实例组](https://cloud.tencent.com/document/product/1003/103934) 进行。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -85,15 +89,19 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取可用区。
+说明：请正确输入集群所在的主可用区，若输入非集群所在的主可用区可能显示调用成功，但实际执行会失败。
+                     * @return Zone 可用区。
+说明：请正确输入集群所在的主可用区，若输入非集群所在的主可用区可能显示调用成功，但实际执行会失败。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置可用区。
+说明：请正确输入集群所在的主可用区，若输入非集群所在的主可用区可能显示调用成功，但实际执行会失败。
+                     * @param _zone 可用区。
+说明：请正确输入集群所在的主可用区，若输入非集群所在的主可用区可能显示调用成功，但实际执行会失败。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -108,7 +116,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例组ID数组
+                     * 实例组 ID 数组，cynosdbmysql-grp-前缀开头或集群 ID。
+说明：要获取集群的实例组 ID，可通过 [查询集群实例组](https://cloud.tencent.com/document/product/1003/103934) 进行。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
@@ -120,7 +129,8 @@ namespace TencentCloud
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * 可用区
+                     * 可用区。
+说明：请正确输入集群所在的主可用区，若输入非集群所在的主可用区可能显示调用成功，但实际执行会失败。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;

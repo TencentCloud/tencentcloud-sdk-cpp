@@ -34,6 +34,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/ImageToObjectRequest.h
   include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoStorage.h
   include/tencentcloud/mrs/v20200910/model/Molecular.h
+  include/tencentcloud/mrs/v20200910/model/OphthalmologyColourVision.h
   include/tencentcloud/mrs/v20200910/model/TuberInfo.h
   include/tencentcloud/mrs/v20200910/model/SurgeryListBlock.h
   include/tencentcloud/mrs/v20200910/model/PhysicalExaminationV1.h
@@ -75,7 +76,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/InternalMedicineAbdomenGallBladder.h
   include/tencentcloud/mrs/v20200910/model/PTNMBlock.h
   include/tencentcloud/mrs/v20200910/model/GynaecologyVulva.h
-  include/tencentcloud/mrs/v20200910/model/OphthalmologyColourVision.h
+  include/tencentcloud/mrs/v20200910/model/OcrInfo.h
   include/tencentcloud/mrs/v20200910/model/CovidItemsInfo.h
   include/tencentcloud/mrs/v20200910/model/BloodPressureBlock.h
   include/tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncRequest.h
@@ -86,6 +87,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/EyeItemsInfo.h
   include/tencentcloud/mrs/v20200910/model/SurgerySkin.h
   include/tencentcloud/mrs/v20200910/model/IndicatorItemV2.h
+  include/tencentcloud/mrs/v20200910/model/OcrItem.h
   include/tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncResponse.h
   include/tencentcloud/mrs/v20200910/model/NormSize.h
   include/tencentcloud/mrs/v20200910/model/FirstPage.h
@@ -321,6 +323,7 @@ set(mrs_src
   src/v20200910/model/ImageToObjectRequest.cpp
   src/v20200910/model/ChemicalProductInfoStorage.cpp
   src/v20200910/model/Molecular.cpp
+  src/v20200910/model/OphthalmologyColourVision.cpp
   src/v20200910/model/TuberInfo.cpp
   src/v20200910/model/SurgeryListBlock.cpp
   src/v20200910/model/PhysicalExaminationV1.cpp
@@ -362,7 +365,7 @@ set(mrs_src
   src/v20200910/model/InternalMedicineAbdomenGallBladder.cpp
   src/v20200910/model/PTNMBlock.cpp
   src/v20200910/model/GynaecologyVulva.cpp
-  src/v20200910/model/OphthalmologyColourVision.cpp
+  src/v20200910/model/OcrInfo.cpp
   src/v20200910/model/CovidItemsInfo.cpp
   src/v20200910/model/BloodPressureBlock.cpp
   src/v20200910/model/TurnPDFToObjectAsyncRequest.cpp
@@ -373,6 +376,7 @@ set(mrs_src
   src/v20200910/model/EyeItemsInfo.cpp
   src/v20200910/model/SurgerySkin.cpp
   src/v20200910/model/IndicatorItemV2.cpp
+  src/v20200910/model/OcrItem.cpp
   src/v20200910/model/TurnPDFToObjectAsyncResponse.cpp
   src/v20200910/model/NormSize.cpp
   src/v20200910/model/FirstPage.cpp

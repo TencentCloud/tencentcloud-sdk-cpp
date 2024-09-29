@@ -57,7 +57,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/InstanceTypeConfig.h
   include/tencentcloud/cvm/v20170312/model/RepairTaskControlRequest.h
   include/tencentcloud/cvm/v20170312/model/AllocateHostsRequest.h
-  include/tencentcloud/cvm/v20170312/model/LoginSettings.h
+  include/tencentcloud/cvm/v20170312/model/DescribeImageFromFamilyRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeRegionsResponse.h
   include/tencentcloud/cvm/v20170312/model/PurchaseReservedInstancesOfferingRequest.h
   include/tencentcloud/cvm/v20170312/model/RebootInstancesRequest.h
@@ -252,13 +252,14 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DescribeInstanceTypeConfigsRequest.h
   include/tencentcloud/cvm/v20170312/model/RegionInfo.h
   include/tencentcloud/cvm/v20170312/model/DescribeReservedInstancesConfigInfosResponse.h
-  include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesTypeRequest.h
+  include/tencentcloud/cvm/v20170312/model/DescribeImageFromFamilyResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyLaunchTemplateDefaultVersionRequest.h
   include/tencentcloud/cvm/v20170312/model/ModifyInstancesAttributeResponse.h
   include/tencentcloud/cvm/v20170312/model/ChcHostDeniedActions.h
   include/tencentcloud/cvm/v20170312/model/DescribeImagesRequest.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceRenewHostsResponse.h
   include/tencentcloud/cvm/v20170312/model/ResizeInstanceDisksResponse.h
+  include/tencentcloud/cvm/v20170312/model/LoginSettings.h
   include/tencentcloud/cvm/v20170312/model/InquirePricePurchaseReservedInstancesOfferingResponse.h
   include/tencentcloud/cvm/v20170312/model/DisassociateSecurityGroupsRequest.h
   include/tencentcloud/cvm/v20170312/model/ModifyHostsAttributeRequest.h
@@ -291,6 +292,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/ModifyInstancesProjectResponse.h
   include/tencentcloud/cvm/v20170312/model/InstanceChargePrepaid.h
   include/tencentcloud/cvm/v20170312/model/Price.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesTypeRequest.h
   )
 
 set(cvm_src
@@ -333,7 +335,7 @@ set(cvm_src
   src/v20170312/model/InstanceTypeConfig.cpp
   src/v20170312/model/RepairTaskControlRequest.cpp
   src/v20170312/model/AllocateHostsRequest.cpp
-  src/v20170312/model/LoginSettings.cpp
+  src/v20170312/model/DescribeImageFromFamilyRequest.cpp
   src/v20170312/model/DescribeRegionsResponse.cpp
   src/v20170312/model/PurchaseReservedInstancesOfferingRequest.cpp
   src/v20170312/model/RebootInstancesRequest.cpp
@@ -528,13 +530,14 @@ set(cvm_src
   src/v20170312/model/DescribeInstanceTypeConfigsRequest.cpp
   src/v20170312/model/RegionInfo.cpp
   src/v20170312/model/DescribeReservedInstancesConfigInfosResponse.cpp
-  src/v20170312/model/InquiryPriceResetInstancesTypeRequest.cpp
+  src/v20170312/model/DescribeImageFromFamilyResponse.cpp
   src/v20170312/model/ModifyLaunchTemplateDefaultVersionRequest.cpp
   src/v20170312/model/ModifyInstancesAttributeResponse.cpp
   src/v20170312/model/ChcHostDeniedActions.cpp
   src/v20170312/model/DescribeImagesRequest.cpp
   src/v20170312/model/InquiryPriceRenewHostsResponse.cpp
   src/v20170312/model/ResizeInstanceDisksResponse.cpp
+  src/v20170312/model/LoginSettings.cpp
   src/v20170312/model/InquirePricePurchaseReservedInstancesOfferingResponse.cpp
   src/v20170312/model/DisassociateSecurityGroupsRequest.cpp
   src/v20170312/model/ModifyHostsAttributeRequest.cpp
@@ -567,6 +570,7 @@ set(cvm_src
   src/v20170312/model/ModifyInstancesProjectResponse.cpp
   src/v20170312/model/InstanceChargePrepaid.cpp
   src/v20170312/model/Price.cpp
+  src/v20170312/model/InquiryPriceResetInstancesTypeRequest.cpp
   )
 
 set(cvm_include

@@ -94,6 +94,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/ModifyExtensionRequest.h
   include/tencentcloud/ccc/v20200210/model/CreatePredictiveDialingCampaignResponse.h
   include/tencentcloud/ccc/v20200210/model/UpdatePredictiveDialingCampaignResponse.h
+  include/tencentcloud/ccc/v20200210/model/ModifyOwnNumberApplyRequest.h
   include/tencentcloud/ccc/v20200210/model/PSTNSessionInfo.h
   include/tencentcloud/ccc/v20200210/model/Message.h
   include/tencentcloud/ccc/v20200210/model/AbortPredictiveDialingCampaignResponse.h
@@ -113,6 +114,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DeleteStaffRequest.h
   include/tencentcloud/ccc/v20200210/model/CallInMetrics.h
   include/tencentcloud/ccc/v20200210/model/DescribeCCCBuyInfoListRequest.h
+  include/tencentcloud/ccc/v20200210/model/OwnNumberApplyDetailItem.h
   include/tencentcloud/ccc/v20200210/model/DescribePredictiveDialingCampaignsResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCallInfoRequest.h
   include/tencentcloud/ccc/v20200210/model/Variable.h
@@ -122,6 +124,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/CreateCarrierPrivilegeNumberApplicantRequest.h
   include/tencentcloud/ccc/v20200210/model/Filter.h
   include/tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListRequest.h
+  include/tencentcloud/ccc/v20200210/model/CreateOwnNumberApplyResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribePredictiveDialingCampaignsElement.h
   include/tencentcloud/ccc/v20200210/model/HangUpCallResponse.h
   include/tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskResponse.h
@@ -142,6 +145,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/UploadIvrAudioFailedInfo.h
   include/tencentcloud/ccc/v20200210/model/DescribeCallInMetricsResponse.h
   include/tencentcloud/ccc/v20200210/model/ModifyCompanyApplyRequest.h
+  include/tencentcloud/ccc/v20200210/model/ModifyOwnNumberApplyResponse.h
   include/tencentcloud/ccc/v20200210/model/CreateAICallResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeCompanyListRequest.h
   include/tencentcloud/ccc/v20200210/model/CreateIVRSessionResponse.h
@@ -174,6 +178,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeActiveCarrierPrivilegeNumberRequest.h
   include/tencentcloud/ccc/v20200210/model/StaffBuyInfo.h
+  include/tencentcloud/ccc/v20200210/model/CreateOwnNumberApplyRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeCallInMetricsRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeExtensionResponse.h
   )
@@ -255,6 +260,7 @@ set(ccc_src
   src/v20200210/model/ModifyExtensionRequest.cpp
   src/v20200210/model/CreatePredictiveDialingCampaignResponse.cpp
   src/v20200210/model/UpdatePredictiveDialingCampaignResponse.cpp
+  src/v20200210/model/ModifyOwnNumberApplyRequest.cpp
   src/v20200210/model/PSTNSessionInfo.cpp
   src/v20200210/model/Message.cpp
   src/v20200210/model/AbortPredictiveDialingCampaignResponse.cpp
@@ -274,6 +280,7 @@ set(ccc_src
   src/v20200210/model/DeleteStaffRequest.cpp
   src/v20200210/model/CallInMetrics.cpp
   src/v20200210/model/DescribeCCCBuyInfoListRequest.cpp
+  src/v20200210/model/OwnNumberApplyDetailItem.cpp
   src/v20200210/model/DescribePredictiveDialingCampaignsResponse.cpp
   src/v20200210/model/DescribeTelCallInfoRequest.cpp
   src/v20200210/model/Variable.cpp
@@ -283,6 +290,7 @@ set(ccc_src
   src/v20200210/model/CreateCarrierPrivilegeNumberApplicantRequest.cpp
   src/v20200210/model/Filter.cpp
   src/v20200210/model/UnbindStaffSkillGroupListRequest.cpp
+  src/v20200210/model/CreateOwnNumberApplyResponse.cpp
   src/v20200210/model/DescribePredictiveDialingCampaignsElement.cpp
   src/v20200210/model/HangUpCallResponse.cpp
   src/v20200210/model/StopAutoCalloutTaskResponse.cpp
@@ -303,6 +311,7 @@ set(ccc_src
   src/v20200210/model/UploadIvrAudioFailedInfo.cpp
   src/v20200210/model/DescribeCallInMetricsResponse.cpp
   src/v20200210/model/ModifyCompanyApplyRequest.cpp
+  src/v20200210/model/ModifyOwnNumberApplyResponse.cpp
   src/v20200210/model/CreateAICallResponse.cpp
   src/v20200210/model/DescribeCompanyListRequest.cpp
   src/v20200210/model/CreateIVRSessionResponse.cpp
@@ -335,6 +344,7 @@ set(ccc_src
   src/v20200210/model/CreateSDKLoginTokenRequest.cpp
   src/v20200210/model/DescribeActiveCarrierPrivilegeNumberRequest.cpp
   src/v20200210/model/StaffBuyInfo.cpp
+  src/v20200210/model/CreateOwnNumberApplyRequest.cpp
   src/v20200210/model/DescribeCallInMetricsRequest.cpp
   src/v20200210/model/DescribeExtensionResponse.cpp
   )

@@ -1158,6 +1158,49 @@ CvmClient::DescribeHpcClustersOutcomeCallable CvmClient::DescribeHpcClustersCall
     return task->get_future();
 }
 
+CvmClient::DescribeImageFromFamilyOutcome CvmClient::DescribeImageFromFamily(const DescribeImageFromFamilyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageFromFamily");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageFromFamilyResponse rsp = DescribeImageFromFamilyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageFromFamilyOutcome(rsp);
+        else
+            return DescribeImageFromFamilyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageFromFamilyOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DescribeImageFromFamilyAsync(const DescribeImageFromFamilyRequest& request, const DescribeImageFromFamilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageFromFamily(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::DescribeImageFromFamilyOutcomeCallable CvmClient::DescribeImageFromFamilyCallable(const DescribeImageFromFamilyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageFromFamilyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageFromFamily(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::DescribeImageQuotaOutcome CvmClient::DescribeImageQuota(const DescribeImageQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeImageQuota");

@@ -449,6 +449,52 @@ IMPORTFAILED-导入失败
                      */
                     bool LicenseTypeHasBeenSet() const;
 
+                    /**
+                     * 获取镜像族
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageFamily 镜像族
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetImageFamily() const;
+
+                    /**
+                     * 设置镜像族
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _imageFamily 镜像族
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetImageFamily(const std::string& _imageFamily);
+
+                    /**
+                     * 判断参数 ImageFamily 是否已赋值
+                     * @return ImageFamily 是否已赋值
+                     * 
+                     */
+                    bool ImageFamilyHasBeenSet() const;
+
+                    /**
+                     * 获取镜像是否废弃
+                     * @return ImageDeprecated 镜像是否废弃
+                     * 
+                     */
+                    bool GetImageDeprecated() const;
+
+                    /**
+                     * 设置镜像是否废弃
+                     * @param _imageDeprecated 镜像是否废弃
+                     * 
+                     */
+                    void SetImageDeprecated(const bool& _imageDeprecated);
+
+                    /**
+                     * 判断参数 ImageDeprecated 是否已赋值
+                     * @return ImageDeprecated 是否已赋值
+                     * 
+                     */
+                    bool ImageDeprecatedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -563,6 +609,19 @@ IMPORTFAILED-导入失败
                      */
                     std::string m_licenseType;
                     bool m_licenseTypeHasBeenSet;
+
+                    /**
+                     * 镜像族
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_imageFamily;
+                    bool m_imageFamilyHasBeenSet;
+
+                    /**
+                     * 镜像是否废弃
+                     */
+                    bool m_imageDeprecated;
+                    bool m_imageDeprecatedHasBeenSet;
 
                 };
             }

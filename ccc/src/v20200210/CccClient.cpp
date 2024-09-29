@@ -556,6 +556,49 @@ CccClient::CreateIVRSessionOutcomeCallable CccClient::CreateIVRSessionCallable(c
     return task->get_future();
 }
 
+CccClient::CreateOwnNumberApplyOutcome CccClient::CreateOwnNumberApply(const CreateOwnNumberApplyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOwnNumberApply");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOwnNumberApplyResponse rsp = CreateOwnNumberApplyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOwnNumberApplyOutcome(rsp);
+        else
+            return CreateOwnNumberApplyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOwnNumberApplyOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::CreateOwnNumberApplyAsync(const CreateOwnNumberApplyRequest& request, const CreateOwnNumberApplyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOwnNumberApply(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::CreateOwnNumberApplyOutcomeCallable CccClient::CreateOwnNumberApplyCallable(const CreateOwnNumberApplyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOwnNumberApplyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOwnNumberApply(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::CreatePredictiveDialingCampaignOutcome CccClient::CreatePredictiveDialingCampaign(const CreatePredictiveDialingCampaignRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePredictiveDialingCampaign");
@@ -2097,6 +2140,49 @@ CccClient::ModifyExtensionOutcomeCallable CccClient::ModifyExtensionCallable(con
         [this, request]()
         {
             return this->ModifyExtension(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::ModifyOwnNumberApplyOutcome CccClient::ModifyOwnNumberApply(const ModifyOwnNumberApplyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOwnNumberApply");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOwnNumberApplyResponse rsp = ModifyOwnNumberApplyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOwnNumberApplyOutcome(rsp);
+        else
+            return ModifyOwnNumberApplyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOwnNumberApplyOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::ModifyOwnNumberApplyAsync(const ModifyOwnNumberApplyRequest& request, const ModifyOwnNumberApplyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyOwnNumberApply(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::ModifyOwnNumberApplyOutcomeCallable CccClient::ModifyOwnNumberApplyCallable(const ModifyOwnNumberApplyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyOwnNumberApplyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyOwnNumberApply(request);
         }
     );
 

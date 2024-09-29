@@ -51,7 +51,8 @@ LaunchConfiguration::LaunchConfiguration() :
     m_diskTypePolicyHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
     m_iPv6InternetAccessibleHasBeenSet(false),
-    m_disasterRecoverGroupIdsHasBeenSet(false)
+    m_disasterRecoverGroupIdsHasBeenSet(false),
+    m_imageFamilyHasBeenSet(false)
 {
 }
 
@@ -482,6 +483,16 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
         m_disasterRecoverGroupIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageFamily") && !value["ImageFamily"].IsNull())
+    {
+        if (!value["ImageFamily"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.ImageFamily` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageFamily = string(value["ImageFamily"].GetString());
+        m_imageFamilyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -787,6 +798,14 @@ void LaunchConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_imageFamilyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageFamily";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageFamily.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1286,5 +1305,21 @@ void LaunchConfiguration::SetDisasterRecoverGroupIds(const vector<string>& _disa
 bool LaunchConfiguration::DisasterRecoverGroupIdsHasBeenSet() const
 {
     return m_disasterRecoverGroupIdsHasBeenSet;
+}
+
+string LaunchConfiguration::GetImageFamily() const
+{
+    return m_imageFamily;
+}
+
+void LaunchConfiguration::SetImageFamily(const string& _imageFamily)
+{
+    m_imageFamily = _imageFamily;
+    m_imageFamilyHasBeenSet = true;
+}
+
+bool LaunchConfiguration::ImageFamilyHasBeenSet() const
+{
+    return m_imageFamilyHasBeenSet;
 }
 

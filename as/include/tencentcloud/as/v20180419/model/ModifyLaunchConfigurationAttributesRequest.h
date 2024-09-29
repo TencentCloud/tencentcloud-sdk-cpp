@@ -640,6 +640,27 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      */
                     bool InstanceTagsHasBeenSet() const;
 
+                    /**
+                     * 获取镜像族名称。
+                     * @return ImageFamily 镜像族名称。
+                     * 
+                     */
+                    std::string GetImageFamily() const;
+
+                    /**
+                     * 设置镜像族名称。
+                     * @param _imageFamily 镜像族名称。
+                     * 
+                     */
+                    void SetImageFamily(const std::string& _imageFamily);
+
+                    /**
+                     * 判断参数 ImageFamily 是否已赋值
+                     * @return ImageFamily 是否已赋值
+                     * 
+                     */
+                    bool ImageFamilyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -805,6 +826,12 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      */
                     std::vector<InstanceTag> m_instanceTags;
                     bool m_instanceTagsHasBeenSet;
+
+                    /**
+                     * 镜像族名称。
+                     */
+                    std::string m_imageFamily;
+                    bool m_imageFamilyHasBeenSet;
 
                 };
             }

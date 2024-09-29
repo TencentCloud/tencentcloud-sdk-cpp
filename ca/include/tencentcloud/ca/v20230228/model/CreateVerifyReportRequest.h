@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户类型 1:个人，2:企业
-                     * @return ApplyCustomerType 客户类型 1:个人，2:企业
+                     * 获取申请者类型 1:个人，2:企业
+                     * @return ApplyCustomerType 申请者类型 1:个人，2:企业
                      * 
                      */
                     std::string GetApplyCustomerType() const;
 
                     /**
-                     * 设置客户类型 1:个人，2:企业
-                     * @param _applyCustomerType 客户类型 1:个人，2:企业
+                     * 设置申请者类型 1:个人，2:企业
+                     * @param _applyCustomerType 申请者类型 1:个人，2:企业
                      * 
                      */
                     void SetApplyCustomerType(const std::string& _applyCustomerType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ApplyCustomerNameHasBeenSet() const;
 
                     /**
-                     * 获取验签申请人姓名
-                     * @return ApplyName 验签申请人姓名
+                     * 获取验签申请经办人姓名
+                     * @return ApplyName 验签申请经办人姓名
                      * 
                      */
                     std::string GetApplyName() const;
 
                     /**
-                     * 设置验签申请人姓名
-                     * @param _applyName 验签申请人姓名
+                     * 设置验签申请经办人姓名
+                     * @param _applyName 验签申请经办人姓名
                      * 
                      */
                     void SetApplyName(const std::string& _applyName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ApplyNameHasBeenSet() const;
 
                     /**
-                     * 获取验签申请人电弧
-                     * @return ApplyMobile 验签申请人电弧
+                     * 获取验签申请经办人电话
+                     * @return ApplyMobile 验签申请经办人电话
                      * 
                      */
                     std::string GetApplyMobile() const;
 
                     /**
-                     * 设置验签申请人电弧
-                     * @param _applyMobile 验签申请人电弧
+                     * 设置验签申请经办人电话
+                     * @param _applyMobile 验签申请经办人电话
                      * 
                      */
                     void SetApplyMobile(const std::string& _applyMobile);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取验签申请人邮箱
-                     * @return ApplyEmail 验签申请人邮箱
+                     * 获取验签申请经办人邮箱
+                     * @return ApplyEmail 验签申请经办人邮箱
                      * 
                      */
                     std::string GetApplyEmail() const;
 
                     /**
-                     * 设置验签申请人邮箱
-                     * @param _applyEmail 验签申请人邮箱
+                     * 设置验签申请经办人邮箱
+                     * @param _applyEmail 验签申请经办人邮箱
                      * 
                      */
                     void SetApplyEmail(const std::string& _applyEmail);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 客户类型 1:个人，2:企业
+                     * 申请者类型 1:个人，2:企业
                      */
                     std::string m_applyCustomerType;
                     bool m_applyCustomerTypeHasBeenSet;
@@ -183,13 +183,13 @@ namespace TencentCloud
                     bool m_applyCustomerNameHasBeenSet;
 
                     /**
-                     * 验签申请人姓名
+                     * 验签申请经办人姓名
                      */
                     std::string m_applyName;
                     bool m_applyNameHasBeenSet;
 
                     /**
-                     * 验签申请人电弧
+                     * 验签申请经办人电话
                      */
                     std::string m_applyMobile;
                     bool m_applyMobileHasBeenSet;
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 验签申请人邮箱
+                     * 验签申请经办人邮箱
                      */
                     std::string m_applyEmail;
                     bool m_applyEmailHasBeenSet;

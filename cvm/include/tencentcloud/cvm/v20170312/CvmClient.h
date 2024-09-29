@@ -75,6 +75,8 @@
 #include <tencentcloud/cvm/v20170312/model/DescribeHostsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeHpcClustersRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeHpcClustersResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeImageFromFamilyRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeImageFromFamilyResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeImageQuotaRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeImageQuotaResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeImageSharePermissionRequest.h>
@@ -315,6 +317,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHpcClustersResponse> DescribeHpcClustersOutcome;
                 typedef std::future<DescribeHpcClustersOutcome> DescribeHpcClustersOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeHpcClustersRequest&, DescribeHpcClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHpcClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageFromFamilyResponse> DescribeImageFromFamilyOutcome;
+                typedef std::future<DescribeImageFromFamilyOutcome> DescribeImageFromFamilyOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeImageFromFamilyRequest&, DescribeImageFromFamilyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageFromFamilyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeImageQuotaResponse> DescribeImageQuotaOutcome;
                 typedef std::future<DescribeImageQuotaOutcome> DescribeImageQuotaOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeImageQuotaRequest&, DescribeImageQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageQuotaAsyncHandler;
@@ -802,6 +807,15 @@ namespace TencentCloud
                 DescribeHpcClustersOutcome DescribeHpcClusters(const Model::DescribeHpcClustersRequest &request);
                 void DescribeHpcClustersAsync(const Model::DescribeHpcClustersRequest& request, const DescribeHpcClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeHpcClustersOutcomeCallable DescribeHpcClustersCallable(const Model::DescribeHpcClustersRequest& request);
+
+                /**
+                 *本接口(DescribeImageFromFamily) 用于查看镜像族内可用镜像信息。
+                 * @param req DescribeImageFromFamilyRequest
+                 * @return DescribeImageFromFamilyOutcome
+                 */
+                DescribeImageFromFamilyOutcome DescribeImageFromFamily(const Model::DescribeImageFromFamilyRequest &request);
+                void DescribeImageFromFamilyAsync(const Model::DescribeImageFromFamilyRequest& request, const DescribeImageFromFamilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageFromFamilyOutcomeCallable DescribeImageFromFamilyCallable(const Model::DescribeImageFromFamilyRequest& request);
 
                 /**
                  *本接口(DescribeImageQuota)用于查询用户账号的镜像配额。

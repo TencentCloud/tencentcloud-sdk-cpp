@@ -105,6 +105,48 @@ namespace TencentCloud
                      */
                     bool ImageDescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取设置镜像族；
+                     * @return ImageFamily 设置镜像族；
+                     * 
+                     */
+                    std::string GetImageFamily() const;
+
+                    /**
+                     * 设置设置镜像族；
+                     * @param _imageFamily 设置镜像族；
+                     * 
+                     */
+                    void SetImageFamily(const std::string& _imageFamily);
+
+                    /**
+                     * 判断参数 ImageFamily 是否已赋值
+                     * @return ImageFamily 是否已赋值
+                     * 
+                     */
+                    bool ImageFamilyHasBeenSet() const;
+
+                    /**
+                     * 获取设置镜像是否废弃；
+                     * @return ImageDeprecated 设置镜像是否废弃；
+                     * 
+                     */
+                    bool GetImageDeprecated() const;
+
+                    /**
+                     * 设置设置镜像是否废弃；
+                     * @param _imageDeprecated 设置镜像是否废弃；
+                     * 
+                     */
+                    void SetImageDeprecated(const bool& _imageDeprecated);
+
+                    /**
+                     * 判断参数 ImageDeprecated 是否已赋值
+                     * @return ImageDeprecated 是否已赋值
+                     * 
+                     */
+                    bool ImageDeprecatedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +166,18 @@ namespace TencentCloud
                      */
                     std::string m_imageDescription;
                     bool m_imageDescriptionHasBeenSet;
+
+                    /**
+                     * 设置镜像族；
+                     */
+                    std::string m_imageFamily;
+                    bool m_imageFamilyHasBeenSet;
+
+                    /**
+                     * 设置镜像是否废弃；
+                     */
+                    bool m_imageDeprecated;
+                    bool m_imageDeprecatedHasBeenSet;
 
                 };
             }

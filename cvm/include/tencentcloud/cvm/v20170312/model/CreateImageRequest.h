@@ -108,18 +108,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否执行强制关机以制作镜像。
-取值范围：<br><li>true：表示关机之后制作镜像<br><li>false：表示开机状态制作镜像<br><br>默认取值：false。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
+取值范围：<br><li>true：表示关机之后制作镜像</li><br><li>false：表示开机状态制作镜像</li><br><br>默认取值：false。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
                      * @return ForcePoweroff 是否执行强制关机以制作镜像。
-取值范围：<br><li>true：表示关机之后制作镜像<br><li>false：表示开机状态制作镜像<br><br>默认取值：false。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
+取值范围：<br><li>true：表示关机之后制作镜像</li><br><li>false：表示开机状态制作镜像</li><br><br>默认取值：false。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
                      * 
                      */
                     std::string GetForcePoweroff() const;
 
                     /**
                      * 设置是否执行强制关机以制作镜像。
-取值范围：<br><li>true：表示关机之后制作镜像<br><li>false：表示开机状态制作镜像<br><br>默认取值：false。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
+取值范围：<br><li>true：表示关机之后制作镜像</li><br><li>false：表示开机状态制作镜像</li><br><br>默认取值：false。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
                      * @param _forcePoweroff 是否执行强制关机以制作镜像。
-取值范围：<br><li>true：表示关机之后制作镜像<br><li>false：表示开机状态制作镜像<br><br>默认取值：false。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
+取值范围：<br><li>true：表示关机之后制作镜像</li><br><li>false：表示开机状态制作镜像</li><br><br>默认取值：false。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
                      * 
                      */
                     void SetForcePoweroff(const std::string& _forcePoweroff);
@@ -248,6 +248,27 @@ namespace TencentCloud
                      */
                     bool TagSpecificationHasBeenSet() const;
 
+                    /**
+                     * 获取镜像族
+                     * @return ImageFamily 镜像族
+                     * 
+                     */
+                    std::string GetImageFamily() const;
+
+                    /**
+                     * 设置镜像族
+                     * @param _imageFamily 镜像族
+                     * 
+                     */
+                    void SetImageFamily(const std::string& _imageFamily);
+
+                    /**
+                     * 判断参数 ImageFamily 是否已赋值
+                     * @return ImageFamily 是否已赋值
+                     * 
+                     */
+                    bool ImageFamilyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -270,7 +291,7 @@ namespace TencentCloud
 
                     /**
                      * 是否执行强制关机以制作镜像。
-取值范围：<br><li>true：表示关机之后制作镜像<br><li>false：表示开机状态制作镜像<br><br>默认取值：false。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
+取值范围：<br><li>true：表示关机之后制作镜像</li><br><li>false：表示开机状态制作镜像</li><br><br>默认取值：false。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
                      */
                     std::string m_forcePoweroff;
                     bool m_forcePoweroffHasBeenSet;
@@ -307,6 +328,12 @@ namespace TencentCloud
                      */
                     std::vector<TagSpecification> m_tagSpecification;
                     bool m_tagSpecificationHasBeenSet;
+
+                    /**
+                     * 镜像族
+                     */
+                    std::string m_imageFamily;
+                    bool m_imageFamilyHasBeenSet;
 
                 };
             }
