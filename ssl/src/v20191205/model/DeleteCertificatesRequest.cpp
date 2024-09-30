@@ -22,7 +22,9 @@
 using namespace TencentCloud::Ssl::V20191205::Model;
 using namespace std;
 
-DeleteCertificatesRequest::DeleteCertificatesRequest()
+DeleteCertificatesRequest::DeleteCertificatesRequest() :
+    m_certificateIdsHasBeenSet(false),
+    m_isSyncHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,27 @@ string DeleteCertificatesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_certificateIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertificateIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_certificateIds.begin(); itr != m_certificateIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_isSyncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSync";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isSync, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +63,37 @@ string DeleteCertificatesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> DeleteCertificatesRequest::GetCertificateIds() const
+{
+    return m_certificateIds;
+}
+
+void DeleteCertificatesRequest::SetCertificateIds(const vector<string>& _certificateIds)
+{
+    m_certificateIds = _certificateIds;
+    m_certificateIdsHasBeenSet = true;
+}
+
+bool DeleteCertificatesRequest::CertificateIdsHasBeenSet() const
+{
+    return m_certificateIdsHasBeenSet;
+}
+
+bool DeleteCertificatesRequest::GetIsSync() const
+{
+    return m_isSync;
+}
+
+void DeleteCertificatesRequest::SetIsSync(const bool& _isSync)
+{
+    m_isSync = _isSync;
+    m_isSyncHasBeenSet = true;
+}
+
+bool DeleteCertificatesRequest::IsSyncHasBeenSet() const
+{
+    return m_isSyncHasBeenSet;
+}
 
 
