@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeDatabaseAuditRecordsResponse::DescribeDatabaseAuditRecordsResponse() :
     m_totalCountHasBeenSet(false),
-    m_slowQueryRecordsHasBeenSet(false)
+    m_slowQueryRecordsHasBeenSet(false),
+    m_errorMsgHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,16 @@ CoreInternalOutcome DescribeDatabaseAuditRecordsResponse::Deserialize(const stri
         m_slowQueryRecordsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    {
+        if (!rsp["ErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMsg = string(rsp["ErrorMsg"].GetString());
+        m_errorMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +126,14 @@ string DescribeDatabaseAuditRecordsResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_slowQueryRecords.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_errorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +166,16 @@ DataBaseAuditRecord DescribeDatabaseAuditRecordsResponse::GetSlowQueryRecords() 
 bool DescribeDatabaseAuditRecordsResponse::SlowQueryRecordsHasBeenSet() const
 {
     return m_slowQueryRecordsHasBeenSet;
+}
+
+string DescribeDatabaseAuditRecordsResponse::GetErrorMsg() const
+{
+    return m_errorMsg;
+}
+
+bool DescribeDatabaseAuditRecordsResponse::ErrorMsgHasBeenSet() const
+{
+    return m_errorMsgHasBeenSet;
 }
 
 

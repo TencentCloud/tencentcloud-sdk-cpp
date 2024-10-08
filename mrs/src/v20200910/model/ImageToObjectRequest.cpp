@@ -23,10 +23,10 @@ using namespace TencentCloud::Mrs::V20200910::Model;
 using namespace std;
 
 ImageToObjectRequest::ImageToObjectRequest() :
-    m_imageInfoListHasBeenSet(false),
-    m_handleParamHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_isUsedClassifyHasBeenSet(false),
+    m_handleParamHasBeenSet(false),
+    m_imageInfoListHasBeenSet(false),
     m_userTypeHasBeenSet(false),
     m_reportTypeVersionHasBeenSet(false),
     m_ocrInfoListHasBeenSet(false)
@@ -39,30 +39,6 @@ string ImageToObjectRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_imageInfoListHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ImageInfoList";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_imageInfoList.begin(); itr != m_imageInfoList.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_handleParamHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HandleParam";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_handleParam.ToJsonObject(d[key.c_str()], allocator);
-    }
 
     if (m_typeHasBeenSet)
     {
@@ -78,6 +54,30 @@ string ImageToObjectRequest::ToJsonString() const
         string key = "IsUsedClassify";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isUsedClassify, allocator);
+    }
+
+    if (m_handleParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HandleParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_handleParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_imageInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_imageInfoList.begin(); itr != m_imageInfoList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_userTypeHasBeenSet)
@@ -126,38 +126,6 @@ string ImageToObjectRequest::ToJsonString() const
 }
 
 
-vector<ImageInfo> ImageToObjectRequest::GetImageInfoList() const
-{
-    return m_imageInfoList;
-}
-
-void ImageToObjectRequest::SetImageInfoList(const vector<ImageInfo>& _imageInfoList)
-{
-    m_imageInfoList = _imageInfoList;
-    m_imageInfoListHasBeenSet = true;
-}
-
-bool ImageToObjectRequest::ImageInfoListHasBeenSet() const
-{
-    return m_imageInfoListHasBeenSet;
-}
-
-HandleParam ImageToObjectRequest::GetHandleParam() const
-{
-    return m_handleParam;
-}
-
-void ImageToObjectRequest::SetHandleParam(const HandleParam& _handleParam)
-{
-    m_handleParam = _handleParam;
-    m_handleParamHasBeenSet = true;
-}
-
-bool ImageToObjectRequest::HandleParamHasBeenSet() const
-{
-    return m_handleParamHasBeenSet;
-}
-
 uint64_t ImageToObjectRequest::GetType() const
 {
     return m_type;
@@ -188,6 +156,38 @@ void ImageToObjectRequest::SetIsUsedClassify(const bool& _isUsedClassify)
 bool ImageToObjectRequest::IsUsedClassifyHasBeenSet() const
 {
     return m_isUsedClassifyHasBeenSet;
+}
+
+HandleParam ImageToObjectRequest::GetHandleParam() const
+{
+    return m_handleParam;
+}
+
+void ImageToObjectRequest::SetHandleParam(const HandleParam& _handleParam)
+{
+    m_handleParam = _handleParam;
+    m_handleParamHasBeenSet = true;
+}
+
+bool ImageToObjectRequest::HandleParamHasBeenSet() const
+{
+    return m_handleParamHasBeenSet;
+}
+
+vector<ImageInfo> ImageToObjectRequest::GetImageInfoList() const
+{
+    return m_imageInfoList;
+}
+
+void ImageToObjectRequest::SetImageInfoList(const vector<ImageInfo>& _imageInfoList)
+{
+    m_imageInfoList = _imageInfoList;
+    m_imageInfoListHasBeenSet = true;
+}
+
+bool ImageToObjectRequest::ImageInfoListHasBeenSet() const
+{
+    return m_imageInfoListHasBeenSet;
 }
 
 int64_t ImageToObjectRequest::GetUserType() const

@@ -24,7 +24,8 @@ ZoneInfo::ZoneInfo() :
     m_nameHasBeenSet(false),
     m_descHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
-    m_encryptHasBeenSet(false)
+    m_encryptHasBeenSet(false),
+    m_mainHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
         m_encryptHasBeenSet = true;
     }
 
+    if (value.HasMember("Main") && !value["Main"].IsNull())
+    {
+        if (!value["Main"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.Main` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_main = value["Main"].GetBool();
+        m_mainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ZoneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Encrypt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_encrypt, allocator);
+    }
+
+    if (m_mainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Main";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_main, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ZoneInfo::SetEncrypt(const int64_t& _encrypt)
 bool ZoneInfo::EncryptHasBeenSet() const
 {
     return m_encryptHasBeenSet;
+}
+
+bool ZoneInfo::GetMain() const
+{
+    return m_main;
+}
+
+void ZoneInfo::SetMain(const bool& _main)
+{
+    m_main = _main;
+    m_mainHasBeenSet = true;
+}
+
+bool ZoneInfo::MainHasBeenSet() const
+{
+    return m_mainHasBeenSet;
 }
 

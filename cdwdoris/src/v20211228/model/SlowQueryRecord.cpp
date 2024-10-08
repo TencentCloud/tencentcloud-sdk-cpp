@@ -35,7 +35,9 @@ SlowQueryRecord::SlowQueryRecord() :
     m_isQueryHasBeenSet(false),
     m_resultBytesMBHasBeenSet(false),
     m_memoryUsageMBHasBeenSet(false),
-    m_durationSecHasBeenSet(false)
+    m_durationSecHasBeenSet(false),
+    m_stateHasBeenSet(false),
+    m_catalogNameHasBeenSet(false)
 {
 }
 
@@ -194,6 +196,26 @@ CoreInternalOutcome SlowQueryRecord::Deserialize(const rapidjson::Value &value)
         m_durationSecHasBeenSet = true;
     }
 
+    if (value.HasMember("State") && !value["State"].IsNull())
+    {
+        if (!value["State"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowQueryRecord.State` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_state = string(value["State"].GetString());
+        m_stateHasBeenSet = true;
+    }
+
+    if (value.HasMember("CatalogName") && !value["CatalogName"].IsNull())
+    {
+        if (!value["CatalogName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowQueryRecord.CatalogName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_catalogName = string(value["CatalogName"].GetString());
+        m_catalogNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +341,22 @@ void SlowQueryRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "DurationSec";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_durationSec, allocator);
+    }
+
+    if (m_stateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "State";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_catalogName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +600,37 @@ void SlowQueryRecord::SetDurationSec(const double& _durationSec)
 bool SlowQueryRecord::DurationSecHasBeenSet() const
 {
     return m_durationSecHasBeenSet;
+}
+
+string SlowQueryRecord::GetState() const
+{
+    return m_state;
+}
+
+void SlowQueryRecord::SetState(const string& _state)
+{
+    m_state = _state;
+    m_stateHasBeenSet = true;
+}
+
+bool SlowQueryRecord::StateHasBeenSet() const
+{
+    return m_stateHasBeenSet;
+}
+
+string SlowQueryRecord::GetCatalogName() const
+{
+    return m_catalogName;
+}
+
+void SlowQueryRecord::SetCatalogName(const string& _catalogName)
+{
+    m_catalogName = _catalogName;
+    m_catalogNameHasBeenSet = true;
+}
+
+bool SlowQueryRecord::CatalogNameHasBeenSet() const
+{
+    return m_catalogNameHasBeenSet;
 }
 

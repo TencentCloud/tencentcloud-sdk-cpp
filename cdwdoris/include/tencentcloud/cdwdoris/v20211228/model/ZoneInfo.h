@@ -134,6 +134,31 @@ namespace TencentCloud
                      */
                     bool EncryptHasBeenSet() const;
 
+                    /**
+                     * 获取是否为主力园区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Main 是否为主力园区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetMain() const;
+
+                    /**
+                     * 设置是否为主力园区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _main 是否为主力园区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMain(const bool& _main);
+
+                    /**
+                     * 判断参数 Main 是否已赋值
+                     * @return Main 是否已赋值
+                     * 
+                     */
+                    bool MainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -160,6 +185,13 @@ namespace TencentCloud
                      */
                     int64_t m_encrypt;
                     bool m_encryptHasBeenSet;
+
+                    /**
+                     * 是否为主力园区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_main;
+                    bool m_mainHasBeenSet;
 
                 };
             }

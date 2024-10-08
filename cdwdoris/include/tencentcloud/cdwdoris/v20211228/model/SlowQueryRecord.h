@@ -381,6 +381,56 @@ namespace TencentCloud
                      */
                     bool DurationSecHasBeenSet() const;
 
+                    /**
+                     * 获取状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return State 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetState() const;
+
+                    /**
+                     * 设置状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _state 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetState(const std::string& _state);
+
+                    /**
+                     * 判断参数 State 是否已赋值
+                     * @return State 是否已赋值
+                     * 
+                     */
+                    bool StateHasBeenSet() const;
+
+                    /**
+                     * 获取Catalog  Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CatalogName Catalog  Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCatalogName() const;
+
+                    /**
+                     * 设置Catalog  Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _catalogName Catalog  Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCatalogName(const std::string& _catalogName);
+
+                    /**
+                     * 判断参数 CatalogName 是否已赋值
+                     * @return CatalogName 是否已赋值
+                     * 
+                     */
+                    bool CatalogNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -477,6 +527,20 @@ namespace TencentCloud
                      */
                     double m_durationSec;
                     bool m_durationSecHasBeenSet;
+
+                    /**
+                     * 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_state;
+                    bool m_stateHasBeenSet;
+
+                    /**
+                     * Catalog  Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_catalogName;
+                    bool m_catalogNameHasBeenSet;
 
                 };
             }

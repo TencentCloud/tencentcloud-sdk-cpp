@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/mrs/v20200910/model/ImageInfo.h>
 #include <tencentcloud/mrs/v20200910/model/HandleParam.h>
+#include <tencentcloud/mrs/v20200910/model/ImageInfo.h>
 #include <tencentcloud/mrs/v20200910/model/ReportTypeVersion.h>
 #include <tencentcloud/mrs/v20200910/model/OcrInfo.h>
 
@@ -45,48 +45,6 @@ namespace TencentCloud
                     ~ImageToObjectRequest() = default;
                     std::string ToJsonString() const;
 
-
-                    /**
-                     * 获取图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持
-                     * @return ImageInfoList 图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持
-                     * 
-                     */
-                    std::vector<ImageInfo> GetImageInfoList() const;
-
-                    /**
-                     * 设置图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持
-                     * @param _imageInfoList 图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持
-                     * 
-                     */
-                    void SetImageInfoList(const std::vector<ImageInfo>& _imageInfoList);
-
-                    /**
-                     * 判断参数 ImageInfoList 是否已赋值
-                     * @return ImageInfoList 是否已赋值
-                     * 
-                     */
-                    bool ImageInfoListHasBeenSet() const;
-
-                    /**
-                     * 获取图片处理参数
-                     * @return HandleParam 图片处理参数
-                     * 
-                     */
-                    HandleParam GetHandleParam() const;
-
-                    /**
-                     * 设置图片处理参数
-                     * @param _handleParam 图片处理参数
-                     * 
-                     */
-                    void SetHandleParam(const HandleParam& _handleParam);
-
-                    /**
-                     * 判断参数 HandleParam 是否已赋值
-                     * @return HandleParam 是否已赋值
-                     * 
-                     */
-                    bool HandleParamHasBeenSet() const;
 
                     /**
                      * 获取报告类型，目前支持11（检验报告），12（检查报告），15（病理报告），28（出院报告），29（入院报告），210（门诊病历），212（手术记录），218（诊断证明），363（心电图），27（内窥镜检查），215（处方单），219（免疫接种证明），301（C14呼气试验）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）
@@ -133,6 +91,48 @@ namespace TencentCloud
                      * 
                      */
                     bool IsUsedClassifyHasBeenSet() const;
+
+                    /**
+                     * 获取图片处理参数
+                     * @return HandleParam 图片处理参数
+                     * 
+                     */
+                    HandleParam GetHandleParam() const;
+
+                    /**
+                     * 设置图片处理参数
+                     * @param _handleParam 图片处理参数
+                     * 
+                     */
+                    void SetHandleParam(const HandleParam& _handleParam);
+
+                    /**
+                     * 判断参数 HandleParam 是否已赋值
+                     * @return HandleParam 是否已赋值
+                     * 
+                     */
+                    bool HandleParamHasBeenSet() const;
+
+                    /**
+                     * 获取图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持
+                     * @return ImageInfoList 图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持
+                     * 
+                     */
+                    std::vector<ImageInfo> GetImageInfoList() const;
+
+                    /**
+                     * 设置图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持
+                     * @param _imageInfoList 图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持
+                     * 
+                     */
+                    void SetImageInfoList(const std::vector<ImageInfo>& _imageInfoList);
+
+                    /**
+                     * 判断参数 ImageInfoList 是否已赋值
+                     * @return ImageInfoList 是否已赋值
+                     * 
+                     */
+                    bool ImageInfoListHasBeenSet() const;
 
                     /**
                      * 获取后付费的用户类型，新客户传1，老客户可不传或传 0。2022 年 12 月 15 新增了计费项，在此时间之前已经通过商务指定优惠价格的大客户，请不传这个字段或传 0，如果传 1 会导致以前获得的折扣价格失效。在 2022 年 12 月 15 日之后，通过商务指定优惠价格的大客户请传 1。
@@ -212,18 +212,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持
-                     */
-                    std::vector<ImageInfo> m_imageInfoList;
-                    bool m_imageInfoListHasBeenSet;
-
-                    /**
-                     * 图片处理参数
-                     */
-                    HandleParam m_handleParam;
-                    bool m_handleParamHasBeenSet;
-
-                    /**
                      * 报告类型，目前支持11（检验报告），12（检查报告），15（病理报告），28（出院报告），29（入院报告），210（门诊病历），212（手术记录），218（诊断证明），363（心电图），27（内窥镜检查），215（处方单），219（免疫接种证明），301（C14呼气试验）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）
                      */
                     uint64_t m_type;
@@ -235,6 +223,18 @@ namespace TencentCloud
                      */
                     bool m_isUsedClassify;
                     bool m_isUsedClassifyHasBeenSet;
+
+                    /**
+                     * 图片处理参数
+                     */
+                    HandleParam m_handleParam;
+                    bool m_handleParamHasBeenSet;
+
+                    /**
+                     * 图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持
+                     */
+                    std::vector<ImageInfo> m_imageInfoList;
+                    bool m_imageInfoListHasBeenSet;
 
                     /**
                      * 后付费的用户类型，新客户传1，老客户可不传或传 0。2022 年 12 月 15 新增了计费项，在此时间之前已经通过商务指定优惠价格的大客户，请不传这个字段或传 0，如果传 1 会导致以前获得的折扣价格失效。在 2022 年 12 月 15 日之后，通过商务指定优惠价格的大客户请传 1。

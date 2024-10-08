@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeClusterConfigsResponse::DescribeClusterConfigsResponse() :
     m_clusterConfListHasBeenSet(false),
-    m_buildVersionHasBeenSet(false)
+    m_buildVersionHasBeenSet(false),
+    m_errorMsgHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeClusterConfigsResponse::Deserialize(const string &pa
         m_buildVersionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    {
+        if (!rsp["ErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMsg = string(rsp["ErrorMsg"].GetString());
+        m_errorMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeClusterConfigsResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_buildVersion.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_errorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ string DescribeClusterConfigsResponse::GetBuildVersion() const
 bool DescribeClusterConfigsResponse::BuildVersionHasBeenSet() const
 {
     return m_buildVersionHasBeenSet;
+}
+
+string DescribeClusterConfigsResponse::GetErrorMsg() const
+{
+    return m_errorMsg;
+}
+
+bool DescribeClusterConfigsResponse::ErrorMsgHasBeenSet() const
+{
+    return m_errorMsgHasBeenSet;
 }
 
 

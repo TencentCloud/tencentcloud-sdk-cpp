@@ -26,7 +26,9 @@ NodeInfos::NodeInfos() :
     m_ipHasBeenSet(false),
     m_nodeRoleHasBeenSet(false),
     m_componentNameHasBeenSet(false),
-    m_lastRestartTimeHasBeenSet(false)
+    m_lastRestartTimeHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_zoneHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome NodeInfos::Deserialize(const rapidjson::Value &value)
         m_lastRestartTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfos.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfos.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void NodeInfos::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "LastRestartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastRestartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void NodeInfos::SetLastRestartTime(const string& _lastRestartTime)
 bool NodeInfos::LastRestartTimeHasBeenSet() const
 {
     return m_lastRestartTimeHasBeenSet;
+}
+
+string NodeInfos::GetId() const
+{
+    return m_id;
+}
+
+void NodeInfos::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool NodeInfos::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
+
+string NodeInfos::GetZone() const
+{
+    return m_zone;
+}
+
+void NodeInfos::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool NodeInfos::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 

@@ -221,6 +221,31 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Id Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _id Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +296,13 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }
