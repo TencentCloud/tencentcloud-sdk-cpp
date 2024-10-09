@@ -270,6 +270,35 @@ namespace TencentCloud
                      */
                     bool ArgHasBeenSet() const;
 
+                    /**
+                     * 获取0：大小写敏感
+1：大小写不敏感
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CaseNotSensitive 0：大小写敏感
+1：大小写不敏感
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetCaseNotSensitive() const;
+
+                    /**
+                     * 设置0：大小写敏感
+1：大小写不敏感
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _caseNotSensitive 0：大小写敏感
+1：大小写不敏感
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCaseNotSensitive(const uint64_t& _caseNotSensitive);
+
+                    /**
+                     * 判断参数 CaseNotSensitive 是否已赋值
+                     * @return CaseNotSensitive 是否已赋值
+                     * 
+                     */
+                    bool CaseNotSensitiveHasBeenSet() const;
+
                 private:
 
                     /**
@@ -330,6 +359,14 @@ namespace TencentCloud
                      */
                     std::string m_arg;
                     bool m_argHasBeenSet;
+
+                    /**
+                     * 0：大小写敏感
+1：大小写不敏感
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_caseNotSensitive;
+                    bool m_caseNotSensitiveHasBeenSet;
 
                 };
             }

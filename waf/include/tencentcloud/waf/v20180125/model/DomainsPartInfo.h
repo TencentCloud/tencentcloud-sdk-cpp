@@ -1169,6 +1169,206 @@ https：使用https协议回源
                      */
                     bool ProxyBufferHasBeenSet() const;
 
+                    /**
+                     * 获取国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GmType 国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetGmType() const;
+
+                    /**
+                     * 设置国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gmType 国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGmType(const int64_t& _gmType);
+
+                    /**
+                     * 判断参数 GmType 是否已赋值
+                     * @return GmType 是否已赋值
+                     * 
+                     */
+                    bool GmTypeHasBeenSet() const;
+
+                    /**
+                     * 获取国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GmCertType 国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetGmCertType() const;
+
+                    /**
+                     * 设置国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gmCertType 国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGmCertType(const int64_t& _gmCertType);
+
+                    /**
+                     * 判断参数 GmCertType 是否已赋值
+                     * @return GmCertType 是否已赋值
+                     * 
+                     */
+                    bool GmCertTypeHasBeenSet() const;
+
+                    /**
+                     * 获取GmCertType为1时，需要填充此参数，表示自有国密证书的证书链
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GmCert GmCertType为1时，需要填充此参数，表示自有国密证书的证书链
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGmCert() const;
+
+                    /**
+                     * 设置GmCertType为1时，需要填充此参数，表示自有国密证书的证书链
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gmCert GmCertType为1时，需要填充此参数，表示自有国密证书的证书链
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGmCert(const std::string& _gmCert);
+
+                    /**
+                     * 判断参数 GmCert 是否已赋值
+                     * @return GmCert 是否已赋值
+                     * 
+                     */
+                    bool GmCertHasBeenSet() const;
+
+                    /**
+                     * 获取GmCertType为1时，需要填充此参数，表示自有国密证书的私钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GmPrivateKey GmCertType为1时，需要填充此参数，表示自有国密证书的私钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGmPrivateKey() const;
+
+                    /**
+                     * 设置GmCertType为1时，需要填充此参数，表示自有国密证书的私钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gmPrivateKey GmCertType为1时，需要填充此参数，表示自有国密证书的私钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGmPrivateKey(const std::string& _gmPrivateKey);
+
+                    /**
+                     * 判断参数 GmPrivateKey 是否已赋值
+                     * @return GmPrivateKey 是否已赋值
+                     * 
+                     */
+                    bool GmPrivateKeyHasBeenSet() const;
+
+                    /**
+                     * 获取GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GmEncCert GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGmEncCert() const;
+
+                    /**
+                     * 设置GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gmEncCert GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGmEncCert(const std::string& _gmEncCert);
+
+                    /**
+                     * 判断参数 GmEncCert 是否已赋值
+                     * @return GmEncCert 是否已赋值
+                     * 
+                     */
+                    bool GmEncCertHasBeenSet() const;
+
+                    /**
+                     * 获取GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GmEncPrivateKey GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGmEncPrivateKey() const;
+
+                    /**
+                     * 设置GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gmEncPrivateKey GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGmEncPrivateKey(const std::string& _gmEncPrivateKey);
+
+                    /**
+                     * 判断参数 GmEncPrivateKey 是否已赋值
+                     * @return GmEncPrivateKey 是否已赋值
+                     * 
+                     */
+                    bool GmEncPrivateKeyHasBeenSet() const;
+
+                    /**
+                     * 获取GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GmSSLId GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGmSSLId() const;
+
+                    /**
+                     * 设置GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gmSSLId GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGmSSLId(const std::string& _gmSSLId);
+
+                    /**
+                     * 判断参数 GmSSLId 是否已赋值
+                     * @return GmSSLId 是否已赋值
+                     * 
+                     */
+                    bool GmSSLIdHasBeenSet() const;
+
+                    /**
+                     * 获取域名标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Labels 域名标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetLabels() const;
+
+                    /**
+                     * 设置域名标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _labels 域名标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLabels(const std::vector<std::string>& _labels);
+
+                    /**
+                     * 判断参数 Labels 是否已赋值
+                     * @return Labels 是否已赋值
+                     * 
+                     */
+                    bool LabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1482,6 +1682,62 @@ https：使用https协议回源
                      */
                     int64_t m_proxyBuffer;
                     bool m_proxyBufferHasBeenSet;
+
+                    /**
+                     * 国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_gmType;
+                    bool m_gmTypeHasBeenSet;
+
+                    /**
+                     * 国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_gmCertType;
+                    bool m_gmCertTypeHasBeenSet;
+
+                    /**
+                     * GmCertType为1时，需要填充此参数，表示自有国密证书的证书链
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gmCert;
+                    bool m_gmCertHasBeenSet;
+
+                    /**
+                     * GmCertType为1时，需要填充此参数，表示自有国密证书的私钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gmPrivateKey;
+                    bool m_gmPrivateKeyHasBeenSet;
+
+                    /**
+                     * GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gmEncCert;
+                    bool m_gmEncCertHasBeenSet;
+
+                    /**
+                     * GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gmEncPrivateKey;
+                    bool m_gmEncPrivateKeyHasBeenSet;
+
+                    /**
+                     * GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gmSSLId;
+                    bool m_gmSSLIdHasBeenSet;
+
+                    /**
+                     * 域名标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_labels;
+                    bool m_labelsHasBeenSet;
 
                 };
             }

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取业务系统Id
+                     * @return InstanceId 业务系统Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param _instanceId 实例Id
+                     * 设置业务系统Id
+                     * @param _instanceId 业务系统Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -66,14 +66,18 @@ namespace TencentCloud
 
                     /**
                      * 获取需要修改的字段key value分别指定字段名、字段值
+[具体字段请见](https://cloud.tencent.com/document/product/248/111241)
                      * @return Tags 需要修改的字段key value分别指定字段名、字段值
+[具体字段请见](https://cloud.tencent.com/document/product/248/111241)
                      * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
                      * 设置需要修改的字段key value分别指定字段名、字段值
+[具体字段请见](https://cloud.tencent.com/document/product/248/111241)
                      * @param _tags 需要修改的字段key value分别指定字段名、字段值
+[具体字段请见](https://cloud.tencent.com/document/product/248/111241)
                      * 
                      */
                     void SetTags(const std::vector<ApmTag>& _tags);
@@ -86,15 +90,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取需要修改配置的服务列表名称	
-                     * @return ServiceNames 需要修改配置的服务列表名称	
+                     * 获取需要修改配置的应用列表名称	
+                     * @return ServiceNames 需要修改配置的应用列表名称	
                      * 
                      */
                     std::vector<std::string> GetServiceNames() const;
 
                     /**
-                     * 设置需要修改配置的服务列表名称	
-                     * @param _serviceNames 需要修改配置的服务列表名称	
+                     * 设置需要修改配置的应用列表名称	
+                     * @param _serviceNames 需要修改配置的应用列表名称	
                      * 
                      */
                     void SetServiceNames(const std::vector<std::string>& _serviceNames);
@@ -109,19 +113,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Id
+                     * 业务系统Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 需要修改的字段key value分别指定字段名、字段值
+[具体字段请见](https://cloud.tencent.com/document/product/248/111241)
                      */
                     std::vector<ApmTag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 需要修改配置的服务列表名称	
+                     * 需要修改配置的应用列表名称	
                      */
                     std::vector<std::string> m_serviceNames;
                     bool m_serviceNamesHasBeenSet;

@@ -274,6 +274,27 @@ namespace TencentCloud
                      */
                     bool ConnDetectConfigHasBeenSet() const;
 
+                    /**
+                     * 获取仓库唯一id
+                     * @return RegistryId 仓库唯一id
+                     * 
+                     */
+                    int64_t GetRegistryId() const;
+
+                    /**
+                     * 设置仓库唯一id
+                     * @param _registryId 仓库唯一id
+                     * 
+                     */
+                    void SetRegistryId(const int64_t& _registryId);
+
+                    /**
+                     * 判断参数 RegistryId 是否已赋值
+                     * @return RegistryId 是否已赋值
+                     * 
+                     */
+                    bool RegistryIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +362,12 @@ namespace TencentCloud
                      */
                     std::vector<ConnDetectConfig> m_connDetectConfig;
                     bool m_connDetectConfigHasBeenSet;
+
+                    /**
+                     * 仓库唯一id
+                     */
+                    int64_t m_registryId;
+                    bool m_registryIdHasBeenSet;
 
                 };
             }

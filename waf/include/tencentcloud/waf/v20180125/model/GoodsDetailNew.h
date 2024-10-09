@@ -514,6 +514,31 @@ Saas 域名扩展包  sv_wsm_waf_domain
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取模式clb-waf或者saas-waf
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MicroVersion 模式clb-waf或者saas-waf
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMicroVersion() const;
+
+                    /**
+                     * 设置模式clb-waf或者saas-waf
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _microVersion 模式clb-waf或者saas-waf
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMicroVersion(const std::string& _microVersion);
+
+                    /**
+                     * 判断参数 MicroVersion 是否已赋值
+                     * @return MicroVersion 是否已赋值
+                     * 
+                     */
+                    bool MicroVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -641,6 +666,13 @@ Saas 域名扩展包  sv_wsm_waf_domain
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 模式clb-waf或者saas-waf
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_microVersion;
+                    bool m_microVersionHasBeenSet;
 
                 };
             }

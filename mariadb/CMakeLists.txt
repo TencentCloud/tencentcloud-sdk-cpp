@@ -44,7 +44,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeFileDownloadUrlRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBInstanceSpecsResponse.h
   include/tencentcloud/mariadb/v20170312/model/DestroyHourDBInstanceResponse.h
-  include/tencentcloud/mariadb/v20170312/model/Account.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeDBSyncModeResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeProjectSecurityGroupsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBSlowLogsRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateAccountRequest.h
@@ -54,6 +54,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/IsolateDBInstanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyLogFileRetentionPeriodRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDatabaseTableRequest.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeLogFileRetentionPeriodRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeFlowResponse.h
   include/tencentcloud/mariadb/v20170312/model/CloneAccountResponse.h
@@ -154,7 +155,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ReservedNetResource.h
   include/tencentcloud/mariadb/v20170312/model/DatabasePrivilege.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.h
-  include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameResponse.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeDBSyncModeRequest.h
   include/tencentcloud/mariadb/v20170312/model/CloseDBExtranetAccessResponse.h
   include/tencentcloud/mariadb/v20170312/model/FunctionPrivilege.h
   include/tencentcloud/mariadb/v20170312/model/ModifyAccountDescriptionRequest.h
@@ -174,6 +175,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeFlowRequest.h
   include/tencentcloud/mariadb/v20170312/model/DCNReplicaConfig.h
   include/tencentcloud/mariadb/v20170312/model/ModifyAccountPrivilegesRequest.h
+  include/tencentcloud/mariadb/v20170312/model/Account.h
   include/tencentcloud/mariadb/v20170312/model/ModifyBackupConfigsResponse.h
   include/tencentcloud/mariadb/v20170312/model/DatabaseProcedure.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBTmpInstancesResponse.h
@@ -242,7 +244,7 @@ set(mariadb_src
   src/v20170312/model/DescribeFileDownloadUrlRequest.cpp
   src/v20170312/model/DescribeDBInstanceSpecsResponse.cpp
   src/v20170312/model/DestroyHourDBInstanceResponse.cpp
-  src/v20170312/model/Account.cpp
+  src/v20170312/model/DescribeDBSyncModeResponse.cpp
   src/v20170312/model/DescribeProjectSecurityGroupsRequest.cpp
   src/v20170312/model/DescribeDBSlowLogsRequest.cpp
   src/v20170312/model/CreateAccountRequest.cpp
@@ -252,6 +254,7 @@ set(mariadb_src
   src/v20170312/model/IsolateDBInstanceResponse.cpp
   src/v20170312/model/ModifyLogFileRetentionPeriodRequest.cpp
   src/v20170312/model/DescribeDatabaseTableRequest.cpp
+  src/v20170312/model/ModifyDBInstanceNameResponse.cpp
   src/v20170312/model/DescribeLogFileRetentionPeriodRequest.cpp
   src/v20170312/model/DescribeFlowResponse.cpp
   src/v20170312/model/CloneAccountResponse.cpp
@@ -352,7 +355,7 @@ set(mariadb_src
   src/v20170312/model/ReservedNetResource.cpp
   src/v20170312/model/DatabasePrivilege.cpp
   src/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.cpp
-  src/v20170312/model/ModifyDBInstanceNameResponse.cpp
+  src/v20170312/model/DescribeDBSyncModeRequest.cpp
   src/v20170312/model/CloseDBExtranetAccessResponse.cpp
   src/v20170312/model/FunctionPrivilege.cpp
   src/v20170312/model/ModifyAccountDescriptionRequest.cpp
@@ -372,6 +375,7 @@ set(mariadb_src
   src/v20170312/model/DescribeFlowRequest.cpp
   src/v20170312/model/DCNReplicaConfig.cpp
   src/v20170312/model/ModifyAccountPrivilegesRequest.cpp
+  src/v20170312/model/Account.cpp
   src/v20170312/model/ModifyBackupConfigsResponse.cpp
   src/v20170312/model/DatabaseProcedure.cpp
   src/v20170312/model/DescribeDBTmpInstancesResponse.cpp

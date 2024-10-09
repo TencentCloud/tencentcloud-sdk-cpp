@@ -536,6 +536,31 @@ namespace TencentCloud
                      */
                     bool ObjectFlowModeHasBeenSet() const;
 
+                    /**
+                     * 获取数值形式的私有网络 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NumericalVpcId 数值形式的私有网络 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetNumericalVpcId() const;
+
+                    /**
+                     * 设置数值形式的私有网络 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _numericalVpcId 数值形式的私有网络 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNumericalVpcId(const int64_t& _numericalVpcId);
+
+                    /**
+                     * 判断参数 NumericalVpcId 是否已赋值
+                     * @return NumericalVpcId 是否已赋值
+                     * 
+                     */
+                    bool NumericalVpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -676,6 +701,13 @@ namespace TencentCloud
                      */
                     int64_t m_objectFlowMode;
                     bool m_objectFlowModeHasBeenSet;
+
+                    /**
+                     * 数值形式的私有网络 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_numericalVpcId;
+                    bool m_numericalVpcIdHasBeenSet;
 
                 };
             }

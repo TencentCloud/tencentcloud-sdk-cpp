@@ -163,6 +163,31 @@ namespace TencentCloud
                      */
                     bool EnableBodyJoinsHasBeenSet() const;
 
+                    /**
+                     * 获取最终视频是否保留原图的背景（该模式对于tuziwu、huajiangwu不生效）
+
+                     * @return EnableSegment 最终视频是否保留原图的背景（该模式对于tuziwu、huajiangwu不生效）
+
+                     * 
+                     */
+                    bool GetEnableSegment() const;
+
+                    /**
+                     * 设置最终视频是否保留原图的背景（该模式对于tuziwu、huajiangwu不生效）
+
+                     * @param _enableSegment 最终视频是否保留原图的背景（该模式对于tuziwu、huajiangwu不生效）
+
+                     * 
+                     */
+                    void SetEnableSegment(const bool& _enableSegment);
+
+                    /**
+                     * 判断参数 EnableSegment 是否已赋值
+                     * @return EnableSegment 是否已赋值
+                     * 
+                     */
+                    bool EnableSegmentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,6 +223,13 @@ namespace TencentCloud
                      */
                     bool m_enableBodyJoins;
                     bool m_enableBodyJoinsHasBeenSet;
+
+                    /**
+                     * 最终视频是否保留原图的背景（该模式对于tuziwu、huajiangwu不生效）
+
+                     */
+                    bool m_enableSegment;
+                    bool m_enableSegmentHasBeenSet;
 
                 };
             }

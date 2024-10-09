@@ -27,7 +27,8 @@ DescribeImageAnimateJobResponse::DescribeImageAnimateJobResponse() :
     m_statusHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
-    m_resultVideoUrlHasBeenSet(false)
+    m_resultVideoUrlHasBeenSet(false),
+    m_maskVideoUrlHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome DescribeImageAnimateJobResponse::Deserialize(const string &p
         m_resultVideoUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MaskVideoUrl") && !rsp["MaskVideoUrl"].IsNull())
+    {
+        if (!rsp["MaskVideoUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaskVideoUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_maskVideoUrl = string(rsp["MaskVideoUrl"].GetString());
+        m_maskVideoUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ string DescribeImageAnimateJobResponse::ToJsonString() const
         string key = "ResultVideoUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resultVideoUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maskVideoUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaskVideoUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maskVideoUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +216,16 @@ string DescribeImageAnimateJobResponse::GetResultVideoUrl() const
 bool DescribeImageAnimateJobResponse::ResultVideoUrlHasBeenSet() const
 {
     return m_resultVideoUrlHasBeenSet;
+}
+
+string DescribeImageAnimateJobResponse::GetMaskVideoUrl() const
+{
+    return m_maskVideoUrl;
+}
+
+bool DescribeImageAnimateJobResponse::MaskVideoUrlHasBeenSet() const
+{
+    return m_maskVideoUrlHasBeenSet;
 }
 
 

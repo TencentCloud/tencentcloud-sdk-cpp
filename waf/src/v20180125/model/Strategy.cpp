@@ -24,7 +24,8 @@ Strategy::Strategy() :
     m_fieldHasBeenSet(false),
     m_compareFuncHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_argHasBeenSet(false)
+    m_argHasBeenSet(false),
+    m_caseNotSensitiveHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome Strategy::Deserialize(const rapidjson::Value &value)
         m_argHasBeenSet = true;
     }
 
+    if (value.HasMember("CaseNotSensitive") && !value["CaseNotSensitive"].IsNull())
+    {
+        if (!value["CaseNotSensitive"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Strategy.CaseNotSensitive` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_caseNotSensitive = value["CaseNotSensitive"].GetUint64();
+        m_caseNotSensitiveHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void Strategy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Arg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_arg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_caseNotSensitiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CaseNotSensitive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_caseNotSensitive, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void Strategy::SetArg(const string& _arg)
 bool Strategy::ArgHasBeenSet() const
 {
     return m_argHasBeenSet;
+}
+
+uint64_t Strategy::GetCaseNotSensitive() const
+{
+    return m_caseNotSensitive;
+}
+
+void Strategy::SetCaseNotSensitive(const uint64_t& _caseNotSensitive)
+{
+    m_caseNotSensitive = _caseNotSensitive;
+    m_caseNotSensitiveHasBeenSet = true;
+}
+
+bool Strategy::CaseNotSensitiveHasBeenSet() const
+{
+    return m_caseNotSensitiveHasBeenSet;
 }
 

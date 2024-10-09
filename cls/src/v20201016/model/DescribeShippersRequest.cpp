@@ -25,7 +25,8 @@ using namespace std;
 DescribeShippersRequest::DescribeShippersRequest() :
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_preciseSearchHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string DescribeShippersRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_preciseSearchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreciseSearch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_preciseSearch, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void DescribeShippersRequest::SetLimit(const uint64_t& _limit)
 bool DescribeShippersRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+uint64_t DescribeShippersRequest::GetPreciseSearch() const
+{
+    return m_preciseSearch;
+}
+
+void DescribeShippersRequest::SetPreciseSearch(const uint64_t& _preciseSearch)
+{
+    m_preciseSearch = _preciseSearch;
+    m_preciseSearchHasBeenSet = true;
+}
+
+bool DescribeShippersRequest::PreciseSearchHasBeenSet() const
+{
+    return m_preciseSearchHasBeenSet;
 }
 
 

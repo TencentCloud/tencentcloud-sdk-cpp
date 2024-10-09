@@ -31,7 +31,9 @@ ChannelOrganizationInfo::ChannelOrganizationInfo() :
     m_adminOpenIdHasBeenSet(false),
     m_adminMobileHasBeenSet(false),
     m_authorizationStatusHasBeenSet(false),
-    m_authorizationTypeHasBeenSet(false)
+    m_authorizationTypeHasBeenSet(false),
+    m_activeStatusHasBeenSet(false),
+    m_licenseExpireTimeHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome ChannelOrganizationInfo::Deserialize(const rapidjson::Value 
         m_authorizationTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ActiveStatus") && !value["ActiveStatus"].IsNull())
+    {
+        if (!value["ActiveStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelOrganizationInfo.ActiveStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_activeStatus = value["ActiveStatus"].GetInt64();
+        m_activeStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("LicenseExpireTime") && !value["LicenseExpireTime"].IsNull())
+    {
+        if (!value["LicenseExpireTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelOrganizationInfo.LicenseExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_licenseExpireTime = value["LicenseExpireTime"].GetInt64();
+        m_licenseExpireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +265,22 @@ void ChannelOrganizationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "AuthorizationType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_authorizationType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_activeStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActiveStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_activeStatus, allocator);
+    }
+
+    if (m_licenseExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_licenseExpireTime, allocator);
     }
 
 }
@@ -422,5 +460,37 @@ void ChannelOrganizationInfo::SetAuthorizationType(const string& _authorizationT
 bool ChannelOrganizationInfo::AuthorizationTypeHasBeenSet() const
 {
     return m_authorizationTypeHasBeenSet;
+}
+
+int64_t ChannelOrganizationInfo::GetActiveStatus() const
+{
+    return m_activeStatus;
+}
+
+void ChannelOrganizationInfo::SetActiveStatus(const int64_t& _activeStatus)
+{
+    m_activeStatus = _activeStatus;
+    m_activeStatusHasBeenSet = true;
+}
+
+bool ChannelOrganizationInfo::ActiveStatusHasBeenSet() const
+{
+    return m_activeStatusHasBeenSet;
+}
+
+int64_t ChannelOrganizationInfo::GetLicenseExpireTime() const
+{
+    return m_licenseExpireTime;
+}
+
+void ChannelOrganizationInfo::SetLicenseExpireTime(const int64_t& _licenseExpireTime)
+{
+    m_licenseExpireTime = _licenseExpireTime;
+    m_licenseExpireTimeHasBeenSet = true;
+}
+
+bool ChannelOrganizationInfo::LicenseExpireTimeHasBeenSet() const
+{
+    return m_licenseExpireTimeHasBeenSet;
 }
 

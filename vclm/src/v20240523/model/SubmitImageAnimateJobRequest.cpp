@@ -27,7 +27,8 @@ SubmitImageAnimateJobRequest::SubmitImageAnimateJobRequest() :
     m_imageBase64HasBeenSet(false),
     m_templateIdHasBeenSet(false),
     m_enableAudioHasBeenSet(false),
-    m_enableBodyJoinsHasBeenSet(false)
+    m_enableBodyJoinsHasBeenSet(false),
+    m_enableSegmentHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string SubmitImageAnimateJobRequest::ToJsonString() const
         string key = "EnableBodyJoins";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableBodyJoins, allocator);
+    }
+
+    if (m_enableSegmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSegment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableSegment, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void SubmitImageAnimateJobRequest::SetEnableBodyJoins(const bool& _enableBodyJoi
 bool SubmitImageAnimateJobRequest::EnableBodyJoinsHasBeenSet() const
 {
     return m_enableBodyJoinsHasBeenSet;
+}
+
+bool SubmitImageAnimateJobRequest::GetEnableSegment() const
+{
+    return m_enableSegment;
+}
+
+void SubmitImageAnimateJobRequest::SetEnableSegment(const bool& _enableSegment)
+{
+    m_enableSegment = _enableSegment;
+    m_enableSegmentHasBeenSet = true;
+}
+
+bool SubmitImageAnimateJobRequest::EnableSegmentHasBeenSet() const
+{
+    return m_enableSegmentHasBeenSet;
 }
 
 

@@ -1158,6 +1158,49 @@ MariadbClient::DescribeDBSlowLogsOutcomeCallable MariadbClient::DescribeDBSlowLo
     return task->get_future();
 }
 
+MariadbClient::DescribeDBSyncModeOutcome MariadbClient::DescribeDBSyncMode(const DescribeDBSyncModeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBSyncMode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBSyncModeResponse rsp = DescribeDBSyncModeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBSyncModeOutcome(rsp);
+        else
+            return DescribeDBSyncModeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBSyncModeOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::DescribeDBSyncModeAsync(const DescribeDBSyncModeRequest& request, const DescribeDBSyncModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBSyncMode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::DescribeDBSyncModeOutcomeCallable MariadbClient::DescribeDBSyncModeCallable(const DescribeDBSyncModeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBSyncModeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBSyncMode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::DescribeDBTmpInstancesOutcome MariadbClient::DescribeDBTmpInstances(const DescribeDBTmpInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBTmpInstances");

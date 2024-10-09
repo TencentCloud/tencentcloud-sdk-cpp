@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取规则ID列表，支持批量删除
-                     * @return RuleIds 规则ID列表，支持批量删除
+                     * 获取规则ID列表，支持批量删除，在DeleteAll参数为true的时候可以不传
+                     * @return RuleIds 规则ID列表，支持批量删除，在DeleteAll参数为true的时候可以不传
                      * 
                      */
                     std::vector<uint64_t> GetRuleIds() const;
 
                     /**
-                     * 设置规则ID列表，支持批量删除
-                     * @param _ruleIds 规则ID列表，支持批量删除
+                     * 设置规则ID列表，支持批量删除，在DeleteAll参数为true的时候可以不传
+                     * @param _ruleIds 规则ID列表，支持批量删除，在DeleteAll参数为true的时候可以不传
                      * 
                      */
                     void SetRuleIds(const std::vector<uint64_t>& _ruleIds);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RuleIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
-                     * @return DeleteAll 是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
+                     * 获取是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定IP名单，批量防护不支持
+                     * @return DeleteAll 是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定IP名单，批量防护不支持
                      * 
                      */
                     bool GetDeleteAll() const;
 
                     /**
-                     * 设置是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
-                     * @param _deleteAll 是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
+                     * 设置是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定IP名单，批量防护不支持
+                     * @param _deleteAll 是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定IP名单，批量防护不支持
                      * 
                      */
                     void SetDeleteAll(const bool& _deleteAll);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取IP黑白名单类型，40为IP白名单，42为IP黑名单
-                     * @return ActionType IP黑白名单类型，40为IP白名单，42为IP黑名单
+                     * 获取IP黑白名单类型，40为IP白名单，42为IP黑名单，在DeleteAll为true的时候必传此参数
+                     * @return ActionType IP黑白名单类型，40为IP白名单，42为IP黑名单，在DeleteAll为true的时候必传此参数
                      * 
                      */
                     uint64_t GetActionType() const;
 
                     /**
-                     * 设置IP黑白名单类型，40为IP白名单，42为IP黑名单
-                     * @param _actionType IP黑白名单类型，40为IP白名单，42为IP黑名单
+                     * 设置IP黑白名单类型，40为IP白名单，42为IP黑名单，在DeleteAll为true的时候必传此参数
+                     * @param _actionType IP黑白名单类型，40为IP白名单，42为IP黑名单，在DeleteAll为true的时候必传此参数
                      * 
                      */
                     void SetActionType(const uint64_t& _actionType);
@@ -156,13 +156,13 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 规则ID列表，支持批量删除
+                     * 规则ID列表，支持批量删除，在DeleteAll参数为true的时候可以不传
                      */
                     std::vector<uint64_t> m_ruleIds;
                     bool m_ruleIdsHasBeenSet;
 
                     /**
-                     * 是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
+                     * 是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定IP名单，批量防护不支持
                      */
                     bool m_deleteAll;
                     bool m_deleteAllHasBeenSet;
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * IP黑白名单类型，40为IP白名单，42为IP黑名单
+                     * IP黑白名单类型，40为IP白名单，42为IP黑名单，在DeleteAll为true的时候必传此参数
                      */
                     uint64_t m_actionType;
                     bool m_actionTypeHasBeenSet;

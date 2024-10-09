@@ -516,7 +516,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv6Flag 是否支持ipv6路由表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetIpv6Flag() const;
 
@@ -525,14 +525,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipv6Flag 是否支持ipv6路由表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetIpv6Flag(const std::string& _ipv6Flag);
 
                     /**
                      * 判断参数 Ipv6Flag 是否已赋值
                      * @return Ipv6Flag 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool Ipv6FlagHasBeenSet() const;
 

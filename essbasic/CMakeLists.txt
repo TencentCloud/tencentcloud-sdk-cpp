@@ -83,6 +83,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationModifyQrCodeRequest.h
+  include/tencentcloud/essbasic/v20210526/model/CreateChannelSubOrganizationActiveRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelRenewAutoSignLicenseResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoResponse.h
@@ -197,6 +198,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateSealByImageResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelMultiFlowSignQRCodeResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeRolesResponse.h
+  include/tencentcloud/essbasic/v20210526/model/CreateChannelSubOrganizationActiveResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeFlowComponentsResponse.h
   include/tencentcloud/essbasic/v20210526/model/WebThemeConfig.h
@@ -451,6 +453,7 @@ set(essbasic_src
   src/v20210526/model/DescribeResourceUrlsByFlowsResponse.cpp
   src/v20210526/model/ChannelCreateFlowGroupByFilesRequest.cpp
   src/v20210526/model/ChannelCreateOrganizationModifyQrCodeRequest.cpp
+  src/v20210526/model/CreateChannelSubOrganizationActiveRequest.cpp
   src/v20210526/model/ChannelRenewAutoSignLicenseResponse.cpp
   src/v20210526/model/ChannelCreateFlowByFilesResponse.cpp
   src/v20210526/model/DescribeFlowDetailInfoResponse.cpp
@@ -565,6 +568,7 @@ set(essbasic_src
   src/v20210526/model/CreateSealByImageResponse.cpp
   src/v20210526/model/ChannelCancelMultiFlowSignQRCodeResponse.cpp
   src/v20210526/model/ChannelDescribeRolesResponse.cpp
+  src/v20210526/model/CreateChannelSubOrganizationActiveResponse.cpp
   src/v20210526/model/ChannelCreateReleaseFlowRequest.cpp
   src/v20210526/model/ChannelDescribeFlowComponentsResponse.cpp
   src/v20210526/model/WebThemeConfig.cpp

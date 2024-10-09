@@ -365,6 +365,31 @@ namespace TencentCloud
                      */
                     bool NoteHasBeenSet() const;
 
+                    /**
+                     * 获取域名标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Labels 域名标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetLabels() const;
+
+                    /**
+                     * 设置域名标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _labels 域名标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLabels(const std::vector<std::string>& _labels);
+
+                    /**
+                     * 判断参数 Labels 是否已赋值
+                     * @return Labels 是否已赋值
+                     * 
+                     */
+                    bool LabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -456,6 +481,13 @@ namespace TencentCloud
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
+
+                    /**
+                     * 域名标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_labels;
+                    bool m_labelsHasBeenSet;
 
                 };
             }

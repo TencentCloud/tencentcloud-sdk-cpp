@@ -337,6 +337,64 @@ namespace TencentCloud
                      */
                     bool AuthorizationTypeHasBeenSet() const;
 
+                    /**
+                     * 获取子企业激活状态。值如下：
+<ul>
+  <li>**0**： 未激活</li>
+  <li>**1**： 已激活</li>
+</ul>
+                     * @return ActiveStatus 子企业激活状态。值如下：
+<ul>
+  <li>**0**： 未激活</li>
+  <li>**1**： 已激活</li>
+</ul>
+                     * 
+                     */
+                    int64_t GetActiveStatus() const;
+
+                    /**
+                     * 设置子企业激活状态。值如下：
+<ul>
+  <li>**0**： 未激活</li>
+  <li>**1**： 已激活</li>
+</ul>
+                     * @param _activeStatus 子企业激活状态。值如下：
+<ul>
+  <li>**0**： 未激活</li>
+  <li>**1**： 已激活</li>
+</ul>
+                     * 
+                     */
+                    void SetActiveStatus(const int64_t& _activeStatus);
+
+                    /**
+                     * 判断参数 ActiveStatus 是否已赋值
+                     * @return ActiveStatus 是否已赋值
+                     * 
+                     */
+                    bool ActiveStatusHasBeenSet() const;
+
+                    /**
+                     * 获取账号过期时间，时间戳
+                     * @return LicenseExpireTime 账号过期时间，时间戳
+                     * 
+                     */
+                    int64_t GetLicenseExpireTime() const;
+
+                    /**
+                     * 设置账号过期时间，时间戳
+                     * @param _licenseExpireTime 账号过期时间，时间戳
+                     * 
+                     */
+                    void SetLicenseExpireTime(const int64_t& _licenseExpireTime);
+
+                    /**
+                     * 判断参数 LicenseExpireTime 是否已赋值
+                     * @return LicenseExpireTime 是否已赋值
+                     * 
+                     */
+                    bool LicenseExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -419,6 +477,22 @@ namespace TencentCloud
                      */
                     std::string m_authorizationType;
                     bool m_authorizationTypeHasBeenSet;
+
+                    /**
+                     * 子企业激活状态。值如下：
+<ul>
+  <li>**0**： 未激活</li>
+  <li>**1**： 已激活</li>
+</ul>
+                     */
+                    int64_t m_activeStatus;
+                    bool m_activeStatusHasBeenSet;
+
+                    /**
+                     * 账号过期时间，时间戳
+                     */
+                    int64_t m_licenseExpireTime;
+                    bool m_licenseExpireTimeHasBeenSet;
 
                 };
             }

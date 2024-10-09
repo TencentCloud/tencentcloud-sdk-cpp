@@ -2147,6 +2147,49 @@ EssbasicClient::CreateChannelOrganizationInfoChangeUrlOutcomeCallable EssbasicCl
     return task->get_future();
 }
 
+EssbasicClient::CreateChannelSubOrganizationActiveOutcome EssbasicClient::CreateChannelSubOrganizationActive(const CreateChannelSubOrganizationActiveRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateChannelSubOrganizationActive");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateChannelSubOrganizationActiveResponse rsp = CreateChannelSubOrganizationActiveResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateChannelSubOrganizationActiveOutcome(rsp);
+        else
+            return CreateChannelSubOrganizationActiveOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateChannelSubOrganizationActiveOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateChannelSubOrganizationActiveAsync(const CreateChannelSubOrganizationActiveRequest& request, const CreateChannelSubOrganizationActiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateChannelSubOrganizationActive(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateChannelSubOrganizationActiveOutcomeCallable EssbasicClient::CreateChannelSubOrganizationActiveCallable(const CreateChannelSubOrganizationActiveRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateChannelSubOrganizationActiveOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateChannelSubOrganizationActive(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateConsoleLoginUrlOutcome EssbasicClient::CreateConsoleLoginUrl(const CreateConsoleLoginUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConsoleLoginUrl");

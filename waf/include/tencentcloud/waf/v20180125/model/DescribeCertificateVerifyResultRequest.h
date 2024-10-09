@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取证书类型。 0：仅配置HTTP监听端口，没有证书 1：证书来源为自有证书 2：证书来源为托管证书
-                     * @return CertType 证书类型。 0：仅配置HTTP监听端口，没有证书 1：证书来源为自有证书 2：证书来源为托管证书
+                     * 获取证书类型。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书
+                     * @return CertType 证书类型。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书
                      * 
                      */
                     int64_t GetCertType() const;
 
                     /**
-                     * 设置证书类型。 0：仅配置HTTP监听端口，没有证书 1：证书来源为自有证书 2：证书来源为托管证书
-                     * @param _certType 证书类型。 0：仅配置HTTP监听端口，没有证书 1：证书来源为自有证书 2：证书来源为托管证书
+                     * 设置证书类型。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书
+                     * @param _certType 证书类型。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书
                      * 
                      */
                     void SetCertType(const int64_t& _certType);
@@ -147,6 +147,132 @@ namespace TencentCloud
                      */
                     bool PrivateKeyHasBeenSet() const;
 
+                    /**
+                     * 获取国密证书类型。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
+                     * @return GmCertType 国密证书类型。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
+                     * 
+                     */
+                    int64_t GetGmCertType() const;
+
+                    /**
+                     * 设置国密证书类型。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
+                     * @param _gmCertType 国密证书类型。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
+                     * 
+                     */
+                    void SetGmCertType(const int64_t& _gmCertType);
+
+                    /**
+                     * 判断参数 GmCertType 是否已赋值
+                     * @return GmCertType 是否已赋值
+                     * 
+                     */
+                    bool GmCertTypeHasBeenSet() const;
+
+                    /**
+                     * 获取GmCertType为1时，需要填充此参数，表示自有国密证书的证书链
+                     * @return GmCert GmCertType为1时，需要填充此参数，表示自有国密证书的证书链
+                     * 
+                     */
+                    std::string GetGmCert() const;
+
+                    /**
+                     * 设置GmCertType为1时，需要填充此参数，表示自有国密证书的证书链
+                     * @param _gmCert GmCertType为1时，需要填充此参数，表示自有国密证书的证书链
+                     * 
+                     */
+                    void SetGmCert(const std::string& _gmCert);
+
+                    /**
+                     * 判断参数 GmCert 是否已赋值
+                     * @return GmCert 是否已赋值
+                     * 
+                     */
+                    bool GmCertHasBeenSet() const;
+
+                    /**
+                     * 获取GmCertType为1时，需要填充此参数，表示自有国密证书的私钥
+                     * @return GmPrivateKey GmCertType为1时，需要填充此参数，表示自有国密证书的私钥
+                     * 
+                     */
+                    std::string GetGmPrivateKey() const;
+
+                    /**
+                     * 设置GmCertType为1时，需要填充此参数，表示自有国密证书的私钥
+                     * @param _gmPrivateKey GmCertType为1时，需要填充此参数，表示自有国密证书的私钥
+                     * 
+                     */
+                    void SetGmPrivateKey(const std::string& _gmPrivateKey);
+
+                    /**
+                     * 判断参数 GmPrivateKey 是否已赋值
+                     * @return GmPrivateKey 是否已赋值
+                     * 
+                     */
+                    bool GmPrivateKeyHasBeenSet() const;
+
+                    /**
+                     * 获取GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书
+                     * @return GmEncCert GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书
+                     * 
+                     */
+                    std::string GetGmEncCert() const;
+
+                    /**
+                     * 设置GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书
+                     * @param _gmEncCert GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书
+                     * 
+                     */
+                    void SetGmEncCert(const std::string& _gmEncCert);
+
+                    /**
+                     * 判断参数 GmEncCert 是否已赋值
+                     * @return GmEncCert 是否已赋值
+                     * 
+                     */
+                    bool GmEncCertHasBeenSet() const;
+
+                    /**
+                     * 获取GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥
+                     * @return GmEncPrivateKey GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥
+                     * 
+                     */
+                    std::string GetGmEncPrivateKey() const;
+
+                    /**
+                     * 设置GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥
+                     * @param _gmEncPrivateKey GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥
+                     * 
+                     */
+                    void SetGmEncPrivateKey(const std::string& _gmEncPrivateKey);
+
+                    /**
+                     * 判断参数 GmEncPrivateKey 是否已赋值
+                     * @return GmEncPrivateKey 是否已赋值
+                     * 
+                     */
+                    bool GmEncPrivateKeyHasBeenSet() const;
+
+                    /**
+                     * 获取GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
+                     * @return GmSSLId GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
+                     * 
+                     */
+                    std::string GetGmSSLId() const;
+
+                    /**
+                     * 设置GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
+                     * @param _gmSSLId GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
+                     * 
+                     */
+                    void SetGmSSLId(const std::string& _gmSSLId);
+
+                    /**
+                     * 判断参数 GmSSLId 是否已赋值
+                     * @return GmSSLId 是否已赋值
+                     * 
+                     */
+                    bool GmSSLIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,7 +282,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 证书类型。 0：仅配置HTTP监听端口，没有证书 1：证书来源为自有证书 2：证书来源为托管证书
+                     * 证书类型。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书
                      */
                     int64_t m_certType;
                     bool m_certTypeHasBeenSet;
@@ -178,6 +304,42 @@ namespace TencentCloud
                      */
                     std::string m_privateKey;
                     bool m_privateKeyHasBeenSet;
+
+                    /**
+                     * 国密证书类型。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
+                     */
+                    int64_t m_gmCertType;
+                    bool m_gmCertTypeHasBeenSet;
+
+                    /**
+                     * GmCertType为1时，需要填充此参数，表示自有国密证书的证书链
+                     */
+                    std::string m_gmCert;
+                    bool m_gmCertHasBeenSet;
+
+                    /**
+                     * GmCertType为1时，需要填充此参数，表示自有国密证书的私钥
+                     */
+                    std::string m_gmPrivateKey;
+                    bool m_gmPrivateKeyHasBeenSet;
+
+                    /**
+                     * GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书
+                     */
+                    std::string m_gmEncCert;
+                    bool m_gmEncCertHasBeenSet;
+
+                    /**
+                     * GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥
+                     */
+                    std::string m_gmEncPrivateKey;
+                    bool m_gmEncPrivateKeyHasBeenSet;
+
+                    /**
+                     * GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
+                     */
+                    std::string m_gmSSLId;
+                    bool m_gmSSLIdHasBeenSet;
 
                 };
             }

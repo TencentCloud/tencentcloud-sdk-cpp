@@ -99,6 +99,20 @@ namespace TencentCloud
                      */
                     bool ResultVideoUrlHasBeenSet() const;
 
+                    /**
+                     * 获取掩码视频链接
+                     * @return MaskVideoUrl 掩码视频链接
+                     * 
+                     */
+                    std::string GetMaskVideoUrl() const;
+
+                    /**
+                     * 判断参数 MaskVideoUrl 是否已赋值
+                     * @return MaskVideoUrl 是否已赋值
+                     * 
+                     */
+                    bool MaskVideoUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +138,12 @@ namespace TencentCloud
                      */
                     std::string m_resultVideoUrl;
                     bool m_resultVideoUrlHasBeenSet;
+
+                    /**
+                     * 掩码视频链接
+                     */
+                    std::string m_maskVideoUrl;
+                    bool m_maskVideoUrlHasBeenSet;
 
                 };
             }

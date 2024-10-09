@@ -55,7 +55,8 @@ DomainInfo::DomainInfo() :
     m_srcListHasBeenSet(false),
     m_upstreamDomainListHasBeenSet(false),
     m_sgIDHasBeenSet(false),
-    m_accessStatusHasBeenSet(false)
+    m_accessStatusHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
 }
 
@@ -446,6 +447,19 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
         m_accessStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Labels") && !value["Labels"].IsNull())
+    {
+        if (!value["Labels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.Labels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Labels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_labels.push_back((*itr).GetString());
+        }
+        m_labelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -765,6 +779,19 @@ void DomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AccessStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accessStatus, allocator);
+    }
+
+    if (m_labelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Labels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1328,5 +1355,21 @@ void DomainInfo::SetAccessStatus(const int64_t& _accessStatus)
 bool DomainInfo::AccessStatusHasBeenSet() const
 {
     return m_accessStatusHasBeenSet;
+}
+
+vector<string> DomainInfo::GetLabels() const
+{
+    return m_labels;
+}
+
+void DomainInfo::SetLabels(const vector<string>& _labels)
+{
+    m_labels = _labels;
+    m_labelsHasBeenSet = true;
+}
+
+bool DomainInfo::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
 }
 

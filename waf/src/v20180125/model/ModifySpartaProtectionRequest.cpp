@@ -59,7 +59,14 @@ ModifySpartaProtectionRequest::ModifySpartaProtectionRequest() :
     m_noteHasBeenSet(false),
     m_upstreamHostHasBeenSet(false),
     m_proxyBufferHasBeenSet(false),
-    m_probeStatusHasBeenSet(false)
+    m_probeStatusHasBeenSet(false),
+    m_gmTypeHasBeenSet(false),
+    m_gmCertTypeHasBeenSet(false),
+    m_gmCertHasBeenSet(false),
+    m_gmPrivateKeyHasBeenSet(false),
+    m_gmEncCertHasBeenSet(false),
+    m_gmEncPrivateKeyHasBeenSet(false),
+    m_gmSSLIdHasBeenSet(false)
 {
 }
 
@@ -391,6 +398,62 @@ string ModifySpartaProtectionRequest::ToJsonString() const
         string key = "ProbeStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_probeStatus, allocator);
+    }
+
+    if (m_gmTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GmType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gmType, allocator);
+    }
+
+    if (m_gmCertTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GmCertType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gmCertType, allocator);
+    }
+
+    if (m_gmCertHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GmCert";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gmCert.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gmPrivateKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GmPrivateKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gmPrivateKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gmEncCertHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GmEncCert";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gmEncCert.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gmEncPrivateKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GmEncPrivateKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gmEncPrivateKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gmSSLIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GmSSLId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gmSSLId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -991,6 +1054,118 @@ void ModifySpartaProtectionRequest::SetProbeStatus(const int64_t& _probeStatus)
 bool ModifySpartaProtectionRequest::ProbeStatusHasBeenSet() const
 {
     return m_probeStatusHasBeenSet;
+}
+
+int64_t ModifySpartaProtectionRequest::GetGmType() const
+{
+    return m_gmType;
+}
+
+void ModifySpartaProtectionRequest::SetGmType(const int64_t& _gmType)
+{
+    m_gmType = _gmType;
+    m_gmTypeHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::GmTypeHasBeenSet() const
+{
+    return m_gmTypeHasBeenSet;
+}
+
+int64_t ModifySpartaProtectionRequest::GetGmCertType() const
+{
+    return m_gmCertType;
+}
+
+void ModifySpartaProtectionRequest::SetGmCertType(const int64_t& _gmCertType)
+{
+    m_gmCertType = _gmCertType;
+    m_gmCertTypeHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::GmCertTypeHasBeenSet() const
+{
+    return m_gmCertTypeHasBeenSet;
+}
+
+string ModifySpartaProtectionRequest::GetGmCert() const
+{
+    return m_gmCert;
+}
+
+void ModifySpartaProtectionRequest::SetGmCert(const string& _gmCert)
+{
+    m_gmCert = _gmCert;
+    m_gmCertHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::GmCertHasBeenSet() const
+{
+    return m_gmCertHasBeenSet;
+}
+
+string ModifySpartaProtectionRequest::GetGmPrivateKey() const
+{
+    return m_gmPrivateKey;
+}
+
+void ModifySpartaProtectionRequest::SetGmPrivateKey(const string& _gmPrivateKey)
+{
+    m_gmPrivateKey = _gmPrivateKey;
+    m_gmPrivateKeyHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::GmPrivateKeyHasBeenSet() const
+{
+    return m_gmPrivateKeyHasBeenSet;
+}
+
+string ModifySpartaProtectionRequest::GetGmEncCert() const
+{
+    return m_gmEncCert;
+}
+
+void ModifySpartaProtectionRequest::SetGmEncCert(const string& _gmEncCert)
+{
+    m_gmEncCert = _gmEncCert;
+    m_gmEncCertHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::GmEncCertHasBeenSet() const
+{
+    return m_gmEncCertHasBeenSet;
+}
+
+string ModifySpartaProtectionRequest::GetGmEncPrivateKey() const
+{
+    return m_gmEncPrivateKey;
+}
+
+void ModifySpartaProtectionRequest::SetGmEncPrivateKey(const string& _gmEncPrivateKey)
+{
+    m_gmEncPrivateKey = _gmEncPrivateKey;
+    m_gmEncPrivateKeyHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::GmEncPrivateKeyHasBeenSet() const
+{
+    return m_gmEncPrivateKeyHasBeenSet;
+}
+
+string ModifySpartaProtectionRequest::GetGmSSLId() const
+{
+    return m_gmSSLId;
+}
+
+void ModifySpartaProtectionRequest::SetGmSSLId(const string& _gmSSLId)
+{
+    m_gmSSLId = _gmSSLId;
+    m_gmSSLIdHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::GmSSLIdHasBeenSet() const
+{
+    return m_gmSSLIdHasBeenSet;
 }
 
 

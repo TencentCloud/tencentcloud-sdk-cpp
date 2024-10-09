@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID	
-                     * @return InstanceKey 实例ID	
+                     * 获取业务系统ID	
+                     * @return InstanceKey 业务系统ID	
                      * 
                      */
                     std::string GetInstanceKey() const;
 
                     /**
-                     * 设置实例ID	
-                     * @param _instanceKey 实例ID	
+                     * 设置业务系统ID	
+                     * @param _instanceKey 业务系统ID	
                      * 
                      */
                     void SetInstanceKey(const std::string& _instanceKey);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool InstanceKeyHasBeenSet() const;
 
                     /**
-                     * 获取服务名	
-                     * @return ServiceName 服务名	
+                     * 获取应用名	
+                     * @return ServiceName 应用名	
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置服务名	
-                     * @param _serviceName 服务名	
+                     * 设置应用名	
+                     * @param _serviceName 应用名	
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool OperationNameFilterHasBeenSet() const;
 
                     /**
-                     * 获取异常过滤
-                     * @return ExceptionFilter 异常过滤
+                     * 获取错误类型过滤
+                     * @return ExceptionFilter 错误类型过滤
                      * 
                      */
                     std::string GetExceptionFilter() const;
 
                     /**
-                     * 设置异常过滤
-                     * @param _exceptionFilter 异常过滤
+                     * 设置错误类型过滤
+                     * @param _exceptionFilter 错误类型过滤
                      * 
                      */
                     void SetExceptionFilter(const std::string& _exceptionFilter);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool ExceptionFilterHasBeenSet() const;
 
                     /**
-                     * 获取错误码过滤	
-                     * @return ErrorCodeFilter 错误码过滤	
+                     * 获取HTTP状态码过滤
+                     * @return ErrorCodeFilter HTTP状态码过滤
                      * 
                      */
                     std::string GetErrorCodeFilter() const;
 
                     /**
-                     * 设置错误码过滤	
-                     * @param _errorCodeFilter 错误码过滤	
+                     * 设置HTTP状态码过滤
+                     * @param _errorCodeFilter HTTP状态码过滤
                      * 
                      */
                     void SetErrorCodeFilter(const std::string& _errorCodeFilter);
@@ -153,18 +153,18 @@ namespace TencentCloud
                     bool ErrorCodeFilterHasBeenSet() const;
 
                     /**
-                     * 获取应用诊断开关
+                     * 获取应用诊断开关（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EventEnable 应用诊断开关
+                     * @return EventEnable 应用诊断开关（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEventEnable() const;
 
                     /**
-                     * 设置应用诊断开关
+                     * 设置应用诊断开关（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _eventEnable 应用诊断开关
+                     * @param _eventEnable 应用诊断开关（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -283,18 +283,18 @@ namespace TencentCloud
                     bool IsRelatedLogHasBeenSet() const;
 
                     /**
-                     * 获取日志来源	
+                     * 获取日志源	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogSource 日志来源	
+                     * @return LogSource 日志源	
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogSource() const;
 
                     /**
-                     * 设置日志来源	
+                     * 设置日志源	
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _logSource 日志来源	
+                     * @param _logSource 日志源	
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -308,15 +308,15 @@ namespace TencentCloud
                     bool LogSourceHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志集 
-                     * @return LogSet CLS日志集 
+                     * 获取日志集 
+                     * @return LogSet 日志集 
                      * 
                      */
                     std::string GetLogSet() const;
 
                     /**
-                     * 设置CLS日志集 
-                     * @param _logSet CLS日志集 
+                     * 设置日志集 
+                     * @param _logSet 日志集 
                      * 
                      */
                     void SetLogSet(const std::string& _logSet);
@@ -329,15 +329,15 @@ namespace TencentCloud
                     bool LogSetHasBeenSet() const;
 
                     /**
-                     * 获取日志主题ID
-                     * @return LogTopicID 日志主题ID
+                     * 获取日志主题
+                     * @return LogTopicID 日志主题
                      * 
                      */
                     std::string GetLogTopicID() const;
 
                     /**
-                     * 设置日志主题ID
-                     * @param _logTopicID 日志主题ID
+                     * 设置日志主题
+                     * @param _logTopicID 日志主题
                      * 
                      */
                     void SetLogTopicID(const std::string& _logTopicID);
@@ -350,15 +350,15 @@ namespace TencentCloud
                     bool LogTopicIDHasBeenSet() const;
 
                     /**
-                     * 获取线程剖析开关
-                     * @return SnapshotEnable 线程剖析开关
+                     * 获取方法栈快照开关 true 开启 false 关闭
+                     * @return SnapshotEnable 方法栈快照开关 true 开启 false 关闭
                      * 
                      */
                     bool GetSnapshotEnable() const;
 
                     /**
-                     * 设置线程剖析开关
-                     * @param _snapshotEnable 线程剖析开关
+                     * 设置方法栈快照开关 true 开启 false 关闭
+                     * @param _snapshotEnable 方法栈快照开关 true 开启 false 关闭
                      * 
                      */
                     void SetSnapshotEnable(const bool& _snapshotEnable);
@@ -371,15 +371,15 @@ namespace TencentCloud
                     bool SnapshotEnableHasBeenSet() const;
 
                     /**
-                     * 获取线程剖析超时阈值	
-                     * @return SnapshotTimeout 线程剖析超时阈值	
+                     * 获取慢调用监听触发阈值
+                     * @return SnapshotTimeout 慢调用监听触发阈值
                      * 
                      */
                     int64_t GetSnapshotTimeout() const;
 
                     /**
-                     * 设置线程剖析超时阈值	
-                     * @param _snapshotTimeout 线程剖析超时阈值	
+                     * 设置慢调用监听触发阈值
+                     * @param _snapshotTimeout 慢调用监听触发阈值
                      * 
                      */
                     void SetSnapshotTimeout(const int64_t& _snapshotTimeout);
@@ -392,15 +392,15 @@ namespace TencentCloud
                     bool SnapshotTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取探针开启开关
-                     * @return AgentEnable 探针开启开关
+                     * 获取探针总开关
+                     * @return AgentEnable 探针总开关
                      * 
                      */
                     bool GetAgentEnable() const;
 
                     /**
-                     * 设置探针开启开关
-                     * @param _agentEnable 探针开启开关
+                     * 设置探针总开关
+                     * @param _agentEnable 探针总开关
                      * 
                      */
                     void SetAgentEnable(const bool& _agentEnable);
@@ -413,18 +413,18 @@ namespace TencentCloud
                     bool AgentEnableHasBeenSet() const;
 
                     /**
-                     * 获取组件列表开关
+                     * 获取组件列表开关（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstrumentList 组件列表开关
+                     * @return InstrumentList 组件列表开关（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Instrument> GetInstrumentList() const;
 
                     /**
-                     * 设置组件列表开关
+                     * 设置组件列表开关（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instrumentList 组件列表开关
+                     * @param _instrumentList 组件列表开关（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -438,15 +438,15 @@ namespace TencentCloud
                     bool InstrumentListHasBeenSet() const;
 
                     /**
-                     * 获取链路压缩开关
-                     * @return TraceSquash 链路压缩开关
+                     * 获取链路压缩开关（已废弃）
+                     * @return TraceSquash 链路压缩开关（已废弃）
                      * 
                      */
                     bool GetTraceSquash() const;
 
                     /**
-                     * 设置链路压缩开关
-                     * @param _traceSquash 链路压缩开关
+                     * 设置链路压缩开关（已废弃）
+                     * @param _traceSquash 链路压缩开关（已废弃）
                      * 
                      */
                     void SetTraceSquash(const bool& _traceSquash);
@@ -461,13 +461,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID	
+                     * 业务系统ID	
                      */
                     std::string m_instanceKey;
                     bool m_instanceKeyHasBeenSet;
 
                     /**
-                     * 服务名	
+                     * 应用名	
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
@@ -479,19 +479,19 @@ namespace TencentCloud
                     bool m_operationNameFilterHasBeenSet;
 
                     /**
-                     * 异常过滤
+                     * 错误类型过滤
                      */
                     std::string m_exceptionFilter;
                     bool m_exceptionFilterHasBeenSet;
 
                     /**
-                     * 错误码过滤	
+                     * HTTP状态码过滤
                      */
                     std::string m_errorCodeFilter;
                     bool m_errorCodeFilterHasBeenSet;
 
                     /**
-                     * 应用诊断开关
+                     * 应用诊断开关（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_eventEnable;
@@ -528,51 +528,51 @@ namespace TencentCloud
                     bool m_isRelatedLogHasBeenSet;
 
                     /**
-                     * 日志来源	
+                     * 日志源	
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logSource;
                     bool m_logSourceHasBeenSet;
 
                     /**
-                     * CLS日志集 
+                     * 日志集 
                      */
                     std::string m_logSet;
                     bool m_logSetHasBeenSet;
 
                     /**
-                     * 日志主题ID
+                     * 日志主题
                      */
                     std::string m_logTopicID;
                     bool m_logTopicIDHasBeenSet;
 
                     /**
-                     * 线程剖析开关
+                     * 方法栈快照开关 true 开启 false 关闭
                      */
                     bool m_snapshotEnable;
                     bool m_snapshotEnableHasBeenSet;
 
                     /**
-                     * 线程剖析超时阈值	
+                     * 慢调用监听触发阈值
                      */
                     int64_t m_snapshotTimeout;
                     bool m_snapshotTimeoutHasBeenSet;
 
                     /**
-                     * 探针开启开关
+                     * 探针总开关
                      */
                     bool m_agentEnable;
                     bool m_agentEnableHasBeenSet;
 
                     /**
-                     * 组件列表开关
+                     * 组件列表开关（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Instrument> m_instrumentList;
                     bool m_instrumentListHasBeenSet;
 
                     /**
-                     * 链路压缩开关
+                     * 链路压缩开关（已废弃）
                      */
                     bool m_traceSquash;
                     bool m_traceSquashHasBeenSet;

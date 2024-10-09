@@ -42,7 +42,8 @@ ClbObject::ClbObject() :
     m_ipHeadersHasBeenSet(false),
     m_botStatusHasBeenSet(false),
     m_apiStatusHasBeenSet(false),
-    m_objectFlowModeHasBeenSet(false)
+    m_objectFlowModeHasBeenSet(false),
+    m_numericalVpcIdHasBeenSet(false)
 {
 }
 
@@ -283,6 +284,16 @@ CoreInternalOutcome ClbObject::Deserialize(const rapidjson::Value &value)
         m_objectFlowModeHasBeenSet = true;
     }
 
+    if (value.HasMember("NumericalVpcId") && !value["NumericalVpcId"].IsNull())
+    {
+        if (!value["NumericalVpcId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbObject.NumericalVpcId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_numericalVpcId = value["NumericalVpcId"].GetInt64();
+        m_numericalVpcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -484,6 +495,14 @@ void ClbObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ObjectFlowMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_objectFlowMode, allocator);
+    }
+
+    if (m_numericalVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NumericalVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_numericalVpcId, allocator);
     }
 
 }
@@ -839,5 +858,21 @@ void ClbObject::SetObjectFlowMode(const int64_t& _objectFlowMode)
 bool ClbObject::ObjectFlowModeHasBeenSet() const
 {
     return m_objectFlowModeHasBeenSet;
+}
+
+int64_t ClbObject::GetNumericalVpcId() const
+{
+    return m_numericalVpcId;
+}
+
+void ClbObject::SetNumericalVpcId(const int64_t& _numericalVpcId)
+{
+    m_numericalVpcId = _numericalVpcId;
+    m_numericalVpcIdHasBeenSet = true;
+}
+
+bool ClbObject::NumericalVpcIdHasBeenSet() const
+{
+    return m_numericalVpcIdHasBeenSet;
 }
 

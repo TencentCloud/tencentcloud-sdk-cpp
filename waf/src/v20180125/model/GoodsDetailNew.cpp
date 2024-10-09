@@ -32,7 +32,8 @@ GoodsDetailNew::GoodsDetailNew() :
     m_labelCountsHasBeenSet(false),
     m_curDeadlineHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_microVersionHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,16 @@ CoreInternalOutcome GoodsDetailNew::Deserialize(const rapidjson::Value &value)
         m_resourceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("MicroVersion") && !value["MicroVersion"].IsNull())
+    {
+        if (!value["MicroVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GoodsDetailNew.MicroVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_microVersion = string(value["MicroVersion"].GetString());
+        m_microVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +289,14 @@ void GoodsDetailNew::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_microVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MicroVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_microVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -473,5 +492,21 @@ void GoodsDetailNew::SetResourceId(const string& _resourceId)
 bool GoodsDetailNew::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+string GoodsDetailNew::GetMicroVersion() const
+{
+    return m_microVersion;
+}
+
+void GoodsDetailNew::SetMicroVersion(const string& _microVersion)
+{
+    m_microVersion = _microVersion;
+    m_microVersionHasBeenSet = true;
+}
+
+bool GoodsDetailNew::MicroVersionHasBeenSet() const
+{
+    return m_microVersionHasBeenSet;
 }
 

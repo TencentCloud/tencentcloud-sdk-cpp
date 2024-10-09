@@ -34,7 +34,8 @@ ClbDomainsInfo::ClbDomainsInfo() :
     m_ipHeadersHasBeenSet(false),
     m_cdcClustersHasBeenSet(false),
     m_cloudTypeHasBeenSet(false),
-    m_noteHasBeenSet(false)
+    m_noteHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,19 @@ CoreInternalOutcome ClbDomainsInfo::Deserialize(const rapidjson::Value &value)
         m_noteHasBeenSet = true;
     }
 
+    if (value.HasMember("Labels") && !value["Labels"].IsNull())
+    {
+        if (!value["Labels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClbDomainsInfo.Labels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Labels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_labels.push_back((*itr).GetString());
+        }
+        m_labelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -325,6 +339,19 @@ void ClbDomainsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Note";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Labels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -552,5 +579,21 @@ void ClbDomainsInfo::SetNote(const string& _note)
 bool ClbDomainsInfo::NoteHasBeenSet() const
 {
     return m_noteHasBeenSet;
+}
+
+vector<string> ClbDomainsInfo::GetLabels() const
+{
+    return m_labels;
+}
+
+void ClbDomainsInfo::SetLabels(const vector<string>& _labels)
+{
+    m_labels = _labels;
+    m_labelsHasBeenSet = true;
+}
+
+bool ClbDomainsInfo::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
 }
 

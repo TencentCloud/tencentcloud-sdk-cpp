@@ -62,7 +62,15 @@ DomainsPartInfo::DomainsPartInfo() :
     m_noteHasBeenSet(false),
     m_upstreamHostHasBeenSet(false),
     m_levelHasBeenSet(false),
-    m_proxyBufferHasBeenSet(false)
+    m_proxyBufferHasBeenSet(false),
+    m_gmTypeHasBeenSet(false),
+    m_gmCertTypeHasBeenSet(false),
+    m_gmCertHasBeenSet(false),
+    m_gmPrivateKeyHasBeenSet(false),
+    m_gmEncCertHasBeenSet(false),
+    m_gmEncPrivateKeyHasBeenSet(false),
+    m_gmSSLIdHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
 }
 
@@ -513,6 +521,89 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         m_proxyBufferHasBeenSet = true;
     }
 
+    if (value.HasMember("GmType") && !value["GmType"].IsNull())
+    {
+        if (!value["GmType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.GmType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gmType = value["GmType"].GetInt64();
+        m_gmTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GmCertType") && !value["GmCertType"].IsNull())
+    {
+        if (!value["GmCertType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.GmCertType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gmCertType = value["GmCertType"].GetInt64();
+        m_gmCertTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GmCert") && !value["GmCert"].IsNull())
+    {
+        if (!value["GmCert"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.GmCert` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gmCert = string(value["GmCert"].GetString());
+        m_gmCertHasBeenSet = true;
+    }
+
+    if (value.HasMember("GmPrivateKey") && !value["GmPrivateKey"].IsNull())
+    {
+        if (!value["GmPrivateKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.GmPrivateKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gmPrivateKey = string(value["GmPrivateKey"].GetString());
+        m_gmPrivateKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("GmEncCert") && !value["GmEncCert"].IsNull())
+    {
+        if (!value["GmEncCert"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.GmEncCert` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gmEncCert = string(value["GmEncCert"].GetString());
+        m_gmEncCertHasBeenSet = true;
+    }
+
+    if (value.HasMember("GmEncPrivateKey") && !value["GmEncPrivateKey"].IsNull())
+    {
+        if (!value["GmEncPrivateKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.GmEncPrivateKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gmEncPrivateKey = string(value["GmEncPrivateKey"].GetString());
+        m_gmEncPrivateKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("GmSSLId") && !value["GmSSLId"].IsNull())
+    {
+        if (!value["GmSSLId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.GmSSLId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gmSSLId = string(value["GmSSLId"].GetString());
+        m_gmSSLIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Labels") && !value["Labels"].IsNull())
+    {
+        if (!value["Labels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.Labels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Labels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_labels.push_back((*itr).GetString());
+        }
+        m_labelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -881,6 +972,75 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ProxyBuffer";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_proxyBuffer, allocator);
+    }
+
+    if (m_gmTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GmType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gmType, allocator);
+    }
+
+    if (m_gmCertTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GmCertType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gmCertType, allocator);
+    }
+
+    if (m_gmCertHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GmCert";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gmCert.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gmPrivateKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GmPrivateKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gmPrivateKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gmEncCertHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GmEncCert";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gmEncCert.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gmEncPrivateKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GmEncPrivateKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gmEncPrivateKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gmSSLIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GmSSLId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gmSSLId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Labels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1556,5 +1716,133 @@ void DomainsPartInfo::SetProxyBuffer(const int64_t& _proxyBuffer)
 bool DomainsPartInfo::ProxyBufferHasBeenSet() const
 {
     return m_proxyBufferHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetGmType() const
+{
+    return m_gmType;
+}
+
+void DomainsPartInfo::SetGmType(const int64_t& _gmType)
+{
+    m_gmType = _gmType;
+    m_gmTypeHasBeenSet = true;
+}
+
+bool DomainsPartInfo::GmTypeHasBeenSet() const
+{
+    return m_gmTypeHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetGmCertType() const
+{
+    return m_gmCertType;
+}
+
+void DomainsPartInfo::SetGmCertType(const int64_t& _gmCertType)
+{
+    m_gmCertType = _gmCertType;
+    m_gmCertTypeHasBeenSet = true;
+}
+
+bool DomainsPartInfo::GmCertTypeHasBeenSet() const
+{
+    return m_gmCertTypeHasBeenSet;
+}
+
+string DomainsPartInfo::GetGmCert() const
+{
+    return m_gmCert;
+}
+
+void DomainsPartInfo::SetGmCert(const string& _gmCert)
+{
+    m_gmCert = _gmCert;
+    m_gmCertHasBeenSet = true;
+}
+
+bool DomainsPartInfo::GmCertHasBeenSet() const
+{
+    return m_gmCertHasBeenSet;
+}
+
+string DomainsPartInfo::GetGmPrivateKey() const
+{
+    return m_gmPrivateKey;
+}
+
+void DomainsPartInfo::SetGmPrivateKey(const string& _gmPrivateKey)
+{
+    m_gmPrivateKey = _gmPrivateKey;
+    m_gmPrivateKeyHasBeenSet = true;
+}
+
+bool DomainsPartInfo::GmPrivateKeyHasBeenSet() const
+{
+    return m_gmPrivateKeyHasBeenSet;
+}
+
+string DomainsPartInfo::GetGmEncCert() const
+{
+    return m_gmEncCert;
+}
+
+void DomainsPartInfo::SetGmEncCert(const string& _gmEncCert)
+{
+    m_gmEncCert = _gmEncCert;
+    m_gmEncCertHasBeenSet = true;
+}
+
+bool DomainsPartInfo::GmEncCertHasBeenSet() const
+{
+    return m_gmEncCertHasBeenSet;
+}
+
+string DomainsPartInfo::GetGmEncPrivateKey() const
+{
+    return m_gmEncPrivateKey;
+}
+
+void DomainsPartInfo::SetGmEncPrivateKey(const string& _gmEncPrivateKey)
+{
+    m_gmEncPrivateKey = _gmEncPrivateKey;
+    m_gmEncPrivateKeyHasBeenSet = true;
+}
+
+bool DomainsPartInfo::GmEncPrivateKeyHasBeenSet() const
+{
+    return m_gmEncPrivateKeyHasBeenSet;
+}
+
+string DomainsPartInfo::GetGmSSLId() const
+{
+    return m_gmSSLId;
+}
+
+void DomainsPartInfo::SetGmSSLId(const string& _gmSSLId)
+{
+    m_gmSSLId = _gmSSLId;
+    m_gmSSLIdHasBeenSet = true;
+}
+
+bool DomainsPartInfo::GmSSLIdHasBeenSet() const
+{
+    return m_gmSSLIdHasBeenSet;
+}
+
+vector<string> DomainsPartInfo::GetLabels() const
+{
+    return m_labels;
+}
+
+void DomainsPartInfo::SetLabels(const vector<string>& _labels)
+{
+    m_labels = _labels;
+    m_labelsHasBeenSet = true;
+}
+
+bool DomainsPartInfo::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
 }
 

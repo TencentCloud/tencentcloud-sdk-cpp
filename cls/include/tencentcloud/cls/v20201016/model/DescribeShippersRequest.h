@@ -122,6 +122,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取控制Filters相关字段是否为精确匹配。  0: 默认值，shipperName模糊匹配 1: shipperName 精确匹配
+                     * @return PreciseSearch 控制Filters相关字段是否为精确匹配。  0: 默认值，shipperName模糊匹配 1: shipperName 精确匹配
+                     * 
+                     */
+                    uint64_t GetPreciseSearch() const;
+
+                    /**
+                     * 设置控制Filters相关字段是否为精确匹配。  0: 默认值，shipperName模糊匹配 1: shipperName 精确匹配
+                     * @param _preciseSearch 控制Filters相关字段是否为精确匹配。  0: 默认值，shipperName模糊匹配 1: shipperName 精确匹配
+                     * 
+                     */
+                    void SetPreciseSearch(const uint64_t& _preciseSearch);
+
+                    /**
+                     * 判断参数 PreciseSearch 是否已赋值
+                     * @return PreciseSearch 是否已赋值
+                     * 
+                     */
+                    bool PreciseSearchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,6 +166,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 控制Filters相关字段是否为精确匹配。  0: 默认值，shipperName模糊匹配 1: shipperName 精确匹配
+                     */
+                    uint64_t m_preciseSearch;
+                    bool m_preciseSearchHasBeenSet;
 
                 };
             }
