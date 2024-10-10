@@ -286,6 +286,27 @@ BYOL: 自带许可（Bring Your Own License）
                      */
                     bool BootModeHasBeenSet() const;
 
+                    /**
+                     * 获取 镜像族
+                     * @return ImageFamily  镜像族
+                     * 
+                     */
+                    std::string GetImageFamily() const;
+
+                    /**
+                     * 设置 镜像族
+                     * @param _imageFamily  镜像族
+                     * 
+                     */
+                    void SetImageFamily(const std::string& _imageFamily);
+
+                    /**
+                     * 判断参数 ImageFamily 是否已赋值
+                     * @return ImageFamily 是否已赋值
+                     * 
+                     */
+                    bool ImageFamilyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -356,6 +377,12 @@ BYOL: 自带许可（Bring Your Own License）
                      */
                     std::string m_bootMode;
                     bool m_bootModeHasBeenSet;
+
+                    /**
+                     *  镜像族
+                     */
+                    std::string m_imageFamily;
+                    bool m_imageFamilyHasBeenSet;
 
                 };
             }

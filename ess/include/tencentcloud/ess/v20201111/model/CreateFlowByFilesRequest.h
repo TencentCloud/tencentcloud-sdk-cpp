@@ -765,6 +765,35 @@ namespace TencentCloud
                      */
                     bool FlowDisplayTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启动态签署合同：
+<ul><li> **true**：开启动态签署合同，可在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li>
+<li> **false**：不开启动态签署合同。</li></ul>
+                     * @return OpenDynamicSignFlow 是否开启动态签署合同：
+<ul><li> **true**：开启动态签署合同，可在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li>
+<li> **false**：不开启动态签署合同。</li></ul>
+                     * 
+                     */
+                    bool GetOpenDynamicSignFlow() const;
+
+                    /**
+                     * 设置是否开启动态签署合同：
+<ul><li> **true**：开启动态签署合同，可在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li>
+<li> **false**：不开启动态签署合同。</li></ul>
+                     * @param _openDynamicSignFlow 是否开启动态签署合同：
+<ul><li> **true**：开启动态签署合同，可在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li>
+<li> **false**：不开启动态签署合同。</li></ul>
+                     * 
+                     */
+                    void SetOpenDynamicSignFlow(const bool& _openDynamicSignFlow);
+
+                    /**
+                     * 判断参数 OpenDynamicSignFlow 是否已赋值
+                     * @return OpenDynamicSignFlow 是否已赋值
+                     * 
+                     */
+                    bool OpenDynamicSignFlowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -962,6 +991,14 @@ namespace TencentCloud
                      */
                     int64_t m_flowDisplayType;
                     bool m_flowDisplayTypeHasBeenSet;
+
+                    /**
+                     * 是否开启动态签署合同：
+<ul><li> **true**：开启动态签署合同，可在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li>
+<li> **false**：不开启动态签署合同。</li></ul>
+                     */
+                    bool m_openDynamicSignFlow;
+                    bool m_openDynamicSignFlowHasBeenSet;
 
                 };
             }

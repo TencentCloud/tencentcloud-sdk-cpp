@@ -264,11 +264,11 @@ CoreInternalOutcome CCN::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("Ipv6Flag") && !value["Ipv6Flag"].IsNull())
     {
-        if (!value["Ipv6Flag"].IsString())
+        if (!value["Ipv6Flag"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `CCN.Ipv6Flag` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CCN.Ipv6Flag` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_ipv6Flag = string(value["Ipv6Flag"].GetString());
+        m_ipv6Flag = value["Ipv6Flag"].GetBool();
         m_ipv6FlagHasBeenSet = true;
     }
 
@@ -471,7 +471,7 @@ void CCN::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ipv6Flag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_ipv6Flag.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_ipv6Flag, allocator);
     }
 
     if (m_mrtbAggregatePolicyFlagHasBeenSet)
@@ -813,12 +813,12 @@ bool CCN::DirectConnectAccelerateChannelFlagHasBeenSet() const
     return m_directConnectAccelerateChannelFlagHasBeenSet;
 }
 
-string CCN::GetIpv6Flag() const
+bool CCN::GetIpv6Flag() const
 {
     return m_ipv6Flag;
 }
 
-void CCN::SetIpv6Flag(const string& _ipv6Flag)
+void CCN::SetIpv6Flag(const bool& _ipv6Flag)
 {
     m_ipv6Flag = _ipv6Flag;
     m_ipv6FlagHasBeenSet = true;

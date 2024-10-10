@@ -44,7 +44,8 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_agentHasBeenSet(false),
     m_autoSignSceneHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
-    m_flowDisplayTypeHasBeenSet(false)
+    m_flowDisplayTypeHasBeenSet(false),
+    m_openDynamicSignFlowHasBeenSet(false)
 {
 }
 
@@ -257,6 +258,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
         string key = "FlowDisplayType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_flowDisplayType, allocator);
+    }
+
+    if (m_openDynamicSignFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenDynamicSignFlow";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_openDynamicSignFlow, allocator);
     }
 
 
@@ -617,6 +626,22 @@ void CreateFlowByFilesRequest::SetFlowDisplayType(const int64_t& _flowDisplayTyp
 bool CreateFlowByFilesRequest::FlowDisplayTypeHasBeenSet() const
 {
     return m_flowDisplayTypeHasBeenSet;
+}
+
+bool CreateFlowByFilesRequest::GetOpenDynamicSignFlow() const
+{
+    return m_openDynamicSignFlow;
+}
+
+void CreateFlowByFilesRequest::SetOpenDynamicSignFlow(const bool& _openDynamicSignFlow)
+{
+    m_openDynamicSignFlow = _openDynamicSignFlow;
+    m_openDynamicSignFlowHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::OpenDynamicSignFlowHasBeenSet() const
+{
+    return m_openDynamicSignFlowHasBeenSet;
 }
 
 

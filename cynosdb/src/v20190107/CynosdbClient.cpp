@@ -3695,6 +3695,49 @@ CynosdbClient::InquirePriceCreateOutcomeCallable CynosdbClient::InquirePriceCrea
     return task->get_future();
 }
 
+CynosdbClient::InquirePriceModifyOutcome CynosdbClient::InquirePriceModify(const InquirePriceModifyRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceModify");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceModifyResponse rsp = InquirePriceModifyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceModifyOutcome(rsp);
+        else
+            return InquirePriceModifyOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceModifyOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::InquirePriceModifyAsync(const InquirePriceModifyRequest& request, const InquirePriceModifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquirePriceModify(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::InquirePriceModifyOutcomeCallable CynosdbClient::InquirePriceModifyCallable(const InquirePriceModifyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquirePriceModifyOutcome()>>(
+        [this, request]()
+        {
+            return this->InquirePriceModify(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::InquirePriceRenewOutcome CynosdbClient::InquirePriceRenew(const InquirePriceRenewRequest &request)
 {
     auto outcome = MakeRequest(request, "InquirePriceRenew");

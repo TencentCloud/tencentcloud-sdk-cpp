@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ess/v20201111/model/ArchiveDynamicFlowRequest.h>
+#include <tencentcloud/ess/v20201111/model/ArchiveDynamicFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/BindEmployeeUserIdWithClientOpenIdRequest.h>
 #include <tencentcloud/ess/v20201111/model/BindEmployeeUserIdWithClientOpenIdResponse.h>
 #include <tencentcloud/ess/v20201111/model/CancelFlowRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateConvertTaskApiResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateDocumentRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateDocumentResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateDynamicFlowApproverRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateDynamicFlowApproverResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateEmbedWebUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateEmbedWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateEmployeeQualificationSealQrCodeRequest.h>
@@ -219,6 +223,9 @@ namespace TencentCloud
                 EssClient(const Credential &credential, const std::string &region);
                 EssClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ArchiveDynamicFlowResponse> ArchiveDynamicFlowOutcome;
+                typedef std::future<ArchiveDynamicFlowOutcome> ArchiveDynamicFlowOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::ArchiveDynamicFlowRequest&, ArchiveDynamicFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ArchiveDynamicFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindEmployeeUserIdWithClientOpenIdResponse> BindEmployeeUserIdWithClientOpenIdOutcome;
                 typedef std::future<BindEmployeeUserIdWithClientOpenIdOutcome> BindEmployeeUserIdWithClientOpenIdOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::BindEmployeeUserIdWithClientOpenIdRequest&, BindEmployeeUserIdWithClientOpenIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindEmployeeUserIdWithClientOpenIdAsyncHandler;
@@ -255,6 +262,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDocumentResponse> CreateDocumentOutcome;
                 typedef std::future<CreateDocumentOutcome> CreateDocumentOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateDocumentRequest&, CreateDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDocumentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDynamicFlowApproverResponse> CreateDynamicFlowApproverOutcome;
+                typedef std::future<CreateDynamicFlowApproverOutcome> CreateDynamicFlowApproverOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateDynamicFlowApproverRequest&, CreateDynamicFlowApproverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDynamicFlowApproverAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateEmbedWebUrlResponse> CreateEmbedWebUrlOutcome;
                 typedef std::future<CreateEmbedWebUrlOutcome> CreateEmbedWebUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateEmbedWebUrlRequest&, CreateEmbedWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmbedWebUrlAsyncHandler;
@@ -496,6 +506,15 @@ namespace TencentCloud
 
 
                 /**
+                 *该接口用于结束动态签署流程，若当前合同还存在签署方未签署，无法结束。
+                 * @param req ArchiveDynamicFlowRequest
+                 * @return ArchiveDynamicFlowOutcome
+                 */
+                ArchiveDynamicFlowOutcome ArchiveDynamicFlow(const Model::ArchiveDynamicFlowRequest &request);
+                void ArchiveDynamicFlowAsync(const Model::ArchiveDynamicFlowRequest& request, const ArchiveDynamicFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ArchiveDynamicFlowOutcomeCallable ArchiveDynamicFlowCallable(const Model::ArchiveDynamicFlowRequest& request);
+
+                /**
                  *此接口（BindEmployeeUserIdWithClientOpenId）用于将电子签系统员工UserId与客户系统员工OpenId进行绑定。
 
 此OpenId只在 [更新企业员工信息 ](https://qian.tencent.com/developers/companyApis/staffs/UpdateIntegrationEmployees)、[移除企业员工](https://qian.tencent.com/developers/companyApis/staffs/DeleteIntegrationEmployees) 等场景下可以使用
@@ -734,6 +753,16 @@ namespace TencentCloud
                 CreateDocumentOutcome CreateDocument(const Model::CreateDocumentRequest &request);
                 void CreateDocumentAsync(const Model::CreateDocumentRequest& request, const CreateDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDocumentOutcomeCallable CreateDocumentCallable(const Model::CreateDocumentRequest& request);
+
+                /**
+                 *此接口（CreateDynamicFlowApprover）用来补充动态合同的签署人信息。<br/>
+适用场景：使用CreateFlowByFiles指定：OpenDynamicSignFlow=true发起的合同，可以使用该接口补充后续签署人。<br/>
+                 * @param req CreateDynamicFlowApproverRequest
+                 * @return CreateDynamicFlowApproverOutcome
+                 */
+                CreateDynamicFlowApproverOutcome CreateDynamicFlowApprover(const Model::CreateDynamicFlowApproverRequest &request);
+                void CreateDynamicFlowApproverAsync(const Model::CreateDynamicFlowApproverRequest& request, const CreateDynamicFlowApproverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDynamicFlowApproverOutcomeCallable CreateDynamicFlowApproverCallable(const Model::CreateDynamicFlowApproverRequest& request);
 
                 /**
                  *本接口（CreateEmbedWebUrl）用于创建可嵌入web页面的URL（此web页面可以通过iframe方式嵌入到贵方系统的网页中），支持以下类型的Web链接创建：

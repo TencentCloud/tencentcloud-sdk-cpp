@@ -33,7 +33,8 @@ ImportImageRequest::ImportImageRequest() :
     m_forceHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
-    m_bootModeHasBeenSet(false)
+    m_bootModeHasBeenSet(false),
+    m_imageFamilyHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,14 @@ string ImportImageRequest::ToJsonString() const
         string key = "BootMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_bootMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageFamilyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageFamily";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageFamily.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -321,6 +330,22 @@ void ImportImageRequest::SetBootMode(const string& _bootMode)
 bool ImportImageRequest::BootModeHasBeenSet() const
 {
     return m_bootModeHasBeenSet;
+}
+
+string ImportImageRequest::GetImageFamily() const
+{
+    return m_imageFamily;
+}
+
+void ImportImageRequest::SetImageFamily(const string& _imageFamily)
+{
+    m_imageFamily = _imageFamily;
+    m_imageFamilyHasBeenSet = true;
+}
+
+bool ImportImageRequest::ImageFamilyHasBeenSet() const
+{
+    return m_imageFamilyHasBeenSet;
 }
 
 

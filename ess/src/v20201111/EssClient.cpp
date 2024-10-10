@@ -40,6 +40,49 @@ EssClient::EssClient(const Credential &credential, const string &region, const C
 }
 
 
+EssClient::ArchiveDynamicFlowOutcome EssClient::ArchiveDynamicFlow(const ArchiveDynamicFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "ArchiveDynamicFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ArchiveDynamicFlowResponse rsp = ArchiveDynamicFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ArchiveDynamicFlowOutcome(rsp);
+        else
+            return ArchiveDynamicFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return ArchiveDynamicFlowOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::ArchiveDynamicFlowAsync(const ArchiveDynamicFlowRequest& request, const ArchiveDynamicFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ArchiveDynamicFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::ArchiveDynamicFlowOutcomeCallable EssClient::ArchiveDynamicFlowCallable(const ArchiveDynamicFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ArchiveDynamicFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->ArchiveDynamicFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::BindEmployeeUserIdWithClientOpenIdOutcome EssClient::BindEmployeeUserIdWithClientOpenId(const BindEmployeeUserIdWithClientOpenIdRequest &request)
 {
     auto outcome = MakeRequest(request, "BindEmployeeUserIdWithClientOpenId");
@@ -549,6 +592,49 @@ EssClient::CreateDocumentOutcomeCallable EssClient::CreateDocumentCallable(const
         [this, request]()
         {
             return this->CreateDocument(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::CreateDynamicFlowApproverOutcome EssClient::CreateDynamicFlowApprover(const CreateDynamicFlowApproverRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDynamicFlowApprover");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDynamicFlowApproverResponse rsp = CreateDynamicFlowApproverResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDynamicFlowApproverOutcome(rsp);
+        else
+            return CreateDynamicFlowApproverOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDynamicFlowApproverOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateDynamicFlowApproverAsync(const CreateDynamicFlowApproverRequest& request, const CreateDynamicFlowApproverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDynamicFlowApprover(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateDynamicFlowApproverOutcomeCallable EssClient::CreateDynamicFlowApproverCallable(const CreateDynamicFlowApproverRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDynamicFlowApproverOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDynamicFlowApprover(request);
         }
     );
 

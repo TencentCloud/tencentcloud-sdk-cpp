@@ -193,6 +193,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/GrantAccountPrivilegesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/InquirePriceCreateRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/InquirePriceCreateResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/InquirePriceModifyRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/InquirePriceModifyResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/InquirePriceRenewRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/InquirePriceRenewResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/IsolateClusterRequest.h>
@@ -588,6 +590,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquirePriceCreateResponse> InquirePriceCreateOutcome;
                 typedef std::future<InquirePriceCreateOutcome> InquirePriceCreateOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::InquirePriceCreateRequest&, InquirePriceCreateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceCreateAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquirePriceModifyResponse> InquirePriceModifyOutcome;
+                typedef std::future<InquirePriceModifyOutcome> InquirePriceModifyOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::InquirePriceModifyRequest&, InquirePriceModifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceModifyAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceRenewResponse> InquirePriceRenewOutcome;
                 typedef std::future<InquirePriceRenewOutcome> InquirePriceRenewOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::InquirePriceRenewRequest&, InquirePriceRenewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewAsyncHandler;
@@ -1544,6 +1549,15 @@ namespace TencentCloud
                 InquirePriceCreateOutcome InquirePriceCreate(const Model::InquirePriceCreateRequest &request);
                 void InquirePriceCreateAsync(const Model::InquirePriceCreateRequest& request, const InquirePriceCreateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquirePriceCreateOutcomeCallable InquirePriceCreateCallable(const Model::InquirePriceCreateRequest& request);
+
+                /**
+                 *变配预付费集群询价
+                 * @param req InquirePriceModifyRequest
+                 * @return InquirePriceModifyOutcome
+                 */
+                InquirePriceModifyOutcome InquirePriceModify(const Model::InquirePriceModifyRequest &request);
+                void InquirePriceModifyAsync(const Model::InquirePriceModifyRequest& request, const InquirePriceModifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceModifyOutcomeCallable InquirePriceModifyCallable(const Model::InquirePriceModifyRequest& request);
 
                 /**
                  *查询续费集群价格
