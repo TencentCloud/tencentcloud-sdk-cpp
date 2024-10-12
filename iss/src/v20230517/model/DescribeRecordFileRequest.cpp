@@ -26,7 +26,8 @@ DescribeRecordFileRequest::DescribeRecordFileRequest() :
     m_deviceIdHasBeenSet(false),
     m_channelIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_withUrlHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeRecordFileRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_withUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WithUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_withUrl, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeRecordFileRequest::SetEndTime(const uint64_t& _endTime)
 bool DescribeRecordFileRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+bool DescribeRecordFileRequest::GetWithUrl() const
+{
+    return m_withUrl;
+}
+
+void DescribeRecordFileRequest::SetWithUrl(const bool& _withUrl)
+{
+    m_withUrl = _withUrl;
+    m_withUrlHasBeenSet = true;
+}
+
+bool DescribeRecordFileRequest::WithUrlHasBeenSet() const
+{
+    return m_withUrlHasBeenSet;
 }
 
 

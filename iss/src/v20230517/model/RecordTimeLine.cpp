@@ -22,7 +22,8 @@ using namespace std;
 
 RecordTimeLine::RecordTimeLine() :
     m_beginHasBeenSet(false),
-    m_endHasBeenSet(false)
+    m_endHasBeenSet(false),
+    m_hlsUrlHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome RecordTimeLine::Deserialize(const rapidjson::Value &value)
         m_endHasBeenSet = true;
     }
 
+    if (value.HasMember("HlsUrl") && !value["HlsUrl"].IsNull())
+    {
+        if (!value["HlsUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordTimeLine.HlsUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hlsUrl = string(value["HlsUrl"].GetString());
+        m_hlsUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void RecordTimeLine::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "End";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_end, allocator);
+    }
+
+    if (m_hlsUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HlsUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hlsUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void RecordTimeLine::SetEnd(const uint64_t& _end)
 bool RecordTimeLine::EndHasBeenSet() const
 {
     return m_endHasBeenSet;
+}
+
+string RecordTimeLine::GetHlsUrl() const
+{
+    return m_hlsUrl;
+}
+
+void RecordTimeLine::SetHlsUrl(const string& _hlsUrl)
+{
+    m_hlsUrl = _hlsUrl;
+    m_hlsUrlHasBeenSet = true;
+}
+
+bool RecordTimeLine::HlsUrlHasBeenSet() const
+{
+    return m_hlsUrlHasBeenSet;
 }
 

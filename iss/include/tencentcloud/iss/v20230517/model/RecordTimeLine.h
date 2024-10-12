@@ -88,6 +88,31 @@ namespace TencentCloud
                      */
                     bool EndHasBeenSet() const;
 
+                    /**
+                     * 获取对应时间片段的播放url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HlsUrl 对应时间片段的播放url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetHlsUrl() const;
+
+                    /**
+                     * 设置对应时间片段的播放url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hlsUrl 对应时间片段的播放url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHlsUrl(const std::string& _hlsUrl);
+
+                    /**
+                     * 判断参数 HlsUrl 是否已赋值
+                     * @return HlsUrl 是否已赋值
+                     * 
+                     */
+                    bool HlsUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +126,13 @@ namespace TencentCloud
                      */
                     uint64_t m_end;
                     bool m_endHasBeenSet;
+
+                    /**
+                     * 对应时间片段的播放url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hlsUrl;
+                    bool m_hlsUrlHasBeenSet;
 
                 };
             }

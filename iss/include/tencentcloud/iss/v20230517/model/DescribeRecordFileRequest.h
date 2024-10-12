@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否携带每个时间段的播放url
+                     * @return WithUrl 是否携带每个时间段的播放url
+                     * 
+                     */
+                    bool GetWithUrl() const;
+
+                    /**
+                     * 设置是否携带每个时间段的播放url
+                     * @param _withUrl 是否携带每个时间段的播放url
+                     * 
+                     */
+                    void SetWithUrl(const bool& _withUrl);
+
+                    /**
+                     * 判断参数 WithUrl 是否已赋值
+                     * @return WithUrl 是否已赋值
+                     * 
+                     */
+                    bool WithUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 是否携带每个时间段的播放url
+                     */
+                    bool m_withUrl;
+                    bool m_withUrlHasBeenSet;
 
                 };
             }
