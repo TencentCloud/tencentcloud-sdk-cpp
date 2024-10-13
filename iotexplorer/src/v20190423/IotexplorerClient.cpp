@@ -599,6 +599,49 @@ IotexplorerClient::CreateDeviceOutcomeCallable IotexplorerClient::CreateDeviceCa
     return task->get_future();
 }
 
+IotexplorerClient::CreateExternalSourceAIServiceTaskOutcome IotexplorerClient::CreateExternalSourceAIServiceTask(const CreateExternalSourceAIServiceTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExternalSourceAIServiceTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExternalSourceAIServiceTaskResponse rsp = CreateExternalSourceAIServiceTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExternalSourceAIServiceTaskOutcome(rsp);
+        else
+            return CreateExternalSourceAIServiceTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExternalSourceAIServiceTaskOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateExternalSourceAIServiceTaskAsync(const CreateExternalSourceAIServiceTaskRequest& request, const CreateExternalSourceAIServiceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateExternalSourceAIServiceTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateExternalSourceAIServiceTaskOutcomeCallable IotexplorerClient::CreateExternalSourceAIServiceTaskCallable(const CreateExternalSourceAIServiceTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateExternalSourceAIServiceTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateExternalSourceAIServiceTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateFenceBindOutcome IotexplorerClient::CreateFenceBind(const CreateFenceBindRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFenceBind");
@@ -4634,6 +4677,49 @@ IotexplorerClient::InheritCloudStorageUserOutcomeCallable IotexplorerClient::Inh
         [this, request]()
         {
             return this->InheritCloudStorageUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::InvokeExternalSourceAIServiceTaskOutcome IotexplorerClient::InvokeExternalSourceAIServiceTask(const InvokeExternalSourceAIServiceTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "InvokeExternalSourceAIServiceTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InvokeExternalSourceAIServiceTaskResponse rsp = InvokeExternalSourceAIServiceTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InvokeExternalSourceAIServiceTaskOutcome(rsp);
+        else
+            return InvokeExternalSourceAIServiceTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return InvokeExternalSourceAIServiceTaskOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::InvokeExternalSourceAIServiceTaskAsync(const InvokeExternalSourceAIServiceTaskRequest& request, const InvokeExternalSourceAIServiceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InvokeExternalSourceAIServiceTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::InvokeExternalSourceAIServiceTaskOutcomeCallable IotexplorerClient::InvokeExternalSourceAIServiceTaskCallable(const InvokeExternalSourceAIServiceTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InvokeExternalSourceAIServiceTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->InvokeExternalSourceAIServiceTask(request);
         }
     );
 

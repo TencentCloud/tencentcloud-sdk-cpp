@@ -27,7 +27,9 @@ AuthorizeDSPAMetaResourcesRequest::AuthorizeDSPAMetaResourcesRequest() :
     m_authTypeHasBeenSet(false),
     m_metaTypeHasBeenSet(false),
     m_resourceRegionHasBeenSet(false),
-    m_resourcesAccountHasBeenSet(false)
+    m_resourcesAccountHasBeenSet(false),
+    m_createDefaultTaskHasBeenSet(false),
+    m_authRangeHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,22 @@ string AuthorizeDSPAMetaResourcesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_createDefaultTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateDefaultTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_createDefaultTask, allocator);
+    }
+
+    if (m_authRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthRange";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_authRange.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +189,38 @@ void AuthorizeDSPAMetaResourcesRequest::SetResourcesAccount(const vector<DspaRes
 bool AuthorizeDSPAMetaResourcesRequest::ResourcesAccountHasBeenSet() const
 {
     return m_resourcesAccountHasBeenSet;
+}
+
+bool AuthorizeDSPAMetaResourcesRequest::GetCreateDefaultTask() const
+{
+    return m_createDefaultTask;
+}
+
+void AuthorizeDSPAMetaResourcesRequest::SetCreateDefaultTask(const bool& _createDefaultTask)
+{
+    m_createDefaultTask = _createDefaultTask;
+    m_createDefaultTaskHasBeenSet = true;
+}
+
+bool AuthorizeDSPAMetaResourcesRequest::CreateDefaultTaskHasBeenSet() const
+{
+    return m_createDefaultTaskHasBeenSet;
+}
+
+string AuthorizeDSPAMetaResourcesRequest::GetAuthRange() const
+{
+    return m_authRange;
+}
+
+void AuthorizeDSPAMetaResourcesRequest::SetAuthRange(const string& _authRange)
+{
+    m_authRange = _authRange;
+    m_authRangeHasBeenSet = true;
+}
+
+bool AuthorizeDSPAMetaResourcesRequest::AuthRangeHasBeenSet() const
+{
+    return m_authRangeHasBeenSet;
 }
 
 

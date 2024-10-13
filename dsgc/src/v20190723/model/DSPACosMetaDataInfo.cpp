@@ -27,7 +27,8 @@ DSPACosMetaDataInfo::DSPACosMetaDataInfo() :
     m_resourceIdHasBeenSet(false),
     m_resourceRegionHasBeenSet(false),
     m_bindStatusHasBeenSet(false),
-    m_storageHasBeenSet(false)
+    m_storageHasBeenSet(false),
+    m_governAuthStatusHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome DSPACosMetaDataInfo::Deserialize(const rapidjson::Value &val
         m_storageHasBeenSet = true;
     }
 
+    if (value.HasMember("GovernAuthStatus") && !value["GovernAuthStatus"].IsNull())
+    {
+        if (!value["GovernAuthStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DSPACosMetaDataInfo.GovernAuthStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_governAuthStatus = value["GovernAuthStatus"].GetInt64();
+        m_governAuthStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void DSPACosMetaDataInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Storage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_storage, allocator);
+    }
+
+    if (m_governAuthStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GovernAuthStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_governAuthStatus, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void DSPACosMetaDataInfo::SetStorage(const double& _storage)
 bool DSPACosMetaDataInfo::StorageHasBeenSet() const
 {
     return m_storageHasBeenSet;
+}
+
+int64_t DSPACosMetaDataInfo::GetGovernAuthStatus() const
+{
+    return m_governAuthStatus;
+}
+
+void DSPACosMetaDataInfo::SetGovernAuthStatus(const int64_t& _governAuthStatus)
+{
+    m_governAuthStatus = _governAuthStatus;
+    m_governAuthStatusHasBeenSet = true;
+}
+
+bool DSPACosMetaDataInfo::GovernAuthStatusHasBeenSet() const
+{
+    return m_governAuthStatusHasBeenSet;
 }
 

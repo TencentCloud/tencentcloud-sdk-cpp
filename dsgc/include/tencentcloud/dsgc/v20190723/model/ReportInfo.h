@@ -388,6 +388,31 @@ namespace TencentCloud
                      */
                     bool ProgressPercentHasBeenSet() const;
 
+                    /**
+                     * 获取报告模版名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReportTemplateName 报告模版名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetReportTemplateName() const;
+
+                    /**
+                     * 设置报告模版名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _reportTemplateName 报告模版名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReportTemplateName(const std::string& _reportTemplateName);
+
+                    /**
+                     * 判断参数 ReportTemplateName 是否已赋值
+                     * @return ReportTemplateName 是否已赋值
+                     * 
+                     */
+                    bool ReportTemplateNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -485,6 +510,13 @@ namespace TencentCloud
                      */
                     uint64_t m_progressPercent;
                     bool m_progressPercentHasBeenSet;
+
+                    /**
+                     * 报告模版名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reportTemplateName;
+                    bool m_reportTemplateNameHasBeenSet;
 
                 };
             }

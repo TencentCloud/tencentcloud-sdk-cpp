@@ -204,6 +204,27 @@ namespace TencentCloud
                      */
                     bool PublishCdnParamsHasBeenSet() const;
 
+                    /**
+                     * 获取录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。
+                     * @return ReadyTimeout 录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。
+                     * 
+                     */
+                    uint64_t GetReadyTimeout() const;
+
+                    /**
+                     * 设置录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。
+                     * @param _readyTimeout 录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。
+                     * 
+                     */
+                    void SetReadyTimeout(const uint64_t& _readyTimeout);
+
+                    /**
+                     * 判断参数 ReadyTimeout 是否已赋值
+                     * @return ReadyTimeout 是否已赋值
+                     * 
+                     */
+                    bool ReadyTimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,6 +271,12 @@ namespace TencentCloud
                      */
                     std::vector<McuPublishCdnParam> m_publishCdnParams;
                     bool m_publishCdnParamsHasBeenSet;
+
+                    /**
+                     * 录制页面资源加载的超时时间，单位：秒。默认值为 0 秒，该值需大于等于 0秒，且小于等于 60秒。录制页面未启用页面加载超时检测时，请勿设置此参数。
+                     */
+                    uint64_t m_readyTimeout;
+                    bool m_readyTimeoutHasBeenSet;
 
                 };
             }

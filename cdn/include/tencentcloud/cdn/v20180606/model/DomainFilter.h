@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取过滤字段值。
-                     * @return Value 过滤字段值。
+                     * 获取过滤字段值，默认最多传 5 个。当 Name 是 origin/domain 且 Fuzzy 传 true，最多传 1 个。
+                     * @return Value 过滤字段值，默认最多传 5 个。当 Name 是 origin/domain 且 Fuzzy 传 true，最多传 1 个。
                      * 
                      */
                     std::vector<std::string> GetValue() const;
 
                     /**
-                     * 设置过滤字段值。
-                     * @param _value 过滤字段值。
+                     * 设置过滤字段值，默认最多传 5 个。当 Name 是 origin/domain 且 Fuzzy 传 true，最多传 1 个。
+                     * @param _value 过滤字段值，默认最多传 5 个。当 Name 是 origin/domain 且 Fuzzy 传 true，最多传 1 个。
                      * 
                      */
                     void SetValue(const std::vector<std::string>& _value);
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 过滤字段值。
+                     * 过滤字段值，默认最多传 5 个。当 Name 是 origin/domain 且 Fuzzy 传 true，最多传 1 个。
                      */
                     std::vector<std::string> m_value;
                     bool m_valueHasBeenSet;

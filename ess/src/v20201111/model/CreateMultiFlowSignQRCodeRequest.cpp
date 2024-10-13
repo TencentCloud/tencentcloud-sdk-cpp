@@ -34,7 +34,8 @@ CreateMultiFlowSignQRCodeRequest::CreateMultiFlowSignQRCodeRequest() :
     m_callbackUrlHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_approverRestrictionsHasBeenSet(false),
-    m_approverComponentLimitTypesHasBeenSet(false)
+    m_approverComponentLimitTypesHasBeenSet(false),
+    m_forbidPersonalMultipleSignHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,14 @@ string CreateMultiFlowSignQRCodeRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_forbidPersonalMultipleSignHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidPersonalMultipleSign";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forbidPersonalMultipleSign, allocator);
     }
 
 
@@ -356,6 +365,22 @@ void CreateMultiFlowSignQRCodeRequest::SetApproverComponentLimitTypes(const vect
 bool CreateMultiFlowSignQRCodeRequest::ApproverComponentLimitTypesHasBeenSet() const
 {
     return m_approverComponentLimitTypesHasBeenSet;
+}
+
+bool CreateMultiFlowSignQRCodeRequest::GetForbidPersonalMultipleSign() const
+{
+    return m_forbidPersonalMultipleSign;
+}
+
+void CreateMultiFlowSignQRCodeRequest::SetForbidPersonalMultipleSign(const bool& _forbidPersonalMultipleSign)
+{
+    m_forbidPersonalMultipleSign = _forbidPersonalMultipleSign;
+    m_forbidPersonalMultipleSignHasBeenSet = true;
+}
+
+bool CreateMultiFlowSignQRCodeRequest::ForbidPersonalMultipleSignHasBeenSet() const
+{
+    return m_forbidPersonalMultipleSignHasBeenSet;
 }
 
 

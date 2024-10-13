@@ -1313,6 +1313,56 @@ Modify 集群变更中；
                      */
                     bool DetailsHasBeenSet() const;
 
+                    /**
+                     * 获取安全组白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsWhiteSGs 安全组白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsWhiteSGs() const;
+
+                    /**
+                     * 设置安全组白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isWhiteSGs 安全组白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsWhiteSGs(const bool& _isWhiteSGs);
+
+                    /**
+                     * 判断参数 IsWhiteSGs 是否已赋值
+                     * @return IsWhiteSGs 是否已赋值
+                     * 
+                     */
+                    bool IsWhiteSGsHasBeenSet() const;
+
+                    /**
+                     * 获取绑定的安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BindSGs 绑定的安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetBindSGs() const;
+
+                    /**
+                     * 设置绑定的安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bindSGs 绑定的安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBindSGs(const std::vector<std::string>& _bindSGs);
+
+                    /**
+                     * 判断参数 BindSGs 是否已赋值
+                     * @return BindSGs 是否已赋值
+                     * 
+                     */
+                    bool BindSGsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1667,6 +1717,20 @@ Modify 集群变更中；
                      */
                     InstanceDetail m_details;
                     bool m_detailsHasBeenSet;
+
+                    /**
+                     * 安全组白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isWhiteSGs;
+                    bool m_isWhiteSGsHasBeenSet;
+
+                    /**
+                     * 绑定的安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_bindSGs;
+                    bool m_bindSGsHasBeenSet;
 
                 };
             }

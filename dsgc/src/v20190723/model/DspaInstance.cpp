@@ -36,7 +36,9 @@ DspaInstance::DspaInstance() :
     m_cosTotalQuotaHasBeenSet(false),
     m_cosQuotaUnitHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
-    m_channelHasBeenSet(false)
+    m_channelHasBeenSet(false),
+    m_insAuthCountHasBeenSet(false),
+    m_insTotalQuotaHasBeenSet(false)
 {
 }
 
@@ -205,6 +207,26 @@ CoreInternalOutcome DspaInstance::Deserialize(const rapidjson::Value &value)
         m_channelHasBeenSet = true;
     }
 
+    if (value.HasMember("InsAuthCount") && !value["InsAuthCount"].IsNull())
+    {
+        if (!value["InsAuthCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaInstance.InsAuthCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_insAuthCount = value["InsAuthCount"].GetInt64();
+        m_insAuthCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("InsTotalQuota") && !value["InsTotalQuota"].IsNull())
+    {
+        if (!value["InsTotalQuota"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaInstance.InsTotalQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_insTotalQuota = value["InsTotalQuota"].GetInt64();
+        m_insTotalQuotaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +360,22 @@ void DspaInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_insAuthCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InsAuthCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_insAuthCount, allocator);
+    }
+
+    if (m_insTotalQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InsTotalQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_insTotalQuota, allocator);
     }
 
 }
@@ -597,5 +635,37 @@ void DspaInstance::SetChannel(const string& _channel)
 bool DspaInstance::ChannelHasBeenSet() const
 {
     return m_channelHasBeenSet;
+}
+
+int64_t DspaInstance::GetInsAuthCount() const
+{
+    return m_insAuthCount;
+}
+
+void DspaInstance::SetInsAuthCount(const int64_t& _insAuthCount)
+{
+    m_insAuthCount = _insAuthCount;
+    m_insAuthCountHasBeenSet = true;
+}
+
+bool DspaInstance::InsAuthCountHasBeenSet() const
+{
+    return m_insAuthCountHasBeenSet;
+}
+
+int64_t DspaInstance::GetInsTotalQuota() const
+{
+    return m_insTotalQuota;
+}
+
+void DspaInstance::SetInsTotalQuota(const int64_t& _insTotalQuota)
+{
+    m_insTotalQuota = _insTotalQuota;
+    m_insTotalQuotaHasBeenSet = true;
+}
+
+bool DspaInstance::InsTotalQuotaHasBeenSet() const
+{
+    return m_insTotalQuotaHasBeenSet;
 }
 

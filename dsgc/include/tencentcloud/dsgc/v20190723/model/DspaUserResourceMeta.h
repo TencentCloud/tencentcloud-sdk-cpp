@@ -495,6 +495,52 @@ namespace TencentCloud
                      */
                     bool InstanceValueHasBeenSet() const;
 
+                    /**
+                     * 获取//治理授权状态（0：关闭 1：开启）
+                     * @return GovernAuthStatus //治理授权状态（0：关闭 1：开启）
+                     * 
+                     */
+                    int64_t GetGovernAuthStatus() const;
+
+                    /**
+                     * 设置//治理授权状态（0：关闭 1：开启）
+                     * @param _governAuthStatus //治理授权状态（0：关闭 1：开启）
+                     * 
+                     */
+                    void SetGovernAuthStatus(const int64_t& _governAuthStatus);
+
+                    /**
+                     * 判断参数 GovernAuthStatus 是否已赋值
+                     * @return GovernAuthStatus 是否已赋值
+                     * 
+                     */
+                    bool GovernAuthStatusHasBeenSet() const;
+
+                    /**
+                     * 获取授权范围：all - 授权整个数据源 manual:手动指定数据源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AuthRange 授权范围：all - 授权整个数据源 manual:手动指定数据源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAuthRange() const;
+
+                    /**
+                     * 设置授权范围：all - 授权整个数据源 manual:手动指定数据源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _authRange 授权范围：all - 授权整个数据源 manual:手动指定数据源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAuthRange(const std::string& _authRange);
+
+                    /**
+                     * 判断参数 AuthRange 是否已赋值
+                     * @return AuthRange 是否已赋值
+                     * 
+                     */
+                    bool AuthRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -624,6 +670,19 @@ namespace TencentCloud
                      */
                     std::string m_instanceValue;
                     bool m_instanceValueHasBeenSet;
+
+                    /**
+                     * //治理授权状态（0：关闭 1：开启）
+                     */
+                    int64_t m_governAuthStatus;
+                    bool m_governAuthStatusHasBeenSet;
+
+                    /**
+                     * 授权范围：all - 授权整个数据源 manual:手动指定数据源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_authRange;
+                    bool m_authRangeHasBeenSet;
 
                 };
             }

@@ -201,6 +201,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeFlowEvidenceReportRequest.h
   include/tencentcloud/ess/v20201111/model/FailedCreateRoleData.h
   include/tencentcloud/ess/v20201111/model/DescribeBillUsageRequest.h
+  include/tencentcloud/ess/v20201111/model/ExtendScene.h
   include/tencentcloud/ess/v20201111/model/DescribeBillUsageResponse.h
   include/tencentcloud/ess/v20201111/model/ApproverInfo.h
   include/tencentcloud/ess/v20201111/model/CreateFlowSignReviewResponse.h
@@ -485,6 +486,7 @@ set(ess_src
   src/v20201111/model/DescribeFlowEvidenceReportRequest.cpp
   src/v20201111/model/FailedCreateRoleData.cpp
   src/v20201111/model/DescribeBillUsageRequest.cpp
+  src/v20201111/model/ExtendScene.cpp
   src/v20201111/model/DescribeBillUsageResponse.cpp
   src/v20201111/model/ApproverInfo.cpp
   src/v20201111/model/CreateFlowSignReviewResponse.cpp

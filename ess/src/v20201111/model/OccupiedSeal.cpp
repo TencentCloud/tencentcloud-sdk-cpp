@@ -31,7 +31,8 @@ OccupiedSeal::OccupiedSeal() :
     m_urlHasBeenSet(false),
     m_sealTypeHasBeenSet(false),
     m_isAllTimeHasBeenSet(false),
-    m_authorizedUsersHasBeenSet(false)
+    m_authorizedUsersHasBeenSet(false),
+    m_extendSceneHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,23 @@ CoreInternalOutcome OccupiedSeal::Deserialize(const rapidjson::Value &value)
         m_authorizedUsersHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtendScene") && !value["ExtendScene"].IsNull())
+    {
+        if (!value["ExtendScene"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `OccupiedSeal.ExtendScene` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extendScene.Deserialize(value["ExtendScene"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extendSceneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +278,15 @@ void OccupiedSeal::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_extendSceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtendScene";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extendScene.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -439,5 +466,21 @@ void OccupiedSeal::SetAuthorizedUsers(const vector<AuthorizedUser>& _authorizedU
 bool OccupiedSeal::AuthorizedUsersHasBeenSet() const
 {
     return m_authorizedUsersHasBeenSet;
+}
+
+ExtendScene OccupiedSeal::GetExtendScene() const
+{
+    return m_extendScene;
+}
+
+void OccupiedSeal::SetExtendScene(const ExtendScene& _extendScene)
+{
+    m_extendScene = _extendScene;
+    m_extendSceneHasBeenSet = true;
+}
+
+bool OccupiedSeal::ExtendSceneHasBeenSet() const
+{
+    return m_extendSceneHasBeenSet;
 }
 

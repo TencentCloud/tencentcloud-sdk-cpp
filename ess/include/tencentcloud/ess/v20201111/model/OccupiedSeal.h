@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/AuthorizedUser.h>
+#include <tencentcloud/ess/v20201111/model/ExtendScene.h>
 
 
 namespace TencentCloud
@@ -286,6 +287,31 @@ namespace TencentCloud
                      */
                     bool AuthorizedUsersHasBeenSet() const;
 
+                    /**
+                     * 获取印章扩展数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtendScene 印章扩展数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ExtendScene GetExtendScene() const;
+
+                    /**
+                     * 设置印章扩展数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extendScene 印章扩展数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtendScene(const ExtendScene& _extendScene);
+
+                    /**
+                     * 判断参数 ExtendScene 是否已赋值
+                     * @return ExtendScene 是否已赋值
+                     * 
+                     */
+                    bool ExtendSceneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +381,13 @@ namespace TencentCloud
                      */
                     std::vector<AuthorizedUser> m_authorizedUsers;
                     bool m_authorizedUsersHasBeenSet;
+
+                    /**
+                     * 印章扩展数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExtendScene m_extendScene;
+                    bool m_extendSceneHasBeenSet;
 
                 };
             }

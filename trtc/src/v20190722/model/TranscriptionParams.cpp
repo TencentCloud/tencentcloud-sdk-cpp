@@ -27,7 +27,8 @@ TranscriptionParams::TranscriptionParams() :
     m_iMAdminUserSigHasBeenSet(false),
     m_maxIdleTimeHasBeenSet(false),
     m_transcriptionModeHasBeenSet(false),
-    m_targetUserIdHasBeenSet(false)
+    m_targetUserIdHasBeenSet(false),
+    m_targetUserIdListHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,19 @@ CoreInternalOutcome TranscriptionParams::Deserialize(const rapidjson::Value &val
         m_targetUserIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetUserIdList") && !value["TargetUserIdList"].IsNull())
+    {
+        if (!value["TargetUserIdList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TranscriptionParams.TargetUserIdList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TargetUserIdList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_targetUserIdList.push_back((*itr).GetString());
+        }
+        m_targetUserIdListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +181,19 @@ void TranscriptionParams::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "TargetUserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_targetUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetUserIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetUserIdList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_targetUserIdList.begin(); itr != m_targetUserIdList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -282,5 +309,21 @@ void TranscriptionParams::SetTargetUserId(const string& _targetUserId)
 bool TranscriptionParams::TargetUserIdHasBeenSet() const
 {
     return m_targetUserIdHasBeenSet;
+}
+
+vector<string> TranscriptionParams::GetTargetUserIdList() const
+{
+    return m_targetUserIdList;
+}
+
+void TranscriptionParams::SetTargetUserIdList(const vector<string>& _targetUserIdList)
+{
+    m_targetUserIdList = _targetUserIdList;
+    m_targetUserIdListHasBeenSet = true;
+}
+
+bool TranscriptionParams::TargetUserIdListHasBeenSet() const
+{
+    return m_targetUserIdListHasBeenSet;
 }
 

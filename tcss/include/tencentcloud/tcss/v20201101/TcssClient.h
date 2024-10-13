@@ -2438,7 +2438,9 @@ namespace TencentCloud
                 DescribeAbnormalProcessEventsOutcomeCallable DescribeAbnormalProcessEventsCallable(const Model::DescribeAbnormalProcessEventsRequest& request);
 
                 /**
-                 *查询运行时异常进程事件列表信息导出
+                 *接口已废弃
+
+查询运行时异常进程事件列表信息导出
                  * @param req DescribeAbnormalProcessEventsExportRequest
                  * @return DescribeAbnormalProcessEventsExportOutcome
                  */
@@ -2474,7 +2476,9 @@ namespace TencentCloud
                 DescribeAbnormalProcessRulesOutcomeCallable DescribeAbnormalProcessRulesCallable(const Model::DescribeAbnormalProcessRulesRequest& request);
 
                 /**
-                 *查询运行时异常进程策略列表信息导出
+                 *接口已废弃
+
+查询运行时异常进程策略列表信息导出
                  * @param req DescribeAbnormalProcessRulesExportRequest
                  * @return DescribeAbnormalProcessRulesExportOutcome
                  */
@@ -2528,7 +2532,9 @@ namespace TencentCloud
                 DescribeAccessControlRulesOutcomeCallable DescribeAccessControlRulesCallable(const Model::DescribeAccessControlRulesRequest& request);
 
                 /**
-                 *查询运行时访问控制策略列表导出
+                 *接口已废弃
+
+查询运行时访问控制策略列表导出
                  * @param req DescribeAccessControlRulesExportRequest
                  * @return DescribeAccessControlRulesExportOutcome
                  */
@@ -2690,7 +2696,9 @@ namespace TencentCloud
                 DescribeAssetImageListOutcomeCallable DescribeAssetImageListCallable(const Model::DescribeAssetImageListRequest& request);
 
                 /**
-                 *容器安全搜索查询镜像列表导出
+                 *接口已废弃
+
+容器安全搜索查询镜像列表导出
                  * @param req DescribeAssetImageListExportRequest
                  * @return DescribeAssetImageListExportOutcome
                  */
@@ -3185,7 +3193,9 @@ namespace TencentCloud
                 DescribeEscapeEventTypeSummaryOutcomeCallable DescribeEscapeEventTypeSummaryCallable(const Model::DescribeEscapeEventTypeSummaryRequest& request);
 
                 /**
-                 *DescribeEscapeEventsExport  查询容器逃逸事件列表导出
+                 *接口已废弃
+
+DescribeEscapeEventsExport  查询容器逃逸事件列表导出
                  * @param req DescribeEscapeEventsExportRequest
                  * @return DescribeEscapeEventsExportOutcome
                  */

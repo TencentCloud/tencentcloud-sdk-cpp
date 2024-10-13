@@ -61,6 +61,8 @@
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobEventsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobEventsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeJobRuntimeInfoRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeJobRuntimeInfoResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobSavepointRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobSavepointResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobSubmissionLogRequest.h>
@@ -170,6 +172,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeJobEventsResponse> DescribeJobEventsOutcome;
                 typedef std::future<DescribeJobEventsOutcome> DescribeJobEventsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeJobEventsRequest&, DescribeJobEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobEventsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobRuntimeInfoResponse> DescribeJobRuntimeInfoOutcome;
+                typedef std::future<DescribeJobRuntimeInfoOutcome> DescribeJobRuntimeInfoOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DescribeJobRuntimeInfoRequest&, DescribeJobRuntimeInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobRuntimeInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeJobSavepointResponse> DescribeJobSavepointOutcome;
                 typedef std::future<DescribeJobSavepointOutcome> DescribeJobSavepointOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeJobSavepointRequest&, DescribeJobSavepointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobSavepointAsyncHandler;
@@ -400,6 +405,15 @@ namespace TencentCloud
                 DescribeJobEventsOutcome DescribeJobEvents(const Model::DescribeJobEventsRequest &request);
                 void DescribeJobEventsAsync(const Model::DescribeJobEventsRequest& request, const DescribeJobEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeJobEventsOutcomeCallable DescribeJobEventsCallable(const Model::DescribeJobEventsRequest& request);
+
+                /**
+                 *获取作业运行时的信息
+                 * @param req DescribeJobRuntimeInfoRequest
+                 * @return DescribeJobRuntimeInfoOutcome
+                 */
+                DescribeJobRuntimeInfoOutcome DescribeJobRuntimeInfo(const Model::DescribeJobRuntimeInfoRequest &request);
+                void DescribeJobRuntimeInfoAsync(const Model::DescribeJobRuntimeInfoRequest& request, const DescribeJobRuntimeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobRuntimeInfoOutcomeCallable DescribeJobRuntimeInfoCallable(const Model::DescribeJobRuntimeInfoRequest& request);
 
                 /**
                  *查找Savepoint列表

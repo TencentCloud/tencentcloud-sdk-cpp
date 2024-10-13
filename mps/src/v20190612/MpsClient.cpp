@@ -857,6 +857,92 @@ MpsClient::CreateTranscodeTemplateOutcomeCallable MpsClient::CreateTranscodeTemp
     return task->get_future();
 }
 
+MpsClient::CreateVideoDatabaseEntryTaskOutcome MpsClient::CreateVideoDatabaseEntryTask(const CreateVideoDatabaseEntryTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVideoDatabaseEntryTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVideoDatabaseEntryTaskResponse rsp = CreateVideoDatabaseEntryTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVideoDatabaseEntryTaskOutcome(rsp);
+        else
+            return CreateVideoDatabaseEntryTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVideoDatabaseEntryTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateVideoDatabaseEntryTaskAsync(const CreateVideoDatabaseEntryTaskRequest& request, const CreateVideoDatabaseEntryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVideoDatabaseEntryTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateVideoDatabaseEntryTaskOutcomeCallable MpsClient::CreateVideoDatabaseEntryTaskCallable(const CreateVideoDatabaseEntryTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVideoDatabaseEntryTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVideoDatabaseEntryTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::CreateVideoSearchTaskOutcome MpsClient::CreateVideoSearchTask(const CreateVideoSearchTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVideoSearchTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVideoSearchTaskResponse rsp = CreateVideoSearchTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVideoSearchTaskOutcome(rsp);
+        else
+            return CreateVideoSearchTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVideoSearchTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateVideoSearchTaskAsync(const CreateVideoSearchTaskRequest& request, const CreateVideoSearchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVideoSearchTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateVideoSearchTaskOutcomeCallable MpsClient::CreateVideoSearchTaskCallable(const CreateVideoSearchTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVideoSearchTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVideoSearchTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::CreateWatermarkTemplateOutcome MpsClient::CreateWatermarkTemplate(const CreateWatermarkTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateWatermarkTemplate");
@@ -2914,6 +3000,92 @@ MpsClient::DescribeTranscodeTemplatesOutcomeCallable MpsClient::DescribeTranscod
         [this, request]()
         {
             return this->DescribeTranscodeTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeVideoDatabaseEntryTaskDetailOutcome MpsClient::DescribeVideoDatabaseEntryTaskDetail(const DescribeVideoDatabaseEntryTaskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVideoDatabaseEntryTaskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVideoDatabaseEntryTaskDetailResponse rsp = DescribeVideoDatabaseEntryTaskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVideoDatabaseEntryTaskDetailOutcome(rsp);
+        else
+            return DescribeVideoDatabaseEntryTaskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVideoDatabaseEntryTaskDetailOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeVideoDatabaseEntryTaskDetailAsync(const DescribeVideoDatabaseEntryTaskDetailRequest& request, const DescribeVideoDatabaseEntryTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVideoDatabaseEntryTaskDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeVideoDatabaseEntryTaskDetailOutcomeCallable MpsClient::DescribeVideoDatabaseEntryTaskDetailCallable(const DescribeVideoDatabaseEntryTaskDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVideoDatabaseEntryTaskDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVideoDatabaseEntryTaskDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeVideoSearchTaskDetailOutcome MpsClient::DescribeVideoSearchTaskDetail(const DescribeVideoSearchTaskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVideoSearchTaskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVideoSearchTaskDetailResponse rsp = DescribeVideoSearchTaskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVideoSearchTaskDetailOutcome(rsp);
+        else
+            return DescribeVideoSearchTaskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVideoSearchTaskDetailOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeVideoSearchTaskDetailAsync(const DescribeVideoSearchTaskDetailRequest& request, const DescribeVideoSearchTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVideoSearchTaskDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeVideoSearchTaskDetailOutcomeCallable MpsClient::DescribeVideoSearchTaskDetailCallable(const DescribeVideoSearchTaskDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVideoSearchTaskDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVideoSearchTaskDetail(request);
         }
     );
 

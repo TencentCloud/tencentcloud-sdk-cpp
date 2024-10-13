@@ -1416,6 +1416,49 @@ EssbasicClient::ChannelDeleteSealPoliciesOutcomeCallable EssbasicClient::Channel
     return task->get_future();
 }
 
+EssbasicClient::ChannelDescribeAccountBillDetailOutcome EssbasicClient::ChannelDescribeAccountBillDetail(const ChannelDescribeAccountBillDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelDescribeAccountBillDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelDescribeAccountBillDetailResponse rsp = ChannelDescribeAccountBillDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelDescribeAccountBillDetailOutcome(rsp);
+        else
+            return ChannelDescribeAccountBillDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelDescribeAccountBillDetailOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelDescribeAccountBillDetailAsync(const ChannelDescribeAccountBillDetailRequest& request, const ChannelDescribeAccountBillDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelDescribeAccountBillDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelDescribeAccountBillDetailOutcomeCallable EssbasicClient::ChannelDescribeAccountBillDetailCallable(const ChannelDescribeAccountBillDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelDescribeAccountBillDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelDescribeAccountBillDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelDescribeBillUsageDetailOutcome EssbasicClient::ChannelDescribeBillUsageDetail(const ChannelDescribeBillUsageDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelDescribeBillUsageDetail");

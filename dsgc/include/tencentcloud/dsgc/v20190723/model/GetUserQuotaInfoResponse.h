@@ -155,6 +155,48 @@ namespace TencentCloud
                      */
                     bool COSUnbindNumHasBeenSet() const;
 
+                    /**
+                     * 获取用户购买的实例配额。
+                     * @return InsTotalQuota 用户购买的实例配额。
+                     * 
+                     */
+                    int64_t GetInsTotalQuota() const;
+
+                    /**
+                     * 判断参数 InsTotalQuota 是否已赋值
+                     * @return InsTotalQuota 是否已赋值
+                     * 
+                     */
+                    bool InsTotalQuotaHasBeenSet() const;
+
+                    /**
+                     * 获取用户可用的实例配额。
+                     * @return InsRemainQuota 用户可用的实例配额。
+                     * 
+                     */
+                    int64_t GetInsRemainQuota() const;
+
+                    /**
+                     * 判断参数 InsRemainQuota 是否已赋值
+                     * @return InsRemainQuota 是否已赋值
+                     * 
+                     */
+                    bool InsRemainQuotaHasBeenSet() const;
+
+                    /**
+                     * 获取用户购买的版本
+                     * @return Version 用户购买的版本
+                     * 
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     * 
+                     */
+                    bool VersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -204,6 +246,24 @@ namespace TencentCloud
                      */
                     int64_t m_cOSUnbindNum;
                     bool m_cOSUnbindNumHasBeenSet;
+
+                    /**
+                     * 用户购买的实例配额。
+                     */
+                    int64_t m_insTotalQuota;
+                    bool m_insTotalQuotaHasBeenSet;
+
+                    /**
+                     * 用户可用的实例配额。
+                     */
+                    int64_t m_insRemainQuota;
+                    bool m_insRemainQuotaHasBeenSet;
+
+                    /**
+                     * 用户购买的版本
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
 
                 };
             }

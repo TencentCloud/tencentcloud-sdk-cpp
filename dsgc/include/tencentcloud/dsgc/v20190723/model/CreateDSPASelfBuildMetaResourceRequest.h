@@ -139,48 +139,6 @@ postgre_like_proto -- Postgre协议类关系型数据库。
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取可用于访问自建云资源的IP。
-                     * @return ResourceVip 可用于访问自建云资源的IP。
-                     * 
-                     */
-                    std::string GetResourceVip() const;
-
-                    /**
-                     * 设置可用于访问自建云资源的IP。
-                     * @param _resourceVip 可用于访问自建云资源的IP。
-                     * 
-                     */
-                    void SetResourceVip(const std::string& _resourceVip);
-
-                    /**
-                     * 判断参数 ResourceVip 是否已赋值
-                     * @return ResourceVip 是否已赋值
-                     * 
-                     */
-                    bool ResourceVipHasBeenSet() const;
-
-                    /**
-                     * 获取可用于访问自建云资源的端口。
-                     * @return ResourceVPort 可用于访问自建云资源的端口。
-                     * 
-                     */
-                    uint64_t GetResourceVPort() const;
-
-                    /**
-                     * 设置可用于访问自建云资源的端口。
-                     * @param _resourceVPort 可用于访问自建云资源的端口。
-                     * 
-                     */
-                    void SetResourceVPort(const uint64_t& _resourceVPort);
-
-                    /**
-                     * 判断参数 ResourceVPort 是否已赋值
-                     * @return ResourceVPort 是否已赋值
-                     * 
-                     */
-                    bool ResourceVPortHasBeenSet() const;
-
-                    /**
                      * 获取自建云资源的VPC ID。
                      * @return ResourceUniqueVpcId 自建云资源的VPC ID。
                      * 
@@ -252,15 +210,65 @@ clb - 通过LB的方式进行访问。
                     bool ResourceAccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取账户名。
-                     * @return UserName 账户名。
+                     * 获取可用于访问自建云资源的IP。
+emr的连接不需要使用该字段
+                     * @return ResourceVip 可用于访问自建云资源的IP。
+emr的连接不需要使用该字段
+                     * 
+                     */
+                    std::string GetResourceVip() const;
+
+                    /**
+                     * 设置可用于访问自建云资源的IP。
+emr的连接不需要使用该字段
+                     * @param _resourceVip 可用于访问自建云资源的IP。
+emr的连接不需要使用该字段
+                     * 
+                     */
+                    void SetResourceVip(const std::string& _resourceVip);
+
+                    /**
+                     * 判断参数 ResourceVip 是否已赋值
+                     * @return ResourceVip 是否已赋值
+                     * 
+                     */
+                    bool ResourceVipHasBeenSet() const;
+
+                    /**
+                     * 获取可用于访问自建云资源的端口。
+emr的连接不需要使用该字段
+                     * @return ResourceVPort 可用于访问自建云资源的端口。
+emr的连接不需要使用该字段
+                     * 
+                     */
+                    uint64_t GetResourceVPort() const;
+
+                    /**
+                     * 设置可用于访问自建云资源的端口。
+emr的连接不需要使用该字段
+                     * @param _resourceVPort 可用于访问自建云资源的端口。
+emr的连接不需要使用该字段
+                     * 
+                     */
+                    void SetResourceVPort(const uint64_t& _resourceVPort);
+
+                    /**
+                     * 判断参数 ResourceVPort 是否已赋值
+                     * @return ResourceVPort 是否已赋值
+                     * 
+                     */
+                    bool ResourceVPortHasBeenSet() const;
+
+                    /**
+                     * 获取账户名。如果emr_hive的连接方式为“LDAP”，则复用该字段
+                     * @return UserName 账户名。如果emr_hive的连接方式为“LDAP”，则复用该字段
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置账户名。
-                     * @param _userName 账户名。
+                     * 设置账户名。如果emr_hive的连接方式为“LDAP”，则复用该字段
+                     * @param _userName 账户名。如果emr_hive的连接方式为“LDAP”，则复用该字段
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -273,15 +281,15 @@ clb - 通过LB的方式进行访问。
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取账户密码。
-                     * @return Password 账户密码。
+                     * 获取账户密码。如果emr_hive的连接方式为“LDAP”，则复用该字段
+                     * @return Password 账户密码。如果emr_hive的连接方式为“LDAP”，则复用该字段
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置账户密码。
-                     * @param _password 账户密码。
+                     * 设置账户密码。如果emr_hive的连接方式为“LDAP”，则复用该字段
+                     * @param _password 账户密码。如果emr_hive的连接方式为“LDAP”，则复用该字段
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -368,6 +376,27 @@ serviceName
                      */
                     bool InstanceValueHasBeenSet() const;
 
+                    /**
+                     * 获取授权范围（all:授权整个数据源 manual:手动指定数据库）
+                     * @return AuthRange 授权范围（all:授权整个数据源 manual:手动指定数据库）
+                     * 
+                     */
+                    std::string GetAuthRange() const;
+
+                    /**
+                     * 设置授权范围（all:授权整个数据源 manual:手动指定数据库）
+                     * @param _authRange 授权范围（all:授权整个数据源 manual:手动指定数据库）
+                     * 
+                     */
+                    void SetAuthRange(const std::string& _authRange);
+
+                    /**
+                     * 判断参数 AuthRange 是否已赋值
+                     * @return AuthRange 是否已赋值
+                     * 
+                     */
+                    bool AuthRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,18 +427,6 @@ postgre_like_proto -- Postgre协议类关系型数据库。
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 可用于访问自建云资源的IP。
-                     */
-                    std::string m_resourceVip;
-                    bool m_resourceVipHasBeenSet;
-
-                    /**
-                     * 可用于访问自建云资源的端口。
-                     */
-                    uint64_t m_resourceVPort;
-                    bool m_resourceVPortHasBeenSet;
-
-                    /**
                      * 自建云资源的VPC ID。
                      */
                     std::string m_resourceUniqueVpcId;
@@ -430,13 +447,27 @@ clb - 通过LB的方式进行访问。
                     bool m_resourceAccessTypeHasBeenSet;
 
                     /**
-                     * 账户名。
+                     * 可用于访问自建云资源的IP。
+emr的连接不需要使用该字段
+                     */
+                    std::string m_resourceVip;
+                    bool m_resourceVipHasBeenSet;
+
+                    /**
+                     * 可用于访问自建云资源的端口。
+emr的连接不需要使用该字段
+                     */
+                    uint64_t m_resourceVPort;
+                    bool m_resourceVPortHasBeenSet;
+
+                    /**
+                     * 账户名。如果emr_hive的连接方式为“LDAP”，则复用该字段
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 账户密码。
+                     * 账户密码。如果emr_hive的连接方式为“LDAP”，则复用该字段
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
@@ -461,6 +492,12 @@ serviceName
                      */
                     std::string m_instanceValue;
                     bool m_instanceValueHasBeenSet;
+
+                    /**
+                     * 授权范围（all:授权整个数据源 manual:手动指定数据库）
+                     */
+                    std::string m_authRange;
+                    bool m_authRangeHasBeenSet;
 
                 };
             }

@@ -148,6 +148,48 @@ namespace TencentCloud
                      */
                     bool ResourcesAccountHasBeenSet() const;
 
+                    /**
+                     * 获取创建默认主模板扫描任务
+                     * @return CreateDefaultTask 创建默认主模板扫描任务
+                     * 
+                     */
+                    bool GetCreateDefaultTask() const;
+
+                    /**
+                     * 设置创建默认主模板扫描任务
+                     * @param _createDefaultTask 创建默认主模板扫描任务
+                     * 
+                     */
+                    void SetCreateDefaultTask(const bool& _createDefaultTask);
+
+                    /**
+                     * 判断参数 CreateDefaultTask 是否已赋值
+                     * @return CreateDefaultTask 是否已赋值
+                     * 
+                     */
+                    bool CreateDefaultTaskHasBeenSet() const;
+
+                    /**
+                     * 获取授权范围（all:授权整个数据源 manual:手动指定数据库）
+                     * @return AuthRange 授权范围（all:授权整个数据源 manual:手动指定数据库）
+                     * 
+                     */
+                    std::string GetAuthRange() const;
+
+                    /**
+                     * 设置授权范围（all:授权整个数据源 manual:手动指定数据库）
+                     * @param _authRange 授权范围（all:授权整个数据源 manual:手动指定数据库）
+                     * 
+                     */
+                    void SetAuthRange(const std::string& _authRange);
+
+                    /**
+                     * 判断参数 AuthRange 是否已赋值
+                     * @return AuthRange 是否已赋值
+                     * 
+                     */
+                    bool AuthRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +221,18 @@ namespace TencentCloud
                      */
                     std::vector<DspaResourceAccount> m_resourcesAccount;
                     bool m_resourcesAccountHasBeenSet;
+
+                    /**
+                     * 创建默认主模板扫描任务
+                     */
+                    bool m_createDefaultTask;
+                    bool m_createDefaultTaskHasBeenSet;
+
+                    /**
+                     * 授权范围（all:授权整个数据源 manual:手动指定数据库）
+                     */
+                    std::string m_authRange;
+                    bool m_authRangeHasBeenSet;
 
                 };
             }

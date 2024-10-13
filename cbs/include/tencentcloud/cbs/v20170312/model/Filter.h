@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 描述键值对过滤器，用于条件过滤查询。
+                * 过滤条件
                 */
                 class Filter : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤键的名称。
-                     * @return Name 过滤键的名称。
+                     * 获取过滤键的名称
+                     * @return Name 过滤键的名称
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置过滤键的名称。
-                     * @param _name 过滤键的名称。
+                     * 设置过滤键的名称
+                     * @param _name 过滤键的名称
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取一个或者多个过滤值。
-                     * @return Values 一个或者多个过滤值。
+                     * 获取一个或者多个过滤值
+                     * @return Values 一个或者多个过滤值
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置一个或者多个过滤值。
-                     * @param _values 一个或者多个过滤值。
+                     * 设置一个或者多个过滤值
+                     * @param _values 一个或者多个过滤值
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤键的名称。
+                     * 过滤键的名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 一个或者多个过滤值。
+                     * 一个或者多个过滤值
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;

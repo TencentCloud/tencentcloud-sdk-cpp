@@ -197,6 +197,27 @@ https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.9
                      */
                     bool TargetUserIdHasBeenSet() const;
 
+                    /**
+                     * 获取机器人订阅的用户列表
+                     * @return TargetUserIdList 机器人订阅的用户列表
+                     * 
+                     */
+                    std::vector<std::string> GetTargetUserIdList() const;
+
+                    /**
+                     * 设置机器人订阅的用户列表
+                     * @param _targetUserIdList 机器人订阅的用户列表
+                     * 
+                     */
+                    void SetTargetUserIdList(const std::vector<std::string>& _targetUserIdList);
+
+                    /**
+                     * 判断参数 TargetUserIdList 是否已赋值
+                     * @return TargetUserIdList 是否已赋值
+                     * 
+                     */
+                    bool TargetUserIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +262,12 @@ https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.9
                      */
                     std::string m_targetUserId;
                     bool m_targetUserIdHasBeenSet;
+
+                    /**
+                     * 机器人订阅的用户列表
+                     */
+                    std::vector<std::string> m_targetUserIdList;
+                    bool m_targetUserIdListHasBeenSet;
 
                 };
             }

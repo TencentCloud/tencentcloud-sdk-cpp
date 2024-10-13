@@ -93,6 +93,10 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeApiDetailRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeApiDetailResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeApiListVersionTwoRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeApiListVersionTwoResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAreaBanAreasRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAreaBanAreasResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAreaBanSupportAreasRequest.h>
@@ -424,6 +428,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAntiInfoLeakageRulesResponse> DescribeAntiInfoLeakageRulesOutcome;
                 typedef std::future<DescribeAntiInfoLeakageRulesOutcome> DescribeAntiInfoLeakageRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAntiInfoLeakageRulesRequest&, DescribeAntiInfoLeakageRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAntiInfoLeakageRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApiDetailResponse> DescribeApiDetailOutcome;
+                typedef std::future<DescribeApiDetailOutcome> DescribeApiDetailOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeApiDetailRequest&, DescribeApiDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApiListVersionTwoResponse> DescribeApiListVersionTwoOutcome;
+                typedef std::future<DescribeApiListVersionTwoOutcome> DescribeApiListVersionTwoOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeApiListVersionTwoRequest&, DescribeApiListVersionTwoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiListVersionTwoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAreaBanAreasResponse> DescribeAreaBanAreasOutcome;
                 typedef std::future<DescribeAreaBanAreasOutcome> DescribeAreaBanAreasOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAreaBanAreasRequest&, DescribeAreaBanAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAreaBanAreasAsyncHandler;
@@ -1065,6 +1075,24 @@ namespace TencentCloud
                 DescribeAntiInfoLeakageRulesOutcome DescribeAntiInfoLeakageRules(const Model::DescribeAntiInfoLeakageRulesRequest &request);
                 void DescribeAntiInfoLeakageRulesAsync(const Model::DescribeAntiInfoLeakageRulesRequest& request, const DescribeAntiInfoLeakageRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAntiInfoLeakageRulesOutcomeCallable DescribeAntiInfoLeakageRulesCallable(const Model::DescribeAntiInfoLeakageRulesRequest& request);
+
+                /**
+                 *获取Api请求详情信息
+                 * @param req DescribeApiDetailRequest
+                 * @return DescribeApiDetailOutcome
+                 */
+                DescribeApiDetailOutcome DescribeApiDetail(const Model::DescribeApiDetailRequest &request);
+                void DescribeApiDetailAsync(const Model::DescribeApiDetailRequest& request, const DescribeApiDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApiDetailOutcomeCallable DescribeApiDetailCallable(const Model::DescribeApiDetailRequest& request);
+
+                /**
+                 *api资产列表
+                 * @param req DescribeApiListVersionTwoRequest
+                 * @return DescribeApiListVersionTwoOutcome
+                 */
+                DescribeApiListVersionTwoOutcome DescribeApiListVersionTwo(const Model::DescribeApiListVersionTwoRequest &request);
+                void DescribeApiListVersionTwoAsync(const Model::DescribeApiListVersionTwoRequest& request, const DescribeApiListVersionTwoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApiListVersionTwoOutcomeCallable DescribeApiListVersionTwoCallable(const Model::DescribeApiListVersionTwoRequest& request);
 
                 /**
                  *获取地域封禁配置包括地域封禁开关，设置封禁的地区信息

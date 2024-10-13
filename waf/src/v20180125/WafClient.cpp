@@ -1545,6 +1545,92 @@ WafClient::DescribeAntiInfoLeakageRulesOutcomeCallable WafClient::DescribeAntiIn
     return task->get_future();
 }
 
+WafClient::DescribeApiDetailOutcome WafClient::DescribeApiDetail(const DescribeApiDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiDetailResponse rsp = DescribeApiDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiDetailOutcome(rsp);
+        else
+            return DescribeApiDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiDetailOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeApiDetailAsync(const DescribeApiDetailRequest& request, const DescribeApiDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApiDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeApiDetailOutcomeCallable WafClient::DescribeApiDetailCallable(const DescribeApiDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApiDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApiDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeApiListVersionTwoOutcome WafClient::DescribeApiListVersionTwo(const DescribeApiListVersionTwoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiListVersionTwo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiListVersionTwoResponse rsp = DescribeApiListVersionTwoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiListVersionTwoOutcome(rsp);
+        else
+            return DescribeApiListVersionTwoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiListVersionTwoOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeApiListVersionTwoAsync(const DescribeApiListVersionTwoRequest& request, const DescribeApiListVersionTwoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApiListVersionTwo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeApiListVersionTwoOutcomeCallable WafClient::DescribeApiListVersionTwoCallable(const DescribeApiListVersionTwoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApiListVersionTwoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApiListVersionTwo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeAreaBanAreasOutcome WafClient::DescribeAreaBanAreas(const DescribeAreaBanAreasRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAreaBanAreas");

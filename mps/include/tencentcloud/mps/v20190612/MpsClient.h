@@ -61,6 +61,10 @@
 #include <tencentcloud/mps/v20190612/model/CreateStreamLinkOutputInfoResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateTranscodeTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateTranscodeTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateVideoDatabaseEntryTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateVideoDatabaseEntryTaskResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateVideoSearchTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateVideoSearchTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateWatermarkTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateWatermarkTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateWordSamplesRequest.h>
@@ -157,6 +161,10 @@
 #include <tencentcloud/mps/v20190612/model/DescribeTasksResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTranscodeTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTranscodeTemplatesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeVideoDatabaseEntryTaskDetailRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeVideoDatabaseEntryTaskDetailResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeVideoSearchTaskDetailRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeVideoSearchTaskDetailResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeWatermarkTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeWatermarkTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeWordSamplesRequest.h>
@@ -302,6 +310,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTranscodeTemplateResponse> CreateTranscodeTemplateOutcome;
                 typedef std::future<CreateTranscodeTemplateOutcome> CreateTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateTranscodeTemplateRequest&, CreateTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTranscodeTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVideoDatabaseEntryTaskResponse> CreateVideoDatabaseEntryTaskOutcome;
+                typedef std::future<CreateVideoDatabaseEntryTaskOutcome> CreateVideoDatabaseEntryTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateVideoDatabaseEntryTaskRequest&, CreateVideoDatabaseEntryTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoDatabaseEntryTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVideoSearchTaskResponse> CreateVideoSearchTaskOutcome;
+                typedef std::future<CreateVideoSearchTaskOutcome> CreateVideoSearchTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateVideoSearchTaskRequest&, CreateVideoSearchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoSearchTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateWatermarkTemplateResponse> CreateWatermarkTemplateOutcome;
                 typedef std::future<CreateWatermarkTemplateOutcome> CreateWatermarkTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateWatermarkTemplateRequest&, CreateWatermarkTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWatermarkTemplateAsyncHandler;
@@ -446,6 +460,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTranscodeTemplatesResponse> DescribeTranscodeTemplatesOutcome;
                 typedef std::future<DescribeTranscodeTemplatesOutcome> DescribeTranscodeTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeTranscodeTemplatesRequest&, DescribeTranscodeTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTranscodeTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVideoDatabaseEntryTaskDetailResponse> DescribeVideoDatabaseEntryTaskDetailOutcome;
+                typedef std::future<DescribeVideoDatabaseEntryTaskDetailOutcome> DescribeVideoDatabaseEntryTaskDetailOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeVideoDatabaseEntryTaskDetailRequest&, DescribeVideoDatabaseEntryTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoDatabaseEntryTaskDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVideoSearchTaskDetailResponse> DescribeVideoSearchTaskDetailOutcome;
+                typedef std::future<DescribeVideoSearchTaskDetailOutcome> DescribeVideoSearchTaskDetailOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeVideoSearchTaskDetailRequest&, DescribeVideoSearchTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoSearchTaskDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWatermarkTemplatesResponse> DescribeWatermarkTemplatesOutcome;
                 typedef std::future<DescribeWatermarkTemplatesOutcome> DescribeWatermarkTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeWatermarkTemplatesRequest&, DescribeWatermarkTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWatermarkTemplatesAsyncHandler;
@@ -741,6 +761,25 @@ namespace TencentCloud
                 CreateTranscodeTemplateOutcome CreateTranscodeTemplate(const Model::CreateTranscodeTemplateRequest &request);
                 void CreateTranscodeTemplateAsync(const Model::CreateTranscodeTemplateRequest& request, const CreateTranscodeTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTranscodeTemplateOutcomeCallable CreateTranscodeTemplateCallable(const Model::CreateTranscodeTemplateRequest& request);
+
+                /**
+                 *对URL链接或COS中的视频发起入库任务。
+可选在任务完成后向回调方发送任务完成状态信息。
+                 * @param req CreateVideoDatabaseEntryTaskRequest
+                 * @return CreateVideoDatabaseEntryTaskOutcome
+                 */
+                CreateVideoDatabaseEntryTaskOutcome CreateVideoDatabaseEntryTask(const Model::CreateVideoDatabaseEntryTaskRequest &request);
+                void CreateVideoDatabaseEntryTaskAsync(const Model::CreateVideoDatabaseEntryTaskRequest& request, const CreateVideoDatabaseEntryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVideoDatabaseEntryTaskOutcomeCallable CreateVideoDatabaseEntryTaskCallable(const Model::CreateVideoDatabaseEntryTaskRequest& request);
+
+                /**
+                 *使用检索值检索库中最接近检索值的若干视频。
+                 * @param req CreateVideoSearchTaskRequest
+                 * @return CreateVideoSearchTaskOutcome
+                 */
+                CreateVideoSearchTaskOutcome CreateVideoSearchTask(const Model::CreateVideoSearchTaskRequest &request);
+                void CreateVideoSearchTaskAsync(const Model::CreateVideoSearchTaskRequest& request, const CreateVideoSearchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVideoSearchTaskOutcomeCallable CreateVideoSearchTaskCallable(const Model::CreateVideoSearchTaskRequest& request);
 
                 /**
                  *创建用户自定义水印模板，数量上限：1000。
@@ -1190,6 +1229,24 @@ namespace TencentCloud
                 DescribeTranscodeTemplatesOutcome DescribeTranscodeTemplates(const Model::DescribeTranscodeTemplatesRequest &request);
                 void DescribeTranscodeTemplatesAsync(const Model::DescribeTranscodeTemplatesRequest& request, const DescribeTranscodeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTranscodeTemplatesOutcomeCallable DescribeTranscodeTemplatesCallable(const Model::DescribeTranscodeTemplatesRequest& request);
+
+                /**
+                 *根据任务ID查询视频入库任务的状态。
+                 * @param req DescribeVideoDatabaseEntryTaskDetailRequest
+                 * @return DescribeVideoDatabaseEntryTaskDetailOutcome
+                 */
+                DescribeVideoDatabaseEntryTaskDetailOutcome DescribeVideoDatabaseEntryTaskDetail(const Model::DescribeVideoDatabaseEntryTaskDetailRequest &request);
+                void DescribeVideoDatabaseEntryTaskDetailAsync(const Model::DescribeVideoDatabaseEntryTaskDetailRequest& request, const DescribeVideoDatabaseEntryTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoDatabaseEntryTaskDetailOutcomeCallable DescribeVideoDatabaseEntryTaskDetailCallable(const Model::DescribeVideoDatabaseEntryTaskDetailRequest& request);
+
+                /**
+                 *根据任务ID查询视频检索任务的状态。
+                 * @param req DescribeVideoSearchTaskDetailRequest
+                 * @return DescribeVideoSearchTaskDetailOutcome
+                 */
+                DescribeVideoSearchTaskDetailOutcome DescribeVideoSearchTaskDetail(const Model::DescribeVideoSearchTaskDetailRequest &request);
+                void DescribeVideoSearchTaskDetailAsync(const Model::DescribeVideoSearchTaskDetailRequest& request, const DescribeVideoSearchTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoSearchTaskDetailOutcomeCallable DescribeVideoSearchTaskDetailCallable(const Model::DescribeVideoSearchTaskDetailRequest& request);
 
                 /**
                  *查询用户自定义水印模板，支持根据条件，分页查询。

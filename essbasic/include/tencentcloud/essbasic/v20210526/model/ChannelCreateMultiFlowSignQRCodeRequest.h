@@ -317,6 +317,27 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取禁止个人用户重复签署，默认不禁止，即同一用户可多次扫码签署多份合同。若要求同一用户仅能扫码签署一份合同，请传入true。
+                     * @return ForbidPersonalMultipleSign 禁止个人用户重复签署，默认不禁止，即同一用户可多次扫码签署多份合同。若要求同一用户仅能扫码签署一份合同，请传入true。
+                     * 
+                     */
+                    bool GetForbidPersonalMultipleSign() const;
+
+                    /**
+                     * 设置禁止个人用户重复签署，默认不禁止，即同一用户可多次扫码签署多份合同。若要求同一用户仅能扫码签署一份合同，请传入true。
+                     * @param _forbidPersonalMultipleSign 禁止个人用户重复签署，默认不禁止，即同一用户可多次扫码签署多份合同。若要求同一用户仅能扫码签署一份合同，请传入true。
+                     * 
+                     */
+                    void SetForbidPersonalMultipleSign(const bool& _forbidPersonalMultipleSign);
+
+                    /**
+                     * 判断参数 ForbidPersonalMultipleSign 是否已赋值
+                     * @return ForbidPersonalMultipleSign 是否已赋值
+                     * 
+                     */
+                    bool ForbidPersonalMultipleSignHasBeenSet() const;
+
                 private:
 
                     /**
@@ -394,6 +415,12 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 禁止个人用户重复签署，默认不禁止，即同一用户可多次扫码签署多份合同。若要求同一用户仅能扫码签署一份合同，请传入true。
+                     */
+                    bool m_forbidPersonalMultipleSign;
+                    bool m_forbidPersonalMultipleSignHasBeenSet;
 
                 };
             }

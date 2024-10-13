@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/CrossRegionBackupItem.h>
 
 
 namespace TencentCloud
@@ -109,6 +110,31 @@ namespace TencentCloud
                      */
                     bool SnapshotTimeHasBeenSet() const;
 
+                    /**
+                     * 获取跨地域备份项详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CrossRegionBackupInfos 跨地域备份项详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<CrossRegionBackupItem> GetCrossRegionBackupInfos() const;
+
+                    /**
+                     * 设置跨地域备份项详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _crossRegionBackupInfos 跨地域备份项详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCrossRegionBackupInfos(const std::vector<CrossRegionBackupItem>& _crossRegionBackupInfos);
+
+                    /**
+                     * 判断参数 CrossRegionBackupInfos 是否已赋值
+                     * @return CrossRegionBackupInfos 是否已赋值
+                     * 
+                     */
+                    bool CrossRegionBackupInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +154,13 @@ namespace TencentCloud
                      */
                     std::string m_snapshotTime;
                     bool m_snapshotTimeHasBeenSet;
+
+                    /**
+                     * 跨地域备份项详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CrossRegionBackupItem> m_crossRegionBackupInfos;
+                    bool m_crossRegionBackupInfosHasBeenSet;
 
                 };
             }

@@ -3738,6 +3738,49 @@ RedisClient::ModifyInstanceParamsOutcomeCallable RedisClient::ModifyInstancePara
     return task->get_future();
 }
 
+RedisClient::ModifyInstancePasswordOutcome RedisClient::ModifyInstancePassword(const ModifyInstancePasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstancePassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstancePasswordResponse rsp = ModifyInstancePasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstancePasswordOutcome(rsp);
+        else
+            return ModifyInstancePasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstancePasswordOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::ModifyInstancePasswordAsync(const ModifyInstancePasswordRequest& request, const ModifyInstancePasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstancePassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::ModifyInstancePasswordOutcomeCallable RedisClient::ModifyInstancePasswordCallable(const ModifyInstancePasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstancePasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstancePassword(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::ModifyInstanceReadOnlyOutcome RedisClient::ModifyInstanceReadOnly(const ModifyInstanceReadOnlyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstanceReadOnly");

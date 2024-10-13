@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/SegmentSpecificInfo.h>
 
 
 namespace TencentCloud
@@ -57,7 +58,6 @@ namespace TencentCloud
 <li>mpeg2：MPEG2 编码</li>
 <li>dnxhd：DNxHD 编码</li>
 <li>mv-hevc：MV-HEVC 编码</li>
-注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。
 
 注意：av1 编码容器目前只支持 mp4 ，webm，mkv。
 注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。
@@ -75,7 +75,6 @@ namespace TencentCloud
 <li>mpeg2：MPEG2 编码</li>
 <li>dnxhd：DNxHD 编码</li>
 <li>mv-hevc：MV-HEVC 编码</li>
-注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。
 
 注意：av1 编码容器目前只支持 mp4 ，webm，mkv。
 注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。
@@ -98,7 +97,6 @@ namespace TencentCloud
 <li>mpeg2：MPEG2 编码</li>
 <li>dnxhd：DNxHD 编码</li>
 <li>mv-hevc：MV-HEVC 编码</li>
-注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。
 
 注意：av1 编码容器目前只支持 mp4 ，webm，mkv。
 注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。
@@ -116,7 +114,6 @@ namespace TencentCloud
 <li>mpeg2：MPEG2 编码</li>
 <li>dnxhd：DNxHD 编码</li>
 <li>mv-hevc：MV-HEVC 编码</li>
-注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。
 
 注意：av1 编码容器目前只支持 mp4 ，webm，mkv。
 注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。
@@ -305,18 +302,22 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。当填 0 时，系统将自动设置 gop 长度。
+                     * 获取关键帧 I 帧之间的间隔，允许按帧或秒自定义GOP长度，取值范围：0 和 [1, 100000]。
+当填 0 时，系统将自动设置 gop 长度。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Gop 关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。当填 0 时，系统将自动设置 gop 长度。
+                     * @return Gop 关键帧 I 帧之间的间隔，允许按帧或秒自定义GOP长度，取值范围：0 和 [1, 100000]。
+当填 0 时，系统将自动设置 gop 长度。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetGop() const;
 
                     /**
-                     * 设置关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。当填 0 时，系统将自动设置 gop 长度。
+                     * 设置关键帧 I 帧之间的间隔，允许按帧或秒自定义GOP长度，取值范围：0 和 [1, 100000]。
+当填 0 时，系统将自动设置 gop 长度。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gop 关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。当填 0 时，系统将自动设置 gop 长度。
+                     * @param _gop 关键帧 I 帧之间的间隔，允许按帧或秒自定义GOP长度，取值范围：0 和 [1, 100000]。
+当填 0 时，系统将自动设置 gop 长度。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -330,17 +331,60 @@ namespace TencentCloud
                     bool GopHasBeenSet() const;
 
                     /**
+                     * 获取Gop数值单位，可选值： 
+frame：表示帧 
+second：表示秒
+默认值：frame
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GopUnit Gop数值单位，可选值： 
+frame：表示帧 
+second：表示秒
+默认值：frame
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGopUnit() const;
+
+                    /**
+                     * 设置Gop数值单位，可选值： 
+frame：表示帧 
+second：表示秒
+默认值：frame
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gopUnit Gop数值单位，可选值： 
+frame：表示帧 
+second：表示秒
+默认值：frame
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGopUnit(const std::string& _gopUnit);
+
+                    /**
+                     * 判断参数 GopUnit 是否已赋值
+                     * @return GopUnit 是否已赋值
+                     * 
+                     */
+                    bool GopUnitHasBeenSet() const;
+
+                    /**
                      * 获取填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
  <li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
 <li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
 <li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>
 <li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>
+<li>smarttailor：智能剪裁：智能选取视频画面，来保证画面比例裁剪。</li>
+默认值：black 。
+注意：自适应码流只支持 stretch、black。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FillType 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
  <li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
 <li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
 <li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>
 <li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>
+<li>smarttailor：智能剪裁：智能选取视频画面，来保证画面比例裁剪。</li>
+默认值：black 。
+注意：自适应码流只支持 stretch、black。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -352,12 +396,18 @@ namespace TencentCloud
 <li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
 <li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>
 <li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>
+<li>smarttailor：智能剪裁：智能选取视频画面，来保证画面比例裁剪。</li>
+默认值：black 。
+注意：自适应码流只支持 stretch、black。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fillType 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
  <li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>
 <li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
 <li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>
 <li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>
+<li>smarttailor：智能剪裁：智能选取视频画面，来保证画面比例裁剪。</li>
+默认值：black 。
+注意：自适应码流只支持 stretch、black。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -371,22 +421,38 @@ namespace TencentCloud
                     bool FillTypeHasBeenSet() const;
 
                     /**
-                     * 获取视频恒定码率控制因子。取值范围为[0, 51]，填0表示禁用该参数。 
+                     * 获取视频恒定码率控制因子。取值范围为[0, 51]和100。
 如果没有特殊需求，不建议指定该参数。
+注意：
+需要修改为自动时，填100
+若Mode选择ABR，无需配置Vcrf值
+若Mode选择CBR，无需配置Vcrf值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Vcrf 视频恒定码率控制因子。取值范围为[0, 51]，填0表示禁用该参数。 
+                     * @return Vcrf 视频恒定码率控制因子。取值范围为[0, 51]和100。
 如果没有特殊需求，不建议指定该参数。
+注意：
+需要修改为自动时，填100
+若Mode选择ABR，无需配置Vcrf值
+若Mode选择CBR，无需配置Vcrf值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVcrf() const;
 
                     /**
-                     * 设置视频恒定码率控制因子。取值范围为[0, 51]，填0表示禁用该参数。 
+                     * 设置视频恒定码率控制因子。取值范围为[0, 51]和100。
 如果没有特殊需求，不建议指定该参数。
+注意：
+需要修改为自动时，填100
+若Mode选择ABR，无需配置Vcrf值
+若Mode选择CBR，无需配置Vcrf值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vcrf 视频恒定码率控制因子。取值范围为[0, 51]，填0表示禁用该参数。 
+                     * @param _vcrf 视频恒定码率控制因子。取值范围为[0, 51]和100。
 如果没有特殊需求，不建议指定该参数。
+注意：
+需要修改为自动时，填100
+若Mode选择ABR，无需配置Vcrf值
+若Mode选择CBR，无需配置Vcrf值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -435,6 +501,39 @@ namespace TencentCloud
                      * 
                      */
                     bool ContentAdaptStreamHasBeenSet() const;
+
+                    /**
+                     * 获取分片平均时长，取值范围：（0-10]，单位：秒
+默认值：10
+注意：只在封装格式HLS时使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HlsTime 分片平均时长，取值范围：（0-10]，单位：秒
+默认值：10
+注意：只在封装格式HLS时使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetHlsTime() const;
+
+                    /**
+                     * 设置分片平均时长，取值范围：（0-10]，单位：秒
+默认值：10
+注意：只在封装格式HLS时使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hlsTime 分片平均时长，取值范围：（0-10]，单位：秒
+默认值：10
+注意：只在封装格式HLS时使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHlsTime(const uint64_t& _hlsTime);
+
+                    /**
+                     * 判断参数 HlsTime 是否已赋值
+                     * @return HlsTime 是否已赋值
+                     * 
+                     */
+                    bool HlsTimeHasBeenSet() const;
 
                     /**
                      * 获取hls 分片类型，可选值：
@@ -547,6 +646,348 @@ namespace TencentCloud
                      */
                     bool Stereo3dTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Profile，适用于不同场景。 
+baseline: 只支持I/P帧，并只支持无交错的场景，适用于视频通话、手机视频等场景。 
+main: 主流Profile，提供I帧、P帧、B帧，并支持无交错模式和交错模式。主要用在主流的音视频消费产品如视频播放器、流媒体传输设备上。 
+high: 最高编码等级，在Main Profile上添加了8X8的预测，并支持自定义量化。广泛应用在蓝光存储、高清电视等场景。
+default：随原视频自动填充
+
+仅编码标准选择h264时出现该配置，默认为：default
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VideoProfile Profile，适用于不同场景。 
+baseline: 只支持I/P帧，并只支持无交错的场景，适用于视频通话、手机视频等场景。 
+main: 主流Profile，提供I帧、P帧、B帧，并支持无交错模式和交错模式。主要用在主流的音视频消费产品如视频播放器、流媒体传输设备上。 
+high: 最高编码等级，在Main Profile上添加了8X8的预测，并支持自定义量化。广泛应用在蓝光存储、高清电视等场景。
+default：随原视频自动填充
+
+仅编码标准选择h264时出现该配置，默认为：default
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVideoProfile() const;
+
+                    /**
+                     * 设置Profile，适用于不同场景。 
+baseline: 只支持I/P帧，并只支持无交错的场景，适用于视频通话、手机视频等场景。 
+main: 主流Profile，提供I帧、P帧、B帧，并支持无交错模式和交错模式。主要用在主流的音视频消费产品如视频播放器、流媒体传输设备上。 
+high: 最高编码等级，在Main Profile上添加了8X8的预测，并支持自定义量化。广泛应用在蓝光存储、高清电视等场景。
+default：随原视频自动填充
+
+仅编码标准选择h264时出现该配置，默认为：default
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _videoProfile Profile，适用于不同场景。 
+baseline: 只支持I/P帧，并只支持无交错的场景，适用于视频通话、手机视频等场景。 
+main: 主流Profile，提供I帧、P帧、B帧，并支持无交错模式和交错模式。主要用在主流的音视频消费产品如视频播放器、流媒体传输设备上。 
+high: 最高编码等级，在Main Profile上添加了8X8的预测，并支持自定义量化。广泛应用在蓝光存储、高清电视等场景。
+default：随原视频自动填充
+
+仅编码标准选择h264时出现该配置，默认为：default
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVideoProfile(const std::string& _videoProfile);
+
+                    /**
+                     * 判断参数 VideoProfile 是否已赋值
+                     * @return VideoProfile 是否已赋值
+                     * 
+                     */
+                    bool VideoProfileHasBeenSet() const;
+
+                    /**
+                     * 获取编码器级别，默认为自动（""）
+若编码标准选择H264: 支持以下选项：""，1 , 1.1 , 1.2 , 1.3 , 2 , 2.1 , 2.2 , 3 , 3.1 , 3.2 , 4 , 4.1 , 4.2 , 5 , 5.1 
+若编码标准选择H265: 支持以下选项：""，1 , 2 , 2.1 , 3 , 3.1 , 4 , 4.1 , 5 , 5.1 , 5.2 , 6 , 6.1 , 6.2 , 8.5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VideoLevel 编码器级别，默认为自动（""）
+若编码标准选择H264: 支持以下选项：""，1 , 1.1 , 1.2 , 1.3 , 2 , 2.1 , 2.2 , 3 , 3.1 , 3.2 , 4 , 4.1 , 4.2 , 5 , 5.1 
+若编码标准选择H265: 支持以下选项：""，1 , 2 , 2.1 , 3 , 3.1 , 4 , 4.1 , 5 , 5.1 , 5.2 , 6 , 6.1 , 6.2 , 8.5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVideoLevel() const;
+
+                    /**
+                     * 设置编码器级别，默认为自动（""）
+若编码标准选择H264: 支持以下选项：""，1 , 1.1 , 1.2 , 1.3 , 2 , 2.1 , 2.2 , 3 , 3.1 , 3.2 , 4 , 4.1 , 4.2 , 5 , 5.1 
+若编码标准选择H265: 支持以下选项：""，1 , 2 , 2.1 , 3 , 3.1 , 4 , 4.1 , 5 , 5.1 , 5.2 , 6 , 6.1 , 6.2 , 8.5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _videoLevel 编码器级别，默认为自动（""）
+若编码标准选择H264: 支持以下选项：""，1 , 1.1 , 1.2 , 1.3 , 2 , 2.1 , 2.2 , 3 , 3.1 , 3.2 , 4 , 4.1 , 4.2 , 5 , 5.1 
+若编码标准选择H265: 支持以下选项：""，1 , 2 , 2.1 , 3 , 3.1 , 4 , 4.1 , 5 , 5.1 , 5.2 , 6 , 6.1 , 6.2 , 8.5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVideoLevel(const std::string& _videoLevel);
+
+                    /**
+                     * 判断参数 VideoLevel 是否已赋值
+                     * @return VideoLevel 是否已赋值
+                     * 
+                     */
+                    bool VideoLevelHasBeenSet() const;
+
+                    /**
+                     * 获取最大连续B帧数，默认选自动，支持 0 - 16和-1
+注意：
+-1表示修改为自动值	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Bframes 最大连续B帧数，默认选自动，支持 0 - 16和-1
+注意：
+-1表示修改为自动值	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBframes() const;
+
+                    /**
+                     * 设置最大连续B帧数，默认选自动，支持 0 - 16和-1
+注意：
+-1表示修改为自动值	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bframes 最大连续B帧数，默认选自动，支持 0 - 16和-1
+注意：
+-1表示修改为自动值	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBframes(const int64_t& _bframes);
+
+                    /**
+                     * 判断参数 Bframes 是否已赋值
+                     * @return Bframes 是否已赋值
+                     * 
+                     */
+                    bool BframesHasBeenSet() const;
+
+                    /**
+                     * 获取码率控制模式：可选值： 
+VBR（Variable Bit Rate）：动态比特率，根据视频画面的复杂度动态调整输出的码率，使得画面质量更高，适用于存储场景和对画面质量要求较高的应用。 
+ABR（Average Bit Rate）：平均比特率，尽量保持输出视频的平均码率稳定，但允许短期内的码率波动，适用于需要在保持一定画质的情况下尽量减少整体码率的场景。 
+CBR（Constant Bit Rate）：恒定比特率，指视频编码时输出的码率保持恒定不变，不考虑画面复杂度的变化，适用于对网络带宽要求较为严格的场景，如直播等。 
+VCRF（Constant Rate Factor）：恒定质量因子，通过设定一个质量因子来控制视频质量，实现视频的恒定质量编码，码率会根据内容的复杂度自动调整，适用于希望保持一定画质的场景。 
+默认选择 VBR
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Mode 码率控制模式：可选值： 
+VBR（Variable Bit Rate）：动态比特率，根据视频画面的复杂度动态调整输出的码率，使得画面质量更高，适用于存储场景和对画面质量要求较高的应用。 
+ABR（Average Bit Rate）：平均比特率，尽量保持输出视频的平均码率稳定，但允许短期内的码率波动，适用于需要在保持一定画质的情况下尽量减少整体码率的场景。 
+CBR（Constant Bit Rate）：恒定比特率，指视频编码时输出的码率保持恒定不变，不考虑画面复杂度的变化，适用于对网络带宽要求较为严格的场景，如直播等。 
+VCRF（Constant Rate Factor）：恒定质量因子，通过设定一个质量因子来控制视频质量，实现视频的恒定质量编码，码率会根据内容的复杂度自动调整，适用于希望保持一定画质的场景。 
+默认选择 VBR
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置码率控制模式：可选值： 
+VBR（Variable Bit Rate）：动态比特率，根据视频画面的复杂度动态调整输出的码率，使得画面质量更高，适用于存储场景和对画面质量要求较高的应用。 
+ABR（Average Bit Rate）：平均比特率，尽量保持输出视频的平均码率稳定，但允许短期内的码率波动，适用于需要在保持一定画质的情况下尽量减少整体码率的场景。 
+CBR（Constant Bit Rate）：恒定比特率，指视频编码时输出的码率保持恒定不变，不考虑画面复杂度的变化，适用于对网络带宽要求较为严格的场景，如直播等。 
+VCRF（Constant Rate Factor）：恒定质量因子，通过设定一个质量因子来控制视频质量，实现视频的恒定质量编码，码率会根据内容的复杂度自动调整，适用于希望保持一定画质的场景。 
+默认选择 VBR
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mode 码率控制模式：可选值： 
+VBR（Variable Bit Rate）：动态比特率，根据视频画面的复杂度动态调整输出的码率，使得画面质量更高，适用于存储场景和对画面质量要求较高的应用。 
+ABR（Average Bit Rate）：平均比特率，尽量保持输出视频的平均码率稳定，但允许短期内的码率波动，适用于需要在保持一定画质的情况下尽量减少整体码率的场景。 
+CBR（Constant Bit Rate）：恒定比特率，指视频编码时输出的码率保持恒定不变，不考虑画面复杂度的变化，适用于对网络带宽要求较为严格的场景，如直播等。 
+VCRF（Constant Rate Factor）：恒定质量因子，通过设定一个质量因子来控制视频质量，实现视频的恒定质量编码，码率会根据内容的复杂度自动调整，适用于希望保持一定画质的场景。 
+默认选择 VBR
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
+
+                    /**
+                     * 获取显示高宽比，可选值：[1:1，2:1，default]
+默认值：default
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Sar 显示高宽比，可选值：[1:1，2:1，default]
+默认值：default
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSar() const;
+
+                    /**
+                     * 设置显示高宽比，可选值：[1:1，2:1，default]
+默认值：default
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sar 显示高宽比，可选值：[1:1，2:1，default]
+默认值：default
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSar(const std::string& _sar);
+
+                    /**
+                     * 判断参数 Sar 是否已赋值
+                     * @return Sar 是否已赋值
+                     * 
+                     */
+                    bool SarHasBeenSet() const;
+
+                    /**
+                     * 获取自适应I帧决策，开启后，媒体处理将自动识别视频中不同场景之间的过渡点（通常是视觉上显著不同的帧，比如从一个镜头切换到另一个镜头），在这些点自适应插入关键帧（I帧），从而提高视频的随机访问性和编码效率。可选值： 
+0：关闭自适应I帧决策 
+1：使用自适应I帧决策 
+默认值：0	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NoScenecut 自适应I帧决策，开启后，媒体处理将自动识别视频中不同场景之间的过渡点（通常是视觉上显著不同的帧，比如从一个镜头切换到另一个镜头），在这些点自适应插入关键帧（I帧），从而提高视频的随机访问性和编码效率。可选值： 
+0：关闭自适应I帧决策 
+1：使用自适应I帧决策 
+默认值：0	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetNoScenecut() const;
+
+                    /**
+                     * 设置自适应I帧决策，开启后，媒体处理将自动识别视频中不同场景之间的过渡点（通常是视觉上显著不同的帧，比如从一个镜头切换到另一个镜头），在这些点自适应插入关键帧（I帧），从而提高视频的随机访问性和编码效率。可选值： 
+0：关闭自适应I帧决策 
+1：使用自适应I帧决策 
+默认值：0	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _noScenecut 自适应I帧决策，开启后，媒体处理将自动识别视频中不同场景之间的过渡点（通常是视觉上显著不同的帧，比如从一个镜头切换到另一个镜头），在这些点自适应插入关键帧（I帧），从而提高视频的随机访问性和编码效率。可选值： 
+0：关闭自适应I帧决策 
+1：使用自适应I帧决策 
+默认值：0	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNoScenecut(const int64_t& _noScenecut);
+
+                    /**
+                     * 判断参数 NoScenecut 是否已赋值
+                     * @return NoScenecut 是否已赋值
+                     * 
+                     */
+                    bool NoScenecutHasBeenSet() const;
+
+                    /**
+                     * 获取比特位：支持8/10，默认为8	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BitDepth 比特位：支持8/10，默认为8	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBitDepth() const;
+
+                    /**
+                     * 设置比特位：支持8/10，默认为8	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bitDepth 比特位：支持8/10，默认为8	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBitDepth(const int64_t& _bitDepth);
+
+                    /**
+                     * 判断参数 BitDepth 是否已赋值
+                     * @return BitDepth 是否已赋值
+                     * 
+                     */
+                    bool BitDepthHasBeenSet() const;
+
+                    /**
+                     * 获取保持原始时间戳：可选值： 
+0：表示关闭 
+1：表示打开 
+默认是关闭	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RawPts 保持原始时间戳：可选值： 
+0：表示关闭 
+1：表示打开 
+默认是关闭	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRawPts() const;
+
+                    /**
+                     * 设置保持原始时间戳：可选值： 
+0：表示关闭 
+1：表示打开 
+默认是关闭	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rawPts 保持原始时间戳：可选值： 
+0：表示关闭 
+1：表示打开 
+默认是关闭	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRawPts(const int64_t& _rawPts);
+
+                    /**
+                     * 判断参数 RawPts 是否已赋值
+                     * @return RawPts 是否已赋值
+                     * 
+                     */
+                    bool RawPtsHasBeenSet() const;
+
+                    /**
+                     * 获取按比例压缩码率，开启后，将根据比例来调整输出视频的码率。填写压缩率后，系统会根据视频源码率自动计算目标输出码率。压缩率范围0-100，可选值：[0-100]和-1 
+注意：-1表示修改为自动	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Compress 按比例压缩码率，开启后，将根据比例来调整输出视频的码率。填写压缩率后，系统会根据视频源码率自动计算目标输出码率。压缩率范围0-100，可选值：[0-100]和-1 
+注意：-1表示修改为自动	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCompress() const;
+
+                    /**
+                     * 设置按比例压缩码率，开启后，将根据比例来调整输出视频的码率。填写压缩率后，系统会根据视频源码率自动计算目标输出码率。压缩率范围0-100，可选值：[0-100]和-1 
+注意：-1表示修改为自动	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _compress 按比例压缩码率，开启后，将根据比例来调整输出视频的码率。填写压缩率后，系统会根据视频源码率自动计算目标输出码率。压缩率范围0-100，可选值：[0-100]和-1 
+注意：-1表示修改为自动	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCompress(const int64_t& _compress);
+
+                    /**
+                     * 判断参数 Compress 是否已赋值
+                     * @return Compress 是否已赋值
+                     * 
+                     */
+                    bool CompressHasBeenSet() const;
+
+                    /**
+                     * 获取切片特殊配置	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SegmentSpecificInfo 切片特殊配置	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SegmentSpecificInfo GetSegmentSpecificInfo() const;
+
+                    /**
+                     * 设置切片特殊配置	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _segmentSpecificInfo 切片特殊配置	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSegmentSpecificInfo(const SegmentSpecificInfo& _segmentSpecificInfo);
+
+                    /**
+                     * 判断参数 SegmentSpecificInfo 是否已赋值
+                     * @return SegmentSpecificInfo 是否已赋值
+                     * 
+                     */
+                    bool SegmentSpecificInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -560,7 +1001,6 @@ namespace TencentCloud
 <li>mpeg2：MPEG2 编码</li>
 <li>dnxhd：DNxHD 编码</li>
 <li>mv-hevc：MV-HEVC 编码</li>
-注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。
 
 注意：av1 编码容器目前只支持 mp4 ，webm，mkv。
 注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。
@@ -619,11 +1059,22 @@ namespace TencentCloud
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。当填 0 时，系统将自动设置 gop 长度。
+                     * 关键帧 I 帧之间的间隔，允许按帧或秒自定义GOP长度，取值范围：0 和 [1, 100000]。
+当填 0 时，系统将自动设置 gop 长度。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_gop;
                     bool m_gopHasBeenSet;
+
+                    /**
+                     * Gop数值单位，可选值： 
+frame：表示帧 
+second：表示秒
+默认值：frame
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gopUnit;
+                    bool m_gopUnitHasBeenSet;
 
                     /**
                      * 填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：
@@ -631,14 +1082,21 @@ namespace TencentCloud
 <li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>
 <li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>
 <li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>
+<li>smarttailor：智能剪裁：智能选取视频画面，来保证画面比例裁剪。</li>
+默认值：black 。
+注意：自适应码流只支持 stretch、black。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fillType;
                     bool m_fillTypeHasBeenSet;
 
                     /**
-                     * 视频恒定码率控制因子。取值范围为[0, 51]，填0表示禁用该参数。 
+                     * 视频恒定码率控制因子。取值范围为[0, 51]和100。
 如果没有特殊需求，不建议指定该参数。
+注意：
+需要修改为自动时，填100
+若Mode选择ABR，无需配置Vcrf值
+若Mode选择CBR，无需配置Vcrf值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vcrf;
@@ -653,6 +1111,15 @@ namespace TencentCloud
                      */
                     uint64_t m_contentAdaptStream;
                     bool m_contentAdaptStreamHasBeenSet;
+
+                    /**
+                     * 分片平均时长，取值范围：（0-10]，单位：秒
+默认值：10
+注意：只在封装格式HLS时使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_hlsTime;
+                    bool m_hlsTimeHasBeenSet;
 
                     /**
                      * hls 分片类型，可选值：
@@ -683,6 +1150,99 @@ namespace TencentCloud
                      */
                     std::string m_stereo3dType;
                     bool m_stereo3dTypeHasBeenSet;
+
+                    /**
+                     * Profile，适用于不同场景。 
+baseline: 只支持I/P帧，并只支持无交错的场景，适用于视频通话、手机视频等场景。 
+main: 主流Profile，提供I帧、P帧、B帧，并支持无交错模式和交错模式。主要用在主流的音视频消费产品如视频播放器、流媒体传输设备上。 
+high: 最高编码等级，在Main Profile上添加了8X8的预测，并支持自定义量化。广泛应用在蓝光存储、高清电视等场景。
+default：随原视频自动填充
+
+仅编码标准选择h264时出现该配置，默认为：default
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_videoProfile;
+                    bool m_videoProfileHasBeenSet;
+
+                    /**
+                     * 编码器级别，默认为自动（""）
+若编码标准选择H264: 支持以下选项：""，1 , 1.1 , 1.2 , 1.3 , 2 , 2.1 , 2.2 , 3 , 3.1 , 3.2 , 4 , 4.1 , 4.2 , 5 , 5.1 
+若编码标准选择H265: 支持以下选项：""，1 , 2 , 2.1 , 3 , 3.1 , 4 , 4.1 , 5 , 5.1 , 5.2 , 6 , 6.1 , 6.2 , 8.5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_videoLevel;
+                    bool m_videoLevelHasBeenSet;
+
+                    /**
+                     * 最大连续B帧数，默认选自动，支持 0 - 16和-1
+注意：
+-1表示修改为自动值	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_bframes;
+                    bool m_bframesHasBeenSet;
+
+                    /**
+                     * 码率控制模式：可选值： 
+VBR（Variable Bit Rate）：动态比特率，根据视频画面的复杂度动态调整输出的码率，使得画面质量更高，适用于存储场景和对画面质量要求较高的应用。 
+ABR（Average Bit Rate）：平均比特率，尽量保持输出视频的平均码率稳定，但允许短期内的码率波动，适用于需要在保持一定画质的情况下尽量减少整体码率的场景。 
+CBR（Constant Bit Rate）：恒定比特率，指视频编码时输出的码率保持恒定不变，不考虑画面复杂度的变化，适用于对网络带宽要求较为严格的场景，如直播等。 
+VCRF（Constant Rate Factor）：恒定质量因子，通过设定一个质量因子来控制视频质量，实现视频的恒定质量编码，码率会根据内容的复杂度自动调整，适用于希望保持一定画质的场景。 
+默认选择 VBR
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
+
+                    /**
+                     * 显示高宽比，可选值：[1:1，2:1，default]
+默认值：default
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sar;
+                    bool m_sarHasBeenSet;
+
+                    /**
+                     * 自适应I帧决策，开启后，媒体处理将自动识别视频中不同场景之间的过渡点（通常是视觉上显著不同的帧，比如从一个镜头切换到另一个镜头），在这些点自适应插入关键帧（I帧），从而提高视频的随机访问性和编码效率。可选值： 
+0：关闭自适应I帧决策 
+1：使用自适应I帧决策 
+默认值：0	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_noScenecut;
+                    bool m_noScenecutHasBeenSet;
+
+                    /**
+                     * 比特位：支持8/10，默认为8	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_bitDepth;
+                    bool m_bitDepthHasBeenSet;
+
+                    /**
+                     * 保持原始时间戳：可选值： 
+0：表示关闭 
+1：表示打开 
+默认是关闭	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_rawPts;
+                    bool m_rawPtsHasBeenSet;
+
+                    /**
+                     * 按比例压缩码率，开启后，将根据比例来调整输出视频的码率。填写压缩率后，系统会根据视频源码率自动计算目标输出码率。压缩率范围0-100，可选值：[0-100]和-1 
+注意：-1表示修改为自动	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_compress;
+                    bool m_compressHasBeenSet;
+
+                    /**
+                     * 切片特殊配置	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SegmentSpecificInfo m_segmentSpecificInfo;
+                    bool m_segmentSpecificInfoHasBeenSet;
 
                 };
             }

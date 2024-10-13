@@ -49,6 +49,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateExternalSourceAIServiceTaskRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateExternalSourceAIServiceTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateFenceBindRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateFenceBindResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateIotVideoCloudStorageRequest.h>
@@ -237,6 +239,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetWechatDeviceTicketResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InheritCloudStorageUserRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InheritCloudStorageUserResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeExternalSourceAIServiceTaskRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InvokeExternalSourceAIServiceTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListFirmwaresRequest.h>
@@ -362,6 +366,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDeviceResponse> CreateDeviceOutcome;
                 typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceRequest&, CreateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateExternalSourceAIServiceTaskResponse> CreateExternalSourceAIServiceTaskOutcome;
+                typedef std::future<CreateExternalSourceAIServiceTaskOutcome> CreateExternalSourceAIServiceTaskOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateExternalSourceAIServiceTaskRequest&, CreateExternalSourceAIServiceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExternalSourceAIServiceTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFenceBindResponse> CreateFenceBindOutcome;
                 typedef std::future<CreateFenceBindOutcome> CreateFenceBindOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateFenceBindRequest&, CreateFenceBindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFenceBindAsyncHandler;
@@ -644,6 +651,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InheritCloudStorageUserResponse> InheritCloudStorageUserOutcome;
                 typedef std::future<InheritCloudStorageUserOutcome> InheritCloudStorageUserOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::InheritCloudStorageUserRequest&, InheritCloudStorageUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InheritCloudStorageUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::InvokeExternalSourceAIServiceTaskResponse> InvokeExternalSourceAIServiceTaskOutcome;
+                typedef std::future<InvokeExternalSourceAIServiceTaskOutcome> InvokeExternalSourceAIServiceTaskOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::InvokeExternalSourceAIServiceTaskRequest&, InvokeExternalSourceAIServiceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeExternalSourceAIServiceTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListEventHistoryResponse> ListEventHistoryOutcome;
                 typedef std::future<ListEventHistoryOutcome> ListEventHistoryOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListEventHistoryRequest&, ListEventHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListEventHistoryAsyncHandler;
@@ -871,6 +881,15 @@ namespace TencentCloud
                 CreateDeviceOutcome CreateDevice(const Model::CreateDeviceRequest &request);
                 void CreateDeviceAsync(const Model::CreateDeviceRequest& request, const CreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDeviceOutcomeCallable CreateDeviceCallable(const Model::CreateDeviceRequest& request);
+
+                /**
+                 *创建外部视频 AI 分析任务
+                 * @param req CreateExternalSourceAIServiceTaskRequest
+                 * @return CreateExternalSourceAIServiceTaskOutcome
+                 */
+                CreateExternalSourceAIServiceTaskOutcome CreateExternalSourceAIServiceTask(const Model::CreateExternalSourceAIServiceTaskRequest &request);
+                void CreateExternalSourceAIServiceTaskAsync(const Model::CreateExternalSourceAIServiceTaskRequest& request, const CreateExternalSourceAIServiceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateExternalSourceAIServiceTaskOutcomeCallable CreateExternalSourceAIServiceTaskCallable(const Model::CreateExternalSourceAIServiceTaskRequest& request);
 
                 /**
                  *创建围栏绑定信息
@@ -1717,6 +1736,15 @@ namespace TencentCloud
                 InheritCloudStorageUserOutcome InheritCloudStorageUser(const Model::InheritCloudStorageUserRequest &request);
                 void InheritCloudStorageUserAsync(const Model::InheritCloudStorageUserRequest& request, const InheritCloudStorageUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InheritCloudStorageUserOutcomeCallable InheritCloudStorageUserCallable(const Model::InheritCloudStorageUserRequest& request);
+
+                /**
+                 *创建外部视频 AI 分析任务
+                 * @param req InvokeExternalSourceAIServiceTaskRequest
+                 * @return InvokeExternalSourceAIServiceTaskOutcome
+                 */
+                InvokeExternalSourceAIServiceTaskOutcome InvokeExternalSourceAIServiceTask(const Model::InvokeExternalSourceAIServiceTaskRequest &request);
+                void InvokeExternalSourceAIServiceTaskAsync(const Model::InvokeExternalSourceAIServiceTaskRequest& request, const InvokeExternalSourceAIServiceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InvokeExternalSourceAIServiceTaskOutcomeCallable InvokeExternalSourceAIServiceTaskCallable(const Model::InvokeExternalSourceAIServiceTaskRequest& request);
 
                 /**
                  *获取设备的历史事件

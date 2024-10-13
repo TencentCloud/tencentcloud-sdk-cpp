@@ -29,7 +29,8 @@ StartWebRecordRequest::StartWebRecordRequest() :
     m_webRecordVideoParamsHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false),
     m_recordIdHasBeenSet(false),
-    m_publishCdnParamsHasBeenSet(false)
+    m_publishCdnParamsHasBeenSet(false),
+    m_readyTimeoutHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string StartWebRecordRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_readyTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadyTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_readyTimeout, allocator);
     }
 
 
@@ -223,6 +232,22 @@ void StartWebRecordRequest::SetPublishCdnParams(const vector<McuPublishCdnParam>
 bool StartWebRecordRequest::PublishCdnParamsHasBeenSet() const
 {
     return m_publishCdnParamsHasBeenSet;
+}
+
+uint64_t StartWebRecordRequest::GetReadyTimeout() const
+{
+    return m_readyTimeout;
+}
+
+void StartWebRecordRequest::SetReadyTimeout(const uint64_t& _readyTimeout)
+{
+    m_readyTimeout = _readyTimeout;
+    m_readyTimeoutHasBeenSet = true;
+}
+
+bool StartWebRecordRequest::ReadyTimeoutHasBeenSet() const
+{
+    return m_readyTimeoutHasBeenSet;
 }
 
 

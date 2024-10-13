@@ -31,7 +31,10 @@ GetUserQuotaInfoResponse::GetUserQuotaInfoResponse() :
     m_cosRemainQuotaHasBeenSet(false),
     m_cosQuotaUnitHasBeenSet(false),
     m_dBUnbindNumHasBeenSet(false),
-    m_cOSUnbindNumHasBeenSet(false)
+    m_cOSUnbindNumHasBeenSet(false),
+    m_insTotalQuotaHasBeenSet(false),
+    m_insRemainQuotaHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -149,6 +152,36 @@ CoreInternalOutcome GetUserQuotaInfoResponse::Deserialize(const string &payload)
         m_cOSUnbindNumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InsTotalQuota") && !rsp["InsTotalQuota"].IsNull())
+    {
+        if (!rsp["InsTotalQuota"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InsTotalQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_insTotalQuota = rsp["InsTotalQuota"].GetInt64();
+        m_insTotalQuotaHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InsRemainQuota") && !rsp["InsRemainQuota"].IsNull())
+    {
+        if (!rsp["InsRemainQuota"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InsRemainQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_insRemainQuota = rsp["InsRemainQuota"].GetInt64();
+        m_insRemainQuotaHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Version") && !rsp["Version"].IsNull())
+    {
+        if (!rsp["Version"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(rsp["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +254,30 @@ string GetUserQuotaInfoResponse::ToJsonString() const
         string key = "COSUnbindNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cOSUnbindNum, allocator);
+    }
+
+    if (m_insTotalQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InsTotalQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_insTotalQuota, allocator);
+    }
+
+    if (m_insRemainQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InsRemainQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_insRemainQuota, allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +370,36 @@ int64_t GetUserQuotaInfoResponse::GetCOSUnbindNum() const
 bool GetUserQuotaInfoResponse::COSUnbindNumHasBeenSet() const
 {
     return m_cOSUnbindNumHasBeenSet;
+}
+
+int64_t GetUserQuotaInfoResponse::GetInsTotalQuota() const
+{
+    return m_insTotalQuota;
+}
+
+bool GetUserQuotaInfoResponse::InsTotalQuotaHasBeenSet() const
+{
+    return m_insTotalQuotaHasBeenSet;
+}
+
+int64_t GetUserQuotaInfoResponse::GetInsRemainQuota() const
+{
+    return m_insRemainQuota;
+}
+
+bool GetUserQuotaInfoResponse::InsRemainQuotaHasBeenSet() const
+{
+    return m_insRemainQuotaHasBeenSet;
+}
+
+string GetUserQuotaInfoResponse::GetVersion() const
+{
+    return m_version;
+}
+
+bool GetUserQuotaInfoResponse::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
 }
 
 

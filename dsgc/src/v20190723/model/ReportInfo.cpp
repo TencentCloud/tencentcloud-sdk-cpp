@@ -34,7 +34,8 @@ ReportInfo::ReportInfo() :
     m_failedMessageHasBeenSet(false),
     m_enableHasBeenSet(false),
     m_complianceNameHasBeenSet(false),
-    m_progressPercentHasBeenSet(false)
+    m_progressPercentHasBeenSet(false),
+    m_reportTemplateNameHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome ReportInfo::Deserialize(const rapidjson::Value &value)
         m_progressPercentHasBeenSet = true;
     }
 
+    if (value.HasMember("ReportTemplateName") && !value["ReportTemplateName"].IsNull())
+    {
+        if (!value["ReportTemplateName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReportInfo.ReportTemplateName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reportTemplateName = string(value["ReportTemplateName"].GetString());
+        m_reportTemplateNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void ReportInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ProgressPercent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_progressPercent, allocator);
+    }
+
+    if (m_reportTemplateNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportTemplateName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reportTemplateName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void ReportInfo::SetProgressPercent(const uint64_t& _progressPercent)
 bool ReportInfo::ProgressPercentHasBeenSet() const
 {
     return m_progressPercentHasBeenSet;
+}
+
+string ReportInfo::GetReportTemplateName() const
+{
+    return m_reportTemplateName;
+}
+
+void ReportInfo::SetReportTemplateName(const string& _reportTemplateName)
+{
+    m_reportTemplateName = _reportTemplateName;
+    m_reportTemplateNameHasBeenSet = true;
+}
+
+bool ReportInfo::ReportTemplateNameHasBeenSet() const
+{
+    return m_reportTemplateNameHasBeenSet;
 }
 

@@ -44,7 +44,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/Inbound.h
   include/tencentcloud/redis/v20180412/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeTaskListResponse.h
-  include/tencentcloud/redis/v20180412/model/ModifyInstanceRequest.h
+  include/tencentcloud/redis/v20180412/model/ModifyInstancePasswordResponse.h
   include/tencentcloud/redis/v20180412/model/KillMasterGroupResponse.h
   include/tencentcloud/redis/v20180412/model/RenewInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeSlowLogResponse.h
@@ -176,6 +176,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/CreateInstanceAccountRequest.h
   include/tencentcloud/redis/v20180412/model/RemoveReplicationInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/EnableReplicaReadonlyResponse.h
+  include/tencentcloud/redis/v20180412/model/ModifyInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceSecurityGroupResponse.h
   include/tencentcloud/redis/v20180412/model/ReleaseWanAddressResponse.h
@@ -202,6 +203,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/SourceCommand.h
   include/tencentcloud/redis/v20180412/model/ModfiyInstancePasswordRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeSlowLogRequest.h
+  include/tencentcloud/redis/v20180412/model/ModifyInstancePasswordRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyReplicationGroupResponse.h
   include/tencentcloud/redis/v20180412/model/DeleteParamTemplateRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeAutoBackupConfigRequest.h
@@ -314,7 +316,7 @@ set(redis_src
   src/v20180412/model/Inbound.cpp
   src/v20180412/model/AssociateSecurityGroupsRequest.cpp
   src/v20180412/model/DescribeTaskListResponse.cpp
-  src/v20180412/model/ModifyInstanceRequest.cpp
+  src/v20180412/model/ModifyInstancePasswordResponse.cpp
   src/v20180412/model/KillMasterGroupResponse.cpp
   src/v20180412/model/RenewInstanceResponse.cpp
   src/v20180412/model/DescribeSlowLogResponse.cpp
@@ -446,6 +448,7 @@ set(redis_src
   src/v20180412/model/CreateInstanceAccountRequest.cpp
   src/v20180412/model/RemoveReplicationInstanceRequest.cpp
   src/v20180412/model/EnableReplicaReadonlyResponse.cpp
+  src/v20180412/model/ModifyInstanceRequest.cpp
   src/v20180412/model/DescribeMaintenanceWindowResponse.cpp
   src/v20180412/model/DescribeInstanceSecurityGroupResponse.cpp
   src/v20180412/model/ReleaseWanAddressResponse.cpp
@@ -472,6 +475,7 @@ set(redis_src
   src/v20180412/model/SourceCommand.cpp
   src/v20180412/model/ModfiyInstancePasswordRequest.cpp
   src/v20180412/model/DescribeSlowLogRequest.cpp
+  src/v20180412/model/ModifyInstancePasswordRequest.cpp
   src/v20180412/model/ModifyReplicationGroupResponse.cpp
   src/v20180412/model/DeleteParamTemplateRequest.cpp
   src/v20180412/model/DescribeAutoBackupConfigRequest.cpp

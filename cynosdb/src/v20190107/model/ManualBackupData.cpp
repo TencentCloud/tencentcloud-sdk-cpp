@@ -23,7 +23,8 @@ using namespace std;
 ManualBackupData::ManualBackupData() :
     m_backupTypeHasBeenSet(false),
     m_backupMethodHasBeenSet(false),
-    m_snapshotTimeHasBeenSet(false)
+    m_snapshotTimeHasBeenSet(false),
+    m_crossRegionBackupInfosHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,26 @@ CoreInternalOutcome ManualBackupData::Deserialize(const rapidjson::Value &value)
         m_snapshotTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CrossRegionBackupInfos") && !value["CrossRegionBackupInfos"].IsNull())
+    {
+        if (!value["CrossRegionBackupInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ManualBackupData.CrossRegionBackupInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CrossRegionBackupInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CrossRegionBackupItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_crossRegionBackupInfos.push_back(item);
+        }
+        m_crossRegionBackupInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +112,21 @@ void ManualBackupData::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SnapshotTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_snapshotTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_crossRegionBackupInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossRegionBackupInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_crossRegionBackupInfos.begin(); itr != m_crossRegionBackupInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -142,5 +178,21 @@ void ManualBackupData::SetSnapshotTime(const string& _snapshotTime)
 bool ManualBackupData::SnapshotTimeHasBeenSet() const
 {
     return m_snapshotTimeHasBeenSet;
+}
+
+vector<CrossRegionBackupItem> ManualBackupData::GetCrossRegionBackupInfos() const
+{
+    return m_crossRegionBackupInfos;
+}
+
+void ManualBackupData::SetCrossRegionBackupInfos(const vector<CrossRegionBackupItem>& _crossRegionBackupInfos)
+{
+    m_crossRegionBackupInfos = _crossRegionBackupInfos;
+    m_crossRegionBackupInfosHasBeenSet = true;
+}
+
+bool ManualBackupData::CrossRegionBackupInfosHasBeenSet() const
+{
+    return m_crossRegionBackupInfosHasBeenSet;
 }
 

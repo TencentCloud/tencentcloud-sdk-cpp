@@ -155,6 +155,27 @@ UserName和Password必须同时填写或同时为空。
                      */
                     bool PasswordHasBeenSet() const;
 
+                    /**
+                     * 获取授权范围：all 授权全部  manual：手动指定
+                     * @return AuthRange 授权范围：all 授权全部  manual：手动指定
+                     * 
+                     */
+                    std::string GetAuthRange() const;
+
+                    /**
+                     * 设置授权范围：all 授权全部  manual：手动指定
+                     * @param _authRange 授权范围：all 授权全部  manual：手动指定
+                     * 
+                     */
+                    void SetAuthRange(const std::string& _authRange);
+
+                    /**
+                     * 判断参数 AuthRange 是否已赋值
+                     * @return AuthRange 是否已赋值
+                     * 
+                     */
+                    bool AuthRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +209,12 @@ UserName和Password必须同时填写或同时为空。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
+
+                    /**
+                     * 授权范围：all 授权全部  manual：手动指定
+                     */
+                    std::string m_authRange;
+                    bool m_authRangeHasBeenSet;
 
                 };
             }

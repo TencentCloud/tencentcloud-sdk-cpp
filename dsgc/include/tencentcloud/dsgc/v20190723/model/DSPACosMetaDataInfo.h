@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool StorageHasBeenSet() const;
 
+                    /**
+                     * 获取治理授权状态，0:关闭 1：开启
+                     * @return GovernAuthStatus 治理授权状态，0:关闭 1：开启
+                     * 
+                     */
+                    int64_t GetGovernAuthStatus() const;
+
+                    /**
+                     * 设置治理授权状态，0:关闭 1：开启
+                     * @param _governAuthStatus 治理授权状态，0:关闭 1：开启
+                     * 
+                     */
+                    void SetGovernAuthStatus(const int64_t& _governAuthStatus);
+
+                    /**
+                     * 判断参数 GovernAuthStatus 是否已赋值
+                     * @return GovernAuthStatus 是否已赋值
+                     * 
+                     */
+                    bool GovernAuthStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     double m_storage;
                     bool m_storageHasBeenSet;
+
+                    /**
+                     * 治理授权状态，0:关闭 1：开启
+                     */
+                    int64_t m_governAuthStatus;
+                    bool m_governAuthStatusHasBeenSet;
 
                 };
             }

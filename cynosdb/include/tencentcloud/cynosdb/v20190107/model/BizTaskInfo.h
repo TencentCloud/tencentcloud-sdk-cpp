@@ -599,7 +599,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyParamsData 修改参数任务信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::vector<ModifyParamsData> GetModifyParamsData() const;
 
@@ -608,14 +608,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyParamsData 修改参数任务信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetModifyParamsData(const std::vector<ModifyParamsData>& _modifyParamsData);
 
                     /**
                      * 判断参数 ModifyParamsData 是否已赋值
                      * @return ModifyParamsData 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ModifyParamsDataHasBeenSet() const;
 

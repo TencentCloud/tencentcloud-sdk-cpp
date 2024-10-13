@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/ProxyVersionInfo.h>
 
 
 namespace TencentCloud
@@ -75,6 +76,20 @@ namespace TencentCloud
                      */
                     bool CurrentProxyVersionHasBeenSet() const;
 
+                    /**
+                     * 获取代理版本详情
+                     * @return SupportProxyVersionDetail 代理版本详情
+                     * 
+                     */
+                    std::vector<ProxyVersionInfo> GetSupportProxyVersionDetail() const;
+
+                    /**
+                     * 判断参数 SupportProxyVersionDetail 是否已赋值
+                     * @return SupportProxyVersionDetail 是否已赋值
+                     * 
+                     */
+                    bool SupportProxyVersionDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -90,6 +105,12 @@ namespace TencentCloud
                      */
                     std::string m_currentProxyVersion;
                     bool m_currentProxyVersionHasBeenSet;
+
+                    /**
+                     * 代理版本详情
+                     */
+                    std::vector<ProxyVersionInfo> m_supportProxyVersionDetail;
+                    bool m_supportProxyVersionDetailHasBeenSet;
 
                 };
             }

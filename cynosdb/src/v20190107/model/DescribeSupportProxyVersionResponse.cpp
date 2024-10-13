@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeSupportProxyVersionResponse::DescribeSupportProxyVersionResponse() :
     m_supportProxyVersionsHasBeenSet(false),
-    m_currentProxyVersionHasBeenSet(false)
+    m_currentProxyVersionHasBeenSet(false),
+    m_supportProxyVersionDetailHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,26 @@ CoreInternalOutcome DescribeSupportProxyVersionResponse::Deserialize(const strin
         m_currentProxyVersionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SupportProxyVersionDetail") && !rsp["SupportProxyVersionDetail"].IsNull())
+    {
+        if (!rsp["SupportProxyVersionDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SupportProxyVersionDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SupportProxyVersionDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ProxyVersionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_supportProxyVersionDetail.push_back(item);
+        }
+        m_supportProxyVersionDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +136,21 @@ string DescribeSupportProxyVersionResponse::ToJsonString() const
         string key = "CurrentProxyVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_currentProxyVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_supportProxyVersionDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportProxyVersionDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_supportProxyVersionDetail.begin(); itr != m_supportProxyVersionDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +183,16 @@ string DescribeSupportProxyVersionResponse::GetCurrentProxyVersion() const
 bool DescribeSupportProxyVersionResponse::CurrentProxyVersionHasBeenSet() const
 {
     return m_currentProxyVersionHasBeenSet;
+}
+
+vector<ProxyVersionInfo> DescribeSupportProxyVersionResponse::GetSupportProxyVersionDetail() const
+{
+    return m_supportProxyVersionDetail;
+}
+
+bool DescribeSupportProxyVersionResponse::SupportProxyVersionDetailHasBeenSet() const
+{
+    return m_supportProxyVersionDetailHasBeenSet;
 }
 
 

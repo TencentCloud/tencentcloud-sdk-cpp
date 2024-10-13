@@ -27,16 +27,17 @@ CreateDSPASelfBuildMetaResourceRequest::CreateDSPASelfBuildMetaResourceRequest()
     m_metaTypeHasBeenSet(false),
     m_resourceRegionHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_resourceVipHasBeenSet(false),
-    m_resourceVPortHasBeenSet(false),
     m_resourceUniqueVpcIdHasBeenSet(false),
     m_resourceUniqueSubnetIdHasBeenSet(false),
     m_resourceAccessTypeHasBeenSet(false),
+    m_resourceVipHasBeenSet(false),
+    m_resourceVPortHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_instanceValueHasBeenSet(false)
+    m_instanceValueHasBeenSet(false),
+    m_authRangeHasBeenSet(false)
 {
 }
 
@@ -79,22 +80,6 @@ string CreateDSPASelfBuildMetaResourceRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_resourceVipHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceVip";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_resourceVip.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_resourceVPortHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceVPort";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_resourceVPort, allocator);
-    }
-
     if (m_resourceUniqueVpcIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -117,6 +102,22 @@ string CreateDSPASelfBuildMetaResourceRequest::ToJsonString() const
         string key = "ResourceAccessType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceAccessType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceVipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceVip";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceVip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceVPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceVPort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_resourceVPort, allocator);
     }
 
     if (m_userNameHasBeenSet)
@@ -157,6 +158,14 @@ string CreateDSPASelfBuildMetaResourceRequest::ToJsonString() const
         string key = "InstanceValue";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_authRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthRange";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_authRange.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -231,38 +240,6 @@ bool CreateDSPASelfBuildMetaResourceRequest::ResourceIdHasBeenSet() const
     return m_resourceIdHasBeenSet;
 }
 
-string CreateDSPASelfBuildMetaResourceRequest::GetResourceVip() const
-{
-    return m_resourceVip;
-}
-
-void CreateDSPASelfBuildMetaResourceRequest::SetResourceVip(const string& _resourceVip)
-{
-    m_resourceVip = _resourceVip;
-    m_resourceVipHasBeenSet = true;
-}
-
-bool CreateDSPASelfBuildMetaResourceRequest::ResourceVipHasBeenSet() const
-{
-    return m_resourceVipHasBeenSet;
-}
-
-uint64_t CreateDSPASelfBuildMetaResourceRequest::GetResourceVPort() const
-{
-    return m_resourceVPort;
-}
-
-void CreateDSPASelfBuildMetaResourceRequest::SetResourceVPort(const uint64_t& _resourceVPort)
-{
-    m_resourceVPort = _resourceVPort;
-    m_resourceVPortHasBeenSet = true;
-}
-
-bool CreateDSPASelfBuildMetaResourceRequest::ResourceVPortHasBeenSet() const
-{
-    return m_resourceVPortHasBeenSet;
-}
-
 string CreateDSPASelfBuildMetaResourceRequest::GetResourceUniqueVpcId() const
 {
     return m_resourceUniqueVpcId;
@@ -309,6 +286,38 @@ void CreateDSPASelfBuildMetaResourceRequest::SetResourceAccessType(const string&
 bool CreateDSPASelfBuildMetaResourceRequest::ResourceAccessTypeHasBeenSet() const
 {
     return m_resourceAccessTypeHasBeenSet;
+}
+
+string CreateDSPASelfBuildMetaResourceRequest::GetResourceVip() const
+{
+    return m_resourceVip;
+}
+
+void CreateDSPASelfBuildMetaResourceRequest::SetResourceVip(const string& _resourceVip)
+{
+    m_resourceVip = _resourceVip;
+    m_resourceVipHasBeenSet = true;
+}
+
+bool CreateDSPASelfBuildMetaResourceRequest::ResourceVipHasBeenSet() const
+{
+    return m_resourceVipHasBeenSet;
+}
+
+uint64_t CreateDSPASelfBuildMetaResourceRequest::GetResourceVPort() const
+{
+    return m_resourceVPort;
+}
+
+void CreateDSPASelfBuildMetaResourceRequest::SetResourceVPort(const uint64_t& _resourceVPort)
+{
+    m_resourceVPort = _resourceVPort;
+    m_resourceVPortHasBeenSet = true;
+}
+
+bool CreateDSPASelfBuildMetaResourceRequest::ResourceVPortHasBeenSet() const
+{
+    return m_resourceVPortHasBeenSet;
 }
 
 string CreateDSPASelfBuildMetaResourceRequest::GetUserName() const
@@ -389,6 +398,22 @@ void CreateDSPASelfBuildMetaResourceRequest::SetInstanceValue(const string& _ins
 bool CreateDSPASelfBuildMetaResourceRequest::InstanceValueHasBeenSet() const
 {
     return m_instanceValueHasBeenSet;
+}
+
+string CreateDSPASelfBuildMetaResourceRequest::GetAuthRange() const
+{
+    return m_authRange;
+}
+
+void CreateDSPASelfBuildMetaResourceRequest::SetAuthRange(const string& _authRange)
+{
+    m_authRange = _authRange;
+    m_authRangeHasBeenSet = true;
+}
+
+bool CreateDSPASelfBuildMetaResourceRequest::AuthRangeHasBeenSet() const
+{
+    return m_authRangeHasBeenSet;
 }
 
 

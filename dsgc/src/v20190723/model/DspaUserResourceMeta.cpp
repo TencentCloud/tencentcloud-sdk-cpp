@@ -41,7 +41,9 @@ DspaUserResourceMeta::DspaUserResourceMeta() :
     m_resourceAuthTypeHasBeenSet(false),
     m_resourceAuthAccountHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_instanceValueHasBeenSet(false)
+    m_instanceValueHasBeenSet(false),
+    m_governAuthStatusHasBeenSet(false),
+    m_authRangeHasBeenSet(false)
 {
 }
 
@@ -260,6 +262,26 @@ CoreInternalOutcome DspaUserResourceMeta::Deserialize(const rapidjson::Value &va
         m_instanceValueHasBeenSet = true;
     }
 
+    if (value.HasMember("GovernAuthStatus") && !value["GovernAuthStatus"].IsNull())
+    {
+        if (!value["GovernAuthStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaUserResourceMeta.GovernAuthStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_governAuthStatus = value["GovernAuthStatus"].GetInt64();
+        m_governAuthStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuthRange") && !value["AuthRange"].IsNull())
+    {
+        if (!value["AuthRange"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaUserResourceMeta.AuthRange` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_authRange = string(value["AuthRange"].GetString());
+        m_authRangeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +455,22 @@ void DspaUserResourceMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "InstanceValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_governAuthStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GovernAuthStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_governAuthStatus, allocator);
+    }
+
+    if (m_authRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authRange.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -772,5 +810,37 @@ void DspaUserResourceMeta::SetInstanceValue(const string& _instanceValue)
 bool DspaUserResourceMeta::InstanceValueHasBeenSet() const
 {
     return m_instanceValueHasBeenSet;
+}
+
+int64_t DspaUserResourceMeta::GetGovernAuthStatus() const
+{
+    return m_governAuthStatus;
+}
+
+void DspaUserResourceMeta::SetGovernAuthStatus(const int64_t& _governAuthStatus)
+{
+    m_governAuthStatus = _governAuthStatus;
+    m_governAuthStatusHasBeenSet = true;
+}
+
+bool DspaUserResourceMeta::GovernAuthStatusHasBeenSet() const
+{
+    return m_governAuthStatusHasBeenSet;
+}
+
+string DspaUserResourceMeta::GetAuthRange() const
+{
+    return m_authRange;
+}
+
+void DspaUserResourceMeta::SetAuthRange(const string& _authRange)
+{
+    m_authRange = _authRange;
+    m_authRangeHasBeenSet = true;
+}
+
+bool DspaUserResourceMeta::AuthRangeHasBeenSet() const
+{
+    return m_authRangeHasBeenSet;
 }
 
