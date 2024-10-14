@@ -209,6 +209,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTasksAnalysisRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTasksAnalysisResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksCostInfoRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksCostInfoResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksOverviewRequest.h>
@@ -602,6 +604,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTasksResponse> DescribeTasksOutcome;
                 typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTasksRequest&, DescribeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTasksAnalysisResponse> DescribeTasksAnalysisOutcome;
+                typedef std::future<DescribeTasksAnalysisOutcome> DescribeTasksAnalysisOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeTasksAnalysisRequest&, DescribeTasksAnalysisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAnalysisAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTasksCostInfoResponse> DescribeTasksCostInfoOutcome;
                 typedef std::future<DescribeTasksCostInfoOutcome> DescribeTasksCostInfoOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTasksCostInfoRequest&, DescribeTasksCostInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksCostInfoAsyncHandler;
@@ -1591,6 +1596,15 @@ namespace TencentCloud
                 DescribeTasksOutcome DescribeTasks(const Model::DescribeTasksRequest &request);
                 void DescribeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTasksOutcomeCallable DescribeTasksCallable(const Model::DescribeTasksRequest& request);
+
+                /**
+                 *该接口用于洞察分析列表
+                 * @param req DescribeTasksAnalysisRequest
+                 * @return DescribeTasksAnalysisOutcome
+                 */
+                DescribeTasksAnalysisOutcome DescribeTasksAnalysis(const Model::DescribeTasksAnalysisRequest &request);
+                void DescribeTasksAnalysisAsync(const Model::DescribeTasksAnalysisRequest& request, const DescribeTasksAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTasksAnalysisOutcomeCallable DescribeTasksAnalysisCallable(const Model::DescribeTasksAnalysisRequest& request);
 
                 /**
                  *该接口（DescribeTasksCostInfo）用于查询任务消耗

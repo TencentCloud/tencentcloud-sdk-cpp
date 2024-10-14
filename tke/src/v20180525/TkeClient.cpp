@@ -5028,49 +5028,6 @@ TkeClient::DescribeExistedInstancesOutcomeCallable TkeClient::DescribeExistedIns
     return task->get_future();
 }
 
-TkeClient::DescribeExternalClusterSpecOutcome TkeClient::DescribeExternalClusterSpec(const DescribeExternalClusterSpecRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeExternalClusterSpec");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeExternalClusterSpecResponse rsp = DescribeExternalClusterSpecResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeExternalClusterSpecOutcome(rsp);
-        else
-            return DescribeExternalClusterSpecOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeExternalClusterSpecOutcome(outcome.GetError());
-    }
-}
-
-void TkeClient::DescribeExternalClusterSpecAsync(const DescribeExternalClusterSpecRequest& request, const DescribeExternalClusterSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeExternalClusterSpec(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TkeClient::DescribeExternalClusterSpecOutcomeCallable TkeClient::DescribeExternalClusterSpecCallable(const DescribeExternalClusterSpecRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeExternalClusterSpecOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeExternalClusterSpec(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TkeClient::DescribeExternalNodeSupportConfigOutcome TkeClient::DescribeExternalNodeSupportConfig(const DescribeExternalNodeSupportConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExternalNodeSupportConfig");

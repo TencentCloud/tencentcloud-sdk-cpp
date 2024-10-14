@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool EipDirectConnectionHasBeenSet() const;
 
+                    /**
+                     * 获取要绑定的实例所在的地域
+                     * @return InstanceRegion 要绑定的实例所在的地域
+                     * 
+                     */
+                    std::string GetInstanceRegion() const;
+
+                    /**
+                     * 设置要绑定的实例所在的地域
+                     * @param _instanceRegion 要绑定的实例所在的地域
+                     * 
+                     */
+                    void SetInstanceRegion(const std::string& _instanceRegion);
+
+                    /**
+                     * 判断参数 InstanceRegion 是否已赋值
+                     * @return InstanceRegion 是否已赋值
+                     * 
+                     */
+                    bool InstanceRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     bool m_eipDirectConnection;
                     bool m_eipDirectConnectionHasBeenSet;
+
+                    /**
+                     * 要绑定的实例所在的地域
+                     */
+                    std::string m_instanceRegion;
+                    bool m_instanceRegionHasBeenSet;
 
                 };
             }

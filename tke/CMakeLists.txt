@@ -257,7 +257,6 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeRIUtilizationDetailRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterCondition.h
   include/tencentcloud/tke/v20180525/model/BackupStorageLocation.h
-  include/tencentcloud/tke/v20180525/model/NodePool.h
   include/tencentcloud/tke/v20180525/model/DescribeEKSClustersResponse.h
   include/tencentcloud/tke/v20180525/model/VolumeMount.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterRequest.h
@@ -341,7 +340,6 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/CreatePrometheusConfigResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusResponse.h
   include/tencentcloud/tke/v20180525/model/RunAutomationServiceEnabled.h
-  include/tencentcloud/tke/v20180525/model/DescribeExternalClusterSpecResponse.h
   include/tencentcloud/tke/v20180525/model/AddExistedInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/RestartEKSContainerInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/DisableClusterDeletionProtectionResponse.h
@@ -413,7 +411,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterReleasesResponse.h
   include/tencentcloud/tke/v20180525/model/AddNodeToNodePoolRequest.h
   include/tencentcloud/tke/v20180525/model/CreateReservedInstancesRequest.h
-  include/tencentcloud/tke/v20180525/model/DescribeExternalClusterSpecRequest.h
+  include/tencentcloud/tke/v20180525/model/NodePool.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusGlobalNotificationResponse.h
   include/tencentcloud/tke/v20180525/model/UninstallClusterReleaseRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusTempResponse.h
@@ -952,7 +950,6 @@ set(tke_src
   src/v20180525/model/DescribeRIUtilizationDetailRequest.cpp
   src/v20180525/model/ClusterCondition.cpp
   src/v20180525/model/BackupStorageLocation.cpp
-  src/v20180525/model/NodePool.cpp
   src/v20180525/model/DescribeEKSClustersResponse.cpp
   src/v20180525/model/VolumeMount.cpp
   src/v20180525/model/DeleteClusterRequest.cpp
@@ -1036,7 +1033,6 @@ set(tke_src
   src/v20180525/model/CreatePrometheusConfigResponse.cpp
   src/v20180525/model/DescribeClusterEndpointStatusResponse.cpp
   src/v20180525/model/RunAutomationServiceEnabled.cpp
-  src/v20180525/model/DescribeExternalClusterSpecResponse.cpp
   src/v20180525/model/AddExistedInstancesResponse.cpp
   src/v20180525/model/RestartEKSContainerInstancesResponse.cpp
   src/v20180525/model/DisableClusterDeletionProtectionResponse.cpp
@@ -1108,7 +1104,7 @@ set(tke_src
   src/v20180525/model/DescribeClusterReleasesResponse.cpp
   src/v20180525/model/AddNodeToNodePoolRequest.cpp
   src/v20180525/model/CreateReservedInstancesRequest.cpp
-  src/v20180525/model/DescribeExternalClusterSpecRequest.cpp
+  src/v20180525/model/NodePool.cpp
   src/v20180525/model/ModifyPrometheusGlobalNotificationResponse.cpp
   src/v20180525/model/UninstallClusterReleaseRequest.cpp
   src/v20180525/model/ModifyPrometheusTempResponse.cpp

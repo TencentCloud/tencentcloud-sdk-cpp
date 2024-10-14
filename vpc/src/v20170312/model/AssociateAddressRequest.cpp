@@ -27,7 +27,8 @@ AssociateAddressRequest::AssociateAddressRequest() :
     m_instanceIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
-    m_eipDirectConnectionHasBeenSet(false)
+    m_eipDirectConnectionHasBeenSet(false),
+    m_instanceRegionHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string AssociateAddressRequest::ToJsonString() const
         string key = "EipDirectConnection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_eipDirectConnection, allocator);
+    }
+
+    if (m_instanceRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void AssociateAddressRequest::SetEipDirectConnection(const bool& _eipDirectConne
 bool AssociateAddressRequest::EipDirectConnectionHasBeenSet() const
 {
     return m_eipDirectConnectionHasBeenSet;
+}
+
+string AssociateAddressRequest::GetInstanceRegion() const
+{
+    return m_instanceRegion;
+}
+
+void AssociateAddressRequest::SetInstanceRegion(const string& _instanceRegion)
+{
+    m_instanceRegion = _instanceRegion;
+    m_instanceRegionHasBeenSet = true;
+}
+
+bool AssociateAddressRequest::InstanceRegionHasBeenSet() const
+{
+    return m_instanceRegionHasBeenSet;
 }
 
 

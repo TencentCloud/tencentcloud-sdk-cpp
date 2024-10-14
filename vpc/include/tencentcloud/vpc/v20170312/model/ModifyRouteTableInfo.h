@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RouteTableIdHasBeenSet() const;
 
                     /**
-                     * 获取云联网路由表名称。
-                     * @return Name 云联网路由表名称。
+                     * 获取云联网路由表名称。Name和Description 两者必传一个。
+                     * @return Name 云联网路由表名称。Name和Description 两者必传一个。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置云联网路由表名称。
-                     * @param _name 云联网路由表名称。
+                     * 设置云联网路由表名称。Name和Description 两者必传一个。
+                     * @param _name 云联网路由表名称。Name和Description 两者必传一个。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取云联网路由表描述。
-                     * @return Description 云联网路由表描述。
+                     * 获取云联网路由表描述。Name和Description 两者必传一个。
+                     * @return Description 云联网路由表描述。Name和Description 两者必传一个。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置云联网路由表描述。
-                     * @param _description 云联网路由表描述。
+                     * 设置云联网路由表描述。Name和Description 两者必传一个。
+                     * @param _description 云联网路由表描述。Name和Description 两者必传一个。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -118,13 +118,13 @@ namespace TencentCloud
                     bool m_routeTableIdHasBeenSet;
 
                     /**
-                     * 云联网路由表名称。
+                     * 云联网路由表名称。Name和Description 两者必传一个。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 云联网路由表描述。
+                     * 云联网路由表描述。Name和Description 两者必传一个。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

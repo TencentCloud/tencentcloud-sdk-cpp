@@ -27,6 +27,7 @@
 #include <tencentcloud/cls/v20201016/model/KeyRegexInfo.h>
 #include <tencentcloud/cls/v20201016/model/MetaTagInfo.h>
 #include <tencentcloud/cls/v20201016/model/EventLog.h>
+#include <tencentcloud/cls/v20201016/model/AdvanceFilterRuleInfo.h>
 
 
 namespace TencentCloud
@@ -624,6 +625,43 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
                      */
                     bool EventLogRulesHasBeenSet() const;
 
+                    /**
+                     * 获取日志过滤规则列表（新版）。
+注意：
+- 2.9.3以下版本LogListener不支持， 请使用FilterKeyRegex配置日志过滤规则。
+- 自建k8s采集配置（CreateConfigExtra、ModifyConfigExtra）不支持此字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdvanceFilterRules 日志过滤规则列表（新版）。
+注意：
+- 2.9.3以下版本LogListener不支持， 请使用FilterKeyRegex配置日志过滤规则。
+- 自建k8s采集配置（CreateConfigExtra、ModifyConfigExtra）不支持此字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AdvanceFilterRuleInfo> GetAdvanceFilterRules() const;
+
+                    /**
+                     * 设置日志过滤规则列表（新版）。
+注意：
+- 2.9.3以下版本LogListener不支持， 请使用FilterKeyRegex配置日志过滤规则。
+- 自建k8s采集配置（CreateConfigExtra、ModifyConfigExtra）不支持此字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _advanceFilterRules 日志过滤规则列表（新版）。
+注意：
+- 2.9.3以下版本LogListener不支持， 请使用FilterKeyRegex配置日志过滤规则。
+- 自建k8s采集配置（CreateConfigExtra、ModifyConfigExtra）不支持此字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAdvanceFilterRules(const std::vector<AdvanceFilterRuleInfo>& _advanceFilterRules);
+
+                    /**
+                     * 判断参数 AdvanceFilterRules 是否已赋值
+                     * @return AdvanceFilterRules 是否已赋值
+                     * 
+                     */
+                    bool AdvanceFilterRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -783,6 +821,16 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
                      */
                     std::vector<EventLog> m_eventLogRules;
                     bool m_eventLogRulesHasBeenSet;
+
+                    /**
+                     * 日志过滤规则列表（新版）。
+注意：
+- 2.9.3以下版本LogListener不支持， 请使用FilterKeyRegex配置日志过滤规则。
+- 自建k8s采集配置（CreateConfigExtra、ModifyConfigExtra）不支持此字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AdvanceFilterRuleInfo> m_advanceFilterRules;
+                    bool m_advanceFilterRulesHasBeenSet;
 
                 };
             }

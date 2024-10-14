@@ -4039,6 +4039,49 @@ DlcClient::DescribeTasksOutcomeCallable DlcClient::DescribeTasksCallable(const D
     return task->get_future();
 }
 
+DlcClient::DescribeTasksAnalysisOutcome DlcClient::DescribeTasksAnalysis(const DescribeTasksAnalysisRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTasksAnalysis");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTasksAnalysisResponse rsp = DescribeTasksAnalysisResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTasksAnalysisOutcome(rsp);
+        else
+            return DescribeTasksAnalysisOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTasksAnalysisOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeTasksAnalysisAsync(const DescribeTasksAnalysisRequest& request, const DescribeTasksAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTasksAnalysis(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeTasksAnalysisOutcomeCallable DlcClient::DescribeTasksAnalysisCallable(const DescribeTasksAnalysisRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTasksAnalysisOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTasksAnalysis(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeTasksCostInfoOutcome DlcClient::DescribeTasksCostInfo(const DescribeTasksCostInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTasksCostInfo");

@@ -39,7 +39,8 @@ ExtractRuleInfo::ExtractRuleInfo() :
     m_metadataTypeHasBeenSet(false),
     m_pathRegexHasBeenSet(false),
     m_metaTagsHasBeenSet(false),
-    m_eventLogRulesHasBeenSet(false)
+    m_eventLogRulesHasBeenSet(false),
+    m_advanceFilterRulesHasBeenSet(false)
 {
 }
 
@@ -271,6 +272,26 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
         m_eventLogRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("AdvanceFilterRules") && !value["AdvanceFilterRules"].IsNull())
+    {
+        if (!value["AdvanceFilterRules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.AdvanceFilterRules` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AdvanceFilterRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AdvanceFilterRuleInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_advanceFilterRules.push_back(item);
+        }
+        m_advanceFilterRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +471,21 @@ void ExtractRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
 
         int i=0;
         for (auto itr = m_eventLogRules.begin(); itr != m_eventLogRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_advanceFilterRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvanceFilterRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_advanceFilterRules.begin(); itr != m_advanceFilterRules.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -761,5 +797,21 @@ void ExtractRuleInfo::SetEventLogRules(const vector<EventLog>& _eventLogRules)
 bool ExtractRuleInfo::EventLogRulesHasBeenSet() const
 {
     return m_eventLogRulesHasBeenSet;
+}
+
+vector<AdvanceFilterRuleInfo> ExtractRuleInfo::GetAdvanceFilterRules() const
+{
+    return m_advanceFilterRules;
+}
+
+void ExtractRuleInfo::SetAdvanceFilterRules(const vector<AdvanceFilterRuleInfo>& _advanceFilterRules)
+{
+    m_advanceFilterRules = _advanceFilterRules;
+    m_advanceFilterRulesHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::AdvanceFilterRulesHasBeenSet() const
+{
+    return m_advanceFilterRulesHasBeenSet;
 }
 
