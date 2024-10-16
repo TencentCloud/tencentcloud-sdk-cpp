@@ -24,6 +24,7 @@ set(dc_public_header_model
   include/tencentcloud/dc/v20180410/model/DirectConnectTunnelRoute.h
   include/tencentcloud/dc/v20180410/model/RejectDirectConnectTunnelRequest.h
   include/tencentcloud/dc/v20180410/model/Coordinate.h
+  include/tencentcloud/dc/v20180410/model/CreateCloudAttachServiceResponse.h
   include/tencentcloud/dc/v20180410/model/CreateDirectConnectResponse.h
   include/tencentcloud/dc/v20180410/model/DescribeDirectConnectTunnelExtraRequest.h
   include/tencentcloud/dc/v20180410/model/DescribePublicDirectConnectTunnelRoutesRequest.h
@@ -34,8 +35,9 @@ set(dc_public_header_model
   include/tencentcloud/dc/v20180410/model/AcceptDirectConnectTunnelRequest.h
   include/tencentcloud/dc/v20180410/model/ReleaseInternetAddressRequest.h
   include/tencentcloud/dc/v20180410/model/DescribeDirectConnectTunnelExtraResponse.h
+  include/tencentcloud/dc/v20180410/model/ReleaseInternetAddressResponse.h
   include/tencentcloud/dc/v20180410/model/ModifyDirectConnectTunnelAttributeResponse.h
-  include/tencentcloud/dc/v20180410/model/RouteFilterPrefix.h
+  include/tencentcloud/dc/v20180410/model/AccessPoint.h
   include/tencentcloud/dc/v20180410/model/ApplyInternetAddressResponse.h
   include/tencentcloud/dc/v20180410/model/BGPStatus.h
   include/tencentcloud/dc/v20180410/model/DirectConnectTunnelExtra.h
@@ -45,6 +47,7 @@ set(dc_public_header_model
   include/tencentcloud/dc/v20180410/model/ModifyDirectConnectTunnelExtraResponse.h
   include/tencentcloud/dc/v20180410/model/EnableInternetAddressResponse.h
   include/tencentcloud/dc/v20180410/model/ApplyInternetAddressRequest.h
+  include/tencentcloud/dc/v20180410/model/CreateCloudAttachServiceRequest.h
   include/tencentcloud/dc/v20180410/model/DescribeDirectConnectsResponse.h
   include/tencentcloud/dc/v20180410/model/DescribeAccessPointsRequest.h
   include/tencentcloud/dc/v20180410/model/AcceptDirectConnectTunnelResponse.h
@@ -67,13 +70,14 @@ set(dc_public_header_model
   include/tencentcloud/dc/v20180410/model/BFDInfo.h
   include/tencentcloud/dc/v20180410/model/DeleteDirectConnectRequest.h
   include/tencentcloud/dc/v20180410/model/DescribeDirectConnectTunnelsResponse.h
-  include/tencentcloud/dc/v20180410/model/AccessPoint.h
+  include/tencentcloud/dc/v20180410/model/CloudAttachInfo.h
+  include/tencentcloud/dc/v20180410/model/RouteFilterPrefix.h
   include/tencentcloud/dc/v20180410/model/DescribeInternetAddressStatisticsResponse.h
   include/tencentcloud/dc/v20180410/model/NQAInfo.h
   include/tencentcloud/dc/v20180410/model/DescribeInternetAddressRequest.h
   include/tencentcloud/dc/v20180410/model/DescribePublicDirectConnectTunnelRoutesResponse.h
   include/tencentcloud/dc/v20180410/model/DescribeInternetAddressQuotaResponse.h
-  include/tencentcloud/dc/v20180410/model/ReleaseInternetAddressResponse.h
+  include/tencentcloud/dc/v20180410/model/CreateCasInput.h
   include/tencentcloud/dc/v20180410/model/DirectConnectTunnel.h
   include/tencentcloud/dc/v20180410/model/DisableInternetAddressRequest.h
   )
@@ -85,6 +89,7 @@ set(dc_src
   src/v20180410/model/DirectConnectTunnelRoute.cpp
   src/v20180410/model/RejectDirectConnectTunnelRequest.cpp
   src/v20180410/model/Coordinate.cpp
+  src/v20180410/model/CreateCloudAttachServiceResponse.cpp
   src/v20180410/model/CreateDirectConnectResponse.cpp
   src/v20180410/model/DescribeDirectConnectTunnelExtraRequest.cpp
   src/v20180410/model/DescribePublicDirectConnectTunnelRoutesRequest.cpp
@@ -95,8 +100,9 @@ set(dc_src
   src/v20180410/model/AcceptDirectConnectTunnelRequest.cpp
   src/v20180410/model/ReleaseInternetAddressRequest.cpp
   src/v20180410/model/DescribeDirectConnectTunnelExtraResponse.cpp
+  src/v20180410/model/ReleaseInternetAddressResponse.cpp
   src/v20180410/model/ModifyDirectConnectTunnelAttributeResponse.cpp
-  src/v20180410/model/RouteFilterPrefix.cpp
+  src/v20180410/model/AccessPoint.cpp
   src/v20180410/model/ApplyInternetAddressResponse.cpp
   src/v20180410/model/BGPStatus.cpp
   src/v20180410/model/DirectConnectTunnelExtra.cpp
@@ -106,6 +112,7 @@ set(dc_src
   src/v20180410/model/ModifyDirectConnectTunnelExtraResponse.cpp
   src/v20180410/model/EnableInternetAddressResponse.cpp
   src/v20180410/model/ApplyInternetAddressRequest.cpp
+  src/v20180410/model/CreateCloudAttachServiceRequest.cpp
   src/v20180410/model/DescribeDirectConnectsResponse.cpp
   src/v20180410/model/DescribeAccessPointsRequest.cpp
   src/v20180410/model/AcceptDirectConnectTunnelResponse.cpp
@@ -128,13 +135,14 @@ set(dc_src
   src/v20180410/model/BFDInfo.cpp
   src/v20180410/model/DeleteDirectConnectRequest.cpp
   src/v20180410/model/DescribeDirectConnectTunnelsResponse.cpp
-  src/v20180410/model/AccessPoint.cpp
+  src/v20180410/model/CloudAttachInfo.cpp
+  src/v20180410/model/RouteFilterPrefix.cpp
   src/v20180410/model/DescribeInternetAddressStatisticsResponse.cpp
   src/v20180410/model/NQAInfo.cpp
   src/v20180410/model/DescribeInternetAddressRequest.cpp
   src/v20180410/model/DescribePublicDirectConnectTunnelRoutesResponse.cpp
   src/v20180410/model/DescribeInternetAddressQuotaResponse.cpp
-  src/v20180410/model/ReleaseInternetAddressResponse.cpp
+  src/v20180410/model/CreateCasInput.cpp
   src/v20180410/model/DirectConnectTunnel.cpp
   src/v20180410/model/DisableInternetAddressRequest.cpp
   )

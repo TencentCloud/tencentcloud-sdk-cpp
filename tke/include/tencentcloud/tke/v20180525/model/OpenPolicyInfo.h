@@ -198,18 +198,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取策略模版类型
+                     * 获取策略模板类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Kind 策略模版类型
+                     * @return Kind 策略模板类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置策略模版类型
+                     * 设置策略模板类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kind 策略模版类型
+                     * @param _kind 策略模板类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -342,7 +342,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 策略模版类型
+                     * 策略模板类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kind;

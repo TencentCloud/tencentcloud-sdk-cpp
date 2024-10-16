@@ -126,6 +126,49 @@ DcClient::ApplyInternetAddressOutcomeCallable DcClient::ApplyInternetAddressCall
     return task->get_future();
 }
 
+DcClient::CreateCloudAttachServiceOutcome DcClient::CreateCloudAttachService(const CreateCloudAttachServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudAttachService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudAttachServiceResponse rsp = CreateCloudAttachServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudAttachServiceOutcome(rsp);
+        else
+            return CreateCloudAttachServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudAttachServiceOutcome(outcome.GetError());
+    }
+}
+
+void DcClient::CreateCloudAttachServiceAsync(const CreateCloudAttachServiceRequest& request, const CreateCloudAttachServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudAttachService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcClient::CreateCloudAttachServiceOutcomeCallable DcClient::CreateCloudAttachServiceCallable(const CreateCloudAttachServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudAttachServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudAttachService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcClient::CreateDirectConnectOutcome DcClient::CreateDirectConnect(const CreateDirectConnectRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDirectConnect");

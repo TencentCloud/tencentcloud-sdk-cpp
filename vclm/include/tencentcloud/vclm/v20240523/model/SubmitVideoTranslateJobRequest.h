@@ -163,6 +163,27 @@ zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)
                     bool AudioUrlHasBeenSet() const;
 
                     /**
+                     * 获取是否需要去除VideoUrl或AudioUrl中背景音，取值范围：0-不需要，1-需要，默认0 。
+                     * @return RemoveVocal 是否需要去除VideoUrl或AudioUrl中背景音，取值范围：0-不需要，1-需要，默认0 。
+                     * 
+                     */
+                    int64_t GetRemoveVocal() const;
+
+                    /**
+                     * 设置是否需要去除VideoUrl或AudioUrl中背景音，取值范围：0-不需要，1-需要，默认0 。
+                     * @param _removeVocal 是否需要去除VideoUrl或AudioUrl中背景音，取值范围：0-不需要，1-需要，默认0 。
+                     * 
+                     */
+                    void SetRemoveVocal(const int64_t& _removeVocal);
+
+                    /**
+                     * 判断参数 RemoveVocal 是否已赋值
+                     * @return RemoveVocal 是否已赋值
+                     * 
+                     */
+                    bool RemoveVocalHasBeenSet() const;
+
+                    /**
                      * 获取是否需要确认翻译结果0：不需要，1：需要
                      * @return Confirm 是否需要确认翻译结果0：不需要，1：需要
                      * 
@@ -275,6 +296,12 @@ zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)
                      */
                     std::string m_audioUrl;
                     bool m_audioUrlHasBeenSet;
+
+                    /**
+                     * 是否需要去除VideoUrl或AudioUrl中背景音，取值范围：0-不需要，1-需要，默认0 。
+                     */
+                    int64_t m_removeVocal;
+                    bool m_removeVocalHasBeenSet;
 
                     /**
                      * 是否需要确认翻译结果0：不需要，1：需要

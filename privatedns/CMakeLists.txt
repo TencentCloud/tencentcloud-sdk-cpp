@@ -64,11 +64,13 @@ set(privatedns_public_header_model
   include/tencentcloud/privatedns/v20201028/model/DescribeAuditLogRequest.h
   include/tencentcloud/privatedns/v20201028/model/DescribeDashboardRequest.h
   include/tencentcloud/privatedns/v20201028/model/DeletePrivateZoneRequest.h
+  include/tencentcloud/privatedns/v20201028/model/CreateEndPointResponse.h
   include/tencentcloud/privatedns/v20201028/model/AuditLog.h
   include/tencentcloud/privatedns/v20201028/model/SubscribePrivateZoneServiceResponse.h
   include/tencentcloud/privatedns/v20201028/model/DeletePrivateDNSAccountRequest.h
   include/tencentcloud/privatedns/v20201028/model/DeletePrivateZoneRecordRequest.h
   include/tencentcloud/privatedns/v20201028/model/Filter.h
+  include/tencentcloud/privatedns/v20201028/model/CreateEndPointRequest.h
   include/tencentcloud/privatedns/v20201028/model/DeletePrivateZoneResponse.h
   include/tencentcloud/privatedns/v20201028/model/ModifyRecordsStatusRequest.h
   include/tencentcloud/privatedns/v20201028/model/CreatePrivateDNSAccountRequest.h
@@ -133,11 +135,13 @@ set(privatedns_src
   src/v20201028/model/DescribeAuditLogRequest.cpp
   src/v20201028/model/DescribeDashboardRequest.cpp
   src/v20201028/model/DeletePrivateZoneRequest.cpp
+  src/v20201028/model/CreateEndPointResponse.cpp
   src/v20201028/model/AuditLog.cpp
   src/v20201028/model/SubscribePrivateZoneServiceResponse.cpp
   src/v20201028/model/DeletePrivateDNSAccountRequest.cpp
   src/v20201028/model/DeletePrivateZoneRecordRequest.cpp
   src/v20201028/model/Filter.cpp
+  src/v20201028/model/CreateEndPointRequest.cpp
   src/v20201028/model/DeletePrivateZoneResponse.cpp
   src/v20201028/model/ModifyRecordsStatusRequest.cpp
   src/v20201028/model/CreatePrivateDNSAccountRequest.cpp

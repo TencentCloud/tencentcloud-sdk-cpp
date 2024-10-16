@@ -27,6 +27,8 @@
 #include <tencentcloud/dc/v20180410/model/AcceptDirectConnectTunnelResponse.h>
 #include <tencentcloud/dc/v20180410/model/ApplyInternetAddressRequest.h>
 #include <tencentcloud/dc/v20180410/model/ApplyInternetAddressResponse.h>
+#include <tencentcloud/dc/v20180410/model/CreateCloudAttachServiceRequest.h>
+#include <tencentcloud/dc/v20180410/model/CreateCloudAttachServiceResponse.h>
 #include <tencentcloud/dc/v20180410/model/CreateDirectConnectRequest.h>
 #include <tencentcloud/dc/v20180410/model/CreateDirectConnectResponse.h>
 #include <tencentcloud/dc/v20180410/model/CreateDirectConnectTunnelRequest.h>
@@ -85,6 +87,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyInternetAddressResponse> ApplyInternetAddressOutcome;
                 typedef std::future<ApplyInternetAddressOutcome> ApplyInternetAddressOutcomeCallable;
                 typedef std::function<void(const DcClient*, const Model::ApplyInternetAddressRequest&, ApplyInternetAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyInternetAddressAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCloudAttachServiceResponse> CreateCloudAttachServiceOutcome;
+                typedef std::future<CreateCloudAttachServiceOutcome> CreateCloudAttachServiceOutcomeCallable;
+                typedef std::function<void(const DcClient*, const Model::CreateCloudAttachServiceRequest&, CreateCloudAttachServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudAttachServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDirectConnectResponse> CreateDirectConnectOutcome;
                 typedef std::future<CreateDirectConnectOutcome> CreateDirectConnectOutcomeCallable;
                 typedef std::function<void(const DcClient*, const Model::CreateDirectConnectRequest&, CreateDirectConnectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDirectConnectAsyncHandler;
@@ -162,6 +167,15 @@ namespace TencentCloud
                 ApplyInternetAddressOutcome ApplyInternetAddress(const Model::ApplyInternetAddressRequest &request);
                 void ApplyInternetAddressAsync(const Model::ApplyInternetAddressRequest& request, const ApplyInternetAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ApplyInternetAddressOutcomeCallable ApplyInternetAddressCallable(const Model::ApplyInternetAddressRequest& request);
+
+                /**
+                 *创建敏捷上云服务
+                 * @param req CreateCloudAttachServiceRequest
+                 * @return CreateCloudAttachServiceOutcome
+                 */
+                CreateCloudAttachServiceOutcome CreateCloudAttachService(const Model::CreateCloudAttachServiceRequest &request);
+                void CreateCloudAttachServiceAsync(const Model::CreateCloudAttachServiceRequest& request, const CreateCloudAttachServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudAttachServiceOutcomeCallable CreateCloudAttachServiceCallable(const Model::CreateCloudAttachServiceRequest& request);
 
                 /**
                  *申请物理专线接入。

@@ -213,6 +213,31 @@ namespace TencentCloud
                      */
                     bool NoSupportTransparentDataEncryptionReasonHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持手动发起逻辑备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSupportManualLogic 是否支持手动发起逻辑备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIsSupportManualLogic() const;
+
+                    /**
+                     * 设置是否支持手动发起逻辑备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isSupportManualLogic 是否支持手动发起逻辑备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsSupportManualLogic(const std::string& _isSupportManualLogic);
+
+                    /**
+                     * 判断参数 IsSupportManualLogic 是否已赋值
+                     * @return IsSupportManualLogic 是否已赋值
+                     * 
+                     */
+                    bool IsSupportManualLogicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +286,13 @@ namespace TencentCloud
                      */
                     std::string m_noSupportTransparentDataEncryptionReason;
                     bool m_noSupportTransparentDataEncryptionReasonHasBeenSet;
+
+                    /**
+                     * 是否支持手动发起逻辑备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isSupportManualLogic;
+                    bool m_isSupportManualLogicHasBeenSet;
 
                 };
             }

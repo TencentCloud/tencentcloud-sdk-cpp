@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取策略模版类型
-                     * @return Kind 策略模版类型
+                     * 获取策略模板类型
+                     * @return Kind 策略模板类型
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置策略模版类型
-                     * @param _kind 策略模版类型
+                     * 设置策略模板类型
+                     * @param _kind 策略模板类型
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -167,7 +167,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 策略模版类型
+                     * 策略模板类型
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;

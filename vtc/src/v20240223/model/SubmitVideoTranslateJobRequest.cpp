@@ -27,6 +27,7 @@ SubmitVideoTranslateJobRequest::SubmitVideoTranslateJobRequest() :
     m_srcLangHasBeenSet(false),
     m_dstLangHasBeenSet(false),
     m_audioUrlHasBeenSet(false),
+    m_removeVocalHasBeenSet(false),
     m_confirmHasBeenSet(false),
     m_lipSyncHasBeenSet(false),
     m_voiceTypeHasBeenSet(false)
@@ -70,6 +71,14 @@ string SubmitVideoTranslateJobRequest::ToJsonString() const
         string key = "AudioUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_audioUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_removeVocalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoveVocal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_removeVocal, allocator);
     }
 
     if (m_confirmHasBeenSet)
@@ -166,6 +175,22 @@ void SubmitVideoTranslateJobRequest::SetAudioUrl(const string& _audioUrl)
 bool SubmitVideoTranslateJobRequest::AudioUrlHasBeenSet() const
 {
     return m_audioUrlHasBeenSet;
+}
+
+int64_t SubmitVideoTranslateJobRequest::GetRemoveVocal() const
+{
+    return m_removeVocal;
+}
+
+void SubmitVideoTranslateJobRequest::SetRemoveVocal(const int64_t& _removeVocal)
+{
+    m_removeVocal = _removeVocal;
+    m_removeVocalHasBeenSet = true;
+}
+
+bool SubmitVideoTranslateJobRequest::RemoveVocalHasBeenSet() const
+{
+    return m_removeVocalHasBeenSet;
 }
 
 int64_t SubmitVideoTranslateJobRequest::GetConfirm() const

@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/privatedns/v20201028/model/AddSpecifyPrivateZoneVpcRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/AddSpecifyPrivateZoneVpcResponse.h>
+#include <tencentcloud/privatedns/v20201028/model/CreateEndPointRequest.h>
+#include <tencentcloud/privatedns/v20201028/model/CreateEndPointResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/CreatePrivateDNSAccountRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/CreatePrivateDNSAccountResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRequest.h>
@@ -90,6 +92,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddSpecifyPrivateZoneVpcResponse> AddSpecifyPrivateZoneVpcOutcome;
                 typedef std::future<AddSpecifyPrivateZoneVpcOutcome> AddSpecifyPrivateZoneVpcOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::AddSpecifyPrivateZoneVpcRequest&, AddSpecifyPrivateZoneVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddSpecifyPrivateZoneVpcAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEndPointResponse> CreateEndPointOutcome;
+                typedef std::future<CreateEndPointOutcome> CreateEndPointOutcomeCallable;
+                typedef std::function<void(const PrivatednsClient*, const Model::CreateEndPointRequest&, CreateEndPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEndPointAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePrivateDNSAccountResponse> CreatePrivateDNSAccountOutcome;
                 typedef std::future<CreatePrivateDNSAccountOutcome> CreatePrivateDNSAccountOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::CreatePrivateDNSAccountRequest&, CreatePrivateDNSAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrivateDNSAccountAsyncHandler;
@@ -173,6 +178,15 @@ namespace TencentCloud
                 AddSpecifyPrivateZoneVpcOutcome AddSpecifyPrivateZoneVpc(const Model::AddSpecifyPrivateZoneVpcRequest &request);
                 void AddSpecifyPrivateZoneVpcAsync(const Model::AddSpecifyPrivateZoneVpcRequest& request, const AddSpecifyPrivateZoneVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddSpecifyPrivateZoneVpcOutcomeCallable AddSpecifyPrivateZoneVpcCallable(const Model::AddSpecifyPrivateZoneVpcRequest& request);
+
+                /**
+                 *创建终端节点
+                 * @param req CreateEndPointRequest
+                 * @return CreateEndPointOutcome
+                 */
+                CreateEndPointOutcome CreateEndPoint(const Model::CreateEndPointRequest &request);
+                void CreateEndPointAsync(const Model::CreateEndPointRequest& request, const CreateEndPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEndPointOutcomeCallable CreateEndPointCallable(const Model::CreateEndPointRequest& request);
 
                 /**
                  *创建私有域解析账号

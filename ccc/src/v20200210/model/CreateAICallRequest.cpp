@@ -39,7 +39,10 @@ CreateAICallRequest::CreateAICallRequest() :
     m_interruptModeHasBeenSet(false),
     m_interruptSpeechDurationHasBeenSet(false),
     m_endFunctionEnableHasBeenSet(false),
-    m_endFunctionDescHasBeenSet(false)
+    m_endFunctionDescHasBeenSet(false),
+    m_notifyDurationHasBeenSet(false),
+    m_notifyMessageHasBeenSet(false),
+    m_customTTSConfigHasBeenSet(false)
 {
 }
 
@@ -194,6 +197,30 @@ string CreateAICallRequest::ToJsonString() const
         string key = "EndFunctionDesc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endFunctionDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notifyDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_notifyDuration, allocator);
+    }
+
+    if (m_notifyMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyMessage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_notifyMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customTTSConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomTTSConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customTTSConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -474,6 +501,54 @@ void CreateAICallRequest::SetEndFunctionDesc(const string& _endFunctionDesc)
 bool CreateAICallRequest::EndFunctionDescHasBeenSet() const
 {
     return m_endFunctionDescHasBeenSet;
+}
+
+int64_t CreateAICallRequest::GetNotifyDuration() const
+{
+    return m_notifyDuration;
+}
+
+void CreateAICallRequest::SetNotifyDuration(const int64_t& _notifyDuration)
+{
+    m_notifyDuration = _notifyDuration;
+    m_notifyDurationHasBeenSet = true;
+}
+
+bool CreateAICallRequest::NotifyDurationHasBeenSet() const
+{
+    return m_notifyDurationHasBeenSet;
+}
+
+string CreateAICallRequest::GetNotifyMessage() const
+{
+    return m_notifyMessage;
+}
+
+void CreateAICallRequest::SetNotifyMessage(const string& _notifyMessage)
+{
+    m_notifyMessage = _notifyMessage;
+    m_notifyMessageHasBeenSet = true;
+}
+
+bool CreateAICallRequest::NotifyMessageHasBeenSet() const
+{
+    return m_notifyMessageHasBeenSet;
+}
+
+string CreateAICallRequest::GetCustomTTSConfig() const
+{
+    return m_customTTSConfig;
+}
+
+void CreateAICallRequest::SetCustomTTSConfig(const string& _customTTSConfig)
+{
+    m_customTTSConfig = _customTTSConfig;
+    m_customTTSConfigHasBeenSet = true;
+}
+
+bool CreateAICallRequest::CustomTTSConfigHasBeenSet() const
+{
+    return m_customTTSConfigHasBeenSet;
 }
 
 

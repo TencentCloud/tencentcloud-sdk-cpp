@@ -220,6 +220,31 @@ namespace TencentCloud
                      */
                     bool IndexHasBeenSet() const;
 
+                    /**
+                     * 获取通知内容模板ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NoticeContentId 通知内容模板ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNoticeContentId() const;
+
+                    /**
+                     * 设置通知内容模板ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _noticeContentId 通知内容模板ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNoticeContentId(const std::string& _noticeContentId);
+
+                    /**
+                     * 判断参数 NoticeContentId 是否已赋值
+                     * @return NoticeContentId 是否已赋值
+                     * 
+                     */
+                    bool NoticeContentIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -269,6 +294,13 @@ namespace TencentCloud
                      */
                     int64_t m_index;
                     bool m_indexHasBeenSet;
+
+                    /**
+                     * 通知内容模板ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_noticeContentId;
+                    bool m_noticeContentIdHasBeenSet;
 
                 };
             }

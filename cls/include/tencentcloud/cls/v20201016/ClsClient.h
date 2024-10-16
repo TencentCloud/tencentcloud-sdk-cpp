@@ -65,6 +65,8 @@
 #include <tencentcloud/cls/v20201016/model/CreateLogsetResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateMachineGroupRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateMachineGroupResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateNoticeContentRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateNoticeContentResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateScheduledSqlRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateScheduledSqlResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateShipperRequest.h>
@@ -103,6 +105,8 @@
 #include <tencentcloud/cls/v20201016/model/DeleteMachineGroupResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteMachineGroupInfoRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteMachineGroupInfoResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteNoticeContentRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteNoticeContentResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteScheduledSqlRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteScheduledSqlResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteShipperRequest.h>
@@ -155,6 +159,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeMachineGroupsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeMachinesRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeMachinesResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeNoticeContentsRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeNoticeContentsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribePartitionsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribePartitionsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeScheduledSqlInfoRequest.h>
@@ -199,6 +205,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyLogsetResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyMachineGroupRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyMachineGroupResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyNoticeContentRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyNoticeContentResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyScheduledSqlRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyScheduledSqlResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyShipperRequest.h>
@@ -302,6 +310,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateMachineGroupResponse> CreateMachineGroupOutcome;
                 typedef std::future<CreateMachineGroupOutcome> CreateMachineGroupOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateMachineGroupRequest&, CreateMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMachineGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateNoticeContentResponse> CreateNoticeContentOutcome;
+                typedef std::future<CreateNoticeContentOutcome> CreateNoticeContentOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateNoticeContentRequest&, CreateNoticeContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNoticeContentAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateScheduledSqlResponse> CreateScheduledSqlOutcome;
                 typedef std::future<CreateScheduledSqlOutcome> CreateScheduledSqlOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateScheduledSqlRequest&, CreateScheduledSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScheduledSqlAsyncHandler;
@@ -359,6 +370,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteMachineGroupInfoResponse> DeleteMachineGroupInfoOutcome;
                 typedef std::future<DeleteMachineGroupInfoOutcome> DeleteMachineGroupInfoOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteMachineGroupInfoRequest&, DeleteMachineGroupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMachineGroupInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteNoticeContentResponse> DeleteNoticeContentOutcome;
+                typedef std::future<DeleteNoticeContentOutcome> DeleteNoticeContentOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteNoticeContentRequest&, DeleteNoticeContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNoticeContentAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteScheduledSqlResponse> DeleteScheduledSqlOutcome;
                 typedef std::future<DeleteScheduledSqlOutcome> DeleteScheduledSqlOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteScheduledSqlRequest&, DeleteScheduledSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScheduledSqlAsyncHandler;
@@ -437,6 +451,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMachinesResponse> DescribeMachinesOutcome;
                 typedef std::future<DescribeMachinesOutcome> DescribeMachinesOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeMachinesRequest&, DescribeMachinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMachinesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNoticeContentsResponse> DescribeNoticeContentsOutcome;
+                typedef std::future<DescribeNoticeContentsOutcome> DescribeNoticeContentsOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeNoticeContentsRequest&, DescribeNoticeContentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNoticeContentsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePartitionsResponse> DescribePartitionsOutcome;
                 typedef std::future<DescribePartitionsOutcome> DescribePartitionsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribePartitionsRequest&, DescribePartitionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePartitionsAsyncHandler;
@@ -503,6 +520,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMachineGroupResponse> ModifyMachineGroupOutcome;
                 typedef std::future<ModifyMachineGroupOutcome> ModifyMachineGroupOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyMachineGroupRequest&, ModifyMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMachineGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNoticeContentResponse> ModifyNoticeContentOutcome;
+                typedef std::future<ModifyNoticeContentOutcome> ModifyNoticeContentOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyNoticeContentRequest&, ModifyNoticeContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNoticeContentAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyScheduledSqlResponse> ModifyScheduledSqlOutcome;
                 typedef std::future<ModifyScheduledSqlOutcome> ModifyScheduledSqlOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyScheduledSqlRequest&, ModifyScheduledSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyScheduledSqlAsyncHandler;
@@ -735,6 +755,15 @@ namespace TencentCloud
                 CreateMachineGroupOutcomeCallable CreateMachineGroupCallable(const Model::CreateMachineGroupRequest& request);
 
                 /**
+                 *该接口用于创建通知内容。
+                 * @param req CreateNoticeContentRequest
+                 * @return CreateNoticeContentOutcome
+                 */
+                CreateNoticeContentOutcome CreateNoticeContent(const Model::CreateNoticeContentRequest &request);
+                void CreateNoticeContentAsync(const Model::CreateNoticeContentRequest& request, const CreateNoticeContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNoticeContentOutcomeCallable CreateNoticeContentCallable(const Model::CreateNoticeContentRequest& request);
+
+                /**
                  *本接口用于创建定时SQL分析任务
                  * @param req CreateScheduledSqlRequest
                  * @return CreateScheduledSqlOutcome
@@ -904,6 +933,15 @@ namespace TencentCloud
                 DeleteMachineGroupInfoOutcome DeleteMachineGroupInfo(const Model::DeleteMachineGroupInfoRequest &request);
                 void DeleteMachineGroupInfoAsync(const Model::DeleteMachineGroupInfoRequest& request, const DeleteMachineGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteMachineGroupInfoOutcomeCallable DeleteMachineGroupInfoCallable(const Model::DeleteMachineGroupInfoRequest& request);
+
+                /**
+                 *该接口用于删除通知内容配置
+                 * @param req DeleteNoticeContentRequest
+                 * @return DeleteNoticeContentOutcome
+                 */
+                DeleteNoticeContentOutcome DeleteNoticeContent(const Model::DeleteNoticeContentRequest &request);
+                void DeleteNoticeContentAsync(const Model::DeleteNoticeContentRequest& request, const DeleteNoticeContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNoticeContentOutcomeCallable DeleteNoticeContentCallable(const Model::DeleteNoticeContentRequest& request);
 
                 /**
                  *本接口用于删除定时SQL分析任务
@@ -1141,6 +1179,15 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 DescribeMachinesOutcomeCallable DescribeMachinesCallable(const Model::DescribeMachinesRequest& request);
 
                 /**
+                 *获取通知内容列表
+                 * @param req DescribeNoticeContentsRequest
+                 * @return DescribeNoticeContentsOutcome
+                 */
+                DescribeNoticeContentsOutcome DescribeNoticeContents(const Model::DescribeNoticeContentsRequest &request);
+                void DescribeNoticeContentsAsync(const Model::DescribeNoticeContentsRequest& request, const DescribeNoticeContentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNoticeContentsOutcomeCallable DescribeNoticeContentsCallable(const Model::DescribeNoticeContentsRequest& request);
+
+                /**
                  *该接口已废弃，如需获取分区数量，请使用DescribeTopics接口。
                  * @param req DescribePartitionsRequest
                  * @return DescribePartitionsOutcome
@@ -1337,6 +1384,15 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyMachineGroupOutcome ModifyMachineGroup(const Model::ModifyMachineGroupRequest &request);
                 void ModifyMachineGroupAsync(const Model::ModifyMachineGroupRequest& request, const ModifyMachineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMachineGroupOutcomeCallable ModifyMachineGroupCallable(const Model::ModifyMachineGroupRequest& request);
+
+                /**
+                 *该接口用于修改通知内容配置
+                 * @param req ModifyNoticeContentRequest
+                 * @return ModifyNoticeContentOutcome
+                 */
+                ModifyNoticeContentOutcome ModifyNoticeContent(const Model::ModifyNoticeContentRequest &request);
+                void ModifyNoticeContentAsync(const Model::ModifyNoticeContentRequest& request, const ModifyNoticeContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNoticeContentOutcomeCallable ModifyNoticeContentCallable(const Model::ModifyNoticeContentRequest& request);
 
                 /**
                  *本接口用于修改定时SQL分析任务

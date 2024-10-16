@@ -26,7 +26,8 @@ NoticeReceiver::NoticeReceiver() :
     m_receiverChannelsHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_indexHasBeenSet(false)
+    m_indexHasBeenSet(false),
+    m_noticeContentIdHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,16 @@ CoreInternalOutcome NoticeReceiver::Deserialize(const rapidjson::Value &value)
         m_indexHasBeenSet = true;
     }
 
+    if (value.HasMember("NoticeContentId") && !value["NoticeContentId"].IsNull())
+    {
+        if (!value["NoticeContentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NoticeReceiver.NoticeContentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_noticeContentId = string(value["NoticeContentId"].GetString());
+        m_noticeContentIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +175,14 @@ void NoticeReceiver::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Index";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_index, allocator);
+    }
+
+    if (m_noticeContentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoticeContentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_noticeContentId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -263,5 +282,21 @@ void NoticeReceiver::SetIndex(const int64_t& _index)
 bool NoticeReceiver::IndexHasBeenSet() const
 {
     return m_indexHasBeenSet;
+}
+
+string NoticeReceiver::GetNoticeContentId() const
+{
+    return m_noticeContentId;
+}
+
+void NoticeReceiver::SetNoticeContentId(const string& _noticeContentId)
+{
+    m_noticeContentId = _noticeContentId;
+    m_noticeContentIdHasBeenSet = true;
+}
+
+bool NoticeReceiver::NoticeContentIdHasBeenSet() const
+{
+    return m_noticeContentIdHasBeenSet;
 }
 

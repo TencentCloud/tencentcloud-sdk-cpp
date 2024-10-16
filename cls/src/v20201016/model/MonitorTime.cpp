@@ -22,7 +22,8 @@ using namespace std;
 
 MonitorTime::MonitorTime() :
     m_typeHasBeenSet(false),
-    m_timeHasBeenSet(false)
+    m_timeHasBeenSet(false),
+    m_cronExpressionHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome MonitorTime::Deserialize(const rapidjson::Value &value)
         m_timeHasBeenSet = true;
     }
 
+    if (value.HasMember("CronExpression") && !value["CronExpression"].IsNull())
+    {
+        if (!value["CronExpression"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonitorTime.CronExpression` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cronExpression = string(value["CronExpression"].GetString());
+        m_cronExpressionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void MonitorTime::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Time";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_time, allocator);
+    }
+
+    if (m_cronExpressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CronExpression";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cronExpression.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void MonitorTime::SetTime(const int64_t& _time)
 bool MonitorTime::TimeHasBeenSet() const
 {
     return m_timeHasBeenSet;
+}
+
+string MonitorTime::GetCronExpression() const
+{
+    return m_cronExpression;
+}
+
+void MonitorTime::SetCronExpression(const string& _cronExpression)
+{
+    m_cronExpression = _cronExpression;
+    m_cronExpressionHasBeenSet = true;
+}
+
+bool MonitorTime::CronExpressionHasBeenSet() const
+{
+    return m_cronExpressionHasBeenSet;
 }
 

@@ -27,7 +27,8 @@ Ability::Ability() :
     m_nonsupportRoReasonHasBeenSet(false),
     m_isSupportManualSnapshotHasBeenSet(false),
     m_isSupportTransparentDataEncryptionHasBeenSet(false),
-    m_noSupportTransparentDataEncryptionReasonHasBeenSet(false)
+    m_noSupportTransparentDataEncryptionReasonHasBeenSet(false),
+    m_isSupportManualLogicHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome Ability::Deserialize(const rapidjson::Value &value)
         m_noSupportTransparentDataEncryptionReasonHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportManualLogic") && !value["IsSupportManualLogic"].IsNull())
+    {
+        if (!value["IsSupportManualLogic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Ability.IsSupportManualLogic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportManualLogic = string(value["IsSupportManualLogic"].GetString());
+        m_isSupportManualLogicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void Ability::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "NoSupportTransparentDataEncryptionReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_noSupportTransparentDataEncryptionReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSupportManualLogicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportManualLogic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isSupportManualLogic.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void Ability::SetNoSupportTransparentDataEncryptionReason(const string& _noSuppo
 bool Ability::NoSupportTransparentDataEncryptionReasonHasBeenSet() const
 {
     return m_noSupportTransparentDataEncryptionReasonHasBeenSet;
+}
+
+string Ability::GetIsSupportManualLogic() const
+{
+    return m_isSupportManualLogic;
+}
+
+void Ability::SetIsSupportManualLogic(const string& _isSupportManualLogic)
+{
+    m_isSupportManualLogic = _isSupportManualLogic;
+    m_isSupportManualLogicHasBeenSet = true;
+}
+
+bool Ability::IsSupportManualLogicHasBeenSet() const
+{
+    return m_isSupportManualLogicHasBeenSet;
 }
 

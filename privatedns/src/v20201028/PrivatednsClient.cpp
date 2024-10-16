@@ -83,6 +83,49 @@ PrivatednsClient::AddSpecifyPrivateZoneVpcOutcomeCallable PrivatednsClient::AddS
     return task->get_future();
 }
 
+PrivatednsClient::CreateEndPointOutcome PrivatednsClient::CreateEndPoint(const CreateEndPointRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEndPoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEndPointResponse rsp = CreateEndPointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEndPointOutcome(rsp);
+        else
+            return CreateEndPointOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEndPointOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::CreateEndPointAsync(const CreateEndPointRequest& request, const CreateEndPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEndPoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::CreateEndPointOutcomeCallable PrivatednsClient::CreateEndPointCallable(const CreateEndPointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEndPointOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEndPoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PrivatednsClient::CreatePrivateDNSAccountOutcome PrivatednsClient::CreatePrivateDNSAccount(const CreatePrivateDNSAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePrivateDNSAccount");

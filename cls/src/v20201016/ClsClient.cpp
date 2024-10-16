@@ -943,6 +943,49 @@ ClsClient::CreateMachineGroupOutcomeCallable ClsClient::CreateMachineGroupCallab
     return task->get_future();
 }
 
+ClsClient::CreateNoticeContentOutcome ClsClient::CreateNoticeContent(const CreateNoticeContentRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNoticeContent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNoticeContentResponse rsp = CreateNoticeContentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNoticeContentOutcome(rsp);
+        else
+            return CreateNoticeContentOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNoticeContentOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateNoticeContentAsync(const CreateNoticeContentRequest& request, const CreateNoticeContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNoticeContent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateNoticeContentOutcomeCallable ClsClient::CreateNoticeContentCallable(const CreateNoticeContentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNoticeContentOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNoticeContent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CreateScheduledSqlOutcome ClsClient::CreateScheduledSql(const CreateScheduledSqlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateScheduledSql");
@@ -1753,6 +1796,49 @@ ClsClient::DeleteMachineGroupInfoOutcomeCallable ClsClient::DeleteMachineGroupIn
         [this, request]()
         {
             return this->DeleteMachineGroupInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DeleteNoticeContentOutcome ClsClient::DeleteNoticeContent(const DeleteNoticeContentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNoticeContent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNoticeContentResponse rsp = DeleteNoticeContentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNoticeContentOutcome(rsp);
+        else
+            return DeleteNoticeContentOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNoticeContentOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteNoticeContentAsync(const DeleteNoticeContentRequest& request, const DeleteNoticeContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteNoticeContent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteNoticeContentOutcomeCallable ClsClient::DeleteNoticeContentCallable(const DeleteNoticeContentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteNoticeContentOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteNoticeContent(request);
         }
     );
 
@@ -2878,6 +2964,49 @@ ClsClient::DescribeMachinesOutcomeCallable ClsClient::DescribeMachinesCallable(c
     return task->get_future();
 }
 
+ClsClient::DescribeNoticeContentsOutcome ClsClient::DescribeNoticeContents(const DescribeNoticeContentsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNoticeContents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNoticeContentsResponse rsp = DescribeNoticeContentsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNoticeContentsOutcome(rsp);
+        else
+            return DescribeNoticeContentsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNoticeContentsOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeNoticeContentsAsync(const DescribeNoticeContentsRequest& request, const DescribeNoticeContentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNoticeContents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeNoticeContentsOutcomeCallable ClsClient::DescribeNoticeContentsCallable(const DescribeNoticeContentsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNoticeContentsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNoticeContents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DescribePartitionsOutcome ClsClient::DescribePartitions(const DescribePartitionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePartitions");
@@ -3817,6 +3946,49 @@ ClsClient::ModifyMachineGroupOutcomeCallable ClsClient::ModifyMachineGroupCallab
         [this, request]()
         {
             return this->ModifyMachineGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::ModifyNoticeContentOutcome ClsClient::ModifyNoticeContent(const ModifyNoticeContentRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNoticeContent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNoticeContentResponse rsp = ModifyNoticeContentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNoticeContentOutcome(rsp);
+        else
+            return ModifyNoticeContentOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNoticeContentOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyNoticeContentAsync(const ModifyNoticeContentRequest& request, const ModifyNoticeContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNoticeContent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyNoticeContentOutcomeCallable ClsClient::ModifyNoticeContentCallable(const ModifyNoticeContentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNoticeContentOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNoticeContent(request);
         }
     );
 

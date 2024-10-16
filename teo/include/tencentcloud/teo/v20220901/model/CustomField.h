@@ -47,30 +47,34 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取从 HTTP 请求和响应中的指定位置提取数据，取值有：
+                     * 获取自定义日志字段类型。从 HTTP 请求和响应中的指定位置提取数据，取值有：
 <li>ReqHeader：从 HTTP 请求头中提取指定字段值；</li>
 <li>RspHeader：从 HTTP 响应头中提取指定字段值；</li>
-<li>Cookie: 从 Cookie 中提取指定字段值。</li>
+<li>Cookie: 从 Cookie 中提取指定字段值；</li>
+<li>ReqBody: 从 HTTP 请求正文中通过 Google RE2 正则表达式提取指定内容。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 从 HTTP 请求和响应中的指定位置提取数据，取值有：
+                     * @return Name 自定义日志字段类型。从 HTTP 请求和响应中的指定位置提取数据，取值有：
 <li>ReqHeader：从 HTTP 请求头中提取指定字段值；</li>
 <li>RspHeader：从 HTTP 响应头中提取指定字段值；</li>
-<li>Cookie: 从 Cookie 中提取指定字段值。</li>
+<li>Cookie: 从 Cookie 中提取指定字段值；</li>
+<li>ReqBody: 从 HTTP 请求正文中通过 Google RE2 正则表达式提取指定内容。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置从 HTTP 请求和响应中的指定位置提取数据，取值有：
+                     * 设置自定义日志字段类型。从 HTTP 请求和响应中的指定位置提取数据，取值有：
 <li>ReqHeader：从 HTTP 请求头中提取指定字段值；</li>
 <li>RspHeader：从 HTTP 响应头中提取指定字段值；</li>
-<li>Cookie: 从 Cookie 中提取指定字段值。</li>
+<li>Cookie: 从 Cookie 中提取指定字段值；</li>
+<li>ReqBody: 从 HTTP 请求正文中通过 Google RE2 正则表达式提取指定内容。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 从 HTTP 请求和响应中的指定位置提取数据，取值有：
+                     * @param _name 自定义日志字段类型。从 HTTP 请求和响应中的指定位置提取数据，取值有：
 <li>ReqHeader：从 HTTP 请求头中提取指定字段值；</li>
 <li>RspHeader：从 HTTP 响应头中提取指定字段值；</li>
-<li>Cookie: 从 Cookie 中提取指定字段值。</li>
+<li>Cookie: 从 Cookie 中提取指定字段值；</li>
+<li>ReqBody: 从 HTTP 请求正文中通过 Google RE2 正则表达式提取指定内容。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -84,18 +88,26 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取需要提取值的参数名称，例如：Accept-Language。
+                     * 获取根据字段类型（Name）填入字段值的定义。需要区分大小写。
+<li>当字段类型为 ReqHeader、RspHeader、Cookie 时，填入需要提取值的参数名称，例如：Accept-Language。可输入 1-100 个字符，允许的字符开头为字母，中间为字母、数字、-，结尾为字母、数字；</li>
+<li>当字段类型为 ReqBody 时，填入 Google RE2 正则表达式，正则表达式长度上限为 4KB。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 需要提取值的参数名称，例如：Accept-Language。
+                     * @return Value 根据字段类型（Name）填入字段值的定义。需要区分大小写。
+<li>当字段类型为 ReqHeader、RspHeader、Cookie 时，填入需要提取值的参数名称，例如：Accept-Language。可输入 1-100 个字符，允许的字符开头为字母，中间为字母、数字、-，结尾为字母、数字；</li>
+<li>当字段类型为 ReqBody 时，填入 Google RE2 正则表达式，正则表达式长度上限为 4KB。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置需要提取值的参数名称，例如：Accept-Language。
+                     * 设置根据字段类型（Name）填入字段值的定义。需要区分大小写。
+<li>当字段类型为 ReqHeader、RspHeader、Cookie 时，填入需要提取值的参数名称，例如：Accept-Language。可输入 1-100 个字符，允许的字符开头为字母，中间为字母、数字、-，结尾为字母、数字；</li>
+<li>当字段类型为 ReqBody 时，填入 Google RE2 正则表达式，正则表达式长度上限为 4KB。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _value 需要提取值的参数名称，例如：Accept-Language。
+                     * @param _value 根据字段类型（Name）填入字段值的定义。需要区分大小写。
+<li>当字段类型为 ReqHeader、RspHeader、Cookie 时，填入需要提取值的参数名称，例如：Accept-Language。可输入 1-100 个字符，允许的字符开头为字母，中间为字母、数字、-，结尾为字母、数字；</li>
+<li>当字段类型为 ReqBody 时，填入 Google RE2 正则表达式，正则表达式长度上限为 4KB。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -136,17 +148,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 从 HTTP 请求和响应中的指定位置提取数据，取值有：
+                     * 自定义日志字段类型。从 HTTP 请求和响应中的指定位置提取数据，取值有：
 <li>ReqHeader：从 HTTP 请求头中提取指定字段值；</li>
 <li>RspHeader：从 HTTP 响应头中提取指定字段值；</li>
-<li>Cookie: 从 Cookie 中提取指定字段值。</li>
+<li>Cookie: 从 Cookie 中提取指定字段值；</li>
+<li>ReqBody: 从 HTTP 请求正文中通过 Google RE2 正则表达式提取指定内容。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 需要提取值的参数名称，例如：Accept-Language。
+                     * 根据字段类型（Name）填入字段值的定义。需要区分大小写。
+<li>当字段类型为 ReqHeader、RspHeader、Cookie 时，填入需要提取值的参数名称，例如：Accept-Language。可输入 1-100 个字符，允许的字符开头为字母，中间为字母、数字、-，结尾为字母、数字；</li>
+<li>当字段类型为 ReqBody 时，填入 Google RE2 正则表达式，正则表达式长度上限为 4KB。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;

@@ -43,6 +43,7 @@ DetectInfoText::DetectInfoText() :
     m_locationHasBeenSet(false),
     m_extraHasBeenSet(false),
     m_livenessDetailHasBeenSet(false),
+    m_livenessInfoTagHasBeenSet(false),
     m_mobileHasBeenSet(false),
     m_compareLibTypeHasBeenSet(false),
     m_livenessModeHasBeenSet(false),
@@ -286,6 +287,19 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
             m_livenessDetail.push_back(item);
         }
         m_livenessDetailHasBeenSet = true;
+    }
+
+    if (value.HasMember("LivenessInfoTag") && !value["LivenessInfoTag"].IsNull())
+    {
+        if (!value["LivenessInfoTag"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.LivenessInfoTag` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LivenessInfoTag"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_livenessInfoTag.push_back((*itr).GetString());
+        }
+        m_livenessInfoTagHasBeenSet = true;
     }
 
     if (value.HasMember("Mobile") && !value["Mobile"].IsNull())
@@ -548,6 +562,19 @@ void DetectInfoText::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_livenessInfoTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LivenessInfoTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_livenessInfoTag.begin(); itr != m_livenessInfoTag.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -965,6 +992,22 @@ void DetectInfoText::SetLivenessDetail(const vector<DetectDetail>& _livenessDeta
 bool DetectInfoText::LivenessDetailHasBeenSet() const
 {
     return m_livenessDetailHasBeenSet;
+}
+
+vector<string> DetectInfoText::GetLivenessInfoTag() const
+{
+    return m_livenessInfoTag;
+}
+
+void DetectInfoText::SetLivenessInfoTag(const vector<string>& _livenessInfoTag)
+{
+    m_livenessInfoTag = _livenessInfoTag;
+    m_livenessInfoTagHasBeenSet = true;
+}
+
+bool DetectInfoText::LivenessInfoTagHasBeenSet() const
+{
+    return m_livenessInfoTagHasBeenSet;
 }
 
 string DetectInfoText::GetMobile() const
