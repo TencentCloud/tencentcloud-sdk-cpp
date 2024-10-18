@@ -109,10 +109,10 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取执行的周期cron表达式。示例：`"*/1 * * * *"` 从左到右每个field的含义 Minutes field, Hours field,Day of month field,Month field,Day of week field， 不支持秒级别。
+                     * 获取执行的周期cron表达式。示例：`"* /1 * * * *"` 从左到右每个field的含义 Minutes field, Hours field,Day of month field,Month field,Day of week field， 不支持秒级别。
 当type为`Cron`时，CronExpression字段生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CronExpression 执行的周期cron表达式。示例：`"*/1 * * * *"` 从左到右每个field的含义 Minutes field, Hours field,Day of month field,Month field,Day of week field， 不支持秒级别。
+                     * @return CronExpression 执行的周期cron表达式。示例：`"* /1 * * * *"` 从左到右每个field的含义 Minutes field, Hours field,Day of month field,Month field,Day of week field， 不支持秒级别。
 当type为`Cron`时，CronExpression字段生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -120,10 +120,10 @@ namespace TencentCloud
                     std::string GetCronExpression() const;
 
                     /**
-                     * 设置执行的周期cron表达式。示例：`"*/1 * * * *"` 从左到右每个field的含义 Minutes field, Hours field,Day of month field,Month field,Day of week field， 不支持秒级别。
+                     * 设置执行的周期cron表达式。示例：`"* /1 * * * *"` 从左到右每个field的含义 Minutes field, Hours field,Day of month field,Month field,Day of week field， 不支持秒级别。
 当type为`Cron`时，CronExpression字段生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cronExpression 执行的周期cron表达式。示例：`"*/1 * * * *"` 从左到右每个field的含义 Minutes field, Hours field,Day of month field,Month field,Day of week field， 不支持秒级别。
+                     * @param _cronExpression 执行的周期cron表达式。示例：`"* /1 * * * *"` 从左到右每个field的含义 Minutes field, Hours field,Day of month field,Month field,Day of week field， 不支持秒级别。
 当type为`Cron`时，CronExpression字段生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -157,7 +157,7 @@ namespace TencentCloud
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 执行的周期cron表达式。示例：`"*/1 * * * *"` 从左到右每个field的含义 Minutes field, Hours field,Day of month field,Month field,Day of week field， 不支持秒级别。
+                     * 执行的周期cron表达式。示例：`"* /1 * * * *"` 从左到右每个field的含义 Minutes field, Hours field,Day of month field,Month field,Day of week field， 不支持秒级别。
 当type为`Cron`时，CronExpression字段生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
