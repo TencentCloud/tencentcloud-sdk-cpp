@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bma::V20221115::Model;
 using namespace std;
 
-CreateBPFakeURLResponse::CreateBPFakeURLResponse()
+CreateBPFakeURLResponse::CreateBPFakeURLResponse() :
+    m_fakeURLIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateBPFakeURLResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("FakeURLId") && !rsp["FakeURLId"].IsNull())
+    {
+        if (!rsp["FakeURLId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FakeURLId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fakeURLId = rsp["FakeURLId"].GetInt64();
+        m_fakeURLIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateBPFakeURLResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_fakeURLIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FakeURLId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fakeURLId, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateBPFakeURLResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t CreateBPFakeURLResponse::GetFakeURLId() const
+{
+    return m_fakeURLId;
+}
+
+bool CreateBPFakeURLResponse::FakeURLIdHasBeenSet() const
+{
+    return m_fakeURLIdHasBeenSet;
+}
 
 

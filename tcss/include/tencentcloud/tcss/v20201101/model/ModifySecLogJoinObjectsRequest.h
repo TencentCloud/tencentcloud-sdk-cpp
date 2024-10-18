@@ -76,15 +76,15 @@ k8sApi: k8s_api
                     bool LogTypeHasBeenSet() const;
 
                     /**
-                     * 获取绑定主机quuid列表
-                     * @return BindList 绑定主机quuid列表
+                     * 获取绑定列表
+                     * @return BindList 绑定列表
                      * 
                      */
                     std::vector<std::string> GetBindList() const;
 
                     /**
-                     * 设置绑定主机quuid列表
-                     * @param _bindList 绑定主机quuid列表
+                     * 设置绑定列表
+                     * @param _bindList 绑定列表
                      * 
                      */
                     void SetBindList(const std::vector<std::string>& _bindList);
@@ -97,15 +97,15 @@ k8sApi: k8s_api
                     bool BindListHasBeenSet() const;
 
                     /**
-                     * 获取待解绑主机quuid列表
-                     * @return UnBindList 待解绑主机quuid列表
+                     * 获取待解绑列表，节点范围为全部时，含义为需剔除资产列表
+                     * @return UnBindList 待解绑列表，节点范围为全部时，含义为需剔除资产列表
                      * 
                      */
                     std::vector<std::string> GetUnBindList() const;
 
                     /**
-                     * 设置待解绑主机quuid列表
-                     * @param _unBindList 待解绑主机quuid列表
+                     * 设置待解绑列表，节点范围为全部时，含义为需剔除资产列表
+                     * @param _unBindList 待解绑列表，节点范围为全部时，含义为需剔除资产列表
                      * 
                      */
                     void SetUnBindList(const std::vector<std::string>& _unBindList);
@@ -150,6 +150,48 @@ SUPER: 超级节点
                      */
                     bool NodeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取日志节点范围类型,0自选 1全部
+                     * @return RangeType 日志节点范围类型,0自选 1全部
+                     * 
+                     */
+                    int64_t GetRangeType() const;
+
+                    /**
+                     * 设置日志节点范围类型,0自选 1全部
+                     * @param _rangeType 日志节点范围类型,0自选 1全部
+                     * 
+                     */
+                    void SetRangeType(const int64_t& _rangeType);
+
+                    /**
+                     * 判断参数 RangeType 是否已赋值
+                     * @return RangeType 是否已赋值
+                     * 
+                     */
+                    bool RangeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取新增资产是否自动加入，节点范围为全部时生效
+                     * @return AutoJoin 新增资产是否自动加入，节点范围为全部时生效
+                     * 
+                     */
+                    bool GetAutoJoin() const;
+
+                    /**
+                     * 设置新增资产是否自动加入，节点范围为全部时生效
+                     * @param _autoJoin 新增资产是否自动加入，节点范围为全部时生效
+                     * 
+                     */
+                    void SetAutoJoin(const bool& _autoJoin);
+
+                    /**
+                     * 判断参数 AutoJoin 是否已赋值
+                     * @return AutoJoin 是否已赋值
+                     * 
+                     */
+                    bool AutoJoinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -162,13 +204,13 @@ k8sApi: k8s_api
                     bool m_logTypeHasBeenSet;
 
                     /**
-                     * 绑定主机quuid列表
+                     * 绑定列表
                      */
                     std::vector<std::string> m_bindList;
                     bool m_bindListHasBeenSet;
 
                     /**
-                     * 待解绑主机quuid列表
+                     * 待解绑列表，节点范围为全部时，含义为需剔除资产列表
                      */
                     std::vector<std::string> m_unBindList;
                     bool m_unBindListHasBeenSet;
@@ -181,6 +223,18 @@ SUPER: 超级节点
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
+
+                    /**
+                     * 日志节点范围类型,0自选 1全部
+                     */
+                    int64_t m_rangeType;
+                    bool m_rangeTypeHasBeenSet;
+
+                    /**
+                     * 新增资产是否自动加入，节点范围为全部时生效
+                     */
+                    bool m_autoJoin;
+                    bool m_autoJoinHasBeenSet;
 
                 };
             }

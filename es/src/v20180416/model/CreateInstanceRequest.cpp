@@ -60,7 +60,9 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_cdcIdHasBeenSet(false),
     m_disasterRecoverGroupAffinityHasBeenSet(false),
     m_subProductCodeHasBeenSet(false),
-    m_readWriteModeHasBeenSet(false)
+    m_readWriteModeHasBeenSet(false),
+    m_enableScheduleRecoverGroupHasBeenSet(false),
+    m_enableScheduleOperationDurationHasBeenSet(false)
 {
 }
 
@@ -401,6 +403,23 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "ReadWriteMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_readWriteMode, allocator);
+    }
+
+    if (m_enableScheduleRecoverGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScheduleRecoverGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableScheduleRecoverGroup, allocator);
+    }
+
+    if (m_enableScheduleOperationDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScheduleOperationDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_enableScheduleOperationDuration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1017,6 +1036,38 @@ void CreateInstanceRequest::SetReadWriteMode(const int64_t& _readWriteMode)
 bool CreateInstanceRequest::ReadWriteModeHasBeenSet() const
 {
     return m_readWriteModeHasBeenSet;
+}
+
+bool CreateInstanceRequest::GetEnableScheduleRecoverGroup() const
+{
+    return m_enableScheduleRecoverGroup;
+}
+
+void CreateInstanceRequest::SetEnableScheduleRecoverGroup(const bool& _enableScheduleRecoverGroup)
+{
+    m_enableScheduleRecoverGroup = _enableScheduleRecoverGroup;
+    m_enableScheduleRecoverGroupHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::EnableScheduleRecoverGroupHasBeenSet() const
+{
+    return m_enableScheduleRecoverGroupHasBeenSet;
+}
+
+EnableScheduleOperationDuration CreateInstanceRequest::GetEnableScheduleOperationDuration() const
+{
+    return m_enableScheduleOperationDuration;
+}
+
+void CreateInstanceRequest::SetEnableScheduleOperationDuration(const EnableScheduleOperationDuration& _enableScheduleOperationDuration)
+{
+    m_enableScheduleOperationDuration = _enableScheduleOperationDuration;
+    m_enableScheduleOperationDurationHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::EnableScheduleOperationDurationHasBeenSet() const
+{
+    return m_enableScheduleOperationDurationHasBeenSet;
 }
 
 

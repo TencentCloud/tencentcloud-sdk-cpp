@@ -23,7 +23,11 @@ using namespace std;
 Multimedia::Multimedia() :
     m_typeHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_jumpUrlHasBeenSet(false)
+    m_jumpUrlHasBeenSet(false),
+    m_titleHasBeenSet(false),
+    m_descHasBeenSet(false),
+    m_singerHasBeenSet(false),
+    m_extHasBeenSet(false)
 {
 }
 
@@ -62,6 +66,53 @@ CoreInternalOutcome Multimedia::Deserialize(const rapidjson::Value &value)
         m_jumpUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("Title") && !value["Title"].IsNull())
+    {
+        if (!value["Title"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Multimedia.Title` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_title = string(value["Title"].GetString());
+        m_titleHasBeenSet = true;
+    }
+
+    if (value.HasMember("Desc") && !value["Desc"].IsNull())
+    {
+        if (!value["Desc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Multimedia.Desc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_desc = string(value["Desc"].GetString());
+        m_descHasBeenSet = true;
+    }
+
+    if (value.HasMember("Singer") && !value["Singer"].IsNull())
+    {
+        if (!value["Singer"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Multimedia.Singer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_singer = string(value["Singer"].GetString());
+        m_singerHasBeenSet = true;
+    }
+
+    if (value.HasMember("Ext") && !value["Ext"].IsNull())
+    {
+        if (!value["Ext"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Multimedia.Ext` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ext.Deserialize(value["Ext"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +142,39 @@ void Multimedia::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "JumpUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jumpUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_titleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Title";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_title.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Desc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_desc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_singerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Singer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_singer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ext.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -142,5 +226,69 @@ void Multimedia::SetJumpUrl(const string& _jumpUrl)
 bool Multimedia::JumpUrlHasBeenSet() const
 {
     return m_jumpUrlHasBeenSet;
+}
+
+string Multimedia::GetTitle() const
+{
+    return m_title;
+}
+
+void Multimedia::SetTitle(const string& _title)
+{
+    m_title = _title;
+    m_titleHasBeenSet = true;
+}
+
+bool Multimedia::TitleHasBeenSet() const
+{
+    return m_titleHasBeenSet;
+}
+
+string Multimedia::GetDesc() const
+{
+    return m_desc;
+}
+
+void Multimedia::SetDesc(const string& _desc)
+{
+    m_desc = _desc;
+    m_descHasBeenSet = true;
+}
+
+bool Multimedia::DescHasBeenSet() const
+{
+    return m_descHasBeenSet;
+}
+
+string Multimedia::GetSinger() const
+{
+    return m_singer;
+}
+
+void Multimedia::SetSinger(const string& _singer)
+{
+    m_singer = _singer;
+    m_singerHasBeenSet = true;
+}
+
+bool Multimedia::SingerHasBeenSet() const
+{
+    return m_singerHasBeenSet;
+}
+
+SongExt Multimedia::GetExt() const
+{
+    return m_ext;
+}
+
+void Multimedia::SetExt(const SongExt& _ext)
+{
+    m_ext = _ext;
+    m_extHasBeenSet = true;
+}
+
+bool Multimedia::ExtHasBeenSet() const
+{
+    return m_extHasBeenSet;
 }
 

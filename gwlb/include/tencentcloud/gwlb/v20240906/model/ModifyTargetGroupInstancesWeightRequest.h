@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TargetGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取待修改权重的服务器数组。
-                     * @return TargetGroupInstances 待修改权重的服务器数组。
+                     * 获取实例绑定配置数组。
+                     * @return TargetGroupInstances 实例绑定配置数组。
                      * 
                      */
                     std::vector<TargetGroupInstance> GetTargetGroupInstances() const;
 
                     /**
-                     * 设置待修改权重的服务器数组。
-                     * @param _targetGroupInstances 待修改权重的服务器数组。
+                     * 设置实例绑定配置数组。
+                     * @param _targetGroupInstances 实例绑定配置数组。
                      * 
                      */
                     void SetTargetGroupInstances(const std::vector<TargetGroupInstance>& _targetGroupInstances);
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_targetGroupIdHasBeenSet;
 
                     /**
-                     * 待修改权重的服务器数组。
+                     * 实例绑定配置数组。
                      */
                     std::vector<TargetGroupInstance> m_targetGroupInstances;
                     bool m_targetGroupInstancesHasBeenSet;

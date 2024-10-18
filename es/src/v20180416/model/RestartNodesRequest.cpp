@@ -30,7 +30,9 @@ RestartNodesRequest::RestartNodesRequest() :
     m_isOfflineHasBeenSet(false),
     m_cvmDelayOnlineTimeHasBeenSet(false),
     m_shardAllocationConcurrentsHasBeenSet(false),
-    m_shardAllocationBytesHasBeenSet(false)
+    m_shardAllocationBytesHasBeenSet(false),
+    m_enableScheduleRecoverGroupHasBeenSet(false),
+    m_enableScheduleOperationDurationHasBeenSet(false)
 {
 }
 
@@ -108,6 +110,23 @@ string RestartNodesRequest::ToJsonString() const
         string key = "ShardAllocationBytes";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shardAllocationBytes, allocator);
+    }
+
+    if (m_enableScheduleRecoverGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScheduleRecoverGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableScheduleRecoverGroup, allocator);
+    }
+
+    if (m_enableScheduleOperationDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScheduleOperationDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_enableScheduleOperationDuration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -244,6 +263,38 @@ void RestartNodesRequest::SetShardAllocationBytes(const uint64_t& _shardAllocati
 bool RestartNodesRequest::ShardAllocationBytesHasBeenSet() const
 {
     return m_shardAllocationBytesHasBeenSet;
+}
+
+bool RestartNodesRequest::GetEnableScheduleRecoverGroup() const
+{
+    return m_enableScheduleRecoverGroup;
+}
+
+void RestartNodesRequest::SetEnableScheduleRecoverGroup(const bool& _enableScheduleRecoverGroup)
+{
+    m_enableScheduleRecoverGroup = _enableScheduleRecoverGroup;
+    m_enableScheduleRecoverGroupHasBeenSet = true;
+}
+
+bool RestartNodesRequest::EnableScheduleRecoverGroupHasBeenSet() const
+{
+    return m_enableScheduleRecoverGroupHasBeenSet;
+}
+
+EnableScheduleOperationDuration RestartNodesRequest::GetEnableScheduleOperationDuration() const
+{
+    return m_enableScheduleOperationDuration;
+}
+
+void RestartNodesRequest::SetEnableScheduleOperationDuration(const EnableScheduleOperationDuration& _enableScheduleOperationDuration)
+{
+    m_enableScheduleOperationDuration = _enableScheduleOperationDuration;
+    m_enableScheduleOperationDurationHasBeenSet = true;
+}
+
+bool RestartNodesRequest::EnableScheduleOperationDurationHasBeenSet() const
+{
+    return m_enableScheduleOperationDurationHasBeenSet;
 }
 
 

@@ -222,6 +222,31 @@ namespace TencentCloud
                      */
                     bool ArchiveTimeHasBeenSet() const;
 
+                    /**
+                     * 获取归档ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ArchiveUuid 归档ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetArchiveUuid() const;
+
+                    /**
+                     * 设置归档ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _archiveUuid 归档ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetArchiveUuid(const std::string& _archiveUuid);
+
+                    /**
+                     * 判断参数 ArchiveUuid 是否已赋值
+                     * @return ArchiveUuid 是否已赋值
+                     * 
+                     */
+                    bool ArchiveUuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,6 +298,13 @@ namespace TencentCloud
                      */
                     std::string m_archiveTime;
                     bool m_archiveTimeHasBeenSet;
+
+                    /**
+                     * 归档ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_archiveUuid;
+                    bool m_archiveUuidHasBeenSet;
 
                 };
             }

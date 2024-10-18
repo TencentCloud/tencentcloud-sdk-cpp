@@ -814,6 +814,49 @@ EmrClient::DescribeHBaseTableOverviewOutcomeCallable EmrClient::DescribeHBaseTab
     return task->get_future();
 }
 
+EmrClient::DescribeHDFSStorageInfoOutcome EmrClient::DescribeHDFSStorageInfo(const DescribeHDFSStorageInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHDFSStorageInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHDFSStorageInfoResponse rsp = DescribeHDFSStorageInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHDFSStorageInfoOutcome(rsp);
+        else
+            return DescribeHDFSStorageInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHDFSStorageInfoOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeHDFSStorageInfoAsync(const DescribeHDFSStorageInfoRequest& request, const DescribeHDFSStorageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHDFSStorageInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeHDFSStorageInfoOutcomeCallable EmrClient::DescribeHDFSStorageInfoCallable(const DescribeHDFSStorageInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHDFSStorageInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHDFSStorageInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeHiveQueriesOutcome EmrClient::DescribeHiveQueries(const DescribeHiveQueriesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHiveQueries");
@@ -1115,6 +1158,49 @@ EmrClient::DescribeJobFlowOutcomeCallable EmrClient::DescribeJobFlowCallable(con
     return task->get_future();
 }
 
+EmrClient::DescribeKyuubiQueryInfoOutcome EmrClient::DescribeKyuubiQueryInfo(const DescribeKyuubiQueryInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKyuubiQueryInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKyuubiQueryInfoResponse rsp = DescribeKyuubiQueryInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKyuubiQueryInfoOutcome(rsp);
+        else
+            return DescribeKyuubiQueryInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKyuubiQueryInfoOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeKyuubiQueryInfoAsync(const DescribeKyuubiQueryInfoRequest& request, const DescribeKyuubiQueryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKyuubiQueryInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeKyuubiQueryInfoOutcomeCallable EmrClient::DescribeKyuubiQueryInfoCallable(const DescribeKyuubiQueryInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKyuubiQueryInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKyuubiQueryInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeResourceScheduleOutcome EmrClient::DescribeResourceSchedule(const DescribeResourceScheduleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResourceSchedule");
@@ -1323,6 +1409,92 @@ EmrClient::DescribeServiceNodeInfosOutcomeCallable EmrClient::DescribeServiceNod
         [this, request]()
         {
             return this->DescribeServiceNodeInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::DescribeSparkQueriesOutcome EmrClient::DescribeSparkQueries(const DescribeSparkQueriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSparkQueries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSparkQueriesResponse rsp = DescribeSparkQueriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSparkQueriesOutcome(rsp);
+        else
+            return DescribeSparkQueriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSparkQueriesOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeSparkQueriesAsync(const DescribeSparkQueriesRequest& request, const DescribeSparkQueriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSparkQueries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeSparkQueriesOutcomeCallable EmrClient::DescribeSparkQueriesCallable(const DescribeSparkQueriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSparkQueriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSparkQueries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::DescribeStarRocksQueryInfoOutcome EmrClient::DescribeStarRocksQueryInfo(const DescribeStarRocksQueryInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStarRocksQueryInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStarRocksQueryInfoResponse rsp = DescribeStarRocksQueryInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStarRocksQueryInfoOutcome(rsp);
+        else
+            return DescribeStarRocksQueryInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStarRocksQueryInfoOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeStarRocksQueryInfoAsync(const DescribeStarRocksQueryInfoRequest& request, const DescribeStarRocksQueryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStarRocksQueryInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeStarRocksQueryInfoOutcomeCallable EmrClient::DescribeStarRocksQueryInfoCallable(const DescribeStarRocksQueryInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStarRocksQueryInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStarRocksQueryInfo(request);
         }
     );
 

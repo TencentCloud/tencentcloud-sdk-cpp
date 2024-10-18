@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取组织名称
-                     * @return Name 组织名称
+                     * 获取组织名称，支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过64位，且组织名称不能重复
+                     * @return Name 组织名称，支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过64位，且组织名称不能重复
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置组织名称
-                     * @param _name 组织名称
+                     * 设置组织名称，支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过64位，且组织名称不能重复
+                     * @param _name 组织名称，支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过64位，且组织名称不能重复
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 组织名称
+                     * 组织名称，支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过64位，且组织名称不能重复
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

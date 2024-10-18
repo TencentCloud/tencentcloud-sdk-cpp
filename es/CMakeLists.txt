@@ -163,6 +163,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/UpdatePluginsResponse.h
   include/tencentcloud/es/v20180416/model/UpdateIndexResponse.h
   include/tencentcloud/es/v20180416/model/UpdateJdkRequest.h
+  include/tencentcloud/es/v20180416/model/EnableScheduleOperationDuration.h
   include/tencentcloud/es/v20180416/model/UpdateLogstashInstanceResponse.h
   include/tencentcloud/es/v20180416/model/StopLogstashPipelinesRequest.h
   include/tencentcloud/es/v20180416/model/DiagnoseJobResult.h
@@ -352,6 +353,7 @@ set(es_src
   src/v20180416/model/UpdatePluginsResponse.cpp
   src/v20180416/model/UpdateIndexResponse.cpp
   src/v20180416/model/UpdateJdkRequest.cpp
+  src/v20180416/model/EnableScheduleOperationDuration.cpp
   src/v20180416/model/UpdateLogstashInstanceResponse.cpp
   src/v20180416/model/StopLogstashPipelinesRequest.cpp
   src/v20180416/model/DiagnoseJobResult.cpp

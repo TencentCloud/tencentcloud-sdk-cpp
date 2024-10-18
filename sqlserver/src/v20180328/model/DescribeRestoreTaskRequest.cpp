@@ -33,7 +33,8 @@ DescribeRestoreTaskRequest::DescribeRestoreTaskRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_orderByHasBeenSet(false),
-    m_orderByTypeHasBeenSet(false)
+    m_orderByTypeHasBeenSet(false),
+    m_flowIdHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,14 @@ string DescribeRestoreTaskRequest::ToJsonString() const
         string key = "OrderByType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderByType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flowId, allocator);
     }
 
 
@@ -314,6 +323,22 @@ void DescribeRestoreTaskRequest::SetOrderByType(const string& _orderByType)
 bool DescribeRestoreTaskRequest::OrderByTypeHasBeenSet() const
 {
     return m_orderByTypeHasBeenSet;
+}
+
+int64_t DescribeRestoreTaskRequest::GetFlowId() const
+{
+    return m_flowId;
+}
+
+void DescribeRestoreTaskRequest::SetFlowId(const int64_t& _flowId)
+{
+    m_flowId = _flowId;
+    m_flowIdHasBeenSet = true;
+}
+
+bool DescribeRestoreTaskRequest::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
 }
 
 

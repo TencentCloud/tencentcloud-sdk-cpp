@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取设备名称（仅支持中文、英文、数字、_、-，长度不超过32个字符）
-                     * @return Name 设备名称（仅支持中文、英文、数字、_、-，长度不超过32个字符）
+                     * 获取设备名称（仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位）
+                     * @return Name 设备名称（仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位）
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置设备名称（仅支持中文、英文、数字、_、-，长度不超过32个字符）
-                     * @param _name 设备名称（仅支持中文、英文、数字、_、-，长度不超过32个字符）
+                     * 设置设备名称（仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位）
+                     * @param _name 设备名称（仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位）
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TransportProtocolHasBeenSet() const;
 
                     /**
-                     * 获取设备密码（仅国标，网关设备支持）
-                     * @return Password 设备密码（仅国标，网关设备支持）
+                     * 获取设备密码（仅国标，网关设备支持，长度不超过 64 位）
+                     * @return Password 设备密码（仅国标，网关设备支持，长度不超过 64 位）
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置设备密码（仅国标，网关设备支持）
-                     * @param _password 设备密码（仅国标，网关设备支持）
+                     * 设置设备密码（仅国标，网关设备支持，长度不超过 64 位）
+                     * @param _password 设备密码（仅国标，网关设备支持，长度不超过 64 位）
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取设备描述（仅支持中文、英文、数字、_、-，长度不超过128位）
-                     * @return Description 设备描述（仅支持中文、英文、数字、_、-，长度不超过128位）
+                     * 获取设备描述（长度不超过128位）
+                     * @return Description 设备描述（长度不超过128位）
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置设备描述（仅支持中文、英文、数字、_、-，长度不超过128位）
-                     * @param _description 设备描述（仅支持中文、英文、数字、_、-，长度不超过128位）
+                     * 设置设备描述（长度不超过128位）
+                     * @param _description 设备描述（长度不超过128位）
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -282,7 +282,7 @@ namespace TencentCloud
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 设备名称（仅支持中文、英文、数字、_、-，长度不超过32个字符）
+                     * 设备名称（仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位）
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -294,13 +294,13 @@ namespace TencentCloud
                     bool m_transportProtocolHasBeenSet;
 
                     /**
-                     * 设备密码（仅国标，网关设备支持）
+                     * 设备密码（仅国标，网关设备支持，长度不超过 64 位）
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 设备描述（仅支持中文、英文、数字、_、-，长度不超过128位）
+                     * 设备描述（长度不超过128位）
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取日志类型列表
+                     * @return LogTypes 日志类型列表
+                     * 
+                     */
+                    std::vector<std::string> GetLogTypes() const;
+
+                    /**
+                     * 设置日志类型列表
+                     * @param _logTypes 日志类型列表
+                     * 
+                     */
+                    void SetLogTypes(const std::vector<std::string>& _logTypes);
+
+                    /**
+                     * 判断参数 LogTypes 是否已赋值
+                     * @return LogTypes 是否已赋值
+                     * 
+                     */
+                    bool LogTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 日志类型列表
+                     */
+                    std::vector<std::string> m_logTypes;
+                    bool m_logTypesHasBeenSet;
 
                 };
             }

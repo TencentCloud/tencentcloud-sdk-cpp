@@ -25,7 +25,10 @@ using namespace std;
 
 DescribeSecLogJoinObjectListResponse::DescribeSecLogJoinObjectListResponse() :
     m_totalCountHasBeenSet(false),
-    m_listHasBeenSet(false)
+    m_listHasBeenSet(false),
+    m_rangeTypeHasBeenSet(false),
+    m_autoJoinHasBeenSet(false),
+    m_excludedCountHasBeenSet(false)
 {
 }
 
@@ -93,6 +96,36 @@ CoreInternalOutcome DescribeSecLogJoinObjectListResponse::Deserialize(const stri
         m_listHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RangeType") && !rsp["RangeType"].IsNull())
+    {
+        if (!rsp["RangeType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RangeType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rangeType = rsp["RangeType"].GetInt64();
+        m_rangeTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AutoJoin") && !rsp["AutoJoin"].IsNull())
+    {
+        if (!rsp["AutoJoin"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoJoin` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoJoin = rsp["AutoJoin"].GetBool();
+        m_autoJoinHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExcludedCount") && !rsp["ExcludedCount"].IsNull())
+    {
+        if (!rsp["ExcludedCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExcludedCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_excludedCount = rsp["ExcludedCount"].GetUint64();
+        m_excludedCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +159,30 @@ string DescribeSecLogJoinObjectListResponse::ToJsonString() const
         }
     }
 
+    if (m_rangeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RangeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rangeType, allocator);
+    }
+
+    if (m_autoJoinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoJoin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoJoin, allocator);
+    }
+
+    if (m_excludedCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludedCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_excludedCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +213,36 @@ vector<SecLogJoinObjectInfo> DescribeSecLogJoinObjectListResponse::GetList() con
 bool DescribeSecLogJoinObjectListResponse::ListHasBeenSet() const
 {
     return m_listHasBeenSet;
+}
+
+int64_t DescribeSecLogJoinObjectListResponse::GetRangeType() const
+{
+    return m_rangeType;
+}
+
+bool DescribeSecLogJoinObjectListResponse::RangeTypeHasBeenSet() const
+{
+    return m_rangeTypeHasBeenSet;
+}
+
+bool DescribeSecLogJoinObjectListResponse::GetAutoJoin() const
+{
+    return m_autoJoin;
+}
+
+bool DescribeSecLogJoinObjectListResponse::AutoJoinHasBeenSet() const
+{
+    return m_autoJoinHasBeenSet;
+}
+
+uint64_t DescribeSecLogJoinObjectListResponse::GetExcludedCount() const
+{
+    return m_excludedCount;
+}
+
+bool DescribeSecLogJoinObjectListResponse::ExcludedCountHasBeenSet() const
+{
+    return m_excludedCountHasBeenSet;
 }
 
 

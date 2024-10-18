@@ -30,7 +30,10 @@ SecLogJoinObjectInfo::SecLogJoinObjectInfo() :
     m_publicIPHasBeenSet(false),
     m_joinStateHasBeenSet(false),
     m_clusterVersionHasBeenSet(false),
-    m_clusterMainAddressHasBeenSet(false)
+    m_clusterMainAddressHasBeenSet(false),
+    m_containerCntHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false),
+    m_clusterStatusHasBeenSet(false)
 {
 }
 
@@ -139,6 +142,36 @@ CoreInternalOutcome SecLogJoinObjectInfo::Deserialize(const rapidjson::Value &va
         m_clusterMainAddressHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerCnt") && !value["ContainerCnt"].IsNull())
+    {
+        if (!value["ContainerCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecLogJoinObjectInfo.ContainerCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerCnt = value["ContainerCnt"].GetUint64();
+        m_containerCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterType") && !value["ClusterType"].IsNull())
+    {
+        if (!value["ClusterType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecLogJoinObjectInfo.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterType = string(value["ClusterType"].GetString());
+        m_clusterTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterStatus") && !value["ClusterStatus"].IsNull())
+    {
+        if (!value["ClusterStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecLogJoinObjectInfo.ClusterStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterStatus = string(value["ClusterStatus"].GetString());
+        m_clusterStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +257,30 @@ void SecLogJoinObjectInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ClusterMainAddress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterMainAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_containerCnt, allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +444,53 @@ void SecLogJoinObjectInfo::SetClusterMainAddress(const string& _clusterMainAddre
 bool SecLogJoinObjectInfo::ClusterMainAddressHasBeenSet() const
 {
     return m_clusterMainAddressHasBeenSet;
+}
+
+uint64_t SecLogJoinObjectInfo::GetContainerCnt() const
+{
+    return m_containerCnt;
+}
+
+void SecLogJoinObjectInfo::SetContainerCnt(const uint64_t& _containerCnt)
+{
+    m_containerCnt = _containerCnt;
+    m_containerCntHasBeenSet = true;
+}
+
+bool SecLogJoinObjectInfo::ContainerCntHasBeenSet() const
+{
+    return m_containerCntHasBeenSet;
+}
+
+string SecLogJoinObjectInfo::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void SecLogJoinObjectInfo::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool SecLogJoinObjectInfo::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
+}
+
+string SecLogJoinObjectInfo::GetClusterStatus() const
+{
+    return m_clusterStatus;
+}
+
+void SecLogJoinObjectInfo::SetClusterStatus(const string& _clusterStatus)
+{
+    m_clusterStatus = _clusterStatus;
+    m_clusterStatusHasBeenSet = true;
+}
+
+bool SecLogJoinObjectInfo::ClusterStatusHasBeenSet() const
+{
+    return m_clusterStatusHasBeenSet;
 }
 

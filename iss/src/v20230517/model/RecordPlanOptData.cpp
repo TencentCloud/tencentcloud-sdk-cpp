@@ -26,7 +26,8 @@ RecordPlanOptData::RecordPlanOptData() :
     m_templateIdHasBeenSet(false),
     m_describeHasBeenSet(false),
     m_lifeCycleHasBeenSet(false),
-    m_streamTypeHasBeenSet(false)
+    m_streamTypeHasBeenSet(false),
+    m_repairModeHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,16 @@ CoreInternalOutcome RecordPlanOptData::Deserialize(const rapidjson::Value &value
         m_streamTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("RepairMode") && !value["RepairMode"].IsNull())
+    {
+        if (!value["RepairMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordPlanOptData.RepairMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_repairMode = value["RepairMode"].GetInt64();
+        m_repairModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +167,14 @@ void RecordPlanOptData::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "StreamType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_streamType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repairModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepairMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_repairMode, allocator);
     }
 
 }
@@ -255,5 +274,21 @@ void RecordPlanOptData::SetStreamType(const string& _streamType)
 bool RecordPlanOptData::StreamTypeHasBeenSet() const
 {
     return m_streamTypeHasBeenSet;
+}
+
+int64_t RecordPlanOptData::GetRepairMode() const
+{
+    return m_repairMode;
+}
+
+void RecordPlanOptData::SetRepairMode(const int64_t& _repairMode)
+{
+    m_repairMode = _repairMode;
+    m_repairModeHasBeenSet = true;
+}
+
+bool RecordPlanOptData::RepairModeHasBeenSet() const
+{
+    return m_repairModeHasBeenSet;
 }
 

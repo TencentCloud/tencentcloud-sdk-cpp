@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool InstancePriceHasBeenSet() const;
 
                     /**
-                     * 获取描述了实例价格。
+                     * 获取描述了GLCU的价格。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LcuPrice 描述了实例价格。
+                     * @return LcuPrice 描述了GLCU的价格。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ItemPrice GetLcuPrice() const;
 
                     /**
-                     * 设置描述了实例价格。
+                     * 设置描述了GLCU的价格。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lcuPrice 描述了实例价格。
+                     * @param _lcuPrice 描述了GLCU的价格。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -107,7 +107,7 @@ namespace TencentCloud
                     bool m_instancePriceHasBeenSet;
 
                     /**
-                     * 描述了实例价格。
+                     * 描述了GLCU的价格。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ItemPrice m_lcuPrice;

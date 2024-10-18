@@ -85,15 +85,19 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取查询时间，秒级Unix时间戳	
-                     * @return Time 查询时间，秒级Unix时间戳	
+                     * 获取查询时间，秒级Unix时间戳。为空时代表当前时间戳。
+
+                     * @return Time 查询时间，秒级Unix时间戳。为空时代表当前时间戳。
+
                      * 
                      */
                     uint64_t GetTime() const;
 
                     /**
-                     * 设置查询时间，秒级Unix时间戳	
-                     * @param _time 查询时间，秒级Unix时间戳	
+                     * 设置查询时间，秒级Unix时间戳。为空时代表当前时间戳。
+
+                     * @param _time 查询时间，秒级Unix时间戳。为空时代表当前时间戳。
+
                      * 
                      */
                     void SetTime(const uint64_t& _time);
@@ -120,7 +124,8 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 查询时间，秒级Unix时间戳	
+                     * 查询时间，秒级Unix时间戳。为空时代表当前时间戳。
+
                      */
                     uint64_t m_time;
                     bool m_timeHasBeenSet;

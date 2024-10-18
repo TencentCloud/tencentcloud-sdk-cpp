@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取FakeURLId
+                     * @return FakeURLId FakeURLId
+                     * 
+                     */
+                    int64_t GetFakeURLId() const;
+
+                    /**
+                     * 判断参数 FakeURLId 是否已赋值
+                     * @return FakeURLId 是否已赋值
+                     * 
+                     */
+                    bool FakeURLIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * FakeURLId
+                     */
+                    int64_t m_fakeURLId;
+                    bool m_fakeURLIdHasBeenSet;
 
                 };
             }

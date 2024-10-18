@@ -39,7 +39,9 @@ NodeView::NodeView() :
     m_diskIdsHasBeenSet(false),
     m_hiddenHasBeenSet(false),
     m_isCoordinationNodeHasBeenSet(false),
-    m_cVMStatusHasBeenSet(false)
+    m_cVMStatusHasBeenSet(false),
+    m_cVMDisasterRecoverGroupIdHasBeenSet(false),
+    m_cVMDisasterRecoverGroupStatusHasBeenSet(false)
 {
 }
 
@@ -241,6 +243,26 @@ CoreInternalOutcome NodeView::Deserialize(const rapidjson::Value &value)
         m_cVMStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("CVMDisasterRecoverGroupId") && !value["CVMDisasterRecoverGroupId"].IsNull())
+    {
+        if (!value["CVMDisasterRecoverGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeView.CVMDisasterRecoverGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cVMDisasterRecoverGroupId = string(value["CVMDisasterRecoverGroupId"].GetString());
+        m_cVMDisasterRecoverGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CVMDisasterRecoverGroupStatus") && !value["CVMDisasterRecoverGroupStatus"].IsNull())
+    {
+        if (!value["CVMDisasterRecoverGroupStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeView.CVMDisasterRecoverGroupStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cVMDisasterRecoverGroupStatus = value["CVMDisasterRecoverGroupStatus"].GetInt64();
+        m_cVMDisasterRecoverGroupStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -403,6 +425,22 @@ void NodeView::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CVMStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cVMStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cVMDisasterRecoverGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CVMDisasterRecoverGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cVMDisasterRecoverGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cVMDisasterRecoverGroupStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CVMDisasterRecoverGroupStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cVMDisasterRecoverGroupStatus, allocator);
     }
 
 }
@@ -710,5 +748,37 @@ void NodeView::SetCVMStatus(const string& _cVMStatus)
 bool NodeView::CVMStatusHasBeenSet() const
 {
     return m_cVMStatusHasBeenSet;
+}
+
+string NodeView::GetCVMDisasterRecoverGroupId() const
+{
+    return m_cVMDisasterRecoverGroupId;
+}
+
+void NodeView::SetCVMDisasterRecoverGroupId(const string& _cVMDisasterRecoverGroupId)
+{
+    m_cVMDisasterRecoverGroupId = _cVMDisasterRecoverGroupId;
+    m_cVMDisasterRecoverGroupIdHasBeenSet = true;
+}
+
+bool NodeView::CVMDisasterRecoverGroupIdHasBeenSet() const
+{
+    return m_cVMDisasterRecoverGroupIdHasBeenSet;
+}
+
+int64_t NodeView::GetCVMDisasterRecoverGroupStatus() const
+{
+    return m_cVMDisasterRecoverGroupStatus;
+}
+
+void NodeView::SetCVMDisasterRecoverGroupStatus(const int64_t& _cVMDisasterRecoverGroupStatus)
+{
+    m_cVMDisasterRecoverGroupStatus = _cVMDisasterRecoverGroupStatus;
+    m_cVMDisasterRecoverGroupStatusHasBeenSet = true;
+}
+
+bool NodeView::CVMDisasterRecoverGroupStatusHasBeenSet() const
+{
+    return m_cVMDisasterRecoverGroupStatusHasBeenSet;
 }
 

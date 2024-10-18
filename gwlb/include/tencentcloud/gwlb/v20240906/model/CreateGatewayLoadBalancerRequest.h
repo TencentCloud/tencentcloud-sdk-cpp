@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取网关负载均衡实例名称。可支持输入1-60个字符，允许英文字母、数字、中文字符、“-”、“_”、“.”。不填写时默认自动生成。
-                     * @return LoadBalancerName 网关负载均衡实例名称。可支持输入1-60个字符，允许英文字母、数字、中文字符、“-”、“_”、“.”。不填写时默认自动生成。
+                     * 获取网关负载均衡实例名称。可支持输入1-60个字符。不填写时默认自动生成。
+                     * @return LoadBalancerName 网关负载均衡实例名称。可支持输入1-60个字符。不填写时默认自动生成。
                      * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
-                     * 设置网关负载均衡实例名称。可支持输入1-60个字符，允许英文字母、数字、中文字符、“-”、“_”、“.”。不填写时默认自动生成。
-                     * @param _loadBalancerName 网关负载均衡实例名称。可支持输入1-60个字符，允许英文字母、数字、中文字符、“-”、“_”、“.”。不填写时默认自动生成。
+                     * 设置网关负载均衡实例名称。可支持输入1-60个字符。不填写时默认自动生成。
+                     * @param _loadBalancerName 网关负载均衡实例名称。可支持输入1-60个字符。不填写时默认自动生成。
                      * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 网关负载均衡实例名称。可支持输入1-60个字符，允许英文字母、数字、中文字符、“-”、“_”、“.”。不填写时默认自动生成。
+                     * 网关负载均衡实例名称。可支持输入1-60个字符。不填写时默认自动生成。
                      */
                     std::string m_loadBalancerName;
                     bool m_loadBalancerNameHasBeenSet;

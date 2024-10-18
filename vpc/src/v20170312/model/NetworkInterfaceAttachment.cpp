@@ -21,10 +21,10 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 NetworkInterfaceAttachment::NetworkInterfaceAttachment() :
-    m_instanceIdHasBeenSet(false),
     m_deviceIndexHasBeenSet(false),
     m_instanceAccountIdHasBeenSet(false),
-    m_attachTimeHasBeenSet(false)
+    m_attachTimeHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -32,16 +32,6 @@ CoreInternalOutcome NetworkInterfaceAttachment::Deserialize(const rapidjson::Val
 {
     string requestId = "";
 
-
-    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
-    {
-        if (!value["InstanceId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NetworkInterfaceAttachment.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_instanceId = string(value["InstanceId"].GetString());
-        m_instanceIdHasBeenSet = true;
-    }
 
     if (value.HasMember("DeviceIndex") && !value["DeviceIndex"].IsNull())
     {
@@ -73,20 +63,22 @@ CoreInternalOutcome NetworkInterfaceAttachment::Deserialize(const rapidjson::Val
         m_attachTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkInterfaceAttachment.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void NetworkInterfaceAttachment::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_instanceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_deviceIndexHasBeenSet)
     {
@@ -112,24 +104,16 @@ void NetworkInterfaceAttachment::ToJsonObject(rapidjson::Value &value, rapidjson
         value.AddMember(iKey, rapidjson::Value(m_attachTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string NetworkInterfaceAttachment::GetInstanceId() const
-{
-    return m_instanceId;
-}
-
-void NetworkInterfaceAttachment::SetInstanceId(const string& _instanceId)
-{
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
-}
-
-bool NetworkInterfaceAttachment::InstanceIdHasBeenSet() const
-{
-    return m_instanceIdHasBeenSet;
-}
 
 uint64_t NetworkInterfaceAttachment::GetDeviceIndex() const
 {
@@ -177,5 +161,21 @@ void NetworkInterfaceAttachment::SetAttachTime(const string& _attachTime)
 bool NetworkInterfaceAttachment::AttachTimeHasBeenSet() const
 {
     return m_attachTimeHasBeenSet;
+}
+
+string NetworkInterfaceAttachment::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void NetworkInterfaceAttachment::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool NetworkInterfaceAttachment::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

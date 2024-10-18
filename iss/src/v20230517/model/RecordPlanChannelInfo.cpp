@@ -25,7 +25,8 @@ RecordPlanChannelInfo::RecordPlanChannelInfo() :
     m_deviceNameHasBeenSet(false),
     m_channelIdHasBeenSet(false),
     m_channelNameHasBeenSet(false),
-    m_organizationNameHasBeenSet(false)
+    m_organizationNameHasBeenSet(false),
+    m_accessProtocolHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome RecordPlanChannelInfo::Deserialize(const rapidjson::Value &v
         m_organizationNameHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessProtocol") && !value["AccessProtocol"].IsNull())
+    {
+        if (!value["AccessProtocol"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordPlanChannelInfo.AccessProtocol` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessProtocol = value["AccessProtocol"].GetInt64();
+        m_accessProtocolHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void RecordPlanChannelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "OrganizationName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessProtocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accessProtocol, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void RecordPlanChannelInfo::SetOrganizationName(const string& _organizationName)
 bool RecordPlanChannelInfo::OrganizationNameHasBeenSet() const
 {
     return m_organizationNameHasBeenSet;
+}
+
+int64_t RecordPlanChannelInfo::GetAccessProtocol() const
+{
+    return m_accessProtocol;
+}
+
+void RecordPlanChannelInfo::SetAccessProtocol(const int64_t& _accessProtocol)
+{
+    m_accessProtocol = _accessProtocol;
+    m_accessProtocolHasBeenSet = true;
+}
+
+bool RecordPlanChannelInfo::AccessProtocolHasBeenSet() const
+{
+    return m_accessProtocolHasBeenSet;
 }
 

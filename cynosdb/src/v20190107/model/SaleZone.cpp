@@ -28,7 +28,8 @@ SaleZone::SaleZone() :
     m_isSupportNormalHasBeenSet(false),
     m_physicalZoneHasBeenSet(false),
     m_hasPermissionHasBeenSet(false),
-    m_isWholeRdmaZoneHasBeenSet(false)
+    m_isWholeRdmaZoneHasBeenSet(false),
+    m_isSupportCreateClusterHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome SaleZone::Deserialize(const rapidjson::Value &value)
         m_isWholeRdmaZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportCreateCluster") && !value["IsSupportCreateCluster"].IsNull())
+    {
+        if (!value["IsSupportCreateCluster"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SaleZone.IsSupportCreateCluster` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportCreateCluster = value["IsSupportCreateCluster"].GetInt64();
+        m_isSupportCreateClusterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void SaleZone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "IsWholeRdmaZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isWholeRdmaZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSupportCreateClusterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportCreateCluster";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportCreateCluster, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void SaleZone::SetIsWholeRdmaZone(const string& _isWholeRdmaZone)
 bool SaleZone::IsWholeRdmaZoneHasBeenSet() const
 {
     return m_isWholeRdmaZoneHasBeenSet;
+}
+
+int64_t SaleZone::GetIsSupportCreateCluster() const
+{
+    return m_isSupportCreateCluster;
+}
+
+void SaleZone::SetIsSupportCreateCluster(const int64_t& _isSupportCreateCluster)
+{
+    m_isSupportCreateCluster = _isSupportCreateCluster;
+    m_isSupportCreateClusterHasBeenSet = true;
+}
+
+bool SaleZone::IsSupportCreateClusterHasBeenSet() const
+{
+    return m_isSupportCreateClusterHasBeenSet;
 }
 

@@ -230,12 +230,10 @@ namespace TencentCloud
 
                     /**
                      * 获取调度算法。
-ip_hash_3：3元组对称弹性Hash
-ip_hash_3_consistent：3元组对称一致性Hash
+ip_hash_3：弹性哈希
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScheduleAlgorithm 调度算法。
-ip_hash_3：3元组对称弹性Hash
-ip_hash_3_consistent：3元组对称一致性Hash
+ip_hash_3：弹性哈希
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -243,12 +241,10 @@ ip_hash_3_consistent：3元组对称一致性Hash
 
                     /**
                      * 设置调度算法。
-ip_hash_3：3元组对称弹性Hash
-ip_hash_3_consistent：3元组对称一致性Hash
+ip_hash_3：弹性哈希
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scheduleAlgorithm 调度算法。
-ip_hash_3：3元组对称弹性Hash
-ip_hash_3_consistent：3元组对称一致性Hash
+ip_hash_3：弹性哈希
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -416,8 +412,7 @@ ip_hash_3_consistent：3元组对称一致性Hash
 
                     /**
                      * 调度算法。
-ip_hash_3：3元组对称弹性Hash
-ip_hash_3_consistent：3元组对称一致性Hash
+ip_hash_3：弹性哈希
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scheduleAlgorithm;

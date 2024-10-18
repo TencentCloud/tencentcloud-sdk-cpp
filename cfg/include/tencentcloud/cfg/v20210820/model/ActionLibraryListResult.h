@@ -494,6 +494,31 @@ namespace TencentCloud
                      */
                     bool IsNewActionHasBeenSet() const;
 
+                    /**
+                     * 获取对象类型ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ObjectTypeId 对象类型ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetObjectTypeId() const;
+
+                    /**
+                     * 设置对象类型ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _objectTypeId 对象类型ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetObjectTypeId(const int64_t& _objectTypeId);
+
+                    /**
+                     * 判断参数 ObjectTypeId 是否已赋值
+                     * @return ObjectTypeId 是否已赋值
+                     * 
+                     */
+                    bool ObjectTypeIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -622,6 +647,13 @@ namespace TencentCloud
                      */
                     bool m_isNewAction;
                     bool m_isNewActionHasBeenSet;
+
+                    /**
+                     * 对象类型ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_objectTypeId;
+                    bool m_objectTypeIdHasBeenSet;
 
                 };
             }

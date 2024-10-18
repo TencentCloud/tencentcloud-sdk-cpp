@@ -72,6 +72,48 @@ namespace TencentCloud
                      */
                     bool ListHasBeenSet() const;
 
+                    /**
+                     * 获取日志节点范围类型,0自选 1全部
+                     * @return RangeType 日志节点范围类型,0自选 1全部
+                     * 
+                     */
+                    int64_t GetRangeType() const;
+
+                    /**
+                     * 判断参数 RangeType 是否已赋值
+                     * @return RangeType 是否已赋值
+                     * 
+                     */
+                    bool RangeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取新增资产是否自动加入，节点范围为全部时生效
+                     * @return AutoJoin 新增资产是否自动加入，节点范围为全部时生效
+                     * 
+                     */
+                    bool GetAutoJoin() const;
+
+                    /**
+                     * 判断参数 AutoJoin 是否已赋值
+                     * @return AutoJoin 是否已赋值
+                     * 
+                     */
+                    bool AutoJoinHasBeenSet() const;
+
+                    /**
+                     * 获取剔除节点数
+                     * @return ExcludedCount 剔除节点数
+                     * 
+                     */
+                    uint64_t GetExcludedCount() const;
+
+                    /**
+                     * 判断参数 ExcludedCount 是否已赋值
+                     * @return ExcludedCount 是否已赋值
+                     * 
+                     */
+                    bool ExcludedCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +127,24 @@ namespace TencentCloud
                      */
                     std::vector<SecLogJoinObjectInfo> m_list;
                     bool m_listHasBeenSet;
+
+                    /**
+                     * 日志节点范围类型,0自选 1全部
+                     */
+                    int64_t m_rangeType;
+                    bool m_rangeTypeHasBeenSet;
+
+                    /**
+                     * 新增资产是否自动加入，节点范围为全部时生效
+                     */
+                    bool m_autoJoin;
+                    bool m_autoJoinHasBeenSet;
+
+                    /**
+                     * 剔除节点数
+                     */
+                    uint64_t m_excludedCount;
+                    bool m_excludedCountHasBeenSet;
 
                 };
             }

@@ -22,7 +22,8 @@
 using namespace TencentCloud::Cdwdoris::V20211228::Model;
 using namespace std;
 
-DescribeBackUpSchedulesRequest::DescribeBackUpSchedulesRequest()
+DescribeBackUpSchedulesRequest::DescribeBackUpSchedulesRequest() :
+    m_applicationTypeHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeBackUpSchedulesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_applicationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_applicationType, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeBackUpSchedulesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeBackUpSchedulesRequest::GetApplicationType() const
+{
+    return m_applicationType;
+}
+
+void DescribeBackUpSchedulesRequest::SetApplicationType(const int64_t& _applicationType)
+{
+    m_applicationType = _applicationType;
+    m_applicationTypeHasBeenSet = true;
+}
+
+bool DescribeBackUpSchedulesRequest::ApplicationTypeHasBeenSet() const
+{
+    return m_applicationTypeHasBeenSet;
+}
 
 

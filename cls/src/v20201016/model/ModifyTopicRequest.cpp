@@ -34,7 +34,8 @@ ModifyTopicRequest::ModifyTopicRequest() :
     m_hotPeriodHasBeenSet(false),
     m_isWebTrackingHasBeenSet(false),
     m_extendsHasBeenSet(false),
-    m_partitionCountHasBeenSet(false)
+    m_partitionCountHasBeenSet(false),
+    m_cancelTopicAsyncTaskIDHasBeenSet(false)
 {
 }
 
@@ -147,6 +148,14 @@ string ModifyTopicRequest::ToJsonString() const
         string key = "PartitionCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_partitionCount, allocator);
+    }
+
+    if (m_cancelTopicAsyncTaskIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CancelTopicAsyncTaskID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cancelTopicAsyncTaskID.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -347,6 +356,22 @@ void ModifyTopicRequest::SetPartitionCount(const uint64_t& _partitionCount)
 bool ModifyTopicRequest::PartitionCountHasBeenSet() const
 {
     return m_partitionCountHasBeenSet;
+}
+
+string ModifyTopicRequest::GetCancelTopicAsyncTaskID() const
+{
+    return m_cancelTopicAsyncTaskID;
+}
+
+void ModifyTopicRequest::SetCancelTopicAsyncTaskID(const string& _cancelTopicAsyncTaskID)
+{
+    m_cancelTopicAsyncTaskID = _cancelTopicAsyncTaskID;
+    m_cancelTopicAsyncTaskIDHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::CancelTopicAsyncTaskIDHasBeenSet() const
+{
+    return m_cancelTopicAsyncTaskIDHasBeenSet;
 }
 
 

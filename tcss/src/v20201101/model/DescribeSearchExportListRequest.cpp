@@ -23,7 +23,8 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DescribeSearchExportListRequest::DescribeSearchExportListRequest() :
-    m_queryHasBeenSet(false)
+    m_queryHasBeenSet(false),
+    m_logTypesHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,19 @@ string DescribeSearchExportListRequest::ToJsonString() const
         string key = "Query";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_logTypes.begin(); itr != m_logTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -64,6 +78,22 @@ void DescribeSearchExportListRequest::SetQuery(const string& _query)
 bool DescribeSearchExportListRequest::QueryHasBeenSet() const
 {
     return m_queryHasBeenSet;
+}
+
+vector<string> DescribeSearchExportListRequest::GetLogTypes() const
+{
+    return m_logTypes;
+}
+
+void DescribeSearchExportListRequest::SetLogTypes(const vector<string>& _logTypes)
+{
+    m_logTypes = _logTypes;
+    m_logTypesHasBeenSet = true;
+}
+
+bool DescribeSearchExportListRequest::LogTypesHasBeenSet() const
+{
+    return m_logTypesHasBeenSet;
 }
 
 

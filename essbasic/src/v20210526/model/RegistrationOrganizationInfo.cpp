@@ -33,7 +33,8 @@ RegistrationOrganizationInfo::RegistrationOrganizationInfo() :
     m_adminIdCardTypeHasBeenSet(false),
     m_adminIdCardNumberHasBeenSet(false),
     m_businessLicenseHasBeenSet(false),
-    m_powerOfAttorneysHasBeenSet(false)
+    m_powerOfAttorneysHasBeenSet(false),
+    m_autoJumpUrlHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,16 @@ CoreInternalOutcome RegistrationOrganizationInfo::Deserialize(const rapidjson::V
         m_powerOfAttorneysHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoJumpUrl") && !value["AutoJumpUrl"].IsNull())
+    {
+        if (!value["AutoJumpUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegistrationOrganizationInfo.AutoJumpUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoJumpUrl = string(value["AutoJumpUrl"].GetString());
+        m_autoJumpUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +308,14 @@ void RegistrationOrganizationInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_autoJumpUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoJumpUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoJumpUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -508,5 +527,21 @@ void RegistrationOrganizationInfo::SetPowerOfAttorneys(const vector<string>& _po
 bool RegistrationOrganizationInfo::PowerOfAttorneysHasBeenSet() const
 {
     return m_powerOfAttorneysHasBeenSet;
+}
+
+string RegistrationOrganizationInfo::GetAutoJumpUrl() const
+{
+    return m_autoJumpUrl;
+}
+
+void RegistrationOrganizationInfo::SetAutoJumpUrl(const string& _autoJumpUrl)
+{
+    m_autoJumpUrl = _autoJumpUrl;
+    m_autoJumpUrlHasBeenSet = true;
+}
+
+bool RegistrationOrganizationInfo::AutoJumpUrlHasBeenSet() const
+{
+    return m_autoJumpUrlHasBeenSet;
 }
 

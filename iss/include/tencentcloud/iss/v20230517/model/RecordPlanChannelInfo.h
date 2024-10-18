@@ -163,6 +163,27 @@ namespace TencentCloud
                      */
                     bool OrganizationNameHasBeenSet() const;
 
+                    /**
+                     * 获取通道所属设备的接入协议类型
+                     * @return AccessProtocol 通道所属设备的接入协议类型
+                     * 
+                     */
+                    int64_t GetAccessProtocol() const;
+
+                    /**
+                     * 设置通道所属设备的接入协议类型
+                     * @param _accessProtocol 通道所属设备的接入协议类型
+                     * 
+                     */
+                    void SetAccessProtocol(const int64_t& _accessProtocol);
+
+                    /**
+                     * 判断参数 AccessProtocol 是否已赋值
+                     * @return AccessProtocol 是否已赋值
+                     * 
+                     */
+                    bool AccessProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,6 +218,12 @@ namespace TencentCloud
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
+
+                    /**
+                     * 通道所属设备的接入协议类型
+                     */
+                    int64_t m_accessProtocol;
+                    bool m_accessProtocolHasBeenSet;
 
                 };
             }

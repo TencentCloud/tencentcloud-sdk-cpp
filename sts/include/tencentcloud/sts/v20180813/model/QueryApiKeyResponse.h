@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取密钥ID列表
-                     * @return IdKeys 密钥ID列表
+                     * 获取密钥ID列表。
+                     * @return IdKeys 密钥ID列表。
                      * 
                      */
                     std::vector<ApiKey> GetIdKeys() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 密钥ID列表
+                     * 密钥ID列表。
                      */
                     std::vector<ApiKey> m_idKeys;
                     bool m_idKeysHasBeenSet;

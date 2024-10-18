@@ -30,6 +30,7 @@
 #include <tencentcloud/es/v20180416/model/EsConfigSetInfo.h>
 #include <tencentcloud/es/v20180416/model/OperationDurationUpdated.h>
 #include <tencentcloud/es/v20180416/model/OutboundPublicAcl.h>
+#include <tencentcloud/es/v20180416/model/EnableScheduleOperationDuration.h>
 
 
 namespace TencentCloud
@@ -996,6 +997,48 @@ CLOSE 关闭
                      */
                     bool ReadWriteModeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启置放群组异步任务
+                     * @return EnableScheduleRecoverGroup 是否开启置放群组异步任务
+                     * 
+                     */
+                    bool GetEnableScheduleRecoverGroup() const;
+
+                    /**
+                     * 设置是否开启置放群组异步任务
+                     * @param _enableScheduleRecoverGroup 是否开启置放群组异步任务
+                     * 
+                     */
+                    void SetEnableScheduleRecoverGroup(const bool& _enableScheduleRecoverGroup);
+
+                    /**
+                     * 判断参数 EnableScheduleRecoverGroup 是否已赋值
+                     * @return EnableScheduleRecoverGroup 是否已赋值
+                     * 
+                     */
+                    bool EnableScheduleRecoverGroupHasBeenSet() const;
+
+                    /**
+                     * 获取置放群组异步任务可维护时间段
+                     * @return EnableScheduleOperationDuration 置放群组异步任务可维护时间段
+                     * 
+                     */
+                    EnableScheduleOperationDuration GetEnableScheduleOperationDuration() const;
+
+                    /**
+                     * 设置置放群组异步任务可维护时间段
+                     * @param _enableScheduleOperationDuration 置放群组异步任务可维护时间段
+                     * 
+                     */
+                    void SetEnableScheduleOperationDuration(const EnableScheduleOperationDuration& _enableScheduleOperationDuration);
+
+                    /**
+                     * 判断参数 EnableScheduleOperationDuration 是否已赋值
+                     * @return EnableScheduleOperationDuration 是否已赋值
+                     * 
+                     */
+                    bool EnableScheduleOperationDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1264,6 +1307,18 @@ CLOSE 关闭
                      */
                     int64_t m_readWriteMode;
                     bool m_readWriteModeHasBeenSet;
+
+                    /**
+                     * 是否开启置放群组异步任务
+                     */
+                    bool m_enableScheduleRecoverGroup;
+                    bool m_enableScheduleRecoverGroupHasBeenSet;
+
+                    /**
+                     * 置放群组异步任务可维护时间段
+                     */
+                    EnableScheduleOperationDuration m_enableScheduleOperationDuration;
+                    bool m_enableScheduleOperationDurationHasBeenSet;
 
                 };
             }

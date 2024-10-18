@@ -44,27 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资产组ID
-                     * @return Id 资产组ID
-                     * 
-                     */
-                    uint64_t GetId() const;
-
-                    /**
-                     * 设置资产组ID
-                     * @param _id 资产组ID
-                     * 
-                     */
-                    void SetId(const uint64_t& _id);
-
-                    /**
-                     * 判断参数 Id 是否已赋值
-                     * @return Id 是否已赋值
-                     * 
-                     */
-                    bool IdHasBeenSet() const;
-
-                    /**
                      * 获取true - 查询已在该资产组的资产，false - 查询未在该资产组的资产
                      * @return Bound true - 查询已在该资产组的资产，false - 查询未在该资产组的资产
                      * 
@@ -84,6 +63,48 @@ namespace TencentCloud
                      * 
                      */
                     bool BoundHasBeenSet() const;
+
+                    /**
+                     * 获取资产组ID，Id和IdSet二选一
+                     * @return Id 资产组ID，Id和IdSet二选一
+                     * 
+                     */
+                    uint64_t GetId() const;
+
+                    /**
+                     * 设置资产组ID，Id和IdSet二选一
+                     * @param _id 资产组ID，Id和IdSet二选一
+                     * 
+                     */
+                    void SetId(const uint64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取资产组ID集合，传Id，IdSet不生效。
+                     * @return IdSet 资产组ID集合，传Id，IdSet不生效。
+                     * 
+                     */
+                    std::vector<uint64_t> GetIdSet() const;
+
+                    /**
+                     * 设置资产组ID集合，传Id，IdSet不生效。
+                     * @param _idSet 资产组ID集合，传Id，IdSet不生效。
+                     * 
+                     */
+                    void SetIdSet(const std::vector<uint64_t>& _idSet);
+
+                    /**
+                     * 判断参数 IdSet 是否已赋值
+                     * @return IdSet 是否已赋值
+                     * 
+                     */
+                    bool IdSetHasBeenSet() const;
 
                     /**
                      * 获取资产名或资产IP，模糊查询
@@ -214,16 +235,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资产组ID
+                     * true - 查询已在该资产组的资产，false - 查询未在该资产组的资产
+                     */
+                    bool m_bound;
+                    bool m_boundHasBeenSet;
+
+                    /**
+                     * 资产组ID，Id和IdSet二选一
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * true - 查询已在该资产组的资产，false - 查询未在该资产组的资产
+                     * 资产组ID集合，传Id，IdSet不生效。
                      */
-                    bool m_bound;
-                    bool m_boundHasBeenSet;
+                    std::vector<uint64_t> m_idSet;
+                    bool m_idSetHasBeenSet;
 
                     /**
                      * 资产名或资产IP，模糊查询

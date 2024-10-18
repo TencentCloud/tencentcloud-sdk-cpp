@@ -26,7 +26,9 @@ WebCallback::WebCallback() :
     m_methodHasBeenSet(false),
     m_headersHasBeenSet(false),
     m_bodyHasBeenSet(false),
-    m_indexHasBeenSet(false)
+    m_indexHasBeenSet(false),
+    m_noticeContentIdHasBeenSet(false),
+    m_webCallbackIdHasBeenSet(false)
 {
 }
 
@@ -98,6 +100,26 @@ CoreInternalOutcome WebCallback::Deserialize(const rapidjson::Value &value)
         m_indexHasBeenSet = true;
     }
 
+    if (value.HasMember("NoticeContentId") && !value["NoticeContentId"].IsNull())
+    {
+        if (!value["NoticeContentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebCallback.NoticeContentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_noticeContentId = string(value["NoticeContentId"].GetString());
+        m_noticeContentIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("WebCallbackId") && !value["WebCallbackId"].IsNull())
+    {
+        if (!value["WebCallbackId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebCallback.WebCallbackId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_webCallbackId = string(value["WebCallbackId"].GetString());
+        m_webCallbackIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +178,22 @@ void WebCallback::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Index";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_index, allocator);
+    }
+
+    if (m_noticeContentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoticeContentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_noticeContentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webCallbackIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebCallbackId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_webCallbackId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +293,37 @@ void WebCallback::SetIndex(const int64_t& _index)
 bool WebCallback::IndexHasBeenSet() const
 {
     return m_indexHasBeenSet;
+}
+
+string WebCallback::GetNoticeContentId() const
+{
+    return m_noticeContentId;
+}
+
+void WebCallback::SetNoticeContentId(const string& _noticeContentId)
+{
+    m_noticeContentId = _noticeContentId;
+    m_noticeContentIdHasBeenSet = true;
+}
+
+bool WebCallback::NoticeContentIdHasBeenSet() const
+{
+    return m_noticeContentIdHasBeenSet;
+}
+
+string WebCallback::GetWebCallbackId() const
+{
+    return m_webCallbackId;
+}
+
+void WebCallback::SetWebCallbackId(const string& _webCallbackId)
+{
+    m_webCallbackId = _webCallbackId;
+    m_webCallbackIdHasBeenSet = true;
+}
+
+bool WebCallback::WebCallbackIdHasBeenSet() const
+{
+    return m_webCallbackIdHasBeenSet;
 }
 

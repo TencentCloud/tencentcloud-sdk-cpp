@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。
-                     * @return InternetMaxBandwidthOut NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。
+                     * 获取NAT网关最大外网出带宽(单位：Mbps)，支持的参数值：20, 50, 100, 200, 500, 1000, 2000, 5000，默认: 100Mbps。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为5000Mbps。
+                     * @return InternetMaxBandwidthOut NAT网关最大外网出带宽(单位：Mbps)，支持的参数值：20, 50, 100, 200, 500, 1000, 2000, 5000，默认: 100Mbps。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为5000Mbps。
                      * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。
-                     * @param _internetMaxBandwidthOut NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。
+                     * 设置NAT网关最大外网出带宽(单位：Mbps)，支持的参数值：20, 50, 100, 200, 500, 1000, 2000, 5000，默认: 100Mbps。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为5000Mbps。
+                     * @param _internetMaxBandwidthOut NAT网关最大外网出带宽(单位：Mbps)，支持的参数值：20, 50, 100, 200, 500, 1000, 2000, 5000，默认: 100Mbps。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为5000Mbps。
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
-                     * 获取NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。
-                     * @return MaxConcurrentConnection NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。
+                     * 获取NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为100000。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。
+                     * @return MaxConcurrentConnection NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为100000。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。
                      * 
                      */
                     uint64_t GetMaxConcurrentConnection() const;
 
                     /**
-                     * 设置NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。
-                     * @param _maxConcurrentConnection NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。
+                     * 设置NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为100000。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。
+                     * @param _maxConcurrentConnection NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为100000。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。
                      * 
                      */
                     void SetMaxConcurrentConnection(const uint64_t& _maxConcurrentConnection);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool MaxConcurrentConnectionHasBeenSet() const;
 
                     /**
-                     * 获取需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。
-                     * @return AddressCount 需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。
+                     * 获取新建弹性公网IP个数，系统会按您的要求创建对应数量的弹性公网IP，其中AddressCount和PublicAddresses两个参数至少填写一个。
+                     * @return AddressCount 新建弹性公网IP个数，系统会按您的要求创建对应数量的弹性公网IP，其中AddressCount和PublicAddresses两个参数至少填写一个。
                      * 
                      */
                     uint64_t GetAddressCount() const;
 
                     /**
-                     * 设置需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。
-                     * @param _addressCount 需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。
+                     * 设置新建弹性公网IP个数，系统会按您的要求创建对应数量的弹性公网IP，其中AddressCount和PublicAddresses两个参数至少填写一个。
+                     * @param _addressCount 新建弹性公网IP个数，系统会按您的要求创建对应数量的弹性公网IP，其中AddressCount和PublicAddresses两个参数至少填写一个。
                      * 
                      */
                     void SetAddressCount(const uint64_t& _addressCount);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool AddressCountHasBeenSet() const;
 
                     /**
-                     * 获取绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。
-                     * @return PublicIpAddresses 绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。
+                     * 获取绑定NAT网关的已有弹性公网IP数组，其中AddressCount和PublicAddresses两个参数至少填写一个。 示例值：["139.199.232.119"]
+                     * @return PublicIpAddresses 绑定NAT网关的已有弹性公网IP数组，其中AddressCount和PublicAddresses两个参数至少填写一个。 示例值：["139.199.232.119"]
                      * 
                      */
                     std::vector<std::string> GetPublicIpAddresses() const;
 
                     /**
-                     * 设置绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。
-                     * @param _publicIpAddresses 绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。
+                     * 设置绑定NAT网关的已有弹性公网IP数组，其中AddressCount和PublicAddresses两个参数至少填写一个。 示例值：["139.199.232.119"]
+                     * @param _publicIpAddresses 绑定NAT网关的已有弹性公网IP数组，其中AddressCount和PublicAddresses两个参数至少填写一个。 示例值：["139.199.232.119"]
                      * 
                      */
                     void SetPublicIpAddresses(const std::vector<std::string>& _publicIpAddresses);
@@ -212,36 +212,36 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取NAT网关所属子网
-                     * @return SubnetId NAT网关所属子网
-                     * 
+                     * 获取NAT网关所属子网，已废弃
+                     * @return SubnetId NAT网关所属子网，已废弃
+                     * @deprecated
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置NAT网关所属子网
-                     * @param _subnetId NAT网关所属子网
-                     * 
+                     * 设置NAT网关所属子网，已废弃
+                     * @param _subnetId NAT网关所属子网，已废弃
+                     * @deprecated
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
-                     * @return StockPublicIpAddressesBandwidthOut 绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     * 获取绑定NAT网关的弹性公网IP带宽值（单位：Mbps）。不填写此参数时：则该参数默认为弹性公网IP的带宽值，部分用户默认为该用户类型的弹性公网IP的带宽上限。
+                     * @return StockPublicIpAddressesBandwidthOut 绑定NAT网关的弹性公网IP带宽值（单位：Mbps）。不填写此参数时：则该参数默认为弹性公网IP的带宽值，部分用户默认为该用户类型的弹性公网IP的带宽上限。
                      * 
                      */
                     uint64_t GetStockPublicIpAddressesBandwidthOut() const;
 
                     /**
-                     * 设置绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
-                     * @param _stockPublicIpAddressesBandwidthOut 绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     * 设置绑定NAT网关的弹性公网IP带宽值（单位：Mbps）。不填写此参数时：则该参数默认为弹性公网IP的带宽值，部分用户默认为该用户类型的弹性公网IP的带宽上限。
+                     * @param _stockPublicIpAddressesBandwidthOut 绑定NAT网关的弹性公网IP带宽值（单位：Mbps）。不填写此参数时：则该参数默认为弹性公网IP的带宽值，部分用户默认为该用户类型的弹性公网IP的带宽上限。
                      * 
                      */
                     void SetStockPublicIpAddressesBandwidthOut(const uint64_t& _stockPublicIpAddressesBandwidthOut);
@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool PublicIpFromSameZoneHasBeenSet() const;
 
                     /**
-                     * 获取NAT网关大版本号，1是传统型，2是标准型，默认是1
-                     * @return NatProductVersion NAT网关大版本号，1是传统型，2是标准型，默认是1
+                     * 获取NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关，默认值是1。
+                     * @return NatProductVersion NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关，默认值是1。
                      * 
                      */
                     uint64_t GetNatProductVersion() const;
 
                     /**
-                     * 设置NAT网关大版本号，1是传统型，2是标准型，默认是1
-                     * @param _natProductVersion NAT网关大版本号，1是传统型，2是标准型，默认是1
+                     * 设置NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关，默认值是1。
+                     * @param _natProductVersion NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关，默认值是1。
                      * 
                      */
                     void SetNatProductVersion(const uint64_t& _natProductVersion);
@@ -331,25 +331,25 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。
+                     * NAT网关最大外网出带宽(单位：Mbps)，支持的参数值：20, 50, 100, 200, 500, 1000, 2000, 5000，默认: 100Mbps。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为5000Mbps。
                      */
                     uint64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
 
                     /**
-                     * NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。
+                     * NAT网关并发连接数上限，支持参数值：1000000、3000000、10000000，默认值为100000。  当以下NatProductVersion参数值为2即标准型时，此参数无需填写，默认为2000000。
                      */
                     uint64_t m_maxConcurrentConnection;
                     bool m_maxConcurrentConnectionHasBeenSet;
 
                     /**
-                     * 需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。
+                     * 新建弹性公网IP个数，系统会按您的要求创建对应数量的弹性公网IP，其中AddressCount和PublicAddresses两个参数至少填写一个。
                      */
                     uint64_t m_addressCount;
                     bool m_addressCountHasBeenSet;
 
                     /**
-                     * 绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。
+                     * 绑定NAT网关的已有弹性公网IP数组，其中AddressCount和PublicAddresses两个参数至少填写一个。 示例值：["139.199.232.119"]
                      */
                     std::vector<std::string> m_publicIpAddresses;
                     bool m_publicIpAddressesHasBeenSet;
@@ -367,13 +367,13 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * NAT网关所属子网
+                     * NAT网关所属子网，已废弃
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     * 绑定NAT网关的弹性公网IP带宽值（单位：Mbps）。不填写此参数时：则该参数默认为弹性公网IP的带宽值，部分用户默认为该用户类型的弹性公网IP的带宽上限。
                      */
                     uint64_t m_stockPublicIpAddressesBandwidthOut;
                     bool m_stockPublicIpAddressesBandwidthOutHasBeenSet;
@@ -391,7 +391,7 @@ namespace TencentCloud
                     bool m_publicIpFromSameZoneHasBeenSet;
 
                     /**
-                     * NAT网关大版本号，1是传统型，2是标准型，默认是1
+                     * NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关，默认值是1。
                      */
                     uint64_t m_natProductVersion;
                     bool m_natProductVersionHasBeenSet;

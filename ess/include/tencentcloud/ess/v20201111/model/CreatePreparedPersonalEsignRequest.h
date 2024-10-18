@@ -249,15 +249,15 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取是否开通自动签，该功能需联系运营工作人员开通后使用
-                     * @return EnableAutoSign 是否开通自动签，该功能需联系运营工作人员开通后使用
+                     * 获取此字段已废弃，请勿继续使用。
+                     * @return EnableAutoSign 此字段已废弃，请勿继续使用。
                      * 
                      */
                     bool GetEnableAutoSign() const;
 
                     /**
-                     * 设置是否开通自动签，该功能需联系运营工作人员开通后使用
-                     * @param _enableAutoSign 是否开通自动签，该功能需联系运营工作人员开通后使用
+                     * 设置此字段已废弃，请勿继续使用。
+                     * @param _enableAutoSign 此字段已废弃，请勿继续使用。
                      * 
                      */
                     void SetEnableAutoSign(const bool& _enableAutoSign);
@@ -519,7 +519,7 @@ BLUE 蓝色。
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 是否开通自动签，该功能需联系运营工作人员开通后使用
+                     * 此字段已废弃，请勿继续使用。
                      */
                     bool m_enableAutoSign;
                     bool m_enableAutoSignHasBeenSet;

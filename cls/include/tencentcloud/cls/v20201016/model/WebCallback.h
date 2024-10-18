@@ -151,10 +151,10 @@ namespace TencentCloud
 
                     /**
                      * 获取请求头。
-注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求头。
+注意：该参数已废弃，请使用NoticeContentId。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Headers 请求头。
-注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求头。
+注意：该参数已废弃，请使用NoticeContentId。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -162,10 +162,10 @@ namespace TencentCloud
 
                     /**
                      * 设置请求头。
-注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求头。
+注意：该参数已废弃，请使用NoticeContentId。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headers 请求头。
-注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求头。
+注意：该参数已废弃，请使用NoticeContentId。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -180,10 +180,10 @@ namespace TencentCloud
 
                     /**
                      * 获取请求内容。
-注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求内容。
+注意：该参数已废弃，请使用NoticeContentId。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Body 请求内容。
-注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求内容。
+注意：该参数已废弃，请使用NoticeContentId。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -191,10 +191,10 @@ namespace TencentCloud
 
                     /**
                      * 设置请求内容。
-注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求内容。
+注意：该参数已废弃，请使用NoticeContentId。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _body 请求内容。
-注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求内容。
+注意：该参数已废弃，请使用NoticeContentId。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -236,6 +236,56 @@ namespace TencentCloud
                      */
                     bool IndexHasBeenSet() const;
 
+                    /**
+                     * 获取通知内容模板ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NoticeContentId 通知内容模板ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNoticeContentId() const;
+
+                    /**
+                     * 设置通知内容模板ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _noticeContentId 通知内容模板ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNoticeContentId(const std::string& _noticeContentId);
+
+                    /**
+                     * 判断参数 NoticeContentId 是否已赋值
+                     * @return NoticeContentId 是否已赋值
+                     * 
+                     */
+                    bool NoticeContentIdHasBeenSet() const;
+
+                    /**
+                     * 获取集成配置ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WebCallbackId 集成配置ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetWebCallbackId() const;
+
+                    /**
+                     * 设置集成配置ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _webCallbackId 集成配置ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWebCallbackId(const std::string& _webCallbackId);
+
+                    /**
+                     * 判断参数 WebCallbackId 是否已赋值
+                     * @return WebCallbackId 是否已赋值
+                     * 
+                     */
+                    bool WebCallbackIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -268,7 +318,7 @@ namespace TencentCloud
 
                     /**
                      * 请求头。
-注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求头。
+注意：该参数已废弃，请使用NoticeContentId。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_headers;
@@ -276,7 +326,7 @@ namespace TencentCloud
 
                     /**
                      * 请求内容。
-注意：该参数已废弃，请在<a href="https://cloud.tencent.com/document/product/614/56466">创建告警策略</a>接口CallBack参数中指定请求内容。
+注意：该参数已废弃，请使用NoticeContentId。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_body;
@@ -289,6 +339,20 @@ namespace TencentCloud
                      */
                     int64_t m_index;
                     bool m_indexHasBeenSet;
+
+                    /**
+                     * 通知内容模板ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_noticeContentId;
+                    bool m_noticeContentIdHasBeenSet;
+
+                    /**
+                     * 集成配置ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_webCallbackId;
+                    bool m_webCallbackIdHasBeenSet;
 
                 };
             }

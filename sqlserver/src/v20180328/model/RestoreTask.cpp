@@ -31,7 +31,8 @@ RestoreTask::RestoreTask() :
     m_restoreTimeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_flowIdHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome RestoreTask::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("FlowId") && !value["FlowId"].IsNull())
+    {
+        if (!value["FlowId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RestoreTask.FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = value["FlowId"].GetInt64();
+        m_flowIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void RestoreTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flowId, allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void RestoreTask::SetStatus(const int64_t& _status)
 bool RestoreTask::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t RestoreTask::GetFlowId() const
+{
+    return m_flowId;
+}
+
+void RestoreTask::SetFlowId(const int64_t& _flowId)
+{
+    m_flowId = _flowId;
+    m_flowIdHasBeenSet = true;
+}
+
+bool RestoreTask::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
 }
 

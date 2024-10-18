@@ -29,7 +29,8 @@ AddRecordPlanRequest::AddRecordPlanRequest() :
     m_describeHasBeenSet(false),
     m_streamTypeHasBeenSet(false),
     m_channelsHasBeenSet(false),
-    m_organizationIdHasBeenSet(false)
+    m_organizationIdHasBeenSet(false),
+    m_repairModeHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,14 @@ string AddRecordPlanRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_repairModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepairMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_repairMode, allocator);
     }
 
 
@@ -227,6 +236,22 @@ void AddRecordPlanRequest::SetOrganizationId(const vector<string>& _organization
 bool AddRecordPlanRequest::OrganizationIdHasBeenSet() const
 {
     return m_organizationIdHasBeenSet;
+}
+
+int64_t AddRecordPlanRequest::GetRepairMode() const
+{
+    return m_repairMode;
+}
+
+void AddRecordPlanRequest::SetRepairMode(const int64_t& _repairMode)
+{
+    m_repairMode = _repairMode;
+    m_repairModeHasBeenSet = true;
+}
+
+bool AddRecordPlanRequest::RepairModeHasBeenSet() const
+{
+    return m_repairModeHasBeenSet;
 }
 
 

@@ -1440,7 +1440,8 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 PreviewKafkaRechargeOutcomeCallable PreviewKafkaRechargeCallable(const Model::PreviewKafkaRechargeRequest& request);
 
                 /**
-                 *查询指定时刻指标的最新值
+                 *查询指定时刻指标的最新值。
+如果该时刻向前推5分钟内均无指标数据，则无相应的查询结果。
                  * @param req QueryMetricRequest
                  * @return QueryMetricOutcome
                  */

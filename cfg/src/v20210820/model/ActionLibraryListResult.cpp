@@ -40,7 +40,8 @@ ActionLibraryListResult::ActionLibraryListResult() :
     m_actionBestCaseHasBeenSet(false),
     m_objectTypeHasBeenSet(false),
     m_metricIdListHasBeenSet(false),
-    m_isNewActionHasBeenSet(false)
+    m_isNewActionHasBeenSet(false),
+    m_objectTypeIdHasBeenSet(false)
 {
 }
 
@@ -252,6 +253,16 @@ CoreInternalOutcome ActionLibraryListResult::Deserialize(const rapidjson::Value 
         m_isNewActionHasBeenSet = true;
     }
 
+    if (value.HasMember("ObjectTypeId") && !value["ObjectTypeId"].IsNull())
+    {
+        if (!value["ObjectTypeId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActionLibraryListResult.ObjectTypeId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_objectTypeId = value["ObjectTypeId"].GetInt64();
+        m_objectTypeIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -422,6 +433,14 @@ void ActionLibraryListResult::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "IsNewAction";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isNewAction, allocator);
+    }
+
+    if (m_objectTypeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ObjectTypeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_objectTypeId, allocator);
     }
 
 }
@@ -745,5 +764,21 @@ void ActionLibraryListResult::SetIsNewAction(const bool& _isNewAction)
 bool ActionLibraryListResult::IsNewActionHasBeenSet() const
 {
     return m_isNewActionHasBeenSet;
+}
+
+int64_t ActionLibraryListResult::GetObjectTypeId() const
+{
+    return m_objectTypeId;
+}
+
+void ActionLibraryListResult::SetObjectTypeId(const int64_t& _objectTypeId)
+{
+    m_objectTypeId = _objectTypeId;
+    m_objectTypeIdHasBeenSet = true;
+}
+
+bool ActionLibraryListResult::ObjectTypeIdHasBeenSet() const
+{
+    return m_objectTypeIdHasBeenSet;
 }
 

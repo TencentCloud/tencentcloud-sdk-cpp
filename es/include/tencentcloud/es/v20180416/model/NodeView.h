@@ -445,6 +445,56 @@ namespace TencentCloud
                      */
                     bool CVMStatusHasBeenSet() const;
 
+                    /**
+                     * 获取cvm绑定的置放群组的id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CVMDisasterRecoverGroupId cvm绑定的置放群组的id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCVMDisasterRecoverGroupId() const;
+
+                    /**
+                     * 设置cvm绑定的置放群组的id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cVMDisasterRecoverGroupId cvm绑定的置放群组的id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCVMDisasterRecoverGroupId(const std::string& _cVMDisasterRecoverGroupId);
+
+                    /**
+                     * 判断参数 CVMDisasterRecoverGroupId 是否已赋值
+                     * @return CVMDisasterRecoverGroupId 是否已赋值
+                     * 
+                     */
+                    bool CVMDisasterRecoverGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取cvm绑定置放群组的状态。2: 已绑定；1: 绑定中；0: 未开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CVMDisasterRecoverGroupStatus cvm绑定置放群组的状态。2: 已绑定；1: 绑定中；0: 未开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCVMDisasterRecoverGroupStatus() const;
+
+                    /**
+                     * 设置cvm绑定置放群组的状态。2: 已绑定；1: 绑定中；0: 未开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cVMDisasterRecoverGroupStatus cvm绑定置放群组的状态。2: 已绑定；1: 绑定中；0: 未开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCVMDisasterRecoverGroupStatus(const int64_t& _cVMDisasterRecoverGroupStatus);
+
+                    /**
+                     * 判断参数 CVMDisasterRecoverGroupStatus 是否已赋值
+                     * @return CVMDisasterRecoverGroupStatus 是否已赋值
+                     * 
+                     */
+                    bool CVMDisasterRecoverGroupStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -560,6 +610,20 @@ namespace TencentCloud
                      */
                     std::string m_cVMStatus;
                     bool m_cVMStatusHasBeenSet;
+
+                    /**
+                     * cvm绑定的置放群组的id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cVMDisasterRecoverGroupId;
+                    bool m_cVMDisasterRecoverGroupIdHasBeenSet;
+
+                    /**
+                     * cvm绑定置放群组的状态。2: 已绑定；1: 绑定中；0: 未开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_cVMDisasterRecoverGroupStatus;
+                    bool m_cVMDisasterRecoverGroupStatusHasBeenSet;
 
                 };
             }

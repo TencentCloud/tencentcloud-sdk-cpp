@@ -1731,7 +1731,7 @@ namespace TencentCloud
                 ModifyClusterStorageOutcomeCallable ModifyClusterStorageCallable(const Model::ModifyClusterStorageRequest& request);
 
                 /**
-                 *本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。
+                 *本接口（ModifyDBInstanceSecurityGroups）用于修改实例绑定的安全组。
                  * @param req ModifyDBInstanceSecurityGroupsRequest
                  * @return ModifyDBInstanceSecurityGroupsOutcome
                  */

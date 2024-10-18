@@ -24,7 +24,8 @@ SecLogJoinInfo::SecLogJoinInfo() :
     m_countHasBeenSet(false),
     m_superNodeCountHasBeenSet(false),
     m_isJoinedHasBeenSet(false),
-    m_logTypeHasBeenSet(false)
+    m_logTypeHasBeenSet(false),
+    m_clusterCountHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome SecLogJoinInfo::Deserialize(const rapidjson::Value &value)
         m_logTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterCount") && !value["ClusterCount"].IsNull())
+    {
+        if (!value["ClusterCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecLogJoinInfo.ClusterCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterCount = value["ClusterCount"].GetUint64();
+        m_clusterCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void SecLogJoinInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "LogType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clusterCount, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void SecLogJoinInfo::SetLogType(const string& _logType)
 bool SecLogJoinInfo::LogTypeHasBeenSet() const
 {
     return m_logTypeHasBeenSet;
+}
+
+uint64_t SecLogJoinInfo::GetClusterCount() const
+{
+    return m_clusterCount;
+}
+
+void SecLogJoinInfo::SetClusterCount(const uint64_t& _clusterCount)
+{
+    m_clusterCount = _clusterCount;
+    m_clusterCountHasBeenSet = true;
+}
+
+bool SecLogJoinInfo::ClusterCountHasBeenSet() const
+{
+    return m_clusterCountHasBeenSet;
 }
 

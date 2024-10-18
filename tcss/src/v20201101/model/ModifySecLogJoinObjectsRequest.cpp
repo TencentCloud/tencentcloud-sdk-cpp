@@ -26,7 +26,9 @@ ModifySecLogJoinObjectsRequest::ModifySecLogJoinObjectsRequest() :
     m_logTypeHasBeenSet(false),
     m_bindListHasBeenSet(false),
     m_unBindListHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false)
+    m_nodeTypeHasBeenSet(false),
+    m_rangeTypeHasBeenSet(false),
+    m_autoJoinHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,22 @@ string ModifySecLogJoinObjectsRequest::ToJsonString() const
         string key = "NodeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rangeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RangeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rangeType, allocator);
+    }
+
+    if (m_autoJoinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoJoin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoJoin, allocator);
     }
 
 
@@ -149,6 +167,38 @@ void ModifySecLogJoinObjectsRequest::SetNodeType(const string& _nodeType)
 bool ModifySecLogJoinObjectsRequest::NodeTypeHasBeenSet() const
 {
     return m_nodeTypeHasBeenSet;
+}
+
+int64_t ModifySecLogJoinObjectsRequest::GetRangeType() const
+{
+    return m_rangeType;
+}
+
+void ModifySecLogJoinObjectsRequest::SetRangeType(const int64_t& _rangeType)
+{
+    m_rangeType = _rangeType;
+    m_rangeTypeHasBeenSet = true;
+}
+
+bool ModifySecLogJoinObjectsRequest::RangeTypeHasBeenSet() const
+{
+    return m_rangeTypeHasBeenSet;
+}
+
+bool ModifySecLogJoinObjectsRequest::GetAutoJoin() const
+{
+    return m_autoJoin;
+}
+
+void ModifySecLogJoinObjectsRequest::SetAutoJoin(const bool& _autoJoin)
+{
+    m_autoJoin = _autoJoin;
+    m_autoJoinHasBeenSet = true;
+}
+
+bool ModifySecLogJoinObjectsRequest::AutoJoinHasBeenSet() const
+{
+    return m_autoJoinHasBeenSet;
 }
 
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备名称，仅支持中文、英文、数字、_、-，长度不超过32个字符；（设备名称无需全局唯一，可以重复）
-                     * @return Name 设备名称，仅支持中文、英文、数字、_、-，长度不超过32个字符；（设备名称无需全局唯一，可以重复）
+                     * 获取设备名称，仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位；（设备名称无需全局唯一，可以重复）
+                     * @return Name 设备名称，仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位；（设备名称无需全局唯一，可以重复）
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置设备名称，仅支持中文、英文、数字、_、-，长度不超过32个字符；（设备名称无需全局唯一，可以重复）
-                     * @param _name 设备名称，仅支持中文、英文、数字、_、-，长度不超过32个字符；（设备名称无需全局唯一，可以重复）
+                     * 设置设备名称，仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位；（设备名称无需全局唯一，可以重复）
+                     * @param _name 设备名称，仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位；（设备名称无需全局唯一，可以重复）
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool TransportProtocolHasBeenSet() const;
 
                     /**
-                     * 获取设备密码（国标，网关设备必填，仅支持数字组合，长度为1-64个字符）
-                     * @return Password 设备密码（国标，网关设备必填，仅支持数字组合，长度为1-64个字符）
+                     * 获取设备密码（国标，网关设备必填，长度为1-64个字符）
+                     * @return Password 设备密码（国标，网关设备必填，长度为1-64个字符）
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置设备密码（国标，网关设备必填，仅支持数字组合，长度为1-64个字符）
-                     * @param _password 设备密码（国标，网关设备必填，仅支持数字组合，长度为1-64个字符）
+                     * 设置设备密码（国标，网关设备必填，长度为1-64个字符）
+                     * @param _password 设备密码（国标，网关设备必填，长度为1-64个字符）
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取设备描述，仅支持中文、英文、数字、_、-，长度不超过128个字符
-                     * @return Description 设备描述，仅支持中文、英文、数字、_、-，长度不超过128个字符
+                     * 获取设备描述，长度不超过128个字符
+                     * @return Description 设备描述，长度不超过128个字符
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置设备描述，仅支持中文、英文、数字、_、-，长度不超过128个字符
-                     * @param _description 设备描述，仅支持中文、英文、数字、_、-，长度不超过128个字符
+                     * 设置设备描述，长度不超过128个字符
+                     * @param _description 设备描述，长度不超过128个字符
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool SNCodeHasBeenSet() const;
 
                     /**
-                     * 获取RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字组合限制32个字符内）
-                     * @return AppName RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     * 获取RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
+                     * @return AppName RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字组合限制32个字符内）
-                     * @param _appName RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     * 设置RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
+                     * @param _appName RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -358,15 +358,15 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字组合限制32个字符内）
-                     * @return StreamName RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     * 获取RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
+                     * @return StreamName RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
                      * 
                      */
                     std::string GetStreamName() const;
 
                     /**
-                     * 设置RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字组合限制32个字符内）
-                     * @param _streamName RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     * 设置RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
+                     * @param _streamName RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
                      * 
                      */
                     void SetStreamName(const std::string& _streamName);
@@ -381,7 +381,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备名称，仅支持中文、英文、数字、_、-，长度不超过32个字符；（设备名称无需全局唯一，可以重复）
+                     * 设备名称，仅支持中文、英文、数字、空格、中英文括号、_、-, 长度不超过128位；（设备名称无需全局唯一，可以重复）
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -417,13 +417,13 @@ namespace TencentCloud
                     bool m_transportProtocolHasBeenSet;
 
                     /**
-                     * 设备密码（国标，网关设备必填，仅支持数字组合，长度为1-64个字符）
+                     * 设备密码（国标，网关设备必填，长度为1-64个字符）
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 设备描述，仅支持中文、英文、数字、_、-，长度不超过128个字符
+                     * 设备描述，长度不超过128个字符
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -465,13 +465,13 @@ namespace TencentCloud
                     bool m_sNCodeHasBeenSet;
 
                     /**
-                     * RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     * RTMP推流地址自定义AppName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字组合限制32个字符内）
+                     * RTMP推流地址自定义StreamName（仅RTMP需要，支持英文、数字、_、-、.、长度不超过64位）
                      */
                     std::string m_streamName;
                     bool m_streamNameHasBeenSet;

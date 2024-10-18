@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取客户上传到自己cos的地址列表
-                     * @return UsrCosModelUrlList 客户上传到自己cos的地址列表
+                     * 获取客户上传到cos的模型地址，单次请求限制一个。cos文件为压缩文件，格式包括：zip、tgz和tar.gz
+                     * @return UsrCosModelUrlList 客户上传到cos的模型地址，单次请求限制一个。cos文件为压缩文件，格式包括：zip、tgz和tar.gz
                      * 
                      */
                     std::vector<std::string> GetUsrCosModelUrlList() const;
 
                     /**
-                     * 设置客户上传到自己cos的地址列表
-                     * @param _usrCosModelUrlList 客户上传到自己cos的地址列表
+                     * 设置客户上传到cos的模型地址，单次请求限制一个。cos文件为压缩文件，格式包括：zip、tgz和tar.gz
+                     * @param _usrCosModelUrlList 客户上传到cos的模型地址，单次请求限制一个。cos文件为压缩文件，格式包括：zip、tgz和tar.gz
                      * 
                      */
                     void SetUsrCosModelUrlList(const std::vector<std::string>& _usrCosModelUrlList);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 客户上传到自己cos的地址列表
+                     * 客户上传到cos的模型地址，单次请求限制一个。cos文件为压缩文件，格式包括：zip、tgz和tar.gz
                      */
                     std::vector<std::string> m_usrCosModelUrlList;
                     bool m_usrCosModelUrlListHasBeenSet;

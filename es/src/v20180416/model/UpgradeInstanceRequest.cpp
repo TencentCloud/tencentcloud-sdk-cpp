@@ -33,7 +33,9 @@ UpgradeInstanceRequest::UpgradeInstanceRequest() :
     m_skipCheckForceRestartHasBeenSet(false),
     m_cvmDelayOnlineTimeHasBeenSet(false),
     m_shardAllocationConcurrentsHasBeenSet(false),
-    m_shardAllocationBytesHasBeenSet(false)
+    m_shardAllocationBytesHasBeenSet(false),
+    m_enableScheduleRecoverGroupHasBeenSet(false),
+    m_enableScheduleOperationDurationHasBeenSet(false)
 {
 }
 
@@ -130,6 +132,23 @@ string UpgradeInstanceRequest::ToJsonString() const
         string key = "ShardAllocationBytes";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shardAllocationBytes, allocator);
+    }
+
+    if (m_enableScheduleRecoverGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScheduleRecoverGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableScheduleRecoverGroup, allocator);
+    }
+
+    if (m_enableScheduleOperationDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScheduleOperationDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_enableScheduleOperationDuration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -314,6 +333,38 @@ void UpgradeInstanceRequest::SetShardAllocationBytes(const uint64_t& _shardAlloc
 bool UpgradeInstanceRequest::ShardAllocationBytesHasBeenSet() const
 {
     return m_shardAllocationBytesHasBeenSet;
+}
+
+bool UpgradeInstanceRequest::GetEnableScheduleRecoverGroup() const
+{
+    return m_enableScheduleRecoverGroup;
+}
+
+void UpgradeInstanceRequest::SetEnableScheduleRecoverGroup(const bool& _enableScheduleRecoverGroup)
+{
+    m_enableScheduleRecoverGroup = _enableScheduleRecoverGroup;
+    m_enableScheduleRecoverGroupHasBeenSet = true;
+}
+
+bool UpgradeInstanceRequest::EnableScheduleRecoverGroupHasBeenSet() const
+{
+    return m_enableScheduleRecoverGroupHasBeenSet;
+}
+
+EnableScheduleOperationDuration UpgradeInstanceRequest::GetEnableScheduleOperationDuration() const
+{
+    return m_enableScheduleOperationDuration;
+}
+
+void UpgradeInstanceRequest::SetEnableScheduleOperationDuration(const EnableScheduleOperationDuration& _enableScheduleOperationDuration)
+{
+    m_enableScheduleOperationDuration = _enableScheduleOperationDuration;
+    m_enableScheduleOperationDurationHasBeenSet = true;
+}
+
+bool UpgradeInstanceRequest::EnableScheduleOperationDurationHasBeenSet() const
+{
+    return m_enableScheduleOperationDurationHasBeenSet;
 }
 
 

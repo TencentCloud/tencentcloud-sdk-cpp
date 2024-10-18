@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标组列表。
-                     * @return TargetGroupIds 目标组列表。
+                     * 获取目标组ID列表。
+                     * @return TargetGroupIds 目标组ID列表。
                      * 
                      */
                     std::vector<std::string> GetTargetGroupIds() const;
 
                     /**
-                     * 设置目标组列表。
-                     * @param _targetGroupIds 目标组列表。
+                     * 设置目标组ID列表。
+                     * @param _targetGroupIds 目标组ID列表。
                      * 
                      */
                     void SetTargetGroupIds(const std::vector<std::string>& _targetGroupIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标组列表。
+                     * 目标组ID列表。
                      */
                     std::vector<std::string> m_targetGroupIds;
                     bool m_targetGroupIdsHasBeenSet;

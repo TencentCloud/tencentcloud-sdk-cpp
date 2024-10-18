@@ -42,7 +42,49 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取任务类型
+0-不限制，或使用TypeFilters过滤；
+1-备份恢复（包括周期备份和一次性备份）；
+2-数据迁移（包括跨集群迁移和cos迁移）
+                     * @return ApplicationType 任务类型
+0-不限制，或使用TypeFilters过滤；
+1-备份恢复（包括周期备份和一次性备份）；
+2-数据迁移（包括跨集群迁移和cos迁移）
+                     * 
+                     */
+                    int64_t GetApplicationType() const;
+
+                    /**
+                     * 设置任务类型
+0-不限制，或使用TypeFilters过滤；
+1-备份恢复（包括周期备份和一次性备份）；
+2-数据迁移（包括跨集群迁移和cos迁移）
+                     * @param _applicationType 任务类型
+0-不限制，或使用TypeFilters过滤；
+1-备份恢复（包括周期备份和一次性备份）；
+2-数据迁移（包括跨集群迁移和cos迁移）
+                     * 
+                     */
+                    void SetApplicationType(const int64_t& _applicationType);
+
+                    /**
+                     * 判断参数 ApplicationType 是否已赋值
+                     * @return ApplicationType 是否已赋值
+                     * 
+                     */
+                    bool ApplicationTypeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 任务类型
+0-不限制，或使用TypeFilters过滤；
+1-备份恢复（包括周期备份和一次性备份）；
+2-数据迁移（包括跨集群迁移和cos迁移）
+                     */
+                    int64_t m_applicationType;
+                    bool m_applicationTypeHasBeenSet;
 
                 };
             }

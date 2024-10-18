@@ -523,6 +523,81 @@ HotPeriod=0为没有开启日志沉降。
                      */
                     bool ExtendsHasBeenSet() const;
 
+                    /**
+                     * 获取异步迁移任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicAsyncTaskID 异步迁移任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTopicAsyncTaskID() const;
+
+                    /**
+                     * 设置异步迁移任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _topicAsyncTaskID 异步迁移任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTopicAsyncTaskID(const std::string& _topicAsyncTaskID);
+
+                    /**
+                     * 判断参数 TopicAsyncTaskID 是否已赋值
+                     * @return TopicAsyncTaskID 是否已赋值
+                     * 
+                     */
+                    bool TopicAsyncTaskIDHasBeenSet() const;
+
+                    /**
+                     * 获取异步迁移状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MigrationStatus 异步迁移状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetMigrationStatus() const;
+
+                    /**
+                     * 设置异步迁移状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _migrationStatus 异步迁移状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMigrationStatus(const uint64_t& _migrationStatus);
+
+                    /**
+                     * 判断参数 MigrationStatus 是否已赋值
+                     * @return MigrationStatus 是否已赋值
+                     * 
+                     */
+                    bool MigrationStatusHasBeenSet() const;
+
+                    /**
+                     * 获取异步迁移完成后，预计生效日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EffectiveDate 异步迁移完成后，预计生效日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEffectiveDate() const;
+
+                    /**
+                     * 设置异步迁移完成后，预计生效日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _effectiveDate 异步迁移完成后，预计生效日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEffectiveDate(const std::string& _effectiveDate);
+
+                    /**
+                     * 判断参数 EffectiveDate 是否已赋值
+                     * @return EffectiveDate 是否已赋值
+                     * 
+                     */
+                    bool EffectiveDateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -657,6 +732,27 @@ HotPeriod=0为没有开启日志沉降。
                      */
                     TopicExtendInfo m_extends;
                     bool m_extendsHasBeenSet;
+
+                    /**
+                     * 异步迁移任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_topicAsyncTaskID;
+                    bool m_topicAsyncTaskIDHasBeenSet;
+
+                    /**
+                     * 异步迁移状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_migrationStatus;
+                    bool m_migrationStatusHasBeenSet;
+
+                    /**
+                     * 异步迁移完成后，预计生效日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_effectiveDate;
+                    bool m_effectiveDateHasBeenSet;
 
                 };
             }

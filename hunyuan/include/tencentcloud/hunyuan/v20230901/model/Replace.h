@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 图文并茂占位符替换信息
+                * 多媒体占位符替换信息
                 */
                 class Replace : public AbstractModel
                 {

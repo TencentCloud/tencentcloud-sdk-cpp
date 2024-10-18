@@ -1251,7 +1251,7 @@ namespace TencentCloud
                 ManualBackupInstanceOutcomeCallable ManualBackupInstanceCallable(const Model::ManualBackupInstanceRequest& request);
 
                 /**
-                 *本接口（ModfiyInstancePassword）用于修改实例访问密码。
+                 *本接口（ModfiyInstancePassword）用于修改实例访问密码。鉴于该接口名存在拼写错误，现已更正为（[ModifyInstancePassword](https://cloud.tencent.com/document/product/239/111555)）接口，推荐使用更正后的接口。
                  * @param req ModfiyInstancePasswordRequest
                  * @return ModfiyInstancePasswordOutcome
                  */

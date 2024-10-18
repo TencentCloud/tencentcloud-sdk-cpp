@@ -39,7 +39,10 @@ TopicInfo::TopicInfo() :
     m_hotPeriodHasBeenSet(false),
     m_bizTypeHasBeenSet(false),
     m_isWebTrackingHasBeenSet(false),
-    m_extendsHasBeenSet(false)
+    m_extendsHasBeenSet(false),
+    m_topicAsyncTaskIDHasBeenSet(false),
+    m_migrationStatusHasBeenSet(false),
+    m_effectiveDateHasBeenSet(false)
 {
 }
 
@@ -255,6 +258,36 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
         m_extendsHasBeenSet = true;
     }
 
+    if (value.HasMember("TopicAsyncTaskID") && !value["TopicAsyncTaskID"].IsNull())
+    {
+        if (!value["TopicAsyncTaskID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.TopicAsyncTaskID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicAsyncTaskID = string(value["TopicAsyncTaskID"].GetString());
+        m_topicAsyncTaskIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("MigrationStatus") && !value["MigrationStatus"].IsNull())
+    {
+        if (!value["MigrationStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.MigrationStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_migrationStatus = value["MigrationStatus"].GetUint64();
+        m_migrationStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("EffectiveDate") && !value["EffectiveDate"].IsNull())
+    {
+        if (!value["EffectiveDate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.EffectiveDate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_effectiveDate = string(value["EffectiveDate"].GetString());
+        m_effectiveDateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -420,6 +453,30 @@ void TopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extends.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_topicAsyncTaskIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicAsyncTaskID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicAsyncTaskID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_migrationStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MigrationStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_migrationStatus, allocator);
+    }
+
+    if (m_effectiveDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EffectiveDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_effectiveDate.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -727,5 +784,53 @@ void TopicInfo::SetExtends(const TopicExtendInfo& _extends)
 bool TopicInfo::ExtendsHasBeenSet() const
 {
     return m_extendsHasBeenSet;
+}
+
+string TopicInfo::GetTopicAsyncTaskID() const
+{
+    return m_topicAsyncTaskID;
+}
+
+void TopicInfo::SetTopicAsyncTaskID(const string& _topicAsyncTaskID)
+{
+    m_topicAsyncTaskID = _topicAsyncTaskID;
+    m_topicAsyncTaskIDHasBeenSet = true;
+}
+
+bool TopicInfo::TopicAsyncTaskIDHasBeenSet() const
+{
+    return m_topicAsyncTaskIDHasBeenSet;
+}
+
+uint64_t TopicInfo::GetMigrationStatus() const
+{
+    return m_migrationStatus;
+}
+
+void TopicInfo::SetMigrationStatus(const uint64_t& _migrationStatus)
+{
+    m_migrationStatus = _migrationStatus;
+    m_migrationStatusHasBeenSet = true;
+}
+
+bool TopicInfo::MigrationStatusHasBeenSet() const
+{
+    return m_migrationStatusHasBeenSet;
+}
+
+string TopicInfo::GetEffectiveDate() const
+{
+    return m_effectiveDate;
+}
+
+void TopicInfo::SetEffectiveDate(const string& _effectiveDate)
+{
+    m_effectiveDate = _effectiveDate;
+    m_effectiveDateHasBeenSet = true;
+}
+
+bool TopicInfo::EffectiveDateHasBeenSet() const
+{
+    return m_effectiveDateHasBeenSet;
 }
 

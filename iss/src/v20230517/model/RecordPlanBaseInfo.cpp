@@ -28,7 +28,8 @@ RecordPlanBaseInfo::RecordPlanBaseInfo() :
     m_streamTypeHasBeenSet(false),
     m_lifeCycleHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_channelCountHasBeenSet(false)
+    m_channelCountHasBeenSet(false),
+    m_repairModeHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,16 @@ CoreInternalOutcome RecordPlanBaseInfo::Deserialize(const rapidjson::Value &valu
         m_channelCountHasBeenSet = true;
     }
 
+    if (value.HasMember("RepairMode") && !value["RepairMode"].IsNull())
+    {
+        if (!value["RepairMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordPlanBaseInfo.RepairMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_repairMode = value["RepairMode"].GetInt64();
+        m_repairModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +205,14 @@ void RecordPlanBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ChannelCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_channelCount, allocator);
+    }
+
+    if (m_repairModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepairMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_repairMode, allocator);
     }
 
 }
@@ -325,5 +344,21 @@ void RecordPlanBaseInfo::SetChannelCount(const int64_t& _channelCount)
 bool RecordPlanBaseInfo::ChannelCountHasBeenSet() const
 {
     return m_channelCountHasBeenSet;
+}
+
+int64_t RecordPlanBaseInfo::GetRepairMode() const
+{
+    return m_repairMode;
+}
+
+void RecordPlanBaseInfo::SetRepairMode(const int64_t& _repairMode)
+{
+    m_repairMode = _repairMode;
+    m_repairModeHasBeenSet = true;
+}
+
+bool RecordPlanBaseInfo::RepairModeHasBeenSet() const
+{
+    return m_repairModeHasBeenSet;
 }
 

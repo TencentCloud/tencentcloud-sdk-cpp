@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeBackUpJobRequest::DescribeBackUpJobRequest() :
     m_instanceIdHasBeenSet(false),
+    m_applicationTypeHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_pageNumHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
@@ -45,6 +46,14 @@ string DescribeBackUpJobRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_applicationType, allocator);
     }
 
     if (m_pageSizeHasBeenSet)
@@ -109,6 +118,22 @@ void DescribeBackUpJobRequest::SetInstanceId(const string& _instanceId)
 bool DescribeBackUpJobRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+int64_t DescribeBackUpJobRequest::GetApplicationType() const
+{
+    return m_applicationType;
+}
+
+void DescribeBackUpJobRequest::SetApplicationType(const int64_t& _applicationType)
+{
+    m_applicationType = _applicationType;
+    m_applicationTypeHasBeenSet = true;
+}
+
+bool DescribeBackUpJobRequest::ApplicationTypeHasBeenSet() const
+{
+    return m_applicationTypeHasBeenSet;
 }
 
 int64_t DescribeBackUpJobRequest::GetPageSize() const

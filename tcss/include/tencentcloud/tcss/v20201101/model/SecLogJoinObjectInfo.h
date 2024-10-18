@@ -280,6 +280,73 @@ namespace TencentCloud
                      */
                     bool ClusterMainAddressHasBeenSet() const;
 
+                    /**
+                     * 获取容器数
+                     * @return ContainerCnt 容器数
+                     * 
+                     */
+                    uint64_t GetContainerCnt() const;
+
+                    /**
+                     * 设置容器数
+                     * @param _containerCnt 容器数
+                     * 
+                     */
+                    void SetContainerCnt(const uint64_t& _containerCnt);
+
+                    /**
+                     * 判断参数 ContainerCnt 是否已赋值
+                     * @return ContainerCnt 是否已赋值
+                     * 
+                     */
+                    bool ContainerCntHasBeenSet() const;
+
+                    /**
+                     * 获取集群类型
+                     * @return ClusterType 集群类型
+                     * 
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置集群类型
+                     * @param _clusterType 集群类型
+                     * 
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
+                    /**
+                     * 获取集群状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterStatus 集群状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterStatus() const;
+
+                    /**
+                     * 设置集群状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterStatus 集群状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterStatus(const std::string& _clusterStatus);
+
+                    /**
+                     * 判断参数 ClusterStatus 是否已赋值
+                     * @return ClusterStatus 是否已赋值
+                     * 
+                     */
+                    bool ClusterStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -347,6 +414,25 @@ namespace TencentCloud
                      */
                     std::string m_clusterMainAddress;
                     bool m_clusterMainAddressHasBeenSet;
+
+                    /**
+                     * 容器数
+                     */
+                    uint64_t m_containerCnt;
+                    bool m_containerCntHasBeenSet;
+
+                    /**
+                     * 集群类型
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
+
+                    /**
+                     * 集群状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterStatus;
+                    bool m_clusterStatusHasBeenSet;
 
                 };
             }

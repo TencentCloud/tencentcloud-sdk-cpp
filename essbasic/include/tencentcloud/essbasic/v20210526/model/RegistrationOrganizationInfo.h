@@ -431,6 +431,27 @@ p.s. 如果上传授权书 ，需遵循以下条件
                      */
                     bool PowerOfAttorneysHasBeenSet() const;
 
+                    /**
+                     * 获取认证完之后的H5页面的跳转链接，最大长度1000个字符。链接类型请参考 [跳转电子签H5](https://qian.tencent.com/developers/company/openqianh5/)
+                     * @return AutoJumpUrl 认证完之后的H5页面的跳转链接，最大长度1000个字符。链接类型请参考 [跳转电子签H5](https://qian.tencent.com/developers/company/openqianh5/)
+                     * 
+                     */
+                    std::string GetAutoJumpUrl() const;
+
+                    /**
+                     * 设置认证完之后的H5页面的跳转链接，最大长度1000个字符。链接类型请参考 [跳转电子签H5](https://qian.tencent.com/developers/company/openqianh5/)
+                     * @param _autoJumpUrl 认证完之后的H5页面的跳转链接，最大长度1000个字符。链接类型请参考 [跳转电子签H5](https://qian.tencent.com/developers/company/openqianh5/)
+                     * 
+                     */
+                    void SetAutoJumpUrl(const std::string& _autoJumpUrl);
+
+                    /**
+                     * 判断参数 AutoJumpUrl 是否已赋值
+                     * @return AutoJumpUrl 是否已赋值
+                     * 
+                     */
+                    bool AutoJumpUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -538,6 +559,12 @@ p.s. 如果上传授权书 ，需遵循以下条件
                      */
                     std::vector<std::string> m_powerOfAttorneys;
                     bool m_powerOfAttorneysHasBeenSet;
+
+                    /**
+                     * 认证完之后的H5页面的跳转链接，最大长度1000个字符。链接类型请参考 [跳转电子签H5](https://qian.tencent.com/developers/company/openqianh5/)
+                     */
+                    std::string m_autoJumpUrl;
+                    bool m_autoJumpUrlHasBeenSet;
 
                 };
             }

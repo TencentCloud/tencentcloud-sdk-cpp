@@ -68,15 +68,27 @@ namespace TencentCloud
                     bool HealthSwitchHasBeenSet() const;
 
                     /**
-                     * 获取健康检查使用的协议。支持icmp和tcp，默认为icmp。
-                     * @return Protocol 健康检查使用的协议。支持icmp和tcp，默认为icmp。
+                     * 获取健康检查使用的协议。支持ping和tcp，默认为ping。
+
+- PING: icmp
+- TCP: tcp
+                     * @return Protocol 健康检查使用的协议。支持ping和tcp，默认为ping。
+
+- PING: icmp
+- TCP: tcp
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置健康检查使用的协议。支持icmp和tcp，默认为icmp。
-                     * @param _protocol 健康检查使用的协议。支持icmp和tcp，默认为icmp。
+                     * 设置健康检查使用的协议。支持ping和tcp，默认为ping。
+
+- PING: icmp
+- TCP: tcp
+                     * @param _protocol 健康检查使用的协议。支持ping和tcp，默认为ping。
+
+- PING: icmp
+- TCP: tcp
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -206,7 +218,10 @@ namespace TencentCloud
                     bool m_healthSwitchHasBeenSet;
 
                     /**
-                     * 健康检查使用的协议。支持icmp和tcp，默认为icmp。
+                     * 健康检查使用的协议。支持ping和tcp，默认为ping。
+
+- PING: icmp
+- TCP: tcp
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

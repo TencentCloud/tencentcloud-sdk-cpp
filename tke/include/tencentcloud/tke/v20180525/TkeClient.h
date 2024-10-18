@@ -169,6 +169,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeAvailableTKEEdgeVersionResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeBackupStorageLocationsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeBackupStorageLocationsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeBatchModifyTagsStatusRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeBatchModifyTagsStatusResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupsRequest.h>
@@ -401,6 +403,8 @@
 #include <tencentcloud/tke/v20180525/model/ModifyClusterNodePoolResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterRuntimeConfigRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterRuntimeConfigResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterTagsRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterTagsResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterVirtualNodePoolRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterVirtualNodePoolResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyNodePoolDesiredCapacityAboutAsgRequest.h>
@@ -706,6 +710,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupStorageLocationsResponse> DescribeBackupStorageLocationsOutcome;
                 typedef std::future<DescribeBackupStorageLocationsOutcome> DescribeBackupStorageLocationsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeBackupStorageLocationsRequest&, DescribeBackupStorageLocationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupStorageLocationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBatchModifyTagsStatusResponse> DescribeBatchModifyTagsStatusOutcome;
+                typedef std::future<DescribeBatchModifyTagsStatusOutcome> DescribeBatchModifyTagsStatusOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeBatchModifyTagsStatusRequest&, DescribeBatchModifyTagsStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchModifyTagsStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterAsGroupOptionResponse> DescribeClusterAsGroupOptionOutcome;
                 typedef std::future<DescribeClusterAsGroupOptionOutcome> DescribeClusterAsGroupOptionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterAsGroupOptionRequest&, DescribeClusterAsGroupOptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAsGroupOptionAsyncHandler;
@@ -1054,6 +1061,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyClusterRuntimeConfigResponse> ModifyClusterRuntimeConfigOutcome;
                 typedef std::future<ModifyClusterRuntimeConfigOutcome> ModifyClusterRuntimeConfigOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterRuntimeConfigRequest&, ModifyClusterRuntimeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterRuntimeConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterTagsResponse> ModifyClusterTagsOutcome;
+                typedef std::future<ModifyClusterTagsOutcome> ModifyClusterTagsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyClusterTagsRequest&, ModifyClusterTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterTagsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterVirtualNodePoolResponse> ModifyClusterVirtualNodePoolOutcome;
                 typedef std::future<ModifyClusterVirtualNodePoolOutcome> ModifyClusterVirtualNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterVirtualNodePoolRequest&, ModifyClusterVirtualNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterVirtualNodePoolAsyncHandler;
@@ -1821,6 +1831,15 @@ namespace TencentCloud
                 DescribeBackupStorageLocationsOutcome DescribeBackupStorageLocations(const Model::DescribeBackupStorageLocationsRequest &request);
                 void DescribeBackupStorageLocationsAsync(const Model::DescribeBackupStorageLocationsRequest& request, const DescribeBackupStorageLocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupStorageLocationsOutcomeCallable DescribeBackupStorageLocationsCallable(const Model::DescribeBackupStorageLocationsRequest& request);
+
+                /**
+                 *查询批量修改标签状态
+                 * @param req DescribeBatchModifyTagsStatusRequest
+                 * @return DescribeBatchModifyTagsStatusOutcome
+                 */
+                DescribeBatchModifyTagsStatusOutcome DescribeBatchModifyTagsStatus(const Model::DescribeBatchModifyTagsStatusRequest &request);
+                void DescribeBatchModifyTagsStatusAsync(const Model::DescribeBatchModifyTagsStatusRequest& request, const DescribeBatchModifyTagsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBatchModifyTagsStatusOutcomeCallable DescribeBatchModifyTagsStatusCallable(const Model::DescribeBatchModifyTagsStatusRequest& request);
 
                 /**
                  *集群弹性伸缩配置
@@ -2865,6 +2884,15 @@ namespace TencentCloud
                 ModifyClusterRuntimeConfigOutcome ModifyClusterRuntimeConfig(const Model::ModifyClusterRuntimeConfigRequest &request);
                 void ModifyClusterRuntimeConfigAsync(const Model::ModifyClusterRuntimeConfigRequest& request, const ModifyClusterRuntimeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyClusterRuntimeConfigOutcomeCallable ModifyClusterRuntimeConfigCallable(const Model::ModifyClusterRuntimeConfigRequest& request);
+
+                /**
+                 *修改集群标签
+                 * @param req ModifyClusterTagsRequest
+                 * @return ModifyClusterTagsOutcome
+                 */
+                ModifyClusterTagsOutcome ModifyClusterTags(const Model::ModifyClusterTagsRequest &request);
+                void ModifyClusterTagsAsync(const Model::ModifyClusterTagsRequest& request, const ModifyClusterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterTagsOutcomeCallable ModifyClusterTagsCallable(const Model::ModifyClusterTagsRequest& request);
 
                 /**
                  *修改超级节点池

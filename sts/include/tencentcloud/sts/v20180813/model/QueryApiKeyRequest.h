@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待查询的账号(不填默认查当前账号)
-                     * @return TargetUin 待查询的账号(不填默认查当前账号)
+                     * 获取待查询的账号uin(不填默认查当前账号uin)
+                     * @return TargetUin 待查询的账号uin(不填默认查当前账号uin)
                      * 
                      */
                     uint64_t GetTargetUin() const;
 
                     /**
-                     * 设置待查询的账号(不填默认查当前账号)
-                     * @param _targetUin 待查询的账号(不填默认查当前账号)
+                     * 设置待查询的账号uin(不填默认查当前账号uin)
+                     * @param _targetUin 待查询的账号uin(不填默认查当前账号uin)
                      * 
                      */
                     void SetTargetUin(const uint64_t& _targetUin);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待查询的账号(不填默认查当前账号)
+                     * 待查询的账号uin(不填默认查当前账号uin)
                      */
                     uint64_t m_targetUin;
                     bool m_targetUinHasBeenSet;

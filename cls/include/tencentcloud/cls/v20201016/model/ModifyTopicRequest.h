@@ -308,6 +308,27 @@ namespace TencentCloud
                      */
                     bool PartitionCountHasBeenSet() const;
 
+                    /**
+                     * 获取取消切换存储任务的id
+                     * @return CancelTopicAsyncTaskID 取消切换存储任务的id
+                     * 
+                     */
+                    std::string GetCancelTopicAsyncTaskID() const;
+
+                    /**
+                     * 设置取消切换存储任务的id
+                     * @param _cancelTopicAsyncTaskID 取消切换存储任务的id
+                     * 
+                     */
+                    void SetCancelTopicAsyncTaskID(const std::string& _cancelTopicAsyncTaskID);
+
+                    /**
+                     * 判断参数 CancelTopicAsyncTaskID 是否已赋值
+                     * @return CancelTopicAsyncTaskID 是否已赋值
+                     * 
+                     */
+                    bool CancelTopicAsyncTaskIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -384,6 +405,12 @@ namespace TencentCloud
                      */
                     uint64_t m_partitionCount;
                     bool m_partitionCountHasBeenSet;
+
+                    /**
+                     * 取消切换存储任务的id
+                     */
+                    std::string m_cancelTopicAsyncTaskID;
+                    bool m_cancelTopicAsyncTaskIDHasBeenSet;
 
                 };
             }

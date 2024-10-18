@@ -146,6 +146,27 @@ k8sApi: "k8s_api"
                      */
                     bool LogTypeHasBeenSet() const;
 
+                    /**
+                     * 获取已接入集群数量
+                     * @return ClusterCount 已接入集群数量
+                     * 
+                     */
+                    uint64_t GetClusterCount() const;
+
+                    /**
+                     * 设置已接入集群数量
+                     * @param _clusterCount 已接入集群数量
+                     * 
+                     */
+                    void SetClusterCount(const uint64_t& _clusterCount);
+
+                    /**
+                     * 判断参数 ClusterCount 是否已赋值
+                     * @return ClusterCount 是否已赋值
+                     * 
+                     */
+                    bool ClusterCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +196,12 @@ k8sApi: "k8s_api"
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
+
+                    /**
+                     * 已接入集群数量
+                     */
+                    uint64_t m_clusterCount;
+                    bool m_clusterCountHasBeenSet;
 
                 };
             }

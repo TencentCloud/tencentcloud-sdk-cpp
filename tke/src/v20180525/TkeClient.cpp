@@ -3179,6 +3179,49 @@ TkeClient::DescribeBackupStorageLocationsOutcomeCallable TkeClient::DescribeBack
     return task->get_future();
 }
 
+TkeClient::DescribeBatchModifyTagsStatusOutcome TkeClient::DescribeBatchModifyTagsStatus(const DescribeBatchModifyTagsStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchModifyTagsStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchModifyTagsStatusResponse rsp = DescribeBatchModifyTagsStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchModifyTagsStatusOutcome(rsp);
+        else
+            return DescribeBatchModifyTagsStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchModifyTagsStatusOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeBatchModifyTagsStatusAsync(const DescribeBatchModifyTagsStatusRequest& request, const DescribeBatchModifyTagsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBatchModifyTagsStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeBatchModifyTagsStatusOutcomeCallable TkeClient::DescribeBatchModifyTagsStatusCallable(const DescribeBatchModifyTagsStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBatchModifyTagsStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBatchModifyTagsStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeClusterAsGroupOptionOutcome TkeClient::DescribeClusterAsGroupOption(const DescribeClusterAsGroupOptionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterAsGroupOption");
@@ -8160,6 +8203,49 @@ TkeClient::ModifyClusterRuntimeConfigOutcomeCallable TkeClient::ModifyClusterRun
         [this, request]()
         {
             return this->ModifyClusterRuntimeConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ModifyClusterTagsOutcome TkeClient::ModifyClusterTags(const ModifyClusterTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterTagsResponse rsp = ModifyClusterTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterTagsOutcome(rsp);
+        else
+            return ModifyClusterTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterTagsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterTagsAsync(const ModifyClusterTagsRequest& request, const ModifyClusterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyClusterTagsOutcomeCallable TkeClient::ModifyClusterTagsCallable(const ModifyClusterTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterTags(request);
         }
     );
 

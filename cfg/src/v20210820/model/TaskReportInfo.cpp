@@ -28,7 +28,8 @@ TaskReportInfo::TaskReportInfo() :
     m_cosUrlHasBeenSet(false),
     m_logHasBeenSet(false),
     m_archiveStageHasBeenSet(false),
-    m_archiveTimeHasBeenSet(false)
+    m_archiveTimeHasBeenSet(false),
+    m_archiveUuidHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome TaskReportInfo::Deserialize(const rapidjson::Value &value)
         m_archiveTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ArchiveUuid") && !value["ArchiveUuid"].IsNull())
+    {
+        if (!value["ArchiveUuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskReportInfo.ArchiveUuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_archiveUuid = string(value["ArchiveUuid"].GetString());
+        m_archiveUuidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void TaskReportInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ArchiveTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_archiveTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_archiveUuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchiveUuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_archiveUuid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void TaskReportInfo::SetArchiveTime(const string& _archiveTime)
 bool TaskReportInfo::ArchiveTimeHasBeenSet() const
 {
     return m_archiveTimeHasBeenSet;
+}
+
+string TaskReportInfo::GetArchiveUuid() const
+{
+    return m_archiveUuid;
+}
+
+void TaskReportInfo::SetArchiveUuid(const string& _archiveUuid)
+{
+    m_archiveUuid = _archiveUuid;
+    m_archiveUuidHasBeenSet = true;
+}
+
+bool TaskReportInfo::ArchiveUuidHasBeenSet() const
+{
+    return m_archiveUuidHasBeenSet;
 }
 

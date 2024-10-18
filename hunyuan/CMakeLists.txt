@@ -42,6 +42,7 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/ToolFunction.h
   include/tencentcloud/hunyuan/v20230901/model/Delta.h
   include/tencentcloud/hunyuan/v20230901/model/SetPayModeResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/SongExt.h
   include/tencentcloud/hunyuan/v20230901/model/ToolCall.h
   include/tencentcloud/hunyuan/v20230901/model/ToolCallFunction.h
   include/tencentcloud/hunyuan/v20230901/model/SetPayModeRequest.h
@@ -86,6 +87,7 @@ set(hunyuan_src
   src/v20230901/model/ToolFunction.cpp
   src/v20230901/model/Delta.cpp
   src/v20230901/model/SetPayModeResponse.cpp
+  src/v20230901/model/SongExt.cpp
   src/v20230901/model/ToolCall.cpp
   src/v20230901/model/ToolCallFunction.cpp
   src/v20230901/model/SetPayModeRequest.cpp

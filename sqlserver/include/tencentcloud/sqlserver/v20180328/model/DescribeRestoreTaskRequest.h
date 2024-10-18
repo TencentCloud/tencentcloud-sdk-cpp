@@ -273,6 +273,27 @@ namespace TencentCloud
                      */
                     bool OrderByTypeHasBeenSet() const;
 
+                    /**
+                     * 获取回档异步任务ID
+                     * @return FlowId 回档异步任务ID
+                     * 
+                     */
+                    int64_t GetFlowId() const;
+
+                    /**
+                     * 设置回档异步任务ID
+                     * @param _flowId 回档异步任务ID
+                     * 
+                     */
+                    void SetFlowId(const int64_t& _flowId);
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     * 
+                     */
+                    bool FlowIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +361,12 @@ namespace TencentCloud
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;
+
+                    /**
+                     * 回档异步任务ID
+                     */
+                    int64_t m_flowId;
+                    bool m_flowIdHasBeenSet;
 
                 };
             }

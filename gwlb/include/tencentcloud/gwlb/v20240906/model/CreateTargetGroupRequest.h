@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标组名称，限定50个字符
-                     * @return TargetGroupName 目标组名称，限定50个字符
+                     * 获取目标组名称，限定60个字符。
+                     * @return TargetGroupName 目标组名称，限定60个字符。
                      * 
                      */
                     std::string GetTargetGroupName() const;
 
                     /**
-                     * 设置目标组名称，限定50个字符
-                     * @param _targetGroupName 目标组名称，限定50个字符
+                     * 设置目标组名称，限定60个字符。
+                     * @param _targetGroupName 目标组名称，限定60个字符。
                      * 
                      */
                     void SetTargetGroupName(const std::string& _targetGroupName);
@@ -88,18 +88,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
-
                      * @return Port 目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
-
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
-
                      * @param _port 目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
-
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -134,22 +130,22 @@ namespace TencentCloud
 
                     /**
                      * 获取网关负载均衡目标组协议。
-- AWS_GENEVE：GENEVE 兼容协议 
 - TENCENT_GENEVE ：GENEVE 标准协议
+- AWS_GENEVE：GENEVE 兼容协议（需要提交工单申请开白）
                      * @return Protocol 网关负载均衡目标组协议。
-- AWS_GENEVE：GENEVE 兼容协议 
 - TENCENT_GENEVE ：GENEVE 标准协议
+- AWS_GENEVE：GENEVE 兼容协议（需要提交工单申请开白）
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置网关负载均衡目标组协议。
-- AWS_GENEVE：GENEVE 兼容协议 
 - TENCENT_GENEVE ：GENEVE 标准协议
+- AWS_GENEVE：GENEVE 兼容协议（需要提交工单申请开白）
                      * @param _protocol 网关负载均衡目标组协议。
-- AWS_GENEVE：GENEVE 兼容协议 
 - TENCENT_GENEVE ：GENEVE 标准协议
+- AWS_GENEVE：GENEVE 兼容协议（需要提交工单申请开白）
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -162,15 +158,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取健康检查。
-                     * @return HealthCheck 健康检查。
+                     * 获取健康检查设置。
+                     * @return HealthCheck 健康检查设置。
                      * 
                      */
                     TargetGroupHealthCheck GetHealthCheck() const;
 
                     /**
-                     * 设置健康检查。
-                     * @param _healthCheck 健康检查。
+                     * 设置健康检查设置。
+                     * @param _healthCheck 健康检查设置。
                      * 
                      */
                     void SetHealthCheck(const TargetGroupHealthCheck& _healthCheck);
@@ -183,18 +179,18 @@ namespace TencentCloud
                     bool HealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取RS调度算法。
+                     * 获取均衡算法。
 - IP_HASH_3_ELASTIC：弹性哈希
-                     * @return ScheduleAlgorithm RS调度算法。
+                     * @return ScheduleAlgorithm 均衡算法。
 - IP_HASH_3_ELASTIC：弹性哈希
                      * 
                      */
                     std::string GetScheduleAlgorithm() const;
 
                     /**
-                     * 设置RS调度算法。
+                     * 设置均衡算法。
 - IP_HASH_3_ELASTIC：弹性哈希
-                     * @param _scheduleAlgorithm RS调度算法。
+                     * @param _scheduleAlgorithm 均衡算法。
 - IP_HASH_3_ELASTIC：弹性哈希
                      * 
                      */
@@ -231,7 +227,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标组名称，限定50个字符
+                     * 目标组名称，限定60个字符。
                      */
                     std::string m_targetGroupName;
                     bool m_targetGroupNameHasBeenSet;
@@ -244,7 +240,6 @@ namespace TencentCloud
 
                     /**
                      * 目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
-
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
@@ -257,20 +252,20 @@ namespace TencentCloud
 
                     /**
                      * 网关负载均衡目标组协议。
-- AWS_GENEVE：GENEVE 兼容协议 
 - TENCENT_GENEVE ：GENEVE 标准协议
+- AWS_GENEVE：GENEVE 兼容协议（需要提交工单申请开白）
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 健康检查。
+                     * 健康检查设置。
                      */
                     TargetGroupHealthCheck m_healthCheck;
                     bool m_healthCheckHasBeenSet;
 
                     /**
-                     * RS调度算法。
+                     * 均衡算法。
 - IP_HASH_3_ELASTIC：弹性哈希
                      */
                     std::string m_scheduleAlgorithm;

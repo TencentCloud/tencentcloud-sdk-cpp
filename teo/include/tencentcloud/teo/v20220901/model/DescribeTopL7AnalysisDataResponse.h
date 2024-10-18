@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取七层流量前topN数据列表。
+                     * 获取七层访问数据按照 MetricName 指定统计维度的前 topN 数据列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 七层流量前topN数据列表。
+                     * @return Data 七层访问数据按照 MetricName 指定统计维度的前 topN 数据列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -83,7 +83,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 七层流量前topN数据列表。
+                     * 七层访问数据按照 MetricName 指定统计维度的前 topN 数据列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TopDataRecord> m_data;

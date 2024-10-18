@@ -486,18 +486,18 @@ namespace TencentCloud
                     bool RestrictStateHasBeenSet() const;
 
                     /**
-                     * 获取NAT网关大版本号，传统型=1，标准型=2
+                     * 获取NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NatProductVersion NAT网关大版本号，传统型=1，标准型=2
+                     * @return NatProductVersion NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNatProductVersion() const;
 
                     /**
-                     * 设置NAT网关大版本号，传统型=1，标准型=2
+                     * 设置NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _natProductVersion NAT网关大版本号，传统型=1，标准型=2
+                     * @param _natProductVersion NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -686,7 +686,7 @@ namespace TencentCloud
                     bool m_restrictStateHasBeenSet;
 
                     /**
-                     * NAT网关大版本号，传统型=1，标准型=2
+                     * NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_natProductVersion;

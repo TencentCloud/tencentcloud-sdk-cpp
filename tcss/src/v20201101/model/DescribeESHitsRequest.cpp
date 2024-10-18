@@ -25,7 +25,8 @@ using namespace std;
 DescribeESHitsRequest::DescribeESHitsRequest() :
     m_queryHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_logTypesHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,19 @@ string DescribeESHitsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_logTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_logTypes.begin(); itr != m_logTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -114,6 +128,22 @@ void DescribeESHitsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeESHitsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<string> DescribeESHitsRequest::GetLogTypes() const
+{
+    return m_logTypes;
+}
+
+void DescribeESHitsRequest::SetLogTypes(const vector<string>& _logTypes)
+{
+    m_logTypes = _logTypes;
+    m_logTypesHasBeenSet = true;
+}
+
+bool DescribeESHitsRequest::LogTypesHasBeenSet() const
+{
+    return m_logTypesHasBeenSet;
 }
 
 

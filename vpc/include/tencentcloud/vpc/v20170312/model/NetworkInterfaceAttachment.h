@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云主机实例ID。
-                     * @return InstanceId 云主机实例ID。
-                     * 
-                     */
-                    std::string GetInstanceId() const;
-
-                    /**
-                     * 设置云主机实例ID。
-                     * @param _instanceId 云主机实例ID。
-                     * 
-                     */
-                    void SetInstanceId(const std::string& _instanceId);
-
-                    /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
-                     * 
-                     */
-                    bool InstanceIdHasBeenSet() const;
-
-                    /**
                      * 获取网卡在云主机实例内的序号。
                      * @return DeviceIndex 网卡在云主机实例内的序号。
                      * 
@@ -130,13 +109,28 @@ namespace TencentCloud
                      */
                     bool AttachTimeHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取云主机实例ID。
+                     * @return InstanceId 云主机实例ID。
+                     * 
+                     */
+                    std::string GetInstanceId() const;
 
                     /**
-                     * 云主机实例ID。
+                     * 设置云主机实例ID。
+                     * @param _instanceId 云主机实例ID。
+                     * 
                      */
-                    std::string m_instanceId;
-                    bool m_instanceIdHasBeenSet;
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 网卡在云主机实例内的序号。
@@ -155,6 +149,12 @@ namespace TencentCloud
                      */
                     std::string m_attachTime;
                     bool m_attachTimeHasBeenSet;
+
+                    /**
+                     * 云主机实例ID。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

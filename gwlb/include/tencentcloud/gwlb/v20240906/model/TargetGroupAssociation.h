@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡ID。
-                     * @return LoadBalancerId 负载均衡ID。
+                     * 获取网关负载均衡实例ID。
+                     * @return LoadBalancerId 网关负载均衡实例ID。
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡ID。
-                     * @param _loadBalancerId 负载均衡ID。
+                     * 设置网关负载均衡实例ID。
+                     * @param _loadBalancerId 网关负载均衡实例ID。
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡ID。
+                     * 网关负载均衡实例ID。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;

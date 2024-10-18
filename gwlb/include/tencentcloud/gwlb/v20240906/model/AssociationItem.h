@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关联到的负载均衡ID
-                     * @return LoadBalancerId 关联到的负载均衡ID
+                     * 获取关联到的网关负载均衡实例ID
+                     * @return LoadBalancerId 关联到的网关负载均衡实例ID
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置关联到的负载均衡ID
-                     * @param _loadBalancerId 关联到的负载均衡ID
+                     * 设置关联到的网关负载均衡实例ID
+                     * @param _loadBalancerId 关联到的网关负载均衡实例ID
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡名称
-                     * @return LoadBalancerName 负载均衡名称
+                     * 获取网关负载均衡实例名称
+                     * @return LoadBalancerName 网关负载均衡实例名称
                      * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
-                     * 设置负载均衡名称
-                     * @param _loadBalancerName 负载均衡名称
+                     * 设置网关负载均衡实例名称
+                     * @param _loadBalancerName 网关负载均衡实例名称
                      * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 关联到的负载均衡ID
+                     * 关联到的网关负载均衡实例ID
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 负载均衡名称
+                     * 网关负载均衡实例名称
                      */
                     std::string m_loadBalancerName;
                     bool m_loadBalancerNameHasBeenSet;

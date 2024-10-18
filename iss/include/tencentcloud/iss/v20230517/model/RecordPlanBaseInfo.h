@@ -223,6 +223,27 @@ namespace TencentCloud
                      */
                     bool ChannelCountHasBeenSet() const;
 
+                    /**
+                     * 获取录像补录模式（0:不启用，1:启用）
+                     * @return RepairMode 录像补录模式（0:不启用，1:启用）
+                     * 
+                     */
+                    int64_t GetRepairMode() const;
+
+                    /**
+                     * 设置录像补录模式（0:不启用，1:启用）
+                     * @param _repairMode 录像补录模式（0:不启用，1:启用）
+                     * 
+                     */
+                    void SetRepairMode(const int64_t& _repairMode);
+
+                    /**
+                     * 判断参数 RepairMode 是否已赋值
+                     * @return RepairMode 是否已赋值
+                     * 
+                     */
+                    bool RepairModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -274,6 +295,12 @@ namespace TencentCloud
                      */
                     int64_t m_channelCount;
                     bool m_channelCountHasBeenSet;
+
+                    /**
+                     * 录像补录模式（0:不启用，1:启用）
+                     */
+                    int64_t m_repairMode;
+                    bool m_repairModeHasBeenSet;
 
                 };
             }

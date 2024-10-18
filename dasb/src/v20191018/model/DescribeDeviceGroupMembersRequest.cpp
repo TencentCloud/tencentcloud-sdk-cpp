@@ -23,8 +23,9 @@ using namespace TencentCloud::Dasb::V20191018::Model;
 using namespace std;
 
 DescribeDeviceGroupMembersRequest::DescribeDeviceGroupMembersRequest() :
-    m_idHasBeenSet(false),
     m_boundHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_idSetHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
@@ -41,6 +42,14 @@ string DescribeDeviceGroupMembersRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_boundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bound";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bound, allocator);
+    }
+
     if (m_idHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -49,12 +58,17 @@ string DescribeDeviceGroupMembersRequest::ToJsonString() const
         d.AddMember(iKey, m_id, allocator);
     }
 
-    if (m_boundHasBeenSet)
+    if (m_idSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Bound";
+        string key = "IdSet";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_bound, allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_idSet.begin(); itr != m_idSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
     if (m_nameHasBeenSet)
@@ -120,6 +134,22 @@ string DescribeDeviceGroupMembersRequest::ToJsonString() const
 }
 
 
+bool DescribeDeviceGroupMembersRequest::GetBound() const
+{
+    return m_bound;
+}
+
+void DescribeDeviceGroupMembersRequest::SetBound(const bool& _bound)
+{
+    m_bound = _bound;
+    m_boundHasBeenSet = true;
+}
+
+bool DescribeDeviceGroupMembersRequest::BoundHasBeenSet() const
+{
+    return m_boundHasBeenSet;
+}
+
 uint64_t DescribeDeviceGroupMembersRequest::GetId() const
 {
     return m_id;
@@ -136,20 +166,20 @@ bool DescribeDeviceGroupMembersRequest::IdHasBeenSet() const
     return m_idHasBeenSet;
 }
 
-bool DescribeDeviceGroupMembersRequest::GetBound() const
+vector<uint64_t> DescribeDeviceGroupMembersRequest::GetIdSet() const
 {
-    return m_bound;
+    return m_idSet;
 }
 
-void DescribeDeviceGroupMembersRequest::SetBound(const bool& _bound)
+void DescribeDeviceGroupMembersRequest::SetIdSet(const vector<uint64_t>& _idSet)
 {
-    m_bound = _bound;
-    m_boundHasBeenSet = true;
+    m_idSet = _idSet;
+    m_idSetHasBeenSet = true;
 }
 
-bool DescribeDeviceGroupMembersRequest::BoundHasBeenSet() const
+bool DescribeDeviceGroupMembersRequest::IdSetHasBeenSet() const
 {
-    return m_boundHasBeenSet;
+    return m_idSetHasBeenSet;
 }
 
 string DescribeDeviceGroupMembersRequest::GetName() const

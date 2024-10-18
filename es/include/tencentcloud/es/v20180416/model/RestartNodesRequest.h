@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/es/v20180416/model/EnableScheduleOperationDuration.h>
 
 
 namespace TencentCloud
@@ -210,6 +211,48 @@ namespace TencentCloud
                      */
                     bool ShardAllocationBytesHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启置放群组异步任务
+                     * @return EnableScheduleRecoverGroup 是否开启置放群组异步任务
+                     * 
+                     */
+                    bool GetEnableScheduleRecoverGroup() const;
+
+                    /**
+                     * 设置是否开启置放群组异步任务
+                     * @param _enableScheduleRecoverGroup 是否开启置放群组异步任务
+                     * 
+                     */
+                    void SetEnableScheduleRecoverGroup(const bool& _enableScheduleRecoverGroup);
+
+                    /**
+                     * 判断参数 EnableScheduleRecoverGroup 是否已赋值
+                     * @return EnableScheduleRecoverGroup 是否已赋值
+                     * 
+                     */
+                    bool EnableScheduleRecoverGroupHasBeenSet() const;
+
+                    /**
+                     * 获取置放群组异步任务时间段
+                     * @return EnableScheduleOperationDuration 置放群组异步任务时间段
+                     * 
+                     */
+                    EnableScheduleOperationDuration GetEnableScheduleOperationDuration() const;
+
+                    /**
+                     * 设置置放群组异步任务时间段
+                     * @param _enableScheduleOperationDuration 置放群组异步任务时间段
+                     * 
+                     */
+                    void SetEnableScheduleOperationDuration(const EnableScheduleOperationDuration& _enableScheduleOperationDuration);
+
+                    /**
+                     * 判断参数 EnableScheduleOperationDuration 是否已赋值
+                     * @return EnableScheduleOperationDuration 是否已赋值
+                     * 
+                     */
+                    bool EnableScheduleOperationDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +302,18 @@ namespace TencentCloud
                      */
                     uint64_t m_shardAllocationBytes;
                     bool m_shardAllocationBytesHasBeenSet;
+
+                    /**
+                     * 是否开启置放群组异步任务
+                     */
+                    bool m_enableScheduleRecoverGroup;
+                    bool m_enableScheduleRecoverGroupHasBeenSet;
+
+                    /**
+                     * 置放群组异步任务时间段
+                     */
+                    EnableScheduleOperationDuration m_enableScheduleOperationDuration;
+                    bool m_enableScheduleOperationDurationHasBeenSet;
 
                 };
             }

@@ -234,6 +234,27 @@ namespace TencentCloud
                      */
                     bool IsWholeRdmaZoneHasBeenSet() const;
 
+                    /**
+                     * 获取当前可用区是否允许新购集群，1:允许，0:不允许
+                     * @return IsSupportCreateCluster 当前可用区是否允许新购集群，1:允许，0:不允许
+                     * 
+                     */
+                    int64_t GetIsSupportCreateCluster() const;
+
+                    /**
+                     * 设置当前可用区是否允许新购集群，1:允许，0:不允许
+                     * @param _isSupportCreateCluster 当前可用区是否允许新购集群，1:允许，0:不允许
+                     * 
+                     */
+                    void SetIsSupportCreateCluster(const int64_t& _isSupportCreateCluster);
+
+                    /**
+                     * 判断参数 IsSupportCreateCluster 是否已赋值
+                     * @return IsSupportCreateCluster 是否已赋值
+                     * 
+                     */
+                    bool IsSupportCreateClusterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -288,6 +309,12 @@ namespace TencentCloud
                      */
                     std::string m_isWholeRdmaZone;
                     bool m_isWholeRdmaZoneHasBeenSet;
+
+                    /**
+                     * 当前可用区是否允许新购集群，1:允许，0:不允许
+                     */
+                    int64_t m_isSupportCreateCluster;
+                    bool m_isSupportCreateClusterHasBeenSet;
 
                 };
             }

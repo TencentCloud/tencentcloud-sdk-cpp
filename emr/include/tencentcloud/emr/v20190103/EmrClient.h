@@ -59,6 +59,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeGlobalConfigResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHBaseTableOverviewRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHBaseTableOverviewResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeHDFSStorageInfoRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeHDFSStorageInfoResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHiveQueriesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHiveQueriesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeImpalaQueriesRequest.h>
@@ -73,6 +75,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeInstancesListResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeJobFlowRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeJobFlowResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeKyuubiQueryInfoRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeKyuubiQueryInfoResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleDiffDetailRequest.h>
@@ -83,6 +87,10 @@
 #include <tencentcloud/emr/v20190103/model/DescribeSLInstanceListResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeServiceNodeInfosRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeServiceNodeInfosResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeSparkQueriesRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeSparkQueriesResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeStarRocksQueryInfoRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeStarRocksQueryInfoResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeTrinoQueryInfoRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeTrinoQueryInfoResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerRequest.h>
@@ -213,6 +221,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHBaseTableOverviewResponse> DescribeHBaseTableOverviewOutcome;
                 typedef std::future<DescribeHBaseTableOverviewOutcome> DescribeHBaseTableOverviewOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeHBaseTableOverviewRequest&, DescribeHBaseTableOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHBaseTableOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHDFSStorageInfoResponse> DescribeHDFSStorageInfoOutcome;
+                typedef std::future<DescribeHDFSStorageInfoOutcome> DescribeHDFSStorageInfoOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeHDFSStorageInfoRequest&, DescribeHDFSStorageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHDFSStorageInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHiveQueriesResponse> DescribeHiveQueriesOutcome;
                 typedef std::future<DescribeHiveQueriesOutcome> DescribeHiveQueriesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeHiveQueriesRequest&, DescribeHiveQueriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHiveQueriesAsyncHandler;
@@ -234,6 +245,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeJobFlowResponse> DescribeJobFlowOutcome;
                 typedef std::future<DescribeJobFlowOutcome> DescribeJobFlowOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeJobFlowRequest&, DescribeJobFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKyuubiQueryInfoResponse> DescribeKyuubiQueryInfoOutcome;
+                typedef std::future<DescribeKyuubiQueryInfoOutcome> DescribeKyuubiQueryInfoOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeKyuubiQueryInfoRequest&, DescribeKyuubiQueryInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKyuubiQueryInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourceScheduleResponse> DescribeResourceScheduleOutcome;
                 typedef std::future<DescribeResourceScheduleOutcome> DescribeResourceScheduleOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeResourceScheduleRequest&, DescribeResourceScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceScheduleAsyncHandler;
@@ -249,6 +263,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServiceNodeInfosResponse> DescribeServiceNodeInfosOutcome;
                 typedef std::future<DescribeServiceNodeInfosOutcome> DescribeServiceNodeInfosOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeServiceNodeInfosRequest&, DescribeServiceNodeInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceNodeInfosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSparkQueriesResponse> DescribeSparkQueriesOutcome;
+                typedef std::future<DescribeSparkQueriesOutcome> DescribeSparkQueriesOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeSparkQueriesRequest&, DescribeSparkQueriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkQueriesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStarRocksQueryInfoResponse> DescribeStarRocksQueryInfoOutcome;
+                typedef std::future<DescribeStarRocksQueryInfoOutcome> DescribeStarRocksQueryInfoOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeStarRocksQueryInfoRequest&, DescribeStarRocksQueryInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStarRocksQueryInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrinoQueryInfoResponse> DescribeTrinoQueryInfoOutcome;
                 typedef std::future<DescribeTrinoQueryInfoOutcome> DescribeTrinoQueryInfoOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeTrinoQueryInfoRequest&, DescribeTrinoQueryInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrinoQueryInfoAsyncHandler;
@@ -511,6 +531,15 @@ namespace TencentCloud
                 DescribeHBaseTableOverviewOutcomeCallable DescribeHBaseTableOverviewCallable(const Model::DescribeHBaseTableOverviewRequest& request);
 
                 /**
+                 *查询HDFS存储文件信息
+                 * @param req DescribeHDFSStorageInfoRequest
+                 * @return DescribeHDFSStorageInfoOutcome
+                 */
+                DescribeHDFSStorageInfoOutcome DescribeHDFSStorageInfo(const Model::DescribeHDFSStorageInfoRequest &request);
+                void DescribeHDFSStorageInfoAsync(const Model::DescribeHDFSStorageInfoRequest& request, const DescribeHDFSStorageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHDFSStorageInfoOutcomeCallable DescribeHDFSStorageInfoCallable(const Model::DescribeHDFSStorageInfoRequest& request);
+
+                /**
                  *获取hive查询信息
                  * @param req DescribeHiveQueriesRequest
                  * @return DescribeHiveQueriesOutcome
@@ -574,6 +603,15 @@ namespace TencentCloud
                 DescribeJobFlowOutcomeCallable DescribeJobFlowCallable(const Model::DescribeJobFlowRequest& request);
 
                 /**
+                 *查询Kyuubi查询信息
+                 * @param req DescribeKyuubiQueryInfoRequest
+                 * @return DescribeKyuubiQueryInfoOutcome
+                 */
+                DescribeKyuubiQueryInfoOutcome DescribeKyuubiQueryInfo(const Model::DescribeKyuubiQueryInfoRequest &request);
+                void DescribeKyuubiQueryInfoAsync(const Model::DescribeKyuubiQueryInfoRequest& request, const DescribeKyuubiQueryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKyuubiQueryInfoOutcomeCallable DescribeKyuubiQueryInfoCallable(const Model::DescribeKyuubiQueryInfoRequest& request);
+
+                /**
                  *查询YARN资源调度数据信息。已废弃，请使用`DescribeYarnQueue`去查询队列信息。
                  * @param req DescribeResourceScheduleRequest
                  * @return DescribeResourceScheduleOutcome
@@ -617,6 +655,24 @@ namespace TencentCloud
                 DescribeServiceNodeInfosOutcome DescribeServiceNodeInfos(const Model::DescribeServiceNodeInfosRequest &request);
                 void DescribeServiceNodeInfosAsync(const Model::DescribeServiceNodeInfosRequest& request, const DescribeServiceNodeInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServiceNodeInfosOutcomeCallable DescribeServiceNodeInfosCallable(const Model::DescribeServiceNodeInfosRequest& request);
+
+                /**
+                 *查询Spark查询信息列表
+                 * @param req DescribeSparkQueriesRequest
+                 * @return DescribeSparkQueriesOutcome
+                 */
+                DescribeSparkQueriesOutcome DescribeSparkQueries(const Model::DescribeSparkQueriesRequest &request);
+                void DescribeSparkQueriesAsync(const Model::DescribeSparkQueriesRequest& request, const DescribeSparkQueriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSparkQueriesOutcomeCallable DescribeSparkQueriesCallable(const Model::DescribeSparkQueriesRequest& request);
+
+                /**
+                 *查询StarRocks查询信息
+                 * @param req DescribeStarRocksQueryInfoRequest
+                 * @return DescribeStarRocksQueryInfoOutcome
+                 */
+                DescribeStarRocksQueryInfoOutcome DescribeStarRocksQueryInfo(const Model::DescribeStarRocksQueryInfoRequest &request);
+                void DescribeStarRocksQueryInfoAsync(const Model::DescribeStarRocksQueryInfoRequest& request, const DescribeStarRocksQueryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStarRocksQueryInfoOutcomeCallable DescribeStarRocksQueryInfoCallable(const Model::DescribeStarRocksQueryInfoRequest& request);
 
                 /**
                  *获取trino查询结果

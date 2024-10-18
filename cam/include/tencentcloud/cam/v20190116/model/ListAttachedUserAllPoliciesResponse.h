@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略列表数据
-                     * @return PolicyList 策略列表数据
+                     * 获取策略列表数据。
+                     * @return PolicyList 策略列表数据。
                      * 
                      */
                     std::vector<AttachedUserPolicy> GetPolicyList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool PolicyListHasBeenSet() const;
 
                     /**
-                     * 获取策略总数
-                     * @return TotalNum 策略总数
+                     * 获取策略总数。
+                     * @return TotalNum 策略总数。
                      * 
                      */
                     uint64_t GetTotalNum() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略列表数据
+                     * 策略列表数据。
                      */
                     std::vector<AttachedUserPolicy> m_policyList;
                     bool m_policyListHasBeenSet;
 
                     /**
-                     * 策略总数
+                     * 策略总数。
                      */
                     uint64_t m_totalNum;
                     bool m_totalNumHasBeenSet;

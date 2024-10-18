@@ -28,7 +28,8 @@ UpdateRecordPlanData::UpdateRecordPlanData() :
     m_lifeCycleHasBeenSet(false),
     m_addHasBeenSet(false),
     m_delHasBeenSet(false),
-    m_organizationIdHasBeenSet(false)
+    m_organizationIdHasBeenSet(false),
+    m_repairModeHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,16 @@ CoreInternalOutcome UpdateRecordPlanData::Deserialize(const rapidjson::Value &va
         m_organizationIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RepairMode") && !value["RepairMode"].IsNull())
+    {
+        if (!value["RepairMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateRecordPlanData.RepairMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_repairMode = value["RepairMode"].GetInt64();
+        m_repairModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -227,6 +238,14 @@ void UpdateRecordPlanData::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_repairModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepairMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_repairMode, allocator);
     }
 
 }
@@ -358,5 +377,21 @@ void UpdateRecordPlanData::SetOrganizationId(const vector<string>& _organization
 bool UpdateRecordPlanData::OrganizationIdHasBeenSet() const
 {
     return m_organizationIdHasBeenSet;
+}
+
+int64_t UpdateRecordPlanData::GetRepairMode() const
+{
+    return m_repairMode;
+}
+
+void UpdateRecordPlanData::SetRepairMode(const int64_t& _repairMode)
+{
+    m_repairMode = _repairMode;
+    m_repairModeHasBeenSet = true;
+}
+
+bool UpdateRecordPlanData::RepairModeHasBeenSet() const
+{
+    return m_repairModeHasBeenSet;
 }
 
