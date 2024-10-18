@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SmsSdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取发送短信返回的流水号。对应SendSms接口返回的SendStatusSet参数中的SerialNo字段。 
-                     * @return SerialNo 发送短信返回的流水号。对应SendSms接口返回的SendStatusSet参数中的SerialNo字段。 
+                     * 获取发送短信返回的流水号。
+                     * @return SerialNo 发送短信返回的流水号。
                      * 
                      */
                     std::string GetSerialNo() const;
 
                     /**
-                     * 设置发送短信返回的流水号。对应SendSms接口返回的SendStatusSet参数中的SerialNo字段。 
-                     * @param _serialNo 发送短信返回的流水号。对应SendSms接口返回的SendStatusSet参数中的SerialNo字段。 
+                     * 设置发送短信返回的流水号。
+                     * @param _serialNo 发送短信返回的流水号。
                      * 
                      */
                     void SetSerialNo(const std::string& _serialNo);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_smsSdkAppIdHasBeenSet;
 
                     /**
-                     * 发送短信返回的流水号。对应SendSms接口返回的SendStatusSet参数中的SerialNo字段。 
+                     * 发送短信返回的流水号。
                      */
                     std::string m_serialNo;
                     bool m_serialNoHasBeenSet;
