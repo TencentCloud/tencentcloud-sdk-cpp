@@ -25,7 +25,8 @@ using namespace std;
 SubmitPortraitSingJobRequest::SubmitPortraitSingJobRequest() :
     m_audioUrlHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_imageBase64HasBeenSet(false)
+    m_imageBase64HasBeenSet(false),
+    m_modeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string SubmitPortraitSingJobRequest::ToJsonString() const
         string key = "ImageBase64";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageBase64.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void SubmitPortraitSingJobRequest::SetImageBase64(const string& _imageBase64)
 bool SubmitPortraitSingJobRequest::ImageBase64HasBeenSet() const
 {
     return m_imageBase64HasBeenSet;
+}
+
+string SubmitPortraitSingJobRequest::GetMode() const
+{
+    return m_mode;
+}
+
+void SubmitPortraitSingJobRequest::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool SubmitPortraitSingJobRequest::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
 }
 
 

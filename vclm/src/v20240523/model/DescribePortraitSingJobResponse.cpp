@@ -27,6 +27,8 @@ DescribePortraitSingJobResponse::DescribePortraitSingJobResponse() :
     m_jobIdHasBeenSet(false),
     m_statusCodeHasBeenSet(false),
     m_statusMsgHasBeenSet(false),
+    m_errorCodeHasBeenSet(false),
+    m_errorMessageHasBeenSet(false),
     m_resultVideoUrlHasBeenSet(false)
 {
 }
@@ -95,6 +97,26 @@ CoreInternalOutcome DescribePortraitSingJobResponse::Deserialize(const string &p
         m_statusMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ErrorCode") && !rsp["ErrorCode"].IsNull())
+    {
+        if (!rsp["ErrorCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorCode = string(rsp["ErrorCode"].GetString());
+        m_errorCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ErrorMessage") && !rsp["ErrorMessage"].IsNull())
+    {
+        if (!rsp["ErrorMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMessage = string(rsp["ErrorMessage"].GetString());
+        m_errorMessageHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ResultVideoUrl") && !rsp["ResultVideoUrl"].IsNull())
     {
         if (!rsp["ResultVideoUrl"].IsString())
@@ -137,6 +159,22 @@ string DescribePortraitSingJobResponse::ToJsonString() const
         string key = "StatusMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_statusMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMessage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resultVideoUrlHasBeenSet)
@@ -187,6 +225,26 @@ string DescribePortraitSingJobResponse::GetStatusMsg() const
 bool DescribePortraitSingJobResponse::StatusMsgHasBeenSet() const
 {
     return m_statusMsgHasBeenSet;
+}
+
+string DescribePortraitSingJobResponse::GetErrorCode() const
+{
+    return m_errorCode;
+}
+
+bool DescribePortraitSingJobResponse::ErrorCodeHasBeenSet() const
+{
+    return m_errorCodeHasBeenSet;
+}
+
+string DescribePortraitSingJobResponse::GetErrorMessage() const
+{
+    return m_errorMessage;
+}
+
+bool DescribePortraitSingJobResponse::ErrorMessageHasBeenSet() const
+{
+    return m_errorMessageHasBeenSet;
 }
 
 string DescribePortraitSingJobResponse::GetResultVideoUrl() const

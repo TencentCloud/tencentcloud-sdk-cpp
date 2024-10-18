@@ -94,6 +94,34 @@ namespace TencentCloud
                     bool StatusMsgHasBeenSet() const;
 
                     /**
+                     * 获取错误码
+                     * @return ErrorCode 错误码
+                     * 
+                     */
+                    std::string GetErrorCode() const;
+
+                    /**
+                     * 判断参数 ErrorCode 是否已赋值
+                     * @return ErrorCode 是否已赋值
+                     * 
+                     */
+                    bool ErrorCodeHasBeenSet() const;
+
+                    /**
+                     * 获取错误信息
+                     * @return ErrorMessage 错误信息
+                     * 
+                     */
+                    std::string GetErrorMessage() const;
+
+                    /**
+                     * 判断参数 ErrorMessage 是否已赋值
+                     * @return ErrorMessage 是否已赋值
+                     * 
+                     */
+                    bool ErrorMessageHasBeenSet() const;
+
+                    /**
                      * 获取生成视频的URL地址
 有效期24小时
                      * @return ResultVideoUrl 生成视频的URL地址
@@ -132,6 +160,18 @@ namespace TencentCloud
                      */
                     std::string m_statusMsg;
                     bool m_statusMsgHasBeenSet;
+
+                    /**
+                     * 错误码
+                     */
+                    std::string m_errorCode;
+                    bool m_errorCodeHasBeenSet;
+
+                    /**
+                     * 错误信息
+                     */
+                    std::string m_errorMessage;
+                    bool m_errorMessageHasBeenSet;
 
                     /**
                      * 生成视频的URL地址
