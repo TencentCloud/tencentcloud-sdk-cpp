@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署参与者签署H5链接信息数组
-                     * @return SignUrlInfos 签署参与者签署H5链接信息数组
+                     * 获取生成的签署参与者的签署链接信息数组。
+                     * @return SignUrlInfos 生成的签署参与者的签署链接信息数组。
                      * 
                      */
                     std::vector<SignUrlInfo> GetSignUrlInfos() const;
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 签署参与者签署H5链接信息数组
+                     * 生成的签署参与者的签署链接信息数组。
                      */
                     std::vector<SignUrlInfo> m_signUrlInfos;
                     bool m_signUrlInfosHasBeenSet;

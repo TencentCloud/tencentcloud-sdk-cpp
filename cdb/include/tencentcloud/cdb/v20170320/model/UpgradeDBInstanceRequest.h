@@ -411,6 +411,27 @@ namespace TencentCloud
                      */
                     bool RoTransTypeHasBeenSet() const;
 
+                    /**
+                     * 获取检查原地升级是否需要重启，1 检查， 0 不检查。如果值为1，检查为原地升级需要重启，则会停止升级并进行返回提示，如果为原地升级不重启，则正常执行升级流程。
+                     * @return CheckFastUpgradeReboot 检查原地升级是否需要重启，1 检查， 0 不检查。如果值为1，检查为原地升级需要重启，则会停止升级并进行返回提示，如果为原地升级不重启，则正常执行升级流程。
+                     * 
+                     */
+                    int64_t GetCheckFastUpgradeReboot() const;
+
+                    /**
+                     * 设置检查原地升级是否需要重启，1 检查， 0 不检查。如果值为1，检查为原地升级需要重启，则会停止升级并进行返回提示，如果为原地升级不重启，则正常执行升级流程。
+                     * @param _checkFastUpgradeReboot 检查原地升级是否需要重启，1 检查， 0 不检查。如果值为1，检查为原地升级需要重启，则会停止升级并进行返回提示，如果为原地升级不重启，则正常执行升级流程。
+                     * 
+                     */
+                    void SetCheckFastUpgradeReboot(const int64_t& _checkFastUpgradeReboot);
+
+                    /**
+                     * 判断参数 CheckFastUpgradeReboot 是否已赋值
+                     * @return CheckFastUpgradeReboot 是否已赋值
+                     * 
+                     */
+                    bool CheckFastUpgradeRebootHasBeenSet() const;
+
                 private:
 
                     /**
@@ -517,6 +538,12 @@ namespace TencentCloud
                      */
                     std::string m_roTransType;
                     bool m_roTransTypeHasBeenSet;
+
+                    /**
+                     * 检查原地升级是否需要重启，1 检查， 0 不检查。如果值为1，检查为原地升级需要重启，则会停止升级并进行返回提示，如果为原地升级不重启，则正常执行升级流程。
+                     */
+                    int64_t m_checkFastUpgradeReboot;
+                    bool m_checkFastUpgradeRebootHasBeenSet;
 
                 };
             }

@@ -107,14 +107,26 @@ namespace TencentCloud
 
                     /**
                      * 获取LLM类型
+目前有两种
+openai(兼容openai协议的模型)
+azure
                      * @return LLMType LLM类型
+目前有两种
+openai(兼容openai协议的模型)
+azure
                      * 
                      */
                     std::string GetLLMType() const;
 
                     /**
                      * 设置LLM类型
+目前有两种
+openai(兼容openai协议的模型)
+azure
                      * @param _lLMType LLM类型
+目前有两种
+openai(兼容openai协议的模型)
+azure
                      * 
                      */
                     void SetLLMType(const std::string& _lLMType);
@@ -169,15 +181,19 @@ namespace TencentCloud
                     bool APIKeyHasBeenSet() const;
 
                     /**
-                     * 获取API URL，仅支持兼容openai协议的模型，填写url时后缀不要带/chat/completions
-                     * @return APIUrl API URL，仅支持兼容openai协议的模型，填写url时后缀不要带/chat/completions
+                     * 获取API URL，仅支持兼容openai协议的模型，填写url时后缀不要带/chat/completions；
+llmType为azure时,URL填写格式需为：https://{your-resource-name}.openai.azure.com?api-version={api-version},填写url时后缀不要带/openai/deployments/{deployment-id}/chat/completions，系统会自动帮你填充后缀
+                     * @return APIUrl API URL，仅支持兼容openai协议的模型，填写url时后缀不要带/chat/completions；
+llmType为azure时,URL填写格式需为：https://{your-resource-name}.openai.azure.com?api-version={api-version},填写url时后缀不要带/openai/deployments/{deployment-id}/chat/completions，系统会自动帮你填充后缀
                      * 
                      */
                     std::string GetAPIUrl() const;
 
                     /**
-                     * 设置API URL，仅支持兼容openai协议的模型，填写url时后缀不要带/chat/completions
-                     * @param _aPIUrl API URL，仅支持兼容openai协议的模型，填写url时后缀不要带/chat/completions
+                     * 设置API URL，仅支持兼容openai协议的模型，填写url时后缀不要带/chat/completions；
+llmType为azure时,URL填写格式需为：https://{your-resource-name}.openai.azure.com?api-version={api-version},填写url时后缀不要带/openai/deployments/{deployment-id}/chat/completions，系统会自动帮你填充后缀
+                     * @param _aPIUrl API URL，仅支持兼容openai协议的模型，填写url时后缀不要带/chat/completions；
+llmType为azure时,URL填写格式需为：https://{your-resource-name}.openai.azure.com?api-version={api-version},填写url时后缀不要带/openai/deployments/{deployment-id}/chat/completions，系统会自动帮你填充后缀
                      * 
                      */
                     void SetAPIUrl(const std::string& _aPIUrl);
@@ -1036,6 +1052,9 @@ https://doc.weixin.qq.com/doc/w3_ANQAiAbdAFwHILbJBmtSqSbV1WZ3L?scode=AJEAIQdfAAo
 
                     /**
                      * LLM类型
+目前有两种
+openai(兼容openai协议的模型)
+azure
                      */
                     std::string m_lLMType;
                     bool m_lLMTypeHasBeenSet;
@@ -1053,7 +1072,8 @@ https://doc.weixin.qq.com/doc/w3_ANQAiAbdAFwHILbJBmtSqSbV1WZ3L?scode=AJEAIQdfAAo
                     bool m_aPIKeyHasBeenSet;
 
                     /**
-                     * API URL，仅支持兼容openai协议的模型，填写url时后缀不要带/chat/completions
+                     * API URL，仅支持兼容openai协议的模型，填写url时后缀不要带/chat/completions；
+llmType为azure时,URL填写格式需为：https://{your-resource-name}.openai.azure.com?api-version={api-version},填写url时后缀不要带/openai/deployments/{deployment-id}/chat/completions，系统会自动帮你填充后缀
                      */
                     std::string m_aPIUrl;
                     bool m_aPIUrlHasBeenSet;

@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题属性列表
-                     * @return Topic 主题属性列表
+                     * 获取主题属性列表 (同一个批次最多支持10个)
+                     * @return Topic 主题属性列表 (同一个批次最多支持10个)
                      * 
                      */
                     std::vector<BatchModifyTopicInfo> GetTopic() const;
 
                     /**
-                     * 设置主题属性列表
-                     * @param _topic 主题属性列表
+                     * 设置主题属性列表 (同一个批次最多支持10个)
+                     * @param _topic 主题属性列表 (同一个批次最多支持10个)
                      * 
                      */
                     void SetTopic(const std::vector<BatchModifyTopicInfo>& _topic);
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题属性列表
+                     * 主题属性列表 (同一个批次最多支持10个)
                      */
                     std::vector<BatchModifyTopicInfo> m_topic;
                     bool m_topicHasBeenSet;

@@ -52,6 +52,7 @@ namespace TencentCloud
 不收费结果码：
 -1: 手机号格式不正确
 -4: 验证中心服务繁忙
+-5：认证次数超过当日限制，请次日重试
                      * @return Result 认证结果码，收费情况如下。
 收费结果码：
 0: 成功
@@ -60,6 +61,7 @@ namespace TencentCloud
 不收费结果码：
 -1: 手机号格式不正确
 -4: 验证中心服务繁忙
+-5：认证次数超过当日限制，请次日重试
                      * 
                      */
                     std::string GetResult() const;
@@ -112,6 +114,7 @@ namespace TencentCloud
 不收费结果码：
 -1: 手机号格式不正确
 -4: 验证中心服务繁忙
+-5：认证次数超过当日限制，请次日重试
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

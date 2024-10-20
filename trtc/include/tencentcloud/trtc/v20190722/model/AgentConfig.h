@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器人的UserId，用于进房发起任务。【注意】这个UserId不能与当前房间内的主播观众[UserId](https://cloud.tencent.com/document/product/647/46351#userid)重复。如果一个房间发起多个任务时，机器人的UserId也不能相互重复，否则会中断前一个任务。需要保证机器人UserId在房间内唯一。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 机器人的UserId，用于进房发起任务。【注意】这个UserId不能与当前房间内的主播观众[UserId](https://cloud.tencent.com/document/product/647/46351#userid)重复。如果一个房间发起多个任务时，机器人的UserId也不能相互重复，否则会中断前一个任务。需要保证机器人UserId在房间内唯一。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置机器人的UserId，用于进房发起任务。【注意】这个UserId不能与当前房间内的主播观众[UserId](https://cloud.tencent.com/document/product/647/46351#userid)重复。如果一个房间发起多个任务时，机器人的UserId也不能相互重复，否则会中断前一个任务。需要保证机器人UserId在房间内唯一。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userId 机器人的UserId，用于进房发起任务。【注意】这个UserId不能与当前房间内的主播观众[UserId](https://cloud.tencent.com/document/product/647/46351#userid)重复。如果一个房间发起多个任务时，机器人的UserId也不能相互重复，否则会中断前一个任务。需要保证机器人UserId在房间内唯一。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserSig 机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserSig() const;
 
                     /**
                      * 设置机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userSig 机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserSig(const std::string& _userSig);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器人拉流的UserId, 填写后，机器人会拉取该UserId的流进行实时处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetUserId 机器人拉流的UserId, 填写后，机器人会拉取该UserId的流进行实时处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetUserId() const;
 
                     /**
                      * 设置机器人拉流的UserId, 填写后，机器人会拉取该UserId的流进行实时处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetUserId 机器人拉流的UserId, 填写后，机器人会拉取该UserId的流进行实时处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetUserId(const std::string& _targetUserId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取房间内超过MaxIdleTime 没有推流，后台自动关闭任务，默认值是60s。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxIdleTime 房间内超过MaxIdleTime 没有推流，后台自动关闭任务，默认值是60s。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxIdleTime() const;
 
                     /**
                      * 设置房间内超过MaxIdleTime 没有推流，后台自动关闭任务，默认值是60s。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxIdleTime 房间内超过MaxIdleTime 没有推流，后台自动关闭任务，默认值是60s。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxIdleTime(const uint64_t& _maxIdleTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器人的欢迎语
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WelcomeMessage 机器人的欢迎语
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWelcomeMessage() const;
 
                     /**
                      * 设置机器人的欢迎语
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _welcomeMessage 机器人的欢迎语
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWelcomeMessage(const std::string& _welcomeMessage);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取智能打断模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InterruptMode 智能打断模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInterruptMode() const;
 
                     /**
                      * 设置智能打断模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _interruptMode 智能打断模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInterruptMode(const uint64_t& _interruptMode);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InterruptSpeechDuration InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInterruptSpeechDuration() const;
 
                     /**
                      * 设置InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _interruptSpeechDuration InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInterruptSpeechDuration(const uint64_t& _interruptSpeechDuration);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 机器人的UserId，用于进房发起任务。【注意】这个UserId不能与当前房间内的主播观众[UserId](https://cloud.tencent.com/document/product/647/46351#userid)重复。如果一个房间发起多个任务时，机器人的UserId也不能相互重复，否则会中断前一个任务。需要保证机器人UserId在房间内唯一。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
                      * 机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userSig;
                     bool m_userSigHasBeenSet;
 
                     /**
                      * 机器人拉流的UserId, 填写后，机器人会拉取该UserId的流进行实时处理
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetUserId;
                     bool m_targetUserIdHasBeenSet;
 
                     /**
                      * 房间内超过MaxIdleTime 没有推流，后台自动关闭任务，默认值是60s。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxIdleTime;
                     bool m_maxIdleTimeHasBeenSet;
 
                     /**
                      * 机器人的欢迎语
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_welcomeMessage;
                     bool m_welcomeMessageHasBeenSet;
 
                     /**
                      * 智能打断模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_interruptMode;
                     bool m_interruptModeHasBeenSet;
 
                     /**
                      * InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_interruptSpeechDuration;
                     bool m_interruptSpeechDurationHasBeenSet;

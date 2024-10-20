@@ -51,6 +51,8 @@ namespace TencentCloud
 不收费结果码：
 -2：验证中心服务繁忙
 -3：银行卡不存在
+-4：认证次数超过当日限制，请次日重试
+
                      * @return Result 认证结果码，收费情况如下。
 收费结果码：
 0: 查询成功
@@ -58,6 +60,8 @@ namespace TencentCloud
 不收费结果码：
 -2：验证中心服务繁忙
 -3：银行卡不存在
+-4：认证次数超过当日限制，请次日重试
+
                      * 
                      */
                     std::string GetResult() const;
@@ -121,6 +125,8 @@ namespace TencentCloud
 不收费结果码：
 -2：验证中心服务繁忙
 -3：银行卡不存在
+-4：认证次数超过当日限制，请次日重试
+
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

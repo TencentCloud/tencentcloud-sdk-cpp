@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取默认是10条
-                     * @return Limit 默认是10条
+                     * 获取默认10条，最大上限为100条
+                     * @return Limit 默认10条，最大上限为100条
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置默认是10条
-                     * @param _limit 默认是10条
+                     * 设置默认10条，最大上限为100条
+                     * @param _limit 默认10条，最大上限为100条
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -200,7 +200,7 @@ namespace TencentCloud
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 默认是10条
+                     * 默认10条，最大上限为100条
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

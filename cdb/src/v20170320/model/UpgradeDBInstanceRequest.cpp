@@ -39,7 +39,8 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_maxDelayTimeHasBeenSet(false),
     m_crossClusterHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
-    m_roTransTypeHasBeenSet(false)
+    m_roTransTypeHasBeenSet(false),
+    m_checkFastUpgradeRebootHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,14 @@ string UpgradeDBInstanceRequest::ToJsonString() const
         string key = "RoTransType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_roTransType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkFastUpgradeRebootHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckFastUpgradeReboot";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_checkFastUpgradeReboot, allocator);
     }
 
 
@@ -464,6 +473,22 @@ void UpgradeDBInstanceRequest::SetRoTransType(const string& _roTransType)
 bool UpgradeDBInstanceRequest::RoTransTypeHasBeenSet() const
 {
     return m_roTransTypeHasBeenSet;
+}
+
+int64_t UpgradeDBInstanceRequest::GetCheckFastUpgradeReboot() const
+{
+    return m_checkFastUpgradeReboot;
+}
+
+void UpgradeDBInstanceRequest::SetCheckFastUpgradeReboot(const int64_t& _checkFastUpgradeReboot)
+{
+    m_checkFastUpgradeReboot = _checkFastUpgradeReboot;
+    m_checkFastUpgradeRebootHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::CheckFastUpgradeRebootHasBeenSet() const
+{
+    return m_checkFastUpgradeRebootHasBeenSet;
 }
 
 

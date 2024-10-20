@@ -255,18 +255,18 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取最大允许连麦人数
+                     * 获取最大允许连麦人数。已废弃，使用字段 MaxMicNumber
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxRTCMember 最大允许连麦人数
+                     * @return MaxRTCMember 最大允许连麦人数。已废弃，使用字段 MaxMicNumber
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxRTCMember() const;
 
                     /**
-                     * 设置最大允许连麦人数
+                     * 设置最大允许连麦人数。已废弃，使用字段 MaxMicNumber
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxRTCMember 最大允许连麦人数
+                     * @param _maxRTCMember 最大允许连麦人数。已废弃，使用字段 MaxMicNumber
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -330,18 +330,18 @@ namespace TencentCloud
                     bool RecordUrlHasBeenSet() const;
 
                     /**
-                     * 获取最高房间内人数（不包括老师），0表示不限制，默认为0
+                     * 获取课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxMicNumber 最高房间内人数（不包括老师），0表示不限制，默认为0
+                     * @return MaxMicNumber 课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxMicNumber() const;
 
                     /**
-                     * 设置最高房间内人数（不包括老师），0表示不限制，默认为0
+                     * 设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxMicNumber 最高房间内人数（不包括老师），0表示不限制，默认为0
+                     * @param _maxMicNumber 课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -715,7 +715,7 @@ namespace TencentCloud
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * 最大允许连麦人数
+                     * 最大允许连麦人数。已废弃，使用字段 MaxMicNumber
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxRTCMember;
@@ -736,7 +736,7 @@ namespace TencentCloud
                     bool m_recordUrlHasBeenSet;
 
                     /**
-                     * 最高房间内人数（不包括老师），0表示不限制，默认为0
+                     * 课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxMicNumber;
