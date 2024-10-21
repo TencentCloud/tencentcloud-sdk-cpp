@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定填值：9（滑块验证码）
-                     * @return CaptchaType 固定填值：9（滑块验证码）
+                     * 获取固定填值：9
+                     * @return CaptchaType 固定填值：9
                      * 
                      */
                     uint64_t GetCaptchaType() const;
 
                     /**
-                     * 设置固定填值：9（滑块验证码）
-                     * @param _captchaType 固定填值：9（滑块验证码）
+                     * 设置固定填值：9
+                     * @param _captchaType 固定填值：9
                      * 
                      */
                     void SetCaptchaType(const uint64_t& _captchaType);
@@ -234,7 +234,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定填值：9（滑块验证码）
+                     * 固定填值：9
                      */
                     uint64_t m_captchaType;
                     bool m_captchaTypeHasBeenSet;

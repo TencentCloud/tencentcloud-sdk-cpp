@@ -86,27 +86,6 @@ namespace TencentCloud
                     bool SslVpnServerNameHasBeenSet() const;
 
                     /**
-                     * 获取云端地址（CIDR）列表。
-                     * @return LocalAddress 云端地址（CIDR）列表。
-                     * 
-                     */
-                    std::vector<std::string> GetLocalAddress() const;
-
-                    /**
-                     * 设置云端地址（CIDR）列表。
-                     * @param _localAddress 云端地址（CIDR）列表。
-                     * 
-                     */
-                    void SetLocalAddress(const std::vector<std::string>& _localAddress);
-
-                    /**
-                     * 判断参数 LocalAddress 是否已赋值
-                     * @return LocalAddress 是否已赋值
-                     * 
-                     */
-                    bool LocalAddressHasBeenSet() const;
-
-                    /**
                      * 获取客户端地址网段。
                      * @return RemoteAddress 客户端地址网段。
                      * 
@@ -126,6 +105,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RemoteAddressHasBeenSet() const;
+
+                    /**
+                     * 获取云端地址（CIDR）列表。
+                     * @return LocalAddress 云端地址（CIDR）列表。
+                     * 
+                     */
+                    std::vector<std::string> GetLocalAddress() const;
+
+                    /**
+                     * 设置云端地址（CIDR）列表。
+                     * @param _localAddress 云端地址（CIDR）列表。
+                     * 
+                     */
+                    void SetLocalAddress(const std::vector<std::string>& _localAddress);
+
+                    /**
+                     * 判断参数 LocalAddress 是否已赋值
+                     * @return LocalAddress 是否已赋值
+                     * 
+                     */
+                    bool LocalAddressHasBeenSet() const;
 
                     /**
                      * 获取SSL VPN服务端监听协议。当前仅支持 UDP，默认UDP。
@@ -331,16 +331,16 @@ namespace TencentCloud
                     bool m_sslVpnServerNameHasBeenSet;
 
                     /**
-                     * 云端地址（CIDR）列表。
-                     */
-                    std::vector<std::string> m_localAddress;
-                    bool m_localAddressHasBeenSet;
-
-                    /**
                      * 客户端地址网段。
                      */
                     std::string m_remoteAddress;
                     bool m_remoteAddressHasBeenSet;
+
+                    /**
+                     * 云端地址（CIDR）列表。
+                     */
+                    std::vector<std::string> m_localAddress;
+                    bool m_localAddressHasBeenSet;
 
                     /**
                      * SSL VPN服务端监听协议。当前仅支持 UDP，默认UDP。

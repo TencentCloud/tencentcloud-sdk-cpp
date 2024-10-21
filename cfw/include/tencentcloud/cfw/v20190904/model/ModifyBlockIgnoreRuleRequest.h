@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则
-                     * @return Rule 规则
+                     * 获取规则列表
+                     * @return Rule 规则列表
                      * 
                      */
                     IntrusionDefenseRule GetRule() const;
 
                     /**
-                     * 设置规则
-                     * @param _rule 规则
+                     * 设置规则列表
+                     * @param _rule 规则列表
                      * 
                      */
                     void SetRule(const IntrusionDefenseRule& _rule);
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则
+                     * 规则列表
                      */
                     IntrusionDefenseRule m_rule;
                     bool m_ruleHasBeenSet;

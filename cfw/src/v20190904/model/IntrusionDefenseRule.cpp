@@ -25,8 +25,8 @@ IntrusionDefenseRule::IntrusionDefenseRule() :
     m_endTimeHasBeenSet(false),
     m_iPHasBeenSet(false),
     m_domainHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+    m_startTimeHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -75,16 +75,6 @@ CoreInternalOutcome IntrusionDefenseRule::Deserialize(const rapidjson::Value &va
         m_domainHasBeenSet = true;
     }
 
-    if (value.HasMember("Comment") && !value["Comment"].IsNull())
-    {
-        if (!value["Comment"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `IntrusionDefenseRule.Comment` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_comment = string(value["Comment"].GetString());
-        m_commentHasBeenSet = true;
-    }
-
     if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
     {
         if (!value["StartTime"].IsString())
@@ -93,6 +83,16 @@ CoreInternalOutcome IntrusionDefenseRule::Deserialize(const rapidjson::Value &va
         }
         m_startTime = string(value["StartTime"].GetString());
         m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Comment") && !value["Comment"].IsNull())
+    {
+        if (!value["Comment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntrusionDefenseRule.Comment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_comment = string(value["Comment"].GetString());
+        m_commentHasBeenSet = true;
     }
 
 
@@ -134,20 +134,20 @@ void IntrusionDefenseRule::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_commentHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Comment";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_startTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -217,22 +217,6 @@ bool IntrusionDefenseRule::DomainHasBeenSet() const
     return m_domainHasBeenSet;
 }
 
-string IntrusionDefenseRule::GetComment() const
-{
-    return m_comment;
-}
-
-void IntrusionDefenseRule::SetComment(const string& _comment)
-{
-    m_comment = _comment;
-    m_commentHasBeenSet = true;
-}
-
-bool IntrusionDefenseRule::CommentHasBeenSet() const
-{
-    return m_commentHasBeenSet;
-}
-
 string IntrusionDefenseRule::GetStartTime() const
 {
     return m_startTime;
@@ -247,5 +231,21 @@ void IntrusionDefenseRule::SetStartTime(const string& _startTime)
 bool IntrusionDefenseRule::StartTimeHasBeenSet() const
 {
     return m_startTimeHasBeenSet;
+}
+
+string IntrusionDefenseRule::GetComment() const
+{
+    return m_comment;
+}
+
+void IntrusionDefenseRule::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool IntrusionDefenseRule::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
 }
 

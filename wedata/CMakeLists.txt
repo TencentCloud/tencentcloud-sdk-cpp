@@ -99,6 +99,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/WorkflowTaskCountOpsDto.h
   include/tencentcloud/wedata/v20210820/model/StageCloudApiRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeDependOpsTasksRequest.h
+  include/tencentcloud/wedata/v20210820/model/RolePrivilege.h
   include/tencentcloud/wedata/v20210820/model/RuleGroupTable.h
   include/tencentcloud/wedata/v20210820/model/DescribeInstanceLogRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleGroupSubscriptionResponse.h
@@ -108,6 +109,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/SaveCustomFunctionRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeSchedulerTaskTypeCntRequest.h
   include/tencentcloud/wedata/v20210820/model/MakePlanTaskOpsDto.h
+  include/tencentcloud/wedata/v20210820/model/ProjectUserRole.h
   include/tencentcloud/wedata/v20210820/model/RuleGroupExecStrategy.h
   include/tencentcloud/wedata/v20210820/model/ModifyWorkflowScheduleRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateDsFolderRequest.h
@@ -254,6 +256,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/GetFileInfoRequest.h
   include/tencentcloud/wedata/v20210820/model/TableLineageBaseInfo.h
   include/tencentcloud/wedata/v20210820/model/InstanceList.h
+  include/tencentcloud/wedata/v20210820/model/ProjectUsersPage.h
   include/tencentcloud/wedata/v20210820/model/SqlExpressionTable.h
   include/tencentcloud/wedata/v20210820/model/OrderFieldOptional.h
   include/tencentcloud/wedata/v20210820/model/DryRunDIOfflineTaskRequest.h
@@ -476,6 +479,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/RuleTemplate.h
   include/tencentcloud/wedata/v20210820/model/DeleteFileResponse.h
   include/tencentcloud/wedata/v20210820/model/ResumeIntegrationTaskRequest.h
+  include/tencentcloud/wedata/v20210820/model/TriggerDsEventRequest.h
   include/tencentcloud/wedata/v20210820/model/ModifyDataSourceRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribePendingSubmitTaskListRequest.h
   include/tencentcloud/wedata/v20210820/model/TriggerEventResponse.h
@@ -486,6 +490,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeDutyScheduleDetailsResponse.h
   include/tencentcloud/wedata/v20210820/model/TaskLineageInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeTableQualityDetailsResponse.h
+  include/tencentcloud/wedata/v20210820/model/DescribeProjectUsersRequest.h
   include/tencentcloud/wedata/v20210820/model/CommonIdOpsDto.h
   include/tencentcloud/wedata/v20210820/model/BatchStopWorkflowsByIdsResponse.h
   include/tencentcloud/wedata/v20210820/model/RuleGroupSchedulerInfo.h
@@ -559,6 +564,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/SubmitWorkflowRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeResourceManagePathTreesResponse.h
   include/tencentcloud/wedata/v20210820/model/RunRerunScheduleInstancesRequest.h
+  include/tencentcloud/wedata/v20210820/model/SystemRole.h
   include/tencentcloud/wedata/v20210820/model/RuleGroupTableInnerInfo.h
   include/tencentcloud/wedata/v20210820/model/DeleteIntegrationTaskRequest.h
   include/tencentcloud/wedata/v20210820/model/CompareResultItem.h
@@ -666,7 +672,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeRuleTemplateRequest.h
   include/tencentcloud/wedata/v20210820/model/SqlExpression.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskByCycleRequest.h
-  include/tencentcloud/wedata/v20210820/model/TriggerDsEventRequest.h
+  include/tencentcloud/wedata/v20210820/model/DescribeProjectUsersResponse.h
   include/tencentcloud/wedata/v20210820/model/CommonId.h
   include/tencentcloud/wedata/v20210820/model/CreateRuleTemplateRequest.h
   include/tencentcloud/wedata/v20210820/model/DlcRewriteDataInfo.h
@@ -822,6 +828,7 @@ set(wedata_src
   src/v20210820/model/WorkflowTaskCountOpsDto.cpp
   src/v20210820/model/StageCloudApiRequest.cpp
   src/v20210820/model/DescribeDependOpsTasksRequest.cpp
+  src/v20210820/model/RolePrivilege.cpp
   src/v20210820/model/RuleGroupTable.cpp
   src/v20210820/model/DescribeInstanceLogRequest.cpp
   src/v20210820/model/DescribeRuleGroupSubscriptionResponse.cpp
@@ -831,6 +838,7 @@ set(wedata_src
   src/v20210820/model/SaveCustomFunctionRequest.cpp
   src/v20210820/model/DescribeSchedulerTaskTypeCntRequest.cpp
   src/v20210820/model/MakePlanTaskOpsDto.cpp
+  src/v20210820/model/ProjectUserRole.cpp
   src/v20210820/model/RuleGroupExecStrategy.cpp
   src/v20210820/model/ModifyWorkflowScheduleRequest.cpp
   src/v20210820/model/CreateDsFolderRequest.cpp
@@ -977,6 +985,7 @@ set(wedata_src
   src/v20210820/model/GetFileInfoRequest.cpp
   src/v20210820/model/TableLineageBaseInfo.cpp
   src/v20210820/model/InstanceList.cpp
+  src/v20210820/model/ProjectUsersPage.cpp
   src/v20210820/model/SqlExpressionTable.cpp
   src/v20210820/model/OrderFieldOptional.cpp
   src/v20210820/model/DryRunDIOfflineTaskRequest.cpp
@@ -1199,6 +1208,7 @@ set(wedata_src
   src/v20210820/model/RuleTemplate.cpp
   src/v20210820/model/DeleteFileResponse.cpp
   src/v20210820/model/ResumeIntegrationTaskRequest.cpp
+  src/v20210820/model/TriggerDsEventRequest.cpp
   src/v20210820/model/ModifyDataSourceRequest.cpp
   src/v20210820/model/DescribePendingSubmitTaskListRequest.cpp
   src/v20210820/model/TriggerEventResponse.cpp
@@ -1209,6 +1219,7 @@ set(wedata_src
   src/v20210820/model/DescribeDutyScheduleDetailsResponse.cpp
   src/v20210820/model/TaskLineageInfo.cpp
   src/v20210820/model/DescribeTableQualityDetailsResponse.cpp
+  src/v20210820/model/DescribeProjectUsersRequest.cpp
   src/v20210820/model/CommonIdOpsDto.cpp
   src/v20210820/model/BatchStopWorkflowsByIdsResponse.cpp
   src/v20210820/model/RuleGroupSchedulerInfo.cpp
@@ -1282,6 +1293,7 @@ set(wedata_src
   src/v20210820/model/SubmitWorkflowRequest.cpp
   src/v20210820/model/DescribeResourceManagePathTreesResponse.cpp
   src/v20210820/model/RunRerunScheduleInstancesRequest.cpp
+  src/v20210820/model/SystemRole.cpp
   src/v20210820/model/RuleGroupTableInnerInfo.cpp
   src/v20210820/model/DeleteIntegrationTaskRequest.cpp
   src/v20210820/model/CompareResultItem.cpp
@@ -1389,7 +1401,7 @@ set(wedata_src
   src/v20210820/model/DescribeRuleTemplateRequest.cpp
   src/v20210820/model/SqlExpression.cpp
   src/v20210820/model/DescribeTaskByCycleRequest.cpp
-  src/v20210820/model/TriggerDsEventRequest.cpp
+  src/v20210820/model/DescribeProjectUsersResponse.cpp
   src/v20210820/model/CommonId.cpp
   src/v20210820/model/CreateRuleTemplateRequest.cpp
   src/v20210820/model/DlcRewriteDataInfo.cpp

@@ -785,6 +785,31 @@ namespace TencentCloud
                      */
                     bool MetricNameHasBeenSet() const;
 
+                    /**
+                     * 获取策略是否有权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PolicyPermissions 策略是否有权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetPolicyPermissions() const;
+
+                    /**
+                     * 设置策略是否有权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _policyPermissions 策略是否有权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPolicyPermissions(const uint64_t& _policyPermissions);
+
+                    /**
+                     * 判断参数 PolicyPermissions 是否已赋值
+                     * @return PolicyPermissions 是否已赋值
+                     * 
+                     */
+                    bool PolicyPermissionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -995,6 +1020,13 @@ namespace TencentCloud
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
+
+                    /**
+                     * 策略是否有权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_policyPermissions;
+                    bool m_policyPermissionsHasBeenSet;
 
                 };
             }

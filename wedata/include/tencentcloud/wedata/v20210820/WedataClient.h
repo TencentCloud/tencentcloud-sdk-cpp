@@ -253,6 +253,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribePendingSubmitTaskListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeProjectUsersRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeProjectUsersResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeQualityScoreRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeQualityScoreResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeQualityScoreTrendRequest.h>
@@ -848,6 +850,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProjectResponse> DescribeProjectOutcome;
                 typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeProjectRequest&, DescribeProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProjectUsersResponse> DescribeProjectUsersOutcome;
+                typedef std::future<DescribeProjectUsersOutcome> DescribeProjectUsersOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeProjectUsersRequest&, DescribeProjectUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeQualityScoreResponse> DescribeQualityScoreOutcome;
                 typedef std::future<DescribeQualityScoreOutcome> DescribeQualityScoreOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeQualityScoreRequest&, DescribeQualityScoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQualityScoreAsyncHandler;
@@ -2239,6 +2244,15 @@ namespace TencentCloud
                 DescribeProjectOutcome DescribeProject(const Model::DescribeProjectRequest &request);
                 void DescribeProjectAsync(const Model::DescribeProjectRequest& request, const DescribeProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProjectOutcomeCallable DescribeProjectCallable(const Model::DescribeProjectRequest& request);
+
+                /**
+                 *获取项目下的用户，分页返回
+                 * @param req DescribeProjectUsersRequest
+                 * @return DescribeProjectUsersOutcome
+                 */
+                DescribeProjectUsersOutcome DescribeProjectUsers(const Model::DescribeProjectUsersRequest &request);
+                void DescribeProjectUsersAsync(const Model::DescribeProjectUsersRequest& request, const DescribeProjectUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProjectUsersOutcomeCallable DescribeProjectUsersCallable(const Model::DescribeProjectUsersRequest& request);
 
                 /**
                  *质量报告-质量评分

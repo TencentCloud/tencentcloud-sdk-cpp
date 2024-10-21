@@ -153,6 +153,22 @@ EvilLevel=100 请求有恶意
                      */
                     bool SubmitCaptchaTimeHasBeenSet() const;
 
+                    /**
+                     * 获取设备风险大类
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceRiskCategory 设备风险大类
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDeviceRiskCategory() const;
+
+                    /**
+                     * 判断参数 DeviceRiskCategory 是否已赋值
+                     * @return DeviceRiskCategory 是否已赋值
+                     * 
+                     */
+                    bool DeviceRiskCategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -203,6 +219,13 @@ EvilLevel=100 请求有恶意
                      */
                     int64_t m_submitCaptchaTime;
                     bool m_submitCaptchaTimeHasBeenSet;
+
+                    /**
+                     * 设备风险大类
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deviceRiskCategory;
+                    bool m_deviceRiskCategoryHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ Endpoint::Endpoint() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_ipRulesHasBeenSet(false)
+    m_ipRulesHasBeenSet(false),
+    m_billingFlowHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome Endpoint::Deserialize(const rapidjson::Value &value)
         m_ipRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("BillingFlow") && !value["BillingFlow"].IsNull())
+    {
+        if (!value["BillingFlow"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Endpoint.BillingFlow` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingFlow = value["BillingFlow"].GetBool();
+        m_billingFlowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void Endpoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_billingFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingFlow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_billingFlow, allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void Endpoint::SetIpRules(const vector<IpRule>& _ipRules)
 bool Endpoint::IpRulesHasBeenSet() const
 {
     return m_ipRulesHasBeenSet;
+}
+
+bool Endpoint::GetBillingFlow() const
+{
+    return m_billingFlow;
+}
+
+void Endpoint::SetBillingFlow(const bool& _billingFlow)
+{
+    m_billingFlow = _billingFlow;
+    m_billingFlowHasBeenSet = true;
+}
+
+bool Endpoint::BillingFlowHasBeenSet() const
+{
+    return m_billingFlowHasBeenSet;
 }
 

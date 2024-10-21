@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取黑名单地址id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 黑名单地址id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置黑名单地址id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 黑名单地址id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取邮箱地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Email 邮箱地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置邮箱地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _email 邮箱地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEmail(const std::string& _email);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireDate 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireDate() const;
 
                     /**
                      * 设置过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireDate 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireDate(const std::string& _expireDate);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取黑名单状态，0:已过期，1:生效中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 黑名单状态，0:已过期，1:生效中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置黑名单状态，0:已过期，1:生效中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 黑名单状态，0:已过期，1:生效中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 黑名单地址id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 邮箱地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireDate;
                     bool m_expireDateHasBeenSet;
 
                     /**
                      * 黑名单状态，0:已过期，1:生效中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

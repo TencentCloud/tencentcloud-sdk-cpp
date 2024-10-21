@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool NationCodeHasBeenSet() const;
 
                     /**
-                     * 获取手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
-                     * @return PurePhoneNumber 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
+                     * 获取手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。
+                     * @return PurePhoneNumber 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。
                      * 
                      */
                     std::string GetPurePhoneNumber() const;
 
                     /**
-                     * 设置手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
-                     * @param _purePhoneNumber 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
+                     * 设置手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。
+                     * @param _purePhoneNumber 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。
                      * 
                      */
                     void SetPurePhoneNumber(const std::string& _purePhoneNumber);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PurePhoneNumberHasBeenSet() const;
 
                     /**
-                     * 获取手机号码，普通格式，示例如：13711112222。
-                     * @return PhoneNumber 手机号码，普通格式，示例如：13711112222。
+                     * 获取手机号码，普通格式，示例如：18501234444。
+                     * @return PhoneNumber 手机号码，普通格式，示例如：18501234444。
                      * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
-                     * 设置手机号码，普通格式，示例如：13711112222。
-                     * @param _phoneNumber 手机号码，普通格式，示例如：13711112222。
+                     * 设置手机号码，普通格式，示例如：18501234444。
+                     * @param _phoneNumber 手机号码，普通格式，示例如：18501234444。
                      * 
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
@@ -235,13 +235,13 @@ namespace TencentCloud
                     bool m_nationCodeHasBeenSet;
 
                     /**
-                     * 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
+                     * 手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。
                      */
                     std::string m_purePhoneNumber;
                     bool m_purePhoneNumberHasBeenSet;
 
                     /**
-                     * 手机号码，普通格式，示例如：13711112222。
+                     * 手机号码，普通格式，示例如：18501234444。
                      */
                     std::string m_phoneNumber;
                     bool m_phoneNumberHasBeenSet;

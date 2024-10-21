@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool NationCodeHasBeenSet() const;
 
                     /**
-                     * 获取用户号码，去除国家或地区码前缀的普通格式，示例如：13711112222。
-                     * @return SubscriberNumber 用户号码，去除国家或地区码前缀的普通格式，示例如：13711112222。
+                     * 获取用户号码，去除国家或地区码前缀的普通格式，示例如：18501234444。
+                     * @return SubscriberNumber 用户号码，去除国家或地区码前缀的普通格式，示例如：18501234444。
                      * 
                      */
                     std::string GetSubscriberNumber() const;
 
                     /**
-                     * 设置用户号码，去除国家或地区码前缀的普通格式，示例如：13711112222。
-                     * @param _subscriberNumber 用户号码，去除国家或地区码前缀的普通格式，示例如：13711112222。
+                     * 设置用户号码，去除国家或地区码前缀的普通格式，示例如：18501234444。
+                     * @param _subscriberNumber 用户号码，去除国家或地区码前缀的普通格式，示例如：18501234444。
                      * 
                      */
                     void SetSubscriberNumber(const std::string& _subscriberNumber);
@@ -214,7 +214,7 @@ namespace TencentCloud
                     bool m_nationCodeHasBeenSet;
 
                     /**
-                     * 用户号码，去除国家或地区码前缀的普通格式，示例如：13711112222。
+                     * 用户号码，去除国家或地区码前缀的普通格式，示例如：18501234444。
                      */
                     std::string m_subscriberNumber;
                     bool m_subscriberNumberHasBeenSet;

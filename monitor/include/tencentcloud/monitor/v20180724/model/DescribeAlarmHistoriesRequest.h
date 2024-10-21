@@ -475,6 +475,27 @@ namespace TencentCloud
                      */
                     bool ConvergenceHistoryIDsHasBeenSet() const;
 
+                    /**
+                     * 获取告警类型
+                     * @return AlarmTypes 告警类型
+                     * 
+                     */
+                    std::vector<std::string> GetAlarmTypes() const;
+
+                    /**
+                     * 设置告警类型
+                     * @param _alarmTypes 告警类型
+                     * 
+                     */
+                    void SetAlarmTypes(const std::vector<std::string>& _alarmTypes);
+
+                    /**
+                     * 判断参数 AlarmTypes 是否已赋值
+                     * @return AlarmTypes 是否已赋值
+                     * 
+                     */
+                    bool AlarmTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -599,6 +620,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_convergenceHistoryIDs;
                     bool m_convergenceHistoryIDsHasBeenSet;
+
+                    /**
+                     * 告警类型
+                     */
+                    std::vector<std::string> m_alarmTypes;
+                    bool m_alarmTypesHasBeenSet;
 
                 };
             }

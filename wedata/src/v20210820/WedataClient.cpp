@@ -4985,6 +4985,49 @@ WedataClient::DescribeProjectOutcomeCallable WedataClient::DescribeProjectCallab
     return task->get_future();
 }
 
+WedataClient::DescribeProjectUsersOutcome WedataClient::DescribeProjectUsers(const DescribeProjectUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProjectUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProjectUsersResponse rsp = DescribeProjectUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProjectUsersOutcome(rsp);
+        else
+            return DescribeProjectUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProjectUsersOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeProjectUsersAsync(const DescribeProjectUsersRequest& request, const DescribeProjectUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProjectUsers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeProjectUsersOutcomeCallable WedataClient::DescribeProjectUsersCallable(const DescribeProjectUsersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProjectUsersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProjectUsers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeQualityScoreOutcome WedataClient::DescribeQualityScore(const DescribeQualityScoreRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeQualityScore");

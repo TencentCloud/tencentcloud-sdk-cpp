@@ -271,6 +271,31 @@ POSTPAID 按量付费
                      */
                     bool IpRulesHasBeenSet() const;
 
+                    /**
+                     * 获取公网是否按流量计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillingFlow 公网是否按流量计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetBillingFlow() const;
+
+                    /**
+                     * 设置公网是否按流量计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _billingFlow 公网是否按流量计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBillingFlow(const bool& _billingFlow);
+
+                    /**
+                     * 判断参数 BillingFlow 是否已赋值
+                     * @return BillingFlow 是否已赋值
+                     * 
+                     */
+                    bool BillingFlowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -334,6 +359,13 @@ POSTPAID 按量付费
                      */
                     std::vector<IpRule> m_ipRules;
                     bool m_ipRulesHasBeenSet;
+
+                    /**
+                     * 公网是否按流量计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_billingFlow;
+                    bool m_billingFlowHasBeenSet;
 
                 };
             }

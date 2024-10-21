@@ -216,18 +216,18 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞是否支持自动修复
-0-windows/linux均关闭; 1-windows/linux均打开; 2-仅linux; 3-仅windows
+0-Windows/Linux均关闭; 1-Windows/Linux均打开; 2-仅Linux; 3-仅Windows
                      * @return FixSwitch 漏洞是否支持自动修复
-0-windows/linux均关闭; 1-windows/linux均打开; 2-仅linux; 3-仅windows
+0-Windows/Linux均关闭; 1-Windows/Linux均打开; 2-仅Linux; 3-仅Windows
                      * 
                      */
                     uint64_t GetFixSwitch() const;
 
                     /**
                      * 设置漏洞是否支持自动修复
-0-windows/linux均关闭; 1-windows/linux均打开; 2-仅linux; 3-仅windows
+0-Windows/Linux均关闭; 1-Windows/Linux均打开; 2-仅Linux; 3-仅Windows
                      * @param _fixSwitch 漏洞是否支持自动修复
-0-windows/linux均关闭; 1-windows/linux均打开; 2-仅linux; 3-仅windows
+0-Windows/Linux均关闭; 1-Windows/Linux均打开; 2-仅Linux; 3-仅Windows
                      * 
                      */
                     void SetFixSwitch(const uint64_t& _fixSwitch);
@@ -316,7 +316,7 @@ namespace TencentCloud
 
                     /**
                      * 漏洞是否支持自动修复
-0-windows/linux均关闭; 1-windows/linux均打开; 2-仅linux; 3-仅windows
+0-Windows/Linux均关闭; 1-Windows/Linux均打开; 2-仅Linux; 3-仅Windows
                      */
                     uint64_t m_fixSwitch;
                     bool m_fixSwitchHasBeenSet;

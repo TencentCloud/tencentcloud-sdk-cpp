@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取集群ID
+                     * @return InstanceId 集群ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置集群ID
+                     * @param _instanceId 集群ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -62,27 +62,6 @@ namespace TencentCloud
                      * 
                      */
                     bool InstanceIdHasBeenSet() const;
-
-                    /**
-                     * 获取消费组名称
-                     * @return ConsumerGroup 消费组名称
-                     * 
-                     */
-                    std::string GetConsumerGroup() const;
-
-                    /**
-                     * 设置消费组名称
-                     * @param _consumerGroup 消费组名称
-                     * 
-                     */
-                    void SetConsumerGroup(const std::string& _consumerGroup);
-
-                    /**
-                     * 判断参数 ConsumerGroup 是否已赋值
-                     * @return ConsumerGroup 是否已赋值
-                     * 
-                     */
-                    bool ConsumerGroupHasBeenSet() const;
 
                     /**
                      * 获取最大重试次数
@@ -152,6 +131,27 @@ namespace TencentCloud
                     bool ConsumeMessageOrderlyHasBeenSet() const;
 
                     /**
+                     * 获取消费组名称
+                     * @return ConsumerGroup 消费组名称
+                     * 
+                     */
+                    std::string GetConsumerGroup() const;
+
+                    /**
+                     * 设置消费组名称
+                     * @param _consumerGroup 消费组名称
+                     * 
+                     */
+                    void SetConsumerGroup(const std::string& _consumerGroup);
+
+                    /**
+                     * 判断参数 ConsumerGroup 是否已赋值
+                     * @return ConsumerGroup 是否已赋值
+                     * 
+                     */
+                    bool ConsumerGroupHasBeenSet() const;
+
+                    /**
                      * 获取备注
                      * @return Remark 备注
                      * 
@@ -175,16 +175,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 集群ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
-
-                    /**
-                     * 消费组名称
-                     */
-                    std::string m_consumerGroup;
-                    bool m_consumerGroupHasBeenSet;
 
                     /**
                      * 最大重试次数
@@ -204,6 +198,12 @@ namespace TencentCloud
                      */
                     bool m_consumeMessageOrderly;
                     bool m_consumeMessageOrderlyHasBeenSet;
+
+                    /**
+                     * 消费组名称
+                     */
+                    std::string m_consumerGroup;
+                    bool m_consumerGroupHasBeenSet;
 
                     /**
                      * 备注

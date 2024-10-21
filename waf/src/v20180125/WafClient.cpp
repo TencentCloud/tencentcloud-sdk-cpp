@@ -3179,6 +3179,49 @@ WafClient::DescribePortsOutcomeCallable WafClient::DescribePortsCallable(const D
     return task->get_future();
 }
 
+WafClient::DescribeProtectionModesOutcome WafClient::DescribeProtectionModes(const DescribeProtectionModesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProtectionModes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProtectionModesResponse rsp = DescribeProtectionModesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProtectionModesOutcome(rsp);
+        else
+            return DescribeProtectionModesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProtectionModesOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeProtectionModesAsync(const DescribeProtectionModesRequest& request, const DescribeProtectionModesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProtectionModes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeProtectionModesOutcomeCallable WafClient::DescribeProtectionModesCallable(const DescribeProtectionModesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProtectionModesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProtectionModes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeRuleLimitOutcome WafClient::DescribeRuleLimit(const DescribeRuleLimitRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRuleLimit");

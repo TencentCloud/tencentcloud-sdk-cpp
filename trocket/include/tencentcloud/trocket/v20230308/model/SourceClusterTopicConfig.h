@@ -289,6 +289,81 @@ Failure 失败
                      */
                     bool ImportStatusHasBeenSet() const;
 
+                    /**
+                     * 获取4.x的命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NamespaceV4 4.x的命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNamespaceV4() const;
+
+                    /**
+                     * 设置4.x的命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _namespaceV4 4.x的命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNamespaceV4(const std::string& _namespaceV4);
+
+                    /**
+                     * 判断参数 NamespaceV4 是否已赋值
+                     * @return NamespaceV4 是否已赋值
+                     * 
+                     */
+                    bool NamespaceV4HasBeenSet() const;
+
+                    /**
+                     * 获取4.x的主题名，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicNameV4 4.x的主题名，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTopicNameV4() const;
+
+                    /**
+                     * 设置4.x的主题名，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _topicNameV4 4.x的主题名，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTopicNameV4(const std::string& _topicNameV4);
+
+                    /**
+                     * 判断参数 TopicNameV4 是否已赋值
+                     * @return TopicNameV4 是否已赋值
+                     * 
+                     */
+                    bool TopicNameV4HasBeenSet() const;
+
+                    /**
+                     * 获取4.x的完整命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FullNamespaceV4 4.x的完整命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFullNamespaceV4() const;
+
+                    /**
+                     * 设置4.x的完整命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fullNamespaceV4 4.x的完整命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFullNamespaceV4(const std::string& _fullNamespaceV4);
+
+                    /**
+                     * 判断参数 FullNamespaceV4 是否已赋值
+                     * @return FullNamespaceV4 是否已赋值
+                     * 
+                     */
+                    bool FullNamespaceV4HasBeenSet() const;
+
                 private:
 
                     /**
@@ -356,6 +431,27 @@ Failure 失败
                      */
                     std::string m_importStatus;
                     bool m_importStatusHasBeenSet;
+
+                    /**
+                     * 4.x的命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_namespaceV4;
+                    bool m_namespaceV4HasBeenSet;
+
+                    /**
+                     * 4.x的主题名，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_topicNameV4;
+                    bool m_topicNameV4HasBeenSet;
+
+                    /**
+                     * 4.x的完整命名空间，出参使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fullNamespaceV4;
+                    bool m_fullNamespaceV4HasBeenSet;
 
                 };
             }

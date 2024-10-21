@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取集群ID
+                     * @return InstanceId 集群ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置集群ID
+                     * @param _instanceId 集群ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题
-                     * @return Topic 主题
+                     * 获取主题名称
+                     * @return Topic 主题名称
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置主题
-                     * @param _topic 主题
+                     * 设置主题名称
+                     * @param _topic 主题名称
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -191,13 +191,13 @@ TRANSACTION:事务消息
                 private:
 
                     /**
-                     * 实例ID
+                     * 集群ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题
+                     * 主题名称
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;

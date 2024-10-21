@@ -29,7 +29,8 @@ DescribeCaptchaResultResponse::DescribeCaptchaResultResponse() :
     m_evilLevelHasBeenSet(false),
     m_getCaptchaTimeHasBeenSet(false),
     m_evilBitmapHasBeenSet(false),
-    m_submitCaptchaTimeHasBeenSet(false)
+    m_submitCaptchaTimeHasBeenSet(false),
+    m_deviceRiskCategoryHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome DescribeCaptchaResultResponse::Deserialize(const string &pay
         m_submitCaptchaTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DeviceRiskCategory") && !rsp["DeviceRiskCategory"].IsNull())
+    {
+        if (!rsp["DeviceRiskCategory"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceRiskCategory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceRiskCategory = string(rsp["DeviceRiskCategory"].GetString());
+        m_deviceRiskCategoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +194,14 @@ string DescribeCaptchaResultResponse::ToJsonString() const
         string key = "SubmitCaptchaTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_submitCaptchaTime, allocator);
+    }
+
+    if (m_deviceRiskCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceRiskCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceRiskCategory.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +274,16 @@ int64_t DescribeCaptchaResultResponse::GetSubmitCaptchaTime() const
 bool DescribeCaptchaResultResponse::SubmitCaptchaTimeHasBeenSet() const
 {
     return m_submitCaptchaTimeHasBeenSet;
+}
+
+string DescribeCaptchaResultResponse::GetDeviceRiskCategory() const
+{
+    return m_deviceRiskCategory;
+}
+
+bool DescribeCaptchaResultResponse::DeviceRiskCategoryHasBeenSet() const
+{
+    return m_deviceRiskCategoryHasBeenSet;
 }
 
 

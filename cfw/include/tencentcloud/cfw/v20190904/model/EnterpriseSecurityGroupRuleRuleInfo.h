@@ -148,18 +148,66 @@ namespace TencentCloud
                     bool SourceIdHasBeenSet() const;
 
                     /**
-                     * 获取源规则类型
+                     * 获取源规则类型 
+取值范围 0/1/2/3/4/5/6/7/8/9/100
+0表示ip(net),
+1表示VPC实例(intance)
+2表示子网实例(intance)
+3表示CVM实例(intance)
+4表示CLB实例(intance)
+5表示ENI实例(intance)
+6表示数据库实例(intance)
+7表示模版(template)
+8表示标签(tag)
+9表示地域(region)
+100表示资产分组(resourcegroup)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SourceType 源规则类型
+                     * @return SourceType 源规则类型 
+取值范围 0/1/2/3/4/5/6/7/8/9/100
+0表示ip(net),
+1表示VPC实例(intance)
+2表示子网实例(intance)
+3表示CVM实例(intance)
+4表示CLB实例(intance)
+5表示ENI实例(intance)
+6表示数据库实例(intance)
+7表示模版(template)
+8表示标签(tag)
+9表示地域(region)
+100表示资产分组(resourcegroup)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSourceType() const;
 
                     /**
-                     * 设置源规则类型
+                     * 设置源规则类型 
+取值范围 0/1/2/3/4/5/6/7/8/9/100
+0表示ip(net),
+1表示VPC实例(intance)
+2表示子网实例(intance)
+3表示CVM实例(intance)
+4表示CLB实例(intance)
+5表示ENI实例(intance)
+6表示数据库实例(intance)
+7表示模版(template)
+8表示标签(tag)
+9表示地域(region)
+100表示资产分组(resourcegroup)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sourceType 源规则类型
+                     * @param _sourceType 源规则类型 
+取值范围 0/1/2/3/4/5/6/7/8/9/100
+0表示ip(net),
+1表示VPC实例(intance)
+2表示子网实例(intance)
+3表示CVM实例(intance)
+4表示CLB实例(intance)
+5表示ENI实例(intance)
+6表示数据库实例(intance)
+7表示模版(template)
+8表示标签(tag)
+9表示地域(region)
+100表示资产分组(resourcegroup)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,18 +246,66 @@ namespace TencentCloud
                     bool TargetIdHasBeenSet() const;
 
                     /**
-                     * 获取目的规则类型
+                     * 获取目的规则类型 
+取值范围 0/1/2/3/4/5/6/7/8/9/100
+0表示ip(net),
+1表示VPC实例(intance)
+2表示子网实例(intance)
+3表示CVM实例(intance)
+4表示CLB实例(intance)
+5表示ENI实例(intance)
+6表示数据库实例(intance)
+7表示模版(template)
+8表示标签(tag)
+9表示地域(region)
+100表示资产分组(resourcegroup)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetType 目的规则类型
+                     * @return TargetType 目的规则类型 
+取值范围 0/1/2/3/4/5/6/7/8/9/100
+0表示ip(net),
+1表示VPC实例(intance)
+2表示子网实例(intance)
+3表示CVM实例(intance)
+4表示CLB实例(intance)
+5表示ENI实例(intance)
+6表示数据库实例(intance)
+7表示模版(template)
+8表示标签(tag)
+9表示地域(region)
+100表示资产分组(resourcegroup)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTargetType() const;
 
                     /**
-                     * 设置目的规则类型
+                     * 设置目的规则类型 
+取值范围 0/1/2/3/4/5/6/7/8/9/100
+0表示ip(net),
+1表示VPC实例(intance)
+2表示子网实例(intance)
+3表示CVM实例(intance)
+4表示CLB实例(intance)
+5表示ENI实例(intance)
+6表示数据库实例(intance)
+7表示模版(template)
+8表示标签(tag)
+9表示地域(region)
+100表示资产分组(resourcegroup)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetType 目的规则类型
+                     * @param _targetType 目的规则类型 
+取值范围 0/1/2/3/4/5/6/7/8/9/100
+0表示ip(net),
+1表示VPC实例(intance)
+2表示子网实例(intance)
+3表示CVM实例(intance)
+4表示CLB实例(intance)
+5表示ENI实例(intance)
+6表示数据库实例(intance)
+7表示模版(template)
+8表示标签(tag)
+9表示地域(region)
+100表示资产分组(resourcegroup)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,8 +320,14 @@ namespace TencentCloud
 
                     /**
                      * 获取协议名称
+取值范围:TCP/ANY/ICMP/UDP
+ANY:表示所有
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议名称
+取值范围:TCP/ANY/ICMP/UDP
+ANY:表示所有
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -233,8 +335,14 @@ namespace TencentCloud
 
                     /**
                      * 设置协议名称
+取值范围:TCP/ANY/ICMP/UDP
+ANY:表示所有
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 协议名称
+取值范围:TCP/ANY/ICMP/UDP
+ANY:表示所有
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -273,18 +381,30 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取策略，1阻断，2放行
+                     * 获取规则策略
+取值范围:1/2
+1:阻断
+2:放行
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Strategy 策略，1阻断，2放行
+                     * @return Strategy 规则策略
+取值范围:1/2
+1:阻断
+2:放行
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStrategy() const;
 
                     /**
-                     * 设置策略，1阻断，2放行
+                     * 设置规则策略
+取值范围:1/2
+1:阻断
+2:放行
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _strategy 策略，1阻断，2放行
+                     * @param _strategy 规则策略
+取值范围:1/2
+1:阻断
+2:放行
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -298,18 +418,30 @@ namespace TencentCloud
                     bool StrategyHasBeenSet() const;
 
                     /**
-                     * 获取启用状态 ，0未开启，1开启
+                     * 获取规则启用状态 
+取值范围： 0/1
+0:未开启
+1:开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 启用状态 ，0未开启，1开启
+                     * @return Status 规则启用状态 
+取值范围： 0/1
+0:未开启
+1:开启
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置启用状态 ，0未开启，1开启
+                     * 设置规则启用状态 
+取值范围： 0/1
+0:未开启
+1:开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 启用状态 ，0未开启，1开启
+                     * @param _status 规则启用状态 
+取值范围： 0/1
+0:未开启
+1:开启
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -373,18 +505,30 @@ namespace TencentCloud
                     bool AclTagsHasBeenSet() const;
 
                     /**
-                     * 获取是否最新一次改动的规则,0否，1是
+                     * 获取规则最新一次是否有改动
+取值范围：0/1
+0:否
+1:是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsNew 是否最新一次改动的规则,0否，1是
+                     * @return IsNew 规则最新一次是否有改动
+取值范围：0/1
+0:否
+1:是
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsNew() const;
 
                     /**
-                     * 设置是否最新一次改动的规则,0否，1是
+                     * 设置规则最新一次是否有改动
+取值范围：0/1
+0:否
+1:是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isNew 是否最新一次改动的规则,0否，1是
+                     * @param _isNew 规则最新一次是否有改动
+取值范围：0/1
+0:否
+1:是
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -423,18 +567,26 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取是否延迟下发
+                     * 获取是否延迟下发规则 
+取值范围：0/1
+0:立即下发 1:延迟下发
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsDelay 是否延迟下发
+                     * @return IsDelay 是否延迟下发规则 
+取值范围：0/1
+0:立即下发 1:延迟下发
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsDelay() const;
 
                     /**
-                     * 设置是否延迟下发
+                     * 设置是否延迟下发规则 
+取值范围：0/1
+0:立即下发 1:延迟下发
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isDelay 是否延迟下发
+                     * @param _isDelay 是否延迟下发规则 
+取值范围：0/1
+0:立即下发 1:延迟下发
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -748,18 +900,18 @@ namespace TencentCloud
                     bool ProtocolPortNameHasBeenSet() const;
 
                     /**
-                     * 获取自动化任务任务信息
+                     * 获取自动化任务信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BetaList 自动化任务任务信息
+                     * @return BetaList 自动化任务信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EnterpriseSecurityGroupRuleBetaInfo> GetBetaList() const;
 
                     /**
-                     * 设置自动化任务任务信息
+                     * 设置自动化任务信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _betaList 自动化任务任务信息
+                     * @param _betaList 自动化任务信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -773,18 +925,18 @@ namespace TencentCloud
                     bool BetaListHasBeenSet() const;
 
                     /**
-                     * 获取规则id
+                     * 获取规则id  等同RuleUuid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 规则id
+                     * @return Id 规则id  等同RuleUuid
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置规则id
+                     * 设置规则id  等同RuleUuid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id 规则id
+                     * @param _id 规则id  等同RuleUuid
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -828,7 +980,19 @@ namespace TencentCloud
                     bool m_sourceIdHasBeenSet;
 
                     /**
-                     * 源规则类型
+                     * 源规则类型 
+取值范围 0/1/2/3/4/5/6/7/8/9/100
+0表示ip(net),
+1表示VPC实例(intance)
+2表示子网实例(intance)
+3表示CVM实例(intance)
+4表示CLB实例(intance)
+5表示ENI实例(intance)
+6表示数据库实例(intance)
+7表示模版(template)
+8表示标签(tag)
+9表示地域(region)
+100表示资产分组(resourcegroup)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sourceType;
@@ -842,7 +1006,19 @@ namespace TencentCloud
                     bool m_targetIdHasBeenSet;
 
                     /**
-                     * 目的规则类型
+                     * 目的规则类型 
+取值范围 0/1/2/3/4/5/6/7/8/9/100
+0表示ip(net),
+1表示VPC实例(intance)
+2表示子网实例(intance)
+3表示CVM实例(intance)
+4表示CLB实例(intance)
+5表示ENI实例(intance)
+6表示数据库实例(intance)
+7表示模版(template)
+8表示标签(tag)
+9表示地域(region)
+100表示资产分组(resourcegroup)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_targetType;
@@ -850,6 +1026,9 @@ namespace TencentCloud
 
                     /**
                      * 协议名称
+取值范围:TCP/ANY/ICMP/UDP
+ANY:表示所有
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
@@ -863,14 +1042,20 @@ namespace TencentCloud
                     bool m_portHasBeenSet;
 
                     /**
-                     * 策略，1阻断，2放行
+                     * 规则策略
+取值范围:1/2
+1:阻断
+2:放行
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_strategy;
                     bool m_strategyHasBeenSet;
 
                     /**
-                     * 启用状态 ，0未开启，1开启
+                     * 规则启用状态 
+取值范围： 0/1
+0:未开启
+1:开启
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
@@ -891,7 +1076,10 @@ namespace TencentCloud
                     bool m_aclTagsHasBeenSet;
 
                     /**
-                     * 是否最新一次改动的规则,0否，1是
+                     * 规则最新一次是否有改动
+取值范围：0/1
+0:否
+1:是
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isNew;
@@ -905,7 +1093,9 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 是否延迟下发
+                     * 是否延迟下发规则 
+取值范围：0/1
+0:立即下发 1:延迟下发
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isDelay;
@@ -996,14 +1186,14 @@ namespace TencentCloud
                     bool m_protocolPortNameHasBeenSet;
 
                     /**
-                     * 自动化任务任务信息
+                     * 自动化任务信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EnterpriseSecurityGroupRuleBetaInfo> m_betaList;
                     bool m_betaListHasBeenSet;
 
                     /**
-                     * 规则id
+                     * 规则id  等同RuleUuid
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;

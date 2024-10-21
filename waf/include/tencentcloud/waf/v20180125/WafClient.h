@@ -169,6 +169,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribePolicyStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribePortsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribePortsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeProtectionModesRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeProtectionModesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeRuleLimitRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeRuleLimitResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeSessionRequest.h>
@@ -542,6 +544,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePortsResponse> DescribePortsOutcome;
                 typedef std::future<DescribePortsOutcome> DescribePortsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribePortsRequest&, DescribePortsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePortsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProtectionModesResponse> DescribeProtectionModesOutcome;
+                typedef std::future<DescribeProtectionModesOutcome> DescribeProtectionModesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeProtectionModesRequest&, DescribeProtectionModesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRuleLimitResponse> DescribeRuleLimitOutcome;
                 typedef std::future<DescribeRuleLimitOutcome> DescribeRuleLimitOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeRuleLimitRequest&, DescribeRuleLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleLimitAsyncHandler;
@@ -1417,6 +1422,15 @@ namespace TencentCloud
                 DescribePortsOutcome DescribePorts(const Model::DescribePortsRequest &request);
                 void DescribePortsAsync(const Model::DescribePortsRequest& request, const DescribePortsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePortsOutcomeCallable DescribePortsCallable(const Model::DescribePortsRequest& request);
+
+                /**
+                 *查询Tiga引擎大类规则及其防护模式
+                 * @param req DescribeProtectionModesRequest
+                 * @return DescribeProtectionModesOutcome
+                 */
+                DescribeProtectionModesOutcome DescribeProtectionModes(const Model::DescribeProtectionModesRequest &request);
+                void DescribeProtectionModesAsync(const Model::DescribeProtectionModesRequest& request, const DescribeProtectionModesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProtectionModesOutcomeCallable DescribeProtectionModesCallable(const Model::DescribeProtectionModesRequest& request);
 
                 /**
                  *获取各个模块具体的规格限制

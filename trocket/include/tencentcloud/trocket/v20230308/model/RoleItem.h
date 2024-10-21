@@ -68,48 +68,6 @@ namespace TencentCloud
                     bool RoleNameHasBeenSet() const;
 
                     /**
-                     * 获取Access Key
-                     * @return AccessKey Access Key
-                     * 
-                     */
-                    std::string GetAccessKey() const;
-
-                    /**
-                     * 设置Access Key
-                     * @param _accessKey Access Key
-                     * 
-                     */
-                    void SetAccessKey(const std::string& _accessKey);
-
-                    /**
-                     * 判断参数 AccessKey 是否已赋值
-                     * @return AccessKey 是否已赋值
-                     * 
-                     */
-                    bool AccessKeyHasBeenSet() const;
-
-                    /**
-                     * 获取Secret Key
-                     * @return SecretKey Secret Key
-                     * 
-                     */
-                    std::string GetSecretKey() const;
-
-                    /**
-                     * 设置Secret Key
-                     * @param _secretKey Secret Key
-                     * 
-                     */
-                    void SetSecretKey(const std::string& _secretKey);
-
-                    /**
-                     * 判断参数 SecretKey 是否已赋值
-                     * @return SecretKey 是否已赋值
-                     * 
-                     */
-                    bool SecretKeyHasBeenSet() const;
-
-                    /**
                      * 获取是否开启消费
                      * @return PermRead 是否开启消费
                      * 
@@ -150,6 +108,48 @@ namespace TencentCloud
                      * 
                      */
                     bool PermWriteHasBeenSet() const;
+
+                    /**
+                     * 获取Access Key
+                     * @return AccessKey Access Key
+                     * 
+                     */
+                    std::string GetAccessKey() const;
+
+                    /**
+                     * 设置Access Key
+                     * @param _accessKey Access Key
+                     * 
+                     */
+                    void SetAccessKey(const std::string& _accessKey);
+
+                    /**
+                     * 判断参数 AccessKey 是否已赋值
+                     * @return AccessKey 是否已赋值
+                     * 
+                     */
+                    bool AccessKeyHasBeenSet() const;
+
+                    /**
+                     * 获取Secret Key
+                     * @return SecretKey Secret Key
+                     * 
+                     */
+                    std::string GetSecretKey() const;
+
+                    /**
+                     * 设置Secret Key
+                     * @param _secretKey Secret Key
+                     * 
+                     */
+                    void SetSecretKey(const std::string& _secretKey);
+
+                    /**
+                     * 判断参数 SecretKey 是否已赋值
+                     * @return SecretKey 是否已赋值
+                     * 
+                     */
+                    bool SecretKeyHasBeenSet() const;
 
                     /**
                      * 获取备注信息
@@ -223,18 +223,6 @@ namespace TencentCloud
                     bool m_roleNameHasBeenSet;
 
                     /**
-                     * Access Key
-                     */
-                    std::string m_accessKey;
-                    bool m_accessKeyHasBeenSet;
-
-                    /**
-                     * Secret Key
-                     */
-                    std::string m_secretKey;
-                    bool m_secretKeyHasBeenSet;
-
-                    /**
                      * 是否开启消费
                      */
                     bool m_permRead;
@@ -245,6 +233,18 @@ namespace TencentCloud
                      */
                     bool m_permWrite;
                     bool m_permWriteHasBeenSet;
+
+                    /**
+                     * Access Key
+                     */
+                    std::string m_accessKey;
+                    bool m_accessKeyHasBeenSet;
+
+                    /**
+                     * Secret Key
+                     */
+                    std::string m_secretKey;
+                    bool m_secretKeyHasBeenSet;
 
                     /**
                      * 备注信息

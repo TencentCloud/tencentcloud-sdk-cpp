@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取是否包含新控制台集群
-                     * @return IncludeNew 是否包含新控制台集群
+                     * 获取是否包含新控制台集群：默认为包含
+                     * @return IncludeNew 是否包含新控制台集群：默认为包含
                      * 
                      */
                     bool GetIncludeNew() const;
 
                     /**
-                     * 设置是否包含新控制台集群
-                     * @param _includeNew 是否包含新控制台集群
+                     * 设置是否包含新控制台集群：默认为包含
+                     * @param _includeNew 是否包含新控制台集群：默认为包含
                      * 
                      */
                     void SetIncludeNew(const bool& _includeNew);
@@ -148,7 +148,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 是否包含新控制台集群
+                     * 是否包含新控制台集群：默认为包含
                      */
                     bool m_includeNew;
                     bool m_includeNewHasBeenSet;

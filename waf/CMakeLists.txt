@@ -153,6 +153,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/SearchItem.h
   include/tencentcloud/waf/v20180125/model/ApiPkg.h
   include/tencentcloud/waf/v20180125/model/DescribeAreaBanSupportAreasResponse.h
+  include/tencentcloud/waf/v20180125/model/TigaMainClassMode.h
   include/tencentcloud/waf/v20180125/model/AccessFieldValueRatioInfo.h
   include/tencentcloud/waf/v20180125/model/DescribePortsRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeWafAutoDenyStatusResponse.h
@@ -263,6 +264,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyBotStatusResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusResponse.h
   include/tencentcloud/waf/v20180125/model/DomainRuleId.h
+  include/tencentcloud/waf/v20180125/model/DescribeProtectionModesRequest.h
   include/tencentcloud/waf/v20180125/model/PortItem.h
   include/tencentcloud/waf/v20180125/model/DescribeCCAutoStatusResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusRequest.h
@@ -315,6 +317,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyDomainPostActionRequest.h
   include/tencentcloud/waf/v20180125/model/BotPkg.h
   include/tencentcloud/waf/v20180125/model/UpsertCCAutoStatusRequest.h
+  include/tencentcloud/waf/v20180125/model/DescribeProtectionModesResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeWafAutoDenyRulesResponse.h
   include/tencentcloud/waf/v20180125/model/RefreshAccessCheckResultRequest.h
   include/tencentcloud/waf/v20180125/model/IpHitItemsData.h
@@ -549,6 +552,7 @@ set(waf_src
   src/v20180125/model/SearchItem.cpp
   src/v20180125/model/ApiPkg.cpp
   src/v20180125/model/DescribeAreaBanSupportAreasResponse.cpp
+  src/v20180125/model/TigaMainClassMode.cpp
   src/v20180125/model/AccessFieldValueRatioInfo.cpp
   src/v20180125/model/DescribePortsRequest.cpp
   src/v20180125/model/DescribeWafAutoDenyStatusResponse.cpp
@@ -659,6 +663,7 @@ set(waf_src
   src/v20180125/model/ModifyBotStatusResponse.cpp
   src/v20180125/model/ModifyCustomRuleStatusResponse.cpp
   src/v20180125/model/DomainRuleId.cpp
+  src/v20180125/model/DescribeProtectionModesRequest.cpp
   src/v20180125/model/PortItem.cpp
   src/v20180125/model/DescribeCCAutoStatusResponse.cpp
   src/v20180125/model/ModifyCustomRuleStatusRequest.cpp
@@ -711,6 +716,7 @@ set(waf_src
   src/v20180125/model/ModifyDomainPostActionRequest.cpp
   src/v20180125/model/BotPkg.cpp
   src/v20180125/model/UpsertCCAutoStatusRequest.cpp
+  src/v20180125/model/DescribeProtectionModesResponse.cpp
   src/v20180125/model/DescribeWafAutoDenyRulesResponse.cpp
   src/v20180125/model/RefreshAccessCheckResultRequest.cpp
   src/v20180125/model/IpHitItemsData.cpp

@@ -171,6 +171,24 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取消费模式：
+BROADCASTING 广播模式
+CLUSTERING 集群模式
+                     * @return MessageModel 消费模式：
+BROADCASTING 广播模式
+CLUSTERING 集群模式
+                     * 
+                     */
+                    std::string GetMessageModel() const;
+
+                    /**
+                     * 判断参数 MessageModel 是否已赋值
+                     * @return MessageModel 是否已赋值
+                     * 
+                     */
+                    bool MessageModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -227,6 +245,14 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 消费模式：
+BROADCASTING 广播模式
+CLUSTERING 集群模式
+                     */
+                    std::string m_messageModel;
+                    bool m_messageModelHasBeenSet;
 
                 };
             }

@@ -470,6 +470,49 @@ TdmqClient::CreateProClusterOutcomeCallable TdmqClient::CreateProClusterCallable
     return task->get_future();
 }
 
+TdmqClient::CreateRabbitMQBindingOutcome TdmqClient::CreateRabbitMQBinding(const CreateRabbitMQBindingRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRabbitMQBinding");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRabbitMQBindingResponse rsp = CreateRabbitMQBindingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRabbitMQBindingOutcome(rsp);
+        else
+            return CreateRabbitMQBindingOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRabbitMQBindingOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::CreateRabbitMQBindingAsync(const CreateRabbitMQBindingRequest& request, const CreateRabbitMQBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRabbitMQBinding(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::CreateRabbitMQBindingOutcomeCallable TdmqClient::CreateRabbitMQBindingCallable(const CreateRabbitMQBindingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRabbitMQBindingOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRabbitMQBinding(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::CreateRabbitMQUserOutcome TdmqClient::CreateRabbitMQUser(const CreateRabbitMQUserRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRabbitMQUser");

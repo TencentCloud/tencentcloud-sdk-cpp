@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取失败详情
-                     * @return FailType 失败详情
+                     * 获取失败类型  3离线、4超时、5失败、8agent版本过低
+                     * @return FailType 失败类型  3离线、4超时、5失败、8agent版本过低
                      * 
                      */
                     uint64_t GetFailType() const;
 
                     /**
-                     * 设置失败详情
-                     * @param _failType 失败详情
+                     * 设置失败类型  3离线、4超时、5失败、8agent版本过低
+                     * @param _failType 失败类型  3离线、4超时、5失败、8agent版本过低
                      * 
                      */
                     void SetFailType(const uint64_t& _failType);
@@ -414,7 +414,7 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 失败详情
+                     * 失败类型  3离线、4超时、5失败、8agent版本过低
                      */
                     uint64_t m_failType;
                     bool m_failTypeHasBeenSet;

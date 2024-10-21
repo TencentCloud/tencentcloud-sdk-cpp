@@ -32,7 +32,9 @@ CreateBatchQuickSignUrlRequest::CreateBatchQuickSignUrlRequest() :
     m_signatureTypesHasBeenSet(false),
     m_approverSignTypesHasBeenSet(false),
     m_signTypeSelectorHasBeenSet(false),
-    m_flowBatchUrlInfoHasBeenSet(false)
+    m_flowBatchUrlInfoHasBeenSet(false),
+    m_intentionHasBeenSet(false),
+    m_cacheApproverInfoHasBeenSet(false)
 {
 }
 
@@ -140,6 +142,23 @@ string CreateBatchQuickSignUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_flowBatchUrlInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_intentionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Intention";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_intention.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_cacheApproverInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CacheApproverInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cacheApproverInfo, allocator);
     }
 
 
@@ -308,6 +327,38 @@ void CreateBatchQuickSignUrlRequest::SetFlowBatchUrlInfo(const FlowBatchUrlInfo&
 bool CreateBatchQuickSignUrlRequest::FlowBatchUrlInfoHasBeenSet() const
 {
     return m_flowBatchUrlInfoHasBeenSet;
+}
+
+Intention CreateBatchQuickSignUrlRequest::GetIntention() const
+{
+    return m_intention;
+}
+
+void CreateBatchQuickSignUrlRequest::SetIntention(const Intention& _intention)
+{
+    m_intention = _intention;
+    m_intentionHasBeenSet = true;
+}
+
+bool CreateBatchQuickSignUrlRequest::IntentionHasBeenSet() const
+{
+    return m_intentionHasBeenSet;
+}
+
+bool CreateBatchQuickSignUrlRequest::GetCacheApproverInfo() const
+{
+    return m_cacheApproverInfo;
+}
+
+void CreateBatchQuickSignUrlRequest::SetCacheApproverInfo(const bool& _cacheApproverInfo)
+{
+    m_cacheApproverInfo = _cacheApproverInfo;
+    m_cacheApproverInfoHasBeenSet = true;
+}
+
+bool CreateBatchQuickSignUrlRequest::CacheApproverInfoHasBeenSet() const
+{
+    return m_cacheApproverInfoHasBeenSet;
 }
 
 

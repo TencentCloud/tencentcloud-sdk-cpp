@@ -53,7 +53,8 @@ AlarmHistory::AlarmHistory() :
     m_alarmShieldingShowTimeHasBeenSet(false),
     m_alarmShieldReasonHasBeenSet(false),
     m_internalDimensionsHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
+    m_metricNameHasBeenSet(false),
+    m_policyPermissionsHasBeenSet(false)
 {
 }
 
@@ -421,6 +422,16 @@ CoreInternalOutcome AlarmHistory::Deserialize(const rapidjson::Value &value)
         m_metricNameHasBeenSet = true;
     }
 
+    if (value.HasMember("PolicyPermissions") && !value["PolicyPermissions"].IsNull())
+    {
+        if (!value["PolicyPermissions"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmHistory.PolicyPermissions` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_policyPermissions = value["PolicyPermissions"].GetUint64();
+        m_policyPermissionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -719,6 +730,14 @@ void AlarmHistory::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "MetricName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_metricName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyPermissionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyPermissions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_policyPermissions, allocator);
     }
 
 }
@@ -1250,5 +1269,21 @@ void AlarmHistory::SetMetricName(const string& _metricName)
 bool AlarmHistory::MetricNameHasBeenSet() const
 {
     return m_metricNameHasBeenSet;
+}
+
+uint64_t AlarmHistory::GetPolicyPermissions() const
+{
+    return m_policyPermissions;
+}
+
+void AlarmHistory::SetPolicyPermissions(const uint64_t& _policyPermissions)
+{
+    m_policyPermissions = _policyPermissions;
+    m_policyPermissionsHasBeenSet = true;
+}
+
+bool AlarmHistory::PolicyPermissionsHasBeenSet() const
+{
+    return m_policyPermissionsHasBeenSet;
 }
 

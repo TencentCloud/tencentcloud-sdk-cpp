@@ -339,18 +339,26 @@ namespace TencentCloud
                     bool QosHasBeenSet() const;
 
                     /**
-                     * 获取1、2、3
+                     * 获取1：表示匹配retain消息
+2：表示匹配非retain消息
+3：表示匹配retain和非retain消息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Retain 1、2、3
+                     * @return Retain 1：表示匹配retain消息
+2：表示匹配非retain消息
+3：表示匹配retain和非retain消息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRetain() const;
 
                     /**
-                     * 设置1、2、3
+                     * 设置1：表示匹配retain消息
+2：表示匹配非retain消息
+3：表示匹配retain和非retain消息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _retain 1、2、3
+                     * @param _retain 1：表示匹配retain消息
+2：表示匹配非retain消息
+3：表示匹配retain和非retain消息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -515,7 +523,9 @@ namespace TencentCloud
                     bool m_qosHasBeenSet;
 
                     /**
-                     * 1、2、3
+                     * 1：表示匹配retain消息
+2：表示匹配非retain消息
+3：表示匹配retain和非retain消息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_retain;

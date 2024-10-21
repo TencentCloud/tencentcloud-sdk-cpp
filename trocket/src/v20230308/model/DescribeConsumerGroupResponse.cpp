@@ -32,7 +32,8 @@ DescribeConsumerGroupResponse::DescribeConsumerGroupResponse() :
     m_consumeMessageOrderlyHasBeenSet(false),
     m_consumeEnableHasBeenSet(false),
     m_maxRetryTimesHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_messageModelHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ CoreInternalOutcome DescribeConsumerGroupResponse::Deserialize(const string &pay
         m_remarkHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MessageModel") && !rsp["MessageModel"].IsNull())
+    {
+        if (!rsp["MessageModel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MessageModel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_messageModel = string(rsp["MessageModel"].GetString());
+        m_messageModelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +251,14 @@ string DescribeConsumerGroupResponse::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_messageModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_messageModel.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -342,6 +361,16 @@ string DescribeConsumerGroupResponse::GetRemark() const
 bool DescribeConsumerGroupResponse::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string DescribeConsumerGroupResponse::GetMessageModel() const
+{
+    return m_messageModel;
+}
+
+bool DescribeConsumerGroupResponse::MessageModelHasBeenSet() const
+{
+    return m_messageModelHasBeenSet;
 }
 
 

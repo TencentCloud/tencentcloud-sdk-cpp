@@ -31,7 +31,8 @@ TemplateListInfo::TemplateListInfo() :
     m_rulesNumHasBeenSet(false),
     m_templateIdHasBeenSet(false),
     m_protocolTypeHasBeenSet(false),
-    m_iPNumHasBeenSet(false)
+    m_iPNumHasBeenSet(false),
+    m_ipVersionHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome TemplateListInfo::Deserialize(const rapidjson::Value &value)
         m_iPNumHasBeenSet = true;
     }
 
+    if (value.HasMember("IpVersion") && !value["IpVersion"].IsNull())
+    {
+        if (!value["IpVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateListInfo.IpVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipVersion = value["IpVersion"].GetInt64();
+        m_ipVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void TemplateListInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "IPNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_iPNum, allocator);
+    }
+
+    if (m_ipVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipVersion, allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void TemplateListInfo::SetIPNum(const int64_t& _iPNum)
 bool TemplateListInfo::IPNumHasBeenSet() const
 {
     return m_iPNumHasBeenSet;
+}
+
+int64_t TemplateListInfo::GetIpVersion() const
+{
+    return m_ipVersion;
+}
+
+void TemplateListInfo::SetIpVersion(const int64_t& _ipVersion)
+{
+    m_ipVersion = _ipVersion;
+    m_ipVersionHasBeenSet = true;
+}
+
+bool TemplateListInfo::IpVersionHasBeenSet() const
+{
+    return m_ipVersionHasBeenSet;
 }
 

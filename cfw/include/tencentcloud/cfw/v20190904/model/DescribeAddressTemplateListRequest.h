@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，取值 'UpdateTime' | 'RulesNum'
-                     * @return By 排序字段，取值 'UpdateTime' | 'RulesNum'
+                     * 获取排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数
+                     * @return By 排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段，取值 'UpdateTime' | 'RulesNum'
-                     * @param _by 排序字段，取值 'UpdateTime' | 'RulesNum'
+                     * 设置排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数
+                     * @param _by 排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ByHasBeenSet() const;
 
                     /**
-                     * 获取排序，取值 'asc'|'desc'
-                     * @return Order 排序，取值 'asc'|'desc'
+                     * 获取排序，取值 ：asc正序，desc逆序
+                     * @return Order 排序，取值 ：asc正序，desc逆序
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序，取值 'asc'|'desc'
-                     * @param _order 排序，取值 'asc'|'desc'
+                     * 设置排序，取值 ：asc正序，desc逆序
+                     * @param _order 排序，取值 ：asc正序，desc逆序
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
-                     * 获取1：ip模板，5：域名模板，6：协议端口模板
-                     * @return TemplateType 1：ip模板，5：域名模板，6：协议端口模板
+                     * 获取模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板
+                     * @return TemplateType 模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板
                      * 
                      */
                     std::string GetTemplateType() const;
 
                     /**
-                     * 设置1：ip模板，5：域名模板，6：协议端口模板
-                     * @param _templateType 1：ip模板，5：域名模板，6：协议端口模板
+                     * 设置模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板
+                     * @param _templateType 模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板
                      * 
                      */
                     void SetTemplateType(const std::string& _templateType);
@@ -225,13 +225,13 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序字段，取值 'UpdateTime' | 'RulesNum'
+                     * 排序字段，取值：UpdateTime最近更新时间，RulesNum关联规则数
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;
 
                     /**
-                     * 排序，取值 'asc'|'desc'
+                     * 排序，取值 ：asc正序，desc逆序
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
@@ -249,7 +249,7 @@ namespace TencentCloud
                     bool m_uuidHasBeenSet;
 
                     /**
-                     * 1：ip模板，5：域名模板，6：协议端口模板
+                     * 模板类型，取值：1：ip模板，5：域名模板，6：协议端口模板
                      */
                     std::string m_templateType;
                     bool m_templateTypeHasBeenSet;

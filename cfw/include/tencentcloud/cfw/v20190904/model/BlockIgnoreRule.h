@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1 封禁 2外部IP 3域名 4情报 5assets 6udf  7入侵防御规则id （2-7属于白名单类型）
+                     * 获取规则类型，取值：1 封禁，2外部IP，3域名，4情报，5assets，6自定义策略，7入侵防御规则id （2-7属于白名单类型）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleType 1 封禁 2外部IP 3域名 4情报 5assets 6udf  7入侵防御规则id （2-7属于白名单类型）
+                     * @return RuleType 规则类型，取值：1 封禁，2外部IP，3域名，4情报，5assets，6自定义策略，7入侵防御规则id （2-7属于白名单类型）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleType() const;
 
                     /**
-                     * 设置1 封禁 2外部IP 3域名 4情报 5assets 6udf  7入侵防御规则id （2-7属于白名单类型）
+                     * 设置规则类型，取值：1 封禁，2外部IP，3域名，4情报，5assets，6自定义策略，7入侵防御规则id （2-7属于白名单类型）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleType 1 封禁 2外部IP 3域名 4情报 5assets 6udf  7入侵防御规则id （2-7属于白名单类型）
+                     * @param _ruleType 规则类型，取值：1 封禁，2外部IP，3域名，4情报，5assets，6自定义策略，7入侵防御规则id （2-7属于白名单类型）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -650,7 +650,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1 封禁 2外部IP 3域名 4情报 5assets 6udf  7入侵防御规则id （2-7属于白名单类型）
+                     * 规则类型，取值：1 封禁，2外部IP，3域名，4情报，5assets，6自定义策略，7入侵防御规则id （2-7属于白名单类型）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleType;

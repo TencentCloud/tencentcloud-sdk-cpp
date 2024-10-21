@@ -321,6 +321,31 @@ namespace TencentCloud
                      */
                     bool IPNumHasBeenSet() const;
 
+                    /**
+                     * 获取IP版本,0,IPv4;1,IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IpVersion IP版本,0,IPv4;1,IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIpVersion() const;
+
+                    /**
+                     * 设置IP版本,0,IPv4;1,IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ipVersion IP版本,0,IPv4;1,IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIpVersion(const int64_t& _ipVersion);
+
+                    /**
+                     * 判断参数 IpVersion 是否已赋值
+                     * @return IpVersion 是否已赋值
+                     * 
+                     */
+                    bool IpVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +424,13 @@ namespace TencentCloud
                      */
                     int64_t m_iPNum;
                     bool m_iPNumHasBeenSet;
+
+                    /**
+                     * IP版本,0,IPv4;1,IPv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_ipVersion;
+                    bool m_ipVersionHasBeenSet;
 
                 };
             }

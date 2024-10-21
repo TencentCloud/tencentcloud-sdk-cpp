@@ -46,7 +46,8 @@ VulInfoList::VulInfoList() :
     m_vulCategoryHasBeenSet(false),
     m_attackLevelHasBeenSet(false),
     m_fixNoNeedRestartHasBeenSet(false),
-    m_methodHasBeenSet(false)
+    m_methodHasBeenSet(false),
+    m_vulFixSwitchHasBeenSet(false)
 {
 }
 
@@ -315,6 +316,16 @@ CoreInternalOutcome VulInfoList::Deserialize(const rapidjson::Value &value)
         m_methodHasBeenSet = true;
     }
 
+    if (value.HasMember("VulFixSwitch") && !value["VulFixSwitch"].IsNull())
+    {
+        if (!value["VulFixSwitch"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.VulFixSwitch` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vulFixSwitch = value["VulFixSwitch"].GetUint64();
+        m_vulFixSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -528,6 +539,14 @@ void VulInfoList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Method";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_method, allocator);
+    }
+
+    if (m_vulFixSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulFixSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vulFixSwitch, allocator);
     }
 
 }
@@ -947,5 +966,21 @@ void VulInfoList::SetMethod(const uint64_t& _method)
 bool VulInfoList::MethodHasBeenSet() const
 {
     return m_methodHasBeenSet;
+}
+
+uint64_t VulInfoList::GetVulFixSwitch() const
+{
+    return m_vulFixSwitch;
+}
+
+void VulInfoList::SetVulFixSwitch(const uint64_t& _vulFixSwitch)
+{
+    m_vulFixSwitch = _vulFixSwitch;
+    m_vulFixSwitchHasBeenSet = true;
+}
+
+bool VulInfoList::VulFixSwitchHasBeenSet() const
+{
+    return m_vulFixSwitchHasBeenSet;
 }
 

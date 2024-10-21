@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取认证器类型
+                     * 获取认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 BYOC：一端一证认证器
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 认证器类型
+                     * @return Type 认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 BYOC：一端一证认证器
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置认证器类型
+                     * 设置认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 BYOC：一端一证认证器
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 认证器类型
+                     * @param _type 认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 BYOC：一端一证认证器
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,7 +174,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 认证器类型
+                     * 认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 BYOC：一端一证认证器
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;

@@ -374,21 +374,21 @@ video 纯视频
                     /**
                      * 获取rtc人数。
                      * @return RTCAudienceNumber rtc人数。
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetRTCAudienceNumber() const;
 
                     /**
                      * 设置rtc人数。
                      * @param _rTCAudienceNumber rtc人数。
-                     * 
+                     * @deprecated
                      */
                     void SetRTCAudienceNumber(const uint64_t& _rTCAudienceNumber);
 
                     /**
                      * 判断参数 RTCAudienceNumber 是否已赋值
                      * @return RTCAudienceNumber 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RTCAudienceNumberHasBeenSet() const;
 

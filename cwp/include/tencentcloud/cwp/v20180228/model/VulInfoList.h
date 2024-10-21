@@ -664,6 +664,31 @@ namespace TencentCloud
                      */
                     bool MethodHasBeenSet() const;
 
+                    /**
+                     * 获取漏洞是否支持修复 0不支持，1支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VulFixSwitch 漏洞是否支持修复 0不支持，1支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetVulFixSwitch() const;
+
+                    /**
+                     * 设置漏洞是否支持修复 0不支持，1支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vulFixSwitch 漏洞是否支持修复 0不支持，1支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVulFixSwitch(const uint64_t& _vulFixSwitch);
+
+                    /**
+                     * 判断参数 VulFixSwitch 是否已赋值
+                     * @return VulFixSwitch 是否已赋值
+                     * 
+                     */
+                    bool VulFixSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -839,6 +864,13 @@ namespace TencentCloud
                      */
                     uint64_t m_method;
                     bool m_methodHasBeenSet;
+
+                    /**
+                     * 漏洞是否支持修复 0不支持，1支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_vulFixSwitch;
+                    bool m_vulFixSwitchHasBeenSet;
 
                 };
             }

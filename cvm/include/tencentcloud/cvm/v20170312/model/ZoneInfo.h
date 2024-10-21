@@ -85,7 +85,6 @@ namespace TencentCloud
 <li> ap-shanghai-8 </li>
 <li> ap-mumbai-1 </li>
 <li> ap-mumbai-2 </li>
-<li> eu-moscow-1 </li>
 <li> ap-beijing-1（售罄）</li>
 <li> ap-beijing-2 </li>
 <li> ap-beijing-3 </li>
@@ -143,7 +142,6 @@ namespace TencentCloud
 <li> ap-shanghai-8 </li>
 <li> ap-mumbai-1 </li>
 <li> ap-mumbai-2 </li>
-<li> eu-moscow-1 </li>
 <li> ap-beijing-1（售罄）</li>
 <li> ap-beijing-2 </li>
 <li> ap-beijing-3 </li>
@@ -206,7 +204,6 @@ namespace TencentCloud
 <li> ap-shanghai-8 </li>
 <li> ap-mumbai-1 </li>
 <li> ap-mumbai-2 </li>
-<li> eu-moscow-1 </li>
 <li> ap-beijing-1（售罄）</li>
 <li> ap-beijing-2 </li>
 <li> ap-beijing-3 </li>
@@ -264,7 +261,6 @@ namespace TencentCloud
 <li> ap-shanghai-8 </li>
 <li> ap-mumbai-1 </li>
 <li> ap-mumbai-2 </li>
-<li> eu-moscow-1 </li>
 <li> ap-beijing-1（售罄）</li>
 <li> ap-beijing-2 </li>
 <li> ap-beijing-3 </li>
@@ -399,7 +395,6 @@ namespace TencentCloud
 <li> ap-shanghai-8 </li>
 <li> ap-mumbai-1 </li>
 <li> ap-mumbai-2 </li>
-<li> eu-moscow-1 </li>
 <li> ap-beijing-1（售罄）</li>
 <li> ap-beijing-2 </li>
 <li> ap-beijing-3 </li>

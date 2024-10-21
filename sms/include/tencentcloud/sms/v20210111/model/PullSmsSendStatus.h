@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CountryCodeHasBeenSet() const;
 
                     /**
-                     * 获取用户号码，普通格式，示例如：13711112222。
-                     * @return SubscriberNumber 用户号码，普通格式，示例如：13711112222。
+                     * 获取用户号码，普通格式，示例如：18501234444。
+                     * @return SubscriberNumber 用户号码，普通格式，示例如：18501234444。
                      * 
                      */
                     std::string GetSubscriberNumber() const;
 
                     /**
-                     * 设置用户号码，普通格式，示例如：13711112222。
-                     * @param _subscriberNumber 用户号码，普通格式，示例如：13711112222。
+                     * 设置用户号码，普通格式，示例如：18501234444。
+                     * @param _subscriberNumber 用户号码，普通格式，示例如：18501234444。
                      * 
                      */
                     void SetSubscriberNumber(const std::string& _subscriberNumber);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool SubscriberNumberHasBeenSet() const;
 
                     /**
-                     * 获取手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
-                     * @return PhoneNumber 手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
+                     * 获取手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。
+                     * @return PhoneNumber 手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。
                      * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
-                     * 设置手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
-                     * @param _phoneNumber 手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
+                     * 设置手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。
+                     * @param _phoneNumber 手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。
                      * 
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
@@ -195,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户的 session 内容。与请求中的 SessionContext 一致，默认为空，如需开通请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 评估。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionContext 用户的 session 内容。与请求中的 SessionContext 一致，默认为空，如需开通请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 评估。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
                      * 设置用户的 session 内容。与请求中的 SessionContext 一致，默认为空，如需开通请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 评估。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionContext 用户的 session 内容。与请求中的 SessionContext 一致，默认为空，如需开通请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 评估。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -233,13 +229,13 @@ namespace TencentCloud
                     bool m_countryCodeHasBeenSet;
 
                     /**
-                     * 用户号码，普通格式，示例如：13711112222。
+                     * 用户号码，普通格式，示例如：18501234444。
                      */
                     std::string m_subscriberNumber;
                     bool m_subscriberNumberHasBeenSet;
 
                     /**
-                     * 手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。
+                     * 手机号码，E.164标准，+[国家或地区码][手机号] ，示例如：+8618501234444， 其中前面有一个+号 ，86为国家码，18501234444为手机号。
                      */
                     std::string m_phoneNumber;
                     bool m_phoneNumberHasBeenSet;
@@ -264,7 +260,6 @@ namespace TencentCloud
 
                     /**
                      * 用户的 session 内容。与请求中的 SessionContext 一致，默认为空，如需开通请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 评估。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;

@@ -27,7 +27,10 @@ SourceClusterTopicConfig::SourceClusterTopicConfig() :
     m_remarkHasBeenSet(false),
     m_importedHasBeenSet(false),
     m_namespaceHasBeenSet(false),
-    m_importStatusHasBeenSet(false)
+    m_importStatusHasBeenSet(false),
+    m_namespaceV4HasBeenSet(false),
+    m_topicNameV4HasBeenSet(false),
+    m_fullNamespaceV4HasBeenSet(false)
 {
 }
 
@@ -106,6 +109,36 @@ CoreInternalOutcome SourceClusterTopicConfig::Deserialize(const rapidjson::Value
         m_importStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("NamespaceV4") && !value["NamespaceV4"].IsNull())
+    {
+        if (!value["NamespaceV4"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SourceClusterTopicConfig.NamespaceV4` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespaceV4 = string(value["NamespaceV4"].GetString());
+        m_namespaceV4HasBeenSet = true;
+    }
+
+    if (value.HasMember("TopicNameV4") && !value["TopicNameV4"].IsNull())
+    {
+        if (!value["TopicNameV4"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SourceClusterTopicConfig.TopicNameV4` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicNameV4 = string(value["TopicNameV4"].GetString());
+        m_topicNameV4HasBeenSet = true;
+    }
+
+    if (value.HasMember("FullNamespaceV4") && !value["FullNamespaceV4"].IsNull())
+    {
+        if (!value["FullNamespaceV4"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SourceClusterTopicConfig.FullNamespaceV4` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullNamespaceV4 = string(value["FullNamespaceV4"].GetString());
+        m_fullNamespaceV4HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +200,30 @@ void SourceClusterTopicConfig::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "ImportStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_importStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceV4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NamespaceV4";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespaceV4.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicNameV4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicNameV4";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicNameV4.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fullNamespaceV4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullNamespaceV4";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fullNamespaceV4.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +339,53 @@ void SourceClusterTopicConfig::SetImportStatus(const string& _importStatus)
 bool SourceClusterTopicConfig::ImportStatusHasBeenSet() const
 {
     return m_importStatusHasBeenSet;
+}
+
+string SourceClusterTopicConfig::GetNamespaceV4() const
+{
+    return m_namespaceV4;
+}
+
+void SourceClusterTopicConfig::SetNamespaceV4(const string& _namespaceV4)
+{
+    m_namespaceV4 = _namespaceV4;
+    m_namespaceV4HasBeenSet = true;
+}
+
+bool SourceClusterTopicConfig::NamespaceV4HasBeenSet() const
+{
+    return m_namespaceV4HasBeenSet;
+}
+
+string SourceClusterTopicConfig::GetTopicNameV4() const
+{
+    return m_topicNameV4;
+}
+
+void SourceClusterTopicConfig::SetTopicNameV4(const string& _topicNameV4)
+{
+    m_topicNameV4 = _topicNameV4;
+    m_topicNameV4HasBeenSet = true;
+}
+
+bool SourceClusterTopicConfig::TopicNameV4HasBeenSet() const
+{
+    return m_topicNameV4HasBeenSet;
+}
+
+string SourceClusterTopicConfig::GetFullNamespaceV4() const
+{
+    return m_fullNamespaceV4;
+}
+
+void SourceClusterTopicConfig::SetFullNamespaceV4(const string& _fullNamespaceV4)
+{
+    m_fullNamespaceV4 = _fullNamespaceV4;
+    m_fullNamespaceV4HasBeenSet = true;
+}
+
+bool SourceClusterTopicConfig::FullNamespaceV4HasBeenSet() const
+{
+    return m_fullNamespaceV4HasBeenSet;
 }
 

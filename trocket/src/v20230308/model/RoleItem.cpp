@@ -22,10 +22,10 @@ using namespace std;
 
 RoleItem::RoleItem() :
     m_roleNameHasBeenSet(false),
-    m_accessKeyHasBeenSet(false),
-    m_secretKeyHasBeenSet(false),
     m_permReadHasBeenSet(false),
     m_permWriteHasBeenSet(false),
+    m_accessKeyHasBeenSet(false),
+    m_secretKeyHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_modifiedTimeHasBeenSet(false)
@@ -47,26 +47,6 @@ CoreInternalOutcome RoleItem::Deserialize(const rapidjson::Value &value)
         m_roleNameHasBeenSet = true;
     }
 
-    if (value.HasMember("AccessKey") && !value["AccessKey"].IsNull())
-    {
-        if (!value["AccessKey"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `RoleItem.AccessKey` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_accessKey = string(value["AccessKey"].GetString());
-        m_accessKeyHasBeenSet = true;
-    }
-
-    if (value.HasMember("SecretKey") && !value["SecretKey"].IsNull())
-    {
-        if (!value["SecretKey"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `RoleItem.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_secretKey = string(value["SecretKey"].GetString());
-        m_secretKeyHasBeenSet = true;
-    }
-
     if (value.HasMember("PermRead") && !value["PermRead"].IsNull())
     {
         if (!value["PermRead"].IsBool())
@@ -85,6 +65,26 @@ CoreInternalOutcome RoleItem::Deserialize(const rapidjson::Value &value)
         }
         m_permWrite = value["PermWrite"].GetBool();
         m_permWriteHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessKey") && !value["AccessKey"].IsNull())
+    {
+        if (!value["AccessKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoleItem.AccessKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessKey = string(value["AccessKey"].GetString());
+        m_accessKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecretKey") && !value["SecretKey"].IsNull())
+    {
+        if (!value["SecretKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoleItem.SecretKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretKey = string(value["SecretKey"].GetString());
+        m_secretKeyHasBeenSet = true;
     }
 
     if (value.HasMember("Remark") && !value["Remark"].IsNull())
@@ -132,22 +132,6 @@ void RoleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, rapidjson::Value(m_roleName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_accessKeyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AccessKey";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_accessKey.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_secretKeyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SecretKey";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_secretKey.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_permReadHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -162,6 +146,22 @@ void RoleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "PermWrite";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_permWrite, allocator);
+    }
+
+    if (m_accessKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_remarkHasBeenSet)
@@ -207,38 +207,6 @@ bool RoleItem::RoleNameHasBeenSet() const
     return m_roleNameHasBeenSet;
 }
 
-string RoleItem::GetAccessKey() const
-{
-    return m_accessKey;
-}
-
-void RoleItem::SetAccessKey(const string& _accessKey)
-{
-    m_accessKey = _accessKey;
-    m_accessKeyHasBeenSet = true;
-}
-
-bool RoleItem::AccessKeyHasBeenSet() const
-{
-    return m_accessKeyHasBeenSet;
-}
-
-string RoleItem::GetSecretKey() const
-{
-    return m_secretKey;
-}
-
-void RoleItem::SetSecretKey(const string& _secretKey)
-{
-    m_secretKey = _secretKey;
-    m_secretKeyHasBeenSet = true;
-}
-
-bool RoleItem::SecretKeyHasBeenSet() const
-{
-    return m_secretKeyHasBeenSet;
-}
-
 bool RoleItem::GetPermRead() const
 {
     return m_permRead;
@@ -269,6 +237,38 @@ void RoleItem::SetPermWrite(const bool& _permWrite)
 bool RoleItem::PermWriteHasBeenSet() const
 {
     return m_permWriteHasBeenSet;
+}
+
+string RoleItem::GetAccessKey() const
+{
+    return m_accessKey;
+}
+
+void RoleItem::SetAccessKey(const string& _accessKey)
+{
+    m_accessKey = _accessKey;
+    m_accessKeyHasBeenSet = true;
+}
+
+bool RoleItem::AccessKeyHasBeenSet() const
+{
+    return m_accessKeyHasBeenSet;
+}
+
+string RoleItem::GetSecretKey() const
+{
+    return m_secretKey;
+}
+
+void RoleItem::SetSecretKey(const string& _secretKey)
+{
+    m_secretKey = _secretKey;
+    m_secretKeyHasBeenSet = true;
+}
+
+bool RoleItem::SecretKeyHasBeenSet() const
+{
+    return m_secretKeyHasBeenSet;
 }
 
 string RoleItem::GetRemark() const

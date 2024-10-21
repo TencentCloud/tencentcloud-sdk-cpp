@@ -40,6 +40,7 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_crossClusterHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
     m_roTransTypeHasBeenSet(false),
+    m_clusterTopologyHasBeenSet(false),
     m_checkFastUpgradeRebootHasBeenSet(false)
 {
 }
@@ -185,6 +186,15 @@ string UpgradeDBInstanceRequest::ToJsonString() const
         string key = "RoTransType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_roTransType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterTopologyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterTopology";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_clusterTopology.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_checkFastUpgradeRebootHasBeenSet)
@@ -473,6 +483,22 @@ void UpgradeDBInstanceRequest::SetRoTransType(const string& _roTransType)
 bool UpgradeDBInstanceRequest::RoTransTypeHasBeenSet() const
 {
     return m_roTransTypeHasBeenSet;
+}
+
+ClusterTopology UpgradeDBInstanceRequest::GetClusterTopology() const
+{
+    return m_clusterTopology;
+}
+
+void UpgradeDBInstanceRequest::SetClusterTopology(const ClusterTopology& _clusterTopology)
+{
+    m_clusterTopology = _clusterTopology;
+    m_clusterTopologyHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::ClusterTopologyHasBeenSet() const
+{
+    return m_clusterTopologyHasBeenSet;
 }
 
 int64_t UpgradeDBInstanceRequest::GetCheckFastUpgradeReboot() const

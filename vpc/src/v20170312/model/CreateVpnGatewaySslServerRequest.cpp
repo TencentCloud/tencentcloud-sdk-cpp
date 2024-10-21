@@ -25,8 +25,8 @@ using namespace std;
 CreateVpnGatewaySslServerRequest::CreateVpnGatewaySslServerRequest() :
     m_vpnGatewayIdHasBeenSet(false),
     m_sslVpnServerNameHasBeenSet(false),
-    m_localAddressHasBeenSet(false),
     m_remoteAddressHasBeenSet(false),
+    m_localAddressHasBeenSet(false),
     m_sslVpnProtocolHasBeenSet(false),
     m_sslVpnPortHasBeenSet(false),
     m_integrityAlgorithmHasBeenSet(false),
@@ -62,6 +62,14 @@ string CreateVpnGatewaySslServerRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_sslVpnServerName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_remoteAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteAddress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remoteAddress.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_localAddressHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -73,14 +81,6 @@ string CreateVpnGatewaySslServerRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_remoteAddressHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RemoteAddress";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_remoteAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sslVpnProtocolHasBeenSet)
@@ -202,22 +202,6 @@ bool CreateVpnGatewaySslServerRequest::SslVpnServerNameHasBeenSet() const
     return m_sslVpnServerNameHasBeenSet;
 }
 
-vector<string> CreateVpnGatewaySslServerRequest::GetLocalAddress() const
-{
-    return m_localAddress;
-}
-
-void CreateVpnGatewaySslServerRequest::SetLocalAddress(const vector<string>& _localAddress)
-{
-    m_localAddress = _localAddress;
-    m_localAddressHasBeenSet = true;
-}
-
-bool CreateVpnGatewaySslServerRequest::LocalAddressHasBeenSet() const
-{
-    return m_localAddressHasBeenSet;
-}
-
 string CreateVpnGatewaySslServerRequest::GetRemoteAddress() const
 {
     return m_remoteAddress;
@@ -232,6 +216,22 @@ void CreateVpnGatewaySslServerRequest::SetRemoteAddress(const string& _remoteAdd
 bool CreateVpnGatewaySslServerRequest::RemoteAddressHasBeenSet() const
 {
     return m_remoteAddressHasBeenSet;
+}
+
+vector<string> CreateVpnGatewaySslServerRequest::GetLocalAddress() const
+{
+    return m_localAddress;
+}
+
+void CreateVpnGatewaySslServerRequest::SetLocalAddress(const vector<string>& _localAddress)
+{
+    m_localAddress = _localAddress;
+    m_localAddressHasBeenSet = true;
+}
+
+bool CreateVpnGatewaySslServerRequest::LocalAddressHasBeenSet() const
+{
+    return m_localAddressHasBeenSet;
 }
 
 string CreateVpnGatewaySslServerRequest::GetSslVpnProtocol() const

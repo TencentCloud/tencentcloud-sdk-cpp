@@ -46,7 +46,115 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取加密方式；0：AES;1:DES
+                     * @return EncryptMethod 加密方式；0：AES;1:DES
+                     * 
+                     */
+                    uint64_t GetEncryptMethod() const;
+
+                    /**
+                     * 设置加密方式；0：AES;1:DES
+                     * @param _encryptMethod 加密方式；0：AES;1:DES
+                     * 
+                     */
+                    void SetEncryptMethod(const uint64_t& _encryptMethod);
+
+                    /**
+                     * 判断参数 EncryptMethod 是否已赋值
+                     * @return EncryptMethod 是否已赋值
+                     * 
+                     */
+                    bool EncryptMethodHasBeenSet() const;
+
+                    /**
+                     * 获取业务数据加密字符串
+                     * @return EncryptData 业务数据加密字符串
+                     * 
+                     */
+                    std::string GetEncryptData() const;
+
+                    /**
+                     * 设置业务数据加密字符串
+                     * @param _encryptData 业务数据加密字符串
+                     * 
+                     */
+                    void SetEncryptData(const std::string& _encryptData);
+
+                    /**
+                     * 判断参数 EncryptData 是否已赋值
+                     * @return EncryptData 是否已赋值
+                     * 
+                     */
+                    bool EncryptDataHasBeenSet() const;
+
+                    /**
+                     * 获取加密模式；0：ECB,1:CBC;2:CTR;3:CFB;4:OFB
+                     * @return EncryptMode 加密模式；0：ECB,1:CBC;2:CTR;3:CFB;4:OFB
+                     * 
+                     */
+                    uint64_t GetEncryptMode() const;
+
+                    /**
+                     * 设置加密模式；0：ECB,1:CBC;2:CTR;3:CFB;4:OFB
+                     * @param _encryptMode 加密模式；0：ECB,1:CBC;2:CTR;3:CFB;4:OFB
+                     * 
+                     */
+                    void SetEncryptMode(const uint64_t& _encryptMode);
+
+                    /**
+                     * 判断参数 EncryptMode 是否已赋值
+                     * @return EncryptMode 是否已赋值
+                     * 
+                     */
+                    bool EncryptModeHasBeenSet() const;
+
+                    /**
+                     * 获取填充模式;0:ZERO ;1:PKCS5;3:PKCS7
+                     * @return PaddingType 填充模式;0:ZERO ;1:PKCS5;3:PKCS7
+                     * 
+                     */
+                    uint64_t GetPaddingType() const;
+
+                    /**
+                     * 设置填充模式;0:ZERO ;1:PKCS5;3:PKCS7
+                     * @param _paddingType 填充模式;0:ZERO ;1:PKCS5;3:PKCS7
+                     * 
+                     */
+                    void SetPaddingType(const uint64_t& _paddingType);
+
+                    /**
+                     * 判断参数 PaddingType 是否已赋值
+                     * @return PaddingType 是否已赋值
+                     * 
+                     */
+                    bool PaddingTypeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 加密方式；0：AES;1:DES
+                     */
+                    uint64_t m_encryptMethod;
+                    bool m_encryptMethodHasBeenSet;
+
+                    /**
+                     * 业务数据加密字符串
+                     */
+                    std::string m_encryptData;
+                    bool m_encryptDataHasBeenSet;
+
+                    /**
+                     * 加密模式；0：ECB,1:CBC;2:CTR;3:CFB;4:OFB
+                     */
+                    uint64_t m_encryptMode;
+                    bool m_encryptModeHasBeenSet;
+
+                    /**
+                     * 填充模式;0:ZERO ;1:PKCS5;3:PKCS7
+                     */
+                    uint64_t m_paddingType;
+                    bool m_paddingTypeHasBeenSet;
 
                 };
             }

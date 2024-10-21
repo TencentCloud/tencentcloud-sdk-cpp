@@ -87,8 +87,16 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取规则整体启用状态
-                     * @return Enable 规则整体启用状态
+                     * 获取规则列表整体启用状态 
+取值范围 0/1/2
+0.表示没有启用的(可以批量启用)  
+1.表示没有禁用的(可以批量禁用)    
+2 表示混合情况（不可批量操作）
+                     * @return Enable 规则列表整体启用状态 
+取值范围 0/1/2
+0.表示没有启用的(可以批量启用)  
+1.表示没有禁用的(可以批量禁用)    
+2 表示混合情况（不可批量操作）
                      * 
                      */
                     int64_t GetEnable() const;
@@ -121,7 +129,11 @@ namespace TencentCloud
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 规则整体启用状态
+                     * 规则列表整体启用状态 
+取值范围 0/1/2
+0.表示没有启用的(可以批量启用)  
+1.表示没有禁用的(可以批量禁用)    
+2 表示混合情况（不可批量操作）
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;

@@ -90,14 +90,30 @@ namespace TencentCloud
 
                     /**
                      * 获取主题类型
+NORMAL:普通消息,
+FIFO:顺序消息,
+DELAY:延时消息,
+TRANSACTION:事务消息
                      * @return TopicType 主题类型
+NORMAL:普通消息,
+FIFO:顺序消息,
+DELAY:延时消息,
+TRANSACTION:事务消息
                      * 
                      */
                     std::string GetTopicType() const;
 
                     /**
                      * 设置主题类型
+NORMAL:普通消息,
+FIFO:顺序消息,
+DELAY:延时消息,
+TRANSACTION:事务消息
                      * @param _topicType 主题类型
+NORMAL:普通消息,
+FIFO:顺序消息,
+DELAY:延时消息,
+TRANSACTION:事务消息
                      * 
                      */
                     void SetTopicType(const std::string& _topicType);
@@ -132,18 +148,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -296,6 +308,10 @@ namespace TencentCloud
 
                     /**
                      * 主题类型
+NORMAL:普通消息,
+FIFO:顺序消息,
+DELAY:延时消息,
+TRANSACTION:事务消息
                      */
                     std::string m_topicType;
                     bool m_topicTypeHasBeenSet;
@@ -308,7 +324,6 @@ namespace TencentCloud
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

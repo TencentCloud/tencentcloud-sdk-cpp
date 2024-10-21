@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdb/v20170320/model/ClusterTopology.h>
 
 
 namespace TencentCloud
@@ -412,6 +413,27 @@ namespace TencentCloud
                     bool RoTransTypeHasBeenSet() const;
 
                     /**
+                     * 获取集群版节点拓扑配置。
+                     * @return ClusterTopology 集群版节点拓扑配置。
+                     * 
+                     */
+                    ClusterTopology GetClusterTopology() const;
+
+                    /**
+                     * 设置集群版节点拓扑配置。
+                     * @param _clusterTopology 集群版节点拓扑配置。
+                     * 
+                     */
+                    void SetClusterTopology(const ClusterTopology& _clusterTopology);
+
+                    /**
+                     * 判断参数 ClusterTopology 是否已赋值
+                     * @return ClusterTopology 是否已赋值
+                     * 
+                     */
+                    bool ClusterTopologyHasBeenSet() const;
+
+                    /**
                      * 获取检查原地升级是否需要重启，1 检查， 0 不检查。如果值为1，检查为原地升级需要重启，则会停止升级并进行返回提示，如果为原地升级不重启，则正常执行升级流程。
                      * @return CheckFastUpgradeReboot 检查原地升级是否需要重启，1 检查， 0 不检查。如果值为1，检查为原地升级需要重启，则会停止升级并进行返回提示，如果为原地升级不重启，则正常执行升级流程。
                      * 
@@ -538,6 +560,12 @@ namespace TencentCloud
                      */
                     std::string m_roTransType;
                     bool m_roTransTypeHasBeenSet;
+
+                    /**
+                     * 集群版节点拓扑配置。
+                     */
+                    ClusterTopology m_clusterTopology;
+                    bool m_clusterTopologyHasBeenSet;
 
                     /**
                      * 检查原地升级是否需要重启，1 检查， 0 不检查。如果值为1，检查为原地升级需要重启，则会停止升级并进行返回提示，如果为原地升级不重启，则正常执行升级流程。

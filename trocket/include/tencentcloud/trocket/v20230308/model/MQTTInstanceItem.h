@@ -111,30 +111,22 @@ namespace TencentCloud
 
                     /**
                      * 获取实例类型，
-EXPERIMENT，体验版
 BASIC，基础版
 PRO，专业版
-PLATINUM，铂金版
                      * @return InstanceType 实例类型，
-EXPERIMENT，体验版
 BASIC，基础版
 PRO，专业版
-PLATINUM，铂金版
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例类型，
-EXPERIMENT，体验版
 BASIC，基础版
 PRO，专业版
-PLATINUM，铂金版
                      * @param _instanceType 实例类型，
-EXPERIMENT，体验版
 BASIC，基础版
 PRO，专业版
-PLATINUM，铂金版
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -417,10 +409,8 @@ DELETING，删除中
 
                     /**
                      * 实例类型，
-EXPERIMENT，体验版
 BASIC，基础版
 PRO，专业版
-PLATINUM，铂金版
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;

@@ -131,27 +131,6 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取备注信息，长度不能超过50
-                     * @return Comment 备注信息，长度不能超过50
-                     * 
-                     */
-                    std::string GetComment() const;
-
-                    /**
-                     * 设置备注信息，长度不能超过50
-                     * @param _comment 备注信息，长度不能超过50
-                     * 
-                     */
-                    void SetComment(const std::string& _comment);
-
-                    /**
-                     * 判断参数 Comment 是否已赋值
-                     * @return Comment 是否已赋值
-                     * 
-                     */
-                    bool CommentHasBeenSet() const;
-
-                    /**
                      * 获取规则开始时间
                      * @return StartTime 规则开始时间
                      * 
@@ -171,6 +150,27 @@ namespace TencentCloud
                      * 
                      */
                     bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取备注信息，长度不能超过50
+                     * @return Comment 备注信息，长度不能超过50
+                     * 
+                     */
+                    std::string GetComment() const;
+
+                    /**
+                     * 设置备注信息，长度不能超过50
+                     * @param _comment 备注信息，长度不能超过50
+                     * 
+                     */
+                    void SetComment(const std::string& _comment);
+
+                    /**
+                     * 判断参数 Comment 是否已赋值
+                     * @return Comment 是否已赋值
+                     * 
+                     */
+                    bool CommentHasBeenSet() const;
 
                 private:
 
@@ -199,16 +199,16 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 备注信息，长度不能超过50
-                     */
-                    std::string m_comment;
-                    bool m_commentHasBeenSet;
-
-                    /**
                      * 规则开始时间
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 备注信息，长度不能超过50
+                     */
+                    std::string m_comment;
+                    bool m_commentHasBeenSet;
 
                 };
             }
