@@ -28,6 +28,7 @@
 #include <tencentcloud/vod/v20180717/model/OcrWordsConfigureInfoForUpdate.h>
 #include <tencentcloud/vod/v20180717/model/AsrFullTextConfigureInfoForUpdate.h>
 #include <tencentcloud/vod/v20180717/model/AsrWordsConfigureInfoForUpdate.h>
+#include <tencentcloud/vod/v20180717/model/AsrTranslateConfigureInfoForUpdate.h>
 #include <tencentcloud/vod/v20180717/model/ObjectConfigureInfoForUpdate.h>
 
 
@@ -282,6 +283,27 @@ namespace TencentCloud
                     bool AsrWordsConfigureHasBeenSet() const;
 
                     /**
+                     * 获取语音翻译控制参数。
+                     * @return AsrTranslateConfigure 语音翻译控制参数。
+                     * 
+                     */
+                    AsrTranslateConfigureInfoForUpdate GetAsrTranslateConfigure() const;
+
+                    /**
+                     * 设置语音翻译控制参数。
+                     * @param _asrTranslateConfigure 语音翻译控制参数。
+                     * 
+                     */
+                    void SetAsrTranslateConfigure(const AsrTranslateConfigureInfoForUpdate& _asrTranslateConfigure);
+
+                    /**
+                     * 判断参数 AsrTranslateConfigure 是否已赋值
+                     * @return AsrTranslateConfigure 是否已赋值
+                     * 
+                     */
+                    bool AsrTranslateConfigureHasBeenSet() const;
+
+                    /**
                      * 获取物体识别控制参数。
                      * @return ObjectConfigure 物体识别控制参数。
                      * 
@@ -390,6 +412,12 @@ namespace TencentCloud
                      */
                     AsrWordsConfigureInfoForUpdate m_asrWordsConfigure;
                     bool m_asrWordsConfigureHasBeenSet;
+
+                    /**
+                     * 语音翻译控制参数。
+                     */
+                    AsrTranslateConfigureInfoForUpdate m_asrTranslateConfigure;
+                    bool m_asrTranslateConfigureHasBeenSet;
 
                     /**
                      * 物体识别控制参数。

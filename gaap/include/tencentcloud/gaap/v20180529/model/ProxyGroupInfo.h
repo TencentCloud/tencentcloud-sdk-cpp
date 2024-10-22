@@ -168,6 +168,7 @@ RUNNING表示运行中；
 CREATING表示创建中；
 DESTROYING表示销毁中；
 MOVING表示通道迁移中；
+CLOSED表示已关闭；
 CHANGING表示部分部署中。
                      * @return Status 通道组状态。
 其中，
@@ -175,6 +176,7 @@ RUNNING表示运行中；
 CREATING表示创建中；
 DESTROYING表示销毁中；
 MOVING表示通道迁移中；
+CLOSED表示已关闭；
 CHANGING表示部分部署中。
                      * 
                      */
@@ -187,6 +189,7 @@ RUNNING表示运行中；
 CREATING表示创建中；
 DESTROYING表示销毁中；
 MOVING表示通道迁移中；
+CLOSED表示已关闭；
 CHANGING表示部分部署中。
                      * @param _status 通道组状态。
 其中，
@@ -194,6 +197,7 @@ RUNNING表示运行中；
 CREATING表示创建中；
 DESTROYING表示销毁中；
 MOVING表示通道迁移中；
+CLOSED表示已关闭；
 CHANGING表示部分部署中。
                      * 
                      */
@@ -445,6 +449,7 @@ RUNNING表示运行中；
 CREATING表示创建中；
 DESTROYING表示销毁中；
 MOVING表示通道迁移中；
+CLOSED表示已关闭；
 CHANGING表示部分部署中。
                      */
                     std::string m_status;

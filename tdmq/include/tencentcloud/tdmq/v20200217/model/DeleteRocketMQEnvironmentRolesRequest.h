@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RoleNamesHasBeenSet() const;
 
                     /**
-                     * 获取必填字段，集群的ID
-                     * @return ClusterId 必填字段，集群的ID
+                     * 获取集群的ID
+                     * @return ClusterId 集群的ID
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置必填字段，集群的ID
-                     * @param _clusterId 必填字段，集群的ID
+                     * 设置集群的ID
+                     * @param _clusterId 集群的ID
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_roleNamesHasBeenSet;
 
                     /**
-                     * 必填字段，集群的ID
+                     * 集群的ID
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;

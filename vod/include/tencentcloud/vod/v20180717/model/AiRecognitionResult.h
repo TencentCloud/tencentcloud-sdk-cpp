@@ -29,6 +29,7 @@
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskFaceResult.h>
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskAsrWordsResult.h>
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskAsrFullTextResult.h>
+#include <tencentcloud/vod/v20180717/model/AiRecognitionTaskAsrTranslateResult.h>
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskOcrWordsResult.h>
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskOcrFullTextResult.h>
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskObjectResult.h>
@@ -60,6 +61,7 @@ namespace TencentCloud
 <li>AsrWordsRecognition：语音关键词识别，</li>
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
+<li>AsrTranslateRecognition：语音翻译识别，</li>
 <li>OcrFullTextRecognition：文本全文识别，</li>
 <li>HeadTailRecognition：视频片头片尾识别，</li>
 <li>ObjectRecognition：物体识别。</li>
@@ -68,6 +70,7 @@ namespace TencentCloud
 <li>AsrWordsRecognition：语音关键词识别，</li>
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
+<li>AsrTranslateRecognition：语音翻译识别，</li>
 <li>OcrFullTextRecognition：文本全文识别，</li>
 <li>HeadTailRecognition：视频片头片尾识别，</li>
 <li>ObjectRecognition：物体识别。</li>
@@ -81,6 +84,7 @@ namespace TencentCloud
 <li>AsrWordsRecognition：语音关键词识别，</li>
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
+<li>AsrTranslateRecognition：语音翻译识别，</li>
 <li>OcrFullTextRecognition：文本全文识别，</li>
 <li>HeadTailRecognition：视频片头片尾识别，</li>
 <li>ObjectRecognition：物体识别。</li>
@@ -89,6 +93,7 @@ namespace TencentCloud
 <li>AsrWordsRecognition：语音关键词识别，</li>
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
+<li>AsrTranslateRecognition：语音翻译识别，</li>
 <li>OcrFullTextRecognition：文本全文识别，</li>
 <li>HeadTailRecognition：视频片头片尾识别，</li>
 <li>ObjectRecognition：物体识别。</li>
@@ -249,6 +254,31 @@ namespace TencentCloud
                     bool AsrFullTextTaskHasBeenSet() const;
 
                     /**
+                     * 获取语音翻译结果，当 Type 为 AsrTranslateRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AsrTranslateTask 语音翻译结果，当 Type 为 AsrTranslateRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiRecognitionTaskAsrTranslateResult GetAsrTranslateTask() const;
+
+                    /**
+                     * 设置语音翻译结果，当 Type 为 AsrTranslateRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _asrTranslateTask 语音翻译结果，当 Type 为 AsrTranslateRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAsrTranslateTask(const AiRecognitionTaskAsrTranslateResult& _asrTranslateTask);
+
+                    /**
+                     * 判断参数 AsrTranslateTask 是否已赋值
+                     * @return AsrTranslateTask 是否已赋值
+                     * 
+                     */
+                    bool AsrTranslateTaskHasBeenSet() const;
+
+                    /**
                      * 获取文本关键词识别结果，当 Type 为
  OcrWordsRecognition 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
@@ -343,6 +373,7 @@ namespace TencentCloud
 <li>AsrWordsRecognition：语音关键词识别，</li>
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
+<li>AsrTranslateRecognition：语音翻译识别，</li>
 <li>OcrFullTextRecognition：文本全文识别，</li>
 <li>HeadTailRecognition：视频片头片尾识别，</li>
 <li>ObjectRecognition：物体识别。</li>
@@ -389,6 +420,13 @@ namespace TencentCloud
                      */
                     AiRecognitionTaskAsrFullTextResult m_asrFullTextTask;
                     bool m_asrFullTextTaskHasBeenSet;
+
+                    /**
+                     * 语音翻译结果，当 Type 为 AsrTranslateRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiRecognitionTaskAsrTranslateResult m_asrTranslateTask;
+                    bool m_asrTranslateTaskHasBeenSet;
 
                     /**
                      * 文本关键词识别结果，当 Type 为

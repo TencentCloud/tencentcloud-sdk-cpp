@@ -24,6 +24,7 @@ AIRecognitionTemplateItem::AIRecognitionTemplateItem() :
     m_definitionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_headTailConfigureHasBeenSet(false),
     m_segmentConfigureHasBeenSet(false),
     m_faceConfigureHasBeenSet(false),
@@ -31,6 +32,7 @@ AIRecognitionTemplateItem::AIRecognitionTemplateItem() :
     m_ocrWordsConfigureHasBeenSet(false),
     m_asrFullTextConfigureHasBeenSet(false),
     m_asrWordsConfigureHasBeenSet(false),
+    m_asrTranslateConfigureHasBeenSet(false),
     m_objectConfigureHasBeenSet(false),
     m_screenshotIntervalHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -71,6 +73,16 @@ CoreInternalOutcome AIRecognitionTemplateItem::Deserialize(const rapidjson::Valu
         }
         m_comment = string(value["Comment"].GetString());
         m_commentHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIRecognitionTemplateItem.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
     }
 
     if (value.HasMember("HeadTailConfigure") && !value["HeadTailConfigure"].IsNull())
@@ -192,6 +204,23 @@ CoreInternalOutcome AIRecognitionTemplateItem::Deserialize(const rapidjson::Valu
         m_asrWordsConfigureHasBeenSet = true;
     }
 
+    if (value.HasMember("AsrTranslateConfigure") && !value["AsrTranslateConfigure"].IsNull())
+    {
+        if (!value["AsrTranslateConfigure"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIRecognitionTemplateItem.AsrTranslateConfigure` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_asrTranslateConfigure.Deserialize(value["AsrTranslateConfigure"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_asrTranslateConfigureHasBeenSet = true;
+    }
+
     if (value.HasMember("ObjectConfigure") && !value["ObjectConfigure"].IsNull())
     {
         if (!value["ObjectConfigure"].IsObject())
@@ -270,6 +299,14 @@ void AIRecognitionTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_headTailConfigureHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -331,6 +368,15 @@ void AIRecognitionTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_asrWordsConfigure.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_asrTranslateConfigureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsrTranslateConfigure";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_asrTranslateConfigure.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_objectConfigureHasBeenSet)
@@ -415,6 +461,22 @@ void AIRecognitionTemplateItem::SetComment(const string& _comment)
 bool AIRecognitionTemplateItem::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string AIRecognitionTemplateItem::GetType() const
+{
+    return m_type;
+}
+
+void AIRecognitionTemplateItem::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool AIRecognitionTemplateItem::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 HeadTailConfigureInfo AIRecognitionTemplateItem::GetHeadTailConfigure() const
@@ -527,6 +589,22 @@ void AIRecognitionTemplateItem::SetAsrWordsConfigure(const AsrWordsConfigureInfo
 bool AIRecognitionTemplateItem::AsrWordsConfigureHasBeenSet() const
 {
     return m_asrWordsConfigureHasBeenSet;
+}
+
+AsrTranslateConfigureInfo AIRecognitionTemplateItem::GetAsrTranslateConfigure() const
+{
+    return m_asrTranslateConfigure;
+}
+
+void AIRecognitionTemplateItem::SetAsrTranslateConfigure(const AsrTranslateConfigureInfo& _asrTranslateConfigure)
+{
+    m_asrTranslateConfigure = _asrTranslateConfigure;
+    m_asrTranslateConfigureHasBeenSet = true;
+}
+
+bool AIRecognitionTemplateItem::AsrTranslateConfigureHasBeenSet() const
+{
+    return m_asrTranslateConfigureHasBeenSet;
 }
 
 ObjectConfigureInfo AIRecognitionTemplateItem::GetObjectConfigure() const

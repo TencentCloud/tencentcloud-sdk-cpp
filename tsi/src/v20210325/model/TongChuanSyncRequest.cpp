@@ -31,7 +31,8 @@ TongChuanSyncRequest::TongChuanSyncRequest() :
     m_utcHasBeenSet(false),
     m_isEndHasBeenSet(false),
     m_translateTimeHasBeenSet(false),
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_tTSHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,15 @@ string TongChuanSyncRequest::ToJsonString() const
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tTSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TTS";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tTS.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -264,6 +274,22 @@ void TongChuanSyncRequest::SetData(const string& _data)
 bool TongChuanSyncRequest::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+TTS TongChuanSyncRequest::GetTTS() const
+{
+    return m_tTS;
+}
+
+void TongChuanSyncRequest::SetTTS(const TTS& _tTS)
+{
+    m_tTS = _tTS;
+    m_tTSHasBeenSet = true;
+}
+
+bool TongChuanSyncRequest::TTSHasBeenSet() const
+{
+    return m_tTSHasBeenSet;
 }
 
 

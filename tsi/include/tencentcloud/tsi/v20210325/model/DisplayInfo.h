@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool IsEndHasBeenSet() const;
 
+                    /**
+                     * 获取base64编码的wav/mp3音频数据
+                     * @return Audio base64编码的wav/mp3音频数据
+                     * 
+                     */
+                    std::string GetAudio() const;
+
+                    /**
+                     * 设置base64编码的wav/mp3音频数据
+                     * @param _audio base64编码的wav/mp3音频数据
+                     * 
+                     */
+                    void SetAudio(const std::string& _audio);
+
+                    /**
+                     * 判断参数 Audio 是否已赋值
+                     * @return Audio 是否已赋值
+                     * 
+                     */
+                    bool AudioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     bool m_isEnd;
                     bool m_isEndHasBeenSet;
+
+                    /**
+                     * base64编码的wav/mp3音频数据
+                     */
+                    std::string m_audio;
+                    bool m_audioHasBeenSet;
 
                 };
             }

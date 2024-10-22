@@ -167,6 +167,27 @@ namespace TencentCloud
                      */
                     bool SrcLanguageHasBeenSet() const;
 
+                    /**
+                     * 获取指定字幕名称，长度限制：64 个字符。该值将用于播放器展示。
+                     * @return SubtitleName 指定字幕名称，长度限制：64 个字符。该值将用于播放器展示。
+                     * 
+                     */
+                    std::string GetSubtitleName() const;
+
+                    /**
+                     * 设置指定字幕名称，长度限制：64 个字符。该值将用于播放器展示。
+                     * @param _subtitleName 指定字幕名称，长度限制：64 个字符。该值将用于播放器展示。
+                     * 
+                     */
+                    void SetSubtitleName(const std::string& _subtitleName);
+
+                    /**
+                     * 判断参数 SubtitleName 是否已赋值
+                     * @return SubtitleName 是否已赋值
+                     * 
+                     */
+                    bool SubtitleNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -201,6 +222,12 @@ namespace TencentCloud
                      */
                     std::string m_srcLanguage;
                     bool m_srcLanguageHasBeenSet;
+
+                    /**
+                     * 指定字幕名称，长度限制：64 个字符。该值将用于播放器展示。
+                     */
+                    std::string m_subtitleName;
+                    bool m_subtitleNameHasBeenSet;
 
                 };
             }

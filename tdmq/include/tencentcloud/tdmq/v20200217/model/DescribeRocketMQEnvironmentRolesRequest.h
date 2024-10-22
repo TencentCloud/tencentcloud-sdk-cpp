@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取环境（命名空间）名称。
-                     * @return EnvironmentId 环境（命名空间）名称。
+                     * 获取命名空间
+                     * @return EnvironmentId 命名空间
                      * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
-                     * 设置环境（命名空间）名称。
-                     * @param _environmentId 环境（命名空间）名称。
+                     * 设置命名空间
+                     * @param _environmentId 命名空间
                      * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
@@ -149,27 +149,15 @@ namespace TencentCloud
                     bool RoleNameHasBeenSet() const;
 
                     /**
-                     * 获取* RoleName
-按照角色名进行过滤，精确查询。
-类型：String
-必选：否
-                     * @return Filters * RoleName
-按照角色名进行过滤，精确查询。
-类型：String
-必选：否
+                     * 获取RoleName按照角色名进行过滤，精确查询。类型：String必选：否
+                     * @return Filters RoleName按照角色名进行过滤，精确查询。类型：String必选：否
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置* RoleName
-按照角色名进行过滤，精确查询。
-类型：String
-必选：否
-                     * @param _filters * RoleName
-按照角色名进行过滤，精确查询。
-类型：String
-必选：否
+                     * 设置RoleName按照角色名进行过滤，精确查询。类型：String必选：否
+                     * @param _filters RoleName按照角色名进行过滤，精确查询。类型：String必选：否
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -190,7 +178,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 环境（命名空间）名称。
+                     * 命名空间
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;
@@ -214,10 +202,7 @@ namespace TencentCloud
                     bool m_roleNameHasBeenSet;
 
                     /**
-                     * * RoleName
-按照角色名进行过滤，精确查询。
-类型：String
-必选：否
+                     * RoleName按照角色名进行过滤，精确查询。类型：String必选：否
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

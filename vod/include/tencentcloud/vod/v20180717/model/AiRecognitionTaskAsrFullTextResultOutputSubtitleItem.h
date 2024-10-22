@@ -47,6 +47,77 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取媒资字幕 ID，用于媒资字幕管理，仅当 Format 为 vtt 时有效。
+<font color=red>注意：</font>2024-11-01T10:00:00Z 之前的任务返回此字段无效。
+                     * @return Id 媒资字幕 ID，用于媒资字幕管理，仅当 Format 为 vtt 时有效。
+<font color=red>注意：</font>2024-11-01T10:00:00Z 之前的任务返回此字段无效。
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置媒资字幕 ID，用于媒资字幕管理，仅当 Format 为 vtt 时有效。
+<font color=red>注意：</font>2024-11-01T10:00:00Z 之前的任务返回此字段无效。
+                     * @param _id 媒资字幕 ID，用于媒资字幕管理，仅当 Format 为 vtt 时有效。
+<font color=red>注意：</font>2024-11-01T10:00:00Z 之前的任务返回此字段无效。
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取媒资字幕名字，用于播放器展示，仅当 Format 为 vtt 时有效。
+<font color=red>注意：</font>2024-11-01T10:00:00Z 之前的任务返回此字段无效。
+                     * @return Name 媒资字幕名字，用于播放器展示，仅当 Format 为 vtt 时有效。
+<font color=red>注意：</font>2024-11-01T10:00:00Z 之前的任务返回此字段无效。
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置媒资字幕名字，用于播放器展示，仅当 Format 为 vtt 时有效。
+<font color=red>注意：</font>2024-11-01T10:00:00Z 之前的任务返回此字段无效。
+                     * @param _name 媒资字幕名字，用于播放器展示，仅当 Format 为 vtt 时有效。
+<font color=red>注意：</font>2024-11-01T10:00:00Z 之前的任务返回此字段无效。
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取字幕语言。
+                     * @return Language 字幕语言。
+                     * 
+                     */
+                    std::string GetLanguage() const;
+
+                    /**
+                     * 设置字幕语言。
+                     * @param _language 字幕语言。
+                     * 
+                     */
+                    void SetLanguage(const std::string& _language);
+
+                    /**
+                     * 判断参数 Language 是否已赋值
+                     * @return Language 是否已赋值
+                     * 
+                     */
+                    bool LanguageHasBeenSet() const;
+
+                    /**
                      * 获取字幕文件格式，取值范围：
 <li>vtt：WebVTT 字幕文件；</li>
 <li>srt：SRT 字幕文件。</li>
@@ -97,6 +168,26 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 媒资字幕 ID，用于媒资字幕管理，仅当 Format 为 vtt 时有效。
+<font color=red>注意：</font>2024-11-01T10:00:00Z 之前的任务返回此字段无效。
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
+                     * 媒资字幕名字，用于播放器展示，仅当 Format 为 vtt 时有效。
+<font color=red>注意：</font>2024-11-01T10:00:00Z 之前的任务返回此字段无效。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 字幕语言。
+                     */
+                    std::string m_language;
+                    bool m_languageHasBeenSet;
 
                     /**
                      * 字幕文件格式，取值范围：

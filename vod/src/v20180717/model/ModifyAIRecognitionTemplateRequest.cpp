@@ -34,6 +34,7 @@ ModifyAIRecognitionTemplateRequest::ModifyAIRecognitionTemplateRequest() :
     m_ocrWordsConfigureHasBeenSet(false),
     m_asrFullTextConfigureHasBeenSet(false),
     m_asrWordsConfigureHasBeenSet(false),
+    m_asrTranslateConfigureHasBeenSet(false),
     m_objectConfigureHasBeenSet(false),
     m_screenshotIntervalHasBeenSet(false)
 {
@@ -139,6 +140,15 @@ string ModifyAIRecognitionTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_asrWordsConfigure.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_asrTranslateConfigureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsrTranslateConfigure";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_asrTranslateConfigure.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_objectConfigureHasBeenSet)
@@ -340,6 +350,22 @@ void ModifyAIRecognitionTemplateRequest::SetAsrWordsConfigure(const AsrWordsConf
 bool ModifyAIRecognitionTemplateRequest::AsrWordsConfigureHasBeenSet() const
 {
     return m_asrWordsConfigureHasBeenSet;
+}
+
+AsrTranslateConfigureInfoForUpdate ModifyAIRecognitionTemplateRequest::GetAsrTranslateConfigure() const
+{
+    return m_asrTranslateConfigure;
+}
+
+void ModifyAIRecognitionTemplateRequest::SetAsrTranslateConfigure(const AsrTranslateConfigureInfoForUpdate& _asrTranslateConfigure)
+{
+    m_asrTranslateConfigure = _asrTranslateConfigure;
+    m_asrTranslateConfigureHasBeenSet = true;
+}
+
+bool ModifyAIRecognitionTemplateRequest::AsrTranslateConfigureHasBeenSet() const
+{
+    return m_asrTranslateConfigureHasBeenSet;
 }
 
 ObjectConfigureInfoForUpdate ModifyAIRecognitionTemplateRequest::GetObjectConfigure() const

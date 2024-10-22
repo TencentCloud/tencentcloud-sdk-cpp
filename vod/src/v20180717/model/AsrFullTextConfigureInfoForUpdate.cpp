@@ -24,7 +24,8 @@ AsrFullTextConfigureInfoForUpdate::AsrFullTextConfigureInfoForUpdate() :
     m_switchHasBeenSet(false),
     m_subtitleFormatsOperationHasBeenSet(false),
     m_subtitleFormatHasBeenSet(false),
-    m_srcLanguageHasBeenSet(false)
+    m_srcLanguageHasBeenSet(false),
+    m_subtitleNameHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,16 @@ CoreInternalOutcome AsrFullTextConfigureInfoForUpdate::Deserialize(const rapidjs
         m_srcLanguageHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleName") && !value["SubtitleName"].IsNull())
+    {
+        if (!value["SubtitleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AsrFullTextConfigureInfoForUpdate.SubtitleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleName = string(value["SubtitleName"].GetString());
+        m_subtitleNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void AsrFullTextConfigureInfoForUpdate::ToJsonObject(rapidjson::Value &value, ra
         string key = "SrcLanguage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_srcLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subtitleName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void AsrFullTextConfigureInfoForUpdate::SetSrcLanguage(const string& _srcLanguag
 bool AsrFullTextConfigureInfoForUpdate::SrcLanguageHasBeenSet() const
 {
     return m_srcLanguageHasBeenSet;
+}
+
+string AsrFullTextConfigureInfoForUpdate::GetSubtitleName() const
+{
+    return m_subtitleName;
+}
+
+void AsrFullTextConfigureInfoForUpdate::SetSubtitleName(const string& _subtitleName)
+{
+    m_subtitleName = _subtitleName;
+    m_subtitleNameHasBeenSet = true;
+}
+
+bool AsrFullTextConfigureInfoForUpdate::SubtitleNameHasBeenSet() const
+{
+    return m_subtitleNameHasBeenSet;
 }
 

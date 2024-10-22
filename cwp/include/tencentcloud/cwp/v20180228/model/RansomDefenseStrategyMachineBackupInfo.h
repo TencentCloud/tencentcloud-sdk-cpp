@@ -533,6 +533,31 @@ namespace TencentCloud
                      */
                     bool BackupSuccessCountHasBeenSet() const;
 
+                    /**
+                     * 获取版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostVersion 版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetHostVersion() const;
+
+                    /**
+                     * 设置版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hostVersion 版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHostVersion(const uint64_t& _hostVersion);
+
+                    /**
+                     * 判断参数 HostVersion 是否已赋值
+                     * @return HostVersion 是否已赋值
+                     * 
+                     */
+                    bool HostVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -670,6 +695,13 @@ namespace TencentCloud
                      */
                     uint64_t m_backupSuccessCount;
                     bool m_backupSuccessCountHasBeenSet;
+
+                    /**
+                     * 版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_hostVersion;
+                    bool m_hostVersionHasBeenSet;
 
                 };
             }

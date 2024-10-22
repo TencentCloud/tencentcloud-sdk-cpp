@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件，通道ID
-                     * @return ProxyId 过滤条件，通道ID
+                     * 获取通道ID。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。
+                     * @return ProxyId 通道ID。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。
                      * 
                      */
                     std::string GetProxyId() const;
 
                     /**
-                     * 设置过滤条件，通道ID
-                     * @param _proxyId 过滤条件，通道ID
+                     * 设置通道ID。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。
+                     * @param _proxyId 通道ID。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。
                      * 
                      */
                     void SetProxyId(const std::string& _proxyId);
@@ -64,15 +64,36 @@ namespace TencentCloud
                     bool ProxyIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，根据监听器ID进行精确查询。
-                     * @return ListenerId 过滤条件，根据监听器ID进行精确查询。
+                     * 获取通道组ID。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。
+                     * @return GroupId 通道组ID。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。
+                     * 
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置通道组ID。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。
+                     * @param _groupId 通道组ID。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。
+                     * 
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取过滤条件，根据监听器ID进行精确查询。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。
+                     * @return ListenerId 过滤条件，根据监听器ID进行精确查询。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置过滤条件，根据监听器ID进行精确查询。
-                     * @param _listenerId 过滤条件，根据监听器ID进行精确查询。
+                     * 设置过滤条件，根据监听器ID进行精确查询。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。
+                     * @param _listenerId 过滤条件，根据监听器ID进行精确查询。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -190,27 +211,6 @@ namespace TencentCloud
                     bool SearchValueHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，通道组ID
-                     * @return GroupId 过滤条件，通道组ID
-                     * 
-                     */
-                    std::string GetGroupId() const;
-
-                    /**
-                     * 设置过滤条件，通道组ID
-                     * @param _groupId 过滤条件，通道组ID
-                     * 
-                     */
-                    void SetGroupId(const std::string& _groupId);
-
-                    /**
-                     * 判断参数 GroupId 是否已赋值
-                     * @return GroupId 是否已赋值
-                     * 
-                     */
-                    bool GroupIdHasBeenSet() const;
-
-                    /**
                      * 获取支持Http3的开关，其中：
 0，表示不需要支持Http3接入；
 1，表示需要支持Http3接入。
@@ -250,13 +250,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤条件，通道ID
+                     * 通道ID。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;
 
                     /**
-                     * 过滤条件，根据监听器ID进行精确查询。
+                     * 通道组ID。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 过滤条件，根据监听器ID进行精确查询。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
@@ -290,12 +296,6 @@ namespace TencentCloud
                      */
                     std::string m_searchValue;
                     bool m_searchValueHasBeenSet;
-
-                    /**
-                     * 过滤条件，通道组ID
-                     */
-                    std::string m_groupId;
-                    bool m_groupIdHasBeenSet;
 
                     /**
                      * 支持Http3的开关，其中：

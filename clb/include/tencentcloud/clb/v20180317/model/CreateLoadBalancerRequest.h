@@ -140,15 +140,15 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填。
-                     * @return SubnetId 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填。
+                     * 获取在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填，创建公网IPv4负载均衡实例时，不支持指定该参数。
+                     * @return SubnetId 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填，创建公网IPv4负载均衡实例时，不支持指定该参数。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填。
-                     * @param _subnetId 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填。
+                     * 设置在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填，创建公网IPv4负载均衡实例时，不支持指定该参数。
+                     * @param _subnetId 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填，创建公网IPv4负载均衡实例时，不支持指定该参数。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -659,6 +659,48 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool LBChargePrepaidHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。
+                     * @return LBChargeType 负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。
+                     * 
+                     */
+                    std::string GetLBChargeType() const;
+
+                    /**
+                     * 设置负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。
+                     * @param _lBChargeType 负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。
+                     * 
+                     */
+                    void SetLBChargeType(const std::string& _lBChargeType);
+
+                    /**
+                     * 判断参数 LBChargeType 是否已赋值
+                     * @return LBChargeType 是否已赋值
+                     * 
+                     */
+                    bool LBChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取七层访问日志主题ID
+                     * @return AccessLogTopicId 七层访问日志主题ID
+                     * 
+                     */
+                    std::string GetAccessLogTopicId() const;
+
+                    /**
+                     * 设置七层访问日志主题ID
+                     * @param _accessLogTopicId 七层访问日志主题ID
+                     * 
+                     */
+                    void SetAccessLogTopicId(const std::string& _accessLogTopicId);
+
+                    /**
+                     * 判断参数 AccessLogTopicId 是否已赋值
+                     * @return AccessLogTopicId 是否已赋值
+                     * 
+                     */
+                    bool AccessLogTopicIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -688,7 +730,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填。
+                     * 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填，创建公网IPv4负载均衡实例时，不支持指定该参数。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -834,6 +876,18 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     LBChargePrepaid m_lBChargePrepaid;
                     bool m_lBChargePrepaidHasBeenSet;
+
+                    /**
+                     * 负载均衡实例计费类型，取值：POSTPAID_BY_HOUR，PREPAID，默认是POSTPAID_BY_HOUR。
+                     */
+                    std::string m_lBChargeType;
+                    bool m_lBChargeTypeHasBeenSet;
+
+                    /**
+                     * 七层访问日志主题ID
+                     */
+                    std::string m_accessLogTopicId;
+                    bool m_accessLogTopicIdHasBeenSet;
 
                 };
             }

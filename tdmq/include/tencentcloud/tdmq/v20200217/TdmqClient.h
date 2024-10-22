@@ -85,6 +85,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteProClusterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteProClusterResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQBindingRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQBindingResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQUserRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQUserResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQVipInstanceRequest.h>
@@ -159,6 +161,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribePulsarProInstanceDetailResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribePulsarProInstancesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribePulsarProInstancesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQBindingsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQBindingsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQExchangesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQExchangesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQNodeListRequest.h>
@@ -416,6 +420,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteProClusterResponse> DeleteProClusterOutcome;
                 typedef std::future<DeleteProClusterOutcome> DeleteProClusterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteProClusterRequest&, DeleteProClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRabbitMQBindingResponse> DeleteRabbitMQBindingOutcome;
+                typedef std::future<DeleteRabbitMQBindingOutcome> DeleteRabbitMQBindingOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteRabbitMQBindingRequest&, DeleteRabbitMQBindingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRabbitMQBindingAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRabbitMQUserResponse> DeleteRabbitMQUserOutcome;
                 typedef std::future<DeleteRabbitMQUserOutcome> DeleteRabbitMQUserOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteRabbitMQUserRequest&, DeleteRabbitMQUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRabbitMQUserAsyncHandler;
@@ -527,6 +534,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePulsarProInstancesResponse> DescribePulsarProInstancesOutcome;
                 typedef std::future<DescribePulsarProInstancesOutcome> DescribePulsarProInstancesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribePulsarProInstancesRequest&, DescribePulsarProInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePulsarProInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRabbitMQBindingsResponse> DescribeRabbitMQBindingsOutcome;
+                typedef std::future<DescribeRabbitMQBindingsOutcome> DescribeRabbitMQBindingsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQBindingsRequest&, DescribeRabbitMQBindingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQBindingsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRabbitMQExchangesResponse> DescribeRabbitMQExchangesOutcome;
                 typedef std::future<DescribeRabbitMQExchangesOutcome> DescribeRabbitMQExchangesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQExchangesRequest&, DescribeRabbitMQExchangesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQExchangesAsyncHandler;
@@ -1035,6 +1045,15 @@ namespace TencentCloud
                 DeleteProClusterOutcomeCallable DeleteProClusterCallable(const Model::DeleteProClusterRequest& request);
 
                 /**
+                 *解绑RabbitMQ路由关系
+                 * @param req DeleteRabbitMQBindingRequest
+                 * @return DeleteRabbitMQBindingOutcome
+                 */
+                DeleteRabbitMQBindingOutcome DeleteRabbitMQBinding(const Model::DeleteRabbitMQBindingRequest &request);
+                void DeleteRabbitMQBindingAsync(const Model::DeleteRabbitMQBindingRequest& request, const DeleteRabbitMQBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRabbitMQBindingOutcomeCallable DeleteRabbitMQBindingCallable(const Model::DeleteRabbitMQBindingRequest& request);
+
+                /**
                  *删除RabbitMQ的用户
                  * @param req DeleteRabbitMQUserRequest
                  * @return DeleteRabbitMQUserOutcome
@@ -1368,6 +1387,15 @@ namespace TencentCloud
                 DescribePulsarProInstancesOutcome DescribePulsarProInstances(const Model::DescribePulsarProInstancesRequest &request);
                 void DescribePulsarProInstancesAsync(const Model::DescribePulsarProInstancesRequest& request, const DescribePulsarProInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePulsarProInstancesOutcomeCallable DescribePulsarProInstancesCallable(const Model::DescribePulsarProInstancesRequest& request);
+
+                /**
+                 *查询RabbitMQ路由关系列表
+                 * @param req DescribeRabbitMQBindingsRequest
+                 * @return DescribeRabbitMQBindingsOutcome
+                 */
+                DescribeRabbitMQBindingsOutcome DescribeRabbitMQBindings(const Model::DescribeRabbitMQBindingsRequest &request);
+                void DescribeRabbitMQBindingsAsync(const Model::DescribeRabbitMQBindingsRequest& request, const DescribeRabbitMQBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRabbitMQBindingsOutcomeCallable DescribeRabbitMQBindingsCallable(const Model::DescribeRabbitMQBindingsRequest& request);
 
                 /**
                  *查询RabbitMQ exchange 列表

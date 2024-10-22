@@ -63,7 +63,8 @@ Job::Job() :
     m_networkSendRateHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_projectNameHasBeenSet(false),
-    m_scenarioNameHasBeenSet(false)
+    m_scenarioNameHasBeenSet(false),
+    m_payModeHasBeenSet(false)
 {
 }
 
@@ -602,6 +603,16 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
         m_scenarioNameHasBeenSet = true;
     }
 
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Job.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = value["PayMode"].GetInt64();
+        m_payModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1018,6 +1029,14 @@ void Job::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "ScenarioName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scenarioName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payMode, allocator);
     }
 
 }
@@ -1709,5 +1728,21 @@ void Job::SetScenarioName(const string& _scenarioName)
 bool Job::ScenarioNameHasBeenSet() const
 {
     return m_scenarioNameHasBeenSet;
+}
+
+int64_t Job::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void Job::SetPayMode(const int64_t& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool Job::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
 }
 

@@ -50,7 +50,9 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_loadBalancerPassToTargetHasBeenSet(false),
     m_dynamicVipHasBeenSet(false),
     m_egressHasBeenSet(false),
-    m_lBChargePrepaidHasBeenSet(false)
+    m_lBChargePrepaidHasBeenSet(false),
+    m_lBChargeTypeHasBeenSet(false),
+    m_accessLogTopicIdHasBeenSet(false)
 {
 }
 
@@ -305,6 +307,22 @@ string CreateLoadBalancerRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_lBChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_lBChargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LBChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lBChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessLogTopicIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessLogTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accessLogTopicId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -761,6 +779,38 @@ void CreateLoadBalancerRequest::SetLBChargePrepaid(const LBChargePrepaid& _lBCha
 bool CreateLoadBalancerRequest::LBChargePrepaidHasBeenSet() const
 {
     return m_lBChargePrepaidHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetLBChargeType() const
+{
+    return m_lBChargeType;
+}
+
+void CreateLoadBalancerRequest::SetLBChargeType(const string& _lBChargeType)
+{
+    m_lBChargeType = _lBChargeType;
+    m_lBChargeTypeHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::LBChargeTypeHasBeenSet() const
+{
+    return m_lBChargeTypeHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetAccessLogTopicId() const
+{
+    return m_accessLogTopicId;
+}
+
+void CreateLoadBalancerRequest::SetAccessLogTopicId(const string& _accessLogTopicId)
+{
+    m_accessLogTopicId = _accessLogTopicId;
+    m_accessLogTopicIdHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::AccessLogTopicIdHasBeenSet() const
+{
+    return m_accessLogTopicIdHasBeenSet;
 }
 
 

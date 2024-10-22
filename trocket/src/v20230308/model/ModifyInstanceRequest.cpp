@@ -30,7 +30,9 @@ ModifyInstanceRequest::ModifyInstanceRequest() :
     m_skuCodeHasBeenSet(false),
     m_messageRetentionHasBeenSet(false),
     m_scaledTpsEnabledHasBeenSet(false),
-    m_maxTopicNumHasBeenSet(false)
+    m_aclEnabledHasBeenSet(false),
+    m_maxTopicNumHasBeenSet(false),
+    m_extraTopicNumHasBeenSet(false)
 {
 }
 
@@ -97,12 +99,28 @@ string ModifyInstanceRequest::ToJsonString() const
         d.AddMember(iKey, m_scaledTpsEnabled, allocator);
     }
 
+    if (m_aclEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AclEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_aclEnabled, allocator);
+    }
+
     if (m_maxTopicNumHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxTopicNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxTopicNum, allocator);
+    }
+
+    if (m_extraTopicNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraTopicNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extraTopicNum.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -225,6 +243,22 @@ bool ModifyInstanceRequest::ScaledTpsEnabledHasBeenSet() const
     return m_scaledTpsEnabledHasBeenSet;
 }
 
+bool ModifyInstanceRequest::GetAclEnabled() const
+{
+    return m_aclEnabled;
+}
+
+void ModifyInstanceRequest::SetAclEnabled(const bool& _aclEnabled)
+{
+    m_aclEnabled = _aclEnabled;
+    m_aclEnabledHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::AclEnabledHasBeenSet() const
+{
+    return m_aclEnabledHasBeenSet;
+}
+
 int64_t ModifyInstanceRequest::GetMaxTopicNum() const
 {
     return m_maxTopicNum;
@@ -239,6 +273,22 @@ void ModifyInstanceRequest::SetMaxTopicNum(const int64_t& _maxTopicNum)
 bool ModifyInstanceRequest::MaxTopicNumHasBeenSet() const
 {
     return m_maxTopicNumHasBeenSet;
+}
+
+string ModifyInstanceRequest::GetExtraTopicNum() const
+{
+    return m_extraTopicNum;
+}
+
+void ModifyInstanceRequest::SetExtraTopicNum(const string& _extraTopicNum)
+{
+    m_extraTopicNum = _extraTopicNum;
+    m_extraTopicNumHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::ExtraTopicNumHasBeenSet() const
+{
+    return m_extraTopicNumHasBeenSet;
 }
 
 

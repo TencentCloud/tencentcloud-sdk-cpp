@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取源站地域，参考接口DescribeDestRegions 返回参数RegionDetail中的RegionId
-                     * @return RealServerRegion 源站地域，参考接口DescribeDestRegions 返回参数RegionDetail中的RegionId
+                     * 获取源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId
+                     * @return RealServerRegion 源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId
                      * 
                      */
                     std::string GetRealServerRegion() const;
 
                     /**
-                     * 设置源站地域，参考接口DescribeDestRegions 返回参数RegionDetail中的RegionId
-                     * @param _realServerRegion 源站地域，参考接口DescribeDestRegions 返回参数RegionDetail中的RegionId
+                     * 设置源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId
+                     * @param _realServerRegion 源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId
                      * 
                      */
                     void SetRealServerRegion(const std::string& _realServerRegion);
@@ -227,7 +227,7 @@ namespace TencentCloud
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 源站地域，参考接口DescribeDestRegions 返回参数RegionDetail中的RegionId
+                     * 源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId
                      */
                     std::string m_realServerRegion;
                     bool m_realServerRegionHasBeenSet;

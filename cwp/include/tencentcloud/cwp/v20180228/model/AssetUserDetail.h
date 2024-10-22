@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅windows
-                     * @return UserType 账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅windows
+                     * 获取账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅Windows
+                     * @return UserType 账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅Windows
                      * 
                      */
                     uint64_t GetUserType() const;
 
                     /**
-                     * 设置账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅windows
-                     * @param _userType 账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅windows
+                     * 设置账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅Windows
+                     * @param _userType 账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅Windows
                      * 
                      */
                     void SetUserType(const uint64_t& _userType);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool UserTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否域账号：0否， 1是, 999为空  仅windows
-                     * @return IsDomain 是否域账号：0否， 1是, 999为空  仅windows
+                     * 获取是否域账号：0否， 1是, 999为空  仅Windows
+                     * @return IsDomain 是否域账号：0否， 1是, 999为空  仅Windows
                      * 
                      */
                     uint64_t GetIsDomain() const;
 
                     /**
-                     * 设置是否域账号：0否， 1是, 999为空  仅windows
-                     * @param _isDomain 是否域账号：0否， 1是, 999为空  仅windows
+                     * 设置是否域账号：0否， 1是, 999为空  仅Windows
+                     * @param _isDomain 是否域账号：0否， 1是, 999为空  仅Windows
                      * 
                      */
                     void SetIsDomain(const uint64_t& _isDomain);
@@ -727,13 +727,13 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅windows
+                     * 账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅Windows
                      */
                     uint64_t m_userType;
                     bool m_userTypeHasBeenSet;
 
                     /**
-                     * 是否域账号：0否， 1是, 999为空  仅windows
+                     * 是否域账号：0否， 1是, 999为空  仅Windows
                      */
                     uint64_t m_isDomain;
                     bool m_isDomainHasBeenSet;

@@ -24,13 +24,13 @@ using namespace std;
 
 DescribeHTTPSListenersRequest::DescribeHTTPSListenersRequest() :
     m_proxyIdHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
     m_listenerIdHasBeenSet(false),
     m_listenerNameHasBeenSet(false),
     m_portHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_searchValueHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
     m_http3SupportedHasBeenSet(false)
 {
 }
@@ -48,6 +48,14 @@ string DescribeHTTPSListenersRequest::ToJsonString() const
         string key = "ProxyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_proxyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_listenerIdHasBeenSet)
@@ -98,14 +106,6 @@ string DescribeHTTPSListenersRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_searchValue.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_groupIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GroupId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_http3SupportedHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -136,6 +136,22 @@ void DescribeHTTPSListenersRequest::SetProxyId(const string& _proxyId)
 bool DescribeHTTPSListenersRequest::ProxyIdHasBeenSet() const
 {
     return m_proxyIdHasBeenSet;
+}
+
+string DescribeHTTPSListenersRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void DescribeHTTPSListenersRequest::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool DescribeHTTPSListenersRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 string DescribeHTTPSListenersRequest::GetListenerId() const
@@ -232,22 +248,6 @@ void DescribeHTTPSListenersRequest::SetSearchValue(const string& _searchValue)
 bool DescribeHTTPSListenersRequest::SearchValueHasBeenSet() const
 {
     return m_searchValueHasBeenSet;
-}
-
-string DescribeHTTPSListenersRequest::GetGroupId() const
-{
-    return m_groupId;
-}
-
-void DescribeHTTPSListenersRequest::SetGroupId(const string& _groupId)
-{
-    m_groupId = _groupId;
-    m_groupIdHasBeenSet = true;
-}
-
-bool DescribeHTTPSListenersRequest::GroupIdHasBeenSet() const
-{
-    return m_groupIdHasBeenSet;
 }
 
 int64_t DescribeHTTPSListenersRequest::GetHttp3Supported() const

@@ -31,6 +31,7 @@
 #include <tencentcloud/vod/v20180717/model/OcrWordsConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/AsrFullTextConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/AsrWordsConfigureInfo.h>
+#include <tencentcloud/vod/v20180717/model/AsrTranslateConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/ObjectConfigureInfo.h>
 
 
@@ -116,6 +117,35 @@ namespace TencentCloud
                      * 
                      */
                     bool CommentHasBeenSet() const;
+
+                    /**
+                     * 获取模板类型，取值：
+<li>Preset：系统预置模板；</li>
+<li>Custom：用户自定义模板。</li>
+                     * @return Type 模板类型，取值：
+<li>Preset：系统预置模板；</li>
+<li>Custom：用户自定义模板。</li>
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置模板类型，取值：
+<li>Preset：系统预置模板；</li>
+<li>Custom：用户自定义模板。</li>
+                     * @param _type 模板类型，取值：
+<li>Preset：系统预置模板；</li>
+<li>Custom：用户自定义模板。</li>
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
 
                     /**
                      * 获取头尾识别控制参数。
@@ -293,6 +323,31 @@ namespace TencentCloud
                     bool AsrWordsConfigureHasBeenSet() const;
 
                     /**
+                     * 获取语音翻译控制参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AsrTranslateConfigure 语音翻译控制参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AsrTranslateConfigureInfo GetAsrTranslateConfigure() const;
+
+                    /**
+                     * 设置语音翻译控制参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _asrTranslateConfigure 语音翻译控制参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAsrTranslateConfigure(const AsrTranslateConfigureInfo& _asrTranslateConfigure);
+
+                    /**
+                     * 判断参数 AsrTranslateConfigure 是否已赋值
+                     * @return AsrTranslateConfigure 是否已赋值
+                     * 
+                     */
+                    bool AsrTranslateConfigureHasBeenSet() const;
+
+                    /**
                      * 获取物体识别控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectConfigure 物体识别控制参数。
@@ -401,6 +456,14 @@ namespace TencentCloud
                     bool m_commentHasBeenSet;
 
                     /**
+                     * 模板类型，取值：
+<li>Preset：系统预置模板；</li>
+<li>Custom：用户自定义模板。</li>
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
                      * 头尾识别控制参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -448,6 +511,13 @@ namespace TencentCloud
                      */
                     AsrWordsConfigureInfo m_asrWordsConfigure;
                     bool m_asrWordsConfigureHasBeenSet;
+
+                    /**
+                     * 语音翻译控制参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AsrTranslateConfigureInfo m_asrTranslateConfigure;
+                    bool m_asrTranslateConfigureHasBeenSet;
 
                     /**
                      * 物体识别控制参数。

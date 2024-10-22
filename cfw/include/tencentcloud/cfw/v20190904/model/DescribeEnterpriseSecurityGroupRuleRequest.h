@@ -324,15 +324,15 @@ true为启用，false为不启用
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥
-                     * @return ServiceTemplateId 端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥
+                     * 获取端口协议类型参数模板id；协议端口模板id
+                     * @return ServiceTemplateId 端口协议类型参数模板id；协议端口模板id
                      * 
                      */
                     std::string GetServiceTemplateId() const;
 
                     /**
-                     * 设置端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥
-                     * @param _serviceTemplateId 端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥
+                     * 设置端口协议类型参数模板id；协议端口模板id
+                     * @param _serviceTemplateId 端口协议类型参数模板id；协议端口模板id
                      * 
                      */
                     void SetServiceTemplateId(const std::string& _serviceTemplateId);
@@ -445,7 +445,7 @@ true为启用，false为不启用
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥
+                     * 端口协议类型参数模板id；协议端口模板id
                      */
                     std::string m_serviceTemplateId;
                     bool m_serviceTemplateIdHasBeenSet;

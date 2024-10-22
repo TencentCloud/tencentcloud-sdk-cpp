@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ForceHasBeenSet() const;
 
                     /**
-                     * 获取通道组ID，该参数和GroupId必须设置一个，但不能同时设置。
-                     * @return GroupId 通道组ID，该参数和GroupId必须设置一个，但不能同时设置。
+                     * 获取通道组ID，该参数和ProxyId必须设置一个，但不能同时设置。
+                     * @return GroupId 通道组ID，该参数和ProxyId必须设置一个，但不能同时设置。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置通道组ID，该参数和GroupId必须设置一个，但不能同时设置。
-                     * @param _groupId 通道组ID，该参数和GroupId必须设置一个，但不能同时设置。
+                     * 设置通道组ID，该参数和ProxyId必须设置一个，但不能同时设置。
+                     * @param _groupId 通道组ID，该参数和ProxyId必须设置一个，但不能同时设置。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_forceHasBeenSet;
 
                     /**
-                     * 通道组ID，该参数和GroupId必须设置一个，但不能同时设置。
+                     * 通道组ID，该参数和ProxyId必须设置一个，但不能同时设置。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

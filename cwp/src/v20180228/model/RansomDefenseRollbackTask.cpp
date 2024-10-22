@@ -30,7 +30,8 @@ RansomDefenseRollbackTask::RansomDefenseRollbackTask() :
     m_createTimeHasBeenSet(false),
     m_backupTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_regionInfoHasBeenSet(false)
+    m_regionInfoHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,16 @@ CoreInternalOutcome RansomDefenseRollbackTask::Deserialize(const rapidjson::Valu
         m_regionInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RansomDefenseRollbackTask.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +243,14 @@ void RansomDefenseRollbackTask::ToJsonObject(rapidjson::Value &value, rapidjson:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_regionInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -395,5 +414,21 @@ void RansomDefenseRollbackTask::SetRegionInfo(const RegionInfo& _regionInfo)
 bool RansomDefenseRollbackTask::RegionInfoHasBeenSet() const
 {
     return m_regionInfoHasBeenSet;
+}
+
+string RansomDefenseRollbackTask::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void RansomDefenseRollbackTask::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool RansomDefenseRollbackTask::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

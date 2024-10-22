@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取通道名称。可任意命名，但不得超过30个字符。
-                     * @return ProxyName 通道名称。可任意命名，但不得超过30个字符。
+                     * 获取通道名称。可任意命名，但不得超过32个字符。
+                     * @return ProxyName 通道名称。可任意命名，但不得超过32个字符。
                      * 
                      */
                     std::string GetProxyName() const;
 
                     /**
-                     * 设置通道名称。可任意命名，但不得超过30个字符。
-                     * @param _proxyName 通道名称。可任意命名，但不得超过30个字符。
+                     * 设置通道名称。可任意命名，但不得超过32个字符。
+                     * @param _proxyName 通道名称。可任意命名，但不得超过32个字符。
                      * 
                      */
                     void SetProxyName(const std::string& _proxyName);
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 通道名称。可任意命名，但不得超过30个字符。
+                     * 通道名称。可任意命名，但不得超过32个字符。
                      */
                     std::string m_proxyName;
                     bool m_proxyNameHasBeenSet;

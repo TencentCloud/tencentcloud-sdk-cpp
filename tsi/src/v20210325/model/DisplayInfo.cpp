@@ -27,7 +27,8 @@ DisplayInfo::DisplayInfo() :
     m_targetTextHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_isEndHasBeenSet(false)
+    m_isEndHasBeenSet(false),
+    m_audioHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome DisplayInfo::Deserialize(const rapidjson::Value &value)
         m_isEndHasBeenSet = true;
     }
 
+    if (value.HasMember("Audio") && !value["Audio"].IsNull())
+    {
+        if (!value["Audio"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayInfo.Audio` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audio = string(value["Audio"].GetString());
+        m_audioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void DisplayInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsEnd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isEnd, allocator);
+    }
+
+    if (m_audioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Audio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_audio.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void DisplayInfo::SetIsEnd(const bool& _isEnd)
 bool DisplayInfo::IsEndHasBeenSet() const
 {
     return m_isEndHasBeenSet;
+}
+
+string DisplayInfo::GetAudio() const
+{
+    return m_audio;
+}
+
+void DisplayInfo::SetAudio(const string& _audio)
+{
+    m_audio = _audio;
+    m_audioHasBeenSet = true;
+}
+
+bool DisplayInfo::AudioHasBeenSet() const
+{
+    return m_audioHasBeenSet;
 }
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取集群ID
+                     * @return InstanceId 集群ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置集群ID
+                     * @param _instanceId 集群ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -190,6 +190,27 @@ namespace TencentCloud
                     bool ScaledTpsEnabledHasBeenSet() const;
 
                     /**
+                     * 获取是否开启ACL
+                     * @return AclEnabled 是否开启ACL
+                     * 
+                     */
+                    bool GetAclEnabled() const;
+
+                    /**
+                     * 设置是否开启ACL
+                     * @param _aclEnabled 是否开启ACL
+                     * 
+                     */
+                    void SetAclEnabled(const bool& _aclEnabled);
+
+                    /**
+                     * 判断参数 AclEnabled 是否已赋值
+                     * @return AclEnabled 是否已赋值
+                     * 
+                     */
+                    bool AclEnabledHasBeenSet() const;
+
+                    /**
                      * 获取最大可创建主题数
                      * @return MaxTopicNum 最大可创建主题数
                      * 
@@ -210,10 +231,31 @@ namespace TencentCloud
                      */
                     bool MaxTopicNumHasBeenSet() const;
 
+                    /**
+                     * 获取免费额度之外的主题个数
+                     * @return ExtraTopicNum 免费额度之外的主题个数
+                     * 
+                     */
+                    std::string GetExtraTopicNum() const;
+
+                    /**
+                     * 设置免费额度之外的主题个数
+                     * @param _extraTopicNum 免费额度之外的主题个数
+                     * 
+                     */
+                    void SetExtraTopicNum(const std::string& _extraTopicNum);
+
+                    /**
+                     * 判断参数 ExtraTopicNum 是否已赋值
+                     * @return ExtraTopicNum 是否已赋值
+                     * 
+                     */
+                    bool ExtraTopicNumHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * 集群ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -255,10 +297,22 @@ namespace TencentCloud
                     bool m_scaledTpsEnabledHasBeenSet;
 
                     /**
+                     * 是否开启ACL
+                     */
+                    bool m_aclEnabled;
+                    bool m_aclEnabledHasBeenSet;
+
+                    /**
                      * 最大可创建主题数
                      */
                     int64_t m_maxTopicNum;
                     bool m_maxTopicNumHasBeenSet;
+
+                    /**
+                     * 免费额度之外的主题个数
+                     */
+                    std::string m_extraTopicNum;
+                    bool m_extraTopicNumHasBeenSet;
 
                 };
             }

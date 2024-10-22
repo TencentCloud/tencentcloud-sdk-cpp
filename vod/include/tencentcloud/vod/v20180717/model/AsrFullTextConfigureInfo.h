@@ -78,10 +78,10 @@ namespace TencentCloud
                     /**
                      * 获取生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：
 <li>vtt：生成 WebVTT 字幕文件；</li>
-<li>srt：生成 SRT 字幕文件。</li>
+<li>srt：生成 SRT 字幕文件。</li><font color=red>注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。
                      * @return SubtitleFormats 生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：
 <li>vtt：生成 WebVTT 字幕文件；</li>
-<li>srt：生成 SRT 字幕文件。</li>
+<li>srt：生成 SRT 字幕文件。</li><font color=red>注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。
                      * 
                      */
                     std::vector<std::string> GetSubtitleFormats() const;
@@ -89,10 +89,10 @@ namespace TencentCloud
                     /**
                      * 设置生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：
 <li>vtt：生成 WebVTT 字幕文件；</li>
-<li>srt：生成 SRT 字幕文件。</li>
+<li>srt：生成 SRT 字幕文件。</li><font color=red>注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。
                      * @param _subtitleFormats 生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：
 <li>vtt：生成 WebVTT 字幕文件；</li>
-<li>srt：生成 SRT 字幕文件。</li>
+<li>srt：生成 SRT 字幕文件。</li><font color=red>注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。
                      * 
                      */
                     void SetSubtitleFormats(const std::vector<std::string>& _subtitleFormats);
@@ -178,6 +178,31 @@ namespace TencentCloud
                      */
                     bool SrcLanguageHasBeenSet() const;
 
+                    /**
+                     * 获取指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。
+<font color=red>注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。
+                     * @return SubtitleName 指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。
+<font color=red>注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。
+                     * 
+                     */
+                    std::string GetSubtitleName() const;
+
+                    /**
+                     * 设置指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。
+<font color=red>注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。
+                     * @param _subtitleName 指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。
+<font color=red>注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。
+                     * 
+                     */
+                    void SetSubtitleName(const std::string& _subtitleName);
+
+                    /**
+                     * 判断参数 SubtitleName 是否已赋值
+                     * @return SubtitleName 是否已赋值
+                     * 
+                     */
+                    bool SubtitleNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,7 +216,7 @@ namespace TencentCloud
                     /**
                      * 生成的字幕文件格式列表，不填或者填空数组表示不生成字幕文件，可选值：
 <li>vtt：生成 WebVTT 字幕文件；</li>
-<li>srt：生成 SRT 字幕文件。</li>
+<li>srt：生成 SRT 字幕文件。</li><font color=red>注意：</font>云点播媒资信息仅支持添加 vtt 字幕，因此当且仅当 SubtitleFormats 包含 vtt 时，云点播将生成的字幕添加到媒资。
                      */
                     std::vector<std::string> m_subtitleFormats;
                     bool m_subtitleFormatsHasBeenSet;
@@ -215,6 +240,13 @@ namespace TencentCloud
                      */
                     std::string m_srcLanguage;
                     bool m_srcLanguageHasBeenSet;
+
+                    /**
+                     * 指定字幕名称，长度限制：64 个字符。该值将用于播放器展示，若不填则云点播自动生成。
+<font color=red>注意：</font>仅当 SubtitleFormats 包含 vtt 时，该字段有效。
+                     */
+                    std::string m_subtitleName;
+                    bool m_subtitleNameHasBeenSet;
 
                 };
             }

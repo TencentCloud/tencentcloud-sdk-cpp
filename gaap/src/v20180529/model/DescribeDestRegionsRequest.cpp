@@ -22,7 +22,8 @@
 using namespace TencentCloud::Gaap::V20180529::Model;
 using namespace std;
 
-DescribeDestRegionsRequest::DescribeDestRegionsRequest()
+DescribeDestRegionsRequest::DescribeDestRegionsRequest() :
+    m_qualityTypeHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeDestRegionsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_qualityTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualityType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_qualityType, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeDestRegionsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeDestRegionsRequest::GetQualityType() const
+{
+    return m_qualityType;
+}
+
+void DescribeDestRegionsRequest::SetQualityType(const uint64_t& _qualityType)
+{
+    m_qualityType = _qualityType;
+    m_qualityTypeHasBeenSet = true;
+}
+
+bool DescribeDestRegionsRequest::QualityTypeHasBeenSet() const
+{
+    return m_qualityTypeHasBeenSet;
+}
 
 

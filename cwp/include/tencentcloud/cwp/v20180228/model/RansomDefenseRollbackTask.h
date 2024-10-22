@@ -257,6 +257,31 @@ namespace TencentCloud
                      */
                     bool RegionInfoHasBeenSet() const;
 
+                    /**
+                     * 获取主机示例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId 主机示例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置主机示例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceId 主机示例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,6 +343,13 @@ namespace TencentCloud
                      */
                     RegionInfo m_regionInfo;
                     bool m_regionInfoHasBeenSet;
+
+                    /**
+                     * 主机示例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

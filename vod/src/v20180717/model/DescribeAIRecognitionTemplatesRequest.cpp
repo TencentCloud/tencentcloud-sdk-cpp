@@ -25,6 +25,7 @@ using namespace std;
 DescribeAIRecognitionTemplatesRequest::DescribeAIRecognitionTemplatesRequest() :
     m_subAppIdHasBeenSet(false),
     m_definitionsHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -56,6 +57,14 @@ string DescribeAIRecognitionTemplatesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -112,6 +121,22 @@ void DescribeAIRecognitionTemplatesRequest::SetDefinitions(const vector<int64_t>
 bool DescribeAIRecognitionTemplatesRequest::DefinitionsHasBeenSet() const
 {
     return m_definitionsHasBeenSet;
+}
+
+string DescribeAIRecognitionTemplatesRequest::GetType() const
+{
+    return m_type;
+}
+
+void DescribeAIRecognitionTemplatesRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DescribeAIRecognitionTemplatesRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 uint64_t DescribeAIRecognitionTemplatesRequest::GetOffset() const

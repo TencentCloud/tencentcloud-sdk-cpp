@@ -23,6 +23,7 @@ set(tsi_public_header_model
   include/tencentcloud/tsi/v20210325/model/DisplayInfo.h
   include/tencentcloud/tsi/v20210325/model/TongChuanRecognizeResponse.h
   include/tencentcloud/tsi/v20210325/model/TongChuanDisplayRequest.h
+  include/tencentcloud/tsi/v20210325/model/TTS.h
   include/tencentcloud/tsi/v20210325/model/TongChuanRecognizeRequest.h
   include/tencentcloud/tsi/v20210325/model/TongChuanDisplayResponse.h
   include/tencentcloud/tsi/v20210325/model/TongChuanSyncRequest.h
@@ -34,6 +35,7 @@ set(tsi_src
   src/v20210325/model/DisplayInfo.cpp
   src/v20210325/model/TongChuanRecognizeResponse.cpp
   src/v20210325/model/TongChuanDisplayRequest.cpp
+  src/v20210325/model/TTS.cpp
   src/v20210325/model/TongChuanRecognizeRequest.cpp
   src/v20210325/model/TongChuanDisplayResponse.cpp
   src/v20210325/model/TongChuanSyncRequest.cpp

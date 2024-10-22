@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool PublicIpHasBeenSet() const;
 
                     /**
-                     * 获取公网 IP 类型
+                     * 获取公网 IP 类型 1 公网,2 弹性,3 弹性ipv6,4 anycastIP, 6 HighQualityEIP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublicIpType 公网 IP 类型
+                     * @return PublicIpType 公网 IP 类型 1 公网,2 弹性,3 弹性ipv6,4 anycastIP, 6 HighQualityEIP
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPublicIpType() const;
 
                     /**
-                     * 设置公网 IP 类型
+                     * 设置公网 IP 类型 1 公网,2 弹性,3 弹性ipv6,4 anycastIP, 6 HighQualityEIP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _publicIpType 公网 IP 类型
+                     * @param _publicIpType 公网 IP 类型 1 公网,2 弹性,3 弹性ipv6,4 anycastIP, 6 HighQualityEIP
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -682,7 +682,7 @@ namespace TencentCloud
                     bool m_publicIpHasBeenSet;
 
                     /**
-                     * 公网 IP 类型
+                     * 公网 IP 类型 1 公网,2 弹性,3 弹性ipv6,4 anycastIP, 6 HighQualityEIP
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_publicIpType;

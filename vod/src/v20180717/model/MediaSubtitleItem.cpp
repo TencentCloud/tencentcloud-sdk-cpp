@@ -25,7 +25,8 @@ MediaSubtitleItem::MediaSubtitleItem() :
     m_nameHasBeenSet(false),
     m_languageHasBeenSet(false),
     m_formatHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_sourceHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome MediaSubtitleItem::Deserialize(const rapidjson::Value &value
         m_urlHasBeenSet = true;
     }
 
+    if (value.HasMember("Source") && !value["Source"].IsNull())
+    {
+        if (!value["Source"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaSubtitleItem.Source` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_source = string(value["Source"].GetString());
+        m_sourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void MediaSubtitleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void MediaSubtitleItem::SetUrl(const string& _url)
 bool MediaSubtitleItem::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string MediaSubtitleItem::GetSource() const
+{
+    return m_source;
+}
+
+void MediaSubtitleItem::SetSource(const string& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool MediaSubtitleItem::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
 }
 

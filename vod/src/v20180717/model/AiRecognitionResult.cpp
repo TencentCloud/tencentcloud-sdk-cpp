@@ -27,6 +27,7 @@ AiRecognitionResult::AiRecognitionResult() :
     m_faceTaskHasBeenSet(false),
     m_asrWordsTaskHasBeenSet(false),
     m_asrFullTextTaskHasBeenSet(false),
+    m_asrTranslateTaskHasBeenSet(false),
     m_ocrWordsTaskHasBeenSet(false),
     m_ocrFullTextTaskHasBeenSet(false),
     m_objectTaskHasBeenSet(false)
@@ -131,6 +132,23 @@ CoreInternalOutcome AiRecognitionResult::Deserialize(const rapidjson::Value &val
         }
 
         m_asrFullTextTaskHasBeenSet = true;
+    }
+
+    if (value.HasMember("AsrTranslateTask") && !value["AsrTranslateTask"].IsNull())
+    {
+        if (!value["AsrTranslateTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionResult.AsrTranslateTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_asrTranslateTask.Deserialize(value["AsrTranslateTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_asrTranslateTaskHasBeenSet = true;
     }
 
     if (value.HasMember("OcrWordsTask") && !value["OcrWordsTask"].IsNull())
@@ -242,6 +260,15 @@ void AiRecognitionResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_asrFullTextTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_asrTranslateTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsrTranslateTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_asrTranslateTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_ocrWordsTaskHasBeenSet)
@@ -368,6 +395,22 @@ void AiRecognitionResult::SetAsrFullTextTask(const AiRecognitionTaskAsrFullTextR
 bool AiRecognitionResult::AsrFullTextTaskHasBeenSet() const
 {
     return m_asrFullTextTaskHasBeenSet;
+}
+
+AiRecognitionTaskAsrTranslateResult AiRecognitionResult::GetAsrTranslateTask() const
+{
+    return m_asrTranslateTask;
+}
+
+void AiRecognitionResult::SetAsrTranslateTask(const AiRecognitionTaskAsrTranslateResult& _asrTranslateTask)
+{
+    m_asrTranslateTask = _asrTranslateTask;
+    m_asrTranslateTaskHasBeenSet = true;
+}
+
+bool AiRecognitionResult::AsrTranslateTaskHasBeenSet() const
+{
+    return m_asrTranslateTaskHasBeenSet;
 }
 
 AiRecognitionTaskOcrWordsResult AiRecognitionResult::GetOcrWordsTask() const

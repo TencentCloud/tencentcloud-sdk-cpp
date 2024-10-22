@@ -1373,6 +1373,49 @@ TdmqClient::DeleteProClusterOutcomeCallable TdmqClient::DeleteProClusterCallable
     return task->get_future();
 }
 
+TdmqClient::DeleteRabbitMQBindingOutcome TdmqClient::DeleteRabbitMQBinding(const DeleteRabbitMQBindingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRabbitMQBinding");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRabbitMQBindingResponse rsp = DeleteRabbitMQBindingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRabbitMQBindingOutcome(rsp);
+        else
+            return DeleteRabbitMQBindingOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRabbitMQBindingOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DeleteRabbitMQBindingAsync(const DeleteRabbitMQBindingRequest& request, const DeleteRabbitMQBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRabbitMQBinding(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DeleteRabbitMQBindingOutcomeCallable TdmqClient::DeleteRabbitMQBindingCallable(const DeleteRabbitMQBindingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRabbitMQBindingOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRabbitMQBinding(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DeleteRabbitMQUserOutcome TdmqClient::DeleteRabbitMQUser(const DeleteRabbitMQUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRabbitMQUser");
@@ -2957,6 +3000,49 @@ TdmqClient::DescribePulsarProInstancesOutcomeCallable TdmqClient::DescribePulsar
         [this, request]()
         {
             return this->DescribePulsarProInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeRabbitMQBindingsOutcome TdmqClient::DescribeRabbitMQBindings(const DescribeRabbitMQBindingsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRabbitMQBindings");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRabbitMQBindingsResponse rsp = DescribeRabbitMQBindingsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRabbitMQBindingsOutcome(rsp);
+        else
+            return DescribeRabbitMQBindingsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRabbitMQBindingsOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRabbitMQBindingsAsync(const DescribeRabbitMQBindingsRequest& request, const DescribeRabbitMQBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRabbitMQBindings(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRabbitMQBindingsOutcomeCallable TdmqClient::DescribeRabbitMQBindingsCallable(const DescribeRabbitMQBindingsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQBindingsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRabbitMQBindings(request);
         }
     );
 

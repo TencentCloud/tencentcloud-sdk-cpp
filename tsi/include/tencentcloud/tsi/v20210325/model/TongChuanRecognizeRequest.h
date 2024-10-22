@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsi/v20210325/model/TTS.h>
 
 
 namespace TencentCloud
@@ -271,6 +272,27 @@ yue：粤语
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取TTS播报控制参数	
+                     * @return TTS TTS播报控制参数	
+                     * 
+                     */
+                    TTS GetTTS() const;
+
+                    /**
+                     * 设置TTS播报控制参数	
+                     * @param _tTS TTS播报控制参数	
+                     * 
+                     */
+                    void SetTTS(const TTS& _tTS);
+
+                    /**
+                     * 判断参数 TTS 是否已赋值
+                     * @return TTS 是否已赋值
+                     * 
+                     */
+                    bool TTSHasBeenSet() const;
+
                 private:
 
                     /**
@@ -336,6 +358,12 @@ yue：粤语
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * TTS播报控制参数	
+                     */
+                    TTS m_tTS;
+                    bool m_tTSHasBeenSet;
 
                 };
             }

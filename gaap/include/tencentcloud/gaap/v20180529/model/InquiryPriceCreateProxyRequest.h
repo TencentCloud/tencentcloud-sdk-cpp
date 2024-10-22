@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DestRegionHasBeenSet() const;
 
                     /**
-                     * 获取（旧参数，请切换到Concurrent）通道并发量上限，表示同时在线的连接数，单位：万。
-                     * @return Concurrency （旧参数，请切换到Concurrent）通道并发量上限，表示同时在线的连接数，单位：万。
+                     * 获取（此参数为旧参数，请填写新参数Concurrent，二者必须填写一个）通道并发量上限，表示同时在线的连接数，单位：万。
+                     * @return Concurrency （此参数为旧参数，请填写新参数Concurrent，二者必须填写一个）通道并发量上限，表示同时在线的连接数，单位：万。
                      * 
                      */
                     int64_t GetConcurrency() const;
 
                     /**
-                     * 设置（旧参数，请切换到Concurrent）通道并发量上限，表示同时在线的连接数，单位：万。
-                     * @param _concurrency （旧参数，请切换到Concurrent）通道并发量上限，表示同时在线的连接数，单位：万。
+                     * 设置（此参数为旧参数，请填写新参数Concurrent，二者必须填写一个）通道并发量上限，表示同时在线的连接数，单位：万。
+                     * @param _concurrency （此参数为旧参数，请填写新参数Concurrent，二者必须填写一个）通道并发量上限，表示同时在线的连接数，单位：万。
                      * 
                      */
                     void SetConcurrency(const int64_t& _concurrency);
@@ -294,7 +294,7 @@ namespace TencentCloud
                     bool m_destRegionHasBeenSet;
 
                     /**
-                     * （旧参数，请切换到Concurrent）通道并发量上限，表示同时在线的连接数，单位：万。
+                     * （此参数为旧参数，请填写新参数Concurrent，二者必须填写一个）通道并发量上限，表示同时在线的连接数，单位：万。
                      */
                     int64_t m_concurrency;
                     bool m_concurrencyHasBeenSet;

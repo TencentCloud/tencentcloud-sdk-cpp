@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取修改后的通道组名称：不超过30个字符，超过部分会被截断。
-                     * @return GroupName 修改后的通道组名称：不超过30个字符，超过部分会被截断。
+                     * 获取修改后的通道组名称：不超过30个字符，否则修改失败。
+                     * @return GroupName 修改后的通道组名称：不超过30个字符，否则修改失败。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置修改后的通道组名称：不超过30个字符，超过部分会被截断。
-                     * @param _groupName 修改后的通道组名称：不超过30个字符，超过部分会被截断。
+                     * 设置修改后的通道组名称：不超过30个字符，否则修改失败。
+                     * @param _groupName 修改后的通道组名称：不超过30个字符，否则修改失败。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 修改后的通道组名称：不超过30个字符，超过部分会被截断。
+                     * 修改后的通道组名称：不超过30个字符，否则修改失败。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;

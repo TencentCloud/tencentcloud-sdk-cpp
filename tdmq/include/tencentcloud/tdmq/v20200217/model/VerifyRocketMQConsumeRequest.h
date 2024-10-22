@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ClientIdHasBeenSet() const;
 
                     /**
-                     * 获取topic名称
-                     * @return TopicName topic名称
+                     * 获取主题名称
+                     * @return TopicName 主题名称
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置topic名称
-                     * @param _topicName topic名称
+                     * 设置主题名称
+                     * @param _topicName 主题名称
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_clientIdHasBeenSet;
 
                     /**
-                     * topic名称
+                     * 主题名称
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;

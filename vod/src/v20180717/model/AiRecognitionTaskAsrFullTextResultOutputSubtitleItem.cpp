@@ -21,6 +21,9 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 AiRecognitionTaskAsrFullTextResultOutputSubtitleItem::AiRecognitionTaskAsrFullTextResultOutputSubtitleItem() :
+    m_idHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_languageHasBeenSet(false),
     m_formatHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
@@ -30,6 +33,36 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextResultOutputSubtitleItem::Deseri
 {
     string requestId = "";
 
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextResultOutputSubtitleItem.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextResultOutputSubtitleItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Language") && !value["Language"].IsNull())
+    {
+        if (!value["Language"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextResultOutputSubtitleItem.Language` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_language = string(value["Language"].GetString());
+        m_languageHasBeenSet = true;
+    }
 
     if (value.HasMember("Format") && !value["Format"].IsNull())
     {
@@ -58,6 +91,30 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextResultOutputSubtitleItem::Deseri
 void AiRecognitionTaskAsrFullTextResultOutputSubtitleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_languageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Language";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_language.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_formatHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,6 +133,54 @@ void AiRecognitionTaskAsrFullTextResultOutputSubtitleItem::ToJsonObject(rapidjso
 
 }
 
+
+string AiRecognitionTaskAsrFullTextResultOutputSubtitleItem::GetId() const
+{
+    return m_id;
+}
+
+void AiRecognitionTaskAsrFullTextResultOutputSubtitleItem::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool AiRecognitionTaskAsrFullTextResultOutputSubtitleItem::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
+
+string AiRecognitionTaskAsrFullTextResultOutputSubtitleItem::GetName() const
+{
+    return m_name;
+}
+
+void AiRecognitionTaskAsrFullTextResultOutputSubtitleItem::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool AiRecognitionTaskAsrFullTextResultOutputSubtitleItem::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string AiRecognitionTaskAsrFullTextResultOutputSubtitleItem::GetLanguage() const
+{
+    return m_language;
+}
+
+void AiRecognitionTaskAsrFullTextResultOutputSubtitleItem::SetLanguage(const string& _language)
+{
+    m_language = _language;
+    m_languageHasBeenSet = true;
+}
+
+bool AiRecognitionTaskAsrFullTextResultOutputSubtitleItem::LanguageHasBeenSet() const
+{
+    return m_languageHasBeenSet;
+}
 
 string AiRecognitionTaskAsrFullTextResultOutputSubtitleItem::GetFormat() const
 {

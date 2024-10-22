@@ -24,7 +24,8 @@ AsrFullTextConfigureInfo::AsrFullTextConfigureInfo() :
     m_switchHasBeenSet(false),
     m_subtitleFormatsHasBeenSet(false),
     m_subtitleFormatHasBeenSet(false),
-    m_srcLanguageHasBeenSet(false)
+    m_srcLanguageHasBeenSet(false),
+    m_subtitleNameHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome AsrFullTextConfigureInfo::Deserialize(const rapidjson::Value
         m_srcLanguageHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleName") && !value["SubtitleName"].IsNull())
+    {
+        if (!value["SubtitleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AsrFullTextConfigureInfo.SubtitleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleName = string(value["SubtitleName"].GetString());
+        m_subtitleNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void AsrFullTextConfigureInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "SrcLanguage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_srcLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subtitleName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void AsrFullTextConfigureInfo::SetSrcLanguage(const string& _srcLanguage)
 bool AsrFullTextConfigureInfo::SrcLanguageHasBeenSet() const
 {
     return m_srcLanguageHasBeenSet;
+}
+
+string AsrFullTextConfigureInfo::GetSubtitleName() const
+{
+    return m_subtitleName;
+}
+
+void AsrFullTextConfigureInfo::SetSubtitleName(const string& _subtitleName)
+{
+    m_subtitleName = _subtitleName;
+    m_subtitleNameHasBeenSet = true;
+}
+
+bool AsrFullTextConfigureInfo::SubtitleNameHasBeenSet() const
+{
+    return m_subtitleNameHasBeenSet;
 }
 

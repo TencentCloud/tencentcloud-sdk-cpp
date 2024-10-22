@@ -1137,6 +1137,31 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                      */
                     bool ScenarioNameHasBeenSet() const;
 
+                    /**
+                     * 获取付费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayMode 付费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置付费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _payMode 付费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     * 
+                     */
+                    bool PayModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1441,6 +1466,13 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                      */
                     std::string m_scenarioName;
                     bool m_scenarioNameHasBeenSet;
+
+                    /**
+                     * 付费类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
 
                 };
             }

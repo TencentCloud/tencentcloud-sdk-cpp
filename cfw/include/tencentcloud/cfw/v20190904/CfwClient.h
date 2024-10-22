@@ -1131,7 +1131,9 @@ namespace TencentCloud
                 DescribeNatFwVpcDnsLstOutcomeCallable DescribeNatFwVpcDnsLstCallable(const Model::DescribeNatFwVpcDnsLstRequest& request);
 
                 /**
-                 *查询NAT边界防火墙开关列表
+                 *旧接口，不再维护
+
+查询NAT边界防火墙开关列表
                  * @param req DescribeNatSwitchListRequest
                  * @return DescribeNatSwitchListOutcome
                  */

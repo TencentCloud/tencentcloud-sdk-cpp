@@ -3724,7 +3724,9 @@ namespace TencentCloud
                 DescribeAttackLogsOutcomeCallable DescribeAttackLogsCallable(const Model::DescribeAttackLogsRequest& request);
 
                 /**
-                 *查询攻击溯源
+                 *已废弃
+
+查询攻击溯源
                  * @param req DescribeAttackSourceRequest
                  * @return DescribeAttackSourceOutcome
                  */
@@ -3733,7 +3735,9 @@ namespace TencentCloud
                 DescribeAttackSourceOutcomeCallable DescribeAttackSourceCallable(const Model::DescribeAttackSourceRequest& request);
 
                 /**
-                 *查询攻击溯源事件
+                 *已废弃
+
+查询攻击溯源事件
                  * @param req DescribeAttackSourceEventsRequest
                  * @return DescribeAttackSourceEventsOutcome
                  */

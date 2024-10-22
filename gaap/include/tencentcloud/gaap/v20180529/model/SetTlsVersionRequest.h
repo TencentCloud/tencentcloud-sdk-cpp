@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取TLS版本
-                     * @return TLSSupportVersion TLS版本
+                     * 获取TLS版本,可选TLSv1.0、TLSv1.1、TLSv1.2、TLSv1.3
+                     * @return TLSSupportVersion TLS版本,可选TLSv1.0、TLSv1.1、TLSv1.2、TLSv1.3
                      * 
                      */
                     std::vector<std::string> GetTLSSupportVersion() const;
 
                     /**
-                     * 设置TLS版本
-                     * @param _tLSSupportVersion TLS版本
+                     * 设置TLS版本,可选TLSv1.0、TLSv1.1、TLSv1.2、TLSv1.3
+                     * @param _tLSSupportVersion TLS版本,可选TLSv1.0、TLSv1.1、TLSv1.2、TLSv1.3
                      * 
                      */
                     void SetTLSSupportVersion(const std::vector<std::string>& _tLSSupportVersion);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TLSSupportVersionHasBeenSet() const;
 
                     /**
-                     * 获取密码套件包
-                     * @return TLSCiphers 密码套件包
+                     * 获取密码套件包,可选 GAAP_TLS_CIPHERS_STRICT，GAAP_TLS_CIPHERS_GENERAL，GAAP_TLS_CIPHERS_WIDE(默认)
+                     * @return TLSCiphers 密码套件包,可选 GAAP_TLS_CIPHERS_STRICT，GAAP_TLS_CIPHERS_GENERAL，GAAP_TLS_CIPHERS_WIDE(默认)
                      * 
                      */
                     std::string GetTLSCiphers() const;
 
                     /**
-                     * 设置密码套件包
-                     * @param _tLSCiphers 密码套件包
+                     * 设置密码套件包,可选 GAAP_TLS_CIPHERS_STRICT，GAAP_TLS_CIPHERS_GENERAL，GAAP_TLS_CIPHERS_WIDE(默认)
+                     * @param _tLSCiphers 密码套件包,可选 GAAP_TLS_CIPHERS_STRICT，GAAP_TLS_CIPHERS_GENERAL，GAAP_TLS_CIPHERS_WIDE(默认)
                      * 
                      */
                     void SetTLSCiphers(const std::string& _tLSCiphers);
@@ -114,13 +114,13 @@ namespace TencentCloud
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * TLS版本
+                     * TLS版本,可选TLSv1.0、TLSv1.1、TLSv1.2、TLSv1.3
                      */
                     std::vector<std::string> m_tLSSupportVersion;
                     bool m_tLSSupportVersionHasBeenSet;
 
                     /**
-                     * 密码套件包
+                     * 密码套件包,可选 GAAP_TLS_CIPHERS_STRICT，GAAP_TLS_CIPHERS_GENERAL，GAAP_TLS_CIPHERS_WIDE(默认)
                      */
                     std::string m_tLSCiphers;
                     bool m_tLSCiphersHasBeenSet;

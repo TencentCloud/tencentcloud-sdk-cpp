@@ -40,7 +40,8 @@ RansomDefenseStrategyMachineBackupInfo::RansomDefenseStrategyMachineBackupInfo()
     m_lastBackupTimeHasBeenSet(false),
     m_rollBackPercentHasBeenSet(false),
     m_rollBackStatusHasBeenSet(false),
-    m_backupSuccessCountHasBeenSet(false)
+    m_backupSuccessCountHasBeenSet(false),
+    m_hostVersionHasBeenSet(false)
 {
 }
 
@@ -276,6 +277,16 @@ CoreInternalOutcome RansomDefenseStrategyMachineBackupInfo::Deserialize(const ra
         m_backupSuccessCountHasBeenSet = true;
     }
 
+    if (value.HasMember("HostVersion") && !value["HostVersion"].IsNull())
+    {
+        if (!value["HostVersion"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RansomDefenseStrategyMachineBackupInfo.HostVersion` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostVersion = value["HostVersion"].GetUint64();
+        m_hostVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -456,6 +467,14 @@ void RansomDefenseStrategyMachineBackupInfo::ToJsonObject(rapidjson::Value &valu
         string key = "BackupSuccessCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_backupSuccessCount, allocator);
+    }
+
+    if (m_hostVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostVersion, allocator);
     }
 
 }
@@ -779,5 +798,21 @@ void RansomDefenseStrategyMachineBackupInfo::SetBackupSuccessCount(const uint64_
 bool RansomDefenseStrategyMachineBackupInfo::BackupSuccessCountHasBeenSet() const
 {
     return m_backupSuccessCountHasBeenSet;
+}
+
+uint64_t RansomDefenseStrategyMachineBackupInfo::GetHostVersion() const
+{
+    return m_hostVersion;
+}
+
+void RansomDefenseStrategyMachineBackupInfo::SetHostVersion(const uint64_t& _hostVersion)
+{
+    m_hostVersion = _hostVersion;
+    m_hostVersionHasBeenSet = true;
+}
+
+bool RansomDefenseStrategyMachineBackupInfo::HostVersionHasBeenSet() const
+{
+    return m_hostVersionHasBeenSet;
 }
 
