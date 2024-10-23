@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书 ID。
-                     * @return CertId 证书 ID。
+                     * 获取证书 ID。来源于 SSL 侧，您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。
+                     * @return CertId 证书 ID。来源于 SSL 侧，您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置证书 ID。
-                     * @param _certId 证书 ID。
+                     * 设置证书 ID。来源于 SSL 侧，您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。
+                     * @param _certId 证书 ID。来源于 SSL 侧，您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -228,7 +228,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 证书 ID。
+                     * 证书 ID。来源于 SSL 侧，您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;

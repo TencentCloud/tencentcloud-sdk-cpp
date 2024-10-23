@@ -24,7 +24,8 @@ OwnNumberApplyDetailItem::OwnNumberApplyDetailItem() :
     m_callTypeHasBeenSet(false),
     m_phoneNumberHasBeenSet(false),
     m_maxCallCountHasBeenSet(false),
-    m_maxCallPSecHasBeenSet(false)
+    m_maxCallPSecHasBeenSet(false),
+    m_outboundCalleeFormatHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome OwnNumberApplyDetailItem::Deserialize(const rapidjson::Value
         m_maxCallPSecHasBeenSet = true;
     }
 
+    if (value.HasMember("OutboundCalleeFormat") && !value["OutboundCalleeFormat"].IsNull())
+    {
+        if (!value["OutboundCalleeFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OwnNumberApplyDetailItem.OutboundCalleeFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outboundCalleeFormat = string(value["OutboundCalleeFormat"].GetString());
+        m_outboundCalleeFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void OwnNumberApplyDetailItem::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "MaxCallPSec";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxCallPSec, allocator);
+    }
+
+    if (m_outboundCalleeFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutboundCalleeFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outboundCalleeFormat.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void OwnNumberApplyDetailItem::SetMaxCallPSec(const int64_t& _maxCallPSec)
 bool OwnNumberApplyDetailItem::MaxCallPSecHasBeenSet() const
 {
     return m_maxCallPSecHasBeenSet;
+}
+
+string OwnNumberApplyDetailItem::GetOutboundCalleeFormat() const
+{
+    return m_outboundCalleeFormat;
+}
+
+void OwnNumberApplyDetailItem::SetOutboundCalleeFormat(const string& _outboundCalleeFormat)
+{
+    m_outboundCalleeFormat = _outboundCalleeFormat;
+    m_outboundCalleeFormatHasBeenSet = true;
+}
+
+bool OwnNumberApplyDetailItem::OutboundCalleeFormatHasBeenSet() const
+{
+    return m_outboundCalleeFormatHasBeenSet;
 }
 

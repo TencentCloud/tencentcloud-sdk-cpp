@@ -324,6 +324,31 @@ namespace TencentCloud
                      */
                     bool BackupCosInfoHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用的自定义桶
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsUserDefineBucket 是否使用的自定义桶
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsUserDefineBucket() const;
+
+                    /**
+                     * 设置是否使用的自定义桶
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isUserDefineBucket 是否使用的自定义桶
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsUserDefineBucket(const bool& _isUserDefineBucket);
+
+                    /**
+                     * 判断参数 IsUserDefineBucket 是否已赋值
+                     * @return IsUserDefineBucket 是否已赋值
+                     * 
+                     */
+                    bool IsUserDefineBucketHasBeenSet() const;
+
                 private:
 
                     /**
@@ -403,6 +428,13 @@ namespace TencentCloud
                      */
                     BackupCosInfo m_backupCosInfo;
                     bool m_backupCosInfoHasBeenSet;
+
+                    /**
+                     * 是否使用的自定义桶
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isUserDefineBucket;
+                    bool m_isUserDefineBucketHasBeenSet;
 
                 };
             }

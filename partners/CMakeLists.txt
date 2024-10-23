@@ -35,6 +35,7 @@ set(partners_public_header_model
   include/tencentcloud/partners/v20180321/model/ProductInfoElem.h
   include/tencentcloud/partners/v20180321/model/UnbindClientElem.h
   include/tencentcloud/partners/v20180321/model/RemovePayRelationForClientResponse.h
+  include/tencentcloud/partners/v20180321/model/DescribeAgentRelateBigDealIdsRequest.h
   include/tencentcloud/partners/v20180321/model/DescribeRebateInfosRequest.h
   include/tencentcloud/partners/v20180321/model/CreatePayRelationForClientResponse.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentAuditedClientsResponse.h
@@ -44,6 +45,7 @@ set(partners_public_header_model
   include/tencentcloud/partners/v20180321/model/DescribeAgentClientsResponse.h
   include/tencentcloud/partners/v20180321/model/AgentDealNewElem.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentClientsRequest.h
+  include/tencentcloud/partners/v20180321/model/DescribeAgentRelateBigDealIdsResponse.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentSelfPayDealsV2Request.h
   include/tencentcloud/partners/v20180321/model/DescribeSalesmansResponse.h
   include/tencentcloud/partners/v20180321/model/AgentAuditedClient.h
@@ -88,6 +90,7 @@ set(partners_src
   src/v20180321/model/ProductInfoElem.cpp
   src/v20180321/model/UnbindClientElem.cpp
   src/v20180321/model/RemovePayRelationForClientResponse.cpp
+  src/v20180321/model/DescribeAgentRelateBigDealIdsRequest.cpp
   src/v20180321/model/DescribeRebateInfosRequest.cpp
   src/v20180321/model/CreatePayRelationForClientResponse.cpp
   src/v20180321/model/DescribeAgentAuditedClientsResponse.cpp
@@ -97,6 +100,7 @@ set(partners_src
   src/v20180321/model/DescribeAgentClientsResponse.cpp
   src/v20180321/model/AgentDealNewElem.cpp
   src/v20180321/model/DescribeAgentClientsRequest.cpp
+  src/v20180321/model/DescribeAgentRelateBigDealIdsResponse.cpp
   src/v20180321/model/DescribeAgentSelfPayDealsV2Request.cpp
   src/v20180321/model/DescribeSalesmansResponse.cpp
   src/v20180321/model/AgentAuditedClient.cpp

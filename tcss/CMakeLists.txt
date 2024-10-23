@@ -144,6 +144,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/UpdateAssetImageRegistryRegistryDetailResponse.h
   include/tencentcloud/tcss/v20201101/model/ModifySecLogDeliveryKafkaSettingResponse.h
   include/tencentcloud/tcss/v20201101/model/DeleteAbnormalProcessRulesResponse.h
+  include/tencentcloud/tcss/v20201101/model/ImageRepoRegistryInfo.h
   include/tencentcloud/tcss/v20201101/model/RuleBaseInfo.h
   include/tencentcloud/tcss/v20201101/model/ProcessInfo.h
   include/tencentcloud/tcss/v20201101/model/ImageInfo.h
@@ -988,6 +989,7 @@ set(tcss_src
   src/v20201101/model/UpdateAssetImageRegistryRegistryDetailResponse.cpp
   src/v20201101/model/ModifySecLogDeliveryKafkaSettingResponse.cpp
   src/v20201101/model/DeleteAbnormalProcessRulesResponse.cpp
+  src/v20201101/model/ImageRepoRegistryInfo.cpp
   src/v20201101/model/RuleBaseInfo.cpp
   src/v20201101/model/ProcessInfo.cpp
   src/v20201101/model/ImageInfo.cpp

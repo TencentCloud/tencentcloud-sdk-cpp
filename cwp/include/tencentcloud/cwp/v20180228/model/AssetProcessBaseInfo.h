@@ -494,15 +494,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取数字签名:0无，1有， 999 空，仅windows
-                     * @return HasSign 数字签名:0无，1有， 999 空，仅windows
+                     * 获取数字签名:0无，1有， 999 空，仅Windows
+                     * @return HasSign 数字签名:0无，1有， 999 空，仅Windows
                      * 
                      */
                     uint64_t GetHasSign() const;
 
                     /**
-                     * 设置数字签名:0无，1有， 999 空，仅windows
-                     * @param _hasSign 数字签名:0无，1有， 999 空，仅windows
+                     * 设置数字签名:0无，1有， 999 空，仅Windows
+                     * @param _hasSign 数字签名:0无，1有， 999 空，仅Windows
                      * 
                      */
                     void SetHasSign(const uint64_t& _hasSign);
@@ -807,7 +807,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 数字签名:0无，1有， 999 空，仅windows
+                     * 数字签名:0无，1有， 999 空，仅Windows
                      */
                     uint64_t m_hasSign;
                     bool m_hasSignHasBeenSet;

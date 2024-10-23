@@ -22,7 +22,8 @@ using namespace std;
 
 ReadonlyNode::ReadonlyNode() :
     m_isRandomZoneHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_nodeIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ReadonlyNode::Deserialize(const rapidjson::Value &value)
         m_zoneHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeId") && !value["NodeId"].IsNull())
+    {
+        if (!value["NodeId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReadonlyNode.NodeId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeId = string(value["NodeId"].GetString());
+        m_nodeIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ReadonlyNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ReadonlyNode::SetZone(const string& _zone)
 bool ReadonlyNode::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string ReadonlyNode::GetNodeId() const
+{
+    return m_nodeId;
+}
+
+void ReadonlyNode::SetNodeId(const string& _nodeId)
+{
+    m_nodeId = _nodeId;
+    m_nodeIdHasBeenSet = true;
+}
+
+bool ReadonlyNode::NodeIdHasBeenSet() const
+{
+    return m_nodeIdHasBeenSet;
 }
 

@@ -32,7 +32,8 @@ BackUpJobDisplay::BackUpJobDisplay() :
     m_backupTimeTypeHasBeenSet(false),
     m_dorisSourceInfoHasBeenSet(false),
     m_jobStatusNumHasBeenSet(false),
-    m_backupCosInfoHasBeenSet(false)
+    m_backupCosInfoHasBeenSet(false),
+    m_isUserDefineBucketHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,16 @@ CoreInternalOutcome BackUpJobDisplay::Deserialize(const rapidjson::Value &value)
         m_backupCosInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("IsUserDefineBucket") && !value["IsUserDefineBucket"].IsNull())
+    {
+        if (!value["IsUserDefineBucket"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.IsUserDefineBucket` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isUserDefineBucket = value["IsUserDefineBucket"].GetBool();
+        m_isUserDefineBucketHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +289,14 @@ void BackUpJobDisplay::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_backupCosInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_isUserDefineBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsUserDefineBucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isUserDefineBucket, allocator);
     }
 
 }
@@ -473,5 +492,21 @@ void BackUpJobDisplay::SetBackupCosInfo(const BackupCosInfo& _backupCosInfo)
 bool BackUpJobDisplay::BackupCosInfoHasBeenSet() const
 {
     return m_backupCosInfoHasBeenSet;
+}
+
+bool BackUpJobDisplay::GetIsUserDefineBucket() const
+{
+    return m_isUserDefineBucket;
+}
+
+void BackUpJobDisplay::SetIsUserDefineBucket(const bool& _isUserDefineBucket)
+{
+    m_isUserDefineBucket = _isUserDefineBucket;
+    m_isUserDefineBucketHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::IsUserDefineBucketHasBeenSet() const
+{
+    return m_isUserDefineBucketHasBeenSet;
 }
 

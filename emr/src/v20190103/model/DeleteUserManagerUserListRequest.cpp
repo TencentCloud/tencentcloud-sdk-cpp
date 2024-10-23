@@ -27,7 +27,8 @@ DeleteUserManagerUserListRequest::DeleteUserManagerUserListRequest() :
     m_userNameListHasBeenSet(false),
     m_tkeClusterIdHasBeenSet(false),
     m_displayStrategyHasBeenSet(false),
-    m_userGroupListHasBeenSet(false)
+    m_userGroupListHasBeenSet(false),
+    m_deleteHomeDirHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,14 @@ string DeleteUserManagerUserListRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_deleteHomeDirHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteHomeDir";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deleteHomeDir, allocator);
     }
 
 
@@ -176,6 +185,22 @@ void DeleteUserManagerUserListRequest::SetUserGroupList(const vector<UserAndGrou
 bool DeleteUserManagerUserListRequest::UserGroupListHasBeenSet() const
 {
     return m_userGroupListHasBeenSet;
+}
+
+bool DeleteUserManagerUserListRequest::GetDeleteHomeDir() const
+{
+    return m_deleteHomeDir;
+}
+
+void DeleteUserManagerUserListRequest::SetDeleteHomeDir(const bool& _deleteHomeDir)
+{
+    m_deleteHomeDir = _deleteHomeDir;
+    m_deleteHomeDirHasBeenSet = true;
+}
+
+bool DeleteUserManagerUserListRequest::DeleteHomeDirHasBeenSet() const
+{
+    return m_deleteHomeDirHasBeenSet;
 }
 
 

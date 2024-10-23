@@ -800,6 +800,31 @@ namespace TencentCloud
                      */
                     bool StreamNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启静音帧（0：关闭；1 开启）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SilentFrameSwitch 是否开启静音帧（0：关闭；1 开启）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSilentFrameSwitch() const;
+
+                    /**
+                     * 设置是否开启静音帧（0：关闭；1 开启）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _silentFrameSwitch 是否开启静音帧（0：关闭；1 开启）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSilentFrameSwitch(const int64_t& _silentFrameSwitch);
+
+                    /**
+                     * 判断参数 SilentFrameSwitch 是否已赋值
+                     * @return SilentFrameSwitch 是否已赋值
+                     * 
+                     */
+                    bool SilentFrameSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1012,6 +1037,13 @@ namespace TencentCloud
                      */
                     std::string m_streamName;
                     bool m_streamNameHasBeenSet;
+
+                    /**
+                     * 是否开启静音帧（0：关闭；1 开启）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_silentFrameSwitch;
+                    bool m_silentFrameSwitchHasBeenSet;
 
                 };
             }

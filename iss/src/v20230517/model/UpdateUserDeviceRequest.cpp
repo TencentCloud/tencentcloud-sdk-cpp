@@ -33,7 +33,8 @@ UpdateUserDeviceRequest::UpdateUserDeviceRequest() :
     m_usernameHasBeenSet(false),
     m_protocolTypeHasBeenSet(false),
     m_audioSwitchHasBeenSet(false),
-    m_subscribeSwitchHasBeenSet(false)
+    m_subscribeSwitchHasBeenSet(false),
+    m_silentFrameSwitchHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,14 @@ string UpdateUserDeviceRequest::ToJsonString() const
         string key = "SubscribeSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_subscribeSwitch, allocator);
+    }
+
+    if (m_silentFrameSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SilentFrameSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_silentFrameSwitch, allocator);
     }
 
 
@@ -314,6 +323,22 @@ void UpdateUserDeviceRequest::SetSubscribeSwitch(const int64_t& _subscribeSwitch
 bool UpdateUserDeviceRequest::SubscribeSwitchHasBeenSet() const
 {
     return m_subscribeSwitchHasBeenSet;
+}
+
+int64_t UpdateUserDeviceRequest::GetSilentFrameSwitch() const
+{
+    return m_silentFrameSwitch;
+}
+
+void UpdateUserDeviceRequest::SetSilentFrameSwitch(const int64_t& _silentFrameSwitch)
+{
+    m_silentFrameSwitch = _silentFrameSwitch;
+    m_silentFrameSwitchHasBeenSet = true;
+}
+
+bool UpdateUserDeviceRequest::SilentFrameSwitchHasBeenSet() const
+{
+    return m_silentFrameSwitchHasBeenSet;
 }
 
 

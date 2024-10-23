@@ -45,6 +45,8 @@
 #include <tencentcloud/partners/v20180321/model/DescribeAgentDealsByCacheResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentPayDealsV2Request.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentPayDealsV2Response.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentRelateBigDealIdsRequest.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentRelateBigDealIdsResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentSelfPayDealsV2Request.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentSelfPayDealsV2Response.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceNewRequest.h>
@@ -108,6 +110,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAgentPayDealsV2Response> DescribeAgentPayDealsV2Outcome;
                 typedef std::future<DescribeAgentPayDealsV2Outcome> DescribeAgentPayDealsV2OutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeAgentPayDealsV2Request&, DescribeAgentPayDealsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentPayDealsV2AsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAgentRelateBigDealIdsResponse> DescribeAgentRelateBigDealIdsOutcome;
+                typedef std::future<DescribeAgentRelateBigDealIdsOutcome> DescribeAgentRelateBigDealIdsOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeAgentRelateBigDealIdsRequest&, DescribeAgentRelateBigDealIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentRelateBigDealIdsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAgentSelfPayDealsV2Response> DescribeAgentSelfPayDealsV2Outcome;
                 typedef std::future<DescribeAgentSelfPayDealsV2Outcome> DescribeAgentSelfPayDealsV2OutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeAgentSelfPayDealsV2Request&, DescribeAgentSelfPayDealsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentSelfPayDealsV2AsyncHandler;
@@ -236,6 +241,15 @@ namespace TencentCloud
                 DescribeAgentPayDealsV2Outcome DescribeAgentPayDealsV2(const Model::DescribeAgentPayDealsV2Request &request);
                 void DescribeAgentPayDealsV2Async(const Model::DescribeAgentPayDealsV2Request& request, const DescribeAgentPayDealsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAgentPayDealsV2OutcomeCallable DescribeAgentPayDealsV2Callable(const Model::DescribeAgentPayDealsV2Request& request);
+
+                /**
+                 *根据大订单号查询关联申请合并支付的其他订单号
+                 * @param req DescribeAgentRelateBigDealIdsRequest
+                 * @return DescribeAgentRelateBigDealIdsOutcome
+                 */
+                DescribeAgentRelateBigDealIdsOutcome DescribeAgentRelateBigDealIds(const Model::DescribeAgentRelateBigDealIdsRequest &request);
+                void DescribeAgentRelateBigDealIdsAsync(const Model::DescribeAgentRelateBigDealIdsRequest& request, const DescribeAgentRelateBigDealIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAgentRelateBigDealIdsOutcomeCallable DescribeAgentRelateBigDealIdsCallable(const Model::DescribeAgentRelateBigDealIdsRequest& request);
 
                 /**
                  *查询代理商名下指定代客的自付订单（预付费）

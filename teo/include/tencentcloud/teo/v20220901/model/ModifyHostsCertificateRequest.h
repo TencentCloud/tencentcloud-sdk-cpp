@@ -124,15 +124,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
-                     * @return ServerCertInfo SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
+                     * 获取SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。
+                     * @return ServerCertInfo SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。
                      * 
                      */
                     std::vector<ServerCertInfo> GetServerCertInfo() const;
 
                     /**
-                     * 设置SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
-                     * @param _serverCertInfo SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
+                     * 设置SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。
+                     * @param _serverCertInfo SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。
                      * 
                      */
                     void SetServerCertInfo(const std::vector<ServerCertInfo>& _serverCertInfo);
@@ -178,19 +178,15 @@ namespace TencentCloud
                     bool ApplyTypeHasBeenSet() const;
 
                     /**
-                     * 获取边缘双向认证配置。
-不填写表示边缘双向认证保持原有配置。
-                     * @return ClientCertInfo 边缘双向认证配置。
-不填写表示边缘双向认证保持原有配置。
+                     * 获取在边缘双向认证场景下，该字段为客户端的 CA 证书，部署在 EO 的入口侧，用于客户端对 EO 节点进行认证。不填写表示保持原有配置。
+                     * @return ClientCertInfo 在边缘双向认证场景下，该字段为客户端的 CA 证书，部署在 EO 的入口侧，用于客户端对 EO 节点进行认证。不填写表示保持原有配置。
                      * 
                      */
                     MutualTLS GetClientCertInfo() const;
 
                     /**
-                     * 设置边缘双向认证配置。
-不填写表示边缘双向认证保持原有配置。
-                     * @param _clientCertInfo 边缘双向认证配置。
-不填写表示边缘双向认证保持原有配置。
+                     * 设置在边缘双向认证场景下，该字段为客户端的 CA 证书，部署在 EO 的入口侧，用于客户端对 EO 节点进行认证。不填写表示保持原有配置。
+                     * @param _clientCertInfo 在边缘双向认证场景下，该字段为客户端的 CA 证书，部署在 EO 的入口侧，用于客户端对 EO 节点进行认证。不填写表示保持原有配置。
                      * 
                      */
                     void SetClientCertInfo(const MutualTLS& _clientCertInfo);
@@ -227,7 +223,7 @@ namespace TencentCloud
                     bool m_modeHasBeenSet;
 
                     /**
-                     * SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
+                     * SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。
                      */
                     std::vector<ServerCertInfo> m_serverCertInfo;
                     bool m_serverCertInfoHasBeenSet;
@@ -242,8 +238,7 @@ namespace TencentCloud
                     bool m_applyTypeHasBeenSet;
 
                     /**
-                     * 边缘双向认证配置。
-不填写表示边缘双向认证保持原有配置。
+                     * 在边缘双向认证场景下，该字段为客户端的 CA 证书，部署在 EO 的入口侧，用于客户端对 EO 节点进行认证。不填写表示保持原有配置。
                      */
                     MutualTLS m_clientCertInfo;
                     bool m_clientCertInfoHasBeenSet;

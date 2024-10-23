@@ -513,6 +513,49 @@ PartnersClient::DescribeAgentPayDealsV2OutcomeCallable PartnersClient::DescribeA
     return task->get_future();
 }
 
+PartnersClient::DescribeAgentRelateBigDealIdsOutcome PartnersClient::DescribeAgentRelateBigDealIds(const DescribeAgentRelateBigDealIdsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentRelateBigDealIds");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentRelateBigDealIdsResponse rsp = DescribeAgentRelateBigDealIdsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentRelateBigDealIdsOutcome(rsp);
+        else
+            return DescribeAgentRelateBigDealIdsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentRelateBigDealIdsOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeAgentRelateBigDealIdsAsync(const DescribeAgentRelateBigDealIdsRequest& request, const DescribeAgentRelateBigDealIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgentRelateBigDealIds(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeAgentRelateBigDealIdsOutcomeCallable PartnersClient::DescribeAgentRelateBigDealIdsCallable(const DescribeAgentRelateBigDealIdsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgentRelateBigDealIdsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgentRelateBigDealIds(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PartnersClient::DescribeAgentSelfPayDealsV2Outcome PartnersClient::DescribeAgentSelfPayDealsV2(const DescribeAgentSelfPayDealsV2Request &request)
 {
     auto outcome = MakeRequest(request, "DescribeAgentSelfPayDealsV2");

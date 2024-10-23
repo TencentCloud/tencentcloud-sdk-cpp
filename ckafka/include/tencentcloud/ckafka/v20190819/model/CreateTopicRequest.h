@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool SegmentMsHasBeenSet() const;
 
                     /**
-                     * 获取主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为8388608Byte（即8MB）。
-                     * @return MaxMessageBytes 主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为8388608Byte（即8MB）。
+                     * 获取主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为12582912Byte（即12MB）
+                     * @return MaxMessageBytes 主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为12582912Byte（即12MB）
                      * 
                      */
                     int64_t GetMaxMessageBytes() const;
 
                     /**
-                     * 设置主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为8388608Byte（即8MB）。
-                     * @param _maxMessageBytes 主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为8388608Byte（即8MB）。
+                     * 设置主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为12582912Byte（即12MB）
+                     * @param _maxMessageBytes 主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为12582912Byte（即12MB）
                      * 
                      */
                     void SetMaxMessageBytes(const int64_t& _maxMessageBytes);
@@ -475,7 +475,7 @@ namespace TencentCloud
                     bool m_segmentMsHasBeenSet;
 
                     /**
-                     * 主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为8388608Byte（即8MB）。
+                     * 主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为12582912Byte（即12MB）
                      */
                     int64_t m_maxMessageBytes;
                     bool m_maxMessageBytesHasBeenSet;

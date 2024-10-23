@@ -25,7 +25,9 @@ using namespace std;
 CreateCertificateRequest::CreateCertificateRequest() :
     m_productIdHasBeenSet(false),
     m_domainNumHasBeenSet(false),
-    m_timeSpanHasBeenSet(false)
+    m_timeSpanHasBeenSet(false),
+    m_autoVoucherHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,29 @@ string CreateCertificateRequest::ToJsonString() const
         string key = "TimeSpan";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeSpan, allocator);
+    }
+
+    if (m_autoVoucherHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoVoucher";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoVoucher, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -114,6 +139,38 @@ void CreateCertificateRequest::SetTimeSpan(const int64_t& _timeSpan)
 bool CreateCertificateRequest::TimeSpanHasBeenSet() const
 {
     return m_timeSpanHasBeenSet;
+}
+
+int64_t CreateCertificateRequest::GetAutoVoucher() const
+{
+    return m_autoVoucher;
+}
+
+void CreateCertificateRequest::SetAutoVoucher(const int64_t& _autoVoucher)
+{
+    m_autoVoucher = _autoVoucher;
+    m_autoVoucherHasBeenSet = true;
+}
+
+bool CreateCertificateRequest::AutoVoucherHasBeenSet() const
+{
+    return m_autoVoucherHasBeenSet;
+}
+
+vector<Tags> CreateCertificateRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateCertificateRequest::SetTags(const vector<Tags>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateCertificateRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

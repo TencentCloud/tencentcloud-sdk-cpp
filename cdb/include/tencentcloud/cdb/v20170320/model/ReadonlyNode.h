@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取升级集群版实例时，如果要调整只读节点可用区，需要指定节点id。
+                     * @return NodeId 升级集群版实例时，如果要调整只读节点可用区，需要指定节点id。
+                     * 
+                     */
+                    std::string GetNodeId() const;
+
+                    /**
+                     * 设置升级集群版实例时，如果要调整只读节点可用区，需要指定节点id。
+                     * @param _nodeId 升级集群版实例时，如果要调整只读节点可用区，需要指定节点id。
+                     * 
+                     */
+                    void SetNodeId(const std::string& _nodeId);
+
+                    /**
+                     * 判断参数 NodeId 是否已赋值
+                     * @return NodeId 是否已赋值
+                     * 
+                     */
+                    bool NodeIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 升级集群版实例时，如果要调整只读节点可用区，需要指定节点id。
+                     */
+                    std::string m_nodeId;
+                    bool m_nodeIdHasBeenSet;
 
                 };
             }

@@ -400,6 +400,27 @@ namespace TencentCloud
                      */
                     bool VerifyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取询价参数
+                     * @return PriceKey 询价参数
+                     * 
+                     */
+                    std::string GetPriceKey() const;
+
+                    /**
+                     * 设置询价参数
+                     * @param _priceKey 询价参数
+                     * 
+                     */
+                    void SetPriceKey(const std::string& _priceKey);
+
+                    /**
+                     * 判断参数 PriceKey 是否已赋值
+                     * @return PriceKey 是否已赋值
+                     * 
+                     */
+                    bool PriceKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -503,6 +524,12 @@ namespace TencentCloud
                      */
                     std::string m_verifyType;
                     bool m_verifyTypeHasBeenSet;
+
+                    /**
+                     * 询价参数
+                     */
+                    std::string m_priceKey;
+                    bool m_priceKeyHasBeenSet;
 
                 };
             }

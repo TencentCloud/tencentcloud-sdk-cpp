@@ -153,18 +153,18 @@ namespace TencentCloud
                     bool ServiceTemplateHasBeenSet() const;
 
                     /**
-                     * 获取网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。
+                     * 获取网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CidrBlock 网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。
+                     * @return CidrBlock 网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
-                     * 设置网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。
+                     * 设置网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cidrBlock 网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。
+                     * @param _cidrBlock 网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -178,18 +178,18 @@ namespace TencentCloud
                     bool CidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取网段或IPv6(互斥)。
+                     * 获取网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ipv6CidrBlock 网段或IPv6(互斥)。
+                     * @return Ipv6CidrBlock 网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIpv6CidrBlock() const;
 
                     /**
-                     * 设置网段或IPv6(互斥)。
+                     * 设置网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ipv6CidrBlock 网段或IPv6(互斥)。
+                     * @param _ipv6CidrBlock 网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -359,14 +359,14 @@ namespace TencentCloud
                     bool m_serviceTemplateHasBeenSet;
 
                     /**
-                     * 网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。
+                     * 网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;
 
                     /**
-                     * 网段或IPv6(互斥)。
+                     * 网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ipv6CidrBlock;

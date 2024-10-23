@@ -39,7 +39,8 @@ CreateCertificateByPackageRequest::CreateCertificateByPackageRequest() :
     m_certificateCountHasBeenSet(false),
     m_managerIdHasBeenSet(false),
     m_companyIdHasBeenSet(false),
-    m_verifyTypeHasBeenSet(false)
+    m_verifyTypeHasBeenSet(false),
+    m_priceKeyHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,14 @@ string CreateCertificateByPackageRequest::ToJsonString() const
         string key = "VerifyType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_verifyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_priceKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PriceKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_priceKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -476,6 +485,22 @@ void CreateCertificateByPackageRequest::SetVerifyType(const string& _verifyType)
 bool CreateCertificateByPackageRequest::VerifyTypeHasBeenSet() const
 {
     return m_verifyTypeHasBeenSet;
+}
+
+string CreateCertificateByPackageRequest::GetPriceKey() const
+{
+    return m_priceKey;
+}
+
+void CreateCertificateByPackageRequest::SetPriceKey(const string& _priceKey)
+{
+    m_priceKey = _priceKey;
+    m_priceKeyHasBeenSet = true;
+}
+
+bool CreateCertificateByPackageRequest::PriceKeyHasBeenSet() const
+{
+    return m_priceKeyHasBeenSet;
 }
 
 

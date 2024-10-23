@@ -200,15 +200,15 @@ namespace TencentCloud
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取数据库名
-                     * @return Name 数据库名
+                     * 获取服务名
+                     * @return Name 服务名
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置数据库名
-                     * @param _name 数据库名
+                     * 设置服务名
+                     * @param _name 服务名
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -547,7 +547,7 @@ namespace TencentCloud
                     bool m_tagHasBeenSet;
 
                     /**
-                     * 数据库名
+                     * 服务名
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

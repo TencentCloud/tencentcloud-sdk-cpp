@@ -22,7 +22,8 @@ using namespace std;
 
 EmbedUrlOption::EmbedUrlOption() :
     m_showFlowDetailComponentHasBeenSet(false),
-    m_showTemplateComponentHasBeenSet(false)
+    m_showTemplateComponentHasBeenSet(false),
+    m_skipUploadFileHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome EmbedUrlOption::Deserialize(const rapidjson::Value &value)
         m_showTemplateComponentHasBeenSet = true;
     }
 
+    if (value.HasMember("SkipUploadFile") && !value["SkipUploadFile"].IsNull())
+    {
+        if (!value["SkipUploadFile"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmbedUrlOption.SkipUploadFile` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_skipUploadFile = string(value["SkipUploadFile"].GetString());
+        m_skipUploadFileHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void EmbedUrlOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ShowTemplateComponent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_showTemplateComponent, allocator);
+    }
+
+    if (m_skipUploadFileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipUploadFile";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_skipUploadFile.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void EmbedUrlOption::SetShowTemplateComponent(const bool& _showTemplateComponent
 bool EmbedUrlOption::ShowTemplateComponentHasBeenSet() const
 {
     return m_showTemplateComponentHasBeenSet;
+}
+
+string EmbedUrlOption::GetSkipUploadFile() const
+{
+    return m_skipUploadFile;
+}
+
+void EmbedUrlOption::SetSkipUploadFile(const string& _skipUploadFile)
+{
+    m_skipUploadFile = _skipUploadFile;
+    m_skipUploadFileHasBeenSet = true;
+}
+
+bool EmbedUrlOption::SkipUploadFileHasBeenSet() const
+{
+    return m_skipUploadFileHasBeenSet;
 }
 

@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool ClientIdHasBeenSet() const;
 
                     /**
-                     * 获取ip
-                     * @return Ip ip
+                     * 获取IP
+                     * @return Ip IP
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置ip
-                     * @param _ip ip
+                     * 设置IP
+                     * @param _ip IP
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -405,7 +405,7 @@ namespace TencentCloud
                     bool m_clientIdHasBeenSet;
 
                     /**
-                     * ip
+                     * IP
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;

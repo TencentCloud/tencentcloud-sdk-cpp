@@ -277,15 +277,19 @@ namespace TencentCloud
                     bool RegionInfoHasBeenSet() const;
 
                     /**
-                     * 获取实例状态 TERMINATED_PRO_VERSION 已销毁
-                     * @return InstanceState 实例状态 TERMINATED_PRO_VERSION 已销毁
+                     * 获取实例状态请参考CVM实例列表InstanceState值
+https://cloud.tencent.com/document/api/213/15753#Instance
+                     * @return InstanceState 实例状态请参考CVM实例列表InstanceState值
+https://cloud.tencent.com/document/api/213/15753#Instance
                      * 
                      */
                     std::string GetInstanceState() const;
 
                     /**
-                     * 设置实例状态 TERMINATED_PRO_VERSION 已销毁
-                     * @param _instanceState 实例状态 TERMINATED_PRO_VERSION 已销毁
+                     * 设置实例状态请参考CVM实例列表InstanceState值
+https://cloud.tencent.com/document/api/213/15753#Instance
+                     * @param _instanceState 实例状态请参考CVM实例列表InstanceState值
+https://cloud.tencent.com/document/api/213/15753#Instance
                      * 
                      */
                     void SetInstanceState(const std::string& _instanceState);
@@ -523,7 +527,8 @@ namespace TencentCloud
                     bool m_regionInfoHasBeenSet;
 
                     /**
-                     * 实例状态 TERMINATED_PRO_VERSION 已销毁
+                     * 实例状态请参考CVM实例列表InstanceState值
+https://cloud.tencent.com/document/api/213/15753#Instance
                      */
                     std::string m_instanceState;
                     bool m_instanceStateHasBeenSet;

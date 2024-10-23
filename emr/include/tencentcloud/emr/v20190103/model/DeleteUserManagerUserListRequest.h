@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool UserGroupListHasBeenSet() const;
 
+                    /**
+                     * 获取是否删除家目录，只针对cvm集群
+                     * @return DeleteHomeDir 是否删除家目录，只针对cvm集群
+                     * 
+                     */
+                    bool GetDeleteHomeDir() const;
+
+                    /**
+                     * 设置是否删除家目录，只针对cvm集群
+                     * @param _deleteHomeDir 是否删除家目录，只针对cvm集群
+                     * 
+                     */
+                    void SetDeleteHomeDir(const bool& _deleteHomeDir);
+
+                    /**
+                     * 判断参数 DeleteHomeDir 是否已赋值
+                     * @return DeleteHomeDir 是否已赋值
+                     * 
+                     */
+                    bool DeleteHomeDirHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +200,12 @@ namespace TencentCloud
                      */
                     std::vector<UserAndGroup> m_userGroupList;
                     bool m_userGroupListHasBeenSet;
+
+                    /**
+                     * 是否删除家目录，只针对cvm集群
+                     */
+                    bool m_deleteHomeDir;
+                    bool m_deleteHomeDirHasBeenSet;
 
                 };
             }

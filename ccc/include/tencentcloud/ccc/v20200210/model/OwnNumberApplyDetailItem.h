@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool MaxCallPSecHasBeenSet() const;
 
+                    /**
+                     * 获取呼出被叫格式，使用 {+E.164} 或 {E.164}, 
+                     * @return OutboundCalleeFormat 呼出被叫格式，使用 {+E.164} 或 {E.164}, 
+                     * 
+                     */
+                    std::string GetOutboundCalleeFormat() const;
+
+                    /**
+                     * 设置呼出被叫格式，使用 {+E.164} 或 {E.164}, 
+                     * @param _outboundCalleeFormat 呼出被叫格式，使用 {+E.164} 或 {E.164}, 
+                     * 
+                     */
+                    void SetOutboundCalleeFormat(const std::string& _outboundCalleeFormat);
+
+                    /**
+                     * 判断参数 OutboundCalleeFormat 是否已赋值
+                     * @return OutboundCalleeFormat 是否已赋值
+                     * 
+                     */
+                    bool OutboundCalleeFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxCallPSec;
                     bool m_maxCallPSecHasBeenSet;
+
+                    /**
+                     * 呼出被叫格式，使用 {+E.164} 或 {E.164}, 
+                     */
+                    std::string m_outboundCalleeFormat;
+                    bool m_outboundCalleeFormatHasBeenSet;
 
                 };
             }

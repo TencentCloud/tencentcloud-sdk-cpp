@@ -50,7 +50,8 @@ DescribeDeviceData::DescribeDeviceData() :
     m_audioSwitchHasBeenSet(false),
     m_subscribeSwitchHasBeenSet(false),
     m_appNameHasBeenSet(false),
-    m_streamNameHasBeenSet(false)
+    m_streamNameHasBeenSet(false),
+    m_silentFrameSwitchHasBeenSet(false)
 {
 }
 
@@ -359,6 +360,16 @@ CoreInternalOutcome DescribeDeviceData::Deserialize(const rapidjson::Value &valu
         m_streamNameHasBeenSet = true;
     }
 
+    if (value.HasMember("SilentFrameSwitch") && !value["SilentFrameSwitch"].IsNull())
+    {
+        if (!value["SilentFrameSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceData.SilentFrameSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_silentFrameSwitch = value["SilentFrameSwitch"].GetInt64();
+        m_silentFrameSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -604,6 +615,14 @@ void DescribeDeviceData::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "StreamName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_streamName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_silentFrameSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SilentFrameSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_silentFrameSwitch, allocator);
     }
 
 }
@@ -1087,5 +1106,21 @@ void DescribeDeviceData::SetStreamName(const string& _streamName)
 bool DescribeDeviceData::StreamNameHasBeenSet() const
 {
     return m_streamNameHasBeenSet;
+}
+
+int64_t DescribeDeviceData::GetSilentFrameSwitch() const
+{
+    return m_silentFrameSwitch;
+}
+
+void DescribeDeviceData::SetSilentFrameSwitch(const int64_t& _silentFrameSwitch)
+{
+    m_silentFrameSwitch = _silentFrameSwitch;
+    m_silentFrameSwitchHasBeenSet = true;
+}
+
+bool DescribeDeviceData::SilentFrameSwitchHasBeenSet() const
+{
+    return m_silentFrameSwitchHasBeenSet;
 }
 

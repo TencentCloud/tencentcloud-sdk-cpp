@@ -1324,6 +1324,31 @@ namespace TencentCloud
                      */
                     bool EngineNetworkNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用预留池
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsPoolMode 是否使用预留池
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIsPoolMode() const;
+
+                    /**
+                     * 设置是否使用预留池
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isPoolMode 是否使用预留池
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsPoolMode(const std::string& _isPoolMode);
+
+                    /**
+                     * 判断参数 IsPoolMode 是否已赋值
+                     * @return IsPoolMode 是否已赋值
+                     * 
+                     */
+                    bool IsPoolModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1683,6 +1708,13 @@ namespace TencentCloud
                      */
                     std::string m_engineNetworkName;
                     bool m_engineNetworkNameHasBeenSet;
+
+                    /**
+                     * 是否使用预留池
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isPoolMode;
+                    bool m_isPoolModeHasBeenSet;
 
                 };
             }
