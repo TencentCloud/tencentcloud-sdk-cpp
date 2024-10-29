@@ -93,6 +93,27 @@ namespace TencentCloud
                     bool CcnRouteTypeHasBeenSet() const;
 
                     /**
+                     * 获取地址类型，支持：IPv4、IPv6。默认IPv4。
+                     * @return AddressType 地址类型，支持：IPv4、IPv6。默认IPv4。
+                     * 
+                     */
+                    std::string GetAddressType() const;
+
+                    /**
+                     * 设置地址类型，支持：IPv4、IPv6。默认IPv4。
+                     * @param _addressType 地址类型，支持：IPv4、IPv6。默认IPv4。
+                     * 
+                     */
+                    void SetAddressType(const std::string& _addressType);
+
+                    /**
+                     * 判断参数 AddressType 是否已赋值
+                     * @return AddressType 是否已赋值
+                     * 
+                     */
+                    bool AddressTypeHasBeenSet() const;
+
+                    /**
                      * 获取偏移量。
                      * @return Offset 偏移量。
                      * 
@@ -149,6 +170,12 @@ namespace TencentCloud
                      */
                     std::string m_ccnRouteType;
                     bool m_ccnRouteTypeHasBeenSet;
+
+                    /**
+                     * 地址类型，支持：IPv4、IPv6。默认IPv4。
+                     */
+                    std::string m_addressType;
+                    bool m_addressTypeHasBeenSet;
 
                     /**
                      * 偏移量。

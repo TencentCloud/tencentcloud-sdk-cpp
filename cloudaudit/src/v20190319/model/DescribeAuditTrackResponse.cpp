@@ -31,7 +31,8 @@ DescribeAuditTrackResponse::DescribeAuditTrackResponse() :
     m_eventNamesHasBeenSet(false),
     m_storageHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_trackForAllMembersHasBeenSet(false)
+    m_trackForAllMembersHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,23 @@ CoreInternalOutcome DescribeAuditTrackResponse::Deserialize(const string &payloa
         m_trackForAllMembersHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Filters") && !rsp["Filters"].IsNull())
+    {
+        if (!rsp["Filters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Filters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_filters.Deserialize(rsp["Filters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_filtersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -237,6 +255,15 @@ string DescribeAuditTrackResponse::ToJsonString() const
         string key = "TrackForAllMembers";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_trackForAllMembers, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_filters.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -329,6 +356,16 @@ uint64_t DescribeAuditTrackResponse::GetTrackForAllMembers() const
 bool DescribeAuditTrackResponse::TrackForAllMembersHasBeenSet() const
 {
     return m_trackForAllMembersHasBeenSet;
+}
+
+Filter DescribeAuditTrackResponse::GetFilters() const
+{
+    return m_filters;
+}
+
+bool DescribeAuditTrackResponse::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

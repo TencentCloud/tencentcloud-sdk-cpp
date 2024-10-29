@@ -19,6 +19,7 @@ set(trtc_public_header
   )
 
 set(trtc_public_header_model
+  include/tencentcloud/trtc/v20190722/model/TimeValue.h
   include/tencentcloud/trtc/v20190722/model/AgentConfig.h
   include/tencentcloud/trtc/v20190722/model/CreatePictureRequest.h
   include/tencentcloud/trtc/v20190722/model/AudioEncodeParams.h
@@ -49,6 +50,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/PictureInfo.h
   include/tencentcloud/trtc/v20190722/model/DescribeCallDetailInfoRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeTRTCMarketScaleDataResponse.h
+  include/tencentcloud/trtc/v20190722/model/McuTencentVod.h
   include/tencentcloud/trtc/v20190722/model/ModifyPictureRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeWebRecordResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeUserInfoRequest.h
@@ -59,7 +61,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeByStrRoomIdResponse.h
   include/tencentcloud/trtc/v20190722/model/CloudStorage.h
   include/tencentcloud/trtc/v20190722/model/DescribeTrtcUsageResponse.h
-  include/tencentcloud/trtc/v20190722/model/TimeValue.h
+  include/tencentcloud/trtc/v20190722/model/McuRecordParams.h
   include/tencentcloud/trtc/v20190722/model/DismissRoomByStrRoomIdRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeTRTCMarketQualityMetricDataRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeWebRecordRequest.h
@@ -109,6 +111,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribeRecordingUsageRequest.h
   include/tencentcloud/trtc/v20190722/model/StorageFile.h
   include/tencentcloud/trtc/v20190722/model/WaterMark.h
+  include/tencentcloud/trtc/v20190722/model/McuStorageParams.h
   include/tencentcloud/trtc/v20190722/model/DescribeScaleInfoResponse.h
   include/tencentcloud/trtc/v20190722/model/MixLayoutParams.h
   include/tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeResponse.h
@@ -194,6 +197,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/StopAITranscriptionResponse.h
   include/tencentcloud/trtc/v20190722/model/SeriesInfo.h
   include/tencentcloud/trtc/v20190722/model/WaterMarkTimestamp.h
+  include/tencentcloud/trtc/v20190722/model/McuCloudVod.h
   include/tencentcloud/trtc/v20190722/model/SingleSubscribeParams.h
   include/tencentcloud/trtc/v20190722/model/PublishCdnParams.h
   include/tencentcloud/trtc/v20190722/model/DescribeAITranscriptionResponse.h
@@ -208,6 +212,7 @@ set(trtc_public_header_model
 
 set(trtc_src
   src/v20190722/TrtcClient.cpp
+  src/v20190722/model/TimeValue.cpp
   src/v20190722/model/AgentConfig.cpp
   src/v20190722/model/CreatePictureRequest.cpp
   src/v20190722/model/AudioEncodeParams.cpp
@@ -238,6 +243,7 @@ set(trtc_src
   src/v20190722/model/PictureInfo.cpp
   src/v20190722/model/DescribeCallDetailInfoRequest.cpp
   src/v20190722/model/DescribeTRTCMarketScaleDataResponse.cpp
+  src/v20190722/model/McuTencentVod.cpp
   src/v20190722/model/ModifyPictureRequest.cpp
   src/v20190722/model/DescribeWebRecordResponse.cpp
   src/v20190722/model/DescribeUserInfoRequest.cpp
@@ -248,7 +254,7 @@ set(trtc_src
   src/v20190722/model/StartMCUMixTranscodeByStrRoomIdResponse.cpp
   src/v20190722/model/CloudStorage.cpp
   src/v20190722/model/DescribeTrtcUsageResponse.cpp
-  src/v20190722/model/TimeValue.cpp
+  src/v20190722/model/McuRecordParams.cpp
   src/v20190722/model/DismissRoomByStrRoomIdRequest.cpp
   src/v20190722/model/DescribeTRTCMarketQualityMetricDataRequest.cpp
   src/v20190722/model/DescribeWebRecordRequest.cpp
@@ -298,6 +304,7 @@ set(trtc_src
   src/v20190722/model/DescribeRecordingUsageRequest.cpp
   src/v20190722/model/StorageFile.cpp
   src/v20190722/model/WaterMark.cpp
+  src/v20190722/model/McuStorageParams.cpp
   src/v20190722/model/DescribeScaleInfoResponse.cpp
   src/v20190722/model/MixLayoutParams.cpp
   src/v20190722/model/StopMCUMixTranscodeResponse.cpp
@@ -383,6 +390,7 @@ set(trtc_src
   src/v20190722/model/StopAITranscriptionResponse.cpp
   src/v20190722/model/SeriesInfo.cpp
   src/v20190722/model/WaterMarkTimestamp.cpp
+  src/v20190722/model/McuCloudVod.cpp
   src/v20190722/model/SingleSubscribeParams.cpp
   src/v20190722/model/PublishCdnParams.cpp
   src/v20190722/model/DescribeAITranscriptionResponse.cpp

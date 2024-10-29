@@ -293,6 +293,31 @@ namespace TencentCloud
                      */
                     bool UUIDHasBeenSet() const;
 
+                    /**
+                     * 获取可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Zone 可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zone 可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -364,6 +389,13 @@ namespace TencentCloud
                      */
                     std::string m_uUID;
                     bool m_uUIDHasBeenSet;
+
+                    /**
+                     * 可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
 
                 };
             }

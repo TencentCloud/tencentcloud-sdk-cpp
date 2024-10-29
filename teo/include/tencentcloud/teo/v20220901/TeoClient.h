@@ -53,6 +53,8 @@
 #include <tencentcloud/teo/v20220901/model/CreateL4ProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateL4ProxyRulesRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateL4ProxyRulesResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateLoadBalancerRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateLoadBalancerResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateOriginGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreatePlanRequest.h>
@@ -91,6 +93,8 @@
 #include <tencentcloud/teo/v20220901/model/DeleteL4ProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteL4ProxyRulesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteL4ProxyRulesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteLoadBalancerRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteLoadBalancerResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteOriginGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteRealtimeLogDeliveryTaskRequest.h>
@@ -151,8 +155,12 @@
 #include <tencentcloud/teo/v20220901/model/DescribeL4ProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeL4ProxyRulesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeL4ProxyRulesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeLoadBalancerListRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeLoadBalancerListResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginGroupResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeOriginGroupHealthStatusRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeOriginGroupHealthStatusResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginProtectionRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginProtectionResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOverviewL7DataRequest.h>
@@ -233,6 +241,8 @@
 #include <tencentcloud/teo/v20220901/model/ModifyL4ProxyRulesStatusResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyL4ProxyStatusRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyL4ProxyStatusResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyLoadBalancerRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyLoadBalancerResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyPlanRequest.h>
@@ -316,6 +326,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateL4ProxyRulesResponse> CreateL4ProxyRulesOutcome;
                 typedef std::future<CreateL4ProxyRulesOutcome> CreateL4ProxyRulesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateL4ProxyRulesRequest&, CreateL4ProxyRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateL4ProxyRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLoadBalancerResponse> CreateLoadBalancerOutcome;
+                typedef std::future<CreateLoadBalancerOutcome> CreateLoadBalancerOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateLoadBalancerRequest&, CreateLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoadBalancerAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOriginGroupResponse> CreateOriginGroupOutcome;
                 typedef std::future<CreateOriginGroupOutcome> CreateOriginGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateOriginGroupRequest&, CreateOriginGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOriginGroupAsyncHandler;
@@ -373,6 +386,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteL4ProxyRulesResponse> DeleteL4ProxyRulesOutcome;
                 typedef std::future<DeleteL4ProxyRulesOutcome> DeleteL4ProxyRulesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteL4ProxyRulesRequest&, DeleteL4ProxyRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteL4ProxyRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLoadBalancerResponse> DeleteLoadBalancerOutcome;
+                typedef std::future<DeleteLoadBalancerOutcome> DeleteLoadBalancerOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteLoadBalancerRequest&, DeleteLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoadBalancerAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteOriginGroupResponse> DeleteOriginGroupOutcome;
                 typedef std::future<DeleteOriginGroupOutcome> DeleteOriginGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteOriginGroupRequest&, DeleteOriginGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOriginGroupAsyncHandler;
@@ -463,9 +479,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeL4ProxyRulesResponse> DescribeL4ProxyRulesOutcome;
                 typedef std::future<DescribeL4ProxyRulesOutcome> DescribeL4ProxyRulesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeL4ProxyRulesRequest&, DescribeL4ProxyRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeL4ProxyRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLoadBalancerListResponse> DescribeLoadBalancerListOutcome;
+                typedef std::future<DescribeLoadBalancerListOutcome> DescribeLoadBalancerListOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeLoadBalancerListRequest&, DescribeLoadBalancerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOriginGroupResponse> DescribeOriginGroupOutcome;
                 typedef std::future<DescribeOriginGroupOutcome> DescribeOriginGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeOriginGroupRequest&, DescribeOriginGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOriginGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOriginGroupHealthStatusResponse> DescribeOriginGroupHealthStatusOutcome;
+                typedef std::future<DescribeOriginGroupHealthStatusOutcome> DescribeOriginGroupHealthStatusOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeOriginGroupHealthStatusRequest&, DescribeOriginGroupHealthStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOriginGroupHealthStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOriginProtectionResponse> DescribeOriginProtectionOutcome;
                 typedef std::future<DescribeOriginProtectionOutcome> DescribeOriginProtectionOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeOriginProtectionRequest&, DescribeOriginProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOriginProtectionAsyncHandler;
@@ -586,6 +608,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyL4ProxyStatusResponse> ModifyL4ProxyStatusOutcome;
                 typedef std::future<ModifyL4ProxyStatusOutcome> ModifyL4ProxyStatusOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyL4ProxyStatusRequest&, ModifyL4ProxyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyL4ProxyStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLoadBalancerResponse> ModifyLoadBalancerOutcome;
+                typedef std::future<ModifyLoadBalancerOutcome> ModifyLoadBalancerOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyLoadBalancerRequest&, ModifyLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyOriginGroupResponse> ModifyOriginGroupOutcome;
                 typedef std::future<ModifyOriginGroupOutcome> ModifyOriginGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyOriginGroupRequest&, ModifyOriginGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOriginGroupAsyncHandler;
@@ -764,6 +789,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 CreateL4ProxyRulesOutcomeCallable CreateL4ProxyRulesCallable(const Model::CreateL4ProxyRulesRequest& request);
 
                 /**
+                 *创建负载均衡实例。详情请参考 [快速创建负载均衡实例](https://cloud.tencent.com/document/product/1552/104223)。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。
+                 * @param req CreateLoadBalancerRequest
+                 * @return CreateLoadBalancerOutcome
+                 */
+                CreateLoadBalancerOutcome CreateLoadBalancer(const Model::CreateLoadBalancerRequest &request);
+                void CreateLoadBalancerAsync(const Model::CreateLoadBalancerRequest& request, const CreateLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLoadBalancerOutcomeCallable CreateLoadBalancerCallable(const Model::CreateLoadBalancerRequest& request);
+
+                /**
                  *创建源站组，以源站组的方式管理业务源站。此处配置的源站组可于**添加加速域名**和**四层代理**等功能中引用。
                  * @param req CreateOriginGroupRequest
                  * @return CreateOriginGroupOutcome
@@ -940,6 +974,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DeleteL4ProxyRulesOutcome DeleteL4ProxyRules(const Model::DeleteL4ProxyRulesRequest &request);
                 void DeleteL4ProxyRulesAsync(const Model::DeleteL4ProxyRulesRequest& request, const DeleteL4ProxyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteL4ProxyRulesOutcomeCallable DeleteL4ProxyRulesCallable(const Model::DeleteL4ProxyRulesRequest& request);
+
+                /**
+                 *删除负载均衡实例，若负载均衡示例被其他服务（例如：四层代理等）引用的时候，示例无法被删除，需要先解除引用关系。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。
+                 * @param req DeleteLoadBalancerRequest
+                 * @return DeleteLoadBalancerOutcome
+                 */
+                DeleteLoadBalancerOutcome DeleteLoadBalancer(const Model::DeleteLoadBalancerRequest &request);
+                void DeleteLoadBalancerAsync(const Model::DeleteLoadBalancerRequest& request, const DeleteLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLoadBalancerOutcomeCallable DeleteLoadBalancerCallable(const Model::DeleteLoadBalancerRequest& request);
 
                 /**
                  *删除源站组，若源站组仍然被服务（例如：四层代理，域名服务，负载均衡，规则引起）引用，将不允许删除。
@@ -1212,6 +1255,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeL4ProxyRulesOutcomeCallable DescribeL4ProxyRulesCallable(const Model::DescribeL4ProxyRulesRequest& request);
 
                 /**
+                 *查询负载均衡实例列表。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。
+                 * @param req DescribeLoadBalancerListRequest
+                 * @return DescribeLoadBalancerListOutcome
+                 */
+                DescribeLoadBalancerListOutcome DescribeLoadBalancerList(const Model::DescribeLoadBalancerListRequest &request);
+                void DescribeLoadBalancerListAsync(const Model::DescribeLoadBalancerListRequest& request, const DescribeLoadBalancerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLoadBalancerListOutcomeCallable DescribeLoadBalancerListCallable(const Model::DescribeLoadBalancerListRequest& request);
+
+                /**
                  *获取源站组列表
                  * @param req DescribeOriginGroupRequest
                  * @return DescribeOriginGroupOutcome
@@ -1219,6 +1271,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeOriginGroupOutcome DescribeOriginGroup(const Model::DescribeOriginGroupRequest &request);
                 void DescribeOriginGroupAsync(const Model::DescribeOriginGroupRequest& request, const DescribeOriginGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOriginGroupOutcomeCallable DescribeOriginGroupCallable(const Model::DescribeOriginGroupRequest& request);
+
+                /**
+                 *查询负载均衡实例下源站组健康状态。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。
+                 * @param req DescribeOriginGroupHealthStatusRequest
+                 * @return DescribeOriginGroupHealthStatusOutcome
+                 */
+                DescribeOriginGroupHealthStatusOutcome DescribeOriginGroupHealthStatus(const Model::DescribeOriginGroupHealthStatusRequest &request);
+                void DescribeOriginGroupHealthStatusAsync(const Model::DescribeOriginGroupHealthStatusRequest& request, const DescribeOriginGroupHealthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOriginGroupHealthStatusOutcomeCallable DescribeOriginGroupHealthStatusCallable(const Model::DescribeOriginGroupHealthStatusRequest& request);
 
                 /**
                  *查询源站防护信息
@@ -1596,6 +1657,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyL4ProxyStatusOutcome ModifyL4ProxyStatus(const Model::ModifyL4ProxyStatusRequest &request);
                 void ModifyL4ProxyStatusAsync(const Model::ModifyL4ProxyStatusRequest& request, const ModifyL4ProxyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyL4ProxyStatusOutcomeCallable ModifyL4ProxyStatusCallable(const Model::ModifyL4ProxyStatusRequest& request);
+
+                /**
+                 *修改负载均衡实例配置。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。
+                 * @param req ModifyLoadBalancerRequest
+                 * @return ModifyLoadBalancerOutcome
+                 */
+                ModifyLoadBalancerOutcome ModifyLoadBalancer(const Model::ModifyLoadBalancerRequest &request);
+                void ModifyLoadBalancerAsync(const Model::ModifyLoadBalancerRequest& request, const ModifyLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLoadBalancerOutcomeCallable ModifyLoadBalancerCallable(const Model::ModifyLoadBalancerRequest& request);
 
                 /**
                  *修改源站组配置，新提交的源站记录将会覆盖原有源站组中的源站记录。

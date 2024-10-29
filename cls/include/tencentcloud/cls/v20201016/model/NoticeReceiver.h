@@ -146,15 +146,40 @@ namespace TencentCloud
                     bool ReceiverChannelsHasBeenSet() const;
 
                     /**
-                     * 获取允许接收信息的开始时间。格式：`15:04:05`，必填。
-                     * @return StartTime 允许接收信息的开始时间。格式：`15:04:05`，必填。
+                     * 获取通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NoticeContentId 通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNoticeContentId() const;
+
+                    /**
+                     * 设置通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _noticeContentId 通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNoticeContentId(const std::string& _noticeContentId);
+
+                    /**
+                     * 判断参数 NoticeContentId 是否已赋值
+                     * @return NoticeContentId 是否已赋值
+                     * 
+                     */
+                    bool NoticeContentIdHasBeenSet() const;
+
+                    /**
+                     * 获取允许接收信息的开始时间。格式：`15:04:05`。必填
+                     * @return StartTime 允许接收信息的开始时间。格式：`15:04:05`。必填
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置允许接收信息的开始时间。格式：`15:04:05`，必填。
-                     * @param _startTime 允许接收信息的开始时间。格式：`15:04:05`，必填。
+                     * 设置允许接收信息的开始时间。格式：`15:04:05`。必填
+                     * @param _startTime 允许接收信息的开始时间。格式：`15:04:05`。必填
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -167,15 +192,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取允许接收信息的结束时间。格式：`15:04:05`，必填。
-                     * @return EndTime 允许接收信息的结束时间。格式：`15:04:05`，必填。
+                     * 获取允许接收信息的结束时间。格式：`15:04:05`。必填
+                     * @return EndTime 允许接收信息的结束时间。格式：`15:04:05`。必填
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置允许接收信息的结束时间。格式：`15:04:05`，必填。
-                     * @param _endTime 允许接收信息的结束时间。格式：`15:04:05`，必填。
+                     * 设置允许接收信息的结束时间。格式：`15:04:05`。必填
+                     * @param _endTime 允许接收信息的结束时间。格式：`15:04:05`。必填
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -220,31 +245,6 @@ namespace TencentCloud
                      */
                     bool IndexHasBeenSet() const;
 
-                    /**
-                     * 获取通知内容模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NoticeContentId 通知内容模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetNoticeContentId() const;
-
-                    /**
-                     * 设置通知内容模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _noticeContentId 通知内容模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetNoticeContentId(const std::string& _noticeContentId);
-
-                    /**
-                     * 判断参数 NoticeContentId 是否已赋值
-                     * @return NoticeContentId 是否已赋值
-                     * 
-                     */
-                    bool NoticeContentIdHasBeenSet() const;
-
                 private:
 
                     /**
@@ -275,13 +275,20 @@ namespace TencentCloud
                     bool m_receiverChannelsHasBeenSet;
 
                     /**
-                     * 允许接收信息的开始时间。格式：`15:04:05`，必填。
+                     * 通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_noticeContentId;
+                    bool m_noticeContentIdHasBeenSet;
+
+                    /**
+                     * 允许接收信息的开始时间。格式：`15:04:05`。必填
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 允许接收信息的结束时间。格式：`15:04:05`，必填。
+                     * 允许接收信息的结束时间。格式：`15:04:05`。必填
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -294,13 +301,6 @@ namespace TencentCloud
                      */
                     int64_t m_index;
                     bool m_indexHasBeenSet;
-
-                    /**
-                     * 通知内容模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_noticeContentId;
-                    bool m_noticeContentIdHasBeenSet;
 
                 };
             }

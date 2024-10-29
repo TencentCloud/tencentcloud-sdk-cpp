@@ -822,7 +822,7 @@ namespace TencentCloud
                 AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
 
                 /**
-                 *为集群绑定资源包
+                 *本接口（BindClusterResourcePackages）用于为集群绑定资源包。
                  * @param req BindClusterResourcePackagesRequest
                  * @return BindClusterResourcePackagesOutcome
                  */
@@ -831,7 +831,7 @@ namespace TencentCloud
                 BindClusterResourcePackagesOutcomeCallable BindClusterResourcePackagesCallable(const Model::BindClusterResourcePackagesRequest& request);
 
                 /**
-                 *TDSQL-C for MySQL实例关闭审计服务
+                 *本接口（CloseAuditService）用于关闭 TDSQL-C MySQL 实例的数据库审计服务。
                  * @param req CloseAuditServiceRequest
                  * @return CloseAuditServiceOutcome
                  */
@@ -894,7 +894,7 @@ namespace TencentCloud
                 CreateAuditLogFileOutcomeCallable CreateAuditLogFileCallable(const Model::CreateAuditLogFileRequest& request);
 
                 /**
-                 *创建审计规则模板
+                 *本接口（CreateAuditRuleTemplate）用于创建审计规则模板。
                  * @param req CreateAuditRuleTemplateRequest
                  * @return CreateAuditRuleTemplateOutcome
                  */
@@ -912,7 +912,7 @@ namespace TencentCloud
                 CreateBackupOutcomeCallable CreateBackupCallable(const Model::CreateBackupRequest& request);
 
                 /**
-                 *创建日志投递
+                 *本接口（CreateCLSDelivery）用于创建日志投递。
                  * @param req CreateCLSDeliveryRequest
                  * @return CreateCLSDeliveryOutcome
                  */
@@ -930,7 +930,7 @@ namespace TencentCloud
                 CreateClusterDatabaseOutcomeCallable CreateClusterDatabaseCallable(const Model::CreateClusterDatabaseRequest& request);
 
                 /**
-                 *购买新集群
+                 *本接口（CreateClusters）用于新购集群。
                  * @param req CreateClustersRequest
                  * @return CreateClustersOutcome
                  */
@@ -1011,7 +1011,7 @@ namespace TencentCloud
                 DeleteBackupOutcomeCallable DeleteBackupCallable(const Model::DeleteBackupRequest& request);
 
                 /**
-                 *删除日志投递
+                 *本接口（DeleteCLSDelivery）用于删除日志投递。
                  * @param req DeleteCLSDeliveryRequest
                  * @return DeleteCLSDeliveryOutcome
                  */
@@ -1065,7 +1065,7 @@ namespace TencentCloud
                 DescribeAccountsOutcomeCallable DescribeAccountsCallable(const Model::DescribeAccountsRequest& request);
 
                 /**
-                 *获取审计实例列表
+                 *本接口（DescribeAuditInstanceList）用于获取数据库审计的实例列表。
                  * @param req DescribeAuditInstanceListRequest
                  * @return DescribeAuditInstanceListOutcome
                  */
@@ -1182,7 +1182,7 @@ namespace TencentCloud
                 DescribeChangedParamsAfterUpgradeOutcomeCallable DescribeChangedParamsAfterUpgradeCallable(const Model::DescribeChangedParamsAfterUpgradeRequest& request);
 
                 /**
-                 *获取集群数据库列表
+                 *本接口（DescribeClusterDatabases）用于获取集群数据库列表。
                  * @param req DescribeClusterDatabasesRequest
                  * @return DescribeClusterDatabasesOutcome
                  */
@@ -1191,7 +1191,7 @@ namespace TencentCloud
                 DescribeClusterDatabasesOutcomeCallable DescribeClusterDatabasesCallable(const Model::DescribeClusterDatabasesRequest& request);
 
                 /**
-                 *该接口（DescribeClusterDetail）显示集群详情
+                 *该接口（DescribeClusterDetail）用于显示集群详情。
                  * @param req DescribeClusterDetailRequest
                  * @return DescribeClusterDetailOutcome
                  */
@@ -1281,7 +1281,7 @@ namespace TencentCloud
                 DescribeFlowOutcomeCallable DescribeFlowCallable(const Model::DescribeFlowRequest& request);
 
                 /**
-                 *查询实例日志投递信息
+                 *本接口（DescribeInstanceCLSLogDelivery）用于查询实例日志投递信息。
                  * @param req DescribeInstanceCLSLogDeliveryRequest
                  * @return DescribeInstanceCLSLogDeliveryOutcome
                  */
@@ -1407,7 +1407,7 @@ namespace TencentCloud
                 DescribeProxyNodesOutcomeCallable DescribeProxyNodesCallable(const Model::DescribeProxyNodesRequest& request);
 
                 /**
-                 *查询数据库代理规格
+                 *本接口（DescribeProxySpecs）用于查询数据库代理规格。
                  * @param req DescribeProxySpecsRequest
                  * @return DescribeProxySpecsOutcome
                  */
@@ -1416,7 +1416,7 @@ namespace TencentCloud
                 DescribeProxySpecsOutcomeCallable DescribeProxySpecsCallable(const Model::DescribeProxySpecsRequest& request);
 
                 /**
-                 *查询资源包使用详情
+                 *本接口（DescribeResourcePackageDetail）用于查询资源包使用详情。
                  * @param req DescribeResourcePackageDetailRequest
                  * @return DescribeResourcePackageDetailOutcome
                  */
@@ -1425,7 +1425,7 @@ namespace TencentCloud
                 DescribeResourcePackageDetailOutcomeCallable DescribeResourcePackageDetailCallable(const Model::DescribeResourcePackageDetailRequest& request);
 
                 /**
-                 *查询资源包列表
+                 *本接口（DescribeResourcePackageList）用于查询资源包列表。
                  * @param req DescribeResourcePackageListRequest
                  * @return DescribeResourcePackageListOutcome
                  */
@@ -1434,7 +1434,7 @@ namespace TencentCloud
                 DescribeResourcePackageListOutcomeCallable DescribeResourcePackageListCallable(const Model::DescribeResourcePackageListRequest& request);
 
                 /**
-                 *查询资源包规格
+                 *本接口（DescribeResourcePackageSaleSpec）用于查询资源包规格。
                  * @param req DescribeResourcePackageSaleSpecRequest
                  * @return DescribeResourcePackageSaleSpecOutcome
                  */
@@ -1569,7 +1569,7 @@ namespace TencentCloud
                 InquirePriceRenewOutcomeCallable InquirePriceRenewCallable(const Model::InquirePriceRenewRequest& request);
 
                 /**
-                 *隔离集群
+                 *本接口（IsolateCluster）用于隔离集群。
                  * @param req IsolateClusterRequest
                  * @return IsolateClusterOutcome
                  */
@@ -1623,7 +1623,7 @@ namespace TencentCloud
                 ModifyAccountPrivilegesOutcomeCallable ModifyAccountPrivilegesCallable(const Model::ModifyAccountPrivilegesRequest& request);
 
                 /**
-                 *修改审计规则模板
+                 *本接口（ModifyAuditRuleTemplates）用于修改审计规则模板。
                  * @param req ModifyAuditRuleTemplatesRequest
                  * @return ModifyAuditRuleTemplatesOutcome
                  */
@@ -1803,7 +1803,7 @@ namespace TencentCloud
                 ModifyProxyRwSplitOutcomeCallable ModifyProxyRwSplitCallable(const Model::ModifyProxyRwSplitRequest& request);
 
                 /**
-                 *给资源包绑定集群
+                 *本接口（ModifyResourcePackageClusters）用于修改资源包与集群之间的绑定关系。
                  * @param req ModifyResourcePackageClustersRequest
                  * @return ModifyResourcePackageClustersOutcome
                  */
@@ -1812,7 +1812,7 @@ namespace TencentCloud
                 ModifyResourcePackageClustersOutcomeCallable ModifyResourcePackageClustersCallable(const Model::ModifyResourcePackageClustersRequest& request);
 
                 /**
-                 *修改资源包名称
+                 *本接口（ModifyResourcePackageName）用于修改资源包名称。
                  * @param req ModifyResourcePackageNameRequest
                  * @return ModifyResourcePackageNameOutcome
                  */
@@ -1866,7 +1866,7 @@ namespace TencentCloud
                 OfflineInstanceOutcomeCallable OfflineInstanceCallable(const Model::OfflineInstanceRequest& request);
 
                 /**
-                 *TDSQL-C for MySQL实例开通审计服务
+                 *本接口（OpenAuditService）用于为实例开通数据库审计服务。
                  * @param req OpenAuditServiceRequest
                  * @return OpenAuditServiceOutcome
                  */
@@ -1920,7 +1920,7 @@ namespace TencentCloud
                 PauseServerlessOutcomeCallable PauseServerlessCallable(const Model::PauseServerlessRequest& request);
 
                 /**
-                 *退款资源包
+                 *本接口（RefundResourcePackage）用于资源包退款。
                  * @param req RefundResourcePackageRequest
                  * @return RefundResourcePackageOutcome
                  */
@@ -2082,7 +2082,7 @@ namespace TencentCloud
                 SwitchProxyVpcOutcomeCallable SwitchProxyVpcCallable(const Model::SwitchProxyVpcRequest& request);
 
                 /**
-                 *cynos解绑资源包
+                 *本接口（UnbindClusterResourcePackages）用于解除资源包与集群之间的绑定关系。
                  * @param req UnbindClusterResourcePackagesRequest
                  * @return UnbindClusterResourcePackagesOutcome
                  */

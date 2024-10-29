@@ -27,6 +27,8 @@
 #include <tencentcloud/scf/v20180416/model/CopyFunctionResponse.h>
 #include <tencentcloud/scf/v20180416/model/CreateAliasRequest.h>
 #include <tencentcloud/scf/v20180416/model/CreateAliasResponse.h>
+#include <tencentcloud/scf/v20180416/model/CreateCustomDomainRequest.h>
+#include <tencentcloud/scf/v20180416/model/CreateCustomDomainResponse.h>
 #include <tencentcloud/scf/v20180416/model/CreateFunctionRequest.h>
 #include <tencentcloud/scf/v20180416/model/CreateFunctionResponse.h>
 #include <tencentcloud/scf/v20180416/model/CreateNamespaceRequest.h>
@@ -35,6 +37,8 @@
 #include <tencentcloud/scf/v20180416/model/CreateTriggerResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteAliasRequest.h>
 #include <tencentcloud/scf/v20180416/model/DeleteAliasResponse.h>
+#include <tencentcloud/scf/v20180416/model/DeleteCustomDomainRequest.h>
+#include <tencentcloud/scf/v20180416/model/DeleteCustomDomainResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteFunctionRequest.h>
 #include <tencentcloud/scf/v20180416/model/DeleteFunctionResponse.h>
 #include <tencentcloud/scf/v20180416/model/DeleteLayerVersionRequest.h>
@@ -53,6 +57,8 @@
 #include <tencentcloud/scf/v20180416/model/GetAliasResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetAsyncEventStatusRequest.h>
 #include <tencentcloud/scf/v20180416/model/GetAsyncEventStatusResponse.h>
+#include <tencentcloud/scf/v20180416/model/GetCustomDomainRequest.h>
+#include <tencentcloud/scf/v20180416/model/GetCustomDomainResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionRequest.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionResponse.h>
 #include <tencentcloud/scf/v20180416/model/GetFunctionAddressRequest.h>
@@ -77,6 +83,8 @@
 #include <tencentcloud/scf/v20180416/model/ListAliasesResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListAsyncEventsRequest.h>
 #include <tencentcloud/scf/v20180416/model/ListAsyncEventsResponse.h>
+#include <tencentcloud/scf/v20180416/model/ListCustomDomainsRequest.h>
+#include <tencentcloud/scf/v20180416/model/ListCustomDomainsResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListFunctionsRequest.h>
 #include <tencentcloud/scf/v20180416/model/ListFunctionsResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListLayerVersionsRequest.h>
@@ -103,6 +111,8 @@
 #include <tencentcloud/scf/v20180416/model/TerminateAsyncEventResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateAliasRequest.h>
 #include <tencentcloud/scf/v20180416/model/UpdateAliasResponse.h>
+#include <tencentcloud/scf/v20180416/model/UpdateCustomDomainRequest.h>
+#include <tencentcloud/scf/v20180416/model/UpdateCustomDomainResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionCodeRequest.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionCodeResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionConfigurationRequest.h>
@@ -135,6 +145,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAliasResponse> CreateAliasOutcome;
                 typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::CreateAliasRequest&, CreateAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAliasAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCustomDomainResponse> CreateCustomDomainOutcome;
+                typedef std::future<CreateCustomDomainOutcome> CreateCustomDomainOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::CreateCustomDomainRequest&, CreateCustomDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFunctionResponse> CreateFunctionOutcome;
                 typedef std::future<CreateFunctionOutcome> CreateFunctionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::CreateFunctionRequest&, CreateFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFunctionAsyncHandler;
@@ -147,6 +160,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAliasResponse> DeleteAliasOutcome;
                 typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::DeleteAliasRequest&, DeleteAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAliasAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCustomDomainResponse> DeleteCustomDomainOutcome;
+                typedef std::future<DeleteCustomDomainOutcome> DeleteCustomDomainOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::DeleteCustomDomainRequest&, DeleteCustomDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteFunctionResponse> DeleteFunctionOutcome;
                 typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::DeleteFunctionRequest&, DeleteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionAsyncHandler;
@@ -174,6 +190,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetAsyncEventStatusResponse> GetAsyncEventStatusOutcome;
                 typedef std::future<GetAsyncEventStatusOutcome> GetAsyncEventStatusOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::GetAsyncEventStatusRequest&, GetAsyncEventStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncEventStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetCustomDomainResponse> GetCustomDomainOutcome;
+                typedef std::future<GetCustomDomainOutcome> GetCustomDomainOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::GetCustomDomainRequest&, GetCustomDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCustomDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetFunctionResponse> GetFunctionOutcome;
                 typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::GetFunctionRequest&, GetFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionAsyncHandler;
@@ -210,6 +229,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListAsyncEventsResponse> ListAsyncEventsOutcome;
                 typedef std::future<ListAsyncEventsOutcome> ListAsyncEventsOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::ListAsyncEventsRequest&, ListAsyncEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAsyncEventsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListCustomDomainsResponse> ListCustomDomainsOutcome;
+                typedef std::future<ListCustomDomainsOutcome> ListCustomDomainsOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::ListCustomDomainsRequest&, ListCustomDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListCustomDomainsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListFunctionsResponse> ListFunctionsOutcome;
                 typedef std::future<ListFunctionsOutcome> ListFunctionsOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::ListFunctionsRequest&, ListFunctionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFunctionsAsyncHandler;
@@ -249,6 +271,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateAliasResponse> UpdateAliasOutcome;
                 typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::UpdateAliasRequest&, UpdateAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAliasAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateCustomDomainResponse> UpdateCustomDomainOutcome;
+                typedef std::future<UpdateCustomDomainOutcome> UpdateCustomDomainOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::UpdateCustomDomainRequest&, UpdateCustomDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCustomDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateFunctionCodeResponse> UpdateFunctionCodeOutcome;
                 typedef std::future<UpdateFunctionCodeOutcome> UpdateFunctionCodeOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::UpdateFunctionCodeRequest&, UpdateFunctionCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFunctionCodeAsyncHandler;
@@ -296,6 +321,15 @@ namespace TencentCloud
                 CreateAliasOutcomeCallable CreateAliasCallable(const Model::CreateAliasRequest& request);
 
                 /**
+                 *创建自定义域名
+                 * @param req CreateCustomDomainRequest
+                 * @return CreateCustomDomainOutcome
+                 */
+                CreateCustomDomainOutcome CreateCustomDomain(const Model::CreateCustomDomainRequest &request);
+                void CreateCustomDomainAsync(const Model::CreateCustomDomainRequest& request, const CreateCustomDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCustomDomainOutcomeCallable CreateCustomDomainCallable(const Model::CreateCustomDomainRequest& request);
+
+                /**
                  *该接口根据传入参数创建新的函数。
                  * @param req CreateFunctionRequest
                  * @return CreateFunctionOutcome
@@ -330,6 +364,15 @@ namespace TencentCloud
                 DeleteAliasOutcome DeleteAlias(const Model::DeleteAliasRequest &request);
                 void DeleteAliasAsync(const Model::DeleteAliasRequest& request, const DeleteAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAliasOutcomeCallable DeleteAliasCallable(const Model::DeleteAliasRequest& request);
+
+                /**
+                 *删除自定义域名
+                 * @param req DeleteCustomDomainRequest
+                 * @return DeleteCustomDomainOutcome
+                 */
+                DeleteCustomDomainOutcome DeleteCustomDomain(const Model::DeleteCustomDomainRequest &request);
+                void DeleteCustomDomainAsync(const Model::DeleteCustomDomainRequest& request, const DeleteCustomDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCustomDomainOutcomeCallable DeleteCustomDomainCallable(const Model::DeleteCustomDomainRequest& request);
 
                 /**
                  *该接口根据传入参数删除函数。
@@ -411,6 +454,15 @@ namespace TencentCloud
                 GetAsyncEventStatusOutcome GetAsyncEventStatus(const Model::GetAsyncEventStatusRequest &request);
                 void GetAsyncEventStatusAsync(const Model::GetAsyncEventStatusRequest& request, const GetAsyncEventStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetAsyncEventStatusOutcomeCallable GetAsyncEventStatusCallable(const Model::GetAsyncEventStatusRequest& request);
+
+                /**
+                 *查看云函数自定义域名详情
+                 * @param req GetCustomDomainRequest
+                 * @return GetCustomDomainOutcome
+                 */
+                GetCustomDomainOutcome GetCustomDomain(const Model::GetCustomDomainRequest &request);
+                void GetCustomDomainAsync(const Model::GetCustomDomainRequest& request, const GetCustomDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetCustomDomainOutcomeCallable GetCustomDomainCallable(const Model::GetCustomDomainRequest& request);
 
                 /**
                  *该接口获取某个函数的详细信息，包括名称、代码、处理方法、关联触发器和超时时间等字段。
@@ -519,6 +571,15 @@ namespace TencentCloud
                 ListAsyncEventsOutcome ListAsyncEvents(const Model::ListAsyncEventsRequest &request);
                 void ListAsyncEventsAsync(const Model::ListAsyncEventsRequest& request, const ListAsyncEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListAsyncEventsOutcomeCallable ListAsyncEventsCallable(const Model::ListAsyncEventsRequest& request);
+
+                /**
+                 *遍历域名列表信息
+                 * @param req ListCustomDomainsRequest
+                 * @return ListCustomDomainsOutcome
+                 */
+                ListCustomDomainsOutcome ListCustomDomains(const Model::ListCustomDomainsRequest &request);
+                void ListCustomDomainsAsync(const Model::ListCustomDomainsRequest& request, const ListCustomDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListCustomDomainsOutcomeCallable ListCustomDomainsCallable(const Model::ListCustomDomainsRequest& request);
 
                 /**
                  *该接口根据传入的查询参数返回相关函数信息。
@@ -636,6 +697,15 @@ namespace TencentCloud
                 UpdateAliasOutcome UpdateAlias(const Model::UpdateAliasRequest &request);
                 void UpdateAliasAsync(const Model::UpdateAliasRequest& request, const UpdateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateAliasOutcomeCallable UpdateAliasCallable(const Model::UpdateAliasRequest& request);
+
+                /**
+                 *更新自定义域名相关配置
+                 * @param req UpdateCustomDomainRequest
+                 * @return UpdateCustomDomainOutcome
+                 */
+                UpdateCustomDomainOutcome UpdateCustomDomain(const Model::UpdateCustomDomainRequest &request);
+                void UpdateCustomDomainAsync(const Model::UpdateCustomDomainRequest& request, const UpdateCustomDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateCustomDomainOutcomeCallable UpdateCustomDomainCallable(const Model::UpdateCustomDomainRequest& request);
 
                 /**
                  *该接口根据传入参数更新函数代码。

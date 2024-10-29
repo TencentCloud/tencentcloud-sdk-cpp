@@ -143,18 +143,18 @@ namespace TencentCloud
                     bool BpsHasBeenSet() const;
 
                     /**
-                     * 获取飞行消息最大保留时间。
+                     * 获取飞行消息最大保留时间，需要小于消息保留周期。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxDelaySeconds 飞行消息最大保留时间。
+                     * @return MaxDelaySeconds 飞行消息最大保留时间，需要小于消息保留周期。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxDelaySeconds() const;
 
                     /**
-                     * 设置飞行消息最大保留时间。
+                     * 设置飞行消息最大保留时间，需要小于消息保留周期。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxDelaySeconds 飞行消息最大保留时间。
+                     * @param _maxDelaySeconds 飞行消息最大保留时间，需要小于消息保留周期。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -842,7 +842,7 @@ namespace TencentCloud
                     bool m_bpsHasBeenSet;
 
                     /**
-                     * 飞行消息最大保留时间。
+                     * 飞行消息最大保留时间，需要小于消息保留周期。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxDelaySeconds;

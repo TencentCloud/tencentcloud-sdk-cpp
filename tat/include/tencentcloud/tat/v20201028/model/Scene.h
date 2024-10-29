@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景 ID 。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneId 场景 ID 。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSceneId() const;
 
                     /**
                      * 设置场景 ID 。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneId 场景 ID 。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneId(const std::string& _sceneId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneName 场景名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSceneName() const;
 
                     /**
                      * 设置场景名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneName 场景名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneName(const std::string& _sceneName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景创建者。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedBy 场景创建者。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedBy() const;
 
                     /**
                      * 设置场景创建者。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdBy 场景创建者。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedBy(const std::string& _createdBy);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedTime 更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
                      * 设置更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedTime 更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 场景 ID 。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sceneId;
                     bool m_sceneIdHasBeenSet;
 
                     /**
                      * 场景名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sceneName;
                     bool m_sceneNameHasBeenSet;
 
                     /**
                      * 场景创建者。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdBy;
                     bool m_createdByHasBeenSet;
 
                     /**
                      * 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
                      * 更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;

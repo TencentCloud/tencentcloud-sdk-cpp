@@ -37,7 +37,8 @@ LogMessage::LogMessage() :
     m_ipHasBeenSet(false),
     m_userAgentHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_detailHasBeenSet(false)
+    m_detailHasBeenSet(false),
+    m_actionResultHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,16 @@ CoreInternalOutcome LogMessage::Deserialize(const rapidjson::Value &value)
         m_detailHasBeenSet = true;
     }
 
+    if (value.HasMember("ActionResult") && !value["ActionResult"].IsNull())
+    {
+        if (!value["ActionResult"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogMessage.ActionResult` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_actionResult = string(value["ActionResult"].GetString());
+        m_actionResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void LogMessage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Detail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_detail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_actionResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActionResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_actionResult.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -632,5 +651,21 @@ void LogMessage::SetDetail(const string& _detail)
 bool LogMessage::DetailHasBeenSet() const
 {
     return m_detailHasBeenSet;
+}
+
+string LogMessage::GetActionResult() const
+{
+    return m_actionResult;
+}
+
+void LogMessage::SetActionResult(const string& _actionResult)
+{
+    m_actionResult = _actionResult;
+    m_actionResultHasBeenSet = true;
+}
+
+bool LogMessage::ActionResultHasBeenSet() const
+{
+    return m_actionResultHasBeenSet;
 }
 

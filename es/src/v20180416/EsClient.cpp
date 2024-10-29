@@ -83,6 +83,49 @@ EsClient::CheckMigrateIndexMetaDataOutcomeCallable EsClient::CheckMigrateIndexMe
     return task->get_future();
 }
 
+EsClient::CreateClusterSnapshotOutcome EsClient::CreateClusterSnapshot(const CreateClusterSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClusterSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterSnapshotResponse rsp = CreateClusterSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterSnapshotOutcome(rsp);
+        else
+            return CreateClusterSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::CreateClusterSnapshotAsync(const CreateClusterSnapshotRequest& request, const CreateClusterSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateClusterSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::CreateClusterSnapshotOutcomeCallable EsClient::CreateClusterSnapshotCallable(const CreateClusterSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateClusterSnapshot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::CreateCosMigrateToServerlessInstanceOutcome EsClient::CreateCosMigrateToServerlessInstance(const CreateCosMigrateToServerlessInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCosMigrateToServerlessInstance");
@@ -341,6 +384,49 @@ EsClient::CreateServerlessSpaceV2OutcomeCallable EsClient::CreateServerlessSpace
     return task->get_future();
 }
 
+EsClient::DeleteClusterSnapshotOutcome EsClient::DeleteClusterSnapshot(const DeleteClusterSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClusterSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterSnapshotResponse rsp = DeleteClusterSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterSnapshotOutcome(rsp);
+        else
+            return DeleteClusterSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DeleteClusterSnapshotAsync(const DeleteClusterSnapshotRequest& request, const DeleteClusterSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteClusterSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DeleteClusterSnapshotOutcomeCallable EsClient::DeleteClusterSnapshotCallable(const DeleteClusterSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClusterSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteClusterSnapshot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::DeleteIndexOutcome EsClient::DeleteIndex(const DeleteIndexRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteIndex");
@@ -592,6 +678,49 @@ EsClient::DeleteServerlessSpaceUserOutcomeCallable EsClient::DeleteServerlessSpa
         [this, request]()
         {
             return this->DeleteServerlessSpaceUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::DescribeClusterSnapshotOutcome EsClient::DescribeClusterSnapshot(const DescribeClusterSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterSnapshotResponse rsp = DescribeClusterSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterSnapshotOutcome(rsp);
+        else
+            return DescribeClusterSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeClusterSnapshotAsync(const DescribeClusterSnapshotRequest& request, const DescribeClusterSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DescribeClusterSnapshotOutcomeCallable EsClient::DescribeClusterSnapshotCallable(const DescribeClusterSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterSnapshot(request);
         }
     );
 
@@ -1796,6 +1925,49 @@ EsClient::RestartNodesOutcomeCallable EsClient::RestartNodesCallable(const Resta
         [this, request]()
         {
             return this->RestartNodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::RestoreClusterSnapshotOutcome EsClient::RestoreClusterSnapshot(const RestoreClusterSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestoreClusterSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestoreClusterSnapshotResponse rsp = RestoreClusterSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestoreClusterSnapshotOutcome(rsp);
+        else
+            return RestoreClusterSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return RestoreClusterSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::RestoreClusterSnapshotAsync(const RestoreClusterSnapshotRequest& request, const RestoreClusterSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestoreClusterSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::RestoreClusterSnapshotOutcomeCallable EsClient::RestoreClusterSnapshotCallable(const RestoreClusterSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestoreClusterSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->RestoreClusterSnapshot(request);
         }
     );
 

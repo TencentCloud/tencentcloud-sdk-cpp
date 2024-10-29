@@ -447,6 +447,56 @@ namespace TencentCloud
                      */
                     bool DomainNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用SSL，仅支持Redis资产。0：禁用 1：启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableSSL 是否启用SSL，仅支持Redis资产。0：禁用 1：启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetEnableSSL() const;
+
+                    /**
+                     * 设置是否启用SSL，仅支持Redis资产。0：禁用 1：启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableSSL 是否启用SSL，仅支持Redis资产。0：禁用 1：启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableSSL(const int64_t& _enableSSL);
+
+                    /**
+                     * 判断参数 EnableSSL 是否已赋值
+                     * @return EnableSSL 是否已赋值
+                     * 
+                     */
+                    bool EnableSSLHasBeenSet() const;
+
+                    /**
+                     * 获取已上传的SSL证书名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SSLCertName 已上传的SSL证书名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSSLCertName() const;
+
+                    /**
+                     * 设置已上传的SSL证书名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sSLCertName 已上传的SSL证书名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSSLCertName(const std::string& _sSLCertName);
+
+                    /**
+                     * 判断参数 SSLCertName 是否已赋值
+                     * @return SSLCertName 是否已赋值
+                     * 
+                     */
+                    bool SSLCertNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -561,6 +611,20 @@ namespace TencentCloud
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
+
+                    /**
+                     * 是否启用SSL，仅支持Redis资产。0：禁用 1：启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_enableSSL;
+                    bool m_enableSSLHasBeenSet;
+
+                    /**
+                     * 已上传的SSL证书名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sSLCertName;
+                    bool m_sSLCertNameHasBeenSet;
 
                 };
             }

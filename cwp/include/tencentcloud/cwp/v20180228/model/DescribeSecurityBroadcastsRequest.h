@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool EndDateHasBeenSet() const;
 
                     /**
-                     * 获取过滤安全播报类型：0-紧急通知，1-功能更新，2-行业荣誉，3-版本发布，4-最佳实践
-                     * @return BroadcastType 过滤安全播报类型：0-紧急通知，1-功能更新，2-行业荣誉，3-版本发布，4-最佳实践
+                     * 获取过滤安全播报类型：0-紧急通知，1-功能更新，2-行业荣誉，3-版本发布，4-实践教程
+                     * @return BroadcastType 过滤安全播报类型：0-紧急通知，1-功能更新，2-行业荣誉，3-版本发布，4-实践教程
                      * 
                      */
                     std::string GetBroadcastType() const;
 
                     /**
-                     * 设置过滤安全播报类型：0-紧急通知，1-功能更新，2-行业荣誉，3-版本发布，4-最佳实践
-                     * @param _broadcastType 过滤安全播报类型：0-紧急通知，1-功能更新，2-行业荣誉，3-版本发布，4-最佳实践
+                     * 设置过滤安全播报类型：0-紧急通知，1-功能更新，2-行业荣誉，3-版本发布，4-实践教程
+                     * @param _broadcastType 过滤安全播报类型：0-紧急通知，1-功能更新，2-行业荣誉，3-版本发布，4-实践教程
                      * 
                      */
                     void SetBroadcastType(const std::string& _broadcastType);
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_endDateHasBeenSet;
 
                     /**
-                     * 过滤安全播报类型：0-紧急通知，1-功能更新，2-行业荣誉，3-版本发布，4-最佳实践
+                     * 过滤安全播报类型：0-紧急通知，1-功能更新，2-行业荣誉，3-版本发布，4-实践教程
                      */
                     std::string m_broadcastType;
                     bool m_broadcastTypeHasBeenSet;

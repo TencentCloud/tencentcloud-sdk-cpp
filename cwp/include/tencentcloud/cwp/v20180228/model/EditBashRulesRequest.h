@@ -252,6 +252,111 @@ namespace TencentCloud
                      */
                     bool DealOldEventsHasBeenSet() const;
 
+                    /**
+                     * 获取策略描述
+                     * @return Descript 策略描述
+                     * 
+                     */
+                    std::string GetDescript() const;
+
+                    /**
+                     * 设置策略描述
+                     * @param _descript 策略描述
+                     * 
+                     */
+                    void SetDescript(const std::string& _descript);
+
+                    /**
+                     * 判断参数 Descript 是否已赋值
+                     * @return Descript 是否已赋值
+                     * 
+                     */
+                    bool DescriptHasBeenSet() const;
+
+                    /**
+                     * 获取生效与否  0:不生效 1:生效
+                     * @return Status 生效与否  0:不生效 1:生效
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置生效与否  0:不生效 1:生效
+                     * @param _status 生效与否  0:不生效 1:生效
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取0:告警  1:白名单  2:拦截
+                     * @return BashAction 0:告警  1:白名单  2:拦截
+                     * 
+                     */
+                    int64_t GetBashAction() const;
+
+                    /**
+                     * 设置0:告警  1:白名单  2:拦截
+                     * @param _bashAction 0:告警  1:白名单  2:拦截
+                     * 
+                     */
+                    void SetBashAction(const int64_t& _bashAction);
+
+                    /**
+                     * 判断参数 BashAction 是否已赋值
+                     * @return BashAction 是否已赋值
+                     * 
+                     */
+                    bool BashActionHasBeenSet() const;
+
+                    /**
+                     * 获取生效范围（0:一组quuid 1:所有专业版 2:所有专业版+旗舰版 3:所有主机）
+                     * @return Scope 生效范围（0:一组quuid 1:所有专业版 2:所有专业版+旗舰版 3:所有主机）
+                     * 
+                     */
+                    int64_t GetScope() const;
+
+                    /**
+                     * 设置生效范围（0:一组quuid 1:所有专业版 2:所有专业版+旗舰版 3:所有主机）
+                     * @param _scope 生效范围（0:一组quuid 1:所有专业版 2:所有专业版+旗舰版 3:所有主机）
+                     * 
+                     */
+                    void SetScope(const int64_t& _scope);
+
+                    /**
+                     * 判断参数 Scope 是否已赋值
+                     * @return Scope 是否已赋值
+                     * 
+                     */
+                    bool ScopeHasBeenSet() const;
+
+                    /**
+                     * 获取生效主机的QUUID集合
+                     * @return Quuids 生效主机的QUUID集合
+                     * 
+                     */
+                    std::vector<std::string> GetQuuids() const;
+
+                    /**
+                     * 设置生效主机的QUUID集合
+                     * @param _quuids 生效主机的QUUID集合
+                     * 
+                     */
+                    void SetQuuids(const std::vector<std::string>& _quuids);
+
+                    /**
+                     * 判断参数 Quuids 是否已赋值
+                     * @return Quuids 是否已赋值
+                     * 
+                     */
+                    bool QuuidsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +418,36 @@ namespace TencentCloud
                      */
                     uint64_t m_dealOldEvents;
                     bool m_dealOldEventsHasBeenSet;
+
+                    /**
+                     * 策略描述
+                     */
+                    std::string m_descript;
+                    bool m_descriptHasBeenSet;
+
+                    /**
+                     * 生效与否  0:不生效 1:生效
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 0:告警  1:白名单  2:拦截
+                     */
+                    int64_t m_bashAction;
+                    bool m_bashActionHasBeenSet;
+
+                    /**
+                     * 生效范围（0:一组quuid 1:所有专业版 2:所有专业版+旗舰版 3:所有主机）
+                     */
+                    int64_t m_scope;
+                    bool m_scopeHasBeenSet;
+
+                    /**
+                     * 生效主机的QUUID集合
+                     */
+                    std::vector<std::string> m_quuids;
+                    bool m_quuidsHasBeenSet;
 
                 };
             }

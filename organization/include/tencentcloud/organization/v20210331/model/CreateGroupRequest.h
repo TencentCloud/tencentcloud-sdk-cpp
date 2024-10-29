@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取用户组类型  Manual：手动创建，Synchronized：外部导入
+                     * @return GroupType 用户组类型  Manual：手动创建，Synchronized：外部导入
+                     * 
+                     */
+                    std::string GetGroupType() const;
+
+                    /**
+                     * 设置用户组类型  Manual：手动创建，Synchronized：外部导入
+                     * @param _groupType 用户组类型  Manual：手动创建，Synchronized：外部导入
+                     * 
+                     */
+                    void SetGroupType(const std::string& _groupType);
+
+                    /**
+                     * 判断参数 GroupType 是否已赋值
+                     * @return GroupType 是否已赋值
+                     * 
+                     */
+                    bool GroupTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 用户组类型  Manual：手动创建，Synchronized：外部导入
+                     */
+                    std::string m_groupType;
+                    bool m_groupTypeHasBeenSet;
 
                 };
             }

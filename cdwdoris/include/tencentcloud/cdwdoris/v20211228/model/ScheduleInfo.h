@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取生效时间
+                     * 获取生效周期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EffectivePeriod 生效时间
+                     * @return EffectivePeriod 生效周期
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEffectivePeriod() const;
 
                     /**
-                     * 设置生效时间
+                     * 设置生效周期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _effectivePeriod 生效时间
+                     * @param _effectivePeriod 生效周期
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,34 +72,38 @@ namespace TencentCloud
                     bool EffectivePeriodHasBeenSet() const;
 
                     /**
-                     * 获取调度类型：
+                     * 获取调度类型，不传该参数时为立即执行：
 Day-天
 Week-周
 Month-月
 Once-单次
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScheduleType 调度类型：
+                     * @return ScheduleType 调度类型，不传该参数时为立即执行：
 Day-天
 Week-周
 Month-月
 Once-单次
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScheduleType() const;
 
                     /**
-                     * 设置调度类型：
+                     * 设置调度类型，不传该参数时为立即执行：
 Day-天
 Week-周
 Month-月
 Once-单次
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scheduleType 调度类型：
+                     * @param _scheduleType 调度类型，不传该参数时为立即执行：
 Day-天
 Week-周
 Month-月
 Once-单次
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -256,18 +260,19 @@ Table-按表
                 private:
 
                     /**
-                     * 生效时间
+                     * 生效周期
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_effectivePeriod;
                     bool m_effectivePeriodHasBeenSet;
 
                     /**
-                     * 调度类型：
+                     * 调度类型，不传该参数时为立即执行：
 Day-天
 Week-周
 Month-月
 Once-单次
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scheduleType;

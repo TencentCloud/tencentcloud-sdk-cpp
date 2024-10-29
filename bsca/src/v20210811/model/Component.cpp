@@ -26,7 +26,10 @@ Component::Component() :
     m_summaryHasBeenSet(false),
     m_nicknameListHasBeenSet(false),
     m_codeLocationListHasBeenSet(false),
-    m_licenseExpressionHasBeenSet(false)
+    m_licenseExpressionHasBeenSet(false),
+    m_versionInfoHasBeenSet(false),
+    m_lastUpdateTimeHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -108,6 +111,46 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         m_licenseExpressionHasBeenSet = true;
     }
 
+    if (value.HasMember("VersionInfo") && !value["VersionInfo"].IsNull())
+    {
+        if (!value["VersionInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.VersionInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_versionInfo.Deserialize(value["VersionInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_versionInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastUpdateTime") && !value["LastUpdateTime"].IsNull())
+    {
+        if (!value["LastUpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.LastUpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastUpdateTime = string(value["LastUpdateTime"].GetString());
+        m_lastUpdateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TagList") && !value["TagList"].IsNull())
+    {
+        if (!value["TagList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Component.TagList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tagList.push_back((*itr).GetString());
+        }
+        m_tagListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -172,6 +215,36 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "LicenseExpression";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_licenseExpression.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_versionInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_lastUpdateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastUpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastUpdateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -271,5 +344,53 @@ void Component::SetLicenseExpression(const string& _licenseExpression)
 bool Component::LicenseExpressionHasBeenSet() const
 {
     return m_licenseExpressionHasBeenSet;
+}
+
+ComponentVersionInfo Component::GetVersionInfo() const
+{
+    return m_versionInfo;
+}
+
+void Component::SetVersionInfo(const ComponentVersionInfo& _versionInfo)
+{
+    m_versionInfo = _versionInfo;
+    m_versionInfoHasBeenSet = true;
+}
+
+bool Component::VersionInfoHasBeenSet() const
+{
+    return m_versionInfoHasBeenSet;
+}
+
+string Component::GetLastUpdateTime() const
+{
+    return m_lastUpdateTime;
+}
+
+void Component::SetLastUpdateTime(const string& _lastUpdateTime)
+{
+    m_lastUpdateTime = _lastUpdateTime;
+    m_lastUpdateTimeHasBeenSet = true;
+}
+
+bool Component::LastUpdateTimeHasBeenSet() const
+{
+    return m_lastUpdateTimeHasBeenSet;
+}
+
+vector<string> Component::GetTagList() const
+{
+    return m_tagList;
+}
+
+void Component::SetTagList(const vector<string>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool Component::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 

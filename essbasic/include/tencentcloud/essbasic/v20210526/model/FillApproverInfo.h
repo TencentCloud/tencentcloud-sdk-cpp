@@ -290,15 +290,23 @@ namespace TencentCloud
                     bool ApproverIdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取合同流程ID，补充合同组子合同动态签署人时必传。
-                     * @return FlowId 合同流程ID，补充合同组子合同动态签署人时必传。
+                     * 获取合同流程ID
+- 补充合同组子合同动态签署人时必传。
+- 补充正常合同，请阅读：<a href="https://qian.tencent.com/developers/partnerApis/flows/ChannelCreateFlowApprovers/" target="_blank">补充签署人接口</a>接口使用说明
+                     * @return FlowId 合同流程ID
+- 补充合同组子合同动态签署人时必传。
+- 补充正常合同，请阅读：<a href="https://qian.tencent.com/developers/partnerApis/flows/ChannelCreateFlowApprovers/" target="_blank">补充签署人接口</a>接口使用说明
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置合同流程ID，补充合同组子合同动态签署人时必传。
-                     * @param _flowId 合同流程ID，补充合同组子合同动态签署人时必传。
+                     * 设置合同流程ID
+- 补充合同组子合同动态签署人时必传。
+- 补充正常合同，请阅读：<a href="https://qian.tencent.com/developers/partnerApis/flows/ChannelCreateFlowApprovers/" target="_blank">补充签署人接口</a>接口使用说明
+                     * @param _flowId 合同流程ID
+- 补充合同组子合同动态签署人时必传。
+- 补充正常合同，请阅读：<a href="https://qian.tencent.com/developers/partnerApis/flows/ChannelCreateFlowApprovers/" target="_blank">补充签署人接口</a>接口使用说明
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -380,7 +388,9 @@ namespace TencentCloud
                     bool m_approverIdCardNumberHasBeenSet;
 
                     /**
-                     * 合同流程ID，补充合同组子合同动态签署人时必传。
+                     * 合同流程ID
+- 补充合同组子合同动态签署人时必传。
+- 补充正常合同，请阅读：<a href="https://qian.tencent.com/developers/partnerApis/flows/ChannelCreateFlowApprovers/" target="_blank">补充签署人接口</a>接口使用说明
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;

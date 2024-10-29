@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/NoticeReceiver.h>
 #include <tencentcloud/cls/v20201016/model/WebCallback.h>
+#include <tencentcloud/cls/v20201016/model/EscalateNoticeInfo.h>
 
 
 namespace TencentCloud
@@ -47,56 +48,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取告警通知模板接收者信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NoticeReceivers 告警通知模板接收者信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<NoticeReceiver> GetNoticeReceivers() const;
-
-                    /**
-                     * 设置告警通知模板接收者信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _noticeReceivers 告警通知模板接收者信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetNoticeReceivers(const std::vector<NoticeReceiver>& _noticeReceivers);
-
-                    /**
-                     * 判断参数 NoticeReceivers 是否已赋值
-                     * @return NoticeReceivers 是否已赋值
-                     * 
-                     */
-                    bool NoticeReceiversHasBeenSet() const;
-
-                    /**
-                     * 获取告警通知模板回调信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WebCallbacks 告警通知模板回调信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<WebCallback> GetWebCallbacks() const;
-
-                    /**
-                     * 设置告警通知模板回调信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _webCallbacks 告警通知模板回调信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetWebCallbacks(const std::vector<WebCallback>& _webCallbacks);
-
-                    /**
-                     * 判断参数 WebCallbacks 是否已赋值
-                     * @return WebCallbacks 是否已赋值
-                     * 
-                     */
-                    bool WebCallbacksHasBeenSet() const;
 
                     /**
                      * 获取匹配规则 JSON串。
@@ -351,21 +302,169 @@ namespace TencentCloud
                      */
                     bool RuleHasBeenSet() const;
 
+                    /**
+                     * 获取告警通知接收者信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NoticeReceivers 告警通知接收者信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<NoticeReceiver> GetNoticeReceivers() const;
+
+                    /**
+                     * 设置告警通知接收者信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _noticeReceivers 告警通知接收者信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNoticeReceivers(const std::vector<NoticeReceiver>& _noticeReceivers);
+
+                    /**
+                     * 判断参数 NoticeReceivers 是否已赋值
+                     * @return NoticeReceivers 是否已赋值
+                     * 
+                     */
+                    bool NoticeReceiversHasBeenSet() const;
+
+                    /**
+                     * 获取告警通知模板回调信息，包括企业微信、钉钉、飞书。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WebCallbacks 告警通知模板回调信息，包括企业微信、钉钉、飞书。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<WebCallback> GetWebCallbacks() const;
+
+                    /**
+                     * 设置告警通知模板回调信息，包括企业微信、钉钉、飞书。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _webCallbacks 告警通知模板回调信息，包括企业微信、钉钉、飞书。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWebCallbacks(const std::vector<WebCallback>& _webCallbacks);
+
+                    /**
+                     * 判断参数 WebCallbacks 是否已赋值
+                     * @return WebCallbacks 是否已赋值
+                     * 
+                     */
+                    bool WebCallbacksHasBeenSet() const;
+
+                    /**
+                     * 获取告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Escalate 告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetEscalate() const;
+
+                    /**
+                     * 设置告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _escalate 告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEscalate(const bool& _escalate);
+
+                    /**
+                     * 判断参数 Escalate 是否已赋值
+                     * @return Escalate 是否已赋值
+                     * 
+                     */
+                    bool EscalateHasBeenSet() const;
+
+                    /**
+                     * 获取告警升级条件。`1`：无人认领且未恢复、`2`：未恢复，默认为1
+- 无人认领且未恢复：告警没有恢复并且没有人认领则升级
+- 未恢复：当前告警持续未恢复则升级
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Type 告警升级条件。`1`：无人认领且未恢复、`2`：未恢复，默认为1
+- 无人认领且未恢复：告警没有恢复并且没有人认领则升级
+- 未恢复：当前告警持续未恢复则升级
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetType() const;
+
+                    /**
+                     * 设置告警升级条件。`1`：无人认领且未恢复、`2`：未恢复，默认为1
+- 无人认领且未恢复：告警没有恢复并且没有人认领则升级
+- 未恢复：当前告警持续未恢复则升级
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _type 告警升级条件。`1`：无人认领且未恢复、`2`：未恢复，默认为1
+- 无人认领且未恢复：告警没有恢复并且没有人认领则升级
+- 未恢复：当前告警持续未恢复则升级
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetType(const uint64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取告警升级间隔。单位：分钟，范围`[1，14400]`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Interval 告警升级间隔。单位：分钟，范围`[1，14400]`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetInterval() const;
+
+                    /**
+                     * 设置告警升级间隔。单位：分钟，范围`[1，14400]`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _interval 告警升级间隔。单位：分钟，范围`[1，14400]`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInterval(const uint64_t& _interval);
+
+                    /**
+                     * 判断参数 Interval 是否已赋值
+                     * @return Interval 是否已赋值
+                     * 
+                     */
+                    bool IntervalHasBeenSet() const;
+
+                    /**
+                     * 获取告警升级后下一个环节的通知渠道配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EscalateNotice 告警升级后下一个环节的通知渠道配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    EscalateNoticeInfo GetEscalateNotice() const;
+
+                    /**
+                     * 设置告警升级后下一个环节的通知渠道配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _escalateNotice 告警升级后下一个环节的通知渠道配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEscalateNotice(const EscalateNoticeInfo& _escalateNotice);
+
+                    /**
+                     * 判断参数 EscalateNotice 是否已赋值
+                     * @return EscalateNotice 是否已赋值
+                     * 
+                     */
+                    bool EscalateNoticeHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 告警通知模板接收者信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<NoticeReceiver> m_noticeReceivers;
-                    bool m_noticeReceiversHasBeenSet;
-
-                    /**
-                     * 告警通知模板回调信息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<WebCallback> m_webCallbacks;
-                    bool m_webCallbacksHasBeenSet;
 
                     /**
                      * 匹配规则 JSON串。
@@ -430,6 +529,51 @@ namespace TencentCloud
                      */
                     std::string m_rule;
                     bool m_ruleHasBeenSet;
+
+                    /**
+                     * 告警通知接收者信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<NoticeReceiver> m_noticeReceivers;
+                    bool m_noticeReceiversHasBeenSet;
+
+                    /**
+                     * 告警通知模板回调信息，包括企业微信、钉钉、飞书。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<WebCallback> m_webCallbacks;
+                    bool m_webCallbacksHasBeenSet;
+
+                    /**
+                     * 告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_escalate;
+                    bool m_escalateHasBeenSet;
+
+                    /**
+                     * 告警升级条件。`1`：无人认领且未恢复、`2`：未恢复，默认为1
+- 无人认领且未恢复：告警没有恢复并且没有人认领则升级
+- 未恢复：当前告警持续未恢复则升级
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 告警升级间隔。单位：分钟，范围`[1，14400]`
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_interval;
+                    bool m_intervalHasBeenSet;
+
+                    /**
+                     * 告警升级后下一个环节的通知渠道配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    EscalateNoticeInfo m_escalateNotice;
+                    bool m_escalateNoticeHasBeenSet;
 
                 };
             }

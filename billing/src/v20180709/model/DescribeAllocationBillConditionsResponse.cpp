@@ -38,7 +38,8 @@ DescribeAllocationBillConditionsResponse::DescribeAllocationBillConditionsRespon
     m_actionTypeHasBeenSet(false),
     m_componentHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_allocationTreeNodeHasBeenSet(false)
+    m_allocationTreeNodeHasBeenSet(false),
+    m_tagKeyHasBeenSet(false)
 {
 }
 
@@ -376,6 +377,19 @@ CoreInternalOutcome DescribeAllocationBillConditionsResponse::Deserialize(const 
         m_allocationTreeNodeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TagKey") && !rsp["TagKey"].IsNull())
+    {
+        if (!rsp["TagKey"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TagKey` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["TagKey"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tagKey.push_back((*itr).GetString());
+        }
+        m_tagKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -611,6 +625,19 @@ string DescribeAllocationBillConditionsResponse::ToJsonString() const
         }
     }
 
+    if (m_tagKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagKey.begin(); itr != m_tagKey.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -771,6 +798,16 @@ vector<AllocationTreeNode> DescribeAllocationBillConditionsResponse::GetAllocati
 bool DescribeAllocationBillConditionsResponse::AllocationTreeNodeHasBeenSet() const
 {
     return m_allocationTreeNodeHasBeenSet;
+}
+
+vector<string> DescribeAllocationBillConditionsResponse::GetTagKey() const
+{
+    return m_tagKey;
+}
+
+bool DescribeAllocationBillConditionsResponse::TagKeyHasBeenSet() const
+{
+    return m_tagKeyHasBeenSet;
 }
 
 

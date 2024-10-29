@@ -59,6 +59,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/AllocateHostsRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeImageFromFamilyRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeRegionsResponse.h
+  include/tencentcloud/cvm/v20170312/model/ImportImageDataDisk.h
   include/tencentcloud/cvm/v20170312/model/PurchaseReservedInstancesOfferingRequest.h
   include/tencentcloud/cvm/v20170312/model/RebootInstancesRequest.h
   include/tencentcloud/cvm/v20170312/model/InstanceTypeConfigStatus.h
@@ -337,6 +338,7 @@ set(cvm_src
   src/v20170312/model/AllocateHostsRequest.cpp
   src/v20170312/model/DescribeImageFromFamilyRequest.cpp
   src/v20170312/model/DescribeRegionsResponse.cpp
+  src/v20170312/model/ImportImageDataDisk.cpp
   src/v20170312/model/PurchaseReservedInstancesOfferingRequest.cpp
   src/v20170312/model/RebootInstancesRequest.cpp
   src/v20170312/model/InstanceTypeConfigStatus.cpp

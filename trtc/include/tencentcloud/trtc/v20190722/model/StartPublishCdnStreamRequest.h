@@ -28,6 +28,7 @@
 #include <tencentcloud/trtc/v20190722/model/McuPublishCdnParam.h>
 #include <tencentcloud/trtc/v20190722/model/McuSeiParams.h>
 #include <tencentcloud/trtc/v20190722/model/McuFeedBackRoomParams.h>
+#include <tencentcloud/trtc/v20190722/model/McuRecordParams.h>
 
 
 namespace TencentCloud
@@ -218,15 +219,15 @@ namespace TencentCloud
                     bool SingleSubscribeParamsHasBeenSet() const;
 
                     /**
-                     * 获取转推的CDN参数。和回推房间参数必须要有一个。
-                     * @return PublishCdnParams 转推的CDN参数。和回推房间参数必须要有一个。
+                     * 获取转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。
+                     * @return PublishCdnParams 转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。
                      * 
                      */
                     std::vector<McuPublishCdnParam> GetPublishCdnParams() const;
 
                     /**
-                     * 设置转推的CDN参数。和回推房间参数必须要有一个。
-                     * @param _publishCdnParams 转推的CDN参数。和回推房间参数必须要有一个。
+                     * 设置转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。
+                     * @param _publishCdnParams 转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。
                      * 
                      */
                     void SetPublishCdnParams(const std::vector<McuPublishCdnParam>& _publishCdnParams);
@@ -260,15 +261,15 @@ namespace TencentCloud
                     bool SeiParamsHasBeenSet() const;
 
                     /**
-                     * 获取回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。
-                     * @return FeedBackRoomParams 回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。
+                     * 获取回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。
+                     * @return FeedBackRoomParams 回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。
                      * 
                      */
                     std::vector<McuFeedBackRoomParams> GetFeedBackRoomParams() const;
 
                     /**
-                     * 设置回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。
-                     * @param _feedBackRoomParams 回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。
+                     * 设置回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。
+                     * @param _feedBackRoomParams 回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。
                      * 
                      */
                     void SetFeedBackRoomParams(const std::vector<McuFeedBackRoomParams>& _feedBackRoomParams);
@@ -279,6 +280,27 @@ namespace TencentCloud
                      * 
                      */
                     bool FeedBackRoomParamsHasBeenSet() const;
+
+                    /**
+                     * 获取转推录制参数，[参考文档](https://cloud.tencent.com/document/product/647/111748)。
+                     * @return RecordParams 转推录制参数，[参考文档](https://cloud.tencent.com/document/product/647/111748)。
+                     * 
+                     */
+                    McuRecordParams GetRecordParams() const;
+
+                    /**
+                     * 设置转推录制参数，[参考文档](https://cloud.tencent.com/document/product/647/111748)。
+                     * @param _recordParams 转推录制参数，[参考文档](https://cloud.tencent.com/document/product/647/111748)。
+                     * 
+                     */
+                    void SetRecordParams(const McuRecordParams& _recordParams);
+
+                    /**
+                     * 判断参数 RecordParams 是否已赋值
+                     * @return RecordParams 是否已赋值
+                     * 
+                     */
+                    bool RecordParamsHasBeenSet() const;
 
                 private:
 
@@ -331,7 +353,7 @@ namespace TencentCloud
                     bool m_singleSubscribeParamsHasBeenSet;
 
                     /**
-                     * 转推的CDN参数。和回推房间参数必须要有一个。
+                     * 转推的CDN参数，一个任务最多支持10个推流URL。和回推房间参数必须要有一个。
                      */
                     std::vector<McuPublishCdnParam> m_publishCdnParams;
                     bool m_publishCdnParamsHasBeenSet;
@@ -343,10 +365,16 @@ namespace TencentCloud
                     bool m_seiParamsHasBeenSet;
 
                     /**
-                     * 回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。
+                     * 回推房间信息，一个任务最多支持回推10个房间，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。
                      */
                     std::vector<McuFeedBackRoomParams> m_feedBackRoomParams;
                     bool m_feedBackRoomParamsHasBeenSet;
+
+                    /**
+                     * 转推录制参数，[参考文档](https://cloud.tencent.com/document/product/647/111748)。
+                     */
+                    McuRecordParams m_recordParams;
+                    bool m_recordParamsHasBeenSet;
 
                 };
             }

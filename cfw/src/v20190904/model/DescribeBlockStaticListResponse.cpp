@@ -24,7 +24,8 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 DescribeBlockStaticListResponse::DescribeBlockStaticListResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome DescribeBlockStaticListResponse::Deserialize(const string &p
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = rsp["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeBlockStaticListResponse::ToJsonString() const
         }
     }
 
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<StaticInfo> DescribeBlockStaticListResponse::GetData() const
 bool DescribeBlockStaticListResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+int64_t DescribeBlockStaticListResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribeBlockStaticListResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

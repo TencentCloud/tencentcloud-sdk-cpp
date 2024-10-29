@@ -24,9 +24,11 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/Tag.h>
 #include <tencentcloud/cls/v20201016/model/NoticeReceiver.h>
 #include <tencentcloud/cls/v20201016/model/WebCallback.h>
 #include <tencentcloud/cls/v20201016/model/NoticeRule.h>
+#include <tencentcloud/cls/v20201016/model/AlarmNoticeDeliverConfig.h>
 
 
 namespace TencentCloud
@@ -38,7 +40,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 告警通知模板类型
+                * 告警通知渠道组详细配置
                 */
                 class AlarmNotice : public AbstractModel
                 {
@@ -50,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警通知模板名称。
-                     * @return Name 告警通知模板名称。
+                     * 获取告警通知渠道组名称。
+                     * @return Name 告警通知渠道组名称。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置告警通知模板名称。
-                     * @param _name 告警通知模板名称。
+                     * 设置告警通知渠道组名称。
+                     * @param _name 告警通知渠道组名称。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -69,6 +71,31 @@ namespace TencentCloud
                      * 
                      */
                     bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取告警通知渠道组绑定的标签信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 告警通知渠道组绑定的标签信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置告警通知渠道组绑定的标签信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tags 告警通知渠道组绑定的标签信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
 
                     /**
                      * 获取告警模板的类型。可选值：
@@ -179,6 +206,110 @@ namespace TencentCloud
                     bool AlarmNoticeIdHasBeenSet() const;
 
                     /**
+                     * 获取通知规则。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NoticeRules 通知规则。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<NoticeRule> GetNoticeRules() const;
+
+                    /**
+                     * 设置通知规则。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _noticeRules 通知规则。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNoticeRules(const std::vector<NoticeRule>& _noticeRules);
+
+                    /**
+                     * 判断参数 NoticeRules 是否已赋值
+                     * @return NoticeRules 是否已赋值
+                     * 
+                     */
+                    bool NoticeRulesHasBeenSet() const;
+
+                    /**
+                     * 获取免登录操作告警开关。
+参数值： 1：关闭 2：开启（默认开启）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmShieldStatus 免登录操作告警开关。
+参数值： 1：关闭 2：开启（默认开启）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetAlarmShieldStatus() const;
+
+                    /**
+                     * 设置免登录操作告警开关。
+参数值： 1：关闭 2：开启（默认开启）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmShieldStatus 免登录操作告警开关。
+参数值： 1：关闭 2：开启（默认开启）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmShieldStatus(const uint64_t& _alarmShieldStatus);
+
+                    /**
+                     * 判断参数 AlarmShieldStatus 是否已赋值
+                     * @return AlarmShieldStatus 是否已赋值
+                     * 
+                     */
+                    bool AlarmShieldStatusHasBeenSet() const;
+
+                    /**
+                     * 获取调用链接域名。http:// 或者 https:// 开头，不能/结尾
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JumpDomain 调用链接域名。http:// 或者 https:// 开头，不能/结尾
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetJumpDomain() const;
+
+                    /**
+                     * 设置调用链接域名。http:// 或者 https:// 开头，不能/结尾
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _jumpDomain 调用链接域名。http:// 或者 https:// 开头，不能/结尾
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJumpDomain(const std::string& _jumpDomain);
+
+                    /**
+                     * 判断参数 JumpDomain 是否已赋值
+                     * @return JumpDomain 是否已赋值
+                     * 
+                     */
+                    bool JumpDomainHasBeenSet() const;
+
+                    /**
+                     * 获取投递相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmNoticeDeliverConfig 投递相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AlarmNoticeDeliverConfig GetAlarmNoticeDeliverConfig() const;
+
+                    /**
+                     * 设置投递相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmNoticeDeliverConfig 投递相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmNoticeDeliverConfig(const AlarmNoticeDeliverConfig& _alarmNoticeDeliverConfig);
+
+                    /**
+                     * 判断参数 AlarmNoticeDeliverConfig 是否已赋值
+                     * @return AlarmNoticeDeliverConfig 是否已赋值
+                     * 
+                     */
+                    bool AlarmNoticeDeliverConfigHasBeenSet() const;
+
+                    /**
                      * 获取创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间。
@@ -228,38 +359,20 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
-                    /**
-                     * 获取通知规则。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NoticeRules 通知规则。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<NoticeRule> GetNoticeRules() const;
-
-                    /**
-                     * 设置通知规则。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _noticeRules 通知规则。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetNoticeRules(const std::vector<NoticeRule>& _noticeRules);
-
-                    /**
-                     * 判断参数 NoticeRules 是否已赋值
-                     * @return NoticeRules 是否已赋值
-                     * 
-                     */
-                    bool NoticeRulesHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 告警通知模板名称。
+                     * 告警通知渠道组名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 告警通知渠道组绑定的标签信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                     /**
                      * 告警模板的类型。可选值：
@@ -292,6 +405,35 @@ namespace TencentCloud
                     bool m_alarmNoticeIdHasBeenSet;
 
                     /**
+                     * 通知规则。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<NoticeRule> m_noticeRules;
+                    bool m_noticeRulesHasBeenSet;
+
+                    /**
+                     * 免登录操作告警开关。
+参数值： 1：关闭 2：开启（默认开启）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_alarmShieldStatus;
+                    bool m_alarmShieldStatusHasBeenSet;
+
+                    /**
+                     * 调用链接域名。http:// 或者 https:// 开头，不能/结尾
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_jumpDomain;
+                    bool m_jumpDomainHasBeenSet;
+
+                    /**
+                     * 投递相关信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AlarmNoticeDeliverConfig m_alarmNoticeDeliverConfig;
+                    bool m_alarmNoticeDeliverConfigHasBeenSet;
+
+                    /**
                      * 创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -304,13 +446,6 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
-
-                    /**
-                     * 通知规则。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<NoticeRule> m_noticeRules;
-                    bool m_noticeRulesHasBeenSet;
 
                 };
             }

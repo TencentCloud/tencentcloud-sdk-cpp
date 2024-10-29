@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool PasswordHasBeenSet() const;
 
+                    /**
+                     * 获取传入不为空则对密码进行了加密处理
+                     * @return EncryptMethod 传入不为空则对密码进行了加密处理
+                     * 
+                     */
+                    std::string GetEncryptMethod() const;
+
+                    /**
+                     * 设置传入不为空则对密码进行了加密处理
+                     * @param _encryptMethod 传入不为空则对密码进行了加密处理
+                     * 
+                     */
+                    void SetEncryptMethod(const std::string& _encryptMethod);
+
+                    /**
+                     * 判断参数 EncryptMethod 是否已赋值
+                     * @return EncryptMethod 是否已赋值
+                     * 
+                     */
+                    bool EncryptMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
+
+                    /**
+                     * 传入不为空则对密码进行了加密处理
+                     */
+                    std::string m_encryptMethod;
+                    bool m_encryptMethodHasBeenSet;
 
                 };
             }

@@ -58,6 +58,20 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取异步查询状态，1查询执行中，0查询已结束
+                     * @return Status 异步查询状态，1查询执行中，0查询已结束
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +79,12 @@ namespace TencentCloud
                      */
                     std::vector<StaticInfo> m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 异步查询状态，1查询执行中，0查询已结束
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

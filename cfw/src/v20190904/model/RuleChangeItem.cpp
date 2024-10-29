@@ -22,7 +22,8 @@ using namespace std;
 
 RuleChangeItem::RuleChangeItem() :
     m_orderIndexHasBeenSet(false),
-    m_newOrderIndexHasBeenSet(false)
+    m_newOrderIndexHasBeenSet(false),
+    m_ipVersionHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome RuleChangeItem::Deserialize(const rapidjson::Value &value)
         m_newOrderIndexHasBeenSet = true;
     }
 
+    if (value.HasMember("IpVersion") && !value["IpVersion"].IsNull())
+    {
+        if (!value["IpVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleChangeItem.IpVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipVersion = value["IpVersion"].GetInt64();
+        m_ipVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void RuleChangeItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "NewOrderIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_newOrderIndex, allocator);
+    }
+
+    if (m_ipVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipVersion, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void RuleChangeItem::SetNewOrderIndex(const int64_t& _newOrderIndex)
 bool RuleChangeItem::NewOrderIndexHasBeenSet() const
 {
     return m_newOrderIndexHasBeenSet;
+}
+
+int64_t RuleChangeItem::GetIpVersion() const
+{
+    return m_ipVersion;
+}
+
+void RuleChangeItem::SetIpVersion(const int64_t& _ipVersion)
+{
+    m_ipVersion = _ipVersion;
+    m_ipVersionHasBeenSet = true;
+}
+
+bool RuleChangeItem::IpVersionHasBeenSet() const
+{
+    return m_ipVersionHasBeenSet;
 }
 

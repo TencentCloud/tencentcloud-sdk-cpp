@@ -909,7 +909,7 @@ namespace TencentCloud
                 AdjustCdbProxyOutcomeCallable AdjustCdbProxyCallable(const Model::AdjustCdbProxyRequest& request);
 
                 /**
-                 *调整数据库代理地址配置
+                 *本接口（AdjustCdbProxyAddress）用于调整数据库代理地址配置。
                  * @param req AdjustCdbProxyAddressRequest
                  * @return AdjustCdbProxyAddressOutcome
                  */

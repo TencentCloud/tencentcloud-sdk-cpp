@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/AuditInstanceInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeliverSummary.h>
 
 
 namespace TencentCloud
@@ -364,6 +365,56 @@ namespace TencentCloud
                      */
                     bool RuleTemplateIdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启日志投递：ON，OFF
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Deliver 是否开启日志投递：ON，OFF
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDeliver() const;
+
+                    /**
+                     * 设置是否开启日志投递：ON，OFF
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deliver 是否开启日志投递：ON，OFF
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeliver(const std::string& _deliver);
+
+                    /**
+                     * 判断参数 Deliver 是否已赋值
+                     * @return Deliver 是否已赋值
+                     * 
+                     */
+                    bool DeliverHasBeenSet() const;
+
+                    /**
+                     * 获取日志投递类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeliverSummary 日志投递类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DeliverSummary> GetDeliverSummary() const;
+
+                    /**
+                     * 设置日志投递类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deliverSummary 日志投递类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeliverSummary(const std::vector<DeliverSummary>& _deliverSummary);
+
+                    /**
+                     * 判断参数 DeliverSummary 是否已赋值
+                     * @return DeliverSummary 是否已赋值
+                     * 
+                     */
+                    bool DeliverSummaryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -454,6 +505,20 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_ruleTemplateIds;
                     bool m_ruleTemplateIdsHasBeenSet;
+
+                    /**
+                     * 是否开启日志投递：ON，OFF
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deliver;
+                    bool m_deliverHasBeenSet;
+
+                    /**
+                     * 日志投递类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DeliverSummary> m_deliverSummary;
+                    bool m_deliverSummaryHasBeenSet;
 
                 };
             }

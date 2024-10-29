@@ -278,18 +278,18 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取安全组规则描述。
+                     * 获取安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PolicyDescription 安全组规则描述。
+                     * @return PolicyDescription 安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyDescription() const;
 
                     /**
-                     * 设置安全组规则描述。
+                     * 设置安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _policyDescription 安全组规则描述。
+                     * @param _policyDescription 安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -394,7 +394,7 @@ namespace TencentCloud
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 安全组规则描述。
+                     * 安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyDescription;

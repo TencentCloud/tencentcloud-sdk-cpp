@@ -62,7 +62,9 @@ AllocationSummaryByResource::AllocationSummaryByResource() :
     m_sPCostHasBeenSet(false),
     m_regionTypeHasBeenSet(false),
     m_regionTypeNameHasBeenSet(false),
-    m_componentConfigHasBeenSet(false)
+    m_componentConfigHasBeenSet(false),
+    m_sPDeductionHasBeenSet(false),
+    m_billMonthHasBeenSet(false)
 {
 }
 
@@ -501,6 +503,26 @@ CoreInternalOutcome AllocationSummaryByResource::Deserialize(const rapidjson::Va
         m_componentConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("SPDeduction") && !value["SPDeduction"].IsNull())
+    {
+        if (!value["SPDeduction"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AllocationSummaryByResource.SPDeduction` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sPDeduction = string(value["SPDeduction"].GetString());
+        m_sPDeductionHasBeenSet = true;
+    }
+
+    if (value.HasMember("BillMonth") && !value["BillMonth"].IsNull())
+    {
+        if (!value["BillMonth"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AllocationSummaryByResource.BillMonth` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billMonth = string(value["BillMonth"].GetString());
+        m_billMonthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -849,6 +871,22 @@ void AllocationSummaryByResource::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "ComponentConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_componentConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sPDeductionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SPDeduction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sPDeduction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billMonthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillMonth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billMonth.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1524,5 +1562,37 @@ void AllocationSummaryByResource::SetComponentConfig(const string& _componentCon
 bool AllocationSummaryByResource::ComponentConfigHasBeenSet() const
 {
     return m_componentConfigHasBeenSet;
+}
+
+string AllocationSummaryByResource::GetSPDeduction() const
+{
+    return m_sPDeduction;
+}
+
+void AllocationSummaryByResource::SetSPDeduction(const string& _sPDeduction)
+{
+    m_sPDeduction = _sPDeduction;
+    m_sPDeductionHasBeenSet = true;
+}
+
+bool AllocationSummaryByResource::SPDeductionHasBeenSet() const
+{
+    return m_sPDeductionHasBeenSet;
+}
+
+string AllocationSummaryByResource::GetBillMonth() const
+{
+    return m_billMonth;
+}
+
+void AllocationSummaryByResource::SetBillMonth(const string& _billMonth)
+{
+    m_billMonth = _billMonth;
+    m_billMonthHasBeenSet = true;
+}
+
+bool AllocationSummaryByResource::BillMonthHasBeenSet() const
+{
+    return m_billMonthHasBeenSet;
 }
 

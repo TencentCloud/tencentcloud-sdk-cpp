@@ -24,7 +24,8 @@ using namespace std;
 
 StopPublishCdnStreamRequest::StopPublishCdnStreamRequest() :
     m_sdkAppIdHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_recordKeyHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string StopPublishCdnStreamRequest::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void StopPublishCdnStreamRequest::SetTaskId(const string& _taskId)
 bool StopPublishCdnStreamRequest::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string StopPublishCdnStreamRequest::GetRecordKey() const
+{
+    return m_recordKey;
+}
+
+void StopPublishCdnStreamRequest::SetRecordKey(const string& _recordKey)
+{
+    m_recordKey = _recordKey;
+    m_recordKeyHasBeenSet = true;
+}
+
+bool StopPublishCdnStreamRequest::RecordKeyHasBeenSet() const
+{
+    return m_recordKeyHasBeenSet;
 }
 
 

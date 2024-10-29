@@ -22,7 +22,8 @@ using namespace std;
 
 ComponentVersion::ComponentVersion() :
     m_pURLHasBeenSet(false),
-    m_licenseExpressionHasBeenSet(false)
+    m_licenseExpressionHasBeenSet(false),
+    m_versionInfoHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,23 @@ CoreInternalOutcome ComponentVersion::Deserialize(const rapidjson::Value &value)
         m_licenseExpressionHasBeenSet = true;
     }
 
+    if (value.HasMember("VersionInfo") && !value["VersionInfo"].IsNull())
+    {
+        if (!value["VersionInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComponentVersion.VersionInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_versionInfo.Deserialize(value["VersionInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_versionInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +98,15 @@ void ComponentVersion::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "LicenseExpression";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_licenseExpression.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_versionInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -115,5 +142,21 @@ void ComponentVersion::SetLicenseExpression(const string& _licenseExpression)
 bool ComponentVersion::LicenseExpressionHasBeenSet() const
 {
     return m_licenseExpressionHasBeenSet;
+}
+
+ComponentVersionInfo ComponentVersion::GetVersionInfo() const
+{
+    return m_versionInfo;
+}
+
+void ComponentVersion::SetVersionInfo(const ComponentVersionInfo& _versionInfo)
+{
+    m_versionInfo = _versionInfo;
+    m_versionInfoHasBeenSet = true;
+}
+
+bool ComponentVersion::VersionInfoHasBeenSet() const
+{
+    return m_versionInfoHasBeenSet;
 }
 

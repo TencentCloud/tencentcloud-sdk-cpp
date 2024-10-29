@@ -22,9 +22,9 @@ using namespace std;
 
 FollowOrigin::FollowOrigin() :
     m_switchHasBeenSet(false),
-    m_defaultCacheTimeHasBeenSet(false),
     m_defaultCacheHasBeenSet(false),
-    m_defaultCacheStrategyHasBeenSet(false)
+    m_defaultCacheStrategyHasBeenSet(false),
+    m_defaultCacheTimeHasBeenSet(false)
 {
 }
 
@@ -41,16 +41,6 @@ CoreInternalOutcome FollowOrigin::Deserialize(const rapidjson::Value &value)
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
-    }
-
-    if (value.HasMember("DefaultCacheTime") && !value["DefaultCacheTime"].IsNull())
-    {
-        if (!value["DefaultCacheTime"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `FollowOrigin.DefaultCacheTime` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_defaultCacheTime = value["DefaultCacheTime"].GetInt64();
-        m_defaultCacheTimeHasBeenSet = true;
     }
 
     if (value.HasMember("DefaultCache") && !value["DefaultCache"].IsNull())
@@ -73,6 +63,16 @@ CoreInternalOutcome FollowOrigin::Deserialize(const rapidjson::Value &value)
         m_defaultCacheStrategyHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultCacheTime") && !value["DefaultCacheTime"].IsNull())
+    {
+        if (!value["DefaultCacheTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FollowOrigin.DefaultCacheTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultCacheTime = value["DefaultCacheTime"].GetInt64();
+        m_defaultCacheTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,14 +86,6 @@ void FollowOrigin::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_defaultCacheTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DefaultCacheTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_defaultCacheTime, allocator);
     }
 
     if (m_defaultCacheHasBeenSet)
@@ -110,6 +102,14 @@ void FollowOrigin::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DefaultCacheStrategy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_defaultCacheStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultCacheTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultCacheTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultCacheTime, allocator);
     }
 
 }
@@ -129,22 +129,6 @@ void FollowOrigin::SetSwitch(const string& _switch)
 bool FollowOrigin::SwitchHasBeenSet() const
 {
     return m_switchHasBeenSet;
-}
-
-int64_t FollowOrigin::GetDefaultCacheTime() const
-{
-    return m_defaultCacheTime;
-}
-
-void FollowOrigin::SetDefaultCacheTime(const int64_t& _defaultCacheTime)
-{
-    m_defaultCacheTime = _defaultCacheTime;
-    m_defaultCacheTimeHasBeenSet = true;
-}
-
-bool FollowOrigin::DefaultCacheTimeHasBeenSet() const
-{
-    return m_defaultCacheTimeHasBeenSet;
 }
 
 string FollowOrigin::GetDefaultCache() const
@@ -177,5 +161,21 @@ void FollowOrigin::SetDefaultCacheStrategy(const string& _defaultCacheStrategy)
 bool FollowOrigin::DefaultCacheStrategyHasBeenSet() const
 {
     return m_defaultCacheStrategyHasBeenSet;
+}
+
+int64_t FollowOrigin::GetDefaultCacheTime() const
+{
+    return m_defaultCacheTime;
+}
+
+void FollowOrigin::SetDefaultCacheTime(const int64_t& _defaultCacheTime)
+{
+    m_defaultCacheTime = _defaultCacheTime;
+    m_defaultCacheTimeHasBeenSet = true;
+}
+
+bool FollowOrigin::DefaultCacheTimeHasBeenSet() const
+{
+    return m_defaultCacheTimeHasBeenSet;
 }
 

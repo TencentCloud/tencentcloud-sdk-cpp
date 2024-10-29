@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool ResourceTypesHasBeenSet() const;
 
                     /**
-                     * 获取一键更新新证书ID，不传该则证书公钥和私钥必传
-                     * @return CertificateId 一键更新新证书ID，不传该则证书公钥和私钥必传
+                     * 获取一键更新新证书ID，不传则证书公钥和私钥必传
+                     * @return CertificateId 一键更新新证书ID，不传则证书公钥和私钥必传
                      * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
-                     * 设置一键更新新证书ID，不传该则证书公钥和私钥必传
-                     * @param _certificateId 一键更新新证书ID，不传该则证书公钥和私钥必传
+                     * 设置一键更新新证书ID，不传则证书公钥和私钥必传
+                     * @param _certificateId 一键更新新证书ID，不传则证书公钥和私钥必传
                      * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
@@ -311,7 +311,7 @@ namespace TencentCloud
                     bool m_resourceTypesHasBeenSet;
 
                     /**
-                     * 一键更新新证书ID，不传该则证书公钥和私钥必传
+                     * 一键更新新证书ID，不传则证书公钥和私钥必传
                      */
                     std::string m_certificateId;
                     bool m_certificateIdHasBeenSet;

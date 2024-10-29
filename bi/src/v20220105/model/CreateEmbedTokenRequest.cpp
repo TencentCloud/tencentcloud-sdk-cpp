@@ -25,6 +25,7 @@ using namespace std;
 CreateEmbedTokenRequest::CreateEmbedTokenRequest() :
     m_projectIdHasBeenSet(false),
     m_pageIdHasBeenSet(false),
+    m_intentionHasBeenSet(false),
     m_scopeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_extraParamHasBeenSet(false),
@@ -56,6 +57,14 @@ string CreateEmbedTokenRequest::ToJsonString() const
         string key = "PageId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageId, allocator);
+    }
+
+    if (m_intentionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Intention";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_intention.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scopeHasBeenSet)
@@ -152,6 +161,22 @@ void CreateEmbedTokenRequest::SetPageId(const uint64_t& _pageId)
 bool CreateEmbedTokenRequest::PageIdHasBeenSet() const
 {
     return m_pageIdHasBeenSet;
+}
+
+string CreateEmbedTokenRequest::GetIntention() const
+{
+    return m_intention;
+}
+
+void CreateEmbedTokenRequest::SetIntention(const string& _intention)
+{
+    m_intention = _intention;
+    m_intentionHasBeenSet = true;
+}
+
+bool CreateEmbedTokenRequest::IntentionHasBeenSet() const
+{
+    return m_intentionHasBeenSet;
 }
 
 string CreateEmbedTokenRequest::GetScope() const

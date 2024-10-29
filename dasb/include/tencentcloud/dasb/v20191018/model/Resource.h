@@ -760,6 +760,81 @@ namespace TencentCloud
                      */
                     bool TrialHasBeenSet() const;
 
+                    /**
+                     * 获取cdc集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CdcClusterId cdc集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCdcClusterId() const;
+
+                    /**
+                     * 设置cdc集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cdcClusterId cdc集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCdcClusterId(const std::string& _cdcClusterId);
+
+                    /**
+                     * 判断参数 CdcClusterId 是否已赋值
+                     * @return CdcClusterId 是否已赋值
+                     * 
+                     */
+                    bool CdcClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取日志投递规格信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogDelivery 日志投递规格信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLogDelivery() const;
+
+                    /**
+                     * 设置日志投递规格信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _logDelivery 日志投递规格信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLogDelivery(const std::string& _logDelivery);
+
+                    /**
+                     * 判断参数 LogDelivery 是否已赋值
+                     * @return LogDelivery 是否已赋值
+                     * 
+                     */
+                    bool LogDeliveryHasBeenSet() const;
+
+                    /**
+                     * 获取部署模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeployModel 部署模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDeployModel() const;
+
+                    /**
+                     * 设置部署模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deployModel 部署模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeployModel(const int64_t& _deployModel);
+
+                    /**
+                     * 判断参数 DeployModel 是否已赋值
+                     * @return DeployModel 是否已赋值
+                     * 
+                     */
+                    bool DeployModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -964,6 +1039,27 @@ namespace TencentCloud
                      */
                     uint64_t m_trial;
                     bool m_trialHasBeenSet;
+
+                    /**
+                     * cdc集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cdcClusterId;
+                    bool m_cdcClusterIdHasBeenSet;
+
+                    /**
+                     * 日志投递规格信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logDelivery;
+                    bool m_logDeliveryHasBeenSet;
+
+                    /**
+                     * 部署模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_deployModel;
+                    bool m_deployModelHasBeenSet;
 
                 };
             }

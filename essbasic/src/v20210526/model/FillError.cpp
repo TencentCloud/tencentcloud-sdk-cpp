@@ -22,7 +22,8 @@ using namespace std;
 
 FillError::FillError() :
     m_recipientIdHasBeenSet(false),
-    m_errMessageHasBeenSet(false)
+    m_errMessageHasBeenSet(false),
+    m_flowIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome FillError::Deserialize(const rapidjson::Value &value)
         m_errMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("FlowId") && !value["FlowId"].IsNull())
+    {
+        if (!value["FlowId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FillError.FlowId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = string(value["FlowId"].GetString());
+        m_flowIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void FillError::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ErrMessage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void FillError::SetErrMessage(const string& _errMessage)
 bool FillError::ErrMessageHasBeenSet() const
 {
     return m_errMessageHasBeenSet;
+}
+
+string FillError::GetFlowId() const
+{
+    return m_flowId;
+}
+
+void FillError::SetFlowId(const string& _flowId)
+{
+    m_flowId = _flowId;
+    m_flowIdHasBeenSet = true;
+}
+
+bool FillError::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
 }
 

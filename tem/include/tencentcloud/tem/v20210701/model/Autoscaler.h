@@ -91,18 +91,18 @@ namespace TencentCloud
                     bool MaxReplicasHasBeenSet() const;
 
                     /**
-                     * 获取指标弹性伸缩策略
+                     * 获取指标弹性伸缩策略(指标策略和定时策略必须填写一个)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HorizontalAutoscaler 指标弹性伸缩策略
+                     * @return HorizontalAutoscaler 指标弹性伸缩策略(指标策略和定时策略必须填写一个)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HorizontalAutoscaler> GetHorizontalAutoscaler() const;
 
                     /**
-                     * 设置指标弹性伸缩策略
+                     * 设置指标弹性伸缩策略(指标策略和定时策略必须填写一个)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _horizontalAutoscaler 指标弹性伸缩策略
+                     * @param _horizontalAutoscaler 指标弹性伸缩策略(指标策略和定时策略必须填写一个)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -116,18 +116,18 @@ namespace TencentCloud
                     bool HorizontalAutoscalerHasBeenSet() const;
 
                     /**
-                     * 获取定时弹性伸缩策略
+                     * 获取定时弹性伸缩策略(指标策略和定时策略必须填写一个)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CronHorizontalAutoscaler 定时弹性伸缩策略
+                     * @return CronHorizontalAutoscaler 定时弹性伸缩策略(指标策略和定时策略必须填写一个)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CronHorizontalAutoscaler> GetCronHorizontalAutoscaler() const;
 
                     /**
-                     * 设置定时弹性伸缩策略
+                     * 设置定时弹性伸缩策略(指标策略和定时策略必须填写一个)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cronHorizontalAutoscaler 定时弹性伸缩策略
+                     * @param _cronHorizontalAutoscaler 定时弹性伸缩策略(指标策略和定时策略必须填写一个)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -330,14 +330,14 @@ namespace TencentCloud
                     bool m_maxReplicasHasBeenSet;
 
                     /**
-                     * 指标弹性伸缩策略
+                     * 指标弹性伸缩策略(指标策略和定时策略必须填写一个)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HorizontalAutoscaler> m_horizontalAutoscaler;
                     bool m_horizontalAutoscalerHasBeenSet;
 
                     /**
-                     * 定时弹性伸缩策略
+                     * 定时弹性伸缩策略(指标策略和定时策略必须填写一个)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CronHorizontalAutoscaler> m_cronHorizontalAutoscaler;

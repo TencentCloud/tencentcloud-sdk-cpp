@@ -26,7 +26,10 @@ ExternalDevice::ExternalDevice() :
     m_portHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_departmentIdHasBeenSet(false),
-    m_ipPortSetHasBeenSet(false)
+    m_ipPortSetHasBeenSet(false),
+    m_enableSSLHasBeenSet(false),
+    m_sSLCertHasBeenSet(false),
+    m_sSLCertNameHasBeenSet(false)
 {
 }
 
@@ -98,6 +101,36 @@ CoreInternalOutcome ExternalDevice::Deserialize(const rapidjson::Value &value)
         m_ipPortSetHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableSSL") && !value["EnableSSL"].IsNull())
+    {
+        if (!value["EnableSSL"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalDevice.EnableSSL` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableSSL = value["EnableSSL"].GetInt64();
+        m_enableSSLHasBeenSet = true;
+    }
+
+    if (value.HasMember("SSLCert") && !value["SSLCert"].IsNull())
+    {
+        if (!value["SSLCert"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalDevice.SSLCert` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sSLCert = string(value["SSLCert"].GetString());
+        m_sSLCertHasBeenSet = true;
+    }
+
+    if (value.HasMember("SSLCertName") && !value["SSLCertName"].IsNull())
+    {
+        if (!value["SSLCertName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalDevice.SSLCertName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sSLCertName = string(value["SSLCertName"].GetString());
+        m_sSLCertNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +189,30 @@ void ExternalDevice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_enableSSLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSSL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableSSL, allocator);
+    }
+
+    if (m_sSLCertHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSLCert";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sSLCert.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sSLCertNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSLCertName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sSLCertName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +312,53 @@ void ExternalDevice::SetIpPortSet(const vector<string>& _ipPortSet)
 bool ExternalDevice::IpPortSetHasBeenSet() const
 {
     return m_ipPortSetHasBeenSet;
+}
+
+int64_t ExternalDevice::GetEnableSSL() const
+{
+    return m_enableSSL;
+}
+
+void ExternalDevice::SetEnableSSL(const int64_t& _enableSSL)
+{
+    m_enableSSL = _enableSSL;
+    m_enableSSLHasBeenSet = true;
+}
+
+bool ExternalDevice::EnableSSLHasBeenSet() const
+{
+    return m_enableSSLHasBeenSet;
+}
+
+string ExternalDevice::GetSSLCert() const
+{
+    return m_sSLCert;
+}
+
+void ExternalDevice::SetSSLCert(const string& _sSLCert)
+{
+    m_sSLCert = _sSLCert;
+    m_sSLCertHasBeenSet = true;
+}
+
+bool ExternalDevice::SSLCertHasBeenSet() const
+{
+    return m_sSLCertHasBeenSet;
+}
+
+string ExternalDevice::GetSSLCertName() const
+{
+    return m_sSLCertName;
+}
+
+void ExternalDevice::SetSSLCertName(const string& _sSLCertName)
+{
+    m_sSLCertName = _sSLCertName;
+    m_sSLCertNameHasBeenSet = true;
+}
+
+bool ExternalDevice::SSLCertNameHasBeenSet() const
+{
+    return m_sSLCertNameHasBeenSet;
 }
 

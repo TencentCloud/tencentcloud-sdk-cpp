@@ -250,8 +250,10 @@ namespace TencentCloud
 
                     /**
                      * 获取声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）
+单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpeakerId 声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）
+单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -259,8 +261,10 @@ namespace TencentCloud
 
                     /**
                      * 设置声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）
+单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _speakerId 声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）
+单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -324,18 +328,18 @@ namespace TencentCloud
                     bool SilenceTimeHasBeenSet() const;
 
                     /**
-                     * 获取情绪类型（可能为空）
+                     * 获取情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EmotionType 情绪类型（可能为空）
+                     * @return EmotionType 情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetEmotionType() const;
 
                     /**
-                     * 设置情绪类型（可能为空）
+                     * 设置情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _emotionType 情绪类型（可能为空）
+                     * @param _emotionType 情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -433,6 +437,7 @@ namespace TencentCloud
 
                     /**
                      * 声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）
+单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_speakerId;
@@ -453,7 +458,7 @@ namespace TencentCloud
                     bool m_silenceTimeHasBeenSet;
 
                     /**
-                     * 情绪类型（可能为空）
+                     * 情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_emotionType;

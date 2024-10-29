@@ -159,6 +159,27 @@ Type为5，域名模板eg：www.qq.com,www.tencent.com
                      */
                     bool ProtocolTypeHasBeenSet() const;
 
+                    /**
+                     * 获取IP版本,0 IPV4;1 IPV6
+                     * @return IpVersion IP版本,0 IPV4;1 IPV6
+                     * 
+                     */
+                    int64_t GetIpVersion() const;
+
+                    /**
+                     * 设置IP版本,0 IPV4;1 IPV6
+                     * @param _ipVersion IP版本,0 IPV4;1 IPV6
+                     * 
+                     */
+                    void SetIpVersion(const int64_t& _ipVersion);
+
+                    /**
+                     * 判断参数 IpVersion 是否已赋值
+                     * @return IpVersion 是否已赋值
+                     * 
+                     */
+                    bool IpVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -193,6 +214,12 @@ Type为5，域名模板eg：www.qq.com,www.tencent.com
                      */
                     std::string m_protocolType;
                     bool m_protocolTypeHasBeenSet;
+
+                    /**
+                     * IP版本,0 IPV4;1 IPV6
+                     */
+                    int64_t m_ipVersion;
+                    bool m_ipVersionHasBeenSet;
 
                 };
             }

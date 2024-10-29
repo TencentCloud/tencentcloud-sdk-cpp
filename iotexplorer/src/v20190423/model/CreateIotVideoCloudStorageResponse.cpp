@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
-CreateIotVideoCloudStorageResponse::CreateIotVideoCloudStorageResponse()
+CreateIotVideoCloudStorageResponse::CreateIotVideoCloudStorageResponse() :
+    m_priceHasBeenSet(false),
+    m_amountHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome CreateIotVideoCloudStorageResponse::Deserialize(const string
     }
 
 
+    if (rsp.HasMember("Price") && !rsp["Price"].IsNull())
+    {
+        if (!rsp["Price"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Price` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_price = rsp["Price"].GetUint64();
+        m_priceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Amount") && !rsp["Amount"].IsNull())
+    {
+        if (!rsp["Amount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Amount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_amount = rsp["Amount"].GetUint64();
+        m_amountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string CreateIotVideoCloudStorageResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_priceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Price";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_price, allocator);
+    }
+
+    if (m_amountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Amount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_amount, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string CreateIotVideoCloudStorageResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t CreateIotVideoCloudStorageResponse::GetPrice() const
+{
+    return m_price;
+}
+
+bool CreateIotVideoCloudStorageResponse::PriceHasBeenSet() const
+{
+    return m_priceHasBeenSet;
+}
+
+uint64_t CreateIotVideoCloudStorageResponse::GetAmount() const
+{
+    return m_amount;
+}
+
+bool CreateIotVideoCloudStorageResponse::AmountHasBeenSet() const
+{
+    return m_amountHasBeenSet;
+}
 
 

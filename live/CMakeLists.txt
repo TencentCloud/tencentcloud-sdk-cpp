@@ -214,6 +214,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/RestartLivePullStreamTaskRequest.h
   include/tencentcloud/live/v20180801/model/DelayInfo.h
   include/tencentcloud/live/v20180801/model/EnableOptimalSwitchingResponse.h
+  include/tencentcloud/live/v20180801/model/TimeShiftSubStream.h
   include/tencentcloud/live/v20180801/model/DescribeLiveStreamMonitorRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveSnapshotRulesRequest.h
   include/tencentcloud/live/v20180801/model/DeleteLiveRecordRuleResponse.h
@@ -615,6 +616,7 @@ set(live_src
   src/v20180801/model/RestartLivePullStreamTaskRequest.cpp
   src/v20180801/model/DelayInfo.cpp
   src/v20180801/model/EnableOptimalSwitchingResponse.cpp
+  src/v20180801/model/TimeShiftSubStream.cpp
   src/v20180801/model/DescribeLiveStreamMonitorRequest.cpp
   src/v20180801/model/DescribeLiveSnapshotRulesRequest.cpp
   src/v20180801/model/DeleteLiveRecordRuleResponse.cpp

@@ -86,31 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-<li>UserName - String - 是否必填：否 - 用户名筛选</li>
-<li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>
-<li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
-                     * @return Filters 过滤条件。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-<li>UserName - String - 是否必填：否 - 用户名筛选</li>
-<li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>
-<li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
+                     * 获取过滤条件。<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>SrcIP - String - 是否必填：否 - 来源IP筛选</li><li>Location - String - 是否必填：否 - 登录地筛选</li><li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
+                     * @return Filters 过滤条件。<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>SrcIP - String - 是否必填：否 - 来源IP筛选</li><li>Location - String - 是否必填：否 - 登录地筛选</li><li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-<li>UserName - String - 是否必填：否 - 用户名筛选</li>
-<li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>
-<li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
-                     * @param _filters 过滤条件。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-<li>UserName - String - 是否必填：否 - 用户名筛选</li>
-<li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>
-<li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
+                     * 设置过滤条件。<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>SrcIP - String - 是否必填：否 - 来源IP筛选</li><li>Location - String - 是否必填：否 - 登录地筛选</li><li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
+                     * @param _filters 过滤条件。<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>SrcIP - String - 是否必填：否 - 来源IP筛选</li><li>Location - String - 是否必填：否 - 登录地筛选</li><li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -137,11 +121,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤条件。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-<li>UserName - String - 是否必填：否 - 用户名筛选</li>
-<li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>
-<li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
+                     * 过滤条件。<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>SrcIP - String - 是否必填：否 - 来源IP筛选</li><li>Location - String - 是否必填：否 - 登录地筛选</li><li>ModifyBeginTime - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>ModifyEndTime - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

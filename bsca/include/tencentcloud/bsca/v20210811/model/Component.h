@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/bsca/v20210811/model/PURL.h>
+#include <tencentcloud/bsca/v20210811/model/ComponentVersionInfo.h>
 
 
 namespace TencentCloud
@@ -181,6 +182,81 @@ namespace TencentCloud
                      */
                     bool LicenseExpressionHasBeenSet() const;
 
+                    /**
+                     * 获取第三方组件的版本信息(如果匹配到版本)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VersionInfo 第三方组件的版本信息(如果匹配到版本)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ComponentVersionInfo GetVersionInfo() const;
+
+                    /**
+                     * 设置第三方组件的版本信息(如果匹配到版本)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _versionInfo 第三方组件的版本信息(如果匹配到版本)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVersionInfo(const ComponentVersionInfo& _versionInfo);
+
+                    /**
+                     * 判断参数 VersionInfo 是否已赋值
+                     * @return VersionInfo 是否已赋值
+                     * 
+                     */
+                    bool VersionInfoHasBeenSet() const;
+
+                    /**
+                     * 获取第三方组件的最后更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastUpdateTime 第三方组件的最后更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLastUpdateTime() const;
+
+                    /**
+                     * 设置第三方组件的最后更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lastUpdateTime 第三方组件的最后更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLastUpdateTime(const std::string& _lastUpdateTime);
+
+                    /**
+                     * 判断参数 LastUpdateTime 是否已赋值
+                     * @return LastUpdateTime 是否已赋值
+                     * 
+                     */
+                    bool LastUpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取第三方组件的类型标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagList 第三方组件的类型标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetTagList() const;
+
+                    /**
+                     * 设置第三方组件的类型标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagList 第三方组件的类型标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagList(const std::vector<std::string>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +296,27 @@ namespace TencentCloud
                      */
                     std::string m_licenseExpression;
                     bool m_licenseExpressionHasBeenSet;
+
+                    /**
+                     * 第三方组件的版本信息(如果匹配到版本)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ComponentVersionInfo m_versionInfo;
+                    bool m_versionInfoHasBeenSet;
+
+                    /**
+                     * 第三方组件的最后更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lastUpdateTime;
+                    bool m_lastUpdateTimeHasBeenSet;
+
+                    /**
+                     * 第三方组件的类型标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

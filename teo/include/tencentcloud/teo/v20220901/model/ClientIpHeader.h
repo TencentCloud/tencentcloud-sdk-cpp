@@ -76,22 +76,18 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取回源时，存放客户端 IP 的请求头名称。
-为空则使用默认值：X-Forwarded-IP。
+                     * 获取回源时，存放客户端 IP 的请求头名称。当 Switch 为 on 时，该参数必填。该参数不允许填写 X-Forwarded-For。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HeaderName 回源时，存放客户端 IP 的请求头名称。
-为空则使用默认值：X-Forwarded-IP。
+                     * @return HeaderName 回源时，存放客户端 IP 的请求头名称。当 Switch 为 on 时，该参数必填。该参数不允许填写 X-Forwarded-For。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHeaderName() const;
 
                     /**
-                     * 设置回源时，存放客户端 IP 的请求头名称。
-为空则使用默认值：X-Forwarded-IP。
+                     * 设置回源时，存放客户端 IP 的请求头名称。当 Switch 为 on 时，该参数必填。该参数不允许填写 X-Forwarded-For。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _headerName 回源时，存放客户端 IP 的请求头名称。
-为空则使用默认值：X-Forwarded-IP。
+                     * @param _headerName 回源时，存放客户端 IP 的请求头名称。当 Switch 为 on 时，该参数必填。该参数不允许填写 X-Forwarded-For。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -115,8 +111,7 @@ namespace TencentCloud
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 回源时，存放客户端 IP 的请求头名称。
-为空则使用默认值：X-Forwarded-IP。
+                     * 回源时，存放客户端 IP 的请求头名称。当 Switch 为 on 时，该参数必填。该参数不允许填写 X-Forwarded-For。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_headerName;

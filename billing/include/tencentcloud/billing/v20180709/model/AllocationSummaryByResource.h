@@ -1109,6 +1109,56 @@ namespace TencentCloud
                      */
                     bool ComponentConfigHasBeenSet() const;
 
+                    /**
+                     * 获取SPDeduction
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SPDeduction SPDeduction
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSPDeduction() const;
+
+                    /**
+                     * 设置SPDeduction
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sPDeduction SPDeduction
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSPDeduction(const std::string& _sPDeduction);
+
+                    /**
+                     * 判断参数 SPDeduction 是否已赋值
+                     * @return SPDeduction 是否已赋值
+                     * 
+                     */
+                    bool SPDeductionHasBeenSet() const;
+
+                    /**
+                     * 获取账单月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillMonth 账单月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBillMonth() const;
+
+                    /**
+                     * 设置账单月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _billMonth 账单月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBillMonth(const std::string& _billMonth);
+
+                    /**
+                     * 判断参数 BillMonth 是否已赋值
+                     * @return BillMonth 是否已赋值
+                     * 
+                     */
+                    bool BillMonthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1407,6 +1457,20 @@ namespace TencentCloud
                      */
                     std::string m_componentConfig;
                     bool m_componentConfigHasBeenSet;
+
+                    /**
+                     * SPDeduction
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sPDeduction;
+                    bool m_sPDeductionHasBeenSet;
+
+                    /**
+                     * 账单月
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_billMonth;
+                    bool m_billMonthHasBeenSet;
 
                 };
             }

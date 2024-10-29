@@ -81,7 +81,14 @@ AllocationSummaryByItem::AllocationSummaryByItem() :
     m_priceInfoHasBeenSet(false),
     m_formulaHasBeenSet(false),
     m_formulaUrlHasBeenSet(false),
-    m_componentConfigHasBeenSet(false)
+    m_componentConfigHasBeenSet(false),
+    m_sPDeductionHasBeenSet(false),
+    m_sPDeductionRateHasBeenSet(false),
+    m_associatedOrderHasBeenSet(false),
+    m_discountObjectHasBeenSet(false),
+    m_discountTypeHasBeenSet(false),
+    m_discountContentHasBeenSet(false),
+    m_billMonthHasBeenSet(false)
 {
 }
 
@@ -713,6 +720,76 @@ CoreInternalOutcome AllocationSummaryByItem::Deserialize(const rapidjson::Value 
         m_componentConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("SPDeduction") && !value["SPDeduction"].IsNull())
+    {
+        if (!value["SPDeduction"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AllocationSummaryByItem.SPDeduction` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sPDeduction = string(value["SPDeduction"].GetString());
+        m_sPDeductionHasBeenSet = true;
+    }
+
+    if (value.HasMember("SPDeductionRate") && !value["SPDeductionRate"].IsNull())
+    {
+        if (!value["SPDeductionRate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AllocationSummaryByItem.SPDeductionRate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sPDeductionRate = string(value["SPDeductionRate"].GetString());
+        m_sPDeductionRateHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssociatedOrder") && !value["AssociatedOrder"].IsNull())
+    {
+        if (!value["AssociatedOrder"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AllocationSummaryByItem.AssociatedOrder` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_associatedOrder = string(value["AssociatedOrder"].GetString());
+        m_associatedOrderHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiscountObject") && !value["DiscountObject"].IsNull())
+    {
+        if (!value["DiscountObject"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AllocationSummaryByItem.DiscountObject` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountObject = string(value["DiscountObject"].GetString());
+        m_discountObjectHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiscountType") && !value["DiscountType"].IsNull())
+    {
+        if (!value["DiscountType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AllocationSummaryByItem.DiscountType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountType = string(value["DiscountType"].GetString());
+        m_discountTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiscountContent") && !value["DiscountContent"].IsNull())
+    {
+        if (!value["DiscountContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AllocationSummaryByItem.DiscountContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountContent = string(value["DiscountContent"].GetString());
+        m_discountContentHasBeenSet = true;
+    }
+
+    if (value.HasMember("BillMonth") && !value["BillMonth"].IsNull())
+    {
+        if (!value["BillMonth"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AllocationSummaryByItem.BillMonth` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billMonth = string(value["BillMonth"].GetString());
+        m_billMonthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1218,6 +1295,62 @@ void AllocationSummaryByItem::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "ComponentConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_componentConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sPDeductionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SPDeduction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sPDeduction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sPDeductionRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SPDeductionRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sPDeductionRate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_associatedOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociatedOrder";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_associatedOrder.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_discountObjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiscountObject";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_discountObject.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_discountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiscountType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_discountType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_discountContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiscountContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_discountContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billMonthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillMonth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billMonth.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2197,5 +2330,117 @@ void AllocationSummaryByItem::SetComponentConfig(const string& _componentConfig)
 bool AllocationSummaryByItem::ComponentConfigHasBeenSet() const
 {
     return m_componentConfigHasBeenSet;
+}
+
+string AllocationSummaryByItem::GetSPDeduction() const
+{
+    return m_sPDeduction;
+}
+
+void AllocationSummaryByItem::SetSPDeduction(const string& _sPDeduction)
+{
+    m_sPDeduction = _sPDeduction;
+    m_sPDeductionHasBeenSet = true;
+}
+
+bool AllocationSummaryByItem::SPDeductionHasBeenSet() const
+{
+    return m_sPDeductionHasBeenSet;
+}
+
+string AllocationSummaryByItem::GetSPDeductionRate() const
+{
+    return m_sPDeductionRate;
+}
+
+void AllocationSummaryByItem::SetSPDeductionRate(const string& _sPDeductionRate)
+{
+    m_sPDeductionRate = _sPDeductionRate;
+    m_sPDeductionRateHasBeenSet = true;
+}
+
+bool AllocationSummaryByItem::SPDeductionRateHasBeenSet() const
+{
+    return m_sPDeductionRateHasBeenSet;
+}
+
+string AllocationSummaryByItem::GetAssociatedOrder() const
+{
+    return m_associatedOrder;
+}
+
+void AllocationSummaryByItem::SetAssociatedOrder(const string& _associatedOrder)
+{
+    m_associatedOrder = _associatedOrder;
+    m_associatedOrderHasBeenSet = true;
+}
+
+bool AllocationSummaryByItem::AssociatedOrderHasBeenSet() const
+{
+    return m_associatedOrderHasBeenSet;
+}
+
+string AllocationSummaryByItem::GetDiscountObject() const
+{
+    return m_discountObject;
+}
+
+void AllocationSummaryByItem::SetDiscountObject(const string& _discountObject)
+{
+    m_discountObject = _discountObject;
+    m_discountObjectHasBeenSet = true;
+}
+
+bool AllocationSummaryByItem::DiscountObjectHasBeenSet() const
+{
+    return m_discountObjectHasBeenSet;
+}
+
+string AllocationSummaryByItem::GetDiscountType() const
+{
+    return m_discountType;
+}
+
+void AllocationSummaryByItem::SetDiscountType(const string& _discountType)
+{
+    m_discountType = _discountType;
+    m_discountTypeHasBeenSet = true;
+}
+
+bool AllocationSummaryByItem::DiscountTypeHasBeenSet() const
+{
+    return m_discountTypeHasBeenSet;
+}
+
+string AllocationSummaryByItem::GetDiscountContent() const
+{
+    return m_discountContent;
+}
+
+void AllocationSummaryByItem::SetDiscountContent(const string& _discountContent)
+{
+    m_discountContent = _discountContent;
+    m_discountContentHasBeenSet = true;
+}
+
+bool AllocationSummaryByItem::DiscountContentHasBeenSet() const
+{
+    return m_discountContentHasBeenSet;
+}
+
+string AllocationSummaryByItem::GetBillMonth() const
+{
+    return m_billMonth;
+}
+
+void AllocationSummaryByItem::SetBillMonth(const string& _billMonth)
+{
+    m_billMonth = _billMonth;
+    m_billMonthHasBeenSet = true;
+}
+
+bool AllocationSummaryByItem::BillMonthHasBeenSet() const
+{
+    return m_billMonthHasBeenSet;
 }
 

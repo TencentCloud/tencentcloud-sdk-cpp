@@ -2964,6 +2964,92 @@ WedataClient::DescribeDataCheckStatOutcomeCallable WedataClient::DescribeDataChe
     return task->get_future();
 }
 
+WedataClient::DescribeDataServicePublishedApiDetailOutcome WedataClient::DescribeDataServicePublishedApiDetail(const DescribeDataServicePublishedApiDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataServicePublishedApiDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataServicePublishedApiDetailResponse rsp = DescribeDataServicePublishedApiDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataServicePublishedApiDetailOutcome(rsp);
+        else
+            return DescribeDataServicePublishedApiDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataServicePublishedApiDetailOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeDataServicePublishedApiDetailAsync(const DescribeDataServicePublishedApiDetailRequest& request, const DescribeDataServicePublishedApiDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataServicePublishedApiDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeDataServicePublishedApiDetailOutcomeCallable WedataClient::DescribeDataServicePublishedApiDetailCallable(const DescribeDataServicePublishedApiDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataServicePublishedApiDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataServicePublishedApiDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DescribeDataServicePublishedApiListOutcome WedataClient::DescribeDataServicePublishedApiList(const DescribeDataServicePublishedApiListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataServicePublishedApiList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataServicePublishedApiListResponse rsp = DescribeDataServicePublishedApiListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataServicePublishedApiListOutcome(rsp);
+        else
+            return DescribeDataServicePublishedApiListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataServicePublishedApiListOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeDataServicePublishedApiListAsync(const DescribeDataServicePublishedApiListRequest& request, const DescribeDataServicePublishedApiListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataServicePublishedApiList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeDataServicePublishedApiListOutcomeCallable WedataClient::DescribeDataServicePublishedApiListCallable(const DescribeDataServicePublishedApiListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataServicePublishedApiListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataServicePublishedApiList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeDataSourceInfoListOutcome WedataClient::DescribeDataSourceInfoList(const DescribeDataSourceInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataSourceInfoList");

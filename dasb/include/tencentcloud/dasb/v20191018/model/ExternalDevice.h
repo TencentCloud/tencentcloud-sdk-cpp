@@ -172,6 +172,69 @@ namespace TencentCloud
                      */
                     bool IpPortSetHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用SSL,1:启用 0：禁用，仅支持Redis资产
+                     * @return EnableSSL 是否启用SSL,1:启用 0：禁用，仅支持Redis资产
+                     * 
+                     */
+                    int64_t GetEnableSSL() const;
+
+                    /**
+                     * 设置是否启用SSL,1:启用 0：禁用，仅支持Redis资产
+                     * @param _enableSSL 是否启用SSL,1:启用 0：禁用，仅支持Redis资产
+                     * 
+                     */
+                    void SetEnableSSL(const int64_t& _enableSSL);
+
+                    /**
+                     * 判断参数 EnableSSL 是否已赋值
+                     * @return EnableSSL 是否已赋值
+                     * 
+                     */
+                    bool EnableSSLHasBeenSet() const;
+
+                    /**
+                     * 获取SSL证书，EnableSSL时必填
+                     * @return SSLCert SSL证书，EnableSSL时必填
+                     * 
+                     */
+                    std::string GetSSLCert() const;
+
+                    /**
+                     * 设置SSL证书，EnableSSL时必填
+                     * @param _sSLCert SSL证书，EnableSSL时必填
+                     * 
+                     */
+                    void SetSSLCert(const std::string& _sSLCert);
+
+                    /**
+                     * 判断参数 SSLCert 是否已赋值
+                     * @return SSLCert 是否已赋值
+                     * 
+                     */
+                    bool SSLCertHasBeenSet() const;
+
+                    /**
+                     * 获取SSL证书名称，EnableSSL时必填
+                     * @return SSLCertName SSL证书名称，EnableSSL时必填
+                     * 
+                     */
+                    std::string GetSSLCertName() const;
+
+                    /**
+                     * 设置SSL证书名称，EnableSSL时必填
+                     * @param _sSLCertName SSL证书名称，EnableSSL时必填
+                     * 
+                     */
+                    void SetSSLCertName(const std::string& _sSLCertName);
+
+                    /**
+                     * 判断参数 SSLCertName 是否已赋值
+                     * @return SSLCertName 是否已赋值
+                     * 
+                     */
+                    bool SSLCertNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +272,24 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_ipPortSet;
                     bool m_ipPortSetHasBeenSet;
+
+                    /**
+                     * 是否启用SSL,1:启用 0：禁用，仅支持Redis资产
+                     */
+                    int64_t m_enableSSL;
+                    bool m_enableSSLHasBeenSet;
+
+                    /**
+                     * SSL证书，EnableSSL时必填
+                     */
+                    std::string m_sSLCert;
+                    bool m_sSLCertHasBeenSet;
+
+                    /**
+                     * SSL证书名称，EnableSSL时必填
+                     */
+                    std::string m_sSLCertName;
+                    bool m_sSLCertNameHasBeenSet;
 
                 };
             }

@@ -29,7 +29,8 @@ TimeShiftStreamInfo::TimeShiftStreamInfo() :
     m_endTimeHasBeenSet(false),
     m_transCodeIdHasBeenSet(false),
     m_streamTypeHasBeenSet(false),
-    m_durationHasBeenSet(false)
+    m_durationHasBeenSet(false),
+    m_timeShiftSubStreamsHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,26 @@ CoreInternalOutcome TimeShiftStreamInfo::Deserialize(const rapidjson::Value &val
         m_durationHasBeenSet = true;
     }
 
+    if (value.HasMember("TimeShiftSubStreams") && !value["TimeShiftSubStreams"].IsNull())
+    {
+        if (!value["TimeShiftSubStreams"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TimeShiftStreamInfo.TimeShiftSubStreams` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TimeShiftSubStreams"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TimeShiftSubStream item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_timeShiftSubStreams.push_back(item);
+        }
+        m_timeShiftSubStreamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +226,21 @@ void TimeShiftStreamInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
+    }
+
+    if (m_timeShiftSubStreamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeShiftSubStreams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_timeShiftSubStreams.begin(); itr != m_timeShiftSubStreams.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -352,5 +388,21 @@ void TimeShiftStreamInfo::SetDuration(const uint64_t& _duration)
 bool TimeShiftStreamInfo::DurationHasBeenSet() const
 {
     return m_durationHasBeenSet;
+}
+
+vector<TimeShiftSubStream> TimeShiftStreamInfo::GetTimeShiftSubStreams() const
+{
+    return m_timeShiftSubStreams;
+}
+
+void TimeShiftStreamInfo::SetTimeShiftSubStreams(const vector<TimeShiftSubStream>& _timeShiftSubStreams)
+{
+    m_timeShiftSubStreams = _timeShiftSubStreams;
+    m_timeShiftSubStreamsHasBeenSet = true;
+}
+
+bool TimeShiftStreamInfo::TimeShiftSubStreamsHasBeenSet() const
+{
+    return m_timeShiftSubStreamsHasBeenSet;
 }
 

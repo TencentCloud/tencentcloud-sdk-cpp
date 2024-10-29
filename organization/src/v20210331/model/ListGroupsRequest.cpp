@@ -30,7 +30,8 @@ ListGroupsRequest::ListGroupsRequest() :
     m_groupTypeHasBeenSet(false),
     m_filterUsersHasBeenSet(false),
     m_sortFieldHasBeenSet(false),
-    m_sortTypeHasBeenSet(false)
+    m_sortTypeHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,14 @@ string ListGroupsRequest::ToJsonString() const
         string key = "SortType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sortType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -244,6 +253,22 @@ void ListGroupsRequest::SetSortType(const string& _sortType)
 bool ListGroupsRequest::SortTypeHasBeenSet() const
 {
     return m_sortTypeHasBeenSet;
+}
+
+int64_t ListGroupsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void ListGroupsRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool ListGroupsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

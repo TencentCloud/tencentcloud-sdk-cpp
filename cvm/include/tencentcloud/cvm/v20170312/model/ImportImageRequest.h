@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cvm/v20170312/model/TagSpecification.h>
+#include <tencentcloud/cvm/v20170312/model/ImportImageDataDisk.h>
 
 
 namespace TencentCloud
@@ -307,6 +308,27 @@ BYOL: 自带许可（Bring Your Own License）
                      */
                     bool ImageFamilyHasBeenSet() const;
 
+                    /**
+                     * 获取导入的数据盘列表
+                     * @return ImportImageDataDiskList 导入的数据盘列表
+                     * 
+                     */
+                    std::vector<ImportImageDataDisk> GetImportImageDataDiskList() const;
+
+                    /**
+                     * 设置导入的数据盘列表
+                     * @param _importImageDataDiskList 导入的数据盘列表
+                     * 
+                     */
+                    void SetImportImageDataDiskList(const std::vector<ImportImageDataDisk>& _importImageDataDiskList);
+
+                    /**
+                     * 判断参数 ImportImageDataDiskList 是否已赋值
+                     * @return ImportImageDataDiskList 是否已赋值
+                     * 
+                     */
+                    bool ImportImageDataDiskListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -383,6 +405,12 @@ BYOL: 自带许可（Bring Your Own License）
                      */
                     std::string m_imageFamily;
                     bool m_imageFamilyHasBeenSet;
+
+                    /**
+                     * 导入的数据盘列表
+                     */
+                    std::vector<ImportImageDataDisk> m_importImageDataDiskList;
+                    bool m_importImageDataDiskListHasBeenSet;
 
                 };
             }

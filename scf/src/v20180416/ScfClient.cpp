@@ -126,6 +126,49 @@ ScfClient::CreateAliasOutcomeCallable ScfClient::CreateAliasCallable(const Creat
     return task->get_future();
 }
 
+ScfClient::CreateCustomDomainOutcome ScfClient::CreateCustomDomain(const CreateCustomDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCustomDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCustomDomainResponse rsp = CreateCustomDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCustomDomainOutcome(rsp);
+        else
+            return CreateCustomDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCustomDomainOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::CreateCustomDomainAsync(const CreateCustomDomainRequest& request, const CreateCustomDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCustomDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::CreateCustomDomainOutcomeCallable ScfClient::CreateCustomDomainCallable(const CreateCustomDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCustomDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCustomDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::CreateFunctionOutcome ScfClient::CreateFunction(const CreateFunctionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFunction");
@@ -291,6 +334,49 @@ ScfClient::DeleteAliasOutcomeCallable ScfClient::DeleteAliasCallable(const Delet
         [this, request]()
         {
             return this->DeleteAlias(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::DeleteCustomDomainOutcome ScfClient::DeleteCustomDomain(const DeleteCustomDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCustomDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCustomDomainResponse rsp = DeleteCustomDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCustomDomainOutcome(rsp);
+        else
+            return DeleteCustomDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCustomDomainOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::DeleteCustomDomainAsync(const DeleteCustomDomainRequest& request, const DeleteCustomDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCustomDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::DeleteCustomDomainOutcomeCallable ScfClient::DeleteCustomDomainCallable(const DeleteCustomDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCustomDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCustomDomain(request);
         }
     );
 
@@ -678,6 +764,49 @@ ScfClient::GetAsyncEventStatusOutcomeCallable ScfClient::GetAsyncEventStatusCall
         [this, request]()
         {
             return this->GetAsyncEventStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::GetCustomDomainOutcome ScfClient::GetCustomDomain(const GetCustomDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetCustomDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetCustomDomainResponse rsp = GetCustomDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetCustomDomainOutcome(rsp);
+        else
+            return GetCustomDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return GetCustomDomainOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::GetCustomDomainAsync(const GetCustomDomainRequest& request, const GetCustomDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetCustomDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::GetCustomDomainOutcomeCallable ScfClient::GetCustomDomainCallable(const GetCustomDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetCustomDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->GetCustomDomain(request);
         }
     );
 
@@ -1194,6 +1323,49 @@ ScfClient::ListAsyncEventsOutcomeCallable ScfClient::ListAsyncEventsCallable(con
         [this, request]()
         {
             return this->ListAsyncEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::ListCustomDomainsOutcome ScfClient::ListCustomDomains(const ListCustomDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListCustomDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListCustomDomainsResponse rsp = ListCustomDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListCustomDomainsOutcome(rsp);
+        else
+            return ListCustomDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListCustomDomainsOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::ListCustomDomainsAsync(const ListCustomDomainsRequest& request, const ListCustomDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListCustomDomains(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::ListCustomDomainsOutcomeCallable ScfClient::ListCustomDomainsCallable(const ListCustomDomainsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListCustomDomainsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListCustomDomains(request);
         }
     );
 
@@ -1753,6 +1925,49 @@ ScfClient::UpdateAliasOutcomeCallable ScfClient::UpdateAliasCallable(const Updat
         [this, request]()
         {
             return this->UpdateAlias(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ScfClient::UpdateCustomDomainOutcome ScfClient::UpdateCustomDomain(const UpdateCustomDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateCustomDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateCustomDomainResponse rsp = UpdateCustomDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateCustomDomainOutcome(rsp);
+        else
+            return UpdateCustomDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateCustomDomainOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::UpdateCustomDomainAsync(const UpdateCustomDomainRequest& request, const UpdateCustomDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateCustomDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::UpdateCustomDomainOutcomeCallable ScfClient::UpdateCustomDomainCallable(const UpdateCustomDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateCustomDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateCustomDomain(request);
         }
     );
 

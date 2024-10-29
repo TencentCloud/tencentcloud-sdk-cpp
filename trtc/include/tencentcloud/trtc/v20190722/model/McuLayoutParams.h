@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。
-                     * @return MixLayoutMode 布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。
+                     * 获取布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。最多支持混入16路音视频流，如果用户只上行音频，也会被算作一路；自定义布局中，如果子画面只设置占位图，也被算作一路。
+                     * @return MixLayoutMode 布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。最多支持混入16路音视频流，如果用户只上行音频，也会被算作一路；自定义布局中，如果子画面只设置占位图，也被算作一路。
                      * 
                      */
                     uint64_t GetMixLayoutMode() const;
 
                     /**
-                     * 设置布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。
-                     * @param _mixLayoutMode 布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。
+                     * 设置布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。最多支持混入16路音视频流，如果用户只上行音频，也会被算作一路；自定义布局中，如果子画面只设置占位图，也被算作一路。
+                     * @param _mixLayoutMode 布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。最多支持混入16路音视频流，如果用户只上行音频，也会被算作一路；自定义布局中，如果子画面只设置占位图，也被算作一路。
                      * 
                      */
                     void SetMixLayoutMode(const uint64_t& _mixLayoutMode);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool PureAudioHoldPlaceModeHasBeenSet() const;
 
                     /**
-                     * 获取自定义模板中有效，指定用户视频在混合画面中的位置。
-                     * @return MixLayoutList 自定义模板中有效，指定用户视频在混合画面中的位置。
+                     * 获取自定义模板中有效，指定用户视频在混合画面中的位置，最多支持设置16个输入流。
+                     * @return MixLayoutList 自定义模板中有效，指定用户视频在混合画面中的位置，最多支持设置16个输入流。
                      * 
                      */
                     std::vector<McuLayout> GetMixLayoutList() const;
 
                     /**
-                     * 设置自定义模板中有效，指定用户视频在混合画面中的位置。
-                     * @param _mixLayoutList 自定义模板中有效，指定用户视频在混合画面中的位置。
+                     * 设置自定义模板中有效，指定用户视频在混合画面中的位置，最多支持设置16个输入流。
+                     * @param _mixLayoutList 自定义模板中有效，指定用户视频在混合画面中的位置，最多支持设置16个输入流。
                      * 
                      */
                     void SetMixLayoutList(const std::vector<McuLayout>& _mixLayoutList);
@@ -156,7 +156,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。
+                     * 布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。最多支持混入16路音视频流，如果用户只上行音频，也会被算作一路；自定义布局中，如果子画面只设置占位图，也被算作一路。
                      */
                     uint64_t m_mixLayoutMode;
                     bool m_mixLayoutModeHasBeenSet;
@@ -168,7 +168,7 @@ namespace TencentCloud
                     bool m_pureAudioHoldPlaceModeHasBeenSet;
 
                     /**
-                     * 自定义模板中有效，指定用户视频在混合画面中的位置。
+                     * 自定义模板中有效，指定用户视频在混合画面中的位置，最多支持设置16个输入流。
                      */
                     std::vector<McuLayout> m_mixLayoutList;
                     bool m_mixLayoutListHasBeenSet;

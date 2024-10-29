@@ -38,7 +38,9 @@ Device::Device() :
     m_departmentHasBeenSet(false),
     m_ipPortSetHasBeenSet(false),
     m_domainIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
+    m_domainNameHasBeenSet(false),
+    m_enableSSLHasBeenSet(false),
+    m_sSLCertNameHasBeenSet(false)
 {
 }
 
@@ -254,6 +256,26 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
         m_domainNameHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableSSL") && !value["EnableSSL"].IsNull())
+    {
+        if (!value["EnableSSL"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.EnableSSL` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableSSL = value["EnableSSL"].GetInt64();
+        m_enableSSLHasBeenSet = true;
+    }
+
+    if (value.HasMember("SSLCertName") && !value["SSLCertName"].IsNull())
+    {
+        if (!value["SSLCertName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.SSLCertName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sSLCertName = string(value["SSLCertName"].GetString());
+        m_sSLCertNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -417,6 +439,22 @@ void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "DomainName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableSSLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSSL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableSSL, allocator);
+    }
+
+    if (m_sSLCertNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSLCertName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sSLCertName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -708,5 +746,37 @@ void Device::SetDomainName(const string& _domainName)
 bool Device::DomainNameHasBeenSet() const
 {
     return m_domainNameHasBeenSet;
+}
+
+int64_t Device::GetEnableSSL() const
+{
+    return m_enableSSL;
+}
+
+void Device::SetEnableSSL(const int64_t& _enableSSL)
+{
+    m_enableSSL = _enableSSL;
+    m_enableSSLHasBeenSet = true;
+}
+
+bool Device::EnableSSLHasBeenSet() const
+{
+    return m_enableSSLHasBeenSet;
+}
+
+string Device::GetSSLCertName() const
+{
+    return m_sSLCertName;
+}
+
+void Device::SetSSLCertName(const string& _sSLCertName)
+{
+    m_sSLCertName = _sSLCertName;
+    m_sSLCertNameHasBeenSet = true;
+}
+
+bool Device::SSLCertNameHasBeenSet() const
+{
+    return m_sSLCertNameHasBeenSet;
 }
 

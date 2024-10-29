@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取TLS版本,可选TLSv1.0、TLSv1.1、TLSv1.2、TLSv1.3
-                     * @return TLSSupportVersion TLS版本,可选TLSv1.0、TLSv1.1、TLSv1.2、TLSv1.3
+                     * 获取TLS版本,可选TLSv1、TLSv1.1、TLSv1.2、TLSv1.3
+                     * @return TLSSupportVersion TLS版本,可选TLSv1、TLSv1.1、TLSv1.2、TLSv1.3
                      * 
                      */
                     std::vector<std::string> GetTLSSupportVersion() const;
 
                     /**
-                     * 设置TLS版本,可选TLSv1.0、TLSv1.1、TLSv1.2、TLSv1.3
-                     * @param _tLSSupportVersion TLS版本,可选TLSv1.0、TLSv1.1、TLSv1.2、TLSv1.3
+                     * 设置TLS版本,可选TLSv1、TLSv1.1、TLSv1.2、TLSv1.3
+                     * @param _tLSSupportVersion TLS版本,可选TLSv1、TLSv1.1、TLSv1.2、TLSv1.3
                      * 
                      */
                     void SetTLSSupportVersion(const std::vector<std::string>& _tLSSupportVersion);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * TLS版本,可选TLSv1.0、TLSv1.1、TLSv1.2、TLSv1.3
+                     * TLS版本,可选TLSv1、TLSv1.1、TLSv1.2、TLSv1.3
                      */
                     std::vector<std::string> m_tLSSupportVersion;
                     bool m_tLSSupportVersionHasBeenSet;

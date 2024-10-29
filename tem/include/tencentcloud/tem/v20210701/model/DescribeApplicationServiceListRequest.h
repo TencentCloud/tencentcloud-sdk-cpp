@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return SourceChannel xx
+                     * 获取来源渠道
+                     * @return SourceChannel 来源渠道
                      * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
-                     * 设置xx
-                     * @param _sourceChannel xx
+                     * 设置来源渠道
+                     * @param _sourceChannel 来源渠道
                      * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * xx
+                     * 来源渠道
                      */
                     int64_t m_sourceChannel;
                     bool m_sourceChannelHasBeenSet;

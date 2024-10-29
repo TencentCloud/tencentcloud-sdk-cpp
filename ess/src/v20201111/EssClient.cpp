@@ -2448,6 +2448,49 @@ EssClient::DeleteIntegrationRoleUsersOutcomeCallable EssClient::DeleteIntegratio
     return task->get_future();
 }
 
+EssClient::DeleteOrganizationAuthorizationsOutcome EssClient::DeleteOrganizationAuthorizations(const DeleteOrganizationAuthorizationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteOrganizationAuthorizations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteOrganizationAuthorizationsResponse rsp = DeleteOrganizationAuthorizationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteOrganizationAuthorizationsOutcome(rsp);
+        else
+            return DeleteOrganizationAuthorizationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteOrganizationAuthorizationsOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DeleteOrganizationAuthorizationsAsync(const DeleteOrganizationAuthorizationsRequest& request, const DeleteOrganizationAuthorizationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteOrganizationAuthorizations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DeleteOrganizationAuthorizationsOutcomeCallable EssClient::DeleteOrganizationAuthorizationsCallable(const DeleteOrganizationAuthorizationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteOrganizationAuthorizationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteOrganizationAuthorizations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DeleteSealPoliciesOutcome EssClient::DeleteSealPolicies(const DeleteSealPoliciesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSealPolicies");

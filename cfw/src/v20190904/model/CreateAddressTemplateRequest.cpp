@@ -27,7 +27,8 @@ CreateAddressTemplateRequest::CreateAddressTemplateRequest() :
     m_detailHasBeenSet(false),
     m_ipStringHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_protocolTypeHasBeenSet(false)
+    m_protocolTypeHasBeenSet(false),
+    m_ipVersionHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string CreateAddressTemplateRequest::ToJsonString() const
         string key = "ProtocolType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_protocolType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ipVersion, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void CreateAddressTemplateRequest::SetProtocolType(const string& _protocolType)
 bool CreateAddressTemplateRequest::ProtocolTypeHasBeenSet() const
 {
     return m_protocolTypeHasBeenSet;
+}
+
+int64_t CreateAddressTemplateRequest::GetIpVersion() const
+{
+    return m_ipVersion;
+}
+
+void CreateAddressTemplateRequest::SetIpVersion(const int64_t& _ipVersion)
+{
+    m_ipVersion = _ipVersion;
+    m_ipVersionHasBeenSet = true;
+}
+
+bool CreateAddressTemplateRequest::IpVersionHasBeenSet() const
+{
+    return m_ipVersionHasBeenSet;
 }
 
 

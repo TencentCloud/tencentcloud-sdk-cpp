@@ -73,6 +73,8 @@
 #include <tencentcloud/organization/v20210331/model/CreateRoleAssignmentResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateRoleConfigurationRequest.h>
 #include <tencentcloud/organization/v20210331/model/CreateRoleConfigurationResponse.h>
+#include <tencentcloud/organization/v20210331/model/CreateSCIMCredentialRequest.h>
+#include <tencentcloud/organization/v20210331/model/CreateSCIMCredentialResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateUserRequest.h>
 #include <tencentcloud/organization/v20210331/model/CreateUserResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateUserSyncProvisioningRequest.h>
@@ -101,6 +103,8 @@
 #include <tencentcloud/organization/v20210331/model/DeleteRoleAssignmentResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteRoleConfigurationRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteRoleConfigurationResponse.h>
+#include <tencentcloud/organization/v20210331/model/DeleteSCIMCredentialRequest.h>
+#include <tencentcloud/organization/v20210331/model/DeleteSCIMCredentialResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitMembersRequest.h>
@@ -165,6 +169,8 @@
 #include <tencentcloud/organization/v20210331/model/GetProvisioningTaskStatusResponse.h>
 #include <tencentcloud/organization/v20210331/model/GetRoleConfigurationRequest.h>
 #include <tencentcloud/organization/v20210331/model/GetRoleConfigurationResponse.h>
+#include <tencentcloud/organization/v20210331/model/GetSCIMSynchronizationStatusRequest.h>
+#include <tencentcloud/organization/v20210331/model/GetSCIMSynchronizationStatusResponse.h>
 #include <tencentcloud/organization/v20210331/model/GetTaskStatusRequest.h>
 #include <tencentcloud/organization/v20210331/model/GetTaskStatusResponse.h>
 #include <tencentcloud/organization/v20210331/model/GetUserRequest.h>
@@ -205,6 +211,8 @@
 #include <tencentcloud/organization/v20210331/model/ListRoleConfigurationProvisioningsResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListRoleConfigurationsRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListRoleConfigurationsResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListSCIMCredentialsRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListSCIMCredentialsResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListTargetsForPolicyRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListTargetsForPolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListTasksRequest.h>
@@ -249,6 +257,10 @@
 #include <tencentcloud/organization/v20210331/model/UpdatePolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateRoleConfigurationRequest.h>
 #include <tencentcloud/organization/v20210331/model/UpdateRoleConfigurationResponse.h>
+#include <tencentcloud/organization/v20210331/model/UpdateSCIMCredentialStatusRequest.h>
+#include <tencentcloud/organization/v20210331/model/UpdateSCIMCredentialStatusResponse.h>
+#include <tencentcloud/organization/v20210331/model/UpdateSCIMSynchronizationStatusRequest.h>
+#include <tencentcloud/organization/v20210331/model/UpdateSCIMSynchronizationStatusResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateShareUnitRequest.h>
 #include <tencentcloud/organization/v20210331/model/UpdateShareUnitResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateUserRequest.h>
@@ -348,6 +360,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRoleConfigurationResponse> CreateRoleConfigurationOutcome;
                 typedef std::future<CreateRoleConfigurationOutcome> CreateRoleConfigurationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::CreateRoleConfigurationRequest&, CreateRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoleConfigurationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSCIMCredentialResponse> CreateSCIMCredentialOutcome;
+                typedef std::future<CreateSCIMCredentialOutcome> CreateSCIMCredentialOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::CreateSCIMCredentialRequest&, CreateSCIMCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSCIMCredentialAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
                 typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
@@ -390,6 +405,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRoleConfigurationResponse> DeleteRoleConfigurationOutcome;
                 typedef std::future<DeleteRoleConfigurationOutcome> DeleteRoleConfigurationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteRoleConfigurationRequest&, DeleteRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleConfigurationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSCIMCredentialResponse> DeleteSCIMCredentialOutcome;
+                typedef std::future<DeleteSCIMCredentialOutcome> DeleteSCIMCredentialOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DeleteSCIMCredentialRequest&, DeleteSCIMCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSCIMCredentialAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteShareUnitResponse> DeleteShareUnitOutcome;
                 typedef std::future<DeleteShareUnitOutcome> DeleteShareUnitOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteShareUnitRequest&, DeleteShareUnitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteShareUnitAsyncHandler;
@@ -486,6 +504,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetRoleConfigurationResponse> GetRoleConfigurationOutcome;
                 typedef std::future<GetRoleConfigurationOutcome> GetRoleConfigurationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::GetRoleConfigurationRequest&, GetRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRoleConfigurationAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetSCIMSynchronizationStatusResponse> GetSCIMSynchronizationStatusOutcome;
+                typedef std::future<GetSCIMSynchronizationStatusOutcome> GetSCIMSynchronizationStatusOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::GetSCIMSynchronizationStatusRequest&, GetSCIMSynchronizationStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSCIMSynchronizationStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTaskStatusResponse> GetTaskStatusOutcome;
                 typedef std::future<GetTaskStatusOutcome> GetTaskStatusOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::GetTaskStatusRequest&, GetTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskStatusAsyncHandler;
@@ -546,6 +567,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListRoleConfigurationsResponse> ListRoleConfigurationsOutcome;
                 typedef std::future<ListRoleConfigurationsOutcome> ListRoleConfigurationsOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListRoleConfigurationsRequest&, ListRoleConfigurationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListRoleConfigurationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListSCIMCredentialsResponse> ListSCIMCredentialsOutcome;
+                typedef std::future<ListSCIMCredentialsOutcome> ListSCIMCredentialsOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListSCIMCredentialsRequest&, ListSCIMCredentialsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListSCIMCredentialsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTargetsForPolicyResponse> ListTargetsForPolicyOutcome;
                 typedef std::future<ListTargetsForPolicyOutcome> ListTargetsForPolicyOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListTargetsForPolicyRequest&, ListTargetsForPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTargetsForPolicyAsyncHandler;
@@ -612,6 +636,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateRoleConfigurationResponse> UpdateRoleConfigurationOutcome;
                 typedef std::future<UpdateRoleConfigurationOutcome> UpdateRoleConfigurationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::UpdateRoleConfigurationRequest&, UpdateRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRoleConfigurationAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateSCIMCredentialStatusResponse> UpdateSCIMCredentialStatusOutcome;
+                typedef std::future<UpdateSCIMCredentialStatusOutcome> UpdateSCIMCredentialStatusOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::UpdateSCIMCredentialStatusRequest&, UpdateSCIMCredentialStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSCIMCredentialStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateSCIMSynchronizationStatusResponse> UpdateSCIMSynchronizationStatusOutcome;
+                typedef std::future<UpdateSCIMSynchronizationStatusOutcome> UpdateSCIMSynchronizationStatusOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::UpdateSCIMSynchronizationStatusRequest&, UpdateSCIMSynchronizationStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSCIMSynchronizationStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateShareUnitResponse> UpdateShareUnitOutcome;
                 typedef std::future<UpdateShareUnitOutcome> UpdateShareUnitOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::UpdateShareUnitRequest&, UpdateShareUnitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateShareUnitAsyncHandler;
@@ -856,6 +886,15 @@ namespace TencentCloud
                 CreateRoleConfigurationOutcomeCallable CreateRoleConfigurationCallable(const Model::CreateRoleConfigurationRequest& request);
 
                 /**
+                 *创建SCIM密钥
+                 * @param req CreateSCIMCredentialRequest
+                 * @return CreateSCIMCredentialOutcome
+                 */
+                CreateSCIMCredentialOutcome CreateSCIMCredential(const Model::CreateSCIMCredentialRequest &request);
+                void CreateSCIMCredentialAsync(const Model::CreateSCIMCredentialRequest& request, const CreateSCIMCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSCIMCredentialOutcomeCallable CreateSCIMCredentialCallable(const Model::CreateSCIMCredentialRequest& request);
+
+                /**
                  *创建用户
                  * @param req CreateUserRequest
                  * @return CreateUserOutcome
@@ -980,6 +1019,15 @@ namespace TencentCloud
                 DeleteRoleConfigurationOutcome DeleteRoleConfiguration(const Model::DeleteRoleConfigurationRequest &request);
                 void DeleteRoleConfigurationAsync(const Model::DeleteRoleConfigurationRequest& request, const DeleteRoleConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRoleConfigurationOutcomeCallable DeleteRoleConfigurationCallable(const Model::DeleteRoleConfigurationRequest& request);
+
+                /**
+                 *删除SCIM密钥
+                 * @param req DeleteSCIMCredentialRequest
+                 * @return DeleteSCIMCredentialOutcome
+                 */
+                DeleteSCIMCredentialOutcome DeleteSCIMCredential(const Model::DeleteSCIMCredentialRequest &request);
+                void DeleteSCIMCredentialAsync(const Model::DeleteSCIMCredentialRequest& request, const DeleteSCIMCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSCIMCredentialOutcomeCallable DeleteSCIMCredentialCallable(const Model::DeleteSCIMCredentialRequest& request);
 
                 /**
                  *删除共享单元。
@@ -1270,6 +1318,15 @@ namespace TencentCloud
                 GetRoleConfigurationOutcomeCallable GetRoleConfigurationCallable(const Model::GetRoleConfigurationRequest& request);
 
                 /**
+                 *获取SCIM同步状态
+                 * @param req GetSCIMSynchronizationStatusRequest
+                 * @return GetSCIMSynchronizationStatusOutcome
+                 */
+                GetSCIMSynchronizationStatusOutcome GetSCIMSynchronizationStatus(const Model::GetSCIMSynchronizationStatusRequest &request);
+                void GetSCIMSynchronizationStatusAsync(const Model::GetSCIMSynchronizationStatusRequest& request, const GetSCIMSynchronizationStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetSCIMSynchronizationStatusOutcomeCallable GetSCIMSynchronizationStatusCallable(const Model::GetSCIMSynchronizationStatusRequest& request);
+
+                /**
                  *查询异步任务的状态
                  * @param req GetTaskStatusRequest
                  * @return GetTaskStatusOutcome
@@ -1448,6 +1505,15 @@ namespace TencentCloud
                 ListRoleConfigurationsOutcome ListRoleConfigurations(const Model::ListRoleConfigurationsRequest &request);
                 void ListRoleConfigurationsAsync(const Model::ListRoleConfigurationsRequest& request, const ListRoleConfigurationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListRoleConfigurationsOutcomeCallable ListRoleConfigurationsCallable(const Model::ListRoleConfigurationsRequest& request);
+
+                /**
+                 *查询用户SCIM密钥列表
+                 * @param req ListSCIMCredentialsRequest
+                 * @return ListSCIMCredentialsOutcome
+                 */
+                ListSCIMCredentialsOutcome ListSCIMCredentials(const Model::ListSCIMCredentialsRequest &request);
+                void ListSCIMCredentialsAsync(const Model::ListSCIMCredentialsRequest& request, const ListSCIMCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListSCIMCredentialsOutcomeCallable ListSCIMCredentialsCallable(const Model::ListSCIMCredentialsRequest& request);
 
                 /**
                  *本接口（ListTargetsForPolicy）查询某个指定策略关联的目标列表
@@ -1646,6 +1712,24 @@ namespace TencentCloud
                 UpdateRoleConfigurationOutcome UpdateRoleConfiguration(const Model::UpdateRoleConfigurationRequest &request);
                 void UpdateRoleConfigurationAsync(const Model::UpdateRoleConfigurationRequest& request, const UpdateRoleConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateRoleConfigurationOutcomeCallable UpdateRoleConfigurationCallable(const Model::UpdateRoleConfigurationRequest& request);
+
+                /**
+                 *启用/禁用SCIM密钥
+                 * @param req UpdateSCIMCredentialStatusRequest
+                 * @return UpdateSCIMCredentialStatusOutcome
+                 */
+                UpdateSCIMCredentialStatusOutcome UpdateSCIMCredentialStatus(const Model::UpdateSCIMCredentialStatusRequest &request);
+                void UpdateSCIMCredentialStatusAsync(const Model::UpdateSCIMCredentialStatusRequest& request, const UpdateSCIMCredentialStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateSCIMCredentialStatusOutcomeCallable UpdateSCIMCredentialStatusCallable(const Model::UpdateSCIMCredentialStatusRequest& request);
+
+                /**
+                 *启用/禁用用户SCIM同步
+                 * @param req UpdateSCIMSynchronizationStatusRequest
+                 * @return UpdateSCIMSynchronizationStatusOutcome
+                 */
+                UpdateSCIMSynchronizationStatusOutcome UpdateSCIMSynchronizationStatus(const Model::UpdateSCIMSynchronizationStatusRequest &request);
+                void UpdateSCIMSynchronizationStatusAsync(const Model::UpdateSCIMSynchronizationStatusRequest& request, const UpdateSCIMSynchronizationStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateSCIMSynchronizationStatusOutcomeCallable UpdateSCIMSynchronizationStatusCallable(const Model::UpdateSCIMSynchronizationStatusRequest& request);
 
                 /**
                  *更新共享单元。

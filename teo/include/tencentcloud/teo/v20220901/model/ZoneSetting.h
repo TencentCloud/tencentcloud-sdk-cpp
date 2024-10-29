@@ -45,6 +45,7 @@
 #include <tencentcloud/teo/v20220901/model/ImageOptimize.h>
 #include <tencentcloud/teo/v20220901/model/AccelerateMainland.h>
 #include <tencentcloud/teo/v20220901/model/StandardDebug.h>
+#include <tencentcloud/teo/v20220901/model/JITVideoProcess.h>
 
 
 namespace TencentCloud
@@ -642,6 +643,31 @@ namespace TencentCloud
                      */
                     bool StandardDebugHasBeenSet() const;
 
+                    /**
+                     * 获取视频即时处理配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JITVideoProcess 视频即时处理配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    JITVideoProcess GetJITVideoProcess() const;
+
+                    /**
+                     * 设置视频即时处理配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _jITVideoProcess 视频即时处理配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJITVideoProcess(const JITVideoProcess& _jITVideoProcess);
+
+                    /**
+                     * 判断参数 JITVideoProcess 是否已赋值
+                     * @return JITVideoProcess 是否已赋值
+                     * 
+                     */
+                    bool JITVideoProcessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -804,6 +830,13 @@ namespace TencentCloud
                      */
                     StandardDebug m_standardDebug;
                     bool m_standardDebugHasBeenSet;
+
+                    /**
+                     * 视频即时处理配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    JITVideoProcess m_jITVideoProcess;
+                    bool m_jITVideoProcessHasBeenSet;
 
                 };
             }

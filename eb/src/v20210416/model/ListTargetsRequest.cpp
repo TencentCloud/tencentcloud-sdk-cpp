@@ -24,8 +24,8 @@ using namespace std;
 
 ListTargetsRequest::ListTargetsRequest() :
     m_eventBusIdHasBeenSet(false),
-    m_orderByHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
+    m_orderByHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_orderHasBeenSet(false)
@@ -47,20 +47,20 @@ string ListTargetsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_eventBusId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_orderByHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OrderBy";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_ruleIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -111,22 +111,6 @@ bool ListTargetsRequest::EventBusIdHasBeenSet() const
     return m_eventBusIdHasBeenSet;
 }
 
-string ListTargetsRequest::GetOrderBy() const
-{
-    return m_orderBy;
-}
-
-void ListTargetsRequest::SetOrderBy(const string& _orderBy)
-{
-    m_orderBy = _orderBy;
-    m_orderByHasBeenSet = true;
-}
-
-bool ListTargetsRequest::OrderByHasBeenSet() const
-{
-    return m_orderByHasBeenSet;
-}
-
 string ListTargetsRequest::GetRuleId() const
 {
     return m_ruleId;
@@ -141,6 +125,22 @@ void ListTargetsRequest::SetRuleId(const string& _ruleId)
 bool ListTargetsRequest::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+string ListTargetsRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void ListTargetsRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool ListTargetsRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
 }
 
 int64_t ListTargetsRequest::GetLimit() const

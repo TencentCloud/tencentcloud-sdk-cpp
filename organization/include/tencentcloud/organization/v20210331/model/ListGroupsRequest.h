@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool SortTypeHasBeenSet() const;
 
+                    /**
+                     * 获取翻页offset. 不要与NextToken同时使用，优先使用NextToken
+                     * @return Offset 翻页offset. 不要与NextToken同时使用，优先使用NextToken
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置翻页offset. 不要与NextToken同时使用，优先使用NextToken
+                     * @param _offset 翻页offset. 不要与NextToken同时使用，优先使用NextToken
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     std::string m_sortType;
                     bool m_sortTypeHasBeenSet;
+
+                    /**
+                     * 翻页offset. 不要与NextToken同时使用，优先使用NextToken
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

@@ -40,49 +40,6 @@ CloudauditClient::CloudauditClient(const Credential &credential, const string &r
 }
 
 
-CloudauditClient::CreateAuditOutcome CloudauditClient::CreateAudit(const CreateAuditRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateAudit");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateAuditResponse rsp = CreateAuditResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateAuditOutcome(rsp);
-        else
-            return CreateAuditOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateAuditOutcome(outcome.GetError());
-    }
-}
-
-void CloudauditClient::CreateAuditAsync(const CreateAuditRequest& request, const CreateAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAudit(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CloudauditClient::CreateAuditOutcomeCallable CloudauditClient::CreateAuditCallable(const CreateAuditRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateAuditOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAudit(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CloudauditClient::CreateAuditTrackOutcome CloudauditClient::CreateAuditTrack(const CreateAuditTrackRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAuditTrack");
@@ -126,42 +83,42 @@ CloudauditClient::CreateAuditTrackOutcomeCallable CloudauditClient::CreateAuditT
     return task->get_future();
 }
 
-CloudauditClient::DeleteAuditOutcome CloudauditClient::DeleteAudit(const DeleteAuditRequest &request)
+CloudauditClient::CreateEventsAuditTrackOutcome CloudauditClient::CreateEventsAuditTrack(const CreateEventsAuditTrackRequest &request)
 {
-    auto outcome = MakeRequest(request, "DeleteAudit");
+    auto outcome = MakeRequest(request, "CreateEventsAuditTrack");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        DeleteAuditResponse rsp = DeleteAuditResponse();
+        CreateEventsAuditTrackResponse rsp = CreateEventsAuditTrackResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return DeleteAuditOutcome(rsp);
+            return CreateEventsAuditTrackOutcome(rsp);
         else
-            return DeleteAuditOutcome(o.GetError());
+            return CreateEventsAuditTrackOutcome(o.GetError());
     }
     else
     {
-        return DeleteAuditOutcome(outcome.GetError());
+        return CreateEventsAuditTrackOutcome(outcome.GetError());
     }
 }
 
-void CloudauditClient::DeleteAuditAsync(const DeleteAuditRequest& request, const DeleteAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void CloudauditClient::CreateEventsAuditTrackAsync(const CreateEventsAuditTrackRequest& request, const CreateEventsAuditTrackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->DeleteAudit(request), context);
+        handler(this, request, this->CreateEventsAuditTrack(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-CloudauditClient::DeleteAuditOutcomeCallable CloudauditClient::DeleteAuditCallable(const DeleteAuditRequest &request)
+CloudauditClient::CreateEventsAuditTrackOutcomeCallable CloudauditClient::CreateEventsAuditTrackCallable(const CreateEventsAuditTrackRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<DeleteAuditOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<CreateEventsAuditTrackOutcome()>>(
         [this, request]()
         {
-            return this->DeleteAudit(request);
+            return this->CreateEventsAuditTrack(request);
         }
     );
 
@@ -721,6 +678,49 @@ CloudauditClient::ModifyAuditTrackOutcomeCallable CloudauditClient::ModifyAuditT
         [this, request]()
         {
             return this->ModifyAuditTrack(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CloudauditClient::ModifyEventsAuditTrackOutcome CloudauditClient::ModifyEventsAuditTrack(const ModifyEventsAuditTrackRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEventsAuditTrack");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEventsAuditTrackResponse rsp = ModifyEventsAuditTrackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEventsAuditTrackOutcome(rsp);
+        else
+            return ModifyEventsAuditTrackOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEventsAuditTrackOutcome(outcome.GetError());
+    }
+}
+
+void CloudauditClient::ModifyEventsAuditTrackAsync(const ModifyEventsAuditTrackRequest& request, const ModifyEventsAuditTrackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyEventsAuditTrack(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CloudauditClient::ModifyEventsAuditTrackOutcomeCallable CloudauditClient::ModifyEventsAuditTrackCallable(const ModifyEventsAuditTrackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyEventsAuditTrackOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyEventsAuditTrack(request);
         }
     );
 

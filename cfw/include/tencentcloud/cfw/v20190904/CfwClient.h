@@ -643,7 +643,7 @@ namespace TencentCloud
                 AddEnterpriseSecurityGroupRulesOutcomeCallable AddEnterpriseSecurityGroupRulesCallable(const Model::AddEnterpriseSecurityGroupRulesRequest& request);
 
                 /**
-                 *添加nat访问控制规则(地域必填)
+                 *添加nat访问控制规则
                  * @param req AddNatAcRuleRequest
                  * @return AddNatAcRuleOutcome
                  */
@@ -932,7 +932,6 @@ namespace TencentCloud
 
                 /**
                  *DescribeBlockByIpTimesList 告警中心阻断IP折线图
-
                  * @param req DescribeBlockByIpTimesListRequest
                  * @return DescribeBlockByIpTimesListOutcome
                  */
@@ -951,7 +950,6 @@ namespace TencentCloud
 
                 /**
                  *DescribeBlockStaticList 告警中心柱形图
-
                  * @param req DescribeBlockStaticListRequest
                  * @return DescribeBlockStaticListOutcome
                  */
@@ -1151,7 +1149,7 @@ namespace TencentCloud
                 DescribeResourceGroupOutcomeCallable DescribeResourceGroupCallable(const Model::DescribeResourceGroupRequest& request);
 
                 /**
-                 *DescribeResourceGroupNew资产中心资产树信息
+                 *资产中心资产组数数据信息查询
                  * @param req DescribeResourceGroupNewRequest
                  * @return DescribeResourceGroupNewOutcome
                  */
@@ -1198,8 +1196,7 @@ namespace TencentCloud
                 DescribeSwitchListsOutcomeCallable DescribeSwitchListsCallable(const Model::DescribeSwitchListsRequest& request);
 
                 /**
-                 *DescribeTLogInfo告警中心概况
-
+                 *DescribeTLogInfo告警中心概况查询
                  * @param req DescribeTLogInfoRequest
                  * @return DescribeTLogInfoOutcome
                  */
@@ -1209,7 +1206,6 @@ namespace TencentCloud
 
                 /**
                  *DescribeTLogIpList告警中心IP柱形图
-
                  * @param req DescribeTLogIpListRequest
                  * @return DescribeTLogIpListOutcome
                  */
@@ -1308,7 +1304,9 @@ namespace TencentCloud
                 ModifyAllRuleStatusOutcomeCallable ModifyAllRuleStatusCallable(const Model::ModifyAllRuleStatusRequest& request);
 
                 /**
-                 *VPC防火墙一键开关
+                 *该接口已不再使用
+
+VPC防火墙一键开关
                  * @param req ModifyAllVPCSwitchStatusRequest
                  * @return ModifyAllVPCSwitchStatusOutcome
                  */
@@ -1475,8 +1473,6 @@ VPC间规则需指定EdgeId。Nat边界规则需指定地域Region与Direction�
 
                 /**
                  *ModifyResourceGroup-资产中心资产组信息修改
-
-
                  * @param req ModifyResourceGroupRequest
                  * @return ModifyResourceGroupOutcome
                  */

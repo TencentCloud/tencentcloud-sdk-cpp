@@ -23,8 +23,6 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/tms/v20201229/model/ModerateTextRequest.h>
-#include <tencentcloud/tms/v20201229/model/ModerateTextResponse.h>
 #include <tencentcloud/tms/v20201229/model/TextModerationRequest.h>
 #include <tencentcloud/tms/v20201229/model/TextModerationResponse.h>
 
@@ -41,23 +39,11 @@ namespace TencentCloud
                 TmsClient(const Credential &credential, const std::string &region);
                 TmsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Core::Error, Model::ModerateTextResponse> ModerateTextOutcome;
-                typedef std::future<ModerateTextOutcome> ModerateTextOutcomeCallable;
-                typedef std::function<void(const TmsClient*, const Model::ModerateTextRequest&, ModerateTextOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModerateTextAsyncHandler;
                 typedef Outcome<Core::Error, Model::TextModerationResponse> TextModerationOutcome;
                 typedef std::future<TextModerationOutcome> TextModerationOutcomeCallable;
                 typedef std::function<void(const TmsClient*, const Model::TextModerationRequest&, TextModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextModerationAsyncHandler;
 
 
-
-                /**
-                 *天御文本内容安全定制标签文本审核接口为定制接口，会按照客户定制标签输出审核结果，如需使用请联系商务经理或[在线客服](https://cloud.tencent.com/online-service?from=doc_1125)咨询。
-                 * @param req ModerateTextRequest
-                 * @return ModerateTextOutcome
-                 */
-                ModerateTextOutcome ModerateText(const Model::ModerateTextRequest &request);
-                void ModerateTextAsync(const Model::ModerateTextRequest& request, const ModerateTextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModerateTextOutcomeCallable ModerateTextCallable(const Model::ModerateTextRequest& request);
 
                 /**
                  *本接口（Text Moderation）用于提交文本内容进行智能审核任务。使用前请您使用腾讯云主账号登录控制台 [开通文本内容安全服务](https://console.cloud.tencent.com/cms) 并调整好对应的业务配置。

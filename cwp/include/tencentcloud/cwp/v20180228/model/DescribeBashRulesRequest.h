@@ -108,18 +108,42 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件。
-<li>Keywords - String - 是否必填：否 - 关键字(规则名称)</li>
+<li>Name - String - 是否必填：否 - 规则名称</li>
+<li>Rule - String - 是否必填：否 - 规则内容</li>
+<li>Level - Int - 是否必填：否 - 威胁等级</li>
+<li>White - Int - 是否必填：否 - 白名单类型</li>
+<li>RuleCategory - Int - 是否必填：否 - 策略类型</li>
+<li>BashAction - Int - 是否必填：否 - 操作动作</li>
+<li>Status - Int - 是否必填：否 - 生效状态</li>
                      * @return Filters 过滤条件。
-<li>Keywords - String - 是否必填：否 - 关键字(规则名称)</li>
+<li>Name - String - 是否必填：否 - 规则名称</li>
+<li>Rule - String - 是否必填：否 - 规则内容</li>
+<li>Level - Int - 是否必填：否 - 威胁等级</li>
+<li>White - Int - 是否必填：否 - 白名单类型</li>
+<li>RuleCategory - Int - 是否必填：否 - 策略类型</li>
+<li>BashAction - Int - 是否必填：否 - 操作动作</li>
+<li>Status - Int - 是否必填：否 - 生效状态</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件。
-<li>Keywords - String - 是否必填：否 - 关键字(规则名称)</li>
+<li>Name - String - 是否必填：否 - 规则名称</li>
+<li>Rule - String - 是否必填：否 - 规则内容</li>
+<li>Level - Int - 是否必填：否 - 威胁等级</li>
+<li>White - Int - 是否必填：否 - 白名单类型</li>
+<li>RuleCategory - Int - 是否必填：否 - 策略类型</li>
+<li>BashAction - Int - 是否必填：否 - 操作动作</li>
+<li>Status - Int - 是否必填：否 - 生效状态</li>
                      * @param _filters 过滤条件。
-<li>Keywords - String - 是否必填：否 - 关键字(规则名称)</li>
+<li>Name - String - 是否必填：否 - 规则名称</li>
+<li>Rule - String - 是否必填：否 - 规则内容</li>
+<li>Level - Int - 是否必填：否 - 威胁等级</li>
+<li>White - Int - 是否必填：否 - 白名单类型</li>
+<li>RuleCategory - Int - 是否必填：否 - 策略类型</li>
+<li>BashAction - Int - 是否必填：否 - 操作动作</li>
+<li>Status - Int - 是否必填：否 - 生效状态</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -153,7 +177,13 @@ namespace TencentCloud
 
                     /**
                      * 过滤条件。
-<li>Keywords - String - 是否必填：否 - 关键字(规则名称)</li>
+<li>Name - String - 是否必填：否 - 规则名称</li>
+<li>Rule - String - 是否必填：否 - 规则内容</li>
+<li>Level - Int - 是否必填：否 - 威胁等级</li>
+<li>White - Int - 是否必填：否 - 白名单类型</li>
+<li>RuleCategory - Int - 是否必填：否 - 策略类型</li>
+<li>BashAction - Int - 是否必填：否 - 操作动作</li>
+<li>Status - Int - 是否必填：否 - 生效状态</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -26,7 +26,8 @@ DeleteRotationPasswordRequest::DeleteRotationPasswordRequest() :
     m_instanceIdHasBeenSet(false),
     m_userHasBeenSet(false),
     m_hostHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_encryptMethodHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DeleteRotationPasswordRequest::ToJsonString() const
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptMethod.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DeleteRotationPasswordRequest::SetPassword(const string& _password)
 bool DeleteRotationPasswordRequest::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+string DeleteRotationPasswordRequest::GetEncryptMethod() const
+{
+    return m_encryptMethod;
+}
+
+void DeleteRotationPasswordRequest::SetEncryptMethod(const string& _encryptMethod)
+{
+    m_encryptMethod = _encryptMethod;
+    m_encryptMethodHasBeenSet = true;
+}
+
+bool DeleteRotationPasswordRequest::EncryptMethodHasBeenSet() const
+{
+    return m_encryptMethodHasBeenSet;
 }
 
 

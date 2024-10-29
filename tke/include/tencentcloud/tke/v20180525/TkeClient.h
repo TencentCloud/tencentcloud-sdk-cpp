@@ -399,6 +399,8 @@
 #include <tencentcloud/tke/v20180525/model/ModifyClusterAuthenticationOptionsResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterEndpointSPRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterEndpointSPResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterImageRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterImageResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterNodePoolRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterNodePoolResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterRuntimeConfigRequest.h>
@@ -1055,6 +1057,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyClusterEndpointSPResponse> ModifyClusterEndpointSPOutcome;
                 typedef std::future<ModifyClusterEndpointSPOutcome> ModifyClusterEndpointSPOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterEndpointSPRequest&, ModifyClusterEndpointSPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterEndpointSPAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterImageResponse> ModifyClusterImageOutcome;
+                typedef std::future<ModifyClusterImageOutcome> ModifyClusterImageOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyClusterImageRequest&, ModifyClusterImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterNodePoolResponse> ModifyClusterNodePoolOutcome;
                 typedef std::future<ModifyClusterNodePoolOutcome> ModifyClusterNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterNodePoolRequest&, ModifyClusterNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterNodePoolAsyncHandler;
@@ -2866,6 +2871,15 @@ namespace TencentCloud
                 ModifyClusterEndpointSPOutcome ModifyClusterEndpointSP(const Model::ModifyClusterEndpointSPRequest &request);
                 void ModifyClusterEndpointSPAsync(const Model::ModifyClusterEndpointSPRequest& request, const ModifyClusterEndpointSPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyClusterEndpointSPOutcomeCallable ModifyClusterEndpointSPCallable(const Model::ModifyClusterEndpointSPRequest& request);
+
+                /**
+                 *修改集群镜像
+                 * @param req ModifyClusterImageRequest
+                 * @return ModifyClusterImageOutcome
+                 */
+                ModifyClusterImageOutcome ModifyClusterImage(const Model::ModifyClusterImageRequest &request);
+                void ModifyClusterImageAsync(const Model::ModifyClusterImageRequest& request, const ModifyClusterImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterImageOutcomeCallable ModifyClusterImageCallable(const Model::ModifyClusterImageRequest& request);
 
                 /**
                  *编辑节点池

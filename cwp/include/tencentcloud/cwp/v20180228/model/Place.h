@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取城市 ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CityId 城市 ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCityId() const;
 
                     /**
                      * 设置城市 ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cityId 城市 ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCityId(const uint64_t& _cityId);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取省份 ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProvinceId 省份 ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProvinceId() const;
 
                     /**
                      * 设置省份 ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _provinceId 省份 ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProvinceId(const uint64_t& _provinceId);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取国家ID，暂只支持国内：1。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CountryId 国家ID，暂只支持国内：1。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCountryId() const;
 
                     /**
                      * 设置国家ID，暂只支持国内：1。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _countryId 国家ID，暂只支持国内：1。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCountryId(const uint64_t& _countryId);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取位置名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 位置名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 设置位置名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _location 位置名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocation(const std::string& _location);
@@ -134,24 +150,28 @@ namespace TencentCloud
 
                     /**
                      * 城市 ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cityId;
                     bool m_cityIdHasBeenSet;
 
                     /**
                      * 省份 ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_provinceId;
                     bool m_provinceIdHasBeenSet;
 
                     /**
                      * 国家ID，暂只支持国内：1。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_countryId;
                     bool m_countryIdHasBeenSet;
 
                     /**
                      * 位置名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;

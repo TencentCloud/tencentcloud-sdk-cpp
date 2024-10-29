@@ -43,7 +43,8 @@ ModifyZoneSettingRequest::ModifyZoneSettingRequest() :
     m_clientIpCountryHasBeenSet(false),
     m_grpcHasBeenSet(false),
     m_imageOptimizeHasBeenSet(false),
-    m_standardDebugHasBeenSet(false)
+    m_standardDebugHasBeenSet(false),
+    m_jITVideoProcessHasBeenSet(false)
 {
 }
 
@@ -240,6 +241,15 @@ string ModifyZoneSettingRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_standardDebug.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_jITVideoProcessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JITVideoProcess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jITVideoProcess.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -584,6 +594,22 @@ void ModifyZoneSettingRequest::SetStandardDebug(const StandardDebug& _standardDe
 bool ModifyZoneSettingRequest::StandardDebugHasBeenSet() const
 {
     return m_standardDebugHasBeenSet;
+}
+
+JITVideoProcess ModifyZoneSettingRequest::GetJITVideoProcess() const
+{
+    return m_jITVideoProcess;
+}
+
+void ModifyZoneSettingRequest::SetJITVideoProcess(const JITVideoProcess& _jITVideoProcess)
+{
+    m_jITVideoProcess = _jITVideoProcess;
+    m_jITVideoProcessHasBeenSet = true;
+}
+
+bool ModifyZoneSettingRequest::JITVideoProcessHasBeenSet() const
+{
+    return m_jITVideoProcessHasBeenSet;
 }
 
 

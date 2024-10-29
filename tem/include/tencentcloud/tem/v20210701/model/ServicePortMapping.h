@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务类型
+                     * 获取服务类型：如：EXTERNAL，VPC，CLUSTER
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 服务类型
+                     * @return Type 服务类型：如：EXTERNAL，VPC，CLUSTER
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置服务类型
+                     * 设置服务类型：如：EXTERNAL，VPC，CLUSTER
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 服务类型
+                     * @param _type 服务类型：如：EXTERNAL，VPC，CLUSTER
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -325,7 +325,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务类型
+                     * 服务类型：如：EXTERNAL，VPC，CLUSTER
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;

@@ -32,7 +32,9 @@ SetAuthenticationRequest::SetAuthenticationRequest() :
     m_gaapCertificateIdHasBeenSet(false),
     m_realServerCertificateIdHasBeenSet(false),
     m_realServerCertificateDomainHasBeenSet(false),
-    m_polyRealServerCertificateIdsHasBeenSet(false)
+    m_polyRealServerCertificateIdsHasBeenSet(false),
+    m_tLSSupportVersionHasBeenSet(false),
+    m_tLSCiphersHasBeenSet(false)
 {
 }
 
@@ -126,6 +128,27 @@ string SetAuthenticationRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_tLSSupportVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TLSSupportVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tLSSupportVersion.begin(); itr != m_tLSSupportVersion.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tLSCiphersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TLSCiphers";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tLSCiphers.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -294,6 +317,38 @@ void SetAuthenticationRequest::SetPolyRealServerCertificateIds(const vector<stri
 bool SetAuthenticationRequest::PolyRealServerCertificateIdsHasBeenSet() const
 {
     return m_polyRealServerCertificateIdsHasBeenSet;
+}
+
+vector<string> SetAuthenticationRequest::GetTLSSupportVersion() const
+{
+    return m_tLSSupportVersion;
+}
+
+void SetAuthenticationRequest::SetTLSSupportVersion(const vector<string>& _tLSSupportVersion)
+{
+    m_tLSSupportVersion = _tLSSupportVersion;
+    m_tLSSupportVersionHasBeenSet = true;
+}
+
+bool SetAuthenticationRequest::TLSSupportVersionHasBeenSet() const
+{
+    return m_tLSSupportVersionHasBeenSet;
+}
+
+string SetAuthenticationRequest::GetTLSCiphers() const
+{
+    return m_tLSCiphers;
+}
+
+void SetAuthenticationRequest::SetTLSCiphers(const string& _tLSCiphers)
+{
+    m_tLSCiphers = _tLSCiphers;
+    m_tLSCiphersHasBeenSet = true;
+}
+
+bool SetAuthenticationRequest::TLSCiphersHasBeenSet() const
+{
+    return m_tLSCiphersHasBeenSet;
 }
 
 

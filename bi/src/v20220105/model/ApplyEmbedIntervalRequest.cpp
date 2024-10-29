@@ -27,6 +27,7 @@ ApplyEmbedIntervalRequest::ApplyEmbedIntervalRequest() :
     m_pageIdHasBeenSet(false),
     m_bITokenHasBeenSet(false),
     m_extraParamHasBeenSet(false),
+    m_intentionHasBeenSet(false),
     m_scopeHasBeenSet(false)
 {
 }
@@ -68,6 +69,14 @@ string ApplyEmbedIntervalRequest::ToJsonString() const
         string key = "ExtraParam";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extraParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intentionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Intention";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_intention.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scopeHasBeenSet)
@@ -148,6 +157,22 @@ void ApplyEmbedIntervalRequest::SetExtraParam(const string& _extraParam)
 bool ApplyEmbedIntervalRequest::ExtraParamHasBeenSet() const
 {
     return m_extraParamHasBeenSet;
+}
+
+string ApplyEmbedIntervalRequest::GetIntention() const
+{
+    return m_intention;
+}
+
+void ApplyEmbedIntervalRequest::SetIntention(const string& _intention)
+{
+    m_intention = _intention;
+    m_intentionHasBeenSet = true;
+}
+
+bool ApplyEmbedIntervalRequest::IntentionHasBeenSet() const
+{
+    return m_intentionHasBeenSet;
 }
 
 string ApplyEmbedIntervalRequest::GetScope() const

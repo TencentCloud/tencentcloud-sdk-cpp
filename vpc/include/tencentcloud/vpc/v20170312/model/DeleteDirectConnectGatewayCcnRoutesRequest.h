@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool RouteIdsHasBeenSet() const;
 
+                    /**
+                     * 获取地址类型，支持：IPv4、IPv6。默认IPv4。
+                     * @return AddressType 地址类型，支持：IPv4、IPv6。默认IPv4。
+                     * 
+                     */
+                    std::string GetAddressType() const;
+
+                    /**
+                     * 设置地址类型，支持：IPv4、IPv6。默认IPv4。
+                     * @param _addressType 地址类型，支持：IPv4、IPv6。默认IPv4。
+                     * 
+                     */
+                    void SetAddressType(const std::string& _addressType);
+
+                    /**
+                     * 判断参数 AddressType 是否已赋值
+                     * @return AddressType 是否已赋值
+                     * 
+                     */
+                    bool AddressTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_routeIds;
                     bool m_routeIdsHasBeenSet;
+
+                    /**
+                     * 地址类型，支持：IPv4、IPv6。默认IPv4。
+                     */
+                    std::string m_addressType;
+                    bool m_addressTypeHasBeenSet;
 
                 };
             }

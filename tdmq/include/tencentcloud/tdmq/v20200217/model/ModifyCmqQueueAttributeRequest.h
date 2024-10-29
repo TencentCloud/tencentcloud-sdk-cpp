@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool DeadLetterQueueNameHasBeenSet() const;
 
                     /**
-                     * 获取MaxTimeToLivepolicy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds
-                     * @return MaxTimeToLive MaxTimeToLivepolicy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds
+                     * 获取policy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds
+                     * @return MaxTimeToLive policy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds
                      * 
                      */
                     uint64_t GetMaxTimeToLive() const;
 
                     /**
-                     * 设置MaxTimeToLivepolicy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds
-                     * @param _maxTimeToLive MaxTimeToLivepolicy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds
+                     * 设置policy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds
+                     * @param _maxTimeToLive policy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds
                      * 
                      */
                     void SetMaxTimeToLive(const uint64_t& _maxTimeToLive);
@@ -441,7 +441,7 @@ namespace TencentCloud
                     bool m_deadLetterQueueNameHasBeenSet;
 
                     /**
-                     * MaxTimeToLivepolicy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds
+                     * policy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds
                      */
                     uint64_t m_maxTimeToLive;
                     bool m_maxTimeToLiveHasBeenSet;

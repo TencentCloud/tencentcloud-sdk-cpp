@@ -21,14 +21,17 @@ using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
 WebCallback::WebCallback() :
-    m_urlHasBeenSet(false),
     m_callbackTypeHasBeenSet(false),
+    m_urlHasBeenSet(false),
+    m_webCallbackIdHasBeenSet(false),
     m_methodHasBeenSet(false),
+    m_noticeContentIdHasBeenSet(false),
+    m_remindTypeHasBeenSet(false),
+    m_mobilesHasBeenSet(false),
+    m_userIdsHasBeenSet(false),
     m_headersHasBeenSet(false),
     m_bodyHasBeenSet(false),
-    m_indexHasBeenSet(false),
-    m_noticeContentIdHasBeenSet(false),
-    m_webCallbackIdHasBeenSet(false)
+    m_indexHasBeenSet(false)
 {
 }
 
@@ -36,16 +39,6 @@ CoreInternalOutcome WebCallback::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Url") && !value["Url"].IsNull())
-    {
-        if (!value["Url"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `WebCallback.Url` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_url = string(value["Url"].GetString());
-        m_urlHasBeenSet = true;
-    }
 
     if (value.HasMember("CallbackType") && !value["CallbackType"].IsNull())
     {
@@ -57,6 +50,26 @@ CoreInternalOutcome WebCallback::Deserialize(const rapidjson::Value &value)
         m_callbackTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Url") && !value["Url"].IsNull())
+    {
+        if (!value["Url"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebCallback.Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(value["Url"].GetString());
+        m_urlHasBeenSet = true;
+    }
+
+    if (value.HasMember("WebCallbackId") && !value["WebCallbackId"].IsNull())
+    {
+        if (!value["WebCallbackId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebCallback.WebCallbackId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_webCallbackId = string(value["WebCallbackId"].GetString());
+        m_webCallbackIdHasBeenSet = true;
+    }
+
     if (value.HasMember("Method") && !value["Method"].IsNull())
     {
         if (!value["Method"].IsString())
@@ -65,6 +78,52 @@ CoreInternalOutcome WebCallback::Deserialize(const rapidjson::Value &value)
         }
         m_method = string(value["Method"].GetString());
         m_methodHasBeenSet = true;
+    }
+
+    if (value.HasMember("NoticeContentId") && !value["NoticeContentId"].IsNull())
+    {
+        if (!value["NoticeContentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebCallback.NoticeContentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_noticeContentId = string(value["NoticeContentId"].GetString());
+        m_noticeContentIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RemindType") && !value["RemindType"].IsNull())
+    {
+        if (!value["RemindType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebCallback.RemindType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_remindType = value["RemindType"].GetUint64();
+        m_remindTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Mobiles") && !value["Mobiles"].IsNull())
+    {
+        if (!value["Mobiles"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WebCallback.Mobiles` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Mobiles"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_mobiles.push_back((*itr).GetString());
+        }
+        m_mobilesHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserIds") && !value["UserIds"].IsNull())
+    {
+        if (!value["UserIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WebCallback.UserIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["UserIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_userIds.push_back((*itr).GetString());
+        }
+        m_userIdsHasBeenSet = true;
     }
 
     if (value.HasMember("Headers") && !value["Headers"].IsNull())
@@ -100,40 +159,12 @@ CoreInternalOutcome WebCallback::Deserialize(const rapidjson::Value &value)
         m_indexHasBeenSet = true;
     }
 
-    if (value.HasMember("NoticeContentId") && !value["NoticeContentId"].IsNull())
-    {
-        if (!value["NoticeContentId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `WebCallback.NoticeContentId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_noticeContentId = string(value["NoticeContentId"].GetString());
-        m_noticeContentIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("WebCallbackId") && !value["WebCallbackId"].IsNull())
-    {
-        if (!value["WebCallbackId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `WebCallback.WebCallbackId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_webCallbackId = string(value["WebCallbackId"].GetString());
-        m_webCallbackIdHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void WebCallback::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_urlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Url";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_callbackTypeHasBeenSet)
     {
@@ -143,12 +174,70 @@ void WebCallback::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_callbackType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webCallbackIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebCallbackId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_webCallbackId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_methodHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Method";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_method.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_noticeContentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoticeContentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_noticeContentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remindTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemindType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_remindType, allocator);
+    }
+
+    if (m_mobilesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mobiles";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_mobiles.begin(); itr != m_mobiles.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_userIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userIds.begin(); itr != m_userIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_headersHasBeenSet)
@@ -180,40 +269,8 @@ void WebCallback::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, m_index, allocator);
     }
 
-    if (m_noticeContentIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NoticeContentId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_noticeContentId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_webCallbackIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "WebCallbackId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_webCallbackId.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
-
-string WebCallback::GetUrl() const
-{
-    return m_url;
-}
-
-void WebCallback::SetUrl(const string& _url)
-{
-    m_url = _url;
-    m_urlHasBeenSet = true;
-}
-
-bool WebCallback::UrlHasBeenSet() const
-{
-    return m_urlHasBeenSet;
-}
 
 string WebCallback::GetCallbackType() const
 {
@@ -231,6 +288,38 @@ bool WebCallback::CallbackTypeHasBeenSet() const
     return m_callbackTypeHasBeenSet;
 }
 
+string WebCallback::GetUrl() const
+{
+    return m_url;
+}
+
+void WebCallback::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool WebCallback::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
+}
+
+string WebCallback::GetWebCallbackId() const
+{
+    return m_webCallbackId;
+}
+
+void WebCallback::SetWebCallbackId(const string& _webCallbackId)
+{
+    m_webCallbackId = _webCallbackId;
+    m_webCallbackIdHasBeenSet = true;
+}
+
+bool WebCallback::WebCallbackIdHasBeenSet() const
+{
+    return m_webCallbackIdHasBeenSet;
+}
+
 string WebCallback::GetMethod() const
 {
     return m_method;
@@ -245,6 +334,70 @@ void WebCallback::SetMethod(const string& _method)
 bool WebCallback::MethodHasBeenSet() const
 {
     return m_methodHasBeenSet;
+}
+
+string WebCallback::GetNoticeContentId() const
+{
+    return m_noticeContentId;
+}
+
+void WebCallback::SetNoticeContentId(const string& _noticeContentId)
+{
+    m_noticeContentId = _noticeContentId;
+    m_noticeContentIdHasBeenSet = true;
+}
+
+bool WebCallback::NoticeContentIdHasBeenSet() const
+{
+    return m_noticeContentIdHasBeenSet;
+}
+
+uint64_t WebCallback::GetRemindType() const
+{
+    return m_remindType;
+}
+
+void WebCallback::SetRemindType(const uint64_t& _remindType)
+{
+    m_remindType = _remindType;
+    m_remindTypeHasBeenSet = true;
+}
+
+bool WebCallback::RemindTypeHasBeenSet() const
+{
+    return m_remindTypeHasBeenSet;
+}
+
+vector<string> WebCallback::GetMobiles() const
+{
+    return m_mobiles;
+}
+
+void WebCallback::SetMobiles(const vector<string>& _mobiles)
+{
+    m_mobiles = _mobiles;
+    m_mobilesHasBeenSet = true;
+}
+
+bool WebCallback::MobilesHasBeenSet() const
+{
+    return m_mobilesHasBeenSet;
+}
+
+vector<string> WebCallback::GetUserIds() const
+{
+    return m_userIds;
+}
+
+void WebCallback::SetUserIds(const vector<string>& _userIds)
+{
+    m_userIds = _userIds;
+    m_userIdsHasBeenSet = true;
+}
+
+bool WebCallback::UserIdsHasBeenSet() const
+{
+    return m_userIdsHasBeenSet;
 }
 
 vector<string> WebCallback::GetHeaders() const
@@ -293,37 +446,5 @@ void WebCallback::SetIndex(const int64_t& _index)
 bool WebCallback::IndexHasBeenSet() const
 {
     return m_indexHasBeenSet;
-}
-
-string WebCallback::GetNoticeContentId() const
-{
-    return m_noticeContentId;
-}
-
-void WebCallback::SetNoticeContentId(const string& _noticeContentId)
-{
-    m_noticeContentId = _noticeContentId;
-    m_noticeContentIdHasBeenSet = true;
-}
-
-bool WebCallback::NoticeContentIdHasBeenSet() const
-{
-    return m_noticeContentIdHasBeenSet;
-}
-
-string WebCallback::GetWebCallbackId() const
-{
-    return m_webCallbackId;
-}
-
-void WebCallback::SetWebCallbackId(const string& _webCallbackId)
-{
-    m_webCallbackId = _webCallbackId;
-    m_webCallbackIdHasBeenSet = true;
-}
-
-bool WebCallback::WebCallbackIdHasBeenSet() const
-{
-    return m_webCallbackIdHasBeenSet;
 }
 

@@ -599,6 +599,49 @@ BillingClient::DescribeAllocationTrendByMonthOutcomeCallable BillingClient::Desc
     return task->get_future();
 }
 
+BillingClient::DescribeBillAdjustInfoOutcome BillingClient::DescribeBillAdjustInfo(const DescribeBillAdjustInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillAdjustInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillAdjustInfoResponse rsp = DescribeBillAdjustInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillAdjustInfoOutcome(rsp);
+        else
+            return DescribeBillAdjustInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillAdjustInfoOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeBillAdjustInfoAsync(const DescribeBillAdjustInfoRequest& request, const DescribeBillAdjustInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillAdjustInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeBillAdjustInfoOutcomeCallable BillingClient::DescribeBillAdjustInfoCallable(const DescribeBillAdjustInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillAdjustInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillAdjustInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BillingClient::DescribeBillDetailOutcome BillingClient::DescribeBillDetail(const DescribeBillDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBillDetail");

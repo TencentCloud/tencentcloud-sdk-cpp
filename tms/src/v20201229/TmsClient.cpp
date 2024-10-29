@@ -40,49 +40,6 @@ TmsClient::TmsClient(const Credential &credential, const string &region, const C
 }
 
 
-TmsClient::ModerateTextOutcome TmsClient::ModerateText(const ModerateTextRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModerateText");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModerateTextResponse rsp = ModerateTextResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModerateTextOutcome(rsp);
-        else
-            return ModerateTextOutcome(o.GetError());
-    }
-    else
-    {
-        return ModerateTextOutcome(outcome.GetError());
-    }
-}
-
-void TmsClient::ModerateTextAsync(const ModerateTextRequest& request, const ModerateTextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModerateText(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TmsClient::ModerateTextOutcomeCallable TmsClient::ModerateTextCallable(const ModerateTextRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModerateTextOutcome()>>(
-        [this, request]()
-        {
-            return this->ModerateText(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TmsClient::TextModerationOutcome TmsClient::TextModeration(const TextModerationRequest &request)
 {
     auto outcome = MakeRequest(request, "TextModeration");

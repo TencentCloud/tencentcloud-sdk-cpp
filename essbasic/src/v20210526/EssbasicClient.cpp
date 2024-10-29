@@ -2233,6 +2233,49 @@ EssbasicClient::CreateChannelSubOrganizationActiveOutcomeCallable EssbasicClient
     return task->get_future();
 }
 
+EssbasicClient::CreateCloseOrganizationUrlOutcome EssbasicClient::CreateCloseOrganizationUrl(const CreateCloseOrganizationUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloseOrganizationUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloseOrganizationUrlResponse rsp = CreateCloseOrganizationUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloseOrganizationUrlOutcome(rsp);
+        else
+            return CreateCloseOrganizationUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloseOrganizationUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateCloseOrganizationUrlAsync(const CreateCloseOrganizationUrlRequest& request, const CreateCloseOrganizationUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloseOrganizationUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateCloseOrganizationUrlOutcomeCallable EssbasicClient::CreateCloseOrganizationUrlCallable(const CreateCloseOrganizationUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloseOrganizationUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloseOrganizationUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateConsoleLoginUrlOutcome EssbasicClient::CreateConsoleLoginUrl(const CreateConsoleLoginUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConsoleLoginUrl");
@@ -2656,6 +2699,49 @@ EssbasicClient::CreateSignUrlsOutcomeCallable EssbasicClient::CreateSignUrlsCall
         [this, request]()
         {
             return this->CreateSignUrls(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::DeleteOrganizationAuthorizationsOutcome EssbasicClient::DeleteOrganizationAuthorizations(const DeleteOrganizationAuthorizationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteOrganizationAuthorizations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteOrganizationAuthorizationsResponse rsp = DeleteOrganizationAuthorizationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteOrganizationAuthorizationsOutcome(rsp);
+        else
+            return DeleteOrganizationAuthorizationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteOrganizationAuthorizationsOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::DeleteOrganizationAuthorizationsAsync(const DeleteOrganizationAuthorizationsRequest& request, const DeleteOrganizationAuthorizationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteOrganizationAuthorizations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::DeleteOrganizationAuthorizationsOutcomeCallable EssbasicClient::DeleteOrganizationAuthorizationsCallable(const DeleteOrganizationAuthorizationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteOrganizationAuthorizationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteOrganizationAuthorizations(request);
         }
     );
 

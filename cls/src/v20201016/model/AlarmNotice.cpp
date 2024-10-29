@@ -22,13 +22,17 @@ using namespace std;
 
 AlarmNotice::AlarmNotice() :
     m_nameHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_noticeReceiversHasBeenSet(false),
     m_webCallbacksHasBeenSet(false),
     m_alarmNoticeIdHasBeenSet(false),
+    m_noticeRulesHasBeenSet(false),
+    m_alarmShieldStatusHasBeenSet(false),
+    m_jumpDomainHasBeenSet(false),
+    m_alarmNoticeDeliverConfigHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_noticeRulesHasBeenSet(false)
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -45,6 +49,26 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
     }
 
     if (value.HasMember("Type") && !value["Type"].IsNull())
@@ -107,26 +131,6 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
         m_alarmNoticeIdHasBeenSet = true;
     }
 
-    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
-    {
-        if (!value["CreateTime"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AlarmNotice.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_createTime = string(value["CreateTime"].GetString());
-        m_createTimeHasBeenSet = true;
-    }
-
-    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
-    {
-        if (!value["UpdateTime"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AlarmNotice.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_updateTime = string(value["UpdateTime"].GetString());
-        m_updateTimeHasBeenSet = true;
-    }
-
     if (value.HasMember("NoticeRules") && !value["NoticeRules"].IsNull())
     {
         if (!value["NoticeRules"].IsArray())
@@ -147,6 +151,63 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
         m_noticeRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("AlarmShieldStatus") && !value["AlarmShieldStatus"].IsNull())
+    {
+        if (!value["AlarmShieldStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.AlarmShieldStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmShieldStatus = value["AlarmShieldStatus"].GetUint64();
+        m_alarmShieldStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("JumpDomain") && !value["JumpDomain"].IsNull())
+    {
+        if (!value["JumpDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.JumpDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jumpDomain = string(value["JumpDomain"].GetString());
+        m_jumpDomainHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmNoticeDeliverConfig") && !value["AlarmNoticeDeliverConfig"].IsNull())
+    {
+        if (!value["AlarmNoticeDeliverConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.AlarmNoticeDeliverConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_alarmNoticeDeliverConfig.Deserialize(value["AlarmNoticeDeliverConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_alarmNoticeDeliverConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -160,6 +221,21 @@ void AlarmNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_typeHasBeenSet)
@@ -208,6 +284,46 @@ void AlarmNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_alarmNoticeId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_noticeRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoticeRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_noticeRules.begin(); itr != m_noticeRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_alarmShieldStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmShieldStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alarmShieldStatus, allocator);
+    }
+
+    if (m_jumpDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JumpDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jumpDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmNoticeDeliverConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmNoticeDeliverConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_alarmNoticeDeliverConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_createTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -222,21 +338,6 @@ void AlarmNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_noticeRulesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NoticeRules";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_noticeRules.begin(); itr != m_noticeRules.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
     }
 
 }
@@ -256,6 +357,22 @@ void AlarmNotice::SetName(const string& _name)
 bool AlarmNotice::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+vector<Tag> AlarmNotice::GetTags() const
+{
+    return m_tags;
+}
+
+void AlarmNotice::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool AlarmNotice::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 string AlarmNotice::GetType() const
@@ -322,6 +439,70 @@ bool AlarmNotice::AlarmNoticeIdHasBeenSet() const
     return m_alarmNoticeIdHasBeenSet;
 }
 
+vector<NoticeRule> AlarmNotice::GetNoticeRules() const
+{
+    return m_noticeRules;
+}
+
+void AlarmNotice::SetNoticeRules(const vector<NoticeRule>& _noticeRules)
+{
+    m_noticeRules = _noticeRules;
+    m_noticeRulesHasBeenSet = true;
+}
+
+bool AlarmNotice::NoticeRulesHasBeenSet() const
+{
+    return m_noticeRulesHasBeenSet;
+}
+
+uint64_t AlarmNotice::GetAlarmShieldStatus() const
+{
+    return m_alarmShieldStatus;
+}
+
+void AlarmNotice::SetAlarmShieldStatus(const uint64_t& _alarmShieldStatus)
+{
+    m_alarmShieldStatus = _alarmShieldStatus;
+    m_alarmShieldStatusHasBeenSet = true;
+}
+
+bool AlarmNotice::AlarmShieldStatusHasBeenSet() const
+{
+    return m_alarmShieldStatusHasBeenSet;
+}
+
+string AlarmNotice::GetJumpDomain() const
+{
+    return m_jumpDomain;
+}
+
+void AlarmNotice::SetJumpDomain(const string& _jumpDomain)
+{
+    m_jumpDomain = _jumpDomain;
+    m_jumpDomainHasBeenSet = true;
+}
+
+bool AlarmNotice::JumpDomainHasBeenSet() const
+{
+    return m_jumpDomainHasBeenSet;
+}
+
+AlarmNoticeDeliverConfig AlarmNotice::GetAlarmNoticeDeliverConfig() const
+{
+    return m_alarmNoticeDeliverConfig;
+}
+
+void AlarmNotice::SetAlarmNoticeDeliverConfig(const AlarmNoticeDeliverConfig& _alarmNoticeDeliverConfig)
+{
+    m_alarmNoticeDeliverConfig = _alarmNoticeDeliverConfig;
+    m_alarmNoticeDeliverConfigHasBeenSet = true;
+}
+
+bool AlarmNotice::AlarmNoticeDeliverConfigHasBeenSet() const
+{
+    return m_alarmNoticeDeliverConfigHasBeenSet;
+}
+
 string AlarmNotice::GetCreateTime() const
 {
     return m_createTime;
@@ -352,21 +533,5 @@ void AlarmNotice::SetUpdateTime(const string& _updateTime)
 bool AlarmNotice::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
-}
-
-vector<NoticeRule> AlarmNotice::GetNoticeRules() const
-{
-    return m_noticeRules;
-}
-
-void AlarmNotice::SetNoticeRules(const vector<NoticeRule>& _noticeRules)
-{
-    m_noticeRules = _noticeRules;
-    m_noticeRulesHasBeenSet = true;
-}
-
-bool AlarmNotice::NoticeRulesHasBeenSet() const
-{
-    return m_noticeRulesHasBeenSet;
 }
 

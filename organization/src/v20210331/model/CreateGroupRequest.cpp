@@ -25,7 +25,8 @@ using namespace std;
 CreateGroupRequest::CreateGroupRequest() :
     m_zoneIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_groupTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string CreateGroupRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void CreateGroupRequest::SetDescription(const string& _description)
 bool CreateGroupRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string CreateGroupRequest::GetGroupType() const
+{
+    return m_groupType;
+}
+
+void CreateGroupRequest::SetGroupType(const string& _groupType)
+{
+    m_groupType = _groupType;
+    m_groupTypeHasBeenSet = true;
+}
+
+bool CreateGroupRequest::GroupTypeHasBeenSet() const
+{
+    return m_groupTypeHasBeenSet;
 }
 
 

@@ -292,6 +292,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DeleteAntiFakeUrlRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeSpartaProtectionInfoRequest.h
   include/tencentcloud/waf/v20180125/model/CacheUrlItems.h
+  include/tencentcloud/waf/v20180125/model/ModifyUserSignatureRuleV2Request.h
   include/tencentcloud/waf/v20180125/model/ModifyWebshellStatusResponse.h
   include/tencentcloud/waf/v20180125/model/GenerateDealsAndPayNewResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeCCRuleRequest.h
@@ -324,6 +325,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/WebshellStatus.h
   include/tencentcloud/waf/v20180125/model/DescribeSpartaProtectionInfoResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyModuleStatusRequest.h
+  include/tencentcloud/waf/v20180125/model/ModifyUserSignatureRuleV2Response.h
   include/tencentcloud/waf/v20180125/model/AccessLogItems.h
   include/tencentcloud/waf/v20180125/model/ModifyInstanceNameRequest.h
   include/tencentcloud/waf/v20180125/model/DescribePortsResponse.h
@@ -691,6 +693,7 @@ set(waf_src
   src/v20180125/model/DeleteAntiFakeUrlRequest.cpp
   src/v20180125/model/DescribeSpartaProtectionInfoRequest.cpp
   src/v20180125/model/CacheUrlItems.cpp
+  src/v20180125/model/ModifyUserSignatureRuleV2Request.cpp
   src/v20180125/model/ModifyWebshellStatusResponse.cpp
   src/v20180125/model/GenerateDealsAndPayNewResponse.cpp
   src/v20180125/model/DescribeCCRuleRequest.cpp
@@ -723,6 +726,7 @@ set(waf_src
   src/v20180125/model/WebshellStatus.cpp
   src/v20180125/model/DescribeSpartaProtectionInfoResponse.cpp
   src/v20180125/model/ModifyModuleStatusRequest.cpp
+  src/v20180125/model/ModifyUserSignatureRuleV2Response.cpp
   src/v20180125/model/AccessLogItems.cpp
   src/v20180125/model/ModifyInstanceNameRequest.cpp
   src/v20180125/model/DescribePortsResponse.cpp

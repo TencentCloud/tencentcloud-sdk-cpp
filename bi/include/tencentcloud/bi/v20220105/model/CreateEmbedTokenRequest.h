@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取分享页面id，嵌出看板时此为空值0
-                     * @return PageId 分享页面id，嵌出看板时此为空值0
+                     * 获取分享页面id，嵌出看板时此为空值0，ChatBI嵌出时不传
+                     * @return PageId 分享页面id，嵌出看板时此为空值0，ChatBI嵌出时不传
                      * 
                      */
                     uint64_t GetPageId() const;
 
                     /**
-                     * 设置分享页面id，嵌出看板时此为空值0
-                     * @param _pageId 分享页面id，嵌出看板时此为空值0
+                     * 设置分享页面id，嵌出看板时此为空值0，ChatBI嵌出时不传
+                     * @param _pageId 分享页面id，嵌出看板时此为空值0，ChatBI嵌出时不传
                      * 
                      */
                     void SetPageId(const uint64_t& _pageId);
@@ -85,15 +85,36 @@ namespace TencentCloud
                     bool PageIdHasBeenSet() const;
 
                     /**
-                     * 获取page表示嵌出页面，panel表示嵌出整个看板
-                     * @return Scope page表示嵌出页面，panel表示嵌出整个看板
+                     * 获取embed表示页面看板嵌出，chatBIEmbed表示ChatBI嵌出
+                     * @return Intention embed表示页面看板嵌出，chatBIEmbed表示ChatBI嵌出
+                     * 
+                     */
+                    std::string GetIntention() const;
+
+                    /**
+                     * 设置embed表示页面看板嵌出，chatBIEmbed表示ChatBI嵌出
+                     * @param _intention embed表示页面看板嵌出，chatBIEmbed表示ChatBI嵌出
+                     * 
+                     */
+                    void SetIntention(const std::string& _intention);
+
+                    /**
+                     * 判断参数 Intention 是否已赋值
+                     * @return Intention 是否已赋值
+                     * 
+                     */
+                    bool IntentionHasBeenSet() const;
+
+                    /**
+                     * 获取page表示嵌出页面，panel表示嵌出整个看板，ChatBI嵌出时使用project
+                     * @return Scope page表示嵌出页面，panel表示嵌出整个看板，ChatBI嵌出时使用project
                      * 
                      */
                     std::string GetScope() const;
 
                     /**
-                     * 设置page表示嵌出页面，panel表示嵌出整个看板
-                     * @param _scope page表示嵌出页面，panel表示嵌出整个看板
+                     * 设置page表示嵌出页面，panel表示嵌出整个看板，ChatBI嵌出时使用project
+                     * @param _scope page表示嵌出页面，panel表示嵌出整个看板，ChatBI嵌出时使用project
                      * 
                      */
                     void SetScope(const std::string& _scope);
@@ -396,13 +417,19 @@ Operator 目前支持
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 分享页面id，嵌出看板时此为空值0
+                     * 分享页面id，嵌出看板时此为空值0，ChatBI嵌出时不传
                      */
                     uint64_t m_pageId;
                     bool m_pageIdHasBeenSet;
 
                     /**
-                     * page表示嵌出页面，panel表示嵌出整个看板
+                     * embed表示页面看板嵌出，chatBIEmbed表示ChatBI嵌出
+                     */
+                    std::string m_intention;
+                    bool m_intentionHasBeenSet;
+
+                    /**
+                     * page表示嵌出页面，panel表示嵌出整个看板，ChatBI嵌出时使用project
                      */
                     std::string m_scope;
                     bool m_scopeHasBeenSet;

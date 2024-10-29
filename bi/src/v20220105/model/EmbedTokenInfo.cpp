@@ -35,7 +35,8 @@ EmbedTokenInfo::EmbedTokenInfo() :
     m_userCorpIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_ticketNumHasBeenSet(false),
-    m_globalParamHasBeenSet(false)
+    m_globalParamHasBeenSet(false),
+    m_intentionHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome EmbedTokenInfo::Deserialize(const rapidjson::Value &value)
         m_globalParamHasBeenSet = true;
     }
 
+    if (value.HasMember("Intention") && !value["Intention"].IsNull())
+    {
+        if (!value["Intention"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmbedTokenInfo.Intention` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_intention = string(value["Intention"].GetString());
+        m_intentionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void EmbedTokenInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "GlobalParam";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_globalParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intentionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Intention";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_intention.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void EmbedTokenInfo::SetGlobalParam(const string& _globalParam)
 bool EmbedTokenInfo::GlobalParamHasBeenSet() const
 {
     return m_globalParamHasBeenSet;
+}
+
+string EmbedTokenInfo::GetIntention() const
+{
+    return m_intention;
+}
+
+void EmbedTokenInfo::SetIntention(const string& _intention)
+{
+    m_intention = _intention;
+    m_intentionHasBeenSet = true;
+}
+
+bool EmbedTokenInfo::IntentionHasBeenSet() const
+{
+    return m_intentionHasBeenSet;
 }
 

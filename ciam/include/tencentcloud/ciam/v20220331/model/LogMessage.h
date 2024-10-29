@@ -479,6 +479,31 @@ namespace TencentCloud
                      */
                     bool DetailHasBeenSet() const;
 
+                    /**
+                     * 获取日志结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ActionResult 日志结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetActionResult() const;
+
+                    /**
+                     * 设置日志结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _actionResult 日志结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetActionResult(const std::string& _actionResult);
+
+                    /**
+                     * 判断参数 ActionResult 是否已赋值
+                     * @return ActionResult 是否已赋值
+                     * 
+                     */
+                    bool ActionResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -601,6 +626,13 @@ namespace TencentCloud
                      */
                     std::string m_detail;
                     bool m_detailHasBeenSet;
+
+                    /**
+                     * 日志结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_actionResult;
+                    bool m_actionResultHasBeenSet;
 
                 };
             }

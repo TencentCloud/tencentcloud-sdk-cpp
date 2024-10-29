@@ -21,9 +21,13 @@ using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
 NoticeRule::NoticeRule() :
+    m_ruleHasBeenSet(false),
     m_noticeReceiversHasBeenSet(false),
     m_webCallbacksHasBeenSet(false),
-    m_ruleHasBeenSet(false)
+    m_escalateHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_intervalHasBeenSet(false),
+    m_escalateNoticeHasBeenSet(false)
 {
 }
 
@@ -31,6 +35,16 @@ CoreInternalOutcome NoticeRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Rule") && !value["Rule"].IsNull())
+    {
+        if (!value["Rule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NoticeRule.Rule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rule = string(value["Rule"].GetString());
+        m_ruleHasBeenSet = true;
+    }
 
     if (value.HasMember("NoticeReceivers") && !value["NoticeReceivers"].IsNull())
     {
@@ -72,14 +86,51 @@ CoreInternalOutcome NoticeRule::Deserialize(const rapidjson::Value &value)
         m_webCallbacksHasBeenSet = true;
     }
 
-    if (value.HasMember("Rule") && !value["Rule"].IsNull())
+    if (value.HasMember("Escalate") && !value["Escalate"].IsNull())
     {
-        if (!value["Rule"].IsString())
+        if (!value["Escalate"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `NoticeRule.Rule` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NoticeRule.Escalate` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_rule = string(value["Rule"].GetString());
-        m_ruleHasBeenSet = true;
+        m_escalate = value["Escalate"].GetBool();
+        m_escalateHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NoticeRule.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = value["Type"].GetUint64();
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Interval") && !value["Interval"].IsNull())
+    {
+        if (!value["Interval"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NoticeRule.Interval` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_interval = value["Interval"].GetUint64();
+        m_intervalHasBeenSet = true;
+    }
+
+    if (value.HasMember("EscalateNotice") && !value["EscalateNotice"].IsNull())
+    {
+        if (!value["EscalateNotice"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NoticeRule.EscalateNotice` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_escalateNotice.Deserialize(value["EscalateNotice"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_escalateNoticeHasBeenSet = true;
     }
 
 
@@ -88,6 +139,14 @@ CoreInternalOutcome NoticeRule::Deserialize(const rapidjson::Value &value)
 
 void NoticeRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_ruleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Rule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rule.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_noticeReceiversHasBeenSet)
     {
@@ -119,16 +178,57 @@ void NoticeRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         }
     }
 
-    if (m_ruleHasBeenSet)
+    if (m_escalateHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Rule";
+        string key = "Escalate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_rule.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_escalate, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_intervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Interval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_interval, allocator);
+    }
+
+    if (m_escalateNoticeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EscalateNotice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_escalateNotice.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
 
+
+string NoticeRule::GetRule() const
+{
+    return m_rule;
+}
+
+void NoticeRule::SetRule(const string& _rule)
+{
+    m_rule = _rule;
+    m_ruleHasBeenSet = true;
+}
+
+bool NoticeRule::RuleHasBeenSet() const
+{
+    return m_ruleHasBeenSet;
+}
 
 vector<NoticeReceiver> NoticeRule::GetNoticeReceivers() const
 {
@@ -162,19 +262,67 @@ bool NoticeRule::WebCallbacksHasBeenSet() const
     return m_webCallbacksHasBeenSet;
 }
 
-string NoticeRule::GetRule() const
+bool NoticeRule::GetEscalate() const
 {
-    return m_rule;
+    return m_escalate;
 }
 
-void NoticeRule::SetRule(const string& _rule)
+void NoticeRule::SetEscalate(const bool& _escalate)
 {
-    m_rule = _rule;
-    m_ruleHasBeenSet = true;
+    m_escalate = _escalate;
+    m_escalateHasBeenSet = true;
 }
 
-bool NoticeRule::RuleHasBeenSet() const
+bool NoticeRule::EscalateHasBeenSet() const
 {
-    return m_ruleHasBeenSet;
+    return m_escalateHasBeenSet;
+}
+
+uint64_t NoticeRule::GetType() const
+{
+    return m_type;
+}
+
+void NoticeRule::SetType(const uint64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool NoticeRule::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+uint64_t NoticeRule::GetInterval() const
+{
+    return m_interval;
+}
+
+void NoticeRule::SetInterval(const uint64_t& _interval)
+{
+    m_interval = _interval;
+    m_intervalHasBeenSet = true;
+}
+
+bool NoticeRule::IntervalHasBeenSet() const
+{
+    return m_intervalHasBeenSet;
+}
+
+EscalateNoticeInfo NoticeRule::GetEscalateNotice() const
+{
+    return m_escalateNotice;
+}
+
+void NoticeRule::SetEscalateNotice(const EscalateNoticeInfo& _escalateNotice)
+{
+    m_escalateNotice = _escalateNotice;
+    m_escalateNoticeHasBeenSet = true;
+}
+
+bool NoticeRule::EscalateNoticeHasBeenSet() const
+{
+    return m_escalateNoticeHasBeenSet;
 }
 

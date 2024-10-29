@@ -329,27 +329,6 @@ log：观察
                     bool OrderIndexHasBeenSet() const;
 
                     /**
-                     * 获取规则对应的唯一id
-                     * @return Uuid 规则对应的唯一id
-                     * 
-                     */
-                    int64_t GetUuid() const;
-
-                    /**
-                     * 设置规则对应的唯一id
-                     * @param _uuid 规则对应的唯一id
-                     * 
-                     */
-                    void SetUuid(const int64_t& _uuid);
-
-                    /**
-                     * 判断参数 Uuid 是否已赋值
-                     * @return Uuid 是否已赋值
-                     * 
-                     */
-                    bool UuidHasBeenSet() const;
-
-                    /**
                      * 获取规则状态，true表示启用，false表示禁用
                      * @return Enable 规则状态，true表示启用，false表示禁用
                      * 
@@ -390,6 +369,27 @@ log：观察
                      * 
                      */
                     bool EdgeIdHasBeenSet() const;
+
+                    /**
+                     * 获取规则对应的唯一id，添加规则时忽略该字段，修改该规则时需要填写Uuid;查询返回时会返回该参数
+                     * @return Uuid 规则对应的唯一id，添加规则时忽略该字段，修改该规则时需要填写Uuid;查询返回时会返回该参数
+                     * 
+                     */
+                    int64_t GetUuid() const;
+
+                    /**
+                     * 设置规则对应的唯一id，添加规则时忽略该字段，修改该规则时需要填写Uuid;查询返回时会返回该参数
+                     * @param _uuid 规则对应的唯一id，添加规则时忽略该字段，修改该规则时需要填写Uuid;查询返回时会返回该参数
+                     * 
+                     */
+                    void SetUuid(const int64_t& _uuid);
+
+                    /**
+                     * 判断参数 Uuid 是否已赋值
+                     * @return Uuid 是否已赋值
+                     * 
+                     */
+                    bool UuidHasBeenSet() const;
 
                     /**
                      * 获取规则的命中次数，增删改查规则时无需传入此参数，主要用于返回查询结果数据
@@ -650,6 +650,31 @@ log：观察
                      */
                     bool SourceNameHasBeenSet() const;
 
+                    /**
+                     * 获取Ip版本，0：IPv4，1：IPv6，默认为IPv4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IpVersion Ip版本，0：IPv4，1：IPv6，默认为IPv4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIpVersion() const;
+
+                    /**
+                     * 设置Ip版本，0：IPv4，1：IPv6，默认为IPv4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ipVersion Ip版本，0：IPv4，1：IPv6，默认为IPv4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIpVersion(const int64_t& _ipVersion);
+
+                    /**
+                     * 判断参数 IpVersion 是否已赋值
+                     * @return IpVersion 是否已赋值
+                     * 
+                     */
+                    bool IpVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -730,12 +755,6 @@ log：观察
                     bool m_orderIndexHasBeenSet;
 
                     /**
-                     * 规则对应的唯一id
-                     */
-                    int64_t m_uuid;
-                    bool m_uuidHasBeenSet;
-
-                    /**
                      * 规则状态，true表示启用，false表示禁用
                      */
                     std::string m_enable;
@@ -746,6 +765,12 @@ log：观察
                      */
                     std::string m_edgeId;
                     bool m_edgeIdHasBeenSet;
+
+                    /**
+                     * 规则对应的唯一id，添加规则时忽略该字段，修改该规则时需要填写Uuid;查询返回时会返回该参数
+                     */
+                    int64_t m_uuid;
+                    bool m_uuidHasBeenSet;
 
                     /**
                      * 规则的命中次数，增删改查规则时无需传入此参数，主要用于返回查询结果数据
@@ -819,6 +844,13 @@ log：观察
                      */
                     std::string m_sourceName;
                     bool m_sourceNameHasBeenSet;
+
+                    /**
+                     * Ip版本，0：IPv4，1：IPv6，默认为IPv4
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_ipVersion;
+                    bool m_ipVersionHasBeenSet;
 
                 };
             }

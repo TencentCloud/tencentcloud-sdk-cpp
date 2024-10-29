@@ -11951,6 +11951,49 @@ VpcClient::ModifyAddressesBandwidthOutcomeCallable VpcClient::ModifyAddressesBan
     return task->get_future();
 }
 
+VpcClient::ModifyAddressesRenewFlagOutcome VpcClient::ModifyAddressesRenewFlag(const ModifyAddressesRenewFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAddressesRenewFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAddressesRenewFlagResponse rsp = ModifyAddressesRenewFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAddressesRenewFlagOutcome(rsp);
+        else
+            return ModifyAddressesRenewFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAddressesRenewFlagOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyAddressesRenewFlagAsync(const ModifyAddressesRenewFlagRequest& request, const ModifyAddressesRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAddressesRenewFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyAddressesRenewFlagOutcomeCallable VpcClient::ModifyAddressesRenewFlagCallable(const ModifyAddressesRenewFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAddressesRenewFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAddressesRenewFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ModifyAssistantCidrOutcome VpcClient::ModifyAssistantCidr(const ModifyAssistantCidrRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAssistantCidr");

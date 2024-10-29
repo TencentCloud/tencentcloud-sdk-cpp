@@ -32,7 +32,12 @@ EditBashRulesRequest::EditBashRulesRequest() :
     m_isGlobalHasBeenSet(false),
     m_whiteHasBeenSet(false),
     m_eventIdHasBeenSet(false),
-    m_dealOldEventsHasBeenSet(false)
+    m_dealOldEventsHasBeenSet(false),
+    m_descriptHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_bashActionHasBeenSet(false),
+    m_scopeHasBeenSet(false),
+    m_quuidsHasBeenSet(false)
 {
 }
 
@@ -126,6 +131,51 @@ string EditBashRulesRequest::ToJsonString() const
         string key = "DealOldEvents";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dealOldEvents, allocator);
+    }
+
+    if (m_descriptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Descript";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_descript.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_bashActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BashAction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bashAction, allocator);
+    }
+
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scope, allocator);
+    }
+
+    if (m_quuidsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Quuids";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_quuids.begin(); itr != m_quuids.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -294,6 +344,86 @@ void EditBashRulesRequest::SetDealOldEvents(const uint64_t& _dealOldEvents)
 bool EditBashRulesRequest::DealOldEventsHasBeenSet() const
 {
     return m_dealOldEventsHasBeenSet;
+}
+
+string EditBashRulesRequest::GetDescript() const
+{
+    return m_descript;
+}
+
+void EditBashRulesRequest::SetDescript(const string& _descript)
+{
+    m_descript = _descript;
+    m_descriptHasBeenSet = true;
+}
+
+bool EditBashRulesRequest::DescriptHasBeenSet() const
+{
+    return m_descriptHasBeenSet;
+}
+
+int64_t EditBashRulesRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void EditBashRulesRequest::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool EditBashRulesRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+int64_t EditBashRulesRequest::GetBashAction() const
+{
+    return m_bashAction;
+}
+
+void EditBashRulesRequest::SetBashAction(const int64_t& _bashAction)
+{
+    m_bashAction = _bashAction;
+    m_bashActionHasBeenSet = true;
+}
+
+bool EditBashRulesRequest::BashActionHasBeenSet() const
+{
+    return m_bashActionHasBeenSet;
+}
+
+int64_t EditBashRulesRequest::GetScope() const
+{
+    return m_scope;
+}
+
+void EditBashRulesRequest::SetScope(const int64_t& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool EditBashRulesRequest::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
+}
+
+vector<string> EditBashRulesRequest::GetQuuids() const
+{
+    return m_quuids;
+}
+
+void EditBashRulesRequest::SetQuuids(const vector<string>& _quuids)
+{
+    m_quuids = _quuids;
+    m_quuidsHasBeenSet = true;
+}
+
+bool EditBashRulesRequest::QuuidsHasBeenSet() const
+{
+    return m_quuidsHasBeenSet;
 }
 
 

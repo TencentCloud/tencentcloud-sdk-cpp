@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 访问协议强制https跳转配置
+                * 访问协议强制 HTTPS 跳转配置。
                 */
                 class ForceRedirect : public AbstractModel
                 {

@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取分享页面id，嵌出看板时此为空值0
-                     * @return PageId 分享页面id，嵌出看板时此为空值0
+                     * 获取分享页面id，嵌出看板时此为空值0，ChatBI嵌出时不传
+
+                     * @return PageId 分享页面id，嵌出看板时此为空值0，ChatBI嵌出时不传
+
                      * 
                      */
                     uint64_t GetPageId() const;
 
                     /**
-                     * 设置分享页面id，嵌出看板时此为空值0
-                     * @param _pageId 分享页面id，嵌出看板时此为空值0
+                     * 设置分享页面id，嵌出看板时此为空值0，ChatBI嵌出时不传
+
+                     * @param _pageId 分享页面id，嵌出看板时此为空值0，ChatBI嵌出时不传
+
                      * 
                      */
                     void SetPageId(const uint64_t& _pageId);
@@ -127,15 +131,44 @@ namespace TencentCloud
                     bool ExtraParamHasBeenSet() const;
 
                     /**
-                     * 获取panel,看板；page，页面
-                     * @return Scope panel,看板；page，页面
+                     * 获取embed：页面/看板嵌出
+chatBIEmbed：ChatBI嵌出
+                     * @return Intention embed：页面/看板嵌出
+chatBIEmbed：ChatBI嵌出
+                     * 
+                     */
+                    std::string GetIntention() const;
+
+                    /**
+                     * 设置embed：页面/看板嵌出
+chatBIEmbed：ChatBI嵌出
+                     * @param _intention embed：页面/看板嵌出
+chatBIEmbed：ChatBI嵌出
+                     * 
+                     */
+                    void SetIntention(const std::string& _intention);
+
+                    /**
+                     * 判断参数 Intention 是否已赋值
+                     * @return Intention 是否已赋值
+                     * 
+                     */
+                    bool IntentionHasBeenSet() const;
+
+                    /**
+                     * 获取panel, 看板；page，页面
+project，ChatBI嵌出时
+                     * @return Scope panel, 看板；page，页面
+project，ChatBI嵌出时
                      * 
                      */
                     std::string GetScope() const;
 
                     /**
-                     * 设置panel,看板；page，页面
-                     * @param _scope panel,看板；page，页面
+                     * 设置panel, 看板；page，页面
+project，ChatBI嵌出时
+                     * @param _scope panel, 看板；page，页面
+project，ChatBI嵌出时
                      * 
                      */
                     void SetScope(const std::string& _scope);
@@ -156,7 +189,8 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 分享页面id，嵌出看板时此为空值0
+                     * 分享页面id，嵌出看板时此为空值0，ChatBI嵌出时不传
+
                      */
                     uint64_t m_pageId;
                     bool m_pageIdHasBeenSet;
@@ -174,7 +208,15 @@ namespace TencentCloud
                     bool m_extraParamHasBeenSet;
 
                     /**
-                     * panel,看板；page，页面
+                     * embed：页面/看板嵌出
+chatBIEmbed：ChatBI嵌出
+                     */
+                    std::string m_intention;
+                    bool m_intentionHasBeenSet;
+
+                    /**
+                     * panel, 看板；page，页面
+project，ChatBI嵌出时
                      */
                     std::string m_scope;
                     bool m_scopeHasBeenSet;

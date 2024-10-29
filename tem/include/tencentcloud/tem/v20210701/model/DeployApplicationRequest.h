@@ -97,15 +97,15 @@ namespace TencentCloud
                     bool InitPodNumHasBeenSet() const;
 
                     /**
-                     * 获取cpu规格
-                     * @return CpuSpec cpu规格
+                     * 获取cpu规格 单位：核
+                     * @return CpuSpec cpu规格 单位：核
                      * 
                      */
                     double GetCpuSpec() const;
 
                     /**
-                     * 设置cpu规格
-                     * @param _cpuSpec cpu规格
+                     * 设置cpu规格 单位：核
+                     * @param _cpuSpec cpu规格 单位：核
                      * 
                      */
                     void SetCpuSpec(const double& _cpuSpec);
@@ -118,15 +118,15 @@ namespace TencentCloud
                     bool CpuSpecHasBeenSet() const;
 
                     /**
-                     * 获取内存规格
-                     * @return MemorySpec 内存规格
+                     * 获取内存规格 单位：G
+                     * @return MemorySpec 内存规格 单位：G
                      * 
                      */
                     double GetMemorySpec() const;
 
                     /**
-                     * 设置内存规格
-                     * @param _memorySpec 内存规格
+                     * 设置内存规格 单位：G
+                     * @param _memorySpec 内存规格 单位：G
                      * 
                      */
                     void SetMemorySpec(const double& _memorySpec);
@@ -1136,13 +1136,13 @@ namespace TencentCloud
                     bool m_initPodNumHasBeenSet;
 
                     /**
-                     * cpu规格
+                     * cpu规格 单位：核
                      */
                     double m_cpuSpec;
                     bool m_cpuSpecHasBeenSet;
 
                     /**
-                     * 内存规格
+                     * 内存规格 单位：G
                      */
                     double m_memorySpec;
                     bool m_memorySpecHasBeenSet;

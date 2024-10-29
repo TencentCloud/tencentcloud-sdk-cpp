@@ -96,6 +96,31 @@ namespace TencentCloud
                      */
                     bool ErrMessageHasBeenSet() const;
 
+                    /**
+                     * 获取合同流程ID，为32位字符串。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlowId 合同流程ID，为32位字符串。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFlowId() const;
+
+                    /**
+                     * 设置合同流程ID，为32位字符串。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _flowId 合同流程ID，为32位字符串。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFlowId(const std::string& _flowId);
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     * 
+                     */
+                    bool FlowIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +136,13 @@ namespace TencentCloud
                      */
                     std::string m_errMessage;
                     bool m_errMessageHasBeenSet;
+
+                    /**
+                     * 合同流程ID，为32位字符串。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_flowId;
+                    bool m_flowIdHasBeenSet;
 
                 };
             }

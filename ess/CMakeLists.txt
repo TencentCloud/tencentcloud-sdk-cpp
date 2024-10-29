@@ -34,6 +34,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignRequest.h
   include/tencentcloud/ess/v20201111/model/CreateLegalSealQrCodeResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsResponse.h
+  include/tencentcloud/ess/v20201111/model/FileInfo.h
   include/tencentcloud/ess/v20201111/model/DeleteExtendedServiceAuthInfosResponse.h
   include/tencentcloud/ess/v20201111/model/CreateDynamicFlowApproverRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowApproversResponse.h
@@ -42,6 +43,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/IntentionQuestionResult.h
   include/tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlRequest.h
   include/tencentcloud/ess/v20201111/model/AuthInfoDetail.h
+  include/tencentcloud/ess/v20201111/model/DeleteOrganizationAuthorizationInfo.h
   include/tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoResponse.h
   include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsRequest.h
@@ -110,7 +112,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateWebThemeConfigResponse.h
   include/tencentcloud/ess/v20201111/model/BindEmployeeUserIdWithClientOpenIdRequest.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlResponse.h
-  include/tencentcloud/ess/v20201111/model/Permission.h
+  include/tencentcloud/ess/v20201111/model/DeleteOrganizationAuthorizationsResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthDetailRequest.h
   include/tencentcloud/ess/v20201111/model/OrganizationAuthUrl.h
   include/tencentcloud/ess/v20201111/model/Staff.h
@@ -120,6 +122,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateIntegrationSubOrganizationActiveRecordResponse.h
   include/tencentcloud/ess/v20201111/model/ArchiveDynamicFlowResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h
+  include/tencentcloud/ess/v20201111/model/Permission.h
   include/tencentcloud/ess/v20201111/model/CreateLegalSealQrCodeRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationAuthStatusResponse.h
   include/tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlResponse.h
@@ -213,7 +216,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateOrganizationBatchSignUrlResponse.h
   include/tencentcloud/ess/v20201111/model/DynamicFlowApproverResult.h
   include/tencentcloud/ess/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdRequest.h
-  include/tencentcloud/ess/v20201111/model/FileInfo.h
+  include/tencentcloud/ess/v20201111/model/DeleteOrganizationAuthorizationsRequest.h
   include/tencentcloud/ess/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.h
   include/tencentcloud/ess/v20201111/model/CreateUserVerifyUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreatePartnerAutoSignAuthUrlRequest.h
@@ -319,6 +322,7 @@ set(ess_src
   src/v20201111/model/CreatePreparedPersonalEsignRequest.cpp
   src/v20201111/model/CreateLegalSealQrCodeResponse.cpp
   src/v20201111/model/DescribeIntegrationDepartmentsResponse.cpp
+  src/v20201111/model/FileInfo.cpp
   src/v20201111/model/DeleteExtendedServiceAuthInfosResponse.cpp
   src/v20201111/model/CreateDynamicFlowApproverRequest.cpp
   src/v20201111/model/CreateFlowApproversResponse.cpp
@@ -327,6 +331,7 @@ set(ess_src
   src/v20201111/model/IntentionQuestionResult.cpp
   src/v20201111/model/CancelUserAutoSignEnableUrlRequest.cpp
   src/v20201111/model/AuthInfoDetail.cpp
+  src/v20201111/model/DeleteOrganizationAuthorizationInfo.cpp
   src/v20201111/model/ModifyApplicationCallbackInfoResponse.cpp
   src/v20201111/model/CreateMultiFlowSignQRCodeResponse.cpp
   src/v20201111/model/DescribeIntegrationDepartmentsRequest.cpp
@@ -395,7 +400,7 @@ set(ess_src
   src/v20201111/model/CreateWebThemeConfigResponse.cpp
   src/v20201111/model/BindEmployeeUserIdWithClientOpenIdRequest.cpp
   src/v20201111/model/CreateOrganizationInfoChangeUrlResponse.cpp
-  src/v20201111/model/Permission.cpp
+  src/v20201111/model/DeleteOrganizationAuthorizationsResponse.cpp
   src/v20201111/model/DescribeExtendedServiceAuthDetailRequest.cpp
   src/v20201111/model/OrganizationAuthUrl.cpp
   src/v20201111/model/Staff.cpp
@@ -405,6 +410,7 @@ set(ess_src
   src/v20201111/model/CreateIntegrationSubOrganizationActiveRecordResponse.cpp
   src/v20201111/model/ArchiveDynamicFlowResponse.cpp
   src/v20201111/model/DeleteSealPoliciesResponse.cpp
+  src/v20201111/model/Permission.cpp
   src/v20201111/model/CreateLegalSealQrCodeRequest.cpp
   src/v20201111/model/DescribeOrganizationAuthStatusResponse.cpp
   src/v20201111/model/CreateUserAutoSignSealUrlResponse.cpp
@@ -498,7 +504,7 @@ set(ess_src
   src/v20201111/model/CreateOrganizationBatchSignUrlResponse.cpp
   src/v20201111/model/DynamicFlowApproverResult.cpp
   src/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdRequest.cpp
-  src/v20201111/model/FileInfo.cpp
+  src/v20201111/model/DeleteOrganizationAuthorizationsRequest.cpp
   src/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.cpp
   src/v20201111/model/CreateUserVerifyUrlRequest.cpp
   src/v20201111/model/CreatePartnerAutoSignAuthUrlRequest.cpp

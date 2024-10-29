@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IpProtocolHasBeenSet() const;
 
                     /**
-                     * 获取弹性IP。
-                     * @return PublicIpAddress 弹性IP。
+                     * 获取弹性公网IP。
+                     * @return PublicIpAddress 弹性公网IP。
                      * 
                      */
                     std::string GetPublicIpAddress() const;
 
                     /**
-                     * 设置弹性IP。
-                     * @param _publicIpAddress 弹性IP。
+                     * 设置弹性公网IP。
+                     * @param _publicIpAddress 弹性公网IP。
                      * 
                      */
                     void SetPublicIpAddress(const std::string& _publicIpAddress);
@@ -256,7 +256,7 @@ namespace TencentCloud
                     bool m_ipProtocolHasBeenSet;
 
                     /**
-                     * 弹性IP。
+                     * 弹性公网IP。
                      */
                     std::string m_publicIpAddress;
                     bool m_publicIpAddressHasBeenSet;

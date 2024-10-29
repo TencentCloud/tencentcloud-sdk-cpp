@@ -67,6 +67,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/CreateExtensionResponse.h
   include/tencentcloud/ccc/v20200210/model/CreateUserSigRequest.h
   include/tencentcloud/ccc/v20200210/model/CreateCCCSkillGroupRequest.h
+  include/tencentcloud/ccc/v20200210/model/DescribePredictiveDialingSessionsResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTaskResponse.h
   include/tencentcloud/ccc/v20200210/model/CreateCompanyApplyRequest.h
   include/tencentcloud/ccc/v20200210/model/CreateCCCSkillGroupResponse.h
@@ -77,7 +78,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribePredictiveDialingCampaignRequest.h
   include/tencentcloud/ccc/v20200210/model/SeatUserInfo.h
   include/tencentcloud/ccc/v20200210/model/UpdateCCCSkillGroupResponse.h
-  include/tencentcloud/ccc/v20200210/model/DescribePredictiveDialingSessionsResponse.h
+  include/tencentcloud/ccc/v20200210/model/AsrData.h
   include/tencentcloud/ccc/v20200210/model/CarrierPrivilegeNumberApplicant.h
   include/tencentcloud/ccc/v20200210/model/ErrStaffItem.h
   include/tencentcloud/ccc/v20200210/model/PausePredictiveDialingCampaignResponse.h
@@ -172,6 +173,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeCarrierPrivilegeNumberApplicantsResponse.h
   include/tencentcloud/ccc/v20200210/model/CreateCallOutSessionRequest.h
   include/tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListResponse.h
+  include/tencentcloud/ccc/v20200210/model/DescribeTelRecordAsrResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeExtensionsRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeProtectedTelCdrRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribePredictiveDialingSessionsRequest.h
@@ -181,6 +183,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/CreateOwnNumberApplyRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeCallInMetricsRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeExtensionResponse.h
+  include/tencentcloud/ccc/v20200210/model/DescribeTelRecordAsrRequest.h
   )
 
 set(ccc_src
@@ -233,6 +236,7 @@ set(ccc_src
   src/v20200210/model/CreateExtensionResponse.cpp
   src/v20200210/model/CreateUserSigRequest.cpp
   src/v20200210/model/CreateCCCSkillGroupRequest.cpp
+  src/v20200210/model/DescribePredictiveDialingSessionsResponse.cpp
   src/v20200210/model/DescribeAutoCalloutTaskResponse.cpp
   src/v20200210/model/CreateCompanyApplyRequest.cpp
   src/v20200210/model/CreateCCCSkillGroupResponse.cpp
@@ -243,7 +247,7 @@ set(ccc_src
   src/v20200210/model/DescribePredictiveDialingCampaignRequest.cpp
   src/v20200210/model/SeatUserInfo.cpp
   src/v20200210/model/UpdateCCCSkillGroupResponse.cpp
-  src/v20200210/model/DescribePredictiveDialingSessionsResponse.cpp
+  src/v20200210/model/AsrData.cpp
   src/v20200210/model/CarrierPrivilegeNumberApplicant.cpp
   src/v20200210/model/ErrStaffItem.cpp
   src/v20200210/model/PausePredictiveDialingCampaignResponse.cpp
@@ -338,6 +342,7 @@ set(ccc_src
   src/v20200210/model/DescribeCarrierPrivilegeNumberApplicantsResponse.cpp
   src/v20200210/model/CreateCallOutSessionRequest.cpp
   src/v20200210/model/BindStaffSkillGroupListResponse.cpp
+  src/v20200210/model/DescribeTelRecordAsrResponse.cpp
   src/v20200210/model/DescribeExtensionsRequest.cpp
   src/v20200210/model/DescribeProtectedTelCdrRequest.cpp
   src/v20200210/model/DescribePredictiveDialingSessionsRequest.cpp
@@ -347,6 +352,7 @@ set(ccc_src
   src/v20200210/model/CreateOwnNumberApplyRequest.cpp
   src/v20200210/model/DescribeCallInMetricsRequest.cpp
   src/v20200210/model/DescribeExtensionResponse.cpp
+  src/v20200210/model/DescribeTelRecordAsrRequest.cpp
   )
 
 set(ccc_include

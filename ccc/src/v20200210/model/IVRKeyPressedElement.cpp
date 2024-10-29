@@ -22,7 +22,11 @@ using namespace std;
 
 IVRKeyPressedElement::IVRKeyPressedElement() :
     m_keyHasBeenSet(false),
-    m_labelHasBeenSet(false)
+    m_labelHasBeenSet(false),
+    m_timestampHasBeenSet(false),
+    m_nodeLabelHasBeenSet(false),
+    m_originalContentHasBeenSet(false),
+    m_tTSPromptHasBeenSet(false)
 {
 }
 
@@ -51,6 +55,46 @@ CoreInternalOutcome IVRKeyPressedElement::Deserialize(const rapidjson::Value &va
         m_labelHasBeenSet = true;
     }
 
+    if (value.HasMember("Timestamp") && !value["Timestamp"].IsNull())
+    {
+        if (!value["Timestamp"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IVRKeyPressedElement.Timestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timestamp = value["Timestamp"].GetInt64();
+        m_timestampHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeLabel") && !value["NodeLabel"].IsNull())
+    {
+        if (!value["NodeLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IVRKeyPressedElement.NodeLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeLabel = string(value["NodeLabel"].GetString());
+        m_nodeLabelHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginalContent") && !value["OriginalContent"].IsNull())
+    {
+        if (!value["OriginalContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IVRKeyPressedElement.OriginalContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalContent = string(value["OriginalContent"].GetString());
+        m_originalContentHasBeenSet = true;
+    }
+
+    if (value.HasMember("TTSPrompt") && !value["TTSPrompt"].IsNull())
+    {
+        if (!value["TTSPrompt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IVRKeyPressedElement.TTSPrompt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tTSPrompt = string(value["TTSPrompt"].GetString());
+        m_tTSPromptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +116,38 @@ void IVRKeyPressedElement::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Timestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timestamp, allocator);
+    }
+
+    if (m_nodeLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeLabel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originalContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originalContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tTSPromptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TTSPrompt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tTSPrompt.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +183,69 @@ void IVRKeyPressedElement::SetLabel(const string& _label)
 bool IVRKeyPressedElement::LabelHasBeenSet() const
 {
     return m_labelHasBeenSet;
+}
+
+int64_t IVRKeyPressedElement::GetTimestamp() const
+{
+    return m_timestamp;
+}
+
+void IVRKeyPressedElement::SetTimestamp(const int64_t& _timestamp)
+{
+    m_timestamp = _timestamp;
+    m_timestampHasBeenSet = true;
+}
+
+bool IVRKeyPressedElement::TimestampHasBeenSet() const
+{
+    return m_timestampHasBeenSet;
+}
+
+string IVRKeyPressedElement::GetNodeLabel() const
+{
+    return m_nodeLabel;
+}
+
+void IVRKeyPressedElement::SetNodeLabel(const string& _nodeLabel)
+{
+    m_nodeLabel = _nodeLabel;
+    m_nodeLabelHasBeenSet = true;
+}
+
+bool IVRKeyPressedElement::NodeLabelHasBeenSet() const
+{
+    return m_nodeLabelHasBeenSet;
+}
+
+string IVRKeyPressedElement::GetOriginalContent() const
+{
+    return m_originalContent;
+}
+
+void IVRKeyPressedElement::SetOriginalContent(const string& _originalContent)
+{
+    m_originalContent = _originalContent;
+    m_originalContentHasBeenSet = true;
+}
+
+bool IVRKeyPressedElement::OriginalContentHasBeenSet() const
+{
+    return m_originalContentHasBeenSet;
+}
+
+string IVRKeyPressedElement::GetTTSPrompt() const
+{
+    return m_tTSPrompt;
+}
+
+void IVRKeyPressedElement::SetTTSPrompt(const string& _tTSPrompt)
+{
+    m_tTSPrompt = _tTSPrompt;
+    m_tTSPromptHasBeenSet = true;
+}
+
+bool IVRKeyPressedElement::TTSPromptHasBeenSet() const
+{
+    return m_tTSPromptHasBeenSet;
 }
 

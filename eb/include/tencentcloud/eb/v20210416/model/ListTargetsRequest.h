@@ -64,27 +64,6 @@ namespace TencentCloud
                     bool EventBusIdHasBeenSet() const;
 
                     /**
-                     * 获取根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）
-                     * @return OrderBy 根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）
-                     * 
-                     */
-                    std::string GetOrderBy() const;
-
-                    /**
-                     * 设置根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）
-                     * @param _orderBy 根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）
-                     * 
-                     */
-                    void SetOrderBy(const std::string& _orderBy);
-
-                    /**
-                     * 判断参数 OrderBy 是否已赋值
-                     * @return OrderBy 是否已赋值
-                     * 
-                     */
-                    bool OrderByHasBeenSet() const;
-
-                    /**
                      * 获取事件规则ID
                      * @return RuleId 事件规则ID
                      * 
@@ -104,6 +83,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RuleIdHasBeenSet() const;
+
+                    /**
+                     * 获取根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）
+                     * @return OrderBy 根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）
+                     * 
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）
+                     * @param _orderBy 根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）
+                     * 
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     * 
+                     */
+                    bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。
@@ -177,16 +177,16 @@ namespace TencentCloud
                     bool m_eventBusIdHasBeenSet;
 
                     /**
-                     * 根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）
-                     */
-                    std::string m_orderBy;
-                    bool m_orderByHasBeenSet;
-
-                    /**
                      * 事件规则ID
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * 根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
 
                     /**
                      * 返回数量，默认为20，最大值为100。

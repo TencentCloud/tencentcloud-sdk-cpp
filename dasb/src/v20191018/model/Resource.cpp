@@ -53,7 +53,10 @@ Resource::Resource() :
     m_clbSetHasBeenSet(false),
     m_domainCountHasBeenSet(false),
     m_usedDomainCountHasBeenSet(false),
-    m_trialHasBeenSet(false)
+    m_trialHasBeenSet(false),
+    m_cdcClusterIdHasBeenSet(false),
+    m_logDeliveryHasBeenSet(false),
+    m_deployModelHasBeenSet(false)
 {
 }
 
@@ -411,6 +414,36 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_trialHasBeenSet = true;
     }
 
+    if (value.HasMember("CdcClusterId") && !value["CdcClusterId"].IsNull())
+    {
+        if (!value["CdcClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.CdcClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcClusterId = string(value["CdcClusterId"].GetString());
+        m_cdcClusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogDelivery") && !value["LogDelivery"].IsNull())
+    {
+        if (!value["LogDelivery"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.LogDelivery` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logDelivery = string(value["LogDelivery"].GetString());
+        m_logDeliveryHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployModel") && !value["DeployModel"].IsNull())
+    {
+        if (!value["DeployModel"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.DeployModel` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployModel = value["DeployModel"].GetInt64();
+        m_deployModelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -702,6 +735,30 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Trial";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_trial, allocator);
+    }
+
+    if (m_cdcClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdcClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logDeliveryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogDelivery";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logDelivery.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deployModel, allocator);
     }
 
 }
@@ -1233,5 +1290,53 @@ void Resource::SetTrial(const uint64_t& _trial)
 bool Resource::TrialHasBeenSet() const
 {
     return m_trialHasBeenSet;
+}
+
+string Resource::GetCdcClusterId() const
+{
+    return m_cdcClusterId;
+}
+
+void Resource::SetCdcClusterId(const string& _cdcClusterId)
+{
+    m_cdcClusterId = _cdcClusterId;
+    m_cdcClusterIdHasBeenSet = true;
+}
+
+bool Resource::CdcClusterIdHasBeenSet() const
+{
+    return m_cdcClusterIdHasBeenSet;
+}
+
+string Resource::GetLogDelivery() const
+{
+    return m_logDelivery;
+}
+
+void Resource::SetLogDelivery(const string& _logDelivery)
+{
+    m_logDelivery = _logDelivery;
+    m_logDeliveryHasBeenSet = true;
+}
+
+bool Resource::LogDeliveryHasBeenSet() const
+{
+    return m_logDeliveryHasBeenSet;
+}
+
+int64_t Resource::GetDeployModel() const
+{
+    return m_deployModel;
+}
+
+void Resource::SetDeployModel(const int64_t& _deployModel)
+{
+    m_deployModel = _deployModel;
+    m_deployModelHasBeenSet = true;
+}
+
+bool Resource::DeployModelHasBeenSet() const
+{
+    return m_deployModelHasBeenSet;
 }
 

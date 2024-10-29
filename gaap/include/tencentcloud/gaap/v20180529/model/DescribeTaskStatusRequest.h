@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID，值为异步接口返回的RequestId
-                     * @return TaskId 任务ID，值为异步接口返回的RequestId
+                     * 获取任务ID，值为异步接口返回的RequestId，此参数不能传空值。
+                     * @return TaskId 任务ID，值为异步接口返回的RequestId，此参数不能传空值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID，值为异步接口返回的RequestId
-                     * @param _taskId 任务ID，值为异步接口返回的RequestId
+                     * 设置任务ID，值为异步接口返回的RequestId，此参数不能传空值。
+                     * @param _taskId 任务ID，值为异步接口返回的RequestId，此参数不能传空值。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID，值为异步接口返回的RequestId
+                     * 任务ID，值为异步接口返回的RequestId，此参数不能传空值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

@@ -33,7 +33,8 @@ StartPublishCdnStreamRequest::StartPublishCdnStreamRequest() :
     m_singleSubscribeParamsHasBeenSet(false),
     m_publishCdnParamsHasBeenSet(false),
     m_seiParamsHasBeenSet(false),
-    m_feedBackRoomParamsHasBeenSet(false)
+    m_feedBackRoomParamsHasBeenSet(false),
+    m_recordParamsHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,15 @@ string StartPublishCdnStreamRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_recordParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_recordParams.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -333,6 +343,22 @@ void StartPublishCdnStreamRequest::SetFeedBackRoomParams(const vector<McuFeedBac
 bool StartPublishCdnStreamRequest::FeedBackRoomParamsHasBeenSet() const
 {
     return m_feedBackRoomParamsHasBeenSet;
+}
+
+McuRecordParams StartPublishCdnStreamRequest::GetRecordParams() const
+{
+    return m_recordParams;
+}
+
+void StartPublishCdnStreamRequest::SetRecordParams(const McuRecordParams& _recordParams)
+{
+    m_recordParams = _recordParams;
+    m_recordParamsHasBeenSet = true;
+}
+
+bool StartPublishCdnStreamRequest::RecordParamsHasBeenSet() const
+{
+    return m_recordParamsHasBeenSet;
 }
 
 

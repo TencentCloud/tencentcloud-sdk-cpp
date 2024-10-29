@@ -35,6 +35,7 @@ set(bsca_public_header_model
   include/tencentcloud/bsca/v20210811/model/DescribeKBLicenseResponse.h
   include/tencentcloud/bsca/v20210811/model/ComponentVersion.h
   include/tencentcloud/bsca/v20210811/model/MatchKBPURLListRequest.h
+  include/tencentcloud/bsca/v20210811/model/ComponentVersionInfo.h
   include/tencentcloud/bsca/v20210811/model/VulnerabilityUnion.h
   include/tencentcloud/bsca/v20210811/model/LicenseDetail.h
   include/tencentcloud/bsca/v20210811/model/DescribeKBVulnerabilityRequest.h
@@ -42,6 +43,7 @@ set(bsca_public_header_model
   include/tencentcloud/bsca/v20210811/model/DescribeKBComponentResponse.h
   include/tencentcloud/bsca/v20210811/model/DescribeKBComponentVersionListResponse.h
   include/tencentcloud/bsca/v20210811/model/VulnerabilitySummary.h
+  include/tencentcloud/bsca/v20210811/model/ComponentTagFilter.h
   include/tencentcloud/bsca/v20210811/model/DescribeKBLicenseRequest.h
   include/tencentcloud/bsca/v20210811/model/CVSSV2Info.h
   include/tencentcloud/bsca/v20210811/model/DescribeKBComponentRequest.h
@@ -69,6 +71,7 @@ set(bsca_src
   src/v20210811/model/DescribeKBLicenseResponse.cpp
   src/v20210811/model/ComponentVersion.cpp
   src/v20210811/model/MatchKBPURLListRequest.cpp
+  src/v20210811/model/ComponentVersionInfo.cpp
   src/v20210811/model/VulnerabilityUnion.cpp
   src/v20210811/model/LicenseDetail.cpp
   src/v20210811/model/DescribeKBVulnerabilityRequest.cpp
@@ -76,6 +79,7 @@ set(bsca_src
   src/v20210811/model/DescribeKBComponentResponse.cpp
   src/v20210811/model/DescribeKBComponentVersionListResponse.cpp
   src/v20210811/model/VulnerabilitySummary.cpp
+  src/v20210811/model/ComponentTagFilter.cpp
   src/v20210811/model/DescribeKBLicenseRequest.cpp
   src/v20210811/model/CVSSV2Info.cpp
   src/v20210811/model/DescribeKBComponentRequest.cpp

@@ -50,7 +50,9 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_customShowTagsHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_payModeEffectiveHasBeenSet(false),
-    m_responseDurationWarningThresholdHasBeenSet(false)
+    m_responseDurationWarningThresholdHasBeenSet(false),
+    m_freeHasBeenSet(false),
+    m_defaultTSFHasBeenSet(false)
 {
 }
 
@@ -372,6 +374,26 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_responseDurationWarningThresholdHasBeenSet = true;
     }
 
+    if (value.HasMember("Free") && !value["Free"].IsNull())
+    {
+        if (!value["Free"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.Free` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_free = value["Free"].GetInt64();
+        m_freeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultTSF") && !value["DefaultTSF"].IsNull())
+    {
+        if (!value["DefaultTSF"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.DefaultTSF` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultTSF = value["DefaultTSF"].GetInt64();
+        m_defaultTSFHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -629,6 +651,22 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ResponseDurationWarningThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_responseDurationWarningThreshold, allocator);
+    }
+
+    if (m_freeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Free";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_free, allocator);
+    }
+
+    if (m_defaultTSFHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultTSF";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultTSF, allocator);
     }
 
 }
@@ -1112,5 +1150,37 @@ void ApmInstanceDetail::SetResponseDurationWarningThreshold(const int64_t& _resp
 bool ApmInstanceDetail::ResponseDurationWarningThresholdHasBeenSet() const
 {
     return m_responseDurationWarningThresholdHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetFree() const
+{
+    return m_free;
+}
+
+void ApmInstanceDetail::SetFree(const int64_t& _free)
+{
+    m_free = _free;
+    m_freeHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::FreeHasBeenSet() const
+{
+    return m_freeHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetDefaultTSF() const
+{
+    return m_defaultTSF;
+}
+
+void ApmInstanceDetail::SetDefaultTSF(const int64_t& _defaultTSF)
+{
+    m_defaultTSF = _defaultTSF;
+    m_defaultTSFHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::DefaultTSFHasBeenSet() const
+{
+    return m_defaultTSFHasBeenSet;
 }
 

@@ -24,7 +24,8 @@ using namespace std;
 
 ReplaceDirectConnectGatewayCcnRoutesRequest::ReplaceDirectConnectGatewayCcnRoutesRequest() :
     m_directConnectGatewayIdHasBeenSet(false),
-    m_routesHasBeenSet(false)
+    m_routesHasBeenSet(false),
+    m_addressTypeHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string ReplaceDirectConnectGatewayCcnRoutesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_addressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_addressType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -96,6 +105,22 @@ void ReplaceDirectConnectGatewayCcnRoutesRequest::SetRoutes(const vector<DirectC
 bool ReplaceDirectConnectGatewayCcnRoutesRequest::RoutesHasBeenSet() const
 {
     return m_routesHasBeenSet;
+}
+
+string ReplaceDirectConnectGatewayCcnRoutesRequest::GetAddressType() const
+{
+    return m_addressType;
+}
+
+void ReplaceDirectConnectGatewayCcnRoutesRequest::SetAddressType(const string& _addressType)
+{
+    m_addressType = _addressType;
+    m_addressTypeHasBeenSet = true;
+}
+
+bool ReplaceDirectConnectGatewayCcnRoutesRequest::AddressTypeHasBeenSet() const
+{
+    return m_addressTypeHasBeenSet;
 }
 
 

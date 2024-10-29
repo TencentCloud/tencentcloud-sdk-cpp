@@ -421,6 +421,31 @@ namespace TencentCloud
                      */
                     bool GlobalParamHasBeenSet() const;
 
+                    /**
+                     * 获取embed表示页面看板嵌出，chatBIEmbed表示ChatBI嵌出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Intention embed表示页面看板嵌出，chatBIEmbed表示ChatBI嵌出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIntention() const;
+
+                    /**
+                     * 设置embed表示页面看板嵌出，chatBIEmbed表示ChatBI嵌出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _intention embed表示页面看板嵌出，chatBIEmbed表示ChatBI嵌出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIntention(const std::string& _intention);
+
+                    /**
+                     * 判断参数 Intention 是否已赋值
+                     * @return Intention 是否已赋值
+                     * 
+                     */
+                    bool IntentionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -527,6 +552,13 @@ namespace TencentCloud
                      */
                     std::string m_globalParam;
                     bool m_globalParamHasBeenSet;
+
+                    /**
+                     * embed表示页面看板嵌出，chatBIEmbed表示ChatBI嵌出
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_intention;
+                    bool m_intentionHasBeenSet;
 
                 };
             }

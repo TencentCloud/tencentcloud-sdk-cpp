@@ -24,10 +24,15 @@ using namespace std;
 
 CreateAlarmNoticeRequest::CreateAlarmNoticeRequest() :
     m_nameHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_noticeReceiversHasBeenSet(false),
     m_webCallbacksHasBeenSet(false),
-    m_noticeRulesHasBeenSet(false)
+    m_noticeRulesHasBeenSet(false),
+    m_jumpDomainHasBeenSet(false),
+    m_deliverStatusHasBeenSet(false),
+    m_deliverConfigHasBeenSet(false),
+    m_alarmShieldStatusHasBeenSet(false)
 {
 }
 
@@ -44,6 +49,21 @@ string CreateAlarmNoticeRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_typeHasBeenSet)
@@ -99,6 +119,39 @@ string CreateAlarmNoticeRequest::ToJsonString() const
         }
     }
 
+    if (m_jumpDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JumpDomain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jumpDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deliverStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeliverStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deliverStatus, allocator);
+    }
+
+    if (m_deliverConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeliverConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_deliverConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_alarmShieldStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmShieldStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_alarmShieldStatus, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -121,6 +174,22 @@ void CreateAlarmNoticeRequest::SetName(const string& _name)
 bool CreateAlarmNoticeRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+vector<Tag> CreateAlarmNoticeRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateAlarmNoticeRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateAlarmNoticeRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 string CreateAlarmNoticeRequest::GetType() const
@@ -185,6 +254,70 @@ void CreateAlarmNoticeRequest::SetNoticeRules(const vector<NoticeRule>& _noticeR
 bool CreateAlarmNoticeRequest::NoticeRulesHasBeenSet() const
 {
     return m_noticeRulesHasBeenSet;
+}
+
+string CreateAlarmNoticeRequest::GetJumpDomain() const
+{
+    return m_jumpDomain;
+}
+
+void CreateAlarmNoticeRequest::SetJumpDomain(const string& _jumpDomain)
+{
+    m_jumpDomain = _jumpDomain;
+    m_jumpDomainHasBeenSet = true;
+}
+
+bool CreateAlarmNoticeRequest::JumpDomainHasBeenSet() const
+{
+    return m_jumpDomainHasBeenSet;
+}
+
+uint64_t CreateAlarmNoticeRequest::GetDeliverStatus() const
+{
+    return m_deliverStatus;
+}
+
+void CreateAlarmNoticeRequest::SetDeliverStatus(const uint64_t& _deliverStatus)
+{
+    m_deliverStatus = _deliverStatus;
+    m_deliverStatusHasBeenSet = true;
+}
+
+bool CreateAlarmNoticeRequest::DeliverStatusHasBeenSet() const
+{
+    return m_deliverStatusHasBeenSet;
+}
+
+DeliverConfig CreateAlarmNoticeRequest::GetDeliverConfig() const
+{
+    return m_deliverConfig;
+}
+
+void CreateAlarmNoticeRequest::SetDeliverConfig(const DeliverConfig& _deliverConfig)
+{
+    m_deliverConfig = _deliverConfig;
+    m_deliverConfigHasBeenSet = true;
+}
+
+bool CreateAlarmNoticeRequest::DeliverConfigHasBeenSet() const
+{
+    return m_deliverConfigHasBeenSet;
+}
+
+uint64_t CreateAlarmNoticeRequest::GetAlarmShieldStatus() const
+{
+    return m_alarmShieldStatus;
+}
+
+void CreateAlarmNoticeRequest::SetAlarmShieldStatus(const uint64_t& _alarmShieldStatus)
+{
+    m_alarmShieldStatus = _alarmShieldStatus;
+    m_alarmShieldStatusHasBeenSet = true;
+}
+
+bool CreateAlarmNoticeRequest::AlarmShieldStatusHasBeenSet() const
+{
+    return m_alarmShieldStatusHasBeenSet;
 }
 
 

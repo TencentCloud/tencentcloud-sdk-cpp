@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool ParentProcPathHasBeenSet() const;
 
                     /**
-                     * 获取处理状态：0-待处理 2-白名单 3-已处理 4-已忽略
-                     * @return Status 处理状态：0-待处理 2-白名单 3-已处理 4-已忽略
+                     * 获取处理状态：0-待处理 2-白名单 3-已处理 4-已忽略 6-已拦截
+                     * @return Status 处理状态：0-待处理 2-白名单 3-已处理 4-已忽略 6-已拦截
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置处理状态：0-待处理 2-白名单 3-已处理 4-已忽略
-                     * @param _status 处理状态：0-待处理 2-白名单 3-已处理 4-已忽略
+                     * 设置处理状态：0-待处理 2-白名单 3-已处理 4-已忽略 6-已拦截
+                     * @param _status 处理状态：0-待处理 2-白名单 3-已处理 4-已忽略 6-已拦截
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -635,7 +635,7 @@ namespace TencentCloud
                     bool m_parentProcPathHasBeenSet;
 
                     /**
-                     * 处理状态：0-待处理 2-白名单 3-已处理 4-已忽略
+                     * 处理状态：0-待处理 2-白名单 3-已处理 4-已忽略 6-已拦截
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

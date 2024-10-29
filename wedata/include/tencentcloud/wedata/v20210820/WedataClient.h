@@ -159,6 +159,10 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeColumnsMetaResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataCheckStatRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataCheckStatResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataServicePublishedApiDetailRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataServicePublishedApiDetailResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataServicePublishedApiListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataServicePublishedApiListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataSourceInfoListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataSourceInfoListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataSourceListRequest.h>
@@ -709,6 +713,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataCheckStatResponse> DescribeDataCheckStatOutcome;
                 typedef std::future<DescribeDataCheckStatOutcome> DescribeDataCheckStatOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDataCheckStatRequest&, DescribeDataCheckStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataCheckStatAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataServicePublishedApiDetailResponse> DescribeDataServicePublishedApiDetailOutcome;
+                typedef std::future<DescribeDataServicePublishedApiDetailOutcome> DescribeDataServicePublishedApiDetailOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDataServicePublishedApiDetailRequest&, DescribeDataServicePublishedApiDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataServicePublishedApiDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataServicePublishedApiListResponse> DescribeDataServicePublishedApiListOutcome;
+                typedef std::future<DescribeDataServicePublishedApiListOutcome> DescribeDataServicePublishedApiListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDataServicePublishedApiListRequest&, DescribeDataServicePublishedApiListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataServicePublishedApiListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataSourceInfoListResponse> DescribeDataSourceInfoListOutcome;
                 typedef std::future<DescribeDataSourceInfoListOutcome> DescribeDataSourceInfoListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDataSourceInfoListRequest&, DescribeDataSourceInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataSourceInfoListAsyncHandler;
@@ -1821,6 +1831,24 @@ namespace TencentCloud
                 DescribeDataCheckStatOutcome DescribeDataCheckStat(const Model::DescribeDataCheckStatRequest &request);
                 void DescribeDataCheckStatAsync(const Model::DescribeDataCheckStatRequest& request, const DescribeDataCheckStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataCheckStatOutcomeCallable DescribeDataCheckStatCallable(const Model::DescribeDataCheckStatRequest& request);
+
+                /**
+                 *查询数据服务API的发布态信息
+                 * @param req DescribeDataServicePublishedApiDetailRequest
+                 * @return DescribeDataServicePublishedApiDetailOutcome
+                 */
+                DescribeDataServicePublishedApiDetailOutcome DescribeDataServicePublishedApiDetail(const Model::DescribeDataServicePublishedApiDetailRequest &request);
+                void DescribeDataServicePublishedApiDetailAsync(const Model::DescribeDataServicePublishedApiDetailRequest& request, const DescribeDataServicePublishedApiDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataServicePublishedApiDetailOutcomeCallable DescribeDataServicePublishedApiDetailCallable(const Model::DescribeDataServicePublishedApiDetailRequest& request);
+
+                /**
+                 *获取数据服务API的发布态信息列表
+                 * @param req DescribeDataServicePublishedApiListRequest
+                 * @return DescribeDataServicePublishedApiListOutcome
+                 */
+                DescribeDataServicePublishedApiListOutcome DescribeDataServicePublishedApiList(const Model::DescribeDataServicePublishedApiListRequest &request);
+                void DescribeDataServicePublishedApiListAsync(const Model::DescribeDataServicePublishedApiListRequest& request, const DescribeDataServicePublishedApiListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataServicePublishedApiListOutcomeCallable DescribeDataServicePublishedApiListCallable(const Model::DescribeDataServicePublishedApiListRequest& request);
 
                 /**
                  *获取数据源信息-数据源分页列表

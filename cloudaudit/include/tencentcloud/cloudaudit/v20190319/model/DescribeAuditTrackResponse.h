@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cloudaudit/v20190319/model/Storage.h>
+#include <tencentcloud/cloudaudit/v20190319/model/Filter.h>
 
 
 namespace TencentCloud
@@ -158,6 +159,22 @@ namespace TencentCloud
                      */
                     bool TrackForAllMembersHasBeenSet() const;
 
+                    /**
+                     * 获取数据投递过滤条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Filters 数据投递过滤条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    Filter GetFilters() const;
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,6 +225,13 @@ namespace TencentCloud
                      */
                     uint64_t m_trackForAllMembers;
                     bool m_trackForAllMembersHasBeenSet;
+
+                    /**
+                     * 数据投递过滤条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Filter m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

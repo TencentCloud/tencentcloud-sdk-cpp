@@ -49,6 +49,8 @@
 #include <tencentcloud/billing/v20180709/model/DescribeAllocationSummaryByResourceResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocationTrendByMonthRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAllocationTrendByMonthResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillAdjustInfoRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeBillAdjustInfoResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillDetailRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillDetailResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillDetailForOrganizationRequest.h>
@@ -166,6 +168,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAllocationTrendByMonthResponse> DescribeAllocationTrendByMonthOutcome;
                 typedef std::future<DescribeAllocationTrendByMonthOutcome> DescribeAllocationTrendByMonthOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeAllocationTrendByMonthRequest&, DescribeAllocationTrendByMonthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationTrendByMonthAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBillAdjustInfoResponse> DescribeBillAdjustInfoOutcome;
+                typedef std::future<DescribeBillAdjustInfoOutcome> DescribeBillAdjustInfoOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeBillAdjustInfoRequest&, DescribeBillAdjustInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillAdjustInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBillDetailResponse> DescribeBillDetailOutcome;
                 typedef std::future<DescribeBillDetailOutcome> DescribeBillDetailOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeBillDetailRequest&, DescribeBillDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillDetailAsyncHandler;
@@ -381,6 +386,15 @@ namespace TencentCloud
                 DescribeAllocationTrendByMonthOutcome DescribeAllocationTrendByMonth(const Model::DescribeAllocationTrendByMonthRequest &request);
                 void DescribeAllocationTrendByMonthAsync(const Model::DescribeAllocationTrendByMonthRequest& request, const DescribeAllocationTrendByMonthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAllocationTrendByMonthOutcomeCallable DescribeAllocationTrendByMonthCallable(const Model::DescribeAllocationTrendByMonthRequest& request);
+
+                /**
+                 *可以通过API获取当前UIN是否有调账，客户可以更快地主动地获取调账情况。
+                 * @param req DescribeBillAdjustInfoRequest
+                 * @return DescribeBillAdjustInfoOutcome
+                 */
+                DescribeBillAdjustInfoOutcome DescribeBillAdjustInfo(const Model::DescribeBillAdjustInfoRequest &request);
+                void DescribeBillAdjustInfoAsync(const Model::DescribeBillAdjustInfoRequest& request, const DescribeBillAdjustInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillAdjustInfoOutcomeCallable DescribeBillAdjustInfoCallable(const Model::DescribeBillAdjustInfoRequest& request);
 
                 /**
                  *获取账单明细数据。

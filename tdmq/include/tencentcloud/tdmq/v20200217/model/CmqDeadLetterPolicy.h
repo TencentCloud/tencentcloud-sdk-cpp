@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool DeadLetterQueueHasBeenSet() const;
 
                     /**
-                     * 获取死信队列策略。
+                     * 获取死信队列策略。0:最大接收次数;1:最大未消费时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Policy 死信队列策略。
+                     * @return Policy 死信队列策略。0:最大接收次数;1:最大未消费时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPolicy() const;
 
                     /**
-                     * 设置死信队列策略。
+                     * 设置死信队列策略。0:最大接收次数;1:最大未消费时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _policy 死信队列策略。
+                     * @param _policy 死信队列策略。0:最大接收次数;1:最大未消费时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool MaxTimeToLiveHasBeenSet() const;
 
                     /**
-                     * 获取最大接收次数。
+                     * 获取最大接收次数。Policy为0时必选，范围在1到1000。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxReceiveCount 最大接收次数。
+                     * @return MaxReceiveCount 最大接收次数。Policy为0时必选，范围在1到1000。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxReceiveCount() const;
 
                     /**
-                     * 设置最大接收次数。
+                     * 设置最大接收次数。Policy为0时必选，范围在1到1000。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxReceiveCount 最大接收次数。
+                     * @param _maxReceiveCount 最大接收次数。Policy为0时必选，范围在1到1000。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -156,7 +156,7 @@ namespace TencentCloud
                     bool m_deadLetterQueueHasBeenSet;
 
                     /**
-                     * 死信队列策略。
+                     * 死信队列策略。0:最大接收次数;1:最大未消费时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_policy;
@@ -170,7 +170,7 @@ namespace TencentCloud
                     bool m_maxTimeToLiveHasBeenSet;
 
                     /**
-                     * 最大接收次数。
+                     * 最大接收次数。Policy为0时必选，范围在1到1000。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxReceiveCount;

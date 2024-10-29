@@ -8124,6 +8124,49 @@ TkeClient::ModifyClusterEndpointSPOutcomeCallable TkeClient::ModifyClusterEndpoi
     return task->get_future();
 }
 
+TkeClient::ModifyClusterImageOutcome TkeClient::ModifyClusterImage(const ModifyClusterImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterImageResponse rsp = ModifyClusterImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterImageOutcome(rsp);
+        else
+            return ModifyClusterImageOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterImageOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterImageAsync(const ModifyClusterImageRequest& request, const ModifyClusterImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyClusterImageOutcomeCallable TkeClient::ModifyClusterImageCallable(const ModifyClusterImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterImageOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::ModifyClusterNodePoolOutcome TkeClient::ModifyClusterNodePool(const ModifyClusterNodePoolRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyClusterNodePool");

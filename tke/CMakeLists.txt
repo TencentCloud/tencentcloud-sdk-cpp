@@ -93,6 +93,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/ContainerState.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRouteTableResponse.h
   include/tencentcloud/tke/v20180525/model/SubnetInfos.h
+  include/tencentcloud/tke/v20180525/model/ModifyClusterImageResponse.h
   include/tencentcloud/tke/v20180525/model/CbsVolume.h
   include/tencentcloud/tke/v20180525/model/DescribeAddonResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeEKSClustersRequest.h
@@ -204,6 +205,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplateSyncRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeExternalNodeSupportConfigRequest.h
   include/tencentcloud/tke/v20180525/model/UpgradeAbleInstancesItem.h
+  include/tencentcloud/tke/v20180525/model/ModifyClusterImageRequest.h
   include/tencentcloud/tke/v20180525/model/UpgradeClusterInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/CustomDriver.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionRequest.h
@@ -791,6 +793,7 @@ set(tke_src
   src/v20180525/model/ContainerState.cpp
   src/v20180525/model/CreateClusterRouteTableResponse.cpp
   src/v20180525/model/SubnetInfos.cpp
+  src/v20180525/model/ModifyClusterImageResponse.cpp
   src/v20180525/model/CbsVolume.cpp
   src/v20180525/model/DescribeAddonResponse.cpp
   src/v20180525/model/DescribeEKSClustersRequest.cpp
@@ -902,6 +905,7 @@ set(tke_src
   src/v20180525/model/DescribePrometheusTemplateSyncRequest.cpp
   src/v20180525/model/DescribeExternalNodeSupportConfigRequest.cpp
   src/v20180525/model/UpgradeAbleInstancesItem.cpp
+  src/v20180525/model/ModifyClusterImageRequest.cpp
   src/v20180525/model/UpgradeClusterInstancesResponse.cpp
   src/v20180525/model/CustomDriver.cpp
   src/v20180525/model/DescribeClusterAsGroupOptionRequest.cpp

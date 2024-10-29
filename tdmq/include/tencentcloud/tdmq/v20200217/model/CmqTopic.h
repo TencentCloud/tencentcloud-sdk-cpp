@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool MsgRetentionSecondsHasBeenSet() const;
 
                     /**
-                     * 获取消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为65536。
+                     * 获取消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为1048576。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxMsgSize 消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为65536。
+                     * @return MaxMsgSize 消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为1048576。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxMsgSize() const;
 
                     /**
-                     * 设置消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为65536。
+                     * 设置消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为1048576。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxMsgSize 消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为65536。
+                     * @param _maxMsgSize 消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为1048576。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -504,7 +504,7 @@ FilterType = 2表示用户使用 BindingKey 过滤。
                     bool m_msgRetentionSecondsHasBeenSet;
 
                     /**
-                     * 消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为65536。
+                     * 消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为1048576。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxMsgSize;

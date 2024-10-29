@@ -30,9 +30,9 @@ VpcRuleItem::VpcRuleItem() :
     m_portHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_orderIndexHasBeenSet(false),
-    m_uuidHasBeenSet(false),
     m_enableHasBeenSet(false),
     m_edgeIdHasBeenSet(false),
+    m_uuidHasBeenSet(false),
     m_detectedTimesHasBeenSet(false),
     m_edgeNameHasBeenSet(false),
     m_internalUuidHasBeenSet(false),
@@ -43,7 +43,8 @@ VpcRuleItem::VpcRuleItem() :
     m_paramTemplateIdHasBeenSet(false),
     m_paramTemplateNameHasBeenSet(false),
     m_targetNameHasBeenSet(false),
-    m_sourceNameHasBeenSet(false)
+    m_sourceNameHasBeenSet(false),
+    m_ipVersionHasBeenSet(false)
 {
 }
 
@@ -142,16 +143,6 @@ CoreInternalOutcome VpcRuleItem::Deserialize(const rapidjson::Value &value)
         m_orderIndexHasBeenSet = true;
     }
 
-    if (value.HasMember("Uuid") && !value["Uuid"].IsNull())
-    {
-        if (!value["Uuid"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.Uuid` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_uuid = value["Uuid"].GetInt64();
-        m_uuidHasBeenSet = true;
-    }
-
     if (value.HasMember("Enable") && !value["Enable"].IsNull())
     {
         if (!value["Enable"].IsString())
@@ -170,6 +161,16 @@ CoreInternalOutcome VpcRuleItem::Deserialize(const rapidjson::Value &value)
         }
         m_edgeId = string(value["EdgeId"].GetString());
         m_edgeIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uuid") && !value["Uuid"].IsNull())
+    {
+        if (!value["Uuid"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.Uuid` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_uuid = value["Uuid"].GetInt64();
+        m_uuidHasBeenSet = true;
     }
 
     if (value.HasMember("DetectedTimes") && !value["DetectedTimes"].IsNull())
@@ -292,6 +293,16 @@ CoreInternalOutcome VpcRuleItem::Deserialize(const rapidjson::Value &value)
         m_sourceNameHasBeenSet = true;
     }
 
+    if (value.HasMember("IpVersion") && !value["IpVersion"].IsNull())
+    {
+        if (!value["IpVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.IpVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipVersion = value["IpVersion"].GetInt64();
+        m_ipVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -371,14 +382,6 @@ void VpcRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, m_orderIndex, allocator);
     }
 
-    if (m_uuidHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Uuid";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_uuid, allocator);
-    }
-
     if (m_enableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -393,6 +396,14 @@ void VpcRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "EdgeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_edgeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_uuid, allocator);
     }
 
     if (m_detectedTimesHasBeenSet)
@@ -488,6 +499,14 @@ void VpcRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "SourceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipVersion, allocator);
     }
 
 }
@@ -637,22 +656,6 @@ bool VpcRuleItem::OrderIndexHasBeenSet() const
     return m_orderIndexHasBeenSet;
 }
 
-int64_t VpcRuleItem::GetUuid() const
-{
-    return m_uuid;
-}
-
-void VpcRuleItem::SetUuid(const int64_t& _uuid)
-{
-    m_uuid = _uuid;
-    m_uuidHasBeenSet = true;
-}
-
-bool VpcRuleItem::UuidHasBeenSet() const
-{
-    return m_uuidHasBeenSet;
-}
-
 string VpcRuleItem::GetEnable() const
 {
     return m_enable;
@@ -683,6 +686,22 @@ void VpcRuleItem::SetEdgeId(const string& _edgeId)
 bool VpcRuleItem::EdgeIdHasBeenSet() const
 {
     return m_edgeIdHasBeenSet;
+}
+
+int64_t VpcRuleItem::GetUuid() const
+{
+    return m_uuid;
+}
+
+void VpcRuleItem::SetUuid(const int64_t& _uuid)
+{
+    m_uuid = _uuid;
+    m_uuidHasBeenSet = true;
+}
+
+bool VpcRuleItem::UuidHasBeenSet() const
+{
+    return m_uuidHasBeenSet;
 }
 
 int64_t VpcRuleItem::GetDetectedTimes() const
@@ -859,5 +878,21 @@ void VpcRuleItem::SetSourceName(const string& _sourceName)
 bool VpcRuleItem::SourceNameHasBeenSet() const
 {
     return m_sourceNameHasBeenSet;
+}
+
+int64_t VpcRuleItem::GetIpVersion() const
+{
+    return m_ipVersion;
+}
+
+void VpcRuleItem::SetIpVersion(const int64_t& _ipVersion)
+{
+    m_ipVersion = _ipVersion;
+    m_ipVersionHasBeenSet = true;
+}
+
+bool VpcRuleItem::IpVersionHasBeenSet() const
+{
+    return m_ipVersionHasBeenSet;
 }
 

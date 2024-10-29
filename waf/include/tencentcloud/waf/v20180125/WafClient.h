@@ -285,6 +285,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyUserLevelResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyUserSignatureRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyUserSignatureRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyUserSignatureRuleV2Request.h>
+#include <tencentcloud/waf/v20180125/model/ModifyUserSignatureRuleV2Response.h>
 #include <tencentcloud/waf/v20180125/model/ModifyWafAutoDenyRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyWafAutoDenyRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyWafThreatenIntelligenceRequest.h>
@@ -718,6 +720,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyUserSignatureRuleResponse> ModifyUserSignatureRuleOutcome;
                 typedef std::future<ModifyUserSignatureRuleOutcome> ModifyUserSignatureRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyUserSignatureRuleRequest&, ModifyUserSignatureRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserSignatureRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserSignatureRuleV2Response> ModifyUserSignatureRuleV2Outcome;
+                typedef std::future<ModifyUserSignatureRuleV2Outcome> ModifyUserSignatureRuleV2OutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyUserSignatureRuleV2Request&, ModifyUserSignatureRuleV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserSignatureRuleV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyWafAutoDenyRulesResponse> ModifyWafAutoDenyRulesOutcome;
                 typedef std::future<ModifyWafAutoDenyRulesOutcome> ModifyWafAutoDenyRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyWafAutoDenyRulesRequest&, ModifyWafAutoDenyRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWafAutoDenyRulesAsyncHandler;
@@ -1945,6 +1950,15 @@ namespace TencentCloud
                 ModifyUserSignatureRuleOutcome ModifyUserSignatureRule(const Model::ModifyUserSignatureRuleRequest &request);
                 void ModifyUserSignatureRuleAsync(const Model::ModifyUserSignatureRuleRequest& request, const ModifyUserSignatureRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUserSignatureRuleOutcomeCallable ModifyUserSignatureRuleCallable(const Model::ModifyUserSignatureRuleRequest& request);
+
+                /**
+                 *修改用户防护规则，开启关闭具体的某条规则
+                 * @param req ModifyUserSignatureRuleV2Request
+                 * @return ModifyUserSignatureRuleV2Outcome
+                 */
+                ModifyUserSignatureRuleV2Outcome ModifyUserSignatureRuleV2(const Model::ModifyUserSignatureRuleV2Request &request);
+                void ModifyUserSignatureRuleV2Async(const Model::ModifyUserSignatureRuleV2Request& request, const ModifyUserSignatureRuleV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserSignatureRuleV2OutcomeCallable ModifyUserSignatureRuleV2Callable(const Model::ModifyUserSignatureRuleV2Request& request);
 
                 /**
                  *修改ip惩罚规则

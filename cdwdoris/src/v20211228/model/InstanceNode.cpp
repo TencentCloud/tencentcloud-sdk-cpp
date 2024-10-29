@@ -31,7 +31,8 @@ InstanceNode::InstanceNode() :
     m_statusHasBeenSet(false),
     m_ripHasBeenSet(false),
     m_feRoleHasBeenSet(false),
-    m_uUIDHasBeenSet(false)
+    m_uUIDHasBeenSet(false),
+    m_zoneHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome InstanceNode::Deserialize(const rapidjson::Value &value)
         m_uUIDHasBeenSet = true;
     }
 
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceNode.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void InstanceNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "UUID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uUID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void InstanceNode::SetUUID(const string& _uUID)
 bool InstanceNode::UUIDHasBeenSet() const
 {
     return m_uUIDHasBeenSet;
+}
+
+string InstanceNode::GetZone() const
+{
+    return m_zone;
+}
+
+void InstanceNode::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool InstanceNode::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 

@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/es/v20180416/model/CheckMigrateIndexMetaDataRequest.h>
 #include <tencentcloud/es/v20180416/model/CheckMigrateIndexMetaDataResponse.h>
+#include <tencentcloud/es/v20180416/model/CreateClusterSnapshotRequest.h>
+#include <tencentcloud/es/v20180416/model/CreateClusterSnapshotResponse.h>
 #include <tencentcloud/es/v20180416/model/CreateCosMigrateToServerlessInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/CreateCosMigrateToServerlessInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/CreateIndexRequest.h>
@@ -37,6 +39,8 @@
 #include <tencentcloud/es/v20180416/model/CreateServerlessInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/CreateServerlessSpaceV2Request.h>
 #include <tencentcloud/es/v20180416/model/CreateServerlessSpaceV2Response.h>
+#include <tencentcloud/es/v20180416/model/DeleteClusterSnapshotRequest.h>
+#include <tencentcloud/es/v20180416/model/DeleteClusterSnapshotResponse.h>
 #include <tencentcloud/es/v20180416/model/DeleteIndexRequest.h>
 #include <tencentcloud/es/v20180416/model/DeleteIndexResponse.h>
 #include <tencentcloud/es/v20180416/model/DeleteInstanceRequest.h>
@@ -49,6 +53,8 @@
 #include <tencentcloud/es/v20180416/model/DeleteServerlessInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/DeleteServerlessSpaceUserRequest.h>
 #include <tencentcloud/es/v20180416/model/DeleteServerlessSpaceUserResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeClusterSnapshotRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeClusterSnapshotResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeDiagnoseRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeDiagnoseResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeIndexListRequest.h>
@@ -105,6 +111,8 @@
 #include <tencentcloud/es/v20180416/model/RestartLogstashInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartNodesRequest.h>
 #include <tencentcloud/es/v20180416/model/RestartNodesResponse.h>
+#include <tencentcloud/es/v20180416/model/RestoreClusterSnapshotRequest.h>
+#include <tencentcloud/es/v20180416/model/RestoreClusterSnapshotResponse.h>
 #include <tencentcloud/es/v20180416/model/SaveAndDeployLogstashPipelineRequest.h>
 #include <tencentcloud/es/v20180416/model/SaveAndDeployLogstashPipelineResponse.h>
 #include <tencentcloud/es/v20180416/model/StartLogstashPipelinesRequest.h>
@@ -154,6 +162,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckMigrateIndexMetaDataResponse> CheckMigrateIndexMetaDataOutcome;
                 typedef std::future<CheckMigrateIndexMetaDataOutcome> CheckMigrateIndexMetaDataOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::CheckMigrateIndexMetaDataRequest&, CheckMigrateIndexMetaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckMigrateIndexMetaDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateClusterSnapshotResponse> CreateClusterSnapshotOutcome;
+                typedef std::future<CreateClusterSnapshotOutcome> CreateClusterSnapshotOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::CreateClusterSnapshotRequest&, CreateClusterSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterSnapshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCosMigrateToServerlessInstanceResponse> CreateCosMigrateToServerlessInstanceOutcome;
                 typedef std::future<CreateCosMigrateToServerlessInstanceOutcome> CreateCosMigrateToServerlessInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::CreateCosMigrateToServerlessInstanceRequest&, CreateCosMigrateToServerlessInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosMigrateToServerlessInstanceAsyncHandler;
@@ -172,6 +183,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateServerlessSpaceV2Response> CreateServerlessSpaceV2Outcome;
                 typedef std::future<CreateServerlessSpaceV2Outcome> CreateServerlessSpaceV2OutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::CreateServerlessSpaceV2Request&, CreateServerlessSpaceV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServerlessSpaceV2AsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteClusterSnapshotResponse> DeleteClusterSnapshotOutcome;
+                typedef std::future<DeleteClusterSnapshotOutcome> DeleteClusterSnapshotOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DeleteClusterSnapshotRequest&, DeleteClusterSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterSnapshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteIndexResponse> DeleteIndexOutcome;
                 typedef std::future<DeleteIndexOutcome> DeleteIndexOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DeleteIndexRequest&, DeleteIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIndexAsyncHandler;
@@ -190,6 +204,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteServerlessSpaceUserResponse> DeleteServerlessSpaceUserOutcome;
                 typedef std::future<DeleteServerlessSpaceUserOutcome> DeleteServerlessSpaceUserOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DeleteServerlessSpaceUserRequest&, DeleteServerlessSpaceUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServerlessSpaceUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterSnapshotResponse> DescribeClusterSnapshotOutcome;
+                typedef std::future<DescribeClusterSnapshotOutcome> DescribeClusterSnapshotOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeClusterSnapshotRequest&, DescribeClusterSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterSnapshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDiagnoseResponse> DescribeDiagnoseOutcome;
                 typedef std::future<DescribeDiagnoseOutcome> DescribeDiagnoseOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeDiagnoseRequest&, DescribeDiagnoseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnoseAsyncHandler;
@@ -274,6 +291,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestartNodesResponse> RestartNodesOutcome;
                 typedef std::future<RestartNodesOutcome> RestartNodesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::RestartNodesRequest&, RestartNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestoreClusterSnapshotResponse> RestoreClusterSnapshotOutcome;
+                typedef std::future<RestoreClusterSnapshotOutcome> RestoreClusterSnapshotOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::RestoreClusterSnapshotRequest&, RestoreClusterSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreClusterSnapshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::SaveAndDeployLogstashPipelineResponse> SaveAndDeployLogstashPipelineOutcome;
                 typedef std::future<SaveAndDeployLogstashPipelineOutcome> SaveAndDeployLogstashPipelineOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::SaveAndDeployLogstashPipelineRequest&, SaveAndDeployLogstashPipelineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaveAndDeployLogstashPipelineAsyncHandler;
@@ -335,6 +355,15 @@ namespace TencentCloud
                 CheckMigrateIndexMetaDataOutcomeCallable CheckMigrateIndexMetaDataCallable(const Model::CheckMigrateIndexMetaDataRequest& request);
 
                 /**
+                 *集群快照手动创建
+                 * @param req CreateClusterSnapshotRequest
+                 * @return CreateClusterSnapshotOutcome
+                 */
+                CreateClusterSnapshotOutcome CreateClusterSnapshot(const Model::CreateClusterSnapshotRequest &request);
+                void CreateClusterSnapshotAsync(const Model::CreateClusterSnapshotRequest& request, const CreateClusterSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateClusterSnapshotOutcomeCallable CreateClusterSnapshotCallable(const Model::CreateClusterSnapshotRequest& request);
+
+                /**
                  *cos迁移流程
                  * @param req CreateCosMigrateToServerlessInstanceRequest
                  * @return CreateCosMigrateToServerlessInstanceOutcome
@@ -389,6 +418,15 @@ namespace TencentCloud
                 CreateServerlessSpaceV2OutcomeCallable CreateServerlessSpaceV2Callable(const Model::CreateServerlessSpaceV2Request& request);
 
                 /**
+                 *删除快照仓库里备份的快照
+                 * @param req DeleteClusterSnapshotRequest
+                 * @return DeleteClusterSnapshotOutcome
+                 */
+                DeleteClusterSnapshotOutcome DeleteClusterSnapshot(const Model::DeleteClusterSnapshotRequest &request);
+                void DeleteClusterSnapshotAsync(const Model::DeleteClusterSnapshotRequest& request, const DeleteClusterSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteClusterSnapshotOutcomeCallable DeleteClusterSnapshotCallable(const Model::DeleteClusterSnapshotRequest& request);
+
+                /**
                  *删除索引
                  * @param req DeleteIndexRequest
                  * @return DeleteIndexOutcome
@@ -441,6 +479,15 @@ namespace TencentCloud
                 DeleteServerlessSpaceUserOutcome DeleteServerlessSpaceUser(const Model::DeleteServerlessSpaceUserRequest &request);
                 void DeleteServerlessSpaceUserAsync(const Model::DeleteServerlessSpaceUserRequest& request, const DeleteServerlessSpaceUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteServerlessSpaceUserOutcomeCallable DeleteServerlessSpaceUserCallable(const Model::DeleteServerlessSpaceUserRequest& request);
+
+                /**
+                 *获取快照备份列表
+                 * @param req DescribeClusterSnapshotRequest
+                 * @return DescribeClusterSnapshotOutcome
+                 */
+                DescribeClusterSnapshotOutcome DescribeClusterSnapshot(const Model::DescribeClusterSnapshotRequest &request);
+                void DescribeClusterSnapshotAsync(const Model::DescribeClusterSnapshotRequest& request, const DescribeClusterSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterSnapshotOutcomeCallable DescribeClusterSnapshotCallable(const Model::DescribeClusterSnapshotRequest& request);
 
                 /**
                  *查询智能运维诊断结果报告
@@ -694,6 +741,15 @@ namespace TencentCloud
                 RestartNodesOutcome RestartNodes(const Model::RestartNodesRequest &request);
                 void RestartNodesAsync(const Model::RestartNodesRequest& request, const RestartNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestartNodesOutcomeCallable RestartNodesCallable(const Model::RestartNodesRequest& request);
+
+                /**
+                 *快照备份恢复，从仓库中恢复快照到集群中
+                 * @param req RestoreClusterSnapshotRequest
+                 * @return RestoreClusterSnapshotOutcome
+                 */
+                RestoreClusterSnapshotOutcome RestoreClusterSnapshot(const Model::RestoreClusterSnapshotRequest &request);
+                void RestoreClusterSnapshotAsync(const Model::RestoreClusterSnapshotRequest& request, const RestoreClusterSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestoreClusterSnapshotOutcomeCallable RestoreClusterSnapshotCallable(const Model::RestoreClusterSnapshotRequest& request);
 
                 /**
                  *用于下发并且部署管道

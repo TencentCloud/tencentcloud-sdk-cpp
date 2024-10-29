@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型，目前支持文件系统：CFS；日志服务：CLS；注册中心：TSE_SRE
-                     * @return ResourceType 资源类型，目前支持文件系统：CFS；日志服务：CLS；注册中心：TSE_SRE
+                     * 获取资源类型，目前支持文件系统：CFS；注册中心：TSE_SRE
+                     * @return ResourceType 资源类型，目前支持文件系统：CFS；注册中心：TSE_SRE
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型，目前支持文件系统：CFS；日志服务：CLS；注册中心：TSE_SRE
-                     * @param _resourceType 资源类型，目前支持文件系统：CFS；日志服务：CLS；注册中心：TSE_SRE
+                     * 设置资源类型，目前支持文件系统：CFS；注册中心：TSE_SRE
+                     * @param _resourceType 资源类型，目前支持文件系统：CFS；注册中心：TSE_SRE
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_environmentIdHasBeenSet;
 
                     /**
-                     * 资源类型，目前支持文件系统：CFS；日志服务：CLS；注册中心：TSE_SRE
+                     * 资源类型，目前支持文件系统：CFS；注册中心：TSE_SRE
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

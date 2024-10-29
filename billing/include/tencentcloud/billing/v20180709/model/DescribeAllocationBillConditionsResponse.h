@@ -298,6 +298,22 @@ namespace TencentCloud
                      */
                     bool AllocationTreeNodeHasBeenSet() const;
 
+                    /**
+                     * 获取分账标签键
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagKey 分账标签键
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetTagKey() const;
+
+                    /**
+                     * 判断参数 TagKey 是否已赋值
+                     * @return TagKey 是否已赋值
+                     * 
+                     */
+                    bool TagKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -404,6 +420,13 @@ namespace TencentCloud
                      */
                     std::vector<AllocationTreeNode> m_allocationTreeNode;
                     bool m_allocationTreeNodeHasBeenSet;
+
+                    /**
+                     * 分账标签键
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_tagKey;
+                    bool m_tagKeyHasBeenSet;
 
                 };
             }

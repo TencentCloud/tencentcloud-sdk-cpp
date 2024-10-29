@@ -27,7 +27,9 @@ SyncImagesRequest::SyncImagesRequest() :
     m_destinationRegionsHasBeenSet(false),
     m_dryRunHasBeenSet(false),
     m_imageNameHasBeenSet(false),
-    m_imageSetRequiredHasBeenSet(false)
+    m_imageSetRequiredHasBeenSet(false),
+    m_encryptHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -86,6 +88,22 @@ string SyncImagesRequest::ToJsonString() const
         string key = "ImageSetRequired";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_imageSetRequired, allocator);
+    }
+
+    if (m_encryptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encrypt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encrypt, allocator);
+    }
+
+    if (m_kmsKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -174,6 +192,38 @@ void SyncImagesRequest::SetImageSetRequired(const bool& _imageSetRequired)
 bool SyncImagesRequest::ImageSetRequiredHasBeenSet() const
 {
     return m_imageSetRequiredHasBeenSet;
+}
+
+bool SyncImagesRequest::GetEncrypt() const
+{
+    return m_encrypt;
+}
+
+void SyncImagesRequest::SetEncrypt(const bool& _encrypt)
+{
+    m_encrypt = _encrypt;
+    m_encryptHasBeenSet = true;
+}
+
+bool SyncImagesRequest::EncryptHasBeenSet() const
+{
+    return m_encryptHasBeenSet;
+}
+
+string SyncImagesRequest::GetKmsKeyId() const
+{
+    return m_kmsKeyId;
+}
+
+void SyncImagesRequest::SetKmsKeyId(const string& _kmsKeyId)
+{
+    m_kmsKeyId = _kmsKeyId;
+    m_kmsKeyIdHasBeenSet = true;
+}
+
+bool SyncImagesRequest::KmsKeyIdHasBeenSet() const
+{
+    return m_kmsKeyIdHasBeenSet;
 }
 
 

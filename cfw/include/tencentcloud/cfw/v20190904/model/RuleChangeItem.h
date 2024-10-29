@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool NewOrderIndexHasBeenSet() const;
 
+                    /**
+                     * 获取Ip版本，0：IPv4，1：IPv6，默认为IPv4
+                     * @return IpVersion Ip版本，0：IPv4，1：IPv6，默认为IPv4
+                     * 
+                     */
+                    int64_t GetIpVersion() const;
+
+                    /**
+                     * 设置Ip版本，0：IPv4，1：IPv6，默认为IPv4
+                     * @param _ipVersion Ip版本，0：IPv4，1：IPv6，默认为IPv4
+                     * 
+                     */
+                    void SetIpVersion(const int64_t& _ipVersion);
+
+                    /**
+                     * 判断参数 IpVersion 是否已赋值
+                     * @return IpVersion 是否已赋值
+                     * 
+                     */
+                    bool IpVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     int64_t m_newOrderIndex;
                     bool m_newOrderIndexHasBeenSet;
+
+                    /**
+                     * Ip版本，0：IPv4，1：IPv6，默认为IPv4
+                     */
+                    int64_t m_ipVersion;
+                    bool m_ipVersionHasBeenSet;
 
                 };
             }

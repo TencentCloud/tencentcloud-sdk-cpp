@@ -685,6 +685,49 @@ TeoClient::CreateL4ProxyRulesOutcomeCallable TeoClient::CreateL4ProxyRulesCallab
     return task->get_future();
 }
 
+TeoClient::CreateLoadBalancerOutcome TeoClient::CreateLoadBalancer(const CreateLoadBalancerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLoadBalancer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLoadBalancerResponse rsp = CreateLoadBalancerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLoadBalancerOutcome(rsp);
+        else
+            return CreateLoadBalancerOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLoadBalancerOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateLoadBalancerAsync(const CreateLoadBalancerRequest& request, const CreateLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLoadBalancer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateLoadBalancerOutcomeCallable TeoClient::CreateLoadBalancerCallable(const CreateLoadBalancerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLoadBalancerOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLoadBalancer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreateOriginGroupOutcome TeoClient::CreateOriginGroup(const CreateOriginGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOriginGroup");
@@ -1495,6 +1538,49 @@ TeoClient::DeleteL4ProxyRulesOutcomeCallable TeoClient::DeleteL4ProxyRulesCallab
         [this, request]()
         {
             return this->DeleteL4ProxyRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DeleteLoadBalancerOutcome TeoClient::DeleteLoadBalancer(const DeleteLoadBalancerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLoadBalancer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLoadBalancerResponse rsp = DeleteLoadBalancerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLoadBalancerOutcome(rsp);
+        else
+            return DeleteLoadBalancerOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLoadBalancerOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLoadBalancer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteLoadBalancerOutcomeCallable TeoClient::DeleteLoadBalancerCallable(const DeleteLoadBalancerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLoadBalancerOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLoadBalancer(request);
         }
     );
 
@@ -2792,6 +2878,49 @@ TeoClient::DescribeL4ProxyRulesOutcomeCallable TeoClient::DescribeL4ProxyRulesCa
     return task->get_future();
 }
 
+TeoClient::DescribeLoadBalancerListOutcome TeoClient::DescribeLoadBalancerList(const DescribeLoadBalancerListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLoadBalancerList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLoadBalancerListResponse rsp = DescribeLoadBalancerListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLoadBalancerListOutcome(rsp);
+        else
+            return DescribeLoadBalancerListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLoadBalancerListOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeLoadBalancerListAsync(const DescribeLoadBalancerListRequest& request, const DescribeLoadBalancerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLoadBalancerList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeLoadBalancerListOutcomeCallable TeoClient::DescribeLoadBalancerListCallable(const DescribeLoadBalancerListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLoadBalancerList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeOriginGroupOutcome TeoClient::DescribeOriginGroup(const DescribeOriginGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOriginGroup");
@@ -2828,6 +2957,49 @@ TeoClient::DescribeOriginGroupOutcomeCallable TeoClient::DescribeOriginGroupCall
         [this, request]()
         {
             return this->DescribeOriginGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeOriginGroupHealthStatusOutcome TeoClient::DescribeOriginGroupHealthStatus(const DescribeOriginGroupHealthStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOriginGroupHealthStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOriginGroupHealthStatusResponse rsp = DescribeOriginGroupHealthStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOriginGroupHealthStatusOutcome(rsp);
+        else
+            return DescribeOriginGroupHealthStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOriginGroupHealthStatusOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeOriginGroupHealthStatusAsync(const DescribeOriginGroupHealthStatusRequest& request, const DescribeOriginGroupHealthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOriginGroupHealthStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeOriginGroupHealthStatusOutcomeCallable TeoClient::DescribeOriginGroupHealthStatusCallable(const DescribeOriginGroupHealthStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOriginGroupHealthStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOriginGroupHealthStatus(request);
         }
     );
 
@@ -4548,6 +4720,49 @@ TeoClient::ModifyL4ProxyStatusOutcomeCallable TeoClient::ModifyL4ProxyStatusCall
         [this, request]()
         {
             return this->ModifyL4ProxyStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyLoadBalancerOutcome TeoClient::ModifyLoadBalancer(const ModifyLoadBalancerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLoadBalancer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLoadBalancerResponse rsp = ModifyLoadBalancerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLoadBalancerOutcome(rsp);
+        else
+            return ModifyLoadBalancerOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLoadBalancerOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyLoadBalancerAsync(const ModifyLoadBalancerRequest& request, const ModifyLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLoadBalancer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyLoadBalancerOutcomeCallable TeoClient::ModifyLoadBalancerCallable(const ModifyLoadBalancerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLoadBalancerOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLoadBalancer(request);
         }
     );
 

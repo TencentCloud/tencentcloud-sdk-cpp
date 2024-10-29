@@ -84,6 +84,35 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取录制任务 key，标识一个录制任务，对应转推任务发起时指定 RecordKey；
+如果填写该参数，表示调用者希望立即结束该录制任务。当RecordKey 指定的录制任务正在录制当前转推任务时，录制任务立即结束，否则录制任务不受影响。
+如果没有填写该参数，但是转推任务发起时填写了 RecordKey，则表示在续录等待时间结束后才结束录制任务，续录等待期间可以使用相同的 RecordKey 发起新的转推任务，和当前转推任务录制到同一文件。
+                     * @return RecordKey 录制任务 key，标识一个录制任务，对应转推任务发起时指定 RecordKey；
+如果填写该参数，表示调用者希望立即结束该录制任务。当RecordKey 指定的录制任务正在录制当前转推任务时，录制任务立即结束，否则录制任务不受影响。
+如果没有填写该参数，但是转推任务发起时填写了 RecordKey，则表示在续录等待时间结束后才结束录制任务，续录等待期间可以使用相同的 RecordKey 发起新的转推任务，和当前转推任务录制到同一文件。
+                     * 
+                     */
+                    std::string GetRecordKey() const;
+
+                    /**
+                     * 设置录制任务 key，标识一个录制任务，对应转推任务发起时指定 RecordKey；
+如果填写该参数，表示调用者希望立即结束该录制任务。当RecordKey 指定的录制任务正在录制当前转推任务时，录制任务立即结束，否则录制任务不受影响。
+如果没有填写该参数，但是转推任务发起时填写了 RecordKey，则表示在续录等待时间结束后才结束录制任务，续录等待期间可以使用相同的 RecordKey 发起新的转推任务，和当前转推任务录制到同一文件。
+                     * @param _recordKey 录制任务 key，标识一个录制任务，对应转推任务发起时指定 RecordKey；
+如果填写该参数，表示调用者希望立即结束该录制任务。当RecordKey 指定的录制任务正在录制当前转推任务时，录制任务立即结束，否则录制任务不受影响。
+如果没有填写该参数，但是转推任务发起时填写了 RecordKey，则表示在续录等待时间结束后才结束录制任务，续录等待期间可以使用相同的 RecordKey 发起新的转推任务，和当前转推任务录制到同一文件。
+                     * 
+                     */
+                    void SetRecordKey(const std::string& _recordKey);
+
+                    /**
+                     * 判断参数 RecordKey 是否已赋值
+                     * @return RecordKey 是否已赋值
+                     * 
+                     */
+                    bool RecordKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +126,14 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 录制任务 key，标识一个录制任务，对应转推任务发起时指定 RecordKey；
+如果填写该参数，表示调用者希望立即结束该录制任务。当RecordKey 指定的录制任务正在录制当前转推任务时，录制任务立即结束，否则录制任务不受影响。
+如果没有填写该参数，但是转推任务发起时填写了 RecordKey，则表示在续录等待时间结束后才结束录制任务，续录等待期间可以使用相同的 RecordKey 发起新的转推任务，和当前转推任务录制到同一文件。
+                     */
+                    std::string m_recordKey;
+                    bool m_recordKeyHasBeenSet;
 
                 };
             }

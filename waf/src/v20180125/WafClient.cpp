@@ -5673,6 +5673,49 @@ WafClient::ModifyUserSignatureRuleOutcomeCallable WafClient::ModifyUserSignature
     return task->get_future();
 }
 
+WafClient::ModifyUserSignatureRuleV2Outcome WafClient::ModifyUserSignatureRuleV2(const ModifyUserSignatureRuleV2Request &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserSignatureRuleV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserSignatureRuleV2Response rsp = ModifyUserSignatureRuleV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserSignatureRuleV2Outcome(rsp);
+        else
+            return ModifyUserSignatureRuleV2Outcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserSignatureRuleV2Outcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyUserSignatureRuleV2Async(const ModifyUserSignatureRuleV2Request& request, const ModifyUserSignatureRuleV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserSignatureRuleV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyUserSignatureRuleV2OutcomeCallable WafClient::ModifyUserSignatureRuleV2Callable(const ModifyUserSignatureRuleV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserSignatureRuleV2Outcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserSignatureRuleV2(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyWafAutoDenyRulesOutcome WafClient::ModifyWafAutoDenyRules(const ModifyWafAutoDenyRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyWafAutoDenyRules");

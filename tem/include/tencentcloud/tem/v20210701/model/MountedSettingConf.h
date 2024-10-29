@@ -49,14 +49,18 @@ namespace TencentCloud
 
                     /**
                      * 获取配置名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigDataName 配置名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigDataName() const;
 
                     /**
                      * 设置配置名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configDataName 配置名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigDataName(const std::string& _configDataName);
@@ -70,14 +74,18 @@ namespace TencentCloud
 
                     /**
                      * 获取挂载路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MountedPath 挂载路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMountedPath() const;
 
                     /**
                      * 设置挂载路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mountedPath 挂载路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMountedPath(const std::string& _mountedPath);
@@ -91,14 +99,18 @@ namespace TencentCloud
 
                     /**
                      * 获取配置内容
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 配置内容
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Pair> GetData() const;
 
                     /**
                      * 设置配置内容
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _data 配置内容
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetData(const std::vector<Pair>& _data);
@@ -112,14 +124,18 @@ namespace TencentCloud
 
                     /**
                      * 获取加密配置名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretDataName 加密配置名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecretDataName() const;
 
                     /**
                      * 设置加密配置名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secretDataName 加密配置名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecretDataName(const std::string& _secretDataName);
@@ -135,24 +151,28 @@ namespace TencentCloud
 
                     /**
                      * 配置名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configDataName;
                     bool m_configDataNameHasBeenSet;
 
                     /**
                      * 挂载路径
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mountedPath;
                     bool m_mountedPathHasBeenSet;
 
                     /**
                      * 配置内容
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Pair> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
                      * 加密配置名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretDataName;
                     bool m_secretDataNameHasBeenSet;

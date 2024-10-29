@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/bsca/v20210811/model/PURL.h>
+#include <tencentcloud/bsca/v20210811/model/ComponentVersionInfo.h>
 
 
 namespace TencentCloud
@@ -36,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 描述组件的一条版本信息。
+                * 描述一个组件版本。
                 */
                 class ComponentVersion : public AbstractModel
                 {
@@ -97,6 +98,31 @@ namespace TencentCloud
                      */
                     bool LicenseExpressionHasBeenSet() const;
 
+                    /**
+                     * 获取组件的版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VersionInfo 组件的版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ComponentVersionInfo GetVersionInfo() const;
+
+                    /**
+                     * 设置组件的版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _versionInfo 组件的版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVersionInfo(const ComponentVersionInfo& _versionInfo);
+
+                    /**
+                     * 判断参数 VersionInfo 是否已赋值
+                     * @return VersionInfo 是否已赋值
+                     * 
+                     */
+                    bool VersionInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -112,6 +138,13 @@ namespace TencentCloud
                      */
                     std::string m_licenseExpression;
                     bool m_licenseExpressionHasBeenSet;
+
+                    /**
+                     * 组件的版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ComponentVersionInfo m_versionInfo;
+                    bool m_versionInfoHasBeenSet;
 
                 };
             }

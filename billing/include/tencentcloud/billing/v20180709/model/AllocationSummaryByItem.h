@@ -1592,6 +1592,181 @@ namespace TencentCloud
                      */
                     bool ComponentConfigHasBeenSet() const;
 
+                    /**
+                     * 获取SPDeduction
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SPDeduction SPDeduction
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSPDeduction() const;
+
+                    /**
+                     * 设置SPDeduction
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sPDeduction SPDeduction
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSPDeduction(const std::string& _sPDeduction);
+
+                    /**
+                     * 判断参数 SPDeduction 是否已赋值
+                     * @return SPDeduction 是否已赋值
+                     * 
+                     */
+                    bool SPDeductionHasBeenSet() const;
+
+                    /**
+                     * 获取节省计划抵扣率：节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SPDeductionRate 节省计划抵扣率：节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSPDeductionRate() const;
+
+                    /**
+                     * 设置节省计划抵扣率：节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sPDeductionRate 节省计划抵扣率：节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSPDeductionRate(const std::string& _sPDeductionRate);
+
+                    /**
+                     * 判断参数 SPDeductionRate 是否已赋值
+                     * @return SPDeductionRate 是否已赋值
+                     * 
+                     */
+                    bool SPDeductionRateHasBeenSet() const;
+
+                    /**
+                     * 获取AssociatedOrder
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssociatedOrder AssociatedOrder
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAssociatedOrder() const;
+
+                    /**
+                     * 设置AssociatedOrder
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _associatedOrder AssociatedOrder
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAssociatedOrder(const std::string& _associatedOrder);
+
+                    /**
+                     * 判断参数 AssociatedOrder 是否已赋值
+                     * @return AssociatedOrder 是否已赋值
+                     * 
+                     */
+                    bool AssociatedOrderHasBeenSet() const;
+
+                    /**
+                     * 获取当前消费项的优惠对象，例如：官网折扣、用户折扣、活动折扣。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiscountObject 当前消费项的优惠对象，例如：官网折扣、用户折扣、活动折扣。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDiscountObject() const;
+
+                    /**
+                     * 设置当前消费项的优惠对象，例如：官网折扣、用户折扣、活动折扣。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _discountObject 当前消费项的优惠对象，例如：官网折扣、用户折扣、活动折扣。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDiscountObject(const std::string& _discountObject);
+
+                    /**
+                     * 判断参数 DiscountObject 是否已赋值
+                     * @return DiscountObject 是否已赋值
+                     * 
+                     */
+                    bool DiscountObjectHasBeenSet() const;
+
+                    /**
+                     * 获取当前消费项的优惠类型，例如：折扣、合同价。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiscountType 当前消费项的优惠类型，例如：折扣、合同价。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDiscountType() const;
+
+                    /**
+                     * 设置当前消费项的优惠类型，例如：折扣、合同价。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _discountType 当前消费项的优惠类型，例如：折扣、合同价。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDiscountType(const std::string& _discountType);
+
+                    /**
+                     * 判断参数 DiscountType 是否已赋值
+                     * @return DiscountType 是否已赋值
+                     * 
+                     */
+                    bool DiscountTypeHasBeenSet() const;
+
+                    /**
+                     * 获取对优惠类型的补充描述，例如：商务折扣8折，则优惠类型为“折扣”，优惠内容为“0.8”。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiscountContent 对优惠类型的补充描述，例如：商务折扣8折，则优惠类型为“折扣”，优惠内容为“0.8”。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDiscountContent() const;
+
+                    /**
+                     * 设置对优惠类型的补充描述，例如：商务折扣8折，则优惠类型为“折扣”，优惠内容为“0.8”。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _discountContent 对优惠类型的补充描述，例如：商务折扣8折，则优惠类型为“折扣”，优惠内容为“0.8”。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDiscountContent(const std::string& _discountContent);
+
+                    /**
+                     * 判断参数 DiscountContent 是否已赋值
+                     * @return DiscountContent 是否已赋值
+                     * 
+                     */
+                    bool DiscountContentHasBeenSet() const;
+
+                    /**
+                     * 获取账单月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillMonth 账单月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBillMonth() const;
+
+                    /**
+                     * 设置账单月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _billMonth 账单月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBillMonth(const std::string& _billMonth);
+
+                    /**
+                     * 判断参数 BillMonth 是否已赋值
+                     * @return BillMonth 是否已赋值
+                     * 
+                     */
+                    bool BillMonthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2025,6 +2200,55 @@ namespace TencentCloud
                      */
                     std::string m_componentConfig;
                     bool m_componentConfigHasBeenSet;
+
+                    /**
+                     * SPDeduction
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sPDeduction;
+                    bool m_sPDeductionHasBeenSet;
+
+                    /**
+                     * 节省计划抵扣率：节省计划可用余额额度范围内，节省计划对于此组件打的折扣率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sPDeductionRate;
+                    bool m_sPDeductionRateHasBeenSet;
+
+                    /**
+                     * AssociatedOrder
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_associatedOrder;
+                    bool m_associatedOrderHasBeenSet;
+
+                    /**
+                     * 当前消费项的优惠对象，例如：官网折扣、用户折扣、活动折扣。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_discountObject;
+                    bool m_discountObjectHasBeenSet;
+
+                    /**
+                     * 当前消费项的优惠类型，例如：折扣、合同价。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_discountType;
+                    bool m_discountTypeHasBeenSet;
+
+                    /**
+                     * 对优惠类型的补充描述，例如：商务折扣8折，则优惠类型为“折扣”，优惠内容为“0.8”。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_discountContent;
+                    bool m_discountContentHasBeenSet;
+
+                    /**
+                     * 账单月
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_billMonth;
+                    bool m_billMonthHasBeenSet;
 
                 };
             }

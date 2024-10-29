@@ -111,6 +111,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCallInfoResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCdrRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeTelRecordAsrRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeTelRecordAsrResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelSessionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelSessionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberRequest.h>
@@ -291,6 +293,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTelCdrResponse> DescribeTelCdrOutcome;
                 typedef std::future<DescribeTelCdrOutcome> DescribeTelCdrOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeTelCdrRequest&, DescribeTelCdrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTelCdrAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTelRecordAsrResponse> DescribeTelRecordAsrOutcome;
+                typedef std::future<DescribeTelRecordAsrOutcome> DescribeTelRecordAsrOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeTelRecordAsrRequest&, DescribeTelRecordAsrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTelRecordAsrAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTelSessionResponse> DescribeTelSessionOutcome;
                 typedef std::future<DescribeTelSessionOutcome> DescribeTelSessionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeTelSessionRequest&, DescribeTelSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTelSessionAsyncHandler;
@@ -742,6 +747,15 @@ namespace TencentCloud
                 DescribeTelCdrOutcome DescribeTelCdr(const Model::DescribeTelCdrRequest &request);
                 void DescribeTelCdrAsync(const Model::DescribeTelCdrRequest& request, const DescribeTelCdrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTelCdrOutcomeCallable DescribeTelCdrCallable(const Model::DescribeTelCdrRequest& request);
+
+                /**
+                 *拉取会话录音转文本信息
+                 * @param req DescribeTelRecordAsrRequest
+                 * @return DescribeTelRecordAsrOutcome
+                 */
+                DescribeTelRecordAsrOutcome DescribeTelRecordAsr(const Model::DescribeTelRecordAsrRequest &request);
+                void DescribeTelRecordAsrAsync(const Model::DescribeTelRecordAsrRequest& request, const DescribeTelRecordAsrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTelRecordAsrOutcomeCallable DescribeTelRecordAsrCallable(const Model::DescribeTelRecordAsrRequest& request);
 
                 /**
                  *获取 PSTN 会话信息

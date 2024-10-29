@@ -797,6 +797,56 @@ namespace TencentCloud
                      */
                     bool ResponseDurationWarningThresholdHasBeenSet() const;
 
+                    /**
+                     * 获取是否免费（0=否，1=限额免费，2=完全免费），默认0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Free 是否免费（0=否，1=限额免费，2=完全免费），默认0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetFree() const;
+
+                    /**
+                     * 设置是否免费（0=否，1=限额免费，2=完全免费），默认0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _free 是否免费（0=否，1=限额免费，2=完全免费），默认0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFree(const int64_t& _free);
+
+                    /**
+                     * 判断参数 Free 是否已赋值
+                     * @return Free 是否已赋值
+                     * 
+                     */
+                    bool FreeHasBeenSet() const;
+
+                    /**
+                     * 获取是否tsf默认业务系统（0=否，1-是）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultTSF 是否tsf默认业务系统（0=否，1-是）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDefaultTSF() const;
+
+                    /**
+                     * 设置是否tsf默认业务系统（0=否，1-是）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _defaultTSF 是否tsf默认业务系统（0=否，1-是）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDefaultTSF(const int64_t& _defaultTSF);
+
+                    /**
+                     * 判断参数 DefaultTSF 是否已赋值
+                     * @return DefaultTSF 是否已赋值
+                     * 
+                     */
+                    bool DefaultTSFHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1008,6 +1058,20 @@ namespace TencentCloud
                      */
                     int64_t m_responseDurationWarningThreshold;
                     bool m_responseDurationWarningThresholdHasBeenSet;
+
+                    /**
+                     * 是否免费（0=否，1=限额免费，2=完全免费），默认0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_free;
+                    bool m_freeHasBeenSet;
+
+                    /**
+                     * 是否tsf默认业务系统（0=否，1-是）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_defaultTSF;
+                    bool m_defaultTSFHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/live/v20180801/model/TimeShiftSubStream.h>
 
 
 namespace TencentCloud
@@ -247,6 +248,31 @@ namespace TencentCloud
                      */
                     bool DurationHasBeenSet() const;
 
+                    /**
+                     * 获取时移自适应码率子流列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TimeShiftSubStreams 时移自适应码率子流列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TimeShiftSubStream> GetTimeShiftSubStreams() const;
+
+                    /**
+                     * 设置时移自适应码率子流列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _timeShiftSubStreams 时移自适应码率子流列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTimeShiftSubStreams(const std::vector<TimeShiftSubStream>& _timeShiftSubStreams);
+
+                    /**
+                     * 判断参数 TimeShiftSubStreams 是否已赋值
+                     * @return TimeShiftSubStreams 是否已赋值
+                     * 
+                     */
+                    bool TimeShiftSubStreamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -305,6 +331,13 @@ namespace TencentCloud
                      */
                     uint64_t m_duration;
                     bool m_durationHasBeenSet;
+
+                    /**
+                     * 时移自适应码率子流列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TimeShiftSubStream> m_timeShiftSubStreams;
+                    bool m_timeShiftSubStreamsHasBeenSet;
 
                 };
             }

@@ -30,7 +30,8 @@ CreateUserRequest::CreateUserRequest() :
     m_displayNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_emailHasBeenSet(false),
-    m_userStatusHasBeenSet(false)
+    m_userStatusHasBeenSet(false),
+    m_userTypeHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string CreateUserRequest::ToJsonString() const
         string key = "UserStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void CreateUserRequest::SetUserStatus(const string& _userStatus)
 bool CreateUserRequest::UserStatusHasBeenSet() const
 {
     return m_userStatusHasBeenSet;
+}
+
+string CreateUserRequest::GetUserType() const
+{
+    return m_userType;
+}
+
+void CreateUserRequest::SetUserType(const string& _userType)
+{
+    m_userType = _userType;
+    m_userTypeHasBeenSet = true;
+}
+
+bool CreateUserRequest::UserTypeHasBeenSet() const
+{
+    return m_userTypeHasBeenSet;
 }
 
 

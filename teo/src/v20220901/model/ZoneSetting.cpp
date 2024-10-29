@@ -43,7 +43,8 @@ ZoneSetting::ZoneSetting() :
     m_grpcHasBeenSet(false),
     m_imageOptimizeHasBeenSet(false),
     m_accelerateMainlandHasBeenSet(false),
-    m_standardDebugHasBeenSet(false)
+    m_standardDebugHasBeenSet(false),
+    m_jITVideoProcessHasBeenSet(false)
 {
 }
 
@@ -429,6 +430,23 @@ CoreInternalOutcome ZoneSetting::Deserialize(const rapidjson::Value &value)
         m_standardDebugHasBeenSet = true;
     }
 
+    if (value.HasMember("JITVideoProcess") && !value["JITVideoProcess"].IsNull())
+    {
+        if (!value["JITVideoProcess"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneSetting.JITVideoProcess` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_jITVideoProcess.Deserialize(value["JITVideoProcess"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_jITVideoProcessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -639,6 +657,15 @@ void ZoneSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_standardDebug.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_jITVideoProcessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JITVideoProcess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jITVideoProcess.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1010,5 +1037,21 @@ void ZoneSetting::SetStandardDebug(const StandardDebug& _standardDebug)
 bool ZoneSetting::StandardDebugHasBeenSet() const
 {
     return m_standardDebugHasBeenSet;
+}
+
+JITVideoProcess ZoneSetting::GetJITVideoProcess() const
+{
+    return m_jITVideoProcess;
+}
+
+void ZoneSetting::SetJITVideoProcess(const JITVideoProcess& _jITVideoProcess)
+{
+    m_jITVideoProcess = _jITVideoProcess;
+    m_jITVideoProcessHasBeenSet = true;
+}
+
+bool ZoneSetting::JITVideoProcessHasBeenSet() const
+{
+    return m_jITVideoProcessHasBeenSet;
 }
 

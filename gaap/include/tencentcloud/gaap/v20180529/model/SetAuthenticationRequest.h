@@ -288,6 +288,56 @@ namespace TencentCloud
                      */
                     bool PolyRealServerCertificateIdsHasBeenSet() const;
 
+                    /**
+                     * 获取TLS支持的版本
+支持TLSv1，TLSv1.1,TLSv1.2,TLSv1.3
+                     * @return TLSSupportVersion TLS支持的版本
+支持TLSv1，TLSv1.1,TLSv1.2,TLSv1.3
+                     * 
+                     */
+                    std::vector<std::string> GetTLSSupportVersion() const;
+
+                    /**
+                     * 设置TLS支持的版本
+支持TLSv1，TLSv1.1,TLSv1.2,TLSv1.3
+                     * @param _tLSSupportVersion TLS支持的版本
+支持TLSv1，TLSv1.1,TLSv1.2,TLSv1.3
+                     * 
+                     */
+                    void SetTLSSupportVersion(const std::vector<std::string>& _tLSSupportVersion);
+
+                    /**
+                     * 判断参数 TLSSupportVersion 是否已赋值
+                     * @return TLSSupportVersion 是否已赋值
+                     * 
+                     */
+                    bool TLSSupportVersionHasBeenSet() const;
+
+                    /**
+                     * 获取支持的TLS密码套件，可选值为：
+[GAAP_TLS_CIPHERS_WIDE,GAAPTLS_CIPHERS_GENERAL,GAAPTLS_CIPHERS_STRICT]
+                     * @return TLSCiphers 支持的TLS密码套件，可选值为：
+[GAAP_TLS_CIPHERS_WIDE,GAAPTLS_CIPHERS_GENERAL,GAAPTLS_CIPHERS_STRICT]
+                     * 
+                     */
+                    std::string GetTLSCiphers() const;
+
+                    /**
+                     * 设置支持的TLS密码套件，可选值为：
+[GAAP_TLS_CIPHERS_WIDE,GAAPTLS_CIPHERS_GENERAL,GAAPTLS_CIPHERS_STRICT]
+                     * @param _tLSCiphers 支持的TLS密码套件，可选值为：
+[GAAP_TLS_CIPHERS_WIDE,GAAPTLS_CIPHERS_GENERAL,GAAPTLS_CIPHERS_STRICT]
+                     * 
+                     */
+                    void SetTLSCiphers(const std::string& _tLSCiphers);
+
+                    /**
+                     * 判断参数 TLSCiphers 是否已赋值
+                     * @return TLSCiphers 是否已赋值
+                     * 
+                     */
+                    bool TLSCiphersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -358,6 +408,20 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_polyRealServerCertificateIds;
                     bool m_polyRealServerCertificateIdsHasBeenSet;
+
+                    /**
+                     * TLS支持的版本
+支持TLSv1，TLSv1.1,TLSv1.2,TLSv1.3
+                     */
+                    std::vector<std::string> m_tLSSupportVersion;
+                    bool m_tLSSupportVersionHasBeenSet;
+
+                    /**
+                     * 支持的TLS密码套件，可选值为：
+[GAAP_TLS_CIPHERS_WIDE,GAAPTLS_CIPHERS_GENERAL,GAAPTLS_CIPHERS_STRICT]
+                     */
+                    std::string m_tLSCiphers;
+                    bool m_tLSCiphersHasBeenSet;
 
                 };
             }

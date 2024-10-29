@@ -155,6 +155,64 @@ namespace TencentCloud
                      */
                     bool ImageSetRequiredHasBeenSet() const;
 
+                    /**
+                     * 获取是否复制为加密自定义镜像。
+默认值为 false。
+复制加密自定义镜像仅支持同地域。
+                     * @return Encrypt 是否复制为加密自定义镜像。
+默认值为 false。
+复制加密自定义镜像仅支持同地域。
+                     * 
+                     */
+                    bool GetEncrypt() const;
+
+                    /**
+                     * 设置是否复制为加密自定义镜像。
+默认值为 false。
+复制加密自定义镜像仅支持同地域。
+                     * @param _encrypt 是否复制为加密自定义镜像。
+默认值为 false。
+复制加密自定义镜像仅支持同地域。
+                     * 
+                     */
+                    void SetEncrypt(const bool& _encrypt);
+
+                    /**
+                     * 判断参数 Encrypt 是否已赋值
+                     * @return Encrypt 是否已赋值
+                     * 
+                     */
+                    bool EncryptHasBeenSet() const;
+
+                    /**
+                     * 获取加密自定义镜像使用的 KMS 密钥 ID。
+仅当复制加密镜像时，即 Encrypt 为 true 时，此参数有效；
+不指定 KmsKeyId，默认使用 CBS 云产品 KMS 密钥。
+                     * @return KmsKeyId 加密自定义镜像使用的 KMS 密钥 ID。
+仅当复制加密镜像时，即 Encrypt 为 true 时，此参数有效；
+不指定 KmsKeyId，默认使用 CBS 云产品 KMS 密钥。
+                     * 
+                     */
+                    std::string GetKmsKeyId() const;
+
+                    /**
+                     * 设置加密自定义镜像使用的 KMS 密钥 ID。
+仅当复制加密镜像时，即 Encrypt 为 true 时，此参数有效；
+不指定 KmsKeyId，默认使用 CBS 云产品 KMS 密钥。
+                     * @param _kmsKeyId 加密自定义镜像使用的 KMS 密钥 ID。
+仅当复制加密镜像时，即 Encrypt 为 true 时，此参数有效；
+不指定 KmsKeyId，默认使用 CBS 云产品 KMS 密钥。
+                     * 
+                     */
+                    void SetKmsKeyId(const std::string& _kmsKeyId);
+
+                    /**
+                     * 判断参数 KmsKeyId 是否已赋值
+                     * @return KmsKeyId 是否已赋值
+                     * 
+                     */
+                    bool KmsKeyIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +246,22 @@ namespace TencentCloud
                      */
                     bool m_imageSetRequired;
                     bool m_imageSetRequiredHasBeenSet;
+
+                    /**
+                     * 是否复制为加密自定义镜像。
+默认值为 false。
+复制加密自定义镜像仅支持同地域。
+                     */
+                    bool m_encrypt;
+                    bool m_encryptHasBeenSet;
+
+                    /**
+                     * 加密自定义镜像使用的 KMS 密钥 ID。
+仅当复制加密镜像时，即 Encrypt 为 true 时，此参数有效；
+不指定 KmsKeyId，默认使用 CBS 云产品 KMS 密钥。
+                     */
+                    std::string m_kmsKeyId;
+                    bool m_kmsKeyIdHasBeenSet;
 
                 };
             }

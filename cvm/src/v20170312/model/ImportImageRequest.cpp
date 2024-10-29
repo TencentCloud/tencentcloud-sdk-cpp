@@ -34,7 +34,8 @@ ImportImageRequest::ImportImageRequest() :
     m_tagSpecificationHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
     m_bootModeHasBeenSet(false),
-    m_imageFamilyHasBeenSet(false)
+    m_imageFamilyHasBeenSet(false),
+    m_importImageDataDiskListHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,21 @@ string ImportImageRequest::ToJsonString() const
         string key = "ImageFamily";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageFamily.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_importImageDataDiskListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImportImageDataDiskList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_importImageDataDiskList.begin(); itr != m_importImageDataDiskList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -346,6 +362,22 @@ void ImportImageRequest::SetImageFamily(const string& _imageFamily)
 bool ImportImageRequest::ImageFamilyHasBeenSet() const
 {
     return m_imageFamilyHasBeenSet;
+}
+
+vector<ImportImageDataDisk> ImportImageRequest::GetImportImageDataDiskList() const
+{
+    return m_importImageDataDiskList;
+}
+
+void ImportImageRequest::SetImportImageDataDiskList(const vector<ImportImageDataDisk>& _importImageDataDiskList)
+{
+    m_importImageDataDiskList = _importImageDataDiskList;
+    m_importImageDataDiskListHasBeenSet = true;
+}
+
+bool ImportImageRequest::ImportImageDataDiskListHasBeenSet() const
+{
+    return m_importImageDataDiskListHasBeenSet;
 }
 
 

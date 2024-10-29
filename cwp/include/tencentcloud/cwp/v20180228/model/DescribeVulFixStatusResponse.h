@@ -108,8 +108,8 @@ namespace TencentCloud
                     bool FixFailCntHasBeenSet() const;
 
                     /**
-                     * 获取主机总是
-                     * @return HostCnt 主机总是
+                     * 获取主机总数
+                     * @return HostCnt 主机总数
                      * 
                      */
                     uint64_t GetHostCnt() const;
@@ -182,8 +182,8 @@ namespace TencentCloud
                     bool SnapshotProgressHasBeenSet() const;
 
                     /**
-                     * 获取修复精度 0-100
-                     * @return FixProgress 修复精度 0-100
+                     * 获取修复进度 0-100
+                     * @return FixProgress 修复进度 0-100
                      * 
                      */
                     uint64_t GetFixProgress() const;
@@ -285,7 +285,7 @@ namespace TencentCloud
                     bool m_fixFailCntHasBeenSet;
 
                     /**
-                     * 主机总是
+                     * 主机总数
                      */
                     uint64_t m_hostCnt;
                     bool m_hostCntHasBeenSet;
@@ -317,7 +317,7 @@ namespace TencentCloud
                     bool m_snapshotProgressHasBeenSet;
 
                     /**
-                     * 修复精度 0-100
+                     * 修复进度 0-100
                      */
                     uint64_t m_fixProgress;
                     bool m_fixProgressHasBeenSet;

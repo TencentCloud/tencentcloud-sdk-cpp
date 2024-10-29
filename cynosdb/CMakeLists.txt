@@ -186,6 +186,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcResponse.h
   include/tencentcloud/cynosdb/v20190107/model/StartCLSDeliveryRequest.h
   include/tencentcloud/cynosdb/v20190107/model/SlaveZoneAttrItem.h
+  include/tencentcloud/cynosdb/v20190107/model/DeliverSummary.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeChangedParamsAfterUpgradeRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CLSInfo.h
   include/tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcRequest.h
@@ -598,6 +599,7 @@ set(cynosdb_src
   src/v20190107/model/SwitchProxyVpcResponse.cpp
   src/v20190107/model/StartCLSDeliveryRequest.cpp
   src/v20190107/model/SlaveZoneAttrItem.cpp
+  src/v20190107/model/DeliverSummary.cpp
   src/v20190107/model/DescribeChangedParamsAfterUpgradeRequest.cpp
   src/v20190107/model/CLSInfo.cpp
   src/v20190107/model/SwitchProxyVpcRequest.cpp

@@ -33,7 +33,9 @@ InstanceAuditStatus::InstanceAuditStatus() :
     m_createAtHasBeenSet(false),
     m_instanceInfoHasBeenSet(false),
     m_realStorageHasBeenSet(false),
-    m_ruleTemplateIdsHasBeenSet(false)
+    m_ruleTemplateIdsHasBeenSet(false),
+    m_deliverHasBeenSet(false),
+    m_deliverSummaryHasBeenSet(false)
 {
 }
 
@@ -182,6 +184,36 @@ CoreInternalOutcome InstanceAuditStatus::Deserialize(const rapidjson::Value &val
         m_ruleTemplateIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("Deliver") && !value["Deliver"].IsNull())
+    {
+        if (!value["Deliver"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAuditStatus.Deliver` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deliver = string(value["Deliver"].GetString());
+        m_deliverHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeliverSummary") && !value["DeliverSummary"].IsNull())
+    {
+        if (!value["DeliverSummary"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceAuditStatus.DeliverSummary` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DeliverSummary"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeliverSummary item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_deliverSummary.push_back(item);
+        }
+        m_deliverSummaryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -296,6 +328,29 @@ void InstanceAuditStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         for (auto itr = m_ruleTemplateIds.begin(); itr != m_ruleTemplateIds.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_deliverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Deliver";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deliver.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deliverSummaryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeliverSummary";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_deliverSummary.begin(); itr != m_deliverSummary.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -508,5 +563,37 @@ void InstanceAuditStatus::SetRuleTemplateIds(const vector<string>& _ruleTemplate
 bool InstanceAuditStatus::RuleTemplateIdsHasBeenSet() const
 {
     return m_ruleTemplateIdsHasBeenSet;
+}
+
+string InstanceAuditStatus::GetDeliver() const
+{
+    return m_deliver;
+}
+
+void InstanceAuditStatus::SetDeliver(const string& _deliver)
+{
+    m_deliver = _deliver;
+    m_deliverHasBeenSet = true;
+}
+
+bool InstanceAuditStatus::DeliverHasBeenSet() const
+{
+    return m_deliverHasBeenSet;
+}
+
+vector<DeliverSummary> InstanceAuditStatus::GetDeliverSummary() const
+{
+    return m_deliverSummary;
+}
+
+void InstanceAuditStatus::SetDeliverSummary(const vector<DeliverSummary>& _deliverSummary)
+{
+    m_deliverSummary = _deliverSummary;
+    m_deliverSummaryHasBeenSet = true;
+}
+
+bool InstanceAuditStatus::DeliverSummaryHasBeenSet() const
+{
+    return m_deliverSummaryHasBeenSet;
 }
 
