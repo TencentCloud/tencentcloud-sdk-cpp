@@ -235,18 +235,18 @@ CSIP:云安全中心
                     bool VictimHasBeenSet() const;
 
                     /**
-                     * 获取证据数据(例如攻击内容等)
+                     * 获取证据数据(例如攻击内容等，base64编码)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EvidenceData 证据数据(例如攻击内容等)
+                     * @return EvidenceData 证据数据(例如攻击内容等，base64编码)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEvidenceData() const;
 
                     /**
-                     * 设置证据数据(例如攻击内容等)
+                     * 设置证据数据(例如攻击内容等，base64编码)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _evidenceData 证据数据(例如攻击内容等)
+                     * @param _evidenceData 证据数据(例如攻击内容等，base64编码)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -867,7 +867,7 @@ CSIP:云安全中心
                     bool m_victimHasBeenSet;
 
                     /**
-                     * 证据数据(例如攻击内容等)
+                     * 证据数据(例如攻击内容等，base64编码)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_evidenceData;

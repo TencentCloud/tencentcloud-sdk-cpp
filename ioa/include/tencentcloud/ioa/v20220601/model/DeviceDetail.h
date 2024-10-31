@@ -372,18 +372,18 @@ namespace TencentCloud
                     bool LocalIpListHasBeenSet() const;
 
                     /**
-                     * 获取主机ID(只支持32位)
+                     * 获取宿主机id（需要宿主机也安装iOA才能显示）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HostId 主机ID(只支持32位)
+                     * @return HostId 宿主机id（需要宿主机也安装iOA才能显示）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHostId() const;
 
                     /**
-                     * 设置主机ID(只支持32位)
+                     * 设置宿主机id（需要宿主机也安装iOA才能显示）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hostId 主机ID(只支持32位)
+                     * @param _hostId 宿主机id（需要宿主机也安装iOA才能显示）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -922,18 +922,18 @@ namespace TencentCloud
                     bool NGNNewStrategyVerHasBeenSet() const;
 
                     /**
-                     * 获取主机名称
+                     * 获取宿主机名称（需要宿主机也安装iOA才能显示）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HostName 主机名称
+                     * @return HostName 宿主机名称（需要宿主机也安装iOA才能显示）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
-                     * 设置主机名称
+                     * 设置宿主机名称（需要宿主机也安装iOA才能显示）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hostName 主机名称
+                     * @param _hostName 宿主机名称（需要宿主机也安装iOA才能显示）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -972,18 +972,18 @@ namespace TencentCloud
                     bool BaseBoardSnHasBeenSet() const;
 
                     /**
-                     * 获取绑定账户只有名字
+                     * 获取绑定账户名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccountUsers 绑定账户只有名字
+                     * @return AccountUsers 绑定账户名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountUsers() const;
 
                     /**
-                     * 设置绑定账户只有名字
+                     * 设置绑定账户名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accountUsers 绑定账户只有名字
+                     * @param _accountUsers 绑定账户名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1215,7 +1215,7 @@ namespace TencentCloud
                     bool m_localIpListHasBeenSet;
 
                     /**
-                     * 主机ID(只支持32位)
+                     * 宿主机id（需要宿主机也安装iOA才能显示）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hostId;
@@ -1369,7 +1369,7 @@ namespace TencentCloud
                     bool m_nGNNewStrategyVerHasBeenSet;
 
                     /**
-                     * 主机名称
+                     * 宿主机名称（需要宿主机也安装iOA才能显示）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
@@ -1383,7 +1383,7 @@ namespace TencentCloud
                     bool m_baseBoardSnHasBeenSet;
 
                     /**
-                     * 绑定账户只有名字
+                     * 绑定账户名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountUsers;

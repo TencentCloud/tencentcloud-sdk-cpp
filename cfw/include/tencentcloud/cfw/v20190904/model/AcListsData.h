@@ -284,6 +284,364 @@ namespace TencentCloud
                      */
                     bool LogIdHasBeenSet() const;
 
+                    /**
+                     * 获取规则开关状态 1打开 0关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 规则开关状态 1打开 0关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置规则开关状态 1打开 0关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 规则开关状态 1打开 0关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取规则源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SrcType 规则源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSrcType() const;
+
+                    /**
+                     * 设置规则源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _srcType 规则源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSrcType(const int64_t& _srcType);
+
+                    /**
+                     * 判断参数 SrcType 是否已赋值
+                     * @return SrcType 是否已赋值
+                     * 
+                     */
+                    bool SrcTypeHasBeenSet() const;
+
+                    /**
+                     * 获取规则目的类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DstType 规则目的类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDstType() const;
+
+                    /**
+                     * 设置规则目的类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dstType 规则目的类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDstType(const int64_t& _dstType);
+
+                    /**
+                     * 判断参数 DstType 是否已赋值
+                     * @return DstType 是否已赋值
+                     * 
+                     */
+                    bool DstTypeHasBeenSet() const;
+
+                    /**
+                     * 获取规则唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Uuid 规则唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUuid() const;
+
+                    /**
+                     * 设置规则唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _uuid 规则唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUuid(const std::string& _uuid);
+
+                    /**
+                     * 判断参数 Uuid 是否已赋值
+                     * @return Uuid 是否已赋值
+                     * 
+                     */
+                    bool UuidHasBeenSet() const;
+
+                    /**
+                     * 获取规则有效性
+1 有效
+0 无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Invalid 规则有效性
+1 有效
+0 无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetInvalid() const;
+
+                    /**
+                     * 设置规则有效性
+1 有效
+0 无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _invalid 规则有效性
+1 有效
+0 无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInvalid(const int64_t& _invalid);
+
+                    /**
+                     * 判断参数 Invalid 是否已赋值
+                     * @return Invalid 是否已赋值
+                     * 
+                     */
+                    bool InvalidHasBeenSet() const;
+
+                    /**
+                     * 获取是否地域规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsRegion 是否地域规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsRegion() const;
+
+                    /**
+                     * 设置是否地域规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isRegion 是否地域规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsRegion(const int64_t& _isRegion);
+
+                    /**
+                     * 判断参数 IsRegion 是否已赋值
+                     * @return IsRegion 是否已赋值
+                     * 
+                     */
+                    bool IsRegionHasBeenSet() const;
+
+                    /**
+                     * 获取云厂商代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CloudCode 云厂商代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCloudCode() const;
+
+                    /**
+                     * 设置云厂商代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cloudCode 云厂商代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCloudCode(const std::string& _cloudCode);
+
+                    /**
+                     * 判断参数 CloudCode 是否已赋值
+                     * @return CloudCode 是否已赋值
+                     * 
+                     */
+                    bool CloudCodeHasBeenSet() const;
+
+                    /**
+                     * 获取自动化助手信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoTask 自动化助手信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAutoTask() const;
+
+                    /**
+                     * 设置自动化助手信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _autoTask 自动化助手信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAutoTask(const std::string& _autoTask);
+
+                    /**
+                     * 判断参数 AutoTask 是否已赋值
+                     * @return AutoTask 是否已赋值
+                     * 
+                     */
+                    bool AutoTaskHasBeenSet() const;
+
+                    /**
+                     * 获取实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceName 实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceName 实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     * 
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取地域码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionCode 地域码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRegionCode() const;
+
+                    /**
+                     * 设置地域码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _regionCode 地域码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegionCode(const std::string& _regionCode);
+
+                    /**
+                     * 判断参数 RegionCode 是否已赋值
+                     * @return RegionCode 是否已赋值
+                     * 
+                     */
+                    bool RegionCodeHasBeenSet() const;
+
+                    /**
+                     * 获取国家代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Country 国家代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCountry() const;
+
+                    /**
+                     * 设置国家代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _country 国家代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCountry(const int64_t& _country);
+
+                    /**
+                     * 判断参数 Country 是否已赋值
+                     * @return Country 是否已赋值
+                     * 
+                     */
+                    bool CountryHasBeenSet() const;
+
+                    /**
+                     * 获取城市代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return City 城市代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCity() const;
+
+                    /**
+                     * 设置城市代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _city 城市代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCity(const int64_t& _city);
+
+                    /**
+                     * 判断参数 City 是否已赋值
+                     * @return City 是否已赋值
+                     * 
+                     */
+                    bool CityHasBeenSet() const;
+
+                    /**
+                     * 获取国家名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegName1 国家名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRegName1() const;
+
+                    /**
+                     * 设置国家名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _regName1 国家名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegName1(const std::string& _regName1);
+
+                    /**
+                     * 判断参数 RegName1 是否已赋值
+                     * @return RegName1 是否已赋值
+                     * 
+                     */
+                    bool RegName1HasBeenSet() const;
+
+                    /**
+                     * 获取城市名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegName2 城市名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRegName2() const;
+
+                    /**
+                     * 设置城市名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _regName2 城市名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegName2(const std::string& _regName2);
+
+                    /**
+                     * 判断参数 RegName2 是否已赋值
+                     * @return RegName2 是否已赋值
+                     * 
+                     */
+                    bool RegName2HasBeenSet() const;
+
                 private:
 
                     /**
@@ -352,6 +710,106 @@ namespace TencentCloud
                      */
                     std::string m_logId;
                     bool m_logIdHasBeenSet;
+
+                    /**
+                     * 规则开关状态 1打开 0关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 规则源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_srcType;
+                    bool m_srcTypeHasBeenSet;
+
+                    /**
+                     * 规则目的类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_dstType;
+                    bool m_dstTypeHasBeenSet;
+
+                    /**
+                     * 规则唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uuid;
+                    bool m_uuidHasBeenSet;
+
+                    /**
+                     * 规则有效性
+1 有效
+0 无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_invalid;
+                    bool m_invalidHasBeenSet;
+
+                    /**
+                     * 是否地域规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isRegion;
+                    bool m_isRegionHasBeenSet;
+
+                    /**
+                     * 云厂商代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cloudCode;
+                    bool m_cloudCodeHasBeenSet;
+
+                    /**
+                     * 自动化助手信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_autoTask;
+                    bool m_autoTaskHasBeenSet;
+
+                    /**
+                     * 实例名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 地域码信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regionCode;
+                    bool m_regionCodeHasBeenSet;
+
+                    /**
+                     * 国家代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_country;
+                    bool m_countryHasBeenSet;
+
+                    /**
+                     * 城市代码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_city;
+                    bool m_cityHasBeenSet;
+
+                    /**
+                     * 国家名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regName1;
+                    bool m_regName1HasBeenSet;
+
+                    /**
+                     * 城市名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regName2;
+                    bool m_regName2HasBeenSet;
 
                 };
             }

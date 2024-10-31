@@ -404,19 +404,15 @@ namespace TencentCloud
                     bool IdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取第三方平台子客企业的企业的标识, 即OrganizationOpenId
-注: `GenerateType为"CHANNEL"时必填`
-                     * @return OrganizationOpenId 第三方平台子客企业的企业的标识, 即OrganizationOpenId
-注: `GenerateType为"CHANNEL"时必填`
+                     * 获取第三方平台子客企业的企业的标识, 即OrganizationOpenId。 注:  `1.GenerateType为"CHANNEL"时必填` `2.获取B端动态签署人领取链接时,可指定此字段来预先设定签署人的平台子客企业,预设后只能以该平台子客企业身份去领取合同并完成签署`
+                     * @return OrganizationOpenId 第三方平台子客企业的企业的标识, 即OrganizationOpenId。 注:  `1.GenerateType为"CHANNEL"时必填` `2.获取B端动态签署人领取链接时,可指定此字段来预先设定签署人的平台子客企业,预设后只能以该平台子客企业身份去领取合同并完成签署`
                      * 
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
-                     * 设置第三方平台子客企业的企业的标识, 即OrganizationOpenId
-注: `GenerateType为"CHANNEL"时必填`
-                     * @param _organizationOpenId 第三方平台子客企业的企业的标识, 即OrganizationOpenId
-注: `GenerateType为"CHANNEL"时必填`
+                     * 设置第三方平台子客企业的企业的标识, 即OrganizationOpenId。 注:  `1.GenerateType为"CHANNEL"时必填` `2.获取B端动态签署人领取链接时,可指定此字段来预先设定签署人的平台子客企业,预设后只能以该平台子客企业身份去领取合同并完成签署`
+                     * @param _organizationOpenId 第三方平台子客企业的企业的标识, 即OrganizationOpenId。 注:  `1.GenerateType为"CHANNEL"时必填` `2.获取B端动态签署人领取链接时,可指定此字段来预先设定签署人的平台子客企业,预设后只能以该平台子客企业身份去领取合同并完成签署`
                      * 
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
@@ -747,8 +743,7 @@ namespace TencentCloud
                     bool m_idCardNumberHasBeenSet;
 
                     /**
-                     * 第三方平台子客企业的企业的标识, 即OrganizationOpenId
-注: `GenerateType为"CHANNEL"时必填`
+                     * 第三方平台子客企业的企业的标识, 即OrganizationOpenId。 注:  `1.GenerateType为"CHANNEL"时必填` `2.获取B端动态签署人领取链接时,可指定此字段来预先设定签署人的平台子客企业,预设后只能以该平台子客企业身份去领取合同并完成签署`
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;

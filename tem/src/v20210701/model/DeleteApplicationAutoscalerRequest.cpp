@@ -25,8 +25,8 @@ using namespace std;
 DeleteApplicationAutoscalerRequest::DeleteApplicationAutoscalerRequest() :
     m_applicationIdHasBeenSet(false),
     m_environmentIdHasBeenSet(false),
-    m_sourceChannelHasBeenSet(false),
-    m_autoscalerIdHasBeenSet(false)
+    m_autoscalerIdHasBeenSet(false),
+    m_sourceChannelHasBeenSet(false)
 {
 }
 
@@ -53,20 +53,20 @@ string DeleteApplicationAutoscalerRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_environmentId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sourceChannelHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceChannel";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_sourceChannel, allocator);
-    }
-
     if (m_autoscalerIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoscalerId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_autoscalerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceChannelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceChannel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sourceChannel, allocator);
     }
 
 
@@ -109,22 +109,6 @@ bool DeleteApplicationAutoscalerRequest::EnvironmentIdHasBeenSet() const
     return m_environmentIdHasBeenSet;
 }
 
-int64_t DeleteApplicationAutoscalerRequest::GetSourceChannel() const
-{
-    return m_sourceChannel;
-}
-
-void DeleteApplicationAutoscalerRequest::SetSourceChannel(const int64_t& _sourceChannel)
-{
-    m_sourceChannel = _sourceChannel;
-    m_sourceChannelHasBeenSet = true;
-}
-
-bool DeleteApplicationAutoscalerRequest::SourceChannelHasBeenSet() const
-{
-    return m_sourceChannelHasBeenSet;
-}
-
 string DeleteApplicationAutoscalerRequest::GetAutoscalerId() const
 {
     return m_autoscalerId;
@@ -139,6 +123,22 @@ void DeleteApplicationAutoscalerRequest::SetAutoscalerId(const string& _autoscal
 bool DeleteApplicationAutoscalerRequest::AutoscalerIdHasBeenSet() const
 {
     return m_autoscalerIdHasBeenSet;
+}
+
+int64_t DeleteApplicationAutoscalerRequest::GetSourceChannel() const
+{
+    return m_sourceChannel;
+}
+
+void DeleteApplicationAutoscalerRequest::SetSourceChannel(const int64_t& _sourceChannel)
+{
+    m_sourceChannel = _sourceChannel;
+    m_sourceChannelHasBeenSet = true;
+}
+
+bool DeleteApplicationAutoscalerRequest::SourceChannelHasBeenSet() const
+{
+    return m_sourceChannelHasBeenSet;
 }
 
 

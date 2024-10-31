@@ -24,12 +24,12 @@ using namespace std;
 
 CreateComponentExportJobRequest::CreateComponentExportJobRequest() :
     m_imageIDHasBeenSet(false),
-    m_exportFieldHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_byHasBeenSet(false),
-    m_orderHasBeenSet(false)
+    m_orderHasBeenSet(false),
+    m_exportFieldHasBeenSet(false)
 {
 }
 
@@ -46,19 +46,6 @@ string CreateComponentExportJobRequest::ToJsonString() const
         string key = "ImageID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageID.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_exportFieldHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ExportField";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_exportField.begin(); itr != m_exportField.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
     }
 
     if (m_limitHasBeenSet)
@@ -108,6 +95,19 @@ string CreateComponentExportJobRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_exportFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExportField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_exportField.begin(); itr != m_exportField.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -130,22 +130,6 @@ void CreateComponentExportJobRequest::SetImageID(const string& _imageID)
 bool CreateComponentExportJobRequest::ImageIDHasBeenSet() const
 {
     return m_imageIDHasBeenSet;
-}
-
-vector<string> CreateComponentExportJobRequest::GetExportField() const
-{
-    return m_exportField;
-}
-
-void CreateComponentExportJobRequest::SetExportField(const vector<string>& _exportField)
-{
-    m_exportField = _exportField;
-    m_exportFieldHasBeenSet = true;
-}
-
-bool CreateComponentExportJobRequest::ExportFieldHasBeenSet() const
-{
-    return m_exportFieldHasBeenSet;
 }
 
 uint64_t CreateComponentExportJobRequest::GetLimit() const
@@ -226,6 +210,22 @@ void CreateComponentExportJobRequest::SetOrder(const string& _order)
 bool CreateComponentExportJobRequest::OrderHasBeenSet() const
 {
     return m_orderHasBeenSet;
+}
+
+vector<string> CreateComponentExportJobRequest::GetExportField() const
+{
+    return m_exportField;
+}
+
+void CreateComponentExportJobRequest::SetExportField(const vector<string>& _exportField)
+{
+    m_exportField = _exportField;
+    m_exportFieldHasBeenSet = true;
+}
+
+bool CreateComponentExportJobRequest::ExportFieldHasBeenSet() const
+{
+    return m_exportFieldHasBeenSet;
 }
 
 

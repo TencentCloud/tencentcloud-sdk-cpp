@@ -82,6 +82,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewWeakPasswordRiskListRequest.h
   include/tencentcloud/csip/v20221121/model/PublicIpDomainListKey.h
   include/tencentcloud/csip/v20221121/model/DescribeTopAttackInfoRequest.h
+  include/tencentcloud/csip/v20221121/model/ProductSupport.h
   include/tencentcloud/csip/v20221121/model/DescribeCVMAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/VulImpactComponentInfo.h
   include/tencentcloud/csip/v20221121/model/VULRiskAdvanceCFGList.h
@@ -234,6 +235,7 @@ set(csip_src
   src/v20221121/model/DescribeRiskCenterAssetViewWeakPasswordRiskListRequest.cpp
   src/v20221121/model/PublicIpDomainListKey.cpp
   src/v20221121/model/DescribeTopAttackInfoRequest.cpp
+  src/v20221121/model/ProductSupport.cpp
   src/v20221121/model/DescribeCVMAssetsResponse.cpp
   src/v20221121/model/VulImpactComponentInfo.cpp
   src/v20221121/model/VULRiskAdvanceCFGList.cpp

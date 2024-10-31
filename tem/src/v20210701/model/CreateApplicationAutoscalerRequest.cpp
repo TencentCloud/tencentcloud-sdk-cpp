@@ -25,8 +25,8 @@ using namespace std;
 CreateApplicationAutoscalerRequest::CreateApplicationAutoscalerRequest() :
     m_applicationIdHasBeenSet(false),
     m_environmentIdHasBeenSet(false),
-    m_sourceChannelHasBeenSet(false),
-    m_autoscalerHasBeenSet(false)
+    m_autoscalerHasBeenSet(false),
+    m_sourceChannelHasBeenSet(false)
 {
 }
 
@@ -53,14 +53,6 @@ string CreateApplicationAutoscalerRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_environmentId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sourceChannelHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceChannel";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_sourceChannel, allocator);
-    }
-
     if (m_autoscalerHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -68,6 +60,14 @@ string CreateApplicationAutoscalerRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_autoscaler.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sourceChannelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceChannel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sourceChannel, allocator);
     }
 
 
@@ -110,22 +110,6 @@ bool CreateApplicationAutoscalerRequest::EnvironmentIdHasBeenSet() const
     return m_environmentIdHasBeenSet;
 }
 
-int64_t CreateApplicationAutoscalerRequest::GetSourceChannel() const
-{
-    return m_sourceChannel;
-}
-
-void CreateApplicationAutoscalerRequest::SetSourceChannel(const int64_t& _sourceChannel)
-{
-    m_sourceChannel = _sourceChannel;
-    m_sourceChannelHasBeenSet = true;
-}
-
-bool CreateApplicationAutoscalerRequest::SourceChannelHasBeenSet() const
-{
-    return m_sourceChannelHasBeenSet;
-}
-
 Autoscaler CreateApplicationAutoscalerRequest::GetAutoscaler() const
 {
     return m_autoscaler;
@@ -140,6 +124,22 @@ void CreateApplicationAutoscalerRequest::SetAutoscaler(const Autoscaler& _autosc
 bool CreateApplicationAutoscalerRequest::AutoscalerHasBeenSet() const
 {
     return m_autoscalerHasBeenSet;
+}
+
+int64_t CreateApplicationAutoscalerRequest::GetSourceChannel() const
+{
+    return m_sourceChannel;
+}
+
+void CreateApplicationAutoscalerRequest::SetSourceChannel(const int64_t& _sourceChannel)
+{
+    m_sourceChannel = _sourceChannel;
+    m_sourceChannelHasBeenSet = true;
+}
+
+bool CreateApplicationAutoscalerRequest::SourceChannelHasBeenSet() const
+{
+    return m_sourceChannelHasBeenSet;
 }
 
 

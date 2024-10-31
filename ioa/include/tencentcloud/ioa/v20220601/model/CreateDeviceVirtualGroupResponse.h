@@ -14,56 +14,44 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CFW_V20190904_MODEL_DESCRIBENATSWITCHLISTRESPONSE_H_
-#define TENCENTCLOUD_CFW_V20190904_MODEL_DESCRIBENATSWITCHLISTRESPONSE_H_
+#ifndef TENCENTCLOUD_IOA_V20220601_MODEL_CREATEDEVICEVIRTUALGROUPRESPONSE_H_
+#define TENCENTCLOUD_IOA_V20220601_MODEL_CREATEDEVICEVIRTUALGROUPRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cfw/v20190904/model/NatSwitchListData.h>
+#include <tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupRspData.h>
 
 
 namespace TencentCloud
 {
-    namespace Cfw
+    namespace Ioa
     {
-        namespace V20190904
+        namespace V20220601
         {
             namespace Model
             {
                 /**
-                * DescribeNatSwitchList返回参数结构体
+                * CreateDeviceVirtualGroup返回参数结构体
                 */
-                class DescribeNatSwitchListResponse : public AbstractModel
+                class CreateDeviceVirtualGroupResponse : public AbstractModel
                 {
                 public:
-                    DescribeNatSwitchListResponse();
-                    ~DescribeNatSwitchListResponse() = default;
+                    CreateDeviceVirtualGroupResponse();
+                    ~CreateDeviceVirtualGroupResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取总数
-                     * @return Total 总数
+                     * 获取响应返回的data
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Data 响应返回的data
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    int64_t GetTotal() const;
-
-                    /**
-                     * 判断参数 Total 是否已赋值
-                     * @return Total 是否已赋值
-                     * 
-                     */
-                    bool TotalHasBeenSet() const;
-
-                    /**
-                     * 获取NAT边界防火墙开关列表数据
-                     * @return Data NAT边界防火墙开关列表数据
-                     * 
-                     */
-                    std::vector<NatSwitchListData> GetData() const;
+                    CreateDeviceVirtualGroupRspData GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
@@ -75,15 +63,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数
+                     * 响应返回的data
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_total;
-                    bool m_totalHasBeenSet;
-
-                    /**
-                     * NAT边界防火墙开关列表数据
-                     */
-                    std::vector<NatSwitchListData> m_data;
+                    CreateDeviceVirtualGroupRspData m_data;
                     bool m_dataHasBeenSet;
 
                 };
@@ -92,4 +75,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CFW_V20190904_MODEL_DESCRIBENATSWITCHLISTRESPONSE_H_
+#endif // !TENCENTCLOUD_IOA_V20220601_MODEL_CREATEDEVICEVIRTUALGROUPRESPONSE_H_

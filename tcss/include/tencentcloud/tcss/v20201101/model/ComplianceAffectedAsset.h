@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcss/v20201101/model/ImageRegistryInfo.h>
 
 
 namespace TencentCloud
@@ -349,6 +350,69 @@ RESULT_PASSED: 通过
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取镜像仓库信息
+                     * @return ImageRegistryInfo 镜像仓库信息
+                     * 
+                     */
+                    ImageRegistryInfo GetImageRegistryInfo() const;
+
+                    /**
+                     * 设置镜像仓库信息
+                     * @param _imageRegistryInfo 镜像仓库信息
+                     * 
+                     */
+                    void SetImageRegistryInfo(const ImageRegistryInfo& _imageRegistryInfo);
+
+                    /**
+                     * 判断参数 ImageRegistryInfo 是否已赋值
+                     * @return ImageRegistryInfo 是否已赋值
+                     * 
+                     */
+                    bool ImageRegistryInfoHasBeenSet() const;
+
+                    /**
+                     * 获取集群id
+                     * @return ClusterID 集群id
+                     * 
+                     */
+                    std::string GetClusterID() const;
+
+                    /**
+                     * 设置集群id
+                     * @param _clusterID 集群id
+                     * 
+                     */
+                    void SetClusterID(const std::string& _clusterID);
+
+                    /**
+                     * 判断参数 ClusterID 是否已赋值
+                     * @return ClusterID 是否已赋值
+                     * 
+                     */
+                    bool ClusterIDHasBeenSet() const;
+
+                    /**
+                     * 获取集群名称
+                     * @return ClusterName 集群名称
+                     * 
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 设置集群名称
+                     * @param _clusterName 集群名称
+                     * 
+                     */
+                    void SetClusterName(const std::string& _clusterName);
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     * 
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -434,6 +498,24 @@ RESULT_PASSED: 通过
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 镜像仓库信息
+                     */
+                    ImageRegistryInfo m_imageRegistryInfo;
+                    bool m_imageRegistryInfoHasBeenSet;
+
+                    /**
+                     * 集群id
+                     */
+                    std::string m_clusterID;
+                    bool m_clusterIDHasBeenSet;
+
+                    /**
+                     * 集群名称
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
 
                 };
             }

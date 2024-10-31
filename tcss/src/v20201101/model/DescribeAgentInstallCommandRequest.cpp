@@ -28,7 +28,8 @@ DescribeAgentInstallCommandRequest::DescribeAgentInstallCommandRequest() :
     m_regionCodeHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_expireDateHasBeenSet(false),
-    m_tagIdsHasBeenSet(false)
+    m_tagIdsHasBeenSet(false),
+    m_vipHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string DescribeAgentInstallCommandRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_vipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vip";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +203,22 @@ void DescribeAgentInstallCommandRequest::SetTagIds(const vector<uint64_t>& _tagI
 bool DescribeAgentInstallCommandRequest::TagIdsHasBeenSet() const
 {
     return m_tagIdsHasBeenSet;
+}
+
+string DescribeAgentInstallCommandRequest::GetVip() const
+{
+    return m_vip;
+}
+
+void DescribeAgentInstallCommandRequest::SetVip(const string& _vip)
+{
+    m_vip = _vip;
+    m_vipHasBeenSet = true;
+}
+
+bool DescribeAgentInstallCommandRequest::VipHasBeenSet() const
+{
+    return m_vipHasBeenSet;
 }
 
 

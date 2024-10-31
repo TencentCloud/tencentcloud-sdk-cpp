@@ -535,15 +535,15 @@ namespace TencentCloud
                     bool MachineExtraInfoHasBeenSet() const;
 
                     /**
-                     * 获取实例状态：RUNNING,STOPPED,SHUTDOWN...
-                     * @return MachineState 实例状态：RUNNING,STOPPED,SHUTDOWN...
+                     * 获取agent状态：OFFLINE,ONLINE
+                     * @return MachineState agent状态：OFFLINE,ONLINE
                      * 
                      */
                     std::string GetMachineState() const;
 
                     /**
-                     * 设置实例状态：RUNNING,STOPPED,SHUTDOWN...
-                     * @param _machineState 实例状态：RUNNING,STOPPED,SHUTDOWN...
+                     * 设置agent状态：OFFLINE,ONLINE
+                     * @param _machineState agent状态：OFFLINE,ONLINE
                      * 
                      */
                     void SetMachineState(const std::string& _machineState);
@@ -697,7 +697,7 @@ namespace TencentCloud
                     bool m_machineExtraInfoHasBeenSet;
 
                     /**
-                     * 实例状态：RUNNING,STOPPED,SHUTDOWN...
+                     * agent状态：OFFLINE,ONLINE
                      */
                     std::string m_machineState;
                     bool m_machineStateHasBeenSet;

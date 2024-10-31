@@ -266,8 +266,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool AngleHasBeenSet() const;
 
                     /**
-                     * 获取是否有国徽。0为没有，1为有。
-                     * @return NationalEmblem 是否有国徽。0为没有，1为有。
+                     * 获取是否有国徽。false为没有，true为有。
+                     * @return NationalEmblem 是否有国徽。false为没有，true为有。
                      * 
                      */
                     bool GetNationalEmblem() const;
@@ -280,8 +280,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool NationalEmblemHasBeenSet() const;
 
                     /**
-                     * 获取是否有二维码。0为没有，1为有。
-                     * @return QRCode 是否有二维码。0为没有，1为有。
+                     * 获取是否有二维码。false为没有，true为有。
+                     * @return QRCode 是否有二维码。false为没有，true为有。
                      * 
                      */
                     bool GetQRCode() const;
@@ -294,8 +294,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool QRCodeHasBeenSet() const;
 
                     /**
-                     * 获取是否有印章。0为没有，1为有。
-                     * @return Seal 是否有印章。0为没有，1为有。
+                     * 获取是否有印章。false为没有，true为有。
+                     * @return Seal 是否有印章。false为没有，true为有。
                      * 
                      */
                     bool GetSeal() const;
@@ -350,8 +350,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool RegistrationAuthorityHasBeenSet() const;
 
                     /**
-                     * 获取是否是电子营业执照。0为不是，1为是。
-                     * @return Electronic 是否是电子营业执照。0为不是，1为是。
+                     * 获取是否是电子营业执照。false为没有，true为有。
+                     * @return Electronic 是否是电子营业执照。false为没有，true为有。
                      * 
                      */
                     bool GetElectronic() const;
@@ -462,19 +462,19 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool m_angleHasBeenSet;
 
                     /**
-                     * 是否有国徽。0为没有，1为有。
+                     * 是否有国徽。false为没有，true为有。
                      */
                     bool m_nationalEmblem;
                     bool m_nationalEmblemHasBeenSet;
 
                     /**
-                     * 是否有二维码。0为没有，1为有。
+                     * 是否有二维码。false为没有，true为有。
                      */
                     bool m_qRCode;
                     bool m_qRCodeHasBeenSet;
 
                     /**
-                     * 是否有印章。0为没有，1为有。
+                     * 是否有印章。false为没有，true为有。
                      */
                     bool m_seal;
                     bool m_sealHasBeenSet;
@@ -498,7 +498,7 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool m_registrationAuthorityHasBeenSet;
 
                     /**
-                     * 是否是电子营业执照。0为不是，1为是。
+                     * 是否是电子营业执照。false为没有，true为有。
                      */
                     bool m_electronic;
                     bool m_electronicHasBeenSet;

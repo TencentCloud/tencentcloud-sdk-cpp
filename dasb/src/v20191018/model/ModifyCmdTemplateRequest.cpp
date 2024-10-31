@@ -26,7 +26,8 @@ ModifyCmdTemplateRequest::ModifyCmdTemplateRequest() :
     m_nameHasBeenSet(false),
     m_cmdListHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_encodingHasBeenSet(false)
+    m_encodingHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifyCmdTemplateRequest::ToJsonString() const
         string key = "Encoding";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_encoding, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_type, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifyCmdTemplateRequest::SetEncoding(const uint64_t& _encoding)
 bool ModifyCmdTemplateRequest::EncodingHasBeenSet() const
 {
     return m_encodingHasBeenSet;
+}
+
+uint64_t ModifyCmdTemplateRequest::GetType() const
+{
+    return m_type;
+}
+
+void ModifyCmdTemplateRequest::SetType(const uint64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool ModifyCmdTemplateRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

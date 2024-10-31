@@ -26,7 +26,14 @@ using namespace std;
 GetServiceStatusResponse::GetServiceStatusResponse() :
     m_serviceEnabledHasBeenSet(false),
     m_invalidTypeHasBeenSet(false),
-    m_accessKeyEscrowEnabledHasBeenSet(false)
+    m_accessKeyEscrowEnabledHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_qPSLimitHasBeenSet(false),
+    m_secretLimitHasBeenSet(false),
+    m_payModelHasBeenSet(false),
+    m_renewFlagHasBeenSet(false),
+    m_resourceIdHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -94,6 +101,76 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
         m_accessKeyEscrowEnabledHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExpireTime") && !rsp["ExpireTime"].IsNull())
+    {
+        if (!rsp["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(rsp["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("QPSLimit") && !rsp["QPSLimit"].IsNull())
+    {
+        if (!rsp["QPSLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QPSLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_qPSLimit = rsp["QPSLimit"].GetInt64();
+        m_qPSLimitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SecretLimit") && !rsp["SecretLimit"].IsNull())
+    {
+        if (!rsp["SecretLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecretLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretLimit = rsp["SecretLimit"].GetInt64();
+        m_secretLimitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PayModel") && !rsp["PayModel"].IsNull())
+    {
+        if (!rsp["PayModel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PayModel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payModel = string(rsp["PayModel"].GetString());
+        m_payModelHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RenewFlag") && !rsp["RenewFlag"].IsNull())
+    {
+        if (!rsp["RenewFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_renewFlag = rsp["RenewFlag"].GetInt64();
+        m_renewFlagHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResourceId") && !rsp["ResourceId"].IsNull())
+    {
+        if (!rsp["ResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceId = string(rsp["ResourceId"].GetString());
+        m_resourceIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +203,62 @@ string GetServiceStatusResponse::ToJsonString() const
         string key = "AccessKeyEscrowEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accessKeyEscrowEnabled, allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qPSLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QPSLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qPSLimit, allocator);
+    }
+
+    if (m_secretLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_secretLimit, allocator);
+    }
+
+    if (m_payModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_renewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_renewFlag, allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +301,76 @@ bool GetServiceStatusResponse::GetAccessKeyEscrowEnabled() const
 bool GetServiceStatusResponse::AccessKeyEscrowEnabledHasBeenSet() const
 {
     return m_accessKeyEscrowEnabledHasBeenSet;
+}
+
+string GetServiceStatusResponse::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+bool GetServiceStatusResponse::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+int64_t GetServiceStatusResponse::GetQPSLimit() const
+{
+    return m_qPSLimit;
+}
+
+bool GetServiceStatusResponse::QPSLimitHasBeenSet() const
+{
+    return m_qPSLimitHasBeenSet;
+}
+
+int64_t GetServiceStatusResponse::GetSecretLimit() const
+{
+    return m_secretLimit;
+}
+
+bool GetServiceStatusResponse::SecretLimitHasBeenSet() const
+{
+    return m_secretLimitHasBeenSet;
+}
+
+string GetServiceStatusResponse::GetPayModel() const
+{
+    return m_payModel;
+}
+
+bool GetServiceStatusResponse::PayModelHasBeenSet() const
+{
+    return m_payModelHasBeenSet;
+}
+
+int64_t GetServiceStatusResponse::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+bool GetServiceStatusResponse::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
+}
+
+string GetServiceStatusResponse::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+bool GetServiceStatusResponse::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
+}
+
+int64_t GetServiceStatusResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool GetServiceStatusResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

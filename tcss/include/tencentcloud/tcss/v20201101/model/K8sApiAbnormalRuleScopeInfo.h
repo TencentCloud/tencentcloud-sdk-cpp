@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * k8s api 异常事件规则配置范围 
+                * k8s api 异常事件规则配置范围
                 */
                 class K8sApiAbnormalRuleScopeInfo : public AbstractModel
                 {

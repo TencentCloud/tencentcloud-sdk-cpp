@@ -25,8 +25,8 @@ using namespace std;
 CreateApplicationServiceRequest::CreateApplicationServiceRequest() :
     m_applicationIdHasBeenSet(false),
     m_environmentIdHasBeenSet(false),
-    m_sourceChannelHasBeenSet(false),
-    m_serviceHasBeenSet(false)
+    m_serviceHasBeenSet(false),
+    m_sourceChannelHasBeenSet(false)
 {
 }
 
@@ -53,14 +53,6 @@ string CreateApplicationServiceRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_environmentId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sourceChannelHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceChannel";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_sourceChannel, allocator);
-    }
-
     if (m_serviceHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -68,6 +60,14 @@ string CreateApplicationServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_service.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sourceChannelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceChannel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sourceChannel, allocator);
     }
 
 
@@ -110,22 +110,6 @@ bool CreateApplicationServiceRequest::EnvironmentIdHasBeenSet() const
     return m_environmentIdHasBeenSet;
 }
 
-int64_t CreateApplicationServiceRequest::GetSourceChannel() const
-{
-    return m_sourceChannel;
-}
-
-void CreateApplicationServiceRequest::SetSourceChannel(const int64_t& _sourceChannel)
-{
-    m_sourceChannel = _sourceChannel;
-    m_sourceChannelHasBeenSet = true;
-}
-
-bool CreateApplicationServiceRequest::SourceChannelHasBeenSet() const
-{
-    return m_sourceChannelHasBeenSet;
-}
-
 ServicePortMapping CreateApplicationServiceRequest::GetService() const
 {
     return m_service;
@@ -140,6 +124,22 @@ void CreateApplicationServiceRequest::SetService(const ServicePortMapping& _serv
 bool CreateApplicationServiceRequest::ServiceHasBeenSet() const
 {
     return m_serviceHasBeenSet;
+}
+
+int64_t CreateApplicationServiceRequest::GetSourceChannel() const
+{
+    return m_sourceChannel;
+}
+
+void CreateApplicationServiceRequest::SetSourceChannel(const int64_t& _sourceChannel)
+{
+    m_sourceChannel = _sourceChannel;
+    m_sourceChannelHasBeenSet = true;
+}
+
+bool CreateApplicationServiceRequest::SourceChannelHasBeenSet() const
+{
+    return m_sourceChannelHasBeenSet;
 }
 
 

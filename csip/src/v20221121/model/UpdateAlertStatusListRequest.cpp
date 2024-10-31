@@ -25,6 +25,7 @@ using namespace std;
 UpdateAlertStatusListRequest::UpdateAlertStatusListRequest() :
     m_iDHasBeenSet(false),
     m_operateTypeHasBeenSet(false),
+    m_memberIdHasBeenSet(false),
     m_operatedMemberIdHasBeenSet(false)
 {
 }
@@ -57,6 +58,19 @@ string UpdateAlertStatusListRequest::ToJsonString() const
         string key = "OperateType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_operateType, allocator);
+    }
+
+    if (m_memberIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_memberId.begin(); itr != m_memberId.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_operatedMemberIdHasBeenSet)
@@ -110,6 +124,22 @@ void UpdateAlertStatusListRequest::SetOperateType(const int64_t& _operateType)
 bool UpdateAlertStatusListRequest::OperateTypeHasBeenSet() const
 {
     return m_operateTypeHasBeenSet;
+}
+
+vector<string> UpdateAlertStatusListRequest::GetMemberId() const
+{
+    return m_memberId;
+}
+
+void UpdateAlertStatusListRequest::SetMemberId(const vector<string>& _memberId)
+{
+    m_memberId = _memberId;
+    m_memberIdHasBeenSet = true;
+}
+
+bool UpdateAlertStatusListRequest::MemberIdHasBeenSet() const
+{
+    return m_memberIdHasBeenSet;
 }
 
 vector<string> UpdateAlertStatusListRequest::GetOperatedMemberId() const

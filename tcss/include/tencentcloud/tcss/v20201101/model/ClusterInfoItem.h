@@ -236,6 +236,27 @@ namespace TencentCloud
                     bool ClusterStatusHasBeenSet() const;
 
                     /**
+                     * 获取集群运行子状态
+                     * @return ClusterSubStatus 集群运行子状态
+                     * 
+                     */
+                    std::string GetClusterSubStatus() const;
+
+                    /**
+                     * 设置集群运行子状态
+                     * @param _clusterSubStatus 集群运行子状态
+                     * 
+                     */
+                    void SetClusterSubStatus(const std::string& _clusterSubStatus);
+
+                    /**
+                     * 判断参数 ClusterSubStatus 是否已赋值
+                     * @return ClusterSubStatus 是否已赋值
+                     * 
+                     */
+                    bool ClusterSubStatusHasBeenSet() const;
+
+                    /**
                      * 获取集群的检测模式，为Cluster_Normal或者Cluster_Actived.
                      * @return ClusterCheckMode 集群的检测模式，为Cluster_Normal或者Cluster_Actived.
                      * 
@@ -690,6 +711,52 @@ namespace TencentCloud
                      */
                     bool CoresCntHasBeenSet() const;
 
+                    /**
+                     * 获取集群审计开关状态：
+已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed
+                     * @return ClusterAuditStatus 集群审计开关状态：
+已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed
+                     * 
+                     */
+                    std::string GetClusterAuditStatus() const;
+
+                    /**
+                     * 设置集群审计开关状态：
+已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed
+                     * @param _clusterAuditStatus 集群审计开关状态：
+已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed
+                     * 
+                     */
+                    void SetClusterAuditStatus(const std::string& _clusterAuditStatus);
+
+                    /**
+                     * 判断参数 ClusterAuditStatus 是否已赋值
+                     * @return ClusterAuditStatus 是否已赋值
+                     * 
+                     */
+                    bool ClusterAuditStatusHasBeenSet() const;
+
+                    /**
+                     * 获取集群审计开关失败信息
+                     * @return ClusterAuditFailedInfo 集群审计开关失败信息
+                     * 
+                     */
+                    std::string GetClusterAuditFailedInfo() const;
+
+                    /**
+                     * 设置集群审计开关失败信息
+                     * @param _clusterAuditFailedInfo 集群审计开关失败信息
+                     * 
+                     */
+                    void SetClusterAuditFailedInfo(const std::string& _clusterAuditFailedInfo);
+
+                    /**
+                     * 判断参数 ClusterAuditFailedInfo 是否已赋值
+                     * @return ClusterAuditFailedInfo 是否已赋值
+                     * 
+                     */
+                    bool ClusterAuditFailedInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -745,6 +812,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;
+
+                    /**
+                     * 集群运行子状态
+                     */
+                    std::string m_clusterSubStatus;
+                    bool m_clusterSubStatusHasBeenSet;
 
                     /**
                      * 集群的检测模式，为Cluster_Normal或者Cluster_Actived.
@@ -873,6 +946,19 @@ namespace TencentCloud
                      */
                     uint64_t m_coresCnt;
                     bool m_coresCntHasBeenSet;
+
+                    /**
+                     * 集群审计开关状态：
+已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed
+                     */
+                    std::string m_clusterAuditStatus;
+                    bool m_clusterAuditStatusHasBeenSet;
+
+                    /**
+                     * 集群审计开关失败信息
+                     */
+                    std::string m_clusterAuditFailedInfo;
+                    bool m_clusterAuditFailedInfoHasBeenSet;
 
                 };
             }

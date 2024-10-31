@@ -44,27 +44,63 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取滤条件、分页参数
-<li>UserName - String - 是否必填：否 - 操作符: eq,like  - 排序支持：否- 按账号UserName过滤。</li>
-<li>UserId - string - 是否必填：否 - 操作符: eq,like  - 排序支持：否 - 按账号UserNd过滤。</li>
-<li>Phone - string - 是否必填：否 - 操作符: eq,like - 排序支持：否 - 按手机号过滤。</li>
-                     * @return Condition 滤条件、分页参数
-<li>UserName - String - 是否必填：否 - 操作符: eq,like  - 排序支持：否- 按账号UserName过滤。</li>
-<li>UserId - string - 是否必填：否 - 操作符: eq,like  - 排序支持：否 - 按账号UserNd过滤。</li>
-<li>Phone - string - 是否必填：否 - 操作符: eq,like - 排序支持：否 - 按手机号过滤。</li>
+                     * 获取查询条件：过滤或排序
+1、UserName，string类型，姓名
+是否必填：否
+过滤支持：是，支持eq、like、ilike
+排序支持：否
+2、UserId，string类型，账户
+是否必填：否
+过滤支持：是，支持eq、like、ilike
+排序支持：否
+3、Phone，string类型，手机号
+是否必填：否
+过滤支持：是，支持eq、like、ilike
+排序支持：否
+                     * @return Condition 查询条件：过滤或排序
+1、UserName，string类型，姓名
+是否必填：否
+过滤支持：是，支持eq、like、ilike
+排序支持：否
+2、UserId，string类型，账户
+是否必填：否
+过滤支持：是，支持eq、like、ilike
+排序支持：否
+3、Phone，string类型，手机号
+是否必填：否
+过滤支持：是，支持eq、like、ilike
+排序支持：否
                      * 
                      */
                     Condition GetCondition() const;
 
                     /**
-                     * 设置滤条件、分页参数
-<li>UserName - String - 是否必填：否 - 操作符: eq,like  - 排序支持：否- 按账号UserName过滤。</li>
-<li>UserId - string - 是否必填：否 - 操作符: eq,like  - 排序支持：否 - 按账号UserNd过滤。</li>
-<li>Phone - string - 是否必填：否 - 操作符: eq,like - 排序支持：否 - 按手机号过滤。</li>
-                     * @param _condition 滤条件、分页参数
-<li>UserName - String - 是否必填：否 - 操作符: eq,like  - 排序支持：否- 按账号UserName过滤。</li>
-<li>UserId - string - 是否必填：否 - 操作符: eq,like  - 排序支持：否 - 按账号UserNd过滤。</li>
-<li>Phone - string - 是否必填：否 - 操作符: eq,like - 排序支持：否 - 按手机号过滤。</li>
+                     * 设置查询条件：过滤或排序
+1、UserName，string类型，姓名
+是否必填：否
+过滤支持：是，支持eq、like、ilike
+排序支持：否
+2、UserId，string类型，账户
+是否必填：否
+过滤支持：是，支持eq、like、ilike
+排序支持：否
+3、Phone，string类型，手机号
+是否必填：否
+过滤支持：是，支持eq、like、ilike
+排序支持：否
+                     * @param _condition 查询条件：过滤或排序
+1、UserName，string类型，姓名
+是否必填：否
+过滤支持：是，支持eq、like、ilike
+排序支持：否
+2、UserId，string类型，账户
+是否必填：否
+过滤支持：是，支持eq、like、ilike
+排序支持：否
+3、Phone，string类型，手机号
+是否必填：否
+过滤支持：是，支持eq、like、ilike
+排序支持：否
                      * 
                      */
                     void SetCondition(const Condition& _condition);
@@ -77,15 +113,15 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取获取账号的分组Id，不传默认获取全部(只支持32位)
-                     * @return AccountGroupId 获取账号的分组Id，不传默认获取全部(只支持32位)
+                     * 获取获取账号的分组ID，不传默认获取全网根账号组
+                     * @return AccountGroupId 获取账号的分组ID，不传默认获取全网根账号组
                      * 
                      */
                     int64_t GetAccountGroupId() const;
 
                     /**
-                     * 设置获取账号的分组Id，不传默认获取全部(只支持32位)
-                     * @param _accountGroupId 获取账号的分组Id，不传默认获取全部(只支持32位)
+                     * 设置获取账号的分组ID，不传默认获取全网根账号组
+                     * @param _accountGroupId 获取账号的分组ID，不传默认获取全网根账号组
                      * 
                      */
                     void SetAccountGroupId(const int64_t& _accountGroupId);
@@ -121,16 +157,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 滤条件、分页参数
-<li>UserName - String - 是否必填：否 - 操作符: eq,like  - 排序支持：否- 按账号UserName过滤。</li>
-<li>UserId - string - 是否必填：否 - 操作符: eq,like  - 排序支持：否 - 按账号UserNd过滤。</li>
-<li>Phone - string - 是否必填：否 - 操作符: eq,like - 排序支持：否 - 按手机号过滤。</li>
+                     * 查询条件：过滤或排序
+1、UserName，string类型，姓名
+是否必填：否
+过滤支持：是，支持eq、like、ilike
+排序支持：否
+2、UserId，string类型，账户
+是否必填：否
+过滤支持：是，支持eq、like、ilike
+排序支持：否
+3、Phone，string类型，手机号
+是否必填：否
+过滤支持：是，支持eq、like、ilike
+排序支持：否
                      */
                     Condition m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 获取账号的分组Id，不传默认获取全部(只支持32位)
+                     * 获取账号的分组ID，不传默认获取全网根账号组
                      */
                     int64_t m_accountGroupId;
                     bool m_accountGroupIdHasBeenSet;

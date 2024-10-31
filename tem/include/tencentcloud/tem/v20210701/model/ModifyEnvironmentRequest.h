@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
-                     * 获取环境名称
-                     * @return EnvironmentName 环境名称
+                     * 获取环境名称。环境名称不可修改
+                     * @return EnvironmentName 环境名称。环境名称不可修改
                      * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
-                     * 设置环境名称
-                     * @param _environmentName 环境名称
+                     * 设置环境名称。环境名称不可修改
+                     * @param _environmentName 环境名称。环境名称不可修改
                      * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
@@ -198,7 +198,7 @@ namespace TencentCloud
                     bool m_environmentIdHasBeenSet;
 
                     /**
-                     * 环境名称
+                     * 环境名称。环境名称不可修改
                      */
                     std::string m_environmentName;
                     bool m_environmentNameHasBeenSet;

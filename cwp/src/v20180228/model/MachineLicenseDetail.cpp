@@ -24,8 +24,13 @@ MachineLicenseDetail::MachineLicenseDetail() :
     m_quuidHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
+    m_licenseTypeHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
     m_inquireKeyHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false)
+    m_autoRenewFlagHasBeenSet(false),
+    m_deadlineHasBeenSet(false),
+    m_buyTimeHasBeenSet(false),
+    m_licenseCntHasBeenSet(false)
 {
 }
 
@@ -64,14 +69,14 @@ CoreInternalOutcome MachineLicenseDetail::Deserialize(const rapidjson::Value &va
         m_resourceIdHasBeenSet = true;
     }
 
-    if (value.HasMember("InquireKey") && !value["InquireKey"].IsNull())
+    if (value.HasMember("LicenseType") && !value["LicenseType"].IsNull())
     {
-        if (!value["InquireKey"].IsString())
+        if (!value["LicenseType"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `MachineLicenseDetail.InquireKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MachineLicenseDetail.LicenseType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_inquireKey = string(value["InquireKey"].GetString());
-        m_inquireKeyHasBeenSet = true;
+        m_licenseType = value["LicenseType"].GetUint64();
+        m_licenseTypeHasBeenSet = true;
     }
 
     if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
@@ -82,6 +87,56 @@ CoreInternalOutcome MachineLicenseDetail::Deserialize(const rapidjson::Value &va
         }
         m_sourceType = value["SourceType"].GetUint64();
         m_sourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InquireKey") && !value["InquireKey"].IsNull())
+    {
+        if (!value["InquireKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MachineLicenseDetail.InquireKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inquireKey = string(value["InquireKey"].GetString());
+        m_inquireKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoRenewFlag") && !value["AutoRenewFlag"].IsNull())
+    {
+        if (!value["AutoRenewFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MachineLicenseDetail.AutoRenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenewFlag = value["AutoRenewFlag"].GetUint64();
+        m_autoRenewFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("Deadline") && !value["Deadline"].IsNull())
+    {
+        if (!value["Deadline"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MachineLicenseDetail.Deadline` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deadline = string(value["Deadline"].GetString());
+        m_deadlineHasBeenSet = true;
+    }
+
+    if (value.HasMember("BuyTime") && !value["BuyTime"].IsNull())
+    {
+        if (!value["BuyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MachineLicenseDetail.BuyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_buyTime = string(value["BuyTime"].GetString());
+        m_buyTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LicenseCnt") && !value["LicenseCnt"].IsNull())
+    {
+        if (!value["LicenseCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MachineLicenseDetail.LicenseCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_licenseCnt = value["LicenseCnt"].GetUint64();
+        m_licenseCntHasBeenSet = true;
     }
 
 
@@ -115,12 +170,12 @@ void MachineLicenseDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_inquireKeyHasBeenSet)
+    if (m_licenseTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InquireKey";
+        string key = "LicenseType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_inquireKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_licenseType, allocator);
     }
 
     if (m_sourceTypeHasBeenSet)
@@ -129,6 +184,46 @@ void MachineLicenseDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "SourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sourceType, allocator);
+    }
+
+    if (m_inquireKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InquireKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inquireKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_deadlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Deadline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deadline.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_buyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_buyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_licenseCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_licenseCnt, allocator);
     }
 
 }
@@ -182,20 +277,20 @@ bool MachineLicenseDetail::ResourceIdHasBeenSet() const
     return m_resourceIdHasBeenSet;
 }
 
-string MachineLicenseDetail::GetInquireKey() const
+uint64_t MachineLicenseDetail::GetLicenseType() const
 {
-    return m_inquireKey;
+    return m_licenseType;
 }
 
-void MachineLicenseDetail::SetInquireKey(const string& _inquireKey)
+void MachineLicenseDetail::SetLicenseType(const uint64_t& _licenseType)
 {
-    m_inquireKey = _inquireKey;
-    m_inquireKeyHasBeenSet = true;
+    m_licenseType = _licenseType;
+    m_licenseTypeHasBeenSet = true;
 }
 
-bool MachineLicenseDetail::InquireKeyHasBeenSet() const
+bool MachineLicenseDetail::LicenseTypeHasBeenSet() const
 {
-    return m_inquireKeyHasBeenSet;
+    return m_licenseTypeHasBeenSet;
 }
 
 uint64_t MachineLicenseDetail::GetSourceType() const
@@ -212,5 +307,85 @@ void MachineLicenseDetail::SetSourceType(const uint64_t& _sourceType)
 bool MachineLicenseDetail::SourceTypeHasBeenSet() const
 {
     return m_sourceTypeHasBeenSet;
+}
+
+string MachineLicenseDetail::GetInquireKey() const
+{
+    return m_inquireKey;
+}
+
+void MachineLicenseDetail::SetInquireKey(const string& _inquireKey)
+{
+    m_inquireKey = _inquireKey;
+    m_inquireKeyHasBeenSet = true;
+}
+
+bool MachineLicenseDetail::InquireKeyHasBeenSet() const
+{
+    return m_inquireKeyHasBeenSet;
+}
+
+uint64_t MachineLicenseDetail::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void MachineLicenseDetail::SetAutoRenewFlag(const uint64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool MachineLicenseDetail::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
+}
+
+string MachineLicenseDetail::GetDeadline() const
+{
+    return m_deadline;
+}
+
+void MachineLicenseDetail::SetDeadline(const string& _deadline)
+{
+    m_deadline = _deadline;
+    m_deadlineHasBeenSet = true;
+}
+
+bool MachineLicenseDetail::DeadlineHasBeenSet() const
+{
+    return m_deadlineHasBeenSet;
+}
+
+string MachineLicenseDetail::GetBuyTime() const
+{
+    return m_buyTime;
+}
+
+void MachineLicenseDetail::SetBuyTime(const string& _buyTime)
+{
+    m_buyTime = _buyTime;
+    m_buyTimeHasBeenSet = true;
+}
+
+bool MachineLicenseDetail::BuyTimeHasBeenSet() const
+{
+    return m_buyTimeHasBeenSet;
+}
+
+uint64_t MachineLicenseDetail::GetLicenseCnt() const
+{
+    return m_licenseCnt;
+}
+
+void MachineLicenseDetail::SetLicenseCnt(const uint64_t& _licenseCnt)
+{
+    m_licenseCnt = _licenseCnt;
+    m_licenseCntHasBeenSet = true;
+}
+
+bool MachineLicenseDetail::LicenseCntHasBeenSet() const
+{
+    return m_licenseCntHasBeenSet;
 }
 

@@ -25,8 +25,8 @@ using namespace std;
 ModifyConfigDataRequest::ModifyConfigDataRequest() :
     m_environmentIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_sourceChannelHasBeenSet(false),
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_sourceChannelHasBeenSet(false)
 {
 }
 
@@ -53,14 +53,6 @@ string ModifyConfigDataRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sourceChannelHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceChannel";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_sourceChannel, allocator);
-    }
-
     if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -74,6 +66,14 @@ string ModifyConfigDataRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_sourceChannelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceChannel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sourceChannel, allocator);
     }
 
 
@@ -116,22 +116,6 @@ bool ModifyConfigDataRequest::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-int64_t ModifyConfigDataRequest::GetSourceChannel() const
-{
-    return m_sourceChannel;
-}
-
-void ModifyConfigDataRequest::SetSourceChannel(const int64_t& _sourceChannel)
-{
-    m_sourceChannel = _sourceChannel;
-    m_sourceChannelHasBeenSet = true;
-}
-
-bool ModifyConfigDataRequest::SourceChannelHasBeenSet() const
-{
-    return m_sourceChannelHasBeenSet;
-}
-
 vector<Pair> ModifyConfigDataRequest::GetData() const
 {
     return m_data;
@@ -146,6 +130,22 @@ void ModifyConfigDataRequest::SetData(const vector<Pair>& _data)
 bool ModifyConfigDataRequest::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+int64_t ModifyConfigDataRequest::GetSourceChannel() const
+{
+    return m_sourceChannel;
+}
+
+void ModifyConfigDataRequest::SetSourceChannel(const int64_t& _sourceChannel)
+{
+    m_sourceChannel = _sourceChannel;
+    m_sourceChannelHasBeenSet = true;
+}
+
+bool ModifyConfigDataRequest::SourceChannelHasBeenSet() const
+{
+    return m_sourceChannelHasBeenSet;
 }
 
 

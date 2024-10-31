@@ -34,7 +34,8 @@ VulAffectedContainerInfo::VulAffectedContainerInfo() :
     m_nodeTypeHasBeenSet(false),
     m_nodeUniqueIDHasBeenSet(false),
     m_nodeIDHasBeenSet(false),
-    m_nodeNameHasBeenSet(false)
+    m_nodeNameHasBeenSet(false),
+    m_containerStatusHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome VulAffectedContainerInfo::Deserialize(const rapidjson::Value
         m_nodeNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerStatus") && !value["ContainerStatus"].IsNull())
+    {
+        if (!value["ContainerStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulAffectedContainerInfo.ContainerStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerStatus = string(value["ContainerStatus"].GetString());
+        m_containerStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void VulAffectedContainerInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "NodeName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void VulAffectedContainerInfo::SetNodeName(const string& _nodeName)
 bool VulAffectedContainerInfo::NodeNameHasBeenSet() const
 {
     return m_nodeNameHasBeenSet;
+}
+
+string VulAffectedContainerInfo::GetContainerStatus() const
+{
+    return m_containerStatus;
+}
+
+void VulAffectedContainerInfo::SetContainerStatus(const string& _containerStatus)
+{
+    m_containerStatus = _containerStatus;
+    m_containerStatusHasBeenSet = true;
+}
+
+bool VulAffectedContainerInfo::ContainerStatusHasBeenSet() const
+{
+    return m_containerStatusHasBeenSet;
 }
 

@@ -470,15 +470,15 @@ namespace TencentCloud
                     bool CoreVersionHasBeenSet() const;
 
                     /**
-                     * 获取linux/windows
-                     * @return OsType linux/windows
+                     * 获取Linux/Windows
+                     * @return OsType Linux/Windows
                      * 
                      */
                     std::string GetOsType() const;
 
                     /**
-                     * 设置linux/windows
-                     * @param _osType linux/windows
+                     * 设置Linux/Windows
+                     * @param _osType Linux/Windows
                      * 
                      */
                     void SetOsType(const std::string& _osType);
@@ -994,7 +994,7 @@ namespace TencentCloud
                     bool m_coreVersionHasBeenSet;
 
                     /**
-                     * linux/windows
+                     * Linux/Windows
                      */
                     std::string m_osType;
                     bool m_osTypeHasBeenSet;

@@ -4555,6 +4555,49 @@ TseClient::PublishConfigFilesOutcomeCallable TseClient::PublishConfigFilesCallab
     return task->get_future();
 }
 
+TseClient::RestartSREInstanceOutcome TseClient::RestartSREInstance(const RestartSREInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestartSREInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestartSREInstanceResponse rsp = RestartSREInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestartSREInstanceOutcome(rsp);
+        else
+            return RestartSREInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return RestartSREInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::RestartSREInstanceAsync(const RestartSREInstanceRequest& request, const RestartSREInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestartSREInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::RestartSREInstanceOutcomeCallable TseClient::RestartSREInstanceCallable(const RestartSREInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestartSREInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->RestartSREInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::RollbackConfigFileReleasesOutcome TseClient::RollbackConfigFileReleases(const RollbackConfigFileReleasesRequest &request)
 {
     auto outcome = MakeRequest(request, "RollbackConfigFileReleases");

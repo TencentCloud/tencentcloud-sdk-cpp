@@ -25,6 +25,7 @@ using namespace std;
 DescribeCmdTemplatesRequest::DescribeCmdTemplatesRequest() :
     m_idSetHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -56,6 +57,14 @@ string DescribeCmdTemplatesRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_type, allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -112,6 +121,22 @@ void DescribeCmdTemplatesRequest::SetName(const string& _name)
 bool DescribeCmdTemplatesRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+uint64_t DescribeCmdTemplatesRequest::GetType() const
+{
+    return m_type;
+}
+
+void DescribeCmdTemplatesRequest::SetType(const uint64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DescribeCmdTemplatesRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 uint64_t DescribeCmdTemplatesRequest::GetOffset() const

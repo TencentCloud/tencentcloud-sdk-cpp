@@ -27,7 +27,9 @@ SupportDefenceVul::SupportDefenceVul() :
     m_cVSSV3ScoreHasBeenSet(false),
     m_levelHasBeenSet(false),
     m_cVEIDHasBeenSet(false),
-    m_submitTimeHasBeenSet(false)
+    m_submitTimeHasBeenSet(false),
+    m_vulIdHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -109,6 +111,26 @@ CoreInternalOutcome SupportDefenceVul::Deserialize(const rapidjson::Value &value
         m_submitTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("VulId") && !value["VulId"].IsNull())
+    {
+        if (!value["VulId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SupportDefenceVul.VulId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vulId = value["VulId"].GetInt64();
+        m_vulIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SupportDefenceVul.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +197,22 @@ void SupportDefenceVul::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "SubmitTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_submitTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vulIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vulId, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -290,5 +328,37 @@ void SupportDefenceVul::SetSubmitTime(const string& _submitTime)
 bool SupportDefenceVul::SubmitTimeHasBeenSet() const
 {
     return m_submitTimeHasBeenSet;
+}
+
+int64_t SupportDefenceVul::GetVulId() const
+{
+    return m_vulId;
+}
+
+void SupportDefenceVul::SetVulId(const int64_t& _vulId)
+{
+    m_vulId = _vulId;
+    m_vulIdHasBeenSet = true;
+}
+
+bool SupportDefenceVul::VulIdHasBeenSet() const
+{
+    return m_vulIdHasBeenSet;
+}
+
+int64_t SupportDefenceVul::GetStatus() const
+{
+    return m_status;
+}
+
+void SupportDefenceVul::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool SupportDefenceVul::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

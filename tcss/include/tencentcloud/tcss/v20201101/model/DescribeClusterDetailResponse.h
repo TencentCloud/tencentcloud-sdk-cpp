@@ -142,6 +142,20 @@ namespace TencentCloud
                     bool ClusterStatusHasBeenSet() const;
 
                     /**
+                     * 获取集群运行子状态
+                     * @return ClusterSubStatus 集群运行子状态
+                     * 
+                     */
+                    std::string GetClusterSubStatus() const;
+
+                    /**
+                     * 判断参数 ClusterSubStatus 是否已赋值
+                     * @return ClusterSubStatus 是否已赋值
+                     * 
+                     */
+                    bool ClusterSubStatusHasBeenSet() const;
+
+                    /**
                      * 获取集群类型：为托管集群MANAGED_CLUSTER、独立集群INDEPENDENT_CLUSTER
                      * @return ClusterType 集群类型：为托管集群MANAGED_CLUSTER、独立集群INDEPENDENT_CLUSTER
                      * 
@@ -436,6 +450,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;
+
+                    /**
+                     * 集群运行子状态
+                     */
+                    std::string m_clusterSubStatus;
+                    bool m_clusterSubStatusHasBeenSet;
 
                     /**
                      * 集群类型：为托管集群MANAGED_CLUSTER、独立集群INDEPENDENT_CLUSTER

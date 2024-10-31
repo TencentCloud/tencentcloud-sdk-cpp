@@ -24,8 +24,8 @@ using namespace std;
 
 RestartApplicationRequest::RestartApplicationRequest() :
     m_applicationIdHasBeenSet(false),
-    m_sourceChannelHasBeenSet(false),
-    m_environmentIdHasBeenSet(false)
+    m_environmentIdHasBeenSet(false),
+    m_sourceChannelHasBeenSet(false)
 {
 }
 
@@ -44,20 +44,20 @@ string RestartApplicationRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sourceChannelHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceChannel";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_sourceChannel, allocator);
-    }
-
     if (m_environmentIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnvironmentId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_environmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceChannelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceChannel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sourceChannel, allocator);
     }
 
 
@@ -84,22 +84,6 @@ bool RestartApplicationRequest::ApplicationIdHasBeenSet() const
     return m_applicationIdHasBeenSet;
 }
 
-int64_t RestartApplicationRequest::GetSourceChannel() const
-{
-    return m_sourceChannel;
-}
-
-void RestartApplicationRequest::SetSourceChannel(const int64_t& _sourceChannel)
-{
-    m_sourceChannel = _sourceChannel;
-    m_sourceChannelHasBeenSet = true;
-}
-
-bool RestartApplicationRequest::SourceChannelHasBeenSet() const
-{
-    return m_sourceChannelHasBeenSet;
-}
-
 string RestartApplicationRequest::GetEnvironmentId() const
 {
     return m_environmentId;
@@ -114,6 +98,22 @@ void RestartApplicationRequest::SetEnvironmentId(const string& _environmentId)
 bool RestartApplicationRequest::EnvironmentIdHasBeenSet() const
 {
     return m_environmentIdHasBeenSet;
+}
+
+int64_t RestartApplicationRequest::GetSourceChannel() const
+{
+    return m_sourceChannel;
+}
+
+void RestartApplicationRequest::SetSourceChannel(const int64_t& _sourceChannel)
+{
+    m_sourceChannel = _sourceChannel;
+    m_sourceChannelHasBeenSet = true;
+}
+
+bool RestartApplicationRequest::SourceChannelHasBeenSet() const
+{
+    return m_sourceChannelHasBeenSet;
 }
 
 

@@ -193,6 +193,31 @@ namespace TencentCloud
                      */
                     bool VulIdHasBeenSet() const;
 
+                    /**
+                     * 获取状态，0:防御中，1：已加白，指的是在白名单列表中有这个漏洞的，不一定是全局型白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 状态，0:防御中，1：已加白，指的是在白名单列表中有这个漏洞的，不一定是全局型白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置状态，0:防御中，1：已加白，指的是在白名单列表中有这个漏洞的，不一定是全局型白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 状态，0:防御中，1：已加白，指的是在白名单列表中有这个漏洞的，不一定是全局型白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +261,13 @@ namespace TencentCloud
                      */
                     int64_t m_vulId;
                     bool m_vulIdHasBeenSet;
+
+                    /**
+                     * 状态，0:防御中，1：已加白，指的是在白名单列表中有这个漏洞的，不一定是全局型白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

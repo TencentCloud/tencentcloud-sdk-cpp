@@ -31,7 +31,8 @@ DescribeAclsRequest::DescribeAclsRequest() :
     m_authorizedUserIdSetHasBeenSet(false),
     m_authorizedDeviceIdSetHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_departmentIdHasBeenSet(false)
+    m_departmentIdHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,21 @@ string DescribeAclsRequest::ToJsonString() const
         string key = "DepartmentId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -279,6 +295,22 @@ void DescribeAclsRequest::SetDepartmentId(const string& _departmentId)
 bool DescribeAclsRequest::DepartmentIdHasBeenSet() const
 {
     return m_departmentIdHasBeenSet;
+}
+
+vector<Filter> DescribeAclsRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeAclsRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeAclsRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

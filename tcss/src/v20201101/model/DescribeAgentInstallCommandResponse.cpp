@@ -28,7 +28,8 @@ DescribeAgentInstallCommandResponse::DescribeAgentInstallCommandResponse() :
     m_windowsCommandHasBeenSet(false),
     m_windowsStepOneHasBeenSet(false),
     m_windowsStepTwoHasBeenSet(false),
-    m_windowsDownloadUrlHasBeenSet(false)
+    m_windowsDownloadUrlHasBeenSet(false),
+    m_aRMCommandHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome DescribeAgentInstallCommandResponse::Deserialize(const strin
         m_windowsDownloadUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ARMCommand") && !rsp["ARMCommand"].IsNull())
+    {
+        if (!rsp["ARMCommand"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ARMCommand` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aRMCommand = string(rsp["ARMCommand"].GetString());
+        m_aRMCommandHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +175,14 @@ string DescribeAgentInstallCommandResponse::ToJsonString() const
         string key = "WindowsDownloadUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_windowsDownloadUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aRMCommandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ARMCommand";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aRMCommand.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -226,6 +245,16 @@ string DescribeAgentInstallCommandResponse::GetWindowsDownloadUrl() const
 bool DescribeAgentInstallCommandResponse::WindowsDownloadUrlHasBeenSet() const
 {
     return m_windowsDownloadUrlHasBeenSet;
+}
+
+string DescribeAgentInstallCommandResponse::GetARMCommand() const
+{
+    return m_aRMCommand;
+}
+
+bool DescribeAgentInstallCommandResponse::ARMCommandHasBeenSet() const
+{
+    return m_aRMCommandHasBeenSet;
 }
 
 

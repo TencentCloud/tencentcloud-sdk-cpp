@@ -52,7 +52,6 @@ namespace TencentCloud
 
 <ul>
 <li><strong>OPEN_SERVER_SIGN</strong>（企业自动签署）</li>
-<li><strong>OVERSEA_SIGN</strong>（企业与港澳台居民签署合同）</li>
 </ul></li></li>
 </ul>
                      * @return OperateUrl 操作跳转链接
@@ -63,7 +62,6 @@ namespace TencentCloud
 
 <ul>
 <li><strong>OPEN_SERVER_SIGN</strong>（企业自动签署）</li>
-<li><strong>OVERSEA_SIGN</strong>（企业与港澳台居民签署合同）</li>
 </ul></li></li>
 </ul>
                      * 
@@ -88,7 +86,6 @@ namespace TencentCloud
 
 <ul>
 <li><strong>OPEN_SERVER_SIGN</strong>（企业自动签署）</li>
-<li><strong>OVERSEA_SIGN</strong>（企业与港澳台居民签署合同）</li>
 </ul></li></li>
 </ul>
                      */

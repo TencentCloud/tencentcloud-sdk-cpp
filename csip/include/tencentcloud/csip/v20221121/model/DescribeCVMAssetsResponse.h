@@ -47,9 +47,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取-
+                     * 获取总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total -
+                     * @return Total 总数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,9 +63,9 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取-
+                     * 获取机器列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data -
+                     * @return Data 机器列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -273,14 +273,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * -
+                     * 总数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * -
+                     * 机器列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CVMAssetVO> m_data;

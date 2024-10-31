@@ -2491,49 +2491,6 @@ CfwClient::DescribeNatFwVpcDnsLstOutcomeCallable CfwClient::DescribeNatFwVpcDnsL
     return task->get_future();
 }
 
-CfwClient::DescribeNatSwitchListOutcome CfwClient::DescribeNatSwitchList(const DescribeNatSwitchListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeNatSwitchList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeNatSwitchListResponse rsp = DescribeNatSwitchListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeNatSwitchListOutcome(rsp);
-        else
-            return DescribeNatSwitchListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeNatSwitchListOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::DescribeNatSwitchListAsync(const DescribeNatSwitchListRequest& request, const DescribeNatSwitchListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNatSwitchList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::DescribeNatSwitchListOutcomeCallable CfwClient::DescribeNatSwitchListCallable(const DescribeNatSwitchListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeNatSwitchListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNatSwitchList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CfwClient::DescribeResourceGroupOutcome CfwClient::DescribeResourceGroup(const DescribeResourceGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResourceGroup");

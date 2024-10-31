@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupRequest.h>
+#include <tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeAccountGroupsRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeAccountGroupsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDevicesRequest.h>
@@ -45,6 +47,9 @@ namespace TencentCloud
                 IoaClient(const Credential &credential, const std::string &region);
                 IoaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateDeviceVirtualGroupResponse> CreateDeviceVirtualGroupOutcome;
+                typedef std::future<CreateDeviceVirtualGroupOutcome> CreateDeviceVirtualGroupOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::CreateDeviceVirtualGroupRequest&, CreateDeviceVirtualGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceVirtualGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccountGroupsResponse> DescribeAccountGroupsOutcome;
                 typedef std::future<DescribeAccountGroupsOutcome> DescribeAccountGroupsOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeAccountGroupsRequest&, DescribeAccountGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountGroupsAsyncHandler;
@@ -61,7 +66,16 @@ namespace TencentCloud
 
 
                 /**
-                 *以分页的方式查询账户目录列表,私有化调用path为：/capi/Assets/DescribeAccountGroups
+                 *创建终端自定义分组，私有化调用path为：/capi/Assets/Device/CreateDeviceVirtualGroup
+                 * @param req CreateDeviceVirtualGroupRequest
+                 * @return CreateDeviceVirtualGroupOutcome
+                 */
+                CreateDeviceVirtualGroupOutcome CreateDeviceVirtualGroup(const Model::CreateDeviceVirtualGroupRequest &request);
+                void CreateDeviceVirtualGroupAsync(const Model::CreateDeviceVirtualGroupRequest& request, const CreateDeviceVirtualGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDeviceVirtualGroupOutcomeCallable CreateDeviceVirtualGroupCallable(const Model::CreateDeviceVirtualGroupRequest& request);
+
+                /**
+                 *以分页的方式查询账号分组列表，私有化调用path为：/capi/Assets/DescribeAccountGroups
                  * @param req DescribeAccountGroupsRequest
                  * @return DescribeAccountGroupsOutcome
                  */
@@ -88,7 +102,8 @@ namespace TencentCloud
                 DescribeLocalAccountsOutcomeCallable DescribeLocalAccountsCallable(const Model::DescribeLocalAccountsRequest& request);
 
                 /**
-                 *查询账户根分组详情，私有化调用path为：capi/Assets/DescribeRootAccountGroup
+                 *查询账号根分组详情。对应“用户与授权管理”里内置不可见的全网根账号组，所有新建的目录，都挂在该全网根账号组下。
+私有化调用path为：capi/Assets/DescribeRootAccountGroup
                  * @param req DescribeRootAccountGroupRequest
                  * @return DescribeRootAccountGroupOutcome
                  */

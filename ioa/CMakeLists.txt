@@ -19,52 +19,66 @@ set(ioa_public_header
   )
 
 set(ioa_public_header_model
-  include/tencentcloud/ioa/v20220601/model/DescribeAccountGroupsResponse.h
-  include/tencentcloud/ioa/v20220601/model/DescribeRootAccountGroupResponse.h
-  include/tencentcloud/ioa/v20220601/model/DescribeDevicesPageRsp.h
-  include/tencentcloud/ioa/v20220601/model/DeviceDetail.h
-  include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsData.h
-  include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsRequest.h
-  include/tencentcloud/ioa/v20220601/model/FilterGroup.h
-  include/tencentcloud/ioa/v20220601/model/DescribeDevicesResponse.h
+  include/tencentcloud/ioa/v20220601/model/RuleItem.h
   include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountAccountGroupsData.h
-  include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsPage.h
-  include/tencentcloud/ioa/v20220601/model/DescribeDevicesRequest.h
-  include/tencentcloud/ioa/v20220601/model/Paging.h
+  include/tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupResponse.h
+  include/tencentcloud/ioa/v20220601/model/ComplexRule.h
   include/tencentcloud/ioa/v20220601/model/Sort.h
-  include/tencentcloud/ioa/v20220601/model/Condition.h
-  include/tencentcloud/ioa/v20220601/model/Filter.h
+  include/tencentcloud/ioa/v20220601/model/DescribeRootAccountGroupResponse.h
+  include/tencentcloud/ioa/v20220601/model/DescribeDevicesResponse.h
+  include/tencentcloud/ioa/v20220601/model/GetAccountGroupData.h
   include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeAccountGroupsData.h
+  include/tencentcloud/ioa/v20220601/model/RuleExpression.h
   include/tencentcloud/ioa/v20220601/model/DescribeRootAccountGroupRequest.h
-  include/tencentcloud/ioa/v20220601/model/GetAccountGroupData.h
   include/tencentcloud/ioa/v20220601/model/DescribeAccountGroupsPageResp.h
   include/tencentcloud/ioa/v20220601/model/DescribeAccountGroupsRequest.h
+  include/tencentcloud/ioa/v20220601/model/DescribeAccountGroupsResponse.h
+  include/tencentcloud/ioa/v20220601/model/DescribeDevicesPageRsp.h
+  include/tencentcloud/ioa/v20220601/model/FilterGroup.h
+  include/tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupRequest.h
+  include/tencentcloud/ioa/v20220601/model/DescribeDevicesRequest.h
+  include/tencentcloud/ioa/v20220601/model/Paging.h
+  include/tencentcloud/ioa/v20220601/model/DeviceDetail.h
+  include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsData.h
+  include/tencentcloud/ioa/v20220601/model/Filter.h
+  include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsRequest.h
+  include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsPage.h
+  include/tencentcloud/ioa/v20220601/model/Condition.h
+  include/tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupRspData.h
+  include/tencentcloud/ioa/v20220601/model/SimpleRule.h
   )
 
 set(ioa_src
   src/v20220601/IoaClient.cpp
-  src/v20220601/model/DescribeAccountGroupsResponse.cpp
-  src/v20220601/model/DescribeRootAccountGroupResponse.cpp
-  src/v20220601/model/DescribeDevicesPageRsp.cpp
-  src/v20220601/model/DeviceDetail.cpp
-  src/v20220601/model/DescribeLocalAccountsData.cpp
-  src/v20220601/model/DescribeLocalAccountsRequest.cpp
-  src/v20220601/model/FilterGroup.cpp
-  src/v20220601/model/DescribeDevicesResponse.cpp
+  src/v20220601/model/RuleItem.cpp
   src/v20220601/model/DescribeLocalAccountAccountGroupsData.cpp
-  src/v20220601/model/DescribeLocalAccountsPage.cpp
-  src/v20220601/model/DescribeDevicesRequest.cpp
-  src/v20220601/model/Paging.cpp
+  src/v20220601/model/CreateDeviceVirtualGroupResponse.cpp
+  src/v20220601/model/ComplexRule.cpp
   src/v20220601/model/Sort.cpp
-  src/v20220601/model/Condition.cpp
-  src/v20220601/model/Filter.cpp
+  src/v20220601/model/DescribeRootAccountGroupResponse.cpp
+  src/v20220601/model/DescribeDevicesResponse.cpp
+  src/v20220601/model/GetAccountGroupData.cpp
   src/v20220601/model/DescribeLocalAccountsResponse.cpp
   src/v20220601/model/DescribeAccountGroupsData.cpp
+  src/v20220601/model/RuleExpression.cpp
   src/v20220601/model/DescribeRootAccountGroupRequest.cpp
-  src/v20220601/model/GetAccountGroupData.cpp
   src/v20220601/model/DescribeAccountGroupsPageResp.cpp
   src/v20220601/model/DescribeAccountGroupsRequest.cpp
+  src/v20220601/model/DescribeAccountGroupsResponse.cpp
+  src/v20220601/model/DescribeDevicesPageRsp.cpp
+  src/v20220601/model/FilterGroup.cpp
+  src/v20220601/model/CreateDeviceVirtualGroupRequest.cpp
+  src/v20220601/model/DescribeDevicesRequest.cpp
+  src/v20220601/model/Paging.cpp
+  src/v20220601/model/DeviceDetail.cpp
+  src/v20220601/model/DescribeLocalAccountsData.cpp
+  src/v20220601/model/Filter.cpp
+  src/v20220601/model/DescribeLocalAccountsRequest.cpp
+  src/v20220601/model/DescribeLocalAccountsPage.cpp
+  src/v20220601/model/Condition.cpp
+  src/v20220601/model/CreateDeviceVirtualGroupRspData.cpp
+  src/v20220601/model/SimpleRule.cpp
   )
 
 set(ioa_include

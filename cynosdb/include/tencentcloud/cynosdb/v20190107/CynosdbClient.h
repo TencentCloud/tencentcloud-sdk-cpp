@@ -1119,7 +1119,7 @@ namespace TencentCloud
                 DescribeBackupConfigOutcomeCallable DescribeBackupConfigCallable(const Model::DescribeBackupConfigRequest& request);
 
                 /**
-                 *此接口（DescribeBackupDownloadUrl）用于查询集群备份文件下载地址。
+                 *本接口（DescribeBackupDownloadUrl）用于查询集群备份文件下载地址。
                  * @param req DescribeBackupDownloadUrlRequest
                  * @return DescribeBackupDownloadUrlOutcome
                  */
@@ -1146,7 +1146,7 @@ namespace TencentCloud
                 DescribeBinlogConfigOutcomeCallable DescribeBinlogConfigCallable(const Model::DescribeBinlogConfigRequest& request);
 
                 /**
-                 *此接口（DescribeBinlogDownloadUrl）用于查询Binlog的下载地址。
+                 *本接口（DescribeBinlogDownloadUrl）用于查询 Binlog 的下载地址。
                  * @param req DescribeBinlogDownloadUrlRequest
                  * @return DescribeBinlogDownloadUrlOutcome
                  */
@@ -1164,7 +1164,7 @@ namespace TencentCloud
                 DescribeBinlogSaveDaysOutcomeCallable DescribeBinlogSaveDaysCallable(const Model::DescribeBinlogSaveDaysRequest& request);
 
                 /**
-                 *此接口（DescribeBinlogs）用来查询集群Binlog日志列表。
+                 *本接口（DescribeBinlogs）用来查询集群 Binlog 日志列表。
                  * @param req DescribeBinlogsRequest
                  * @return DescribeBinlogsOutcome
                  */
@@ -1254,7 +1254,7 @@ namespace TencentCloud
                 DescribeClusterPasswordComplexityOutcomeCallable DescribeClusterPasswordComplexityCallable(const Model::DescribeClusterPasswordComplexityRequest& request);
 
                 /**
-                 *查询集群列表
+                 *本接口（DescribeClusters）用于查询集群列表。
                  * @param req DescribeClustersRequest
                  * @return DescribeClustersOutcome
                  */
@@ -1488,7 +1488,7 @@ namespace TencentCloud
                 DescribeTasksOutcomeCallable DescribeTasksCallable(const Model::DescribeTasksRequest& request);
 
                 /**
-                 *本接口(DescribeZones)用于查询可售卖地域可用区信息。
+                 *本接口（DescribeZones）用于查询可售卖地域可用区信息。
                  * @param req DescribeZonesRequest
                  * @return DescribeZonesOutcome
                  */
@@ -1515,7 +1515,7 @@ namespace TencentCloud
                 ExportInstanceErrorLogsOutcomeCallable ExportInstanceErrorLogsCallable(const Model::ExportInstanceErrorLogsRequest& request);
 
                 /**
-                 *此接口（ExportInstanceSlowQueries）用于导出实例慢日志。
+                 *本接口（ExportInstanceSlowQueries）用于导出实例慢日志。
                  * @param req ExportInstanceSlowQueriesRequest
                  * @return ExportInstanceSlowQueriesOutcome
                  */

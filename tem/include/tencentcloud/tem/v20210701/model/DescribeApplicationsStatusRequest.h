@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取来源渠道
-                     * @return SourceChannel 来源渠道
-                     * 
-                     */
-                    int64_t GetSourceChannel() const;
-
-                    /**
-                     * 设置来源渠道
-                     * @param _sourceChannel 来源渠道
-                     * 
-                     */
-                    void SetSourceChannel(const int64_t& _sourceChannel);
-
-                    /**
-                     * 判断参数 SourceChannel 是否已赋值
-                     * @return SourceChannel 是否已赋值
-                     * 
-                     */
-                    bool SourceChannelHasBeenSet() const;
-
-                    /**
                      * 获取环境ID
                      * @return EnvironmentId 环境ID
                      * 
@@ -84,19 +63,40 @@ namespace TencentCloud
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取来源渠道
+                     * @return SourceChannel 来源渠道
+                     * 
+                     */
+                    int64_t GetSourceChannel() const;
 
                     /**
-                     * 来源渠道
+                     * 设置来源渠道
+                     * @param _sourceChannel 来源渠道
+                     * 
                      */
-                    int64_t m_sourceChannel;
-                    bool m_sourceChannelHasBeenSet;
+                    void SetSourceChannel(const int64_t& _sourceChannel);
+
+                    /**
+                     * 判断参数 SourceChannel 是否已赋值
+                     * @return SourceChannel 是否已赋值
+                     * 
+                     */
+                    bool SourceChannelHasBeenSet() const;
+
+                private:
 
                     /**
                      * 环境ID
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;
+
+                    /**
+                     * 来源渠道
+                     */
+                    int64_t m_sourceChannel;
+                    bool m_sourceChannelHasBeenSet;
 
                 };
             }

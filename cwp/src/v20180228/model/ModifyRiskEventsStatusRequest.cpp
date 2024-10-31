@@ -30,7 +30,8 @@ ModifyRiskEventsStatusRequest::ModifyRiskEventsStatusRequest() :
     m_excludeIdHasBeenSet(false),
     m_killProcessHasBeenSet(false),
     m_ipHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_doCleanHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,14 @@ string ModifyRiskEventsStatusRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_doCleanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DoClean";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_doClean, allocator);
     }
 
 
@@ -261,6 +270,22 @@ void ModifyRiskEventsStatusRequest::SetFilters(const vector<Filters>& _filters)
 bool ModifyRiskEventsStatusRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+bool ModifyRiskEventsStatusRequest::GetDoClean() const
+{
+    return m_doClean;
+}
+
+void ModifyRiskEventsStatusRequest::SetDoClean(const bool& _doClean)
+{
+    m_doClean = _doClean;
+    m_doCleanHasBeenSet = true;
+}
+
+bool ModifyRiskEventsStatusRequest::DoCleanHasBeenSet() const
+{
+    return m_doCleanHasBeenSet;
 }
 
 

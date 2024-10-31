@@ -48,7 +48,9 @@ VulDefenceEvent::VulDefenceEvent() :
     m_nodeUniqueIDHasBeenSet(false),
     m_nodeIDHasBeenSet(false),
     m_clusterIDHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_podNameHasBeenSet(false),
+    m_podIPHasBeenSet(false)
 {
 }
 
@@ -337,6 +339,26 @@ CoreInternalOutcome VulDefenceEvent::Deserialize(const rapidjson::Value &value)
         m_clusterNameHasBeenSet = true;
     }
 
+    if (value.HasMember("PodName") && !value["PodName"].IsNull())
+    {
+        if (!value["PodName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDefenceEvent.PodName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podName = string(value["PodName"].GetString());
+        m_podNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodIP") && !value["PodIP"].IsNull())
+    {
+        if (!value["PodIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDefenceEvent.PodIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_podIP = string(value["PodIP"].GetString());
+        m_podIPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -566,6 +588,22 @@ void VulDefenceEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_podIP.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1017,5 +1055,37 @@ void VulDefenceEvent::SetClusterName(const string& _clusterName)
 bool VulDefenceEvent::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+string VulDefenceEvent::GetPodName() const
+{
+    return m_podName;
+}
+
+void VulDefenceEvent::SetPodName(const string& _podName)
+{
+    m_podName = _podName;
+    m_podNameHasBeenSet = true;
+}
+
+bool VulDefenceEvent::PodNameHasBeenSet() const
+{
+    return m_podNameHasBeenSet;
+}
+
+string VulDefenceEvent::GetPodIP() const
+{
+    return m_podIP;
+}
+
+void VulDefenceEvent::SetPodIP(const string& _podIP)
+{
+    m_podIP = _podIP;
+    m_podIPHasBeenSet = true;
+}
+
+bool VulDefenceEvent::PodIPHasBeenSet() const
+{
+    return m_podIPHasBeenSet;
 }
 

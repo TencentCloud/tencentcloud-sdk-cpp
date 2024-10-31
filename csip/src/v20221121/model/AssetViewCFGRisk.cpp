@@ -40,7 +40,8 @@ AssetViewCFGRisk::AssetViewCFGRisk() :
     m_indexHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_nickHasBeenSet(false),
-    m_uinHasBeenSet(false)
+    m_uinHasBeenSet(false),
+    m_clbIdHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,16 @@ CoreInternalOutcome AssetViewCFGRisk::Deserialize(const rapidjson::Value &value)
         m_uinHasBeenSet = true;
     }
 
+    if (value.HasMember("ClbId") && !value["ClbId"].IsNull())
+    {
+        if (!value["ClbId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetViewCFGRisk.ClbId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clbId = string(value["ClbId"].GetString());
+        m_clbIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +425,14 @@ void AssetViewCFGRisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Uin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clbIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClbId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clbId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -737,5 +756,21 @@ void AssetViewCFGRisk::SetUin(const string& _uin)
 bool AssetViewCFGRisk::UinHasBeenSet() const
 {
     return m_uinHasBeenSet;
+}
+
+string AssetViewCFGRisk::GetClbId() const
+{
+    return m_clbId;
+}
+
+void AssetViewCFGRisk::SetClbId(const string& _clbId)
+{
+    m_clbId = _clbId;
+    m_clbIdHasBeenSet = true;
+}
+
+bool AssetViewCFGRisk::ClbIdHasBeenSet() const
+{
+    return m_clbIdHasBeenSet;
 }
 

@@ -31,7 +31,8 @@ DescribeDevicesRequest::DescribeDevicesRequest() :
     m_sortHasBeenSet(false),
     m_pageNumHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_groupIdsHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,19 @@ string DescribeDevicesRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_groupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupIds.begin(); itr != m_groupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -273,6 +287,22 @@ void DescribeDevicesRequest::SetStatus(const int64_t& _status)
 bool DescribeDevicesRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<int64_t> DescribeDevicesRequest::GetGroupIds() const
+{
+    return m_groupIds;
+}
+
+void DescribeDevicesRequest::SetGroupIds(const vector<int64_t>& _groupIds)
+{
+    m_groupIds = _groupIds;
+    m_groupIdsHasBeenSet = true;
+}
+
+bool DescribeDevicesRequest::GroupIdsHasBeenSet() const
+{
+    return m_groupIdsHasBeenSet;
 }
 
 

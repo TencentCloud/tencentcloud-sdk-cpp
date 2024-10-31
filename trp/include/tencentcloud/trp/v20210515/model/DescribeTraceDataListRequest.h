@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取二维码
-                     * @return Code 二维码
+                     * 获取溯源码
+                     * @return Code 溯源码
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置二维码
-                     * @param _code 二维码
+                     * 设置溯源码
+                     * @param _code 溯源码
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -216,7 +216,7 @@ namespace TencentCloud
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 二维码
+                     * 溯源码
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;

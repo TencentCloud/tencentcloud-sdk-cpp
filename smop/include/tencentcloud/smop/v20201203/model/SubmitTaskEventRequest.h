@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户ID
-                     * @return AccountId 用户ID
+                     * 获取用户唯一标识，最大长度为64
+                     * @return AccountId 用户唯一标识，最大长度为64
                      * 
                      */
                     std::string GetAccountId() const;
 
                     /**
-                     * 设置用户ID
-                     * @param _accountId 用户ID
+                     * 设置用户唯一标识，最大长度为64
+                     * @param _accountId 用户唯一标识，最大长度为64
                      * 
                      */
                     void SetAccountId(const std::string& _accountId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AccountIdHasBeenSet() const;
 
                     /**
-                     * 获取设备ID
-                     * @return DeviceId 设备ID
+                     * 获取用户设备ID，最大长度为64
+                     * @return DeviceId 用户设备ID，最大长度为64
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置设备ID
-                     * @param _deviceId 设备ID
+                     * 设置用户设备ID，最大长度为64
+                     * @param _deviceId 用户设备ID，最大长度为64
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取订单ID
-                     * @return OrderId 订单ID
+                     * 获取任务的唯一订单号，只能是数字、大小写字母，且在同一个产品ID下唯一，最大长度为64
+                     * @return OrderId 任务的唯一订单号，只能是数字、大小写字母，且在同一个产品ID下唯一，最大长度为64
                      * 
                      */
                     std::string GetOrderId() const;
 
                     /**
-                     * 设置订单ID
-                     * @param _orderId 订单ID
+                     * 设置任务的唯一订单号，只能是数字、大小写字母，且在同一个产品ID下唯一，最大长度为64
+                     * @param _orderId 任务的唯一订单号，只能是数字、大小写字母，且在同一个产品ID下唯一，最大长度为64
                      * 
                      */
                     void SetOrderId(const std::string& _orderId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OrderIdHasBeenSet() const;
 
                     /**
-                     * 获取任务事件Code
-                     * @return Code 任务事件Code
+                     * 获取任务事件Code，在腾讯安心用户运营平台下的任务事件列表中设置并获取
+                     * @return Code 任务事件Code，在腾讯安心用户运营平台下的任务事件列表中设置并获取
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置任务事件Code
-                     * @param _code 任务事件Code
+                     * 设置任务事件Code，在腾讯安心用户运营平台下的任务事件列表中设置并获取
+                     * @param _code 任务事件Code，在腾讯安心用户运营平台下的任务事件列表中设置并获取
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取同步异步方式：0为同步、1位异步
-                     * @return Async 同步异步方式：0为同步、1位异步
+                     * 获取任务结果是否异步通知。0表示任务结果在返回信息中同步返回；1表示任务结果通过回调结果异步通知。
+                     * @return Async 任务结果是否异步通知。0表示任务结果在返回信息中同步返回；1表示任务结果通过回调结果异步通知。
                      * 
                      */
                     int64_t GetAsync() const;
 
                     /**
-                     * 设置同步异步方式：0为同步、1位异步
-                     * @param _async 同步异步方式：0为同步、1位异步
+                     * 设置任务结果是否异步通知。0表示任务结果在返回信息中同步返回；1表示任务结果通过回调结果异步通知。
+                     * @param _async 任务结果是否异步通知。0表示任务结果在返回信息中同步返回；1表示任务结果通过回调结果异步通知。
                      * 
                      */
                     void SetAsync(const int64_t& _async);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool AsyncHasBeenSet() const;
 
                     /**
-                     * 获取产品ID
-                     * @return ProductId 产品ID
+                     * 获取产品ID，可在腾讯安心用户运营平台的企业管理中获取
+                     * @return ProductId 产品ID，可在腾讯安心用户运营平台的企业管理中获取
                      * 
                      */
                     int64_t GetProductId() const;
 
                     /**
-                     * 设置产品ID
-                     * @param _productId 产品ID
+                     * 设置产品ID，可在腾讯安心用户运营平台的企业管理中获取
+                     * @param _productId 产品ID，可在腾讯安心用户运营平台的企业管理中获取
                      * 
                      */
                     void SetProductId(const int64_t& _productId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取回调地址
-                     * @return NotifyURL 回调地址
+                     * 获取异步接收任务结果通知的回调地址。在Async为1的时候，会将任务结果通过该回调地址进行通知。
+                     * @return NotifyURL 异步接收任务结果通知的回调地址。在Async为1的时候，会将任务结果通过该回调地址进行通知。
                      * 
                      */
                     std::string GetNotifyURL() const;
 
                     /**
-                     * 设置回调地址
-                     * @param _notifyURL 回调地址
+                     * 设置异步接收任务结果通知的回调地址。在Async为1的时候，会将任务结果通过该回调地址进行通知。
+                     * @param _notifyURL 异步接收任务结果通知的回调地址。在Async为1的时候，会将任务结果通过该回调地址进行通知。
                      * 
                      */
                     void SetNotifyURL(const std::string& _notifyURL);
@@ -192,43 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户ID
+                     * 用户唯一标识，最大长度为64
                      */
                     std::string m_accountId;
                     bool m_accountIdHasBeenSet;
 
                     /**
-                     * 设备ID
+                     * 用户设备ID，最大长度为64
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 订单ID
+                     * 任务的唯一订单号，只能是数字、大小写字母，且在同一个产品ID下唯一，最大长度为64
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;
 
                     /**
-                     * 任务事件Code
+                     * 任务事件Code，在腾讯安心用户运营平台下的任务事件列表中设置并获取
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 同步异步方式：0为同步、1位异步
+                     * 任务结果是否异步通知。0表示任务结果在返回信息中同步返回；1表示任务结果通过回调结果异步通知。
                      */
                     int64_t m_async;
                     bool m_asyncHasBeenSet;
 
                     /**
-                     * 产品ID
+                     * 产品ID，可在腾讯安心用户运营平台的企业管理中获取
                      */
                     int64_t m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 回调地址
+                     * 异步接收任务结果通知的回调地址。在Async为1的时候，会将任务结果通过该回调地址进行通知。
                      */
                     std::string m_notifyURL;
                     bool m_notifyURLHasBeenSet;

@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取状态码
+                     * 获取状态码，0为成功，-1为失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Code 状态码
+                     * @return Code 状态码，0为成功，-1为失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
-                     * 设置状态码
+                     * 设置状态码，0为成功，-1为失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _code 状态码
+                     * @param _code 状态码，0为成功，-1为失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取当前完成或正在完成的任务订单ID
+                     * 获取当前完成或正在完成的安心用户运营平台的任务订单ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskOrderId 当前完成或正在完成的任务订单ID
+                     * @return TaskOrderId 当前完成或正在完成的安心用户运营平台的任务订单ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskOrderId() const;
 
                     /**
-                     * 设置当前完成或正在完成的任务订单ID
+                     * 设置当前完成或正在完成的安心用户运营平台的任务订单ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskOrderId 当前完成或正在完成的任务订单ID
+                     * @param _taskOrderId 当前完成或正在完成的安心用户运营平台的任务订单ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool TaskOrderIdHasBeenSet() const;
 
                     /**
-                     * 获取当前任务订单状态码
+                     * 获取当前任务订单状态码。1代表未完成；2代表已完成但未提交任务；3表示已完成，且已提交获得积分任务；4表示过期任务，提交后不获得积分。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskCode 当前任务订单状态码
+                     * @return TaskCode 当前任务订单状态码。1代表未完成；2代表已完成但未提交任务；3表示已完成，且已提交获得积分任务；4表示过期任务，提交后不获得积分。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskCode() const;
 
                     /**
-                     * 设置当前任务订单状态码
+                     * 设置当前任务订单状态码。1代表未完成；2代表已完成但未提交任务；3表示已完成，且已提交获得积分任务；4表示过期任务，提交后不获得积分。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskCode 当前任务订单状态码
+                     * @param _taskCode 当前任务订单状态码。1代表未完成；2代表已完成但未提交任务；3表示已完成，且已提交获得积分任务；4表示过期任务，提交后不获得积分。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool TaskCodeHasBeenSet() const;
 
                     /**
-                     * 获取获得积分数/成长值
+                     * 获取获得积分数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskCoinNumber 获得积分数/成长值
+                     * @return TaskCoinNumber 获得积分数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskCoinNumber() const;
 
                     /**
-                     * 设置获得积分数/成长值
+                     * 设置获得积分数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskCoinNumber 获得积分数/成长值
+                     * @param _taskCoinNumber 获得积分数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取当前积分
+                     * 获取用户的当前积分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCoin 当前积分
+                     * @return TotalCoin 用户的当前积分
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCoin() const;
 
                     /**
-                     * 设置当前积分
+                     * 设置用户的当前积分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _totalCoin 当前积分
+                     * @param _totalCoin 用户的当前积分
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool TotalCoinHasBeenSet() const;
 
                     /**
-                     * 获取用户透传的代码块
+                     * 获取用户透传的附加数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Attach 用户透传的代码块
+                     * @return Attach 用户透传的附加数据
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAttach() const;
 
                     /**
-                     * 设置用户透传的代码块
+                     * 设置用户透传的附加数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _attach 用户透传的代码块
+                     * @param _attach 用户透传的附加数据
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,18 +347,18 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取当前成长值
+                     * 获取用户当前成长值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GrowScore 当前成长值
+                     * @return GrowScore 用户当前成长值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGrowScore() const;
 
                     /**
-                     * 设置当前成长值
+                     * 设置用户当前成长值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _growScore 当前成长值
+                     * @param _growScore 用户当前成长值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -374,7 +374,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 状态码
+                     * 状态码，0为成功，-1为失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_code;
@@ -395,21 +395,21 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 当前完成或正在完成的任务订单ID
+                     * 当前完成或正在完成的安心用户运营平台的任务订单ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskOrderId;
                     bool m_taskOrderIdHasBeenSet;
 
                     /**
-                     * 当前任务订单状态码
+                     * 当前任务订单状态码。1代表未完成；2代表已完成但未提交任务；3表示已完成，且已提交获得积分任务；4表示过期任务，提交后不获得积分。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskCode;
                     bool m_taskCodeHasBeenSet;
 
                     /**
-                     * 获得积分数/成长值
+                     * 获得积分数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskCoinNumber;
@@ -423,14 +423,14 @@ namespace TencentCloud
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 当前积分
+                     * 用户的当前积分
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCoin;
                     bool m_totalCoinHasBeenSet;
 
                     /**
-                     * 用户透传的代码块
+                     * 用户透传的附加数据
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attach;
@@ -458,7 +458,7 @@ namespace TencentCloud
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 当前成长值
+                     * 用户当前成长值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_growScore;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 分组名称
+                * 账号分组信息
                 */
                 class DescribeAccountGroupsData : public AbstractModel
                 {
@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取名称path
+                     * 获取账号分组名全路径，点分格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NamePath 名称path
+                     * @return NamePath 账号分组名全路径，点分格式
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamePath() const;
 
                     /**
-                     * 设置名称path
+                     * 设置账号分组名全路径，点分格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _namePath 名称path
+                     * @param _namePath 账号分组名全路径，点分格式
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool NamePathHasBeenSet() const;
 
                     /**
-                     * 获取id patch数组(只支持32位)
+                     * 获取账号分组ID全路径，数组格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdPathArr id patch数组(只支持32位)
+                     * @return IdPathArr 账号分组ID全路径，数组格式
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetIdPathArr() const;
 
                     /**
-                     * 设置id patch数组(只支持32位)
+                     * 设置账号分组ID全路径，数组格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _idPathArr id patch数组(只支持32位)
+                     * @param _idPathArr 账号分组ID全路径，数组格式
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool UtimeHasBeenSet() const;
 
                     /**
-                     * 获取父id
+                     * 获取父分组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ParentId 父id
+                     * @return ParentId 父分组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetParentId() const;
 
                     /**
-                     * 设置父id
+                     * 设置父分组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _parentId 父id
+                     * @param _parentId 父分组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool ParentIdHasBeenSet() const;
 
                     /**
-                     * 获取组织id
+                     * 获取源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrgId 组织id
+                     * @return OrgId 源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrgId() const;
 
                     /**
-                     * 设置组织id
+                     * 设置源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _orgId 组织id
+                     * @param _orgId 源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool OrgIdHasBeenSet() const;
 
                     /**
-                     * 获取账户组名称
+                     * 获取分组名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 账户组名称
+                     * @return Name 分组名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置账户组名称
+                     * 设置分组名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 账户组名称
+                     * @param _name 分组名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取id
+                     * 获取分组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id id
+                     * @return Id 分组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置id
+                     * 设置分组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id id
+                     * @param _id 分组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取描述
+                     * 获取分组描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 描述
+                     * @return Description 分组描述
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
+                     * 设置分组描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 描述
+                     * @param _description 分组描述
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -297,18 +297,18 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取id path
+                     * 获取账号分组ID全路径，点分格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdPath id path
+                     * @return IdPath 账号分组ID全路径，点分格式
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdPath() const;
 
                     /**
-                     * 设置id path
+                     * 设置账号分组ID全路径，点分格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _idPath id path
+                     * @param _idPath 账号分组ID全路径，点分格式
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,18 +347,18 @@ namespace TencentCloud
                     bool ItimeHasBeenSet() const;
 
                     /**
-                     * 获取父组织id
+                     * 获取父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ParentOrgId 父组织id
+                     * @return ParentOrgId 父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentOrgId() const;
 
                     /**
-                     * 设置父组织id
+                     * 设置父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _parentOrgId 父组织id
+                     * @param _parentOrgId 父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -422,18 +422,18 @@ namespace TencentCloud
                     bool MiniIamIdHasBeenSet() const;
 
                     /**
-                     * 获取该分组下用户总数
+                     * 获取该分组下含子组的所有用户总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserTotal 该分组下用户总数
+                     * @return UserTotal 该分组下含子组的所有用户总数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUserTotal() const;
 
                     /**
-                     * 设置该分组下用户总数
+                     * 设置该分组下含子组的所有用户总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userTotal 该分组下用户总数
+                     * @param _userTotal 该分组下含子组的所有用户总数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -549,14 +549,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 名称path
+                     * 账号分组名全路径，点分格式
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namePath;
                     bool m_namePathHasBeenSet;
 
                     /**
-                     * id patch数组(只支持32位)
+                     * 账号分组ID全路径，数组格式
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_idPathArr;
@@ -577,35 +577,35 @@ namespace TencentCloud
                     bool m_utimeHasBeenSet;
 
                     /**
-                     * 父id
+                     * 父分组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_parentId;
                     bool m_parentIdHasBeenSet;
 
                     /**
-                     * 组织id
+                     * 源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orgId;
                     bool m_orgIdHasBeenSet;
 
                     /**
-                     * 账户组名称
+                     * 分组名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * id
+                     * 分组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 描述
+                     * 分组描述
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
@@ -619,7 +619,7 @@ namespace TencentCloud
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * id path
+                     * 账号分组ID全路径，点分格式
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idPath;
@@ -633,7 +633,7 @@ namespace TencentCloud
                     bool m_itimeHasBeenSet;
 
                     /**
-                     * 父组织id
+                     * 父源账号组织ID。使用第三方导入用户源时，记录该分组在源组织架构下的分组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentOrgId;
@@ -654,7 +654,7 @@ namespace TencentCloud
                     bool m_miniIamIdHasBeenSet;
 
                     /**
-                     * 该分组下用户总数
+                     * 该分组下含子组的所有用户总数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_userTotal;

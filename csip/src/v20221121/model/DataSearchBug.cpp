@@ -28,7 +28,9 @@ DataSearchBug::DataSearchBug() :
     m_cWPScanHasBeenSet(false),
     m_cFWPatchHasBeenSet(false),
     m_wafPatchHasBeenSet(false),
-    m_cWPFixHasBeenSet(false)
+    m_cWPFixHasBeenSet(false),
+    m_dataSupportHasBeenSet(false),
+    m_cveIdHasBeenSet(false)
 {
 }
 
@@ -137,6 +139,36 @@ CoreInternalOutcome DataSearchBug::Deserialize(const rapidjson::Value &value)
         m_cWPFixHasBeenSet = true;
     }
 
+    if (value.HasMember("DataSupport") && !value["DataSupport"].IsNull())
+    {
+        if (!value["DataSupport"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DataSearchBug.DataSupport` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DataSupport"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ProductSupport item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dataSupport.push_back(item);
+        }
+        m_dataSupportHasBeenSet = true;
+    }
+
+    if (value.HasMember("CveId") && !value["CveId"].IsNull())
+    {
+        if (!value["CveId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSearchBug.CveId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cveId = string(value["CveId"].GetString());
+        m_cveIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -220,6 +252,29 @@ void DataSearchBug::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "CWPFix";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cWPFix, allocator);
+    }
+
+    if (m_dataSupportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataSupport";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataSupport.begin(); itr != m_dataSupport.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_cveIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CveId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cveId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -351,5 +406,37 @@ void DataSearchBug::SetCWPFix(const int64_t& _cWPFix)
 bool DataSearchBug::CWPFixHasBeenSet() const
 {
     return m_cWPFixHasBeenSet;
+}
+
+vector<ProductSupport> DataSearchBug::GetDataSupport() const
+{
+    return m_dataSupport;
+}
+
+void DataSearchBug::SetDataSupport(const vector<ProductSupport>& _dataSupport)
+{
+    m_dataSupport = _dataSupport;
+    m_dataSupportHasBeenSet = true;
+}
+
+bool DataSearchBug::DataSupportHasBeenSet() const
+{
+    return m_dataSupportHasBeenSet;
+}
+
+string DataSearchBug::GetCveId() const
+{
+    return m_cveId;
+}
+
+void DataSearchBug::SetCveId(const string& _cveId)
+{
+    m_cveId = _cveId;
+    m_cveIdHasBeenSet = true;
+}
+
+bool DataSearchBug::CveIdHasBeenSet() const
+{
+    return m_cveIdHasBeenSet;
 }
 

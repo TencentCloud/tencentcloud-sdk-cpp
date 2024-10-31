@@ -46,39 +46,199 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件<br>
-<li>Ip - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照Ip进行过滤。</li>
-<li>MacAddr - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照mac地址进行过滤。</li>
-<li>IoaUserName - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照ioa用户名进行过滤。</li>
-分页参数<br>
-<li>PageNum 从1开始，小于等于0时使用默认参数。</li>
-<li>PageSize 最大值5000，最好不超过100。</li>
-                     * @return Condition 过滤条件<br>
-<li>Ip - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照Ip进行过滤。</li>
-<li>MacAddr - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照mac地址进行过滤。</li>
-<li>IoaUserName - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照ioa用户名进行过滤。</li>
-分页参数<br>
-<li>PageNum 从1开始，小于等于0时使用默认参数。</li>
-<li>PageSize 最大值5000，最好不超过100。</li>
+                     * 获取过滤条件参数（字段含义请参考接口返回值）
+
+- Mid, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Name, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Itime, 类型String，支持操作：【eq，like，ilike】，支持排序
+- UserName, 类型String，支持操作：【eq，like，ilike】，支持排序
+- MacAddr, 类型String，支持操作：【eq，like，ilike】，支持排序
+- UserId, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Ip, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Tags，类型String，支持操作：【eq，like，ilike】，支持排序
+- LocalIpList，类型String，支持操作：【eq，like，ilike】，支持排序
+- SerialNum，类型String，支持操作：【eq，like，ilike】，支持排序
+- Version，类型String，支持操作：【eq，like，ilike】，支持排序
+- StrVersion，类型String，支持操作：【eq，like，ilike】，支持排序
+- RtpStatus，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- HostName，类型String，支持操作：【eq，like，ilike】，支持排序
+- IoaUserName，类型String，支持操作：【eq，like，ilike】，支持排序
+- GroupName，类型String，支持操作：【eq，like，ilike】，支持排序
+- CriticalVulListCount，**类型Int**，支持操作：【eq】，**不支持排序**
+- RiskCount，**类型Int**，支持操作：【eq】，**不支持排序**
+- VulVersion，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- Virusver，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- SysRepver，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- BaseBoardSn，类型String，支持操作：【eq，like，ilike】，支持排序
+- Os，类型String，支持操作：【eq，like，ilike】，支持排序
+- ConnActiveTime，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- FirewallStatus，**类型Int**，支持操作：【eq】，**不支持排序**
+- ProfileName，类型String，支持操作：【eq，like，ilike】，支持排序
+- DomainName，类型String，支持操作：【eq，like，ilike】，支持排序
+- SysRepVersion，类型String，支持操作：【eq，like，ilike】，支持排序
+- VirusVer，类型String，支持操作：【eq，like，ilike】，支持排序
+- Cpu，类型String，支持操作：【eq，like，ilike】，支持排序
+- Memory，类型String，支持操作：【eq，like，ilike】，支持排序
+- HardDiskSize，类型String，支持操作：【eq，like，ilike】，支持排序
+- HardwareChangeCount，**类型Int**，支持操作：【eq】，支持排序
+- AccountName，类型String，支持操作：【like.ilike】，支持排序
+- AccountGroupName，类型String，支持操作：【like.ilike】，支持排序
+- ScreenRecordingPermission，**类型Int**，支持操作：【eq】，支持排序
+- DiskAccessPermission，**类型Int**，支持操作：【eq】，支持排序
+
+
+
+
+
+分页参数
+- PageNum 从1开始，小于等于0时使用默认参数
+- PageSize 最大值5000，最好不超过100
+                     * @return Condition 过滤条件参数（字段含义请参考接口返回值）
+
+- Mid, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Name, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Itime, 类型String，支持操作：【eq，like，ilike】，支持排序
+- UserName, 类型String，支持操作：【eq，like，ilike】，支持排序
+- MacAddr, 类型String，支持操作：【eq，like，ilike】，支持排序
+- UserId, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Ip, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Tags，类型String，支持操作：【eq，like，ilike】，支持排序
+- LocalIpList，类型String，支持操作：【eq，like，ilike】，支持排序
+- SerialNum，类型String，支持操作：【eq，like，ilike】，支持排序
+- Version，类型String，支持操作：【eq，like，ilike】，支持排序
+- StrVersion，类型String，支持操作：【eq，like，ilike】，支持排序
+- RtpStatus，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- HostName，类型String，支持操作：【eq，like，ilike】，支持排序
+- IoaUserName，类型String，支持操作：【eq，like，ilike】，支持排序
+- GroupName，类型String，支持操作：【eq，like，ilike】，支持排序
+- CriticalVulListCount，**类型Int**，支持操作：【eq】，**不支持排序**
+- RiskCount，**类型Int**，支持操作：【eq】，**不支持排序**
+- VulVersion，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- Virusver，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- SysRepver，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- BaseBoardSn，类型String，支持操作：【eq，like，ilike】，支持排序
+- Os，类型String，支持操作：【eq，like，ilike】，支持排序
+- ConnActiveTime，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- FirewallStatus，**类型Int**，支持操作：【eq】，**不支持排序**
+- ProfileName，类型String，支持操作：【eq，like，ilike】，支持排序
+- DomainName，类型String，支持操作：【eq，like，ilike】，支持排序
+- SysRepVersion，类型String，支持操作：【eq，like，ilike】，支持排序
+- VirusVer，类型String，支持操作：【eq，like，ilike】，支持排序
+- Cpu，类型String，支持操作：【eq，like，ilike】，支持排序
+- Memory，类型String，支持操作：【eq，like，ilike】，支持排序
+- HardDiskSize，类型String，支持操作：【eq，like，ilike】，支持排序
+- HardwareChangeCount，**类型Int**，支持操作：【eq】，支持排序
+- AccountName，类型String，支持操作：【like.ilike】，支持排序
+- AccountGroupName，类型String，支持操作：【like.ilike】，支持排序
+- ScreenRecordingPermission，**类型Int**，支持操作：【eq】，支持排序
+- DiskAccessPermission，**类型Int**，支持操作：【eq】，支持排序
+
+
+
+
+
+分页参数
+- PageNum 从1开始，小于等于0时使用默认参数
+- PageSize 最大值5000，最好不超过100
                      * 
                      */
                     Condition GetCondition() const;
 
                     /**
-                     * 设置过滤条件<br>
-<li>Ip - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照Ip进行过滤。</li>
-<li>MacAddr - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照mac地址进行过滤。</li>
-<li>IoaUserName - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照ioa用户名进行过滤。</li>
-分页参数<br>
-<li>PageNum 从1开始，小于等于0时使用默认参数。</li>
-<li>PageSize 最大值5000，最好不超过100。</li>
-                     * @param _condition 过滤条件<br>
-<li>Ip - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照Ip进行过滤。</li>
-<li>MacAddr - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照mac地址进行过滤。</li>
-<li>IoaUserName - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照ioa用户名进行过滤。</li>
-分页参数<br>
-<li>PageNum 从1开始，小于等于0时使用默认参数。</li>
-<li>PageSize 最大值5000，最好不超过100。</li>
+                     * 设置过滤条件参数（字段含义请参考接口返回值）
+
+- Mid, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Name, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Itime, 类型String，支持操作：【eq，like，ilike】，支持排序
+- UserName, 类型String，支持操作：【eq，like，ilike】，支持排序
+- MacAddr, 类型String，支持操作：【eq，like，ilike】，支持排序
+- UserId, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Ip, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Tags，类型String，支持操作：【eq，like，ilike】，支持排序
+- LocalIpList，类型String，支持操作：【eq，like，ilike】，支持排序
+- SerialNum，类型String，支持操作：【eq，like，ilike】，支持排序
+- Version，类型String，支持操作：【eq，like，ilike】，支持排序
+- StrVersion，类型String，支持操作：【eq，like，ilike】，支持排序
+- RtpStatus，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- HostName，类型String，支持操作：【eq，like，ilike】，支持排序
+- IoaUserName，类型String，支持操作：【eq，like，ilike】，支持排序
+- GroupName，类型String，支持操作：【eq，like，ilike】，支持排序
+- CriticalVulListCount，**类型Int**，支持操作：【eq】，**不支持排序**
+- RiskCount，**类型Int**，支持操作：【eq】，**不支持排序**
+- VulVersion，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- Virusver，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- SysRepver，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- BaseBoardSn，类型String，支持操作：【eq，like，ilike】，支持排序
+- Os，类型String，支持操作：【eq，like，ilike】，支持排序
+- ConnActiveTime，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- FirewallStatus，**类型Int**，支持操作：【eq】，**不支持排序**
+- ProfileName，类型String，支持操作：【eq，like，ilike】，支持排序
+- DomainName，类型String，支持操作：【eq，like，ilike】，支持排序
+- SysRepVersion，类型String，支持操作：【eq，like，ilike】，支持排序
+- VirusVer，类型String，支持操作：【eq，like，ilike】，支持排序
+- Cpu，类型String，支持操作：【eq，like，ilike】，支持排序
+- Memory，类型String，支持操作：【eq，like，ilike】，支持排序
+- HardDiskSize，类型String，支持操作：【eq，like，ilike】，支持排序
+- HardwareChangeCount，**类型Int**，支持操作：【eq】，支持排序
+- AccountName，类型String，支持操作：【like.ilike】，支持排序
+- AccountGroupName，类型String，支持操作：【like.ilike】，支持排序
+- ScreenRecordingPermission，**类型Int**，支持操作：【eq】，支持排序
+- DiskAccessPermission，**类型Int**，支持操作：【eq】，支持排序
+
+
+
+
+
+分页参数
+- PageNum 从1开始，小于等于0时使用默认参数
+- PageSize 最大值5000，最好不超过100
+                     * @param _condition 过滤条件参数（字段含义请参考接口返回值）
+
+- Mid, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Name, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Itime, 类型String，支持操作：【eq，like，ilike】，支持排序
+- UserName, 类型String，支持操作：【eq，like，ilike】，支持排序
+- MacAddr, 类型String，支持操作：【eq，like，ilike】，支持排序
+- UserId, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Ip, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Tags，类型String，支持操作：【eq，like，ilike】，支持排序
+- LocalIpList，类型String，支持操作：【eq，like，ilike】，支持排序
+- SerialNum，类型String，支持操作：【eq，like，ilike】，支持排序
+- Version，类型String，支持操作：【eq，like，ilike】，支持排序
+- StrVersion，类型String，支持操作：【eq，like，ilike】，支持排序
+- RtpStatus，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- HostName，类型String，支持操作：【eq，like，ilike】，支持排序
+- IoaUserName，类型String，支持操作：【eq，like，ilike】，支持排序
+- GroupName，类型String，支持操作：【eq，like，ilike】，支持排序
+- CriticalVulListCount，**类型Int**，支持操作：【eq】，**不支持排序**
+- RiskCount，**类型Int**，支持操作：【eq】，**不支持排序**
+- VulVersion，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- Virusver，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- SysRepver，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- BaseBoardSn，类型String，支持操作：【eq，like，ilike】，支持排序
+- Os，类型String，支持操作：【eq，like，ilike】，支持排序
+- ConnActiveTime，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- FirewallStatus，**类型Int**，支持操作：【eq】，**不支持排序**
+- ProfileName，类型String，支持操作：【eq，like，ilike】，支持排序
+- DomainName，类型String，支持操作：【eq，like，ilike】，支持排序
+- SysRepVersion，类型String，支持操作：【eq，like，ilike】，支持排序
+- VirusVer，类型String，支持操作：【eq，like，ilike】，支持排序
+- Cpu，类型String，支持操作：【eq，like，ilike】，支持排序
+- Memory，类型String，支持操作：【eq，like，ilike】，支持排序
+- HardDiskSize，类型String，支持操作：【eq，like，ilike】，支持排序
+- HardwareChangeCount，**类型Int**，支持操作：【eq】，支持排序
+- AccountName，类型String，支持操作：【like.ilike】，支持排序
+- AccountGroupName，类型String，支持操作：【like.ilike】，支持排序
+- ScreenRecordingPermission，**类型Int**，支持操作：【eq】，支持排序
+- DiskAccessPermission，**类型Int**，支持操作：【eq】，支持排序
+
+
+
+
+
+分页参数
+- PageNum 从1开始，小于等于0时使用默认参数
+- PageSize 最大值5000，最好不超过100
                      * 
                      */
                     void SetCondition(const Condition& _condition);
@@ -91,7 +251,7 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配）
+                     * 获取【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配），下面是私有化场景下默认id：
 id-名称-操作系统
 1	全网终端	Win
 2	未分组终端	Win
@@ -106,7 +266,10 @@ id-名称-操作系统
 40000402	未分组终端	Android
 40000501	全网终端	iOS
 40000502	未分组终端	iOS
-                     * @return GroupId 【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配）
+
+
+SaaS需要调用分组接口DescribeDeviceChildGroups获取对应分组id
+                     * @return GroupId 【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配），下面是私有化场景下默认id：
 id-名称-操作系统
 1	全网终端	Win
 2	未分组终端	Win
@@ -121,12 +284,15 @@ id-名称-操作系统
 40000402	未分组终端	Android
 40000501	全网终端	iOS
 40000502	未分组终端	iOS
+
+
+SaaS需要调用分组接口DescribeDeviceChildGroups获取对应分组id
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配）
+                     * 设置【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配），下面是私有化场景下默认id：
 id-名称-操作系统
 1	全网终端	Win
 2	未分组终端	Win
@@ -141,7 +307,10 @@ id-名称-操作系统
 40000402	未分组终端	Android
 40000501	全网终端	iOS
 40000502	未分组终端	iOS
-                     * @param _groupId 【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配）
+
+
+SaaS需要调用分组接口DescribeDeviceChildGroups获取对应分组id
+                     * @param _groupId 【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配），下面是私有化场景下默认id：
 id-名称-操作系统
 1	全网终端	Win
 2	未分组终端	Win
@@ -156,6 +325,9 @@ id-名称-操作系统
 40000402	未分组终端	Android
 40000501	全网终端	iOS
 40000502	未分组终端	iOS
+
+
+SaaS需要调用分组接口DescribeDeviceChildGroups获取对应分组id
                      * 
                      */
                     void SetGroupId(const int64_t& _groupId);
@@ -168,15 +340,15 @@ id-名称-操作系统
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取【必填】操作系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
-                     * @return OsType 【必填】操作系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
+                     * 获取【必填】操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
+                     * @return OsType 【必填】操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置【必填】操作系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
-                     * @param _osType 【必填】操作系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
+                     * 设置【必填】操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
+                     * @param _osType 【必填】操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -294,15 +466,15 @@ id-名称-操作系统
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取授权状态 4未授权 5已授权
-                     * @return Status 授权状态 4未授权 5已授权
+                     * 获取授权状态： 4基础授权 5高级授权
+                     * @return Status 授权状态： 4基础授权 5高级授权
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置授权状态 4未授权 5已授权
-                     * @param _status 授权状态 4未授权 5已授权
+                     * 设置授权状态： 4基础授权 5高级授权
+                     * @param _status 授权状态： 4基础授权 5高级授权
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -314,22 +486,87 @@ id-名称-操作系统
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取【和GroupId必须有一个填写】设备分组id列表（需要和OsType匹配）
+
+                     * @return GroupIds 【和GroupId必须有一个填写】设备分组id列表（需要和OsType匹配）
+
+                     * 
+                     */
+                    std::vector<int64_t> GetGroupIds() const;
+
+                    /**
+                     * 设置【和GroupId必须有一个填写】设备分组id列表（需要和OsType匹配）
+
+                     * @param _groupIds 【和GroupId必须有一个填写】设备分组id列表（需要和OsType匹配）
+
+                     * 
+                     */
+                    void SetGroupIds(const std::vector<int64_t>& _groupIds);
+
+                    /**
+                     * 判断参数 GroupIds 是否已赋值
+                     * @return GroupIds 是否已赋值
+                     * 
+                     */
+                    bool GroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 过滤条件<br>
-<li>Ip - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照Ip进行过滤。</li>
-<li>MacAddr - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照mac地址进行过滤。</li>
-<li>IoaUserName - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照ioa用户名进行过滤。</li>
-分页参数<br>
-<li>PageNum 从1开始，小于等于0时使用默认参数。</li>
-<li>PageSize 最大值5000，最好不超过100。</li>
+                     * 过滤条件参数（字段含义请参考接口返回值）
+
+- Mid, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Name, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Itime, 类型String，支持操作：【eq，like，ilike】，支持排序
+- UserName, 类型String，支持操作：【eq，like，ilike】，支持排序
+- MacAddr, 类型String，支持操作：【eq，like，ilike】，支持排序
+- UserId, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Ip, 类型String，支持操作：【eq，like，ilike】，支持排序
+- Tags，类型String，支持操作：【eq，like，ilike】，支持排序
+- LocalIpList，类型String，支持操作：【eq，like，ilike】，支持排序
+- SerialNum，类型String，支持操作：【eq，like，ilike】，支持排序
+- Version，类型String，支持操作：【eq，like，ilike】，支持排序
+- StrVersion，类型String，支持操作：【eq，like，ilike】，支持排序
+- RtpStatus，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- HostName，类型String，支持操作：【eq，like，ilike】，支持排序
+- IoaUserName，类型String，支持操作：【eq，like，ilike】，支持排序
+- GroupName，类型String，支持操作：【eq，like，ilike】，支持排序
+- CriticalVulListCount，**类型Int**，支持操作：【eq】，**不支持排序**
+- RiskCount，**类型Int**，支持操作：【eq】，**不支持排序**
+- VulVersion，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- Virusver，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- SysRepver，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- BaseBoardSn，类型String，支持操作：【eq，like，ilike】，支持排序
+- Os，类型String，支持操作：【eq，like，ilike】，支持排序
+- ConnActiveTime，类型String，支持操作：【eq，like，ilike】，**不支持排序**
+- FirewallStatus，**类型Int**，支持操作：【eq】，**不支持排序**
+- ProfileName，类型String，支持操作：【eq，like，ilike】，支持排序
+- DomainName，类型String，支持操作：【eq，like，ilike】，支持排序
+- SysRepVersion，类型String，支持操作：【eq，like，ilike】，支持排序
+- VirusVer，类型String，支持操作：【eq，like，ilike】，支持排序
+- Cpu，类型String，支持操作：【eq，like，ilike】，支持排序
+- Memory，类型String，支持操作：【eq，like，ilike】，支持排序
+- HardDiskSize，类型String，支持操作：【eq，like，ilike】，支持排序
+- HardwareChangeCount，**类型Int**，支持操作：【eq】，支持排序
+- AccountName，类型String，支持操作：【like.ilike】，支持排序
+- AccountGroupName，类型String，支持操作：【like.ilike】，支持排序
+- ScreenRecordingPermission，**类型Int**，支持操作：【eq】，支持排序
+- DiskAccessPermission，**类型Int**，支持操作：【eq】，支持排序
+
+
+
+
+
+分页参数
+- PageNum 从1开始，小于等于0时使用默认参数
+- PageSize 最大值5000，最好不超过100
                      */
                     Condition m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配）
+                     * 【和GroupIds必须有一个填写】设备分组id（需要和OsType匹配），下面是私有化场景下默认id：
 id-名称-操作系统
 1	全网终端	Win
 2	未分组终端	Win
@@ -344,12 +581,15 @@ id-名称-操作系统
 40000402	未分组终端	Android
 40000501	全网终端	iOS
 40000502	未分组终端	iOS
+
+
+SaaS需要调用分组接口DescribeDeviceChildGroups获取对应分组id
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 【必填】操作系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
+                     * 【必填】操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;
@@ -385,10 +625,17 @@ id-名称-操作系统
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 授权状态 4未授权 5已授权
+                     * 授权状态： 4基础授权 5高级授权
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 【和GroupId必须有一个填写】设备分组id列表（需要和OsType匹配）
+
+                     */
+                    std::vector<int64_t> m_groupIds;
+                    bool m_groupIdsHasBeenSet;
 
                 };
             }

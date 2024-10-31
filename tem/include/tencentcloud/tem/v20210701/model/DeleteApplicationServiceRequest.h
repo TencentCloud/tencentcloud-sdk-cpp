@@ -64,27 +64,6 @@ namespace TencentCloud
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取来源渠道
-                     * @return SourceChannel 来源渠道
-                     * 
-                     */
-                    int64_t GetSourceChannel() const;
-
-                    /**
-                     * 设置来源渠道
-                     * @param _sourceChannel 来源渠道
-                     * 
-                     */
-                    void SetSourceChannel(const int64_t& _sourceChannel);
-
-                    /**
-                     * 判断参数 SourceChannel 是否已赋值
-                     * @return SourceChannel 是否已赋值
-                     * 
-                     */
-                    bool SourceChannelHasBeenSet() const;
-
-                    /**
                      * 获取环境ID
                      * @return EnvironmentId 环境ID
                      * 
@@ -126,6 +105,27 @@ namespace TencentCloud
                      */
                     bool ServiceNameHasBeenSet() const;
 
+                    /**
+                     * 获取来源渠道
+                     * @return SourceChannel 来源渠道
+                     * 
+                     */
+                    int64_t GetSourceChannel() const;
+
+                    /**
+                     * 设置来源渠道
+                     * @param _sourceChannel 来源渠道
+                     * 
+                     */
+                    void SetSourceChannel(const int64_t& _sourceChannel);
+
+                    /**
+                     * 判断参数 SourceChannel 是否已赋值
+                     * @return SourceChannel 是否已赋值
+                     * 
+                     */
+                    bool SourceChannelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,12 +133,6 @@ namespace TencentCloud
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
-
-                    /**
-                     * 来源渠道
-                     */
-                    int64_t m_sourceChannel;
-                    bool m_sourceChannelHasBeenSet;
 
                     /**
                      * 环境ID
@@ -151,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
+
+                    /**
+                     * 来源渠道
+                     */
+                    int64_t m_sourceChannel;
+                    bool m_sourceChannelHasBeenSet;
 
                 };
             }

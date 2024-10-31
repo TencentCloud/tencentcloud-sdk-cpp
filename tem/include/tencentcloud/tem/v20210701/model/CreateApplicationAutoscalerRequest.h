@@ -86,27 +86,6 @@ namespace TencentCloud
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
-                     * 获取来源渠道
-                     * @return SourceChannel 来源渠道
-                     * 
-                     */
-                    int64_t GetSourceChannel() const;
-
-                    /**
-                     * 设置来源渠道
-                     * @param _sourceChannel 来源渠道
-                     * 
-                     */
-                    void SetSourceChannel(const int64_t& _sourceChannel);
-
-                    /**
-                     * 判断参数 SourceChannel 是否已赋值
-                     * @return SourceChannel 是否已赋值
-                     * 
-                     */
-                    bool SourceChannelHasBeenSet() const;
-
-                    /**
                      * 获取弹性伸缩策略
                      * @return Autoscaler 弹性伸缩策略
                      * 
@@ -127,6 +106,27 @@ namespace TencentCloud
                      */
                     bool AutoscalerHasBeenSet() const;
 
+                    /**
+                     * 获取来源渠道
+                     * @return SourceChannel 来源渠道
+                     * 
+                     */
+                    int64_t GetSourceChannel() const;
+
+                    /**
+                     * 设置来源渠道
+                     * @param _sourceChannel 来源渠道
+                     * 
+                     */
+                    void SetSourceChannel(const int64_t& _sourceChannel);
+
+                    /**
+                     * 判断参数 SourceChannel 是否已赋值
+                     * @return SourceChannel 是否已赋值
+                     * 
+                     */
+                    bool SourceChannelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -142,16 +142,16 @@ namespace TencentCloud
                     bool m_environmentIdHasBeenSet;
 
                     /**
-                     * 来源渠道
-                     */
-                    int64_t m_sourceChannel;
-                    bool m_sourceChannelHasBeenSet;
-
-                    /**
                      * 弹性伸缩策略
                      */
                     Autoscaler m_autoscaler;
                     bool m_autoscalerHasBeenSet;
+
+                    /**
+                     * 来源渠道
+                     */
+                    int64_t m_sourceChannel;
+                    bool m_sourceChannelHasBeenSet;
 
                 };
             }

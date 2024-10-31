@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取集群运行状态
-                     * @return ClusterRunningStatus 集群运行状态
+                     * 获取集群运行状态，CSR_RUNNING-运行中，CSR_EXCEPTION-异常，CSR_CREATING-创建中
+                     * @return ClusterRunningStatus 集群运行状态，CSR_RUNNING-运行中，CSR_EXCEPTION-异常，CSR_CREATING-创建中
                      * 
                      */
                     std::string GetClusterRunningStatus() const;
 
                     /**
-                     * 设置集群运行状态
-                     * @param _clusterRunningStatus 集群运行状态
+                     * 设置集群运行状态，CSR_RUNNING-运行中，CSR_EXCEPTION-异常，CSR_CREATING-创建中
+                     * @param _clusterRunningStatus 集群运行状态，CSR_RUNNING-运行中，CSR_EXCEPTION-异常，CSR_CREATING-创建中
                      * 
                      */
                     void SetClusterRunningStatus(const std::string& _clusterRunningStatus);
@@ -499,7 +499,7 @@ namespace TencentCloud
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 集群运行状态
+                     * 集群运行状态，CSR_RUNNING-运行中，CSR_EXCEPTION-异常，CSR_CREATING-创建中
                      */
                     std::string m_clusterRunningStatus;
                     bool m_clusterRunningStatusHasBeenSet;

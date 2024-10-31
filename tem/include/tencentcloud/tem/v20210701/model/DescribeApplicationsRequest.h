@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
-                     * 获取分页Limit
-                     * @return Limit 分页Limit
+                     * 获取分页Limit，默认值：20
+                     * @return Limit 分页Limit，默认值：20
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页Limit
-                     * @param _limit 分页Limit
+                     * 设置分页Limit，默认值：20
+                     * @param _limit 分页Limit，默认值：20
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页offset
-                     * @return Offset 分页offset
+                     * 获取分页offset,默认值：0
+                     * @return Offset 分页offset,默认值：0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页offset
-                     * @param _offset 分页offset
+                     * 设置分页offset,默认值：0
+                     * @param _offset 分页offset,默认值：0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -221,13 +221,13 @@ namespace TencentCloud
                     bool m_environmentIdHasBeenSet;
 
                     /**
-                     * 分页Limit
+                     * 分页Limit，默认值：20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页offset
+                     * 分页offset,默认值：0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

@@ -74,27 +74,6 @@ namespace TencentCloud
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
-                     * 获取环境namespace
-                     * @return ClusterNamespace 环境namespace
-                     * 
-                     */
-                    std::string GetClusterNamespace() const;
-
-                    /**
-                     * 设置环境namespace
-                     * @param _clusterNamespace 环境namespace
-                     * 
-                     */
-                    void SetClusterNamespace(const std::string& _clusterNamespace);
-
-                    /**
-                     * 判断参数 ClusterNamespace 是否已赋值
-                     * @return ClusterNamespace 是否已赋值
-                     * 
-                     */
-                    bool ClusterNamespaceHasBeenSet() const;
-
-                    /**
                      * 获取ip version
                      * @return AddressIPVersion ip version
                      * 
@@ -181,6 +160,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ClbIdHasBeenSet() const;
+
+                    /**
+                     * 获取环境namespace
+                     * @return ClusterNamespace 环境namespace
+                     * 
+                     */
+                    std::string GetClusterNamespace() const;
+
+                    /**
+                     * 设置环境namespace
+                     * @param _clusterNamespace 环境namespace
+                     * 
+                     */
+                    void SetClusterNamespace(const std::string& _clusterNamespace);
+
+                    /**
+                     * 判断参数 ClusterNamespace 是否已赋值
+                     * @return ClusterNamespace 是否已赋值
+                     * 
+                     */
+                    bool ClusterNamespaceHasBeenSet() const;
 
                     /**
                      * 获取tls 配置
@@ -371,12 +371,6 @@ namespace TencentCloud
                     bool m_environmentIdHasBeenSet;
 
                     /**
-                     * 环境namespace
-                     */
-                    std::string m_clusterNamespace;
-                    bool m_clusterNamespaceHasBeenSet;
-
-                    /**
                      * ip version
                      */
                     std::string m_addressIPVersion;
@@ -400,6 +394,12 @@ namespace TencentCloud
                      */
                     std::string m_clbId;
                     bool m_clbIdHasBeenSet;
+
+                    /**
+                     * 环境namespace
+                     */
+                    std::string m_clusterNamespace;
+                    bool m_clusterNamespaceHasBeenSet;
 
                     /**
                      * tls 配置

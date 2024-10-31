@@ -23,7 +23,8 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 ModifyOrganizationAccountStatusRequest::ModifyOrganizationAccountStatusRequest() :
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_memberIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,19 @@ string ModifyOrganizationAccountStatusRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_memberIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_memberId.begin(); itr != m_memberId.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -64,6 +78,22 @@ void ModifyOrganizationAccountStatusRequest::SetStatus(const int64_t& _status)
 bool ModifyOrganizationAccountStatusRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<string> ModifyOrganizationAccountStatusRequest::GetMemberId() const
+{
+    return m_memberId;
+}
+
+void ModifyOrganizationAccountStatusRequest::SetMemberId(const vector<string>& _memberId)
+{
+    m_memberId = _memberId;
+    m_memberIdHasBeenSet = true;
+}
+
+bool ModifyOrganizationAccountStatusRequest::MemberIdHasBeenSet() const
+{
+    return m_memberIdHasBeenSet;
 }
 
 

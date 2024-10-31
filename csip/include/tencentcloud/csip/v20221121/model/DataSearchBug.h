@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/csip/v20221121/model/BugInfoDetail.h>
 #include <tencentcloud/csip/v20221121/model/AssetInfoDetail.h>
+#include <tencentcloud/csip/v20221121/model/ProductSupport.h>
 
 
 namespace TencentCloud
@@ -244,6 +245,56 @@ namespace TencentCloud
                      */
                     bool CWPFixHasBeenSet() const;
 
+                    /**
+                     * 获取产品支持状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataSupport 产品支持状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ProductSupport> GetDataSupport() const;
+
+                    /**
+                     * 设置产品支持状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataSupport 产品支持状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataSupport(const std::vector<ProductSupport>& _dataSupport);
+
+                    /**
+                     * 判断参数 DataSupport 是否已赋值
+                     * @return DataSupport 是否已赋值
+                     * 
+                     */
+                    bool DataSupportHasBeenSet() const;
+
+                    /**
+                     * 获取cveId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CveId cveId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCveId() const;
+
+                    /**
+                     * 设置cveId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cveId cveId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCveId(const std::string& _cveId);
+
+                    /**
+                     * 判断参数 CveId 是否已赋值
+                     * @return CveId 是否已赋值
+                     * 
+                     */
+                    bool CveIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -300,6 +351,20 @@ namespace TencentCloud
                      */
                     int64_t m_cWPFix;
                     bool m_cWPFixHasBeenSet;
+
+                    /**
+                     * 产品支持状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ProductSupport> m_dataSupport;
+                    bool m_dataSupportHasBeenSet;
+
+                    /**
+                     * cveId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cveId;
+                    bool m_cveIdHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ ImageSimpleInfo::ImageSimpleInfo() :
     m_imageNameHasBeenSet(false),
     m_sizeHasBeenSet(false),
     m_imageTypeHasBeenSet(false),
-    m_containerCntHasBeenSet(false)
+    m_containerCntHasBeenSet(false),
+    m_hostCntHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ImageSimpleInfo::Deserialize(const rapidjson::Value &value)
         m_containerCntHasBeenSet = true;
     }
 
+    if (value.HasMember("HostCnt") && !value["HostCnt"].IsNull())
+    {
+        if (!value["HostCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageSimpleInfo.HostCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostCnt = value["HostCnt"].GetUint64();
+        m_hostCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ImageSimpleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ContainerCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_containerCnt, allocator);
+    }
+
+    if (m_hostCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostCnt, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ImageSimpleInfo::SetContainerCnt(const int64_t& _containerCnt)
 bool ImageSimpleInfo::ContainerCntHasBeenSet() const
 {
     return m_containerCntHasBeenSet;
+}
+
+uint64_t ImageSimpleInfo::GetHostCnt() const
+{
+    return m_hostCnt;
+}
+
+void ImageSimpleInfo::SetHostCnt(const uint64_t& _hostCnt)
+{
+    m_hostCnt = _hostCnt;
+    m_hostCntHasBeenSet = true;
+}
+
+bool ImageSimpleInfo::HostCntHasBeenSet() const
+{
+    return m_hostCntHasBeenSet;
 }
 

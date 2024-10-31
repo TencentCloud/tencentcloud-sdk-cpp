@@ -23,6 +23,7 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 DescribeClusterPodAssetsRequest::DescribeClusterPodAssetsRequest() :
+    m_memberIdHasBeenSet(false),
     m_filterHasBeenSet(false)
 {
 }
@@ -33,6 +34,19 @@ string DescribeClusterPodAssetsRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_memberIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_memberId.begin(); itr != m_memberId.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     if (m_filterHasBeenSet)
     {
@@ -50,6 +64,22 @@ string DescribeClusterPodAssetsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> DescribeClusterPodAssetsRequest::GetMemberId() const
+{
+    return m_memberId;
+}
+
+void DescribeClusterPodAssetsRequest::SetMemberId(const vector<string>& _memberId)
+{
+    m_memberId = _memberId;
+    m_memberIdHasBeenSet = true;
+}
+
+bool DescribeClusterPodAssetsRequest::MemberIdHasBeenSet() const
+{
+    return m_memberIdHasBeenSet;
+}
 
 Filter DescribeClusterPodAssetsRequest::GetFilter() const
 {

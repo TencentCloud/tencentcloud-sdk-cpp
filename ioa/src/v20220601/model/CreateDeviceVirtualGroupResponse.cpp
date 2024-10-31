@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cfw/v20190904/model/DescribeNatSwitchListResponse.h>
+#include <tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cfw::V20190904::Model;
+using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
-DescribeNatSwitchListResponse::DescribeNatSwitchListResponse() :
-    m_totalHasBeenSet(false),
+CreateDeviceVirtualGroupResponse::CreateDeviceVirtualGroupResponse() :
     m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeNatSwitchListResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateDeviceVirtualGroupResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,33 +62,20 @@ CoreInternalOutcome DescribeNatSwitchListResponse::Deserialize(const string &pay
     }
 
 
-    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
-    {
-        if (!rsp["Total"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_total = rsp["Total"].GetInt64();
-        m_totalHasBeenSet = true;
-    }
-
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["Data"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Data"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Data"].IsObject())
         {
-            NatSwitchListData item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_data.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
+
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
         m_dataHasBeenSet = true;
     }
 
@@ -97,33 +83,19 @@ CoreInternalOutcome DescribeNatSwitchListResponse::Deserialize(const string &pay
     return CoreInternalOutcome(true);
 }
 
-string DescribeNatSwitchListResponse::ToJsonString() const
+string CreateDeviceVirtualGroupResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_totalHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Total";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_total, allocator);
-    }
 
     if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,22 +110,12 @@ string DescribeNatSwitchListResponse::ToJsonString() const
 }
 
 
-int64_t DescribeNatSwitchListResponse::GetTotal() const
-{
-    return m_total;
-}
-
-bool DescribeNatSwitchListResponse::TotalHasBeenSet() const
-{
-    return m_totalHasBeenSet;
-}
-
-vector<NatSwitchListData> DescribeNatSwitchListResponse::GetData() const
+CreateDeviceVirtualGroupRspData CreateDeviceVirtualGroupResponse::GetData() const
 {
     return m_data;
 }
 
-bool DescribeNatSwitchListResponse::DataHasBeenSet() const
+bool CreateDeviceVirtualGroupResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
 }

@@ -26,7 +26,9 @@ Ipv6Address::Ipv6Address() :
     m_addressIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_isWanIpBlockedHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_publicIpAddressHasBeenSet(false),
+    m_addressTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome Ipv6Address::Deserialize(const rapidjson::Value &value)
         m_stateHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicIpAddress") && !value["PublicIpAddress"].IsNull())
+    {
+        if (!value["PublicIpAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Ipv6Address.PublicIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicIpAddress = string(value["PublicIpAddress"].GetString());
+        m_publicIpAddressHasBeenSet = true;
+    }
+
+    if (value.HasMember("AddressType") && !value["AddressType"].IsNull())
+    {
+        if (!value["AddressType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Ipv6Address.AddressType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_addressType = string(value["AddressType"].GetString());
+        m_addressTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void Ipv6Address::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicIpAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIpAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIpAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addressType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void Ipv6Address::SetState(const string& _state)
 bool Ipv6Address::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+string Ipv6Address::GetPublicIpAddress() const
+{
+    return m_publicIpAddress;
+}
+
+void Ipv6Address::SetPublicIpAddress(const string& _publicIpAddress)
+{
+    m_publicIpAddress = _publicIpAddress;
+    m_publicIpAddressHasBeenSet = true;
+}
+
+bool Ipv6Address::PublicIpAddressHasBeenSet() const
+{
+    return m_publicIpAddressHasBeenSet;
+}
+
+string Ipv6Address::GetAddressType() const
+{
+    return m_addressType;
+}
+
+void Ipv6Address::SetAddressType(const string& _addressType)
+{
+    m_addressType = _addressType;
+    m_addressTypeHasBeenSet = true;
+}
+
+bool Ipv6Address::AddressTypeHasBeenSet() const
+{
+    return m_addressTypeHasBeenSet;
 }
 

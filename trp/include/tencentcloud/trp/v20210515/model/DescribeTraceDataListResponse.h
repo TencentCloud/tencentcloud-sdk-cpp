@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数量
-                     * @return TotalCount 数量
+                     * 获取溯源阶段数量
+                     * @return TotalCount 溯源阶段数量
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return TraceDataList 无
+                     * 获取溯源明细
+                     * @return TraceDataList 溯源明细
                      * 
                      */
                     std::vector<TraceData> GetTraceDataList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数量
+                     * 溯源阶段数量
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 无
+                     * 溯源明细
                      */
                     std::vector<TraceData> m_traceDataList;
                     bool m_traceDataListHasBeenSet;

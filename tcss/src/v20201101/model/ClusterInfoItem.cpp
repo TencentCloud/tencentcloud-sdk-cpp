@@ -30,6 +30,7 @@ ClusterInfoItem::ClusterInfoItem() :
     m_regionHasBeenSet(false),
     m_defenderStatusHasBeenSet(false),
     m_clusterStatusHasBeenSet(false),
+    m_clusterSubStatusHasBeenSet(false),
     m_clusterCheckModeHasBeenSet(false),
     m_clusterAutoCheckHasBeenSet(false),
     m_defenderErrorReasonHasBeenSet(false),
@@ -48,7 +49,9 @@ ClusterInfoItem::ClusterInfoItem() :
     m_unInstallAgentNodeCountHasBeenSet(false),
     m_chargeCoresCntHasBeenSet(false),
     m_masterAddressesHasBeenSet(false),
-    m_coresCntHasBeenSet(false)
+    m_coresCntHasBeenSet(false),
+    m_clusterAuditStatusHasBeenSet(false),
+    m_clusterAuditFailedInfoHasBeenSet(false)
 {
 }
 
@@ -145,6 +148,16 @@ CoreInternalOutcome ClusterInfoItem::Deserialize(const rapidjson::Value &value)
         }
         m_clusterStatus = string(value["ClusterStatus"].GetString());
         m_clusterStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterSubStatus") && !value["ClusterSubStatus"].IsNull())
+    {
+        if (!value["ClusterSubStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfoItem.ClusterSubStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterSubStatus = string(value["ClusterSubStatus"].GetString());
+        m_clusterSubStatusHasBeenSet = true;
     }
 
     if (value.HasMember("ClusterCheckMode") && !value["ClusterCheckMode"].IsNull())
@@ -340,6 +353,26 @@ CoreInternalOutcome ClusterInfoItem::Deserialize(const rapidjson::Value &value)
         m_coresCntHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterAuditStatus") && !value["ClusterAuditStatus"].IsNull())
+    {
+        if (!value["ClusterAuditStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfoItem.ClusterAuditStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterAuditStatus = string(value["ClusterAuditStatus"].GetString());
+        m_clusterAuditStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterAuditFailedInfo") && !value["ClusterAuditFailedInfo"].IsNull())
+    {
+        if (!value["ClusterAuditFailedInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfoItem.ClusterAuditFailedInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterAuditFailedInfo = string(value["ClusterAuditFailedInfo"].GetString());
+        m_clusterAuditFailedInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -417,6 +450,14 @@ void ClusterInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ClusterStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterSubStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterSubStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterSubStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterCheckModeHasBeenSet)
@@ -576,6 +617,22 @@ void ClusterInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, m_coresCnt, allocator);
     }
 
+    if (m_clusterAuditStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterAuditStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterAuditStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterAuditFailedInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterAuditFailedInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterAuditFailedInfo.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -721,6 +778,22 @@ void ClusterInfoItem::SetClusterStatus(const string& _clusterStatus)
 bool ClusterInfoItem::ClusterStatusHasBeenSet() const
 {
     return m_clusterStatusHasBeenSet;
+}
+
+string ClusterInfoItem::GetClusterSubStatus() const
+{
+    return m_clusterSubStatus;
+}
+
+void ClusterInfoItem::SetClusterSubStatus(const string& _clusterSubStatus)
+{
+    m_clusterSubStatus = _clusterSubStatus;
+    m_clusterSubStatusHasBeenSet = true;
+}
+
+bool ClusterInfoItem::ClusterSubStatusHasBeenSet() const
+{
+    return m_clusterSubStatusHasBeenSet;
 }
 
 string ClusterInfoItem::GetClusterCheckMode() const
@@ -1025,5 +1098,37 @@ void ClusterInfoItem::SetCoresCnt(const uint64_t& _coresCnt)
 bool ClusterInfoItem::CoresCntHasBeenSet() const
 {
     return m_coresCntHasBeenSet;
+}
+
+string ClusterInfoItem::GetClusterAuditStatus() const
+{
+    return m_clusterAuditStatus;
+}
+
+void ClusterInfoItem::SetClusterAuditStatus(const string& _clusterAuditStatus)
+{
+    m_clusterAuditStatus = _clusterAuditStatus;
+    m_clusterAuditStatusHasBeenSet = true;
+}
+
+bool ClusterInfoItem::ClusterAuditStatusHasBeenSet() const
+{
+    return m_clusterAuditStatusHasBeenSet;
+}
+
+string ClusterInfoItem::GetClusterAuditFailedInfo() const
+{
+    return m_clusterAuditFailedInfo;
+}
+
+void ClusterInfoItem::SetClusterAuditFailedInfo(const string& _clusterAuditFailedInfo)
+{
+    m_clusterAuditFailedInfo = _clusterAuditFailedInfo;
+    m_clusterAuditFailedInfoHasBeenSet = true;
+}
+
+bool ClusterInfoItem::ClusterAuditFailedInfoHasBeenSet() const
+{
+    return m_clusterAuditFailedInfoHasBeenSet;
 }
 

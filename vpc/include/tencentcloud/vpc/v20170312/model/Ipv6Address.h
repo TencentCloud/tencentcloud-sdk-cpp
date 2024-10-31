@@ -188,6 +188,56 @@ namespace TencentCloud
                      */
                     bool StateHasBeenSet() const;
 
+                    /**
+                     * 获取如果 IPv6地址是 ULA 类型，绑定的公网IP地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicIpAddress 如果 IPv6地址是 ULA 类型，绑定的公网IP地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPublicIpAddress() const;
+
+                    /**
+                     * 设置如果 IPv6地址是 ULA 类型，绑定的公网IP地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _publicIpAddress 如果 IPv6地址是 ULA 类型，绑定的公网IP地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPublicIpAddress(const std::string& _publicIpAddress);
+
+                    /**
+                     * 判断参数 PublicIpAddress 是否已赋值
+                     * @return PublicIpAddress 是否已赋值
+                     * 
+                     */
+                    bool PublicIpAddressHasBeenSet() const;
+
+                    /**
+                     * 获取`IPv6`地址的类型: `GUA`, `OTHER`, `ULA`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AddressType `IPv6`地址的类型: `GUA`, `OTHER`, `ULA`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAddressType() const;
+
+                    /**
+                     * 设置`IPv6`地址的类型: `GUA`, `OTHER`, `ULA`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _addressType `IPv6`地址的类型: `GUA`, `OTHER`, `ULA`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAddressType(const std::string& _addressType);
+
+                    /**
+                     * 判断参数 AddressType 是否已赋值
+                     * @return AddressType 是否已赋值
+                     * 
+                     */
+                    bool AddressTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -229,6 +279,20 @@ namespace TencentCloud
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
+
+                    /**
+                     * 如果 IPv6地址是 ULA 类型，绑定的公网IP地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_publicIpAddress;
+                    bool m_publicIpAddressHasBeenSet;
+
+                    /**
+                     * `IPv6`地址的类型: `GUA`, `OTHER`, `ULA`
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_addressType;
+                    bool m_addressTypeHasBeenSet;
 
                 };
             }

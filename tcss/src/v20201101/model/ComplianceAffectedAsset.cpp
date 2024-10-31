@@ -31,7 +31,10 @@ ComplianceAffectedAsset::ComplianceAffectedAsset() :
     m_hostIPHasBeenSet(false),
     m_imageTagHasBeenSet(false),
     m_verifyInfoHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_imageRegistryInfoHasBeenSet(false),
+    m_clusterIDHasBeenSet(false),
+    m_clusterNameHasBeenSet(false)
 {
 }
 
@@ -150,6 +153,43 @@ CoreInternalOutcome ComplianceAffectedAsset::Deserialize(const rapidjson::Value 
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageRegistryInfo") && !value["ImageRegistryInfo"].IsNull())
+    {
+        if (!value["ImageRegistryInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComplianceAffectedAsset.ImageRegistryInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageRegistryInfo.Deserialize(value["ImageRegistryInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageRegistryInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterID") && !value["ClusterID"].IsNull())
+    {
+        if (!value["ClusterID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComplianceAffectedAsset.ClusterID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterID = string(value["ClusterID"].GetString());
+        m_clusterIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterName") && !value["ClusterName"].IsNull())
+    {
+        if (!value["ClusterName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComplianceAffectedAsset.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterName = string(value["ClusterName"].GetString());
+        m_clusterNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +283,31 @@ void ComplianceAffectedAsset::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageRegistryInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageRegistryInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageRegistryInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_clusterIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +487,53 @@ void ComplianceAffectedAsset::SetInstanceId(const string& _instanceId)
 bool ComplianceAffectedAsset::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+ImageRegistryInfo ComplianceAffectedAsset::GetImageRegistryInfo() const
+{
+    return m_imageRegistryInfo;
+}
+
+void ComplianceAffectedAsset::SetImageRegistryInfo(const ImageRegistryInfo& _imageRegistryInfo)
+{
+    m_imageRegistryInfo = _imageRegistryInfo;
+    m_imageRegistryInfoHasBeenSet = true;
+}
+
+bool ComplianceAffectedAsset::ImageRegistryInfoHasBeenSet() const
+{
+    return m_imageRegistryInfoHasBeenSet;
+}
+
+string ComplianceAffectedAsset::GetClusterID() const
+{
+    return m_clusterID;
+}
+
+void ComplianceAffectedAsset::SetClusterID(const string& _clusterID)
+{
+    m_clusterID = _clusterID;
+    m_clusterIDHasBeenSet = true;
+}
+
+bool ComplianceAffectedAsset::ClusterIDHasBeenSet() const
+{
+    return m_clusterIDHasBeenSet;
+}
+
+string ComplianceAffectedAsset::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+void ComplianceAffectedAsset::SetClusterName(const string& _clusterName)
+{
+    m_clusterName = _clusterName;
+    m_clusterNameHasBeenSet = true;
+}
+
+bool ComplianceAffectedAsset::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
 }
 

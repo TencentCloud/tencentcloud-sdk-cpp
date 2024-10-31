@@ -746,6 +746,48 @@ namespace TencentCloud
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取pod名称
+                     * @return PodName pod名称
+                     * 
+                     */
+                    std::string GetPodName() const;
+
+                    /**
+                     * 设置pod名称
+                     * @param _podName pod名称
+                     * 
+                     */
+                    void SetPodName(const std::string& _podName);
+
+                    /**
+                     * 判断参数 PodName 是否已赋值
+                     * @return PodName 是否已赋值
+                     * 
+                     */
+                    bool PodNameHasBeenSet() const;
+
+                    /**
+                     * 获取pod ip
+                     * @return PodIP pod ip
+                     * 
+                     */
+                    std::string GetPodIP() const;
+
+                    /**
+                     * 设置pod ip
+                     * @param _podIP pod ip
+                     * 
+                     */
+                    void SetPodIP(const std::string& _podIP);
+
+                    /**
+                     * 判断参数 PodIP 是否已赋值
+                     * @return PodIP 是否已赋值
+                     * 
+                     */
+                    bool PodIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -943,6 +985,18 @@ namespace TencentCloud
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * pod名称
+                     */
+                    std::string m_podName;
+                    bool m_podNameHasBeenSet;
+
+                    /**
+                     * pod ip
+                     */
+                    std::string m_podIP;
+                    bool m_podIPHasBeenSet;
 
                 };
             }

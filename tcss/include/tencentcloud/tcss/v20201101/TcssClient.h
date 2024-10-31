@@ -3258,7 +3258,7 @@ DescribeEscapeEventsExport  查询容器逃逸事件列表导出
                 DescribeExportJobManageListOutcomeCallable DescribeExportJobManageListCallable(const Model::DescribeExportJobManageListRequest& request);
 
                 /**
-                 *查询导出任务的结果
+                 *查询导出接口进度
                  * @param req DescribeExportJobResultRequest
                  * @return DescribeExportJobResultOutcome
                  */

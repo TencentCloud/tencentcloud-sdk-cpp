@@ -775,6 +775,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/AffectedWorkloadItem.h
   include/tencentcloud/tcss/v20201101/model/AddAndPublishNetworkFirewallPolicyYamlDetailRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateComplianceTaskRequest.h
+  include/tencentcloud/tcss/v20201101/model/ImageRegistryInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeAccessControlRulesExportRequest.h
   include/tencentcloud/tcss/v20201101/model/OpenTcssTrialRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateEscapeEventsExportJobResponse.h
@@ -1620,6 +1621,7 @@ set(tcss_src
   src/v20201101/model/AffectedWorkloadItem.cpp
   src/v20201101/model/AddAndPublishNetworkFirewallPolicyYamlDetailRequest.cpp
   src/v20201101/model/CreateComplianceTaskRequest.cpp
+  src/v20201101/model/ImageRegistryInfo.cpp
   src/v20201101/model/DescribeAccessControlRulesExportRequest.cpp
   src/v20201101/model/OpenTcssTrialRequest.cpp
   src/v20201101/model/CreateEscapeEventsExportJobResponse.cpp

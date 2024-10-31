@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool CorpIdHasBeenSet() const;
 
                     /**
-                     * 获取批次状态
-                     * @return Status 批次状态
+                     * 获取批次状态 0: 未激活 1: 已激活 -1: 已冻结
+                     * @return Status 批次状态 0: 未激活 1: 已激活 -1: 已冻结
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置批次状态
-                     * @param _status 批次状态
+                     * 设置批次状态 0: 未激活 1: 已激活 -1: 已冻结
+                     * @param _status 批次状态 0: 未激活 1: 已激活 -1: 已冻结
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_corpIdHasBeenSet;
 
                     /**
-                     * 批次状态
+                     * 批次状态 0: 未激活 1: 已激活 -1: 已冻结
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

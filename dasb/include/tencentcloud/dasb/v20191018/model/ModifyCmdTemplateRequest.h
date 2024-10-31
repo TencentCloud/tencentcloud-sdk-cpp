@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool EncodingHasBeenSet() const;
 
+                    /**
+                     * 获取命令模板类型 1-内置模板 2-自定义模板
+                     * @return Type 命令模板类型 1-内置模板 2-自定义模板
+                     * 
+                     */
+                    uint64_t GetType() const;
+
+                    /**
+                     * 设置命令模板类型 1-内置模板 2-自定义模板
+                     * @param _type 命令模板类型 1-内置模板 2-自定义模板
+                     * 
+                     */
+                    void SetType(const uint64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +177,12 @@ namespace TencentCloud
                      */
                     uint64_t m_encoding;
                     bool m_encodingHasBeenSet;
+
+                    /**
+                     * 命令模板类型 1-内置模板 2-自定义模板
+                     */
+                    uint64_t m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

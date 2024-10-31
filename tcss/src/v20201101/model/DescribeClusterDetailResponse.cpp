@@ -31,6 +31,7 @@ DescribeClusterDetailResponse::DescribeClusterDetailResponse() :
     m_containerRuntimeHasBeenSet(false),
     m_clusterNodeNumHasBeenSet(false),
     m_clusterStatusHasBeenSet(false),
+    m_clusterSubStatusHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_seriousRiskCountHasBeenSet(false),
@@ -154,6 +155,16 @@ CoreInternalOutcome DescribeClusterDetailResponse::Deserialize(const string &pay
         }
         m_clusterStatus = string(rsp["ClusterStatus"].GetString());
         m_clusterStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ClusterSubStatus") && !rsp["ClusterSubStatus"].IsNull())
+    {
+        if (!rsp["ClusterSubStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSubStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterSubStatus = string(rsp["ClusterSubStatus"].GetString());
+        m_clusterSubStatusHasBeenSet = true;
     }
 
     if (rsp.HasMember("ClusterType") && !rsp["ClusterType"].IsNull())
@@ -402,6 +413,14 @@ string DescribeClusterDetailResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_clusterStatus.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_clusterSubStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterSubStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterSubStatus.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_clusterTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -626,6 +645,16 @@ string DescribeClusterDetailResponse::GetClusterStatus() const
 bool DescribeClusterDetailResponse::ClusterStatusHasBeenSet() const
 {
     return m_clusterStatusHasBeenSet;
+}
+
+string DescribeClusterDetailResponse::GetClusterSubStatus() const
+{
+    return m_clusterSubStatus;
+}
+
+bool DescribeClusterDetailResponse::ClusterSubStatusHasBeenSet() const
+{
+    return m_clusterSubStatusHasBeenSet;
 }
 
 string DescribeClusterDetailResponse::GetClusterType() const

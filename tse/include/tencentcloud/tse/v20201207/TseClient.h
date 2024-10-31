@@ -233,6 +233,8 @@
 #include <tencentcloud/tse/v20201207/model/OpenWafProtectionResponse.h>
 #include <tencentcloud/tse/v20201207/model/PublishConfigFilesRequest.h>
 #include <tencentcloud/tse/v20201207/model/PublishConfigFilesResponse.h>
+#include <tencentcloud/tse/v20201207/model/RestartSREInstanceRequest.h>
+#include <tencentcloud/tse/v20201207/model/RestartSREInstanceResponse.h>
 #include <tencentcloud/tse/v20201207/model/RollbackConfigFileReleasesRequest.h>
 #include <tencentcloud/tse/v20201207/model/RollbackConfigFileReleasesResponse.h>
 #include <tencentcloud/tse/v20201207/model/UnbindAutoScalerResourceStrategyFromGroupsRequest.h>
@@ -576,6 +578,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PublishConfigFilesResponse> PublishConfigFilesOutcome;
                 typedef std::future<PublishConfigFilesOutcome> PublishConfigFilesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::PublishConfigFilesRequest&, PublishConfigFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishConfigFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestartSREInstanceResponse> RestartSREInstanceOutcome;
+                typedef std::future<RestartSREInstanceOutcome> RestartSREInstanceOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::RestartSREInstanceRequest&, RestartSREInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartSREInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::RollbackConfigFileReleasesResponse> RollbackConfigFileReleasesOutcome;
                 typedef std::future<RollbackConfigFileReleasesOutcome> RollbackConfigFileReleasesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::RollbackConfigFileReleasesRequest&, RollbackConfigFileReleasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackConfigFileReleasesAsyncHandler;
@@ -1544,6 +1549,15 @@ namespace TencentCloud
                 PublishConfigFilesOutcome PublishConfigFiles(const Model::PublishConfigFilesRequest &request);
                 void PublishConfigFilesAsync(const Model::PublishConfigFilesRequest& request, const PublishConfigFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PublishConfigFilesOutcomeCallable PublishConfigFilesCallable(const Model::PublishConfigFilesRequest& request);
+
+                /**
+                 *重启微服务引擎实例
+                 * @param req RestartSREInstanceRequest
+                 * @return RestartSREInstanceOutcome
+                 */
+                RestartSREInstanceOutcome RestartSREInstance(const Model::RestartSREInstanceRequest &request);
+                void RestartSREInstanceAsync(const Model::RestartSREInstanceRequest& request, const RestartSREInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartSREInstanceOutcomeCallable RestartSREInstanceCallable(const Model::RestartSREInstanceRequest& request);
 
                 /**
                  *回滚配置发布

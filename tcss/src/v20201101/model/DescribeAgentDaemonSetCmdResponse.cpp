@@ -24,7 +24,9 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DescribeAgentDaemonSetCmdResponse::DescribeAgentDaemonSetCmdResponse() :
-    m_commandHasBeenSet(false)
+    m_commandHasBeenSet(false),
+    m_uRLHasBeenSet(false),
+    m_fileContentHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome DescribeAgentDaemonSetCmdResponse::Deserialize(const string 
         m_commandHasBeenSet = true;
     }
 
+    if (rsp.HasMember("URL") && !rsp["URL"].IsNull())
+    {
+        if (!rsp["URL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `URL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uRL = string(rsp["URL"].GetString());
+        m_uRLHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FileContent") && !rsp["FileContent"].IsNull())
+    {
+        if (!rsp["FileContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileContent = string(rsp["FileContent"].GetString());
+        m_fileContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +110,22 @@ string DescribeAgentDaemonSetCmdResponse::ToJsonString() const
         string key = "Command";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uRLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "URL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uRL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileContent.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +148,26 @@ string DescribeAgentDaemonSetCmdResponse::GetCommand() const
 bool DescribeAgentDaemonSetCmdResponse::CommandHasBeenSet() const
 {
     return m_commandHasBeenSet;
+}
+
+string DescribeAgentDaemonSetCmdResponse::GetURL() const
+{
+    return m_uRL;
+}
+
+bool DescribeAgentDaemonSetCmdResponse::URLHasBeenSet() const
+{
+    return m_uRLHasBeenSet;
+}
+
+string DescribeAgentDaemonSetCmdResponse::GetFileContent() const
+{
+    return m_fileContent;
+}
+
+bool DescribeAgentDaemonSetCmdResponse::FileContentHasBeenSet() const
+{
+    return m_fileContentHasBeenSet;
 }
 
 

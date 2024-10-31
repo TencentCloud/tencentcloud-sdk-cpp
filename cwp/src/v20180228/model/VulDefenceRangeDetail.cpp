@@ -27,7 +27,8 @@ VulDefenceRangeDetail::VulDefenceRangeDetail() :
     m_cvssScoreHasBeenSet(false),
     m_cveIdHasBeenSet(false),
     m_publishTimeHasBeenSet(false),
-    m_vulIdHasBeenSet(false)
+    m_vulIdHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome VulDefenceRangeDetail::Deserialize(const rapidjson::Value &v
         m_vulIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDefenceRangeDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void VulDefenceRangeDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "VulId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulId, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void VulDefenceRangeDetail::SetVulId(const int64_t& _vulId)
 bool VulDefenceRangeDetail::VulIdHasBeenSet() const
 {
     return m_vulIdHasBeenSet;
+}
+
+int64_t VulDefenceRangeDetail::GetStatus() const
+{
+    return m_status;
+}
+
+void VulDefenceRangeDetail::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool VulDefenceRangeDetail::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

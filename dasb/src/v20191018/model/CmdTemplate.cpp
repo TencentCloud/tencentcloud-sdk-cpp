@@ -23,7 +23,8 @@ using namespace std;
 CmdTemplate::CmdTemplate() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_cmdListHasBeenSet(false)
+    m_cmdListHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome CmdTemplate::Deserialize(const rapidjson::Value &value)
         m_cmdListHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CmdTemplate.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = value["Type"].GetUint64();
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void CmdTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CmdList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cmdList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_type, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void CmdTemplate::SetCmdList(const string& _cmdList)
 bool CmdTemplate::CmdListHasBeenSet() const
 {
     return m_cmdListHasBeenSet;
+}
+
+uint64_t CmdTemplate::GetType() const
+{
+    return m_type;
+}
+
+void CmdTemplate::SetType(const uint64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool CmdTemplate::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

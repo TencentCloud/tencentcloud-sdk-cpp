@@ -65,27 +65,6 @@ namespace TencentCloud
                     bool ImageIDHasBeenSet() const;
 
                     /**
-                     * 获取导出字段
-                     * @return ExportField 导出字段
-                     * 
-                     */
-                    std::vector<std::string> GetExportField() const;
-
-                    /**
-                     * 设置导出字段
-                     * @param _exportField 导出字段
-                     * 
-                     */
-                    void SetExportField(const std::vector<std::string>& _exportField);
-
-                    /**
-                     * 判断参数 ExportField 是否已赋值
-                     * @return ExportField 是否已赋值
-                     * 
-                     */
-                    bool ExportFieldHasBeenSet() const;
-
-                    /**
                      * 获取需要返回的数量，默认为10000，最大值为10000
                      * @return Limit 需要返回的数量，默认为10000，最大值为10000
                      * 
@@ -194,6 +173,27 @@ namespace TencentCloud
                      */
                     bool OrderHasBeenSet() const;
 
+                    /**
+                     * 获取导出字段
+                     * @return ExportField 导出字段
+                     * 
+                     */
+                    std::vector<std::string> GetExportField() const;
+
+                    /**
+                     * 设置导出字段
+                     * @param _exportField 导出字段
+                     * 
+                     */
+                    void SetExportField(const std::vector<std::string>& _exportField);
+
+                    /**
+                     * 判断参数 ExportField 是否已赋值
+                     * @return ExportField 是否已赋值
+                     * 
+                     */
+                    bool ExportFieldHasBeenSet() const;
+
                 private:
 
                     /**
@@ -201,12 +201,6 @@ namespace TencentCloud
                      */
                     std::string m_imageID;
                     bool m_imageIDHasBeenSet;
-
-                    /**
-                     * 导出字段
-                     */
-                    std::vector<std::string> m_exportField;
-                    bool m_exportFieldHasBeenSet;
 
                     /**
                      * 需要返回的数量，默认为10000，最大值为10000
@@ -238,6 +232,12 @@ namespace TencentCloud
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
+
+                    /**
+                     * 导出字段
+                     */
+                    std::vector<std::string> m_exportField;
+                    bool m_exportFieldHasBeenSet;
 
                 };
             }

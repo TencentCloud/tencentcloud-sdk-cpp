@@ -40,6 +40,49 @@ IoaClient::IoaClient(const Credential &credential, const string &region, const C
 }
 
 
+IoaClient::CreateDeviceVirtualGroupOutcome IoaClient::CreateDeviceVirtualGroup(const CreateDeviceVirtualGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDeviceVirtualGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDeviceVirtualGroupResponse rsp = CreateDeviceVirtualGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDeviceVirtualGroupOutcome(rsp);
+        else
+            return CreateDeviceVirtualGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDeviceVirtualGroupOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::CreateDeviceVirtualGroupAsync(const CreateDeviceVirtualGroupRequest& request, const CreateDeviceVirtualGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDeviceVirtualGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::CreateDeviceVirtualGroupOutcomeCallable IoaClient::CreateDeviceVirtualGroupCallable(const CreateDeviceVirtualGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDeviceVirtualGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDeviceVirtualGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IoaClient::DescribeAccountGroupsOutcome IoaClient::DescribeAccountGroups(const DescribeAccountGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAccountGroups");

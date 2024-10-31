@@ -113,6 +113,20 @@ namespace TencentCloud
                      */
                     bool WindowsDownloadUrlHasBeenSet() const;
 
+                    /**
+                     * 获取arm架构系统安装命令
+                     * @return ARMCommand arm架构系统安装命令
+                     * 
+                     */
+                    std::string GetARMCommand() const;
+
+                    /**
+                     * 判断参数 ARMCommand 是否已赋值
+                     * @return ARMCommand 是否已赋值
+                     * 
+                     */
+                    bool ARMCommandHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +158,12 @@ namespace TencentCloud
                      */
                     std::string m_windowsDownloadUrl;
                     bool m_windowsDownloadUrlHasBeenSet;
+
+                    /**
+                     * arm架构系统安装命令
+                     */
+                    std::string m_aRMCommand;
+                    bool m_aRMCommandHasBeenSet;
 
                 };
             }

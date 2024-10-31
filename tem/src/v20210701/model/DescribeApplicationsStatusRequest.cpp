@@ -23,8 +23,8 @@ using namespace TencentCloud::Tem::V20210701::Model;
 using namespace std;
 
 DescribeApplicationsStatusRequest::DescribeApplicationsStatusRequest() :
-    m_sourceChannelHasBeenSet(false),
-    m_environmentIdHasBeenSet(false)
+    m_environmentIdHasBeenSet(false),
+    m_sourceChannelHasBeenSet(false)
 {
 }
 
@@ -35,20 +35,20 @@ string DescribeApplicationsStatusRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_sourceChannelHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceChannel";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_sourceChannel, allocator);
-    }
-
     if (m_environmentIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnvironmentId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_environmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceChannelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceChannel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sourceChannel, allocator);
     }
 
 
@@ -58,22 +58,6 @@ string DescribeApplicationsStatusRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-int64_t DescribeApplicationsStatusRequest::GetSourceChannel() const
-{
-    return m_sourceChannel;
-}
-
-void DescribeApplicationsStatusRequest::SetSourceChannel(const int64_t& _sourceChannel)
-{
-    m_sourceChannel = _sourceChannel;
-    m_sourceChannelHasBeenSet = true;
-}
-
-bool DescribeApplicationsStatusRequest::SourceChannelHasBeenSet() const
-{
-    return m_sourceChannelHasBeenSet;
-}
 
 string DescribeApplicationsStatusRequest::GetEnvironmentId() const
 {
@@ -89,6 +73,22 @@ void DescribeApplicationsStatusRequest::SetEnvironmentId(const string& _environm
 bool DescribeApplicationsStatusRequest::EnvironmentIdHasBeenSet() const
 {
     return m_environmentIdHasBeenSet;
+}
+
+int64_t DescribeApplicationsStatusRequest::GetSourceChannel() const
+{
+    return m_sourceChannel;
+}
+
+void DescribeApplicationsStatusRequest::SetSourceChannel(const int64_t& _sourceChannel)
+{
+    m_sourceChannel = _sourceChannel;
+    m_sourceChannelHasBeenSet = true;
+}
+
+bool DescribeApplicationsStatusRequest::SourceChannelHasBeenSet() const
+{
+    return m_sourceChannelHasBeenSet;
 }
 
 

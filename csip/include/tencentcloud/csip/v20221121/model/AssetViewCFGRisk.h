@@ -474,6 +474,31 @@ namespace TencentCloud
                      */
                     bool UinHasBeenSet() const;
 
+                    /**
+                     * 获取当资产类型为LBL的时候，展示该字段，方便定位具体的LB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClbId 当资产类型为LBL的时候，展示该字段，方便定位具体的LB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClbId() const;
+
+                    /**
+                     * 设置当资产类型为LBL的时候，展示该字段，方便定位具体的LB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clbId 当资产类型为LBL的时候，展示该字段，方便定位具体的LB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClbId(const std::string& _clbId);
+
+                    /**
+                     * 判断参数 ClbId 是否已赋值
+                     * @return ClbId 是否已赋值
+                     * 
+                     */
+                    bool ClbIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -597,6 +622,13 @@ namespace TencentCloud
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
+
+                    /**
+                     * 当资产类型为LBL的时候，展示该字段，方便定位具体的LB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clbId;
+                    bool m_clbIdHasBeenSet;
 
                 };
             }

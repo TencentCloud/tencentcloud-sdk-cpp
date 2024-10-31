@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool QuuidHasBeenSet() const;
 
                     /**
-                     * 获取状态码
-                     * @return Status 状态码
+                     * 获取状态码Scanning、Ok、Fail
+                     * @return Status 状态码Scanning、Ok、Fail
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态码
-                     * @param _status 状态码
+                     * 设置状态码Scanning、Ok、Fail
+                     * @param _status 状态码Scanning、Ok、Fail
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -396,7 +396,7 @@ namespace TencentCloud
                     bool m_quuidHasBeenSet;
 
                     /**
-                     * 状态码
+                     * 状态码Scanning、Ok、Fail
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

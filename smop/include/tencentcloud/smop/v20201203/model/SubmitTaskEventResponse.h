@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单ID
+                     * 获取任务的唯一订单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrderId 订单ID
+                     * @return OrderId 任务的唯一订单号
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool OrderIdHasBeenSet() const;
 
                     /**
-                     * 获取信息码
+                     * 获取信息码。0表示成功，-1标识失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Code 信息码
+                     * @return Code 信息码。0表示成功，-1标识失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,9 +77,9 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取success
+                     * 获取提示信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Message success
+                     * @return Message 提示信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -111,21 +111,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单ID
+                     * 任务的唯一订单号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;
 
                     /**
-                     * 信息码
+                     * 信息码。0表示成功，-1标识失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * success
+                     * 提示信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;

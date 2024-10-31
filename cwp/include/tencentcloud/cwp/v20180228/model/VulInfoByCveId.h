@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool VulIdHasBeenSet() const;
 
                     /**
-                     * 获取修复支持情况：0-windows/linux均不支持修复 ;1-windows/linux 均支持修复 ;2-仅linux支持修复;3-仅windows支持修复
-                     * @return FixSwitch 修复支持情况：0-windows/linux均不支持修复 ;1-windows/linux 均支持修复 ;2-仅linux支持修复;3-仅windows支持修复
+                     * 获取修复支持情况：0-Windows/Linux均不支持修复 ;1-Windows/Linux 均支持修复 ;2-仅Linux支持修复;3-仅Windows支持修复
+                     * @return FixSwitch 修复支持情况：0-Windows/Linux均不支持修复 ;1-Windows/Linux 均支持修复 ;2-仅Linux支持修复;3-仅Windows支持修复
                      * 
                      */
                     uint64_t GetFixSwitch() const;
 
                     /**
-                     * 设置修复支持情况：0-windows/linux均不支持修复 ;1-windows/linux 均支持修复 ;2-仅linux支持修复;3-仅windows支持修复
-                     * @param _fixSwitch 修复支持情况：0-windows/linux均不支持修复 ;1-windows/linux 均支持修复 ;2-仅linux支持修复;3-仅windows支持修复
+                     * 设置修复支持情况：0-Windows/Linux均不支持修复 ;1-Windows/Linux 均支持修复 ;2-仅Linux支持修复;3-仅Windows支持修复
+                     * @param _fixSwitch 修复支持情况：0-Windows/Linux均不支持修复 ;1-Windows/Linux 均支持修复 ;2-仅Linux支持修复;3-仅Windows支持修复
                      * 
                      */
                     void SetFixSwitch(const uint64_t& _fixSwitch);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_vulIdHasBeenSet;
 
                     /**
-                     * 修复支持情况：0-windows/linux均不支持修复 ;1-windows/linux 均支持修复 ;2-仅linux支持修复;3-仅windows支持修复
+                     * 修复支持情况：0-Windows/Linux均不支持修复 ;1-Windows/Linux 均支持修复 ;2-仅Linux支持修复;3-仅Windows支持修复
                      */
                     uint64_t m_fixSwitch;
                     bool m_fixSwitchHasBeenSet;

@@ -24,9 +24,9 @@ using namespace std;
 
 DeleteApplicationServiceRequest::DeleteApplicationServiceRequest() :
     m_applicationIdHasBeenSet(false),
-    m_sourceChannelHasBeenSet(false),
     m_environmentIdHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+    m_serviceNameHasBeenSet(false),
+    m_sourceChannelHasBeenSet(false)
 {
 }
 
@@ -45,14 +45,6 @@ string DeleteApplicationServiceRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sourceChannelHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceChannel";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_sourceChannel, allocator);
-    }
-
     if (m_environmentIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -67,6 +59,14 @@ string DeleteApplicationServiceRequest::ToJsonString() const
         string key = "ServiceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceChannelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceChannel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sourceChannel, allocator);
     }
 
 
@@ -91,22 +91,6 @@ void DeleteApplicationServiceRequest::SetApplicationId(const string& _applicatio
 bool DeleteApplicationServiceRequest::ApplicationIdHasBeenSet() const
 {
     return m_applicationIdHasBeenSet;
-}
-
-int64_t DeleteApplicationServiceRequest::GetSourceChannel() const
-{
-    return m_sourceChannel;
-}
-
-void DeleteApplicationServiceRequest::SetSourceChannel(const int64_t& _sourceChannel)
-{
-    m_sourceChannel = _sourceChannel;
-    m_sourceChannelHasBeenSet = true;
-}
-
-bool DeleteApplicationServiceRequest::SourceChannelHasBeenSet() const
-{
-    return m_sourceChannelHasBeenSet;
 }
 
 string DeleteApplicationServiceRequest::GetEnvironmentId() const
@@ -139,6 +123,22 @@ void DeleteApplicationServiceRequest::SetServiceName(const string& _serviceName)
 bool DeleteApplicationServiceRequest::ServiceNameHasBeenSet() const
 {
     return m_serviceNameHasBeenSet;
+}
+
+int64_t DeleteApplicationServiceRequest::GetSourceChannel() const
+{
+    return m_sourceChannel;
+}
+
+void DeleteApplicationServiceRequest::SetSourceChannel(const int64_t& _sourceChannel)
+{
+    m_sourceChannel = _sourceChannel;
+    m_sourceChannelHasBeenSet = true;
+}
+
+bool DeleteApplicationServiceRequest::SourceChannelHasBeenSet() const
+{
+    return m_sourceChannelHasBeenSet;
 }
 
 

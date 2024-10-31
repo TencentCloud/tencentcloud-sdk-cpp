@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
-                     * 获取Namespace
-                     * @return SourceChannel Namespace
+                     * 获取来源渠道 示例值：0
+                     * @return SourceChannel 来源渠道 示例值：0
                      * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
-                     * 设置Namespace
-                     * @param _sourceChannel Namespace
+                     * 设置来源渠道 示例值：0
+                     * @param _sourceChannel 来源渠道 示例值：0
                      * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_environmentIdHasBeenSet;
 
                     /**
-                     * Namespace
+                     * 来源渠道 示例值：0
                      */
                     int64_t m_sourceChannel;
                     bool m_sourceChannelHasBeenSet;

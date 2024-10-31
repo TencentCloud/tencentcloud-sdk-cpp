@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取搜索范围,0-仅搜直接子组,1-深层搜索(只支持32位)
-                     * @return Deepin 搜索范围,0-仅搜直接子组,1-深层搜索(只支持32位)
+                     * 获取搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。
+                     * @return Deepin 搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。
                      * 
                      */
                     int64_t GetDeepin() const;
 
                     /**
-                     * 设置搜索范围,0-仅搜直接子组,1-深层搜索(只支持32位)
-                     * @param _deepin 搜索范围,0-仅搜直接子组,1-深层搜索(只支持32位)
+                     * 设置搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。
+                     * @param _deepin 搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。
                      * 
                      */
                     void SetDeepin(const int64_t& _deepin);
@@ -65,31 +65,59 @@ namespace TencentCloud
                     bool DeepinHasBeenSet() const;
 
                     /**
-                     * 获取滤条件、分页参数
-<li>Name - String - 是否必填：否 - 操作符: like  - 排序支持：否- 按账号分组过滤。</li>
+                     * 获取查询条件
+
+过滤参数
+1、Name，string类型，按分组名过滤
+是否必填：否
+操作符: like
+
 排序条件
-<li>Itime - string - 是否必填：否 - 排序支持：是 - 按账号分组创建时间排序。</li>
-<li>Utime - string - 是否必填：否 - 排序支持：是 - 按账号分组更新时间排序。</li>
-                     * @return Condition 滤条件、分页参数
-<li>Name - String - 是否必填：否 - 操作符: like  - 排序支持：否- 按账号分组过滤。</li>
+1、Itime，string类型，按分组创建时间排序
+是否必填：否
+2、Utime，string类型，按分组更新时间排序
+是否必填：否
+                     * @return Condition 查询条件
+
+过滤参数
+1、Name，string类型，按分组名过滤
+是否必填：否
+操作符: like
+
 排序条件
-<li>Itime - string - 是否必填：否 - 排序支持：是 - 按账号分组创建时间排序。</li>
-<li>Utime - string - 是否必填：否 - 排序支持：是 - 按账号分组更新时间排序。</li>
+1、Itime，string类型，按分组创建时间排序
+是否必填：否
+2、Utime，string类型，按分组更新时间排序
+是否必填：否
                      * 
                      */
                     Condition GetCondition() const;
 
                     /**
-                     * 设置滤条件、分页参数
-<li>Name - String - 是否必填：否 - 操作符: like  - 排序支持：否- 按账号分组过滤。</li>
+                     * 设置查询条件
+
+过滤参数
+1、Name，string类型，按分组名过滤
+是否必填：否
+操作符: like
+
 排序条件
-<li>Itime - string - 是否必填：否 - 排序支持：是 - 按账号分组创建时间排序。</li>
-<li>Utime - string - 是否必填：否 - 排序支持：是 - 按账号分组更新时间排序。</li>
-                     * @param _condition 滤条件、分页参数
-<li>Name - String - 是否必填：否 - 操作符: like  - 排序支持：否- 按账号分组过滤。</li>
+1、Itime，string类型，按分组创建时间排序
+是否必填：否
+2、Utime，string类型，按分组更新时间排序
+是否必填：否
+                     * @param _condition 查询条件
+
+过滤参数
+1、Name，string类型，按分组名过滤
+是否必填：否
+操作符: like
+
 排序条件
-<li>Itime - string - 是否必填：否 - 排序支持：是 - 按账号分组创建时间排序。</li>
-<li>Utime - string - 是否必填：否 - 排序支持：是 - 按账号分组更新时间排序。</li>
+1、Itime，string类型，按分组创建时间排序
+是否必填：否
+2、Utime，string类型，按分组更新时间排序
+是否必填：否
                      * 
                      */
                     void SetCondition(const Condition& _condition);
@@ -102,15 +130,15 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取父分组id
-                     * @return ParentId 父分组id
+                     * 获取父分组ID，获取该分组下的子组信息。默认查询全网根分组下子组信息。
+                     * @return ParentId 父分组ID，获取该分组下的子组信息。默认查询全网根分组下子组信息。
                      * 
                      */
                     int64_t GetParentId() const;
 
                     /**
-                     * 设置父分组id
-                     * @param _parentId 父分组id
+                     * 设置父分组ID，获取该分组下的子组信息。默认查询全网根分组下子组信息。
+                     * @param _parentId 父分组ID，获取该分组下的子组信息。默认查询全网根分组下子组信息。
                      * 
                      */
                     void SetParentId(const int64_t& _parentId);
@@ -125,23 +153,30 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 搜索范围,0-仅搜直接子组,1-深层搜索(只支持32位)
+                     * 搜索范围：0-仅当前分组的直接子组，1-当前分组的所有子组。默认为0。
                      */
                     int64_t m_deepin;
                     bool m_deepinHasBeenSet;
 
                     /**
-                     * 滤条件、分页参数
-<li>Name - String - 是否必填：否 - 操作符: like  - 排序支持：否- 按账号分组过滤。</li>
+                     * 查询条件
+
+过滤参数
+1、Name，string类型，按分组名过滤
+是否必填：否
+操作符: like
+
 排序条件
-<li>Itime - string - 是否必填：否 - 排序支持：是 - 按账号分组创建时间排序。</li>
-<li>Utime - string - 是否必填：否 - 排序支持：是 - 按账号分组更新时间排序。</li>
+1、Itime，string类型，按分组创建时间排序
+是否必填：否
+2、Utime，string类型，按分组更新时间排序
+是否必填：否
                      */
                     Condition m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 父分组id
+                     * 父分组ID，获取该分组下的子组信息。默认查询全网根分组下子组信息。
                      */
                     int64_t m_parentId;
                     bool m_parentIdHasBeenSet;

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作-0:标记已处理,1:忽略,2:删除记录,3:木马隔离,4:木马恢复隔离,5:木马信任,6:木马取消信任,7:查杀异常进程
-                     * @return Operate 操作-0:标记已处理,1:忽略,2:删除记录,3:木马隔离,4:木马恢复隔离,5:木马信任,6:木马取消信任,7:查杀异常进程
+                     * 获取操作-0:标记已处理,1:忽略,2:删除记录,3:木马隔离,4:木马恢复隔离,5:木马信任,6:木马取消信任,7:查杀异常进程,8:加入白名单
+                     * @return Operate 操作-0:标记已处理,1:忽略,2:删除记录,3:木马隔离,4:木马恢复隔离,5:木马信任,6:木马取消信任,7:查杀异常进程,8:加入白名单
                      * 
                      */
                     uint64_t GetOperate() const;
 
                     /**
-                     * 设置操作-0:标记已处理,1:忽略,2:删除记录,3:木马隔离,4:木马恢复隔离,5:木马信任,6:木马取消信任,7:查杀异常进程
-                     * @param _operate 操作-0:标记已处理,1:忽略,2:删除记录,3:木马隔离,4:木马恢复隔离,5:木马信任,6:木马取消信任,7:查杀异常进程
+                     * 设置操作-0:标记已处理,1:忽略,2:删除记录,3:木马隔离,4:木马恢复隔离,5:木马信任,6:木马取消信任,7:查杀异常进程,8:加入白名单
+                     * @param _operate 操作-0:标记已处理,1:忽略,2:删除记录,3:木马隔离,4:木马恢复隔离,5:木马信任,6:木马取消信任,7:查杀异常进程,8:加入白名单
                      * 
                      */
                     void SetOperate(const uint64_t& _operate);
@@ -267,10 +267,35 @@ RiskType 为PROCESS时:
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取当Operate 是木马隔离时
+<li> 本操作会修复被篡改的系统命令，计划任务等系统文件，操作中请确保yum/apt 可用。</li>
+                     * @return DoClean 当Operate 是木马隔离时
+<li> 本操作会修复被篡改的系统命令，计划任务等系统文件，操作中请确保yum/apt 可用。</li>
+                     * 
+                     */
+                    bool GetDoClean() const;
+
+                    /**
+                     * 设置当Operate 是木马隔离时
+<li> 本操作会修复被篡改的系统命令，计划任务等系统文件，操作中请确保yum/apt 可用。</li>
+                     * @param _doClean 当Operate 是木马隔离时
+<li> 本操作会修复被篡改的系统命令，计划任务等系统文件，操作中请确保yum/apt 可用。</li>
+                     * 
+                     */
+                    void SetDoClean(const bool& _doClean);
+
+                    /**
+                     * 判断参数 DoClean 是否已赋值
+                     * @return DoClean 是否已赋值
+                     * 
+                     */
+                    bool DoCleanHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 操作-0:标记已处理,1:忽略,2:删除记录,3:木马隔离,4:木马恢复隔离,5:木马信任,6:木马取消信任,7:查杀异常进程
+                     * 操作-0:标记已处理,1:忽略,2:删除记录,3:木马隔离,4:木马恢复隔离,5:木马信任,6:木马取消信任,7:查杀异常进程,8:加入白名单
                      */
                     uint64_t m_operate;
                     bool m_operateHasBeenSet;
@@ -330,6 +355,13 @@ RiskType 为PROCESS时:
                      */
                     std::vector<Filters> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 当Operate 是木马隔离时
+<li> 本操作会修复被篡改的系统命令，计划任务等系统文件，操作中请确保yum/apt 可用。</li>
+                     */
+                    bool m_doClean;
+                    bool m_doCleanHasBeenSet;
 
                 };
             }
