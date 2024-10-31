@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取办公电话购买数（还在有效期内）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SipBuyNum 办公电话购买数（还在有效期内）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSipBuyNum() const;
 
                     /**
                      * 设置办公电话购买数（还在有效期内）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sipBuyNum 办公电话购买数（还在有效期内）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSipBuyNum(const int64_t& _sipBuyNum);
@@ -212,7 +208,6 @@ namespace TencentCloud
 
                     /**
                      * 办公电话购买数（还在有效期内）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sipBuyNum;
                     bool m_sipBuyNumHasBeenSet;

@@ -51,6 +51,8 @@
 #include <tencentcloud/iotvideo/v20191126/model/CreateTraceIdsResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/CreateUploadPathRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/CreateUploadPathResponse.h>
+#include <tencentcloud/iotvideo/v20191126/model/CreateUploadTestRequest.h>
+#include <tencentcloud/iotvideo/v20191126/model/CreateUploadTestResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/CreateUsrTokenRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/CreateUsrTokenResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/DeleteAppUsrRequest.h>
@@ -137,6 +139,8 @@
 #include <tencentcloud/iotvideo/v20191126/model/ModifyVerContentResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/RefundStorageServiceRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/RefundStorageServiceResponse.h>
+#include <tencentcloud/iotvideo/v20191126/model/RenewUploadTestRequest.h>
+#include <tencentcloud/iotvideo/v20191126/model/RenewUploadTestResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/RunDeviceRequest.h>
 #include <tencentcloud/iotvideo/v20191126/model/RunDeviceResponse.h>
 #include <tencentcloud/iotvideo/v20191126/model/RunDeviceStreamRequest.h>
@@ -211,6 +215,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUploadPathResponse> CreateUploadPathOutcome;
                 typedef std::future<CreateUploadPathOutcome> CreateUploadPathOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateUploadPathRequest&, CreateUploadPathOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUploadPathAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUploadTestResponse> CreateUploadTestOutcome;
+                typedef std::future<CreateUploadTestOutcome> CreateUploadTestOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::CreateUploadTestRequest&, CreateUploadTestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUploadTestAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUsrTokenResponse> CreateUsrTokenOutcome;
                 typedef std::future<CreateUsrTokenOutcome> CreateUsrTokenOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateUsrTokenRequest&, CreateUsrTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUsrTokenAsyncHandler;
@@ -340,6 +347,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RefundStorageServiceResponse> RefundStorageServiceOutcome;
                 typedef std::future<RefundStorageServiceOutcome> RefundStorageServiceOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::RefundStorageServiceRequest&, RefundStorageServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundStorageServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewUploadTestResponse> RenewUploadTestOutcome;
+                typedef std::future<RenewUploadTestOutcome> RenewUploadTestOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::RenewUploadTestRequest&, RenewUploadTestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewUploadTestAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunDeviceResponse> RunDeviceOutcome;
                 typedef std::future<RunDeviceOutcome> RunDeviceOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::RunDeviceRequest&, RunDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunDeviceAsyncHandler;
@@ -501,6 +511,15 @@ namespace TencentCloud
                 CreateUploadPathOutcome CreateUploadPath(const Model::CreateUploadPathRequest &request);
                 void CreateUploadPathAsync(const Model::CreateUploadPathRequest& request, const CreateUploadPathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUploadPathOutcomeCallable CreateUploadPathCallable(const Model::CreateUploadPathRequest& request);
+
+                /**
+                 *设备申请cos上传证书
+                 * @param req CreateUploadTestRequest
+                 * @return CreateUploadTestOutcome
+                 */
+                CreateUploadTestOutcome CreateUploadTest(const Model::CreateUploadTestRequest &request);
+                void CreateUploadTestAsync(const Model::CreateUploadTestRequest& request, const CreateUploadTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUploadTestOutcomeCallable CreateUploadTestCallable(const Model::CreateUploadTestRequest& request);
 
                 /**
                  *本接口（CreateUsrToken）用于终端用户获取IoT Video平台的accessToken，初始化SDK,连接到IoT Video接入服务器。
@@ -905,6 +924,15 @@ ProWritable.Pos.setVal.x;
                 RefundStorageServiceOutcome RefundStorageService(const Model::RefundStorageServiceRequest &request);
                 void RefundStorageServiceAsync(const Model::RefundStorageServiceRequest& request, const RefundStorageServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RefundStorageServiceOutcomeCallable RefundStorageServiceCallable(const Model::RefundStorageServiceRequest& request);
+
+                /**
+                 *设备刷新cos上传证书
+                 * @param req RenewUploadTestRequest
+                 * @return RenewUploadTestOutcome
+                 */
+                RenewUploadTestOutcome RenewUploadTest(const Model::RenewUploadTestRequest &request);
+                void RenewUploadTestAsync(const Model::RenewUploadTestRequest& request, const RenewUploadTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewUploadTestOutcomeCallable RenewUploadTestCallable(const Model::RenewUploadTestRequest& request);
 
                 /**
                  *本接口（RunDevice）用于启用设备，可进行批量操作，每次操作最多100台设备。

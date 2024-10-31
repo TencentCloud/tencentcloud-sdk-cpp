@@ -28,7 +28,9 @@ SubmitImageAnimateJobRequest::SubmitImageAnimateJobRequest() :
     m_templateIdHasBeenSet(false),
     m_enableAudioHasBeenSet(false),
     m_enableBodyJoinsHasBeenSet(false),
-    m_enableSegmentHasBeenSet(false)
+    m_enableSegmentHasBeenSet(false),
+    m_logoAddHasBeenSet(false),
+    m_logoParamHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,23 @@ string SubmitImageAnimateJobRequest::ToJsonString() const
         string key = "EnableSegment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableSegment, allocator);
+    }
+
+    if (m_logoAddHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogoAdd";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_logoAdd, allocator);
+    }
+
+    if (m_logoParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogoParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logoParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -189,6 +208,38 @@ void SubmitImageAnimateJobRequest::SetEnableSegment(const bool& _enableSegment)
 bool SubmitImageAnimateJobRequest::EnableSegmentHasBeenSet() const
 {
     return m_enableSegmentHasBeenSet;
+}
+
+int64_t SubmitImageAnimateJobRequest::GetLogoAdd() const
+{
+    return m_logoAdd;
+}
+
+void SubmitImageAnimateJobRequest::SetLogoAdd(const int64_t& _logoAdd)
+{
+    m_logoAdd = _logoAdd;
+    m_logoAddHasBeenSet = true;
+}
+
+bool SubmitImageAnimateJobRequest::LogoAddHasBeenSet() const
+{
+    return m_logoAddHasBeenSet;
+}
+
+LogoParam SubmitImageAnimateJobRequest::GetLogoParam() const
+{
+    return m_logoParam;
+}
+
+void SubmitImageAnimateJobRequest::SetLogoParam(const LogoParam& _logoParam)
+{
+    m_logoParam = _logoParam;
+    m_logoParamHasBeenSet = true;
+}
+
+bool SubmitImageAnimateJobRequest::LogoParamHasBeenSet() const
+{
+    return m_logoParamHasBeenSet;
 }
 
 

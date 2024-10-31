@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取服务记录列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IMCdrList 服务记录列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IMCdrInfo> GetIMCdrList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 服务记录列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IMCdrInfo> m_iMCdrList;
                     bool m_iMCdrListHasBeenSet;

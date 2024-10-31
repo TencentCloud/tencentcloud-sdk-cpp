@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命中的关键字或者按键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 命中的关键字或者按键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置命中的关键字或者按键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 命中的关键字或者按键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取按键关联的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 按键关联的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置按键关联的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 按键关联的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Unix 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp Unix 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 设置Unix 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timestamp Unix 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimestamp(const int64_t& _timestamp);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeLabel 节点标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeLabel() const;
 
                     /**
                      * 设置节点标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeLabel 节点标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeLabel(const std::string& _nodeLabel);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户原始输入
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalContent 用户原始输入
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginalContent() const;
 
                     /**
                      * 设置用户原始输入
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originalContent 用户原始输入
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginalContent(const std::string& _originalContent);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TTS 提示音内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TTSPrompt TTS 提示音内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTTSPrompt() const;
 
                     /**
                      * 设置TTS 提示音内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tTSPrompt TTS 提示音内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTTSPrompt(const std::string& _tTSPrompt);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 命中的关键字或者按键
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 按键关联的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * Unix 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
                      * 节点标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeLabel;
                     bool m_nodeLabelHasBeenSet;
 
                     /**
                      * 用户原始输入
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originalContent;
                     bool m_originalContentHasBeenSet;
 
                     /**
                      * TTS 提示音内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tTSPrompt;
                     bool m_tTSPromptHasBeenSet;

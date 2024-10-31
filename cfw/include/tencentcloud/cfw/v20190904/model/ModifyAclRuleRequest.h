@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要编辑的规则数组
-                     * @return Rules 需要编辑的规则数组
+                     * 获取需要编辑的规则数组，基于Uuid唯一id修改该规则
+                     * @return Rules 需要编辑的规则数组，基于Uuid唯一id修改该规则
                      * 
                      */
                     std::vector<CreateRuleItem> GetRules() const;
 
                     /**
-                     * 设置需要编辑的规则数组
-                     * @param _rules 需要编辑的规则数组
+                     * 设置需要编辑的规则数组，基于Uuid唯一id修改该规则
+                     * @param _rules 需要编辑的规则数组，基于Uuid唯一id修改该规则
                      * 
                      */
                     void SetRules(const std::vector<CreateRuleItem>& _rules);
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要编辑的规则数组
+                     * 需要编辑的规则数组，基于Uuid唯一id修改该规则
                      */
                     std::vector<CreateRuleItem> m_rules;
                     bool m_rulesHasBeenSet;

@@ -542,6 +542,27 @@ namespace TencentCloud
                      */
                     bool EnableMultimediaHasBeenSet() const;
 
+                    /**
+                     * 获取说明：1. 确保模型的输出是可复现的。2. 取值区间为非0正整数，最大值10000。3. 非必要不建议使用，不合理的取值会影响效果。
+                     * @return Seed 说明：1. 确保模型的输出是可复现的。2. 取值区间为非0正整数，最大值10000。3. 非必要不建议使用，不合理的取值会影响效果。
+                     * 
+                     */
+                    int64_t GetSeed() const;
+
+                    /**
+                     * 设置说明：1. 确保模型的输出是可复现的。2. 取值区间为非0正整数，最大值10000。3. 非必要不建议使用，不合理的取值会影响效果。
+                     * @param _seed 说明：1. 确保模型的输出是可复现的。2. 取值区间为非0正整数，最大值10000。3. 非必要不建议使用，不合理的取值会影响效果。
+                     * 
+                     */
+                    void SetSeed(const int64_t& _seed);
+
+                    /**
+                     * 判断参数 Seed 是否已赋值
+                     * @return Seed 是否已赋值
+                     * 
+                     */
+                    bool SeedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -678,6 +699,12 @@ namespace TencentCloud
                      */
                     bool m_enableMultimedia;
                     bool m_enableMultimediaHasBeenSet;
+
+                    /**
+                     * 说明：1. 确保模型的输出是可复现的。2. 取值区间为非0正整数，最大值10000。3. 非必要不建议使用，不合理的取值会影响效果。
+                     */
+                    int64_t m_seed;
+                    bool m_seedHasBeenSet;
 
                 };
             }

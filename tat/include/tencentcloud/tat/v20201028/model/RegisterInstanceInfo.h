@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取注册码ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegisterCodeId 注册码ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegisterCodeId() const;
 
                     /**
                      * 设置注册码ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _registerCodeId 注册码ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegisterCodeId(const std::string& _registerCodeId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 实例名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineId 机器ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMachineId() const;
 
                     /**
                      * 设置机器ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineId 机器ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineId(const std::string& _machineId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取系统名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SystemName 系统名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSystemName() const;
 
                     /**
                      * 设置系统名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _systemName 系统名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSystemName(const std::string& _systemName);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 主机名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置主机名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostName 主机名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalIp 内网IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocalIp() const;
 
                     /**
                      * 设置内网IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localIp 内网IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalIp(const std::string& _localIp);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公钥。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicKey 公钥。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicKey() const;
 
                     /**
                      * 设置公钥。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicKey 公钥。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicKey(const std::string& _publicKey);
@@ -273,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -298,18 +262,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上次更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedTime 上次更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
                      * 设置上次更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedTime 上次更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
@@ -325,56 +285,48 @@ namespace TencentCloud
 
                     /**
                      * 注册码ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_registerCodeId;
                     bool m_registerCodeIdHasBeenSet;
 
                     /**
                      * 实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 实例名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 机器ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machineId;
                     bool m_machineIdHasBeenSet;
 
                     /**
                      * 系统名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_systemName;
                     bool m_systemNameHasBeenSet;
 
                     /**
                      * 主机名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
 
                     /**
                      * 内网IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_localIp;
                     bool m_localIpHasBeenSet;
 
                     /**
                      * 公钥。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicKey;
                     bool m_publicKeyHasBeenSet;
@@ -388,14 +340,12 @@ namespace TencentCloud
 
                     /**
                      * 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
                      * 上次更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;

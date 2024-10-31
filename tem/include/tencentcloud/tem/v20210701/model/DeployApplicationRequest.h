@@ -160,6 +160,31 @@ namespace TencentCloud
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
+                     * 获取部署类型为 IMAGE 时，该参数表示镜像 tag。
+部署类型为 JAR/WAR 时，该参数表示包版本号。
+                     * @return DeployVersion 部署类型为 IMAGE 时，该参数表示镜像 tag。
+部署类型为 JAR/WAR 时，该参数表示包版本号。
+                     * 
+                     */
+                    std::string GetDeployVersion() const;
+
+                    /**
+                     * 设置部署类型为 IMAGE 时，该参数表示镜像 tag。
+部署类型为 JAR/WAR 时，该参数表示包版本号。
+                     * @param _deployVersion 部署类型为 IMAGE 时，该参数表示镜像 tag。
+部署类型为 JAR/WAR 时，该参数表示包版本号。
+                     * 
+                     */
+                    void SetDeployVersion(const std::string& _deployVersion);
+
+                    /**
+                     * 判断参数 DeployVersion 是否已赋值
+                     * @return DeployVersion 是否已赋值
+                     * 
+                     */
+                    bool DeployVersionHasBeenSet() const;
+
+                    /**
                      * 获取镜像仓库
                      * @return ImgRepo 镜像仓库
                      * 
@@ -359,31 +384,6 @@ namespace TencentCloud
                      * 
                      */
                     bool DeployModeHasBeenSet() const;
-
-                    /**
-                     * 获取部署类型为 IMAGE 时，该参数表示镜像 tag。
-部署类型为 JAR/WAR 时，该参数表示包版本号。
-                     * @return DeployVersion 部署类型为 IMAGE 时，该参数表示镜像 tag。
-部署类型为 JAR/WAR 时，该参数表示包版本号。
-                     * 
-                     */
-                    std::string GetDeployVersion() const;
-
-                    /**
-                     * 设置部署类型为 IMAGE 时，该参数表示镜像 tag。
-部署类型为 JAR/WAR 时，该参数表示包版本号。
-                     * @param _deployVersion 部署类型为 IMAGE 时，该参数表示镜像 tag。
-部署类型为 JAR/WAR 时，该参数表示包版本号。
-                     * 
-                     */
-                    void SetDeployVersion(const std::string& _deployVersion);
-
-                    /**
-                     * 判断参数 DeployVersion 是否已赋值
-                     * @return DeployVersion 是否已赋值
-                     * 
-                     */
-                    bool DeployVersionHasBeenSet() const;
 
                     /**
                      * 获取传入内容为 /jar包名字 的形式。也就是在 jar包名字前增加一个/。
@@ -1154,6 +1154,13 @@ namespace TencentCloud
                     bool m_environmentIdHasBeenSet;
 
                     /**
+                     * 部署类型为 IMAGE 时，该参数表示镜像 tag。
+部署类型为 JAR/WAR 时，该参数表示包版本号。
+                     */
+                    std::string m_deployVersion;
+                    bool m_deployVersionHasBeenSet;
+
+                    /**
                      * 镜像仓库
                      */
                     std::string m_imgRepo;
@@ -1209,13 +1216,6 @@ namespace TencentCloud
                      */
                     std::string m_deployMode;
                     bool m_deployModeHasBeenSet;
-
-                    /**
-                     * 部署类型为 IMAGE 时，该参数表示镜像 tag。
-部署类型为 JAR/WAR 时，该参数表示包版本号。
-                     */
-                    std::string m_deployVersion;
-                    bool m_deployVersionHasBeenSet;
 
                     /**
                      * 传入内容为 /jar包名字 的形式。也就是在 jar包名字前增加一个/。

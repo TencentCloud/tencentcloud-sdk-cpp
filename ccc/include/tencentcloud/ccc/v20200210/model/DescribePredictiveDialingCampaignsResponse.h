@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 数据总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CampaignList 数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DescribePredictiveDialingCampaignsElement> GetCampaignList() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 数据总量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribePredictiveDialingCampaignsElement> m_campaignList;
                     bool m_campaignListHasBeenSet;

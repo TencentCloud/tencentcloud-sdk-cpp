@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取座席邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mail 座席邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMail() const;
 
                     /**
                      * 设置座席邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mail 座席邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMail(const std::string& _mail);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取座席电话
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Phone 座席电话
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置座席电话
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _phone 座席电话
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPhone(const std::string& _phone);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取振铃时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RingTimestamp 振铃时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRingTimestamp() const;
 
                     /**
                      * 设置振铃时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ringTimestamp 振铃时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRingTimestamp(const int64_t& _ringTimestamp);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接听时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AcceptTimestamp 接听时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAcceptTimestamp() const;
 
                     /**
                      * 设置接听时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _acceptTimestamp 接听时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAcceptTimestamp(const int64_t& _acceptTimestamp);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndedTimestamp 结束时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndedTimestamp() const;
 
                     /**
                      * 设置结束时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endedTimestamp 结束时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndedTimestamp(const int64_t& _endedTimestamp);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录音 ID，能够索引到座席侧的录音
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordId 录音 ID，能够索引到座席侧的录音
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordId() const;
 
                     /**
                      * 设置录音 ID，能够索引到座席侧的录音
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordId 录音 ID，能够索引到座席侧的录音
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordId(const std::string& _recordId);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参与者类型，"staffSeat", "outboundSeat", "staffPhoneSeat"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 参与者类型，"staffSeat", "outboundSeat", "staffPhoneSeat"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置参与者类型，"staffSeat", "outboundSeat", "staffPhoneSeat"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 参与者类型，"staffSeat", "outboundSeat", "staffPhoneSeat"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转接来源座席信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferFrom 转接来源座席信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransferFrom() const;
 
                     /**
                      * 设置转接来源座席信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transferFrom 转接来源座席信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransferFrom(const std::string& _transferFrom);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转接来源参与者类型，取值与 Type 一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferFromType 转接来源参与者类型，取值与 Type 一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransferFromType() const;
 
                     /**
                      * 设置转接来源参与者类型，取值与 Type 一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transferFromType 转接来源参与者类型，取值与 Type 一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransferFromType(const std::string& _transferFromType);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转接去向座席信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferTo 转接去向座席信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransferTo() const;
 
                     /**
                      * 设置转接去向座席信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transferTo 转接去向座席信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransferTo(const std::string& _transferTo);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转接去向参与者类型，取值与 Type 一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferToType 转接去向参与者类型，取值与 Type 一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransferToType() const;
 
                     /**
                      * 设置转接去向参与者类型，取值与 Type 一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transferToType 转接去向参与者类型，取值与 Type 一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransferToType(const std::string& _transferToType);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取技能组 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkillGroupId 技能组 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSkillGroupId() const;
 
                     /**
                      * 设置技能组 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _skillGroupId 技能组 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSkillGroupId(const int64_t& _skillGroupId);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndStatusString 结束状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndStatusString() const;
 
                     /**
                      * 设置结束状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endStatusString 结束状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndStatusString(const std::string& _endStatusString);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录音 URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordURL 录音 URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordURL() const;
 
                     /**
                      * 设置录音 URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordURL 录音 URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordURL(const std::string& _recordURL);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参与者序号，从 0 开始
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sequence 参与者序号，从 0 开始
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSequence() const;
 
                     /**
                      * 设置参与者序号，从 0 开始
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sequence 参与者序号，从 0 开始
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSequence(const int64_t& _sequence);
@@ -423,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTimestamp 开始时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStartTimestamp() const;
 
                     /**
                      * 设置开始时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTimestamp 开始时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTimestamp(const int64_t& _startTimestamp);
@@ -448,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取技能组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkillGroupName 技能组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSkillGroupName() const;
 
                     /**
                      * 设置技能组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _skillGroupName 技能组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSkillGroupName(const std::string& _skillGroupName);
@@ -473,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录音转存第三方COS地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomRecordURL 录音转存第三方COS地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomRecordURL() const;
 
                     /**
                      * 设置录音转存第三方COS地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customRecordURL 录音转存第三方COS地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomRecordURL(const std::string& _customRecordURL);
@@ -500,126 +428,108 @@ namespace TencentCloud
 
                     /**
                      * 座席邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mail;
                     bool m_mailHasBeenSet;
 
                     /**
                      * 座席电话
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
                      * 振铃时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ringTimestamp;
                     bool m_ringTimestampHasBeenSet;
 
                     /**
                      * 接听时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_acceptTimestamp;
                     bool m_acceptTimestampHasBeenSet;
 
                     /**
                      * 结束时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endedTimestamp;
                     bool m_endedTimestampHasBeenSet;
 
                     /**
                      * 录音 ID，能够索引到座席侧的录音
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordId;
                     bool m_recordIdHasBeenSet;
 
                     /**
                      * 参与者类型，"staffSeat", "outboundSeat", "staffPhoneSeat"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 转接来源座席信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transferFrom;
                     bool m_transferFromHasBeenSet;
 
                     /**
                      * 转接来源参与者类型，取值与 Type 一致
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transferFromType;
                     bool m_transferFromTypeHasBeenSet;
 
                     /**
                      * 转接去向座席信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transferTo;
                     bool m_transferToHasBeenSet;
 
                     /**
                      * 转接去向参与者类型，取值与 Type 一致
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transferToType;
                     bool m_transferToTypeHasBeenSet;
 
                     /**
                      * 技能组 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_skillGroupId;
                     bool m_skillGroupIdHasBeenSet;
 
                     /**
                      * 结束状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endStatusString;
                     bool m_endStatusStringHasBeenSet;
 
                     /**
                      * 录音 URL
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordURL;
                     bool m_recordURLHasBeenSet;
 
                     /**
                      * 参与者序号，从 0 开始
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sequence;
                     bool m_sequenceHasBeenSet;
 
                     /**
                      * 开始时间戳，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startTimestamp;
                     bool m_startTimestampHasBeenSet;
 
                     /**
                      * 技能组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_skillGroupName;
                     bool m_skillGroupNameHasBeenSet;
 
                     /**
                      * 录音转存第三方COS地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customRecordURL;
                     bool m_customRecordURLHasBeenSet;

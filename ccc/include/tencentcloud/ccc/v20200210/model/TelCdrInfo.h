@@ -177,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录音 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordId 录音 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordId() const;
 
                     /**
                      * 设置录音 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordId 录音 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordId(const std::string& _recordId);
@@ -498,18 +494,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IVR 阶段耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IVRDuration IVR 阶段耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIVRDuration() const;
 
                     /**
                      * 设置IVR 阶段耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iVRDuration IVR 阶段耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIVRDuration(const int64_t& _iVRDuration);
@@ -523,18 +515,14 @@ namespace TencentCloud
 
                     /**
                      * 获取振铃时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RingTimestamp 振铃时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRingTimestamp() const;
 
                     /**
                      * 设置振铃时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ringTimestamp 振铃时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRingTimestamp(const int64_t& _ringTimestamp);
@@ -548,18 +536,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接听时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AcceptTimestamp 接听时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAcceptTimestamp() const;
 
                     /**
                      * 设置接听时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _acceptTimestamp 接听时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAcceptTimestamp(const int64_t& _acceptTimestamp);
@@ -573,18 +557,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndedTimestamp 结束时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndedTimestamp() const;
 
                     /**
                      * 设置结束时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endedTimestamp 结束时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndedTimestamp(const int64_t& _endedTimestamp);
@@ -598,18 +578,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IVR 按键信息 ，e.g. ["1","2","3"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IVRKeyPressed IVR 按键信息 ，e.g. ["1","2","3"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetIVRKeyPressed() const;
 
                     /**
                      * 设置IVR 按键信息 ，e.g. ["1","2","3"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iVRKeyPressed IVR 按键信息 ，e.g. ["1","2","3"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIVRKeyPressed(const std::vector<std::string>& _iVRKeyPressed);
@@ -623,18 +599,14 @@ namespace TencentCloud
 
                     /**
                      * 获取挂机方 seat 座席 user 用户 system 系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HungUpSide 挂机方 seat 座席 user 用户 system 系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHungUpSide() const;
 
                     /**
                      * 设置挂机方 seat 座席 user 用户 system 系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hungUpSide 挂机方 seat 座席 user 用户 system 系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHungUpSide(const std::string& _hungUpSide);
@@ -648,18 +620,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务参与者列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServeParticipants 服务参与者列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServeParticipant> GetServeParticipants() const;
 
                     /**
                      * 设置服务参与者列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serveParticipants 服务参与者列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServeParticipants(const std::vector<ServeParticipant>& _serveParticipants);
@@ -673,18 +641,14 @@ namespace TencentCloud
 
                     /**
                      * 获取技能组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkillGroupId 技能组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSkillGroupId() const;
 
                     /**
                      * 设置技能组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _skillGroupId 技能组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSkillGroupId(const int64_t& _skillGroupId);
@@ -751,7 +715,6 @@ namespace TencentCloud
 
 电话呼入&呼出	211    clientError    客户端错误
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndStatusString EndStatus与EndStatusString一一对应，具体枚举如下：
 
 **场景	         EndStatus	EndStatusString	状态说明**
@@ -806,7 +769,6 @@ namespace TencentCloud
 
 电话呼入&呼出	211    clientError    客户端错误
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndStatusString() const;
@@ -866,7 +828,6 @@ namespace TencentCloud
 
 电话呼入&呼出	211    clientError    客户端错误
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endStatusString EndStatus与EndStatusString一一对应，具体枚举如下：
 
 **场景	         EndStatus	EndStatusString	状态说明**
@@ -921,7 +882,6 @@ namespace TencentCloud
 
 电话呼入&呼出	211    clientError    客户端错误
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndStatusString(const std::string& _endStatusString);
@@ -935,18 +895,14 @@ namespace TencentCloud
 
                     /**
                      * 获取会话开始时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTimestamp 会话开始时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStartTimestamp() const;
 
                     /**
                      * 设置会话开始时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTimestamp 会话开始时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTimestamp(const int64_t& _startTimestamp);
@@ -960,18 +916,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进入排队时间，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueuedTimestamp 进入排队时间，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetQueuedTimestamp() const;
 
                     /**
                      * 设置进入排队时间，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _queuedTimestamp 进入排队时间，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQueuedTimestamp(const int64_t& _queuedTimestamp);
@@ -985,18 +937,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后置IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostIVRKeyPressed 后置IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IVRKeyPressedElement> GetPostIVRKeyPressed() const;
 
                     /**
                      * 设置后置IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _postIVRKeyPressed 后置IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPostIVRKeyPressed(const std::vector<IVRKeyPressedElement>& _postIVRKeyPressed);
@@ -1010,18 +958,14 @@ namespace TencentCloud
 
                     /**
                      * 获取排队技能组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueuedSkillGroupId 排队技能组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetQueuedSkillGroupId() const;
 
                     /**
                      * 设置排队技能组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _queuedSkillGroupId 排队技能组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQueuedSkillGroupId(const int64_t& _queuedSkillGroupId);
@@ -1035,18 +979,14 @@ namespace TencentCloud
 
                     /**
                      * 获取会话 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionId 会话 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置会话 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionId 会话 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -1060,18 +1000,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtectedCaller 主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtectedCaller() const;
 
                     /**
                      * 设置主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protectedCaller 主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtectedCaller(const std::string& _protectedCaller);
@@ -1085,18 +1021,14 @@ namespace TencentCloud
 
                     /**
                      * 获取被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtectedCallee 被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtectedCallee() const;
 
                     /**
                      * 设置被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protectedCallee 被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtectedCallee(const std::string& _protectedCallee);
@@ -1135,18 +1067,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户自定义数据（User-to-User Interface）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UUI 客户自定义数据（User-to-User Interface）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUUI() const;
 
                     /**
                      * 设置客户自定义数据（User-to-User Interface）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uUI 客户自定义数据（User-to-User Interface）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUUI(const std::string& _uUI);
@@ -1160,18 +1088,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IVRKeyPressedEx IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IVRKeyPressedElement> GetIVRKeyPressedEx() const;
 
                     /**
                      * 设置IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iVRKeyPressedEx IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIVRKeyPressedEx(const std::vector<IVRKeyPressedElement>& _iVRKeyPressedEx);
@@ -1185,18 +1109,14 @@ namespace TencentCloud
 
                     /**
                      * 获取获取录音ASR文本信息地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrUrl 获取录音ASR文本信息地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAsrUrl() const;
 
                     /**
                      * 设置获取录音ASR文本信息地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asrUrl 获取录音ASR文本信息地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsrUrl(const std::string& _asrUrl);
@@ -1215,14 +1135,12 @@ Processing
 正在生成中;
 NotExists
 无记录(未开启生成离线asr或者无套餐包)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrStatus AsrUrl的状态：Complete
 已完成;
 Processing
 正在生成中;
 NotExists
 无记录(未开启生成离线asr或者无套餐包)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAsrStatus() const;
@@ -1234,14 +1152,12 @@ Processing
 正在生成中;
 NotExists
 无记录(未开启生成离线asr或者无套餐包)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asrStatus AsrUrl的状态：Complete
 已完成;
 Processing
 正在生成中;
 NotExists
 无记录(未开启生成离线asr或者无套餐包)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsrStatus(const std::string& _asrStatus);
@@ -1255,18 +1171,14 @@ NotExists
 
                     /**
                      * 获取录音转存第三方COS地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomRecordURL 录音转存第三方COS地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomRecordURL() const;
 
                     /**
                      * 设置录音转存第三方COS地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customRecordURL 录音转存第三方COS地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomRecordURL(const std::string& _customRecordURL);
@@ -1280,18 +1192,14 @@ NotExists
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -1305,18 +1213,14 @@ NotExists
 
                     /**
                      * 获取排队技能组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueuedSkillGroupName 排队技能组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQueuedSkillGroupName() const;
 
                     /**
                      * 设置排队技能组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _queuedSkillGroupName 排队技能组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQueuedSkillGroupName(const std::string& _queuedSkillGroupName);
@@ -1330,18 +1234,14 @@ NotExists
 
                     /**
                      * 获取通话中语音留言录音URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoicemailRecordURL 通话中语音留言录音URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetVoicemailRecordURL() const;
 
                     /**
                      * 设置通话中语音留言录音URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _voicemailRecordURL 通话中语音留言录音URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVoicemailRecordURL(const std::vector<std::string>& _voicemailRecordURL);
@@ -1355,18 +1255,14 @@ NotExists
 
                     /**
                      * 获取通话中语音留言ASR文本信息地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoicemailAsrURL 通话中语音留言ASR文本信息地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetVoicemailAsrURL() const;
 
                     /**
                      * 设置通话中语音留言ASR文本信息地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _voicemailAsrURL 通话中语音留言ASR文本信息地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVoicemailAsrURL(const std::vector<std::string>& _voicemailAsrURL);
@@ -1418,7 +1314,6 @@ NotExists
 
                     /**
                      * 录音 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordId;
                     bool m_recordIdHasBeenSet;
@@ -1502,56 +1397,48 @@ NotExists
 
                     /**
                      * IVR 阶段耗时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_iVRDuration;
                     bool m_iVRDurationHasBeenSet;
 
                     /**
                      * 振铃时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ringTimestamp;
                     bool m_ringTimestampHasBeenSet;
 
                     /**
                      * 接听时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_acceptTimestamp;
                     bool m_acceptTimestampHasBeenSet;
 
                     /**
                      * 结束时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endedTimestamp;
                     bool m_endedTimestampHasBeenSet;
 
                     /**
                      * IVR 按键信息 ，e.g. ["1","2","3"]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_iVRKeyPressed;
                     bool m_iVRKeyPressedHasBeenSet;
 
                     /**
                      * 挂机方 seat 座席 user 用户 system 系统
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hungUpSide;
                     bool m_hungUpSideHasBeenSet;
 
                     /**
                      * 服务参与者列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServeParticipant> m_serveParticipants;
                     bool m_serveParticipantsHasBeenSet;
 
                     /**
                      * 技能组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_skillGroupId;
                     bool m_skillGroupIdHasBeenSet;
@@ -1611,56 +1498,48 @@ NotExists
 
 电话呼入&呼出	211    clientError    客户端错误
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endStatusString;
                     bool m_endStatusStringHasBeenSet;
 
                     /**
                      * 会话开始时间戳，UNIX 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startTimestamp;
                     bool m_startTimestampHasBeenSet;
 
                     /**
                      * 进入排队时间，Unix 秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_queuedTimestamp;
                     bool m_queuedTimestampHasBeenSet;
 
                     /**
                      * 后置IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IVRKeyPressedElement> m_postIVRKeyPressed;
                     bool m_postIVRKeyPressedHasBeenSet;
 
                     /**
                      * 排队技能组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_queuedSkillGroupId;
                     bool m_queuedSkillGroupIdHasBeenSet;
 
                     /**
                      * 会话 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
                      * 主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protectedCaller;
                     bool m_protectedCallerHasBeenSet;
 
                     /**
                      * 被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protectedCallee;
                     bool m_protectedCalleeHasBeenSet;
@@ -1674,21 +1553,18 @@ NotExists
 
                     /**
                      * 客户自定义数据（User-to-User Interface）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uUI;
                     bool m_uUIHasBeenSet;
 
                     /**
                      * IVR按键信息（e.g. [{"Key":"1","Label":"非常满意"}]）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IVRKeyPressedElement> m_iVRKeyPressedEx;
                     bool m_iVRKeyPressedExHasBeenSet;
 
                     /**
                      * 获取录音ASR文本信息地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_asrUrl;
                     bool m_asrUrlHasBeenSet;
@@ -1700,42 +1576,36 @@ Processing
 正在生成中;
 NotExists
 无记录(未开启生成离线asr或者无套餐包)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_asrStatus;
                     bool m_asrStatusHasBeenSet;
 
                     /**
                      * 录音转存第三方COS地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customRecordURL;
                     bool m_customRecordURLHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
                      * 排队技能组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_queuedSkillGroupName;
                     bool m_queuedSkillGroupNameHasBeenSet;
 
                     /**
                      * 通话中语音留言录音URL
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_voicemailRecordURL;
                     bool m_voicemailRecordURLHasBeenSet;
 
                     /**
                      * 通话中语音留言ASR文本信息地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_voicemailAsrURL;
                     bool m_voicemailAsrURLHasBeenSet;

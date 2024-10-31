@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StaffNumber 工号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStaffNumber() const;
 
                     /**
                      * 设置工号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _staffNumber 工号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStaffNumber(const std::string& _staffNumber);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取座席关联的技能组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkillGroupNameList 座席关联的技能组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSkillGroupNameList() const;
 
                     /**
                      * 设置座席关联的技能组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _skillGroupNameList 座席关联的技能组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSkillGroupNameList(const std::vector<std::string>& _skillGroupNameList);
@@ -206,12 +198,10 @@ namespace TencentCloud
 2:质检员
 3:普通座席
 else:自定义角色ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Role 1:管理员
 2:质检员
 3:普通座席
 else:自定义角色ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRole() const;
@@ -221,12 +211,10 @@ else:自定义角色ID
 2:质检员
 3:普通座席
 else:自定义角色ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _role 1:管理员
 2:质检员
 3:普通座席
 else:自定义角色ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRole(const int64_t& _role);
@@ -254,7 +242,6 @@ else:自定义角色ID
 
                     /**
                      * 工号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_staffNumber;
                     bool m_staffNumberHasBeenSet;
@@ -279,7 +266,6 @@ else:自定义角色ID
 
                     /**
                      * 座席关联的技能组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_skillGroupNameList;
                     bool m_skillGroupNameListHasBeenSet;
@@ -289,7 +275,6 @@ else:自定义角色ID
 2:质检员
 3:普通座席
 else:自定义角色ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_role;
                     bool m_roleHasBeenSet;

@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -246,7 +242,6 @@ namespace TencentCloud
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

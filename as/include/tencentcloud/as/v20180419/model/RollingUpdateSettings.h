@@ -68,15 +68,27 @@ namespace TencentCloud
                     bool BatchNumberHasBeenSet() const;
 
                     /**
-                     * 获取批次间暂停策略。默认值为 Automatic，取值范围如下：<br><li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li><li>BATCH_INTERVAL_PAUSE：批次间暂停</li><li>AUTOMATIC：不暂停
-                     * @return BatchPause 批次间暂停策略。默认值为 Automatic，取值范围如下：<br><li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li><li>BATCH_INTERVAL_PAUSE：批次间暂停</li><li>AUTOMATIC：不暂停
+                     * 获取批次间暂停策略。默认值为 Automatic，取值范围如下：
+<li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li>
+<li>BATCH_INTERVAL_PAUSE：批次间暂停</li>
+<li>AUTOMATIC：不暂停</li>
+                     * @return BatchPause 批次间暂停策略。默认值为 Automatic，取值范围如下：
+<li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li>
+<li>BATCH_INTERVAL_PAUSE：批次间暂停</li>
+<li>AUTOMATIC：不暂停</li>
                      * 
                      */
                     std::string GetBatchPause() const;
 
                     /**
-                     * 设置批次间暂停策略。默认值为 Automatic，取值范围如下：<br><li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li><li>BATCH_INTERVAL_PAUSE：批次间暂停</li><li>AUTOMATIC：不暂停
-                     * @param _batchPause 批次间暂停策略。默认值为 Automatic，取值范围如下：<br><li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li><li>BATCH_INTERVAL_PAUSE：批次间暂停</li><li>AUTOMATIC：不暂停
+                     * 设置批次间暂停策略。默认值为 Automatic，取值范围如下：
+<li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li>
+<li>BATCH_INTERVAL_PAUSE：批次间暂停</li>
+<li>AUTOMATIC：不暂停</li>
+                     * @param _batchPause 批次间暂停策略。默认值为 Automatic，取值范围如下：
+<li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li>
+<li>BATCH_INTERVAL_PAUSE：批次间暂停</li>
+<li>AUTOMATIC：不暂停</li>
                      * 
                      */
                     void SetBatchPause(const std::string& _batchPause);
@@ -88,6 +100,31 @@ namespace TencentCloud
                      */
                     bool BatchPauseHasBeenSet() const;
 
+                    /**
+                     * 获取最大额外数量。设置该参数后，在滚动更新开始前根据启动配置创建一批按量计费的额外实例，滚动更新完成后销毁额外实例。
+该参数用于保证滚动更新过程中可用实例的数量，最大额外数量不能超过滚动更新单个批次的刷新实例数。回滚流程暂不支持该参数。
+                     * @return MaxSurge 最大额外数量。设置该参数后，在滚动更新开始前根据启动配置创建一批按量计费的额外实例，滚动更新完成后销毁额外实例。
+该参数用于保证滚动更新过程中可用实例的数量，最大额外数量不能超过滚动更新单个批次的刷新实例数。回滚流程暂不支持该参数。
+                     * 
+                     */
+                    int64_t GetMaxSurge() const;
+
+                    /**
+                     * 设置最大额外数量。设置该参数后，在滚动更新开始前根据启动配置创建一批按量计费的额外实例，滚动更新完成后销毁额外实例。
+该参数用于保证滚动更新过程中可用实例的数量，最大额外数量不能超过滚动更新单个批次的刷新实例数。回滚流程暂不支持该参数。
+                     * @param _maxSurge 最大额外数量。设置该参数后，在滚动更新开始前根据启动配置创建一批按量计费的额外实例，滚动更新完成后销毁额外实例。
+该参数用于保证滚动更新过程中可用实例的数量，最大额外数量不能超过滚动更新单个批次的刷新实例数。回滚流程暂不支持该参数。
+                     * 
+                     */
+                    void SetMaxSurge(const int64_t& _maxSurge);
+
+                    /**
+                     * 判断参数 MaxSurge 是否已赋值
+                     * @return MaxSurge 是否已赋值
+                     * 
+                     */
+                    bool MaxSurgeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,10 +134,20 @@ namespace TencentCloud
                     bool m_batchNumberHasBeenSet;
 
                     /**
-                     * 批次间暂停策略。默认值为 Automatic，取值范围如下：<br><li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li><li>BATCH_INTERVAL_PAUSE：批次间暂停</li><li>AUTOMATIC：不暂停
+                     * 批次间暂停策略。默认值为 Automatic，取值范围如下：
+<li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li>
+<li>BATCH_INTERVAL_PAUSE：批次间暂停</li>
+<li>AUTOMATIC：不暂停</li>
                      */
                     std::string m_batchPause;
                     bool m_batchPauseHasBeenSet;
+
+                    /**
+                     * 最大额外数量。设置该参数后，在滚动更新开始前根据启动配置创建一批按量计费的额外实例，滚动更新完成后销毁额外实例。
+该参数用于保证滚动更新过程中可用实例的数量，最大额外数量不能超过滚动更新单个批次的刷新实例数。回滚流程暂不支持该参数。
+                     */
+                    int64_t m_maxSurge;
+                    bool m_maxSurgeHasBeenSet;
 
                 };
             }

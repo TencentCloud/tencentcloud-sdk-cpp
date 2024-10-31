@@ -79,9 +79,7 @@ namespace TencentCloud
 
                     /**
                      * 获取加入方式枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JoinTypeLst 加入方式枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetJoinTypeLst() const;
@@ -95,9 +93,7 @@ namespace TencentCloud
 
                     /**
                      * 获取云厂商枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudTypeLst 云厂商枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetCloudTypeLst() const;
@@ -127,14 +123,12 @@ namespace TencentCloud
 
                     /**
                      * 加入方式枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_joinTypeLst;
                     bool m_joinTypeLstHasBeenSet;
 
                     /**
                      * 云厂商枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_cloudTypeLst;
                     bool m_cloudTypeLstHasBeenSet;

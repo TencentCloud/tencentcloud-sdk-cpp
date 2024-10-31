@@ -28,6 +28,7 @@ DeployApplicationRequest::DeployApplicationRequest() :
     m_cpuSpecHasBeenSet(false),
     m_memorySpecHasBeenSet(false),
     m_environmentIdHasBeenSet(false),
+    m_deployVersionHasBeenSet(false),
     m_imgRepoHasBeenSet(false),
     m_versionDescHasBeenSet(false),
     m_jvmOptsHasBeenSet(false),
@@ -37,7 +38,6 @@ DeployApplicationRequest::DeployApplicationRequest() :
     m_storageConfsHasBeenSet(false),
     m_storageMountConfsHasBeenSet(false),
     m_deployModeHasBeenSet(false),
-    m_deployVersionHasBeenSet(false),
     m_pkgNameHasBeenSet(false),
     m_jdkVersionHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
@@ -118,6 +118,14 @@ string DeployApplicationRequest::ToJsonString() const
         string key = "EnvironmentId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_environmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deployVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imgRepoHasBeenSet)
@@ -217,14 +225,6 @@ string DeployApplicationRequest::ToJsonString() const
         string key = "DeployMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deployMode.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_deployVersionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DeployVersion";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_deployVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pkgNameHasBeenSet)
@@ -609,6 +609,22 @@ bool DeployApplicationRequest::EnvironmentIdHasBeenSet() const
     return m_environmentIdHasBeenSet;
 }
 
+string DeployApplicationRequest::GetDeployVersion() const
+{
+    return m_deployVersion;
+}
+
+void DeployApplicationRequest::SetDeployVersion(const string& _deployVersion)
+{
+    m_deployVersion = _deployVersion;
+    m_deployVersionHasBeenSet = true;
+}
+
+bool DeployApplicationRequest::DeployVersionHasBeenSet() const
+{
+    return m_deployVersionHasBeenSet;
+}
+
 string DeployApplicationRequest::GetImgRepo() const
 {
     return m_imgRepo;
@@ -751,22 +767,6 @@ void DeployApplicationRequest::SetDeployMode(const string& _deployMode)
 bool DeployApplicationRequest::DeployModeHasBeenSet() const
 {
     return m_deployModeHasBeenSet;
-}
-
-string DeployApplicationRequest::GetDeployVersion() const
-{
-    return m_deployVersion;
-}
-
-void DeployApplicationRequest::SetDeployVersion(const string& _deployVersion)
-{
-    m_deployVersion = _deployVersion;
-    m_deployVersionHasBeenSet = true;
-}
-
-bool DeployApplicationRequest::DeployVersionHasBeenSet() const
-{
-    return m_deployVersionHasBeenSet;
 }
 
 string DeployApplicationRequest::GetPkgName() const

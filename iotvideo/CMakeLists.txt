@@ -35,7 +35,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20191126/model/DeleteTraceIdsRequest.h
   include/tencentcloud/iotvideo/v20191126/model/IotModelData.h
   include/tencentcloud/iotvideo/v20191126/model/CreateStorageServiceRequest.h
-  include/tencentcloud/iotvideo/v20191126/model/DescribeOsListResponse.h
+  include/tencentcloud/iotvideo/v20191126/model/DescribeDevicesResponse.h
   include/tencentcloud/iotvideo/v20191126/model/ModifyProductResponse.h
   include/tencentcloud/iotvideo/v20191126/model/ModifyProductRequest.h
   include/tencentcloud/iotvideo/v20191126/model/DisableDeviceStreamRequest.h
@@ -97,13 +97,16 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20191126/model/RunTestOtaVersionRequest.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeDeviceResponse.h
   include/tencentcloud/iotvideo/v20191126/model/SetMessageQueueResponse.h
+  include/tencentcloud/iotvideo/v20191126/model/RenewUploadTestResponse.h
   include/tencentcloud/iotvideo/v20191126/model/Contents.h
+  include/tencentcloud/iotvideo/v20191126/model/RenewCertificate.h
   include/tencentcloud/iotvideo/v20191126/model/DeleteOtaVersionResponse.h
   include/tencentcloud/iotvideo/v20191126/model/UploadOtaVersionRequest.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeIotModelsRequest.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeModelDataRetRequest.h
   include/tencentcloud/iotvideo/v20191126/model/CreateTraceIdsResponse.h
-  include/tencentcloud/iotvideo/v20191126/model/DescribeDevicesResponse.h
+  include/tencentcloud/iotvideo/v20191126/model/DescribeOsListResponse.h
+  include/tencentcloud/iotvideo/v20191126/model/CosCertificate.h
   include/tencentcloud/iotvideo/v20191126/model/ModifyVerContentRequest.h
   include/tencentcloud/iotvideo/v20191126/model/DeleteBindingRequest.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeOtaVersionsResponse.h
@@ -117,6 +120,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20191126/model/SendOnlineMsgRequest.h
   include/tencentcloud/iotvideo/v20191126/model/Data.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeDeviceRequest.h
+  include/tencentcloud/iotvideo/v20191126/model/CertificateInfo.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeRunLogResponse.h
   include/tencentcloud/iotvideo/v20191126/model/DeliverStorageServiceResponse.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeIotModelRequest.h
@@ -139,6 +143,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20191126/model/BindDevInfo.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeBindDevRequest.h
   include/tencentcloud/iotvideo/v20191126/model/StorageOrder.h
+  include/tencentcloud/iotvideo/v20191126/model/RenewUploadTestRequest.h
   include/tencentcloud/iotvideo/v20191126/model/MsgQueueData.h
   include/tencentcloud/iotvideo/v20191126/model/RegisteredStatus.h
   include/tencentcloud/iotvideo/v20191126/model/CreateAnonymousAccessTokenRequest.h
@@ -164,8 +169,10 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20191126/model/DescribeMessageQueueResponse.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeOsListRequest.h
   include/tencentcloud/iotvideo/v20191126/model/DescribeDevicesRequest.h
+  include/tencentcloud/iotvideo/v20191126/model/CreateUploadTestResponse.h
   include/tencentcloud/iotvideo/v20191126/model/CreateIotDataTypeResponse.h
   include/tencentcloud/iotvideo/v20191126/model/ModifyDevicePropertyResponse.h
+  include/tencentcloud/iotvideo/v20191126/model/CreateUploadTestRequest.h
   include/tencentcloud/iotvideo/v20191126/model/DeleteBindingResponse.h
   include/tencentcloud/iotvideo/v20191126/model/RefundStorageServiceRequest.h
   include/tencentcloud/iotvideo/v20191126/model/CreateStorageResponse.h
@@ -616,7 +623,7 @@ set(iotvideo_src
   src/v20191126/model/DeleteTraceIdsRequest.cpp
   src/v20191126/model/IotModelData.cpp
   src/v20191126/model/CreateStorageServiceRequest.cpp
-  src/v20191126/model/DescribeOsListResponse.cpp
+  src/v20191126/model/DescribeDevicesResponse.cpp
   src/v20191126/model/ModifyProductResponse.cpp
   src/v20191126/model/ModifyProductRequest.cpp
   src/v20191126/model/DisableDeviceStreamRequest.cpp
@@ -678,13 +685,16 @@ set(iotvideo_src
   src/v20191126/model/RunTestOtaVersionRequest.cpp
   src/v20191126/model/DescribeDeviceResponse.cpp
   src/v20191126/model/SetMessageQueueResponse.cpp
+  src/v20191126/model/RenewUploadTestResponse.cpp
   src/v20191126/model/Contents.cpp
+  src/v20191126/model/RenewCertificate.cpp
   src/v20191126/model/DeleteOtaVersionResponse.cpp
   src/v20191126/model/UploadOtaVersionRequest.cpp
   src/v20191126/model/DescribeIotModelsRequest.cpp
   src/v20191126/model/DescribeModelDataRetRequest.cpp
   src/v20191126/model/CreateTraceIdsResponse.cpp
-  src/v20191126/model/DescribeDevicesResponse.cpp
+  src/v20191126/model/DescribeOsListResponse.cpp
+  src/v20191126/model/CosCertificate.cpp
   src/v20191126/model/ModifyVerContentRequest.cpp
   src/v20191126/model/DeleteBindingRequest.cpp
   src/v20191126/model/DescribeOtaVersionsResponse.cpp
@@ -698,6 +708,7 @@ set(iotvideo_src
   src/v20191126/model/SendOnlineMsgRequest.cpp
   src/v20191126/model/Data.cpp
   src/v20191126/model/DescribeDeviceRequest.cpp
+  src/v20191126/model/CertificateInfo.cpp
   src/v20191126/model/DescribeRunLogResponse.cpp
   src/v20191126/model/DeliverStorageServiceResponse.cpp
   src/v20191126/model/DescribeIotModelRequest.cpp
@@ -720,6 +731,7 @@ set(iotvideo_src
   src/v20191126/model/BindDevInfo.cpp
   src/v20191126/model/DescribeBindDevRequest.cpp
   src/v20191126/model/StorageOrder.cpp
+  src/v20191126/model/RenewUploadTestRequest.cpp
   src/v20191126/model/MsgQueueData.cpp
   src/v20191126/model/RegisteredStatus.cpp
   src/v20191126/model/CreateAnonymousAccessTokenRequest.cpp
@@ -745,8 +757,10 @@ set(iotvideo_src
   src/v20191126/model/DescribeMessageQueueResponse.cpp
   src/v20191126/model/DescribeOsListRequest.cpp
   src/v20191126/model/DescribeDevicesRequest.cpp
+  src/v20191126/model/CreateUploadTestResponse.cpp
   src/v20191126/model/CreateIotDataTypeResponse.cpp
   src/v20191126/model/ModifyDevicePropertyResponse.cpp
+  src/v20191126/model/CreateUploadTestRequest.cpp
   src/v20191126/model/DeleteBindingResponse.cpp
   src/v20191126/model/RefundStorageServiceRequest.cpp
   src/v20191126/model/CreateStorageResponse.cpp

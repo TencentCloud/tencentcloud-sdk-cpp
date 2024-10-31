@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取满意度值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 满意度值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置满意度值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 满意度值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取满意度标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 满意度标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置满意度标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 满意度标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 满意度值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 满意度标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;

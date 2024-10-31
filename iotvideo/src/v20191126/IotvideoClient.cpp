@@ -642,6 +642,49 @@ IotvideoClient::CreateUploadPathOutcomeCallable IotvideoClient::CreateUploadPath
     return task->get_future();
 }
 
+IotvideoClient::CreateUploadTestOutcome IotvideoClient::CreateUploadTest(const CreateUploadTestRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUploadTest");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUploadTestResponse rsp = CreateUploadTestResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUploadTestOutcome(rsp);
+        else
+            return CreateUploadTestOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUploadTestOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::CreateUploadTestAsync(const CreateUploadTestRequest& request, const CreateUploadTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUploadTest(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::CreateUploadTestOutcomeCallable IotvideoClient::CreateUploadTestCallable(const CreateUploadTestRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUploadTestOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUploadTest(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::CreateUsrTokenOutcome IotvideoClient::CreateUsrToken(const CreateUsrTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUsrToken");
@@ -2484,6 +2527,49 @@ IotvideoClient::RefundStorageServiceOutcomeCallable IotvideoClient::RefundStorag
         [this, request]()
         {
             return this->RefundStorageService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::RenewUploadTestOutcome IotvideoClient::RenewUploadTest(const RenewUploadTestRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewUploadTest");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewUploadTestResponse rsp = RenewUploadTestResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewUploadTestOutcome(rsp);
+        else
+            return RenewUploadTestOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewUploadTestOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::RenewUploadTestAsync(const RenewUploadTestRequest& request, const RenewUploadTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenewUploadTest(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::RenewUploadTestOutcomeCallable IotvideoClient::RenewUploadTestCallable(const RenewUploadTestRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenewUploadTestOutcome()>>(
+        [this, request]()
+        {
+            return this->RenewUploadTest(request);
         }
     );
 

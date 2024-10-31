@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 文件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFileId() const;
 
                     /**
                      * 设置文件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileId 文件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileId(const uint64_t& _fileId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomFileName 文件别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomFileName() const;
 
                     /**
                      * 设置文件别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customFileName 文件别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomFileName(const std::string& _customFileName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioFileName 文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAudioFileName() const;
 
                     /**
                      * 设置文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _audioFileName 文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAudioFileName(const std::string& _audioFileName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审核状态，0-未审核，1-审核通过，2-审核拒绝
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 审核状态，0-未审核，1-审核通过，2-审核拒绝
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置审核状态，0-未审核，1-审核通过，2-审核拒绝
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 审核状态，0-未审核，1-审核通过，2-审核拒绝
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 文件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
                      * 文件别名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customFileName;
                     bool m_customFileNameHasBeenSet;
 
                     /**
                      * 文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_audioFileName;
                     bool m_audioFileNameHasBeenSet;
 
                     /**
                      * 审核状态，0-未审核，1-审核通过，2-审核拒绝
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

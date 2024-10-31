@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceName 资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceName 资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceName(const std::string& _resourceName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用额度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceQuotaUsed 已使用额度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetResourceQuotaUsed() const;
 
                     /**
                      * 设置已使用额度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceQuotaUsed 已使用额度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceQuotaUsed(const int64_t& _resourceQuotaUsed);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总额度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceQuotaTotal 总额度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetResourceQuotaTotal() const;
 
                     /**
                      * 设置总额度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceQuotaTotal 总额度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceQuotaTotal(const int64_t& _resourceQuotaTotal);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
                      * 已使用额度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_resourceQuotaUsed;
                     bool m_resourceQuotaUsedHasBeenSet;
 
                     /**
                      * 总额度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_resourceQuotaTotal;
                     bool m_resourceQuotaTotalHasBeenSet;

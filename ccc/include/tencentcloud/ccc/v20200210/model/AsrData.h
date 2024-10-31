@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取句子开始时间，Unix 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Start 句子开始时间，Unix 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStart() const;
 
                     /**
                      * 设置句子开始时间，Unix 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _start 句子开始时间，Unix 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStart(const int64_t& _start);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取句子结束时间，Unix 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return End 句子结束时间，Unix 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnd() const;
 
                     /**
                      * 设置句子结束时间，Unix 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _end 句子结束时间，Unix 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnd(const int64_t& _end);
@@ -181,14 +173,12 @@ namespace TencentCloud
 
                     /**
                      * 句子开始时间，Unix 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_start;
                     bool m_startHasBeenSet;
 
                     /**
                      * 句子结束时间，Unix 毫秒时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_end;
                     bool m_endHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取座席名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 座席名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置座席名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 座席名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取座席电话号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Phone 座席电话号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置座席电话号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _phone 座席电话号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPhone(const std::string& _phone);
@@ -120,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取座席昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nick 座席昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNick() const;
 
                     /**
                      * 设置座席昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nick 座席昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNick(const std::string& _nick);
@@ -145,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取座席工号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StaffNumber 座席工号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStaffNumber() const;
 
                     /**
                      * 设置座席工号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _staffNumber 座席工号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStaffNumber(const std::string& _staffNumber);
@@ -191,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属技能组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkillGroupList 所属技能组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SkillGroupItem> GetSkillGroupList() const;
 
                     /**
                      * 设置所属技能组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _skillGroupList 所属技能组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSkillGroupList(const std::vector<SkillGroupItem>& _skillGroupList);
@@ -216,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastModifyTimestamp 最后修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLastModifyTimestamp() const;
 
                     /**
                      * 设置最后修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastModifyTimestamp 最后修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastModifyTimestamp(const int64_t& _lastModifyTimestamp);
@@ -243,7 +219,6 @@ namespace TencentCloud
 
                     /**
                      * 座席名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -256,21 +231,18 @@ namespace TencentCloud
 
                     /**
                      * 座席电话号码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
                      * 座席昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;
 
                     /**
                      * 座席工号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_staffNumber;
                     bool m_staffNumberHasBeenSet;
@@ -283,14 +255,12 @@ namespace TencentCloud
 
                     /**
                      * 所属技能组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SkillGroupItem> m_skillGroupList;
                     bool m_skillGroupListHasBeenSet;
 
                     /**
                      * 最后修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lastModifyTimestamp;
                     bool m_lastModifyTimestampHasBeenSet;

@@ -22,7 +22,8 @@ using namespace std;
 
 RollingUpdateSettings::RollingUpdateSettings() :
     m_batchNumberHasBeenSet(false),
-    m_batchPauseHasBeenSet(false)
+    m_batchPauseHasBeenSet(false),
+    m_maxSurgeHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome RollingUpdateSettings::Deserialize(const rapidjson::Value &v
         m_batchPauseHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxSurge") && !value["MaxSurge"].IsNull())
+    {
+        if (!value["MaxSurge"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RollingUpdateSettings.MaxSurge` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxSurge = value["MaxSurge"].GetInt64();
+        m_maxSurgeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void RollingUpdateSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "BatchPause";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_batchPause.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxSurgeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxSurge";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxSurge, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void RollingUpdateSettings::SetBatchPause(const string& _batchPause)
 bool RollingUpdateSettings::BatchPauseHasBeenSet() const
 {
     return m_batchPauseHasBeenSet;
+}
+
+int64_t RollingUpdateSettings::GetMaxSurge() const
+{
+    return m_maxSurge;
+}
+
+void RollingUpdateSettings::SetMaxSurge(const int64_t& _maxSurge)
+{
+    m_maxSurge = _maxSurge;
+    m_maxSurgeHasBeenSet = true;
+}
+
+bool RollingUpdateSettings::MaxSurgeHasBeenSet() const
+{
+    return m_maxSurgeHasBeenSet;
 }
 

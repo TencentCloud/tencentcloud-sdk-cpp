@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool SourceChannelHasBeenSet() const;
 
                     /**
-                     * 获取是否开启tsw服务
-                     * @return EnableTswTraceService 是否开启tsw服务
+                     * 获取是否开启tsw服务。默认值：false
+                     * @return EnableTswTraceService 是否开启tsw服务。默认值：false
                      * 
                      */
                     bool GetEnableTswTraceService() const;
 
                     /**
-                     * 设置是否开启tsw服务
-                     * @param _enableTswTraceService 是否开启tsw服务
+                     * 设置是否开启tsw服务。默认值：false
+                     * @param _enableTswTraceService 是否开启tsw服务。默认值：false
                      * 
                      */
                     void SetEnableTswTraceService(const bool& _enableTswTraceService);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取环境类型：test、pre、prod
-                     * @return EnvType 环境类型：test、pre、prod
+                     * 获取环境类型：test、pre、prod。默认值：prod
+                     * @return EnvType 环境类型：test、pre、prod。默认值：prod
                      * 
                      */
                     std::string GetEnvType() const;
 
                     /**
-                     * 设置环境类型：test、pre、prod
-                     * @param _envType 环境类型：test、pre、prod
+                     * 设置环境类型：test、pre、prod。默认值：prod
+                     * @param _envType 环境类型：test、pre、prod。默认值：prod
                      * 
                      */
                     void SetEnvType(const std::string& _envType);
@@ -254,15 +254,15 @@ namespace TencentCloud
                     bool CreateRegionHasBeenSet() const;
 
                     /**
-                     * 获取是否创建私有网络
-                     * @return SetupVpc 是否创建私有网络
+                     * 获取是否创建私有网络.默认值:true
+                     * @return SetupVpc 是否创建私有网络.默认值:true
                      * 
                      */
                     bool GetSetupVpc() const;
 
                     /**
-                     * 设置是否创建私有网络
-                     * @param _setupVpc 是否创建私有网络
+                     * 设置是否创建私有网络.默认值:true
+                     * @param _setupVpc 是否创建私有网络.默认值:true
                      * 
                      */
                     void SetSetupVpc(const bool& _setupVpc);
@@ -275,15 +275,15 @@ namespace TencentCloud
                     bool SetupVpcHasBeenSet() const;
 
                     /**
-                     * 获取是否创建 Prometheus 实例
-                     * @return SetupPrometheus 是否创建 Prometheus 实例
+                     * 获取是否创建 Prometheus 实例。默认值：false
+                     * @return SetupPrometheus 是否创建 Prometheus 实例。默认值：false
                      * 
                      */
                     bool GetSetupPrometheus() const;
 
                     /**
-                     * 设置是否创建 Prometheus 实例
-                     * @param _setupPrometheus 是否创建 Prometheus 实例
+                     * 设置是否创建 Prometheus 实例。默认值：false
+                     * @param _setupPrometheus 是否创建 Prometheus 实例。默认值：false
                      * 
                      */
                     void SetSetupPrometheus(const bool& _setupPrometheus);
@@ -376,7 +376,7 @@ namespace TencentCloud
                     bool m_sourceChannelHasBeenSet;
 
                     /**
-                     * 是否开启tsw服务
+                     * 是否开启tsw服务。默认值：false
                      */
                     bool m_enableTswTraceService;
                     bool m_enableTswTraceServiceHasBeenSet;
@@ -388,7 +388,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 环境类型：test、pre、prod
+                     * 环境类型：test、pre、prod。默认值：prod
                      */
                     std::string m_envType;
                     bool m_envTypeHasBeenSet;
@@ -400,13 +400,13 @@ namespace TencentCloud
                     bool m_createRegionHasBeenSet;
 
                     /**
-                     * 是否创建私有网络
+                     * 是否创建私有网络.默认值:true
                      */
                     bool m_setupVpc;
                     bool m_setupVpcHasBeenSet;
 
                     /**
-                     * 是否创建 Prometheus 实例
+                     * 是否创建 Prometheus 实例。默认值：false
                      */
                     bool m_setupPrometheus;
                     bool m_setupPrometheusHasBeenSet;

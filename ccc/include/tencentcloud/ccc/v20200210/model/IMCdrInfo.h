@@ -232,18 +232,14 @@ namespace TencentCloud
 
                     /**
                      * 获取会话ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionId 会话ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置会话ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionId 会话ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -257,18 +253,14 @@ namespace TencentCloud
 
                     /**
                      * 获取技能组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkillGroupId 技能组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSkillGroupId() const;
 
                     /**
                      * 设置技能组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _skillGroupId 技能组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSkillGroupId(const std::string& _skillGroupId);
@@ -282,18 +274,14 @@ namespace TencentCloud
 
                     /**
                      * 获取技能组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkillGroupName 技能组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSkillGroupName() const;
 
                     /**
                      * 设置技能组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _skillGroupName 技能组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSkillGroupName(const std::string& _skillGroupName);
@@ -406,21 +394,18 @@ namespace TencentCloud
 
                     /**
                      * 会话ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
                      * 技能组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_skillGroupId;
                     bool m_skillGroupIdHasBeenSet;
 
                     /**
                      * 技能组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_skillGroupName;
                     bool m_skillGroupNameHasBeenSet;

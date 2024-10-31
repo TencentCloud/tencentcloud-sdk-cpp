@@ -36,7 +36,8 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_searchInfoHasBeenSet(false),
     m_citationHasBeenSet(false),
     m_enableSpeedSearchHasBeenSet(false),
-    m_enableMultimediaHasBeenSet(false)
+    m_enableMultimediaHasBeenSet(false),
+    m_seedHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,14 @@ string ChatCompletionsRequest::ToJsonString() const
         string key = "EnableMultimedia";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableMultimedia, allocator);
+    }
+
+    if (m_seedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Seed";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_seed, allocator);
     }
 
 
@@ -404,6 +413,22 @@ void ChatCompletionsRequest::SetEnableMultimedia(const bool& _enableMultimedia)
 bool ChatCompletionsRequest::EnableMultimediaHasBeenSet() const
 {
     return m_enableMultimediaHasBeenSet;
+}
+
+int64_t ChatCompletionsRequest::GetSeed() const
+{
+    return m_seed;
+}
+
+void ChatCompletionsRequest::SetSeed(const int64_t& _seed)
+{
+    m_seed = _seed;
+    m_seedHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::SeedHasBeenSet() const
+{
+    return m_seedHasBeenSet;
 }
 
 

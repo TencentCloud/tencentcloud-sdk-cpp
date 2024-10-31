@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公司名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompanyName 公司名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCompanyName() const;
 
                     /**
                      * 设置公司名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _companyName 公司名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompanyName(const std::string& _companyName);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审核时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckTime 审核时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCheckTime() const;
 
                     /**
                      * 设置审核时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkTime 审核时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckTime(const int64_t& _checkTime);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审核备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckMsg 审核备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckMsg() const;
 
                     /**
                      * 设置审核备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkMsg 审核备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckMsg(const std::string& _checkMsg);
@@ -169,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审核状态，1-待审核，2-审核通过，3-驳回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 审核状态，1-待审核，2-审核通过，3-驳回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 设置审核状态，1-待审核，2-审核通过，3-驳回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _state 审核状态，1-待审核，2-审核通过，3-驳回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetState(const int64_t& _state);
@@ -194,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公司统一社会信用代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessId 公司统一社会信用代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
                      * 设置公司统一社会信用代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessId 公司统一社会信用代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessId(const std::string& _businessId);
@@ -219,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const int64_t& _modifyTime);
@@ -252,49 +224,42 @@ namespace TencentCloud
 
                     /**
                      * 公司名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_companyName;
                     bool m_companyNameHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 审核时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_checkTime;
                     bool m_checkTimeHasBeenSet;
 
                     /**
                      * 审核备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkMsg;
                     bool m_checkMsgHasBeenSet;
 
                     /**
                      * 审核状态，1-待审核，2-审核通过，3-驳回
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_state;
                     bool m_stateHasBeenSet;
 
                     /**
                      * 公司统一社会信用代码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessId;
                     bool m_businessIdHasBeenSet;
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_modifyTime;
                     bool m_modifyTimeHasBeenSet;

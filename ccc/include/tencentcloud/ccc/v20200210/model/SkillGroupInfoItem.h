@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取会话分配策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoutePolicy 会话分配策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoutePolicy() const;
 
                     /**
                      * 设置会话分配策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routePolicy 会话分配策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoutePolicy(const std::string& _routePolicy);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取会话分配是否优先上次服务座席
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsingLastSeat 会话分配是否优先上次服务座席
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUsingLastSeat() const;
 
                     /**
                      * 设置会话分配是否优先上次服务座席
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usingLastSeat 会话分配是否优先上次服务座席
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsingLastSeat(const int64_t& _usingLastSeat);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单客服最大并发数（电话类型默认1）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxConcurrency 单客服最大并发数（电话类型默认1）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxConcurrency() const;
 
                     /**
                      * 设置单客服最大并发数（电话类型默认1）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxConcurrency 单客服最大并发数（电话类型默认1）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxConcurrency(const int64_t& _maxConcurrency);
@@ -186,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastModifyTimestamp 最后修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLastModifyTimestamp() const;
 
                     /**
                      * 设置最后修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastModifyTimestamp 最后修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastModifyTimestamp(const int64_t& _lastModifyTimestamp);
@@ -211,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取技能组类型0-电话，1-在线，3-音频，4-视频	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkillGroupType 技能组类型0-电话，1-在线，3-音频，4-视频	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSkillGroupType() const;
 
                     /**
                      * 设置技能组类型0-电话，1-在线，3-音频，4-视频	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _skillGroupType 技能组类型0-电话，1-在线，3-音频，4-视频	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSkillGroupType(const int64_t& _skillGroupType);
@@ -236,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取技能组内线号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alias 技能组内线号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置技能组内线号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alias 技能组内线号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -281,42 +257,36 @@ namespace TencentCloud
 
                     /**
                      * 会话分配策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_routePolicy;
                     bool m_routePolicyHasBeenSet;
 
                     /**
                      * 会话分配是否优先上次服务座席
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_usingLastSeat;
                     bool m_usingLastSeatHasBeenSet;
 
                     /**
                      * 单客服最大并发数（电话类型默认1）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxConcurrency;
                     bool m_maxConcurrencyHasBeenSet;
 
                     /**
                      * 最后修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lastModifyTimestamp;
                     bool m_lastModifyTimestampHasBeenSet;
 
                     /**
                      * 技能组类型0-电话，1-在线，3-音频，4-视频	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_skillGroupType;
                     bool m_skillGroupTypeHasBeenSet;
 
                     /**
                      * 技能组内线号码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;

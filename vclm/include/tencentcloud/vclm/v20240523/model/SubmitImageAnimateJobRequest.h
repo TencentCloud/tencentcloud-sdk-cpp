@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vclm/v20240523/model/LogoParam.h>
 
 
 namespace TencentCloud
@@ -188,6 +189,68 @@ namespace TencentCloud
                      */
                     bool EnableSegmentHasBeenSet() const;
 
+                    /**
+                     * 获取为生成视频添加标识的开关，默认为0。
+1：添加标识。
+0：不添加标识。
+其他数值：默认按1处理。
+建议您使用显著标识来提示，该视频是 AI 生成的视频。
+                     * @return LogoAdd 为生成视频添加标识的开关，默认为0。
+1：添加标识。
+0：不添加标识。
+其他数值：默认按1处理。
+建议您使用显著标识来提示，该视频是 AI 生成的视频。
+                     * 
+                     */
+                    int64_t GetLogoAdd() const;
+
+                    /**
+                     * 设置为生成视频添加标识的开关，默认为0。
+1：添加标识。
+0：不添加标识。
+其他数值：默认按1处理。
+建议您使用显著标识来提示，该视频是 AI 生成的视频。
+                     * @param _logoAdd 为生成视频添加标识的开关，默认为0。
+1：添加标识。
+0：不添加标识。
+其他数值：默认按1处理。
+建议您使用显著标识来提示，该视频是 AI 生成的视频。
+                     * 
+                     */
+                    void SetLogoAdd(const int64_t& _logoAdd);
+
+                    /**
+                     * 判断参数 LogoAdd 是否已赋值
+                     * @return LogoAdd 是否已赋值
+                     * 
+                     */
+                    bool LogoAddHasBeenSet() const;
+
+                    /**
+                     * 获取标识内容设置。
+默认在生成视频的右下角添加“视频由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * @return LogoParam 标识内容设置。
+默认在生成视频的右下角添加“视频由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 
+                     */
+                    LogoParam GetLogoParam() const;
+
+                    /**
+                     * 设置标识内容设置。
+默认在生成视频的右下角添加“视频由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * @param _logoParam 标识内容设置。
+默认在生成视频的右下角添加“视频由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 
+                     */
+                    void SetLogoParam(const LogoParam& _logoParam);
+
+                    /**
+                     * 判断参数 LogoParam 是否已赋值
+                     * @return LogoParam 是否已赋值
+                     * 
+                     */
+                    bool LogoParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -230,6 +293,23 @@ namespace TencentCloud
                      */
                     bool m_enableSegment;
                     bool m_enableSegmentHasBeenSet;
+
+                    /**
+                     * 为生成视频添加标识的开关，默认为0。
+1：添加标识。
+0：不添加标识。
+其他数值：默认按1处理。
+建议您使用显著标识来提示，该视频是 AI 生成的视频。
+                     */
+                    int64_t m_logoAdd;
+                    bool m_logoAddHasBeenSet;
+
+                    /**
+                     * 标识内容设置。
+默认在生成视频的右下角添加“视频由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     */
+                    LogoParam m_logoParam;
+                    bool m_logoParamHasBeenSet;
 
                 };
             }
