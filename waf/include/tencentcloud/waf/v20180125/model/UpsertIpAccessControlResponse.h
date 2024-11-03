@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取添加或修改失败的条目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedItems 添加或修改失败的条目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailedItems() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取添加或修改失败的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedCount 添加或修改失败的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFailedCount() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取添加或修改的IP数据Id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ids 添加或修改的IP数据Id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetIds() const;
@@ -95,21 +89,18 @@ namespace TencentCloud
 
                     /**
                      * 添加或修改失败的条目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failedItems;
                     bool m_failedItemsHasBeenSet;
 
                     /**
                      * 添加或修改失败的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_failedCount;
                     bool m_failedCountHasBeenSet;
 
                     /**
                      * 添加或修改的IP数据Id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ids;
                     bool m_idsHasBeenSet;

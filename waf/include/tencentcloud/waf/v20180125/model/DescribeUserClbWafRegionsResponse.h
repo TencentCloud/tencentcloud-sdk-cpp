@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取地域（标准的ap-格式）列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 地域（标准的ap-格式）列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetData() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取包含详细属性的地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RichDatas 包含详细属性的地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ClbWafRegionItem> GetRichDatas() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 地域（标准的ap-格式）列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
                      * 包含详细属性的地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClbWafRegionItem> m_richDatas;
                     bool m_richDatasHasBeenSet;

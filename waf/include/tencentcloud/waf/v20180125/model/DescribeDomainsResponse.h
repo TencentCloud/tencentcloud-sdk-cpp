@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取domain列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domains domain列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DomainInfo> GetDomains() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * domain列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DomainInfo> m_domains;
                     bool m_domainsHasBeenSet;

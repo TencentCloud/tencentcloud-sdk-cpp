@@ -23,9 +23,9 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 DescribeBlockStaticListRequest::DescribeBlockStaticListRequest() :
-    m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_queryTypeHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
     m_topHasBeenSet(false),
     m_searchValueHasBeenSet(false)
 {
@@ -37,14 +37,6 @@ string DescribeBlockStaticListRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_startTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StartTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_endTimeHasBeenSet)
     {
@@ -60,6 +52,14 @@ string DescribeBlockStaticListRequest::ToJsonString() const
         string key = "QueryType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_queryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_topHasBeenSet)
@@ -85,22 +85,6 @@ string DescribeBlockStaticListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeBlockStaticListRequest::GetStartTime() const
-{
-    return m_startTime;
-}
-
-void DescribeBlockStaticListRequest::SetStartTime(const string& _startTime)
-{
-    m_startTime = _startTime;
-    m_startTimeHasBeenSet = true;
-}
-
-bool DescribeBlockStaticListRequest::StartTimeHasBeenSet() const
-{
-    return m_startTimeHasBeenSet;
-}
 
 string DescribeBlockStaticListRequest::GetEndTime() const
 {
@@ -132,6 +116,22 @@ void DescribeBlockStaticListRequest::SetQueryType(const string& _queryType)
 bool DescribeBlockStaticListRequest::QueryTypeHasBeenSet() const
 {
     return m_queryTypeHasBeenSet;
+}
+
+string DescribeBlockStaticListRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeBlockStaticListRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeBlockStaticListRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
 }
 
 int64_t DescribeBlockStaticListRequest::GetTop() const

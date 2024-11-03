@@ -23,8 +23,8 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 ModifyBlockTopRequest::ModifyBlockTopRequest() :
-    m_uniqueIdHasBeenSet(false),
-    m_opeTypeHasBeenSet(false)
+    m_opeTypeHasBeenSet(false),
+    m_uniqueIdHasBeenSet(false)
 {
 }
 
@@ -35,20 +35,20 @@ string ModifyBlockTopRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_uniqueIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UniqueId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_uniqueId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_opeTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OpeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_opeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uniqueIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqueId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uniqueId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -58,22 +58,6 @@ string ModifyBlockTopRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string ModifyBlockTopRequest::GetUniqueId() const
-{
-    return m_uniqueId;
-}
-
-void ModifyBlockTopRequest::SetUniqueId(const string& _uniqueId)
-{
-    m_uniqueId = _uniqueId;
-    m_uniqueIdHasBeenSet = true;
-}
-
-bool ModifyBlockTopRequest::UniqueIdHasBeenSet() const
-{
-    return m_uniqueIdHasBeenSet;
-}
 
 string ModifyBlockTopRequest::GetOpeType() const
 {
@@ -89,6 +73,22 @@ void ModifyBlockTopRequest::SetOpeType(const string& _opeType)
 bool ModifyBlockTopRequest::OpeTypeHasBeenSet() const
 {
     return m_opeTypeHasBeenSet;
+}
+
+string ModifyBlockTopRequest::GetUniqueId() const
+{
+    return m_uniqueId;
+}
+
+void ModifyBlockTopRequest::SetUniqueId(const string& _uniqueId)
+{
+    m_uniqueId = _uniqueId;
+    m_uniqueIdHasBeenSet = true;
+}
+
+bool ModifyBlockTopRequest::UniqueIdHasBeenSet() const
+{
+    return m_uniqueIdHasBeenSet;
 }
 
 

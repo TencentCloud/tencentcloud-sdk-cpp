@@ -65,8 +65,6 @@
 #include <tencentcloud/waf/v20180125/model/DeleteCustomWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteDomainWhiteRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteDomainWhiteRulesResponse.h>
-#include <tencentcloud/waf/v20180125/model/DeleteDownloadRecordRequest.h>
-#include <tencentcloud/waf/v20180125/model/DeleteDownloadRecordResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteHostRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteHostResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteIpAccessControlRequest.h>
@@ -390,9 +388,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDomainWhiteRulesResponse> DeleteDomainWhiteRulesOutcome;
                 typedef std::future<DeleteDomainWhiteRulesOutcome> DeleteDomainWhiteRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteDomainWhiteRulesRequest&, DeleteDomainWhiteRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainWhiteRulesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteDownloadRecordResponse> DeleteDownloadRecordOutcome;
-                typedef std::future<DeleteDownloadRecordOutcome> DeleteDownloadRecordOutcomeCallable;
-                typedef std::function<void(const WafClient*, const Model::DeleteDownloadRecordRequest&, DeleteDownloadRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDownloadRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteHostResponse> DeleteHostOutcome;
                 typedef std::future<DeleteHostOutcome> DeleteHostOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteHostRequest&, DeleteHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHostAsyncHandler;
@@ -953,17 +948,6 @@ namespace TencentCloud
                 DeleteDomainWhiteRulesOutcome DeleteDomainWhiteRules(const Model::DeleteDomainWhiteRulesRequest &request);
                 void DeleteDomainWhiteRulesAsync(const Model::DeleteDomainWhiteRulesRequest& request, const DeleteDomainWhiteRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDomainWhiteRulesOutcomeCallable DeleteDomainWhiteRulesCallable(const Model::DeleteDomainWhiteRulesRequest& request);
-
-                /**
-                 *废弃接口，无有效调用
-
-删除访问日志下载记录
-                 * @param req DeleteDownloadRecordRequest
-                 * @return DeleteDownloadRecordOutcome
-                 */
-                DeleteDownloadRecordOutcome DeleteDownloadRecord(const Model::DeleteDownloadRecordRequest &request);
-                void DeleteDownloadRecordAsync(const Model::DeleteDownloadRecordRequest& request, const DeleteDownloadRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteDownloadRecordOutcomeCallable DeleteDownloadRecordCallable(const Model::DeleteDownloadRecordRequest& request);
 
                 /**
                  *删除负载均衡型域名，支持批量操作。

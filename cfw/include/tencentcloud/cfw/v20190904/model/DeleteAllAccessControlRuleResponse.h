@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取删除了几条访问控制规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Info 删除了几条访问控制规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInfo() const;
@@ -83,7 +81,6 @@ namespace TencentCloud
 
                     /**
                      * 删除了几条访问控制规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_info;
                     bool m_infoHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostName 主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取危害等级：1-低位，2-中危，3-高危，4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 危害等级：1-低位，2-中危，3-高危，4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置危害等级：1-低位，2-中危，3-高危，4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 危害等级：1-低位，2-中危，3-高危，4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const uint64_t& _level);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagList 主机标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTagList() const;
 
                     /**
                      * 设置主机标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagList 主机标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagList(const std::vector<std::string>& _tagList);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态：0-未通过，1-忽略，3-已通过，5-检测中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态：0-未通过，1-忽略，3-已通过，5-检测中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置状态：0-未通过，1-忽略，3-已通过，5-检测中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态：0-未通过，1-忽略，3-已通过，5-检测中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastScanTime 最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastScanTime() const;
 
                     /**
                      * 设置最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastScanTime 最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastScanTime(const std::string& _lastScanTime);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventId 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEventId() const;
 
                     /**
                      * 设置事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventId 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventId(const uint64_t& _eventId);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuid 主机quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置主机quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quuid 主机quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuuid(const std::string& _quuid);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
 
                     /**
                      * 危害等级：1-低位，2-中危，3-高危，4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 主机标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tagList;
                     bool m_tagListHasBeenSet;
 
                     /**
                      * 状态：0-未通过，1-忽略，3-已通过，5-检测中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastScanTime;
                     bool m_lastScanTimeHasBeenSet;
 
                     /**
                      * 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
                      * 主机quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;

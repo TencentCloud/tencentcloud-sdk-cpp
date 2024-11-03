@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网 IP 类型 1 公网,2 弹性,3 弹性ipv6,4 anycastIP, 6 HighQualityEIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIpType 公网 IP 类型 1 公网,2 弹性,3 弹性ipv6,4 anycastIP, 6 HighQualityEIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPublicIpType() const;
 
                     /**
                      * 设置公网 IP 类型 1 公网,2 弹性,3 弹性ipv6,4 anycastIP, 6 HighQualityEIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicIpType 公网 IP 类型 1 公网,2 弹性,3 弹性ipv6,4 anycastIP, 6 HighQualityEIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicIpType(const int64_t& _publicIpType);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntranetIp 内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIntranetIp() const;
 
                     /**
                      * 设置内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _intranetIp 内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIntranetIp(const std::string& _intranetIp);
@@ -169,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetType 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetType() const;
 
                     /**
                      * 设置资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetType 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetType(const std::string& _assetType);
@@ -194,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -219,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险端口数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PortRiskCount 风险端口数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPortRiskCount() const;
 
                     /**
                      * 设置风险端口数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _portRiskCount 风险端口数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPortRiskCount(const int64_t& _portRiskCount);
@@ -244,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastScanTime 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastScanTime() const;
 
                     /**
                      * 设置最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastScanTime 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastScanTime(const std::string& _lastScanTime);
@@ -271,11 +239,9 @@ namespace TencentCloud
                      * 获取是否为region eip
 0 不为region eip，不能选择串行
 1 为region eip 可以选择串行
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsRegionEip 是否为region eip
 0 不为region eip，不能选择串行
 1 为region eip 可以选择串行
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsRegionEip() const;
@@ -284,11 +250,9 @@ namespace TencentCloud
                      * 设置是否为region eip
 0 不为region eip，不能选择串行
 1 为region eip 可以选择串行
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isRegionEip 是否为region eip
 0 不为region eip，不能选择串行
 1 为region eip 可以选择串行
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsRegionEip(const int64_t& _isRegionEip);
@@ -302,18 +266,14 @@ namespace TencentCloud
 
                     /**
                      * 获取EIP 所关联的VPC
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId EIP 所关联的VPC
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置EIP 所关联的VPC
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId EIP 所关联的VPC
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -329,11 +289,9 @@ namespace TencentCloud
                      * 获取0: 该地域暂未支持串行
 1: 该用户未在该地域配置串行带宽
 2: 该用户已在该地域配置串行带宽，可以开启串行开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSerialRegion 0: 该地域暂未支持串行
 1: 该用户未在该地域配置串行带宽
 2: 该用户已在该地域配置串行带宽，可以开启串行开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsSerialRegion() const;
@@ -342,11 +300,9 @@ namespace TencentCloud
                      * 设置0: 该地域暂未支持串行
 1: 该用户未在该地域配置串行带宽
 2: 该用户已在该地域配置串行带宽，可以开启串行开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSerialRegion 0: 该地域暂未支持串行
 1: 该用户未在该地域配置串行带宽
 2: 该用户已在该地域配置串行带宽，可以开启串行开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSerialRegion(const int64_t& _isSerialRegion);
@@ -362,11 +318,9 @@ namespace TencentCloud
                      * 获取0: 不是公网CLB 可以开启串行开关
 1: 是公网CLB 不可以开启串行开关
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPublicClb 0: 不是公网CLB 可以开启串行开关
 1: 是公网CLB 不可以开启串行开关
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsPublicClb() const;
@@ -375,11 +329,9 @@ namespace TencentCloud
                      * 设置0: 不是公网CLB 可以开启串行开关
 1: 是公网CLB 不可以开启串行开关
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isPublicClb 0: 不是公网CLB 可以开启串行开关
 1: 是公网CLB 不可以开启串行开关
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsPublicClb(const int64_t& _isPublicClb);
@@ -395,11 +347,9 @@ namespace TencentCloud
                      * 获取0: 开启开关时提示要创建私有连接。
 1: 关闭该开关是提示删除私有连接。
 如果大于 1: 关闭开关 、开启开关不需提示创建删除私有连接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndpointBindEipNum 0: 开启开关时提示要创建私有连接。
 1: 关闭该开关是提示删除私有连接。
 如果大于 1: 关闭开关 、开启开关不需提示创建删除私有连接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndpointBindEipNum() const;
@@ -408,11 +358,9 @@ namespace TencentCloud
                      * 设置0: 开启开关时提示要创建私有连接。
 1: 关闭该开关是提示删除私有连接。
 如果大于 1: 关闭开关 、开启开关不需提示创建删除私有连接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endpointBindEipNum 0: 开启开关时提示要创建私有连接。
 1: 关闭该开关是提示删除私有连接。
 如果大于 1: 关闭开关 、开启开关不需提示创建删除私有连接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndpointBindEipNum(const int64_t& _endpointBindEipNum);
@@ -426,18 +374,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描深度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanMode 扫描深度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanMode() const;
 
                     /**
                      * 设置扫描深度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanMode 扫描深度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanMode(const std::string& _scanMode);
@@ -451,18 +395,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanStatus 扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScanStatus() const;
 
                     /**
                      * 设置扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanStatus 扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanStatus(const int64_t& _scanStatus);
@@ -481,14 +421,12 @@ namespace TencentCloud
 2 : 开启中
 3 : 关闭中
 4 : 异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 开关状态
 0 : 关闭
 1 : 开启
 2 : 开启中
 3 : 关闭中
 4 : 异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -500,14 +438,12 @@ namespace TencentCloud
 2 : 开启中
 3 : 关闭中
 4 : 异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 开关状态
 0 : 关闭
 1 : 开启
 2 : 开启中
 3 : 关闭中
 4 : 异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -521,18 +457,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有连接ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndpointId 私有连接ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndpointId() const;
 
                     /**
                      * 设置私有连接ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endpointId 私有连接ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndpointId(const std::string& _endpointId);
@@ -546,18 +478,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有连接IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndpointIp 私有连接IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndpointIp() const;
 
                     /**
                      * 设置私有连接IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endpointIp 私有连接IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndpointIp(const std::string& _endpointIp);
@@ -600,18 +528,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开关权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SwitchWeight 开关权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSwitchWeight() const;
 
                     /**
                      * 设置开关权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _switchWeight 开关权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSwitchWeight(const int64_t& _switchWeight);
@@ -625,18 +549,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名化CLB的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名化CLB的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名化CLB的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 域名化CLB的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -650,18 +570,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP超量状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OverUsedStatus IP超量状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOverUsedStatus() const;
 
                     /**
                      * 设置IP超量状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _overUsedStatus IP超量状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOverUsedStatus(const int64_t& _overUsedStatus);
@@ -683,56 +599,48 @@ namespace TencentCloud
 
                     /**
                      * 公网 IP 类型 1 公网,2 弹性,3 弹性ipv6,4 anycastIP, 6 HighQualityEIP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_publicIpType;
                     bool m_publicIpTypeHasBeenSet;
 
                     /**
                      * 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_intranetIp;
                     bool m_intranetIpHasBeenSet;
 
                     /**
                      * 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetType;
                     bool m_assetTypeHasBeenSet;
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 风险端口数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_portRiskCount;
                     bool m_portRiskCountHasBeenSet;
 
                     /**
                      * 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastScanTime;
                     bool m_lastScanTimeHasBeenSet;
@@ -741,14 +649,12 @@ namespace TencentCloud
                      * 是否为region eip
 0 不为region eip，不能选择串行
 1 为region eip 可以选择串行
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isRegionEip;
                     bool m_isRegionEipHasBeenSet;
 
                     /**
                      * EIP 所关联的VPC
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -757,7 +663,6 @@ namespace TencentCloud
                      * 0: 该地域暂未支持串行
 1: 该用户未在该地域配置串行带宽
 2: 该用户已在该地域配置串行带宽，可以开启串行开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isSerialRegion;
                     bool m_isSerialRegionHasBeenSet;
@@ -766,7 +671,6 @@ namespace TencentCloud
                      * 0: 不是公网CLB 可以开启串行开关
 1: 是公网CLB 不可以开启串行开关
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isPublicClb;
                     bool m_isPublicClbHasBeenSet;
@@ -775,21 +679,18 @@ namespace TencentCloud
                      * 0: 开启开关时提示要创建私有连接。
 1: 关闭该开关是提示删除私有连接。
 如果大于 1: 关闭开关 、开启开关不需提示创建删除私有连接。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endpointBindEipNum;
                     bool m_endpointBindEipNumHasBeenSet;
 
                     /**
                      * 扫描深度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanMode;
                     bool m_scanModeHasBeenSet;
 
                     /**
                      * 扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scanStatus;
                     bool m_scanStatusHasBeenSet;
@@ -801,21 +702,18 @@ namespace TencentCloud
 2 : 开启中
 3 : 关闭中
 4 : 异常
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 私有连接ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endpointId;
                     bool m_endpointIdHasBeenSet;
 
                     /**
                      * 私有连接IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endpointIp;
                     bool m_endpointIpHasBeenSet;
@@ -830,21 +728,18 @@ namespace TencentCloud
 
                     /**
                      * 开关权重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_switchWeight;
                     bool m_switchWeightHasBeenSet;
 
                     /**
                      * 域名化CLB的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * IP超量状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_overUsedStatus;
                     bool m_overUsedStatusHasBeenSet;

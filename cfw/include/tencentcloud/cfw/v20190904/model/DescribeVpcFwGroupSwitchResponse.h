@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取开关列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SwitchList 开关列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FwGroupSwitchShow> GetSwitchList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取开关总个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 开关总个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 开关列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FwGroupSwitchShow> m_switchList;
                     bool m_switchListHasBeenSet;
 
                     /**
                      * 开关总个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;

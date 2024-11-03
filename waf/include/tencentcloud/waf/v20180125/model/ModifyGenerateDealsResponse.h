@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取计费下单响应结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 计费下单响应结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DealData GetData() const;
@@ -76,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回message
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnMessage 返回message
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReturnMessage() const;
@@ -94,7 +90,6 @@ namespace TencentCloud
 
                     /**
                      * 计费下单响应结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DealData m_data;
                     bool m_dataHasBeenSet;
@@ -107,7 +102,6 @@ namespace TencentCloud
 
                     /**
                      * 返回message
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_returnMessage;
                     bool m_returnMessageHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义规则ID　
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 自定义规则ID　
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
                      * 设置自定义规则ID　
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 自定义规则ID　
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义规则名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 自定义规则名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置自定义规则名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleName 自定义规则名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 自定义规则ID　
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
                      * 自定义规则名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;

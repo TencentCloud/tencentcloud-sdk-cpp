@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
-                     * @return Order desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
+                     * 获取desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值，默认为asc
+                     * @return Order desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值，默认为asc
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
-                     * @param _order desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
+                     * 设置desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值，默认为asc
+                     * @param _order desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值，默认为asc
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序所用到的字段
-                     * @return By 排序所用到的字段
+                     * 获取排序所用到的字段，默认为sequence
+                     * @return By 排序所用到的字段，默认为sequence
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序所用到的字段
-                     * @param _by 排序所用到的字段
+                     * 设置排序所用到的字段，默认为sequence
+                     * @param _by 排序所用到的字段，默认为sequence
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -250,13 +250,13 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值
+                     * desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值，默认为asc
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序所用到的字段
+                     * 排序所用到的字段，默认为sequence
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

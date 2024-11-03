@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用，1-启用，0-禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 是否启用，1-启用，0-禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnable() const;
 
                     /**
                      * 设置是否启用，1-启用，0-禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enable 是否启用，1-启用，0-禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnable(const int64_t& _enable);
@@ -200,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CVE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CVE CVE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCVE() const;
 
                     /**
                      * 设置CVE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cVE CVE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCVE(const std::string& _cVE);
@@ -246,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修复方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixMethod 修复方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFixMethod() const;
 
                     /**
                      * 设置修复方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fixMethod 修复方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFixMethod(const std::vector<std::string>& _fixMethod);
@@ -271,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取披露时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReleaseTime 披露时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReleaseTime() const;
 
                     /**
                      * 设置披露时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _releaseTime 披露时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReleaseTime(const std::string& _releaseTime);
@@ -296,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应急漏洞类型，1-应急漏洞，0-非应急漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EMGCVulType 应急漏洞类型，1-应急漏洞，0-非应急漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEMGCVulType() const;
 
                     /**
                      * 设置应急漏洞类型，1-应急漏洞，0-非应急漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eMGCVulType 应急漏洞类型，1-应急漏洞，0-非应急漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEMGCVulType(const int64_t& _eMGCVulType);
@@ -321,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VULDescribe 漏洞描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVULDescribe() const;
 
                     /**
                      * 设置漏洞描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vULDescribe 漏洞描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVULDescribe(const std::string& _vULDescribe);
@@ -346,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取影响组件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImpactComponent 影响组件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImpactComponent() const;
 
                     /**
                      * 设置影响组件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _impactComponent 影响组件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImpactComponent(const std::string& _impactComponent);
@@ -371,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞Payload
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Payload 漏洞Payload
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayload() const;
 
                     /**
                      * 设置漏洞Payload
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payload 漏洞Payload
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayload(const std::string& _payload);
@@ -396,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取技术参考
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return References 技术参考
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReferences() const;
 
                     /**
                      * 设置技术参考
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _references 技术参考
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReferences(const std::string& _references);
@@ -421,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cvss评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CVSS cvss评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCVSS() const;
 
                     /**
                      * 设置cvss评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cVSS cvss评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCVSS(const std::string& _cVSS);
@@ -446,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击热度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackHeat 攻击热度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAttackHeat() const;
 
                     /**
                      * 设置攻击热度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attackHeat 攻击热度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttackHeat(const std::string& _attackHeat);
@@ -471,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全产品支持情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceSupport 安全产品支持情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServiceSupport> GetServiceSupport() const;
 
                     /**
                      * 设置安全产品支持情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceSupport 安全产品支持情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceSupport(const std::vector<ServiceSupport>& _serviceSupport);
@@ -496,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最新检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecentScanTime 最新检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecentScanTime() const;
 
                     /**
                      * 设置最新检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recentScanTime 最新检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecentScanTime(const std::string& _recentScanTime);
@@ -547,7 +495,6 @@ namespace TencentCloud
 
                     /**
                      * 是否启用，1-启用，0-禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
@@ -566,7 +513,6 @@ namespace TencentCloud
 
                     /**
                      * CVE
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cVE;
                     bool m_cVEHasBeenSet;
@@ -579,77 +525,66 @@ namespace TencentCloud
 
                     /**
                      * 修复方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_fixMethod;
                     bool m_fixMethodHasBeenSet;
 
                     /**
                      * 披露时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_releaseTime;
                     bool m_releaseTimeHasBeenSet;
 
                     /**
                      * 应急漏洞类型，1-应急漏洞，0-非应急漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_eMGCVulType;
                     bool m_eMGCVulTypeHasBeenSet;
 
                     /**
                      * 漏洞描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vULDescribe;
                     bool m_vULDescribeHasBeenSet;
 
                     /**
                      * 影响组件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_impactComponent;
                     bool m_impactComponentHasBeenSet;
 
                     /**
                      * 漏洞Payload
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payload;
                     bool m_payloadHasBeenSet;
 
                     /**
                      * 技术参考
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_references;
                     bool m_referencesHasBeenSet;
 
                     /**
                      * cvss评分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cVSS;
                     bool m_cVSSHasBeenSet;
 
                     /**
                      * 攻击热度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attackHeat;
                     bool m_attackHeatHasBeenSet;
 
                     /**
                      * 安全产品支持情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServiceSupport> m_serviceSupport;
                     bool m_serviceSupportHasBeenSet;
 
                     /**
                      * 最新检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recentScanTime;
                     bool m_recentScanTimeHasBeenSet;

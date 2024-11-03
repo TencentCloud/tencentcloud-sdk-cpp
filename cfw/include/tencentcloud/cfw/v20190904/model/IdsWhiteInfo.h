@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取白名单唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 白名单唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置白名单唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 白名单唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcIp 源IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcIp() const;
 
                     /**
                      * 设置源IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcIp 源IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcIp(const std::string& _srcIp);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目的IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstIp 目的IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstIp() const;
 
                     /**
                      * 设置目的IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstIp 目的IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstIp(const std::string& _dstIp);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WhiteRuleType 规则类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWhiteRuleType() const;
 
                     /**
                      * 设置规则类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _whiteRuleType 规则类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWhiteRuleType(const std::string& _whiteRuleType);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取白名单生效防火墙范围： 1 边界防火墙 2 nat防火墙 4 vpc防火墙 7 = 1+2+4 所有防火墙
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwType 白名单生效防火墙范围： 1 边界防火墙 2 nat防火墙 4 vpc防火墙 7 = 1+2+4 所有防火墙
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFwType() const;
 
                     /**
                      * 设置白名单生效防火墙范围： 1 边界防火墙 2 nat防火墙 4 vpc防火墙 7 = 1+2+4 所有防火墙
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwType 白名单生效防火墙范围： 1 边界防火墙 2 nat防火墙 4 vpc防火墙 7 = 1+2+4 所有防火墙
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwType(const int64_t& _fwType);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入侵防御规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 入侵防御规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置入侵防御规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 入侵防御规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 白名单唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 源IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcIp;
                     bool m_srcIpHasBeenSet;
 
                     /**
                      * 目的IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstIp;
                     bool m_dstIpHasBeenSet;
 
                     /**
                      * 规则类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_whiteRuleType;
                     bool m_whiteRuleTypeHasBeenSet;
 
                     /**
                      * 白名单生效防火墙范围： 1 边界防火墙 2 nat防火墙 4 vpc防火墙 7 = 1+2+4 所有防火墙
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fwType;
                     bool m_fwTypeHasBeenSet;
 
                     /**
                      * 入侵防御规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;

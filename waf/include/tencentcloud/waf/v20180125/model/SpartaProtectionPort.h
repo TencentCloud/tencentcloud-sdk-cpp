@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取nginx Id
-                     * @return NginxServerId nginx Id
+                     * 获取分配的服务器id
+                     * @return NginxServerId 分配的服务器id
                      * 
                      */
                     uint64_t GetNginxServerId() const;
 
                     /**
-                     * 设置nginx Id
-                     * @param _nginxServerId nginx Id
+                     * 设置分配的服务器id
+                     * @param _nginxServerId 分配的服务器id
                      * 
                      */
                     void SetNginxServerId(const uint64_t& _nginxServerId);
@@ -154,7 +154,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * nginx Id
+                     * 分配的服务器id
                      */
                     uint64_t m_nginxServerId;
                     bool m_nginxServerIdHasBeenSet;

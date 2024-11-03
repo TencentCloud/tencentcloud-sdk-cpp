@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cdc的集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name cdc的集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置cdc的集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name cdc的集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * cdc的集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程名，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcNamePrefix 进程名，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProcNamePrefix() const;
 
                     /**
                      * 设置进程名，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _procNamePrefix 进程名，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProcNamePrefix(const std::string& _procNamePrefix);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程名md5，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcNameMd5 进程名md5，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProcNameMd5() const;
 
                     /**
                      * 设置进程名md5，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _procNameMd5 进程名md5，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProcNameMd5(const std::string& _procNameMd5);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命令行，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CmdLinePrefix 命令行，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCmdLinePrefix() const;
 
                     /**
                      * 设置命令行，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cmdLinePrefix 命令行，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCmdLinePrefix(const std::string& _cmdLinePrefix);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命令行md5，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CmdLineMd5 命令行md5，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCmdLineMd5() const;
 
                     /**
                      * 设置命令行md5，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cmdLineMd5 命令行md5，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCmdLineMd5(const std::string& _cmdLineMd5);
@@ -232,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件路径，当Type=3时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilePathPrefix 文件路径，当Type=3时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFilePathPrefix() const;
 
                     /**
                      * 设置文件路径，当Type=3时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filePathPrefix 文件路径，当Type=3时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilePathPrefix(const std::string& _filePathPrefix);
@@ -257,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取请求目的地址，当Type=2时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressPrefix 请求目的地址，当Type=2时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddressPrefix() const;
 
                     /**
                      * 设置请求目的地址，当Type=2时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addressPrefix 请求目的地址，当Type=2时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddressPrefix(const std::string& _addressPrefix);
@@ -324,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件路径md5，当Type=3时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilePathMd5 文件路径md5，当Type=3时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFilePathMd5() const;
 
                     /**
                      * 设置文件路径md5，当Type=3时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filePathMd5 文件路径md5，当Type=3时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilePathMd5(const std::string& _filePathMd5);
@@ -349,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取请求目的地址md5，当Type=2时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressMd5 请求目的地址md5，当Type=2时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddressMd5() const;
 
                     /**
                      * 设置请求目的地址md5，当Type=2时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addressMd5 请求目的地址md5，当Type=2时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddressMd5(const std::string& _addressMd5);
@@ -400,42 +368,36 @@ namespace TencentCloud
 
                     /**
                      * 进程名，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_procNamePrefix;
                     bool m_procNamePrefixHasBeenSet;
 
                     /**
                      * 进程名md5，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_procNameMd5;
                     bool m_procNameMd5HasBeenSet;
 
                     /**
                      * 命令行，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cmdLinePrefix;
                     bool m_cmdLinePrefixHasBeenSet;
 
                     /**
                      * 命令行md5，当Type=1时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cmdLineMd5;
                     bool m_cmdLineMd5HasBeenSet;
 
                     /**
                      * 文件路径，当Type=3时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_filePathPrefix;
                     bool m_filePathPrefixHasBeenSet;
 
                     /**
                      * 请求目的地址，当Type=2时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addressPrefix;
                     bool m_addressPrefixHasBeenSet;
@@ -454,14 +416,12 @@ namespace TencentCloud
 
                     /**
                      * 文件路径md5，当Type=3时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_filePathMd5;
                     bool m_filePathMd5HasBeenSet;
 
                     /**
                      * 请求目的地址md5，当Type=2时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addressMd5;
                     bool m_addressMd5HasBeenSet;

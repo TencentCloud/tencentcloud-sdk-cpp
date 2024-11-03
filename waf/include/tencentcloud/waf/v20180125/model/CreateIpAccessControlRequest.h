@@ -113,21 +113,21 @@ namespace TencentCloud
                     /**
                      * 获取valid_ts为有效日期，值为秒级时间戳（（如1680570420代表2023-04-04 09:07:00））
                      * @return ValidTS valid_ts为有效日期，值为秒级时间戳（（如1680570420代表2023-04-04 09:07:00））
-                     * 
+                     * @deprecated
                      */
                     int64_t GetValidTS() const;
 
                     /**
                      * 设置valid_ts为有效日期，值为秒级时间戳（（如1680570420代表2023-04-04 09:07:00））
                      * @param _validTS valid_ts为有效日期，值为秒级时间戳（（如1680570420代表2023-04-04 09:07:00））
-                     * 
+                     * @deprecated
                      */
                     void SetValidTS(const int64_t& _validTS);
 
                     /**
                      * 判断参数 ValidTS 是否已赋值
                      * @return ValidTS 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ValidTSHasBeenSet() const;
 
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool NoteHasBeenSet() const;
 
                     /**
-                     * 获取定时配置类型
-                     * @return JobType 定时配置类型
+                     * 获取规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * @return JobType 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
                      * 
                      */
                     std::string GetJobType() const;
 
                     /**
-                     * 设置定时配置类型
-                     * @param _jobType 定时配置类型
+                     * 设置规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * @param _jobType 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
                      * 
                      */
                     void SetJobType(const std::string& _jobType);
@@ -309,7 +309,7 @@ namespace TencentCloud
                     bool m_noteHasBeenSet;
 
                     /**
-                     * 定时配置类型
+                     * 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
                      */
                     std::string m_jobType;
                     bool m_jobTypeHasBeenSet;

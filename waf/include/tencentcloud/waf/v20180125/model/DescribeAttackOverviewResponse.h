@@ -129,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取api风险事件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiRiskEventCount api风险事件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetApiRiskEventCount() const;
@@ -145,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取黑名单总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IPBlackCount 黑名单总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIPBlackCount() const;
@@ -161,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取防篡改总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TamperCount 防篡改总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTamperCount() const;
@@ -177,9 +171,7 @@ namespace TencentCloud
 
                     /**
                      * 获取信息泄露总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LeakCount 信息泄露总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLeakCount() const;
@@ -193,9 +185,7 @@ namespace TencentCloud
 
                     /**
                      * 获取API风险事件周环比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiRiskEventCircleCount API风险事件周环比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetApiRiskEventCircleCount() const;
@@ -247,35 +237,30 @@ namespace TencentCloud
 
                     /**
                      * api风险事件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_apiRiskEventCount;
                     bool m_apiRiskEventCountHasBeenSet;
 
                     /**
                      * 黑名单总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_iPBlackCount;
                     bool m_iPBlackCountHasBeenSet;
 
                     /**
                      * 防篡改总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_tamperCount;
                     bool m_tamperCountHasBeenSet;
 
                     /**
                      * 信息泄露总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_leakCount;
                     bool m_leakCountHasBeenSet;
 
                     /**
                      * API风险事件周环比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_apiRiskEventCircleCount;
                     bool m_apiRiskEventCircleCountHasBeenSet;

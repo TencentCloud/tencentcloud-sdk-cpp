@@ -21,12 +21,12 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 ScanResultInfo::ScanResultInfo() :
-    m_leakNumHasBeenSet(false),
+    m_banStatusHasBeenSet(false),
     m_iPNumHasBeenSet(false),
-    m_portNumHasBeenSet(false),
     m_iPStatusHasBeenSet(false),
     m_idpStatusHasBeenSet(false),
-    m_banStatusHasBeenSet(false)
+    m_leakNumHasBeenSet(false),
+    m_portNumHasBeenSet(false)
 {
 }
 
@@ -35,14 +35,14 @@ CoreInternalOutcome ScanResultInfo::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("LeakNum") && !value["LeakNum"].IsNull())
+    if (value.HasMember("BanStatus") && !value["BanStatus"].IsNull())
     {
-        if (!value["LeakNum"].IsUint64())
+        if (!value["BanStatus"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `ScanResultInfo.LeakNum` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanResultInfo.BanStatus` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_leakNum = value["LeakNum"].GetUint64();
-        m_leakNumHasBeenSet = true;
+        m_banStatus = value["BanStatus"].GetBool();
+        m_banStatusHasBeenSet = true;
     }
 
     if (value.HasMember("IPNum") && !value["IPNum"].IsNull())
@@ -53,16 +53,6 @@ CoreInternalOutcome ScanResultInfo::Deserialize(const rapidjson::Value &value)
         }
         m_iPNum = value["IPNum"].GetUint64();
         m_iPNumHasBeenSet = true;
-    }
-
-    if (value.HasMember("PortNum") && !value["PortNum"].IsNull())
-    {
-        if (!value["PortNum"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ScanResultInfo.PortNum` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_portNum = value["PortNum"].GetUint64();
-        m_portNumHasBeenSet = true;
     }
 
     if (value.HasMember("IPStatus") && !value["IPStatus"].IsNull())
@@ -85,14 +75,24 @@ CoreInternalOutcome ScanResultInfo::Deserialize(const rapidjson::Value &value)
         m_idpStatusHasBeenSet = true;
     }
 
-    if (value.HasMember("BanStatus") && !value["BanStatus"].IsNull())
+    if (value.HasMember("LeakNum") && !value["LeakNum"].IsNull())
     {
-        if (!value["BanStatus"].IsBool())
+        if (!value["LeakNum"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `ScanResultInfo.BanStatus` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ScanResultInfo.LeakNum` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_banStatus = value["BanStatus"].GetBool();
-        m_banStatusHasBeenSet = true;
+        m_leakNum = value["LeakNum"].GetUint64();
+        m_leakNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("PortNum") && !value["PortNum"].IsNull())
+    {
+        if (!value["PortNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanResultInfo.PortNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_portNum = value["PortNum"].GetUint64();
+        m_portNumHasBeenSet = true;
     }
 
 
@@ -102,12 +102,12 @@ CoreInternalOutcome ScanResultInfo::Deserialize(const rapidjson::Value &value)
 void ScanResultInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_leakNumHasBeenSet)
+    if (m_banStatusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LeakNum";
+        string key = "BanStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_leakNum, allocator);
+        value.AddMember(iKey, m_banStatus, allocator);
     }
 
     if (m_iPNumHasBeenSet)
@@ -116,14 +116,6 @@ void ScanResultInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "IPNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_iPNum, allocator);
-    }
-
-    if (m_portNumHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PortNum";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_portNum, allocator);
     }
 
     if (m_iPStatusHasBeenSet)
@@ -142,31 +134,39 @@ void ScanResultInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, m_idpStatus, allocator);
     }
 
-    if (m_banStatusHasBeenSet)
+    if (m_leakNumHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BanStatus";
+        string key = "LeakNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_banStatus, allocator);
+        value.AddMember(iKey, m_leakNum, allocator);
+    }
+
+    if (m_portNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_portNum, allocator);
     }
 
 }
 
 
-uint64_t ScanResultInfo::GetLeakNum() const
+bool ScanResultInfo::GetBanStatus() const
 {
-    return m_leakNum;
+    return m_banStatus;
 }
 
-void ScanResultInfo::SetLeakNum(const uint64_t& _leakNum)
+void ScanResultInfo::SetBanStatus(const bool& _banStatus)
 {
-    m_leakNum = _leakNum;
-    m_leakNumHasBeenSet = true;
+    m_banStatus = _banStatus;
+    m_banStatusHasBeenSet = true;
 }
 
-bool ScanResultInfo::LeakNumHasBeenSet() const
+bool ScanResultInfo::BanStatusHasBeenSet() const
 {
-    return m_leakNumHasBeenSet;
+    return m_banStatusHasBeenSet;
 }
 
 uint64_t ScanResultInfo::GetIPNum() const
@@ -183,22 +183,6 @@ void ScanResultInfo::SetIPNum(const uint64_t& _iPNum)
 bool ScanResultInfo::IPNumHasBeenSet() const
 {
     return m_iPNumHasBeenSet;
-}
-
-uint64_t ScanResultInfo::GetPortNum() const
-{
-    return m_portNum;
-}
-
-void ScanResultInfo::SetPortNum(const uint64_t& _portNum)
-{
-    m_portNum = _portNum;
-    m_portNumHasBeenSet = true;
-}
-
-bool ScanResultInfo::PortNumHasBeenSet() const
-{
-    return m_portNumHasBeenSet;
 }
 
 bool ScanResultInfo::GetIPStatus() const
@@ -233,19 +217,35 @@ bool ScanResultInfo::IdpStatusHasBeenSet() const
     return m_idpStatusHasBeenSet;
 }
 
-bool ScanResultInfo::GetBanStatus() const
+uint64_t ScanResultInfo::GetLeakNum() const
 {
-    return m_banStatus;
+    return m_leakNum;
 }
 
-void ScanResultInfo::SetBanStatus(const bool& _banStatus)
+void ScanResultInfo::SetLeakNum(const uint64_t& _leakNum)
 {
-    m_banStatus = _banStatus;
-    m_banStatusHasBeenSet = true;
+    m_leakNum = _leakNum;
+    m_leakNumHasBeenSet = true;
 }
 
-bool ScanResultInfo::BanStatusHasBeenSet() const
+bool ScanResultInfo::LeakNumHasBeenSet() const
 {
-    return m_banStatusHasBeenSet;
+    return m_leakNumHasBeenSet;
+}
+
+uint64_t ScanResultInfo::GetPortNum() const
+{
+    return m_portNum;
+}
+
+void ScanResultInfo::SetPortNum(const uint64_t& _portNum)
+{
+    m_portNum = _portNum;
+    m_portNumHasBeenSet = true;
+}
+
+bool ScanResultInfo::PortNumHasBeenSet() const
+{
+    return m_portNumHasBeenSet;
 }
 

@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取默认为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 默认为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置默认为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 默认为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费类目ID，对应cid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GoodsCategoryId 计费类目ID，对应cid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGoodsCategoryId() const;
 
                     /**
                      * 设置计费类目ID，对应cid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _goodsCategoryId 计费类目ID，对应cid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGoodsCategoryId(const int64_t& _goodsCategoryId);
@@ -162,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取平台类型，默认1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Platform 平台类型，默认1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPlatform() const;
 
                     /**
                      * 设置平台类型，默认1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _platform 平台类型，默认1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlatform(const int64_t& _platform);
@@ -187,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取购买waf实例区域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 购买waf实例区域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置购买waf实例区域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionId 购买waf实例区域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -232,28 +216,24 @@ namespace TencentCloud
 
                     /**
                      * 默认为0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * 计费类目ID，对应cid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_goodsCategoryId;
                     bool m_goodsCategoryIdHasBeenSet;
 
                     /**
                      * 平台类型，默认1
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
                      * 购买waf实例区域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;

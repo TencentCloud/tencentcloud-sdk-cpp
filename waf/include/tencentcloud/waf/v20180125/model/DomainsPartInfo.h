@@ -750,11 +750,9 @@ https：使用https协议回源
                      * 获取是否开启主动健康检测。
 0：不开启
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveCheck 是否开启主动健康检测。
 0：不开启
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetActiveCheck() const;
@@ -763,11 +761,9 @@ https：使用https协议回源
                      * 设置是否开启主动健康检测。
 0：不开启
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activeCheck 是否开启主动健康检测。
 0：不开启
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActiveCheck(const uint64_t& _activeCheck);
@@ -781,18 +777,14 @@ https：使用https协议回源
 
                     /**
                      * 获取TLS版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TLSVersion TLS版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTLSVersion() const;
 
                     /**
                      * 设置TLS版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tLSVersion TLS版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTLSVersion(const int64_t& _tLSVersion);
@@ -806,18 +798,14 @@ https：使用https协议回源
 
                     /**
                      * 获取自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ciphers 自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetCiphers() const;
 
                     /**
                      * 设置自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ciphers 自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCiphers(const std::vector<int64_t>& _ciphers);
@@ -835,13 +823,11 @@ https：使用https协议回源
 1：通用型模板 
 2：安全型模板
 3：自定义模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CipherTemplate 加密套件模板。
 0：不支持选择，使用默认模板  
 1：通用型模板 
 2：安全型模板
 3：自定义模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCipherTemplate() const;
@@ -852,13 +838,11 @@ https：使用https协议回源
 1：通用型模板 
 2：安全型模板
 3：自定义模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cipherTemplate 加密套件模板。
 0：不支持选择，使用默认模板  
 1：通用型模板 
 2：安全型模板
 3：自定义模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCipherTemplate(const int64_t& _cipherTemplate);
@@ -872,18 +856,14 @@ https：使用https协议回源
 
                     /**
                      * 获取WAF与源站的读超时时间，默认300s。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyReadTimeout WAF与源站的读超时时间，默认300s。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProxyReadTimeout() const;
 
                     /**
                      * 设置WAF与源站的读超时时间，默认300s。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyReadTimeout WAF与源站的读超时时间，默认300s。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyReadTimeout(const int64_t& _proxyReadTimeout);
@@ -897,18 +877,14 @@ https：使用https协议回源
 
                     /**
                      * 获取WAF与源站的写超时时间，默认300s。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxySendTimeout WAF与源站的写超时时间，默认300s。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProxySendTimeout() const;
 
                     /**
                      * 设置WAF与源站的写超时时间，默认300s。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxySendTimeout WAF与源站的写超时时间，默认300s。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxySendTimeout(const int64_t& _proxySendTimeout);
@@ -926,13 +902,11 @@ https：使用https协议回源
 1：开启SNI，client_hello中的server_name为防护域名
 2：开启SNI，SNI为域名回源时的源站域名
 3：开启SNI，SNI为自定义域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SniType WAF回源时的SNI类型。
 0：关闭SNI，不配置client_hello中的server_name
 1：开启SNI，client_hello中的server_name为防护域名
 2：开启SNI，SNI为域名回源时的源站域名
 3：开启SNI，SNI为自定义域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSniType() const;
@@ -943,13 +917,11 @@ https：使用https协议回源
 1：开启SNI，client_hello中的server_name为防护域名
 2：开启SNI，SNI为域名回源时的源站域名
 3：开启SNI，SNI为自定义域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sniType WAF回源时的SNI类型。
 0：关闭SNI，不配置client_hello中的server_name
 1：开启SNI，client_hello中的server_name为防护域名
 2：开启SNI，SNI为域名回源时的源站域名
 3：开启SNI，SNI为自定义域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSniType(const int64_t& _sniType);
@@ -963,18 +935,14 @@ https：使用https协议回源
 
                     /**
                      * 获取SniType为3时，需要填此参数，表示自定义的SNI；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SniHost SniType为3时，需要填此参数，表示自定义的SNI；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSniHost() const;
 
                     /**
                      * 设置SniType为3时，需要填此参数，表示自定义的SNI；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sniHost SniType为3时，需要填此参数，表示自定义的SNI；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSniHost(const std::string& _sniHost);
@@ -988,18 +956,14 @@ https：使用https协议回源
 
                     /**
                      * 获取回源IP权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weights 回源IP权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetWeights() const;
 
                     /**
                      * 设置回源IP权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weights 回源IP权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeights(const std::vector<std::string>& _weights);
@@ -1013,18 +977,14 @@ https：使用https协议回源
 
                     /**
                      * 获取IsCdn=3时，表示自定义header
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpHeaders IsCdn=3时，表示自定义header
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetIpHeaders() const;
 
                     /**
                      * 设置IsCdn=3时，表示自定义header
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipHeaders IsCdn=3时，表示自定义header
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpHeaders(const std::vector<std::string>& _ipHeaders);
@@ -1040,11 +1000,9 @@ https：使用https协议回源
                      * 获取是否开启XFF重置。
 0：关闭
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return XFFReset 是否开启XFF重置。
 0：关闭
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetXFFReset() const;
@@ -1053,11 +1011,9 @@ https：使用https协议回源
                      * 设置是否开启XFF重置。
 0：关闭
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _xFFReset 是否开启XFF重置。
 0：关闭
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetXFFReset(const int64_t& _xFFReset);
@@ -1071,18 +1027,14 @@ https：使用https协议回源
 
                     /**
                      * 获取域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Note 域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _note 域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNote(const std::string& _note);
@@ -1096,18 +1048,14 @@ https：使用https协议回源
 
                     /**
                      * 获取自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamHost 自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpstreamHost() const;
 
                     /**
                      * 设置自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upstreamHost 自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpstreamHost(const std::string& _upstreamHost);
@@ -1121,18 +1069,14 @@ https：使用https协议回源
 
                     /**
                      * 获取防护规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 防护规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置防护规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 防护规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -1146,18 +1090,14 @@ https：使用https协议回源
 
                     /**
                      * 获取是否开启缓存 0-关闭 1-开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyBuffer 是否开启缓存 0-关闭 1-开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProxyBuffer() const;
 
                     /**
                      * 设置是否开启缓存 0-关闭 1-开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyBuffer 是否开启缓存 0-关闭 1-开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyBuffer(const int64_t& _proxyBuffer);
@@ -1171,18 +1111,14 @@ https：使用https协议回源
 
                     /**
                      * 获取国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GmType 国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGmType() const;
 
                     /**
                      * 设置国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gmType 国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGmType(const int64_t& _gmType);
@@ -1196,18 +1132,14 @@ https：使用https协议回源
 
                     /**
                      * 获取国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GmCertType 国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGmCertType() const;
 
                     /**
                      * 设置国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gmCertType 国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGmCertType(const int64_t& _gmCertType);
@@ -1221,18 +1153,14 @@ https：使用https协议回源
 
                     /**
                      * 获取GmCertType为1时，需要填充此参数，表示自有国密证书的证书链
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GmCert GmCertType为1时，需要填充此参数，表示自有国密证书的证书链
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGmCert() const;
 
                     /**
                      * 设置GmCertType为1时，需要填充此参数，表示自有国密证书的证书链
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gmCert GmCertType为1时，需要填充此参数，表示自有国密证书的证书链
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGmCert(const std::string& _gmCert);
@@ -1246,18 +1174,14 @@ https：使用https协议回源
 
                     /**
                      * 获取GmCertType为1时，需要填充此参数，表示自有国密证书的私钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GmPrivateKey GmCertType为1时，需要填充此参数，表示自有国密证书的私钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGmPrivateKey() const;
 
                     /**
                      * 设置GmCertType为1时，需要填充此参数，表示自有国密证书的私钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gmPrivateKey GmCertType为1时，需要填充此参数，表示自有国密证书的私钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGmPrivateKey(const std::string& _gmPrivateKey);
@@ -1271,18 +1195,14 @@ https：使用https协议回源
 
                     /**
                      * 获取GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GmEncCert GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGmEncCert() const;
 
                     /**
                      * 设置GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gmEncCert GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGmEncCert(const std::string& _gmEncCert);
@@ -1296,18 +1216,14 @@ https：使用https协议回源
 
                     /**
                      * 获取GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GmEncPrivateKey GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGmEncPrivateKey() const;
 
                     /**
                      * 设置GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gmEncPrivateKey GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGmEncPrivateKey(const std::string& _gmEncPrivateKey);
@@ -1321,18 +1237,14 @@ https：使用https协议回源
 
                     /**
                      * 获取GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GmSSLId GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGmSSLId() const;
 
                     /**
                      * 设置GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gmSSLId GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGmSSLId(const std::string& _gmSSLId);
@@ -1346,18 +1258,14 @@ https：使用https协议回源
 
                     /**
                      * 获取域名标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 域名标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLabels() const;
 
                     /**
                      * 设置域名标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labels 域名标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabels(const std::vector<std::string>& _labels);
@@ -1570,21 +1478,18 @@ https：使用https协议回源
                      * 是否开启主动健康检测。
 0：不开启
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_activeCheck;
                     bool m_activeCheckHasBeenSet;
 
                     /**
                      * TLS版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tLSVersion;
                     bool m_tLSVersionHasBeenSet;
 
                     /**
                      * 自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_ciphers;
                     bool m_ciphersHasBeenSet;
@@ -1595,21 +1500,18 @@ https：使用https协议回源
 1：通用型模板 
 2：安全型模板
 3：自定义模板
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cipherTemplate;
                     bool m_cipherTemplateHasBeenSet;
 
                     /**
                      * WAF与源站的读超时时间，默认300s。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_proxyReadTimeout;
                     bool m_proxyReadTimeoutHasBeenSet;
 
                     /**
                      * WAF与源站的写超时时间，默认300s。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_proxySendTimeout;
                     bool m_proxySendTimeoutHasBeenSet;
@@ -1620,28 +1522,24 @@ https：使用https协议回源
 1：开启SNI，client_hello中的server_name为防护域名
 2：开启SNI，SNI为域名回源时的源站域名
 3：开启SNI，SNI为自定义域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sniType;
                     bool m_sniTypeHasBeenSet;
 
                     /**
                      * SniType为3时，需要填此参数，表示自定义的SNI；
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sniHost;
                     bool m_sniHostHasBeenSet;
 
                     /**
                      * 回源IP权重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_weights;
                     bool m_weightsHasBeenSet;
 
                     /**
                      * IsCdn=3时，表示自定义header
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ipHeaders;
                     bool m_ipHeadersHasBeenSet;
@@ -1650,91 +1548,78 @@ https：使用https协议回源
                      * 是否开启XFF重置。
 0：关闭
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_xFFReset;
                     bool m_xFFResetHasBeenSet;
 
                     /**
                      * 域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
 
                     /**
                      * 自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_upstreamHost;
                     bool m_upstreamHostHasBeenSet;
 
                     /**
                      * 防护规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 是否开启缓存 0-关闭 1-开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_proxyBuffer;
                     bool m_proxyBufferHasBeenSet;
 
                     /**
                      * 国密选项。0：不开启国密 1：在原有TLS选项的基础上追加支持国密 2：开启国密并仅支持国密客户端访问
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_gmType;
                     bool m_gmTypeHasBeenSet;
 
                     /**
                      * 国密证书类型。0：无国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_gmCertType;
                     bool m_gmCertTypeHasBeenSet;
 
                     /**
                      * GmCertType为1时，需要填充此参数，表示自有国密证书的证书链
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gmCert;
                     bool m_gmCertHasBeenSet;
 
                     /**
                      * GmCertType为1时，需要填充此参数，表示自有国密证书的私钥
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gmPrivateKey;
                     bool m_gmPrivateKeyHasBeenSet;
 
                     /**
                      * GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gmEncCert;
                     bool m_gmEncCertHasBeenSet;
 
                     /**
                      * GmCertType为1时，需要填充此参数，表示自有国密证书的加密证书的私钥
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gmEncPrivateKey;
                     bool m_gmEncPrivateKeyHasBeenSet;
 
                     /**
                      * GmCertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gmSSLId;
                     bool m_gmSSLIdHasBeenSet;
 
                     /**
                      * 域名标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_labels;
                     bool m_labelsHasBeenSet;

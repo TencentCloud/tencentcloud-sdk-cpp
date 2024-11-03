@@ -279,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1: 高危 2:中危 3:低危
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 1: 高危 2:中危 3:低危
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRiskLevel() const;
 
                     /**
                      * 设置1: 高危 2:中危 3:低危
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevel 1: 高危 2:中危 3:低危
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevel(const int64_t& _riskLevel);
@@ -372,7 +368,6 @@ namespace TencentCloud
 
                     /**
                      * 1: 高危 2:中危 3:低危
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_riskLevel;
                     bool m_riskLevelHasBeenSet;

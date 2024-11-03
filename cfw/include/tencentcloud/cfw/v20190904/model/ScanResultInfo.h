@@ -35,12 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 新手引导扫描结果信息PortNum   int
-	LeakNum   int
-	IPNum     int
-	IPStatus  bool
-	IdpStatus bool
-	BanStatus bool
+                * 新手引导扫描结果信息
                 */
                 class ScanResultInfo : public AbstractModel
                 {
@@ -52,25 +47,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取暴露漏洞数量
-                     * @return LeakNum 暴露漏洞数量
+                     * 获取是否禁封端口
+                     * @return BanStatus 是否禁封端口
                      * 
                      */
-                    uint64_t GetLeakNum() const;
+                    bool GetBanStatus() const;
 
                     /**
-                     * 设置暴露漏洞数量
-                     * @param _leakNum 暴露漏洞数量
+                     * 设置是否禁封端口
+                     * @param _banStatus 是否禁封端口
                      * 
                      */
-                    void SetLeakNum(const uint64_t& _leakNum);
+                    void SetBanStatus(const bool& _banStatus);
 
                     /**
-                     * 判断参数 LeakNum 是否已赋值
-                     * @return LeakNum 是否已赋值
+                     * 判断参数 BanStatus 是否已赋值
+                     * @return BanStatus 是否已赋值
                      * 
                      */
-                    bool LeakNumHasBeenSet() const;
+                    bool BanStatusHasBeenSet() const;
 
                     /**
                      * 获取防护ip数量
@@ -92,27 +87,6 @@ namespace TencentCloud
                      * 
                      */
                     bool IPNumHasBeenSet() const;
-
-                    /**
-                     * 获取暴露端口数量
-                     * @return PortNum 暴露端口数量
-                     * 
-                     */
-                    uint64_t GetPortNum() const;
-
-                    /**
-                     * 设置暴露端口数量
-                     * @param _portNum 暴露端口数量
-                     * 
-                     */
-                    void SetPortNum(const uint64_t& _portNum);
-
-                    /**
-                     * 判断参数 PortNum 是否已赋值
-                     * @return PortNum 是否已赋值
-                     * 
-                     */
-                    bool PortNumHasBeenSet() const;
 
                     /**
                      * 获取是否开启防护
@@ -157,45 +131,60 @@ namespace TencentCloud
                     bool IdpStatusHasBeenSet() const;
 
                     /**
-                     * 获取是否禁封端口
-                     * @return BanStatus 是否禁封端口
+                     * 获取暴露漏洞数量
+                     * @return LeakNum 暴露漏洞数量
                      * 
                      */
-                    bool GetBanStatus() const;
+                    uint64_t GetLeakNum() const;
 
                     /**
-                     * 设置是否禁封端口
-                     * @param _banStatus 是否禁封端口
+                     * 设置暴露漏洞数量
+                     * @param _leakNum 暴露漏洞数量
                      * 
                      */
-                    void SetBanStatus(const bool& _banStatus);
+                    void SetLeakNum(const uint64_t& _leakNum);
 
                     /**
-                     * 判断参数 BanStatus 是否已赋值
-                     * @return BanStatus 是否已赋值
+                     * 判断参数 LeakNum 是否已赋值
+                     * @return LeakNum 是否已赋值
                      * 
                      */
-                    bool BanStatusHasBeenSet() const;
+                    bool LeakNumHasBeenSet() const;
+
+                    /**
+                     * 获取暴露端口数量
+                     * @return PortNum 暴露端口数量
+                     * 
+                     */
+                    uint64_t GetPortNum() const;
+
+                    /**
+                     * 设置暴露端口数量
+                     * @param _portNum 暴露端口数量
+                     * 
+                     */
+                    void SetPortNum(const uint64_t& _portNum);
+
+                    /**
+                     * 判断参数 PortNum 是否已赋值
+                     * @return PortNum 是否已赋值
+                     * 
+                     */
+                    bool PortNumHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 暴露漏洞数量
+                     * 是否禁封端口
                      */
-                    uint64_t m_leakNum;
-                    bool m_leakNumHasBeenSet;
+                    bool m_banStatus;
+                    bool m_banStatusHasBeenSet;
 
                     /**
                      * 防护ip数量
                      */
                     uint64_t m_iPNum;
                     bool m_iPNumHasBeenSet;
-
-                    /**
-                     * 暴露端口数量
-                     */
-                    uint64_t m_portNum;
-                    bool m_portNumHasBeenSet;
 
                     /**
                      * 是否开启防护
@@ -210,10 +199,16 @@ namespace TencentCloud
                     bool m_idpStatusHasBeenSet;
 
                     /**
-                     * 是否禁封端口
+                     * 暴露漏洞数量
                      */
-                    bool m_banStatus;
-                    bool m_banStatusHasBeenSet;
+                    uint64_t m_leakNum;
+                    bool m_leakNumHasBeenSet;
+
+                    /**
+                     * 暴露端口数量
+                     */
+                    uint64_t m_portNum;
+                    bool m_portNumHasBeenSet;
 
                 };
             }

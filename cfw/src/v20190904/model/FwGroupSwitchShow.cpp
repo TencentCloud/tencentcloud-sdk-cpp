@@ -38,7 +38,8 @@ FwGroupSwitchShow::FwGroupSwitchShow() :
     m_fwInsRegionHasBeenSet(false),
     m_ipsActionHasBeenSet(false),
     m_fwInsLstHasBeenSet(false),
-    m_bypassStatusHasBeenSet(false)
+    m_bypassStatusHasBeenSet(false),
+    m_ipVersionHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,16 @@ CoreInternalOutcome FwGroupSwitchShow::Deserialize(const rapidjson::Value &value
         m_bypassStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("IpVersion") && !value["IpVersion"].IsNull())
+    {
+        if (!value["IpVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FwGroupSwitchShow.IpVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipVersion = value["IpVersion"].GetInt64();
+        m_ipVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -435,6 +446,14 @@ void FwGroupSwitchShow::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "BypassStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bypassStatus, allocator);
+    }
+
+    if (m_ipVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipVersion, allocator);
     }
 
 }
@@ -726,5 +745,21 @@ void FwGroupSwitchShow::SetBypassStatus(const int64_t& _bypassStatus)
 bool FwGroupSwitchShow::BypassStatusHasBeenSet() const
 {
     return m_bypassStatusHasBeenSet;
+}
+
+int64_t FwGroupSwitchShow::GetIpVersion() const
+{
+    return m_ipVersion;
+}
+
+void FwGroupSwitchShow::SetIpVersion(const int64_t& _ipVersion)
+{
+    m_ipVersion = _ipVersion;
+    m_ipVersionHasBeenSet = true;
+}
+
+bool FwGroupSwitchShow::IpVersionHasBeenSet() const
+{
+    return m_ipVersionHasBeenSet;
 }
 

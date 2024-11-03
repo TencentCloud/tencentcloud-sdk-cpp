@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TagKey 无
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取主机标签key
+                     * @return TagKey 主机标签key
                      * 
                      */
                     std::string GetTagKey() const;
 
                     /**
-                     * 设置无
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tagKey 无
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置主机标签key
+                     * @param _tagKey 主机标签key
                      * 
                      */
                     void SetTagKey(const std::string& _tagKey);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool TagKeyHasBeenSet() const;
 
                     /**
-                     * 获取无
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TagValue 无
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取主机标签value
+                     * @return TagValue 主机标签value
                      * 
                      */
                     std::string GetTagValue() const;
 
                     /**
-                     * 设置无
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tagValue 无
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置主机标签value
+                     * @param _tagValue 主机标签value
                      * 
                      */
                     void SetTagValue(const std::string& _tagValue);
@@ -99,15 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 主机标签key
                      */
                     std::string m_tagKey;
                     bool m_tagKeyHasBeenSet;
 
                     /**
-                     * 无
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 主机标签value
                      */
                     std::string m_tagValue;
                     bool m_tagValueHasBeenSet;

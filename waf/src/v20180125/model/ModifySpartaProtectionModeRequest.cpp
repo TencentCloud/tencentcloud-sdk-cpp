@@ -26,7 +26,8 @@ ModifySpartaProtectionModeRequest::ModifySpartaProtectionModeRequest() :
     m_domainHasBeenSet(false),
     m_modeHasBeenSet(false),
     m_editionHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_instanceIDHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifySpartaProtectionModeRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_instanceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifySpartaProtectionModeRequest::SetType(const uint64_t& _type)
 bool ModifySpartaProtectionModeRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string ModifySpartaProtectionModeRequest::GetInstanceID() const
+{
+    return m_instanceID;
+}
+
+void ModifySpartaProtectionModeRequest::SetInstanceID(const string& _instanceID)
+{
+    m_instanceID = _instanceID;
+    m_instanceIDHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionModeRequest::InstanceIDHasBeenSet() const
+{
+    return m_instanceIDHasBeenSet;
 }
 
 

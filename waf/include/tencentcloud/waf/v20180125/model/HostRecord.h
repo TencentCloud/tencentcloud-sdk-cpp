@@ -406,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防护等级，可选值100,200,300
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 防护等级，可选值100,200,300
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置防护等级，可选值100,200,300
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 防护等级，可选值100,200,300
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const uint64_t& _level);
@@ -431,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名需要下发到的cdc集群列表。仅CDC场景下填充
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcClusters 域名需要下发到的cdc集群列表。仅CDC场景下填充
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCdcClusters() const;
 
                     /**
                      * 设置域名需要下发到的cdc集群列表。仅CDC场景下填充
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcClusters 域名需要下发到的cdc集群列表。仅CDC场景下填充
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcClusters(const std::vector<std::string>& _cdcClusters);
@@ -458,11 +450,13 @@ namespace TencentCloud
                      * 获取应用型负载均衡类型，默认clb。 
 clb：七层负载均衡器类型 
 apisix：apisix网关型
-注意：此字段可能返回 null，表示取不到有效值。
+tsegw：云原生API网关
+scf：云函数
                      * @return AlbType 应用型负载均衡类型，默认clb。 
 clb：七层负载均衡器类型 
 apisix：apisix网关型
-注意：此字段可能返回 null，表示取不到有效值。
+tsegw：云原生API网关
+scf：云函数
                      * 
                      */
                     std::string GetAlbType() const;
@@ -471,11 +465,13 @@ apisix：apisix网关型
                      * 设置应用型负载均衡类型，默认clb。 
 clb：七层负载均衡器类型 
 apisix：apisix网关型
-注意：此字段可能返回 null，表示取不到有效值。
+tsegw：云原生API网关
+scf：云函数
                      * @param _albType 应用型负载均衡类型，默认clb。 
 clb：七层负载均衡器类型 
 apisix：apisix网关型
-注意：此字段可能返回 null，表示取不到有效值。
+tsegw：云原生API网关
+scf：云函数
                      * 
                      */
                     void SetAlbType(const std::string& _albType);
@@ -489,18 +485,14 @@ apisix：apisix网关型
 
                     /**
                      * 获取IsCdn=3时，需要填此参数，表示自定义header
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpHeaders IsCdn=3时，需要填此参数，表示自定义header
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetIpHeaders() const;
 
                     /**
                      * 设置IsCdn=3时，需要填此参数，表示自定义header
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipHeaders IsCdn=3时，需要填此参数，表示自定义header
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpHeaders(const std::vector<std::string>& _ipHeaders);
@@ -516,11 +508,9 @@ apisix：apisix网关型
                      * 获取规则引擎类型。
 1: menshen
 2: tiga
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineType 规则引擎类型。
 1: menshen
 2: tiga
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEngineType() const;
@@ -529,11 +519,9 @@ apisix：apisix网关型
                      * 设置规则引擎类型。
 1: menshen
 2: tiga
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineType 规则引擎类型。
 1: menshen
 2: tiga
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineType(const int64_t& _engineType);
@@ -550,12 +538,10 @@ apisix：apisix网关型
 public:公有云
 private:私有云
 hybrid:混合云
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudType 云类型。
 public:公有云
 private:私有云
 hybrid:混合云
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCloudType() const;
@@ -565,12 +551,10 @@ hybrid:混合云
 public:公有云
 private:私有云
 hybrid:混合云
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudType 云类型。
 public:公有云
 private:私有云
 hybrid:混合云
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudType(const std::string& _cloudType);
@@ -584,18 +568,14 @@ hybrid:混合云
 
                     /**
                      * 获取域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Note 域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _note 域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNote(const std::string& _note);
@@ -710,14 +690,12 @@ hybrid:混合云
 
                     /**
                      * 防护等级，可选值100,200,300
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 域名需要下发到的cdc集群列表。仅CDC场景下填充
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_cdcClusters;
                     bool m_cdcClustersHasBeenSet;
@@ -726,14 +704,14 @@ hybrid:混合云
                      * 应用型负载均衡类型，默认clb。 
 clb：七层负载均衡器类型 
 apisix：apisix网关型
-注意：此字段可能返回 null，表示取不到有效值。
+tsegw：云原生API网关
+scf：云函数
                      */
                     std::string m_albType;
                     bool m_albTypeHasBeenSet;
 
                     /**
                      * IsCdn=3时，需要填此参数，表示自定义header
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ipHeaders;
                     bool m_ipHeadersHasBeenSet;
@@ -742,7 +720,6 @@ apisix：apisix网关型
                      * 规则引擎类型。
 1: menshen
 2: tiga
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_engineType;
                     bool m_engineTypeHasBeenSet;
@@ -752,14 +729,12 @@ apisix：apisix网关型
 public:公有云
 private:私有云
 hybrid:混合云
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cloudType;
                     bool m_cloudTypeHasBeenSet;
 
                     /**
                      * 域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;

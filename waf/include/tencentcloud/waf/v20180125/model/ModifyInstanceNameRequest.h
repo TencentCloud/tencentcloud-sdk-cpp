@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取版本
-                     * @return Edition 版本
+                     * 获取实例版本，支持clb-waf、sparta-waf
+                     * @return Edition 实例版本，支持clb-waf、sparta-waf
                      * 
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置版本
-                     * @param _edition 版本
+                     * 设置实例版本，支持clb-waf、sparta-waf
+                     * @param _edition 实例版本，支持clb-waf、sparta-waf
                      * 
                      */
                     void SetEdition(const std::string& _edition);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 版本
+                     * 实例版本，支持clb-waf、sparta-waf
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;

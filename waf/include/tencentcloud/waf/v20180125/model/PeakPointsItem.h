@@ -195,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取WAF返回给客户端状态码5xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusServerError WAF返回给客户端状态码5xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatusServerError() const;
 
                     /**
                      * 设置WAF返回给客户端状态码5xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statusServerError WAF返回给客户端状态码5xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatusServerError(const uint64_t& _statusServerError);
@@ -220,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取WAF返回给客户端状态码4xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusClientError WAF返回给客户端状态码4xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatusClientError() const;
 
                     /**
                      * 设置WAF返回给客户端状态码4xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statusClientError WAF返回给客户端状态码4xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatusClientError(const uint64_t& _statusClientError);
@@ -245,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取WAF返回给客户端状态码302次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusRedirect WAF返回给客户端状态码302次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatusRedirect() const;
 
                     /**
                      * 设置WAF返回给客户端状态码302次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statusRedirect WAF返回给客户端状态码302次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatusRedirect(const uint64_t& _statusRedirect);
@@ -270,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取WAF返回给客户端状态码202次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusOk WAF返回给客户端状态码202次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatusOk() const;
 
                     /**
                      * 设置WAF返回给客户端状态码202次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statusOk WAF返回给客户端状态码202次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatusOk(const uint64_t& _statusOk);
@@ -295,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源站返回给WAF状态码5xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamServerError 源站返回给WAF状态码5xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUpstreamServerError() const;
 
                     /**
                      * 设置源站返回给WAF状态码5xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upstreamServerError 源站返回给WAF状态码5xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpstreamServerError(const uint64_t& _upstreamServerError);
@@ -320,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源站返回给WAF状态码4xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamClientError 源站返回给WAF状态码4xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUpstreamClientError() const;
 
                     /**
                      * 设置源站返回给WAF状态码4xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upstreamClientError 源站返回给WAF状态码4xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpstreamClientError(const uint64_t& _upstreamClientError);
@@ -345,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源站返回给WAF状态码302次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamRedirect 源站返回给WAF状态码302次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUpstreamRedirect() const;
 
                     /**
                      * 设置源站返回给WAF状态码302次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upstreamRedirect 源站返回给WAF状态码302次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpstreamRedirect(const uint64_t& _upstreamRedirect);
@@ -370,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取黑名单次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BlackIP 黑名单次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBlackIP() const;
 
                     /**
                      * 设置黑名单次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _blackIP 黑名单次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBlackIP(const uint64_t& _blackIP);
@@ -395,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防篡改次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tamper 防篡改次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTamper() const;
 
                     /**
                      * 设置防篡改次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tamper 防篡改次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTamper(const uint64_t& _tamper);
@@ -420,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取信息防泄露次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Leak 信息防泄露次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLeak() const;
 
                     /**
                      * 设置信息防泄露次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _leak 信息防泄露次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLeak(const uint64_t& _leak);
@@ -445,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取访问控制 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ACL 访问控制 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetACL() const;
 
                     /**
                      * 设置访问控制 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aCL 访问控制 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetACL(const uint64_t& _aCL);
@@ -470,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序 qps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WxAccess 小程序 qps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWxAccess() const;
 
                     /**
                      * 设置小程序 qps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wxAccess 小程序 qps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWxAccess(const uint64_t& _wxAccess);
@@ -495,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WxCount 小程序请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWxCount() const;
 
                     /**
                      * 设置小程序请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wxCount 小程序请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWxCount(const uint64_t& _wxCount);
@@ -520,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序上行带宽峰值，单位B
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WxUp 小程序上行带宽峰值，单位B
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWxUp() const;
 
                     /**
                      * 设置小程序上行带宽峰值，单位B
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wxUp 小程序上行带宽峰值，单位B
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWxUp(const uint64_t& _wxUp);
@@ -545,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序下行带宽峰值，单位B
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WxDown 小程序下行带宽峰值，单位B
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWxDown() const;
 
                     /**
                      * 设置小程序下行带宽峰值，单位B
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wxDown 小程序下行带宽峰值，单位B
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWxDown(const uint64_t& _wxDown);
@@ -614,105 +554,90 @@ namespace TencentCloud
 
                     /**
                      * WAF返回给客户端状态码5xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_statusServerError;
                     bool m_statusServerErrorHasBeenSet;
 
                     /**
                      * WAF返回给客户端状态码4xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_statusClientError;
                     bool m_statusClientErrorHasBeenSet;
 
                     /**
                      * WAF返回给客户端状态码302次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_statusRedirect;
                     bool m_statusRedirectHasBeenSet;
 
                     /**
                      * WAF返回给客户端状态码202次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_statusOk;
                     bool m_statusOkHasBeenSet;
 
                     /**
                      * 源站返回给WAF状态码5xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_upstreamServerError;
                     bool m_upstreamServerErrorHasBeenSet;
 
                     /**
                      * 源站返回给WAF状态码4xx次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_upstreamClientError;
                     bool m_upstreamClientErrorHasBeenSet;
 
                     /**
                      * 源站返回给WAF状态码302次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_upstreamRedirect;
                     bool m_upstreamRedirectHasBeenSet;
 
                     /**
                      * 黑名单次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_blackIP;
                     bool m_blackIPHasBeenSet;
 
                     /**
                      * 防篡改次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_tamper;
                     bool m_tamperHasBeenSet;
 
                     /**
                      * 信息防泄露次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_leak;
                     bool m_leakHasBeenSet;
 
                     /**
                      * 访问控制 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_aCL;
                     bool m_aCLHasBeenSet;
 
                     /**
                      * 小程序 qps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_wxAccess;
                     bool m_wxAccessHasBeenSet;
 
                     /**
                      * 小程序请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_wxCount;
                     bool m_wxCountHasBeenSet;
 
                     /**
                      * 小程序上行带宽峰值，单位B
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_wxUp;
                     bool m_wxUpHasBeenSet;
 
                     /**
                      * 小程序下行带宽峰值，单位B
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_wxDown;
                     bool m_wxDownHasBeenSet;

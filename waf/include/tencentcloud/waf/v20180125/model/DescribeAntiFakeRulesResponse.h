@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 返回值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CacheUrlItems> GetData() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 返回值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CacheUrlItems> m_data;
                     bool m_dataHasBeenSet;

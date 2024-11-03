@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TLS key value
-                     * @return TLS TLS key value
+                     * 获取TLS信息
+                     * @return TLS TLS信息
                      * 
                      */
                     std::vector<TLSVersion> GetTLS() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * TLS key value
+                     * TLS信息
                      */
                     std::vector<TLSVersion> m_tLS;
                     bool m_tLSHasBeenSet;

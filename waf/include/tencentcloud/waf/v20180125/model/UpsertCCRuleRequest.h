@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool MatchFuncHasBeenSet() const;
 
                     /**
-                     * 获取动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截
-                     * @return ActionType 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截
+                     * 获取动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，26表示精准人机识别，27表示JS校验
+                     * @return ActionType 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，26表示精准人机识别，27表示JS校验
                      * 
                      */
                     std::string GetActionType() const;
 
                     /**
-                     * 设置动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截
-                     * @param _actionType 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截
+                     * 设置动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，26表示精准人机识别，27表示JS校验
+                     * @param _actionType 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，26表示精准人机识别，27表示JS校验
                      * 
                      */
                     void SetActionType(const std::string& _actionType);
@@ -492,7 +492,7 @@ namespace TencentCloud
                     bool m_matchFuncHasBeenSet;
 
                     /**
-                     * 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截
+                     * 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，26表示精准人机识别，27表示JS校验
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取影响的资产数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AffectAssetCount 影响的资产数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAffectAssetCount() const;
 
                     /**
                      * 设置影响的资产数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _affectAssetCount 影响的资产数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAffectAssetCount(const int64_t& _affectAssetCount);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取影响的用户数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AffectUserCount 影响的用户数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAffectUserCount() const;
 
                     /**
                      * 设置影响的用户数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _affectUserCount 影响的用户数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAffectUserCount(const int64_t& _affectUserCount);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackCount 攻击数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAttackCount() const;
 
                     /**
                      * 设置攻击数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attackCount 攻击数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttackCount(const int64_t& _attackCount);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Date 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _date 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDate(const std::string& _date);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 影响的资产数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_affectAssetCount;
                     bool m_affectAssetCountHasBeenSet;
 
                     /**
                      * 影响的用户数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_affectUserCount;
                     bool m_affectUserCountHasBeenSet;
 
                     /**
                      * 攻击数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_attackCount;
                     bool m_attackCountHasBeenSet;
 
                     /**
                      * 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;

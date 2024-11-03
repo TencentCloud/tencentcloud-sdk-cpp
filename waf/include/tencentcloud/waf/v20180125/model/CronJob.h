@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每个月的几号执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Days 每个月的几号执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetDays() const;
 
                     /**
                      * 设置每个月的几号执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _days 每个月的几号执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDays(const std::vector<uint64_t>& _days);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每个星期的星期几执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WDays 每个星期的星期几执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetWDays() const;
 
                     /**
                      * 设置每个星期的星期几执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wDays 每个星期的星期几执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWDays(const std::vector<uint64_t>& _wDays);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 每个月的几号执行
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_days;
                     bool m_daysHasBeenSet;
 
                     /**
                      * 每个星期的星期几执行
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_wDays;
                     bool m_wDaysHasBeenSet;
 
                     /**
                      * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

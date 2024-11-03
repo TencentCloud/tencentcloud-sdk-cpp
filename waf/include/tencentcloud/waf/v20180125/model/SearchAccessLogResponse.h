@@ -94,24 +94,22 @@ namespace TencentCloud
                      * @return ColNames 如果Analysis为True，则返回分析结果的列名，否则为空
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetColNames() const;
 
                     /**
                      * 判断参数 ColNames 是否已赋值
                      * @return ColNames 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ColNamesHasBeenSet() const;
 
                     /**
                      * 获取日志查询结果；当Analysis为True时，可能返回为null
 注意：此字段可能返回 null，表示取不到有效值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Results 日志查询结果；当Analysis为True时，可能返回为null
 注意：此字段可能返回 null，表示取不到有效值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AccessLogInfo> GetResults() const;
@@ -130,14 +128,14 @@ namespace TencentCloud
                      * @return AnalysisResults 日志分析结果；当Analysis为False时，可能返回为null
 注意：此字段可能返回 null，表示取不到有效值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::vector<AccessLogItems> GetAnalysisResults() const;
 
                     /**
                      * 判断参数 AnalysisResults 是否已赋值
                      * @return AnalysisResults 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AnalysisResultsHasBeenSet() const;
 
@@ -172,7 +170,6 @@ namespace TencentCloud
                     /**
                      * 日志查询结果；当Analysis为True时，可能返回为null
 注意：此字段可能返回 null，表示取不到有效值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AccessLogInfo> m_results;
                     bool m_resultsHasBeenSet;

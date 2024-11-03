@@ -44,7 +44,8 @@ VpcRuleItem::VpcRuleItem() :
     m_paramTemplateNameHasBeenSet(false),
     m_targetNameHasBeenSet(false),
     m_sourceNameHasBeenSet(false),
-    m_ipVersionHasBeenSet(false)
+    m_ipVersionHasBeenSet(false),
+    m_invalidHasBeenSet(false)
 {
 }
 
@@ -303,6 +304,16 @@ CoreInternalOutcome VpcRuleItem::Deserialize(const rapidjson::Value &value)
         m_ipVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("Invalid") && !value["Invalid"].IsNull())
+    {
+        if (!value["Invalid"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.Invalid` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalid = value["Invalid"].GetInt64();
+        m_invalidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -507,6 +518,14 @@ void VpcRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IpVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ipVersion, allocator);
+    }
+
+    if (m_invalidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Invalid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_invalid, allocator);
     }
 
 }
@@ -894,5 +913,21 @@ void VpcRuleItem::SetIpVersion(const int64_t& _ipVersion)
 bool VpcRuleItem::IpVersionHasBeenSet() const
 {
     return m_ipVersionHasBeenSet;
+}
+
+int64_t VpcRuleItem::GetInvalid() const
+{
+    return m_invalid;
+}
+
+void VpcRuleItem::SetInvalid(const int64_t& _invalid)
+{
+    m_invalid = _invalid;
+    m_invalidHasBeenSet = true;
+}
+
+bool VpcRuleItem::InvalidHasBeenSet() const
+{
+    return m_invalidHasBeenSet;
 }
 

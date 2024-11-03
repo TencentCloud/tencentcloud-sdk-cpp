@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC防火墙实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwInsName VPC防火墙实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFwInsName() const;
 
                     /**
                      * 设置VPC防火墙实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwInsName VPC防火墙实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwInsName(const std::string& _fwInsName);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwInsId VPC防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFwInsId() const;
 
                     /**
                      * 设置VPC防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwInsId VPC防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwInsId(const std::string& _fwInsId);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwMode VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFwMode() const;
 
                     /**
                      * 设置VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwMode VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwMode(const int64_t& _fwMode);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC防火墙接入网络实例个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JoinInsNum VPC防火墙接入网络实例个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetJoinInsNum() const;
 
                     /**
                      * 设置VPC防火墙接入网络实例个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _joinInsNum VPC防火墙接入网络实例个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJoinInsNum(const int64_t& _joinInsNum);
@@ -151,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC防火墙开关个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwSwitchNum VPC防火墙开关个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFwSwitchNum() const;
 
                     /**
                      * 设置VPC防火墙开关个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwSwitchNum VPC防火墙开关个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwSwitchNum(const int64_t& _fwSwitchNum);
@@ -176,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -201,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC防火墙创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time VPC防火墙创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置VPC防火墙创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _time VPC防火墙创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTime(const std::string& _time);
@@ -226,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC 相关云联网ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnId VPC 相关云联网ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCcnId() const;
 
                     /**
                      * 设置VPC 相关云联网ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ccnId VPC 相关云联网ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCcnId(const std::vector<std::string>& _ccnId);
@@ -251,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC 相关云联网名称列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnName VPC 相关云联网名称列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCcnName() const;
 
                     /**
                      * 设置VPC 相关云联网名称列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ccnName VPC 相关云联网名称列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCcnName(const std::vector<std::string>& _ccnName);
@@ -276,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC 相关对等连接ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeerConnectionId VPC 相关对等连接ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPeerConnectionId() const;
 
                     /**
                      * 设置VPC 相关对等连接ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _peerConnectionId VPC 相关对等连接ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeerConnectionId(const std::vector<std::string>& _peerConnectionId);
@@ -301,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC 相关对等连接名称列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeerConnectionName VPC 相关对等连接名称列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPeerConnectionName() const;
 
                     /**
                      * 设置VPC 相关对等连接名称列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _peerConnectionName VPC 相关对等连接名称列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeerConnectionName(const std::vector<std::string>& _peerConnectionName);
@@ -326,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC防火墙CVM的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwCvmLst VPC防火墙CVM的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcFwCvmInsInfo> GetFwCvmLst() const;
 
                     /**
                      * 设置VPC防火墙CVM的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwCvmLst VPC防火墙CVM的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwCvmLst(const std::vector<VpcFwCvmInsInfo>& _fwCvmLst);
@@ -351,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC防火墙接入网络实例类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JoinInsLst VPC防火墙接入网络实例类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcFwJoinInstanceType> GetJoinInsLst() const;
 
                     /**
                      * 设置VPC防火墙接入网络实例类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _joinInsLst VPC防火墙接入网络实例类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJoinInsLst(const std::vector<VpcFwJoinInstanceType>& _joinInsLst);
@@ -376,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防火墙网关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwGateway 防火墙网关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FwGateway> GetFwGateway() const;
 
                     /**
                      * 设置防火墙网关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwGateway 防火墙网关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwGateway(const std::vector<FwGateway>& _fwGateway);
@@ -401,18 +345,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防火墙(组)ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwGroupId 防火墙(组)ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFwGroupId() const;
 
                     /**
                      * 设置防火墙(组)ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwGroupId 防火墙(组)ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwGroupId(const std::string& _fwGroupId);
@@ -426,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用规则数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleUsed 已使用规则数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleUsed() const;
 
                     /**
                      * 设置已使用规则数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleUsed 已使用规则数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleUsed(const int64_t& _ruleUsed);
@@ -451,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大规则数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleMax 最大规则数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleMax() const;
 
                     /**
                      * 设置最大规则数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleMax 最大规则数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleMax(const int64_t& _ruleMax);
@@ -476,18 +408,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防火墙实例带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 防火墙实例带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置防火墙实例带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _width 防火墙实例带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -501,18 +429,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户VPC墙总带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserVpcWidth 用户VPC墙总带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUserVpcWidth() const;
 
                     /**
                      * 设置用户VPC墙总带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userVpcWidth 用户VPC墙总带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserVpcWidth(const int64_t& _userVpcWidth);
@@ -526,18 +450,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入的vpc列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JoinInsIdLst 接入的vpc列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetJoinInsIdLst() const;
 
                     /**
                      * 设置接入的vpc列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _joinInsIdLst 接入的vpc列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJoinInsIdLst(const std::vector<std::string>& _joinInsIdLst);
@@ -572,18 +492,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineVersion 实例引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
                      * 设置实例引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineVersion 实例引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
@@ -597,18 +513,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎是否可升级：0，不可升级；1，可升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateEnable 引擎是否可升级：0，不可升级；1，可升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpdateEnable() const;
 
                     /**
                      * 设置引擎是否可升级：0，不可升级；1，可升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateEnable 引擎是否可升级：0，不可升级；1，可升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateEnable(const int64_t& _updateEnable);
@@ -622,18 +534,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎运行模式，Normal:正常, OnlyRoute:透明模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrafficMode 引擎运行模式，Normal:正常, OnlyRoute:透明模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTrafficMode() const;
 
                     /**
                      * 设置引擎运行模式，Normal:正常, OnlyRoute:透明模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trafficMode 引擎运行模式，Normal:正常, OnlyRoute:透明模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrafficMode(const std::string& _trafficMode);
@@ -647,18 +555,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎预约升级时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReserveTime 引擎预约升级时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReserveTime() const;
 
                     /**
                      * 设置引擎预约升级时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reserveTime 引擎预约升级时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReserveTime(const std::string& _reserveTime);
@@ -672,18 +576,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预约引擎升级版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReserveVersion 预约引擎升级版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReserveVersion() const;
 
                     /**
                      * 设置预约引擎升级版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reserveVersion 预约引擎升级版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReserveVersion(const std::string& _reserveVersion);
@@ -697,18 +597,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎预约升级版本状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReserveVersionState 引擎预约升级版本状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReserveVersionState() const;
 
                     /**
                      * 设置引擎预约升级版本状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reserveVersionState 引擎预约升级版本状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReserveVersionState(const std::string& _reserveVersionState);
@@ -722,18 +618,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性开关 1打开 0关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticSwitch 弹性开关 1打开 0关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetElasticSwitch() const;
 
                     /**
                      * 设置弹性开关 1打开 0关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elasticSwitch 弹性开关 1打开 0关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElasticSwitch(const int64_t& _elasticSwitch);
@@ -747,18 +639,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性带宽，单位Mbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticBandwidth 弹性带宽，单位Mbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetElasticBandwidth() const;
 
                     /**
                      * 设置弹性带宽，单位Mbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elasticBandwidth 弹性带宽，单位Mbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElasticBandwidth(const int64_t& _elasticBandwidth);
@@ -774,11 +662,9 @@ namespace TencentCloud
                      * 获取是否首次开通按量付费
 1 是
 0 不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsFirstAfterPay 是否首次开通按量付费
 1 是
 0 不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsFirstAfterPay() const;
@@ -787,11 +673,9 @@ namespace TencentCloud
                      * 设置是否首次开通按量付费
 1 是
 0 不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isFirstAfterPay 是否首次开通按量付费
 1 是
 0 不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsFirstAfterPay(const int64_t& _isFirstAfterPay);
@@ -807,140 +691,120 @@ namespace TencentCloud
 
                     /**
                      * VPC防火墙实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fwInsName;
                     bool m_fwInsNameHasBeenSet;
 
                     /**
                      * VPC防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fwInsId;
                     bool m_fwInsIdHasBeenSet;
 
                     /**
                      * VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fwMode;
                     bool m_fwModeHasBeenSet;
 
                     /**
                      * VPC防火墙接入网络实例个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_joinInsNum;
                     bool m_joinInsNumHasBeenSet;
 
                     /**
                      * VPC防火墙开关个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fwSwitchNum;
                     bool m_fwSwitchNumHasBeenSet;
 
                     /**
                      * VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * VPC防火墙创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
                      * VPC 相关云联网ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
                      * VPC 相关云联网名称列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ccnName;
                     bool m_ccnNameHasBeenSet;
 
                     /**
                      * VPC 相关对等连接ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_peerConnectionId;
                     bool m_peerConnectionIdHasBeenSet;
 
                     /**
                      * VPC 相关对等连接名称列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_peerConnectionName;
                     bool m_peerConnectionNameHasBeenSet;
 
                     /**
                      * VPC防火墙CVM的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcFwCvmInsInfo> m_fwCvmLst;
                     bool m_fwCvmLstHasBeenSet;
 
                     /**
                      * VPC防火墙接入网络实例类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcFwJoinInstanceType> m_joinInsLst;
                     bool m_joinInsLstHasBeenSet;
 
                     /**
                      * 防火墙网关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FwGateway> m_fwGateway;
                     bool m_fwGatewayHasBeenSet;
 
                     /**
                      * 防火墙(组)ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fwGroupId;
                     bool m_fwGroupIdHasBeenSet;
 
                     /**
                      * 已使用规则数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleUsed;
                     bool m_ruleUsedHasBeenSet;
 
                     /**
                      * 最大规则数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleMax;
                     bool m_ruleMaxHasBeenSet;
 
                     /**
                      * 防火墙实例带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
                      * 用户VPC墙总带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_userVpcWidth;
                     bool m_userVpcWidthHasBeenSet;
 
                     /**
                      * 接入的vpc列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_joinInsIdLst;
                     bool m_joinInsIdLstHasBeenSet;
@@ -953,56 +817,48 @@ namespace TencentCloud
 
                     /**
                      * 实例引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
 
                     /**
                      * 引擎是否可升级：0，不可升级；1，可升级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_updateEnable;
                     bool m_updateEnableHasBeenSet;
 
                     /**
                      * 引擎运行模式，Normal:正常, OnlyRoute:透明模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trafficMode;
                     bool m_trafficModeHasBeenSet;
 
                     /**
                      * 引擎预约升级时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reserveTime;
                     bool m_reserveTimeHasBeenSet;
 
                     /**
                      * 预约引擎升级版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reserveVersion;
                     bool m_reserveVersionHasBeenSet;
 
                     /**
                      * 引擎预约升级版本状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reserveVersionState;
                     bool m_reserveVersionStateHasBeenSet;
 
                     /**
                      * 弹性开关 1打开 0关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_elasticSwitch;
                     bool m_elasticSwitchHasBeenSet;
 
                     /**
                      * 弹性带宽，单位Mbps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_elasticBandwidth;
                     bool m_elasticBandwidthHasBeenSet;
@@ -1011,7 +867,6 @@ namespace TencentCloud
                      * 是否首次开通按量付费
 1 是
 0 不是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isFirstAfterPay;
                     bool m_isFirstAfterPayHasBeenSet;

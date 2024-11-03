@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取nat访问控制列表数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data nat访问控制列表数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DescAcItem> GetData() const;
@@ -98,7 +96,6 @@ namespace TencentCloud
 
                     /**
                      * nat访问控制列表数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescAcItem> m_data;
                     bool m_dataHasBeenSet;

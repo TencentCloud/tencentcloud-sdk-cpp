@@ -103,7 +103,6 @@ namespace TencentCloud
 域名包-CLB: 101207(新购),101208(续费),101209(变配)
 业务扩展包-CLB: 101210(新购),101211(续费),101212(变配)
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GoodsCategoryId 订单类型ID，用来唯一标识一个业务的一种场景（总共三种场景：新购、配置变更、续费）
 高级版: 102375(新购),102376(续费),102377(变配)
 企业版 : 102378(新购),102379(续费),102380(变配)
@@ -117,7 +116,6 @@ namespace TencentCloud
 域名包-CLB: 101207(新购),101208(续费),101209(变配)
 业务扩展包-CLB: 101210(新购),101211(续费),101212(变配)
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGoodsCategoryId() const;
@@ -136,7 +134,6 @@ namespace TencentCloud
 域名包-CLB: 101207(新购),101208(续费),101209(变配)
 业务扩展包-CLB: 101210(新购),101211(续费),101212(变配)
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _goodsCategoryId 订单类型ID，用来唯一标识一个业务的一种场景（总共三种场景：新购、配置变更、续费）
 高级版: 102375(新购),102376(续费),102377(变配)
 企业版 : 102378(新购),102379(续费),102380(变配)
@@ -150,7 +147,6 @@ namespace TencentCloud
 域名包-CLB: 101207(新购),101208(续费),101209(变配)
 业务扩展包-CLB: 101210(新购),101211(续费),101212(变配)
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGoodsCategoryId(const int64_t& _goodsCategoryId);
@@ -166,11 +162,9 @@ namespace TencentCloud
                      * 获取购买waf实例区域ID
 1 表示购买大陆资源;
 9表示购买非中国大陆资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 购买waf实例区域ID
 1 表示购买大陆资源;
 9表示购买非中国大陆资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRegionId() const;
@@ -179,11 +173,9 @@ namespace TencentCloud
                      * 设置购买waf实例区域ID
 1 表示购买大陆资源;
 9表示购买非中国大陆资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionId 购买waf实例区域ID
 1 表示购买大陆资源;
 9表示购买非中国大陆资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -223,7 +215,6 @@ namespace TencentCloud
 域名包-CLB: 101207(新购),101208(续费),101209(变配)
 业务扩展包-CLB: 101210(新购),101211(续费),101212(变配)
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_goodsCategoryId;
                     bool m_goodsCategoryIdHasBeenSet;
@@ -232,7 +223,6 @@ namespace TencentCloud
                      * 购买waf实例区域ID
 1 表示购买大陆资源;
 9表示购买非中国大陆资源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;

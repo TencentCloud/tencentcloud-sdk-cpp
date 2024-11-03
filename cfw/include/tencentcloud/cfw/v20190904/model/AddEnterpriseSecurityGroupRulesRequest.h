@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取是否使用id 默认不需要
-                     * @return IsUseId 是否使用id 默认不需要
+                     * 获取是否复用rule id，1为是，默认不需要
+                     * @return IsUseId 是否复用rule id，1为是，默认不需要
                      * 
                      */
                     int64_t GetIsUseId() const;
 
                     /**
-                     * 设置是否使用id 默认不需要
-                     * @param _isUseId 是否使用id 默认不需要
+                     * 设置是否复用rule id，1为是，默认不需要
+                     * @param _isUseId 是否复用rule id，1为是，默认不需要
                      * 
                      */
                     void SetIsUseId(const int64_t& _isUseId);
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_fromHasBeenSet;
 
                     /**
-                     * 是否使用id 默认不需要
+                     * 是否复用rule id，1为是，默认不需要
                      */
                     int64_t m_isUseId;
                     bool m_isUseIdHasBeenSet;

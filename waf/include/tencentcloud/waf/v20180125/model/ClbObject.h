@@ -363,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对象类型：CLB:负载均衡器，TSE:云原生网关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 对象类型：CLB:负载均衡器，TSE:云原生网关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置对象类型：CLB:负载均衡器，TSE:云原生网关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 对象类型：CLB:负载均衡器，TSE:云原生网关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -388,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对象地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 对象地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置对象地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 对象地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -413,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Proxy 代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProxy() const;
 
                     /**
                      * 设置代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxy 代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxy(const uint64_t& _proxy);
@@ -438,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定获取客户端IP的头部字段列表。IsCdn为3时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpHeaders 指定获取客户端IP的头部字段列表。IsCdn为3时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetIpHeaders() const;
 
                     /**
                      * 设置指定获取客户端IP的头部字段列表。IsCdn为3时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipHeaders 指定获取客户端IP的头部字段列表。IsCdn为3时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpHeaders(const std::vector<std::string>& _ipHeaders);
@@ -463,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取bot防护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BotStatus bot防护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBotStatus() const;
 
                     /**
                      * 设置bot防护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _botStatus bot防护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBotStatus(const int64_t& _botStatus);
@@ -488,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取api防护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiStatus api防护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetApiStatus() const;
 
                     /**
                      * 设置api防护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apiStatus api防护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApiStatus(const int64_t& _apiStatus);
@@ -513,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectFlowMode 对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetObjectFlowMode() const;
 
                     /**
                      * 设置对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectFlowMode 对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectFlowMode(const int64_t& _objectFlowMode);
@@ -538,18 +510,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数值形式的私有网络 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NumericalVpcId 数值形式的私有网络 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNumericalVpcId() const;
 
                     /**
                      * 设置数值形式的私有网络 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _numericalVpcId 数值形式的私有网络 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNumericalVpcId(const int64_t& _numericalVpcId);
@@ -655,56 +623,48 @@ namespace TencentCloud
 
                     /**
                      * 对象类型：CLB:负载均衡器，TSE:云原生网关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 对象地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_proxy;
                     bool m_proxyHasBeenSet;
 
                     /**
                      * 指定获取客户端IP的头部字段列表。IsCdn为3时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ipHeaders;
                     bool m_ipHeadersHasBeenSet;
 
                     /**
                      * bot防护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_botStatus;
                     bool m_botStatusHasBeenSet;
 
                     /**
                      * api防护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_apiStatus;
                     bool m_apiStatusHasBeenSet;
 
                     /**
                      * 对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_objectFlowMode;
                     bool m_objectFlowModeHasBeenSet;
 
                     /**
                      * 数值形式的私有网络 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_numericalVpcId;
                     bool m_numericalVpcIdHasBeenSet;

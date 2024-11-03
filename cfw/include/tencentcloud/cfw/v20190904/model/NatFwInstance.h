@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 实例所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置实例所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 实例所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0:新增模式，1:接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwMode 0:新增模式，1:接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFwMode() const;
 
                     /**
                      * 设置0:新增模式，1:接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwMode 0:新增模式，1:接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwMode(const int64_t& _fwMode);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0:正常状态， 1: 正在创建
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 0:正常状态， 1: 正在创建
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置0:正常状态， 1: 正在创建
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 0:正常状态， 1: 正在创建
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取nat公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatIp nat公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNatIp() const;
 
                     /**
                      * 设置nat公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _natIp nat公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNatIp(const std::string& _natIp);
@@ -204,28 +188,24 @@ namespace TencentCloud
 
                     /**
                      * 实例所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 0:新增模式，1:接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fwMode;
                     bool m_fwModeHasBeenSet;
 
                     /**
                      * 0:正常状态， 1: 正在创建
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * nat公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_natIp;
                     bool m_natIpHasBeenSet;

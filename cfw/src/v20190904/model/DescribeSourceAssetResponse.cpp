@@ -24,9 +24,9 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 DescribeSourceAssetResponse::DescribeSourceAssetResponse() :
-    m_zoneListHasBeenSet(false),
     m_dataHasBeenSet(false),
-    m_totalHasBeenSet(false)
+    m_totalHasBeenSet(false),
+    m_zoneListHasBeenSet(false)
 {
 }
 
@@ -64,26 +64,6 @@ CoreInternalOutcome DescribeSourceAssetResponse::Deserialize(const string &paylo
     }
 
 
-    if (rsp.HasMember("ZoneList") && !rsp["ZoneList"].IsNull())
-    {
-        if (!rsp["ZoneList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ZoneList` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["ZoneList"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            AssetZone item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_zoneList.push_back(item);
-        }
-        m_zoneListHasBeenSet = true;
-    }
-
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
         if (!rsp["Data"].IsArray())
@@ -114,6 +94,26 @@ CoreInternalOutcome DescribeSourceAssetResponse::Deserialize(const string &paylo
         m_totalHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ZoneList") && !rsp["ZoneList"].IsNull())
+    {
+        if (!rsp["ZoneList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ZoneList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ZoneList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AssetZone item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_zoneList.push_back(item);
+        }
+        m_zoneListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -123,21 +123,6 @@ string DescribeSourceAssetResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_zoneListHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ZoneList";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_zoneList.begin(); itr != m_zoneList.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
 
     if (m_dataHasBeenSet)
     {
@@ -162,6 +147,21 @@ string DescribeSourceAssetResponse::ToJsonString() const
         value.AddMember(iKey, m_total, allocator);
     }
 
+    if (m_zoneListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_zoneList.begin(); itr != m_zoneList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -173,16 +173,6 @@ string DescribeSourceAssetResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<AssetZone> DescribeSourceAssetResponse::GetZoneList() const
-{
-    return m_zoneList;
-}
-
-bool DescribeSourceAssetResponse::ZoneListHasBeenSet() const
-{
-    return m_zoneListHasBeenSet;
-}
 
 vector<InstanceInfo> DescribeSourceAssetResponse::GetData() const
 {
@@ -202,6 +192,16 @@ int64_t DescribeSourceAssetResponse::GetTotal() const
 bool DescribeSourceAssetResponse::TotalHasBeenSet() const
 {
     return m_totalHasBeenSet;
+}
+
+vector<AssetZone> DescribeSourceAssetResponse::GetZoneList() const
+{
+    return m_zoneList;
+}
+
+bool DescribeSourceAssetResponse::ZoneListHasBeenSet() const
+{
+    return m_zoneListHasBeenSet;
 }
 
 

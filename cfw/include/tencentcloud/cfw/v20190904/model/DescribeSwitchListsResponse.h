@@ -88,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取打开个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OnNum 打开个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOnNum() const;
@@ -104,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关闭个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OffNum 关闭个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOffNum() const;
@@ -140,14 +136,12 @@ namespace TencentCloud
 
                     /**
                      * 打开个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_onNum;
                     bool m_onNumHasBeenSet;
 
                     /**
                      * 关闭个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_offNum;
                     bool m_offNumHasBeenSet;

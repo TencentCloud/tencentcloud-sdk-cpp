@@ -174,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -199,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定域名访问日志字段的开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WriteConfig 指定域名访问日志字段的开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWriteConfig() const;
 
                     /**
                      * 设置指定域名访问日志字段的开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _writeConfig 指定域名访问日志字段的开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWriteConfig(const std::string& _writeConfig);
@@ -224,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定域名是否写cls的开关 1:写 0:不写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cls 指定域名是否写cls的开关 1:写 0:不写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCls() const;
 
                     /**
                      * 设置指定域名是否写cls的开关 1:写 0:不写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cls 指定域名是否写cls的开关 1:写 0:不写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCls(const uint64_t& _cls);
@@ -249,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标记是否是混合云接入。hybrid表示混合云接入域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudType 标记是否是混合云接入。hybrid表示混合云接入域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCloudType() const;
 
                     /**
                      * 设置标记是否是混合云接入。hybrid表示混合云接入域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudType 标记是否是混合云接入。hybrid表示混合云接入域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudType(const std::string& _cloudType);
@@ -274,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标记clbwaf类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlbType 标记clbwaf类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlbType() const;
 
                     /**
                      * 设置标记clbwaf类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _albType 标记clbwaf类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlbType(const std::string& _albType);
@@ -299,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取BOT开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BotStatus BOT开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBotStatus() const;
 
                     /**
                      * 设置BOT开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _botStatus BOT开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBotStatus(const int64_t& _botStatus);
@@ -324,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取API开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiStatus API开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetApiStatus() const;
 
                     /**
                      * 设置API开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apiStatus API开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApiStatus(const int64_t& _apiStatus);
@@ -387,49 +359,42 @@ namespace TencentCloud
 
                     /**
                      * 版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 指定域名访问日志字段的开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_writeConfig;
                     bool m_writeConfigHasBeenSet;
 
                     /**
                      * 指定域名是否写cls的开关 1:写 0:不写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cls;
                     bool m_clsHasBeenSet;
 
                     /**
                      * 标记是否是混合云接入。hybrid表示混合云接入域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cloudType;
                     bool m_cloudTypeHasBeenSet;
 
                     /**
                      * 标记clbwaf类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_albType;
                     bool m_albTypeHasBeenSet;
 
                     /**
                      * BOT开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_botStatus;
                     bool m_botStatusHasBeenSet;
 
                     /**
                      * API开关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_apiStatus;
                     bool m_apiStatusHasBeenSet;

@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取新增的规则对应的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 新增的规则对应的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 新增的规则对应的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;

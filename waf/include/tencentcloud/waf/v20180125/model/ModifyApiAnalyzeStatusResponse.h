@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已经开启的数量,如果返回值为3（大于支持的域名开启数量），则表示开启失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 已经开启的数量,如果返回值为3（大于支持的域名开启数量），则表示开启失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCount() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取不支持开启的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnSupportedList 不支持开启的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUnSupportedList() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取开启/关闭失败的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailDomainList 开启/关闭失败的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFailDomainList() const;
@@ -95,21 +89,18 @@ namespace TencentCloud
 
                     /**
                      * 已经开启的数量,如果返回值为3（大于支持的域名开启数量），则表示开启失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * 不支持开启的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_unSupportedList;
                     bool m_unSupportedListHasBeenSet;
 
                     /**
                      * 开启/关闭失败的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_failDomainList;
                     bool m_failDomainListHasBeenSet;

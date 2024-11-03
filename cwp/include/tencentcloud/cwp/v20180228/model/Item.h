@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomItemValues 自定义阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetCustomItemValues() const;
 
                     /**
                      * 设置自定义阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customItemValues 自定义阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomItemValues(const std::vector<uint64_t>& _customItemValues);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检测项所属分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryId 检测项所属分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCategoryId() const;
 
                     /**
                      * 设置检测项所属分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryId 检测项所属分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryId(const int64_t& _categoryId);
@@ -154,14 +146,12 @@ namespace TencentCloud
 
                     /**
                      * 自定义阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_customItemValues;
                     bool m_customItemValuesHasBeenSet;
 
                     /**
                      * 检测项所属分类
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_categoryId;
                     bool m_categoryIdHasBeenSet;

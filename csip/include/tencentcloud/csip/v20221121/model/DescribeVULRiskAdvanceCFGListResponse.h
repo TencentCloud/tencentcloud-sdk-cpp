@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取配置项列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 配置项列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VULRiskAdvanceCFGList> GetData() const;
@@ -77,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险等级过滤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevelLists 风险等级过滤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetRiskLevelLists() const;
@@ -93,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞类型过滤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VULTypeLists 漏洞类型过滤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetVULTypeLists() const;
@@ -109,9 +103,7 @@ namespace TencentCloud
 
                     /**
                      * 获取识别来源过滤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckFromLists 识别来源过滤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetCheckFromLists() const;
@@ -125,9 +117,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulTagList 漏洞标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetVulTagList() const;
@@ -143,7 +133,6 @@ namespace TencentCloud
 
                     /**
                      * 配置项列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VULRiskAdvanceCFGList> m_data;
                     bool m_dataHasBeenSet;
@@ -156,28 +145,24 @@ namespace TencentCloud
 
                     /**
                      * 风险等级过滤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_riskLevelLists;
                     bool m_riskLevelListsHasBeenSet;
 
                     /**
                      * 漏洞类型过滤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_vULTypeLists;
                     bool m_vULTypeListsHasBeenSet;
 
                     /**
                      * 识别来源过滤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_checkFromLists;
                     bool m_checkFromListsHasBeenSet;
 
                     /**
                      * 漏洞标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_vulTagList;
                     bool m_vulTagListHasBeenSet;

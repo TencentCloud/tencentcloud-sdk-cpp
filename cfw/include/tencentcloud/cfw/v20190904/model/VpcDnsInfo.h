@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取nat网关id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatInsId nat网关id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNatInsId() const;
 
                     /**
                      * 设置nat网关id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _natInsId nat网关id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNatInsId(const std::string& _natInsId);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取nat网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatInsName nat网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNatInsName() const;
 
                     /**
                      * 设置nat网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _natInsName nat网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNatInsName(const std::string& _natInsName);
@@ -224,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0：未防护， 1: 已防护，2：忽略此字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtectedStatus 0：未防护， 1: 已防护，2：忽略此字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProtectedStatus() const;
 
                     /**
                      * 设置0：未防护， 1: 已防护，2：忽略此字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protectedStatus 0：未防护， 1: 已防护，2：忽略此字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtectedStatus(const uint64_t& _protectedStatus);
@@ -249,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持DNS FW，0-不支持、1-支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportDNSFW 是否支持DNS FW，0-不支持、1-支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSupportDNSFW() const;
 
                     /**
                      * 设置是否支持DNS FW，0-不支持、1-支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportDNSFW 是否支持DNS FW，0-不支持、1-支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportDNSFW(const uint64_t& _supportDNSFW);
@@ -306,14 +290,12 @@ namespace TencentCloud
 
                     /**
                      * nat网关id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_natInsId;
                     bool m_natInsIdHasBeenSet;
 
                     /**
                      * nat网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_natInsName;
                     bool m_natInsNameHasBeenSet;
@@ -326,14 +308,12 @@ namespace TencentCloud
 
                     /**
                      * 0：未防护， 1: 已防护，2：忽略此字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_protectedStatus;
                     bool m_protectedStatusHasBeenSet;
 
                     /**
                      * 是否支持DNS FW，0-不支持、1-支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_supportDNSFW;
                     bool m_supportDNSFWHasBeenSet;

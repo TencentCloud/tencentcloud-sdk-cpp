@@ -177,7 +177,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartDetail 部位详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     PartDesc GetPartDetail() const;
 
@@ -186,16 +186,41 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partDetail 部位详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetPartDetail(const PartDesc& _partDetail);
 
                     /**
                      * 判断参数 PartDetail 是否已赋值
                      * @return PartDetail 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PartDetailHasBeenSet() const;
+
+                    /**
+                     * 获取部位详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PartDetailList 部位详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<PartDesc> GetPartDetailList() const;
+
+                    /**
+                     * 设置部位详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _partDetailList 部位详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPartDetailList(const std::vector<PartDesc>& _partDetailList);
+
+                    /**
+                     * 判断参数 PartDetailList 是否已赋值
+                     * @return PartDetailList 是否已赋值
+                     * 
+                     */
+                    bool PartDetailListHasBeenSet() const;
 
                 private:
 
@@ -240,6 +265,13 @@ namespace TencentCloud
                      */
                     PartDesc m_partDetail;
                     bool m_partDetailHasBeenSet;
+
+                    /**
+                     * 部位详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PartDesc> m_partDetailList;
+                    bool m_partDetailListHasBeenSet;
 
                 };
             }

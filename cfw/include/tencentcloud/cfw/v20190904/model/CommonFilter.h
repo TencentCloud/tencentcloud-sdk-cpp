@@ -68,27 +68,6 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取检索的值，各检索值间为OR关系
-                     * @return Values 检索的值，各检索值间为OR关系
-                     * 
-                     */
-                    std::vector<std::string> GetValues() const;
-
-                    /**
-                     * 设置检索的值，各检索值间为OR关系
-                     * @param _values 检索的值，各检索值间为OR关系
-                     * 
-                     */
-                    void SetValues(const std::vector<std::string>& _values);
-
-                    /**
-                     * 判断参数 Values 是否已赋值
-                     * @return Values 是否已赋值
-                     * 
-                     */
-                    bool ValuesHasBeenSet() const;
-
-                    /**
                      * 获取枚举类型，代表Name与Values之间的匹配关系
 enum FilterOperatorType {
     //等于
@@ -181,6 +160,27 @@ enum FilterOperatorType {
                      */
                     bool OperatorTypeHasBeenSet() const;
 
+                    /**
+                     * 获取检索的值，各检索值间为OR关系
+                     * @return Values 检索的值，各检索值间为OR关系
+                     * 
+                     */
+                    std::vector<std::string> GetValues() const;
+
+                    /**
+                     * 设置检索的值，各检索值间为OR关系
+                     * @param _values 检索的值，各检索值间为OR关系
+                     * 
+                     */
+                    void SetValues(const std::vector<std::string>& _values);
+
+                    /**
+                     * 判断参数 Values 是否已赋值
+                     * @return Values 是否已赋值
+                     * 
+                     */
+                    bool ValuesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,12 +188,6 @@ enum FilterOperatorType {
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
-
-                    /**
-                     * 检索的值，各检索值间为OR关系
-                     */
-                    std::vector<std::string> m_values;
-                    bool m_valuesHasBeenSet;
 
                     /**
                      * 枚举类型，代表Name与Values之间的匹配关系
@@ -218,6 +212,12 @@ enum FilterOperatorType {
                      */
                     int64_t m_operatorType;
                     bool m_operatorTypeHasBeenSet;
+
+                    /**
+                     * 检索的值，各检索值间为OR关系
+                     */
+                    std::vector<std::string> m_values;
+                    bool m_valuesHasBeenSet;
 
                 };
             }

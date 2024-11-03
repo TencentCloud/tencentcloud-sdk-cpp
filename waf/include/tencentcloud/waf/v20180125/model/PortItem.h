@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool UpstreamProtocolHasBeenSet() const;
 
                     /**
-                     * 获取Nginx的服务器ID
-                     * @return NginxServerId Nginx的服务器ID
+                     * 获取Nginx的服务器ID,新增域名时填"0"
+                     * @return NginxServerId Nginx的服务器ID,新增域名时填"0"
                      * 
                      */
                     std::string GetNginxServerId() const;
 
                     /**
-                     * 设置Nginx的服务器ID
-                     * @param _nginxServerId Nginx的服务器ID
+                     * 设置Nginx的服务器ID,新增域名时填"0"
+                     * @param _nginxServerId Nginx的服务器ID,新增域名时填"0"
                      * 
                      */
                     void SetNginxServerId(const std::string& _nginxServerId);
@@ -178,7 +178,7 @@ namespace TencentCloud
                     bool m_upstreamProtocolHasBeenSet;
 
                     /**
-                     * Nginx的服务器ID
+                     * Nginx的服务器ID,新增域名时填"0"
                      */
                     std::string m_nginxServerId;
                     bool m_nginxServerIdHasBeenSet;

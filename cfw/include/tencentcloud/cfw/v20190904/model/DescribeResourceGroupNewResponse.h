@@ -58,18 +58,18 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取未分类实例数量
-                     * @return UnResourceNum 未分类实例数量
+                     * 获取返回码；0为请求成功
+                     * @return ReturnCode 返回码；0为请求成功
                      * 
                      */
-                    int64_t GetUnResourceNum() const;
+                    int64_t GetReturnCode() const;
 
                     /**
-                     * 判断参数 UnResourceNum 是否已赋值
-                     * @return UnResourceNum 是否已赋值
+                     * 判断参数 ReturnCode 是否已赋值
+                     * @return ReturnCode 是否已赋值
                      * 
                      */
-                    bool UnResourceNumHasBeenSet() const;
+                    bool ReturnCodeHasBeenSet() const;
 
                     /**
                      * 获取接口返回消息
@@ -86,18 +86,18 @@ namespace TencentCloud
                     bool ReturnMsgHasBeenSet() const;
 
                     /**
-                     * 获取返回码；0为请求成功
-                     * @return ReturnCode 返回码；0为请求成功
+                     * 获取未分类实例数量
+                     * @return UnResourceNum 未分类实例数量
                      * 
                      */
-                    int64_t GetReturnCode() const;
+                    int64_t GetUnResourceNum() const;
 
                     /**
-                     * 判断参数 ReturnCode 是否已赋值
-                     * @return ReturnCode 是否已赋值
+                     * 判断参数 UnResourceNum 是否已赋值
+                     * @return UnResourceNum 是否已赋值
                      * 
                      */
-                    bool ReturnCodeHasBeenSet() const;
+                    bool UnResourceNumHasBeenSet() const;
 
                 private:
 
@@ -108,10 +108,10 @@ namespace TencentCloud
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 未分类实例数量
+                     * 返回码；0为请求成功
                      */
-                    int64_t m_unResourceNum;
-                    bool m_unResourceNumHasBeenSet;
+                    int64_t m_returnCode;
+                    bool m_returnCodeHasBeenSet;
 
                     /**
                      * 接口返回消息
@@ -120,10 +120,10 @@ namespace TencentCloud
                     bool m_returnMsgHasBeenSet;
 
                     /**
-                     * 返回码；0为请求成功
+                     * 未分类实例数量
                      */
-                    int64_t m_returnCode;
-                    bool m_returnCodeHasBeenSet;
+                    int64_t m_unResourceNum;
+                    bool m_unResourceNumHasBeenSet;
 
                 };
             }

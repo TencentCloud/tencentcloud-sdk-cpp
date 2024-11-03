@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssociatedInstanceInfo> GetData() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssociatedInstanceInfo> m_data;
                     bool m_dataHasBeenSet;

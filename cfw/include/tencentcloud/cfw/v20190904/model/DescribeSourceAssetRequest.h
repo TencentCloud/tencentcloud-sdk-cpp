@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取ChooseType为1，查询已经分组的资产；ChooseType不为1查询没有分组的资产
+                     * @return ChooseType ChooseType为1，查询已经分组的资产；ChooseType不为1查询没有分组的资产
+                     * 
+                     */
+                    std::string GetChooseType() const;
+
+                    /**
+                     * 设置ChooseType为1，查询已经分组的资产；ChooseType不为1查询没有分组的资产
+                     * @param _chooseType ChooseType为1，查询已经分组的资产；ChooseType不为1查询没有分组的资产
+                     * 
+                     */
+                    void SetChooseType(const std::string& _chooseType);
+
+                    /**
+                     * 判断参数 ChooseType 是否已赋值
+                     * @return ChooseType 是否已赋值
+                     * 
+                     */
+                    bool ChooseTypeHasBeenSet() const;
+
+                    /**
                      * 获取模糊查询
                      * @return FuzzySearch 模糊查询
                      * 
@@ -83,48 +104,6 @@ namespace TencentCloud
                      * 
                      */
                     bool InsTypeHasBeenSet() const;
-
-                    /**
-                     * 获取ChooseType为1，查询已经分组的资产；ChooseType不为1查询没有分组的资产
-                     * @return ChooseType ChooseType为1，查询已经分组的资产；ChooseType不为1查询没有分组的资产
-                     * 
-                     */
-                    std::string GetChooseType() const;
-
-                    /**
-                     * 设置ChooseType为1，查询已经分组的资产；ChooseType不为1查询没有分组的资产
-                     * @param _chooseType ChooseType为1，查询已经分组的资产；ChooseType不为1查询没有分组的资产
-                     * 
-                     */
-                    void SetChooseType(const std::string& _chooseType);
-
-                    /**
-                     * 判断参数 ChooseType 是否已赋值
-                     * @return ChooseType 是否已赋值
-                     * 
-                     */
-                    bool ChooseTypeHasBeenSet() const;
-
-                    /**
-                     * 获取地域
-                     * @return Zone 地域
-                     * 
-                     */
-                    std::string GetZone() const;
-
-                    /**
-                     * 设置地域
-                     * @param _zone 地域
-                     * 
-                     */
-                    void SetZone(const std::string& _zone);
-
-                    /**
-                     * 判断参数 Zone 是否已赋值
-                     * @return Zone 是否已赋值
-                     * 
-                     */
-                    bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取查询单页的最大值；eg：10；则最多返回10条结果
@@ -168,7 +147,34 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取地域
+                     * @return Zone 地域
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置地域
+                     * @param _zone 地域
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * ChooseType为1，查询已经分组的资产；ChooseType不为1查询没有分组的资产
+                     */
+                    std::string m_chooseType;
+                    bool m_chooseTypeHasBeenSet;
 
                     /**
                      * 模糊查询
@@ -183,18 +189,6 @@ namespace TencentCloud
                     bool m_insTypeHasBeenSet;
 
                     /**
-                     * ChooseType为1，查询已经分组的资产；ChooseType不为1查询没有分组的资产
-                     */
-                    std::string m_chooseType;
-                    bool m_chooseTypeHasBeenSet;
-
-                    /**
-                     * 地域
-                     */
-                    std::string m_zone;
-                    bool m_zoneHasBeenSet;
-
-                    /**
                      * 查询单页的最大值；eg：10；则最多返回10条结果
                      */
                     int64_t m_limit;
@@ -205,6 +199,12 @@ namespace TencentCloud
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 地域
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
 
                 };
             }

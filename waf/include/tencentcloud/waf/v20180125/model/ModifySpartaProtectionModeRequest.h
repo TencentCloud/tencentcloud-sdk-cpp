@@ -134,6 +134,27 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取实例id
+                     * @return InstanceID 实例id
+                     * 
+                     */
+                    std::string GetInstanceID() const;
+
+                    /**
+                     * 设置实例id
+                     * @param _instanceID 实例id
+                     * 
+                     */
+                    void SetInstanceID(const std::string& _instanceID);
+
+                    /**
+                     * 判断参数 InstanceID 是否已赋值
+                     * @return InstanceID 是否已赋值
+                     * 
+                     */
+                    bool InstanceIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,6 +182,12 @@ namespace TencentCloud
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 实例id
+                     */
+                    std::string m_instanceID;
+                    bool m_instanceIDHasBeenSet;
 
                 };
             }

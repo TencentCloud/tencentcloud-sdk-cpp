@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool MatchFuncHasBeenSet() const;
 
                     /**
-                     * 获取动作
-                     * @return ActionType 动作
+                     * 获取动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，24表示JS校验
+                     * @return ActionType 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，24表示JS校验
                      * 
                      */
                     uint64_t GetActionType() const;
 
                     /**
-                     * 设置动作
-                     * @param _actionType 动作
+                     * 设置动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，24表示JS校验
+                     * @param _actionType 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，24表示JS校验
                      * 
                      */
                     void SetActionType(const uint64_t& _actionType);
@@ -346,18 +346,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联的Session规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionApplied 关联的Session规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetSessionApplied() const;
 
                     /**
                      * 设置关联的Session规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionApplied 关联的Session规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionApplied(const std::vector<int64_t>& _sessionApplied);
@@ -439,7 +435,7 @@ namespace TencentCloud
                     bool m_matchFuncHasBeenSet;
 
                     /**
-                     * 动作
+                     * 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，24表示JS校验
                      */
                     uint64_t m_actionType;
                     bool m_actionTypeHasBeenSet;
@@ -483,7 +479,6 @@ namespace TencentCloud
 
                     /**
                      * 关联的Session规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_sessionApplied;
                     bool m_sessionAppliedHasBeenSet;

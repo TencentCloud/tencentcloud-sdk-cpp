@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接收人名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 接收人名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置接收人名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 接收人名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取webhook地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Addr webhook地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddr() const;
 
                     /**
                      * 设置webhook地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addr webhook地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddr(const std::string& _addr);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 接收人名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * webhook地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addr;
                     bool m_addrHasBeenSet;

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取筛选条件，支持 ActionType 40/42，Ip：ip地址，Domain：域名三类
-                     * @return Filters 筛选条件，支持 ActionType 40/42，Ip：ip地址，Domain：域名三类
+                     * 获取筛选条件，支持 ActionType，可选的值为40（白名单）42（黑名单），ValidStatus，可选的值为1（生效）0（过期）
+                     * @return Filters 筛选条件，支持 ActionType，可选的值为40（白名单）42（黑名单），ValidStatus，可选的值为1（生效）0（过期）
                      * 
                      */
                     std::vector<FiltersItemNew> GetFilters() const;
 
                     /**
-                     * 设置筛选条件，支持 ActionType 40/42，Ip：ip地址，Domain：域名三类
-                     * @param _filters 筛选条件，支持 ActionType 40/42，Ip：ip地址，Domain：域名三类
+                     * 设置筛选条件，支持 ActionType，可选的值为40（白名单）42（黑名单），ValidStatus，可选的值为1（生效）0（过期）
+                     * @param _filters 筛选条件，支持 ActionType，可选的值为40（白名单）42（黑名单），ValidStatus，可选的值为1（生效）0（过期）
                      * 
                      */
                     void SetFilters(const std::vector<FiltersItemNew>& _filters);
@@ -130,7 +130,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 筛选条件，支持 ActionType 40/42，Ip：ip地址，Domain：域名三类
+                     * 筛选条件，支持 ActionType，可选的值为40（白名单）42（黑名单），ValidStatus，可选的值为1（生效）0（过期）
                      */
                     std::vector<FiltersItemNew> m_filters;
                     bool m_filtersHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 任务日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScanTaskInfo> GetData() const;
@@ -94,14 +90,12 @@ namespace TencentCloud
 
                     /**
                      * 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 任务日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScanTaskInfo> m_data;
                     bool m_dataHasBeenSet;

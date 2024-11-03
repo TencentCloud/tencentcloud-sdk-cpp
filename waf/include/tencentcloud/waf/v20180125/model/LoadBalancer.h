@@ -237,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡的VPCID，公网为-1，内网按实际填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NumericalVpcId 负载均衡的VPCID，公网为-1，内网按实际填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNumericalVpcId() const;
 
                     /**
                      * 设置负载均衡的VPCID，公网为-1，内网按实际填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _numericalVpcId 负载均衡的VPCID，公网为-1，内网按实际填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNumericalVpcId(const int64_t& _numericalVpcId);
@@ -261,19 +257,15 @@ namespace TencentCloud
                     bool NumericalVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡的网络类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LoadBalancerType 负载均衡的网络类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网
+                     * @return LoadBalancerType 负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网
                      * 
                      */
                     std::string GetLoadBalancerType() const;
 
                     /**
-                     * 设置负载均衡的网络类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _loadBalancerType 负载均衡的网络类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网
+                     * @param _loadBalancerType 负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网
                      * 
                      */
                     void SetLoadBalancerType(const std::string& _loadBalancerType);
@@ -287,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerDomain 负载均衡的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLoadBalancerDomain() const;
 
                     /**
                      * 设置负载均衡的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadBalancerDomain 负载均衡的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoadBalancerDomain(const std::string& _loadBalancerDomain);
@@ -368,21 +356,18 @@ namespace TencentCloud
 
                     /**
                      * 负载均衡的VPCID，公网为-1，内网按实际填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_numericalVpcId;
                     bool m_numericalVpcIdHasBeenSet;
 
                     /**
-                     * 负载均衡的网络类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网
                      */
                     std::string m_loadBalancerType;
                     bool m_loadBalancerTypeHasBeenSet;
 
                     /**
                      * 负载均衡的域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loadBalancerDomain;
                     bool m_loadBalancerDomainHasBeenSet;

@@ -49,10 +49,8 @@ namespace TencentCloud
                     /**
                      * 获取产品名称:
 "cfw_waf_virtual", "cwp_detect", "cwp_defense", "cwp_fix"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName 产品名称:
 "cfw_waf_virtual", "cwp_detect", "cwp_defense", "cwp_fix"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceName() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     /**
                      * 设置产品名称:
 "cfw_waf_virtual", "cwp_detect", "cwp_defense", "cwp_fix"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceName 产品名称:
 "cfw_waf_virtual", "cwp_detect", "cwp_defense", "cwp_fix"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -77,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已处理的资产总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportHandledCount 已处理的资产总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSupportHandledCount() const;
 
                     /**
                      * 设置已处理的资产总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportHandledCount 已处理的资产总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportHandledCount(const int64_t& _supportHandledCount);
@@ -102,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持的资产总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportTotalCount 支持的资产总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSupportTotalCount() const;
 
                     /**
                      * 设置支持的资产总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportTotalCount 支持的资产总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportTotalCount(const int64_t& _supportTotalCount);
@@ -127,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持该产品1支持；0不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupport 是否支持该产品1支持；0不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsSupport() const;
 
                     /**
                      * 设置是否支持该产品1支持；0不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSupport 是否支持该产品1支持；0不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSupport(const bool& _isSupport);
@@ -155,28 +139,24 @@ namespace TencentCloud
                     /**
                      * 产品名称:
 "cfw_waf_virtual", "cwp_detect", "cwp_defense", "cwp_fix"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
                      * 已处理的资产总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_supportHandledCount;
                     bool m_supportHandledCountHasBeenSet;
 
                     /**
                      * 支持的资产总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_supportTotalCount;
                     bool m_supportTotalCountHasBeenSet;
 
                     /**
                      * 是否支持该产品1支持；0不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isSupport;
                     bool m_isSupportHasBeenSet;

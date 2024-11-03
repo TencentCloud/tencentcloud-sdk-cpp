@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否大小写敏感
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CaseSensitive 是否大小写敏感
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCaseSensitive() const;
 
                     /**
                      * 设置是否大小写敏感
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _caseSensitive 是否大小写敏感
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCaseSensitive(const bool& _caseSensitive);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取全文索引的分词符，字符串中每个字符代表一个分词符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tokenizer 全文索引的分词符，字符串中每个字符代表一个分词符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTokenizer() const;
 
                     /**
                      * 设置全文索引的分词符，字符串中每个字符代表一个分词符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tokenizer 全文索引的分词符，字符串中每个字符代表一个分词符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTokenizer(const std::string& _tokenizer);
@@ -99,9 +91,7 @@ namespace TencentCloud
                     /**
                      * 获取是否包含中文
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainZH 是否包含中文
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -110,9 +100,7 @@ namespace TencentCloud
                     /**
                      * 设置是否包含中文
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containZH 是否包含中文
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -129,21 +117,18 @@ namespace TencentCloud
 
                     /**
                      * 是否大小写敏感
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_caseSensitive;
                     bool m_caseSensitiveHasBeenSet;
 
                     /**
                      * 全文索引的分词符，字符串中每个字符代表一个分词符
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tokenizer;
                     bool m_tokenizerHasBeenSet;
 
                     /**
                      * 是否包含中文
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_containZH;

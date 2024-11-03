@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取规则总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllTotal 规则总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAllTotal() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取阻断策略规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyNum 阻断策略规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStrategyNum() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取启用规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartRuleNum 启用规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStartRuleNum() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取停用规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StopRuleNum 停用规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStopRuleNum() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取剩余配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainingNum 剩余配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRemainingNum() const;
@@ -127,35 +117,30 @@ namespace TencentCloud
 
                     /**
                      * 规则总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_allTotal;
                     bool m_allTotalHasBeenSet;
 
                     /**
                      * 阻断策略规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_strategyNum;
                     bool m_strategyNumHasBeenSet;
 
                     /**
                      * 启用规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_startRuleNum;
                     bool m_startRuleNumHasBeenSet;
 
                     /**
                      * 停用规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_stopRuleNum;
                     bool m_stopRuleNumHasBeenSet;
 
                     /**
                      * 剩余配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_remainingNum;
                     bool m_remainingNumHasBeenSet;

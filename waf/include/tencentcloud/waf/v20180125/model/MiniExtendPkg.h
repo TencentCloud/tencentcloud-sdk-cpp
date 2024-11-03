@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceIds 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceIds() const;
 
                     /**
                      * 设置资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceIds 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceIds(const std::string& _resourceIds);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const int64_t& _region);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取购买数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 购买数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置购买数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 购买数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取续费标志
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 续费标志
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRenewFlag() const;
 
                     /**
                      * 设置续费标志
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _renewFlag 续费标志
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRenewFlag(const uint64_t& _renewFlag);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillingItem 计费项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillingItem() const;
 
                     /**
                      * 设置计费项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billingItem 计费项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillingItem(const std::string& _billingItem);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 购买数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * 续费标志
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
                      * 计费项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billingItem;
                     bool m_billingItemHasBeenSet;

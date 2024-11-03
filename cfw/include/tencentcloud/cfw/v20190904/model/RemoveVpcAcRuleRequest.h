@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool RuleUuidsHasBeenSet() const;
 
+                    /**
+                     * 获取仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则
+                     * @return IpVersion 仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则
+                     * 
+                     */
+                    uint64_t GetIpVersion() const;
+
+                    /**
+                     * 设置仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则
+                     * @param _ipVersion 仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则
+                     * 
+                     */
+                    void SetIpVersion(const uint64_t& _ipVersion);
+
+                    /**
+                     * 判断参数 IpVersion 是否已赋值
+                     * @return IpVersion 是否已赋值
+                     * 
+                     */
+                    bool IpVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_ruleUuids;
                     bool m_ruleUuidsHasBeenSet;
+
+                    /**
+                     * 仅当RuleUuids为-1时有效；0：删除Ipv4规则，1：删除Ipv6规则；默认为Ipv4类型规则
+                     */
+                    uint64_t m_ipVersion;
+                    bool m_ipVersionHasBeenSet;
 
                 };
             }

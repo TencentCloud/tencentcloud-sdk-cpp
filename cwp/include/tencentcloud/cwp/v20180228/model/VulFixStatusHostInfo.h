@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修复失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailReason 修复失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置修复失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failReason 修复失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailReason(const std::string& _failReason);
@@ -210,7 +206,6 @@ namespace TencentCloud
 
                     /**
                      * 修复失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failReason;
                     bool m_failReasonHasBeenSet;

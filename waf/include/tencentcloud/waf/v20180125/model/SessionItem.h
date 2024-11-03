@@ -195,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SessionID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionId SessionID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSessionId() const;
 
                     /**
                      * 设置SessionID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionId SessionID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionId(const int64_t& _sessionId);
@@ -220,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Session名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionName Session名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSessionName() const;
 
                     /**
                      * 设置Session名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionName Session名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionName(const std::string& _sessionName);
@@ -245,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Session是否正在被启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionInUsed Session是否正在被启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSessionInUsed() const;
 
                     /**
                      * 设置Session是否正在被启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionInUsed Session是否正在被启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionInUsed(const bool& _sessionInUsed);
@@ -270,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Session关联的CC规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelatedRuleID Session关联的CC规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetRelatedRuleID() const;
 
                     /**
                      * 设置Session关联的CC规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _relatedRuleID Session关联的CC规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRelatedRuleID(const std::vector<int64_t>& _relatedRuleID);
@@ -339,28 +323,24 @@ namespace TencentCloud
 
                     /**
                      * SessionID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
                      * Session名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionName;
                     bool m_sessionNameHasBeenSet;
 
                     /**
                      * Session是否正在被启用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_sessionInUsed;
                     bool m_sessionInUsedHasBeenSet;
 
                     /**
                      * Session关联的CC规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_relatedRuleID;
                     bool m_relatedRuleIDHasBeenSet;

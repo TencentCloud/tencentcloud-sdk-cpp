@@ -600,18 +600,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudTags 云标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tags> GetCloudTags() const;
 
                     /**
                      * 设置云标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudTags 云标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudTags(const std::vector<Tags>& _cloudTags);
@@ -625,18 +621,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAddedOnTheFifteen 是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsAddedOnTheFifteen() const;
 
                     /**
                      * 设置是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isAddedOnTheFifteen 是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsAddedOnTheFifteen(const uint64_t& _isAddedOnTheFifteen);
@@ -650,18 +642,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机ip列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpList 主机ip列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIpList() const;
 
                     /**
                      * 设置主机ip列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipList 主机ip列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpList(const std::string& _ipList);
@@ -675,18 +663,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属网络
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 所属网络
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置所属网络
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 所属网络
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -700,18 +684,14 @@ namespace TencentCloud
 
                     /**
                      * 获取附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineExtraInfo 附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
@@ -746,18 +726,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -928,35 +904,30 @@ namespace TencentCloud
 
                     /**
                      * 云标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tags> m_cloudTags;
                     bool m_cloudTagsHasBeenSet;
 
                     /**
                      * 是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isAddedOnTheFifteen;
                     bool m_isAddedOnTheFifteenHasBeenSet;
 
                     /**
                      * 主机ip列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ipList;
                     bool m_ipListHasBeenSet;
 
                     /**
                      * 所属网络
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
@@ -969,7 +940,6 @@ namespace TencentCloud
 
                     /**
                      * 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

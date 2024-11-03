@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uuid 模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uuid 模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDetail() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detail 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetail(const std::string& _detail);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpString IP模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIpString() const;
 
                     /**
                      * 设置IP模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipString IP模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpString(const std::string& _ipString);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取插入时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InsertTime 插入时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInsertTime() const;
 
                     /**
                      * 设置插入时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _insertTime 插入时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInsertTime(const std::string& _insertTime);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 模板类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置模板类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 模板类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联规则条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RulesNum 关联规则条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRulesNum() const;
 
                     /**
                      * 设置关联规则条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rulesNum 关联规则条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRulesNum(const int64_t& _rulesNum);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateId 模板Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateId 模板Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取协议端口模板，协议类型，4:4层协议，7:7层协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtocolType 协议端口模板，协议类型，4:4层协议，7:7层协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocolType() const;
 
                     /**
                      * 设置协议端口模板，协议类型，4:4层协议，7:7层协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocolType 协议端口模板，协议类型，4:4层协议，7:7层协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocolType(const std::string& _protocolType);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板包含地址数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IPNum 模板包含地址数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIPNum() const;
 
                     /**
                      * 设置模板包含地址数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iPNum 模板包含地址数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIPNum(const int64_t& _iPNum);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP版本,0,IPv4;1,IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpVersion IP版本,0,IPv4;1,IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIpVersion() const;
 
                     /**
                      * 设置IP版本,0,IPv4;1,IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipVersion IP版本,0,IPv4;1,IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpVersion(const int64_t& _ipVersion);
@@ -350,84 +302,72 @@ namespace TencentCloud
 
                     /**
                      * 模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
                      * 模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_detail;
                     bool m_detailHasBeenSet;
 
                     /**
                      * IP模板
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ipString;
                     bool m_ipStringHasBeenSet;
 
                     /**
                      * 插入时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_insertTime;
                     bool m_insertTimeHasBeenSet;
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 模板类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 关联规则条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_rulesNum;
                     bool m_rulesNumHasBeenSet;
 
                     /**
                      * 模板Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
                      * 协议端口模板，协议类型，4:4层协议，7:7层协议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocolType;
                     bool m_protocolTypeHasBeenSet;
 
                     /**
                      * 模板包含地址数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_iPNum;
                     bool m_iPNumHasBeenSet;
 
                     /**
                      * IP版本,0,IPv4;1,IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ipVersion;
                     bool m_ipVersionHasBeenSet;

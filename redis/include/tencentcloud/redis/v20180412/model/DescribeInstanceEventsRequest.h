@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置查询事件执行计划的起始日期。
-                     * @return ExecutionStartDate 配置查询事件执行计划的起始日期。
+                     * 获取配置查询事件执行计划的起始日期，查询日期最大跨度30天。
+                     * @return ExecutionStartDate 配置查询事件执行计划的起始日期，查询日期最大跨度30天。
                      * 
                      */
                     std::string GetExecutionStartDate() const;
 
                     /**
-                     * 设置配置查询事件执行计划的起始日期。
-                     * @param _executionStartDate 配置查询事件执行计划的起始日期。
+                     * 设置配置查询事件执行计划的起始日期，查询日期最大跨度30天。
+                     * @param _executionStartDate 配置查询事件执行计划的起始日期，查询日期最大跨度30天。
                      * 
                      */
                     void SetExecutionStartDate(const std::string& _executionStartDate);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ExecutionStartDateHasBeenSet() const;
 
                     /**
-                     * 获取配置查询事件执行计划的结束日期。
-                     * @return ExecutionEndDate 配置查询事件执行计划的结束日期。
+                     * 获取配置查询事件执行计划的结束日期，查询日期最大跨度30天。
+                     * @return ExecutionEndDate 配置查询事件执行计划的结束日期，查询日期最大跨度30天。
                      * 
                      */
                     std::string GetExecutionEndDate() const;
 
                     /**
-                     * 设置配置查询事件执行计划的结束日期。
-                     * @param _executionEndDate 配置查询事件执行计划的结束日期。
+                     * 设置配置查询事件执行计划的结束日期，查询日期最大跨度30天。
+                     * @param _executionEndDate 配置查询事件执行计划的结束日期，查询日期最大跨度30天。
                      * 
                      */
                     void SetExecutionEndDate(const std::string& _executionEndDate);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取输出每页显示事件的数量，默认：10。
-                     * @return PageSize 输出每页显示事件的数量，默认：10。
+                     * 获取输出每页显示事件的数量，默认：10，最大100。
+                     * @return PageSize 输出每页显示事件的数量，默认：10，最大100。
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置输出每页显示事件的数量，默认：10。
-                     * @param _pageSize 输出每页显示事件的数量，默认：10。
+                     * 设置输出每页显示事件的数量，默认：10，最大100。
+                     * @param _pageSize 输出每页显示事件的数量，默认：10，最大100。
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -245,13 +245,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置查询事件执行计划的起始日期。
+                     * 配置查询事件执行计划的起始日期，查询日期最大跨度30天。
                      */
                     std::string m_executionStartDate;
                     bool m_executionStartDateHasBeenSet;
 
                     /**
-                     * 配置查询事件执行计划的结束日期。
+                     * 配置查询事件执行计划的结束日期，查询日期最大跨度30天。
                      */
                     std::string m_executionEndDate;
                     bool m_executionEndDateHasBeenSet;
@@ -263,7 +263,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 输出每页显示事件的数量，默认：10。
+                     * 输出每页显示事件的数量，默认：10，最大100。
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

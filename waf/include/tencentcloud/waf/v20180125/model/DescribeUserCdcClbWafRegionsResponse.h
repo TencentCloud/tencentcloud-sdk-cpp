@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取CdcRegion的类型描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data CdcRegion的类型描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CdcRegion> GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * CdcRegion的类型描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CdcRegion> m_data;
                     bool m_dataHasBeenSet;

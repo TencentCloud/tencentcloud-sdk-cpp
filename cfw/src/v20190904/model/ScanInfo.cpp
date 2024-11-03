@@ -21,9 +21,9 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 ScanInfo::ScanInfo() :
+    m_scanPercentHasBeenSet(false),
     m_scanResultInfoHasBeenSet(false),
     m_scanStatusHasBeenSet(false),
-    m_scanPercentHasBeenSet(false),
     m_scanTimeHasBeenSet(false)
 {
 }
@@ -32,6 +32,16 @@ CoreInternalOutcome ScanInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("ScanPercent") && !value["ScanPercent"].IsNull())
+    {
+        if (!value["ScanPercent"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanInfo.ScanPercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanPercent = value["ScanPercent"].GetDouble();
+        m_scanPercentHasBeenSet = true;
+    }
 
     if (value.HasMember("ScanResultInfo") && !value["ScanResultInfo"].IsNull())
     {
@@ -60,16 +70,6 @@ CoreInternalOutcome ScanInfo::Deserialize(const rapidjson::Value &value)
         m_scanStatusHasBeenSet = true;
     }
 
-    if (value.HasMember("ScanPercent") && !value["ScanPercent"].IsNull())
-    {
-        if (!value["ScanPercent"].IsLosslessDouble())
-        {
-            return CoreInternalOutcome(Core::Error("response `ScanInfo.ScanPercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_scanPercent = value["ScanPercent"].GetDouble();
-        m_scanPercentHasBeenSet = true;
-    }
-
     if (value.HasMember("ScanTime") && !value["ScanTime"].IsNull())
     {
         if (!value["ScanTime"].IsString())
@@ -86,6 +86,14 @@ CoreInternalOutcome ScanInfo::Deserialize(const rapidjson::Value &value)
 
 void ScanInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_scanPercentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanPercent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scanPercent, allocator);
+    }
 
     if (m_scanResultInfoHasBeenSet)
     {
@@ -104,14 +112,6 @@ void ScanInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, m_scanStatus, allocator);
     }
 
-    if (m_scanPercentHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ScanPercent";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_scanPercent, allocator);
-    }
-
     if (m_scanTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -122,6 +122,22 @@ void ScanInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
 
 }
 
+
+double ScanInfo::GetScanPercent() const
+{
+    return m_scanPercent;
+}
+
+void ScanInfo::SetScanPercent(const double& _scanPercent)
+{
+    m_scanPercent = _scanPercent;
+    m_scanPercentHasBeenSet = true;
+}
+
+bool ScanInfo::ScanPercentHasBeenSet() const
+{
+    return m_scanPercentHasBeenSet;
+}
 
 ScanResultInfo ScanInfo::GetScanResultInfo() const
 {
@@ -153,22 +169,6 @@ void ScanInfo::SetScanStatus(const int64_t& _scanStatus)
 bool ScanInfo::ScanStatusHasBeenSet() const
 {
     return m_scanStatusHasBeenSet;
-}
-
-double ScanInfo::GetScanPercent() const
-{
-    return m_scanPercent;
-}
-
-void ScanInfo::SetScanPercent(const double& _scanPercent)
-{
-    m_scanPercent = _scanPercent;
-    m_scanPercentHasBeenSet = true;
-}
-
-bool ScanInfo::ScanPercentHasBeenSet() const
-{
-    return m_scanPercentHasBeenSet;
 }
 
 string ScanInfo::GetScanTime() const

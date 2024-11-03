@@ -447,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nick 用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNick() const;
 
                     /**
                      * 设置用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nick 用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNick(const std::string& _nick);
@@ -493,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -518,18 +510,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修复建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Fix 修复建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFix() const;
 
                     /**
                      * 设置修复建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fix 修复建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFix(const std::string& _fix);
@@ -543,18 +531,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应急漏洞类型，1-应急漏洞，0-非应急漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EMGCVulType 应急漏洞类型，1-应急漏洞，0-非应急漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEMGCVulType() const;
 
                     /**
                      * 设置应急漏洞类型，1-应急漏洞，0-非应急漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eMGCVulType 应急漏洞类型，1-应急漏洞，0-非应急漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEMGCVulType(const int64_t& _eMGCVulType);
@@ -684,7 +668,6 @@ namespace TencentCloud
 
                     /**
                      * 用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;
@@ -697,21 +680,18 @@ namespace TencentCloud
 
                     /**
                      * 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 修复建议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fix;
                     bool m_fixHasBeenSet;
 
                     /**
                      * 应急漏洞类型，1-应急漏洞，0-非应急漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_eMGCVulType;
                     bool m_eMGCVulTypeHasBeenSet;

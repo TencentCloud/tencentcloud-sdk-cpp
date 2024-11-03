@@ -251,18 +251,14 @@ drop：拒绝
 
                     /**
                      * 获取协议；TCP/UDP/ICMP/ANY
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议；TCP/UDP/ICMP/ANY
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议；TCP/UDP/ICMP/ANY
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 协议；TCP/UDP/ICMP/ANY
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -278,11 +274,9 @@ drop：拒绝
                      * 获取访问控制策略的端口。取值：
 -1/-1：全部端口
 80：80端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 访问控制策略的端口。取值：
 -1/-1：全部端口
 80：80端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPort() const;
@@ -291,11 +285,9 @@ drop：拒绝
                      * 设置访问控制策略的端口。取值：
 -1/-1：全部端口
 80：80端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 访问控制策略的端口。取值：
 -1/-1：全部端口
 80：80端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const std::string& _port);
@@ -309,18 +301,14 @@ drop：拒绝
 
                     /**
                      * 获取端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceTemplateId 端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceTemplateId() const;
 
                     /**
                      * 设置端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceTemplateId 端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceTemplateId(const std::string& _serviceTemplateId);
@@ -459,7 +447,6 @@ drop：拒绝
 
                     /**
                      * 协议；TCP/UDP/ICMP/ANY
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -468,14 +455,12 @@ drop：拒绝
                      * 访问控制策略的端口。取值：
 -1/-1：全部端口
 80：80端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceTemplateId;
                     bool m_serviceTemplateIdHasBeenSet;

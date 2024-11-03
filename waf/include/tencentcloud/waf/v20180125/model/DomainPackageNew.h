@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * clb-waf 域名扩展套餐
+                * waf 域名扩展套餐
                 */
                 class DomainPackageNew : public AbstractModel
                 {
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceIds 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceIds() const;
 
                     /**
                      * 设置资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceIds 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceIds(const std::string& _resourceIds);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidTime 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValidTime() const;
 
                     /**
                      * 设置过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _validTime 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValidTime(const std::string& _validTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否自动续费，1：自动续费，0：不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 是否自动续费，1：自动续费，0：不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRenewFlag() const;
 
                     /**
                      * 设置是否自动续费，1：自动续费，0：不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _renewFlag 是否自动续费，1：自动续费，0：不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRenewFlag(const uint64_t& _renewFlag);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取套餐购买个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 套餐购买个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置套餐购买个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 套餐购买个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取套餐购买地域，clb-waf暂时没有用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 套餐购买地域，clb-waf暂时没有用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置套餐购买地域，clb-waf暂时没有用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 套餐购买地域，clb-waf暂时没有用到
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
                      * 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_validTime;
                     bool m_validTimeHasBeenSet;
 
                     /**
                      * 是否自动续费，1：自动续费，0：不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
                      * 套餐购买个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * 套餐购买地域，clb-waf暂时没有用到
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

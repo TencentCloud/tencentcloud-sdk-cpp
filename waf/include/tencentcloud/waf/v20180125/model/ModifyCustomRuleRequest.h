@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取执行动作，0：放行、1：阻断、2：人机识别、3：观察、4：重定向
-                     * @return RuleAction 执行动作，0：放行、1：阻断、2：人机识别、3：观察、4：重定向
+                     * 获取动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
+                     * @return RuleAction 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
                      * 
                      */
                     std::string GetRuleAction() const;
 
                     /**
-                     * 设置执行动作，0：放行、1：阻断、2：人机识别、3：观察、4：重定向
-                     * @param _ruleAction 执行动作，0：放行、1：阻断、2：人机识别、3：观察、4：重定向
+                     * 设置动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
+                     * @param _ruleAction 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
                      * 
                      */
                     void SetRuleAction(const std::string& _ruleAction);
@@ -267,15 +267,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取定时任务类型
-                     * @return JobType 定时任务类型
+                     * 获取规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * @return JobType 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
                      * 
                      */
                     std::string GetJobType() const;
 
                     /**
-                     * 设置定时任务类型
-                     * @param _jobType 定时任务类型
+                     * 设置规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * @param _jobType 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
                      * 
                      */
                     void SetJobType(const std::string& _jobType);
@@ -392,7 +392,7 @@ namespace TencentCloud
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 执行动作，0：放行、1：阻断、2：人机识别、3：观察、4：重定向
+                     * 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
                      */
                     std::string m_ruleAction;
                     bool m_ruleActionHasBeenSet;
@@ -437,7 +437,7 @@ namespace TencentCloud
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 定时任务类型
+                     * 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
                      */
                     std::string m_jobType;
                     bool m_jobTypeHasBeenSet;

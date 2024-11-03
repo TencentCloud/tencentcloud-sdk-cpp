@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防火墙开关NAME
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SwitchName 防火墙开关NAME
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSwitchName() const;
 
                     /**
                      * 设置防火墙开关NAME
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _switchName 防火墙开关NAME
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSwitchName(const std::string& _switchName);
@@ -117,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开关边连接类型 0：对等连接， 1：云连网
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectType 开关边连接类型 0：对等连接， 1：云连网
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetConnectType() const;
 
                     /**
                      * 设置开关边连接类型 0：对等连接， 1：云连网
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectType 开关边连接类型 0：对等连接， 1：云连网
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectType(const int64_t& _connectType);
@@ -142,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectId 连接ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConnectId() const;
 
                     /**
                      * 设置连接ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectId 连接ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectId(const std::string& _connectId);
@@ -167,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectName 连接名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConnectName() const;
 
                     /**
                      * 设置连接名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectName 连接名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectName(const std::string& _connectName);
@@ -192,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcInstancesInfo 源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NetInstancesInfo> GetSrcInstancesInfo() const;
 
                     /**
                      * 设置源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcInstancesInfo 源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcInstancesInfo(const std::vector<NetInstancesInfo>& _srcInstancesInfo);
@@ -217,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目的实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstInstancesInfo 目的实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NetInstancesInfo> GetDstInstancesInfo() const;
 
                     /**
                      * 设置目的实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstInstancesInfo 目的实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstInstancesInfo(const std::vector<NetInstancesInfo>& _dstInstancesInfo);
@@ -242,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防火墙(组)数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwGroupId 防火墙(组)数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFwGroupId() const;
 
                     /**
                      * 设置防火墙(组)数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwGroupId 防火墙(组)数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwGroupId(const std::string& _fwGroupId);
@@ -267,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防火墙(组)名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwGroupName 防火墙(组)名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFwGroupName() const;
 
                     /**
                      * 设置防火墙(组)名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwGroupName 防火墙(组)名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwGroupName(const std::string& _fwGroupName);
@@ -292,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开关状态 0：关 ， 1：开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 开关状态 0：关 ， 1：开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnable() const;
 
                     /**
                      * 设置开关状态 0：关 ， 1：开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enable 开关状态 0：关 ， 1：开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnable(const int64_t& _enable);
@@ -317,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开关的状态 0：正常， 1：转换中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 开关的状态 0：正常， 1：转换中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置开关的状态 0：正常， 1：转换中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 开关的状态 0：正常， 1：转换中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -342,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0-非sase实例，忽略，1-未绑定状态，2-已绑定
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachWithEdge 0-非sase实例，忽略，1-未绑定状态，2-已绑定
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAttachWithEdge() const;
 
                     /**
                      * 设置0-非sase实例，忽略，1-未绑定状态，2-已绑定
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attachWithEdge 0-非sase实例，忽略，1-未绑定状态，2-已绑定
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttachWithEdge(const int64_t& _attachWithEdge);
@@ -367,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对等防火墙和开关状态 0：正常， 1：对等未创建防火墙，2：对等已创建防火墙，未打开开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CrossEdgeStatus 对等防火墙和开关状态 0：正常， 1：对等未创建防火墙，2：对等已创建防火墙，未打开开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCrossEdgeStatus() const;
 
                     /**
                      * 设置对等防火墙和开关状态 0：正常， 1：对等未创建防火墙，2：对等已创建防火墙，未打开开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _crossEdgeStatus 对等防火墙和开关状态 0：正常， 1：对等未创建防火墙，2：对等已创建防火墙，未打开开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCrossEdgeStatus(const int64_t& _crossEdgeStatus);
@@ -392,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络经过VPC防火墙CVM所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwInsRegion 网络经过VPC防火墙CVM所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFwInsRegion() const;
 
                     /**
                      * 设置网络经过VPC防火墙CVM所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwInsRegion 网络经过VPC防火墙CVM所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwInsRegion(const std::vector<std::string>& _fwInsRegion);
@@ -417,18 +365,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0 观察 1 拦截 2 严格 3 关闭 4 不支持ips 前端展示tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpsAction 0 观察 1 拦截 2 严格 3 关闭 4 不支持ips 前端展示tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIpsAction() const;
 
                     /**
                      * 设置0 观察 1 拦截 2 严格 3 关闭 4 不支持ips 前端展示tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipsAction 0 观察 1 拦截 2 严格 3 关闭 4 不支持ips 前端展示tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpsAction(const int64_t& _ipsAction);
@@ -442,18 +386,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开关关联的防火墙实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwInsLst 开关关联的防火墙实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcFwInstanceShow> GetFwInsLst() const;
 
                     /**
                      * 设置开关关联的防火墙实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwInsLst 开关关联的防火墙实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwInsLst(const std::vector<VpcFwInstanceShow>& _fwInsLst);
@@ -469,11 +409,9 @@ namespace TencentCloud
                      * 获取开关是否处于bypass状态
 0：正常状态
 1：bypass状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BypassStatus 开关是否处于bypass状态
 0：正常状态
 1：bypass状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBypassStatus() const;
@@ -482,11 +420,9 @@ namespace TencentCloud
                      * 设置开关是否处于bypass状态
 0：正常状态
 1：bypass状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bypassStatus 开关是否处于bypass状态
 0：正常状态
 1：bypass状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBypassStatus(const int64_t& _bypassStatus);
@@ -498,6 +434,27 @@ namespace TencentCloud
                      */
                     bool BypassStatusHasBeenSet() const;
 
+                    /**
+                     * 获取0: ipv4 , 1:ipv6
+                     * @return IpVersion 0: ipv4 , 1:ipv6
+                     * 
+                     */
+                    int64_t GetIpVersion() const;
+
+                    /**
+                     * 设置0: ipv4 , 1:ipv6
+                     * @param _ipVersion 0: ipv4 , 1:ipv6
+                     * 
+                     */
+                    void SetIpVersion(const int64_t& _ipVersion);
+
+                    /**
+                     * 判断参数 IpVersion 是否已赋值
+                     * @return IpVersion 是否已赋值
+                     * 
+                     */
+                    bool IpVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -508,7 +465,6 @@ namespace TencentCloud
 
                     /**
                      * 防火墙开关NAME
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switchName;
                     bool m_switchNameHasBeenSet;
@@ -521,98 +477,84 @@ namespace TencentCloud
 
                     /**
                      * 开关边连接类型 0：对等连接， 1：云连网
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_connectType;
                     bool m_connectTypeHasBeenSet;
 
                     /**
                      * 连接ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_connectId;
                     bool m_connectIdHasBeenSet;
 
                     /**
                      * 连接名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_connectName;
                     bool m_connectNameHasBeenSet;
 
                     /**
                      * 源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NetInstancesInfo> m_srcInstancesInfo;
                     bool m_srcInstancesInfoHasBeenSet;
 
                     /**
                      * 目的实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NetInstancesInfo> m_dstInstancesInfo;
                     bool m_dstInstancesInfoHasBeenSet;
 
                     /**
                      * 防火墙(组)数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fwGroupId;
                     bool m_fwGroupIdHasBeenSet;
 
                     /**
                      * 防火墙(组)名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fwGroupName;
                     bool m_fwGroupNameHasBeenSet;
 
                     /**
                      * 开关状态 0：关 ， 1：开
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
                      * 开关的状态 0：正常， 1：转换中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 0-非sase实例，忽略，1-未绑定状态，2-已绑定
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_attachWithEdge;
                     bool m_attachWithEdgeHasBeenSet;
 
                     /**
                      * 对等防火墙和开关状态 0：正常， 1：对等未创建防火墙，2：对等已创建防火墙，未打开开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_crossEdgeStatus;
                     bool m_crossEdgeStatusHasBeenSet;
 
                     /**
                      * 网络经过VPC防火墙CVM所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_fwInsRegion;
                     bool m_fwInsRegionHasBeenSet;
 
                     /**
                      * 0 观察 1 拦截 2 严格 3 关闭 4 不支持ips 前端展示tag
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ipsAction;
                     bool m_ipsActionHasBeenSet;
 
                     /**
                      * 开关关联的防火墙实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcFwInstanceShow> m_fwInsLst;
                     bool m_fwInsLstHasBeenSet;
@@ -621,10 +563,15 @@ namespace TencentCloud
                      * 开关是否处于bypass状态
 0：正常状态
 1：bypass状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bypassStatus;
                     bool m_bypassStatusHasBeenSet;
+
+                    /**
+                     * 0: ipv4 , 1:ipv6
+                     */
+                    int64_t m_ipVersion;
+                    bool m_ipVersionHasBeenSet;
 
                 };
             }

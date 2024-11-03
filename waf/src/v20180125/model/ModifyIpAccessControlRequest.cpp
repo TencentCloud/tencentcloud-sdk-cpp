@@ -26,8 +26,8 @@ ModifyIpAccessControlRequest::ModifyIpAccessControlRequest() :
     m_domainHasBeenSet(false),
     m_ipListHasBeenSet(false),
     m_actionTypeHasBeenSet(false),
-    m_validTSHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
+    m_validTSHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_editionHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
@@ -73,20 +73,20 @@ string ModifyIpAccessControlRequest::ToJsonString() const
         d.AddMember(iKey, m_actionType, allocator);
     }
 
-    if (m_validTSHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ValidTS";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_validTS, allocator);
-    }
-
     if (m_ruleIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ruleId, allocator);
+    }
+
+    if (m_validTSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidTS";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_validTS, allocator);
     }
 
     if (m_instanceIdHasBeenSet)
@@ -194,22 +194,6 @@ bool ModifyIpAccessControlRequest::ActionTypeHasBeenSet() const
     return m_actionTypeHasBeenSet;
 }
 
-int64_t ModifyIpAccessControlRequest::GetValidTS() const
-{
-    return m_validTS;
-}
-
-void ModifyIpAccessControlRequest::SetValidTS(const int64_t& _validTS)
-{
-    m_validTS = _validTS;
-    m_validTSHasBeenSet = true;
-}
-
-bool ModifyIpAccessControlRequest::ValidTSHasBeenSet() const
-{
-    return m_validTSHasBeenSet;
-}
-
 uint64_t ModifyIpAccessControlRequest::GetRuleId() const
 {
     return m_ruleId;
@@ -224,6 +208,22 @@ void ModifyIpAccessControlRequest::SetRuleId(const uint64_t& _ruleId)
 bool ModifyIpAccessControlRequest::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+int64_t ModifyIpAccessControlRequest::GetValidTS() const
+{
+    return m_validTS;
+}
+
+void ModifyIpAccessControlRequest::SetValidTS(const int64_t& _validTS)
+{
+    m_validTS = _validTS;
+    m_validTSHasBeenSet = true;
+}
+
+bool ModifyIpAccessControlRequest::ValidTSHasBeenSet() const
+{
+    return m_validTSHasBeenSet;
 }
 
 string ModifyIpAccessControlRequest::GetInstanceId() const

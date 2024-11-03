@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 新手引导扫描信息  
+                * 新手引导扫描信息
                 */
                 class ScanInfo : public AbstractModel
                 {
@@ -46,6 +46,27 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
+
+                    /**
+                     * 获取进度
+                     * @return ScanPercent 进度
+                     * 
+                     */
+                    double GetScanPercent() const;
+
+                    /**
+                     * 设置进度
+                     * @param _scanPercent 进度
+                     * 
+                     */
+                    void SetScanPercent(const double& _scanPercent);
+
+                    /**
+                     * 判断参数 ScanPercent 是否已赋值
+                     * @return ScanPercent 是否已赋值
+                     * 
+                     */
+                    bool ScanPercentHasBeenSet() const;
 
                     /**
                      * 获取扫描结果信息
@@ -90,27 +111,6 @@ namespace TencentCloud
                     bool ScanStatusHasBeenSet() const;
 
                     /**
-                     * 获取进度
-                     * @return ScanPercent 进度
-                     * 
-                     */
-                    double GetScanPercent() const;
-
-                    /**
-                     * 设置进度
-                     * @param _scanPercent 进度
-                     * 
-                     */
-                    void SetScanPercent(const double& _scanPercent);
-
-                    /**
-                     * 判断参数 ScanPercent 是否已赋值
-                     * @return ScanPercent 是否已赋值
-                     * 
-                     */
-                    bool ScanPercentHasBeenSet() const;
-
-                    /**
                      * 获取预计完成时间
                      * @return ScanTime 预计完成时间
                      * 
@@ -134,6 +134,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 进度
+                     */
+                    double m_scanPercent;
+                    bool m_scanPercentHasBeenSet;
+
+                    /**
                      * 扫描结果信息
                      */
                     ScanResultInfo m_scanResultInfo;
@@ -144,12 +150,6 @@ namespace TencentCloud
                      */
                     int64_t m_scanStatus;
                     bool m_scanStatusHasBeenSet;
-
-                    /**
-                     * 进度
-                     */
-                    double m_scanPercent;
-                    bool m_scanPercentHasBeenSet;
 
                     /**
                      * 预计完成时间

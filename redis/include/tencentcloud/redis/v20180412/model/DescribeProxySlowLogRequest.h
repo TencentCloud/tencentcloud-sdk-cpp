@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取慢查询的开始时间。
-                     * @return BeginTime 慢查询的开始时间。
+                     * 获取慢查询的开始时间，查询时间最大跨度30天。
+                     * @return BeginTime 慢查询的开始时间，查询时间最大跨度30天。
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置慢查询的开始时间。
-                     * @param _beginTime 慢查询的开始时间。
+                     * 设置慢查询的开始时间，查询时间最大跨度30天。
+                     * @param _beginTime 慢查询的开始时间，查询时间最大跨度30天。
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取慢查询的结束时间。
-                     * @return EndTime 慢查询的结束时间。
+                     * 获取慢查询的结束时间，查询时间最大跨度30天。
+                     * @return EndTime 慢查询的结束时间，查询时间最大跨度30天。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置慢查询的结束时间。
-                     * @param _endTime 慢查询的结束时间。
+                     * 设置慢查询的结束时间，查询时间最大跨度30天。
+                     * @param _endTime 慢查询的结束时间，查询时间最大跨度30天。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MinQueryTimeHasBeenSet() const;
 
                     /**
-                     * 获取分页大小。默认为 20，取值范围[20,1000]。
-                     * @return Limit 分页大小。默认为 20，取值范围[20,1000]。
+                     * 获取每页输出的任务列表大小，默认为 20，最多输出100条。
+                     * @return Limit 每页输出的任务列表大小，默认为 20，最多输出100条。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小。默认为 20，取值范围[20,1000]。
-                     * @param _limit 分页大小。默认为 20，取值范围[20,1000]。
+                     * 设置每页输出的任务列表大小，默认为 20，最多输出100条。
+                     * @param _limit 每页输出的任务列表大小，默认为 20，最多输出100条。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，取Limit整数倍。
-                     * @return Offset 偏移量，取Limit整数倍。
+                     * 获取分页偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。
+                     * @return Offset 分页偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，取Limit整数倍。
-                     * @param _offset 偏移量，取Limit整数倍。
+                     * 设置分页偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。
+                     * @param _offset 分页偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -182,13 +182,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 慢查询的开始时间。
+                     * 慢查询的开始时间，查询时间最大跨度30天。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 慢查询的结束时间。
+                     * 慢查询的结束时间，查询时间最大跨度30天。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -200,13 +200,13 @@ namespace TencentCloud
                     bool m_minQueryTimeHasBeenSet;
 
                     /**
-                     * 分页大小。默认为 20，取值范围[20,1000]。
+                     * 每页输出的任务列表大小，默认为 20，最多输出100条。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，取Limit整数倍。
+                     * 分页偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

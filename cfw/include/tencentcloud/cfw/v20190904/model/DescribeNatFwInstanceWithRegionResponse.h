@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatinsLst 实例数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NatFwInstance> GetNatinsLst() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 实例数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NatFwInstance> m_natinsLst;
                     bool m_natinsLstHasBeenSet;

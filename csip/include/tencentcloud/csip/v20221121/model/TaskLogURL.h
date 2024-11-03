@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报告下载临时链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return URL 报告下载临时链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetURL() const;
 
                     /**
                      * 设置报告下载临时链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uRL 报告下载临时链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetURL(const std::string& _uRL);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务报告id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogId 任务报告id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogId() const;
 
                     /**
                      * 设置任务报告id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logId 任务报告id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogId(const std::string& _logId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务报告名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskLogName 任务报告名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskLogName() const;
 
                     /**
                      * 设置任务报告名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskLogName 任务报告名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskLogName(const std::string& _taskLogName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取APP ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId APP ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置APP ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId APP ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 报告下载临时链接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uRL;
                     bool m_uRLHasBeenSet;
 
                     /**
                      * 任务报告id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logId;
                     bool m_logIdHasBeenSet;
 
                     /**
                      * 任务报告名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskLogName;
                     bool m_taskLogNameHasBeenSet;
 
                     /**
                      * APP ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;

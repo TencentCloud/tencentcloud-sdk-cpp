@@ -48,94 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取封禁和放通对象
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ioc 封禁和放通对象
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetIoc() const;
-
-                    /**
-                     * 设置封禁和放通对象
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ioc 封禁和放通对象
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetIoc(const std::string& _ioc);
-
-                    /**
-                     * 判断参数 Ioc 是否已赋值
-                     * @return Ioc 是否已赋值
-                     * 
-                     */
-                    bool IocHasBeenSet() const;
-
-                    /**
-                     * 获取0互联网出站 1互联网入站 5内网访问源 6内网访问目的
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DirectionList 0互联网出站 1互联网入站 5内网访问源 6内网访问目的
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetDirectionList() const;
-
-                    /**
-                     * 设置0互联网出站 1互联网入站 5内网访问源 6内网访问目的
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _directionList 0互联网出站 1互联网入站 5内网访问源 6内网访问目的
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetDirectionList(const std::string& _directionList);
-
-                    /**
-                     * 判断参数 DirectionList 是否已赋值
-                     * @return DirectionList 是否已赋值
-                     * 
-                     */
-                    bool DirectionListHasBeenSet() const;
-
-                    /**
-                     * 获取规则截止时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndTime 规则截止时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetEndTime() const;
-
-                    /**
-                     * 设置规则截止时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _endTime 规则截止时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetEndTime(const std::string& _endTime);
-
-                    /**
-                     * 判断参数 EndTime 是否已赋值
-                     * @return EndTime 是否已赋值
-                     * 
-                     */
-                    bool EndTimeHasBeenSet() const;
-
-                    /**
                      * 获取规则评论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 规则评论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置规则评论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _comment 规则评论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -149,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义白名单规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomRule 自定义白名单规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CustomWhiteRule GetCustomRule() const;
 
                     /**
                      * 设置自定义白名单规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customRule 自定义白名单规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomRule(const CustomWhiteRule& _customRule);
@@ -173,19 +90,57 @@ namespace TencentCloud
                     bool CustomRuleHasBeenSet() const;
 
                     /**
+                     * 获取0互联网出站 1互联网入站 5内网访问源 6内网访问目的
+                     * @return DirectionList 0互联网出站 1互联网入站 5内网访问源 6内网访问目的
+                     * 
+                     */
+                    std::string GetDirectionList() const;
+
+                    /**
+                     * 设置0互联网出站 1互联网入站 5内网访问源 6内网访问目的
+                     * @param _directionList 0互联网出站 1互联网入站 5内网访问源 6内网访问目的
+                     * 
+                     */
+                    void SetDirectionList(const std::string& _directionList);
+
+                    /**
+                     * 判断参数 DirectionList 是否已赋值
+                     * @return DirectionList 是否已赋值
+                     * 
+                     */
+                    bool DirectionListHasBeenSet() const;
+
+                    /**
+                     * 获取规则截止时间
+                     * @return EndTime 规则截止时间
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置规则截止时间
+                     * @param _endTime 规则截止时间
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
                      * 获取放通的引擎: 1针对互联网边界 2针对nat防火墙 4针对vpc防火墙
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwType 放通的引擎: 1针对互联网边界 2针对nat防火墙 4针对vpc防火墙
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFwType() const;
 
                     /**
                      * 设置放通的引擎: 1针对互联网边界 2针对nat防火墙 4针对vpc防火墙
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwType 放通的引擎: 1针对互联网边界 2针对nat防火墙 4针对vpc防火墙
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwType(const int64_t& _fwType);
@@ -197,49 +152,64 @@ namespace TencentCloud
                      */
                     bool FwTypeHasBeenSet() const;
 
+                    /**
+                     * 获取封禁和放通对象
+                     * @return Ioc 封禁和放通对象
+                     * 
+                     */
+                    std::string GetIoc() const;
+
+                    /**
+                     * 设置封禁和放通对象
+                     * @param _ioc 封禁和放通对象
+                     * 
+                     */
+                    void SetIoc(const std::string& _ioc);
+
+                    /**
+                     * 判断参数 Ioc 是否已赋值
+                     * @return Ioc 是否已赋值
+                     * 
+                     */
+                    bool IocHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 封禁和放通对象
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_ioc;
-                    bool m_iocHasBeenSet;
-
-                    /**
-                     * 0互联网出站 1互联网入站 5内网访问源 6内网访问目的
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_directionList;
-                    bool m_directionListHasBeenSet;
-
-                    /**
-                     * 规则截止时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_endTime;
-                    bool m_endTimeHasBeenSet;
-
-                    /**
                      * 规则评论
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
                      * 自定义白名单规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CustomWhiteRule m_customRule;
                     bool m_customRuleHasBeenSet;
 
                     /**
+                     * 0互联网出站 1互联网入站 5内网访问源 6内网访问目的
+                     */
+                    std::string m_directionList;
+                    bool m_directionListHasBeenSet;
+
+                    /**
+                     * 规则截止时间
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
                      * 放通的引擎: 1针对互联网边界 2针对nat防火墙 4针对vpc防火墙
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fwType;
                     bool m_fwTypeHasBeenSet;
+
+                    /**
+                     * 封禁和放通对象
+                     */
+                    std::string m_ioc;
+                    bool m_iocHasBeenSet;
 
                 };
             }

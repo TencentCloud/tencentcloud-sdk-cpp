@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;

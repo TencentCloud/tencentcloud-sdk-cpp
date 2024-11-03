@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防火墙(组)ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwGroupId 防火墙(组)ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFwGroupId() const;
 
                     /**
                      * 设置防火墙(组)ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwGroupId 防火墙(组)ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwGroupId(const std::string& _fwGroupId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防火墙(组)名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwGroupName 防火墙(组)名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFwGroupName() const;
 
                     /**
                      * 设置防火墙(组)名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwGroupName 防火墙(组)名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwGroupName(const std::string& _fwGroupName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防火墙组涉及到的开关个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwSwitchNum 防火墙组涉及到的开关个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFwSwitchNum() const;
 
                     /**
                      * 设置防火墙组涉及到的开关个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwSwitchNum 防火墙组涉及到的开关个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwSwitchNum(const int64_t& _fwSwitchNum);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防火墙(组)部署的地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionLst 防火墙(组)部署的地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRegionLst() const;
 
                     /**
                      * 设置防火墙(组)部署的地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionLst 防火墙(组)部署的地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionLst(const std::vector<std::string>& _regionLst);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mode 模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMode() const;
 
                     /**
                      * 设置模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mode 模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMode(const int64_t& _mode);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防火墙实例的开关模式 1: 单点互通 2: 多点互通 3: 全互通 4: 自定义路由
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SwitchMode 防火墙实例的开关模式 1: 单点互通 2: 多点互通 3: 全互通 4: 自定义路由
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSwitchMode() const;
 
                     /**
                      * 设置防火墙实例的开关模式 1: 单点互通 2: 多点互通 3: 全互通 4: 自定义路由
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _switchMode 防火墙实例的开关模式 1: 单点互通 2: 多点互通 3: 全互通 4: 自定义路由
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSwitchMode(const int64_t& _switchMode);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC防火墙实例卡片信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwInstanceLst VPC防火墙实例卡片信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcFwInstanceInfo> GetFwInstanceLst() const;
 
                     /**
                      * 设置VPC防火墙实例卡片信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwInstanceLst VPC防火墙实例卡片信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwInstanceLst(const std::vector<VpcFwInstanceInfo>& _fwInstanceLst);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防火墙(状态) 0：正常 1: 初始化或操作中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 防火墙(状态) 0：正常 1: 初始化或操作中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置防火墙(状态) 0：正常 1: 初始化或操作中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 防火墙(状态) 0：正常 1: 初始化或操作中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -274,18 +242,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cdc专用集群场景时表示部署所属的cdc
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcId cdc专用集群场景时表示部署所属的cdc
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
                      * 设置cdc专用集群场景时表示部署所属的cdc
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcId cdc专用集群场景时表示部署所属的cdc
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -299,18 +263,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cdc专用集群场景时表示cdc名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcName cdc专用集群场景时表示cdc名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcName() const;
 
                     /**
                      * 设置cdc专用集群场景时表示cdc名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcName cdc专用集群场景时表示cdc名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcName(const std::string& _cdcName);
@@ -324,18 +284,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跨租户模式 1管理员 2单边 0 非跨租户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CrossUserMode 跨租户模式 1管理员 2单边 0 非跨租户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCrossUserMode() const;
 
                     /**
                      * 设置跨租户模式 1管理员 2单边 0 非跨租户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _crossUserMode 跨租户模式 1管理员 2单边 0 非跨租户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCrossUserMode(const std::string& _crossUserMode);
@@ -349,18 +305,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云联网模式下，当前实例是否需要开启重叠路由开关，1：需要开启，0：不需要开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NeedSwitchCcnOverlap 云联网模式下，当前实例是否需要开启重叠路由开关，1：需要开启，0：不需要开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNeedSwitchCcnOverlap() const;
 
                     /**
                      * 设置云联网模式下，当前实例是否需要开启重叠路由开关，1：需要开启，0：不需要开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _needSwitchCcnOverlap 云联网模式下，当前实例是否需要开启重叠路由开关，1：需要开启，0：不需要开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNeedSwitchCcnOverlap(const int64_t& _needSwitchCcnOverlap);
@@ -374,18 +326,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云联网模式下，实例关联的云联网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnId 云联网模式下，实例关联的云联网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置云联网模式下，实例关联的云联网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ccnId 云联网模式下，实例关联的云联网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -401,56 +349,48 @@ namespace TencentCloud
 
                     /**
                      * 防火墙(组)ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fwGroupId;
                     bool m_fwGroupIdHasBeenSet;
 
                     /**
                      * 防火墙(组)名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fwGroupName;
                     bool m_fwGroupNameHasBeenSet;
 
                     /**
                      * 防火墙组涉及到的开关个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fwSwitchNum;
                     bool m_fwSwitchNumHasBeenSet;
 
                     /**
                      * 防火墙(组)部署的地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_regionLst;
                     bool m_regionLstHasBeenSet;
 
                     /**
                      * 模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
                      * 防火墙实例的开关模式 1: 单点互通 2: 多点互通 3: 全互通 4: 自定义路由
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_switchMode;
                     bool m_switchModeHasBeenSet;
 
                     /**
                      * VPC防火墙实例卡片信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcFwInstanceInfo> m_fwInstanceLst;
                     bool m_fwInstanceLstHasBeenSet;
 
                     /**
                      * 防火墙(状态) 0：正常 1: 初始化或操作中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -464,35 +404,30 @@ namespace TencentCloud
 
                     /**
                      * cdc专用集群场景时表示部署所属的cdc
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
                      * cdc专用集群场景时表示cdc名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcName;
                     bool m_cdcNameHasBeenSet;
 
                     /**
                      * 跨租户模式 1管理员 2单边 0 非跨租户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_crossUserMode;
                     bool m_crossUserModeHasBeenSet;
 
                     /**
                      * 云联网模式下，当前实例是否需要开启重叠路由开关，1：需要开启，0：不需要开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_needSwitchCcnOverlap;
                     bool m_needSwitchCcnOverlapHasBeenSet;
 
                     /**
                      * 云联网模式下，实例关联的云联网id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;

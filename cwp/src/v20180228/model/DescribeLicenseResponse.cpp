@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-DescribeLicenseResponse::DescribeLicenseResponse()
+DescribeLicenseResponse::DescribeLicenseResponse() :
+    m_functionsEnHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,19 @@ CoreInternalOutcome DescribeLicenseResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("FunctionsEn") && !rsp["FunctionsEn"].IsNull())
+    {
+        if (!rsp["FunctionsEn"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FunctionsEn` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["FunctionsEn"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_functionsEn.push_back((*itr).GetString());
+        }
+        m_functionsEnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +84,19 @@ string DescribeLicenseResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_functionsEnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FunctionsEn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_functionsEn.begin(); itr != m_functionsEn.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string DescribeLicenseResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> DescribeLicenseResponse::GetFunctionsEn() const
+{
+    return m_functionsEn;
+}
+
+bool DescribeLicenseResponse::FunctionsEnHasBeenSet() const
+{
+    return m_functionsEnHasBeenSet;
+}
 
 

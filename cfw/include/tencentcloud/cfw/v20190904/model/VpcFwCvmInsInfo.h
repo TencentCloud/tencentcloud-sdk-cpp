@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwInsId VPC防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFwInsId() const;
 
                     /**
                      * 设置VPC防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwInsId VPC防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwInsId(const std::string& _fwInsId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CVM所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region CVM所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置CVM所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region CVM所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CVM所在地域中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionZh CVM所在地域中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionZh() const;
 
                     /**
                      * 设置CVM所在地域中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionZh CVM所在地域中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionZh(const std::string& _regionZh);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CVM所在地域详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionDetail CVM所在地域详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionDetail() const;
 
                     /**
                      * 设置CVM所在地域详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionDetail CVM所在地域详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionDetail(const std::string& _regionDetail);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneZh 主机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneZh() const;
 
                     /**
                      * 设置主机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneZh 主机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneZh(const std::string& _zoneZh);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneZhBack 备机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneZhBack() const;
 
                     /**
                      * 设置备机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneZhBack 备机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneZhBack(const std::string& _zoneZhBack);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防火墙CVM带宽值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BandWidth 防火墙CVM带宽值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBandWidth() const;
 
                     /**
                      * 设置防火墙CVM带宽值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bandWidth 防火墙CVM带宽值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBandWidth(const int64_t& _bandWidth);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例主机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 实例主机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置实例主机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 实例主机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例备机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneBak 实例备机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneBak() const;
 
                     /**
                      * 设置实例备机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneBak 实例备机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneBak(const std::string& _zoneBak);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * VPC防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fwInsId;
                     bool m_fwInsIdHasBeenSet;
 
                     /**
                      * CVM所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * CVM所在地域中文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionZh;
                     bool m_regionZhHasBeenSet;
 
                     /**
                      * CVM所在地域详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionDetail;
                     bool m_regionDetailHasBeenSet;
 
                     /**
                      * 主机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneZh;
                     bool m_zoneZhHasBeenSet;
 
                     /**
                      * 备机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneZhBack;
                     bool m_zoneZhBackHasBeenSet;
 
                     /**
                      * 防火墙CVM带宽值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bandWidth;
                     bool m_bandWidthHasBeenSet;
 
                     /**
                      * 实例主机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 实例备机所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneBak;
                     bool m_zoneBakHasBeenSet;

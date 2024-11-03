@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Component 组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponent() const;
 
                     /**
                      * 设置组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _component 组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponent(const std::string& _component);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_component;
                     bool m_componentHasBeenSet;
 
                     /**
                      * 版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;

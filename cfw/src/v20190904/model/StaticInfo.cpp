@@ -21,12 +21,12 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 StaticInfo::StaticInfo() :
-    m_numHasBeenSet(false),
-    m_portHasBeenSet(false),
-    m_ipHasBeenSet(false),
     m_addressHasBeenSet(false),
     m_insIDHasBeenSet(false),
-    m_insNameHasBeenSet(false)
+    m_insNameHasBeenSet(false),
+    m_ipHasBeenSet(false),
+    m_numHasBeenSet(false),
+    m_portHasBeenSet(false)
 {
 }
 
@@ -34,36 +34,6 @@ CoreInternalOutcome StaticInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Num") && !value["Num"].IsNull())
-    {
-        if (!value["Num"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `StaticInfo.Num` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_num = value["Num"].GetInt64();
-        m_numHasBeenSet = true;
-    }
-
-    if (value.HasMember("Port") && !value["Port"].IsNull())
-    {
-        if (!value["Port"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `StaticInfo.Port` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_port = string(value["Port"].GetString());
-        m_portHasBeenSet = true;
-    }
-
-    if (value.HasMember("Ip") && !value["Ip"].IsNull())
-    {
-        if (!value["Ip"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `StaticInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_ip = string(value["Ip"].GetString());
-        m_ipHasBeenSet = true;
-    }
 
     if (value.HasMember("Address") && !value["Address"].IsNull())
     {
@@ -95,36 +65,42 @@ CoreInternalOutcome StaticInfo::Deserialize(const rapidjson::Value &value)
         m_insNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Ip") && !value["Ip"].IsNull())
+    {
+        if (!value["Ip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaticInfo.Ip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ip = string(value["Ip"].GetString());
+        m_ipHasBeenSet = true;
+    }
+
+    if (value.HasMember("Num") && !value["Num"].IsNull())
+    {
+        if (!value["Num"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaticInfo.Num` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_num = value["Num"].GetInt64();
+        m_numHasBeenSet = true;
+    }
+
+    if (value.HasMember("Port") && !value["Port"].IsNull())
+    {
+        if (!value["Port"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaticInfo.Port` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_port = string(value["Port"].GetString());
+        m_portHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void StaticInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_numHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Num";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_num, allocator);
-    }
-
-    if (m_portHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Port";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_port.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_ipHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Ip";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_addressHasBeenSet)
     {
@@ -150,56 +126,32 @@ void StaticInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, rapidjson::Value(m_insName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_ipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_numHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Num";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_num, allocator);
+    }
+
+    if (m_portHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Port";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_port.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-int64_t StaticInfo::GetNum() const
-{
-    return m_num;
-}
-
-void StaticInfo::SetNum(const int64_t& _num)
-{
-    m_num = _num;
-    m_numHasBeenSet = true;
-}
-
-bool StaticInfo::NumHasBeenSet() const
-{
-    return m_numHasBeenSet;
-}
-
-string StaticInfo::GetPort() const
-{
-    return m_port;
-}
-
-void StaticInfo::SetPort(const string& _port)
-{
-    m_port = _port;
-    m_portHasBeenSet = true;
-}
-
-bool StaticInfo::PortHasBeenSet() const
-{
-    return m_portHasBeenSet;
-}
-
-string StaticInfo::GetIp() const
-{
-    return m_ip;
-}
-
-void StaticInfo::SetIp(const string& _ip)
-{
-    m_ip = _ip;
-    m_ipHasBeenSet = true;
-}
-
-bool StaticInfo::IpHasBeenSet() const
-{
-    return m_ipHasBeenSet;
-}
 
 string StaticInfo::GetAddress() const
 {
@@ -247,5 +199,53 @@ void StaticInfo::SetInsName(const string& _insName)
 bool StaticInfo::InsNameHasBeenSet() const
 {
     return m_insNameHasBeenSet;
+}
+
+string StaticInfo::GetIp() const
+{
+    return m_ip;
+}
+
+void StaticInfo::SetIp(const string& _ip)
+{
+    m_ip = _ip;
+    m_ipHasBeenSet = true;
+}
+
+bool StaticInfo::IpHasBeenSet() const
+{
+    return m_ipHasBeenSet;
+}
+
+int64_t StaticInfo::GetNum() const
+{
+    return m_num;
+}
+
+void StaticInfo::SetNum(const int64_t& _num)
+{
+    m_num = _num;
+    m_numHasBeenSet = true;
+}
+
+bool StaticInfo::NumHasBeenSet() const
+{
+    return m_numHasBeenSet;
+}
+
+string StaticInfo::GetPort() const
+{
+    return m_port;
+}
+
+void StaticInfo::SetPort(const string& _port)
+{
+    m_port = _port;
+    m_portHasBeenSet = true;
+}
+
+bool StaticInfo::PortHasBeenSet() const
+{
+    return m_portHasBeenSet;
 }
 

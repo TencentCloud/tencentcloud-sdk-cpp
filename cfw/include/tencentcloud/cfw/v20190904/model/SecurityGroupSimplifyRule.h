@@ -54,7 +54,6 @@ instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceContent 访问源示例：
 net：IP/CIDR(192.168.0.2)
 template：参数模板(ipm-dyodhpby)
@@ -62,7 +61,6 @@ instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceContent() const;
@@ -75,7 +73,6 @@ instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceContent 访问源示例：
 net：IP/CIDR(192.168.0.2)
 template：参数模板(ipm-dyodhpby)
@@ -83,7 +80,6 @@ instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceContent(const std::string& _sourceContent);
@@ -103,7 +99,6 @@ instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestContent 访问目的示例：
 net：IP/CIDR(192.168.0.2)
 template：参数模板(ipm-dyodhpby)
@@ -111,7 +106,6 @@ instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDestContent() const;
@@ -124,7 +118,6 @@ instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _destContent 访问目的示例：
 net：IP/CIDR(192.168.0.2)
 template：参数模板(ipm-dyodhpby)
@@ -132,7 +125,6 @@ instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDestContent(const std::string& _destContent);
@@ -146,18 +138,14 @@ region：地域(ap-gaungzhou)
 
                     /**
                      * 获取协议；TCP/UDP/ICMP/ANY
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议；TCP/UDP/ICMP/ANY
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议；TCP/UDP/ICMP/ANY
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 协议；TCP/UDP/ICMP/ANY
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -171,18 +159,14 @@ region：地域(ap-gaungzhou)
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -196,18 +180,14 @@ region：地域(ap-gaungzhou)
 
                     /**
                      * 获取规则对应的唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleUuid 规则对应的唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleUuid() const;
 
                     /**
                      * 设置规则对应的唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleUuid 规则对应的唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleUuid(const int64_t& _ruleUuid);
@@ -221,18 +201,14 @@ region：地域(ap-gaungzhou)
 
                     /**
                      * 获取规则序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sequence 规则序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSequence() const;
 
                     /**
                      * 设置规则序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sequence 规则序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSequence(const int64_t& _sequence);
@@ -254,7 +230,6 @@ instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceContent;
                     bool m_sourceContentHasBeenSet;
@@ -267,35 +242,30 @@ instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_destContent;
                     bool m_destContentHasBeenSet;
 
                     /**
                      * 协议；TCP/UDP/ICMP/ANY
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 规则对应的唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleUuid;
                     bool m_ruleUuidHasBeenSet;
 
                     /**
                      * 规则序号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sequence;
                     bool m_sequenceHasBeenSet;

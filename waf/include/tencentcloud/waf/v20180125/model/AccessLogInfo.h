@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志时间，单位ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 日志时间，单位ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTime() const;
 
                     /**
                      * 设置日志时间，单位ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _time 日志时间，单位ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTime(const int64_t& _time);
@@ -254,7 +250,6 @@ namespace TencentCloud
 
                     /**
                      * 日志时间，单位ms
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_time;
                     bool m_timeHasBeenSet;

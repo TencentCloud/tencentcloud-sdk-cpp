@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取api资产列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data api资产列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApiAsset> GetData() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * api资产列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApiAsset> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
                      * 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

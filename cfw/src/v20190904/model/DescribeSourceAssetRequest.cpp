@@ -23,12 +23,12 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 DescribeSourceAssetRequest::DescribeSourceAssetRequest() :
+    m_chooseTypeHasBeenSet(false),
     m_fuzzySearchHasBeenSet(false),
     m_insTypeHasBeenSet(false),
-    m_chooseTypeHasBeenSet(false),
-    m_zoneHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_zoneHasBeenSet(false)
 {
 }
 
@@ -38,6 +38,14 @@ string DescribeSourceAssetRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_chooseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChooseType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_chooseType.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_fuzzySearchHasBeenSet)
     {
@@ -53,22 +61,6 @@ string DescribeSourceAssetRequest::ToJsonString() const
         string key = "InsType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_insType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_chooseTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ChooseType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_chooseType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_zoneHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Zone";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -87,6 +79,14 @@ string DescribeSourceAssetRequest::ToJsonString() const
         d.AddMember(iKey, m_offset, allocator);
     }
 
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -94,6 +94,22 @@ string DescribeSourceAssetRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeSourceAssetRequest::GetChooseType() const
+{
+    return m_chooseType;
+}
+
+void DescribeSourceAssetRequest::SetChooseType(const string& _chooseType)
+{
+    m_chooseType = _chooseType;
+    m_chooseTypeHasBeenSet = true;
+}
+
+bool DescribeSourceAssetRequest::ChooseTypeHasBeenSet() const
+{
+    return m_chooseTypeHasBeenSet;
+}
 
 string DescribeSourceAssetRequest::GetFuzzySearch() const
 {
@@ -127,38 +143,6 @@ bool DescribeSourceAssetRequest::InsTypeHasBeenSet() const
     return m_insTypeHasBeenSet;
 }
 
-string DescribeSourceAssetRequest::GetChooseType() const
-{
-    return m_chooseType;
-}
-
-void DescribeSourceAssetRequest::SetChooseType(const string& _chooseType)
-{
-    m_chooseType = _chooseType;
-    m_chooseTypeHasBeenSet = true;
-}
-
-bool DescribeSourceAssetRequest::ChooseTypeHasBeenSet() const
-{
-    return m_chooseTypeHasBeenSet;
-}
-
-string DescribeSourceAssetRequest::GetZone() const
-{
-    return m_zone;
-}
-
-void DescribeSourceAssetRequest::SetZone(const string& _zone)
-{
-    m_zone = _zone;
-    m_zoneHasBeenSet = true;
-}
-
-bool DescribeSourceAssetRequest::ZoneHasBeenSet() const
-{
-    return m_zoneHasBeenSet;
-}
-
 int64_t DescribeSourceAssetRequest::GetLimit() const
 {
     return m_limit;
@@ -189,6 +173,22 @@ void DescribeSourceAssetRequest::SetOffset(const int64_t& _offset)
 bool DescribeSourceAssetRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeSourceAssetRequest::GetZone() const
+{
+    return m_zone;
+}
+
+void DescribeSourceAssetRequest::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool DescribeSourceAssetRequest::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 
 

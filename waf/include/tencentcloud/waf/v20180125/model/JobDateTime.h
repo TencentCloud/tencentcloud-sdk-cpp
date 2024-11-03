@@ -100,18 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeTZone 时区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeTZone() const;
 
                     /**
                      * 设置时区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeTZone 时区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeTZone(const std::string& _timeTZone);
@@ -141,7 +137,6 @@ namespace TencentCloud
 
                     /**
                      * 时区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeTZone;
                     bool m_timeTZoneHasBeenSet;

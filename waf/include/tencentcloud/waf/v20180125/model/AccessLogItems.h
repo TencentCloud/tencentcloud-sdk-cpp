@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分析结果返回的KV数据对
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 分析结果返回的KV数据对
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AccessLogItem> GetData() const;
 
                     /**
                      * 设置分析结果返回的KV数据对
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _data 分析结果返回的KV数据对
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetData(const std::vector<AccessLogItem>& _data);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 分析结果返回的KV数据对
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AccessLogItem> m_data;
                     bool m_dataHasBeenSet;

@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取日志导出列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Exports 日志导出列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ExportAccessInfo> GetExports() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 日志导出列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ExportAccessInfo> m_exports;
                     bool m_exportsHasBeenSet;

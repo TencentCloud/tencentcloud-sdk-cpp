@@ -22,8 +22,8 @@ using namespace std;
 
 CommonFilter::CommonFilter() :
     m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operatorTypeHasBeenSet(false)
+    m_operatorTypeHasBeenSet(false),
+    m_valuesHasBeenSet(false)
 {
 }
 
@@ -42,6 +42,16 @@ CoreInternalOutcome CommonFilter::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("OperatorType") && !value["OperatorType"].IsNull())
+    {
+        if (!value["OperatorType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CommonFilter.OperatorType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_operatorType = value["OperatorType"].GetInt64();
+        m_operatorTypeHasBeenSet = true;
+    }
+
     if (value.HasMember("Values") && !value["Values"].IsNull())
     {
         if (!value["Values"].IsArray())
@@ -53,16 +63,6 @@ CoreInternalOutcome CommonFilter::Deserialize(const rapidjson::Value &value)
             m_values.push_back((*itr).GetString());
         }
         m_valuesHasBeenSet = true;
-    }
-
-    if (value.HasMember("OperatorType") && !value["OperatorType"].IsNull())
-    {
-        if (!value["OperatorType"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `CommonFilter.OperatorType` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_operatorType = value["OperatorType"].GetInt64();
-        m_operatorTypeHasBeenSet = true;
     }
 
 
@@ -80,6 +80,14 @@ void CommonFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_operatorTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperatorType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_operatorType, allocator);
+    }
+
     if (m_valuesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -91,14 +99,6 @@ void CommonFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_operatorTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OperatorType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_operatorType, allocator);
     }
 
 }
@@ -120,22 +120,6 @@ bool CommonFilter::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-vector<string> CommonFilter::GetValues() const
-{
-    return m_values;
-}
-
-void CommonFilter::SetValues(const vector<string>& _values)
-{
-    m_values = _values;
-    m_valuesHasBeenSet = true;
-}
-
-bool CommonFilter::ValuesHasBeenSet() const
-{
-    return m_valuesHasBeenSet;
-}
-
 int64_t CommonFilter::GetOperatorType() const
 {
     return m_operatorType;
@@ -150,5 +134,21 @@ void CommonFilter::SetOperatorType(const int64_t& _operatorType)
 bool CommonFilter::OperatorTypeHasBeenSet() const
 {
     return m_operatorTypeHasBeenSet;
+}
+
+vector<string> CommonFilter::GetValues() const
+{
+    return m_values;
+}
+
+void CommonFilter::SetValues(const vector<string>& _values)
+{
+    m_values = _values;
+    m_valuesHasBeenSet = true;
+}
+
+bool CommonFilter::ValuesHasBeenSet() const
+{
+    return m_valuesHasBeenSet;
 }
 

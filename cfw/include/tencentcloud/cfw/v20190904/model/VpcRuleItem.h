@@ -158,7 +158,6 @@ SMTP/SMTPS
 FTP
 DNS
 TLS/SSL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议，可选的值：
 TCP
 UDP
@@ -173,7 +172,6 @@ SMTP/SMTPS
 FTP
 DNS
 TLS/SSL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
@@ -193,7 +191,6 @@ SMTP/SMTPS
 FTP
 DNS
 TLS/SSL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 协议，可选的值：
 TCP
 UDP
@@ -208,7 +205,6 @@ SMTP/SMTPS
 FTP
 DNS
 TLS/SSL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -257,11 +253,9 @@ log：观察
                      * 获取访问控制策略的端口。取值：
 -1/-1：全部端口
 80：80端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 访问控制策略的端口。取值：
 -1/-1：全部端口
 80：80端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPort() const;
@@ -270,11 +264,9 @@ log：观察
                      * 设置访问控制策略的端口。取值：
 -1/-1：全部端口
 80：80端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 访问控制策略的端口。取值：
 -1/-1：全部端口
 80：80端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const std::string& _port);
@@ -477,18 +469,14 @@ log：观察
 
                     /**
                      * 获取规则生效的防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwGroupId 规则生效的防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFwGroupId() const;
 
                     /**
                      * 设置规则生效的防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwGroupId 规则生效的防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwGroupId(const std::string& _fwGroupId);
@@ -502,18 +490,14 @@ log：观察
 
                     /**
                      * 获取防火墙名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwGroupName 防火墙名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFwGroupName() const;
 
                     /**
                      * 设置防火墙名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwGroupName 防火墙名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwGroupName(const std::string& _fwGroupName);
@@ -527,18 +511,14 @@ log：观察
 
                     /**
                      * 获取beta任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BetaList beta任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BetaInfoByACL> GetBetaList() const;
 
                     /**
                      * 设置beta任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _betaList beta任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBetaList(const std::vector<BetaInfoByACL>& _betaList);
@@ -552,18 +532,14 @@ log：观察
 
                     /**
                      * 获取端口协议组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParamTemplateId 端口协议组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParamTemplateId() const;
 
                     /**
                      * 设置端口协议组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _paramTemplateId 端口协议组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParamTemplateId(const std::string& _paramTemplateId);
@@ -577,18 +553,14 @@ log：观察
 
                     /**
                      * 获取端口协议组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParamTemplateName 端口协议组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParamTemplateName() const;
 
                     /**
                      * 设置端口协议组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _paramTemplateName 端口协议组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParamTemplateName(const std::string& _paramTemplateName);
@@ -602,18 +574,14 @@ log：观察
 
                     /**
                      * 获取访问目的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetName 访问目的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetName() const;
 
                     /**
                      * 设置访问目的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetName 访问目的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetName(const std::string& _targetName);
@@ -627,18 +595,14 @@ log：观察
 
                     /**
                      * 获取访问源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceName 访问源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceName() const;
 
                     /**
                      * 设置访问源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceName 访问源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceName(const std::string& _sourceName);
@@ -652,18 +616,14 @@ log：观察
 
                     /**
                      * 获取Ip版本，0：IPv4，1：IPv6，默认为IPv4
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpVersion Ip版本，0：IPv4，1：IPv6，默认为IPv4
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIpVersion() const;
 
                     /**
                      * 设置Ip版本，0：IPv4，1：IPv6，默认为IPv4
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipVersion Ip版本，0：IPv4，1：IPv6，默认为IPv4
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpVersion(const int64_t& _ipVersion);
@@ -674,6 +634,27 @@ log：观察
                      * 
                      */
                     bool IpVersionHasBeenSet() const;
+
+                    /**
+                     * 获取是否是无效规则，0 表示有效规则，1 表示无效规则，出参场景返回使用
+                     * @return Invalid 是否是无效规则，0 表示有效规则，1 表示无效规则，出参场景返回使用
+                     * 
+                     */
+                    int64_t GetInvalid() const;
+
+                    /**
+                     * 设置是否是无效规则，0 表示有效规则，1 表示无效规则，出参场景返回使用
+                     * @param _invalid 是否是无效规则，0 表示有效规则，1 表示无效规则，出参场景返回使用
+                     * 
+                     */
+                    void SetInvalid(const int64_t& _invalid);
+
+                    /**
+                     * 判断参数 Invalid 是否已赋值
+                     * @return Invalid 是否已赋值
+                     * 
+                     */
+                    bool InvalidHasBeenSet() const;
 
                 private:
 
@@ -719,7 +700,6 @@ SMTP/SMTPS
 FTP
 DNS
 TLS/SSL
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -737,7 +717,6 @@ log：观察
                      * 访问控制策略的端口。取值：
 -1/-1：全部端口
 80：80端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;
@@ -798,59 +777,57 @@ log：观察
 
                     /**
                      * 规则生效的防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fwGroupId;
                     bool m_fwGroupIdHasBeenSet;
 
                     /**
                      * 防火墙名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fwGroupName;
                     bool m_fwGroupNameHasBeenSet;
 
                     /**
                      * beta任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BetaInfoByACL> m_betaList;
                     bool m_betaListHasBeenSet;
 
                     /**
                      * 端口协议组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_paramTemplateId;
                     bool m_paramTemplateIdHasBeenSet;
 
                     /**
                      * 端口协议组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_paramTemplateName;
                     bool m_paramTemplateNameHasBeenSet;
 
                     /**
                      * 访问目的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetName;
                     bool m_targetNameHasBeenSet;
 
                     /**
                      * 访问源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceName;
                     bool m_sourceNameHasBeenSet;
 
                     /**
                      * Ip版本，0：IPv4，1：IPv6，默认为IPv4
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ipVersion;
                     bool m_ipVersionHasBeenSet;
+
+                    /**
+                     * 是否是无效规则，0 表示有效规则，1 表示无效规则，出参场景返回使用
+                     */
+                    int64_t m_invalid;
+                    bool m_invalidHasBeenSet;
 
                 };
             }

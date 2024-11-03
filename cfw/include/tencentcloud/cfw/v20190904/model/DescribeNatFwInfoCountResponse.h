@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回参数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReturnMsg 返回参数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取返回参数 success 成功 failed 失败
+                     * @return ReturnMsg 返回参数 success 成功 failed 失败
                      * 
                      */
                     std::string GetReturnMsg() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     bool ReturnMsgHasBeenSet() const;
 
                     /**
-                     * 获取当前租户的nat实例个数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NatFwInsCount 当前租户的nat实例个数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取当前租户的nat防火墙实例个数
+                     * @return NatFwInsCount 当前租户的nat防火墙实例个数
                      * 
                      */
                     int64_t GetNatFwInsCount() const;
@@ -76,10 +72,8 @@ namespace TencentCloud
                     bool NatFwInsCountHasBeenSet() const;
 
                     /**
-                     * 获取当前租户接入子网个数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubnetCount 当前租户接入子网个数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取当前租户接入防火墙的子网个数
+                     * @return SubnetCount 当前租户接入防火墙的子网个数
                      * 
                      */
                     int64_t GetSubnetCount() const;
@@ -92,10 +86,8 @@ namespace TencentCloud
                     bool SubnetCountHasBeenSet() const;
 
                     /**
-                     * 获取打开开关个数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OpenSwitchCount 打开开关个数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取打开NAT防火墙开关个数
+                     * @return OpenSwitchCount 打开NAT防火墙开关个数
                      * 
                      */
                     int64_t GetOpenSwitchCount() const;
@@ -110,29 +102,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回参数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 返回参数 success 成功 failed 失败
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;
 
                     /**
-                     * 当前租户的nat实例个数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 当前租户的nat防火墙实例个数
                      */
                     int64_t m_natFwInsCount;
                     bool m_natFwInsCountHasBeenSet;
 
                     /**
-                     * 当前租户接入子网个数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 当前租户接入防火墙的子网个数
                      */
                     int64_t m_subnetCount;
                     bool m_subnetCountHasBeenSet;
 
                     /**
-                     * 打开开关个数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 打开NAT防火墙开关个数
                      */
                     int64_t m_openSwitchCount;
                     bool m_openSwitchCountHasBeenSet;

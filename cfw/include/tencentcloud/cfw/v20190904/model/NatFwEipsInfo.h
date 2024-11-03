@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属的Nat网关Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatGatewayId 所属的Nat网关Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置所属的Nat网关Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _natGatewayId 所属的Nat网关Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Nat网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatGatewayName Nat网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNatGatewayName() const;
 
                     /**
                      * 设置Nat网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _natGatewayName Nat网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNatGatewayName(const std::string& _natGatewayName);
@@ -127,14 +119,12 @@ namespace TencentCloud
 
                     /**
                      * 所属的Nat网关Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_natGatewayId;
                     bool m_natGatewayIdHasBeenSet;
 
                     /**
                      * Nat网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_natGatewayName;
                     bool m_natGatewayNameHasBeenSet;

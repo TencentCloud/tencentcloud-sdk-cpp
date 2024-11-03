@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关所属vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 网关所属vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置网关所属vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 网关所属vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpAddress 网关ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIpAddress() const;
 
                     /**
                      * 设置网关ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipAddress 网关ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpAddress(const std::string& _ipAddress);
@@ -127,14 +119,12 @@ namespace TencentCloud
 
                     /**
                      * 网关所属vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 网关ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ipAddress;
                     bool m_ipAddressHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例卡片信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatinsLst 实例卡片信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NatInstanceInfo> GetNatinsLst() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取nat 防火墙个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total nat 防火墙个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 实例卡片信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NatInstanceInfo> m_natinsLst;
                     bool m_natinsLstHasBeenSet;
 
                     /**
                      * nat 防火墙个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

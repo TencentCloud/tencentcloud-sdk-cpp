@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TLSVERSION的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionId TLSVERSION的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVersionId() const;
 
                     /**
                      * 设置TLSVERSION的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _versionId TLSVERSION的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersionId(const int64_t& _versionId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TLSVERSION的NAME
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionName TLSVERSION的NAME
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 设置TLSVERSION的NAME
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _versionName TLSVERSION的NAME
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersionName(const std::string& _versionName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * TLSVERSION的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_versionId;
                     bool m_versionIdHasBeenSet;
 
                     /**
                      * TLSVERSION的NAME
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_versionName;
                     bool m_versionNameHasBeenSet;

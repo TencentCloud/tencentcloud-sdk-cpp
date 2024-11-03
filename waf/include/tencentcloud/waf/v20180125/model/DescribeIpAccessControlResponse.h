@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取输出
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 输出
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     IpAccessControlData GetData() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已经使用的IP黑白名单的IP总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedTotal 已经使用的IP黑白名单的IP总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUsedTotal() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 输出
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IpAccessControlData m_data;
                     bool m_dataHasBeenSet;
 
                     /**
                      * 已经使用的IP黑白名单的IP总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_usedTotal;
                     bool m_usedTotalHasBeenSet;

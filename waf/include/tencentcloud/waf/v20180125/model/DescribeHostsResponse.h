@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取防护域名的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostList 防护域名的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HostRecord> GetHostList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 防护域名的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HostRecord> m_hostList;
                     bool m_hostListHasBeenSet;

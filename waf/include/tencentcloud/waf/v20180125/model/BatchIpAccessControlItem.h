@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取mongo表自增Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id mongo表自增Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置mongo表自增Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id mongo表自增Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -221,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取55101145
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 55101145
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
                      * 设置55101145
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 55101145
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
@@ -246,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpList IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetIpList() const;
 
                     /**
                      * 设置IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipList IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpList(const std::vector<std::string>& _ipList);
@@ -271,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -296,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobType 定时任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobType() const;
 
                     /**
                      * 设置定时任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobType 定时任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobType(const std::string& _jobType);
@@ -321,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取周期任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CronType 周期任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCronType() const;
 
                     /**
                      * 设置周期任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cronType 周期任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCronType(const std::string& _cronType);
@@ -346,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时任务配置详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobDateTime 定时任务配置详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     JobDateTime GetJobDateTime() const;
 
                     /**
                      * 设置定时任务配置详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobDateTime 定时任务配置详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobDateTime(const JobDateTime& _jobDateTime);
@@ -371,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生效状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidStatus 生效状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetValidStatus() const;
 
                     /**
                      * 设置生效状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _validStatus 生效状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValidStatus(const int64_t& _validStatus);
@@ -398,7 +366,6 @@ namespace TencentCloud
 
                     /**
                      * mongo表自增Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
@@ -447,49 +414,42 @@ namespace TencentCloud
 
                     /**
                      * 55101145
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
                      * IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ipList;
                     bool m_ipListHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 定时任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobType;
                     bool m_jobTypeHasBeenSet;
 
                     /**
                      * 周期任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cronType;
                     bool m_cronTypeHasBeenSet;
 
                     /**
                      * 定时任务配置详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     JobDateTime m_jobDateTime;
                     bool m_jobDateTimeHasBeenSet;
 
                     /**
                      * 生效状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_validStatus;
                     bool m_validStatusHasBeenSet;

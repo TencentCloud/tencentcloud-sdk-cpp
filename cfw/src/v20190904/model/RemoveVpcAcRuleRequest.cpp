@@ -23,7 +23,8 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 RemoveVpcAcRuleRequest::RemoveVpcAcRuleRequest() :
-    m_ruleUuidsHasBeenSet(false)
+    m_ruleUuidsHasBeenSet(false),
+    m_ipVersionHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string RemoveVpcAcRuleRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_ipVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ipVersion, allocator);
     }
 
 
@@ -69,6 +78,22 @@ void RemoveVpcAcRuleRequest::SetRuleUuids(const vector<int64_t>& _ruleUuids)
 bool RemoveVpcAcRuleRequest::RuleUuidsHasBeenSet() const
 {
     return m_ruleUuidsHasBeenSet;
+}
+
+uint64_t RemoveVpcAcRuleRequest::GetIpVersion() const
+{
+    return m_ipVersion;
+}
+
+void RemoveVpcAcRuleRequest::SetIpVersion(const uint64_t& _ipVersion)
+{
+    m_ipVersion = _ipVersion;
+    m_ipVersionHasBeenSet = true;
+}
+
+bool RemoveVpcAcRuleRequest::IpVersionHasBeenSet() const
+{
+    return m_ipVersionHasBeenSet;
 }
 
 

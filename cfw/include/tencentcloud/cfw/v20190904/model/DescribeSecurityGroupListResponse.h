@@ -88,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取访问控制规则全部启用/全部停用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 访问控制规则全部启用/全部停用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEnable() const;
@@ -124,7 +122,6 @@ namespace TencentCloud
 
                     /**
                      * 访问控制规则全部启用/全部停用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enable;
                     bool m_enableHasBeenSet;

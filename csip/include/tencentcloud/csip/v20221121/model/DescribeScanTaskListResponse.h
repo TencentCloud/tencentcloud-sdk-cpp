@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 任务日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScanTaskInfoList> GetData() const;
@@ -79,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取主账户ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UINList 主账户ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUINList() const;
@@ -95,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取体检模式过滤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskModeList 体检模式过滤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetTaskModeList() const;
@@ -113,28 +105,24 @@ namespace TencentCloud
 
                     /**
                      * 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 任务日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScanTaskInfoList> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
                      * 主账户ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_uINList;
                     bool m_uINListHasBeenSet;
 
                     /**
                      * 体检模式过滤列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_taskModeList;
                     bool m_taskModeListHasBeenSet;

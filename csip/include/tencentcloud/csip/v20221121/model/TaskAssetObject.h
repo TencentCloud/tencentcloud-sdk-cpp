@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetName 资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetName() const;
 
                     /**
                      * 设置资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetName 资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetName(const std::string& _assetName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetType 资产分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetType() const;
 
                     /**
                      * 设置资产分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetType 资产分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetType(const std::string& _assetType);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -169,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多云资产唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Arn 多云资产唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetArn() const;
 
                     /**
                      * 设置多云资产唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _arn 多云资产唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetArn(const std::string& _arn);
@@ -196,21 +176,18 @@ namespace TencentCloud
 
                     /**
                      * 资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetName;
                     bool m_assetNameHasBeenSet;
 
                     /**
                      * 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 资产分类
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetType;
                     bool m_assetTypeHasBeenSet;
@@ -223,14 +200,12 @@ namespace TencentCloud
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 多云资产唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_arn;
                     bool m_arnHasBeenSet;

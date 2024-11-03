@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取0代表成功，-1代表失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnCode 0代表成功，-1代表失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReturnCode() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取success代表成功，failed代表失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnMsg success代表成功，failed代表失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReturnMsg() const;
@@ -99,14 +95,12 @@ namespace TencentCloud
 
                     /**
                      * 0代表成功，-1代表失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_returnCode;
                     bool m_returnCodeHasBeenSet;
 
                     /**
                      * success代表成功，failed代表失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;

@@ -114,12 +114,10 @@ namespace TencentCloud
 <li>read 读取文件</li>
 <li>write 修改文件</li>
 <li>read-write 读取修改文件</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileAction 监控行为
 <li>read 读取文件</li>
 <li>write 修改文件</li>
 <li>read-write 读取修改文件</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileAction() const;
@@ -129,12 +127,10 @@ namespace TencentCloud
 <li>read 读取文件</li>
 <li>write 修改文件</li>
 <li>read-write 读取修改文件</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileAction 监控行为
 <li>read 读取文件</li>
 <li>write 修改文件</li>
 <li>read-write 读取修改文件</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileAction(const std::string& _fileAction);
@@ -171,7 +167,6 @@ namespace TencentCloud
 <li>read 读取文件</li>
 <li>write 修改文件</li>
 <li>read-write 读取修改文件</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileAction;
                     bool m_fileActionHasBeenSet;

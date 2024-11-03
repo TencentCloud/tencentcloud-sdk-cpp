@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络协议，可选值：TCP、UDP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpProtocol 网络协议，可选值：TCP、UDP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIpProtocol() const;
 
                     /**
                      * 设置网络协议，可选值：TCP、UDP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipProtocol 网络协议，可选值：TCP、UDP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpProtocol(const std::string& _ipProtocol);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIpAddress 弹性IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicIpAddress() const;
 
                     /**
                      * 设置弹性IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicIpAddress 弹性IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicIpAddress(const std::string& _publicIpAddress);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网端口。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicPort 公网端口。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPublicPort() const;
 
                     /**
                      * 设置公网端口。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicPort 公网端口。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicPort(const int64_t& _publicPort);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIpAddress 内网地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrivateIpAddress() const;
 
                     /**
                      * 设置内网地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privateIpAddress 内网地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivateIpAddress(const std::string& _privateIpAddress);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网端口。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivatePort 内网端口。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPrivatePort() const;
 
                     /**
                      * 设置内网端口。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privatePort 内网端口。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivatePort(const int64_t& _privatePort);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NAT防火墙转发规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description NAT防火墙转发规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置NAT防火墙转发规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description NAT防火墙转发规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否被关联引用，如被远程运维使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsReferenced 是否被关联引用，如被远程运维使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsReferenced() const;
 
                     /**
                      * 设置是否被关联引用，如被远程运维使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isReferenced 是否被关联引用，如被远程运维使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsReferenced(const int64_t& _isReferenced);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属防火墙实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwInsId 所属防火墙实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFwInsId() const;
 
                     /**
                      * 设置所属防火墙实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwInsId 所属防火墙实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwInsId(const std::string& _fwInsId);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联的nat网关Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatGwId 关联的nat网关Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNatGwId() const;
 
                     /**
                      * 设置关联的nat网关Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _natGwId 关联的nat网关Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNatGwId(const std::string& _natGwId);
@@ -300,70 +260,60 @@ namespace TencentCloud
 
                     /**
                      * id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 网络协议，可选值：TCP、UDP。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ipProtocol;
                     bool m_ipProtocolHasBeenSet;
 
                     /**
                      * 弹性IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicIpAddress;
                     bool m_publicIpAddressHasBeenSet;
 
                     /**
                      * 公网端口。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_publicPort;
                     bool m_publicPortHasBeenSet;
 
                     /**
                      * 内网地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_privateIpAddress;
                     bool m_privateIpAddressHasBeenSet;
 
                     /**
                      * 内网端口。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_privatePort;
                     bool m_privatePortHasBeenSet;
 
                     /**
                      * NAT防火墙转发规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 是否被关联引用，如被远程运维使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isReferenced;
                     bool m_isReferencedHasBeenSet;
 
                     /**
                      * 所属防火墙实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fwInsId;
                     bool m_fwInsIdHasBeenSet;
 
                     /**
                      * 关联的nat网关Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_natGwId;
                     bool m_natGwIdHasBeenSet;

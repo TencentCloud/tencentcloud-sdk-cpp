@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取租户伪攻击链未处置事件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 租户伪攻击链未处置事件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     UnHandleEvent GetData() const;
@@ -92,7 +90,6 @@ namespace TencentCloud
 
                     /**
                      * 租户伪攻击链未处置事件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UnHandleEvent m_data;
                     bool m_dataHasBeenSet;

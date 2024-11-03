@@ -154,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取waf产品码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductInfo waf产品码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProductInfo> GetProductInfo() const;
 
                     /**
                      * 设置waf产品码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productInfo waf产品码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductInfo(const std::vector<ProductInfo>& _productInfo);
@@ -179,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取waf实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName waf实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置waf实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName waf实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -204,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取QPS数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticQps QPS数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetElasticQps() const;
 
                     /**
                      * 设置QPS数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elasticQps QPS数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElasticQps(const int64_t& _elasticQps);
@@ -229,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性账单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlexBill 弹性账单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFlexBill() const;
 
                     /**
                      * 设置弹性账单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flexBill 弹性账单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlexBill(const int64_t& _flexBill);
@@ -254,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1:自动续费，0:不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRenewFlag 1:自动续费，0:不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置1:自动续费，0:不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoRenewFlag 1:自动续费，0:不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -279,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取waf购买的实际地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealRegion waf购买的实际地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRealRegion() const;
 
                     /**
                      * 设置waf购买的实际地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realRegion waf购买的实际地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealRegion(const int64_t& _realRegion);
@@ -304,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Waf实例对应的二级产品码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type Waf实例对应的二级产品码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置Waf实例对应的二级产品码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type Waf实例对应的二级产品码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -329,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费细项标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelTypes 计费细项标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLabelTypes() const;
 
                     /**
                      * 设置计费细项标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labelTypes 计费细项标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabelTypes(const std::vector<std::string>& _labelTypes);
@@ -354,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费细项标签数量，一般和SvLabelType一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelCounts 计费细项标签数量，一般和SvLabelType一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetLabelCounts() const;
 
                     /**
                      * 设置计费细项标签数量，一般和SvLabelType一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labelCounts 计费细项标签数量，一般和SvLabelType一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabelCounts(const std::vector<int64_t>& _labelCounts);
@@ -379,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取变配使用，实例到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurDeadline 变配使用，实例到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurDeadline() const;
 
                     /**
                      * 设置变配使用，实例到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _curDeadline 变配使用，实例到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurDeadline(const std::string& _curDeadline);
@@ -404,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对存在的实例购买bot 或api 安全
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 对存在的实例购买bot 或api 安全
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置对存在的实例购买bot 或api 安全
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 对存在的实例购买bot 或api 安全
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -461,77 +417,66 @@ namespace TencentCloud
 
                     /**
                      * waf产品码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProductInfo> m_productInfo;
                     bool m_productInfoHasBeenSet;
 
                     /**
                      * waf实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * QPS数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_elasticQps;
                     bool m_elasticQpsHasBeenSet;
 
                     /**
                      * 弹性账单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flexBill;
                     bool m_flexBillHasBeenSet;
 
                     /**
                      * 1:自动续费，0:不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
                      * waf购买的实际地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_realRegion;
                     bool m_realRegionHasBeenSet;
 
                     /**
                      * Waf实例对应的二级产品码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 计费细项标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_labelTypes;
                     bool m_labelTypesHasBeenSet;
 
                     /**
                      * 计费细项标签数量，一般和SvLabelType一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_labelCounts;
                     bool m_labelCountsHasBeenSet;
 
                     /**
                      * 变配使用，实例到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_curDeadline;
                     bool m_curDeadlineHasBeenSet;
 
                     /**
                      * 对存在的实例购买bot 或api 安全
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

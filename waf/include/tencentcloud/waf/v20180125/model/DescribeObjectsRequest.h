@@ -44,39 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取支持的过滤器:
-	ObjectId: clb实例ID
-	VIP: clb实例的公网IP
-	InstanceId: waf实例ID
-	Domain: 精准域名
-	Status: waf防护开关状态: 0关闭，1开启
-	ClsStatus: waf日志开关: 0关闭，1开启
-                     * @return Filters 支持的过滤器:
-	ObjectId: clb实例ID
-	VIP: clb实例的公网IP
-	InstanceId: waf实例ID
-	Domain: 精准域名
-	Status: waf防护开关状态: 0关闭，1开启
-	ClsStatus: waf日志开关: 0关闭，1开启
+                     * 获取支持的过滤器:	ObjectId: clb实例ID	VIP: clb实例的公网IP	InstanceId: waf实例ID	Domain: 精准域名	Status: waf防护开关状态: 0关闭，1开启	ClsStatus: waf日志开关: 0关闭，1开启   
+                     * @return Filters 支持的过滤器:	ObjectId: clb实例ID	VIP: clb实例的公网IP	InstanceId: waf实例ID	Domain: 精准域名	Status: waf防护开关状态: 0关闭，1开启	ClsStatus: waf日志开关: 0关闭，1开启   
                      * 
                      */
                     std::vector<FiltersItemNew> GetFilters() const;
 
                     /**
-                     * 设置支持的过滤器:
-	ObjectId: clb实例ID
-	VIP: clb实例的公网IP
-	InstanceId: waf实例ID
-	Domain: 精准域名
-	Status: waf防护开关状态: 0关闭，1开启
-	ClsStatus: waf日志开关: 0关闭，1开启
-                     * @param _filters 支持的过滤器:
-	ObjectId: clb实例ID
-	VIP: clb实例的公网IP
-	InstanceId: waf实例ID
-	Domain: 精准域名
-	Status: waf防护开关状态: 0关闭，1开启
-	ClsStatus: waf日志开关: 0关闭，1开启
+                     * 设置支持的过滤器:	ObjectId: clb实例ID	VIP: clb实例的公网IP	InstanceId: waf实例ID	Domain: 精准域名	Status: waf防护开关状态: 0关闭，1开启	ClsStatus: waf日志开关: 0关闭，1开启   
+                     * @param _filters 支持的过滤器:	ObjectId: clb实例ID	VIP: clb实例的公网IP	InstanceId: waf实例ID	Domain: 精准域名	Status: waf防护开关状态: 0关闭，1开启	ClsStatus: waf日志开关: 0关闭，1开启   
                      * 
                      */
                     void SetFilters(const std::vector<FiltersItemNew>& _filters);
@@ -91,13 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 支持的过滤器:
-	ObjectId: clb实例ID
-	VIP: clb实例的公网IP
-	InstanceId: waf实例ID
-	Domain: 精准域名
-	Status: waf防护开关状态: 0关闭，1开启
-	ClsStatus: waf日志开关: 0关闭，1开启
+                     * 支持的过滤器:	ObjectId: clb实例ID	VIP: clb实例的公网IP	InstanceId: waf实例ID	Domain: 精准域名	Status: waf防护开关状态: 0关闭，1开启	ClsStatus: waf日志开关: 0关闭，1开启   
                      */
                     std::vector<FiltersItemNew> m_filters;
                     bool m_filtersHasBeenSet;

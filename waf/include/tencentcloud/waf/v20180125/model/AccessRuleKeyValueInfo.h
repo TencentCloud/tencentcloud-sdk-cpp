@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否大小写敏感
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CaseSensitive 是否大小写敏感
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCaseSensitive() const;
 
                     /**
                      * 设置是否大小写敏感
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _caseSensitive 是否大小写敏感
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCaseSensitive(const bool& _caseSensitive);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要建立索引的键值对信息；最大只能配置100个键值对
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyValues 需要建立索引的键值对信息；最大只能配置100个键值对
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AccessKeyValueInfo> GetKeyValues() const;
 
                     /**
                      * 设置需要建立索引的键值对信息；最大只能配置100个键值对
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keyValues 需要建立索引的键值对信息；最大只能配置100个键值对
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeyValues(const std::vector<AccessKeyValueInfo>& _keyValues);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 是否大小写敏感
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_caseSensitive;
                     bool m_caseSensitiveHasBeenSet;
 
                     /**
                      * 需要建立索引的键值对信息；最大只能配置100个键值对
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AccessKeyValueInfo> m_keyValues;
                     bool m_keyValuesHasBeenSet;

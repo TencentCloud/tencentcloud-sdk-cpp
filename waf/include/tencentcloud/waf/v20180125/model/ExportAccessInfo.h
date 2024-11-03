@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志导出任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExportId 日志导出任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExportId() const;
 
                     /**
                      * 设置日志导出任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exportId 日志导出任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExportId(const std::string& _exportId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志导出查询语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Query 日志导出查询语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置日志导出查询语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _query 日志导出查询语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志导出文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileName 日志导出文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置日志导出文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileName 日志导出文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志导出时间排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Order 日志导出时间排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置日志导出时间排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _order 日志导出时间排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -169,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志导出格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Format 日志导出格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置日志导出格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _format 日志导出格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -194,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志导出数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 日志导出数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置日志导出数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 日志导出数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -326,21 +302,18 @@ namespace TencentCloud
 
                     /**
                      * 日志导出任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exportId;
                     bool m_exportIdHasBeenSet;
 
                     /**
                      * 日志导出查询语句
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
                      * 日志导出文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
@@ -353,21 +326,18 @@ namespace TencentCloud
 
                     /**
                      * 日志导出时间排序
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
                      * 日志导出格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
 
                     /**
                      * 日志导出数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;

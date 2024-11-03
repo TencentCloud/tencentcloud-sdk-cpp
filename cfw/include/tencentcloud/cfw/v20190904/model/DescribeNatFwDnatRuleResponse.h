@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Dnat规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data Dnat规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DescNatDnatRule> GetData() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * Dnat规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescNatDnatRule> m_data;
                     bool m_dataHasBeenSet;

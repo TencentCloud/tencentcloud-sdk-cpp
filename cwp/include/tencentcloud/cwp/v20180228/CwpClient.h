@@ -4209,7 +4209,9 @@ namespace TencentCloud
                 DescribeCloudProtectServiceOrderListOutcomeCallable DescribeCloudProtectServiceOrderListCallable(const Model::DescribeCloudProtectServiceOrderListRequest& request);
 
                 /**
-                 *本接口 (DescribeComponentStatistics) 用于获取组件统计列表数据。
+                 *接口已无效
+
+本接口 (DescribeComponentStatistics) 用于获取组件统计列表数据。
                  * @param req DescribeComponentStatisticsRequest
                  * @return DescribeComponentStatisticsOutcome
                  */

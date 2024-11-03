@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取动作
-                     * @return ActionType 动作
+                     * 获取动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，24表示JS校验
+                     * @return ActionType 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，24表示JS校验
                      * 
                      */
                     uint64_t GetActionType() const;
 
                     /**
-                     * 设置动作
-                     * @param _actionType 动作
+                     * 设置动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，24表示JS校验
+                     * @param _actionType 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，24表示JS校验
                      * 
                      */
                     void SetActionType(const uint64_t& _actionType);
@@ -304,18 +304,14 @@ namespace TencentCloud
 
                     /**
                      * 获取url长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Length url长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLength() const;
 
                     /**
                      * 设置url长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _length url长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLength(const uint64_t& _length);
@@ -329,18 +325,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
                      * 设置规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
@@ -354,18 +346,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventId 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventId 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventId(const std::string& _eventId);
@@ -379,18 +367,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联的Session规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionApplied 关联的Session规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetSessionApplied() const;
 
                     /**
                      * 设置关联的Session规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionApplied 关联的Session规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionApplied(const std::vector<int64_t>& _sessionApplied);
@@ -404,18 +388,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -430,7 +410,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 动作
+                     * 动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，24表示JS校验
                      */
                     uint64_t m_actionType;
                     bool m_actionTypeHasBeenSet;
@@ -504,35 +484,30 @@ namespace TencentCloud
 
                     /**
                      * url长度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_length;
                     bool m_lengthHasBeenSet;
 
                     /**
                      * 规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
                      * 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
                      * 关联的Session规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_sessionApplied;
                     bool m_sessionAppliedHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;

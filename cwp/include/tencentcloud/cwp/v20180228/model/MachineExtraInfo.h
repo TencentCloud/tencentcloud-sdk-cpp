@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanIP 公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWanIP() const;
 
                     /**
                      * 设置公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wanIP 公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWanIP(const std::string& _wanIP);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIP 内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrivateIP() const;
 
                     /**
                      * 设置内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privateIP 内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivateIP(const std::string& _privateIP);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络类型，1:vpc网络 2:基础网络 3:非腾讯云网络
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkType 网络类型，1:vpc网络 2:基础网络 3:非腾讯云网络
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNetworkType() const;
 
                     /**
                      * 设置网络类型，1:vpc网络 2:基础网络 3:非腾讯云网络
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _networkType 网络类型，1:vpc网络 2:基础网络 3:非腾讯云网络
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetworkType(const int64_t& _networkType);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络名，vpc网络情况下会返回vpc_id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkName 网络名，vpc网络情况下会返回vpc_id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetworkName() const;
 
                     /**
                      * 设置网络名，vpc网络情况下会返回vpc_id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _networkName 网络名，vpc网络情况下会返回vpc_id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetworkName(const std::string& _networkName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceID 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceID 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostName 主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wanIP;
                     bool m_wanIPHasBeenSet;
 
                     /**
                      * 内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_privateIP;
                     bool m_privateIPHasBeenSet;
 
                     /**
                      * 网络类型，1:vpc网络 2:基础网络 3:非腾讯云网络
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_networkType;
                     bool m_networkTypeHasBeenSet;
 
                     /**
                      * 网络名，vpc网络情况下会返回vpc_id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_networkName;
                     bool m_networkNameHasBeenSet;
 
                     /**
                      * 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
                      * 主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;

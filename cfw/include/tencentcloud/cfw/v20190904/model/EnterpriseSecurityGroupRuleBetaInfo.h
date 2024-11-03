@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const int64_t& _taskId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskName 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskName 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastTime 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastTime() const;
 
                     /**
                      * 设置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastTime 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastTime(const std::string& _lastTime);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
                      * 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastTime;
                     bool m_lastTimeHasBeenSet;

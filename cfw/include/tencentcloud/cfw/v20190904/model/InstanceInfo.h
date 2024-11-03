@@ -35,25 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * // InstanceInfo 实例详情结果
-type InstanceInfo struct {
-	AppID        string `json:"AppId" gorm:"column:appid"`
-	Region       string `json:"Region" gorm:"column:region"`
-	VPCID        string `json:"VpcId" gorm:"column:vpc_id"`
-	SubNetID     string `json:"SubnetId" gorm:"column:subnet_id"`
-	InstanceID   string `json:"InstanceId" gorm:"column:instance_id"`
-	InstanceName string `json:"InstanceName" gorm:"column:instance_name"`
-	//InsType common.CVM 3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA
-	InsType   int    `json:"InsType" gorm:"column:instance_type"`
-	PublicIP  string `json:"PublicIp" gorm:"column:public_ip"`
-	PrivateIP string `json:"PrivateIp" gorm:"column:ip"`
-
-	//规则下发无需管，前端展示用
-	PortNum          string `json:"PortNum" gorm:"column:port_num"`
-	LeakNum          string `json:"LeakNum" gorm:"column:leak_num"`
-	ResourceGroupNum int    `json:"ResourceGroupNum"`
-	VPCName          string `json:"VPCName" gorm:"column:VPCName"`
-}
+                * 实例详情结果
                 */
                 class InstanceInfo : public AbstractModel
                 {
@@ -86,88 +68,54 @@ type InstanceInfo struct {
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return Region 地域
+                     * 获取资产来源
+1公网 2内网
+                     * @return InsSource 资产来源
+1公网 2内网
                      * 
                      */
-                    std::string GetRegion() const;
+                    std::string GetInsSource() const;
 
                     /**
-                     * 设置地域
-                     * @param _region 地域
+                     * 设置资产来源
+1公网 2内网
+                     * @param _insSource 资产来源
+1公网 2内网
                      * 
                      */
-                    void SetRegion(const std::string& _region);
+                    void SetInsSource(const std::string& _insSource);
 
                     /**
-                     * 判断参数 Region 是否已赋值
-                     * @return Region 是否已赋值
+                     * 判断参数 InsSource 是否已赋值
+                     * @return InsSource 是否已赋值
                      * 
                      */
-                    bool RegionHasBeenSet() const;
+                    bool InsSourceHasBeenSet() const;
 
                     /**
-                     * 获取vpcid信息
-                     * @return VpcId vpcid信息
+                     * 获取资产类型
+ 3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA 13 NATFW
+                     * @return InsType 资产类型
+ 3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA 13 NATFW
                      * 
                      */
-                    std::string GetVpcId() const;
+                    int64_t GetInsType() const;
 
                     /**
-                     * 设置vpcid信息
-                     * @param _vpcId vpcid信息
+                     * 设置资产类型
+ 3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA 13 NATFW
+                     * @param _insType 资产类型
+ 3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA 13 NATFW
                      * 
                      */
-                    void SetVpcId(const std::string& _vpcId);
+                    void SetInsType(const int64_t& _insType);
 
                     /**
-                     * 判断参数 VpcId 是否已赋值
-                     * @return VpcId 是否已赋值
+                     * 判断参数 InsType 是否已赋值
+                     * @return InsType 是否已赋值
                      * 
                      */
-                    bool VpcIdHasBeenSet() const;
-
-                    /**
-                     * 获取vpc名称
-                     * @return VPCName vpc名称
-                     * 
-                     */
-                    std::string GetVPCName() const;
-
-                    /**
-                     * 设置vpc名称
-                     * @param _vPCName vpc名称
-                     * 
-                     */
-                    void SetVPCName(const std::string& _vPCName);
-
-                    /**
-                     * 判断参数 VPCName 是否已赋值
-                     * @return VPCName 是否已赋值
-                     * 
-                     */
-                    bool VPCNameHasBeenSet() const;
-
-                    /**
-                     * 获取子网id
-                     * @return SubnetId 子网id
-                     * 
-                     */
-                    std::string GetSubnetId() const;
-
-                    /**
-                     * 设置子网id
-                     * @param _subnetId 子网id
-                     * 
-                     */
-                    void SetSubnetId(const std::string& _subnetId);
-
-                    /**
-                     * 判断参数 SubnetId 是否已赋值
-                     * @return SubnetId 是否已赋值
-                     * 
-                     */
-                    bool SubnetIdHasBeenSet() const;
+                    bool InsTypeHasBeenSet() const;
 
                     /**
                      * 获取资产id
@@ -212,71 +160,25 @@ type InstanceInfo struct {
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取资产类型
- 3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA 13 NATFW
-                     * @return InsType 资产类型
- 3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA 13 NATFW
+                     * 获取漏洞数
+                     * @return LeakNum 漏洞数
                      * 
                      */
-                    int64_t GetInsType() const;
+                    std::string GetLeakNum() const;
 
                     /**
-                     * 设置资产类型
- 3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA 13 NATFW
-                     * @param _insType 资产类型
- 3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA 13 NATFW
+                     * 设置漏洞数
+                     * @param _leakNum 漏洞数
                      * 
                      */
-                    void SetInsType(const int64_t& _insType);
+                    void SetLeakNum(const std::string& _leakNum);
 
                     /**
-                     * 判断参数 InsType 是否已赋值
-                     * @return InsType 是否已赋值
+                     * 判断参数 LeakNum 是否已赋值
+                     * @return LeakNum 是否已赋值
                      * 
                      */
-                    bool InsTypeHasBeenSet() const;
-
-                    /**
-                     * 获取公网ip
-                     * @return PublicIp 公网ip
-                     * 
-                     */
-                    std::string GetPublicIp() const;
-
-                    /**
-                     * 设置公网ip
-                     * @param _publicIp 公网ip
-                     * 
-                     */
-                    void SetPublicIp(const std::string& _publicIp);
-
-                    /**
-                     * 判断参数 PublicIp 是否已赋值
-                     * @return PublicIp 是否已赋值
-                     * 
-                     */
-                    bool PublicIpHasBeenSet() const;
-
-                    /**
-                     * 获取内网ip
-                     * @return PrivateIp 内网ip
-                     * 
-                     */
-                    std::string GetPrivateIp() const;
-
-                    /**
-                     * 设置内网ip
-                     * @param _privateIp 内网ip
-                     * 
-                     */
-                    void SetPrivateIp(const std::string& _privateIp);
-
-                    /**
-                     * 判断参数 PrivateIp 是否已赋值
-                     * @return PrivateIp 是否已赋值
-                     * 
-                     */
-                    bool PrivateIpHasBeenSet() const;
+                    bool LeakNumHasBeenSet() const;
 
                     /**
                      * 获取端口数
@@ -300,61 +202,99 @@ type InstanceInfo struct {
                     bool PortNumHasBeenSet() const;
 
                     /**
-                     * 获取漏洞数
-                     * @return LeakNum 漏洞数
+                     * 获取内网ip
+                     * @return PrivateIp 内网ip
                      * 
                      */
-                    std::string GetLeakNum() const;
+                    std::string GetPrivateIp() const;
 
                     /**
-                     * 设置漏洞数
-                     * @param _leakNum 漏洞数
+                     * 设置内网ip
+                     * @param _privateIp 内网ip
                      * 
                      */
-                    void SetLeakNum(const std::string& _leakNum);
+                    void SetPrivateIp(const std::string& _privateIp);
 
                     /**
-                     * 判断参数 LeakNum 是否已赋值
-                     * @return LeakNum 是否已赋值
+                     * 判断参数 PrivateIp 是否已赋值
+                     * @return PrivateIp 是否已赋值
                      * 
                      */
-                    bool LeakNumHasBeenSet() const;
+                    bool PrivateIpHasBeenSet() const;
 
                     /**
-                     * 获取1，公网 2内网
-                     * @return InsSource 1，公网 2内网
+                     * 获取公网ip
+                     * @return PublicIp 公网ip
                      * 
                      */
-                    std::string GetInsSource() const;
+                    std::string GetPublicIp() const;
 
                     /**
-                     * 设置1，公网 2内网
-                     * @param _insSource 1，公网 2内网
+                     * 设置公网ip
+                     * @param _publicIp 公网ip
                      * 
                      */
-                    void SetInsSource(const std::string& _insSource);
+                    void SetPublicIp(const std::string& _publicIp);
 
                     /**
-                     * 判断参数 InsSource 是否已赋值
-                     * @return InsSource 是否已赋值
+                     * 判断参数 PublicIp 是否已赋值
+                     * @return PublicIp 是否已赋值
                      * 
                      */
-                    bool InsSourceHasBeenSet() const;
+                    bool PublicIpHasBeenSet() const;
 
                     /**
-                     * 获取[a,b]
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourcePath [a,b]
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取地域
+                     * @return Region 地域
+                     * 
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置地域
+                     * @param _region 地域
+                     * 
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     * 
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取地域
+                     * @return RegionKey 地域
+                     * 
+                     */
+                    std::string GetRegionKey() const;
+
+                    /**
+                     * 设置地域
+                     * @param _regionKey 地域
+                     * 
+                     */
+                    void SetRegionKey(const std::string& _regionKey);
+
+                    /**
+                     * 判断参数 RegionKey 是否已赋值
+                     * @return RegionKey 是否已赋值
+                     * 
+                     */
+                    bool RegionKeyHasBeenSet() const;
+
+                    /**
+                     * 获取资产路径
+                     * @return ResourcePath 资产路径
                      * 
                      */
                     std::vector<std::string> GetResourcePath() const;
 
                     /**
-                     * 设置[a,b]
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourcePath [a,b]
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置资产路径
+                     * @param _resourcePath 资产路径
                      * 
                      */
                     void SetResourcePath(const std::vector<std::string>& _resourcePath);
@@ -368,18 +308,14 @@ type InstanceInfo struct {
 
                     /**
                      * 获取扫描结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Server 扫描结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetServer() const;
 
                     /**
                      * 设置扫描结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _server 扫描结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServer(const std::vector<std::string>& _server);
@@ -392,29 +328,67 @@ type InstanceInfo struct {
                     bool ServerHasBeenSet() const;
 
                     /**
-                     * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegionKey 地域
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取子网id
+                     * @return SubnetId 子网id
                      * 
                      */
-                    std::string GetRegionKey() const;
+                    std::string GetSubnetId() const;
 
                     /**
-                     * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _regionKey 地域
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置子网id
+                     * @param _subnetId 子网id
                      * 
                      */
-                    void SetRegionKey(const std::string& _regionKey);
+                    void SetSubnetId(const std::string& _subnetId);
 
                     /**
-                     * 判断参数 RegionKey 是否已赋值
-                     * @return RegionKey 是否已赋值
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
                      * 
                      */
-                    bool RegionKeyHasBeenSet() const;
+                    bool SubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取vpc名称
+                     * @return VPCName vpc名称
+                     * 
+                     */
+                    std::string GetVPCName() const;
+
+                    /**
+                     * 设置vpc名称
+                     * @param _vPCName vpc名称
+                     * 
+                     */
+                    void SetVPCName(const std::string& _vPCName);
+
+                    /**
+                     * 判断参数 VPCName 是否已赋值
+                     * @return VPCName 是否已赋值
+                     * 
+                     */
+                    bool VPCNameHasBeenSet() const;
+
+                    /**
+                     * 获取vpcid信息
+                     * @return VpcId vpcid信息
+                     * 
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置vpcid信息
+                     * @param _vpcId vpcid信息
+                     * 
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     * 
+                     */
+                    bool VpcIdHasBeenSet() const;
 
                 private:
 
@@ -425,28 +399,18 @@ type InstanceInfo struct {
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 地域
+                     * 资产来源
+1公网 2内网
                      */
-                    std::string m_region;
-                    bool m_regionHasBeenSet;
+                    std::string m_insSource;
+                    bool m_insSourceHasBeenSet;
 
                     /**
-                     * vpcid信息
+                     * 资产类型
+ 3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA 13 NATFW
                      */
-                    std::string m_vpcId;
-                    bool m_vpcIdHasBeenSet;
-
-                    /**
-                     * vpc名称
-                     */
-                    std::string m_vPCName;
-                    bool m_vPCNameHasBeenSet;
-
-                    /**
-                     * 子网id
-                     */
-                    std::string m_subnetId;
-                    bool m_subnetIdHasBeenSet;
+                    int64_t m_insType;
+                    bool m_insTypeHasBeenSet;
 
                     /**
                      * 资产id
@@ -461,23 +425,10 @@ type InstanceInfo struct {
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 资产类型
- 3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA 13 NATFW
+                     * 漏洞数
                      */
-                    int64_t m_insType;
-                    bool m_insTypeHasBeenSet;
-
-                    /**
-                     * 公网ip
-                     */
-                    std::string m_publicIp;
-                    bool m_publicIpHasBeenSet;
-
-                    /**
-                     * 内网ip
-                     */
-                    std::string m_privateIp;
-                    bool m_privateIpHasBeenSet;
+                    std::string m_leakNum;
+                    bool m_leakNumHasBeenSet;
 
                     /**
                      * 端口数
@@ -486,37 +437,58 @@ type InstanceInfo struct {
                     bool m_portNumHasBeenSet;
 
                     /**
-                     * 漏洞数
+                     * 内网ip
                      */
-                    std::string m_leakNum;
-                    bool m_leakNumHasBeenSet;
+                    std::string m_privateIp;
+                    bool m_privateIpHasBeenSet;
 
                     /**
-                     * 1，公网 2内网
+                     * 公网ip
                      */
-                    std::string m_insSource;
-                    bool m_insSourceHasBeenSet;
+                    std::string m_publicIp;
+                    bool m_publicIpHasBeenSet;
 
                     /**
-                     * [a,b]
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 地域
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
+                     * 地域
+                     */
+                    std::string m_regionKey;
+                    bool m_regionKeyHasBeenSet;
+
+                    /**
+                     * 资产路径
                      */
                     std::vector<std::string> m_resourcePath;
                     bool m_resourcePathHasBeenSet;
 
                     /**
                      * 扫描结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_server;
                     bool m_serverHasBeenSet;
 
                     /**
-                     * 地域
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 子网id
                      */
-                    std::string m_regionKey;
-                    bool m_regionKeyHasBeenSet;
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * vpc名称
+                     */
+                    std::string m_vPCName;
+                    bool m_vPCNameHasBeenSet;
+
+                    /**
+                     * vpcid信息
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
 
                 };
             }

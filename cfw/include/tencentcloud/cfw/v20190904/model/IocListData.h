@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取待处置IP地址，IP/Domain字段二选一
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IP 待处置IP地址，IP/Domain字段二选一
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置待处置IP地址，IP/Domain字段二选一
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iP 待处置IP地址，IP/Domain字段二选一
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIP(const std::string& _iP);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只能为0或者1   0代表出站 1代表入站
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Direction 只能为0或者1   0代表出站 1代表入站
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDirection() const;
 
                     /**
                      * 设置只能为0或者1   0代表出站 1代表入站
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _direction 只能为0或者1   0代表出站 1代表入站
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDirection(const int64_t& _direction);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取待处置域名，IP/Domain字段二选一
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 待处置域名，IP/Domain字段二选一
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置待处置域名，IP/Domain字段二选一
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 待处置域名，IP/Domain字段二选一
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 待处置IP地址，IP/Domain字段二选一
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iP;
                     bool m_iPHasBeenSet;
 
                     /**
                      * 只能为0或者1   0代表出站 1代表入站
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_direction;
                     bool m_directionHasBeenSet;
 
                     /**
                      * 待处置域名，IP/Domain字段二选一
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

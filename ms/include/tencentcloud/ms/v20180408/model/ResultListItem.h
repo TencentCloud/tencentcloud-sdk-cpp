@@ -431,7 +431,7 @@ namespace TencentCloud
 1001表示APP md5 different between real md5, please confirm it.
 
 1002表示App md5 uncollect, please offer downloadlink.
-                     * 
+                     * @deprecated
                      */
                     std::string GetErrno() const;
 
@@ -482,14 +482,14 @@ namespace TencentCloud
 1001表示APP md5 different between real md5, please confirm it.
 
 1002表示App md5 uncollect, please offer downloadlink.
-                     * 
+                     * @deprecated
                      */
                     void SetErrno(const std::string& _errno);
 
                     /**
                      * 判断参数 Errno 是否已赋值
                      * @return Errno 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ErrnoHasBeenSet() const;
 
@@ -513,6 +513,119 @@ namespace TencentCloud
                      * 
                      */
                     bool ErrMsgHasBeenSet() const;
+
+                    /**
+                     * 获取应用错误码：0、1-表示正常；                  
+
+2表示System Error(engine analysis error).
+
+3表示App analysis error, please confirm it.
+
+4表示App have not cert, please confirm it.
+
+5表示App size is zero, please confirm it.
+
+6表示App have not package name, please confirm it.
+
+7表示App build time is empty, please confirm it.
+
+8表示App have not valid cert, please confirm it.
+
+99表示Other error.
+
+1000表示App downloadlink download fail, please confirm it.
+
+1001表示APP md5 different between real md5, please confirm it.
+
+1002表示App md5 uncollect, please offer downloadlink.
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrNo 应用错误码：0、1-表示正常；                  
+
+2表示System Error(engine analysis error).
+
+3表示App analysis error, please confirm it.
+
+4表示App have not cert, please confirm it.
+
+5表示App size is zero, please confirm it.
+
+6表示App have not package name, please confirm it.
+
+7表示App build time is empty, please confirm it.
+
+8表示App have not valid cert, please confirm it.
+
+99表示Other error.
+
+1000表示App downloadlink download fail, please confirm it.
+
+1001表示APP md5 different between real md5, please confirm it.
+
+1002表示App md5 uncollect, please offer downloadlink.
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetErrNo() const;
+
+                    /**
+                     * 设置应用错误码：0、1-表示正常；                  
+
+2表示System Error(engine analysis error).
+
+3表示App analysis error, please confirm it.
+
+4表示App have not cert, please confirm it.
+
+5表示App size is zero, please confirm it.
+
+6表示App have not package name, please confirm it.
+
+7表示App build time is empty, please confirm it.
+
+8表示App have not valid cert, please confirm it.
+
+99表示Other error.
+
+1000表示App downloadlink download fail, please confirm it.
+
+1001表示APP md5 different between real md5, please confirm it.
+
+1002表示App md5 uncollect, please offer downloadlink.
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _errNo 应用错误码：0、1-表示正常；                  
+
+2表示System Error(engine analysis error).
+
+3表示App analysis error, please confirm it.
+
+4表示App have not cert, please confirm it.
+
+5表示App size is zero, please confirm it.
+
+6表示App have not package name, please confirm it.
+
+7表示App build time is empty, please confirm it.
+
+8表示App have not valid cert, please confirm it.
+
+99表示Other error.
+
+1000表示App downloadlink download fail, please confirm it.
+
+1001表示APP md5 different between real md5, please confirm it.
+
+1002表示App md5 uncollect, please offer downloadlink.
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetErrNo(const std::string& _errNo);
+
+                    /**
+                     * 判断参数 ErrNo 是否已赋值
+                     * @return ErrNo 是否已赋值
+                     * 
+                     */
+                    bool ErrNoHasBeenSet() const;
 
                 private:
 
@@ -645,6 +758,35 @@ namespace TencentCloud
                      */
                     std::string m_errMsg;
                     bool m_errMsgHasBeenSet;
+
+                    /**
+                     * 应用错误码：0、1-表示正常；                  
+
+2表示System Error(engine analysis error).
+
+3表示App analysis error, please confirm it.
+
+4表示App have not cert, please confirm it.
+
+5表示App size is zero, please confirm it.
+
+6表示App have not package name, please confirm it.
+
+7表示App build time is empty, please confirm it.
+
+8表示App have not valid cert, please confirm it.
+
+99表示Other error.
+
+1000表示App downloadlink download fail, please confirm it.
+
+1001表示APP md5 different between real md5, please confirm it.
+
+1002表示App md5 uncollect, please offer downloadlink.
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_errNo;
+                    bool m_errNoHasBeenSet;
 
                 };
             }

@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子分类下检测项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemCount 子分类下检测项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetItemCount() const;
 
                     /**
                      * 设置子分类下检测项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _itemCount 子分类下检测项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItemCount(const uint64_t& _itemCount);
@@ -156,7 +152,6 @@ namespace TencentCloud
 
                     /**
                      * 子分类下检测项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_itemCount;
                     bool m_itemCountHasBeenSet;

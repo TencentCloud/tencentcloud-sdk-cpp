@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网ip数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EipAddress 公网ip数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetEipAddress() const;
 
                     /**
                      * 设置公网ip数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eipAddress 公网ip数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEipAddress(const std::vector<std::string>& _eipAddress);
@@ -241,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内外使用ip数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcIp 内外使用ip数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetVpcIp() const;
 
                     /**
                      * 设置内外使用ip数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcIp 内外使用ip数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcIp(const std::vector<std::string>& _vpcIp);
@@ -266,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例关联子网数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Subnets 实例关联子网数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSubnets() const;
 
                     /**
                      * 设置实例关联子网数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnets 实例关联子网数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnets(const std::vector<std::string>& _subnets);
@@ -291,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0 :正常 1：正在初始化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 0 :正常 1：正在初始化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置0 :正常 1：正在初始化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 0 :正常 1：正在初始化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -316,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域区域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionDetail 地域区域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionDetail() const;
 
                     /**
                      * 设置地域区域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionDetail 地域区域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionDetail(const std::string& _regionDetail);
@@ -341,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneZh 实例所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneZh() const;
 
                     /**
                      * 设置实例所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneZh 实例所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneZh(const std::string& _zoneZh);
@@ -366,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneZhBak 实例所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneZhBak() const;
 
                     /**
                      * 设置实例所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneZhBak 实例所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneZhBak(const std::string& _zoneZhBak);
@@ -391,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用规则数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleUsed 已使用规则数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleUsed() const;
 
                     /**
                      * 设置已使用规则数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleUsed 已使用规则数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleUsed(const uint64_t& _ruleUsed);
@@ -416,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的规则限制最大规格数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleMax 实例的规则限制最大规格数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleMax() const;
 
                     /**
                      * 设置实例的规则限制最大规格数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleMax 实例的规则限制最大规格数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleMax(const uint64_t& _ruleMax);
@@ -441,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineVersion 实例引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
                      * 设置实例引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineVersion 实例引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
@@ -466,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎是否可升级：0，不可升级；1，可升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateEnable 引擎是否可升级：0，不可升级；1，可升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpdateEnable() const;
 
                     /**
                      * 设置引擎是否可升级：0，不可升级；1，可升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateEnable 引擎是否可升级：0，不可升级；1，可升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateEnable(const int64_t& _updateEnable);
@@ -491,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是的需要升级引擎 支持 nat拨测 1需要 0不需要
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NeedProbeEngineUpdate 是的需要升级引擎 支持 nat拨测 1需要 0不需要
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNeedProbeEngineUpdate() const;
 
                     /**
                      * 设置是的需要升级引擎 支持 nat拨测 1需要 0不需要
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _needProbeEngineUpdate 是的需要升级引擎 支持 nat拨测 1需要 0不需要
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNeedProbeEngineUpdate(const int64_t& _needProbeEngineUpdate);
@@ -516,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎运行模式，Normal:正常, OnlyRoute:透明模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrafficMode 引擎运行模式，Normal:正常, OnlyRoute:透明模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTrafficMode() const;
 
                     /**
                      * 设置引擎运行模式，Normal:正常, OnlyRoute:透明模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trafficMode 引擎运行模式，Normal:正常, OnlyRoute:透明模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrafficMode(const std::string& _trafficMode);
@@ -541,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例主所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 实例主所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置实例主所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 实例主所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -566,18 +510,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例备所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneBak 实例备所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneBak() const;
 
                     /**
                      * 设置实例备所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneBak 实例备所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneBak(const std::string& _zoneBak);
@@ -591,18 +531,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎预约升级时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReserveTime 引擎预约升级时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReserveTime() const;
 
                     /**
                      * 设置引擎预约升级时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reserveTime 引擎预约升级时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReserveTime(const std::string& _reserveTime);
@@ -616,18 +552,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎预约升级版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReserveVersion 引擎预约升级版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReserveVersion() const;
 
                     /**
                      * 设置引擎预约升级版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reserveVersion 引擎预约升级版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReserveVersion(const std::string& _reserveVersion);
@@ -640,19 +572,15 @@ namespace TencentCloud
                     bool ReserveVersionHasBeenSet() const;
 
                     /**
-                     * 获取引擎预约升级版本状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReserveVersionState 引擎预约升级版本状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取引擎预约升级版本状态 stable:稳定版；previewed:预览版
+                     * @return ReserveVersionState 引擎预约升级版本状态 stable:稳定版；previewed:预览版
                      * 
                      */
                     std::string GetReserveVersionState() const;
 
                     /**
-                     * 设置引擎预约升级版本状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _reserveVersionState 引擎预约升级版本状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置引擎预约升级版本状态 stable:稳定版；previewed:预览版
+                     * @param _reserveVersionState 引擎预约升级版本状态 stable:稳定版；previewed:预览版
                      * 
                      */
                     void SetReserveVersionState(const std::string& _reserveVersionState);
@@ -668,11 +596,9 @@ namespace TencentCloud
                      * 获取弹性开关
 1 打开
 0 关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticSwitch 弹性开关
 1 打开
 0 关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetElasticSwitch() const;
@@ -681,11 +607,9 @@ namespace TencentCloud
                      * 设置弹性开关
 1 打开
 0 关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elasticSwitch 弹性开关
 1 打开
 0 关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElasticSwitch(const int64_t& _elasticSwitch);
@@ -699,18 +623,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性带宽，单位Mbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticBandwidth 弹性带宽，单位Mbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetElasticBandwidth() const;
 
                     /**
                      * 设置弹性带宽，单位Mbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elasticBandwidth 弹性带宽，单位Mbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElasticBandwidth(const int64_t& _elasticBandwidth);
@@ -726,11 +646,9 @@ namespace TencentCloud
                      * 获取是否首次开通按量付费
 1 是
 0 不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsFirstAfterPay 是否首次开通按量付费
 1 是
 0 不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsFirstAfterPay() const;
@@ -739,11 +657,9 @@ namespace TencentCloud
                      * 设置是否首次开通按量付费
 1 是
 0 不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isFirstAfterPay 是否首次开通按量付费
 1 是
 0 不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsFirstAfterPay(const int64_t& _isFirstAfterPay);
@@ -807,126 +723,108 @@ namespace TencentCloud
 
                     /**
                      * 公网ip数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_eipAddress;
                     bool m_eipAddressHasBeenSet;
 
                     /**
                      * 内外使用ip数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_vpcIp;
                     bool m_vpcIpHasBeenSet;
 
                     /**
                      * 实例关联子网数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_subnets;
                     bool m_subnetsHasBeenSet;
 
                     /**
                      * 0 :正常 1：正在初始化
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 地域区域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionDetail;
                     bool m_regionDetailHasBeenSet;
 
                     /**
                      * 实例所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneZh;
                     bool m_zoneZhHasBeenSet;
 
                     /**
                      * 实例所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneZhBak;
                     bool m_zoneZhBakHasBeenSet;
 
                     /**
                      * 已使用规则数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleUsed;
                     bool m_ruleUsedHasBeenSet;
 
                     /**
                      * 实例的规则限制最大规格数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleMax;
                     bool m_ruleMaxHasBeenSet;
 
                     /**
                      * 实例引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
 
                     /**
                      * 引擎是否可升级：0，不可升级；1，可升级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_updateEnable;
                     bool m_updateEnableHasBeenSet;
 
                     /**
                      * 是的需要升级引擎 支持 nat拨测 1需要 0不需要
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_needProbeEngineUpdate;
                     bool m_needProbeEngineUpdateHasBeenSet;
 
                     /**
                      * 引擎运行模式，Normal:正常, OnlyRoute:透明模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trafficMode;
                     bool m_trafficModeHasBeenSet;
 
                     /**
                      * 实例主所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 实例备所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneBak;
                     bool m_zoneBakHasBeenSet;
 
                     /**
                      * 引擎预约升级时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reserveTime;
                     bool m_reserveTimeHasBeenSet;
 
                     /**
                      * 引擎预约升级版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reserveVersion;
                     bool m_reserveVersionHasBeenSet;
 
                     /**
-                     * 引擎预约升级版本状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 引擎预约升级版本状态 stable:稳定版；previewed:预览版
                      */
                     std::string m_reserveVersionState;
                     bool m_reserveVersionStateHasBeenSet;
@@ -935,14 +833,12 @@ namespace TencentCloud
                      * 弹性开关
 1 打开
 0 关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_elasticSwitch;
                     bool m_elasticSwitchHasBeenSet;
 
                     /**
                      * 弹性带宽，单位Mbps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_elasticBandwidth;
                     bool m_elasticBandwidthHasBeenSet;
@@ -951,7 +847,6 @@ namespace TencentCloud
                      * 是否首次开通按量付费
 1 是
 0 不是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isFirstAfterPay;
                     bool m_isFirstAfterPayHasBeenSet;

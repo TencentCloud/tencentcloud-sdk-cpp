@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC防火墙实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwInsName VPC防火墙实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFwInsName() const;
 
                     /**
                      * 设置VPC防火墙实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwInsName VPC防火墙实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwInsName(const std::string& _fwInsName);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络经过VPC防火墙CVM所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwInsRegion 网络经过VPC防火墙CVM所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFwInsRegion() const;
 
                     /**
                      * 设置网络经过VPC防火墙CVM所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fwInsRegion 网络经过VPC防火墙CVM所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFwInsRegion(const std::string& _fwInsRegion);
@@ -127,14 +119,12 @@ namespace TencentCloud
 
                     /**
                      * VPC防火墙实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fwInsName;
                     bool m_fwInsNameHasBeenSet;
 
                     /**
                      * 网络经过VPC防火墙CVM所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fwInsRegion;
                     bool m_fwInsRegionHasBeenSet;

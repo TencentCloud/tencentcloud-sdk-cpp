@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取样例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SampleNme 样例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSampleNme() const;
 
                     /**
                      * 设置样例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sampleNme 样例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSampleNme(const std::string& _sampleNme);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取请求样例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepLog 请求样例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepLog() const;
 
                     /**
                      * 设置请求样例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repLog 请求样例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepLog(const std::string& _repLog);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取响应样例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RspLog 响应样例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRspLog() const;
 
                     /**
                      * 设置响应样例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rspLog 响应样例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRspLog(const std::string& _rspLog);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 样例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sampleNme;
                     bool m_sampleNmeHasBeenSet;
 
                     /**
                      * 请求样例
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repLog;
                     bool m_repLogHasBeenSet;
 
                     /**
                      * 响应样例
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rspLog;
                     bool m_rspLogHasBeenSet;

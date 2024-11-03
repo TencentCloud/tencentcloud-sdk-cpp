@@ -101,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取七层协议，NTA日志有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppProtocolList 七层协议，NTA日志有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAppProtocolList() const;
@@ -143,7 +141,6 @@ namespace TencentCloud
 
                     /**
                      * 七层协议，NTA日志有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_appProtocolList;
                     bool m_appProtocolListHasBeenSet;

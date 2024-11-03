@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取续费标志
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 续费标志
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRenewFlag() const;
 
                     /**
                      * 设置续费标志
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _renewFlag 续费标志
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRenewFlag(const uint64_t& _renewFlag);
@@ -210,7 +206,6 @@ namespace TencentCloud
 
                     /**
                      * 续费标志
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;

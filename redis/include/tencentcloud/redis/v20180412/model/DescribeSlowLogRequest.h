@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取预查询慢日志的起始时间。
-                     * @return BeginTime 预查询慢日志的起始时间。
+                     * 获取预查询慢日志的起始时间，查询时间最大跨度30天。
+                     * @return BeginTime 预查询慢日志的起始时间，查询时间最大跨度30天。
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置预查询慢日志的起始时间。
-                     * @param _beginTime 预查询慢日志的起始时间。
+                     * 设置预查询慢日志的起始时间，查询时间最大跨度30天。
+                     * @param _beginTime 预查询慢日志的起始时间，查询时间最大跨度30天。
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取预查询慢日志的结束时间。
-                     * @return EndTime 预查询慢日志的结束时间。
+                     * 获取预查询慢日志的结束时间，查询时间最大跨度30天
+                     * @return EndTime 预查询慢日志的结束时间，查询时间最大跨度30天
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置预查询慢日志的结束时间。
-                     * @param _endTime 预查询慢日志的结束时间。
+                     * 设置预查询慢日志的结束时间，查询时间最大跨度30天
+                     * @param _endTime 预查询慢日志的结束时间，查询时间最大跨度30天
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MinQueryTimeHasBeenSet() const;
 
                     /**
-                     * 获取每个页面展示的慢查询条数，默认值为20。取值范围：[20,1000]。
-                     * @return Limit 每个页面展示的慢查询条数，默认值为20。取值范围：[20,1000]。
+                     * 获取每个页面展示的慢查询条数，默认值为20，最大100。
+                     * @return Limit 每个页面展示的慢查询条数，默认值为20，最大100。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每个页面展示的慢查询条数，默认值为20。取值范围：[20,1000]。
-                     * @param _limit 每个页面展示的慢查询条数，默认值为20。取值范围：[20,1000]。
+                     * 设置每个页面展示的慢查询条数，默认值为20，最大100。
+                     * @param _limit 每个页面展示的慢查询条数，默认值为20，最大100。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -211,13 +211,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 预查询慢日志的起始时间。
+                     * 预查询慢日志的起始时间，查询时间最大跨度30天。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 预查询慢日志的结束时间。
+                     * 预查询慢日志的结束时间，查询时间最大跨度30天
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -229,7 +229,7 @@ namespace TencentCloud
                     bool m_minQueryTimeHasBeenSet;
 
                     /**
-                     * 每个页面展示的慢查询条数，默认值为20。取值范围：[20,1000]。
+                     * 每个页面展示的慢查询条数，默认值为20，最大100。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

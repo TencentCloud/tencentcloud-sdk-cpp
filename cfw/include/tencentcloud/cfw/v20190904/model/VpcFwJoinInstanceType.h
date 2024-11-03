@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入实例类型，VPC、DIRECTCONNECT、 VPNGW 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JoinType 接入实例类型，VPC、DIRECTCONNECT、 VPNGW 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJoinType() const;
 
                     /**
                      * 设置接入实例类型，VPC、DIRECTCONNECT、 VPNGW 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _joinType 接入实例类型，VPC、DIRECTCONNECT、 VPNGW 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJoinType(const std::string& _joinType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入的对应网络实例类型的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Num 接入的对应网络实例类型的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNum() const;
 
                     /**
                      * 设置接入的对应网络实例类型的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _num 接入的对应网络实例类型的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNum(const int64_t& _num);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 接入实例类型，VPC、DIRECTCONNECT、 VPNGW 等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_joinType;
                     bool m_joinTypeHasBeenSet;
 
                     /**
                      * 接入的对应网络实例类型的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_num;
                     bool m_numHasBeenSet;

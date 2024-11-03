@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MainclassID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeID MainclassID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTypeID() const;
 
                     /**
                      * 设置MainclassID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _typeID MainclassID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTypeID(const std::string& _typeID);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防护模式，0表示观察，1表示拦截
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mode 防护模式，0表示观察，1表示拦截
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMode() const;
 
                     /**
                      * 设置防护模式，0表示观察，1表示拦截
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mode 防护模式，0表示观察，1表示拦截
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMode(const int64_t& _mode);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * MainclassID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_typeID;
                     bool m_typeIDHasBeenSet;
 
                     /**
                      * 防护模式，0表示观察，1表示拦截
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_mode;
                     bool m_modeHasBeenSet;

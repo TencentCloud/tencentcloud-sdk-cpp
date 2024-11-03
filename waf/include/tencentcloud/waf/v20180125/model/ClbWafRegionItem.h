@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域中文说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 地域中文说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置地域中文说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 地域中文说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域英文全拼
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 地域英文全拼
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置地域英文全拼
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 地域英文全拼
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 地域编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置地域编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 地域编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 地域中文说明
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 地域英文全拼
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 地域编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;

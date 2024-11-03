@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据来源 custom-自定义(默认)、batch-批量防护
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 数据来源 custom-自定义(默认)、batch-批量防护
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置数据来源 custom-自定义(默认)、batch-批量防护
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _source 数据来源 custom-自定义(默认)、batch-批量防护
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -116,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobType 定时任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobType() const;
 
                     /**
                      * 设置定时任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobType 定时任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobType(const std::string& _jobType);
@@ -166,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取周期任务配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CronType 周期任务配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCronType() const;
 
                     /**
                      * 设置周期任务配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cronType 周期任务配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCronType(const std::string& _cronType);
@@ -199,7 +187,6 @@ namespace TencentCloud
 
                     /**
                      * 数据来源 custom-自定义(默认)、batch-批量防护
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
@@ -212,7 +199,6 @@ namespace TencentCloud
 
                     /**
                      * 定时任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobType;
                     bool m_jobTypeHasBeenSet;
@@ -226,7 +212,6 @@ namespace TencentCloud
 
                     /**
                      * 周期任务配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cronType;
                     bool m_cronTypeHasBeenSet;

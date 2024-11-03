@@ -47,44 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取访问源
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SrcIP 访问源
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetSrcIP() const;
-
-                    /**
-                     * 设置访问源
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _srcIP 访问源
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetSrcIP(const std::string& _srcIP);
-
-                    /**
-                     * 判断参数 SrcIP 是否已赋值
-                     * @return SrcIP 是否已赋值
-                     * 
-                     */
-                    bool SrcIPHasBeenSet() const;
-
-                    /**
                      * 获取访问目的
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstIP 访问目的
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstIP() const;
 
                     /**
                      * 设置访问目的
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstIP 访问目的
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstIP(const std::string& _dstIP);
@@ -97,19 +68,36 @@ namespace TencentCloud
                     bool DstIPHasBeenSet() const;
 
                     /**
+                     * 获取规则ID
+                     * @return IdsRuleId 规则ID
+                     * 
+                     */
+                    std::string GetIdsRuleId() const;
+
+                    /**
+                     * 设置规则ID
+                     * @param _idsRuleId 规则ID
+                     * 
+                     */
+                    void SetIdsRuleId(const std::string& _idsRuleId);
+
+                    /**
+                     * 判断参数 IdsRuleId 是否已赋值
+                     * @return IdsRuleId 是否已赋值
+                     * 
+                     */
+                    bool IdsRuleIdHasBeenSet() const;
+
+                    /**
                      * 获取规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdsRuleName 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdsRuleName() const;
 
                     /**
                      * 设置规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _idsRuleName 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdsRuleName(const std::string& _idsRuleName);
@@ -122,59 +110,51 @@ namespace TencentCloud
                     bool IdsRuleNameHasBeenSet() const;
 
                     /**
-                     * 获取规则ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdsRuleId 规则ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取访问源
+                     * @return SrcIP 访问源
                      * 
                      */
-                    std::string GetIdsRuleId() const;
+                    std::string GetSrcIP() const;
 
                     /**
-                     * 设置规则ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _idsRuleId 规则ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置访问源
+                     * @param _srcIP 访问源
                      * 
                      */
-                    void SetIdsRuleId(const std::string& _idsRuleId);
+                    void SetSrcIP(const std::string& _srcIP);
 
                     /**
-                     * 判断参数 IdsRuleId 是否已赋值
-                     * @return IdsRuleId 是否已赋值
+                     * 判断参数 SrcIP 是否已赋值
+                     * @return SrcIP 是否已赋值
                      * 
                      */
-                    bool IdsRuleIdHasBeenSet() const;
+                    bool SrcIPHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 访问源
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_srcIP;
-                    bool m_srcIPHasBeenSet;
-
-                    /**
                      * 访问目的
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstIP;
                     bool m_dstIPHasBeenSet;
 
                     /**
+                     * 规则ID
+                     */
+                    std::string m_idsRuleId;
+                    bool m_idsRuleIdHasBeenSet;
+
+                    /**
                      * 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idsRuleName;
                     bool m_idsRuleNameHasBeenSet;
 
                     /**
-                     * 规则ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 访问源
                      */
-                    std::string m_idsRuleId;
-                    bool m_idsRuleIdHasBeenSet;
+                    std::string m_srcIP;
+                    bool m_srcIPHasBeenSet;
 
                 };
             }

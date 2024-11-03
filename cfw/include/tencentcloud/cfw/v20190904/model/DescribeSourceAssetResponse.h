@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cfw/v20190904/model/AssetZone.h>
 #include <tencentcloud/cfw/v20190904/model/InstanceInfo.h>
+#include <tencentcloud/cfw/v20190904/model/AssetZone.h>
 
 
 namespace TencentCloud
@@ -44,20 +44,6 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
-
-                    /**
-                     * 获取地域集合
-                     * @return ZoneList 地域集合
-                     * 
-                     */
-                    std::vector<AssetZone> GetZoneList() const;
-
-                    /**
-                     * 判断参数 ZoneList 是否已赋值
-                     * @return ZoneList 是否已赋值
-                     * 
-                     */
-                    bool ZoneListHasBeenSet() const;
 
                     /**
                      * 获取数据
@@ -87,13 +73,21 @@ namespace TencentCloud
                      */
                     bool TotalHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取地域集合
+                     * @return ZoneList 地域集合
+                     * 
+                     */
+                    std::vector<AssetZone> GetZoneList() const;
 
                     /**
-                     * 地域集合
+                     * 判断参数 ZoneList 是否已赋值
+                     * @return ZoneList 是否已赋值
+                     * 
                      */
-                    std::vector<AssetZone> m_zoneList;
-                    bool m_zoneListHasBeenSet;
+                    bool ZoneListHasBeenSet() const;
+
+                private:
 
                     /**
                      * 数据
@@ -106,6 +100,12 @@ namespace TencentCloud
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
+
+                    /**
+                     * 地域集合
+                     */
+                    std::vector<AssetZone> m_zoneList;
+                    bool m_zoneListHasBeenSet;
 
                 };
             }

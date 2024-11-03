@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取回包内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 回包内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeAreaBanAreasRsp GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 回包内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeAreaBanAreasRsp m_data;
                     bool m_dataHasBeenSet;

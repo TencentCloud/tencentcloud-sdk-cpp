@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取www.tx.com
-                     * @return Domain www.tx.com
+                     * 获取域名
+                     * @return Domain 域名
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置www.tx.com
-                     * @param _domain www.tx.com
+                     * 设置域名
+                     * @param _domain 域名
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * www.tx.com
+                     * 域名
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

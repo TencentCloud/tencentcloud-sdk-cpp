@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool BypassHasBeenSet() const;
 
                     /**
-                     * 获取定时任务类型
-                     * @return JobType 定时任务类型
+                     * 获取规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * @return JobType 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
                      * 
                      */
                     std::string GetJobType() const;
 
                     /**
-                     * 设置定时任务类型
-                     * @param _jobType 定时任务类型
+                     * 设置规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * @param _jobType 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
                      * 
                      */
                     void SetJobType(const std::string& _jobType);
@@ -251,7 +251,7 @@ namespace TencentCloud
                     bool m_bypassHasBeenSet;
 
                     /**
-                     * 定时任务类型
+                     * 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
                      */
                     std::string m_jobType;
                     bool m_jobTypeHasBeenSet;

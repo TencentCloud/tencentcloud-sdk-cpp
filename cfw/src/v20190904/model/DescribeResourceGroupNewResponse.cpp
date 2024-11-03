@@ -25,9 +25,9 @@ using namespace std;
 
 DescribeResourceGroupNewResponse::DescribeResourceGroupNewResponse() :
     m_dataHasBeenSet(false),
-    m_unResourceNumHasBeenSet(false),
+    m_returnCodeHasBeenSet(false),
     m_returnMsgHasBeenSet(false),
-    m_returnCodeHasBeenSet(false)
+    m_unResourceNumHasBeenSet(false)
 {
 }
 
@@ -75,14 +75,14 @@ CoreInternalOutcome DescribeResourceGroupNewResponse::Deserialize(const string &
         m_dataHasBeenSet = true;
     }
 
-    if (rsp.HasMember("UnResourceNum") && !rsp["UnResourceNum"].IsNull())
+    if (rsp.HasMember("ReturnCode") && !rsp["ReturnCode"].IsNull())
     {
-        if (!rsp["UnResourceNum"].IsInt64())
+        if (!rsp["ReturnCode"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `UnResourceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReturnCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_unResourceNum = rsp["UnResourceNum"].GetInt64();
-        m_unResourceNumHasBeenSet = true;
+        m_returnCode = rsp["ReturnCode"].GetInt64();
+        m_returnCodeHasBeenSet = true;
     }
 
     if (rsp.HasMember("ReturnMsg") && !rsp["ReturnMsg"].IsNull())
@@ -95,14 +95,14 @@ CoreInternalOutcome DescribeResourceGroupNewResponse::Deserialize(const string &
         m_returnMsgHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ReturnCode") && !rsp["ReturnCode"].IsNull())
+    if (rsp.HasMember("UnResourceNum") && !rsp["UnResourceNum"].IsNull())
     {
-        if (!rsp["ReturnCode"].IsInt64())
+        if (!rsp["UnResourceNum"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `ReturnCode` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UnResourceNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_returnCode = rsp["ReturnCode"].GetInt64();
-        m_returnCodeHasBeenSet = true;
+        m_unResourceNum = rsp["UnResourceNum"].GetInt64();
+        m_unResourceNumHasBeenSet = true;
     }
 
 
@@ -123,12 +123,12 @@ string DescribeResourceGroupNewResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_unResourceNumHasBeenSet)
+    if (m_returnCodeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UnResourceNum";
+        string key = "ReturnCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_unResourceNum, allocator);
+        value.AddMember(iKey, m_returnCode, allocator);
     }
 
     if (m_returnMsgHasBeenSet)
@@ -139,12 +139,12 @@ string DescribeResourceGroupNewResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_returnMsg.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_returnCodeHasBeenSet)
+    if (m_unResourceNumHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReturnCode";
+        string key = "UnResourceNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_returnCode, allocator);
+        value.AddMember(iKey, m_unResourceNum, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -169,14 +169,14 @@ bool DescribeResourceGroupNewResponse::DataHasBeenSet() const
     return m_dataHasBeenSet;
 }
 
-int64_t DescribeResourceGroupNewResponse::GetUnResourceNum() const
+int64_t DescribeResourceGroupNewResponse::GetReturnCode() const
 {
-    return m_unResourceNum;
+    return m_returnCode;
 }
 
-bool DescribeResourceGroupNewResponse::UnResourceNumHasBeenSet() const
+bool DescribeResourceGroupNewResponse::ReturnCodeHasBeenSet() const
 {
-    return m_unResourceNumHasBeenSet;
+    return m_returnCodeHasBeenSet;
 }
 
 string DescribeResourceGroupNewResponse::GetReturnMsg() const
@@ -189,14 +189,14 @@ bool DescribeResourceGroupNewResponse::ReturnMsgHasBeenSet() const
     return m_returnMsgHasBeenSet;
 }
 
-int64_t DescribeResourceGroupNewResponse::GetReturnCode() const
+int64_t DescribeResourceGroupNewResponse::GetUnResourceNum() const
 {
-    return m_returnCode;
+    return m_unResourceNum;
 }
 
-bool DescribeResourceGroupNewResponse::ReturnCodeHasBeenSet() const
+bool DescribeResourceGroupNewResponse::UnResourceNumHasBeenSet() const
 {
-    return m_returnCodeHasBeenSet;
+    return m_unResourceNumHasBeenSet;
 }
 
 

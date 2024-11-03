@@ -322,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -347,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -372,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -397,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网IP，多个以英文逗号分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIp 公网IP，多个以英文逗号分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
                      * 设置公网IP，多个以英文逗号分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicIp 公网IP，多个以英文逗号分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
@@ -422,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网IP，多个以英文逗号分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIp 内网IP，多个以英文逗号分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
                      * 设置内网IP，多个以英文逗号分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privateIp 内网IP，多个以英文逗号分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
@@ -447,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取掩码地址，多个以英文逗号分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cidr 掩码地址，多个以英文逗号分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCidr() const;
 
                     /**
                      * 设置掩码地址，多个以英文逗号分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cidr 掩码地址，多个以英文逗号分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCidr(const std::string& _cidr);
@@ -472,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口协议类型参数模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceTemplateId 端口协议类型参数模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceTemplateId() const;
 
                     /**
                      * 设置端口协议类型参数模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceTemplateId 端口协议类型参数模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceTemplateId(const std::string& _serviceTemplateId);
@@ -497,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生成双向下发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BothWayInfo 生成双向下发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SecurityGroupBothWayInfo> GetBothWayInfo() const;
 
                     /**
                      * 设置生成双向下发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bothWayInfo 生成双向下发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBothWayInfo(const std::vector<SecurityGroupBothWayInfo>& _bothWayInfo);
@@ -564,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uuid Uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置Uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uuid Uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -589,18 +553,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -614,18 +574,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetGroupNameIn 资产分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetGroupNameIn() const;
 
                     /**
                      * 设置资产分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetGroupNameIn 资产分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetGroupNameIn(const std::string& _assetGroupNameIn);
@@ -639,18 +595,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetGroupNameOut 资产分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetGroupNameOut() const;
 
                     /**
                      * 设置资产分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetGroupNameOut 资产分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetGroupNameOut(const std::string& _assetGroupNameOut);
@@ -664,18 +616,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParameterName 模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParameterName() const;
 
                     /**
                      * 设置模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parameterName 模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParameterName(const std::string& _parameterName);
@@ -790,56 +738,48 @@ namespace TencentCloud
 
                     /**
                      * 私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 公网IP，多个以英文逗号分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
 
                     /**
                      * 内网IP，多个以英文逗号分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_privateIp;
                     bool m_privateIpHasBeenSet;
 
                     /**
                      * 掩码地址，多个以英文逗号分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cidr;
                     bool m_cidrHasBeenSet;
 
                     /**
                      * 端口协议类型参数模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceTemplateId;
                     bool m_serviceTemplateIdHasBeenSet;
 
                     /**
                      * 生成双向下发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecurityGroupBothWayInfo> m_bothWayInfo;
                     bool m_bothWayInfoHasBeenSet;
@@ -858,35 +798,30 @@ namespace TencentCloud
 
                     /**
                      * Uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 资产分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetGroupNameIn;
                     bool m_assetGroupNameInHasBeenSet;
 
                     /**
                      * 资产分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetGroupNameOut;
                     bool m_assetGroupNameOutHasBeenSet;
 
                     /**
                      * 模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parameterName;
                     bool m_parameterNameHasBeenSet;

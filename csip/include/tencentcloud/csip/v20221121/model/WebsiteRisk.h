@@ -258,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nick 用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNick() const;
 
                     /**
                      * 设置用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nick 用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNick(const std::string& _nick);
@@ -283,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -517,14 +509,12 @@ namespace TencentCloud
 
                     /**
                      * 用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;
 
                     /**
                      * 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;

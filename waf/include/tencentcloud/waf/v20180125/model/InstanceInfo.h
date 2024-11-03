@@ -497,18 +497,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务安全包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FraudPkg 业务安全包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FraudPkg GetFraudPkg() const;
 
                     /**
                      * 设置业务安全包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fraudPkg 业务安全包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFraudPkg(const FraudPkg& _fraudPkg);
@@ -522,18 +518,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Bot资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BotPkg Bot资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BotPkg GetBotPkg() const;
 
                     /**
                      * 设置Bot资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _botPkg Bot资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBotPkg(const BotPkg& _botPkg);
@@ -547,18 +539,14 @@ namespace TencentCloud
 
                     /**
                      * 获取bot的qps详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BotQPS bot的qps详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BotQPS GetBotQPS() const;
 
                     /**
                      * 设置bot的qps详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _botQPS bot的qps详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBotQPS(const BotQPS& _botQPS);
@@ -572,18 +560,14 @@ namespace TencentCloud
 
                     /**
                      * 获取qps弹性计费上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticBilling qps弹性计费上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetElasticBilling() const;
 
                     /**
                      * 设置qps弹性计费上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elasticBilling qps弹性计费上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElasticBilling(const uint64_t& _elasticBilling);
@@ -597,18 +581,14 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击日志投递开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackLogPost 攻击日志投递开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAttackLogPost() const;
 
                     /**
                      * 设置攻击日志投递开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attackLogPost 攻击日志投递开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttackLogPost(const int64_t& _attackLogPost);
@@ -622,18 +602,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽峰值，单位为B/s(字节每秒)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxBandwidth 带宽峰值，单位为B/s(字节每秒)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxBandwidth() const;
 
                     /**
                      * 设置带宽峰值，单位为B/s(字节每秒)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxBandwidth 带宽峰值，单位为B/s(字节每秒)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxBandwidth(const uint64_t& _maxBandwidth);
@@ -668,18 +644,14 @@ namespace TencentCloud
 
                     /**
                      * 获取购买的qps规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QpsStandard 购买的qps规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetQpsStandard() const;
 
                     /**
                      * 设置购买的qps规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qpsStandard 购买的qps规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQpsStandard(const uint64_t& _qpsStandard);
@@ -693,18 +665,14 @@ namespace TencentCloud
 
                     /**
                      * 获取购买的带宽规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BandwidthStandard 购买的带宽规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBandwidthStandard() const;
 
                     /**
                      * 设置购买的带宽规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bandwidthStandard 购买的带宽规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBandwidthStandard(const uint64_t& _bandwidthStandard);
@@ -718,18 +686,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -743,18 +707,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例沙箱qps值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SandboxQps 实例沙箱qps值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSandboxQps() const;
 
                     /**
                      * 设置实例沙箱qps值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sandboxQps 实例沙箱qps值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSandboxQps(const uint64_t& _sandboxQps);
@@ -768,18 +728,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否api 安全试用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAPISecurityTrial 是否api 安全试用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsAPISecurityTrial() const;
 
                     /**
                      * 设置是否api 安全试用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isAPISecurityTrial 是否api 安全试用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsAPISecurityTrial(const uint64_t& _isAPISecurityTrial);
@@ -793,18 +749,14 @@ namespace TencentCloud
 
                     /**
                      * 获取重保包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MajorEventsPkg 重保包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MajorEventsPkg GetMajorEventsPkg() const;
 
                     /**
                      * 设置重保包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _majorEventsPkg 重保包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMajorEventsPkg(const MajorEventsPkg& _majorEventsPkg);
@@ -818,18 +770,14 @@ namespace TencentCloud
 
                     /**
                      * 获取混合云子节点包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HybridPkg 混合云子节点包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HybridPkg GetHybridPkg() const;
 
                     /**
                      * 设置混合云子节点包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hybridPkg 混合云子节点包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHybridPkg(const HybridPkg& _hybridPkg);
@@ -843,18 +791,14 @@ namespace TencentCloud
 
                     /**
                      * 获取API安全资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiPkg API安全资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ApiPkg GetApiPkg() const;
 
                     /**
                      * 设置API安全资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apiPkg API安全资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApiPkg(const ApiPkg& _apiPkg);
@@ -868,18 +812,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序安全加速包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MiniPkg 小程序安全加速包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MiniPkg GetMiniPkg() const;
 
                     /**
                      * 设置小程序安全加速包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _miniPkg 小程序安全加速包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMiniPkg(const MiniPkg& _miniPkg);
@@ -893,18 +833,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序qps规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MiniQpsStandard 小程序qps规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMiniQpsStandard() const;
 
                     /**
                      * 设置小程序qps规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _miniQpsStandard 小程序qps规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMiniQpsStandard(const uint64_t& _miniQpsStandard);
@@ -918,18 +854,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序qps峰值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MiniMaxQPS 小程序qps峰值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMiniMaxQPS() const;
 
                     /**
                      * 设置小程序qps峰值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _miniMaxQPS 小程序qps峰值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMiniMaxQPS(const uint64_t& _miniMaxQPS);
@@ -943,18 +875,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近一次超量时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastQpsExceedTime 最近一次超量时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastQpsExceedTime() const;
 
                     /**
                      * 设置最近一次超量时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastQpsExceedTime 最近一次超量时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastQpsExceedTime(const std::string& _lastQpsExceedTime);
@@ -968,18 +896,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序安全接入ID数量扩张包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MiniExtendPkg 小程序安全接入ID数量扩张包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MiniExtendPkg GetMiniExtendPkg() const;
 
                     /**
                      * 设置小程序安全接入ID数量扩张包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _miniExtendPkg 小程序安全接入ID数量扩张包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMiniExtendPkg(const MiniExtendPkg& _miniExtendPkg);
@@ -993,18 +917,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillingItem 计费项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillingItem() const;
 
                     /**
                      * 设置计费项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billingItem 计费项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillingItem(const std::string& _billingItem);
@@ -1018,18 +938,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例延期释放标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FreeDelayFlag 实例延期释放标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFreeDelayFlag() const;
 
                     /**
                      * 设置实例延期释放标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _freeDelayFlag 实例延期释放标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFreeDelayFlag(const uint64_t& _freeDelayFlag);
@@ -1169,42 +1085,36 @@ namespace TencentCloud
 
                     /**
                      * 业务安全包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FraudPkg m_fraudPkg;
                     bool m_fraudPkgHasBeenSet;
 
                     /**
                      * Bot资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BotPkg m_botPkg;
                     bool m_botPkgHasBeenSet;
 
                     /**
                      * bot的qps详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BotQPS m_botQPS;
                     bool m_botQPSHasBeenSet;
 
                     /**
                      * qps弹性计费上限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_elasticBilling;
                     bool m_elasticBillingHasBeenSet;
 
                     /**
                      * 攻击日志投递开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_attackLogPost;
                     bool m_attackLogPostHasBeenSet;
 
                     /**
                      * 带宽峰值，单位为B/s(字节每秒)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxBandwidth;
                     bool m_maxBandwidthHasBeenSet;
@@ -1217,105 +1127,90 @@ namespace TencentCloud
 
                     /**
                      * 购买的qps规格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_qpsStandard;
                     bool m_qpsStandardHasBeenSet;
 
                     /**
                      * 购买的带宽规格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_bandwidthStandard;
                     bool m_bandwidthStandardHasBeenSet;
 
                     /**
                      * 实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 实例沙箱qps值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_sandboxQps;
                     bool m_sandboxQpsHasBeenSet;
 
                     /**
                      * 是否api 安全试用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isAPISecurityTrial;
                     bool m_isAPISecurityTrialHasBeenSet;
 
                     /**
                      * 重保包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MajorEventsPkg m_majorEventsPkg;
                     bool m_majorEventsPkgHasBeenSet;
 
                     /**
                      * 混合云子节点包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HybridPkg m_hybridPkg;
                     bool m_hybridPkgHasBeenSet;
 
                     /**
                      * API安全资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ApiPkg m_apiPkg;
                     bool m_apiPkgHasBeenSet;
 
                     /**
                      * 小程序安全加速包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MiniPkg m_miniPkg;
                     bool m_miniPkgHasBeenSet;
 
                     /**
                      * 小程序qps规格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_miniQpsStandard;
                     bool m_miniQpsStandardHasBeenSet;
 
                     /**
                      * 小程序qps峰值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_miniMaxQPS;
                     bool m_miniMaxQPSHasBeenSet;
 
                     /**
                      * 最近一次超量时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastQpsExceedTime;
                     bool m_lastQpsExceedTimeHasBeenSet;
 
                     /**
                      * 小程序安全接入ID数量扩张包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MiniExtendPkg m_miniExtendPkg;
                     bool m_miniExtendPkgHasBeenSet;
 
                     /**
                      * 计费项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billingItem;
                     bool m_billingItemHasBeenSet;
 
                     /**
                      * 实例延期释放标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_freeDelayFlag;
                     bool m_freeDelayFlagHasBeenSet;

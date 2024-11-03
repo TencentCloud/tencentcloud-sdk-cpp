@@ -36,7 +36,6 @@ namespace TencentCloud
             {
                 /**
                 * StaticInfo 告警柱形图统计信息
- 
                 */
                 class StaticInfo : public AbstractModel
                 {
@@ -46,69 +45,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取数
-                     * @return Num 数
-                     * 
-                     */
-                    int64_t GetNum() const;
-
-                    /**
-                     * 设置数
-                     * @param _num 数
-                     * 
-                     */
-                    void SetNum(const int64_t& _num);
-
-                    /**
-                     * 判断参数 Num 是否已赋值
-                     * @return Num 是否已赋值
-                     * 
-                     */
-                    bool NumHasBeenSet() const;
-
-                    /**
-                     * 获取端口
-                     * @return Port 端口
-                     * 
-                     */
-                    std::string GetPort() const;
-
-                    /**
-                     * 设置端口
-                     * @param _port 端口
-                     * 
-                     */
-                    void SetPort(const std::string& _port);
-
-                    /**
-                     * 判断参数 Port 是否已赋值
-                     * @return Port 是否已赋值
-                     * 
-                     */
-                    bool PortHasBeenSet() const;
-
-                    /**
-                     * 获取ip信息
-                     * @return Ip ip信息
-                     * 
-                     */
-                    std::string GetIp() const;
-
-                    /**
-                     * 设置ip信息
-                     * @param _ip ip信息
-                     * 
-                     */
-                    void SetIp(const std::string& _ip);
-
-                    /**
-                     * 判断参数 Ip 是否已赋值
-                     * @return Ip 是否已赋值
-                     * 
-                     */
-                    bool IpHasBeenSet() const;
 
                     /**
                      * 获取地址
@@ -173,25 +109,70 @@ namespace TencentCloud
                      */
                     bool InsNameHasBeenSet() const;
 
+                    /**
+                     * 获取ip信息
+                     * @return Ip ip信息
+                     * 
+                     */
+                    std::string GetIp() const;
+
+                    /**
+                     * 设置ip信息
+                     * @param _ip ip信息
+                     * 
+                     */
+                    void SetIp(const std::string& _ip);
+
+                    /**
+                     * 判断参数 Ip 是否已赋值
+                     * @return Ip 是否已赋值
+                     * 
+                     */
+                    bool IpHasBeenSet() const;
+
+                    /**
+                     * 获取数
+                     * @return Num 数
+                     * 
+                     */
+                    int64_t GetNum() const;
+
+                    /**
+                     * 设置数
+                     * @param _num 数
+                     * 
+                     */
+                    void SetNum(const int64_t& _num);
+
+                    /**
+                     * 判断参数 Num 是否已赋值
+                     * @return Num 是否已赋值
+                     * 
+                     */
+                    bool NumHasBeenSet() const;
+
+                    /**
+                     * 获取端口
+                     * @return Port 端口
+                     * 
+                     */
+                    std::string GetPort() const;
+
+                    /**
+                     * 设置端口
+                     * @param _port 端口
+                     * 
+                     */
+                    void SetPort(const std::string& _port);
+
+                    /**
+                     * 判断参数 Port 是否已赋值
+                     * @return Port 是否已赋值
+                     * 
+                     */
+                    bool PortHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 数
-                     */
-                    int64_t m_num;
-                    bool m_numHasBeenSet;
-
-                    /**
-                     * 端口
-                     */
-                    std::string m_port;
-                    bool m_portHasBeenSet;
-
-                    /**
-                     * ip信息
-                     */
-                    std::string m_ip;
-                    bool m_ipHasBeenSet;
 
                     /**
                      * 地址
@@ -210,6 +191,24 @@ namespace TencentCloud
                      */
                     std::string m_insName;
                     bool m_insNameHasBeenSet;
+
+                    /**
+                     * ip信息
+                     */
+                    std::string m_ip;
+                    bool m_ipHasBeenSet;
+
+                    /**
+                     * 数
+                     */
+                    int64_t m_num;
+                    bool m_numHasBeenSet;
+
+                    /**
+                     * 端口
+                     */
+                    std::string m_port;
+                    bool m_portHasBeenSet;
 
                 };
             }

@@ -943,49 +943,6 @@ WafClient::DeleteDomainWhiteRulesOutcomeCallable WafClient::DeleteDomainWhiteRul
     return task->get_future();
 }
 
-WafClient::DeleteDownloadRecordOutcome WafClient::DeleteDownloadRecord(const DeleteDownloadRecordRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteDownloadRecord");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteDownloadRecordResponse rsp = DeleteDownloadRecordResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteDownloadRecordOutcome(rsp);
-        else
-            return DeleteDownloadRecordOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteDownloadRecordOutcome(outcome.GetError());
-    }
-}
-
-void WafClient::DeleteDownloadRecordAsync(const DeleteDownloadRecordRequest& request, const DeleteDownloadRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDownloadRecord(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WafClient::DeleteDownloadRecordOutcomeCallable WafClient::DeleteDownloadRecordCallable(const DeleteDownloadRecordRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteDownloadRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDownloadRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 WafClient::DeleteHostOutcome WafClient::DeleteHost(const DeleteHostRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteHost");

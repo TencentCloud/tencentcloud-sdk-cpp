@@ -393,15 +393,15 @@ namespace TencentCloud
                     bool TaskTypesHasBeenSet() const;
 
                     /**
-                     * 获取任务执行的起始时间。格式如：2021-12-30 00:00:00。
-                     * @return BeginTime 任务执行的起始时间。格式如：2021-12-30 00:00:00。
+                     * 获取任务执行的起始时间，格式如：2021-12-30 00:00:00，支持查询近30天内数据。
+                     * @return BeginTime 任务执行的起始时间，格式如：2021-12-30 00:00:00，支持查询近30天内数据。
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置任务执行的起始时间。格式如：2021-12-30 00:00:00。
-                     * @param _beginTime 任务执行的起始时间。格式如：2021-12-30 00:00:00。
+                     * 设置任务执行的起始时间，格式如：2021-12-30 00:00:00，支持查询近30天内数据。
+                     * @param _beginTime 任务执行的起始时间，格式如：2021-12-30 00:00:00，支持查询近30天内数据。
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -414,15 +414,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务运行的终止时间。格式如：2021-12-30 20:59:35
-                     * @return EndTime 任务运行的终止时间。格式如：2021-12-30 20:59:35
+                     * 获取任务运行的终止时间。格式如：2021-12-30 20:59:35，支持查询近30天内数据。
+                     * @return EndTime 任务运行的终止时间。格式如：2021-12-30 20:59:35，支持查询近30天内数据。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置任务运行的终止时间。格式如：2021-12-30 20:59:35
-                     * @param _endTime 任务运行的终止时间。格式如：2021-12-30 20:59:35
+                     * 设置任务运行的终止时间。格式如：2021-12-30 20:59:35，支持查询近30天内数据。
+                     * @param _endTime 任务运行的终止时间。格式如：2021-12-30 20:59:35，支持查询近30天内数据。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -629,13 +629,13 @@ namespace TencentCloud
                     bool m_taskTypesHasBeenSet;
 
                     /**
-                     * 任务执行的起始时间。格式如：2021-12-30 00:00:00。
+                     * 任务执行的起始时间，格式如：2021-12-30 00:00:00，支持查询近30天内数据。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 任务运行的终止时间。格式如：2021-12-30 20:59:35
+                     * 任务运行的终止时间。格式如：2021-12-30 20:59:35，支持查询近30天内数据。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

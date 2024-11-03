@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pod创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceCreateTime pod创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceCreateTime() const;
 
                     /**
                      * 设置pod创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceCreateTime pod创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceCreateTime(const std::string& _instanceCreateTime);
@@ -203,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -228,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -253,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -278,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterName 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -303,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineId 主机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMachineId() const;
 
                     /**
                      * 设置主机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineId 主机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineId(const std::string& _machineId);
@@ -328,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineName 主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMachineName() const;
 
                     /**
                      * 设置主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineName 主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineName(const std::string& _machineName);
@@ -353,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pod ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodIp pod ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPodIp() const;
 
                     /**
                      * 设置pod ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podIp pod ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodIp(const std::string& _podIp);
@@ -378,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联service数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceCount 关联service数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetServiceCount() const;
 
                     /**
                      * 设置关联service数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceCount 关联service数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceCount(const int64_t& _serviceCount);
@@ -403,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联容器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerCount 关联容器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetContainerCount() const;
 
                     /**
                      * 设置关联容器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerCount 关联容器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerCount(const int64_t& _containerCount);
@@ -428,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIp 公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
                      * 设置公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicIp 公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
@@ -453,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIp 内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
                      * 设置内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privateIp 内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
@@ -478,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否核心：1:核心，2:非核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCore 是否核心：1:核心，2:非核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsCore() const;
 
                     /**
                      * 设置是否核心：1:核心，2:非核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCore 是否核心：1:核心，2:非核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCore(const int64_t& _isCore);
@@ -503,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsNewAsset 是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsNewAsset() const;
 
                     /**
                      * 设置是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isNewAsset 是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsNewAsset(const uint64_t& _isNewAsset);
@@ -548,7 +488,6 @@ namespace TencentCloud
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
@@ -567,98 +506,84 @@ namespace TencentCloud
 
                     /**
                      * pod创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceCreateTime;
                     bool m_instanceCreateTimeHasBeenSet;
 
                     /**
                      * 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
                      * 主机id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machineId;
                     bool m_machineIdHasBeenSet;
 
                     /**
                      * 主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machineName;
                     bool m_machineNameHasBeenSet;
 
                     /**
                      * pod ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_podIp;
                     bool m_podIpHasBeenSet;
 
                     /**
                      * 关联service数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_serviceCount;
                     bool m_serviceCountHasBeenSet;
 
                     /**
                      * 关联容器数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_containerCount;
                     bool m_containerCountHasBeenSet;
 
                     /**
                      * 公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
 
                     /**
                      * 内网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_privateIp;
                     bool m_privateIpHasBeenSet;
 
                     /**
                      * 是否核心：1:核心，2:非核心
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isCore;
                     bool m_isCoreHasBeenSet;
 
                     /**
                      * 是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isNewAsset;
                     bool m_isNewAssetHasBeenSet;

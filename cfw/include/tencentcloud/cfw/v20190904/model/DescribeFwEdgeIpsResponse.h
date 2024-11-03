@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取ip 开关列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data ip 开关列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EdgeIpInfo> GetData() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取ip 开关列表个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total ip 开关列表个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionLst 地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRegionLst() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceTypeLst 实例类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetInstanceTypeLst() const;
@@ -112,28 +104,24 @@ namespace TencentCloud
 
                     /**
                      * ip 开关列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EdgeIpInfo> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
                      * ip 开关列表个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_regionLst;
                     bool m_regionLstHasBeenSet;
 
                     /**
                      * 实例类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_instanceTypeLst;
                     bool m_instanceTypeLstHasBeenSet;

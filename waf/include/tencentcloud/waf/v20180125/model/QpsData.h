@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性qps默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticBillingDefault 弹性qps默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetElasticBillingDefault() const;
 
                     /**
                      * 设置弹性qps默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elasticBillingDefault 弹性qps默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElasticBillingDefault(const uint64_t& _elasticBillingDefault);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性qps最小值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticBillingMin 弹性qps最小值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetElasticBillingMin() const;
 
                     /**
                      * 设置弹性qps最小值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elasticBillingMin 弹性qps最小值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElasticBillingMin(const uint64_t& _elasticBillingMin);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性qps最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticBillingMax 弹性qps最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetElasticBillingMax() const;
 
                     /**
                      * 设置弹性qps最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elasticBillingMax 弹性qps最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElasticBillingMax(const uint64_t& _elasticBillingMax);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务扩展包最大qps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QPSExtendMax 业务扩展包最大qps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetQPSExtendMax() const;
 
                     /**
                      * 设置业务扩展包最大qps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qPSExtendMax 业务扩展包最大qps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQPSExtendMax(const uint64_t& _qPSExtendMax);
@@ -147,19 +131,15 @@ namespace TencentCloud
                     bool QPSExtendMaxHasBeenSet() const;
 
                     /**
-                     * 获取海外业务扩展包最大qps
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QPSExtendIntlMax 海外业务扩展包最大qps
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取境外业务扩展包最大qps
+                     * @return QPSExtendIntlMax 境外业务扩展包最大qps
                      * 
                      */
                     uint64_t GetQPSExtendIntlMax() const;
 
                     /**
-                     * 设置海外业务扩展包最大qps
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qPSExtendIntlMax 海外业务扩展包最大qps
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置境外业务扩展包最大qps
+                     * @param _qPSExtendIntlMax 境外业务扩展包最大qps
                      * 
                      */
                     void SetQPSExtendIntlMax(const uint64_t& _qPSExtendIntlMax);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 弹性qps默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_elasticBillingDefault;
                     bool m_elasticBillingDefaultHasBeenSet;
 
                     /**
                      * 弹性qps最小值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_elasticBillingMin;
                     bool m_elasticBillingMinHasBeenSet;
 
                     /**
                      * 弹性qps最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_elasticBillingMax;
                     bool m_elasticBillingMaxHasBeenSet;
 
                     /**
                      * 业务扩展包最大qps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_qPSExtendMax;
                     bool m_qPSExtendMaxHasBeenSet;
 
                     /**
-                     * 海外业务扩展包最大qps
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 境外业务扩展包最大qps
                      */
                     uint64_t m_qPSExtendIntlMax;
                     bool m_qPSExtendIntlMaxHasBeenSet;

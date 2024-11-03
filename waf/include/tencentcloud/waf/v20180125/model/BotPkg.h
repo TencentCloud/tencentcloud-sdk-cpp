@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceIds 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceIds() const;
 
                     /**
                      * 设置资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceIds 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceIds(const std::string& _resourceIds);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const int64_t& _region);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取申请数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InquireNum 申请数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInquireNum() const;
 
                     /**
                      * 设置申请数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inquireNum 申请数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInquireNum(const int64_t& _inquireNum);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取使用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedNum 使用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUsedNum() const;
 
                     /**
                      * 设置使用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usedNum 使用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsedNum(const int64_t& _usedNum);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子产品code
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 子产品code
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置子产品code
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 子产品code
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取续费标志	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 续费标志	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRenewFlag() const;
 
                     /**
                      * 设置续费标志	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _renewFlag 续费标志	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRenewFlag(const uint64_t& _renewFlag);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取购买页bot6折
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BotCPWaf 购买页bot6折
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBotCPWaf() const;
 
                     /**
                      * 设置购买页bot6折
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _botCPWaf 购买页bot6折
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBotCPWaf(const int64_t& _botCPWaf);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取控制台买bot5折
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BotNPWaf 控制台买bot5折
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBotNPWaf() const;
 
                     /**
                      * 设置控制台买bot5折
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _botNPWaf 控制台买bot5折
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBotNPWaf(const int64_t& _botNPWaf);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取7天bot试用标识 1 试用 0 没有试用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsBotTrial 7天bot试用标识 1 试用 0 没有试用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsBotTrial() const;
 
                     /**
                      * 设置7天bot试用标识 1 试用 0 没有试用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isBotTrial 7天bot试用标识 1 试用 0 没有试用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsBotTrial(const int64_t& _isBotTrial);
@@ -350,84 +302,72 @@ namespace TencentCloud
 
                     /**
                      * 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 申请数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_inquireNum;
                     bool m_inquireNumHasBeenSet;
 
                     /**
                      * 使用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_usedNum;
                     bool m_usedNumHasBeenSet;
 
                     /**
                      * 子产品code
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 续费标志	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
                      * 购买页bot6折
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_botCPWaf;
                     bool m_botCPWafHasBeenSet;
 
                     /**
                      * 控制台买bot5折
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_botNPWaf;
                     bool m_botNPWafHasBeenSet;
 
                     /**
                      * 7天bot试用标识 1 试用 0 没有试用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isBotTrial;
                     bool m_isBotTrialHasBeenSet;

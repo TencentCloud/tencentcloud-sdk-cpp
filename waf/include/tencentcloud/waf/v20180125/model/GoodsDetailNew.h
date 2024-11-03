@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeSpan 时间间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
                      * 设置时间间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeSpan 时间间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单位，支持购买d、m、y 即（日、月、年）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeUnit 单位，支持购买d、m、y 即（日、月、年）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 设置单位，支持购买d、m、y 即（日、月、年）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeUnit 单位，支持购买d、m、y 即（日、月、年）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -111,7 +103,6 @@ Saas 域名扩展包：sp_wsm_waf_domain
  业务扩展包-CLB：sp_wsm_waf_qpsep_clb
 域名扩展包-CLB：sp_wsm_waf_domain_clb
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubProductCode 子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面
 
 Saas 高级版 ：sp_wsm_waf_premium
@@ -126,7 +117,6 @@ Saas 域名扩展包：sp_wsm_waf_domain
  业务扩展包-CLB：sp_wsm_waf_qpsep_clb
 域名扩展包-CLB：sp_wsm_waf_domain_clb
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubProductCode() const;
@@ -146,7 +136,6 @@ Saas 域名扩展包：sp_wsm_waf_domain
  业务扩展包-CLB：sp_wsm_waf_qpsep_clb
 域名扩展包-CLB：sp_wsm_waf_domain_clb
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subProductCode 子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面
 
 Saas 高级版 ：sp_wsm_waf_premium
@@ -161,7 +150,6 @@ Saas 域名扩展包：sp_wsm_waf_domain
  业务扩展包-CLB：sp_wsm_waf_qpsep_clb
 域名扩展包-CLB：sp_wsm_waf_domain_clb
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubProductCode(const std::string& _subProductCode);
@@ -186,7 +174,6 @@ Saas 域名扩展包：sp_wsm_waf_domain
 域名包-CLB: 1001156
 业务扩展包-CLB : 1001160
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pid 业务产品申请的pid（对应一个定价公式），通过pid计费查询到定价模型
 高级版 ：1000827
 企业版 ：1000830
@@ -199,7 +186,6 @@ Saas 域名扩展包：sp_wsm_waf_domain
 域名包-CLB: 1001156
 业务扩展包-CLB : 1001160
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPid() const;
@@ -217,7 +203,6 @@ Saas 域名扩展包：sp_wsm_waf_domain
 域名包-CLB: 1001156
 业务扩展包-CLB : 1001160
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pid 业务产品申请的pid（对应一个定价公式），通过pid计费查询到定价模型
 高级版 ：1000827
 企业版 ：1000830
@@ -230,7 +215,6 @@ Saas 域名扩展包：sp_wsm_waf_domain
 域名包-CLB: 1001156
 业务扩展包-CLB : 1001160
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPid(const int64_t& _pid);
@@ -244,18 +228,14 @@ Saas 域名扩展包：sp_wsm_waf_domain
 
                     /**
                      * 获取waf实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName waf实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置waf实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName waf实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -269,18 +249,14 @@ Saas 域名扩展包：sp_wsm_waf_domain
 
                     /**
                      * 获取1:自动续费，0:不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRenewFlag 1:自动续费，0:不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置1:自动续费，0:不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoRenewFlag 1:自动续费，0:不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -294,18 +270,14 @@ Saas 域名扩展包：sp_wsm_waf_domain
 
                     /**
                      * 获取waf购买的实际地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealRegion waf购买的实际地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRealRegion() const;
 
                     /**
                      * 设置waf购买的实际地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realRegion waf购买的实际地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealRegion(const int64_t& _realRegion);
@@ -337,7 +309,6 @@ Saas 域名扩展包  sv_wsm_waf_domain
 业务扩展包CLB sv_wsm_waf_qps_ep_clb
 域名扩展包CLB  sv_wsm_waf_domain_clb
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelTypes 计费细项标签数组
 Saas 高级版  sv_wsm_waf_package_premium 
 Saas 企业版  sv_wsm_waf_package_enterprise
@@ -357,7 +328,6 @@ Saas 域名扩展包  sv_wsm_waf_domain
 业务扩展包CLB sv_wsm_waf_qps_ep_clb
 域名扩展包CLB  sv_wsm_waf_domain_clb
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLabelTypes() const;
@@ -382,7 +352,6 @@ Saas 域名扩展包  sv_wsm_waf_domain
 业务扩展包CLB sv_wsm_waf_qps_ep_clb
 域名扩展包CLB  sv_wsm_waf_domain_clb
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labelTypes 计费细项标签数组
 Saas 高级版  sv_wsm_waf_package_premium 
 Saas 企业版  sv_wsm_waf_package_enterprise
@@ -402,7 +371,6 @@ Saas 域名扩展包  sv_wsm_waf_domain
 业务扩展包CLB sv_wsm_waf_qps_ep_clb
 域名扩展包CLB  sv_wsm_waf_domain_clb
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabelTypes(const std::vector<std::string>& _labelTypes);
@@ -416,18 +384,14 @@ Saas 域名扩展包  sv_wsm_waf_domain
 
                     /**
                      * 获取计费细项标签数量，一般和SvLabelType一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelCounts 计费细项标签数量，一般和SvLabelType一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetLabelCounts() const;
 
                     /**
                      * 设置计费细项标签数量，一般和SvLabelType一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labelCounts 计费细项标签数量，一般和SvLabelType一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabelCounts(const std::vector<int64_t>& _labelCounts);
@@ -441,18 +405,14 @@ Saas 域名扩展包  sv_wsm_waf_domain
 
                     /**
                      * 获取变配使用，实例到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurDeadline 变配使用，实例到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurDeadline() const;
 
                     /**
                      * 设置变配使用，实例到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _curDeadline 变配使用，实例到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurDeadline(const std::string& _curDeadline);
@@ -466,18 +426,14 @@ Saas 域名扩展包  sv_wsm_waf_domain
 
                     /**
                      * 获取对存在的实例购买bot 或api 安全
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 对存在的实例购买bot 或api 安全
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置对存在的实例购买bot 或api 安全
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 对存在的实例购买bot 或api 安全
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -491,18 +447,14 @@ Saas 域名扩展包  sv_wsm_waf_domain
 
                     /**
                      * 获取资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -516,18 +468,14 @@ Saas 域名扩展包  sv_wsm_waf_domain
 
                     /**
                      * 获取模式clb-waf或者saas-waf
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MicroVersion 模式clb-waf或者saas-waf
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMicroVersion() const;
 
                     /**
                      * 设置模式clb-waf或者saas-waf
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _microVersion 模式clb-waf或者saas-waf
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMicroVersion(const std::string& _microVersion);
@@ -543,14 +491,12 @@ Saas 域名扩展包  sv_wsm_waf_domain
 
                     /**
                      * 时间间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
                      * 单位，支持购买d、m、y 即（日、月、年）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
@@ -570,7 +516,6 @@ Saas 域名扩展包：sp_wsm_waf_domain
  业务扩展包-CLB：sp_wsm_waf_qpsep_clb
 域名扩展包-CLB：sp_wsm_waf_domain_clb
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subProductCode;
                     bool m_subProductCodeHasBeenSet;
@@ -588,28 +533,24 @@ Saas 域名扩展包：sp_wsm_waf_domain
 域名包-CLB: 1001156
 业务扩展包-CLB : 1001160
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pid;
                     bool m_pidHasBeenSet;
 
                     /**
                      * waf实例名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 1:自动续费，0:不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
                      * waf购买的实际地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_realRegion;
                     bool m_realRegionHasBeenSet;
@@ -634,42 +575,36 @@ Saas 域名扩展包  sv_wsm_waf_domain
 业务扩展包CLB sv_wsm_waf_qps_ep_clb
 域名扩展包CLB  sv_wsm_waf_domain_clb
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_labelTypes;
                     bool m_labelTypesHasBeenSet;
 
                     /**
                      * 计费细项标签数量，一般和SvLabelType一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_labelCounts;
                     bool m_labelCountsHasBeenSet;
 
                     /**
                      * 变配使用，实例到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_curDeadline;
                     bool m_curDeadlineHasBeenSet;
 
                     /**
                      * 对存在的实例购买bot 或api 安全
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * 模式clb-waf或者saas-waf
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_microVersion;
                     bool m_microVersionHasBeenSet;

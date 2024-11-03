@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppID 用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppID() const;
 
                     /**
                      * 设置用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appID 用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppID(const std::string& _appID);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CVE编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CVEId CVE编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCVEId() const;
 
                     /**
                      * 设置CVE编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cVEId CVE编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCVEId(const std::string& _cVEId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是扫描，0默认未扫描，1正在扫描，2扫描完成，3扫描出错
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsScan 是扫描，0默认未扫描，1正在扫描，2扫描完成，3扫描出错
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsScan() const;
 
                     /**
                      * 设置是扫描，0默认未扫描，1正在扫描，2扫描完成，3扫描出错
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isScan 是扫描，0默认未扫描，1正在扫描，2扫描完成，3扫描出错
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsScan(const int64_t& _isScan);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取影响资产数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InfluenceAsset 影响资产数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInfluenceAsset() const;
 
                     /**
                      * 设置影响资产数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _influenceAsset 影响资产数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInfluenceAsset(const int64_t& _influenceAsset);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取未修复资产数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotRepairAsset 未修复资产数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNotRepairAsset() const;
 
                     /**
                      * 设置未修复资产数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _notRepairAsset 未修复资产数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNotRepairAsset(const int64_t& _notRepairAsset);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取未防护资产数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotProtectAsset 未防护资产数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNotProtectAsset() const;
 
                     /**
                      * 设置未防护资产数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _notProtectAsset 未防护资产数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNotProtectAsset(const int64_t& _notProtectAsset);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskPercent 任务百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskPercent() const;
 
                     /**
                      * 设置任务百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskPercent 任务百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskPercent(const int64_t& _taskPercent);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskTime 任务时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskTime() const;
 
                     /**
                      * 设置任务时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskTime 任务时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskTime(const int64_t& _taskTime);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanTime 扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanTime() const;
 
                     /**
                      * 设置扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanTime 扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanTime(const std::string& _scanTime);
@@ -300,70 +260,60 @@ namespace TencentCloud
 
                     /**
                      * 用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appID;
                     bool m_appIDHasBeenSet;
 
                     /**
                      * CVE编号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cVEId;
                     bool m_cVEIdHasBeenSet;
 
                     /**
                      * 是扫描，0默认未扫描，1正在扫描，2扫描完成，3扫描出错
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isScan;
                     bool m_isScanHasBeenSet;
 
                     /**
                      * 影响资产数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_influenceAsset;
                     bool m_influenceAssetHasBeenSet;
 
                     /**
                      * 未修复资产数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_notRepairAsset;
                     bool m_notRepairAssetHasBeenSet;
 
                     /**
                      * 未防护资产数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_notProtectAsset;
                     bool m_notProtectAssetHasBeenSet;
 
                     /**
                      * 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 任务百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskPercent;
                     bool m_taskPercentHasBeenSet;
 
                     /**
                      * 任务时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskTime;
                     bool m_taskTimeHasBeenSet;
 
                     /**
                      * 扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanTime;
                     bool m_scanTimeHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取封禁和放通对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ioc 封禁和放通对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIoc() const;
 
                     /**
                      * 设置封禁和放通对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ioc 封禁和放通对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIoc(const std::string& _ioc);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0互联网出站 1互联网入站 5内网访问源 6内网访问目的 （DeleteBlockIgnoreRuleNew接口，该字段无效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DirectionList 0互联网出站 1互联网入站 5内网访问源 6内网访问目的 （DeleteBlockIgnoreRuleNew接口，该字段无效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDirectionList() const;
 
                     /**
                      * 设置0互联网出站 1互联网入站 5内网访问源 6内网访问目的 （DeleteBlockIgnoreRuleNew接口，该字段无效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _directionList 0互联网出站 1互联网入站 5内网访问源 6内网访问目的 （DeleteBlockIgnoreRuleNew接口，该字段无效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDirectionList(const std::string& _directionList);
@@ -98,18 +90,18 @@ namespace TencentCloud
 
                     /**
                      * 获取规则类型
-注意：此字段可能返回 null，表示取不到有效值。
+RuleType: 1黑名单 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则
                      * @return RuleType 规则类型
-注意：此字段可能返回 null，表示取不到有效值。
+RuleType: 1黑名单 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则
                      * 
                      */
                     int64_t GetRuleType() const;
 
                     /**
                      * 设置规则类型
-注意：此字段可能返回 null，表示取不到有效值。
+RuleType: 1黑名单 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则
                      * @param _ruleType 规则类型
-注意：此字段可能返回 null，表示取不到有效值。
+RuleType: 1黑名单 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则
                      * 
                      */
                     void SetRuleType(const int64_t& _ruleType);
@@ -125,21 +117,19 @@ namespace TencentCloud
 
                     /**
                      * 封禁和放通对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ioc;
                     bool m_iocHasBeenSet;
 
                     /**
                      * 0互联网出站 1互联网入站 5内网访问源 6内网访问目的 （DeleteBlockIgnoreRuleNew接口，该字段无效）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_directionList;
                     bool m_directionListHasBeenSet;
 
                     /**
                      * 规则类型
-注意：此字段可能返回 null，表示取不到有效值。
+RuleType: 1黑名单 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则
                      */
                     int64_t m_ruleType;
                     bool m_ruleTypeHasBeenSet;

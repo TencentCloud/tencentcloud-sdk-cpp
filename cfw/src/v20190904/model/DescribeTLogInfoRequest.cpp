@@ -23,9 +23,9 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 DescribeTLogInfoRequest::DescribeTLogInfoRequest() :
-    m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_queryTypeHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
     m_searchValueHasBeenSet(false)
 {
 }
@@ -36,14 +36,6 @@ string DescribeTLogInfoRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_startTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StartTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_endTimeHasBeenSet)
     {
@@ -61,6 +53,14 @@ string DescribeTLogInfoRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_queryType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_searchValueHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,22 +76,6 @@ string DescribeTLogInfoRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeTLogInfoRequest::GetStartTime() const
-{
-    return m_startTime;
-}
-
-void DescribeTLogInfoRequest::SetStartTime(const string& _startTime)
-{
-    m_startTime = _startTime;
-    m_startTimeHasBeenSet = true;
-}
-
-bool DescribeTLogInfoRequest::StartTimeHasBeenSet() const
-{
-    return m_startTimeHasBeenSet;
-}
 
 string DescribeTLogInfoRequest::GetEndTime() const
 {
@@ -123,6 +107,22 @@ void DescribeTLogInfoRequest::SetQueryType(const string& _queryType)
 bool DescribeTLogInfoRequest::QueryTypeHasBeenSet() const
 {
     return m_queryTypeHasBeenSet;
+}
+
+string DescribeTLogInfoRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeTLogInfoRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeTLogInfoRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
 }
 
 string DescribeTLogInfoRequest::GetSearchValue() const

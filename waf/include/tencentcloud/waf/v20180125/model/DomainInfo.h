@@ -826,18 +826,14 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
 
                     /**
                      * 获取cdc实例域名接入的集群信息,非cdc实例忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcClusters cdc实例域名接入的集群信息,非cdc实例忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcClusters() const;
 
                     /**
                      * 设置cdc实例域名接入的集群信息,非cdc实例忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcClusters cdc实例域名接入的集群信息,非cdc实例忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcClusters(const std::string& _cdcClusters);
@@ -853,11 +849,9 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                      * 获取api安全开关状态。
 0：关闭 
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiStatus api安全开关状态。
 0：关闭 
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetApiStatus() const;
@@ -866,11 +860,9 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                      * 设置api安全开关状态。
 0：关闭 
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apiStatus api安全开关状态。
 0：关闭 
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApiStatus(const int64_t& _apiStatus);
@@ -886,11 +878,9 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                      * 获取应用型负载均衡类型，默认clb。
 clb：七层负载均衡器类型
 apisix：apisix网关型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlbType 应用型负载均衡类型，默认clb。
 clb：七层负载均衡器类型
 apisix：apisix网关型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlbType() const;
@@ -899,11 +889,9 @@ apisix：apisix网关型
                      * 设置应用型负载均衡类型，默认clb。
 clb：七层负载均衡器类型
 apisix：apisix网关型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _albType 应用型负载均衡类型，默认clb。
 clb：七层负载均衡器类型
 apisix：apisix网关型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlbType(const std::string& _albType);
@@ -921,13 +909,11 @@ apisix：apisix网关型
 1：非腾讯云源站
 2：安全组绑定失败
 3：安全组发生变更
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SgState 安全组状态。
 0：不展示
 1：非腾讯云源站
 2：安全组绑定失败
 3：安全组发生变更
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSgState() const;
@@ -938,13 +924,11 @@ apisix：apisix网关型
 1：非腾讯云源站
 2：安全组绑定失败
 3：安全组发生变更
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sgState 安全组状态。
 0：不展示
 1：非腾讯云源站
 2：安全组绑定失败
 3：安全组发生变更
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSgState(const int64_t& _sgState);
@@ -958,18 +942,14 @@ apisix：apisix网关型
 
                     /**
                      * 获取安全组状态的详细解释
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SgDetail 安全组状态的详细解释
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSgDetail() const;
 
                     /**
                      * 设置安全组状态的详细解释
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sgDetail 安全组状态的详细解释
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSgDetail(const std::string& _sgDetail);
@@ -984,10 +964,8 @@ apisix：apisix网关型
                     /**
                      * 获取域名云环境。hybrid：混合云域名
 public：公有云域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudType 域名云环境。hybrid：混合云域名
 public：公有云域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCloudType() const;
@@ -995,10 +973,8 @@ public：公有云域名
                     /**
                      * 设置域名云环境。hybrid：混合云域名
 public：公有云域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudType 域名云环境。hybrid：混合云域名
 public：公有云域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudType(const std::string& _cloudType);
@@ -1012,18 +988,14 @@ public：公有云域名
 
                     /**
                      * 获取域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Note 域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _note 域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNote(const std::string& _note);
@@ -1037,18 +1009,14 @@ public：公有云域名
 
                     /**
                      * 获取SAASWAF源站IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcList SAASWAF源站IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSrcList() const;
 
                     /**
                      * 设置SAASWAF源站IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcList SAASWAF源站IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcList(const std::vector<std::string>& _srcList);
@@ -1062,18 +1030,14 @@ public：公有云域名
 
                     /**
                      * 获取SAASWAF源站域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamDomainList SAASWAF源站域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUpstreamDomainList() const;
 
                     /**
                      * 设置SAASWAF源站域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upstreamDomainList SAASWAF源站域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpstreamDomainList(const std::vector<std::string>& _upstreamDomainList);
@@ -1087,18 +1051,14 @@ public：公有云域名
 
                     /**
                      * 获取安全组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SgID 安全组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSgID() const;
 
                     /**
                      * 设置安全组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sgID 安全组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSgID(const std::string& _sgID);
@@ -1112,18 +1072,14 @@ public：公有云域名
 
                     /**
                      * 获取clbwaf接入状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessStatus clbwaf接入状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAccessStatus() const;
 
                     /**
                      * 设置clbwaf接入状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessStatus clbwaf接入状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessStatus(const int64_t& _accessStatus);
@@ -1137,18 +1093,14 @@ public：公有云域名
 
                     /**
                      * 获取域名标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 域名标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLabels() const;
 
                     /**
                      * 设置域名标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labels 域名标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabels(const std::vector<std::string>& _labels);
@@ -1376,7 +1328,6 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
 
                     /**
                      * cdc实例域名接入的集群信息,非cdc实例忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcClusters;
                     bool m_cdcClustersHasBeenSet;
@@ -1385,7 +1336,6 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                      * api安全开关状态。
 0：关闭 
 1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_apiStatus;
                     bool m_apiStatusHasBeenSet;
@@ -1394,7 +1344,6 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
                      * 应用型负载均衡类型，默认clb。
 clb：七层负载均衡器类型
 apisix：apisix网关型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_albType;
                     bool m_albTypeHasBeenSet;
@@ -1405,14 +1354,12 @@ apisix：apisix网关型
 1：非腾讯云源站
 2：安全组绑定失败
 3：安全组发生变更
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sgState;
                     bool m_sgStateHasBeenSet;
 
                     /**
                      * 安全组状态的详细解释
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sgDetail;
                     bool m_sgDetailHasBeenSet;
@@ -1420,49 +1367,42 @@ apisix：apisix网关型
                     /**
                      * 域名云环境。hybrid：混合云域名
 public：公有云域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cloudType;
                     bool m_cloudTypeHasBeenSet;
 
                     /**
                      * 域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
 
                     /**
                      * SAASWAF源站IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_srcList;
                     bool m_srcListHasBeenSet;
 
                     /**
                      * SAASWAF源站域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_upstreamDomainList;
                     bool m_upstreamDomainListHasBeenSet;
 
                     /**
                      * 安全组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sgID;
                     bool m_sgIDHasBeenSet;
 
                     /**
                      * clbwaf接入状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_accessStatus;
                     bool m_accessStatusHasBeenSet;
 
                     /**
                      * 域名标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_labels;
                     bool m_labelsHasBeenSet;

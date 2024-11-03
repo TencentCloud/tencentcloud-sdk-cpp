@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取删除失败的条目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedItems 删除失败的条目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailedItems() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取删除失败的条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedCount 删除失败的条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFailedCount() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 删除失败的条目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failedItems;
                     bool m_failedItemsHasBeenSet;
 
                     /**
                      * 删除失败的条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_failedCount;
                     bool m_failedCountHasBeenSet;

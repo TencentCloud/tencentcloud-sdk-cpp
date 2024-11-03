@@ -97,11 +97,9 @@ namespace TencentCloud
                      * 获取证书是否改变。
 0：未变化
 1：有变化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Changed 证书是否改变。
 0：未变化
 1：有变化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChanged() const;
@@ -141,7 +139,6 @@ namespace TencentCloud
                      * 证书是否改变。
 0：未变化
 1：有变化
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_changed;
                     bool m_changedHasBeenSet;

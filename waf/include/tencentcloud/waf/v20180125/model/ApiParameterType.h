@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParameterName 参数名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParameterName() const;
 
                     /**
                      * 设置参数名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parameterName 参数名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParameterName(const std::string& _parameterName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 参数类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置参数类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 参数类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 参数位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 设置参数位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _location 参数位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocation(const std::string& _location);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据标签(敏感字段)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 数据标签(敏感字段)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLabel() const;
 
                     /**
                      * 设置数据标签(敏感字段)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 数据标签(敏感字段)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::vector<std::string>& _label);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
                      * 设置时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timestamp 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取来源是请求或者响应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 来源是请求或者响应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置来源是请求或者响应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _source 来源是请求或者响应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否需要泛化 ，0表示不需要，1表示需要
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPan 是否需要泛化 ，0表示不需要，1表示需要
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsPan() const;
 
                     /**
                      * 设置是否需要泛化 ，0表示不需要，1表示需要
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isPan 是否需要泛化 ，0表示不需要，1表示需要
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsPan(const int64_t& _isPan);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否鉴权，1表示是，0表示否
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAuth 是否鉴权，1表示是，0表示否
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsAuth() const;
 
                     /**
                      * 设置是否鉴权，1表示是，0表示否
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isAuth 是否鉴权，1表示是，0表示否
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsAuth(const int64_t& _isAuth);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * 参数名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parameterName;
                     bool m_parameterNameHasBeenSet;
 
                     /**
                      * 参数类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 参数位置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;
 
                     /**
                      * 数据标签(敏感字段)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
                      * 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
                      * 来源是请求或者响应
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
                      * 是否需要泛化 ，0表示不需要，1表示需要
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isPan;
                     bool m_isPanHasBeenSet;
 
                     /**
                      * 是否鉴权，1表示是，0表示否
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isAuth;
                     bool m_isAuthHasBeenSet;

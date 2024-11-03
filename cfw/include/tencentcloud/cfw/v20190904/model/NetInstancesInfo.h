@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 网络实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置网络实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 网络实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -138,7 +134,6 @@ namespace TencentCloud
 
                     /**
                      * 网络实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

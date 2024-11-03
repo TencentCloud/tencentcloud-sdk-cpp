@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Virtual IP
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Vip Virtual IP
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取VIP地址
+                     * @return Vip VIP地址
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置Virtual IP
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vip Virtual IP
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置VIP地址
+                     * @param _vip VIP地址
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取waf实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId waf实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置waf实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId waf实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -96,21 +88,181 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间
+                     * @return InstanceCreateTime 创建时间
+                     * 
+                     */
+                    std::string GetInstanceCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+                     * @param _instanceCreateTime 创建时间
+                     * 
+                     */
+                    void SetInstanceCreateTime(const std::string& _instanceCreateTime);
+
+                    /**
+                     * 判断参数 InstanceCreateTime 是否已赋值
+                     * @return InstanceCreateTime 是否已赋值
+                     * 
+                     */
+                    bool InstanceCreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取地域
+                     * @return Region 地域
+                     * 
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置地域
+                     * @param _region 地域
+                     * 
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     * 
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取地域ID
+                     * @return RegionId 地域ID
+                     * 
+                     */
+                    int64_t GetRegionId() const;
+
+                    /**
+                     * 设置地域ID
+                     * @param _regionId 地域ID
+                     * 
+                     */
+                    void SetRegionId(const int64_t& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     * 
+                     */
+                    bool RegionIdHasBeenSet() const;
+
+                    /**
+                     * 获取ip运营商类型
+                     * @return ISP ip运营商类型
+                     * 
+                     */
+                    std::string GetISP() const;
+
+                    /**
+                     * 设置ip运营商类型
+                     * @param _iSP ip运营商类型
+                     * 
+                     */
+                    void SetISP(const std::string& _iSP);
+
+                    /**
+                     * 判断参数 ISP 是否已赋值
+                     * @return ISP 是否已赋值
+                     * 
+                     */
+                    bool ISPHasBeenSet() const;
+
+                    /**
+                     * 获取ip类型
+                     * @return VipType ip类型
+                     * 
+                     */
+                    std::string GetVipType() const;
+
+                    /**
+                     * 设置ip类型
+                     * @param _vipType ip类型
+                     * 
+                     */
+                    void SetVipType(const std::string& _vipType);
+
+                    /**
+                     * 判断参数 VipType 是否已赋值
+                     * @return VipType 是否已赋值
+                     * 
+                     */
+                    bool VipTypeHasBeenSet() const;
+
+                    /**
+                     * 获取域名信息
+                     * @return AddressName 域名信息
+                     * 
+                     */
+                    std::string GetAddressName() const;
+
+                    /**
+                     * 设置域名信息
+                     * @param _addressName 域名信息
+                     * 
+                     */
+                    void SetAddressName(const std::string& _addressName);
+
+                    /**
+                     * 判断参数 AddressName 是否已赋值
+                     * @return AddressName 是否已赋值
+                     * 
+                     */
+                    bool AddressNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Virtual IP
-注意：此字段可能返回 null，表示取不到有效值。
+                     * VIP地址
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
                      * waf实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    std::string m_instanceCreateTime;
+                    bool m_instanceCreateTimeHasBeenSet;
+
+                    /**
+                     * 地域
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
+                     * 地域ID
+                     */
+                    int64_t m_regionId;
+                    bool m_regionIdHasBeenSet;
+
+                    /**
+                     * ip运营商类型
+                     */
+                    std::string m_iSP;
+                    bool m_iSPHasBeenSet;
+
+                    /**
+                     * ip类型
+                     */
+                    std::string m_vipType;
+                    bool m_vipTypeHasBeenSet;
+
+                    /**
+                     * 域名信息
+                     */
+                    std::string m_addressName;
+                    bool m_addressNameHasBeenSet;
 
                 };
             }

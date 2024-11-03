@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
-                     * 
-                     */
-                    std::string GetStartTime() const;
-
-                    /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
-                     * 
-                     */
-                    void SetStartTime(const std::string& _startTime);
-
-                    /**
-                     * 判断参数 StartTime 是否已赋值
-                     * @return StartTime 是否已赋值
-                     * 
-                     */
-                    bool StartTimeHasBeenSet() const;
-
-                    /**
                      * 获取结束时间
                      * @return EndTime 结束时间
                      * 
@@ -104,6 +83,27 @@ namespace TencentCloud
                      * 
                      */
                     bool QueryTypeHasBeenSet() const;
+
+                    /**
+                     * 获取开始时间
+                     * @return StartTime 开始时间
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置开始时间
+                     * @param _startTime 开始时间
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取top数
@@ -150,12 +150,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间
-                     */
-                    std::string m_startTime;
-                    bool m_startTimeHasBeenSet;
-
-                    /**
                      * 结束时间
                      */
                     std::string m_endTime;
@@ -166,6 +160,12 @@ namespace TencentCloud
                      */
                     std::string m_queryType;
                     bool m_queryTypeHasBeenSet;
+
+                    /**
+                     * 开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
 
                     /**
                      * top数

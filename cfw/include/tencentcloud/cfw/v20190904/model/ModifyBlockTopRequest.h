@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取记录id
-                     * @return UniqueId 记录id
-                     * 
-                     */
-                    std::string GetUniqueId() const;
-
-                    /**
-                     * 设置记录id
-                     * @param _uniqueId 记录id
-                     * 
-                     */
-                    void SetUniqueId(const std::string& _uniqueId);
-
-                    /**
-                     * 判断参数 UniqueId 是否已赋值
-                     * @return UniqueId 是否已赋值
-                     * 
-                     */
-                    bool UniqueIdHasBeenSet() const;
-
-                    /**
                      * 获取操作类型 1 置顶 0取消
                      * @return OpeType 操作类型 1 置顶 0取消
                      * 
@@ -84,19 +63,40 @@ namespace TencentCloud
                      */
                     bool OpeTypeHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取记录id
+                     * @return UniqueId 记录id
+                     * 
+                     */
+                    std::string GetUniqueId() const;
 
                     /**
-                     * 记录id
+                     * 设置记录id
+                     * @param _uniqueId 记录id
+                     * 
                      */
-                    std::string m_uniqueId;
-                    bool m_uniqueIdHasBeenSet;
+                    void SetUniqueId(const std::string& _uniqueId);
+
+                    /**
+                     * 判断参数 UniqueId 是否已赋值
+                     * @return UniqueId 是否已赋值
+                     * 
+                     */
+                    bool UniqueIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 操作类型 1 置顶 0取消
                      */
                     std::string m_opeType;
                     bool m_opeTypeHasBeenSet;
+
+                    /**
+                     * 记录id
+                     */
+                    std::string m_uniqueId;
+                    bool m_uniqueIdHasBeenSet;
 
                 };
             }

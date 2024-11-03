@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取动作类型
-                     * @return ActionType 动作类型
+                     * 获取动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
+                     * @return ActionType 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
                      * 
                      */
                     std::string GetActionType() const;
 
                     /**
-                     * 设置动作类型
-                     * @param _actionType 动作类型
+                     * 设置动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
+                     * @param _actionType 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
                      * 
                      */
                     void SetActionType(const std::string& _actionType);
@@ -260,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventId 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventId 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventId(const std::string& _eventId);
@@ -285,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -310,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生效状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidStatus 生效状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetValidStatus() const;
 
                     /**
                      * 设置生效状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _validStatus 生效状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValidStatus(const int64_t& _validStatus);
@@ -335,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _source 来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -360,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobType 定时任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobType() const;
 
                     /**
                      * 设置定时任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobType 定时任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobType(const std::string& _jobType);
@@ -385,18 +365,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时任务配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobDateTime 定时任务配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     JobDateTime GetJobDateTime() const;
 
                     /**
                      * 设置定时任务配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobDateTime 定时任务配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobDateTime(const JobDateTime& _jobDateTime);
@@ -410,18 +386,14 @@ namespace TencentCloud
 
                     /**
                      * 获取周期任务粒度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CronType 周期任务粒度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCronType() const;
 
                     /**
                      * 设置周期任务粒度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cronType 周期任务粒度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCronType(const std::string& _cronType);
@@ -435,18 +407,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义标签，风控规则用，用来表示是内置规则还是用户自定义的
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 自定义标签，风控规则用，用来表示是内置规则还是用户自定义的
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置自定义标签，风控规则用，用来表示是内置规则还是用户自定义的
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 自定义标签，风控规则用，用来表示是内置规则还是用户自定义的
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -460,18 +428,14 @@ namespace TencentCloud
 
                     /**
                      * 获取拦截页面id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageId 拦截页面id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPageId() const;
 
                     /**
                      * 设置拦截页面id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pageId 拦截页面id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPageId(const std::string& _pageId);
@@ -485,18 +449,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -511,7 +471,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 动作类型
+                     * 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
@@ -572,70 +532,60 @@ namespace TencentCloud
 
                     /**
                      * 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 生效状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_validStatus;
                     bool m_validStatusHasBeenSet;
 
                     /**
                      * 来源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
                      * 定时任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobType;
                     bool m_jobTypeHasBeenSet;
 
                     /**
                      * 定时任务配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     JobDateTime m_jobDateTime;
                     bool m_jobDateTimeHasBeenSet;
 
                     /**
                      * 周期任务粒度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cronType;
                     bool m_cronTypeHasBeenSet;
 
                     /**
                      * 自定义标签，风控规则用，用来表示是内置规则还是用户自定义的
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 拦截页面id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pageId;
                     bool m_pageIdHasBeenSet;
 
                     /**
                      * 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

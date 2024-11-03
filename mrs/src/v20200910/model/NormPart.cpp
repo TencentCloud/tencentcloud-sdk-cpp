@@ -26,7 +26,8 @@ NormPart::NormPart() :
     m_tissueHasBeenSet(false),
     m_tissueDirectionHasBeenSet(false),
     m_upperHasBeenSet(false),
-    m_partDetailHasBeenSet(false)
+    m_partDetailHasBeenSet(false),
+    m_partDetailListHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,26 @@ CoreInternalOutcome NormPart::Deserialize(const rapidjson::Value &value)
         m_partDetailHasBeenSet = true;
     }
 
+    if (value.HasMember("PartDetailList") && !value["PartDetailList"].IsNull())
+    {
+        if (!value["PartDetailList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NormPart.PartDetailList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PartDetailList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PartDesc item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_partDetailList.push_back(item);
+        }
+        m_partDetailListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +177,21 @@ void NormPart::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_partDetail.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_partDetailListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartDetailList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_partDetailList.begin(); itr != m_partDetailList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -255,5 +291,21 @@ void NormPart::SetPartDetail(const PartDesc& _partDetail)
 bool NormPart::PartDetailHasBeenSet() const
 {
     return m_partDetailHasBeenSet;
+}
+
+vector<PartDesc> NormPart::GetPartDetailList() const
+{
+    return m_partDetailList;
+}
+
+void NormPart::SetPartDetailList(const vector<PartDesc>& _partDetailList)
+{
+    m_partDetailList = _partDetailList;
+    m_partDetailListHasBeenSet = true;
+}
+
+bool NormPart::PartDetailListHasBeenSet() const
+{
+    return m_partDetailListHasBeenSet;
 }
 

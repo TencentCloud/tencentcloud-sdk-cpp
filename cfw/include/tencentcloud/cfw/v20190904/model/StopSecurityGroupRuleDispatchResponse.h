@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取true代表成功，false代表错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status true代表成功，false代表错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetStatus() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * true代表成功，false代表错误
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;

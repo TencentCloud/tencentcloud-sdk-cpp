@@ -217,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名绑定负载均衡器状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 域名绑定负载均衡器状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 设置域名绑定负载均衡器状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _state 域名绑定负载均衡器状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetState(const int64_t& _state);
@@ -242,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡类型，clb或者apisix
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlbType 负载均衡类型，clb或者apisix
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlbType() const;
 
                     /**
                      * 设置负载均衡类型，clb或者apisix
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _albType 负载均衡类型，clb或者apisix
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlbType(const std::string& _albType);
@@ -267,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IsCdn=3时，表示自定义header
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpHeaders IsCdn=3时，表示自定义header
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetIpHeaders() const;
 
                     /**
                      * 设置IsCdn=3时，表示自定义header
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipHeaders IsCdn=3时，表示自定义header
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpHeaders(const std::vector<std::string>& _ipHeaders);
@@ -292,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cdc-clb-waf类型WAF的CDC集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcClusters cdc-clb-waf类型WAF的CDC集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcClusters() const;
 
                     /**
                      * 设置cdc-clb-waf类型WAF的CDC集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcClusters cdc-clb-waf类型WAF的CDC集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcClusters(const std::string& _cdcClusters);
@@ -317,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云类型:public:公有云；private:私有云;hybrid:混合云
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudType 云类型:public:公有云；private:私有云;hybrid:混合云
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCloudType() const;
 
                     /**
                      * 设置云类型:public:公有云；private:私有云;hybrid:混合云
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudType 云类型:public:公有云；private:私有云;hybrid:混合云
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudType(const std::string& _cloudType);
@@ -342,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Note 域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _note 域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNote(const std::string& _note);
@@ -367,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 域名标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLabels() const;
 
                     /**
                      * 设置域名标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labels 域名标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabels(const std::vector<std::string>& _labels);
@@ -442,49 +414,42 @@ namespace TencentCloud
 
                     /**
                      * 域名绑定负载均衡器状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_state;
                     bool m_stateHasBeenSet;
 
                     /**
                      * 负载均衡类型，clb或者apisix
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_albType;
                     bool m_albTypeHasBeenSet;
 
                     /**
                      * IsCdn=3时，表示自定义header
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ipHeaders;
                     bool m_ipHeadersHasBeenSet;
 
                     /**
                      * cdc-clb-waf类型WAF的CDC集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcClusters;
                     bool m_cdcClustersHasBeenSet;
 
                     /**
                      * 云类型:public:公有云；private:私有云;hybrid:混合云
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cloudType;
                     bool m_cloudTypeHasBeenSet;
 
                     /**
                      * 域名备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
 
                     /**
                      * 域名标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_labels;
                     bool m_labelsHasBeenSet;

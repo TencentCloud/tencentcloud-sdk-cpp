@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scene 场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScene() const;
 
                     /**
                      * 设置场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scene 场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScene(const std::string& _scene);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 数据标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLabel() const;
 
                     /**
                      * 设置数据标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 数据标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::vector<std::string>& _label);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过去7天是否活跃
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Active 过去7天是否活跃
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetActive() const;
 
                     /**
                      * 设置过去7天是否活跃
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _active 过去7天是否活跃
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActive(const bool& _active);
@@ -228,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产状态，1:新发现，2，确认中，3，已确认，4，已下线，5，已忽略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mode 资产状态，1:新发现，2，确认中，3，已确认，4，已下线，5，已忽略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置资产状态，1:新发现，2，确认中，3，已确认，4，已下线，5，已忽略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mode 资产状态，1:新发现，2，确认中，3，已确认，4，已下线，5，已忽略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -253,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险等级，100,200,300对应低中高
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 风险等级，100,200,300对应低中高
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置风险等级，100,200,300对应低中高
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 风险等级，100,200,300对应低中高
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -278,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取近30天调用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 近30天调用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置近30天调用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 近30天调用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -303,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -328,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否鉴权，1标识是，0表示否
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAuth 是否鉴权，1标识是，0表示否
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsAuth() const;
 
                     /**
                      * 设置是否鉴权，1标识是，0表示否
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isAuth 是否鉴权，1标识是，0表示否
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsAuth(const int64_t& _isAuth);
@@ -353,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取如果添加了api入参检测规则，则此id返回值不为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiRequestRuleId 如果添加了api入参检测规则，则此id返回值不为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetApiRequestRuleId() const;
 
                     /**
                      * 设置如果添加了api入参检测规则，则此id返回值不为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apiRequestRuleId 如果添加了api入参检测规则，则此id返回值不为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApiRequestRuleId(const int64_t& _apiRequestRuleId);
@@ -378,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取如果添加了api限流规则，则此id返回值不为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiLimitRuleId 如果添加了api限流规则，则此id返回值不为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetApiLimitRuleId() const;
 
                     /**
                      * 设置如果添加了api限流规则，则此id返回值不为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apiLimitRuleId 如果添加了api限流规则，则此id返回值不为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApiLimitRuleId(const int64_t& _apiLimitRuleId);
@@ -403,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对象接入和泛域名接入时，展示host列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostList 对象接入和泛域名接入时，展示host列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetHostList() const;
 
                     /**
                      * 设置对象接入和泛域名接入时，展示host列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostList 对象接入和泛域名接入时，展示host列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostList(const std::vector<std::string>& _hostList);
@@ -448,21 +404,18 @@ namespace TencentCloud
 
                     /**
                      * 场景
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scene;
                     bool m_sceneHasBeenSet;
 
                     /**
                      * 数据标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 过去7天是否活跃
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_active;
                     bool m_activeHasBeenSet;
@@ -481,56 +434,48 @@ namespace TencentCloud
 
                     /**
                      * 资产状态，1:新发现，2，确认中，3，已确认，4，已下线，5，已忽略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
                      * 风险等级，100,200,300对应低中高
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 近30天调用量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
                      * 是否鉴权，1标识是，0表示否
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isAuth;
                     bool m_isAuthHasBeenSet;
 
                     /**
                      * 如果添加了api入参检测规则，则此id返回值不为0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_apiRequestRuleId;
                     bool m_apiRequestRuleIdHasBeenSet;
 
                     /**
                      * 如果添加了api限流规则，则此id返回值不为0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_apiLimitRuleId;
                     bool m_apiLimitRuleIdHasBeenSet;
 
                     /**
                      * 对象接入和泛域名接入时，展示host列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_hostList;
                     bool m_hostListHasBeenSet;

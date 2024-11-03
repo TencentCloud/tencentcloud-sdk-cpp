@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TLS版本ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionId TLS版本ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVersionId() const;
 
                     /**
                      * 设置TLS版本ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _versionId TLS版本ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersionId(const int64_t& _versionId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取加密套件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CipherId 加密套件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCipherId() const;
 
                     /**
                      * 设置加密套件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cipherId 加密套件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCipherId(const int64_t& _cipherId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取加密套件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CipherName 加密套件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCipherName() const;
 
                     /**
                      * 设置加密套件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cipherName 加密套件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCipherName(const std::string& _cipherName);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * TLS版本ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_versionId;
                     bool m_versionIdHasBeenSet;
 
                     /**
                      * 加密套件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cipherId;
                     bool m_cipherIdHasBeenSet;
 
                     /**
                      * 加密套件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cipherName;
                     bool m_cipherNameHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取报告列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 报告列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TaskLogInfo> GetData() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取待查看数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotViewNumber 待查看数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNotViewNumber() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取报告模板数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportTemplateNumber 报告模板数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReportTemplateNumber() const;
@@ -112,28 +104,24 @@ namespace TencentCloud
 
                     /**
                      * 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 报告列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskLogInfo> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
                      * 待查看数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_notViewNumber;
                     bool m_notViewNumberHasBeenSet;
 
                     /**
                      * 报告模板数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_reportTemplateNumber;
                     bool m_reportTemplateNumberHasBeenSet;

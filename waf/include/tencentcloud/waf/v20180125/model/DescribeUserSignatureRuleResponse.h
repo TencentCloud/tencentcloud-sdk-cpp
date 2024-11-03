@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rules 规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<UserSignatureRule> GetRules() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UserSignatureRule> m_rules;
                     bool m_rulesHasBeenSet;

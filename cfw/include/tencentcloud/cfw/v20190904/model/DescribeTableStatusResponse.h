@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取0：正常，其它：不正常
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 0：正常，其它：不正常
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 0：正常，其它：不正常
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间戳，单位为秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartDateTime 开始时间戳，单位为秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStartDateTime() const;
 
                     /**
                      * 设置开始时间戳，单位为秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startDateTime 开始时间戳，单位为秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartDateTime(const uint64_t& _startDateTime);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间戳，单位为秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndDateTime 结束时间戳，单位为秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEndDateTime() const;
 
                     /**
                      * 设置结束时间戳，单位为秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endDateTime 结束时间戳，单位为秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndDateTime(const uint64_t& _endDateTime);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 开始时间戳，单位为秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_startDateTime;
                     bool m_startDateTimeHasBeenSet;
 
                     /**
                      * 结束时间戳，单位为秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_endDateTime;
                     bool m_endDateTimeHasBeenSet;

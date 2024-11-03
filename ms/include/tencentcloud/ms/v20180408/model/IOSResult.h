@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取加固状态
+                     * 获取加固状态：0等待，1成功，2任务中，3失败，4重试中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EncryptState 加固状态
+                     * @return EncryptState 加固状态：0等待，1成功，2任务中，3失败，4重试中
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEncryptState() const;
 
                     /**
-                     * 设置加固状态
+                     * 设置加固状态：0等待，1成功，2任务中，3失败，4重试中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _encryptState 加固状态
+                     * @param _encryptState 加固状态：0等待，1成功，2任务中，3失败，4重试中
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -377,7 +377,7 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 加固状态
+                     * 加固状态：0等待，1成功，2任务中，3失败，4重试中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_encryptState;

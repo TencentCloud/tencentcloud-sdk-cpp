@@ -21,10 +21,10 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 CustomWhiteRule::CustomWhiteRule() :
-    m_srcIPHasBeenSet(false),
     m_dstIPHasBeenSet(false),
+    m_idsRuleIdHasBeenSet(false),
     m_idsRuleNameHasBeenSet(false),
-    m_idsRuleIdHasBeenSet(false)
+    m_srcIPHasBeenSet(false)
 {
 }
 
@@ -32,16 +32,6 @@ CoreInternalOutcome CustomWhiteRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("SrcIP") && !value["SrcIP"].IsNull())
-    {
-        if (!value["SrcIP"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CustomWhiteRule.SrcIP` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_srcIP = string(value["SrcIP"].GetString());
-        m_srcIPHasBeenSet = true;
-    }
 
     if (value.HasMember("DstIP") && !value["DstIP"].IsNull())
     {
@@ -51,16 +41,6 @@ CoreInternalOutcome CustomWhiteRule::Deserialize(const rapidjson::Value &value)
         }
         m_dstIP = string(value["DstIP"].GetString());
         m_dstIPHasBeenSet = true;
-    }
-
-    if (value.HasMember("IdsRuleName") && !value["IdsRuleName"].IsNull())
-    {
-        if (!value["IdsRuleName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CustomWhiteRule.IdsRuleName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_idsRuleName = string(value["IdsRuleName"].GetString());
-        m_idsRuleNameHasBeenSet = true;
     }
 
     if (value.HasMember("IdsRuleId") && !value["IdsRuleId"].IsNull())
@@ -73,6 +53,26 @@ CoreInternalOutcome CustomWhiteRule::Deserialize(const rapidjson::Value &value)
         m_idsRuleIdHasBeenSet = true;
     }
 
+    if (value.HasMember("IdsRuleName") && !value["IdsRuleName"].IsNull())
+    {
+        if (!value["IdsRuleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomWhiteRule.IdsRuleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_idsRuleName = string(value["IdsRuleName"].GetString());
+        m_idsRuleNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SrcIP") && !value["SrcIP"].IsNull())
+    {
+        if (!value["SrcIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomWhiteRule.SrcIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_srcIP = string(value["SrcIP"].GetString());
+        m_srcIPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,28 +80,12 @@ CoreInternalOutcome CustomWhiteRule::Deserialize(const rapidjson::Value &value)
 void CustomWhiteRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_srcIPHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SrcIP";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_srcIP.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_dstIPHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstIP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dstIP.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_idsRuleNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IdsRuleName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_idsRuleName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idsRuleIdHasBeenSet)
@@ -112,24 +96,24 @@ void CustomWhiteRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_idsRuleId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_idsRuleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdsRuleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_idsRuleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_srcIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcIP.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string CustomWhiteRule::GetSrcIP() const
-{
-    return m_srcIP;
-}
-
-void CustomWhiteRule::SetSrcIP(const string& _srcIP)
-{
-    m_srcIP = _srcIP;
-    m_srcIPHasBeenSet = true;
-}
-
-bool CustomWhiteRule::SrcIPHasBeenSet() const
-{
-    return m_srcIPHasBeenSet;
-}
 
 string CustomWhiteRule::GetDstIP() const
 {
@@ -145,6 +129,22 @@ void CustomWhiteRule::SetDstIP(const string& _dstIP)
 bool CustomWhiteRule::DstIPHasBeenSet() const
 {
     return m_dstIPHasBeenSet;
+}
+
+string CustomWhiteRule::GetIdsRuleId() const
+{
+    return m_idsRuleId;
+}
+
+void CustomWhiteRule::SetIdsRuleId(const string& _idsRuleId)
+{
+    m_idsRuleId = _idsRuleId;
+    m_idsRuleIdHasBeenSet = true;
+}
+
+bool CustomWhiteRule::IdsRuleIdHasBeenSet() const
+{
+    return m_idsRuleIdHasBeenSet;
 }
 
 string CustomWhiteRule::GetIdsRuleName() const
@@ -163,19 +163,19 @@ bool CustomWhiteRule::IdsRuleNameHasBeenSet() const
     return m_idsRuleNameHasBeenSet;
 }
 
-string CustomWhiteRule::GetIdsRuleId() const
+string CustomWhiteRule::GetSrcIP() const
 {
-    return m_idsRuleId;
+    return m_srcIP;
 }
 
-void CustomWhiteRule::SetIdsRuleId(const string& _idsRuleId)
+void CustomWhiteRule::SetSrcIP(const string& _srcIP)
 {
-    m_idsRuleId = _idsRuleId;
-    m_idsRuleIdHasBeenSet = true;
+    m_srcIP = _srcIP;
+    m_srcIPHasBeenSet = true;
 }
 
-bool CustomWhiteRule::IdsRuleIdHasBeenSet() const
+bool CustomWhiteRule::SrcIPHasBeenSet() const
 {
-    return m_idsRuleIdHasBeenSet;
+    return m_srcIPHasBeenSet;
 }
 

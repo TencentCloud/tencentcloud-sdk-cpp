@@ -38,7 +38,8 @@ ResultListItem::ResultListItem() :
     m_virusDescHasBeenSet(false),
     m_repackageStatusHasBeenSet(false),
     m_errnoHasBeenSet(false),
-    m_errMsgHasBeenSet(false)
+    m_errMsgHasBeenSet(false),
+    m_errNoHasBeenSet(false)
 {
 }
 
@@ -247,6 +248,16 @@ CoreInternalOutcome ResultListItem::Deserialize(const rapidjson::Value &value)
         m_errMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrNo") && !value["ErrNo"].IsNull())
+    {
+        if (!value["ErrNo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResultListItem.ErrNo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errNo = string(value["ErrNo"].GetString());
+        m_errNoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -410,6 +421,14 @@ void ResultListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ErrMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errNoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrNo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errNo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -701,5 +720,21 @@ void ResultListItem::SetErrMsg(const string& _errMsg)
 bool ResultListItem::ErrMsgHasBeenSet() const
 {
     return m_errMsgHasBeenSet;
+}
+
+string ResultListItem::GetErrNo() const
+{
+    return m_errNo;
+}
+
+void ResultListItem::SetErrNo(const string& _errNo)
+{
+    m_errNo = _errNo;
+    m_errNoHasBeenSet = true;
+}
+
+bool ResultListItem::ErrNoHasBeenSet() const
+{
+    return m_errNoHasBeenSet;
 }
 

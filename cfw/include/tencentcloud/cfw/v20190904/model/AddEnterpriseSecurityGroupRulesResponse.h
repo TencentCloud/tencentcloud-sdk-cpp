@@ -59,10 +59,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取规则uuid
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Rules 规则uuid
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取添加成功的规则详情
+                     * @return Rules 添加成功的规则详情
                      * 
                      */
                     std::vector<SecurityGroupSimplifyRule> GetRules() const;
@@ -83,8 +81,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 规则uuid
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 添加成功的规则详情
                      */
                     std::vector<SecurityGroupSimplifyRule> m_rules;
                     bool m_rulesHasBeenSet;

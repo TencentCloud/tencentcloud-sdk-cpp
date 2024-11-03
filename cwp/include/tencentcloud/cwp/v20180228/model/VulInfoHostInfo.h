@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostName 主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIp 主机ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 设置主机ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostIp 主机ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostIp(const std::string& _hostIp);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 主机标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置主机标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 主机标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuid 主机quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置主机quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quuid 主机quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuuid(const std::string& _quuid);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0 :漏洞不可自动修复，  1：可自动修复， 2：客户端已离线， 3：主机不是旗舰版只能手动修复， 4：机型不允许 ，5：修复中 ，6：已修复， 7：检测中, 9:修复失败, 10:已忽略 ,11:漏洞只支持linux不支持Windows, 12：漏洞只支持Windows不支持linux
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportAutoFix 0 :漏洞不可自动修复，  1：可自动修复， 2：客户端已离线， 3：主机不是旗舰版只能手动修复， 4：机型不允许 ，5：修复中 ，6：已修复， 7：检测中, 9:修复失败, 10:已忽略 ,11:漏洞只支持linux不支持Windows, 12：漏洞只支持Windows不支持linux
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsSupportAutoFix() const;
 
                     /**
                      * 设置0 :漏洞不可自动修复，  1：可自动修复， 2：客户端已离线， 3：主机不是旗舰版只能手动修复， 4：机型不允许 ，5：修复中 ，6：已修复， 7：检测中, 9:修复失败, 10:已忽略 ,11:漏洞只支持linux不支持Windows, 12：漏洞只支持Windows不支持linux
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSupportAutoFix 0 :漏洞不可自动修复，  1：可自动修复， 2：客户端已离线， 3：主机不是旗舰版只能手动修复， 4：机型不允许 ，5：修复中 ，6：已修复， 7：检测中, 9:修复失败, 10:已忽略 ,11:漏洞只支持linux不支持Windows, 12：漏洞只支持Windows不支持linux
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSupportAutoFix(const uint64_t& _isSupportAutoFix);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uuid 主机uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置主机uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uuid 主机uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机InstanceId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 主机InstanceId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置主机InstanceId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 主机InstanceId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
 
                     /**
                      * 主机ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostIp;
                     bool m_hostIpHasBeenSet;
 
                     /**
                      * 主机标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 主机quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;
 
                     /**
                      * 0 :漏洞不可自动修复，  1：可自动修复， 2：客户端已离线， 3：主机不是旗舰版只能手动修复， 4：机型不允许 ，5：修复中 ，6：已修复， 7：检测中, 9:修复失败, 10:已忽略 ,11:漏洞只支持linux不支持Windows, 12：漏洞只支持Windows不支持linux
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isSupportAutoFix;
                     bool m_isSupportAutoFixHasBeenSet;
 
                     /**
                      * 主机uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
                      * 主机InstanceId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

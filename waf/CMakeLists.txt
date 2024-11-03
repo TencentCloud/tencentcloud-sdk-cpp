@@ -40,7 +40,6 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/GetAttackDownloadRecordsRequest.h
   include/tencentcloud/waf/v20180125/model/MajorEventsPkg.h
   include/tencentcloud/waf/v20180125/model/DescribeDomainRulesRequest.h
-  include/tencentcloud/waf/v20180125/model/DeleteDownloadRecordRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteAccessExportResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeModuleStatusResponse.h
   include/tencentcloud/waf/v20180125/model/AccessKeyValueInfo.h
@@ -370,7 +369,6 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeTopAttackDomainRequest.h
   include/tencentcloud/waf/v20180125/model/BatchIpAccessControlData.h
   include/tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakRulesRuleItem.h
-  include/tencentcloud/waf/v20180125/model/DeleteDownloadRecordResponse.h
   include/tencentcloud/waf/v20180125/model/DescribePeakValueRequest.h
   include/tencentcloud/waf/v20180125/model/BotQPS.h
   include/tencentcloud/waf/v20180125/model/DescribeApiDetailRequest.h
@@ -441,7 +439,6 @@ set(waf_src
   src/v20180125/model/GetAttackDownloadRecordsRequest.cpp
   src/v20180125/model/MajorEventsPkg.cpp
   src/v20180125/model/DescribeDomainRulesRequest.cpp
-  src/v20180125/model/DeleteDownloadRecordRequest.cpp
   src/v20180125/model/DeleteAccessExportResponse.cpp
   src/v20180125/model/DescribeModuleStatusResponse.cpp
   src/v20180125/model/AccessKeyValueInfo.cpp
@@ -771,7 +768,6 @@ set(waf_src
   src/v20180125/model/DescribeTopAttackDomainRequest.cpp
   src/v20180125/model/BatchIpAccessControlData.cpp
   src/v20180125/model/DescribeAntiInfoLeakRulesRuleItem.cpp
-  src/v20180125/model/DeleteDownloadRecordResponse.cpp
   src/v20180125/model/DescribePeakValueRequest.cpp
   src/v20180125/model/BotQPS.cpp
   src/v20180125/model/DescribeApiDetailRequest.cpp

@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
-                     * @return ActionType 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
+                     * 获取动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
+                     * @return ActionType 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
                      * 
                      */
                     std::string GetActionType() const;
 
                     /**
-                     * 设置动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
-                     * @param _actionType 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
+                     * 设置动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
+                     * @param _actionType 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
                      * 
                      */
                     void SetActionType(const std::string& _actionType);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取放行的详情
-                     * @return Bypass 放行的详情
+                     * 获取放行时是否继续执行其它检查逻辑，继续执行地域封禁防护：geoip、继续执行CC策略防护：cc、继续执行WEB应用防护：owasp、继续执行AI引擎防护：ai、继续执行信息防泄漏防护：antileakage。如果多个勾选那么以,串接。默认是"geoip,cc,owasp,ai,antileakage"
+                     * @return Bypass 放行时是否继续执行其它检查逻辑，继续执行地域封禁防护：geoip、继续执行CC策略防护：cc、继续执行WEB应用防护：owasp、继续执行AI引擎防护：ai、继续执行信息防泄漏防护：antileakage。如果多个勾选那么以,串接。默认是"geoip,cc,owasp,ai,antileakage"
                      * 
                      */
                     std::string GetBypass() const;
 
                     /**
-                     * 设置放行的详情
-                     * @param _bypass 放行的详情
+                     * 设置放行时是否继续执行其它检查逻辑，继续执行地域封禁防护：geoip、继续执行CC策略防护：cc、继续执行WEB应用防护：owasp、继续执行AI引擎防护：ai、继续执行信息防泄漏防护：antileakage。如果多个勾选那么以,串接。默认是"geoip,cc,owasp,ai,antileakage"
+                     * @param _bypass 放行时是否继续执行其它检查逻辑，继续执行地域封禁防护：geoip、继续执行CC策略防护：cc、继续执行WEB应用防护：owasp、继续执行AI引擎防护：ai、继续执行信息防泄漏防护：antileakage。如果多个勾选那么以,串接。默认是"geoip,cc,owasp,ai,antileakage"
                      * 
                      */
                     void SetBypass(const std::string& _bypass);
@@ -407,7 +407,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
+                     * 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向，5代表JS校验
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
@@ -431,7 +431,7 @@ namespace TencentCloud
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 放行的详情
+                     * 放行时是否继续执行其它检查逻辑，继续执行地域封禁防护：geoip、继续执行CC策略防护：cc、继续执行WEB应用防护：owasp、继续执行AI引擎防护：ai、继续执行信息防泄漏防护：antileakage。如果多个勾选那么以,串接。默认是"geoip,cc,owasp,ai,antileakage"
                      */
                     std::string m_bypass;
                     bool m_bypassHasBeenSet;

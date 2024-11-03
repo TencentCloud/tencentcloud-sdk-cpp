@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ip黑白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Res ip黑白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IpAccessControlItem> GetRes() const;
 
                     /**
                      * 设置ip黑白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _res ip黑白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRes(const std::vector<IpAccessControlItem>& _res);
@@ -97,7 +93,6 @@ namespace TencentCloud
 
                     /**
                      * ip黑白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IpAccessControlItem> m_res;
                     bool m_resHasBeenSet;

@@ -21,12 +21,12 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 BanAndAllowRule::BanAndAllowRule() :
-    m_iocHasBeenSet(false),
-    m_directionListHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_customRuleHasBeenSet(false),
-    m_fwTypeHasBeenSet(false)
+    m_directionListHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_fwTypeHasBeenSet(false),
+    m_iocHasBeenSet(false)
 {
 }
 
@@ -34,36 +34,6 @@ CoreInternalOutcome BanAndAllowRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Ioc") && !value["Ioc"].IsNull())
-    {
-        if (!value["Ioc"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `BanAndAllowRule.Ioc` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_ioc = string(value["Ioc"].GetString());
-        m_iocHasBeenSet = true;
-    }
-
-    if (value.HasMember("DirectionList") && !value["DirectionList"].IsNull())
-    {
-        if (!value["DirectionList"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `BanAndAllowRule.DirectionList` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_directionList = string(value["DirectionList"].GetString());
-        m_directionListHasBeenSet = true;
-    }
-
-    if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
-    {
-        if (!value["EndTime"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `BanAndAllowRule.EndTime` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_endTime = string(value["EndTime"].GetString());
-        m_endTimeHasBeenSet = true;
-    }
 
     if (value.HasMember("Comment") && !value["Comment"].IsNull())
     {
@@ -92,6 +62,26 @@ CoreInternalOutcome BanAndAllowRule::Deserialize(const rapidjson::Value &value)
         m_customRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("DirectionList") && !value["DirectionList"].IsNull())
+    {
+        if (!value["DirectionList"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BanAndAllowRule.DirectionList` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_directionList = string(value["DirectionList"].GetString());
+        m_directionListHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
+    {
+        if (!value["EndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BanAndAllowRule.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTime = string(value["EndTime"].GetString());
+        m_endTimeHasBeenSet = true;
+    }
+
     if (value.HasMember("FwType") && !value["FwType"].IsNull())
     {
         if (!value["FwType"].IsInt64())
@@ -102,36 +92,22 @@ CoreInternalOutcome BanAndAllowRule::Deserialize(const rapidjson::Value &value)
         m_fwTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Ioc") && !value["Ioc"].IsNull())
+    {
+        if (!value["Ioc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BanAndAllowRule.Ioc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ioc = string(value["Ioc"].GetString());
+        m_iocHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void BanAndAllowRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_iocHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Ioc";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_ioc.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_directionListHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DirectionList";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_directionList.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_endTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EndTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_commentHasBeenSet)
     {
@@ -150,6 +126,22 @@ void BanAndAllowRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         m_customRule.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_directionListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DirectionList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_directionList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_fwTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -158,23 +150,47 @@ void BanAndAllowRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, m_fwType, allocator);
     }
 
+    if (m_iocHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ioc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ioc.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
-string BanAndAllowRule::GetIoc() const
+string BanAndAllowRule::GetComment() const
 {
-    return m_ioc;
+    return m_comment;
 }
 
-void BanAndAllowRule::SetIoc(const string& _ioc)
+void BanAndAllowRule::SetComment(const string& _comment)
 {
-    m_ioc = _ioc;
-    m_iocHasBeenSet = true;
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
 }
 
-bool BanAndAllowRule::IocHasBeenSet() const
+bool BanAndAllowRule::CommentHasBeenSet() const
 {
-    return m_iocHasBeenSet;
+    return m_commentHasBeenSet;
+}
+
+CustomWhiteRule BanAndAllowRule::GetCustomRule() const
+{
+    return m_customRule;
+}
+
+void BanAndAllowRule::SetCustomRule(const CustomWhiteRule& _customRule)
+{
+    m_customRule = _customRule;
+    m_customRuleHasBeenSet = true;
+}
+
+bool BanAndAllowRule::CustomRuleHasBeenSet() const
+{
+    return m_customRuleHasBeenSet;
 }
 
 string BanAndAllowRule::GetDirectionList() const
@@ -209,38 +225,6 @@ bool BanAndAllowRule::EndTimeHasBeenSet() const
     return m_endTimeHasBeenSet;
 }
 
-string BanAndAllowRule::GetComment() const
-{
-    return m_comment;
-}
-
-void BanAndAllowRule::SetComment(const string& _comment)
-{
-    m_comment = _comment;
-    m_commentHasBeenSet = true;
-}
-
-bool BanAndAllowRule::CommentHasBeenSet() const
-{
-    return m_commentHasBeenSet;
-}
-
-CustomWhiteRule BanAndAllowRule::GetCustomRule() const
-{
-    return m_customRule;
-}
-
-void BanAndAllowRule::SetCustomRule(const CustomWhiteRule& _customRule)
-{
-    m_customRule = _customRule;
-    m_customRuleHasBeenSet = true;
-}
-
-bool BanAndAllowRule::CustomRuleHasBeenSet() const
-{
-    return m_customRuleHasBeenSet;
-}
-
 int64_t BanAndAllowRule::GetFwType() const
 {
     return m_fwType;
@@ -255,5 +239,21 @@ void BanAndAllowRule::SetFwType(const int64_t& _fwType)
 bool BanAndAllowRule::FwTypeHasBeenSet() const
 {
     return m_fwTypeHasBeenSet;
+}
+
+string BanAndAllowRule::GetIoc() const
+{
+    return m_ioc;
+}
+
+void BanAndAllowRule::SetIoc(const string& _ioc)
+{
+    m_ioc = _ioc;
+    m_iocHasBeenSet = true;
+}
+
+bool BanAndAllowRule::IocHasBeenSet() const
+{
+    return m_iocHasBeenSet;
 }
 

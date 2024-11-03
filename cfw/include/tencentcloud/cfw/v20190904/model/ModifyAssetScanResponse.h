@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取接口返回信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnMsg 接口返回信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReturnMsg() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取接口返回错误码，0请求成功  非0失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnCode 接口返回错误码，0请求成功  非0失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReturnCode() const;
@@ -93,14 +89,12 @@ namespace TencentCloud
 
                     /**
                      * 接口返回信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;
 
                     /**
                      * 接口返回错误码，0请求成功  非0失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_returnCode;
                     bool m_returnCodeHasBeenSet;

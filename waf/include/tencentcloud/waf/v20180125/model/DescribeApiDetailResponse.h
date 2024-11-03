@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取请求样例，json字符串格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Log 请求样例，json字符串格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLog() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取请求参数样例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParameterList 请求参数样例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApiParameterType> GetParameterList() const;
@@ -79,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前场景标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scene 当前场景标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScene() const;
@@ -95,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveFields 敏感字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSensitiveFields() const;
@@ -111,9 +103,7 @@ namespace TencentCloud
 
                     /**
                      * 获取7天内是否活跃
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsActive 7天内是否活跃
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsActive() const;
@@ -127,9 +117,7 @@ namespace TencentCloud
 
                     /**
                      * 获取访问ip数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpCount 访问ip数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIpCount() const;
@@ -143,9 +131,7 @@ namespace TencentCloud
 
                     /**
                      * 获取访问地域数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionCount 访问地域数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRegionCount() const;
@@ -159,9 +145,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventCount 关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEventCount() const;
@@ -175,9 +159,7 @@ namespace TencentCloud
 
                     /**
                      * 获取涉敏数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveCount 涉敏数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSensitiveCount() const;
@@ -191,9 +173,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLevel() const;
@@ -207,9 +187,7 @@ namespace TencentCloud
 
                     /**
                      * 获取响应体
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RspLog 响应体
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRspLog() const;
@@ -223,9 +201,7 @@ namespace TencentCloud
 
                     /**
                      * 获取昨日访问峰值QPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxQPS 昨日访问峰值QPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxQPS() const;
@@ -255,84 +231,72 @@ namespace TencentCloud
 
                     /**
                      * 请求样例，json字符串格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_log;
                     bool m_logHasBeenSet;
 
                     /**
                      * 请求参数样例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApiParameterType> m_parameterList;
                     bool m_parameterListHasBeenSet;
 
                     /**
                      * 当前场景标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scene;
                     bool m_sceneHasBeenSet;
 
                     /**
                      * 敏感字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_sensitiveFields;
                     bool m_sensitiveFieldsHasBeenSet;
 
                     /**
                      * 7天内是否活跃
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isActive;
                     bool m_isActiveHasBeenSet;
 
                     /**
                      * 访问ip数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ipCount;
                     bool m_ipCountHasBeenSet;
 
                     /**
                      * 访问地域数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_regionCount;
                     bool m_regionCountHasBeenSet;
 
                     /**
                      * 关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_eventCount;
                     bool m_eventCountHasBeenSet;
 
                     /**
                      * 涉敏数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_sensitiveCount;
                     bool m_sensitiveCountHasBeenSet;
 
                     /**
                      * 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 响应体
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rspLog;
                     bool m_rspLogHasBeenSet;
 
                     /**
                      * 昨日访问峰值QPS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxQPS;
                     bool m_maxQPSHasBeenSet;
