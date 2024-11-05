@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取节点的资源类型。<li>CVM：CVM实例类型资源</li><li>WORKSPACE：工作空间类型实例资源</li>默认值：CVM。
-                     * @return ResourceSet 节点的资源类型。<li>CVM：CVM实例类型资源</li><li>WORKSPACE：工作空间类型实例资源</li>默认值：CVM。
+                     * 获取节点的实例id列表
+                     * @return ResourceSet 节点的实例id列表
                      * 
                      */
                     std::vector<std::string> GetResourceSet() const;
 
                     /**
-                     * 设置节点的资源类型。<li>CVM：CVM实例类型资源</li><li>WORKSPACE：工作空间类型实例资源</li>默认值：CVM。
-                     * @param _resourceSet 节点的资源类型。<li>CVM：CVM实例类型资源</li><li>WORKSPACE：工作空间类型实例资源</li>默认值：CVM。
+                     * 设置节点的实例id列表
+                     * @param _resourceSet 节点的实例id列表
                      * 
                      */
                     void SetResourceSet(const std::vector<std::string>& _resourceSet);
@@ -164,7 +164,7 @@ SGE默认队列为：all.q。
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 节点的资源类型。<li>CVM：CVM实例类型资源</li><li>WORKSPACE：工作空间类型实例资源</li>默认值：CVM。
+                     * 节点的实例id列表
                      */
                     std::vector<std::string> m_resourceSet;
                     bool m_resourceSetHasBeenSet;

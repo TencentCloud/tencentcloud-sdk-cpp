@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通知内容模版列表。
+                     * 获取通知内容模板列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NoticeContents 通知内容模版列表。
+                     * @return NoticeContents 通知内容模板列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool NoticeContentsHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的通知内容模版总数。
-                     * @return TotalCount 符合条件的通知内容模版总数。
+                     * 获取符合条件的通知内容模板总数。
+                     * @return TotalCount 符合条件的通知内容模板总数。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -77,14 +77,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通知内容模版列表。
+                     * 通知内容模板列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NoticeContentTemplate> m_noticeContents;
                     bool m_noticeContentsHasBeenSet;
 
                     /**
-                     * 符合条件的通知内容模版总数。
+                     * 符合条件的通知内容模板总数。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

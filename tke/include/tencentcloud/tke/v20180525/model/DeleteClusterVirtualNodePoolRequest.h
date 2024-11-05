@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取虚拟节点池ID列表
-                     * @return NodePoolIds 虚拟节点池ID列表
+                     * 获取超级节点池ID列表
+                     * @return NodePoolIds 超级节点池ID列表
                      * 
                      */
                     std::vector<std::string> GetNodePoolIds() const;
 
                     /**
-                     * 设置虚拟节点池ID列表
-                     * @param _nodePoolIds 虚拟节点池ID列表
+                     * 设置超级节点池ID列表
+                     * @param _nodePoolIds 超级节点池ID列表
                      * 
                      */
                     void SetNodePoolIds(const std::vector<std::string>& _nodePoolIds);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NodePoolIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否强制删除，在虚拟节点上有pod的情况下，如果选择非强制删除，则删除会失败
-                     * @return Force 是否强制删除，在虚拟节点上有pod的情况下，如果选择非强制删除，则删除会失败
+                     * 获取是否强制删除，在超级节点上有pod的情况下，如果选择非强制删除，则删除会失败
+                     * @return Force 是否强制删除，在超级节点上有pod的情况下，如果选择非强制删除，则删除会失败
                      * 
                      */
                     bool GetForce() const;
 
                     /**
-                     * 设置是否强制删除，在虚拟节点上有pod的情况下，如果选择非强制删除，则删除会失败
-                     * @param _force 是否强制删除，在虚拟节点上有pod的情况下，如果选择非强制删除，则删除会失败
+                     * 设置是否强制删除，在超级节点上有pod的情况下，如果选择非强制删除，则删除会失败
+                     * @param _force 是否强制删除，在超级节点上有pod的情况下，如果选择非强制删除，则删除会失败
                      * 
                      */
                     void SetForce(const bool& _force);
@@ -114,13 +114,13 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 虚拟节点池ID列表
+                     * 超级节点池ID列表
                      */
                     std::vector<std::string> m_nodePoolIds;
                     bool m_nodePoolIdsHasBeenSet;
 
                     /**
-                     * 是否强制删除，在虚拟节点上有pod的情况下，如果选择非强制删除，则删除会失败
+                     * 是否强制删除，在超级节点上有pod的情况下，如果选择非强制删除，则删除会失败
                      */
                     bool m_force;
                     bool m_forceHasBeenSet;

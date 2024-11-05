@@ -24,7 +24,9 @@ using namespace TencentCloud::Cdwdoris::V20211228::Model;
 using namespace std;
 
 DescribeBackUpJobResponse::DescribeBackUpJobResponse() :
-    m_backUpJobsHasBeenSet(false)
+    m_backUpJobsHasBeenSet(false),
+    m_errorMsgHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,26 @@ CoreInternalOutcome DescribeBackUpJobResponse::Deserialize(const string &payload
         m_backUpJobsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    {
+        if (!rsp["ErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMsg = string(rsp["ErrorMsg"].GetString());
+        m_errorMsgHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,22 @@ string DescribeBackUpJobResponse::ToJsonString() const
         }
     }
 
+    if (m_errorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +165,26 @@ vector<BackUpJobDisplay> DescribeBackUpJobResponse::GetBackUpJobs() const
 bool DescribeBackUpJobResponse::BackUpJobsHasBeenSet() const
 {
     return m_backUpJobsHasBeenSet;
+}
+
+string DescribeBackUpJobResponse::GetErrorMsg() const
+{
+    return m_errorMsg;
+}
+
+bool DescribeBackUpJobResponse::ErrorMsgHasBeenSet() const
+{
+    return m_errorMsgHasBeenSet;
+}
+
+int64_t DescribeBackUpJobResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeBackUpJobResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

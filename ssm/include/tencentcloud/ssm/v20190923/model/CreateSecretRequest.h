@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool KmsKeyIdHasBeenSet() const;
 
                     /**
-                     * 获取凭据类型，默认为自定义凭据。
-                     * @return SecretType 凭据类型，默认为自定义凭据。
+                     * 获取凭据类型，默认为0自定义凭据。
+                     * @return SecretType 凭据类型，默认为0自定义凭据。
                      * 
                      */
                     uint64_t GetSecretType() const;
 
                     /**
-                     * 设置凭据类型，默认为自定义凭据。
-                     * @param _secretType 凭据类型，默认为自定义凭据。
+                     * 设置凭据类型，默认为0自定义凭据。
+                     * @param _secretType 凭据类型，默认为0自定义凭据。
                      * 
                      */
                     void SetSecretType(const uint64_t& _secretType);
@@ -259,7 +259,7 @@ namespace TencentCloud
                     bool m_kmsKeyIdHasBeenSet;
 
                     /**
-                     * 凭据类型，默认为自定义凭据。
+                     * 凭据类型，默认为0自定义凭据。
                      */
                     uint64_t m_secretType;
                     bool m_secretTypeHasBeenSet;

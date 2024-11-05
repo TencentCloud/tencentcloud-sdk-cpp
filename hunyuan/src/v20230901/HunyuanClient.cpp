@@ -126,6 +126,178 @@ HunyuanClient::ChatCompletionsOutcomeCallable HunyuanClient::ChatCompletionsCall
     return task->get_future();
 }
 
+HunyuanClient::CreateThreadOutcome HunyuanClient::CreateThread(const CreateThreadRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateThread");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateThreadResponse rsp = CreateThreadResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateThreadOutcome(rsp);
+        else
+            return CreateThreadOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateThreadOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::CreateThreadAsync(const CreateThreadRequest& request, const CreateThreadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateThread(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::CreateThreadOutcomeCallable HunyuanClient::CreateThreadCallable(const CreateThreadRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateThreadOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateThread(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HunyuanClient::FilesDeletionsOutcome HunyuanClient::FilesDeletions(const FilesDeletionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "FilesDeletions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FilesDeletionsResponse rsp = FilesDeletionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FilesDeletionsOutcome(rsp);
+        else
+            return FilesDeletionsOutcome(o.GetError());
+    }
+    else
+    {
+        return FilesDeletionsOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::FilesDeletionsAsync(const FilesDeletionsRequest& request, const FilesDeletionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FilesDeletions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::FilesDeletionsOutcomeCallable HunyuanClient::FilesDeletionsCallable(const FilesDeletionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FilesDeletionsOutcome()>>(
+        [this, request]()
+        {
+            return this->FilesDeletions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HunyuanClient::FilesListOutcome HunyuanClient::FilesList(const FilesListRequest &request)
+{
+    auto outcome = MakeRequest(request, "FilesList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FilesListResponse rsp = FilesListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FilesListOutcome(rsp);
+        else
+            return FilesListOutcome(o.GetError());
+    }
+    else
+    {
+        return FilesListOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::FilesListAsync(const FilesListRequest& request, const FilesListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FilesList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::FilesListOutcomeCallable HunyuanClient::FilesListCallable(const FilesListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FilesListOutcome()>>(
+        [this, request]()
+        {
+            return this->FilesList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HunyuanClient::FilesUploadsOutcome HunyuanClient::FilesUploads(const FilesUploadsRequest &request)
+{
+    auto outcome = MakeRequest(request, "FilesUploads");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FilesUploadsResponse rsp = FilesUploadsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FilesUploadsOutcome(rsp);
+        else
+            return FilesUploadsOutcome(o.GetError());
+    }
+    else
+    {
+        return FilesUploadsOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::FilesUploadsAsync(const FilesUploadsRequest& request, const FilesUploadsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FilesUploads(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::FilesUploadsOutcomeCallable HunyuanClient::FilesUploadsCallable(const FilesUploadsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FilesUploadsOutcome()>>(
+        [this, request]()
+        {
+            return this->FilesUploads(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 HunyuanClient::GetEmbeddingOutcome HunyuanClient::GetEmbedding(const GetEmbeddingRequest &request)
 {
     auto outcome = MakeRequest(request, "GetEmbedding");
@@ -162,6 +334,135 @@ HunyuanClient::GetEmbeddingOutcomeCallable HunyuanClient::GetEmbeddingCallable(c
         [this, request]()
         {
             return this->GetEmbedding(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HunyuanClient::GetThreadOutcome HunyuanClient::GetThread(const GetThreadRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetThread");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetThreadResponse rsp = GetThreadResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetThreadOutcome(rsp);
+        else
+            return GetThreadOutcome(o.GetError());
+    }
+    else
+    {
+        return GetThreadOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::GetThreadAsync(const GetThreadRequest& request, const GetThreadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetThread(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::GetThreadOutcomeCallable HunyuanClient::GetThreadCallable(const GetThreadRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetThreadOutcome()>>(
+        [this, request]()
+        {
+            return this->GetThread(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HunyuanClient::GetThreadMessageOutcome HunyuanClient::GetThreadMessage(const GetThreadMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetThreadMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetThreadMessageResponse rsp = GetThreadMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetThreadMessageOutcome(rsp);
+        else
+            return GetThreadMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return GetThreadMessageOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::GetThreadMessageAsync(const GetThreadMessageRequest& request, const GetThreadMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetThreadMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::GetThreadMessageOutcomeCallable HunyuanClient::GetThreadMessageCallable(const GetThreadMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetThreadMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->GetThreadMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HunyuanClient::GetThreadMessageListOutcome HunyuanClient::GetThreadMessageList(const GetThreadMessageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetThreadMessageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetThreadMessageListResponse rsp = GetThreadMessageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetThreadMessageListOutcome(rsp);
+        else
+            return GetThreadMessageListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetThreadMessageListOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::GetThreadMessageListAsync(const GetThreadMessageListRequest& request, const GetThreadMessageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetThreadMessageList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::GetThreadMessageListOutcomeCallable HunyuanClient::GetThreadMessageListCallable(const GetThreadMessageListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetThreadMessageListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetThreadMessageList(request);
         }
     );
 
@@ -291,6 +592,49 @@ HunyuanClient::QueryHunyuanImageJobOutcomeCallable HunyuanClient::QueryHunyuanIm
         [this, request]()
         {
             return this->QueryHunyuanImageJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HunyuanClient::RunThreadOutcome HunyuanClient::RunThread(const RunThreadRequest &request)
+{
+    auto outcome = MakeRequest(request, "RunThread");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RunThreadResponse rsp = RunThreadResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RunThreadOutcome(rsp);
+        else
+            return RunThreadOutcome(o.GetError());
+    }
+    else
+    {
+        return RunThreadOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::RunThreadAsync(const RunThreadRequest& request, const RunThreadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RunThread(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::RunThreadOutcomeCallable HunyuanClient::RunThreadCallable(const RunThreadRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RunThreadOutcome()>>(
+        [this, request]()
+        {
+            return this->RunThread(request);
         }
     );
 

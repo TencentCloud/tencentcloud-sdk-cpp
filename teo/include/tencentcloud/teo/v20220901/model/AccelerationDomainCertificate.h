@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/CertificateInfo.h>
 #include <tencentcloud/teo/v20220901/model/MutualTLS.h>
+#include <tencentcloud/teo/v20220901/model/UpstreamCertInfo.h>
 
 
 namespace TencentCloud
@@ -70,18 +71,18 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取服务端证书列表。
+                     * 获取服务端证书列表，相关证书部署在 EO 的入口侧。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return List 服务端证书列表。
+                     * @return List 服务端证书列表，相关证书部署在 EO 的入口侧。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CertificateInfo> GetList() const;
 
                     /**
-                     * 设置服务端证书列表。
+                     * 设置服务端证书列表，相关证书部署在 EO 的入口侧。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _list 服务端证书列表。
+                     * @param _list 服务端证书列表，相关证书部署在 EO 的入口侧。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,15 +96,15 @@ namespace TencentCloud
                     bool ListHasBeenSet() const;
 
                     /**
-                     * 获取边缘双向认证配置。
-                     * @return ClientCertInfo 边缘双向认证配置。
+                     * 获取在边缘双向认证场景下，该字段为客户端的 CA 证书，部署在 EO 节点内，用于 EO 节点认证客户端证书。
+                     * @return ClientCertInfo 在边缘双向认证场景下，该字段为客户端的 CA 证书，部署在 EO 节点内，用于 EO 节点认证客户端证书。
                      * 
                      */
                     MutualTLS GetClientCertInfo() const;
 
                     /**
-                     * 设置边缘双向认证配置。
-                     * @param _clientCertInfo 边缘双向认证配置。
+                     * 设置在边缘双向认证场景下，该字段为客户端的 CA 证书，部署在 EO 节点内，用于 EO 节点认证客户端证书。
+                     * @param _clientCertInfo 在边缘双向认证场景下，该字段为客户端的 CA 证书，部署在 EO 节点内，用于 EO 节点认证客户端证书。
                      * 
                      */
                     void SetClientCertInfo(const MutualTLS& _clientCertInfo);
@@ -115,6 +116,27 @@ namespace TencentCloud
                      */
                     bool ClientCertInfoHasBeenSet() const;
 
+                    /**
+                     * 获取用于 EO 节点回源时携带的证书，源站启用双向认证握手时使用，用于源站认证客户端证书是否有效，确保请求来源于受信任的 EO 节点。
+                     * @return UpstreamCertInfo 用于 EO 节点回源时携带的证书，源站启用双向认证握手时使用，用于源站认证客户端证书是否有效，确保请求来源于受信任的 EO 节点。
+                     * 
+                     */
+                    UpstreamCertInfo GetUpstreamCertInfo() const;
+
+                    /**
+                     * 设置用于 EO 节点回源时携带的证书，源站启用双向认证握手时使用，用于源站认证客户端证书是否有效，确保请求来源于受信任的 EO 节点。
+                     * @param _upstreamCertInfo 用于 EO 节点回源时携带的证书，源站启用双向认证握手时使用，用于源站认证客户端证书是否有效，确保请求来源于受信任的 EO 节点。
+                     * 
+                     */
+                    void SetUpstreamCertInfo(const UpstreamCertInfo& _upstreamCertInfo);
+
+                    /**
+                     * 判断参数 UpstreamCertInfo 是否已赋值
+                     * @return UpstreamCertInfo 是否已赋值
+                     * 
+                     */
+                    bool UpstreamCertInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,17 +146,23 @@ namespace TencentCloud
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 服务端证书列表。
+                     * 服务端证书列表，相关证书部署在 EO 的入口侧。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CertificateInfo> m_list;
                     bool m_listHasBeenSet;
 
                     /**
-                     * 边缘双向认证配置。
+                     * 在边缘双向认证场景下，该字段为客户端的 CA 证书，部署在 EO 节点内，用于 EO 节点认证客户端证书。
                      */
                     MutualTLS m_clientCertInfo;
                     bool m_clientCertInfoHasBeenSet;
+
+                    /**
+                     * 用于 EO 节点回源时携带的证书，源站启用双向认证握手时使用，用于源站认证客户端证书是否有效，确保请求来源于受信任的 EO 节点。
+                     */
+                    UpstreamCertInfo m_upstreamCertInfo;
+                    bool m_upstreamCertInfoHasBeenSet;
 
                 };
             }

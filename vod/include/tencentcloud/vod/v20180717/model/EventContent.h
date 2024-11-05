@@ -50,6 +50,7 @@
 #include <tencentcloud/vod/v20180717/model/QualityEnhanceTask.h>
 #include <tencentcloud/vod/v20180717/model/MediaCastEvent.h>
 #include <tencentcloud/vod/v20180717/model/PersistenceCompleteTask.h>
+#include <tencentcloud/vod/v20180717/model/ComplexAdaptiveDynamicStreamingTask.h>
 
 
 namespace TencentCloud
@@ -112,7 +113,8 @@ namespace TencentCloud
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
 <li>QualityInspectComplete：音画质检测完成；</li>
 <li>QualityEnhanceComplete：音画质重生任务完成；</li>
-<li>PersistenceComplete：剪辑固化完成。</li>
+<li>PersistenceComplete：剪辑固化完成；</li>
+<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -137,7 +139,8 @@ namespace TencentCloud
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
 <li>QualityInspectComplete：音画质检测完成；</li>
 <li>QualityEnhanceComplete：音画质重生任务完成；</li>
-<li>PersistenceComplete：剪辑固化完成。</li>
+<li>PersistenceComplete：剪辑固化完成；</li>
+<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -167,7 +170,8 @@ namespace TencentCloud
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
 <li>QualityInspectComplete：音画质检测完成；</li>
 <li>QualityEnhanceComplete：音画质重生任务完成；</li>
-<li>PersistenceComplete：剪辑固化完成。</li>
+<li>PersistenceComplete：剪辑固化完成；</li>
+<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -192,7 +196,8 @@ namespace TencentCloud
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
 <li>QualityInspectComplete：音画质检测完成；</li>
 <li>QualityEnhanceComplete：音画质重生任务完成；</li>
-<li>PersistenceComplete：剪辑固化完成。</li>
+<li>PersistenceComplete：剪辑固化完成；</li>
+<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -860,6 +865,31 @@ namespace TencentCloud
                      */
                     bool PersistenceCompleteEventHasBeenSet() const;
 
+                    /**
+                     * 获取自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComplexAdaptiveDynamicStreamingCompleteEvent 自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ComplexAdaptiveDynamicStreamingTask GetComplexAdaptiveDynamicStreamingCompleteEvent() const;
+
+                    /**
+                     * 设置自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _complexAdaptiveDynamicStreamingCompleteEvent 自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetComplexAdaptiveDynamicStreamingCompleteEvent(const ComplexAdaptiveDynamicStreamingTask& _complexAdaptiveDynamicStreamingCompleteEvent);
+
+                    /**
+                     * 判断参数 ComplexAdaptiveDynamicStreamingCompleteEvent 是否已赋值
+                     * @return ComplexAdaptiveDynamicStreamingCompleteEvent 是否已赋值
+                     * 
+                     */
+                    bool ComplexAdaptiveDynamicStreamingCompleteEventHasBeenSet() const;
+
                 private:
 
                     /**
@@ -887,7 +917,8 @@ namespace TencentCloud
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
 <li>QualityInspectComplete：音画质检测完成；</li>
 <li>QualityEnhanceComplete：音画质重生任务完成；</li>
-<li>PersistenceComplete：剪辑固化完成。</li>
+<li>PersistenceComplete：剪辑固化完成；</li>
+<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -1079,6 +1110,13 @@ namespace TencentCloud
                      */
                     PersistenceCompleteTask m_persistenceCompleteEvent;
                     bool m_persistenceCompleteEventHasBeenSet;
+
+                    /**
+                     * 自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ComplexAdaptiveDynamicStreamingTask m_complexAdaptiveDynamicStreamingCompleteEvent;
+                    bool m_complexAdaptiveDynamicStreamingCompleteEventHasBeenSet;
 
                 };
             }

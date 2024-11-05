@@ -27,6 +27,7 @@
 #include <tencentcloud/cfs/v20190719/model/PGroup.h>
 #include <tencentcloud/cfs/v20190719/model/TagInfo.h>
 #include <tencentcloud/cfs/v20190719/model/TieringDetailInfo.h>
+#include <tencentcloud/cfs/v20190719/model/AutoScaleUpRule.h>
 
 
 namespace TencentCloud
@@ -452,6 +453,48 @@ namespace TencentCloud
                     bool BandwidthLimitHasBeenSet() const;
 
                     /**
+                     * 获取文件系统关联的快照策略
+                     * @return AutoSnapshotPolicyId 文件系统关联的快照策略
+                     * 
+                     */
+                    std::string GetAutoSnapshotPolicyId() const;
+
+                    /**
+                     * 设置文件系统关联的快照策略
+                     * @param _autoSnapshotPolicyId 文件系统关联的快照策略
+                     * 
+                     */
+                    void SetAutoSnapshotPolicyId(const std::string& _autoSnapshotPolicyId);
+
+                    /**
+                     * 判断参数 AutoSnapshotPolicyId 是否已赋值
+                     * @return AutoSnapshotPolicyId 是否已赋值
+                     * 
+                     */
+                    bool AutoSnapshotPolicyIdHasBeenSet() const;
+
+                    /**
+                     * 获取文件系统处理快照状态
+                     * @return SnapStatus 文件系统处理快照状态
+                     * 
+                     */
+                    std::string GetSnapStatus() const;
+
+                    /**
+                     * 设置文件系统处理快照状态
+                     * @param _snapStatus 文件系统处理快照状态
+                     * 
+                     */
+                    void SetSnapStatus(const std::string& _snapStatus);
+
+                    /**
+                     * 判断参数 SnapStatus 是否已赋值
+                     * @return SnapStatus 是否已赋值
+                     * 
+                     */
+                    bool SnapStatusHasBeenSet() const;
+
+                    /**
                      * 获取文件系统容量规格上限
 单位:GiB
                      * @return Capacity 文件系统容量规格上限
@@ -550,6 +593,56 @@ Available:可用
                      * 
                      */
                     bool TieringDetailHasBeenSet() const;
+
+                    /**
+                     * 获取文件系统自动扩容策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoScaleUpRule 文件系统自动扩容策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AutoScaleUpRule GetAutoScaleUpRule() const;
+
+                    /**
+                     * 设置文件系统自动扩容策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _autoScaleUpRule 文件系统自动扩容策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAutoScaleUpRule(const AutoScaleUpRule& _autoScaleUpRule);
+
+                    /**
+                     * 判断参数 AutoScaleUpRule 是否已赋值
+                     * @return AutoScaleUpRule 是否已赋值
+                     * 
+                     */
+                    bool AutoScaleUpRuleHasBeenSet() const;
+
+                    /**
+                     * 获取文件系统版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Version 文件系统版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 设置文件系统版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _version 文件系统版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVersion(const std::string& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     * 
+                     */
+                    bool VersionHasBeenSet() const;
 
                 private:
 
@@ -668,6 +761,18 @@ Available:可用
                     bool m_bandwidthLimitHasBeenSet;
 
                     /**
+                     * 文件系统关联的快照策略
+                     */
+                    std::string m_autoSnapshotPolicyId;
+                    bool m_autoSnapshotPolicyIdHasBeenSet;
+
+                    /**
+                     * 文件系统处理快照状态
+                     */
+                    std::string m_snapStatus;
+                    bool m_snapStatusHasBeenSet;
+
+                    /**
                      * 文件系统容量规格上限
 单位:GiB
                      */
@@ -694,6 +799,20 @@ Available:可用
                      */
                     TieringDetailInfo m_tieringDetail;
                     bool m_tieringDetailHasBeenSet;
+
+                    /**
+                     * 文件系统自动扩容策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AutoScaleUpRule m_autoScaleUpRule;
+                    bool m_autoScaleUpRuleHasBeenSet;
+
+                    /**
+                     * 文件系统版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
 
                 };
             }

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/Users.h>
 #include <tencentcloud/dlc/v20210125/model/Policys.h>
+#include <tencentcloud/dlc/v20210125/model/Policy.h>
 
 
 namespace TencentCloud
@@ -248,6 +249,31 @@ namespace TencentCloud
                      */
                     bool RowFilterInfoHasBeenSet() const;
 
+                    /**
+                     * 获取数据目录权限集
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CatalogPolicyInfo 数据目录权限集
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    Policy GetCatalogPolicyInfo() const;
+
+                    /**
+                     * 设置数据目录权限集
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _catalogPolicyInfo 数据目录权限集
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCatalogPolicyInfo(const Policy& _catalogPolicyInfo);
+
+                    /**
+                     * 判断参数 CatalogPolicyInfo 是否已赋值
+                     * @return CatalogPolicyInfo 是否已赋值
+                     * 
+                     */
+                    bool CatalogPolicyInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -305,6 +331,13 @@ namespace TencentCloud
                      */
                     Policys m_rowFilterInfo;
                     bool m_rowFilterInfoHasBeenSet;
+
+                    /**
+                     * 数据目录权限集
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Policy m_catalogPolicyInfo;
+                    bool m_catalogPolicyInfoHasBeenSet;
 
                 };
             }

@@ -324,22 +324,18 @@ OFF/ON/CREATING/DELETING
                     bool PrometheusEndpointInfoHasBeenSet() const;
 
                     /**
-                     * 获取http://amqp-k3eb47gm.dashboard.rabbitmq.cq.public.tencenttdmq.com:15672/
-公网域名接入点
+                     * 获取公网域名接入点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WebConsoleDomainEndpoint http://amqp-k3eb47gm.dashboard.rabbitmq.cq.public.tencenttdmq.com:15672/
-公网域名接入点
+                     * @return WebConsoleDomainEndpoint 公网域名接入点
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWebConsoleDomainEndpoint() const;
 
                     /**
-                     * 设置http://amqp-k3eb47gm.dashboard.rabbitmq.cq.public.tencenttdmq.com:15672/
-公网域名接入点
+                     * 设置公网域名接入点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _webConsoleDomainEndpoint http://amqp-k3eb47gm.dashboard.rabbitmq.cq.public.tencenttdmq.com:15672/
-公网域名接入点
+                     * @param _webConsoleDomainEndpoint 公网域名接入点
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -433,8 +429,7 @@ OFF/ON/CREATING/DELETING
                     bool m_prometheusEndpointInfoHasBeenSet;
 
                     /**
-                     * http://amqp-k3eb47gm.dashboard.rabbitmq.cq.public.tencenttdmq.com:15672/
-公网域名接入点
+                     * 公网域名接入点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_webConsoleDomainEndpoint;

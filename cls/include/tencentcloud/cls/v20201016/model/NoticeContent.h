@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 通知内容模版详细配置
+                * 通知内容模板详细配置
                 */
                 class NoticeContent : public AbstractModel
                 {
@@ -77,18 +77,18 @@ Email:邮件;Sms:短信;WeChat:微信;Phone:电话;WeCom:企业微信;DingTalk:�
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取告警触发通知内容模版。
+                     * 获取告警触发通知内容模板。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerContent 告警触发通知内容模版。
+                     * @return TriggerContent 告警触发通知内容模板。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     NoticeContentInfo GetTriggerContent() const;
 
                     /**
-                     * 设置告警触发通知内容模版。
+                     * 设置告警触发通知内容模板。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerContent 告警触发通知内容模版。
+                     * @param _triggerContent 告警触发通知内容模板。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -102,18 +102,18 @@ Email:邮件;Sms:短信;WeChat:微信;Phone:电话;WeCom:企业微信;DingTalk:�
                     bool TriggerContentHasBeenSet() const;
 
                     /**
-                     * 获取告警恢复通知内容模版。
+                     * 获取告警恢复通知内容模板。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecoveryContent 告警恢复通知内容模版。
+                     * @return RecoveryContent 告警恢复通知内容模板。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     NoticeContentInfo GetRecoveryContent() const;
 
                     /**
-                     * 设置告警恢复通知内容模版。
+                     * 设置告警恢复通知内容模板。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _recoveryContent 告警恢复通知内容模版。
+                     * @param _recoveryContent 告警恢复通知内容模板。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -137,14 +137,14 @@ Email:邮件;Sms:短信;WeChat:微信;Phone:电话;WeCom:企业微信;DingTalk:�
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 告警触发通知内容模版。
+                     * 告警触发通知内容模板。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     NoticeContentInfo m_triggerContent;
                     bool m_triggerContentHasBeenSet;
 
                     /**
-                     * 告警恢复通知内容模版。
+                     * 告警恢复通知内容模板。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     NoticeContentInfo m_recoveryContent;

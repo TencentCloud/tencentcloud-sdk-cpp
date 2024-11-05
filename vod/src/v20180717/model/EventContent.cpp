@@ -48,7 +48,8 @@ EventContent::EventContent() :
     m_qualityInspectCompleteEventHasBeenSet(false),
     m_qualityEnhanceCompleteEventHasBeenSet(false),
     m_mediaCastStatusChangedEventHasBeenSet(false),
-    m_persistenceCompleteEventHasBeenSet(false)
+    m_persistenceCompleteEventHasBeenSet(false),
+    m_complexAdaptiveDynamicStreamingCompleteEventHasBeenSet(false)
 {
 }
 
@@ -519,6 +520,23 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_persistenceCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("ComplexAdaptiveDynamicStreamingCompleteEvent") && !value["ComplexAdaptiveDynamicStreamingCompleteEvent"].IsNull())
+    {
+        if (!value["ComplexAdaptiveDynamicStreamingCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.ComplexAdaptiveDynamicStreamingCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_complexAdaptiveDynamicStreamingCompleteEvent.Deserialize(value["ComplexAdaptiveDynamicStreamingCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_complexAdaptiveDynamicStreamingCompleteEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -774,6 +792,15 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_persistenceCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_complexAdaptiveDynamicStreamingCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComplexAdaptiveDynamicStreamingCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_complexAdaptiveDynamicStreamingCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1225,5 +1252,21 @@ void EventContent::SetPersistenceCompleteEvent(const PersistenceCompleteTask& _p
 bool EventContent::PersistenceCompleteEventHasBeenSet() const
 {
     return m_persistenceCompleteEventHasBeenSet;
+}
+
+ComplexAdaptiveDynamicStreamingTask EventContent::GetComplexAdaptiveDynamicStreamingCompleteEvent() const
+{
+    return m_complexAdaptiveDynamicStreamingCompleteEvent;
+}
+
+void EventContent::SetComplexAdaptiveDynamicStreamingCompleteEvent(const ComplexAdaptiveDynamicStreamingTask& _complexAdaptiveDynamicStreamingCompleteEvent)
+{
+    m_complexAdaptiveDynamicStreamingCompleteEvent = _complexAdaptiveDynamicStreamingCompleteEvent;
+    m_complexAdaptiveDynamicStreamingCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::ComplexAdaptiveDynamicStreamingCompleteEventHasBeenSet() const
+{
+    return m_complexAdaptiveDynamicStreamingCompleteEventHasBeenSet;
 }
 

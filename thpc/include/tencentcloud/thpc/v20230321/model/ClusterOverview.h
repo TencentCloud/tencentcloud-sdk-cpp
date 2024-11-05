@@ -328,15 +328,15 @@ namespace TencentCloud
                     bool LoginNodeCountHasBeenSet() const;
 
                     /**
-                     * 获取弹性伸缩类型。取值范围：<li>THPC_AS：集群自动扩缩容由THPC产品内部实现。</li><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。</li>
-                     * @return AutoScalingType 弹性伸缩类型。取值范围：<li>THPC_AS：集群自动扩缩容由THPC产品内部实现。</li><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。</li>
+                     * 获取弹性伸缩类型。
+                     * @return AutoScalingType 弹性伸缩类型。
                      * 
                      */
                     std::string GetAutoScalingType() const;
 
                     /**
-                     * 设置弹性伸缩类型。取值范围：<li>THPC_AS：集群自动扩缩容由THPC产品内部实现。</li><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。</li>
-                     * @param _autoScalingType 弹性伸缩类型。取值范围：<li>THPC_AS：集群自动扩缩容由THPC产品内部实现。</li><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。</li>
+                     * 设置弹性伸缩类型。
+                     * @param _autoScalingType 弹性伸缩类型。
                      * 
                      */
                     void SetAutoScalingType(const std::string& _autoScalingType);
@@ -451,7 +451,7 @@ namespace TencentCloud
                     bool m_loginNodeCountHasBeenSet;
 
                     /**
-                     * 弹性伸缩类型。取值范围：<li>THPC_AS：集群自动扩缩容由THPC产品内部实现。</li><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。</li>
+                     * 弹性伸缩类型。
                      */
                     std::string m_autoScalingType;
                     bool m_autoScalingTypeHasBeenSet;

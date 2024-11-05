@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取版本号。
-                     * @return VersionId 版本号。
+                     * 获取版本号
+                     * @return VersionId 版本号
                      * 
                      */
                     std::string GetVersionId() const;
 
                     /**
-                     * 设置版本号。
-                     * @param _versionId 版本号。
+                     * 设置版本号
+                     * @param _versionId 版本号
                      * 
                      */
                     void SetVersionId(const std::string& _versionId);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 版本号。
+                     * 版本号
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;

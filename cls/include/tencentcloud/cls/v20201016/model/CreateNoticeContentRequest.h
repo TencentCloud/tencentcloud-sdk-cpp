@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模版名称。
-                     * @return Name 模版名称。
+                     * 获取模板名称。
+                     * @return Name 模板名称。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置模版名称。
-                     * @param _name 模版名称。
+                     * 设置模板名称。
+                     * @param _name 模板名称。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取模版内容语言。0：中文1：英文
-                     * @return Type 模版内容语言。0：中文1：英文
+                     * 获取模板内容语言。0：中文1：英文
+                     * @return Type 模板内容语言。0：中文1：英文
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置模版内容语言。0：中文1：英文
-                     * @param _type 模版内容语言。0：中文1：英文
+                     * 设置模板内容语言。0：中文1：英文
+                     * @param _type 模板内容语言。0：中文1：英文
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取模版详细配置。
-                     * @return NoticeContents 模版详细配置。
+                     * 获取模板详细配置。
+                     * @return NoticeContents 模板详细配置。
                      * 
                      */
                     std::vector<NoticeContent> GetNoticeContents() const;
 
                     /**
-                     * 设置模版详细配置。
-                     * @param _noticeContents 模版详细配置。
+                     * 设置模板详细配置。
+                     * @param _noticeContents 模板详细配置。
                      * 
                      */
                     void SetNoticeContents(const std::vector<NoticeContent>& _noticeContents);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模版名称。
+                     * 模板名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 模版内容语言。0：中文1：英文
+                     * 模板内容语言。0：中文1：英文
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 模版详细配置。
+                     * 模板详细配置。
                      */
                     std::vector<NoticeContent> m_noticeContents;
                     bool m_noticeContentsHasBeenSet;

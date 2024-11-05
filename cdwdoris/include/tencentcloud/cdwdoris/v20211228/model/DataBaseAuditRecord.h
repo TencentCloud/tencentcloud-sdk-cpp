@@ -371,6 +371,31 @@ namespace TencentCloud
                      */
                     bool CatalogHasBeenSet() const;
 
+                    /**
+                     * 获取状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return State 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetState() const;
+
+                    /**
+                     * 设置状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _state 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetState(const std::string& _state);
+
+                    /**
+                     * 判断参数 State 是否已赋值
+                     * @return State 是否已赋值
+                     * 
+                     */
+                    bool StateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -463,6 +488,13 @@ namespace TencentCloud
                      */
                     std::string m_catalog;
                     bool m_catalogHasBeenSet;
+
+                    /**
+                     * 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_state;
+                    bool m_stateHasBeenSet;
 
                 };
             }

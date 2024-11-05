@@ -42,6 +42,7 @@
 #include <tencentcloud/vod/v20180717/model/DescribeFileAttributesTask.h>
 #include <tencentcloud/vod/v20180717/model/QualityInspectTask.h>
 #include <tencentcloud/vod/v20180717/model/QualityEnhanceTask.h>
+#include <tencentcloud/vod/v20180717/model/ComplexAdaptiveDynamicStreamingTask.h>
 
 
 namespace TencentCloud
@@ -65,40 +66,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务类型，取值：
-<li>Procedure：视频处理任务；</li>
-<li>EditMedia：视频编辑任务；</li>
-<li>SplitMedia：视频拆条任务；</li>
-<li>ComposeMedia：制作媒体文件任务；</li>
-<li>WechatPublish：微信发布任务；</li>
-<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>
-<li>PullUpload：拉取上传媒体文件任务；</li>
-<li>FastClipMedia：快速剪辑任务；</li>
-<li>RemoveWatermarkTask：智能去除水印任务；</li>
-<li>DescribeFileAttributesTask：获取文件属性任务；</li>
-<li>RebuildMedia：音画质重生任务（不推荐使用）；</li>
-<li>ReviewAudioVideo：音视频审核任务；</li>
-<li>ExtractTraceWatermark：提取溯源水印任务；</li>
-<li>ExtractCopyRightWatermark：提取版权水印任务；</li>
-<li>QualityInspect：音画质检测任务；</li>
-<li>QualityEnhance：音画质重生任务。</li>
-                     * @return TaskType 任务类型，取值：
-<li>Procedure：视频处理任务；</li>
-<li>EditMedia：视频编辑任务；</li>
-<li>SplitMedia：视频拆条任务；</li>
-<li>ComposeMedia：制作媒体文件任务；</li>
-<li>WechatPublish：微信发布任务；</li>
-<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>
-<li>PullUpload：拉取上传媒体文件任务；</li>
-<li>FastClipMedia：快速剪辑任务；</li>
-<li>RemoveWatermarkTask：智能去除水印任务；</li>
-<li>DescribeFileAttributesTask：获取文件属性任务；</li>
-<li>RebuildMedia：音画质重生任务（不推荐使用）；</li>
-<li>ReviewAudioVideo：音视频审核任务；</li>
-<li>ExtractTraceWatermark：提取溯源水印任务；</li>
-<li>ExtractCopyRightWatermark：提取版权水印任务；</li>
-<li>QualityInspect：音画质检测任务；</li>
-<li>QualityEnhance：音画质重生任务。</li>
+                     * 获取任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务。</li>
+                     * @return TaskType 任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务。</li>
                      * 
                      */
                     std::string GetTaskType() const;
@@ -510,26 +479,26 @@ namespace TencentCloud
                      */
                     bool QualityEnhanceTaskHasBeenSet() const;
 
+                    /**
+                     * 获取复杂自适应码流任务信息，仅当 TaskType 为 ComplexAdaptiveDynamicStreaming，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComplexAdaptiveDynamicStreamingTask 复杂自适应码流任务信息，仅当 TaskType 为 ComplexAdaptiveDynamicStreaming，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ComplexAdaptiveDynamicStreamingTask GetComplexAdaptiveDynamicStreamingTask() const;
+
+                    /**
+                     * 判断参数 ComplexAdaptiveDynamicStreamingTask 是否已赋值
+                     * @return ComplexAdaptiveDynamicStreamingTask 是否已赋值
+                     * 
+                     */
+                    bool ComplexAdaptiveDynamicStreamingTaskHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务类型，取值：
-<li>Procedure：视频处理任务；</li>
-<li>EditMedia：视频编辑任务；</li>
-<li>SplitMedia：视频拆条任务；</li>
-<li>ComposeMedia：制作媒体文件任务；</li>
-<li>WechatPublish：微信发布任务；</li>
-<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>
-<li>PullUpload：拉取上传媒体文件任务；</li>
-<li>FastClipMedia：快速剪辑任务；</li>
-<li>RemoveWatermarkTask：智能去除水印任务；</li>
-<li>DescribeFileAttributesTask：获取文件属性任务；</li>
-<li>RebuildMedia：音画质重生任务（不推荐使用）；</li>
-<li>ReviewAudioVideo：音视频审核任务；</li>
-<li>ExtractTraceWatermark：提取溯源水印任务；</li>
-<li>ExtractCopyRightWatermark：提取版权水印任务；</li>
-<li>QualityInspect：音画质检测任务；</li>
-<li>QualityEnhance：音画质重生任务。</li>
+                     * 任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务。</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
@@ -708,6 +677,13 @@ namespace TencentCloud
                      */
                     QualityEnhanceTask m_qualityEnhanceTask;
                     bool m_qualityEnhanceTaskHasBeenSet;
+
+                    /**
+                     * 复杂自适应码流任务信息，仅当 TaskType 为 ComplexAdaptiveDynamicStreaming，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ComplexAdaptiveDynamicStreamingTask m_complexAdaptiveDynamicStreamingTask;
+                    bool m_complexAdaptiveDynamicStreamingTaskHasBeenSet;
 
                 };
             }

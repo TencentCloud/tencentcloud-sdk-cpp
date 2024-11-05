@@ -41,7 +41,9 @@ ModifyApmInstanceRequest::ModifyApmInstanceRequest() :
     m_logSourceHasBeenSet(false),
     m_customShowTagsHasBeenSet(false),
     m_payModeHasBeenSet(false),
-    m_responseDurationWarningThresholdHasBeenSet(false)
+    m_responseDurationWarningThresholdHasBeenSet(false),
+    m_isRelatedDashboardHasBeenSet(false),
+    m_dashboardTopicIDHasBeenSet(false)
 {
 }
 
@@ -214,6 +216,22 @@ string ModifyApmInstanceRequest::ToJsonString() const
         string key = "ResponseDurationWarningThreshold";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_responseDurationWarningThreshold, allocator);
+    }
+
+    if (m_isRelatedDashboardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsRelatedDashboard";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isRelatedDashboard, allocator);
+    }
+
+    if (m_dashboardTopicIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DashboardTopicID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dashboardTopicID.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -526,6 +544,38 @@ void ModifyApmInstanceRequest::SetResponseDurationWarningThreshold(const int64_t
 bool ModifyApmInstanceRequest::ResponseDurationWarningThresholdHasBeenSet() const
 {
     return m_responseDurationWarningThresholdHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsRelatedDashboard() const
+{
+    return m_isRelatedDashboard;
+}
+
+void ModifyApmInstanceRequest::SetIsRelatedDashboard(const int64_t& _isRelatedDashboard)
+{
+    m_isRelatedDashboard = _isRelatedDashboard;
+    m_isRelatedDashboardHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsRelatedDashboardHasBeenSet() const
+{
+    return m_isRelatedDashboardHasBeenSet;
+}
+
+string ModifyApmInstanceRequest::GetDashboardTopicID() const
+{
+    return m_dashboardTopicID;
+}
+
+void ModifyApmInstanceRequest::SetDashboardTopicID(const string& _dashboardTopicID)
+{
+    m_dashboardTopicID = _dashboardTopicID;
+    m_dashboardTopicIDHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::DashboardTopicIDHasBeenSet() const
+{
+    return m_dashboardTopicIDHasBeenSet;
 }
 
 

@@ -611,7 +611,9 @@ namespace TencentCloud
 
 
                 /**
-                 *添加互联网边界规则
+                 *接口不再使用，已有新接口AddAclRule
+
+添加互联网边界规则
                  * @param req AddAcRuleRequest
                  * @return AddAcRuleOutcome
                  */

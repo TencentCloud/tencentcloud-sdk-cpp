@@ -384,6 +384,92 @@ DnspodClient::CreateDomainGroupOutcomeCallable DnspodClient::CreateDomainGroupCa
     return task->get_future();
 }
 
+DnspodClient::CreateLineGroupOutcome DnspodClient::CreateLineGroup(const CreateLineGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLineGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLineGroupResponse rsp = CreateLineGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLineGroupOutcome(rsp);
+        else
+            return CreateLineGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLineGroupOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::CreateLineGroupAsync(const CreateLineGroupRequest& request, const CreateLineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLineGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::CreateLineGroupOutcomeCallable DnspodClient::CreateLineGroupCallable(const CreateLineGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLineGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLineGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::CreateLineGroupCopyOutcome DnspodClient::CreateLineGroupCopy(const CreateLineGroupCopyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLineGroupCopy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLineGroupCopyResponse rsp = CreateLineGroupCopyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLineGroupCopyOutcome(rsp);
+        else
+            return CreateLineGroupCopyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLineGroupCopyOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::CreateLineGroupCopyAsync(const CreateLineGroupCopyRequest& request, const CreateLineGroupCopyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLineGroupCopy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::CreateLineGroupCopyOutcomeCallable DnspodClient::CreateLineGroupCopyCallable(const CreateLineGroupCopyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLineGroupCopyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLineGroupCopy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::CreateRecordOutcome DnspodClient::CreateRecord(const CreateRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRecord");
@@ -764,6 +850,49 @@ DnspodClient::DeleteDomainCustomLineOutcomeCallable DnspodClient::DeleteDomainCu
         [this, request]()
         {
             return this->DeleteDomainCustomLine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DeleteLineGroupOutcome DnspodClient::DeleteLineGroup(const DeleteLineGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLineGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLineGroupResponse rsp = DeleteLineGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLineGroupOutcome(rsp);
+        else
+            return DeleteLineGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLineGroupOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DeleteLineGroupAsync(const DeleteLineGroupRequest& request, const DeleteLineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLineGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DeleteLineGroupOutcomeCallable DnspodClient::DeleteLineGroupCallable(const DeleteLineGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLineGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLineGroup(request);
         }
     );
 
@@ -1581,6 +1710,49 @@ DnspodClient::DescribeDomainWhoisOutcomeCallable DnspodClient::DescribeDomainWho
         [this, request]()
         {
             return this->DescribeDomainWhois(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DescribeLineGroupListOutcome DnspodClient::DescribeLineGroupList(const DescribeLineGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLineGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLineGroupListResponse rsp = DescribeLineGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLineGroupListOutcome(rsp);
+        else
+            return DescribeLineGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLineGroupListOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeLineGroupListAsync(const DescribeLineGroupListRequest& request, const DescribeLineGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLineGroupList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeLineGroupListOutcomeCallable DnspodClient::DescribeLineGroupListCallable(const DescribeLineGroupListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLineGroupListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLineGroupList(request);
         }
     );
 
@@ -2699,6 +2871,49 @@ DnspodClient::ModifyDynamicDNSOutcomeCallable DnspodClient::ModifyDynamicDNSCall
         [this, request]()
         {
             return this->ModifyDynamicDNS(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::ModifyLineGroupOutcome DnspodClient::ModifyLineGroup(const ModifyLineGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLineGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLineGroupResponse rsp = ModifyLineGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLineGroupOutcome(rsp);
+        else
+            return ModifyLineGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLineGroupOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::ModifyLineGroupAsync(const ModifyLineGroupRequest& request, const ModifyLineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLineGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::ModifyLineGroupOutcomeCallable DnspodClient::ModifyLineGroupCallable(const ModifyLineGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLineGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLineGroup(request);
         }
     );
 

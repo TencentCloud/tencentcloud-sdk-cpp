@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ip列表,当入参Ip为all时，返回该值
-                     * @return IpList ip列表,当入参Ip为all时，返回该值
+                     * 获取ip列表,当入参Ip为all时，返回所有已知ip列表
+                     * @return IpList ip列表,当入参Ip为all时，返回所有已知ip列表
                      * 
                      */
                     std::vector<ScanIpInfo> GetIpList() const;
@@ -201,7 +201,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ip列表,当入参Ip为all时，返回该值
+                     * ip列表,当入参Ip为all时，返回所有已知ip列表
                      */
                     std::vector<ScanIpInfo> m_ipList;
                     bool m_ipListHasBeenSet;

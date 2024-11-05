@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取VersionId列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Versions VersionId列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VersionInfo> GetVersions() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * VersionId列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VersionInfo> m_versions;
                     bool m_versionsHasBeenSet;

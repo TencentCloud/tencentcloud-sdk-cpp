@@ -169,6 +169,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/L7OfflineLog.h
   include/tencentcloud/teo/v20220901/model/ModifyRuleResponse.h
   include/tencentcloud/teo/v20220901/model/ApplicationProxyRule.h
+  include/tencentcloud/teo/v20220901/model/UpstreamCertInfo.h
   include/tencentcloud/teo/v20220901/model/Zone.h
   include/tencentcloud/teo/v20220901/model/DescribeRulesSettingResponse.h
   include/tencentcloud/teo/v20220901/model/BindSecurityTemplateToEntityResponse.h
@@ -617,6 +618,7 @@ set(teo_src
   src/v20220901/model/L7OfflineLog.cpp
   src/v20220901/model/ModifyRuleResponse.cpp
   src/v20220901/model/ApplicationProxyRule.cpp
+  src/v20220901/model/UpstreamCertInfo.cpp
   src/v20220901/model/Zone.cpp
   src/v20220901/model/DescribeRulesSettingResponse.cpp
   src/v20220901/model/BindSecurityTemplateToEntityResponse.cpp

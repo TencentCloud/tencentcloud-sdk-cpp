@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取轮转的频率，以天为单位，默认为1天。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Frequency 轮转的频率，以天为单位，默认为1天。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFrequency() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取最近一次轮转的时间，显式可见的时间字符串，格式 2006-01-02 15:04:05。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestRotateTime 最近一次轮转的时间，显式可见的时间字符串，格式 2006-01-02 15:04:05。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestRotateTime() const;
@@ -91,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取下一次开始轮转的时间，显式可见的时间字符串，格式 2006-01-02 15:04:05。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextRotateBeginTime 下一次开始轮转的时间，显式可见的时间字符串，格式 2006-01-02 15:04:05。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNextRotateBeginTime() const;
@@ -115,21 +109,18 @@ namespace TencentCloud
 
                     /**
                      * 轮转的频率，以天为单位，默认为1天。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_frequency;
                     bool m_frequencyHasBeenSet;
 
                     /**
                      * 最近一次轮转的时间，显式可见的时间字符串，格式 2006-01-02 15:04:05。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestRotateTime;
                     bool m_latestRotateTimeHasBeenSet;
 
                     /**
                      * 下一次开始轮转的时间，显式可见的时间字符串，格式 2006-01-02 15:04:05。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nextRotateBeginTime;
                     bool m_nextRotateBeginTimeHasBeenSet;

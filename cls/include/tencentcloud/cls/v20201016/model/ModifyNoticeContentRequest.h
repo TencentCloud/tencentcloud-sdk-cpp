@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通知内容模版ID。
-                     * @return NoticeContentId 通知内容模版ID。
+                     * 获取通知内容模板ID。
+                     * @return NoticeContentId 通知内容模板ID。
                      * 
                      */
                     std::string GetNoticeContentId() const;
 
                     /**
-                     * 设置通知内容模版ID。
-                     * @param _noticeContentId 通知内容模版ID。
+                     * 设置通知内容模板ID。
+                     * @param _noticeContentId 通知内容模板ID。
                      * 
                      */
                     void SetNoticeContentId(const std::string& _noticeContentId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool NoticeContentIdHasBeenSet() const;
 
                     /**
-                     * 获取通知内容模版名称。
-                     * @return Name 通知内容模版名称。
+                     * 获取通知内容模板名称。
+                     * @return Name 通知内容模板名称。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置通知内容模版名称。
-                     * @param _name 通知内容模版名称。
+                     * 设置通知内容模板名称。
+                     * @param _name 通知内容模板名称。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -115,15 +115,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取通知内容模版详细信息。
-                     * @return NoticeContents 通知内容模版详细信息。
+                     * 获取通知内容模板详细信息。
+                     * @return NoticeContents 通知内容模板详细信息。
                      * 
                      */
                     std::vector<NoticeContent> GetNoticeContents() const;
 
                     /**
-                     * 设置通知内容模版详细信息。
-                     * @param _noticeContents 通知内容模版详细信息。
+                     * 设置通知内容模板详细信息。
+                     * @param _noticeContents 通知内容模板详细信息。
                      * 
                      */
                     void SetNoticeContents(const std::vector<NoticeContent>& _noticeContents);
@@ -138,13 +138,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通知内容模版ID。
+                     * 通知内容模板ID。
                      */
                     std::string m_noticeContentId;
                     bool m_noticeContentIdHasBeenSet;
 
                     /**
-                     * 通知内容模版名称。
+                     * 通知内容模板名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -158,7 +158,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 通知内容模版详细信息。
+                     * 通知内容模板详细信息。
                      */
                     std::vector<NoticeContent> m_noticeContents;
                     bool m_noticeContentsHasBeenSet;

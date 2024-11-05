@@ -28,7 +28,8 @@ WorkGroupDetailInfo::WorkGroupDetailInfo() :
     m_dataPolicyInfoHasBeenSet(false),
     m_enginePolicyInfoHasBeenSet(false),
     m_workGroupDescriptionHasBeenSet(false),
-    m_rowFilterInfoHasBeenSet(false)
+    m_rowFilterInfoHasBeenSet(false),
+    m_catalogPolicyInfoHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,23 @@ CoreInternalOutcome WorkGroupDetailInfo::Deserialize(const rapidjson::Value &val
         m_rowFilterInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("CatalogPolicyInfo") && !value["CatalogPolicyInfo"].IsNull())
+    {
+        if (!value["CatalogPolicyInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkGroupDetailInfo.CatalogPolicyInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_catalogPolicyInfo.Deserialize(value["CatalogPolicyInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_catalogPolicyInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -218,6 +236,15 @@ void WorkGroupDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rowFilterInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_catalogPolicyInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogPolicyInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_catalogPolicyInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -349,5 +376,21 @@ void WorkGroupDetailInfo::SetRowFilterInfo(const Policys& _rowFilterInfo)
 bool WorkGroupDetailInfo::RowFilterInfoHasBeenSet() const
 {
     return m_rowFilterInfoHasBeenSet;
+}
+
+Policy WorkGroupDetailInfo::GetCatalogPolicyInfo() const
+{
+    return m_catalogPolicyInfo;
+}
+
+void WorkGroupDetailInfo::SetCatalogPolicyInfo(const Policy& _catalogPolicyInfo)
+{
+    m_catalogPolicyInfo = _catalogPolicyInfo;
+    m_catalogPolicyInfoHasBeenSet = true;
+}
+
+bool WorkGroupDetailInfo::CatalogPolicyInfoHasBeenSet() const
+{
+    return m_catalogPolicyInfoHasBeenSet;
 }
 

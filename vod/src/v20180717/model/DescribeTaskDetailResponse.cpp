@@ -49,7 +49,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_reduceMediaBitrateTaskHasBeenSet(false),
     m_describeFileAttributesTaskHasBeenSet(false),
     m_qualityInspectTaskHasBeenSet(false),
-    m_qualityEnhanceTaskHasBeenSet(false)
+    m_qualityEnhanceTaskHasBeenSet(false),
+    m_complexAdaptiveDynamicStreamingTaskHasBeenSet(false)
 {
 }
 
@@ -494,6 +495,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_qualityEnhanceTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ComplexAdaptiveDynamicStreamingTask") && !rsp["ComplexAdaptiveDynamicStreamingTask"].IsNull())
+    {
+        if (!rsp["ComplexAdaptiveDynamicStreamingTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComplexAdaptiveDynamicStreamingTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_complexAdaptiveDynamicStreamingTask.Deserialize(rsp["ComplexAdaptiveDynamicStreamingTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_complexAdaptiveDynamicStreamingTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -731,6 +749,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_qualityEnhanceTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_complexAdaptiveDynamicStreamingTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComplexAdaptiveDynamicStreamingTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_complexAdaptiveDynamicStreamingTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1003,6 +1030,16 @@ QualityEnhanceTask DescribeTaskDetailResponse::GetQualityEnhanceTask() const
 bool DescribeTaskDetailResponse::QualityEnhanceTaskHasBeenSet() const
 {
     return m_qualityEnhanceTaskHasBeenSet;
+}
+
+ComplexAdaptiveDynamicStreamingTask DescribeTaskDetailResponse::GetComplexAdaptiveDynamicStreamingTask() const
+{
+    return m_complexAdaptiveDynamicStreamingTask;
+}
+
+bool DescribeTaskDetailResponse::ComplexAdaptiveDynamicStreamingTaskHasBeenSet() const
+{
+    return m_complexAdaptiveDynamicStreamingTaskHasBeenSet;
 }
 
 

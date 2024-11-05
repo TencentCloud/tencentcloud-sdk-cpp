@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取凭据名称。
-                     * @return SecretName 凭据名称。
+                     * 获取凭据名称
+                     * @return SecretName 凭据名称
                      * 
                      */
                     std::string GetSecretName() const;
 
                     /**
-                     * 设置凭据名称。
-                     * @param _secretName 凭据名称。
+                     * 设置凭据名称
+                     * @param _secretName 凭据名称
                      * 
                      */
                     void SetSecretName(const std::string& _secretName);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 凭据名称。
+                     * 凭据名称
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;

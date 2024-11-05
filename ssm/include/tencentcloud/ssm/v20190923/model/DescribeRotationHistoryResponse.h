@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取版本号列表。
-                     * @return VersionIDs 版本号列表。
+                     * 获取版本号列表
+                     * @return VersionIDs 版本号列表
                      * 
                      */
                     std::vector<std::string> GetVersionIDs() const;
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 版本号列表。
+                     * 版本号列表
                      */
                     std::vector<std::string> m_versionIDs;
                     bool m_versionIDsHasBeenSet;

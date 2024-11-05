@@ -23,7 +23,8 @@ using namespace std;
 AccelerationDomainCertificate::AccelerationDomainCertificate() :
     m_modeHasBeenSet(false),
     m_listHasBeenSet(false),
-    m_clientCertInfoHasBeenSet(false)
+    m_clientCertInfoHasBeenSet(false),
+    m_upstreamCertInfoHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,23 @@ CoreInternalOutcome AccelerationDomainCertificate::Deserialize(const rapidjson::
         m_clientCertInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("UpstreamCertInfo") && !value["UpstreamCertInfo"].IsNull())
+    {
+        if (!value["UpstreamCertInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomainCertificate.UpstreamCertInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_upstreamCertInfo.Deserialize(value["UpstreamCertInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_upstreamCertInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -116,6 +134,15 @@ void AccelerationDomainCertificate::ToJsonObject(rapidjson::Value &value, rapidj
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clientCertInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_upstreamCertInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamCertInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_upstreamCertInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -167,5 +194,21 @@ void AccelerationDomainCertificate::SetClientCertInfo(const MutualTLS& _clientCe
 bool AccelerationDomainCertificate::ClientCertInfoHasBeenSet() const
 {
     return m_clientCertInfoHasBeenSet;
+}
+
+UpstreamCertInfo AccelerationDomainCertificate::GetUpstreamCertInfo() const
+{
+    return m_upstreamCertInfo;
+}
+
+void AccelerationDomainCertificate::SetUpstreamCertInfo(const UpstreamCertInfo& _upstreamCertInfo)
+{
+    m_upstreamCertInfo = _upstreamCertInfo;
+    m_upstreamCertInfoHasBeenSet = true;
+}
+
+bool AccelerationDomainCertificate::UpstreamCertInfoHasBeenSet() const
+{
+    return m_upstreamCertInfoHasBeenSet;
 }
 

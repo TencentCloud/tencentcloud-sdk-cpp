@@ -450,6 +450,48 @@ namespace TencentCloud
                      */
                     bool ResponseDurationWarningThresholdHasBeenSet() const;
 
+                    /**
+                     * 获取是否关联dashboard： 0 关 1 开
+                     * @return IsRelatedDashboard 是否关联dashboard： 0 关 1 开
+                     * 
+                     */
+                    int64_t GetIsRelatedDashboard() const;
+
+                    /**
+                     * 设置是否关联dashboard： 0 关 1 开
+                     * @param _isRelatedDashboard 是否关联dashboard： 0 关 1 开
+                     * 
+                     */
+                    void SetIsRelatedDashboard(const int64_t& _isRelatedDashboard);
+
+                    /**
+                     * 判断参数 IsRelatedDashboard 是否已赋值
+                     * @return IsRelatedDashboard 是否已赋值
+                     * 
+                     */
+                    bool IsRelatedDashboardHasBeenSet() const;
+
+                    /**
+                     * 获取dashboard ID
+                     * @return DashboardTopicID dashboard ID
+                     * 
+                     */
+                    std::string GetDashboardTopicID() const;
+
+                    /**
+                     * 设置dashboard ID
+                     * @param _dashboardTopicID dashboard ID
+                     * 
+                     */
+                    void SetDashboardTopicID(const std::string& _dashboardTopicID);
+
+                    /**
+                     * 判断参数 DashboardTopicID 是否已赋值
+                     * @return DashboardTopicID 是否已赋值
+                     * 
+                     */
+                    bool DashboardTopicIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -567,6 +609,18 @@ namespace TencentCloud
                      */
                     int64_t m_responseDurationWarningThreshold;
                     bool m_responseDurationWarningThresholdHasBeenSet;
+
+                    /**
+                     * 是否关联dashboard： 0 关 1 开
+                     */
+                    int64_t m_isRelatedDashboard;
+                    bool m_isRelatedDashboardHasBeenSet;
+
+                    /**
+                     * dashboard ID
+                     */
+                    std::string m_dashboardTopicID;
+                    bool m_dashboardTopicIDHasBeenSet;
 
                 };
             }

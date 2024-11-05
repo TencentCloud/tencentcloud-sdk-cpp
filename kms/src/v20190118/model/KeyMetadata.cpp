@@ -36,7 +36,9 @@ KeyMetadata::KeyMetadata() :
     m_originHasBeenSet(false),
     m_validToHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_hsmClusterIdHasBeenSet(false)
+    m_hsmClusterIdHasBeenSet(false),
+    m_rotateDaysHasBeenSet(false),
+    m_lastRotateTimeHasBeenSet(false)
 {
 }
 
@@ -205,6 +207,26 @@ CoreInternalOutcome KeyMetadata::Deserialize(const rapidjson::Value &value)
         m_hsmClusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RotateDays") && !value["RotateDays"].IsNull())
+    {
+        if (!value["RotateDays"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KeyMetadata.RotateDays` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rotateDays = value["RotateDays"].GetUint64();
+        m_rotateDaysHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastRotateTime") && !value["LastRotateTime"].IsNull())
+    {
+        if (!value["LastRotateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KeyMetadata.LastRotateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastRotateTime = value["LastRotateTime"].GetUint64();
+        m_lastRotateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +360,22 @@ void KeyMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "HsmClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hsmClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rotateDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RotateDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rotateDays, allocator);
+    }
+
+    if (m_lastRotateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastRotateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lastRotateTime, allocator);
     }
 
 }
@@ -597,5 +635,37 @@ void KeyMetadata::SetHsmClusterId(const string& _hsmClusterId)
 bool KeyMetadata::HsmClusterIdHasBeenSet() const
 {
     return m_hsmClusterIdHasBeenSet;
+}
+
+uint64_t KeyMetadata::GetRotateDays() const
+{
+    return m_rotateDays;
+}
+
+void KeyMetadata::SetRotateDays(const uint64_t& _rotateDays)
+{
+    m_rotateDays = _rotateDays;
+    m_rotateDaysHasBeenSet = true;
+}
+
+bool KeyMetadata::RotateDaysHasBeenSet() const
+{
+    return m_rotateDaysHasBeenSet;
+}
+
+uint64_t KeyMetadata::GetLastRotateTime() const
+{
+    return m_lastRotateTime;
+}
+
+void KeyMetadata::SetLastRotateTime(const uint64_t& _lastRotateTime)
+{
+    m_lastRotateTime = _lastRotateTime;
+    m_lastRotateTimeHasBeenSet = true;
+}
+
+bool KeyMetadata::LastRotateTimeHasBeenSet() const
+{
+    return m_lastRotateTimeHasBeenSet;
 }
 

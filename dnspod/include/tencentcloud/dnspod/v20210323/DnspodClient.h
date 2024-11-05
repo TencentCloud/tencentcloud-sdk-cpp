@@ -39,6 +39,10 @@
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainCustomLineResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainGroupRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainGroupResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateLineGroupRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateLineGroupResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateLineGroupCopyRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateLineGroupCopyResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateRecordRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateRecordBatchRequest.h>
@@ -57,6 +61,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainBatchResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainCustomLineRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainCustomLineResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DeleteLineGroupRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DeleteLineGroupResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordBatchRequest.h>
@@ -95,6 +101,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainShareUserListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainWhoisRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainWhoisResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeLineGroupListRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeLineGroupListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribePackageDetailRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribePackageDetailResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordRequest.h>
@@ -147,6 +155,8 @@
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainUnlockResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDynamicDNSRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDynamicDNSResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyLineGroupRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyLineGroupResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyPackageAutoRenewRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyPackageAutoRenewResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordRequest.h>
@@ -215,6 +225,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDomainGroupResponse> CreateDomainGroupOutcome;
                 typedef std::future<CreateDomainGroupOutcome> CreateDomainGroupOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CreateDomainGroupRequest&, CreateDomainGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLineGroupResponse> CreateLineGroupOutcome;
+                typedef std::future<CreateLineGroupOutcome> CreateLineGroupOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::CreateLineGroupRequest&, CreateLineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLineGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLineGroupCopyResponse> CreateLineGroupCopyOutcome;
+                typedef std::future<CreateLineGroupCopyOutcome> CreateLineGroupCopyOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::CreateLineGroupCopyRequest&, CreateLineGroupCopyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLineGroupCopyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRecordResponse> CreateRecordOutcome;
                 typedef std::future<CreateRecordOutcome> CreateRecordOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CreateRecordRequest&, CreateRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordAsyncHandler;
@@ -242,6 +258,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDomainCustomLineResponse> DeleteDomainCustomLineOutcome;
                 typedef std::future<DeleteDomainCustomLineOutcome> DeleteDomainCustomLineOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DeleteDomainCustomLineRequest&, DeleteDomainCustomLineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainCustomLineAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLineGroupResponse> DeleteLineGroupOutcome;
+                typedef std::future<DeleteLineGroupOutcome> DeleteLineGroupOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DeleteLineGroupRequest&, DeleteLineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLineGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRecordResponse> DeleteRecordOutcome;
                 typedef std::future<DeleteRecordOutcome> DeleteRecordOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DeleteRecordRequest&, DeleteRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordAsyncHandler;
@@ -299,6 +318,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainWhoisResponse> DescribeDomainWhoisOutcome;
                 typedef std::future<DescribeDomainWhoisOutcome> DescribeDomainWhoisOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainWhoisRequest&, DescribeDomainWhoisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainWhoisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLineGroupListResponse> DescribeLineGroupListOutcome;
+                typedef std::future<DescribeLineGroupListOutcome> DescribeLineGroupListOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeLineGroupListRequest&, DescribeLineGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLineGroupListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePackageDetailResponse> DescribePackageDetailOutcome;
                 typedef std::future<DescribePackageDetailOutcome> DescribePackageDetailOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribePackageDetailRequest&, DescribePackageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackageDetailAsyncHandler;
@@ -377,6 +399,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDynamicDNSResponse> ModifyDynamicDNSOutcome;
                 typedef std::future<ModifyDynamicDNSOutcome> ModifyDynamicDNSOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyDynamicDNSRequest&, ModifyDynamicDNSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDynamicDNSAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLineGroupResponse> ModifyLineGroupOutcome;
+                typedef std::future<ModifyLineGroupOutcome> ModifyLineGroupOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::ModifyLineGroupRequest&, ModifyLineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLineGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPackageAutoRenewResponse> ModifyPackageAutoRenewOutcome;
                 typedef std::future<ModifyPackageAutoRenewOutcome> ModifyPackageAutoRenewOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyPackageAutoRenewRequest&, ModifyPackageAutoRenewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPackageAutoRenewAsyncHandler;
@@ -500,6 +525,24 @@ namespace TencentCloud
                 CreateDomainGroupOutcomeCallable CreateDomainGroupCallable(const Model::CreateDomainGroupRequest& request);
 
                 /**
+                 *创建域名的线路分组
+                 * @param req CreateLineGroupRequest
+                 * @return CreateLineGroupOutcome
+                 */
+                CreateLineGroupOutcome CreateLineGroup(const Model::CreateLineGroupRequest &request);
+                void CreateLineGroupAsync(const Model::CreateLineGroupRequest& request, const CreateLineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLineGroupOutcomeCallable CreateLineGroupCallable(const Model::CreateLineGroupRequest& request);
+
+                /**
+                 *复制域名的线路分组
+                 * @param req CreateLineGroupCopyRequest
+                 * @return CreateLineGroupCopyOutcome
+                 */
+                CreateLineGroupCopyOutcome CreateLineGroupCopy(const Model::CreateLineGroupCopyRequest &request);
+                void CreateLineGroupCopyAsync(const Model::CreateLineGroupCopyRequest& request, const CreateLineGroupCopyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLineGroupCopyOutcomeCallable CreateLineGroupCopyCallable(const Model::CreateLineGroupCopyRequest& request);
+
+                /**
                  *添加记录
 备注：新添加的解析记录存在短暂的索引延迟，如果查询不到新增记录，请在 30 秒后重试
                  * @param req CreateRecordRequest
@@ -581,6 +624,15 @@ namespace TencentCloud
                 DeleteDomainCustomLineOutcome DeleteDomainCustomLine(const Model::DeleteDomainCustomLineRequest &request);
                 void DeleteDomainCustomLineAsync(const Model::DeleteDomainCustomLineRequest& request, const DeleteDomainCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDomainCustomLineOutcomeCallable DeleteDomainCustomLineCallable(const Model::DeleteDomainCustomLineRequest& request);
+
+                /**
+                 *删除域名的线路分组
+                 * @param req DeleteLineGroupRequest
+                 * @return DeleteLineGroupOutcome
+                 */
+                DeleteLineGroupOutcome DeleteLineGroup(const Model::DeleteLineGroupRequest &request);
+                void DeleteLineGroupAsync(const Model::DeleteLineGroupRequest& request, const DeleteLineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLineGroupOutcomeCallable DeleteLineGroupCallable(const Model::DeleteLineGroupRequest& request);
 
                 /**
                  *删除记录
@@ -754,6 +806,15 @@ namespace TencentCloud
                 DescribeDomainWhoisOutcome DescribeDomainWhois(const Model::DescribeDomainWhoisRequest &request);
                 void DescribeDomainWhoisAsync(const Model::DescribeDomainWhoisRequest& request, const DescribeDomainWhoisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainWhoisOutcomeCallable DescribeDomainWhoisCallable(const Model::DescribeDomainWhoisRequest& request);
+
+                /**
+                 *获取域名的线路分组列表
+                 * @param req DescribeLineGroupListRequest
+                 * @return DescribeLineGroupListOutcome
+                 */
+                DescribeLineGroupListOutcome DescribeLineGroupList(const Model::DescribeLineGroupListRequest &request);
+                void DescribeLineGroupListAsync(const Model::DescribeLineGroupListRequest& request, const DescribeLineGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLineGroupListOutcomeCallable DescribeLineGroupListCallable(const Model::DescribeLineGroupListRequest& request);
 
                 /**
                  *获取各套餐配置详情
@@ -994,6 +1055,15 @@ namespace TencentCloud
                 ModifyDynamicDNSOutcome ModifyDynamicDNS(const Model::ModifyDynamicDNSRequest &request);
                 void ModifyDynamicDNSAsync(const Model::ModifyDynamicDNSRequest& request, const ModifyDynamicDNSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDynamicDNSOutcomeCallable ModifyDynamicDNSCallable(const Model::ModifyDynamicDNSRequest& request);
+
+                /**
+                 *修改域名的线路分组
+                 * @param req ModifyLineGroupRequest
+                 * @return ModifyLineGroupOutcome
+                 */
+                ModifyLineGroupOutcome ModifyLineGroup(const Model::ModifyLineGroupRequest &request);
+                void ModifyLineGroupAsync(const Model::ModifyLineGroupRequest& request, const ModifyLineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLineGroupOutcomeCallable ModifyLineGroupCallable(const Model::ModifyLineGroupRequest& request);
 
                 /**
                  *DNS 解析套餐自动续费设置

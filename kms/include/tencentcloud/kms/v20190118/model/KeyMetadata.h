@@ -382,6 +382,48 @@ namespace TencentCloud
                      */
                     bool HsmClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取密钥轮转周期（天）
+                     * @return RotateDays 密钥轮转周期（天）
+                     * 
+                     */
+                    uint64_t GetRotateDays() const;
+
+                    /**
+                     * 设置密钥轮转周期（天）
+                     * @param _rotateDays 密钥轮转周期（天）
+                     * 
+                     */
+                    void SetRotateDays(const uint64_t& _rotateDays);
+
+                    /**
+                     * 判断参数 RotateDays 是否已赋值
+                     * @return RotateDays 是否已赋值
+                     * 
+                     */
+                    bool RotateDaysHasBeenSet() const;
+
+                    /**
+                     * 获取上次乱转时间（Unix timestamp）
+                     * @return LastRotateTime 上次乱转时间（Unix timestamp）
+                     * 
+                     */
+                    uint64_t GetLastRotateTime() const;
+
+                    /**
+                     * 设置上次乱转时间（Unix timestamp）
+                     * @param _lastRotateTime 上次乱转时间（Unix timestamp）
+                     * 
+                     */
+                    void SetLastRotateTime(const uint64_t& _lastRotateTime);
+
+                    /**
+                     * 判断参数 LastRotateTime 是否已赋值
+                     * @return LastRotateTime 是否已赋值
+                     * 
+                     */
+                    bool LastRotateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -479,6 +521,18 @@ namespace TencentCloud
                      */
                     std::string m_hsmClusterId;
                     bool m_hsmClusterIdHasBeenSet;
+
+                    /**
+                     * 密钥轮转周期（天）
+                     */
+                    uint64_t m_rotateDays;
+                    bool m_rotateDaysHasBeenSet;
+
+                    /**
+                     * 上次乱转时间（Unix timestamp）
+                     */
+                    uint64_t m_lastRotateTime;
+                    bool m_lastRotateTimeHasBeenSet;
 
                 };
             }

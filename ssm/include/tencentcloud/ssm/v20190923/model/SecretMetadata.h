@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1:--开启轮转；0--禁止轮转
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RotationStatus 1:--开启轮转；0--禁止轮转
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRotationStatus() const;
 
                     /**
                      * 设置1:--开启轮转；0--禁止轮转
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rotationStatus 1:--开启轮转；0--禁止轮转
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRotationStatus(const int64_t& _rotationStatus);
@@ -241,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下一次轮转开始时间，uinx 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextRotationTime 下一次轮转开始时间，uinx 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNextRotationTime() const;
 
                     /**
                      * 设置下一次轮转开始时间，uinx 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nextRotationTime 下一次轮转开始时间，uinx 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNextRotationTime(const uint64_t& _nextRotationTime);
@@ -270,13 +262,11 @@ namespace TencentCloud
 2 -- SSH密钥对凭据；
 3 -- 云API密钥对凭据；
 4 -- Redis类型凭据；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretType 0 -- 用户自定义凭据；
 1 -- 云产品凭据；
 2 -- SSH密钥对凭据；
 3 -- 云API密钥对凭据；
 4 -- Redis类型凭据；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSecretType() const;
@@ -287,13 +277,11 @@ namespace TencentCloud
 2 -- SSH密钥对凭据；
 3 -- 云API密钥对凭据；
 4 -- Redis类型凭据；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secretType 0 -- 用户自定义凭据；
 1 -- 云产品凭据；
 2 -- SSH密钥对凭据；
 3 -- 云API密钥对凭据；
 4 -- Redis类型凭据；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecretType(const int64_t& _secretType);
@@ -307,18 +295,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云产品名称，仅在SecretType为1，即凭据类型为云产品凭据时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 云产品名称，仅在SecretType为1，即凭据类型为云产品凭据时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置云产品名称，仅在SecretType为1，即凭据类型为云产品凭据时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productName 云产品名称，仅在SecretType为1，即凭据类型为云产品凭据时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -332,18 +316,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceName 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceName 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceName(const std::string& _resourceName);
@@ -357,18 +337,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectID 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProjectID() const;
 
                     /**
                      * 设置当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectID 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectID(const int64_t& _projectID);
@@ -407,18 +383,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetUin 当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTargetUin() const;
 
                     /**
                      * 设置当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetUin 当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetUin(const uint64_t& _targetUin);
@@ -432,18 +404,14 @@ namespace TencentCloud
 
                     /**
                      * 获取轮转的频率，以天作为单位，在轮转开启状态下生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RotationFrequency 轮转的频率，以天作为单位，在轮转开启状态下生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRotationFrequency() const;
 
                     /**
                      * 设置轮转的频率，以天作为单位，在轮转开启状态下生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rotationFrequency 轮转的频率，以天作为单位，在轮转开启状态下生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRotationFrequency(const int64_t& _rotationFrequency);
@@ -457,18 +425,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云产品凭据对应的云产品实例 ID 号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceID 云产品凭据对应的云产品实例 ID 号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceID() const;
 
                     /**
                      * 设置云产品凭据对应的云产品实例 ID 号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceID 云产品凭据对应的云产品实例 ID 号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceID(const std::string& _resourceID);
@@ -482,18 +446,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户指定的轮转开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RotationBeginTime 用户指定的轮转开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRotationBeginTime() const;
 
                     /**
                      * 设置用户指定的轮转开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rotationBeginTime 用户指定的轮转开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRotationBeginTime(const std::string& _rotationBeginTime);
@@ -557,14 +517,12 @@ namespace TencentCloud
 
                     /**
                      * 1:--开启轮转；0--禁止轮转
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_rotationStatus;
                     bool m_rotationStatusHasBeenSet;
 
                     /**
                      * 下一次轮转开始时间，uinx 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_nextRotationTime;
                     bool m_nextRotationTimeHasBeenSet;
@@ -575,28 +533,24 @@ namespace TencentCloud
 2 -- SSH密钥对凭据；
 3 -- 云API密钥对凭据；
 4 -- Redis类型凭据；
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_secretType;
                     bool m_secretTypeHasBeenSet;
 
                     /**
                      * 云产品名称，仅在SecretType为1，即凭据类型为云产品凭据时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
                      * 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
                      * 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_projectID;
                     bool m_projectIDHasBeenSet;
@@ -610,28 +564,24 @@ namespace TencentCloud
 
                     /**
                      * 当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_targetUin;
                     bool m_targetUinHasBeenSet;
 
                     /**
                      * 轮转的频率，以天作为单位，在轮转开启状态下生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_rotationFrequency;
                     bool m_rotationFrequencyHasBeenSet;
 
                     /**
                      * 云产品凭据对应的云产品实例 ID 号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceID;
                     bool m_resourceIDHasBeenSet;
 
                     /**
                      * 用户指定的轮转开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rotationBeginTime;
                     bool m_rotationBeginTimeHasBeenSet;
