@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取返回的自定义分组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 返回的自定义分组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置返回的自定义分组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 返回的自定义分组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 返回的自定义分组id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;

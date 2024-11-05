@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分页的data数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 分页的data数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeDevicesPageRsp GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 分页的data数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeDevicesPageRsp m_data;
                     bool m_dataHasBeenSet;

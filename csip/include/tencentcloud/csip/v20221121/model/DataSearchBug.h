@@ -71,19 +71,15 @@ namespace TencentCloud
                     bool StateCodeHasBeenSet() const;
 
                     /**
-                     * 获取无
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataBug 无
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取漏洞详情
+                     * @return DataBug 漏洞详情
                      * 
                      */
                     std::vector<BugInfoDetail> GetDataBug() const;
 
                     /**
-                     * 设置无
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataBug 无
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置漏洞详情
+                     * @param _dataBug 漏洞详情
                      * 
                      */
                     void SetDataBug(const std::vector<BugInfoDetail>& _dataBug);
@@ -96,19 +92,15 @@ namespace TencentCloud
                     bool DataBugHasBeenSet() const;
 
                     /**
-                     * 获取无
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataAsset 无
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取漏洞影响资产详情
+                     * @return DataAsset 漏洞影响资产详情
                      * 
                      */
                     std::vector<AssetInfoDetail> GetDataAsset() const;
 
                     /**
-                     * 设置无
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataAsset 无
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置漏洞影响资产详情
+                     * @param _dataAsset 漏洞影响资产详情
                      * 
                      */
                     void SetDataAsset(const std::vector<AssetInfoDetail>& _dataAsset);
@@ -122,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取true支持扫描。false不支持扫描
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VSSScan true支持扫描。false不支持扫描
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetVSSScan() const;
 
                     /**
                      * 设置true支持扫描。false不支持扫描
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vSSScan true支持扫描。false不支持扫描
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVSSScan(const bool& _vSSScan);
@@ -147,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CWPScan 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCWPScan() const;
 
                     /**
                      * 设置0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cWPScan 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCWPScan(const std::string& _cWPScan);
@@ -172,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1支持虚拟补丁，0或空不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CFWPatch 1支持虚拟补丁，0或空不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCFWPatch() const;
 
                     /**
                      * 设置1支持虚拟补丁，0或空不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cFWPatch 1支持虚拟补丁，0或空不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCFWPatch(const std::string& _cFWPatch);
@@ -197,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WafPatch 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWafPatch() const;
 
                     /**
                      * 设置0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wafPatch 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWafPatch(const int64_t& _wafPatch);
@@ -222,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CWPFix 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCWPFix() const;
 
                     /**
                      * 设置0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cWPFix 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCWPFix(const int64_t& _cWPFix);
@@ -247,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品支持状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSupport 产品支持状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProductSupport> GetDataSupport() const;
 
                     /**
                      * 设置产品支持状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSupport 产品支持状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSupport(const std::vector<ProductSupport>& _dataSupport);
@@ -272,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cveId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CveId cveId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCveId() const;
 
                     /**
                      * 设置cveId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cveId cveId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCveId(const std::string& _cveId);
@@ -304,64 +268,55 @@ namespace TencentCloud
                     bool m_stateCodeHasBeenSet;
 
                     /**
-                     * 无
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 漏洞详情
                      */
                     std::vector<BugInfoDetail> m_dataBug;
                     bool m_dataBugHasBeenSet;
 
                     /**
-                     * 无
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 漏洞影响资产详情
                      */
                     std::vector<AssetInfoDetail> m_dataAsset;
                     bool m_dataAssetHasBeenSet;
 
                     /**
                      * true支持扫描。false不支持扫描
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_vSSScan;
                     bool m_vSSScanHasBeenSet;
 
                     /**
                      * 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cWPScan;
                     bool m_cWPScanHasBeenSet;
 
                     /**
                      * 1支持虚拟补丁，0或空不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cFWPatch;
                     bool m_cFWPatchHasBeenSet;
 
                     /**
                      * 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_wafPatch;
                     bool m_wafPatchHasBeenSet;
 
                     /**
                      * 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cWPFix;
                     bool m_cWPFixHasBeenSet;
 
                     /**
                      * 产品支持状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProductSupport> m_dataSupport;
                     bool m_dataSupportHasBeenSet;
 
                     /**
                      * cveId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cveId;
                     bool m_cveIdHasBeenSet;

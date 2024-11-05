@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 统计类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置统计类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 统计类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 统计对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置统计对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 统计对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 统计类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 统计对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

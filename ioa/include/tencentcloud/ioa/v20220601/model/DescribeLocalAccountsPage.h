@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公共分页对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 公共分页对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Paging GetPage() const;
 
                     /**
                      * 设置公共分页对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 公共分页对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const Paging& _page);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取获取账号列表响应的单个对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 获取账号列表响应的单个对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DescribeLocalAccountsData> GetItems() const;
 
                     /**
                      * 设置获取账号列表响应的单个对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _items 获取账号列表响应的单个对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItems(const std::vector<DescribeLocalAccountsData>& _items);
@@ -102,14 +94,12 @@ namespace TencentCloud
 
                     /**
                      * 公共分页对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Paging m_page;
                     bool m_pageHasBeenSet;
 
                     /**
                      * 获取账号列表响应的单个对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribeLocalAccountsData> m_items;
                     bool m_itemsHasBeenSet;

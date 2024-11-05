@@ -289,15 +289,15 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID。如果不设置该参数，则默认选择基础网络。
-                     * @return VpcId 私有网络ID。如果不设置该参数，则默认选择基础网络。
+                     * 获取私有网络ID。请登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 查询确认正确的ID。 示例值：vpc-pxyzim13
+                     * @return VpcId 私有网络ID。请登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 查询确认正确的ID。 示例值：vpc-pxyzim13
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID。如果不设置该参数，则默认选择基础网络。
-                     * @param _vpcId 私有网络ID。如果不设置该参数，则默认选择基础网络。
+                     * 设置私有网络ID。请登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 查询确认正确的ID。 示例值：vpc-pxyzim13
+                     * @param _vpcId 私有网络ID。请登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 查询确认正确的ID。 示例值：vpc-pxyzim13
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -310,15 +310,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络下的子网 ID，如果配置参数 VpcId，则 SubnetId必须配置。
-                     * @return SubnetId 私有网络下的子网 ID，如果配置参数 VpcId，则 SubnetId必须配置。
+                     * 获取私有网络VPC的子网。请登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 查询子网列表确认正确的 ID。 示例值：subnet-7jbabche
+                     * @return SubnetId 私有网络VPC的子网。请登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 查询子网列表确认正确的 ID。 示例值：subnet-7jbabche
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置私有网络下的子网 ID，如果配置参数 VpcId，则 SubnetId必须配置。
-                     * @param _subnetId 私有网络下的子网 ID，如果配置参数 VpcId，则 SubnetId必须配置。
+                     * 设置私有网络VPC的子网。请登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 查询子网列表确认正确的 ID。 示例值：subnet-7jbabche
+                     * @param _subnetId 私有网络VPC的子网。请登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 查询子网列表确认正确的 ID。 示例值：subnet-7jbabche
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -797,13 +797,13 @@ namespace TencentCloud
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 私有网络ID。如果不设置该参数，则默认选择基础网络。
+                     * 私有网络ID。请登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 查询确认正确的ID。 示例值：vpc-pxyzim13
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 私有网络下的子网 ID，如果配置参数 VpcId，则 SubnetId必须配置。
+                     * 私有网络VPC的子网。请登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 查询子网列表确认正确的 ID。 示例值：subnet-7jbabche
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;

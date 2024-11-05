@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetData() const;
@@ -77,7 +75,6 @@ namespace TencentCloud
 
                     /**
                      * 结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;

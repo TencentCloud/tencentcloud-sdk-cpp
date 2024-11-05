@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取db资产详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data db资产详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DbAssetInfo GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * db资产详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DbAssetInfo m_data;
                     bool m_dataHasBeenSet;

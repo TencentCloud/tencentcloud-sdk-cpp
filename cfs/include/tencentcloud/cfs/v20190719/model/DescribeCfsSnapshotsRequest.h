@@ -133,7 +133,8 @@ namespace TencentCloud
 <br>SnapshotName - Array of String - 是否必填：否 -（过滤条件）按照快照名称过滤。
 <br>FileSystemId - Array of String - 是否必填：否 -（过滤条件）按文件系统ID过滤。
 <br>FsName - Array of String - 是否必填：否 -（过滤条件）按文件系统名过滤。
-<br>Status - Array of String - 是否必填：否 -（过滤条件）按按照快照状态过滤。(creating：表示创建中 | available：表示可用。| rollbacking：表示回滚。| rollbacking_new：表示由快照创建新文件系统中。
+<br>Status - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤
+(creating：表示创建中 | available：表示可用。| rollbacking：表示回滚。| rollbacking_new：表示由快照创建新文件系统中）
 <br>tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键进行过滤。
 <br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
                      * @return Filters 过滤条件。
@@ -141,7 +142,8 @@ namespace TencentCloud
 <br>SnapshotName - Array of String - 是否必填：否 -（过滤条件）按照快照名称过滤。
 <br>FileSystemId - Array of String - 是否必填：否 -（过滤条件）按文件系统ID过滤。
 <br>FsName - Array of String - 是否必填：否 -（过滤条件）按文件系统名过滤。
-<br>Status - Array of String - 是否必填：否 -（过滤条件）按按照快照状态过滤。(creating：表示创建中 | available：表示可用。| rollbacking：表示回滚。| rollbacking_new：表示由快照创建新文件系统中。
+<br>Status - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤
+(creating：表示创建中 | available：表示可用。| rollbacking：表示回滚。| rollbacking_new：表示由快照创建新文件系统中）
 <br>tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键进行过滤。
 <br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
                      * 
@@ -154,7 +156,8 @@ namespace TencentCloud
 <br>SnapshotName - Array of String - 是否必填：否 -（过滤条件）按照快照名称过滤。
 <br>FileSystemId - Array of String - 是否必填：否 -（过滤条件）按文件系统ID过滤。
 <br>FsName - Array of String - 是否必填：否 -（过滤条件）按文件系统名过滤。
-<br>Status - Array of String - 是否必填：否 -（过滤条件）按按照快照状态过滤。(creating：表示创建中 | available：表示可用。| rollbacking：表示回滚。| rollbacking_new：表示由快照创建新文件系统中。
+<br>Status - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤
+(creating：表示创建中 | available：表示可用。| rollbacking：表示回滚。| rollbacking_new：表示由快照创建新文件系统中）
 <br>tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键进行过滤。
 <br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
                      * @param _filters 过滤条件。
@@ -162,7 +165,8 @@ namespace TencentCloud
 <br>SnapshotName - Array of String - 是否必填：否 -（过滤条件）按照快照名称过滤。
 <br>FileSystemId - Array of String - 是否必填：否 -（过滤条件）按文件系统ID过滤。
 <br>FsName - Array of String - 是否必填：否 -（过滤条件）按文件系统名过滤。
-<br>Status - Array of String - 是否必填：否 -（过滤条件）按按照快照状态过滤。(creating：表示创建中 | available：表示可用。| rollbacking：表示回滚。| rollbacking_new：表示由快照创建新文件系统中。
+<br>Status - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤
+(creating：表示创建中 | available：表示可用。| rollbacking：表示回滚。| rollbacking_new：表示由快照创建新文件系统中）
 <br>tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键进行过滤。
 <br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
                      * 
@@ -250,7 +254,8 @@ namespace TencentCloud
 <br>SnapshotName - Array of String - 是否必填：否 -（过滤条件）按照快照名称过滤。
 <br>FileSystemId - Array of String - 是否必填：否 -（过滤条件）按文件系统ID过滤。
 <br>FsName - Array of String - 是否必填：否 -（过滤条件）按文件系统名过滤。
-<br>Status - Array of String - 是否必填：否 -（过滤条件）按按照快照状态过滤。(creating：表示创建中 | available：表示可用。| rollbacking：表示回滚。| rollbacking_new：表示由快照创建新文件系统中。
+<br>Status - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤
+(creating：表示创建中 | available：表示可用。| rollbacking：表示回滚。| rollbacking_new：表示由快照创建新文件系统中）
 <br>tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键进行过滤。
 <br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。
                      */

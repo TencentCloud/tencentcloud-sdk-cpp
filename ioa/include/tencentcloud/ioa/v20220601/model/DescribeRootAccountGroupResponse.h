@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取账号根分组响应详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 账号根分组响应详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GetAccountGroupData GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 账号根分组响应详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GetAccountGroupData m_data;
                     bool m_dataHasBeenSet;

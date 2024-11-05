@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ca/v20230228/model/CertificateIdentityUser.h>
 
 
 namespace TencentCloud
@@ -168,6 +169,27 @@ namespace TencentCloud
                      */
                     bool ApplyEmailHasBeenSet() const;
 
+                    /**
+                     * 获取证书用户身份及身份鉴别信息
+                     * @return CertificateIdentityUsers 证书用户身份及身份鉴别信息
+                     * 
+                     */
+                    std::vector<CertificateIdentityUser> GetCertificateIdentityUsers() const;
+
+                    /**
+                     * 设置证书用户身份及身份鉴别信息
+                     * @param _certificateIdentityUsers 证书用户身份及身份鉴别信息
+                     * 
+                     */
+                    void SetCertificateIdentityUsers(const std::vector<CertificateIdentityUser>& _certificateIdentityUsers);
+
+                    /**
+                     * 判断参数 CertificateIdentityUsers 是否已赋值
+                     * @return CertificateIdentityUsers 是否已赋值
+                     * 
+                     */
+                    bool CertificateIdentityUsersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +227,12 @@ namespace TencentCloud
                      */
                     std::string m_applyEmail;
                     bool m_applyEmailHasBeenSet;
+
+                    /**
+                     * 证书用户身份及身份鉴别信息
+                     */
+                    std::vector<CertificateIdentityUser> m_certificateIdentityUsers;
+                    bool m_certificateIdentityUsersHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return Id 无
+                     * 获取1的时候返回应急漏洞，2的时候返回应急漏洞列表，3的时候搭配输入CVEId字段展示该漏洞数据
+                     * @return Id 1的时候返回应急漏洞，2的时候返回应急漏洞列表，3的时候搭配输入CVEId字段展示该漏洞数据
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置无
-                     * @param _id 无
+                     * 设置1的时候返回应急漏洞，2的时候返回应急漏洞列表，3的时候搭配输入CVEId字段展示该漏洞数据
+                     * @param _id 1的时候返回应急漏洞，2的时候返回应急漏洞列表，3的时候搭配输入CVEId字段展示该漏洞数据
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 1的时候返回应急漏洞，2的时候返回应急漏洞列表，3的时候搭配输入CVEId字段展示该漏洞数据
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

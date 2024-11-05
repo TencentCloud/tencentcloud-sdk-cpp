@@ -74,7 +74,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/VehicleInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/DriverLicenseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/OtherInvoiceItem.h
-  include/tencentcloud/ocr/v20181119/model/TextDetection.h
+  include/tencentcloud/ocr/v20181119/model/SmartStructuralProRequest.h
   include/tencentcloud/ocr/v20181119/model/RecognizeTableOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/TextEduPaper.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceItemInfo.h
@@ -91,6 +91,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/StructuralItem.h
   include/tencentcloud/ocr/v20181119/model/OnlineTaxiItineraryInfo.h
   include/tencentcloud/ocr/v20181119/model/FlightItemInfo.h
+  include/tencentcloud/ocr/v20181119/model/TextDetection.h
   include/tencentcloud/ocr/v20181119/model/PropOwnerCertOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/FinanBillInfo.h
   include/tencentcloud/ocr/v20181119/model/TrainTicketOCRResponse.h
@@ -277,6 +278,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/CandWord.h
   include/tencentcloud/ocr/v20181119/model/RecognizeContainerOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseInfo.h
+  include/tencentcloud/ocr/v20181119/model/SmartStructuralProResponse.h
   include/tencentcloud/ocr/v20181119/model/PermitOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/InsuranceBillOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/QrcodeOCRRequest.h
@@ -374,7 +376,7 @@ set(ocr_src
   src/v20181119/model/VehicleInvoiceInfo.cpp
   src/v20181119/model/DriverLicenseOCRRequest.cpp
   src/v20181119/model/OtherInvoiceItem.cpp
-  src/v20181119/model/TextDetection.cpp
+  src/v20181119/model/SmartStructuralProRequest.cpp
   src/v20181119/model/RecognizeTableOCRResponse.cpp
   src/v20181119/model/TextEduPaper.cpp
   src/v20181119/model/VatInvoiceItemInfo.cpp
@@ -391,6 +393,7 @@ set(ocr_src
   src/v20181119/model/StructuralItem.cpp
   src/v20181119/model/OnlineTaxiItineraryInfo.cpp
   src/v20181119/model/FlightItemInfo.cpp
+  src/v20181119/model/TextDetection.cpp
   src/v20181119/model/PropOwnerCertOCRResponse.cpp
   src/v20181119/model/FinanBillInfo.cpp
   src/v20181119/model/TrainTicketOCRResponse.cpp
@@ -577,6 +580,7 @@ set(ocr_src
   src/v20181119/model/CandWord.cpp
   src/v20181119/model/RecognizeContainerOCRResponse.cpp
   src/v20181119/model/EnterpriseLicenseInfo.cpp
+  src/v20181119/model/SmartStructuralProResponse.cpp
   src/v20181119/model/PermitOCRResponse.cpp
   src/v20181119/model/InsuranceBillOCRRequest.cpp
   src/v20181119/model/QrcodeOCRRequest.cpp

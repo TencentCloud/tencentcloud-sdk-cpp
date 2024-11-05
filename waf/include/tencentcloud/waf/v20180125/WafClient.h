@@ -85,10 +85,6 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAccessIndexResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAntiFakeRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAntiFakeRulesResponse.h>
-#include <tencentcloud/waf/v20180125/model/DescribeAntiFakeUrlRequest.h>
-#include <tencentcloud/waf/v20180125/model/DescribeAntiFakeUrlResponse.h>
-#include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakRulesRequest.h>
-#include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeApiDetailRequest.h>
@@ -171,6 +167,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeProtectionModesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeRuleLimitRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeRuleLimitResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeScanIpRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeScanIpResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeSessionRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeSessionResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeSpartaProtectionInfoRequest.h>
@@ -418,12 +416,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAntiFakeRulesResponse> DescribeAntiFakeRulesOutcome;
                 typedef std::future<DescribeAntiFakeRulesOutcome> DescribeAntiFakeRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAntiFakeRulesRequest&, DescribeAntiFakeRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAntiFakeRulesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAntiFakeUrlResponse> DescribeAntiFakeUrlOutcome;
-                typedef std::future<DescribeAntiFakeUrlOutcome> DescribeAntiFakeUrlOutcomeCallable;
-                typedef std::function<void(const WafClient*, const Model::DescribeAntiFakeUrlRequest&, DescribeAntiFakeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAntiFakeUrlAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAntiInfoLeakRulesResponse> DescribeAntiInfoLeakRulesOutcome;
-                typedef std::future<DescribeAntiInfoLeakRulesOutcome> DescribeAntiInfoLeakRulesOutcomeCallable;
-                typedef std::function<void(const WafClient*, const Model::DescribeAntiInfoLeakRulesRequest&, DescribeAntiInfoLeakRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAntiInfoLeakRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAntiInfoLeakageRulesResponse> DescribeAntiInfoLeakageRulesOutcome;
                 typedef std::future<DescribeAntiInfoLeakageRulesOutcome> DescribeAntiInfoLeakageRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAntiInfoLeakageRulesRequest&, DescribeAntiInfoLeakageRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAntiInfoLeakageRulesAsyncHandler;
@@ -547,6 +539,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRuleLimitResponse> DescribeRuleLimitOutcome;
                 typedef std::future<DescribeRuleLimitOutcome> DescribeRuleLimitOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeRuleLimitRequest&, DescribeRuleLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleLimitAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScanIpResponse> DescribeScanIpOutcome;
+                typedef std::future<DescribeScanIpOutcome> DescribeScanIpOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeScanIpRequest&, DescribeScanIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanIpAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSessionResponse> DescribeSessionOutcome;
                 typedef std::future<DescribeSessionOutcome> DescribeSessionOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeSessionRequest&, DescribeSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSessionAsyncHandler;
@@ -1040,28 +1035,6 @@ namespace TencentCloud
                 DescribeAntiFakeRulesOutcomeCallable DescribeAntiFakeRulesCallable(const Model::DescribeAntiFakeRulesRequest& request);
 
                 /**
-                 *废弃接口
-
-获取防篡改url
-                 * @param req DescribeAntiFakeUrlRequest
-                 * @return DescribeAntiFakeUrlOutcome
-                 */
-                DescribeAntiFakeUrlOutcome DescribeAntiFakeUrl(const Model::DescribeAntiFakeUrlRequest &request);
-                void DescribeAntiFakeUrlAsync(const Model::DescribeAntiFakeUrlRequest& request, const DescribeAntiFakeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAntiFakeUrlOutcomeCallable DescribeAntiFakeUrlCallable(const Model::DescribeAntiFakeUrlRequest& request);
-
-                /**
-                 *老接口已经不再使用。
-
-获取信息防泄漏规则列表
-                 * @param req DescribeAntiInfoLeakRulesRequest
-                 * @return DescribeAntiInfoLeakRulesOutcome
-                 */
-                DescribeAntiInfoLeakRulesOutcome DescribeAntiInfoLeakRules(const Model::DescribeAntiInfoLeakRulesRequest &request);
-                void DescribeAntiInfoLeakRulesAsync(const Model::DescribeAntiInfoLeakRulesRequest& request, const DescribeAntiInfoLeakRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAntiInfoLeakRulesOutcomeCallable DescribeAntiInfoLeakRulesCallable(const Model::DescribeAntiInfoLeakRulesRequest& request);
-
-                /**
                  *取得信息防泄漏规则列表
                  * @param req DescribeAntiInfoLeakageRulesRequest
                  * @return DescribeAntiInfoLeakageRulesOutcome
@@ -1429,6 +1402,15 @@ namespace TencentCloud
                 DescribeRuleLimitOutcome DescribeRuleLimit(const Model::DescribeRuleLimitRequest &request);
                 void DescribeRuleLimitAsync(const Model::DescribeRuleLimitRequest& request, const DescribeRuleLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRuleLimitOutcomeCallable DescribeRuleLimitCallable(const Model::DescribeRuleLimitRequest& request);
+
+                /**
+                 *查询扫描ip
+                 * @param req DescribeScanIpRequest
+                 * @return DescribeScanIpOutcome
+                 */
+                DescribeScanIpOutcome DescribeScanIp(const Model::DescribeScanIpRequest &request);
+                void DescribeScanIpAsync(const Model::DescribeScanIpRequest& request, const DescribeScanIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScanIpOutcomeCallable DescribeScanIpCallable(const Model::DescribeScanIpRequest& request);
 
                 /**
                  *Waf 会话定义查询接口

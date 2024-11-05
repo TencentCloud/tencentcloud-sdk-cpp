@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云防状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CFWStatus 云防状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCFWStatus() const;
 
                     /**
                      * 设置云防状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cFWStatus 云防状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCFWStatus(const uint64_t& _cFWStatus);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetId 资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetId() const;
 
                     /**
                      * 设置资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetId 资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetId(const std::string& _assetId);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcName vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcName vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetType 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetType() const;
 
                     /**
                      * 设置资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetType 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetType(const std::string& _assetType);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIp 公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
                      * 设置公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicIp 公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIp 私网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
                      * 设置私网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privateIp 私网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetName 资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetName() const;
 
                     /**
                      * 设置资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetName 资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetName(const std::string& _assetName);
@@ -274,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云防保护版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CFWProtectLevel 云防保护版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCFWProtectLevel() const;
 
                     /**
                      * 设置云防保护版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cFWProtectLevel 云防保护版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCFWProtectLevel(const uint64_t& _cFWProtectLevel);
@@ -299,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取tag信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag tag信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTag() const;
 
                     /**
                      * 设置tag信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag tag信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::vector<Tag>& _tag);
@@ -326,77 +282,66 @@ namespace TencentCloud
 
                     /**
                      * 云防状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cFWStatus;
                     bool m_cFWStatusHasBeenSet;
 
                     /**
                      * 资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetId;
                     bool m_assetIdHasBeenSet;
 
                     /**
                      * vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
                      * 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetType;
                     bool m_assetTypeHasBeenSet;
 
                     /**
                      * 公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
 
                     /**
                      * 私网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_privateIp;
                     bool m_privateIpHasBeenSet;
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetName;
                     bool m_assetNameHasBeenSet;
 
                     /**
                      * 云防保护版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cFWProtectLevel;
                     bool m_cFWProtectLevelHasBeenSet;
 
                     /**
                      * tag信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tag;
                     bool m_tagHasBeenSet;

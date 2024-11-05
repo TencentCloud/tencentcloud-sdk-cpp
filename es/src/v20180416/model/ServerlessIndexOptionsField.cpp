@@ -23,7 +23,8 @@ using namespace std;
 ServerlessIndexOptionsField::ServerlessIndexOptionsField() :
     m_expireMaxAgeHasBeenSet(false),
     m_timestampFieldHasBeenSet(false),
-    m_sinkCycleAgeHasBeenSet(false)
+    m_sinkCycleAgeHasBeenSet(false),
+    m_standardStorageAgeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ServerlessIndexOptionsField::Deserialize(const rapidjson::Va
         m_sinkCycleAgeHasBeenSet = true;
     }
 
+    if (value.HasMember("StandardStorageAge") && !value["StandardStorageAge"].IsNull())
+    {
+        if (!value["StandardStorageAge"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerlessIndexOptionsField.StandardStorageAge` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_standardStorageAge = string(value["StandardStorageAge"].GetString());
+        m_standardStorageAgeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ServerlessIndexOptionsField::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "SinkCycleAge";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sinkCycleAge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_standardStorageAgeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StandardStorageAge";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_standardStorageAge.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ServerlessIndexOptionsField::SetSinkCycleAge(const string& _sinkCycleAge)
 bool ServerlessIndexOptionsField::SinkCycleAgeHasBeenSet() const
 {
     return m_sinkCycleAgeHasBeenSet;
+}
+
+string ServerlessIndexOptionsField::GetStandardStorageAge() const
+{
+    return m_standardStorageAge;
+}
+
+void ServerlessIndexOptionsField::SetStandardStorageAge(const string& _standardStorageAge)
+{
+    m_standardStorageAge = _standardStorageAge;
+    m_standardStorageAgeHasBeenSet = true;
+}
+
+bool ServerlessIndexOptionsField::StandardStorageAgeHasBeenSet() const
+{
+    return m_standardStorageAgeHasBeenSet;
 }
 

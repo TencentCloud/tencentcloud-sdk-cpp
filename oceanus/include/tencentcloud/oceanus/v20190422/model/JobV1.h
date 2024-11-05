@@ -898,6 +898,85 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScalingType 0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetScalingType() const;
+
+                    /**
+                     * 设置0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scalingType 0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScalingType(const int64_t& _scalingType);
+
+                    /**
+                     * 判断参数 ScalingType 是否已赋值
+                     * @return ScalingType 是否已赋值
+                     * 
+                     */
+                    bool ScalingTypeHasBeenSet() const;
+
+                    /**
+                     * 获取使用CPU数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RunningCpu 使用CPU数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetRunningCpu() const;
+
+                    /**
+                     * 设置使用CPU数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _runningCpu 使用CPU数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRunningCpu(const double& _runningCpu);
+
+                    /**
+                     * 判断参数 RunningCpu 是否已赋值
+                     * @return RunningCpu 是否已赋值
+                     * 
+                     */
+                    bool RunningCpuHasBeenSet() const;
+
+                    /**
+                     * 获取使用内存数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RunningMem 使用内存数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetRunningMem() const;
+
+                    /**
+                     * 设置使用内存数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _runningMem 使用内存数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRunningMem(const double& _runningMem);
+
+                    /**
+                     * 判断参数 RunningMem 是否已赋值
+                     * @return RunningMem 是否已赋值
+                     * 
+                     */
+                    bool RunningMemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1137,6 +1216,28 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_scalingType;
+                    bool m_scalingTypeHasBeenSet;
+
+                    /**
+                     * 使用CPU数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_runningCpu;
+                    bool m_runningCpuHasBeenSet;
+
+                    /**
+                     * 使用内存数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_runningMem;
+                    bool m_runningMemHasBeenSet;
 
                 };
             }

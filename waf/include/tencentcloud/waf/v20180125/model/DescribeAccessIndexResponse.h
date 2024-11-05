@@ -61,9 +61,7 @@ namespace TencentCloud
                     /**
                      * 获取索引配置信息
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rule 索引配置信息
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 索引配置信息
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AccessRuleInfo m_rule;

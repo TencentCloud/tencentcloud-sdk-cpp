@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取终端自定义分组名
-                     * @return DeviceVirtualGroupName 终端自定义分组名
+                     * 获取必填，终端自定义分组名
+                     * @return DeviceVirtualGroupName 必填，终端自定义分组名
                      * 
                      */
                     std::string GetDeviceVirtualGroupName() const;
 
                     /**
-                     * 设置终端自定义分组名
-                     * @param _deviceVirtualGroupName 终端自定义分组名
+                     * 设置必填，终端自定义分组名
+                     * @param _deviceVirtualGroupName 必填，终端自定义分组名
                      * 
                      */
                     void SetDeviceVirtualGroupName(const std::string& _deviceVirtualGroupName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）(只支持32位)
-                     * @return OsType 系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）(只支持32位)
+                     * 获取必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios ）(只支持32位)
+                     * @return OsType 必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios ）(只支持32位)
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）(只支持32位)
-                     * @param _osType 系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）(只支持32位)
+                     * 设置必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios ）(只支持32位)
+                     * @param _osType 必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios ）(只支持32位)
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OsTypeHasBeenSet() const;
 
                     /**
-                     * 获取时间设置类型（1:自动小时、2:自动每天、3:自定义、0:手动分组）(只支持32位)
-                     * @return TimeType 时间设置类型（1:自动小时、2:自动每天、3:自定义、0:手动分组）(只支持32位)
+                     * 获取必填，分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组）(只支持32位)
+                     * @return TimeType 必填，分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组）(只支持32位)
                      * 
                      */
                     int64_t GetTimeType() const;
 
                     /**
-                     * 设置时间设置类型（1:自动小时、2:自动每天、3:自定义、0:手动分组）(只支持32位)
-                     * @param _timeType 时间设置类型（1:自动小时、2:自动每天、3:自定义、0:手动分组）(只支持32位)
+                     * 设置必填，分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组）(只支持32位)
+                     * @param _timeType 必填，分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组）(只支持32位)
                      * 
                      */
                     void SetTimeType(const int64_t& _timeType);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool TimeTypeHasBeenSet() const;
 
                     /**
-                     * 获取自动划分时间（单位min）(只支持32位)
-                     * @return AutoMinute 自动划分时间（单位min）(只支持32位)
+                     * 获取选填，TimeType=3时的自动划分时间，其他情况为0（单位min）(只支持32位)
+                     * @return AutoMinute 选填，TimeType=3时的自动划分时间，其他情况为0（单位min）(只支持32位)
                      * 
                      */
                     int64_t GetAutoMinute() const;
 
                     /**
-                     * 设置自动划分时间（单位min）(只支持32位)
-                     * @param _autoMinute 自动划分时间（单位min）(只支持32位)
+                     * 设置选填，TimeType=3时的自动划分时间，其他情况为0（单位min）(只支持32位)
+                     * @param _autoMinute 选填，TimeType=3时的自动划分时间，其他情况为0（单位min）(只支持32位)
                      * 
                      */
                     void SetAutoMinute(const int64_t& _autoMinute);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool AutoMinuteHasBeenSet() const;
 
                     /**
-                     * 获取自动划分规则数据
-                     * @return AutoRules 自动划分规则数据
+                     * 获取选填，手动分组不填，自动划分分组的划分规则数据
+                     * @return AutoRules 选填，手动分组不填，自动划分分组的划分规则数据
                      * 
                      */
                     ComplexRule GetAutoRules() const;
 
                     /**
-                     * 设置自动划分规则数据
-                     * @param _autoRules 自动划分规则数据
+                     * 设置选填，手动分组不填，自动划分分组的划分规则数据
+                     * @param _autoRules 选填，手动分组不填，自动划分分组的划分规则数据
                      * 
                      */
                     void SetAutoRules(const ComplexRule& _autoRules);
@@ -172,7 +172,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 终端自定义分组名
+                     * 必填，终端自定义分组名
                      */
                     std::string m_deviceVirtualGroupName;
                     bool m_deviceVirtualGroupNameHasBeenSet;
@@ -184,25 +184,25 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）(只支持32位)
+                     * 必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios ）(只支持32位)
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;
 
                     /**
-                     * 时间设置类型（1:自动小时、2:自动每天、3:自定义、0:手动分组）(只支持32位)
+                     * 必填，分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组）(只支持32位)
                      */
                     int64_t m_timeType;
                     bool m_timeTypeHasBeenSet;
 
                     /**
-                     * 自动划分时间（单位min）(只支持32位)
+                     * 选填，TimeType=3时的自动划分时间，其他情况为0（单位min）(只支持32位)
                      */
                     int64_t m_autoMinute;
                     bool m_autoMinuteHasBeenSet;
 
                     /**
-                     * 自动划分规则数据
+                     * 选填，手动分组不填，自动划分分组的划分规则数据
                      */
                     ComplexRule m_autoRules;
                     bool m_autoRulesHasBeenSet;

@@ -59,18 +59,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetId 资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetId() const;
 
                     /**
                      * 设置资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetId 资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetId(const std::string& _assetId);
@@ -84,18 +80,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetName 资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetName() const;
 
                     /**
                      * 设置资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetName 资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetName(const std::string& _assetName);
@@ -109,18 +101,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetType 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetType() const;
 
                     /**
                      * 设置资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetType 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetType(const std::string& _assetType);
@@ -134,18 +122,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -159,18 +143,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CWPStatus 防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCWPStatus() const;
 
                     /**
                      * 设置防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cWPStatus 防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCWPStatus(const uint64_t& _cWPStatus);
@@ -184,18 +164,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetCreateTime 资产创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetCreateTime() const;
 
                     /**
                      * 设置资产创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetCreateTime 资产创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetCreateTime(const std::string& _assetCreateTime);
@@ -209,18 +185,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIp 公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
                      * 设置公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicIp 公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
@@ -234,18 +206,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIp 私网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
                      * 设置私网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privateIp 私网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
@@ -259,18 +227,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -284,18 +248,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc 名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcName vpc 名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置vpc 名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcName vpc 名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -309,18 +269,14 @@ namespace TencentCloud
 
                     /**
                      * 获取appid信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId appid信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
                      * 设置appid信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId appid信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -334,18 +290,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -359,18 +311,14 @@ namespace TencentCloud
 
                     /**
                      * 获取昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NickName 昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNickName() const;
 
                     /**
                      * 设置昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nickName 昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNickName(const std::string& _nickName);
@@ -384,18 +332,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailableArea 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAvailableArea() const;
 
                     /**
                      * 设置可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _availableArea 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAvailableArea(const std::string& _availableArea);
@@ -409,18 +353,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCore 是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsCore() const;
 
                     /**
                      * 设置是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCore 是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCore(const uint64_t& _isCore);
@@ -434,18 +374,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -459,18 +395,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetName 子网名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
                      * 设置子网名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetName 子网名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
@@ -484,18 +416,14 @@ namespace TencentCloud
 
                     /**
                      * 获取uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceUuid uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceUuid() const;
 
                     /**
                      * 设置uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceUuid uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceUuid(const std::string& _instanceUuid);
@@ -509,18 +437,14 @@ namespace TencentCloud
 
                     /**
                      * 获取qquid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceQUuid qquid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceQUuid() const;
 
                     /**
                      * 设置qquid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceQUuid qquid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceQUuid(const std::string& _instanceQUuid);
@@ -534,18 +458,14 @@ namespace TencentCloud
 
                     /**
                      * 获取os名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OsName os名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOsName() const;
 
                     /**
                      * 设置os名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _osName os名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOsName(const std::string& _osName);
@@ -559,18 +479,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartitionCount 分区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPartitionCount() const;
 
                     /**
                      * 设置分区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partitionCount 分区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPartitionCount(const uint64_t& _partitionCount);
@@ -584,18 +500,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cpu信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CPUInfo cpu信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCPUInfo() const;
 
                     /**
                      * 设置cpu信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cPUInfo cpu信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCPUInfo(const std::string& _cPUInfo);
@@ -609,18 +521,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cpu大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CPUSize cpu大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCPUSize() const;
 
                     /**
                      * 设置cpu大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cPUSize cpu大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCPUSize(const uint64_t& _cPUSize);
@@ -634,18 +542,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cpu负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CPULoad cpu负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCPULoad() const;
 
                     /**
                      * 设置cpu负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cPULoad cpu负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCPULoad(const std::string& _cPULoad);
@@ -659,18 +563,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内存大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemorySize 内存大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMemorySize() const;
 
                     /**
                      * 设置内存大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memorySize 内存大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemorySize(const std::string& _memorySize);
@@ -684,18 +584,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内存负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemoryLoad 内存负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMemoryLoad() const;
 
                     /**
                      * 设置内存负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memoryLoad 内存负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemoryLoad(const std::string& _memoryLoad);
@@ -709,18 +605,14 @@ namespace TencentCloud
 
                     /**
                      * 获取硬盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskSize 硬盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskSize() const;
 
                     /**
                      * 设置硬盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskSize 硬盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskSize(const std::string& _diskSize);
@@ -734,18 +626,14 @@ namespace TencentCloud
 
                     /**
                      * 获取硬盘负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskLoad 硬盘负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskLoad() const;
 
                     /**
                      * 设置硬盘负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskLoad 硬盘负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskLoad(const std::string& _diskLoad);
@@ -759,18 +647,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountCount 账号数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountCount() const;
 
                     /**
                      * 设置账号数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountCount 账号数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountCount(const std::string& _accountCount);
@@ -784,18 +668,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessCount 进程数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProcessCount() const;
 
                     /**
                      * 设置进程数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _processCount 进程数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProcessCount(const std::string& _processCount);
@@ -809,18 +689,14 @@ namespace TencentCloud
 
                     /**
                      * 获取软件应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppCount 软件应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppCount() const;
 
                     /**
                      * 设置软件应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appCount 软件应用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppCount(const std::string& _appCount);
@@ -834,18 +710,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PortCount 监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPortCount() const;
 
                     /**
                      * 设置监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _portCount 监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPortCount(const uint64_t& _portCount);
@@ -859,18 +731,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Attack 网络攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAttack() const;
 
                     /**
                      * 设置网络攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attack 网络攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttack(const uint64_t& _attack);
@@ -884,18 +752,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Access 网络访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAccess() const;
 
                     /**
                      * 设置网络访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _access 网络访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccess(const uint64_t& _access);
@@ -909,18 +773,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络拦截
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Intercept 网络拦截
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIntercept() const;
 
                     /**
                      * 设置网络拦截
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _intercept 网络拦截
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIntercept(const uint64_t& _intercept);
@@ -934,18 +794,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入向峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InBandwidth 入向峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInBandwidth() const;
 
                     /**
                      * 设置入向峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inBandwidth 入向峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInBandwidth(const std::string& _inBandwidth);
@@ -959,18 +815,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出向峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutBandwidth 出向峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutBandwidth() const;
 
                     /**
                      * 设置出向峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outBandwidth 出向峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutBandwidth(const std::string& _outBandwidth);
@@ -984,18 +836,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入向累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InFlow 入向累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInFlow() const;
 
                     /**
                      * 设置入向累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inFlow 入向累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInFlow(const std::string& _inFlow);
@@ -1009,18 +857,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出向累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutFlow 出向累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutFlow() const;
 
                     /**
                      * 设置出向累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outFlow 出向累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutFlow(const std::string& _outFlow);
@@ -1034,18 +878,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastScanTime 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastScanTime() const;
 
                     /**
                      * 设置最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastScanTime 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastScanTime(const std::string& _lastScanTime);
@@ -1059,18 +899,14 @@ namespace TencentCloud
 
                     /**
                      * 获取恶意主动外联
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetWorkOut 恶意主动外联
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNetWorkOut() const;
 
                     /**
                      * 设置恶意主动外联
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netWorkOut 恶意主动外联
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetWorkOut(const uint64_t& _netWorkOut);
@@ -1084,18 +920,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PortRisk 端口风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPortRisk() const;
 
                     /**
                      * 设置端口风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _portRisk 端口风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPortRisk(const uint64_t& _portRisk);
@@ -1109,18 +941,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulnerabilityRisk 漏洞风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVulnerabilityRisk() const;
 
                     /**
                      * 设置漏洞风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulnerabilityRisk 漏洞风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulnerabilityRisk(const uint64_t& _vulnerabilityRisk);
@@ -1134,18 +962,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigurationRisk 配置风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetConfigurationRisk() const;
 
                     /**
                      * 设置配置风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configurationRisk 配置风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigurationRisk(const uint64_t& _configurationRisk);
@@ -1159,18 +983,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanTask 扫描任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScanTask() const;
 
                     /**
                      * 设置扫描任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanTask 扫描任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanTask(const uint64_t& _scanTask);
@@ -1184,18 +1004,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTag() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::vector<Tag>& _tag);
@@ -1209,18 +1025,14 @@ namespace TencentCloud
 
                     /**
                      * 获取memberId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberId memberId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMemberId() const;
 
                     /**
                      * 设置memberId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memberId memberId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemberId(const std::string& _memberId);
@@ -1234,18 +1046,14 @@ namespace TencentCloud
 
                     /**
                      * 获取os全称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Os os全称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOs() const;
 
                     /**
                      * 设置os全称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _os os全称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOs(const std::string& _os);
@@ -1259,18 +1067,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险服务暴露
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskExposure 风险服务暴露
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRiskExposure() const;
 
                     /**
                      * 设置风险服务暴露
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskExposure 风险服务暴露
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskExposure(const int64_t& _riskExposure);
@@ -1284,18 +1088,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模拟攻击工具状态。0代表未安装，1代表已安装，2代表已离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BASAgentStatus 模拟攻击工具状态。0代表未安装，1代表已安装，2代表已离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBASAgentStatus() const;
 
                     /**
                      * 设置模拟攻击工具状态。0代表未安装，1代表已安装，2代表已离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bASAgentStatus 模拟攻击工具状态。0代表未安装，1代表已安装，2代表已离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBASAgentStatus(const int64_t& _bASAgentStatus);
@@ -1309,18 +1109,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1新资产；0 非新资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsNewAsset 1新资产；0 非新资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsNewAsset() const;
 
                     /**
                      * 设置1新资产；0 非新资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isNewAsset 1新资产；0 非新资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsNewAsset(const uint64_t& _isNewAsset);
@@ -1334,18 +1130,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0 未安装  1安装 2:安装中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CVMAgentStatus 0 未安装  1安装 2:安装中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCVMAgentStatus() const;
 
                     /**
                      * 设置0 未安装  1安装 2:安装中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cVMAgentStatus 0 未安装  1安装 2:安装中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCVMAgentStatus(const int64_t& _cVMAgentStatus);
@@ -1359,18 +1151,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1:开启 0:未开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CVMStatus 1:开启 0:未开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCVMStatus() const;
 
                     /**
                      * 设置1:开启 0:未开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cVMStatus 1:开启 0:未开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCVMStatus(const int64_t& _cVMStatus);
@@ -1384,18 +1172,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1:客户端已安装 0：未安装 2: Agentless
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefenseModel 1:客户端已安装 0：未安装 2: Agentless
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDefenseModel() const;
 
                     /**
                      * 设置1:客户端已安装 0：未安装 2: Agentless
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defenseModel 1:客户端已安装 0：未安装 2: Agentless
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefenseModel(const int64_t& _defenseModel);
@@ -1409,18 +1193,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1:已安装 0:未安装
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TatStatus 1:已安装 0:未安装
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTatStatus() const;
 
                     /**
                      * 设置1:已安装 0:未安装
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tatStatus 1:已安装 0:未安装
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTatStatus(const int64_t& _tatStatus);
@@ -1434,18 +1214,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cpu趋势图
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuTrend cpu趋势图
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Element> GetCpuTrend() const;
 
                     /**
                      * 设置cpu趋势图
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuTrend cpu趋势图
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuTrend(const std::vector<Element>& _cpuTrend);
@@ -1459,18 +1235,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内存趋势图
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemoryTrend 内存趋势图
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Element> GetMemoryTrend() const;
 
                     /**
                      * 设置内存趋势图
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memoryTrend 内存趋势图
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemoryTrend(const std::vector<Element>& _memoryTrend);
@@ -1484,18 +1256,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1:agent在线 0:agent离线 2:主机离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AgentStatus 1:agent在线 0:agent离线 2:主机离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAgentStatus() const;
 
                     /**
                      * 设置1:agent在线 0:agent离线 2:主机离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _agentStatus 1:agent在线 0:agent离线 2:主机离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAgentStatus(const int64_t& _agentStatus);
@@ -1509,18 +1277,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本月防护关闭次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloseDefenseCount 本月防护关闭次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCloseDefenseCount() const;
 
                     /**
                      * 设置本月防护关闭次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _closeDefenseCount 本月防护关闭次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloseDefenseCount(const int64_t& _closeDefenseCount);
@@ -1534,18 +1298,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceState 运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceState() const;
 
                     /**
                      * 设置运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceState 运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceState(const std::string& _instanceState);
@@ -1559,18 +1319,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroupIds 安全组数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置安全组数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityGroupIds 安全组数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -1584,18 +1340,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理内存占用KB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AgentMemRss 物理内存占用KB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAgentMemRss() const;
 
                     /**
                      * 设置物理内存占用KB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _agentMemRss 物理内存占用KB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAgentMemRss(const int64_t& _agentMemRss);
@@ -1609,18 +1361,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CPU使用率百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AgentCpuPer CPU使用率百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetAgentCpuPer() const;
 
                     /**
                      * 设置CPU使用率百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _agentCpuPer CPU使用率百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAgentCpuPer(const double& _agentCpuPer);
@@ -1634,18 +1382,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cvm真正所属的appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealAppid cvm真正所属的appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRealAppid() const;
 
                     /**
                      * 设置cvm真正所属的appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realAppid cvm真正所属的appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealAppid(const int64_t& _realAppid);
@@ -1659,18 +1403,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云资产类型：0：腾讯云，1：aws，2：azure
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudType 云资产类型：0：腾讯云，1：aws，2：azure
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCloudType() const;
 
                     /**
                      * 设置云资产类型：0：腾讯云，1：aws，2：azure
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudType 云资产类型：0：腾讯云，1：aws，2：azure
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudType(const int64_t& _cloudType);
@@ -1691,7 +1431,6 @@ namespace TencentCloud
 4：旗舰版防护中
 5：已离线
 6：已关机
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtectStatus 主机防护状态枚举
 0：未安装
 1：基础版防护中
@@ -1700,7 +1439,6 @@ namespace TencentCloud
 4：旗舰版防护中
 5：已离线
 6：已关机
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProtectStatus() const;
@@ -1714,7 +1452,6 @@ namespace TencentCloud
 4：旗舰版防护中
 5：已离线
 6：已关机
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protectStatus 主机防护状态枚举
 0：未安装
 1：基础版防护中
@@ -1723,7 +1460,6 @@ namespace TencentCloud
 4：旗舰版防护中
 5：已离线
 6：已关机
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtectStatus(const int64_t& _protectStatus);
@@ -1737,18 +1473,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后离线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OfflineTime 最后离线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOfflineTime() const;
 
                     /**
                      * 设置最后离线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offlineTime 最后离线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOfflineTime(const std::string& _offlineTime);
@@ -1764,455 +1496,390 @@ namespace TencentCloud
 
                     /**
                      * 资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetId;
                     bool m_assetIdHasBeenSet;
 
                     /**
                      * 资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetName;
                     bool m_assetNameHasBeenSet;
 
                     /**
                      * 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetType;
                     bool m_assetTypeHasBeenSet;
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 防护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cWPStatus;
                     bool m_cWPStatusHasBeenSet;
 
                     /**
                      * 资产创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetCreateTime;
                     bool m_assetCreateTimeHasBeenSet;
 
                     /**
                      * 公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
 
                     /**
                      * 私网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_privateIp;
                     bool m_privateIpHasBeenSet;
 
                     /**
                      * vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * vpc 名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
                      * appid信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
 
                     /**
                      * 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_availableArea;
                     bool m_availableAreaHasBeenSet;
 
                     /**
                      * 是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isCore;
                     bool m_isCoreHasBeenSet;
 
                     /**
                      * 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 子网名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
 
                     /**
                      * uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceUuid;
                     bool m_instanceUuidHasBeenSet;
 
                     /**
                      * qquid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceQUuid;
                     bool m_instanceQUuidHasBeenSet;
 
                     /**
                      * os名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_osName;
                     bool m_osNameHasBeenSet;
 
                     /**
                      * 分区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_partitionCount;
                     bool m_partitionCountHasBeenSet;
 
                     /**
                      * cpu信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cPUInfo;
                     bool m_cPUInfoHasBeenSet;
 
                     /**
                      * cpu大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cPUSize;
                     bool m_cPUSizeHasBeenSet;
 
                     /**
                      * cpu负载
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cPULoad;
                     bool m_cPULoadHasBeenSet;
 
                     /**
                      * 内存大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_memorySize;
                     bool m_memorySizeHasBeenSet;
 
                     /**
                      * 内存负载
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_memoryLoad;
                     bool m_memoryLoadHasBeenSet;
 
                     /**
                      * 硬盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
                      * 硬盘负载
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskLoad;
                     bool m_diskLoadHasBeenSet;
 
                     /**
                      * 账号数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountCount;
                     bool m_accountCountHasBeenSet;
 
                     /**
                      * 进程数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_processCount;
                     bool m_processCountHasBeenSet;
 
                     /**
                      * 软件应用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appCount;
                     bool m_appCountHasBeenSet;
 
                     /**
                      * 监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_portCount;
                     bool m_portCountHasBeenSet;
 
                     /**
                      * 网络攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_attack;
                     bool m_attackHasBeenSet;
 
                     /**
                      * 网络访问
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_access;
                     bool m_accessHasBeenSet;
 
                     /**
                      * 网络拦截
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_intercept;
                     bool m_interceptHasBeenSet;
 
                     /**
                      * 入向峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inBandwidth;
                     bool m_inBandwidthHasBeenSet;
 
                     /**
                      * 出向峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outBandwidth;
                     bool m_outBandwidthHasBeenSet;
 
                     /**
                      * 入向累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inFlow;
                     bool m_inFlowHasBeenSet;
 
                     /**
                      * 出向累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outFlow;
                     bool m_outFlowHasBeenSet;
 
                     /**
                      * 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastScanTime;
                     bool m_lastScanTimeHasBeenSet;
 
                     /**
                      * 恶意主动外联
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_netWorkOut;
                     bool m_netWorkOutHasBeenSet;
 
                     /**
                      * 端口风险
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_portRisk;
                     bool m_portRiskHasBeenSet;
 
                     /**
                      * 漏洞风险
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vulnerabilityRisk;
                     bool m_vulnerabilityRiskHasBeenSet;
 
                     /**
                      * 配置风险
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_configurationRisk;
                     bool m_configurationRiskHasBeenSet;
 
                     /**
                      * 扫描任务数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scanTask;
                     bool m_scanTaskHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
                      * memberId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_memberId;
                     bool m_memberIdHasBeenSet;
 
                     /**
                      * os全称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_os;
                     bool m_osHasBeenSet;
 
                     /**
                      * 风险服务暴露
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_riskExposure;
                     bool m_riskExposureHasBeenSet;
 
                     /**
                      * 模拟攻击工具状态。0代表未安装，1代表已安装，2代表已离线
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bASAgentStatus;
                     bool m_bASAgentStatusHasBeenSet;
 
                     /**
                      * 1新资产；0 非新资产
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isNewAsset;
                     bool m_isNewAssetHasBeenSet;
 
                     /**
                      * 0 未安装  1安装 2:安装中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cVMAgentStatus;
                     bool m_cVMAgentStatusHasBeenSet;
 
                     /**
                      * 1:开启 0:未开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cVMStatus;
                     bool m_cVMStatusHasBeenSet;
 
                     /**
                      * 1:客户端已安装 0：未安装 2: Agentless
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_defenseModel;
                     bool m_defenseModelHasBeenSet;
 
                     /**
                      * 1:已安装 0:未安装
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tatStatus;
                     bool m_tatStatusHasBeenSet;
 
                     /**
                      * cpu趋势图
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Element> m_cpuTrend;
                     bool m_cpuTrendHasBeenSet;
 
                     /**
                      * 内存趋势图
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Element> m_memoryTrend;
                     bool m_memoryTrendHasBeenSet;
 
                     /**
                      * 1:agent在线 0:agent离线 2:主机离线
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_agentStatus;
                     bool m_agentStatusHasBeenSet;
 
                     /**
                      * 本月防护关闭次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_closeDefenseCount;
                     bool m_closeDefenseCountHasBeenSet;
 
                     /**
                      * 运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceState;
                     bool m_instanceStateHasBeenSet;
 
                     /**
                      * 安全组数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
                      * 物理内存占用KB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_agentMemRss;
                     bool m_agentMemRssHasBeenSet;
 
                     /**
                      * CPU使用率百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_agentCpuPer;
                     bool m_agentCpuPerHasBeenSet;
 
                     /**
                      * cvm真正所属的appid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_realAppid;
                     bool m_realAppidHasBeenSet;
 
                     /**
                      * 云资产类型：0：腾讯云，1：aws，2：azure
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cloudType;
                     bool m_cloudTypeHasBeenSet;
@@ -2226,14 +1893,12 @@ namespace TencentCloud
 4：旗舰版防护中
 5：已离线
 6：已关机
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_protectStatus;
                     bool m_protectStatusHasBeenSet;
 
                     /**
                      * 最后离线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取CMK列表数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keys CMK列表数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Key> GetKeys() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * CMK列表数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Key> m_keys;
                     bool m_keysHasBeenSet;

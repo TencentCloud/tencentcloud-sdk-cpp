@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ConsumerGroupHasBeenSet() const;
 
                     /**
-                     * 获取消费组名称。
-                     * @return ConsumerName 消费组名称。
+                     * 获取消费者名称。
+                     * @return ConsumerName 消费者名称。
                      * 
                      */
                     std::string GetConsumerName() const;
 
                     /**
-                     * 设置消费组名称。
-                     * @param _consumerName 消费组名称。
+                     * 设置消费者名称。
+                     * @param _consumerName 消费者名称。
                      * 
                      */
                     void SetConsumerName(const std::string& _consumerName);
@@ -208,7 +208,7 @@ namespace TencentCloud
                     bool m_consumerGroupHasBeenSet;
 
                     /**
-                     * 消费组名称。
+                     * 消费者名称。
                      */
                     std::string m_consumerName;
                     bool m_consumerNameHasBeenSet;

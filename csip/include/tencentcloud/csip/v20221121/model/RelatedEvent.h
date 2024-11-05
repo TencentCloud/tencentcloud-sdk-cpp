@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventID 事件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventID() const;
 
                     /**
                      * 设置事件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventID 事件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventID(const std::string& _eventID);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取与事件关联的告警数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelatedCount 与事件关联的告警数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRelatedCount() const;
 
                     /**
                      * 设置与事件关联的告警数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _relatedCount 与事件关联的告警数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRelatedCount(const int64_t& _relatedCount);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 事件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventID;
                     bool m_eventIDHasBeenSet;
 
                     /**
                      * 事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 与事件关联的告警数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_relatedCount;
                     bool m_relatedCountHasBeenSet;

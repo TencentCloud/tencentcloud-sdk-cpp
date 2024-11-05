@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_INITDBINSTANCESRESPONSE_H_
-#define TENCENTCLOUD_CDB_V20170320_MODEL_INITDBINSTANCESRESPONSE_H_
+#ifndef TENCENTCLOUD_DNSPOD_V20210323_MODEL_MODIFYTXTRECORDRESPONSE_H_
+#define TENCENTCLOUD_DNSPOD_V20210323_MODEL_MODIFYTXTRECORDRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Cdb
+    namespace Dnspod
     {
-        namespace V20170320
+        namespace V20210323
         {
             namespace Model
             {
                 /**
-                * InitDBInstances返回参数结构体
+                * ModifyTXTRecord返回参数结构体
                 */
-                class InitDBInstancesResponse : public AbstractModel
+                class ModifyTXTRecordResponse : public AbstractModel
                 {
                 public:
-                    InitDBInstancesResponse();
-                    ~InitDBInstancesResponse() = default;
+                    ModifyTXTRecordResponse();
+                    ~ModifyTXTRecordResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取异步任务的请求ID数组，可使用此ID查询异步任务的执行结果
-                     * @return AsyncRequestIds 异步任务的请求ID数组，可使用此ID查询异步任务的执行结果
+                     * 获取记录ID
+                     * @return RecordId 记录ID
                      * 
                      */
-                    std::vector<std::string> GetAsyncRequestIds() const;
+                    uint64_t GetRecordId() const;
 
                     /**
-                     * 判断参数 AsyncRequestIds 是否已赋值
-                     * @return AsyncRequestIds 是否已赋值
+                     * 判断参数 RecordId 是否已赋值
+                     * @return RecordId 是否已赋值
                      * 
                      */
-                    bool AsyncRequestIdsHasBeenSet() const;
+                    bool RecordIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 异步任务的请求ID数组，可使用此ID查询异步任务的执行结果
+                     * 记录ID
                      */
-                    std::vector<std::string> m_asyncRequestIds;
-                    bool m_asyncRequestIdsHasBeenSet;
+                    uint64_t m_recordId;
+                    bool m_recordIdHasBeenSet;
 
                 };
             }
@@ -71,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_INITDBINSTANCESRESPONSE_H_
+#endif // !TENCENTCLOUD_DNSPOD_V20210323_MODEL_MODIFYTXTRECORDRESPONSE_H_

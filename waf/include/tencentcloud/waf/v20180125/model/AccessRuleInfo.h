@@ -52,9 +52,7 @@ namespace TencentCloud
                     /**
                      * 获取全文索引配置
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FullText 全文索引配置
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,9 +61,7 @@ namespace TencentCloud
                     /**
                      * 设置全文索引配置
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fullText 全文索引配置
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -81,9 +77,7 @@ namespace TencentCloud
                     /**
                      * 获取键值索引配置
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyValue 键值索引配置
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -92,9 +86,7 @@ namespace TencentCloud
                     /**
                      * 设置键值索引配置
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keyValue 键值索引配置
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -110,9 +102,7 @@ namespace TencentCloud
                     /**
                      * 获取元字段索引配置
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 元字段索引配置
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -121,9 +111,7 @@ namespace TencentCloud
                     /**
                      * 设置元字段索引配置
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag 元字段索引配置
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -141,7 +129,6 @@ namespace TencentCloud
                     /**
                      * 全文索引配置
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AccessFullTextInfo m_fullText;
                     bool m_fullTextHasBeenSet;
@@ -149,14 +136,12 @@ namespace TencentCloud
                     /**
                      * 键值索引配置
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AccessRuleKeyValueInfo m_keyValue;
                     bool m_keyValueHasBeenSet;
 
                     /**
                      * 元字段索引配置
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AccessRuleTagInfo m_tag;

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/oceanus/v20190422/model/Property.h>
+#include <tencentcloud/oceanus/v20190422/model/SessionClusterRefItem.h>
 
 
 namespace TencentCloud
@@ -283,6 +284,31 @@ namespace TencentCloud
                     bool PropertiesHasBeenSet() const;
 
                     /**
+                     * 获取引用资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceRefs 引用资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<SessionClusterRefItem> GetResourceRefs() const;
+
+                    /**
+                     * 设置引用资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceRefs 引用资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceRefs(const std::vector<SessionClusterRefItem>& _resourceRefs);
+
+                    /**
+                     * 判断参数 ResourceRefs 是否已赋值
+                     * @return ResourceRefs 是否已赋值
+                     * 
+                     */
+                    bool ResourceRefsHasBeenSet() const;
+
+                    /**
                      * 获取JobManager的规格
                      * @return JobManagerCuSpec JobManager的规格
                      * 
@@ -387,6 +413,90 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取JobManagerCpu
+                     * @return JobManagerCpu JobManagerCpu
+                     * 
+                     */
+                    double GetJobManagerCpu() const;
+
+                    /**
+                     * 设置JobManagerCpu
+                     * @param _jobManagerCpu JobManagerCpu
+                     * 
+                     */
+                    void SetJobManagerCpu(const double& _jobManagerCpu);
+
+                    /**
+                     * 判断参数 JobManagerCpu 是否已赋值
+                     * @return JobManagerCpu 是否已赋值
+                     * 
+                     */
+                    bool JobManagerCpuHasBeenSet() const;
+
+                    /**
+                     * 获取JobManagerMem
+                     * @return JobManagerMem JobManagerMem
+                     * 
+                     */
+                    double GetJobManagerMem() const;
+
+                    /**
+                     * 设置JobManagerMem
+                     * @param _jobManagerMem JobManagerMem
+                     * 
+                     */
+                    void SetJobManagerMem(const double& _jobManagerMem);
+
+                    /**
+                     * 判断参数 JobManagerMem 是否已赋值
+                     * @return JobManagerMem 是否已赋值
+                     * 
+                     */
+                    bool JobManagerMemHasBeenSet() const;
+
+                    /**
+                     * 获取TaskManagerCpu
+                     * @return TaskManagerCpu TaskManagerCpu
+                     * 
+                     */
+                    double GetTaskManagerCpu() const;
+
+                    /**
+                     * 设置TaskManagerCpu
+                     * @param _taskManagerCpu TaskManagerCpu
+                     * 
+                     */
+                    void SetTaskManagerCpu(const double& _taskManagerCpu);
+
+                    /**
+                     * 判断参数 TaskManagerCpu 是否已赋值
+                     * @return TaskManagerCpu 是否已赋值
+                     * 
+                     */
+                    bool TaskManagerCpuHasBeenSet() const;
+
+                    /**
+                     * 获取TaskManagerMem
+                     * @return TaskManagerMem TaskManagerMem
+                     * 
+                     */
+                    double GetTaskManagerMem() const;
+
+                    /**
+                     * 设置TaskManagerMem
+                     * @param _taskManagerMem TaskManagerMem
+                     * 
+                     */
+                    void SetTaskManagerMem(const double& _taskManagerMem);
+
+                    /**
+                     * 判断参数 TaskManagerMem 是否已赋值
+                     * @return TaskManagerMem 是否已赋值
+                     * 
+                     */
+                    bool TaskManagerMemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -457,6 +567,13 @@ namespace TencentCloud
                     bool m_propertiesHasBeenSet;
 
                     /**
+                     * 引用资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SessionClusterRefItem> m_resourceRefs;
+                    bool m_resourceRefsHasBeenSet;
+
+                    /**
                      * JobManager的规格
                      */
                     double m_jobManagerCuSpec;
@@ -485,6 +602,30 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * JobManagerCpu
+                     */
+                    double m_jobManagerCpu;
+                    bool m_jobManagerCpuHasBeenSet;
+
+                    /**
+                     * JobManagerMem
+                     */
+                    double m_jobManagerMem;
+                    bool m_jobManagerMemHasBeenSet;
+
+                    /**
+                     * TaskManagerCpu
+                     */
+                    double m_taskManagerCpu;
+                    bool m_taskManagerCpuHasBeenSet;
+
+                    /**
+                     * TaskManagerMem
+                     */
+                    double m_taskManagerMem;
+                    bool m_taskManagerMemHasBeenSet;
 
                 };
             }

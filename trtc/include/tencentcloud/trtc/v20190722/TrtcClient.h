@@ -127,8 +127,6 @@
 #include <tencentcloud/trtc/v20190722/model/StopStreamIngestResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StopWebRecordRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StopWebRecordResponse.h>
-#include <tencentcloud/trtc/v20190722/model/SummarizeTranscriptionRequest.h>
-#include <tencentcloud/trtc/v20190722/model/SummarizeTranscriptionResponse.h>
 #include <tencentcloud/trtc/v20190722/model/UpdateAIConversationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/UpdateAIConversationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamRequest.h>
@@ -305,9 +303,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopWebRecordResponse> StopWebRecordOutcome;
                 typedef std::future<StopWebRecordOutcome> StopWebRecordOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StopWebRecordRequest&, StopWebRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopWebRecordAsyncHandler;
-                typedef Outcome<Core::Error, Model::SummarizeTranscriptionResponse> SummarizeTranscriptionOutcome;
-                typedef std::future<SummarizeTranscriptionOutcome> SummarizeTranscriptionOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::SummarizeTranscriptionRequest&, SummarizeTranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SummarizeTranscriptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateAIConversationResponse> UpdateAIConversationOutcome;
                 typedef std::future<UpdateAIConversationOutcome> UpdateAIConversationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::UpdateAIConversationRequest&, UpdateAIConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAIConversationAsyncHandler;
@@ -958,17 +953,6 @@ MCU 混流转码费用，请参考文档：[云端混流转码计费说明](http
                 StopWebRecordOutcome StopWebRecord(const Model::StopWebRecordRequest &request);
                 void StopWebRecordAsync(const Model::StopWebRecordRequest& request, const StopWebRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopWebRecordOutcomeCallable StopWebRecordCallable(const Model::StopWebRecordRequest& request);
-
-                /**
-                 *接口不再支持
-
-对转录的文本进行总结。
-                 * @param req SummarizeTranscriptionRequest
-                 * @return SummarizeTranscriptionOutcome
-                 */
-                SummarizeTranscriptionOutcome SummarizeTranscription(const Model::SummarizeTranscriptionRequest &request);
-                void SummarizeTranscriptionAsync(const Model::SummarizeTranscriptionRequest& request, const SummarizeTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                SummarizeTranscriptionOutcomeCallable SummarizeTranscriptionCallable(const Model::SummarizeTranscriptionRequest& request);
 
                 /**
                  *更新AIConversation参数

@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -305,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskDetails 风险详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskDetails() const;
 
                     /**
                      * 设置风险详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskDetails 风险详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskDetails(const std::string& _riskDetails);
@@ -414,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nick 用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNick() const;
 
                     /**
                      * 设置用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nick 用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNick(const std::string& _nick);
@@ -439,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -464,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务快照
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceSnapshot 服务快照
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceSnapshot() const;
 
                     /**
                      * 设置服务快照
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceSnapshot 服务快照
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceSnapshot(const std::string& _serviceSnapshot);
@@ -489,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务访问的url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 服务访问的url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置服务访问的url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url 服务访问的url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -514,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取列表索引值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 列表索引值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndex() const;
 
                     /**
                      * 设置列表索引值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _index 列表索引值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndex(const std::string& _index);
@@ -539,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskList 风险列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServerRiskSuggestion> GetRiskList() const;
 
                     /**
                      * 设置风险列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskList 风险列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskList(const std::vector<ServerRiskSuggestion>& _riskList);
@@ -564,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建议列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuggestionList 建议列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServerRiskSuggestion> GetSuggestionList() const;
 
                     /**
                      * 设置建议列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _suggestionList 建议列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuggestionList(const std::vector<ServerRiskSuggestion>& _suggestionList);
@@ -589,18 +553,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HTTP响应状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusCode HTTP响应状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusCode() const;
 
                     /**
                      * 设置HTTP响应状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statusCode HTTP响应状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatusCode(const std::string& _statusCode);
@@ -622,7 +582,6 @@ namespace TencentCloud
 
                     /**
                      * 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
@@ -689,7 +648,6 @@ namespace TencentCloud
 
                     /**
                      * 风险详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskDetails;
                     bool m_riskDetailsHasBeenSet;
@@ -720,56 +678,48 @@ namespace TencentCloud
 
                     /**
                      * 用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;
 
                     /**
                      * 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 服务快照
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceSnapshot;
                     bool m_serviceSnapshotHasBeenSet;
 
                     /**
                      * 服务访问的url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
                      * 列表索引值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_index;
                     bool m_indexHasBeenSet;
 
                     /**
                      * 风险列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServerRiskSuggestion> m_riskList;
                     bool m_riskListHasBeenSet;
 
                     /**
                      * 建议列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServerRiskSuggestion> m_suggestionList;
                     bool m_suggestionListHasBeenSet;
 
                     /**
                      * HTTP响应状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusCode;
                     bool m_statusCodeHasBeenSet;

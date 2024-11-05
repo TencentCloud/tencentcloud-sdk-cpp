@@ -4727,49 +4727,6 @@ CdbClient::DisassociateSecurityGroupsOutcomeCallable CdbClient::DisassociateSecu
     return task->get_future();
 }
 
-CdbClient::InitDBInstancesOutcome CdbClient::InitDBInstances(const InitDBInstancesRequest &request)
-{
-    auto outcome = MakeRequest(request, "InitDBInstances");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        InitDBInstancesResponse rsp = InitDBInstancesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return InitDBInstancesOutcome(rsp);
-        else
-            return InitDBInstancesOutcome(o.GetError());
-    }
-    else
-    {
-        return InitDBInstancesOutcome(outcome.GetError());
-    }
-}
-
-void CdbClient::InitDBInstancesAsync(const InitDBInstancesRequest& request, const InitDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InitDBInstances(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdbClient::InitDBInstancesOutcomeCallable CdbClient::InitDBInstancesCallable(const InitDBInstancesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<InitDBInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->InitDBInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CdbClient::InquiryPriceUpgradeInstancesOutcome CdbClient::InquiryPriceUpgradeInstances(const InquiryPriceUpgradeInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "InquiryPriceUpgradeInstances");

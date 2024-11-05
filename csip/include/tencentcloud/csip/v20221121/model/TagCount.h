@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 产品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置产品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 产品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 日志条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置日志条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 日志条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 产品名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 日志条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;

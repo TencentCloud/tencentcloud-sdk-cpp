@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取正常情况为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 正常情况为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetData() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取未购买BOT的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnSupportedList 未购买BOT的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUnSupportedList() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已购买但操作失败的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailDomainList 已购买但操作失败的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFailDomainList() const;
@@ -109,21 +103,18 @@ namespace TencentCloud
 
                     /**
                      * 正常情况为null
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
 
                     /**
                      * 未购买BOT的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_unSupportedList;
                     bool m_unSupportedListHasBeenSet;
 
                     /**
                      * 已购买但操作失败的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_failDomainList;
                     bool m_failDomainListHasBeenSet;

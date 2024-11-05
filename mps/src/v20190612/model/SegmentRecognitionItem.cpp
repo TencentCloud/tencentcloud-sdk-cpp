@@ -26,7 +26,9 @@ SegmentRecognitionItem::SegmentRecognitionItem() :
     m_endTimeOffsetHasBeenSet(false),
     m_segmentUrlHasBeenSet(false),
     m_titleHasBeenSet(false),
-    m_summaryHasBeenSet(false)
+    m_summaryHasBeenSet(false),
+    m_beginTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome SegmentRecognitionItem::Deserialize(const rapidjson::Value &
         m_summaryHasBeenSet = true;
     }
 
+    if (value.HasMember("BeginTime") && !value["BeginTime"].IsNull())
+    {
+        if (!value["BeginTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SegmentRecognitionItem.BeginTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_beginTime = string(value["BeginTime"].GetString());
+        m_beginTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
+    {
+        if (!value["EndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SegmentRecognitionItem.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTime = string(value["EndTime"].GetString());
+        m_endTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void SegmentRecognitionItem::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "Summary";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_summary.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_beginTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_beginTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void SegmentRecognitionItem::SetSummary(const string& _summary)
 bool SegmentRecognitionItem::SummaryHasBeenSet() const
 {
     return m_summaryHasBeenSet;
+}
+
+string SegmentRecognitionItem::GetBeginTime() const
+{
+    return m_beginTime;
+}
+
+void SegmentRecognitionItem::SetBeginTime(const string& _beginTime)
+{
+    m_beginTime = _beginTime;
+    m_beginTimeHasBeenSet = true;
+}
+
+bool SegmentRecognitionItem::BeginTimeHasBeenSet() const
+{
+    return m_beginTimeHasBeenSet;
+}
+
+string SegmentRecognitionItem::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void SegmentRecognitionItem::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool SegmentRecognitionItem::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 

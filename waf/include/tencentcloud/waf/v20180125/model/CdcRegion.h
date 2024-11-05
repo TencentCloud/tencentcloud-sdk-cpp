@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该地域对应的集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Clusters 该地域对应的集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CdcCluster> GetClusters() const;
 
                     /**
                      * 设置该地域对应的集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusters 该地域对应的集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusters(const std::vector<CdcCluster>& _clusters);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 该地域对应的集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CdcCluster> m_clusters;
                     bool m_clustersHasBeenSet;

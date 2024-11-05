@@ -87,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取CMK的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description CMK的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
@@ -131,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagCode 标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTagCode() const;
@@ -147,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取标签操作的返回信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagMsg 标签操作的返回信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTagMsg() const;
@@ -163,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HsmClusterId HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHsmClusterId() const;
@@ -199,7 +191,6 @@ namespace TencentCloud
 
                     /**
                      * CMK的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -218,21 +209,18 @@ namespace TencentCloud
 
                     /**
                      * 标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_tagCode;
                     bool m_tagCodeHasBeenSet;
 
                     /**
                      * 标签操作的返回信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tagMsg;
                     bool m_tagMsgHasBeenSet;
 
                     /**
                      * HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hsmClusterId;
                     bool m_hsmClusterIdHasBeenSet;

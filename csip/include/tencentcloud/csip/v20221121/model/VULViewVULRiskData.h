@@ -405,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nick 用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNick() const;
 
                     /**
                      * 设置用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nick 用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNick(const std::string& _nick);
@@ -451,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -476,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应急漏洞类型，1-应急漏洞，0-非应急漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EMGCVulType 应急漏洞类型，1-应急漏洞，0-非应急漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEMGCVulType() const;
 
                     /**
                      * 设置应急漏洞类型，1-应急漏洞，0-非应急漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eMGCVulType 应急漏洞类型，1-应急漏洞，0-非应急漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEMGCVulType(const int64_t& _eMGCVulType);
@@ -501,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CVSS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CVSS CVSS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCVSS() const;
 
                     /**
                      * 设置CVSS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cVSS CVSS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCVSS(const double& _cVSS);
@@ -526,18 +510,14 @@ namespace TencentCloud
 
                     /**
                      * 获取PCMGRId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PCMGRId PCMGRId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPCMGRId() const;
 
                     /**
                      * 设置PCMGRId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pCMGRId PCMGRId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPCMGRId(const std::string& _pCMGRId);
@@ -551,18 +531,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞标签。搜索时应急 必修传参VulTag=SuggestRepair/EMGCVul
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulTag 漏洞标签。搜索时应急 必修传参VulTag=SuggestRepair/EMGCVul
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetVulTag() const;
 
                     /**
                      * 设置漏洞标签。搜索时应急 必修传参VulTag=SuggestRepair/EMGCVul
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulTag 漏洞标签。搜索时应急 必修传参VulTag=SuggestRepair/EMGCVul
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulTag(const std::vector<std::string>& _vulTag);
@@ -576,18 +552,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞披露时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisclosureTime 漏洞披露时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDisclosureTime() const;
 
                     /**
                      * 设置漏洞披露时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _disclosureTime 漏洞披露时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDisclosureTime(const std::string& _disclosureTime);
@@ -601,18 +573,14 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击热度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackHeat 攻击热度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAttackHeat() const;
 
                     /**
                      * 设置攻击热度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attackHeat 攻击热度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttackHeat(const uint64_t& _attackHeat);
@@ -626,18 +594,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否必修漏洞，1-是，0-不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSuggest 是否必修漏洞，1-是，0-不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsSuggest() const;
 
                     /**
                      * 设置是否必修漏洞，1-是，0-不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSuggest 是否必修漏洞，1-是，0-不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSuggest(const int64_t& _isSuggest);
@@ -651,18 +615,14 @@ namespace TencentCloud
 
                     /**
                      * 获取处置任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HandleTaskId 处置任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHandleTaskId() const;
 
                     /**
                      * 设置处置任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _handleTaskId 处置任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHandleTaskId(const std::string& _handleTaskId);
@@ -676,18 +636,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineSource 引擎来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineSource() const;
 
                     /**
                      * 设置引擎来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineSource 引擎来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineSource(const std::string& _engineSource);
@@ -701,18 +657,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新的漏洞风险id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulRiskId 新的漏洞风险id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVulRiskId() const;
 
                     /**
                      * 设置新的漏洞风险id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulRiskId 新的漏洞风险id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulRiskId(const std::string& _vulRiskId);
@@ -726,18 +678,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新版漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TvdID 新版漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTvdID() const;
 
                     /**
                      * 设置新版漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tvdID 新版漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTvdID(const std::string& _tvdID);
@@ -751,18 +699,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可以一键体检，1-可以，0-不可以
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsOneClick 是否可以一键体检，1-可以，0-不可以
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsOneClick() const;
 
                     /**
                      * 设置是否可以一键体检，1-可以，0-不可以
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isOneClick 是否可以一键体检，1-可以，0-不可以
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsOneClick(const uint64_t& _isOneClick);
@@ -880,7 +824,6 @@ namespace TencentCloud
 
                     /**
                      * 用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;
@@ -893,91 +836,78 @@ namespace TencentCloud
 
                     /**
                      * 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 应急漏洞类型，1-应急漏洞，0-非应急漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_eMGCVulType;
                     bool m_eMGCVulTypeHasBeenSet;
 
                     /**
                      * CVSS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cVSS;
                     bool m_cVSSHasBeenSet;
 
                     /**
                      * PCMGRId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pCMGRId;
                     bool m_pCMGRIdHasBeenSet;
 
                     /**
                      * 漏洞标签。搜索时应急 必修传参VulTag=SuggestRepair/EMGCVul
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_vulTag;
                     bool m_vulTagHasBeenSet;
 
                     /**
                      * 漏洞披露时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_disclosureTime;
                     bool m_disclosureTimeHasBeenSet;
 
                     /**
                      * 攻击热度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_attackHeat;
                     bool m_attackHeatHasBeenSet;
 
                     /**
                      * 是否必修漏洞，1-是，0-不是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isSuggest;
                     bool m_isSuggestHasBeenSet;
 
                     /**
                      * 处置任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_handleTaskId;
                     bool m_handleTaskIdHasBeenSet;
 
                     /**
                      * 引擎来源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineSource;
                     bool m_engineSourceHasBeenSet;
 
                     /**
                      * 新的漏洞风险id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vulRiskId;
                     bool m_vulRiskIdHasBeenSet;
 
                     /**
                      * 新版漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tvdID;
                     bool m_tvdIDHasBeenSet;
 
                     /**
                      * 是否可以一键体检，1-可以，0-不可以
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isOneClick;
                     bool m_isOneClickHasBeenSet;

@@ -102,10 +102,8 @@ namespace TencentCloud
                     /**
                      * 获取数据来源Source字段 custom-自定义(默认)、batch-domain-批量域名
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 数据来源Source字段 custom-自定义(默认)、batch-domain-批量域名
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSource() const;
@@ -160,7 +158,6 @@ namespace TencentCloud
                     /**
                      * 数据来源Source字段 custom-自定义(默认)、batch-domain-批量域名
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;

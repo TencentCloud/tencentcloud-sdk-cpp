@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvalidType 服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInvalidType() const;
@@ -89,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取旗舰版到期时间（Epoch Unix Timestamp）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProExpireTime 旗舰版到期时间（Epoch Unix Timestamp）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProExpireTime() const;
@@ -105,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取旗舰版是否自动续费：0-不自动续费，1-自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProRenewFlag 旗舰版是否自动续费：0-不自动续费，1-自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProRenewFlag() const;
@@ -121,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取旗舰版购买记录的唯一性标识。如果为开通旗舰版，则返回值为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProResourceId 旗舰版购买记录的唯一性标识。如果为开通旗舰版，则返回值为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProResourceId() const;
@@ -137,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开通 KMS 托管版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExclusiveVSMEnabled 是否开通 KMS 托管版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetExclusiveVSMEnabled() const;
@@ -153,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开通 KMS 独享版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExclusiveHSMEnabled 是否开通 KMS 独享版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetExclusiveHSMEnabled() const;
@@ -169,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取KMS 订阅信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubscriptionInfo KMS 订阅信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubscriptionInfo() const;
@@ -193,7 +179,6 @@ namespace TencentCloud
 
                     /**
                      * 服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_invalidType;
                     bool m_invalidTypeHasBeenSet;
@@ -206,42 +191,36 @@ namespace TencentCloud
 
                     /**
                      * 旗舰版到期时间（Epoch Unix Timestamp）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_proExpireTime;
                     bool m_proExpireTimeHasBeenSet;
 
                     /**
                      * 旗舰版是否自动续费：0-不自动续费，1-自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_proRenewFlag;
                     bool m_proRenewFlagHasBeenSet;
 
                     /**
                      * 旗舰版购买记录的唯一性标识。如果为开通旗舰版，则返回值为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proResourceId;
                     bool m_proResourceIdHasBeenSet;
 
                     /**
                      * 是否开通 KMS 托管版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_exclusiveVSMEnabled;
                     bool m_exclusiveVSMEnabledHasBeenSet;
 
                     /**
                      * 是否开通 KMS 独享版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_exclusiveHSMEnabled;
                     bool m_exclusiveHSMEnabledHasBeenSet;
 
                     /**
                      * KMS 订阅信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subscriptionInfo;
                     bool m_subscriptionInfoHasBeenSet;

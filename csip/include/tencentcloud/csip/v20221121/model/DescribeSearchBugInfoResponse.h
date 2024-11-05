@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞信息和资产信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 漏洞信息和资产信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DataSearchBug GetData() const;
@@ -92,7 +90,6 @@ namespace TencentCloud
 
                     /**
                      * 漏洞信息和资产信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DataSearchBug m_data;
                     bool m_dataHasBeenSet;

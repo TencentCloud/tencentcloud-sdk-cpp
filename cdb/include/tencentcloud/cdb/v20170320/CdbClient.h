@@ -241,8 +241,6 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeUploadedFilesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DisassociateSecurityGroupsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DisassociateSecurityGroupsResponse.h>
-#include <tencentcloud/cdb/v20170320/model/InitDBInstancesRequest.h>
-#include <tencentcloud/cdb/v20170320/model/InitDBInstancesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/InquiryPriceUpgradeInstancesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/InquiryPriceUpgradeInstancesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/IsolateDBInstanceRequest.h>
@@ -704,9 +702,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisassociateSecurityGroupsResponse> DisassociateSecurityGroupsOutcome;
                 typedef std::future<DisassociateSecurityGroupsOutcome> DisassociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DisassociateSecurityGroupsRequest&, DisassociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateSecurityGroupsAsyncHandler;
-                typedef Outcome<Core::Error, Model::InitDBInstancesResponse> InitDBInstancesOutcome;
-                typedef std::future<InitDBInstancesOutcome> InitDBInstancesOutcomeCallable;
-                typedef std::function<void(const CdbClient*, const Model::InitDBInstancesRequest&, InitDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitDBInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquiryPriceUpgradeInstancesResponse> InquiryPriceUpgradeInstancesOutcome;
                 typedef std::future<InquiryPriceUpgradeInstancesOutcome> InquiryPriceUpgradeInstancesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::InquiryPriceUpgradeInstancesRequest&, InquiryPriceUpgradeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceUpgradeInstancesAsyncHandler;
@@ -1893,17 +1888,6 @@ namespace TencentCloud
                 DisassociateSecurityGroupsOutcome DisassociateSecurityGroups(const Model::DisassociateSecurityGroupsRequest &request);
                 void DisassociateSecurityGroupsAsync(const Model::DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisassociateSecurityGroupsOutcomeCallable DisassociateSecurityGroupsCallable(const Model::DisassociateSecurityGroupsRequest& request);
-
-                /**
-                 *该接口不再维护，参考CreateDBInstance+API文档，在发货时即可完成初始化。
-
-本接口(InitDBInstances)用于初始化云数据库实例，包括初始化密码、默认字符集、实例端口号等。该接口已经废弃，在发货接口CreateDBInstance、CreateDBInstanceHour可以直接使用参数Password设置密码，使用参数ParamList设置字符集，使用参数Port设置端口号。
-                 * @param req InitDBInstancesRequest
-                 * @return InitDBInstancesOutcome
-                 */
-                InitDBInstancesOutcome InitDBInstances(const Model::InitDBInstancesRequest &request);
-                void InitDBInstancesAsync(const Model::InitDBInstancesRequest& request, const InitDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                InitDBInstancesOutcomeCallable InitDBInstancesCallable(const Model::InitDBInstancesRequest& request);
 
                 /**
                  *本接口(InquiryPriceUpgradeInstances)用于查询云数据库实例升级的价格，支持查询按量计费或者包年包月实例的升级价格，实例类型支持主实例、灾备实例和只读实例。

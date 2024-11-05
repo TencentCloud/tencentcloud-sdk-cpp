@@ -14,24 +14,33 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/trtc/v20190722/model/SummarizeTranscriptionRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeScanIpRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Trtc::V20190722::Model;
+using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-SummarizeTranscriptionRequest::SummarizeTranscriptionRequest()
+DescribeScanIpRequest::DescribeScanIpRequest() :
+    m_ipHasBeenSet(false)
 {
 }
 
-string SummarizeTranscriptionRequest::ToJsonString() const
+string DescribeScanIpRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_ipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ip";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
+    }
 
 
     rapidjson::StringBuffer buffer;
@@ -40,5 +49,21 @@ string SummarizeTranscriptionRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeScanIpRequest::GetIp() const
+{
+    return m_ip;
+}
+
+void DescribeScanIpRequest::SetIp(const string& _ip)
+{
+    m_ip = _ip;
+    m_ipHasBeenSet = true;
+}
+
+bool DescribeScanIpRequest::IpHasBeenSet() const
+{
+    return m_ipHasBeenSet;
+}
 
 

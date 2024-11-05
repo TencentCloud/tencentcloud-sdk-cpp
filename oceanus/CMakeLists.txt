@@ -150,6 +150,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h
   include/tencentcloud/oceanus/v20190422/model/FetchSqlGatewayStatementResultRequest.h
+  include/tencentcloud/oceanus/v20190422/model/SessionClusterRefItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobEventsResponse.h
   )
 
@@ -286,6 +287,7 @@ set(oceanus_src
   src/v20190422/model/DescribeTreeJobsRequest.cpp
   src/v20190422/model/DescribeJobConfigsResponse.cpp
   src/v20190422/model/FetchSqlGatewayStatementResultRequest.cpp
+  src/v20190422/model/SessionClusterRefItem.cpp
   src/v20190422/model/DescribeJobEventsResponse.cpp
   )
 

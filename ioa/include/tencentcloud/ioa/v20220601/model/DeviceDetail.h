@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备唯一标识码，在ioa中每个设备有唯一标识码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mid 设备唯一标识码，在ioa中每个设备有唯一标识码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMid() const;
 
                     /**
                      * 设置设备唯一标识码，在ioa中每个设备有唯一标识码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mid 设备唯一标识码，在ioa中每个设备有唯一标识码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMid(const std::string& _mid);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取终端名（设备名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 终端名（设备名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置终端名（设备名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 终端名（设备名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备所在分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 设备所在分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
                      * 设置设备所在分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 设备所在分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const int64_t& _groupId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OsType OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
                      * 设置OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _osType OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备IP地址（出口IP）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip 设备IP地址（出口IP）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置设备IP地址（出口IP）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip 设备IP地址（出口IP）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取在线状态，2：在线、0或者1:离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OnlineStatus 在线状态，2：在线、0或者1:离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOnlineStatus() const;
 
                     /**
                      * 设置在线状态，2：在线、0或者1:离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _onlineStatus 在线状态，2：在线、0或者1:离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOnlineStatus(const int64_t& _onlineStatus);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端版本号-大整数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 客户端版本号-大整数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置客户端版本号-大整数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 客户端版本号-大整数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端版本号-点分字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrVersion 客户端版本号-点分字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStrVersion() const;
 
                     /**
                      * 设置客户端版本号-点分字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strVersion 客户端版本号-点分字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrVersion(const std::string& _strVersion);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取首次在线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Itime 首次在线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetItime() const;
 
                     /**
                      * 设置首次在线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _itime 首次在线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItime(const std::string& _itime);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后一次在线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnActiveTime 最后一次在线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConnActiveTime() const;
 
                     /**
                      * 设置最后一次在线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connActiveTime 最后一次在线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnActiveTime(const std::string& _connActiveTime);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备是否加锁 ，1：锁定 0或者2：未锁定。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Locked 设备是否加锁 ，1：锁定 0或者2：未锁定。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLocked() const;
 
                     /**
                      * 设置设备是否加锁 ，1：锁定 0或者2：未锁定。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _locked 设备是否加锁 ，1：锁定 0或者2：未锁定。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocked(const int64_t& _locked);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备本地IP列表, 包括IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalIpList 设备本地IP列表, 包括IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocalIpList() const;
 
                     /**
                      * 设置设备本地IP列表, 包括IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localIpList 设备本地IP列表, 包括IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalIpList(const std::string& _localIpList);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取宿主机id（需要宿主机也安装iOA才能显示）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostId 宿主机id（需要宿主机也安装iOA才能显示）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHostId() const;
 
                     /**
                      * 设置宿主机id（需要宿主机也安装iOA才能显示）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostId 宿主机id（需要宿主机也安装iOA才能显示）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostId(const int64_t& _hostId);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备所属分组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 设备所属分组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置设备所属分组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 设备所属分组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -423,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备所属分组路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupNamePath 设备所属分组路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupNamePath() const;
 
                     /**
                      * 设置设备所属分组路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupNamePath 设备所属分组路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupNamePath(const std::string& _groupNamePath);
@@ -448,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取未修复高危漏洞数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CriticalVulListCount 未修复高危漏洞数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCriticalVulListCount() const;
 
                     /**
                      * 设置未修复高危漏洞数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _criticalVulListCount 未修复高危漏洞数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCriticalVulListCount(const int64_t& _criticalVulListCount);
@@ -473,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备名，和Name相同
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComputerName 设备名，和Name相同
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComputerName() const;
 
                     /**
                      * 设置设备名，和Name相同
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _computerName 设备名，和Name相同
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComputerName(const std::string& _computerName);
@@ -498,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取登录域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainName 登录域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置登录域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainName 登录域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -523,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MAC地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MacAddr MAC地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMacAddr() const;
 
                     /**
                      * 设置MAC地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _macAddr MAC地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMacAddr(const std::string& _macAddr);
@@ -548,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulCount 漏洞数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVulCount() const;
 
                     /**
                      * 设置漏洞数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulCount 漏洞数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulCount(const int64_t& _vulCount);
@@ -573,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病毒风险数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskCount 病毒风险数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRiskCount() const;
 
                     /**
                      * 设置病毒风险数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskCount 病毒风险数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskCount(const int64_t& _riskCount);
@@ -598,18 +510,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病毒库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirusVer 病毒库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVirusVer() const;
 
                     /**
                      * 设置病毒库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _virusVer 病毒库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVirusVer(const std::string& _virusVer);
@@ -623,18 +531,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulVersion 漏洞库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVulVersion() const;
 
                     /**
                      * 设置漏洞库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulVersion 漏洞库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulVersion(const std::string& _vulVersion);
@@ -648,18 +552,14 @@ namespace TencentCloud
 
                     /**
                      * 获取系统修复引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SysRepVersion 系统修复引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSysRepVersion() const;
 
                     /**
                      * 设置系统修复引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sysRepVersion 系统修复引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSysRepVersion(const std::string& _sysRepVersion);
@@ -673,18 +573,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高危补丁列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulCriticalList 高危补丁列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetVulCriticalList() const;
 
                     /**
                      * 设置高危补丁列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulCriticalList 高危补丁列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulCriticalList(const std::vector<std::string>& _vulCriticalList);
@@ -698,18 +594,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTags() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::string& _tags);
@@ -723,18 +615,14 @@ namespace TencentCloud
 
                     /**
                      * 获取终端用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 终端用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置终端用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName 终端用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -748,18 +636,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防火墙状态，不等于0表示开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirewallStatus 防火墙状态，不等于0表示开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFirewallStatus() const;
 
                     /**
                      * 设置防火墙状态，不等于0表示开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _firewallStatus 防火墙状态，不等于0表示开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFirewallStatus(const int64_t& _firewallStatus);
@@ -773,18 +657,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SN序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SerialNum SN序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSerialNum() const;
 
                     /**
                      * 设置SN序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serialNum SN序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSerialNum(const std::string& _serialNum);
@@ -798,18 +678,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备管控策略版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceStrategyVer 设备管控策略版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceStrategyVer() const;
 
                     /**
                      * 设置设备管控策略版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceStrategyVer 设备管控策略版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceStrategyVer(const std::string& _deviceStrategyVer);
@@ -823,18 +699,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NGN策略版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NGNStrategyVer NGN策略版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNGNStrategyVer() const;
 
                     /**
                      * 设置NGN策略版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nGNStrategyVer NGN策略版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNGNStrategyVer(const std::string& _nGNStrategyVer);
@@ -848,18 +720,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近登录账户的账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IOAUserName 最近登录账户的账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIOAUserName() const;
 
                     /**
                      * 设置最近登录账户的账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iOAUserName 最近登录账户的账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIOAUserName(const std::string& _iOAUserName);
@@ -873,18 +741,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备管控新策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceNewStrategyVer 设备管控新策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceNewStrategyVer() const;
 
                     /**
                      * 设置设备管控新策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceNewStrategyVer 设备管控新策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceNewStrategyVer(const std::string& _deviceNewStrategyVer);
@@ -898,18 +762,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NGN策略新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NGNNewStrategyVer NGN策略新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNGNNewStrategyVer() const;
 
                     /**
                      * 设置NGN策略新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nGNNewStrategyVer NGN策略新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNGNNewStrategyVer(const std::string& _nGNNewStrategyVer);
@@ -923,18 +783,14 @@ namespace TencentCloud
 
                     /**
                      * 获取宿主机名称（需要宿主机也安装iOA才能显示）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 宿主机名称（需要宿主机也安装iOA才能显示）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置宿主机名称（需要宿主机也安装iOA才能显示）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostName 宿主机名称（需要宿主机也安装iOA才能显示）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -948,18 +804,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主板序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BaseBoardSn 主板序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBaseBoardSn() const;
 
                     /**
                      * 设置主板序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _baseBoardSn 主板序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBaseBoardSn(const std::string& _baseBoardSn);
@@ -973,18 +825,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定账户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountUsers 绑定账户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountUsers() const;
 
                     /**
                      * 设置绑定账户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountUsers 绑定账户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountUsers(const std::string& _accountUsers);
@@ -998,18 +846,14 @@ namespace TencentCloud
 
                     /**
                      * 获取身份策略版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityStrategyVer 身份策略版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdentityStrategyVer() const;
 
                     /**
                      * 设置身份策略版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identityStrategyVer 身份策略版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentityStrategyVer(const std::string& _identityStrategyVer);
@@ -1023,18 +867,14 @@ namespace TencentCloud
 
                     /**
                      * 获取身份策略新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityNewStrategyVer 身份策略新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdentityNewStrategyVer() const;
 
                     /**
                      * 设置身份策略新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identityNewStrategyVer 身份策略新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentityNewStrategyVer(const std::string& _identityNewStrategyVer);
@@ -1048,18 +888,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近登录账号部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountGroupName 最近登录账号部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountGroupName() const;
 
                     /**
                      * 设置最近登录账号部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountGroupName 最近登录账号部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountGroupName(const std::string& _accountGroupName);
@@ -1073,18 +909,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近登录账户的姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountName 最近登录账户的姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置最近登录账户的姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountName 最近登录账户的姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -1098,18 +930,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountGroupId 账号组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAccountGroupId() const;
 
                     /**
                      * 设置账号组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountGroupId 账号组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountGroupId(const int64_t& _accountGroupId);
@@ -1125,301 +953,258 @@ namespace TencentCloud
 
                     /**
                      * 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 设备唯一标识码，在ioa中每个设备有唯一标识码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mid;
                     bool m_midHasBeenSet;
 
                     /**
                      * 终端名（设备名）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 设备所在分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;
 
                     /**
                      * 设备IP地址（出口IP）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * 在线状态，2：在线、0或者1:离线
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_onlineStatus;
                     bool m_onlineStatusHasBeenSet;
 
                     /**
                      * 客户端版本号-大整数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 客户端版本号-点分字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_strVersion;
                     bool m_strVersionHasBeenSet;
 
                     /**
                      * 首次在线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_itime;
                     bool m_itimeHasBeenSet;
 
                     /**
                      * 最后一次在线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_connActiveTime;
                     bool m_connActiveTimeHasBeenSet;
 
                     /**
                      * 设备是否加锁 ，1：锁定 0或者2：未锁定。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_locked;
                     bool m_lockedHasBeenSet;
 
                     /**
                      * 设备本地IP列表, 包括IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_localIpList;
                     bool m_localIpListHasBeenSet;
 
                     /**
                      * 宿主机id（需要宿主机也安装iOA才能显示）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hostId;
                     bool m_hostIdHasBeenSet;
 
                     /**
                      * 设备所属分组名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 设备所属分组路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupNamePath;
                     bool m_groupNamePathHasBeenSet;
 
                     /**
                      * 未修复高危漏洞数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_criticalVulListCount;
                     bool m_criticalVulListCountHasBeenSet;
 
                     /**
                      * 设备名，和Name相同
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_computerName;
                     bool m_computerNameHasBeenSet;
 
                     /**
                      * 登录域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
                      * MAC地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_macAddr;
                     bool m_macAddrHasBeenSet;
 
                     /**
                      * 漏洞数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vulCount;
                     bool m_vulCountHasBeenSet;
 
                     /**
                      * 病毒风险数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_riskCount;
                     bool m_riskCountHasBeenSet;
 
                     /**
                      * 病毒库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_virusVer;
                     bool m_virusVerHasBeenSet;
 
                     /**
                      * 漏洞库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vulVersion;
                     bool m_vulVersionHasBeenSet;
 
                     /**
                      * 系统修复引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sysRepVersion;
                     bool m_sysRepVersionHasBeenSet;
 
                     /**
                      * 高危补丁列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_vulCriticalList;
                     bool m_vulCriticalListHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 终端用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * 防火墙状态，不等于0表示开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_firewallStatus;
                     bool m_firewallStatusHasBeenSet;
 
                     /**
                      * SN序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serialNum;
                     bool m_serialNumHasBeenSet;
 
                     /**
                      * 设备管控策略版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceStrategyVer;
                     bool m_deviceStrategyVerHasBeenSet;
 
                     /**
                      * NGN策略版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nGNStrategyVer;
                     bool m_nGNStrategyVerHasBeenSet;
 
                     /**
                      * 最近登录账户的账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iOAUserName;
                     bool m_iOAUserNameHasBeenSet;
 
                     /**
                      * 设备管控新策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceNewStrategyVer;
                     bool m_deviceNewStrategyVerHasBeenSet;
 
                     /**
                      * NGN策略新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nGNNewStrategyVer;
                     bool m_nGNNewStrategyVerHasBeenSet;
 
                     /**
                      * 宿主机名称（需要宿主机也安装iOA才能显示）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
 
                     /**
                      * 主板序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_baseBoardSn;
                     bool m_baseBoardSnHasBeenSet;
 
                     /**
                      * 绑定账户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountUsers;
                     bool m_accountUsersHasBeenSet;
 
                     /**
                      * 身份策略版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identityStrategyVer;
                     bool m_identityStrategyVerHasBeenSet;
 
                     /**
                      * 身份策略新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identityNewStrategyVer;
                     bool m_identityNewStrategyVerHasBeenSet;
 
                     /**
                      * 最近登录账号部门
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountGroupName;
                     bool m_accountGroupNameHasBeenSet;
 
                     /**
                      * 最近登录账户的姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
                      * 账号组id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_accountGroupId;
                     bool m_accountGroupIdHasBeenSet;

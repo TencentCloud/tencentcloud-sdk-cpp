@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IP IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iP IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIP(const std::string& _iP);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HostIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIP HostIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostIP() const;
 
                     /**
                      * 设置HostIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostIP HostIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostIP(const std::string& _hostIP);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原始IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginIP 原始IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginIP() const;
 
                     /**
                      * 设置原始IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originIP 原始IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginIP(const std::string& _originIP);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceID 资产ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置资产ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceID 资产ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取城市
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return City 城市
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCity() const;
 
                     /**
                      * 设置城市
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _city 城市
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCity(const std::string& _city);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取省份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Province 省份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProvince() const;
 
                     /**
                      * 设置省份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _province 省份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProvince(const std::string& _province);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取国家
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Country 国家
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCountry() const;
 
                     /**
                      * 设置国家
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _country 国家
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCountry(const std::string& _country);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _address 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddress(const std::string& _address);
@@ -274,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取纬度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Latitude 纬度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatitude() const;
 
                     /**
                      * 设置纬度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latitude 纬度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatitude(const std::string& _latitude);
@@ -299,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取经度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Longitude 经度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLongitude() const;
 
                     /**
                      * 设置经度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _longitude 经度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLongitude(const std::string& _longitude);
@@ -324,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Info 信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInfo() const;
 
                     /**
                      * 设置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _info 信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInfo(const std::string& _info);
@@ -349,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -374,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -399,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Account 账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccount() const;
 
                     /**
                      * 设置账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _account 账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccount(const std::string& _account);
@@ -424,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取家族团伙
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Family 家族团伙
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFamily() const;
 
                     /**
                      * 设置家族团伙
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _family 家族团伙
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFamily(const std::string& _family);
@@ -449,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病毒名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirusName 病毒名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVirusName() const;
 
                     /**
                      * 设置病毒名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _virusName 病毒名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVirusName(const std::string& _virusName);
@@ -474,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MD5值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MD5 MD5值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMD5() const;
 
                     /**
                      * 设置MD5值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mD5 MD5值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMD5(const std::string& _mD5);
@@ -499,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取恶意进程文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileName 恶意进程文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置恶意进程文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileName 恶意进程文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -524,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1:主机资产 2:域名资产 3:网络资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetType 1:主机资产 2:域名资产 3:网络资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAssetType() const;
 
                     /**
                      * 设置1:主机资产 2:域名资产 3:网络资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetType 1:主机资产 2:域名资产 3:网络资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetType(const int64_t& _assetType);
@@ -549,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取来源日志分析的信息字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FromLogAnalysisData 来源日志分析的信息字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValue> GetFromLogAnalysisData() const;
 
                     /**
                      * 设置来源日志分析的信息字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fromLogAnalysisData 来源日志分析的信息字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFromLogAnalysisData(const std::vector<KeyValue>& _fromLogAnalysisData);
@@ -574,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerName 容器名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerName() const;
 
                     /**
                      * 设置容器名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerName 容器名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerName(const std::string& _containerName);
@@ -599,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerID 容器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerID() const;
 
                     /**
                      * 设置容器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerID 容器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerID(const std::string& _containerID);
@@ -626,161 +534,138 @@ namespace TencentCloud
 
                     /**
                      * IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iP;
                     bool m_iPHasBeenSet;
 
                     /**
                      * HostIP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostIP;
                     bool m_hostIPHasBeenSet;
 
                     /**
                      * 原始IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originIP;
                     bool m_originIPHasBeenSet;
 
                     /**
                      * 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 资产ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
                      * 城市
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_city;
                     bool m_cityHasBeenSet;
 
                     /**
                      * 省份
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_province;
                     bool m_provinceHasBeenSet;
 
                     /**
                      * 国家
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_country;
                     bool m_countryHasBeenSet;
 
                     /**
                      * 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
                      * 纬度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latitude;
                     bool m_latitudeHasBeenSet;
 
                     /**
                      * 经度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_longitude;
                     bool m_longitudeHasBeenSet;
 
                     /**
                      * 信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_info;
                     bool m_infoHasBeenSet;
 
                     /**
                      * 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_account;
                     bool m_accountHasBeenSet;
 
                     /**
                      * 家族团伙
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_family;
                     bool m_familyHasBeenSet;
 
                     /**
                      * 病毒名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_virusName;
                     bool m_virusNameHasBeenSet;
 
                     /**
                      * MD5值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mD5;
                     bool m_mD5HasBeenSet;
 
                     /**
                      * 恶意进程文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
                      * 1:主机资产 2:域名资产 3:网络资产
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_assetType;
                     bool m_assetTypeHasBeenSet;
 
                     /**
                      * 来源日志分析的信息字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValue> m_fromLogAnalysisData;
                     bool m_fromLogAnalysisDataHasBeenSet;
 
                     /**
                      * 容器名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerName;
                     bool m_containerNameHasBeenSet;
 
                     /**
                      * 容器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerID;
                     bool m_containerIDHasBeenSet;

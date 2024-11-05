@@ -396,9 +396,7 @@ namespace TencentCloud
 
                     /**
                      * 获取0：BGP 1：Anycast
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Anycast 0：BGP 1：Anycast
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAnycast() const;
@@ -564,7 +562,6 @@ namespace TencentCloud
 
                     /**
                      * 0：BGP 1：Anycast
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_anycast;
                     bool m_anycastHasBeenSet;

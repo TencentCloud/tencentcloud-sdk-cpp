@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool AddTimeHasBeenSet() const;
 
                     /**
-                     * 获取版本的描述
-                     * @return Description 版本的描述
+                     * 获取版本的描述信息
+                     * @return Description 版本的描述信息
                      * 
                      */
                     std::string GetDescription() const;
@@ -196,7 +196,7 @@ namespace TencentCloud
                     bool m_addTimeHasBeenSet;
 
                     /**
-                     * 版本的描述
+                     * 版本的描述信息
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TRTC_V20190722_MODEL_SUMMARIZETRANSCRIPTIONRESPONSE_H_
-#define TENCENTCLOUD_TRTC_V20190722_MODEL_SUMMARIZETRANSCRIPTIONRESPONSE_H_
+#ifndef TENCENTCLOUD_DNSPOD_V20210323_MODEL_CREATETXTRECORDRESPONSE_H_
+#define TENCENTCLOUD_DNSPOD_V20210323_MODEL_CREATETXTRECORDRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,25 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Trtc
+    namespace Dnspod
     {
-        namespace V20190722
+        namespace V20210323
         {
             namespace Model
             {
                 /**
-                * SummarizeTranscription返回参数结构体
+                * CreateTXTRecord返回参数结构体
                 */
-                class SummarizeTranscriptionResponse : public AbstractModel
+                class CreateTXTRecordResponse : public AbstractModel
                 {
                 public:
-                    SummarizeTranscriptionResponse();
-                    ~SummarizeTranscriptionResponse() = default;
+                    CreateTXTRecordResponse();
+                    ~CreateTXTRecordResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取记录ID
+                     * @return RecordId 记录ID
+                     * 
+                     */
+                    uint64_t GetRecordId() const;
+
+                    /**
+                     * 判断参数 RecordId 是否已赋值
+                     * @return RecordId 是否已赋值
+                     * 
+                     */
+                    bool RecordIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 记录ID
+                     */
+                    uint64_t m_recordId;
+                    bool m_recordIdHasBeenSet;
 
                 };
             }
@@ -51,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TRTC_V20190722_MODEL_SUMMARIZETRANSCRIPTIONRESPONSE_H_
+#endif // !TENCENTCLOUD_DNSPOD_V20210323_MODEL_CREATETXTRECORDRESPONSE_H_

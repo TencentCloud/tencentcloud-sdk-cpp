@@ -154,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTag() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::vector<Tag>& _tag);
@@ -179,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取dns域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DNS dns域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDNS() const;
 
                     /**
                      * 设置dns域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dNS dns域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDNS(const std::vector<std::string>& _dNS);
@@ -330,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsNewAsset 是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsNewAsset() const;
 
                     /**
                      * 设置是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isNewAsset 是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsNewAsset(const uint64_t& _isNewAsset);
@@ -355,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否核心资产1是 2不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCore 是否核心资产1是 2不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsCore() const;
 
                     /**
                      * 设置是否核心资产1是 2不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCore 是否核心资产1是 2不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCore(const uint64_t& _isCore);
@@ -412,14 +396,12 @@ namespace TencentCloud
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
                      * dns域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dNS;
                     bool m_dNSHasBeenSet;
@@ -462,14 +444,12 @@ namespace TencentCloud
 
                     /**
                      * 是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isNewAsset;
                     bool m_isNewAssetHasBeenSet;
 
                     /**
                      * 是否核心资产1是 2不是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isCore;
                     bool m_isCoreHasBeenSet;

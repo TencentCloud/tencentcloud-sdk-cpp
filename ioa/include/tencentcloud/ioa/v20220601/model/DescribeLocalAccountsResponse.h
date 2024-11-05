@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取获取账号列表响应的分页对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 获取账号列表响应的分页对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeLocalAccountsPage GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 获取账号列表响应的分页对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeLocalAccountsPage m_data;
                     bool m_dataHasBeenSet;

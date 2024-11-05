@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时执行的时间参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timed 定时执行的时间参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TimedJob> GetTimed() const;
 
                     /**
                      * 设置定时执行的时间参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timed 定时执行的时间参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimed(const std::vector<TimedJob>& _timed);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取周期执行的时间参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cron 周期执行的时间参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CronJob> GetCron() const;
 
                     /**
                      * 设置周期执行的时间参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cron 周期执行的时间参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCron(const std::vector<CronJob>& _cron);
@@ -123,14 +115,12 @@ namespace TencentCloud
 
                     /**
                      * 定时执行的时间参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TimedJob> m_timed;
                     bool m_timedHasBeenSet;
 
                     /**
                      * 周期执行的时间参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CronJob> m_cron;
                     bool m_cronHasBeenSet;

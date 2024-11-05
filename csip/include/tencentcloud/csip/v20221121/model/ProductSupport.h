@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取true支持扫描。false不支持扫描
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VSSScan true支持扫描。false不支持扫描
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetVSSScan() const;
 
                     /**
                      * 设置true支持扫描。false不支持扫描
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vSSScan true支持扫描。false不支持扫描
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVSSScan(const bool& _vSSScan);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CWPScan 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCWPScan() const;
 
                     /**
                      * 设置0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cWPScan 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCWPScan(const std::string& _cWPScan);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1支持虚拟补丁，0或空不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CFWPatch 1支持虚拟补丁，0或空不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCFWPatch() const;
 
                     /**
                      * 设置1支持虚拟补丁，0或空不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cFWPatch 1支持虚拟补丁，0或空不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCFWPatch(const std::string& _cFWPatch);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0不支持，1支持	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WafPatch 0不支持，1支持	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWafPatch() const;
 
                     /**
                      * 设置0不支持，1支持	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wafPatch 0不支持，1支持	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWafPatch(const int64_t& _wafPatch);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0不支持，1支持	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CWPFix 0不支持，1支持	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCWPFix() const;
 
                     /**
                      * 设置0不支持，1支持	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cWPFix 0不支持，1支持	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCWPFix(const int64_t& _cWPFix);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cveid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CveId cveid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCveId() const;
 
                     /**
                      * 设置cveid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cveId cveid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCveId(const std::string& _cveId);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * true支持扫描。false不支持扫描
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_vSSScan;
                     bool m_vSSScanHasBeenSet;
 
                     /**
                      * 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cWPScan;
                     bool m_cWPScanHasBeenSet;
 
                     /**
                      * 1支持虚拟补丁，0或空不支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cFWPatch;
                     bool m_cFWPatchHasBeenSet;
 
                     /**
                      * 0不支持，1支持	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_wafPatch;
                     bool m_wafPatchHasBeenSet;
 
                     /**
                      * 0不支持，1支持	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cWPFix;
                     bool m_cWPFixHasBeenSet;
 
                     /**
                      * cveid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cveId;
                     bool m_cveIdHasBeenSet;

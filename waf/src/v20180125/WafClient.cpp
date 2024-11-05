@@ -1373,92 +1373,6 @@ WafClient::DescribeAntiFakeRulesOutcomeCallable WafClient::DescribeAntiFakeRules
     return task->get_future();
 }
 
-WafClient::DescribeAntiFakeUrlOutcome WafClient::DescribeAntiFakeUrl(const DescribeAntiFakeUrlRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeAntiFakeUrl");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeAntiFakeUrlResponse rsp = DescribeAntiFakeUrlResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeAntiFakeUrlOutcome(rsp);
-        else
-            return DescribeAntiFakeUrlOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeAntiFakeUrlOutcome(outcome.GetError());
-    }
-}
-
-void WafClient::DescribeAntiFakeUrlAsync(const DescribeAntiFakeUrlRequest& request, const DescribeAntiFakeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAntiFakeUrl(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WafClient::DescribeAntiFakeUrlOutcomeCallable WafClient::DescribeAntiFakeUrlCallable(const DescribeAntiFakeUrlRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeAntiFakeUrlOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAntiFakeUrl(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-WafClient::DescribeAntiInfoLeakRulesOutcome WafClient::DescribeAntiInfoLeakRules(const DescribeAntiInfoLeakRulesRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeAntiInfoLeakRules");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeAntiInfoLeakRulesResponse rsp = DescribeAntiInfoLeakRulesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeAntiInfoLeakRulesOutcome(rsp);
-        else
-            return DescribeAntiInfoLeakRulesOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeAntiInfoLeakRulesOutcome(outcome.GetError());
-    }
-}
-
-void WafClient::DescribeAntiInfoLeakRulesAsync(const DescribeAntiInfoLeakRulesRequest& request, const DescribeAntiInfoLeakRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAntiInfoLeakRules(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WafClient::DescribeAntiInfoLeakRulesOutcomeCallable WafClient::DescribeAntiInfoLeakRulesCallable(const DescribeAntiInfoLeakRulesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeAntiInfoLeakRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAntiInfoLeakRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 WafClient::DescribeAntiInfoLeakageRulesOutcome WafClient::DescribeAntiInfoLeakageRules(const DescribeAntiInfoLeakageRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAntiInfoLeakageRules");
@@ -3215,6 +3129,49 @@ WafClient::DescribeRuleLimitOutcomeCallable WafClient::DescribeRuleLimitCallable
         [this, request]()
         {
             return this->DescribeRuleLimit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeScanIpOutcome WafClient::DescribeScanIp(const DescribeScanIpRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScanIp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScanIpResponse rsp = DescribeScanIpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScanIpOutcome(rsp);
+        else
+            return DescribeScanIpOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScanIpOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeScanIpAsync(const DescribeScanIpRequest& request, const DescribeScanIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScanIp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeScanIpOutcomeCallable WafClient::DescribeScanIpCallable(const DescribeScanIpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScanIpOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScanIp(request);
         }
     );
 

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                *  消费者
+                * 消费者
                 */
                 class Consumer : public AbstractModel
                 {

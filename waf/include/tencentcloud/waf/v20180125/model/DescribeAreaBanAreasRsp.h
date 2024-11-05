@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时任务详细配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobDateTime 定时任务详细配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     JobDateTime GetJobDateTime() const;
 
                     /**
                      * 设置定时任务详细配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobDateTime 定时任务详细配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobDateTime(const JobDateTime& _jobDateTime);
@@ -205,7 +201,6 @@ namespace TencentCloud
 
                     /**
                      * 定时任务详细配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     JobDateTime m_jobDateTime;
                     bool m_jobDateTimeHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取封禁属性标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 封禁属性标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置封禁属性标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 封禁属性标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -117,7 +113,6 @@ namespace TencentCloud
 
                     /**
                      * 封禁属性标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;

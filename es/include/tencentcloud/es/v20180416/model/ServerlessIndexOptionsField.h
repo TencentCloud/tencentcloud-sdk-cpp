@@ -121,6 +121,31 @@ namespace TencentCloud
                      */
                     bool SinkCycleAgeHasBeenSet() const;
 
+                    /**
+                     * 获取标准存储时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StandardStorageAge 标准存储时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStandardStorageAge() const;
+
+                    /**
+                     * 设置标准存储时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _standardStorageAge 标准存储时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStandardStorageAge(const std::string& _standardStorageAge);
+
+                    /**
+                     * 判断参数 StandardStorageAge 是否已赋值
+                     * @return StandardStorageAge 是否已赋值
+                     * 
+                     */
+                    bool StandardStorageAgeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +168,13 @@ namespace TencentCloud
                      */
                     std::string m_sinkCycleAge;
                     bool m_sinkCycleAgeHasBeenSet;
+
+                    /**
+                     * 标准存储时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_standardStorageAge;
+                    bool m_standardStorageAgeHasBeenSet;
 
                 };
             }

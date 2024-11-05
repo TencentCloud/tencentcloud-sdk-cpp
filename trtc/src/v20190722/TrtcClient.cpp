@@ -2276,49 +2276,6 @@ TrtcClient::StopWebRecordOutcomeCallable TrtcClient::StopWebRecordCallable(const
     return task->get_future();
 }
 
-TrtcClient::SummarizeTranscriptionOutcome TrtcClient::SummarizeTranscription(const SummarizeTranscriptionRequest &request)
-{
-    auto outcome = MakeRequest(request, "SummarizeTranscription");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        SummarizeTranscriptionResponse rsp = SummarizeTranscriptionResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return SummarizeTranscriptionOutcome(rsp);
-        else
-            return SummarizeTranscriptionOutcome(o.GetError());
-    }
-    else
-    {
-        return SummarizeTranscriptionOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::SummarizeTranscriptionAsync(const SummarizeTranscriptionRequest& request, const SummarizeTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SummarizeTranscription(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::SummarizeTranscriptionOutcomeCallable TrtcClient::SummarizeTranscriptionCallable(const SummarizeTranscriptionRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<SummarizeTranscriptionOutcome()>>(
-        [this, request]()
-        {
-            return this->SummarizeTranscription(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TrtcClient::UpdateAIConversationOutcome TrtcClient::UpdateAIConversation(const UpdateAIConversationRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateAIConversation");

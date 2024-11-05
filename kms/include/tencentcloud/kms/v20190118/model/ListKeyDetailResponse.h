@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回的属性信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyMetadatas 返回的属性信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyMetadata> GetKeyMetadatas() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 返回的属性信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyMetadata> m_keyMetadatas;
                     bool m_keyMetadatasHasBeenSet;

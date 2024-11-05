@@ -279,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高级参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OptionsArr 高级参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOptionsArr() const;
 
                     /**
                      * 设置高级参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _optionsArr 高级参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOptionsArr(const std::string& _optionsArr);
@@ -477,7 +473,6 @@ namespace TencentCloud
 
                     /**
                      * 高级参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_optionsArr;
                     bool m_optionsArrHasBeenSet;

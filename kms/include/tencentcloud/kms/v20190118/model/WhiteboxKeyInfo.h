@@ -279,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否有设备指纹与当前密钥绑定
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceFingerprintBind 是否有设备指纹与当前密钥绑定
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDeviceFingerprintBind() const;
 
                     /**
                      * 设置是否有设备指纹与当前密钥绑定
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceFingerprintBind 是否有设备指纹与当前密钥绑定
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceFingerprintBind(const bool& _deviceFingerprintBind);
@@ -372,7 +368,6 @@ namespace TencentCloud
 
                     /**
                      * 是否有设备指纹与当前密钥绑定
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_deviceFingerprintBind;
                     bool m_deviceFingerprintBindHasBeenSet;

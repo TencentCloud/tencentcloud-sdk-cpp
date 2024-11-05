@@ -28,7 +28,8 @@ CreateVerifyReportRequest::CreateVerifyReportRequest() :
     m_applyNameHasBeenSet(false),
     m_applyMobileHasBeenSet(false),
     m_fileIdHasBeenSet(false),
-    m_applyEmailHasBeenSet(false)
+    m_applyEmailHasBeenSet(false),
+    m_certificateIdentityUsersHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,21 @@ string CreateVerifyReportRequest::ToJsonString() const
         string key = "ApplyEmail";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_applyEmail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certificateIdentityUsersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertificateIdentityUsers";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_certificateIdentityUsers.begin(); itr != m_certificateIdentityUsers.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -189,6 +205,22 @@ void CreateVerifyReportRequest::SetApplyEmail(const string& _applyEmail)
 bool CreateVerifyReportRequest::ApplyEmailHasBeenSet() const
 {
     return m_applyEmailHasBeenSet;
+}
+
+vector<CertificateIdentityUser> CreateVerifyReportRequest::GetCertificateIdentityUsers() const
+{
+    return m_certificateIdentityUsers;
+}
+
+void CreateVerifyReportRequest::SetCertificateIdentityUsers(const vector<CertificateIdentityUser>& _certificateIdentityUsers)
+{
+    m_certificateIdentityUsers = _certificateIdentityUsers;
+    m_certificateIdentityUsersHasBeenSet = true;
+}
+
+bool CreateVerifyReportRequest::CertificateIdentityUsersHasBeenSet() const
+{
+    return m_certificateIdentityUsersHasBeenSet;
 }
 
 

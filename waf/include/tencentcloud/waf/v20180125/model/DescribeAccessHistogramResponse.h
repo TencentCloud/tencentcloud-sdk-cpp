@@ -74,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取注意：此字段可能返回 null，表示取不到有效值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HistogramInfos 注意：此字段可能返回 null，表示取不到有效值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AccessHistogramItem> GetHistogramInfos() const;
@@ -104,7 +102,6 @@ namespace TencentCloud
 
                     /**
                      * 注意：此字段可能返回 null，表示取不到有效值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AccessHistogramItem> m_histogramInfos;
                     bool m_histogramInfosHasBeenSet;

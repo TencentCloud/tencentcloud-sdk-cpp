@@ -337,7 +337,7 @@ namespace TencentCloud
                 DescribeCVMAssetInfoOutcomeCallable DescribeCVMAssetInfoCallable(const Model::DescribeCVMAssetInfoRequest& request);
 
                 /**
-                 *cvm列表
+                 *获取cvm列表
                  * @param req DescribeCVMAssetsRequest
                  * @return DescribeCVMAssetsOutcome
                  */

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组Id(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountGroupId 组Id(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAccountGroupId() const;
 
                     /**
                      * 设置组Id(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountGroupId 组Id(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountGroupId(const int64_t& _accountGroupId);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 组Id(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_accountGroupId;
                     bool m_accountGroupIdHasBeenSet;

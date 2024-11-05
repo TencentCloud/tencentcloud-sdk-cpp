@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Paging 数据分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Paging GetPaging() const;
 
                     /**
                      * 设置数据分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _paging 数据分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPaging(const Paging& _paging);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务响应数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 业务响应数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DeviceDetail> GetItems() const;
 
                     /**
                      * 设置业务响应数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _items 业务响应数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItems(const std::vector<DeviceDetail>& _items);
@@ -102,14 +94,12 @@ namespace TencentCloud
 
                     /**
                      * 数据分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Paging m_paging;
                     bool m_pagingHasBeenSet;
 
                     /**
                      * 业务响应数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DeviceDetail> m_items;
                     bool m_itemsHasBeenSet;

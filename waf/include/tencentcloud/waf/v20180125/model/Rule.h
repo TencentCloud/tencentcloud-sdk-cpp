@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 规则类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置规则类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 规则类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则防护的CVE编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CVE 规则防护的CVE编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCVE() const;
 
                     /**
                      * 设置规则防护的CVE编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cVE 规则防护的CVE编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCVE(const std::string& _cVE);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取门神规则新增/更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddTime 门神规则新增/更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 设置门神规则新增/更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addTime 门神规则新增/更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddTime(const std::string& _addTime);
@@ -240,7 +224,6 @@ namespace TencentCloud
 
                     /**
                      * 规则类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -253,14 +236,12 @@ namespace TencentCloud
 
                     /**
                      * 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 规则防护的CVE编号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cVE;
                     bool m_cVEHasBeenSet;
@@ -279,7 +260,6 @@ namespace TencentCloud
 
                     /**
                      * 门神规则新增/更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;

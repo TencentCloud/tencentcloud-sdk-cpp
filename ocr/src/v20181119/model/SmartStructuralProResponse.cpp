@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/waf/v20180125/model/DescribeAntiFakeUrlResponse.h>
+#include <tencentcloud/ocr/v20181119/model/SmartStructuralProResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Waf::V20180125::Model;
+using namespace TencentCloud::Ocr::V20181119::Model;
 using namespace std;
 
-DescribeAntiFakeUrlResponse::DescribeAntiFakeUrlResponse() :
-    m_totalHasBeenSet(false),
-    m_listHasBeenSet(false)
+SmartStructuralProResponse::SmartStructuralProResponse() :
+    m_angleHasBeenSet(false),
+    m_structuralListHasBeenSet(false),
+    m_wordListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeAntiFakeUrlResponse::Deserialize(const string &payload)
+CoreInternalOutcome SmartStructuralProResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,63 +64,98 @@ CoreInternalOutcome DescribeAntiFakeUrlResponse::Deserialize(const string &paylo
     }
 
 
-    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    if (rsp.HasMember("Angle") && !rsp["Angle"].IsNull())
     {
-        if (!rsp["Total"].IsString())
+        if (!rsp["Angle"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `Total` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_total = string(rsp["Total"].GetString());
-        m_totalHasBeenSet = true;
+        m_angle = rsp["Angle"].GetDouble();
+        m_angleHasBeenSet = true;
     }
 
-    if (rsp.HasMember("List") && !rsp["List"].IsNull())
+    if (rsp.HasMember("StructuralList") && !rsp["StructuralList"].IsNull())
     {
-        if (!rsp["List"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `List` is not array type"));
+        if (!rsp["StructuralList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `StructuralList` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["List"];
+        const rapidjson::Value &tmpValue = rsp["StructuralList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            CacheUrlItem item;
+            GroupInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_list.push_back(item);
+            m_structuralList.push_back(item);
         }
-        m_listHasBeenSet = true;
+        m_structuralListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WordList") && !rsp["WordList"].IsNull())
+    {
+        if (!rsp["WordList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WordList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["WordList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            WordItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_wordList.push_back(item);
+        }
+        m_wordListHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeAntiFakeUrlResponse::ToJsonString() const
+string SmartStructuralProResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_totalHasBeenSet)
+    if (m_angleHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Total";
+        string key = "Angle";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_total.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_angle, allocator);
     }
 
-    if (m_listHasBeenSet)
+    if (m_structuralListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "List";
+        string key = "StructuralList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_list.begin(); itr != m_list.end(); ++itr, ++i)
+        for (auto itr = m_structuralList.begin(); itr != m_structuralList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_wordListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WordList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_wordList.begin(); itr != m_wordList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -138,24 +174,34 @@ string DescribeAntiFakeUrlResponse::ToJsonString() const
 }
 
 
-string DescribeAntiFakeUrlResponse::GetTotal() const
+double SmartStructuralProResponse::GetAngle() const
 {
-    return m_total;
+    return m_angle;
 }
 
-bool DescribeAntiFakeUrlResponse::TotalHasBeenSet() const
+bool SmartStructuralProResponse::AngleHasBeenSet() const
 {
-    return m_totalHasBeenSet;
+    return m_angleHasBeenSet;
 }
 
-vector<CacheUrlItem> DescribeAntiFakeUrlResponse::GetList() const
+vector<GroupInfo> SmartStructuralProResponse::GetStructuralList() const
 {
-    return m_list;
+    return m_structuralList;
 }
 
-bool DescribeAntiFakeUrlResponse::ListHasBeenSet() const
+bool SmartStructuralProResponse::StructuralListHasBeenSet() const
 {
-    return m_listHasBeenSet;
+    return m_structuralListHasBeenSet;
+}
+
+vector<WordItem> SmartStructuralProResponse::GetWordList() const
+{
+    return m_wordList;
+}
+
+bool SmartStructuralProResponse::WordListHasBeenSet() const
+{
+    return m_wordListHasBeenSet;
 }
 
 

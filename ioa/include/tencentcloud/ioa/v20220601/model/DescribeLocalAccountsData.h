@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取uid，数据库中唯一
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id uid，数据库中唯一
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置uid，数据库中唯一
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id uid，数据库中唯一
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号，登录账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 账号，登录账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置账号，登录账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userId 账号，登录账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号id，同Id字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountId 账号id，同Id字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAccountId() const;
 
                     /**
                      * 设置账号id，同Id字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountId 账号id，同Id字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountId(const int64_t& _accountId);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号所在的分组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 账号所在的分组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
                      * 设置账号所在的分组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 账号所在的分组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const int64_t& _groupId);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号所在的分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 账号所在的分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置账号所在的分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 账号所在的分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号所在的分组名称路径，用英文.分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamePath 账号所在的分组名称路径，用英文.分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamePath() const;
 
                     /**
                      * 设置账号所在的分组名称路径，用英文.分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namePath 账号所在的分组名称路径，用英文.分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamePath(const std::string& _namePath);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号来源,0表示本地账号(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 账号来源,0表示本地账号(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSource() const;
 
                     /**
                      * 设置账号来源,0表示本地账号(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _source 账号来源,0表示本地账号(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSource(const int64_t& _source);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号状态,0禁用，1启用(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 账号状态,0禁用，1启用(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置账号状态,0禁用，1启用(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 账号状态,0禁用，1启用(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -274,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号的创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Itime 账号的创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetItime() const;
 
                     /**
                      * 设置账号的创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _itime 账号的创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItime(const std::string& _itime);
@@ -299,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号的最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Utime 账号的最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUtime() const;
 
                     /**
                      * 设置账号的最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _utime 账号的最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUtime(const std::string& _utime);
@@ -324,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号的扩展信息，包含邮箱、手机号、身份证、职位等信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraInfo 账号的扩展信息，包含邮箱、手机号、身份证、职位等信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExtraInfo() const;
 
                     /**
                      * 设置账号的扩展信息，包含邮箱、手机号、身份证、职位等信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extraInfo 账号的扩展信息，包含邮箱、手机号、身份证、职位等信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtraInfo(const std::string& _extraInfo);
@@ -349,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户风险等级，枚举：none, low, middle, high
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 用户风险等级，枚举：none, low, middle, high
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevel() const;
 
                     /**
                      * 设置用户风险等级，枚举：none, low, middle, high
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevel 用户风险等级，枚举：none, low, middle, high
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
@@ -374,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountGroups 所属组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DescribeLocalAccountAccountGroupsData> GetAccountGroups() const;
 
                     /**
                      * 设置所属组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountGroups 所属组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountGroups(const std::vector<DescribeLocalAccountAccountGroupsData>& _accountGroups);
@@ -399,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定手机端设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MobileBindNum 绑定手机端设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMobileBindNum() const;
 
                     /**
                      * 设置绑定手机端设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mobileBindNum 绑定手机端设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMobileBindNum(const int64_t& _mobileBindNum);
@@ -424,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定Pc端设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PcBindNum 绑定Pc端设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPcBindNum() const;
 
                     /**
                      * 设置绑定Pc端设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pcBindNum 绑定Pc端设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPcBindNum(const int64_t& _pcBindNum);
@@ -449,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号在线状态 1：在线 2：离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OnlineStatus 账号在线状态 1：在线 2：离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOnlineStatus() const;
 
                     /**
                      * 设置账号在线状态 1：在线 2：离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _onlineStatus 账号在线状态 1：在线 2：离线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOnlineStatus(const int64_t& _onlineStatus);
@@ -474,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号活跃状态 1：活跃 2：非活跃
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveStatus 账号活跃状态 1：活跃 2：非活跃
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetActiveStatus() const;
 
                     /**
                      * 设置账号活跃状态 1：活跃 2：非活跃
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activeStatus 账号活跃状态 1：活跃 2：非活跃
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActiveStatus(const int64_t& _activeStatus);
@@ -499,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号登录时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoginTime 账号登录时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLoginTime() const;
 
                     /**
                      * 设置账号登录时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loginTime 账号登录时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoginTime(const std::string& _loginTime);
@@ -524,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号登出时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogoutTime 账号登出时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogoutTime() const;
 
                     /**
                      * 设置账号登出时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logoutTime 账号登出时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogoutTime(const std::string& _logoutTime);
@@ -551,140 +471,120 @@ namespace TencentCloud
 
                     /**
                      * uid，数据库中唯一
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 账号，登录账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
                      * 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * 账号id，同Id字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_accountId;
                     bool m_accountIdHasBeenSet;
 
                     /**
                      * 账号所在的分组id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 账号所在的分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 账号所在的分组名称路径，用英文.分割
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namePath;
                     bool m_namePathHasBeenSet;
 
                     /**
                      * 账号来源,0表示本地账号(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
                      * 账号状态,0禁用，1启用(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 账号的创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_itime;
                     bool m_itimeHasBeenSet;
 
                     /**
                      * 账号的最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_utime;
                     bool m_utimeHasBeenSet;
 
                     /**
                      * 账号的扩展信息，包含邮箱、手机号、身份证、职位等信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extraInfo;
                     bool m_extraInfoHasBeenSet;
 
                     /**
                      * 用户风险等级，枚举：none, low, middle, high
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
                      * 所属组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribeLocalAccountAccountGroupsData> m_accountGroups;
                     bool m_accountGroupsHasBeenSet;
 
                     /**
                      * 绑定手机端设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_mobileBindNum;
                     bool m_mobileBindNumHasBeenSet;
 
                     /**
                      * 绑定Pc端设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pcBindNum;
                     bool m_pcBindNumHasBeenSet;
 
                     /**
                      * 账号在线状态 1：在线 2：离线
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_onlineStatus;
                     bool m_onlineStatusHasBeenSet;
 
                     /**
                      * 账号活跃状态 1：活跃 2：非活跃
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_activeStatus;
                     bool m_activeStatusHasBeenSet;
 
                     /**
                      * 账号登录时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loginTime;
                     bool m_loginTimeHasBeenSet;
 
                     /**
                      * 账号登出时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logoutTime;
                     bool m_logoutTimeHasBeenSet;

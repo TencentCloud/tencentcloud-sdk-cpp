@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间：2019-09-08 12:12:41
-                     * @return BeginTime 开始时间：2019-09-08 12:12:41
+                     * 获取开始时间：2019-09-08 12:12:41，查询时间最大跨度30天。
+                     * @return BeginTime 开始时间：2019-09-08 12:12:41，查询时间最大跨度30天。
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置开始时间：2019-09-08 12:12:41
-                     * @param _beginTime 开始时间：2019-09-08 12:12:41
+                     * 设置开始时间：2019-09-08 12:12:41，查询时间最大跨度30天。
+                     * @param _beginTime 开始时间：2019-09-08 12:12:41，查询时间最大跨度30天。
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间：2019-09-09 12:12:41
-                     * @return EndTime 结束时间：2019-09-09 12:12:41
+                     * 获取结束时间：2019-09-09 12:12:41，查询时间最大跨度30天。
+                     * @return EndTime 结束时间：2019-09-09 12:12:41，查询时间最大跨度30天。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间：2019-09-09 12:12:41
-                     * @param _endTime 结束时间：2019-09-09 12:12:41
+                     * 设置结束时间：2019-09-09 12:12:41，查询时间最大跨度30天。
+                     * @param _endTime 结束时间：2019-09-09 12:12:41，查询时间最大跨度30天。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool MinQueryTimeHasBeenSet() const;
 
                     /**
-                     * 获取页面大小：默认20
-                     * @return Limit 页面大小：默认20
+                     * 获取页面大小：默认20，最大100。
+                     * @return Limit 页面大小：默认20，最大100。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置页面大小：默认20
-                     * @param _limit 页面大小：默认20
+                     * 设置页面大小：默认20，最大100。
+                     * @param _limit 页面大小：默认20，最大100。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，取Limit整数倍
-                     * @return Offset 偏移量，取Limit整数倍
+                     * 获取分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * @return Offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，取Limit整数倍
-                     * @param _offset 偏移量，取Limit整数倍
+                     * 设置分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * @param _offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -177,13 +177,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 开始时间：2019-09-08 12:12:41
+                     * 开始时间：2019-09-08 12:12:41，查询时间最大跨度30天。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 结束时间：2019-09-09 12:12:41
+                     * 结束时间：2019-09-09 12:12:41，查询时间最大跨度30天。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -195,13 +195,13 @@ namespace TencentCloud
                     bool m_minQueryTimeHasBeenSet;
 
                     /**
-                     * 页面大小：默认20
+                     * 页面大小：默认20，最大100。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，取Limit整数倍
+                     * 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

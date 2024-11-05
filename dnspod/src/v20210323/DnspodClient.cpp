@@ -556,6 +556,49 @@ DnspodClient::CreateSnapshotOutcomeCallable DnspodClient::CreateSnapshotCallable
     return task->get_future();
 }
 
+DnspodClient::CreateTXTRecordOutcome DnspodClient::CreateTXTRecord(const CreateTXTRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTXTRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTXTRecordResponse rsp = CreateTXTRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTXTRecordOutcome(rsp);
+        else
+            return CreateTXTRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTXTRecordOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::CreateTXTRecordAsync(const CreateTXTRecordRequest& request, const CreateTXTRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTXTRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::CreateTXTRecordOutcomeCallable DnspodClient::CreateTXTRecordCallable(const CreateTXTRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTXTRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTXTRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DeleteDomainOutcome DnspodClient::DeleteDomain(const DeleteDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDomain");
@@ -3086,6 +3129,49 @@ DnspodClient::ModifySubdomainStatusOutcomeCallable DnspodClient::ModifySubdomain
         [this, request]()
         {
             return this->ModifySubdomainStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::ModifyTXTRecordOutcome DnspodClient::ModifyTXTRecord(const ModifyTXTRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTXTRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTXTRecordResponse rsp = ModifyTXTRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTXTRecordOutcome(rsp);
+        else
+            return ModifyTXTRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTXTRecordOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::ModifyTXTRecordAsync(const ModifyTXTRecordRequest& request, const ModifyTXTRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTXTRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::ModifyTXTRecordOutcomeCallable DnspodClient::ModifyTXTRecordCallable(const ModifyTXTRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTXTRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTXTRecord(request);
         }
     );
 

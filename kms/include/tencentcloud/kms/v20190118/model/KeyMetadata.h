@@ -279,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计划删除的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeletionDate 计划删除的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDeletionDate() const;
 
                     /**
                      * 设置计划删除的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deletionDate 计划删除的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeletionDate(const uint64_t& _deletionDate);
@@ -304,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Origin CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrigin() const;
 
                     /**
                      * 设置CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _origin CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrigin(const std::string& _origin);
@@ -329,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidTo 在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetValidTo() const;
 
                     /**
                      * 设置在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _validTo 在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValidTo(const uint64_t& _validTo);
@@ -375,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HsmClusterId HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHsmClusterId() const;
 
                     /**
                      * 设置HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hsmClusterId HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHsmClusterId(const std::string& _hsmClusterId);
@@ -468,21 +452,18 @@ namespace TencentCloud
 
                     /**
                      * 计划删除的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deletionDate;
                     bool m_deletionDateHasBeenSet;
 
                     /**
                      * CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_origin;
                     bool m_originHasBeenSet;
 
                     /**
                      * 在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_validTo;
                     bool m_validToHasBeenSet;
@@ -495,7 +476,6 @@ namespace TencentCloud
 
                     /**
                      * HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hsmClusterId;
                     bool m_hsmClusterIdHasBeenSet;

@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicId 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName 日志主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置日志主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicName 日志主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志来源IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 日志来源IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置日志来源IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _source 日志来源IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileName 日志文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置日志文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileName 日志文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -169,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志上报请求包的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PkgId 日志上报请求包的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPkgId() const;
 
                     /**
                      * 设置日志上报请求包的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pkgId 日志上报请求包的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPkgId(const std::string& _pkgId);
@@ -194,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取请求包内日志的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PkgLogId 请求包内日志的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPkgLogId() const;
 
                     /**
                      * 设置请求包内日志的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pkgLogId 请求包内日志的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPkgLogId(const std::string& _pkgLogId);
@@ -220,9 +196,7 @@ namespace TencentCloud
                     /**
                      * 获取日志内容的Json序列化字符串
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogJson 日志内容的Json序列化字符串
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -231,9 +205,7 @@ namespace TencentCloud
                     /**
                      * 设置日志内容的Json序列化字符串
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logJson 日志内容的Json序列化字符串
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -256,49 +228,42 @@ namespace TencentCloud
 
                     /**
                      * 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 日志主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
                      * 日志来源IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
                      * 日志文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
                      * 日志上报请求包的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pkgId;
                     bool m_pkgIdHasBeenSet;
 
                     /**
                      * 请求包内日志的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pkgLogId;
                     bool m_pkgLogIdHasBeenSet;
 
                     /**
                      * 日志内容的Json序列化字符串
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logJson;

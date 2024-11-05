@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取是否接入waf
-                     * @return IsWafDomain 是否接入waf
+                     * 获取是否接入waf；传"1"返回接入域名的详情，传"0"返回未接入域名的详情，传""返回接入和未接入域名的详情
+                     * @return IsWafDomain 是否接入waf；传"1"返回接入域名的详情，传"0"返回未接入域名的详情，传""返回接入和未接入域名的详情
                      * 
                      */
                     std::string GetIsWafDomain() const;
 
                     /**
-                     * 设置是否接入waf
-                     * @param _isWafDomain 是否接入waf
+                     * 设置是否接入waf；传"1"返回接入域名的详情，传"0"返回未接入域名的详情，传""返回接入和未接入域名的详情
+                     * @param _isWafDomain 是否接入waf；传"1"返回接入域名的详情，传"0"返回未接入域名的详情，传""返回接入和未接入域名的详情
                      * 
                      */
                     void SetIsWafDomain(const std::string& _isWafDomain);
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 是否接入waf
+                     * 是否接入waf；传"1"返回接入域名的详情，传"0"返回未接入域名的详情，传""返回接入和未接入域名的详情
                      */
                     std::string m_isWafDomain;
                     bool m_isWafDomainHasBeenSet;

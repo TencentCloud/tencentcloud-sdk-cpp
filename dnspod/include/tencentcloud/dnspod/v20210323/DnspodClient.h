@@ -47,6 +47,8 @@
 #include <tencentcloud/dnspod/v20210323/model/CreateRecordGroupResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateSnapshotRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateSnapshotResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateTXTRecordRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateTXTRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainAliasRequest.h>
@@ -165,6 +167,8 @@
 #include <tencentcloud/dnspod/v20210323/model/ModifySnapshotConfigResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifySubdomainStatusRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifySubdomainStatusResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyTXTRecordRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyTXTRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyVasAutoRenewStatusRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyVasAutoRenewStatusResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/PayOrderWithBalanceRequest.h>
@@ -223,6 +227,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSnapshotResponse> CreateSnapshotOutcome;
                 typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CreateSnapshotRequest&, CreateSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTXTRecordResponse> CreateTXTRecordOutcome;
+                typedef std::future<CreateTXTRecordOutcome> CreateTXTRecordOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::CreateTXTRecordRequest&, CreateTXTRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTXTRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDomainResponse> DeleteDomainOutcome;
                 typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DeleteDomainRequest&, DeleteDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAsyncHandler;
@@ -400,6 +407,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySubdomainStatusResponse> ModifySubdomainStatusOutcome;
                 typedef std::future<ModifySubdomainStatusOutcome> ModifySubdomainStatusOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifySubdomainStatusRequest&, ModifySubdomainStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubdomainStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTXTRecordResponse> ModifyTXTRecordOutcome;
+                typedef std::future<ModifyTXTRecordOutcome> ModifyTXTRecordOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::ModifyTXTRecordRequest&, ModifyTXTRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTXTRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVasAutoRenewStatusResponse> ModifyVasAutoRenewStatusOutcome;
                 typedef std::future<ModifyVasAutoRenewStatusOutcome> ModifyVasAutoRenewStatusOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyVasAutoRenewStatusRequest&, ModifyVasAutoRenewStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVasAutoRenewStatusAsyncHandler;
@@ -444,6 +454,8 @@ namespace TencentCloud
 
                 /**
                  *添加域名
+
+备注：该接口不支持添加子域名。
                  * @param req CreateDomainRequest
                  * @return CreateDomainOutcome
                  */
@@ -523,6 +535,16 @@ namespace TencentCloud
                 CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest &request);
                 void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request);
+
+                /**
+                 *添加TXT记录
+备注：新添加的解析记录存在短暂的索引延迟，如果查询不到新增记录，请在 30 秒后重试
+                 * @param req CreateTXTRecordRequest
+                 * @return CreateTXTRecordOutcome
+                 */
+                CreateTXTRecordOutcome CreateTXTRecord(const Model::CreateTXTRecordRequest &request);
+                void CreateTXTRecordAsync(const Model::CreateTXTRecordRequest& request, const CreateTXTRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTXTRecordOutcomeCallable CreateTXTRecordCallable(const Model::CreateTXTRecordRequest& request);
 
                 /**
                  *删除域名
@@ -1062,6 +1084,15 @@ namespace TencentCloud
                 ModifySubdomainStatusOutcome ModifySubdomainStatus(const Model::ModifySubdomainStatusRequest &request);
                 void ModifySubdomainStatusAsync(const Model::ModifySubdomainStatusRequest& request, const ModifySubdomainStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySubdomainStatusOutcomeCallable ModifySubdomainStatusCallable(const Model::ModifySubdomainStatusRequest& request);
+
+                /**
+                 *修改TXT记录
+                 * @param req ModifyTXTRecordRequest
+                 * @return ModifyTXTRecordOutcome
+                 */
+                ModifyTXTRecordOutcome ModifyTXTRecord(const Model::ModifyTXTRecordRequest &request);
+                void ModifyTXTRecordAsync(const Model::ModifyTXTRecordRequest& request, const ModifyTXTRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTXTRecordOutcomeCallable ModifyTXTRecordCallable(const Model::ModifyTXTRecordRequest& request);
 
                 /**
                  *增值服务自动续费设置

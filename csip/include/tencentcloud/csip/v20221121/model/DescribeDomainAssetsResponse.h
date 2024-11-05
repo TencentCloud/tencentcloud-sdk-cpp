@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DomainAssetVO> GetData() const;
@@ -79,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取防护状态列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefenseStatusList 防护状态列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetDefenseStatusList() const;
@@ -95,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资产归属地列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetLocationList 资产归属地列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetAssetLocationList() const;
@@ -111,9 +103,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资产类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceTypeList 资产类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetSourceTypeList() const;
@@ -127,9 +117,7 @@ namespace TencentCloud
 
                     /**
                      * 获取地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionList 地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetRegionList() const;
@@ -145,42 +133,36 @@ namespace TencentCloud
 
                     /**
                      * 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DomainAssetVO> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
                      * 防护状态列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_defenseStatusList;
                     bool m_defenseStatusListHasBeenSet;
 
                     /**
                      * 资产归属地列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_assetLocationList;
                     bool m_assetLocationListHasBeenSet;
 
                     /**
                      * 资产类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_sourceTypeList;
                     bool m_sourceTypeListHasBeenSet;
 
                     /**
                      * 地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_regionList;
                     bool m_regionListHasBeenSet;

@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID 告警ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 设置告警ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iD 告警ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 告警名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置告警名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 告警名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -104,13 +96,11 @@ CFW:云防火墙
 WAF:Web应用防火墙
 CWP:主机安全
 CSIP:云安全中心
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 告警来源
 CFW:云防火墙
 WAF:Web应用防火墙
 CWP:主机安全
 CSIP:云安全中心
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSource() const;
@@ -121,13 +111,11 @@ CFW:云防火墙
 WAF:Web应用防火墙
 CWP:主机安全
 CSIP:云安全中心
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _source 告警来源
 CFW:云防火墙
 WAF:Web应用防火墙
 CWP:主机安全
 CSIP:云安全中心
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -146,14 +134,12 @@ CSIP:云安全中心
 3:中危
 4:高危
 5:严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 告警等级
 1:提示
 2:低危
 3:中危
 4:高危
 5:严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLevel() const;
@@ -165,14 +151,12 @@ CSIP:云安全中心
 3:中危
 4:高危
 5:严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 告警等级
 1:提示
 2:低危
 3:中危
 4:高危
 5:严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const uint64_t& _level);
@@ -186,18 +170,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取攻击者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Attacker 攻击者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RoleInfo GetAttacker() const;
 
                     /**
                      * 设置攻击者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attacker 攻击者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttacker(const RoleInfo& _attacker);
@@ -211,18 +191,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取受害者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Victim 受害者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RoleInfo GetVictim() const;
 
                     /**
                      * 设置受害者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _victim 受害者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVictim(const RoleInfo& _victim);
@@ -236,18 +212,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取证据数据(例如攻击内容等，base64编码)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EvidenceData 证据数据(例如攻击内容等，base64编码)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEvidenceData() const;
 
                     /**
                      * 设置证据数据(例如攻击内容等，base64编码)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _evidenceData 证据数据(例如攻击内容等，base64编码)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEvidenceData(const std::string& _evidenceData);
@@ -261,18 +233,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取证据位置(例如协议端口)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EvidenceLocation 证据位置(例如协议端口)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEvidenceLocation() const;
 
                     /**
                      * 设置证据位置(例如协议端口)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _evidenceLocation 证据位置(例如协议端口)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEvidenceLocation(const std::string& _evidenceLocation);
@@ -286,18 +254,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取证据路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EvidencePath 证据路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEvidencePath() const;
 
                     /**
                      * 设置证据路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _evidencePath 证据路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEvidencePath(const std::string& _evidencePath);
@@ -311,18 +275,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取首次告警时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 首次告警时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置首次告警时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 首次告警时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -336,18 +296,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取最近告警时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 最近告警时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置最近告警时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 最近告警时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -361,18 +317,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取告警次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 告警次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置告警次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 告警次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -386,18 +338,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取紧急缓解建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UrgentSuggestion 紧急缓解建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrgentSuggestion() const;
 
                     /**
                      * 设置紧急缓解建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _urgentSuggestion 紧急缓解建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrgentSuggestion(const std::string& _urgentSuggestion);
@@ -411,18 +359,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取根治建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemediationSuggestion 根治建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemediationSuggestion() const;
 
                     /**
                      * 设置根治建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remediationSuggestion 根治建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemediationSuggestion(const std::string& _remediationSuggestion);
@@ -437,10 +381,8 @@ CSIP:云安全中心
                     /**
                      * 获取处理状态
 0：未处置，1：已忽略，2：已处置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 处理状态
 0：未处置，1：已忽略，2：已处置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -448,10 +390,8 @@ CSIP:云安全中心
                     /**
                      * 设置处理状态
 0：未处置，1：已忽略，2：已处置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 处理状态
 0：未处置，1：已忽略，2：已处置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -465,18 +405,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取告警处理类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessType 告警处理类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProcessType() const;
 
                     /**
                      * 设置告警处理类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _processType 告警处理类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProcessType(const std::string& _processType);
@@ -490,18 +426,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取告警大类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 告警大类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置告警大类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 告警大类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -515,18 +447,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取告警小类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubType 告警小类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubType() const;
 
                     /**
                      * 设置告警小类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subType 告警小类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubType(const std::string& _subType);
@@ -540,18 +468,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取下拉字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraInfo 下拉字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AlertExtraInfo GetExtraInfo() const;
 
                     /**
                      * 设置下拉字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extraInfo 下拉字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtraInfo(const AlertExtraInfo& _extraInfo);
@@ -565,18 +489,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取聚合字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 聚合字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置聚合字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 聚合字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -590,18 +510,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取告警日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Date 告警日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置告警日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _date 告警日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDate(const std::string& _date);
@@ -615,18 +531,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppID appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppID() const;
 
                     /**
                      * 设置appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appID appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppID(const std::string& _appID);
@@ -640,18 +552,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取账户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NickName 账户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNickName() const;
 
                     /**
                      * 设置账户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nickName 账户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNickName(const std::string& _nickName);
@@ -665,18 +573,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取账户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 账户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置账户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 账户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -690,18 +594,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取行为
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Action 行为
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAction() const;
 
                     /**
                      * 设置行为
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _action 行为
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAction(const uint64_t& _action);
@@ -715,18 +615,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取风险排查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskInvestigation 风险排查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskInvestigation() const;
 
                     /**
                      * 设置风险排查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskInvestigation 风险排查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskInvestigation(const std::string& _riskInvestigation);
@@ -740,18 +636,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取风险处置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskTreatment 风险处置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskTreatment() const;
 
                     /**
                      * 设置风险处置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskTreatment 风险处置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskTreatment(const std::string& _riskTreatment);
@@ -765,18 +657,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取日志类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogType 日志类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogType() const;
 
                     /**
                      * 设置日志类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logType 日志类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogType(const std::string& _logType);
@@ -790,18 +678,14 @@ CSIP:云安全中心
 
                     /**
                      * 获取语句检索
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogSearch 语句检索
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogSearch() const;
 
                     /**
                      * 设置语句检索
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logSearch 语句检索
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogSearch(const std::string& _logSearch);
@@ -817,14 +701,12 @@ CSIP:云安全中心
 
                     /**
                      * 告警ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
                      * 告警名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -835,7 +717,6 @@ CFW:云防火墙
 WAF:Web应用防火墙
 CWP:主机安全
 CSIP:云安全中心
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
@@ -847,77 +728,66 @@ CSIP:云安全中心
 3:中危
 4:高危
 5:严重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 攻击者
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RoleInfo m_attacker;
                     bool m_attackerHasBeenSet;
 
                     /**
                      * 受害者
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RoleInfo m_victim;
                     bool m_victimHasBeenSet;
 
                     /**
                      * 证据数据(例如攻击内容等，base64编码)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_evidenceData;
                     bool m_evidenceDataHasBeenSet;
 
                     /**
                      * 证据位置(例如协议端口)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_evidenceLocation;
                     bool m_evidenceLocationHasBeenSet;
 
                     /**
                      * 证据路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_evidencePath;
                     bool m_evidencePathHasBeenSet;
 
                     /**
                      * 首次告警时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 最近告警时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 告警次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * 紧急缓解建议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_urgentSuggestion;
                     bool m_urgentSuggestionHasBeenSet;
 
                     /**
                      * 根治建议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remediationSuggestion;
                     bool m_remediationSuggestionHasBeenSet;
@@ -925,105 +795,90 @@ CSIP:云安全中心
                     /**
                      * 处理状态
 0：未处置，1：已忽略，2：已处置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 告警处理类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_processType;
                     bool m_processTypeHasBeenSet;
 
                     /**
                      * 告警大类
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 告警小类
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subType;
                     bool m_subTypeHasBeenSet;
 
                     /**
                      * 下拉字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AlertExtraInfo m_extraInfo;
                     bool m_extraInfoHasBeenSet;
 
                     /**
                      * 聚合字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 告警日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
 
                     /**
                      * appid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appID;
                     bool m_appIDHasBeenSet;
 
                     /**
                      * 账户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
 
                     /**
                      * 账户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 行为
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_action;
                     bool m_actionHasBeenSet;
 
                     /**
                      * 风险排查
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskInvestigation;
                     bool m_riskInvestigationHasBeenSet;
 
                     /**
                      * 风险处置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskTreatment;
                     bool m_riskTreatmentHasBeenSet;
 
                     /**
                      * 日志类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
 
                     /**
                      * 语句检索
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logSearch;
                     bool m_logSearchHasBeenSet;

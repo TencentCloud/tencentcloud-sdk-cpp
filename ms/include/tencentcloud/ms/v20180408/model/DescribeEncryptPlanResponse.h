@@ -147,9 +147,7 @@ namespace TencentCloud
 
                     /**
                      * 获取上次加固策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AndroidPlan 上次加固策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AndroidPlan GetAndroidPlan() const;
@@ -163,9 +161,7 @@ namespace TencentCloud
 
                     /**
                      * 获取上次小程序加固策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppletPlan 上次小程序加固策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AppletPlan GetAppletPlan() const;
@@ -179,9 +175,7 @@ namespace TencentCloud
 
                     /**
                      * 获取上次ios源码混淆加固配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IOSPlan 上次ios源码混淆加固配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     IOSPlan GetIOSPlan() const;
@@ -195,9 +189,7 @@ namespace TencentCloud
 
                     /**
                      * 获取上次sdk加固配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SDKPlan 上次sdk加固配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SDKPlan GetSDKPlan() const;
@@ -255,28 +247,24 @@ namespace TencentCloud
 
                     /**
                      * 上次加固策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AndroidPlan m_androidPlan;
                     bool m_androidPlanHasBeenSet;
 
                     /**
                      * 上次小程序加固策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AppletPlan m_appletPlan;
                     bool m_appletPlanHasBeenSet;
 
                     /**
                      * 上次ios源码混淆加固配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IOSPlan m_iOSPlan;
                     bool m_iOSPlanHasBeenSet;
 
                     /**
                      * 上次sdk加固配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SDKPlan m_sDKPlan;
                     bool m_sDKPlanHasBeenSet;

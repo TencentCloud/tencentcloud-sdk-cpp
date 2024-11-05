@@ -220,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对应PlatformType平台类型值   1-android加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AndroidResult 对应PlatformType平台类型值   1-android加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AndroidResult GetAndroidResult() const;
 
                     /**
                      * 设置对应PlatformType平台类型值   1-android加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _androidResult 对应PlatformType平台类型值   1-android加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAndroidResult(const AndroidResult& _androidResult);
@@ -245,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对应PlatformType平台类型值   2-ios源码混淆加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IOSResult 对应PlatformType平台类型值   2-ios源码混淆加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     IOSResult GetIOSResult() const;
 
                     /**
                      * 设置对应PlatformType平台类型值   2-ios源码混淆加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iOSResult 对应PlatformType平台类型值   2-ios源码混淆加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIOSResult(const IOSResult& _iOSResult);
@@ -270,18 +262,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对应PlatformType平台类型值   3-sdk加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SDKResult 对应PlatformType平台类型值   3-sdk加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SDKResult GetSDKResult() const;
 
                     /**
                      * 设置对应PlatformType平台类型值   3-sdk加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sDKResult 对应PlatformType平台类型值   3-sdk加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSDKResult(const SDKResult& _sDKResult);
@@ -295,18 +283,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对应PlatformType平台类型值   4-applet小程序加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppletResult 对应PlatformType平台类型值   4-applet小程序加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AppletResult GetAppletResult() const;
 
                     /**
                      * 设置对应PlatformType平台类型值   4-applet小程序加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appletResult 对应PlatformType平台类型值   4-applet小程序加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppletResult(const AppletResult& _appletResult);
@@ -370,28 +354,24 @@ namespace TencentCloud
 
                     /**
                      * 对应PlatformType平台类型值   1-android加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AndroidResult m_androidResult;
                     bool m_androidResultHasBeenSet;
 
                     /**
                      * 对应PlatformType平台类型值   2-ios源码混淆加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IOSResult m_iOSResult;
                     bool m_iOSResultHasBeenSet;
 
                     /**
                      * 对应PlatformType平台类型值   3-sdk加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SDKResult m_sDKResult;
                     bool m_sDKResultHasBeenSet;
 
                     /**
                      * 对应PlatformType平台类型值   4-applet小程序加固结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AppletResult m_appletResult;
                     bool m_appletResultHasBeenSet;

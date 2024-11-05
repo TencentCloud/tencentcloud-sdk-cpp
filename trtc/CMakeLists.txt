@@ -170,14 +170,12 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/MixUserInfo.h
   include/tencentcloud/trtc/v20190722/model/EventMessage.h
   include/tencentcloud/trtc/v20190722/model/DescribeTRTCMarketQualityDataRequest.h
-  include/tencentcloud/trtc/v20190722/model/SummarizeTranscriptionRequest.h
   include/tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamRequest.h
   include/tencentcloud/trtc/v20190722/model/StartWebRecordRequest.h
   include/tencentcloud/trtc/v20190722/model/MaxVideoUser.h
   include/tencentcloud/trtc/v20190722/model/AgentParams.h
   include/tencentcloud/trtc/v20190722/model/UpdateStreamIngestRequest.h
   include/tencentcloud/trtc/v20190722/model/StopWebRecordResponse.h
-  include/tencentcloud/trtc/v20190722/model/SummarizeTranscriptionResponse.h
   include/tencentcloud/trtc/v20190722/model/DeletePictureRequest.h
   include/tencentcloud/trtc/v20190722/model/StopWebRecordRequest.h
   include/tencentcloud/trtc/v20190722/model/McuSeiParams.h
@@ -363,14 +361,12 @@ set(trtc_src
   src/v20190722/model/MixUserInfo.cpp
   src/v20190722/model/EventMessage.cpp
   src/v20190722/model/DescribeTRTCMarketQualityDataRequest.cpp
-  src/v20190722/model/SummarizeTranscriptionRequest.cpp
   src/v20190722/model/UpdatePublishCdnStreamRequest.cpp
   src/v20190722/model/StartWebRecordRequest.cpp
   src/v20190722/model/MaxVideoUser.cpp
   src/v20190722/model/AgentParams.cpp
   src/v20190722/model/UpdateStreamIngestRequest.cpp
   src/v20190722/model/StopWebRecordResponse.cpp
-  src/v20190722/model/SummarizeTranscriptionResponse.cpp
   src/v20190722/model/DeletePictureRequest.cpp
   src/v20190722/model/StopWebRecordRequest.cpp
   src/v20190722/model/McuSeiParams.cpp

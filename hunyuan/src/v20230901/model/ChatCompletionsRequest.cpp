@@ -37,6 +37,7 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_citationHasBeenSet(false),
     m_enableSpeedSearchHasBeenSet(false),
     m_enableMultimediaHasBeenSet(false),
+    m_enableDeepSearchHasBeenSet(false),
     m_seedHasBeenSet(false)
 {
 }
@@ -173,6 +174,14 @@ string ChatCompletionsRequest::ToJsonString() const
         string key = "EnableMultimedia";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableMultimedia, allocator);
+    }
+
+    if (m_enableDeepSearchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDeepSearch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDeepSearch, allocator);
     }
 
     if (m_seedHasBeenSet)
@@ -413,6 +422,22 @@ void ChatCompletionsRequest::SetEnableMultimedia(const bool& _enableMultimedia)
 bool ChatCompletionsRequest::EnableMultimediaHasBeenSet() const
 {
     return m_enableMultimediaHasBeenSet;
+}
+
+bool ChatCompletionsRequest::GetEnableDeepSearch() const
+{
+    return m_enableDeepSearch;
+}
+
+void ChatCompletionsRequest::SetEnableDeepSearch(const bool& _enableDeepSearch)
+{
+    m_enableDeepSearch = _enableDeepSearch;
+    m_enableDeepSearchHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::EnableDeepSearchHasBeenSet() const
+{
+    return m_enableDeepSearchHasBeenSet;
 }
 
 int64_t ChatCompletionsRequest::GetSeed() const

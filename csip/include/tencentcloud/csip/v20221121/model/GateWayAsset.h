@@ -259,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTag() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::vector<Tag>& _tag);
@@ -536,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ipv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressIPV6 ipv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddressIPV6() const;
 
                     /**
                      * 设置ipv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addressIPV6 ipv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddressIPV6(const std::string& _addressIPV6);
@@ -561,18 +553,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCore 是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsCore() const;
 
                     /**
                      * 设置是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCore 是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCore(const uint64_t& _isCore);
@@ -586,18 +574,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险服务暴露
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskExposure 风险服务暴露
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRiskExposure() const;
 
                     /**
                      * 设置风险服务暴露
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskExposure 风险服务暴露
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskExposure(const int64_t& _riskExposure);
@@ -611,18 +595,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsNewAsset 是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsNewAsset() const;
 
                     /**
                      * 设置是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isNewAsset 是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsNewAsset(const uint64_t& _isNewAsset);
@@ -636,18 +616,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 网关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置网关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 网关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -661,18 +637,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TSE的网关真实地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineRegion TSE的网关真实地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineRegion() const;
 
                     /**
                      * 设置TSE的网关真实地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineRegion TSE的网关真实地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineRegion(const std::string& _engineRegion);
@@ -748,7 +720,6 @@ namespace TencentCloud
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tag;
                     bool m_tagHasBeenSet;
@@ -827,42 +798,36 @@ namespace TencentCloud
 
                     /**
                      * ipv6地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addressIPV6;
                     bool m_addressIPV6HasBeenSet;
 
                     /**
                      * 是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isCore;
                     bool m_isCoreHasBeenSet;
 
                     /**
                      * 风险服务暴露
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_riskExposure;
                     bool m_riskExposureHasBeenSet;
 
                     /**
                      * 是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isNewAsset;
                     bool m_isNewAssetHasBeenSet;
 
                     /**
                      * 网关状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * TSE的网关真实地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineRegion;
                     bool m_engineRegionHasBeenSet;

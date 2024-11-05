@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data -
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取数据
+                     * @return Data 数据
                      * 
                      */
                     AssetBaseInfoResponse GetData() const;
@@ -63,8 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * -
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 数据
                      */
                     AssetBaseInfoResponse m_data;
                     bool m_dataHasBeenSet;

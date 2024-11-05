@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取删除失败的规则序号组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailIds 删除失败的规则序号组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetFailIds() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 删除失败的规则序号组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_failIds;
                     bool m_failIdsHasBeenSet;

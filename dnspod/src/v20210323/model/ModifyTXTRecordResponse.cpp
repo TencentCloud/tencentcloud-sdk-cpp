@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdb/v20170320/model/InitDBInstancesResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyTXTRecordResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace TencentCloud::Dnspod::V20210323::Model;
 using namespace std;
 
-InitDBInstancesResponse::InitDBInstancesResponse() :
-    m_asyncRequestIdsHasBeenSet(false)
+ModifyTXTRecordResponse::ModifyTXTRecordResponse() :
+    m_recordIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome InitDBInstancesResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyTXTRecordResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,32 @@ CoreInternalOutcome InitDBInstancesResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("AsyncRequestIds") && !rsp["AsyncRequestIds"].IsNull())
+    if (rsp.HasMember("RecordId") && !rsp["RecordId"].IsNull())
     {
-        if (!rsp["AsyncRequestIds"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `AsyncRequestIds` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["AsyncRequestIds"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["RecordId"].IsUint64())
         {
-            m_asyncRequestIds.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `RecordId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_asyncRequestIdsHasBeenSet = true;
+        m_recordId = rsp["RecordId"].GetUint64();
+        m_recordIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string InitDBInstancesResponse::ToJsonString() const
+string ModifyTXTRecordResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_asyncRequestIdsHasBeenSet)
+    if (m_recordIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AsyncRequestIds";
+        string key = "RecordId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_asyncRequestIds.begin(); itr != m_asyncRequestIds.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        value.AddMember(iKey, m_recordId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +102,14 @@ string InitDBInstancesResponse::ToJsonString() const
 }
 
 
-vector<string> InitDBInstancesResponse::GetAsyncRequestIds() const
+uint64_t ModifyTXTRecordResponse::GetRecordId() const
 {
-    return m_asyncRequestIds;
+    return m_recordId;
 }
 
-bool InitDBInstancesResponse::AsyncRequestIdsHasBeenSet() const
+bool ModifyTXTRecordResponse::RecordIdHasBeenSet() const
 {
-    return m_asyncRequestIdsHasBeenSet;
+    return m_recordIdHasBeenSet;
 }
 
 

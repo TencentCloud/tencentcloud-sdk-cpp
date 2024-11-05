@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取成员账号Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 成员账号Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置成员账号Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 成员账号Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取成员账号名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NickName 成员账号名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNickName() const;
 
                     /**
                      * 设置成员账号名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nickName 成员账号名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNickName(const std::string& _nickName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部门节点名称，账号所属部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeName 部门节点名称，账号所属部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置部门节点名称，账号所属部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeName 部门节点名称，账号所属部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetCount 资产数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAssetCount() const;
 
                     /**
                      * 设置资产数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetCount 资产数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetCount(const int64_t& _assetCount);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskCount 风险数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRiskCount() const;
 
                     /**
                      * 设置风险数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskCount 风险数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskCount(const int64_t& _riskCount);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackCount 攻击数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAttackCount() const;
 
                     /**
                      * 设置攻击数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attackCount 攻击数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttackCount(const int64_t& _attackCount);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Member/Admin/;成员或者管理员
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Role Member/Admin/;成员或者管理员
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
                      * 设置Member/Admin/;成员或者管理员
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _role Member/Admin/;成员或者管理员
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRole(const std::string& _role);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取成员账号id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberId 成员账号id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMemberId() const;
 
                     /**
                      * 设置成员账号id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memberId 成员账号id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemberId(const std::string& _memberId);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取成员账号Appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 成员账号Appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置成员账号Appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 成员账号Appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号加入方式,create/invite
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JoinType 账号加入方式,create/invite
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJoinType() const;
 
                     /**
                      * 设置账号加入方式,create/invite
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _joinType 账号加入方式,create/invite
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJoinType(const std::string& _joinType);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CFWProtect 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCFWProtect() const;
 
                     /**
                      * 设置空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cFWProtect 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCFWProtect(const std::string& _cFWProtect);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WAFProtect 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWAFProtect() const;
 
                     /**
                      * 设置空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wAFProtect 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWAFProtect(const std::string& _wAFProtect);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CWPProtect 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCWPProtect() const;
 
                     /**
                      * 设置空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cWPProtect 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCWPProtect(const std::string& _cWPProtect);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1启用，0未启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 1启用，0未启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnable() const;
 
                     /**
                      * 设置1启用，0未启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enable 1启用，0未启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnable(const int64_t& _enable);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取"Free"       //免费版  "Advanced"   //高级版 "Enterprise" //企业版 "Ultimate"   //旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CSIPProtect "Free"       //免费版  "Advanced"   //高级版 "Enterprise" //企业版 "Ultimate"   //旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCSIPProtect() const;
 
                     /**
                      * 设置"Free"       //免费版  "Advanced"   //高级版 "Enterprise" //企业版 "Ultimate"   //旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cSIPProtect "Free"       //免费版  "Advanced"   //高级版 "Enterprise" //企业版 "Ultimate"   //旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCSIPProtect(const std::string& _cSIPProtect);
@@ -423,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1为配额消耗者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuotaConsumer 1为配额消耗者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetQuotaConsumer() const;
 
                     /**
                      * 设置1为配额消耗者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quotaConsumer 1为配额消耗者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuotaConsumer(const int64_t& _quotaConsumer);
@@ -448,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账户类型，0为腾讯云账户，1为AWS账户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudType 账户类型，0为腾讯云账户，1为AWS账户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCloudType() const;
 
                     /**
                      * 设置账户类型，0为腾讯云账户，1为AWS账户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudType 账户类型，0为腾讯云账户，1为AWS账户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudType(const int64_t& _cloudType);
@@ -473,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0为缺省值，1为10分钟，2为1小时，3为24小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SyncFrequency 0为缺省值，1为10分钟，2为1小时，3为24小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSyncFrequency() const;
 
                     /**
                      * 设置0为缺省值，1为10分钟，2为1小时，3为24小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _syncFrequency 0为缺省值，1为10分钟，2为1小时，3为24小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSyncFrequency(const int64_t& _syncFrequency);
@@ -498,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多云账户是否过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsExpired 多云账户是否过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsExpired() const;
 
                     /**
                      * 设置多云账户是否过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isExpired 多云账户是否过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsExpired(const bool& _isExpired);
@@ -523,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多云账户 权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PermissionList 多云账户 权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPermissionList() const;
 
                     /**
                      * 设置多云账户 权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _permissionList 多云账户 权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPermissionList(const std::vector<std::string>& _permissionList);
@@ -548,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthType 1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAuthType() const;
 
                     /**
                      * 设置1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authType 1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthType(const int64_t& _authType);
@@ -575,11 +491,9 @@ namespace TencentCloud
                      * 获取0 腾讯云集团账户
 1 腾讯云接入账户
 2 非腾讯云
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TcMemberType 0 腾讯云集团账户
 1 腾讯云接入账户
 2 非腾讯云
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTcMemberType() const;
@@ -588,11 +502,9 @@ namespace TencentCloud
                      * 设置0 腾讯云集团账户
 1 腾讯云接入账户
 2 非腾讯云
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tcMemberType 0 腾讯云集团账户
 1 腾讯云接入账户
 2 非腾讯云
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTcMemberType(const int64_t& _tcMemberType);
@@ -606,18 +518,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子账号数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubUserCount 子账号数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSubUserCount() const;
 
                     /**
                      * 设置子账号数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subUserCount 子账号数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubUserCount(const int64_t& _subUserCount);
@@ -631,18 +539,14 @@ namespace TencentCloud
 
                     /**
                      * 获取加入方式详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JoinTypeInfo 加入方式详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJoinTypeInfo() const;
 
                     /**
                      * 设置加入方式详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _joinTypeInfo 加入方式详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJoinTypeInfo(const std::string& _joinTypeInfo);
@@ -658,147 +562,126 @@ namespace TencentCloud
 
                     /**
                      * 成员账号Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 成员账号名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
 
                     /**
                      * 部门节点名称，账号所属部门
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
 
                     /**
                      * 资产数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_assetCount;
                     bool m_assetCountHasBeenSet;
 
                     /**
                      * 风险数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_riskCount;
                     bool m_riskCountHasBeenSet;
 
                     /**
                      * 攻击数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_attackCount;
                     bool m_attackCountHasBeenSet;
 
                     /**
                      * Member/Admin/;成员或者管理员
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;
 
                     /**
                      * 成员账号id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_memberId;
                     bool m_memberIdHasBeenSet;
 
                     /**
                      * 成员账号Appid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 账号加入方式,create/invite
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_joinType;
                     bool m_joinTypeHasBeenSet;
 
                     /**
                      * 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cFWProtect;
                     bool m_cFWProtectHasBeenSet;
 
                     /**
                      * 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wAFProtect;
                     bool m_wAFProtectHasBeenSet;
 
                     /**
                      * 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cWPProtect;
                     bool m_cWPProtectHasBeenSet;
 
                     /**
                      * 1启用，0未启用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
                      * "Free"       //免费版  "Advanced"   //高级版 "Enterprise" //企业版 "Ultimate"   //旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cSIPProtect;
                     bool m_cSIPProtectHasBeenSet;
 
                     /**
                      * 1为配额消耗者
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_quotaConsumer;
                     bool m_quotaConsumerHasBeenSet;
 
                     /**
                      * 账户类型，0为腾讯云账户，1为AWS账户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cloudType;
                     bool m_cloudTypeHasBeenSet;
 
                     /**
                      * 0为缺省值，1为10分钟，2为1小时，3为24小时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_syncFrequency;
                     bool m_syncFrequencyHasBeenSet;
 
                     /**
                      * 多云账户是否过期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isExpired;
                     bool m_isExpiredHasBeenSet;
 
                     /**
                      * 多云账户 权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_permissionList;
                     bool m_permissionListHasBeenSet;
 
                     /**
                      * 1
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_authType;
                     bool m_authTypeHasBeenSet;
@@ -807,21 +690,18 @@ namespace TencentCloud
                      * 0 腾讯云集团账户
 1 腾讯云接入账户
 2 非腾讯云
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tcMemberType;
                     bool m_tcMemberTypeHasBeenSet;
 
                     /**
                      * 子账号数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_subUserCount;
                     bool m_subUserCountHasBeenSet;
 
                     /**
                      * 加入方式详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_joinTypeInfo;
                     bool m_joinTypeInfoHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组名称全路径，点分格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamePath 分组名称全路径，点分格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamePath() const;
 
                     /**
                      * 设置分组名称全路径，点分格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namePath 分组名称全路径，点分格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamePath(const std::string& _namePath);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组ID全路径，数组格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdPathArr 分组ID全路径，数组格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetIdPathArr() const;
 
                     /**
                      * 设置分组ID全路径，数组格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _idPathArr 分组ID全路径，数组格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdPathArr(const std::vector<int64_t>& _idPathArr);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraInfo 分组扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExtraInfo() const;
 
                     /**
                      * 设置分组扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extraInfo 分组扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtraInfo(const std::string& _extraInfo);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Utime 最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUtime() const;
 
                     /**
                      * 设置最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _utime 最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUtime(const std::string& _utime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前分组的父分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentId 当前分组的父分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetParentId() const;
 
                     /**
                      * 设置当前分组的父分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentId 当前分组的父分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentId(const uint64_t& _parentId);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源账号组ID，该字段仅适用于第三方同步的组织架构，通过OrgId-Id构成源组织架构分组ID-现组织架构分组ID映射关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgId 源账号组ID，该字段仅适用于第三方同步的组织架构，通过OrgId-Id构成源组织架构分组ID-现组织架构分组ID映射关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrgId() const;
 
                     /**
                      * 设置源账号组ID，该字段仅适用于第三方同步的组织架构，通过OrgId-Id构成源组织架构分组ID-现组织架构分组ID映射关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _orgId 源账号组ID，该字段仅适用于第三方同步的组织架构，通过OrgId-Id构成源组织架构分组ID-现组织架构分组ID映射关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrgId(const std::string& _orgId);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 分组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置分组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 分组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组导入源(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 分组导入源(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSource() const;
 
                     /**
                      * 设置分组导入源(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _source 分组导入源(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSource(const uint64_t& _source);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组ID全路径，点分格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdPath 分组ID全路径，点分格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdPath() const;
 
                     /**
                      * 设置分组ID全路径，点分格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _idPath 分组ID全路径，点分格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdPath(const std::string& _idPath);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Itime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetItime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _itime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItime(const std::string& _itime);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父源账号组ID，该字段仅适用于第三方同步的组织架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentOrgId 父源账号组ID，该字段仅适用于第三方同步的组织架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentOrgId() const;
 
                     /**
                      * 设置父源账号组ID，该字段仅适用于第三方同步的组织架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentOrgId 父源账号组ID，该字段仅适用于第三方同步的组织架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentOrgId(const std::string& _parentOrgId);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取导入信息,json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Import 导入信息,json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImport() const;
 
                     /**
                      * 设置导入信息,json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _import 导入信息,json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImport(const std::string& _import);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启导入架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImportEnable 是否开启导入架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetImportEnable() const;
 
                     /**
                      * 设置是否开启导入架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _importEnable 是否开启导入架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImportEnable(const bool& _importEnable);
@@ -423,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取导入类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImportType 导入类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImportType() const;
 
                     /**
                      * 设置导入类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _importType 导入类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImportType(const std::string& _importType);
@@ -448,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取miniIAMId，MiniIAM源才有
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MiniIamId miniIAMId，MiniIAM源才有
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMiniIamId() const;
 
                     /**
                      * 设置miniIAMId，MiniIAM源才有
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _miniIamId miniIAMId，MiniIAM源才有
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMiniIamId(const std::string& _miniIamId);
@@ -475,119 +407,102 @@ namespace TencentCloud
 
                     /**
                      * 分组名称全路径，点分格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namePath;
                     bool m_namePathHasBeenSet;
 
                     /**
                      * 分组ID全路径，数组格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_idPathArr;
                     bool m_idPathArrHasBeenSet;
 
                     /**
                      * 分组扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extraInfo;
                     bool m_extraInfoHasBeenSet;
 
                     /**
                      * 最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_utime;
                     bool m_utimeHasBeenSet;
 
                     /**
                      * 当前分组的父分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_parentId;
                     bool m_parentIdHasBeenSet;
 
                     /**
                      * 源账号组ID，该字段仅适用于第三方同步的组织架构，通过OrgId-Id构成源组织架构分组ID-现组织架构分组ID映射关系
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orgId;
                     bool m_orgIdHasBeenSet;
 
                     /**
                      * 分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 分组描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 分组导入源(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
                      * 分组ID全路径，点分格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idPath;
                     bool m_idPathHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_itime;
                     bool m_itimeHasBeenSet;
 
                     /**
                      * 父源账号组ID，该字段仅适用于第三方同步的组织架构
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentOrgId;
                     bool m_parentOrgIdHasBeenSet;
 
                     /**
                      * 导入信息,json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_import;
                     bool m_importHasBeenSet;
 
                     /**
                      * 是否开启导入架构
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_importEnable;
                     bool m_importEnableHasBeenSet;
 
                     /**
                      * 导入类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_importType;
                     bool m_importTypeHasBeenSet;
 
                     /**
                      * miniIAMId，MiniIAM源才有
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_miniIamId;
                     bool m_miniIamIdHasBeenSet;

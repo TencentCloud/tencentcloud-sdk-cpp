@@ -538,7 +538,6 @@ namespace TencentCloud
 1001表示APP md5 different between real md5, please confirm it.
 
 1002表示App md5 uncollect, please offer downloadlink.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrNo 应用错误码：0、1-表示正常；                  
 
 2表示System Error(engine analysis error).
@@ -562,7 +561,6 @@ namespace TencentCloud
 1001表示APP md5 different between real md5, please confirm it.
 
 1002表示App md5 uncollect, please offer downloadlink.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrNo() const;
@@ -591,7 +589,6 @@ namespace TencentCloud
 1001表示APP md5 different between real md5, please confirm it.
 
 1002表示App md5 uncollect, please offer downloadlink.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errNo 应用错误码：0、1-表示正常；                  
 
 2表示System Error(engine analysis error).
@@ -615,7 +612,6 @@ namespace TencentCloud
 1001表示APP md5 different between real md5, please confirm it.
 
 1002表示App md5 uncollect, please offer downloadlink.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrNo(const std::string& _errNo);
@@ -783,7 +779,6 @@ namespace TencentCloud
 1001表示APP md5 different between real md5, please confirm it.
 
 1002表示App md5 uncollect, please offer downloadlink.
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errNo;
                     bool m_errNoHasBeenSet;

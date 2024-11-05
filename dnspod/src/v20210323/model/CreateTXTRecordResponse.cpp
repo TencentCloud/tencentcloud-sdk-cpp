@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/trtc/v20190722/model/SummarizeTranscriptionResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateTXTRecordResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Trtc::V20190722::Model;
+using namespace TencentCloud::Dnspod::V20210323::Model;
 using namespace std;
 
-SummarizeTranscriptionResponse::SummarizeTranscriptionResponse()
+CreateTXTRecordResponse::CreateTXTRecordResponse() :
+    m_recordIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome SummarizeTranscriptionResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateTXTRecordResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +62,33 @@ CoreInternalOutcome SummarizeTranscriptionResponse::Deserialize(const string &pa
     }
 
 
+    if (rsp.HasMember("RecordId") && !rsp["RecordId"].IsNull())
+    {
+        if (!rsp["RecordId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordId = rsp["RecordId"].GetUint64();
+        m_recordIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string SummarizeTranscriptionResponse::ToJsonString() const
+string CreateTXTRecordResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_recordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordId, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string SummarizeTranscriptionResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t CreateTXTRecordResponse::GetRecordId() const
+{
+    return m_recordId;
+}
+
+bool CreateTXTRecordResponse::RecordIdHasBeenSet() const
+{
+    return m_recordIdHasBeenSet;
+}
 
 

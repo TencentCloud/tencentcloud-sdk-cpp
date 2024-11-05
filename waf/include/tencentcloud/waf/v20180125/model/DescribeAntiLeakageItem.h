@@ -154,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Strategies 匹配条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DescribeAntiInfoLeakRulesStrategyItem> GetStrategies() const;
 
                     /**
                      * 设置匹配条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategies 匹配条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategies(const std::vector<DescribeAntiInfoLeakRulesStrategyItem>& _strategies);
@@ -179,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配的URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uri 匹配的URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUri() const;
 
                     /**
                      * 设置匹配的URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uri 匹配的URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUri(const std::string& _uri);
@@ -257,14 +249,12 @@ namespace TencentCloud
 
                     /**
                      * 匹配条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribeAntiInfoLeakRulesStrategyItem> m_strategies;
                     bool m_strategiesHasBeenSet;
 
                     /**
                      * 匹配的URL
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uri;
                     bool m_uriHasBeenSet;

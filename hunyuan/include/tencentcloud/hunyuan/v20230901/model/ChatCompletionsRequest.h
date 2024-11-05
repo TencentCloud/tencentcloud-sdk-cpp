@@ -543,6 +543,27 @@ namespace TencentCloud
                     bool EnableMultimediaHasBeenSet() const;
 
                     /**
+                     * 获取是否开启搜索深度模式，默认是false，在值为true且命中搜索时，会请求深度搜索。
+                     * @return EnableDeepSearch 是否开启搜索深度模式，默认是false，在值为true且命中搜索时，会请求深度搜索。
+                     * 
+                     */
+                    bool GetEnableDeepSearch() const;
+
+                    /**
+                     * 设置是否开启搜索深度模式，默认是false，在值为true且命中搜索时，会请求深度搜索。
+                     * @param _enableDeepSearch 是否开启搜索深度模式，默认是false，在值为true且命中搜索时，会请求深度搜索。
+                     * 
+                     */
+                    void SetEnableDeepSearch(const bool& _enableDeepSearch);
+
+                    /**
+                     * 判断参数 EnableDeepSearch 是否已赋值
+                     * @return EnableDeepSearch 是否已赋值
+                     * 
+                     */
+                    bool EnableDeepSearchHasBeenSet() const;
+
+                    /**
                      * 获取说明： 1. 确保模型的输出是可复现的。 2. 取值区间为非0正整数，最大值10000。 3. 非必要不建议使用，不合理的取值会影响效果。
                      * @return Seed 说明： 1. 确保模型的输出是可复现的。 2. 取值区间为非0正整数，最大值10000。 3. 非必要不建议使用，不合理的取值会影响效果。
                      * 
@@ -699,6 +720,12 @@ namespace TencentCloud
                      */
                     bool m_enableMultimedia;
                     bool m_enableMultimediaHasBeenSet;
+
+                    /**
+                     * 是否开启搜索深度模式，默认是false，在值为true且命中搜索时，会请求深度搜索。
+                     */
+                    bool m_enableDeepSearch;
+                    bool m_enableDeepSearchHasBeenSet;
 
                     /**
                      * 说明： 1. 确保模型的输出是可复现的。 2. 取值区间为非0正整数，最大值10000。 3. 非必要不建议使用，不合理的取值会影响效果。

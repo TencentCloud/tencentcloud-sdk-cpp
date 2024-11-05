@@ -61,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞产视角的漏洞风险列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 漏洞产视角的漏洞风险列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VULViewVULRiskData> GetData() const;
@@ -119,9 +117,7 @@ namespace TencentCloud
 
                     /**
                      * 获取tag枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags tag枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetTags() const;
@@ -143,7 +139,6 @@ namespace TencentCloud
 
                     /**
                      * 漏洞产视角的漏洞风险列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VULViewVULRiskData> m_data;
                     bool m_dataHasBeenSet;
@@ -168,7 +163,6 @@ namespace TencentCloud
 
                     /**
                      * tag枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_tags;
                     bool m_tagsHasBeenSet;

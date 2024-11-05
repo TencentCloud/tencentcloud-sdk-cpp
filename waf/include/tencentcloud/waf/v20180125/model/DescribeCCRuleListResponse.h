@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查询到的CC规则的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 查询到的CC规则的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CCRuleLists GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 查询到的CC规则的列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CCRuleLists m_data;
                     bool m_dataHasBeenSet;

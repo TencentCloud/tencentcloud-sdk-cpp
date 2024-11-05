@@ -184,6 +184,56 @@ namespace TencentCloud
                      */
                     bool SummaryHasBeenSet() const;
 
+                    /**
+                     * 获取直播切片对应直播起始时间点，采用 ISO 日期格式。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BeginTime 直播切片对应直播起始时间点，采用 ISO 日期格式。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBeginTime() const;
+
+                    /**
+                     * 设置直播切片对应直播起始时间点，采用 ISO 日期格式。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _beginTime 直播切片对应直播起始时间点，采用 ISO 日期格式。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBeginTime(const std::string& _beginTime);
+
+                    /**
+                     * 判断参数 BeginTime 是否已赋值
+                     * @return BeginTime 是否已赋值
+                     * 
+                     */
+                    bool BeginTimeHasBeenSet() const;
+
+                    /**
+                     * 获取直播切片对应直播结束时间点，采用 ISO 日期格式。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EndTime 直播切片对应直播结束时间点，采用 ISO 日期格式。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置直播切片对应直播结束时间点，采用 ISO 日期格式。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _endTime 直播切片对应直播结束时间点，采用 ISO 日期格式。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -224,6 +274,20 @@ namespace TencentCloud
                      */
                     std::string m_summary;
                     bool m_summaryHasBeenSet;
+
+                    /**
+                     * 直播切片对应直播起始时间点，采用 ISO 日期格式。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_beginTime;
+                    bool m_beginTimeHasBeenSet;
+
+                    /**
+                     * 直播切片对应直播结束时间点，采用 ISO 日期格式。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

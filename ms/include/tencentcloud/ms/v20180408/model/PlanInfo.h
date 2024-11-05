@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Dex分离，0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SetFile Dex分离，0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSetFile() const;
 
                     /**
                      * 设置Dex分离，0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _setFile Dex分离，0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSetFile(const std::string& _setFile);
@@ -347,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Dex签名校验，0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSign Dex签名校验，0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileSign() const;
 
                     /**
                      * 设置Dex签名校验，0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileSign Dex签名校验，0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileSign(const std::string& _fileSign);
@@ -372,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取root检测，0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AntiRoot root检测，0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAntiRoot() const;
 
                     /**
                      * 设置root检测，0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _antiRoot root检测，0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAntiRoot(const std::string& _antiRoot);
@@ -462,7 +450,6 @@ namespace TencentCloud
 
                     /**
                      * Dex分离，0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_setFile;
                     bool m_setFileHasBeenSet;
@@ -547,14 +534,12 @@ namespace TencentCloud
 
                     /**
                      * Dex签名校验，0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileSign;
                     bool m_fileSignHasBeenSet;
 
                     /**
                      * root检测，0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_antiRoot;
                     bool m_antiRootHasBeenSet;

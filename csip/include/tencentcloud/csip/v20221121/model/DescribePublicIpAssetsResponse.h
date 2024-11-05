@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IpAssetListVO> GetData() const;
@@ -77,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资产归属地
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetLocationList 资产归属地
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetAssetLocationList() const;
@@ -93,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取ip列表枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpTypeList ip列表枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetIpTypeList() const;
@@ -109,9 +103,7 @@ namespace TencentCloud
 
                     /**
                      * 获取地域列表枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionList 地域列表枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetRegionList() const;
@@ -125,9 +117,7 @@ namespace TencentCloud
 
                     /**
                      * 获取防护枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefenseStatusList 防护枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetDefenseStatusList() const;
@@ -141,9 +131,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资产类型枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetTypeList 资产类型枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetAssetTypeList() const;
@@ -157,9 +145,7 @@ namespace TencentCloud
 
                     /**
                      * 获取AppId枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppIdList AppId枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetAppIdList() const;
@@ -175,7 +161,6 @@ namespace TencentCloud
 
                     /**
                      * 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IpAssetListVO> m_data;
                     bool m_dataHasBeenSet;
@@ -188,42 +173,36 @@ namespace TencentCloud
 
                     /**
                      * 资产归属地
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_assetLocationList;
                     bool m_assetLocationListHasBeenSet;
 
                     /**
                      * ip列表枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_ipTypeList;
                     bool m_ipTypeListHasBeenSet;
 
                     /**
                      * 地域列表枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_regionList;
                     bool m_regionListHasBeenSet;
 
                     /**
                      * 防护枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_defenseStatusList;
                     bool m_defenseStatusListHasBeenSet;
 
                     /**
                      * 资产类型枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_assetTypeList;
                     bool m_assetTypeListHasBeenSet;
 
                     /**
                      * AppId枚举
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_appIdList;
                     bool m_appIdListHasBeenSet;

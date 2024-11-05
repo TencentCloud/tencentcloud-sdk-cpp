@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取注意：此字段可能返回 null，表示取不到有效值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldValueRatioInfos 注意：此字段可能返回 null，表示取不到有效值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AccessFieldValueRatioInfo> GetFieldValueRatioInfos() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 注意：此字段可能返回 null，表示取不到有效值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AccessFieldValueRatioInfo> m_fieldValueRatioInfos;
                     bool m_fieldValueRatioInfosHasBeenSet;

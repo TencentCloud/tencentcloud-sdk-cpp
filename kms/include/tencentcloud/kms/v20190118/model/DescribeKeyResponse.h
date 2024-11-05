@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取密钥属性信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyMetadata 密钥属性信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyMetadata GetKeyMetadata() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 密钥属性信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyMetadata m_keyMetadata;
                     bool m_keyMetadataHasBeenSet;

@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool AddressIPVersionHasBeenSet() const;
 
                     /**
-                     * 获取在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填。
-                     * @return SubnetId 在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填。
+                     * 获取在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填；IPv4实例不支持该参数。
+                     * @return SubnetId 在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填；IPv4实例不支持该参数。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填。
-                     * @param _subnetId 在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填。
+                     * 设置在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填；IPv4实例不支持该参数。
+                     * @param _subnetId 在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填；IPv4实例不支持该参数。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -343,7 +343,7 @@ namespace TencentCloud
                     bool m_addressIPVersionHasBeenSet;
 
                     /**
-                     * 在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填。
+                     * 在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填；IPv4实例不支持该参数。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;

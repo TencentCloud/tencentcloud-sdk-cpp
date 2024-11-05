@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetId 资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAssetId() const;
 
                     /**
                      * 设置资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetId 资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetId(const std::vector<std::string>& _assetId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetName 资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAssetName() const;
 
                     /**
                      * 设置资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetName 资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetName(const std::vector<std::string>& _assetName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetType 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAssetType() const;
 
                     /**
                      * 设置资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetType 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetType(const std::vector<std::string>& _assetType);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::vector<std::string>& _region);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Waf状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WAFStatus Waf状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWAFStatus() const;
 
                     /**
                      * 设置Waf状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wAFStatus Waf状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWAFStatus(const uint64_t& _wAFStatus);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetCreateTime 资产创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetCreateTime() const;
 
                     /**
                      * 设置资产创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetCreateTime 资产创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetCreateTime(const std::string& _assetCreateTime);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId Appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
                      * 设置Appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId Appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 账号id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置账号id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 账号id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NickName 账号名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNickName() const;
 
                     /**
                      * 设置账号名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nickName 账号名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNickName(const std::string& _nickName);
@@ -274,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCore 是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsCore() const;
 
                     /**
                      * 设置是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCore 是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCore(const uint64_t& _isCore);
@@ -299,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否云上资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCloud 是否云上资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsCloud() const;
 
                     /**
                      * 设置是否云上资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCloud 是否云上资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCloud(const uint64_t& _isCloud);
@@ -324,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Attack 网络攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAttack() const;
 
                     /**
                      * 设置网络攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attack 网络攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttack(const uint64_t& _attack);
@@ -349,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Access 网络访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAccess() const;
 
                     /**
                      * 设置网络访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _access 网络访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccess(const uint64_t& _access);
@@ -374,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络拦截
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Intercept 网络拦截
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIntercept() const;
 
                     /**
                      * 设置网络拦截
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _intercept 网络拦截
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIntercept(const uint64_t& _intercept);
@@ -399,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入站峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InBandwidth 入站峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInBandwidth() const;
 
                     /**
                      * 设置入站峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inBandwidth 入站峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInBandwidth(const std::string& _inBandwidth);
@@ -424,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出站峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutBandwidth 出站峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutBandwidth() const;
 
                     /**
                      * 设置出站峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outBandwidth 出站峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutBandwidth(const std::string& _outBandwidth);
@@ -449,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入站累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InFlow 入站累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInFlow() const;
 
                     /**
                      * 设置入站累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inFlow 入站累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInFlow(const std::string& _inFlow);
@@ -474,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出站累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutFlow 出站累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutFlow() const;
 
                     /**
                      * 设置出站累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outFlow 出站累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutFlow(const std::string& _outFlow);
@@ -499,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastScanTime 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastScanTime() const;
 
                     /**
                      * 设置最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastScanTime 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastScanTime(const std::string& _lastScanTime);
@@ -524,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PortRisk 端口风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPortRisk() const;
 
                     /**
                      * 设置端口风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _portRisk 端口风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPortRisk(const uint64_t& _portRisk);
@@ -549,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulnerabilityRisk 漏洞风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVulnerabilityRisk() const;
 
                     /**
                      * 设置漏洞风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulnerabilityRisk 漏洞风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulnerabilityRisk(const uint64_t& _vulnerabilityRisk);
@@ -574,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigurationRisk 配置风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetConfigurationRisk() const;
 
                     /**
                      * 设置配置风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configurationRisk 配置风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigurationRisk(const uint64_t& _configurationRisk);
@@ -599,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanTask 扫描任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScanTask() const;
 
                     /**
                      * 设置扫描任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanTask 扫描任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanTask(const uint64_t& _scanTask);
@@ -624,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubDomain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubDomain() const;
 
                     /**
                      * 设置域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subDomain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubDomain(const std::string& _subDomain);
@@ -649,18 +553,14 @@ namespace TencentCloud
 
                     /**
                      * 获取解析ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SeverIp 解析ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSeverIp() const;
 
                     /**
                      * 设置解析ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _severIp 解析ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSeverIp(const std::vector<std::string>& _severIp);
@@ -674,18 +574,14 @@ namespace TencentCloud
 
                     /**
                      * 获取bot攻击数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BotCount bot攻击数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBotCount() const;
 
                     /**
                      * 设置bot攻击数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _botCount bot攻击数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBotCount(const uint64_t& _botCount);
@@ -699,18 +595,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弱口令风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WeakPassword 弱口令风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWeakPassword() const;
 
                     /**
                      * 设置弱口令风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weakPassword 弱口令风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeakPassword(const uint64_t& _weakPassword);
@@ -724,18 +616,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内容风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebContentRisk 内容风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWebContentRisk() const;
 
                     /**
                      * 设置内容风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _webContentRisk 内容风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWebContentRisk(const uint64_t& _webContentRisk);
@@ -749,18 +637,14 @@ namespace TencentCloud
 
                     /**
                      * 获取tag标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag tag标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTag() const;
 
                     /**
                      * 设置tag标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag tag标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::vector<Tag>& _tag);
@@ -774,18 +658,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceType 关联实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceType() const;
 
                     /**
                      * 设置关联实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceType 关联实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -799,18 +679,14 @@ namespace TencentCloud
 
                     /**
                      * 获取memberiD
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberId memberiD
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMemberId() const;
 
                     /**
                      * 设置memberiD
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memberId memberiD
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemberId(const std::string& _memberId);
@@ -824,18 +700,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cc攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CCAttack cc攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCCAttack() const;
 
                     /**
                      * 设置cc攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cCAttack cc攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCCAttack(const int64_t& _cCAttack);
@@ -849,18 +721,14 @@ namespace TencentCloud
 
                     /**
                      * 获取web攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebAttack web攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWebAttack() const;
 
                     /**
                      * 设置web攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _webAttack web攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWebAttack(const int64_t& _webAttack);
@@ -874,18 +742,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险服务暴露数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceRisk 风险服务暴露数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetServiceRisk() const;
 
                     /**
                      * 设置风险服务暴露数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceRisk 风险服务暴露数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceRisk(const uint64_t& _serviceRisk);
@@ -899,18 +763,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsNewAsset 是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsNewAsset() const;
 
                     /**
                      * 设置是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isNewAsset 是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsNewAsset(const uint64_t& _isNewAsset);
@@ -924,18 +784,14 @@ namespace TencentCloud
 
                     /**
                      * 获取待确认资产的随机三级域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VerifyDomain 待确认资产的随机三级域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVerifyDomain() const;
 
                     /**
                      * 设置待确认资产的随机三级域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _verifyDomain 待确认资产的随机三级域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVerifyDomain(const std::string& _verifyDomain);
@@ -949,18 +805,14 @@ namespace TencentCloud
 
                     /**
                      * 获取待确认资产的TXT记录内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VerifyTXTRecord 待确认资产的TXT记录内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVerifyTXTRecord() const;
 
                     /**
                      * 设置待确认资产的TXT记录内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _verifyTXTRecord 待确认资产的TXT记录内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVerifyTXTRecord(const std::string& _verifyTXTRecord);
@@ -974,18 +826,14 @@ namespace TencentCloud
 
                     /**
                      * 获取待确认资产的认证状态，0-待认证，1-认证成功，2-认证中，3-txt认证失败，4-人工认证失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VerifyStatus 待确认资产的认证状态，0-待认证，1-认证成功，2-认证中，3-txt认证失败，4-人工认证失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVerifyStatus() const;
 
                     /**
                      * 设置待确认资产的认证状态，0-待认证，1-认证成功，2-认证中，3-txt认证失败，4-人工认证失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _verifyStatus 待确认资产的认证状态，0-待认证，1-认证成功，2-认证中，3-txt认证失败，4-人工认证失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVerifyStatus(const int64_t& _verifyStatus);
@@ -999,18 +847,14 @@ namespace TencentCloud
 
                     /**
                      * 获取bot访问数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BotAccessCount bot访问数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBotAccessCount() const;
 
                     /**
                      * 设置bot访问数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _botAccessCount bot访问数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBotAccessCount(const int64_t& _botAccessCount);
@@ -1026,273 +870,234 @@ namespace TencentCloud
 
                     /**
                      * 资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_assetId;
                     bool m_assetIdHasBeenSet;
 
                     /**
                      * 资产名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_assetName;
                     bool m_assetNameHasBeenSet;
 
                     /**
                      * 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_assetType;
                     bool m_assetTypeHasBeenSet;
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * Waf状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_wAFStatus;
                     bool m_wAFStatusHasBeenSet;
 
                     /**
                      * 资产创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetCreateTime;
                     bool m_assetCreateTimeHasBeenSet;
 
                     /**
                      * Appid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 账号id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 账号名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
 
                     /**
                      * 是否核心
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isCore;
                     bool m_isCoreHasBeenSet;
 
                     /**
                      * 是否云上资产
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isCloud;
                     bool m_isCloudHasBeenSet;
 
                     /**
                      * 网络攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_attack;
                     bool m_attackHasBeenSet;
 
                     /**
                      * 网络访问
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_access;
                     bool m_accessHasBeenSet;
 
                     /**
                      * 网络拦截
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_intercept;
                     bool m_interceptHasBeenSet;
 
                     /**
                      * 入站峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inBandwidth;
                     bool m_inBandwidthHasBeenSet;
 
                     /**
                      * 出站峰值带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outBandwidth;
                     bool m_outBandwidthHasBeenSet;
 
                     /**
                      * 入站累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inFlow;
                     bool m_inFlowHasBeenSet;
 
                     /**
                      * 出站累计流量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outFlow;
                     bool m_outFlowHasBeenSet;
 
                     /**
                      * 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastScanTime;
                     bool m_lastScanTimeHasBeenSet;
 
                     /**
                      * 端口风险
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_portRisk;
                     bool m_portRiskHasBeenSet;
 
                     /**
                      * 漏洞风险
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vulnerabilityRisk;
                     bool m_vulnerabilityRiskHasBeenSet;
 
                     /**
                      * 配置风险
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_configurationRisk;
                     bool m_configurationRiskHasBeenSet;
 
                     /**
                      * 扫描任务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scanTask;
                     bool m_scanTaskHasBeenSet;
 
                     /**
                      * 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subDomain;
                     bool m_subDomainHasBeenSet;
 
                     /**
                      * 解析ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_severIp;
                     bool m_severIpHasBeenSet;
 
                     /**
                      * bot攻击数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_botCount;
                     bool m_botCountHasBeenSet;
 
                     /**
                      * 弱口令风险
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_weakPassword;
                     bool m_weakPasswordHasBeenSet;
 
                     /**
                      * 内容风险
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_webContentRisk;
                     bool m_webContentRiskHasBeenSet;
 
                     /**
                      * tag标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
                      * 关联实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
                      * memberiD
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_memberId;
                     bool m_memberIdHasBeenSet;
 
                     /**
                      * cc攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cCAttack;
                     bool m_cCAttackHasBeenSet;
 
                     /**
                      * web攻击
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_webAttack;
                     bool m_webAttackHasBeenSet;
 
                     /**
                      * 风险服务暴露数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_serviceRisk;
                     bool m_serviceRiskHasBeenSet;
 
                     /**
                      * 是否新资产 1新
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isNewAsset;
                     bool m_isNewAssetHasBeenSet;
 
                     /**
                      * 待确认资产的随机三级域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_verifyDomain;
                     bool m_verifyDomainHasBeenSet;
 
                     /**
                      * 待确认资产的TXT记录内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_verifyTXTRecord;
                     bool m_verifyTXTRecordHasBeenSet;
 
                     /**
                      * 待确认资产的认证状态，0-待认证，1-认证成功，2-认证中，3-txt认证失败，4-人工认证失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_verifyStatus;
                     bool m_verifyStatusHasBeenSet;
 
                     /**
                      * bot访问数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_botAccessCount;
                     bool m_botAccessCountHasBeenSet;

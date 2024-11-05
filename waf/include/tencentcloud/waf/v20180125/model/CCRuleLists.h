@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Res 规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CCRuleItems> GetRes() const;
 
                     /**
                      * 设置规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _res 规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRes(const std::vector<CCRuleItems>& _res);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CCRuleItems> m_res;
                     bool m_resHasBeenSet;

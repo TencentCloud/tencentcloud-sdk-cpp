@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool CageIdHasBeenSet() const;
 
                     /**
-                     * 获取实例所属项目ID。该参数可以通过调用 [DescribeProject](/document/api/378/4400) 的返回值中的 projectId 字段来获取。不填为默认项目。
-                     * @return ProjectId 实例所属项目ID。该参数可以通过调用 [DescribeProject](/document/api/378/4400) 的返回值中的 projectId 字段来获取。不填为默认项目。
+                     * 获取实例所属项目ID。不填为默认项目。
+                     * @return ProjectId 实例所属项目ID。不填为默认项目。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置实例所属项目ID。该参数可以通过调用 [DescribeProject](/document/api/378/4400) 的返回值中的 projectId 字段来获取。不填为默认项目。
-                     * @param _projectId 实例所属项目ID。该参数可以通过调用 [DescribeProject](/document/api/378/4400) 的返回值中的 projectId 字段来获取。不填为默认项目。
+                     * 设置实例所属项目ID。不填为默认项目。
+                     * @param _projectId 实例所属项目ID。不填为默认项目。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -225,7 +225,7 @@ namespace TencentCloud
                     bool m_cageIdHasBeenSet;
 
                     /**
-                     * 实例所属项目ID。该参数可以通过调用 [DescribeProject](/document/api/378/4400) 的返回值中的 projectId 字段来获取。不填为默认项目。
+                     * 实例所属项目ID。不填为默认项目。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;

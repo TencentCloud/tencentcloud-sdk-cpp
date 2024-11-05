@@ -20,9 +20,10 @@ set(ca_public_header
 
 set(ca_public_header_model
   include/tencentcloud/ca/v20230228/model/CreateVerifyReportRequest.h
-  include/tencentcloud/ca/v20230228/model/CreateVerifyReportResponse.h
+  include/tencentcloud/ca/v20230228/model/CertificateIdentityUser.h
   include/tencentcloud/ca/v20230228/model/DescribeVerifyReportRequest.h
   include/tencentcloud/ca/v20230228/model/UploadFileRequest.h
+  include/tencentcloud/ca/v20230228/model/CreateVerifyReportResponse.h
   include/tencentcloud/ca/v20230228/model/UploadFileResponse.h
   include/tencentcloud/ca/v20230228/model/DescribeVerifyReportResponse.h
   include/tencentcloud/ca/v20230228/model/FileInfo.h
@@ -31,9 +32,10 @@ set(ca_public_header_model
 set(ca_src
   src/v20230228/CaClient.cpp
   src/v20230228/model/CreateVerifyReportRequest.cpp
-  src/v20230228/model/CreateVerifyReportResponse.cpp
+  src/v20230228/model/CertificateIdentityUser.cpp
   src/v20230228/model/DescribeVerifyReportRequest.cpp
   src/v20230228/model/UploadFileRequest.cpp
+  src/v20230228/model/CreateVerifyReportResponse.cpp
   src/v20230228/model/UploadFileResponse.cpp
   src/v20230228/model/DescribeVerifyReportResponse.cpp
   src/v20230228/model/FileInfo.cpp

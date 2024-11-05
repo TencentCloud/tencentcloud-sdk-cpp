@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取每页条数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageSize 每页条数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取每页条数
+                     * @return PageSize 每页条数
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置每页条数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pageSize 每页条数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置每页条数
+                     * @param _pageSize 每页条数
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取页码(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageNum 页码(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取页码
+                     * @return PageNum 页码
                      * 
                      */
                     uint64_t GetPageNum() const;
 
                     /**
-                     * 设置页码(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pageNum 页码(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置页码
+                     * @param _pageNum 页码
                      * 
                      */
                     void SetPageNum(const uint64_t& _pageNum);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取总页数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageCount 总页数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取总页数
+                     * @return PageCount 总页数
                      * 
                      */
                     uint64_t GetPageCount() const;
 
                     /**
-                     * 设置总页数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pageCount 总页数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置总页数
+                     * @param _pageCount 总页数
                      * 
                      */
                     void SetPageCount(const uint64_t& _pageCount);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取记录总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 记录总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 设置记录总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _total 记录总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotal(const uint64_t& _total);
@@ -149,29 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 每页条数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 每页条数
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 页码(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 页码
                      */
                     uint64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 总页数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 总页数
                      */
                     uint64_t m_pageCount;
                     bool m_pageCountHasBeenSet;
 
                     /**
                      * 记录总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;

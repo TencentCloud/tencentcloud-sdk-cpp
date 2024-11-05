@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产类型和实例类型映射关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceTypeList 资产类型和实例类型映射关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterDataObject> GetInstanceTypeList() const;
 
                     /**
                      * 设置资产类型和实例类型映射关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceTypeList 资产类型和实例类型映射关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceTypeList(const std::vector<FilterDataObject>& _instanceTypeList);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 资产类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 资产类型和实例类型映射关系
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterDataObject> m_instanceTypeList;
                     bool m_instanceTypeListHasBeenSet;

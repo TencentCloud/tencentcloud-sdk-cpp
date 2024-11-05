@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取规则白名单列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 规则白名单列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<UserWhiteRule> GetList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 规则白名单列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UserWhiteRule> m_list;
                     bool m_listHasBeenSet;

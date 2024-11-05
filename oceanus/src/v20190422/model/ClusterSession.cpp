@@ -32,11 +32,16 @@ ClusterSession::ClusterSession() :
     m_flinkVersionHasBeenSet(false),
     m_webUIUrlHasBeenSet(false),
     m_propertiesHasBeenSet(false),
+    m_resourceRefsHasBeenSet(false),
     m_jobManagerCuSpecHasBeenSet(false),
     m_taskManagerCuSpecHasBeenSet(false),
     m_taskManagerNumHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_jobManagerCpuHasBeenSet(false),
+    m_jobManagerMemHasBeenSet(false),
+    m_taskManagerCpuHasBeenSet(false),
+    m_taskManagerMemHasBeenSet(false)
 {
 }
 
@@ -165,6 +170,26 @@ CoreInternalOutcome ClusterSession::Deserialize(const rapidjson::Value &value)
         m_propertiesHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceRefs") && !value["ResourceRefs"].IsNull())
+    {
+        if (!value["ResourceRefs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.ResourceRefs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ResourceRefs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SessionClusterRefItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resourceRefs.push_back(item);
+        }
+        m_resourceRefsHasBeenSet = true;
+    }
+
     if (value.HasMember("JobManagerCuSpec") && !value["JobManagerCuSpec"].IsNull())
     {
         if (!value["JobManagerCuSpec"].IsLosslessDouble())
@@ -213,6 +238,46 @@ CoreInternalOutcome ClusterSession::Deserialize(const rapidjson::Value &value)
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobManagerCpu") && !value["JobManagerCpu"].IsNull())
+    {
+        if (!value["JobManagerCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.JobManagerCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobManagerCpu = value["JobManagerCpu"].GetDouble();
+        m_jobManagerCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobManagerMem") && !value["JobManagerMem"].IsNull())
+    {
+        if (!value["JobManagerMem"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.JobManagerMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobManagerMem = value["JobManagerMem"].GetDouble();
+        m_jobManagerMemHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskManagerCpu") && !value["TaskManagerCpu"].IsNull())
+    {
+        if (!value["TaskManagerCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.TaskManagerCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskManagerCpu = value["TaskManagerCpu"].GetDouble();
+        m_taskManagerCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskManagerMem") && !value["TaskManagerMem"].IsNull())
+    {
+        if (!value["TaskManagerMem"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.TaskManagerMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskManagerMem = value["TaskManagerMem"].GetDouble();
+        m_taskManagerMemHasBeenSet = true;
     }
 
 
@@ -317,6 +382,21 @@ void ClusterSession::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         }
     }
 
+    if (m_resourceRefsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceRefs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceRefs.begin(); itr != m_resourceRefs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_jobManagerCuSpecHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -355,6 +435,38 @@ void ClusterSession::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobManagerCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobManagerCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jobManagerCpu, allocator);
+    }
+
+    if (m_jobManagerMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobManagerMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jobManagerMem, allocator);
+    }
+
+    if (m_taskManagerCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskManagerCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskManagerCpu, allocator);
+    }
+
+    if (m_taskManagerMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskManagerMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskManagerMem, allocator);
     }
 
 }
@@ -536,6 +648,22 @@ bool ClusterSession::PropertiesHasBeenSet() const
     return m_propertiesHasBeenSet;
 }
 
+vector<SessionClusterRefItem> ClusterSession::GetResourceRefs() const
+{
+    return m_resourceRefs;
+}
+
+void ClusterSession::SetResourceRefs(const vector<SessionClusterRefItem>& _resourceRefs)
+{
+    m_resourceRefs = _resourceRefs;
+    m_resourceRefsHasBeenSet = true;
+}
+
+bool ClusterSession::ResourceRefsHasBeenSet() const
+{
+    return m_resourceRefsHasBeenSet;
+}
+
 double ClusterSession::GetJobManagerCuSpec() const
 {
     return m_jobManagerCuSpec;
@@ -614,5 +742,69 @@ void ClusterSession::SetUpdateTime(const string& _updateTime)
 bool ClusterSession::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+double ClusterSession::GetJobManagerCpu() const
+{
+    return m_jobManagerCpu;
+}
+
+void ClusterSession::SetJobManagerCpu(const double& _jobManagerCpu)
+{
+    m_jobManagerCpu = _jobManagerCpu;
+    m_jobManagerCpuHasBeenSet = true;
+}
+
+bool ClusterSession::JobManagerCpuHasBeenSet() const
+{
+    return m_jobManagerCpuHasBeenSet;
+}
+
+double ClusterSession::GetJobManagerMem() const
+{
+    return m_jobManagerMem;
+}
+
+void ClusterSession::SetJobManagerMem(const double& _jobManagerMem)
+{
+    m_jobManagerMem = _jobManagerMem;
+    m_jobManagerMemHasBeenSet = true;
+}
+
+bool ClusterSession::JobManagerMemHasBeenSet() const
+{
+    return m_jobManagerMemHasBeenSet;
+}
+
+double ClusterSession::GetTaskManagerCpu() const
+{
+    return m_taskManagerCpu;
+}
+
+void ClusterSession::SetTaskManagerCpu(const double& _taskManagerCpu)
+{
+    m_taskManagerCpu = _taskManagerCpu;
+    m_taskManagerCpuHasBeenSet = true;
+}
+
+bool ClusterSession::TaskManagerCpuHasBeenSet() const
+{
+    return m_taskManagerCpuHasBeenSet;
+}
+
+double ClusterSession::GetTaskManagerMem() const
+{
+    return m_taskManagerMem;
+}
+
+void ClusterSession::SetTaskManagerMem(const double& _taskManagerMem)
+{
+    m_taskManagerMem = _taskManagerMem;
+    m_taskManagerMemHasBeenSet = true;
+}
+
+bool ClusterSession::TaskManagerMemHasBeenSet() const
+{
+    return m_taskManagerMemHasBeenSet;
 }
 

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修复建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Fix 修复建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFix() const;
 
                     /**
                      * 设置修复建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fix 修复建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFix(const std::string& _fix);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取技术参考/参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return References 技术参考/参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReferences() const;
 
                     /**
                      * 设置技术参考/参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _references 技术参考/参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReferences(const std::string& _references);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Describe 漏洞描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescribe() const;
 
                     /**
                      * 设置漏洞描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _describe 漏洞描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescribe(const std::string& _describe);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取受影响组件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImpactComponent 受影响组件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VulImpactComponentInfo> GetImpactComponent() const;
 
                     /**
                      * 设置受影响组件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _impactComponent 受影响组件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImpactComponent(const std::vector<VulImpactComponentInfo>& _impactComponent);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 修复建议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fix;
                     bool m_fixHasBeenSet;
 
                     /**
                      * 技术参考/参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_references;
                     bool m_referencesHasBeenSet;
 
                     /**
                      * 漏洞描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_describe;
                     bool m_describeHasBeenSet;
 
                     /**
                      * 受影响组件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VulImpactComponentInfo> m_impactComponent;
                     bool m_impactComponentHasBeenSet;
