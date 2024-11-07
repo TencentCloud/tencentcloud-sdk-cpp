@@ -64,7 +64,8 @@ Job::Job() :
     m_messageHasBeenSet(false),
     m_projectNameHasBeenSet(false),
     m_scenarioNameHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_usageHasBeenSet(false)
 {
 }
 
@@ -613,6 +614,16 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
         m_payModeHasBeenSet = true;
     }
 
+    if (value.HasMember("Usage") && !value["Usage"].IsNull())
+    {
+        if (!value["Usage"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Job.Usage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_usage = value["Usage"].GetInt64();
+        m_usageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1037,6 +1048,14 @@ void Job::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_usageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Usage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usage, allocator);
     }
 
 }
@@ -1744,5 +1763,21 @@ void Job::SetPayMode(const int64_t& _payMode)
 bool Job::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+int64_t Job::GetUsage() const
+{
+    return m_usage;
+}
+
+void Job::SetUsage(const int64_t& _usage)
+{
+    m_usage = _usage;
+    m_usageHasBeenSet = true;
+}
+
+bool Job::UsageHasBeenSet() const
+{
+    return m_usageHasBeenSet;
 }
 

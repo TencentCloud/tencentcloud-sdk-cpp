@@ -114,7 +114,7 @@ namespace TencentCloud
 废弃：使用ScheduleInfo
                      * @return WeekDays 选择的星期 逗号分隔
 废弃：使用ScheduleInfo
-                     * 
+                     * @deprecated
                      */
                     std::string GetWeekDays() const;
 
@@ -123,14 +123,14 @@ namespace TencentCloud
 废弃：使用ScheduleInfo
                      * @param _weekDays 选择的星期 逗号分隔
 废弃：使用ScheduleInfo
-                     * 
+                     * @deprecated
                      */
                     void SetWeekDays(const std::string& _weekDays);
 
                     /**
                      * 判断参数 WeekDays 是否已赋值
                      * @return WeekDays 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool WeekDaysHasBeenSet() const;
 
@@ -139,7 +139,7 @@ namespace TencentCloud
 废弃：使用ScheduleInfo
                      * @return ExecuteHour 执行小时
 废弃：使用ScheduleInfo
-                     * 
+                     * @deprecated
                      */
                     int64_t GetExecuteHour() const;
 
@@ -148,14 +148,14 @@ namespace TencentCloud
 废弃：使用ScheduleInfo
                      * @param _executeHour 执行小时
 废弃：使用ScheduleInfo
-                     * 
+                     * @deprecated
                      */
                     void SetExecuteHour(const int64_t& _executeHour);
 
                     /**
                      * 判断参数 ExecuteHour 是否已赋值
                      * @return ExecuteHour 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ExecuteHourHasBeenSet() const;
 

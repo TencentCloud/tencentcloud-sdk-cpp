@@ -122,7 +122,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/FaceConfigureInfoForUpdate.h
   include/tencentcloud/vod/v20180717/model/ModifyTranscodeTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/EditMediaTaskInput.h
-  include/tencentcloud/vod/v20180717/model/DeleteAIAnalysisTemplateResponse.h
+  include/tencentcloud/vod/v20180717/model/DescribeImageSpriteTemplatesRequest.h
   include/tencentcloud/vod/v20180717/model/DeleteImageProcessingTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/DescribeDailyPlayStatFileListResponse.h
   include/tencentcloud/vod/v20180717/model/CLSTopicInfo.h
@@ -144,6 +144,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/StorageRegionInfo.h
   include/tencentcloud/vod/v20180717/model/MediaTransitionItem.h
   include/tencentcloud/vod/v20180717/model/MediaAiAnalysisCoverItem.h
+  include/tencentcloud/vod/v20180717/model/ComplexAdaptiveDynamicStreamingTaskSubtitleInput.h
   include/tencentcloud/vod/v20180717/model/TagConfigureInfo.h
   include/tencentcloud/vod/v20180717/model/SharpEnhanceInfo.h
   include/tencentcloud/vod/v20180717/model/ModifySuperPlayerConfigResponse.h
@@ -252,6 +253,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DeleteAIAnalysisTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/VideoFrameInterpolationInfo.h
   include/tencentcloud/vod/v20180717/model/EditMediaRequest.h
+  include/tencentcloud/vod/v20180717/model/CreateComplexAdaptiveDynamicStreamingTaskRequest.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskAsrTranslateResult.h
   include/tencentcloud/vod/v20180717/model/DescribeFileAttributesResponse.h
   include/tencentcloud/vod/v20180717/model/LicenseUsageDataItem.h
@@ -354,6 +356,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ModifyEnhanceMediaTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/EnhanceMediaByTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/CreateJustInTimeTranscodeTemplateRequest.h
+  include/tencentcloud/vod/v20180717/model/ComplexAdaptiveDynamicStreamingTaskAudioInput.h
   include/tencentcloud/vod/v20180717/model/ManageTaskRequest.h
   include/tencentcloud/vod/v20180717/model/RoundPlayListItemInfo.h
   include/tencentcloud/vod/v20180717/model/ModifyEventConfigRequest.h
@@ -429,7 +432,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ModifyVodDomainConfigResponse.h
   include/tencentcloud/vod/v20180717/model/MediaSnapshotByTimeOffsetInfo.h
   include/tencentcloud/vod/v20180717/model/VideoConfigureInfo.h
-  include/tencentcloud/vod/v20180717/model/DescribeImageSpriteTemplatesRequest.h
+  include/tencentcloud/vod/v20180717/model/DeleteAIAnalysisTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/ModifyRebuildMediaTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/CreateEnhanceMediaTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/MediaKeyFrameDescItem.h
@@ -624,6 +627,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/VideoTemplateInfoForUpdate.h
   include/tencentcloud/vod/v20180717/model/CreateContentReviewTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/DescribeContentReviewTemplatesRequest.h
+  include/tencentcloud/vod/v20180717/model/CreateComplexAdaptiveDynamicStreamingTaskResponse.h
   include/tencentcloud/vod/v20180717/model/AdaptiveDynamicStreamingTaskInput.h
   include/tencentcloud/vod/v20180717/model/DescribeImageSpriteTemplatesResponse.h
   include/tencentcloud/vod/v20180717/model/DescribeCLSLogsetsRequest.h
@@ -949,7 +953,7 @@ set(vod_src
   src/v20180717/model/FaceConfigureInfoForUpdate.cpp
   src/v20180717/model/ModifyTranscodeTemplateRequest.cpp
   src/v20180717/model/EditMediaTaskInput.cpp
-  src/v20180717/model/DeleteAIAnalysisTemplateResponse.cpp
+  src/v20180717/model/DescribeImageSpriteTemplatesRequest.cpp
   src/v20180717/model/DeleteImageProcessingTemplateRequest.cpp
   src/v20180717/model/DescribeDailyPlayStatFileListResponse.cpp
   src/v20180717/model/CLSTopicInfo.cpp
@@ -971,6 +975,7 @@ set(vod_src
   src/v20180717/model/StorageRegionInfo.cpp
   src/v20180717/model/MediaTransitionItem.cpp
   src/v20180717/model/MediaAiAnalysisCoverItem.cpp
+  src/v20180717/model/ComplexAdaptiveDynamicStreamingTaskSubtitleInput.cpp
   src/v20180717/model/TagConfigureInfo.cpp
   src/v20180717/model/SharpEnhanceInfo.cpp
   src/v20180717/model/ModifySuperPlayerConfigResponse.cpp
@@ -1079,6 +1084,7 @@ set(vod_src
   src/v20180717/model/DeleteAIAnalysisTemplateRequest.cpp
   src/v20180717/model/VideoFrameInterpolationInfo.cpp
   src/v20180717/model/EditMediaRequest.cpp
+  src/v20180717/model/CreateComplexAdaptiveDynamicStreamingTaskRequest.cpp
   src/v20180717/model/AiRecognitionTaskAsrTranslateResult.cpp
   src/v20180717/model/DescribeFileAttributesResponse.cpp
   src/v20180717/model/LicenseUsageDataItem.cpp
@@ -1181,6 +1187,7 @@ set(vod_src
   src/v20180717/model/ModifyEnhanceMediaTemplateResponse.cpp
   src/v20180717/model/EnhanceMediaByTemplateResponse.cpp
   src/v20180717/model/CreateJustInTimeTranscodeTemplateRequest.cpp
+  src/v20180717/model/ComplexAdaptiveDynamicStreamingTaskAudioInput.cpp
   src/v20180717/model/ManageTaskRequest.cpp
   src/v20180717/model/RoundPlayListItemInfo.cpp
   src/v20180717/model/ModifyEventConfigRequest.cpp
@@ -1256,7 +1263,7 @@ set(vod_src
   src/v20180717/model/ModifyVodDomainConfigResponse.cpp
   src/v20180717/model/MediaSnapshotByTimeOffsetInfo.cpp
   src/v20180717/model/VideoConfigureInfo.cpp
-  src/v20180717/model/DescribeImageSpriteTemplatesRequest.cpp
+  src/v20180717/model/DeleteAIAnalysisTemplateResponse.cpp
   src/v20180717/model/ModifyRebuildMediaTemplateResponse.cpp
   src/v20180717/model/CreateEnhanceMediaTemplateRequest.cpp
   src/v20180717/model/MediaKeyFrameDescItem.cpp
@@ -1451,6 +1458,7 @@ set(vod_src
   src/v20180717/model/VideoTemplateInfoForUpdate.cpp
   src/v20180717/model/CreateContentReviewTemplateRequest.cpp
   src/v20180717/model/DescribeContentReviewTemplatesRequest.cpp
+  src/v20180717/model/CreateComplexAdaptiveDynamicStreamingTaskResponse.cpp
   src/v20180717/model/AdaptiveDynamicStreamingTaskInput.cpp
   src/v20180717/model/DescribeImageSpriteTemplatesResponse.cpp
   src/v20180717/model/DescribeCLSLogsetsRequest.cpp

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Field 过滤字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetField() const;
 
                     /**
                      * 设置过滤字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _field 过滤字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetField(const std::string& _field);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool FieldHasBeenSet() const;
 
                     /**
-                     * 获取过滤方式 eq:等于,net:不等于,like,nlike,gt:大于,lt:小于,egt:大于等于,elt:小于等于
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Operator 过滤方式 eq:等于,net:不等于,like,nlike,gt:大于,lt:小于,egt:大于等于,elt:小于等于
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取过滤方式： eq:等于,net:不等于,like,nlike,gt:大于,lt:小于,egt:大于等于,elt:小于等于。具体支持哪些过滤方式，结合具体接口字段描述来定
+                     * @return Operator 过滤方式： eq:等于,net:不等于,like,nlike,gt:大于,lt:小于,egt:大于等于,elt:小于等于。具体支持哪些过滤方式，结合具体接口字段描述来定
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置过滤方式 eq:等于,net:不等于,like,nlike,gt:大于,lt:小于,egt:大于等于,elt:小于等于
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operator 过滤方式 eq:等于,net:不等于,like,nlike,gt:大于,lt:小于,egt:大于等于,elt:小于等于
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置过滤方式： eq:等于,net:不等于,like,nlike,gt:大于,lt:小于,egt:大于等于,elt:小于等于。具体支持哪些过滤方式，结合具体接口字段描述来定
+                     * @param _operator 过滤方式： eq:等于,net:不等于,like,nlike,gt:大于,lt:小于,egt:大于等于,elt:小于等于。具体支持哪些过滤方式，结合具体接口字段描述来定
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _values 过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 过滤字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_field;
                     bool m_fieldHasBeenSet;
 
                     /**
-                     * 过滤方式 eq:等于,net:不等于,like,nlike,gt:大于,lt:小于,egt:大于等于,elt:小于等于
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 过滤方式： eq:等于,net:不等于,like,nlike,gt:大于,lt:小于,egt:大于等于,elt:小于等于。具体支持哪些过滤方式，结合具体接口字段描述来定
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
                      * 过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;

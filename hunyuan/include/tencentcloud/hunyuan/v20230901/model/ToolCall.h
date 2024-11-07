@@ -110,6 +110,27 @@ namespace TencentCloud
                      */
                     bool FunctionHasBeenSet() const;
 
+                    /**
+                     * 获取索引值
+                     * @return Index 索引值
+                     * 
+                     */
+                    int64_t GetIndex() const;
+
+                    /**
+                     * 设置索引值
+                     * @param _index 索引值
+                     * 
+                     */
+                    void SetIndex(const int64_t& _index);
+
+                    /**
+                     * 判断参数 Index 是否已赋值
+                     * @return Index 是否已赋值
+                     * 
+                     */
+                    bool IndexHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +150,12 @@ namespace TencentCloud
                      */
                     ToolCallFunction m_function;
                     bool m_functionHasBeenSet;
+
+                    /**
+                     * 索引值
+                     */
+                    int64_t m_index;
+                    bool m_indexHasBeenSet;
 
                 };
             }

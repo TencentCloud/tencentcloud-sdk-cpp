@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取简单规则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SimpleRules 简单规则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SimpleRule> GetSimpleRules() const;
 
                     /**
                      * 设置简单规则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _simpleRules 简单规则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSimpleRules(const std::vector<SimpleRule>& _simpleRules);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表达式间逻辑关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Relation 表达式间逻辑关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRelation() const;
 
                     /**
                      * 设置表达式间逻辑关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _relation 表达式间逻辑关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRelation(const std::string& _relation);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 简单规则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SimpleRule> m_simpleRules;
                     bool m_simpleRulesHasBeenSet;
 
                     /**
                      * 表达式间逻辑关系
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_relation;
                     bool m_relationHasBeenSet;

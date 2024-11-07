@@ -165,6 +165,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeGovernanceServiceContractsResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeGovernanceServicesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeGovernanceServicesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeInstanceTagInfosRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeInstanceTagInfosResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNacosReplicasRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNacosReplicasResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNacosServerInterfacesRequest.h>
@@ -476,6 +478,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGovernanceServicesResponse> DescribeGovernanceServicesOutcome;
                 typedef std::future<DescribeGovernanceServicesOutcome> DescribeGovernanceServicesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeGovernanceServicesRequest&, DescribeGovernanceServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGovernanceServicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceTagInfosResponse> DescribeInstanceTagInfosOutcome;
+                typedef std::future<DescribeInstanceTagInfosOutcome> DescribeInstanceTagInfosOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeInstanceTagInfosRequest&, DescribeInstanceTagInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceTagInfosAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNacosReplicasResponse> DescribeNacosReplicasOutcome;
                 typedef std::future<DescribeNacosReplicasOutcome> DescribeNacosReplicasOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeNacosReplicasRequest&, DescribeNacosReplicasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNacosReplicasAsyncHandler;
@@ -1243,6 +1248,15 @@ namespace TencentCloud
                 DescribeGovernanceServicesOutcome DescribeGovernanceServices(const Model::DescribeGovernanceServicesRequest &request);
                 void DescribeGovernanceServicesAsync(const Model::DescribeGovernanceServicesRequest& request, const DescribeGovernanceServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGovernanceServicesOutcomeCallable DescribeGovernanceServicesCallable(const Model::DescribeGovernanceServicesRequest& request);
+
+                /**
+                 *查看实例的标签信息
+                 * @param req DescribeInstanceTagInfosRequest
+                 * @return DescribeInstanceTagInfosOutcome
+                 */
+                DescribeInstanceTagInfosOutcome DescribeInstanceTagInfos(const Model::DescribeInstanceTagInfosRequest &request);
+                void DescribeInstanceTagInfosAsync(const Model::DescribeInstanceTagInfosRequest& request, const DescribeInstanceTagInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceTagInfosOutcomeCallable DescribeInstanceTagInfosCallable(const Model::DescribeInstanceTagInfosRequest& request);
 
                 /**
                  *查询Nacos类型引擎实例副本信息

@@ -76,9 +76,7 @@ namespace TencentCloud
 
                     /**
                      * 获取线路维度指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NumberMetrics 线路维度指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CallInNumberMetrics> GetNumberMetrics() const;
@@ -92,9 +90,7 @@ namespace TencentCloud
 
                     /**
                      * 获取技能组维度指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkillGroupMetrics 技能组维度指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CallInSkillGroupMetrics> GetSkillGroupMetrics() const;
@@ -122,14 +118,12 @@ namespace TencentCloud
 
                     /**
                      * 线路维度指标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CallInNumberMetrics> m_numberMetrics;
                     bool m_numberMetricsHasBeenSet;
 
                     /**
                      * 技能组维度指标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CallInSkillGroupMetrics> m_skillGroupMetrics;
                     bool m_skillGroupMetricsHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Filters 条件过滤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Filters Filters 条件过滤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置Filters 条件过滤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filters Filters 条件过滤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * Filters 条件过滤
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

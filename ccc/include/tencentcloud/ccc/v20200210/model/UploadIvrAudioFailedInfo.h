@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileName 文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileName 文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedMsg 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailedMsg() const;
 
                     /**
                      * 设置失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failedMsg 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailedMsg(const std::string& _failedMsg);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
                      * 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failedMsg;
                     bool m_failedMsgHasBeenSet;

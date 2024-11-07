@@ -28,6 +28,7 @@
 #include <tencentcloud/lighthouse/v20200324/model/InternetAccessible.h>
 #include <tencentcloud/lighthouse/v20200324/model/LoginSettings.h>
 #include <tencentcloud/lighthouse/v20200324/model/Tag.h>
+#include <tencentcloud/lighthouse/v20200324/model/InstanceViolationDetail.h>
 
 
 namespace TencentCloud
@@ -735,6 +736,31 @@ FAILED：表示操作失败
                      */
                     bool InitInvocationIdHasBeenSet() const;
 
+                    /**
+                     * 获取实例违规详情。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceViolationDetail 实例违规详情。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    InstanceViolationDetail GetInstanceViolationDetail() const;
+
+                    /**
+                     * 设置实例违规详情。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceViolationDetail 实例违规详情。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceViolationDetail(const InstanceViolationDetail& _instanceViolationDetail);
+
+                    /**
+                     * 判断参数 InstanceViolationDetail 是否已赋值
+                     * @return InstanceViolationDetail 是否已赋值
+                     * 
+                     */
+                    bool InstanceViolationDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -929,6 +955,13 @@ FAILED：表示操作失败
                      */
                     std::string m_initInvocationId;
                     bool m_initInvocationIdHasBeenSet;
+
+                    /**
+                     * 实例违规详情。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InstanceViolationDetail m_instanceViolationDetail;
+                    bool m_instanceViolationDetailHasBeenSet;
 
                 };
             }

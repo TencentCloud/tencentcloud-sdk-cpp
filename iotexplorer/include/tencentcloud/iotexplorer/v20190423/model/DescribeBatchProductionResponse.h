@@ -127,6 +127,38 @@ namespace TencentCloud
                      */
                     bool UploadUrlHasBeenSet() const;
 
+                    /**
+                     * 获取成功数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SuccessCount 成功数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSuccessCount() const;
+
+                    /**
+                     * 判断参数 SuccessCount 是否已赋值
+                     * @return SuccessCount 是否已赋值
+                     * 
+                     */
+                    bool SuccessCountHasBeenSet() const;
+
+                    /**
+                     * 获取量产最后失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastFailedReason 量产最后失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLastFailedReason() const;
+
+                    /**
+                     * 判断参数 LastFailedReason 是否已赋值
+                     * @return LastFailedReason 是否已赋值
+                     * 
+                     */
+                    bool LastFailedReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +196,20 @@ namespace TencentCloud
                      */
                     std::string m_uploadUrl;
                     bool m_uploadUrlHasBeenSet;
+
+                    /**
+                     * 成功数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_successCount;
+                    bool m_successCountHasBeenSet;
+
+                    /**
+                     * 量产最后失败原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lastFailedReason;
+                    bool m_lastFailedReasonHasBeenSet;
 
                 };
             }

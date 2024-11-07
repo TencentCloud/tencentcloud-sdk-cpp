@@ -169,6 +169,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/StopInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/IsolateInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/CreateKeyPairResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/InstanceViolationDetail.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstanceVncUrlResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDockerActivitiesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplateRuleQuotaRequest.h
@@ -455,6 +456,7 @@ set(lighthouse_src
   src/v20200324/model/StopInstancesRequest.cpp
   src/v20200324/model/IsolateInstancesResponse.cpp
   src/v20200324/model/CreateKeyPairResponse.cpp
+  src/v20200324/model/InstanceViolationDetail.cpp
   src/v20200324/model/DescribeInstanceVncUrlResponse.cpp
   src/v20200324/model/DescribeDockerActivitiesResponse.cpp
   src/v20200324/model/DescribeFirewallTemplateRuleQuotaRequest.cpp

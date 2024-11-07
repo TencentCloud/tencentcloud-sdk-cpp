@@ -49,7 +49,8 @@ Instance::Instance() :
     m_zoneHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_instanceRestrictStateHasBeenSet(false),
-    m_initInvocationIdHasBeenSet(false)
+    m_initInvocationIdHasBeenSet(false),
+    m_instanceViolationDetailHasBeenSet(false)
 {
 }
 
@@ -385,6 +386,23 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_initInvocationIdHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceViolationDetail") && !value["InstanceViolationDetail"].IsNull())
+    {
+        if (!value["InstanceViolationDetail"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.InstanceViolationDetail` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_instanceViolationDetail.Deserialize(value["InstanceViolationDetail"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_instanceViolationDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -642,6 +660,15 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "InitInvocationId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_initInvocationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceViolationDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceViolationDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_instanceViolationDetail.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1109,5 +1136,21 @@ void Instance::SetInitInvocationId(const string& _initInvocationId)
 bool Instance::InitInvocationIdHasBeenSet() const
 {
     return m_initInvocationIdHasBeenSet;
+}
+
+InstanceViolationDetail Instance::GetInstanceViolationDetail() const
+{
+    return m_instanceViolationDetail;
+}
+
+void Instance::SetInstanceViolationDetail(const InstanceViolationDetail& _instanceViolationDetail)
+{
+    m_instanceViolationDetail = _instanceViolationDetail;
+    m_instanceViolationDetailHasBeenSet = true;
+}
+
+bool Instance::InstanceViolationDetailHasBeenSet() const
+{
+    return m_instanceViolationDetailHasBeenSet;
 }
 

@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdwdoris::V20211228::Model;
 using namespace std;
 
-CreateBackUpScheduleResponse::CreateBackUpScheduleResponse()
+CreateBackUpScheduleResponse::CreateBackUpScheduleResponse() :
+    m_errorMsgHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateBackUpScheduleResponse::Deserialize(const string &payl
     }
 
 
+    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    {
+        if (!rsp["ErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMsg = string(rsp["ErrorMsg"].GetString());
+        m_errorMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateBackUpScheduleResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_errorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateBackUpScheduleResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateBackUpScheduleResponse::GetErrorMsg() const
+{
+    return m_errorMsg;
+}
+
+bool CreateBackUpScheduleResponse::ErrorMsgHasBeenSet() const
+{
+    return m_errorMsgHasBeenSet;
+}
 
 

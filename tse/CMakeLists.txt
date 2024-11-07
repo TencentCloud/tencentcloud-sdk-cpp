@@ -283,6 +283,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DescribeGovernanceAliasesRequest.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayServiceResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeAutoScalerResourceStrategyBindingGroupsResponse.h
+  include/tencentcloud/tse/v20201207/model/DescribeInstanceTagInfosRequest.h
   include/tencentcloud/tse/v20201207/model/GovernanceNamespaceInput.h
   include/tencentcloud/tse/v20201207/model/DeleteGovernanceServicesResponse.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayCertificateResponse.h
@@ -314,6 +315,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayServiceRequest.h
   include/tencentcloud/tse/v20201207/model/DescribePublicNetworkResponse.h
   include/tencentcloud/tse/v20201207/model/ZookeeperRegionInfo.h
+  include/tencentcloud/tse/v20201207/model/DescribeInstanceTagInfosResponse.h
   include/tencentcloud/tse/v20201207/model/DeleteConfigFilesRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeGovernanceServicesResponse.h
   include/tencentcloud/tse/v20201207/model/CloseWafProtectionResponse.h
@@ -629,6 +631,7 @@ set(tse_src
   src/v20201207/model/DescribeGovernanceAliasesRequest.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayServiceResponse.cpp
   src/v20201207/model/DescribeAutoScalerResourceStrategyBindingGroupsResponse.cpp
+  src/v20201207/model/DescribeInstanceTagInfosRequest.cpp
   src/v20201207/model/GovernanceNamespaceInput.cpp
   src/v20201207/model/DeleteGovernanceServicesResponse.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayCertificateResponse.cpp
@@ -660,6 +663,7 @@ set(tse_src
   src/v20201207/model/DeleteCloudNativeAPIGatewayServiceRequest.cpp
   src/v20201207/model/DescribePublicNetworkResponse.cpp
   src/v20201207/model/ZookeeperRegionInfo.cpp
+  src/v20201207/model/DescribeInstanceTagInfosResponse.cpp
   src/v20201207/model/DeleteConfigFilesRequest.cpp
   src/v20201207/model/DescribeGovernanceServicesResponse.cpp
   src/v20201207/model/CloseWafProtectionResponse.cpp

@@ -184,8 +184,8 @@ namespace TencentCloud
                     bool IsCreditLimitedHasBeenSet() const;
 
                     /**
-                     * 获取信用额度
-                     * @return CreditAmount 信用额度
+                     * 获取信用额度,单位 分
+                     * @return CreditAmount 信用额度,单位 分
                      * 
                      */
                     double GetCreditAmount() const;
@@ -198,8 +198,8 @@ namespace TencentCloud
                     bool CreditAmountHasBeenSet() const;
 
                     /**
-                     * 获取可用信用额度
-                     * @return CreditBalance 可用信用额度
+                     * 获取可用信用额度,单位 分
+                     * @return CreditBalance 可用信用额度,单位 分
                      * 
                      */
                     double GetCreditBalance() const;
@@ -212,8 +212,8 @@ namespace TencentCloud
                     bool CreditBalanceHasBeenSet() const;
 
                     /**
-                     * 获取真实可用信用额度
-                     * @return RealCreditBalance 真实可用信用额度
+                     * 获取真实可用信用额度,单位 分
+                     * @return RealCreditBalance 真实可用信用额度,单位 分
                      * 
                      */
                     double GetRealCreditBalance() const;
@@ -288,19 +288,19 @@ namespace TencentCloud
                     bool m_isCreditLimitedHasBeenSet;
 
                     /**
-                     * 信用额度
+                     * 信用额度,单位 分
                      */
                     double m_creditAmount;
                     bool m_creditAmountHasBeenSet;
 
                     /**
-                     * 可用信用额度
+                     * 可用信用额度,单位 分
                      */
                     double m_creditBalance;
                     bool m_creditBalanceHasBeenSet;
 
                     /**
-                     * 真实可用信用额度
+                     * 真实可用信用额度,单位 分
                      */
                     double m_realCreditBalance;
                     bool m_realCreditBalanceHasBeenSet;

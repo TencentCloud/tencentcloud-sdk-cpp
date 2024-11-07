@@ -38,12 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * - [ ] 过滤条件<br>
-
-<li>Name - String - 是否必填：否 - 操作符: ilike  - 排序支持：否- 根据分组名称进行查询。</li>
-分页参数<br>
-<li>PageNum 从1开始，小于等于0时使用默认参数。</li>
-<li>PageSize 最大值5000，最好不超过100。</li>
+                * 这是一个多接口的公共数据结构，用于接口根据条件进行过滤和分页。具体支持哪些过滤条件，参考具体使用该结构的接口字段描述
                 */
                 class Condition : public AbstractModel
                 {
@@ -56,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Filters 条件过滤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Filters Filters 条件过滤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置Filters 条件过滤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filters Filters 条件过滤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -81,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取FilterGroups 条件过滤组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterGroups FilterGroups 条件过滤组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FilterGroup> GetFilterGroups() const;
 
                     /**
                      * 设置FilterGroups 条件过滤组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filterGroups FilterGroups 条件过滤组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilterGroups(const std::vector<FilterGroup>& _filterGroups);
@@ -106,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Sort 排序字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sort Sort 排序字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Sort GetSort() const;
 
                     /**
                      * 设置Sort 排序字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sort Sort 排序字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSort(const Sort& _sort);
@@ -131,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取PageSize 每页获取数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageSize PageSize 每页获取数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置PageSize 每页获取数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pageSize PageSize 每页获取数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -156,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取PageNum 获取第几页(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageNum PageNum 获取第几页(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPageNum() const;
 
                     /**
                      * 设置PageNum 获取第几页(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pageNum PageNum 获取第几页(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPageNum(const int64_t& _pageNum);
@@ -183,35 +158,30 @@ namespace TencentCloud
 
                     /**
                      * Filters 条件过滤
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
                      * FilterGroups 条件过滤组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FilterGroup> m_filterGroups;
                     bool m_filterGroupsHasBeenSet;
 
                     /**
                      * Sort 排序字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Sort m_sort;
                     bool m_sortHasBeenSet;
 
                     /**
                      * PageSize 每页获取数(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
                      * PageNum 获取第几页(只支持32位)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pageNum;
                     bool m_pageNumHasBeenSet;

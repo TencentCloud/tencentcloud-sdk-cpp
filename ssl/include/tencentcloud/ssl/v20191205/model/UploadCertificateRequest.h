@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取相同的证书是否允许重复上传
-                     * @return Repeatable 相同的证书是否允许重复上传
+                     * 获取相同的证书是否允许重复上传； true：允许上传相同指纹的证书；  false：不允许上传相同指纹的证书； 默认值：true
+                     * @return Repeatable 相同的证书是否允许重复上传； true：允许上传相同指纹的证书；  false：不允许上传相同指纹的证书； 默认值：true
                      * 
                      */
                     bool GetRepeatable() const;
 
                     /**
-                     * 设置相同的证书是否允许重复上传
-                     * @param _repeatable 相同的证书是否允许重复上传
+                     * 设置相同的证书是否允许重复上传； true：允许上传相同指纹的证书；  false：不允许上传相同指纹的证书； 默认值：true
+                     * @param _repeatable 相同的证书是否允许重复上传； true：允许上传相同指纹的证书；  false：不允许上传相同指纹的证书； 默认值：true
                      * 
                      */
                     void SetRepeatable(const bool& _repeatable);
@@ -256,7 +256,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 相同的证书是否允许重复上传
+                     * 相同的证书是否允许重复上传； true：允许上传相同指纹的证书；  false：不允许上传相同指纹的证书； 默认值：true
                      */
                     bool m_repeatable;
                     bool m_repeatableHasBeenSet;

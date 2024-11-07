@@ -29,7 +29,9 @@ DescribeBatchProductionResponse::DescribeBatchProductionResponse() :
     m_createTimeHasBeenSet(false),
     m_downloadUrlHasBeenSet(false),
     m_generationMethodHasBeenSet(false),
-    m_uploadUrlHasBeenSet(false)
+    m_uploadUrlHasBeenSet(false),
+    m_successCountHasBeenSet(false),
+    m_lastFailedReasonHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome DescribeBatchProductionResponse::Deserialize(const string &p
         m_uploadUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SuccessCount") && !rsp["SuccessCount"].IsNull())
+    {
+        if (!rsp["SuccessCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuccessCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_successCount = rsp["SuccessCount"].GetInt64();
+        m_successCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LastFailedReason") && !rsp["LastFailedReason"].IsNull())
+    {
+        if (!rsp["LastFailedReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LastFailedReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastFailedReason = string(rsp["LastFailedReason"].GetString());
+        m_lastFailedReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +205,22 @@ string DescribeBatchProductionResponse::ToJsonString() const
         string key = "UploadUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uploadUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_successCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_successCount, allocator);
+    }
+
+    if (m_lastFailedReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastFailedReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastFailedReason.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +293,26 @@ string DescribeBatchProductionResponse::GetUploadUrl() const
 bool DescribeBatchProductionResponse::UploadUrlHasBeenSet() const
 {
     return m_uploadUrlHasBeenSet;
+}
+
+int64_t DescribeBatchProductionResponse::GetSuccessCount() const
+{
+    return m_successCount;
+}
+
+bool DescribeBatchProductionResponse::SuccessCountHasBeenSet() const
+{
+    return m_successCountHasBeenSet;
+}
+
+string DescribeBatchProductionResponse::GetLastFailedReason() const
+{
+    return m_lastFailedReason;
+}
+
+bool DescribeBatchProductionResponse::LastFailedReasonHasBeenSet() const
+{
+    return m_lastFailedReasonHasBeenSet;
 }
 
 

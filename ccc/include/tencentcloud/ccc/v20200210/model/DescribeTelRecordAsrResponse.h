@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取录音转文本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrDataList 录音转文本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AsrData> GetAsrDataList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 录音转文本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AsrData> m_asrDataList;
                     bool m_asrDataListHasBeenSet;

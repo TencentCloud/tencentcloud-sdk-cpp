@@ -47,6 +47,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateCLSTopicResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateClassRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateClassResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateComplexAdaptiveDynamicStreamingTaskRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateComplexAdaptiveDynamicStreamingTaskResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateContentReviewTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateContentReviewTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateDomainVerifyRecordRequest.h>
@@ -433,6 +435,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateClassResponse> CreateClassOutcome;
                 typedef std::future<CreateClassOutcome> CreateClassOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateClassRequest&, CreateClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClassAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateComplexAdaptiveDynamicStreamingTaskResponse> CreateComplexAdaptiveDynamicStreamingTaskOutcome;
+                typedef std::future<CreateComplexAdaptiveDynamicStreamingTaskOutcome> CreateComplexAdaptiveDynamicStreamingTaskOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateComplexAdaptiveDynamicStreamingTaskRequest&, CreateComplexAdaptiveDynamicStreamingTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateComplexAdaptiveDynamicStreamingTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateContentReviewTemplateResponse> CreateContentReviewTemplateOutcome;
                 typedef std::future<CreateContentReviewTemplateOutcome> CreateContentReviewTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateContentReviewTemplateRequest&, CreateContentReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContentReviewTemplateAsyncHandler;
@@ -1065,6 +1070,26 @@ namespace TencentCloud
                 CreateClassOutcome CreateClass(const Model::CreateClassRequest &request);
                 void CreateClassAsync(const Model::CreateClassRequest& request, const CreateClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateClassOutcomeCallable CreateClassCallable(const Model::CreateClassRequest& request);
+
+                /**
+                 *发起复杂自适应码流处理任务，功能包括：
+1. 按指定的自适应码流模版输出 HLS、DASH 自适应码流；
+2. 自适应码流的内容保护方案可选择无加密、Widevine 或 FairPlay；
+3. 支持添加片头片尾；
+4. 输出的自适应码流可包含多语言音频流，每种语言分别来自不同的媒体文件；
+5. 输出的自适应码流可包含多语言字幕流。
+
+注意事项：
+1. 当使用片头时，片头媒体中的视频流需要和音频流对齐，否则将导致输出的内容音画不同步；
+2. 如果输出的自适应码流需要包含主媒体的音频，那么需要在 AudioSet 参数中指定主媒体的 FileId；
+3. 使用字幕时，需要先将字幕添加到主媒体，可通过 ModifyMediaInfo 接口或控制台的音视频详情页进行添加；
+4. 暂不支持极速高清、水印。
+                 * @param req CreateComplexAdaptiveDynamicStreamingTaskRequest
+                 * @return CreateComplexAdaptiveDynamicStreamingTaskOutcome
+                 */
+                CreateComplexAdaptiveDynamicStreamingTaskOutcome CreateComplexAdaptiveDynamicStreamingTask(const Model::CreateComplexAdaptiveDynamicStreamingTaskRequest &request);
+                void CreateComplexAdaptiveDynamicStreamingTaskAsync(const Model::CreateComplexAdaptiveDynamicStreamingTaskRequest& request, const CreateComplexAdaptiveDynamicStreamingTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateComplexAdaptiveDynamicStreamingTaskOutcomeCallable CreateComplexAdaptiveDynamicStreamingTaskCallable(const Model::CreateComplexAdaptiveDynamicStreamingTaskRequest& request);
 
                 /**
                  *该 API 已经<font color=red>不再维护</font>，新版审核模板支持音视频审核和图片审核，详细请参考 [创建审核模板](https://cloud.tencent.com/document/api/266/84391)。

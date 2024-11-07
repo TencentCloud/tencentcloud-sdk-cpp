@@ -3093,6 +3093,49 @@ TseClient::DescribeGovernanceServicesOutcomeCallable TseClient::DescribeGovernan
     return task->get_future();
 }
 
+TseClient::DescribeInstanceTagInfosOutcome TseClient::DescribeInstanceTagInfos(const DescribeInstanceTagInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceTagInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceTagInfosResponse rsp = DescribeInstanceTagInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceTagInfosOutcome(rsp);
+        else
+            return DescribeInstanceTagInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceTagInfosOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeInstanceTagInfosAsync(const DescribeInstanceTagInfosRequest& request, const DescribeInstanceTagInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceTagInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeInstanceTagInfosOutcomeCallable TseClient::DescribeInstanceTagInfosCallable(const DescribeInstanceTagInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceTagInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceTagInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DescribeNacosReplicasOutcome TseClient::DescribeNacosReplicas(const DescribeNacosReplicasRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNacosReplicas");

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设置后付费状态，0：后付费；1：预付费
-                     * @return PayMode 设置后付费状态，0：后付费；1：预付费
+                     * 获取设置后付费状态，0：后付费打开；1：后付费关闭
+                     * @return PayMode 设置后付费状态，0：后付费打开；1：后付费关闭
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置设置后付费状态，0：后付费；1：预付费
-                     * @param _payMode 设置后付费状态，0：后付费；1：预付费
+                     * 设置设置后付费状态，0：后付费打开；1：后付费关闭
+                     * @param _payMode 设置后付费状态，0：后付费打开；1：后付费关闭
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设置后付费状态，0：后付费；1：预付费
+                     * 设置后付费状态，0：后付费打开；1：后付费关闭
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;

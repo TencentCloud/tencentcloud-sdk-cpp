@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool AccountGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取是否仅展示当前目录下用户 1： 递归显示 2：仅显示当前目录下用户(只支持32位)
-                     * @return ShowFlag 是否仅展示当前目录下用户 1： 递归显示 2：仅显示当前目录下用户(只支持32位)
+                     * 获取是否仅展示当前目录下用户 1： 递归显示 2：仅显示当前目录下用户
+                     * @return ShowFlag 是否仅展示当前目录下用户 1： 递归显示 2：仅显示当前目录下用户
                      * 
                      */
                     int64_t GetShowFlag() const;
 
                     /**
-                     * 设置是否仅展示当前目录下用户 1： 递归显示 2：仅显示当前目录下用户(只支持32位)
-                     * @param _showFlag 是否仅展示当前目录下用户 1： 递归显示 2：仅显示当前目录下用户(只支持32位)
+                     * 设置是否仅展示当前目录下用户 1： 递归显示 2：仅显示当前目录下用户
+                     * @param _showFlag 是否仅展示当前目录下用户 1： 递归显示 2：仅显示当前目录下用户
                      * 
                      */
                     void SetShowFlag(const int64_t& _showFlag);
@@ -181,7 +181,7 @@ namespace TencentCloud
                     bool m_accountGroupIdHasBeenSet;
 
                     /**
-                     * 是否仅展示当前目录下用户 1： 递归显示 2：仅显示当前目录下用户(只支持32位)
+                     * 是否仅展示当前目录下用户 1： 递归显示 2：仅显示当前目录下用户
                      */
                     int64_t m_showFlag;
                     bool m_showFlagHasBeenSet;

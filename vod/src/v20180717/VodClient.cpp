@@ -556,6 +556,49 @@ VodClient::CreateClassOutcomeCallable VodClient::CreateClassCallable(const Creat
     return task->get_future();
 }
 
+VodClient::CreateComplexAdaptiveDynamicStreamingTaskOutcome VodClient::CreateComplexAdaptiveDynamicStreamingTask(const CreateComplexAdaptiveDynamicStreamingTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateComplexAdaptiveDynamicStreamingTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateComplexAdaptiveDynamicStreamingTaskResponse rsp = CreateComplexAdaptiveDynamicStreamingTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateComplexAdaptiveDynamicStreamingTaskOutcome(rsp);
+        else
+            return CreateComplexAdaptiveDynamicStreamingTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateComplexAdaptiveDynamicStreamingTaskOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateComplexAdaptiveDynamicStreamingTaskAsync(const CreateComplexAdaptiveDynamicStreamingTaskRequest& request, const CreateComplexAdaptiveDynamicStreamingTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateComplexAdaptiveDynamicStreamingTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::CreateComplexAdaptiveDynamicStreamingTaskOutcomeCallable VodClient::CreateComplexAdaptiveDynamicStreamingTaskCallable(const CreateComplexAdaptiveDynamicStreamingTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateComplexAdaptiveDynamicStreamingTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateComplexAdaptiveDynamicStreamingTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::CreateContentReviewTemplateOutcome VodClient::CreateContentReviewTemplate(const CreateContentReviewTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateContentReviewTemplate");

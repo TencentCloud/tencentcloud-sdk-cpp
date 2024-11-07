@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取每页数量，默认为20。
-                     * @return PageSize 每页数量，默认为20。
+                     * 获取每页数量，默认为20，单页最大10000条
+                     * @return PageSize 每页数量，默认为20，单页最大10000条
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置每页数量，默认为20。
-                     * @param _pageSize 每页数量，默认为20。
+                     * 设置每页数量，默认为20，单页最大10000条
+                     * @param _pageSize 每页数量，默认为20，单页最大10000条
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -336,7 +336,7 @@ namespace TencentCloud
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 每页数量，默认为20。
+                     * 每页数量，默认为20，单页最大10000条
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

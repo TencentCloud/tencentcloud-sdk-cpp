@@ -1162,6 +1162,31 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                      */
                     bool PayModeHasBeenSet() const;
 
+                    /**
+                     * 获取job VUM用量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Usage job VUM用量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetUsage() const;
+
+                    /**
+                     * 设置job VUM用量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _usage job VUM用量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUsage(const int64_t& _usage);
+
+                    /**
+                     * 判断参数 Usage 是否已赋值
+                     * @return Usage 是否已赋值
+                     * 
+                     */
+                    bool UsageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1473,6 +1498,13 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * job VUM用量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_usage;
+                    bool m_usageHasBeenSet;
 
                 };
             }

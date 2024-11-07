@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取排序字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Field 排序字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetField() const;
 
                     /**
                      * 设置排序字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _field 排序字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetField(const std::string& _field);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取排序方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Order 排序方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _order 排序方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 排序字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_field;
                     bool m_fieldHasBeenSet;
 
                     /**
                      * 排序方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
