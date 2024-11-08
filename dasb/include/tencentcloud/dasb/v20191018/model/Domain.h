@@ -115,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取堡垒机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 堡垒机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置堡垒机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 堡垒机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -140,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ip，网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WhiteIpSet ip，网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetWhiteIpSet() const;
 
                     /**
                      * 设置ip，网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _whiteIpSet ip，网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWhiteIpSet(const std::vector<std::string>& _whiteIpSet);
@@ -165,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用  默认 1启用 0禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enabled 是否启用  默认 1启用 0禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEnabled() const;
 
                     /**
                      * 设置是否启用  默认 1启用 0禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enabled 是否启用  默认 1启用 0禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnabled(const uint64_t& _enabled);
@@ -190,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态 0-已断开  1-已连接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态 0-已断开  1-已连接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置状态 0-已断开  1-已连接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态 0-已断开  1-已连接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -215,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络域创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 网络域创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置网络域创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 网络域创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -240,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否资源默认网络域 1-资源默认网络域 0-用户添加网络域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Default 是否资源默认网络域 1-资源默认网络域 0-用户添加网络域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDefault() const;
 
                     /**
                      * 设置是否资源默认网络域 1-资源默认网络域 0-用户添加网络域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _default 是否资源默认网络域 1-资源默认网络域 0-用户添加网络域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefault(const uint64_t& _default);
@@ -286,42 +262,36 @@ namespace TencentCloud
 
                     /**
                      * 堡垒机id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * ip，网段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_whiteIpSet;
                     bool m_whiteIpSetHasBeenSet;
 
                     /**
                      * 是否启用  默认 1启用 0禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
                      * 状态 0-已断开  1-已连接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 网络域创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 是否资源默认网络域 1-资源默认网络域 0-用户添加网络域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_default;
                     bool m_defaultHasBeenSet;

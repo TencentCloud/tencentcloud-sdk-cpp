@@ -39,7 +39,13 @@ DatabaseMeta::DatabaseMeta() :
     m_catalogHasBeenSet(false),
     m_storageSizeHasBeenSet(false),
     m_storageSizeWithUnitHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_tableCountHasBeenSet(false),
+    m_datasourceListHasBeenSet(false),
+    m_collectJobIdHasBeenSet(false),
+    m_collectJobNameHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_clusterNameHasBeenSet(false)
 {
 }
 
@@ -238,6 +244,76 @@ CoreInternalOutcome DatabaseMeta::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("TableCount") && !value["TableCount"].IsNull())
+    {
+        if (!value["TableCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseMeta.TableCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableCount = value["TableCount"].GetInt64();
+        m_tableCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceList") && !value["DatasourceList"].IsNull())
+    {
+        if (!value["DatasourceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DatabaseMeta.DatasourceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DatasourceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GovDatasourceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_datasourceList.push_back(item);
+        }
+        m_datasourceListHasBeenSet = true;
+    }
+
+    if (value.HasMember("CollectJobId") && !value["CollectJobId"].IsNull())
+    {
+        if (!value["CollectJobId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseMeta.CollectJobId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_collectJobId = string(value["CollectJobId"].GetString());
+        m_collectJobIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CollectJobName") && !value["CollectJobName"].IsNull())
+    {
+        if (!value["CollectJobName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseMeta.CollectJobName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_collectJobName = string(value["CollectJobName"].GetString());
+        m_collectJobNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseMeta.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterName") && !value["ClusterName"].IsNull())
+    {
+        if (!value["ClusterName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseMeta.ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterName = string(value["ClusterName"].GetString());
+        m_clusterNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +471,61 @@ void DatabaseMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tableCount, allocator);
+    }
+
+    if (m_datasourceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_datasourceList.begin(); itr != m_datasourceList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_collectJobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CollectJobId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_collectJobId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_collectJobNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CollectJobName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_collectJobName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -702,5 +833,101 @@ void DatabaseMeta::SetCreateTime(const string& _createTime)
 bool DatabaseMeta::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+int64_t DatabaseMeta::GetTableCount() const
+{
+    return m_tableCount;
+}
+
+void DatabaseMeta::SetTableCount(const int64_t& _tableCount)
+{
+    m_tableCount = _tableCount;
+    m_tableCountHasBeenSet = true;
+}
+
+bool DatabaseMeta::TableCountHasBeenSet() const
+{
+    return m_tableCountHasBeenSet;
+}
+
+vector<GovDatasourceInfo> DatabaseMeta::GetDatasourceList() const
+{
+    return m_datasourceList;
+}
+
+void DatabaseMeta::SetDatasourceList(const vector<GovDatasourceInfo>& _datasourceList)
+{
+    m_datasourceList = _datasourceList;
+    m_datasourceListHasBeenSet = true;
+}
+
+bool DatabaseMeta::DatasourceListHasBeenSet() const
+{
+    return m_datasourceListHasBeenSet;
+}
+
+string DatabaseMeta::GetCollectJobId() const
+{
+    return m_collectJobId;
+}
+
+void DatabaseMeta::SetCollectJobId(const string& _collectJobId)
+{
+    m_collectJobId = _collectJobId;
+    m_collectJobIdHasBeenSet = true;
+}
+
+bool DatabaseMeta::CollectJobIdHasBeenSet() const
+{
+    return m_collectJobIdHasBeenSet;
+}
+
+string DatabaseMeta::GetCollectJobName() const
+{
+    return m_collectJobName;
+}
+
+void DatabaseMeta::SetCollectJobName(const string& _collectJobName)
+{
+    m_collectJobName = _collectJobName;
+    m_collectJobNameHasBeenSet = true;
+}
+
+bool DatabaseMeta::CollectJobNameHasBeenSet() const
+{
+    return m_collectJobNameHasBeenSet;
+}
+
+string DatabaseMeta::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DatabaseMeta::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DatabaseMeta::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+string DatabaseMeta::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+void DatabaseMeta::SetClusterName(const string& _clusterName)
+{
+    m_clusterName = _clusterName;
+    m_clusterNameHasBeenSet = true;
+}
+
+bool DatabaseMeta::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
 }
 

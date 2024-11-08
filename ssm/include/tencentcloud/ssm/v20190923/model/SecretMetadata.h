@@ -358,18 +358,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssociatedInstanceIDs 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAssociatedInstanceIDs() const;
 
                     /**
                      * 设置当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _associatedInstanceIDs 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssociatedInstanceIDs(const std::vector<std::string>& _associatedInstanceIDs);
@@ -557,7 +553,6 @@ namespace TencentCloud
 
                     /**
                      * 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_associatedInstanceIDs;
                     bool m_associatedInstanceIDsHasBeenSet;

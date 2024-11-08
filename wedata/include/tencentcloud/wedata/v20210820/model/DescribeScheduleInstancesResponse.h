@@ -45,6 +45,22 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取请求来源，WEB 前端；CLIENT 客户端
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RequestFromSource 请求来源，WEB 前端；CLIENT 客户端
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRequestFromSource() const;
+
+                    /**
+                     * 判断参数 RequestFromSource 是否已赋值
+                     * @return RequestFromSource 是否已赋值
+                     * 
+                     */
+                    bool RequestFromSourceHasBeenSet() const;
+
+                    /**
                      * 获取实例结果集
                      * @return Data 实例结果集
                      * 
@@ -59,6 +75,13 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 请求来源，WEB 前端；CLIENT 客户端
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_requestFromSource;
+                    bool m_requestFromSourceHasBeenSet;
 
                     /**
                      * 实例结果集

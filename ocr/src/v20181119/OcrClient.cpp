@@ -2835,6 +2835,49 @@ OcrClient::RecognizeTravelCardOCROutcomeCallable OcrClient::RecognizeTravelCardO
     return task->get_future();
 }
 
+OcrClient::RecognizeValidIDCardOCROutcome OcrClient::RecognizeValidIDCardOCR(const RecognizeValidIDCardOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeValidIDCardOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeValidIDCardOCRResponse rsp = RecognizeValidIDCardOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeValidIDCardOCROutcome(rsp);
+        else
+            return RecognizeValidIDCardOCROutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeValidIDCardOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeValidIDCardOCRAsync(const RecognizeValidIDCardOCRRequest& request, const RecognizeValidIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeValidIDCardOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeValidIDCardOCROutcomeCallable OcrClient::RecognizeValidIDCardOCRCallable(const RecognizeValidIDCardOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeValidIDCardOCROutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeValidIDCardOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::ReconstructDocumentOutcome OcrClient::ReconstructDocument(const ReconstructDocumentRequest &request)
 {
     auto outcome = MakeRequest(request, "ReconstructDocument");

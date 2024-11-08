@@ -197,27 +197,27 @@ namespace TencentCloud
                     bool ChainCntHasBeenSet() const;
 
                     /**
-                     * 获取营销风控次数
+                     * 获取风险检测次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RiskCnt 营销风控次数
+                     * @return RiskCnt 风险检测次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetRiskCnt() const;
 
                     /**
-                     * 设置营销风控次数
+                     * 设置风险检测次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _riskCnt 营销风控次数
+                     * @param _riskCnt 风险检测次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetRiskCnt(const int64_t& _riskCnt);
 
                     /**
                      * 判断参数 RiskCnt 是否已赋值
                      * @return RiskCnt 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RiskCntHasBeenSet() const;
 
@@ -291,7 +291,7 @@ namespace TencentCloud
                     bool m_chainCntHasBeenSet;
 
                     /**
-                     * 营销风控次数
+                     * 风险检测次数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_riskCnt;

@@ -170,6 +170,27 @@ namespace TencentCloud
                      */
                     bool PdfPageNumberHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回头像和位置坐标
+                     * @return CropPortrait 是否返回头像和位置坐标
+                     * 
+                     */
+                    bool GetCropPortrait() const;
+
+                    /**
+                     * 设置是否返回头像和位置坐标
+                     * @param _cropPortrait 是否返回头像和位置坐标
+                     * 
+                     */
+                    void SetCropPortrait(const bool& _cropPortrait);
+
+                    /**
+                     * 判断参数 CropPortrait 是否已赋值
+                     * @return CropPortrait 是否已赋值
+                     * 
+                     */
+                    bool CropPortraitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     uint64_t m_pdfPageNumber;
                     bool m_pdfPageNumberHasBeenSet;
+
+                    /**
+                     * 是否返回头像和位置坐标
+                     */
+                    bool m_cropPortrait;
+                    bool m_cropPortraitHasBeenSet;
 
                 };
             }

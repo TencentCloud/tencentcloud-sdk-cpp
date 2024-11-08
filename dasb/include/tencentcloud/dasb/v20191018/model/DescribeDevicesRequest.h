@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool ApCodeSetHasBeenSet() const;
 
                     /**
-                     * 获取操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
-                     * @return Kind 操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * 获取操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer, 5 - TDSQL MySQL, 6 - TDSQL-C MySQL, 7 - MariaDB, 8 - PostgreSQL, 9 - MongoDB副本集群, 10 - MongoDB分片集群, 11 - Redis
+                     * @return Kind 操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer, 5 - TDSQL MySQL, 6 - TDSQL-C MySQL, 7 - MariaDB, 8 - PostgreSQL, 9 - MongoDB副本集群, 10 - MongoDB分片集群, 11 - Redis
                      * 
                      */
                     uint64_t GetKind() const;
 
                     /**
-                     * 设置操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
-                     * @param _kind 操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * 设置操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer, 5 - TDSQL MySQL, 6 - TDSQL-C MySQL, 7 - MariaDB, 8 - PostgreSQL, 9 - MongoDB副本集群, 10 - MongoDB分片集群, 11 - Redis
+                     * @param _kind 操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer, 5 - TDSQL MySQL, 6 - TDSQL-C MySQL, 7 - MariaDB, 8 - PostgreSQL, 9 - MongoDB副本集群, 10 - MongoDB分片集群, 11 - Redis
                      * 
                      */
                     void SetKind(const uint64_t& _kind);
@@ -234,15 +234,15 @@ namespace TencentCloud
                     bool ResourceIdSetHasBeenSet() const;
 
                     /**
-                     * 获取可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
-                     * @return KindSet 可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * 获取可提供按照多种类型过滤, 取值范围与Kind一致
+                     * @return KindSet 可提供按照多种类型过滤, 取值范围与Kind一致
                      * 
                      */
                     std::vector<uint64_t> GetKindSet() const;
 
                     /**
-                     * 设置可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
-                     * @param _kindSet 可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * 设置可提供按照多种类型过滤, 取值范围与Kind一致
+                     * @param _kindSet 可提供按照多种类型过滤, 取值范围与Kind一致
                      * 
                      */
                     void SetKindSet(const std::vector<uint64_t>& _kindSet);
@@ -369,7 +369,7 @@ BindingStatus 绑定状态
                     bool m_apCodeSetHasBeenSet;
 
                     /**
-                     * 操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * 操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer, 5 - TDSQL MySQL, 6 - TDSQL-C MySQL, 7 - MariaDB, 8 - PostgreSQL, 9 - MongoDB副本集群, 10 - MongoDB分片集群, 11 - Redis
                      */
                     uint64_t m_kind;
                     bool m_kindHasBeenSet;
@@ -399,7 +399,7 @@ BindingStatus 绑定状态
                     bool m_resourceIdSetHasBeenSet;
 
                     /**
-                     * 可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * 可提供按照多种类型过滤, 取值范围与Kind一致
                      */
                     std::vector<uint64_t> m_kindSet;
                     bool m_kindSetHasBeenSet;

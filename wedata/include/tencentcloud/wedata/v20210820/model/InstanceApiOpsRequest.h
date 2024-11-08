@@ -699,6 +699,27 @@ namespace TencentCloud
                      */
                     bool ExecutorGroupIdListHasBeenSet() const;
 
+                    /**
+                     * 获取true 只过滤重跑过的实例，false 忽略此过滤条件，结果集过滤条件中不包括是否重跑
+                     * @return OnlyRerun true 只过滤重跑过的实例，false 忽略此过滤条件，结果集过滤条件中不包括是否重跑
+                     * 
+                     */
+                    bool GetOnlyRerun() const;
+
+                    /**
+                     * 设置true 只过滤重跑过的实例，false 忽略此过滤条件，结果集过滤条件中不包括是否重跑
+                     * @param _onlyRerun true 只过滤重跑过的实例，false 忽略此过滤条件，结果集过滤条件中不包括是否重跑
+                     * 
+                     */
+                    void SetOnlyRerun(const bool& _onlyRerun);
+
+                    /**
+                     * 判断参数 OnlyRerun 是否已赋值
+                     * @return OnlyRerun 是否已赋值
+                     * 
+                     */
+                    bool OnlyRerunHasBeenSet() const;
+
                 private:
 
                     /**
@@ -886,6 +907,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_executorGroupIdList;
                     bool m_executorGroupIdListHasBeenSet;
+
+                    /**
+                     * true 只过滤重跑过的实例，false 忽略此过滤条件，结果集过滤条件中不包括是否重跑
+                     */
+                    bool m_onlyRerun;
+                    bool m_onlyRerunHasBeenSet;
 
                 };
             }

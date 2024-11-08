@@ -222,6 +222,106 @@ namespace TencentCloud
                      */
                     bool IsProjectAdminHasBeenSet() const;
 
+                    /**
+                     * 获取手机号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PhoneNum 手机号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPhoneNum() const;
+
+                    /**
+                     * 设置手机号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _phoneNum 手机号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPhoneNum(const std::string& _phoneNum);
+
+                    /**
+                     * 判断参数 PhoneNum 是否已赋值
+                     * @return PhoneNum 是否已赋值
+                     * 
+                     */
+                    bool PhoneNumHasBeenSet() const;
+
+                    /**
+                     * 获取邮箱
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Email 邮箱
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEmail() const;
+
+                    /**
+                     * 设置邮箱
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _email 邮箱
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEmail(const std::string& _email);
+
+                    /**
+                     * 判断参数 Email 是否已赋值
+                     * @return Email 是否已赋值
+                     * 
+                     */
+                    bool EmailHasBeenSet() const;
+
+                    /**
+                     * 获取主账号id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnerUin 主账号id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOwnerUin() const;
+
+                    /**
+                     * 设置主账号id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownerUin 主账号id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwnerUin(const std::string& _ownerUin);
+
+                    /**
+                     * 判断参数 OwnerUin 是否已赋值
+                     * @return OwnerUin 是否已赋值
+                     * 
+                     */
+                    bool OwnerUinHasBeenSet() const;
+
+                    /**
+                     * 获取租户iD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppId 租户iD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppId() const;
+
+                    /**
+                     * 设置租户iD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appId 租户iD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppId(const std::string& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -272,6 +372,34 @@ namespace TencentCloud
                      */
                     bool m_isProjectAdmin;
                     bool m_isProjectAdminHasBeenSet;
+
+                    /**
+                     * 手机号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_phoneNum;
+                    bool m_phoneNumHasBeenSet;
+
+                    /**
+                     * 邮箱
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_email;
+                    bool m_emailHasBeenSet;
+
+                    /**
+                     * 主账号id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ownerUin;
+                    bool m_ownerUinHasBeenSet;
+
+                    /**
+                     * 租户iD
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appId;
+                    bool m_appIdHasBeenSet;
 
                 };
             }

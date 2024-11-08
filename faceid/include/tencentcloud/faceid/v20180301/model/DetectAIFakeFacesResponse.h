@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取检测到的图片是否存在攻击：
-Low：无攻击风险
-Mid：中度疑似攻击
-High：高度疑似攻击
-                     * @return AttackRiskLevel 检测到的图片是否存在攻击：
-Low：无攻击风险
-Mid：中度疑似攻击
-High：高度疑似攻击
+                     * 获取检测到的图片是否存在攻击。
+- Low：无攻击风险。
+- Mid：中度疑似攻击。
+- High：高度疑似攻击。
+                     * @return AttackRiskLevel 检测到的图片是否存在攻击。
+- Low：无攻击风险。
+- Mid：中度疑似攻击。
+- High：高度疑似攻击。
                      * 
                      */
                     std::string GetAttackRiskLevel() const;
@@ -66,12 +66,12 @@ High：高度疑似攻击
                     bool AttackRiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取检测到疑似的攻击痕迹列表
-说明：未检测到攻击痕迹时，返回空数组
-此出参仅作为结果判断的参考，实际应用仍建议使用AttackRiskLevel的结果。
-                     * @return AttackRiskDetailList 检测到疑似的攻击痕迹列表
-说明：未检测到攻击痕迹时，返回空数组
-此出参仅作为结果判断的参考，实际应用仍建议使用AttackRiskLevel的结果。
+                     * 获取检测到疑似的攻击痕迹列表。
+- 说明：未检测到攻击痕迹时，返回空数组。
+- 此出参仅作为结果判断的参考，实际应用仍建议使用AttackRiskLevel的结果。
+                     * @return AttackRiskDetailList 检测到疑似的攻击痕迹列表。
+- 说明：未检测到攻击痕迹时，返回空数组。
+- 此出参仅作为结果判断的参考，实际应用仍建议使用AttackRiskLevel的结果。
                      * 
                      */
                     std::vector<AttackRiskDetail> GetAttackRiskDetailList() const;
@@ -84,8 +84,8 @@ High：高度疑似攻击
                     bool AttackRiskDetailListHasBeenSet() const;
 
                     /**
-                     * 获取额外信息
-                     * @return ExtraInfo 额外信息
+                     * 获取额外信息。
+                     * @return ExtraInfo 额外信息。
                      * 
                      */
                     ExtraInfo GetExtraInfo() const;
@@ -100,24 +100,24 @@ High：高度疑似攻击
                 private:
 
                     /**
-                     * 检测到的图片是否存在攻击：
-Low：无攻击风险
-Mid：中度疑似攻击
-High：高度疑似攻击
+                     * 检测到的图片是否存在攻击。
+- Low：无攻击风险。
+- Mid：中度疑似攻击。
+- High：高度疑似攻击。
                      */
                     std::string m_attackRiskLevel;
                     bool m_attackRiskLevelHasBeenSet;
 
                     /**
-                     * 检测到疑似的攻击痕迹列表
-说明：未检测到攻击痕迹时，返回空数组
-此出参仅作为结果判断的参考，实际应用仍建议使用AttackRiskLevel的结果。
+                     * 检测到疑似的攻击痕迹列表。
+- 说明：未检测到攻击痕迹时，返回空数组。
+- 此出参仅作为结果判断的参考，实际应用仍建议使用AttackRiskLevel的结果。
                      */
                     std::vector<AttackRiskDetail> m_attackRiskDetailList;
                     bool m_attackRiskDetailListHasBeenSet;
 
                     /**
-                     * 额外信息
+                     * 额外信息。
                      */
                     ExtraInfo m_extraInfo;
                     bool m_extraInfoHasBeenSet;

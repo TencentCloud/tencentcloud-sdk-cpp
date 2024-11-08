@@ -572,6 +572,123 @@ namespace TencentCloud
                      */
                     bool DsEnvTypeHasBeenSet() const;
 
+                    /**
+                     * 获取项目id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectId 项目id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _projectId 项目id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取项目名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectName 项目名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProjectName() const;
+
+                    /**
+                     * 设置项目名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _projectName 项目名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProjectName(const std::string& _projectName);
+
+                    /**
+                     * 判断参数 ProjectName 是否已赋值
+                     * @return ProjectName 是否已赋值
+                     * 
+                     */
+                    bool ProjectNameHasBeenSet() const;
+
+                    /**
+                     * 获取实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceStatus 实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceStatus() const;
+
+                    /**
+                     * 设置实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceStatus 实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceStatus(const std::string& _instanceStatus);
+
+                    /**
+                     * 判断参数 InstanceStatus 是否已赋值
+                     * @return InstanceStatus 是否已赋值
+                     * 
+                     */
+                    bool InstanceStatusHasBeenSet() const;
+
+                    /**
+                     * 获取实例运行的开始时间
+                     * @return StartTime 实例运行的开始时间
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置实例运行的开始时间
+                     * @param _startTime 实例运行的开始时间
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取实例运行的结束时间
+                     * @return FinishTime 实例运行的结束时间
+                     * 
+                     */
+                    std::string GetFinishTime() const;
+
+                    /**
+                     * 设置实例运行的结束时间
+                     * @param _finishTime 实例运行的结束时间
+                     * 
+                     */
+                    void SetFinishTime(const std::string& _finishTime);
+
+                    /**
+                     * 判断参数 FinishTime 是否已赋值
+                     * @return FinishTime 是否已赋值
+                     * 
+                     */
+                    bool FinishTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -720,6 +837,39 @@ namespace TencentCloud
                      */
                     std::string m_dsEnvType;
                     bool m_dsEnvTypeHasBeenSet;
+
+                    /**
+                     * 项目id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 项目名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_projectName;
+                    bool m_projectNameHasBeenSet;
+
+                    /**
+                     * 实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceStatus;
+                    bool m_instanceStatusHasBeenSet;
+
+                    /**
+                     * 实例运行的开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 实例运行的结束时间
+                     */
+                    std::string m_finishTime;
+                    bool m_finishTimeHasBeenSet;
 
                 };
             }

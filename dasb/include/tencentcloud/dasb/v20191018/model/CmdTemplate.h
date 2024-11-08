@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命令模板类型 1-内置 2-自定义	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 命令模板类型 1-内置 2-自定义	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置命令模板类型 1-内置 2-自定义	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 命令模板类型 1-内置 2-自定义	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -156,7 +152,6 @@ namespace TencentCloud
 
                     /**
                      * 命令模板类型 1-内置 2-自定义	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;

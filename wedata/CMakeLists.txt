@@ -27,6 +27,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/UnlockIntegrationTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/SubmitTaskTestRunResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeStreamTaskLogListRequest.h
+  include/tencentcloud/wedata/v20210820/model/GovDatasourceInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationNodeResponse.h
   include/tencentcloud/wedata/v20210820/model/LogContentInfo.h
   include/tencentcloud/wedata/v20210820/model/ModifyIntegrationTaskRequest.h
@@ -766,6 +767,7 @@ set(wedata_src
   src/v20210820/model/UnlockIntegrationTaskResponse.cpp
   src/v20210820/model/SubmitTaskTestRunResponse.cpp
   src/v20210820/model/DescribeStreamTaskLogListRequest.cpp
+  src/v20210820/model/GovDatasourceInfo.cpp
   src/v20210820/model/DescribeIntegrationNodeResponse.cpp
   src/v20210820/model/LogContentInfo.cpp
   src/v20210820/model/ModifyIntegrationTaskRequest.cpp

@@ -268,18 +268,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户所属部门（用于出参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Department 用户所属部门（用于出参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Department GetDepartment() const;
 
                     /**
                      * 设置用户所属部门（用于出参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _department 用户所属部门（用于出参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDepartment(const Department& _department);
@@ -293,18 +289,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户所属部门（用于入参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DepartmentId 用户所属部门（用于入参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDepartmentId() const;
 
                     /**
                      * 设置用户所属部门（用于入参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _departmentId 用户所属部门（用于入参）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDepartmentId(const std::string& _departmentId);
@@ -318,18 +310,14 @@ namespace TencentCloud
 
                     /**
                      * 获取激活状态 0 - 未激活 1 - 激活
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveStatus 激活状态 0 - 未激活 1 - 激活
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetActiveStatus() const;
 
                     /**
                      * 设置激活状态 0 - 未激活 1 - 激活
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activeStatus 激活状态 0 - 未激活 1 - 激活
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActiveStatus(const uint64_t& _activeStatus);
@@ -343,18 +331,14 @@ namespace TencentCloud
 
                     /**
                      * 获取锁定状态 0 - 未锁定 1 - 锁定
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LockStatus 锁定状态 0 - 未锁定 1 - 锁定
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLockStatus() const;
 
                     /**
                      * 设置锁定状态 0 - 未锁定 1 - 锁定
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lockStatus 锁定状态 0 - 未锁定 1 - 锁定
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLockStatus(const uint64_t& _lockStatus);
@@ -368,18 +352,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态 与Filter中一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态 与Filter中一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态 与Filter中一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态 与Filter中一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -393,18 +373,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AclVersion 权限版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAclVersion() const;
 
                     /**
                      * 设置权限版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aclVersion 权限版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAclVersion(const uint64_t& _aclVersion);
@@ -482,42 +458,36 @@ namespace TencentCloud
 
                     /**
                      * 用户所属部门（用于出参）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Department m_department;
                     bool m_departmentHasBeenSet;
 
                     /**
                      * 用户所属部门（用于入参）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_departmentId;
                     bool m_departmentIdHasBeenSet;
 
                     /**
                      * 激活状态 0 - 未激活 1 - 激活
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_activeStatus;
                     bool m_activeStatusHasBeenSet;
 
                     /**
                      * 锁定状态 0 - 未锁定 1 - 锁定
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_lockStatus;
                     bool m_lockStatusHasBeenSet;
 
                     /**
                      * 状态 与Filter中一致
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 权限版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_aclVersion;
                     bool m_aclVersionHasBeenSet;

@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取文件操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Files 文件操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SearchFileResult> GetFiles() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 文件操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SearchFileResult> m_files;
                     bool m_filesHasBeenSet;

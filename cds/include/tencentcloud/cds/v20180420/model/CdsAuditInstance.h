@@ -279,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -304,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIp 实例公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
                      * 设置实例公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicIp 实例公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
@@ -329,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例私网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIp 实例私网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
                      * 设置实例私网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privateIp 实例私网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
@@ -375,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pdomain 实例域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPdomain() const;
 
                     /**
                      * 设置实例域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pdomain 实例域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPdomain(const std::string& _pdomain);
@@ -468,21 +452,18 @@ namespace TencentCloud
 
                     /**
                      * 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 实例公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
 
                     /**
                      * 实例私网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_privateIp;
                     bool m_privateIpHasBeenSet;
@@ -495,7 +476,6 @@ namespace TencentCloud
 
                     /**
                      * 实例域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pdomain;
                     bool m_pdomainHasBeenSet;

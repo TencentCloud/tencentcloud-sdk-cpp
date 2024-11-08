@@ -40,7 +40,8 @@ CreateNativeNodePoolParam::CreateNativeNodePoolParam() :
     m_replicasHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
-    m_keyIdsHasBeenSet(false)
+    m_keyIdsHasBeenSet(false),
+    m_machineTypeHasBeenSet(false)
 {
 }
 
@@ -323,6 +324,16 @@ CoreInternalOutcome CreateNativeNodePoolParam::Deserialize(const rapidjson::Valu
         m_keyIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateNativeNodePoolParam.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -527,6 +538,14 @@ void CreateNativeNodePoolParam::ToJsonObject(rapidjson::Value &value, rapidjson:
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -850,5 +869,21 @@ void CreateNativeNodePoolParam::SetKeyIds(const vector<string>& _keyIds)
 bool CreateNativeNodePoolParam::KeyIdsHasBeenSet() const
 {
     return m_keyIdsHasBeenSet;
+}
+
+string CreateNativeNodePoolParam::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void CreateNativeNodePoolParam::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool CreateNativeNodePoolParam::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
 }
 

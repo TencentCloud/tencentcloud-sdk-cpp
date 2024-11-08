@@ -357,6 +357,94 @@ namespace TencentCloud
                      */
                     bool CrontabExpressionHasBeenSet() const;
 
+                    /**
+                     * 获取0：不修改
+1：将任务的上游依赖配置改为默认值 
+                     * @return ModifyCycleValue 0：不修改
+1：将任务的上游依赖配置改为默认值 
+                     * 
+                     */
+                    std::string GetModifyCycleValue() const;
+
+                    /**
+                     * 设置0：不修改
+1：将任务的上游依赖配置改为默认值 
+                     * @param _modifyCycleValue 0：不修改
+1：将任务的上游依赖配置改为默认值 
+                     * 
+                     */
+                    void SetModifyCycleValue(const std::string& _modifyCycleValue);
+
+                    /**
+                     * 判断参数 ModifyCycleValue 是否已赋值
+                     * @return ModifyCycleValue 是否已赋值
+                     * 
+                     */
+                    bool ModifyCycleValueHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启日历调度 1 开启 0关闭
+                     * @return CalendarOpen 是否开启日历调度 1 开启 0关闭
+                     * 
+                     */
+                    std::string GetCalendarOpen() const;
+
+                    /**
+                     * 设置是否开启日历调度 1 开启 0关闭
+                     * @param _calendarOpen 是否开启日历调度 1 开启 0关闭
+                     * 
+                     */
+                    void SetCalendarOpen(const std::string& _calendarOpen);
+
+                    /**
+                     * 判断参数 CalendarOpen 是否已赋值
+                     * @return CalendarOpen 是否已赋值
+                     * 
+                     */
+                    bool CalendarOpenHasBeenSet() const;
+
+                    /**
+                     * 获取日历名称
+                     * @return CalendarName 日历名称
+                     * 
+                     */
+                    std::string GetCalendarName() const;
+
+                    /**
+                     * 设置日历名称
+                     * @param _calendarName 日历名称
+                     * 
+                     */
+                    void SetCalendarName(const std::string& _calendarName);
+
+                    /**
+                     * 判断参数 CalendarName 是否已赋值
+                     * @return CalendarName 是否已赋值
+                     * 
+                     */
+                    bool CalendarNameHasBeenSet() const;
+
+                    /**
+                     * 获取日历id
+                     * @return CalendarId 日历id
+                     * 
+                     */
+                    std::string GetCalendarId() const;
+
+                    /**
+                     * 设置日历id
+                     * @param _calendarId 日历id
+                     * 
+                     */
+                    void SetCalendarId(const std::string& _calendarId);
+
+                    /**
+                     * 判断参数 CalendarId 是否已赋值
+                     * @return CalendarId 是否已赋值
+                     * 
+                     */
+                    bool CalendarIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -448,6 +536,31 @@ namespace TencentCloud
                      */
                     std::string m_crontabExpression;
                     bool m_crontabExpressionHasBeenSet;
+
+                    /**
+                     * 0：不修改
+1：将任务的上游依赖配置改为默认值 
+                     */
+                    std::string m_modifyCycleValue;
+                    bool m_modifyCycleValueHasBeenSet;
+
+                    /**
+                     * 是否开启日历调度 1 开启 0关闭
+                     */
+                    std::string m_calendarOpen;
+                    bool m_calendarOpenHasBeenSet;
+
+                    /**
+                     * 日历名称
+                     */
+                    std::string m_calendarName;
+                    bool m_calendarNameHasBeenSet;
+
+                    /**
+                     * 日历id
+                     */
+                    std::string m_calendarId;
+                    bool m_calendarIdHasBeenSet;
 
                 };
             }

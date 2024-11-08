@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取默认不需要使用
-                     * @return ActionType 默认不需要使用
+                     * 获取默认不需要使用。
+                     * @return ActionType 默认不需要使用。
                      * 
                      */
                     std::string GetActionType() const;
 
                     /**
-                     * 设置默认不需要使用
-                     * @param _actionType 默认不需要使用
+                     * 设置默认不需要使用。
+                     * @param _actionType 默认不需要使用。
                      * 
                      */
                     void SetActionType(const std::string& _actionType);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 默认不需要使用
+                     * 默认不需要使用。
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;

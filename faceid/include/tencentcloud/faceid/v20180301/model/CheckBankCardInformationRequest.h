@@ -65,15 +65,19 @@ namespace TencentCloud
                     bool BankCardHasBeenSet() const;
 
                     /**
-                     * 获取敏感数据加密信息。对传入信息（银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @return Encryption 敏感数据加密信息。对传入信息（银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 获取敏感数据加密信息。
+- 对传入信息（银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @return Encryption 敏感数据加密信息。
+- 对传入信息（银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      * 
                      */
                     Encryption GetEncryption() const;
 
                     /**
-                     * 设置敏感数据加密信息。对传入信息（银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @param _encryption 敏感数据加密信息。对传入信息（银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 设置敏感数据加密信息。
+- 对传入信息（银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @param _encryption 敏感数据加密信息。
+- 对传入信息（银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      * 
                      */
                     void SetEncryption(const Encryption& _encryption);
@@ -94,7 +98,8 @@ namespace TencentCloud
                     bool m_bankCardHasBeenSet;
 
                     /**
-                     * 敏感数据加密信息。对传入信息（银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 敏感数据加密信息。
+- 对传入信息（银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      */
                     Encryption m_encryption;
                     bool m_encryptionHasBeenSet;

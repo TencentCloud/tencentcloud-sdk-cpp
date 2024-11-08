@@ -36,7 +36,10 @@ EmbedTokenInfo::EmbedTokenInfo() :
     m_userIdHasBeenSet(false),
     m_ticketNumHasBeenSet(false),
     m_globalParamHasBeenSet(false),
-    m_intentionHasBeenSet(false)
+    m_intentionHasBeenSet(false),
+    m_tokenTypeHasBeenSet(false),
+    m_tokenNumHasBeenSet(false),
+    m_singleUserMultiTokenHasBeenSet(false)
 {
 }
 
@@ -205,6 +208,36 @@ CoreInternalOutcome EmbedTokenInfo::Deserialize(const rapidjson::Value &value)
         m_intentionHasBeenSet = true;
     }
 
+    if (value.HasMember("TokenType") && !value["TokenType"].IsNull())
+    {
+        if (!value["TokenType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmbedTokenInfo.TokenType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tokenType = value["TokenType"].GetInt64();
+        m_tokenTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TokenNum") && !value["TokenNum"].IsNull())
+    {
+        if (!value["TokenNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmbedTokenInfo.TokenNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tokenNum = value["TokenNum"].GetInt64();
+        m_tokenNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("SingleUserMultiToken") && !value["SingleUserMultiToken"].IsNull())
+    {
+        if (!value["SingleUserMultiToken"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmbedTokenInfo.SingleUserMultiToken` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_singleUserMultiToken = value["SingleUserMultiToken"].GetBool();
+        m_singleUserMultiTokenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +371,30 @@ void EmbedTokenInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Intention";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_intention.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tokenType, allocator);
+    }
+
+    if (m_tokenNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tokenNum, allocator);
+    }
+
+    if (m_singleUserMultiTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SingleUserMultiToken";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_singleUserMultiToken, allocator);
     }
 
 }
@@ -597,5 +654,53 @@ void EmbedTokenInfo::SetIntention(const string& _intention)
 bool EmbedTokenInfo::IntentionHasBeenSet() const
 {
     return m_intentionHasBeenSet;
+}
+
+int64_t EmbedTokenInfo::GetTokenType() const
+{
+    return m_tokenType;
+}
+
+void EmbedTokenInfo::SetTokenType(const int64_t& _tokenType)
+{
+    m_tokenType = _tokenType;
+    m_tokenTypeHasBeenSet = true;
+}
+
+bool EmbedTokenInfo::TokenTypeHasBeenSet() const
+{
+    return m_tokenTypeHasBeenSet;
+}
+
+int64_t EmbedTokenInfo::GetTokenNum() const
+{
+    return m_tokenNum;
+}
+
+void EmbedTokenInfo::SetTokenNum(const int64_t& _tokenNum)
+{
+    m_tokenNum = _tokenNum;
+    m_tokenNumHasBeenSet = true;
+}
+
+bool EmbedTokenInfo::TokenNumHasBeenSet() const
+{
+    return m_tokenNumHasBeenSet;
+}
+
+bool EmbedTokenInfo::GetSingleUserMultiToken() const
+{
+    return m_singleUserMultiToken;
+}
+
+void EmbedTokenInfo::SetSingleUserMultiToken(const bool& _singleUserMultiToken)
+{
+    m_singleUserMultiToken = _singleUserMultiToken;
+    m_singleUserMultiTokenHasBeenSet = true;
+}
+
+bool EmbedTokenInfo::SingleUserMultiTokenHasBeenSet() const
+{
+    return m_singleUserMultiTokenHasBeenSet;
 }
 

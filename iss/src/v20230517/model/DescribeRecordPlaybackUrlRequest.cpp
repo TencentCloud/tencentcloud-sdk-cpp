@@ -26,7 +26,8 @@ DescribeRecordPlaybackUrlRequest::DescribeRecordPlaybackUrlRequest() :
     m_channelIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_isInternalHasBeenSet(false)
+    m_isInternalHasBeenSet(false),
+    m_correctTimestampHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeRecordPlaybackUrlRequest::ToJsonString() const
         string key = "IsInternal";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isInternal, allocator);
+    }
+
+    if (m_correctTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CorrectTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_correctTimestamp, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeRecordPlaybackUrlRequest::SetIsInternal(const bool& _isInternal)
 bool DescribeRecordPlaybackUrlRequest::IsInternalHasBeenSet() const
 {
     return m_isInternalHasBeenSet;
+}
+
+bool DescribeRecordPlaybackUrlRequest::GetCorrectTimestamp() const
+{
+    return m_correctTimestamp;
+}
+
+void DescribeRecordPlaybackUrlRequest::SetCorrectTimestamp(const bool& _correctTimestamp)
+{
+    m_correctTimestamp = _correctTimestamp;
+    m_correctTimestampHasBeenSet = true;
+}
+
+bool DescribeRecordPlaybackUrlRequest::CorrectTimestampHasBeenSet() const
+{
+    return m_correctTimestampHasBeenSet;
 }
 
 

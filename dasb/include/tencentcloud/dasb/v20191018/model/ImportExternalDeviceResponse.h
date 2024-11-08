@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资产ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceIdSet 资产ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetDeviceIdSet() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 资产ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_deviceIdSet;
                     bool m_deviceIdSetHasBeenSet;

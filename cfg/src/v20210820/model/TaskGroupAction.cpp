@@ -40,7 +40,8 @@ TaskGroupAction::TaskGroupAction() :
     m_actionTypeHasBeenSet(false),
     m_isExecuteRedoHasBeenSet(false),
     m_actionRiskHasBeenSet(false),
-    m_taskGroupActionExecuteTimeHasBeenSet(false)
+    m_taskGroupActionExecuteTimeHasBeenSet(false),
+    m_taskGroupActionStartTimeHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,16 @@ CoreInternalOutcome TaskGroupAction::Deserialize(const rapidjson::Value &value)
         m_taskGroupActionExecuteTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskGroupActionStartTime") && !value["TaskGroupActionStartTime"].IsNull())
+    {
+        if (!value["TaskGroupActionStartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskGroupAction.TaskGroupActionStartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskGroupActionStartTime = string(value["TaskGroupActionStartTime"].GetString());
+        m_taskGroupActionStartTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -431,6 +442,14 @@ void TaskGroupAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "TaskGroupActionExecuteTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskGroupActionExecuteTime, allocator);
+    }
+
+    if (m_taskGroupActionStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskGroupActionStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskGroupActionStartTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -754,5 +773,21 @@ void TaskGroupAction::SetTaskGroupActionExecuteTime(const int64_t& _taskGroupAct
 bool TaskGroupAction::TaskGroupActionExecuteTimeHasBeenSet() const
 {
     return m_taskGroupActionExecuteTimeHasBeenSet;
+}
+
+string TaskGroupAction::GetTaskGroupActionStartTime() const
+{
+    return m_taskGroupActionStartTime;
+}
+
+void TaskGroupAction::SetTaskGroupActionStartTime(const string& _taskGroupActionStartTime)
+{
+    m_taskGroupActionStartTime = _taskGroupActionStartTime;
+    m_taskGroupActionStartTimeHasBeenSet = true;
+}
+
+bool TaskGroupAction::TaskGroupActionStartTimeHasBeenSet() const
+{
+    return m_taskGroupActionStartTimeHasBeenSet;
 }
 

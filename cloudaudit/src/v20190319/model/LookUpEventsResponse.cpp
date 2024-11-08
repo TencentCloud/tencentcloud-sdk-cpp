@@ -26,7 +26,8 @@ using namespace std;
 LookUpEventsResponse::LookUpEventsResponse() :
     m_nextTokenHasBeenSet(false),
     m_eventsHasBeenSet(false),
-    m_listOverHasBeenSet(false)
+    m_listOverHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome LookUpEventsResponse::Deserialize(const string &payload)
         m_listOverHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string LookUpEventsResponse::ToJsonString() const
         string key = "ListOver";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_listOver, allocator);
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ bool LookUpEventsResponse::GetListOver() const
 bool LookUpEventsResponse::ListOverHasBeenSet() const
 {
     return m_listOverHasBeenSet;
+}
+
+uint64_t LookUpEventsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool LookUpEventsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

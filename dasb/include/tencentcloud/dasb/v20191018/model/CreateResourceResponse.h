@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;

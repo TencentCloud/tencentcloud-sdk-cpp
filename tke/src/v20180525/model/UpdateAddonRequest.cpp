@@ -26,7 +26,8 @@ UpdateAddonRequest::UpdateAddonRequest() :
     m_clusterIdHasBeenSet(false),
     m_addonNameHasBeenSet(false),
     m_addonVersionHasBeenSet(false),
-    m_rawValuesHasBeenSet(false)
+    m_rawValuesHasBeenSet(false),
+    m_updateStrategyHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string UpdateAddonRequest::ToJsonString() const
         string key = "RawValues";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_rawValues.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_updateStrategy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void UpdateAddonRequest::SetRawValues(const string& _rawValues)
 bool UpdateAddonRequest::RawValuesHasBeenSet() const
 {
     return m_rawValuesHasBeenSet;
+}
+
+string UpdateAddonRequest::GetUpdateStrategy() const
+{
+    return m_updateStrategy;
+}
+
+void UpdateAddonRequest::SetUpdateStrategy(const string& _updateStrategy)
+{
+    m_updateStrategy = _updateStrategy;
+    m_updateStrategyHasBeenSet = true;
+}
+
+bool UpdateAddonRequest::UpdateStrategyHasBeenSet() const
+{
+    return m_updateStrategyHasBeenSet;
 }
 
 

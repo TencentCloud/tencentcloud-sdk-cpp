@@ -24,11 +24,11 @@ using namespace std;
 
 CreateAuditTrackRequest::CreateAuditTrackRequest() :
     m_nameHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_storageHasBeenSet(false),
     m_actionTypeHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
     m_eventNamesHasBeenSet(false),
-    m_storageHasBeenSet(false),
     m_trackForAllMembersHasBeenSet(false)
 {
 }
@@ -48,6 +48,23 @@ string CreateAuditTrackRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_storageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Storage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_storage.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_actionTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -64,14 +81,6 @@ string CreateAuditTrackRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_status, allocator);
-    }
-
     if (m_eventNamesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -83,15 +92,6 @@ string CreateAuditTrackRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_storageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Storage";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_storage.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_trackForAllMembersHasBeenSet)
@@ -126,6 +126,38 @@ bool CreateAuditTrackRequest::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
+uint64_t CreateAuditTrackRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void CreateAuditTrackRequest::SetStatus(const uint64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool CreateAuditTrackRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+Storage CreateAuditTrackRequest::GetStorage() const
+{
+    return m_storage;
+}
+
+void CreateAuditTrackRequest::SetStorage(const Storage& _storage)
+{
+    m_storage = _storage;
+    m_storageHasBeenSet = true;
+}
+
+bool CreateAuditTrackRequest::StorageHasBeenSet() const
+{
+    return m_storageHasBeenSet;
+}
+
 string CreateAuditTrackRequest::GetActionType() const
 {
     return m_actionType;
@@ -158,22 +190,6 @@ bool CreateAuditTrackRequest::ResourceTypeHasBeenSet() const
     return m_resourceTypeHasBeenSet;
 }
 
-uint64_t CreateAuditTrackRequest::GetStatus() const
-{
-    return m_status;
-}
-
-void CreateAuditTrackRequest::SetStatus(const uint64_t& _status)
-{
-    m_status = _status;
-    m_statusHasBeenSet = true;
-}
-
-bool CreateAuditTrackRequest::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
-}
-
 vector<string> CreateAuditTrackRequest::GetEventNames() const
 {
     return m_eventNames;
@@ -188,22 +204,6 @@ void CreateAuditTrackRequest::SetEventNames(const vector<string>& _eventNames)
 bool CreateAuditTrackRequest::EventNamesHasBeenSet() const
 {
     return m_eventNamesHasBeenSet;
-}
-
-Storage CreateAuditTrackRequest::GetStorage() const
-{
-    return m_storage;
-}
-
-void CreateAuditTrackRequest::SetStorage(const Storage& _storage)
-{
-    m_storage = _storage;
-    m_storageHasBeenSet = true;
-}
-
-bool CreateAuditTrackRequest::StorageHasBeenSet() const
-{
-    return m_storageHasBeenSet;
 }
 
 uint64_t CreateAuditTrackRequest::GetTrackForAllMembers() const

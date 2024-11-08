@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取姓名
-                     * @return Name 姓名
+                     * 获取姓名。
+                     * @return Name 姓名。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置姓名
-                     * @param _name 姓名
+                     * 设置姓名。
+                     * @param _name 姓名。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取银行卡
-                     * @return BankCard 银行卡
+                     * 获取银行卡。
+                     * @return BankCard 银行卡。
                      * 
                      */
                     std::string GetBankCard() const;
 
                     /**
-                     * 设置银行卡
-                     * @param _bankCard 银行卡
+                     * 设置银行卡。
+                     * @param _bankCard 银行卡。
                      * 
                      */
                     void SetBankCard(const std::string& _bankCard);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool BankCardHasBeenSet() const;
 
                     /**
-                     * 获取手机号码
-                     * @return Phone 手机号码
+                     * 获取手机号码。
+                     * @return Phone 手机号码。
                      * 
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置手机号码
-                     * @param _phone 手机号码
+                     * 设置手机号码。
+                     * @param _phone 手机号码。
                      * 
                      */
                     void SetPhone(const std::string& _phone);
@@ -107,15 +107,19 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取开户证件号，与CertType参数的证件类型一致，如：身份证，则传入身份证号。
-                     * @return IdCard 开户证件号，与CertType参数的证件类型一致，如：身份证，则传入身份证号。
+                     * 获取开户证件号。
+- 与CertType参数的证件类型一致，如：身份证，则传入身份证号。
+                     * @return IdCard 开户证件号。
+- 与CertType参数的证件类型一致，如：身份证，则传入身份证号。
                      * 
                      */
                     std::string GetIdCard() const;
 
                     /**
-                     * 设置开户证件号，与CertType参数的证件类型一致，如：身份证，则传入身份证号。
-                     * @param _idCard 开户证件号，与CertType参数的证件类型一致，如：身份证，则传入身份证号。
+                     * 设置开户证件号。
+- 与CertType参数的证件类型一致，如：身份证，则传入身份证号。
+                     * @param _idCard 开户证件号。
+- 与CertType参数的证件类型一致，如：身份证，则传入身份证号。
                      * 
                      */
                     void SetIdCard(const std::string& _idCard);
@@ -128,19 +132,23 @@ namespace TencentCloud
                     bool IdCardHasBeenSet() const;
 
                     /**
-                     * 获取证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。
-目前默认为0：身份证，其他证件类型暂不支持。
-                     * @return CertType 证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。
-目前默认为0：身份证，其他证件类型暂不支持。
+                     * 获取证件类型。
+- 请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。
+- 目前默认为0：身份证，其他证件类型暂不支持。
+                     * @return CertType 证件类型。
+- 请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。
+- 目前默认为0：身份证，其他证件类型暂不支持。
                      * 
                      */
                     int64_t GetCertType() const;
 
                     /**
-                     * 设置证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。
-目前默认为0：身份证，其他证件类型暂不支持。
-                     * @param _certType 证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。
-目前默认为0：身份证，其他证件类型暂不支持。
+                     * 设置证件类型。
+- 请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。
+- 目前默认为0：身份证，其他证件类型暂不支持。
+                     * @param _certType 证件类型。
+- 请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。
+- 目前默认为0：身份证，其他证件类型暂不支持。
                      * 
                      */
                     void SetCertType(const int64_t& _certType);
@@ -153,15 +161,19 @@ namespace TencentCloud
                     bool CertTypeHasBeenSet() const;
 
                     /**
-                     * 获取敏感数据加密信息。对传入信息（姓名、身份证号、手机号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @return Encryption 敏感数据加密信息。对传入信息（姓名、身份证号、手机号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 获取敏感数据加密信息。
+- 对传入信息（姓名、身份证号、手机号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @return Encryption 敏感数据加密信息。
+- 对传入信息（姓名、身份证号、手机号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      * 
                      */
                     Encryption GetEncryption() const;
 
                     /**
-                     * 设置敏感数据加密信息。对传入信息（姓名、身份证号、手机号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @param _encryption 敏感数据加密信息。对传入信息（姓名、身份证号、手机号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 设置敏感数据加密信息。
+- 对传入信息（姓名、身份证号、手机号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @param _encryption 敏感数据加密信息。
+- 对传入信息（姓名、身份证号、手机号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      * 
                      */
                     void SetEncryption(const Encryption& _encryption);
@@ -176,38 +188,41 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 姓名
+                     * 姓名。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 银行卡
+                     * 银行卡。
                      */
                     std::string m_bankCard;
                     bool m_bankCardHasBeenSet;
 
                     /**
-                     * 手机号码
+                     * 手机号码。
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 开户证件号，与CertType参数的证件类型一致，如：身份证，则传入身份证号。
+                     * 开户证件号。
+- 与CertType参数的证件类型一致，如：身份证，则传入身份证号。
                      */
                     std::string m_idCard;
                     bool m_idCardHasBeenSet;
 
                     /**
-                     * 证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。
-目前默认为0：身份证，其他证件类型暂不支持。
+                     * 证件类型。
+- 请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。
+- 目前默认为0：身份证，其他证件类型暂不支持。
                      */
                     int64_t m_certType;
                     bool m_certTypeHasBeenSet;
 
                     /**
-                     * 敏感数据加密信息。对传入信息（姓名、身份证号、手机号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 敏感数据加密信息。
+- 对传入信息（姓名、身份证号、手机号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      */
                     Encryption m_encryption;
                     bool m_encryptionHasBeenSet;

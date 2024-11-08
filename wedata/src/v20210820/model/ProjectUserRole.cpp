@@ -27,7 +27,11 @@ ProjectUserRole::ProjectUserRole() :
     m_createTimeHasBeenSet(false),
     m_creatorHasBeenSet(false),
     m_displayNameHasBeenSet(false),
-    m_isProjectAdminHasBeenSet(false)
+    m_isProjectAdminHasBeenSet(false),
+    m_phoneNumHasBeenSet(false),
+    m_emailHasBeenSet(false),
+    m_ownerUinHasBeenSet(false),
+    m_appIdHasBeenSet(false)
 {
 }
 
@@ -116,6 +120,46 @@ CoreInternalOutcome ProjectUserRole::Deserialize(const rapidjson::Value &value)
         m_isProjectAdminHasBeenSet = true;
     }
 
+    if (value.HasMember("PhoneNum") && !value["PhoneNum"].IsNull())
+    {
+        if (!value["PhoneNum"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProjectUserRole.PhoneNum` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_phoneNum = string(value["PhoneNum"].GetString());
+        m_phoneNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("Email") && !value["Email"].IsNull())
+    {
+        if (!value["Email"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProjectUserRole.Email` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_email = string(value["Email"].GetString());
+        m_emailHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerUin") && !value["OwnerUin"].IsNull())
+    {
+        if (!value["OwnerUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProjectUserRole.OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerUin = string(value["OwnerUin"].GetString());
+        m_ownerUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProjectUserRole.AppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = string(value["AppId"].GetString());
+        m_appIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +228,38 @@ void ProjectUserRole::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "IsProjectAdmin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isProjectAdmin, allocator);
+    }
+
+    if (m_phoneNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PhoneNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_phoneNum.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_emailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Email";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_email.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +375,69 @@ void ProjectUserRole::SetIsProjectAdmin(const bool& _isProjectAdmin)
 bool ProjectUserRole::IsProjectAdminHasBeenSet() const
 {
     return m_isProjectAdminHasBeenSet;
+}
+
+string ProjectUserRole::GetPhoneNum() const
+{
+    return m_phoneNum;
+}
+
+void ProjectUserRole::SetPhoneNum(const string& _phoneNum)
+{
+    m_phoneNum = _phoneNum;
+    m_phoneNumHasBeenSet = true;
+}
+
+bool ProjectUserRole::PhoneNumHasBeenSet() const
+{
+    return m_phoneNumHasBeenSet;
+}
+
+string ProjectUserRole::GetEmail() const
+{
+    return m_email;
+}
+
+void ProjectUserRole::SetEmail(const string& _email)
+{
+    m_email = _email;
+    m_emailHasBeenSet = true;
+}
+
+bool ProjectUserRole::EmailHasBeenSet() const
+{
+    return m_emailHasBeenSet;
+}
+
+string ProjectUserRole::GetOwnerUin() const
+{
+    return m_ownerUin;
+}
+
+void ProjectUserRole::SetOwnerUin(const string& _ownerUin)
+{
+    m_ownerUin = _ownerUin;
+    m_ownerUinHasBeenSet = true;
+}
+
+bool ProjectUserRole::OwnerUinHasBeenSet() const
+{
+    return m_ownerUinHasBeenSet;
+}
+
+string ProjectUserRole::GetAppId() const
+{
+    return m_appId;
+}
+
+void ProjectUserRole::SetAppId(const string& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool ProjectUserRole::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
 }
 

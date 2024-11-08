@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool SortFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序类型：Desc 倒序 Asc  正序，需要你和SortField一起设置
-                     * @return SortType 排序类型：Desc 倒序 Asc  正序，需要你和SortField一起设置
+                     * 获取排序类型：Desc 倒序 Asc  正序，需要您和SortField一起设置
+                     * @return SortType 排序类型：Desc 倒序 Asc  正序，需要您和SortField一起设置
                      * 
                      */
                     std::string GetSortType() const;
 
                     /**
-                     * 设置排序类型：Desc 倒序 Asc  正序，需要你和SortField一起设置
-                     * @param _sortType 排序类型：Desc 倒序 Asc  正序，需要你和SortField一起设置
+                     * 设置排序类型：Desc 倒序 Asc  正序，需要您和SortField一起设置
+                     * @param _sortType 排序类型：Desc 倒序 Asc  正序，需要您和SortField一起设置
                      * 
                      */
                     void SetSortType(const std::string& _sortType);
@@ -303,7 +303,7 @@ namespace TencentCloud
                     bool m_sortFieldHasBeenSet;
 
                     /**
-                     * 排序类型：Desc 倒序 Asc  正序，需要你和SortField一起设置
+                     * 排序类型：Desc 倒序 Asc  正序，需要您和SortField一起设置
                      */
                     std::string m_sortType;
                     bool m_sortTypeHasBeenSet;

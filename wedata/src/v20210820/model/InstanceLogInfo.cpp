@@ -34,7 +34,8 @@ InstanceLogInfo::InstanceLogInfo() :
     m_costTimeHasBeenSet(false),
     m_instanceStatusHasBeenSet(false),
     m_codeFileNameHasBeenSet(false),
-    m_extensionInfoHasBeenSet(false)
+    m_extensionInfoHasBeenSet(false),
+    m_executionJobIdHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,16 @@ CoreInternalOutcome InstanceLogInfo::Deserialize(const rapidjson::Value &value)
         m_extensionInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecutionJobId") && !value["ExecutionJobId"].IsNull())
+    {
+        if (!value["ExecutionJobId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLogInfo.ExecutionJobId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executionJobId = string(value["ExecutionJobId"].GetString());
+        m_executionJobIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +328,14 @@ void InstanceLogInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_executionJobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionJobId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executionJobId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -544,5 +563,21 @@ void InstanceLogInfo::SetExtensionInfo(const vector<AttributeItemDTO>& _extensio
 bool InstanceLogInfo::ExtensionInfoHasBeenSet() const
 {
     return m_extensionInfoHasBeenSet;
+}
+
+string InstanceLogInfo::GetExecutionJobId() const
+{
+    return m_executionJobId;
+}
+
+void InstanceLogInfo::SetExecutionJobId(const string& _executionJobId)
+{
+    m_executionJobId = _executionJobId;
+    m_executionJobIdHasBeenSet = true;
+}
+
+bool InstanceLogInfo::ExecutionJobIdHasBeenSet() const
+{
+    return m_executionJobIdHasBeenSet;
 }
 

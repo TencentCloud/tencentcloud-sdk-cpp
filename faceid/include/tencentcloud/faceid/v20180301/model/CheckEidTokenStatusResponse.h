@@ -44,16 +44,16 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取枚举：
-init：token未验证
-doing: 验证中
-finished: 验证完成
-timeout: token已超时
-                     * @return Status 枚举：
-init：token未验证
-doing: 验证中
-finished: 验证完成
-timeout: token已超时
+                     * 获取状态。
+- init：EidToken未验证。
+- doing: EidToken验证中。
+- finished: EidToken验证完成。
+- timeout: EidToken已超时。
+                     * @return Status 状态。
+- init：EidToken未验证。
+- doing: EidToken验证中。
+- finished: EidToken验证完成。
+- timeout: EidToken已超时。
                      * 
                      */
                     std::string GetStatus() const;
@@ -68,11 +68,11 @@ timeout: token已超时
                 private:
 
                     /**
-                     * 枚举：
-init：token未验证
-doing: 验证中
-finished: 验证完成
-timeout: token已超时
+                     * 状态。
+- init：EidToken未验证。
+- doing: EidToken验证中。
+- finished: EidToken验证完成。
+- timeout: EidToken已超时。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

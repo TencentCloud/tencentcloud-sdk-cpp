@@ -28,7 +28,8 @@ AddPermissionPolicyToRoleConfigurationRequest::AddPermissionPolicyToRoleConfigur
     m_rolePolicyTypeHasBeenSet(false),
     m_rolePolicyNamesHasBeenSet(false),
     m_rolePoliciesHasBeenSet(false),
-    m_customPolicyDocumentHasBeenSet(false)
+    m_customPolicyDocumentHasBeenSet(false),
+    m_customPolicyDocumentsHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,19 @@ string AddPermissionPolicyToRoleConfigurationRequest::ToJsonString() const
         string key = "CustomPolicyDocument";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customPolicyDocument.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customPolicyDocumentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomPolicyDocuments";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_customPolicyDocuments.begin(); itr != m_customPolicyDocuments.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -201,6 +215,22 @@ void AddPermissionPolicyToRoleConfigurationRequest::SetCustomPolicyDocument(cons
 bool AddPermissionPolicyToRoleConfigurationRequest::CustomPolicyDocumentHasBeenSet() const
 {
     return m_customPolicyDocumentHasBeenSet;
+}
+
+vector<string> AddPermissionPolicyToRoleConfigurationRequest::GetCustomPolicyDocuments() const
+{
+    return m_customPolicyDocuments;
+}
+
+void AddPermissionPolicyToRoleConfigurationRequest::SetCustomPolicyDocuments(const vector<string>& _customPolicyDocuments)
+{
+    m_customPolicyDocuments = _customPolicyDocuments;
+    m_customPolicyDocumentsHasBeenSet = true;
+}
+
+bool AddPermissionPolicyToRoleConfigurationRequest::CustomPolicyDocumentsHasBeenSet() const
+{
+    return m_customPolicyDocumentsHasBeenSet;
 }
 
 

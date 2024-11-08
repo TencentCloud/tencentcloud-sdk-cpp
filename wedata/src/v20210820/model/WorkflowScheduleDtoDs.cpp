@@ -41,7 +41,10 @@ WorkflowScheduleDtoDs::WorkflowScheduleDtoDs() :
     m_dependencyWorkflowHasBeenSet(false),
     m_schedulerDescHasBeenSet(false),
     m_firstSubmitTimeHasBeenSet(false),
-    m_latestSubmitTimeHasBeenSet(false)
+    m_latestSubmitTimeHasBeenSet(false),
+    m_calendarOpenHasBeenSet(false),
+    m_calendarNameHasBeenSet(false),
+    m_calendarIdHasBeenSet(false)
 {
 }
 
@@ -260,6 +263,36 @@ CoreInternalOutcome WorkflowScheduleDtoDs::Deserialize(const rapidjson::Value &v
         m_latestSubmitTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CalendarOpen") && !value["CalendarOpen"].IsNull())
+    {
+        if (!value["CalendarOpen"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowScheduleDtoDs.CalendarOpen` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_calendarOpen = string(value["CalendarOpen"].GetString());
+        m_calendarOpenHasBeenSet = true;
+    }
+
+    if (value.HasMember("CalendarName") && !value["CalendarName"].IsNull())
+    {
+        if (!value["CalendarName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowScheduleDtoDs.CalendarName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_calendarName = string(value["CalendarName"].GetString());
+        m_calendarNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CalendarId") && !value["CalendarId"].IsNull())
+    {
+        if (!value["CalendarId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowScheduleDtoDs.CalendarId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_calendarId = string(value["CalendarId"].GetString());
+        m_calendarIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +466,30 @@ void WorkflowScheduleDtoDs::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "LatestSubmitTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestSubmitTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_calendarOpenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CalendarOpen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_calendarOpen.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_calendarNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CalendarName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_calendarName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_calendarIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CalendarId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_calendarId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -772,5 +829,53 @@ void WorkflowScheduleDtoDs::SetLatestSubmitTime(const string& _latestSubmitTime)
 bool WorkflowScheduleDtoDs::LatestSubmitTimeHasBeenSet() const
 {
     return m_latestSubmitTimeHasBeenSet;
+}
+
+string WorkflowScheduleDtoDs::GetCalendarOpen() const
+{
+    return m_calendarOpen;
+}
+
+void WorkflowScheduleDtoDs::SetCalendarOpen(const string& _calendarOpen)
+{
+    m_calendarOpen = _calendarOpen;
+    m_calendarOpenHasBeenSet = true;
+}
+
+bool WorkflowScheduleDtoDs::CalendarOpenHasBeenSet() const
+{
+    return m_calendarOpenHasBeenSet;
+}
+
+string WorkflowScheduleDtoDs::GetCalendarName() const
+{
+    return m_calendarName;
+}
+
+void WorkflowScheduleDtoDs::SetCalendarName(const string& _calendarName)
+{
+    m_calendarName = _calendarName;
+    m_calendarNameHasBeenSet = true;
+}
+
+bool WorkflowScheduleDtoDs::CalendarNameHasBeenSet() const
+{
+    return m_calendarNameHasBeenSet;
+}
+
+string WorkflowScheduleDtoDs::GetCalendarId() const
+{
+    return m_calendarId;
+}
+
+void WorkflowScheduleDtoDs::SetCalendarId(const string& _calendarId)
+{
+    m_calendarId = _calendarId;
+    m_calendarIdHasBeenSet = true;
+}
+
+bool WorkflowScheduleDtoDs::CalendarIdHasBeenSet() const
+{
+    return m_calendarIdHasBeenSet;
 }
 

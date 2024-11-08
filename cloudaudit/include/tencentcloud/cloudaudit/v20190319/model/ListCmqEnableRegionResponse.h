@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云审计支持的cmq的可用区
-                     * @return EnableRegions 云审计支持的cmq的可用区
+                     * 获取操作审计支持的cmq的可用区
+                     * @return EnableRegions 操作审计支持的cmq的可用区
                      * 
                      */
                     std::vector<CmqRegionInfo> GetEnableRegions() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云审计支持的cmq的可用区
+                     * 操作审计支持的cmq的可用区
                      */
                     std::vector<CmqRegionInfo> m_enableRegions;
                     bool m_enableRegionsHasBeenSet;

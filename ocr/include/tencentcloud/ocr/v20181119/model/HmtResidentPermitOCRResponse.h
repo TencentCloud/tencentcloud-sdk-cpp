@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ocr/v20181119/model/PortraitImageInfo.h>
 
 
 namespace TencentCloud
@@ -185,6 +186,20 @@ namespace TencentCloud
                      */
                     bool PassNoHasBeenSet() const;
 
+                    /**
+                     * 获取头像和坐标信息
+                     * @return PortraitImageInfo 头像和坐标信息
+                     * 
+                     */
+                    PortraitImageInfo GetPortraitImageInfo() const;
+
+                    /**
+                     * 判断参数 PortraitImageInfo 是否已赋值
+                     * @return PortraitImageInfo 是否已赋值
+                     * 
+                     */
+                    bool PortraitImageInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -247,6 +262,12 @@ namespace TencentCloud
                      */
                     std::string m_passNo;
                     bool m_passNoHasBeenSet;
+
+                    /**
+                     * 头像和坐标信息
+                     */
+                    PortraitImageInfo m_portraitImageInfo;
+                    bool m_portraitImageInfoHasBeenSet;
 
                 };
             }

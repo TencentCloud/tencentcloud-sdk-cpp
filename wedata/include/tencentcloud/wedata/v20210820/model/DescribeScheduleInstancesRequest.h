@@ -46,6 +46,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取请求来源，WEB 前端；CLIENT 客户端
+                     * @return RequestFromSource 请求来源，WEB 前端；CLIENT 客户端
+                     * 
+                     */
+                    std::string GetRequestFromSource() const;
+
+                    /**
+                     * 设置请求来源，WEB 前端；CLIENT 客户端
+                     * @param _requestFromSource 请求来源，WEB 前端；CLIENT 客户端
+                     * 
+                     */
+                    void SetRequestFromSource(const std::string& _requestFromSource);
+
+                    /**
+                     * 判断参数 RequestFromSource 是否已赋值
+                     * @return RequestFromSource 是否已赋值
+                     * 
+                     */
+                    bool RequestFromSourceHasBeenSet() const;
+
+                    /**
                      * 获取实例列表
                      * @return Instances 实例列表
                      * 
@@ -423,7 +444,34 @@ namespace TencentCloud
                      */
                     bool IsCountHasBeenSet() const;
 
+                    /**
+                     * 获取项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错
+                     * @return ProjectIds 项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错
+                     * 
+                     */
+                    std::vector<std::string> GetProjectIds() const;
+
+                    /**
+                     * 设置项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错
+                     * @param _projectIds 项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错
+                     * 
+                     */
+                    void SetProjectIds(const std::vector<std::string>& _projectIds);
+
+                    /**
+                     * 判断参数 ProjectIds 是否已赋值
+                     * @return ProjectIds 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 请求来源，WEB 前端；CLIENT 客户端
+                     */
+                    std::string m_requestFromSource;
+                    bool m_requestFromSourceHasBeenSet;
 
                     /**
                      * 实例列表
@@ -532,6 +580,12 @@ namespace TencentCloud
                      */
                     bool m_isCount;
                     bool m_isCountHasBeenSet;
+
+                    /**
+                     * 项目ID列表，用于多项目实例列表筛选，请注意，该字段传入时 ProjectId 字段也必须传，且传入的 ProjectIds 中的项目ID必须是当前用户有权限的项目ID，否则会由于权限校验失败报错
+                     */
+                    std::vector<std::string> m_projectIds;
+                    bool m_projectIdsHasBeenSet;
 
                 };
             }

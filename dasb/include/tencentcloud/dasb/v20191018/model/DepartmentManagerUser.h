@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取管理员Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ManagerId 管理员Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetManagerId() const;
 
                     /**
                      * 设置管理员Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _managerId 管理员Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetManagerId(const std::string& _managerId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取管理员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ManagerName 管理员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetManagerName() const;
 
                     /**
                      * 设置管理员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _managerName 管理员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetManagerName(const std::string& _managerName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 管理员Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_managerId;
                     bool m_managerIdHasBeenSet;
 
                     /**
                      * 管理员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_managerName;
                     bool m_managerNameHasBeenSet;

@@ -408,6 +408,48 @@ Operator 目前支持
                      */
                     bool GlobalParamHasBeenSet() const;
 
+                    /**
+                     * 获取100 不绑定用户  200 单用户单token  300 单用户多token
+                     * @return TokenType 100 不绑定用户  200 单用户单token  300 单用户多token
+                     * 
+                     */
+                    int64_t GetTokenType() const;
+
+                    /**
+                     * 设置100 不绑定用户  200 单用户单token  300 单用户多token
+                     * @param _tokenType 100 不绑定用户  200 单用户单token  300 单用户多token
+                     * 
+                     */
+                    void SetTokenType(const int64_t& _tokenType);
+
+                    /**
+                     * 判断参数 TokenType 是否已赋值
+                     * @return TokenType 是否已赋值
+                     * 
+                     */
+                    bool TokenTypeHasBeenSet() const;
+
+                    /**
+                     * 获取一次创建的token数
+                     * @return TokenNum 一次创建的token数
+                     * 
+                     */
+                    int64_t GetTokenNum() const;
+
+                    /**
+                     * 设置一次创建的token数
+                     * @param _tokenNum 一次创建的token数
+                     * 
+                     */
+                    void SetTokenNum(const int64_t& _tokenNum);
+
+                    /**
+                     * 判断参数 TokenNum 是否已赋值
+                     * @return TokenNum 是否已赋值
+                     * 
+                     */
+                    bool TokenNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -508,6 +550,18 @@ Operator 目前支持
                      */
                     std::string m_globalParam;
                     bool m_globalParamHasBeenSet;
+
+                    /**
+                     * 100 不绑定用户  200 单用户单token  300 单用户多token
+                     */
+                    int64_t m_tokenType;
+                    bool m_tokenTypeHasBeenSet;
+
+                    /**
+                     * 一次创建的token数
+                     */
+                    int64_t m_tokenNum;
+                    bool m_tokenNumHasBeenSet;
 
                 };
             }

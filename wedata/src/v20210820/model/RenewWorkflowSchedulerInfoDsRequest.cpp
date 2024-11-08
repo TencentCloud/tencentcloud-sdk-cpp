@@ -37,7 +37,11 @@ RenewWorkflowSchedulerInfoDsRequest::RenewWorkflowSchedulerInfoDsRequest() :
     m_executionEndTimeHasBeenSet(false),
     m_instanceInitStrategyHasBeenSet(false),
     m_dependencyWorkflowHasBeenSet(false),
-    m_crontabExpressionHasBeenSet(false)
+    m_crontabExpressionHasBeenSet(false),
+    m_modifyCycleValueHasBeenSet(false),
+    m_calendarOpenHasBeenSet(false),
+    m_calendarNameHasBeenSet(false),
+    m_calendarIdHasBeenSet(false)
 {
 }
 
@@ -166,6 +170,38 @@ string RenewWorkflowSchedulerInfoDsRequest::ToJsonString() const
         string key = "CrontabExpression";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_crontabExpression.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyCycleValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyCycleValue";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modifyCycleValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_calendarOpenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CalendarOpen";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_calendarOpen.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_calendarNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CalendarName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_calendarName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_calendarIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CalendarId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_calendarId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -414,6 +450,70 @@ void RenewWorkflowSchedulerInfoDsRequest::SetCrontabExpression(const string& _cr
 bool RenewWorkflowSchedulerInfoDsRequest::CrontabExpressionHasBeenSet() const
 {
     return m_crontabExpressionHasBeenSet;
+}
+
+string RenewWorkflowSchedulerInfoDsRequest::GetModifyCycleValue() const
+{
+    return m_modifyCycleValue;
+}
+
+void RenewWorkflowSchedulerInfoDsRequest::SetModifyCycleValue(const string& _modifyCycleValue)
+{
+    m_modifyCycleValue = _modifyCycleValue;
+    m_modifyCycleValueHasBeenSet = true;
+}
+
+bool RenewWorkflowSchedulerInfoDsRequest::ModifyCycleValueHasBeenSet() const
+{
+    return m_modifyCycleValueHasBeenSet;
+}
+
+string RenewWorkflowSchedulerInfoDsRequest::GetCalendarOpen() const
+{
+    return m_calendarOpen;
+}
+
+void RenewWorkflowSchedulerInfoDsRequest::SetCalendarOpen(const string& _calendarOpen)
+{
+    m_calendarOpen = _calendarOpen;
+    m_calendarOpenHasBeenSet = true;
+}
+
+bool RenewWorkflowSchedulerInfoDsRequest::CalendarOpenHasBeenSet() const
+{
+    return m_calendarOpenHasBeenSet;
+}
+
+string RenewWorkflowSchedulerInfoDsRequest::GetCalendarName() const
+{
+    return m_calendarName;
+}
+
+void RenewWorkflowSchedulerInfoDsRequest::SetCalendarName(const string& _calendarName)
+{
+    m_calendarName = _calendarName;
+    m_calendarNameHasBeenSet = true;
+}
+
+bool RenewWorkflowSchedulerInfoDsRequest::CalendarNameHasBeenSet() const
+{
+    return m_calendarNameHasBeenSet;
+}
+
+string RenewWorkflowSchedulerInfoDsRequest::GetCalendarId() const
+{
+    return m_calendarId;
+}
+
+void RenewWorkflowSchedulerInfoDsRequest::SetCalendarId(const string& _calendarId)
+{
+    m_calendarId = _calendarId;
+    m_calendarIdHasBeenSet = true;
+}
+
+bool RenewWorkflowSchedulerInfoDsRequest::CalendarIdHasBeenSet() const
+{
+    return m_calendarIdHasBeenSet;
 }
 
 

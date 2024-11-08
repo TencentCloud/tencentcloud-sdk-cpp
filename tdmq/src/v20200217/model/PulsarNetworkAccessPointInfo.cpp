@@ -27,7 +27,11 @@ PulsarNetworkAccessPointInfo::PulsarNetworkAccessPointInfo() :
     m_instanceIdHasBeenSet(false),
     m_routeTypeHasBeenSet(false),
     m_operationTypeHasBeenSet(false),
-    m_accessPointsTypeHasBeenSet(false)
+    m_accessPointsTypeHasBeenSet(false),
+    m_bandwidthHasBeenSet(false),
+    m_securityPolicyHasBeenSet(false),
+    m_standardAccessPointHasBeenSet(false),
+    m_zoneNameHasBeenSet(false)
 {
 }
 
@@ -106,6 +110,56 @@ CoreInternalOutcome PulsarNetworkAccessPointInfo::Deserialize(const rapidjson::V
         m_accessPointsTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Bandwidth") && !value["Bandwidth"].IsNull())
+    {
+        if (!value["Bandwidth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarNetworkAccessPointInfo.Bandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bandwidth = value["Bandwidth"].GetInt64();
+        m_bandwidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityPolicy") && !value["SecurityPolicy"].IsNull())
+    {
+        if (!value["SecurityPolicy"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PulsarNetworkAccessPointInfo.SecurityPolicy` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecurityPolicy"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SecurityPolicy item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_securityPolicy.push_back(item);
+        }
+        m_securityPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("StandardAccessPoint") && !value["StandardAccessPoint"].IsNull())
+    {
+        if (!value["StandardAccessPoint"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarNetworkAccessPointInfo.StandardAccessPoint` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_standardAccessPoint = value["StandardAccessPoint"].GetBool();
+        m_standardAccessPointHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneName") && !value["ZoneName"].IsNull())
+    {
+        if (!value["ZoneName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarNetworkAccessPointInfo.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneName = string(value["ZoneName"].GetString());
+        m_zoneNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +221,45 @@ void PulsarNetworkAccessPointInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "AccessPointsType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_accessPointsType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bandwidth, allocator);
+    }
+
+    if (m_securityPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_securityPolicy.begin(); itr != m_securityPolicy.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_standardAccessPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StandardAccessPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_standardAccessPoint, allocator);
+    }
+
+    if (m_zoneNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +375,69 @@ void PulsarNetworkAccessPointInfo::SetAccessPointsType(const string& _accessPoin
 bool PulsarNetworkAccessPointInfo::AccessPointsTypeHasBeenSet() const
 {
     return m_accessPointsTypeHasBeenSet;
+}
+
+int64_t PulsarNetworkAccessPointInfo::GetBandwidth() const
+{
+    return m_bandwidth;
+}
+
+void PulsarNetworkAccessPointInfo::SetBandwidth(const int64_t& _bandwidth)
+{
+    m_bandwidth = _bandwidth;
+    m_bandwidthHasBeenSet = true;
+}
+
+bool PulsarNetworkAccessPointInfo::BandwidthHasBeenSet() const
+{
+    return m_bandwidthHasBeenSet;
+}
+
+vector<SecurityPolicy> PulsarNetworkAccessPointInfo::GetSecurityPolicy() const
+{
+    return m_securityPolicy;
+}
+
+void PulsarNetworkAccessPointInfo::SetSecurityPolicy(const vector<SecurityPolicy>& _securityPolicy)
+{
+    m_securityPolicy = _securityPolicy;
+    m_securityPolicyHasBeenSet = true;
+}
+
+bool PulsarNetworkAccessPointInfo::SecurityPolicyHasBeenSet() const
+{
+    return m_securityPolicyHasBeenSet;
+}
+
+bool PulsarNetworkAccessPointInfo::GetStandardAccessPoint() const
+{
+    return m_standardAccessPoint;
+}
+
+void PulsarNetworkAccessPointInfo::SetStandardAccessPoint(const bool& _standardAccessPoint)
+{
+    m_standardAccessPoint = _standardAccessPoint;
+    m_standardAccessPointHasBeenSet = true;
+}
+
+bool PulsarNetworkAccessPointInfo::StandardAccessPointHasBeenSet() const
+{
+    return m_standardAccessPointHasBeenSet;
+}
+
+string PulsarNetworkAccessPointInfo::GetZoneName() const
+{
+    return m_zoneName;
+}
+
+void PulsarNetworkAccessPointInfo::SetZoneName(const string& _zoneName)
+{
+    m_zoneName = _zoneName;
+    m_zoneNameHasBeenSet = true;
+}
+
+bool PulsarNetworkAccessPointInfo::ZoneNameHasBeenSet() const
+{
+    return m_zoneNameHasBeenSet;
 }
 

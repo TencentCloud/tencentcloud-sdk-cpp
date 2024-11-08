@@ -608,18 +608,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属部门的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Department 所属部门的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Department GetDepartment() const;
 
                     /**
                      * 设置所属部门的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _department 所属部门的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDepartment(const Department& _department);
@@ -633,18 +629,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否允许使用访问串，默认允许
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllowAccessCredential 是否允许使用访问串，默认允许
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAllowAccessCredential() const;
 
                     /**
                      * 设置是否允许使用访问串，默认允许
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allowAccessCredential 是否允许使用访问串，默认允许
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllowAccessCredential(const bool& _allowAccessCredential);
@@ -658,18 +650,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联的数据库高危命令列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ACTemplateSet 关联的数据库高危命令列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ACTemplate> GetACTemplateSet() const;
 
                     /**
                      * 设置关联的数据库高危命令列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aCTemplateSet 关联的数据库高危命令列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetACTemplateSet(const std::vector<ACTemplate>& _aCTemplateSet);
@@ -683,18 +671,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联的白命令命令
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WhiteCmds 关联的白命令命令
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetWhiteCmds() const;
 
                     /**
                      * 设置关联的白命令命令
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _whiteCmds 关联的白命令命令
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWhiteCmds(const std::vector<std::string>& _whiteCmds);
@@ -708,18 +692,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否允许记录键盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllowKeyboardLogger 是否允许记录键盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAllowKeyboardLogger() const;
 
                     /**
                      * 设置是否允许记录键盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allowKeyboardLogger 是否允许记录键盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllowKeyboardLogger(const bool& _allowKeyboardLogger);
@@ -893,35 +873,30 @@ namespace TencentCloud
 
                     /**
                      * 所属部门的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Department m_department;
                     bool m_departmentHasBeenSet;
 
                     /**
                      * 是否允许使用访问串，默认允许
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_allowAccessCredential;
                     bool m_allowAccessCredentialHasBeenSet;
 
                     /**
                      * 关联的数据库高危命令列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ACTemplate> m_aCTemplateSet;
                     bool m_aCTemplateSetHasBeenSet;
 
                     /**
                      * 关联的白命令命令
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_whiteCmds;
                     bool m_whiteCmdsHasBeenSet;
 
                     /**
                      * 是否允许记录键盘
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_allowKeyboardLogger;
                     bool m_allowKeyboardLoggerHasBeenSet;

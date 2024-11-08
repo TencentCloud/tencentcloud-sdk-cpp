@@ -34,7 +34,9 @@ DataTransformTaskInfo::DataTransformTaskInfo() :
     m_logsetIdHasBeenSet(false),
     m_dstResourcesHasBeenSet(false),
     m_etlContentHasBeenSet(false),
-    m_dataTransformTypeHasBeenSet(false)
+    m_dataTransformTypeHasBeenSet(false),
+    m_keepFailureLogHasBeenSet(false),
+    m_failureLogKeyHasBeenSet(false)
 {
 }
 
@@ -193,6 +195,26 @@ CoreInternalOutcome DataTransformTaskInfo::Deserialize(const rapidjson::Value &v
         m_dataTransformTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("KeepFailureLog") && !value["KeepFailureLog"].IsNull())
+    {
+        if (!value["KeepFailureLog"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataTransformTaskInfo.KeepFailureLog` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_keepFailureLog = value["KeepFailureLog"].GetUint64();
+        m_keepFailureLogHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailureLogKey") && !value["FailureLogKey"].IsNull())
+    {
+        if (!value["FailureLogKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataTransformTaskInfo.FailureLogKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_failureLogKey = string(value["FailureLogKey"].GetString());
+        m_failureLogKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +339,22 @@ void DataTransformTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "DataTransformType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dataTransformType, allocator);
+    }
+
+    if (m_keepFailureLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepFailureLog";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keepFailureLog, allocator);
+    }
+
+    if (m_failureLogKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailureLogKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_failureLogKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -544,5 +582,37 @@ void DataTransformTaskInfo::SetDataTransformType(const uint64_t& _dataTransformT
 bool DataTransformTaskInfo::DataTransformTypeHasBeenSet() const
 {
     return m_dataTransformTypeHasBeenSet;
+}
+
+uint64_t DataTransformTaskInfo::GetKeepFailureLog() const
+{
+    return m_keepFailureLog;
+}
+
+void DataTransformTaskInfo::SetKeepFailureLog(const uint64_t& _keepFailureLog)
+{
+    m_keepFailureLog = _keepFailureLog;
+    m_keepFailureLogHasBeenSet = true;
+}
+
+bool DataTransformTaskInfo::KeepFailureLogHasBeenSet() const
+{
+    return m_keepFailureLogHasBeenSet;
+}
+
+string DataTransformTaskInfo::GetFailureLogKey() const
+{
+    return m_failureLogKey;
+}
+
+void DataTransformTaskInfo::SetFailureLogKey(const string& _failureLogKey)
+{
+    m_failureLogKey = _failureLogKey;
+    m_failureLogKeyHasBeenSet = true;
+}
+
+bool DataTransformTaskInfo::FailureLogKeyHasBeenSet() const
+{
+    return m_failureLogKeyHasBeenSet;
 }
 

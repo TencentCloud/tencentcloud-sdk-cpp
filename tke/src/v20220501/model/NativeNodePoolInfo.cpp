@@ -41,7 +41,8 @@ NativeNodePoolInfo::NativeNodePoolInfo() :
     m_replicasHasBeenSet(false),
     m_readyReplicasHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
-    m_dataDisksHasBeenSet(false)
+    m_dataDisksHasBeenSet(false),
+    m_machineTypeHasBeenSet(false)
 {
 }
 
@@ -334,6 +335,16 @@ CoreInternalOutcome NativeNodePoolInfo::Deserialize(const rapidjson::Value &valu
         m_dataDisksHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeNodePoolInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -546,6 +557,14 @@ void NativeNodePoolInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -885,5 +904,21 @@ void NativeNodePoolInfo::SetDataDisks(const vector<DataDisk>& _dataDisks)
 bool NativeNodePoolInfo::DataDisksHasBeenSet() const
 {
     return m_dataDisksHasBeenSet;
+}
+
+string NativeNodePoolInfo::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void NativeNodePoolInfo::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool NativeNodePoolInfo::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
 }
 

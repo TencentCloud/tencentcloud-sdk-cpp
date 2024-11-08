@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数字验证码，如：1234
-                     * @return LiveCode 数字验证码，如：1234
+                     * 获取数字验证码。
+                     * @return LiveCode 数字验证码。
                      * 
                      */
                     std::string GetLiveCode() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数字验证码，如：1234
+                     * 数字验证码。
                      */
                     std::string m_liveCode;
                     bool m_liveCodeHasBeenSet;

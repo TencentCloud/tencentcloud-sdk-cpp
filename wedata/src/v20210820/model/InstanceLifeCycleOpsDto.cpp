@@ -31,7 +31,10 @@ InstanceLifeCycleOpsDto::InstanceLifeCycleOpsDto() :
     m_errorDescHasBeenSet(false),
     m_errorCodeLevelHasBeenSet(false),
     m_instanceLogListOpsDtoHasBeenSet(false),
-    m_instanceStateHasBeenSet(false)
+    m_instanceStateHasBeenSet(false),
+    m_scheduleRunTypeHasBeenSet(false),
+    m_executionJobIdHasBeenSet(false),
+    m_instanceRunTypeHasBeenSet(false)
 {
 }
 
@@ -167,6 +170,36 @@ CoreInternalOutcome InstanceLifeCycleOpsDto::Deserialize(const rapidjson::Value 
         m_instanceStateHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleRunType") && !value["ScheduleRunType"].IsNull())
+    {
+        if (!value["ScheduleRunType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLifeCycleOpsDto.ScheduleRunType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleRunType = value["ScheduleRunType"].GetUint64();
+        m_scheduleRunTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecutionJobId") && !value["ExecutionJobId"].IsNull())
+    {
+        if (!value["ExecutionJobId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLifeCycleOpsDto.ExecutionJobId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executionJobId = string(value["ExecutionJobId"].GetString());
+        m_executionJobIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceRunType") && !value["InstanceRunType"].IsNull())
+    {
+        if (!value["InstanceRunType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLifeCycleOpsDto.InstanceRunType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceRunType = value["InstanceRunType"].GetUint64();
+        m_instanceRunTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -268,6 +301,30 @@ void InstanceLifeCycleOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "InstanceState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleRunTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleRunType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scheduleRunType, allocator);
+    }
+
+    if (m_executionJobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionJobId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executionJobId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceRunTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceRunType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceRunType, allocator);
     }
 
 }
@@ -447,5 +504,53 @@ void InstanceLifeCycleOpsDto::SetInstanceState(const string& _instanceState)
 bool InstanceLifeCycleOpsDto::InstanceStateHasBeenSet() const
 {
     return m_instanceStateHasBeenSet;
+}
+
+uint64_t InstanceLifeCycleOpsDto::GetScheduleRunType() const
+{
+    return m_scheduleRunType;
+}
+
+void InstanceLifeCycleOpsDto::SetScheduleRunType(const uint64_t& _scheduleRunType)
+{
+    m_scheduleRunType = _scheduleRunType;
+    m_scheduleRunTypeHasBeenSet = true;
+}
+
+bool InstanceLifeCycleOpsDto::ScheduleRunTypeHasBeenSet() const
+{
+    return m_scheduleRunTypeHasBeenSet;
+}
+
+string InstanceLifeCycleOpsDto::GetExecutionJobId() const
+{
+    return m_executionJobId;
+}
+
+void InstanceLifeCycleOpsDto::SetExecutionJobId(const string& _executionJobId)
+{
+    m_executionJobId = _executionJobId;
+    m_executionJobIdHasBeenSet = true;
+}
+
+bool InstanceLifeCycleOpsDto::ExecutionJobIdHasBeenSet() const
+{
+    return m_executionJobIdHasBeenSet;
+}
+
+uint64_t InstanceLifeCycleOpsDto::GetInstanceRunType() const
+{
+    return m_instanceRunType;
+}
+
+void InstanceLifeCycleOpsDto::SetInstanceRunType(const uint64_t& _instanceRunType)
+{
+    m_instanceRunType = _instanceRunType;
+    m_instanceRunTypeHasBeenSet = true;
+}
+
+bool InstanceLifeCycleOpsDto::InstanceRunTypeHasBeenSet() const
+{
+    return m_instanceRunTypeHasBeenSet;
 }
 

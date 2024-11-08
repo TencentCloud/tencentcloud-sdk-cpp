@@ -470,6 +470,49 @@ DcdbClient::CreateHourDCDBInstanceOutcomeCallable DcdbClient::CreateHourDCDBInst
     return task->get_future();
 }
 
+DcdbClient::CreateOnlineDDLJobOutcome DcdbClient::CreateOnlineDDLJob(const CreateOnlineDDLJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOnlineDDLJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOnlineDDLJobResponse rsp = CreateOnlineDDLJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOnlineDDLJobOutcome(rsp);
+        else
+            return CreateOnlineDDLJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOnlineDDLJobOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::CreateOnlineDDLJobAsync(const CreateOnlineDDLJobRequest& request, const CreateOnlineDDLJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOnlineDDLJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::CreateOnlineDDLJobOutcomeCallable DcdbClient::CreateOnlineDDLJobCallable(const CreateOnlineDDLJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOnlineDDLJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOnlineDDLJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::CreateTmpDCDBInstanceOutcome DcdbClient::CreateTmpDCDBInstance(const CreateTmpDCDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTmpDCDBInstance");

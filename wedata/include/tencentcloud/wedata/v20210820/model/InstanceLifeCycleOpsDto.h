@@ -323,6 +323,81 @@ namespace TencentCloud
                      */
                     bool InstanceStateHasBeenSet() const;
 
+                    /**
+                     * 获取调度运行方式, 0: 周期调度, 1: 空跑调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduleRunType 调度运行方式, 0: 周期调度, 1: 空跑调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetScheduleRunType() const;
+
+                    /**
+                     * 设置调度运行方式, 0: 周期调度, 1: 空跑调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scheduleRunType 调度运行方式, 0: 周期调度, 1: 空跑调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScheduleRunType(const uint64_t& _scheduleRunType);
+
+                    /**
+                     * 判断参数 ScheduleRunType 是否已赋值
+                     * @return ScheduleRunType 是否已赋值
+                     * 
+                     */
+                    bool ScheduleRunTypeHasBeenSet() const;
+
+                    /**
+                     * 获取统一执行平台，下发执行Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecutionJobId 统一执行平台，下发执行Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExecutionJobId() const;
+
+                    /**
+                     * 设置统一执行平台，下发执行Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _executionJobId 统一执行平台，下发执行Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecutionJobId(const std::string& _executionJobId);
+
+                    /**
+                     * 判断参数 ExecutionJobId 是否已赋值
+                     * @return ExecutionJobId 是否已赋值
+                     * 
+                     */
+                    bool ExecutionJobIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例运行类型: 0: 普通运行, 1: 空跑运行
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceRunType 实例运行类型: 0: 普通运行, 1: 空跑运行
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetInstanceRunType() const;
+
+                    /**
+                     * 设置实例运行类型: 0: 普通运行, 1: 空跑运行
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceRunType 实例运行类型: 0: 普通运行, 1: 空跑运行
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceRunType(const uint64_t& _instanceRunType);
+
+                    /**
+                     * 判断参数 InstanceRunType 是否已赋值
+                     * @return InstanceRunType 是否已赋值
+                     * 
+                     */
+                    bool InstanceRunTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -401,6 +476,27 @@ namespace TencentCloud
                      */
                     std::string m_instanceState;
                     bool m_instanceStateHasBeenSet;
+
+                    /**
+                     * 调度运行方式, 0: 周期调度, 1: 空跑调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_scheduleRunType;
+                    bool m_scheduleRunTypeHasBeenSet;
+
+                    /**
+                     * 统一执行平台，下发执行Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_executionJobId;
+                    bool m_executionJobIdHasBeenSet;
+
+                    /**
+                     * 实例运行类型: 0: 普通运行, 1: 空跑运行
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_instanceRunType;
+                    bool m_instanceRunTypeHasBeenSet;
 
                 };
             }

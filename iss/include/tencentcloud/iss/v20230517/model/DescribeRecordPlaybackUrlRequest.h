@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool IsInternalHasBeenSet() const;
 
+                    /**
+                     * 获取云录像回放时，是否需要开启时间戳矫正，主要解决时间戳反转，会退等问题导致无法播放
+                     * @return CorrectTimestamp 云录像回放时，是否需要开启时间戳矫正，主要解决时间戳反转，会退等问题导致无法播放
+                     * 
+                     */
+                    bool GetCorrectTimestamp() const;
+
+                    /**
+                     * 设置云录像回放时，是否需要开启时间戳矫正，主要解决时间戳反转，会退等问题导致无法播放
+                     * @param _correctTimestamp 云录像回放时，是否需要开启时间戳矫正，主要解决时间戳反转，会退等问题导致无法播放
+                     * 
+                     */
+                    void SetCorrectTimestamp(const bool& _correctTimestamp);
+
+                    /**
+                     * 判断参数 CorrectTimestamp 是否已赋值
+                     * @return CorrectTimestamp 是否已赋值
+                     * 
+                     */
+                    bool CorrectTimestampHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     bool m_isInternal;
                     bool m_isInternalHasBeenSet;
+
+                    /**
+                     * 云录像回放时，是否需要开启时间戳矫正，主要解决时间戳反转，会退等问题导致无法播放
+                     */
+                    bool m_correctTimestamp;
+                    bool m_correctTimestampHasBeenSet;
 
                 };
             }

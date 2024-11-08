@@ -45,27 +45,27 @@ namespace TencentCloud
 
                     /**
                      * 获取认证结果码，收费情况如下。
-收费结果码：
-0: 姓名和身份证号一致
--1: 姓名和身份证号不一致
-不收费结果码：
--2: 非法身份证号（长度、校验位等不正确）
--3: 非法姓名（长度、格式等不正确）
--4: 证件库服务异常
--5: 证件库中无此身份证记录
--6: 权威比对系统升级中，请稍后再试
--7: 认证次数超过当日限制
+- 收费结果码：
+0: 姓名和身份证号一致。
+-1: 姓名和身份证号不一致。
+- 不收费结果码：
+-2: 非法身份证号（长度、校验位等不正确）。
+-3: 非法姓名（长度、格式等不正确）。
+-4: 证件库服务异常。
+-5: 证件库中无此身份证记录。
+-6: 权威比对系统升级中，请稍后再试。
+-7: 认证次数超过当日限制。
                      * @return Result 认证结果码，收费情况如下。
-收费结果码：
-0: 姓名和身份证号一致
--1: 姓名和身份证号不一致
-不收费结果码：
--2: 非法身份证号（长度、校验位等不正确）
--3: 非法姓名（长度、格式等不正确）
--4: 证件库服务异常
--5: 证件库中无此身份证记录
--6: 权威比对系统升级中，请稍后再试
--7: 认证次数超过当日限制
+- 收费结果码：
+0: 姓名和身份证号一致。
+-1: 姓名和身份证号不一致。
+- 不收费结果码：
+-2: 非法身份证号（长度、校验位等不正确）。
+-3: 非法姓名（长度、格式等不正确）。
+-4: 证件库服务异常。
+-5: 证件库中无此身份证记录。
+-6: 权威比对系统升级中，请稍后再试。
+-7: 认证次数超过当日限制。
                      * 
                      */
                     std::string GetResult() const;
@@ -92,8 +92,8 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取用于验证的姓名
-                     * @return Name 用于验证的姓名
+                     * 获取用于验证的姓名。
+                     * @return Name 用于验证的姓名。
                      * 
                      */
                     std::string GetName() const;
@@ -106,8 +106,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取用于验证的身份证号
-                     * @return IdCard 用于验证的身份证号
+                     * 获取用于验证的身份证号。
+                     * @return IdCard 用于验证的身份证号。
                      * 
                      */
                     std::string GetIdCard() const;
@@ -120,9 +120,9 @@ namespace TencentCloud
                     bool IdCardHasBeenSet() const;
 
                     /**
-                     * 获取OCR得到的性别
+                     * 获取OCR得到的性别。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Sex OCR得到的性别
+                     * @return Sex OCR得到的性别。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -136,9 +136,9 @@ namespace TencentCloud
                     bool SexHasBeenSet() const;
 
                     /**
-                     * 获取OCR得到的民族
+                     * 获取OCR得到的民族。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Nation OCR得到的民族
+                     * @return Nation OCR得到的民族。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -152,9 +152,9 @@ namespace TencentCloud
                     bool NationHasBeenSet() const;
 
                     /**
-                     * 获取OCR得到的生日
+                     * 获取OCR得到的生日。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Birth OCR得到的生日
+                     * @return Birth OCR得到的生日。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -168,9 +168,9 @@ namespace TencentCloud
                     bool BirthHasBeenSet() const;
 
                     /**
-                     * 获取OCR得到的地址
+                     * 获取OCR得到的地址。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Address OCR得到的地址
+                     * @return Address OCR得到的地址。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -187,16 +187,16 @@ namespace TencentCloud
 
                     /**
                      * 认证结果码，收费情况如下。
-收费结果码：
-0: 姓名和身份证号一致
--1: 姓名和身份证号不一致
-不收费结果码：
--2: 非法身份证号（长度、校验位等不正确）
--3: 非法姓名（长度、格式等不正确）
--4: 证件库服务异常
--5: 证件库中无此身份证记录
--6: 权威比对系统升级中，请稍后再试
--7: 认证次数超过当日限制
+- 收费结果码：
+0: 姓名和身份证号一致。
+-1: 姓名和身份证号不一致。
+- 不收费结果码：
+-2: 非法身份证号（长度、校验位等不正确）。
+-3: 非法姓名（长度、格式等不正确）。
+-4: 证件库服务异常。
+-5: 证件库中无此身份证记录。
+-6: 权威比对系统升级中，请稍后再试。
+-7: 认证次数超过当日限制。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
@@ -208,40 +208,40 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 用于验证的姓名
+                     * 用于验证的姓名。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 用于验证的身份证号
+                     * 用于验证的身份证号。
                      */
                     std::string m_idCard;
                     bool m_idCardHasBeenSet;
 
                     /**
-                     * OCR得到的性别
+                     * OCR得到的性别。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sex;
                     bool m_sexHasBeenSet;
 
                     /**
-                     * OCR得到的民族
+                     * OCR得到的民族。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nation;
                     bool m_nationHasBeenSet;
 
                     /**
-                     * OCR得到的生日
+                     * OCR得到的生日。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_birth;
                     bool m_birthHasBeenSet;
 
                     /**
-                     * OCR得到的地址
+                     * OCR得到的地址。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;

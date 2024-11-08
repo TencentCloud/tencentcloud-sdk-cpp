@@ -26,10 +26,15 @@ DescribeInstanceLogDetailRequest::DescribeInstanceLogDetailRequest() :
     m_projectIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_curRunDateHasBeenSet(false),
+    m_logLevelTypeHasBeenSet(false),
+    m_executionFileTypeHasBeenSet(false),
+    m_executionJobIdHasBeenSet(false),
     m_brokerIpHasBeenSet(false),
     m_originFileNameHasBeenSet(false),
     m_startCountHasBeenSet(false),
-    m_lineCountHasBeenSet(false)
+    m_lineCountHasBeenSet(false),
+    m_extInfoHasBeenSet(false),
+    m_requestFromSourceHasBeenSet(false)
 {
 }
 
@@ -64,6 +69,30 @@ string DescribeInstanceLogDetailRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_curRunDate.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_logLevelTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogLevelType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logLevelType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executionFileTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionFileType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_executionFileType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executionJobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionJobId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_executionJobId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_brokerIpHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -94,6 +123,22 @@ string DescribeInstanceLogDetailRequest::ToJsonString() const
         string key = "LineCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_lineCount, allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestFromSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestFromSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_requestFromSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -150,6 +195,54 @@ void DescribeInstanceLogDetailRequest::SetCurRunDate(const string& _curRunDate)
 bool DescribeInstanceLogDetailRequest::CurRunDateHasBeenSet() const
 {
     return m_curRunDateHasBeenSet;
+}
+
+string DescribeInstanceLogDetailRequest::GetLogLevelType() const
+{
+    return m_logLevelType;
+}
+
+void DescribeInstanceLogDetailRequest::SetLogLevelType(const string& _logLevelType)
+{
+    m_logLevelType = _logLevelType;
+    m_logLevelTypeHasBeenSet = true;
+}
+
+bool DescribeInstanceLogDetailRequest::LogLevelTypeHasBeenSet() const
+{
+    return m_logLevelTypeHasBeenSet;
+}
+
+string DescribeInstanceLogDetailRequest::GetExecutionFileType() const
+{
+    return m_executionFileType;
+}
+
+void DescribeInstanceLogDetailRequest::SetExecutionFileType(const string& _executionFileType)
+{
+    m_executionFileType = _executionFileType;
+    m_executionFileTypeHasBeenSet = true;
+}
+
+bool DescribeInstanceLogDetailRequest::ExecutionFileTypeHasBeenSet() const
+{
+    return m_executionFileTypeHasBeenSet;
+}
+
+string DescribeInstanceLogDetailRequest::GetExecutionJobId() const
+{
+    return m_executionJobId;
+}
+
+void DescribeInstanceLogDetailRequest::SetExecutionJobId(const string& _executionJobId)
+{
+    m_executionJobId = _executionJobId;
+    m_executionJobIdHasBeenSet = true;
+}
+
+bool DescribeInstanceLogDetailRequest::ExecutionJobIdHasBeenSet() const
+{
+    return m_executionJobIdHasBeenSet;
 }
 
 string DescribeInstanceLogDetailRequest::GetBrokerIp() const
@@ -214,6 +307,38 @@ void DescribeInstanceLogDetailRequest::SetLineCount(const int64_t& _lineCount)
 bool DescribeInstanceLogDetailRequest::LineCountHasBeenSet() const
 {
     return m_lineCountHasBeenSet;
+}
+
+string DescribeInstanceLogDetailRequest::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void DescribeInstanceLogDetailRequest::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool DescribeInstanceLogDetailRequest::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
+}
+
+string DescribeInstanceLogDetailRequest::GetRequestFromSource() const
+{
+    return m_requestFromSource;
+}
+
+void DescribeInstanceLogDetailRequest::SetRequestFromSource(const string& _requestFromSource)
+{
+    m_requestFromSource = _requestFromSource;
+    m_requestFromSourceHasBeenSet = true;
+}
+
+bool DescribeInstanceLogDetailRequest::RequestFromSourceHasBeenSet() const
+{
+    return m_requestFromSourceHasBeenSet;
 }
 
 

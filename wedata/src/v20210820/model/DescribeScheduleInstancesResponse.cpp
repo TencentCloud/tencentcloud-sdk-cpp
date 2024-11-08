@@ -24,6 +24,7 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeScheduleInstancesResponse::DescribeScheduleInstancesResponse() :
+    m_requestFromSourceHasBeenSet(false),
     m_dataHasBeenSet(false)
 {
 }
@@ -62,6 +63,16 @@ CoreInternalOutcome DescribeScheduleInstancesResponse::Deserialize(const string 
     }
 
 
+    if (rsp.HasMember("RequestFromSource") && !rsp["RequestFromSource"].IsNull())
+    {
+        if (!rsp["RequestFromSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RequestFromSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestFromSource = string(rsp["RequestFromSource"].GetString());
+        m_requestFromSourceHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
         if (!rsp["Data"].IsObject())
@@ -89,6 +100,14 @@ string DescribeScheduleInstancesResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_requestFromSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestFromSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestFromSource.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -109,6 +128,16 @@ string DescribeScheduleInstancesResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeScheduleInstancesResponse::GetRequestFromSource() const
+{
+    return m_requestFromSource;
+}
+
+bool DescribeScheduleInstancesResponse::RequestFromSourceHasBeenSet() const
+{
+    return m_requestFromSourceHasBeenSet;
+}
 
 CollectionInstanceOpsDto DescribeScheduleInstancesResponse::GetData() const
 {

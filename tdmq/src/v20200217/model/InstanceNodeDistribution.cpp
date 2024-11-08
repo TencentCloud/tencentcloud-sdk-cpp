@@ -23,7 +23,8 @@ using namespace std;
 InstanceNodeDistribution::InstanceNodeDistribution() :
     m_zoneNameHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
-    m_nodeCountHasBeenSet(false)
+    m_nodeCountHasBeenSet(false),
+    m_nodePermWipeFlagHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome InstanceNodeDistribution::Deserialize(const rapidjson::Value
         m_nodeCountHasBeenSet = true;
     }
 
+    if (value.HasMember("NodePermWipeFlag") && !value["NodePermWipeFlag"].IsNull())
+    {
+        if (!value["NodePermWipeFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceNodeDistribution.NodePermWipeFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodePermWipeFlag = value["NodePermWipeFlag"].GetBool();
+        m_nodePermWipeFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void InstanceNodeDistribution::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "NodeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nodeCount, allocator);
+    }
+
+    if (m_nodePermWipeFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodePermWipeFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nodePermWipeFlag, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void InstanceNodeDistribution::SetNodeCount(const uint64_t& _nodeCount)
 bool InstanceNodeDistribution::NodeCountHasBeenSet() const
 {
     return m_nodeCountHasBeenSet;
+}
+
+bool InstanceNodeDistribution::GetNodePermWipeFlag() const
+{
+    return m_nodePermWipeFlag;
+}
+
+void InstanceNodeDistribution::SetNodePermWipeFlag(const bool& _nodePermWipeFlag)
+{
+    m_nodePermWipeFlag = _nodePermWipeFlag;
+    m_nodePermWipeFlagHasBeenSet = true;
+}
+
+bool InstanceNodeDistribution::NodePermWipeFlagHasBeenSet() const
+{
+    return m_nodePermWipeFlagHasBeenSet;
 }
 

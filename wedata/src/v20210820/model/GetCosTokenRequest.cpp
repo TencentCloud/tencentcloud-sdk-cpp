@@ -27,7 +27,8 @@ GetCosTokenRequest::GetCosTokenRequest() :
     m_originDomainHasBeenSet(false),
     m_crossFlagHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
-    m_remotePathHasBeenSet(false)
+    m_remotePathHasBeenSet(false),
+    m_remoteRegionHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string GetCosTokenRequest::ToJsonString() const
         string key = "RemotePath";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remotePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remoteRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remoteRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void GetCosTokenRequest::SetRemotePath(const string& _remotePath)
 bool GetCosTokenRequest::RemotePathHasBeenSet() const
 {
     return m_remotePathHasBeenSet;
+}
+
+string GetCosTokenRequest::GetRemoteRegion() const
+{
+    return m_remoteRegion;
+}
+
+void GetCosTokenRequest::SetRemoteRegion(const string& _remoteRegion)
+{
+    m_remoteRegion = _remoteRegion;
+    m_remoteRegionHasBeenSet = true;
+}
+
+bool GetCosTokenRequest::RemoteRegionHasBeenSet() const
+{
+    return m_remoteRegionHasBeenSet;
 }
 
 

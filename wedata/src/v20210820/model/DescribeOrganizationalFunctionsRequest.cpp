@@ -85,8 +85,14 @@ string DescribeOrganizationalFunctionsRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Filters";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_filters.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_orderFieldsHasBeenSet)
@@ -94,8 +100,14 @@ string DescribeOrganizationalFunctionsRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderFields";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_orderFields.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_orderFields.begin(); itr != m_orderFields.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -186,12 +198,12 @@ bool DescribeOrganizationalFunctionsRequest::EnvTypeHasBeenSet() const
     return m_envTypeHasBeenSet;
 }
 
-Filter DescribeOrganizationalFunctionsRequest::GetFilters() const
+vector<Filter> DescribeOrganizationalFunctionsRequest::GetFilters() const
 {
     return m_filters;
 }
 
-void DescribeOrganizationalFunctionsRequest::SetFilters(const Filter& _filters)
+void DescribeOrganizationalFunctionsRequest::SetFilters(const vector<Filter>& _filters)
 {
     m_filters = _filters;
     m_filtersHasBeenSet = true;
@@ -202,12 +214,12 @@ bool DescribeOrganizationalFunctionsRequest::FiltersHasBeenSet() const
     return m_filtersHasBeenSet;
 }
 
-OrderField DescribeOrganizationalFunctionsRequest::GetOrderFields() const
+vector<OrderField> DescribeOrganizationalFunctionsRequest::GetOrderFields() const
 {
     return m_orderFields;
 }
 
-void DescribeOrganizationalFunctionsRequest::SetOrderFields(const OrderField& _orderFields)
+void DescribeOrganizationalFunctionsRequest::SetOrderFields(const vector<OrderField>& _orderFields)
 {
     m_orderFields = _orderFields;
     m_orderFieldsHasBeenSet = true;

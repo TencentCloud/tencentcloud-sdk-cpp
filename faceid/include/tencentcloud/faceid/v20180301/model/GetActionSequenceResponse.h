@@ -44,8 +44,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取动作顺序(2,1 or 1,2) 。1代表张嘴，2代表闭眼。
-                     * @return ActionSequence 动作顺序(2,1 or 1,2) 。1代表张嘴，2代表闭眼。
+                     * 获取动作顺序，例如：2,1 or 1,2。
+- 1代表张嘴，2代表闭眼。
+                     * @return ActionSequence 动作顺序，例如：2,1 or 1,2。
+- 1代表张嘴，2代表闭眼。
                      * 
                      */
                     std::string GetActionSequence() const;
@@ -60,7 +62,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 动作顺序(2,1 or 1,2) 。1代表张嘴，2代表闭眼。
+                     * 动作顺序，例如：2,1 or 1,2。
+- 1代表张嘴，2代表闭眼。
                      */
                     std::string m_actionSequence;
                     bool m_actionSequenceHasBeenSet;

@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool RemotePathHasBeenSet() const;
 
+                    /**
+                     * 获取地域
+                     * @return RemoteRegion 地域
+                     * 
+                     */
+                    std::string GetRemoteRegion() const;
+
+                    /**
+                     * 设置地域
+                     * @param _remoteRegion 地域
+                     * 
+                     */
+                    void SetRemoteRegion(const std::string& _remoteRegion);
+
+                    /**
+                     * 判断参数 RemoteRegion 是否已赋值
+                     * @return RemoteRegion 是否已赋值
+                     * 
+                     */
+                    bool RemoteRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_remotePath;
                     bool m_remotePathHasBeenSet;
+
+                    /**
+                     * 地域
+                     */
+                    std::string m_remoteRegion;
+                    bool m_remoteRegionHasBeenSet;
 
                 };
             }

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则元数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 规则元数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RuleItem> GetItems() const;
 
                     /**
                      * 设置规则元数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _items 规则元数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItems(const std::vector<RuleItem>& _items);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Relation 关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRelation() const;
 
                     /**
                      * 设置关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _relation 关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRelation(const std::string& _relation);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 规则元数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RuleItem> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
                      * 关系
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_relation;
                     bool m_relationHasBeenSet;

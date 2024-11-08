@@ -559,6 +559,31 @@ namespace TencentCloud
                      */
                     bool DataDisksHasBeenSet() const;
 
+                    /**
+                     * 获取原生节点机型 Native, NativeCVM
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MachineType 原生节点机型 Native, NativeCVM
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMachineType() const;
+
+                    /**
+                     * 设置原生节点机型 Native, NativeCVM
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _machineType 原生节点机型 Native, NativeCVM
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMachineType(const std::string& _machineType);
+
+                    /**
+                     * 判断参数 MachineType 是否已赋值
+                     * @return MachineType 是否已赋值
+                     * 
+                     */
+                    bool MachineTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -702,6 +727,13 @@ namespace TencentCloud
                      */
                     std::vector<DataDisk> m_dataDisks;
                     bool m_dataDisksHasBeenSet;
+
+                    /**
+                     * 原生节点机型 Native, NativeCVM
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_machineType;
+                    bool m_machineTypeHasBeenSet;
 
                 };
             }

@@ -26,7 +26,10 @@ InstanceLogInfoOpsDto::InstanceLogInfoOpsDto() :
     m_dataLogInfoHasBeenSet(false),
     m_thirdTaskRunLogInfoHasBeenSet(false),
     m_thirdTaskLogUrlDescHasBeenSet(false),
-    m_lineCountHasBeenSet(false)
+    m_lineCountHasBeenSet(false),
+    m_extInfoHasBeenSet(false),
+    m_isEndHasBeenSet(false),
+    m_fileSizeHasBeenSet(false)
 {
 }
 
@@ -98,6 +101,36 @@ CoreInternalOutcome InstanceLogInfoOpsDto::Deserialize(const rapidjson::Value &v
         m_lineCountHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtInfo") && !value["ExtInfo"].IsNull())
+    {
+        if (!value["ExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLogInfoOpsDto.ExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extInfo = string(value["ExtInfo"].GetString());
+        m_extInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsEnd") && !value["IsEnd"].IsNull())
+    {
+        if (!value["IsEnd"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLogInfoOpsDto.IsEnd` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isEnd = value["IsEnd"].GetBool();
+        m_isEndHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileSize") && !value["FileSize"].IsNull())
+    {
+        if (!value["FileSize"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLogInfoOpsDto.FileSize` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileSize = string(value["FileSize"].GetString());
+        m_fileSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +189,30 @@ void InstanceLogInfoOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "LineCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lineCount, allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isEndHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsEnd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isEnd, allocator);
+    }
+
+    if (m_fileSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileSize.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +312,53 @@ void InstanceLogInfoOpsDto::SetLineCount(const int64_t& _lineCount)
 bool InstanceLogInfoOpsDto::LineCountHasBeenSet() const
 {
     return m_lineCountHasBeenSet;
+}
+
+string InstanceLogInfoOpsDto::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+void InstanceLogInfoOpsDto::SetExtInfo(const string& _extInfo)
+{
+    m_extInfo = _extInfo;
+    m_extInfoHasBeenSet = true;
+}
+
+bool InstanceLogInfoOpsDto::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
+}
+
+bool InstanceLogInfoOpsDto::GetIsEnd() const
+{
+    return m_isEnd;
+}
+
+void InstanceLogInfoOpsDto::SetIsEnd(const bool& _isEnd)
+{
+    m_isEnd = _isEnd;
+    m_isEndHasBeenSet = true;
+}
+
+bool InstanceLogInfoOpsDto::IsEndHasBeenSet() const
+{
+    return m_isEndHasBeenSet;
+}
+
+string InstanceLogInfoOpsDto::GetFileSize() const
+{
+    return m_fileSize;
+}
+
+void InstanceLogInfoOpsDto::SetFileSize(const string& _fileSize)
+{
+    m_fileSize = _fileSize;
+    m_fileSizeHasBeenSet = true;
+}
+
+bool InstanceLogInfoOpsDto::FileSizeHasBeenSet() const
+{
+    return m_fileSizeHasBeenSet;
 }
 

@@ -511,6 +511,27 @@ namespace TencentCloud
                      */
                     bool TaskGroupActionExecuteTimeHasBeenSet() const;
 
+                    /**
+                     * 获取动作开始执行时间
+                     * @return TaskGroupActionStartTime 动作开始执行时间
+                     * 
+                     */
+                    std::string GetTaskGroupActionStartTime() const;
+
+                    /**
+                     * 设置动作开始执行时间
+                     * @param _taskGroupActionStartTime 动作开始执行时间
+                     * 
+                     */
+                    void SetTaskGroupActionStartTime(const std::string& _taskGroupActionStartTime);
+
+                    /**
+                     * 判断参数 TaskGroupActionStartTime 是否已赋值
+                     * @return TaskGroupActionStartTime 是否已赋值
+                     * 
+                     */
+                    bool TaskGroupActionStartTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -643,6 +664,12 @@ namespace TencentCloud
                      */
                     int64_t m_taskGroupActionExecuteTime;
                     bool m_taskGroupActionExecuteTimeHasBeenSet;
+
+                    /**
+                     * 动作开始执行时间
+                     */
+                    std::string m_taskGroupActionStartTime;
+                    bool m_taskGroupActionStartTimeHasBeenSet;
 
                 };
             }

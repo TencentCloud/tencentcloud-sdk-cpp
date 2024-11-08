@@ -76,7 +76,12 @@ TableMeta::TableMeta() :
     m_partitionExpireDaysHasBeenSet(false),
     m_tablePropertiesHasBeenSet(false),
     m_environmentHasBeenSet(false),
-    m_schemaHasBeenSet(false)
+    m_schemaHasBeenSet(false),
+    m_collectDatasourceListHasBeenSet(false),
+    m_collectJobIdHasBeenSet(false),
+    m_collectJobNameHasBeenSet(false),
+    m_urnHasBeenSet(false),
+    m_hasBizPermissionHasBeenSet(false)
 {
 }
 
@@ -688,6 +693,66 @@ CoreInternalOutcome TableMeta::Deserialize(const rapidjson::Value &value)
         m_schemaHasBeenSet = true;
     }
 
+    if (value.HasMember("CollectDatasourceList") && !value["CollectDatasourceList"].IsNull())
+    {
+        if (!value["CollectDatasourceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TableMeta.CollectDatasourceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CollectDatasourceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GovDatasourceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_collectDatasourceList.push_back(item);
+        }
+        m_collectDatasourceListHasBeenSet = true;
+    }
+
+    if (value.HasMember("CollectJobId") && !value["CollectJobId"].IsNull())
+    {
+        if (!value["CollectJobId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.CollectJobId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_collectJobId = string(value["CollectJobId"].GetString());
+        m_collectJobIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CollectJobName") && !value["CollectJobName"].IsNull())
+    {
+        if (!value["CollectJobName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.CollectJobName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_collectJobName = string(value["CollectJobName"].GetString());
+        m_collectJobNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Urn") && !value["Urn"].IsNull())
+    {
+        if (!value["Urn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.Urn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_urn = string(value["Urn"].GetString());
+        m_urnHasBeenSet = true;
+    }
+
+    if (value.HasMember("HasBizPermission") && !value["HasBizPermission"].IsNull())
+    {
+        if (!value["HasBizPermission"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.HasBizPermission` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasBizPermission = value["HasBizPermission"].GetBool();
+        m_hasBizPermissionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1172,6 +1237,53 @@ void TableMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Schema";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_schema.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_collectDatasourceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CollectDatasourceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_collectDatasourceList.begin(); itr != m_collectDatasourceList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_collectJobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CollectJobId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_collectJobId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_collectJobNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CollectJobName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_collectJobName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_urnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Urn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_urn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hasBizPermissionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasBizPermission";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasBizPermission, allocator);
     }
 
 }
@@ -2071,5 +2183,85 @@ void TableMeta::SetSchema(const string& _schema)
 bool TableMeta::SchemaHasBeenSet() const
 {
     return m_schemaHasBeenSet;
+}
+
+vector<GovDatasourceInfo> TableMeta::GetCollectDatasourceList() const
+{
+    return m_collectDatasourceList;
+}
+
+void TableMeta::SetCollectDatasourceList(const vector<GovDatasourceInfo>& _collectDatasourceList)
+{
+    m_collectDatasourceList = _collectDatasourceList;
+    m_collectDatasourceListHasBeenSet = true;
+}
+
+bool TableMeta::CollectDatasourceListHasBeenSet() const
+{
+    return m_collectDatasourceListHasBeenSet;
+}
+
+string TableMeta::GetCollectJobId() const
+{
+    return m_collectJobId;
+}
+
+void TableMeta::SetCollectJobId(const string& _collectJobId)
+{
+    m_collectJobId = _collectJobId;
+    m_collectJobIdHasBeenSet = true;
+}
+
+bool TableMeta::CollectJobIdHasBeenSet() const
+{
+    return m_collectJobIdHasBeenSet;
+}
+
+string TableMeta::GetCollectJobName() const
+{
+    return m_collectJobName;
+}
+
+void TableMeta::SetCollectJobName(const string& _collectJobName)
+{
+    m_collectJobName = _collectJobName;
+    m_collectJobNameHasBeenSet = true;
+}
+
+bool TableMeta::CollectJobNameHasBeenSet() const
+{
+    return m_collectJobNameHasBeenSet;
+}
+
+string TableMeta::GetUrn() const
+{
+    return m_urn;
+}
+
+void TableMeta::SetUrn(const string& _urn)
+{
+    m_urn = _urn;
+    m_urnHasBeenSet = true;
+}
+
+bool TableMeta::UrnHasBeenSet() const
+{
+    return m_urnHasBeenSet;
+}
+
+bool TableMeta::GetHasBizPermission() const
+{
+    return m_hasBizPermission;
+}
+
+void TableMeta::SetHasBizPermission(const bool& _hasBizPermission)
+{
+    m_hasBizPermission = _hasBizPermission;
+    m_hasBizPermissionHasBeenSet = true;
+}
+
+bool TableMeta::HasBizPermissionHasBeenSet() const
+{
+    return m_hasBizPermissionHasBeenSet;
 }
 

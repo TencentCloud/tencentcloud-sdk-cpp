@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云审计支持的cos可用区
-                     * @return EnableRegions 云审计支持的cos可用区
+                     * 获取操作审计支持的cos可用区
+                     * @return EnableRegions 操作审计支持的cos可用区
                      * 
                      */
                     std::vector<CosRegionInfo> GetEnableRegions() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云审计支持的cos可用区
+                     * 操作审计支持的cos可用区
                      */
                     std::vector<CosRegionInfo> m_enableRegions;
                     bool m_enableRegionsHasBeenSet;

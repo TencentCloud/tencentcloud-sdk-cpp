@@ -31,7 +31,9 @@ PulsarProClusterInfo::PulsarProClusterInfo() :
     m_maxStorageHasBeenSet(false),
     m_canEditRouteHasBeenSet(false),
     m_billingLabelVersionHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_autoCreateTopicStatusHasBeenSet(false),
+    m_defaultPartitionNumberHasBeenSet(false)
 {
 }
 
@@ -160,6 +162,26 @@ CoreInternalOutcome PulsarProClusterInfo::Deserialize(const rapidjson::Value &va
         m_expireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoCreateTopicStatus") && !value["AutoCreateTopicStatus"].IsNull())
+    {
+        if (!value["AutoCreateTopicStatus"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterInfo.AutoCreateTopicStatus` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoCreateTopicStatus = value["AutoCreateTopicStatus"].GetBool();
+        m_autoCreateTopicStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultPartitionNumber") && !value["DefaultPartitionNumber"].IsNull())
+    {
+        if (!value["DefaultPartitionNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterInfo.DefaultPartitionNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultPartitionNumber = value["DefaultPartitionNumber"].GetInt64();
+        m_defaultPartitionNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +282,22 @@ void PulsarProClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expireTime, allocator);
+    }
+
+    if (m_autoCreateTopicStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoCreateTopicStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoCreateTopicStatus, allocator);
+    }
+
+    if (m_defaultPartitionNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultPartitionNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultPartitionNumber, allocator);
     }
 
 }
@@ -439,5 +477,37 @@ void PulsarProClusterInfo::SetExpireTime(const int64_t& _expireTime)
 bool PulsarProClusterInfo::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+bool PulsarProClusterInfo::GetAutoCreateTopicStatus() const
+{
+    return m_autoCreateTopicStatus;
+}
+
+void PulsarProClusterInfo::SetAutoCreateTopicStatus(const bool& _autoCreateTopicStatus)
+{
+    m_autoCreateTopicStatus = _autoCreateTopicStatus;
+    m_autoCreateTopicStatusHasBeenSet = true;
+}
+
+bool PulsarProClusterInfo::AutoCreateTopicStatusHasBeenSet() const
+{
+    return m_autoCreateTopicStatusHasBeenSet;
+}
+
+int64_t PulsarProClusterInfo::GetDefaultPartitionNumber() const
+{
+    return m_defaultPartitionNumber;
+}
+
+void PulsarProClusterInfo::SetDefaultPartitionNumber(const int64_t& _defaultPartitionNumber)
+{
+    m_defaultPartitionNumber = _defaultPartitionNumber;
+    m_defaultPartitionNumberHasBeenSet = true;
+}
+
+bool PulsarProClusterInfo::DefaultPartitionNumberHasBeenSet() const
+{
+    return m_defaultPartitionNumberHasBeenSet;
 }
 

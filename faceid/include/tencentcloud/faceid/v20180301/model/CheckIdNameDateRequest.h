@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取姓名
-                     * @return Name 姓名
+                     * 获取姓名。
+                     * @return Name 姓名。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置姓名
-                     * @param _name 姓名
+                     * 设置姓名。
+                     * @param _name 姓名。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取身份证号
-                     * @return IdCard 身份证号
+                     * 获取身份证号。
+                     * @return IdCard 身份证号。
                      * 
                      */
                     std::string GetIdCard() const;
 
                     /**
-                     * 设置身份证号
-                     * @param _idCard 身份证号
+                     * 设置身份证号。
+                     * @param _idCard 身份证号。
                      * 
                      */
                     void SetIdCard(const std::string& _idCard);
@@ -86,15 +86,19 @@ namespace TencentCloud
                     bool IdCardHasBeenSet() const;
 
                     /**
-                     * 获取身份证有效期开始时间，格式：YYYYMMDD。如：20210701
-                     * @return ValidityBegin 身份证有效期开始时间，格式：YYYYMMDD。如：20210701
+                     * 获取身份证有效期开始时间。
+- 格式：YYYYMMDD，如：20210701。
+                     * @return ValidityBegin 身份证有效期开始时间。
+- 格式：YYYYMMDD，如：20210701。
                      * 
                      */
                     std::string GetValidityBegin() const;
 
                     /**
-                     * 设置身份证有效期开始时间，格式：YYYYMMDD。如：20210701
-                     * @param _validityBegin 身份证有效期开始时间，格式：YYYYMMDD。如：20210701
+                     * 设置身份证有效期开始时间。
+- 格式：YYYYMMDD，如：20210701。
+                     * @param _validityBegin 身份证有效期开始时间。
+- 格式：YYYYMMDD，如：20210701。
                      * 
                      */
                     void SetValidityBegin(const std::string& _validityBegin);
@@ -107,15 +111,19 @@ namespace TencentCloud
                     bool ValidityBeginHasBeenSet() const;
 
                     /**
-                     * 获取身份证有效期到期时间，格式：YYYYMMDD，长期用“00000000”代替；如：20210701
-                     * @return ValidityEnd 身份证有效期到期时间，格式：YYYYMMDD，长期用“00000000”代替；如：20210701
+                     * 获取身份证有效期到期时间。
+格式：YYYYMMDD，长期用“00000000”代替，如：20210701。
+                     * @return ValidityEnd 身份证有效期到期时间。
+格式：YYYYMMDD，长期用“00000000”代替，如：20210701。
                      * 
                      */
                     std::string GetValidityEnd() const;
 
                     /**
-                     * 设置身份证有效期到期时间，格式：YYYYMMDD，长期用“00000000”代替；如：20210701
-                     * @param _validityEnd 身份证有效期到期时间，格式：YYYYMMDD，长期用“00000000”代替；如：20210701
+                     * 设置身份证有效期到期时间。
+格式：YYYYMMDD，长期用“00000000”代替，如：20210701。
+                     * @param _validityEnd 身份证有效期到期时间。
+格式：YYYYMMDD，长期用“00000000”代替，如：20210701。
                      * 
                      */
                     void SetValidityEnd(const std::string& _validityEnd);
@@ -128,15 +136,19 @@ namespace TencentCloud
                     bool ValidityEndHasBeenSet() const;
 
                     /**
-                     * 获取敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @return Encryption 敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 获取敏感数据加密信息。
+- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @return Encryption 敏感数据加密信息。
+- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      * 
                      */
                     Encryption GetEncryption() const;
 
                     /**
-                     * 设置敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @param _encryption 敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 设置敏感数据加密信息。
+- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @param _encryption 敏感数据加密信息。
+- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      * 
                      */
                     void SetEncryption(const Encryption& _encryption);
@@ -151,31 +163,34 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 姓名
+                     * 姓名。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 身份证号
+                     * 身份证号。
                      */
                     std::string m_idCard;
                     bool m_idCardHasBeenSet;
 
                     /**
-                     * 身份证有效期开始时间，格式：YYYYMMDD。如：20210701
+                     * 身份证有效期开始时间。
+- 格式：YYYYMMDD，如：20210701。
                      */
                     std::string m_validityBegin;
                     bool m_validityBeginHasBeenSet;
 
                     /**
-                     * 身份证有效期到期时间，格式：YYYYMMDD，长期用“00000000”代替；如：20210701
+                     * 身份证有效期到期时间。
+格式：YYYYMMDD，长期用“00000000”代替，如：20210701。
                      */
                     std::string m_validityEnd;
                     bool m_validityEndHasBeenSet;
 
                     /**
-                     * 敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 敏感数据加密信息。
+- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      */
                     Encryption m_encryption;
                     bool m_encryptionHasBeenSet;

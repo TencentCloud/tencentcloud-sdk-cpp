@@ -41,7 +41,8 @@ RuleExecResult::RuleExecResult() :
     m_fieldConfigHasBeenSet(false),
     m_relConditionExprHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_alarmLevelHasBeenSet(false)
+    m_alarmLevelHasBeenSet(false),
+    m_triggerConditionHasBeenSet(false)
 {
 }
 
@@ -274,6 +275,16 @@ CoreInternalOutcome RuleExecResult::Deserialize(const rapidjson::Value &value)
         m_alarmLevelHasBeenSet = true;
     }
 
+    if (value.HasMember("TriggerCondition") && !value["TriggerCondition"].IsNull())
+    {
+        if (!value["TriggerCondition"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.TriggerCondition` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerCondition = string(value["TriggerCondition"].GetString());
+        m_triggerConditionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -449,6 +460,14 @@ void RuleExecResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AlarmLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_alarmLevel, allocator);
+    }
+
+    if (m_triggerConditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerCondition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerCondition.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -788,5 +807,21 @@ void RuleExecResult::SetAlarmLevel(const uint64_t& _alarmLevel)
 bool RuleExecResult::AlarmLevelHasBeenSet() const
 {
     return m_alarmLevelHasBeenSet;
+}
+
+string RuleExecResult::GetTriggerCondition() const
+{
+    return m_triggerCondition;
+}
+
+void RuleExecResult::SetTriggerCondition(const string& _triggerCondition)
+{
+    m_triggerCondition = _triggerCondition;
+    m_triggerConditionHasBeenSet = true;
+}
+
+bool RuleExecResult::TriggerConditionHasBeenSet() const
+{
+    return m_triggerConditionHasBeenSet;
 }
 

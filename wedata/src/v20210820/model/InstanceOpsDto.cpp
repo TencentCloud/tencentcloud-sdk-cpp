@@ -82,7 +82,9 @@ InstanceOpsDto::InstanceOpsDto() :
     m_instanceLifeCycleOpsDtoHasBeenSet(false),
     m_retryAttemptsHasBeenSet(false),
     m_deletedFatherListHasBeenSet(false),
-    m_circulateInstanceListHasBeenSet(false)
+    m_circulateInstanceListHasBeenSet(false),
+    m_concurrentStrategyHasBeenSet(false),
+    m_scheduleRunTypeHasBeenSet(false)
 {
 }
 
@@ -748,6 +750,26 @@ CoreInternalOutcome InstanceOpsDto::Deserialize(const rapidjson::Value &value)
         m_circulateInstanceListHasBeenSet = true;
     }
 
+    if (value.HasMember("ConcurrentStrategy") && !value["ConcurrentStrategy"].IsNull())
+    {
+        if (!value["ConcurrentStrategy"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.ConcurrentStrategy` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_concurrentStrategy = value["ConcurrentStrategy"].GetUint64();
+        m_concurrentStrategyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduleRunType") && !value["ScheduleRunType"].IsNull())
+    {
+        if (!value["ScheduleRunType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.ScheduleRunType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleRunType = value["ScheduleRunType"].GetUint64();
+        m_scheduleRunTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1270,6 +1292,22 @@ void InstanceOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_concurrentStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConcurrentStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_concurrentStrategy, allocator);
+    }
+
+    if (m_scheduleRunTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleRunType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scheduleRunType, allocator);
     }
 
 }
@@ -2265,5 +2303,37 @@ void InstanceOpsDto::SetCirculateInstanceList(const vector<InstanceOpsDto>& _cir
 bool InstanceOpsDto::CirculateInstanceListHasBeenSet() const
 {
     return m_circulateInstanceListHasBeenSet;
+}
+
+uint64_t InstanceOpsDto::GetConcurrentStrategy() const
+{
+    return m_concurrentStrategy;
+}
+
+void InstanceOpsDto::SetConcurrentStrategy(const uint64_t& _concurrentStrategy)
+{
+    m_concurrentStrategy = _concurrentStrategy;
+    m_concurrentStrategyHasBeenSet = true;
+}
+
+bool InstanceOpsDto::ConcurrentStrategyHasBeenSet() const
+{
+    return m_concurrentStrategyHasBeenSet;
+}
+
+uint64_t InstanceOpsDto::GetScheduleRunType() const
+{
+    return m_scheduleRunType;
+}
+
+void InstanceOpsDto::SetScheduleRunType(const uint64_t& _scheduleRunType)
+{
+    m_scheduleRunType = _scheduleRunType;
+    m_scheduleRunTypeHasBeenSet = true;
+}
+
+bool InstanceOpsDto::ScheduleRunTypeHasBeenSet() const
+{
+    return m_scheduleRunTypeHasBeenSet;
 }
 

@@ -41,7 +41,12 @@ RuleGroupExecResult::RuleGroupExecResult() :
     m_ruleGroupTableIdHasBeenSet(false),
     m_clusterDeployTypeHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_dsEnvTypeHasBeenSet(false)
+    m_dsEnvTypeHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_projectNameHasBeenSet(false),
+    m_instanceStatusHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_finishTimeHasBeenSet(false)
 {
 }
 
@@ -270,6 +275,56 @@ CoreInternalOutcome RuleGroupExecResult::Deserialize(const rapidjson::Value &val
         m_dsEnvTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
+    {
+        if (!value["ProjectId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecResult.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectId = string(value["ProjectId"].GetString());
+        m_projectIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProjectName") && !value["ProjectName"].IsNull())
+    {
+        if (!value["ProjectName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecResult.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectName = string(value["ProjectName"].GetString());
+        m_projectNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceStatus") && !value["InstanceStatus"].IsNull())
+    {
+        if (!value["InstanceStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecResult.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceStatus = string(value["InstanceStatus"].GetString());
+        m_instanceStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecResult.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FinishTime") && !value["FinishTime"].IsNull())
+    {
+        if (!value["FinishTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecResult.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_finishTime = string(value["FinishTime"].GetString());
+        m_finishTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +505,46 @@ void RuleGroupExecResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "DsEnvType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dsEnvType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_finishTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -789,5 +884,85 @@ void RuleGroupExecResult::SetDsEnvType(const string& _dsEnvType)
 bool RuleGroupExecResult::DsEnvTypeHasBeenSet() const
 {
     return m_dsEnvTypeHasBeenSet;
+}
+
+string RuleGroupExecResult::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void RuleGroupExecResult::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool RuleGroupExecResult::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+string RuleGroupExecResult::GetProjectName() const
+{
+    return m_projectName;
+}
+
+void RuleGroupExecResult::SetProjectName(const string& _projectName)
+{
+    m_projectName = _projectName;
+    m_projectNameHasBeenSet = true;
+}
+
+bool RuleGroupExecResult::ProjectNameHasBeenSet() const
+{
+    return m_projectNameHasBeenSet;
+}
+
+string RuleGroupExecResult::GetInstanceStatus() const
+{
+    return m_instanceStatus;
+}
+
+void RuleGroupExecResult::SetInstanceStatus(const string& _instanceStatus)
+{
+    m_instanceStatus = _instanceStatus;
+    m_instanceStatusHasBeenSet = true;
+}
+
+bool RuleGroupExecResult::InstanceStatusHasBeenSet() const
+{
+    return m_instanceStatusHasBeenSet;
+}
+
+string RuleGroupExecResult::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void RuleGroupExecResult::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool RuleGroupExecResult::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string RuleGroupExecResult::GetFinishTime() const
+{
+    return m_finishTime;
+}
+
+void RuleGroupExecResult::SetFinishTime(const string& _finishTime)
+{
+    m_finishTime = _finishTime;
+    m_finishTimeHasBeenSet = true;
+}
+
+bool RuleGroupExecResult::FinishTimeHasBeenSet() const
+{
+    return m_finishTimeHasBeenSet;
 }
 

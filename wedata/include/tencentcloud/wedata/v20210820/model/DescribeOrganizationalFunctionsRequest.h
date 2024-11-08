@@ -166,14 +166,14 @@ namespace TencentCloud
                      * @return Filters 过滤条件
                      * 
                      */
-                    Filter GetFilters() const;
+                    std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件
                      * @param _filters 过滤条件
                      * 
                      */
-                    void SetFilters(const Filter& _filters);
+                    void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
@@ -187,14 +187,14 @@ namespace TencentCloud
                      * @return OrderFields 排序条件
                      * 
                      */
-                    OrderField GetOrderFields() const;
+                    std::vector<OrderField> GetOrderFields() const;
 
                     /**
                      * 设置排序条件
                      * @param _orderFields 排序条件
                      * 
                      */
-                    void SetOrderFields(const OrderField& _orderFields);
+                    void SetOrderFields(const std::vector<OrderField>& _orderFields);
 
                     /**
                      * 判断参数 OrderFields 是否已赋值
@@ -241,13 +241,13 @@ namespace TencentCloud
                     /**
                      * 过滤条件
                      */
-                    Filter m_filters;
+                    std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
                      * 排序条件
                      */
-                    OrderField m_orderFields;
+                    std::vector<OrderField> m_orderFields;
                     bool m_orderFieldsHasBeenSet;
 
                 };

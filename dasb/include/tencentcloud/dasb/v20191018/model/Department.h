@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部门管理员账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Managers 部门管理员账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetManagers() const;
 
                     /**
                      * 设置部门管理员账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _managers 部门管理员账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetManagers(const std::vector<std::string>& _managers);
@@ -116,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取管理员用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ManagerUsers 管理员用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DepartmentManagerUser> GetManagerUsers() const;
 
                     /**
                      * 设置管理员用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _managerUsers 管理员用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetManagerUsers(const std::vector<DepartmentManagerUser>& _managerUsers);
@@ -155,14 +147,12 @@ namespace TencentCloud
 
                     /**
                      * 部门管理员账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_managers;
                     bool m_managersHasBeenSet;
 
                     /**
                      * 管理员用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DepartmentManagerUser> m_managerUsers;
                     bool m_managerUsersHasBeenSet;

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AddonNameHasBeenSet() const;
 
                     /**
-                     * 获取addon版本（不传默认不更新）
-                     * @return AddonVersion addon版本（不传默认不更新）
+                     * 获取addon版本（不传默认不更新，不传AddonVersion时RawValues必传）
+                     * @return AddonVersion addon版本（不传默认不更新，不传AddonVersion时RawValues必传）
                      * 
                      */
                     std::string GetAddonVersion() const;
 
                     /**
-                     * 设置addon版本（不传默认不更新）
-                     * @param _addonVersion addon版本（不传默认不更新）
+                     * 设置addon版本（不传默认不更新，不传AddonVersion时RawValues必传）
+                     * @param _addonVersion addon版本（不传默认不更新，不传AddonVersion时RawValues必传）
                      * 
                      */
                     void SetAddonVersion(const std::string& _addonVersion);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool AddonVersionHasBeenSet() const;
 
                     /**
-                     * 获取addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取）
-                     * @return RawValues addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取）
+                     * 获取addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传））
+                     * @return RawValues addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传））
                      * 
                      */
                     std::string GetRawValues() const;
 
                     /**
-                     * 设置addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取）
-                     * @param _rawValues addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取）
+                     * 设置addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传））
+                     * @param _rawValues addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传））
                      * 
                      */
                     void SetRawValues(const std::string& _rawValues);
@@ -125,6 +125,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RawValuesHasBeenSet() const;
+
+                    /**
+                     * 获取addon参数的更新策略，支持replace和merge两种策略，默认值为merge，兼容旧版本API。replace：使用新RawValues全量替换addon原RawValues，merge：根据新RawValues新增或更新addon原RawValues中对应参数。
+                     * @return UpdateStrategy addon参数的更新策略，支持replace和merge两种策略，默认值为merge，兼容旧版本API。replace：使用新RawValues全量替换addon原RawValues，merge：根据新RawValues新增或更新addon原RawValues中对应参数。
+                     * 
+                     */
+                    std::string GetUpdateStrategy() const;
+
+                    /**
+                     * 设置addon参数的更新策略，支持replace和merge两种策略，默认值为merge，兼容旧版本API。replace：使用新RawValues全量替换addon原RawValues，merge：根据新RawValues新增或更新addon原RawValues中对应参数。
+                     * @param _updateStrategy addon参数的更新策略，支持replace和merge两种策略，默认值为merge，兼容旧版本API。replace：使用新RawValues全量替换addon原RawValues，merge：根据新RawValues新增或更新addon原RawValues中对应参数。
+                     * 
+                     */
+                    void SetUpdateStrategy(const std::string& _updateStrategy);
+
+                    /**
+                     * 判断参数 UpdateStrategy 是否已赋值
+                     * @return UpdateStrategy 是否已赋值
+                     * 
+                     */
+                    bool UpdateStrategyHasBeenSet() const;
 
                 private:
 
@@ -141,16 +162,22 @@ namespace TencentCloud
                     bool m_addonNameHasBeenSet;
 
                     /**
-                     * addon版本（不传默认不更新）
+                     * addon版本（不传默认不更新，不传AddonVersion时RawValues必传）
                      */
                     std::string m_addonVersion;
                     bool m_addonVersionHasBeenSet;
 
                     /**
-                     * addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取）
+                     * addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传））
                      */
                     std::string m_rawValues;
                     bool m_rawValuesHasBeenSet;
+
+                    /**
+                     * addon参数的更新策略，支持replace和merge两种策略，默认值为merge，兼容旧版本API。replace：使用新RawValues全量替换addon原RawValues，merge：根据新RawValues新增或更新addon原RawValues中对应参数。
+                     */
+                    std::string m_updateStrategy;
+                    bool m_updateStrategyHasBeenSet;
 
                 };
             }

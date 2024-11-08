@@ -45,19 +45,21 @@ namespace TencentCloud
 
                     /**
                      * 获取认证结果码，收费情况如下。
-收费结果码：
+- 收费结果码：
 0: 查询成功
 -1: 未查到信息
-不收费结果码：
+
+- 不收费结果码：
 -2：验证中心服务繁忙
 -3：银行卡不存在
 -4：认证次数超过当日限制，请次日重试
 
                      * @return Result 认证结果码，收费情况如下。
-收费结果码：
+- 收费结果码：
 0: 查询成功
 -1: 未查到信息
-不收费结果码：
+
+- 不收费结果码：
 -2：验证中心服务繁忙
 -3：银行卡不存在
 -4：认证次数超过当日限制，请次日重试
@@ -74,8 +76,8 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取业务结果描述
-                     * @return Description 业务结果描述
+                     * 获取业务结果描述。
+                     * @return Description 业务结果描述。
                      * 
                      */
                     std::string GetDescription() const;
@@ -88,8 +90,8 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取开户行
-                     * @return AccountBank 开户行
+                     * 获取开户行。
+                     * @return AccountBank 开户行。
                      * 
                      */
                     std::string GetAccountBank() const;
@@ -102,8 +104,18 @@ namespace TencentCloud
                     bool AccountBankHasBeenSet() const;
 
                     /**
-                     * 获取卡性质：1. 借记卡；2. 贷记卡；3. 预付费卡；4. 准贷记卡
-                     * @return AccountType 卡性质：1. 借记卡；2. 贷记卡；3. 预付费卡；4. 准贷记卡
+                     * 获取卡性质。
+- 取值范围：
+1：借记卡。
+2：贷记卡。
+3：预付费卡。
+4：准贷记卡
+                     * @return AccountType 卡性质。
+- 取值范围：
+1：借记卡。
+2：贷记卡。
+3：预付费卡。
+4：准贷记卡
                      * 
                      */
                     int64_t GetAccountType() const;
@@ -119,10 +131,11 @@ namespace TencentCloud
 
                     /**
                      * 认证结果码，收费情况如下。
-收费结果码：
+- 收费结果码：
 0: 查询成功
 -1: 未查到信息
-不收费结果码：
+
+- 不收费结果码：
 -2：验证中心服务繁忙
 -3：银行卡不存在
 -4：认证次数超过当日限制，请次日重试
@@ -132,19 +145,24 @@ namespace TencentCloud
                     bool m_resultHasBeenSet;
 
                     /**
-                     * 业务结果描述
+                     * 业务结果描述。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 开户行
+                     * 开户行。
                      */
                     std::string m_accountBank;
                     bool m_accountBankHasBeenSet;
 
                     /**
-                     * 卡性质：1. 借记卡；2. 贷记卡；3. 预付费卡；4. 准贷记卡
+                     * 卡性质。
+- 取值范围：
+1：借记卡。
+2：贷记卡。
+3：预付费卡。
+4：准贷记卡
                      */
                     int64_t m_accountType;
                     bool m_accountTypeHasBeenSet;

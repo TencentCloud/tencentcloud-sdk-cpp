@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool CustomPolicyDocumentHasBeenSet() const;
 
+                    /**
+                     * 获取自定义策略内容列表（跟RolePolicyNames一一对应）
+                     * @return CustomPolicyDocuments 自定义策略内容列表（跟RolePolicyNames一一对应）
+                     * 
+                     */
+                    std::vector<std::string> GetCustomPolicyDocuments() const;
+
+                    /**
+                     * 设置自定义策略内容列表（跟RolePolicyNames一一对应）
+                     * @param _customPolicyDocuments 自定义策略内容列表（跟RolePolicyNames一一对应）
+                     * 
+                     */
+                    void SetCustomPolicyDocuments(const std::vector<std::string>& _customPolicyDocuments);
+
+                    /**
+                     * 判断参数 CustomPolicyDocuments 是否已赋值
+                     * @return CustomPolicyDocuments 是否已赋值
+                     * 
+                     */
+                    bool CustomPolicyDocumentsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     std::string m_customPolicyDocument;
                     bool m_customPolicyDocumentHasBeenSet;
+
+                    /**
+                     * 自定义策略内容列表（跟RolePolicyNames一一对应）
+                     */
+                    std::vector<std::string> m_customPolicyDocuments;
+                    bool m_customPolicyDocumentsHasBeenSet;
 
                 };
             }

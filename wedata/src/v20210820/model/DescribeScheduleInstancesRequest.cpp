@@ -23,6 +23,7 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeScheduleInstancesRequest::DescribeScheduleInstancesRequest() :
+    m_requestFromSourceHasBeenSet(false),
     m_instancesHasBeenSet(false),
     m_checkFatherHasBeenSet(false),
     m_rerunTypeHasBeenSet(false),
@@ -40,7 +41,8 @@ DescribeScheduleInstancesRequest::DescribeScheduleInstancesRequest() :
     m_pageSizeHasBeenSet(false),
     m_countHasBeenSet(false),
     m_requestBaseInfoHasBeenSet(false),
-    m_isCountHasBeenSet(false)
+    m_isCountHasBeenSet(false),
+    m_projectIdsHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,14 @@ string DescribeScheduleInstancesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_requestFromSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestFromSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_requestFromSource.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_instancesHasBeenSet)
     {
@@ -204,6 +214,19 @@ string DescribeScheduleInstancesRequest::ToJsonString() const
         d.AddMember(iKey, m_isCount, allocator);
     }
 
+    if (m_projectIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_projectIds.begin(); itr != m_projectIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -211,6 +234,22 @@ string DescribeScheduleInstancesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeScheduleInstancesRequest::GetRequestFromSource() const
+{
+    return m_requestFromSource;
+}
+
+void DescribeScheduleInstancesRequest::SetRequestFromSource(const string& _requestFromSource)
+{
+    m_requestFromSource = _requestFromSource;
+    m_requestFromSourceHasBeenSet = true;
+}
+
+bool DescribeScheduleInstancesRequest::RequestFromSourceHasBeenSet() const
+{
+    return m_requestFromSourceHasBeenSet;
+}
 
 vector<InstanceOpsDto> DescribeScheduleInstancesRequest::GetInstances() const
 {
@@ -498,6 +537,22 @@ void DescribeScheduleInstancesRequest::SetIsCount(const bool& _isCount)
 bool DescribeScheduleInstancesRequest::IsCountHasBeenSet() const
 {
     return m_isCountHasBeenSet;
+}
+
+vector<string> DescribeScheduleInstancesRequest::GetProjectIds() const
+{
+    return m_projectIds;
+}
+
+void DescribeScheduleInstancesRequest::SetProjectIds(const vector<string>& _projectIds)
+{
+    m_projectIds = _projectIds;
+    m_projectIdsHasBeenSet = true;
+}
+
+bool DescribeScheduleInstancesRequest::ProjectIdsHasBeenSet() const
+{
+    return m_projectIdsHasBeenSet;
 }
 
 

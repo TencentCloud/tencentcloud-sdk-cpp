@@ -32,7 +32,8 @@ RecognizeForeignPermanentResidentIdCardResponse::RecognizeForeignPermanentReside
     m_periodOfValidityHasBeenSet(false),
     m_noHasBeenSet(false),
     m_previousNumberHasBeenSet(false),
-    m_issuedAuthorityHasBeenSet(false)
+    m_issuedAuthorityHasBeenSet(false),
+    m_portraitImageInfoHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,23 @@ CoreInternalOutcome RecognizeForeignPermanentResidentIdCardResponse::Deserialize
         m_issuedAuthorityHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PortraitImageInfo") && !rsp["PortraitImageInfo"].IsNull())
+    {
+        if (!rsp["PortraitImageInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PortraitImageInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_portraitImageInfo.Deserialize(rsp["PortraitImageInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_portraitImageInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +258,15 @@ string RecognizeForeignPermanentResidentIdCardResponse::ToJsonString() const
         string key = "IssuedAuthority";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_issuedAuthority.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_portraitImageInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortraitImageInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_portraitImageInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -342,6 +369,16 @@ string RecognizeForeignPermanentResidentIdCardResponse::GetIssuedAuthority() con
 bool RecognizeForeignPermanentResidentIdCardResponse::IssuedAuthorityHasBeenSet() const
 {
     return m_issuedAuthorityHasBeenSet;
+}
+
+PortraitImageInfo RecognizeForeignPermanentResidentIdCardResponse::GetPortraitImageInfo() const
+{
+    return m_portraitImageInfo;
+}
+
+bool RecognizeForeignPermanentResidentIdCardResponse::PortraitImageInfoHasBeenSet() const
+{
+    return m_portraitImageInfoHasBeenSet;
 }
 
 

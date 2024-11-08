@@ -25,7 +25,8 @@ using namespace std;
 HmtResidentPermitOCRRequest::HmtResidentPermitOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_cardSideHasBeenSet(false)
+    m_cardSideHasBeenSet(false),
+    m_cropPortraitHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string HmtResidentPermitOCRRequest::ToJsonString() const
         string key = "CardSide";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cardSide.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cropPortraitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CropPortrait";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cropPortrait, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void HmtResidentPermitOCRRequest::SetCardSide(const string& _cardSide)
 bool HmtResidentPermitOCRRequest::CardSideHasBeenSet() const
 {
     return m_cardSideHasBeenSet;
+}
+
+bool HmtResidentPermitOCRRequest::GetCropPortrait() const
+{
+    return m_cropPortrait;
+}
+
+void HmtResidentPermitOCRRequest::SetCropPortrait(const bool& _cropPortrait)
+{
+    m_cropPortrait = _cropPortrait;
+    m_cropPortraitHasBeenSet = true;
+}
+
+bool HmtResidentPermitOCRRequest::CropPortraitHasBeenSet() const
+{
+    return m_cropPortraitHasBeenSet;
 }
 
 

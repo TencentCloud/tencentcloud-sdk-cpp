@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作关系（等于、不等于、包含、不包含）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operate 操作关系（等于、不等于、包含、不包含）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperate() const;
 
                     /**
                      * 设置操作关系（等于、不等于、包含、不包含）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operate 操作关系（等于、不等于、包含、不包含）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperate(const std::string& _operate);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内容，v2多值版本使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 内容，v2多值版本使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置内容，v2多值版本使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _values 内容，v2多值版本使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 操作关系（等于、不等于、包含、不包含）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operate;
                     bool m_operateHasBeenSet;
 
                     /**
                      * 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 内容，v2多值版本使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;

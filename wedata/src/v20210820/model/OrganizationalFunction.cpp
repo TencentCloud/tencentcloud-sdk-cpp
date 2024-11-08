@@ -49,7 +49,8 @@ OrganizationalFunction::OrganizationalFunction() :
     m_tagHasBeenSet(false),
     m_operatorUserIdsStrHasBeenSet(false),
     m_ownerUserIdsStrHasBeenSet(false),
-    m_envTypeHasBeenSet(false)
+    m_envTypeHasBeenSet(false),
+    m_functionResourceFileTypeHasBeenSet(false)
 {
 }
 
@@ -370,6 +371,16 @@ CoreInternalOutcome OrganizationalFunction::Deserialize(const rapidjson::Value &
         m_envTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("FunctionResourceFileType") && !value["FunctionResourceFileType"].IsNull())
+    {
+        if (!value["FunctionResourceFileType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationalFunction.FunctionResourceFileType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_functionResourceFileType = string(value["FunctionResourceFileType"].GetString());
+        m_functionResourceFileTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -634,6 +645,14 @@ void OrganizationalFunction::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "EnvType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_envType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_functionResourceFileTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FunctionResourceFileType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_functionResourceFileType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1101,5 +1120,21 @@ void OrganizationalFunction::SetEnvType(const string& _envType)
 bool OrganizationalFunction::EnvTypeHasBeenSet() const
 {
     return m_envTypeHasBeenSet;
+}
+
+string OrganizationalFunction::GetFunctionResourceFileType() const
+{
+    return m_functionResourceFileType;
+}
+
+void OrganizationalFunction::SetFunctionResourceFileType(const string& _functionResourceFileType)
+{
+    m_functionResourceFileType = _functionResourceFileType;
+    m_functionResourceFileTypeHasBeenSet = true;
+}
+
+bool OrganizationalFunction::FunctionResourceFileTypeHasBeenSet() const
+{
+    return m_functionResourceFileTypeHasBeenSet;
 }
 

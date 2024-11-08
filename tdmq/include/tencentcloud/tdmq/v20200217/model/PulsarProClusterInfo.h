@@ -294,6 +294,60 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启自动创建主题
+true就是开启了，false是关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoCreateTopicStatus 是否开启自动创建主题
+true就是开启了，false是关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAutoCreateTopicStatus() const;
+
+                    /**
+                     * 设置是否开启自动创建主题
+true就是开启了，false是关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _autoCreateTopicStatus 是否开启自动创建主题
+true就是开启了，false是关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAutoCreateTopicStatus(const bool& _autoCreateTopicStatus);
+
+                    /**
+                     * 判断参数 AutoCreateTopicStatus 是否已赋值
+                     * @return AutoCreateTopicStatus 是否已赋值
+                     * 
+                     */
+                    bool AutoCreateTopicStatusHasBeenSet() const;
+
+                    /**
+                     * 获取自动创建主题的默认分区数，如果没开启就是0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultPartitionNumber 自动创建主题的默认分区数，如果没开启就是0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDefaultPartitionNumber() const;
+
+                    /**
+                     * 设置自动创建主题的默认分区数，如果没开启就是0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _defaultPartitionNumber 自动创建主题的默认分区数，如果没开启就是0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDefaultPartitionNumber(const int64_t& _defaultPartitionNumber);
+
+                    /**
+                     * 判断参数 DefaultPartitionNumber 是否已赋值
+                     * @return DefaultPartitionNumber 是否已赋值
+                     * 
+                     */
+                    bool DefaultPartitionNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -365,6 +419,21 @@ namespace TencentCloud
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 是否开启自动创建主题
+true就是开启了，false是关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_autoCreateTopicStatus;
+                    bool m_autoCreateTopicStatusHasBeenSet;
+
+                    /**
+                     * 自动创建主题的默认分区数，如果没开启就是0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_defaultPartitionNumber;
+                    bool m_defaultPartitionNumberHasBeenSet;
 
                 };
             }

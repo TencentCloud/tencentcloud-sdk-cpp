@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Device 资产信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Device GetDevice() const;
 
                     /**
                      * 设置资产信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _device 资产信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDevice(const Device& _device);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Account 资产账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccount() const;
 
                     /**
                      * 设置资产账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _account 资产账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccount(const std::string& _account);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上次改密结果。0-未改密  1-改密成功 2-改密失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastChangeStatus 上次改密结果。0-未改密  1-改密成功 2-改密失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLastChangeStatus() const;
 
                     /**
                      * 设置上次改密结果。0-未改密  1-改密成功 2-改密失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastChangeStatus 上次改密结果。0-未改密  1-改密成功 2-改密失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastChangeStatus(const uint64_t& _lastChangeStatus);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 资产信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Device m_device;
                     bool m_deviceHasBeenSet;
 
                     /**
                      * 资产账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_account;
                     bool m_accountHasBeenSet;
 
                     /**
                      * 上次改密结果。0-未改密  1-改密成功 2-改密失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_lastChangeStatus;
                     bool m_lastChangeStatusHasBeenSet;

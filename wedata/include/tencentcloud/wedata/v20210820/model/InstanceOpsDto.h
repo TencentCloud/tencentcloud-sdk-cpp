@@ -1599,6 +1599,56 @@ namespace TencentCloud
                      */
                     bool CirculateInstanceListHasBeenSet() const;
 
+                    /**
+                     * 获取并发策略, 0: 等待并发, 1: kill自身
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConcurrentStrategy 并发策略, 0: 等待并发, 1: kill自身
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetConcurrentStrategy() const;
+
+                    /**
+                     * 设置并发策略, 0: 等待并发, 1: kill自身
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _concurrentStrategy 并发策略, 0: 等待并发, 1: kill自身
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConcurrentStrategy(const uint64_t& _concurrentStrategy);
+
+                    /**
+                     * 判断参数 ConcurrentStrategy 是否已赋值
+                     * @return ConcurrentStrategy 是否已赋值
+                     * 
+                     */
+                    bool ConcurrentStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取调度运行方式, 0: 周期调度, 1: 空跑调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduleRunType 调度运行方式, 0: 周期调度, 1: 空跑调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetScheduleRunType() const;
+
+                    /**
+                     * 设置调度运行方式, 0: 周期调度, 1: 空跑调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scheduleRunType 调度运行方式, 0: 周期调度, 1: 空跑调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScheduleRunType(const uint64_t& _scheduleRunType);
+
+                    /**
+                     * 判断参数 ScheduleRunType 是否已赋值
+                     * @return ScheduleRunType 是否已赋值
+                     * 
+                     */
+                    bool ScheduleRunTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2034,6 +2084,20 @@ namespace TencentCloud
                      */
                     std::vector<InstanceOpsDto> m_circulateInstanceList;
                     bool m_circulateInstanceListHasBeenSet;
+
+                    /**
+                     * 并发策略, 0: 等待并发, 1: kill自身
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_concurrentStrategy;
+                    bool m_concurrentStrategyHasBeenSet;
+
+                    /**
+                     * 调度运行方式, 0: 周期调度, 1: 空跑调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_scheduleRunType;
+                    bool m_scheduleRunTypeHasBeenSet;
 
                 };
             }

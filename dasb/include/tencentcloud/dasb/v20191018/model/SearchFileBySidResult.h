@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取method为重命名、移动文件时代表移动后的新位置.其他情况为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileNew method为重命名、移动文件时代表移动后的新位置.其他情况为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileNew() const;
 
                     /**
                      * 设置method为重命名、移动文件时代表移动后的新位置.其他情况为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileNew method为重命名、移动文件时代表移动后的新位置.其他情况为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileNew(const std::string& _fileNew);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取method为上传文件、下载文件、删除文件时显示文件大小。其他情况为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size method为上传文件、下载文件、删除文件时显示文件大小。其他情况为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置method为上传文件、下载文件、删除文件时显示文件大小。其他情况为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _size method为上传文件、下载文件、删除文件时显示文件大小。其他情况为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSize(const int64_t& _size);
@@ -229,14 +221,12 @@ namespace TencentCloud
 
                     /**
                      * method为重命名、移动文件时代表移动后的新位置.其他情况为null
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileNew;
                     bool m_fileNewHasBeenSet;
 
                     /**
                      * method为上传文件、下载文件、删除文件时显示文件大小。其他情况为null
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;

@@ -446,6 +446,89 @@ namespace TencentCloud
                      */
                     bool IntentionHasBeenSet() const;
 
+                    /**
+                     * 获取100 无绑定用户
+200 单用户单token
+300 单用户 多token
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TokenType 100 无绑定用户
+200 单用户单token
+300 单用户 多token
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTokenType() const;
+
+                    /**
+                     * 设置100 无绑定用户
+200 单用户单token
+300 单用户 多token
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tokenType 100 无绑定用户
+200 单用户单token
+300 单用户 多token
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTokenType(const int64_t& _tokenType);
+
+                    /**
+                     * 判断参数 TokenType 是否已赋值
+                     * @return TokenType 是否已赋值
+                     * 
+                     */
+                    bool TokenTypeHasBeenSet() const;
+
+                    /**
+                     * 获取token 数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TokenNum token 数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTokenNum() const;
+
+                    /**
+                     * 设置token 数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tokenNum token 数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTokenNum(const int64_t& _tokenNum);
+
+                    /**
+                     * 判断参数 TokenNum 是否已赋值
+                     * @return TokenNum 是否已赋值
+                     * 
+                     */
+                    bool TokenNumHasBeenSet() const;
+
+                    /**
+                     * 获取是否单用户多token
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SingleUserMultiToken 是否单用户多token
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetSingleUserMultiToken() const;
+
+                    /**
+                     * 设置是否单用户多token
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _singleUserMultiToken 是否单用户多token
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSingleUserMultiToken(const bool& _singleUserMultiToken);
+
+                    /**
+                     * 判断参数 SingleUserMultiToken 是否已赋值
+                     * @return SingleUserMultiToken 是否已赋值
+                     * 
+                     */
+                    bool SingleUserMultiTokenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -559,6 +642,29 @@ namespace TencentCloud
                      */
                     std::string m_intention;
                     bool m_intentionHasBeenSet;
+
+                    /**
+                     * 100 无绑定用户
+200 单用户单token
+300 单用户 多token
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_tokenType;
+                    bool m_tokenTypeHasBeenSet;
+
+                    /**
+                     * token 数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_tokenNum;
+                    bool m_tokenNumHasBeenSet;
+
+                    /**
+                     * 是否单用户多token
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_singleUserMultiToken;
+                    bool m_singleUserMultiTokenHasBeenSet;
 
                 };
             }

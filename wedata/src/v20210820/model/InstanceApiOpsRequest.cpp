@@ -51,7 +51,8 @@ InstanceApiOpsRequest::InstanceApiOpsRequest() :
     m_dagDepthHasBeenSet(false),
     m_tenantIdHasBeenSet(false),
     m_dataTimeCycleHasBeenSet(false),
-    m_executorGroupIdListHasBeenSet(false)
+    m_executorGroupIdListHasBeenSet(false),
+    m_onlyRerunHasBeenSet(false)
 {
 }
 
@@ -420,6 +421,16 @@ CoreInternalOutcome InstanceApiOpsRequest::Deserialize(const rapidjson::Value &v
         m_executorGroupIdListHasBeenSet = true;
     }
 
+    if (value.HasMember("OnlyRerun") && !value["OnlyRerun"].IsNull())
+    {
+        if (!value["OnlyRerun"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceApiOpsRequest.OnlyRerun` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_onlyRerun = value["OnlyRerun"].GetBool();
+        m_onlyRerunHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -736,6 +747,14 @@ void InstanceApiOpsRequest::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_onlyRerunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OnlyRerun";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_onlyRerun, allocator);
     }
 
 }
@@ -1235,5 +1254,21 @@ void InstanceApiOpsRequest::SetExecutorGroupIdList(const vector<string>& _execut
 bool InstanceApiOpsRequest::ExecutorGroupIdListHasBeenSet() const
 {
     return m_executorGroupIdListHasBeenSet;
+}
+
+bool InstanceApiOpsRequest::GetOnlyRerun() const
+{
+    return m_onlyRerun;
+}
+
+void InstanceApiOpsRequest::SetOnlyRerun(const bool& _onlyRerun)
+{
+    m_onlyRerun = _onlyRerun;
+    m_onlyRerunHasBeenSet = true;
+}
+
+bool InstanceApiOpsRequest::OnlyRerunHasBeenSet() const
+{
+    return m_onlyRerunHasBeenSet;
 }
 

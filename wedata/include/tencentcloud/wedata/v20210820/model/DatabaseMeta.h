@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/GovDatasourceInfo.h>
 
 
 namespace TencentCloud
@@ -521,6 +522,156 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取总表数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableCount 总表数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTableCount() const;
+
+                    /**
+                     * 设置总表数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableCount 总表数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableCount(const int64_t& _tableCount);
+
+                    /**
+                     * 判断参数 TableCount 是否已赋值
+                     * @return TableCount 是否已赋值
+                     * 
+                     */
+                    bool TableCountHasBeenSet() const;
+
+                    /**
+                     * 获取数据源信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceList 数据源信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<GovDatasourceInfo> GetDatasourceList() const;
+
+                    /**
+                     * 设置数据源信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceList 数据源信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceList(const std::vector<GovDatasourceInfo>& _datasourceList);
+
+                    /**
+                     * 判断参数 DatasourceList 是否已赋值
+                     * @return DatasourceList 是否已赋值
+                     * 
+                     */
+                    bool DatasourceListHasBeenSet() const;
+
+                    /**
+                     * 获取采集任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CollectJobId 采集任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCollectJobId() const;
+
+                    /**
+                     * 设置采集任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _collectJobId 采集任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCollectJobId(const std::string& _collectJobId);
+
+                    /**
+                     * 判断参数 CollectJobId 是否已赋值
+                     * @return CollectJobId 是否已赋值
+                     * 
+                     */
+                    bool CollectJobIdHasBeenSet() const;
+
+                    /**
+                     * 获取采集任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CollectJobName 采集任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCollectJobName() const;
+
+                    /**
+                     * 设置采集任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _collectJobName 采集任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCollectJobName(const std::string& _collectJobName);
+
+                    /**
+                     * 判断参数 CollectJobName 是否已赋值
+                     * @return CollectJobName 是否已赋值
+                     * 
+                     */
+                    bool CollectJobNameHasBeenSet() const;
+
+                    /**
+                     * 获取引擎id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterId 引擎id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置引擎id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterId 引擎id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取引擎名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterName 引擎名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 设置引擎名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterName 引擎名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterName(const std::string& _clusterName);
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     * 
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -655,6 +806,48 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 总表数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_tableCount;
+                    bool m_tableCountHasBeenSet;
+
+                    /**
+                     * 数据源信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<GovDatasourceInfo> m_datasourceList;
+                    bool m_datasourceListHasBeenSet;
+
+                    /**
+                     * 采集任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_collectJobId;
+                    bool m_collectJobIdHasBeenSet;
+
+                    /**
+                     * 采集任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_collectJobName;
+                    bool m_collectJobNameHasBeenSet;
+
+                    /**
+                     * 引擎id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 引擎名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
 
                 };
             }

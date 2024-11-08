@@ -397,6 +397,31 @@ namespace TencentCloud
                      */
                     bool ExtensionInfoHasBeenSet() const;
 
+                    /**
+                     * 获取统一执行平台，下发执行Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecutionJobId 统一执行平台，下发执行Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExecutionJobId() const;
+
+                    /**
+                     * 设置统一执行平台，下发执行Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _executionJobId 统一执行平台，下发执行Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecutionJobId(const std::string& _executionJobId);
+
+                    /**
+                     * 判断参数 ExecutionJobId 是否已赋值
+                     * @return ExecutionJobId 是否已赋值
+                     * 
+                     */
+                    bool ExecutionJobIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -496,6 +521,13 @@ namespace TencentCloud
                      */
                     std::vector<AttributeItemDTO> m_extensionInfo;
                     bool m_extensionInfoHasBeenSet;
+
+                    /**
+                     * 统一执行平台，下发执行Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_executionJobId;
+                    bool m_executionJobIdHasBeenSet;
 
                 };
             }

@@ -226,7 +226,7 @@ namespace TencentCloud
                 ListAuditsOutcomeCallable ListAuditsCallable(const Model::ListAuditsRequest& request);
 
                 /**
-                 *查询云审计支持的cmq的可用区
+                 *查询操作审计支持的cmq的可用区
                  * @param req ListCmqEnableRegionRequest
                  * @return ListCmqEnableRegionOutcome
                  */
@@ -235,7 +235,7 @@ namespace TencentCloud
                 ListCmqEnableRegionOutcomeCallable ListCmqEnableRegionCallable(const Model::ListCmqEnableRegionRequest& request);
 
                 /**
-                 *查询云审计支持的cos可用区
+                 *查询操作审计支持的cos可用区
                  * @param req ListCosEnableRegionRequest
                  * @return ListCosEnableRegionOutcome
                  */

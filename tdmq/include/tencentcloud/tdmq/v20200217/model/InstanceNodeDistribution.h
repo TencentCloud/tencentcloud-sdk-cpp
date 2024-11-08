@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool NodeCountHasBeenSet() const;
 
+                    /**
+                     * 获取有调度任务且没有切回的可用区，此标识为true
+                     * @return NodePermWipeFlag 有调度任务且没有切回的可用区，此标识为true
+                     * 
+                     */
+                    bool GetNodePermWipeFlag() const;
+
+                    /**
+                     * 设置有调度任务且没有切回的可用区，此标识为true
+                     * @param _nodePermWipeFlag 有调度任务且没有切回的可用区，此标识为true
+                     * 
+                     */
+                    void SetNodePermWipeFlag(const bool& _nodePermWipeFlag);
+
+                    /**
+                     * 判断参数 NodePermWipeFlag 是否已赋值
+                     * @return NodePermWipeFlag 是否已赋值
+                     * 
+                     */
+                    bool NodePermWipeFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     uint64_t m_nodeCount;
                     bool m_nodeCountHasBeenSet;
+
+                    /**
+                     * 有调度任务且没有切回的可用区，此标识为true
+                     */
+                    bool m_nodePermWipeFlag;
+                    bool m_nodePermWipeFlagHasBeenSet;
 
                 };
             }

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClbIp 负载均衡IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClbIp() const;
 
                     /**
                      * 设置负载均衡IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clbIp 负载均衡IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClbIp(const std::string& _clbIp);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 负载均衡IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clbIp;
                     bool m_clbIpHasBeenSet;

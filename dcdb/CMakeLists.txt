@@ -51,9 +51,10 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSlowLogsRequest.h
   include/tencentcloud/dcdb/v20180411/model/CreateAccountRequest.h
   include/tencentcloud/dcdb/v20180411/model/UpgradeDedicatedDCDBInstanceResponse.h
+  include/tencentcloud/dcdb/v20180411/model/CreateOnlineDDLJobResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBParametersResponse.h
   include/tencentcloud/dcdb/v20180411/model/Tag.h
-  include/tencentcloud/dcdb/v20180411/model/DescribeBackupFilesRequest.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeDatabaseTableRequest.h
   include/tencentcloud/dcdb/v20180411/model/IsolateHourDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstanceNameResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeFlowResponse.h
@@ -121,7 +122,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DCDBShardInfo.h
   include/tencentcloud/dcdb/v20180411/model/CopyAccountPrivilegesRequest.h
   include/tencentcloud/dcdb/v20180411/model/SecurityGroup.h
-  include/tencentcloud/dcdb/v20180411/model/DescribeDatabaseTableRequest.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeBackupFilesRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceNodeInfoResponse.h
   include/tencentcloud/dcdb/v20180411/model/KillSessionRequest.h
   include/tencentcloud/dcdb/v20180411/model/TerminateDedicatedDBInstanceRequest.h
@@ -164,6 +165,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/KillSessionResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeProjectsRequest.h
   include/tencentcloud/dcdb/v20180411/model/SlowLogData.h
+  include/tencentcloud/dcdb/v20180411/model/CreateOnlineDDLJobRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDatabasesResponse.h
   include/tencentcloud/dcdb/v20180411/model/ViewPrivileges.h
   include/tencentcloud/dcdb/v20180411/model/DescribeOrdersRequest.h
@@ -254,9 +256,10 @@ set(dcdb_src
   src/v20180411/model/DescribeDBSlowLogsRequest.cpp
   src/v20180411/model/CreateAccountRequest.cpp
   src/v20180411/model/UpgradeDedicatedDCDBInstanceResponse.cpp
+  src/v20180411/model/CreateOnlineDDLJobResponse.cpp
   src/v20180411/model/DescribeDBParametersResponse.cpp
   src/v20180411/model/Tag.cpp
-  src/v20180411/model/DescribeBackupFilesRequest.cpp
+  src/v20180411/model/DescribeDatabaseTableRequest.cpp
   src/v20180411/model/IsolateHourDCDBInstanceRequest.cpp
   src/v20180411/model/ModifyDBInstanceNameResponse.cpp
   src/v20180411/model/DescribeFlowResponse.cpp
@@ -324,7 +327,7 @@ set(dcdb_src
   src/v20180411/model/DCDBShardInfo.cpp
   src/v20180411/model/CopyAccountPrivilegesRequest.cpp
   src/v20180411/model/SecurityGroup.cpp
-  src/v20180411/model/DescribeDatabaseTableRequest.cpp
+  src/v20180411/model/DescribeBackupFilesRequest.cpp
   src/v20180411/model/DescribeDCDBInstanceNodeInfoResponse.cpp
   src/v20180411/model/KillSessionRequest.cpp
   src/v20180411/model/TerminateDedicatedDBInstanceRequest.cpp
@@ -367,6 +370,7 @@ set(dcdb_src
   src/v20180411/model/KillSessionResponse.cpp
   src/v20180411/model/DescribeProjectsRequest.cpp
   src/v20180411/model/SlowLogData.cpp
+  src/v20180411/model/CreateOnlineDDLJobRequest.cpp
   src/v20180411/model/DescribeDatabasesResponse.cpp
   src/v20180411/model/ViewPrivileges.cpp
   src/v20180411/model/DescribeOrdersRequest.cpp

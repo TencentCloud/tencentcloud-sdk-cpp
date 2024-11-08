@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取堡垒机资源数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 堡垒机资源数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 堡垒机资源数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

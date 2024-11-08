@@ -279,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Account 账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccount() const;
 
                     /**
                      * 设置账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _account 账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccount(const std::string& _account);
@@ -304,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取source ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FromIp source ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFromIp() const;
 
                     /**
                      * 设置source ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fromIp source ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFromIp(const std::string& _fromIp);
@@ -329,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该命令所属会话的会话开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionTime 该命令所属会话的会话开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSessionTime() const;
 
                     /**
                      * 设置该命令所属会话的会话开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionTime 该命令所属会话的会话开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionTime(const std::string& _sessionTime);
@@ -379,18 +367,14 @@ namespace TencentCloud
 
                     /**
                      * 获取复核时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfirmTime 复核时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfirmTime() const;
 
                     /**
                      * 设置复核时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _confirmTime 复核时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfirmTime(const std::string& _confirmTime);
@@ -404,18 +388,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部门id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserDepartmentId 部门id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserDepartmentId() const;
 
                     /**
                      * 设置部门id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userDepartmentId 部门id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserDepartmentId(const std::string& _userDepartmentId);
@@ -429,18 +409,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserDepartmentName 用户部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserDepartmentName() const;
 
                     /**
                      * 设置用户部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userDepartmentName 用户部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserDepartmentName(const std::string& _userDepartmentName);
@@ -454,18 +430,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备部门id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceDepartmentId 设备部门id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceDepartmentId() const;
 
                     /**
                      * 设置设备部门id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceDepartmentId 设备部门id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceDepartmentId(const std::string& _deviceDepartmentId);
@@ -479,18 +451,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceDepartmentName 设备部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceDepartmentName() const;
 
                     /**
                      * 设置设备部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceDepartmentName 设备部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceDepartmentName(const std::string& _deviceDepartmentName);
@@ -504,18 +472,14 @@ namespace TencentCloud
 
                     /**
                      * 获取会话大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 会话大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 设置会话大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _size 会话大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSize(const uint64_t& _size);
@@ -597,21 +561,18 @@ namespace TencentCloud
 
                     /**
                      * 账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_account;
                     bool m_accountHasBeenSet;
 
                     /**
                      * source ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fromIp;
                     bool m_fromIpHasBeenSet;
 
                     /**
                      * 该命令所属会话的会话开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionTime;
                     bool m_sessionTimeHasBeenSet;
@@ -625,42 +586,36 @@ namespace TencentCloud
 
                     /**
                      * 复核时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_confirmTime;
                     bool m_confirmTimeHasBeenSet;
 
                     /**
                      * 部门id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userDepartmentId;
                     bool m_userDepartmentIdHasBeenSet;
 
                     /**
                      * 用户部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userDepartmentName;
                     bool m_userDepartmentNameHasBeenSet;
 
                     /**
                      * 设备部门id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceDepartmentId;
                     bool m_deviceDepartmentIdHasBeenSet;
 
                     /**
                      * 设备部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceDepartmentName;
                     bool m_deviceDepartmentNameHasBeenSet;
 
                     /**
                      * 会话大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_size;
                     bool m_sizeHasBeenSet;

@@ -637,18 +637,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志投递规格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogDeliveryArgs 日志投递规格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogDeliveryArgs() const;
 
                     /**
                      * 设置日志投递规格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logDeliveryArgs 日志投递规格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogDeliveryArgs(const std::string& _logDeliveryArgs);
@@ -662,18 +658,14 @@ namespace TencentCloud
 
                     /**
                      * 获取堡垒机资源LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClbSet 堡垒机资源LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Clb> GetClbSet() const;
 
                     /**
                      * 设置堡垒机资源LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clbSet 堡垒机资源LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClbSet(const std::vector<Clb>& _clbSet);
@@ -687,18 +679,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络域个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainCount 网络域个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDomainCount() const;
 
                     /**
                      * 设置网络域个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainCount 网络域个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainCount(const int64_t& _domainCount);
@@ -712,18 +700,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用网络域个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedDomainCount 已使用网络域个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUsedDomainCount() const;
 
                     /**
                      * 设置已使用网络域个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usedDomainCount 已使用网络域个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsedDomainCount(const uint64_t& _usedDomainCount);
@@ -737,18 +721,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0 非试用版，1 试用版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Trial 0 非试用版，1 试用版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTrial() const;
 
                     /**
                      * 设置0 非试用版，1 试用版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trial 0 非试用版，1 试用版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrial(const uint64_t& _trial);
@@ -762,18 +742,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cdc集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcClusterId cdc集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcClusterId() const;
 
                     /**
                      * 设置cdc集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcClusterId cdc集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcClusterId(const std::string& _cdcClusterId);
@@ -787,18 +763,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志投递规格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogDelivery 日志投递规格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogDelivery() const;
 
                     /**
                      * 设置日志投递规格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logDelivery 日志投递规格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogDelivery(const std::string& _logDelivery);
@@ -1007,49 +979,42 @@ namespace TencentCloud
 
                     /**
                      * 日志投递规格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logDeliveryArgs;
                     bool m_logDeliveryArgsHasBeenSet;
 
                     /**
                      * 堡垒机资源LB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Clb> m_clbSet;
                     bool m_clbSetHasBeenSet;
 
                     /**
                      * 网络域个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_domainCount;
                     bool m_domainCountHasBeenSet;
 
                     /**
                      * 已使用网络域个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_usedDomainCount;
                     bool m_usedDomainCountHasBeenSet;
 
                     /**
                      * 0 非试用版，1 试用版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_trial;
                     bool m_trialHasBeenSet;
 
                     /**
                      * cdc集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcClusterId;
                     bool m_cdcClusterIdHasBeenSet;
 
                     /**
                      * 日志投递规格信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logDelivery;
                     bool m_logDeliveryHasBeenSet;

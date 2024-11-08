@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Details 任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ChangePwdTaskDetail> GetDetails() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ChangePwdTaskDetail> m_details;
                     bool m_detailsHasBeenSet;

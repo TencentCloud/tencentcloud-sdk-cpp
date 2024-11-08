@@ -68,7 +68,9 @@ Rule::Rule() :
     m_dsEnvTypeHasBeenSet(false),
     m_datasourceTypeHasBeenSet(false),
     m_schemaNameHasBeenSet(false),
-    m_targetSchemaNameHasBeenSet(false)
+    m_targetSchemaNameHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_projectNameHasBeenSet(false)
 {
 }
 
@@ -588,6 +590,26 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
         m_targetSchemaNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
+    {
+        if (!value["ProjectId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectId = string(value["ProjectId"].GetString());
+        m_projectIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProjectName") && !value["ProjectName"].IsNull())
+    {
+        if (!value["ProjectName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectName = string(value["ProjectName"].GetString());
+        m_projectNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -986,6 +1008,22 @@ void Rule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "TargetSchemaName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_targetSchemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1757,5 +1795,37 @@ void Rule::SetTargetSchemaName(const string& _targetSchemaName)
 bool Rule::TargetSchemaNameHasBeenSet() const
 {
     return m_targetSchemaNameHasBeenSet;
+}
+
+string Rule::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void Rule::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool Rule::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+string Rule::GetProjectName() const
+{
+    return m_projectName;
+}
+
+void Rule::SetProjectName(const string& _projectName)
+{
+    m_projectName = _projectName;
+    m_projectNameHasBeenSet = true;
+}
+
+bool Rule::ProjectNameHasBeenSet() const
+{
+    return m_projectNameHasBeenSet;
 }
 

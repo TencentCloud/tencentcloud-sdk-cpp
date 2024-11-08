@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页条数，缺省为20
-                     * @return Limit 分页条数，缺省为20
+                     * 获取分页的条数，默认是20条。
+                     * @return Limit 分页的条数，默认是20条。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页条数，缺省为20
-                     * @param _limit 分页条数，缺省为20
+                     * 设置分页的条数，默认是20条。
+                     * @param _limit 分页的条数，默认是20条。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页起始值，缺省为0
-                     * @return Offset 分页起始值，缺省为0
+                     * 获取分页的起始值，默认从0开始。
+                     * @return Offset 分页的起始值，默认从0开始。
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页起始值，缺省为0
-                     * @param _offset 分页起始值，缺省为0
+                     * 设置分页的起始值，默认从0开始。
+                     * @param _offset 分页的起始值，默认从0开始。
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分页条数，缺省为20
+                     * 分页的条数，默认是20条。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页起始值，缺省为0
+                     * 分页的起始值，默认从0开始。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

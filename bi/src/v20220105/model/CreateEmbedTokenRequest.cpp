@@ -32,7 +32,9 @@ CreateEmbedTokenRequest::CreateEmbedTokenRequest() :
     m_userCorpIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_ticketNumHasBeenSet(false),
-    m_globalParamHasBeenSet(false)
+    m_globalParamHasBeenSet(false),
+    m_tokenTypeHasBeenSet(false),
+    m_tokenNumHasBeenSet(false)
 {
 }
 
@@ -121,6 +123,22 @@ string CreateEmbedTokenRequest::ToJsonString() const
         string key = "GlobalParam";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_globalParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tokenType, allocator);
+    }
+
+    if (m_tokenNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tokenNum, allocator);
     }
 
 
@@ -289,6 +307,38 @@ void CreateEmbedTokenRequest::SetGlobalParam(const string& _globalParam)
 bool CreateEmbedTokenRequest::GlobalParamHasBeenSet() const
 {
     return m_globalParamHasBeenSet;
+}
+
+int64_t CreateEmbedTokenRequest::GetTokenType() const
+{
+    return m_tokenType;
+}
+
+void CreateEmbedTokenRequest::SetTokenType(const int64_t& _tokenType)
+{
+    m_tokenType = _tokenType;
+    m_tokenTypeHasBeenSet = true;
+}
+
+bool CreateEmbedTokenRequest::TokenTypeHasBeenSet() const
+{
+    return m_tokenTypeHasBeenSet;
+}
+
+int64_t CreateEmbedTokenRequest::GetTokenNum() const
+{
+    return m_tokenNum;
+}
+
+void CreateEmbedTokenRequest::SetTokenNum(const int64_t& _tokenNum)
+{
+    m_tokenNum = _tokenNum;
+    m_tokenNumHasBeenSet = true;
+}
+
+bool CreateEmbedTokenRequest::TokenNumHasBeenSet() const
+{
+    return m_tokenNumHasBeenSet;
 }
 
 

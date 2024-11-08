@@ -756,6 +756,31 @@ namespace TencentCloud
                      */
                     bool EnvTypeHasBeenSet() const;
 
+                    /**
+                     * 获取函数资源文件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FunctionResourceFileType 函数资源文件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFunctionResourceFileType() const;
+
+                    /**
+                     * 设置函数资源文件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _functionResourceFileType 函数资源文件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFunctionResourceFileType(const std::string& _functionResourceFileType);
+
+                    /**
+                     * 判断参数 FunctionResourceFileType 是否已赋值
+                     * @return FunctionResourceFileType 是否已赋值
+                     * 
+                     */
+                    bool FunctionResourceFileTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -956,6 +981,13 @@ namespace TencentCloud
                      */
                     std::string m_envType;
                     bool m_envTypeHasBeenSet;
+
+                    /**
+                     * 函数资源文件类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_functionResourceFileType;
+                    bool m_functionResourceFileTypeHasBeenSet;
 
                 };
             }

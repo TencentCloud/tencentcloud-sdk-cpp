@@ -474,6 +474,27 @@ namespace TencentCloud
                      */
                     bool KeyIdsHasBeenSet() const;
 
+                    /**
+                     * 获取节点池类型
+                     * @return MachineType 节点池类型
+                     * 
+                     */
+                    std::string GetMachineType() const;
+
+                    /**
+                     * 设置节点池类型
+                     * @param _machineType 节点池类型
+                     * 
+                     */
+                    void SetMachineType(const std::string& _machineType);
+
+                    /**
+                     * 判断参数 MachineType 是否已赋值
+                     * @return MachineType 是否已赋值
+                     * 
+                     */
+                    bool MachineTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -595,6 +616,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_keyIds;
                     bool m_keyIdsHasBeenSet;
+
+                    /**
+                     * 节点池类型
+                     */
+                    std::string m_machineType;
+                    bool m_machineTypeHasBeenSet;
 
                 };
             }

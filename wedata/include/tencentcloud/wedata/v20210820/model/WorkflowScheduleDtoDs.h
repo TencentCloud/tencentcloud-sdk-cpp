@@ -571,6 +571,81 @@ namespace TencentCloud
                      */
                     bool LatestSubmitTimeHasBeenSet() const;
 
+                    /**
+                     * 获取日历调度是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CalendarOpen 日历调度是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCalendarOpen() const;
+
+                    /**
+                     * 设置日历调度是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _calendarOpen 日历调度是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCalendarOpen(const std::string& _calendarOpen);
+
+                    /**
+                     * 判断参数 CalendarOpen 是否已赋值
+                     * @return CalendarOpen 是否已赋值
+                     * 
+                     */
+                    bool CalendarOpenHasBeenSet() const;
+
+                    /**
+                     * 获取日历调度名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CalendarName 日历调度名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCalendarName() const;
+
+                    /**
+                     * 设置日历调度名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _calendarName 日历调度名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCalendarName(const std::string& _calendarName);
+
+                    /**
+                     * 判断参数 CalendarName 是否已赋值
+                     * @return CalendarName 是否已赋值
+                     * 
+                     */
+                    bool CalendarNameHasBeenSet() const;
+
+                    /**
+                     * 获取日历调度id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CalendarId 日历调度id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCalendarId() const;
+
+                    /**
+                     * 设置日历调度id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _calendarId 日历调度id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCalendarId(const std::string& _calendarId);
+
+                    /**
+                     * 判断参数 CalendarId 是否已赋值
+                     * @return CalendarId 是否已赋值
+                     * 
+                     */
+                    bool CalendarIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -719,6 +794,27 @@ namespace TencentCloud
                      */
                     std::string m_latestSubmitTime;
                     bool m_latestSubmitTimeHasBeenSet;
+
+                    /**
+                     * 日历调度是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_calendarOpen;
+                    bool m_calendarOpenHasBeenSet;
+
+                    /**
+                     * 日历调度名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_calendarName;
+                    bool m_calendarNameHasBeenSet;
+
+                    /**
+                     * 日历调度id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_calendarId;
+                    bool m_calendarIdHasBeenSet;
 
                 };
             }

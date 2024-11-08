@@ -26,8 +26,12 @@ DescribeInstanceLogFileRequest::DescribeInstanceLogFileRequest() :
     m_projectIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_curRunDateHasBeenSet(false),
+    m_requestFromSourceHasBeenSet(false),
     m_brokerIpHasBeenSet(false),
-    m_originFileNameHasBeenSet(false)
+    m_originFileNameHasBeenSet(false),
+    m_executionJobIdHasBeenSet(false),
+    m_logLevelTypeHasBeenSet(false),
+    m_executionFileTypeHasBeenSet(false)
 {
 }
 
@@ -62,6 +66,14 @@ string DescribeInstanceLogFileRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_curRunDate.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_requestFromSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestFromSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_requestFromSource.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_brokerIpHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,6 +88,30 @@ string DescribeInstanceLogFileRequest::ToJsonString() const
         string key = "OriginFileName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_originFileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executionJobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionJobId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_executionJobId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logLevelTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogLevelType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logLevelType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executionFileTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionFileType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_executionFileType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -134,6 +170,22 @@ bool DescribeInstanceLogFileRequest::CurRunDateHasBeenSet() const
     return m_curRunDateHasBeenSet;
 }
 
+string DescribeInstanceLogFileRequest::GetRequestFromSource() const
+{
+    return m_requestFromSource;
+}
+
+void DescribeInstanceLogFileRequest::SetRequestFromSource(const string& _requestFromSource)
+{
+    m_requestFromSource = _requestFromSource;
+    m_requestFromSourceHasBeenSet = true;
+}
+
+bool DescribeInstanceLogFileRequest::RequestFromSourceHasBeenSet() const
+{
+    return m_requestFromSourceHasBeenSet;
+}
+
 string DescribeInstanceLogFileRequest::GetBrokerIp() const
 {
     return m_brokerIp;
@@ -164,6 +216,54 @@ void DescribeInstanceLogFileRequest::SetOriginFileName(const string& _originFile
 bool DescribeInstanceLogFileRequest::OriginFileNameHasBeenSet() const
 {
     return m_originFileNameHasBeenSet;
+}
+
+string DescribeInstanceLogFileRequest::GetExecutionJobId() const
+{
+    return m_executionJobId;
+}
+
+void DescribeInstanceLogFileRequest::SetExecutionJobId(const string& _executionJobId)
+{
+    m_executionJobId = _executionJobId;
+    m_executionJobIdHasBeenSet = true;
+}
+
+bool DescribeInstanceLogFileRequest::ExecutionJobIdHasBeenSet() const
+{
+    return m_executionJobIdHasBeenSet;
+}
+
+string DescribeInstanceLogFileRequest::GetLogLevelType() const
+{
+    return m_logLevelType;
+}
+
+void DescribeInstanceLogFileRequest::SetLogLevelType(const string& _logLevelType)
+{
+    m_logLevelType = _logLevelType;
+    m_logLevelTypeHasBeenSet = true;
+}
+
+bool DescribeInstanceLogFileRequest::LogLevelTypeHasBeenSet() const
+{
+    return m_logLevelTypeHasBeenSet;
+}
+
+string DescribeInstanceLogFileRequest::GetExecutionFileType() const
+{
+    return m_executionFileType;
+}
+
+void DescribeInstanceLogFileRequest::SetExecutionFileType(const string& _executionFileType)
+{
+    m_executionFileType = _executionFileType;
+    m_executionFileTypeHasBeenSet = true;
+}
+
+bool DescribeInstanceLogFileRequest::ExecutionFileTypeHasBeenSet() const
+{
+    return m_executionFileTypeHasBeenSet;
 }
 
 

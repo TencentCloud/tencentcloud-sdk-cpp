@@ -28,6 +28,7 @@
 #include <tencentcloud/wedata/v20210820/model/TableHeat.h>
 #include <tencentcloud/wedata/v20210820/model/SearchColumnDocVO.h>
 #include <tencentcloud/wedata/v20210820/model/TableMetaProperty.h>
+#include <tencentcloud/wedata/v20210820/model/GovDatasourceInfo.h>
 
 
 namespace TencentCloud
@@ -1454,6 +1455,131 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     bool SchemaHasBeenSet() const;
 
+                    /**
+                     * 获取关联数据眼信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CollectDatasourceList 关联数据眼信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<GovDatasourceInfo> GetCollectDatasourceList() const;
+
+                    /**
+                     * 设置关联数据眼信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _collectDatasourceList 关联数据眼信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCollectDatasourceList(const std::vector<GovDatasourceInfo>& _collectDatasourceList);
+
+                    /**
+                     * 判断参数 CollectDatasourceList 是否已赋值
+                     * @return CollectDatasourceList 是否已赋值
+                     * 
+                     */
+                    bool CollectDatasourceListHasBeenSet() const;
+
+                    /**
+                     * 获取采集任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CollectJobId 采集任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCollectJobId() const;
+
+                    /**
+                     * 设置采集任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _collectJobId 采集任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCollectJobId(const std::string& _collectJobId);
+
+                    /**
+                     * 判断参数 CollectJobId 是否已赋值
+                     * @return CollectJobId 是否已赋值
+                     * 
+                     */
+                    bool CollectJobIdHasBeenSet() const;
+
+                    /**
+                     * 获取采集任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CollectJobName 采集任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCollectJobName() const;
+
+                    /**
+                     * 设置采集任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _collectJobName 采集任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCollectJobName(const std::string& _collectJobName);
+
+                    /**
+                     * 判断参数 CollectJobName 是否已赋值
+                     * @return CollectJobName 是否已赋值
+                     * 
+                     */
+                    bool CollectJobNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据源urn
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Urn 数据源urn
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUrn() const;
+
+                    /**
+                     * 设置数据源urn
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _urn 数据源urn
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUrn(const std::string& _urn);
+
+                    /**
+                     * 判断参数 Urn 是否已赋值
+                     * @return Urn 是否已赋值
+                     * 
+                     */
+                    bool UrnHasBeenSet() const;
+
+                    /**
+                     * 获取是否有修改业务权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HasBizPermission 是否有修改业务权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetHasBizPermission() const;
+
+                    /**
+                     * 设置是否有修改业务权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hasBizPermission 是否有修改业务权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHasBizPermission(const bool& _hasBizPermission);
+
+                    /**
+                     * 判断参数 HasBizPermission 是否已赋值
+                     * @return HasBizPermission 是否已赋值
+                     * 
+                     */
+                    bool HasBizPermissionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1848,6 +1974,41 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     std::string m_schema;
                     bool m_schemaHasBeenSet;
+
+                    /**
+                     * 关联数据眼信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<GovDatasourceInfo> m_collectDatasourceList;
+                    bool m_collectDatasourceListHasBeenSet;
+
+                    /**
+                     * 采集任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_collectJobId;
+                    bool m_collectJobIdHasBeenSet;
+
+                    /**
+                     * 采集任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_collectJobName;
+                    bool m_collectJobNameHasBeenSet;
+
+                    /**
+                     * 数据源urn
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_urn;
+                    bool m_urnHasBeenSet;
+
+                    /**
+                     * 是否有修改业务权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_hasBizPermission;
+                    bool m_hasBizPermissionHasBeenSet;
 
                 };
             }

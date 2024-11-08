@@ -106,6 +106,69 @@ namespace TencentCloud
                     bool CurRunDateHasBeenSet() const;
 
                     /**
+                     * 获取日志级别，Info/Debug/Warn/Error/All
+                     * @return LogLevelType 日志级别，Info/Debug/Warn/Error/All
+                     * 
+                     */
+                    std::string GetLogLevelType() const;
+
+                    /**
+                     * 设置日志级别，Info/Debug/Warn/Error/All
+                     * @param _logLevelType 日志级别，Info/Debug/Warn/Error/All
+                     * 
+                     */
+                    void SetLogLevelType(const std::string& _logLevelType);
+
+                    /**
+                     * 判断参数 LogLevelType 是否已赋值
+                     * @return LogLevelType 是否已赋值
+                     * 
+                     */
+                    bool LogLevelTypeHasBeenSet() const;
+
+                    /**
+                     * 获取文件类型,Log/Code
+                     * @return ExecutionFileType 文件类型,Log/Code
+                     * 
+                     */
+                    std::string GetExecutionFileType() const;
+
+                    /**
+                     * 设置文件类型,Log/Code
+                     * @param _executionFileType 文件类型,Log/Code
+                     * 
+                     */
+                    void SetExecutionFileType(const std::string& _executionFileType);
+
+                    /**
+                     * 判断参数 ExecutionFileType 是否已赋值
+                     * @return ExecutionFileType 是否已赋值
+                     * 
+                     */
+                    bool ExecutionFileTypeHasBeenSet() const;
+
+                    /**
+                     * 获取统一执行平台执行id
+                     * @return ExecutionJobId 统一执行平台执行id
+                     * 
+                     */
+                    std::string GetExecutionJobId() const;
+
+                    /**
+                     * 设置统一执行平台执行id
+                     * @param _executionJobId 统一执行平台执行id
+                     * 
+                     */
+                    void SetExecutionJobId(const std::string& _executionJobId);
+
+                    /**
+                     * 判断参数 ExecutionJobId 是否已赋值
+                     * @return ExecutionJobId 是否已赋值
+                     * 
+                     */
+                    bool ExecutionJobIdHasBeenSet() const;
+
+                    /**
                      * 获取服务器Ip
                      * @return BrokerIp 服务器Ip
                      * 
@@ -189,6 +252,48 @@ namespace TencentCloud
                      */
                     bool LineCountHasBeenSet() const;
 
+                    /**
+                     * 获取查询日志扩展信息,通过统一执行平台接口分页查询日志时需要带上,第一页时为null
+                     * @return ExtInfo 查询日志扩展信息,通过统一执行平台接口分页查询日志时需要带上,第一页时为null
+                     * 
+                     */
+                    std::string GetExtInfo() const;
+
+                    /**
+                     * 设置查询日志扩展信息,通过统一执行平台接口分页查询日志时需要带上,第一页时为null
+                     * @param _extInfo 查询日志扩展信息,通过统一执行平台接口分页查询日志时需要带上,第一页时为null
+                     * 
+                     */
+                    void SetExtInfo(const std::string& _extInfo);
+
+                    /**
+                     * 判断参数 ExtInfo 是否已赋值
+                     * @return ExtInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtInfoHasBeenSet() const;
+
+                    /**
+                     * 获取请求来源，WEB 前端；CLIENT 客户端
+                     * @return RequestFromSource 请求来源，WEB 前端；CLIENT 客户端
+                     * 
+                     */
+                    std::string GetRequestFromSource() const;
+
+                    /**
+                     * 设置请求来源，WEB 前端；CLIENT 客户端
+                     * @param _requestFromSource 请求来源，WEB 前端；CLIENT 客户端
+                     * 
+                     */
+                    void SetRequestFromSource(const std::string& _requestFromSource);
+
+                    /**
+                     * 判断参数 RequestFromSource 是否已赋值
+                     * @return RequestFromSource 是否已赋值
+                     * 
+                     */
+                    bool RequestFromSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,6 +313,24 @@ namespace TencentCloud
                      */
                     std::string m_curRunDate;
                     bool m_curRunDateHasBeenSet;
+
+                    /**
+                     * 日志级别，Info/Debug/Warn/Error/All
+                     */
+                    std::string m_logLevelType;
+                    bool m_logLevelTypeHasBeenSet;
+
+                    /**
+                     * 文件类型,Log/Code
+                     */
+                    std::string m_executionFileType;
+                    bool m_executionFileTypeHasBeenSet;
+
+                    /**
+                     * 统一执行平台执行id
+                     */
+                    std::string m_executionJobId;
+                    bool m_executionJobIdHasBeenSet;
 
                     /**
                      * 服务器Ip
@@ -232,6 +355,18 @@ namespace TencentCloud
                      */
                     int64_t m_lineCount;
                     bool m_lineCountHasBeenSet;
+
+                    /**
+                     * 查询日志扩展信息,通过统一执行平台接口分页查询日志时需要带上,第一页时为null
+                     */
+                    std::string m_extInfo;
+                    bool m_extInfoHasBeenSet;
+
+                    /**
+                     * 请求来源，WEB 前端；CLIENT 客户端
+                     */
+                    std::string m_requestFromSource;
+                    bool m_requestFromSourceHasBeenSet;
 
                 };
             }

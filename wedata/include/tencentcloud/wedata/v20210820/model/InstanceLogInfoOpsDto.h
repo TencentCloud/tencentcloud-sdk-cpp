@@ -196,6 +196,81 @@ namespace TencentCloud
                      */
                     bool LineCountHasBeenSet() const;
 
+                    /**
+                     * 获取统一执行平台日志分页查询参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtInfo 统一执行平台日志分页查询参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExtInfo() const;
+
+                    /**
+                     * 设置统一执行平台日志分页查询参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extInfo 统一执行平台日志分页查询参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtInfo(const std::string& _extInfo);
+
+                    /**
+                     * 判断参数 ExtInfo 是否已赋值
+                     * @return ExtInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtInfoHasBeenSet() const;
+
+                    /**
+                     * 获取日志分页查询，是否最后一页
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsEnd 日志分页查询，是否最后一页
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsEnd() const;
+
+                    /**
+                     * 设置日志分页查询，是否最后一页
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isEnd 日志分页查询，是否最后一页
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsEnd(const bool& _isEnd);
+
+                    /**
+                     * 判断参数 IsEnd 是否已赋值
+                     * @return IsEnd 是否已赋值
+                     * 
+                     */
+                    bool IsEndHasBeenSet() const;
+
+                    /**
+                     * 获取文件大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileSize 文件大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFileSize() const;
+
+                    /**
+                     * 设置文件大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fileSize 文件大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFileSize(const std::string& _fileSize);
+
+                    /**
+                     * 判断参数 FileSize 是否已赋值
+                     * @return FileSize 是否已赋值
+                     * 
+                     */
+                    bool FileSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +314,27 @@ namespace TencentCloud
                      */
                     int64_t m_lineCount;
                     bool m_lineCountHasBeenSet;
+
+                    /**
+                     * 统一执行平台日志分页查询参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_extInfo;
+                    bool m_extInfoHasBeenSet;
+
+                    /**
+                     * 日志分页查询，是否最后一页
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isEnd;
+                    bool m_isEndHasBeenSet;
+
+                    /**
+                     * 文件大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fileSize;
+                    bool m_fileSizeHasBeenSet;
 
                 };
             }

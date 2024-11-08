@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/SecurityPolicy.h>
 
 
 namespace TencentCloud
@@ -237,6 +238,102 @@ namespace TencentCloud
                      */
                     bool AccessPointsTypeHasBeenSet() const;
 
+                    /**
+                     * 获取带宽，目前只有公网会有这个值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Bandwidth 带宽，目前只有公网会有这个值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBandwidth() const;
+
+                    /**
+                     * 设置带宽，目前只有公网会有这个值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bandwidth 带宽，目前只有公网会有这个值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBandwidth(const int64_t& _bandwidth);
+
+                    /**
+                     * 判断参数 Bandwidth 是否已赋值
+                     * @return Bandwidth 是否已赋值
+                     * 
+                     */
+                    bool BandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取类
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityPolicy 类
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<SecurityPolicy> GetSecurityPolicy() const;
+
+                    /**
+                     * 设置类
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _securityPolicy 类
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSecurityPolicy(const std::vector<SecurityPolicy>& _securityPolicy);
+
+                    /**
+                     * 判断参数 SecurityPolicy 是否已赋值
+                     * @return SecurityPolicy 是否已赋值
+                     * 
+                     */
+                    bool SecurityPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取是否是标准的接入点 true是标准的 false不是标准的
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StandardAccessPoint 是否是标准的接入点 true是标准的 false不是标准的
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetStandardAccessPoint() const;
+
+                    /**
+                     * 设置是否是标准的接入点 true是标准的 false不是标准的
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _standardAccessPoint 是否是标准的接入点 true是标准的 false不是标准的
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStandardAccessPoint(const bool& _standardAccessPoint);
+
+                    /**
+                     * 判断参数 StandardAccessPoint 是否已赋值
+                     * @return StandardAccessPoint 是否已赋值
+                     * 
+                     */
+                    bool StandardAccessPointHasBeenSet() const;
+
+                    /**
+                     * 获取可用区信息
+                     * @return ZoneName 可用区信息
+                     * 
+                     */
+                    std::string GetZoneName() const;
+
+                    /**
+                     * 设置可用区信息
+                     * @param _zoneName 可用区信息
+                     * 
+                     */
+                    void SetZoneName(const std::string& _zoneName);
+
+                    /**
+                     * 判断参数 ZoneName 是否已赋值
+                     * @return ZoneName 是否已赋值
+                     * 
+                     */
+                    bool ZoneNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +388,33 @@ namespace TencentCloud
                      */
                     std::string m_accessPointsType;
                     bool m_accessPointsTypeHasBeenSet;
+
+                    /**
+                     * 带宽，目前只有公网会有这个值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_bandwidth;
+                    bool m_bandwidthHasBeenSet;
+
+                    /**
+                     * 类
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SecurityPolicy> m_securityPolicy;
+                    bool m_securityPolicyHasBeenSet;
+
+                    /**
+                     * 是否是标准的接入点 true是标准的 false不是标准的
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_standardAccessPoint;
+                    bool m_standardAccessPointHasBeenSet;
+
+                    /**
+                     * 可用区信息
+                     */
+                    std::string m_zoneName;
+                    bool m_zoneNameHasBeenSet;
 
                 };
             }

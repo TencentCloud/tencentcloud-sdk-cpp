@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取合同流程的参与方列表，最多可支持50个参与方
+                     * 获取合同流程的参与方列表，最多可支持50个参与方。对应不同签署人的传参方式可以参考文档 [签署方入参指引](https://qian.tencent.com/developers/partner/flow_approver)
 
 注:  
 <font color="red" > <b> 在发起流程时，需要保证 FlowApprovers中的顺序与模板定义顺序一致，否则会发起失败。
@@ -153,7 +153,7 @@ namespace TencentCloud
 
 [点击查看模板参与人顺序定义位置](https://qcloudimg.tencent-cloud.cn/raw/c50e0a204fc5c66aaa2ca70e451ef2d6.png)
 
-                     * @return FlowApprovers 合同流程的参与方列表，最多可支持50个参与方
+                     * @return FlowApprovers 合同流程的参与方列表，最多可支持50个参与方。对应不同签署人的传参方式可以参考文档 [签署方入参指引](https://qian.tencent.com/developers/partner/flow_approver)
 
 注:  
 <font color="red" > <b> 在发起流程时，需要保证 FlowApprovers中的顺序与模板定义顺序一致，否则会发起失败。
@@ -166,7 +166,7 @@ namespace TencentCloud
                     std::vector<FlowApproverInfo> GetFlowApprovers() const;
 
                     /**
-                     * 设置合同流程的参与方列表，最多可支持50个参与方
+                     * 设置合同流程的参与方列表，最多可支持50个参与方。对应不同签署人的传参方式可以参考文档 [签署方入参指引](https://qian.tencent.com/developers/partner/flow_approver)
 
 注:  
 <font color="red" > <b> 在发起流程时，需要保证 FlowApprovers中的顺序与模板定义顺序一致，否则会发起失败。
@@ -174,7 +174,7 @@ namespace TencentCloud
 
 [点击查看模板参与人顺序定义位置](https://qcloudimg.tencent-cloud.cn/raw/c50e0a204fc5c66aaa2ca70e451ef2d6.png)
 
-                     * @param _flowApprovers 合同流程的参与方列表，最多可支持50个参与方
+                     * @param _flowApprovers 合同流程的参与方列表，最多可支持50个参与方。对应不同签署人的传参方式可以参考文档 [签署方入参指引](https://qian.tencent.com/developers/partner/flow_approver)
 
 注:  
 <font color="red" > <b> 在发起流程时，需要保证 FlowApprovers中的顺序与模板定义顺序一致，否则会发起失败。
@@ -589,7 +589,7 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 合同流程的参与方列表，最多可支持50个参与方
+                     * 合同流程的参与方列表，最多可支持50个参与方。对应不同签署人的传参方式可以参考文档 [签署方入参指引](https://qian.tencent.com/developers/partner/flow_approver)
 
 注:  
 <font color="red" > <b> 在发起流程时，需要保证 FlowApprovers中的顺序与模板定义顺序一致，否则会发起失败。

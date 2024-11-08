@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属部门信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Department 所属部门信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Department GetDepartment() const;
 
                     /**
                      * 设置所属部门信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _department 所属部门信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDepartment(const Department& _department);
@@ -116,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -155,14 +147,12 @@ namespace TencentCloud
 
                     /**
                      * 所属部门信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Department m_department;
                     bool m_departmentHasBeenSet;
 
                     /**
                      * 个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;

@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取某会话的文件操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SearchFileBySidResult 某会话的文件操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SearchFileBySidResult> GetSearchFileBySidResult() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 某会话的文件操作列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SearchFileBySidResult> m_searchFileBySidResult;
                     bool m_searchFileBySidResultHasBeenSet;

@@ -324,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取堡垒机服务信息，注意没有绑定服务时为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource 堡垒机服务信息，注意没有绑定服务时为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Resource GetResource() const;
 
                     /**
                      * 设置堡垒机服务信息，注意没有绑定服务时为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource 堡垒机服务信息，注意没有绑定服务时为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const Resource& _resource);
@@ -349,18 +345,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产所属部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Department 资产所属部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Department GetDepartment() const;
 
                     /**
                      * 设置资产所属部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _department 资产所属部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDepartment(const Department& _department);
@@ -374,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库资产的多节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpPortSet 数据库资产的多节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetIpPortSet() const;
 
                     /**
                      * 设置数据库资产的多节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipPortSet 数据库资产的多节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpPortSet(const std::vector<std::string>& _ipPortSet);
@@ -399,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络域Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainId 网络域Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
                      * 设置网络域Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainId 网络域Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -424,18 +408,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainName 网络域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置网络域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainName 网络域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -449,18 +429,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用SSL，仅支持Redis资产。0：禁用 1：启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableSSL 是否启用SSL，仅支持Redis资产。0：禁用 1：启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnableSSL() const;
 
                     /**
                      * 设置是否启用SSL，仅支持Redis资产。0：禁用 1：启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableSSL 是否启用SSL，仅支持Redis资产。0：禁用 1：启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableSSL(const int64_t& _enableSSL);
@@ -474,18 +450,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已上传的SSL证书名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SSLCertName 已上传的SSL证书名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSSLCertName() const;
 
                     /**
                      * 设置已上传的SSL证书名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sSLCertName 已上传的SSL证书名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSSLCertName(const std::string& _sSLCertName);
@@ -579,49 +551,42 @@ namespace TencentCloud
 
                     /**
                      * 堡垒机服务信息，注意没有绑定服务时为null
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Resource m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * 资产所属部门
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Department m_department;
                     bool m_departmentHasBeenSet;
 
                     /**
                      * 数据库资产的多节点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ipPortSet;
                     bool m_ipPortSetHasBeenSet;
 
                     /**
                      * 网络域Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
                      * 网络域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
                      * 是否启用SSL，仅支持Redis资产。0：禁用 1：启用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_enableSSL;
                     bool m_enableSSLHasBeenSet;
 
                     /**
                      * 已上传的SSL证书名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sSLCertName;
                     bool m_sSLCertNameHasBeenSet;

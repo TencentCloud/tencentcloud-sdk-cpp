@@ -26,7 +26,8 @@ RecognizeForeignPermanentResidentIdCardRequest::RecognizeForeignPermanentResiden
     m_imageUrlHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
     m_enablePdfHasBeenSet(false),
-    m_pdfPageNumberHasBeenSet(false)
+    m_pdfPageNumberHasBeenSet(false),
+    m_cropPortraitHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string RecognizeForeignPermanentResidentIdCardRequest::ToJsonString() const
         string key = "PdfPageNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pdfPageNumber, allocator);
+    }
+
+    if (m_cropPortraitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CropPortrait";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cropPortrait, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void RecognizeForeignPermanentResidentIdCardRequest::SetPdfPageNumber(const uint
 bool RecognizeForeignPermanentResidentIdCardRequest::PdfPageNumberHasBeenSet() const
 {
     return m_pdfPageNumberHasBeenSet;
+}
+
+bool RecognizeForeignPermanentResidentIdCardRequest::GetCropPortrait() const
+{
+    return m_cropPortrait;
+}
+
+void RecognizeForeignPermanentResidentIdCardRequest::SetCropPortrait(const bool& _cropPortrait)
+{
+    m_cropPortrait = _cropPortrait;
+    m_cropPortraitHasBeenSet = true;
+}
+
+bool RecognizeForeignPermanentResidentIdCardRequest::CropPortraitHasBeenSet() const
+{
+    return m_cropPortraitHasBeenSet;
 }
 
 

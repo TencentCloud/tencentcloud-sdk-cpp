@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -96,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskName 任务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskName 任务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -121,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属部门信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Department 所属部门信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Department GetDepartment() const;
 
                     /**
                      * 设置所属部门信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _department 所属部门信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDepartment(const Department& _department);
@@ -146,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取改密方式。1：使用执行账号。2：修改自身密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChangeMethod 改密方式。1：使用执行账号。2：修改自身密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetChangeMethod() const;
 
                     /**
                      * 设置改密方式。1：使用执行账号。2：修改自身密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _changeMethod 改密方式。1：使用执行账号。2：修改自身密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChangeMethod(const uint64_t& _changeMethod);
@@ -171,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunAccount 执行账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRunAccount() const;
 
                     /**
                      * 设置执行账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runAccount 执行账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRunAccount(const std::string& _runAccount);
@@ -196,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取密码生成策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthGenerationStrategy 密码生成策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAuthGenerationStrategy() const;
 
                     /**
                      * 设置密码生成策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authGenerationStrategy 密码生成策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthGenerationStrategy(const uint64_t& _authGenerationStrategy);
@@ -221,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取密码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PasswordLength 密码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPasswordLength() const;
 
                     /**
                      * 设置密码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _passwordLength 密码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPasswordLength(const uint64_t& _passwordLength);
@@ -246,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包含小写字母
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SmallLetter 包含小写字母
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSmallLetter() const;
 
                     /**
                      * 设置包含小写字母
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _smallLetter 包含小写字母
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSmallLetter(const uint64_t& _smallLetter);
@@ -271,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包含大写字母
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BigLetter 包含大写字母
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBigLetter() const;
 
                     /**
                      * 设置包含大写字母
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bigLetter 包含大写字母
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBigLetter(const uint64_t& _bigLetter);
@@ -296,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包含数字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Digit 包含数字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDigit() const;
 
                     /**
                      * 设置包含数字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _digit 包含数字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDigit(const uint64_t& _digit);
@@ -321,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包含的特殊字符，base64
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Symbol 包含的特殊字符，base64
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSymbol() const;
 
                     /**
                      * 设置包含的特殊字符，base64
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _symbol 包含的特殊字符，base64
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSymbol(const std::string& _symbol);
@@ -346,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取改密完成通知。0-通知，1-不通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompleteNotify 改密完成通知。0-通知，1-不通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCompleteNotify() const;
 
                     /**
                      * 设置改密完成通知。0-通知，1-不通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _completeNotify 改密完成通知。0-通知，1-不通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompleteNotify(const uint64_t& _completeNotify);
@@ -371,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通知人邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotifyEmails 通知人邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetNotifyEmails() const;
 
                     /**
                      * 设置通知人邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _notifyEmails 通知人邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNotifyEmails(const std::vector<std::string>& _notifyEmails);
@@ -396,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取加密附件密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilePassword 加密附件密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFilePassword() const;
 
                     /**
                      * 设置加密附件密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filePassword 加密附件密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilePassword(const std::string& _filePassword);
@@ -421,18 +365,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要改密的账户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountSet 需要改密的账户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAccountSet() const;
 
                     /**
                      * 设置需要改密的账户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountSet 需要改密的账户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountSet(const std::vector<std::string>& _accountSet);
@@ -446,18 +386,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要改密的主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceSet 需要改密的主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Device> GetDeviceSet() const;
 
                     /**
                      * 设置需要改密的主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceSet 需要改密的主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceSet(const std::vector<Device>& _deviceSet);
@@ -471,18 +407,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务类型：4手动，5自动
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 任务类型：4手动，5自动
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置任务类型：4手动，5自动
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 任务类型：4手动，5自动
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -496,18 +428,14 @@ namespace TencentCloud
 
                     /**
                      * 获取周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Period 周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
                      * 设置周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _period 周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeriod(const uint64_t& _period);
@@ -521,18 +449,14 @@ namespace TencentCloud
 
                     /**
                      * 获取首次执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstTime 首次执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFirstTime() const;
 
                     /**
                      * 设置首次执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _firstTime 首次执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFirstTime(const std::string& _firstTime);
@@ -546,18 +470,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下次执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextTime 下次执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNextTime() const;
 
                     /**
                      * 设置下次执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nextTime 下次执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNextTime(const std::string& _nextTime);
@@ -573,7 +493,6 @@ namespace TencentCloud
 
                     /**
                      * id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
@@ -586,133 +505,114 @@ namespace TencentCloud
 
                     /**
                      * 任务名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
                      * 所属部门信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Department m_department;
                     bool m_departmentHasBeenSet;
 
                     /**
                      * 改密方式。1：使用执行账号。2：修改自身密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_changeMethod;
                     bool m_changeMethodHasBeenSet;
 
                     /**
                      * 执行账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runAccount;
                     bool m_runAccountHasBeenSet;
 
                     /**
                      * 密码生成策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_authGenerationStrategy;
                     bool m_authGenerationStrategyHasBeenSet;
 
                     /**
                      * 密码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_passwordLength;
                     bool m_passwordLengthHasBeenSet;
 
                     /**
                      * 包含小写字母
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_smallLetter;
                     bool m_smallLetterHasBeenSet;
 
                     /**
                      * 包含大写字母
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_bigLetter;
                     bool m_bigLetterHasBeenSet;
 
                     /**
                      * 包含数字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_digit;
                     bool m_digitHasBeenSet;
 
                     /**
                      * 包含的特殊字符，base64
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_symbol;
                     bool m_symbolHasBeenSet;
 
                     /**
                      * 改密完成通知。0-通知，1-不通知
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_completeNotify;
                     bool m_completeNotifyHasBeenSet;
 
                     /**
                      * 通知人邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_notifyEmails;
                     bool m_notifyEmailsHasBeenSet;
 
                     /**
                      * 加密附件密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_filePassword;
                     bool m_filePasswordHasBeenSet;
 
                     /**
                      * 需要改密的账户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_accountSet;
                     bool m_accountSetHasBeenSet;
 
                     /**
                      * 需要改密的主机
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Device> m_deviceSet;
                     bool m_deviceSetHasBeenSet;
 
                     /**
                      * 任务类型：4手动，5自动
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 周期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
                      * 首次执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_firstTime;
                     bool m_firstTimeHasBeenSet;
 
                     /**
                      * 下次执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nextTime;
                     bool m_nextTimeHasBeenSet;
