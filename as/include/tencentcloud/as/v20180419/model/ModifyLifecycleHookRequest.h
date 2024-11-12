@@ -88,22 +88,22 @@ namespace TencentCloud
 
                     /**
                      * 获取进入生命周期挂钩场景，取值包括：
-<li> INSTANCE_LAUNCHING：实例启动后
-<li> INSTANCE_TERMINATING：实例销毁前
+<li> INSTANCE_LAUNCHING：实例启动后</li>
+<li> INSTANCE_TERMINATING：实例销毁前</li>
                      * @return LifecycleTransition 进入生命周期挂钩场景，取值包括：
-<li> INSTANCE_LAUNCHING：实例启动后
-<li> INSTANCE_TERMINATING：实例销毁前
+<li> INSTANCE_LAUNCHING：实例启动后</li>
+<li> INSTANCE_TERMINATING：实例销毁前</li>
                      * 
                      */
                     std::string GetLifecycleTransition() const;
 
                     /**
                      * 设置进入生命周期挂钩场景，取值包括：
-<li> INSTANCE_LAUNCHING：实例启动后
-<li> INSTANCE_TERMINATING：实例销毁前
+<li> INSTANCE_LAUNCHING：实例启动后</li>
+<li> INSTANCE_TERMINATING：实例销毁前</li>
                      * @param _lifecycleTransition 进入生命周期挂钩场景，取值包括：
-<li> INSTANCE_LAUNCHING：实例启动后
-<li> INSTANCE_TERMINATING：实例销毁前
+<li> INSTANCE_LAUNCHING：实例启动后</li>
+<li> INSTANCE_TERMINATING：实例销毁前</li>
                      * 
                      */
                     void SetLifecycleTransition(const std::string& _lifecycleTransition);
@@ -117,22 +117,22 @@ namespace TencentCloud
 
                     /**
                      * 获取定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值包括：
-<li> CONTINUE： 超时后继续伸缩活动
-<li> ABANDON：超时后终止伸缩活动
+<li> CONTINUE： 超时后继续伸缩活动</li> 
+<li> ABANDON：超时后终止伸缩活动</li> 
                      * @return DefaultResult 定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值包括：
-<li> CONTINUE： 超时后继续伸缩活动
-<li> ABANDON：超时后终止伸缩活动
+<li> CONTINUE： 超时后继续伸缩活动</li> 
+<li> ABANDON：超时后终止伸缩活动</li> 
                      * 
                      */
                     std::string GetDefaultResult() const;
 
                     /**
                      * 设置定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值包括：
-<li> CONTINUE： 超时后继续伸缩活动
-<li> ABANDON：超时后终止伸缩活动
+<li> CONTINUE： 超时后继续伸缩活动</li> 
+<li> ABANDON：超时后终止伸缩活动</li> 
                      * @param _defaultResult 定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值包括：
-<li> CONTINUE： 超时后继续伸缩活动
-<li> ABANDON：超时后终止伸缩活动
+<li> CONTINUE： 超时后继续伸缩活动</li> 
+<li> ABANDON：超时后终止伸缩活动</li> 
                      * 
                      */
                     void SetDefaultResult(const std::string& _defaultResult);
@@ -265,16 +265,16 @@ namespace TencentCloud
 
                     /**
                      * 进入生命周期挂钩场景，取值包括：
-<li> INSTANCE_LAUNCHING：实例启动后
-<li> INSTANCE_TERMINATING：实例销毁前
+<li> INSTANCE_LAUNCHING：实例启动后</li>
+<li> INSTANCE_TERMINATING：实例销毁前</li>
                      */
                     std::string m_lifecycleTransition;
                     bool m_lifecycleTransitionHasBeenSet;
 
                     /**
                      * 定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值包括：
-<li> CONTINUE： 超时后继续伸缩活动
-<li> ABANDON：超时后终止伸缩活动
+<li> CONTINUE： 超时后继续伸缩活动</li> 
+<li> ABANDON：超时后终止伸缩活动</li> 
                      */
                     std::string m_defaultResult;
                     bool m_defaultResultHasBeenSet;

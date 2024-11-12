@@ -257,15 +257,23 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取定时任务的执行类型。取值范围：<br><li>CRONTAB：代表定时任务为重复执行。<br><li>ONCE：代表定时任务为单次执行。
-                     * @return ScheduledType 定时任务的执行类型。取值范围：<br><li>CRONTAB：代表定时任务为重复执行。<br><li>ONCE：代表定时任务为单次执行。
+                     * 获取定时任务的执行类型。取值范围：
+<li>CRONTAB：代表定时任务为重复执行。</li>
+<li>ONCE：代表定时任务为单次执行。</li>
+                     * @return ScheduledType 定时任务的执行类型。取值范围：
+<li>CRONTAB：代表定时任务为重复执行。</li>
+<li>ONCE：代表定时任务为单次执行。</li>
                      * 
                      */
                     std::string GetScheduledType() const;
 
                     /**
-                     * 设置定时任务的执行类型。取值范围：<br><li>CRONTAB：代表定时任务为重复执行。<br><li>ONCE：代表定时任务为单次执行。
-                     * @param _scheduledType 定时任务的执行类型。取值范围：<br><li>CRONTAB：代表定时任务为重复执行。<br><li>ONCE：代表定时任务为单次执行。
+                     * 设置定时任务的执行类型。取值范围：
+<li>CRONTAB：代表定时任务为重复执行。</li>
+<li>ONCE：代表定时任务为单次执行。</li>
+                     * @param _scheduledType 定时任务的执行类型。取值范围：
+<li>CRONTAB：代表定时任务为重复执行。</li>
+<li>ONCE：代表定时任务为单次执行。</li>
                      * 
                      */
                     void SetScheduledType(const std::string& _scheduledType);
@@ -340,7 +348,9 @@ namespace TencentCloud
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 定时任务的执行类型。取值范围：<br><li>CRONTAB：代表定时任务为重复执行。<br><li>ONCE：代表定时任务为单次执行。
+                     * 定时任务的执行类型。取值范围：
+<li>CRONTAB：代表定时任务为重复执行。</li>
+<li>ONCE：代表定时任务为单次执行。</li>
                      */
                     std::string m_scheduledType;
                     bool m_scheduledTypeHasBeenSet;

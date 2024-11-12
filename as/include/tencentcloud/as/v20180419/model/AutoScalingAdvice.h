@@ -69,27 +69,27 @@ namespace TencentCloud
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取伸缩组警告级别。取值范围：<br>
-<li>NORMAL：正常<br>
-<li>WARNING：警告级别<br>
-<li>CRITICAL：严重级别<br>
-                     * @return Level 伸缩组警告级别。取值范围：<br>
-<li>NORMAL：正常<br>
-<li>WARNING：警告级别<br>
-<li>CRITICAL：严重级别<br>
+                     * 获取伸缩组警告级别。取值范围：
+<li>NORMAL：正常</li>
+<li>WARNING：警告级别</li>
+<li>CRITICAL：严重级别</li>
+                     * @return Level 伸缩组警告级别。取值范围：
+<li>NORMAL：正常</li>
+<li>WARNING：警告级别</li>
+<li>CRITICAL：严重级别</li>
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
-                     * 设置伸缩组警告级别。取值范围：<br>
-<li>NORMAL：正常<br>
-<li>WARNING：警告级别<br>
-<li>CRITICAL：严重级别<br>
-                     * @param _level 伸缩组警告级别。取值范围：<br>
-<li>NORMAL：正常<br>
-<li>WARNING：警告级别<br>
-<li>CRITICAL：严重级别<br>
+                     * 设置伸缩组警告级别。取值范围：
+<li>NORMAL：正常</li>
+<li>WARNING：警告级别</li>
+<li>CRITICAL：严重级别</li>
+                     * @param _level 伸缩组警告级别。取值范围：
+<li>NORMAL：正常</li>
+<li>WARNING：警告级别</li>
+<li>CRITICAL：严重级别</li>
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -131,10 +131,10 @@ namespace TencentCloud
                     bool m_autoScalingGroupIdHasBeenSet;
 
                     /**
-                     * 伸缩组警告级别。取值范围：<br>
-<li>NORMAL：正常<br>
-<li>WARNING：警告级别<br>
-<li>CRITICAL：严重级别<br>
+                     * 伸缩组警告级别。取值范围：
+<li>NORMAL：正常</li>
+<li>WARNING：警告级别</li>
+<li>CRITICAL：严重级别</li>
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;

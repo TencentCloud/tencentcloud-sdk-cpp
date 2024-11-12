@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取发布业务ID
-                     * @return ReleaseBizId 发布业务ID
+                     * 获取发布单ID
+                     * @return ReleaseBizId 发布单ID
                      * 
                      */
                     std::string GetReleaseBizId() const;
 
                     /**
-                     * 设置发布业务ID
-                     * @param _releaseBizId 发布业务ID
+                     * 设置发布单ID
+                     * @param _releaseBizId 发布单ID
                      * 
                      */
                     void SetReleaseBizId(const std::string& _releaseBizId);
@@ -237,7 +237,7 @@ namespace TencentCloud
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 发布业务ID
+                     * 发布单ID
                      */
                     std::string m_releaseBizId;
                     bool m_releaseBizIdHasBeenSet;

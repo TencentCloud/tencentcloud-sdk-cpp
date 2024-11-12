@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务状态: Success->执行完成；Processing->执行中；Failed->执行失败；WaitExecute->等待执行；
-                     * @return Status 任务状态: Success->执行完成；Processing->执行中；Failed->执行失败；WaitExecute->等待执行；
+                     * 获取任务状态: Success->执行完成；Processing->执行中；Failed->执行失败；WaitExecute->等待执行。
+                     * @return Status 任务状态: Success->执行完成；Processing->执行中；Failed->执行失败；WaitExecute->等待执行。
                      * 
                      */
                     std::string GetStatus() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取输入文件中嵌入的图片中文字内容的识别结果，存储在腾讯云cos的下载地址
-                     * @return DocumentRecognizeResultUrl 输入文件中嵌入的图片中文字内容的识别结果，存储在腾讯云cos的下载地址
+                     * 获取本次文档解析的结果文件，存储在腾讯云COS的下载URL，下载URL的有效期为10分钟。
+                     * @return DocumentRecognizeResultUrl 本次文档解析的结果文件，存储在腾讯云COS的下载URL，下载URL的有效期为10分钟。
                      * 
                      */
                     std::string GetDocumentRecognizeResultUrl() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool DocumentRecognizeResultUrlHasBeenSet() const;
 
                     /**
-                     * 获取文档解析失败的页码
-                     * @return FailedPages 文档解析失败的页码
+                     * 获取本次文档解析失败的页码信息。
+                     * @return FailedPages 本次文档解析失败的页码信息。
                      * 
                      */
                     std::vector<ReconstructDocumentFailedPage> GetFailedPages() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务状态: Success->执行完成；Processing->执行中；Failed->执行失败；WaitExecute->等待执行；
+                     * 任务状态: Success->执行完成；Processing->执行中；Failed->执行失败；WaitExecute->等待执行。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 输入文件中嵌入的图片中文字内容的识别结果，存储在腾讯云cos的下载地址
+                     * 本次文档解析的结果文件，存储在腾讯云COS的下载URL，下载URL的有效期为10分钟。
                      */
                     std::string m_documentRecognizeResultUrl;
                     bool m_documentRecognizeResultUrlHasBeenSet;
 
                     /**
-                     * 文档解析失败的页码
+                     * 本次文档解析失败的页码信息。
                      */
                     std::vector<ReconstructDocumentFailedPage> m_failedPages;
                     bool m_failedPagesHasBeenSet;

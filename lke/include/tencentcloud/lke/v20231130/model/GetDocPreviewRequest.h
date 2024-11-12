@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文档业务ID
-                     * @return DocBizId 文档业务ID
+                     * 获取文档BizID
+                     * @return DocBizId 文档BizID
                      * 
                      */
                     std::string GetDocBizId() const;
 
                     /**
-                     * 设置文档业务ID
-                     * @param _docBizId 文档业务ID
+                     * 设置文档BizID
+                     * @param _docBizId 文档BizID
                      * 
                      */
                     void SetDocBizId(const std::string& _docBizId);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文档业务ID
+                     * 文档BizID
                      */
                     std::string m_docBizId;
                     bool m_docBizIdHasBeenSet;

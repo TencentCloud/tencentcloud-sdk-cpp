@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取QA业务ID列表
-                     * @return QaBizIds QA业务ID列表
+                     * 获取QaBizID列表
+                     * @return QaBizIds QaBizID列表
                      * 
                      */
                     std::vector<std::string> GetQaBizIds() const;
 
                     /**
-                     * 设置QA业务ID列表
-                     * @param _qaBizIds QA业务ID列表
+                     * 设置QaBizID列表
+                     * @param _qaBizIds QaBizID列表
                      * 
                      */
                     void SetQaBizIds(const std::vector<std::string>& _qaBizIds);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * QA业务ID列表
+                     * QaBizID列表
                      */
                     std::vector<std::string> m_qaBizIds;
                     bool m_qaBizIdsHasBeenSet;

@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool PurchaseSourceHasBeenSet() const;
 
                     /**
-                     * 获取当调用API接口提交订单时，需要提交DedicatedClusterOrderId
-                     * @return DedicatedClusterOrderId 当调用API接口提交订单时，需要提交DedicatedClusterOrderId
+                     * 获取当调用API接口提交订单时，需要提交DedicatedClusterOrderId，此处DedicatedClusterOrderId是之前创建的订单，可通过DescribeDedicatedClusterOrders接口查询，这里传入DedicatedClusterOrderId用于调整订单和支付。
+                     * @return DedicatedClusterOrderId 当调用API接口提交订单时，需要提交DedicatedClusterOrderId，此处DedicatedClusterOrderId是之前创建的订单，可通过DescribeDedicatedClusterOrders接口查询，这里传入DedicatedClusterOrderId用于调整订单和支付。
                      * 
                      */
                     std::string GetDedicatedClusterOrderId() const;
 
                     /**
-                     * 设置当调用API接口提交订单时，需要提交DedicatedClusterOrderId
-                     * @param _dedicatedClusterOrderId 当调用API接口提交订单时，需要提交DedicatedClusterOrderId
+                     * 设置当调用API接口提交订单时，需要提交DedicatedClusterOrderId，此处DedicatedClusterOrderId是之前创建的订单，可通过DescribeDedicatedClusterOrders接口查询，这里传入DedicatedClusterOrderId用于调整订单和支付。
+                     * @param _dedicatedClusterOrderId 当调用API接口提交订单时，需要提交DedicatedClusterOrderId，此处DedicatedClusterOrderId是之前创建的订单，可通过DescribeDedicatedClusterOrders接口查询，这里传入DedicatedClusterOrderId用于调整订单和支付。
                      * 
                      */
                     void SetDedicatedClusterOrderId(const std::string& _dedicatedClusterOrderId);
@@ -204,7 +204,7 @@ namespace TencentCloud
                     bool m_purchaseSourceHasBeenSet;
 
                     /**
-                     * 当调用API接口提交订单时，需要提交DedicatedClusterOrderId
+                     * 当调用API接口提交订单时，需要提交DedicatedClusterOrderId，此处DedicatedClusterOrderId是之前创建的订单，可通过DescribeDedicatedClusterOrders接口查询，这里传入DedicatedClusterOrderId用于调整订单和支付。
                      */
                     std::string m_dedicatedClusterOrderId;
                     bool m_dedicatedClusterOrderIdHasBeenSet;

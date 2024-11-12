@@ -94,31 +94,55 @@ namespace TencentCloud
                     bool ActivityIdHasBeenSet() const;
 
                     /**
-                     * 获取伸缩活动类型。取值如下：<br>
-<li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例
-<li>START_INSTANCES：开启实例
-<li>STOP_INSTANCES：关闭实例
-<li>INVOKE_COMMAND：执行命令
-                     * @return ActivityType 伸缩活动类型。取值如下：<br>
-<li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例
-<li>START_INSTANCES：开启实例
-<li>STOP_INSTANCES：关闭实例
-<li>INVOKE_COMMAND：执行命令
+                     * 获取伸缩活动类型。取值如下：
+<li>SCALE_OUT：扩容活动</li>
+<li>SCALE_IN：缩容活动</li>
+<li>ATTACH_INSTANCES：添加实例</li>
+<li>REMOVE_INSTANCES：销毁实例</li>
+<li>DETACH_INSTANCES：移出实例</li>
+<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁</li>
+<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例</li>
+<li>START_INSTANCES：开启实例</li>
+<li>STOP_INSTANCES：关闭实例</li>
+<li>INVOKE_COMMAND：执行命令</li>
+                     * @return ActivityType 伸缩活动类型。取值如下：
+<li>SCALE_OUT：扩容活动</li>
+<li>SCALE_IN：缩容活动</li>
+<li>ATTACH_INSTANCES：添加实例</li>
+<li>REMOVE_INSTANCES：销毁实例</li>
+<li>DETACH_INSTANCES：移出实例</li>
+<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁</li>
+<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例</li>
+<li>START_INSTANCES：开启实例</li>
+<li>STOP_INSTANCES：关闭实例</li>
+<li>INVOKE_COMMAND：执行命令</li>
                      * 
                      */
                     std::string GetActivityType() const;
 
                     /**
-                     * 设置伸缩活动类型。取值如下：<br>
-<li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例
-<li>START_INSTANCES：开启实例
-<li>STOP_INSTANCES：关闭实例
-<li>INVOKE_COMMAND：执行命令
-                     * @param _activityType 伸缩活动类型。取值如下：<br>
-<li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例
-<li>START_INSTANCES：开启实例
-<li>STOP_INSTANCES：关闭实例
-<li>INVOKE_COMMAND：执行命令
+                     * 设置伸缩活动类型。取值如下：
+<li>SCALE_OUT：扩容活动</li>
+<li>SCALE_IN：缩容活动</li>
+<li>ATTACH_INSTANCES：添加实例</li>
+<li>REMOVE_INSTANCES：销毁实例</li>
+<li>DETACH_INSTANCES：移出实例</li>
+<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁</li>
+<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例</li>
+<li>START_INSTANCES：开启实例</li>
+<li>STOP_INSTANCES：关闭实例</li>
+<li>INVOKE_COMMAND：执行命令</li>
+                     * @param _activityType 伸缩活动类型。取值如下：
+<li>SCALE_OUT：扩容活动</li>
+<li>SCALE_IN：缩容活动</li>
+<li>ATTACH_INSTANCES：添加实例</li>
+<li>REMOVE_INSTANCES：销毁实例</li>
+<li>DETACH_INSTANCES：移出实例</li>
+<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁</li>
+<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例</li>
+<li>START_INSTANCES：开启实例</li>
+<li>STOP_INSTANCES：关闭实例</li>
+<li>INVOKE_COMMAND：执行命令</li>
                      * 
                      */
                     void SetActivityType(const std::string& _activityType);
@@ -131,39 +155,39 @@ namespace TencentCloud
                     bool ActivityTypeHasBeenSet() const;
 
                     /**
-                     * 获取伸缩活动状态。取值如下：<br>
-<li>INIT：初始化中
-<li>RUNNING：运行中
-<li>SUCCESSFUL：活动成功
-<li>PARTIALLY_SUCCESSFUL：活动部分成功
-<li>FAILED：活动失败
-<li>CANCELLED：活动取消
-                     * @return StatusCode 伸缩活动状态。取值如下：<br>
-<li>INIT：初始化中
-<li>RUNNING：运行中
-<li>SUCCESSFUL：活动成功
-<li>PARTIALLY_SUCCESSFUL：活动部分成功
-<li>FAILED：活动失败
-<li>CANCELLED：活动取消
+                     * 获取伸缩活动状态。取值如下
+<li>INIT：初始化中</li>
+<li>RUNNING：运行中</li>
+<li>SUCCESSFUL：活动成功</li>
+<li>PARTIALLY_SUCCESSFUL：活动部分成功</li>
+<li>FAILED：活动失败</li>
+<li>CANCELLED：活动取消</li>
+                     * @return StatusCode 伸缩活动状态。取值如下
+<li>INIT：初始化中</li>
+<li>RUNNING：运行中</li>
+<li>SUCCESSFUL：活动成功</li>
+<li>PARTIALLY_SUCCESSFUL：活动部分成功</li>
+<li>FAILED：活动失败</li>
+<li>CANCELLED：活动取消</li>
                      * 
                      */
                     std::string GetStatusCode() const;
 
                     /**
-                     * 设置伸缩活动状态。取值如下：<br>
-<li>INIT：初始化中
-<li>RUNNING：运行中
-<li>SUCCESSFUL：活动成功
-<li>PARTIALLY_SUCCESSFUL：活动部分成功
-<li>FAILED：活动失败
-<li>CANCELLED：活动取消
-                     * @param _statusCode 伸缩活动状态。取值如下：<br>
-<li>INIT：初始化中
-<li>RUNNING：运行中
-<li>SUCCESSFUL：活动成功
-<li>PARTIALLY_SUCCESSFUL：活动部分成功
-<li>FAILED：活动失败
-<li>CANCELLED：活动取消
+                     * 设置伸缩活动状态。取值如下
+<li>INIT：初始化中</li>
+<li>RUNNING：运行中</li>
+<li>SUCCESSFUL：活动成功</li>
+<li>PARTIALLY_SUCCESSFUL：活动部分成功</li>
+<li>FAILED：活动失败</li>
+<li>CANCELLED：活动取消</li>
+                     * @param _statusCode 伸缩活动状态。取值如下
+<li>INIT：初始化中</li>
+<li>RUNNING：运行中</li>
+<li>SUCCESSFUL：活动成功</li>
+<li>PARTIALLY_SUCCESSFUL：活动部分成功</li>
+<li>FAILED：活动失败</li>
+<li>CANCELLED：活动取消</li>
                      * 
                      */
                     void SetStatusCode(const std::string& _statusCode);
@@ -442,23 +466,29 @@ namespace TencentCloud
                     bool m_activityIdHasBeenSet;
 
                     /**
-                     * 伸缩活动类型。取值如下：<br>
-<li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例
-<li>START_INSTANCES：开启实例
-<li>STOP_INSTANCES：关闭实例
-<li>INVOKE_COMMAND：执行命令
+                     * 伸缩活动类型。取值如下：
+<li>SCALE_OUT：扩容活动</li>
+<li>SCALE_IN：缩容活动</li>
+<li>ATTACH_INSTANCES：添加实例</li>
+<li>REMOVE_INSTANCES：销毁实例</li>
+<li>DETACH_INSTANCES：移出实例</li>
+<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁</li>
+<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例</li>
+<li>START_INSTANCES：开启实例</li>
+<li>STOP_INSTANCES：关闭实例</li>
+<li>INVOKE_COMMAND：执行命令</li>
                      */
                     std::string m_activityType;
                     bool m_activityTypeHasBeenSet;
 
                     /**
-                     * 伸缩活动状态。取值如下：<br>
-<li>INIT：初始化中
-<li>RUNNING：运行中
-<li>SUCCESSFUL：活动成功
-<li>PARTIALLY_SUCCESSFUL：活动部分成功
-<li>FAILED：活动失败
-<li>CANCELLED：活动取消
+                     * 伸缩活动状态。取值如下
+<li>INIT：初始化中</li>
+<li>RUNNING：运行中</li>
+<li>SUCCESSFUL：活动成功</li>
+<li>PARTIALLY_SUCCESSFUL：活动部分成功</li>
+<li>FAILED：活动失败</li>
+<li>CANCELLED：活动取消</li>
                      */
                     std::string m_statusCode;
                     bool m_statusCodeHasBeenSet;

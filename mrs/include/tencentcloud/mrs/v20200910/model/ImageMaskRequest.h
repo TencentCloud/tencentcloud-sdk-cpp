@@ -86,6 +86,27 @@ namespace TencentCloud
                      */
                     bool MaskFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动矫正图片方向
+                     * @return AutoFixImageDirection 是否自动矫正图片方向
+                     * 
+                     */
+                    bool GetAutoFixImageDirection() const;
+
+                    /**
+                     * 设置是否自动矫正图片方向
+                     * @param _autoFixImageDirection 是否自动矫正图片方向
+                     * 
+                     */
+                    void SetAutoFixImageDirection(const bool& _autoFixImageDirection);
+
+                    /**
+                     * 判断参数 AutoFixImageDirection 是否已赋值
+                     * @return AutoFixImageDirection 是否已赋值
+                     * 
+                     */
+                    bool AutoFixImageDirectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -99,6 +120,12 @@ namespace TencentCloud
                      */
                     ImageMaskFlags m_maskFlag;
                     bool m_maskFlagHasBeenSet;
+
+                    /**
+                     * 是否自动矫正图片方向
+                     */
+                    bool m_autoFixImageDirection;
+                    bool m_autoFixImageDirectionHasBeenSet;
 
                 };
             }

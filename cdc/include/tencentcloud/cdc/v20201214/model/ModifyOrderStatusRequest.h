@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取大订单ID
-                     * @return DedicatedClusterOrderId 大订单ID
+                     * 获取大订单ID，可以在本地专用集群的基础信息页获取大订单ID
+                     * @return DedicatedClusterOrderId 大订单ID，可以在本地专用集群的基础信息页获取大订单ID
                      * 
                      */
                     std::string GetDedicatedClusterOrderId() const;
 
                     /**
-                     * 设置大订单ID
-                     * @param _dedicatedClusterOrderId 大订单ID
+                     * 设置大订单ID，可以在本地专用集群的基础信息页获取大订单ID
+                     * @param _dedicatedClusterOrderId 大订单ID，可以在本地专用集群的基础信息页获取大订单ID
                      * 
                      */
                     void SetDedicatedClusterOrderId(const std::string& _dedicatedClusterOrderId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DedicatedClusterOrderIdHasBeenSet() const;
 
                     /**
-                     * 获取小订单ID
-                     * @return SubOrderIds 小订单ID
+                     * 获取小订单ID，进入大订单的详情页，可以看到小订单ID
+                     * @return SubOrderIds 小订单ID，进入大订单的详情页，可以看到小订单ID
                      * 
                      */
                     std::vector<std::string> GetSubOrderIds() const;
 
                     /**
-                     * 设置小订单ID
-                     * @param _subOrderIds 小订单ID
+                     * 设置小订单ID，进入大订单的详情页，可以看到小订单ID
+                     * @param _subOrderIds 小订单ID，进入大订单的详情页，可以看到小订单ID
                      * 
                      */
                     void SetSubOrderIds(const std::vector<std::string>& _subOrderIds);
@@ -114,13 +114,13 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 大订单ID
+                     * 大订单ID，可以在本地专用集群的基础信息页获取大订单ID
                      */
                     std::string m_dedicatedClusterOrderId;
                     bool m_dedicatedClusterOrderIdHasBeenSet;
 
                     /**
-                     * 小订单ID
+                     * 小订单ID，进入大订单的详情页，可以看到小订单ID
                      */
                     std::vector<std::string> m_subOrderIds;
                     bool m_subOrderIdsHasBeenSet;

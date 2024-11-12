@@ -281,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义参数的默认取值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultParameterConfs 自定义参数的默认取值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DefaultParameterConf> GetDefaultParameterConfs() const;
 
                     /**
                      * 设置自定义参数的默认取值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultParameterConfs 自定义参数的默认取值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultParameterConfs(const std::vector<DefaultParameterConf>& _defaultParameterConfs);
@@ -306,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命令关联的场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scenes 命令关联的场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetScenes() const;
 
                     /**
                      * 设置命令关联的场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scenes 命令关联的场景
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScenes(const std::vector<std::string>& _scenes);
@@ -525,14 +517,12 @@ namespace TencentCloud
 
                     /**
                      * 自定义参数的默认取值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DefaultParameterConf> m_defaultParameterConfs;
                     bool m_defaultParameterConfsHasBeenSet;
 
                     /**
                      * 命令关联的场景
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_scenes;
                     bool m_scenesHasBeenSet;

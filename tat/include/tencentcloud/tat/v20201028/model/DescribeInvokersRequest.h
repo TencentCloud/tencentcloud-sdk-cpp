@@ -65,31 +65,15 @@ namespace TencentCloud
                     bool InvokerIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件：
-
-<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。
-<li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。
-<li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。
-                     * @return Filters 过滤条件：
-
-<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。
-<li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。
-<li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。
+                     * 获取过滤条件：<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。</li> <li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。</li> <li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。</li>
+                     * @return Filters 过滤条件：<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。</li> <li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。</li> <li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件：
-
-<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。
-<li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。
-<li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。
-                     * @param _filters 过滤条件：
-
-<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。
-<li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。
-<li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。
+                     * 设置过滤条件：<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。</li> <li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。</li> <li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。</li>
+                     * @param _filters 过滤条件：<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。</li> <li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。</li> <li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -152,11 +136,7 @@ namespace TencentCloud
                     bool m_invokerIdsHasBeenSet;
 
                     /**
-                     * 过滤条件：
-
-<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。
-<li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。
-<li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。
+                     * 过滤条件：<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。</li> <li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。</li> <li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

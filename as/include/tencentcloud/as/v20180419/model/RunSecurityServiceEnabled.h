@@ -47,18 +47,30 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务<br><li>FALSE：表示不开启云安全服务<br><br>默认取值：TRUE。
+                     * 获取是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：
+<li>TRUE：表示开启云安全服务</li>
+<li>FALSE：表示不开启云安全服务</li>
+默认取值：TRUE。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Enabled 是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务<br><li>FALSE：表示不开启云安全服务<br><br>默认取值：TRUE。
+                     * @return Enabled 是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：
+<li>TRUE：表示开启云安全服务</li>
+<li>FALSE：表示不开启云安全服务</li>
+默认取值：TRUE。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
-                     * 设置是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务<br><li>FALSE：表示不开启云安全服务<br><br>默认取值：TRUE。
+                     * 设置是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：
+<li>TRUE：表示开启云安全服务</li>
+<li>FALSE：表示不开启云安全服务</li>
+默认取值：TRUE。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enabled 是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务<br><li>FALSE：表示不开启云安全服务<br><br>默认取值：TRUE。
+                     * @param _enabled 是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：
+<li>TRUE：表示开启云安全服务</li>
+<li>FALSE：表示不开启云安全服务</li>
+默认取值：TRUE。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,7 +86,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务<br><li>FALSE：表示不开启云安全服务<br><br>默认取值：TRUE。
+                     * 是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：
+<li>TRUE：表示开启云安全服务</li>
+<li>FALSE：表示不开启云安全服务</li>
+默认取值：TRUE。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enabled;

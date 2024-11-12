@@ -179,15 +179,23 @@ namespace TencentCloud
                     bool RefreshSettingsHasBeenSet() const;
 
                     /**
-                     * 获取刷新活动类型。取值如下：<br><li>NORMAL：正常刷新活动</li><li>ROLLBACK：回滚刷新活动
-                     * @return ActivityType 刷新活动类型。取值如下：<br><li>NORMAL：正常刷新活动</li><li>ROLLBACK：回滚刷新活动
+                     * 获取刷新活动类型。取值如下：
+<li>NORMAL：正常刷新活动</li>
+<li>ROLLBACK：回滚刷新活动</li>
+                     * @return ActivityType 刷新活动类型。取值如下：
+<li>NORMAL：正常刷新活动</li>
+<li>ROLLBACK：回滚刷新活动</li>
                      * 
                      */
                     std::string GetActivityType() const;
 
                     /**
-                     * 设置刷新活动类型。取值如下：<br><li>NORMAL：正常刷新活动</li><li>ROLLBACK：回滚刷新活动
-                     * @param _activityType 刷新活动类型。取值如下：<br><li>NORMAL：正常刷新活动</li><li>ROLLBACK：回滚刷新活动
+                     * 设置刷新活动类型。取值如下：
+<li>NORMAL：正常刷新活动</li>
+<li>ROLLBACK：回滚刷新活动</li>
+                     * @param _activityType 刷新活动类型。取值如下：
+<li>NORMAL：正常刷新活动</li>
+<li>ROLLBACK：回滚刷新活动</li>
                      * 
                      */
                     void SetActivityType(const std::string& _activityType);
@@ -200,15 +208,47 @@ namespace TencentCloud
                     bool ActivityTypeHasBeenSet() const;
 
                     /**
-                     * 获取刷新活动状态。取值如下：<br><li>INIT：初始化中</li><li>RUNNING：运行中</li><li>SUCCESSFUL：活动成功</li><li>FAILED_PAUSE：因刷新批次失败暂停</li><li>AUTO_PAUSE：因暂停策略自动暂停</li><li>MANUAL_PAUSE：手动暂停</li><li>CANCELLED：活动取消</li><li>FAILED：活动失败
-                     * @return Status 刷新活动状态。取值如下：<br><li>INIT：初始化中</li><li>RUNNING：运行中</li><li>SUCCESSFUL：活动成功</li><li>FAILED_PAUSE：因刷新批次失败暂停</li><li>AUTO_PAUSE：因暂停策略自动暂停</li><li>MANUAL_PAUSE：手动暂停</li><li>CANCELLED：活动取消</li><li>FAILED：活动失败
+                     * 获取刷新活动状态。取值如下：
+<li>INIT：初始化中</li>
+<li>RUNNING：运行中</li>
+<li>SUCCESSFUL：活动成功</li>
+<li>FAILED_PAUSE：因刷新批次失败暂停</li>
+<li>AUTO_PAUSE：因暂停策略自动暂停</li>
+<li>MANUAL_PAUSE：手动暂停</li>
+<li>CANCELLED：活动取消</li>
+<li>FAILED：活动失败</li>
+                     * @return Status 刷新活动状态。取值如下：
+<li>INIT：初始化中</li>
+<li>RUNNING：运行中</li>
+<li>SUCCESSFUL：活动成功</li>
+<li>FAILED_PAUSE：因刷新批次失败暂停</li>
+<li>AUTO_PAUSE：因暂停策略自动暂停</li>
+<li>MANUAL_PAUSE：手动暂停</li>
+<li>CANCELLED：活动取消</li>
+<li>FAILED：活动失败</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置刷新活动状态。取值如下：<br><li>INIT：初始化中</li><li>RUNNING：运行中</li><li>SUCCESSFUL：活动成功</li><li>FAILED_PAUSE：因刷新批次失败暂停</li><li>AUTO_PAUSE：因暂停策略自动暂停</li><li>MANUAL_PAUSE：手动暂停</li><li>CANCELLED：活动取消</li><li>FAILED：活动失败
-                     * @param _status 刷新活动状态。取值如下：<br><li>INIT：初始化中</li><li>RUNNING：运行中</li><li>SUCCESSFUL：活动成功</li><li>FAILED_PAUSE：因刷新批次失败暂停</li><li>AUTO_PAUSE：因暂停策略自动暂停</li><li>MANUAL_PAUSE：手动暂停</li><li>CANCELLED：活动取消</li><li>FAILED：活动失败
+                     * 设置刷新活动状态。取值如下：
+<li>INIT：初始化中</li>
+<li>RUNNING：运行中</li>
+<li>SUCCESSFUL：活动成功</li>
+<li>FAILED_PAUSE：因刷新批次失败暂停</li>
+<li>AUTO_PAUSE：因暂停策略自动暂停</li>
+<li>MANUAL_PAUSE：手动暂停</li>
+<li>CANCELLED：活动取消</li>
+<li>FAILED：活动失败</li>
+                     * @param _status 刷新活动状态。取值如下：
+<li>INIT：初始化中</li>
+<li>RUNNING：运行中</li>
+<li>SUCCESSFUL：活动成功</li>
+<li>FAILED_PAUSE：因刷新批次失败暂停</li>
+<li>AUTO_PAUSE：因暂停策略自动暂停</li>
+<li>MANUAL_PAUSE：手动暂停</li>
+<li>CANCELLED：活动取消</li>
+<li>FAILED：活动失败</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -360,13 +400,23 @@ namespace TencentCloud
                     bool m_refreshSettingsHasBeenSet;
 
                     /**
-                     * 刷新活动类型。取值如下：<br><li>NORMAL：正常刷新活动</li><li>ROLLBACK：回滚刷新活动
+                     * 刷新活动类型。取值如下：
+<li>NORMAL：正常刷新活动</li>
+<li>ROLLBACK：回滚刷新活动</li>
                      */
                     std::string m_activityType;
                     bool m_activityTypeHasBeenSet;
 
                     /**
-                     * 刷新活动状态。取值如下：<br><li>INIT：初始化中</li><li>RUNNING：运行中</li><li>SUCCESSFUL：活动成功</li><li>FAILED_PAUSE：因刷新批次失败暂停</li><li>AUTO_PAUSE：因暂停策略自动暂停</li><li>MANUAL_PAUSE：手动暂停</li><li>CANCELLED：活动取消</li><li>FAILED：活动失败
+                     * 刷新活动状态。取值如下：
+<li>INIT：初始化中</li>
+<li>RUNNING：运行中</li>
+<li>SUCCESSFUL：活动成功</li>
+<li>FAILED_PAUSE：因刷新批次失败暂停</li>
+<li>AUTO_PAUSE：因暂停策略自动暂停</li>
+<li>MANUAL_PAUSE：手动暂停</li>
+<li>CANCELLED：活动取消</li>
+<li>FAILED：活动失败</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

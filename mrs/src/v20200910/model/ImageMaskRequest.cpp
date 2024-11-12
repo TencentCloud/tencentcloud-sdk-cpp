@@ -24,7 +24,8 @@ using namespace std;
 
 ImageMaskRequest::ImageMaskRequest() :
     m_imageHasBeenSet(false),
-    m_maskFlagHasBeenSet(false)
+    m_maskFlagHasBeenSet(false),
+    m_autoFixImageDirectionHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,14 @@ string ImageMaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_maskFlag.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_autoFixImageDirectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoFixImageDirection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoFixImageDirection, allocator);
     }
 
 
@@ -91,6 +100,22 @@ void ImageMaskRequest::SetMaskFlag(const ImageMaskFlags& _maskFlag)
 bool ImageMaskRequest::MaskFlagHasBeenSet() const
 {
     return m_maskFlagHasBeenSet;
+}
+
+bool ImageMaskRequest::GetAutoFixImageDirection() const
+{
+    return m_autoFixImageDirection;
+}
+
+void ImageMaskRequest::SetAutoFixImageDirection(const bool& _autoFixImageDirection)
+{
+    m_autoFixImageDirection = _autoFixImageDirection;
+    m_autoFixImageDirectionHasBeenSet = true;
+}
+
+bool ImageMaskRequest::AutoFixImageDirectionHasBeenSet() const
+{
+    return m_autoFixImageDirectionHasBeenSet;
 }
 
 

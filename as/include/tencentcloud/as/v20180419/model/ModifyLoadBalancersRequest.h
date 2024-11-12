@@ -108,22 +108,22 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。
-<br><li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。
-<br><li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。
+<li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。</li> 
+<li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。</li> 
                      * @return LoadBalancersCheckPolicy 负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。
-<br><li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。
-<br><li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。
+<li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。</li> 
+<li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。</li> 
                      * 
                      */
                     std::string GetLoadBalancersCheckPolicy() const;
 
                     /**
                      * 设置负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。
-<br><li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。
-<br><li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。
+<li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。</li> 
+<li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。</li> 
                      * @param _loadBalancersCheckPolicy 负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。
-<br><li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。
-<br><li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。
+<li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。</li> 
+<li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。</li> 
                      * 
                      */
                     void SetLoadBalancersCheckPolicy(const std::string& _loadBalancersCheckPolicy);
@@ -157,8 +157,8 @@ namespace TencentCloud
 
                     /**
                      * 负载均衡器校验策略，取值包括 ALL 和 DIFF，默认取值为 ALL。
-<br><li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。
-<br><li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。
+<li> ALL，所有负载均衡器都合法则通过校验，否则校验报错。</li> 
+<li> DIFF，仅校验负载均衡器参数中实际变化的部分，如果合法则通过校验，否则校验报错。</li> 
                      */
                     std::string m_loadBalancersCheckPolicy;
                     bool m_loadBalancersCheckPolicyHasBeenSet;

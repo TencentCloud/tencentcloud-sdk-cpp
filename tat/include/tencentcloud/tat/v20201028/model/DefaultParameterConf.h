@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParameterName 参数名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParameterName() const;
 
                     /**
                      * 设置参数名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parameterName 参数名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParameterName(const std::string& _parameterName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数默认值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParameterValue 参数默认值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParameterValue() const;
 
                     /**
                      * 设置参数默认值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parameterValue 参数默认值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParameterValue(const std::string& _parameterValue);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParameterDescription 参数描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParameterDescription() const;
 
                     /**
                      * 设置参数描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parameterDescription 参数描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParameterDescription(const std::string& _parameterDescription);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 参数名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parameterName;
                     bool m_parameterNameHasBeenSet;
 
                     /**
                      * 参数默认值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parameterValue;
                     bool m_parameterValueHasBeenSet;
 
                     /**
                      * 参数描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parameterDescription;
                     bool m_parameterDescriptionHasBeenSet;

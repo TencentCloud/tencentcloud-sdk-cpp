@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取时间范围精度，1分钟/5分钟
-                     * @return Period 时间范围精度，1分钟/5分钟
+                     * 获取时间范围精度，1分钟(ONE_MINUTE)/5分钟(FIVE_MINUTE)
+                     * @return Period 时间范围精度，1分钟(ONE_MINUTE)/5分钟(FIVE_MINUTE)
                      * 
                      */
                     std::string GetPeriod() const;
 
                     /**
-                     * 设置时间范围精度，1分钟/5分钟
-                     * @param _period 时间范围精度，1分钟/5分钟
+                     * 设置时间范围精度，1分钟(ONE_MINUTE)/5分钟(FIVE_MINUTE)
+                     * @param _period 时间范围精度，1分钟(ONE_MINUTE)/5分钟(FIVE_MINUTE)
                      * 
                      */
                     void SetPeriod(const std::string& _period);
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 时间范围精度，1分钟/5分钟
+                     * 时间范围精度，1分钟(ONE_MINUTE)/5分钟(FIVE_MINUTE)
                      */
                     std::string m_period;
                     bool m_periodHasBeenSet;

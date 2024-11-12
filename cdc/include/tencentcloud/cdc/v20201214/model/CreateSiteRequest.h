@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool NoteHasBeenSet() const;
 
                     /**
-                     * 获取您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。
-                     * @return FiberType 您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。
+                     * 获取您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。取值范围："MM","SM"
+                     * @return FiberType 您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。取值范围："MM","SM"
                      * 
                      */
                     std::string GetFiberType() const;
 
                     /**
-                     * 设置您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。
-                     * @param _fiberType 您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。
+                     * 设置您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。取值范围："MM","SM"
+                     * @param _fiberType 您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。取值范围："MM","SM"
                      * 
                      */
                     void SetFiberType(const std::string& _fiberType);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool PowerConnectorsHasBeenSet() const;
 
                     /**
-                     * 获取从机架上方还是下方供电。
-                     * @return PowerFeedDrop 从机架上方还是下方供电。
+                     * 获取从机架上方还是下方供电。取值范围：["UP","DOWN"]
+                     * @return PowerFeedDrop 从机架上方还是下方供电。取值范围：["UP","DOWN"]
                      * 
                      */
                     std::string GetPowerFeedDrop() const;
 
                     /**
-                     * 设置从机架上方还是下方供电。
-                     * @param _powerFeedDrop 从机架上方还是下方供电。
+                     * 设置从机架上方还是下方供电。取值范围：["UP","DOWN"]
+                     * @param _powerFeedDrop 从机架上方还是下方供电。取值范围：["UP","DOWN"]
                      * 
                      */
                     void SetPowerFeedDrop(const std::string& _powerFeedDrop);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool PowerDrawKvaHasBeenSet() const;
 
                     /**
-                     * 获取网络到腾讯云Region区域的上行链路速度
-                     * @return UplinkSpeedGbps 网络到腾讯云Region区域的上行链路速度
+                     * 获取网络到腾讯云Region区域的上行链路速度(Gbps)
+                     * @return UplinkSpeedGbps 网络到腾讯云Region区域的上行链路速度(Gbps)
                      * 
                      */
                     int64_t GetUplinkSpeedGbps() const;
 
                     /**
-                     * 设置网络到腾讯云Region区域的上行链路速度
-                     * @param _uplinkSpeedGbps 网络到腾讯云Region区域的上行链路速度
+                     * 设置网络到腾讯云Region区域的上行链路速度(Gbps)
+                     * @param _uplinkSpeedGbps 网络到腾讯云Region区域的上行链路速度(Gbps)
                      * 
                      */
                     void SetUplinkSpeedGbps(const int64_t& _uplinkSpeedGbps);
@@ -602,7 +602,7 @@ namespace TencentCloud
                     bool m_noteHasBeenSet;
 
                     /**
-                     * 您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。
+                     * 您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。取值范围："MM","SM"
                      */
                     std::string m_fiberType;
                     bool m_fiberTypeHasBeenSet;
@@ -620,7 +620,7 @@ namespace TencentCloud
                     bool m_powerConnectorsHasBeenSet;
 
                     /**
-                     * 从机架上方还是下方供电。
+                     * 从机架上方还是下方供电。取值范围：["UP","DOWN"]
                      */
                     std::string m_powerFeedDrop;
                     bool m_powerFeedDropHasBeenSet;
@@ -638,7 +638,7 @@ namespace TencentCloud
                     bool m_powerDrawKvaHasBeenSet;
 
                     /**
-                     * 网络到腾讯云Region区域的上行链路速度
+                     * 网络到腾讯云Region区域的上行链路速度(Gbps)
                      */
                     int64_t m_uplinkSpeedGbps;
                     bool m_uplinkSpeedGbpsHasBeenSet;

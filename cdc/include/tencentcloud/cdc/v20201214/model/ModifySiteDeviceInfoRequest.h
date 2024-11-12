@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PowerConnectorsHasBeenSet() const;
 
                     /**
-                     * 获取从机架上方还是下方供电。
-                     * @return PowerFeedDrop 从机架上方还是下方供电。
+                     * 获取从机架上方还是下方供电。取值范围：["UP","DOWN"]
+                     * @return PowerFeedDrop 从机架上方还是下方供电。取值范围：["UP","DOWN"]
                      * 
                      */
                     std::string GetPowerFeedDrop() const;
 
                     /**
-                     * 设置从机架上方还是下方供电。
-                     * @param _powerFeedDrop 从机架上方还是下方供电。
+                     * 设置从机架上方还是下方供电。取值范围：["UP","DOWN"]
+                     * @param _powerFeedDrop 从机架上方还是下方供电。取值范围：["UP","DOWN"]
                      * 
                      */
                     void SetPowerFeedDrop(const std::string& _powerFeedDrop);
@@ -416,7 +416,7 @@ namespace TencentCloud
                     bool m_powerConnectorsHasBeenSet;
 
                     /**
-                     * 从机架上方还是下方供电。
+                     * 从机架上方还是下方供电。取值范围：["UP","DOWN"]
                      */
                     std::string m_powerFeedDrop;
                     bool m_powerFeedDropHasBeenSet;
