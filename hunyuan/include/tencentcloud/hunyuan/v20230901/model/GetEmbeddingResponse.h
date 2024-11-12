@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回的 Embedding 信息。当前不支持批量，所以数组元素数目为 1。
-                     * @return Data 返回的 Embedding 信息。当前不支持批量，所以数组元素数目为 1。
+                     * 获取返回的 Embedding 信息。
+                     * @return Data 返回的 Embedding 信息。
                      * 
                      */
                     std::vector<EmbeddingData> GetData() const;
@@ -76,7 +76,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回的 Embedding 信息。当前不支持批量，所以数组元素数目为 1。
+                     * 返回的 Embedding 信息。
                      */
                     std::vector<EmbeddingData> m_data;
                     bool m_dataHasBeenSet;

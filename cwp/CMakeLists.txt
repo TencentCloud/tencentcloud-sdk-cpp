@@ -163,6 +163,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeUsualLoginPlacesResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeAttackEventsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeRiskDnsListRequest.h
+  include/tencentcloud/cwp/v20180228/model/DescribeAttackVulTypeListResponse.h
   include/tencentcloud/cwp/v20180228/model/CreateWhiteListOrderRequest.h
   include/tencentcloud/cwp/v20180228/model/BaselineItem.h
   include/tencentcloud/cwp/v20180228/model/DescribeRansomDefenseStrategyDetailResponse.h
@@ -183,7 +184,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeScreenAttackHotspotRequest.h
   include/tencentcloud/cwp/v20180228/model/ScanVulAgainRequest.h
   include/tencentcloud/cwp/v20180228/model/DeleteSearchTemplateRequest.h
-  include/tencentcloud/cwp/v20180228/model/CreateCloudProtectServiceOrderRecordRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportJavaMemShellPluginsResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetTotalCountResponse.h
   include/tencentcloud/cwp/v20180228/model/ExportNonlocalLoginPlacesRequest.h
@@ -1010,7 +1010,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/ExportBaselineRuleDetectListResponse.h
   include/tencentcloud/cwp/v20180228/model/ABTestConfig.h
   include/tencentcloud/cwp/v20180228/model/ScreenBaselineInfo.h
-  include/tencentcloud/cwp/v20180228/model/DescribeProductStatusRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportBaselineWeakPasswordListRequest.h
   include/tencentcloud/cwp/v20180228/model/Filter.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetMachineTagTopRequest.h
@@ -1191,7 +1190,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineListRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribePublicProxyInstallCommandRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportJavaMemShellsResponse.h
-  include/tencentcloud/cwp/v20180228/model/CreateCloudProtectServiceOrderRecordResponse.h
+  include/tencentcloud/cwp/v20180228/model/DescribeProductStatusRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeRiskProcessEventsResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeScreenHostInvasionResponse.h
   include/tencentcloud/cwp/v20180228/model/ExportBaselineFixListResponse.h
@@ -1269,7 +1268,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DeleteMachineTagResponse.h
   include/tencentcloud/cwp/v20180228/model/UpdateMachineTagsResponse.h
   include/tencentcloud/cwp/v20180228/model/BruteAttackInfo.h
-  include/tencentcloud/cwp/v20180228/model/DescribeAttackVulTypeListResponse.h
+  include/tencentcloud/cwp/v20180228/model/CloudFromCnt.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulFixStatusRequest.h
   include/tencentcloud/cwp/v20180228/model/UpdateMachineTagsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineItemDetectListResponse.h
@@ -1460,6 +1459,7 @@ set(cwp_src
   src/v20180228/model/DescribeUsualLoginPlacesResponse.cpp
   src/v20180228/model/DescribeAttackEventsRequest.cpp
   src/v20180228/model/DescribeRiskDnsListRequest.cpp
+  src/v20180228/model/DescribeAttackVulTypeListResponse.cpp
   src/v20180228/model/CreateWhiteListOrderRequest.cpp
   src/v20180228/model/BaselineItem.cpp
   src/v20180228/model/DescribeRansomDefenseStrategyDetailResponse.cpp
@@ -1480,7 +1480,6 @@ set(cwp_src
   src/v20180228/model/DescribeScreenAttackHotspotRequest.cpp
   src/v20180228/model/ScanVulAgainRequest.cpp
   src/v20180228/model/DeleteSearchTemplateRequest.cpp
-  src/v20180228/model/CreateCloudProtectServiceOrderRecordRequest.cpp
   src/v20180228/model/ExportJavaMemShellPluginsResponse.cpp
   src/v20180228/model/DescribeAssetTotalCountResponse.cpp
   src/v20180228/model/ExportNonlocalLoginPlacesRequest.cpp
@@ -2307,7 +2306,6 @@ set(cwp_src
   src/v20180228/model/ExportBaselineRuleDetectListResponse.cpp
   src/v20180228/model/ABTestConfig.cpp
   src/v20180228/model/ScreenBaselineInfo.cpp
-  src/v20180228/model/DescribeProductStatusRequest.cpp
   src/v20180228/model/ExportBaselineWeakPasswordListRequest.cpp
   src/v20180228/model/Filter.cpp
   src/v20180228/model/DescribeAssetMachineTagTopRequest.cpp
@@ -2488,7 +2486,7 @@ set(cwp_src
   src/v20180228/model/DescribeBaselineListRequest.cpp
   src/v20180228/model/DescribePublicProxyInstallCommandRequest.cpp
   src/v20180228/model/ExportJavaMemShellsResponse.cpp
-  src/v20180228/model/CreateCloudProtectServiceOrderRecordResponse.cpp
+  src/v20180228/model/DescribeProductStatusRequest.cpp
   src/v20180228/model/DescribeRiskProcessEventsResponse.cpp
   src/v20180228/model/DescribeScreenHostInvasionResponse.cpp
   src/v20180228/model/ExportBaselineFixListResponse.cpp
@@ -2566,7 +2564,7 @@ set(cwp_src
   src/v20180228/model/DeleteMachineTagResponse.cpp
   src/v20180228/model/UpdateMachineTagsResponse.cpp
   src/v20180228/model/BruteAttackInfo.cpp
-  src/v20180228/model/DescribeAttackVulTypeListResponse.cpp
+  src/v20180228/model/CloudFromCnt.cpp
   src/v20180228/model/DescribeVulFixStatusRequest.cpp
   src/v20180228/model/UpdateMachineTagsRequest.cpp
   src/v20180228/model/DescribeBaselineItemDetectListResponse.cpp

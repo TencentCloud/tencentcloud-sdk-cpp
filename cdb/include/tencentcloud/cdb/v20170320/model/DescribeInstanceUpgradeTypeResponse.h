@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取实例 ID。
+                     * @return InstanceId 实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例升级类型
-                     * @return UpgradeType 实例升级类型
+                     * 获取实例升级类型。
+                     * @return UpgradeType 实例升级类型。
                      * 
                      */
                     std::string GetUpgradeType() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id
+                     * 实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例升级类型
+                     * 实例升级类型。
                      */
                     std::string m_upgradeType;
                     bool m_upgradeTypeHasBeenSet;

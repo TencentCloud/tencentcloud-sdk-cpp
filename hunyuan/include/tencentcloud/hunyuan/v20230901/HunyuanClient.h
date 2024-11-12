@@ -186,7 +186,7 @@ namespace TencentCloud
                 FilesListOutcomeCallable FilesListCallable(const Model::FilesListRequest& request);
 
                 /**
-                 *上传用于不同用途的的文件。
+                 *上传用于不同用途的文件。
 当前用途仅支持 hunyuan 等模型的文档理解。
                  * @param req FilesUploadsRequest
                  * @return FilesUploadsOutcome

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 帐号统计数据。
+                * 账号统计数据。
                 */
                 class AccountStatistics : public AbstractModel
                 {

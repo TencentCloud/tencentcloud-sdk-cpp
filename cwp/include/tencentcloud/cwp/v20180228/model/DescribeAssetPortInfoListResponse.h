@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ports 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetPortBaseInfo> GetPorts() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetPortBaseInfo> m_ports;
                     bool m_portsHasBeenSet;

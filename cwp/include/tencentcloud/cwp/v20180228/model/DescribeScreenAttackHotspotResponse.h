@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击热点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 攻击热点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScreenAttackHotspot> GetList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 攻击热点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScreenAttackHotspot> m_list;
                     bool m_listHasBeenSet;

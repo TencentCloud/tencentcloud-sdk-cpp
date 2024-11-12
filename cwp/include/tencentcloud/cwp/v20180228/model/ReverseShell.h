@@ -469,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo  主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineExtraInfo  主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
@@ -494,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pid 进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPid() const;
 
                     /**
                      * 设置进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pid 进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPid(const int64_t& _pid);
@@ -519,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取威胁等级：0中危，1高危
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 威胁等级：0中危，1高危
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRiskLevel() const;
 
                     /**
                      * 设置威胁等级：0中危，1高危
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevel 威胁等级：0中危，1高危
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevel(const uint64_t& _riskLevel);
@@ -666,21 +654,18 @@ namespace TencentCloud
 
                     /**
                      *  主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
 
                     /**
                      * 进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pid;
                     bool m_pidHasBeenSet;
 
                     /**
                      * 威胁等级：0中危，1高危
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_riskLevel;
                     bool m_riskLevelHasBeenSet;

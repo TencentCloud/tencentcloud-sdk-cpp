@@ -98,18 +98,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负载Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Top5 负载Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetLoadDetail> GetTop5() const;
 
                     /**
                      * 设置负载Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _top5 负载Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTop5(const std::vector<AssetLoadDetail>& _top5);
@@ -138,7 +134,6 @@ namespace TencentCloud
 
                     /**
                      * 负载Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetLoadDetail> m_top5;
                     bool m_top5HasBeenSet;

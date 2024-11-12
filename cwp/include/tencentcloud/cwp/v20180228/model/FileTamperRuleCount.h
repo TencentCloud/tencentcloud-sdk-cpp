@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联规则的名称（仅展示其中一条）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 关联规则的名称（仅展示其中一条）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置关联规则的名称（仅展示其中一条）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 关联规则的名称（仅展示其中一条）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 关联规则的名称（仅展示其中一条）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

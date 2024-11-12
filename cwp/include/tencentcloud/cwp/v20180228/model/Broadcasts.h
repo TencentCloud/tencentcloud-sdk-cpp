@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文章名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Title 文章名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置文章名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _title 文章名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型：0=紧急通知，1=功能更新，2=行业荣誉，3=版本发布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型：0=紧急通知，1=功能更新，2=行业荣誉，3=版本发布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置类型：0=紧急通知，1=功能更新，2=行业荣誉，3=版本发布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型：0=紧急通知，1=功能更新，2=行业荣誉，3=版本发布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -184,14 +176,12 @@ namespace TencentCloud
 
                     /**
                      * 文章名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
                      * 类型：0=紧急通知，1=功能更新，2=行业荣誉，3=版本发布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;

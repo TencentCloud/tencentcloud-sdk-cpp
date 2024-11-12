@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -158,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生效主机uuid,空表示全部主机，通过参数可控制返回的条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uuids 生效主机uuid,空表示全部主机，通过参数可控制返回的条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUuids() const;
 
                     /**
                      * 设置生效主机uuid,空表示全部主机，通过参数可控制返回的条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uuids 生效主机uuid,空表示全部主机，通过参数可控制返回的条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUuids(const std::vector<std::string>& _uuids);
@@ -269,11 +261,9 @@ namespace TencentCloud
                      * 获取加白处理类型
 <li>cur 仅对当前加白</li>
 <li>all 所有符合条件加白</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddWhiteType 加白处理类型
 <li>cur 仅对当前加白</li>
 <li>all 所有符合条件加白</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddWhiteType() const;
@@ -282,11 +272,9 @@ namespace TencentCloud
                      * 设置加白处理类型
 <li>cur 仅对当前加白</li>
 <li>all 所有符合条件加白</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addWhiteType 加白处理类型
 <li>cur 仅对当前加白</li>
 <li>all 所有符合条件加白</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddWhiteType(const std::string& _addWhiteType);
@@ -302,7 +290,6 @@ namespace TencentCloud
 
                     /**
                      * 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -333,7 +320,6 @@ namespace TencentCloud
 
                     /**
                      * 生效主机uuid,空表示全部主机，通过参数可控制返回的条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_uuids;
                     bool m_uuidsHasBeenSet;
@@ -366,7 +352,6 @@ namespace TencentCloud
                      * 加白处理类型
 <li>cur 仅对当前加白</li>
 <li>all 所有符合条件加白</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addWhiteType;
                     bool m_addWhiteTypeHasBeenSet;

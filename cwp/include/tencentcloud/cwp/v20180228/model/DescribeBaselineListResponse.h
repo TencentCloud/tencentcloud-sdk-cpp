@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取基线信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BaselineList 基线信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BaselineInfo> GetBaselineList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分页查询记录总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 分页查询记录总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 基线信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BaselineInfo> m_baselineList;
                     bool m_baselineListHasBeenSet;
 
                     /**
                      * 分页查询记录总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

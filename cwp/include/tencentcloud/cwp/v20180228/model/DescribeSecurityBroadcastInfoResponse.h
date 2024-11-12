@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取安全播报文章详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BroadcastInfo 安全播报文章详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BroadcastInfo GetBroadcastInfo() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 安全播报文章详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BroadcastInfo m_broadcastInfo;
                     bool m_broadcastInfoHasBeenSet;

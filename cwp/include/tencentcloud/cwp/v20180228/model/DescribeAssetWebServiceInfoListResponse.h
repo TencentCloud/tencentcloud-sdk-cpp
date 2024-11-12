@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebServices 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetWebServiceBaseInfo> GetWebServices() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetWebServiceBaseInfo> m_webServices;
                     bool m_webServicesHasBeenSet;

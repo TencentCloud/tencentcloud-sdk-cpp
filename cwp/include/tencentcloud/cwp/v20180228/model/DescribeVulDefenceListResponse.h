@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞防御列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 漏洞防御列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VulDefenceRangeDetail> GetList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 漏洞防御列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VulDefenceRangeDetail> m_list;
                     bool m_listHasBeenSet;

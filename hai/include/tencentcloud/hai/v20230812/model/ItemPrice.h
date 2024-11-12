@@ -122,10 +122,10 @@ namespace TencentCloud
                     bool DiscountHasBeenSet() const;
 
                     /**
-                     * 获取单位：时
+                     * 获取单位：时/月
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChargeUnit 单位：时
+                     * @return ChargeUnit 单位：时/月
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -133,10 +133,10 @@ namespace TencentCloud
                     std::string GetChargeUnit() const;
 
                     /**
-                     * 设置单位：时
+                     * 设置单位：时/月
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _chargeUnit 单位：时
+                     * @param _chargeUnit 单位：时/月
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -199,7 +199,7 @@ namespace TencentCloud
                     bool m_discountHasBeenSet;
 
                     /**
-                     * 单位：时
+                     * 单位：时/月
 
 注意：此字段可能返回 null，表示取不到有效值。
                      */

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取年月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Month 年月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
                      * 设置年月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _month 年月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取存储量，字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedSize 存储量，字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUsedSize() const;
 
                     /**
                      * 设置存储量，字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usedSize 存储量，字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsedSize(const uint64_t& _usedSize);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总量，字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InquireSize 总量，字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInquireSize() const;
 
                     /**
                      * 设置总量，字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inquireSize 总量，字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInquireSize(const uint64_t& _inquireSize);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 年月份
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;
 
                     /**
                      * 存储量，字节
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_usedSize;
                     bool m_usedSizeHasBeenSet;
 
                     /**
                      * 总量，字节
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_inquireSize;
                     bool m_inquireSizeHasBeenSet;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ISS_V20230517_MODEL_CHECKDOMAINRESPONSE_H_
-#define TENCENTCLOUD_ISS_V20230517_MODEL_CHECKDOMAINRESPONSE_H_
+#ifndef TENCENTCLOUD_VPC_V20170312_MODEL_MODIFYBANDWIDTHPACKAGEBANDWIDTHRESPONSE_H_
+#define TENCENTCLOUD_VPC_V20170312_MODEL_MODIFYBANDWIDTHPACKAGEBANDWIDTHRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,25 @@
 
 namespace TencentCloud
 {
-    namespace Iss
+    namespace Vpc
     {
-        namespace V20230517
+        namespace V20170312
         {
             namespace Model
             {
                 /**
-                * CheckDomain返回参数结构体
+                * ModifyBandwidthPackageBandwidth返回参数结构体
                 */
-                class CheckDomainResponse : public AbstractModel
+                class ModifyBandwidthPackageBandwidthResponse : public AbstractModel
                 {
                 public:
-                    CheckDomainResponse();
-                    ~CheckDomainResponse() = default;
+                    ModifyBandwidthPackageBandwidthResponse();
+                    ~ModifyBandwidthPackageBandwidthResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
-                    /**
-                     * 获取是否备案
-                     * @return Data 是否备案
-                     * 
-                     */
-                    bool GetData() const;
-
-                    /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
-                     * 
-                     */
-                    bool DataHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 是否备案
-                     */
-                    bool m_data;
-                    bool m_dataHasBeenSet;
 
                 };
             }
@@ -71,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ISS_V20230517_MODEL_CHECKDOMAINRESPONSE_H_
+#endif // !TENCENTCLOUD_VPC_V20170312_MODEL_MODIFYBANDWIDTHPACKAGEBANDWIDTHRESPONSE_H_

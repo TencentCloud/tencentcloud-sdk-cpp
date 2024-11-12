@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络攻击主机维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Agent 网络攻击主机维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TopInfo> GetAgent() const;
 
                     /**
                      * 设置网络攻击主机维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _agent 网络攻击主机维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAgent(const std::vector<TopInfo>& _agent);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络攻击ip来源维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcIp 网络攻击ip来源维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TopInfo> GetSrcIp() const;
 
                     /**
                      * 设置网络攻击ip来源维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcIp 网络攻击ip来源维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcIp(const std::vector<TopInfo>& _srcIp);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络攻击目标端口维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstPort 网络攻击目标端口维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TopInfo> GetDstPort() const;
 
                     /**
                      * 设置网络攻击目标端口维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstPort 网络攻击目标端口维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstPort(const std::vector<TopInfo>& _dstPort);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络攻击漏洞维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vul 网络攻击漏洞维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TopInfo> GetVul() const;
 
                     /**
                      * 设置网络攻击漏洞维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vul 网络攻击漏洞维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVul(const std::vector<TopInfo>& _vul);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 网络攻击主机维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TopInfo> m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
                      * 网络攻击ip来源维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TopInfo> m_srcIp;
                     bool m_srcIpHasBeenSet;
 
                     /**
                      * 网络攻击目标端口维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TopInfo> m_dstPort;
                     bool m_dstPortHasBeenSet;
 
                     /**
                      * 网络攻击漏洞维度top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TopInfo> m_vul;
                     bool m_vulHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取站点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebLocation 站点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AssetWebLocationInfo GetWebLocation() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 站点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AssetWebLocationInfo m_webLocation;
                     bool m_webLocationHasBeenSet;

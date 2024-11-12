@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MachineNameHasBeenSet() const;
 
                     /**
-                     * 获取帐号名。
-                     * @return Username 帐号名。
+                     * 获取账号名。
+                     * @return Username 账号名。
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置帐号名。
-                     * @param _username 帐号名。
+                     * 设置账号名。
+                     * @param _username 账号名。
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -152,27 +152,27 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取帐号变更类型。
-<li>CREATE：表示新增帐号</li>
-<li>MODIFY：表示修改帐号</li>
-<li>DELETE：表示删除帐号</li>
-                     * @return ModifyType 帐号变更类型。
-<li>CREATE：表示新增帐号</li>
-<li>MODIFY：表示修改帐号</li>
-<li>DELETE：表示删除帐号</li>
+                     * 获取账号变更类型。
+<li>CREATE：表示新增账号</li>
+<li>MODIFY：表示修改账号</li>
+<li>DELETE：表示删除账号</li>
+                     * @return ModifyType 账号变更类型。
+<li>CREATE：表示新增账号</li>
+<li>MODIFY：表示修改账号</li>
+<li>DELETE：表示删除账号</li>
                      * 
                      */
                     std::string GetModifyType() const;
 
                     /**
-                     * 设置帐号变更类型。
-<li>CREATE：表示新增帐号</li>
-<li>MODIFY：表示修改帐号</li>
-<li>DELETE：表示删除帐号</li>
-                     * @param _modifyType 帐号变更类型。
-<li>CREATE：表示新增帐号</li>
-<li>MODIFY：表示修改帐号</li>
-<li>DELETE：表示删除帐号</li>
+                     * 设置账号变更类型。
+<li>CREATE：表示新增账号</li>
+<li>MODIFY：表示修改账号</li>
+<li>DELETE：表示删除账号</li>
+                     * @param _modifyType 账号变更类型。
+<li>CREATE：表示新增账号</li>
+<li>MODIFY：表示修改账号</li>
+<li>DELETE：表示删除账号</li>
                      * 
                      */
                     void SetModifyType(const std::string& _modifyType);
@@ -232,16 +232,16 @@ namespace TencentCloud
                     bool m_machineNameHasBeenSet;
 
                     /**
-                     * 帐号名。
+                     * 账号名。
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 帐号变更类型。
-<li>CREATE：表示新增帐号</li>
-<li>MODIFY：表示修改帐号</li>
-<li>DELETE：表示删除帐号</li>
+                     * 账号变更类型。
+<li>CREATE：表示新增账号</li>
+<li>MODIFY：表示修改账号</li>
+<li>DELETE：表示删除账号</li>
                      */
                     std::string m_modifyType;
                     bool m_modifyTypeHasBeenSet;

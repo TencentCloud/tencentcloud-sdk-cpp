@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取系统负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuLoad 系统负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AssetLoadSummary GetCpuLoad() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取内存使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemLoad 内存使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AssetLoadSummary GetMemLoad() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取硬盘使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskLoad 硬盘使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AssetLoadSummary GetDiskLoad() const;
@@ -96,21 +90,18 @@ namespace TencentCloud
 
                     /**
                      * 系统负载
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AssetLoadSummary m_cpuLoad;
                     bool m_cpuLoadHasBeenSet;
 
                     /**
                      * 内存使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AssetLoadSummary m_memLoad;
                     bool m_memLoadHasBeenSet;
 
                     /**
                      * 硬盘使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AssetLoadSummary m_diskLoad;
                     bool m_diskLoadHasBeenSet;

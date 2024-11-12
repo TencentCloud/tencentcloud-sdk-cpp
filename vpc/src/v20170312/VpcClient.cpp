@@ -12080,6 +12080,49 @@ VpcClient::ModifyBandwidthPackageAttributeOutcomeCallable VpcClient::ModifyBandw
     return task->get_future();
 }
 
+VpcClient::ModifyBandwidthPackageBandwidthOutcome VpcClient::ModifyBandwidthPackageBandwidth(const ModifyBandwidthPackageBandwidthRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBandwidthPackageBandwidth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBandwidthPackageBandwidthResponse rsp = ModifyBandwidthPackageBandwidthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBandwidthPackageBandwidthOutcome(rsp);
+        else
+            return ModifyBandwidthPackageBandwidthOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBandwidthPackageBandwidthOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyBandwidthPackageBandwidthAsync(const ModifyBandwidthPackageBandwidthRequest& request, const ModifyBandwidthPackageBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBandwidthPackageBandwidth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyBandwidthPackageBandwidthOutcomeCallable VpcClient::ModifyBandwidthPackageBandwidthCallable(const ModifyBandwidthPackageBandwidthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBandwidthPackageBandwidthOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBandwidthPackageBandwidth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ModifyCcnAttachedInstancesAttributeOutcome VpcClient::ModifyCcnAttachedInstancesAttribute(const ModifyCcnAttachedInstancesAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCcnAttachedInstancesAttribute");

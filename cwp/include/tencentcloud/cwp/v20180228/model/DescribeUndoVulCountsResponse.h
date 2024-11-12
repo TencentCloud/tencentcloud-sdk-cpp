@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取未处理的漏洞数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UndoVulCount 未处理的漏洞数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUndoVulCount() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取未处理的主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UndoHostCount 未处理的主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUndoHostCount() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取普通版主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotProfessionCount 普通版主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNotProfessionCount() const;
@@ -95,21 +89,18 @@ namespace TencentCloud
 
                     /**
                      * 未处理的漏洞数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_undoVulCount;
                     bool m_undoVulCountHasBeenSet;
 
                     /**
                      * 未处理的主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_undoHostCount;
                     bool m_undoHostCountHasBeenSet;
 
                     /**
                      * 普通版主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_notProfessionCount;
                     bool m_notProfessionCountHasBeenSet;

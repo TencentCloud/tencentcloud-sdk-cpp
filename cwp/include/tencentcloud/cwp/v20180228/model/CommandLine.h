@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路径,需要base64加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Exe 路径,需要base64加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExe() const;
 
                     /**
                      * 设置路径,需要base64加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exe 路径,需要base64加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExe(const std::string& _exe);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命令行,需要base64加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cmdline 命令行,需要base64加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCmdline() const;
 
                     /**
                      * 设置命令行,需要base64加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cmdline 命令行,需要base64加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCmdline(const std::string& _cmdline);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 路径,需要base64加密
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exe;
                     bool m_exeHasBeenSet;
 
                     /**
                      * 命令行,需要base64加密
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cmdline;
                     bool m_cmdlineHasBeenSet;

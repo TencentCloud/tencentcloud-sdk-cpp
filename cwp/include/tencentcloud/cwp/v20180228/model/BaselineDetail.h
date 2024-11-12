@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 基线描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置基线描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 基线描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取危害等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 危害等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置危害等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 危害等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const uint64_t& _level);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取package名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageName package名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageName() const;
 
                     /**
                      * 设置package名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageName package名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageName(const std::string& _packageName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父级id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentId 父级id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetParentId() const;
 
                     /**
                      * 设置父级id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentId 父级id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentId(const uint64_t& _parentId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 基线名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置基线名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 基线名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 基线描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 危害等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * package名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageName;
                     bool m_packageNameHasBeenSet;
 
                     /**
                      * 父级id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_parentId;
                     bool m_parentIdHasBeenSet;
 
                     /**
                      * 基线名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

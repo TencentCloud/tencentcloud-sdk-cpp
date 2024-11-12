@@ -616,18 +616,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户公钥列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keys 用户公钥列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetUserKeyInfo> GetKeys() const;
 
                     /**
                      * 设置用户公钥列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keys 用户公钥列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeys(const std::vector<AssetUserKeyInfo>& _keys);
@@ -641,18 +637,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -830,14 +822,12 @@ namespace TencentCloud
 
                     /**
                      * 用户公钥列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetUserKeyInfo> m_keys;
                     bool m_keysHasBeenSet;
 
                     /**
                      * 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取后付费昨日扣费
-                     * @return PostPayCost 后付费昨日扣费
+                     * 获取昨日【专业版-按量付费】扣费明细,(实际已账单为准)
+                     * @return PostPayCost 昨日【专业版-按量付费】扣费明细,(实际已账单为准)
                      * 
                      */
                     uint64_t GetPostPayCost() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool IsAutoOpenProVersionHasBeenSet() const;
 
                     /**
-                     * 获取开通专业版主机数
-                     * @return ProVersionNum 开通专业版主机数
+                     * 获取专业版主机数
+                     * @return ProVersionNum 专业版主机数
                      * 
                      */
                     uint64_t GetProVersionNum() const;
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 后付费昨日扣费
+                     * 昨日【专业版-按量付费】扣费明细,(实际已账单为准)
                      */
                     uint64_t m_postPayCost;
                     bool m_postPayCostHasBeenSet;
@@ -100,7 +100,7 @@ namespace TencentCloud
                     bool m_isAutoOpenProVersionHasBeenSet;
 
                     /**
-                     * 开通专业版主机数
+                     * 专业版主机数
                      */
                     uint64_t m_proVersionNum;
                     bool m_proVersionNumHasBeenSet;

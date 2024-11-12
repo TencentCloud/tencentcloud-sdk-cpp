@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描失败（提示具体原因：扫描超时、客户端版本低、客户端离线）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Stop 扫描失败（提示具体原因：扫描超时、客户端版本低、客户端离线）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStop() const;
 
                     /**
                      * 设置扫描失败（提示具体原因：扫描超时、客户端版本低、客户端离线）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stop 扫描失败（提示具体原因：扫描超时、客户端版本低、客户端离线）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStop(const std::string& _stop);
@@ -156,7 +152,6 @@ namespace TencentCloud
 
                     /**
                      * 扫描失败（提示具体原因：扫描超时、客户端版本低、客户端离线）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stop;
                     bool m_stopHasBeenSet;

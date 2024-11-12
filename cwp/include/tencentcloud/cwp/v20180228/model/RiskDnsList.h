@@ -468,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineWanIp 外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMachineWanIp() const;
 
                     /**
                      * 设置外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineWanIp 外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineWanIp(const std::string& _machineWanIp);
@@ -493,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机在线状态[OFFLINE:离线|ONLINE:在线|UNKNOWN:未知]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineStatus 主机在线状态[OFFLINE:离线|ONLINE:在线|UNKNOWN:未知]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMachineStatus() const;
 
                     /**
                      * 设置主机在线状态[OFFLINE:离线|ONLINE:在线|UNKNOWN:未知]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineStatus 主机在线状态[OFFLINE:离线|ONLINE:在线|UNKNOWN:未知]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineStatus(const std::string& _machineStatus);
@@ -640,14 +632,12 @@ namespace TencentCloud
 
                     /**
                      * 外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machineWanIp;
                     bool m_machineWanIpHasBeenSet;
 
                     /**
                      * 主机在线状态[OFFLINE:离线|ONLINE:在线|UNKNOWN:未知]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machineStatus;
                     bool m_machineStatusHasBeenSet;

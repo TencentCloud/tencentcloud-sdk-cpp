@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取漏洞名,英文描述
+                     * @return NameEn 漏洞名,英文描述
+                     * 
+                     */
+                    std::string GetNameEn() const;
+
+                    /**
+                     * 设置漏洞名,英文描述
+                     * @param _nameEn 漏洞名,英文描述
+                     * 
+                     */
+                    void SetNameEn(const std::string& _nameEn);
+
+                    /**
+                     * 判断参数 NameEn 是否已赋值
+                     * @return NameEn 是否已赋值
+                     * 
+                     */
+                    bool NameEnHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 漏洞名,英文描述
+                     */
+                    std::string m_nameEn;
+                    bool m_nameEnHasBeenSet;
 
                 };
             }

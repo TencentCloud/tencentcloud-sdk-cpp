@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取云镜UUID
-                     * @return Uuid 云镜UUID
+                     * 获取主机安全uuid
+                     * @return Uuid 主机安全uuid
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置云镜UUID
-                     * @param _uuid 云镜UUID
+                     * 设置主机安全uuid
+                     * @param _uuid 主机安全uuid
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
-                     * 获取主机ID
-                     * @return Quuid 主机ID
+                     * 获取主机uuid
+                     * @return Quuid 主机uuid
                      * 
                      */
                     std::string GetQuuid() const;
 
                     /**
-                     * 设置主机ID
-                     * @param _quuid 主机ID
+                     * 设置主机uuid
+                     * @param _quuid 主机uuid
                      * 
                      */
                     void SetQuuid(const std::string& _quuid);
@@ -447,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程树 json  pid:进程id，exe:文件路径 ，account:进程所属用组和用户 ,cmdline:执行命令，ssh_service: SSH服务ip, ssh_soure:登录源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PsTree 进程树 json  pid:进程id，exe:文件路径 ，account:进程所属用组和用户 ,cmdline:执行命令，ssh_service: SSH服务ip, ssh_soure:登录源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPsTree() const;
 
                     /**
                      * 设置进程树 json  pid:进程id，exe:文件路径 ，account:进程所属用组和用户 ,cmdline:执行命令，ssh_service: SSH服务ip, ssh_soure:登录源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _psTree 进程树 json  pid:进程id，exe:文件路径 ，account:进程所属用组和用户 ,cmdline:执行命令，ssh_service: SSH服务ip, ssh_soure:登录源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPsTree(const std::string& _psTree);
@@ -626,13 +622,13 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 云镜UUID
+                     * 主机安全uuid
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
-                     * 主机ID
+                     * 主机uuid
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;
@@ -735,7 +731,6 @@ namespace TencentCloud
 
                     /**
                      * 进程树 json  pid:进程id，exe:文件路径 ，account:进程所属用组和用户 ,cmdline:执行命令，ssh_service: SSH服务ip, ssh_soure:登录源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_psTree;
                     bool m_psTreeHasBeenSet;

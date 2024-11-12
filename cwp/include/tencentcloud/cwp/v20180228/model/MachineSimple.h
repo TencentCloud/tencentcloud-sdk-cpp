@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool MachineOsHasBeenSet() const;
 
                     /**
-                     * 获取云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。
-                     * @return Uuid 云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。
+                     * 获取主机安全uuid，若客户端长时间不在线将返回空字符。
+                     * @return Uuid 主机安全uuid，若客户端长时间不在线将返回空字符。
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。
-                     * @param _uuid 云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。
+                     * 设置主机安全uuid，若客户端长时间不在线将返回空字符。
+                     * @param _uuid 主机安全uuid，若客户端长时间不在线将返回空字符。
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -387,18 +387,14 @@ https://cloud.tencent.com/document/api/213/15753#Instance
 
                     /**
                      * 获取授权订单对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseOrder 授权订单对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LicenseOrder GetLicenseOrder() const;
 
                     /**
                      * 设置授权订单对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _licenseOrder 授权订单对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLicenseOrder(const LicenseOrder& _licenseOrder);
@@ -412,18 +408,14 @@ https://cloud.tencent.com/document/api/213/15753#Instance
 
                     /**
                      * 获取云标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudTags 云标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tags> GetCloudTags() const;
 
                     /**
                      * 设置云标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudTags 云标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudTags(const std::vector<Tags>& _cloudTags);
@@ -437,18 +429,14 @@ https://cloud.tencent.com/document/api/213/15753#Instance
 
                     /**
                      * 获取实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -475,7 +463,7 @@ https://cloud.tencent.com/document/api/213/15753#Instance
                     bool m_machineOsHasBeenSet;
 
                     /**
-                     * 云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。
+                     * 主机安全uuid，若客户端长时间不在线将返回空字符。
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
@@ -559,21 +547,18 @@ https://cloud.tencent.com/document/api/213/15753#Instance
 
                     /**
                      * 授权订单对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LicenseOrder m_licenseOrder;
                     bool m_licenseOrderHasBeenSet;
 
                     /**
                      * 云标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tags> m_cloudTags;
                     bool m_cloudTagsHasBeenSet;
 
                     /**
                      * 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

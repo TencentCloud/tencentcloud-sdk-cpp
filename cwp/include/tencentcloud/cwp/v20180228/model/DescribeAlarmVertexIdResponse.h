@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取告警点id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmVertexIds 告警点id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAlarmVertexIds() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 告警点id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_alarmVertexIds;
                     bool m_alarmVertexIdsHasBeenSet;

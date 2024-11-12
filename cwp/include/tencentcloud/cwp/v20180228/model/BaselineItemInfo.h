@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检测项所属规则的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 检测项所属规则的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
                      * 设置检测项所属规则的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 检测项所属规则的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
@@ -200,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取系统规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SysRuleId 系统规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSysRuleId() const;
 
                     /**
                      * 设置系统规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sysRuleId 系统规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSysRuleId(const int64_t& _sysRuleId);
@@ -225,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取被引自定义规则信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelatedCustomRuleInfo 被引自定义规则信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BaselineCustomRuleIdName> GetRelatedCustomRuleInfo() const;
 
                     /**
                      * 设置被引自定义规则信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _relatedCustomRuleInfo 被引自定义规则信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRelatedCustomRuleInfo(const std::vector<BaselineCustomRuleIdName>& _relatedCustomRuleInfo);
@@ -264,7 +252,6 @@ namespace TencentCloud
 
                     /**
                      * 检测项所属规则的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
@@ -295,14 +282,12 @@ namespace TencentCloud
 
                     /**
                      * 系统规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sysRuleId;
                     bool m_sysRuleIdHasBeenSet;
 
                     /**
                      * 被引自定义规则信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BaselineCustomRuleIdName> m_relatedCustomRuleInfo;
                     bool m_relatedCustomRuleInfoHasBeenSet;

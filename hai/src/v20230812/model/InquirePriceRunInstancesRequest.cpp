@@ -29,7 +29,9 @@ InquirePriceRunInstancesRequest::InquirePriceRunInstancesRequest() :
     m_instanceCountHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_instanceChargeTypeHasBeenSet(false),
+    m_instanceChargePrepaidHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,23 @@ string InquirePriceRunInstancesRequest::ToJsonString() const
         string key = "DryRun";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dryRun, allocator);
+    }
+
+    if (m_instanceChargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceChargePrepaidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceChargePrepaid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_instanceChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -215,6 +234,38 @@ void InquirePriceRunInstancesRequest::SetDryRun(const bool& _dryRun)
 bool InquirePriceRunInstancesRequest::DryRunHasBeenSet() const
 {
     return m_dryRunHasBeenSet;
+}
+
+string InquirePriceRunInstancesRequest::GetInstanceChargeType() const
+{
+    return m_instanceChargeType;
+}
+
+void InquirePriceRunInstancesRequest::SetInstanceChargeType(const string& _instanceChargeType)
+{
+    m_instanceChargeType = _instanceChargeType;
+    m_instanceChargeTypeHasBeenSet = true;
+}
+
+bool InquirePriceRunInstancesRequest::InstanceChargeTypeHasBeenSet() const
+{
+    return m_instanceChargeTypeHasBeenSet;
+}
+
+InstanceChargePrepaid InquirePriceRunInstancesRequest::GetInstanceChargePrepaid() const
+{
+    return m_instanceChargePrepaid;
+}
+
+void InquirePriceRunInstancesRequest::SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid)
+{
+    m_instanceChargePrepaid = _instanceChargePrepaid;
+    m_instanceChargePrepaidHasBeenSet = true;
+}
+
+bool InquirePriceRunInstancesRequest::InstanceChargePrepaidHasBeenSet() const
+{
+    return m_instanceChargePrepaidHasBeenSet;
 }
 
 

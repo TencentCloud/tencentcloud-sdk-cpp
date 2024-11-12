@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线检测项名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 基线检测项名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置基线检测项名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleName 基线检测项名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线检测项id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 基线检测项id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
                      * 设置基线检测项id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 基线检测项id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修复建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Fix 修复建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFix() const;
 
                     /**
                      * 设置修复建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fix 修复建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFix(const std::string& _fix);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取影响主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EffectHostCount 影响主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEffectHostCount() const;
 
                     /**
                      * 设置影响主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _effectHostCount 影响主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEffectHostCount(const uint64_t& _effectHostCount);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 基线检测项名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
                      * 基线检测项id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 修复建议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fix;
                     bool m_fixHasBeenSet;
 
                     /**
                      * 影响主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_effectHostCount;
                     bool m_effectHostCountHasBeenSet;

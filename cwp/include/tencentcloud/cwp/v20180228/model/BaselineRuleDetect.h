@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ItemID集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemIds ItemID集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetItemIds() const;
 
                     /**
                      * 设置ItemID集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _itemIds ItemID集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItemIds(const std::vector<int64_t>& _itemIds);
@@ -291,7 +287,6 @@ namespace TencentCloud
 
                     /**
                      * ItemID集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_itemIds;
                     bool m_itemIdsHasBeenSet;

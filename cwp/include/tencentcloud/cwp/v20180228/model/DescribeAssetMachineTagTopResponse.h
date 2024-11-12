@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Top5标签及数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags Top5标签及数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetKeyVal> GetTags() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * Top5标签及数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetKeyVal> m_tags;
                     bool m_tagsHasBeenSet;

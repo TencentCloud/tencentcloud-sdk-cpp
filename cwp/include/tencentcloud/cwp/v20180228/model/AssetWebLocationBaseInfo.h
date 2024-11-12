@@ -428,18 +428,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -474,18 +470,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否新增[0:否|1:是]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsNew 是否新增[0:否|1:是]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsNew() const;
 
                     /**
                      * 设置是否新增[0:否|1:是]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isNew 是否新增[0:否|1:是]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsNew(const int64_t& _isNew);
@@ -499,18 +491,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo  附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置 附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineExtraInfo  附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
@@ -634,7 +622,6 @@ namespace TencentCloud
 
                     /**
                      * 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
@@ -647,14 +634,12 @@ namespace TencentCloud
 
                     /**
                      * 是否新增[0:否|1:是]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isNew;
                     bool m_isNewHasBeenSet;
 
                     /**
                      *  附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取列表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 列表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScreenRegionInfo> GetList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 列表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScreenRegionInfo> m_list;
                     bool m_listHasBeenSet;

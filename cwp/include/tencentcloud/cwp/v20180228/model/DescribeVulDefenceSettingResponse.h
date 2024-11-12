@@ -73,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取影响主机quuid列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuids 影响主机quuid列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetQuuids() const;
@@ -103,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取影响主机id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIds 影响主机id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
@@ -133,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取排除的主机id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExcludeInstanceIds 排除的主机id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetExcludeInstanceIds() const;
@@ -163,7 +157,6 @@ namespace TencentCloud
 
                     /**
                      * 影响主机quuid列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_quuids;
                     bool m_quuidsHasBeenSet;
@@ -176,7 +169,6 @@ namespace TencentCloud
 
                     /**
                      * 影响主机id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
@@ -189,7 +181,6 @@ namespace TencentCloud
 
                     /**
                      * 排除的主机id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_excludeInstanceIds;
                     bool m_excludeInstanceIdsHasBeenSet;

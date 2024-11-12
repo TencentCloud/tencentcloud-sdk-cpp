@@ -511,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo  主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineExtraInfo  主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
@@ -691,7 +687,6 @@ namespace TencentCloud
 
                     /**
                      *  主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;

@@ -73,6 +73,8 @@
 #include <tencentcloud/wedata/v20210820/model/CountOpsInstanceStateResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateCustomFunctionRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateCustomFunctionResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateDataModelRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CreateDataModelResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateDataSourceRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateDataSourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateDsFolderRequest.h>
@@ -107,6 +109,8 @@
 #include <tencentcloud/wedata/v20210820/model/DagInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteCustomFunctionRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteCustomFunctionResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteDataModelRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteDataModelResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteDataSourcesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteDataSourcesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteDsFolderRequest.h>
@@ -489,6 +493,8 @@
 #include <tencentcloud/wedata/v20210820/model/TriggerEventResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UnlockIntegrationTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/UnlockIntegrationTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/UpdateDataModelRegistryInfoRequest.h>
+#include <tencentcloud/wedata/v20210820/model/UpdateDataModelRegistryInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateWorkflowOwnerRequest.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateWorkflowOwnerResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UploadContentRequest.h>
@@ -584,6 +590,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCustomFunctionResponse> CreateCustomFunctionOutcome;
                 typedef std::future<CreateCustomFunctionOutcome> CreateCustomFunctionOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateCustomFunctionRequest&, CreateCustomFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomFunctionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDataModelResponse> CreateDataModelOutcome;
+                typedef std::future<CreateDataModelOutcome> CreateDataModelOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateDataModelRequest&, CreateDataModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataModelAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDataSourceResponse> CreateDataSourceOutcome;
                 typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateDataSourceRequest&, CreateDataSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataSourceAsyncHandler;
@@ -635,6 +644,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCustomFunctionResponse> DeleteCustomFunctionOutcome;
                 typedef std::future<DeleteCustomFunctionOutcome> DeleteCustomFunctionOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteCustomFunctionRequest&, DeleteCustomFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomFunctionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDataModelResponse> DeleteDataModelOutcome;
+                typedef std::future<DeleteDataModelOutcome> DeleteDataModelOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteDataModelRequest&, DeleteDataModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataModelAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDataSourcesResponse> DeleteDataSourcesOutcome;
                 typedef std::future<DeleteDataSourcesOutcome> DeleteDataSourcesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteDataSourcesRequest&, DeleteDataSourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataSourcesAsyncHandler;
@@ -1208,6 +1220,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnlockIntegrationTaskResponse> UnlockIntegrationTaskOutcome;
                 typedef std::future<UnlockIntegrationTaskOutcome> UnlockIntegrationTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::UnlockIntegrationTaskRequest&, UnlockIntegrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlockIntegrationTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateDataModelRegistryInfoResponse> UpdateDataModelRegistryInfoOutcome;
+                typedef std::future<UpdateDataModelRegistryInfoOutcome> UpdateDataModelRegistryInfoOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::UpdateDataModelRegistryInfoRequest&, UpdateDataModelRegistryInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDataModelRegistryInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateWorkflowOwnerResponse> UpdateWorkflowOwnerOutcome;
                 typedef std::future<UpdateWorkflowOwnerOutcome> UpdateWorkflowOwnerOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::UpdateWorkflowOwnerRequest&, UpdateWorkflowOwnerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkflowOwnerAsyncHandler;
@@ -1446,6 +1461,15 @@ namespace TencentCloud
                 CreateCustomFunctionOutcomeCallable CreateCustomFunctionCallable(const Model::CreateCustomFunctionRequest& request);
 
                 /**
+                 *创建数据建模，提供给云应用使用，实现“Wedata数据建模”的下单发货
+                 * @param req CreateDataModelRequest
+                 * @return CreateDataModelOutcome
+                 */
+                CreateDataModelOutcome CreateDataModel(const Model::CreateDataModelRequest &request);
+                void CreateDataModelAsync(const Model::CreateDataModelRequest& request, const CreateDataModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDataModelOutcomeCallable CreateDataModelCallable(const Model::CreateDataModelRequest& request);
+
+                /**
                  *创建数据源
                  * @param req CreateDataSourceRequest
                  * @return CreateDataSourceOutcome
@@ -1597,6 +1621,15 @@ namespace TencentCloud
                 DeleteCustomFunctionOutcome DeleteCustomFunction(const Model::DeleteCustomFunctionRequest &request);
                 void DeleteCustomFunctionAsync(const Model::DeleteCustomFunctionRequest& request, const DeleteCustomFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCustomFunctionOutcomeCallable DeleteCustomFunctionCallable(const Model::DeleteCustomFunctionRequest& request);
+
+                /**
+                 *销毁数据建模，提供给云应用使用，实现“Wedata数据建模”的销毁
+                 * @param req DeleteDataModelRequest
+                 * @return DeleteDataModelOutcome
+                 */
+                DeleteDataModelOutcome DeleteDataModel(const Model::DeleteDataModelRequest &request);
+                void DeleteDataModelAsync(const Model::DeleteDataModelRequest& request, const DeleteDataModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDataModelOutcomeCallable DeleteDataModelCallable(const Model::DeleteDataModelRequest& request);
 
                 /**
                  *删除数据源
@@ -3327,6 +3360,15 @@ namespace TencentCloud
                 UnlockIntegrationTaskOutcome UnlockIntegrationTask(const Model::UnlockIntegrationTaskRequest &request);
                 void UnlockIntegrationTaskAsync(const Model::UnlockIntegrationTaskRequest& request, const UnlockIntegrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnlockIntegrationTaskOutcomeCallable UnlockIntegrationTaskCallable(const Model::UnlockIntegrationTaskRequest& request);
+
+                /**
+                 *数语向wedata注册，提供自身cam角色信息，跳转域名、ip、端口信息等
+                 * @param req UpdateDataModelRegistryInfoRequest
+                 * @return UpdateDataModelRegistryInfoOutcome
+                 */
+                UpdateDataModelRegistryInfoOutcome UpdateDataModelRegistryInfo(const Model::UpdateDataModelRegistryInfoRequest &request);
+                void UpdateDataModelRegistryInfoAsync(const Model::UpdateDataModelRegistryInfoRequest& request, const UpdateDataModelRegistryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateDataModelRegistryInfoOutcomeCallable UpdateDataModelRegistryInfoCallable(const Model::UpdateDataModelRegistryInfoRequest& request);
 
                 /**
                  *修改工作流责任人

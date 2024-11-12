@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取恶意请求事件详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Info 恶意请求事件详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RiskDnsEvent GetInfo() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 恶意请求事件详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RiskDnsEvent m_info;
                     bool m_infoHasBeenSet;

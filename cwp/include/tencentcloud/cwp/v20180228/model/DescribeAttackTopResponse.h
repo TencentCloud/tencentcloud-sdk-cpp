@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetAttackTopInfo top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     NetAttackTopInfo GetNetAttackTopInfo() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * top统计数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     NetAttackTopInfo m_netAttackTopInfo;
                     bool m_netAttackTopInfoHasBeenSet;

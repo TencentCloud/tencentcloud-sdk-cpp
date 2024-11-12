@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数量列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalList 总数量列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetKeyVal> GetTotalList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取在线数量列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveList 在线数量列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetKeyVal> GetLiveList() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取离线数量列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OfflineList 离线数量列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetKeyVal> GetOfflineList() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险数量列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskList 风险数量列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetKeyVal> GetRiskList() const;
@@ -112,28 +104,24 @@ namespace TencentCloud
 
                     /**
                      * 总数量列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetKeyVal> m_totalList;
                     bool m_totalListHasBeenSet;
 
                     /**
                      * 在线数量列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetKeyVal> m_liveList;
                     bool m_liveListHasBeenSet;
 
                     /**
                      * 离线数量列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetKeyVal> m_offlineList;
                     bool m_offlineListHasBeenSet;
 
                     /**
                      * 风险数量列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetKeyVal> m_riskList;
                     bool m_riskListHasBeenSet;

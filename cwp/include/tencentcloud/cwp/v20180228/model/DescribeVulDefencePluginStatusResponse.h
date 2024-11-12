@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取各主机漏洞防御插件信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 各主机漏洞防御插件信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VulDefencePluginStatus> GetList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 各主机漏洞防御插件信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VulDefencePluginStatus> m_list;
                     bool m_listHasBeenSet;

@@ -156,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineWanIp 外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMachineWanIp() const;
 
                     /**
                      * 设置外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineWanIp 外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineWanIp(const std::string& _machineWanIp);
@@ -181,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudTags 云标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetCloudTags() const;
 
                     /**
                      * 设置云标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudTags 云标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudTags(const std::vector<Tag>& _cloudTags);
@@ -206,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionInfo 可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RegionInfo GetRegionInfo() const;
 
                     /**
                      * 设置可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionInfo 可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionInfo(const RegionInfo& _regionInfo);
@@ -231,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机安全标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 主机安全标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MachineTag> GetTag() const;
 
                     /**
                      * 设置主机安全标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag 主机安全标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::vector<MachineTag>& _tag);
@@ -256,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防护状态：0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 防护状态：0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置防护状态：0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 防护状态：0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -281,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略id，为0时未绑定策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyId 策略id，为0时未绑定策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStrategyId() const;
 
                     /**
                      * 设置策略id，为0时未绑定策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyId 策略id，为0时未绑定策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyId(const uint64_t& _strategyId);
@@ -307,10 +283,8 @@ namespace TencentCloud
                     /**
                      * 获取硬盘信息，为空时所有硬盘生效：
 ;分割 diskId1|diskName1;diskId2|diskName2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskInfo 硬盘信息，为空时所有硬盘生效：
 ;分割 diskId1|diskName1;diskId2|diskName2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskInfo() const;
@@ -318,10 +292,8 @@ namespace TencentCloud
                     /**
                      * 设置硬盘信息，为空时所有硬盘生效：
 ;分割 diskId1|diskName1;diskId2|diskName2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskInfo 硬盘信息，为空时所有硬盘生效：
 ;分割 diskId1|diskName1;diskId2|diskName2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskInfo(const std::string& _diskInfo);
@@ -335,18 +307,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyName 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStrategyName() const;
 
                     /**
                      * 设置策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyName 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyName(const std::string& _strategyName);
@@ -360,18 +328,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupCount 备份数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBackupCount() const;
 
                     /**
                      * 设置备份数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupCount 备份数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupCount(const uint64_t& _backupCount);
@@ -385,18 +349,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近一次备份状态：0备份中，1正常，2失败，9暂无备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastBackupStatus 最近一次备份状态：0备份中，1正常，2失败，9暂无备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLastBackupStatus() const;
 
                     /**
                      * 设置最近一次备份状态：0备份中，1正常，2失败，9暂无备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastBackupStatus 最近一次备份状态：0备份中，1正常，2失败，9暂无备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastBackupStatus(const uint64_t& _lastBackupStatus);
@@ -410,18 +370,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近一次备份失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastBackupMessage 最近一次备份失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastBackupMessage() const;
 
                     /**
                      * 设置最近一次备份失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastBackupMessage 最近一次备份失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastBackupMessage(const std::string& _lastBackupMessage);
@@ -435,18 +391,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近一次备份时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastBackupTime 最近一次备份时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastBackupTime() const;
 
                     /**
                      * 设置最近一次备份时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastBackupTime 最近一次备份时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastBackupTime(const std::string& _lastBackupTime);
@@ -460,18 +412,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近一次回滚进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RollBackPercent 最近一次回滚进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRollBackPercent() const;
 
                     /**
                      * 设置最近一次回滚进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rollBackPercent 最近一次回滚进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRollBackPercent(const uint64_t& _rollBackPercent);
@@ -485,18 +433,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近一次回滚状态：0进行中，1成功，2失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RollBackStatus 最近一次回滚状态：0进行中，1成功，2失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRollBackStatus() const;
 
                     /**
                      * 设置最近一次回滚状态：0进行中，1成功，2失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rollBackStatus 最近一次回滚状态：0进行中，1成功，2失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRollBackStatus(const uint64_t& _rollBackStatus);
@@ -510,18 +454,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupSuccessCount 备份成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBackupSuccessCount() const;
 
                     /**
                      * 设置备份成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupSuccessCount 备份成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupSuccessCount(const uint64_t& _backupSuccessCount);
@@ -535,18 +475,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostVersion 版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHostVersion() const;
 
                     /**
                      * 设置版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostVersion 版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostVersion(const uint64_t& _hostVersion);
@@ -592,42 +528,36 @@ namespace TencentCloud
 
                     /**
                      * 外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machineWanIp;
                     bool m_machineWanIpHasBeenSet;
 
                     /**
                      * 云标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_cloudTags;
                     bool m_cloudTagsHasBeenSet;
 
                     /**
                      * 可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RegionInfo m_regionInfo;
                     bool m_regionInfoHasBeenSet;
 
                     /**
                      * 主机安全标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MachineTag> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
                      * 防护状态：0关闭，1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 策略id，为0时未绑定策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_strategyId;
                     bool m_strategyIdHasBeenSet;
@@ -635,70 +565,60 @@ namespace TencentCloud
                     /**
                      * 硬盘信息，为空时所有硬盘生效：
 ;分割 diskId1|diskName1;diskId2|diskName2
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskInfo;
                     bool m_diskInfoHasBeenSet;
 
                     /**
                      * 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_strategyName;
                     bool m_strategyNameHasBeenSet;
 
                     /**
                      * 备份数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_backupCount;
                     bool m_backupCountHasBeenSet;
 
                     /**
                      * 最近一次备份状态：0备份中，1正常，2失败，9暂无备份
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_lastBackupStatus;
                     bool m_lastBackupStatusHasBeenSet;
 
                     /**
                      * 最近一次备份失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastBackupMessage;
                     bool m_lastBackupMessageHasBeenSet;
 
                     /**
                      * 最近一次备份时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastBackupTime;
                     bool m_lastBackupTimeHasBeenSet;
 
                     /**
                      * 最近一次回滚进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_rollBackPercent;
                     bool m_rollBackPercentHasBeenSet;
 
                     /**
                      * 最近一次回滚状态：0进行中，1成功，2失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_rollBackStatus;
                     bool m_rollBackStatusHasBeenSet;
 
                     /**
                      * 备份成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_backupSuccessCount;
                     bool m_backupSuccessCountHasBeenSet;
 
                     /**
                      * 版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hostVersion;
                     bool m_hostVersionHasBeenSet;

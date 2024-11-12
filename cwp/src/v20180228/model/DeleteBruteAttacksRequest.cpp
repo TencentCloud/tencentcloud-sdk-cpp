@@ -23,7 +23,8 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 DeleteBruteAttacksRequest::DeleteBruteAttacksRequest() :
-    m_idsHasBeenSet(false)
+    m_idsHasBeenSet(false),
+    m_allHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string DeleteBruteAttacksRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_allHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "All";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_all, allocator);
     }
 
 
@@ -69,6 +78,22 @@ void DeleteBruteAttacksRequest::SetIds(const vector<uint64_t>& _ids)
 bool DeleteBruteAttacksRequest::IdsHasBeenSet() const
 {
     return m_idsHasBeenSet;
+}
+
+bool DeleteBruteAttacksRequest::GetAll() const
+{
+    return m_all;
+}
+
+void DeleteBruteAttacksRequest::SetAll(const bool& _all)
+{
+    m_all = _all;
+    m_allHasBeenSet = true;
+}
+
+bool DeleteBruteAttacksRequest::AllHasBeenSet() const
+{
+    return m_allHasBeenSet;
 }
 
 

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 基线名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置基线名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 基线名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取危害等级：1-低危；2-中危；3-高危；4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 危害等级：1-低危；2-中危；3-高危；4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置危害等级：1-低危；2-中危；3-高危；4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 危害等级：1-低危；2-中危；3-高危；4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const uint64_t& _level);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检测项数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleCount 检测项数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleCount() const;
 
                     /**
                      * 设置检测项数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleCount 检测项数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleCount(const uint64_t& _ruleCount);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取影响服务器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostCount 影响服务器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHostCount() const;
 
                     /**
                      * 设置影响服务器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostCount 影响服务器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostCount(const uint64_t& _hostCount);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通过状态:0:未通过,1:已通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 通过状态:0:未通过,1:已通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置通过状态:0:未通过,1:已通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 通过状态:0:未通过,1:已通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryId 基线id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCategoryId() const;
 
                     /**
                      * 设置基线id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryId 基线id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryId(const uint64_t& _categoryId);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastScanTime 最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastScanTime() const;
 
                     /**
                      * 设置最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastScanTime 最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastScanTime(const std::string& _lastScanTime);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检测中状态: 5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxStatus 检测中状态: 5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxStatus() const;
 
                     /**
                      * 设置检测中状态: 5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxStatus 检测中状态: 5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxStatus(const uint64_t& _maxStatus);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线风险项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BaselineFailCount 基线风险项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBaselineFailCount() const;
 
                     /**
                      * 设置基线风险项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _baselineFailCount 基线风险项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBaselineFailCount(const uint64_t& _baselineFailCount);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * 基线名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 危害等级：1-低危；2-中危；3-高危；4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 检测项数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleCount;
                     bool m_ruleCountHasBeenSet;
 
                     /**
                      * 影响服务器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hostCount;
                     bool m_hostCountHasBeenSet;
 
                     /**
                      * 通过状态:0:未通过,1:已通过
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 基线id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_categoryId;
                     bool m_categoryIdHasBeenSet;
 
                     /**
                      * 最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastScanTime;
                     bool m_lastScanTimeHasBeenSet;
 
                     /**
                      * 检测中状态: 5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxStatus;
                     bool m_maxStatusHasBeenSet;
 
                     /**
                      * 基线风险项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_baselineFailCount;
                     bool m_baselineFailCountHasBeenSet;

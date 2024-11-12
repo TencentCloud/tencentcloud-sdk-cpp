@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncidentId 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIncidentId() const;
 
                     /**
                      * 设置事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _incidentId 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIncidentId(const std::string& _incidentId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件所在表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 事件所在表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置事件所在表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableName 事件所在表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点信息列表，数组项中包含节点详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vertex 节点信息列表，数组项中包含节点详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VertexInfo> GetVertex() const;
 
                     /**
                      * 设置节点信息列表，数组项中包含节点详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vertex 节点信息列表，数组项中包含节点详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVertex(const std::vector<VertexInfo>& _vertex);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点总个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VertexCount 节点总个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVertexCount() const;
 
                     /**
                      * 设置节点总个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vertexCount 节点总个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVertexCount(const int64_t& _vertexCount);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_incidentId;
                     bool m_incidentIdHasBeenSet;
 
                     /**
                      * 事件所在表名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
 
                     /**
                      * 节点信息列表，数组项中包含节点详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VertexInfo> m_vertex;
                     bool m_vertexHasBeenSet;
 
                     /**
                      * 节点总个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vertexCount;
                     bool m_vertexCountHasBeenSet;

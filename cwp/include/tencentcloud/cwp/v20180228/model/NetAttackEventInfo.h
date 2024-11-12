@@ -343,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineExtraInfo 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
@@ -431,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cvm uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuid cvm uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置cvm uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quuid cvm uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuuid(const std::string& _quuid);
@@ -456,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击发生时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MergeTime 攻击发生时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMergeTime() const;
 
                     /**
                      * 设置攻击发生时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mergeTime 攻击发生时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMergeTime(const std::string& _mergeTime);
@@ -481,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0: 尝试攻击 1:攻击成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 0: 尝试攻击 1:攻击成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置0: 尝试攻击 1:攻击成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 0: 尝试攻击 1:攻击成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -506,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0:无失陷行为 1: rce(命令执行) 2: dnslog 3: writefile
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostOpType 0:无失陷行为 1: rce(命令执行) 2: dnslog 3: writefile
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHostOpType() const;
 
                     /**
                      * 设置0:无失陷行为 1: rce(命令执行) 2: dnslog 3: writefile
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostOpType 0:无失陷行为 1: rce(命令执行) 2: dnslog 3: writefile
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostOpType(const uint64_t& _hostOpType);
@@ -531,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程树,需要用base64 解码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostOpProcessTree 进程树,需要用base64 解码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostOpProcessTree() const;
 
                     /**
                      * 设置进程树,需要用base64 解码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostOpProcessTree 进程树,需要用base64 解码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostOpProcessTree(const std::string& _hostOpProcessTree);
@@ -642,7 +618,6 @@ namespace TencentCloud
 
                     /**
                      * 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
@@ -667,35 +642,30 @@ namespace TencentCloud
 
                     /**
                      * cvm uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;
 
                     /**
                      * 攻击发生时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mergeTime;
                     bool m_mergeTimeHasBeenSet;
 
                     /**
                      * 0: 尝试攻击 1:攻击成功
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 0:无失陷行为 1: rce(命令执行) 2: dnslog 3: writefile
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hostOpType;
                     bool m_hostOpTypeHasBeenSet;
 
                     /**
                      * 进程树,需要用base64 解码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostOpProcessTree;
                     bool m_hostOpProcessTreeHasBeenSet;

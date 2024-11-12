@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取公钥列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keys 公钥列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetUserKeyInfo> GetKeys() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 公钥列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetUserKeyInfo> m_keys;
                     bool m_keysHasBeenSet;

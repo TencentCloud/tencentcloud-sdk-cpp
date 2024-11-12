@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取主机基线策略事件Top
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BaselineHostTopList 主机基线策略事件Top
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BaselineHostTopList> GetBaselineHostTopList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 主机基线策略事件Top
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BaselineHostTopList> m_baselineHostTopList;
                     bool m_baselineHostTopListHasBeenSet;

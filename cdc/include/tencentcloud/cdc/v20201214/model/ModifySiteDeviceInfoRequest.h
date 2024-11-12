@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool PowerDrawKvaHasBeenSet() const;
 
                     /**
-                     * 获取网络到腾讯云Region区域的上行链路速度
-                     * @return UplinkSpeedGbps 网络到腾讯云Region区域的上行链路速度
+                     * 获取网络到腾讯云Region区域的上行链路速度(Gbps)
+                     * @return UplinkSpeedGbps 网络到腾讯云Region区域的上行链路速度(Gbps)
                      * 
                      */
                     int64_t GetUplinkSpeedGbps() const;
 
                     /**
-                     * 设置网络到腾讯云Region区域的上行链路速度
-                     * @param _uplinkSpeedGbps 网络到腾讯云Region区域的上行链路速度
+                     * 设置网络到腾讯云Region区域的上行链路速度(Gbps)
+                     * @param _uplinkSpeedGbps 网络到腾讯云Region区域的上行链路速度(Gbps)
                      * 
                      */
                     void SetUplinkSpeedGbps(const int64_t& _uplinkSpeedGbps);
@@ -434,7 +434,7 @@ namespace TencentCloud
                     bool m_powerDrawKvaHasBeenSet;
 
                     /**
-                     * 网络到腾讯云Region区域的上行链路速度
+                     * 网络到腾讯云Region区域的上行链路速度(Gbps)
                      */
                     int64_t m_uplinkSpeedGbps;
                     bool m_uplinkSpeedGbpsHasBeenSet;

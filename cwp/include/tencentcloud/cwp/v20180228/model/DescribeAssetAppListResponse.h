@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Apps 应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetAppBaseInfo> GetApps() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetAppBaseInfo> m_apps;
                     bool m_appsHasBeenSet;

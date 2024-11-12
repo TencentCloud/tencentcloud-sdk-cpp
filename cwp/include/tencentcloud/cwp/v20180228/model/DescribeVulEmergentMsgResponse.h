@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞紧急通知数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EmergentMsgList 漏洞紧急通知数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VulEmergentMsgInfo> GetEmergentMsgList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 漏洞紧急通知数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VulEmergentMsgInfo> m_emergentMsgList;
                     bool m_emergentMsgListHasBeenSet;

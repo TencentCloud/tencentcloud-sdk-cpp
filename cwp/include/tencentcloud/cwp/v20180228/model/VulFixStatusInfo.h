@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulId 漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVulId() const;
 
                     /**
                      * 设置漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulId 漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulId(const uint64_t& _vulId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulName 漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVulName() const;
 
                     /**
                      * 设置漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulName 漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulName(const std::string& _vulName);
@@ -120,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞对应主机修复状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostList 漏洞对应主机修复状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VulFixStatusHostInfo> GetHostList() const;
 
                     /**
                      * 设置漏洞对应主机修复状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostList 漏洞对应主机修复状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostList(const std::vector<VulFixStatusHostInfo>& _hostList);
@@ -145,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞修复失败主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailCnt 漏洞修复失败主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFailCnt() const;
 
                     /**
                      * 设置漏洞修复失败主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failCnt 漏洞修复失败主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailCnt(const uint64_t& _failCnt);
@@ -170,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修复成功的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixSuccessCnt 修复成功的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFixSuccessCnt() const;
 
                     /**
                      * 设置修复成功的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fixSuccessCnt 修复成功的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFixSuccessCnt(const uint64_t& _fixSuccessCnt);
@@ -195,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修复方式 0组件更新或者安装补丁,1禁用服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixMethod 修复方式 0组件更新或者安装补丁,1禁用服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFixMethod() const;
 
                     /**
                      * 设置修复方式 0组件更新或者安装补丁,1禁用服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fixMethod 修复方式 0组件更新或者安装补丁,1禁用服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFixMethod(const uint64_t& _fixMethod);
@@ -222,14 +198,12 @@ namespace TencentCloud
 
                     /**
                      * 漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vulId;
                     bool m_vulIdHasBeenSet;
 
                     /**
                      * 漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vulName;
                     bool m_vulNameHasBeenSet;
@@ -242,28 +216,24 @@ namespace TencentCloud
 
                     /**
                      * 漏洞对应主机修复状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VulFixStatusHostInfo> m_hostList;
                     bool m_hostListHasBeenSet;
 
                     /**
                      * 漏洞修复失败主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_failCnt;
                     bool m_failCntHasBeenSet;
 
                     /**
                      * 修复成功的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_fixSuccessCnt;
                     bool m_fixSuccessCntHasBeenSet;
 
                     /**
                      * 修复方式 0组件更新或者安装补丁,1禁用服务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_fixMethod;
                     bool m_fixMethodHasBeenSet;

@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取合并后的白名单列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoginWhiteCombinedInfos 合并后的白名单列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LoginWhiteCombinedInfo> GetLoginWhiteCombinedInfos() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 合并后的白名单列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LoginWhiteCombinedInfo> m_loginWhiteCombinedInfos;
                     bool m_loginWhiteCombinedInfosHasBeenSet;

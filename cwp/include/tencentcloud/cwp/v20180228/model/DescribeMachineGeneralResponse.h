@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cwp/v20180228/model/CloudFromCnt.h>
 
 
 namespace TencentCloud
@@ -60,70 +61,70 @@ namespace TencentCloud
                     /**
                      * 获取腾讯云服务商机器数
                      * @return TencentCloudMachineCnt 腾讯云服务商机器数
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetTencentCloudMachineCnt() const;
 
                     /**
                      * 判断参数 TencentCloudMachineCnt 是否已赋值
                      * @return TencentCloudMachineCnt 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TencentCloudMachineCntHasBeenSet() const;
 
                     /**
                      * 获取阿里云服务商机器数
                      * @return AliCloudMachineCnt 阿里云服务商机器数
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetAliCloudMachineCnt() const;
 
                     /**
                      * 判断参数 AliCloudMachineCnt 是否已赋值
                      * @return AliCloudMachineCnt 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AliCloudMachineCntHasBeenSet() const;
 
                     /**
                      * 获取百度云服务商机器数
                      * @return BaiduCloudMachineCnt 百度云服务商机器数
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetBaiduCloudMachineCnt() const;
 
                     /**
                      * 判断参数 BaiduCloudMachineCnt 是否已赋值
                      * @return BaiduCloudMachineCnt 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool BaiduCloudMachineCntHasBeenSet() const;
 
                     /**
                      * 获取IDC机器数
                      * @return IDCMachineCnt IDC机器数
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetIDCMachineCnt() const;
 
                     /**
                      * 判断参数 IDCMachineCnt 是否已赋值
                      * @return IDCMachineCnt 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IDCMachineCntHasBeenSet() const;
 
                     /**
                      * 获取其他云服务商机器数
                      * @return OtherCloudMachineCnt 其他云服务商机器数
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetOtherCloudMachineCnt() const;
 
                     /**
                      * 判断参数 OtherCloudMachineCnt 是否已赋值
                      * @return OtherCloudMachineCnt 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OtherCloudMachineCntHasBeenSet() const;
 
@@ -309,6 +310,20 @@ namespace TencentCloud
                      */
                     bool MachineDestroyAfterOfflineHoursHasBeenSet() const;
 
+                    /**
+                     * 获取云服务器类型数组
+                     * @return CloudFrom 云服务器类型数组
+                     * 
+                     */
+                    std::vector<CloudFromCnt> GetCloudFrom() const;
+
+                    /**
+                     * 判断参数 CloudFrom 是否已赋值
+                     * @return CloudFrom 是否已赋值
+                     * 
+                     */
+                    bool CloudFromHasBeenSet() const;
+
                 private:
 
                     /**
@@ -424,6 +439,12 @@ namespace TencentCloud
                      */
                     uint64_t m_machineDestroyAfterOfflineHours;
                     bool m_machineDestroyAfterOfflineHoursHasBeenSet;
+
+                    /**
+                     * 云服务器类型数组
+                     */
+                    std::vector<CloudFromCnt> m_cloudFrom;
+                    bool m_cloudFromHasBeenSet;
 
                 };
             }

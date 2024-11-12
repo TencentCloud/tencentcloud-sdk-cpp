@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取影响主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostCount 影响主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHostCount() const;
 
                     /**
                      * 设置影响主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostCount 影响主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostCount(const uint64_t& _hostCount);
@@ -245,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子规则写条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WriteRuleCount 子规则写条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWriteRuleCount() const;
 
                     /**
                      * 设置子规则写条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _writeRuleCount 子规则写条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWriteRuleCount(const uint64_t& _writeRuleCount);
@@ -270,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子规则读条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadRuleCount 子规则读条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetReadRuleCount() const;
 
                     /**
                      * 设置子规则读条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readRuleCount 子规则读条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadRuleCount(const uint64_t& _readRuleCount);
@@ -295,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子规则读写条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadWriteRuleCount 子规则读写条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetReadWriteRuleCount() const;
 
                     /**
                      * 设置子规则读写条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readWriteRuleCount 子规则读写条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadWriteRuleCount(const uint64_t& _readWriteRuleCount);
@@ -323,12 +303,10 @@ namespace TencentCloud
 <li>read 读取文件</li>
 <li>write 修改文件</li>
 <li>read-write 读取修改文件</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileAction 监控行为
 <li>read 读取文件</li>
 <li>write 修改文件</li>
 <li>read-write 读取修改文件</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileAction() const;
@@ -338,12 +316,10 @@ namespace TencentCloud
 <li>read 读取文件</li>
 <li>write 修改文件</li>
 <li>read-write 读取修改文件</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileAction 监控行为
 <li>read 读取文件</li>
 <li>write 修改文件</li>
 <li>read-write 读取修改文件</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileAction(const std::string& _fileAction);
@@ -359,11 +335,9 @@ namespace TencentCloud
                      * 获取加白处理类型
 <li>cur 仅对当前加白</li>
 <li>all 所有符合条件加白</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddWhiteType 加白处理类型
 <li>cur 仅对当前加白</li>
 <li>all 所有符合条件加白</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddWhiteType() const;
@@ -372,11 +346,9 @@ namespace TencentCloud
                      * 设置加白处理类型
 <li>cur 仅对当前加白</li>
 <li>all 所有符合条件加白</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addWhiteType 加白处理类型
 <li>cur 仅对当前加白</li>
 <li>all 所有符合条件加白</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddWhiteType(const std::string& _addWhiteType);
@@ -392,7 +364,6 @@ namespace TencentCloud
 
                     /**
                      * 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -405,7 +376,6 @@ namespace TencentCloud
 
                     /**
                      * 影响主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hostCount;
                     bool m_hostCountHasBeenSet;
@@ -448,21 +418,18 @@ namespace TencentCloud
 
                     /**
                      * 子规则写条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_writeRuleCount;
                     bool m_writeRuleCountHasBeenSet;
 
                     /**
                      * 子规则读条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_readRuleCount;
                     bool m_readRuleCountHasBeenSet;
 
                     /**
                      * 子规则读写条目数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_readWriteRuleCount;
                     bool m_readWriteRuleCountHasBeenSet;
@@ -472,7 +439,6 @@ namespace TencentCloud
 <li>read 读取文件</li>
 <li>write 修改文件</li>
 <li>read-write 读取修改文件</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileAction;
                     bool m_fileActionHasBeenSet;
@@ -481,7 +447,6 @@ namespace TencentCloud
                      * 加白处理类型
 <li>cur 仅对当前加白</li>
 <li>all 所有符合条件加白</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addWhiteType;
                     bool m_addWhiteTypeHasBeenSet;

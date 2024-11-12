@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FileTamperRuleInfo> GetList() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FileTamperRuleInfo> m_list;
                     bool m_listHasBeenSet;

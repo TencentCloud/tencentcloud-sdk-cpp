@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该节点类型，进程:1；网络:2；文件:3；ssh:4
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 该节点类型，进程:1；网络:2；文件:3；ssh:4
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置该节点类型，进程:1；网络:2；文件:3；ssh:4
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 该节点类型，进程:1；网络:2；文件:3；ssh:4
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取各节点类型用到的时间，2022-11-29 00:00:00 格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 各节点类型用到的时间，2022-11-29 00:00:00 格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置各节点类型用到的时间，2022-11-29 00:00:00 格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _time 各节点类型用到的时间，2022-11-29 00:00:00 格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTime(const std::string& _time);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmInfo 告警信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AlarmInfo> GetAlarmInfo() const;
 
                     /**
                      * 设置告警信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmInfo 告警信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlarmInfo(const std::vector<AlarmInfo>& _alarmInfo);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程名，当该节点为进程时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcName 进程名，当该节点为进程时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProcName() const;
 
                     /**
                      * 设置进程名，当该节点为进程时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _procName 进程名，当该节点为进程时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProcName(const std::string& _procName);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命令行，当该节点为进程时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CmdLine 命令行，当该节点为进程时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCmdLine() const;
 
                     /**
                      * 设置命令行，当该节点为进程时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cmdLine 命令行，当该节点为进程时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCmdLine(const std::string& _cmdLine);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程id，当该节点为进程时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pid 进程id，当该节点为进程时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPid() const;
 
                     /**
                      * 设置进程id，当该节点为进程时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pid 进程id，当该节点为进程时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPid(const std::string& _pid);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件md5，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileMd5 文件md5，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileMd5() const;
 
                     /**
                      * 设置文件md5，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileMd5 文件md5，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileMd5(const std::string& _fileMd5);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件写入内容，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileContent 文件写入内容，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileContent() const;
 
                     /**
                      * 设置文件写入内容，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileContent 文件写入内容，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileContent(const std::string& _fileContent);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件路径，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilePath 文件路径，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFilePath() const;
 
                     /**
                      * 设置文件路径，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filePath 文件路径，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilePath(const std::string& _filePath);
@@ -274,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件创建时间，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileCreateTime 文件创建时间，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileCreateTime() const;
 
                     /**
                      * 设置文件创建时间，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileCreateTime 文件创建时间，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileCreateTime(const std::string& _fileCreateTime);
@@ -299,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取请求目的地址，当该节点为网络时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 请求目的地址，当该节点为网络时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置请求目的地址，当该节点为网络时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _address 请求目的地址，当该节点为网络时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddress(const std::string& _address);
@@ -324,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标端口，当该节点为网络时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstPort 目标端口，当该节点为网络时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDstPort() const;
 
                     /**
                      * 设置目标端口，当该节点为网络时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstPort 目标端口，当该节点为网络时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstPort(const uint64_t& _dstPort);
@@ -349,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取登录源ip，当该节点为ssh时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcIP 登录源ip，当该节点为ssh时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcIP() const;
 
                     /**
                      * 设置登录源ip，当该节点为ssh时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcIP 登录源ip，当该节点为ssh时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcIP(const std::string& _srcIP);
@@ -374,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取登录用户名用户组，当该节点为ssh时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 登录用户名用户组，当该节点为ssh时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置登录用户名用户组，当该节点为ssh时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _user 登录用户名用户组，当该节点为ssh时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -399,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞名称，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulName 漏洞名称，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVulName() const;
 
                     /**
                      * 设置漏洞名称，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulName 漏洞名称，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulName(const std::string& _vulName);
@@ -424,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞利用时间，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulTime 漏洞利用时间，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVulTime() const;
 
                     /**
                      * 设置漏洞利用时间，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulTime 漏洞利用时间，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulTime(const std::string& _vulTime);
@@ -449,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取http请求内容，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HttpContent http请求内容，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHttpContent() const;
 
                     /**
                      * 设置http请求内容，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _httpContent http请求内容，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHttpContent(const std::string& _httpContent);
@@ -474,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞利用者来源ip，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulSrcIP 漏洞利用者来源ip，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVulSrcIP() const;
 
                     /**
                      * 设置漏洞利用者来源ip，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulSrcIP 漏洞利用者来源ip，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulSrcIP(const std::string& _vulSrcIP);
@@ -499,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VertexId 点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVertexId() const;
 
                     /**
                      * 设置点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vertexId 点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVertexId(const std::string& _vertexId);
@@ -526,133 +450,114 @@ namespace TencentCloud
 
                     /**
                      * 该节点类型，进程:1；网络:2；文件:3；ssh:4
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 各节点类型用到的时间，2022-11-29 00:00:00 格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
                      * 告警信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AlarmInfo> m_alarmInfo;
                     bool m_alarmInfoHasBeenSet;
 
                     /**
                      * 进程名，当该节点为进程时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_procName;
                     bool m_procNameHasBeenSet;
 
                     /**
                      * 命令行，当该节点为进程时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cmdLine;
                     bool m_cmdLineHasBeenSet;
 
                     /**
                      * 进程id，当该节点为进程时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pid;
                     bool m_pidHasBeenSet;
 
                     /**
                      * 文件md5，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileMd5;
                     bool m_fileMd5HasBeenSet;
 
                     /**
                      * 文件写入内容，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileContent;
                     bool m_fileContentHasBeenSet;
 
                     /**
                      * 文件路径，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_filePath;
                     bool m_filePathHasBeenSet;
 
                     /**
                      * 文件创建时间，当该节点为文件时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileCreateTime;
                     bool m_fileCreateTimeHasBeenSet;
 
                     /**
                      * 请求目的地址，当该节点为网络时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
                      * 目标端口，当该节点为网络时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_dstPort;
                     bool m_dstPortHasBeenSet;
 
                     /**
                      * 登录源ip，当该节点为ssh时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcIP;
                     bool m_srcIPHasBeenSet;
 
                     /**
                      * 登录用户名用户组，当该节点为ssh时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
                      * 漏洞名称，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vulName;
                     bool m_vulNameHasBeenSet;
 
                     /**
                      * 漏洞利用时间，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vulTime;
                     bool m_vulTimeHasBeenSet;
 
                     /**
                      * http请求内容，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_httpContent;
                     bool m_httpContentHasBeenSet;
 
                     /**
                      * 漏洞利用者来源ip，当该节点为漏洞时生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vulSrcIP;
                     bool m_vulSrcIPHasBeenSet;
 
                     /**
                      * 点id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vertexId;
                     bool m_vertexIdHasBeenSet;

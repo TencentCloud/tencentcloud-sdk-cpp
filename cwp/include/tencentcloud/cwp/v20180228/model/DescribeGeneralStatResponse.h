@@ -199,9 +199,7 @@ namespace TencentCloud
 
                     /**
                      * 获取旗舰版主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlagshipMachineCnt 旗舰版主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFlagshipMachineCnt() const;
@@ -215,9 +213,7 @@ namespace TencentCloud
 
                     /**
                      * 获取保护天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtectDays 保护天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProtectDays() const;
@@ -231,9 +227,7 @@ namespace TencentCloud
 
                     /**
                      * 获取15天内新增的主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddedOnTheFifteen 15天内新增的主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAddedOnTheFifteen() const;
@@ -315,21 +309,18 @@ namespace TencentCloud
 
                     /**
                      * 旗舰版主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_flagshipMachineCnt;
                     bool m_flagshipMachineCntHasBeenSet;
 
                     /**
                      * 保护天数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_protectDays;
                     bool m_protectDaysHasBeenSet;
 
                     /**
                      * 15天内新增的主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_addedOnTheFifteen;
                     bool m_addedOnTheFifteenHasBeenSet;

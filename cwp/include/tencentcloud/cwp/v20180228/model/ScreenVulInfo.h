@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞类型 1: web-cms漏洞, 2:应用漏洞, 4: Linux软件漏洞, 5: Windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Category 漏洞类型 1: web-cms漏洞, 2:应用漏洞, 4: Linux软件漏洞, 5: Windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCategory() const;
 
                     /**
                      * 设置漏洞类型 1: web-cms漏洞, 2:应用漏洞, 4: Linux软件漏洞, 5: Windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _category 漏洞类型 1: web-cms漏洞, 2:应用漏洞, 4: Linux软件漏洞, 5: Windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategory(const uint64_t& _category);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机UUID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uuid 主机UUID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置主机UUID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uuid 主机UUID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -235,14 +227,12 @@ namespace TencentCloud
 
                     /**
                      * 漏洞类型 1: web-cms漏洞, 2:应用漏洞, 4: Linux软件漏洞, 5: Windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_category;
                     bool m_categoryHasBeenSet;
 
                     /**
                      * 主机UUID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;

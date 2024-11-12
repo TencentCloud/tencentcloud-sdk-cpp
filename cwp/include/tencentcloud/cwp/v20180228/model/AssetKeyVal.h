@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desc 描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesc(const std::string& _desc);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取今日新增数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewCount 今日新增数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNewCount() const;
 
                     /**
                      * 设置今日新增数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newCount 今日新增数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewCount(const int64_t& _newCount);
@@ -154,14 +146,12 @@ namespace TencentCloud
 
                     /**
                      * 描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
 
                     /**
                      * 今日新增数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_newCount;
                     bool m_newCountHasBeenSet;

@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainName 网络域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置网络域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainName 网络域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -255,7 +251,6 @@ namespace TencentCloud
 
                     /**
                      * 网络域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;

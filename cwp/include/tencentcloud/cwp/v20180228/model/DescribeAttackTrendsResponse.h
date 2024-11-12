@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击趋势统计数据（天）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetAttackTrend 攻击趋势统计数据（天）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NetAttackTrend> GetNetAttackTrend() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 攻击趋势统计数据（天）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NetAttackTrend> m_netAttackTrend;
                     bool m_netAttackTrendHasBeenSet;

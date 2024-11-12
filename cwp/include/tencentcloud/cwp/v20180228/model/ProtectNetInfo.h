@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 专家服务-旗舰护网信息
+                * 专家服务-旗舰重保信息
                 */
                 class ProtectNetInfo : public AbstractModel
                 {
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取护网天数
-                     * @return ProtectDays 护网天数
+                     * 获取重保天数
+                     * @return ProtectDays 重保天数
                      * 
                      */
                     uint64_t GetProtectDays() const;
 
                     /**
-                     * 设置护网天数
-                     * @param _protectDays 护网天数
+                     * 设置重保天数
+                     * @param _protectDays 重保天数
                      * 
                      */
                     void SetProtectDays(const uint64_t& _protectDays);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ProtectDaysHasBeenSet() const;
 
                     /**
-                     * 获取护网状态 0未启动，1护网中，2已完成
-                     * @return Status 护网状态 0未启动，1护网中，2已完成
+                     * 获取重保状态 0未启动，1重保中，2已完成
+                     * @return Status 重保状态 0未启动，1重保中，2已完成
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置护网状态 0未启动，1护网中，2已完成
-                     * @param _status 护网状态 0未启动，1护网中，2已完成
+                     * 设置重保状态 0未启动，1重保中，2已完成
+                     * @param _status 重保状态 0未启动，1重保中，2已完成
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取护网启动时间
-                     * @return StartTime 护网启动时间
+                     * 获取重保启动时间
+                     * @return StartTime 重保启动时间
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置护网启动时间
-                     * @param _startTime 护网启动时间
+                     * 设置重保启动时间
+                     * @param _startTime 重保启动时间
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取护网完成时间
-                     * @return EndTime 护网完成时间
+                     * 获取重保完成时间
+                     * @return EndTime 重保完成时间
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置护网完成时间
-                     * @param _endTime 护网完成时间
+                     * 设置重保完成时间
+                     * @param _endTime 重保完成时间
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -181,25 +181,25 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 护网天数
+                     * 重保天数
                      */
                     uint64_t m_protectDays;
                     bool m_protectDaysHasBeenSet;
 
                     /**
-                     * 护网状态 0未启动，1护网中，2已完成
+                     * 重保状态 0未启动，1重保中，2已完成
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 护网启动时间
+                     * 重保启动时间
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 护网完成时间
+                     * 重保完成时间
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

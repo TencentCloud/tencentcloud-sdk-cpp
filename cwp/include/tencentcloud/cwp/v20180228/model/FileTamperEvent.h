@@ -658,18 +658,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标文件更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetModifyTime 目标文件更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetModifyTime() const;
 
                     /**
                      * 设置目标文件更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetModifyTime 目标文件更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetModifyTime(const std::string& _targetModifyTime);
@@ -683,18 +679,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标文件创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetCreatTime 目标文件创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetCreatTime() const;
 
                     /**
                      * 设置目标文件创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetCreatTime 目标文件创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetCreatTime(const std::string& _targetCreatTime);
@@ -792,18 +784,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExeName 进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExeName() const;
 
                     /**
                      * 设置进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exeName 进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExeName(const std::string& _exeName);
@@ -817,18 +805,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo  主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineExtraInfo  主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
@@ -844,11 +828,9 @@ namespace TencentCloud
                      * 获取文件威胁行为
 <li>read 读取文件</li>
 <li>write 修改文件</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileAction 文件威胁行为
 <li>read 读取文件</li>
 <li>write 修改文件</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileAction() const;
@@ -857,11 +839,9 @@ namespace TencentCloud
                      * 设置文件威胁行为
 <li>read 读取文件</li>
 <li>write 修改文件</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileAction 文件威胁行为
 <li>read 读取文件</li>
 <li>write 修改文件</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileAction(const std::string& _fileAction);
@@ -1051,14 +1031,12 @@ namespace TencentCloud
 
                     /**
                      * 目标文件更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetModifyTime;
                     bool m_targetModifyTimeHasBeenSet;
 
                     /**
                      * 目标文件创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetCreatTime;
                     bool m_targetCreatTimeHasBeenSet;
@@ -1089,14 +1067,12 @@ namespace TencentCloud
 
                     /**
                      * 进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exeName;
                     bool m_exeNameHasBeenSet;
 
                     /**
                      *  主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
@@ -1105,7 +1081,6 @@ namespace TencentCloud
                      * 文件威胁行为
 <li>read 读取文件</li>
 <li>write 修改文件</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileAction;
                     bool m_fileActionHasBeenSet;

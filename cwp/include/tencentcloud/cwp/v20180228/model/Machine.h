@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool MachineStatusHasBeenSet() const;
 
                     /**
-                     * 获取云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。
-                     * @return Uuid 云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。
+                     * 获取主机安全Uuid，若客户端长时间不在线将返回空字符。
+                     * @return Uuid 主机安全Uuid，若客户端长时间不在线将返回空字符。
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。
-                     * @param _uuid 云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。
+                     * 设置主机安全Uuid，若客户端长时间不在线将返回空字符。
+                     * @param _uuid 主机安全Uuid，若客户端长时间不在线将返回空字符。
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -770,7 +770,7 @@ namespace TencentCloud
                     bool m_machineStatusHasBeenSet;
 
                     /**
-                     * 云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。
+                     * 主机安全Uuid，若客户端长时间不在线将返回空字符。
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;

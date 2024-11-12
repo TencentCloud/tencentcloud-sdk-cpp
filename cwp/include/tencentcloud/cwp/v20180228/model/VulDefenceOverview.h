@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每日攻击趋势
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackCounts 每日攻击趋势
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetAttackCounts() const;
 
                     /**
                      * 设置每日攻击趋势
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attackCounts 每日攻击趋势
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttackCounts(const std::vector<int64_t>& _attackCounts);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每日防御趋势
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefendCounts 每日防御趋势
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetDefendCounts() const;
 
                     /**
                      * 设置每日防御趋势
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defendCounts 每日防御趋势
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefendCounts(const std::vector<int64_t>& _defendCounts);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Date 日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDate() const;
 
                     /**
                      * 设置日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _date 日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDate(const std::vector<std::string>& _date);
@@ -206,21 +194,18 @@ namespace TencentCloud
 
                     /**
                      * 每日攻击趋势
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_attackCounts;
                     bool m_attackCountsHasBeenSet;
 
                     /**
                      * 每日防御趋势
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_defendCounts;
                     bool m_defendCountsHasBeenSet;
 
                     /**
                      * 日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_date;
                     bool m_dateHasBeenSet;

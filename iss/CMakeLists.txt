@@ -34,13 +34,12 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/ControlRecordTimelineRequest.h
   include/tencentcloud/iss/v20230517/model/DeleteOrganizationRequest.h
   include/tencentcloud/iss/v20230517/model/OperTimeSlot.h
-  include/tencentcloud/iss/v20230517/model/CheckDomainResponse.h
   include/tencentcloud/iss/v20230517/model/SetForbidPlayChannelsRequest.h
   include/tencentcloud/iss/v20230517/model/SubTaskData.h
   include/tencentcloud/iss/v20230517/model/DescribeCNAMEResponse.h
   include/tencentcloud/iss/v20230517/model/ISAPIOutputData.h
   include/tencentcloud/iss/v20230517/model/UpdateOrganizationResponse.h
-  include/tencentcloud/iss/v20230517/model/AddOrgData.h
+  include/tencentcloud/iss/v20230517/model/DescribeDeviceData.h
   include/tencentcloud/iss/v20230517/model/ListAITasksResponse.h
   include/tencentcloud/iss/v20230517/model/AIConfig.h
   include/tencentcloud/iss/v20230517/model/UpdateDeviceOrganizationRequest.h
@@ -154,7 +153,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/ControlRecordRequest.h
   include/tencentcloud/iss/v20230517/model/ControlDevicePTZResponse.h
   include/tencentcloud/iss/v20230517/model/ListRecordBackupPlansRequest.h
-  include/tencentcloud/iss/v20230517/model/DescribeDeviceData.h
+  include/tencentcloud/iss/v20230517/model/AddOrgData.h
   include/tencentcloud/iss/v20230517/model/AddUserDeviceRequest.h
   include/tencentcloud/iss/v20230517/model/ListRecordBackupPlanDevicesResponse.h
   include/tencentcloud/iss/v20230517/model/GatewayDevice.h
@@ -197,7 +196,6 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/PlayRecordRequest.h
   include/tencentcloud/iss/v20230517/model/UpdateRecordBackupTemplateModify.h
   include/tencentcloud/iss/v20230517/model/QueryForbidPlayChannelListRequest.h
-  include/tencentcloud/iss/v20230517/model/CheckDomainRequest.h
   include/tencentcloud/iss/v20230517/model/PlateContent.h
   include/tencentcloud/iss/v20230517/model/UpgradeGatewayRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeRecordFileResponse.h
@@ -300,13 +298,12 @@ set(iss_src
   src/v20230517/model/ControlRecordTimelineRequest.cpp
   src/v20230517/model/DeleteOrganizationRequest.cpp
   src/v20230517/model/OperTimeSlot.cpp
-  src/v20230517/model/CheckDomainResponse.cpp
   src/v20230517/model/SetForbidPlayChannelsRequest.cpp
   src/v20230517/model/SubTaskData.cpp
   src/v20230517/model/DescribeCNAMEResponse.cpp
   src/v20230517/model/ISAPIOutputData.cpp
   src/v20230517/model/UpdateOrganizationResponse.cpp
-  src/v20230517/model/AddOrgData.cpp
+  src/v20230517/model/DescribeDeviceData.cpp
   src/v20230517/model/ListAITasksResponse.cpp
   src/v20230517/model/AIConfig.cpp
   src/v20230517/model/UpdateDeviceOrganizationRequest.cpp
@@ -420,7 +417,7 @@ set(iss_src
   src/v20230517/model/ControlRecordRequest.cpp
   src/v20230517/model/ControlDevicePTZResponse.cpp
   src/v20230517/model/ListRecordBackupPlansRequest.cpp
-  src/v20230517/model/DescribeDeviceData.cpp
+  src/v20230517/model/AddOrgData.cpp
   src/v20230517/model/AddUserDeviceRequest.cpp
   src/v20230517/model/ListRecordBackupPlanDevicesResponse.cpp
   src/v20230517/model/GatewayDevice.cpp
@@ -463,7 +460,6 @@ set(iss_src
   src/v20230517/model/PlayRecordRequest.cpp
   src/v20230517/model/UpdateRecordBackupTemplateModify.cpp
   src/v20230517/model/QueryForbidPlayChannelListRequest.cpp
-  src/v20230517/model/CheckDomainRequest.cpp
   src/v20230517/model/PlateContent.cpp
   src/v20230517/model/UpgradeGatewayRequest.cpp
   src/v20230517/model/DescribeRecordFileResponse.cpp

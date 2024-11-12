@@ -23,7 +23,8 @@ using namespace TencentCloud::Hunyuan::V20230901::Model;
 using namespace std;
 
 GetEmbeddingRequest::GetEmbeddingRequest() :
-    m_inputHasBeenSet(false)
+    m_inputHasBeenSet(false),
+    m_inputListHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,19 @@ string GetEmbeddingRequest::ToJsonString() const
         string key = "Input";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_input.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_inputList.begin(); itr != m_inputList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -64,6 +78,22 @@ void GetEmbeddingRequest::SetInput(const string& _input)
 bool GetEmbeddingRequest::InputHasBeenSet() const
 {
     return m_inputHasBeenSet;
+}
+
+vector<string> GetEmbeddingRequest::GetInputList() const
+{
+    return m_inputList;
+}
+
+void GetEmbeddingRequest::SetInputList(const vector<string>& _inputList)
+{
+    m_inputList = _inputList;
+    m_inputListHasBeenSet = true;
+}
+
+bool GetEmbeddingRequest::InputListHasBeenSet() const
+{
+    return m_inputListHasBeenSet;
 }
 
 

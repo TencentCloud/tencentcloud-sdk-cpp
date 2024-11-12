@@ -472,6 +472,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/Ipv6Address.h
   include/tencentcloud/vpc/v20170312/model/DescribePrivateNatGatewayTranslationAclRulesResponse.h
   include/tencentcloud/vpc/v20170312/model/CreateNetworkInterfaceRequest.h
+  include/tencentcloud/vpc/v20170312/model/ModifyBandwidthPackageBandwidthRequest.h
   include/tencentcloud/vpc/v20170312/model/BandwidthPackageBillBandwidth.h
   include/tencentcloud/vpc/v20170312/model/DescribePrivateNatGatewayTranslationAclRulesRequest.h
   include/tencentcloud/vpc/v20170312/model/ConflictItem.h
@@ -533,6 +534,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DeleteVpnGatewayRequest.h
   include/tencentcloud/vpc/v20170312/model/ReplaceRouteTableAssociationResponse.h
   include/tencentcloud/vpc/v20170312/model/AttachCcnInstancesRequest.h
+  include/tencentcloud/vpc/v20170312/model/ModifyBandwidthPackageBandwidthResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeDirectConnectGatewayCcnRoutesRequest.h
   include/tencentcloud/vpc/v20170312/model/CcnInstance.h
   include/tencentcloud/vpc/v20170312/model/DescribeLocalGatewayResponse.h
@@ -1380,6 +1382,7 @@ set(vpc_src
   src/v20170312/model/Ipv6Address.cpp
   src/v20170312/model/DescribePrivateNatGatewayTranslationAclRulesResponse.cpp
   src/v20170312/model/CreateNetworkInterfaceRequest.cpp
+  src/v20170312/model/ModifyBandwidthPackageBandwidthRequest.cpp
   src/v20170312/model/BandwidthPackageBillBandwidth.cpp
   src/v20170312/model/DescribePrivateNatGatewayTranslationAclRulesRequest.cpp
   src/v20170312/model/ConflictItem.cpp
@@ -1441,6 +1444,7 @@ set(vpc_src
   src/v20170312/model/DeleteVpnGatewayRequest.cpp
   src/v20170312/model/ReplaceRouteTableAssociationResponse.cpp
   src/v20170312/model/AttachCcnInstancesRequest.cpp
+  src/v20170312/model/ModifyBandwidthPackageBandwidthResponse.cpp
   src/v20170312/model/DescribeDirectConnectGatewayCcnRoutesRequest.cpp
   src/v20170312/model/CcnInstance.cpp
   src/v20170312/model/DescribeLocalGatewayResponse.cpp

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取java内存马事件详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Info java内存马事件详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     JavaMemShellDetail GetInfo() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * java内存马事件详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     JavaMemShellDetail m_info;
                     bool m_infoHasBeenSet;

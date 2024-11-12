@@ -723,18 +723,14 @@ namespace TencentCloud
 
                     /**
                      * 获取离线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OfflineTime 离线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOfflineTime() const;
 
                     /**
                      * 设置离线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offlineTime 离线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOfflineTime(const std::string& _offlineTime);
@@ -748,18 +744,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 主机ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置主机ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 主机ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -773,18 +765,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -798,18 +786,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机二外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 主机二外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置主机二外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineExtraInfo 主机二外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
@@ -823,18 +807,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CpuLoadVul
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuLoadVul CpuLoadVul
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCpuLoadVul() const;
 
                     /**
                      * 设置CpuLoadVul
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuLoadVul CpuLoadVul
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuLoadVul(const std::string& _cpuLoadVul);
@@ -848,18 +828,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstTime 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFirstTime() const;
 
                     /**
                      * 设置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _firstTime 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFirstTime(const std::string& _firstTime);
@@ -1067,42 +1043,36 @@ namespace TencentCloud
 
                     /**
                      * 离线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;
 
                     /**
                      * 主机ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 主机二外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
 
                     /**
                      * CpuLoadVul
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cpuLoadVul;
                     bool m_cpuLoadVulHasBeenSet;
 
                     /**
                      * 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_firstTime;
                     bool m_firstTimeHasBeenSet;

@@ -14,41 +14,41 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/iss/v20230517/model/CheckDomainRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceReadOnlyStatusRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Iss::V20230517::Model;
+using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace std;
 
-CheckDomainRequest::CheckDomainRequest() :
-    m_playDomainHasBeenSet(false),
-    m_internalDomainHasBeenSet(false)
+ModifyDBInstanceReadOnlyStatusRequest::ModifyDBInstanceReadOnlyStatusRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_readOnlyHasBeenSet(false)
 {
 }
 
-string CheckDomainRequest::ToJsonString() const
+string ModifyDBInstanceReadOnlyStatusRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_playDomainHasBeenSet)
+    if (m_instanceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PlayDomain";
+        string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_playDomain.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_internalDomainHasBeenSet)
+    if (m_readOnlyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InternalDomain";
+        string key = "ReadOnly";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_internalDomain.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_readOnly, allocator);
     }
 
 
@@ -59,36 +59,36 @@ string CheckDomainRequest::ToJsonString() const
 }
 
 
-string CheckDomainRequest::GetPlayDomain() const
+string ModifyDBInstanceReadOnlyStatusRequest::GetInstanceId() const
 {
-    return m_playDomain;
+    return m_instanceId;
 }
 
-void CheckDomainRequest::SetPlayDomain(const string& _playDomain)
+void ModifyDBInstanceReadOnlyStatusRequest::SetInstanceId(const string& _instanceId)
 {
-    m_playDomain = _playDomain;
-    m_playDomainHasBeenSet = true;
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
 }
 
-bool CheckDomainRequest::PlayDomainHasBeenSet() const
+bool ModifyDBInstanceReadOnlyStatusRequest::InstanceIdHasBeenSet() const
 {
-    return m_playDomainHasBeenSet;
+    return m_instanceIdHasBeenSet;
 }
 
-string CheckDomainRequest::GetInternalDomain() const
+int64_t ModifyDBInstanceReadOnlyStatusRequest::GetReadOnly() const
 {
-    return m_internalDomain;
+    return m_readOnly;
 }
 
-void CheckDomainRequest::SetInternalDomain(const string& _internalDomain)
+void ModifyDBInstanceReadOnlyStatusRequest::SetReadOnly(const int64_t& _readOnly)
 {
-    m_internalDomain = _internalDomain;
-    m_internalDomainHasBeenSet = true;
+    m_readOnly = _readOnly;
+    m_readOnlyHasBeenSet = true;
 }
 
-bool CheckDomainRequest::InternalDomainHasBeenSet() const
+bool ModifyDBInstanceReadOnlyStatusRequest::ReadOnlyHasBeenSet() const
 {
-    return m_internalDomainHasBeenSet;
+    return m_readOnlyHasBeenSet;
 }
 
 

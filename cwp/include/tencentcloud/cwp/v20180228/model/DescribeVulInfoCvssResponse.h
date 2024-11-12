@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulId 漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVulId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulName 漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVulName() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取危害等级：1-低危；2-中危；3-高危；4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulLevel 危害等级：1-低危；2-中危；3-高危；4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVulLevel() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞分类 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulType 漏洞分类 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVulType() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 漏洞描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
@@ -125,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取修复方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepairPlan 修复方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepairPlan() const;
@@ -141,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞CVEID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CveId 漏洞CVEID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCveId() const;
@@ -157,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reference 参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReference() const;
@@ -173,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取CVSS信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CVSS CVSS信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCVSS() const;
@@ -189,9 +171,7 @@ namespace TencentCloud
 
                     /**
                      * 获取发布时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicDate 发布时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicDate() const;
@@ -205,9 +185,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Cvss分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CvssScore Cvss分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCvssScore() const;
@@ -221,9 +199,7 @@ namespace TencentCloud
 
                     /**
                      * 获取cvss详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CveInfo cvss详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCveInfo() const;
@@ -237,9 +213,7 @@ namespace TencentCloud
 
                     /**
                      * 获取cvss 分数 浮点型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CvssScoreFloat cvss 分数 浮点型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCvssScoreFloat() const;
@@ -253,9 +227,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞标签 多个逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 漏洞标签 多个逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabels() const;
@@ -269,9 +241,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已防御的攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefenseAttackCount 已防御的攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDefenseAttackCount() const;
@@ -285,9 +255,7 @@ namespace TencentCloud
 
                     /**
                      * 获取全网修复成功次数, 不支持自动修复的漏洞默认返回0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessFixCount 全网修复成功次数, 不支持自动修复的漏洞默认返回0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSuccessFixCount() const;
@@ -301,9 +269,7 @@ namespace TencentCloud
 
                     /**
                      * 获取修复是否支持：0-windows/linux均不支持修复 ;1-windows/linux 均支持修复 ;2-仅linux支持修复;3-仅windows支持修复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixSwitch 修复是否支持：0-windows/linux均不支持修复 ;1-windows/linux 均支持修复 ;2-仅linux支持修复;3-仅windows支持修复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFixSwitch() const;
@@ -319,119 +285,102 @@ namespace TencentCloud
 
                     /**
                      * 漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vulId;
                     bool m_vulIdHasBeenSet;
 
                     /**
                      * 漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vulName;
                     bool m_vulNameHasBeenSet;
 
                     /**
                      * 危害等级：1-低危；2-中危；3-高危；4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vulLevel;
                     bool m_vulLevelHasBeenSet;
 
                     /**
                      * 漏洞分类 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vulType;
                     bool m_vulTypeHasBeenSet;
 
                     /**
                      * 漏洞描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 修复方案
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repairPlan;
                     bool m_repairPlanHasBeenSet;
 
                     /**
                      * 漏洞CVEID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cveId;
                     bool m_cveIdHasBeenSet;
 
                     /**
                      * 参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reference;
                     bool m_referenceHasBeenSet;
 
                     /**
                      * CVSS信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cVSS;
                     bool m_cVSSHasBeenSet;
 
                     /**
                      * 发布时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicDate;
                     bool m_publicDateHasBeenSet;
 
                     /**
                      * Cvss分数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cvssScore;
                     bool m_cvssScoreHasBeenSet;
 
                     /**
                      * cvss详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cveInfo;
                     bool m_cveInfoHasBeenSet;
 
                     /**
                      * cvss 分数 浮点型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cvssScoreFloat;
                     bool m_cvssScoreFloatHasBeenSet;
 
                     /**
                      * 漏洞标签 多个逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
                      * 已防御的攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_defenseAttackCount;
                     bool m_defenseAttackCountHasBeenSet;
 
                     /**
                      * 全网修复成功次数, 不支持自动修复的漏洞默认返回0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_successFixCount;
                     bool m_successFixCountHasBeenSet;
 
                     /**
                      * 修复是否支持：0-windows/linux均不支持修复 ;1-windows/linux 均支持修复 ;2-仅linux支持修复;3-仅windows支持修复
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fixSwitch;
                     bool m_fixSwitchHasBeenSet;

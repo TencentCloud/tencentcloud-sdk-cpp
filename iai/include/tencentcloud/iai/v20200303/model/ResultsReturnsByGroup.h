@@ -38,7 +38,6 @@ namespace TencentCloud
             {
                 /**
                 * 识别结果。
-
                 */
                 class ResultsReturnsByGroup : public AbstractModel
                 {
@@ -92,19 +91,23 @@ namespace TencentCloud
                     bool GroupCandidatesHasBeenSet() const;
 
                     /**
-                     * 获取检测出的人脸图片状态返回码。0 表示正常。 
--1601代表不符合图片质量控制要求，此时Candidate内容为空。
-                     * @return RetCode 检测出的人脸图片状态返回码。0 表示正常。 
--1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     * 获取检测出的人脸图片状态返回码。
+- 0 表示正常。 
+- -1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     * @return RetCode 检测出的人脸图片状态返回码。
+- 0 表示正常。 
+- -1601代表不符合图片质量控制要求，此时Candidate内容为空。
                      * 
                      */
                     int64_t GetRetCode() const;
 
                     /**
-                     * 设置检测出的人脸图片状态返回码。0 表示正常。 
--1601代表不符合图片质量控制要求，此时Candidate内容为空。
-                     * @param _retCode 检测出的人脸图片状态返回码。0 表示正常。 
--1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     * 设置检测出的人脸图片状态返回码。
+- 0 表示正常。 
+- -1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     * @param _retCode 检测出的人脸图片状态返回码。
+- 0 表示正常。 
+- -1601代表不符合图片质量控制要求，此时Candidate内容为空。
                      * 
                      */
                     void SetRetCode(const int64_t& _retCode);
@@ -131,8 +134,9 @@ namespace TencentCloud
                     bool m_groupCandidatesHasBeenSet;
 
                     /**
-                     * 检测出的人脸图片状态返回码。0 表示正常。 
--1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     * 检测出的人脸图片状态返回码。
+- 0 表示正常。 
+- -1601代表不符合图片质量控制要求，此时Candidate内容为空。
                      */
                     int64_t m_retCode;
                     bool m_retCodeHasBeenSet;

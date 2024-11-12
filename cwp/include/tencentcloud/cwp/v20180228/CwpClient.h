@@ -49,8 +49,6 @@
 #include <tencentcloud/cwp/v20180228/model/CreateBaselineStrategyResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateBuyBindTaskRequest.h>
 #include <tencentcloud/cwp/v20180228/model/CreateBuyBindTaskResponse.h>
-#include <tencentcloud/cwp/v20180228/model/CreateCloudProtectServiceOrderRecordRequest.h>
-#include <tencentcloud/cwp/v20180228/model/CreateCloudProtectServiceOrderRecordResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateEmergencyVulScanRequest.h>
 #include <tencentcloud/cwp/v20180228/model/CreateEmergencyVulScanResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateIncidentBacktrackingRequest.h>
@@ -1108,9 +1106,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBuyBindTaskResponse> CreateBuyBindTaskOutcome;
                 typedef std::future<CreateBuyBindTaskOutcome> CreateBuyBindTaskOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::CreateBuyBindTaskRequest&, CreateBuyBindTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBuyBindTaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateCloudProtectServiceOrderRecordResponse> CreateCloudProtectServiceOrderRecordOutcome;
-                typedef std::future<CreateCloudProtectServiceOrderRecordOutcome> CreateCloudProtectServiceOrderRecordOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::CreateCloudProtectServiceOrderRecordRequest&, CreateCloudProtectServiceOrderRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudProtectServiceOrderRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateEmergencyVulScanResponse> CreateEmergencyVulScanOutcome;
                 typedef std::future<CreateEmergencyVulScanOutcome> CreateEmergencyVulScanOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::CreateEmergencyVulScanRequest&, CreateEmergencyVulScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmergencyVulScanAsyncHandler;
@@ -2736,17 +2731,6 @@ namespace TencentCloud
                 CreateBuyBindTaskOutcome CreateBuyBindTask(const Model::CreateBuyBindTaskRequest &request);
                 void CreateBuyBindTaskAsync(const Model::CreateBuyBindTaskRequest& request, const CreateBuyBindTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBuyBindTaskOutcomeCallable CreateBuyBindTaskCallable(const Model::CreateBuyBindTaskRequest& request);
-
-                /**
-                 *云护航计费产品已下线
-
-云护航服务使用完成后，该接口可以确认收货
-                 * @param req CreateCloudProtectServiceOrderRecordRequest
-                 * @return CreateCloudProtectServiceOrderRecordOutcome
-                 */
-                CreateCloudProtectServiceOrderRecordOutcome CreateCloudProtectServiceOrderRecord(const Model::CreateCloudProtectServiceOrderRecordRequest &request);
-                void CreateCloudProtectServiceOrderRecordAsync(const Model::CreateCloudProtectServiceOrderRecordRequest& request, const CreateCloudProtectServiceOrderRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateCloudProtectServiceOrderRecordOutcomeCallable CreateCloudProtectServiceOrderRecordCallable(const Model::CreateCloudProtectServiceOrderRecordRequest& request);
 
                 /**
                  *创建应急漏洞扫描任务

@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 操作uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置操作uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 操作uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 策略备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置策略备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 策略备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包含目录，用;分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncludeDir 包含目录，用;分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIncludeDir() const;
 
                     /**
                      * 设置包含目录，用;分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _includeDir 包含目录，用;分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIncludeDir(const std::string& _includeDir);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包含目录，用;分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExcludeDir 包含目录，用;分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExcludeDir() const;
 
                     /**
                      * 设置包含目录，用;分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _excludeDir 包含目录，用;分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExcludeDir(const std::string& _excludeDir);
@@ -232,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份模式： 0按周，1按天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupType 备份模式： 0按周，1按天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBackupType() const;
 
                     /**
                      * 设置备份模式： 0按周，1按天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupType 备份模式： 0按周，1按天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupType(const uint64_t& _backupType);
@@ -257,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份星期天数（1-7）：1;2;3;4
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weekday 备份星期天数（1-7）：1;2;3;4
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWeekday() const;
 
                     /**
                      * 设置备份星期天数（1-7）：1;2;3;4
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weekday 备份星期天数（1-7）：1;2;3;4
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeekday(const std::string& _weekday);
@@ -324,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -349,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 最近修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置最近修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 最近修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -374,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定机器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineCount 绑定机器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMachineCount() const;
 
                     /**
                      * 设置绑定机器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineCount 绑定机器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineCount(const uint64_t& _machineCount);
@@ -399,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventCount 策略关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEventCount() const;
 
                     /**
                      * 设置策略关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventCount 策略关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventCount(const uint64_t& _eventCount);
@@ -432,7 +392,6 @@ namespace TencentCloud
 
                     /**
                      * 操作uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
@@ -445,7 +404,6 @@ namespace TencentCloud
 
                     /**
                      * 策略备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -464,28 +422,24 @@ namespace TencentCloud
 
                     /**
                      * 包含目录，用;分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_includeDir;
                     bool m_includeDirHasBeenSet;
 
                     /**
                      * 包含目录，用;分隔
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_excludeDir;
                     bool m_excludeDirHasBeenSet;
 
                     /**
                      * 备份模式： 0按周，1按天
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_backupType;
                     bool m_backupTypeHasBeenSet;
 
                     /**
                      * 备份星期天数（1-7）：1;2;3;4
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_weekday;
                     bool m_weekdayHasBeenSet;
@@ -504,28 +458,24 @@ namespace TencentCloud
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 最近修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 绑定机器数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_machineCount;
                     bool m_machineCountHasBeenSet;
 
                     /**
                      * 策略关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_eventCount;
                     bool m_eventCountHasBeenSet;

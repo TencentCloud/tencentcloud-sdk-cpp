@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取存储类型，string数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 存储类型，string数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetType() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取日志存储天数，3640表示不限
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Period 日志存储天数，3640表示不限
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取日志存储时长，3640表示不限
+                     * @return Period 日志存储时长，3640表示不限
                      * 
                      */
                     int64_t GetPeriod() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取本月Period的修改次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeriodModifyCount 本月Period的修改次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPeriodModifyCount() const;
@@ -91,28 +85,45 @@ namespace TencentCloud
                      */
                     bool PeriodModifyCountHasBeenSet() const;
 
+                    /**
+                     * 获取日志存储时长单位，年year/月month/天day
+                     * @return Granularity 日志存储时长单位，年year/月month/天day
+                     * 
+                     */
+                    std::string GetGranularity() const;
+
+                    /**
+                     * 判断参数 Granularity 是否已赋值
+                     * @return Granularity 是否已赋值
+                     * 
+                     */
+                    bool GranularityHasBeenSet() const;
+
                 private:
 
                     /**
                      * 存储类型，string数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 日志存储天数，3640表示不限
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 日志存储时长，3640表示不限
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
                      * 本月Period的修改次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_periodModifyCount;
                     bool m_periodModifyCountHasBeenSet;
+
+                    /**
+                     * 日志存储时长单位，年year/月month/天day
+                     */
+                    std::string m_granularity;
+                    bool m_granularityHasBeenSet;
 
                 };
             }

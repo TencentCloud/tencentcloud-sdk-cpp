@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取统计详情图标数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrendsChart 统计详情图标数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScreenTrendsChart> GetTrendsChart() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 统计详情图标数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScreenTrendsChart> m_trendsChart;
                     bool m_trendsChartHasBeenSet;

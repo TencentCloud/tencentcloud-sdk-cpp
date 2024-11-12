@@ -237,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取首次开启防护时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstProtectTime 首次开启防护时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFirstProtectTime() const;
 
                     /**
                      * 设置首次开启防护时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _firstProtectTime 首次开启防护时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFirstProtectTime(const std::string& _firstProtectTime);
@@ -262,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近开启防护时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestProtectTime 最近开启防护时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestProtectTime() const;
 
                     /**
                      * 设置最近开启防护时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latestProtectTime 最近开启防护时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatestProtectTime(const std::string& _latestProtectTime);
@@ -287,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防护文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtectFileType 防护文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtectFileType() const;
 
                     /**
                      * 设置防护文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protectFileType 防护文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtectFileType(const std::string& _protectFileType);
@@ -312,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防护文件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtectFilesCount 防护文件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProtectFilesCount() const;
 
                     /**
                      * 设置防护文件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protectFilesCount 防护文件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtectFilesCount(const int64_t& _protectFilesCount);
@@ -393,28 +377,24 @@ namespace TencentCloud
 
                     /**
                      * 首次开启防护时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_firstProtectTime;
                     bool m_firstProtectTimeHasBeenSet;
 
                     /**
                      * 最近开启防护时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestProtectTime;
                     bool m_latestProtectTimeHasBeenSet;
 
                     /**
                      * 防护文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protectFileType;
                     bool m_protectFileTypeHasBeenSet;
 
                     /**
                      * 防护文件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_protectFilesCount;
                     bool m_protectFilesCountHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取恶意请求列表数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskDnsList 恶意请求列表数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RiskDnsList> GetRiskDnsList() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 恶意请求列表数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RiskDnsList> m_riskDnsList;
                     bool m_riskDnsListHasBeenSet;

@@ -87,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTaskId() const;
@@ -123,7 +121,6 @@ namespace TencentCloud
 
                     /**
                      * 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取忽略检测项影响主机列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IgnoreRuleEffectHostList 忽略检测项影响主机列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IgnoreRuleEffectHostInfo> GetIgnoreRuleEffectHostList() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 忽略检测项影响主机列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IgnoreRuleEffectHostInfo> m_ignoreRuleEffectHostList;
                     bool m_ignoreRuleEffectHostListHasBeenSet;

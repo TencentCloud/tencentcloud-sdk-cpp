@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警设置的修改内容
-                     * @return WarningObjects 告警设置的修改内容
+                     * 获取修改告警设置的内容
+                     * @return WarningObjects 修改告警设置的内容
                      * 
                      */
                     std::vector<WarningObject> GetWarningObjects() const;
 
                     /**
-                     * 设置告警设置的修改内容
-                     * @param _warningObjects 告警设置的修改内容
+                     * 设置修改告警设置的内容
+                     * @param _warningObjects 修改告警设置的内容
                      * 
                      */
                     void SetWarningObjects(const std::vector<WarningObject>& _warningObjects);
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警设置的修改内容
+                     * 修改告警设置的内容
                      */
                     std::vector<WarningObject> m_warningObjects;
                     bool m_warningObjectsHasBeenSet;

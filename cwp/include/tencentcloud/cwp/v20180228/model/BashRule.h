@@ -300,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生效服务器的uuid数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uuids 生效服务器的uuid数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUuids() const;
 
                     /**
                      * 设置生效服务器的uuid数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uuids 生效服务器的uuid数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUuids(const std::vector<std::string>& _uuids);
@@ -325,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0=黑名单 1=白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return White 0=黑名单 1=白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWhite() const;
 
                     /**
                      * 设置0=黑名单 1=白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _white 0=黑名单 1=白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWhite(const uint64_t& _white);
@@ -350,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否处理之前的事件 0: 不处理 1:处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealOldEvents 是否处理之前的事件 0: 不处理 1:处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDealOldEvents() const;
 
                     /**
                      * 设置是否处理之前的事件 0: 不处理 1:处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dealOldEvents 是否处理之前的事件 0: 不处理 1:处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDealOldEvents(const uint64_t& _dealOldEvents);
@@ -375,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -474,28 +458,24 @@ namespace TencentCloud
 
                     /**
                      * 生效服务器的uuid数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_uuids;
                     bool m_uuidsHasBeenSet;
 
                     /**
                      * 0=黑名单 1=白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_white;
                     bool m_whiteHasBeenSet;
 
                     /**
                      * 是否处理之前的事件 0: 不处理 1:处理
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_dealOldEvents;
                     bool m_dealOldEventsHasBeenSet;
 
                     /**
                      * 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

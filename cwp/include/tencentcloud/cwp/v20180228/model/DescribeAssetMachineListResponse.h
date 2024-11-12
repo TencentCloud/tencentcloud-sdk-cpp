@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取记录列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Machines 记录列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetMachineBaseInfo> GetMachines() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 记录列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetMachineBaseInfo> m_machines;
                     bool m_machinesHasBeenSet;

@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取项目或标签的名称列表，自选主机时为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemLabels 项目或标签的名称列表，自选主机时为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetItemLabels() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取机器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuids 机器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetQuuids() const;
@@ -91,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取机器列表总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 机器列表总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -107,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取项目或标签的id列表，自选主机时为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemLabelIds 项目或标签的id列表，自选主机时为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetItemLabelIds() const;
@@ -145,28 +137,24 @@ namespace TencentCloud
 
                     /**
                      * 项目或标签的名称列表，自选主机时为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_itemLabels;
                     bool m_itemLabelsHasBeenSet;
 
                     /**
                      * 机器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_quuids;
                     bool m_quuidsHasBeenSet;
 
                     /**
                      * 机器列表总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 项目或标签的id列表，自选主机时为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_itemLabelIds;
                     bool m_itemLabelIdsHasBeenSet;

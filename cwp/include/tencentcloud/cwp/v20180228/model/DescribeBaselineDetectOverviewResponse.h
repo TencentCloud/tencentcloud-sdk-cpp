@@ -101,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取最近一次检测通过个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestPassCount 最近一次检测通过个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLatestPassCount() const;
@@ -117,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取最近一次检测未通过个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestNotPassCount 最近一次检测未通过个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLatestNotPassCount() const;
@@ -159,14 +155,12 @@ namespace TencentCloud
 
                     /**
                      * 最近一次检测通过个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_latestPassCount;
                     bool m_latestPassCountHasBeenSet;
 
                     /**
                      * 最近一次检测未通过个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_latestNotPassCount;
                     bool m_latestNotPassCountHasBeenSet;

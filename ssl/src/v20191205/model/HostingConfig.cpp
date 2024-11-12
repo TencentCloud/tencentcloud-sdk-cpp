@@ -22,7 +22,9 @@ using namespace std;
 
 HostingConfig::HostingConfig() :
     m_replaceTimeHasBeenSet(false),
-    m_messageTypesHasBeenSet(false)
+    m_messageTypesHasBeenSet(false),
+    m_replaceStartTimeHasBeenSet(false),
+    m_replaceEndTimeHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,26 @@ CoreInternalOutcome HostingConfig::Deserialize(const rapidjson::Value &value)
         m_messageTypesHasBeenSet = true;
     }
 
+    if (value.HasMember("ReplaceStartTime") && !value["ReplaceStartTime"].IsNull())
+    {
+        if (!value["ReplaceStartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostingConfig.ReplaceStartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_replaceStartTime = string(value["ReplaceStartTime"].GetString());
+        m_replaceStartTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReplaceEndTime") && !value["ReplaceEndTime"].IsNull())
+    {
+        if (!value["ReplaceEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostingConfig.ReplaceEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_replaceEndTime = string(value["ReplaceEndTime"].GetString());
+        m_replaceEndTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +102,22 @@ void HostingConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_replaceStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplaceStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replaceStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_replaceEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplaceEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replaceEndTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +153,37 @@ void HostingConfig::SetMessageTypes(const vector<int64_t>& _messageTypes)
 bool HostingConfig::MessageTypesHasBeenSet() const
 {
     return m_messageTypesHasBeenSet;
+}
+
+string HostingConfig::GetReplaceStartTime() const
+{
+    return m_replaceStartTime;
+}
+
+void HostingConfig::SetReplaceStartTime(const string& _replaceStartTime)
+{
+    m_replaceStartTime = _replaceStartTime;
+    m_replaceStartTimeHasBeenSet = true;
+}
+
+bool HostingConfig::ReplaceStartTimeHasBeenSet() const
+{
+    return m_replaceStartTimeHasBeenSet;
+}
+
+string HostingConfig::GetReplaceEndTime() const
+{
+    return m_replaceEndTime;
+}
+
+void HostingConfig::SetReplaceEndTime(const string& _replaceEndTime)
+{
+    m_replaceEndTime = _replaceEndTime;
+    m_replaceEndTimeHasBeenSet = true;
+}
+
+bool HostingConfig::ReplaceEndTimeHasBeenSet() const
+{
+    return m_replaceEndTimeHasBeenSet;
 }
 

@@ -321,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0: bash日志 1: 实时监控(雷霆版)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectBy 0: bash日志 1: 实时监控(雷霆版)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDetectBy() const;
 
                     /**
                      * 设置0: bash日志 1: 实时监控(雷霆版)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detectBy 0: bash日志 1: 实时监控(雷霆版)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetectBy(const uint64_t& _detectBy);
@@ -346,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pid 进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPid() const;
 
                     /**
                      * 设置进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pid 进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPid(const std::string& _pid);
@@ -371,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Exe 进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExe() const;
 
                     /**
                      * 设置进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exe 进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExe(const std::string& _exe);
@@ -396,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -421,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则类别  0=系统规则，1=用户规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleCategory 规则类别  0=系统规则，1=用户规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleCategory() const;
 
                     /**
                      * 设置规则类别  0=系统规则，1=用户规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleCategory 规则类别  0=系统规则，1=用户规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleCategory(const uint64_t& _ruleCategory);
@@ -446,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动生成的正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegexBashCmd 自动生成的正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegexBashCmd() const;
 
                     /**
                      * 设置自动生成的正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regexBashCmd 自动生成的正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegexBashCmd(const std::string& _regexBashCmd);
@@ -471,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机HostName
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 主机HostName
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置主机HostName
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostName 主机HostName
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -576,49 +548,42 @@ namespace TencentCloud
 
                     /**
                      * 0: bash日志 1: 实时监控(雷霆版)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_detectBy;
                     bool m_detectByHasBeenSet;
 
                     /**
                      * 进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pid;
                     bool m_pidHasBeenSet;
 
                     /**
                      * 进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exe;
                     bool m_exeHasBeenSet;
 
                     /**
                      * 处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 规则类别  0=系统规则，1=用户规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleCategory;
                     bool m_ruleCategoryHasBeenSet;
 
                     /**
                      * 自动生成的正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regexBashCmd;
                     bool m_regexBashCmdHasBeenSet;
 
                     /**
                      * 主机HostName
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线检测项名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 基线检测项名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置基线检测项名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleName 基线检测项名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检测项危害等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 检测项危害等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置检测项危害等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 检测项危害等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const uint64_t& _level);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventCount 事件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEventCount() const;
 
                     /**
                      * 设置事件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventCount 事件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventCount(const uint64_t& _eventCount);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检测项id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 检测项id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
                      * 设置检测项id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 检测项id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 基线检测项名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
                      * 检测项危害等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 事件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_eventCount;
                     bool m_eventCountHasBeenSet;
 
                     /**
                      * 检测项id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;

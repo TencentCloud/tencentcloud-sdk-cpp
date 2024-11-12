@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取只有解绑失败的才有该值.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrMsg 只有解绑失败的才有该值.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LicenseUnBindRsp> GetErrMsg() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 只有解绑失败的才有该值.
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LicenseUnBindRsp> m_errMsg;
                     bool m_errMsgHasBeenSet;

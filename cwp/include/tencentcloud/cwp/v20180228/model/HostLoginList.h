@@ -69,19 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取Uuid串
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Uuid Uuid串
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取主机Uuid
+                     * @return Uuid 主机Uuid
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置Uuid串
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _uuid Uuid串
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置主机Uuid
+                     * @param _uuid 主机Uuid
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineIp 主机ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMachineIp() const;
 
                     /**
                      * 设置主机ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineIp 主机ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineIp(const std::string& _machineIp);
@@ -120,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineName 主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMachineName() const;
 
                     /**
                      * 设置主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineName 主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineName(const std::string& _machineName);
@@ -145,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -170,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取来源ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcIp 来源ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcIp() const;
 
                     /**
                      * 设置来源ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcIp 来源ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcIp(const std::string& _srcIp);
@@ -216,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取国家id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Country 国家id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCountry() const;
 
                     /**
                      * 设置国家id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _country 国家id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCountry(const uint64_t& _country);
@@ -241,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取城市id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return City 城市id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCity() const;
 
                     /**
                      * 设置城市id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _city 城市id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCity(const uint64_t& _city);
@@ -266,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取省份id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Province 省份id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProvince() const;
 
                     /**
                      * 设置省份id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _province 省份id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProvince(const uint64_t& _province);
@@ -291,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取登录时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoginTime 登录时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLoginTime() const;
 
                     /**
                      * 设置登录时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loginTime 登录时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoginTime(const std::string& _loginTime);
@@ -316,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -341,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否命中异地登录异常  1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsRiskArea 是否命中异地登录异常  1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsRiskArea() const;
 
                     /**
                      * 设置是否命中异地登录异常  1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isRiskArea 是否命中异地登录异常  1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsRiskArea(const uint64_t& _isRiskArea);
@@ -366,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否命中异常用户异常 1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsRiskUser 是否命中异常用户异常 1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsRiskUser() const;
 
                     /**
                      * 设置是否命中异常用户异常 1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isRiskUser 是否命中异常用户异常 1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsRiskUser(const uint64_t& _isRiskUser);
@@ -391,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否命中异常时间异常 1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsRiskTime 是否命中异常时间异常 1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsRiskTime() const;
 
                     /**
                      * 设置是否命中异常时间异常 1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isRiskTime 是否命中异常时间异常 1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsRiskTime(const uint64_t& _isRiskTime);
@@ -416,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否命中异常IP异常 1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsRiskSrcIp 是否命中异常IP异常 1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsRiskSrcIp() const;
 
                     /**
                      * 设置是否命中异常IP异常 1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isRiskSrcIp 是否命中异常IP异常 1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsRiskSrcIp(const uint64_t& _isRiskSrcIp);
@@ -443,11 +387,9 @@ namespace TencentCloud
                      * 获取危险等级：
 0 高危
 1 可疑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 危险等级：
 0 高危
 1 可疑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRiskLevel() const;
@@ -456,11 +398,9 @@ namespace TencentCloud
                      * 设置危险等级：
 0 高危
 1 可疑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevel 危险等级：
 0 高危
 1 可疑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevel(const uint64_t& _riskLevel);
@@ -474,18 +414,14 @@ namespace TencentCloud
 
                     /**
                      * 获取位置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 位置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 设置位置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _location 位置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocation(const std::string& _location);
@@ -499,18 +435,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuid 主机quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置主机quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quuid 主机quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuuid(const std::string& _quuid);
@@ -526,11 +458,9 @@ namespace TencentCloud
                      * 获取高危信息说明：
 ABROAD - 海外IP；
 XTI - 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 高危信息说明：
 ABROAD - 海外IP；
 XTI - 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDesc() const;
@@ -539,11 +469,9 @@ XTI - 威胁情报
                      * 设置高危信息说明：
 ABROAD - 海外IP；
 XTI - 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desc 高危信息说明：
 ABROAD - 海外IP；
 XTI - 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesc(const std::string& _desc);
@@ -557,18 +485,14 @@ XTI - 威胁情报
 
                     /**
                      * 获取附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineExtraInfo 附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
@@ -582,18 +506,14 @@ XTI - 威胁情报
 
                     /**
                      * 获取请求目的端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 请求目的端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置请求目的端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 请求目的端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -614,36 +534,31 @@ XTI - 威胁情报
                     bool m_idHasBeenSet;
 
                     /**
-                     * Uuid串
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 主机Uuid
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
                      * 主机ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machineIp;
                     bool m_machineIpHasBeenSet;
 
                     /**
                      * 主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machineName;
                     bool m_machineNameHasBeenSet;
 
                     /**
                      * 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * 来源ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcIp;
                     bool m_srcIpHasBeenSet;
@@ -656,63 +571,54 @@ XTI - 威胁情报
 
                     /**
                      * 国家id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_country;
                     bool m_countryHasBeenSet;
 
                     /**
                      * 城市id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_city;
                     bool m_cityHasBeenSet;
 
                     /**
                      * 省份id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_province;
                     bool m_provinceHasBeenSet;
 
                     /**
                      * 登录时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loginTime;
                     bool m_loginTimeHasBeenSet;
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 是否命中异地登录异常  1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isRiskArea;
                     bool m_isRiskAreaHasBeenSet;
 
                     /**
                      * 是否命中异常用户异常 1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isRiskUser;
                     bool m_isRiskUserHasBeenSet;
 
                     /**
                      * 是否命中异常时间异常 1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isRiskTime;
                     bool m_isRiskTimeHasBeenSet;
 
                     /**
                      * 是否命中异常IP异常 1表示命中此类异常, 0表示未命中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isRiskSrcIp;
                     bool m_isRiskSrcIpHasBeenSet;
@@ -721,21 +627,18 @@ XTI - 威胁情报
                      * 危险等级：
 0 高危
 1 可疑
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
                      * 位置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;
 
                     /**
                      * 主机quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;
@@ -744,21 +647,18 @@ XTI - 威胁情报
                      * 高危信息说明：
 ABROAD - 海外IP；
 XTI - 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
 
                     /**
                      * 附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
 
                     /**
                      * 请求目的端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;

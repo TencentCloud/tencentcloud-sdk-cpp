@@ -22,7 +22,8 @@ using namespace std;
 
 Price::Price() :
     m_instancePriceHasBeenSet(false),
-    m_cloudDiskPriceHasBeenSet(false)
+    m_cloudDiskPriceHasBeenSet(false),
+    m_priceDetailSetHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,26 @@ CoreInternalOutcome Price::Deserialize(const rapidjson::Value &value)
         m_cloudDiskPriceHasBeenSet = true;
     }
 
+    if (value.HasMember("PriceDetailSet") && !value["PriceDetailSet"].IsNull())
+    {
+        if (!value["PriceDetailSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Price.PriceDetailSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PriceDetailSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ItemPriceDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_priceDetailSet.push_back(item);
+        }
+        m_priceDetailSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +109,21 @@ void Price::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cloudDiskPrice.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_priceDetailSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PriceDetailSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_priceDetailSet.begin(); itr != m_priceDetailSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -123,5 +159,21 @@ void Price::SetCloudDiskPrice(const ItemPrice& _cloudDiskPrice)
 bool Price::CloudDiskPriceHasBeenSet() const
 {
     return m_cloudDiskPriceHasBeenSet;
+}
+
+vector<ItemPriceDetail> Price::GetPriceDetailSet() const
+{
+    return m_priceDetailSet;
+}
+
+void Price::SetPriceDetailSet(const vector<ItemPriceDetail>& _priceDetailSet)
+{
+    m_priceDetailSet = _priceDetailSet;
+    m_priceDetailSetHasBeenSet = true;
+}
+
+bool Price::PriceDetailSetHasBeenSet() const
+{
+    return m_priceDetailSetHasBeenSet;
 }
 

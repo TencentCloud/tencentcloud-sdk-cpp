@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuid Quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置Quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quuid Quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuuid(const std::string& _quuid);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uuid Uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置Uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uuid Uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -121,14 +113,12 @@ namespace TencentCloud
 
                     /**
                      * Quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;
 
                     /**
                      * Uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;

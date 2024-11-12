@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CWP_V20180228_MODEL_CREATECLOUDPROTECTSERVICEORDERRECORDRESPONSE_H_
-#define TENCENTCLOUD_CWP_V20180228_MODEL_CREATECLOUDPROTECTSERVICEORDERRECORDRESPONSE_H_
+#ifndef TENCENTCLOUD_WEDATA_V20210820_MODEL_DELETEDATAMODELRESPONSE_H_
+#define TENCENTCLOUD_WEDATA_V20210820_MODEL_DELETEDATAMODELRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Cwp
+    namespace Wedata
     {
-        namespace V20180228
+        namespace V20210820
         {
             namespace Model
             {
                 /**
-                * CreateCloudProtectServiceOrderRecord返回参数结构体
+                * DeleteDataModel返回参数结构体
                 */
-                class CreateCloudProtectServiceOrderRecordResponse : public AbstractModel
+                class DeleteDataModelResponse : public AbstractModel
                 {
                 public:
-                    CreateCloudProtectServiceOrderRecordResponse();
-                    ~CreateCloudProtectServiceOrderRecordResponse() = default;
+                    DeleteDataModelResponse();
+                    ~DeleteDataModelResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取成功收货的资源ID
-                     * @return Success 成功收货的资源ID
+                     * 获取是否销毁成功
+                     * @return Data 是否销毁成功
                      * 
                      */
-                    std::vector<std::string> GetSuccess() const;
+                    bool GetData() const;
 
                     /**
-                     * 判断参数 Success 是否已赋值
-                     * @return Success 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool SuccessHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 成功收货的资源ID
+                     * 是否销毁成功
                      */
-                    std::vector<std::string> m_success;
-                    bool m_successHasBeenSet;
+                    bool m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }
@@ -71,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CWP_V20180228_MODEL_CREATECLOUDPROTECTSERVICEORDERRECORDRESPONSE_H_
+#endif // !TENCENTCLOUD_WEDATA_V20210820_MODEL_DELETEDATAMODELRESPONSE_H_

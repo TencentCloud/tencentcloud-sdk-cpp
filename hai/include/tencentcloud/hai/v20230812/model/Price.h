@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/hai/v20230812/model/ItemPrice.h>
+#include <tencentcloud/hai/v20230812/model/ItemPriceDetail.h>
 
 
 namespace TencentCloud
@@ -97,6 +98,31 @@ namespace TencentCloud
                      */
                     bool CloudDiskPriceHasBeenSet() const;
 
+                    /**
+                     * 获取分实例价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PriceDetailSet 分实例价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ItemPriceDetail> GetPriceDetailSet() const;
+
+                    /**
+                     * 设置分实例价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _priceDetailSet 分实例价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPriceDetailSet(const std::vector<ItemPriceDetail>& _priceDetailSet);
+
+                    /**
+                     * 判断参数 PriceDetailSet 是否已赋值
+                     * @return PriceDetailSet 是否已赋值
+                     * 
+                     */
+                    bool PriceDetailSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -112,6 +138,13 @@ namespace TencentCloud
                      */
                     ItemPrice m_cloudDiskPrice;
                     bool m_cloudDiskPriceHasBeenSet;
+
+                    /**
+                     * 分实例价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ItemPriceDetail> m_priceDetailSet;
+                    bool m_priceDetailSetHasBeenSet;
 
                 };
             }

@@ -52,18 +52,14 @@ namespace TencentCloud
 
                     /**
                      * 获取id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -77,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -102,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Events 事件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WebHookEventKv> GetEvents() const;
 
                     /**
                      * 设置事件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _events 事件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEvents(const std::vector<WebHookEventKv>& _events);
@@ -127,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostLabels 主机范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WebHookHostLabel> GetHostLabels() const;
 
                     /**
                      * 设置主机范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostLabels 主机范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostLabels(const std::vector<WebHookHostLabel>& _hostLabels);
@@ -152,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接收人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Receivers 接收人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WebHookReceiver> GetReceivers() const;
 
                     /**
                      * 设置接收人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receivers 接收人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReceivers(const std::vector<WebHookReceiver>& _receivers);
@@ -177,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取格式 0text 1json
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Format 格式 0text 1json
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFormat() const;
 
                     /**
                      * 设置格式 0text 1json
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _format 格式 0text 1json
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFormat(const int64_t& _format);
@@ -202,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义透传字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomFields 自定义透传字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WebHookCustomField> GetCustomFields() const;
 
                     /**
                      * 设置自定义透传字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customFields 自定义透传字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomFields(const std::vector<WebHookCustomField>& _customFields);
@@ -227,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用[1:禁用|0:启用]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDisabled 是否启用[1:禁用|0:启用]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsDisabled() const;
 
                     /**
                      * 设置是否启用[1:禁用|0:启用]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDisabled 是否启用[1:禁用|0:启用]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDisabled(const int64_t& _isDisabled);
@@ -252,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuids 主机列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetQuuids() const;
 
                     /**
                      * 设置主机列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quuids 主机列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuuids(const std::vector<std::string>& _quuids);
@@ -277,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostCount 主机数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHostCount() const;
 
                     /**
                      * 设置主机数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostCount 主机数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostCount(const int64_t& _hostCount);
@@ -300,77 +260,94 @@ namespace TencentCloud
                      */
                     bool HostCountHasBeenSet() const;
 
+                    /**
+                     * 获取需排除的机器列表
+                     * @return ExcludedQuuids 需排除的机器列表
+                     * 
+                     */
+                    std::vector<std::string> GetExcludedQuuids() const;
+
+                    /**
+                     * 设置需排除的机器列表
+                     * @param _excludedQuuids 需排除的机器列表
+                     * 
+                     */
+                    void SetExcludedQuuids(const std::vector<std::string>& _excludedQuuids);
+
+                    /**
+                     * 判断参数 ExcludedQuuids 是否已赋值
+                     * @return ExcludedQuuids 是否已赋值
+                     * 
+                     */
+                    bool ExcludedQuuidsHasBeenSet() const;
+
                 private:
 
                     /**
                      * id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 事件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WebHookEventKv> m_events;
                     bool m_eventsHasBeenSet;
 
                     /**
                      * 主机范围
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WebHookHostLabel> m_hostLabels;
                     bool m_hostLabelsHasBeenSet;
 
                     /**
                      * 接收人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WebHookReceiver> m_receivers;
                     bool m_receiversHasBeenSet;
 
                     /**
                      * 格式 0text 1json
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_format;
                     bool m_formatHasBeenSet;
 
                     /**
                      * 自定义透传字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WebHookCustomField> m_customFields;
                     bool m_customFieldsHasBeenSet;
 
                     /**
                      * 是否启用[1:禁用|0:启用]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isDisabled;
                     bool m_isDisabledHasBeenSet;
 
                     /**
                      * 主机列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_quuids;
                     bool m_quuidsHasBeenSet;
 
                     /**
                      * 主机数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hostCount;
                     bool m_hostCountHasBeenSet;
+
+                    /**
+                     * 需排除的机器列表
+                     */
+                    std::vector<std::string> m_excludedQuuids;
+                    bool m_excludedQuuidsHasBeenSet;
 
                 };
             }

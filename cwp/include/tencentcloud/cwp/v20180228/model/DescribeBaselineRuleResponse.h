@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取基线检测项列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BaselineRuleList 基线检测项列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BaselineRuleInfo> GetBaselineRuleList() const;
@@ -76,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否显示说明列：true-是，false-否
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShowRuleRemark 是否显示说明列：true-是，false-否
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetShowRuleRemark() const;
@@ -100,14 +96,12 @@ namespace TencentCloud
 
                     /**
                      * 基线检测项列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BaselineRuleInfo> m_baselineRuleList;
                     bool m_baselineRuleListHasBeenSet;
 
                     /**
                      * 是否显示说明列：true-是，false-否
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_showRuleRemark;
                     bool m_showRuleRemarkHasBeenSet;

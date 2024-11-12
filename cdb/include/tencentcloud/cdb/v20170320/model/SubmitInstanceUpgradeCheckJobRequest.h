@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例D
-                     * @return InstanceId 实例D
+                     * 获取实例 ID。
+                     * @return InstanceId 实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例D
-                     * @param _instanceId 实例D
+                     * 设置实例 ID。
+                     * @param _instanceId 实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取目标数据库版本
-                     * @return DstMysqlVersion 目标数据库版本
+                     * 获取目标数据库版本。
+                     * @return DstMysqlVersion 目标数据库版本。
                      * 
                      */
                     std::string GetDstMysqlVersion() const;
 
                     /**
-                     * 设置目标数据库版本
-                     * @param _dstMysqlVersion 目标数据库版本
+                     * 设置目标数据库版本。
+                     * @param _dstMysqlVersion 目标数据库版本。
                      * 
                      */
                     void SetDstMysqlVersion(const std::string& _dstMysqlVersion);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例D
+                     * 实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 目标数据库版本
+                     * 目标数据库版本。
                      */
                     std::string m_dstMysqlVersion;
                     bool m_dstMysqlVersionHasBeenSet;

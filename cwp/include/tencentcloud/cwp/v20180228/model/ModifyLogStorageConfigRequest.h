@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否修改有效期
-                     * @return IsModifyPeriod 是否修改有效期
+                     * 获取是否修改有效期（已废弃）
+                     * @return IsModifyPeriod 是否修改有效期（已废弃）
                      * 
                      */
                     bool GetIsModifyPeriod() const;
 
                     /**
-                     * 设置是否修改有效期
-                     * @param _isModifyPeriod 是否修改有效期
+                     * 设置是否修改有效期（已废弃）
+                     * @param _isModifyPeriod 是否修改有效期（已废弃）
                      * 
                      */
                     void SetIsModifyPeriod(const bool& _isModifyPeriod);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否修改有效期
+                     * 是否修改有效期（已废弃）
                      */
                     bool m_isModifyPeriod;
                     bool m_isModifyPeriodHasBeenSet;

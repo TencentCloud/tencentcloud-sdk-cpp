@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0: 一组quuid 1: 所有主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scope 0: 一组quuid 1: 所有主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScope() const;
 
                     /**
                      * 设置0: 一组quuid 1: 所有主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scope 0: 一组quuid 1: 所有主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScope(const uint64_t& _scope);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否处理之前的事件 0: 不处理 1:处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealOldEvents 是否处理之前的事件 0: 不处理 1:处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDealOldEvents() const;
 
                     /**
                      * 设置是否处理之前的事件 0: 不处理 1:处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dealOldEvents 是否处理之前的事件 0: 不处理 1:处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDealOldEvents(const uint64_t& _dealOldEvents);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机quuid 多个用;隔开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuids 主机quuid 多个用;隔开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuuids() const;
 
                     /**
                      * 设置主机quuid 多个用;隔开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quuids 主机quuid 多个用;隔开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuuids(const std::string& _quuids);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取来源IP 单IP:1.1.1.1  IP范围:1.1.1.1-1.1.2.1  IP范围：1.1.1.0/24 多个用;隔开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcIP 来源IP 单IP:1.1.1.1  IP范围:1.1.1.1-1.1.2.1  IP范围：1.1.1.0/24 多个用;隔开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcIP() const;
 
                     /**
                      * 设置来源IP 单IP:1.1.1.1  IP范围:1.1.1.1-1.1.2.1  IP范围：1.1.1.0/24 多个用;隔开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcIP 来源IP 单IP:1.1.1.1  IP范围:1.1.1.1-1.1.2.1  IP范围：1.1.1.0/24 多个用;隔开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcIP(const std::string& _srcIP);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * 规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 0: 一组quuid 1: 所有主机
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scope;
                     bool m_scopeHasBeenSet;
 
                     /**
                      * 是否处理之前的事件 0: 不处理 1:处理
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_dealOldEvents;
                     bool m_dealOldEventsHasBeenSet;
 
                     /**
                      * 主机quuid 多个用;隔开
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_quuids;
                     bool m_quuidsHasBeenSet;
 
                     /**
                      * 来源IP 单IP:1.1.1.1  IP范围:1.1.1.1-1.1.2.1  IP范围：1.1.1.0/24 多个用;隔开
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcIP;
                     bool m_srcIPHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;

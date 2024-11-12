@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检测项Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemId 检测项Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetItemId() const;
 
                     /**
                      * 设置检测项Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _itemId 检测项Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItemId(const int64_t& _itemId);
@@ -138,7 +134,6 @@ namespace TencentCloud
 
                     /**
                      * 检测项Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_itemId;
                     bool m_itemIdHasBeenSet;

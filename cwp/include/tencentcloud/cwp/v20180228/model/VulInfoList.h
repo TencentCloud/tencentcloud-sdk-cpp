@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return From 废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFrom() const;
 
                     /**
                      * 设置废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _from 废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFrom(const uint64_t& _from);
@@ -241,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Descript 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescript() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _descript 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescript(const std::string& _descript);
@@ -266,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublishTimeWisteria 废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublishTimeWisteria() const;
 
                     /**
                      * 设置废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publishTimeWisteria 废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublishTimeWisteria(const std::string& _publishTimeWisteria);
@@ -291,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NameWisteria 废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNameWisteria() const;
 
                     /**
                      * 设置废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nameWisteria 废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNameWisteria(const std::string& _nameWisteria);
@@ -316,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DescriptWisteria 废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescriptWisteria() const;
 
                     /**
                      * 设置废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _descriptWisteria 废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescriptWisteria(const std::string& _descriptWisteria);
@@ -341,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取聚合后事件状态串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusStr 聚合后事件状态串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusStr() const;
 
                     /**
                      * 设置聚合后事件状态串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statusStr 聚合后事件状态串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatusStr(const std::string& _statusStr);
@@ -366,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cve编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CveId cve编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCveId() const;
 
                     /**
                      * 设置cve编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cveId cve编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCveId(const std::string& _cveId);
@@ -391,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CVSS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CvssScore CVSS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCvssScore() const;
 
                     /**
                      * 设置CVSS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cvssScore CVSS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCvssScore(const double& _cvssScore);
@@ -416,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞标签 多个逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 漏洞标签 多个逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabels() const;
 
                     /**
                      * 设置漏洞标签 多个逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labels 漏洞标签 多个逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabels(const std::string& _labels);
@@ -441,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否能自动修复且包含能自动修复的主机， 0=否  1=是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixSwitch 是否能自动修复且包含能自动修复的主机， 0=否  1=是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFixSwitch() const;
 
                     /**
                      * 设置是否能自动修复且包含能自动修复的主机， 0=否  1=是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fixSwitch 是否能自动修复且包含能自动修复的主机， 0=否  1=是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFixSwitch(const uint64_t& _fixSwitch);
@@ -466,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后扫描任务的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 最后扫描任务的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 设置最后扫描任务的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 最后扫描任务的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
@@ -491,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持防御， 0:不支持 1:支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportDefense 是否支持防御， 0:不支持 1:支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsSupportDefense() const;
 
                     /**
                      * 设置是否支持防御， 0:不支持 1:支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSupportDefense 是否支持防御， 0:不支持 1:支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSupportDefense(const uint64_t& _isSupportDefense);
@@ -516,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已防御的攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefenseAttackCount 已防御的攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDefenseAttackCount() const;
 
                     /**
                      * 设置已防御的攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defenseAttackCount 已防御的攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefenseAttackCount(const uint64_t& _defenseAttackCount);
@@ -541,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取首次出现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstAppearTime 首次出现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFirstAppearTime() const;
 
                     /**
                      * 设置首次出现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _firstAppearTime 首次出现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFirstAppearTime(const std::string& _firstAppearTime);
@@ -566,18 +510,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulCategory 漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVulCategory() const;
 
                     /**
                      * 设置漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulCategory 漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulCategory(const uint64_t& _vulCategory);
@@ -591,18 +531,14 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击热度级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackLevel 攻击热度级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAttackLevel() const;
 
                     /**
                      * 设置攻击热度级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attackLevel 攻击热度级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttackLevel(const uint64_t& _attackLevel);
@@ -616,18 +552,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞修复后是否需要重启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixNoNeedRestart 漏洞修复后是否需要重启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetFixNoNeedRestart() const;
 
                     /**
                      * 设置漏洞修复后是否需要重启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fixNoNeedRestart 漏洞修复后是否需要重启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFixNoNeedRestart(const bool& _fixNoNeedRestart);
@@ -641,18 +573,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检测方式0 - 版本比对, 1 - POC验证
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 检测方式0 - 版本比对, 1 - POC验证
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMethod() const;
 
                     /**
                      * 设置检测方式0 - 版本比对, 1 - POC验证
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _method 检测方式0 - 版本比对, 1 - POC验证
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMethod(const uint64_t& _method);
@@ -666,18 +594,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞是否支持修复 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulFixSwitch 漏洞是否支持修复 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVulFixSwitch() const;
 
                     /**
                      * 设置漏洞是否支持修复 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulFixSwitch 漏洞是否支持修复 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulFixSwitch(const uint64_t& _vulFixSwitch);
@@ -741,133 +665,114 @@ namespace TencentCloud
 
                     /**
                      * 废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_from;
                     bool m_fromHasBeenSet;
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_descript;
                     bool m_descriptHasBeenSet;
 
                     /**
                      * 废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publishTimeWisteria;
                     bool m_publishTimeWisteriaHasBeenSet;
 
                     /**
                      * 废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nameWisteria;
                     bool m_nameWisteriaHasBeenSet;
 
                     /**
                      * 废弃字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_descriptWisteria;
                     bool m_descriptWisteriaHasBeenSet;
 
                     /**
                      * 聚合后事件状态串
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusStr;
                     bool m_statusStrHasBeenSet;
 
                     /**
                      * cve编号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cveId;
                     bool m_cveIdHasBeenSet;
 
                     /**
                      * CVSS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cvssScore;
                     bool m_cvssScoreHasBeenSet;
 
                     /**
                      * 漏洞标签 多个逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
                      * 是否能自动修复且包含能自动修复的主机， 0=否  1=是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_fixSwitch;
                     bool m_fixSwitchHasBeenSet;
 
                     /**
                      * 最后扫描任务的id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 是否支持防御， 0:不支持 1:支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isSupportDefense;
                     bool m_isSupportDefenseHasBeenSet;
 
                     /**
                      * 已防御的攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_defenseAttackCount;
                     bool m_defenseAttackCountHasBeenSet;
 
                     /**
                      * 首次出现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_firstAppearTime;
                     bool m_firstAppearTimeHasBeenSet;
 
                     /**
                      * 漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vulCategory;
                     bool m_vulCategoryHasBeenSet;
 
                     /**
                      * 攻击热度级别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_attackLevel;
                     bool m_attackLevelHasBeenSet;
 
                     /**
                      * 漏洞修复后是否需要重启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_fixNoNeedRestart;
                     bool m_fixNoNeedRestartHasBeenSet;
 
                     /**
                      * 检测方式0 - 版本比对, 1 - POC验证
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_method;
                     bool m_methodHasBeenSet;
 
                     /**
                      * 漏洞是否支持修复 0不支持，1支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vulFixSwitch;
                     bool m_vulFixSwitchHasBeenSet;

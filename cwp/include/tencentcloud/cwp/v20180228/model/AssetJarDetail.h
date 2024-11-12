@@ -217,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引用进程列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Process 引用进程列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetAppProcessInfo> GetProcess() const;
 
                     /**
                      * 设置引用进程列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _process 引用进程列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProcess(const std::vector<AssetAppProcessInfo>& _process);
@@ -242,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Jar包Md5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Md5 Jar包Md5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMd5() const;
 
                     /**
                      * 设置Jar包Md5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _md5 Jar包Md5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMd5(const std::string& _md5);
@@ -267,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -342,21 +330,18 @@ namespace TencentCloud
 
                     /**
                      * 引用进程列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetAppProcessInfo> m_process;
                     bool m_processHasBeenSet;
 
                     /**
                      * Jar包Md5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;
 
                     /**
                      * 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

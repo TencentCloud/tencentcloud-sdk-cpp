@@ -342,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该命令所属会话的会话开始时间（废弃，使用SessionTime）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessTime 该命令所属会话的会话开始时间（废弃，使用SessionTime）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     std::string GetSessTime() const;
 
                     /**
                      * 设置该命令所属会话的会话开始时间（废弃，使用SessionTime）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessTime 该命令所属会话的会话开始时间（废弃，使用SessionTime）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     void SetSessTime(const std::string& _sessTime);
@@ -579,7 +575,6 @@ namespace TencentCloud
 
                     /**
                      * 该命令所属会话的会话开始时间（废弃，使用SessionTime）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessTime;
                     bool m_sessTimeHasBeenSet;

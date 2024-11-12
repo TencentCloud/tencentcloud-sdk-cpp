@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cve编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CveId cve编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCveId() const;
 
                     /**
                      * 设置cve编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cveId cve编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCveId(const std::string& _cveId);
@@ -241,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CVSS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CvssScore CVSS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCvssScore() const;
 
                     /**
                      * 设置CVSS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cvssScore CVSS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCvssScore(const double& _cvssScore);
@@ -266,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞标签 多个逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 漏洞标签 多个逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabels() const;
 
                     /**
                      * 设置漏洞标签 多个逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labels 漏洞标签 多个逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabels(const std::string& _labels);
@@ -291,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取影响机器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostCount 影响机器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHostCount() const;
 
                     /**
                      * 设置影响机器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostCount 影响机器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostCount(const uint64_t& _hostCount);
@@ -316,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持防御， 0:不支持 1:支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportDefense 是否支持防御， 0:不支持 1:支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsSupportDefense() const;
 
                     /**
                      * 设置是否支持防御， 0:不支持 1:支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSupportDefense 是否支持防御， 0:不支持 1:支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSupportDefense(const uint64_t& _isSupportDefense);
@@ -341,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已防御的攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefenseAttackCount 已防御的攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDefenseAttackCount() const;
 
                     /**
                      * 设置已防御的攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defenseAttackCount 已防御的攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefenseAttackCount(const uint64_t& _defenseAttackCount);
@@ -366,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检测规则 0 - 版本比对, 1 - POC验证
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 检测规则 0 - 版本比对, 1 - POC验证
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMethod() const;
 
                     /**
                      * 设置检测规则 0 - 版本比对, 1 - POC验证
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _method 检测规则 0 - 版本比对, 1 - POC验证
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMethod(const uint64_t& _method);
@@ -391,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击热度级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackLevel 攻击热度级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAttackLevel() const;
 
                     /**
                      * 设置攻击热度级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attackLevel 攻击热度级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttackLevel(const uint64_t& _attackLevel);
@@ -416,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否有漏洞主机开启漏洞防御
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefenseState 是否有漏洞主机开启漏洞防御
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDefenseState() const;
 
                     /**
                      * 设置是否有漏洞主机开启漏洞防御
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defenseState 是否有漏洞主机开启漏洞防御
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefenseState(const bool& _defenseState);
@@ -491,63 +455,54 @@ namespace TencentCloud
 
                     /**
                      * cve编号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cveId;
                     bool m_cveIdHasBeenSet;
 
                     /**
                      * CVSS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cvssScore;
                     bool m_cvssScoreHasBeenSet;
 
                     /**
                      * 漏洞标签 多个逗号分割
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
                      * 影响机器数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hostCount;
                     bool m_hostCountHasBeenSet;
 
                     /**
                      * 是否支持防御， 0:不支持 1:支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isSupportDefense;
                     bool m_isSupportDefenseHasBeenSet;
 
                     /**
                      * 已防御的攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_defenseAttackCount;
                     bool m_defenseAttackCountHasBeenSet;
 
                     /**
                      * 检测规则 0 - 版本比对, 1 - POC验证
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_method;
                     bool m_methodHasBeenSet;
 
                     /**
                      * 攻击热度级别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_attackLevel;
                     bool m_attackLevelHasBeenSet;
 
                     /**
                      * 是否有漏洞主机开启漏洞防御
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_defenseState;
                     bool m_defenseStateHasBeenSet;

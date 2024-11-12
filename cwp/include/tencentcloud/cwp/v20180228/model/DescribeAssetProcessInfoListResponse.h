@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Process 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetProcessBaseInfo> GetProcess() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetProcessBaseInfo> m_process;
                     bool m_processHasBeenSet;

@@ -583,6 +583,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyAssistantCidrResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyBandwidthPackageAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyBandwidthPackageAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyBandwidthPackageBandwidthRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyBandwidthPackageBandwidthResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyCcnAttachedInstancesAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyCcnAttachedInstancesAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyCcnAttributeRequest.h>
@@ -1619,6 +1621,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBandwidthPackageAttributeResponse> ModifyBandwidthPackageAttributeOutcome;
                 typedef std::future<ModifyBandwidthPackageAttributeOutcome> ModifyBandwidthPackageAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyBandwidthPackageAttributeRequest&, ModifyBandwidthPackageAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBandwidthPackageAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBandwidthPackageBandwidthResponse> ModifyBandwidthPackageBandwidthOutcome;
+                typedef std::future<ModifyBandwidthPackageBandwidthOutcome> ModifyBandwidthPackageBandwidthOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyBandwidthPackageBandwidthRequest&, ModifyBandwidthPackageBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBandwidthPackageBandwidthAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCcnAttachedInstancesAttributeResponse> ModifyCcnAttachedInstancesAttributeOutcome;
                 typedef std::future<ModifyCcnAttachedInstancesAttributeOutcome> ModifyCcnAttachedInstancesAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyCcnAttachedInstancesAttributeRequest&, ModifyCcnAttachedInstancesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCcnAttachedInstancesAttributeAsyncHandler;
@@ -4650,6 +4655,15 @@ LimitTypes取值范围：
                 ModifyBandwidthPackageAttributeOutcome ModifyBandwidthPackageAttribute(const Model::ModifyBandwidthPackageAttributeRequest &request);
                 void ModifyBandwidthPackageAttributeAsync(const Model::ModifyBandwidthPackageAttributeRequest& request, const ModifyBandwidthPackageAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBandwidthPackageAttributeOutcomeCallable ModifyBandwidthPackageAttributeCallable(const Model::ModifyBandwidthPackageAttributeRequest& request);
+
+                /**
+                 *接口用于调整[共享带宽包](https://cloud.tencent.com/document/product/684/15245)(BWP)带宽
+                 * @param req ModifyBandwidthPackageBandwidthRequest
+                 * @return ModifyBandwidthPackageBandwidthOutcome
+                 */
+                ModifyBandwidthPackageBandwidthOutcome ModifyBandwidthPackageBandwidth(const Model::ModifyBandwidthPackageBandwidthRequest &request);
+                void ModifyBandwidthPackageBandwidthAsync(const Model::ModifyBandwidthPackageBandwidthRequest& request, const ModifyBandwidthPackageBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBandwidthPackageBandwidthOutcomeCallable ModifyBandwidthPackageBandwidthCallable(const Model::ModifyBandwidthPackageBandwidthRequest& request);
 
                 /**
                  *修改CCN关联实例属性，目前仅修改备注description

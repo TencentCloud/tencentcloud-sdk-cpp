@@ -187,9 +187,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulInfo 漏洞信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VulDetailInfo> GetVulInfo() const;
@@ -203,9 +201,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险事件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskEventCount 风险事件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRiskEventCount() const;
@@ -219,9 +215,7 @@ namespace TencentCloud
 
                     /**
                      * 获取0一键检测 1定时检测
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 0一键检测 1定时检测
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetType() const;
@@ -235,9 +229,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务是否全部正在被停止 ture是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StoppingAll 任务是否全部正在被停止 ture是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetStoppingAll() const;
@@ -251,9 +243,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描出漏洞个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulCount 扫描出漏洞个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVulCount() const;
@@ -329,35 +319,30 @@ namespace TencentCloud
 
                     /**
                      * 漏洞信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VulDetailInfo> m_vulInfo;
                     bool m_vulInfoHasBeenSet;
 
                     /**
                      * 风险事件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_riskEventCount;
                     bool m_riskEventCountHasBeenSet;
 
                     /**
                      * 0一键检测 1定时检测
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 任务是否全部正在被停止 ture是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_stoppingAll;
                     bool m_stoppingAllHasBeenSet;
 
                     /**
                      * 扫描出漏洞个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vulCount;
                     bool m_vulCountHasBeenSet;

@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取云镜ID
-                     * @return Uuid 云镜ID
+                     * 获取主机uuid
+                     * @return Uuid 主机uuid
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置云镜ID
-                     * @param _uuid 云镜ID
+                     * 设置主机uuid
+                     * @param _uuid 主机uuid
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -300,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Exe 进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExe() const;
 
                     /**
                      * 设置进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exe 进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExe(const std::string& _exe);
@@ -325,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -350,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则类别  0=系统规则，1=用户规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleCategory 规则类别  0=系统规则，1=用户规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleCategory() const;
 
                     /**
                      * 设置规则类别  0=系统规则，1=用户规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleCategory 规则类别  0=系统规则，1=用户规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleCategory(const uint64_t& _ruleCategory);
@@ -375,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动生成的正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegexBashCmd 自动生成的正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegexBashCmd() const;
 
                     /**
                      * 设置自动生成的正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regexBashCmd 自动生成的正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegexBashCmd(const std::string& _regexBashCmd);
@@ -400,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程树 json  pid:进程id，exe:文件路径 ，account:进程所属用组和用户 ,cmdline:执行命令，ssh_service: SSH服务ip, ssh_soure:登录源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PsTree 进程树 json  pid:进程id，exe:文件路径 ，account:进程所属用组和用户 ,cmdline:执行命令，ssh_service: SSH服务ip, ssh_soure:登录源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPsTree() const;
 
                     /**
                      * 设置进程树 json  pid:进程id，exe:文件路径 ，account:进程所属用组和用户 ,cmdline:执行命令，ssh_service: SSH服务ip, ssh_soure:登录源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _psTree 进程树 json  pid:进程id，exe:文件路径 ，account:进程所属用组和用户 ,cmdline:执行命令，ssh_service: SSH服务ip, ssh_soure:登录源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPsTree(const std::string& _psTree);
@@ -425,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建议方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuggestScheme 建议方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSuggestScheme() const;
 
                     /**
                      * 设置建议方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _suggestScheme 建议方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuggestScheme(const std::string& _suggestScheme);
@@ -450,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HarmDescribe 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHarmDescribe() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _harmDescribe 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHarmDescribe(const std::string& _harmDescribe);
@@ -475,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -500,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return References 参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetReferences() const;
 
                     /**
                      * 设置参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _references 参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReferences(const std::vector<std::string>& _references);
@@ -525,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineWanIp 主机外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMachineWanIp() const;
 
                     /**
                      * 设置主机外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineWanIp 主机外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineWanIp(const std::string& _machineWanIp);
@@ -550,18 +510,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机在线状态 OFFLINE  ONLINE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineStatus 主机在线状态 OFFLINE  ONLINE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMachineStatus() const;
 
                     /**
                      * 设置主机在线状态 OFFLINE  ONLINE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineStatus 主机在线状态 OFFLINE  ONLINE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineStatus(const std::string& _machineStatus);
@@ -575,18 +531,14 @@ namespace TencentCloud
 
                     /**
                      * 获取登录用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 登录用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置登录用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _user 登录用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -600,18 +552,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pid 进程号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPid() const;
 
                     /**
                      * 设置进程号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pid 进程号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPid(const std::string& _pid);
@@ -625,18 +573,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectBy 数据来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDetectBy() const;
 
                     /**
                      * 设置数据来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detectBy 数据来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetectBy(const std::string& _detectBy);
@@ -657,7 +601,7 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 云镜ID
+                     * 主机uuid
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
@@ -724,98 +668,84 @@ namespace TencentCloud
 
                     /**
                      * 进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exe;
                     bool m_exeHasBeenSet;
 
                     /**
                      * 处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 规则类别  0=系统规则，1=用户规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleCategory;
                     bool m_ruleCategoryHasBeenSet;
 
                     /**
                      * 自动生成的正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regexBashCmd;
                     bool m_regexBashCmdHasBeenSet;
 
                     /**
                      * 进程树 json  pid:进程id，exe:文件路径 ，account:进程所属用组和用户 ,cmdline:执行命令，ssh_service: SSH服务ip, ssh_soure:登录源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_psTree;
                     bool m_psTreeHasBeenSet;
 
                     /**
                      * 建议方案
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestScheme;
                     bool m_suggestSchemeHasBeenSet;
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_harmDescribe;
                     bool m_harmDescribeHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_references;
                     bool m_referencesHasBeenSet;
 
                     /**
                      * 主机外网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machineWanIp;
                     bool m_machineWanIpHasBeenSet;
 
                     /**
                      * 主机在线状态 OFFLINE  ONLINE
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machineStatus;
                     bool m_machineStatusHasBeenSet;
 
                     /**
                      * 登录用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
                      * 进程号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pid;
                     bool m_pidHasBeenSet;
 
                     /**
                      * 数据来源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_detectBy;
                     bool m_detectByHasBeenSet;

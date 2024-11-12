@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EndHasBeenSet() const;
 
                     /**
-                     * 获取指标名
-                     * @return Metric 指标名
+                     * 获取指标名，NODE.CPU：节点平均CPU利用率和总核数；NODE.CPU.SLHBASE：Serverless实例平均CPU利用率和总核数；HDFS.NN.CAPACITY：存储使用率和总量
+                     * @return Metric 指标名，NODE.CPU：节点平均CPU利用率和总核数；NODE.CPU.SLHBASE：Serverless实例平均CPU利用率和总核数；HDFS.NN.CAPACITY：存储使用率和总量
                      * 
                      */
                     std::string GetMetric() const;
 
                     /**
-                     * 设置指标名
-                     * @param _metric 指标名
+                     * 设置指标名，NODE.CPU：节点平均CPU利用率和总核数；NODE.CPU.SLHBASE：Serverless实例平均CPU利用率和总核数；HDFS.NN.CAPACITY：存储使用率和总量
+                     * @param _metric 指标名，NODE.CPU：节点平均CPU利用率和总核数；NODE.CPU.SLHBASE：Serverless实例平均CPU利用率和总核数；HDFS.NN.CAPACITY：存储使用率和总量
                      * 
                      */
                     void SetMetric(const std::string& _metric);
@@ -198,7 +198,7 @@ namespace TencentCloud
                     bool m_endHasBeenSet;
 
                     /**
-                     * 指标名
+                     * 指标名，NODE.CPU：节点平均CPU利用率和总核数；NODE.CPU.SLHBASE：Serverless实例平均CPU利用率和总核数；HDFS.NN.CAPACITY：存储使用率和总量
                      */
                     std::string m_metric;
                     bool m_metricHasBeenSet;

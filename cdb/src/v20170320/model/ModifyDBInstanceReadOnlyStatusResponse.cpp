@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/iss/v20230517/model/CheckDomainResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceReadOnlyStatusResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Iss::V20230517::Model;
+using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace std;
 
-CheckDomainResponse::CheckDomainResponse() :
-    m_dataHasBeenSet(false)
+ModifyDBInstanceReadOnlyStatusResponse::ModifyDBInstanceReadOnlyStatusResponse()
 {
 }
 
-CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyDBInstanceReadOnlyStatusResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,33 +61,15 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
-    {
-        if (!rsp["Data"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `Data` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_data = rsp["Data"].GetBool();
-        m_dataHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string CheckDomainResponse::ToJsonString() const
+string ModifyDBInstanceReadOnlyStatusResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_dataHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_data, allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -101,15 +82,5 @@ string CheckDomainResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-bool CheckDomainResponse::GetData() const
-{
-    return m_data;
-}
-
-bool CheckDomainResponse::DataHasBeenSet() const
-{
-    return m_dataHasBeenSet;
-}
 
 

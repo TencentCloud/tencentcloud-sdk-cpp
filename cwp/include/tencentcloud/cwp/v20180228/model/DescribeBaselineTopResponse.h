@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取检测项Top列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleTopList 检测项Top列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BaselineRuleTopInfo> GetRuleTopList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 检测项Top列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BaselineRuleTopInfo> m_ruleTopList;
                     bool m_ruleTopListHasBeenSet;

@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostName 主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIp 主机ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 设置主机ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostIp 主机ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostIp(const std::string& _hostIp);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取快照名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotName 快照名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
                      * 设置快照名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _snapshotName 快照名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取快照创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 快照创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置快照创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 快照创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -169,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取快照id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotId 快照id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
                      * 设置快照id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _snapshotId 快照id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -236,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取快照创建失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailReason 快照创建失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置快照创建失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failReason 快照创建失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailReason(const std::string& _failReason);
@@ -269,35 +245,30 @@ namespace TencentCloud
 
                     /**
                      * 主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
 
                     /**
                      * 主机ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostIp;
                     bool m_hostIpHasBeenSet;
 
                     /**
                      * 快照名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_snapshotName;
                     bool m_snapshotNameHasBeenSet;
 
                     /**
                      * 快照创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 快照id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
@@ -316,7 +287,6 @@ namespace TencentCloud
 
                     /**
                      * 快照创建失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failReason;
                     bool m_failReasonHasBeenSet;

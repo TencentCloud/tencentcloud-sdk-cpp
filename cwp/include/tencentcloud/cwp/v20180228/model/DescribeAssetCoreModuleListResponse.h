@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Modules 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetCoreModuleBaseInfo> GetModules() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetCoreModuleBaseInfo> m_modules;
                     bool m_modulesHasBeenSet;

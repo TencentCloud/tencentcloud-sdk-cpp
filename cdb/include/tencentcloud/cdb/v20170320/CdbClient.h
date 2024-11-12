@@ -283,6 +283,8 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceProjectRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceProjectResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceReadOnlyStatusRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceReadOnlyStatusResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceSecurityGroupsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceSecurityGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceVipVportRequest.h>
@@ -765,6 +767,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceProjectResponse> ModifyDBInstanceProjectOutcome;
                 typedef std::future<ModifyDBInstanceProjectOutcome> ModifyDBInstanceProjectOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyDBInstanceProjectRequest&, ModifyDBInstanceProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceReadOnlyStatusResponse> ModifyDBInstanceReadOnlyStatusOutcome;
+                typedef std::future<ModifyDBInstanceReadOnlyStatusOutcome> ModifyDBInstanceReadOnlyStatusOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyDBInstanceReadOnlyStatusRequest&, ModifyDBInstanceReadOnlyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceReadOnlyStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceSecurityGroupsResponse> ModifyDBInstanceSecurityGroupsOutcome;
                 typedef std::future<ModifyDBInstanceSecurityGroupsOutcome> ModifyDBInstanceSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyDBInstanceSecurityGroupsRequest&, ModifyDBInstanceSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSecurityGroupsAsyncHandler;
@@ -886,7 +891,7 @@ namespace TencentCloud
 
 
                 /**
-                 *本接口(AddTimeWindow)用于添加云数据库实例的维护时间窗口，以指定实例在哪些时间段可以自动执行切换访问操作。
+                 *本接口（AddTimeWindow）用于添加云数据库实例的维护时间窗口，以指定实例在哪些时间段可以自动执行切换访问操作。
                  * @param req AddTimeWindowRequest
                  * @return AddTimeWindowOutcome
                  */
@@ -940,7 +945,7 @@ namespace TencentCloud
                 BalanceRoGroupLoadOutcomeCallable BalanceRoGroupLoadCallable(const Model::BalanceRoGroupLoadRequest& request);
 
                 /**
-                 *高可用实例一键迁移到集群版校验
+                 *本接口（CheckMigrateCluster）用于高可用实例一键迁移到集群版校验。
                  * @param req CheckMigrateClusterRequest
                  * @return CheckMigrateClusterOutcome
                  */
@@ -1472,7 +1477,7 @@ namespace TencentCloud
                 DescribeCloneListOutcomeCallable DescribeCloneListCallable(const Model::DescribeCloneListRequest& request);
 
                 /**
-                 *本接口(DescribeClusterInfo)用于查询集群版实例信息。
+                 *本接口（DescribeClusterInfo）用于查询集群版实例信息。
                  * @param req DescribeClusterInfoRequest
                  * @return DescribeClusterInfoOutcome
                  */
@@ -1490,7 +1495,7 @@ namespace TencentCloud
                 DescribeCpuExpandStrategyOutcomeCallable DescribeCpuExpandStrategyCallable(const Model::DescribeCpuExpandStrategyRequest& request);
 
                 /**
-                 *本接口(DescribeDBFeatures)用于查询云数据库版本属性，包括是否支持数据库加密、数据库审计等功能。
+                 *本接口（DescribeDBFeatures）用于查询云数据库版本属性，包括是否支持数据库加密、数据库审计等功能。
                  * @param req DescribeDBFeaturesRequest
                  * @return DescribeDBFeaturesOutcome
                  */
@@ -1535,7 +1540,7 @@ namespace TencentCloud
                 DescribeDBInstanceGTIDOutcomeCallable DescribeDBInstanceGTIDCallable(const Model::DescribeDBInstanceGTIDRequest& request);
 
                 /**
-                 *查询实例基本信息（实例 ID ，实例名称，是否开通加密 ）
+                 *本接口（DescribeDBInstanceInfo）用于查询实例基本信息（实例 ID，实例名称，是否开通加密）。
                  * @param req DescribeDBInstanceInfoRequest
                  * @return DescribeDBInstanceInfoOutcome
                  */
@@ -1553,7 +1558,7 @@ namespace TencentCloud
                 DescribeDBInstanceLogToCLSOutcomeCallable DescribeDBInstanceLogToCLSCallable(const Model::DescribeDBInstanceLogToCLSRequest& request);
 
                 /**
-                 *本接口(DescribeDBInstanceRebootTime)用于查询云数据库实例重启预计所需的时间。
+                 *本接口（DescribeDBInstanceRebootTime）用于查询云数据库实例重启预计所需的时间。
                  * @param req DescribeDBInstanceRebootTimeRequest
                  * @return DescribeDBInstanceRebootTimeOutcome
                  */
@@ -1571,7 +1576,7 @@ namespace TencentCloud
                 DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request);
 
                 /**
-                 *本接口(DescribeDBPrice)用于查询购买或续费云数据库实例的价格，支持查询按量计费或者包年包月的价格。可传入实例类型、购买时长、购买数量、内存大小、硬盘大小和可用区信息等来查询实例价格。可传入实例名称来查询实例续费价格。
+                 *本接口（DescribeDBPrice）用于查询购买或续费云数据库实例的价格，支持查询按量计费或者包年包月的价格。可传入实例类型、购买时长、购买数量、内存大小、硬盘大小和可用区信息等来查询实例价格。可传入实例名称来查询实例续费价格。
 
 注意：对某个地域进行询价，请使用对应地域的接入点，接入点信息请参照 <a href="https://cloud.tencent.com/document/api/236/15832">服务地址</a> 文档。例如：对广州地域进行询价，请把请求发到：cdb.ap-guangzhou.tencentcloudapi.com。同理对上海地域询价，把请求发到：cdb.ap-shanghai.tencentcloudapi.com。
                  * @param req DescribeDBPriceRequest
@@ -1655,7 +1660,7 @@ namespace TencentCloud
                 DescribeErrorLogDataOutcomeCallable DescribeErrorLogDataCallable(const Model::DescribeErrorLogDataRequest& request);
 
                 /**
-                 *查询实例发生的事件信息
+                 *本接口（DescribeInstanceAlarmEvents）用于查询实例发生的事件信息。
                  * @param req DescribeInstanceAlarmEventsRequest
                  * @return DescribeInstanceAlarmEventsOutcome
                  */
@@ -1691,7 +1696,7 @@ namespace TencentCloud
                 DescribeInstanceUpgradeCheckJobOutcomeCallable DescribeInstanceUpgradeCheckJobCallable(const Model::DescribeInstanceUpgradeCheckJobRequest& request);
 
                 /**
-                 *本接口(DescribeInstanceUpgradeType)用于查询数据库实例升级类型。
+                 *本接口（DescribeInstanceUpgradeType）用于查询数据库实例升级类型。
                  * @param req DescribeInstanceUpgradeTypeRequest
                  * @return DescribeInstanceUpgradeTypeOutcome
                  */
@@ -1763,7 +1768,7 @@ namespace TencentCloud
                 DescribeRemoteBackupConfigOutcomeCallable DescribeRemoteBackupConfigCallable(const Model::DescribeRemoteBackupConfigRequest& request);
 
                 /**
-                 *本接口(DescribeRoGroups)用于查询云数据库实例的所有的RO组的信息。
+                 *本接口（DescribeRoGroups）用于查询云数据库实例的所有的 RO 组的信息。
                  * @param req DescribeRoGroupsRequest
                  * @return DescribeRoGroupsOutcome
                  */
@@ -1992,7 +1997,7 @@ namespace TencentCloud
                 ModifyAuditServiceOutcomeCallable ModifyAuditServiceCallable(const Model::ModifyAuditServiceRequest& request);
 
                 /**
-                 *本接口(ModifyAutoRenewFlag)用于修改云数据库实例的自动续费标记。仅支持包年包月的实例设置自动续费标记。
+                 *本接口（ModifyAutoRenewFlag）用于修改云数据库实例的自动续费标记。仅支持包年包月的实例设置自动续费标记。
                  * @param req ModifyAutoRenewFlagRequest
                  * @return ModifyAutoRenewFlagOutcome
                  */
@@ -2080,6 +2085,15 @@ namespace TencentCloud
                 ModifyDBInstanceProjectOutcome ModifyDBInstanceProject(const Model::ModifyDBInstanceProjectRequest &request);
                 void ModifyDBInstanceProjectAsync(const Model::ModifyDBInstanceProjectRequest& request, const ModifyDBInstanceProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBInstanceProjectOutcomeCallable ModifyDBInstanceProjectCallable(const Model::ModifyDBInstanceProjectRequest& request);
+
+                /**
+                 *本接口（ModifyDBInstanceReadOnlyStatus）用户设置MySQL云数据库实例为只读
+                 * @param req ModifyDBInstanceReadOnlyStatusRequest
+                 * @return ModifyDBInstanceReadOnlyStatusOutcome
+                 */
+                ModifyDBInstanceReadOnlyStatusOutcome ModifyDBInstanceReadOnlyStatus(const Model::ModifyDBInstanceReadOnlyStatusRequest &request);
+                void ModifyDBInstanceReadOnlyStatusAsync(const Model::ModifyDBInstanceReadOnlyStatusRequest& request, const ModifyDBInstanceReadOnlyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceReadOnlyStatusOutcomeCallable ModifyDBInstanceReadOnlyStatusCallable(const Model::ModifyDBInstanceReadOnlyStatusRequest& request);
 
                 /**
                  *本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。
@@ -2203,7 +2217,7 @@ namespace TencentCloud
                 OpenAuditServiceOutcomeCallable OpenAuditServiceCallable(const Model::OpenAuditServiceRequest& request);
 
                 /**
-                 *本接口(OpenDBInstanceEncryption)用于启用实例数据存储加密功能，支持用户指定自定义密钥。
+                 *本接口（OpenDBInstanceEncryption）用于启用实例数据存储加密功能，支持用户指定自定义密钥。
 
 注意，启用实例数据存储加密之前，需要进行以下操作：
 
@@ -2296,10 +2310,10 @@ namespace TencentCloud
                 ResetRootAccountOutcomeCallable ResetRootAccountCallable(const Model::ResetRootAccountRequest& request);
 
                 /**
-                 *本接口(RestartDBInstances)用于重启云数据库实例。
+                 *本接口（RestartDBInstances）用于重启云数据库实例。
 
 注意：
-1、本接口只支持主实例进行重启操作；
+1、本接口支持主实例、只读实例、灾备实例进行重启操作。
 2、实例状态必须为正常，并且没有其他异步任务在执行中。
                  * @param req RestartDBInstancesRequest
                  * @return RestartDBInstancesOutcome
@@ -2327,7 +2341,7 @@ namespace TencentCloud
                 StartCpuExpandOutcomeCallable StartCpuExpandCallable(const Model::StartCpuExpandRequest& request);
 
                 /**
-                 *开启 RO 复制，从主实例同步数据。
+                 *本接口（StartReplication）用于开启 RO 复制，从主实例同步数据。
                  * @param req StartReplicationRequest
                  * @return StartReplicationOutcome
                  */
@@ -2354,7 +2368,7 @@ namespace TencentCloud
                 StopDBImportJobOutcomeCallable StopDBImportJobCallable(const Model::StopDBImportJobRequest& request);
 
                 /**
-                 *停止 RO 复制，中断从主实例同步数据。
+                 *本接口（StopReplication）用于停止 RO 复制，中断从主实例同步数据。
                  * @param req StopReplicationRequest
                  * @return StopReplicationOutcome
                  */
@@ -2399,7 +2413,7 @@ namespace TencentCloud
                 SwitchDBInstanceMasterSlaveOutcomeCallable SwitchDBInstanceMasterSlaveCallable(const Model::SwitchDBInstanceMasterSlaveRequest& request);
 
                 /**
-                 *本接口(SwitchDrInstanceToMaster)用于将云数据库灾备实例切换为主实例，注意请求必须发到灾备实例所在的地域。
+                 *本接口（SwitchDrInstanceToMaster）用于将云数据库灾备实例切换为主实例，注意请求必须发到灾备实例所在的地域。
                  * @param req SwitchDrInstanceToMasterRequest
                  * @return SwitchDrInstanceToMasterOutcome
                  */

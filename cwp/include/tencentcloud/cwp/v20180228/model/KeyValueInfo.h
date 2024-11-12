@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要建立索引的键值对信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyValues 需要建立索引的键值对信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValueArrayInfo> GetKeyValues() const;
 
                     /**
                      * 设置需要建立索引的键值对信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keyValues 需要建立索引的键值对信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeyValues(const std::vector<KeyValueArrayInfo>& _keyValues);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 需要建立索引的键值对信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValueArrayInfo> m_keyValues;
                     bool m_keyValuesHasBeenSet;

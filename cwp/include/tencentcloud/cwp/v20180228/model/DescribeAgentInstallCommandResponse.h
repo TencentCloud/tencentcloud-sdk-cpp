@@ -115,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Arm安装命令
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ARMCommand Arm安装命令
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetARMCommand() const;
@@ -163,7 +161,6 @@ namespace TencentCloud
 
                     /**
                      * Arm安装命令
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aRMCommand;
                     bool m_aRMCommandHasBeenSet;

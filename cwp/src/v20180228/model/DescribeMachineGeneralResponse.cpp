@@ -42,7 +42,8 @@ DescribeMachineGeneralResponse::DescribeMachineGeneralResponse() :
     m_notProtectMachineCntHasBeenSet(false),
     m_lHGeneralDiscountCntHasBeenSet(false),
     m_compareYesterdayMachineCntHasBeenSet(false),
-    m_machineDestroyAfterOfflineHoursHasBeenSet(false)
+    m_machineDestroyAfterOfflineHoursHasBeenSet(false),
+    m_cloudFromHasBeenSet(false)
 {
 }
 
@@ -270,6 +271,26 @@ CoreInternalOutcome DescribeMachineGeneralResponse::Deserialize(const string &pa
         m_machineDestroyAfterOfflineHoursHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CloudFrom") && !rsp["CloudFrom"].IsNull())
+    {
+        if (!rsp["CloudFrom"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudFrom` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CloudFrom"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CloudFromCnt item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cloudFrom.push_back(item);
+        }
+        m_cloudFromHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -430,6 +451,21 @@ string DescribeMachineGeneralResponse::ToJsonString() const
         string key = "MachineDestroyAfterOfflineHours";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_machineDestroyAfterOfflineHours, allocator);
+    }
+
+    if (m_cloudFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudFrom";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cloudFrom.begin(); itr != m_cloudFrom.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -632,6 +668,16 @@ uint64_t DescribeMachineGeneralResponse::GetMachineDestroyAfterOfflineHours() co
 bool DescribeMachineGeneralResponse::MachineDestroyAfterOfflineHoursHasBeenSet() const
 {
     return m_machineDestroyAfterOfflineHoursHasBeenSet;
+}
+
+vector<CloudFromCnt> DescribeMachineGeneralResponse::GetCloudFrom() const
+{
+    return m_cloudFrom;
+}
+
+bool DescribeMachineGeneralResponse::CloudFromHasBeenSet() const
+{
+    return m_cloudFromHasBeenSet;
 }
 
 

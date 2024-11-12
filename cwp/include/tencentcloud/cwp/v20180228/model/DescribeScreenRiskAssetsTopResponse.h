@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取统计详情图标数据 Name：展示主机ip 和地域， value：事件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Chart 统计详情图标数据 Name：展示主机ip 和地域， value：事件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScreenNameValue> GetChart() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 统计详情图标数据 Name：展示主机ip 和地域， value：事件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScreenNameValue> m_chart;
                     bool m_chartHasBeenSet;

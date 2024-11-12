@@ -237,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1:检测中 2:检测完成
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyDetectStatus 1:检测中 2:检测完成
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPolicyDetectStatus() const;
 
                     /**
                      * 设置1:检测中 2:检测完成
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyDetectStatus 1:检测中 2:检测完成
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyDetectStatus(const int64_t& _policyDetectStatus);
@@ -318,7 +314,6 @@ namespace TencentCloud
 
                     /**
                      * 1:检测中 2:检测完成
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_policyDetectStatus;
                     bool m_policyDetectStatusHasBeenSet;

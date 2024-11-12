@@ -85,15 +85,23 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取可编辑的属性名称 ,当前支持的有: alias 资源别名
-                     * @return AttrName 可编辑的属性名称 ,当前支持的有: alias 资源别名
+                     * 获取可编辑的属性名称 ,当前支持的有: 
+alias 资源别名
+projectId 项目ID
+                     * @return AttrName 可编辑的属性名称 ,当前支持的有: 
+alias 资源别名
+projectId 项目ID
                      * 
                      */
                     std::string GetAttrName() const;
 
                     /**
-                     * 设置可编辑的属性名称 ,当前支持的有: alias 资源别名
-                     * @param _attrName 可编辑的属性名称 ,当前支持的有: alias 资源别名
+                     * 设置可编辑的属性名称 ,当前支持的有: 
+alias 资源别名
+projectId 项目ID
+                     * @param _attrName 可编辑的属性名称 ,当前支持的有: 
+alias 资源别名
+projectId 项目ID
                      * 
                      */
                     void SetAttrName(const std::string& _attrName);
@@ -107,14 +115,22 @@ namespace TencentCloud
 
                     /**
                      * 获取属性值
+AttrName=alias时,任意字符串,最大字符15长度
+AttrName=projectId时,项目ID必须是真实存在的
                      * @return AttrValue 属性值
+AttrName=alias时,任意字符串,最大字符15长度
+AttrName=projectId时,项目ID必须是真实存在的
                      * 
                      */
                     std::string GetAttrValue() const;
 
                     /**
                      * 设置属性值
+AttrName=alias时,任意字符串,最大字符15长度
+AttrName=projectId时,项目ID必须是真实存在的
                      * @param _attrValue 属性值
+AttrName=alias时,任意字符串,最大字符15长度
+AttrName=projectId时,项目ID必须是真实存在的
                      * 
                      */
                     void SetAttrValue(const std::string& _attrValue);
@@ -141,13 +157,17 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 可编辑的属性名称 ,当前支持的有: alias 资源别名
+                     * 可编辑的属性名称 ,当前支持的有: 
+alias 资源别名
+projectId 项目ID
                      */
                     std::string m_attrName;
                     bool m_attrNameHasBeenSet;
 
                     /**
                      * 属性值
+AttrName=alias时,任意字符串,最大字符15长度
+AttrName=projectId时,项目ID必须是真实存在的
                      */
                     std::string m_attrValue;
                     bool m_attrValueHasBeenSet;

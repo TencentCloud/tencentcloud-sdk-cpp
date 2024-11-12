@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 基线名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置基线名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 基线名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取危害等级：1-低危；2-中危；3-高危；4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 危害等级：1-低危；2-中危；3-高危；4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置危害等级：1-低危；2-中危；3-高危；4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 危害等级：1-低危；2-中危；3-高危；4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const uint64_t& _level);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryId 基线id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCategoryId() const;
 
                     /**
                      * 设置基线id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryId 基线id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryId(const uint64_t& _categoryId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastScanTime 最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastScanTime() const;
 
                     /**
                      * 设置最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastScanTime 最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastScanTime(const std::string& _lastScanTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线风险项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BaselineFailCount 基线风险项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBaselineFailCount() const;
 
                     /**
                      * 设置基线风险项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _baselineFailCount 基线风险项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBaselineFailCount(const uint64_t& _baselineFailCount);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uuid 主机uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置主机uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uuid 主机uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 基线名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 危害等级：1-低危；2-中危；3-高危；4-严重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 基线id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_categoryId;
                     bool m_categoryIdHasBeenSet;
 
                     /**
                      * 最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastScanTime;
                     bool m_lastScanTimeHasBeenSet;
 
                     /**
                      * 基线风险项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_baselineFailCount;
                     bool m_baselineFailCountHasBeenSet;
 
                     /**
                      * 主机uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;

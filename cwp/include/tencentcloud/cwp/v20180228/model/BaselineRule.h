@@ -196,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取[0:所有专业版旗舰版|1:hostID|2:ip]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetType [0:所有专业版旗舰版|1:hostID|2:ip]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAssetType() const;
 
                     /**
                      * 设置[0:所有专业版旗舰版|1:hostID|2:ip]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetType [0:所有专业版旗舰版|1:hostID|2:ip]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetType(const int64_t& _assetType);
@@ -221,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机Id集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIds 主机Id集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetHostIds() const;
 
                     /**
                      * 设置主机Id集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostIds 主机Id集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostIds(const std::vector<std::string>& _hostIds);
@@ -246,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIps 主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetHostIps() const;
 
                     /**
                      * 设置主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostIps 主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostIps(const std::vector<std::string>& _hostIps);
@@ -315,21 +303,18 @@ namespace TencentCloud
 
                     /**
                      * [0:所有专业版旗舰版|1:hostID|2:ip]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_assetType;
                     bool m_assetTypeHasBeenSet;
 
                     /**
                      * 主机Id集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_hostIds;
                     bool m_hostIdsHasBeenSet;
 
                     /**
                      * 主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_hostIps;
                     bool m_hostIpsHasBeenSet;

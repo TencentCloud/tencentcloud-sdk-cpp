@@ -54,14 +54,12 @@ LH 腾讯云轻量服务器
 ECM 腾讯云边缘计算服务器
 BM 腾讯云黑石1.0 服务器
 Other  其他服务器(非腾讯云)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineType 机器类型
 CVM 腾讯云云服务器
 LH 腾讯云轻量服务器
 ECM 腾讯云边缘计算服务器
 BM 腾讯云黑石1.0 服务器
 Other  其他服务器(非腾讯云)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMachineType() const;
@@ -73,14 +71,12 @@ LH 腾讯云轻量服务器
 ECM 腾讯云边缘计算服务器
 BM 腾讯云黑石1.0 服务器
 Other  其他服务器(非腾讯云)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineType 机器类型
 CVM 腾讯云云服务器
 LH 腾讯云轻量服务器
 ECM 腾讯云边缘计算服务器
 BM 腾讯云黑石1.0 服务器
 Other  其他服务器(非腾讯云)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineType(const std::string& _machineType);
@@ -102,7 +98,6 @@ Other  其他服务器(非腾讯云)
 6 Google
 7 Oracle
 8 Digital Ocean
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudFrom 0 腾讯云
 1 IDC机房
 2 阿里云
@@ -112,7 +107,6 @@ Other  其他服务器(非腾讯云)
 6 Google
 7 Oracle
 8 Digital Ocean
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCloudFrom() const;
@@ -127,7 +121,6 @@ Other  其他服务器(非腾讯云)
 6 Google
 7 Oracle
 8 Digital Ocean
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudFrom 0 腾讯云
 1 IDC机房
 2 阿里云
@@ -137,7 +130,6 @@ Other  其他服务器(非腾讯云)
 6 Google
 7 Oracle
 8 Digital Ocean
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudFrom(const uint64_t& _cloudFrom);
@@ -151,18 +143,14 @@ Other  其他服务器(非腾讯云)
 
                     /**
                      * 获取地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionList 地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RegionInfo> GetRegionList() const;
 
                     /**
                      * 设置地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionList 地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionList(const std::vector<RegionInfo>& _regionList);
@@ -183,7 +171,6 @@ LH 腾讯云轻量服务器
 ECM 腾讯云边缘计算服务器
 BM 腾讯云黑石1.0 服务器
 Other  其他服务器(非腾讯云)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
@@ -198,14 +185,12 @@ Other  其他服务器(非腾讯云)
 6 Google
 7 Oracle
 8 Digital Ocean
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cloudFrom;
                     bool m_cloudFromHasBeenSet;
 
                     /**
                      * 地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RegionInfo> m_regionList;
                     bool m_regionListHasBeenSet;

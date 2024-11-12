@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取x坐标
-                     * @return X x坐标
+                     * 获取x坐标。
+                     * @return X x坐标。
                      * 
                      */
                     int64_t GetX() const;
 
                     /**
-                     * 设置x坐标
-                     * @param _x x坐标
+                     * 设置x坐标。
+                     * @param _x x坐标。
                      * 
                      */
                     void SetX(const int64_t& _x);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool XHasBeenSet() const;
 
                     /**
-                     * 获取Y坐标
-                     * @return Y Y坐标
+                     * 获取Y坐标。
+                     * @return Y Y坐标。
                      * 
                      */
                     int64_t GetY() const;
 
                     /**
-                     * 设置Y坐标
-                     * @param _y Y坐标
+                     * 设置Y坐标。
+                     * @param _y Y坐标。
                      * 
                      */
                     void SetY(const int64_t& _y);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * x坐标
+                     * x坐标。
                      */
                     int64_t m_x;
                     bool m_xHasBeenSet;
 
                     /**
-                     * Y坐标
+                     * Y坐标。
                      */
                     int64_t m_y;
                     bool m_yHasBeenSet;

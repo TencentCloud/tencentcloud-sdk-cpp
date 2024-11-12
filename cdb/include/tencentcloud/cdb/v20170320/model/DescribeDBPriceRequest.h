@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool GoodsNumHasBeenSet() const;
 
                     /**
-                     * 获取实例内存大小，单位：MB。InstanceId为空时该参数为必填项。
-                     * @return Memory 实例内存大小，单位：MB。InstanceId为空时该参数为必填项。
+                     * 获取实例内存大小，单位：MB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的实例内存大小范围。
+                     * @return Memory 实例内存大小，单位：MB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的实例内存大小范围。
                      * 
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置实例内存大小，单位：MB。InstanceId为空时该参数为必填项。
-                     * @param _memory 实例内存大小，单位：MB。InstanceId为空时该参数为必填项。
+                     * 设置实例内存大小，单位：MB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的实例内存大小范围。
+                     * @param _memory 实例内存大小，单位：MB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的实例内存大小范围。
                      * 
                      */
                     void SetMemory(const int64_t& _memory);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取实例硬盘大小，单位：GB。InstanceId为空时该参数为必填项。
-                     * @return Volume 实例硬盘大小，单位：GB。InstanceId为空时该参数为必填项。
+                     * 获取实例硬盘大小，单位：GB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的硬盘大小范围。
+                     * @return Volume 实例硬盘大小，单位：GB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的硬盘大小范围。
                      * 
                      */
                     int64_t GetVolume() const;
 
                     /**
-                     * 设置实例硬盘大小，单位：GB。InstanceId为空时该参数为必填项。
-                     * @param _volume 实例硬盘大小，单位：GB。InstanceId为空时该参数为必填项。
+                     * 设置实例硬盘大小，单位：GB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的硬盘大小范围。
+                     * @param _volume 实例硬盘大小，单位：GB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的硬盘大小范围。
                      * 
                      */
                     void SetVolume(const int64_t& _volume);
@@ -336,13 +336,13 @@ namespace TencentCloud
                     bool m_goodsNumHasBeenSet;
 
                     /**
-                     * 实例内存大小，单位：MB。InstanceId为空时该参数为必填项。
+                     * 实例内存大小，单位：MB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的实例内存大小范围。
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 实例硬盘大小，单位：GB。InstanceId为空时该参数为必填项。
+                     * 实例硬盘大小，单位：GB。InstanceId 为空时该参数为必填项。为保证传入值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可售卖的硬盘大小范围。
                      */
                     int64_t m_volume;
                     bool m_volumeHasBeenSet;

@@ -242,9 +242,7 @@ namespace TencentCloud
 
                     /**
                      * 获取window 系统漏洞事件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WindowVul window 系统漏洞事件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SecurityEventInfo GetWindowVul() const;
@@ -258,9 +256,7 @@ namespace TencentCloud
 
                     /**
                      * 获取linux系统漏洞事件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LinuxVul linux系统漏洞事件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SecurityEventInfo GetLinuxVul() const;
@@ -360,14 +356,12 @@ namespace TencentCloud
 
                     /**
                      * window 系统漏洞事件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SecurityEventInfo m_windowVul;
                     bool m_windowVulHasBeenSet;
 
                     /**
                      * linux系统漏洞事件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SecurityEventInfo m_linuxVul;
                     bool m_linuxVulHasBeenSet;

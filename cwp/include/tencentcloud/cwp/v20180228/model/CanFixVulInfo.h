@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulId 漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVulId() const;
 
                     /**
                      * 设置漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulId 漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulId(const uint64_t& _vulId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulName 漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVulName() const;
 
                     /**
                      * 设置漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulName 漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulName(const std::string& _vulName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该漏洞可修复的主机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostList 该漏洞可修复的主机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VulInfoHostInfo> GetHostList() const;
 
                     /**
                      * 设置该漏洞可修复的主机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostList 该漏洞可修复的主机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostList(const std::vector<VulInfoHostInfo>& _hostList);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修复提示tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixTag 修复提示tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFixTag() const;
 
                     /**
                      * 设置修复提示tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fixTag 修复提示tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFixTag(const std::vector<std::string>& _fixTag);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞分类1 web cms漏洞,2应用漏洞,4linux软件漏洞,5windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulCategory 漏洞分类1 web cms漏洞,2应用漏洞,4linux软件漏洞,5windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVulCategory() const;
 
                     /**
                      * 设置漏洞分类1 web cms漏洞,2应用漏洞,4linux软件漏洞,5windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulCategory 漏洞分类1 web cms漏洞,2应用漏洞,4linux软件漏洞,5windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulCategory(const uint64_t& _vulCategory);
@@ -176,35 +156,30 @@ namespace TencentCloud
 
                     /**
                      * 漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vulId;
                     bool m_vulIdHasBeenSet;
 
                     /**
                      * 漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vulName;
                     bool m_vulNameHasBeenSet;
 
                     /**
                      * 该漏洞可修复的主机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VulInfoHostInfo> m_hostList;
                     bool m_hostListHasBeenSet;
 
                     /**
                      * 修复提示tag
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_fixTag;
                     bool m_fixTagHasBeenSet;
 
                     /**
                      * 漏洞分类1 web cms漏洞,2应用漏洞,4linux软件漏洞,5windows系统漏洞
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vulCategory;
                     bool m_vulCategoryHasBeenSet;

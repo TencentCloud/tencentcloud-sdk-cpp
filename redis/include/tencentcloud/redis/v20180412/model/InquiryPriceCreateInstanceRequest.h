@@ -217,19 +217,15 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取实例分片数量。
-Redis2.8标准架构、CKV标准架构、Redis4.0标准架构无需填写。
-                     * @return RedisShardNum 实例分片数量。
-Redis2.8标准架构、CKV标准架构、Redis4.0标准架构无需填写。
+                     * 获取实例分片数量。2.8 标准架构无需配置分片，其余版本标准架构需要配置分片数量为1。集群架构需指定需购买的分片数量。
+                     * @return RedisShardNum 实例分片数量。2.8 标准架构无需配置分片，其余版本标准架构需要配置分片数量为1。集群架构需指定需购买的分片数量。
                      * 
                      */
                     int64_t GetRedisShardNum() const;
 
                     /**
-                     * 设置实例分片数量。
-Redis2.8标准架构、CKV标准架构、Redis4.0标准架构无需填写。
-                     * @param _redisShardNum 实例分片数量。
-Redis2.8标准架构、CKV标准架构、Redis4.0标准架构无需填写。
+                     * 设置实例分片数量。2.8 标准架构无需配置分片，其余版本标准架构需要配置分片数量为1。集群架构需指定需购买的分片数量。
+                     * @param _redisShardNum 实例分片数量。2.8 标准架构无需配置分片，其余版本标准架构需要配置分片数量为1。集群架构需指定需购买的分片数量。
                      * 
                      */
                     void SetRedisShardNum(const int64_t& _redisShardNum);
@@ -242,19 +238,15 @@ Redis2.8标准架构、CKV标准架构、Redis4.0标准架构无需填写。
                     bool RedisShardNumHasBeenSet() const;
 
                     /**
-                     * 获取实例副本数量。
-Redis2.8标准架构、CKV标准架构无需填写。
-                     * @return RedisReplicasNum 实例副本数量。
-Redis2.8标准架构、CKV标准架构无需填写。
+                     * 获取实例副本数量。2.8 标准架构无需配置副本数量。
+                     * @return RedisReplicasNum 实例副本数量。2.8 标准架构无需配置副本数量。
                      * 
                      */
                     int64_t GetRedisReplicasNum() const;
 
                     /**
-                     * 设置实例副本数量。
-Redis2.8标准架构、CKV标准架构无需填写。
-                     * @param _redisReplicasNum 实例副本数量。
-Redis2.8标准架构、CKV标准架构无需填写。
+                     * 设置实例副本数量。2.8 标准架构无需配置副本数量。
+                     * @param _redisReplicasNum 实例副本数量。2.8 标准架构无需配置副本数量。
                      * 
                      */
                     void SetRedisReplicasNum(const int64_t& _redisReplicasNum);
@@ -400,15 +392,13 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 实例分片数量。
-Redis2.8标准架构、CKV标准架构、Redis4.0标准架构无需填写。
+                     * 实例分片数量。2.8 标准架构无需配置分片，其余版本标准架构需要配置分片数量为1。集群架构需指定需购买的分片数量。
                      */
                     int64_t m_redisShardNum;
                     bool m_redisShardNumHasBeenSet;
 
                     /**
-                     * 实例副本数量。
-Redis2.8标准架构、CKV标准架构无需填写。
+                     * 实例副本数量。2.8 标准架构无需配置副本数量。
                      */
                     int64_t m_redisReplicasNum;
                     bool m_redisReplicasNumHasBeenSet;

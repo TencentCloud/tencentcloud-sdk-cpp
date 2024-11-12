@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alias 服务器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置服务器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alias 服务器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务器IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIp 服务器IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 设置服务器IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostIp 服务器IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostIp(const std::string& _hostIp);
@@ -246,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineExtraInfo 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
@@ -271,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务器uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uuid 服务器uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置服务器uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uuid 服务器uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -296,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClassName 类名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClassName() const;
 
                     /**
                      * 设置类名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _className 类名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClassName(const std::string& _className);
@@ -321,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父类名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuperClassName 父类名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSuperClassName() const;
 
                     /**
                      * 设置父类名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _superClassName 父类名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuperClassName(const std::string& _superClassName);
@@ -346,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取继承的接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Interfaces 继承的接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInterfaces() const;
 
                     /**
                      * 设置继承的接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _interfaces 继承的接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInterfaces(const std::string& _interfaces);
@@ -371,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取注释
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Annotations 注释
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAnnotations() const;
 
                     /**
                      * 设置注释
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _annotations 注释
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAnnotations(const std::string& _annotations);
@@ -396,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属的类加载器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoaderClassName 所属的类加载器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLoaderClassName() const;
 
                     /**
                      * 设置所属的类加载器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loaderClassName 所属的类加载器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoaderClassName(const std::string& _loaderClassName);
@@ -429,14 +393,12 @@ namespace TencentCloud
 
                     /**
                      * 服务器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
 
                     /**
                      * 服务器IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostIp;
                     bool m_hostIpHasBeenSet;
@@ -479,49 +441,42 @@ namespace TencentCloud
 
                     /**
                      * 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
 
                     /**
                      * 服务器uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
                      * 类名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_className;
                     bool m_classNameHasBeenSet;
 
                     /**
                      * 父类名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_superClassName;
                     bool m_superClassNameHasBeenSet;
 
                     /**
                      * 继承的接口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_interfaces;
                     bool m_interfacesHasBeenSet;
 
                     /**
                      * 注释
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_annotations;
                     bool m_annotationsHasBeenSet;
 
                     /**
                      * 所属的类加载器
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loaderClassName;
                     bool m_loaderClassNameHasBeenSet;

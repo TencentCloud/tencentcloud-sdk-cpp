@@ -46,11 +46,13 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/StartInstanceResponse.h
   include/tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsRequest.h
   include/tencentcloud/hai/v20230812/model/ApplicationInfo.h
+  include/tencentcloud/hai/v20230812/model/ItemPriceDetail.h
   include/tencentcloud/hai/v20230812/model/DescribeApplicationsResponse.h
   include/tencentcloud/hai/v20230812/model/ItemPrice.h
   include/tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusRequest.h
   include/tencentcloud/hai/v20230812/model/LoginService.h
   include/tencentcloud/hai/v20230812/model/StopInstanceResponse.h
+  include/tencentcloud/hai/v20230812/model/InstanceChargePrepaid.h
   include/tencentcloud/hai/v20230812/model/SceneInfo.h
   )
 
@@ -83,11 +85,13 @@ set(hai_src
   src/v20230812/model/StartInstanceResponse.cpp
   src/v20230812/model/DescribeServiceLoginSettingsRequest.cpp
   src/v20230812/model/ApplicationInfo.cpp
+  src/v20230812/model/ItemPriceDetail.cpp
   src/v20230812/model/DescribeApplicationsResponse.cpp
   src/v20230812/model/ItemPrice.cpp
   src/v20230812/model/DescribeInstanceNetworkStatusRequest.cpp
   src/v20230812/model/LoginService.cpp
   src/v20230812/model/StopInstanceResponse.cpp
+  src/v20230812/model/InstanceChargePrepaid.cpp
   src/v20230812/model/SceneInfo.cpp
   )
 

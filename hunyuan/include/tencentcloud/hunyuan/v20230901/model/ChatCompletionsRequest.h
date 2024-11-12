@@ -543,15 +543,15 @@ namespace TencentCloud
                     bool EnableMultimediaHasBeenSet() const;
 
                     /**
-                     * 获取是否开启搜索深度模式，默认是false，在值为true且命中搜索时，会请求深度搜索。
-                     * @return EnableDeepSearch 是否开启搜索深度模式，默认是false，在值为true且命中搜索时，会请求深度搜索。
+                     * 获取是否开启深度研究该问题，默认是false，在值为true且命中深度研究该问题时，会返回深度研究该问题信息。
+                     * @return EnableDeepSearch 是否开启深度研究该问题，默认是false，在值为true且命中深度研究该问题时，会返回深度研究该问题信息。
                      * 
                      */
                     bool GetEnableDeepSearch() const;
 
                     /**
-                     * 设置是否开启搜索深度模式，默认是false，在值为true且命中搜索时，会请求深度搜索。
-                     * @param _enableDeepSearch 是否开启搜索深度模式，默认是false，在值为true且命中搜索时，会请求深度搜索。
+                     * 设置是否开启深度研究该问题，默认是false，在值为true且命中深度研究该问题时，会返回深度研究该问题信息。
+                     * @param _enableDeepSearch 是否开启深度研究该问题，默认是false，在值为true且命中深度研究该问题时，会返回深度研究该问题信息。
                      * 
                      */
                     void SetEnableDeepSearch(const bool& _enableDeepSearch);
@@ -722,7 +722,7 @@ namespace TencentCloud
                     bool m_enableMultimediaHasBeenSet;
 
                     /**
-                     * 是否开启搜索深度模式，默认是false，在值为true且命中搜索时，会请求深度搜索。
+                     * 是否开启深度研究该问题，默认是false，在值为true且命中深度研究该问题时，会返回深度研究该问题信息。
                      */
                     bool m_enableDeepSearch;
                     bool m_enableDeepSearchHasBeenSet;

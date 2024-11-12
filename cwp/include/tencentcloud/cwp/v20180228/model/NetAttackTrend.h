@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间点，如 2023-05-06
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DateTime 时间点，如 2023-05-06
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDateTime() const;
 
                     /**
                      * 设置时间点，如 2023-05-06
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dateTime 时间点，如 2023-05-06
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDateTime(const std::string& _dateTime);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackCount 攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAttackCount() const;
 
                     /**
                      * 设置攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attackCount 攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttackCount(const uint64_t& _attackCount);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取尝试攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TryAttackCount 尝试攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTryAttackCount() const;
 
                     /**
                      * 设置尝试攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tryAttackCount 尝试攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTryAttackCount(const uint64_t& _tryAttackCount);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccAttackCount 攻击成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSuccAttackCount() const;
 
                     /**
                      * 设置攻击成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _succAttackCount 攻击成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuccAttackCount(const uint64_t& _succAttackCount);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 时间点，如 2023-05-06
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dateTime;
                     bool m_dateTimeHasBeenSet;
 
                     /**
                      * 攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_attackCount;
                     bool m_attackCountHasBeenSet;
 
                     /**
                      * 尝试攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_tryAttackCount;
                     bool m_tryAttackCountHasBeenSet;
 
                     /**
                      * 攻击成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_succAttackCount;
                     bool m_succAttackCountHasBeenSet;

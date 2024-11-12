@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘分区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Disks 磁盘分区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetDiskPartitionInfo> GetDisks() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 磁盘分区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetDiskPartitionInfo> m_disks;
                     bool m_disksHasBeenSet;

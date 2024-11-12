@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取正在扫描中的主机Quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanningQuuids 正在扫描中的主机Quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetScanningQuuids() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务下发成功返回的TaskId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务下发成功返回的TaskId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTaskId() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 正在扫描中的主机Quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_scanningQuuids;
                     bool m_scanningQuuidsHasBeenSet;
 
                     /**
                      * 任务下发成功返回的TaskId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;

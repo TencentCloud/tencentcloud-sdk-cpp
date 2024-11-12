@@ -217,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Descript 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescript() const;
 
                     /**
                      * 设置策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _descript 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescript(const std::string& _descript);
@@ -242,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件列表点击“加入白名单”时,需要传EventId 事件的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventId 事件列表点击“加入白名单”时,需要传EventId 事件的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEventId() const;
 
                     /**
                      * 设置事件列表点击“加入白名单”时,需要传EventId 事件的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventId 事件列表点击“加入白名单”时,需要传EventId 事件的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventId(const int64_t& _eventId);
@@ -267,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否处理旧事件为白名单 0=不处理 1=处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealOldEvents 是否处理旧事件为白名单 0=不处理 1=处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDealOldEvents() const;
 
                     /**
                      * 设置是否处理旧事件为白名单 0=不处理 1=处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dealOldEvents 是否处理旧事件为白名单 0=不处理 1=处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDealOldEvents(const int64_t& _dealOldEvents);
@@ -292,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生效主机的QUUID集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuids 生效主机的QUUID集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetQuuids() const;
 
                     /**
                      * 设置生效主机的QUUID集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quuids 生效主机的QUUID集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuuids(const std::vector<std::string>& _quuids);
@@ -401,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rules 规则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PolicyRules GetRules() const;
 
                     /**
                      * 设置规则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rules 规则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRules(const PolicyRules& _rules);
@@ -476,28 +456,24 @@ namespace TencentCloud
 
                     /**
                      * 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_descript;
                     bool m_descriptHasBeenSet;
 
                     /**
                      * 事件列表点击“加入白名单”时,需要传EventId 事件的id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
                      * 是否处理旧事件为白名单 0=不处理 1=处理
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dealOldEvents;
                     bool m_dealOldEventsHasBeenSet;
 
                     /**
                      * 生效主机的QUUID集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_quuids;
                     bool m_quuidsHasBeenSet;
@@ -528,7 +504,6 @@ namespace TencentCloud
 
                     /**
                      * 规则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PolicyRules m_rules;
                     bool m_rulesHasBeenSet;

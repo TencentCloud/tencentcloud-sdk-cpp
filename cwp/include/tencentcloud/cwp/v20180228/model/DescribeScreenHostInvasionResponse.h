@@ -91,9 +91,7 @@ namespace TencentCloud
 
                     /**
                      * 获取基线事件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Baseline 基线事件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScreenBaselineInfo> GetBaseline() const;
@@ -127,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 基线事件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScreenBaselineInfo> m_baseline;
                     bool m_baselineHasBeenSet;

@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取预期重启时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeInSeconds 预期重启时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeInSeconds() const;
 
                     /**
                      * 设置预期重启时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeInSeconds 预期重启时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeInSeconds(const int64_t& _timeInSeconds);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 预期重启时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeInSeconds;
                     bool m_timeInSecondsHasBeenSet;

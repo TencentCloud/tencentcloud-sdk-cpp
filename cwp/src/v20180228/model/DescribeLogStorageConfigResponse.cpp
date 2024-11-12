@@ -26,7 +26,8 @@ using namespace std;
 DescribeLogStorageConfigResponse::DescribeLogStorageConfigResponse() :
     m_typeHasBeenSet(false),
     m_periodHasBeenSet(false),
-    m_periodModifyCountHasBeenSet(false)
+    m_periodModifyCountHasBeenSet(false),
+    m_granularityHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,16 @@ CoreInternalOutcome DescribeLogStorageConfigResponse::Deserialize(const string &
         m_periodModifyCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Granularity") && !rsp["Granularity"].IsNull())
+    {
+        if (!rsp["Granularity"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Granularity` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_granularity = string(rsp["Granularity"].GetString());
+        m_granularityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +145,14 @@ string DescribeLogStorageConfigResponse::ToJsonString() const
         string key = "PeriodModifyCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_periodModifyCount, allocator);
+    }
+
+    if (m_granularityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Granularity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_granularity.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,6 +195,16 @@ int64_t DescribeLogStorageConfigResponse::GetPeriodModifyCount() const
 bool DescribeLogStorageConfigResponse::PeriodModifyCountHasBeenSet() const
 {
     return m_periodModifyCountHasBeenSet;
+}
+
+string DescribeLogStorageConfigResponse::GetGranularity() const
+{
+    return m_granularity;
+}
+
+bool DescribeLogStorageConfigResponse::GranularityHasBeenSet() const
+{
+    return m_granularityHasBeenSet;
 }
 
 

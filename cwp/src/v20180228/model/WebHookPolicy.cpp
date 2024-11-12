@@ -30,7 +30,8 @@ WebHookPolicy::WebHookPolicy() :
     m_customFieldsHasBeenSet(false),
     m_isDisabledHasBeenSet(false),
     m_quuidsHasBeenSet(false),
-    m_hostCountHasBeenSet(false)
+    m_hostCountHasBeenSet(false),
+    m_excludedQuuidsHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,19 @@ CoreInternalOutcome WebHookPolicy::Deserialize(const rapidjson::Value &value)
         m_hostCountHasBeenSet = true;
     }
 
+    if (value.HasMember("ExcludedQuuids") && !value["ExcludedQuuids"].IsNull())
+    {
+        if (!value["ExcludedQuuids"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WebHookPolicy.ExcludedQuuids` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExcludedQuuids"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_excludedQuuids.push_back((*itr).GetString());
+        }
+        m_excludedQuuidsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +314,19 @@ void WebHookPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "HostCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hostCount, allocator);
+    }
+
+    if (m_excludedQuuidsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludedQuuids";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludedQuuids.begin(); itr != m_excludedQuuids.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -463,5 +490,21 @@ void WebHookPolicy::SetHostCount(const int64_t& _hostCount)
 bool WebHookPolicy::HostCountHasBeenSet() const
 {
     return m_hostCountHasBeenSet;
+}
+
+vector<string> WebHookPolicy::GetExcludedQuuids() const
+{
+    return m_excludedQuuids;
+}
+
+void WebHookPolicy::SetExcludedQuuids(const vector<string>& _excludedQuuids)
+{
+    m_excludedQuuids = _excludedQuuids;
+    m_excludedQuuidsHasBeenSet = true;
+}
+
+bool WebHookPolicy::ExcludedQuuidsHasBeenSet() const
+{
+    return m_excludedQuuidsHasBeenSet;
 }
 

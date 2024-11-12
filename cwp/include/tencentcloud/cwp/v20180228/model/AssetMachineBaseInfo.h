@@ -365,18 +365,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MachineTag> GetTag() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::vector<MachineTag>& _tag);
@@ -390,18 +386,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -457,18 +449,14 @@ namespace TencentCloud
 
                     /**
                      * 获取附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineExtraInfo 附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
@@ -482,18 +470,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cpu负载读数（仅linux系统有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuLoadNum cpu负载读数（仅linux系统有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCpuLoadNum() const;
 
                     /**
                      * 设置cpu负载读数（仅linux系统有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuLoadNum cpu负载读数（仅linux系统有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuLoadNum(const std::string& _cpuLoadNum);
@@ -599,14 +583,12 @@ namespace TencentCloud
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MachineTag> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
                      * 数据更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
@@ -625,14 +607,12 @@ namespace TencentCloud
 
                     /**
                      * 附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
 
                     /**
                      * cpu负载读数（仅linux系统有效）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cpuLoadNum;
                     bool m_cpuLoadNumHasBeenSet;

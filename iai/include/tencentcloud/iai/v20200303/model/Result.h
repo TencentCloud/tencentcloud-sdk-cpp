@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别出的最相似候选人
-                     * @return Candidates 识别出的最相似候选人
+                     * 获取识别出的最相似候选人。
+                     * @return Candidates 识别出的最相似候选人。
                      * 
                      */
                     std::vector<Candidate> GetCandidates() const;
 
                     /**
-                     * 设置识别出的最相似候选人
-                     * @param _candidates 识别出的最相似候选人
+                     * 设置识别出的最相似候选人。
+                     * @param _candidates 识别出的最相似候选人。
                      * 
                      */
                     void SetCandidates(const std::vector<Candidate>& _candidates);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool CandidatesHasBeenSet() const;
 
                     /**
-                     * 获取检测出的人脸框位置
-                     * @return FaceRect 检测出的人脸框位置
+                     * 获取检测出的人脸框位置。
+                     * @return FaceRect 检测出的人脸框位置。
                      * 
                      */
                     FaceRect GetFaceRect() const;
 
                     /**
-                     * 设置检测出的人脸框位置
-                     * @param _faceRect 检测出的人脸框位置
+                     * 设置检测出的人脸框位置。
+                     * @param _faceRect 检测出的人脸框位置。
                      * 
                      */
                     void SetFaceRect(const FaceRect& _faceRect);
@@ -91,19 +91,23 @@ namespace TencentCloud
                     bool FaceRectHasBeenSet() const;
 
                     /**
-                     * 获取检测出的人脸图片状态返回码。0 表示正常。 
--1601代表不符合图片质量控制要求，此时Candidate内容为空。
-                     * @return RetCode 检测出的人脸图片状态返回码。0 表示正常。 
--1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     * 获取检测出的人脸图片状态返回码。
+- 0 表示正常。 
+- -1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     * @return RetCode 检测出的人脸图片状态返回码。
+- 0 表示正常。 
+- -1601代表不符合图片质量控制要求，此时Candidate内容为空。
                      * 
                      */
                     int64_t GetRetCode() const;
 
                     /**
-                     * 设置检测出的人脸图片状态返回码。0 表示正常。 
--1601代表不符合图片质量控制要求，此时Candidate内容为空。
-                     * @param _retCode 检测出的人脸图片状态返回码。0 表示正常。 
--1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     * 设置检测出的人脸图片状态返回码。
+- 0 表示正常。 
+- -1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     * @param _retCode 检测出的人脸图片状态返回码。
+- 0 表示正常。 
+- -1601代表不符合图片质量控制要求，此时Candidate内容为空。
                      * 
                      */
                     void SetRetCode(const int64_t& _retCode);
@@ -118,20 +122,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 识别出的最相似候选人
+                     * 识别出的最相似候选人。
                      */
                     std::vector<Candidate> m_candidates;
                     bool m_candidatesHasBeenSet;
 
                     /**
-                     * 检测出的人脸框位置
+                     * 检测出的人脸框位置。
                      */
                     FaceRect m_faceRect;
                     bool m_faceRectHasBeenSet;
 
                     /**
-                     * 检测出的人脸图片状态返回码。0 表示正常。 
--1601代表不符合图片质量控制要求，此时Candidate内容为空。
+                     * 检测出的人脸图片状态返回码。
+- 0 表示正常。 
+- -1601代表不符合图片质量控制要求，此时Candidate内容为空。
                      */
                     int64_t m_retCode;
                     bool m_retCodeHasBeenSet;

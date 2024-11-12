@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/CreateCloudProtectServiceOrderRecordResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteDataModelResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
-CreateCloudProtectServiceOrderRecordResponse::CreateCloudProtectServiceOrderRecordResponse() :
-    m_successHasBeenSet(false)
+DeleteDataModelResponse::DeleteDataModelResponse() :
+    m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateCloudProtectServiceOrderRecordResponse::Deserialize(const string &payload)
+CoreInternalOutcome DeleteDataModelResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,32 @@ CoreInternalOutcome CreateCloudProtectServiceOrderRecordResponse::Deserialize(co
     }
 
 
-    if (rsp.HasMember("Success") && !rsp["Success"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["Success"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Success` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Success"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Data"].IsBool())
         {
-            m_success.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `Data` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_successHasBeenSet = true;
+        m_data = rsp["Data"].GetBool();
+        m_dataHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateCloudProtectServiceOrderRecordResponse::ToJsonString() const
+string DeleteDataModelResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_successHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Success";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_success.begin(); itr != m_success.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        value.AddMember(iKey, m_data, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +102,14 @@ string CreateCloudProtectServiceOrderRecordResponse::ToJsonString() const
 }
 
 
-vector<string> CreateCloudProtectServiceOrderRecordResponse::GetSuccess() const
+bool DeleteDataModelResponse::GetData() const
 {
-    return m_success;
+    return m_data;
 }
 
-bool CreateCloudProtectServiceOrderRecordResponse::SuccessHasBeenSet() const
+bool DeleteDataModelResponse::DataHasBeenSet() const
 {
-    return m_successHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

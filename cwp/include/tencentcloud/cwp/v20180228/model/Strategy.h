@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyName 策略名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStrategyName() const;
 
                     /**
                      * 设置策略名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyName 策略名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyName(const std::string& _strategyName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyId 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStrategyId() const;
 
                     /**
                      * 设置策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyId 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyId(const uint64_t& _strategyId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线检测项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleCount 基线检测项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleCount() const;
 
                     /**
                      * 设置基线检测项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleCount 基线检测项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleCount(const uint64_t& _ruleCount);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostCount 主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHostCount() const;
 
                     /**
                      * 设置主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostCount 主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostCount(const uint64_t& _hostCount);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanCycle 扫描周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScanCycle() const;
 
                     /**
                      * 设置扫描周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanCycle 扫描周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanCycle(const uint64_t& _scanCycle);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanAt 扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanAt() const;
 
                     /**
                      * 设置扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanAt 扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanAt(const std::string& _scanAt);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enabled 是否可用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEnabled() const;
 
                     /**
                      * 设置是否可用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enabled 是否可用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnabled(const uint64_t& _enabled);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通过率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PassRate 通过率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPassRate() const;
 
                     /**
                      * 设置通过率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _passRate 通过率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassRate(const uint64_t& _passRate);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryIds 基线id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCategoryIds() const;
 
                     /**
                      * 设置基线id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryIds 基线id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryIds(const std::string& _categoryIds);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否默认策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDefault 是否默认策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsDefault() const;
 
                     /**
                      * 设置是否默认策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDefault 是否默认策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDefault(const uint64_t& _isDefault);
@@ -300,70 +260,60 @@ namespace TencentCloud
 
                     /**
                      * 策略名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_strategyName;
                     bool m_strategyNameHasBeenSet;
 
                     /**
                      * 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_strategyId;
                     bool m_strategyIdHasBeenSet;
 
                     /**
                      * 基线检测项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleCount;
                     bool m_ruleCountHasBeenSet;
 
                     /**
                      * 主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hostCount;
                     bool m_hostCountHasBeenSet;
 
                     /**
                      * 扫描周期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scanCycle;
                     bool m_scanCycleHasBeenSet;
 
                     /**
                      * 扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanAt;
                     bool m_scanAtHasBeenSet;
 
                     /**
                      * 是否可用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
                      * 通过率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_passRate;
                     bool m_passRateHasBeenSet;
 
                     /**
                      * 基线id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_categoryIds;
                     bool m_categoryIdsHasBeenSet;
 
                     /**
                      * 是否默认策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isDefault;
                     bool m_isDefaultHasBeenSet;

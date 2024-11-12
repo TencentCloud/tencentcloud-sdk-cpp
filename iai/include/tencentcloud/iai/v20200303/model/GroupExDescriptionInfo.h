@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人员库自定义描述字段Index，从0开始
-                     * @return GroupExDescriptionIndex 人员库自定义描述字段Index，从0开始
+                     * 获取人员库自定义描述字段Index，从0开始。
+                     * @return GroupExDescriptionIndex 人员库自定义描述字段Index，从0开始。
                      * 
                      */
                     uint64_t GetGroupExDescriptionIndex() const;
 
                     /**
-                     * 设置人员库自定义描述字段Index，从0开始
-                     * @param _groupExDescriptionIndex 人员库自定义描述字段Index，从0开始
+                     * 设置人员库自定义描述字段Index，从0开始。
+                     * @param _groupExDescriptionIndex 人员库自定义描述字段Index，从0开始。
                      * 
                      */
                     void SetGroupExDescriptionIndex(const uint64_t& _groupExDescriptionIndex);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool GroupExDescriptionIndexHasBeenSet() const;
 
                     /**
-                     * 获取需要更新的人员库自定义描述字段内容
-                     * @return GroupExDescription 需要更新的人员库自定义描述字段内容
+                     * 获取需要更新的人员库自定义描述字段内容。
+                     * @return GroupExDescription 需要更新的人员库自定义描述字段内容。
                      * 
                      */
                     std::string GetGroupExDescription() const;
 
                     /**
-                     * 设置需要更新的人员库自定义描述字段内容
-                     * @param _groupExDescription 需要更新的人员库自定义描述字段内容
+                     * 设置需要更新的人员库自定义描述字段内容。
+                     * @param _groupExDescription 需要更新的人员库自定义描述字段内容。
                      * 
                      */
                     void SetGroupExDescription(const std::string& _groupExDescription);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人员库自定义描述字段Index，从0开始
+                     * 人员库自定义描述字段Index，从0开始。
                      */
                     uint64_t m_groupExDescriptionIndex;
                     bool m_groupExDescriptionIndexHasBeenSet;
 
                     /**
-                     * 需要更新的人员库自定义描述字段内容
+                     * 需要更新的人员库自定义描述字段内容。
                      */
                     std::string m_groupExDescription;
                     bool m_groupExDescriptionHasBeenSet;

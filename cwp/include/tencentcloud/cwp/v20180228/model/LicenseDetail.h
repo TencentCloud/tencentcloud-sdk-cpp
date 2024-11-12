@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权状态 0 未使用,1 部分使用, 2 已用完, 3 不可用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseStatus 授权状态 0 未使用,1 部分使用, 2 已用完, 3 不可用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLicenseStatus() const;
 
                     /**
                      * 设置授权状态 0 未使用,1 部分使用, 2 已用完, 3 不可用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _licenseStatus 授权状态 0 未使用,1 部分使用, 2 已用完, 3 不可用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLicenseStatus(const uint64_t& _licenseStatus);
@@ -347,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取平台标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 平台标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tags> GetTags() const;
 
                     /**
                      * 设置平台标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 平台标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tags>& _tags);
@@ -372,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取冻结数,当为0时 为未冻结,非0 则表示冻结授权数额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FreezeNum 冻结数,当为0时 为未冻结,非0 则表示冻结授权数额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFreezeNum() const;
 
                     /**
                      * 设置冻结数,当为0时 为未冻结,非0 则表示冻结授权数额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _freezeNum 冻结数,当为0时 为未冻结,非0 则表示冻结授权数额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFreezeNum(const int64_t& _freezeNum);
@@ -411,7 +399,6 @@ namespace TencentCloud
 
                     /**
                      * 授权状态 0 未使用,1 部分使用, 2 已用完, 3 不可用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_licenseStatus;
                     bool m_licenseStatusHasBeenSet;
@@ -484,14 +471,12 @@ namespace TencentCloud
 
                     /**
                      * 平台标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tags> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 冻结数,当为0时 为未冻结,非0 则表示冻结授权数额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_freezeNum;
                     bool m_freezeNumHasBeenSet;

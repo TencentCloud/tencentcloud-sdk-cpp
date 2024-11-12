@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/MultiDiskMC.h>
 
 
 namespace TencentCloud
@@ -239,6 +240,81 @@ namespace TencentCloud
                      */
                     bool StorageTypeHasBeenSet() const;
 
+                    /**
+                     * 获取系统盘大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RootSize 系统盘大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRootSize() const;
+
+                    /**
+                     * 设置系统盘大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rootSize 系统盘大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRootSize(const int64_t& _rootSize);
+
+                    /**
+                     * 判断参数 RootSize 是否已赋值
+                     * @return RootSize 是否已赋值
+                     * 
+                     */
+                    bool RootSizeHasBeenSet() const;
+
+                    /**
+                     * 获取系统盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RootStorageType 系统盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRootStorageType() const;
+
+                    /**
+                     * 设置系统盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rootStorageType 系统盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRootStorageType(const int64_t& _rootStorageType);
+
+                    /**
+                     * 判断参数 RootStorageType 是否已赋值
+                     * @return RootStorageType 是否已赋值
+                     * 
+                     */
+                    bool RootStorageTypeHasBeenSet() const;
+
+                    /**
+                     * 获取数据盘信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MCMultiDisk 数据盘信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<MultiDiskMC> GetMCMultiDisk() const;
+
+                    /**
+                     * 设置数据盘信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mCMultiDisk 数据盘信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMCMultiDisk(const std::vector<MultiDiskMC>& _mCMultiDisk);
+
+                    /**
+                     * 判断参数 MCMultiDisk 是否已赋值
+                     * @return MCMultiDisk 是否已赋值
+                     * 
+                     */
+                    bool MCMultiDiskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -295,6 +371,27 @@ namespace TencentCloud
                      */
                     int64_t m_storageType;
                     bool m_storageTypeHasBeenSet;
+
+                    /**
+                     * 系统盘大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_rootSize;
+                    bool m_rootSizeHasBeenSet;
+
+                    /**
+                     * 系统盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_rootStorageType;
+                    bool m_rootStorageTypeHasBeenSet;
+
+                    /**
+                     * 数据盘信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<MultiDiskMC> m_mCMultiDisk;
+                    bool m_mCMultiDiskHasBeenSet;
 
                 };
             }

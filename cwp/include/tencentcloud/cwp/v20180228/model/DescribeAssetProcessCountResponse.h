@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取各进程数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Process 各进程数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetKeyVal> GetProcess() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 各进程数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetKeyVal> m_process;
                     bool m_processHasBeenSet;

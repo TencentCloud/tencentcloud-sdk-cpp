@@ -44,15 +44,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件：Keywords: ip或者主机名模糊查询, JavaShellStatus，Exception精确匹配
-                     * @return Filters 过滤条件：Keywords: ip或者主机名模糊查询, JavaShellStatus，Exception精确匹配
+                     * 获取过滤条件：InstanceID、IP、
+
+MachineName模糊查询, JavaShellStatus，Exception精确匹配
+                     * @return Filters 过滤条件：InstanceID、IP、
+
+MachineName模糊查询, JavaShellStatus，Exception精确匹配
                      * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
-                     * 设置过滤条件：Keywords: ip或者主机名模糊查询, JavaShellStatus，Exception精确匹配
-                     * @param _filters 过滤条件：Keywords: ip或者主机名模糊查询, JavaShellStatus，Exception精确匹配
+                     * 设置过滤条件：InstanceID、IP、
+
+MachineName模糊查询, JavaShellStatus，Exception精确匹配
+                     * @param _filters 过滤条件：InstanceID、IP、
+
+MachineName模糊查询, JavaShellStatus，Exception精确匹配
                      * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
@@ -109,7 +117,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤条件：Keywords: ip或者主机名模糊查询, JavaShellStatus，Exception精确匹配
+                     * 过滤条件：InstanceID、IP、
+
+MachineName模糊查询, JavaShellStatus，Exception精确匹配
                      */
                     std::vector<Filters> m_filters;
                     bool m_filtersHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取主机信息与标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostInfoList 主机信息与标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HostTagInfo> GetHostInfoList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 主机信息与标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HostTagInfo> m_hostInfoList;
                     bool m_hostInfoListHasBeenSet;

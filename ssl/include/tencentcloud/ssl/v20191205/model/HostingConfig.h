@@ -96,6 +96,48 @@ namespace TencentCloud
                      */
                     bool MessageTypesHasBeenSet() const;
 
+                    /**
+                     * 获取资源替换开始时间
+                     * @return ReplaceStartTime 资源替换开始时间
+                     * 
+                     */
+                    std::string GetReplaceStartTime() const;
+
+                    /**
+                     * 设置资源替换开始时间
+                     * @param _replaceStartTime 资源替换开始时间
+                     * 
+                     */
+                    void SetReplaceStartTime(const std::string& _replaceStartTime);
+
+                    /**
+                     * 判断参数 ReplaceStartTime 是否已赋值
+                     * @return ReplaceStartTime 是否已赋值
+                     * 
+                     */
+                    bool ReplaceStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取资源替换结束时间
+                     * @return ReplaceEndTime 资源替换结束时间
+                     * 
+                     */
+                    std::string GetReplaceEndTime() const;
+
+                    /**
+                     * 设置资源替换结束时间
+                     * @param _replaceEndTime 资源替换结束时间
+                     * 
+                     */
+                    void SetReplaceEndTime(const std::string& _replaceEndTime);
+
+                    /**
+                     * 判断参数 ReplaceEndTime 是否已赋值
+                     * @return ReplaceEndTime 是否已赋值
+                     * 
+                     */
+                    bool ReplaceEndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +153,18 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_messageTypes;
                     bool m_messageTypesHasBeenSet;
+
+                    /**
+                     * 资源替换开始时间
+                     */
+                    std::string m_replaceStartTime;
+                    bool m_replaceStartTimeHasBeenSet;
+
+                    /**
+                     * 资源替换结束时间
+                     */
+                    std::string m_replaceEndTime;
+                    bool m_replaceEndTimeHasBeenSet;
 
                 };
             }

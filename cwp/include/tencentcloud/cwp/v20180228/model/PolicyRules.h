@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Process 进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CommandLine GetProcess() const;
 
                     /**
                      * 设置进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _process 进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProcess(const CommandLine& _process);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PProcess 父进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CommandLine GetPProcess() const;
 
                     /**
                      * 设置父进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pProcess 父进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPProcess(const CommandLine& _pProcess);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取祖先进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AProcess 祖先进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CommandLine GetAProcess() const;
 
                     /**
                      * 设置祖先进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aProcess 祖先进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAProcess(const CommandLine& _aProcess);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 进程
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CommandLine m_process;
                     bool m_processHasBeenSet;
 
                     /**
                      * 父进程
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CommandLine m_pProcess;
                     bool m_pProcessHasBeenSet;
 
                     /**
                      * 祖先进程
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CommandLine m_aProcess;
                     bool m_aProcessHasBeenSet;

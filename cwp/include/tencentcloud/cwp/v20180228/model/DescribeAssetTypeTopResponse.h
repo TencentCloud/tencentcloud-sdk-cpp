@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取账号Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 账号Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetKeyVal> GetUser() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取端口Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 端口Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetKeyVal> GetPort() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取进程Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Process 进程Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetKeyVal> GetProcess() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取软件Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Software 软件Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetKeyVal> GetSoftware() const;
@@ -110,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Database 数据库Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetKeyVal> GetDatabase() const;
@@ -126,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Web应用Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebApp Web应用Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetKeyVal> GetWebApp() const;
@@ -142,9 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Web站点Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebLocation Web站点Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetKeyVal> GetWebLocation() const;
@@ -158,9 +144,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Web框架Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebFrame Web框架Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetKeyVal> GetWebFrame() const;
@@ -174,9 +158,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Web服务Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebService Web服务Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetKeyVal> GetWebService() const;
@@ -192,63 +174,54 @@ namespace TencentCloud
 
                     /**
                      * 账号Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetKeyVal> m_user;
                     bool m_userHasBeenSet;
 
                     /**
                      * 端口Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetKeyVal> m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 进程Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetKeyVal> m_process;
                     bool m_processHasBeenSet;
 
                     /**
                      * 软件Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetKeyVal> m_software;
                     bool m_softwareHasBeenSet;
 
                     /**
                      * 数据库Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetKeyVal> m_database;
                     bool m_databaseHasBeenSet;
 
                     /**
                      * Web应用Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetKeyVal> m_webApp;
                     bool m_webAppHasBeenSet;
 
                     /**
                      * Web站点Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetKeyVal> m_webLocation;
                     bool m_webLocationHasBeenSet;
 
                     /**
                      * Web框架Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetKeyVal> m_webFrame;
                     bool m_webFrameHasBeenSet;
 
                     /**
                      * Web服务Top5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetKeyVal> m_webService;
                     bool m_webServiceHasBeenSet;

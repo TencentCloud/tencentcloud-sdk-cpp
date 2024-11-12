@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取站点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Locations 站点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetWebLocationBaseInfo> GetLocations() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 站点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetWebLocationBaseInfo> m_locations;
                     bool m_locationsHasBeenSet;

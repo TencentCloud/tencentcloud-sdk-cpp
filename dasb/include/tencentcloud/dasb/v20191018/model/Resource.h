@@ -784,18 +784,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployModel 部署模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeployModel() const;
 
                     /**
                      * 设置部署模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deployModel 部署模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeployModel(const int64_t& _deployModel);
@@ -1021,7 +1017,6 @@ namespace TencentCloud
 
                     /**
                      * 部署模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deployModel;
                     bool m_deployModelHasBeenSet;

@@ -5630,6 +5630,49 @@ CdbClient::ModifyDBInstanceProjectOutcomeCallable CdbClient::ModifyDBInstancePro
     return task->get_future();
 }
 
+CdbClient::ModifyDBInstanceReadOnlyStatusOutcome CdbClient::ModifyDBInstanceReadOnlyStatus(const ModifyDBInstanceReadOnlyStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceReadOnlyStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceReadOnlyStatusResponse rsp = ModifyDBInstanceReadOnlyStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceReadOnlyStatusOutcome(rsp);
+        else
+            return ModifyDBInstanceReadOnlyStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceReadOnlyStatusOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyDBInstanceReadOnlyStatusAsync(const ModifyDBInstanceReadOnlyStatusRequest& request, const ModifyDBInstanceReadOnlyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceReadOnlyStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyDBInstanceReadOnlyStatusOutcomeCallable CdbClient::ModifyDBInstanceReadOnlyStatusCallable(const ModifyDBInstanceReadOnlyStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceReadOnlyStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceReadOnlyStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::ModifyDBInstanceSecurityGroupsOutcome CdbClient::ModifyDBInstanceSecurityGroups(const ModifyDBInstanceSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceSecurityGroups");

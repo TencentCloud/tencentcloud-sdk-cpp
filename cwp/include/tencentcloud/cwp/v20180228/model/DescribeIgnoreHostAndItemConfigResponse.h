@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取受影响检测项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemSet 受影响检测项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BaselineItemInfo> GetItemSet() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取受影响主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostSet 受影响主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BaselineHost> GetHostSet() const;
@@ -81,14 +77,12 @@ namespace TencentCloud
 
                     /**
                      * 受影响检测项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BaselineItemInfo> m_itemSet;
                     bool m_itemSetHasBeenSet;
 
                     /**
                      * 受影响主机
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BaselineHost> m_hostSet;
                     bool m_hostSetHasBeenSet;

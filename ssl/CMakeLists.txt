@@ -54,6 +54,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DescribeManagerDetailRequest.h
   include/tencentcloud/ssl/v20191205/model/ClbListenerRule.h
   include/tencentcloud/ssl/v20191205/model/LighthouseInstanceDetail.h
+  include/tencentcloud/ssl/v20191205/model/SubmitCertificateInformationRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateOperateLogsRequest.h
   include/tencentcloud/ssl/v20191205/model/CancelCertificateOrderResponse.h
   include/tencentcloud/ssl/v20191205/model/ModifyCertificatesExpiringNotificationSwitchResponse.h
@@ -101,7 +102,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DdosInstanceDetail.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostWafInstanceListResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeDeployedResourcesResponse.h
-  include/tencentcloud/ssl/v20191205/model/CreateCertificateByPackageResponse.h
+  include/tencentcloud/ssl/v20191205/model/CertBasicInfo.h
   include/tencentcloud/ssl/v20191205/model/CreateCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificatesResponse.h
   include/tencentcloud/ssl/v20191205/model/CommitCertificateInformationResponse.h
@@ -110,7 +111,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/UploadCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/DeployCertificateInstanceResponse.h
   include/tencentcloud/ssl/v20191205/model/LiveInstanceDetail.h
-  include/tencentcloud/ssl/v20191205/model/SubmitCertificateInformationRequest.h
+  include/tencentcloud/ssl/v20191205/model/CreateCertificateByPackageResponse.h
   include/tencentcloud/ssl/v20191205/model/TCBEnvironment.h
   include/tencentcloud/ssl/v20191205/model/WafInstanceDetail.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificatesRequest.h
@@ -251,6 +252,7 @@ set(ssl_src
   src/v20191205/model/DescribeManagerDetailRequest.cpp
   src/v20191205/model/ClbListenerRule.cpp
   src/v20191205/model/LighthouseInstanceDetail.cpp
+  src/v20191205/model/SubmitCertificateInformationRequest.cpp
   src/v20191205/model/DescribeCertificateOperateLogsRequest.cpp
   src/v20191205/model/CancelCertificateOrderResponse.cpp
   src/v20191205/model/ModifyCertificatesExpiringNotificationSwitchResponse.cpp
@@ -298,7 +300,7 @@ set(ssl_src
   src/v20191205/model/DdosInstanceDetail.cpp
   src/v20191205/model/DescribeHostWafInstanceListResponse.cpp
   src/v20191205/model/DescribeDeployedResourcesResponse.cpp
-  src/v20191205/model/CreateCertificateByPackageResponse.cpp
+  src/v20191205/model/CertBasicInfo.cpp
   src/v20191205/model/CreateCertificateRequest.cpp
   src/v20191205/model/DescribeCertificatesResponse.cpp
   src/v20191205/model/CommitCertificateInformationResponse.cpp
@@ -307,7 +309,7 @@ set(ssl_src
   src/v20191205/model/UploadCertificateResponse.cpp
   src/v20191205/model/DeployCertificateInstanceResponse.cpp
   src/v20191205/model/LiveInstanceDetail.cpp
-  src/v20191205/model/SubmitCertificateInformationRequest.cpp
+  src/v20191205/model/CreateCertificateByPackageResponse.cpp
   src/v20191205/model/TCBEnvironment.cpp
   src/v20191205/model/WafInstanceDetail.cpp
   src/v20191205/model/DescribeCertificatesRequest.cpp

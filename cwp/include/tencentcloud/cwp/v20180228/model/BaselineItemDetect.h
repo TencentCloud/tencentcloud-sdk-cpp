@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemId 项Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetItemId() const;
 
                     /**
                      * 设置项Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _itemId 项Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItemId(const int64_t& _itemId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemName 项名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetItemName() const;
 
                     /**
                      * 设置项名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _itemName 项名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItemName(const std::string& _itemName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemDesc 项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetItemDesc() const;
 
                     /**
                      * 设置项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _itemDesc 项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItemDesc(const std::string& _itemDesc);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修复方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixMethod 修复方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFixMethod() const;
 
                     /**
                      * 设置修复方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fixMethod 修复方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFixMethod(const std::string& _fixMethod);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 所属规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置所属规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleName 所属规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0:未通过 1:忽略 3:通过 5:检测中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectStatus 0:未通过 1:忽略 3:通过 5:检测中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDetectStatus() const;
 
                     /**
                      * 设置0:未通过 1:忽略 3:通过 5:检测中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detectStatus 0:未通过 1:忽略 3:通过 5:检测中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetectStatus(const int64_t& _detectStatus);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 设置风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const int64_t& _level);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取影响服务器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostCount 影响服务器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHostCount() const;
 
                     /**
                      * 设置影响服务器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostCount 影响服务器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostCount(const int64_t& _hostCount);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取首次检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstTime 首次检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFirstTime() const;
 
                     /**
                      * 设置首次检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _firstTime 首次检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFirstTime(const std::string& _firstTime);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastTime 最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastTime() const;
 
                     /**
                      * 设置最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastTime 最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastTime(const std::string& _lastTime);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检测结果,Json字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectResult 检测结果,Json字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDetectResult() const;
 
                     /**
                      * 设置检测结果,Json字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detectResult 检测结果,Json字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetectResult(const std::string& _detectResult);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 所属规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
                      * 设置所属规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 所属规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通过的服务器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PassedHostCount 通过的服务器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPassedHostCount() const;
 
                     /**
                      * 设置通过的服务器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _passedHostCount 通过的服务器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassedHostCount(const int64_t& _passedHostCount);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取未通过的服务器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotPassedHostCount 未通过的服务器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNotPassedHostCount() const;
 
                     /**
                      * 设置未通过的服务器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _notPassedHostCount 未通过的服务器数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNotPassedHostCount(const int64_t& _notPassedHostCount);
@@ -400,98 +344,84 @@ namespace TencentCloud
 
                     /**
                      * 项Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_itemId;
                     bool m_itemIdHasBeenSet;
 
                     /**
                      * 项名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_itemName;
                     bool m_itemNameHasBeenSet;
 
                     /**
                      * 项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_itemDesc;
                     bool m_itemDescHasBeenSet;
 
                     /**
                      * 修复方法
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fixMethod;
                     bool m_fixMethodHasBeenSet;
 
                     /**
                      * 所属规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
                      * 0:未通过 1:忽略 3:通过 5:检测中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_detectStatus;
                     bool m_detectStatusHasBeenSet;
 
                     /**
                      * 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 影响服务器数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hostCount;
                     bool m_hostCountHasBeenSet;
 
                     /**
                      * 首次检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_firstTime;
                     bool m_firstTimeHasBeenSet;
 
                     /**
                      * 最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastTime;
                     bool m_lastTimeHasBeenSet;
 
                     /**
                      * 检测结果,Json字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_detectResult;
                     bool m_detectResultHasBeenSet;
 
                     /**
                      * 所属规则ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
                      * 通过的服务器数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_passedHostCount;
                     bool m_passedHostCountHasBeenSet;
 
                     /**
                      * 未通过的服务器数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_notPassedHostCount;
                     bool m_notPassedHostCountHasBeenSet;

@@ -1115,6 +1115,49 @@ WedataClient::CreateCustomFunctionOutcomeCallable WedataClient::CreateCustomFunc
     return task->get_future();
 }
 
+WedataClient::CreateDataModelOutcome WedataClient::CreateDataModel(const CreateDataModelRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDataModel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDataModelResponse rsp = CreateDataModelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDataModelOutcome(rsp);
+        else
+            return CreateDataModelOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDataModelOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateDataModelAsync(const CreateDataModelRequest& request, const CreateDataModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDataModel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::CreateDataModelOutcomeCallable WedataClient::CreateDataModelCallable(const CreateDataModelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDataModelOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDataModel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::CreateDataSourceOutcome WedataClient::CreateDataSource(const CreateDataSourceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDataSource");
@@ -1839,6 +1882,49 @@ WedataClient::DeleteCustomFunctionOutcomeCallable WedataClient::DeleteCustomFunc
         [this, request]()
         {
             return this->DeleteCustomFunction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DeleteDataModelOutcome WedataClient::DeleteDataModel(const DeleteDataModelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDataModel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDataModelResponse rsp = DeleteDataModelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDataModelOutcome(rsp);
+        else
+            return DeleteDataModelOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDataModelOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteDataModelAsync(const DeleteDataModelRequest& request, const DeleteDataModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDataModel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DeleteDataModelOutcomeCallable WedataClient::DeleteDataModelCallable(const DeleteDataModelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDataModelOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDataModel(request);
         }
     );
 
@@ -10052,6 +10138,49 @@ WedataClient::UnlockIntegrationTaskOutcomeCallable WedataClient::UnlockIntegrati
         [this, request]()
         {
             return this->UnlockIntegrationTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::UpdateDataModelRegistryInfoOutcome WedataClient::UpdateDataModelRegistryInfo(const UpdateDataModelRegistryInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDataModelRegistryInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDataModelRegistryInfoResponse rsp = UpdateDataModelRegistryInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDataModelRegistryInfoOutcome(rsp);
+        else
+            return UpdateDataModelRegistryInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDataModelRegistryInfoOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::UpdateDataModelRegistryInfoAsync(const UpdateDataModelRegistryInfoRequest& request, const UpdateDataModelRegistryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateDataModelRegistryInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::UpdateDataModelRegistryInfoOutcomeCallable WedataClient::UpdateDataModelRegistryInfoCallable(const UpdateDataModelRegistryInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateDataModelRegistryInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateDataModelRegistryInfo(request);
         }
     );
 

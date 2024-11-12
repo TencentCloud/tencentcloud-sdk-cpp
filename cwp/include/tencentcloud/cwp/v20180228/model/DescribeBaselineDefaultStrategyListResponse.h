@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取默认策略基础信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyList 默认策略基础信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DefaultStrategyInfo> GetStrategyList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 默认策略基础信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DefaultStrategyInfo> m_strategyList;
                     bool m_strategyListHasBeenSet;

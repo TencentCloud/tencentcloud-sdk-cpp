@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PendingAttackCount 总攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPendingAttackCount() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总尝试攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PendingTryAttackCount 总尝试攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPendingTryAttackCount() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总攻击成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PendingSuccAttackCount 总攻击成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPendingSuccAttackCount() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取今日新增攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PendingNewAttackCount 今日新增攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPendingNewAttackCount() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总受攻击资产数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackedAssetCount 总受攻击资产数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAttackedAssetCount() const;
@@ -125,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取今日新增受攻击资产数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewAttackedAssetCount 今日新增受攻击资产数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNewAttackedAssetCount() const;
@@ -141,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总受攻击端口数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackedPortCount 总受攻击端口数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAttackedPortCount() const;
@@ -157,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取今日新增受攻击端口数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewAttackedPortCount 今日新增受攻击端口数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNewAttackedPortCount() const;
@@ -173,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总攻击来源ip数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackSrcIpCount 总攻击来源ip数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAttackSrcIpCount() const;
@@ -189,9 +171,7 @@ namespace TencentCloud
 
                     /**
                      * 获取今日新增攻击来源ip数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewAttackSrcIpCount 今日新增攻击来源ip数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNewAttackSrcIpCount() const;
@@ -207,70 +187,60 @@ namespace TencentCloud
 
                     /**
                      * 总攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_pendingAttackCount;
                     bool m_pendingAttackCountHasBeenSet;
 
                     /**
                      * 总尝试攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_pendingTryAttackCount;
                     bool m_pendingTryAttackCountHasBeenSet;
 
                     /**
                      * 总攻击成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_pendingSuccAttackCount;
                     bool m_pendingSuccAttackCountHasBeenSet;
 
                     /**
                      * 今日新增攻击次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_pendingNewAttackCount;
                     bool m_pendingNewAttackCountHasBeenSet;
 
                     /**
                      * 总受攻击资产数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_attackedAssetCount;
                     bool m_attackedAssetCountHasBeenSet;
 
                     /**
                      * 今日新增受攻击资产数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_newAttackedAssetCount;
                     bool m_newAttackedAssetCountHasBeenSet;
 
                     /**
                      * 总受攻击端口数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_attackedPortCount;
                     bool m_attackedPortCountHasBeenSet;
 
                     /**
                      * 今日新增受攻击端口数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_newAttackedPortCount;
                     bool m_newAttackedPortCountHasBeenSet;
 
                     /**
                      * 总攻击来源ip数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_attackSrcIpCount;
                     bool m_attackSrcIpCountHasBeenSet;
 
                     /**
                      * 今日新增攻击来源ip数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_newAttackSrcIpCount;
                     bool m_newAttackSrcIpCountHasBeenSet;

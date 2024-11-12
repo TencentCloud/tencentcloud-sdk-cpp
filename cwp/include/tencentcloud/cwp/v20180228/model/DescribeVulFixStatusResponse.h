@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取开始修复时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixStartTime 开始修复时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFixStartTime() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取修复结束时间，为空表示还没结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixEndTime 修复结束时间，为空表示还没结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFixEndTime() const;
@@ -79,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取修复成功的主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixSuccessCnt 修复成功的主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFixSuccessCnt() const;
@@ -137,9 +131,7 @@ namespace TencentCloud
 
                     /**
                      * 获取修复快照状态列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotList 修复快照状态列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VulFixStatusSnapshotInfo> GetSnapshotList() const;
@@ -153,9 +145,7 @@ namespace TencentCloud
 
                     /**
                      * 获取修复漏洞详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulFixList 修复漏洞详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VulFixStatusInfo> GetVulFixList() const;
@@ -225,9 +215,7 @@ namespace TencentCloud
 
                     /**
                      * 获取快照创建失败数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotFailCnt 快照创建失败数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSnapshotFailCnt() const;
@@ -241,9 +229,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否允许重试 0:不允许 1：允许
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAllowRetry 是否允许重试 0:不允许 1：允许
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsAllowRetry() const;
@@ -259,21 +245,18 @@ namespace TencentCloud
 
                     /**
                      * 开始修复时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fixStartTime;
                     bool m_fixStartTimeHasBeenSet;
 
                     /**
                      * 修复结束时间，为空表示还没结束
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fixEndTime;
                     bool m_fixEndTimeHasBeenSet;
 
                     /**
                      * 修复成功的主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_fixSuccessCnt;
                     bool m_fixSuccessCntHasBeenSet;
@@ -298,14 +281,12 @@ namespace TencentCloud
 
                     /**
                      * 修复快照状态列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VulFixStatusSnapshotInfo> m_snapshotList;
                     bool m_snapshotListHasBeenSet;
 
                     /**
                      * 修复漏洞详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VulFixStatusInfo> m_vulFixList;
                     bool m_vulFixListHasBeenSet;
@@ -336,14 +317,12 @@ namespace TencentCloud
 
                     /**
                      * 快照创建失败数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_snapshotFailCnt;
                     bool m_snapshotFailCntHasBeenSet;
 
                     /**
                      * 是否允许重试 0:不允许 1：允许
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isAllowRetry;
                     bool m_isAllowRetryHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取主机关联核心文件规则数量信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 主机关联核心文件规则数量信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FileTamperRuleCount> GetList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 主机关联核心文件规则数量信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FileTamperRuleCount> m_list;
                     bool m_listHasBeenSet;

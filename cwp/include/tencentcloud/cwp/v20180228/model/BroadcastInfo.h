@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文章名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Title 文章名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置文章名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _title 文章名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跳转位置：0=不跳转，1=文件查杀，2=漏洞扫描，3=安全基线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GotoType 跳转位置：0=不跳转，1=文件查杀，2=漏洞扫描，3=安全基线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetGotoType() const;
 
                     /**
                      * 设置跳转位置：0=不跳转，1=文件查杀，2=漏洞扫描，3=安全基线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gotoType 跳转位置：0=不跳转，1=文件查杀，2=漏洞扫描，3=安全基线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGotoType(const uint64_t& _gotoType);
@@ -205,14 +197,12 @@ namespace TencentCloud
 
                     /**
                      * 文章名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
                      * 跳转位置：0=不跳转，1=文件查杀，2=漏洞扫描，3=安全基线
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_gotoType;
                     bool m_gotoTypeHasBeenSet;

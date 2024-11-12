@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取登录审计列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostLoginList 登录审计列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HostLoginList> GetHostLoginList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 登录审计列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HostLoginList> m_hostLoginList;
                     bool m_hostLoginListHasBeenSet;

@@ -115,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取开始扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanBeginTime 开始扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanBeginTime() const;
@@ -131,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描漏洞数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskEventCount 扫描漏洞数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRiskEventCount() const;
@@ -147,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanEndTime 扫描结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanEndTime() const;
@@ -195,21 +189,18 @@ namespace TencentCloud
 
                     /**
                      * 开始扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanBeginTime;
                     bool m_scanBeginTimeHasBeenSet;
 
                     /**
                      * 扫描漏洞数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_riskEventCount;
                     bool m_riskEventCountHasBeenSet;
 
                     /**
                      * 扫描结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanEndTime;
                     bool m_scanEndTimeHasBeenSet;

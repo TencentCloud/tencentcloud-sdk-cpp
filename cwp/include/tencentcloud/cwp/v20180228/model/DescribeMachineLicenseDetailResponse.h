@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取授权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineLicense 授权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MachineLicenseDetail> GetMachineLicense() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 授权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MachineLicenseDetail> m_machineLicense;
                     bool m_machineLicenseHasBeenSet;
 
                     /**
                      * 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

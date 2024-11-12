@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取影响主机列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulEffectModuleInfo 影响主机列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VulEffectModuleInfo> GetVulEffectModuleInfo() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 影响主机列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VulEffectModuleInfo> m_vulEffectModuleInfo;
                     bool m_vulEffectModuleInfoHasBeenSet;

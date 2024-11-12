@@ -45,8 +45,6 @@
 #include <tencentcloud/iss/v20230517/model/BatchOperateDeviceResponse.h>
 #include <tencentcloud/iss/v20230517/model/CallISAPIRequest.h>
 #include <tencentcloud/iss/v20230517/model/CallISAPIResponse.h>
-#include <tencentcloud/iss/v20230517/model/CheckDomainRequest.h>
-#include <tencentcloud/iss/v20230517/model/CheckDomainResponse.h>
 #include <tencentcloud/iss/v20230517/model/ControlDevicePTZRequest.h>
 #include <tencentcloud/iss/v20230517/model/ControlDevicePTZResponse.h>
 #include <tencentcloud/iss/v20230517/model/ControlDevicePresetRequest.h>
@@ -240,9 +238,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CallISAPIResponse> CallISAPIOutcome;
                 typedef std::future<CallISAPIOutcome> CallISAPIOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::CallISAPIRequest&, CallISAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallISAPIAsyncHandler;
-                typedef Outcome<Core::Error, Model::CheckDomainResponse> CheckDomainOutcome;
-                typedef std::future<CheckDomainOutcome> CheckDomainOutcomeCallable;
-                typedef std::function<void(const IssClient*, const Model::CheckDomainRequest&, CheckDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::ControlDevicePTZResponse> ControlDevicePTZOutcome;
                 typedef std::future<ControlDevicePTZOutcome> ControlDevicePTZOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ControlDevicePTZRequest&, ControlDevicePTZOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlDevicePTZAsyncHandler;
@@ -566,15 +561,6 @@ namespace TencentCloud
                 CallISAPIOutcome CallISAPI(const Model::CallISAPIRequest &request);
                 void CallISAPIAsync(const Model::CallISAPIRequest& request, const CallISAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CallISAPIOutcomeCallable CallISAPICallable(const Model::CallISAPIRequest& request);
-
-                /**
-                 *用于检测域名是否备案。
-                 * @param req CheckDomainRequest
-                 * @return CheckDomainOutcome
-                 */
-                CheckDomainOutcome CheckDomain(const Model::CheckDomainRequest &request);
-                void CheckDomainAsync(const Model::CheckDomainRequest& request, const CheckDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CheckDomainOutcomeCallable CheckDomainCallable(const Model::CheckDomainRequest& request);
 
                 /**
                  *用于设备通道云台控制，包括转动、变倍、变焦、光圈等。

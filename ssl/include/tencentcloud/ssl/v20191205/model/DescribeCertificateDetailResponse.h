@@ -27,6 +27,7 @@
 #include <tencentcloud/ssl/v20191205/model/Tags.h>
 #include <tencentcloud/ssl/v20191205/model/RootCertificates.h>
 #include <tencentcloud/ssl/v20191205/model/DvAuths.h>
+#include <tencentcloud/ssl/v20191205/model/CertBasicInfo.h>
 
 
 namespace TencentCloud
@@ -705,6 +706,22 @@ namespace TencentCloud
                      */
                     bool DvRevokeAuthDetailHasBeenSet() const;
 
+                    /**
+                     * 获取证书链信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CertChainInfo 证书链信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<CertBasicInfo> GetCertChainInfo() const;
+
+                    /**
+                     * 判断参数 CertChainInfo 是否已赋值
+                     * @return CertChainInfo 是否已赋值
+                     * 
+                     */
+                    bool CertChainInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -993,6 +1010,13 @@ namespace TencentCloud
                      */
                     std::vector<DvAuths> m_dvRevokeAuthDetail;
                     bool m_dvRevokeAuthDetailHasBeenSet;
+
+                    /**
+                     * 证书链信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CertBasicInfo> m_certChainInfo;
+                    bool m_certChainInfoHasBeenSet;
 
                 };
             }

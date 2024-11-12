@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前异常插件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 当前异常插件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCount() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 当前异常插件数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;

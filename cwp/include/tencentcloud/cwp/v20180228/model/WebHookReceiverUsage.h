@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接收人id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiverId 接收人id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReceiverId() const;
 
                     /**
                      * 设置接收人id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receiverId 接收人id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReceiverId(const int64_t& _receiverId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接收人名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiverName 接收人名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReceiverName() const;
 
                     /**
                      * 设置接收人名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receiverName 接收人名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReceiverName(const std::string& _receiverName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyName 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyName 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyName(const std::string& _policyName);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 接收人id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_receiverId;
                     bool m_receiverIdHasBeenSet;
 
                     /**
                      * 接收人名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_receiverName;
                     bool m_receiverNameHasBeenSet;
 
                     /**
                      * 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;

@@ -513,49 +513,6 @@ IssClient::CallISAPIOutcomeCallable IssClient::CallISAPICallable(const CallISAPI
     return task->get_future();
 }
 
-IssClient::CheckDomainOutcome IssClient::CheckDomain(const CheckDomainRequest &request)
-{
-    auto outcome = MakeRequest(request, "CheckDomain");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CheckDomainResponse rsp = CheckDomainResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CheckDomainOutcome(rsp);
-        else
-            return CheckDomainOutcome(o.GetError());
-    }
-    else
-    {
-        return CheckDomainOutcome(outcome.GetError());
-    }
-}
-
-void IssClient::CheckDomainAsync(const CheckDomainRequest& request, const CheckDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CheckDomain(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-IssClient::CheckDomainOutcomeCallable IssClient::CheckDomainCallable(const CheckDomainRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CheckDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->CheckDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 IssClient::ControlDevicePTZOutcome IssClient::ControlDevicePTZ(const ControlDevicePTZRequest &request)
 {
     auto outcome = MakeRequest(request, "ControlDevicePTZ");

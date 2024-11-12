@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取事件统计详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Info 事件统计详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScreenEventsCnt> GetInfo() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 事件统计详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScreenEventsCnt> m_info;
                     bool m_infoHasBeenSet;

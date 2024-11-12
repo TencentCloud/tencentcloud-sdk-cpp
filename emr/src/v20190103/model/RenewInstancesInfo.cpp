@@ -29,7 +29,10 @@ RenewInstancesInfo::RenewInstancesInfo() :
     m_diskSizeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_specHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_rootSizeHasBeenSet(false),
+    m_rootStorageTypeHasBeenSet(false),
+    m_mCMultiDiskHasBeenSet(false)
 {
 }
 
@@ -128,6 +131,46 @@ CoreInternalOutcome RenewInstancesInfo::Deserialize(const rapidjson::Value &valu
         m_storageTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("RootSize") && !value["RootSize"].IsNull())
+    {
+        if (!value["RootSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RenewInstancesInfo.RootSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rootSize = value["RootSize"].GetInt64();
+        m_rootSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RootStorageType") && !value["RootStorageType"].IsNull())
+    {
+        if (!value["RootStorageType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RenewInstancesInfo.RootStorageType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rootStorageType = value["RootStorageType"].GetInt64();
+        m_rootStorageTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MCMultiDisk") && !value["MCMultiDisk"].IsNull())
+    {
+        if (!value["MCMultiDisk"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RenewInstancesInfo.MCMultiDisk` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MCMultiDisk"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MultiDiskMC item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_mCMultiDisk.push_back(item);
+        }
+        m_mCMultiDiskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +248,37 @@ void RenewInstancesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "StorageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_storageType, allocator);
+    }
+
+    if (m_rootSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RootSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rootSize, allocator);
+    }
+
+    if (m_rootStorageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RootStorageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rootStorageType, allocator);
+    }
+
+    if (m_mCMultiDiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MCMultiDisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_mCMultiDisk.begin(); itr != m_mCMultiDisk.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -352,5 +426,53 @@ void RenewInstancesInfo::SetStorageType(const int64_t& _storageType)
 bool RenewInstancesInfo::StorageTypeHasBeenSet() const
 {
     return m_storageTypeHasBeenSet;
+}
+
+int64_t RenewInstancesInfo::GetRootSize() const
+{
+    return m_rootSize;
+}
+
+void RenewInstancesInfo::SetRootSize(const int64_t& _rootSize)
+{
+    m_rootSize = _rootSize;
+    m_rootSizeHasBeenSet = true;
+}
+
+bool RenewInstancesInfo::RootSizeHasBeenSet() const
+{
+    return m_rootSizeHasBeenSet;
+}
+
+int64_t RenewInstancesInfo::GetRootStorageType() const
+{
+    return m_rootStorageType;
+}
+
+void RenewInstancesInfo::SetRootStorageType(const int64_t& _rootStorageType)
+{
+    m_rootStorageType = _rootStorageType;
+    m_rootStorageTypeHasBeenSet = true;
+}
+
+bool RenewInstancesInfo::RootStorageTypeHasBeenSet() const
+{
+    return m_rootStorageTypeHasBeenSet;
+}
+
+vector<MultiDiskMC> RenewInstancesInfo::GetMCMultiDisk() const
+{
+    return m_mCMultiDisk;
+}
+
+void RenewInstancesInfo::SetMCMultiDisk(const vector<MultiDiskMC>& _mCMultiDisk)
+{
+    m_mCMultiDisk = _mCMultiDisk;
+    m_mCMultiDiskHasBeenSet = true;
+}
+
+bool RenewInstancesInfo::MCMultiDiskHasBeenSet() const
+{
+    return m_mCMultiDiskHasBeenSet;
 }
 

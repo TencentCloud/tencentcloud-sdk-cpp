@@ -50,22 +50,22 @@ namespace TencentCloud
 
                     /**
                      * 获取人脸框左上角横坐标。
-人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
-若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
+- 人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
+- 若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
                      * @return X 人脸框左上角横坐标。
-人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
-若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
+- 人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
+- 若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
                      * 
                      */
                     int64_t GetX() const;
 
                     /**
                      * 设置人脸框左上角横坐标。
-人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
-若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
+- 人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
+- 若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
                      * @param _x 人脸框左上角横坐标。
-人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
-若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
+- 人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
+- 若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
                      * 
                      */
                     void SetX(const int64_t& _x);
@@ -79,22 +79,22 @@ namespace TencentCloud
 
                     /**
                      * 获取人脸框左上角纵坐标。 
-人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
-若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
+- 人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
+- 若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
                      * @return Y 人脸框左上角纵坐标。 
-人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
-若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
+- 人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
+- 若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
                      * 
                      */
                     int64_t GetY() const;
 
                     /**
                      * 设置人脸框左上角纵坐标。 
-人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
-若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
+- 人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
+- 若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
                      * @param _y 人脸框左上角纵坐标。 
-人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
-若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
+- 人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
+- 若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
                      * 
                      */
                     void SetY(const int64_t& _y);
@@ -149,19 +149,23 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取人脸属性信息，包含性别( gender )、年龄( age )、表情( expression )、 
-魅力( beauty )、眼镜( glass )、口罩（mask）、头发（hair）和姿态 (pitch，roll，yaw )。只有当 NeedFaceAttributes 设为 1 时才返回有效信息。
-                     * @return FaceAttributesInfo 人脸属性信息，包含性别( gender )、年龄( age )、表情( expression )、 
-魅力( beauty )、眼镜( glass )、口罩（mask）、头发（hair）和姿态 (pitch，roll，yaw )。只有当 NeedFaceAttributes 设为 1 时才返回有效信息。
+                     * 获取人脸属性信息。
+- 包含性别( gender )、年龄( age )、表情( expression )、魅力( beauty )、眼镜( glass )、口罩（mask）、头发（hair）和姿态 (pitch，roll，yaw )。
+- 只有当 NeedFaceAttributes 设为 1 时才返回有效信息。
+                     * @return FaceAttributesInfo 人脸属性信息。
+- 包含性别( gender )、年龄( age )、表情( expression )、魅力( beauty )、眼镜( glass )、口罩（mask）、头发（hair）和姿态 (pitch，roll，yaw )。
+- 只有当 NeedFaceAttributes 设为 1 时才返回有效信息。
                      * 
                      */
                     FaceAttributesInfo GetFaceAttributesInfo() const;
 
                     /**
-                     * 设置人脸属性信息，包含性别( gender )、年龄( age )、表情( expression )、 
-魅力( beauty )、眼镜( glass )、口罩（mask）、头发（hair）和姿态 (pitch，roll，yaw )。只有当 NeedFaceAttributes 设为 1 时才返回有效信息。
-                     * @param _faceAttributesInfo 人脸属性信息，包含性别( gender )、年龄( age )、表情( expression )、 
-魅力( beauty )、眼镜( glass )、口罩（mask）、头发（hair）和姿态 (pitch，roll，yaw )。只有当 NeedFaceAttributes 设为 1 时才返回有效信息。
+                     * 设置人脸属性信息。
+- 包含性别( gender )、年龄( age )、表情( expression )、魅力( beauty )、眼镜( glass )、口罩（mask）、头发（hair）和姿态 (pitch，roll，yaw )。
+- 只有当 NeedFaceAttributes 设为 1 时才返回有效信息。
+                     * @param _faceAttributesInfo 人脸属性信息。
+- 包含性别( gender )、年龄( age )、表情( expression )、魅力( beauty )、眼镜( glass )、口罩（mask）、头发（hair）和姿态 (pitch，roll，yaw )。
+- 只有当 NeedFaceAttributes 设为 1 时才返回有效信息。
                      * 
                      */
                     void SetFaceAttributesInfo(const FaceAttributesInfo& _faceAttributesInfo);
@@ -174,18 +178,26 @@ namespace TencentCloud
                     bool FaceAttributesInfoHasBeenSet() const;
 
                     /**
-                     * 获取人脸质量信息，包含质量分（score）、模糊分（sharpness）、光照分（brightness）、遮挡分（completeness）。只有当NeedFaceDetection设为1时才返回有效信息。
+                     * 获取人脸质量信息。
+- 包含质量分（score）、模糊分（sharpness）、光照分（brightness）、遮挡分（completeness）。
+- 只有当NeedFaceDetection设为1时才返回有效信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FaceQualityInfo 人脸质量信息，包含质量分（score）、模糊分（sharpness）、光照分（brightness）、遮挡分（completeness）。只有当NeedFaceDetection设为1时才返回有效信息。
+                     * @return FaceQualityInfo 人脸质量信息。
+- 包含质量分（score）、模糊分（sharpness）、光照分（brightness）、遮挡分（completeness）。
+- 只有当NeedFaceDetection设为1时才返回有效信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FaceQualityInfo GetFaceQualityInfo() const;
 
                     /**
-                     * 设置人脸质量信息，包含质量分（score）、模糊分（sharpness）、光照分（brightness）、遮挡分（completeness）。只有当NeedFaceDetection设为1时才返回有效信息。
+                     * 设置人脸质量信息。
+- 包含质量分（score）、模糊分（sharpness）、光照分（brightness）、遮挡分（completeness）。
+- 只有当NeedFaceDetection设为1时才返回有效信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _faceQualityInfo 人脸质量信息，包含质量分（score）、模糊分（sharpness）、光照分（brightness）、遮挡分（completeness）。只有当NeedFaceDetection设为1时才返回有效信息。
+                     * @param _faceQualityInfo 人脸质量信息。
+- 包含质量分（score）、模糊分（sharpness）、光照分（brightness）、遮挡分（completeness）。
+- 只有当NeedFaceDetection设为1时才返回有效信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -202,16 +214,16 @@ namespace TencentCloud
 
                     /**
                      * 人脸框左上角横坐标。
-人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
-若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
+- 人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
+- 若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
                      */
                     int64_t m_x;
                     bool m_xHasBeenSet;
 
                     /**
                      * 人脸框左上角纵坐标。 
-人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
-若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
+- 人脸框包含人脸五官位置并在此基础上进行一定的扩展，若人脸框超出图片范围，会导致坐标负值。 
+- 若需截取完整人脸，可以在完整分completeness满足需求的情况下，将负值坐标取0。
                      */
                     int64_t m_y;
                     bool m_yHasBeenSet;
@@ -229,14 +241,17 @@ namespace TencentCloud
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 人脸属性信息，包含性别( gender )、年龄( age )、表情( expression )、 
-魅力( beauty )、眼镜( glass )、口罩（mask）、头发（hair）和姿态 (pitch，roll，yaw )。只有当 NeedFaceAttributes 设为 1 时才返回有效信息。
+                     * 人脸属性信息。
+- 包含性别( gender )、年龄( age )、表情( expression )、魅力( beauty )、眼镜( glass )、口罩（mask）、头发（hair）和姿态 (pitch，roll，yaw )。
+- 只有当 NeedFaceAttributes 设为 1 时才返回有效信息。
                      */
                     FaceAttributesInfo m_faceAttributesInfo;
                     bool m_faceAttributesInfoHasBeenSet;
 
                     /**
-                     * 人脸质量信息，包含质量分（score）、模糊分（sharpness）、光照分（brightness）、遮挡分（completeness）。只有当NeedFaceDetection设为1时才返回有效信息。
+                     * 人脸质量信息。
+- 包含质量分（score）、模糊分（sharpness）、光照分（brightness）、遮挡分（completeness）。
+- 只有当NeedFaceDetection设为1时才返回有效信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FaceQualityInfo m_faceQualityInfo;

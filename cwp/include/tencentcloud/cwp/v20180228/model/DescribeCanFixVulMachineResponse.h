@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取主机漏洞修护信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulInfo 主机漏洞修护信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CanFixVulInfo> GetVulInfo() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 主机漏洞修护信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CanFixVulInfo> m_vulInfo;
                     bool m_vulInfoHasBeenSet;

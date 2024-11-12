@@ -599,49 +599,6 @@ CwpClient::CreateBuyBindTaskOutcomeCallable CwpClient::CreateBuyBindTaskCallable
     return task->get_future();
 }
 
-CwpClient::CreateCloudProtectServiceOrderRecordOutcome CwpClient::CreateCloudProtectServiceOrderRecord(const CreateCloudProtectServiceOrderRecordRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateCloudProtectServiceOrderRecord");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateCloudProtectServiceOrderRecordResponse rsp = CreateCloudProtectServiceOrderRecordResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateCloudProtectServiceOrderRecordOutcome(rsp);
-        else
-            return CreateCloudProtectServiceOrderRecordOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateCloudProtectServiceOrderRecordOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::CreateCloudProtectServiceOrderRecordAsync(const CreateCloudProtectServiceOrderRecordRequest& request, const CreateCloudProtectServiceOrderRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCloudProtectServiceOrderRecord(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::CreateCloudProtectServiceOrderRecordOutcomeCallable CwpClient::CreateCloudProtectServiceOrderRecordCallable(const CreateCloudProtectServiceOrderRecordRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateCloudProtectServiceOrderRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCloudProtectServiceOrderRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CwpClient::CreateEmergencyVulScanOutcome CwpClient::CreateEmergencyVulScan(const CreateEmergencyVulScanRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateEmergencyVulScan");

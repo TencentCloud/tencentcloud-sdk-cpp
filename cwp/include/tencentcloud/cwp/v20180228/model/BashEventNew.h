@@ -322,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0: bash日志 1: 实时监控(雷霆版)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectBy 0: bash日志 1: 实时监控(雷霆版)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDetectBy() const;
 
                     /**
                      * 设置0: bash日志 1: 实时监控(雷霆版)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detectBy 0: bash日志 1: 实时监控(雷霆版)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetectBy(const uint64_t& _detectBy);
@@ -347,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pid 进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPid() const;
 
                     /**
                      * 设置进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pid 进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPid(const std::string& _pid);
@@ -372,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Exe 进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExe() const;
 
                     /**
                      * 设置进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exe 进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExe(const std::string& _exe);
@@ -397,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -422,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则类别  0=系统规则，1=用户规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleCategory 规则类别  0=系统规则，1=用户规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRuleCategory() const;
 
                     /**
                      * 设置规则类别  0=系统规则，1=用户规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleCategory 规则类别  0=系统规则，1=用户规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleCategory(const uint64_t& _ruleCategory);
@@ -447,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动生成的正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegexBashCmd 自动生成的正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegexBashCmd() const;
 
                     /**
                      * 设置自动生成的正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regexBashCmd 自动生成的正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegexBashCmd(const std::string& _regexBashCmd);
@@ -472,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0:普通 1:专业版 2:旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineType 0:普通 1:专业版 2:旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMachineType() const;
 
                     /**
                      * 设置0:普通 1:专业版 2:旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineType 0:普通 1:专业版 2:旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineType(const int64_t& _machineType);
@@ -497,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 机器额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置机器额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineExtraInfo 机器额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
@@ -602,56 +570,48 @@ namespace TencentCloud
 
                     /**
                      * 0: bash日志 1: 实时监控(雷霆版)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_detectBy;
                     bool m_detectByHasBeenSet;
 
                     /**
                      * 进程id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pid;
                     bool m_pidHasBeenSet;
 
                     /**
                      * 进程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exe;
                     bool m_exeHasBeenSet;
 
                     /**
                      * 处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 规则类别  0=系统规则，1=用户规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleCategory;
                     bool m_ruleCategoryHasBeenSet;
 
                     /**
                      * 自动生成的正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regexBashCmd;
                     bool m_regexBashCmdHasBeenSet;
 
                     /**
                      * 0:普通 1:专业版 2:旗舰版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
                      * 机器额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;

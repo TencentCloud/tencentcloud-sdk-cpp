@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击溯源节点描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nodes 攻击溯源节点描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AttackSourceNode> GetNodes() const;
 
                     /**
                      * 设置攻击溯源节点描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodes 攻击溯源节点描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodes(const std::vector<AttackSourceNode>& _nodes);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击溯源节点路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Edges 攻击溯源节点路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AttackSourceEdge> GetEdges() const;
 
                     /**
                      * 设置攻击溯源节点路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _edges 攻击溯源节点路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEdges(const std::vector<AttackSourceEdge>& _edges);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取请求节点相关事件详情的参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventInfoParam 请求节点相关事件详情的参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventInfoParam() const;
 
                     /**
                      * 设置请求节点相关事件详情的参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventInfoParam 请求节点相关事件详情的参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventInfoParam(const std::string& _eventInfoParam);
@@ -127,21 +115,18 @@ namespace TencentCloud
 
                     /**
                      * 攻击溯源节点描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AttackSourceNode> m_nodes;
                     bool m_nodesHasBeenSet;
 
                     /**
                      * 攻击溯源节点路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AttackSourceEdge> m_edges;
                     bool m_edgesHasBeenSet;
 
                     /**
                      * 请求节点相关事件详情的参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventInfoParam;
                     bool m_eventInfoParamHasBeenSet;

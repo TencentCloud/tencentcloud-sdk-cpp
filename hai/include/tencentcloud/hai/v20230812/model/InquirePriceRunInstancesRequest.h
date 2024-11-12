@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/hai/v20230812/model/SystemDisk.h>
+#include <tencentcloud/hai/v20230812/model/InstanceChargePrepaid.h>
 
 
 namespace TencentCloud
@@ -190,6 +191,48 @@ namespace TencentCloud
                      */
                     bool DryRunHasBeenSet() const;
 
+                    /**
+                     * 获取付费方式，POSTPAID_BY_HOUR按量后付费，PREPAID_BY_MONTH预付费按月，PREPAID_BY_DAY预付费按天
+                     * @return InstanceChargeType 付费方式，POSTPAID_BY_HOUR按量后付费，PREPAID_BY_MONTH预付费按月，PREPAID_BY_DAY预付费按天
+                     * 
+                     */
+                    std::string GetInstanceChargeType() const;
+
+                    /**
+                     * 设置付费方式，POSTPAID_BY_HOUR按量后付费，PREPAID_BY_MONTH预付费按月，PREPAID_BY_DAY预付费按天
+                     * @param _instanceChargeType 付费方式，POSTPAID_BY_HOUR按量后付费，PREPAID_BY_MONTH预付费按月，PREPAID_BY_DAY预付费按天
+                     * 
+                     */
+                    void SetInstanceChargeType(const std::string& _instanceChargeType);
+
+                    /**
+                     * 判断参数 InstanceChargeType 是否已赋值
+                     * @return InstanceChargeType 是否已赋值
+                     * 
+                     */
+                    bool InstanceChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取预付费参数
+                     * @return InstanceChargePrepaid 预付费参数
+                     * 
+                     */
+                    InstanceChargePrepaid GetInstanceChargePrepaid() const;
+
+                    /**
+                     * 设置预付费参数
+                     * @param _instanceChargePrepaid 预付费参数
+                     * 
+                     */
+                    void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
+
+                    /**
+                     * 判断参数 InstanceChargePrepaid 是否已赋值
+                     * @return InstanceChargePrepaid 是否已赋值
+                     * 
+                     */
+                    bool InstanceChargePrepaidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +276,18 @@ namespace TencentCloud
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
+
+                    /**
+                     * 付费方式，POSTPAID_BY_HOUR按量后付费，PREPAID_BY_MONTH预付费按月，PREPAID_BY_DAY预付费按天
+                     */
+                    std::string m_instanceChargeType;
+                    bool m_instanceChargeTypeHasBeenSet;
+
+                    /**
+                     * 预付费参数
+                     */
+                    InstanceChargePrepaid m_instanceChargePrepaid;
+                    bool m_instanceChargePrepaidHasBeenSet;
 
                 };
             }

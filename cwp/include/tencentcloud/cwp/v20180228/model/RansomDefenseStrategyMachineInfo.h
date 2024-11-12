@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定硬盘列表，为空时表示所有硬盘：disk_id1|disk_name1;disk_id2|disk_name2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskInfo 指定硬盘列表，为空时表示所有硬盘：disk_id1|disk_name1;disk_id2|disk_name2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskInfo() const;
 
                     /**
                      * 设置指定硬盘列表，为空时表示所有硬盘：disk_id1|disk_name1;disk_id2|disk_name2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskInfo 指定硬盘列表，为空时表示所有硬盘：disk_id1|disk_name1;disk_id2|disk_name2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskInfo(const std::string& _diskInfo);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 指定硬盘列表，为空时表示所有硬盘：disk_id1|disk_name1;disk_id2|disk_name2
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskInfo;
                     bool m_diskInfoHasBeenSet;

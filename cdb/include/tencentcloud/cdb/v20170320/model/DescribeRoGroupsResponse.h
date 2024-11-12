@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取RO组信息数组，一个实例可关联多个RO组。
-                     * @return RoGroups RO组信息数组，一个实例可关联多个RO组。
+                     * 获取RO 组信息数组，一个实例可关联多个 RO 组。
+                     * @return RoGroups RO 组信息数组，一个实例可关联多个 RO 组。
                      * 
                      */
                     std::vector<RoGroup> GetRoGroups() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * RO组信息数组，一个实例可关联多个RO组。
+                     * RO 组信息数组，一个实例可关联多个 RO 组。
                      */
                     std::vector<RoGroup> m_roGroups;
                     bool m_roGroupsHasBeenSet;

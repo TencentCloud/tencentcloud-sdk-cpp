@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Keepalived安装命令
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeepAliveCommand Keepalived安装命令
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeepAliveCommand() const;
@@ -83,7 +81,6 @@ namespace TencentCloud
 
                     /**
                      * Keepalived安装命令
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keepAliveCommand;
                     bool m_keepAliveCommandHasBeenSet;

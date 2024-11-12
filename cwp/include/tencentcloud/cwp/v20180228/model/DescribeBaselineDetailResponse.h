@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取基线详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BaselineDetail 基线详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaselineDetail GetBaselineDetail() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 基线详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaselineDetail m_baselineDetail;
                     bool m_baselineDetailHasBeenSet;

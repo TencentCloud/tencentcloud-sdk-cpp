@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取导出文件下载地址（已弃用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadUrl 导出文件下载地址（已弃用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDownloadUrl() const;
@@ -77,7 +75,6 @@ namespace TencentCloud
 
                     /**
                      * 导出文件下载地址（已弃用）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_downloadUrl;
                     bool m_downloadUrlHasBeenSet;

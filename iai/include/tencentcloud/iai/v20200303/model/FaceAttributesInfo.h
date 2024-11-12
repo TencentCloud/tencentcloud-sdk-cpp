@@ -49,15 +49,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取性别[0~49]为女性，[50，100]为男性，越接近0和100表示置信度越高。NeedFaceAttributes 不为 1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @return Gender 性别[0~49]为女性，[50，100]为男性，越接近0和100表示置信度越高。NeedFaceAttributes 不为 1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 获取性别。
+- 取值说明：[0~49]为女性，[50，100]为男性，越接近0和100表示置信度越高。
+- NeedFaceAttributes 不为 1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @return Gender 性别。
+- 取值说明：[0~49]为女性，[50，100]为男性，越接近0和100表示置信度越高。
+- NeedFaceAttributes 不为 1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * 
                      */
                     int64_t GetGender() const;
 
                     /**
-                     * 设置性别[0~49]为女性，[50，100]为男性，越接近0和100表示置信度越高。NeedFaceAttributes 不为 1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param _gender 性别[0~49]为女性，[50，100]为男性，越接近0和100表示置信度越高。NeedFaceAttributes 不为 1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 设置性别。
+- 取值说明：[0~49]为女性，[50，100]为男性，越接近0和100表示置信度越高。
+- NeedFaceAttributes 不为 1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @param _gender 性别。
+- 取值说明：[0~49]为女性，[50，100]为男性，越接近0和100表示置信度越高。
+- NeedFaceAttributes 不为 1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * 
                      */
                     void SetGender(const int64_t& _gender);
@@ -70,15 +78,23 @@ namespace TencentCloud
                     bool GenderHasBeenSet() const;
 
                     /**
-                     * 获取年龄 [0~100]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @return Age 年龄 [0~100]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 获取年龄 。
+- 取值范围：[0~100]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @return Age 年龄 。
+- 取值范围：[0~100]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * 
                      */
                     int64_t GetAge() const;
 
                     /**
-                     * 设置年龄 [0~100]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param _age 年龄 [0~100]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 设置年龄 。
+- 取值范围：[0~100]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @param _age 年龄 。
+- 取值范围：[0~100]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * 
                      */
                     void SetAge(const int64_t& _age);
@@ -91,15 +107,23 @@ namespace TencentCloud
                     bool AgeHasBeenSet() const;
 
                     /**
-                     * 获取微笑[0(normal，正常)~100(laugh，大笑)]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @return Expression 微笑[0(normal，正常)~100(laugh，大笑)]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 获取微笑。
+- 取值说明：[0(normal，正常)~100(laugh，大笑)]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @return Expression 微笑。
+- 取值说明：[0(normal，正常)~100(laugh，大笑)]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * 
                      */
                     int64_t GetExpression() const;
 
                     /**
-                     * 设置微笑[0(normal，正常)~100(laugh，大笑)]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param _expression 微笑[0(normal，正常)~100(laugh，大笑)]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 设置微笑。
+- 取值说明：[0(normal，正常)~100(laugh，大笑)]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @param _expression 微笑。
+- 取值说明：[0(normal，正常)~100(laugh，大笑)]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * 
                      */
                     void SetExpression(const int64_t& _expression);
@@ -112,15 +136,23 @@ namespace TencentCloud
                     bool ExpressionHasBeenSet() const;
 
                     /**
-                     * 获取是否有眼镜 [true,false]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @return Glass 是否有眼镜 [true,false]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 获取是否有眼镜。
+- 取值范围： [true,false]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @return Glass 是否有眼镜。
+- 取值范围： [true,false]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * 
                      */
                     bool GetGlass() const;
 
                     /**
-                     * 设置是否有眼镜 [true,false]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param _glass 是否有眼镜 [true,false]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 设置是否有眼镜。
+- 取值范围： [true,false]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @param _glass 是否有眼镜。
+- 取值范围： [true,false]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * 
                      */
                     void SetGlass(const bool& _glass);
@@ -133,19 +165,27 @@ namespace TencentCloud
                     bool GlassHasBeenSet() const;
 
                     /**
-                     * 获取上下偏移[-30,30]，单位角度。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
-建议：人脸入库选择[-10,10]的图片。
-                     * @return Pitch 上下偏移[-30,30]，单位角度。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
-建议：人脸入库选择[-10,10]的图片。
+                     * 获取上下偏移。
+- 取值范围：[-30,30]，单位角度。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+- 建议：人脸入库选择[-10,10]的图片。
+                     * @return Pitch 上下偏移。
+- 取值范围：[-30,30]，单位角度。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+- 建议：人脸入库选择[-10,10]的图片。
                      * 
                      */
                     int64_t GetPitch() const;
 
                     /**
-                     * 设置上下偏移[-30,30]，单位角度。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
-建议：人脸入库选择[-10,10]的图片。
-                     * @param _pitch 上下偏移[-30,30]，单位角度。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
-建议：人脸入库选择[-10,10]的图片。
+                     * 设置上下偏移。
+- 取值范围：[-30,30]，单位角度。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+- 建议：人脸入库选择[-10,10]的图片。
+                     * @param _pitch 上下偏移。
+- 取值范围：[-30,30]，单位角度。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+- 建议：人脸入库选择[-10,10]的图片。
                      * 
                      */
                     void SetPitch(const int64_t& _pitch);
@@ -158,19 +198,27 @@ namespace TencentCloud
                     bool PitchHasBeenSet() const;
 
                     /**
-                     * 获取左右偏移[-30,30]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
-建议：人脸入库选择[-10,10]的图片。
-                     * @return Yaw 左右偏移[-30,30]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
-建议：人脸入库选择[-10,10]的图片。
+                     * 获取左右偏移。
+- 取值范围：[-30,30]，单位角度。 
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+- 建议：人脸入库选择[-10,10]的图片。
+                     * @return Yaw 左右偏移。
+- 取值范围：[-30,30]，单位角度。 
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+- 建议：人脸入库选择[-10,10]的图片。
                      * 
                      */
                     int64_t GetYaw() const;
 
                     /**
-                     * 设置左右偏移[-30,30]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
-建议：人脸入库选择[-10,10]的图片。
-                     * @param _yaw 左右偏移[-30,30]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
-建议：人脸入库选择[-10,10]的图片。
+                     * 设置左右偏移。
+- 取值范围：[-30,30]，单位角度。 
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+- 建议：人脸入库选择[-10,10]的图片。
+                     * @param _yaw 左右偏移。
+- 取值范围：[-30,30]，单位角度。 
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+- 建议：人脸入库选择[-10,10]的图片。
                      * 
                      */
                     void SetYaw(const int64_t& _yaw);
@@ -183,19 +231,27 @@ namespace TencentCloud
                     bool YawHasBeenSet() const;
 
                     /**
-                     * 获取平面旋转[-180,180]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
-建议：人脸入库选择[-20,20]的图片。
-                     * @return Roll 平面旋转[-180,180]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
-建议：人脸入库选择[-20,20]的图片。
+                     * 获取平面旋转。
+- 取值范围：[-180,180]，单位角度。 
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
+- 建议：人脸入库选择[-20,20]的图片。
+                     * @return Roll 平面旋转。
+- 取值范围：[-180,180]，单位角度。 
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
+- 建议：人脸入库选择[-20,20]的图片。
                      * 
                      */
                     int64_t GetRoll() const;
 
                     /**
-                     * 设置平面旋转[-180,180]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
-建议：人脸入库选择[-20,20]的图片。
-                     * @param _roll 平面旋转[-180,180]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
-建议：人脸入库选择[-20,20]的图片。
+                     * 设置平面旋转。
+- 取值范围：[-180,180]，单位角度。 
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
+- 建议：人脸入库选择[-20,20]的图片。
+                     * @param _roll 平面旋转。
+- 取值范围：[-180,180]，单位角度。 
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
+- 建议：人脸入库选择[-20,20]的图片。
                      * 
                      */
                     void SetRoll(const int64_t& _roll);
@@ -208,15 +264,23 @@ namespace TencentCloud
                     bool RollHasBeenSet() const;
 
                     /**
-                     * 获取魅力[0~100]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @return Beauty 魅力[0~100]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 获取魅力。
+- 取值范围：[0~100]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @return Beauty 魅力。
+- 取值范围：[0~100]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * 
                      */
                     int64_t GetBeauty() const;
 
                     /**
-                     * 设置魅力[0~100]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param _beauty 魅力[0~100]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 设置魅力。
+- 取值范围：[0~100]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @param _beauty 魅力。
+- 取值范围：[0~100]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * 
                      */
                     void SetBeauty(const int64_t& _beauty);
@@ -229,18 +293,26 @@ namespace TencentCloud
                     bool BeautyHasBeenSet() const;
 
                     /**
-                     * 获取是否有帽子 [true,false]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 获取是否有帽子。
+- 取值范围： [true,false]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Hat 是否有帽子 [true,false]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @return Hat 是否有帽子。
+- 取值范围： [true,false]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHat() const;
 
                     /**
-                     * 设置是否有帽子 [true,false]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 设置是否有帽子。
+- 取值范围： [true,false]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hat 是否有帽子 [true,false]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @param _hat 是否有帽子。
+- 取值范围： [true,false]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -254,18 +326,26 @@ namespace TencentCloud
                     bool HatHasBeenSet() const;
 
                     /**
-                     * 获取是否有口罩 [true,false]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 获取是否有口罩。
+- 取值范围： [true,false]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mask 是否有口罩 [true,false]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @return Mask 是否有口罩。
+- 取值范围： [true,false]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetMask() const;
 
                     /**
-                     * 设置是否有口罩 [true,false]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 设置是否有口罩。
+- 取值范围： [true,false]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mask 是否有口罩 [true,false]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @param _mask 是否有口罩。
+- 取值范围： [true,false]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -279,18 +359,22 @@ namespace TencentCloud
                     bool MaskHasBeenSet() const;
 
                     /**
-                     * 获取头发信息，包含头发长度（length）、有无刘海（bang）、头发颜色（color）。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 获取头发信息，包含头发长度（length）、有无刘海（bang）、头发颜色（color）。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Hair 头发信息，包含头发长度（length）、有无刘海（bang）、头发颜色（color）。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @return Hair 头发信息，包含头发长度（length）、有无刘海（bang）、头发颜色（color）。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FaceHairAttributesInfo GetHair() const;
 
                     /**
-                     * 设置头发信息，包含头发长度（length）、有无刘海（bang）、头发颜色（color）。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 设置头发信息，包含头发长度（length）、有无刘海（bang）、头发颜色（color）。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hair 头发信息，包含头发长度（length）、有无刘海（bang）、头发颜色（color）。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @param _hair 头发信息，包含头发长度（length）、有无刘海（bang）、头发颜色（color）。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -304,18 +388,30 @@ namespace TencentCloud
                     bool HairHasBeenSet() const;
 
                     /**
-                     * 获取双眼是否睁开 [true,false]。只要有超过一只眼睛闭眼，就返回false。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 获取双眼是否睁开。
+- 取值范围： [true,false]。
+- 只要有超过一只眼睛闭眼，就返回false。
+-  NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EyeOpen 双眼是否睁开 [true,false]。只要有超过一只眼睛闭眼，就返回false。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @return EyeOpen 双眼是否睁开。
+- 取值范围： [true,false]。
+- 只要有超过一只眼睛闭眼，就返回false。
+-  NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEyeOpen() const;
 
                     /**
-                     * 设置双眼是否睁开 [true,false]。只要有超过一只眼睛闭眼，就返回false。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 设置双眼是否睁开。
+- 取值范围： [true,false]。
+- 只要有超过一只眼睛闭眼，就返回false。
+-  NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _eyeOpen 双眼是否睁开 [true,false]。只要有超过一只眼睛闭眼，就返回false。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * @param _eyeOpen 双眼是否睁开。
+- 取值范围： [true,false]。
+- 只要有超过一只眼睛闭眼，就返回false。
+-  NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -331,79 +427,103 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 性别[0~49]为女性，[50，100]为男性，越接近0和100表示置信度越高。NeedFaceAttributes 不为 1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 性别。
+- 取值说明：[0~49]为女性，[50，100]为男性，越接近0和100表示置信度越高。
+- NeedFaceAttributes 不为 1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      */
                     int64_t m_gender;
                     bool m_genderHasBeenSet;
 
                     /**
-                     * 年龄 [0~100]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 年龄 。
+- 取值范围：[0~100]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      */
                     int64_t m_age;
                     bool m_ageHasBeenSet;
 
                     /**
-                     * 微笑[0(normal，正常)~100(laugh，大笑)]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 微笑。
+- 取值说明：[0(normal，正常)~100(laugh，大笑)]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      */
                     int64_t m_expression;
                     bool m_expressionHasBeenSet;
 
                     /**
-                     * 是否有眼镜 [true,false]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 是否有眼镜。
+- 取值范围： [true,false]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      */
                     bool m_glass;
                     bool m_glassHasBeenSet;
 
                     /**
-                     * 上下偏移[-30,30]，单位角度。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
-建议：人脸入库选择[-10,10]的图片。
+                     * 上下偏移。
+- 取值范围：[-30,30]，单位角度。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+- 建议：人脸入库选择[-10,10]的图片。
                      */
                     int64_t m_pitch;
                     bool m_pitchHasBeenSet;
 
                     /**
-                     * 左右偏移[-30,30]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
-建议：人脸入库选择[-10,10]的图片。
+                     * 左右偏移。
+- 取值范围：[-30,30]，单位角度。 
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。 
+- 建议：人脸入库选择[-10,10]的图片。
                      */
                     int64_t m_yaw;
                     bool m_yawHasBeenSet;
 
                     /**
-                     * 平面旋转[-180,180]，单位角度。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
-建议：人脸入库选择[-20,20]的图片。
+                     * 平面旋转。
+- 取值范围：[-180,180]，单位角度。 
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。  
+- 建议：人脸入库选择[-20,20]的图片。
                      */
                     int64_t m_roll;
                     bool m_rollHasBeenSet;
 
                     /**
-                     * 魅力[0~100]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 魅力。
+- 取值范围：[0~100]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      */
                     int64_t m_beauty;
                     bool m_beautyHasBeenSet;
 
                     /**
-                     * 是否有帽子 [true,false]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 是否有帽子。
+- 取值范围： [true,false]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hat;
                     bool m_hatHasBeenSet;
 
                     /**
-                     * 是否有口罩 [true,false]。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 是否有口罩。
+- 取值范围： [true,false]。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_mask;
                     bool m_maskHasBeenSet;
 
                     /**
-                     * 头发信息，包含头发长度（length）、有无刘海（bang）、头发颜色（color）。NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 头发信息，包含头发长度（length）、有无刘海（bang）、头发颜色（color）。
+- NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FaceHairAttributesInfo m_hair;
                     bool m_hairHasBeenSet;
 
                     /**
-                     * 双眼是否睁开 [true,false]。只要有超过一只眼睛闭眼，就返回false。 NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 双眼是否睁开。
+- 取值范围： [true,false]。
+- 只要有超过一只眼睛闭眼，就返回false。
+-  NeedFaceAttributes 不为1 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_eyeOpen;

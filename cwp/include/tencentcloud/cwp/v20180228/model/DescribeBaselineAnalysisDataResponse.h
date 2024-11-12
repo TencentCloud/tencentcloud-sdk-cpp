@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestScanTime 最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestScanTime() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否全部服务器：1-是 0-否
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsGlobal 是否全部服务器：1-是 0-否
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsGlobal() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取服务器总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanHostCount 服务器总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScanHostCount() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取检测项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanRuleCount 检测项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScanRuleCount() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是第一次检测  1是 0不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IfFirstScan 是否是第一次检测  1是 0不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIfFirstScan() const;
@@ -127,35 +117,30 @@ namespace TencentCloud
 
                     /**
                      * 最后检测时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestScanTime;
                     bool m_latestScanTimeHasBeenSet;
 
                     /**
                      * 是否全部服务器：1-是 0-否
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isGlobal;
                     bool m_isGlobalHasBeenSet;
 
                     /**
                      * 服务器总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scanHostCount;
                     bool m_scanHostCountHasBeenSet;
 
                     /**
                      * 检测项总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scanRuleCount;
                     bool m_scanRuleCountHasBeenSet;
 
                     /**
                      * 是否是第一次检测  1是 0不是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ifFirstScan;
                     bool m_ifFirstScanHasBeenSet;

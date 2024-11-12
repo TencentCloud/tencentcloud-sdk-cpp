@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @return InstanceId 实例ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 获取实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param _instanceId 实例ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 设置实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool SundayHasBeenSet() const;
 
                     /**
-                     * 获取最大延迟阈值，仅对主实例和灾备实例有效
-                     * @return MaxDelayTime 最大延迟阈值，仅对主实例和灾备实例有效
+                     * 获取最大延迟阈值，仅对主实例和灾备实例有效。
+                     * @return MaxDelayTime 最大延迟阈值，仅对主实例和灾备实例有效。
                      * 
                      */
                     uint64_t GetMaxDelayTime() const;
 
                     /**
-                     * 设置最大延迟阈值，仅对主实例和灾备实例有效
-                     * @param _maxDelayTime 最大延迟阈值，仅对主实例和灾备实例有效
+                     * 设置最大延迟阈值，仅对主实例和灾备实例有效。
+                     * @param _maxDelayTime 最大延迟阈值，仅对主实例和灾备实例有效。
                      * 
                      */
                     void SetMaxDelayTime(const uint64_t& _maxDelayTime);
@@ -234,7 +234,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -282,7 +282,7 @@ namespace TencentCloud
                     bool m_sundayHasBeenSet;
 
                     /**
-                     * 最大延迟阈值，仅对主实例和灾备实例有效
+                     * 最大延迟阈值，仅对主实例和灾备实例有效。
                      */
                     uint64_t m_maxDelayTime;
                     bool m_maxDelayTimeHasBeenSet;

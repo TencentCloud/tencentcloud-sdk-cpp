@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取白名单所属机器。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uuid 白名单所属机器。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置白名单所属机器。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uuid 白名单所属机器。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取白名单是否全局
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsGlobal 白名单是否全局
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsGlobal() const;
 
                     /**
                      * 设置白名单是否全局
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isGlobal 白名单是否全局
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsGlobal(const bool& _isGlobal);
@@ -203,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取白名单所属机器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuids 白名单所属机器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetQuuids() const;
 
                     /**
                      * 设置白名单所属机器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quuids 白名单所属机器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuuids(const std::vector<std::string>& _quuids);
@@ -260,21 +248,18 @@ namespace TencentCloud
 
                     /**
                      * 白名单所属机器。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
                      * 白名单是否全局
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isGlobal;
                     bool m_isGlobalHasBeenSet;
 
                     /**
                      * 白名单所属机器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_quuids;
                     bool m_quuidsHasBeenSet;

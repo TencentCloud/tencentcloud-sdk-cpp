@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人员名称
-                     * @return PersonName 人员名称
+                     * 获取人员名称。
+                     * @return PersonName 人员名称。
                      * 
                      */
                     std::string GetPersonName() const;
 
                     /**
-                     * 设置人员名称
-                     * @param _personName 人员名称
+                     * 设置人员名称。
+                     * @param _personName 人员名称。
                      * 
                      */
                     void SetPersonName(const std::string& _personName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PersonNameHasBeenSet() const;
 
                     /**
-                     * 获取人员Id
-                     * @return PersonId 人员Id
+                     * 获取人员Id。
+                     * @return PersonId 人员Id。
                      * 
                      */
                     std::string GetPersonId() const;
 
                     /**
-                     * 设置人员Id
-                     * @param _personId 人员Id
+                     * 设置人员Id。
+                     * @param _personId 人员Id。
                      * 
                      */
                     void SetPersonId(const std::string& _personId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PersonIdHasBeenSet() const;
 
                     /**
-                     * 获取人员性别
-                     * @return Gender 人员性别
+                     * 获取人员性别。
+                     * @return Gender 人员性别。
                      * 
                      */
                     int64_t GetGender() const;
 
                     /**
-                     * 设置人员性别
-                     * @param _gender 人员性别
+                     * 设置人员性别。
+                     * @param _gender 人员性别。
                      * 
                      */
                     void SetGender(const int64_t& _gender);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool GenderHasBeenSet() const;
 
                     /**
-                     * 获取人员描述字段内容
-                     * @return PersonExDescriptions 人员描述字段内容
+                     * 获取人员描述字段内容。
+                     * @return PersonExDescriptions 人员描述字段内容。
                      * 
                      */
                     std::vector<std::string> GetPersonExDescriptions() const;
 
                     /**
-                     * 设置人员描述字段内容
-                     * @param _personExDescriptions 人员描述字段内容
+                     * 设置人员描述字段内容。
+                     * @param _personExDescriptions 人员描述字段内容。
                      * 
                      */
                     void SetPersonExDescriptions(const std::vector<std::string>& _personExDescriptions);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PersonExDescriptionsHasBeenSet() const;
 
                     /**
-                     * 获取包含的人脸照片列表
-                     * @return FaceIds 包含的人脸照片列表
+                     * 获取包含的人脸照片列表。
+                     * @return FaceIds 包含的人脸照片列表。
                      * 
                      */
                     std::vector<std::string> GetFaceIds() const;
 
                     /**
-                     * 设置包含的人脸照片列表
-                     * @param _faceIds 包含的人脸照片列表
+                     * 设置包含的人脸照片列表。
+                     * @param _faceIds 包含的人脸照片列表。
                      * 
                      */
                     void SetFaceIds(const std::vector<std::string>& _faceIds);
@@ -152,19 +152,27 @@ namespace TencentCloud
                     bool FaceIdsHasBeenSet() const;
 
                     /**
-                     * 获取人员的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Person创建时间的毫秒数。 
-Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。
-                     * @return CreationTimestamp 人员的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Person创建时间的毫秒数。 
-Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。
+                     * 获取人员的创建时间和日期 CreationTimestamp。
+- CreationTimestamp 的值是自 Unix 纪元时间到Person创建时间的毫秒数。 
+- Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。
+- 有关更多信息，请参阅 Unix 时间。
+                     * @return CreationTimestamp 人员的创建时间和日期 CreationTimestamp。
+- CreationTimestamp 的值是自 Unix 纪元时间到Person创建时间的毫秒数。 
+- Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。
+- 有关更多信息，请参阅 Unix 时间。
                      * 
                      */
                     uint64_t GetCreationTimestamp() const;
 
                     /**
-                     * 设置人员的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Person创建时间的毫秒数。 
-Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。
-                     * @param _creationTimestamp 人员的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Person创建时间的毫秒数。 
-Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。
+                     * 设置人员的创建时间和日期 CreationTimestamp。
+- CreationTimestamp 的值是自 Unix 纪元时间到Person创建时间的毫秒数。 
+- Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。
+- 有关更多信息，请参阅 Unix 时间。
+                     * @param _creationTimestamp 人员的创建时间和日期 CreationTimestamp。
+- CreationTimestamp 的值是自 Unix 纪元时间到Person创建时间的毫秒数。 
+- Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。
+- 有关更多信息，请参阅 Unix 时间。
                      * 
                      */
                     void SetCreationTimestamp(const uint64_t& _creationTimestamp);
@@ -179,38 +187,40 @@ Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00
                 private:
 
                     /**
-                     * 人员名称
+                     * 人员名称。
                      */
                     std::string m_personName;
                     bool m_personNameHasBeenSet;
 
                     /**
-                     * 人员Id
+                     * 人员Id。
                      */
                     std::string m_personId;
                     bool m_personIdHasBeenSet;
 
                     /**
-                     * 人员性别
+                     * 人员性别。
                      */
                     int64_t m_gender;
                     bool m_genderHasBeenSet;
 
                     /**
-                     * 人员描述字段内容
+                     * 人员描述字段内容。
                      */
                     std::vector<std::string> m_personExDescriptions;
                     bool m_personExDescriptionsHasBeenSet;
 
                     /**
-                     * 包含的人脸照片列表
+                     * 包含的人脸照片列表。
                      */
                     std::vector<std::string> m_faceIds;
                     bool m_faceIdsHasBeenSet;
 
                     /**
-                     * 人员的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Person创建时间的毫秒数。 
-Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。
+                     * 人员的创建时间和日期 CreationTimestamp。
+- CreationTimestamp 的值是自 Unix 纪元时间到Person创建时间的毫秒数。 
+- Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。
+- 有关更多信息，请参阅 Unix 时间。
                      */
                     uint64_t m_creationTimestamp;
                     bool m_creationTimestampHasBeenSet;

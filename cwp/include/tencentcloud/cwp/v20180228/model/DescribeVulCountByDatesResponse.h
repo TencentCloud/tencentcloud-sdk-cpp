@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取批量获得对应天数的漏洞数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulCount 批量获得对应天数的漏洞数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetVulCount() const;
@@ -77,7 +75,6 @@ namespace TencentCloud
 
                     /**
                      * 批量获得对应天数的漏洞数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_vulCount;
                     bool m_vulCountHasBeenSet;

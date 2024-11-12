@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取白名单地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Places 白名单地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Place> GetPlaces() const;
 
                     /**
                      * 设置白名单地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _places 白名单地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlaces(const std::vector<Place>& _places);
@@ -370,7 +366,6 @@ namespace TencentCloud
 
                     /**
                      * 白名单地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Place> m_places;
                     bool m_placesHasBeenSet;

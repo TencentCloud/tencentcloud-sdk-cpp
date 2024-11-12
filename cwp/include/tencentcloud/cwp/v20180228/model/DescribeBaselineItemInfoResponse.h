@@ -75,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取基线分类列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryList 基线分类列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BaselineItemsCategory> GetCategoryList() const;
@@ -105,7 +103,6 @@ namespace TencentCloud
 
                     /**
                      * 基线分类列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BaselineItemsCategory> m_categoryList;
                     bool m_categoryListHasBeenSet;

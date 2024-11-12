@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

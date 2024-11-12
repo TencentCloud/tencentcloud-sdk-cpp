@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义密钥ID，CMK唯一标识符。该值为空时，将使用腾讯云自动生成的密钥KMS-CDB。
-                     * @return KeyId 用户自定义密钥ID，CMK唯一标识符。该值为空时，将使用腾讯云自动生成的密钥KMS-CDB。
+                     * 获取用户自定义密钥 ID，CMK 唯一标识符。该值为空时，将使用腾讯云自动生成的密钥 KMS-CDB。
+                     * @return KeyId 用户自定义密钥 ID，CMK 唯一标识符。该值为空时，将使用腾讯云自动生成的密钥 KMS-CDB。
                      * 
                      */
                     std::string GetKeyId() const;
 
                     /**
-                     * 设置用户自定义密钥ID，CMK唯一标识符。该值为空时，将使用腾讯云自动生成的密钥KMS-CDB。
-                     * @param _keyId 用户自定义密钥ID，CMK唯一标识符。该值为空时，将使用腾讯云自动生成的密钥KMS-CDB。
+                     * 设置用户自定义密钥 ID，CMK 唯一标识符。该值为空时，将使用腾讯云自动生成的密钥 KMS-CDB。
+                     * @param _keyId 用户自定义密钥 ID，CMK 唯一标识符。该值为空时，将使用腾讯云自动生成的密钥 KMS-CDB。
                      * 
                      */
                     void SetKeyId(const std::string& _keyId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool KeyIdHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义密钥的存储地域。如：ap-guangzhou 。KeyId不为空时，该参数必填。
-                     * @return KeyRegion 用户自定义密钥的存储地域。如：ap-guangzhou 。KeyId不为空时，该参数必填。
+                     * 获取用户自定义密钥的存储地域。如：ap-guangzhou 。KeyId 不为空时，该参数必填。
+                     * @return KeyRegion 用户自定义密钥的存储地域。如：ap-guangzhou 。KeyId 不为空时，该参数必填。
                      * 
                      */
                     std::string GetKeyRegion() const;
 
                     /**
-                     * 设置用户自定义密钥的存储地域。如：ap-guangzhou 。KeyId不为空时，该参数必填。
-                     * @param _keyRegion 用户自定义密钥的存储地域。如：ap-guangzhou 。KeyId不为空时，该参数必填。
+                     * 设置用户自定义密钥的存储地域。如：ap-guangzhou 。KeyId 不为空时，该参数必填。
+                     * @param _keyRegion 用户自定义密钥的存储地域。如：ap-guangzhou 。KeyId 不为空时，该参数必填。
                      * 
                      */
                     void SetKeyRegion(const std::string& _keyRegion);
@@ -114,13 +114,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户自定义密钥ID，CMK唯一标识符。该值为空时，将使用腾讯云自动生成的密钥KMS-CDB。
+                     * 用户自定义密钥 ID，CMK 唯一标识符。该值为空时，将使用腾讯云自动生成的密钥 KMS-CDB。
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
 
                     /**
-                     * 用户自定义密钥的存储地域。如：ap-guangzhou 。KeyId不为空时，该参数必填。
+                     * 用户自定义密钥的存储地域。如：ap-guangzhou 。KeyId 不为空时，该参数必填。
                      */
                     std::string m_keyRegion;
                     bool m_keyRegionHasBeenSet;

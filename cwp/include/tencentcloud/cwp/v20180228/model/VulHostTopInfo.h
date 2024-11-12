@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostName 主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞等级与数量统计列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulLevelList 漏洞等级与数量统计列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VulLevelCountInfo> GetVulLevelList() const;
 
                     /**
                      * 设置漏洞等级与数量统计列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulLevelList 漏洞等级与数量统计列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulLevelList(const std::vector<VulLevelCountInfo>& _vulLevelList);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机Quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuid 主机Quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置主机Quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quuid 主机Quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuuid(const std::string& _quuid);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取top评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score top评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScore() const;
 
                     /**
                      * 设置top评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _score top评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScore(const uint64_t& _score);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 主机名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
 
                     /**
                      * 漏洞等级与数量统计列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VulLevelCountInfo> m_vulLevelList;
                     bool m_vulLevelListHasBeenSet;
 
                     /**
                      * 主机Quuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;
 
                     /**
                      * top评分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_score;
                     bool m_scoreHasBeenSet;

@@ -23,7 +23,8 @@ using namespace std;
 VulEmergentMsgInfo::VulEmergentMsgInfo() :
     m_vulIdHasBeenSet(false),
     m_publishTimeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_nameEnHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome VulEmergentMsgInfo::Deserialize(const rapidjson::Value &valu
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("NameEn") && !value["NameEn"].IsNull())
+    {
+        if (!value["NameEn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEmergentMsgInfo.NameEn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nameEn = string(value["NameEn"].GetString());
+        m_nameEnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void VulEmergentMsgInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameEnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NameEn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nameEn.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void VulEmergentMsgInfo::SetName(const string& _name)
 bool VulEmergentMsgInfo::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string VulEmergentMsgInfo::GetNameEn() const
+{
+    return m_nameEn;
+}
+
+void VulEmergentMsgInfo::SetNameEn(const string& _nameEn)
+{
+    m_nameEn = _nameEn;
+    m_nameEnHasBeenSet = true;
+}
+
+bool VulEmergentMsgInfo::NameEnHasBeenSet() const
+{
+    return m_nameEnHasBeenSet;
 }
 

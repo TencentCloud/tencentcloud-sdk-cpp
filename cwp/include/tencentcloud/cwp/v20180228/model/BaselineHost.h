@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostName 主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostTag 主机标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostTag() const;
 
                     /**
                      * 设置主机标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostTag 主机标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostTag(const std::string& _hostTag);
@@ -120,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIp 内网Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 设置内网Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostIp 内网Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostIp(const std::string& _hostIp);
@@ -145,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外网Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanIp 外网Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWanIp() const;
 
                     /**
                      * 设置外网Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wanIp 外网Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWanIp(const std::string& _wanIp);
@@ -170,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineExtraInfo 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
@@ -203,35 +183,30 @@ namespace TencentCloud
 
                     /**
                      * 主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
 
                     /**
                      * 主机标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostTag;
                     bool m_hostTagHasBeenSet;
 
                     /**
                      * 内网Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostIp;
                     bool m_hostIpHasBeenSet;
 
                     /**
                      * 外网Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wanIp;
                     bool m_wanIpHasBeenSet;
 
                     /**
                      * 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;

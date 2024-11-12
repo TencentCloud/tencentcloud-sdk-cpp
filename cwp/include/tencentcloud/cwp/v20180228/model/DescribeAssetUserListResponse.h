@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取账号列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Users 账号列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetUserBaseInfo> GetUsers() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 账号列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetUserBaseInfo> m_users;
                     bool m_usersHasBeenSet;

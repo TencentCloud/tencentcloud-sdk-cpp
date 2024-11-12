@@ -45,18 +45,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<li>PolicyId - int64 - 是否必填：否 - 策略Id</li>
-<li>HostName - string - 是否必填：否 - 主机名称</i>
-<li>HostIp - string - 是否必填：否 - 主机Ip</i>
-<li>ItemId - int64 - 是否必填：否 - 项Id</i>
+<li>HostName - string - 是否必填：否 - 主机名称</li>
+<li>HostIp - string - 是否必填：否 - 主机Ip</li>
+<li>ItemId - int64 - 是否必填：否 - 项Id</li>
 <li>RuleId - int64 - 是否必填：否 - 规则Id</li>
 <li>DetectStatus - int - 是否必填：否 - 检测状态</li>
 <li>Level - int - 是否必填：否 - 风险等级</li>
 <li>StartTime - string - 是否必填：否 - 开时时间</li>
 <li>EndTime - string - 是否必填：否 - 结束时间</li>
                      * @return Filters <li>PolicyId - int64 - 是否必填：否 - 策略Id</li>
-<li>HostName - string - 是否必填：否 - 主机名称</i>
-<li>HostIp - string - 是否必填：否 - 主机Ip</i>
-<li>ItemId - int64 - 是否必填：否 - 项Id</i>
+<li>HostName - string - 是否必填：否 - 主机名称</li>
+<li>HostIp - string - 是否必填：否 - 主机Ip</li>
+<li>ItemId - int64 - 是否必填：否 - 项Id</li>
 <li>RuleId - int64 - 是否必填：否 - 规则Id</li>
 <li>DetectStatus - int - 是否必填：否 - 检测状态</li>
 <li>Level - int - 是否必填：否 - 风险等级</li>
@@ -68,18 +68,18 @@ namespace TencentCloud
 
                     /**
                      * 设置<li>PolicyId - int64 - 是否必填：否 - 策略Id</li>
-<li>HostName - string - 是否必填：否 - 主机名称</i>
-<li>HostIp - string - 是否必填：否 - 主机Ip</i>
-<li>ItemId - int64 - 是否必填：否 - 项Id</i>
+<li>HostName - string - 是否必填：否 - 主机名称</li>
+<li>HostIp - string - 是否必填：否 - 主机Ip</li>
+<li>ItemId - int64 - 是否必填：否 - 项Id</li>
 <li>RuleId - int64 - 是否必填：否 - 规则Id</li>
 <li>DetectStatus - int - 是否必填：否 - 检测状态</li>
 <li>Level - int - 是否必填：否 - 风险等级</li>
 <li>StartTime - string - 是否必填：否 - 开时时间</li>
 <li>EndTime - string - 是否必填：否 - 结束时间</li>
                      * @param _filters <li>PolicyId - int64 - 是否必填：否 - 策略Id</li>
-<li>HostName - string - 是否必填：否 - 主机名称</i>
-<li>HostIp - string - 是否必填：否 - 主机Ip</i>
-<li>ItemId - int64 - 是否必填：否 - 项Id</i>
+<li>HostName - string - 是否必填：否 - 主机名称</li>
+<li>HostIp - string - 是否必填：否 - 主机Ip</li>
+<li>ItemId - int64 - 是否必填：否 - 项Id</li>
 <li>RuleId - int64 - 是否必填：否 - 规则Id</li>
 <li>DetectStatus - int - 是否必填：否 - 检测状态</li>
 <li>Level - int - 是否必填：否 - 风险等级</li>
@@ -184,9 +184,9 @@ namespace TencentCloud
 
                     /**
                      * <li>PolicyId - int64 - 是否必填：否 - 策略Id</li>
-<li>HostName - string - 是否必填：否 - 主机名称</i>
-<li>HostIp - string - 是否必填：否 - 主机Ip</i>
-<li>ItemId - int64 - 是否必填：否 - 项Id</i>
+<li>HostName - string - 是否必填：否 - 主机名称</li>
+<li>HostIp - string - 是否必填：否 - 主机Ip</li>
+<li>ItemId - int64 - 是否必填：否 - 项Id</li>
 <li>RuleId - int64 - 是否必填：否 - 规则Id</li>
 <li>DetectStatus - int - 是否必填：否 - 检测状态</li>
 <li>Level - int - 是否必填：否 - 风险等级</li>

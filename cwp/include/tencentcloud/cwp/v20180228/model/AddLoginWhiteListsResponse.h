@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取重复添加的提示列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DuplicateHosts 重复添加的提示列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DuplicateHosts> GetDuplicateHosts() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 重复添加的提示列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DuplicateHosts> m_duplicateHosts;
                     bool m_duplicateHostsHasBeenSet;

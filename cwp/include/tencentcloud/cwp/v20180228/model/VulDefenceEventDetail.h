@@ -259,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击源端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourcePort 攻击源端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetSourcePort() const;
 
                     /**
                      * 设置攻击源端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourcePort 攻击源端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourcePort(const std::vector<uint64_t>& _sourcePort);
@@ -557,18 +553,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineExtraInfo 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
@@ -644,7 +636,6 @@ namespace TencentCloud
 
                     /**
                      * 攻击源端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_sourcePort;
                     bool m_sourcePortHasBeenSet;
@@ -729,7 +720,6 @@ namespace TencentCloud
 
                     /**
                      * 主机额外信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;

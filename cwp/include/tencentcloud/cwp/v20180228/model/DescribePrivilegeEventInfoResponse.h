@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取本地提权详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivilegeEventInfo 本地提权详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PrivilegeEventInfo GetPrivilegeEventInfo() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 本地提权详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PrivilegeEventInfo m_privilegeEventInfo;
                     bool m_privilegeEventInfoHasBeenSet;

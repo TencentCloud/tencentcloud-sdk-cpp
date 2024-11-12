@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取反弹shell详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReverseShellEventInfo 反弹shell详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ReverseShellEventInfo GetReverseShellEventInfo() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 反弹shell详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ReverseShellEventInfo m_reverseShellEventInfo;
                     bool m_reverseShellEventInfoHasBeenSet;
