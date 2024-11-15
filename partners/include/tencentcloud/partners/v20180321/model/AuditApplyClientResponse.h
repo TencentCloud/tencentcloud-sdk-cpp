@@ -87,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联时间对应的时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AgentTime 关联时间对应的时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAgentTime() const;
@@ -123,7 +121,6 @@ namespace TencentCloud
 
                     /**
                      * 关联时间对应的时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_agentTime;
                     bool m_agentTimeHasBeenSet;

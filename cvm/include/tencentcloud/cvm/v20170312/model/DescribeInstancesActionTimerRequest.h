@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取定时任务执行时间，格式如：2018-05-01 19:00:00，必须大于当前时间5分钟。
-                     * @return TimerAction 定时任务执行时间，格式如：2018-05-01 19:00:00，必须大于当前时间5分钟。
+                     * 获取定时器动作，目前仅支持销毁一个值：TerminateInstances。
+                     * @return TimerAction 定时器动作，目前仅支持销毁一个值：TerminateInstances。
                      * 
                      */
                     std::string GetTimerAction() const;
 
                     /**
-                     * 设置定时任务执行时间，格式如：2018-05-01 19:00:00，必须大于当前时间5分钟。
-                     * @param _timerAction 定时任务执行时间，格式如：2018-05-01 19:00:00，必须大于当前时间5分钟。
+                     * 设置定时器动作，目前仅支持销毁一个值：TerminateInstances。
+                     * @param _timerAction 定时器动作，目前仅支持销毁一个值：TerminateInstances。
                      * 
                      */
                     void SetTimerAction(const std::string& _timerAction);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool StartActionTimeHasBeenSet() const;
 
                     /**
-                     * 获取定时任务状态列表。<br><li>UNDO：未执行<br><li>DOING：正在执行<br><li>DONE：执行完成。
-                     * @return StatusList 定时任务状态列表。<br><li>UNDO：未执行<br><li>DOING：正在执行<br><li>DONE：执行完成。
+                     * 获取定时任务状态列表。<br><li>UNDO：未执行</li> <br><li>DOING：正在执行</li><br><li>DONE：执行完成。</li>
+                     * @return StatusList 定时任务状态列表。<br><li>UNDO：未执行</li> <br><li>DOING：正在执行</li><br><li>DONE：执行完成。</li>
                      * 
                      */
                     std::vector<std::string> GetStatusList() const;
 
                     /**
-                     * 设置定时任务状态列表。<br><li>UNDO：未执行<br><li>DOING：正在执行<br><li>DONE：执行完成。
-                     * @param _statusList 定时任务状态列表。<br><li>UNDO：未执行<br><li>DOING：正在执行<br><li>DONE：执行完成。
+                     * 设置定时任务状态列表。<br><li>UNDO：未执行</li> <br><li>DOING：正在执行</li><br><li>DONE：执行完成。</li>
+                     * @param _statusList 定时任务状态列表。<br><li>UNDO：未执行</li> <br><li>DOING：正在执行</li><br><li>DONE：执行完成。</li>
                      * 
                      */
                     void SetStatusList(const std::vector<std::string>& _statusList);
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 定时任务执行时间，格式如：2018-05-01 19:00:00，必须大于当前时间5分钟。
+                     * 定时器动作，目前仅支持销毁一个值：TerminateInstances。
                      */
                     std::string m_timerAction;
                     bool m_timerActionHasBeenSet;
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_startActionTimeHasBeenSet;
 
                     /**
-                     * 定时任务状态列表。<br><li>UNDO：未执行<br><li>DOING：正在执行<br><li>DONE：执行完成。
+                     * 定时任务状态列表。<br><li>UNDO：未执行</li> <br><li>DOING：正在执行</li><br><li>DONE：执行完成。</li>
                      */
                     std::vector<std::string> m_statusList;
                     bool m_statusListHasBeenSet;

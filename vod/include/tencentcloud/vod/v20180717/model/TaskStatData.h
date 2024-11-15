@@ -63,6 +63,7 @@ namespace TencentCloud
 <li> RebuildMedia: 音画质重生</li>
 <li> QualityInspect: 音画质检测</li>
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
+<li>VoiceTranslation: 语音翻译</li>
                      * @return TaskType 任务类型。
 <li> Transcoding: 普通转码</li>
 <li> Transcoding-TESHD: 极速高清转码</li>
@@ -77,6 +78,7 @@ namespace TencentCloud
 <li> RebuildMedia: 音画质重生</li>
 <li> QualityInspect: 音画质检测</li>
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
+<li>VoiceTranslation: 语音翻译</li>
                      * 
                      */
                     std::string GetTaskType() const;
@@ -96,6 +98,7 @@ namespace TencentCloud
 <li> RebuildMedia: 音画质重生</li>
 <li> QualityInspect: 音画质检测</li>
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
+<li>VoiceTranslation: 语音翻译</li>
                      * @param _taskType 任务类型。
 <li> Transcoding: 普通转码</li>
 <li> Transcoding-TESHD: 极速高清转码</li>
@@ -110,6 +113,7 @@ namespace TencentCloud
 <li> RebuildMedia: 音画质重生</li>
 <li> QualityInspect: 音画质检测</li>
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
+<li>VoiceTranslation: 语音翻译</li>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -388,6 +392,7 @@ namespace TencentCloud
 <li> RebuildMedia: 音画质重生</li>
 <li> QualityInspect: 音画质检测</li>
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
+<li>VoiceTranslation: 语音翻译</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;

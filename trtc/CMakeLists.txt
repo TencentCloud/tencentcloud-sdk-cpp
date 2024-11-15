@@ -71,6 +71,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/StorageParams.h
   include/tencentcloud/trtc/v20190722/model/CloudVod.h
   include/tencentcloud/trtc/v20190722/model/EncodeParams.h
+  include/tencentcloud/trtc/v20190722/model/EmulateMobileParams.h
   include/tencentcloud/trtc/v20190722/model/DescribeCallDetailInfoResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeQualityDataResponse.h
   include/tencentcloud/trtc/v20190722/model/McuCustomCrop.h
@@ -262,6 +263,7 @@ set(trtc_src
   src/v20190722/model/StorageParams.cpp
   src/v20190722/model/CloudVod.cpp
   src/v20190722/model/EncodeParams.cpp
+  src/v20190722/model/EmulateMobileParams.cpp
   src/v20190722/model/DescribeCallDetailInfoResponse.cpp
   src/v20190722/model/DescribeTRTCRealTimeQualityDataResponse.cpp
   src/v20190722/model/McuCustomCrop.cpp

@@ -140,9 +140,7 @@ namespace TencentCloud
 
                     /**
                      * 获取宿主机资源概览信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostDetailInfo 宿主机资源概览信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HostDetailInfo> GetHostDetailInfo() const;
@@ -156,9 +154,7 @@ namespace TencentCloud
 
                     /**
                      * 获取热备宿主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostStandbyCount 热备宿主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHostStandbyCount() const;
@@ -172,9 +168,7 @@ namespace TencentCloud
 
                     /**
                      * 获取普通宿主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostNormalCount 普通宿主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHostNormalCount() const;
@@ -230,21 +224,18 @@ namespace TencentCloud
 
                     /**
                      * 宿主机资源概览信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HostDetailInfo> m_hostDetailInfo;
                     bool m_hostDetailInfoHasBeenSet;
 
                     /**
                      * 热备宿主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hostStandbyCount;
                     bool m_hostStandbyCountHasBeenSet;
 
                     /**
                      * 普通宿主机数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hostNormalCount;
                     bool m_hostNormalCountHasBeenSet;

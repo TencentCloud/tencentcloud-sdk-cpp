@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CPU Limit设置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CPULimit CPU Limit设置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCPULimit() const;
 
                     /**
                      * 设置CPU Limit设置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cPULimit CPU Limit设置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCPULimit(const std::string& _cPULimit);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内存Limit设置（单位：Mi，Gi，Ti，M，G，T）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemoryLimit 内存Limit设置（单位：Mi，Gi，Ti，M，G，T）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMemoryLimit() const;
 
                     /**
                      * 设置内存Limit设置（单位：Mi，Gi，Ti，M，G，T）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memoryLimit 内存Limit设置（单位：Mi，Gi，Ti，M，G，T）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemoryLimit(const std::string& _memoryLimit);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Pods数量设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pods Pods数量设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPods() const;
 
                     /**
                      * 设置Pods数量设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pods Pods数量设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPods(const std::string& _pods);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * CPU Limit设置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cPULimit;
                     bool m_cPULimitHasBeenSet;
 
                     /**
                      * 内存Limit设置（单位：Mi，Gi，Ti，M，G，T）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_memoryLimit;
                     bool m_memoryLimitHasBeenSet;
 
                     /**
                      * Pods数量设置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pods;
                     bool m_podsHasBeenSet;

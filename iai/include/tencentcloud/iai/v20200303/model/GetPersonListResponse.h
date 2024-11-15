@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回的人员信息
-                     * @return PersonInfos 返回的人员信息
+                     * 获取返回的人员信息。
+                     * @return PersonInfos 返回的人员信息。
                      * 
                      */
                     std::vector<PersonInfo> GetPersonInfos() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool PersonInfosHasBeenSet() const;
 
                     /**
-                     * 获取该人员库的人员数量
+                     * 获取该人员库的人员数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PersonNum 该人员库的人员数量
+                     * @return PersonNum 该人员库的人员数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -75,9 +75,9 @@ namespace TencentCloud
                     bool PersonNumHasBeenSet() const;
 
                     /**
-                     * 获取该人员库的人脸数量
+                     * 获取该人员库的人脸数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FaceNum 该人员库的人脸数量
+                     * @return FaceNum 该人员库的人脸数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -109,20 +109,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回的人员信息
+                     * 返回的人员信息。
                      */
                     std::vector<PersonInfo> m_personInfos;
                     bool m_personInfosHasBeenSet;
 
                     /**
-                     * 该人员库的人员数量
+                     * 该人员库的人员数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_personNum;
                     bool m_personNumHasBeenSet;
 
                     /**
-                     * 该人员库的人脸数量
+                     * 该人员库的人脸数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_faceNum;

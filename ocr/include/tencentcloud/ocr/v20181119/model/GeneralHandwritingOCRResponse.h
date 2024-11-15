@@ -61,16 +61,30 @@ namespace TencentCloud
                     /**
                      * 获取图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href="https://cloud.tencent.com/document/product/866/45139">如何纠正倾斜文本</a>
                      * @return Angel 图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href="https://cloud.tencent.com/document/product/866/45139">如何纠正倾斜文本</a>
-                     * 
+                     * @deprecated
                      */
                     double GetAngel() const;
 
                     /**
                      * 判断参数 Angel 是否已赋值
                      * @return Angel 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AngelHasBeenSet() const;
+
+                    /**
+                     * 获取图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href="https://cloud.tencent.com/document/product/866/45139">如何纠正倾斜文本</a>
+                     * @return Angle 图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href="https://cloud.tencent.com/document/product/866/45139">如何纠正倾斜文本</a>
+                     * 
+                     */
+                    double GetAngle() const;
+
+                    /**
+                     * 判断参数 Angle 是否已赋值
+                     * @return Angle 是否已赋值
+                     * 
+                     */
+                    bool AngleHasBeenSet() const;
 
                 private:
 
@@ -85,6 +99,12 @@ namespace TencentCloud
                      */
                     double m_angel;
                     bool m_angelHasBeenSet;
+
+                    /**
+                     * 图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href="https://cloud.tencent.com/document/product/866/45139">如何纠正倾斜文本</a>
+                     */
+                    double m_angle;
+                    bool m_angleHasBeenSet;
 
                 };
             }

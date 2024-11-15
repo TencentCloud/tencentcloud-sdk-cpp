@@ -84,6 +84,48 @@ namespace TencentCloud
                      */
                     bool UsrCosModelUrlListHasBeenSet() const;
 
+                    /**
+                     * 获取客户指定安装的模型名称，可为空，默认为模型文件名
+                     * @return ModelNames 客户指定安装的模型名称，可为空，默认为模型文件名
+                     * 
+                     */
+                    std::vector<std::string> GetModelNames() const;
+
+                    /**
+                     * 设置客户指定安装的模型名称，可为空，默认为模型文件名
+                     * @param _modelNames 客户指定安装的模型名称，可为空，默认为模型文件名
+                     * 
+                     */
+                    void SetModelNames(const std::vector<std::string>& _modelNames);
+
+                    /**
+                     * 判断参数 ModelNames 是否已赋值
+                     * @return ModelNames 是否已赋值
+                     * 
+                     */
+                    bool ModelNamesHasBeenSet() const;
+
+                    /**
+                     * 获取模型使用的任务类型，包括：fill_mask, ner, question_answering, text_classification, text_embedding, text_expansion, text_similarity和zero_shot_classification，默认为text_embedding
+                     * @return TaskTypes 模型使用的任务类型，包括：fill_mask, ner, question_answering, text_classification, text_embedding, text_expansion, text_similarity和zero_shot_classification，默认为text_embedding
+                     * 
+                     */
+                    std::vector<std::string> GetTaskTypes() const;
+
+                    /**
+                     * 设置模型使用的任务类型，包括：fill_mask, ner, question_answering, text_classification, text_embedding, text_expansion, text_similarity和zero_shot_classification，默认为text_embedding
+                     * @param _taskTypes 模型使用的任务类型，包括：fill_mask, ner, question_answering, text_classification, text_embedding, text_expansion, text_similarity和zero_shot_classification，默认为text_embedding
+                     * 
+                     */
+                    void SetTaskTypes(const std::vector<std::string>& _taskTypes);
+
+                    /**
+                     * 判断参数 TaskTypes 是否已赋值
+                     * @return TaskTypes 是否已赋值
+                     * 
+                     */
+                    bool TaskTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +139,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_usrCosModelUrlList;
                     bool m_usrCosModelUrlListHasBeenSet;
+
+                    /**
+                     * 客户指定安装的模型名称，可为空，默认为模型文件名
+                     */
+                    std::vector<std::string> m_modelNames;
+                    bool m_modelNamesHasBeenSet;
+
+                    /**
+                     * 模型使用的任务类型，包括：fill_mask, ner, question_answering, text_classification, text_embedding, text_expansion, text_similarity和zero_shot_classification，默认为text_embedding
+                     */
+                    std::vector<std::string> m_taskTypes;
+                    bool m_taskTypesHasBeenSet;
 
                 };
             }

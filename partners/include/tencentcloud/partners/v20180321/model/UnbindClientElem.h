@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplyTime 申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplyTime() const;
 
                     /**
                      * 设置申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applyTime 申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplyTime(const std::string& _applyTime);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取解绑/撤销时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionTime 解绑/撤销时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionTime() const;
 
                     /**
                      * 设置解绑/撤销时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionTime 解绑/撤销时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionTime(const std::string& _actionTime);
@@ -181,14 +173,12 @@ namespace TencentCloud
 
                     /**
                      * 申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applyTime;
                     bool m_applyTimeHasBeenSet;
 
                     /**
                      * 解绑/撤销时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionTime;
                     bool m_actionTimeHasBeenSet;

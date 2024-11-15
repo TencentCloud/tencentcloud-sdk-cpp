@@ -42,8 +42,11 @@ ModifyApmInstanceRequest::ModifyApmInstanceRequest() :
     m_customShowTagsHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_responseDurationWarningThresholdHasBeenSet(false),
+    m_freeHasBeenSet(false),
     m_isRelatedDashboardHasBeenSet(false),
-    m_dashboardTopicIDHasBeenSet(false)
+    m_dashboardTopicIDHasBeenSet(false),
+    m_isSqlInjectionAnalysisHasBeenSet(false),
+    m_isInstrumentationVulnerabilityScanHasBeenSet(false)
 {
 }
 
@@ -218,6 +221,14 @@ string ModifyApmInstanceRequest::ToJsonString() const
         d.AddMember(iKey, m_responseDurationWarningThreshold, allocator);
     }
 
+    if (m_freeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Free";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_free, allocator);
+    }
+
     if (m_isRelatedDashboardHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -232,6 +243,22 @@ string ModifyApmInstanceRequest::ToJsonString() const
         string key = "DashboardTopicID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dashboardTopicID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSqlInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSqlInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isSqlInjectionAnalysis, allocator);
+    }
+
+    if (m_isInstrumentationVulnerabilityScanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInstrumentationVulnerabilityScan";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isInstrumentationVulnerabilityScan, allocator);
     }
 
 
@@ -546,6 +573,22 @@ bool ModifyApmInstanceRequest::ResponseDurationWarningThresholdHasBeenSet() cons
     return m_responseDurationWarningThresholdHasBeenSet;
 }
 
+int64_t ModifyApmInstanceRequest::GetFree() const
+{
+    return m_free;
+}
+
+void ModifyApmInstanceRequest::SetFree(const int64_t& _free)
+{
+    m_free = _free;
+    m_freeHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::FreeHasBeenSet() const
+{
+    return m_freeHasBeenSet;
+}
+
 int64_t ModifyApmInstanceRequest::GetIsRelatedDashboard() const
 {
     return m_isRelatedDashboard;
@@ -576,6 +619,38 @@ void ModifyApmInstanceRequest::SetDashboardTopicID(const string& _dashboardTopic
 bool ModifyApmInstanceRequest::DashboardTopicIDHasBeenSet() const
 {
     return m_dashboardTopicIDHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsSqlInjectionAnalysis() const
+{
+    return m_isSqlInjectionAnalysis;
+}
+
+void ModifyApmInstanceRequest::SetIsSqlInjectionAnalysis(const int64_t& _isSqlInjectionAnalysis)
+{
+    m_isSqlInjectionAnalysis = _isSqlInjectionAnalysis;
+    m_isSqlInjectionAnalysisHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsSqlInjectionAnalysisHasBeenSet() const
+{
+    return m_isSqlInjectionAnalysisHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetIsInstrumentationVulnerabilityScan() const
+{
+    return m_isInstrumentationVulnerabilityScan;
+}
+
+void ModifyApmInstanceRequest::SetIsInstrumentationVulnerabilityScan(const int64_t& _isInstrumentationVulnerabilityScan)
+{
+    m_isInstrumentationVulnerabilityScan = _isInstrumentationVulnerabilityScan;
+    m_isInstrumentationVulnerabilityScanHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::IsInstrumentationVulnerabilityScanHasBeenSet() const
+{
+    return m_isInstrumentationVulnerabilityScanHasBeenSet;
 }
 
 

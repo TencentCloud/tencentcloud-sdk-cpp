@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取身份证号
-                     * @return IdCard 身份证号
+                     * 获取身份证号。
+                     * @return IdCard 身份证号。
                      * 
                      */
                     std::string GetIdCard() const;
 
                     /**
-                     * 设置身份证号
-                     * @param _idCard 身份证号
+                     * 设置身份证号。
+                     * @param _idCard 身份证号。
                      * 
                      */
                     void SetIdCard(const std::string& _idCard);
@@ -65,15 +65,19 @@ namespace TencentCloud
                     bool IdCardHasBeenSet() const;
 
                     /**
-                     * 获取姓名。中文请使用UTF-8编码。
-                     * @return Name 姓名。中文请使用UTF-8编码。
+                     * 获取姓名。
+- 中文请使用UTF-8编码。
+                     * @return Name 姓名。
+- 中文请使用UTF-8编码。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置姓名。中文请使用UTF-8编码。
-                     * @param _name 姓名。中文请使用UTF-8编码。
+                     * 设置姓名。
+- 中文请使用UTF-8编码。
+                     * @param _name 姓名。
+- 中文请使用UTF-8编码。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -136,15 +140,19 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
                     bool OptionalHasBeenSet() const;
 
                     /**
-                     * 获取敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @return Encryption 敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 获取敏感数据加密信息。
+- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @return Encryption 敏感数据加密信息。
+- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      * 
                      */
                     Encryption GetEncryption() const;
 
                     /**
-                     * 设置敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @param _encryption 敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 设置敏感数据加密信息。
+- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @param _encryption 敏感数据加密信息。
+- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      * 
                      */
                     void SetEncryption(const Encryption& _encryption);
@@ -159,13 +167,14 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
                 private:
 
                     /**
-                     * 身份证号
+                     * 身份证号。
                      */
                     std::string m_idCard;
                     bool m_idCardHasBeenSet;
 
                     /**
-                     * 姓名。中文请使用UTF-8编码。
+                     * 姓名。
+- 中文请使用UTF-8编码。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -185,7 +194,8 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
                     bool m_optionalHasBeenSet;
 
                     /**
-                     * 敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 敏感数据加密信息。
+- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      */
                     Encryption m_encryption;
                     bool m_encryptionHasBeenSet;

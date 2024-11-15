@@ -101,7 +101,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BarndName 品牌名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetBarndName() const;
 
@@ -110,14 +110,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _barndName 品牌名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetBarndName(const std::string& _barndName);
 
                     /**
                      * 判断参数 BarndName 是否已赋值
                      * @return BarndName 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool BarndNameHasBeenSet() const;
 

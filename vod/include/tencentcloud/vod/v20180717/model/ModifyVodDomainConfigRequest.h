@@ -24,6 +24,7 @@
 #include <tencentcloud/vod/v20180717/model/RefererAuthPolicy.h>
 #include <tencentcloud/vod/v20180717/model/UrlSignatureAuthPolicy.h>
 #include <tencentcloud/vod/v20180717/model/DomainQUICConfig.h>
+#include <tencentcloud/vod/v20180717/model/IPFilterPolicy.h>
 
 
 namespace TencentCloud
@@ -150,6 +151,27 @@ namespace TencentCloud
                      */
                     bool QUICConfigHasBeenSet() const;
 
+                    /**
+                     * 获取IP 访问限制规则。
+                     * @return IPFilterPolicy IP 访问限制规则。
+                     * 
+                     */
+                    IPFilterPolicy GetIPFilterPolicy() const;
+
+                    /**
+                     * 设置IP 访问限制规则。
+                     * @param _iPFilterPolicy IP 访问限制规则。
+                     * 
+                     */
+                    void SetIPFilterPolicy(const IPFilterPolicy& _iPFilterPolicy);
+
+                    /**
+                     * 判断参数 IPFilterPolicy 是否已赋值
+                     * @return IPFilterPolicy 是否已赋值
+                     * 
+                     */
+                    bool IPFilterPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -181,6 +203,12 @@ namespace TencentCloud
                      */
                     DomainQUICConfig m_qUICConfig;
                     bool m_qUICConfigHasBeenSet;
+
+                    /**
+                     * IP 访问限制规则。
+                     */
+                    IPFilterPolicy m_iPFilterPolicy;
+                    bool m_iPFilterPolicyHasBeenSet;
 
                 };
             }

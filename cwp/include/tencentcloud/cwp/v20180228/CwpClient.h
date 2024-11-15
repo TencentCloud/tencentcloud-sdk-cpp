@@ -369,8 +369,6 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeCanNotSeparateMachineResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeClientExceptionRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeClientExceptionResponse.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeCloudProtectServiceOrderListRequest.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeCloudProtectServiceOrderListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeComponentStatisticsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeComponentStatisticsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeDefenceEventDetailRequest.h>
@@ -1586,9 +1584,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClientExceptionResponse> DescribeClientExceptionOutcome;
                 typedef std::future<DescribeClientExceptionOutcome> DescribeClientExceptionOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeClientExceptionRequest&, DescribeClientExceptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientExceptionAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeCloudProtectServiceOrderListResponse> DescribeCloudProtectServiceOrderListOutcome;
-                typedef std::future<DescribeCloudProtectServiceOrderListOutcome> DescribeCloudProtectServiceOrderListOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::DescribeCloudProtectServiceOrderListRequest&, DescribeCloudProtectServiceOrderListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudProtectServiceOrderListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeComponentStatisticsResponse> DescribeComponentStatisticsOutcome;
                 typedef std::future<DescribeComponentStatisticsOutcome> DescribeComponentStatisticsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeComponentStatisticsRequest&, DescribeComponentStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeComponentStatisticsAsyncHandler;
@@ -4180,17 +4175,6 @@ namespace TencentCloud
                 DescribeClientExceptionOutcome DescribeClientException(const Model::DescribeClientExceptionRequest &request);
                 void DescribeClientExceptionAsync(const Model::DescribeClientExceptionRequest& request, const DescribeClientExceptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClientExceptionOutcomeCallable DescribeClientExceptionCallable(const Model::DescribeClientExceptionRequest& request);
-
-                /**
-                 *云护航计费产品已下线
-
-查询云护航服务订单列表
-                 * @param req DescribeCloudProtectServiceOrderListRequest
-                 * @return DescribeCloudProtectServiceOrderListOutcome
-                 */
-                DescribeCloudProtectServiceOrderListOutcome DescribeCloudProtectServiceOrderList(const Model::DescribeCloudProtectServiceOrderListRequest &request);
-                void DescribeCloudProtectServiceOrderListAsync(const Model::DescribeCloudProtectServiceOrderListRequest& request, const DescribeCloudProtectServiceOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeCloudProtectServiceOrderListOutcomeCallable DescribeCloudProtectServiceOrderListCallable(const Model::DescribeCloudProtectServiceOrderListRequest& request);
 
                 /**
                  *接口已无效

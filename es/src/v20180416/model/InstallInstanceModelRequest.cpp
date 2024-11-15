@@ -24,7 +24,9 @@ using namespace std;
 
 InstallInstanceModelRequest::InstallInstanceModelRequest() :
     m_instanceIdHasBeenSet(false),
-    m_usrCosModelUrlListHasBeenSet(false)
+    m_usrCosModelUrlListHasBeenSet(false),
+    m_modelNamesHasBeenSet(false),
+    m_taskTypesHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,32 @@ string InstallInstanceModelRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_usrCosModelUrlList.begin(); itr != m_usrCosModelUrlList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_modelNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_modelNames.begin(); itr != m_modelNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_taskTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskTypes.begin(); itr != m_taskTypes.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -94,6 +122,38 @@ void InstallInstanceModelRequest::SetUsrCosModelUrlList(const vector<string>& _u
 bool InstallInstanceModelRequest::UsrCosModelUrlListHasBeenSet() const
 {
     return m_usrCosModelUrlListHasBeenSet;
+}
+
+vector<string> InstallInstanceModelRequest::GetModelNames() const
+{
+    return m_modelNames;
+}
+
+void InstallInstanceModelRequest::SetModelNames(const vector<string>& _modelNames)
+{
+    m_modelNames = _modelNames;
+    m_modelNamesHasBeenSet = true;
+}
+
+bool InstallInstanceModelRequest::ModelNamesHasBeenSet() const
+{
+    return m_modelNamesHasBeenSet;
+}
+
+vector<string> InstallInstanceModelRequest::GetTaskTypes() const
+{
+    return m_taskTypes;
+}
+
+void InstallInstanceModelRequest::SetTaskTypes(const vector<string>& _taskTypes)
+{
+    m_taskTypes = _taskTypes;
+    m_taskTypesHasBeenSet = true;
+}
+
+bool InstallInstanceModelRequest::TaskTypesHasBeenSet() const
+{
+    return m_taskTypesHasBeenSet;
 }
 
 

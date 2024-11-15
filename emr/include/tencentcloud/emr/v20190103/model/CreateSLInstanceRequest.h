@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/ZoneSetting.h>
 #include <tencentcloud/emr/v20190103/model/Tag.h>
+#include <tencentcloud/emr/v20190103/model/PrePaySetting.h>
 
 
 namespace TencentCloud
@@ -191,6 +192,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取预付费参数
+                     * @return PrePaySetting 预付费参数
+                     * 
+                     */
+                    PrePaySetting GetPrePaySetting() const;
+
+                    /**
+                     * 设置预付费参数
+                     * @param _prePaySetting 预付费参数
+                     * 
+                     */
+                    void SetPrePaySetting(const PrePaySetting& _prePaySetting);
+
+                    /**
+                     * 判断参数 PrePaySetting 是否已赋值
+                     * @return PrePaySetting 是否已赋值
+                     * 
+                     */
+                    bool PrePaySettingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -234,6 +256,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 预付费参数
+                     */
+                    PrePaySetting m_prePaySetting;
+                    bool m_prePaySettingHasBeenSet;
 
                 };
             }

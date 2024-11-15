@@ -70,7 +70,8 @@ DomainsPartInfo::DomainsPartInfo() :
     m_gmEncCertHasBeenSet(false),
     m_gmEncPrivateKeyHasBeenSet(false),
     m_gmSSLIdHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_probeStatusHasBeenSet(false)
 {
 }
 
@@ -604,6 +605,16 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         m_labelsHasBeenSet = true;
     }
 
+    if (value.HasMember("ProbeStatus") && !value["ProbeStatus"].IsNull())
+    {
+        if (!value["ProbeStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.ProbeStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_probeStatus = value["ProbeStatus"].GetInt64();
+        m_probeStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1041,6 +1052,14 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_probeStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProbeStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_probeStatus, allocator);
     }
 
 }
@@ -1844,5 +1863,21 @@ void DomainsPartInfo::SetLabels(const vector<string>& _labels)
 bool DomainsPartInfo::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetProbeStatus() const
+{
+    return m_probeStatus;
+}
+
+void DomainsPartInfo::SetProbeStatus(const int64_t& _probeStatus)
+{
+    m_probeStatus = _probeStatus;
+    m_probeStatusHasBeenSet = true;
+}
+
+bool DomainsPartInfo::ProbeStatusHasBeenSet() const
+{
+    return m_probeStatusHasBeenSet;
 }
 

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdz/v20221123/model/CloudDedicatedZoneResourceSummaryInfo.h>
+#include <tencentcloud/cdz/v20221123/model/ExtraInfo.h>
 
 
 namespace TencentCloud
@@ -60,6 +61,22 @@ namespace TencentCloud
                      */
                     bool ResourceSummarySetHasBeenSet() const;
 
+                    /**
+                     * 获取资源水位扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtraInfo 资源水位扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ExtraInfo GetExtraInfo() const;
+
+                    /**
+                     * 判断参数 ExtraInfo 是否已赋值
+                     * @return ExtraInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtraInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -68,6 +85,13 @@ namespace TencentCloud
                      */
                     std::vector<CloudDedicatedZoneResourceSummaryInfo> m_resourceSummarySet;
                     bool m_resourceSummarySetHasBeenSet;
+
+                    /**
+                     * 资源水位扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExtraInfo m_extraInfo;
+                    bool m_extraInfoHasBeenSet;
 
                 };
             }

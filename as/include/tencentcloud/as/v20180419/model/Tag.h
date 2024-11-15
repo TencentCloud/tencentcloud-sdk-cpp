@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取标签绑定的资源类型，当前支持类型："auto-scaling-group
+                     * 获取标签绑定的资源类型，当前支持类型："auto-scaling-group", "launch-configuration"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceType 标签绑定的资源类型，当前支持类型："auto-scaling-group
+                     * @return ResourceType 标签绑定的资源类型，当前支持类型："auto-scaling-group", "launch-configuration"
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置标签绑定的资源类型，当前支持类型："auto-scaling-group
+                     * 设置标签绑定的资源类型，当前支持类型："auto-scaling-group", "launch-configuration"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceType 标签绑定的资源类型，当前支持类型："auto-scaling-group
+                     * @param _resourceType 标签绑定的资源类型，当前支持类型："auto-scaling-group", "launch-configuration"
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -128,7 +128,7 @@ namespace TencentCloud
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 标签绑定的资源类型，当前支持类型："auto-scaling-group
+                     * 标签绑定的资源类型，当前支持类型："auto-scaling-group", "launch-configuration"
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceType;

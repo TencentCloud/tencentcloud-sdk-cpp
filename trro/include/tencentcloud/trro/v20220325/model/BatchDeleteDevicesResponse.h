@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取删除失败的设备ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedDeviceIds 删除失败的设备ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFailedDeviceIds() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 删除失败的设备ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_failedDeviceIds;
                     bool m_failedDeviceIdsHasBeenSet;

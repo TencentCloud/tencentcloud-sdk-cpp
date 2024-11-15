@@ -260,6 +260,27 @@ namespace TencentCloud
                     bool AnycastZoneHasBeenSet() const;
 
                     /**
+                     * 获取指定IP地址申请EIP，每个账户每个月只有三次配额
+                     * @return VipCluster 指定IP地址申请EIP，每个账户每个月只有三次配额
+                     * 
+                     */
+                    std::vector<std::string> GetVipCluster() const;
+
+                    /**
+                     * 设置指定IP地址申请EIP，每个账户每个月只有三次配额
+                     * @param _vipCluster 指定IP地址申请EIP，每个账户每个月只有三次配额
+                     * 
+                     */
+                    void SetVipCluster(const std::vector<std::string>& _vipCluster);
+
+                    /**
+                     * 判断参数 VipCluster 是否已赋值
+                     * @return VipCluster 是否已赋值
+                     * 
+                     */
+                    bool VipClusterHasBeenSet() const;
+
+                    /**
                      * 获取<b>[已废弃]</b> AnycastEIP不再区分是否负载均衡。原参数说明如下：
 AnycastEIP是否用于绑定负载均衡。
 <ul style="margin:0"><li>已开通Anycast公网加速白名单的用户，可选值：<ul><li>TRUE：AnycastEIP可绑定对象为负载均衡</li>
@@ -499,6 +520,12 @@ AnycastEIP是否用于绑定负载均衡。
                      */
                     std::string m_anycastZone;
                     bool m_anycastZoneHasBeenSet;
+
+                    /**
+                     * 指定IP地址申请EIP，每个账户每个月只有三次配额
+                     */
+                    std::vector<std::string> m_vipCluster;
+                    bool m_vipClusterHasBeenSet;
 
                     /**
                      * <b>[已废弃]</b> AnycastEIP不再区分是否负载均衡。原参数说明如下：

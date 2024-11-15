@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取前端SDK返回
-                     * @return ReqId 前端SDK返回
+                     * 获取前端SDK返回。
+                     * @return ReqId 前端SDK返回。
                      * 
                      */
                     std::string GetReqId() const;
 
                     /**
-                     * 设置前端SDK返回
-                     * @param _reqId 前端SDK返回
+                     * 设置前端SDK返回。
+                     * @param _reqId 前端SDK返回。
                      * 
                      */
                     void SetReqId(const std::string& _reqId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 前端SDK返回
+                     * 前端SDK返回。
                      */
                     std::string m_reqId;
                     bool m_reqIdHasBeenSet;

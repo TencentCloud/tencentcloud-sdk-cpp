@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取缓存卷。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Volumes 缓存卷。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Volume> GetVolumes() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取符合条件的数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 符合条件的数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 缓存卷。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Volume> m_volumes;
                     bool m_volumesHasBeenSet;
 
                     /**
                      * 符合条件的数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

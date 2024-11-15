@@ -52,7 +52,11 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_payModeEffectiveHasBeenSet(false),
     m_responseDurationWarningThresholdHasBeenSet(false),
     m_freeHasBeenSet(false),
-    m_defaultTSFHasBeenSet(false)
+    m_defaultTSFHasBeenSet(false),
+    m_isRelatedDashboardHasBeenSet(false),
+    m_dashboardTopicIDHasBeenSet(false),
+    m_isInstrumentationVulnerabilityScanHasBeenSet(false),
+    m_isSqlInjectionAnalysisHasBeenSet(false)
 {
 }
 
@@ -394,6 +398,46 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_defaultTSFHasBeenSet = true;
     }
 
+    if (value.HasMember("IsRelatedDashboard") && !value["IsRelatedDashboard"].IsNull())
+    {
+        if (!value["IsRelatedDashboard"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsRelatedDashboard` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isRelatedDashboard = value["IsRelatedDashboard"].GetInt64();
+        m_isRelatedDashboardHasBeenSet = true;
+    }
+
+    if (value.HasMember("DashboardTopicID") && !value["DashboardTopicID"].IsNull())
+    {
+        if (!value["DashboardTopicID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.DashboardTopicID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dashboardTopicID = string(value["DashboardTopicID"].GetString());
+        m_dashboardTopicIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsInstrumentationVulnerabilityScan") && !value["IsInstrumentationVulnerabilityScan"].IsNull())
+    {
+        if (!value["IsInstrumentationVulnerabilityScan"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsInstrumentationVulnerabilityScan` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isInstrumentationVulnerabilityScan = value["IsInstrumentationVulnerabilityScan"].GetInt64();
+        m_isInstrumentationVulnerabilityScanHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsSqlInjectionAnalysis") && !value["IsSqlInjectionAnalysis"].IsNull())
+    {
+        if (!value["IsSqlInjectionAnalysis"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.IsSqlInjectionAnalysis` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSqlInjectionAnalysis = value["IsSqlInjectionAnalysis"].GetInt64();
+        m_isSqlInjectionAnalysisHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -667,6 +711,38 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "DefaultTSF";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_defaultTSF, allocator);
+    }
+
+    if (m_isRelatedDashboardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsRelatedDashboard";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isRelatedDashboard, allocator);
+    }
+
+    if (m_dashboardTopicIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DashboardTopicID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dashboardTopicID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isInstrumentationVulnerabilityScanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInstrumentationVulnerabilityScan";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isInstrumentationVulnerabilityScan, allocator);
+    }
+
+    if (m_isSqlInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSqlInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSqlInjectionAnalysis, allocator);
     }
 
 }
@@ -1182,5 +1258,69 @@ void ApmInstanceDetail::SetDefaultTSF(const int64_t& _defaultTSF)
 bool ApmInstanceDetail::DefaultTSFHasBeenSet() const
 {
     return m_defaultTSFHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsRelatedDashboard() const
+{
+    return m_isRelatedDashboard;
+}
+
+void ApmInstanceDetail::SetIsRelatedDashboard(const int64_t& _isRelatedDashboard)
+{
+    m_isRelatedDashboard = _isRelatedDashboard;
+    m_isRelatedDashboardHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsRelatedDashboardHasBeenSet() const
+{
+    return m_isRelatedDashboardHasBeenSet;
+}
+
+string ApmInstanceDetail::GetDashboardTopicID() const
+{
+    return m_dashboardTopicID;
+}
+
+void ApmInstanceDetail::SetDashboardTopicID(const string& _dashboardTopicID)
+{
+    m_dashboardTopicID = _dashboardTopicID;
+    m_dashboardTopicIDHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::DashboardTopicIDHasBeenSet() const
+{
+    return m_dashboardTopicIDHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsInstrumentationVulnerabilityScan() const
+{
+    return m_isInstrumentationVulnerabilityScan;
+}
+
+void ApmInstanceDetail::SetIsInstrumentationVulnerabilityScan(const int64_t& _isInstrumentationVulnerabilityScan)
+{
+    m_isInstrumentationVulnerabilityScan = _isInstrumentationVulnerabilityScan;
+    m_isInstrumentationVulnerabilityScanHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsInstrumentationVulnerabilityScanHasBeenSet() const
+{
+    return m_isInstrumentationVulnerabilityScanHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetIsSqlInjectionAnalysis() const
+{
+    return m_isSqlInjectionAnalysis;
+}
+
+void ApmInstanceDetail::SetIsSqlInjectionAnalysis(const int64_t& _isSqlInjectionAnalysis)
+{
+    m_isSqlInjectionAnalysis = _isSqlInjectionAnalysis;
+    m_isSqlInjectionAnalysisHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::IsSqlInjectionAnalysisHasBeenSet() const
+{
+    return m_isSqlInjectionAnalysisHasBeenSet;
 }
 

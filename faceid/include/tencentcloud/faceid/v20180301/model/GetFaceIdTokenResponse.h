@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取有效期 10分钟。只能完成1次核身。
-                     * @return FaceIdToken 有效期 10分钟。只能完成1次核身。
+                     * 获取token值。- 有效期 10分钟。- 只能完成1次核身。
+                     * @return FaceIdToken token值。- 有效期 10分钟。- 只能完成1次核身。
                      * 
                      */
                     std::string GetFaceIdToken() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 有效期 10分钟。只能完成1次核身。
+                     * token值。- 有效期 10分钟。- 只能完成1次核身。
                      */
                     std::string m_faceIdToken;
                     bool m_faceIdTokenHasBeenSet;

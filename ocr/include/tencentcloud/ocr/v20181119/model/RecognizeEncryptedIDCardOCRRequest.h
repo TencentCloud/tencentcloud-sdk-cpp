@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取请求体被加密后的密文，本接口只支持加密传输
-                     * @return EncryptedBody 请求体被加密后的密文，本接口只支持加密传输
+                     * 获取请求体被加密后的密文（Base64编码），本接口只支持加密传输
+                     * @return EncryptedBody 请求体被加密后的密文（Base64编码），本接口只支持加密传输
                      * 
                      */
                     std::string GetEncryptedBody() const;
 
                     /**
-                     * 设置请求体被加密后的密文，本接口只支持加密传输
-                     * @param _encryptedBody 请求体被加密后的密文，本接口只支持加密传输
+                     * 设置请求体被加密后的密文（Base64编码），本接口只支持加密传输
+                     * @param _encryptedBody 请求体被加密后的密文（Base64编码），本接口只支持加密传输
                      * 
                      */
                     void SetEncryptedBody(const std::string& _encryptedBody);
@@ -302,7 +302,7 @@ Config = {"CropIdCard":true,"CropPortrait":true}
                 private:
 
                     /**
-                     * 请求体被加密后的密文，本接口只支持加密传输
+                     * 请求体被加密后的密文（Base64编码），本接口只支持加密传输
                      */
                     std::string m_encryptedBody;
                     bool m_encryptedBodyHasBeenSet;

@@ -505,18 +505,14 @@ namespace TencentCloud
 
                     /**
                      * 获取验收状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckStatus 验收状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckStatus() const;
 
                     /**
                      * 设置验收状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkStatus 验收状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckStatus(const std::string& _checkStatus);
@@ -530,18 +526,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交付预期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeliverExpectTime 交付预期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeliverExpectTime() const;
 
                     /**
                      * 设置交付预期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deliverExpectTime 交付预期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeliverExpectTime(const std::string& _deliverExpectTime);
@@ -555,18 +547,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交付实际完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeliverFinishTime 交付实际完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeliverFinishTime() const;
 
                     /**
                      * 设置交付实际完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deliverFinishTime 交付实际完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeliverFinishTime(const std::string& _deliverFinishTime);
@@ -580,18 +568,14 @@ namespace TencentCloud
 
                     /**
                      * 获取验收预期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckExpectTime 验收预期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckExpectTime() const;
 
                     /**
                      * 设置验收预期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkExpectTime 验收预期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckExpectTime(const std::string& _checkExpectTime);
@@ -605,18 +589,14 @@ namespace TencentCloud
 
                     /**
                      * 获取验收实际完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckFinishTime 验收实际完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckFinishTime() const;
 
                     /**
                      * 设置验收实际完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkFinishTime 验收实际完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckFinishTime(const std::string& _checkFinishTime);
@@ -630,18 +610,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订单SLA
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderSLA 订单SLA
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrderSLA() const;
 
                     /**
                      * 设置订单SLA
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _orderSLA 订单SLA
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrderSLA(const std::string& _orderSLA);
@@ -655,18 +631,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订单支付计划
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderPayPlan 订单支付计划
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrderPayPlan() const;
 
                     /**
                      * 设置订单支付计划
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _orderPayPlan 订单支付计划
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrderPayPlan(const std::string& _orderPayPlan);
@@ -811,49 +783,42 @@ namespace TencentCloud
 
                     /**
                      * 验收状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkStatus;
                     bool m_checkStatusHasBeenSet;
 
                     /**
                      * 交付预期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deliverExpectTime;
                     bool m_deliverExpectTimeHasBeenSet;
 
                     /**
                      * 交付实际完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deliverFinishTime;
                     bool m_deliverFinishTimeHasBeenSet;
 
                     /**
                      * 验收预期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkExpectTime;
                     bool m_checkExpectTimeHasBeenSet;
 
                     /**
                      * 验收实际完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkFinishTime;
                     bool m_checkFinishTimeHasBeenSet;
 
                     /**
                      * 订单SLA
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orderSLA;
                     bool m_orderSLAHasBeenSet;
 
                     /**
                      * 订单支付计划
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orderPayPlan;
                     bool m_orderPayPlanHasBeenSet;

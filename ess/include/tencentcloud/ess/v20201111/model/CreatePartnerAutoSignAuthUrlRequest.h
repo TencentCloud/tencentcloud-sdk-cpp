@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取被授企业id/授权方企业id，和AuthorizedOrganizationName二选一传入
-                     * @return AuthorizedOrganizationId 被授企业id/授权方企业id，和AuthorizedOrganizationName二选一传入
+                     * 获取被授企业id/授权方企业id（即OrganizationId），和AuthorizedOrganizationName二选一传入
+                     * @return AuthorizedOrganizationId 被授企业id/授权方企业id（即OrganizationId），和AuthorizedOrganizationName二选一传入
                      * 
                      */
                     std::string GetAuthorizedOrganizationId() const;
 
                     /**
-                     * 设置被授企业id/授权方企业id，和AuthorizedOrganizationName二选一传入
-                     * @param _authorizedOrganizationId 被授企业id/授权方企业id，和AuthorizedOrganizationName二选一传入
+                     * 设置被授企业id/授权方企业id（即OrganizationId），和AuthorizedOrganizationName二选一传入
+                     * @param _authorizedOrganizationId 被授企业id/授权方企业id（即OrganizationId），和AuthorizedOrganizationName二选一传入
                      * 
                      */
                     void SetAuthorizedOrganizationId(const std::string& _authorizedOrganizationId);
@@ -108,15 +108,19 @@ namespace TencentCloud
                     bool AuthorizedOrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取被授企业名称/授权方企业名称，和AuthorizedOrganizationId二选一传入
-                     * @return AuthorizedOrganizationName 被授企业名称/授权方企业名称，和AuthorizedOrganizationId二选一传入
+                     * 获取被授企业名称/授权方企业的名字，和AuthorizedOrganizationId二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。
+注: `如果名称中包含英文括号()，请使用中文括号（）代替。`
+                     * @return AuthorizedOrganizationName 被授企业名称/授权方企业的名字，和AuthorizedOrganizationId二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。
+注: `如果名称中包含英文括号()，请使用中文括号（）代替。`
                      * 
                      */
                     std::string GetAuthorizedOrganizationName() const;
 
                     /**
-                     * 设置被授企业名称/授权方企业名称，和AuthorizedOrganizationId二选一传入
-                     * @param _authorizedOrganizationName 被授企业名称/授权方企业名称，和AuthorizedOrganizationId二选一传入
+                     * 设置被授企业名称/授权方企业的名字，和AuthorizedOrganizationId二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。
+注: `如果名称中包含英文括号()，请使用中文括号（）代替。`
+                     * @param _authorizedOrganizationName 被授企业名称/授权方企业的名字，和AuthorizedOrganizationId二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。
+注: `如果名称中包含英文括号()，请使用中文括号（）代替。`
                      * 
                      */
                     void SetAuthorizedOrganizationName(const std::string& _authorizedOrganizationName);
@@ -129,15 +133,43 @@ namespace TencentCloud
                     bool AuthorizedOrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章
-                     * @return SealTypes 指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章
+                     * 获取在设置印章授权时，可以指定特定的印章类型，以确保在授权过程中只使用相应类型的印章。支持的印章类型包括：
+
+<ul>
+<li><strong>OFFICIAL</strong>：企业公章，用于代表企业对外的正式文件和重要事务的认证。</li>
+<li><strong>CONTRACT</strong>：合同专用章，专门用于签署各类合同。</li>
+<li><strong>FINANCE</strong>：财务专用章，用于企业的财务相关文件，如发票、收据等财务凭证的认证。</li>
+<li><strong>PERSONNEL</strong>：人事专用章，用于人事管理相关文件，如劳动合同、人事任命等。</li>
+</ul>
+                     * @return SealTypes 在设置印章授权时，可以指定特定的印章类型，以确保在授权过程中只使用相应类型的印章。支持的印章类型包括：
+
+<ul>
+<li><strong>OFFICIAL</strong>：企业公章，用于代表企业对外的正式文件和重要事务的认证。</li>
+<li><strong>CONTRACT</strong>：合同专用章，专门用于签署各类合同。</li>
+<li><strong>FINANCE</strong>：财务专用章，用于企业的财务相关文件，如发票、收据等财务凭证的认证。</li>
+<li><strong>PERSONNEL</strong>：人事专用章，用于人事管理相关文件，如劳动合同、人事任命等。</li>
+</ul>
                      * 
                      */
                     std::vector<std::string> GetSealTypes() const;
 
                     /**
-                     * 设置指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章
-                     * @param _sealTypes 指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章
+                     * 设置在设置印章授权时，可以指定特定的印章类型，以确保在授权过程中只使用相应类型的印章。支持的印章类型包括：
+
+<ul>
+<li><strong>OFFICIAL</strong>：企业公章，用于代表企业对外的正式文件和重要事务的认证。</li>
+<li><strong>CONTRACT</strong>：合同专用章，专门用于签署各类合同。</li>
+<li><strong>FINANCE</strong>：财务专用章，用于企业的财务相关文件，如发票、收据等财务凭证的认证。</li>
+<li><strong>PERSONNEL</strong>：人事专用章，用于人事管理相关文件，如劳动合同、人事任命等。</li>
+</ul>
+                     * @param _sealTypes 在设置印章授权时，可以指定特定的印章类型，以确保在授权过程中只使用相应类型的印章。支持的印章类型包括：
+
+<ul>
+<li><strong>OFFICIAL</strong>：企业公章，用于代表企业对外的正式文件和重要事务的认证。</li>
+<li><strong>CONTRACT</strong>：合同专用章，专门用于签署各类合同。</li>
+<li><strong>FINANCE</strong>：财务专用章，用于企业的财务相关文件，如发票、收据等财务凭证的认证。</li>
+<li><strong>PERSONNEL</strong>：人事专用章，用于人事管理相关文件，如劳动合同、人事任命等。</li>
+</ul>
                      * 
                      */
                     void SetSealTypes(const std::vector<std::string>& _sealTypes);
@@ -150,23 +182,31 @@ namespace TencentCloud
                     bool SealTypesHasBeenSet() const;
 
                     /**
-                     * 获取他方授权给我方：
-- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称
-- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称
-                     * @return AuthToMe 他方授权给我方：
-- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称
-- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称
+                     * 获取在处理授权关系时，授权的方向
+<ul>
+<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>
+<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【授权方】的企业名称，即提供授权的企业。</li>
+</ul>
+                     * @return AuthToMe 在处理授权关系时，授权的方向
+<ul>
+<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>
+<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【授权方】的企业名称，即提供授权的企业。</li>
+</ul>
                      * 
                      */
                     bool GetAuthToMe() const;
 
                     /**
-                     * 设置他方授权给我方：
-- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称
-- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称
-                     * @param _authToMe 他方授权给我方：
-- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称
-- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称
+                     * 设置在处理授权关系时，授权的方向
+<ul>
+<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>
+<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【授权方】的企业名称，即提供授权的企业。</li>
+</ul>
+                     * @param _authToMe 在处理授权关系时，授权的方向
+<ul>
+<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>
+<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【授权方】的企业名称，即提供授权的企业。</li>
+</ul>
                      * 
                      */
                     void SetAuthToMe(const bool& _authToMe);
@@ -193,27 +233,37 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 被授企业id/授权方企业id，和AuthorizedOrganizationName二选一传入
+                     * 被授企业id/授权方企业id（即OrganizationId），和AuthorizedOrganizationName二选一传入
                      */
                     std::string m_authorizedOrganizationId;
                     bool m_authorizedOrganizationIdHasBeenSet;
 
                     /**
-                     * 被授企业名称/授权方企业名称，和AuthorizedOrganizationId二选一传入
+                     * 被授企业名称/授权方企业的名字，和AuthorizedOrganizationId二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。
+注: `如果名称中包含英文括号()，请使用中文括号（）代替。`
                      */
                     std::string m_authorizedOrganizationName;
                     bool m_authorizedOrganizationNameHasBeenSet;
 
                     /**
-                     * 指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章
+                     * 在设置印章授权时，可以指定特定的印章类型，以确保在授权过程中只使用相应类型的印章。支持的印章类型包括：
+
+<ul>
+<li><strong>OFFICIAL</strong>：企业公章，用于代表企业对外的正式文件和重要事务的认证。</li>
+<li><strong>CONTRACT</strong>：合同专用章，专门用于签署各类合同。</li>
+<li><strong>FINANCE</strong>：财务专用章，用于企业的财务相关文件，如发票、收据等财务凭证的认证。</li>
+<li><strong>PERSONNEL</strong>：人事专用章，用于人事管理相关文件，如劳动合同、人事任命等。</li>
+</ul>
                      */
                     std::vector<std::string> m_sealTypes;
                     bool m_sealTypesHasBeenSet;
 
                     /**
-                     * 他方授权给我方：
-- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称
-- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称
+                     * 在处理授权关系时，授权的方向
+<ul>
+<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>
+<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【授权方】的企业名称，即提供授权的企业。</li>
+</ul>
                      */
                     bool m_authToMe;
                     bool m_authToMeHasBeenSet;

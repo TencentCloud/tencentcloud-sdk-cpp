@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取退款单关联的原始子订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealName 退款单关联的原始子订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDealName() const;
 
                     /**
                      * 设置退款单关联的原始子订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dealName 退款单关联的原始子订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDealName(const std::string& _dealName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取退款金额，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefundAmount 退款金额，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRefundAmount() const;
 
                     /**
                      * 设置退款金额，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _refundAmount 退款金额，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRefundAmount(const int64_t& _refundAmount);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 退款单关联的原始子订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;
 
                     /**
                      * 退款金额，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_refundAmount;
                     bool m_refundAmountHasBeenSet;

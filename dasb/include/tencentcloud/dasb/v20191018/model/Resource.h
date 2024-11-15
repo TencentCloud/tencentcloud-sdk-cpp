@@ -803,6 +803,90 @@ namespace TencentCloud
                      */
                     bool DeployModelHasBeenSet() const;
 
+                    /**
+                     * 获取0 默认值，非内网访问，1 内网访问
+                     * @return IntranetAccess 0 默认值，非内网访问，1 内网访问
+                     * 
+                     */
+                    uint64_t GetIntranetAccess() const;
+
+                    /**
+                     * 设置0 默认值，非内网访问，1 内网访问
+                     * @param _intranetAccess 0 默认值，非内网访问，1 内网访问
+                     * 
+                     */
+                    void SetIntranetAccess(const uint64_t& _intranetAccess);
+
+                    /**
+                     * 判断参数 IntranetAccess 是否已赋值
+                     * @return IntranetAccess 是否已赋值
+                     * 
+                     */
+                    bool IntranetAccessHasBeenSet() const;
+
+                    /**
+                     * 获取内网访问的ip
+                     * @return IntranetPrivateIpSet 内网访问的ip
+                     * 
+                     */
+                    std::vector<std::string> GetIntranetPrivateIpSet() const;
+
+                    /**
+                     * 设置内网访问的ip
+                     * @param _intranetPrivateIpSet 内网访问的ip
+                     * 
+                     */
+                    void SetIntranetPrivateIpSet(const std::vector<std::string>& _intranetPrivateIpSet);
+
+                    /**
+                     * 判断参数 IntranetPrivateIpSet 是否已赋值
+                     * @return IntranetPrivateIpSet 是否已赋值
+                     * 
+                     */
+                    bool IntranetPrivateIpSetHasBeenSet() const;
+
+                    /**
+                     * 获取开通内网访问的vpc
+                     * @return IntranetVpcId 开通内网访问的vpc
+                     * 
+                     */
+                    std::string GetIntranetVpcId() const;
+
+                    /**
+                     * 设置开通内网访问的vpc
+                     * @param _intranetVpcId 开通内网访问的vpc
+                     * 
+                     */
+                    void SetIntranetVpcId(const std::string& _intranetVpcId);
+
+                    /**
+                     * 判断参数 IntranetVpcId 是否已赋值
+                     * @return IntranetVpcId 是否已赋值
+                     * 
+                     */
+                    bool IntranetVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取开通内网访问vpc的网段
+                     * @return IntranetVpcCidr 开通内网访问vpc的网段
+                     * 
+                     */
+                    std::string GetIntranetVpcCidr() const;
+
+                    /**
+                     * 设置开通内网访问vpc的网段
+                     * @param _intranetVpcCidr 开通内网访问vpc的网段
+                     * 
+                     */
+                    void SetIntranetVpcCidr(const std::string& _intranetVpcCidr);
+
+                    /**
+                     * 判断参数 IntranetVpcCidr 是否已赋值
+                     * @return IntranetVpcCidr 是否已赋值
+                     * 
+                     */
+                    bool IntranetVpcCidrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1020,6 +1104,30 @@ namespace TencentCloud
                      */
                     int64_t m_deployModel;
                     bool m_deployModelHasBeenSet;
+
+                    /**
+                     * 0 默认值，非内网访问，1 内网访问
+                     */
+                    uint64_t m_intranetAccess;
+                    bool m_intranetAccessHasBeenSet;
+
+                    /**
+                     * 内网访问的ip
+                     */
+                    std::vector<std::string> m_intranetPrivateIpSet;
+                    bool m_intranetPrivateIpSetHasBeenSet;
+
+                    /**
+                     * 开通内网访问的vpc
+                     */
+                    std::string m_intranetVpcId;
+                    bool m_intranetVpcIdHasBeenSet;
+
+                    /**
+                     * 开通内网访问vpc的网段
+                     */
+                    std::string m_intranetVpcCidr;
+                    bool m_intranetVpcCidrHasBeenSet;
 
                 };
             }

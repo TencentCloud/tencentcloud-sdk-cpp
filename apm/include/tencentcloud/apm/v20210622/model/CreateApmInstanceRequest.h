@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool PayModeHasBeenSet() const;
 
+                    /**
+                     * 获取（0=付费版；1=tsf受限免费版；2=免费版）
+                     * @return Free （0=付费版；1=tsf受限免费版；2=免费版）
+                     * 
+                     */
+                    int64_t GetFree() const;
+
+                    /**
+                     * 设置（0=付费版；1=tsf受限免费版；2=免费版）
+                     * @param _free （0=付费版；1=tsf受限免费版；2=免费版）
+                     * 
+                     */
+                    void SetFree(const int64_t& _free);
+
+                    /**
+                     * 判断参数 Free 是否已赋值
+                     * @return Free 是否已赋值
+                     * 
+                     */
+                    bool FreeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * （0=付费版；1=tsf受限免费版；2=免费版）
+                     */
+                    int64_t m_free;
+                    bool m_freeHasBeenSet;
 
                 };
             }

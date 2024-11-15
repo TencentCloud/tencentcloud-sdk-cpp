@@ -26,7 +26,8 @@ DeleteRoomMemberRequest::DeleteRoomMemberRequest() :
     m_roomIdHasBeenSet(false),
     m_deleteTypeHasBeenSet(false),
     m_bizIdHasBeenSet(false),
-    m_uidsHasBeenSet(false)
+    m_uidsHasBeenSet(false),
+    m_strUidsHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,19 @@ string DeleteRoomMemberRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_uids.begin(); itr != m_uids.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_strUidsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StrUids";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_strUids.begin(); itr != m_strUids.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -144,6 +158,22 @@ void DeleteRoomMemberRequest::SetUids(const vector<string>& _uids)
 bool DeleteRoomMemberRequest::UidsHasBeenSet() const
 {
     return m_uidsHasBeenSet;
+}
+
+vector<string> DeleteRoomMemberRequest::GetStrUids() const
+{
+    return m_strUids;
+}
+
+void DeleteRoomMemberRequest::SetStrUids(const vector<string>& _strUids)
+{
+    m_strUids = _strUids;
+    m_strUidsHasBeenSet = true;
+}
+
+bool DeleteRoomMemberRequest::StrUidsHasBeenSet() const
+{
+    return m_strUidsHasBeenSet;
 }
 
 

@@ -312,18 +312,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上个工作流UUID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastWorkflowUuid 上个工作流UUID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastWorkflowUuid() const;
 
                     /**
                      * 设置上个工作流UUID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastWorkflowUuid 上个工作流UUID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastWorkflowUuid(const std::string& _lastWorkflowUuid);
@@ -337,18 +333,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreationTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 设置创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creationTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
@@ -438,14 +430,12 @@ namespace TencentCloud
 
                     /**
                      * 上个工作流UUID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastWorkflowUuid;
                     bool m_lastWorkflowUuidHasBeenSet;
 
                     /**
                      * 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creationTime;
                     bool m_creationTimeHasBeenSet;

@@ -62,7 +62,8 @@ CreateDBInstanceHourRequest::CreateDBInstanceHourRequest() :
     m_vipsHasBeenSet(false),
     m_dataProtectVolumeHasBeenSet(false),
     m_clusterTopologyHasBeenSet(false),
-    m_diskTypeHasBeenSet(false)
+    m_diskTypeHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false)
 {
 }
 
@@ -427,6 +428,14 @@ string CreateDBInstanceHourRequest::ToJsonString() const
         string key = "DiskType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1075,6 +1084,22 @@ void CreateDBInstanceHourRequest::SetDiskType(const string& _diskType)
 bool CreateDBInstanceHourRequest::DiskTypeHasBeenSet() const
 {
     return m_diskTypeHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void CreateDBInstanceHourRequest::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 
 

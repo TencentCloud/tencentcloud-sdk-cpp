@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取按量计费后付费单价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPrice 按量计费后付费单价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetUnitPrice() const;
 
                     /**
                      * 设置按量计费后付费单价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unitPrice 按量计费后付费单价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnitPrice(const double& _unitPrice);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取按量计费后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）： GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeUnit 按量计费后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）： GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChargeUnit() const;
 
                     /**
                      * 设置按量计费后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）： GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chargeUnit 按量计费后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）： GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChargeUnit(const std::string& _chargeUnit);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取预付费商品的原价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalPrice 预付费商品的原价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
                      * 设置预付费商品的原价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originalPrice 预付费商品的原价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginalPrice(const double& _originalPrice);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取预付费商品的折扣价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiscountPrice 预付费商品的折扣价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
                      * 设置预付费商品的折扣价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _discountPrice 预付费商品的折扣价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
@@ -134,24 +150,28 @@ namespace TencentCloud
 
                     /**
                      * 按量计费后付费单价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_unitPrice;
                     bool m_unitPriceHasBeenSet;
 
                     /**
                      * 按量计费后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）： GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chargeUnit;
                     bool m_chargeUnitHasBeenSet;
 
                     /**
                      * 预付费商品的原价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_originalPrice;
                     bool m_originalPriceHasBeenSet;
 
                     /**
                      * 预付费商品的折扣价，单位：元。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_discountPrice;
                     bool m_discountPriceHasBeenSet;

@@ -25,7 +25,8 @@ using namespace std;
 
 GeneralHandwritingOCRResponse::GeneralHandwritingOCRResponse() :
     m_textDetectionsHasBeenSet(false),
-    m_angelHasBeenSet(false)
+    m_angelHasBeenSet(false),
+    m_angleHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome GeneralHandwritingOCRResponse::Deserialize(const string &pay
         m_angelHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Angle") && !rsp["Angle"].IsNull())
+    {
+        if (!rsp["Angle"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_angle = rsp["Angle"].GetDouble();
+        m_angleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string GeneralHandwritingOCRResponse::ToJsonString() const
         value.AddMember(iKey, m_angel, allocator);
     }
 
+    if (m_angleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Angle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_angle, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ double GeneralHandwritingOCRResponse::GetAngel() const
 bool GeneralHandwritingOCRResponse::AngelHasBeenSet() const
 {
     return m_angelHasBeenSet;
+}
+
+double GeneralHandwritingOCRResponse::GetAngle() const
+{
+    return m_angle;
+}
+
+bool GeneralHandwritingOCRResponse::AngleHasBeenSet() const
+{
+    return m_angleHasBeenSet;
 }
 
 

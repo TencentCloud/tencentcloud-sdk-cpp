@@ -76,9 +76,9 @@ namespace TencentCloud
 
                     /**
                      * 获取疑似同一人的PersonId。 
-当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
+- 当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
                      * @return SimilarPersonId 疑似同一人的PersonId。 
-当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
+- 当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
                      * 
                      */
                     std::string GetSimilarPersonId() const;
@@ -121,7 +121,7 @@ namespace TencentCloud
 
                     /**
                      * 疑似同一人的PersonId。 
-当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
+- 当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
                      */
                     std::string m_similarPersonId;
                     bool m_similarPersonIdHasBeenSet;

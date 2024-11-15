@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加入成功的人脸数量
-                     * @return SucFaceNum 加入成功的人脸数量
+                     * 获取加入成功的人脸数量。
+                     * @return SucFaceNum 加入成功的人脸数量。
                      * 
                      */
                     uint64_t GetSucFaceNum() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool SucFaceNumHasBeenSet() const;
 
                     /**
-                     * 获取加入成功的人脸ID列表
-                     * @return SucFaceIds 加入成功的人脸ID列表
+                     * 获取加入成功的人脸ID列表。
+                     * @return SucFaceIds 加入成功的人脸ID列表。
                      * 
                      */
                     std::vector<std::string> GetSucFaceIds() const;
@@ -73,14 +73,22 @@ namespace TencentCloud
                     bool SucFaceIdsHasBeenSet() const;
 
                     /**
-                     * 获取每张人脸图片添加结果，-1101 代表未检测到人脸，-1102 代表图片解码失败，-1109 代表图片尺寸过大或者过小， 
--1601代表不符合图片质量控制要求, -1604 代表人脸相似度没有超过FaceMatchThreshold。 
-其他非 0 值代表算法服务异常。 
-RetCode的顺序和入参中 Images 或 Urls 的顺序一致。
-                     * @return RetCode 每张人脸图片添加结果，-1101 代表未检测到人脸，-1102 代表图片解码失败，-1109 代表图片尺寸过大或者过小， 
--1601代表不符合图片质量控制要求, -1604 代表人脸相似度没有超过FaceMatchThreshold。 
-其他非 0 值代表算法服务异常。 
-RetCode的顺序和入参中 Images 或 Urls 的顺序一致。
+                     * 获取每张人脸图片添加结果。
+- 其他非 0 值代表算法服务异常，取值范围：
+-1101 代表未检测到人脸。
+-1102 代表图片解码失败。
+-1109 代表图片尺寸过大或者过小。
+-1601代表不符合图片质量控制要求。
+-1604 代表人脸相似度没有超过FaceMatchThreshold。 
+- RetCode的顺序和入参中 Images 或 Urls 的顺序一致。
+                     * @return RetCode 每张人脸图片添加结果。
+- 其他非 0 值代表算法服务异常，取值范围：
+-1101 代表未检测到人脸。
+-1102 代表图片解码失败。
+-1109 代表图片尺寸过大或者过小。
+-1601代表不符合图片质量控制要求。
+-1604 代表人脸相似度没有超过FaceMatchThreshold。 
+- RetCode的顺序和入参中 Images 或 Urls 的顺序一致。
                      * 
                      */
                     std::vector<int64_t> GetRetCode() const;
@@ -93,10 +101,12 @@ RetCode的顺序和入参中 Images 或 Urls 的顺序一致。
                     bool RetCodeHasBeenSet() const;
 
                     /**
-                     * 获取加入成功的人脸索引。索引顺序和入参中 Images 或 Urls 的顺序一致。 
-例如， Urls 中 有 3 个 url，第二个 url 失败，则 SucIndexes 值为 [0,2] 。
-                     * @return SucIndexes 加入成功的人脸索引。索引顺序和入参中 Images 或 Urls 的顺序一致。 
-例如， Urls 中 有 3 个 url，第二个 url 失败，则 SucIndexes 值为 [0,2] 。
+                     * 获取加入成功的人脸索引。
+- 索引顺序和入参中 Images 或 Urls 的顺序一致。 
+- 例如， Urls 中 有 3 个 url，第二个 url 失败，则 SucIndexes 值为 [0,2] 。
+                     * @return SucIndexes 加入成功的人脸索引。
+- 索引顺序和入参中 Images 或 Urls 的顺序一致。 
+- 例如， Urls 中 有 3 个 url，第二个 url 失败，则 SucIndexes 值为 [0,2] 。
                      * 
                      */
                     std::vector<uint64_t> GetSucIndexes() const;
@@ -139,29 +149,34 @@ RetCode的顺序和入参中 Images 或 Urls 的顺序一致。
                 private:
 
                     /**
-                     * 加入成功的人脸数量
+                     * 加入成功的人脸数量。
                      */
                     uint64_t m_sucFaceNum;
                     bool m_sucFaceNumHasBeenSet;
 
                     /**
-                     * 加入成功的人脸ID列表
+                     * 加入成功的人脸ID列表。
                      */
                     std::vector<std::string> m_sucFaceIds;
                     bool m_sucFaceIdsHasBeenSet;
 
                     /**
-                     * 每张人脸图片添加结果，-1101 代表未检测到人脸，-1102 代表图片解码失败，-1109 代表图片尺寸过大或者过小， 
--1601代表不符合图片质量控制要求, -1604 代表人脸相似度没有超过FaceMatchThreshold。 
-其他非 0 值代表算法服务异常。 
-RetCode的顺序和入参中 Images 或 Urls 的顺序一致。
+                     * 每张人脸图片添加结果。
+- 其他非 0 值代表算法服务异常，取值范围：
+-1101 代表未检测到人脸。
+-1102 代表图片解码失败。
+-1109 代表图片尺寸过大或者过小。
+-1601代表不符合图片质量控制要求。
+-1604 代表人脸相似度没有超过FaceMatchThreshold。 
+- RetCode的顺序和入参中 Images 或 Urls 的顺序一致。
                      */
                     std::vector<int64_t> m_retCode;
                     bool m_retCodeHasBeenSet;
 
                     /**
-                     * 加入成功的人脸索引。索引顺序和入参中 Images 或 Urls 的顺序一致。 
-例如， Urls 中 有 3 个 url，第二个 url 失败，则 SucIndexes 值为 [0,2] 。
+                     * 加入成功的人脸索引。
+- 索引顺序和入参中 Images 或 Urls 的顺序一致。 
+- 例如， Urls 中 有 3 个 url，第二个 url 失败，则 SucIndexes 值为 [0,2] 。
                      */
                     std::vector<uint64_t> m_sucIndexes;
                     bool m_sucIndexesHasBeenSet;

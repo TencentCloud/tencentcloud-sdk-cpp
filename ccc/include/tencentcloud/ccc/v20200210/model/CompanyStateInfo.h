@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool ModifyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取合同编号
+                     * @return ContractNo 合同编号
+                     * 
+                     */
+                    std::string GetContractNo() const;
+
+                    /**
+                     * 设置合同编号
+                     * @param _contractNo 合同编号
+                     * 
+                     */
+                    void SetContractNo(const std::string& _contractNo);
+
+                    /**
+                     * 判断参数 ContractNo 是否已赋值
+                     * @return ContractNo 是否已赋值
+                     * 
+                     */
+                    bool ContractNoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     int64_t m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 合同编号
+                     */
+                    std::string m_contractNo;
+                    bool m_contractNoHasBeenSet;
 
                 };
             }

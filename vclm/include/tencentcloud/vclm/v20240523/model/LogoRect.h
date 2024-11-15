@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 输入框
+                * 水印图输入框
                 */
                 class LogoRect : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取左上角X坐标
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return X 左上角X坐标
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取水印图框X坐标值。当值大于0时，坐标轴原点位于原图左侧，方向指右；当值小于0时，坐标轴原点位于原图右侧，方向指左。
+                     * @return X 水印图框X坐标值。当值大于0时，坐标轴原点位于原图左侧，方向指右；当值小于0时，坐标轴原点位于原图右侧，方向指左。
                      * 
                      */
                     int64_t GetX() const;
 
                     /**
-                     * 设置左上角X坐标
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _x 左上角X坐标
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置水印图框X坐标值。当值大于0时，坐标轴原点位于原图左侧，方向指右；当值小于0时，坐标轴原点位于原图右侧，方向指左。
+                     * @param _x 水印图框X坐标值。当值大于0时，坐标轴原点位于原图左侧，方向指右；当值小于0时，坐标轴原点位于原图右侧，方向指左。
                      * 
                      */
                     void SetX(const int64_t& _x);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool XHasBeenSet() const;
 
                     /**
-                     * 获取左上角Y坐标
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Y 左上角Y坐标
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取水印图框Y坐标值。当值大于0时，坐标轴原点位于原图上侧，方向指下；当值小于0时，坐标轴原点位于原图下侧，方向指上。
+                     * @return Y 水印图框Y坐标值。当值大于0时，坐标轴原点位于原图上侧，方向指下；当值小于0时，坐标轴原点位于原图下侧，方向指上。
                      * 
                      */
                     int64_t GetY() const;
 
                     /**
-                     * 设置左上角Y坐标
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _y 左上角Y坐标
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置水印图框Y坐标值。当值大于0时，坐标轴原点位于原图上侧，方向指下；当值小于0时，坐标轴原点位于原图下侧，方向指上。
+                     * @param _y 水印图框Y坐标值。当值大于0时，坐标轴原点位于原图上侧，方向指下；当值小于0时，坐标轴原点位于原图下侧，方向指上。
                      * 
                      */
                     void SetY(const int64_t& _y);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool YHasBeenSet() const;
 
                     /**
-                     * 获取方框宽度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Width 方框宽度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取水印图框宽度。
+                     * @return Width 水印图框宽度。
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置方框宽度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _width 方框宽度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置水印图框宽度。
+                     * @param _width 水印图框宽度。
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -122,19 +110,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取方框高度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Height 方框高度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取水印图框高度。
+                     * @return Height 水印图框高度。
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置方框高度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _height 方框高度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置水印图框高度。
+                     * @param _height 水印图框高度。
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -149,29 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 左上角X坐标
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 水印图框X坐标值。当值大于0时，坐标轴原点位于原图左侧，方向指右；当值小于0时，坐标轴原点位于原图右侧，方向指左。
                      */
                     int64_t m_x;
                     bool m_xHasBeenSet;
 
                     /**
-                     * 左上角Y坐标
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 水印图框Y坐标值。当值大于0时，坐标轴原点位于原图上侧，方向指下；当值小于0时，坐标轴原点位于原图下侧，方向指上。
                      */
                     int64_t m_y;
                     bool m_yHasBeenSet;
 
                     /**
-                     * 方框宽度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 水印图框宽度。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 方框高度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 水印图框高度。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;

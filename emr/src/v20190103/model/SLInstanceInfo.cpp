@@ -35,7 +35,10 @@ SLInstanceInfo::SLInstanceInfo() :
     m_addTimeHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_zoneSettingsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false),
+    m_isolateTimeHasBeenSet(false),
+    m_expireTimeHasBeenSet(false)
 {
 }
 
@@ -214,6 +217,36 @@ CoreInternalOutcome SLInstanceInfo::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoRenewFlag") && !value["AutoRenewFlag"].IsNull())
+    {
+        if (!value["AutoRenewFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SLInstanceInfo.AutoRenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenewFlag = value["AutoRenewFlag"].GetUint64();
+        m_autoRenewFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsolateTime") && !value["IsolateTime"].IsNull())
+    {
+        if (!value["IsolateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SLInstanceInfo.IsolateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateTime = string(value["IsolateTime"].GetString());
+        m_isolateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SLInstanceInfo.ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(value["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -353,6 +386,30 @@ void SLInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_isolateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isolateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -596,5 +653,53 @@ void SLInstanceInfo::SetTags(const vector<Tag>& _tags)
 bool SLInstanceInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+uint64_t SLInstanceInfo::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void SLInstanceInfo::SetAutoRenewFlag(const uint64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool SLInstanceInfo::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
+}
+
+string SLInstanceInfo::GetIsolateTime() const
+{
+    return m_isolateTime;
+}
+
+void SLInstanceInfo::SetIsolateTime(const string& _isolateTime)
+{
+    m_isolateTime = _isolateTime;
+    m_isolateTimeHasBeenSet = true;
+}
+
+bool SLInstanceInfo::IsolateTimeHasBeenSet() const
+{
+    return m_isolateTimeHasBeenSet;
+}
+
+string SLInstanceInfo::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void SLInstanceInfo::SetExpireTime(const string& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool SLInstanceInfo::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
 }
 

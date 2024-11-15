@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取成功加入的人员库数量
-                     * @return SucGroupNum 成功加入的人员库数量
+                     * 获取成功加入的人员库数量。
+                     * @return SucGroupNum 成功加入的人员库数量。
                      * 
                      */
                     uint64_t GetSucGroupNum() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool SucGroupNumHasBeenSet() const;
 
                     /**
-                     * 获取成功加入的人员库列表
-                     * @return SucGroupIds 成功加入的人员库列表
+                     * 获取成功加入的人员库列表。
+                     * @return SucGroupIds 成功加入的人员库列表。
                      * 
                      */
                     std::vector<std::string> GetSucGroupIds() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 成功加入的人员库数量
+                     * 成功加入的人员库数量。
                      */
                     uint64_t m_sucGroupNum;
                     bool m_sucGroupNumHasBeenSet;
 
                     /**
-                     * 成功加入的人员库列表
+                     * 成功加入的人员库列表。
                      */
                     std::vector<std::string> m_sucGroupIds;
                     bool m_sucGroupIdsHasBeenSet;

@@ -24,13 +24,23 @@ using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
 DescribeSLInstanceResponse::DescribeSLInstanceResponse() :
+    m_instanceIdHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_diskTypeHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_zoneSettingsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_regionIdHasBeenSet(false),
+    m_zoneHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_isolateTimeHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false),
+    m_nodeNumHasBeenSet(false)
 {
 }
 
@@ -67,6 +77,16 @@ CoreInternalOutcome DescribeSLInstanceResponse::Deserialize(const string &payloa
         return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
+
+    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
+    {
+        if (!rsp["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(rsp["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
 
     if (rsp.HasMember("InstanceName") && !rsp["InstanceName"].IsNull())
     {
@@ -158,6 +178,96 @@ CoreInternalOutcome DescribeSLInstanceResponse::Deserialize(const string &payloa
         m_tagsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClusterId") && !rsp["ClusterId"].IsNull())
+    {
+        if (!rsp["ClusterId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = rsp["ClusterId"].GetInt64();
+        m_clusterIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RegionId") && !rsp["RegionId"].IsNull())
+    {
+        if (!rsp["RegionId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegionId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionId = rsp["RegionId"].GetInt64();
+        m_regionIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Zone") && !rsp["Zone"].IsNull())
+    {
+        if (!rsp["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(rsp["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExpireTime") && !rsp["ExpireTime"].IsNull())
+    {
+        if (!rsp["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(rsp["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsolateTime") && !rsp["IsolateTime"].IsNull())
+    {
+        if (!rsp["IsolateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsolateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateTime = string(rsp["IsolateTime"].GetString());
+        m_isolateTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CreateTime") && !rsp["CreateTime"].IsNull())
+    {
+        if (!rsp["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(rsp["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = rsp["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AutoRenewFlag") && !rsp["AutoRenewFlag"].IsNull())
+    {
+        if (!rsp["AutoRenewFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenewFlag = rsp["AutoRenewFlag"].GetInt64();
+        m_autoRenewFlagHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NodeNum") && !rsp["NodeNum"].IsNull())
+    {
+        if (!rsp["NodeNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeNum = rsp["NodeNum"].GetInt64();
+        m_nodeNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +277,14 @@ string DescribeSLInstanceResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_instanceNameHasBeenSet)
     {
@@ -238,6 +356,78 @@ string DescribeSLInstanceResponse::ToJsonString() const
         }
     }
 
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clusterId, allocator);
+    }
+
+    if (m_regionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_regionId, allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isolateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_nodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nodeNum, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -249,6 +439,16 @@ string DescribeSLInstanceResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeSLInstanceResponse::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+bool DescribeSLInstanceResponse::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
 
 string DescribeSLInstanceResponse::GetInstanceName() const
 {
@@ -318,6 +518,96 @@ vector<Tag> DescribeSLInstanceResponse::GetTags() const
 bool DescribeSLInstanceResponse::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t DescribeSLInstanceResponse::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+bool DescribeSLInstanceResponse::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+int64_t DescribeSLInstanceResponse::GetRegionId() const
+{
+    return m_regionId;
+}
+
+bool DescribeSLInstanceResponse::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
+}
+
+string DescribeSLInstanceResponse::GetZone() const
+{
+    return m_zone;
+}
+
+bool DescribeSLInstanceResponse::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
+
+string DescribeSLInstanceResponse::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+bool DescribeSLInstanceResponse::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+string DescribeSLInstanceResponse::GetIsolateTime() const
+{
+    return m_isolateTime;
+}
+
+bool DescribeSLInstanceResponse::IsolateTimeHasBeenSet() const
+{
+    return m_isolateTimeHasBeenSet;
+}
+
+string DescribeSLInstanceResponse::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+bool DescribeSLInstanceResponse::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+int64_t DescribeSLInstanceResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribeSLInstanceResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+int64_t DescribeSLInstanceResponse::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+bool DescribeSLInstanceResponse::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
+}
+
+int64_t DescribeSLInstanceResponse::GetNodeNum() const
+{
+    return m_nodeNum;
+}
+
+bool DescribeSLInstanceResponse::NodeNumHasBeenSet() const
+{
+    return m_nodeNumHasBeenSet;
 }
 
 

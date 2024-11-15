@@ -135,7 +135,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/ReverseShellRule.h
   include/tencentcloud/cwp/v20180228/model/DescribeBashRulesResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeAvailableExpertServiceDetailResponse.h
-  include/tencentcloud/cwp/v20180228/model/DescribeCloudProtectServiceOrderListRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeLogStorageConfigRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportAssetWebLocationListResponse.h
   include/tencentcloud/cwp/v20180228/model/ScreenBroadcasts.h
@@ -375,7 +374,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/AssetAppBaseInfo.h
   include/tencentcloud/cwp/v20180228/model/DescribeJavaMemShellInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribePrivilegeRulesRequest.h
-  include/tencentcloud/cwp/v20180228/model/DescribeCloudProtectServiceOrderListResponse.h
+  include/tencentcloud/cwp/v20180228/model/ExportAssetAppListRequest.h
   include/tencentcloud/cwp/v20180228/model/ModifyFileTamperEventsRequest.h
   include/tencentcloud/cwp/v20180228/model/ModifyOrderAttributeRequest.h
   include/tencentcloud/cwp/v20180228/model/JavaMemShellInfo.h
@@ -632,11 +631,9 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/CreateLogExportResponse.h
   include/tencentcloud/cwp/v20180228/model/EmergencyResponseInfo.h
   include/tencentcloud/cwp/v20180228/model/ExportVulDefenceListResponse.h
-  include/tencentcloud/cwp/v20180228/model/CloudProtectService.h
   include/tencentcloud/cwp/v20180228/model/ModifyLogKafkaDeliverTypeResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeProtectNetListRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineScanScheduleRequest.h
-  include/tencentcloud/cwp/v20180228/model/ScreenDefendAttackLog.h
   include/tencentcloud/cwp/v20180228/model/RetryCreateSnapshotRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportVulDefenceEventRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulDefenceSettingResponse.h
@@ -933,7 +930,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/ModifyRansomDefenseStrategyStatusRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetAppListResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeWarningHostConfigResponse.h
-  include/tencentcloud/cwp/v20180228/model/ExportAssetAppListRequest.h
+  include/tencentcloud/cwp/v20180228/model/ScreenDefendAttackLog.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulDefencePluginStatusResponse.h
   include/tencentcloud/cwp/v20180228/model/BaselineFix.h
   include/tencentcloud/cwp/v20180228/model/ExportAssetWebLocationListRequest.h
@@ -1431,7 +1428,6 @@ set(cwp_src
   src/v20180228/model/ReverseShellRule.cpp
   src/v20180228/model/DescribeBashRulesResponse.cpp
   src/v20180228/model/DescribeAvailableExpertServiceDetailResponse.cpp
-  src/v20180228/model/DescribeCloudProtectServiceOrderListRequest.cpp
   src/v20180228/model/DescribeLogStorageConfigRequest.cpp
   src/v20180228/model/ExportAssetWebLocationListResponse.cpp
   src/v20180228/model/ScreenBroadcasts.cpp
@@ -1671,7 +1667,7 @@ set(cwp_src
   src/v20180228/model/AssetAppBaseInfo.cpp
   src/v20180228/model/DescribeJavaMemShellInfoRequest.cpp
   src/v20180228/model/DescribePrivilegeRulesRequest.cpp
-  src/v20180228/model/DescribeCloudProtectServiceOrderListResponse.cpp
+  src/v20180228/model/ExportAssetAppListRequest.cpp
   src/v20180228/model/ModifyFileTamperEventsRequest.cpp
   src/v20180228/model/ModifyOrderAttributeRequest.cpp
   src/v20180228/model/JavaMemShellInfo.cpp
@@ -1928,11 +1924,9 @@ set(cwp_src
   src/v20180228/model/CreateLogExportResponse.cpp
   src/v20180228/model/EmergencyResponseInfo.cpp
   src/v20180228/model/ExportVulDefenceListResponse.cpp
-  src/v20180228/model/CloudProtectService.cpp
   src/v20180228/model/ModifyLogKafkaDeliverTypeResponse.cpp
   src/v20180228/model/DescribeProtectNetListRequest.cpp
   src/v20180228/model/DescribeBaselineScanScheduleRequest.cpp
-  src/v20180228/model/ScreenDefendAttackLog.cpp
   src/v20180228/model/RetryCreateSnapshotRequest.cpp
   src/v20180228/model/ExportVulDefenceEventRequest.cpp
   src/v20180228/model/DescribeVulDefenceSettingResponse.cpp
@@ -2229,7 +2223,7 @@ set(cwp_src
   src/v20180228/model/ModifyRansomDefenseStrategyStatusRequest.cpp
   src/v20180228/model/DescribeAssetAppListResponse.cpp
   src/v20180228/model/DescribeWarningHostConfigResponse.cpp
-  src/v20180228/model/ExportAssetAppListRequest.cpp
+  src/v20180228/model/ScreenDefendAttackLog.cpp
   src/v20180228/model/DescribeVulDefencePluginStatusResponse.cpp
   src/v20180228/model/BaselineFix.cpp
   src/v20180228/model/ExportAssetWebLocationListRequest.cpp

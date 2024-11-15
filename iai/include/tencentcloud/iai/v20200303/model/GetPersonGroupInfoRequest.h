@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人员ID，取值为创建人员接口中的PersonId
-                     * @return PersonId 人员ID，取值为创建人员接口中的PersonId
+                     * 获取人员ID，取值为创建人员接口中的PersonId。
+                     * @return PersonId 人员ID，取值为创建人员接口中的PersonId。
                      * 
                      */
                     std::string GetPersonId() const;
 
                     /**
-                     * 设置人员ID，取值为创建人员接口中的PersonId
-                     * @param _personId 人员ID，取值为创建人员接口中的PersonId
+                     * 设置人员ID，取值为创建人员接口中的PersonId。
+                     * @param _personId 人员ID，取值为创建人员接口中的PersonId。
                      * 
                      */
                     void SetPersonId(const std::string& _personId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PersonIdHasBeenSet() const;
 
                     /**
-                     * 获取起始序号，默认值为0
-                     * @return Offset 起始序号，默认值为0
+                     * 获取起始序号，默认值为0。
+                     * @return Offset 起始序号，默认值为0。
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置起始序号，默认值为0
-                     * @param _offset 起始序号，默认值为0
+                     * 设置起始序号，默认值为0。
+                     * @param _offset 起始序号，默认值为0。
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认值为10，最大值为100
-                     * @return Limit 返回数量，默认值为10，最大值为100
+                     * 获取返回数量，默认值为10，最大值为100。
+                     * @return Limit 返回数量，默认值为10，最大值为100。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认值为10，最大值为100
-                     * @param _limit 返回数量，默认值为10，最大值为100
+                     * 设置返回数量，默认值为10，最大值为100。
+                     * @param _limit 返回数量，默认值为10，最大值为100。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人员ID，取值为创建人员接口中的PersonId
+                     * 人员ID，取值为创建人员接口中的PersonId。
                      */
                     std::string m_personId;
                     bool m_personIdHasBeenSet;
 
                     /**
-                     * 起始序号，默认值为0
+                     * 起始序号，默认值为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认值为10，最大值为100
+                     * 返回数量，默认值为10，最大值为100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

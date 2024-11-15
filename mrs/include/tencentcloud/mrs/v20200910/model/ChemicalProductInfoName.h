@@ -101,7 +101,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BarndName 品牌名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetBarndName() const;
 
@@ -110,14 +110,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _barndName 品牌名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetBarndName(const std::string& _barndName);
 
                     /**
                      * 判断参数 BarndName 是否已赋值
                      * @return BarndName 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool BarndNameHasBeenSet() const;
 
@@ -171,6 +171,27 @@ namespace TencentCloud
                      */
                     bool PinyinHasBeenSet() const;
 
+                    /**
+                     * 获取品牌名
+                     * @return BrandName 品牌名
+                     * 
+                     */
+                    std::string GetBrandName() const;
+
+                    /**
+                     * 设置品牌名
+                     * @param _brandName 品牌名
+                     * 
+                     */
+                    void SetBrandName(const std::string& _brandName);
+
+                    /**
+                     * 判断参数 BrandName 是否已赋值
+                     * @return BrandName 是否已赋值
+                     * 
+                     */
+                    bool BrandNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +228,12 @@ namespace TencentCloud
                      */
                     std::string m_pinyin;
                     bool m_pinyinHasBeenSet;
+
+                    /**
+                     * 品牌名
+                     */
+                    std::string m_brandName;
+                    bool m_brandNameHasBeenSet;
 
                 };
             }

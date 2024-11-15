@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取删除成功的人脸数量
-                     * @return SucDeletedNum 删除成功的人脸数量
+                     * 获取删除成功的人脸数量.
+                     * @return SucDeletedNum 删除成功的人脸数量.
                      * 
                      */
                     uint64_t GetSucDeletedNum() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool SucDeletedNumHasBeenSet() const;
 
                     /**
-                     * 获取删除成功的人脸ID列表
-                     * @return SucFaceIds 删除成功的人脸ID列表
+                     * 获取删除成功的人脸ID列表。
+                     * @return SucFaceIds 删除成功的人脸ID列表。
                      * 
                      */
                     std::vector<std::string> GetSucFaceIds() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 删除成功的人脸数量
+                     * 删除成功的人脸数量.
                      */
                     uint64_t m_sucDeletedNum;
                     bool m_sucDeletedNumHasBeenSet;
 
                     /**
-                     * 删除成功的人脸ID列表
+                     * 删除成功的人脸ID列表。
                      */
                     std::vector<std::string> m_sucFaceIds;
                     bool m_sucFaceIdsHasBeenSet;

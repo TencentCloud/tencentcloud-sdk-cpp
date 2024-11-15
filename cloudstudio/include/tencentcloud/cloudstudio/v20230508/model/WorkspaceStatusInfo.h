@@ -174,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作空间图标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Icon 工作空间图标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIcon() const;
 
                     /**
                      * 设置工作空间图标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _icon 工作空间图标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIcon(const std::string& _icon);
@@ -199,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作空间状态, 异常原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusReason 工作空间状态, 异常原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusReason() const;
 
                     /**
                      * 设置工作空间状态, 异常原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statusReason 工作空间状态, 异常原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatusReason(const std::string& _statusReason);
@@ -224,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作空间描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 工作空间描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置工作空间描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 工作空间描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -249,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作空间类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkspaceType 工作空间类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkspaceType() const;
 
                     /**
                      * 设置工作空间类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workspaceType 工作空间类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkspaceType(const std::string& _workspaceType);
@@ -274,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Git 仓库 HTTPS 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionControlUrl Git 仓库 HTTPS 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersionControlUrl() const;
 
                     /**
                      * 设置Git 仓库 HTTPS 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _versionControlUrl Git 仓库 HTTPS 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersionControlUrl(const std::string& _versionControlUrl);
@@ -299,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Git 仓库引用。指定分支使用 /refs/heads/{分支名}, 指定 Tag 用 /refs/tags/{Tag名}
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionControlRef Git 仓库引用。指定分支使用 /refs/heads/{分支名}, 指定 Tag 用 /refs/tags/{Tag名}
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersionControlRef() const;
 
                     /**
                      * 设置Git 仓库引用。指定分支使用 /refs/heads/{分支名}, 指定 Tag 用 /refs/tags/{Tag名}
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _versionControlRef Git 仓库引用。指定分支使用 /refs/heads/{分支名}, 指定 Tag 用 /refs/tags/{Tag名}
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersionControlRef(const std::string& _versionControlRef);
@@ -324,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后操作时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastOpsDate 最后操作时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastOpsDate() const;
 
                     /**
                      * 设置最后操作时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastOpsDate 最后操作时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastOpsDate(const std::string& _lastOpsDate);
@@ -349,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateDate 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateDate() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createDate 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateDate(const std::string& _createDate);
@@ -412,56 +380,48 @@ namespace TencentCloud
 
                     /**
                      * 工作空间图标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_icon;
                     bool m_iconHasBeenSet;
 
                     /**
                      * 工作空间状态, 异常原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusReason;
                     bool m_statusReasonHasBeenSet;
 
                     /**
                      * 工作空间描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 工作空间类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workspaceType;
                     bool m_workspaceTypeHasBeenSet;
 
                     /**
                      * Git 仓库 HTTPS 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_versionControlUrl;
                     bool m_versionControlUrlHasBeenSet;
 
                     /**
                      * Git 仓库引用。指定分支使用 /refs/heads/{分支名}, 指定 Tag 用 /refs/tags/{Tag名}
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_versionControlRef;
                     bool m_versionControlRefHasBeenSet;
 
                     /**
                      * 最后操作时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastOpsDate;
                     bool m_lastOpsDateHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createDate;
                     bool m_createDateHasBeenSet;

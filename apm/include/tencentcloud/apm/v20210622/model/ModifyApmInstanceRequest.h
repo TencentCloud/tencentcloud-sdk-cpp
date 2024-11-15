@@ -451,6 +451,27 @@ namespace TencentCloud
                     bool ResponseDurationWarningThresholdHasBeenSet() const;
 
                     /**
+                     * 获取（0=付费版；1=tsf受限免费版；2=免费版）
+                     * @return Free （0=付费版；1=tsf受限免费版；2=免费版）
+                     * 
+                     */
+                    int64_t GetFree() const;
+
+                    /**
+                     * 设置（0=付费版；1=tsf受限免费版；2=免费版）
+                     * @param _free （0=付费版；1=tsf受限免费版；2=免费版）
+                     * 
+                     */
+                    void SetFree(const int64_t& _free);
+
+                    /**
+                     * 判断参数 Free 是否已赋值
+                     * @return Free 是否已赋值
+                     * 
+                     */
+                    bool FreeHasBeenSet() const;
+
+                    /**
                      * 获取是否关联dashboard： 0 关 1 开
                      * @return IsRelatedDashboard 是否关联dashboard： 0 关 1 开
                      * 
@@ -491,6 +512,48 @@ namespace TencentCloud
                      * 
                      */
                     bool DashboardTopicIDHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启SQL注入检测
+                     * @return IsSqlInjectionAnalysis 是否开启SQL注入检测
+                     * 
+                     */
+                    int64_t GetIsSqlInjectionAnalysis() const;
+
+                    /**
+                     * 设置是否开启SQL注入检测
+                     * @param _isSqlInjectionAnalysis 是否开启SQL注入检测
+                     * 
+                     */
+                    void SetIsSqlInjectionAnalysis(const int64_t& _isSqlInjectionAnalysis);
+
+                    /**
+                     * 判断参数 IsSqlInjectionAnalysis 是否已赋值
+                     * @return IsSqlInjectionAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsSqlInjectionAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启组件漏洞检测
+                     * @return IsInstrumentationVulnerabilityScan 是否开启组件漏洞检测
+                     * 
+                     */
+                    int64_t GetIsInstrumentationVulnerabilityScan() const;
+
+                    /**
+                     * 设置是否开启组件漏洞检测
+                     * @param _isInstrumentationVulnerabilityScan 是否开启组件漏洞检测
+                     * 
+                     */
+                    void SetIsInstrumentationVulnerabilityScan(const int64_t& _isInstrumentationVulnerabilityScan);
+
+                    /**
+                     * 判断参数 IsInstrumentationVulnerabilityScan 是否已赋值
+                     * @return IsInstrumentationVulnerabilityScan 是否已赋值
+                     * 
+                     */
+                    bool IsInstrumentationVulnerabilityScanHasBeenSet() const;
 
                 private:
 
@@ -611,6 +674,12 @@ namespace TencentCloud
                     bool m_responseDurationWarningThresholdHasBeenSet;
 
                     /**
+                     * （0=付费版；1=tsf受限免费版；2=免费版）
+                     */
+                    int64_t m_free;
+                    bool m_freeHasBeenSet;
+
+                    /**
                      * 是否关联dashboard： 0 关 1 开
                      */
                     int64_t m_isRelatedDashboard;
@@ -621,6 +690,18 @@ namespace TencentCloud
                      */
                     std::string m_dashboardTopicID;
                     bool m_dashboardTopicIDHasBeenSet;
+
+                    /**
+                     * 是否开启SQL注入检测
+                     */
+                    int64_t m_isSqlInjectionAnalysis;
+                    bool m_isSqlInjectionAnalysisHasBeenSet;
+
+                    /**
+                     * 是否开启组件漏洞检测
+                     */
+                    int64_t m_isInstrumentationVulnerabilityScan;
+                    bool m_isInstrumentationVulnerabilityScanHasBeenSet;
 
                 };
             }

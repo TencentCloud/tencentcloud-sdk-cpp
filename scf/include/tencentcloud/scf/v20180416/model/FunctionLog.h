@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取函数执行结果，如果是 0 表示执行成功，其他值表示失败
-                     * @return RetCode 函数执行结果，如果是 0 表示执行成功，其他值表示失败
+                     * 获取函数执行结果，如果是 0 表示执行成功，2表示函数运行中，3表示函数执行中断，其他值表示失败
+                     * @return RetCode 函数执行结果，如果是 0 表示执行成功，2表示函数运行中，3表示函数执行中断，其他值表示失败
                      * 
                      */
                     int64_t GetRetCode() const;
 
                     /**
-                     * 设置函数执行结果，如果是 0 表示执行成功，其他值表示失败
-                     * @param _retCode 函数执行结果，如果是 0 表示执行成功，其他值表示失败
+                     * 设置函数执行结果，如果是 0 表示执行成功，2表示函数运行中，3表示函数执行中断，其他值表示失败
+                     * @param _retCode 函数执行结果，如果是 0 表示执行成功，2表示函数运行中，3表示函数执行中断，其他值表示失败
                      * 
                      */
                     void SetRetCode(const int64_t& _retCode);
@@ -346,7 +346,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 函数执行结果，如果是 0 表示执行成功，其他值表示失败
+                     * 函数执行结果，如果是 0 表示执行成功，2表示函数运行中，3表示函数执行中断，其他值表示失败
                      */
                     int64_t m_retCode;
                     bool m_retCodeHasBeenSet;

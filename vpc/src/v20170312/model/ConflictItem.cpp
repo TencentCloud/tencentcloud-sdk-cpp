@@ -22,7 +22,8 @@ using namespace std;
 
 ConflictItem::ConflictItem() :
     m_confilctIdHasBeenSet(false),
-    m_destinationItemHasBeenSet(false)
+    m_destinationItemHasBeenSet(false),
+    m_conflictIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ConflictItem::Deserialize(const rapidjson::Value &value)
         m_destinationItemHasBeenSet = true;
     }
 
+    if (value.HasMember("ConflictId") && !value["ConflictId"].IsNull())
+    {
+        if (!value["ConflictId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConflictItem.ConflictId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_conflictId = string(value["ConflictId"].GetString());
+        m_conflictIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ConflictItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DestinationItem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_destinationItem.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_conflictIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConflictId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_conflictId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ConflictItem::SetDestinationItem(const string& _destinationItem)
 bool ConflictItem::DestinationItemHasBeenSet() const
 {
     return m_destinationItemHasBeenSet;
+}
+
+string ConflictItem::GetConflictId() const
+{
+    return m_conflictId;
+}
+
+void ConflictItem::SetConflictId(const string& _conflictId)
+{
+    m_conflictId = _conflictId;
+    m_conflictIdHasBeenSet = true;
+}
+
+bool ConflictItem::ConflictIdHasBeenSet() const
+{
+    return m_conflictIdHasBeenSet;
 }
 

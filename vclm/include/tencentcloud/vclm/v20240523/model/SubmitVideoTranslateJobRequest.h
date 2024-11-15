@@ -45,15 +45,17 @@ namespace TencentCloud
                     /**
                      * 获取视频地址URL。
 格式要求：支持 mp4、mov 。
-时长要求：【10-300】秒。
+时长要求：【5-600】秒。
 fps 要求：【15-60】fps
-分辨率要求：单边像素要求在 【540~1920】 之间。
+分辨率要求：单边像素要求在 【360~4096】 之间。
+大小要求：不超过500Mb
 
                      * @return VideoUrl 视频地址URL。
 格式要求：支持 mp4、mov 。
-时长要求：【10-300】秒。
+时长要求：【5-600】秒。
 fps 要求：【15-60】fps
-分辨率要求：单边像素要求在 【540~1920】 之间。
+分辨率要求：单边像素要求在 【360~4096】 之间。
+大小要求：不超过500Mb
 
                      * 
                      */
@@ -62,15 +64,17 @@ fps 要求：【15-60】fps
                     /**
                      * 设置视频地址URL。
 格式要求：支持 mp4、mov 。
-时长要求：【10-300】秒。
+时长要求：【5-600】秒。
 fps 要求：【15-60】fps
-分辨率要求：单边像素要求在 【540~1920】 之间。
+分辨率要求：单边像素要求在 【360~4096】 之间。
+大小要求：不超过500Mb
 
                      * @param _videoUrl 视频地址URL。
 格式要求：支持 mp4、mov 。
-时长要求：【10-300】秒。
+时长要求：【5-600】秒。
 fps 要求：【15-60】fps
-分辨率要求：单边像素要求在 【540~1920】 之间。
+分辨率要求：单边像素要求在 【360~4096】 之间。
+大小要求：不超过500Mb
 
                      * 
                      */
@@ -84,15 +88,19 @@ fps 要求：【15-60】fps
                     bool VideoUrlHasBeenSet() const;
 
                     /**
-                     * 获取源语言：zh(中文), en(英文)
-                     * @return SrcLang 源语言：zh(中文), en(英文)
+                     * 获取输入视频中音频语种
+目前支持语种范围：zh(中文), en(英文)
+                     * @return SrcLang 输入视频中音频语种
+目前支持语种范围：zh(中文), en(英文)
                      * 
                      */
                     std::string GetSrcLang() const;
 
                     /**
-                     * 设置源语言：zh(中文), en(英文)
-                     * @param _srcLang 源语言：zh(中文), en(英文)
+                     * 设置输入视频中音频语种
+目前支持语种范围：zh(中文), en(英文)
+                     * @param _srcLang 输入视频中音频语种
+目前支持语种范围：zh(中文), en(英文)
                      * 
                      */
                     void SetSrcLang(const std::string& _srcLang);
@@ -105,19 +113,52 @@ fps 要求：【15-60】fps
                     bool SrcLangHasBeenSet() const;
 
                     /**
-                     * 获取目标语种：
-zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)
-                     * @return DstLang 目标语种：
-zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)
+                     * 获取当音频 URL 不为空时，不经过语音AI处理，直接以视频为素材用音频内容做视频口型驱动。
+格式要求：支持 mp3、m4a、acc、wav 格式。
+时长要求：【5~600】秒，音频时长要匹配视频时长。
+大小要求：不超过 100Mb。
+                     * @return AudioUrl 当音频 URL 不为空时，不经过语音AI处理，直接以视频为素材用音频内容做视频口型驱动。
+格式要求：支持 mp3、m4a、acc、wav 格式。
+时长要求：【5~600】秒，音频时长要匹配视频时长。
+大小要求：不超过 100Mb。
+                     * 
+                     */
+                    std::string GetAudioUrl() const;
+
+                    /**
+                     * 设置当音频 URL 不为空时，不经过语音AI处理，直接以视频为素材用音频内容做视频口型驱动。
+格式要求：支持 mp3、m4a、acc、wav 格式。
+时长要求：【5~600】秒，音频时长要匹配视频时长。
+大小要求：不超过 100Mb。
+                     * @param _audioUrl 当音频 URL 不为空时，不经过语音AI处理，直接以视频为素材用音频内容做视频口型驱动。
+格式要求：支持 mp3、m4a、acc、wav 格式。
+时长要求：【5~600】秒，音频时长要匹配视频时长。
+大小要求：不超过 100Mb。
+                     * 
+                     */
+                    void SetAudioUrl(const std::string& _audioUrl);
+
+                    /**
+                     * 判断参数 AudioUrl 是否已赋值
+                     * @return AudioUrl 是否已赋值
+                     * 
+                     */
+                    bool AudioUrlHasBeenSet() const;
+
+                    /**
+                     * 获取输出视频中翻译语种
+目前支持语种范围：zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)
+                     * @return DstLang 输出视频中翻译语种
+目前支持语种范围：zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)
                      * 
                      */
                     std::string GetDstLang() const;
 
                     /**
-                     * 设置目标语种：
-zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)
-                     * @param _dstLang 目标语种：
-zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)
+                     * 设置输出视频中翻译语种
+目前支持语种范围：zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)
+                     * @param _dstLang 输出视频中翻译语种
+目前支持语种范围：zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)
                      * 
                      */
                     void SetDstLang(const std::string& _dstLang);
@@ -130,37 +171,70 @@ zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)
                     bool DstLangHasBeenSet() const;
 
                     /**
-                     * 获取当音频 URL 不为空时，默认以音频驱动视频任务口型。
-格式要求：支持 mp3、m4a、acc、wav 格式。
-时长要求：【10~300】秒
-大小要求：不超过 100M。
-                     * @return AudioUrl 当音频 URL 不为空时，默认以音频驱动视频任务口型。
-格式要求：支持 mp3、m4a、acc、wav 格式。
-时长要求：【10~300】秒
-大小要求：不超过 100M。
+                     * 获取翻译语种匹配音色种别，其他说明如下：
+1）默认不填代表克隆输入视频中音频音色；
+2）翻译语种非中英（即zh、en），该项必填；
+
+具体音色种别详见说明“支持音色种别列表”，每个音色都支持 15 个目标语种。
+
+                     * @return VoiceType 翻译语种匹配音色种别，其他说明如下：
+1）默认不填代表克隆输入视频中音频音色；
+2）翻译语种非中英（即zh、en），该项必填；
+
+具体音色种别详见说明“支持音色种别列表”，每个音色都支持 15 个目标语种。
+
                      * 
                      */
-                    std::string GetAudioUrl() const;
+                    std::string GetVoiceType() const;
 
                     /**
-                     * 设置当音频 URL 不为空时，默认以音频驱动视频任务口型。
-格式要求：支持 mp3、m4a、acc、wav 格式。
-时长要求：【10~300】秒
-大小要求：不超过 100M。
-                     * @param _audioUrl 当音频 URL 不为空时，默认以音频驱动视频任务口型。
-格式要求：支持 mp3、m4a、acc、wav 格式。
-时长要求：【10~300】秒
-大小要求：不超过 100M。
+                     * 设置翻译语种匹配音色种别，其他说明如下：
+1）默认不填代表克隆输入视频中音频音色；
+2）翻译语种非中英（即zh、en），该项必填；
+
+具体音色种别详见说明“支持音色种别列表”，每个音色都支持 15 个目标语种。
+
+                     * @param _voiceType 翻译语种匹配音色种别，其他说明如下：
+1）默认不填代表克隆输入视频中音频音色；
+2）翻译语种非中英（即zh、en），该项必填；
+
+具体音色种别详见说明“支持音色种别列表”，每个音色都支持 15 个目标语种。
+
                      * 
                      */
-                    void SetAudioUrl(const std::string& _audioUrl);
+                    void SetVoiceType(const std::string& _voiceType);
 
                     /**
-                     * 判断参数 AudioUrl 是否已赋值
-                     * @return AudioUrl 是否已赋值
+                     * 判断参数 VoiceType 是否已赋值
+                     * @return VoiceType 是否已赋值
                      * 
                      */
-                    bool AudioUrlHasBeenSet() const;
+                    bool VoiceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否需要纠正视频中音频识别与翻译内容，取值范围：0-不需要，1-需要，默认0。
+
+                     * @return Confirm 是否需要纠正视频中音频识别与翻译内容，取值范围：0-不需要，1-需要，默认0。
+
+                     * 
+                     */
+                    int64_t GetConfirm() const;
+
+                    /**
+                     * 设置是否需要纠正视频中音频识别与翻译内容，取值范围：0-不需要，1-需要，默认0。
+
+                     * @param _confirm 是否需要纠正视频中音频识别与翻译内容，取值范围：0-不需要，1-需要，默认0。
+
+                     * 
+                     */
+                    void SetConfirm(const int64_t& _confirm);
+
+                    /**
+                     * 判断参数 Confirm 是否已赋值
+                     * @return Confirm 是否已赋值
+                     * 
+                     */
+                    bool ConfirmHasBeenSet() const;
 
                     /**
                      * 获取是否需要去除VideoUrl或AudioUrl中背景音，取值范围：0-不需要，1-需要，默认0 。
@@ -184,36 +258,15 @@ zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)
                     bool RemoveVocalHasBeenSet() const;
 
                     /**
-                     * 获取是否需要确认翻译结果0：不需要，1：需要
-                     * @return Confirm 是否需要确认翻译结果0：不需要，1：需要
-                     * 
-                     */
-                    int64_t GetConfirm() const;
-
-                    /**
-                     * 设置是否需要确认翻译结果0：不需要，1：需要
-                     * @param _confirm 是否需要确认翻译结果0：不需要，1：需要
-                     * 
-                     */
-                    void SetConfirm(const int64_t& _confirm);
-
-                    /**
-                     * 判断参数 Confirm 是否已赋值
-                     * @return Confirm 是否已赋值
-                     * 
-                     */
-                    bool ConfirmHasBeenSet() const;
-
-                    /**
-                     * 获取是否开启口型驱动，0：不开启，1：开启。默认开启。
-                     * @return LipSync 是否开启口型驱动，0：不开启，1：开启。默认开启。
+                     * 获取是否开启口型驱动，0-不开启，1-开启。默认0。
+                     * @return LipSync 是否开启口型驱动，0-不开启，1-开启。默认0。
                      * 
                      */
                     int64_t GetLipSync() const;
 
                     /**
-                     * 设置是否开启口型驱动，0：不开启，1：开启。默认开启。
-                     * @param _lipSync 是否开启口型驱动，0：不开启，1：开启。默认开启。
+                     * 设置是否开启口型驱动，0-不开启，1-开启。默认0。
+                     * @param _lipSync 是否开启口型驱动，0-不开启，1-开启。默认0。
                      * 
                      */
                     void SetLipSync(const int64_t& _lipSync);
@@ -226,76 +279,80 @@ zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)
                     bool LipSyncHasBeenSet() const;
 
                     /**
-                     * 获取音色种别：一种音色种别对应一种不同区域的音色
-1）目标语种为小语种(非zh,en)时，该项为必填
-2）目标语种为zh,en时，该项为非必填，若填入，则对应填入的音色
-
-具体音色包含请见“支持音色种别列表”
-                     * @return VoiceType 音色种别：一种音色种别对应一种不同区域的音色
-1）目标语种为小语种(非zh,en)时，该项为必填
-2）目标语种为zh,en时，该项为非必填，若填入，则对应填入的音色
-
-具体音色包含请见“支持音色种别列表”
+                     * 获取当 AudioUrl 字段有输入音频时，如果输入音频时长大于输入视频时长，会拼接视频（ 0-正向拼接、1-反向拼接 ）对齐音频时长。默认 0。
+                     * @return VideoLoop 当 AudioUrl 字段有输入音频时，如果输入音频时长大于输入视频时长，会拼接视频（ 0-正向拼接、1-反向拼接 ）对齐音频时长。默认 0。
                      * 
                      */
-                    std::string GetVoiceType() const;
+                    int64_t GetVideoLoop() const;
 
                     /**
-                     * 设置音色种别：一种音色种别对应一种不同区域的音色
-1）目标语种为小语种(非zh,en)时，该项为必填
-2）目标语种为zh,en时，该项为非必填，若填入，则对应填入的音色
-
-具体音色包含请见“支持音色种别列表”
-                     * @param _voiceType 音色种别：一种音色种别对应一种不同区域的音色
-1）目标语种为小语种(非zh,en)时，该项为必填
-2）目标语种为zh,en时，该项为非必填，若填入，则对应填入的音色
-
-具体音色包含请见“支持音色种别列表”
+                     * 设置当 AudioUrl 字段有输入音频时，如果输入音频时长大于输入视频时长，会拼接视频（ 0-正向拼接、1-反向拼接 ）对齐音频时长。默认 0。
+                     * @param _videoLoop 当 AudioUrl 字段有输入音频时，如果输入音频时长大于输入视频时长，会拼接视频（ 0-正向拼接、1-反向拼接 ）对齐音频时长。默认 0。
                      * 
                      */
-                    void SetVoiceType(const std::string& _voiceType);
+                    void SetVideoLoop(const int64_t& _videoLoop);
 
                     /**
-                     * 判断参数 VoiceType 是否已赋值
-                     * @return VoiceType 是否已赋值
+                     * 判断参数 VideoLoop 是否已赋值
+                     * @return VideoLoop 是否已赋值
                      * 
                      */
-                    bool VoiceTypeHasBeenSet() const;
+                    bool VideoLoopHasBeenSet() const;
 
                 private:
 
                     /**
                      * 视频地址URL。
 格式要求：支持 mp4、mov 。
-时长要求：【10-300】秒。
+时长要求：【5-600】秒。
 fps 要求：【15-60】fps
-分辨率要求：单边像素要求在 【540~1920】 之间。
+分辨率要求：单边像素要求在 【360~4096】 之间。
+大小要求：不超过500Mb
 
                      */
                     std::string m_videoUrl;
                     bool m_videoUrlHasBeenSet;
 
                     /**
-                     * 源语言：zh(中文), en(英文)
+                     * 输入视频中音频语种
+目前支持语种范围：zh(中文), en(英文)
                      */
                     std::string m_srcLang;
                     bool m_srcLangHasBeenSet;
 
                     /**
-                     * 目标语种：
-zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)
+                     * 当音频 URL 不为空时，不经过语音AI处理，直接以视频为素材用音频内容做视频口型驱动。
+格式要求：支持 mp3、m4a、acc、wav 格式。
+时长要求：【5~600】秒，音频时长要匹配视频时长。
+大小要求：不超过 100Mb。
+                     */
+                    std::string m_audioUrl;
+                    bool m_audioUrlHasBeenSet;
+
+                    /**
+                     * 输出视频中翻译语种
+目前支持语种范围：zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)、fr(法语)、id(印尼语)、it(意大利语)、ja(日语)、ko(韩语)、ms(马来语)、pt(葡萄牙语)、ru(俄语)、th(泰语)、tr(土耳其语)、vi(越南语)
                      */
                     std::string m_dstLang;
                     bool m_dstLangHasBeenSet;
 
                     /**
-                     * 当音频 URL 不为空时，默认以音频驱动视频任务口型。
-格式要求：支持 mp3、m4a、acc、wav 格式。
-时长要求：【10~300】秒
-大小要求：不超过 100M。
+                     * 翻译语种匹配音色种别，其他说明如下：
+1）默认不填代表克隆输入视频中音频音色；
+2）翻译语种非中英（即zh、en），该项必填；
+
+具体音色种别详见说明“支持音色种别列表”，每个音色都支持 15 个目标语种。
+
                      */
-                    std::string m_audioUrl;
-                    bool m_audioUrlHasBeenSet;
+                    std::string m_voiceType;
+                    bool m_voiceTypeHasBeenSet;
+
+                    /**
+                     * 是否需要纠正视频中音频识别与翻译内容，取值范围：0-不需要，1-需要，默认0。
+
+                     */
+                    int64_t m_confirm;
+                    bool m_confirmHasBeenSet;
 
                     /**
                      * 是否需要去除VideoUrl或AudioUrl中背景音，取值范围：0-不需要，1-需要，默认0 。
@@ -304,26 +361,16 @@ zh(简体中文)、en(英语)、ar(阿拉伯语)、de(德语)、es(西班牙语)
                     bool m_removeVocalHasBeenSet;
 
                     /**
-                     * 是否需要确认翻译结果0：不需要，1：需要
-                     */
-                    int64_t m_confirm;
-                    bool m_confirmHasBeenSet;
-
-                    /**
-                     * 是否开启口型驱动，0：不开启，1：开启。默认开启。
+                     * 是否开启口型驱动，0-不开启，1-开启。默认0。
                      */
                     int64_t m_lipSync;
                     bool m_lipSyncHasBeenSet;
 
                     /**
-                     * 音色种别：一种音色种别对应一种不同区域的音色
-1）目标语种为小语种(非zh,en)时，该项为必填
-2）目标语种为zh,en时，该项为非必填，若填入，则对应填入的音色
-
-具体音色包含请见“支持音色种别列表”
+                     * 当 AudioUrl 字段有输入音频时，如果输入音频时长大于输入视频时长，会拼接视频（ 0-正向拼接、1-反向拼接 ）对齐音频时长。默认 0。
                      */
-                    std::string m_voiceType;
-                    bool m_voiceTypeHasBeenSet;
+                    int64_t m_videoLoop;
+                    bool m_videoLoopHasBeenSet;
 
                 };
             }

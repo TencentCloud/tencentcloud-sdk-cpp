@@ -23,7 +23,10 @@ using namespace std;
 ActionTimer::ActionTimer() :
     m_timerActionHasBeenSet(false),
     m_actionTimeHasBeenSet(false),
-    m_externalsHasBeenSet(false)
+    m_externalsHasBeenSet(false),
+    m_actionTimerIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -69,6 +72,36 @@ CoreInternalOutcome ActionTimer::Deserialize(const rapidjson::Value &value)
         m_externalsHasBeenSet = true;
     }
 
+    if (value.HasMember("ActionTimerId") && !value["ActionTimerId"].IsNull())
+    {
+        if (!value["ActionTimerId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActionTimer.ActionTimerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_actionTimerId = string(value["ActionTimerId"].GetString());
+        m_actionTimerIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActionTimer.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActionTimer.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +132,30 @@ void ActionTimer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_externals.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_actionTimerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActionTimerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_actionTimerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +207,53 @@ void ActionTimer::SetExternals(const Externals& _externals)
 bool ActionTimer::ExternalsHasBeenSet() const
 {
     return m_externalsHasBeenSet;
+}
+
+string ActionTimer::GetActionTimerId() const
+{
+    return m_actionTimerId;
+}
+
+void ActionTimer::SetActionTimerId(const string& _actionTimerId)
+{
+    m_actionTimerId = _actionTimerId;
+    m_actionTimerIdHasBeenSet = true;
+}
+
+bool ActionTimer::ActionTimerIdHasBeenSet() const
+{
+    return m_actionTimerIdHasBeenSet;
+}
+
+string ActionTimer::GetStatus() const
+{
+    return m_status;
+}
+
+void ActionTimer::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool ActionTimer::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string ActionTimer::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void ActionTimer::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool ActionTimer::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

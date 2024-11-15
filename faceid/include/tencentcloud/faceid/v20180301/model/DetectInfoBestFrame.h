@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 核身最佳帧信息
+                * 核身最佳帧信息。
                 */
                 class DetectInfoBestFrame : public AbstractModel
                 {

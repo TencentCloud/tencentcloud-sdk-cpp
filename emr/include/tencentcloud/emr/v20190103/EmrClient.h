@@ -403,9 +403,9 @@ namespace TencentCloud
                 CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
 
                 /**
-                 *本接口（CreateSLInstance）用于创建 Lite HBase 实例
-- 接口调用成功，会创建Lite HBase实例，创建实例请求成功会返回创建实例的 InstaceId 和请求的 RequestID。
-- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用 DescribeInstancesList 查看当前实例的 StatusDesc 状态。
+                 *本接口（CreateSLInstance）用于创建Serverless HBase实例
+- 接口调用成功，会创建Serverless HBase实例，创建实例请求成功会返回创建实例的InstaceId和请求的 RequestID。
+- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用DescribeInstancesList查看当前实例的StatusDesc状态。
                  * @param req CreateSLInstanceRequest
                  * @return CreateSLInstanceOutcome
                  */
@@ -630,7 +630,7 @@ namespace TencentCloud
                 DescribeResourceScheduleDiffDetailOutcomeCallable DescribeResourceScheduleDiffDetailCallable(const Model::DescribeResourceScheduleDiffDetailRequest& request);
 
                 /**
-                 *本接口（DescribeSLInstance）用于查询 Lite HBase 实例基本信息
+                 *本接口（DescribeSLInstance）用于查询 Serverless HBase实例基本信息
                  * @param req DescribeSLInstanceRequest
                  * @return DescribeSLInstanceOutcome
                  */
@@ -639,7 +639,7 @@ namespace TencentCloud
                 DescribeSLInstanceOutcomeCallable DescribeSLInstanceCallable(const Model::DescribeSLInstanceRequest& request);
 
                 /**
-                 *本接口（DescribeSLInstanceList）用于查询 Lite HBase 实例列表详细信息
+                 *本接口（DescribeSLInstanceList）用于查询Serverless HBase实例列表详细信息
                  * @param req DescribeSLInstanceListRequest
                  * @return DescribeSLInstanceListOutcome
                  */
@@ -830,9 +830,9 @@ namespace TencentCloud
                 ModifyResourcesTagsOutcomeCallable ModifyResourcesTagsCallable(const Model::ModifyResourcesTagsRequest& request);
 
                 /**
-                 *本接口（ModifySLInstance）用于修改Lite HBase 实例节点数。
-- 接口调用成功，会创建Lite HBase实例，创建实例请求成功会返回请求的 RequestID。
-- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用 DescribeInstancesList 查看当前实例的 StatusDesc 状态。
+                 *本接口（ModifySLInstance）用于Serverless HBase变配实例。
+- 接口调用成功，会创建Serverless HBase实例，创建实例请求成功会返回请求的 RequestID。
+- 接口为异步接口，接口返回时操作并未立即完成，实例操作结果可以通过调用DescribeInstancesList查看当前实例的StatusDesc状态。
                  * @param req ModifySLInstanceRequest
                  * @return ModifySLInstanceOutcome
                  */
@@ -940,7 +940,7 @@ namespace TencentCloud
                 TerminateInstanceOutcomeCallable TerminateInstanceCallable(const Model::TerminateInstanceRequest& request);
 
                 /**
-                 *本接口（TerminateSLInstance）用于销毁 Lite HBase 实例
+                 *本接口（TerminateSLInstance）用于销毁Serverless HBase实例
                  * @param req TerminateSLInstanceRequest
                  * @return TerminateSLInstanceOutcome
                  */

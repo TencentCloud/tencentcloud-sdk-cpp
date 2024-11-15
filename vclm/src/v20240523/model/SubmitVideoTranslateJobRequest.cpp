@@ -25,12 +25,13 @@ using namespace std;
 SubmitVideoTranslateJobRequest::SubmitVideoTranslateJobRequest() :
     m_videoUrlHasBeenSet(false),
     m_srcLangHasBeenSet(false),
-    m_dstLangHasBeenSet(false),
     m_audioUrlHasBeenSet(false),
-    m_removeVocalHasBeenSet(false),
+    m_dstLangHasBeenSet(false),
+    m_voiceTypeHasBeenSet(false),
     m_confirmHasBeenSet(false),
+    m_removeVocalHasBeenSet(false),
     m_lipSyncHasBeenSet(false),
-    m_voiceTypeHasBeenSet(false)
+    m_videoLoopHasBeenSet(false)
 {
 }
 
@@ -57,14 +58,6 @@ string SubmitVideoTranslateJobRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_srcLang.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_dstLangHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DstLang";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_dstLang.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_audioUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -73,12 +66,20 @@ string SubmitVideoTranslateJobRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_audioUrl.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_removeVocalHasBeenSet)
+    if (m_dstLangHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RemoveVocal";
+        string key = "DstLang";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_removeVocal, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dstLang.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voiceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_voiceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_confirmHasBeenSet)
@@ -89,6 +90,14 @@ string SubmitVideoTranslateJobRequest::ToJsonString() const
         d.AddMember(iKey, m_confirm, allocator);
     }
 
+    if (m_removeVocalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoveVocal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_removeVocal, allocator);
+    }
+
     if (m_lipSyncHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -97,12 +106,12 @@ string SubmitVideoTranslateJobRequest::ToJsonString() const
         d.AddMember(iKey, m_lipSync, allocator);
     }
 
-    if (m_voiceTypeHasBeenSet)
+    if (m_videoLoopHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VoiceType";
+        string key = "VideoLoop";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_voiceType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_videoLoop, allocator);
     }
 
 
@@ -145,22 +154,6 @@ bool SubmitVideoTranslateJobRequest::SrcLangHasBeenSet() const
     return m_srcLangHasBeenSet;
 }
 
-string SubmitVideoTranslateJobRequest::GetDstLang() const
-{
-    return m_dstLang;
-}
-
-void SubmitVideoTranslateJobRequest::SetDstLang(const string& _dstLang)
-{
-    m_dstLang = _dstLang;
-    m_dstLangHasBeenSet = true;
-}
-
-bool SubmitVideoTranslateJobRequest::DstLangHasBeenSet() const
-{
-    return m_dstLangHasBeenSet;
-}
-
 string SubmitVideoTranslateJobRequest::GetAudioUrl() const
 {
     return m_audioUrl;
@@ -177,20 +170,36 @@ bool SubmitVideoTranslateJobRequest::AudioUrlHasBeenSet() const
     return m_audioUrlHasBeenSet;
 }
 
-int64_t SubmitVideoTranslateJobRequest::GetRemoveVocal() const
+string SubmitVideoTranslateJobRequest::GetDstLang() const
 {
-    return m_removeVocal;
+    return m_dstLang;
 }
 
-void SubmitVideoTranslateJobRequest::SetRemoveVocal(const int64_t& _removeVocal)
+void SubmitVideoTranslateJobRequest::SetDstLang(const string& _dstLang)
 {
-    m_removeVocal = _removeVocal;
-    m_removeVocalHasBeenSet = true;
+    m_dstLang = _dstLang;
+    m_dstLangHasBeenSet = true;
 }
 
-bool SubmitVideoTranslateJobRequest::RemoveVocalHasBeenSet() const
+bool SubmitVideoTranslateJobRequest::DstLangHasBeenSet() const
 {
-    return m_removeVocalHasBeenSet;
+    return m_dstLangHasBeenSet;
+}
+
+string SubmitVideoTranslateJobRequest::GetVoiceType() const
+{
+    return m_voiceType;
+}
+
+void SubmitVideoTranslateJobRequest::SetVoiceType(const string& _voiceType)
+{
+    m_voiceType = _voiceType;
+    m_voiceTypeHasBeenSet = true;
+}
+
+bool SubmitVideoTranslateJobRequest::VoiceTypeHasBeenSet() const
+{
+    return m_voiceTypeHasBeenSet;
 }
 
 int64_t SubmitVideoTranslateJobRequest::GetConfirm() const
@@ -209,6 +218,22 @@ bool SubmitVideoTranslateJobRequest::ConfirmHasBeenSet() const
     return m_confirmHasBeenSet;
 }
 
+int64_t SubmitVideoTranslateJobRequest::GetRemoveVocal() const
+{
+    return m_removeVocal;
+}
+
+void SubmitVideoTranslateJobRequest::SetRemoveVocal(const int64_t& _removeVocal)
+{
+    m_removeVocal = _removeVocal;
+    m_removeVocalHasBeenSet = true;
+}
+
+bool SubmitVideoTranslateJobRequest::RemoveVocalHasBeenSet() const
+{
+    return m_removeVocalHasBeenSet;
+}
+
 int64_t SubmitVideoTranslateJobRequest::GetLipSync() const
 {
     return m_lipSync;
@@ -225,20 +250,20 @@ bool SubmitVideoTranslateJobRequest::LipSyncHasBeenSet() const
     return m_lipSyncHasBeenSet;
 }
 
-string SubmitVideoTranslateJobRequest::GetVoiceType() const
+int64_t SubmitVideoTranslateJobRequest::GetVideoLoop() const
 {
-    return m_voiceType;
+    return m_videoLoop;
 }
 
-void SubmitVideoTranslateJobRequest::SetVoiceType(const string& _voiceType)
+void SubmitVideoTranslateJobRequest::SetVideoLoop(const int64_t& _videoLoop)
 {
-    m_voiceType = _voiceType;
-    m_voiceTypeHasBeenSet = true;
+    m_videoLoop = _videoLoop;
+    m_videoLoopHasBeenSet = true;
 }
 
-bool SubmitVideoTranslateJobRequest::VoiceTypeHasBeenSet() const
+bool SubmitVideoTranslateJobRequest::VideoLoopHasBeenSet() const
 {
-    return m_voiceTypeHasBeenSet;
+    return m_videoLoopHasBeenSet;
 }
 
 

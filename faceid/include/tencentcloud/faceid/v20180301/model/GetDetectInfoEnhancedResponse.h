@@ -132,9 +132,11 @@ namespace TencentCloud
                     bool EncryptionHasBeenSet() const;
 
                     /**
-                     * 获取意愿核身朗读模式结果信息。若未使用意愿核身功能，该字段返回值可以不处理。
+                     * 获取意愿核身朗读模式结果信息。
+- 若未使用意愿核身功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IntentionVerifyData 意愿核身朗读模式结果信息。若未使用意愿核身功能，该字段返回值可以不处理。
+                     * @return IntentionVerifyData 意愿核身朗读模式结果信息。
+- 若未使用意愿核身功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,9 +150,13 @@ namespace TencentCloud
                     bool IntentionVerifyDataHasBeenSet() const;
 
                     /**
-                     * 获取意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。
+                     * 获取意愿核身问答模式结果。
+
+- 若未使用该意愿核身功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IntentionQuestionResult 意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。
+                     * @return IntentionQuestionResult 意愿核身问答模式结果。
+
+- 若未使用该意愿核身功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -164,9 +170,11 @@ namespace TencentCloud
                     bool IntentionQuestionResultHasBeenSet() const;
 
                     /**
-                     * 获取意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。
+                     * 获取意愿核身点头确认模式的结果信息。
+- 若未使用该意愿核身功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IntentionActionResult 意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。
+                     * @return IntentionActionResult 意愿核身点头确认模式的结果信息。
+- 若未使用该意愿核身功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -180,9 +188,9 @@ namespace TencentCloud
                     bool IntentionActionResultHasBeenSet() const;
 
                     /**
-                     * 获取加密后的数据
+                     * 获取加密后的数据。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EncryptedBody 加密后的数据
+                     * @return EncryptedBody 加密后的数据。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -233,28 +241,32 @@ namespace TencentCloud
                     bool m_encryptionHasBeenSet;
 
                     /**
-                     * 意愿核身朗读模式结果信息。若未使用意愿核身功能，该字段返回值可以不处理。
+                     * 意愿核身朗读模式结果信息。
+- 若未使用意愿核身功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IntentionVerifyData m_intentionVerifyData;
                     bool m_intentionVerifyDataHasBeenSet;
 
                     /**
-                     * 意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。
+                     * 意愿核身问答模式结果。
+
+- 若未使用该意愿核身功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IntentionQuestionResult m_intentionQuestionResult;
                     bool m_intentionQuestionResultHasBeenSet;
 
                     /**
-                     * 意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。
+                     * 意愿核身点头确认模式的结果信息。
+- 若未使用该意愿核身功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IntentionActionResult m_intentionActionResult;
                     bool m_intentionActionResultHasBeenSet;
 
                     /**
-                     * 加密后的数据
+                     * 加密后的数据。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_encryptedBody;

@@ -24,7 +24,8 @@ using namespace TencentCloud::Cdz::V20221123::Model;
 using namespace std;
 
 DescribeCloudDedicatedZoneResourceSummaryResponse::DescribeCloudDedicatedZoneResourceSummaryResponse() :
-    m_resourceSummarySetHasBeenSet(false)
+    m_resourceSummarySetHasBeenSet(false),
+    m_extraInfoHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,23 @@ CoreInternalOutcome DescribeCloudDedicatedZoneResourceSummaryResponse::Deseriali
         m_resourceSummarySetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExtraInfo") && !rsp["ExtraInfo"].IsNull())
+    {
+        if (!rsp["ExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extraInfo.Deserialize(rsp["ExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extraInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +125,15 @@ string DescribeCloudDedicatedZoneResourceSummaryResponse::ToJsonString() const
         }
     }
 
+    if (m_extraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +154,16 @@ vector<CloudDedicatedZoneResourceSummaryInfo> DescribeCloudDedicatedZoneResource
 bool DescribeCloudDedicatedZoneResourceSummaryResponse::ResourceSummarySetHasBeenSet() const
 {
     return m_resourceSummarySetHasBeenSet;
+}
+
+ExtraInfo DescribeCloudDedicatedZoneResourceSummaryResponse::GetExtraInfo() const
+{
+    return m_extraInfo;
+}
+
+bool DescribeCloudDedicatedZoneResourceSummaryResponse::ExtraInfoHasBeenSet() const
+{
+    return m_extraInfoHasBeenSet;
 }
 
 

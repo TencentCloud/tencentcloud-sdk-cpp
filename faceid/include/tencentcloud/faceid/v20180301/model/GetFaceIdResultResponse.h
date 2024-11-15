@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取身份证
-                     * @return IdCard 身份证
+                     * 获取身份证。
+                     * @return IdCard 身份证。
                      * 
                      */
                     std::string GetIdCard() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool IdCardHasBeenSet() const;
 
                     /**
-                     * 获取姓名
-                     * @return Name 姓名
+                     * 获取姓名。
+                     * @return Name 姓名。
                      * 
                      */
                     std::string GetName() const;
@@ -72,8 +72,10 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取业务核验结果，参考https://cloud.tencent.com/document/product/1007/47912
-                     * @return Result 业务核验结果，参考https://cloud.tencent.com/document/product/1007/47912
+                     * 获取业务核验结果。
+- 参考：https://cloud.tencent.com/document/product/1007/47912。
+                     * @return Result 业务核验结果。
+- 参考：https://cloud.tencent.com/document/product/1007/47912。
                      * 
                      */
                     std::string GetResult() const;
@@ -86,8 +88,8 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取业务核验描述
-                     * @return Description 业务核验描述
+                     * 获取业务核验描述。
+                     * @return Description 业务核验描述。
                      * 
                      */
                     std::string GetDescription() const;
@@ -100,8 +102,12 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取相似度，0-100，数值越大相似度越高
-                     * @return Similarity 相似度，0-100，数值越大相似度越高
+                     * 获取相似度。
+- 取值：0-100。
+- 数值越大相似度越高。
+                     * @return Similarity 相似度。
+- 取值：0-100。
+- 数值越大相似度越高。
                      * 
                      */
                     double GetSimilarity() const;
@@ -114,9 +120,11 @@ namespace TencentCloud
                     bool SimilarityHasBeenSet() const;
 
                     /**
-                     * 获取用户核验的视频base64，如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey
+                     * 获取用户核验的视频base64。
+- 如果选择了使用cos，返回完整cos地址，如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VideoBase64 用户核验的视频base64，如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey
+                     * @return VideoBase64 用户核验的视频base64。
+- 如果选择了使用cos，返回完整cos地址，如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -130,9 +138,11 @@ namespace TencentCloud
                     bool VideoBase64HasBeenSet() const;
 
                     /**
-                     * 获取用户核验视频的截帧base64，如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey
+                     * 获取用户核验视频的截帧base64。
+- 如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BestFrameBase64 用户核验视频的截帧base64，如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey
+                     * @return BestFrameBase64 用户核验视频的截帧base64。
+- 如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -146,9 +156,9 @@ namespace TencentCloud
                     bool BestFrameBase64HasBeenSet() const;
 
                     /**
-                     * 获取获取token时透传的信息
+                     * 获取获取token时透传的信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Extra 获取token时透传的信息
+                     * @return Extra 获取token时透传的信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -162,25 +172,27 @@ namespace TencentCloud
                     bool ExtraHasBeenSet() const;
 
                     /**
-                     * 获取plus版：描述当前请求所在设备的风险标签，详情如下：
-01-设备疑似被Root/设备疑似越狱
-02-设备疑似被注入
-03-设备疑似为模拟器
-04-设备疑似存在风险操作
-05-摄像头疑似被劫持
-06-疑似黑产设备
-null-无设备风险
-增强版：此字段不生效，默认为null
+                     * 获取plus版：描述当前请求所在设备的风险标签。
+- 详情如下：
+01-设备疑似被Root/设备疑似越狱。
+02-设备疑似被注入。
+03-设备疑似为模拟器。
+04-设备疑似存在风险操作。
+05-摄像头疑似被劫持。
+06-疑似黑产设备。
+null-无设备风险。
+- 增强版：此字段不生效，默认为null。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeviceInfoTag plus版：描述当前请求所在设备的风险标签，详情如下：
-01-设备疑似被Root/设备疑似越狱
-02-设备疑似被注入
-03-设备疑似为模拟器
-04-设备疑似存在风险操作
-05-摄像头疑似被劫持
-06-疑似黑产设备
-null-无设备风险
-增强版：此字段不生效，默认为null
+                     * @return DeviceInfoTag plus版：描述当前请求所在设备的风险标签。
+- 详情如下：
+01-设备疑似被Root/设备疑似越狱。
+02-设备疑似被注入。
+03-设备疑似为模拟器。
+04-设备疑似存在风险操作。
+05-摄像头疑似被劫持。
+06-疑似黑产设备。
+null-无设备风险。
+- 增强版：此字段不生效，默认为null。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -194,10 +206,14 @@ null-无设备风险
                     bool DeviceInfoTagHasBeenSet() const;
 
                     /**
-                     * 获取行为风险标签，仅错误码返回1007（设备疑似被劫持）时返回风险标签。标签说明：
+                     * 获取行为风险标签。
+- 仅错误码返回1007（设备疑似被劫持）时返回风险标签。
+- 标签说明：
 02：攻击风险
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RiskInfoTag 行为风险标签，仅错误码返回1007（设备疑似被劫持）时返回风险标签。标签说明：
+                     * @return RiskInfoTag 行为风险标签。
+- 仅错误码返回1007（设备疑似被劫持）时返回风险标签。
+- 标签说明：
 02：攻击风险
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -212,9 +228,41 @@ null-无设备风险
                     bool RiskInfoTagHasBeenSet() const;
 
                     /**
-                     * 获取plus版：描述当前请求活体阶段被拒绝的详细原因，详情如下：01-用户全程闭眼02-用户未完成指定动作03-疑似翻拍攻击04-疑似合成图片05-疑似合成视频06-疑似合成动作07-疑似黑产模板08-疑似存在水印09-反光校验未通过10-最佳帧校验未通过11-人脸质量过差12-人脸距离不匹配13-疑似对抗样本攻击null-无增强版：此字段不生效，默认为null
+                     * 获取plus版：描述当前请求活体阶段被拒绝的详细原因。
+- 详情如下：
+01-用户全程闭眼。
+02-用户未完成指定动作。
+03-疑似翻拍攻击。
+04-疑似合成图片。
+05-疑似合成视频。
+06-疑似合成动作。
+07-疑似黑产模板。
+08-疑似存在水印。
+09-反光校验未通过。
+10-最佳帧校验未通过。
+11-人脸质量过差。
+12-人脸距离不匹配。
+13-疑似对抗样本攻击。
+null-无。
+- 增强版：此字段不生效，默认为null。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LivenessInfoTag plus版：描述当前请求活体阶段被拒绝的详细原因，详情如下：01-用户全程闭眼02-用户未完成指定动作03-疑似翻拍攻击04-疑似合成图片05-疑似合成视频06-疑似合成动作07-疑似黑产模板08-疑似存在水印09-反光校验未通过10-最佳帧校验未通过11-人脸质量过差12-人脸距离不匹配13-疑似对抗样本攻击null-无增强版：此字段不生效，默认为null
+                     * @return LivenessInfoTag plus版：描述当前请求活体阶段被拒绝的详细原因。
+- 详情如下：
+01-用户全程闭眼。
+02-用户未完成指定动作。
+03-疑似翻拍攻击。
+04-疑似合成图片。
+05-疑似合成视频。
+06-疑似合成动作。
+07-疑似黑产模板。
+08-疑似存在水印。
+09-反光校验未通过。
+10-最佳帧校验未通过。
+11-人脸质量过差。
+12-人脸距离不匹配。
+13-疑似对抗样本攻击。
+null-无。
+- 增强版：此字段不生效，默认为null。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -228,21 +276,23 @@ null-无设备风险
                     bool LivenessInfoTagHasBeenSet() const;
 
                     /**
-                     * 获取plus版：描述当前请求所在设备的风险等级，共4级，详情如下：
-1 - 安全
-2 - 低风险
-3 - 中风险
-4 - 高危
-null - 未获取到风险等级
-增强版：此字段不生效，默认为null
+                     * 获取plus版：描述当前请求所在设备的风险等级，共4级。
+- 详情如下：
+1 - 安全。
+2 - 低风险。
+3 - 中风险。
+4 - 高危。
+null - 未获取到风险等级。
+- 增强版：此字段不生效，默认为null。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeviceInfoLevel plus版：描述当前请求所在设备的风险等级，共4级，详情如下：
-1 - 安全
-2 - 低风险
-3 - 中风险
-4 - 高危
-null - 未获取到风险等级
-增强版：此字段不生效，默认为null
+                     * @return DeviceInfoLevel plus版：描述当前请求所在设备的风险等级，共4级。
+- 详情如下：
+1 - 安全。
+2 - 低风险。
+3 - 中风险。
+4 - 高危。
+null - 未获取到风险等级。
+- 增强版：此字段不生效，默认为null。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -258,73 +308,81 @@ null - 未获取到风险等级
                 private:
 
                     /**
-                     * 身份证
+                     * 身份证。
                      */
                     std::string m_idCard;
                     bool m_idCardHasBeenSet;
 
                     /**
-                     * 姓名
+                     * 姓名。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 业务核验结果，参考https://cloud.tencent.com/document/product/1007/47912
+                     * 业务核验结果。
+- 参考：https://cloud.tencent.com/document/product/1007/47912。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
 
                     /**
-                     * 业务核验描述
+                     * 业务核验描述。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 相似度，0-100，数值越大相似度越高
+                     * 相似度。
+- 取值：0-100。
+- 数值越大相似度越高。
                      */
                     double m_similarity;
                     bool m_similarityHasBeenSet;
 
                     /**
-                     * 用户核验的视频base64，如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey
+                     * 用户核验的视频base64。
+- 如果选择了使用cos，返回完整cos地址，如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_videoBase64;
                     bool m_videoBase64HasBeenSet;
 
                     /**
-                     * 用户核验视频的截帧base64，如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey
+                     * 用户核验视频的截帧base64。
+- 如果选择了使用cos，返回完整cos地址如https://bucket.cos.ap-guangzhou.myqcloud.com/objectKey。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bestFrameBase64;
                     bool m_bestFrameBase64HasBeenSet;
 
                     /**
-                     * 获取token时透传的信息
+                     * 获取token时透传的信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;
 
                     /**
-                     * plus版：描述当前请求所在设备的风险标签，详情如下：
-01-设备疑似被Root/设备疑似越狱
-02-设备疑似被注入
-03-设备疑似为模拟器
-04-设备疑似存在风险操作
-05-摄像头疑似被劫持
-06-疑似黑产设备
-null-无设备风险
-增强版：此字段不生效，默认为null
+                     * plus版：描述当前请求所在设备的风险标签。
+- 详情如下：
+01-设备疑似被Root/设备疑似越狱。
+02-设备疑似被注入。
+03-设备疑似为模拟器。
+04-设备疑似存在风险操作。
+05-摄像头疑似被劫持。
+06-疑似黑产设备。
+null-无设备风险。
+- 增强版：此字段不生效，默认为null。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceInfoTag;
                     bool m_deviceInfoTagHasBeenSet;
 
                     /**
-                     * 行为风险标签，仅错误码返回1007（设备疑似被劫持）时返回风险标签。标签说明：
+                     * 行为风险标签。
+- 仅错误码返回1007（设备疑似被劫持）时返回风险标签。
+- 标签说明：
 02：攻击风险
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -332,20 +390,37 @@ null-无设备风险
                     bool m_riskInfoTagHasBeenSet;
 
                     /**
-                     * plus版：描述当前请求活体阶段被拒绝的详细原因，详情如下：01-用户全程闭眼02-用户未完成指定动作03-疑似翻拍攻击04-疑似合成图片05-疑似合成视频06-疑似合成动作07-疑似黑产模板08-疑似存在水印09-反光校验未通过10-最佳帧校验未通过11-人脸质量过差12-人脸距离不匹配13-疑似对抗样本攻击null-无增强版：此字段不生效，默认为null
+                     * plus版：描述当前请求活体阶段被拒绝的详细原因。
+- 详情如下：
+01-用户全程闭眼。
+02-用户未完成指定动作。
+03-疑似翻拍攻击。
+04-疑似合成图片。
+05-疑似合成视频。
+06-疑似合成动作。
+07-疑似黑产模板。
+08-疑似存在水印。
+09-反光校验未通过。
+10-最佳帧校验未通过。
+11-人脸质量过差。
+12-人脸距离不匹配。
+13-疑似对抗样本攻击。
+null-无。
+- 增强版：此字段不生效，默认为null。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_livenessInfoTag;
                     bool m_livenessInfoTagHasBeenSet;
 
                     /**
-                     * plus版：描述当前请求所在设备的风险等级，共4级，详情如下：
-1 - 安全
-2 - 低风险
-3 - 中风险
-4 - 高危
-null - 未获取到风险等级
-增强版：此字段不生效，默认为null
+                     * plus版：描述当前请求所在设备的风险等级，共4级。
+- 详情如下：
+1 - 安全。
+2 - 低风险。
+3 - 中风险。
+4 - 高危。
+null - 未获取到风险等级。
+- 增强版：此字段不生效，默认为null。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceInfoLevel;

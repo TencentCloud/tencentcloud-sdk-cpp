@@ -847,6 +847,106 @@ namespace TencentCloud
                      */
                     bool DefaultTSFHasBeenSet() const;
 
+                    /**
+                     * 获取是否关联dashboard： 0 关 1 开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsRelatedDashboard 是否关联dashboard： 0 关 1 开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsRelatedDashboard() const;
+
+                    /**
+                     * 设置是否关联dashboard： 0 关 1 开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isRelatedDashboard 是否关联dashboard： 0 关 1 开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsRelatedDashboard(const int64_t& _isRelatedDashboard);
+
+                    /**
+                     * 判断参数 IsRelatedDashboard 是否已赋值
+                     * @return IsRelatedDashboard 是否已赋值
+                     * 
+                     */
+                    bool IsRelatedDashboardHasBeenSet() const;
+
+                    /**
+                     * 获取dashboard ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DashboardTopicID dashboard ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDashboardTopicID() const;
+
+                    /**
+                     * 设置dashboard ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dashboardTopicID dashboard ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDashboardTopicID(const std::string& _dashboardTopicID);
+
+                    /**
+                     * 判断参数 DashboardTopicID 是否已赋值
+                     * @return DashboardTopicID 是否已赋值
+                     * 
+                     */
+                    bool DashboardTopicIDHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启组件漏洞检测
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsInstrumentationVulnerabilityScan 是否开启组件漏洞检测
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsInstrumentationVulnerabilityScan() const;
+
+                    /**
+                     * 设置是否开启组件漏洞检测
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isInstrumentationVulnerabilityScan 是否开启组件漏洞检测
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsInstrumentationVulnerabilityScan(const int64_t& _isInstrumentationVulnerabilityScan);
+
+                    /**
+                     * 判断参数 IsInstrumentationVulnerabilityScan 是否已赋值
+                     * @return IsInstrumentationVulnerabilityScan 是否已赋值
+                     * 
+                     */
+                    bool IsInstrumentationVulnerabilityScanHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启SQL注入分析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSqlInjectionAnalysis 是否开启SQL注入分析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsSqlInjectionAnalysis() const;
+
+                    /**
+                     * 设置是否开启SQL注入分析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isSqlInjectionAnalysis 是否开启SQL注入分析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsSqlInjectionAnalysis(const int64_t& _isSqlInjectionAnalysis);
+
+                    /**
+                     * 判断参数 IsSqlInjectionAnalysis 是否已赋值
+                     * @return IsSqlInjectionAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsSqlInjectionAnalysisHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1072,6 +1172,34 @@ namespace TencentCloud
                      */
                     int64_t m_defaultTSF;
                     bool m_defaultTSFHasBeenSet;
+
+                    /**
+                     * 是否关联dashboard： 0 关 1 开
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isRelatedDashboard;
+                    bool m_isRelatedDashboardHasBeenSet;
+
+                    /**
+                     * dashboard ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dashboardTopicID;
+                    bool m_dashboardTopicIDHasBeenSet;
+
+                    /**
+                     * 是否开启组件漏洞检测
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isInstrumentationVulnerabilityScan;
+                    bool m_isInstrumentationVulnerabilityScanHasBeenSet;
+
+                    /**
+                     * 是否开启SQL注入分析
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isSqlInjectionAnalysis;
+                    bool m_isSqlInjectionAnalysisHasBeenSet;
 
                 };
             }

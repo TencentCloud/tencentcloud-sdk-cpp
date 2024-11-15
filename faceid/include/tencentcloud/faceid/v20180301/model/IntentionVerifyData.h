@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 意愿核身相关结果
+                * 意愿核身相关结果。
                 */
                 class IntentionVerifyData : public AbstractModel
                 {
@@ -47,18 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取意愿确认环节中录制的视频（base64）。若不存在则为空字符串。
+                     * 获取意愿确认环节中录制的视频（base64）。
+- 若不存在则为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IntentionVerifyVideo 意愿确认环节中录制的视频（base64）。若不存在则为空字符串。
+                     * @return IntentionVerifyVideo 意愿确认环节中录制的视频（base64）。
+- 若不存在则为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIntentionVerifyVideo() const;
 
                     /**
-                     * 设置意愿确认环节中录制的视频（base64）。若不存在则为空字符串。
+                     * 设置意愿确认环节中录制的视频（base64）。
+- 若不存在则为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _intentionVerifyVideo 意愿确认环节中录制的视频（base64）。若不存在则为空字符串。
+                     * @param _intentionVerifyVideo 意愿确认环节中录制的视频（base64）。
+- 若不存在则为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +76,22 @@ namespace TencentCloud
                     bool IntentionVerifyVideoHasBeenSet() const;
 
                     /**
-                     * 获取意愿确认环节中用户语音转文字的识别结果。若不存在则为空字符串。
+                     * 获取意愿确认环节中用户语音转文字的识别结果。
+- 若不存在则为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AsrResult 意愿确认环节中用户语音转文字的识别结果。若不存在则为空字符串。
+                     * @return AsrResult 意愿确认环节中用户语音转文字的识别结果。
+- 若不存在则为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAsrResult() const;
 
                     /**
-                     * 设置意愿确认环节中用户语音转文字的识别结果。若不存在则为空字符串。
+                     * 设置意愿确认环节中用户语音转文字的识别结果。
+- 若不存在则为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _asrResult 意愿确认环节中用户语音转文字的识别结果。若不存在则为空字符串。
+                     * @param _asrResult 意愿确认环节中用户语音转文字的识别结果。
+- 若不存在则为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +105,22 @@ namespace TencentCloud
                     bool AsrResultHasBeenSet() const;
 
                     /**
-                     * 获取意愿确认环节的结果码。当该结果码为0时，语音朗读的视频与语音识别结果才会返回。
+                     * 获取意愿确认环节的结果码。
+- 当该结果码为0时，语音朗读的视频与语音识别结果才会返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorCode 意愿确认环节的结果码。当该结果码为0时，语音朗读的视频与语音识别结果才会返回。
+                     * @return ErrorCode 意愿确认环节的结果码。
+- 当该结果码为0时，语音朗读的视频与语音识别结果才会返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetErrorCode() const;
 
                     /**
-                     * 设置意愿确认环节的结果码。当该结果码为0时，语音朗读的视频与语音识别结果才会返回。
+                     * 设置意愿确认环节的结果码。
+- 当该结果码为0时，语音朗读的视频与语音识别结果才会返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _errorCode 意愿确认环节的结果码。当该结果码为0时，语音朗读的视频与语音识别结果才会返回。
+                     * @param _errorCode 意愿确认环节的结果码。
+- 当该结果码为0时，语音朗读的视频与语音识别结果才会返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +159,22 @@ namespace TencentCloud
                     bool ErrorMessageHasBeenSet() const;
 
                     /**
-                     * 获取意愿确认环节中录制视频的最佳帧（base64）。若不存在则为空字符串。
+                     * 获取意愿确认环节中录制视频的最佳帧（base64）。
+- 若不存在则为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IntentionVerifyBestFrame 意愿确认环节中录制视频的最佳帧（base64）。若不存在则为空字符串。
+                     * @return IntentionVerifyBestFrame 意愿确认环节中录制视频的最佳帧（base64）。
+- 若不存在则为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIntentionVerifyBestFrame() const;
 
                     /**
-                     * 设置意愿确认环节中录制视频的最佳帧（base64）。若不存在则为空字符串。
+                     * 设置意愿确认环节中录制视频的最佳帧（base64）。
+- 若不存在则为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _intentionVerifyBestFrame 意愿确认环节中录制视频的最佳帧（base64）。若不存在则为空字符串。
+                     * @param _intentionVerifyBestFrame 意愿确认环节中录制视频的最佳帧（base64）。
+- 若不存在则为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,21 +215,24 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 意愿确认环节中录制的视频（base64）。若不存在则为空字符串。
+                     * 意愿确认环节中录制的视频（base64）。
+- 若不存在则为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_intentionVerifyVideo;
                     bool m_intentionVerifyVideoHasBeenSet;
 
                     /**
-                     * 意愿确认环节中用户语音转文字的识别结果。若不存在则为空字符串。
+                     * 意愿确认环节中用户语音转文字的识别结果。
+- 若不存在则为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_asrResult;
                     bool m_asrResultHasBeenSet;
 
                     /**
-                     * 意愿确认环节的结果码。当该结果码为0时，语音朗读的视频与语音识别结果才会返回。
+                     * 意愿确认环节的结果码。
+- 当该结果码为0时，语音朗读的视频与语音识别结果才会返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_errorCode;
@@ -227,7 +246,8 @@ namespace TencentCloud
                     bool m_errorMessageHasBeenSet;
 
                     /**
-                     * 意愿确认环节中录制视频的最佳帧（base64）。若不存在则为空字符串。
+                     * 意愿确认环节中录制视频的最佳帧（base64）。
+- 若不存在则为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_intentionVerifyBestFrame;

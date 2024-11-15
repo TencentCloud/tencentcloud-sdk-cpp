@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 核身视频信息
+                * 核身视频信息。
                 */
                 class DetectInfoVideoData : public AbstractModel
                 {
@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取活体视频的base64编码
+                     * 获取活体视频的base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LivenessVideo 活体视频的base64编码
+                     * @return LivenessVideo 活体视频的base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLivenessVideo() const;
 
                     /**
-                     * 设置活体视频的base64编码
+                     * 设置活体视频的base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _livenessVideo 活体视频的base64编码
+                     * @param _livenessVideo 活体视频的base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 活体视频的base64编码
+                     * 活体视频的base64编码。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_livenessVideo;

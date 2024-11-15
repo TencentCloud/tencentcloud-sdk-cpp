@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cat/v20180409/model/ProbeTaskBasicConfiguration.h>
 
 
 namespace TencentCloud
@@ -193,6 +194,27 @@ namespace TencentCloud
                      */
                     bool NodeIpTypeHasBeenSet() const;
 
+                    /**
+                     * 获取批量任务名-地址
+                     * @return BatchTasks 批量任务名-地址
+                     * 
+                     */
+                    std::vector<ProbeTaskBasicConfiguration> GetBatchTasks() const;
+
+                    /**
+                     * 设置批量任务名-地址
+                     * @param _batchTasks 批量任务名-地址
+                     * 
+                     */
+                    void SetBatchTasks(const std::vector<ProbeTaskBasicConfiguration>& _batchTasks);
+
+                    /**
+                     * 判断参数 BatchTasks 是否已赋值
+                     * @return BatchTasks 是否已赋值
+                     * 
+                     */
+                    bool BatchTasksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -237,6 +259,12 @@ namespace TencentCloud
                      */
                     int64_t m_nodeIpType;
                     bool m_nodeIpTypeHasBeenSet;
+
+                    /**
+                     * 批量任务名-地址
+                     */
+                    std::vector<ProbeTaskBasicConfiguration> m_batchTasks;
+                    bool m_batchTasksHasBeenSet;
 
                 };
             }

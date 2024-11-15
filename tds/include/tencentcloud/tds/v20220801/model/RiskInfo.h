@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取风险类型
-                     * @return Type 风险类型
+                     * 获取风险类型。更多详情请参见：[Android](https://cloud.tencent.com/document/product/1628/85898)、[iOS](https://cloud.tencent.com/document/product/1628/85896)、[H5](https://cloud.tencent.com/document/product/1628/85897)、[小程序](https://cloud.tencent.com/document/product/1628/85895)、[场景风险](https://cloud.tencent.com/document/product/1628/88912)
+                     * @return Type 风险类型。更多详情请参见：[Android](https://cloud.tencent.com/document/product/1628/85898)、[iOS](https://cloud.tencent.com/document/product/1628/85896)、[H5](https://cloud.tencent.com/document/product/1628/85897)、[小程序](https://cloud.tencent.com/document/product/1628/85895)、[场景风险](https://cloud.tencent.com/document/product/1628/88912)
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置风险类型
-                     * @param _type 风险类型
+                     * 设置风险类型。更多详情请参见：[Android](https://cloud.tencent.com/document/product/1628/85898)、[iOS](https://cloud.tencent.com/document/product/1628/85896)、[H5](https://cloud.tencent.com/document/product/1628/85897)、[小程序](https://cloud.tencent.com/document/product/1628/85895)、[场景风险](https://cloud.tencent.com/document/product/1628/88912)
+                     * @param _type 风险类型。更多详情请参见：[Android](https://cloud.tencent.com/document/product/1628/85898)、[iOS](https://cloud.tencent.com/document/product/1628/85896)、[H5](https://cloud.tencent.com/document/product/1628/85897)、[小程序](https://cloud.tencent.com/document/product/1628/85895)、[场景风险](https://cloud.tencent.com/document/product/1628/88912)
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取风险等级
-                     * @return Level 风险等级
+                     * 获取[风险等级](https://cloud.tencent.com/document/product/1628/85308)
+                     * @return Level [风险等级](https://cloud.tencent.com/document/product/1628/85308)
                      * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
-                     * 设置风险等级
-                     * @param _level 风险等级
+                     * 设置[风险等级](https://cloud.tencent.com/document/product/1628/85308)
+                     * @param _level [风险等级](https://cloud.tencent.com/document/product/1628/85308)
                      * 
                      */
                     void SetLevel(const uint64_t& _level);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 风险类型
+                     * 风险类型。更多详情请参见：[Android](https://cloud.tencent.com/document/product/1628/85898)、[iOS](https://cloud.tencent.com/document/product/1628/85896)、[H5](https://cloud.tencent.com/document/product/1628/85897)、[小程序](https://cloud.tencent.com/document/product/1628/85895)、[场景风险](https://cloud.tencent.com/document/product/1628/88912)
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 风险等级
+                     * [风险等级](https://cloud.tencent.com/document/product/1628/85308)
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;

@@ -54,7 +54,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/WeekRepeatStrategy.h
   include/tencentcloud/emr/v20190103/model/SparkQuery.h
   include/tencentcloud/emr/v20190103/model/Dps.h
-  include/tencentcloud/emr/v20190103/model/UserManagerFilter.h
+  include/tencentcloud/emr/v20190103/model/TerminateTasksResponse.h
   include/tencentcloud/emr/v20190103/model/DeleteAutoScaleStrategyResponse.h
   include/tencentcloud/emr/v20190103/model/OverviewRow.h
   include/tencentcloud/emr/v20190103/model/DiskSpec.h
@@ -98,7 +98,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeSparkQueriesResponse.h
   include/tencentcloud/emr/v20190103/model/JobResult.h
-  include/tencentcloud/emr/v20190103/model/Resource.h
+  include/tencentcloud/emr/v20190103/model/PrePaySetting.h
   include/tencentcloud/emr/v20190103/model/FlowParam.h
   include/tencentcloud/emr/v20190103/model/DescribeAutoScaleStrategiesResponse.h
   include/tencentcloud/emr/v20190103/model/ModifyGlobalConfigRequest.h
@@ -141,6 +141,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/UserManagerUserBriefInfo.h
   include/tencentcloud/emr/v20190103/model/DescribeYarnScheduleHistoryResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeAutoScaleGroupGlobalConfResponse.h
+  include/tencentcloud/emr/v20190103/model/Resource.h
   include/tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeClusterNodesResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeYarnApplicationsRequest.h
@@ -212,7 +213,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DeployYarnConfResponse.h
   include/tencentcloud/emr/v20190103/model/DeleteUserManagerUserListResponse.h
   include/tencentcloud/emr/v20190103/model/ModifyResourcePoolsResponse.h
-  include/tencentcloud/emr/v20190103/model/TerminateTasksResponse.h
+  include/tencentcloud/emr/v20190103/model/Period.h
   include/tencentcloud/emr/v20190103/model/DayRepeatStrategy.h
   include/tencentcloud/emr/v20190103/model/DescribeYarnApplicationsResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerResponse.h
@@ -235,6 +236,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/SyncPodStateRequest.h
   include/tencentcloud/emr/v20190103/model/MultiZoneSetting.h
   include/tencentcloud/emr/v20190103/model/ModifyAutoRenewFlagRequest.h
+  include/tencentcloud/emr/v20190103/model/UserManagerFilter.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigRequest.h
   include/tencentcloud/emr/v20190103/model/UserInfoForUserManager.h
   include/tencentcloud/emr/v20190103/model/PodNewParameter.h
@@ -324,7 +326,7 @@ set(emr_src
   src/v20190103/model/WeekRepeatStrategy.cpp
   src/v20190103/model/SparkQuery.cpp
   src/v20190103/model/Dps.cpp
-  src/v20190103/model/UserManagerFilter.cpp
+  src/v20190103/model/TerminateTasksResponse.cpp
   src/v20190103/model/DeleteAutoScaleStrategyResponse.cpp
   src/v20190103/model/OverviewRow.cpp
   src/v20190103/model/DiskSpec.cpp
@@ -368,7 +370,7 @@ set(emr_src
   src/v20190103/model/DescribeInstanceRenewNodesRequest.cpp
   src/v20190103/model/DescribeSparkQueriesResponse.cpp
   src/v20190103/model/JobResult.cpp
-  src/v20190103/model/Resource.cpp
+  src/v20190103/model/PrePaySetting.cpp
   src/v20190103/model/FlowParam.cpp
   src/v20190103/model/DescribeAutoScaleStrategiesResponse.cpp
   src/v20190103/model/ModifyGlobalConfigRequest.cpp
@@ -411,6 +413,7 @@ set(emr_src
   src/v20190103/model/UserManagerUserBriefInfo.cpp
   src/v20190103/model/DescribeYarnScheduleHistoryResponse.cpp
   src/v20190103/model/DescribeAutoScaleGroupGlobalConfResponse.cpp
+  src/v20190103/model/Resource.cpp
   src/v20190103/model/DescribeEmrApplicationStaticsRequest.cpp
   src/v20190103/model/DescribeClusterNodesResponse.cpp
   src/v20190103/model/DescribeYarnApplicationsRequest.cpp
@@ -482,7 +485,7 @@ set(emr_src
   src/v20190103/model/DeployYarnConfResponse.cpp
   src/v20190103/model/DeleteUserManagerUserListResponse.cpp
   src/v20190103/model/ModifyResourcePoolsResponse.cpp
-  src/v20190103/model/TerminateTasksResponse.cpp
+  src/v20190103/model/Period.cpp
   src/v20190103/model/DayRepeatStrategy.cpp
   src/v20190103/model/DescribeYarnApplicationsResponse.cpp
   src/v20190103/model/DescribeUsersForUserManagerResponse.cpp
@@ -505,6 +508,7 @@ set(emr_src
   src/v20190103/model/SyncPodStateRequest.cpp
   src/v20190103/model/MultiZoneSetting.cpp
   src/v20190103/model/ModifyAutoRenewFlagRequest.cpp
+  src/v20190103/model/UserManagerFilter.cpp
   src/v20190103/model/ModifyResourceScheduleConfigRequest.cpp
   src/v20190103/model/UserInfoForUserManager.cpp
   src/v20190103/model/PodNewParameter.cpp

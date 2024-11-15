@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool PublicIpAddressesHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取规则描述
+                     * @return Description 规则描述
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置规则描述
+                     * @param _description 规则描述
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -279,7 +279,7 @@ namespace TencentCloud
                     bool m_publicIpAddressesHasBeenSet;
 
                     /**
-                     * 描述
+                     * 规则描述
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

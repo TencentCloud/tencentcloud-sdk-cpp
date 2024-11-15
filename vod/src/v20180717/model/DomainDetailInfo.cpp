@@ -28,7 +28,8 @@ DomainDetailInfo::DomainDetailInfo() :
     m_urlSignatureAuthPolicyHasBeenSet(false),
     m_refererAuthPolicyHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_qUICConfigHasBeenSet(false)
+    m_qUICConfigHasBeenSet(false),
+    m_iPFilterPolicyHasBeenSet(false)
 {
 }
 
@@ -155,6 +156,23 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
         m_qUICConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("IPFilterPolicy") && !value["IPFilterPolicy"].IsNull())
+    {
+        if (!value["IPFilterPolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainDetailInfo.IPFilterPolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_iPFilterPolicy.Deserialize(value["IPFilterPolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_iPFilterPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -235,6 +253,15 @@ void DomainDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_qUICConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_iPFilterPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPFilterPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_iPFilterPolicy.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -366,5 +393,21 @@ void DomainDetailInfo::SetQUICConfig(const DomainQUICConfig& _qUICConfig)
 bool DomainDetailInfo::QUICConfigHasBeenSet() const
 {
     return m_qUICConfigHasBeenSet;
+}
+
+IPFilterPolicy DomainDetailInfo::GetIPFilterPolicy() const
+{
+    return m_iPFilterPolicy;
+}
+
+void DomainDetailInfo::SetIPFilterPolicy(const IPFilterPolicy& _iPFilterPolicy)
+{
+    m_iPFilterPolicy = _iPFilterPolicy;
+    m_iPFilterPolicyHasBeenSet = true;
+}
+
+bool DomainDetailInfo::IPFilterPolicyHasBeenSet() const
+{
+    return m_iPFilterPolicyHasBeenSet;
 }
 

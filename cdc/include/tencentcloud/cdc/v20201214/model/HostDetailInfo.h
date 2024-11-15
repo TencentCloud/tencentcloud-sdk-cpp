@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型族
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostTypeFamily 类型族
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostTypeFamily() const;
 
                     /**
                      * 设置类型族
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostTypeFamily 类型族
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostTypeFamily(const std::string& _hostTypeFamily);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuTotal 总CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCpuTotal() const;
 
                     /**
                      * 设置总CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuTotal 总CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuTotal(const double& _cpuTotal);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuAvailable 可用CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCpuAvailable() const;
 
                     /**
                      * 设置可用CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuAvailable 可用CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuAvailable(const double& _cpuAvailable);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemTotal 总内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMemTotal() const;
 
                     /**
                      * 设置总内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memTotal 总内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemTotal(const double& _memTotal);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemAvailable 可用内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMemAvailable() const;
 
                     /**
                      * 设置可用内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memAvailable 可用内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemAvailable(const double& _memAvailable);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 类型族
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostTypeFamily;
                     bool m_hostTypeFamilyHasBeenSet;
 
                     /**
                      * 总CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cpuTotal;
                     bool m_cpuTotalHasBeenSet;
 
                     /**
                      * 可用CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cpuAvailable;
                     bool m_cpuAvailableHasBeenSet;
 
                     /**
                      * 总内存
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_memTotal;
                     bool m_memTotalHasBeenSet;
 
                     /**
                      * 可用内存
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_memAvailable;
                     bool m_memAvailableHasBeenSet;

@@ -80,9 +80,7 @@ Exited：表示当前录制任务正在退出的过程中。
 
                     /**
                      * 获取录制文件信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageFileList 录制文件信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<StorageFile> GetStorageFileList() const;
@@ -113,7 +111,6 @@ Exited：表示当前录制任务正在退出的过程中。
 
                     /**
                      * 录制文件信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<StorageFile> m_storageFileList;
                     bool m_storageFileListHasBeenSet;

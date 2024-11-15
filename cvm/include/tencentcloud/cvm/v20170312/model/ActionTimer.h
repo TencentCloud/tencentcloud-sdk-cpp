@@ -122,6 +122,89 @@ namespace TencentCloud
                      */
                     bool ExternalsHasBeenSet() const;
 
+                    /**
+                     * 获取定时器ID。
+                     * @return ActionTimerId 定时器ID。
+                     * 
+                     */
+                    std::string GetActionTimerId() const;
+
+                    /**
+                     * 设置定时器ID。
+                     * @param _actionTimerId 定时器ID。
+                     * 
+                     */
+                    void SetActionTimerId(const std::string& _actionTimerId);
+
+                    /**
+                     * 判断参数 ActionTimerId 是否已赋值
+                     * @return ActionTimerId 是否已赋值
+                     * 
+                     */
+                    bool ActionTimerIdHasBeenSet() const;
+
+                    /**
+                     * 获取定时器状态，取值范围：
+
+UNDO：未触发
+DOING：触发中
+DONE：已经触发
+
+                     * @return Status 定时器状态，取值范围：
+
+UNDO：未触发
+DOING：触发中
+DONE：已经触发
+
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置定时器状态，取值范围：
+
+UNDO：未触发
+DOING：触发中
+DONE：已经触发
+
+                     * @param _status 定时器状态，取值范围：
+
+UNDO：未触发
+DOING：触发中
+DONE：已经触发
+
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取定时器对应的实例ID。
+                     * @return InstanceId 定时器对应的实例ID。
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置定时器对应的实例ID。
+                     * @param _instanceId 定时器对应的实例ID。
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +227,29 @@ namespace TencentCloud
                      */
                     Externals m_externals;
                     bool m_externalsHasBeenSet;
+
+                    /**
+                     * 定时器ID。
+                     */
+                    std::string m_actionTimerId;
+                    bool m_actionTimerIdHasBeenSet;
+
+                    /**
+                     * 定时器状态，取值范围：
+
+UNDO：未触发
+DOING：触发中
+DONE：已经触发
+
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 定时器对应的实例ID。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

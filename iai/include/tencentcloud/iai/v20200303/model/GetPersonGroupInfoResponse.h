@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取包含此人员的人员库及描述字段内容列表
-                     * @return PersonGroupInfos 包含此人员的人员库及描述字段内容列表
+                     * 获取包含此人员的人员库及描述字段内容列表。
+                     * @return PersonGroupInfos 包含此人员的人员库及描述字段内容列表。
                      * 
                      */
                     std::vector<PersonGroupInfo> GetPersonGroupInfos() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool PersonGroupInfosHasBeenSet() const;
 
                     /**
-                     * 获取人员库总数量
+                     * 获取人员库总数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupNum 人员库总数量
+                     * @return GroupNum 人员库总数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,13 +93,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 包含此人员的人员库及描述字段内容列表
+                     * 包含此人员的人员库及描述字段内容列表。
                      */
                     std::vector<PersonGroupInfo> m_personGroupInfos;
                     bool m_personGroupInfosHasBeenSet;
 
                     /**
-                     * 人员库总数量
+                     * 人员库总数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_groupNum;

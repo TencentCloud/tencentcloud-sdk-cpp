@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大CPU设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxCPU 最大CPU设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMaxCPU() const;
 
                     /**
                      * 设置最大CPU设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxCPU 最大CPU设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxCPU(const std::string& _maxCPU);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大内存设置（单位：Mi，Gi，Ti，M，G，T）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxMemory 最大内存设置（单位：Mi，Gi，Ti，M，G，T）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMaxMemory() const;
 
                     /**
                      * 设置最大内存设置（单位：Mi，Gi，Ti，M，G，T）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxMemory 最大内存设置（单位：Mi，Gi，Ti，M，G，T）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxMemory(const std::string& _maxMemory);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 最大CPU设置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_maxCPU;
                     bool m_maxCPUHasBeenSet;
 
                     /**
                      * 最大内存设置（单位：Mi，Gi，Ti，M，G，T）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_maxMemory;
                     bool m_maxMemoryHasBeenSet;

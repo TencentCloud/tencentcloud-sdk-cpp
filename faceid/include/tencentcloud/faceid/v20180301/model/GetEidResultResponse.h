@@ -51,9 +51,13 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文本类信息。（基于对敏感信息的保护，验证使用的姓名和身份证号统一通过加密后从Eidinfo参数中返回，如需获取请在控制台申请返回身份信息，详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)）
+                     * 获取文本类信息。
+- 基于对敏感信息的保护，验证使用的姓名和身份证号统一通过加密后从EidInfo参数中返回。
+- 如需获取请在控制台申请返回身份信息，详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Text 文本类信息。（基于对敏感信息的保护，验证使用的姓名和身份证号统一通过加密后从Eidinfo参数中返回，如需获取请在控制台申请返回身份信息，详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)）
+                     * @return Text 文本类信息。
+- 基于对敏感信息的保护，验证使用的姓名和身份证号统一通过加密后从EidInfo参数中返回。
+- 如需获取请在控制台申请返回身份信息，详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,9 +103,13 @@ namespace TencentCloud
                     bool BestFrameHasBeenSet() const;
 
                     /**
-                     * 获取Eid信息。（包括商户下用户唯一标识以及加密后的姓名、身份证号信息。解密方式详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)）
+                     * 获取Eid信息。
+- 包括商户下用户唯一标识以及加密后的姓名、身份证号信息。
+- 解密方式详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EidInfo Eid信息。（包括商户下用户唯一标识以及加密后的姓名、身份证号信息。解密方式详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)）
+                     * @return EidInfo Eid信息。
+- 包括商户下用户唯一标识以及加密后的姓名、身份证号信息。
+- 解密方式详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -115,9 +123,11 @@ namespace TencentCloud
                     bool EidInfoHasBeenSet() const;
 
                     /**
-                     * 获取意愿核身朗读模式相关信息。若未使用意愿核身朗读功能，该字段返回值可以不处理。
+                     * 获取意愿核身朗读模式相关信息。
+- 若未使用意愿核身朗读功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IntentionVerifyData 意愿核身朗读模式相关信息。若未使用意愿核身朗读功能，该字段返回值可以不处理。
+                     * @return IntentionVerifyData 意愿核身朗读模式相关信息。
+- 若未使用意愿核身朗读功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -131,9 +141,11 @@ namespace TencentCloud
                     bool IntentionVerifyDataHasBeenSet() const;
 
                     /**
-                     * 获取意愿核身问答模式相关信息。若未使用意愿核身问答模式功能，该字段返回值可以不处理。
+                     * 获取意愿核身问答模式相关信息。
+- 若未使用意愿核身问答模式功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IntentionQuestionResult 意愿核身问答模式相关信息。若未使用意愿核身问答模式功能，该字段返回值可以不处理。
+                     * @return IntentionQuestionResult 意愿核身问答模式相关信息。
+- 若未使用意愿核身问答模式功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,9 +159,11 @@ namespace TencentCloud
                     bool IntentionQuestionResultHasBeenSet() const;
 
                     /**
-                     * 获取意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。
+                     * 获取意愿核身点头确认模式的结果信息。
+- 若未使用该意愿核身功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IntentionActionResult 意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。
+                     * @return IntentionActionResult 意愿核身点头确认模式的结果信息。
+- 若未使用该意愿核身功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -165,7 +179,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文本类信息。（基于对敏感信息的保护，验证使用的姓名和身份证号统一通过加密后从Eidinfo参数中返回，如需获取请在控制台申请返回身份信息，详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)）
+                     * 文本类信息。
+- 基于对敏感信息的保护，验证使用的姓名和身份证号统一通过加密后从EidInfo参数中返回。
+- 如需获取请在控制台申请返回身份信息，详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DetectInfoText m_text;
@@ -186,28 +202,33 @@ namespace TencentCloud
                     bool m_bestFrameHasBeenSet;
 
                     /**
-                     * Eid信息。（包括商户下用户唯一标识以及加密后的姓名、身份证号信息。解密方式详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)）
+                     * Eid信息。
+- 包括商户下用户唯一标识以及加密后的姓名、身份证号信息。
+- 解密方式详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EidInfo m_eidInfo;
                     bool m_eidInfoHasBeenSet;
 
                     /**
-                     * 意愿核身朗读模式相关信息。若未使用意愿核身朗读功能，该字段返回值可以不处理。
+                     * 意愿核身朗读模式相关信息。
+- 若未使用意愿核身朗读功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IntentionVerifyData m_intentionVerifyData;
                     bool m_intentionVerifyDataHasBeenSet;
 
                     /**
-                     * 意愿核身问答模式相关信息。若未使用意愿核身问答模式功能，该字段返回值可以不处理。
+                     * 意愿核身问答模式相关信息。
+- 若未使用意愿核身问答模式功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IntentionQuestionResult m_intentionQuestionResult;
                     bool m_intentionQuestionResultHasBeenSet;
 
                     /**
-                     * 意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。
+                     * 意愿核身点头确认模式的结果信息。
+- 若未使用该意愿核身功能，该字段返回值可以不处理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IntentionActionResult m_intentionActionResult;

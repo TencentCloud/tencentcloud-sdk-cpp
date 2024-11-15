@@ -7479,49 +7479,6 @@ CwpClient::DescribeClientExceptionOutcomeCallable CwpClient::DescribeClientExcep
     return task->get_future();
 }
 
-CwpClient::DescribeCloudProtectServiceOrderListOutcome CwpClient::DescribeCloudProtectServiceOrderList(const DescribeCloudProtectServiceOrderListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeCloudProtectServiceOrderList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeCloudProtectServiceOrderListResponse rsp = DescribeCloudProtectServiceOrderListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeCloudProtectServiceOrderListOutcome(rsp);
-        else
-            return DescribeCloudProtectServiceOrderListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeCloudProtectServiceOrderListOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::DescribeCloudProtectServiceOrderListAsync(const DescribeCloudProtectServiceOrderListRequest& request, const DescribeCloudProtectServiceOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudProtectServiceOrderList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::DescribeCloudProtectServiceOrderListOutcomeCallable CwpClient::DescribeCloudProtectServiceOrderListCallable(const DescribeCloudProtectServiceOrderListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeCloudProtectServiceOrderListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudProtectServiceOrderList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CwpClient::DescribeComponentStatisticsOutcome CwpClient::DescribeComponentStatistics(const DescribeComponentStatisticsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeComponentStatistics");

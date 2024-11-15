@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ApplyTimeHasBeenSet() const;
 
                     /**
-                     * 获取代客类型，可能值为a/b/c
-                     * @return ClientFlag 代客类型，可能值为a/b/c
+                     * 获取代客类型，可能值为a/b/c/other
+                     * @return ClientFlag 代客类型，可能值为a/b/c/other
                      * 
                      */
                     std::string GetClientFlag() const;
 
                     /**
-                     * 设置代客类型，可能值为a/b/c
-                     * @param _clientFlag 代客类型，可能值为a/b/c
+                     * 设置代客类型，可能值为a/b/c/other
+                     * @param _clientFlag 代客类型，可能值为a/b/c/other
                      * 
                      */
                     void SetClientFlag(const std::string& _clientFlag);
@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务员ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SalesUin 业务员ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSalesUin() const;
 
                     /**
                      * 设置业务员ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _salesUin 业务员ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSalesUin(const std::string& _salesUin);
@@ -241,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SalesName 业务员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSalesName() const;
 
                     /**
                      * 设置业务员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _salesName 业务员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSalesName(const std::string& _salesName);
@@ -266,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户名称，此字段和控制台返回一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientName 客户名称，此字段和控制台返回一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientName() const;
 
                     /**
                      * 设置客户名称，此字段和控制台返回一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientName 客户名称，此字段和控制台返回一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientName(const std::string& _clientName);
@@ -310,7 +298,7 @@ namespace TencentCloud
                     bool m_applyTimeHasBeenSet;
 
                     /**
-                     * 代客类型，可能值为a/b/c
+                     * 代客类型，可能值为a/b/c/other
                      */
                     std::string m_clientFlag;
                     bool m_clientFlagHasBeenSet;
@@ -341,21 +329,18 @@ namespace TencentCloud
 
                     /**
                      * 业务员ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_salesUin;
                     bool m_salesUinHasBeenSet;
 
                     /**
                      * 业务员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_salesName;
                     bool m_salesNameHasBeenSet;
 
                     /**
                      * 客户名称，此字段和控制台返回一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientName;
                     bool m_clientNameHasBeenSet;

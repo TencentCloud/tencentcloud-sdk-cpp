@@ -29,7 +29,8 @@ CreateSLInstanceRequest::CreateSLInstanceRequest() :
     m_diskSizeHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_zoneSettingsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_prePaySettingHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,15 @@ string CreateSLInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_prePaySettingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrePaySetting";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_prePaySetting.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -228,6 +238,22 @@ void CreateSLInstanceRequest::SetTags(const vector<Tag>& _tags)
 bool CreateSLInstanceRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+PrePaySetting CreateSLInstanceRequest::GetPrePaySetting() const
+{
+    return m_prePaySetting;
+}
+
+void CreateSLInstanceRequest::SetPrePaySetting(const PrePaySetting& _prePaySetting)
+{
+    m_prePaySetting = _prePaySetting;
+    m_prePaySettingHasBeenSet = true;
+}
+
+bool CreateSLInstanceRequest::PrePaySettingHasBeenSet() const
+{
+    return m_prePaySettingHasBeenSet;
 }
 
 

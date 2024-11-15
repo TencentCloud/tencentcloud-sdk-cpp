@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人员库名称
-                     * @return GroupName 人员库名称
+                     * 获取人员库名称。
+                     * @return GroupName 人员库名称。
                      * 
                      */
                     std::string GetGroupName() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取人员库ID
-                     * @return GroupId 人员库ID
+                     * 获取人员库ID。
+                     * @return GroupId 人员库ID。
                      * 
                      */
                     std::string GetGroupId() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取人员库自定义描述字段
-                     * @return GroupExDescriptions 人员库自定义描述字段
+                     * 获取人员库自定义描述字段。
+                     * @return GroupExDescriptions 人员库自定义描述字段。
                      * 
                      */
                     std::vector<std::string> GetGroupExDescriptions() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool GroupExDescriptionsHasBeenSet() const;
 
                     /**
-                     * 获取人员库信息备注
-                     * @return Tag 人员库信息备注
+                     * 获取人员库信息备注。
+                     * @return Tag 人员库信息备注。
                      * 
                      */
                     std::string GetTag() const;
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人员库名称
+                     * 人员库名称。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 人员库ID
+                     * 人员库ID。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 人员库自定义描述字段
+                     * 人员库自定义描述字段。
                      */
                     std::vector<std::string> m_groupExDescriptions;
                     bool m_groupExDescriptionsHasBeenSet;
 
                     /**
-                     * 人员库信息备注
+                     * 人员库信息备注。
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;

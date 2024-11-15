@@ -910,6 +910,27 @@ namespace TencentCloud
                      */
                     bool DiskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取集群类型:cage——金融围拢，cdc——CDB ON CDC；dedicate——独享集群
+                     * @return ClusterType 集群类型:cage——金融围拢，cdc——CDB ON CDC；dedicate——独享集群
+                     * 
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置集群类型:cage——金融围拢，cdc——CDB ON CDC；dedicate——独享集群
+                     * @param _clusterType 集群类型:cage——金融围拢，cdc——CDB ON CDC；dedicate——独享集群
+                     * 
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1157,6 +1178,12 @@ namespace TencentCloud
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
+
+                    /**
+                     * 集群类型:cage——金融围拢，cdc——CDB ON CDC；dedicate——独享集群
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
 
                 };
             }

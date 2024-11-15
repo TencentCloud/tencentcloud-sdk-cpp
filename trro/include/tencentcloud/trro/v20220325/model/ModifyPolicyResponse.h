@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取添加关联失败的现场设备ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedInsertIds 添加关联失败的现场设备ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFailedInsertIds() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取解除关联失败的现场设备ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedDeleteIds 解除关联失败的现场设备ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFailedDeleteIds() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 添加关联失败的现场设备ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_failedInsertIds;
                     bool m_failedInsertIdsHasBeenSet;
 
                     /**
                      * 解除关联失败的现场设备ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_failedDeleteIds;
                     bool m_failedDeleteIdsHasBeenSet;

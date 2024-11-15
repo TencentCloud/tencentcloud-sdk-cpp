@@ -222,8 +222,8 @@ WarnInfos，告警信息，Code 告警码列表和释义：
                     bool ReflectDetailInfosHasBeenSet() const;
 
                     /**
-                     * 获取加密后的数据
-                     * @return EncryptedBody 加密后的数据
+                     * 获取加密后的数据（Base64编码）
+                     * @return EncryptedBody 加密后的数据（Base64编码）
                      * 
                      */
                     std::string GetEncryptedBody() const;
@@ -330,7 +330,7 @@ WarnInfos，告警信息，Code 告警码列表和释义：
                     bool m_reflectDetailInfosHasBeenSet;
 
                     /**
-                     * 加密后的数据
+                     * 加密后的数据（Base64编码）
                      */
                     std::string m_encryptedBody;
                     bool m_encryptedBodyHasBeenSet;

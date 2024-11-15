@@ -1277,6 +1277,27 @@ https：使用https协议回源
                      */
                     bool LabelsHasBeenSet() const;
 
+                    /**
+                     * 获取拨测状态。 0: 禁用拨测, 1: 启用拨测
+                     * @return ProbeStatus 拨测状态。 0: 禁用拨测, 1: 启用拨测
+                     * 
+                     */
+                    int64_t GetProbeStatus() const;
+
+                    /**
+                     * 设置拨测状态。 0: 禁用拨测, 1: 启用拨测
+                     * @param _probeStatus 拨测状态。 0: 禁用拨测, 1: 启用拨测
+                     * 
+                     */
+                    void SetProbeStatus(const int64_t& _probeStatus);
+
+                    /**
+                     * 判断参数 ProbeStatus 是否已赋值
+                     * @return ProbeStatus 是否已赋值
+                     * 
+                     */
+                    bool ProbeStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1623,6 +1644,12 @@ https：使用https协议回源
                      */
                     std::vector<std::string> m_labels;
                     bool m_labelsHasBeenSet;
+
+                    /**
+                     * 拨测状态。 0: 禁用拨测, 1: 启用拨测
+                     */
+                    int64_t m_probeStatus;
+                    bool m_probeStatusHasBeenSet;
 
                 };
             }

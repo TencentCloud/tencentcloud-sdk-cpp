@@ -58,10 +58,12 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取一次核身流程的标识，有效时间为7,200秒；
-完成核身后，可用该标识获取验证结果信息。
-                     * @return BizToken 一次核身流程的标识，有效时间为7,200秒；
-完成核身后，可用该标识获取验证结果信息。
+                     * 获取一次核验流程的唯一标识。
+- 有效时间为7,200秒，超过有效期再进行人脸核验会报错，请在有效期内进行核验。
+- 完成人脸核验后，需根据此标识调用[获取实名核身结果信息增强版](https://cloud.tencent.com/document/api/1007/41957)获取用户最终验证结果信息。
+                     * @return BizToken 一次核验流程的唯一标识。
+- 有效时间为7,200秒，超过有效期再进行人脸核验会报错，请在有效期内进行核验。
+- 完成人脸核验后，需根据此标识调用[获取实名核身结果信息增强版](https://cloud.tencent.com/document/api/1007/41957)获取用户最终验证结果信息。
                      * 
                      */
                     std::string GetBizToken() const;
@@ -82,8 +84,9 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 一次核身流程的标识，有效时间为7,200秒；
-完成核身后，可用该标识获取验证结果信息。
+                     * 一次核验流程的唯一标识。
+- 有效时间为7,200秒，超过有效期再进行人脸核验会报错，请在有效期内进行核验。
+- 完成人脸核验后，需根据此标识调用[获取实名核身结果信息增强版](https://cloud.tencent.com/document/api/1007/41957)获取用户最终验证结果信息。
                      */
                     std::string m_bizToken;
                     bool m_bizTokenHasBeenSet;

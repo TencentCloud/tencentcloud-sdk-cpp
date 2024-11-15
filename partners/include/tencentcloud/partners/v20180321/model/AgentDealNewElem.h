@@ -135,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订单所有者对应 appId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 订单所有者对应 appId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置订单所有者对应 appId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 订单所有者对应 appId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -160,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商品数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GoodsNum 商品数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGoodsNum() const;
 
                     /**
                      * 设置商品数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _goodsNum 商品数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGoodsNum(const std::string& _goodsNum);
@@ -185,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取价格详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GoodsPrice 价格详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DealGoodsPriceNewElem GetGoodsPrice() const;
 
                     /**
                      * 设置价格详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _goodsPrice 价格详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGoodsPrice(const DealGoodsPriceNewElem& _goodsPrice);
@@ -210,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下单人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Creater 下单人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreater() const;
 
                     /**
                      * 设置下单人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creater 下单人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreater(const std::string& _creater);
@@ -235,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下单时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatTime 下单时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatTime() const;
 
                     /**
                      * 设置下单时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creatTime 下单时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatTime(const std::string& _creatTime);
@@ -260,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支付结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayEndTime 支付结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayEndTime() const;
 
                     /**
                      * 设置支付结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payEndTime 支付结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayEndTime(const std::string& _payEndTime);
@@ -285,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扣费流水号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillId 扣费流水号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillId() const;
 
                     /**
                      * 设置扣费流水号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billId 扣费流水号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillId(const std::string& _billId);
@@ -310,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支付人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Payer 支付人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayer() const;
 
                     /**
                      * 设置支付人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payer 支付人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayer(const std::string& _payer);
@@ -335,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订单状态，中文描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealStatus 订单状态，中文描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDealStatus() const;
 
                     /**
                      * 设置订单状态，中文描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dealStatus 订单状态，中文描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDealStatus(const std::string& _dealStatus);
@@ -360,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -385,18 +345,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GoodsName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGoodsName() const;
 
                     /**
                      * 设置产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _goodsName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGoodsName(const std::string& _goodsName);
@@ -410,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientRemark 客户备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientRemark() const;
 
                     /**
                      * 设置客户备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientRemark 客户备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientRemark(const std::string& _clientRemark);
@@ -435,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订单操作类型，"purchase":"新购","upgrade":"升配","upConvertExpire":"升配","downgrade":"降配","downConvertExpire":"降配","renew":"续费","refund":"退货","modifyNetworkMode":"调整带宽模式","modifyNetworkSize":"调整带宽大小","preMoveOut":"资源迁出","preMoveIn":"资源迁入","preToPost":"包年包月转按量","modify":"变配","postMoveOut":"资源迁出","postMoveIn":"资源迁入","recoverRefundForward":"调账补偿","recoverPayReserve":"调账补偿","recoverPayForward":"调账扣费","recoverRefundReserve":"调账扣费"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionType 订单操作类型，"purchase":"新购","upgrade":"升配","upConvertExpire":"升配","downgrade":"降配","downConvertExpire":"降配","renew":"续费","refund":"退货","modifyNetworkMode":"调整带宽模式","modifyNetworkSize":"调整带宽大小","preMoveOut":"资源迁出","preMoveIn":"资源迁入","preToPost":"包年包月转按量","modify":"变配","postMoveOut":"资源迁出","postMoveIn":"资源迁入","recoverRefundForward":"调账补偿","recoverPayReserve":"调账补偿","recoverPayForward":"调账扣费","recoverRefundReserve":"调账扣费"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionType() const;
 
                     /**
                      * 设置订单操作类型，"purchase":"新购","upgrade":"升配","upConvertExpire":"升配","downgrade":"降配","downConvertExpire":"降配","renew":"续费","refund":"退货","modifyNetworkMode":"调整带宽模式","modifyNetworkSize":"调整带宽大小","preMoveOut":"资源迁出","preMoveIn":"资源迁入","preToPost":"包年包月转按量","modify":"变配","postMoveOut":"资源迁出","postMoveIn":"资源迁入","recoverRefundForward":"调账补偿","recoverPayReserve":"调账补偿","recoverPayForward":"调账扣费","recoverRefundReserve":"调账扣费"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionType 订单操作类型，"purchase":"新购","upgrade":"升配","upConvertExpire":"升配","downgrade":"降配","downConvertExpire":"降配","renew":"续费","refund":"退货","modifyNetworkMode":"调整带宽模式","modifyNetworkSize":"调整带宽大小","preMoveOut":"资源迁出","preMoveIn":"资源迁入","preToPost":"包年包月转按量","modify":"变配","postMoveOut":"资源迁出","postMoveIn":"资源迁入","recoverRefundForward":"调账补偿","recoverPayReserve":"调账补偿","recoverPayForward":"调账扣费","recoverRefundReserve":"调账扣费"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionType(const std::string& _actionType);
@@ -460,18 +408,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代金券抵扣金额，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoucherDecline 代金券抵扣金额，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVoucherDecline() const;
 
                     /**
                      * 设置代金券抵扣金额，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _voucherDecline 代金券抵扣金额，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVoucherDecline(const std::string& _voucherDecline);
@@ -485,18 +429,14 @@ namespace TencentCloud
 
                     /**
                      * 获取大订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BigDealId 大订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBigDealId() const;
 
                     /**
                      * 设置大订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bigDealId 大订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBigDealId(const std::string& _bigDealId);
@@ -510,18 +450,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户类型（new：自拓；old：官网；assign：指派；direct：直销；direct_newopp：直销(新商机)）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientType 客户类型（new：自拓；old：官网；assign：指派；direct：直销；direct_newopp：直销(新商机)）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientType() const;
 
                     /**
                      * 设置客户类型（new：自拓；old：官网；assign：指派；direct：直销；direct_newopp：直销(新商机)）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientType 客户类型（new：自拓；old：官网；assign：指派；direct：直销；direct_newopp：直销(新商机)）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientType(const std::string& _clientType);
@@ -535,18 +471,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目类型（self：自拓；repeat：直销；platform：官网合作）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectType 项目类型（self：自拓；repeat：直销；platform：官网合作）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectType() const;
 
                     /**
                      * 设置项目类型（self：自拓；repeat：直销；platform：官网合作）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectType 项目类型（self：自拓；repeat：直销；platform：官网合作）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectType(const std::string& _projectType);
@@ -560,18 +492,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务员账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SalesUin 业务员账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSalesUin() const;
 
                     /**
                      * 设置业务员账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _salesUin 业务员账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSalesUin(const std::string& _salesUin);
@@ -585,18 +513,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支付方式，0：自付；1：代付
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayerMode 支付方式，0：自付；1：代付
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayerMode() const;
 
                     /**
                      * 设置支付方式，0：自付；1：代付
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payerMode 支付方式，0：自付；1：代付
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayerMode(const std::string& _payerMode);
@@ -610,18 +534,14 @@ namespace TencentCloud
 
                     /**
                      * 获取活动ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityId 活动ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActivityId() const;
 
                     /**
                      * 设置活动ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activityId 活动ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActivityId(const std::string& _activityId);
@@ -635,18 +555,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订单过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OverdueTime 订单过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOverdueTime() const;
 
                     /**
                      * 设置订单过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _overdueTime 订单过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOverdueTime(const std::string& _overdueTime);
@@ -660,18 +576,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductInfo 产品详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProductInfoElem> GetProductInfo() const;
 
                     /**
                      * 设置产品详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productInfo 产品详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductInfo(const std::vector<ProductInfoElem>& _productInfo);
@@ -685,18 +597,14 @@ namespace TencentCloud
 
                     /**
                      * 获取付款方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PaymentMethod 付款方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPaymentMethod() const;
 
                     /**
                      * 设置付款方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _paymentMethod 付款方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPaymentMethod(const std::string& _paymentMethod);
@@ -710,18 +618,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订单更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 订单更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置订单更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 订单更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -735,18 +639,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceIds 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 设置资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceIds 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
@@ -760,18 +660,14 @@ namespace TencentCloud
 
                     /**
                      * 获取退款单的原订单信息。当前仅 DescribeClientDealsByCache 接口会返回该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefundMap 退款单的原订单信息。当前仅 DescribeClientDealsByCache 接口会返回该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RefundMap> GetRefundMap() const;
 
                     /**
                      * 设置退款单的原订单信息。当前仅 DescribeClientDealsByCache 接口会返回该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _refundMap 退款单的原订单信息。当前仅 DescribeClientDealsByCache 接口会返回该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRefundMap(const std::vector<RefundMap>& _refundMap);
@@ -785,18 +681,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubGoodsName 子产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubGoodsName() const;
 
                     /**
                      * 设置子产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subGoodsName 子产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubGoodsName(const std::string& _subGoodsName);
@@ -836,189 +728,162 @@ namespace TencentCloud
 
                     /**
                      * 订单所有者对应 appId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 商品数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_goodsNum;
                     bool m_goodsNumHasBeenSet;
 
                     /**
                      * 价格详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DealGoodsPriceNewElem m_goodsPrice;
                     bool m_goodsPriceHasBeenSet;
 
                     /**
                      * 下单人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creater;
                     bool m_createrHasBeenSet;
 
                     /**
                      * 下单时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatTime;
                     bool m_creatTimeHasBeenSet;
 
                     /**
                      * 支付结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payEndTime;
                     bool m_payEndTimeHasBeenSet;
 
                     /**
                      * 扣费流水号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billId;
                     bool m_billIdHasBeenSet;
 
                     /**
                      * 支付人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payer;
                     bool m_payerHasBeenSet;
 
                     /**
                      * 订单状态，中文描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dealStatus;
                     bool m_dealStatusHasBeenSet;
 
                     /**
                      * 订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_goodsName;
                     bool m_goodsNameHasBeenSet;
 
                     /**
                      * 客户备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientRemark;
                     bool m_clientRemarkHasBeenSet;
 
                     /**
                      * 订单操作类型，"purchase":"新购","upgrade":"升配","upConvertExpire":"升配","downgrade":"降配","downConvertExpire":"降配","renew":"续费","refund":"退货","modifyNetworkMode":"调整带宽模式","modifyNetworkSize":"调整带宽大小","preMoveOut":"资源迁出","preMoveIn":"资源迁入","preToPost":"包年包月转按量","modify":"变配","postMoveOut":"资源迁出","postMoveIn":"资源迁入","recoverRefundForward":"调账补偿","recoverPayReserve":"调账补偿","recoverPayForward":"调账扣费","recoverRefundReserve":"调账扣费"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
                      * 代金券抵扣金额，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_voucherDecline;
                     bool m_voucherDeclineHasBeenSet;
 
                     /**
                      * 大订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bigDealId;
                     bool m_bigDealIdHasBeenSet;
 
                     /**
                      * 客户类型（new：自拓；old：官网；assign：指派；direct：直销；direct_newopp：直销(新商机)）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientType;
                     bool m_clientTypeHasBeenSet;
 
                     /**
                      * 项目类型（self：自拓；repeat：直销；platform：官网合作）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectType;
                     bool m_projectTypeHasBeenSet;
 
                     /**
                      * 业务员账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_salesUin;
                     bool m_salesUinHasBeenSet;
 
                     /**
                      * 支付方式，0：自付；1：代付
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payerMode;
                     bool m_payerModeHasBeenSet;
 
                     /**
                      * 活动ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_activityId;
                     bool m_activityIdHasBeenSet;
 
                     /**
                      * 订单过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_overdueTime;
                     bool m_overdueTimeHasBeenSet;
 
                     /**
                      * 产品详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProductInfoElem> m_productInfo;
                     bool m_productInfoHasBeenSet;
 
                     /**
                      * 付款方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_paymentMethod;
                     bool m_paymentMethodHasBeenSet;
 
                     /**
                      * 订单更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
                      * 退款单的原订单信息。当前仅 DescribeClientDealsByCache 接口会返回该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RefundMap> m_refundMap;
                     bool m_refundMapHasBeenSet;
 
                     /**
                      * 子产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subGoodsName;
                     bool m_subGoodsNameHasBeenSet;

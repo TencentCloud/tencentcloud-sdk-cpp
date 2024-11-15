@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SDK人脸核身流程的标识，调用GetFaceIdToken接口时生成。
-                     * @return FaceIdToken SDK人脸核身流程的标识，调用GetFaceIdToken接口时生成。
+                     * 获取SDK人脸核身流程的标识。
+- 调用GetFaceIdToken接口时生成。
+                     * @return FaceIdToken SDK人脸核身流程的标识。
+- 调用GetFaceIdToken接口时生成。
                      * 
                      */
                     std::string GetFaceIdToken() const;
 
                     /**
-                     * 设置SDK人脸核身流程的标识，调用GetFaceIdToken接口时生成。
-                     * @param _faceIdToken SDK人脸核身流程的标识，调用GetFaceIdToken接口时生成。
+                     * 设置SDK人脸核身流程的标识。
+- 调用GetFaceIdToken接口时生成。
+                     * @param _faceIdToken SDK人脸核身流程的标识。
+- 调用GetFaceIdToken接口时生成。
                      * 
                      */
                     void SetFaceIdToken(const std::string& _faceIdToken);
@@ -64,15 +68,19 @@ namespace TencentCloud
                     bool FaceIdTokenHasBeenSet() const;
 
                     /**
-                     * 获取是否需要拉取视频，默认false不需要
-                     * @return IsNeedVideo 是否需要拉取视频，默认false不需要
+                     * 获取是否需要拉取视频。
+- 默认false：不需要。
+                     * @return IsNeedVideo 是否需要拉取视频。
+- 默认false：不需要。
                      * 
                      */
                     bool GetIsNeedVideo() const;
 
                     /**
-                     * 设置是否需要拉取视频，默认false不需要
-                     * @param _isNeedVideo 是否需要拉取视频，默认false不需要
+                     * 设置是否需要拉取视频。
+- 默认false：不需要。
+                     * @param _isNeedVideo 是否需要拉取视频。
+- 默认false：不需要。
                      * 
                      */
                     void SetIsNeedVideo(const bool& _isNeedVideo);
@@ -85,15 +93,19 @@ namespace TencentCloud
                     bool IsNeedVideoHasBeenSet() const;
 
                     /**
-                     * 获取是否需要拉取截帧，默认false不需要
-                     * @return IsNeedBestFrame 是否需要拉取截帧，默认false不需要
+                     * 获取是否需要拉取截帧。
+- 默认false：不需要。
+                     * @return IsNeedBestFrame 是否需要拉取截帧。
+- 默认false：不需要。
                      * 
                      */
                     bool GetIsNeedBestFrame() const;
 
                     /**
-                     * 设置是否需要拉取截帧，默认false不需要
-                     * @param _isNeedBestFrame 是否需要拉取截帧，默认false不需要
+                     * 设置是否需要拉取截帧。
+- 默认false：不需要。
+                     * @param _isNeedBestFrame 是否需要拉取截帧。
+- 默认false：不需要。
                      * 
                      */
                     void SetIsNeedBestFrame(const bool& _isNeedBestFrame);
@@ -108,19 +120,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * SDK人脸核身流程的标识，调用GetFaceIdToken接口时生成。
+                     * SDK人脸核身流程的标识。
+- 调用GetFaceIdToken接口时生成。
                      */
                     std::string m_faceIdToken;
                     bool m_faceIdTokenHasBeenSet;
 
                     /**
-                     * 是否需要拉取视频，默认false不需要
+                     * 是否需要拉取视频。
+- 默认false：不需要。
                      */
                     bool m_isNeedVideo;
                     bool m_isNeedVideoHasBeenSet;
 
                     /**
-                     * 是否需要拉取截帧，默认false不需要
+                     * 是否需要拉取截帧。
+- 默认false：不需要。
                      */
                     bool m_isNeedBestFrame;
                     bool m_isNeedBestFrameHasBeenSet;

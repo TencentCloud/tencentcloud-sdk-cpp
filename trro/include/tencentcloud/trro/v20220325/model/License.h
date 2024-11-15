@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该类型的license个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 该类型的license个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置该类型的license个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 该类型的license个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取license状态：0:未绑定；1:已绑定；2:已停服；3:已退费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status license状态：0:未绑定；1:已绑定；2:已停服；3:已退费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置license状态：0:未绑定；1:已绑定；2:已停服；3:已退费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status license状态：0:未绑定；1:已绑定；2:已停服；3:已退费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取到期时间戳：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 到期时间戳：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置到期时间戳：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 到期时间戳：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务时长：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 服务时长：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDuration() const;
 
                     /**
                      * 设置服务时长：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _duration 服务时长：s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDuration(const std::string& _duration);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取剩余天数：天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainDay 剩余天数：天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRemainDay() const;
 
                     /**
                      * 设置剩余天数：天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remainDay 剩余天数：天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemainDay(const int64_t& _remainDay);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该类型的licenseId列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseIds 该类型的licenseId列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLicenseIds() const;
 
                     /**
                      * 设置该类型的licenseId列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _licenseIds 该类型的licenseId列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLicenseIds(const std::vector<std::string>& _licenseIds);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 该类型的license个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * license状态：0:未绑定；1:已绑定；2:已停服；3:已退费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 到期时间戳：s
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 服务时长：s
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
                      * 剩余天数：天
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_remainDay;
                     bool m_remainDayHasBeenSet;
 
                     /**
                      * 该类型的licenseId列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_licenseIds;
                     bool m_licenseIdsHasBeenSet;

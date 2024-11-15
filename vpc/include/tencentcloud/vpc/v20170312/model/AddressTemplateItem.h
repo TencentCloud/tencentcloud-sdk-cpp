@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ipm-xxxxxxxx
-                     * @return AddressTemplateId ipm-xxxxxxxx
+                     * 获取IP地址模板ID
+                     * @return AddressTemplateId IP地址模板ID
                      * 
                      */
                     std::string GetAddressTemplateId() const;
 
                     /**
-                     * 设置ipm-xxxxxxxx
-                     * @param _addressTemplateId ipm-xxxxxxxx
+                     * 设置IP地址模板ID
+                     * @param _addressTemplateId IP地址模板ID
                      * 
                      */
                     void SetAddressTemplateId(const std::string& _addressTemplateId);
@@ -133,7 +133,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ipm-xxxxxxxx
+                     * IP地址模板ID
                      */
                     std::string m_addressTemplateId;
                     bool m_addressTemplateIdHasBeenSet;

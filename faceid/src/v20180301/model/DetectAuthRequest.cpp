@@ -33,8 +33,8 @@ DetectAuthRequest::DetectAuthRequest() :
     m_encryptionHasBeenSet(false),
     m_intentionVerifyTextHasBeenSet(false),
     m_intentionQuestionsHasBeenSet(false),
-    m_configHasBeenSet(false),
-    m_intentionActionsHasBeenSet(false)
+    m_intentionActionsHasBeenSet(false),
+    m_configHasBeenSet(false)
 {
 }
 
@@ -133,15 +133,6 @@ string DetectAuthRequest::ToJsonString() const
         }
     }
 
-    if (m_configHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Config";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_config.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_intentionActionsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -155,6 +146,15 @@ string DetectAuthRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_configHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Config";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_config.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -325,22 +325,6 @@ bool DetectAuthRequest::IntentionQuestionsHasBeenSet() const
     return m_intentionQuestionsHasBeenSet;
 }
 
-RuleIdConfig DetectAuthRequest::GetConfig() const
-{
-    return m_config;
-}
-
-void DetectAuthRequest::SetConfig(const RuleIdConfig& _config)
-{
-    m_config = _config;
-    m_configHasBeenSet = true;
-}
-
-bool DetectAuthRequest::ConfigHasBeenSet() const
-{
-    return m_configHasBeenSet;
-}
-
 vector<IntentionActionConfig> DetectAuthRequest::GetIntentionActions() const
 {
     return m_intentionActions;
@@ -355,6 +339,22 @@ void DetectAuthRequest::SetIntentionActions(const vector<IntentionActionConfig>&
 bool DetectAuthRequest::IntentionActionsHasBeenSet() const
 {
     return m_intentionActionsHasBeenSet;
+}
+
+RuleIdConfig DetectAuthRequest::GetConfig() const
+{
+    return m_config;
+}
+
+void DetectAuthRequest::SetConfig(const RuleIdConfig& _config)
+{
+    m_config = _config;
+    m_configHasBeenSet = true;
+}
+
+bool DetectAuthRequest::ConfigHasBeenSet() const
+{
+    return m_configHasBeenSet;
 }
 
 

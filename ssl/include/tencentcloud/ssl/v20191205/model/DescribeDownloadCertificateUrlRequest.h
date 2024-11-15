@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取下载的服务类型: nginx tomcat apache iis jks other root
-                     * @return ServiceType 下载的服务类型: nginx tomcat apache iis jks other root
+                     * 获取必填选项，下载的服务类型: nginx tomcat apache iis jks other root
+                     * @return ServiceType 必填选项，下载的服务类型: nginx tomcat apache iis jks other root
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置下载的服务类型: nginx tomcat apache iis jks other root
-                     * @param _serviceType 下载的服务类型: nginx tomcat apache iis jks other root
+                     * 设置必填选项，下载的服务类型: nginx tomcat apache iis jks other root
+                     * @param _serviceType 必填选项，下载的服务类型: nginx tomcat apache iis jks other root
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_certificateIdHasBeenSet;
 
                     /**
-                     * 下载的服务类型: nginx tomcat apache iis jks other root
+                     * 必填选项，下载的服务类型: nginx tomcat apache iis jks other root
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
