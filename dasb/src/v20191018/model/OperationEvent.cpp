@@ -27,7 +27,8 @@ OperationEvent::OperationEvent() :
     m_sourceIpHasBeenSet(false),
     m_kindHasBeenSet(false),
     m_operationHasBeenSet(false),
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_signValueHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome OperationEvent::Deserialize(const rapidjson::Value &value)
         m_resultHasBeenSet = true;
     }
 
+    if (value.HasMember("SignValue") && !value["SignValue"].IsNull())
+    {
+        if (!value["SignValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OperationEvent.SignValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_signValue = string(value["SignValue"].GetString());
+        m_signValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void OperationEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_result, allocator);
+    }
+
+    if (m_signValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signValue.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void OperationEvent::SetResult(const uint64_t& _result)
 bool OperationEvent::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+string OperationEvent::GetSignValue() const
+{
+    return m_signValue;
+}
+
+void OperationEvent::SetSignValue(const string& _signValue)
+{
+    m_signValue = _signValue;
+    m_signValueHasBeenSet = true;
+}
+
+bool OperationEvent::SignValueHasBeenSet() const
+{
+    return m_signValueHasBeenSet;
 }
 

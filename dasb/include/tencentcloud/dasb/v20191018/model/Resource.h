@@ -804,15 +804,15 @@ namespace TencentCloud
                     bool DeployModelHasBeenSet() const;
 
                     /**
-                     * 获取0 默认值，非内网访问，1 内网访问
-                     * @return IntranetAccess 0 默认值，非内网访问，1 内网访问
+                     * 获取0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中
+                     * @return IntranetAccess 0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中
                      * 
                      */
                     uint64_t GetIntranetAccess() const;
 
                     /**
-                     * 设置0 默认值，非内网访问，1 内网访问
-                     * @param _intranetAccess 0 默认值，非内网访问，1 内网访问
+                     * 设置0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中
+                     * @param _intranetAccess 0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中
                      * 
                      */
                     void SetIntranetAccess(const uint64_t& _intranetAccess);
@@ -1106,7 +1106,7 @@ namespace TencentCloud
                     bool m_deployModelHasBeenSet;
 
                     /**
-                     * 0 默认值，非内网访问，1 内网访问
+                     * 0 默认值，非内网访问，1 内网访问，2 内网访问开通中，3 内网访问关闭中
                      */
                     uint64_t m_intranetAccess;
                     bool m_intranetAccessHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Config。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Config Config。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfig() const;
 
                     /**
                      * 设置Config。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _config Config。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfig(const std::string& _config);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Profile。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Profile Profile。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置Profile。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _profile Profile。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProfile(const std::string& _profile);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Report。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Report Report。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetReport() const;
 
                     /**
                      * 设置Report。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _report Report。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReport(const bool& _report);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Resume。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resume Resume。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetResume() const;
 
                     /**
                      * 设置Resume。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resume Resume。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResume(const bool& _resume);
@@ -150,11 +134,9 @@ namespace TencentCloud
                      * 获取Nextflow引擎版本，取值范围：
 - 22.10.7
 - 23.10.1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NFVersion Nextflow引擎版本，取值范围：
 - 22.10.7
 - 23.10.1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNFVersion() const;
@@ -163,11 +145,9 @@ namespace TencentCloud
                      * 设置Nextflow引擎版本，取值范围：
 - 22.10.7
 - 23.10.1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nFVersion Nextflow引擎版本，取值范围：
 - 22.10.7
 - 23.10.1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNFVersion(const std::string& _nFVersion);
@@ -181,18 +161,14 @@ namespace TencentCloud
 
                     /**
                      * 获取启动路径。可填写指定缓存卷内的绝对路径，nextflow run 命令将在此路径执行。当WorkDir为COS路径时必填；当WorkDir为缓存卷路径时选填，不填默认使用WorkDir作为LaunchDir。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaunchDir 启动路径。可填写指定缓存卷内的绝对路径，nextflow run 命令将在此路径执行。当WorkDir为COS路径时必填；当WorkDir为缓存卷路径时选填，不填默认使用WorkDir作为LaunchDir。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLaunchDir() const;
 
                     /**
                      * 设置启动路径。可填写指定缓存卷内的绝对路径，nextflow run 命令将在此路径执行。当WorkDir为COS路径时必填；当WorkDir为缓存卷路径时选填，不填默认使用WorkDir作为LaunchDir。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _launchDir 启动路径。可填写指定缓存卷内的绝对路径，nextflow run 命令将在此路径执行。当WorkDir为COS路径时必填；当WorkDir为缓存卷路径时选填，不填默认使用WorkDir作为LaunchDir。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLaunchDir(const std::string& _launchDir);
@@ -208,28 +184,24 @@ namespace TencentCloud
 
                     /**
                      * Config。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
 
                     /**
                      * Profile。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_profile;
                     bool m_profileHasBeenSet;
 
                     /**
                      * Report。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_report;
                     bool m_reportHasBeenSet;
 
                     /**
                      * Resume。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_resume;
                     bool m_resumeHasBeenSet;
@@ -238,14 +210,12 @@ namespace TencentCloud
                      * Nextflow引擎版本，取值范围：
 - 22.10.7
 - 23.10.1
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nFVersion;
                     bool m_nFVersionHasBeenSet;
 
                     /**
                      * 启动路径。可填写指定缓存卷内的绝对路径，nextflow run 命令将在此路径执行。当WorkDir为COS路径时必填；当WorkDir为缓存卷路径时选填，不填默认使用WorkDir作为LaunchDir。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_launchDir;
                     bool m_launchDirHasBeenSet;

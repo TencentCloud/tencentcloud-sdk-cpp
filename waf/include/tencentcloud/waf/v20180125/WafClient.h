@@ -39,6 +39,8 @@
 #include <tencentcloud/waf/v20180125/model/AddDomainWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddSpartaProtectionRequest.h>
 #include <tencentcloud/waf/v20180125/model/AddSpartaProtectionResponse.h>
+#include <tencentcloud/waf/v20180125/model/BatchOperateUserSignatureRulesRequest.h>
+#include <tencentcloud/waf/v20180125/model/BatchOperateUserSignatureRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateAccessExportRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateAccessExportResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateDealsRequest.h>
@@ -185,8 +187,12 @@
 #include <tencentcloud/waf/v20180125/model/DescribeUserDomainInfoResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserLevelRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserLevelResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeUserSignatureClassRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeUserSignatureClassResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserSignatureRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserSignatureRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeUserSignatureRuleV2Request.h>
+#include <tencentcloud/waf/v20180125/model/DescribeUserSignatureRuleV2Response.h>
 #include <tencentcloud/waf/v20180125/model/DescribeVipInfoRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeVipInfoResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWafAutoDenyRulesRequest.h>
@@ -347,6 +353,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddSpartaProtectionResponse> AddSpartaProtectionOutcome;
                 typedef std::future<AddSpartaProtectionOutcome> AddSpartaProtectionOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::AddSpartaProtectionRequest&, AddSpartaProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddSpartaProtectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchOperateUserSignatureRulesResponse> BatchOperateUserSignatureRulesOutcome;
+                typedef std::future<BatchOperateUserSignatureRulesOutcome> BatchOperateUserSignatureRulesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::BatchOperateUserSignatureRulesRequest&, BatchOperateUserSignatureRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchOperateUserSignatureRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAccessExportResponse> CreateAccessExportOutcome;
                 typedef std::future<CreateAccessExportOutcome> CreateAccessExportOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateAccessExportRequest&, CreateAccessExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessExportAsyncHandler;
@@ -566,9 +575,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserLevelResponse> DescribeUserLevelOutcome;
                 typedef std::future<DescribeUserLevelOutcome> DescribeUserLevelOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeUserLevelRequest&, DescribeUserLevelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserLevelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserSignatureClassResponse> DescribeUserSignatureClassOutcome;
+                typedef std::future<DescribeUserSignatureClassOutcome> DescribeUserSignatureClassOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeUserSignatureClassRequest&, DescribeUserSignatureClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserSignatureClassAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserSignatureRuleResponse> DescribeUserSignatureRuleOutcome;
                 typedef std::future<DescribeUserSignatureRuleOutcome> DescribeUserSignatureRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeUserSignatureRuleRequest&, DescribeUserSignatureRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserSignatureRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserSignatureRuleV2Response> DescribeUserSignatureRuleV2Outcome;
+                typedef std::future<DescribeUserSignatureRuleV2Outcome> DescribeUserSignatureRuleV2OutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeUserSignatureRuleV2Request&, DescribeUserSignatureRuleV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserSignatureRuleV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVipInfoResponse> DescribeVipInfoOutcome;
                 typedef std::future<DescribeVipInfoOutcome> DescribeVipInfoOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeVipInfoRequest&, DescribeVipInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVipInfoAsyncHandler;
@@ -826,6 +841,15 @@ namespace TencentCloud
                 AddSpartaProtectionOutcome AddSpartaProtection(const Model::AddSpartaProtectionRequest &request);
                 void AddSpartaProtectionAsync(const Model::AddSpartaProtectionRequest& request, const AddSpartaProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddSpartaProtectionOutcomeCallable AddSpartaProtectionCallable(const Model::AddSpartaProtectionRequest& request);
+
+                /**
+                 *批量操作tiga子规则
+                 * @param req BatchOperateUserSignatureRulesRequest
+                 * @return BatchOperateUserSignatureRulesOutcome
+                 */
+                BatchOperateUserSignatureRulesOutcome BatchOperateUserSignatureRules(const Model::BatchOperateUserSignatureRulesRequest &request);
+                void BatchOperateUserSignatureRulesAsync(const Model::BatchOperateUserSignatureRulesRequest& request, const BatchOperateUserSignatureRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchOperateUserSignatureRulesOutcomeCallable BatchOperateUserSignatureRulesCallable(const Model::BatchOperateUserSignatureRulesRequest& request);
 
                 /**
                  *本接口用于创建访问日志导出
@@ -1485,6 +1509,15 @@ namespace TencentCloud
                 DescribeUserLevelOutcomeCallable DescribeUserLevelCallable(const Model::DescribeUserLevelRequest& request);
 
                 /**
+                 *查询Tiga引擎规则类型及状态
+                 * @param req DescribeUserSignatureClassRequest
+                 * @return DescribeUserSignatureClassOutcome
+                 */
+                DescribeUserSignatureClassOutcome DescribeUserSignatureClass(const Model::DescribeUserSignatureClassRequest &request);
+                void DescribeUserSignatureClassAsync(const Model::DescribeUserSignatureClassRequest& request, const DescribeUserSignatureClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserSignatureClassOutcomeCallable DescribeUserSignatureClassCallable(const Model::DescribeUserSignatureClassRequest& request);
+
+                /**
                  *获取用户特征规则列表
                  * @param req DescribeUserSignatureRuleRequest
                  * @return DescribeUserSignatureRuleOutcome
@@ -1492,6 +1525,15 @@ namespace TencentCloud
                 DescribeUserSignatureRuleOutcome DescribeUserSignatureRule(const Model::DescribeUserSignatureRuleRequest &request);
                 void DescribeUserSignatureRuleAsync(const Model::DescribeUserSignatureRuleRequest& request, const DescribeUserSignatureRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserSignatureRuleOutcomeCallable DescribeUserSignatureRuleCallable(const Model::DescribeUserSignatureRuleRequest& request);
+
+                /**
+                 *获取用户特征规则列表
+                 * @param req DescribeUserSignatureRuleV2Request
+                 * @return DescribeUserSignatureRuleV2Outcome
+                 */
+                DescribeUserSignatureRuleV2Outcome DescribeUserSignatureRuleV2(const Model::DescribeUserSignatureRuleV2Request &request);
+                void DescribeUserSignatureRuleV2Async(const Model::DescribeUserSignatureRuleV2Request& request, const DescribeUserSignatureRuleV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserSignatureRuleV2OutcomeCallable DescribeUserSignatureRuleV2Callable(const Model::DescribeUserSignatureRuleV2Request& request);
 
                 /**
                  *根据过滤条件查询VIP信息

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool VolumeIdHasBeenSet() const;
 
                     /**
-                     * 获取需要删除的路径
-                     * @return Path 需要删除的路径
+                     * 获取需要删除的路径。
+                     * @return Path 需要删除的路径。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置需要删除的路径
-                     * @param _path 需要删除的路径
+                     * 设置需要删除的路径。
+                     * @param _path 需要删除的路径。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_volumeIdHasBeenSet;
 
                     /**
-                     * 需要删除的路径
+                     * 需要删除的路径。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;

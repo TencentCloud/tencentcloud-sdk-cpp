@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取后端服务的类型，可取：CVM、ENI、CCN
-                     * @return Type 后端服务的类型，可取：CVM、ENI、CCN
+                     * 获取后端服务的类型，可取：CVM、ENI、CCN、EVM、GLOBALROUTE、NAT、SRV等
+                     * @return Type 后端服务的类型，可取：CVM、ENI、CCN、EVM、GLOBALROUTE、NAT、SRV等
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置后端服务的类型，可取：CVM、ENI、CCN
-                     * @param _type 后端服务的类型，可取：CVM、ENI、CCN
+                     * 设置后端服务的类型，可取：CVM、ENI、CCN、EVM、GLOBALROUTE、NAT、SRV等
+                     * @param _type 后端服务的类型，可取：CVM、ENI、CCN、EVM、GLOBALROUTE、NAT、SRV等
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -283,7 +283,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 后端服务的类型，可取：CVM、ENI、CCN
+                     * 后端服务的类型，可取：CVM、ENI、CCN、EVM、GLOBALROUTE、NAT、SRV等
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -26,7 +26,8 @@ using namespace std;
 TextTranslateResponse::TextTranslateResponse() :
     m_targetTextHasBeenSet(false),
     m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false)
+    m_targetHasBeenSet(false),
+    m_usedAmountHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome TextTranslateResponse::Deserialize(const string &payload)
         m_targetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UsedAmount") && !rsp["UsedAmount"].IsNull())
+    {
+        if (!rsp["UsedAmount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedAmount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedAmount = rsp["UsedAmount"].GetInt64();
+        m_usedAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string TextTranslateResponse::ToJsonString() const
         string key = "Target";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_target.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usedAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedAmount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ string TextTranslateResponse::GetTarget() const
 bool TextTranslateResponse::TargetHasBeenSet() const
 {
     return m_targetHasBeenSet;
+}
+
+int64_t TextTranslateResponse::GetUsedAmount() const
+{
+    return m_usedAmount;
+}
+
+bool TextTranslateResponse::UsedAmountHasBeenSet() const
+{
+    return m_usedAmountHasBeenSet;
 }
 
 

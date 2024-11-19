@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。
-                     * @return InstanceId 实例 ID。
+                     * 获取实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @return InstanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。
-                     * @param _instanceId 实例 ID。
+                     * 设置实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @param _instanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -87,12 +87,10 @@ namespace TencentCloud
 
                     /**
                      * 获取下载备份文件的网络限制类型，如果不配置该参数，则使用用户自定义的配置。
-
 - NoLimit：不限制，腾讯云内外网均可以下载备份文件。
 -  LimitOnlyIntranet：仅腾讯云自动分配的内网地址可下载备份文件。
 - Customize：指用户自定义的私有网络可下载备份文件。
                      * @return LimitType 下载备份文件的网络限制类型，如果不配置该参数，则使用用户自定义的配置。
-
 - NoLimit：不限制，腾讯云内外网均可以下载备份文件。
 -  LimitOnlyIntranet：仅腾讯云自动分配的内网地址可下载备份文件。
 - Customize：指用户自定义的私有网络可下载备份文件。
@@ -102,12 +100,10 @@ namespace TencentCloud
 
                     /**
                      * 设置下载备份文件的网络限制类型，如果不配置该参数，则使用用户自定义的配置。
-
 - NoLimit：不限制，腾讯云内外网均可以下载备份文件。
 -  LimitOnlyIntranet：仅腾讯云自动分配的内网地址可下载备份文件。
 - Customize：指用户自定义的私有网络可下载备份文件。
                      * @param _limitType 下载备份文件的网络限制类型，如果不配置该参数，则使用用户自定义的配置。
-
 - NoLimit：不限制，腾讯云内外网均可以下载备份文件。
 -  LimitOnlyIntranet：仅腾讯云自动分配的内网地址可下载备份文件。
 - Customize：指用户自定义的私有网络可下载备份文件。
@@ -145,11 +141,9 @@ namespace TencentCloud
 
                     /**
                      * 获取标识自定义的 LimitIp 地址是否可下载备份文件。
-
 - In: 自定义的 IP 地址可以下载。默认为 In。
 - NotIn: 自定义的 IP 不可以下载。
                      * @return IpComparisonSymbol 标识自定义的 LimitIp 地址是否可下载备份文件。
-
 - In: 自定义的 IP 地址可以下载。默认为 In。
 - NotIn: 自定义的 IP 不可以下载。
                      * 
@@ -158,11 +152,9 @@ namespace TencentCloud
 
                     /**
                      * 设置标识自定义的 LimitIp 地址是否可下载备份文件。
-
 - In: 自定义的 IP 地址可以下载。默认为 In。
 - NotIn: 自定义的 IP 不可以下载。
                      * @param _ipComparisonSymbol 标识自定义的 LimitIp 地址是否可下载备份文件。
-
 - In: 自定义的 IP 地址可以下载。默认为 In。
 - NotIn: 自定义的 IP 不可以下载。
                      * 
@@ -221,7 +213,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。
+                     * 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -234,7 +226,6 @@ namespace TencentCloud
 
                     /**
                      * 下载备份文件的网络限制类型，如果不配置该参数，则使用用户自定义的配置。
-
 - NoLimit：不限制，腾讯云内外网均可以下载备份文件。
 -  LimitOnlyIntranet：仅腾讯云自动分配的内网地址可下载备份文件。
 - Customize：指用户自定义的私有网络可下载备份文件。
@@ -250,7 +241,6 @@ namespace TencentCloud
 
                     /**
                      * 标识自定义的 LimitIp 地址是否可下载备份文件。
-
 - In: 自定义的 IP 地址可以下载。默认为 In。
 - NotIn: 自定义的 IP 不可以下载。
                      */

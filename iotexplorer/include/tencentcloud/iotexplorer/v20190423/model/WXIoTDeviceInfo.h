@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool SNTicketHasBeenSet() const;
 
                     /**
-                     * 获取模版ID
+                     * 获取模板ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelId 模版ID
+                     * @return ModelId 模板ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelId() const;
 
                     /**
-                     * 设置模版ID
+                     * 设置模板ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelId 模版ID
+                     * @param _modelId 模板ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -138,7 +138,7 @@ namespace TencentCloud
                     bool m_sNTicketHasBeenSet;
 
                     /**
-                     * 模版ID
+                     * 模板ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelId;

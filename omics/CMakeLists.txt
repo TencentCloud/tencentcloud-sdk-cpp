@@ -44,6 +44,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/ModifyVolumeResponse.h
   include/tencentcloud/omics/v20221128/model/LimitRange.h
   include/tencentcloud/omics/v20221128/model/DescribeTablesResponse.h
+  include/tencentcloud/omics/v20221128/model/CosFileInfo.h
   include/tencentcloud/omics/v20221128/model/VPCOption.h
   include/tencentcloud/omics/v20221128/model/ResourceQuota.h
   include/tencentcloud/omics/v20221128/model/RetryRunsRequest.h
@@ -115,6 +116,7 @@ set(omics_src
   src/v20221128/model/ModifyVolumeResponse.cpp
   src/v20221128/model/LimitRange.cpp
   src/v20221128/model/DescribeTablesResponse.cpp
+  src/v20221128/model/CosFileInfo.cpp
   src/v20221128/model/VPCOption.cpp
   src/v20221128/model/ResourceQuota.cpp
   src/v20221128/model/RetryRunsRequest.cpp

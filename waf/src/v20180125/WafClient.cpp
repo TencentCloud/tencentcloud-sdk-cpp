@@ -384,6 +384,49 @@ WafClient::AddSpartaProtectionOutcomeCallable WafClient::AddSpartaProtectionCall
     return task->get_future();
 }
 
+WafClient::BatchOperateUserSignatureRulesOutcome WafClient::BatchOperateUserSignatureRules(const BatchOperateUserSignatureRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchOperateUserSignatureRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchOperateUserSignatureRulesResponse rsp = BatchOperateUserSignatureRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchOperateUserSignatureRulesOutcome(rsp);
+        else
+            return BatchOperateUserSignatureRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchOperateUserSignatureRulesOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::BatchOperateUserSignatureRulesAsync(const BatchOperateUserSignatureRulesRequest& request, const BatchOperateUserSignatureRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchOperateUserSignatureRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::BatchOperateUserSignatureRulesOutcomeCallable WafClient::BatchOperateUserSignatureRulesCallable(const BatchOperateUserSignatureRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchOperateUserSignatureRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchOperateUserSignatureRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::CreateAccessExportOutcome WafClient::CreateAccessExport(const CreateAccessExportRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAccessExport");
@@ -3523,6 +3566,49 @@ WafClient::DescribeUserLevelOutcomeCallable WafClient::DescribeUserLevelCallable
     return task->get_future();
 }
 
+WafClient::DescribeUserSignatureClassOutcome WafClient::DescribeUserSignatureClass(const DescribeUserSignatureClassRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserSignatureClass");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserSignatureClassResponse rsp = DescribeUserSignatureClassResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserSignatureClassOutcome(rsp);
+        else
+            return DescribeUserSignatureClassOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserSignatureClassOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeUserSignatureClassAsync(const DescribeUserSignatureClassRequest& request, const DescribeUserSignatureClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserSignatureClass(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeUserSignatureClassOutcomeCallable WafClient::DescribeUserSignatureClassCallable(const DescribeUserSignatureClassRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserSignatureClassOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserSignatureClass(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeUserSignatureRuleOutcome WafClient::DescribeUserSignatureRule(const DescribeUserSignatureRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserSignatureRule");
@@ -3559,6 +3645,49 @@ WafClient::DescribeUserSignatureRuleOutcomeCallable WafClient::DescribeUserSigna
         [this, request]()
         {
             return this->DescribeUserSignatureRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeUserSignatureRuleV2Outcome WafClient::DescribeUserSignatureRuleV2(const DescribeUserSignatureRuleV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserSignatureRuleV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserSignatureRuleV2Response rsp = DescribeUserSignatureRuleV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserSignatureRuleV2Outcome(rsp);
+        else
+            return DescribeUserSignatureRuleV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserSignatureRuleV2Outcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeUserSignatureRuleV2Async(const DescribeUserSignatureRuleV2Request& request, const DescribeUserSignatureRuleV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserSignatureRuleV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeUserSignatureRuleV2OutcomeCallable WafClient::DescribeUserSignatureRuleV2Callable(const DescribeUserSignatureRuleV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserSignatureRuleV2Outcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserSignatureRuleV2(request);
         }
     );
 

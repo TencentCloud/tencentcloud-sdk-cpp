@@ -39,7 +39,8 @@ RabbitMQVipInstance::RabbitMQVipInstance() :
     m_clusterStatusHasBeenSet(false),
     m_publicAccessEndpointHasBeenSet(false),
     m_vpcsHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,16 @@ CoreInternalOutcome RabbitMQVipInstance::Deserialize(const rapidjson::Value &val
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVipInstance.InstanceType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = value["InstanceType"].GetUint64();
+        m_instanceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +423,14 @@ void RabbitMQVipInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceType, allocator);
     }
 
 }
@@ -719,5 +738,21 @@ void RabbitMQVipInstance::SetCreateTime(const uint64_t& _createTime)
 bool RabbitMQVipInstance::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+uint64_t RabbitMQVipInstance::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void RabbitMQVipInstance::SetInstanceType(const uint64_t& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool RabbitMQVipInstance::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 

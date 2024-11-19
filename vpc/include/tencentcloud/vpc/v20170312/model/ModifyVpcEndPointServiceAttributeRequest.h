@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndPointServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取是否自动接受终端节点的连接请求。<ui><li>true：自动接受<li>false：不自动接受</ul>
-                     * @return AutoAcceptFlag 是否自动接受终端节点的连接请求。<ui><li>true：自动接受<li>false：不自动接受</ul>
+                     * 获取是否自动接受终端节点的连接请求。<ul><li>true：自动接受</li><li>false：不自动接受</li></ul>
+                     * @return AutoAcceptFlag 是否自动接受终端节点的连接请求。<ul><li>true：自动接受</li><li>false：不自动接受</li></ul>
                      * 
                      */
                     bool GetAutoAcceptFlag() const;
 
                     /**
-                     * 设置是否自动接受终端节点的连接请求。<ui><li>true：自动接受<li>false：不自动接受</ul>
-                     * @param _autoAcceptFlag 是否自动接受终端节点的连接请求。<ui><li>true：自动接受<li>false：不自动接受</ul>
+                     * 设置是否自动接受终端节点的连接请求。<ul><li>true：自动接受</li><li>false：不自动接受</li></ul>
+                     * @param _autoAcceptFlag 是否自动接受终端节点的连接请求。<ul><li>true：自动接受</li><li>false：不自动接受</li></ul>
                      * 
                      */
                     void SetAutoAcceptFlag(const bool& _autoAcceptFlag);
@@ -168,7 +168,7 @@ namespace TencentCloud
                     bool m_endPointServiceNameHasBeenSet;
 
                     /**
-                     * 是否自动接受终端节点的连接请求。<ui><li>true：自动接受<li>false：不自动接受</ul>
+                     * 是否自动接受终端节点的连接请求。<ul><li>true：自动接受</li><li>false：不自动接受</li></ul>
                      */
                     bool m_autoAcceptFlag;
                     bool m_autoAcceptFlagHasBeenSet;

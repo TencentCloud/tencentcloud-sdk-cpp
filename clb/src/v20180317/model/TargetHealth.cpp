@@ -26,7 +26,8 @@ TargetHealth::TargetHealth() :
     m_healthStatusHasBeenSet(false),
     m_targetIdHasBeenSet(false),
     m_healthStatusDetailHasBeenSet(false),
-    m_healthStatusDetialHasBeenSet(false)
+    m_healthStatusDetialHasBeenSet(false),
+    m_targetGroupIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome TargetHealth::Deserialize(const rapidjson::Value &value)
         m_healthStatusDetialHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetGroupId") && !value["TargetGroupId"].IsNull())
+    {
+        if (!value["TargetGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetHealth.TargetGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetGroupId = string(value["TargetGroupId"].GetString());
+        m_targetGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void TargetHealth::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "HealthStatusDetial";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_healthStatusDetial.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetGroupId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void TargetHealth::SetHealthStatusDetial(const string& _healthStatusDetial)
 bool TargetHealth::HealthStatusDetialHasBeenSet() const
 {
     return m_healthStatusDetialHasBeenSet;
+}
+
+string TargetHealth::GetTargetGroupId() const
+{
+    return m_targetGroupId;
+}
+
+void TargetHealth::SetTargetGroupId(const string& _targetGroupId)
+{
+    m_targetGroupId = _targetGroupId;
+    m_targetGroupIdHasBeenSet = true;
+}
+
+bool TargetHealth::TargetGroupIdHasBeenSet() const
+{
+    return m_targetGroupIdHasBeenSet;
 }
 

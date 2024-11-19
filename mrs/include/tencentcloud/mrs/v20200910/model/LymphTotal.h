@@ -79,7 +79,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetTransferNum() const;
+                    int64_t GetTransferNum() const;
 
                     /**
                      * 设置转移数量
@@ -88,7 +88,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetTransferNum(const std::string& _transferNum);
+                    void SetTransferNum(const int64_t& _transferNum);
 
                     /**
                      * 判断参数 TransferNum 是否已赋值
@@ -104,7 +104,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetTotal() const;
+                    int64_t GetTotal() const;
 
                     /**
                      * 设置总数量
@@ -113,7 +113,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetTotal(const std::string& _total);
+                    void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
@@ -210,14 +210,14 @@ namespace TencentCloud
                      * 转移数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_transferNum;
+                    int64_t m_transferNum;
                     bool m_transferNumHasBeenSet;
 
                     /**
                      * 总数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_total;
+                    int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**

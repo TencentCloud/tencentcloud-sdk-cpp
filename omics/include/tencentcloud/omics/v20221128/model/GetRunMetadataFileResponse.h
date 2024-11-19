@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取批量文件预签名链接，一分钟内有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosSignedUrls 批量文件预签名链接，一分钟内有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCosSignedUrls() const;
@@ -83,7 +81,6 @@ namespace TencentCloud
 
                     /**
                      * 批量文件预签名链接，一分钟内有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_cosSignedUrls;
                     bool m_cosSignedUrlsHasBeenSet;

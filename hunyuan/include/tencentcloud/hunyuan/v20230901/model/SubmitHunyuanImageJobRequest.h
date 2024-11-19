@@ -73,6 +73,27 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
+                     * 获取反向提示词。 推荐使用中文。最多可传1024个 utf-8 字符。
+                     * @return NegativePrompt 反向提示词。 推荐使用中文。最多可传1024个 utf-8 字符。
+                     * 
+                     */
+                    std::string GetNegativePrompt() const;
+
+                    /**
+                     * 设置反向提示词。 推荐使用中文。最多可传1024个 utf-8 字符。
+                     * @param _negativePrompt 反向提示词。 推荐使用中文。最多可传1024个 utf-8 字符。
+                     * 
+                     */
+                    void SetNegativePrompt(const std::string& _negativePrompt);
+
+                    /**
+                     * 判断参数 NegativePrompt 是否已赋值
+                     * @return NegativePrompt 是否已赋值
+                     * 
+                     */
+                    bool NegativePromptHasBeenSet() const;
+
+                    /**
                      * 获取绘画风格。
 请在 [混元生图风格列表](https://cloud.tencent.com/document/product/1729/105846) 中选择期望的风格，传入风格编号。
 不传默认不指定风格。
@@ -284,6 +305,12 @@ namespace TencentCloud
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
+
+                    /**
+                     * 反向提示词。 推荐使用中文。最多可传1024个 utf-8 字符。
+                     */
+                    std::string m_negativePrompt;
+                    bool m_negativePromptHasBeenSet;
 
                     /**
                      * 绘画风格。

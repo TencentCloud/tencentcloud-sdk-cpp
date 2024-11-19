@@ -361,6 +361,31 @@ namespace TencentCloud
                      */
                     bool HierarchicalValueHasBeenSet() const;
 
+                    /**
+                     * 获取指标类型，用于区分动态指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleType 指标类型，用于区分动态指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRuleType() const;
+
+                    /**
+                     * 设置指标类型，用于区分动态指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleType 指标类型，用于区分动态指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleType(const std::string& _ruleType);
+
+                    /**
+                     * 判断参数 RuleType 是否已赋值
+                     * @return RuleType 是否已赋值
+                     * 
+                     */
+                    bool RuleTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -451,6 +476,13 @@ namespace TencentCloud
                      */
                     AlarmHierarchicalValue m_hierarchicalValue;
                     bool m_hierarchicalValueHasBeenSet;
+
+                    /**
+                     * 指标类型，用于区分动态指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleType;
+                    bool m_ruleTypeHasBeenSet;
 
                 };
             }

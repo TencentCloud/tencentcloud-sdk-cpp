@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取报告结构化结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Template 报告结构化结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Template GetTemplate() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取多级分类结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextTypeList 多级分类结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TextType> GetTextTypeList() const;
@@ -81,14 +77,12 @@ namespace TencentCloud
 
                     /**
                      * 报告结构化结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Template m_template;
                     bool m_templateHasBeenSet;
 
                     /**
                      * 多级分类结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TextType> m_textTypeList;
                     bool m_textTypeListHasBeenSet;

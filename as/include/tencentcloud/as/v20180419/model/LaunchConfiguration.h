@@ -751,6 +751,27 @@ namespace TencentCloud
                      */
                     bool ImageFamilyHasBeenSet() const;
 
+                    /**
+                     * 获取本地专用集群 ID。
+                     * @return DedicatedClusterId 本地专用集群 ID。
+                     * 
+                     */
+                    std::string GetDedicatedClusterId() const;
+
+                    /**
+                     * 设置本地专用集群 ID。
+                     * @param _dedicatedClusterId 本地专用集群 ID。
+                     * 
+                     */
+                    void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
+
+                    /**
+                     * 判断参数 DedicatedClusterId 是否已赋值
+                     * @return DedicatedClusterId 是否已赋值
+                     * 
+                     */
+                    bool DedicatedClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -949,6 +970,12 @@ namespace TencentCloud
                      */
                     std::string m_imageFamily;
                     bool m_imageFamilyHasBeenSet;
+
+                    /**
+                     * 本地专用集群 ID。
+                     */
+                    std::string m_dedicatedClusterId;
+                    bool m_dedicatedClusterIdHasBeenSet;
 
                 };
             }

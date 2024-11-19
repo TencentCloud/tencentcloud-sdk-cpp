@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取提交时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubmitTime 提交时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubmitTime() const;
 
                     /**
                      * 设置提交时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _submitTime 提交时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubmitTime(const std::string& _submitTime);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 提交时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_submitTime;
                     bool m_submitTimeHasBeenSet;
 
                     /**
                      * 开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

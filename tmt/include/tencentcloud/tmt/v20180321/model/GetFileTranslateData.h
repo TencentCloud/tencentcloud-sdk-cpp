@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询文件翻译任务
+                * 文件翻译任务结果
                 */
                 class GetFileTranslateData : public AbstractModel
                 {
@@ -68,15 +68,35 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取任务状态
+
+- init：任务已初始化
+- wait：任务等待执行
+- success：任务执行成功
+- fail：任务执行失败
+                     * @return Status 任务状态
+
+- init：任务已初始化
+- wait：任务等待执行
+- success：任务执行成功
+- fail：任务执行失败
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置任务状态
+
+- init：任务已初始化
+- wait：任务等待执行
+- success：任务执行成功
+- fail：任务执行失败
+                     * @param _status 任务状态
+
+- init：任务已初始化
+- wait：任务等待执行
+- success：任务执行成功
+- fail：任务执行失败
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -139,15 +159,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取翻译进度
-                     * @return Progress 翻译进度
+                     * 获取任务进度
+                     * @return Progress 任务进度
                      * 
                      */
                     int64_t GetProgress() const;
 
                     /**
-                     * 设置翻译进度
-                     * @param _progress 翻译进度
+                     * 设置任务进度
+                     * @param _progress 任务进度
                      * 
                      */
                     void SetProgress(const int64_t& _progress);
@@ -159,6 +179,27 @@ namespace TencentCloud
                      */
                     bool ProgressHasBeenSet() const;
 
+                    /**
+                     * 获取本次翻译消耗的字符数	
+                     * @return UsedAmount 本次翻译消耗的字符数	
+                     * 
+                     */
+                    int64_t GetUsedAmount() const;
+
+                    /**
+                     * 设置本次翻译消耗的字符数	
+                     * @param _usedAmount 本次翻译消耗的字符数	
+                     * 
+                     */
+                    void SetUsedAmount(const int64_t& _usedAmount);
+
+                    /**
+                     * 判断参数 UsedAmount 是否已赋值
+                     * @return UsedAmount 是否已赋值
+                     * 
+                     */
+                    bool UsedAmountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,7 +209,12 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 状态
+                     * 任务状态
+
+- init：任务已初始化
+- wait：任务等待执行
+- success：任务执行成功
+- fail：任务执行失败
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -188,10 +234,16 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 翻译进度
+                     * 任务进度
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;
+
+                    /**
+                     * 本次翻译消耗的字符数	
+                     */
+                    int64_t m_usedAmount;
+                    bool m_usedAmountHasBeenSet;
 
                 };
             }

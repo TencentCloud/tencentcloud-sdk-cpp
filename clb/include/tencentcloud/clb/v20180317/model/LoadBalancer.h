@@ -98,18 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡实例的网络类型：
-OPEN：公网属性， INTERNAL：内网属性。
+OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档。
                      * @return LoadBalancerType 负载均衡实例的网络类型：
-OPEN：公网属性， INTERNAL：内网属性。
+OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档。
                      * 
                      */
                     std::string GetLoadBalancerType() const;
 
                     /**
                      * 设置负载均衡实例的网络类型：
-OPEN：公网属性， INTERNAL：内网属性。
+OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档。
                      * @param _loadBalancerType 负载均衡实例的网络类型：
-OPEN：公网属性， INTERNAL：内网属性。
+OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档。
                      * 
                      */
                     void SetLoadBalancerType(const std::string& _loadBalancerType);
@@ -1458,7 +1458,7 @@ OPEN：公网属性， INTERNAL：内网属性。
 
                     /**
                      * 负载均衡实例的网络类型：
-OPEN：公网属性， INTERNAL：内网属性。
+OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均衡，可通过绑定EIP出公网，具体可参考EIP文档。
                      */
                     std::string m_loadBalancerType;
                     bool m_loadBalancerTypeHasBeenSet;

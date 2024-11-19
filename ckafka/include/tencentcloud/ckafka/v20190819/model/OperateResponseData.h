@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取FlowId11
+                     * 获取流程Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowId FlowId11
+                     * @return FlowId 流程Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
-                     * 设置FlowId11
+                     * 设置流程Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _flowId FlowId11
+                     * @param _flowId 流程Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,7 +100,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * FlowId11
+                     * 流程Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flowId;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 临时证书。
+                * 临时访问凭证。
                 */
                 class Credentials : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取秘钥 ID。
-                     * @return AccessKeyId 秘钥 ID。
+                     * 获取访问凭证 ID。
+                     * @return AccessKeyId 访问凭证 ID。
                      * 
                      */
                     std::string GetAccessKeyId() const;
 
                     /**
-                     * 设置秘钥 ID。
-                     * @param _accessKeyId 秘钥 ID。
+                     * 设置访问凭证 ID。
+                     * @param _accessKeyId 访问凭证 ID。
                      * 
                      */
                     void SetAccessKeyId(const std::string& _accessKeyId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AccessKeyIdHasBeenSet() const;
 
                     /**
-                     * 获取秘钥 Key。
-                     * @return SecretAccessKey 秘钥 Key。
+                     * 获取访问凭证 Key。
+                     * @return SecretAccessKey 访问凭证 Key。
                      * 
                      */
                     std::string GetSecretAccessKey() const;
 
                     /**
-                     * 设置秘钥 Key。
-                     * @param _secretAccessKey 秘钥 Key。
+                     * 设置访问凭证 Key。
+                     * @param _secretAccessKey 访问凭证 Key。
                      * 
                      */
                     void SetSecretAccessKey(const std::string& _secretAccessKey);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SecretAccessKeyHasBeenSet() const;
 
                     /**
-                     * 获取token。token长度和绑定的策略有关，最长不超过4096字节。
-                     * @return SessionToken token。token长度和绑定的策略有关，最长不超过4096字节。
+                     * 获取访问凭证 Token，长度和绑定的策略有关，最长不超过 4096 字节。
+                     * @return SessionToken 访问凭证 Token，长度和绑定的策略有关，最长不超过 4096 字节。
                      * 
                      */
                     std::string GetSessionToken() const;
 
                     /**
-                     * 设置token。token长度和绑定的策略有关，最长不超过4096字节。
-                     * @param _sessionToken token。token长度和绑定的策略有关，最长不超过4096字节。
+                     * 设置访问凭证 Token，长度和绑定的策略有关，最长不超过 4096 字节。
+                     * @param _sessionToken 访问凭证 Token，长度和绑定的策略有关，最长不超过 4096 字节。
                      * 
                      */
                     void SetSessionToken(const std::string& _sessionToken);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool SessionTokenHasBeenSet() const;
 
                     /**
-                     * 获取凭据的过期时间。
-                     * @return Expiration 凭据的过期时间。
+                     * 获取访问凭证的过期时间。
+                     * @return Expiration 访问凭证的过期时间。
                      * 
                      */
                     std::string GetExpiration() const;
 
                     /**
-                     * 设置凭据的过期时间。
-                     * @param _expiration 凭据的过期时间。
+                     * 设置访问凭证的过期时间。
+                     * @param _expiration 访问凭证的过期时间。
                      * 
                      */
                     void SetExpiration(const std::string& _expiration);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 秘钥 ID。
+                     * 访问凭证 ID。
                      */
                     std::string m_accessKeyId;
                     bool m_accessKeyIdHasBeenSet;
 
                     /**
-                     * 秘钥 Key。
+                     * 访问凭证 Key。
                      */
                     std::string m_secretAccessKey;
                     bool m_secretAccessKeyHasBeenSet;
 
                     /**
-                     * token。token长度和绑定的策略有关，最长不超过4096字节。
+                     * 访问凭证 Token，长度和绑定的策略有关，最长不超过 4096 字节。
                      */
                     std::string m_sessionToken;
                     bool m_sessionTokenHasBeenSet;
 
                     /**
-                     * 凭据的过期时间。
+                     * 访问凭证的过期时间。
                      */
                     std::string m_expiration;
                     bool m_expirationHasBeenSet;

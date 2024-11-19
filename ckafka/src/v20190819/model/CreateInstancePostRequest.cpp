@@ -41,7 +41,8 @@ CreateInstancePostRequest::CreateInstancePostRequest() :
     m_zoneIdsHasBeenSet(false),
     m_instanceNumHasBeenSet(false),
     m_publicNetworkMonthlyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_elasticBandwidthSwitchHasBeenSet(false)
 {
 }
 
@@ -214,6 +215,14 @@ string CreateInstancePostRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_elasticBandwidthSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticBandwidthSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_elasticBandwidthSwitch, allocator);
     }
 
 
@@ -526,6 +535,22 @@ void CreateInstancePostRequest::SetTags(const vector<Tag>& _tags)
 bool CreateInstancePostRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t CreateInstancePostRequest::GetElasticBandwidthSwitch() const
+{
+    return m_elasticBandwidthSwitch;
+}
+
+void CreateInstancePostRequest::SetElasticBandwidthSwitch(const int64_t& _elasticBandwidthSwitch)
+{
+    m_elasticBandwidthSwitch = _elasticBandwidthSwitch;
+    m_elasticBandwidthSwitchHasBeenSet = true;
+}
+
+bool CreateInstancePostRequest::ElasticBandwidthSwitchHasBeenSet() const
+{
+    return m_elasticBandwidthSwitchHasBeenSet;
 }
 
 

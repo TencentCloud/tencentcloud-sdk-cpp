@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代理商账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 代理商账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置代理商账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 代理商账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取返佣月份，如2018-02
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RebateMonth 返佣月份，如2018-02
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRebateMonth() const;
 
                     /**
                      * 设置返佣月份，如2018-02
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rebateMonth 返佣月份，如2018-02
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRebateMonth(const std::string& _rebateMonth);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取返佣金额，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Amt 返佣金额，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAmt() const;
 
                     /**
                      * 设置返佣金额，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _amt 返佣金额，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAmt(const uint64_t& _amt);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取月度业绩，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonthSales 月度业绩，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMonthSales() const;
 
                     /**
                      * 设置月度业绩，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _monthSales 月度业绩，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonthSales(const uint64_t& _monthSales);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取季度业绩，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuarterSales 季度业绩，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetQuarterSales() const;
 
                     /**
                      * 设置季度业绩，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quarterSales 季度业绩，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuarterSales(const uint64_t& _quarterSales);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NORMAL(正常)/HAS_OVERDUE_BILL(欠费)/NO_CONTRACT(缺合同)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExceptionFlag NORMAL(正常)/HAS_OVERDUE_BILL(欠费)/NO_CONTRACT(缺合同)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExceptionFlag() const;
 
                     /**
                      * 设置NORMAL(正常)/HAS_OVERDUE_BILL(欠费)/NO_CONTRACT(缺合同)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exceptionFlag NORMAL(正常)/HAS_OVERDUE_BILL(欠费)/NO_CONTRACT(缺合同)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExceptionFlag(const std::string& _exceptionFlag);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 代理商账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 返佣月份，如2018-02
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rebateMonth;
                     bool m_rebateMonthHasBeenSet;
 
                     /**
                      * 返佣金额，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_amt;
                     bool m_amtHasBeenSet;
 
                     /**
                      * 月度业绩，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_monthSales;
                     bool m_monthSalesHasBeenSet;
 
                     /**
                      * 季度业绩，单位分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_quarterSales;
                     bool m_quarterSalesHasBeenSet;
 
                     /**
                      * NORMAL(正常)/HAS_OVERDUE_BILL(欠费)/NO_CONTRACT(缺合同)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exceptionFlag;
                     bool m_exceptionFlagHasBeenSet;

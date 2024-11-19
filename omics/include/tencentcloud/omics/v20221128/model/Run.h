@@ -156,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户定义ID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserDefinedId 用户定义ID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserDefinedId() const;
 
                     /**
                      * 设置用户定义ID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userDefinedId 用户定义ID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserDefinedId(const std::string& _userDefinedId);
@@ -181,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表格ID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableId 表格ID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableId() const;
 
                     /**
                      * 设置表格ID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableId 表格ID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableId(const std::string& _tableId);
@@ -206,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表格行UUID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableRowUuid 表格行UUID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableRowUuid() const;
 
                     /**
                      * 设置表格行UUID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableRowUuid 表格行UUID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableRowUuid(const std::string& _tableRowUuid);
@@ -315,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取缓存信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cache 缓存信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CacheInfo GetCache() const;
 
                     /**
                      * 设置缓存信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cache 缓存信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCache(const CacheInfo& _cache);
@@ -435,21 +419,18 @@ namespace TencentCloud
 
                     /**
                      * 用户定义ID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userDefinedId;
                     bool m_userDefinedIdHasBeenSet;
 
                     /**
                      * 表格ID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableId;
                     bool m_tableIdHasBeenSet;
 
                     /**
                      * 表格行UUID，单例运行为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableRowUuid;
                     bool m_tableRowUuidHasBeenSet;
@@ -480,7 +461,6 @@ namespace TencentCloud
 
                     /**
                      * 缓存信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CacheInfo m_cache;
                     bool m_cacheHasBeenSet;

@@ -131,6 +131,27 @@ tool_calls 标识函数调用。
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取索引值，流式调用时使用该字段。
+                     * @return Index 索引值，流式调用时使用该字段。
+                     * 
+                     */
+                    int64_t GetIndex() const;
+
+                    /**
+                     * 设置索引值，流式调用时使用该字段。
+                     * @param _index 索引值，流式调用时使用该字段。
+                     * 
+                     */
+                    void SetIndex(const int64_t& _index);
+
+                    /**
+                     * 判断参数 Index 是否已赋值
+                     * @return Index 是否已赋值
+                     * 
+                     */
+                    bool IndexHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ tool_calls 标识函数调用。
                      */
                     Message m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 索引值，流式调用时使用该字段。
+                     */
+                    int64_t m_index;
+                    bool m_indexHasBeenSet;
 
                 };
             }

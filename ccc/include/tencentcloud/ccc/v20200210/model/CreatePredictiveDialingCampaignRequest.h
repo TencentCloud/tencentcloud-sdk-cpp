@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ccc/v20200210/model/Variable.h>
+#include <tencentcloud/ccc/v20200210/model/CalleeAttribute.h>
 
 
 namespace TencentCloud
@@ -315,6 +317,69 @@ namespace TencentCloud
                      */
                     bool RetryTimesHasBeenSet() const;
 
+                    /**
+                     * 获取自定义变量
+                     * @return Variables 自定义变量
+                     * 
+                     */
+                    std::vector<Variable> GetVariables() const;
+
+                    /**
+                     * 设置自定义变量
+                     * @param _variables 自定义变量
+                     * 
+                     */
+                    void SetVariables(const std::vector<Variable>& _variables);
+
+                    /**
+                     * 判断参数 Variables 是否已赋值
+                     * @return Variables 是否已赋值
+                     * 
+                     */
+                    bool VariablesHasBeenSet() const;
+
+                    /**
+                     * 获取UUI
+                     * @return UUI UUI
+                     * 
+                     */
+                    std::string GetUUI() const;
+
+                    /**
+                     * 设置UUI
+                     * @param _uUI UUI
+                     * 
+                     */
+                    void SetUUI(const std::string& _uUI);
+
+                    /**
+                     * 判断参数 UUI 是否已赋值
+                     * @return UUI 是否已赋值
+                     * 
+                     */
+                    bool UUIHasBeenSet() const;
+
+                    /**
+                     * 获取被叫属性
+                     * @return CalleeAttributes 被叫属性
+                     * 
+                     */
+                    std::vector<CalleeAttribute> GetCalleeAttributes() const;
+
+                    /**
+                     * 设置被叫属性
+                     * @param _calleeAttributes 被叫属性
+                     * 
+                     */
+                    void SetCalleeAttributes(const std::vector<CalleeAttribute>& _calleeAttributes);
+
+                    /**
+                     * 判断参数 CalleeAttributes 是否已赋值
+                     * @return CalleeAttributes 是否已赋值
+                     * 
+                     */
+                    bool CalleeAttributesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -394,6 +459,24 @@ namespace TencentCloud
                      */
                     int64_t m_retryTimes;
                     bool m_retryTimesHasBeenSet;
+
+                    /**
+                     * 自定义变量
+                     */
+                    std::vector<Variable> m_variables;
+                    bool m_variablesHasBeenSet;
+
+                    /**
+                     * UUI
+                     */
+                    std::string m_uUI;
+                    bool m_uUIHasBeenSet;
+
+                    /**
+                     * 被叫属性
+                     */
+                    std::vector<CalleeAttribute> m_calleeAttributes;
+                    bool m_calleeAttributesHasBeenSet;
 
                 };
             }

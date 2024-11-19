@@ -85,6 +85,20 @@ namespace TencentCloud
                      */
                     bool TargetHasBeenSet() const;
 
+                    /**
+                     * 获取本次翻译消耗的字符数
+                     * @return UsedAmount 本次翻译消耗的字符数
+                     * 
+                     */
+                    int64_t GetUsedAmount() const;
+
+                    /**
+                     * 判断参数 UsedAmount 是否已赋值
+                     * @return UsedAmount 是否已赋值
+                     * 
+                     */
+                    bool UsedAmountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -104,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_target;
                     bool m_targetHasBeenSet;
+
+                    /**
+                     * 本次翻译消耗的字符数
+                     */
+                    int64_t m_usedAmount;
+                    bool m_usedAmountHasBeenSet;
 
                 };
             }

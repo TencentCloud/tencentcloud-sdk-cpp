@@ -24,6 +24,7 @@ using namespace std;
 
 SubmitHunyuanImageJobRequest::SubmitHunyuanImageJobRequest() :
     m_promptHasBeenSet(false),
+    m_negativePromptHasBeenSet(false),
     m_styleHasBeenSet(false),
     m_resolutionHasBeenSet(false),
     m_numHasBeenSet(false),
@@ -47,6 +48,14 @@ string SubmitHunyuanImageJobRequest::ToJsonString() const
         string key = "Prompt";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_prompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_negativePromptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NegativePrompt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_negativePrompt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_styleHasBeenSet)
@@ -128,6 +137,22 @@ void SubmitHunyuanImageJobRequest::SetPrompt(const string& _prompt)
 bool SubmitHunyuanImageJobRequest::PromptHasBeenSet() const
 {
     return m_promptHasBeenSet;
+}
+
+string SubmitHunyuanImageJobRequest::GetNegativePrompt() const
+{
+    return m_negativePrompt;
+}
+
+void SubmitHunyuanImageJobRequest::SetNegativePrompt(const string& _negativePrompt)
+{
+    m_negativePrompt = _negativePrompt;
+    m_negativePromptHasBeenSet = true;
+}
+
+bool SubmitHunyuanImageJobRequest::NegativePromptHasBeenSet() const
+{
+    return m_negativePromptHasBeenSet;
 }
 
 string SubmitHunyuanImageJobRequest::GetStyle() const

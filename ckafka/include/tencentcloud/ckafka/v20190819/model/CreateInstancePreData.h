@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool DealNamesHasBeenSet() const;
 
                     /**
-                     * 获取实例Id，当购买多个实例时，默认返回购买的第一个实例 id
+                     * 获取ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 实例Id，当购买多个实例时，默认返回购买的第一个实例 id
+                     * @return InstanceId ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id，当购买多个实例时，默认返回购买的第一个实例 id
+                     * 设置ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceId 实例Id，当购买多个实例时，默认返回购买的第一个实例 id
+                     * @param _instanceId ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -164,7 +164,7 @@ namespace TencentCloud
                     bool m_dealNamesHasBeenSet;
 
                     /**
-                     * 实例Id，当购买多个实例时，默认返回购买的第一个实例 id
+                     * ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;

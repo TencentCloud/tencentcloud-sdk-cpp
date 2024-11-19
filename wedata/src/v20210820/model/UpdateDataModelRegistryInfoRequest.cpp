@@ -25,8 +25,8 @@ using namespace std;
 UpdateDataModelRegistryInfoRequest::UpdateDataModelRegistryInfoRequest() :
     m_cloudappIdHasBeenSet(false),
     m_appCamRoleHasBeenSet(false),
-    m_vipHasBeenSet(false),
-    m_vportHasBeenSet(false),
+    m_ipHasBeenSet(false),
+    m_portHasBeenSet(false),
     m_appCamRoleIdHasBeenSet(false),
     m_providerHasBeenSet(false),
     m_tenantIdHasBeenSet(false),
@@ -57,20 +57,20 @@ string UpdateDataModelRegistryInfoRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_appCamRole.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_vipHasBeenSet)
+    if (m_ipHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Vip";
+        string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_vportHasBeenSet)
+    if (m_portHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Vport";
+        string key = "Port";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_vport, allocator);
+        d.AddMember(iKey, m_port, allocator);
     }
 
     if (m_appCamRoleIdHasBeenSet)
@@ -145,36 +145,36 @@ bool UpdateDataModelRegistryInfoRequest::AppCamRoleHasBeenSet() const
     return m_appCamRoleHasBeenSet;
 }
 
-string UpdateDataModelRegistryInfoRequest::GetVip() const
+string UpdateDataModelRegistryInfoRequest::GetIp() const
 {
-    return m_vip;
+    return m_ip;
 }
 
-void UpdateDataModelRegistryInfoRequest::SetVip(const string& _vip)
+void UpdateDataModelRegistryInfoRequest::SetIp(const string& _ip)
 {
-    m_vip = _vip;
-    m_vipHasBeenSet = true;
+    m_ip = _ip;
+    m_ipHasBeenSet = true;
 }
 
-bool UpdateDataModelRegistryInfoRequest::VipHasBeenSet() const
+bool UpdateDataModelRegistryInfoRequest::IpHasBeenSet() const
 {
-    return m_vipHasBeenSet;
+    return m_ipHasBeenSet;
 }
 
-uint64_t UpdateDataModelRegistryInfoRequest::GetVport() const
+uint64_t UpdateDataModelRegistryInfoRequest::GetPort() const
 {
-    return m_vport;
+    return m_port;
 }
 
-void UpdateDataModelRegistryInfoRequest::SetVport(const uint64_t& _vport)
+void UpdateDataModelRegistryInfoRequest::SetPort(const uint64_t& _port)
 {
-    m_vport = _vport;
-    m_vportHasBeenSet = true;
+    m_port = _port;
+    m_portHasBeenSet = true;
 }
 
-bool UpdateDataModelRegistryInfoRequest::VportHasBeenSet() const
+bool UpdateDataModelRegistryInfoRequest::PortHasBeenSet() const
 {
-    return m_vportHasBeenSet;
+    return m_portHasBeenSet;
 }
 
 string UpdateDataModelRegistryInfoRequest::GetAppCamRoleId() const

@@ -23,7 +23,8 @@ using namespace std;
 Choice::Choice() :
     m_finishReasonHasBeenSet(false),
     m_deltaHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_indexHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome Choice::Deserialize(const rapidjson::Value &value)
         m_messageHasBeenSet = true;
     }
 
+    if (value.HasMember("Index") && !value["Index"].IsNull())
+    {
+        if (!value["Index"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Choice.Index` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_index = value["Index"].GetInt64();
+        m_indexHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ void Choice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_message.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_indexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Index";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_index, allocator);
     }
 
 }
@@ -158,5 +177,21 @@ void Choice::SetMessage(const Message& _message)
 bool Choice::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+int64_t Choice::GetIndex() const
+{
+    return m_index;
+}
+
+void Choice::SetIndex(const int64_t& _index)
+{
+    m_index = _index;
+    m_indexHasBeenSet = true;
+}
+
+bool Choice::IndexHasBeenSet() const
+{
+    return m_indexHasBeenSet;
 }
 

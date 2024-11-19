@@ -298,6 +298,49 @@ RceClient::DescribeNameListDetailOutcomeCallable RceClient::DescribeNameListDeta
     return task->get_future();
 }
 
+RceClient::DescribeUserUsageCntOutcome RceClient::DescribeUserUsageCnt(const DescribeUserUsageCntRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserUsageCnt");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserUsageCntResponse rsp = DescribeUserUsageCntResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserUsageCntOutcome(rsp);
+        else
+            return DescribeUserUsageCntOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserUsageCntOutcome(outcome.GetError());
+    }
+}
+
+void RceClient::DescribeUserUsageCntAsync(const DescribeUserUsageCntRequest& request, const DescribeUserUsageCntAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserUsageCnt(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RceClient::DescribeUserUsageCntOutcomeCallable RceClient::DescribeUserUsageCntCallable(const DescribeUserUsageCntRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserUsageCntOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserUsageCnt(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RceClient::ImportNameListDataOutcome RceClient::ImportNameListData(const ImportNameListDataRequest &request)
 {
     auto outcome = MakeRequest(request, "ImportNameListData");

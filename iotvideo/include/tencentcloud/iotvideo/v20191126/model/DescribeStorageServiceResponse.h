@@ -165,8 +165,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取云存定单列表
-                     * @return Data 云存定单列表
+                     * 获取云存订单列表
+                     * @return Data 云存订单列表
                      * 
                      */
                     std::vector<StorageOrder> GetData() const;
@@ -233,7 +233,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 云存定单列表
+                     * 云存订单列表
                      */
                     std::vector<StorageOrder> m_data;
                     bool m_dataHasBeenSet;

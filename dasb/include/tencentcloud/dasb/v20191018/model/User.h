@@ -351,6 +351,27 @@ namespace TencentCloud
                     bool LockStatusHasBeenSet() const;
 
                     /**
+                     * 获取ukey绑定状态 0 - 未绑定 1 - 已绑定
+                     * @return UKeyStatus ukey绑定状态 0 - 未绑定 1 - 已绑定
+                     * 
+                     */
+                    int64_t GetUKeyStatus() const;
+
+                    /**
+                     * 设置ukey绑定状态 0 - 未绑定 1 - 已绑定
+                     * @param _uKeyStatus ukey绑定状态 0 - 未绑定 1 - 已绑定
+                     * 
+                     */
+                    void SetUKeyStatus(const int64_t& _uKeyStatus);
+
+                    /**
+                     * 判断参数 UKeyStatus 是否已赋值
+                     * @return UKeyStatus 是否已赋值
+                     * 
+                     */
+                    bool UKeyStatusHasBeenSet() const;
+
+                    /**
                      * 获取状态 与Filter中一致
                      * @return Status 状态 与Filter中一致
                      * 
@@ -479,6 +500,12 @@ namespace TencentCloud
                      */
                     uint64_t m_lockStatus;
                     bool m_lockStatusHasBeenSet;
+
+                    /**
+                     * ukey绑定状态 0 - 未绑定 1 - 已绑定
+                     */
+                    int64_t m_uKeyStatus;
+                    bool m_uKeyStatusHasBeenSet;
 
                     /**
                      * 状态 与Filter中一致

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Vhost参数
-                     * @return VirtualHost Vhost参数
+                     * 获取Vhost名称
+                     * @return VirtualHost Vhost名称
                      * 
                      */
                     std::string GetVirtualHost() const;
 
                     /**
-                     * 设置Vhost参数
-                     * @param _virtualHost Vhost参数
+                     * 设置Vhost名称
+                     * @param _virtualHost Vhost名称
                      * 
                      */
                     void SetVirtualHost(const std::string& _virtualHost);
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Vhost参数
+                     * Vhost名称
                      */
                     std::string m_virtualHost;
                     bool m_virtualHostHasBeenSet;

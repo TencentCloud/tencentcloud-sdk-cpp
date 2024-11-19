@@ -52,7 +52,8 @@ LaunchConfiguration::LaunchConfiguration() :
     m_hpcClusterIdHasBeenSet(false),
     m_iPv6InternetAccessibleHasBeenSet(false),
     m_disasterRecoverGroupIdsHasBeenSet(false),
-    m_imageFamilyHasBeenSet(false)
+    m_imageFamilyHasBeenSet(false),
+    m_dedicatedClusterIdHasBeenSet(false)
 {
 }
 
@@ -493,6 +494,16 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
         m_imageFamilyHasBeenSet = true;
     }
 
+    if (value.HasMember("DedicatedClusterId") && !value["DedicatedClusterId"].IsNull())
+    {
+        if (!value["DedicatedClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.DedicatedClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dedicatedClusterId = string(value["DedicatedClusterId"].GetString());
+        m_dedicatedClusterIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -806,6 +817,14 @@ void LaunchConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ImageFamily";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imageFamily.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dedicatedClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1321,5 +1340,21 @@ void LaunchConfiguration::SetImageFamily(const string& _imageFamily)
 bool LaunchConfiguration::ImageFamilyHasBeenSet() const
 {
     return m_imageFamilyHasBeenSet;
+}
+
+string LaunchConfiguration::GetDedicatedClusterId() const
+{
+    return m_dedicatedClusterId;
+}
+
+void LaunchConfiguration::SetDedicatedClusterId(const string& _dedicatedClusterId)
+{
+    m_dedicatedClusterId = _dedicatedClusterId;
+    m_dedicatedClusterIdHasBeenSet = true;
+}
+
+bool LaunchConfiguration::DedicatedClusterIdHasBeenSet() const
+{
+    return m_dedicatedClusterIdHasBeenSet;
 }
 

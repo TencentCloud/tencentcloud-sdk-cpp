@@ -86,45 +86,45 @@ namespace TencentCloud
 
                     /**
                      * 获取数语的ip
-                     * @return Vip 数语的ip
+                     * @return Ip 数语的ip
                      * 
                      */
-                    std::string GetVip() const;
+                    std::string GetIp() const;
 
                     /**
                      * 设置数语的ip
-                     * @param _vip 数语的ip
+                     * @param _ip 数语的ip
                      * 
                      */
-                    void SetVip(const std::string& _vip);
+                    void SetIp(const std::string& _ip);
 
                     /**
-                     * 判断参数 Vip 是否已赋值
-                     * @return Vip 是否已赋值
+                     * 判断参数 Ip 是否已赋值
+                     * @return Ip 是否已赋值
                      * 
                      */
-                    bool VipHasBeenSet() const;
+                    bool IpHasBeenSet() const;
 
                     /**
                      * 获取数语的端口
-                     * @return Vport 数语的端口
+                     * @return Port 数语的端口
                      * 
                      */
-                    uint64_t GetVport() const;
+                    uint64_t GetPort() const;
 
                     /**
                      * 设置数语的端口
-                     * @param _vport 数语的端口
+                     * @param _port 数语的端口
                      * 
                      */
-                    void SetVport(const uint64_t& _vport);
+                    void SetPort(const uint64_t& _port);
 
                     /**
-                     * 判断参数 Vport 是否已赋值
-                     * @return Vport 是否已赋值
+                     * 判断参数 Port 是否已赋值
+                     * @return Port 是否已赋值
                      * 
                      */
-                    bool VportHasBeenSet() const;
+                    bool PortHasBeenSet() const;
 
                     /**
                      * 获取数语的CAM角色id
@@ -227,14 +227,14 @@ namespace TencentCloud
                     /**
                      * 数语的ip
                      */
-                    std::string m_vip;
-                    bool m_vipHasBeenSet;
+                    std::string m_ip;
+                    bool m_ipHasBeenSet;
 
                     /**
                      * 数语的端口
                      */
-                    uint64_t m_vport;
-                    bool m_vportHasBeenSet;
+                    uint64_t m_port;
+                    bool m_portHasBeenSet;
 
                     /**
                      * 数语的CAM角色id

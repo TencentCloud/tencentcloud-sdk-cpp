@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunType 任务类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRunType() const;
 
                     /**
                      * 设置任务类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runType 任务类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRunType(const std::string& _runType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunId 任务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRunId() const;
 
                     /**
                      * 设置任务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runId 任务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRunId(const std::string& _runId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父层ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentId 父层ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentId() const;
 
                     /**
                      * 设置父层ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentId 父层ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentId(const std::string& _parentId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取作业ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobId 作业ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置作业ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobId 作业ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取作业名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CallName 作业名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCallName() const;
 
                     /**
                      * 设置作业名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _callName 作业名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCallName(const std::string& _callName);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Scatter索引。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScatterIndex Scatter索引。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScatterIndex() const;
 
                     /**
                      * 设置Scatter索引。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scatterIndex Scatter索引。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScatterIndex(const std::string& _scatterIndex);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Input 输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInput() const;
 
                     /**
                      * 设置输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _input 输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInput(const std::string& _input);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutput() const;
 
                     /**
                      * 设置输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const std::string& _output);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMessage 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
                      * 设置错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorMessage 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取提交时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubmitTime 提交时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubmitTime() const;
 
                     /**
                      * 设置提交时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _submitTime 提交时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubmitTime(const std::string& _submitTime);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命令行。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Command 命令行。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
                      * 设置命令行。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _command 命令行。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCommand(const std::string& _command);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行时。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Runtime 运行时。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuntime() const;
 
                     /**
                      * 设置运行时。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runtime 运行时。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuntime(const std::string& _runtime);
@@ -423,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Preprocess 预处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetPreprocess() const;
 
                     /**
                      * 设置预处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _preprocess 预处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPreprocess(const bool& _preprocess);
@@ -448,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostProcess 后处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetPostProcess() const;
 
                     /**
                      * 设置后处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _postProcess 后处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPostProcess(const bool& _postProcess);
@@ -473,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Cache命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CallCached Cache命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCallCached() const;
 
                     /**
                      * 设置Cache命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _callCached Cache命中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCallCached(const bool& _callCached);
@@ -498,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作目录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkDir 工作目录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkDir() const;
 
                     /**
                      * 设置工作目录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workDir 工作目录。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkDir(const std::string& _workDir);
@@ -523,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标准输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Stdout 标准输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStdout() const;
 
                     /**
                      * 设置标准输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stdout 标准输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStdout(const std::string& _stdout);
@@ -548,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Stderr 错误输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStderr() const;
 
                     /**
                      * 设置错误输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stderr 错误输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStderr(const std::string& _stderr);
@@ -573,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取其他信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Meta 其他信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMeta() const;
 
                     /**
                      * 设置其他信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _meta 其他信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMeta(const std::string& _meta);
@@ -600,154 +512,132 @@ namespace TencentCloud
 
                     /**
                      * 任务类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runType;
                     bool m_runTypeHasBeenSet;
 
                     /**
                      * 任务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runId;
                     bool m_runIdHasBeenSet;
 
                     /**
                      * 父层ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentId;
                     bool m_parentIdHasBeenSet;
 
                     /**
                      * 作业ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
                      * 作业名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_callName;
                     bool m_callNameHasBeenSet;
 
                     /**
                      * Scatter索引。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scatterIndex;
                     bool m_scatterIndexHasBeenSet;
 
                     /**
                      * 输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_input;
                     bool m_inputHasBeenSet;
 
                     /**
                      * 输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_output;
                     bool m_outputHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 错误信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
                      * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 提交时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_submitTime;
                     bool m_submitTimeHasBeenSet;
 
                     /**
                      * 结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 命令行。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
 
                     /**
                      * 运行时。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runtime;
                     bool m_runtimeHasBeenSet;
 
                     /**
                      * 预处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_preprocess;
                     bool m_preprocessHasBeenSet;
 
                     /**
                      * 后处理。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_postProcess;
                     bool m_postProcessHasBeenSet;
 
                     /**
                      * Cache命中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_callCached;
                     bool m_callCachedHasBeenSet;
 
                     /**
                      * 工作目录。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workDir;
                     bool m_workDirHasBeenSet;
 
                     /**
                      * 标准输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stdout;
                     bool m_stdoutHasBeenSet;
 
                     /**
                      * 错误输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stderr;
                     bool m_stderrHasBeenSet;
 
                     /**
                      * 其他信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_meta;
                     bool m_metaHasBeenSet;

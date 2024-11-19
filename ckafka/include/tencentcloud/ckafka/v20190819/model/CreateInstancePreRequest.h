@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
-                     * @return InstanceName 实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 获取ckafka集群实例Name，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * @return InstanceName ckafka集群实例Name，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
-                     * @param _instanceName 实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * 设置ckafka集群实例Name，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * @param _instanceName ckafka集群实例Name，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取vpcId，必填
-                     * @return VpcId vpcId，必填
+                     * 获取私有网络Id，必填
+                     * @return VpcId 私有网络Id，必填
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置vpcId，必填
-                     * @param _vpcId vpcId，必填
+                     * 设置私有网络Id，必填
+                     * @param _vpcId 私有网络Id，必填
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取带宽，如果跟控制台规格配比不相符，则无法创建成功
-                     * @return BandWidth 带宽，如果跟控制台规格配比不相符，则无法创建成功
+                     * 获取实例带宽,单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s
+                     * @return BandWidth 实例带宽,单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s
                      * 
                      */
                     int64_t GetBandWidth() const;
 
                     /**
-                     * 设置带宽，如果跟控制台规格配比不相符，则无法创建成功
-                     * @param _bandWidth 带宽，如果跟控制台规格配比不相符，则无法创建成功
+                     * 设置实例带宽,单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s
+                     * @param _bandWidth 实例带宽,单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s
                      * 
                      */
                     void SetBandWidth(const int64_t& _bandWidth);
@@ -484,10 +484,31 @@ namespace TencentCloud
                      */
                     bool AutoVoucherHasBeenSet() const;
 
+                    /**
+                     * 获取弹性带宽开关 0不开启  1开启（0默认）
+                     * @return ElasticBandwidthSwitch 弹性带宽开关 0不开启  1开启（0默认）
+                     * 
+                     */
+                    int64_t GetElasticBandwidthSwitch() const;
+
+                    /**
+                     * 设置弹性带宽开关 0不开启  1开启（0默认）
+                     * @param _elasticBandwidthSwitch 弹性带宽开关 0不开启  1开启（0默认）
+                     * 
+                     */
+                    void SetElasticBandwidthSwitch(const int64_t& _elasticBandwidthSwitch);
+
+                    /**
+                     * 判断参数 ElasticBandwidthSwitch 是否已赋值
+                     * @return ElasticBandwidthSwitch 是否已赋值
+                     * 
+                     */
+                    bool ElasticBandwidthSwitchHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
+                     * ckafka集群实例Name，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -511,7 +532,7 @@ namespace TencentCloud
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * vpcId，必填
+                     * 私有网络Id，必填
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -559,7 +580,7 @@ namespace TencentCloud
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 带宽，如果跟控制台规格配比不相符，则无法创建成功
+                     * 实例带宽,单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s
                      */
                     int64_t m_bandWidth;
                     bool m_bandWidthHasBeenSet;
@@ -611,6 +632,12 @@ namespace TencentCloud
                      */
                     int64_t m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;
+
+                    /**
+                     * 弹性带宽开关 0不开启  1开启（0默认）
+                     */
+                    int64_t m_elasticBandwidthSwitch;
+                    bool m_elasticBandwidthSwitchHasBeenSet;
 
                 };
             }

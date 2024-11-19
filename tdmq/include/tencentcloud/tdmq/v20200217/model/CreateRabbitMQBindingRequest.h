@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Vhost参数
-                     * @return VirtualHost Vhost参数
+                     * 获取Vhost名称
+                     * @return VirtualHost Vhost名称
                      * 
                      */
                     std::string GetVirtualHost() const;
 
                     /**
-                     * 设置Vhost参数
-                     * @param _virtualHost Vhost参数
+                     * 设置Vhost名称
+                     * @param _virtualHost Vhost名称
                      * 
                      */
                     void SetVirtualHost(const std::string& _virtualHost);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool DestinationHasBeenSet() const;
 
                     /**
-                     * 获取绑定key
-                     * @return RoutingKey 绑定key
+                     * 获取路由键
+                     * @return RoutingKey 路由键
                      * 
                      */
                     std::string GetRoutingKey() const;
 
                     /**
-                     * 设置绑定key
-                     * @param _routingKey 绑定key
+                     * 设置路由键
+                     * @param _routingKey 路由键
                      * 
                      */
                     void SetRoutingKey(const std::string& _routingKey);
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Vhost参数
+                     * Vhost名称
                      */
                     std::string m_virtualHost;
                     bool m_virtualHostHasBeenSet;
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_destinationHasBeenSet;
 
                     /**
-                     * 绑定key
+                     * 路由键
                      */
                     std::string m_routingKey;
                     bool m_routingKeyHasBeenSet;

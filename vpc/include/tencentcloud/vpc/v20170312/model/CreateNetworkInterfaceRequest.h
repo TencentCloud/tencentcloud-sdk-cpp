@@ -130,14 +130,18 @@ namespace TencentCloud
 
                     /**
                      * 获取新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。
+配额数查询：[DescribeVpcLimits](https://cloud.tencent.com/document/api/215/42942)。
                      * @return SecondaryPrivateIpAddressCount 新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。
+配额数查询：[DescribeVpcLimits](https://cloud.tencent.com/document/api/215/42942)。
                      * 
                      */
                     uint64_t GetSecondaryPrivateIpAddressCount() const;
 
                     /**
                      * 设置新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。
+配额数查询：[DescribeVpcLimits](https://cloud.tencent.com/document/api/215/42942)。
                      * @param _secondaryPrivateIpAddressCount 新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。
+配额数查询：[DescribeVpcLimits](https://cloud.tencent.com/document/api/215/42942)。
                      * 
                      */
                     void SetSecondaryPrivateIpAddressCount(const uint64_t& _secondaryPrivateIpAddressCount);
@@ -303,6 +307,7 @@ namespace TencentCloud
 
                     /**
                      * 新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。
+配额数查询：[DescribeVpcLimits](https://cloud.tencent.com/document/api/215/42942)。
                      */
                     uint64_t m_secondaryPrivateIpAddressCount;
                     bool m_secondaryPrivateIpAddressCountHasBeenSet;

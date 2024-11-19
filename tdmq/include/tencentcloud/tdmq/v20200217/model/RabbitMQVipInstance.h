@@ -474,6 +474,27 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取实例类型，0 专享版、1 Serverless 版
+                     * @return InstanceType 实例类型，0 专享版、1 Serverless 版
+                     * 
+                     */
+                    uint64_t GetInstanceType() const;
+
+                    /**
+                     * 设置实例类型，0 专享版、1 Serverless 版
+                     * @param _instanceType 实例类型，0 专享版、1 Serverless 版
+                     * 
+                     */
+                    void SetInstanceType(const uint64_t& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -596,6 +617,12 @@ namespace TencentCloud
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 实例类型，0 专享版、1 Serverless 版
+                     */
+                    uint64_t m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
 
                 };
             }

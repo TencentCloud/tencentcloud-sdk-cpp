@@ -34,7 +34,8 @@ ChannelCreateMultiFlowSignQRCodeRequest::ChannelCreateMultiFlowSignQRCodeRequest
     m_callbackUrlHasBeenSet(false),
     m_approverRestrictionsHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_forbidPersonalMultipleSignHasBeenSet(false)
+    m_forbidPersonalMultipleSignHasBeenSet(false),
+    m_flowNameAppendScannerInfoHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,14 @@ string ChannelCreateMultiFlowSignQRCodeRequest::ToJsonString() const
         string key = "ForbidPersonalMultipleSign";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forbidPersonalMultipleSign, allocator);
+    }
+
+    if (m_flowNameAppendScannerInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowNameAppendScannerInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flowNameAppendScannerInfo, allocator);
     }
 
 
@@ -356,6 +365,22 @@ void ChannelCreateMultiFlowSignQRCodeRequest::SetForbidPersonalMultipleSign(cons
 bool ChannelCreateMultiFlowSignQRCodeRequest::ForbidPersonalMultipleSignHasBeenSet() const
 {
     return m_forbidPersonalMultipleSignHasBeenSet;
+}
+
+bool ChannelCreateMultiFlowSignQRCodeRequest::GetFlowNameAppendScannerInfo() const
+{
+    return m_flowNameAppendScannerInfo;
+}
+
+void ChannelCreateMultiFlowSignQRCodeRequest::SetFlowNameAppendScannerInfo(const bool& _flowNameAppendScannerInfo)
+{
+    m_flowNameAppendScannerInfo = _flowNameAppendScannerInfo;
+    m_flowNameAppendScannerInfoHasBeenSet = true;
+}
+
+bool ChannelCreateMultiFlowSignQRCodeRequest::FlowNameAppendScannerInfoHasBeenSet() const
+{
+    return m_flowNameAppendScannerInfoHasBeenSet;
 }
 
 

@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool ResultHasBeenSet() const;
 
+                    /**
+                     * 获取签名值
+                     * @return SignValue 签名值
+                     * 
+                     */
+                    std::string GetSignValue() const;
+
+                    /**
+                     * 设置签名值
+                     * @param _signValue 签名值
+                     * 
+                     */
+                    void SetSignValue(const std::string& _signValue);
+
+                    /**
+                     * 判断参数 SignValue 是否已赋值
+                     * @return SignValue 是否已赋值
+                     * 
+                     */
+                    bool SignValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     uint64_t m_result;
                     bool m_resultHasBeenSet;
+
+                    /**
+                     * 签名值
+                     */
+                    std::string m_signValue;
+                    bool m_signValueHasBeenSet;
 
                 };
             }

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取缓存卷ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VolumeId 缓存卷ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVolumeId() const;
 
                     /**
                      * 设置缓存卷ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _volumeId 缓存卷ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVolumeId(const std::string& _volumeId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取挂载路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MountPath 挂载路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMountPath() const;
 
                     /**
                      * 设置挂载路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mountPath 挂载路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMountPath(const std::string& _mountPath);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 缓存卷ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_volumeId;
                     bool m_volumeIdHasBeenSet;
 
                     /**
                      * 名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 挂载路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mountPath;
                     bool m_mountPathHasBeenSet;

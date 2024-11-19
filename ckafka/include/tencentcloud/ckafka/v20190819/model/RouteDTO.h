@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取RouteId11
+                     * 获取路由Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RouteId RouteId11
+                     * @return RouteId 路由Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRouteId() const;
 
                     /**
-                     * 设置RouteId11
+                     * 设置路由Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _routeId RouteId11
+                     * @param _routeId 路由Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * RouteId11
+                     * 路由Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_routeId;

@@ -338,6 +338,27 @@ namespace TencentCloud
                      */
                     bool ForbidPersonalMultipleSignHasBeenSet() const;
 
+                    /**
+                     * 获取合同流程名称是否应包含扫码签署人的信息，且遵循特定格式（flowname-姓名-手机号后四位）。 例如，通过参数FlowName设定的扫码发起合同名称为“员工入职合同”，当扫码人张三（手机号18800009527）扫码签署时，合同名称将自动生成为“员工入职合同-张三-9527”。
+                     * @return FlowNameAppendScannerInfo 合同流程名称是否应包含扫码签署人的信息，且遵循特定格式（flowname-姓名-手机号后四位）。 例如，通过参数FlowName设定的扫码发起合同名称为“员工入职合同”，当扫码人张三（手机号18800009527）扫码签署时，合同名称将自动生成为“员工入职合同-张三-9527”。
+                     * 
+                     */
+                    bool GetFlowNameAppendScannerInfo() const;
+
+                    /**
+                     * 设置合同流程名称是否应包含扫码签署人的信息，且遵循特定格式（flowname-姓名-手机号后四位）。 例如，通过参数FlowName设定的扫码发起合同名称为“员工入职合同”，当扫码人张三（手机号18800009527）扫码签署时，合同名称将自动生成为“员工入职合同-张三-9527”。
+                     * @param _flowNameAppendScannerInfo 合同流程名称是否应包含扫码签署人的信息，且遵循特定格式（flowname-姓名-手机号后四位）。 例如，通过参数FlowName设定的扫码发起合同名称为“员工入职合同”，当扫码人张三（手机号18800009527）扫码签署时，合同名称将自动生成为“员工入职合同-张三-9527”。
+                     * 
+                     */
+                    void SetFlowNameAppendScannerInfo(const bool& _flowNameAppendScannerInfo);
+
+                    /**
+                     * 判断参数 FlowNameAppendScannerInfo 是否已赋值
+                     * @return FlowNameAppendScannerInfo 是否已赋值
+                     * 
+                     */
+                    bool FlowNameAppendScannerInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -421,6 +442,12 @@ namespace TencentCloud
                      */
                     bool m_forbidPersonalMultipleSign;
                     bool m_forbidPersonalMultipleSignHasBeenSet;
+
+                    /**
+                     * 合同流程名称是否应包含扫码签署人的信息，且遵循特定格式（flowname-姓名-手机号后四位）。 例如，通过参数FlowName设定的扫码发起合同名称为“员工入职合同”，当扫码人张三（手机号18800009527）扫码签署时，合同名称将自动生成为“员工入职合同-张三-9527”。
+                     */
+                    bool m_flowNameAppendScannerInfo;
+                    bool m_flowNameAppendScannerInfoHasBeenSet;
 
                 };
             }

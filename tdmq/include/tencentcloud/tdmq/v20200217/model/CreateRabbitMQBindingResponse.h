@@ -60,9 +60,9 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取vhost参数
+                     * 获取vhost名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VirtualHost vhost参数
+                     * @return VirtualHost vhost名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -101,7 +101,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * vhost参数
+                     * vhost名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_virtualHost;

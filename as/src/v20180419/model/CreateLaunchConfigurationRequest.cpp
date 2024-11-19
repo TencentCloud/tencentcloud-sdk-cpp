@@ -48,7 +48,8 @@ CreateLaunchConfigurationRequest::CreateLaunchConfigurationRequest() :
     m_hpcClusterIdHasBeenSet(false),
     m_iPv6InternetAccessibleHasBeenSet(false),
     m_disasterRecoverGroupIdsHasBeenSet(false),
-    m_imageFamilyHasBeenSet(false)
+    m_imageFamilyHasBeenSet(false),
+    m_dedicatedClusterIdHasBeenSet(false)
 {
 }
 
@@ -310,6 +311,14 @@ string CreateLaunchConfigurationRequest::ToJsonString() const
         string key = "ImageFamily";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageFamily.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dedicatedClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -734,6 +743,22 @@ void CreateLaunchConfigurationRequest::SetImageFamily(const string& _imageFamily
 bool CreateLaunchConfigurationRequest::ImageFamilyHasBeenSet() const
 {
     return m_imageFamilyHasBeenSet;
+}
+
+string CreateLaunchConfigurationRequest::GetDedicatedClusterId() const
+{
+    return m_dedicatedClusterId;
+}
+
+void CreateLaunchConfigurationRequest::SetDedicatedClusterId(const string& _dedicatedClusterId)
+{
+    m_dedicatedClusterId = _dedicatedClusterId;
+    m_dedicatedClusterIdHasBeenSet = true;
+}
+
+bool CreateLaunchConfigurationRequest::DedicatedClusterIdHasBeenSet() const
+{
+    return m_dedicatedClusterIdHasBeenSet;
 }
 
 

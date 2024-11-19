@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeTaskStatusResponse::DescribeTaskStatusResponse() :
     m_statusHasBeenSet(false),
-    m_loadBalancerIdsHasBeenSet(false)
+    m_loadBalancerIdsHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,16 @@ CoreInternalOutcome DescribeTaskStatusResponse::Deserialize(const string &payloa
         m_loadBalancerIdsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Message") && !rsp["Message"].IsNull())
+    {
+        if (!rsp["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(rsp["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +126,14 @@ string DescribeTaskStatusResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +166,16 @@ vector<string> DescribeTaskStatusResponse::GetLoadBalancerIds() const
 bool DescribeTaskStatusResponse::LoadBalancerIdsHasBeenSet() const
 {
     return m_loadBalancerIdsHasBeenSet;
+}
+
+string DescribeTaskStatusResponse::GetMessage() const
+{
+    return m_message;
+}
+
+bool DescribeTaskStatusResponse::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 
 

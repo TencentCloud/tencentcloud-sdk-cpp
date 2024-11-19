@@ -35,6 +35,8 @@
 #include <tencentcloud/rce/v20201103/model/DescribeNameListDataListResponse.h>
 #include <tencentcloud/rce/v20201103/model/DescribeNameListDetailRequest.h>
 #include <tencentcloud/rce/v20201103/model/DescribeNameListDetailResponse.h>
+#include <tencentcloud/rce/v20201103/model/DescribeUserUsageCntRequest.h>
+#include <tencentcloud/rce/v20201103/model/DescribeUserUsageCntResponse.h>
 #include <tencentcloud/rce/v20201103/model/ImportNameListDataRequest.h>
 #include <tencentcloud/rce/v20201103/model/ImportNameListDataResponse.h>
 #include <tencentcloud/rce/v20201103/model/ManageMarketingRiskRequest.h>
@@ -75,6 +77,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNameListDetailResponse> DescribeNameListDetailOutcome;
                 typedef std::future<DescribeNameListDetailOutcome> DescribeNameListDetailOutcomeCallable;
                 typedef std::function<void(const RceClient*, const Model::DescribeNameListDetailRequest&, DescribeNameListDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNameListDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserUsageCntResponse> DescribeUserUsageCntOutcome;
+                typedef std::future<DescribeUserUsageCntOutcome> DescribeUserUsageCntOutcomeCallable;
+                typedef std::function<void(const RceClient*, const Model::DescribeUserUsageCntRequest&, DescribeUserUsageCntOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserUsageCntAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImportNameListDataResponse> ImportNameListDataOutcome;
                 typedef std::future<ImportNameListDataOutcome> ImportNameListDataOutcomeCallable;
                 typedef std::function<void(const RceClient*, const Model::ImportNameListDataRequest&, ImportNameListDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportNameListDataAsyncHandler;
@@ -143,6 +148,15 @@ namespace TencentCloud
                 DescribeNameListDetailOutcome DescribeNameListDetail(const Model::DescribeNameListDetailRequest &request);
                 void DescribeNameListDetailAsync(const Model::DescribeNameListDetailRequest& request, const DescribeNameListDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNameListDetailOutcomeCallable DescribeNameListDetailCallable(const Model::DescribeNameListDetailRequest& request);
+
+                /**
+                 *RCE控制台预付费和后付费次数展示
+                 * @param req DescribeUserUsageCntRequest
+                 * @return DescribeUserUsageCntOutcome
+                 */
+                DescribeUserUsageCntOutcome DescribeUserUsageCnt(const Model::DescribeUserUsageCntRequest &request);
+                void DescribeUserUsageCntAsync(const Model::DescribeUserUsageCntRequest& request, const DescribeUserUsageCntAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserUsageCntOutcomeCallable DescribeUserUsageCntCallable(const Model::DescribeUserUsageCntRequest& request);
 
                 /**
                  *新增黑白名单数据，所有黑白名单数据总量上限为10000

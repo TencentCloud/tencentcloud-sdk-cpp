@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool SiteHasBeenSet() const;
 
+                    /**
+                     * 获取ProjectID
+                     * @return ID ProjectID
+                     * 
+                     */
+                    int64_t GetID() const;
+
+                    /**
+                     * 设置ProjectID
+                     * @param _iD ProjectID
+                     * 
+                     */
+                    void SetID(const int64_t& _iD);
+
+                    /**
+                     * 判断参数 ID 是否已赋值
+                     * @return ID 是否已赋值
+                     * 
+                     */
+                    bool IDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     int64_t m_site;
                     bool m_siteHasBeenSet;
+
+                    /**
+                     * ProjectID
+                     */
+                    int64_t m_iD;
+                    bool m_iDHasBeenSet;
 
                 };
             }

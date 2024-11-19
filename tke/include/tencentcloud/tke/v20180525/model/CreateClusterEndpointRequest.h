@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取使用的安全组，只有外网访问需要传递（开启外网访问时必传）
-                     * @return SecurityGroup 使用的安全组，只有外网访问需要传递（开启外网访问时必传）
+                     * 获取使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）
+                     * @return SecurityGroup 使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）
                      * 
                      */
                     std::string GetSecurityGroup() const;
 
                     /**
-                     * 设置使用的安全组，只有外网访问需要传递（开启外网访问时必传）
-                     * @param _securityGroup 使用的安全组，只有外网访问需要传递（开启外网访问时必传）
+                     * 设置使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）
+                     * @param _securityGroup 使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）
                      * 
                      */
                     void SetSecurityGroup(const std::string& _securityGroup);
@@ -215,7 +215,7 @@ BandwidthPackageId含义：带宽包ID，指定此参数时，网络计费方式
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 使用的安全组，只有外网访问需要传递（开启外网访问时必传）
+                     * 使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）
                      */
                     std::string m_securityGroup;
                     bool m_securityGroupHasBeenSet;
