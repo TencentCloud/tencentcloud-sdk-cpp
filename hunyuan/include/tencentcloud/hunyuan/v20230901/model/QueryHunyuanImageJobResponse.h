@@ -140,8 +140,8 @@ namespace TencentCloud
                     bool ResultDetailsHasBeenSet() const;
 
                     /**
-                     * 获取对应 SubmitTextToImageProJob 接口中 Revise 参数。开启扩写时，返回扩写后的 prompt 文本。 如果关闭扩写，将直接返回原始输入的 prompt。
-                     * @return RevisedPrompt 对应 SubmitTextToImageProJob 接口中 Revise 参数。开启扩写时，返回扩写后的 prompt 文本。 如果关闭扩写，将直接返回原始输入的 prompt。
+                     * 获取对应 SubmitHunyuanImageJob 接口中 Revise 参数。开启扩写时，返回扩写后的 prompt 文本。 如果关闭扩写，将直接返回原始输入的 prompt。
+                     * @return RevisedPrompt 对应 SubmitHunyuanImageJob 接口中 Revise 参数。开启扩写时，返回扩写后的 prompt 文本。 如果关闭扩写，将直接返回原始输入的 prompt。
                      * 
                      */
                     std::vector<std::string> GetRevisedPrompt() const;
@@ -198,7 +198,7 @@ namespace TencentCloud
                     bool m_resultDetailsHasBeenSet;
 
                     /**
-                     * 对应 SubmitTextToImageProJob 接口中 Revise 参数。开启扩写时，返回扩写后的 prompt 文本。 如果关闭扩写，将直接返回原始输入的 prompt。
+                     * 对应 SubmitHunyuanImageJob 接口中 Revise 参数。开启扩写时，返回扩写后的 prompt 文本。 如果关闭扩写，将直接返回原始输入的 prompt。
                      */
                     std::vector<std::string> m_revisedPrompt;
                     bool m_revisedPromptHasBeenSet;

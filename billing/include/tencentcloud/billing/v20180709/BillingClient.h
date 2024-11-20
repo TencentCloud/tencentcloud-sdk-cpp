@@ -280,7 +280,9 @@ namespace TencentCloud
                 CreateAllocationTagOutcomeCallable CreateAllocationTagCallable(const Model::CreateAllocationTagRequest& request);
 
                 /**
-                 *创建节省计划订单，创建订单完成需调用PayDeals接口完成订单支付
+                 *接口迁移到其他业务
+
+创建节省计划订单，创建订单完成需调用PayDeals接口完成订单支付
                  * @param req CreateSavingPlanOrderRequest
                  * @return CreateSavingPlanOrderOutcome
                  */
@@ -629,7 +631,9 @@ namespace TencentCloud
                 DescribeSavingPlanCoverageOutcomeCallable DescribeSavingPlanCoverageCallable(const Model::DescribeSavingPlanCoverageRequest& request);
 
                 /**
-                 *查用当前用户明细节省计划总览查询时段内的使用情况
+                 *接口迁移到其他业务
+
+查用当前用户明细节省计划总览查询时段内的使用情况
                  * @param req DescribeSavingPlanOverviewRequest
                  * @return DescribeSavingPlanOverviewOutcome
                  */
@@ -647,7 +651,9 @@ namespace TencentCloud
                 DescribeSavingPlanResourceInfoOutcomeCallable DescribeSavingPlanResourceInfoCallable(const Model::DescribeSavingPlanResourceInfoRequest& request);
 
                 /**
-                 *查用当前用户明细节省计划查询时段内的使用情况
+                 *接口迁移到其他业务
+
+查用当前用户明细节省计划查询时段内的使用情况
                  * @param req DescribeSavingPlanUsageRequest
                  * @return DescribeSavingPlanUsageOutcome
                  */

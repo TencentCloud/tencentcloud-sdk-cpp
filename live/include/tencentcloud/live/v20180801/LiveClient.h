@@ -125,6 +125,12 @@
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCallbackRecordsListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeCallbackRecordsListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterTransitionTypesRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterTransitionTypesResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterUserStatusRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterUserStatusResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeConcurrentRecordStreamNumRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeConcurrentRecordStreamNumResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeDeliverBandwidthListRequest.h>
@@ -502,6 +508,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCallbackRecordsListResponse> DescribeCallbackRecordsListOutcome;
                 typedef std::future<DescribeCallbackRecordsListOutcome> DescribeCallbackRecordsListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeCallbackRecordsListRequest&, DescribeCallbackRecordsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallbackRecordsListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCasterListResponse> DescribeCasterListOutcome;
+                typedef std::future<DescribeCasterListOutcome> DescribeCasterListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeCasterListRequest&, DescribeCasterListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCasterTransitionTypesResponse> DescribeCasterTransitionTypesOutcome;
+                typedef std::future<DescribeCasterTransitionTypesOutcome> DescribeCasterTransitionTypesOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeCasterTransitionTypesRequest&, DescribeCasterTransitionTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterTransitionTypesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCasterUserStatusResponse> DescribeCasterUserStatusOutcome;
+                typedef std::future<DescribeCasterUserStatusOutcome> DescribeCasterUserStatusOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeCasterUserStatusRequest&, DescribeCasterUserStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterUserStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConcurrentRecordStreamNumResponse> DescribeConcurrentRecordStreamNumOutcome;
                 typedef std::future<DescribeConcurrentRecordStreamNumOutcome> DescribeConcurrentRecordStreamNumOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeConcurrentRecordStreamNumRequest&, DescribeConcurrentRecordStreamNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConcurrentRecordStreamNumAsyncHandler;
@@ -1345,6 +1360,33 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeCallbackRecordsListOutcome DescribeCallbackRecordsList(const Model::DescribeCallbackRecordsListRequest &request);
                 void DescribeCallbackRecordsListAsync(const Model::DescribeCallbackRecordsListRequest& request, const DescribeCallbackRecordsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCallbackRecordsListOutcomeCallable DescribeCallbackRecordsListCallable(const Model::DescribeCallbackRecordsListRequest& request);
+
+                /**
+                 *该接口用来查询账号下所有的导播台列表
+                 * @param req DescribeCasterListRequest
+                 * @return DescribeCasterListOutcome
+                 */
+                DescribeCasterListOutcome DescribeCasterList(const Model::DescribeCasterListRequest &request);
+                void DescribeCasterListAsync(const Model::DescribeCasterListRequest& request, const DescribeCasterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCasterListOutcomeCallable DescribeCasterListCallable(const Model::DescribeCasterListRequest& request);
+
+                /**
+                 *该接口用来获取所有的转场名称及其对应的素材url。
+                 * @param req DescribeCasterTransitionTypesRequest
+                 * @return DescribeCasterTransitionTypesOutcome
+                 */
+                DescribeCasterTransitionTypesOutcome DescribeCasterTransitionTypes(const Model::DescribeCasterTransitionTypesRequest &request);
+                void DescribeCasterTransitionTypesAsync(const Model::DescribeCasterTransitionTypesRequest& request, const DescribeCasterTransitionTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCasterTransitionTypesOutcomeCallable DescribeCasterTransitionTypesCallable(const Model::DescribeCasterTransitionTypesRequest& request);
+
+                /**
+                 *本接口用来查询当前APPID导播台业务状态
+                 * @param req DescribeCasterUserStatusRequest
+                 * @return DescribeCasterUserStatusOutcome
+                 */
+                DescribeCasterUserStatusOutcome DescribeCasterUserStatus(const Model::DescribeCasterUserStatusRequest &request);
+                void DescribeCasterUserStatusAsync(const Model::DescribeCasterUserStatusRequest& request, const DescribeCasterUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCasterUserStatusOutcomeCallable DescribeCasterUserStatusCallable(const Model::DescribeCasterUserStatusRequest& request);
 
                 /**
                  *查询并发录制路数，对慢直播和普通直播适用。

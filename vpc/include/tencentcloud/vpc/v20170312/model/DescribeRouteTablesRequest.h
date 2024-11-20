@@ -207,6 +207,27 @@ LOCAL_GATEWAY：本地网关。
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要获取路由策略信息，默认获取，当控制台不需要拉取路由策略信息时，改为False。
+                     * @return NeedRouterInfo 是否需要获取路由策略信息，默认获取，当控制台不需要拉取路由策略信息时，改为False。
+                     * 
+                     */
+                    bool GetNeedRouterInfo() const;
+
+                    /**
+                     * 设置是否需要获取路由策略信息，默认获取，当控制台不需要拉取路由策略信息时，改为False。
+                     * @param _needRouterInfo 是否需要获取路由策略信息，默认获取，当控制台不需要拉取路由策略信息时，改为False。
+                     * 
+                     */
+                    void SetNeedRouterInfo(const bool& _needRouterInfo);
+
+                    /**
+                     * 判断参数 NeedRouterInfo 是否已赋值
+                     * @return NeedRouterInfo 是否已赋值
+                     * 
+                     */
+                    bool NeedRouterInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -252,6 +273,12 @@ LOCAL_GATEWAY：本地网关。
                      */
                     std::string m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 是否需要获取路由策略信息，默认获取，当控制台不需要拉取路由策略信息时，改为False。
+                     */
+                    bool m_needRouterInfo;
+                    bool m_needRouterInfoHasBeenSet;
 
                 };
             }

@@ -35,7 +35,8 @@ DescribeDBPriceRequest::DescribeDBPriceRequest() :
     m_instanceNodesHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_ladderHasBeenSet(false)
+    m_ladderHasBeenSet(false),
+    m_diskTypeHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,14 @@ string DescribeDBPriceRequest::ToJsonString() const
         string key = "Ladder";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ladder, allocator);
+    }
+
+    if (m_diskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -364,6 +373,22 @@ void DescribeDBPriceRequest::SetLadder(const uint64_t& _ladder)
 bool DescribeDBPriceRequest::LadderHasBeenSet() const
 {
     return m_ladderHasBeenSet;
+}
+
+string DescribeDBPriceRequest::GetDiskType() const
+{
+    return m_diskType;
+}
+
+void DescribeDBPriceRequest::SetDiskType(const string& _diskType)
+{
+    m_diskType = _diskType;
+    m_diskTypeHasBeenSet = true;
+}
+
+bool DescribeDBPriceRequest::DiskTypeHasBeenSet() const
+{
+    return m_diskTypeHasBeenSet;
 }
 
 

@@ -26,7 +26,8 @@ CreateTaskFolderRequest::CreateTaskFolderRequest() :
     m_projectIdHasBeenSet(false),
     m_folderNameHasBeenSet(false),
     m_workflowIdHasBeenSet(false),
-    m_parentFolderIdHasBeenSet(false)
+    m_parentFolderIdHasBeenSet(false),
+    m_taskNodeTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string CreateTaskFolderRequest::ToJsonString() const
         string key = "ParentFolderId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_parentFolderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskNodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskNodeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskNodeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void CreateTaskFolderRequest::SetParentFolderId(const string& _parentFolderId)
 bool CreateTaskFolderRequest::ParentFolderIdHasBeenSet() const
 {
     return m_parentFolderIdHasBeenSet;
+}
+
+string CreateTaskFolderRequest::GetTaskNodeType() const
+{
+    return m_taskNodeType;
+}
+
+void CreateTaskFolderRequest::SetTaskNodeType(const string& _taskNodeType)
+{
+    m_taskNodeType = _taskNodeType;
+    m_taskNodeTypeHasBeenSet = true;
+}
+
+bool CreateTaskFolderRequest::TaskNodeTypeHasBeenSet() const
+{
+    return m_taskNodeTypeHasBeenSet;
 }
 
 

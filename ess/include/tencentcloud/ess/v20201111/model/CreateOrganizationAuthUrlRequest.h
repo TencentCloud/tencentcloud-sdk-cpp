@@ -558,6 +558,39 @@ namespace TencentCloud
                      */
                     bool EndpointHasBeenSet() const;
 
+                    /**
+                     * 获取指定企业初始化引导，现在可以配置如下的选项：
+
+<b>1</b>: 启用此选项后，在企业认证的最终步骤将添加创建印章的引导。如下图的位置
+![image](https://qcloudimg.tencent-cloud.cn/raw/88e0b45095a5c589de8995462ad755dc.jpg)
+                     * @return Initialization 指定企业初始化引导，现在可以配置如下的选项：
+
+<b>1</b>: 启用此选项后，在企业认证的最终步骤将添加创建印章的引导。如下图的位置
+![image](https://qcloudimg.tencent-cloud.cn/raw/88e0b45095a5c589de8995462ad755dc.jpg)
+                     * 
+                     */
+                    std::vector<uint64_t> GetInitialization() const;
+
+                    /**
+                     * 设置指定企业初始化引导，现在可以配置如下的选项：
+
+<b>1</b>: 启用此选项后，在企业认证的最终步骤将添加创建印章的引导。如下图的位置
+![image](https://qcloudimg.tencent-cloud.cn/raw/88e0b45095a5c589de8995462ad755dc.jpg)
+                     * @param _initialization 指定企业初始化引导，现在可以配置如下的选项：
+
+<b>1</b>: 启用此选项后，在企业认证的最终步骤将添加创建印章的引导。如下图的位置
+![image](https://qcloudimg.tencent-cloud.cn/raw/88e0b45095a5c589de8995462ad755dc.jpg)
+                     * 
+                     */
+                    void SetInitialization(const std::vector<uint64_t>& _initialization);
+
+                    /**
+                     * 判断参数 Initialization 是否已赋值
+                     * @return Initialization 是否已赋值
+                     * 
+                     */
+                    bool InitializationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -702,6 +735,15 @@ namespace TencentCloud
                      */
                     std::string m_endpoint;
                     bool m_endpointHasBeenSet;
+
+                    /**
+                     * 指定企业初始化引导，现在可以配置如下的选项：
+
+<b>1</b>: 启用此选项后，在企业认证的最终步骤将添加创建印章的引导。如下图的位置
+![image](https://qcloudimg.tencent-cloud.cn/raw/88e0b45095a5c589de8995462ad755dc.jpg)
+                     */
+                    std::vector<uint64_t> m_initialization;
+                    bool m_initializationHasBeenSet;
 
                 };
             }

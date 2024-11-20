@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC实例ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId VPC实例ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId VPC实例ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取云服务器实例唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 云服务器实例唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置云服务器实例唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 云服务器实例唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * VPC实例ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 云服务器实例唯一ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

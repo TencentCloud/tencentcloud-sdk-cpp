@@ -513,3 +513,132 @@ TkeClient::ModifyNodePoolOutcomeCallable TkeClient::ModifyNodePoolCallable(const
     return task->get_future();
 }
 
+TkeClient::RebootMachinesOutcome TkeClient::RebootMachines(const RebootMachinesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RebootMachines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RebootMachinesResponse rsp = RebootMachinesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RebootMachinesOutcome(rsp);
+        else
+            return RebootMachinesOutcome(o.GetError());
+    }
+    else
+    {
+        return RebootMachinesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::RebootMachinesAsync(const RebootMachinesRequest& request, const RebootMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RebootMachines(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::RebootMachinesOutcomeCallable TkeClient::RebootMachinesCallable(const RebootMachinesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RebootMachinesOutcome()>>(
+        [this, request]()
+        {
+            return this->RebootMachines(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::StartMachinesOutcome TkeClient::StartMachines(const StartMachinesRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartMachines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartMachinesResponse rsp = StartMachinesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartMachinesOutcome(rsp);
+        else
+            return StartMachinesOutcome(o.GetError());
+    }
+    else
+    {
+        return StartMachinesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::StartMachinesAsync(const StartMachinesRequest& request, const StartMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartMachines(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::StartMachinesOutcomeCallable TkeClient::StartMachinesCallable(const StartMachinesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartMachinesOutcome()>>(
+        [this, request]()
+        {
+            return this->StartMachines(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::StopMachinesOutcome TkeClient::StopMachines(const StopMachinesRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopMachines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopMachinesResponse rsp = StopMachinesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopMachinesOutcome(rsp);
+        else
+            return StopMachinesOutcome(o.GetError());
+    }
+    else
+    {
+        return StopMachinesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::StopMachinesAsync(const StopMachinesRequest& request, const StopMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopMachines(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::StopMachinesOutcomeCallable TkeClient::StopMachinesCallable(const StopMachinesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopMachinesOutcome()>>(
+        [this, request]()
+        {
+            return this->StopMachines(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

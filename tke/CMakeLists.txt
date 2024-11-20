@@ -20,6 +20,7 @@ set(tke_public_header
   )
 
 set(tke_public_header_model
+  include/tencentcloud/tke/v20220501/model/StartMachinesResponse.h
   include/tencentcloud/tke/v20220501/model/NativeNodeInfo.h
   include/tencentcloud/tke/v20220501/model/HealthCheckTemplateRule.h
   include/tencentcloud/tke/v20220501/model/HealthCheckPolicyRule.h
@@ -41,19 +42,23 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/CreateHealthCheckPolicyRequest.h
   include/tencentcloud/tke/v20220501/model/InstanceExtraArgs.h
   include/tencentcloud/tke/v20220501/model/MachineUpgradeSettings.h
-  include/tencentcloud/tke/v20220501/model/UpdateNativeNodePoolParam.h
+  include/tencentcloud/tke/v20220501/model/StartMachinesRequest.h
+  include/tencentcloud/tke/v20220501/model/RebootMachinesResponse.h
   include/tencentcloud/tke/v20220501/model/InstanceChargePrepaid.h
   include/tencentcloud/tke/v20220501/model/DeleteNodePoolResponse.h
   include/tencentcloud/tke/v20220501/model/Tag.h
   include/tencentcloud/tke/v20220501/model/MachineSetScaling.h
   include/tencentcloud/tke/v20220501/model/ModifyNodePoolRequest.h
+  include/tencentcloud/tke/v20220501/model/UpdateNativeNodePoolParam.h
   include/tencentcloud/tke/v20220501/model/Annotation.h
   include/tencentcloud/tke/v20220501/model/DescribeClusterInstancesRequest.h
   include/tencentcloud/tke/v20220501/model/DeleteHealthCheckPolicyResponse.h
   include/tencentcloud/tke/v20220501/model/TagSpecification.h
   include/tencentcloud/tke/v20220501/model/LifecycleConfig.h
+  include/tencentcloud/tke/v20220501/model/RebootMachinesRequest.h
   include/tencentcloud/tke/v20220501/model/ModifyNodePoolResponse.h
   include/tencentcloud/tke/v20220501/model/RegularNodePoolInfo.h
+  include/tencentcloud/tke/v20220501/model/StopMachinesRequest.h
   include/tencentcloud/tke/v20220501/model/Taint.h
   include/tencentcloud/tke/v20220501/model/Filter.h
   include/tencentcloud/tke/v20220501/model/DescribeHealthCheckPoliciesRequest.h
@@ -68,6 +73,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/InstanceAdvancedSettings.h
   include/tencentcloud/tke/v20220501/model/IntOrString.h
   include/tencentcloud/tke/v20220501/model/ExternalNodePoolInfo.h
+  include/tencentcloud/tke/v20220501/model/StopMachinesResponse.h
   include/tencentcloud/tke/v20220501/model/DescribeHealthCheckTemplateRequest.h
   include/tencentcloud/tke/v20220501/model/DescribeHealthCheckPoliciesResponse.h
   include/tencentcloud/tke/v20220501/model/HealthCheckTemplate.h
@@ -720,6 +726,7 @@ set(tke_public_header_model
 set(tke_src
   src/v20220501/TkeClient.cpp
   src/v20180525/TkeClient.cpp
+  src/v20220501/model/StartMachinesResponse.cpp
   src/v20220501/model/NativeNodeInfo.cpp
   src/v20220501/model/HealthCheckTemplateRule.cpp
   src/v20220501/model/HealthCheckPolicyRule.cpp
@@ -741,19 +748,23 @@ set(tke_src
   src/v20220501/model/CreateHealthCheckPolicyRequest.cpp
   src/v20220501/model/InstanceExtraArgs.cpp
   src/v20220501/model/MachineUpgradeSettings.cpp
-  src/v20220501/model/UpdateNativeNodePoolParam.cpp
+  src/v20220501/model/StartMachinesRequest.cpp
+  src/v20220501/model/RebootMachinesResponse.cpp
   src/v20220501/model/InstanceChargePrepaid.cpp
   src/v20220501/model/DeleteNodePoolResponse.cpp
   src/v20220501/model/Tag.cpp
   src/v20220501/model/MachineSetScaling.cpp
   src/v20220501/model/ModifyNodePoolRequest.cpp
+  src/v20220501/model/UpdateNativeNodePoolParam.cpp
   src/v20220501/model/Annotation.cpp
   src/v20220501/model/DescribeClusterInstancesRequest.cpp
   src/v20220501/model/DeleteHealthCheckPolicyResponse.cpp
   src/v20220501/model/TagSpecification.cpp
   src/v20220501/model/LifecycleConfig.cpp
+  src/v20220501/model/RebootMachinesRequest.cpp
   src/v20220501/model/ModifyNodePoolResponse.cpp
   src/v20220501/model/RegularNodePoolInfo.cpp
+  src/v20220501/model/StopMachinesRequest.cpp
   src/v20220501/model/Taint.cpp
   src/v20220501/model/Filter.cpp
   src/v20220501/model/DescribeHealthCheckPoliciesRequest.cpp
@@ -768,6 +779,7 @@ set(tke_src
   src/v20220501/model/InstanceAdvancedSettings.cpp
   src/v20220501/model/IntOrString.cpp
   src/v20220501/model/ExternalNodePoolInfo.cpp
+  src/v20220501/model/StopMachinesResponse.cpp
   src/v20220501/model/DescribeHealthCheckTemplateRequest.cpp
   src/v20220501/model/DescribeHealthCheckPoliciesResponse.cpp
   src/v20220501/model/HealthCheckTemplate.cpp

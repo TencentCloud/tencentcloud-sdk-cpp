@@ -26,7 +26,8 @@ DescribeRouteTablesRequest::DescribeRouteTablesRequest() :
     m_filtersHasBeenSet(false),
     m_routeTableIdsHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_needRouterInfoHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,14 @@ string DescribeRouteTablesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_limit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needRouterInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedRouterInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needRouterInfo, allocator);
     }
 
 
@@ -151,6 +160,22 @@ void DescribeRouteTablesRequest::SetLimit(const string& _limit)
 bool DescribeRouteTablesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+bool DescribeRouteTablesRequest::GetNeedRouterInfo() const
+{
+    return m_needRouterInfo;
+}
+
+void DescribeRouteTablesRequest::SetNeedRouterInfo(const bool& _needRouterInfo)
+{
+    m_needRouterInfo = _needRouterInfo;
+    m_needRouterInfoHasBeenSet = true;
+}
+
+bool DescribeRouteTablesRequest::NeedRouterInfoHasBeenSet() const
+{
+    return m_needRouterInfoHasBeenSet;
 }
 
 

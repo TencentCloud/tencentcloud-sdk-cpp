@@ -1397,7 +1397,7 @@ namespace TencentCloud
                 ModifyParamTemplateOutcomeCallable ModifyParamTemplateCallable(const Model::ModifyParamTemplateRequest& request);
 
                 /**
-                 *修改复制组信息
+                 *本接口（ModifyReplicationGroup）用于修改复制组信息。
                  * @param req ModifyReplicationGroupRequest
                  * @return ModifyReplicationGroupOutcome
                  */

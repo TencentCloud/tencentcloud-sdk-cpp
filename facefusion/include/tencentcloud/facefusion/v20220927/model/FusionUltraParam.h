@@ -51,12 +51,10 @@ namespace TencentCloud
 取值范围：0-1之间。默认取值0.7。
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WarpRadio 拉脸强度。主要用于调整生成结果人脸脸型更像素材模板还是用户人脸。取值越大越像用户人脸。
 取值范围：0-1之间。默认取值0.7。
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetWarpRadio() const;
@@ -66,12 +64,10 @@ namespace TencentCloud
 取值范围：0-1之间。默认取值0.7。
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _warpRadio 拉脸强度。主要用于调整生成结果人脸脸型更像素材模板还是用户人脸。取值越大越像用户人脸。
 取值范围：0-1之间。默认取值0.7。
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWarpRadio(const double& _warpRadio);
@@ -88,12 +84,10 @@ namespace TencentCloud
 取值范围：0-1之间。默认取值1。
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnhanceRadio 人脸增强强度。对整个人脸进行增强，增加清晰度，改善质量。当生成的人脸不够清晰，质感不够好的时候可以设置。取值越大增强强度越大。
 取值范围：0-1之间。默认取值1。
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetEnhanceRadio() const;
@@ -103,12 +97,10 @@ namespace TencentCloud
 取值范围：0-1之间。默认取值1。
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enhanceRadio 人脸增强强度。对整个人脸进行增强，增加清晰度，改善质量。当生成的人脸不够清晰，质感不够好的时候可以设置。取值越大增强强度越大。
 取值范围：0-1之间。默认取值1。
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnhanceRadio(const double& _enhanceRadio);
@@ -125,12 +117,10 @@ namespace TencentCloud
 取值范围：0-1之间。默认取值1。
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MpRadio 磨皮强度。当生成脸的图像面部显脏时，可进行设置。
 取值范围：0-1之间。默认取值1。
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMpRadio() const;
@@ -140,12 +130,10 @@ namespace TencentCloud
 取值范围：0-1之间。默认取值1。
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mpRadio 磨皮强度。当生成脸的图像面部显脏时，可进行设置。
 取值范围：0-1之间。默认取值1。
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMpRadio(const double& _mpRadio);
@@ -162,12 +150,10 @@ namespace TencentCloud
 当生成人脸比较清晰时，将人脸模糊到接近模板的清晰度的程度
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BlurRadio 人脸模糊开关（暂不支持）
 当生成人脸比较清晰时，将人脸模糊到接近模板的清晰度的程度
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetBlurRadio() const;
@@ -177,12 +163,10 @@ namespace TencentCloud
 当生成人脸比较清晰时，将人脸模糊到接近模板的清晰度的程度
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _blurRadio 人脸模糊开关（暂不支持）
 当生成人脸比较清晰时，将人脸模糊到接近模板的清晰度的程度
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBlurRadio(const double& _blurRadio);
@@ -200,13 +184,11 @@ namespace TencentCloud
 0：牙齿增强关闭
 1：牙齿增强打开
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TeethEnhanceRadio 牙齿增强开关，默认取值为1
 牙齿增强，修复牙齿。当生成牙齿不好（如牙齿裂开）可以打开此开关
 0：牙齿增强关闭
 1：牙齿增强打开
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTeethEnhanceRadio() const;
@@ -217,13 +199,11 @@ namespace TencentCloud
 0：牙齿增强关闭
 1：牙齿增强打开
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _teethEnhanceRadio 牙齿增强开关，默认取值为1
 牙齿增强，修复牙齿。当生成牙齿不好（如牙齿裂开）可以打开此开关
 0：牙齿增强关闭
 1：牙齿增强打开
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTeethEnhanceRadio(const double& _teethEnhanceRadio);
@@ -242,7 +222,6 @@ namespace TencentCloud
 取值范围：0-1之间。默认取值0.7。
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_warpRadio;
                     bool m_warpRadioHasBeenSet;
@@ -252,7 +231,6 @@ namespace TencentCloud
 取值范围：0-1之间。默认取值1。
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_enhanceRadio;
                     bool m_enhanceRadioHasBeenSet;
@@ -262,7 +240,6 @@ namespace TencentCloud
 取值范围：0-1之间。默认取值1。
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_mpRadio;
                     bool m_mpRadioHasBeenSet;
@@ -272,7 +249,6 @@ namespace TencentCloud
 当生成人脸比较清晰时，将人脸模糊到接近模板的清晰度的程度
 
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_blurRadio;
                     bool m_blurRadioHasBeenSet;
@@ -283,7 +259,6 @@ namespace TencentCloud
 0：牙齿增强关闭
 1：牙齿增强打开
 该参数仅对SwapModelType（模型类型）取值1-5生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_teethEnhanceRadio;
                     bool m_teethEnhanceRadioHasBeenSet;

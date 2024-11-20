@@ -2233,6 +2233,135 @@ LiveClient::DescribeCallbackRecordsListOutcomeCallable LiveClient::DescribeCallb
     return task->get_future();
 }
 
+LiveClient::DescribeCasterListOutcome LiveClient::DescribeCasterList(const DescribeCasterListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCasterList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCasterListResponse rsp = DescribeCasterListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCasterListOutcome(rsp);
+        else
+            return DescribeCasterListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCasterListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeCasterListAsync(const DescribeCasterListRequest& request, const DescribeCasterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCasterList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeCasterListOutcomeCallable LiveClient::DescribeCasterListCallable(const DescribeCasterListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCasterListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCasterList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeCasterTransitionTypesOutcome LiveClient::DescribeCasterTransitionTypes(const DescribeCasterTransitionTypesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCasterTransitionTypes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCasterTransitionTypesResponse rsp = DescribeCasterTransitionTypesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCasterTransitionTypesOutcome(rsp);
+        else
+            return DescribeCasterTransitionTypesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCasterTransitionTypesOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeCasterTransitionTypesAsync(const DescribeCasterTransitionTypesRequest& request, const DescribeCasterTransitionTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCasterTransitionTypes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeCasterTransitionTypesOutcomeCallable LiveClient::DescribeCasterTransitionTypesCallable(const DescribeCasterTransitionTypesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCasterTransitionTypesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCasterTransitionTypes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeCasterUserStatusOutcome LiveClient::DescribeCasterUserStatus(const DescribeCasterUserStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCasterUserStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCasterUserStatusResponse rsp = DescribeCasterUserStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCasterUserStatusOutcome(rsp);
+        else
+            return DescribeCasterUserStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCasterUserStatusOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeCasterUserStatusAsync(const DescribeCasterUserStatusRequest& request, const DescribeCasterUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCasterUserStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeCasterUserStatusOutcomeCallable LiveClient::DescribeCasterUserStatusCallable(const DescribeCasterUserStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCasterUserStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCasterUserStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeConcurrentRecordStreamNumOutcome LiveClient::DescribeConcurrentRecordStreamNum(const DescribeConcurrentRecordStreamNumRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeConcurrentRecordStreamNum");

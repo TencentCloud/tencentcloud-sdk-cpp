@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取任务 ID。可获取**taskId**，通过接口 **DescribeTaskInfo **查询任务执行状态。
-                     * @return TaskId 任务 ID。可获取**taskId**，通过接口 **DescribeTaskInfo **查询任务执行状态。
+                     * 获取任务 ID。获取**taskId**，通过接口 [DescribeTaskInfo](https://cloud.tencent.com/document/product/239/30601) 查询任务执行状态。
+                     * @return TaskId 任务 ID。获取**taskId**，通过接口 [DescribeTaskInfo](https://cloud.tencent.com/document/product/239/30601) 查询任务执行状态。
                      * 
                      */
                     int64_t GetTaskId() const;
@@ -140,7 +140,7 @@ namespace TencentCloud
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 任务 ID。可获取**taskId**，通过接口 **DescribeTaskInfo **查询任务执行状态。
+                     * 任务 ID。获取**taskId**，通过接口 [DescribeTaskInfo](https://cloud.tencent.com/document/product/239/30601) 查询任务执行状态。
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;

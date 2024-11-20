@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。
-                     * @return InstanceId 实例 ID。
+                     * 获取实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @return InstanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。
-                     * @param _instanceId 实例 ID。
+                     * 设置实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @param _instanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -122,15 +122,27 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取指修改后的私有网络 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
-                     * @return VpcId 指修改后的私有网络 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+                     * 获取指修改后的私有网络 ID。
+- 当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+- 请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)，切换至**实例详情**页面，在**网络信息**区域，单击所属网络后面的私有网络名称，获取私有网络 ID。
+
+                     * @return VpcId 指修改后的私有网络 ID。
+- 当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+- 请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)，切换至**实例详情**页面，在**网络信息**区域，单击所属网络后面的私有网络名称，获取私有网络 ID。
+
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置指修改后的私有网络 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
-                     * @param _vpcId 指修改后的私有网络 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+                     * 设置指修改后的私有网络 ID。
+- 当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+- 请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)，切换至**实例详情**页面，在**网络信息**区域，单击所属网络后面的私有网络名称，获取私有网络 ID。
+
+                     * @param _vpcId 指修改后的私有网络 ID。
+- 当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+- 请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)，切换至**实例详情**页面，在**网络信息**区域，单击所属网络后面的私有网络名称，获取私有网络 ID。
+
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -143,15 +155,23 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取指修改后的私有网络所属子网 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
-                     * @return SubnetId 指修改后的私有网络所属子网 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+                     * 获取指修改后的私有网络所属子网 ID。
+- 当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+- 请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)，切换至**实例详情**页面，在**网络信息**区域，单击所属网络后面的子网名称，获取子网ID。
+                     * @return SubnetId 指修改后的私有网络所属子网 ID。
+- 当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+- 请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)，切换至**实例详情**页面，在**网络信息**区域，单击所属网络后面的子网名称，获取子网ID。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置指修改后的私有网络所属子网 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
-                     * @param _subnetId 指修改后的私有网络所属子网 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+                     * 设置指修改后的私有网络所属子网 ID。
+- 当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+- 请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)，切换至**实例详情**页面，在**网络信息**区域，单击所属网络后面的子网名称，获取子网ID。
+                     * @param _subnetId 指修改后的私有网络所属子网 ID。
+- 当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+- 请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)，切换至**实例详情**页面，在**网络信息**区域，单击所属网络后面的子网名称，获取子网ID。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -167,12 +187,10 @@ namespace TencentCloud
                      * 获取原内网 IPv4 地址保留时长。
 - 单位：天。
 - 取值范围：0、1、2、3、7、15。
-
 **说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。
                      * @return Recycle 原内网 IPv4 地址保留时长。
 - 单位：天。
 - 取值范围：0、1、2、3、7、15。
-
 **说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。
                      * 
                      */
@@ -182,12 +200,10 @@ namespace TencentCloud
                      * 设置原内网 IPv4 地址保留时长。
 - 单位：天。
 - 取值范围：0、1、2、3、7、15。
-
 **说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。
                      * @param _recycle 原内网 IPv4 地址保留时长。
 - 单位：天。
 - 取值范围：0、1、2、3、7、15。
-
 **说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。
                      * 
                      */
@@ -224,7 +240,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。
+                     * 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -246,13 +262,18 @@ namespace TencentCloud
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 指修改后的私有网络 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+                     * 指修改后的私有网络 ID。
+- 当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+- 请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)，切换至**实例详情**页面，在**网络信息**区域，单击所属网络后面的私有网络名称，获取私有网络 ID。
+
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 指修改后的私有网络所属子网 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+                     * 指修改后的私有网络所属子网 ID。
+- 当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+- 请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)，切换至**实例详情**页面，在**网络信息**区域，单击所属网络后面的子网名称，获取子网ID。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -261,7 +282,6 @@ namespace TencentCloud
                      * 原内网 IPv4 地址保留时长。
 - 单位：天。
 - 取值范围：0、1、2、3、7、15。
-
 **说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。
                      */
                     int64_t m_recycle;

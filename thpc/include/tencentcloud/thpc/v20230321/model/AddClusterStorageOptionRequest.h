@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群存储选项。
-                     * @return StorageOption 集群存储选项。
+                     * 获取集群存储选项；集群已存在的节点和新增节点都会挂载此存储。
+                     * @return StorageOption 集群存储选项；集群已存在的节点和新增节点都会挂载此存储。
                      * 
                      */
                     StorageOption GetStorageOption() const;
 
                     /**
-                     * 设置集群存储选项。
-                     * @param _storageOption 集群存储选项。
+                     * 设置集群存储选项；集群已存在的节点和新增节点都会挂载此存储。
+                     * @param _storageOption 集群存储选项；集群已存在的节点和新增节点都会挂载此存储。
                      * 
                      */
                     void SetStorageOption(const StorageOption& _storageOption);
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群存储选项。
+                     * 集群存储选项；集群已存在的节点和新增节点都会挂载此存储。
                      */
                     StorageOption m_storageOption;
                     bool m_storageOptionHasBeenSet;

@@ -41,7 +41,8 @@ CreateOrganizationAuthUrlRequest::CreateOrganizationAuthUrlRequest() :
     m_adminMobileSameHasBeenSet(false),
     m_organizationNameSameHasBeenSet(false),
     m_businessLicenseHasBeenSet(false),
-    m_endpointHasBeenSet(false)
+    m_endpointHasBeenSet(false),
+    m_initializationHasBeenSet(false)
 {
 }
 
@@ -208,6 +209,19 @@ string CreateOrganizationAuthUrlRequest::ToJsonString() const
         string key = "Endpoint";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_initializationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Initialization";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_initialization.begin(); itr != m_initialization.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 
@@ -520,6 +534,22 @@ void CreateOrganizationAuthUrlRequest::SetEndpoint(const string& _endpoint)
 bool CreateOrganizationAuthUrlRequest::EndpointHasBeenSet() const
 {
     return m_endpointHasBeenSet;
+}
+
+vector<uint64_t> CreateOrganizationAuthUrlRequest::GetInitialization() const
+{
+    return m_initialization;
+}
+
+void CreateOrganizationAuthUrlRequest::SetInitialization(const vector<uint64_t>& _initialization)
+{
+    m_initialization = _initialization;
+    m_initializationHasBeenSet = true;
+}
+
+bool CreateOrganizationAuthUrlRequest::InitializationHasBeenSet() const
+{
+    return m_initializationHasBeenSet;
 }
 
 
