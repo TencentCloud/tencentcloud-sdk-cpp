@@ -27,6 +27,7 @@
 #include <tencentcloud/mps/v20190612/model/CreateOutputSRTSettings.h>
 #include <tencentcloud/mps/v20190612/model/CreateOutputRTMPSettings.h>
 #include <tencentcloud/mps/v20190612/model/CreateOutputInfoRTPSettings.h>
+#include <tencentcloud/mps/v20190612/model/CreateOutputRistSettings.h>
 
 
 namespace TencentCloud
@@ -92,15 +93,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取输出协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
-                     * @return Protocol 输出协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
+                     * 获取输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。
+                     * @return Protocol 输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置输出协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
-                     * @param _protocol 输出协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
+                     * 设置输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。
+                     * @param _protocol 输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -284,6 +285,48 @@ namespace TencentCloud
                      */
                     bool ZonesHasBeenSet() const;
 
+                    /**
+                     * 获取输出类型：Internet/TencentCSS/StreamLive
+                     * @return OutputType 输出类型：Internet/TencentCSS/StreamLive
+                     * 
+                     */
+                    std::string GetOutputType() const;
+
+                    /**
+                     * 设置输出类型：Internet/TencentCSS/StreamLive
+                     * @param _outputType 输出类型：Internet/TencentCSS/StreamLive
+                     * 
+                     */
+                    void SetOutputType(const std::string& _outputType);
+
+                    /**
+                     * 判断参数 OutputType 是否已赋值
+                     * @return OutputType 是否已赋值
+                     * 
+                     */
+                    bool OutputTypeHasBeenSet() const;
+
+                    /**
+                     * 获取输出的RIST的配置。
+                     * @return RISTSettings 输出的RIST的配置。
+                     * 
+                     */
+                    CreateOutputRistSettings GetRISTSettings() const;
+
+                    /**
+                     * 设置输出的RIST的配置。
+                     * @param _rISTSettings 输出的RIST的配置。
+                     * 
+                     */
+                    void SetRISTSettings(const CreateOutputRistSettings& _rISTSettings);
+
+                    /**
+                     * 判断参数 RISTSettings 是否已赋值
+                     * @return RISTSettings 是否已赋值
+                     * 
+                     */
+                    bool RISTSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -299,7 +342,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 输出协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
+                     * 输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -352,6 +395,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
+
+                    /**
+                     * 输出类型：Internet/TencentCSS/StreamLive
+                     */
+                    std::string m_outputType;
+                    bool m_outputTypeHasBeenSet;
+
+                    /**
+                     * 输出的RIST的配置。
+                     */
+                    CreateOutputRistSettings m_rISTSettings;
+                    bool m_rISTSettingsHasBeenSet;
 
                 };
             }

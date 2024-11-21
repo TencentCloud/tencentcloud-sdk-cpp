@@ -73,15 +73,19 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
-                     * 获取反向提示词。 推荐使用中文。最多可传1024个 utf-8 字符。
-                     * @return NegativePrompt 反向提示词。 推荐使用中文。最多可传1024个 utf-8 字符。
+                     * 获取反向提示词。 
+推荐使用中文。最多可传1024个 utf-8 字符。
+                     * @return NegativePrompt 反向提示词。 
+推荐使用中文。最多可传1024个 utf-8 字符。
                      * 
                      */
                     std::string GetNegativePrompt() const;
 
                     /**
-                     * 设置反向提示词。 推荐使用中文。最多可传1024个 utf-8 字符。
-                     * @param _negativePrompt 反向提示词。 推荐使用中文。最多可传1024个 utf-8 字符。
+                     * 设置反向提示词。 
+推荐使用中文。最多可传1024个 utf-8 字符。
+                     * @param _negativePrompt 反向提示词。 
+推荐使用中文。最多可传1024个 utf-8 字符。
                      * 
                      */
                     void SetNegativePrompt(const std::string& _negativePrompt);
@@ -307,7 +311,8 @@ namespace TencentCloud
                     bool m_promptHasBeenSet;
 
                     /**
-                     * 反向提示词。 推荐使用中文。最多可传1024个 utf-8 字符。
+                     * 反向提示词。 
+推荐使用中文。最多可传1024个 utf-8 字符。
                      */
                     std::string m_negativePrompt;
                     bool m_negativePromptHasBeenSet;

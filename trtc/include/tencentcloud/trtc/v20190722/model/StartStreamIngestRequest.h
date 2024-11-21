@@ -362,6 +362,27 @@ namespace TencentCloud
                      */
                     bool MaxDurationHasBeenSet() const;
 
+                    /**
+                     * 获取音量，取值范围[0, 100]，默认100，表示原音量。
+                     * @return Volume 音量，取值范围[0, 100]，默认100，表示原音量。
+                     * 
+                     */
+                    uint64_t GetVolume() const;
+
+                    /**
+                     * 设置音量，取值范围[0, 100]，默认100，表示原音量。
+                     * @param _volume 音量，取值范围[0, 100]，默认100，表示原音量。
+                     * 
+                     */
+                    void SetVolume(const uint64_t& _volume);
+
+                    /**
+                     * 判断参数 Volume 是否已赋值
+                     * @return Volume 是否已赋值
+                     * 
+                     */
+                    bool VolumeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -453,6 +474,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxDuration;
                     bool m_maxDurationHasBeenSet;
+
+                    /**
+                     * 音量，取值范围[0, 100]，默认100，表示原音量。
+                     */
+                    uint64_t m_volume;
+                    bool m_volumeHasBeenSet;
 
                 };
             }

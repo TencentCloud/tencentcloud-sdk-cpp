@@ -30,6 +30,7 @@
 #include <tencentcloud/mps/v20190612/model/CreateInputRTSPPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/CreateInputHLSPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/ResilientStreamConf.h>
+#include <tencentcloud/mps/v20190612/model/CreateInputRISTSettings.h>
 
 
 namespace TencentCloud
@@ -179,11 +180,11 @@ namespace TencentCloud
                     bool RTPSettingsHasBeenSet() const;
 
                     /**
-                     * 获取输入的协议，可选[SRT|RTP|RTMP]。
+                     * 获取输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。
 当输出包含RTP时，输入只能是RTP。
 当输出包含RTMP时，输入可以是SRT/RTMP。
 当输出包含SRT时，输入只能是SRT。
-                     * @return Protocol 输入的协议，可选[SRT|RTP|RTMP]。
+                     * @return Protocol 输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。
 当输出包含RTP时，输入只能是RTP。
 当输出包含RTMP时，输入可以是SRT/RTMP。
 当输出包含SRT时，输入只能是SRT。
@@ -192,11 +193,11 @@ namespace TencentCloud
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置输入的协议，可选[SRT|RTP|RTMP]。
+                     * 设置输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。
 当输出包含RTP时，输入只能是RTP。
 当输出包含RTMP时，输入可以是SRT/RTMP。
 当输出包含SRT时，输入只能是SRT。
-                     * @param _protocol 输入的协议，可选[SRT|RTP|RTMP]。
+                     * @param _protocol 输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。
 当输出包含RTP时，输入只能是RTP。
 当输出包含RTMP时，输入可以是SRT/RTMP。
 当输出包含SRT时，输入只能是SRT。
@@ -358,6 +359,48 @@ namespace TencentCloud
                      */
                     bool ZonesHasBeenSet() const;
 
+                    /**
+                     * 获取RIST的配置信息。
+                     * @return RISTSettings RIST的配置信息。
+                     * 
+                     */
+                    CreateInputRISTSettings GetRISTSettings() const;
+
+                    /**
+                     * 设置RIST的配置信息。
+                     * @param _rISTSettings RIST的配置信息。
+                     * 
+                     */
+                    void SetRISTSettings(const CreateInputRISTSettings& _rISTSettings);
+
+                    /**
+                     * 判断参数 RISTSettings 是否已赋值
+                     * @return RISTSettings 是否已赋值
+                     * 
+                     */
+                    bool RISTSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取输入节点的地区
+                     * @return InputRegion 输入节点的地区
+                     * 
+                     */
+                    std::string GetInputRegion() const;
+
+                    /**
+                     * 设置输入节点的地区
+                     * @param _inputRegion 输入节点的地区
+                     * 
+                     */
+                    void SetInputRegion(const std::string& _inputRegion);
+
+                    /**
+                     * 判断参数 InputRegion 是否已赋值
+                     * @return InputRegion 是否已赋值
+                     * 
+                     */
+                    bool InputRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -397,7 +440,7 @@ namespace TencentCloud
                     bool m_rTPSettingsHasBeenSet;
 
                     /**
-                     * 输入的协议，可选[SRT|RTP|RTMP]。
+                     * 输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。
 当输出包含RTP时，输入只能是RTP。
 当输出包含RTMP时，输入可以是SRT/RTMP。
 当输出包含SRT时，输入只能是SRT。
@@ -446,6 +489,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
+
+                    /**
+                     * RIST的配置信息。
+                     */
+                    CreateInputRISTSettings m_rISTSettings;
+                    bool m_rISTSettingsHasBeenSet;
+
+                    /**
+                     * 输入节点的地区
+                     */
+                    std::string m_inputRegion;
+                    bool m_inputRegionHasBeenSet;
 
                 };
             }

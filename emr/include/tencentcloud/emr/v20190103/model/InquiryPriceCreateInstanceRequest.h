@@ -370,31 +370,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取场景化取值：
-Hadoop-Kudu
-Hadoop-Zookeeper
-Hadoop-Presto
-Hadoop-Hbase
-                     * @return SceneName 场景化取值：
-Hadoop-Kudu
-Hadoop-Zookeeper
-Hadoop-Presto
-Hadoop-Hbase
+                     * 获取场景化取值：Hadoop-Kudu，Hadoop-Zookeeper，Hadoop-Presto，Hadoop-Hbase
+                     * @return SceneName 场景化取值：Hadoop-Kudu，Hadoop-Zookeeper，Hadoop-Presto，Hadoop-Hbase
                      * 
                      */
                     std::string GetSceneName() const;
 
                     /**
-                     * 设置场景化取值：
-Hadoop-Kudu
-Hadoop-Zookeeper
-Hadoop-Presto
-Hadoop-Hbase
-                     * @param _sceneName 场景化取值：
-Hadoop-Kudu
-Hadoop-Zookeeper
-Hadoop-Presto
-Hadoop-Hbase
+                     * 设置场景化取值：Hadoop-Kudu，Hadoop-Zookeeper，Hadoop-Presto，Hadoop-Hbase
+                     * @param _sceneName 场景化取值：Hadoop-Kudu，Hadoop-Zookeeper，Hadoop-Presto，Hadoop-Hbase
                      * 
                      */
                     void SetSceneName(const std::string& _sceneName);
@@ -562,11 +546,7 @@ Hadoop-Hbase
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 场景化取值：
-Hadoop-Kudu
-Hadoop-Zookeeper
-Hadoop-Presto
-Hadoop-Hbase
+                     * 场景化取值：Hadoop-Kudu，Hadoop-Zookeeper，Hadoop-Presto，Hadoop-Hbase
                      */
                     std::string m_sceneName;
                     bool m_sceneNameHasBeenSet;

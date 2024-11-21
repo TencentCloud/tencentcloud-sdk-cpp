@@ -29,6 +29,7 @@ PrometheusClusterAgentBasic::PrometheusClusterAgentBasic() :
     m_externalLabelsHasBeenSet(false),
     m_notInstallBasicScrapeHasBeenSet(false),
     m_notScrapeHasBeenSet(false),
+    m_dropAllHasBeenSet(false),
     m_openDefaultRecordHasBeenSet(false)
 {
 }
@@ -135,6 +136,16 @@ CoreInternalOutcome PrometheusClusterAgentBasic::Deserialize(const rapidjson::Va
         m_notScrapeHasBeenSet = true;
     }
 
+    if (value.HasMember("DropAll") && !value["DropAll"].IsNull())
+    {
+        if (!value["DropAll"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusClusterAgentBasic.DropAll` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_dropAll = value["DropAll"].GetBool();
+        m_dropAllHasBeenSet = true;
+    }
+
     if (value.HasMember("OpenDefaultRecord") && !value["OpenDefaultRecord"].IsNull())
     {
         if (!value["OpenDefaultRecord"].IsBool())
@@ -222,6 +233,14 @@ void PrometheusClusterAgentBasic::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "NotScrape";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_notScrape, allocator);
+    }
+
+    if (m_dropAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DropAll";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dropAll, allocator);
     }
 
     if (m_openDefaultRecordHasBeenSet)
@@ -361,6 +380,22 @@ void PrometheusClusterAgentBasic::SetNotScrape(const bool& _notScrape)
 bool PrometheusClusterAgentBasic::NotScrapeHasBeenSet() const
 {
     return m_notScrapeHasBeenSet;
+}
+
+bool PrometheusClusterAgentBasic::GetDropAll() const
+{
+    return m_dropAll;
+}
+
+void PrometheusClusterAgentBasic::SetDropAll(const bool& _dropAll)
+{
+    m_dropAll = _dropAll;
+    m_dropAllHasBeenSet = true;
+}
+
+bool PrometheusClusterAgentBasic::DropAllHasBeenSet() const
+{
+    return m_dropAllHasBeenSet;
 }
 
 bool PrometheusClusterAgentBasic::GetOpenDefaultRecord() const

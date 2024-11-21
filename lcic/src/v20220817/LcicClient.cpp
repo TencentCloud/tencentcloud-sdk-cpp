@@ -1459,6 +1459,49 @@ LcicClient::DescribeQuestionListOutcomeCallable LcicClient::DescribeQuestionList
     return task->get_future();
 }
 
+LcicClient::DescribeRecordOutcome LcicClient::DescribeRecord(const DescribeRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordResponse rsp = DescribeRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordOutcome(rsp);
+        else
+            return DescribeRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeRecordAsync(const DescribeRecordRequest& request, const DescribeRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeRecordOutcomeCallable LcicClient::DescribeRecordCallable(const DescribeRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::DescribeRecordStreamOutcome LcicClient::DescribeRecordStream(const DescribeRecordStreamRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRecordStream");
@@ -2577,6 +2620,49 @@ LcicClient::SetWatermarkOutcomeCallable LcicClient::SetWatermarkCallable(const S
     return task->get_future();
 }
 
+LcicClient::StartRecordOutcome LcicClient::StartRecord(const StartRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartRecordResponse rsp = StartRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartRecordOutcome(rsp);
+        else
+            return StartRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return StartRecordOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::StartRecordAsync(const StartRecordRequest& request, const StartRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::StartRecordOutcomeCallable LcicClient::StartRecordCallable(const StartRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->StartRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::StartRoomOutcome LcicClient::StartRoom(const StartRoomRequest &request)
 {
     auto outcome = MakeRequest(request, "StartRoom");
@@ -2613,6 +2699,49 @@ LcicClient::StartRoomOutcomeCallable LcicClient::StartRoomCallable(const StartRo
         [this, request]()
         {
             return this->StartRoom(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::StopRecordOutcome LcicClient::StopRecord(const StopRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopRecordResponse rsp = StopRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopRecordOutcome(rsp);
+        else
+            return StopRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return StopRecordOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::StopRecordAsync(const StopRecordRequest& request, const StopRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::StopRecordOutcomeCallable LcicClient::StopRecordCallable(const StopRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->StopRecord(request);
         }
     );
 

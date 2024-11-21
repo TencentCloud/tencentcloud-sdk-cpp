@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取主机账号私钥，最新长度128字节，最大长度8192字节
-                     * @return PrivateKey 主机账号私钥，最新长度128字节，最大长度8192字节
+                     * 获取主机账号私钥，最小长度128字节，最大长度8192字节
+                     * @return PrivateKey 主机账号私钥，最小长度128字节，最大长度8192字节
                      * 
                      */
                     std::string GetPrivateKey() const;
 
                     /**
-                     * 设置主机账号私钥，最新长度128字节，最大长度8192字节
-                     * @param _privateKey 主机账号私钥，最新长度128字节，最大长度8192字节
+                     * 设置主机账号私钥，最小长度128字节，最大长度8192字节
+                     * @param _privateKey 主机账号私钥，最小长度128字节，最大长度8192字节
                      * 
                      */
                     void SetPrivateKey(const std::string& _privateKey);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 主机账号私钥，最新长度128字节，最大长度8192字节
+                     * 主机账号私钥，最小长度128字节，最大长度8192字节
                      */
                     std::string m_privateKey;
                     bool m_privateKeyHasBeenSet;

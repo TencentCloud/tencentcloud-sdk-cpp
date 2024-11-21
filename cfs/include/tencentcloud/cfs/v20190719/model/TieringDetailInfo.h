@@ -71,6 +71,27 @@ namespace TencentCloud
                      */
                     bool TieringSizeInBytesHasBeenSet() const;
 
+                    /**
+                     * 获取冷存储容量
+                     * @return SecondaryTieringSizeInBytes 冷存储容量
+                     * 
+                     */
+                    int64_t GetSecondaryTieringSizeInBytes() const;
+
+                    /**
+                     * 设置冷存储容量
+                     * @param _secondaryTieringSizeInBytes 冷存储容量
+                     * 
+                     */
+                    void SetSecondaryTieringSizeInBytes(const int64_t& _secondaryTieringSizeInBytes);
+
+                    /**
+                     * 判断参数 SecondaryTieringSizeInBytes 是否已赋值
+                     * @return SecondaryTieringSizeInBytes 是否已赋值
+                     * 
+                     */
+                    bool SecondaryTieringSizeInBytesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +100,12 @@ namespace TencentCloud
                      */
                     int64_t m_tieringSizeInBytes;
                     bool m_tieringSizeInBytesHasBeenSet;
+
+                    /**
+                     * 冷存储容量
+                     */
+                    int64_t m_secondaryTieringSizeInBytes;
+                    bool m_secondaryTieringSizeInBytesHasBeenSet;
 
                 };
             }

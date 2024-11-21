@@ -5396,7 +5396,9 @@ namespace TencentCloud
                 DescribeSecurityEventsCntOutcomeCallable DescribeSecurityEventsCntCallable(const Model::DescribeSecurityEventsCntRequest& request);
 
                 /**
-                 *获取安全防护状态汇总
+                 *接口已无效
+
+获取安全防护状态汇总
                  * @param req DescribeSecurityProtectionStatRequest
                  * @return DescribeSecurityProtectionStatOutcome
                  */

@@ -31,7 +31,8 @@ ModifyOutputInfo::ModifyOutputInfo() :
     m_allowIpListHasBeenSet(false),
     m_maxConcurrentHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_zonesHasBeenSet(false)
+    m_zonesHasBeenSet(false),
+    m_rISTSettingsHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,23 @@ CoreInternalOutcome ModifyOutputInfo::Deserialize(const rapidjson::Value &value)
         m_zonesHasBeenSet = true;
     }
 
+    if (value.HasMember("RISTSettings") && !value["RISTSettings"].IsNull())
+    {
+        if (!value["RISTSettings"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyOutputInfo.RISTSettings` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rISTSettings.Deserialize(value["RISTSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rISTSettingsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -291,6 +309,15 @@ void ModifyOutputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_rISTSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RISTSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rISTSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -470,5 +497,21 @@ void ModifyOutputInfo::SetZones(const vector<string>& _zones)
 bool ModifyOutputInfo::ZonesHasBeenSet() const
 {
     return m_zonesHasBeenSet;
+}
+
+CreateOutputRistSettings ModifyOutputInfo::GetRISTSettings() const
+{
+    return m_rISTSettings;
+}
+
+void ModifyOutputInfo::SetRISTSettings(const CreateOutputRistSettings& _rISTSettings)
+{
+    m_rISTSettings = _rISTSettings;
+    m_rISTSettingsHasBeenSet = true;
+}
+
+bool ModifyOutputInfo::RISTSettingsHasBeenSet() const
+{
+    return m_rISTSettingsHasBeenSet;
 }
 

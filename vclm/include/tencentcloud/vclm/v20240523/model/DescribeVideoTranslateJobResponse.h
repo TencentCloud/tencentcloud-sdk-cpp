@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务状态。 1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。	
-                     * @return JobStatus 任务状态。 1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。	
+                     * 获取任务状态。0: 任务初始化。 1：音频转译中。 2：音频转译失败。 3：音频转译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频转译中。 7：视频转译失败。 8：视频转译成功。	
+                     * @return JobStatus 任务状态。0: 任务初始化。 1：音频转译中。 2：音频转译失败。 3：音频转译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频转译中。 7：视频转译失败。 8：视频转译成功。	
                      * 
                      */
                     int64_t GetJobStatus() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool JobStatusHasBeenSet() const;
 
                     /**
-                     * 获取任务错误码。	
-                     * @return JobErrorCode 任务错误码。	
+                     * 获取本次任务出错的错误码，用来定位问题原因。
+                     * @return JobErrorCode 本次任务出错的错误码，用来定位问题原因。
                      * 
                      */
                     std::string GetJobErrorCode() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool JobErrorCodeHasBeenSet() const;
 
                     /**
-                     * 获取任务错误信息。	
-                     * @return JobErrorMsg 任务错误信息。	
+                     * 获取任务错误信息，错误码出现的原因。
+                     * @return JobErrorMsg 任务错误信息，错误码出现的原因。
                      * 
                      */
                     std::string GetJobErrorMsg() const;
@@ -88,8 +88,8 @@ namespace TencentCloud
                     bool JobErrorMsgHasBeenSet() const;
 
                     /**
-                     * 获取视频翻译结果。	
-                     * @return ResultVideoUrl 视频翻译结果。	
+                     * 获取视频转译生成结果视频url，有效期1天。当JobStatus为8时，该字段返回视频Url。
+                     * @return ResultVideoUrl 视频转译生成结果视频url，有效期1天。当JobStatus为8时，该字段返回视频Url。
                      * 
                      */
                     std::string GetResultVideoUrl() const;
@@ -102,8 +102,10 @@ namespace TencentCloud
                     bool ResultVideoUrlHasBeenSet() const;
 
                     /**
-                     * 获取音频翻译结果。	
-                     * @return TranslateResults 音频翻译结果。	
+                     * 获取音频转译后分句翻译内容，包含分句起始时间、源识别文本以及翻译后文本。
+当JobStatus为3、4时，该字段返回分句翻译数据。
+                     * @return TranslateResults 音频转译后分句翻译内容，包含分句起始时间、源识别文本以及翻译后文本。
+当JobStatus为3、4时，该字段返回分句翻译数据。
                      * 
                      */
                     std::vector<TranslateResult> GetTranslateResults() const;
@@ -116,8 +118,8 @@ namespace TencentCloud
                     bool TranslateResultsHasBeenSet() const;
 
                     /**
-                     * 获取是否需要确认翻译结果。0：不需要，1：需要	
-                     * @return JobConfirm 是否需要确认翻译结果。0：不需要，1：需要	
+                     * 获取是否需要确认翻译结果。0：不需要，1：需要。	
+                     * @return JobConfirm 是否需要确认翻译结果。0：不需要，1：需要。	
                      * 
                      */
                     int64_t GetJobConfirm() const;
@@ -130,8 +132,8 @@ namespace TencentCloud
                     bool JobConfirmHasBeenSet() const;
 
                     /**
-                     * 获取音频任务 ID	
-                     * @return JobAudioTaskId 音频任务 ID	
+                     * 获取音频任务 ID。	
+                     * @return JobAudioTaskId 音频任务 ID。	
                      * 
                      */
                     std::string GetJobAudioTaskId() const;
@@ -144,8 +146,8 @@ namespace TencentCloud
                     bool JobAudioTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取视频审核任务ID	
-                     * @return JobVideoModerationId 视频审核任务ID	
+                     * 获取视频审核任务ID。
+                     * @return JobVideoModerationId 视频审核任务ID。
                      * 
                      */
                     std::string GetJobVideoModerationId() const;
@@ -158,8 +160,8 @@ namespace TencentCloud
                     bool JobVideoModerationIdHasBeenSet() const;
 
                     /**
-                     * 获取音频审核任务 ID	
-                     * @return JobAudioModerationId 音频审核任务 ID	
+                     * 获取音频审核任务 ID。
+                     * @return JobAudioModerationId 音频审核任务 ID。
                      * 
                      */
                     std::string GetJobAudioModerationId() const;
@@ -172,8 +174,8 @@ namespace TencentCloud
                     bool JobAudioModerationIdHasBeenSet() const;
 
                     /**
-                     * 获取口型驱动任务 ID	
-                     * @return JobVideoId 口型驱动任务 ID	
+                     * 获取口型驱动任务 ID。
+                     * @return JobVideoId 口型驱动任务 ID。
                      * 
                      */
                     std::string GetJobVideoId() const;
@@ -186,8 +188,8 @@ namespace TencentCloud
                     bool JobVideoIdHasBeenSet() const;
 
                     /**
-                     * 获取视频素材原始 URL	
-                     * @return OriginalVideoUrl 视频素材原始 URL	
+                     * 获取视频素材原始 URL。
+                     * @return OriginalVideoUrl 视频素材原始 URL。
                      * 
                      */
                     std::string GetOriginalVideoUrl() const;
@@ -200,8 +202,8 @@ namespace TencentCloud
                     bool OriginalVideoUrlHasBeenSet() const;
 
                     /**
-                     * 获取文本片段及其时间戳	
-                     * @return AsrTimestamps 文本片段及其时间戳	
+                     * 获取文本片段及其时间戳。
+                     * @return AsrTimestamps 文本片段及其时间戳。
                      * 
                      */
                     std::vector<AsrTimestamps> GetAsrTimestamps() const;
@@ -214,8 +216,8 @@ namespace TencentCloud
                     bool AsrTimestampsHasBeenSet() const;
 
                     /**
-                     * 获取提交视频翻译任务时的 requestId	
-                     * @return JobSubmitReqId 提交视频翻译任务时的 requestId	
+                     * 获取提交视频转译任务时的 requestId。
+                     * @return JobSubmitReqId 提交视频转译任务时的 requestId。
                      * 
                      */
                     std::string GetJobSubmitReqId() const;
@@ -230,79 +232,80 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务状态。 1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。	
+                     * 任务状态。0: 任务初始化。 1：音频转译中。 2：音频转译失败。 3：音频转译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频转译中。 7：视频转译失败。 8：视频转译成功。	
                      */
                     int64_t m_jobStatus;
                     bool m_jobStatusHasBeenSet;
 
                     /**
-                     * 任务错误码。	
+                     * 本次任务出错的错误码，用来定位问题原因。
                      */
                     std::string m_jobErrorCode;
                     bool m_jobErrorCodeHasBeenSet;
 
                     /**
-                     * 任务错误信息。	
+                     * 任务错误信息，错误码出现的原因。
                      */
                     std::string m_jobErrorMsg;
                     bool m_jobErrorMsgHasBeenSet;
 
                     /**
-                     * 视频翻译结果。	
+                     * 视频转译生成结果视频url，有效期1天。当JobStatus为8时，该字段返回视频Url。
                      */
                     std::string m_resultVideoUrl;
                     bool m_resultVideoUrlHasBeenSet;
 
                     /**
-                     * 音频翻译结果。	
+                     * 音频转译后分句翻译内容，包含分句起始时间、源识别文本以及翻译后文本。
+当JobStatus为3、4时，该字段返回分句翻译数据。
                      */
                     std::vector<TranslateResult> m_translateResults;
                     bool m_translateResultsHasBeenSet;
 
                     /**
-                     * 是否需要确认翻译结果。0：不需要，1：需要	
+                     * 是否需要确认翻译结果。0：不需要，1：需要。	
                      */
                     int64_t m_jobConfirm;
                     bool m_jobConfirmHasBeenSet;
 
                     /**
-                     * 音频任务 ID	
+                     * 音频任务 ID。	
                      */
                     std::string m_jobAudioTaskId;
                     bool m_jobAudioTaskIdHasBeenSet;
 
                     /**
-                     * 视频审核任务ID	
+                     * 视频审核任务ID。
                      */
                     std::string m_jobVideoModerationId;
                     bool m_jobVideoModerationIdHasBeenSet;
 
                     /**
-                     * 音频审核任务 ID	
+                     * 音频审核任务 ID。
                      */
                     std::string m_jobAudioModerationId;
                     bool m_jobAudioModerationIdHasBeenSet;
 
                     /**
-                     * 口型驱动任务 ID	
+                     * 口型驱动任务 ID。
                      */
                     std::string m_jobVideoId;
                     bool m_jobVideoIdHasBeenSet;
 
                     /**
-                     * 视频素材原始 URL	
+                     * 视频素材原始 URL。
                      */
                     std::string m_originalVideoUrl;
                     bool m_originalVideoUrlHasBeenSet;
 
                     /**
-                     * 文本片段及其时间戳	
+                     * 文本片段及其时间戳。
                      */
                     std::vector<AsrTimestamps> m_asrTimestamps;
                     bool m_asrTimestampsHasBeenSet;
 
                     /**
-                     * 提交视频翻译任务时的 requestId	
+                     * 提交视频转译任务时的 requestId。
                      */
                     std::string m_jobSubmitReqId;
                     bool m_jobSubmitReqIdHasBeenSet;

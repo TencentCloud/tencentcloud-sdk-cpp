@@ -545,6 +545,43 @@ namespace TencentCloud
                      */
                     bool OsImageHasBeenSet() const;
 
+                    /**
+                     * 获取**原生节点对应的实例 ID**
+
+- ins-q47ofw6 表示这个实例是一个 CVM 的实例
+- eks-f8mvyaep 表示这个实例是一个 CXM 的实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId **原生节点对应的实例 ID**
+
+- ins-q47ofw6 表示这个实例是一个 CVM 的实例
+- eks-f8mvyaep 表示这个实例是一个 CXM 的实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置**原生节点对应的实例 ID**
+
+- ins-q47ofw6 表示这个实例是一个 CVM 的实例
+- eks-f8mvyaep 表示这个实例是一个 CXM 的实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceId **原生节点对应的实例 ID**
+
+- ins-q47ofw6 表示这个实例是一个 CVM 的实例
+- eks-f8mvyaep 表示这个实例是一个 CXM 的实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -687,6 +724,16 @@ namespace TencentCloud
                      */
                     std::string m_osImage;
                     bool m_osImageHasBeenSet;
+
+                    /**
+                     * **原生节点对应的实例 ID**
+
+- ins-q47ofw6 表示这个实例是一个 CVM 的实例
+- eks-f8mvyaep 表示这个实例是一个 CXM 的实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

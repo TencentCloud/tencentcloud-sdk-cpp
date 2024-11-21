@@ -25,7 +25,8 @@ using namespace std;
 UpdateStreamIngestRequest::UpdateStreamIngestRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
-    m_streamUrlHasBeenSet(false)
+    m_streamUrlHasBeenSet(false),
+    m_volumeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string UpdateStreamIngestRequest::ToJsonString() const
         string key = "StreamUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_streamUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_volumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Volume";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_volume, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void UpdateStreamIngestRequest::SetStreamUrl(const string& _streamUrl)
 bool UpdateStreamIngestRequest::StreamUrlHasBeenSet() const
 {
     return m_streamUrlHasBeenSet;
+}
+
+uint64_t UpdateStreamIngestRequest::GetVolume() const
+{
+    return m_volume;
+}
+
+void UpdateStreamIngestRequest::SetVolume(const uint64_t& _volume)
+{
+    m_volume = _volume;
+    m_volumeHasBeenSet = true;
+}
+
+bool UpdateStreamIngestRequest::VolumeHasBeenSet() const
+{
+    return m_volumeHasBeenSet;
 }
 
 

@@ -31,7 +31,9 @@ CreateOutputInfo::CreateOutputInfo() :
     m_allowIpListHasBeenSet(false),
     m_maxConcurrentHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_zonesHasBeenSet(false)
+    m_zonesHasBeenSet(false),
+    m_outputTypeHasBeenSet(false),
+    m_rISTSettingsHasBeenSet(false)
 {
 }
 
@@ -180,6 +182,33 @@ CoreInternalOutcome CreateOutputInfo::Deserialize(const rapidjson::Value &value)
         m_zonesHasBeenSet = true;
     }
 
+    if (value.HasMember("OutputType") && !value["OutputType"].IsNull())
+    {
+        if (!value["OutputType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateOutputInfo.OutputType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputType = string(value["OutputType"].GetString());
+        m_outputTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RISTSettings") && !value["RISTSettings"].IsNull())
+    {
+        if (!value["RISTSettings"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateOutputInfo.RISTSettings` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rISTSettings.Deserialize(value["RISTSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rISTSettingsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -291,6 +320,23 @@ void CreateOutputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_outputTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rISTSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RISTSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rISTSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -470,5 +516,37 @@ void CreateOutputInfo::SetZones(const vector<string>& _zones)
 bool CreateOutputInfo::ZonesHasBeenSet() const
 {
     return m_zonesHasBeenSet;
+}
+
+string CreateOutputInfo::GetOutputType() const
+{
+    return m_outputType;
+}
+
+void CreateOutputInfo::SetOutputType(const string& _outputType)
+{
+    m_outputType = _outputType;
+    m_outputTypeHasBeenSet = true;
+}
+
+bool CreateOutputInfo::OutputTypeHasBeenSet() const
+{
+    return m_outputTypeHasBeenSet;
+}
+
+CreateOutputRistSettings CreateOutputInfo::GetRISTSettings() const
+{
+    return m_rISTSettings;
+}
+
+void CreateOutputInfo::SetRISTSettings(const CreateOutputRistSettings& _rISTSettings)
+{
+    m_rISTSettings = _rISTSettings;
+    m_rISTSettingsHasBeenSet = true;
+}
+
+bool CreateOutputInfo::RISTSettingsHasBeenSet() const
+{
+    return m_rISTSettingsHasBeenSet;
 }
 

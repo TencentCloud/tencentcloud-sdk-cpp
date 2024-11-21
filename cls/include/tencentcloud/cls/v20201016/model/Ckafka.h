@@ -47,6 +47,48 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取Ckafka 的 InstanceId
+                     * @return InstanceId Ckafka 的 InstanceId
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置Ckafka 的 InstanceId
+                     * @param _instanceId Ckafka 的 InstanceId
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取Ckafka 的 TopicName
+                     * @return TopicName Ckafka 的 TopicName
+                     * 
+                     */
+                    std::string GetTopicName() const;
+
+                    /**
+                     * 设置Ckafka 的 TopicName
+                     * @param _topicName Ckafka 的 TopicName
+                     * 
+                     */
+                    void SetTopicName(const std::string& _topicName);
+
+                    /**
+                     * 判断参数 TopicName 是否已赋值
+                     * @return TopicName 是否已赋值
+                     * 
+                     */
+                    bool TopicNameHasBeenSet() const;
+
+                    /**
                      * 获取Ckafka 的 Vip
                      * @return Vip Ckafka 的 Vip
                      * 
@@ -87,27 +129,6 @@ namespace TencentCloud
                      * 
                      */
                     bool VportHasBeenSet() const;
-
-                    /**
-                     * 获取Ckafka 的 InstanceId
-                     * @return InstanceId Ckafka 的 InstanceId
-                     * 
-                     */
-                    std::string GetInstanceId() const;
-
-                    /**
-                     * 设置Ckafka 的 InstanceId
-                     * @param _instanceId Ckafka 的 InstanceId
-                     * 
-                     */
-                    void SetInstanceId(const std::string& _instanceId);
-
-                    /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
-                     * 
-                     */
-                    bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取Ckafka 的 InstanceName
@@ -151,28 +172,19 @@ namespace TencentCloud
                      */
                     bool TopicIdHasBeenSet() const;
 
-                    /**
-                     * 获取Ckafka 的 TopicName
-                     * @return TopicName Ckafka 的 TopicName
-                     * 
-                     */
-                    std::string GetTopicName() const;
-
-                    /**
-                     * 设置Ckafka 的 TopicName
-                     * @param _topicName Ckafka 的 TopicName
-                     * 
-                     */
-                    void SetTopicName(const std::string& _topicName);
-
-                    /**
-                     * 判断参数 TopicName 是否已赋值
-                     * @return TopicName 是否已赋值
-                     * 
-                     */
-                    bool TopicNameHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * Ckafka 的 InstanceId
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * Ckafka 的 TopicName
+                     */
+                    std::string m_topicName;
+                    bool m_topicNameHasBeenSet;
 
                     /**
                      * Ckafka 的 Vip
@@ -187,12 +199,6 @@ namespace TencentCloud
                     bool m_vportHasBeenSet;
 
                     /**
-                     * Ckafka 的 InstanceId
-                     */
-                    std::string m_instanceId;
-                    bool m_instanceIdHasBeenSet;
-
-                    /**
                      * Ckafka 的 InstanceName
                      */
                     std::string m_instanceName;
@@ -203,12 +209,6 @@ namespace TencentCloud
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
-
-                    /**
-                     * Ckafka 的 TopicName
-                     */
-                    std::string m_topicName;
-                    bool m_topicNameHasBeenSet;
 
                 };
             }

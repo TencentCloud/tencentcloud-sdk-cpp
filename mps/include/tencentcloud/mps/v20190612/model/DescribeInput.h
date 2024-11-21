@@ -32,6 +32,7 @@
 #include <tencentcloud/mps/v20190612/model/DescribeInputRTSPPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/DescribeInputHLSPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/ResilientStreamConf.h>
+#include <tencentcloud/mps/v20190612/model/DescribeInputRISTSettings.h>
 
 
 namespace TencentCloud
@@ -447,6 +448,31 @@ namespace TencentCloud
                      */
                     bool ZonesHasBeenSet() const;
 
+                    /**
+                     * 获取输入的RIST配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RISTSettings 输入的RIST配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DescribeInputRISTSettings GetRISTSettings() const;
+
+                    /**
+                     * 设置输入的RIST配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rISTSettings 输入的RIST配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRISTSettings(const DescribeInputRISTSettings& _rISTSettings);
+
+                    /**
+                     * 判断参数 RISTSettings 是否已赋值
+                     * @return RISTSettings 是否已赋值
+                     * 
+                     */
+                    bool RISTSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -559,6 +585,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
+
+                    /**
+                     * 输入的RIST配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeInputRISTSettings m_rISTSettings;
+                    bool m_rISTSettingsHasBeenSet;
 
                 };
             }

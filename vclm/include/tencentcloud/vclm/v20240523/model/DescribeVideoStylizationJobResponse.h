@@ -58,17 +58,17 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取任务状态码：
-JobInit:  "初始化中"
-JobModerationFailed: "审核失败",
-JobRunning: "处理中",
-JobFailed: "处理失败",
+                     * 获取任务状态码。取值说明：
+JobInit:  "初始化中"；
+JobModerationFailed: "审核失败"；
+JobRunning: "处理中"；
+JobFailed: "处理失败"；
 JobSuccess: "处理完成"。
-                     * @return StatusCode 任务状态码：
-JobInit:  "初始化中"
-JobModerationFailed: "审核失败",
-JobRunning: "处理中",
-JobFailed: "处理失败",
+                     * @return StatusCode 任务状态码。取值说明：
+JobInit:  "初始化中"；
+JobModerationFailed: "审核失败"；
+JobRunning: "处理中"；
+JobFailed: "处理失败"；
 JobSuccess: "处理完成"。
                      * 
                      */
@@ -82,8 +82,18 @@ JobSuccess: "处理完成"。
                     bool StatusCodeHasBeenSet() const;
 
                     /**
-                     * 获取任务状态描述。
-                     * @return StatusMsg 任务状态描述。
+                     * 获取任务状态描述。取值说明：
+JobInit:  "初始化中"；
+JobModerationFailed: "审核失败"；
+JobRunning: "处理中"；
+JobFailed: "处理失败"；
+JobSuccess: "处理完成"。
+                     * @return StatusMsg 任务状态描述。取值说明：
+JobInit:  "初始化中"；
+JobModerationFailed: "审核失败"；
+JobRunning: "处理中"；
+JobFailed: "处理失败"；
+JobSuccess: "处理完成"。
                      * 
                      */
                     std::string GetStatusMsg() const;
@@ -118,18 +128,23 @@ JobSuccess: "处理完成"。
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 任务状态码：
-JobInit:  "初始化中"
-JobModerationFailed: "审核失败",
-JobRunning: "处理中",
-JobFailed: "处理失败",
+                     * 任务状态码。取值说明：
+JobInit:  "初始化中"；
+JobModerationFailed: "审核失败"；
+JobRunning: "处理中"；
+JobFailed: "处理失败"；
 JobSuccess: "处理完成"。
                      */
                     std::string m_statusCode;
                     bool m_statusCodeHasBeenSet;
 
                     /**
-                     * 任务状态描述。
+                     * 任务状态描述。取值说明：
+JobInit:  "初始化中"；
+JobModerationFailed: "审核失败"；
+JobRunning: "处理中"；
+JobFailed: "处理失败"；
+JobSuccess: "处理完成"。
                      */
                     std::string m_statusMsg;
                     bool m_statusMsgHasBeenSet;

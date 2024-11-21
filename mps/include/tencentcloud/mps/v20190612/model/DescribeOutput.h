@@ -31,6 +31,7 @@
 #include <tencentcloud/mps/v20190612/model/DescribeOutputRTMPPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/DescribeOutputRTSPPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/DescribeOutputHLSPullSettings.h>
+#include <tencentcloud/mps/v20190612/model/DescribeOutputRISTSettings.h>
 
 
 namespace TencentCloud
@@ -454,6 +455,31 @@ namespace TencentCloud
                      */
                     bool ZonesHasBeenSet() const;
 
+                    /**
+                     * 获取输出的RIST配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RISTSettings 输出的RIST配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DescribeOutputRISTSettings GetRISTSettings() const;
+
+                    /**
+                     * 设置输出的RIST配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rISTSettings 输出的RIST配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRISTSettings(const DescribeOutputRISTSettings& _rISTSettings);
+
+                    /**
+                     * 判断参数 RISTSettings 是否已赋值
+                     * @return RISTSettings 是否已赋值
+                     * 
+                     */
+                    bool RISTSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -568,6 +594,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
+
+                    /**
+                     * 输出的RIST配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeOutputRISTSettings m_rISTSettings;
+                    bool m_rISTSettingsHasBeenSet;
 
                 };
             }

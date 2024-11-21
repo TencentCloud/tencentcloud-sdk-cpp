@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取源流URL【必填】。
-                     * @return StreamUrl 源流URL【必填】。
+                     * 获取源流URL。
+                     * @return StreamUrl 源流URL。
                      * 
                      */
                     std::string GetStreamUrl() const;
 
                     /**
-                     * 设置源流URL【必填】。
-                     * @param _streamUrl 源流URL【必填】。
+                     * 设置源流URL。
+                     * @param _streamUrl 源流URL。
                      * 
                      */
                     void SetStreamUrl(const std::string& _streamUrl);
@@ -104,6 +104,27 @@ namespace TencentCloud
                      * 
                      */
                     bool StreamUrlHasBeenSet() const;
+
+                    /**
+                     * 获取音量，取值范围[0, 100]，默认100，表示原音量。
+                     * @return Volume 音量，取值范围[0, 100]，默认100，表示原音量。
+                     * 
+                     */
+                    uint64_t GetVolume() const;
+
+                    /**
+                     * 设置音量，取值范围[0, 100]，默认100，表示原音量。
+                     * @param _volume 音量，取值范围[0, 100]，默认100，表示原音量。
+                     * 
+                     */
+                    void SetVolume(const uint64_t& _volume);
+
+                    /**
+                     * 判断参数 Volume 是否已赋值
+                     * @return Volume 是否已赋值
+                     * 
+                     */
+                    bool VolumeHasBeenSet() const;
 
                 private:
 
@@ -120,10 +141,16 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 源流URL【必填】。
+                     * 源流URL。
                      */
                     std::string m_streamUrl;
                     bool m_streamUrlHasBeenSet;
+
+                    /**
+                     * 音量，取值范围[0, 100]，默认100，表示原音量。
+                     */
+                    uint64_t m_volume;
+                    bool m_volumeHasBeenSet;
 
                 };
             }

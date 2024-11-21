@@ -235,15 +235,15 @@ namespace TencentCloud
                     bool SearchFieldsHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return OrderField 无
+                     * 获取排序字段
+                     * @return OrderField 排序字段
                      * 
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置无
-                     * @param _orderField 无
+                     * 设置排序字段
+                     * @param _orderField 排序字段
                      * 
                      */
                     void SetOrderField(const std::string& _orderField);
@@ -256,15 +256,15 @@ namespace TencentCloud
                     bool OrderFieldHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Asc 无
+                     * 获取是否升序，1:升序，0:降序
+                     * @return Asc 是否升序，1:升序，0:降序
                      * 
                      */
                     int64_t GetAsc() const;
 
                     /**
-                     * 设置无
-                     * @param _asc 无
+                     * 设置是否升序，1:升序，0:降序
+                     * @param _asc 是否升序，1:升序，0:降序
                      * 
                      */
                     void SetAsc(const int64_t& _asc);
@@ -332,13 +332,13 @@ namespace TencentCloud
                     bool m_searchFieldsHasBeenSet;
 
                     /**
-                     * 无
+                     * 排序字段
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;
 
                     /**
-                     * 无
+                     * 是否升序，1:升序，0:降序
                      */
                     int64_t m_asc;
                     bool m_ascHasBeenSet;

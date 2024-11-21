@@ -285,39 +285,15 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取节点名称
-master
-core
-task
-common
-router
-
-                     * @return NodeTypeName 节点名称
-master
-core
-task
-common
-router
-
+                     * 获取节点名称master,core,task,common,router
+                     * @return NodeTypeName 节点名称master,core,task,common,router
                      * 
                      */
                     std::string GetNodeTypeName() const;
 
                     /**
-                     * 设置节点名称
-master
-core
-task
-common
-router
-
-                     * @param _nodeTypeName 节点名称
-master
-core
-task
-common
-router
-
+                     * 设置节点名称master,core,task,common,router
+                     * @param _nodeTypeName 节点名称master,core,task,common,router
                      * 
                      */
                     void SetNodeTypeName(const std::string& _nodeTypeName);
@@ -449,13 +425,7 @@ router
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * 节点名称
-master
-core
-task
-common
-router
-
+                     * 节点名称master,core,task,common,router
                      */
                     std::string m_nodeTypeName;
                     bool m_nodeTypeNameHasBeenSet;

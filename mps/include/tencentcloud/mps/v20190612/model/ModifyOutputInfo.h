@@ -27,6 +27,7 @@
 #include <tencentcloud/mps/v20190612/model/CreateOutputSRTSettings.h>
 #include <tencentcloud/mps/v20190612/model/CreateOutputInfoRTPSettings.h>
 #include <tencentcloud/mps/v20190612/model/CreateOutputRTMPSettings.h>
+#include <tencentcloud/mps/v20190612/model/CreateOutputRistSettings.h>
 
 
 namespace TencentCloud
@@ -113,15 +114,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取输出的转推协议，支持SRT|RTP|RTMP。
-                     * @return Protocol 输出的转推协议，支持SRT|RTP|RTMP。
+                     * 获取输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。
+                     * @return Protocol 输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置输出的转推协议，支持SRT|RTP|RTMP。
-                     * @param _protocol 输出的转推协议，支持SRT|RTP|RTMP。
+                     * 设置输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。
+                     * @param _protocol 输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -284,6 +285,27 @@ namespace TencentCloud
                      */
                     bool ZonesHasBeenSet() const;
 
+                    /**
+                     * 获取转推RIST的配置。
+                     * @return RISTSettings 转推RIST的配置。
+                     * 
+                     */
+                    CreateOutputRistSettings GetRISTSettings() const;
+
+                    /**
+                     * 设置转推RIST的配置。
+                     * @param _rISTSettings 转推RIST的配置。
+                     * 
+                     */
+                    void SetRISTSettings(const CreateOutputRistSettings& _rISTSettings);
+
+                    /**
+                     * 判断参数 RISTSettings 是否已赋值
+                     * @return RISTSettings 是否已赋值
+                     * 
+                     */
+                    bool RISTSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -305,7 +327,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 输出的转推协议，支持SRT|RTP|RTMP。
+                     * 输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -352,6 +374,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
+
+                    /**
+                     * 转推RIST的配置。
+                     */
+                    CreateOutputRistSettings m_rISTSettings;
+                    bool m_rISTSettingsHasBeenSet;
 
                 };
             }

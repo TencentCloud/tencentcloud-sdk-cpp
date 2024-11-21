@@ -42,7 +42,8 @@ NativeNodeInfo::NativeNodeInfo() :
     m_securityGroupIDsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_osImageHasBeenSet(false)
+    m_osImageHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,16 @@ CoreInternalOutcome NativeNodeInfo::Deserialize(const rapidjson::Value &value)
         m_osImageHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeNodeInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -468,6 +479,14 @@ void NativeNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "OsImage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_osImage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -823,5 +842,21 @@ void NativeNodeInfo::SetOsImage(const string& _osImage)
 bool NativeNodeInfo::OsImageHasBeenSet() const
 {
     return m_osImageHasBeenSet;
+}
+
+string NativeNodeInfo::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void NativeNodeInfo::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool NativeNodeInfo::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

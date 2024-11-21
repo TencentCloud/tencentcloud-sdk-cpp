@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频翻译任务 ID
-                     * @return JobId 视频翻译任务 ID
+                     * 获取视频转译任务 ID。
+                     * @return JobId 视频转译任务 ID。
                      * 
                      */
                     std::string GetJobId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取音频转换任务 ID
-                     * @return TaskId 音频转换任务 ID
+                     * 获取音频转译任务 ID。
+                     * @return TaskId 音频转译任务 ID。
                      * 
                      */
                     std::string GetTaskId() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取音频翻译结果确认 session	
-                     * @return SessionId 音频翻译结果确认 session	
+                     * 获取音频转译结果确认 session。	
+                     * @return SessionId 音频转译结果确认 session。	
                      * 
                      */
                     std::string GetSessionId() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取视频转译任务状态	
-                     * @return Status 视频转译任务状态	
+                     * 获取该字段与 DescribeVideoTranslateJob 接口的 Status 功能相同，均表示任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。
+                     * @return Status 该字段与 DescribeVideoTranslateJob 接口的 Status 功能相同，均表示任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取视频转译任务信息	
-                     * @return Message 视频转译任务信息	
+                     * 获取视频转译任务信息。	
+                     * @return Message 视频转译任务信息。	
                      * 
                      */
                     std::string GetMessage() const;
@@ -116,31 +116,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频翻译任务 ID
+                     * 视频转译任务 ID。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 音频转换任务 ID
+                     * 音频转译任务 ID。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 音频翻译结果确认 session	
+                     * 音频转译结果确认 session。	
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 视频转译任务状态	
+                     * 该字段与 DescribeVideoTranslateJob 接口的 Status 功能相同，均表示任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 视频转译任务信息	
+                     * 视频转译任务信息。	
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

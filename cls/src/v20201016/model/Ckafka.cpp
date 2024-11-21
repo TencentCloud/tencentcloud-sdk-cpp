@@ -21,12 +21,12 @@ using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
 Ckafka::Ckafka() :
+    m_instanceIdHasBeenSet(false),
+    m_topicNameHasBeenSet(false),
     m_vipHasBeenSet(false),
     m_vportHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_topicIdHasBeenSet(false),
-    m_topicNameHasBeenSet(false)
+    m_topicIdHasBeenSet(false)
 {
 }
 
@@ -34,6 +34,26 @@ CoreInternalOutcome Ckafka::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Ckafka.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TopicName") && !value["TopicName"].IsNull())
+    {
+        if (!value["TopicName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Ckafka.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicName = string(value["TopicName"].GetString());
+        m_topicNameHasBeenSet = true;
+    }
 
     if (value.HasMember("Vip") && !value["Vip"].IsNull())
     {
@@ -53,16 +73,6 @@ CoreInternalOutcome Ckafka::Deserialize(const rapidjson::Value &value)
         }
         m_vport = string(value["Vport"].GetString());
         m_vportHasBeenSet = true;
-    }
-
-    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
-    {
-        if (!value["InstanceId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Ckafka.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_instanceId = string(value["InstanceId"].GetString());
-        m_instanceIdHasBeenSet = true;
     }
 
     if (value.HasMember("InstanceName") && !value["InstanceName"].IsNull())
@@ -85,22 +95,28 @@ CoreInternalOutcome Ckafka::Deserialize(const rapidjson::Value &value)
         m_topicIdHasBeenSet = true;
     }
 
-    if (value.HasMember("TopicName") && !value["TopicName"].IsNull())
-    {
-        if (!value["TopicName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Ckafka.TopicName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_topicName = string(value["TopicName"].GetString());
-        m_topicNameHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void Ckafka::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_vipHasBeenSet)
     {
@@ -116,14 +132,6 @@ void Ckafka::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Vport";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vport.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_instanceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceNameHasBeenSet)
@@ -142,16 +150,40 @@ void Ckafka::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_topicNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TopicName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
+
+string Ckafka::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void Ckafka::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool Ckafka::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string Ckafka::GetTopicName() const
+{
+    return m_topicName;
+}
+
+void Ckafka::SetTopicName(const string& _topicName)
+{
+    m_topicName = _topicName;
+    m_topicNameHasBeenSet = true;
+}
+
+bool Ckafka::TopicNameHasBeenSet() const
+{
+    return m_topicNameHasBeenSet;
+}
 
 string Ckafka::GetVip() const
 {
@@ -185,22 +217,6 @@ bool Ckafka::VportHasBeenSet() const
     return m_vportHasBeenSet;
 }
 
-string Ckafka::GetInstanceId() const
-{
-    return m_instanceId;
-}
-
-void Ckafka::SetInstanceId(const string& _instanceId)
-{
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
-}
-
-bool Ckafka::InstanceIdHasBeenSet() const
-{
-    return m_instanceIdHasBeenSet;
-}
-
 string Ckafka::GetInstanceName() const
 {
     return m_instanceName;
@@ -231,21 +247,5 @@ void Ckafka::SetTopicId(const string& _topicId)
 bool Ckafka::TopicIdHasBeenSet() const
 {
     return m_topicIdHasBeenSet;
-}
-
-string Ckafka::GetTopicName() const
-{
-    return m_topicName;
-}
-
-void Ckafka::SetTopicName(const string& _topicName)
-{
-    m_topicName = _topicName;
-    m_topicNameHasBeenSet = true;
-}
-
-bool Ckafka::TopicNameHasBeenSet() const
-{
-    return m_topicNameHasBeenSet;
 }
 
