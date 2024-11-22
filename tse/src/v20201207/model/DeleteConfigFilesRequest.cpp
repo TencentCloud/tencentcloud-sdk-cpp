@@ -26,7 +26,8 @@ DeleteConfigFilesRequest::DeleteConfigFilesRequest() :
     m_instanceIdHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_groupHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DeleteConfigFilesRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DeleteConfigFilesRequest::SetName(const string& _name)
 bool DeleteConfigFilesRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string DeleteConfigFilesRequest::GetId() const
+{
+    return m_id;
+}
+
+void DeleteConfigFilesRequest::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool DeleteConfigFilesRequest::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 
 

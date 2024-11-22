@@ -29,7 +29,8 @@ DescribeConfigFilesRequest::DescribeConfigFilesRequest() :
     m_nameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string DescribeConfigFilesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -221,6 +230,22 @@ void DescribeConfigFilesRequest::SetOffset(const int64_t& _offset)
 bool DescribeConfigFilesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeConfigFilesRequest::GetId() const
+{
+    return m_id;
+}
+
+void DescribeConfigFilesRequest::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool DescribeConfigFilesRequest::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 
 

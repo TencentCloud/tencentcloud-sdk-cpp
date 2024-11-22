@@ -33,7 +33,8 @@ CreateBatchSignUrlRequest::CreateBatchSignUrlRequest() :
     m_flowIdsHasBeenSet(false),
     m_organizationNameHasBeenSet(false),
     m_jumpToDetailHasBeenSet(false),
-    m_flowBatchUrlInfoHasBeenSet(false)
+    m_flowBatchUrlInfoHasBeenSet(false),
+    m_autoJumpBackHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,14 @@ string CreateBatchSignUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_flowBatchUrlInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_autoJumpBackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoJumpBack";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoJumpBack, allocator);
     }
 
 
@@ -322,6 +331,22 @@ void CreateBatchSignUrlRequest::SetFlowBatchUrlInfo(const FlowBatchUrlInfo& _flo
 bool CreateBatchSignUrlRequest::FlowBatchUrlInfoHasBeenSet() const
 {
     return m_flowBatchUrlInfoHasBeenSet;
+}
+
+bool CreateBatchSignUrlRequest::GetAutoJumpBack() const
+{
+    return m_autoJumpBack;
+}
+
+void CreateBatchSignUrlRequest::SetAutoJumpBack(const bool& _autoJumpBack)
+{
+    m_autoJumpBack = _autoJumpBack;
+    m_autoJumpBackHasBeenSet = true;
+}
+
+bool CreateBatchSignUrlRequest::AutoJumpBackHasBeenSet() const
+{
+    return m_autoJumpBackHasBeenSet;
 }
 
 

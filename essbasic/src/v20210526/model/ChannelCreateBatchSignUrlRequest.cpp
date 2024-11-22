@@ -35,7 +35,8 @@ ChannelCreateBatchSignUrlRequest::ChannelCreateBatchSignUrlRequest() :
     m_jumpToDetailHasBeenSet(false),
     m_flowBatchUrlInfoHasBeenSet(false),
     m_openIdHasBeenSet(false),
-    m_organizationOpenIdHasBeenSet(false)
+    m_organizationOpenIdHasBeenSet(false),
+    m_autoJumpBackHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,14 @@ string ChannelCreateBatchSignUrlRequest::ToJsonString() const
         string key = "OrganizationOpenId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_organizationOpenId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoJumpBackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoJumpBack";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoJumpBack, allocator);
     }
 
 
@@ -372,6 +381,22 @@ void ChannelCreateBatchSignUrlRequest::SetOrganizationOpenId(const string& _orga
 bool ChannelCreateBatchSignUrlRequest::OrganizationOpenIdHasBeenSet() const
 {
     return m_organizationOpenIdHasBeenSet;
+}
+
+bool ChannelCreateBatchSignUrlRequest::GetAutoJumpBack() const
+{
+    return m_autoJumpBack;
+}
+
+void ChannelCreateBatchSignUrlRequest::SetAutoJumpBack(const bool& _autoJumpBack)
+{
+    m_autoJumpBack = _autoJumpBack;
+    m_autoJumpBackHasBeenSet = true;
+}
+
+bool ChannelCreateBatchSignUrlRequest::AutoJumpBackHasBeenSet() const
+{
+    return m_autoJumpBackHasBeenSet;
 }
 
 

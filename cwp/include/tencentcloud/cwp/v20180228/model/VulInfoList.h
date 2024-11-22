@@ -384,14 +384,46 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞标签 多个逗号分割
+
+存在EXP:EXP
+在野攻击:KNOWN_EXPLOITED
+本地利用:LOCAL
+必修漏洞:NEED_FIX
+远程利用:NETWORK
+存在POC:POC
+系统重启:RESTART
                      * @return Labels 漏洞标签 多个逗号分割
+
+存在EXP:EXP
+在野攻击:KNOWN_EXPLOITED
+本地利用:LOCAL
+必修漏洞:NEED_FIX
+远程利用:NETWORK
+存在POC:POC
+系统重启:RESTART
                      * 
                      */
                     std::string GetLabels() const;
 
                     /**
                      * 设置漏洞标签 多个逗号分割
+
+存在EXP:EXP
+在野攻击:KNOWN_EXPLOITED
+本地利用:LOCAL
+必修漏洞:NEED_FIX
+远程利用:NETWORK
+存在POC:POC
+系统重启:RESTART
                      * @param _labels 漏洞标签 多个逗号分割
+
+存在EXP:EXP
+在野攻击:KNOWN_EXPLOITED
+本地利用:LOCAL
+必修漏洞:NEED_FIX
+远程利用:NETWORK
+存在POC:POC
+系统重启:RESTART
                      * 
                      */
                     void SetLabels(const std::string& _labels);
@@ -713,6 +745,14 @@ namespace TencentCloud
 
                     /**
                      * 漏洞标签 多个逗号分割
+
+存在EXP:EXP
+在野攻击:KNOWN_EXPLOITED
+本地利用:LOCAL
+必修漏洞:NEED_FIX
+远程利用:NETWORK
+存在POC:POC
+系统重启:RESTART
                      */
                     std::string m_labels;
                     bool m_labelsHasBeenSet;

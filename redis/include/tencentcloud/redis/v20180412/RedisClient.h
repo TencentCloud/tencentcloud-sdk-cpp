@@ -576,7 +576,7 @@ namespace TencentCloud
 
 
                 /**
-                 *添加复制组成员
+                 *本接口（AddReplicationInstance）用于为全球复制组添加实例成员。
                  * @param req AddReplicationInstanceRequest
                  * @return AddReplicationInstanceOutcome
                  */
@@ -585,7 +585,7 @@ namespace TencentCloud
                 AddReplicationInstanceOutcomeCallable AddReplicationInstanceCallable(const Model::AddReplicationInstanceRequest& request);
 
                 /**
-                 *开通外网
+                 *本接口（AllocateWanAddress）用于开通实例外网访问。
                  * @param req AllocateWanAddressRequest
                  * @return AllocateWanAddressOutcome
                  */
@@ -594,7 +594,7 @@ namespace TencentCloud
                 AllocateWanAddressOutcomeCallable AllocateWanAddressCallable(const Model::AllocateWanAddressRequest& request);
 
                 /**
-                 *应用参数模板到实例
+                 *本接口（ApplyParamsTemplate）用于应用参数模板到实例。
                  * @param req ApplyParamsTemplateRequest
                  * @return ApplyParamsTemplateOutcome
                  */
@@ -612,7 +612,7 @@ namespace TencentCloud
                 AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
 
                 /**
-                 *复制组实例更换角色
+                 *本接口（ChangeInstanceRole）用于更换复制组内实例的角色。
                  * @param req ChangeInstanceRoleRequest
                  * @return ChangeInstanceRoleOutcome
                  */
@@ -639,7 +639,7 @@ namespace TencentCloud
                 ChangeReplicaToMasterOutcomeCallable ChangeReplicaToMasterCallable(const Model::ChangeReplicaToMasterRequest& request);
 
                 /**
-                 *回收站实例立即下线
+                 *本接口（CleanUpInstance）用于立即下线回收站的实例。
                  * @param req CleanUpInstanceRequest
                  * @return CleanUpInstanceOutcome
                  */
@@ -648,7 +648,7 @@ namespace TencentCloud
                 CleanUpInstanceOutcomeCallable CleanUpInstanceCallable(const Model::CleanUpInstanceRequest& request);
 
                 /**
-                 *清空Redis实例的实例数据。
+                 *本接口（ClearInstance）用于清空实例数据。
                  * @param req ClearInstanceRequest
                  * @return ClearInstanceOutcome
                  */
@@ -666,7 +666,7 @@ namespace TencentCloud
                 CloneInstancesOutcomeCallable CloneInstancesCallable(const Model::CloneInstancesRequest& request);
 
                 /**
-                 *关闭SSL
+                 *本接口（CloseSSL）用于关闭SSL加密认证。
                  * @param req CloseSSLRequest
                  * @return CloseSSLOutcome
                  */
@@ -675,7 +675,7 @@ namespace TencentCloud
                 CloseSSLOutcomeCallable CloseSSLCallable(const Model::CloseSSLRequest& request);
 
                 /**
-                 *该接口（CreateInstanceAccount）用于自定义访问实例的账号。
+                 *本接口（CreateInstanceAccount）用于自定义访问实例的账号。
                  * @param req CreateInstanceAccountRequest
                  * @return CreateInstanceAccountOutcome
                  */
@@ -702,7 +702,7 @@ namespace TencentCloud
                 CreateParamTemplateOutcomeCallable CreateParamTemplateCallable(const Model::CreateParamTemplateRequest& request);
 
                 /**
-                 *该接口（CreateReplicationGroup）用于创建复制组。
+                 *本接口（CreateReplicationGroup）用于创建复制组。
                  * @param req CreateReplicationGroupRequest
                  * @return CreateReplicationGroupOutcome
                  */
@@ -711,7 +711,7 @@ namespace TencentCloud
                 CreateReplicationGroupOutcomeCallable CreateReplicationGroupCallable(const Model::CreateReplicationGroupRequest& request);
 
                 /**
-                 *删除实例子账号
+                 *本接口（DeleteInstanceAccount）用于删除实例子账号。
                  * @param req DeleteInstanceAccountRequest
                  * @return DeleteInstanceAccountOutcome
                  */
@@ -729,7 +729,7 @@ namespace TencentCloud
                 DeleteParamTemplateOutcomeCallable DeleteParamTemplateCallable(const Model::DeleteParamTemplateRequest& request);
 
                 /**
-                 *移除复制组成员。注：该接口下线中，请使用 [RemoveReplicationInstance](https://cloud.tencent.com/document/product/239/90099)。
+                 *本接口（DeleteReplicationInstance）移除复制组成员。注：该接口下线中，请使用 [RemoveReplicationInstance](https://cloud.tencent.com/document/product/239/90099)。
                  * @param req DeleteReplicationInstanceRequest
                  * @return DeleteReplicationInstanceOutcome
                  */
@@ -783,7 +783,7 @@ namespace TencentCloud
                 DescribeBandwidthRangeOutcomeCallable DescribeBandwidthRangeCallable(const Model::DescribeBandwidthRangeRequest& request);
 
                 /**
-                 *查询Redis实例列表信息。该接口已废弃。
+                 *本接口（DescribeCommonDBInstances）用于查询Redis实例列表信息。当前该接口已废弃。
                  * @param req DescribeCommonDBInstancesRequest
                  * @return DescribeCommonDBInstancesOutcome
                  */
@@ -828,7 +828,7 @@ namespace TencentCloud
                 DescribeInstanceBackupsOutcomeCallable DescribeInstanceBackupsCallable(const Model::DescribeInstanceBackupsRequest& request);
 
                 /**
-                 *查询实例DTS信息
+                 *本接口（DescribeInstanceDTSInfo）用于查询实例 DTS 信息。
                  * @param req DescribeInstanceDTSInfoRequest
                  * @return DescribeInstanceDTSInfoOutcome
                  */
@@ -909,7 +909,7 @@ namespace TencentCloud
                 DescribeInstanceMonitorSIPOutcomeCallable DescribeInstanceMonitorSIPCallable(const Model::DescribeInstanceMonitorSIPRequest& request);
 
                 /**
-                 *查询实例访问的耗时分布
+                 *本接口（DescribeInstanceMonitorTookDist）用于查询实例访问的耗时分布。
                  * @param req DescribeInstanceMonitorTookDistRequest
                  * @return DescribeInstanceMonitorTookDistOutcome
                  */
@@ -927,7 +927,7 @@ namespace TencentCloud
                 DescribeInstanceMonitorTopNCmdOutcomeCallable DescribeInstanceMonitorTopNCmdCallable(const Model::DescribeInstanceMonitorTopNCmdRequest& request);
 
                 /**
-                 *查询实例CPU耗时
+                 *本接口（DescribeInstanceMonitorTopNCmdTook）用于查询实例 CPU 耗时。
                  * @param req DescribeInstanceMonitorTopNCmdTookRequest
                  * @return DescribeInstanceMonitorTopNCmdTookOutcome
                  */
@@ -1053,7 +1053,7 @@ namespace TencentCloud
                 DescribeProductInfoOutcomeCallable DescribeProductInfoCallable(const Model::DescribeProductInfoRequest& request);
 
                 /**
-                 *查询项目安全组信息
+                 *本接口（DescribeProjectSecurityGroup）用于查询项目安全组信息。
                  * @param req DescribeProjectSecurityGroupRequest
                  * @return DescribeProjectSecurityGroupOutcome
                  */
@@ -1062,7 +1062,7 @@ namespace TencentCloud
                 DescribeProjectSecurityGroupOutcomeCallable DescribeProjectSecurityGroupCallable(const Model::DescribeProjectSecurityGroupRequest& request);
 
                 /**
-                 *本接口(DescribeProjectSecurityGroups)用于查询项目的安全组详情。
+                 *本接口（DescribeProjectSecurityGroups）用于查询项目的安全组详情。
                  * @param req DescribeProjectSecurityGroupsRequest
                  * @return DescribeProjectSecurityGroupsOutcome
                  */
@@ -1080,7 +1080,7 @@ namespace TencentCloud
                 DescribeProxySlowLogOutcomeCallable DescribeProxySlowLogCallable(const Model::DescribeProxySlowLogRequest& request);
 
                 /**
-                 *查询Redis独享集群概览信息
+                 *本接口（DescribeRedisClusterOverview）用于查询 Redis 独享集群概览信息。
                  * @param req DescribeRedisClusterOverviewRequest
                  * @return DescribeRedisClusterOverviewOutcome
                  */
@@ -1089,7 +1089,7 @@ namespace TencentCloud
                 DescribeRedisClusterOverviewOutcomeCallable DescribeRedisClusterOverviewCallable(const Model::DescribeRedisClusterOverviewRequest& request);
 
                 /**
-                 *查询Redis独享集群列表
+                 *本接口（DescribeRedisClusters）用于查询Redis独享集群列表。
                  * @param req DescribeRedisClustersRequest
                  * @return DescribeRedisClustersOutcome
                  */
@@ -1107,7 +1107,7 @@ namespace TencentCloud
                 DescribeReplicationGroupOutcomeCallable DescribeReplicationGroupCallable(const Model::DescribeReplicationGroupRequest& request);
 
                 /**
-                 *查询复制组信息
+                 *本接口（DescribeReplicationGroupInstance）用于查询复制组信息。
                  * @param req DescribeReplicationGroupInstanceRequest
                  * @return DescribeReplicationGroupInstanceOutcome
                  */
@@ -1154,7 +1154,7 @@ namespace TencentCloud
                 DescribeTaskListOutcomeCallable DescribeTaskListCallable(const Model::DescribeTaskListRequest& request);
 
                 /**
-                 *查询Tendis慢查询
+                 *本接口（DescribeTendisSlowLog）用于查询 Tendis 实例慢查询。
                  * @param req DescribeTendisSlowLogRequest
                  * @return DescribeTendisSlowLogOutcome
                  */
@@ -1163,7 +1163,7 @@ namespace TencentCloud
                 DescribeTendisSlowLogOutcomeCallable DescribeTendisSlowLogCallable(const Model::DescribeTendisSlowLogRequest& request);
 
                 /**
-                 *按量计费实例销毁
+                 *本接口（DestroyPostpaidInstance）用于销毁按量计费实例。
                  * @param req DestroyPostpaidInstanceRequest
                  * @return DestroyPostpaidInstanceOutcome
                  */
@@ -1172,7 +1172,7 @@ namespace TencentCloud
                 DestroyPostpaidInstanceOutcomeCallable DestroyPostpaidInstanceCallable(const Model::DestroyPostpaidInstanceRequest& request);
 
                 /**
-                 *包年包月实例退还
+                 *本接口（DestroyPrepaidInstance）用于退还包年包月计费的 Redis 实例。
                  * @param req DestroyPrepaidInstanceRequest
                  * @return DestroyPrepaidInstanceOutcome
                  */
@@ -1181,7 +1181,7 @@ namespace TencentCloud
                 DestroyPrepaidInstanceOutcomeCallable DestroyPrepaidInstanceCallable(const Model::DestroyPrepaidInstanceRequest& request);
 
                 /**
-                 *禁用读写分离
+                 *本接口（DisableReplicaReadonly）用于禁用读写分离功能。
                  * @param req DisableReplicaReadonlyRequest
                  * @return DisableReplicaReadonlyOutcome
                  */
@@ -1190,7 +1190,7 @@ namespace TencentCloud
                 DisableReplicaReadonlyOutcomeCallable DisableReplicaReadonlyCallable(const Model::DisableReplicaReadonlyRequest& request);
 
                 /**
-                 *本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。
+                 *本接口（DisassociateSecurityGroups）用于安全组批量解绑实例。
                  * @param req DisassociateSecurityGroupsRequest
                  * @return DisassociateSecurityGroupsOutcome
                  */
@@ -1199,7 +1199,7 @@ namespace TencentCloud
                 DisassociateSecurityGroupsOutcomeCallable DisassociateSecurityGroupsCallable(const Model::DisassociateSecurityGroupsRequest& request);
 
                 /**
-                 *启用读写分离
+                 *本接口（EnableReplicaReadonly）用于启用读写分离功能。
                  * @param req EnableReplicaReadonlyRequest
                  * @return EnableReplicaReadonlyOutcome
                  */
@@ -1208,7 +1208,7 @@ namespace TencentCloud
                 EnableReplicaReadonlyOutcomeCallable EnableReplicaReadonlyCallable(const Model::EnableReplicaReadonlyRequest& request);
 
                 /**
-                 *查询新购实例价格
+                 *本接口（InquiryPriceCreateInstance）用于查询新购实例价格。
                  * @param req InquiryPriceCreateInstanceRequest
                  * @return InquiryPriceCreateInstanceOutcome
                  */
@@ -1226,7 +1226,7 @@ namespace TencentCloud
                 InquiryPriceRenewInstanceOutcomeCallable InquiryPriceRenewInstanceCallable(const Model::InquiryPriceRenewInstanceRequest& request);
 
                 /**
-                 *查询实例扩容价格
+                 *本接口（InquiryPriceUpgradeInstance）用于查询实例扩容价格。
                  * @param req InquiryPriceUpgradeInstanceRequest
                  * @return InquiryPriceUpgradeInstanceOutcome
                  */
@@ -1235,7 +1235,7 @@ namespace TencentCloud
                 InquiryPriceUpgradeInstanceOutcomeCallable InquiryPriceUpgradeInstanceCallable(const Model::InquiryPriceUpgradeInstanceRequest& request);
 
                 /**
-                 *本接口（KillMasterGroup）模拟故障。
+                 *本接口（KillMasterGroup）用于模拟故障。
                  * @param req KillMasterGroupRequest
                  * @return KillMasterGroupOutcome
                  */
@@ -1280,7 +1280,7 @@ namespace TencentCloud
                 ModifyBackupDownloadRestrictionOutcomeCallable ModifyBackupDownloadRestrictionCallable(const Model::ModifyBackupDownloadRestrictionRequest& request);
 
                 /**
-                 *修改实例的连接配置，包括带宽和最大连接数。
+                 *本接口（ModifyConnectionConfig）用于修改实例的连接配置，包括带宽和最大连接数。
                  * @param req ModifyConnectionConfigRequest
                  * @return ModifyConnectionConfigOutcome
                  */
@@ -1298,7 +1298,7 @@ namespace TencentCloud
                 ModifyDBInstanceSecurityGroupsOutcomeCallable ModifyDBInstanceSecurityGroupsCallable(const Model::ModifyDBInstanceSecurityGroupsRequest& request);
 
                 /**
-                 *修改实例相关信息
+                 *本接口（ModifyInstance）用于修改实例相关信息。
                  * @param req ModifyInstanceRequest
                  * @return ModifyInstanceOutcome
                  */
@@ -1307,7 +1307,7 @@ namespace TencentCloud
                 ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
 
                 /**
-                 *修改实例子账号
+                 *本接口（ModifyInstanceAccount）用于修改实例子账号。
                  * @param req ModifyInstanceAccountRequest
                  * @return ModifyInstanceAccountOutcome
                  */
@@ -1343,7 +1343,7 @@ namespace TencentCloud
                 ModifyInstanceLogDeliveryOutcomeCallable ModifyInstanceLogDeliveryCallable(const Model::ModifyInstanceLogDeliveryRequest& request);
 
                 /**
-                 *本接口(ModifyInstanceParams)用于修改Redis实例的参数配置。
+                 *本接口（ModifyInstanceParams）用于修改 Redis 实例的参数配置。
                  * @param req ModifyInstanceParamsRequest
                  * @return ModifyInstanceParamsOutcome
                  */
@@ -1361,7 +1361,7 @@ namespace TencentCloud
                 ModifyInstancePasswordOutcomeCallable ModifyInstancePasswordCallable(const Model::ModifyInstancePasswordRequest& request);
 
                 /**
-                 *设置实例输入模式
+                 *本接口（ModifyInstanceReadOnly）用于设置实例输入模式。
                  * @param req ModifyInstanceReadOnlyRequest
                  * @return ModifyInstanceReadOnlyOutcome
                  */
@@ -1370,7 +1370,7 @@ namespace TencentCloud
                 ModifyInstanceReadOnlyOutcomeCallable ModifyInstanceReadOnlyCallable(const Model::ModifyInstanceReadOnlyRequest& request);
 
                 /**
-                 *修改实例维护时间窗时间，需要进行版本升级或者架构升级的实例，会在维护时间窗内进行时间切换。注意：已经发起版本升级或者架构升级的实例，无法修改维护时间窗。
+                 *本接口（ModifyMaintenanceWindow）用于修改实例维护时间窗时间，需要进行版本升级或者架构升级的实例，会在维护时间窗内进行时间切换。注意：已经发起版本升级或者架构升级的实例，无法修改维护时间窗。
                  * @param req ModifyMaintenanceWindowRequest
                  * @return ModifyMaintenanceWindowOutcome
                  */
@@ -1388,7 +1388,7 @@ namespace TencentCloud
                 ModifyNetworkConfigOutcomeCallable ModifyNetworkConfigCallable(const Model::ModifyNetworkConfigRequest& request);
 
                 /**
-                 *修改参数模板
+                 *本接口（ModifyParamTemplate）用于修改参数模板。
                  * @param req ModifyParamTemplateRequest
                  * @return ModifyParamTemplateOutcome
                  */
@@ -1406,7 +1406,7 @@ namespace TencentCloud
                 ModifyReplicationGroupOutcomeCallable ModifyReplicationGroupCallable(const Model::ModifyReplicationGroupRequest& request);
 
                 /**
-                 *开启SSL
+                 *本接口（OpenSSL）用于开启 SSL 加密认证功能。
                  * @param req OpenSSLRequest
                  * @return OpenSSLOutcome
                  */
@@ -1415,7 +1415,7 @@ namespace TencentCloud
                 OpenSSLOutcomeCallable OpenSSLCallable(const Model::OpenSSLRequest& request);
 
                 /**
-                 *关闭外网
+                 *本接口（ReleaseWanAddress）用于关闭外网访问。
                  * @param req ReleaseWanAddressRequest
                  * @return ReleaseWanAddressOutcome
                  */
@@ -1424,7 +1424,7 @@ namespace TencentCloud
                 ReleaseWanAddressOutcomeCallable ReleaseWanAddressCallable(const Model::ReleaseWanAddressRequest& request);
 
                 /**
-                 *移除复制组成员
+                 *本接口（RemoveReplicationInstance）用于移除复制组中的实例。
                  * @param req RemoveReplicationInstanceRequest
                  * @return RemoveReplicationInstanceOutcome
                  */
@@ -1442,7 +1442,7 @@ namespace TencentCloud
                 RenewInstanceOutcomeCallable RenewInstanceCallable(const Model::RenewInstanceRequest& request);
 
                 /**
-                 *重置密码
+                 *本接口（ResetPassword）用于重置实例访问密码。
                  * @param req ResetPasswordRequest
                  * @return ResetPasswordOutcome
                  */
@@ -1460,7 +1460,7 @@ namespace TencentCloud
                 RestoreInstanceOutcomeCallable RestoreInstanceCallable(const Model::RestoreInstanceRequest& request);
 
                 /**
-                 *实例解隔离
+                 *本接口（StartupInstance）用于实例解隔离。
                  * @param req StartupInstanceRequest
                  * @return StartupInstanceOutcome
                  */
@@ -1478,7 +1478,7 @@ namespace TencentCloud
                 SwitchAccessNewInstanceOutcomeCallable SwitchAccessNewInstanceCallable(const Model::SwitchAccessNewInstanceRequest& request);
 
                 /**
-                 *在通过DTS支持跨可用区灾备的场景中，通过该接口交换实例VIP完成实例灾备切换。交换VIP后目标实例可写，源和目标实例VIP互换，同时源与目标实例间DTS同步任务断开
+                 *在通过 DTS 支持跨可用区灾备的场景中，通过该接口（SwitchInstanceVip）交换实例 VIP 完成实例灾备切换。交换 VIP 后目标实例可写，源和目标实例VIP互换，同时源与目标实例间 DTS 同步任务断开。
                  * @param req SwitchInstanceVipRequest
                  * @return SwitchInstanceVipOutcome
                  */
@@ -1487,7 +1487,7 @@ namespace TencentCloud
                 SwitchInstanceVipOutcomeCallable SwitchInstanceVipCallable(const Model::SwitchInstanceVipRequest& request);
 
                 /**
-                 *Proxy模拟故障接口
+                 *本接口（SwitchProxy）为 Proxy 模拟故障接口。
                  * @param req SwitchProxyRequest
                  * @return SwitchProxyOutcome
                  */
@@ -1505,7 +1505,7 @@ namespace TencentCloud
                 UpgradeInstanceOutcomeCallable UpgradeInstanceCallable(const Model::UpgradeInstanceRequest& request);
 
                 /**
-                 *将当前实例升级到更高版本，或者将当前标准架构升级至集群架构。
+                 *本接口（UpgradeInstanceVersion）用于将当前实例升级到更高版本，或者将当前标准架构升级至集群架构。
                  * @param req UpgradeInstanceVersionRequest
                  * @return UpgradeInstanceVersionOutcome
                  */
@@ -1514,7 +1514,7 @@ namespace TencentCloud
                 UpgradeInstanceVersionOutcomeCallable UpgradeInstanceVersionCallable(const Model::UpgradeInstanceVersionRequest& request);
 
                 /**
-                 *实例proxy版本升级
+                 *本接口（UpgradeProxyVersion）用于升级实例 Proxy 版本。
                  * @param req UpgradeProxyVersionRequest
                  * @return UpgradeProxyVersionOutcome
                  */
@@ -1523,7 +1523,7 @@ namespace TencentCloud
                 UpgradeProxyVersionOutcomeCallable UpgradeProxyVersionCallable(const Model::UpgradeProxyVersionRequest& request);
 
                 /**
-                 *实例小版本升级
+                 *本接口（UpgradeSmallVersion）用于实例小版本升级。
                  * @param req UpgradeSmallVersionRequest
                  * @return UpgradeSmallVersionOutcome
                  */
@@ -1532,7 +1532,7 @@ namespace TencentCloud
                 UpgradeSmallVersionOutcomeCallable UpgradeSmallVersionCallable(const Model::UpgradeSmallVersionRequest& request);
 
                 /**
-                 *升级实例支持多AZ
+                 *本接口（UpgradeVersionToMultiAvailabilityZones）用于升级实例支持多AZ。
                  * @param req UpgradeVersionToMultiAvailabilityZonesRequest
                  * @return UpgradeVersionToMultiAvailabilityZonesOutcome
                  */

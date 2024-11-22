@@ -24,7 +24,8 @@ using namespace std;
 
 CreateOrUpdateConfigFileAndReleaseRequest::CreateOrUpdateConfigFileAndReleaseRequest() :
     m_instanceIdHasBeenSet(false),
-    m_configFilePublishInfoHasBeenSet(false)
+    m_configFilePublishInfoHasBeenSet(false),
+    m_strictEnableHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string CreateOrUpdateConfigFileAndReleaseRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_configFilePublishInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_strictEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StrictEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_strictEnable, allocator);
     }
 
 
@@ -90,6 +99,22 @@ void CreateOrUpdateConfigFileAndReleaseRequest::SetConfigFilePublishInfo(const C
 bool CreateOrUpdateConfigFileAndReleaseRequest::ConfigFilePublishInfoHasBeenSet() const
 {
     return m_configFilePublishInfoHasBeenSet;
+}
+
+bool CreateOrUpdateConfigFileAndReleaseRequest::GetStrictEnable() const
+{
+    return m_strictEnable;
+}
+
+void CreateOrUpdateConfigFileAndReleaseRequest::SetStrictEnable(const bool& _strictEnable)
+{
+    m_strictEnable = _strictEnable;
+    m_strictEnableHasBeenSet = true;
+}
+
+bool CreateOrUpdateConfigFileAndReleaseRequest::StrictEnableHasBeenSet() const
+{
+    return m_strictEnableHasBeenSet;
 }
 
 

@@ -24,7 +24,9 @@ using namespace TencentCloud::Tse::V20201207::Model;
 using namespace std;
 
 CreateOrUpdateConfigFileAndReleaseResponse::CreateOrUpdateConfigFileAndReleaseResponse() :
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_configFileReleaseIdHasBeenSet(false),
+    m_configFileIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome CreateOrUpdateConfigFileAndReleaseResponse::Deserialize(cons
         m_resultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ConfigFileReleaseId") && !rsp["ConfigFileReleaseId"].IsNull())
+    {
+        if (!rsp["ConfigFileReleaseId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFileReleaseId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_configFileReleaseId = string(rsp["ConfigFileReleaseId"].GetString());
+        m_configFileReleaseIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ConfigFileId") && !rsp["ConfigFileId"].IsNull())
+    {
+        if (!rsp["ConfigFileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_configFileId = string(rsp["ConfigFileId"].GetString());
+        m_configFileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +110,22 @@ string CreateOrUpdateConfigFileAndReleaseResponse::ToJsonString() const
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_result, allocator);
+    }
+
+    if (m_configFileReleaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigFileReleaseId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configFileReleaseId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configFileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigFileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configFileId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +148,26 @@ bool CreateOrUpdateConfigFileAndReleaseResponse::GetResult() const
 bool CreateOrUpdateConfigFileAndReleaseResponse::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+string CreateOrUpdateConfigFileAndReleaseResponse::GetConfigFileReleaseId() const
+{
+    return m_configFileReleaseId;
+}
+
+bool CreateOrUpdateConfigFileAndReleaseResponse::ConfigFileReleaseIdHasBeenSet() const
+{
+    return m_configFileReleaseIdHasBeenSet;
+}
+
+string CreateOrUpdateConfigFileAndReleaseResponse::GetConfigFileId() const
+{
+    return m_configFileId;
+}
+
+bool CreateOrUpdateConfigFileAndReleaseResponse::ConfigFileIdHasBeenSet() const
+{
+    return m_configFileIdHasBeenSet;
 }
 
 

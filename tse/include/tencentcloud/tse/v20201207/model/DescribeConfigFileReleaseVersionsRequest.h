@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool FileNameHasBeenSet() const;
 
+                    /**
+                     * 获取配置文件ID
+                     * @return ConfigFileId 配置文件ID
+                     * 
+                     */
+                    std::string GetConfigFileId() const;
+
+                    /**
+                     * 设置配置文件ID
+                     * @param _configFileId 配置文件ID
+                     * 
+                     */
+                    void SetConfigFileId(const std::string& _configFileId);
+
+                    /**
+                     * 判断参数 ConfigFileId 是否已赋值
+                     * @return ConfigFileId 是否已赋值
+                     * 
+                     */
+                    bool ConfigFileIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
+
+                    /**
+                     * 配置文件ID
+                     */
+                    std::string m_configFileId;
+                    bool m_configFileIdHasBeenSet;
 
                 };
             }

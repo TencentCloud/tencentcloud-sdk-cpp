@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @return InstanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param _instanceId 实例Id
+                     * 设置实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @param _instanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取分片大小 单位 MB
-                     * @return MemSize 分片大小 单位 MB
+                     * 获取分片大小，单位：MB。
+                     * @return MemSize 分片大小，单位：MB。
                      * 
                      */
                     uint64_t GetMemSize() const;
 
                     /**
-                     * 设置分片大小 单位 MB
-                     * @param _memSize 分片大小 单位 MB
+                     * 设置分片大小，单位：MB。
+                     * @param _memSize 分片大小，单位：MB。
                      * 
                      */
                     void SetMemSize(const uint64_t& _memSize);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MemSizeHasBeenSet() const;
 
                     /**
-                     * 获取分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
-                     * @return RedisShardNum 分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
+                     * 获取分片数量，Redis 2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
+                     * @return RedisShardNum 分片数量，Redis 2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
                      * 
                      */
                     uint64_t GetRedisShardNum() const;
 
                     /**
-                     * 设置分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
-                     * @param _redisShardNum 分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
+                     * 设置分片数量，Redis 2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
+                     * @param _redisShardNum 分片数量，Redis 2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
                      * 
                      */
                     void SetRedisShardNum(const uint64_t& _redisShardNum);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool RedisShardNumHasBeenSet() const;
 
                     /**
-                     * 获取副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
-                     * @return RedisReplicasNum 副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
+                     * 获取副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
+                     * @return RedisReplicasNum 副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
                      * 
                      */
                     uint64_t GetRedisReplicasNum() const;
 
                     /**
-                     * 设置副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
-                     * @param _redisReplicasNum 副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
+                     * 设置副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
+                     * @param _redisReplicasNum 副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
                      * 
                      */
                     void SetRedisReplicasNum(const uint64_t& _redisReplicasNum);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Id
+                     * 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 分片大小 单位 MB
+                     * 分片大小，单位：MB。
                      */
                     uint64_t m_memSize;
                     bool m_memSizeHasBeenSet;
 
                     /**
-                     * 分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
+                     * 分片数量，Redis 2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
                      */
                     uint64_t m_redisShardNum;
                     bool m_redisShardNumHasBeenSet;
 
                     /**
-                     * 副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写
+                     * 副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写。
                      */
                     uint64_t m_redisReplicasNum;
                     bool m_redisReplicasNumHasBeenSet;

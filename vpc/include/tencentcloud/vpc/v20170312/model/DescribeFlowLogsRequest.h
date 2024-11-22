@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool CloudLogStateHasBeenSet() const;
 
                     /**
-                     * 获取按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
-                     * @return OrderField 按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
+                     * 获取按某个字段排序,支持字段：flowLogName,createTime，默认按CreatedTime。
+                     * @return OrderField 按某个字段排序,支持字段：flowLogName,createTime，默认按CreatedTime。
                      * 
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
-                     * @param _orderField 按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
+                     * 设置按某个字段排序,支持字段：flowLogName,createTime，默认按CreatedTime。
+                     * @param _orderField 按某个字段排序,支持字段：flowLogName,createTime，默认按CreatedTime。
                      * 
                      */
                     void SetOrderField(const std::string& _orderField);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool OrderFieldHasBeenSet() const;
 
                     /**
-                     * 获取升序（asc）还是降序（desc）,默认：desc。
-                     * @return OrderDirection 升序（asc）还是降序（desc）,默认：desc。
+                     * 获取升序（ASC）还是降序（DESC）,默认：DESC。
+                     * @return OrderDirection 升序（ASC）还是降序（DESC）,默认：DESC。
                      * 
                      */
                     std::string GetOrderDirection() const;
 
                     /**
-                     * 设置升序（asc）还是降序（desc）,默认：desc。
-                     * @param _orderDirection 升序（asc）还是降序（desc）,默认：desc。
+                     * 设置升序（ASC）还是降序（DESC）,默认：DESC。
+                     * @param _orderDirection 升序（ASC）还是降序（DESC）,默认：DESC。
                      * 
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
@@ -396,13 +396,13 @@ namespace TencentCloud
                     bool m_cloudLogStateHasBeenSet;
 
                     /**
-                     * 按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
+                     * 按某个字段排序,支持字段：flowLogName,createTime，默认按CreatedTime。
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;
 
                     /**
-                     * 升序（asc）还是降序（desc）,默认：desc。
+                     * 升序（ASC）还是降序（DESC）,默认：DESC。
                      */
                     std::string m_orderDirection;
                     bool m_orderDirectionHasBeenSet;

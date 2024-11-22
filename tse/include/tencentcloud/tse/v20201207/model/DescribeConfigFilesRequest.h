@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool GroupHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取配置文件名称
+                     * @return Name 配置文件名称
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param _name 名称
+                     * 设置配置文件名称
+                     * @param _name 配置文件名称
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -190,6 +190,27 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取配置文件ID
+                     * @return Id 配置文件ID
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置配置文件ID
+                     * @param _id 配置文件ID
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,7 +232,7 @@ namespace TencentCloud
                     bool m_groupHasBeenSet;
 
                     /**
-                     * 名称
+                     * 配置文件名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -233,6 +254,12 @@ namespace TencentCloud
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 配置文件ID
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }

@@ -61,7 +61,6 @@ namespace TencentCloud
 
                 /**
                  *该接口可以根据InstanceId查询实例的api的使用情况。
-
                  * @param req GetUsagePlanUsageAmountRequest
                  * @return GetUsagePlanUsageAmountOutcome
                  */

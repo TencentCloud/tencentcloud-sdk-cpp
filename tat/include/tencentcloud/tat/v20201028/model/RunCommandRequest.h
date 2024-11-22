@@ -274,12 +274,12 @@ namespace TencentCloud
                     bool EnableParameterHasBeenSet() const;
 
                     /**
-                     * 获取启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * 获取启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 如果 Parameters 未提供，将使用这里的默认值进行替换。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
-                     * @return DefaultParameters 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * @return DefaultParameters 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 如果 Parameters 未提供，将使用这里的默认值进行替换。
 自定义参数最多20个。
@@ -289,12 +289,12 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     std::string GetDefaultParameters() const;
 
                     /**
-                     * 设置启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * 设置启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 如果 Parameters 未提供，将使用这里的默认值进行替换。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
-                     * @param _defaultParameters 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * @param _defaultParameters 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 如果 Parameters 未提供，将使用这里的默认值进行替换。
 自定义参数最多20个。
@@ -332,12 +332,12 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     bool DefaultParameterConfsHasBeenSet() const;
 
                     /**
-                     * 获取Command 的自定义参数。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * 获取Command 的自定义参数。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 如果未提供该参数取值，将使用 DefaultParameters 进行替换。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
-                     * @return Parameters Command 的自定义参数。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * @return Parameters Command 的自定义参数。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 如果未提供该参数取值，将使用 DefaultParameters 进行替换。
 自定义参数最多20个。
@@ -347,12 +347,12 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     std::string GetParameters() const;
 
                     /**
-                     * 设置Command 的自定义参数。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * 设置Command 的自定义参数。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 如果未提供该参数取值，将使用 DefaultParameters 进行替换。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
-                     * @param _parameters Command 的自定义参数。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * @param _parameters Command 的自定义参数。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 如果未提供该参数取值，将使用 DefaultParameters 进行替换。
 自定义参数最多20个。
@@ -535,7 +535,7 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     bool m_enableParameterHasBeenSet;
 
                     /**
-                     * 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 如果 Parameters 未提供，将使用这里的默认值进行替换。
 自定义参数最多20个。
@@ -551,7 +551,7 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     bool m_defaultParameterConfsHasBeenSet;
 
                     /**
-                     * Command 的自定义参数。字段类型为json encoded string。如：{\"varA\": \"222\"}。
+                     * Command 的自定义参数。字段类型为json encoded string。如：{"varA": "222"}。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 如果未提供该参数取值，将使用 DefaultParameters 进行替换。
 自定义参数最多20个。

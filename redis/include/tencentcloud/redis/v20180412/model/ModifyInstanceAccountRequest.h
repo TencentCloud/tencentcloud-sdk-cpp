@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @return InstanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @param _instanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取子账号名称，如果要修改主账号，填root
-                     * @return AccountName 子账号名称，如果要修改主账号，填root
+                     * 获取子账号名称，如果要修改主账号，填 root。
+                     * @return AccountName 子账号名称，如果要修改主账号，填 root。
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置子账号名称，如果要修改主账号，填root
-                     * @param _accountName 子账号名称，如果要修改主账号，填root
+                     * 设置子账号名称，如果要修改主账号，填 root。
+                     * @param _accountName 子账号名称，如果要修改主账号，填 root。
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AccountNameHasBeenSet() const;
 
                     /**
-                     * 获取子账号密码
-                     * @return AccountPassword 子账号密码
+                     * 获取子账号密码。
+                     * @return AccountPassword 子账号密码。
                      * 
                      */
                     std::string GetAccountPassword() const;
 
                     /**
-                     * 设置子账号密码
-                     * @param _accountPassword 子账号密码
+                     * 设置子账号密码。
+                     * @param _accountPassword 子账号密码。
                      * 
                      */
                     void SetAccountPassword(const std::string& _accountPassword);
@@ -127,15 +127,23 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取路由策略：填写master或者replication，表示主节点或者从节点
-                     * @return ReadonlyPolicy 路由策略：填写master或者replication，表示主节点或者从节点
+                     * 获取账号读写路由策略。
+- master：表示主节点。
+- replication：表示从节点。
+                     * @return ReadonlyPolicy 账号读写路由策略。
+- master：表示主节点。
+- replication：表示从节点。
                      * 
                      */
                     std::vector<std::string> GetReadonlyPolicy() const;
 
                     /**
-                     * 设置路由策略：填写master或者replication，表示主节点或者从节点
-                     * @param _readonlyPolicy 路由策略：填写master或者replication，表示主节点或者从节点
+                     * 设置账号读写路由策略。
+- master：表示主节点。
+- replication：表示从节点。
+                     * @param _readonlyPolicy 账号读写路由策略。
+- master：表示主节点。
+- replication：表示从节点。
                      * 
                      */
                     void SetReadonlyPolicy(const std::vector<std::string>& _readonlyPolicy);
@@ -148,15 +156,27 @@ namespace TencentCloud
                     bool ReadonlyPolicyHasBeenSet() const;
 
                     /**
-                     * 获取子账号读写策略：填写r、w、rw，表示只读，只写，读写策略
-                     * @return Privilege 子账号读写策略：填写r、w、rw，表示只读，只写，读写策略
+                     * 获取子账号读写策略。
+- r：只读。
+- w：只写。
+- rw：读写。
+                     * @return Privilege 子账号读写策略。
+- r：只读。
+- w：只写。
+- rw：读写。
                      * 
                      */
                     std::string GetPrivilege() const;
 
                     /**
-                     * 设置子账号读写策略：填写r、w、rw，表示只读，只写，读写策略
-                     * @param _privilege 子账号读写策略：填写r、w、rw，表示只读，只写，读写策略
+                     * 设置子账号读写策略。
+- r：只读。
+- w：只写。
+- rw：读写。
+                     * @param _privilege 子账号读写策略。
+- r：只读。
+- w：只写。
+- rw：读写。
                      * 
                      */
                     void SetPrivilege(const std::string& _privilege);
@@ -169,15 +189,23 @@ namespace TencentCloud
                     bool PrivilegeHasBeenSet() const;
 
                     /**
-                     * 获取true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密。
-                     * @return NoAuth true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密。
+                     * 获取指定是否将主账号切换为免密账号。这里只适用于主账号，子账号不可免密。
+- true：将主账号切换为免密账号。
+- false：不切换。
+                     * @return NoAuth 指定是否将主账号切换为免密账号。这里只适用于主账号，子账号不可免密。
+- true：将主账号切换为免密账号。
+- false：不切换。
                      * 
                      */
                     bool GetNoAuth() const;
 
                     /**
-                     * 设置true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密。
-                     * @param _noAuth true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密。
+                     * 设置指定是否将主账号切换为免密账号。这里只适用于主账号，子账号不可免密。
+- true：将主账号切换为免密账号。
+- false：不切换。
+                     * @param _noAuth 指定是否将主账号切换为免密账号。这里只适用于主账号，子账号不可免密。
+- true：将主账号切换为免密账号。
+- false：不切换。
                      * 
                      */
                     void SetNoAuth(const bool& _noAuth);
@@ -192,19 +220,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 子账号名称，如果要修改主账号，填root
+                     * 子账号名称，如果要修改主账号，填 root。
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
-                     * 子账号密码
+                     * 子账号密码。
                      */
                     std::string m_accountPassword;
                     bool m_accountPasswordHasBeenSet;
@@ -216,19 +244,26 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 路由策略：填写master或者replication，表示主节点或者从节点
+                     * 账号读写路由策略。
+- master：表示主节点。
+- replication：表示从节点。
                      */
                     std::vector<std::string> m_readonlyPolicy;
                     bool m_readonlyPolicyHasBeenSet;
 
                     /**
-                     * 子账号读写策略：填写r、w、rw，表示只读，只写，读写策略
+                     * 子账号读写策略。
+- r：只读。
+- w：只写。
+- rw：读写。
                      */
                     std::string m_privilege;
                     bool m_privilegeHasBeenSet;
 
                     /**
-                     * true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密。
+                     * 指定是否将主账号切换为免密账号。这里只适用于主账号，子账号不可免密。
+- true：将主账号切换为免密账号。
+- false：不切换。
                      */
                     bool m_noAuth;
                     bool m_noAuthHasBeenSet;

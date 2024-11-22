@@ -25,7 +25,8 @@ using namespace std;
 DescribeLivePullStreamTasksRequest::DescribeLivePullStreamTasksRequest() :
     m_taskIdHasBeenSet(false),
     m_pageNumHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_specifyTaskIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeLivePullStreamTasksRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_specifyTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecifyTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_specifyTaskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeLivePullStreamTasksRequest::SetPageSize(const uint64_t& _pageSize)
 bool DescribeLivePullStreamTasksRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeLivePullStreamTasksRequest::GetSpecifyTaskId() const
+{
+    return m_specifyTaskId;
+}
+
+void DescribeLivePullStreamTasksRequest::SetSpecifyTaskId(const string& _specifyTaskId)
+{
+    m_specifyTaskId = _specifyTaskId;
+    m_specifyTaskIdHasBeenSet = true;
+}
+
+bool DescribeLivePullStreamTasksRequest::SpecifyTaskIdHasBeenSet() const
+{
+    return m_specifyTaskIdHasBeenSet;
 }
 
 

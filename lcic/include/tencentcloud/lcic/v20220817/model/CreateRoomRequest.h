@@ -127,11 +127,11 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取分辨率。可以有如下取值：
+                     * 获取头像区域，摄像头视频画面的分辨率。可以有如下取值：
 1 标清
 2 高清
 3 全高清
-                     * @return Resolution 分辨率。可以有如下取值：
+                     * @return Resolution 头像区域，摄像头视频画面的分辨率。可以有如下取值：
 1 标清
 2 高清
 3 全高清
@@ -140,11 +140,11 @@ namespace TencentCloud
                     uint64_t GetResolution() const;
 
                     /**
-                     * 设置分辨率。可以有如下取值：
+                     * 设置头像区域，摄像头视频画面的分辨率。可以有如下取值：
 1 标清
 2 高清
 3 全高清
-                     * @param _resolution 分辨率。可以有如下取值：
+                     * @param _resolution 头像区域，摄像头视频画面的分辨率。可以有如下取值：
 1 标清
 2 高清
 3 全高清
@@ -775,7 +775,7 @@ video 纯视频
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 分辨率。可以有如下取值：
+                     * 头像区域，摄像头视频画面的分辨率。可以有如下取值：
 1 标清
 2 高清
 3 全高清

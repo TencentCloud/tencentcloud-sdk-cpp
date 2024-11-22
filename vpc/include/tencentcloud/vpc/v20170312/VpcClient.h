@@ -147,6 +147,8 @@
 #include <tencentcloud/vpc/v20170312/model/CreatePrivateNatGatewayTranslationAclRuleResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreatePrivateNatGatewayTranslationNatRuleRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreatePrivateNatGatewayTranslationNatRuleResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateReserveIpAddressesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateReserveIpAddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateRouteTableRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateRouteTableResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateRoutesRequest.h>
@@ -249,6 +251,8 @@
 #include <tencentcloud/vpc/v20170312/model/DeletePrivateNatGatewayTranslationAclRuleResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeletePrivateNatGatewayTranslationNatRuleRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeletePrivateNatGatewayTranslationNatRuleResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteReserveIpAddressesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteReserveIpAddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteRouteTableRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteRouteTableResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteRoutesRequest.h>
@@ -409,6 +413,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribePrivateNatGatewaysResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeProductQuotaRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeProductQuotaResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeReserveIpAddressesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeReserveIpAddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteConflictsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteConflictsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteTableAssociatedInstancesRequest.h>
@@ -653,6 +659,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyPrivateNatGatewayTranslationAclRuleResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyPrivateNatGatewayTranslationNatRuleRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyPrivateNatGatewayTranslationNatRuleResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyReserveIpAddressRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyReserveIpAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyRouteTableAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyRouteTableAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyRouteTableSelectionPoliciesRequest.h>
@@ -967,6 +975,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePrivateNatGatewayTranslationNatRuleResponse> CreatePrivateNatGatewayTranslationNatRuleOutcome;
                 typedef std::future<CreatePrivateNatGatewayTranslationNatRuleOutcome> CreatePrivateNatGatewayTranslationNatRuleOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreatePrivateNatGatewayTranslationNatRuleRequest&, CreatePrivateNatGatewayTranslationNatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrivateNatGatewayTranslationNatRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateReserveIpAddressesResponse> CreateReserveIpAddressesOutcome;
+                typedef std::future<CreateReserveIpAddressesOutcome> CreateReserveIpAddressesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateReserveIpAddressesRequest&, CreateReserveIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReserveIpAddressesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRouteTableResponse> CreateRouteTableOutcome;
                 typedef std::future<CreateRouteTableOutcome> CreateRouteTableOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateRouteTableRequest&, CreateRouteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouteTableAsyncHandler;
@@ -1120,6 +1131,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePrivateNatGatewayTranslationNatRuleResponse> DeletePrivateNatGatewayTranslationNatRuleOutcome;
                 typedef std::future<DeletePrivateNatGatewayTranslationNatRuleOutcome> DeletePrivateNatGatewayTranslationNatRuleOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeletePrivateNatGatewayTranslationNatRuleRequest&, DeletePrivateNatGatewayTranslationNatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrivateNatGatewayTranslationNatRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteReserveIpAddressesResponse> DeleteReserveIpAddressesOutcome;
+                typedef std::future<DeleteReserveIpAddressesOutcome> DeleteReserveIpAddressesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteReserveIpAddressesRequest&, DeleteReserveIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReserveIpAddressesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRouteTableResponse> DeleteRouteTableOutcome;
                 typedef std::future<DeleteRouteTableOutcome> DeleteRouteTableOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteRouteTableRequest&, DeleteRouteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteTableAsyncHandler;
@@ -1360,6 +1374,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProductQuotaResponse> DescribeProductQuotaOutcome;
                 typedef std::future<DescribeProductQuotaOutcome> DescribeProductQuotaOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeProductQuotaRequest&, DescribeProductQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReserveIpAddressesResponse> DescribeReserveIpAddressesOutcome;
+                typedef std::future<DescribeReserveIpAddressesOutcome> DescribeReserveIpAddressesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeReserveIpAddressesRequest&, DescribeReserveIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReserveIpAddressesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRouteConflictsResponse> DescribeRouteConflictsOutcome;
                 typedef std::future<DescribeRouteConflictsOutcome> DescribeRouteConflictsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeRouteConflictsRequest&, DescribeRouteConflictsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteConflictsAsyncHandler;
@@ -1726,6 +1743,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPrivateNatGatewayTranslationNatRuleResponse> ModifyPrivateNatGatewayTranslationNatRuleOutcome;
                 typedef std::future<ModifyPrivateNatGatewayTranslationNatRuleOutcome> ModifyPrivateNatGatewayTranslationNatRuleOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyPrivateNatGatewayTranslationNatRuleRequest&, ModifyPrivateNatGatewayTranslationNatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrivateNatGatewayTranslationNatRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyReserveIpAddressResponse> ModifyReserveIpAddressOutcome;
+                typedef std::future<ModifyReserveIpAddressOutcome> ModifyReserveIpAddressOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyReserveIpAddressRequest&, ModifyReserveIpAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReserveIpAddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRouteTableAttributeResponse> ModifyRouteTableAttributeOutcome;
                 typedef std::future<ModifyRouteTableAttributeOutcome> ModifyRouteTableAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyRouteTableAttributeRequest&, ModifyRouteTableAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRouteTableAttributeAsyncHandler;
@@ -2198,7 +2218,7 @@ namespace TencentCloud
                 ClearRouteTableSelectionPoliciesOutcomeCallable ClearRouteTableSelectionPoliciesCallable(const Model::ClearRouteTableSelectionPoliciesRequest& request);
 
                 /**
-                 *本接口（CloneSecurityGroup）用于根据存量的安全组，克隆创建出同样规则配置的安全组。仅克隆安全组及其规则信息，不会克隆安全组标签信息。
+                 *本接口（CloneSecurityGroup）用于根据存量的安全组，克隆创建出同样规则配置的安全组。默认仅克隆安全组及其规则信息，可通过入参开启克隆安全组标签信息。
                  * @param req CloneSecurityGroupRequest
                  * @return CloneSecurityGroupOutcome
                  */
@@ -2532,6 +2552,15 @@ namespace TencentCloud
                 CreatePrivateNatGatewayTranslationNatRuleOutcome CreatePrivateNatGatewayTranslationNatRule(const Model::CreatePrivateNatGatewayTranslationNatRuleRequest &request);
                 void CreatePrivateNatGatewayTranslationNatRuleAsync(const Model::CreatePrivateNatGatewayTranslationNatRuleRequest& request, const CreatePrivateNatGatewayTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePrivateNatGatewayTranslationNatRuleOutcomeCallable CreatePrivateNatGatewayTranslationNatRuleCallable(const Model::CreatePrivateNatGatewayTranslationNatRuleRequest& request);
+
+                /**
+                 *创建内网保留IP
+                 * @param req CreateReserveIpAddressesRequest
+                 * @return CreateReserveIpAddressesOutcome
+                 */
+                CreateReserveIpAddressesOutcome CreateReserveIpAddresses(const Model::CreateReserveIpAddressesRequest &request);
+                void CreateReserveIpAddressesAsync(const Model::CreateReserveIpAddressesRequest& request, const CreateReserveIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateReserveIpAddressesOutcomeCallable CreateReserveIpAddressesCallable(const Model::CreateReserveIpAddressesRequest& request);
 
                 /**
                  *本接口(CreateRouteTable)用于创建路由表。
@@ -3062,6 +3091,15 @@ namespace TencentCloud
                 DeletePrivateNatGatewayTranslationNatRuleOutcome DeletePrivateNatGatewayTranslationNatRule(const Model::DeletePrivateNatGatewayTranslationNatRuleRequest &request);
                 void DeletePrivateNatGatewayTranslationNatRuleAsync(const Model::DeletePrivateNatGatewayTranslationNatRuleRequest& request, const DeletePrivateNatGatewayTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePrivateNatGatewayTranslationNatRuleOutcomeCallable DeletePrivateNatGatewayTranslationNatRuleCallable(const Model::DeletePrivateNatGatewayTranslationNatRuleRequest& request);
+
+                /**
+                 *删除内网保留IP
+                 * @param req DeleteReserveIpAddressesRequest
+                 * @return DeleteReserveIpAddressesOutcome
+                 */
+                DeleteReserveIpAddressesOutcome DeleteReserveIpAddresses(const Model::DeleteReserveIpAddressesRequest &request);
+                void DeleteReserveIpAddressesAsync(const Model::DeleteReserveIpAddressesRequest& request, const DeleteReserveIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteReserveIpAddressesOutcomeCallable DeleteReserveIpAddressesCallable(const Model::DeleteReserveIpAddressesRequest& request);
 
                 /**
                  *本接口（DeleteRouteTable）用于删除路由表。
@@ -3804,6 +3842,15 @@ namespace TencentCloud
                 DescribeProductQuotaOutcome DescribeProductQuota(const Model::DescribeProductQuotaRequest &request);
                 void DescribeProductQuotaAsync(const Model::DescribeProductQuotaRequest& request, const DescribeProductQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProductQuotaOutcomeCallable DescribeProductQuotaCallable(const Model::DescribeProductQuotaRequest& request);
+
+                /**
+                 *查询内网保留 IP
+                 * @param req DescribeReserveIpAddressesRequest
+                 * @return DescribeReserveIpAddressesOutcome
+                 */
+                DescribeReserveIpAddressesOutcome DescribeReserveIpAddresses(const Model::DescribeReserveIpAddressesRequest &request);
+                void DescribeReserveIpAddressesAsync(const Model::DescribeReserveIpAddressesRequest& request, const DescribeReserveIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReserveIpAddressesOutcomeCallable DescribeReserveIpAddressesCallable(const Model::DescribeReserveIpAddressesRequest& request);
 
                 /**
                  *本接口（DescribeRouteConflicts）用于查询自定义路由策略与云联网路由策略冲突列表。
@@ -4978,6 +5025,15 @@ LimitTypes取值范围：
                 ModifyPrivateNatGatewayTranslationNatRuleOutcome ModifyPrivateNatGatewayTranslationNatRule(const Model::ModifyPrivateNatGatewayTranslationNatRuleRequest &request);
                 void ModifyPrivateNatGatewayTranslationNatRuleAsync(const Model::ModifyPrivateNatGatewayTranslationNatRuleRequest& request, const ModifyPrivateNatGatewayTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPrivateNatGatewayTranslationNatRuleOutcomeCallable ModifyPrivateNatGatewayTranslationNatRuleCallable(const Model::ModifyPrivateNatGatewayTranslationNatRuleRequest& request);
+
+                /**
+                 *修改内网保留 IP
+                 * @param req ModifyReserveIpAddressRequest
+                 * @return ModifyReserveIpAddressOutcome
+                 */
+                ModifyReserveIpAddressOutcome ModifyReserveIpAddress(const Model::ModifyReserveIpAddressRequest &request);
+                void ModifyReserveIpAddressAsync(const Model::ModifyReserveIpAddressRequest& request, const ModifyReserveIpAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyReserveIpAddressOutcomeCallable ModifyReserveIpAddressCallable(const Model::ModifyReserveIpAddressRequest& request);
 
                 /**
                  *本接口（ModifyRouteTableAttribute）用于修改路由表（RouteTable）属性。

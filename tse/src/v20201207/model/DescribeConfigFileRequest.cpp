@@ -26,7 +26,8 @@ DescribeConfigFileRequest::DescribeConfigFileRequest() :
     m_instanceIdHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_groupHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeConfigFileRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeConfigFileRequest::SetName(const string& _name)
 bool DescribeConfigFileRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string DescribeConfigFileRequest::GetId() const
+{
+    return m_id;
+}
+
+void DescribeConfigFileRequest::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool DescribeConfigFileRequest::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 
 

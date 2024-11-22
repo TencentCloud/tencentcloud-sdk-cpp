@@ -135,6 +135,31 @@ namespace TencentCloud
                     bool SegmentUrlHasBeenSet() const;
 
                     /**
+                     * 获取拆条片段封面。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CovImgUrl 拆条片段封面。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCovImgUrl() const;
+
+                    /**
+                     * 设置拆条片段封面。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _covImgUrl 拆条片段封面。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCovImgUrl(const std::string& _covImgUrl);
+
+                    /**
+                     * 判断参数 CovImgUrl 是否已赋值
+                     * @return CovImgUrl 是否已赋值
+                     * 
+                     */
+                    bool CovImgUrlHasBeenSet() const;
+
+                    /**
                      * 获取分段标题。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Title 分段标题。
@@ -183,6 +208,27 @@ namespace TencentCloud
                      * 
                      */
                     bool SummaryHasBeenSet() const;
+
+                    /**
+                     * 获取分段关键词。
+                     * @return Keywords 分段关键词。
+                     * 
+                     */
+                    std::vector<std::string> GetKeywords() const;
+
+                    /**
+                     * 设置分段关键词。
+                     * @param _keywords 分段关键词。
+                     * 
+                     */
+                    void SetKeywords(const std::vector<std::string>& _keywords);
+
+                    /**
+                     * 判断参数 Keywords 是否已赋值
+                     * @return Keywords 是否已赋值
+                     * 
+                     */
+                    bool KeywordsHasBeenSet() const;
 
                     /**
                      * 获取直播切片对应直播起始时间点，采用 ISO 日期格式。
@@ -262,6 +308,13 @@ namespace TencentCloud
                     bool m_segmentUrlHasBeenSet;
 
                     /**
+                     * 拆条片段封面。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_covImgUrl;
+                    bool m_covImgUrlHasBeenSet;
+
+                    /**
                      * 分段标题。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -274,6 +327,12 @@ namespace TencentCloud
                      */
                     std::string m_summary;
                     bool m_summaryHasBeenSet;
+
+                    /**
+                     * 分段关键词。
+                     */
+                    std::vector<std::string> m_keywords;
+                    bool m_keywordsHasBeenSet;
 
                     /**
                      * 直播切片对应直播起始时间点，采用 ISO 日期格式。

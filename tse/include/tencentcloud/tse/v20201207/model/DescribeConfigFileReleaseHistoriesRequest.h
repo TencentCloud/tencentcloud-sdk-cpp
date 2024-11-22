@@ -148,6 +148,27 @@ namespace TencentCloud
                     bool EndIdHasBeenSet() const;
 
                     /**
+                     * 获取配置文件ID
+                     * @return ConfigFileId 配置文件ID
+                     * 
+                     */
+                    std::string GetConfigFileId() const;
+
+                    /**
+                     * 设置配置文件ID
+                     * @param _configFileId 配置文件ID
+                     * 
+                     */
+                    void SetConfigFileId(const std::string& _configFileId);
+
+                    /**
+                     * 判断参数 ConfigFileId 是否已赋值
+                     * @return ConfigFileId 是否已赋值
+                     * 
+                     */
+                    bool ConfigFileIdHasBeenSet() const;
+
+                    /**
                      * 获取返回数量，默认为20，最大值为100。	
                      * @return Limit 返回数量，默认为20，最大值为100。	
                      * 
@@ -220,6 +241,12 @@ namespace TencentCloud
                      */
                     uint64_t m_endId;
                     bool m_endIdHasBeenSet;
+
+                    /**
+                     * 配置文件ID
+                     */
+                    std::string m_configFileId;
+                    bool m_configFileIdHasBeenSet;
 
                     /**
                      * 返回数量，默认为20，最大值为100。	

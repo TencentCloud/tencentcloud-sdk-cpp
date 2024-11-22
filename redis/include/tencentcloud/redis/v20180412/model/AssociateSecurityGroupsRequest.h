@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取要绑定的安全组ID，类似sg-efil73jd。
-                     * @return SecurityGroupId 要绑定的安全组ID，类似sg-efil73jd。
+                     * 获取要绑定的安全组ID，请在[控制台安全组](https://console.cloud.tencent.com/vpc/security-group)页面获取安全组 ID。
+                     * @return SecurityGroupId 要绑定的安全组ID，请在[控制台安全组](https://console.cloud.tencent.com/vpc/security-group)页面获取安全组 ID。
                      * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
-                     * 设置要绑定的安全组ID，类似sg-efil73jd。
-                     * @param _securityGroupId 要绑定的安全组ID，类似sg-efil73jd。
+                     * 设置要绑定的安全组ID，请在[控制台安全组](https://console.cloud.tencent.com/vpc/security-group)页面获取安全组 ID。
+                     * @param _securityGroupId 要绑定的安全组ID，请在[控制台安全组](https://console.cloud.tencent.com/vpc/security-group)页面获取安全组 ID。
                      * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取被绑定的实例ID，类似ins-lesecurk，支持指定多个实例。
-                     * @return InstanceIds 被绑定的实例ID，类似ins-lesecurk，支持指定多个实例。
+                     * 获取被绑定的实例ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID，支持指定多个实例。
+                     * @return InstanceIds 被绑定的实例ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID，支持指定多个实例。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置被绑定的实例ID，类似ins-lesecurk，支持指定多个实例。
-                     * @param _instanceIds 被绑定的实例ID，类似ins-lesecurk，支持指定多个实例。
+                     * 设置被绑定的实例ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID，支持指定多个实例。
+                     * @param _instanceIds 被绑定的实例ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID，支持指定多个实例。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -114,13 +114,13 @@ namespace TencentCloud
                     bool m_productHasBeenSet;
 
                     /**
-                     * 要绑定的安全组ID，类似sg-efil73jd。
+                     * 要绑定的安全组ID，请在[控制台安全组](https://console.cloud.tencent.com/vpc/security-group)页面获取安全组 ID。
                      */
                     std::string m_securityGroupId;
                     bool m_securityGroupIdHasBeenSet;
 
                     /**
-                     * 被绑定的实例ID，类似ins-lesecurk，支持指定多个实例。
+                     * 被绑定的实例ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID，支持指定多个实例。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

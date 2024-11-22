@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取名称
+                     * 获取配置发布的版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 名称
+                     * @return Name 配置发布的版本
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
+                     * 设置配置发布的版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 名称
+                     * @param _name 配置发布的版本
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -96,10 +96,110 @@ namespace TencentCloud
                      */
                     bool ActiveHasBeenSet() const;
 
+                    /**
+                     * 获取配置发布的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Id 配置发布的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置配置发布的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _id 配置发布的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取配置发布的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Namespace 配置发布的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置配置发布的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _namespace 配置发布的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取配置发布的分组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Group 配置发布的分组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGroup() const;
+
+                    /**
+                     * 设置配置发布的分组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _group 配置发布的分组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGroup(const std::string& _group);
+
+                    /**
+                     * 判断参数 Group 是否已赋值
+                     * @return Group 是否已赋值
+                     * 
+                     */
+                    bool GroupHasBeenSet() const;
+
+                    /**
+                     * 获取配置发布的文件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileName 配置发布的文件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFileName() const;
+
+                    /**
+                     * 设置配置发布的文件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fileName 配置发布的文件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFileName(const std::string& _fileName);
+
+                    /**
+                     * 判断参数 FileName 是否已赋值
+                     * @return FileName 是否已赋值
+                     * 
+                     */
+                    bool FileNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 名称
+                     * 配置发布的版本
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
@@ -111,6 +211,34 @@ namespace TencentCloud
                      */
                     bool m_active;
                     bool m_activeHasBeenSet;
+
+                    /**
+                     * 配置发布的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
+                     * 配置发布的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
+                     * 配置发布的分组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_group;
+                    bool m_groupHasBeenSet;
+
+                    /**
+                     * 配置发布的文件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fileName;
+                    bool m_fileNameHasBeenSet;
 
                 };
             }

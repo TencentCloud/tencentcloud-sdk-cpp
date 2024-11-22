@@ -36,7 +36,8 @@ ConfigFileRelease::ConfigFileRelease() :
     m_modifyByHasBeenSet(false),
     m_releaseDescriptionHasBeenSet(false),
     m_activeHasBeenSet(false),
-    m_formatHasBeenSet(false)
+    m_formatHasBeenSet(false),
+    m_configFileIdHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome ConfigFileRelease::Deserialize(const rapidjson::Value &value
         m_formatHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigFileId") && !value["ConfigFileId"].IsNull())
+    {
+        if (!value["ConfigFileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFileRelease.ConfigFileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_configFileId = string(value["ConfigFileId"].GetString());
+        m_configFileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +349,14 @@ void ConfigFileRelease::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Format";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configFileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigFileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configFileId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +616,21 @@ void ConfigFileRelease::SetFormat(const string& _format)
 bool ConfigFileRelease::FormatHasBeenSet() const
 {
     return m_formatHasBeenSet;
+}
+
+string ConfigFileRelease::GetConfigFileId() const
+{
+    return m_configFileId;
+}
+
+void ConfigFileRelease::SetConfigFileId(const string& _configFileId)
+{
+    m_configFileId = _configFileId;
+    m_configFileIdHasBeenSet = true;
+}
+
+bool ConfigFileRelease::ConfigFileIdHasBeenSet() const
+{
+    return m_configFileIdHasBeenSet;
 }
 

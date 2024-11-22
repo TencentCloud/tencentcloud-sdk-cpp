@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool ReleaseNameHasBeenSet() const;
 
+                    /**
+                     * 获取配置文件发布Id
+                     * @return Id 配置文件发布Id
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置配置文件发布Id
+                     * @param _id 配置文件发布Id
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_releaseName;
                     bool m_releaseNameHasBeenSet;
+
+                    /**
+                     * 配置文件发布Id
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }

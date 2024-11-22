@@ -27,7 +27,8 @@ CloneSecurityGroupRequest::CloneSecurityGroupRequest() :
     m_groupNameHasBeenSet(false),
     m_groupDescriptionHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_remoteRegionHasBeenSet(false)
+    m_remoteRegionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,15 @@ string CloneSecurityGroupRequest::ToJsonString() const
         string key = "RemoteRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remoteRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tags.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -164,6 +174,22 @@ void CloneSecurityGroupRequest::SetRemoteRegion(const string& _remoteRegion)
 bool CloneSecurityGroupRequest::RemoteRegionHasBeenSet() const
 {
     return m_remoteRegionHasBeenSet;
+}
+
+Tag CloneSecurityGroupRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CloneSecurityGroupRequest::SetTags(const Tag& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CloneSecurityGroupRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

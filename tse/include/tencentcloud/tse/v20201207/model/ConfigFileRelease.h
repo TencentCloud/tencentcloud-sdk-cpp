@@ -446,6 +446,31 @@ namespace TencentCloud
                      */
                     bool FormatHasBeenSet() const;
 
+                    /**
+                     * 获取配置文件ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigFileId 配置文件ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetConfigFileId() const;
+
+                    /**
+                     * 设置配置文件ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _configFileId 配置文件ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConfigFileId(const std::string& _configFileId);
+
+                    /**
+                     * 判断参数 ConfigFileId 是否已赋值
+                     * @return ConfigFileId 是否已赋值
+                     * 
+                     */
+                    bool ConfigFileIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -559,6 +584,13 @@ namespace TencentCloud
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
+
+                    /**
+                     * 配置文件ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_configFileId;
+                    bool m_configFileIdHasBeenSet;
 
                 };
             }

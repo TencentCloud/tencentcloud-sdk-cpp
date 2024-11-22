@@ -27,7 +27,8 @@ DescribeConfigFileReleaseRequest::DescribeConfigFileReleaseRequest() :
     m_namespaceHasBeenSet(false),
     m_groupHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_releaseNameHasBeenSet(false)
+    m_releaseNameHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeConfigFileReleaseRequest::ToJsonString() const
         string key = "ReleaseName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_releaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeConfigFileReleaseRequest::SetReleaseName(const string& _releaseName
 bool DescribeConfigFileReleaseRequest::ReleaseNameHasBeenSet() const
 {
     return m_releaseNameHasBeenSet;
+}
+
+string DescribeConfigFileReleaseRequest::GetId() const
+{
+    return m_id;
+}
+
+void DescribeConfigFileReleaseRequest::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool DescribeConfigFileReleaseRequest::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 
 

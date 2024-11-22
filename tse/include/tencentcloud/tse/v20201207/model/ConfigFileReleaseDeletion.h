@@ -146,6 +146,31 @@ namespace TencentCloud
                      */
                     bool ReleaseVersionHasBeenSet() const;
 
+                    /**
+                     * 获取配置发布ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Id 配置发布ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetId() const;
+
+                    /**
+                     * 设置配置发布ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _id 配置发布ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetId(const uint64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +200,13 @@ namespace TencentCloud
                      */
                     std::string m_releaseVersion;
                     bool m_releaseVersionHasBeenSet;
+
+                    /**
+                     * 配置发布ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }

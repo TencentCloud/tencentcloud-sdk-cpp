@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源实例ID
-                     * @return SrcInstanceId 源实例ID
+                     * 获取源实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @return SrcInstanceId 源实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetSrcInstanceId() const;
 
                     /**
-                     * 设置源实例ID
-                     * @param _srcInstanceId 源实例ID
+                     * 设置源实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @param _srcInstanceId 源实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     void SetSrcInstanceId(const std::string& _srcInstanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SrcInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取目标实例ID
-                     * @return DstInstanceId 目标实例ID
+                     * 获取目标实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @return DstInstanceId 目标实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetDstInstanceId() const;
 
                     /**
-                     * 设置目标实例ID
-                     * @param _dstInstanceId 目标实例ID
+                     * 设置目标实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @param _dstInstanceId 目标实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     void SetDstInstanceId(const std::string& _dstInstanceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DstInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取单位为秒。源实例与目标实例间DTS已断开时间，如果DTS断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。
-                     * @return TimeDelay 单位为秒。源实例与目标实例间DTS已断开时间，如果DTS断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。
+                     * 获取单位为秒。源实例与目标实例间DTS已断开时间。如果 DTS 断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。
+                     * @return TimeDelay 单位为秒。源实例与目标实例间DTS已断开时间。如果 DTS 断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。
                      * 
                      */
                     int64_t GetTimeDelay() const;
 
                     /**
-                     * 设置单位为秒。源实例与目标实例间DTS已断开时间，如果DTS断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。
-                     * @param _timeDelay 单位为秒。源实例与目标实例间DTS已断开时间，如果DTS断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。
+                     * 设置单位为秒。源实例与目标实例间DTS已断开时间。如果 DTS 断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。
+                     * @param _timeDelay 单位为秒。源实例与目标实例间DTS已断开时间。如果 DTS 断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。
                      * 
                      */
                     void SetTimeDelay(const int64_t& _timeDelay);
@@ -106,15 +106,23 @@ namespace TencentCloud
                     bool TimeDelayHasBeenSet() const;
 
                     /**
-                     * 获取在DTS断开的情况下是否强制切换。1：强制切换，0：不强制切换
-                     * @return ForceSwitch 在DTS断开的情况下是否强制切换。1：强制切换，0：不强制切换
+                     * 获取在 DTS 断开的情况下是否强制切换。
+- 1：强制切换。
+- 0：不强制切换。
+                     * @return ForceSwitch 在 DTS 断开的情况下是否强制切换。
+- 1：强制切换。
+- 0：不强制切换。
                      * 
                      */
                     int64_t GetForceSwitch() const;
 
                     /**
-                     * 设置在DTS断开的情况下是否强制切换。1：强制切换，0：不强制切换
-                     * @param _forceSwitch 在DTS断开的情况下是否强制切换。1：强制切换，0：不强制切换
+                     * 设置在 DTS 断开的情况下是否强制切换。
+- 1：强制切换。
+- 0：不强制切换。
+                     * @param _forceSwitch 在 DTS 断开的情况下是否强制切换。
+- 1：强制切换。
+- 0：不强制切换。
                      * 
                      */
                     void SetForceSwitch(const int64_t& _forceSwitch);
@@ -150,25 +158,27 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 源实例ID
+                     * 源实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      */
                     std::string m_srcInstanceId;
                     bool m_srcInstanceIdHasBeenSet;
 
                     /**
-                     * 目标实例ID
+                     * 目标实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      */
                     std::string m_dstInstanceId;
                     bool m_dstInstanceIdHasBeenSet;
 
                     /**
-                     * 单位为秒。源实例与目标实例间DTS已断开时间，如果DTS断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。
+                     * 单位为秒。源实例与目标实例间DTS已断开时间。如果 DTS 断开时间大于TimeDelay，则不切换VIP，建议尽量根据业务设置一个可接受的值。
                      */
                     int64_t m_timeDelay;
                     bool m_timeDelayHasBeenSet;
 
                     /**
-                     * 在DTS断开的情况下是否强制切换。1：强制切换，0：不强制切换
+                     * 在 DTS 断开的情况下是否强制切换。
+- 1：强制切换。
+- 0：不强制切换。
                      */
                     int64_t m_forceSwitch;
                     bool m_forceSwitchHasBeenSet;

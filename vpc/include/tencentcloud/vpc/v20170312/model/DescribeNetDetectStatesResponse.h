@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取符合条件的网络探测验证结果对象数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetDetectStateSet 符合条件的网络探测验证结果对象数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NetDetectState> GetNetDetectStateSet() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取符合条件的网络探测验证结果对象数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 符合条件的网络探测验证结果对象数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 符合条件的网络探测验证结果对象数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NetDetectState> m_netDetectStateSet;
                     bool m_netDetectStateSetHasBeenSet;
 
                     /**
                      * 符合条件的网络探测验证结果对象数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

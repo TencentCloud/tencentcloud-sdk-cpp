@@ -33,6 +33,10 @@
 #include <tencentcloud/live/v20180801/model/AuthenticateDomainOwnerResponse.h>
 #include <tencentcloud/live/v20180801/model/CancelCommonMixStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/CancelCommonMixStreamResponse.h>
+#include <tencentcloud/live/v20180801/model/CopyCasterRequest.h>
+#include <tencentcloud/live/v20180801/model/CopyCasterResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateCasterRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateCommonMixStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateCommonMixStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveCallbackRuleRequest.h>
@@ -73,6 +77,8 @@
 #include <tencentcloud/live/v20180801/model/CreateRecordTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateScreenshotTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateScreenshotTaskResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteCasterRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackRuleRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackTemplateRequest.h>
@@ -125,8 +131,14 @@
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCallbackRecordsListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeCallbackRecordsListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterDisplayInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterDisplayInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterPlayUrlRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterPlayUrlResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterTransitionTypesRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterTransitionTypesResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterUserStatusRequest.h>
@@ -217,6 +229,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeLiveTimeShiftRulesResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveTimeShiftTemplatesRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveTimeShiftTemplatesResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveTimeShiftWriteSizeInfoListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveTimeShiftWriteSizeInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveTranscodeDetailInfoRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveTranscodeDetailInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveTranscodeRulesRequest.h>
@@ -287,6 +301,8 @@
 #include <tencentcloud/live/v20180801/model/ForbidLiveDomainResponse.h>
 #include <tencentcloud/live/v20180801/model/ForbidLiveStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/ForbidLiveStreamResponse.h>
+#include <tencentcloud/live/v20180801/model/ModifyCasterRequest.h>
+#include <tencentcloud/live/v20180801/model/ModifyCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveCallbackTemplateRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveCallbackTemplateResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveDomainCertBindingsRequest.h>
@@ -370,6 +386,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelCommonMixStreamResponse> CancelCommonMixStreamOutcome;
                 typedef std::future<CancelCommonMixStreamOutcome> CancelCommonMixStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CancelCommonMixStreamRequest&, CancelCommonMixStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelCommonMixStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::CopyCasterResponse> CopyCasterOutcome;
+                typedef std::future<CopyCasterOutcome> CopyCasterOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CopyCasterRequest&, CopyCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyCasterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCasterResponse> CreateCasterOutcome;
+                typedef std::future<CreateCasterOutcome> CreateCasterOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateCasterRequest&, CreateCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCasterAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCommonMixStreamResponse> CreateCommonMixStreamOutcome;
                 typedef std::future<CreateCommonMixStreamOutcome> CreateCommonMixStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateCommonMixStreamRequest&, CreateCommonMixStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCommonMixStreamAsyncHandler;
@@ -430,6 +452,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateScreenshotTaskResponse> CreateScreenshotTaskOutcome;
                 typedef std::future<CreateScreenshotTaskOutcome> CreateScreenshotTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateScreenshotTaskRequest&, CreateScreenshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScreenshotTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCasterResponse> DeleteCasterOutcome;
+                typedef std::future<DeleteCasterOutcome> DeleteCasterOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteCasterRequest&, DeleteCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLiveCallbackRuleResponse> DeleteLiveCallbackRuleOutcome;
                 typedef std::future<DeleteLiveCallbackRuleOutcome> DeleteLiveCallbackRuleOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteLiveCallbackRuleRequest&, DeleteLiveCallbackRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveCallbackRuleAsyncHandler;
@@ -508,9 +533,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCallbackRecordsListResponse> DescribeCallbackRecordsListOutcome;
                 typedef std::future<DescribeCallbackRecordsListOutcome> DescribeCallbackRecordsListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeCallbackRecordsListRequest&, DescribeCallbackRecordsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallbackRecordsListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCasterResponse> DescribeCasterOutcome;
+                typedef std::future<DescribeCasterOutcome> DescribeCasterOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeCasterRequest&, DescribeCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCasterDisplayInfoResponse> DescribeCasterDisplayInfoOutcome;
+                typedef std::future<DescribeCasterDisplayInfoOutcome> DescribeCasterDisplayInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeCasterDisplayInfoRequest&, DescribeCasterDisplayInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterDisplayInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCasterListResponse> DescribeCasterListOutcome;
                 typedef std::future<DescribeCasterListOutcome> DescribeCasterListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeCasterListRequest&, DescribeCasterListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCasterPlayUrlResponse> DescribeCasterPlayUrlOutcome;
+                typedef std::future<DescribeCasterPlayUrlOutcome> DescribeCasterPlayUrlOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeCasterPlayUrlRequest&, DescribeCasterPlayUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterPlayUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCasterTransitionTypesResponse> DescribeCasterTransitionTypesOutcome;
                 typedef std::future<DescribeCasterTransitionTypesOutcome> DescribeCasterTransitionTypesOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeCasterTransitionTypesRequest&, DescribeCasterTransitionTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterTransitionTypesAsyncHandler;
@@ -646,6 +680,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLiveTimeShiftTemplatesResponse> DescribeLiveTimeShiftTemplatesOutcome;
                 typedef std::future<DescribeLiveTimeShiftTemplatesOutcome> DescribeLiveTimeShiftTemplatesOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveTimeShiftTemplatesRequest&, DescribeLiveTimeShiftTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveTimeShiftTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveTimeShiftWriteSizeInfoListResponse> DescribeLiveTimeShiftWriteSizeInfoListOutcome;
+                typedef std::future<DescribeLiveTimeShiftWriteSizeInfoListOutcome> DescribeLiveTimeShiftWriteSizeInfoListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeLiveTimeShiftWriteSizeInfoListRequest&, DescribeLiveTimeShiftWriteSizeInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveTimeShiftWriteSizeInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLiveTranscodeDetailInfoResponse> DescribeLiveTranscodeDetailInfoOutcome;
                 typedef std::future<DescribeLiveTranscodeDetailInfoOutcome> DescribeLiveTranscodeDetailInfoOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveTranscodeDetailInfoRequest&, DescribeLiveTranscodeDetailInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveTranscodeDetailInfoAsyncHandler;
@@ -751,6 +788,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ForbidLiveStreamResponse> ForbidLiveStreamOutcome;
                 typedef std::future<ForbidLiveStreamOutcome> ForbidLiveStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ForbidLiveStreamRequest&, ForbidLiveStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ForbidLiveStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCasterResponse> ModifyCasterOutcome;
+                typedef std::future<ModifyCasterOutcome> ModifyCasterOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::ModifyCasterRequest&, ModifyCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLiveCallbackTemplateResponse> ModifyLiveCallbackTemplateOutcome;
                 typedef std::future<ModifyLiveCallbackTemplateOutcome> ModifyLiveCallbackTemplateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyLiveCallbackTemplateRequest&, ModifyLiveCallbackTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveCallbackTemplateAsyncHandler;
@@ -881,6 +921,24 @@ namespace TencentCloud
                 CancelCommonMixStreamOutcome CancelCommonMixStream(const Model::CancelCommonMixStreamRequest &request);
                 void CancelCommonMixStreamAsync(const Model::CancelCommonMixStreamRequest& request, const CancelCommonMixStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelCommonMixStreamOutcomeCallable CancelCommonMixStreamCallable(const Model::CancelCommonMixStreamRequest& request);
+
+                /**
+                 *该接口用来复制导播台配置
+                 * @param req CopyCasterRequest
+                 * @return CopyCasterOutcome
+                 */
+                CopyCasterOutcome CopyCaster(const Model::CopyCasterRequest &request);
+                void CopyCasterAsync(const Model::CopyCasterRequest& request, const CopyCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CopyCasterOutcomeCallable CopyCasterCallable(const Model::CopyCasterRequest& request);
+
+                /**
+                 *该接口用来创建新的导播台
+                 * @param req CreateCasterRequest
+                 * @return CreateCasterOutcome
+                 */
+                CreateCasterOutcome CreateCaster(const Model::CreateCasterRequest &request);
+                void CreateCasterAsync(const Model::CreateCasterRequest& request, const CreateCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCasterOutcomeCallable CreateCasterCallable(const Model::CreateCasterRequest& request);
 
                 /**
                  *该接口用来创建通用混流。用法与旧接口 mix_streamv2.start_mix_stream_advanced 基本一致。
@@ -1116,6 +1174,16 @@ namespace TencentCloud
                 CreateScreenshotTaskOutcome CreateScreenshotTask(const Model::CreateScreenshotTaskRequest &request);
                 void CreateScreenshotTaskAsync(const Model::CreateScreenshotTaskRequest& request, const CreateScreenshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateScreenshotTaskOutcomeCallable CreateScreenshotTaskCallable(const Model::CreateScreenshotTaskRequest& request);
+
+                /**
+                 *该接口用来删除一个导播台的所有信息。
+注意，调用该接口后，所有的导播台信息将被清除，包括正在直播的内容也将直接中断。
+                 * @param req DeleteCasterRequest
+                 * @return DeleteCasterOutcome
+                 */
+                DeleteCasterOutcome DeleteCaster(const Model::DeleteCasterRequest &request);
+                void DeleteCasterAsync(const Model::DeleteCasterRequest& request, const DeleteCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCasterOutcomeCallable DeleteCasterCallable(const Model::DeleteCasterRequest& request);
 
                 /**
                  *删除回调规则。
@@ -1362,6 +1430,24 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeCallbackRecordsListOutcomeCallable DescribeCallbackRecordsListCallable(const Model::DescribeCallbackRecordsListRequest& request);
 
                 /**
+                 *查询导播台信息接口，用来查询导播台状态、描述、输出长、宽等信息
+                 * @param req DescribeCasterRequest
+                 * @return DescribeCasterOutcome
+                 */
+                DescribeCasterOutcome DescribeCaster(const Model::DescribeCasterRequest &request);
+                void DescribeCasterAsync(const Model::DescribeCasterRequest& request, const DescribeCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCasterOutcomeCallable DescribeCasterCallable(const Model::DescribeCasterRequest& request);
+
+                /**
+                 *查询导播台PVW任务和PGM任务的展示信息，包括使用的布局、水印、字幕等信息。
+                 * @param req DescribeCasterDisplayInfoRequest
+                 * @return DescribeCasterDisplayInfoOutcome
+                 */
+                DescribeCasterDisplayInfoOutcome DescribeCasterDisplayInfo(const Model::DescribeCasterDisplayInfoRequest &request);
+                void DescribeCasterDisplayInfoAsync(const Model::DescribeCasterDisplayInfoRequest& request, const DescribeCasterDisplayInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCasterDisplayInfoOutcomeCallable DescribeCasterDisplayInfoCallable(const Model::DescribeCasterDisplayInfoRequest& request);
+
+                /**
                  *该接口用来查询账号下所有的导播台列表
                  * @param req DescribeCasterListRequest
                  * @return DescribeCasterListOutcome
@@ -1369,6 +1455,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeCasterListOutcome DescribeCasterList(const Model::DescribeCasterListRequest &request);
                 void DescribeCasterListAsync(const Model::DescribeCasterListRequest& request, const DescribeCasterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCasterListOutcomeCallable DescribeCasterListCallable(const Model::DescribeCasterListRequest& request);
+
+                /**
+                 *该接口用来获取导播台视频流的播放url，用来在页面上拉流展示。
+                 * @param req DescribeCasterPlayUrlRequest
+                 * @return DescribeCasterPlayUrlOutcome
+                 */
+                DescribeCasterPlayUrlOutcome DescribeCasterPlayUrl(const Model::DescribeCasterPlayUrlRequest &request);
+                void DescribeCasterPlayUrlAsync(const Model::DescribeCasterPlayUrlRequest& request, const DescribeCasterPlayUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCasterPlayUrlOutcomeCallable DescribeCasterPlayUrlCallable(const Model::DescribeCasterPlayUrlRequest& request);
 
                 /**
                  *该接口用来获取所有的转场名称及其对应的素材url。
@@ -1804,6 +1899,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLiveTimeShiftTemplatesOutcomeCallable DescribeLiveTimeShiftTemplatesCallable(const Model::DescribeLiveTimeShiftTemplatesRequest& request);
 
                 /**
+                 *支持直播时移写入量数据查询。
+                 * @param req DescribeLiveTimeShiftWriteSizeInfoListRequest
+                 * @return DescribeLiveTimeShiftWriteSizeInfoListOutcome
+                 */
+                DescribeLiveTimeShiftWriteSizeInfoListOutcome DescribeLiveTimeShiftWriteSizeInfoList(const Model::DescribeLiveTimeShiftWriteSizeInfoListRequest &request);
+                void DescribeLiveTimeShiftWriteSizeInfoListAsync(const Model::DescribeLiveTimeShiftWriteSizeInfoListRequest& request, const DescribeLiveTimeShiftWriteSizeInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveTimeShiftWriteSizeInfoListOutcomeCallable DescribeLiveTimeShiftWriteSizeInfoListCallable(const Model::DescribeLiveTimeShiftWriteSizeInfoListRequest& request);
+
+                /**
                  *该接口为监控数据接口，数据采集及统计方式与计费数据不同，仅供运营分析使用，不能用于计费对账参考。
 支持查询某天或某段时间的转码详细信息。由于转码数据量较大，如果查询时间跨度太长可能会拉不到数据，可以尝试将查询时间范围缩小些再重试。
                  * @param req DescribeLiveTranscodeDetailInfoRequest
@@ -2143,6 +2247,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 ForbidLiveStreamOutcome ForbidLiveStream(const Model::ForbidLiveStreamRequest &request);
                 void ForbidLiveStreamAsync(const Model::ForbidLiveStreamRequest& request, const ForbidLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ForbidLiveStreamOutcomeCallable ForbidLiveStreamCallable(const Model::ForbidLiveStreamRequest& request);
+
+                /**
+                 *该接口用来设置导播台的描述、名称、录制模板id等参数。
+                 * @param req ModifyCasterRequest
+                 * @return ModifyCasterOutcome
+                 */
+                ModifyCasterOutcome ModifyCaster(const Model::ModifyCasterRequest &request);
+                void ModifyCasterAsync(const Model::ModifyCasterRequest& request, const ModifyCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCasterOutcomeCallable ModifyCasterCallable(const Model::ModifyCasterRequest& request);
 
                 /**
                  *修改回调模板。

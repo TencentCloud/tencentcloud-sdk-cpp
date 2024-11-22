@@ -28,6 +28,7 @@ DescribeConfigFileReleaseHistoriesRequest::DescribeConfigFileReleaseHistoriesReq
     m_groupHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_endIdHasBeenSet(false),
+    m_configFileIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false)
 {
@@ -78,6 +79,14 @@ string DescribeConfigFileReleaseHistoriesRequest::ToJsonString() const
         string key = "EndId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endId, allocator);
+    }
+
+    if (m_configFileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigFileId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_configFileId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -182,6 +191,22 @@ void DescribeConfigFileReleaseHistoriesRequest::SetEndId(const uint64_t& _endId)
 bool DescribeConfigFileReleaseHistoriesRequest::EndIdHasBeenSet() const
 {
     return m_endIdHasBeenSet;
+}
+
+string DescribeConfigFileReleaseHistoriesRequest::GetConfigFileId() const
+{
+    return m_configFileId;
+}
+
+void DescribeConfigFileReleaseHistoriesRequest::SetConfigFileId(const string& _configFileId)
+{
+    m_configFileId = _configFileId;
+    m_configFileIdHasBeenSet = true;
+}
+
+bool DescribeConfigFileReleaseHistoriesRequest::ConfigFileIdHasBeenSet() const
+{
+    return m_configFileIdHasBeenSet;
 }
 
 uint64_t DescribeConfigFileReleaseHistoriesRequest::GetLimit() const

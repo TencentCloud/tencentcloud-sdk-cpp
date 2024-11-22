@@ -85,6 +85,27 @@ namespace TencentCloud
                      */
                     bool ConfigFilePublishInfoHasBeenSet() const;
 
+                    /**
+                     * 获取控制开启校验配置版本是否已经存在
+                     * @return StrictEnable 控制开启校验配置版本是否已经存在
+                     * 
+                     */
+                    bool GetStrictEnable() const;
+
+                    /**
+                     * 设置控制开启校验配置版本是否已经存在
+                     * @param _strictEnable 控制开启校验配置版本是否已经存在
+                     * 
+                     */
+                    void SetStrictEnable(const bool& _strictEnable);
+
+                    /**
+                     * 判断参数 StrictEnable 是否已赋值
+                     * @return StrictEnable 是否已赋值
+                     * 
+                     */
+                    bool StrictEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +119,12 @@ namespace TencentCloud
                      */
                     ConfigFilePublishInfo m_configFilePublishInfo;
                     bool m_configFilePublishInfoHasBeenSet;
+
+                    /**
+                     * 控制开启校验配置版本是否已经存在
+                     */
+                    bool m_strictEnable;
+                    bool m_strictEnableHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例的ID，长度在12-36之间。
-                     * @return InstanceId 实例的ID，长度在12-36之间。
+                     * 获取实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @return InstanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例的ID，长度在12-36之间。
-                     * @param _instanceId 实例的ID，长度在12-36之间。
+                     * 设置实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @param _instanceId 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -86,22 +86,22 @@ namespace TencentCloud
 
                     /**
                      * 获取单分片的总连接数。
-未开启副本只读时，下限为10000，上限为40000；
-开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
+- 未开启副本只读时，下限为10000，上限为40000。
+- 开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
                      * @return ClientLimit 单分片的总连接数。
-未开启副本只读时，下限为10000，上限为40000；
-开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
+- 未开启副本只读时，下限为10000，上限为40000。
+- 开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
                      * 
                      */
                     int64_t GetClientLimit() const;
 
                     /**
                      * 设置单分片的总连接数。
-未开启副本只读时，下限为10000，上限为40000；
-开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
+- 未开启副本只读时，下限为10000，上限为40000。
+- 开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
                      * @param _clientLimit 单分片的总连接数。
-未开启副本只读时，下限为10000，上限为40000；
-开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
+- 未开启副本只读时，下限为10000，上限为40000。
+- 开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
                      * 
                      */
                     void SetClientLimit(const int64_t& _clientLimit);
@@ -116,7 +116,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例的ID，长度在12-36之间。
+                     * 实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -129,8 +129,8 @@ namespace TencentCloud
 
                     /**
                      * 单分片的总连接数。
-未开启副本只读时，下限为10000，上限为40000；
-开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
+- 未开启副本只读时，下限为10000，上限为40000。
+- 开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
                      */
                     int64_t m_clientLimit;
                     bool m_clientLimitHasBeenSet;

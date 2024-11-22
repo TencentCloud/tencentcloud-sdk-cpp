@@ -24,7 +24,8 @@ using namespace TencentCloud::Tse::V20201207::Model;
 using namespace std;
 
 CreateConfigFileResponse::CreateConfigFileResponse() :
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_configFileIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreateConfigFileResponse::Deserialize(const string &payload)
         m_resultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ConfigFileId") && !rsp["ConfigFileId"].IsNull())
+    {
+        if (!rsp["ConfigFileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigFileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_configFileId = string(rsp["ConfigFileId"].GetString());
+        m_configFileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string CreateConfigFileResponse::ToJsonString() const
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_result, allocator);
+    }
+
+    if (m_configFileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigFileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configFileId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ bool CreateConfigFileResponse::GetResult() const
 bool CreateConfigFileResponse::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+string CreateConfigFileResponse::GetConfigFileId() const
+{
+    return m_configFileId;
+}
+
+bool CreateConfigFileResponse::ConfigFileIdHasBeenSet() const
+{
+    return m_configFileIdHasBeenSet;
 }
 
 
