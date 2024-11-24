@@ -30,7 +30,12 @@ UpdateDataModelRegistryInfoRequest::UpdateDataModelRegistryInfoRequest() :
     m_appCamRoleIdHasBeenSet(false),
     m_providerHasBeenSet(false),
     m_tenantIdHasBeenSet(false),
-    m_ownIdHasBeenSet(false)
+    m_ownIdHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_vpcRegionHasBeenSet(false),
+    m_pipHasBeenSet(false),
+    m_pportHasBeenSet(false),
+    m_isPublicHasBeenSet(false)
 {
 }
 
@@ -103,6 +108,46 @@ string UpdateDataModelRegistryInfoRequest::ToJsonString() const
         string key = "OwnId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ownId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pip";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pport";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pport, allocator);
+    }
+
+    if (m_isPublicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPublic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPublic, allocator);
     }
 
 
@@ -239,6 +284,86 @@ void UpdateDataModelRegistryInfoRequest::SetOwnId(const string& _ownId)
 bool UpdateDataModelRegistryInfoRequest::OwnIdHasBeenSet() const
 {
     return m_ownIdHasBeenSet;
+}
+
+string UpdateDataModelRegistryInfoRequest::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void UpdateDataModelRegistryInfoRequest::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool UpdateDataModelRegistryInfoRequest::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
+}
+
+string UpdateDataModelRegistryInfoRequest::GetVpcRegion() const
+{
+    return m_vpcRegion;
+}
+
+void UpdateDataModelRegistryInfoRequest::SetVpcRegion(const string& _vpcRegion)
+{
+    m_vpcRegion = _vpcRegion;
+    m_vpcRegionHasBeenSet = true;
+}
+
+bool UpdateDataModelRegistryInfoRequest::VpcRegionHasBeenSet() const
+{
+    return m_vpcRegionHasBeenSet;
+}
+
+string UpdateDataModelRegistryInfoRequest::GetPip() const
+{
+    return m_pip;
+}
+
+void UpdateDataModelRegistryInfoRequest::SetPip(const string& _pip)
+{
+    m_pip = _pip;
+    m_pipHasBeenSet = true;
+}
+
+bool UpdateDataModelRegistryInfoRequest::PipHasBeenSet() const
+{
+    return m_pipHasBeenSet;
+}
+
+uint64_t UpdateDataModelRegistryInfoRequest::GetPport() const
+{
+    return m_pport;
+}
+
+void UpdateDataModelRegistryInfoRequest::SetPport(const uint64_t& _pport)
+{
+    m_pport = _pport;
+    m_pportHasBeenSet = true;
+}
+
+bool UpdateDataModelRegistryInfoRequest::PportHasBeenSet() const
+{
+    return m_pportHasBeenSet;
+}
+
+uint64_t UpdateDataModelRegistryInfoRequest::GetIsPublic() const
+{
+    return m_isPublic;
+}
+
+void UpdateDataModelRegistryInfoRequest::SetIsPublic(const uint64_t& _isPublic)
+{
+    m_isPublic = _isPublic;
+    m_isPublicHasBeenSet = true;
+}
+
+bool UpdateDataModelRegistryInfoRequest::IsPublicHasBeenSet() const
+{
+    return m_isPublicHasBeenSet;
 }
 
 

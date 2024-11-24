@@ -225,6 +225,8 @@
 #include <tencentcloud/mps/v20190612/model/ParseLiveStreamProcessNotificationResponse.h>
 #include <tencentcloud/mps/v20190612/model/ParseNotificationRequest.h>
 #include <tencentcloud/mps/v20190612/model/ParseNotificationResponse.h>
+#include <tencentcloud/mps/v20190612/model/ProcessImageRequest.h>
+#include <tencentcloud/mps/v20190612/model/ProcessImageResponse.h>
 #include <tencentcloud/mps/v20190612/model/ProcessLiveStreamRequest.h>
 #include <tencentcloud/mps/v20190612/model/ProcessLiveStreamResponse.h>
 #include <tencentcloud/mps/v20190612/model/ProcessMediaRequest.h>
@@ -556,6 +558,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ParseNotificationResponse> ParseNotificationOutcome;
                 typedef std::future<ParseNotificationOutcome> ParseNotificationOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ParseNotificationRequest&, ParseNotificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ParseNotificationAsyncHandler;
+                typedef Outcome<Core::Error, Model::ProcessImageResponse> ProcessImageOutcome;
+                typedef std::future<ProcessImageOutcome> ProcessImageOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ProcessImageRequest&, ProcessImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::ProcessLiveStreamResponse> ProcessLiveStreamOutcome;
                 typedef std::future<ProcessLiveStreamOutcome> ProcessLiveStreamOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ProcessLiveStreamRequest&, ProcessLiveStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessLiveStreamAsyncHandler;
@@ -1533,6 +1538,17 @@ namespace TencentCloud
                 ParseNotificationOutcome ParseNotification(const Model::ParseNotificationRequest &request);
                 void ParseNotificationAsync(const Model::ParseNotificationRequest& request, const ParseNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ParseNotificationOutcomeCallable ParseNotificationCallable(const Model::ParseNotificationRequest& request);
+
+                /**
+                 *发起图片处理，功能包括：
+1. 格式转换；
+2. 图像增强；
+                 * @param req ProcessImageRequest
+                 * @return ProcessImageOutcome
+                 */
+                ProcessImageOutcome ProcessImage(const Model::ProcessImageRequest &request);
+                void ProcessImageAsync(const Model::ProcessImageRequest& request, const ProcessImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ProcessImageOutcomeCallable ProcessImageCallable(const Model::ProcessImageRequest& request);
 
                 /**
                  *对直播流媒体发起处理任务，功能包括：

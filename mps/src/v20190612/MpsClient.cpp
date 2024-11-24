@@ -4383,6 +4383,49 @@ MpsClient::ParseNotificationOutcomeCallable MpsClient::ParseNotificationCallable
     return task->get_future();
 }
 
+MpsClient::ProcessImageOutcome MpsClient::ProcessImage(const ProcessImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ProcessImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ProcessImageResponse rsp = ProcessImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ProcessImageOutcome(rsp);
+        else
+            return ProcessImageOutcome(o.GetError());
+    }
+    else
+    {
+        return ProcessImageOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ProcessImageAsync(const ProcessImageRequest& request, const ProcessImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ProcessImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ProcessImageOutcomeCallable MpsClient::ProcessImageCallable(const ProcessImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ProcessImageOutcome()>>(
+        [this, request]()
+        {
+            return this->ProcessImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::ProcessLiveStreamOutcome MpsClient::ProcessLiveStream(const ProcessLiveStreamRequest &request)
 {
     auto outcome = MakeRequest(request, "ProcessLiveStream");

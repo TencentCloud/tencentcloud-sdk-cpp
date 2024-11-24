@@ -73,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Info 消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInfo() const;
@@ -103,7 +101,6 @@ namespace TencentCloud
 
                     /**
                      * 消息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_info;
                     bool m_infoHasBeenSet;

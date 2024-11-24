@@ -73,6 +73,8 @@
 #include <tencentcloud/cdwch/v20200915/model/RecoverBackUpJobResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/ResizeDiskRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/ResizeDiskResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/ScaleCNOutUpInstanceRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/ScaleCNOutUpInstanceResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/ScaleOutInstanceRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/ScaleOutInstanceResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/ScaleUpInstanceRequest.h>
@@ -166,6 +168,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResizeDiskResponse> ResizeDiskOutcome;
                 typedef std::future<ResizeDiskOutcome> ResizeDiskOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::ResizeDiskRequest&, ResizeDiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResizeDiskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ScaleCNOutUpInstanceResponse> ScaleCNOutUpInstanceOutcome;
+                typedef std::future<ScaleCNOutUpInstanceOutcome> ScaleCNOutUpInstanceOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::ScaleCNOutUpInstanceRequest&, ScaleCNOutUpInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleCNOutUpInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ScaleOutInstanceResponse> ScaleOutInstanceOutcome;
                 typedef std::future<ScaleOutInstanceOutcome> ScaleOutInstanceOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::ScaleOutInstanceRequest&, ScaleOutInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleOutInstanceAsyncHandler;
@@ -399,6 +404,15 @@ namespace TencentCloud
                 ResizeDiskOutcome ResizeDisk(const Model::ResizeDiskRequest &request);
                 void ResizeDiskAsync(const Model::ResizeDiskRequest& request, const ResizeDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResizeDiskOutcomeCallable ResizeDiskCallable(const Model::ResizeDiskRequest& request);
+
+                /**
+                 *open-api接口提供弹性伸缩云原生集群能力
+                 * @param req ScaleCNOutUpInstanceRequest
+                 * @return ScaleCNOutUpInstanceOutcome
+                 */
+                ScaleCNOutUpInstanceOutcome ScaleCNOutUpInstance(const Model::ScaleCNOutUpInstanceRequest &request);
+                void ScaleCNOutUpInstanceAsync(const Model::ScaleCNOutUpInstanceRequest& request, const ScaleCNOutUpInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScaleCNOutUpInstanceOutcomeCallable ScaleCNOutUpInstanceCallable(const Model::ScaleCNOutUpInstanceRequest& request);
 
                 /**
                  *调整clickhouse节点数量

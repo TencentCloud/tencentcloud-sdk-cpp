@@ -71,26 +71,38 @@ namespace TencentCloud
 
                     /**
                      * 获取初始化操作类型
-<ul><li>CREATE_SEAL : 创建印章</li>
+<ul>
+<li>CREATE_SEAL : 创建印章</li>
 <li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li>
-<li>OPEN_AUTO_SIGN :开通企业自动签署</li></ul>
+<li>OPEN_AUTO_SIGN :开通企业自动签署</li>
+<li>PARTNER_AUTO_SIGN_AUTH :合作方企业授权自动签</li>
+</ul>
                      * @return OperateTypes 初始化操作类型
-<ul><li>CREATE_SEAL : 创建印章</li>
+<ul>
+<li>CREATE_SEAL : 创建印章</li>
 <li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li>
-<li>OPEN_AUTO_SIGN :开通企业自动签署</li></ul>
+<li>OPEN_AUTO_SIGN :开通企业自动签署</li>
+<li>PARTNER_AUTO_SIGN_AUTH :合作方企业授权自动签</li>
+</ul>
                      * 
                      */
                     std::vector<std::string> GetOperateTypes() const;
 
                     /**
                      * 设置初始化操作类型
-<ul><li>CREATE_SEAL : 创建印章</li>
+<ul>
+<li>CREATE_SEAL : 创建印章</li>
 <li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li>
-<li>OPEN_AUTO_SIGN :开通企业自动签署</li></ul>
+<li>OPEN_AUTO_SIGN :开通企业自动签署</li>
+<li>PARTNER_AUTO_SIGN_AUTH :合作方企业授权自动签</li>
+</ul>
                      * @param _operateTypes 初始化操作类型
-<ul><li>CREATE_SEAL : 创建印章</li>
+<ul>
+<li>CREATE_SEAL : 创建印章</li>
 <li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li>
-<li>OPEN_AUTO_SIGN :开通企业自动签署</li></ul>
+<li>OPEN_AUTO_SIGN :开通企业自动签署</li>
+<li>PARTNER_AUTO_SIGN_AUTH :合作方企业授权自动签</li>
+</ul>
                      * 
                      */
                     void SetOperateTypes(const std::vector<std::string>& _operateTypes);
@@ -144,6 +156,43 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取被授权的合作方企业在电子签的企业电子签账号，当操作类型包含 PARTNER_AUTO_SIGN_AUTH （合作方企业授权自动签）时必传。
+
+企业电子签账号可在[电子签的网页端](https://qian.tencent.com/console/company-settings/company-center) ，于企业设置-企业信息菜单栏下复制获取。
+
+![企业电子签账号](https://qcloudimg.tencent-cloud.cn/raw/4e6b30ee92f00671f7f1c5bd127c27db.png)
+                     * @return AuthorizedOrganizationId 被授权的合作方企业在电子签的企业电子签账号，当操作类型包含 PARTNER_AUTO_SIGN_AUTH （合作方企业授权自动签）时必传。
+
+企业电子签账号可在[电子签的网页端](https://qian.tencent.com/console/company-settings/company-center) ，于企业设置-企业信息菜单栏下复制获取。
+
+![企业电子签账号](https://qcloudimg.tencent-cloud.cn/raw/4e6b30ee92f00671f7f1c5bd127c27db.png)
+                     * 
+                     */
+                    std::string GetAuthorizedOrganizationId() const;
+
+                    /**
+                     * 设置被授权的合作方企业在电子签的企业电子签账号，当操作类型包含 PARTNER_AUTO_SIGN_AUTH （合作方企业授权自动签）时必传。
+
+企业电子签账号可在[电子签的网页端](https://qian.tencent.com/console/company-settings/company-center) ，于企业设置-企业信息菜单栏下复制获取。
+
+![企业电子签账号](https://qcloudimg.tencent-cloud.cn/raw/4e6b30ee92f00671f7f1c5bd127c27db.png)
+                     * @param _authorizedOrganizationId 被授权的合作方企业在电子签的企业电子签账号，当操作类型包含 PARTNER_AUTO_SIGN_AUTH （合作方企业授权自动签）时必传。
+
+企业电子签账号可在[电子签的网页端](https://qian.tencent.com/console/company-settings/company-center) ，于企业设置-企业信息菜单栏下复制获取。
+
+![企业电子签账号](https://qcloudimg.tencent-cloud.cn/raw/4e6b30ee92f00671f7f1c5bd127c27db.png)
+                     * 
+                     */
+                    void SetAuthorizedOrganizationId(const std::string& _authorizedOrganizationId);
+
+                    /**
+                     * 判断参数 AuthorizedOrganizationId 是否已赋值
+                     * @return AuthorizedOrganizationId 是否已赋值
+                     * 
+                     */
+                    bool AuthorizedOrganizationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,9 +204,12 @@ namespace TencentCloud
 
                     /**
                      * 初始化操作类型
-<ul><li>CREATE_SEAL : 创建印章</li>
+<ul>
+<li>CREATE_SEAL : 创建印章</li>
 <li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li>
-<li>OPEN_AUTO_SIGN :开通企业自动签署</li></ul>
+<li>OPEN_AUTO_SIGN :开通企业自动签署</li>
+<li>PARTNER_AUTO_SIGN_AUTH :合作方企业授权自动签</li>
+</ul>
                      */
                     std::vector<std::string> m_operateTypes;
                     bool m_operateTypesHasBeenSet;
@@ -173,6 +225,16 @@ namespace TencentCloud
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 被授权的合作方企业在电子签的企业电子签账号，当操作类型包含 PARTNER_AUTO_SIGN_AUTH （合作方企业授权自动签）时必传。
+
+企业电子签账号可在[电子签的网页端](https://qian.tencent.com/console/company-settings/company-center) ，于企业设置-企业信息菜单栏下复制获取。
+
+![企业电子签账号](https://qcloudimg.tencent-cloud.cn/raw/4e6b30ee92f00671f7f1c5bd127c27db.png)
+                     */
+                    std::string m_authorizedOrganizationId;
+                    bool m_authorizedOrganizationIdHasBeenSet;
 
                 };
             }

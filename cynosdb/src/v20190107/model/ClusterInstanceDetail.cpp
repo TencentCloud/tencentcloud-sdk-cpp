@@ -36,7 +36,8 @@ ClusterInstanceDetail::ClusterInstanceDetail() :
     m_serverlessStatusHasBeenSet(false),
     m_instanceTasksHasBeenSet(false),
     m_instanceDeviceTypeHasBeenSet(false),
-    m_instanceStorageTypeHasBeenSet(false)
+    m_instanceStorageTypeHasBeenSet(false),
+    m_dbModeHasBeenSet(false)
 {
 }
 
@@ -218,6 +219,16 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         m_instanceStorageTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DbMode") && !value["DbMode"].IsNull())
+    {
+        if (!value["DbMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.DbMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbMode = string(value["DbMode"].GetString());
+        m_dbModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -363,6 +374,14 @@ void ClusterInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "InstanceStorageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceStorageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dbMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -622,5 +641,21 @@ void ClusterInstanceDetail::SetInstanceStorageType(const string& _instanceStorag
 bool ClusterInstanceDetail::InstanceStorageTypeHasBeenSet() const
 {
     return m_instanceStorageTypeHasBeenSet;
+}
+
+string ClusterInstanceDetail::GetDbMode() const
+{
+    return m_dbMode;
+}
+
+void ClusterInstanceDetail::SetDbMode(const string& _dbMode)
+{
+    m_dbMode = _dbMode;
+    m_dbModeHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::DbModeHasBeenSet() const
+{
+    return m_dbModeHasBeenSet;
 }
 

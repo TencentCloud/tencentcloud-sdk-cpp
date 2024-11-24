@@ -1115,6 +1115,49 @@ CdwchClient::ResizeDiskOutcomeCallable CdwchClient::ResizeDiskCallable(const Res
     return task->get_future();
 }
 
+CdwchClient::ScaleCNOutUpInstanceOutcome CdwchClient::ScaleCNOutUpInstance(const ScaleCNOutUpInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleCNOutUpInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleCNOutUpInstanceResponse rsp = ScaleCNOutUpInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleCNOutUpInstanceOutcome(rsp);
+        else
+            return ScaleCNOutUpInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleCNOutUpInstanceOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::ScaleCNOutUpInstanceAsync(const ScaleCNOutUpInstanceRequest& request, const ScaleCNOutUpInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScaleCNOutUpInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::ScaleCNOutUpInstanceOutcomeCallable CdwchClient::ScaleCNOutUpInstanceCallable(const ScaleCNOutUpInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScaleCNOutUpInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ScaleCNOutUpInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwchClient::ScaleOutInstanceOutcome CdwchClient::ScaleOutInstance(const ScaleOutInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "ScaleOutInstance");

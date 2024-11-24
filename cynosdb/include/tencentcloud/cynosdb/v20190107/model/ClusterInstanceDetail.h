@@ -411,6 +411,27 @@ namespace TencentCloud
                      */
                     bool InstanceStorageTypeHasBeenSet() const;
 
+                    /**
+                     * 获取数据库类型
+                     * @return DbMode 数据库类型
+                     * 
+                     */
+                    std::string GetDbMode() const;
+
+                    /**
+                     * 设置数据库类型
+                     * @param _dbMode 数据库类型
+                     * 
+                     */
+                    void SetDbMode(const std::string& _dbMode);
+
+                    /**
+                     * 判断参数 DbMode 是否已赋值
+                     * @return DbMode 是否已赋值
+                     * 
+                     */
+                    bool DbModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -515,6 +536,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceStorageType;
                     bool m_instanceStorageTypeHasBeenSet;
+
+                    /**
+                     * 数据库类型
+                     */
+                    std::string m_dbMode;
+                    bool m_dbModeHasBeenSet;
 
                 };
             }

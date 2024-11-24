@@ -34,6 +34,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeSpecResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeSpecRequest.h
+  include/tencentcloud/cdwch/v20200915/model/ScaleCNOutUpInstanceResponse.h
   include/tencentcloud/cdwch/v20200915/model/DestroyInstanceRequest.h
   include/tencentcloud/cdwch/v20200915/model/ModifyUserNewPrivilegeRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeBackUpTablesResponse.h
@@ -95,6 +96,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/DestroyInstanceResponse.h
   include/tencentcloud/cdwch/v20200915/model/ResizeDiskResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleResponse.h
+  include/tencentcloud/cdwch/v20200915/model/ScaleCNOutUpInstanceRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeBackUpJobRequest.h
   include/tencentcloud/cdwch/v20200915/model/ScaleUpInstanceResponse.h
@@ -118,6 +120,7 @@ set(cdwch_src
   src/v20200915/model/DescribeBackUpScheduleRequest.cpp
   src/v20200915/model/DescribeSpecResponse.cpp
   src/v20200915/model/DescribeSpecRequest.cpp
+  src/v20200915/model/ScaleCNOutUpInstanceResponse.cpp
   src/v20200915/model/DestroyInstanceRequest.cpp
   src/v20200915/model/ModifyUserNewPrivilegeRequest.cpp
   src/v20200915/model/DescribeBackUpTablesResponse.cpp
@@ -179,6 +182,7 @@ set(cdwch_src
   src/v20200915/model/DestroyInstanceResponse.cpp
   src/v20200915/model/ResizeDiskResponse.cpp
   src/v20200915/model/DescribeBackUpScheduleResponse.cpp
+  src/v20200915/model/ScaleCNOutUpInstanceRequest.cpp
   src/v20200915/model/DescribeCkSqlApisResponse.cpp
   src/v20200915/model/DescribeBackUpJobRequest.cpp
   src/v20200915/model/ScaleUpInstanceResponse.cpp

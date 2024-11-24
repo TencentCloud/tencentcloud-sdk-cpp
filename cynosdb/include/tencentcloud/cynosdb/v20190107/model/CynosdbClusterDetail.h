@@ -514,18 +514,18 @@ pausing
                     bool DbTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据库类型，normal，serverless
+                     * 获取Db类型：<li>NORMAL</li><li>SERVERLESS</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DbMode 数据库类型，normal，serverless
+                     * @return DbMode Db类型：<li>NORMAL</li><li>SERVERLESS</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbMode() const;
 
                     /**
-                     * 设置数据库类型，normal，serverless
+                     * 设置Db类型：<li>NORMAL</li><li>SERVERLESS</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dbMode 数据库类型，normal，serverless
+                     * @param _dbMode Db类型：<li>NORMAL</li><li>SERVERLESS</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1356,7 +1356,7 @@ pausing
                     bool m_dbTypeHasBeenSet;
 
                     /**
-                     * 数据库类型，normal，serverless
+                     * Db类型：<li>NORMAL</li><li>SERVERLESS</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbMode;
