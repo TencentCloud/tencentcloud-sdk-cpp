@@ -38,7 +38,8 @@ RecognizeThaiIDCardOCRResponse::RecognizeThaiIDCardOCRResponse() :
     m_serialNumberHasBeenSet(false),
     m_addressHasBeenSet(false),
     m_portraitImageHasBeenSet(false),
-    m_warnCardInfosHasBeenSet(false)
+    m_warnCardInfosHasBeenSet(false),
+    m_advancedInfoHasBeenSet(false)
 {
 }
 
@@ -229,6 +230,16 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
         m_warnCardInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AdvancedInfo") && !rsp["AdvancedInfo"].IsNull())
+    {
+        if (!rsp["AdvancedInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdvancedInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_advancedInfo = string(rsp["AdvancedInfo"].GetString());
+        m_advancedInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -362,6 +373,14 @@ string RecognizeThaiIDCardOCRResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_advancedInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_advancedInfo.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -524,6 +543,16 @@ vector<int64_t> RecognizeThaiIDCardOCRResponse::GetWarnCardInfos() const
 bool RecognizeThaiIDCardOCRResponse::WarnCardInfosHasBeenSet() const
 {
     return m_warnCardInfosHasBeenSet;
+}
+
+string RecognizeThaiIDCardOCRResponse::GetAdvancedInfo() const
+{
+    return m_advancedInfo;
+}
+
+bool RecognizeThaiIDCardOCRResponse::AdvancedInfoHasBeenSet() const
+{
+    return m_advancedInfoHasBeenSet;
 }
 
 

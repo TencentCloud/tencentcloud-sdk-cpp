@@ -58,6 +58,54 @@ namespace TencentCloud
                      */
                     bool AvailableTablesHasBeenSet() const;
 
+                    /**
+                     * 获取msg
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Msg msg
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMsg() const;
+
+                    /**
+                     * 判断参数 Msg 是否已赋值
+                     * @return Msg 是否已赋值
+                     * 
+                     */
+                    bool MsgHasBeenSet() const;
+
+                    /**
+                     * 获取未知version
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsUnknownVersion 未知version
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsUnknownVersion() const;
+
+                    /**
+                     * 判断参数 IsUnknownVersion 是否已赋值
+                     * @return IsUnknownVersion 是否已赋值
+                     * 
+                     */
+                    bool IsUnknownVersionHasBeenSet() const;
+
+                    /**
+                     * 获取错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrorMsg 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetErrorMsg() const;
+
+                    /**
+                     * 判断参数 ErrorMsg 是否已赋值
+                     * @return ErrorMsg 是否已赋值
+                     * 
+                     */
+                    bool ErrorMsgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +113,27 @@ namespace TencentCloud
                      */
                     std::vector<BackupTableContent> m_availableTables;
                     bool m_availableTablesHasBeenSet;
+
+                    /**
+                     * msg
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_msg;
+                    bool m_msgHasBeenSet;
+
+                    /**
+                     * 未知version
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isUnknownVersion;
+                    bool m_isUnknownVersionHasBeenSet;
+
+                    /**
+                     * 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_errorMsg;
+                    bool m_errorMsgHasBeenSet;
 
                 };
             }

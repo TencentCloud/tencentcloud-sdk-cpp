@@ -3738,6 +3738,49 @@ LkeClient::RetryReleaseOutcomeCallable LkeClient::RetryReleaseCallable(const Ret
     return task->get_future();
 }
 
+LkeClient::RunReRankOutcome LkeClient::RunReRank(const RunReRankRequest &request)
+{
+    auto outcome = MakeRequest(request, "RunReRank");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RunReRankResponse rsp = RunReRankResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RunReRankOutcome(rsp);
+        else
+            return RunReRankOutcome(o.GetError());
+    }
+    else
+    {
+        return RunReRankOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::RunReRankAsync(const RunReRankRequest& request, const RunReRankAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RunReRank(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::RunReRankOutcomeCallable LkeClient::RunReRankCallable(const RunReRankRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RunReRankOutcome()>>(
+        [this, request]()
+        {
+            return this->RunReRank(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::SaveDocOutcome LkeClient::SaveDoc(const SaveDocRequest &request)
 {
     auto outcome = MakeRequest(request, "SaveDoc");

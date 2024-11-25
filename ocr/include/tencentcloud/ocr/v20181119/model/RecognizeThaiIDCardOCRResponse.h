@@ -265,6 +265,36 @@ namespace TencentCloud
                      */
                     bool WarnCardInfosHasBeenSet() const;
 
+                    /**
+                     * 获取字段置信度：
+{
+    "ID": {
+        "Confidence": 0.9999
+    },
+    "ThaiName": {
+        "Confidence": 0.9996
+    }
+}
+                     * @return AdvancedInfo 字段置信度：
+{
+    "ID": {
+        "Confidence": 0.9999
+    },
+    "ThaiName": {
+        "Confidence": 0.9996
+    }
+}
+                     * 
+                     */
+                    std::string GetAdvancedInfo() const;
+
+                    /**
+                     * 判断参数 AdvancedInfo 是否已赋值
+                     * @return AdvancedInfo 是否已赋值
+                     * 
+                     */
+                    bool AdvancedInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -362,6 +392,20 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_warnCardInfos;
                     bool m_warnCardInfosHasBeenSet;
+
+                    /**
+                     * 字段置信度：
+{
+    "ID": {
+        "Confidence": 0.9999
+    },
+    "ThaiName": {
+        "Confidence": 0.9996
+    }
+}
+                     */
+                    std::string m_advancedInfo;
+                    bool m_advancedInfoHasBeenSet;
 
                 };
             }

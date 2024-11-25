@@ -1053,7 +1053,7 @@ namespace TencentCloud
                 CreateBackupOutcomeCallable CreateBackupCallable(const Model::CreateBackupRequest& request);
 
                 /**
-                 *主实例创建数据库代理
+                 *本接口（CreateCdbProxy）用于主实例创建数据库代理。
                  * @param req CreateCdbProxyRequest
                  * @return CreateCdbProxyOutcome
                  */

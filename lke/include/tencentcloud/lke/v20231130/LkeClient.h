@@ -195,6 +195,8 @@
 #include <tencentcloud/lke/v20231130/model/RetryDocParseResponse.h>
 #include <tencentcloud/lke/v20231130/model/RetryReleaseRequest.h>
 #include <tencentcloud/lke/v20231130/model/RetryReleaseResponse.h>
+#include <tencentcloud/lke/v20231130/model/RunReRankRequest.h>
+#include <tencentcloud/lke/v20231130/model/RunReRankResponse.h>
 #include <tencentcloud/lke/v20231130/model/SaveDocRequest.h>
 #include <tencentcloud/lke/v20231130/model/SaveDocResponse.h>
 #include <tencentcloud/lke/v20231130/model/StopDocParseRequest.h>
@@ -475,6 +477,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RetryReleaseResponse> RetryReleaseOutcome;
                 typedef std::future<RetryReleaseOutcome> RetryReleaseOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::RetryReleaseRequest&, RetryReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryReleaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::RunReRankResponse> RunReRankOutcome;
+                typedef std::future<RunReRankOutcome> RunReRankOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::RunReRankRequest&, RunReRankOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunReRankAsyncHandler;
                 typedef Outcome<Core::Error, Model::SaveDocResponse> SaveDocOutcome;
                 typedef std::future<SaveDocOutcome> SaveDocOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::SaveDocRequest&, SaveDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaveDocAsyncHandler;
@@ -1272,6 +1277,15 @@ namespace TencentCloud
                 RetryReleaseOutcome RetryRelease(const Model::RetryReleaseRequest &request);
                 void RetryReleaseAsync(const Model::RetryReleaseRequest& request, const RetryReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RetryReleaseOutcomeCallable RetryReleaseCallable(const Model::RetryReleaseRequest& request);
+
+                /**
+                 *重排序
+                 * @param req RunReRankRequest
+                 * @return RunReRankOutcome
+                 */
+                RunReRankOutcome RunReRank(const Model::RunReRankRequest &request);
+                void RunReRankAsync(const Model::RunReRankRequest& request, const RunReRankAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RunReRankOutcomeCallable RunReRankCallable(const Model::RunReRankRequest& request);
 
                 /**
                  *保存文档

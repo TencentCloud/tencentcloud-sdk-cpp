@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取as-path操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateAsPath as-path操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperateAsPath() const;
 
                     /**
                      * 设置as-path操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operateAsPath as-path操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperateAsPath(const std::string& _operateAsPath);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取as-path操作模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsPathOperateMode as-path操作模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAsPathOperateMode() const;
 
                     /**
                      * 设置as-path操作模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asPathOperateMode as-path操作模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsPathOperateMode(const std::string& _asPathOperateMode);
@@ -182,14 +174,12 @@ namespace TencentCloud
 
                     /**
                      * as-path操作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operateAsPath;
                     bool m_operateAsPathHasBeenSet;
 
                     /**
                      * as-path操作模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_asPathOperateMode;
                     bool m_asPathOperateModeHasBeenSet;
