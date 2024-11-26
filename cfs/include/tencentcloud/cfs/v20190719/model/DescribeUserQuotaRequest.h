@@ -66,22 +66,22 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件。
-<br><li>UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid| Gid )
-<br><li>UserId - Array of String - 是否必填：否 -（过滤条件）按UID/GID过滤。
+UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid|Gid|Dir )
+UserId- Array of String - 是否必填：否 -（过滤条件）按id过滤。
                      * @return Filters 过滤条件。
-<br><li>UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid| Gid )
-<br><li>UserId - Array of String - 是否必填：否 -（过滤条件）按UID/GID过滤。
+UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid|Gid|Dir )
+UserId- Array of String - 是否必填：否 -（过滤条件）按id过滤。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件。
-<br><li>UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid| Gid )
-<br><li>UserId - Array of String - 是否必填：否 -（过滤条件）按UID/GID过滤。
+UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid|Gid|Dir )
+UserId- Array of String - 是否必填：否 -（过滤条件）按id过滤。
                      * @param _filters 过滤条件。
-<br><li>UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid| Gid )
-<br><li>UserId - Array of String - 是否必填：否 -（过滤条件）按UID/GID过滤。
+UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid|Gid|Dir )
+UserId- Array of String - 是否必填：否 -（过滤条件）按id过滤。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -145,8 +145,8 @@ namespace TencentCloud
 
                     /**
                      * 过滤条件。
-<br><li>UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid| Gid )
-<br><li>UserId - Array of String - 是否必填：否 -（过滤条件）按UID/GID过滤。
+UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid|Gid|Dir )
+UserId- Array of String - 是否必填：否 -（过滤条件）按id过滤。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

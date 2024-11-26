@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ExecutionFileTypeHasBeenSet() const;
 
                     /**
-                     * 获取统一执行平台执行id
-                     * @return ExecutionJobId 统一执行平台执行id
+                     * 获取统一执行平台执行id, 注意: ExecutionJobId 跟 "BrokerIp+OriginFileName" 必须有一个不为空
+                     * @return ExecutionJobId 统一执行平台执行id, 注意: ExecutionJobId 跟 "BrokerIp+OriginFileName" 必须有一个不为空
                      * 
                      */
                     std::string GetExecutionJobId() const;
 
                     /**
-                     * 设置统一执行平台执行id
-                     * @param _executionJobId 统一执行平台执行id
+                     * 设置统一执行平台执行id, 注意: ExecutionJobId 跟 "BrokerIp+OriginFileName" 必须有一个不为空
+                     * @param _executionJobId 统一执行平台执行id, 注意: ExecutionJobId 跟 "BrokerIp+OriginFileName" 必须有一个不为空
                      * 
                      */
                     void SetExecutionJobId(const std::string& _executionJobId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ExecutionJobIdHasBeenSet() const;
 
                     /**
-                     * 获取服务器Ip
-                     * @return BrokerIp 服务器Ip
+                     * 获取服务器Ip, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
+                     * @return BrokerIp 服务器Ip, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
                      * 
                      */
                     std::string GetBrokerIp() const;
 
                     /**
-                     * 设置服务器Ip
-                     * @param _brokerIp 服务器Ip
+                     * 设置服务器Ip, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
+                     * @param _brokerIp 服务器Ip, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
                      * 
                      */
                     void SetBrokerIp(const std::string& _brokerIp);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool BrokerIpHasBeenSet() const;
 
                     /**
-                     * 获取文件Name
-                     * @return OriginFileName 文件Name
+                     * 获取文件Name, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
+                     * @return OriginFileName 文件Name, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
                      * 
                      */
                     std::string GetOriginFileName() const;
 
                     /**
-                     * 设置文件Name
-                     * @param _originFileName 文件Name
+                     * 设置文件Name, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
+                     * @param _originFileName 文件Name, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
                      * 
                      */
                     void SetOriginFileName(const std::string& _originFileName);
@@ -327,19 +327,19 @@ namespace TencentCloud
                     bool m_executionFileTypeHasBeenSet;
 
                     /**
-                     * 统一执行平台执行id
+                     * 统一执行平台执行id, 注意: ExecutionJobId 跟 "BrokerIp+OriginFileName" 必须有一个不为空
                      */
                     std::string m_executionJobId;
                     bool m_executionJobIdHasBeenSet;
 
                     /**
-                     * 服务器Ip
+                     * 服务器Ip, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
                      */
                     std::string m_brokerIp;
                     bool m_brokerIpHasBeenSet;
 
                     /**
-                     * 文件Name
+                     * 文件Name, 注意: "BrokerIp+OriginFileName"跟ExecutionJobId必须有一个不为空
                      */
                     std::string m_originFileName;
                     bool m_originFileNameHasBeenSet;

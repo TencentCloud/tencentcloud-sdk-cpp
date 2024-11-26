@@ -230,15 +230,99 @@ namespace TencentCloud
                     bool ModelHasBeenSet() const;
 
                     /**
-                     * 获取目前已不支持
-                     * @return TranslationLanguage 目前已不支持
+                     * 获取填写则翻译，目前支持的语言：
+中文: zh
+英语: en
+越南语: vi
+日语: ja
+韩语: ko
+印度尼西亚语: id
+泰语: th
+葡萄牙语: pt
+土耳其语: tr
+阿拉伯语: ar
+西班牙语: es
+印地语: hi
+法语: fr
+马来语: ms
+菲律宾语: fil
+德语: de
+意大利语: it
+俄语: ru
+瑞典语: sv
+挪威语: no
+丹麦语: da
+                     * @return TranslationLanguage 填写则翻译，目前支持的语言：
+中文: zh
+英语: en
+越南语: vi
+日语: ja
+韩语: ko
+印度尼西亚语: id
+泰语: th
+葡萄牙语: pt
+土耳其语: tr
+阿拉伯语: ar
+西班牙语: es
+印地语: hi
+法语: fr
+马来语: ms
+菲律宾语: fil
+德语: de
+意大利语: it
+俄语: ru
+瑞典语: sv
+挪威语: no
+丹麦语: da
                      * @deprecated
                      */
                     std::string GetTranslationLanguage() const;
 
                     /**
-                     * 设置目前已不支持
-                     * @param _translationLanguage 目前已不支持
+                     * 设置填写则翻译，目前支持的语言：
+中文: zh
+英语: en
+越南语: vi
+日语: ja
+韩语: ko
+印度尼西亚语: id
+泰语: th
+葡萄牙语: pt
+土耳其语: tr
+阿拉伯语: ar
+西班牙语: es
+印地语: hi
+法语: fr
+马来语: ms
+菲律宾语: fil
+德语: de
+意大利语: it
+俄语: ru
+瑞典语: sv
+挪威语: no
+丹麦语: da
+                     * @param _translationLanguage 填写则翻译，目前支持的语言：
+中文: zh
+英语: en
+越南语: vi
+日语: ja
+韩语: ko
+印度尼西亚语: id
+泰语: th
+葡萄牙语: pt
+土耳其语: tr
+阿拉伯语: ar
+西班牙语: es
+印地语: hi
+法语: fr
+马来语: ms
+菲律宾语: fil
+德语: de
+意大利语: it
+俄语: ru
+瑞典语: sv
+挪威语: no
+丹麦语: da
                      * @deprecated
                      */
                     void SetTranslationLanguage(const std::string& _translationLanguage);
@@ -301,7 +385,28 @@ namespace TencentCloud
                     bool m_modelHasBeenSet;
 
                     /**
-                     * 目前已不支持
+                     * 填写则翻译，目前支持的语言：
+中文: zh
+英语: en
+越南语: vi
+日语: ja
+韩语: ko
+印度尼西亚语: id
+泰语: th
+葡萄牙语: pt
+土耳其语: tr
+阿拉伯语: ar
+西班牙语: es
+印地语: hi
+法语: fr
+马来语: ms
+菲律宾语: fil
+德语: de
+意大利语: it
+俄语: ru
+瑞典语: sv
+挪威语: no
+丹麦语: da
                      */
                     std::string m_translationLanguage;
                     bool m_translationLanguageHasBeenSet;

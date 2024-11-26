@@ -94,7 +94,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/CreateReleaseRequest.h
   include/tencentcloud/lke/v20231130/model/Label.h
   include/tencentcloud/lke/v20231130/model/KnowledgeQaOutput.h
-  include/tencentcloud/lke/v20231130/model/StrValue.h
+  include/tencentcloud/lke/v20231130/model/ApiVarAttrInfo.h
   include/tencentcloud/lke/v20231130/model/ProcedureDebugging.h
   include/tencentcloud/lke/v20231130/model/CheckAttributeLabelReferRequest.h
   include/tencentcloud/lke/v20231130/model/ModifyQACateRequest.h
@@ -105,6 +105,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/Usage.h
   include/tencentcloud/lke/v20231130/model/ResetSessionRequest.h
   include/tencentcloud/lke/v20231130/model/GetAppSecretRequest.h
+  include/tencentcloud/lke/v20231130/model/ModelParameter.h
   include/tencentcloud/lke/v20231130/model/DeleteQACateResponse.h
   include/tencentcloud/lke/v20231130/model/QueryParseDocResultResponse.h
   include/tencentcloud/lke/v20231130/model/ListReleaseDocPreviewResponse.h
@@ -125,6 +126,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ListQACateResponse.h
   include/tencentcloud/lke/v20231130/model/RetryDocParseResponse.h
   include/tencentcloud/lke/v20231130/model/CreateRejectedQuestionResponse.h
+  include/tencentcloud/lke/v20231130/model/ReconstructDocumentConfig.h
   include/tencentcloud/lke/v20231130/model/GetEmbeddingResponse.h
   include/tencentcloud/lke/v20231130/model/ExportUnsatisfiedReplyRequest.h
   include/tencentcloud/lke/v20231130/model/GroupQAResponse.h
@@ -171,6 +173,8 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ReconstructDocumentRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeTokenUsageGraphResponse.h
   include/tencentcloud/lke/v20231130/model/SimilarQuestionModify.h
+  include/tencentcloud/lke/v20231130/model/WorkflowRunNodeInfo.h
+  include/tencentcloud/lke/v20231130/model/StatisticInfo.h
   include/tencentcloud/lke/v20231130/model/RetryDocAuditResponse.h
   include/tencentcloud/lke/v20231130/model/GetReconstructDocumentResultResponse.h
   include/tencentcloud/lke/v20231130/model/RejectedQuestion.h
@@ -211,6 +215,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ModifyDocRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeTokenUsageResponse.h
   include/tencentcloud/lke/v20231130/model/DeleteAppResponse.h
+  include/tencentcloud/lke/v20231130/model/SearchRange.h
   include/tencentcloud/lke/v20231130/model/ListAttributeLabelRequest.h
   include/tencentcloud/lke/v20231130/model/DeleteDocResponse.h
   include/tencentcloud/lke/v20231130/model/DocumentElement.h
@@ -235,6 +240,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/IsTransferIntentRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeReferRequest.h
   include/tencentcloud/lke/v20231130/model/DeleteAppRequest.h
+  include/tencentcloud/lke/v20231130/model/WorkFlowSummary.h
   include/tencentcloud/lke/v20231130/model/TaskParams.h
   include/tencentcloud/lke/v20231130/model/ListAppCategoryRspOption.h
   include/tencentcloud/lke/v20231130/model/ValueInfo.h
@@ -252,6 +258,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/GetMsgRecordRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeStorageCredentialResponse.h
   include/tencentcloud/lke/v20231130/model/CheckAttributeLabelExistResponse.h
+  include/tencentcloud/lke/v20231130/model/StrValue.h
   include/tencentcloud/lke/v20231130/model/GetTaskStatusRequest.h
   include/tencentcloud/lke/v20231130/model/CheckAttributeLabelReferResponse.h
   include/tencentcloud/lke/v20231130/model/RateMsgRecordResponse.h
@@ -271,7 +278,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ModifyRejectedQuestionRequest.h
   include/tencentcloud/lke/v20231130/model/IgnoreUnsatisfiedReplyResponse.h
   include/tencentcloud/lke/v20231130/model/StopDocParseRequest.h
-  include/tencentcloud/lke/v20231130/model/ReconstructDocumentConfig.h
+  include/tencentcloud/lke/v20231130/model/KnowledgeWorkflow.h
   include/tencentcloud/lke/v20231130/model/ListSelectDocRequest.h
   )
 
@@ -352,7 +359,7 @@ set(lke_src
   src/v20231130/model/CreateReleaseRequest.cpp
   src/v20231130/model/Label.cpp
   src/v20231130/model/KnowledgeQaOutput.cpp
-  src/v20231130/model/StrValue.cpp
+  src/v20231130/model/ApiVarAttrInfo.cpp
   src/v20231130/model/ProcedureDebugging.cpp
   src/v20231130/model/CheckAttributeLabelReferRequest.cpp
   src/v20231130/model/ModifyQACateRequest.cpp
@@ -363,6 +370,7 @@ set(lke_src
   src/v20231130/model/Usage.cpp
   src/v20231130/model/ResetSessionRequest.cpp
   src/v20231130/model/GetAppSecretRequest.cpp
+  src/v20231130/model/ModelParameter.cpp
   src/v20231130/model/DeleteQACateResponse.cpp
   src/v20231130/model/QueryParseDocResultResponse.cpp
   src/v20231130/model/ListReleaseDocPreviewResponse.cpp
@@ -383,6 +391,7 @@ set(lke_src
   src/v20231130/model/ListQACateResponse.cpp
   src/v20231130/model/RetryDocParseResponse.cpp
   src/v20231130/model/CreateRejectedQuestionResponse.cpp
+  src/v20231130/model/ReconstructDocumentConfig.cpp
   src/v20231130/model/GetEmbeddingResponse.cpp
   src/v20231130/model/ExportUnsatisfiedReplyRequest.cpp
   src/v20231130/model/GroupQAResponse.cpp
@@ -429,6 +438,8 @@ set(lke_src
   src/v20231130/model/ReconstructDocumentRequest.cpp
   src/v20231130/model/DescribeTokenUsageGraphResponse.cpp
   src/v20231130/model/SimilarQuestionModify.cpp
+  src/v20231130/model/WorkflowRunNodeInfo.cpp
+  src/v20231130/model/StatisticInfo.cpp
   src/v20231130/model/RetryDocAuditResponse.cpp
   src/v20231130/model/GetReconstructDocumentResultResponse.cpp
   src/v20231130/model/RejectedQuestion.cpp
@@ -469,6 +480,7 @@ set(lke_src
   src/v20231130/model/ModifyDocRequest.cpp
   src/v20231130/model/DescribeTokenUsageResponse.cpp
   src/v20231130/model/DeleteAppResponse.cpp
+  src/v20231130/model/SearchRange.cpp
   src/v20231130/model/ListAttributeLabelRequest.cpp
   src/v20231130/model/DeleteDocResponse.cpp
   src/v20231130/model/DocumentElement.cpp
@@ -493,6 +505,7 @@ set(lke_src
   src/v20231130/model/IsTransferIntentRequest.cpp
   src/v20231130/model/DescribeReferRequest.cpp
   src/v20231130/model/DeleteAppRequest.cpp
+  src/v20231130/model/WorkFlowSummary.cpp
   src/v20231130/model/TaskParams.cpp
   src/v20231130/model/ListAppCategoryRspOption.cpp
   src/v20231130/model/ValueInfo.cpp
@@ -510,6 +523,7 @@ set(lke_src
   src/v20231130/model/GetMsgRecordRequest.cpp
   src/v20231130/model/DescribeStorageCredentialResponse.cpp
   src/v20231130/model/CheckAttributeLabelExistResponse.cpp
+  src/v20231130/model/StrValue.cpp
   src/v20231130/model/GetTaskStatusRequest.cpp
   src/v20231130/model/CheckAttributeLabelReferResponse.cpp
   src/v20231130/model/RateMsgRecordResponse.cpp
@@ -529,7 +543,7 @@ set(lke_src
   src/v20231130/model/ModifyRejectedQuestionRequest.cpp
   src/v20231130/model/IgnoreUnsatisfiedReplyResponse.cpp
   src/v20231130/model/StopDocParseRequest.cpp
-  src/v20231130/model/ReconstructDocumentConfig.cpp
+  src/v20231130/model/KnowledgeWorkflow.cpp
   src/v20231130/model/ListSelectDocRequest.cpp
   )
 

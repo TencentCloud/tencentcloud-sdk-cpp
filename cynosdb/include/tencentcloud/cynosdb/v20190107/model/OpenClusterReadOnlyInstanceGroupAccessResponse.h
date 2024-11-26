@@ -48,7 +48,7 @@ namespace TencentCloud
                      * @return FlowId 开启流程ID
                      * 
                      */
-                    std::string GetFlowId() const;
+                    int64_t GetFlowId() const;
 
                     /**
                      * 判断参数 FlowId 是否已赋值
@@ -62,7 +62,7 @@ namespace TencentCloud
                     /**
                      * 开启流程ID
                      */
-                    std::string m_flowId;
+                    int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                 };

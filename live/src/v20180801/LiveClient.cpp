@@ -40,6 +40,135 @@ LiveClient::LiveClient(const Credential &credential, const string &region, const
 }
 
 
+LiveClient::AddCasterInputInfoOutcome LiveClient::AddCasterInputInfo(const AddCasterInputInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddCasterInputInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddCasterInputInfoResponse rsp = AddCasterInputInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddCasterInputInfoOutcome(rsp);
+        else
+            return AddCasterInputInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return AddCasterInputInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::AddCasterInputInfoAsync(const AddCasterInputInfoRequest& request, const AddCasterInputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddCasterInputInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::AddCasterInputInfoOutcomeCallable LiveClient::AddCasterInputInfoCallable(const AddCasterInputInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddCasterInputInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->AddCasterInputInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::AddCasterLayoutInfoOutcome LiveClient::AddCasterLayoutInfo(const AddCasterLayoutInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddCasterLayoutInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddCasterLayoutInfoResponse rsp = AddCasterLayoutInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddCasterLayoutInfoOutcome(rsp);
+        else
+            return AddCasterLayoutInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return AddCasterLayoutInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::AddCasterLayoutInfoAsync(const AddCasterLayoutInfoRequest& request, const AddCasterLayoutInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddCasterLayoutInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::AddCasterLayoutInfoOutcomeCallable LiveClient::AddCasterLayoutInfoCallable(const AddCasterLayoutInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddCasterLayoutInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->AddCasterLayoutInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::AddCasterOutputInfoOutcome LiveClient::AddCasterOutputInfo(const AddCasterOutputInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddCasterOutputInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddCasterOutputInfoResponse rsp = AddCasterOutputInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddCasterOutputInfoOutcome(rsp);
+        else
+            return AddCasterOutputInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return AddCasterOutputInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::AddCasterOutputInfoAsync(const AddCasterOutputInfoRequest& request, const AddCasterOutputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddCasterOutputInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::AddCasterOutputInfoOutcomeCallable LiveClient::AddCasterOutputInfoCallable(const AddCasterOutputInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddCasterOutputInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->AddCasterOutputInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::AddDelayLiveStreamOutcome LiveClient::AddDelayLiveStream(const AddDelayLiveStreamRequest &request)
 {
     auto outcome = MakeRequest(request, "AddDelayLiveStream");
@@ -334,6 +463,49 @@ LiveClient::CreateCasterOutcomeCallable LiveClient::CreateCasterCallable(const C
         [this, request]()
         {
             return this->CreateCaster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::CreateCasterInputPushUrlOutcome LiveClient::CreateCasterInputPushUrl(const CreateCasterInputPushUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCasterInputPushUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCasterInputPushUrlResponse rsp = CreateCasterInputPushUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCasterInputPushUrlOutcome(rsp);
+        else
+            return CreateCasterInputPushUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCasterInputPushUrlOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateCasterInputPushUrlAsync(const CreateCasterInputPushUrlRequest& request, const CreateCasterInputPushUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCasterInputPushUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::CreateCasterInputPushUrlOutcomeCallable LiveClient::CreateCasterInputPushUrlCallable(const CreateCasterInputPushUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCasterInputPushUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCasterInputPushUrl(request);
         }
     );
 
@@ -1237,6 +1409,135 @@ LiveClient::DeleteCasterOutcomeCallable LiveClient::DeleteCasterCallable(const D
         [this, request]()
         {
             return this->DeleteCaster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DeleteCasterInputInfoOutcome LiveClient::DeleteCasterInputInfo(const DeleteCasterInputInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCasterInputInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCasterInputInfoResponse rsp = DeleteCasterInputInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCasterInputInfoOutcome(rsp);
+        else
+            return DeleteCasterInputInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCasterInputInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteCasterInputInfoAsync(const DeleteCasterInputInfoRequest& request, const DeleteCasterInputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCasterInputInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DeleteCasterInputInfoOutcomeCallable LiveClient::DeleteCasterInputInfoCallable(const DeleteCasterInputInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCasterInputInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCasterInputInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DeleteCasterLayoutInfoOutcome LiveClient::DeleteCasterLayoutInfo(const DeleteCasterLayoutInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCasterLayoutInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCasterLayoutInfoResponse rsp = DeleteCasterLayoutInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCasterLayoutInfoOutcome(rsp);
+        else
+            return DeleteCasterLayoutInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCasterLayoutInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteCasterLayoutInfoAsync(const DeleteCasterLayoutInfoRequest& request, const DeleteCasterLayoutInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCasterLayoutInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DeleteCasterLayoutInfoOutcomeCallable LiveClient::DeleteCasterLayoutInfoCallable(const DeleteCasterLayoutInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCasterLayoutInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCasterLayoutInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DeleteCasterOutputInfoOutcome LiveClient::DeleteCasterOutputInfo(const DeleteCasterOutputInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCasterOutputInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCasterOutputInfoResponse rsp = DeleteCasterOutputInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCasterOutputInfoOutcome(rsp);
+        else
+            return DeleteCasterOutputInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCasterOutputInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteCasterOutputInfoAsync(const DeleteCasterOutputInfoRequest& request, const DeleteCasterOutputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCasterOutputInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DeleteCasterOutputInfoOutcomeCallable LiveClient::DeleteCasterOutputInfoCallable(const DeleteCasterOutputInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCasterOutputInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCasterOutputInfo(request);
         }
     );
 
@@ -2448,6 +2749,92 @@ LiveClient::DescribeCasterDisplayInfoOutcomeCallable LiveClient::DescribeCasterD
     return task->get_future();
 }
 
+LiveClient::DescribeCasterInputInfosOutcome LiveClient::DescribeCasterInputInfos(const DescribeCasterInputInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCasterInputInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCasterInputInfosResponse rsp = DescribeCasterInputInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCasterInputInfosOutcome(rsp);
+        else
+            return DescribeCasterInputInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCasterInputInfosOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeCasterInputInfosAsync(const DescribeCasterInputInfosRequest& request, const DescribeCasterInputInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCasterInputInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeCasterInputInfosOutcomeCallable LiveClient::DescribeCasterInputInfosCallable(const DescribeCasterInputInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCasterInputInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCasterInputInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeCasterLayoutInfosOutcome LiveClient::DescribeCasterLayoutInfos(const DescribeCasterLayoutInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCasterLayoutInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCasterLayoutInfosResponse rsp = DescribeCasterLayoutInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCasterLayoutInfosOutcome(rsp);
+        else
+            return DescribeCasterLayoutInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCasterLayoutInfosOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeCasterLayoutInfosAsync(const DescribeCasterLayoutInfosRequest& request, const DescribeCasterLayoutInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCasterLayoutInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeCasterLayoutInfosOutcomeCallable LiveClient::DescribeCasterLayoutInfosCallable(const DescribeCasterLayoutInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCasterLayoutInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCasterLayoutInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeCasterListOutcome LiveClient::DescribeCasterList(const DescribeCasterListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCasterList");
@@ -2484,6 +2871,49 @@ LiveClient::DescribeCasterListOutcomeCallable LiveClient::DescribeCasterListCall
         [this, request]()
         {
             return this->DescribeCasterList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeCasterOutputInfosOutcome LiveClient::DescribeCasterOutputInfos(const DescribeCasterOutputInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCasterOutputInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCasterOutputInfosResponse rsp = DescribeCasterOutputInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCasterOutputInfosOutcome(rsp);
+        else
+            return DescribeCasterOutputInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCasterOutputInfosOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeCasterOutputInfosAsync(const DescribeCasterOutputInfosRequest& request, const DescribeCasterOutputInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCasterOutputInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeCasterOutputInfosOutcomeCallable LiveClient::DescribeCasterOutputInfosCallable(const DescribeCasterOutputInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCasterOutputInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCasterOutputInfos(request);
         }
     );
 
@@ -6053,6 +6483,135 @@ LiveClient::ModifyCasterOutcomeCallable LiveClient::ModifyCasterCallable(const M
         [this, request]()
         {
             return this->ModifyCaster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::ModifyCasterInputInfoOutcome LiveClient::ModifyCasterInputInfo(const ModifyCasterInputInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCasterInputInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCasterInputInfoResponse rsp = ModifyCasterInputInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCasterInputInfoOutcome(rsp);
+        else
+            return ModifyCasterInputInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCasterInputInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ModifyCasterInputInfoAsync(const ModifyCasterInputInfoRequest& request, const ModifyCasterInputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCasterInputInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::ModifyCasterInputInfoOutcomeCallable LiveClient::ModifyCasterInputInfoCallable(const ModifyCasterInputInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCasterInputInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCasterInputInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::ModifyCasterLayoutInfoOutcome LiveClient::ModifyCasterLayoutInfo(const ModifyCasterLayoutInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCasterLayoutInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCasterLayoutInfoResponse rsp = ModifyCasterLayoutInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCasterLayoutInfoOutcome(rsp);
+        else
+            return ModifyCasterLayoutInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCasterLayoutInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ModifyCasterLayoutInfoAsync(const ModifyCasterLayoutInfoRequest& request, const ModifyCasterLayoutInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCasterLayoutInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::ModifyCasterLayoutInfoOutcomeCallable LiveClient::ModifyCasterLayoutInfoCallable(const ModifyCasterLayoutInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCasterLayoutInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCasterLayoutInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::ModifyCasterOutputInfoOutcome LiveClient::ModifyCasterOutputInfo(const ModifyCasterOutputInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCasterOutputInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCasterOutputInfoResponse rsp = ModifyCasterOutputInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCasterOutputInfoOutcome(rsp);
+        else
+            return ModifyCasterOutputInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCasterOutputInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ModifyCasterOutputInfoAsync(const ModifyCasterOutputInfoRequest& request, const ModifyCasterOutputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCasterOutputInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::ModifyCasterOutputInfoOutcomeCallable LiveClient::ModifyCasterOutputInfoCallable(const ModifyCasterOutputInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCasterOutputInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCasterOutputInfo(request);
         }
     );
 

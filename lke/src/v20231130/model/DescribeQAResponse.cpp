@@ -48,7 +48,11 @@ DescribeQAResponse::DescribeQAResponse() :
     m_attrLabelsHasBeenSet(false),
     m_expireStartHasBeenSet(false),
     m_expireEndHasBeenSet(false),
-    m_similarQuestionsHasBeenSet(false)
+    m_similarQuestionsHasBeenSet(false),
+    m_qaAuditStatusHasBeenSet(false),
+    m_picAuditStatusHasBeenSet(false),
+    m_videoAuditStatusHasBeenSet(false),
+    m_questionDescHasBeenSet(false)
 {
 }
 
@@ -366,6 +370,46 @@ CoreInternalOutcome DescribeQAResponse::Deserialize(const string &payload)
         m_similarQuestionsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("QaAuditStatus") && !rsp["QaAuditStatus"].IsNull())
+    {
+        if (!rsp["QaAuditStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QaAuditStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_qaAuditStatus = rsp["QaAuditStatus"].GetUint64();
+        m_qaAuditStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PicAuditStatus") && !rsp["PicAuditStatus"].IsNull())
+    {
+        if (!rsp["PicAuditStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PicAuditStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_picAuditStatus = rsp["PicAuditStatus"].GetUint64();
+        m_picAuditStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("VideoAuditStatus") && !rsp["VideoAuditStatus"].IsNull())
+    {
+        if (!rsp["VideoAuditStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoAuditStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_videoAuditStatus = rsp["VideoAuditStatus"].GetUint64();
+        m_videoAuditStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("QuestionDesc") && !rsp["QuestionDesc"].IsNull())
+    {
+        if (!rsp["QuestionDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QuestionDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_questionDesc = string(rsp["QuestionDesc"].GetString());
+        m_questionDescHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -595,6 +639,38 @@ string DescribeQAResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_qaAuditStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QaAuditStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qaAuditStatus, allocator);
+    }
+
+    if (m_picAuditStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PicAuditStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_picAuditStatus, allocator);
+    }
+
+    if (m_videoAuditStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoAuditStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_videoAuditStatus, allocator);
+    }
+
+    if (m_questionDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuestionDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_questionDesc.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -857,6 +933,46 @@ vector<SimilarQuestion> DescribeQAResponse::GetSimilarQuestions() const
 bool DescribeQAResponse::SimilarQuestionsHasBeenSet() const
 {
     return m_similarQuestionsHasBeenSet;
+}
+
+uint64_t DescribeQAResponse::GetQaAuditStatus() const
+{
+    return m_qaAuditStatus;
+}
+
+bool DescribeQAResponse::QaAuditStatusHasBeenSet() const
+{
+    return m_qaAuditStatusHasBeenSet;
+}
+
+uint64_t DescribeQAResponse::GetPicAuditStatus() const
+{
+    return m_picAuditStatus;
+}
+
+bool DescribeQAResponse::PicAuditStatusHasBeenSet() const
+{
+    return m_picAuditStatusHasBeenSet;
+}
+
+uint64_t DescribeQAResponse::GetVideoAuditStatus() const
+{
+    return m_videoAuditStatus;
+}
+
+bool DescribeQAResponse::VideoAuditStatusHasBeenSet() const
+{
+    return m_videoAuditStatusHasBeenSet;
+}
+
+string DescribeQAResponse::GetQuestionDesc() const
+{
+    return m_questionDesc;
+}
+
+bool DescribeQAResponse::QuestionDescHasBeenSet() const
+{
+    return m_questionDescHasBeenSet;
 }
 
 

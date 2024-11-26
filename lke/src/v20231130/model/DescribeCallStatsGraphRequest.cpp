@@ -30,7 +30,8 @@ DescribeCallStatsGraphRequest::DescribeCallStatsGraphRequest() :
     m_modelNameHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_appBizIdsHasBeenSet(false)
+    m_appBizIdsHasBeenSet(false),
+    m_subScenesHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,19 @@ string DescribeCallStatsGraphRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_appBizIds.begin(); itr != m_appBizIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_subScenesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubScenes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_subScenes.begin(); itr != m_subScenes.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -249,6 +263,22 @@ void DescribeCallStatsGraphRequest::SetAppBizIds(const vector<string>& _appBizId
 bool DescribeCallStatsGraphRequest::AppBizIdsHasBeenSet() const
 {
     return m_appBizIdsHasBeenSet;
+}
+
+vector<string> DescribeCallStatsGraphRequest::GetSubScenes() const
+{
+    return m_subScenes;
+}
+
+void DescribeCallStatsGraphRequest::SetSubScenes(const vector<string>& _subScenes)
+{
+    m_subScenes = _subScenes;
+    m_subScenesHasBeenSet = true;
+}
+
+bool DescribeCallStatsGraphRequest::SubScenesHasBeenSet() const
+{
+    return m_subScenesHasBeenSet;
 }
 
 

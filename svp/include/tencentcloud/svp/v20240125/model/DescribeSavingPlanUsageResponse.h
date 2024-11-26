@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取节省计划使用率数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Usages 节省计划使用率数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SavingPlanUsageDetail> GetUsages() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 节省计划使用率数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SavingPlanUsageDetail> m_usages;
                     bool m_usagesHasBeenSet;

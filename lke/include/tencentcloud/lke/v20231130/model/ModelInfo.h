@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/ModelParameter.h>
 
 
 namespace TencentCloud
@@ -171,6 +172,81 @@ namespace TencentCloud
                      */
                     bool PromptWordsLimitHasBeenSet() const;
 
+                    /**
+                     * 获取通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopP 通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ModelParameter GetTopP() const;
+
+                    /**
+                     * 设置通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _topP 通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTopP(const ModelParameter& _topP);
+
+                    /**
+                     * 判断参数 TopP 是否已赋值
+                     * @return TopP 是否已赋值
+                     * 
+                     */
+                    bool TopPHasBeenSet() const;
+
+                    /**
+                     * 获取温度控制随机性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Temperature 温度控制随机性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ModelParameter GetTemperature() const;
+
+                    /**
+                     * 设置温度控制随机性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _temperature 温度控制随机性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTemperature(const ModelParameter& _temperature);
+
+                    /**
+                     * 判断参数 Temperature 是否已赋值
+                     * @return Temperature 是否已赋值
+                     * 
+                     */
+                    bool TemperatureHasBeenSet() const;
+
+                    /**
+                     * 获取最多能生成的token数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxTokens 最多能生成的token数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ModelParameter GetMaxTokens() const;
+
+                    /**
+                     * 设置最多能生成的token数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _maxTokens 最多能生成的token数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMaxTokens(const ModelParameter& _maxTokens);
+
+                    /**
+                     * 判断参数 MaxTokens 是否已赋值
+                     * @return MaxTokens 是否已赋值
+                     * 
+                     */
+                    bool MaxTokensHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +283,27 @@ namespace TencentCloud
                      */
                     std::string m_promptWordsLimit;
                     bool m_promptWordsLimitHasBeenSet;
+
+                    /**
+                     * 通过核心采样控制内容生成的多样性，较高的Top P值会导致生成更多样的内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ModelParameter m_topP;
+                    bool m_topPHasBeenSet;
+
+                    /**
+                     * 温度控制随机性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ModelParameter m_temperature;
+                    bool m_temperatureHasBeenSet;
+
+                    /**
+                     * 最多能生成的token数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ModelParameter m_maxTokens;
+                    bool m_maxTokensHasBeenSet;
 
                 };
             }

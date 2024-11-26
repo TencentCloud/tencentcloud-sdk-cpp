@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取标签ID
+                     * @return AttrBizId 标签ID
+                     * 
+                     */
+                    std::string GetAttrBizId() const;
+
+                    /**
+                     * 判断参数 AttrBizId 是否已赋值
+                     * @return AttrBizId 是否已赋值
+                     * 
+                     */
+                    bool AttrBizIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 标签ID
+                     */
+                    std::string m_attrBizId;
+                    bool m_attrBizIdHasBeenSet;
 
                 };
             }

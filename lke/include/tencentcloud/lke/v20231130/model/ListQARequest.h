@@ -252,6 +252,27 @@ namespace TencentCloud
                      */
                     bool QaBizIdsHasBeenSet() const;
 
+                    /**
+                     * 获取查询类型 filename 名称、 attribute 标签
+                     * @return QueryType 查询类型 filename 名称、 attribute 标签
+                     * 
+                     */
+                    std::string GetQueryType() const;
+
+                    /**
+                     * 设置查询类型 filename 名称、 attribute 标签
+                     * @param _queryType 查询类型 filename 名称、 attribute 标签
+                     * 
+                     */
+                    void SetQueryType(const std::string& _queryType);
+
+                    /**
+                     * 判断参数 QueryType 是否已赋值
+                     * @return QueryType 是否已赋值
+                     * 
+                     */
+                    bool QueryTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +334,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_qaBizIds;
                     bool m_qaBizIdsHasBeenSet;
+
+                    /**
+                     * 查询类型 filename 名称、 attribute 标签
+                     */
+                    std::string m_queryType;
+                    bool m_queryTypeHasBeenSet;
 
                 };
             }

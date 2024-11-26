@@ -23,6 +23,12 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/live/v20180801/model/AddCasterInputInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/AddCasterInputInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/AddCasterLayoutInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/AddCasterLayoutInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/AddCasterOutputInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/AddCasterOutputInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/AddDelayLiveStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/AddDelayLiveStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/AddLiveDomainRequest.h>
@@ -37,6 +43,8 @@
 #include <tencentcloud/live/v20180801/model/CopyCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateCasterRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateCasterResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateCasterInputPushUrlRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateCasterInputPushUrlResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateCommonMixStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateCommonMixStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveCallbackRuleRequest.h>
@@ -79,6 +87,12 @@
 #include <tencentcloud/live/v20180801/model/CreateScreenshotTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteCasterInputInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteCasterInputInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteCasterLayoutInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteCasterLayoutInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteCasterOutputInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteCasterOutputInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackRuleRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackTemplateRequest.h>
@@ -135,8 +149,14 @@
 #include <tencentcloud/live/v20180801/model/DescribeCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterDisplayInfoRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterDisplayInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterInputInfosRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterInputInfosResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterLayoutInfosRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterLayoutInfosResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterOutputInfosRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterOutputInfosResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterPlayUrlRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterPlayUrlResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterTransitionTypesRequest.h>
@@ -303,6 +323,12 @@
 #include <tencentcloud/live/v20180801/model/ForbidLiveStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyCasterRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyCasterResponse.h>
+#include <tencentcloud/live/v20180801/model/ModifyCasterInputInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/ModifyCasterInputInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/ModifyCasterLayoutInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/ModifyCasterLayoutInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/ModifyCasterOutputInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/ModifyCasterOutputInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveCallbackTemplateRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveCallbackTemplateResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveDomainCertBindingsRequest.h>
@@ -371,6 +397,15 @@ namespace TencentCloud
                 LiveClient(const Credential &credential, const std::string &region);
                 LiveClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddCasterInputInfoResponse> AddCasterInputInfoOutcome;
+                typedef std::future<AddCasterInputInfoOutcome> AddCasterInputInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::AddCasterInputInfoRequest&, AddCasterInputInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterInputInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddCasterLayoutInfoResponse> AddCasterLayoutInfoOutcome;
+                typedef std::future<AddCasterLayoutInfoOutcome> AddCasterLayoutInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::AddCasterLayoutInfoRequest&, AddCasterLayoutInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterLayoutInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddCasterOutputInfoResponse> AddCasterOutputInfoOutcome;
+                typedef std::future<AddCasterOutputInfoOutcome> AddCasterOutputInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::AddCasterOutputInfoRequest&, AddCasterOutputInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterOutputInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddDelayLiveStreamResponse> AddDelayLiveStreamOutcome;
                 typedef std::future<AddDelayLiveStreamOutcome> AddDelayLiveStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::AddDelayLiveStreamRequest&, AddDelayLiveStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddDelayLiveStreamAsyncHandler;
@@ -392,6 +427,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCasterResponse> CreateCasterOutcome;
                 typedef std::future<CreateCasterOutcome> CreateCasterOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateCasterRequest&, CreateCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCasterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCasterInputPushUrlResponse> CreateCasterInputPushUrlOutcome;
+                typedef std::future<CreateCasterInputPushUrlOutcome> CreateCasterInputPushUrlOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateCasterInputPushUrlRequest&, CreateCasterInputPushUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCasterInputPushUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCommonMixStreamResponse> CreateCommonMixStreamOutcome;
                 typedef std::future<CreateCommonMixStreamOutcome> CreateCommonMixStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateCommonMixStreamRequest&, CreateCommonMixStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCommonMixStreamAsyncHandler;
@@ -455,6 +493,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCasterResponse> DeleteCasterOutcome;
                 typedef std::future<DeleteCasterOutcome> DeleteCasterOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteCasterRequest&, DeleteCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCasterInputInfoResponse> DeleteCasterInputInfoOutcome;
+                typedef std::future<DeleteCasterInputInfoOutcome> DeleteCasterInputInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteCasterInputInfoRequest&, DeleteCasterInputInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterInputInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCasterLayoutInfoResponse> DeleteCasterLayoutInfoOutcome;
+                typedef std::future<DeleteCasterLayoutInfoOutcome> DeleteCasterLayoutInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteCasterLayoutInfoRequest&, DeleteCasterLayoutInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterLayoutInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCasterOutputInfoResponse> DeleteCasterOutputInfoOutcome;
+                typedef std::future<DeleteCasterOutputInfoOutcome> DeleteCasterOutputInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteCasterOutputInfoRequest&, DeleteCasterOutputInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterOutputInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLiveCallbackRuleResponse> DeleteLiveCallbackRuleOutcome;
                 typedef std::future<DeleteLiveCallbackRuleOutcome> DeleteLiveCallbackRuleOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteLiveCallbackRuleRequest&, DeleteLiveCallbackRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveCallbackRuleAsyncHandler;
@@ -539,9 +586,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCasterDisplayInfoResponse> DescribeCasterDisplayInfoOutcome;
                 typedef std::future<DescribeCasterDisplayInfoOutcome> DescribeCasterDisplayInfoOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeCasterDisplayInfoRequest&, DescribeCasterDisplayInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterDisplayInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCasterInputInfosResponse> DescribeCasterInputInfosOutcome;
+                typedef std::future<DescribeCasterInputInfosOutcome> DescribeCasterInputInfosOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeCasterInputInfosRequest&, DescribeCasterInputInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterInputInfosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCasterLayoutInfosResponse> DescribeCasterLayoutInfosOutcome;
+                typedef std::future<DescribeCasterLayoutInfosOutcome> DescribeCasterLayoutInfosOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeCasterLayoutInfosRequest&, DescribeCasterLayoutInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterLayoutInfosAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCasterListResponse> DescribeCasterListOutcome;
                 typedef std::future<DescribeCasterListOutcome> DescribeCasterListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeCasterListRequest&, DescribeCasterListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCasterOutputInfosResponse> DescribeCasterOutputInfosOutcome;
+                typedef std::future<DescribeCasterOutputInfosOutcome> DescribeCasterOutputInfosOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeCasterOutputInfosRequest&, DescribeCasterOutputInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterOutputInfosAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCasterPlayUrlResponse> DescribeCasterPlayUrlOutcome;
                 typedef std::future<DescribeCasterPlayUrlOutcome> DescribeCasterPlayUrlOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeCasterPlayUrlRequest&, DescribeCasterPlayUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterPlayUrlAsyncHandler;
@@ -791,6 +847,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCasterResponse> ModifyCasterOutcome;
                 typedef std::future<ModifyCasterOutcome> ModifyCasterOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyCasterRequest&, ModifyCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCasterInputInfoResponse> ModifyCasterInputInfoOutcome;
+                typedef std::future<ModifyCasterInputInfoOutcome> ModifyCasterInputInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::ModifyCasterInputInfoRequest&, ModifyCasterInputInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterInputInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCasterLayoutInfoResponse> ModifyCasterLayoutInfoOutcome;
+                typedef std::future<ModifyCasterLayoutInfoOutcome> ModifyCasterLayoutInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::ModifyCasterLayoutInfoRequest&, ModifyCasterLayoutInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterLayoutInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCasterOutputInfoResponse> ModifyCasterOutputInfoOutcome;
+                typedef std::future<ModifyCasterOutputInfoOutcome> ModifyCasterOutputInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::ModifyCasterOutputInfoRequest&, ModifyCasterOutputInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterOutputInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLiveCallbackTemplateResponse> ModifyLiveCallbackTemplateOutcome;
                 typedef std::future<ModifyLiveCallbackTemplateOutcome> ModifyLiveCallbackTemplateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyLiveCallbackTemplateRequest&, ModifyLiveCallbackTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveCallbackTemplateAsyncHandler;
@@ -876,6 +941,33 @@ namespace TencentCloud
 
 
                 /**
+                 *该接口用来向导播台中添加一个输入源，该输入源可以是拉流地址、或是一个文件链接
+                 * @param req AddCasterInputInfoRequest
+                 * @return AddCasterInputInfoOutcome
+                 */
+                AddCasterInputInfoOutcome AddCasterInputInfo(const Model::AddCasterInputInfoRequest &request);
+                void AddCasterInputInfoAsync(const Model::AddCasterInputInfoRequest& request, const AddCasterInputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddCasterInputInfoOutcomeCallable AddCasterInputInfoCallable(const Model::AddCasterInputInfoRequest& request);
+
+                /**
+                 *该接口用来增加导播台的布局参数。
+                 * @param req AddCasterLayoutInfoRequest
+                 * @return AddCasterLayoutInfoOutcome
+                 */
+                AddCasterLayoutInfoOutcome AddCasterLayoutInfo(const Model::AddCasterLayoutInfoRequest &request);
+                void AddCasterLayoutInfoAsync(const Model::AddCasterLayoutInfoRequest& request, const AddCasterLayoutInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddCasterLayoutInfoOutcomeCallable AddCasterLayoutInfoCallable(const Model::AddCasterLayoutInfoRequest& request);
+
+                /**
+                 *该接口用来新增导播台推流信息。导播台主监启动后，将会将主监画面推向该接口设置的地址。
+                 * @param req AddCasterOutputInfoRequest
+                 * @return AddCasterOutputInfoOutcome
+                 */
+                AddCasterOutputInfoOutcome AddCasterOutputInfo(const Model::AddCasterOutputInfoRequest &request);
+                void AddCasterOutputInfoAsync(const Model::AddCasterOutputInfoRequest& request, const AddCasterOutputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddCasterOutputInfoOutcomeCallable AddCasterOutputInfoCallable(const Model::AddCasterOutputInfoRequest& request);
+
+                /**
                  *针对大型活动直播，通过对直播流设置延时来控制现场与观众播放画面的时间间隔，避免突发状况造成影响。
 
 注意：如果在推流前设置延播，需要提前5分钟设置，目前该接口只支持流粒度。
@@ -939,6 +1031,15 @@ namespace TencentCloud
                 CreateCasterOutcome CreateCaster(const Model::CreateCasterRequest &request);
                 void CreateCasterAsync(const Model::CreateCasterRequest& request, const CreateCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCasterOutcomeCallable CreateCasterCallable(const Model::CreateCasterRequest& request);
+
+                /**
+                 *该接口用来生成导播台推流地址
+                 * @param req CreateCasterInputPushUrlRequest
+                 * @return CreateCasterInputPushUrlOutcome
+                 */
+                CreateCasterInputPushUrlOutcome CreateCasterInputPushUrl(const Model::CreateCasterInputPushUrlRequest &request);
+                void CreateCasterInputPushUrlAsync(const Model::CreateCasterInputPushUrlRequest& request, const CreateCasterInputPushUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCasterInputPushUrlOutcomeCallable CreateCasterInputPushUrlCallable(const Model::CreateCasterInputPushUrlRequest& request);
 
                 /**
                  *该接口用来创建通用混流。用法与旧接口 mix_streamv2.start_mix_stream_advanced 基本一致。
@@ -1184,6 +1285,34 @@ namespace TencentCloud
                 DeleteCasterOutcome DeleteCaster(const Model::DeleteCasterRequest &request);
                 void DeleteCasterAsync(const Model::DeleteCasterRequest& request, const DeleteCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCasterOutcomeCallable DeleteCasterCallable(const Model::DeleteCasterRequest& request);
+
+                /**
+                 *该接口用来删除导播台中的输入源信息。
+                 * @param req DeleteCasterInputInfoRequest
+                 * @return DeleteCasterInputInfoOutcome
+                 */
+                DeleteCasterInputInfoOutcome DeleteCasterInputInfo(const Model::DeleteCasterInputInfoRequest &request);
+                void DeleteCasterInputInfoAsync(const Model::DeleteCasterInputInfoRequest& request, const DeleteCasterInputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCasterInputInfoOutcomeCallable DeleteCasterInputInfoCallable(const Model::DeleteCasterInputInfoRequest& request);
+
+                /**
+                 *该接口用来将布局信息从导播台中删除
+                 * @param req DeleteCasterLayoutInfoRequest
+                 * @return DeleteCasterLayoutInfoOutcome
+                 */
+                DeleteCasterLayoutInfoOutcome DeleteCasterLayoutInfo(const Model::DeleteCasterLayoutInfoRequest &request);
+                void DeleteCasterLayoutInfoAsync(const Model::DeleteCasterLayoutInfoRequest& request, const DeleteCasterLayoutInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCasterLayoutInfoOutcomeCallable DeleteCasterLayoutInfoCallable(const Model::DeleteCasterLayoutInfoRequest& request);
+
+                /**
+                 *该接口用来删除导播台的推流信息。
+注：若删除推流到腾讯云直播源站配置，即OutputIndex为0，OutputType为1的推流配置，在重新启动主监后，系统会自动重新生成一个推流到腾讯云直播源站配置。
+                 * @param req DeleteCasterOutputInfoRequest
+                 * @return DeleteCasterOutputInfoOutcome
+                 */
+                DeleteCasterOutputInfoOutcome DeleteCasterOutputInfo(const Model::DeleteCasterOutputInfoRequest &request);
+                void DeleteCasterOutputInfoAsync(const Model::DeleteCasterOutputInfoRequest& request, const DeleteCasterOutputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCasterOutputInfoOutcomeCallable DeleteCasterOutputInfoCallable(const Model::DeleteCasterOutputInfoRequest& request);
 
                 /**
                  *删除回调规则。
@@ -1448,6 +1577,24 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeCasterDisplayInfoOutcomeCallable DescribeCasterDisplayInfoCallable(const Model::DescribeCasterDisplayInfoRequest& request);
 
                 /**
+                 *该接口用来查询导播台的输入源信息列表。
+                 * @param req DescribeCasterInputInfosRequest
+                 * @return DescribeCasterInputInfosOutcome
+                 */
+                DescribeCasterInputInfosOutcome DescribeCasterInputInfos(const Model::DescribeCasterInputInfosRequest &request);
+                void DescribeCasterInputInfosAsync(const Model::DescribeCasterInputInfosRequest& request, const DescribeCasterInputInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCasterInputInfosOutcomeCallable DescribeCasterInputInfosCallable(const Model::DescribeCasterInputInfosRequest& request);
+
+                /**
+                 *该接口用来查询某个导播台的布局列表
+                 * @param req DescribeCasterLayoutInfosRequest
+                 * @return DescribeCasterLayoutInfosOutcome
+                 */
+                DescribeCasterLayoutInfosOutcome DescribeCasterLayoutInfos(const Model::DescribeCasterLayoutInfosRequest &request);
+                void DescribeCasterLayoutInfosAsync(const Model::DescribeCasterLayoutInfosRequest& request, const DescribeCasterLayoutInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCasterLayoutInfosOutcomeCallable DescribeCasterLayoutInfosCallable(const Model::DescribeCasterLayoutInfosRequest& request);
+
+                /**
                  *该接口用来查询账号下所有的导播台列表
                  * @param req DescribeCasterListRequest
                  * @return DescribeCasterListOutcome
@@ -1455,6 +1602,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeCasterListOutcome DescribeCasterList(const Model::DescribeCasterListRequest &request);
                 void DescribeCasterListAsync(const Model::DescribeCasterListRequest& request, const DescribeCasterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCasterListOutcomeCallable DescribeCasterListCallable(const Model::DescribeCasterListRequest& request);
+
+                /**
+                 *该接口用来查询某个导播台的推流信息列表。
+                 * @param req DescribeCasterOutputInfosRequest
+                 * @return DescribeCasterOutputInfosOutcome
+                 */
+                DescribeCasterOutputInfosOutcome DescribeCasterOutputInfos(const Model::DescribeCasterOutputInfosRequest &request);
+                void DescribeCasterOutputInfosAsync(const Model::DescribeCasterOutputInfosRequest& request, const DescribeCasterOutputInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCasterOutputInfosOutcomeCallable DescribeCasterOutputInfosCallable(const Model::DescribeCasterOutputInfosRequest& request);
 
                 /**
                  *该接口用来获取导播台视频流的播放url，用来在页面上拉流展示。
@@ -2256,6 +2412,35 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 ModifyCasterOutcome ModifyCaster(const Model::ModifyCasterRequest &request);
                 void ModifyCasterAsync(const Model::ModifyCasterRequest& request, const ModifyCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCasterOutcomeCallable ModifyCasterCallable(const Model::ModifyCasterRequest& request);
+
+                /**
+                 *该接口用来修改已经设置过的输入源信息，如源地址，源类型等。
+设置前，需保证待修改的输入源已经存在。若不存在，需使用AddCasterInputInfo接口。
+                 * @param req ModifyCasterInputInfoRequest
+                 * @return ModifyCasterInputInfoOutcome
+                 */
+                ModifyCasterInputInfoOutcome ModifyCasterInputInfo(const Model::ModifyCasterInputInfoRequest &request);
+                void ModifyCasterInputInfoAsync(const Model::ModifyCasterInputInfoRequest& request, const ModifyCasterInputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCasterInputInfoOutcomeCallable ModifyCasterInputInfoCallable(const Model::ModifyCasterInputInfoRequest& request);
+
+                /**
+                 *该接口用来修改布局参数
+                 * @param req ModifyCasterLayoutInfoRequest
+                 * @return ModifyCasterLayoutInfoOutcome
+                 */
+                ModifyCasterLayoutInfoOutcome ModifyCasterLayoutInfo(const Model::ModifyCasterLayoutInfoRequest &request);
+                void ModifyCasterLayoutInfoAsync(const Model::ModifyCasterLayoutInfoRequest& request, const ModifyCasterLayoutInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCasterLayoutInfoOutcomeCallable ModifyCasterLayoutInfoCallable(const Model::ModifyCasterLayoutInfoRequest& request);
+
+                /**
+                 *该接口用来修改导播台的推流信息。
+注：只有在主监启动前设置才生效，主监启动后设置，下次推流生效。
+                 * @param req ModifyCasterOutputInfoRequest
+                 * @return ModifyCasterOutputInfoOutcome
+                 */
+                ModifyCasterOutputInfoOutcome ModifyCasterOutputInfo(const Model::ModifyCasterOutputInfoRequest &request);
+                void ModifyCasterOutputInfoAsync(const Model::ModifyCasterOutputInfoRequest& request, const ModifyCasterOutputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCasterOutputInfoOutcomeCallable ModifyCasterOutputInfoCallable(const Model::ModifyCasterOutputInfoRequest& request);
 
                 /**
                  *修改回调模板。

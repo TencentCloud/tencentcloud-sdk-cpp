@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用名称
+                     * 获取当前应用名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppName 应用名称
+                     * @return AppName 当前应用名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置应用名称
+                     * 设置当前应用名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appName 应用名称
+                     * @param _appName 当前应用名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取应用使用的字符数
+                     * 获取当前应用使用的字符数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UsedCharSize 应用使用的字符数
+                     * @return UsedCharSize 当前应用使用的字符数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUsedCharSize() const;
 
                     /**
-                     * 设置应用使用的字符数
+                     * 设置当前应用使用的字符数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _usedCharSize 应用使用的字符数
+                     * @param _usedCharSize 当前应用使用的字符数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool UsedCharSizeHasBeenSet() const;
 
                     /**
-                     * 获取应用占比
+                     * 获取当前应用对于总用量的占比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Proportion 应用占比
+                     * @return Proportion 当前应用对于总用量的占比
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetProportion() const;
 
                     /**
-                     * 设置应用占比
+                     * 设置当前应用对于总用量的占比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _proportion 应用占比
+                     * @param _proportion 当前应用对于总用量的占比
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用名称
+                     * 当前应用名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 应用使用的字符数
+                     * 当前应用使用的字符数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_usedCharSize;
                     bool m_usedCharSizeHasBeenSet;
 
                     /**
-                     * 应用占比
+                     * 当前应用对于总用量的占比
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_proportion;

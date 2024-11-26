@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool IsReferHasBeenSet() const;
 
                     /**
-                     * 获取属性标签适用范围 1：全部，2：按条件
-                     * @return AttrRange 属性标签适用范围 1：全部，2：按条件
+                     * 获取标签适用范围 1：全部，2：按条件
+                     * @return AttrRange 标签适用范围 1：全部，2：按条件
                      * 
                      */
                     uint64_t GetAttrRange() const;
 
                     /**
-                     * 设置属性标签适用范围 1：全部，2：按条件
-                     * @param _attrRange 属性标签适用范围 1：全部，2：按条件
+                     * 设置标签适用范围 1：全部，2：按条件
+                     * @param _attrRange 标签适用范围 1：全部，2：按条件
                      * 
                      */
                     void SetAttrRange(const uint64_t& _attrRange);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool LoginSubAccountUinHasBeenSet() const;
 
                     /**
-                     * 获取适用范围，关联的属性标签
-                     * @return AttrLabels 适用范围，关联的属性标签
+                     * 获取关联的标签
+                     * @return AttrLabels 关联的标签
                      * 
                      */
                     std::vector<AttrLabelRefer> GetAttrLabels() const;
 
                     /**
-                     * 设置适用范围，关联的属性标签
-                     * @param _attrLabels 适用范围，关联的属性标签
+                     * 设置关联的标签
+                     * @param _attrLabels 关联的标签
                      * 
                      */
                     void SetAttrLabels(const std::vector<AttrLabelRefer>& _attrLabels);
@@ -278,6 +278,27 @@ namespace TencentCloud
                      */
                     bool ExpireEndHasBeenSet() const;
 
+                    /**
+                     * 获取分类ID
+                     * @return CateBizId 分类ID
+                     * 
+                     */
+                    std::string GetCateBizId() const;
+
+                    /**
+                     * 设置分类ID
+                     * @param _cateBizId 分类ID
+                     * 
+                     */
+                    void SetCateBizId(const std::string& _cateBizId);
+
+                    /**
+                     * 判断参数 CateBizId 是否已赋值
+                     * @return CateBizId 是否已赋值
+                     * 
+                     */
+                    bool CateBizIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -299,7 +320,7 @@ namespace TencentCloud
                     bool m_isReferHasBeenSet;
 
                     /**
-                     * 属性标签适用范围 1：全部，2：按条件
+                     * 标签适用范围 1：全部，2：按条件
                      */
                     uint64_t m_attrRange;
                     bool m_attrRangeHasBeenSet;
@@ -317,7 +338,7 @@ namespace TencentCloud
                     bool m_loginSubAccountUinHasBeenSet;
 
                     /**
-                     * 适用范围，关联的属性标签
+                     * 关联的标签
                      */
                     std::vector<AttrLabelRefer> m_attrLabels;
                     bool m_attrLabelsHasBeenSet;
@@ -346,6 +367,12 @@ namespace TencentCloud
                      */
                     std::string m_expireEnd;
                     bool m_expireEndHasBeenSet;
+
+                    /**
+                     * 分类ID
+                     */
+                    std::string m_cateBizId;
+                    bool m_cateBizIdHasBeenSet;
 
                 };
             }

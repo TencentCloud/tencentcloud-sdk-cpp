@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总消耗
-                     * @return Total 总消耗
+                     * 获取Token消耗总量
+                     * @return Total Token消耗总量
                      * 
                      */
                     std::vector<Stat> GetTotal() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取输入消耗
-                     * @return Input 输入消耗
+                     * 获取输入Token消耗量
+                     * @return Input 输入Token消耗量
                      * 
                      */
                     std::vector<Stat> GetInput() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取输出消耗
-                     * @return Output 输出消耗
+                     * 获取输出Token消耗量
+                     * @return Output 输出Token消耗量
                      * 
                      */
                     std::vector<Stat> GetOutput() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总消耗
+                     * Token消耗总量
                      */
                     std::vector<Stat> m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 输入消耗
+                     * 输入Token消耗量
                      */
                     std::vector<Stat> m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * 输出消耗
+                     * 输出Token消耗量
                      */
                     std::vector<Stat> m_output;
                     bool m_outputHasBeenSet;

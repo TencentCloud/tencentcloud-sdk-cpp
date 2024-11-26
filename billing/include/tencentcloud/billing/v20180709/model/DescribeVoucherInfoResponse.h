@@ -74,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取代金券相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoucherInfos 代金券相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VoucherInfos> GetVoucherInfos() const;
@@ -104,7 +102,6 @@ namespace TencentCloud
 
                     /**
                      * 代金券相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VoucherInfos> m_voucherInfos;
                     bool m_voucherInfosHasBeenSet;

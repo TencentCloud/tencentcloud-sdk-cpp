@@ -46,7 +46,8 @@ DescribeDocResponse::DescribeDocResponse() :
     m_docCharSizeHasBeenSet(false),
     m_isAllowEditHasBeenSet(false),
     m_attrRangeHasBeenSet(false),
-    m_attrLabelsHasBeenSet(false)
+    m_attrLabelsHasBeenSet(false),
+    m_cateBizIdHasBeenSet(false)
 {
 }
 
@@ -324,6 +325,16 @@ CoreInternalOutcome DescribeDocResponse::Deserialize(const string &payload)
         m_attrLabelsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CateBizId") && !rsp["CateBizId"].IsNull())
+    {
+        if (!rsp["CateBizId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CateBizId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cateBizId = string(rsp["CateBizId"].GetString());
+        m_cateBizIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -523,6 +534,14 @@ string DescribeDocResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cateBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CateBizId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -765,6 +784,16 @@ vector<AttrLabel> DescribeDocResponse::GetAttrLabels() const
 bool DescribeDocResponse::AttrLabelsHasBeenSet() const
 {
     return m_attrLabelsHasBeenSet;
+}
+
+string DescribeDocResponse::GetCateBizId() const
+{
+    return m_cateBizId;
+}
+
+bool DescribeDocResponse::CateBizIdHasBeenSet() const
+{
+    return m_cateBizIdHasBeenSet;
 }
 
 

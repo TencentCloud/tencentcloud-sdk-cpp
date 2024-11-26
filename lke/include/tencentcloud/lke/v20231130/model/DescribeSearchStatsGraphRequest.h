@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间戳, 单位为秒
+                     * @return StartTime 开始时间戳, 单位为秒
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置开始时间戳, 单位为秒
+                     * @param _startTime 开始时间戳, 单位为秒
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间戳, 单位为秒
+                     * @return EndTime 结束时间戳, 单位为秒
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置结束时间戳, 单位为秒
+                     * @param _endTime 结束时间戳, 单位为秒
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -243,13 +243,13 @@ namespace TencentCloud
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 开始时间戳, 单位为秒
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间戳, 单位为秒
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

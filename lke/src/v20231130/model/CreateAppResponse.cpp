@@ -24,7 +24,8 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 CreateAppResponse::CreateAppResponse() :
-    m_appBizIdHasBeenSet(false)
+    m_appBizIdHasBeenSet(false),
+    m_isCustomListHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreateAppResponse::Deserialize(const string &payload)
         m_appBizIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsCustomList") && !rsp["IsCustomList"].IsNull())
+    {
+        if (!rsp["IsCustomList"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsCustomList` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCustomList = rsp["IsCustomList"].GetBool();
+        m_isCustomListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string CreateAppResponse::ToJsonString() const
         string key = "AppBizId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCustomListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCustomList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCustomList, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string CreateAppResponse::GetAppBizId() const
 bool CreateAppResponse::AppBizIdHasBeenSet() const
 {
     return m_appBizIdHasBeenSet;
+}
+
+bool CreateAppResponse::GetIsCustomList() const
+{
+    return m_isCustomList;
+}
+
+bool CreateAppResponse::IsCustomListHasBeenSet() const
+{
+    return m_isCustomListHasBeenSet;
 }
 
 

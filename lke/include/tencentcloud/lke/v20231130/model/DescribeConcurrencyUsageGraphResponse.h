@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取统计信息
-                     * @return X 统计信息
+                     * 获取X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”两种区间范围
+                     * @return X X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”两种区间范围
                      * 
                      */
                     std::vector<std::string> GetX() const;
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 统计信息
+                     * X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”两种区间范围
                      */
                     std::vector<std::string> m_x;
                     bool m_xHasBeenSet;

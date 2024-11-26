@@ -113,6 +113,20 @@ namespace TencentCloud
                      */
                     bool SearchUsageHasBeenSet() const;
 
+                    /**
+                     * 获取文档解析消耗页数
+                     * @return PageUsage 文档解析消耗页数
+                     * 
+                     */
+                    uint64_t GetPageUsage() const;
+
+                    /**
+                     * 判断参数 PageUsage 是否已赋值
+                     * @return PageUsage 是否已赋值
+                     * 
+                     */
+                    bool PageUsageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +158,12 @@ namespace TencentCloud
                      */
                     double m_searchUsage;
                     bool m_searchUsageHasBeenSet;
+
+                    /**
+                     * 文档解析消耗页数
+                     */
+                    uint64_t m_pageUsage;
+                    bool m_pageUsageHasBeenSet;
 
                 };
             }

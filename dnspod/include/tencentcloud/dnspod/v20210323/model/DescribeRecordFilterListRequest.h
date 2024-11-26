@@ -268,15 +268,15 @@ UPDATED_ON：解析记录更新时间
                     bool SortTypeHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认值为0。
-                     * @return Offset 偏移量，默认值为0。
+                     * 获取偏移量，默认值为0。如果入参携带"Domain","ffset","Limit" 这3个以外的参数，记录结果限制最大3000条
+                     * @return Offset 偏移量，默认值为0。如果入参携带"Domain","ffset","Limit" 这3个以外的参数，记录结果限制最大3000条
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认值为0。
-                     * @param _offset 偏移量，默认值为0。
+                     * 设置偏移量，默认值为0。如果入参携带"Domain","ffset","Limit" 这3个以外的参数，记录结果限制最大3000条
+                     * @param _offset 偏移量，默认值为0。如果入参携带"Domain","ffset","Limit" 这3个以外的参数，记录结果限制最大3000条
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -656,7 +656,7 @@ UPDATED_ON：解析记录更新时间
                     bool m_sortTypeHasBeenSet;
 
                     /**
-                     * 偏移量，默认值为0。
+                     * 偏移量，默认值为0。如果入参携带"Domain","ffset","Limit" 这3个以外的参数，记录结果限制最大3000条
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

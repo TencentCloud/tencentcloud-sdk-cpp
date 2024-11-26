@@ -33,7 +33,8 @@ ModifyDocRequest::ModifyDocRequest() :
     m_webUrlHasBeenSet(false),
     m_referUrlTypeHasBeenSet(false),
     m_expireStartHasBeenSet(false),
-    m_expireEndHasBeenSet(false)
+    m_expireEndHasBeenSet(false),
+    m_cateBizIdHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,14 @@ string ModifyDocRequest::ToJsonString() const
         string key = "ExpireEnd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_expireEnd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cateBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CateBizId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -321,6 +330,22 @@ void ModifyDocRequest::SetExpireEnd(const string& _expireEnd)
 bool ModifyDocRequest::ExpireEndHasBeenSet() const
 {
     return m_expireEndHasBeenSet;
+}
+
+string ModifyDocRequest::GetCateBizId() const
+{
+    return m_cateBizId;
+}
+
+void ModifyDocRequest::SetCateBizId(const string& _cateBizId)
+{
+    m_cateBizId = _cateBizId;
+    m_cateBizIdHasBeenSet = true;
+}
+
+bool ModifyDocRequest::CateBizIdHasBeenSet() const
+{
+    return m_cateBizIdHasBeenSet;
 }
 
 

@@ -32,7 +32,8 @@ ListQARequest::ListQARequest() :
     m_docBizIdHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_queryAnswerHasBeenSet(false),
-    m_qaBizIdsHasBeenSet(false)
+    m_qaBizIdsHasBeenSet(false),
+    m_queryTypeHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,14 @@ string ListQARequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_queryTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queryType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -304,6 +313,22 @@ void ListQARequest::SetQaBizIds(const vector<string>& _qaBizIds)
 bool ListQARequest::QaBizIdsHasBeenSet() const
 {
     return m_qaBizIdsHasBeenSet;
+}
+
+string ListQARequest::GetQueryType() const
+{
+    return m_queryType;
+}
+
+void ListQARequest::SetQueryType(const string& _queryType)
+{
+    m_queryType = _queryType;
+    m_queryTypeHasBeenSet = true;
+}
+
+bool ListQARequest::QueryTypeHasBeenSet() const
+{
+    return m_queryTypeHasBeenSet;
 }
 
 

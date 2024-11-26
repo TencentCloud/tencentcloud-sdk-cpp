@@ -27,7 +27,9 @@ ListDocRequest::ListDocRequest() :
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_queryHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_queryTypeHasBeenSet(false),
+    m_cateBizIdHasBeenSet(false)
 {
 }
 
@@ -81,6 +83,22 @@ string ListDocRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_queryTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cateBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CateBizId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -169,6 +187,38 @@ void ListDocRequest::SetStatus(const vector<int64_t>& _status)
 bool ListDocRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string ListDocRequest::GetQueryType() const
+{
+    return m_queryType;
+}
+
+void ListDocRequest::SetQueryType(const string& _queryType)
+{
+    m_queryType = _queryType;
+    m_queryTypeHasBeenSet = true;
+}
+
+bool ListDocRequest::QueryTypeHasBeenSet() const
+{
+    return m_queryTypeHasBeenSet;
+}
+
+string ListDocRequest::GetCateBizId() const
+{
+    return m_cateBizId;
+}
+
+void ListDocRequest::SetCateBizId(const string& _cateBizId)
+{
+    m_cateBizId = _cateBizId;
+    m_cateBizIdHasBeenSet = true;
+}
+
+bool ListDocRequest::CateBizIdHasBeenSet() const
+{
+    return m_cateBizIdHasBeenSet;
 }
 
 

@@ -28,7 +28,8 @@ DescribeTokenUsageResponse::DescribeTokenUsageResponse() :
     m_inputTokenUsageHasBeenSet(false),
     m_outputTokenUsageHasBeenSet(false),
     m_apiCallStatsHasBeenSet(false),
-    m_searchUsageHasBeenSet(false)
+    m_searchUsageHasBeenSet(false),
+    m_pageUsageHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome DescribeTokenUsageResponse::Deserialize(const string &payloa
         m_searchUsageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PageUsage") && !rsp["PageUsage"].IsNull())
+    {
+        if (!rsp["PageUsage"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PageUsage` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageUsage = rsp["PageUsage"].GetUint64();
+        m_pageUsageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +175,14 @@ string DescribeTokenUsageResponse::ToJsonString() const
         string key = "SearchUsage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_searchUsage, allocator);
+    }
+
+    if (m_pageUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pageUsage, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -226,6 +245,16 @@ double DescribeTokenUsageResponse::GetSearchUsage() const
 bool DescribeTokenUsageResponse::SearchUsageHasBeenSet() const
 {
     return m_searchUsageHasBeenSet;
+}
+
+uint64_t DescribeTokenUsageResponse::GetPageUsage() const
+{
+    return m_pageUsage;
+}
+
+bool DescribeTokenUsageResponse::PageUsageHasBeenSet() const
+{
+    return m_pageUsageHasBeenSet;
 }
 
 

@@ -96,6 +96,31 @@ namespace TencentCloud
                      */
                     bool QuestionHasBeenSet() const;
 
+                    /**
+                     * 获取相似问审核状态，1审核失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AuditStatus 相似问审核状态，1审核失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetAuditStatus() const;
+
+                    /**
+                     * 设置相似问审核状态，1审核失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _auditStatus 相似问审核状态，1审核失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAuditStatus(const uint64_t& _auditStatus);
+
+                    /**
+                     * 判断参数 AuditStatus 是否已赋值
+                     * @return AuditStatus 是否已赋值
+                     * 
+                     */
+                    bool AuditStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +136,13 @@ namespace TencentCloud
                      */
                     std::string m_question;
                     bool m_questionHasBeenSet;
+
+                    /**
+                     * 相似问审核状态，1审核失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_auditStatus;
+                    bool m_auditStatusHasBeenSet;
 
                 };
             }

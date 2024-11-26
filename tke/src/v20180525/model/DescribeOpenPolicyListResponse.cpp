@@ -24,7 +24,8 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 DescribeOpenPolicyListResponse::DescribeOpenPolicyListResponse() :
-    m_openPolicyInfoListHasBeenSet(false)
+    m_openPolicyInfoListHasBeenSet(false),
+    m_gatekeeperStatusHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome DescribeOpenPolicyListResponse::Deserialize(const string &pa
         m_openPolicyInfoListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("GatekeeperStatus") && !rsp["GatekeeperStatus"].IsNull())
+    {
+        if (!rsp["GatekeeperStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatekeeperStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gatekeeperStatus = rsp["GatekeeperStatus"].GetInt64();
+        m_gatekeeperStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeOpenPolicyListResponse::ToJsonString() const
         }
     }
 
+    if (m_gatekeeperStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatekeeperStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gatekeeperStatus, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<OpenPolicyInfo> DescribeOpenPolicyListResponse::GetOpenPolicyInfoList() c
 bool DescribeOpenPolicyListResponse::OpenPolicyInfoListHasBeenSet() const
 {
     return m_openPolicyInfoListHasBeenSet;
+}
+
+int64_t DescribeOpenPolicyListResponse::GetGatekeeperStatus() const
+{
+    return m_gatekeeperStatus;
+}
+
+bool DescribeOpenPolicyListResponse::GatekeeperStatusHasBeenSet() const
+{
+    return m_gatekeeperStatusHasBeenSet;
 }
 
 

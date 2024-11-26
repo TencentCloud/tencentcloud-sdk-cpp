@@ -25,8 +25,8 @@ using namespace std;
 ModifyAttributeLabelRequest::ModifyAttributeLabelRequest() :
     m_botBizIdHasBeenSet(false),
     m_attributeBizIdHasBeenSet(false),
-    m_attrKeyHasBeenSet(false),
     m_attrNameHasBeenSet(false),
+    m_attrKeyHasBeenSet(false),
     m_loginUinHasBeenSet(false),
     m_loginSubAccountUinHasBeenSet(false),
     m_deleteLabelBizIdsHasBeenSet(false),
@@ -57,20 +57,20 @@ string ModifyAttributeLabelRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_attributeBizId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_attrKeyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AttrKey";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_attrKey.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_attrNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AttrName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_attrName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attrKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttrKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_attrKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_loginUinHasBeenSet)
@@ -157,22 +157,6 @@ bool ModifyAttributeLabelRequest::AttributeBizIdHasBeenSet() const
     return m_attributeBizIdHasBeenSet;
 }
 
-string ModifyAttributeLabelRequest::GetAttrKey() const
-{
-    return m_attrKey;
-}
-
-void ModifyAttributeLabelRequest::SetAttrKey(const string& _attrKey)
-{
-    m_attrKey = _attrKey;
-    m_attrKeyHasBeenSet = true;
-}
-
-bool ModifyAttributeLabelRequest::AttrKeyHasBeenSet() const
-{
-    return m_attrKeyHasBeenSet;
-}
-
 string ModifyAttributeLabelRequest::GetAttrName() const
 {
     return m_attrName;
@@ -187,6 +171,22 @@ void ModifyAttributeLabelRequest::SetAttrName(const string& _attrName)
 bool ModifyAttributeLabelRequest::AttrNameHasBeenSet() const
 {
     return m_attrNameHasBeenSet;
+}
+
+string ModifyAttributeLabelRequest::GetAttrKey() const
+{
+    return m_attrKey;
+}
+
+void ModifyAttributeLabelRequest::SetAttrKey(const string& _attrKey)
+{
+    m_attrKey = _attrKey;
+    m_attrKeyHasBeenSet = true;
+}
+
+bool ModifyAttributeLabelRequest::AttrKeyHasBeenSet() const
+{
+    return m_attrKeyHasBeenSet;
 }
 
 string ModifyAttributeLabelRequest::GetLoginUin() const

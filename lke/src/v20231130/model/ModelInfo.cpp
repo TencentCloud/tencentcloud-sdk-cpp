@@ -25,7 +25,10 @@ ModelInfo::ModelInfo() :
     m_modelDescHasBeenSet(false),
     m_aliasNameHasBeenSet(false),
     m_resourceStatusHasBeenSet(false),
-    m_promptWordsLimitHasBeenSet(false)
+    m_promptWordsLimitHasBeenSet(false),
+    m_topPHasBeenSet(false),
+    m_temperatureHasBeenSet(false),
+    m_maxTokensHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,57 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         m_promptWordsLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("TopP") && !value["TopP"].IsNull())
+    {
+        if (!value["TopP"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.TopP` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_topP.Deserialize(value["TopP"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_topPHasBeenSet = true;
+    }
+
+    if (value.HasMember("Temperature") && !value["Temperature"].IsNull())
+    {
+        if (!value["Temperature"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.Temperature` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_temperature.Deserialize(value["Temperature"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_temperatureHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxTokens") && !value["MaxTokens"].IsNull())
+    {
+        if (!value["MaxTokens"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.MaxTokens` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_maxTokens.Deserialize(value["MaxTokens"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_maxTokensHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +183,33 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "PromptWordsLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_promptWordsLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_topP.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_temperatureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Temperature";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_temperature.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_maxTokensHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxTokens";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_maxTokens.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -212,5 +293,53 @@ void ModelInfo::SetPromptWordsLimit(const string& _promptWordsLimit)
 bool ModelInfo::PromptWordsLimitHasBeenSet() const
 {
     return m_promptWordsLimitHasBeenSet;
+}
+
+ModelParameter ModelInfo::GetTopP() const
+{
+    return m_topP;
+}
+
+void ModelInfo::SetTopP(const ModelParameter& _topP)
+{
+    m_topP = _topP;
+    m_topPHasBeenSet = true;
+}
+
+bool ModelInfo::TopPHasBeenSet() const
+{
+    return m_topPHasBeenSet;
+}
+
+ModelParameter ModelInfo::GetTemperature() const
+{
+    return m_temperature;
+}
+
+void ModelInfo::SetTemperature(const ModelParameter& _temperature)
+{
+    m_temperature = _temperature;
+    m_temperatureHasBeenSet = true;
+}
+
+bool ModelInfo::TemperatureHasBeenSet() const
+{
+    return m_temperatureHasBeenSet;
+}
+
+ModelParameter ModelInfo::GetMaxTokens() const
+{
+    return m_maxTokens;
+}
+
+void ModelInfo::SetMaxTokens(const ModelParameter& _maxTokens)
+{
+    m_maxTokens = _maxTokens;
+    m_maxTokensHasBeenSet = true;
+}
+
+bool ModelInfo::MaxTokensHasBeenSet() const
+{
+    return m_maxTokensHasBeenSet;
 }
 

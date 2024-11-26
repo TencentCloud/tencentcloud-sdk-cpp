@@ -147,6 +147,48 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取查询类型 filename 文档、 attribute 标签
+                     * @return QueryType 查询类型 filename 文档、 attribute 标签
+                     * 
+                     */
+                    std::string GetQueryType() const;
+
+                    /**
+                     * 设置查询类型 filename 文档、 attribute 标签
+                     * @param _queryType 查询类型 filename 文档、 attribute 标签
+                     * 
+                     */
+                    void SetQueryType(const std::string& _queryType);
+
+                    /**
+                     * 判断参数 QueryType 是否已赋值
+                     * @return QueryType 是否已赋值
+                     * 
+                     */
+                    bool QueryTypeHasBeenSet() const;
+
+                    /**
+                     * 获取分类ID
+                     * @return CateBizId 分类ID
+                     * 
+                     */
+                    std::string GetCateBizId() const;
+
+                    /**
+                     * 设置分类ID
+                     * @param _cateBizId 分类ID
+                     * 
+                     */
+                    void SetCateBizId(const std::string& _cateBizId);
+
+                    /**
+                     * 判断参数 CateBizId 是否已赋值
+                     * @return CateBizId 是否已赋值
+                     * 
+                     */
+                    bool CateBizIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +220,18 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 查询类型 filename 文档、 attribute 标签
+                     */
+                    std::string m_queryType;
+                    bool m_queryTypeHasBeenSet;
+
+                    /**
+                     * 分类ID
+                     */
+                    std::string m_cateBizId;
+                    bool m_cateBizIdHasBeenSet;
 
                 };
             }

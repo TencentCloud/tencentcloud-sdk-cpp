@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取属性ID
-                     * @return AttributeBizIds 属性ID
+                     * 获取标签ID
+                     * @return AttributeBizIds 标签ID
                      * 
                      */
                     std::vector<std::string> GetAttributeBizIds() const;
 
                     /**
-                     * 设置属性ID
-                     * @param _attributeBizIds 属性ID
+                     * 设置标签ID
+                     * @param _attributeBizIds 标签ID
                      * 
                      */
                     void SetAttributeBizIds(const std::vector<std::string>& _attributeBizIds);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 属性ID
+                     * 标签ID
                      */
                     std::vector<std::string> m_attributeBizIds;
                     bool m_attributeBizIdsHasBeenSet;

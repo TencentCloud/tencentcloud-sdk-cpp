@@ -47,31 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取小程序ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelId 小程序ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetModelId() const;
-
-                    /**
-                     * 设置小程序ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelId 小程序ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetModelId(const std::string& _modelId);
-
-                    /**
-                     * 判断参数 ModelId 是否已赋值
-                     * @return ModelId 是否已赋值
-                     * 
-                     */
-                    bool ModelIdHasBeenSet() const;
-
-                    /**
                      * 获取Sn信息，SN格式：产品ID_设备名
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sn Sn信息，SN格式：产品ID_设备名
@@ -95,6 +70,31 @@ namespace TencentCloud
                      * 
                      */
                     bool SnHasBeenSet() const;
+
+                    /**
+                     * 获取小程序ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModelId 小程序ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetModelId() const;
+
+                    /**
+                     * 设置小程序ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _modelId 小程序ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetModelId(const std::string& _modelId);
+
+                    /**
+                     * 判断参数 ModelId 是否已赋值
+                     * @return ModelId 是否已赋值
+                     * 
+                     */
+                    bool ModelIdHasBeenSet() const;
 
                     /**
                      * 获取激活数
@@ -124,18 +124,18 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 小程序ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_modelId;
-                    bool m_modelIdHasBeenSet;
-
-                    /**
                      * Sn信息，SN格式：产品ID_设备名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sn;
                     bool m_snHasBeenSet;
+
+                    /**
+                     * 小程序ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_modelId;
+                    bool m_modelIdHasBeenSet;
 
                     /**
                      * 激活数

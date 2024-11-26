@@ -239,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicableProducts 适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ApplicableProducts GetApplicableProducts() const;
 
                     /**
                      * 设置适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicableProducts 适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicableProducts(const ApplicableProducts& _applicableProducts);
@@ -264,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExcludedProducts 不适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ExcludedProducts> GetExcludedProducts() const;
 
                     /**
                      * 设置不适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _excludedProducts 不适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExcludedProducts(const std::vector<ExcludedProducts>& _excludedProducts);
@@ -345,14 +337,12 @@ namespace TencentCloud
 
                     /**
                      * 适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ApplicableProducts m_applicableProducts;
                     bool m_applicableProductsHasBeenSet;
 
                     /**
                      * 不适用商品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ExcludedProducts> m_excludedProducts;
                     bool m_excludedProductsHasBeenSet;

@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取统计信息
+                     * 获取接口调用次数统计信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return List 统计信息
+                     * @return List 接口调用次数统计信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 统计信息
+                     * 接口调用次数统计信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Stat> m_list;

@@ -64,11 +64,11 @@ CoreInternalOutcome OpenClusterReadOnlyInstanceGroupAccessResponse::Deserialize(
 
     if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
     {
-        if (!rsp["FlowId"].IsString())
+        if (!rsp["FlowId"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `FlowId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_flowId = string(rsp["FlowId"].GetString());
+        m_flowId = rsp["FlowId"].GetInt64();
         m_flowIdHasBeenSet = true;
     }
 
@@ -87,7 +87,7 @@ string OpenClusterReadOnlyInstanceGroupAccessResponse::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_flowId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,7 +102,7 @@ string OpenClusterReadOnlyInstanceGroupAccessResponse::ToJsonString() const
 }
 
 
-string OpenClusterReadOnlyInstanceGroupAccessResponse::GetFlowId() const
+int64_t OpenClusterReadOnlyInstanceGroupAccessResponse::GetFlowId() const
 {
     return m_flowId;
 }

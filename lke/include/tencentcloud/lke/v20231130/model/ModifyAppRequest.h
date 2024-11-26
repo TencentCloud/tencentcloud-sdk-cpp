@@ -108,27 +108,6 @@ namespace TencentCloud
                     bool BaseConfigHasBeenSet() const;
 
                     /**
-                     * 获取登录用户子账号(集成商模式必填)	
-                     * @return LoginSubAccountUin 登录用户子账号(集成商模式必填)	
-                     * 
-                     */
-                    std::string GetLoginSubAccountUin() const;
-
-                    /**
-                     * 设置登录用户子账号(集成商模式必填)	
-                     * @param _loginSubAccountUin 登录用户子账号(集成商模式必填)	
-                     * 
-                     */
-                    void SetLoginSubAccountUin(const std::string& _loginSubAccountUin);
-
-                    /**
-                     * 判断参数 LoginSubAccountUin 是否已赋值
-                     * @return LoginSubAccountUin 是否已赋值
-                     * 
-                     */
-                    bool LoginSubAccountUinHasBeenSet() const;
-
-                    /**
                      * 获取应用配置
                      * @return AppConfig 应用配置
                      * 
@@ -148,6 +127,27 @@ namespace TencentCloud
                      * 
                      */
                     bool AppConfigHasBeenSet() const;
+
+                    /**
+                     * 获取登录用户子账号(集成商模式必填)	
+                     * @return LoginSubAccountUin 登录用户子账号(集成商模式必填)	
+                     * 
+                     */
+                    std::string GetLoginSubAccountUin() const;
+
+                    /**
+                     * 设置登录用户子账号(集成商模式必填)	
+                     * @param _loginSubAccountUin 登录用户子账号(集成商模式必填)	
+                     * 
+                     */
+                    void SetLoginSubAccountUin(const std::string& _loginSubAccountUin);
+
+                    /**
+                     * 判断参数 LoginSubAccountUin 是否已赋值
+                     * @return LoginSubAccountUin 是否已赋值
+                     * 
+                     */
+                    bool LoginSubAccountUinHasBeenSet() const;
 
                 private:
 
@@ -170,16 +170,16 @@ namespace TencentCloud
                     bool m_baseConfigHasBeenSet;
 
                     /**
-                     * 登录用户子账号(集成商模式必填)	
-                     */
-                    std::string m_loginSubAccountUin;
-                    bool m_loginSubAccountUinHasBeenSet;
-
-                    /**
                      * 应用配置
                      */
                     AppConfig m_appConfig;
                     bool m_appConfigHasBeenSet;
+
+                    /**
+                     * 登录用户子账号(集成商模式必填)	
+                     */
+                    std::string m_loginSubAccountUin;
+                    bool m_loginSubAccountUinHasBeenSet;
 
                 };
             }

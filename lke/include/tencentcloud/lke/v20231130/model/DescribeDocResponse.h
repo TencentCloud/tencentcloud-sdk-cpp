@@ -339,8 +339,8 @@ namespace TencentCloud
                     bool IsAllowEditHasBeenSet() const;
 
                     /**
-                     * 获取属性标签适用范围 1：全部，2：按条件范围
-                     * @return AttrRange 属性标签适用范围 1：全部，2：按条件范围
+                     * 获取标签适用范围 1：全部，2：按条件范围
+                     * @return AttrRange 标签适用范围 1：全部，2：按条件范围
                      * 
                      */
                     int64_t GetAttrRange() const;
@@ -353,8 +353,8 @@ namespace TencentCloud
                     bool AttrRangeHasBeenSet() const;
 
                     /**
-                     * 获取属性标签
-                     * @return AttrLabels 属性标签
+                     * 获取标签
+                     * @return AttrLabels 标签
                      * 
                      */
                     std::vector<AttrLabel> GetAttrLabels() const;
@@ -365,6 +365,20 @@ namespace TencentCloud
                      * 
                      */
                     bool AttrLabelsHasBeenSet() const;
+
+                    /**
+                     * 获取分类ID
+                     * @return CateBizId 分类ID
+                     * 
+                     */
+                    std::string GetCateBizId() const;
+
+                    /**
+                     * 判断参数 CateBizId 是否已赋值
+                     * @return CateBizId 是否已赋值
+                     * 
+                     */
+                    bool CateBizIdHasBeenSet() const;
 
                 private:
 
@@ -495,16 +509,22 @@ namespace TencentCloud
                     bool m_isAllowEditHasBeenSet;
 
                     /**
-                     * 属性标签适用范围 1：全部，2：按条件范围
+                     * 标签适用范围 1：全部，2：按条件范围
                      */
                     int64_t m_attrRange;
                     bool m_attrRangeHasBeenSet;
 
                     /**
-                     * 属性标签
+                     * 标签
                      */
                     std::vector<AttrLabel> m_attrLabels;
                     bool m_attrLabelsHasBeenSet;
+
+                    /**
+                     * 分类ID
+                     */
+                    std::string m_cateBizId;
+                    bool m_cateBizIdHasBeenSet;
 
                 };
             }

@@ -27,6 +27,7 @@
 #include <tencentcloud/lke/v20231130/model/HistorySummary.h>
 #include <tencentcloud/lke/v20231130/model/KnowledgeSummary.h>
 #include <tencentcloud/lke/v20231130/model/TaskFlowSummary.h>
+#include <tencentcloud/lke/v20231130/model/WorkFlowSummary.h>
 
 
 namespace TencentCloud
@@ -174,6 +175,31 @@ namespace TencentCloud
                      */
                     bool TaskFlowHasBeenSet() const;
 
+                    /**
+                     * 获取工作流调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkFlow 工作流调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    WorkFlowSummary GetWorkFlow() const;
+
+                    /**
+                     * 设置工作流调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workFlow 工作流调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkFlow(const WorkFlowSummary& _workFlow);
+
+                    /**
+                     * 判断参数 WorkFlow 是否已赋值
+                     * @return WorkFlow 是否已赋值
+                     * 
+                     */
+                    bool WorkFlowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,6 +236,13 @@ namespace TencentCloud
                      */
                     TaskFlowSummary m_taskFlow;
                     bool m_taskFlowHasBeenSet;
+
+                    /**
+                     * 工作流调试信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WorkFlowSummary m_workFlow;
+                    bool m_workFlowHasBeenSet;
 
                 };
             }

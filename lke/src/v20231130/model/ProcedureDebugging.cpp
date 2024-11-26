@@ -25,7 +25,8 @@ ProcedureDebugging::ProcedureDebugging() :
     m_systemHasBeenSet(false),
     m_historiesHasBeenSet(false),
     m_knowledgeHasBeenSet(false),
-    m_taskFlowHasBeenSet(false)
+    m_taskFlowHasBeenSet(false),
+    m_workFlowHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,23 @@ CoreInternalOutcome ProcedureDebugging::Deserialize(const rapidjson::Value &valu
         m_taskFlowHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkFlow") && !value["WorkFlow"].IsNull())
+    {
+        if (!value["WorkFlow"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcedureDebugging.WorkFlow` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_workFlow.Deserialize(value["WorkFlow"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_workFlowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -171,6 +189,15 @@ void ProcedureDebugging::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskFlow.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_workFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkFlow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_workFlow.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -254,5 +281,21 @@ void ProcedureDebugging::SetTaskFlow(const TaskFlowSummary& _taskFlow)
 bool ProcedureDebugging::TaskFlowHasBeenSet() const
 {
     return m_taskFlowHasBeenSet;
+}
+
+WorkFlowSummary ProcedureDebugging::GetWorkFlow() const
+{
+    return m_workFlow;
+}
+
+void ProcedureDebugging::SetWorkFlow(const WorkFlowSummary& _workFlow)
+{
+    m_workFlow = _workFlow;
+    m_workFlowHasBeenSet = true;
+}
+
+bool ProcedureDebugging::WorkFlowHasBeenSet() const
+{
+    return m_workFlowHasBeenSet;
 }
 

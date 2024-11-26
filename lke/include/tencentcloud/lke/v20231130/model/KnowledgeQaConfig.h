@@ -27,6 +27,8 @@
 #include <tencentcloud/lke/v20231130/model/AppModel.h>
 #include <tencentcloud/lke/v20231130/model/KnowledgeQaSearch.h>
 #include <tencentcloud/lke/v20231130/model/KnowledgeQaOutput.h>
+#include <tencentcloud/lke/v20231130/model/KnowledgeWorkflow.h>
+#include <tencentcloud/lke/v20231130/model/SearchRange.h>
 
 
 namespace TencentCloud
@@ -174,6 +176,56 @@ namespace TencentCloud
                      */
                     bool OutputHasBeenSet() const;
 
+                    /**
+                     * 获取工作流程配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Workflow 工作流程配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    KnowledgeWorkflow GetWorkflow() const;
+
+                    /**
+                     * 设置工作流程配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workflow 工作流程配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkflow(const KnowledgeWorkflow& _workflow);
+
+                    /**
+                     * 判断参数 Workflow 是否已赋值
+                     * @return Workflow 是否已赋值
+                     * 
+                     */
+                    bool WorkflowHasBeenSet() const;
+
+                    /**
+                     * 获取检索范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SearchRange 检索范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SearchRange GetSearchRange() const;
+
+                    /**
+                     * 设置检索范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _searchRange 检索范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSearchRange(const SearchRange& _searchRange);
+
+                    /**
+                     * 判断参数 SearchRange 是否已赋值
+                     * @return SearchRange 是否已赋值
+                     * 
+                     */
+                    bool SearchRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,6 +262,20 @@ namespace TencentCloud
                      */
                     KnowledgeQaOutput m_output;
                     bool m_outputHasBeenSet;
+
+                    /**
+                     * 工作流程配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KnowledgeWorkflow m_workflow;
+                    bool m_workflowHasBeenSet;
+
+                    /**
+                     * 检索范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SearchRange m_searchRange;
+                    bool m_searchRangeHasBeenSet;
 
                 };
             }

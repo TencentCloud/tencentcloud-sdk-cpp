@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取属性ID
-                     * @return AttributeBizId 属性ID
+                     * 获取标签ID
+                     * @return AttributeBizId 标签ID
                      * 
                      */
                     std::string GetAttributeBizId() const;
 
                     /**
-                     * 设置属性ID
-                     * @param _attributeBizId 属性ID
+                     * 设置标签ID
+                     * @param _attributeBizId 标签ID
                      * 
                      */
                     void SetAttributeBizId(const std::string& _attributeBizId);
@@ -86,36 +86,15 @@ namespace TencentCloud
                     bool AttributeBizIdHasBeenSet() const;
 
                     /**
-                     * 获取属性标识
-                     * @return AttrKey 属性标识
-                     * 
-                     */
-                    std::string GetAttrKey() const;
-
-                    /**
-                     * 设置属性标识
-                     * @param _attrKey 属性标识
-                     * 
-                     */
-                    void SetAttrKey(const std::string& _attrKey);
-
-                    /**
-                     * 判断参数 AttrKey 是否已赋值
-                     * @return AttrKey 是否已赋值
-                     * 
-                     */
-                    bool AttrKeyHasBeenSet() const;
-
-                    /**
-                     * 获取属性名称
-                     * @return AttrName 属性名称
+                     * 获取标签名称
+                     * @return AttrName 标签名称
                      * 
                      */
                     std::string GetAttrName() const;
 
                     /**
-                     * 设置属性名称
-                     * @param _attrName 属性名称
+                     * 设置标签名称
+                     * @param _attrName 标签名称
                      * 
                      */
                     void SetAttrName(const std::string& _attrName);
@@ -126,6 +105,27 @@ namespace TencentCloud
                      * 
                      */
                     bool AttrNameHasBeenSet() const;
+
+                    /**
+                     * 获取标签标识 （已作废）
+                     * @return AttrKey 标签标识 （已作废）
+                     * 
+                     */
+                    std::string GetAttrKey() const;
+
+                    /**
+                     * 设置标签标识 （已作废）
+                     * @param _attrKey 标签标识 （已作废）
+                     * 
+                     */
+                    void SetAttrKey(const std::string& _attrKey);
+
+                    /**
+                     * 判断参数 AttrKey 是否已赋值
+                     * @return AttrKey 是否已赋值
+                     * 
+                     */
+                    bool AttrKeyHasBeenSet() const;
 
                     /**
                      * 获取登录用户主账号(集成商模式必填)
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool LoginSubAccountUinHasBeenSet() const;
 
                     /**
-                     * 获取删除的属性标签
-                     * @return DeleteLabelBizIds 删除的属性标签
+                     * 获取删除的标签值
+                     * @return DeleteLabelBizIds 删除的标签值
                      * 
                      */
                     std::vector<std::string> GetDeleteLabelBizIds() const;
 
                     /**
-                     * 设置删除的属性标签
-                     * @param _deleteLabelBizIds 删除的属性标签
+                     * 设置删除的标签值
+                     * @param _deleteLabelBizIds 删除的标签值
                      * 
                      */
                     void SetDeleteLabelBizIds(const std::vector<std::string>& _deleteLabelBizIds);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool DeleteLabelBizIdsHasBeenSet() const;
 
                     /**
-                     * 获取新增或编辑的属性标签
-                     * @return Labels 新增或编辑的属性标签
+                     * 获取新增或编辑的标签
+                     * @return Labels 新增或编辑的标签
                      * 
                      */
                     std::vector<AttributeLabel> GetLabels() const;
 
                     /**
-                     * 设置新增或编辑的属性标签
-                     * @param _labels 新增或编辑的属性标签
+                     * 设置新增或编辑的标签
+                     * @param _labels 新增或编辑的标签
                      * 
                      */
                     void SetLabels(const std::vector<AttributeLabel>& _labels);
@@ -220,22 +220,22 @@ namespace TencentCloud
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 属性ID
+                     * 标签ID
                      */
                     std::string m_attributeBizId;
                     bool m_attributeBizIdHasBeenSet;
 
                     /**
-                     * 属性标识
-                     */
-                    std::string m_attrKey;
-                    bool m_attrKeyHasBeenSet;
-
-                    /**
-                     * 属性名称
+                     * 标签名称
                      */
                     std::string m_attrName;
                     bool m_attrNameHasBeenSet;
+
+                    /**
+                     * 标签标识 （已作废）
+                     */
+                    std::string m_attrKey;
+                    bool m_attrKeyHasBeenSet;
 
                     /**
                      * 登录用户主账号(集成商模式必填)
@@ -250,13 +250,13 @@ namespace TencentCloud
                     bool m_loginSubAccountUinHasBeenSet;
 
                     /**
-                     * 删除的属性标签
+                     * 删除的标签值
                      */
                     std::vector<std::string> m_deleteLabelBizIds;
                     bool m_deleteLabelBizIdsHasBeenSet;
 
                     /**
-                     * 新增或编辑的属性标签
+                     * 新增或编辑的标签
                      */
                     std::vector<AttributeLabel> m_labels;
                     bool m_labelsHasBeenSet;

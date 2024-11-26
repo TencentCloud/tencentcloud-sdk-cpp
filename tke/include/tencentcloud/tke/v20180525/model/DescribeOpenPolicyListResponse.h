@@ -60,6 +60,20 @@ namespace TencentCloud
                      */
                     bool OpenPolicyInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取集群内是否安装了gatekeeper addon
+                     * @return GatekeeperStatus 集群内是否安装了gatekeeper addon
+                     * 
+                     */
+                    int64_t GetGatekeeperStatus() const;
+
+                    /**
+                     * 判断参数 GatekeeperStatus 是否已赋值
+                     * @return GatekeeperStatus 是否已赋值
+                     * 
+                     */
+                    bool GatekeeperStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -68,6 +82,12 @@ namespace TencentCloud
                      */
                     std::vector<OpenPolicyInfo> m_openPolicyInfoList;
                     bool m_openPolicyInfoListHasBeenSet;
+
+                    /**
+                     * 集群内是否安装了gatekeeper addon
+                     */
+                    int64_t m_gatekeeperStatus;
+                    bool m_gatekeeperStatusHasBeenSet;
 
                 };
             }

@@ -26,8 +26,8 @@ ModifyAppRequest::ModifyAppRequest() :
     m_appBizIdHasBeenSet(false),
     m_appTypeHasBeenSet(false),
     m_baseConfigHasBeenSet(false),
-    m_loginSubAccountUinHasBeenSet(false),
-    m_appConfigHasBeenSet(false)
+    m_appConfigHasBeenSet(false),
+    m_loginSubAccountUinHasBeenSet(false)
 {
 }
 
@@ -63,14 +63,6 @@ string ModifyAppRequest::ToJsonString() const
         m_baseConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_loginSubAccountUinHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LoginSubAccountUin";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_loginSubAccountUin.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_appConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -78,6 +70,14 @@ string ModifyAppRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_appConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_loginSubAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginSubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loginSubAccountUin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -136,22 +136,6 @@ bool ModifyAppRequest::BaseConfigHasBeenSet() const
     return m_baseConfigHasBeenSet;
 }
 
-string ModifyAppRequest::GetLoginSubAccountUin() const
-{
-    return m_loginSubAccountUin;
-}
-
-void ModifyAppRequest::SetLoginSubAccountUin(const string& _loginSubAccountUin)
-{
-    m_loginSubAccountUin = _loginSubAccountUin;
-    m_loginSubAccountUinHasBeenSet = true;
-}
-
-bool ModifyAppRequest::LoginSubAccountUinHasBeenSet() const
-{
-    return m_loginSubAccountUinHasBeenSet;
-}
-
 AppConfig ModifyAppRequest::GetAppConfig() const
 {
     return m_appConfig;
@@ -166,6 +150,22 @@ void ModifyAppRequest::SetAppConfig(const AppConfig& _appConfig)
 bool ModifyAppRequest::AppConfigHasBeenSet() const
 {
     return m_appConfigHasBeenSet;
+}
+
+string ModifyAppRequest::GetLoginSubAccountUin() const
+{
+    return m_loginSubAccountUin;
+}
+
+void ModifyAppRequest::SetLoginSubAccountUin(const string& _loginSubAccountUin)
+{
+    m_loginSubAccountUin = _loginSubAccountUin;
+    m_loginSubAccountUinHasBeenSet = true;
+}
+
+bool ModifyAppRequest::LoginSubAccountUinHasBeenSet() const
+{
+    return m_loginSubAccountUinHasBeenSet;
 }
 
 

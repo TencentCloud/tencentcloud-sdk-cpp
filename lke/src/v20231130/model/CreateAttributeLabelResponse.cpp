@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
-CreateAttributeLabelResponse::CreateAttributeLabelResponse()
+CreateAttributeLabelResponse::CreateAttributeLabelResponse() :
+    m_attrBizIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateAttributeLabelResponse::Deserialize(const string &payl
     }
 
 
+    if (rsp.HasMember("AttrBizId") && !rsp["AttrBizId"].IsNull())
+    {
+        if (!rsp["AttrBizId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AttrBizId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_attrBizId = string(rsp["AttrBizId"].GetString());
+        m_attrBizIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateAttributeLabelResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_attrBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttrBizId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_attrBizId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateAttributeLabelResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateAttributeLabelResponse::GetAttrBizId() const
+{
+    return m_attrBizId;
+}
+
+bool CreateAttributeLabelResponse::AttrBizIdHasBeenSet() const
+{
+    return m_attrBizIdHasBeenSet;
+}
 
 

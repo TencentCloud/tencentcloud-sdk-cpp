@@ -25,7 +25,9 @@ KnowledgeQaConfig::KnowledgeQaConfig() :
     m_roleDescriptionHasBeenSet(false),
     m_modelHasBeenSet(false),
     m_searchHasBeenSet(false),
-    m_outputHasBeenSet(false)
+    m_outputHasBeenSet(false),
+    m_workflowHasBeenSet(false),
+    m_searchRangeHasBeenSet(false)
 {
 }
 
@@ -108,6 +110,40 @@ CoreInternalOutcome KnowledgeQaConfig::Deserialize(const rapidjson::Value &value
         m_outputHasBeenSet = true;
     }
 
+    if (value.HasMember("Workflow") && !value["Workflow"].IsNull())
+    {
+        if (!value["Workflow"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.Workflow` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_workflow.Deserialize(value["Workflow"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_workflowHasBeenSet = true;
+    }
+
+    if (value.HasMember("SearchRange") && !value["SearchRange"].IsNull())
+    {
+        if (!value["SearchRange"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.SearchRange` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_searchRange.Deserialize(value["SearchRange"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_searchRangeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +198,24 @@ void KnowledgeQaConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_output.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_workflowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Workflow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_workflow.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_searchRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_searchRange.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -245,5 +299,37 @@ void KnowledgeQaConfig::SetOutput(const KnowledgeQaOutput& _output)
 bool KnowledgeQaConfig::OutputHasBeenSet() const
 {
     return m_outputHasBeenSet;
+}
+
+KnowledgeWorkflow KnowledgeQaConfig::GetWorkflow() const
+{
+    return m_workflow;
+}
+
+void KnowledgeQaConfig::SetWorkflow(const KnowledgeWorkflow& _workflow)
+{
+    m_workflow = _workflow;
+    m_workflowHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::WorkflowHasBeenSet() const
+{
+    return m_workflowHasBeenSet;
+}
+
+SearchRange KnowledgeQaConfig::GetSearchRange() const
+{
+    return m_searchRange;
+}
+
+void KnowledgeQaConfig::SetSearchRange(const SearchRange& _searchRange)
+{
+    m_searchRange = _searchRange;
+    m_searchRangeHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::SearchRangeHasBeenSet() const
+{
+    return m_searchRangeHasBeenSet;
 }
 

@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool CustomParamHasBeenSet() const;
 
                     /**
-                     * 获取属性标签适用范围 1：全部，2：按条件
-                     * @return AttrRange 属性标签适用范围 1：全部，2：按条件
+                     * 获取标签适用范围 1：全部，2：按条件
+                     * @return AttrRange 标签适用范围 1：全部，2：按条件
                      * 
                      */
                     uint64_t GetAttrRange() const;
 
                     /**
-                     * 设置属性标签适用范围 1：全部，2：按条件
-                     * @param _attrRange 属性标签适用范围 1：全部，2：按条件
+                     * 设置标签适用范围 1：全部，2：按条件
+                     * @param _attrRange 标签适用范围 1：全部，2：按条件
                      * 
                      */
                     void SetAttrRange(const uint64_t& _attrRange);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool AttrRangeHasBeenSet() const;
 
                     /**
-                     * 获取属性标签引用
-                     * @return AttrLabels 属性标签引用
+                     * 获取标签引用
+                     * @return AttrLabels 标签引用
                      * 
                      */
                     std::vector<AttrLabelRefer> GetAttrLabels() const;
 
                     /**
-                     * 设置属性标签引用
-                     * @param _attrLabels 属性标签引用
+                     * 设置标签引用
+                     * @param _attrLabels 标签引用
                      * 
                      */
                     void SetAttrLabels(const std::vector<AttrLabelRefer>& _attrLabels);
@@ -296,6 +296,27 @@ namespace TencentCloud
                      */
                     bool SimilarQuestionModifyHasBeenSet() const;
 
+                    /**
+                     * 获取问题描述
+                     * @return QuestionDesc 问题描述
+                     * 
+                     */
+                    std::string GetQuestionDesc() const;
+
+                    /**
+                     * 设置问题描述
+                     * @param _questionDesc 问题描述
+                     * 
+                     */
+                    void SetQuestionDesc(const std::string& _questionDesc);
+
+                    /**
+                     * 判断参数 QuestionDesc 是否已赋值
+                     * @return QuestionDesc 是否已赋值
+                     * 
+                     */
+                    bool QuestionDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -329,13 +350,13 @@ namespace TencentCloud
                     bool m_customParamHasBeenSet;
 
                     /**
-                     * 属性标签适用范围 1：全部，2：按条件
+                     * 标签适用范围 1：全部，2：按条件
                      */
                     uint64_t m_attrRange;
                     bool m_attrRangeHasBeenSet;
 
                     /**
-                     * 属性标签引用
+                     * 标签引用
                      */
                     std::vector<AttrLabelRefer> m_attrLabels;
                     bool m_attrLabelsHasBeenSet;
@@ -369,6 +390,12 @@ namespace TencentCloud
                      */
                     SimilarQuestionModify m_similarQuestionModify;
                     bool m_similarQuestionModifyHasBeenSet;
+
+                    /**
+                     * 问题描述
+                     */
+                    std::string m_questionDesc;
+                    bool m_questionDescHasBeenSet;
 
                 };
             }

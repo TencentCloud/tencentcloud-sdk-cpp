@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库类型，如mysql
-                     * @return DatabaseType 数据库类型，如mysql
+                     * 获取数据库类型，如mysql,redis等
+                     * @return DatabaseType 数据库类型，如mysql,redis等
                      * 
                      */
                     std::string GetDatabaseType() const;
 
                     /**
-                     * 设置数据库类型，如mysql
-                     * @param _databaseType 数据库类型，如mysql
+                     * 设置数据库类型，如mysql,redis等
+                     * @param _databaseType 数据库类型，如mysql,redis等
                      * 
                      */
                     void SetDatabaseType(const std::string& _databaseType);
@@ -255,7 +255,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据库类型，如mysql
+                     * 数据库类型，如mysql,redis等
                      */
                     std::string m_databaseType;
                     bool m_databaseTypeHasBeenSet;

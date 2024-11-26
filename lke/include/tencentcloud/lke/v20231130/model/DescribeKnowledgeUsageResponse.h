@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用字符数
-                     * @return AvailableCharSize 可用字符数
+                     * 获取可用字符数上限
+                     * @return AvailableCharSize 可用字符数上限
                      * 
                      */
                     std::string GetAvailableCharSize() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool AvailableCharSizeHasBeenSet() const;
 
                     /**
-                     * 获取超量字符数
-                     * @return ExceedCharSize 超量字符数
+                     * 获取超过可用字符数上限的字符数
+                     * @return ExceedCharSize 超过可用字符数上限的字符数
                      * 
                      */
                     std::string GetExceedCharSize() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可用字符数
+                     * 可用字符数上限
                      */
                     std::string m_availableCharSize;
                     bool m_availableCharSizeHasBeenSet;
 
                     /**
-                     * 超量字符数
+                     * 超过可用字符数上限的字符数
                      */
                     std::string m_exceedCharSize;
                     bool m_exceedCharSizeHasBeenSet;

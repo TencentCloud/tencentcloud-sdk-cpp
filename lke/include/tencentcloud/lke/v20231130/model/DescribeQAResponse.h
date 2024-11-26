@@ -361,10 +361,8 @@ namespace TencentCloud
                     bool OrgDataHasBeenSet() const;
 
                     /**
-                     * 获取属性标签适用范围
-
-                     * @return AttrRange 属性标签适用范围
-
+                     * 获取标签适用范围
+                     * @return AttrRange 标签适用范围
                      * 
                      */
                     int64_t GetAttrRange() const;
@@ -377,8 +375,8 @@ namespace TencentCloud
                     bool AttrRangeHasBeenSet() const;
 
                     /**
-                     * 获取属性标签
-                     * @return AttrLabels 属性标签
+                     * 获取标签
+                     * @return AttrLabels 标签
                      * 
                      */
                     std::vector<AttrLabel> GetAttrLabels() const;
@@ -431,6 +429,62 @@ namespace TencentCloud
                      * 
                      */
                     bool SimilarQuestionsHasBeenSet() const;
+
+                    /**
+                     * 获取问题和答案文本审核状态 1审核失败
+                     * @return QaAuditStatus 问题和答案文本审核状态 1审核失败
+                     * 
+                     */
+                    uint64_t GetQaAuditStatus() const;
+
+                    /**
+                     * 判断参数 QaAuditStatus 是否已赋值
+                     * @return QaAuditStatus 是否已赋值
+                     * 
+                     */
+                    bool QaAuditStatusHasBeenSet() const;
+
+                    /**
+                     * 获取答案中的图片审核状态 1审核失败
+                     * @return PicAuditStatus 答案中的图片审核状态 1审核失败
+                     * 
+                     */
+                    uint64_t GetPicAuditStatus() const;
+
+                    /**
+                     * 判断参数 PicAuditStatus 是否已赋值
+                     * @return PicAuditStatus 是否已赋值
+                     * 
+                     */
+                    bool PicAuditStatusHasBeenSet() const;
+
+                    /**
+                     * 获取答案中的视频审核状态 1审核失败
+                     * @return VideoAuditStatus 答案中的视频审核状态 1审核失败
+                     * 
+                     */
+                    uint64_t GetVideoAuditStatus() const;
+
+                    /**
+                     * 判断参数 VideoAuditStatus 是否已赋值
+                     * @return VideoAuditStatus 是否已赋值
+                     * 
+                     */
+                    bool VideoAuditStatusHasBeenSet() const;
+
+                    /**
+                     * 获取问题描述
+                     * @return QuestionDesc 问题描述
+                     * 
+                     */
+                    std::string GetQuestionDesc() const;
+
+                    /**
+                     * 判断参数 QuestionDesc 是否已赋值
+                     * @return QuestionDesc 是否已赋值
+                     * 
+                     */
+                    bool QuestionDescHasBeenSet() const;
 
                 private:
 
@@ -572,14 +626,13 @@ namespace TencentCloud
                     bool m_orgDataHasBeenSet;
 
                     /**
-                     * 属性标签适用范围
-
+                     * 标签适用范围
                      */
                     int64_t m_attrRange;
                     bool m_attrRangeHasBeenSet;
 
                     /**
-                     * 属性标签
+                     * 标签
                      */
                     std::vector<AttrLabel> m_attrLabels;
                     bool m_attrLabelsHasBeenSet;
@@ -601,6 +654,30 @@ namespace TencentCloud
                      */
                     std::vector<SimilarQuestion> m_similarQuestions;
                     bool m_similarQuestionsHasBeenSet;
+
+                    /**
+                     * 问题和答案文本审核状态 1审核失败
+                     */
+                    uint64_t m_qaAuditStatus;
+                    bool m_qaAuditStatusHasBeenSet;
+
+                    /**
+                     * 答案中的图片审核状态 1审核失败
+                     */
+                    uint64_t m_picAuditStatus;
+                    bool m_picAuditStatusHasBeenSet;
+
+                    /**
+                     * 答案中的视频审核状态 1审核失败
+                     */
+                    uint64_t m_videoAuditStatus;
+                    bool m_videoAuditStatusHasBeenSet;
+
+                    /**
+                     * 问题描述
+                     */
+                    std::string m_questionDesc;
+                    bool m_questionDescHasBeenSet;
 
                 };
             }
