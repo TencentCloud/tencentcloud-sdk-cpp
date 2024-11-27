@@ -27,7 +27,8 @@ VehicleLicenseOCRResponse::VehicleLicenseOCRResponse() :
     m_frontInfoHasBeenSet(false),
     m_backInfoHasBeenSet(false),
     m_recognizeWarnCodeHasBeenSet(false),
-    m_recognizeWarnMsgHasBeenSet(false)
+    m_recognizeWarnMsgHasBeenSet(false),
+    m_vehicleLicenseTypeHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,16 @@ CoreInternalOutcome VehicleLicenseOCRResponse::Deserialize(const string &payload
         m_recognizeWarnMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VehicleLicenseType") && !rsp["VehicleLicenseType"].IsNull())
+    {
+        if (!rsp["VehicleLicenseType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VehicleLicenseType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vehicleLicenseType = string(rsp["VehicleLicenseType"].GetString());
+        m_vehicleLicenseTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -179,6 +190,14 @@ string VehicleLicenseOCRResponse::ToJsonString() const
         }
     }
 
+    if (m_vehicleLicenseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VehicleLicenseType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vehicleLicenseType.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -229,6 +248,16 @@ vector<string> VehicleLicenseOCRResponse::GetRecognizeWarnMsg() const
 bool VehicleLicenseOCRResponse::RecognizeWarnMsgHasBeenSet() const
 {
     return m_recognizeWarnMsgHasBeenSet;
+}
+
+string VehicleLicenseOCRResponse::GetVehicleLicenseType() const
+{
+    return m_vehicleLicenseType;
+}
+
+bool VehicleLicenseOCRResponse::VehicleLicenseTypeHasBeenSet() const
+{
+    return m_vehicleLicenseTypeHasBeenSet;
 }
 
 

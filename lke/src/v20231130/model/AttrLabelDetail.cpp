@@ -25,7 +25,9 @@ AttrLabelDetail::AttrLabelDetail() :
     m_attrKeyHasBeenSet(false),
     m_attrNameHasBeenSet(false),
     m_labelNamesHasBeenSet(false),
-    m_isUpdatingHasBeenSet(false)
+    m_isUpdatingHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_statusDescHasBeenSet(false)
 {
 }
 
@@ -87,6 +89,26 @@ CoreInternalOutcome AttrLabelDetail::Deserialize(const rapidjson::Value &value)
         m_isUpdatingHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AttrLabelDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("StatusDesc") && !value["StatusDesc"].IsNull())
+    {
+        if (!value["StatusDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AttrLabelDetail.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_statusDesc = string(value["StatusDesc"].GetString());
+        m_statusDescHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +159,22 @@ void AttrLabelDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "IsUpdating";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isUpdating, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_statusDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusDesc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -220,5 +258,37 @@ void AttrLabelDetail::SetIsUpdating(const bool& _isUpdating)
 bool AttrLabelDetail::IsUpdatingHasBeenSet() const
 {
     return m_isUpdatingHasBeenSet;
+}
+
+int64_t AttrLabelDetail::GetStatus() const
+{
+    return m_status;
+}
+
+void AttrLabelDetail::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool AttrLabelDetail::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string AttrLabelDetail::GetStatusDesc() const
+{
+    return m_statusDesc;
+}
+
+void AttrLabelDetail::SetStatusDesc(const string& _statusDesc)
+{
+    m_statusDesc = _statusDesc;
+    m_statusDescHasBeenSet = true;
+}
+
+bool AttrLabelDetail::StatusDescHasBeenSet() const
+{
+    return m_statusDescHasBeenSet;
 }
 

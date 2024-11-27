@@ -305,8 +305,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题的存储类型
+
+- hot: 标准存储
+- cold: 低频存储
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageType 主题的存储类型
+
+- hot: 标准存储
+- cold: 低频存储
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -314,8 +320,14 @@ namespace TencentCloud
 
                     /**
                      * 设置主题的存储类型
+
+- hot: 标准存储
+- cold: 低频存储
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _storageType 主题的存储类型
+
+- hot: 标准存储
+- cold: 低频存储
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -674,6 +686,9 @@ HotPeriod=0为没有开启日志沉降。
 
                     /**
                      * 主题的存储类型
+
+- hot: 标准存储
+- cold: 低频存储
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_storageType;

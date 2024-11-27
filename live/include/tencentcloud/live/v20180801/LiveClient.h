@@ -45,6 +45,12 @@
 #include <tencentcloud/live/v20180801/model/CreateCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateCasterInputPushUrlRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateCasterInputPushUrlResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateCasterPgmRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateCasterPgmResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateCasterPgmFromPvwRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateCasterPgmFromPvwResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateCasterPvwRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateCasterPvwResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateCommonMixStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateCommonMixStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveCallbackRuleRequest.h>
@@ -359,6 +365,8 @@
 #include <tencentcloud/live/v20180801/model/ModifyPullStreamConfigResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyPullStreamStatusRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyPullStreamStatusResponse.h>
+#include <tencentcloud/live/v20180801/model/ReleaseCasterRequest.h>
+#include <tencentcloud/live/v20180801/model/ReleaseCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/RestartLivePullStreamTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/RestartLivePullStreamTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/ResumeDelayLiveStreamRequest.h>
@@ -367,6 +375,10 @@
 #include <tencentcloud/live/v20180801/model/ResumeLiveStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/StartLiveStreamMonitorRequest.h>
 #include <tencentcloud/live/v20180801/model/StartLiveStreamMonitorResponse.h>
+#include <tencentcloud/live/v20180801/model/StopCasterPgmRequest.h>
+#include <tencentcloud/live/v20180801/model/StopCasterPgmResponse.h>
+#include <tencentcloud/live/v20180801/model/StopCasterPvwRequest.h>
+#include <tencentcloud/live/v20180801/model/StopCasterPvwResponse.h>
 #include <tencentcloud/live/v20180801/model/StopLivePadProcessorRequest.h>
 #include <tencentcloud/live/v20180801/model/StopLivePadProcessorResponse.h>
 #include <tencentcloud/live/v20180801/model/StopLiveRecordRequest.h>
@@ -430,6 +442,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCasterInputPushUrlResponse> CreateCasterInputPushUrlOutcome;
                 typedef std::future<CreateCasterInputPushUrlOutcome> CreateCasterInputPushUrlOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateCasterInputPushUrlRequest&, CreateCasterInputPushUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCasterInputPushUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCasterPgmResponse> CreateCasterPgmOutcome;
+                typedef std::future<CreateCasterPgmOutcome> CreateCasterPgmOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateCasterPgmRequest&, CreateCasterPgmOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCasterPgmAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCasterPgmFromPvwResponse> CreateCasterPgmFromPvwOutcome;
+                typedef std::future<CreateCasterPgmFromPvwOutcome> CreateCasterPgmFromPvwOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateCasterPgmFromPvwRequest&, CreateCasterPgmFromPvwOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCasterPgmFromPvwAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCasterPvwResponse> CreateCasterPvwOutcome;
+                typedef std::future<CreateCasterPvwOutcome> CreateCasterPvwOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateCasterPvwRequest&, CreateCasterPvwOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCasterPvwAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCommonMixStreamResponse> CreateCommonMixStreamOutcome;
                 typedef std::future<CreateCommonMixStreamOutcome> CreateCommonMixStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateCommonMixStreamRequest&, CreateCommonMixStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCommonMixStreamAsyncHandler;
@@ -901,6 +922,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPullStreamStatusResponse> ModifyPullStreamStatusOutcome;
                 typedef std::future<ModifyPullStreamStatusOutcome> ModifyPullStreamStatusOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyPullStreamStatusRequest&, ModifyPullStreamStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPullStreamStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReleaseCasterResponse> ReleaseCasterOutcome;
+                typedef std::future<ReleaseCasterOutcome> ReleaseCasterOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::ReleaseCasterRequest&, ReleaseCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseCasterAsyncHandler;
                 typedef Outcome<Core::Error, Model::RestartLivePullStreamTaskResponse> RestartLivePullStreamTaskOutcome;
                 typedef std::future<RestartLivePullStreamTaskOutcome> RestartLivePullStreamTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::RestartLivePullStreamTaskRequest&, RestartLivePullStreamTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartLivePullStreamTaskAsyncHandler;
@@ -913,6 +937,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartLiveStreamMonitorResponse> StartLiveStreamMonitorOutcome;
                 typedef std::future<StartLiveStreamMonitorOutcome> StartLiveStreamMonitorOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StartLiveStreamMonitorRequest&, StartLiveStreamMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartLiveStreamMonitorAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopCasterPgmResponse> StopCasterPgmOutcome;
+                typedef std::future<StopCasterPgmOutcome> StopCasterPgmOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::StopCasterPgmRequest&, StopCasterPgmOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopCasterPgmAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopCasterPvwResponse> StopCasterPvwOutcome;
+                typedef std::future<StopCasterPvwOutcome> StopCasterPvwOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::StopCasterPvwRequest&, StopCasterPvwOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopCasterPvwAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopLivePadProcessorResponse> StopLivePadProcessorOutcome;
                 typedef std::future<StopLivePadProcessorOutcome> StopLivePadProcessorOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StopLivePadProcessorRequest&, StopLivePadProcessorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopLivePadProcessorAsyncHandler;
@@ -1040,6 +1070,34 @@ namespace TencentCloud
                 CreateCasterInputPushUrlOutcome CreateCasterInputPushUrl(const Model::CreateCasterInputPushUrlRequest &request);
                 void CreateCasterInputPushUrlAsync(const Model::CreateCasterInputPushUrlRequest& request, const CreateCasterInputPushUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCasterInputPushUrlOutcomeCallable CreateCasterInputPushUrlCallable(const Model::CreateCasterInputPushUrlRequest& request);
+
+                /**
+                 *该接口用来启动主监任务，并将获取主监画面的播放地址。
+                 * @param req CreateCasterPgmRequest
+                 * @return CreateCasterPgmOutcome
+                 */
+                CreateCasterPgmOutcome CreateCasterPgm(const Model::CreateCasterPgmRequest &request);
+                void CreateCasterPgmAsync(const Model::CreateCasterPgmRequest& request, const CreateCasterPgmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCasterPgmOutcomeCallable CreateCasterPgmCallable(const Model::CreateCasterPgmRequest& request);
+
+                /**
+                 *该接口用来将预监画面的布局、水印、字幕等配置，复制到主监画面中。
+该接口使用时，预监任务需处于运行状态。
+                 * @param req CreateCasterPgmFromPvwRequest
+                 * @return CreateCasterPgmFromPvwOutcome
+                 */
+                CreateCasterPgmFromPvwOutcome CreateCasterPgmFromPvw(const Model::CreateCasterPgmFromPvwRequest &request);
+                void CreateCasterPgmFromPvwAsync(const Model::CreateCasterPgmFromPvwRequest& request, const CreateCasterPgmFromPvwAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCasterPgmFromPvwOutcomeCallable CreateCasterPgmFromPvwCallable(const Model::CreateCasterPgmFromPvwRequest& request);
+
+                /**
+                 *该接口用来启动预监任务，并将获取预监画面的播放地址。
+                 * @param req CreateCasterPvwRequest
+                 * @return CreateCasterPvwOutcome
+                 */
+                CreateCasterPvwOutcome CreateCasterPvw(const Model::CreateCasterPvwRequest &request);
+                void CreateCasterPvwAsync(const Model::CreateCasterPvwRequest& request, const CreateCasterPvwAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCasterPvwOutcomeCallable CreateCasterPvwCallable(const Model::CreateCasterPvwRequest& request);
 
                 /**
                  *该接口用来创建通用混流。用法与旧接口 mix_streamv2.start_mix_stream_advanced 基本一致。
@@ -2581,6 +2639,17 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 ModifyPullStreamStatusOutcomeCallable ModifyPullStreamStatusCallable(const Model::ModifyPullStreamStatusRequest& request);
 
                 /**
+                 *调用该接口，释放导播台实例，但保留所有的配置。
+执行该接口，预监与主监画面停止，第三方推流停止。
+点播文件与直播地址将停止展示，客户自行推到导播台的流需要手动停止。
+                 * @param req ReleaseCasterRequest
+                 * @return ReleaseCasterOutcome
+                 */
+                ReleaseCasterOutcome ReleaseCaster(const Model::ReleaseCasterRequest &request);
+                void ReleaseCasterAsync(const Model::ReleaseCasterRequest& request, const ReleaseCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReleaseCasterOutcomeCallable ReleaseCasterCallable(const Model::ReleaseCasterRequest& request);
+
+                /**
                  *将正在运行的拉流转推任务进行重启。
 注意：
 1. 重启任务会造成推流中断。
@@ -2618,6 +2687,25 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 StartLiveStreamMonitorOutcome StartLiveStreamMonitor(const Model::StartLiveStreamMonitorRequest &request);
                 void StartLiveStreamMonitorAsync(const Model::StartLiveStreamMonitorRequest& request, const StartLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartLiveStreamMonitorOutcomeCallable StartLiveStreamMonitorCallable(const Model::StartLiveStreamMonitorRequest& request);
+
+                /**
+                 *该接口用来停止导播台的主监输出。
+停止主监后，对应的推流到腾讯云直播源站和推流到其他第三方平台均将会停止。
+                 * @param req StopCasterPgmRequest
+                 * @return StopCasterPgmOutcome
+                 */
+                StopCasterPgmOutcome StopCasterPgm(const Model::StopCasterPgmRequest &request);
+                void StopCasterPgmAsync(const Model::StopCasterPgmRequest& request, const StopCasterPgmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopCasterPgmOutcomeCallable StopCasterPgmCallable(const Model::StopCasterPgmRequest& request);
+
+                /**
+                 *该接口用来停止导播台的预监任务。
+                 * @param req StopCasterPvwRequest
+                 * @return StopCasterPvwOutcome
+                 */
+                StopCasterPvwOutcome StopCasterPvw(const Model::StopCasterPvwRequest &request);
+                void StopCasterPvwAsync(const Model::StopCasterPvwRequest& request, const StopCasterPvwAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopCasterPvwOutcomeCallable StopCasterPvwCallable(const Model::StopCasterPvwRequest& request);
 
                 /**
                  *使用该接口停止垫片流。

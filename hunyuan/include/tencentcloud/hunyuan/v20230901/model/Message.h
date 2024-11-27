@@ -165,6 +165,31 @@ namespace TencentCloud
                      */
                     bool ToolCallsHasBeenSet() const;
 
+                    /**
+                     * 获取文件标识符。单次最大 50 个文件。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileIDs 文件标识符。单次最大 50 个文件。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetFileIDs() const;
+
+                    /**
+                     * 设置文件标识符。单次最大 50 个文件。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fileIDs 文件标识符。单次最大 50 个文件。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFileIDs(const std::vector<std::string>& _fileIDs);
+
+                    /**
+                     * 判断参数 FileIDs 是否已赋值
+                     * @return FileIDs 是否已赋值
+                     * 
+                     */
+                    bool FileIDsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -199,6 +224,13 @@ namespace TencentCloud
                      */
                     std::vector<ToolCall> m_toolCalls;
                     bool m_toolCallsHasBeenSet;
+
+                    /**
+                     * 文件标识符。单次最大 50 个文件。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_fileIDs;
+                    bool m_fileIDsHasBeenSet;
 
                 };
             }

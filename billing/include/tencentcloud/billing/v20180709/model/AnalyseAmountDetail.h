@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取费用类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 费用类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置费用类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 费用类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Display 是否展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDisplay() const;
 
                     /**
                      * 设置是否展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _display 是否展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDisplay(const int64_t& _display);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 费用类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 是否展示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_display;
                     bool m_displayHasBeenSet;

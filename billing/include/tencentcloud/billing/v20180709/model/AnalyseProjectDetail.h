@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取默认项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectName 默认项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置默认项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectName 默认项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectName(const std::string& _projectName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * 默认项目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;

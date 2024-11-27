@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表头日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeadDetail 表头日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AnalyseHeaderTimeDetail> GetHeadDetail() const;
 
                     /**
                      * 设置表头日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headDetail 表头日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeadDetail(const std::vector<AnalyseHeaderTimeDetail>& _headDetail);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总计
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总计
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTotal() const;
 
                     /**
                      * 设置总计
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _total 总计
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotal(const std::string& _total);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 表头日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnalyseHeaderTimeDetail> m_headDetail;
                     bool m_headDetailHasBeenSet;
 
                     /**
                      * 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 总计
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_total;
                     bool m_totalHasBeenSet;

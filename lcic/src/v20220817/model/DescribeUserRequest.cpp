@@ -23,7 +23,8 @@ using namespace TencentCloud::Lcic::V20220817::Model;
 using namespace std;
 
 DescribeUserRequest::DescribeUserRequest() :
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_originIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeUserRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_originId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeUserRequest::SetUserId(const string& _userId)
 bool DescribeUserRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string DescribeUserRequest::GetOriginId() const
+{
+    return m_originId;
+}
+
+void DescribeUserRequest::SetOriginId(const string& _originId)
+{
+    m_originId = _originId;
+    m_originIdHasBeenSet = true;
+}
+
+bool DescribeUserRequest::OriginIdHasBeenSet() const
+{
+    return m_originIdHasBeenSet;
 }
 
 

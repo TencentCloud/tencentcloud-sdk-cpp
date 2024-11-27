@@ -68,6 +68,31 @@ namespace TencentCloud
                      */
                     bool SegmentSetHasBeenSet() const;
 
+                    /**
+                     * 获取视频摘要，离线场景用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Abstract 视频摘要，离线场景用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAbstract() const;
+
+                    /**
+                     * 设置视频摘要，离线场景用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _abstract 视频摘要，离线场景用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAbstract(const std::string& _abstract);
+
+                    /**
+                     * 判断参数 Abstract 是否已赋值
+                     * @return Abstract 是否已赋值
+                     * 
+                     */
+                    bool AbstractHasBeenSet() const;
+
                 private:
 
                     /**
@@ -75,6 +100,13 @@ namespace TencentCloud
                      */
                     std::vector<SegmentRecognitionItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;
+
+                    /**
+                     * 视频摘要，离线场景用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_abstract;
+                    bool m_abstractHasBeenSet;
 
                 };
             }

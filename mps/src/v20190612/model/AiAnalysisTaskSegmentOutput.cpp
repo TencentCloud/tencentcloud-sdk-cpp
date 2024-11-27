@@ -21,7 +21,8 @@ using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
 AiAnalysisTaskSegmentOutput::AiAnalysisTaskSegmentOutput() :
-    m_segmentSetHasBeenSet(false)
+    m_segmentSetHasBeenSet(false),
+    m_abstractHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,16 @@ CoreInternalOutcome AiAnalysisTaskSegmentOutput::Deserialize(const rapidjson::Va
         m_segmentSetHasBeenSet = true;
     }
 
+    if (value.HasMember("Abstract") && !value["Abstract"].IsNull())
+    {
+        if (!value["Abstract"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskSegmentOutput.Abstract` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_abstract = string(value["Abstract"].GetString());
+        m_abstractHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void AiAnalysisTaskSegmentOutput::ToJsonObject(rapidjson::Value &value, rapidjso
         }
     }
 
+    if (m_abstractHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Abstract";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_abstract.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -89,5 +108,21 @@ void AiAnalysisTaskSegmentOutput::SetSegmentSet(const vector<SegmentRecognitionI
 bool AiAnalysisTaskSegmentOutput::SegmentSetHasBeenSet() const
 {
     return m_segmentSetHasBeenSet;
+}
+
+string AiAnalysisTaskSegmentOutput::GetAbstract() const
+{
+    return m_abstract;
+}
+
+void AiAnalysisTaskSegmentOutput::SetAbstract(const string& _abstract)
+{
+    m_abstract = _abstract;
+    m_abstractHasBeenSet = true;
+}
+
+bool AiAnalysisTaskSegmentOutput::AbstractHasBeenSet() const
+{
+    return m_abstractHasBeenSet;
 }
 

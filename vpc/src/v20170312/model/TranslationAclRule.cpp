@@ -27,7 +27,8 @@ TranslationAclRule::TranslationAclRule() :
     m_destinationPortHasBeenSet(false),
     m_destinationCidrHasBeenSet(false),
     m_aclRuleIdHasBeenSet(false),
-    m_actionHasBeenSet(false)
+    m_actionHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome TranslationAclRule::Deserialize(const rapidjson::Value &valu
         m_actionHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranslationAclRule.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void TranslationAclRule::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Action";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_action, allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void TranslationAclRule::SetAction(const uint64_t& _action)
 bool TranslationAclRule::ActionHasBeenSet() const
 {
     return m_actionHasBeenSet;
+}
+
+string TranslationAclRule::GetDescription() const
+{
+    return m_description;
+}
+
+void TranslationAclRule::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool TranslationAclRule::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

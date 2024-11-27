@@ -31,7 +31,8 @@ CreateFileSystemRequest::CreateFileSystemRequest() :
     m_zoneHasBeenSet(false),
     m_tagHasBeenSet(false),
     m_gooseFSxBuildElementsHasBeenSet(false),
-    m_securityGroupIdHasBeenSet(false)
+    m_securityGroupIdHasBeenSet(false),
+    m_clusterPortHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,14 @@ string CreateFileSystemRequest::ToJsonString() const
         string key = "SecurityGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_securityGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterPort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_clusterPort, allocator);
     }
 
 
@@ -272,6 +281,22 @@ void CreateFileSystemRequest::SetSecurityGroupId(const string& _securityGroupId)
 bool CreateFileSystemRequest::SecurityGroupIdHasBeenSet() const
 {
     return m_securityGroupIdHasBeenSet;
+}
+
+uint64_t CreateFileSystemRequest::GetClusterPort() const
+{
+    return m_clusterPort;
+}
+
+void CreateFileSystemRequest::SetClusterPort(const uint64_t& _clusterPort)
+{
+    m_clusterPort = _clusterPort;
+    m_clusterPortHasBeenSet = true;
+}
+
+bool CreateFileSystemRequest::ClusterPortHasBeenSet() const
+{
+    return m_clusterPortHasBeenSet;
 }
 
 

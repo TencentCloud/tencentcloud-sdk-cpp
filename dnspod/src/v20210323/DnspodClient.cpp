@@ -642,6 +642,49 @@ DnspodClient::CreateSnapshotOutcomeCallable DnspodClient::CreateSnapshotCallable
     return task->get_future();
 }
 
+DnspodClient::CreateSubdomainValidateTXTValueOutcome DnspodClient::CreateSubdomainValidateTXTValue(const CreateSubdomainValidateTXTValueRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSubdomainValidateTXTValue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSubdomainValidateTXTValueResponse rsp = CreateSubdomainValidateTXTValueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSubdomainValidateTXTValueOutcome(rsp);
+        else
+            return CreateSubdomainValidateTXTValueOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSubdomainValidateTXTValueOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::CreateSubdomainValidateTXTValueAsync(const CreateSubdomainValidateTXTValueRequest& request, const CreateSubdomainValidateTXTValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSubdomainValidateTXTValue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::CreateSubdomainValidateTXTValueOutcomeCallable DnspodClient::CreateSubdomainValidateTXTValueCallable(const CreateSubdomainValidateTXTValueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSubdomainValidateTXTValueOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSubdomainValidateTXTValue(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::CreateTXTRecordOutcome DnspodClient::CreateTXTRecord(const CreateTXTRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTXTRecord");
@@ -2398,6 +2441,49 @@ DnspodClient::DescribeSubdomainAnalyticsOutcomeCallable DnspodClient::DescribeSu
         [this, request]()
         {
             return this->DescribeSubdomainAnalytics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DescribeSubdomainValidateStatusOutcome DnspodClient::DescribeSubdomainValidateStatus(const DescribeSubdomainValidateStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSubdomainValidateStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSubdomainValidateStatusResponse rsp = DescribeSubdomainValidateStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSubdomainValidateStatusOutcome(rsp);
+        else
+            return DescribeSubdomainValidateStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSubdomainValidateStatusOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeSubdomainValidateStatusAsync(const DescribeSubdomainValidateStatusRequest& request, const DescribeSubdomainValidateStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSubdomainValidateStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeSubdomainValidateStatusOutcomeCallable DnspodClient::DescribeSubdomainValidateStatusCallable(const DescribeSubdomainValidateStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSubdomainValidateStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSubdomainValidateStatus(request);
         }
     );
 

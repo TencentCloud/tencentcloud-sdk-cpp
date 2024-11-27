@@ -32,7 +32,9 @@ TextVehicleBack::TextVehicleBack() :
     m_recordHasBeenSet(false),
     m_totalQuasiMassHasBeenSet(false),
     m_subPageCodeHasBeenSet(false),
-    m_fuelTypeHasBeenSet(false)
+    m_fuelTypeHasBeenSet(false),
+    m_addressElectronicHasBeenSet(false),
+    m_issueAuthorityElectronicHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,26 @@ CoreInternalOutcome TextVehicleBack::Deserialize(const rapidjson::Value &value)
         m_fuelTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AddressElectronic") && !value["AddressElectronic"].IsNull())
+    {
+        if (!value["AddressElectronic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextVehicleBack.AddressElectronic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_addressElectronic = string(value["AddressElectronic"].GetString());
+        m_addressElectronicHasBeenSet = true;
+    }
+
+    if (value.HasMember("IssueAuthorityElectronic") && !value["IssueAuthorityElectronic"].IsNull())
+    {
+        if (!value["IssueAuthorityElectronic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextVehicleBack.IssueAuthorityElectronic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_issueAuthorityElectronic = string(value["IssueAuthorityElectronic"].GetString());
+        m_issueAuthorityElectronicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +284,22 @@ void TextVehicleBack::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "FuelType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fuelType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressElectronicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressElectronic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addressElectronic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_issueAuthorityElectronicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IssueAuthorityElectronic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_issueAuthorityElectronic.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +495,37 @@ void TextVehicleBack::SetFuelType(const string& _fuelType)
 bool TextVehicleBack::FuelTypeHasBeenSet() const
 {
     return m_fuelTypeHasBeenSet;
+}
+
+string TextVehicleBack::GetAddressElectronic() const
+{
+    return m_addressElectronic;
+}
+
+void TextVehicleBack::SetAddressElectronic(const string& _addressElectronic)
+{
+    m_addressElectronic = _addressElectronic;
+    m_addressElectronicHasBeenSet = true;
+}
+
+bool TextVehicleBack::AddressElectronicHasBeenSet() const
+{
+    return m_addressElectronicHasBeenSet;
+}
+
+string TextVehicleBack::GetIssueAuthorityElectronic() const
+{
+    return m_issueAuthorityElectronic;
+}
+
+void TextVehicleBack::SetIssueAuthorityElectronic(const string& _issueAuthorityElectronic)
+{
+    m_issueAuthorityElectronic = _issueAuthorityElectronic;
+    m_issueAuthorityElectronicHasBeenSet = true;
+}
+
+bool TextVehicleBack::IssueAuthorityElectronicHasBeenSet() const
+{
+    return m_issueAuthorityElectronicHasBeenSet;
 }
 

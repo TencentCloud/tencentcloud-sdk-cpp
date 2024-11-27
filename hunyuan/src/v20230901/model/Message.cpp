@@ -25,7 +25,8 @@ Message::Message() :
     m_contentHasBeenSet(false),
     m_contentsHasBeenSet(false),
     m_toolCallIdHasBeenSet(false),
-    m_toolCallsHasBeenSet(false)
+    m_toolCallsHasBeenSet(false),
+    m_fileIDsHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,19 @@ CoreInternalOutcome Message::Deserialize(const rapidjson::Value &value)
         m_toolCallsHasBeenSet = true;
     }
 
+    if (value.HasMember("FileIDs") && !value["FileIDs"].IsNull())
+    {
+        if (!value["FileIDs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Message.FileIDs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FileIDs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_fileIDs.push_back((*itr).GetString());
+        }
+        m_fileIDsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +176,19 @@ void Message::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_fileIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileIDs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_fileIDs.begin(); itr != m_fileIDs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -246,5 +273,21 @@ void Message::SetToolCalls(const vector<ToolCall>& _toolCalls)
 bool Message::ToolCallsHasBeenSet() const
 {
     return m_toolCallsHasBeenSet;
+}
+
+vector<string> Message::GetFileIDs() const
+{
+    return m_fileIDs;
+}
+
+void Message::SetFileIDs(const vector<string>& _fileIDs)
+{
+    m_fileIDs = _fileIDs;
+    m_fileIDsHasBeenSet = true;
+}
+
+bool Message::FileIDsHasBeenSet() const
+{
+    return m_fileIDsHasBeenSet;
 }
 

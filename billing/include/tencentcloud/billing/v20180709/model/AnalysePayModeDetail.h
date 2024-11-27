@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费模式code
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 计费模式code
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 设置计费模式code
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMode 计费模式code
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费模式Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayModeName 计费模式Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayModeName() const;
 
                     /**
                      * 设置计费模式Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payModeName 计费模式Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayModeName(const std::string& _payModeName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 计费模式code
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * 计费模式Name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payModeName;
                     bool m_payModeNameHasBeenSet;

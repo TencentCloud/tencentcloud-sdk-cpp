@@ -129,6 +129,20 @@ WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
                      */
                     bool RecognizeWarnMsgHasBeenSet() const;
 
+                    /**
+                     * 获取行驶证类型 电子行驶证：Electronic 普通行驶证：Normal
+                     * @return VehicleLicenseType 行驶证类型 电子行驶证：Electronic 普通行驶证：Normal
+                     * 
+                     */
+                    std::string GetVehicleLicenseType() const;
+
+                    /**
+                     * 判断参数 VehicleLicenseType 是否已赋值
+                     * @return VehicleLicenseType 是否已赋值
+                     * 
+                     */
+                    bool VehicleLicenseTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +182,12 @@ WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
                      */
                     std::vector<std::string> m_recognizeWarnMsg;
                     bool m_recognizeWarnMsgHasBeenSet;
+
+                    /**
+                     * 行驶证类型 电子行驶证：Electronic 普通行驶证：Normal
+                     */
+                    std::string m_vehicleLicenseType;
+                    bool m_vehicleLicenseTypeHasBeenSet;
 
                 };
             }

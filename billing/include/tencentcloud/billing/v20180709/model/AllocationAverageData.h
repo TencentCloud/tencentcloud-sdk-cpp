@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取起始月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginMonth 起始月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBeginMonth() const;
 
                     /**
                      * 设置起始月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginMonth 起始月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginMonth(const std::string& _beginMonth);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndMonth 结束月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndMonth() const;
 
                     /**
                      * 设置结束月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endMonth 结束月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndMonth(const std::string& _endMonth);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合计费用(折后总额)平均值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealTotalCost 合计费用(折后总额)平均值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRealTotalCost() const;
 
                     /**
                      * 设置合计费用(折后总额)平均值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realTotalCost 合计费用(折后总额)平均值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealTotalCost(const std::string& _realTotalCost);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 起始月份
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginMonth;
                     bool m_beginMonthHasBeenSet;
 
                     /**
                      * 结束月份
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endMonth;
                     bool m_endMonthHasBeenSet;
 
                     /**
                      * 合计费用(折后总额)平均值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_realTotalCost;
                     bool m_realTotalCostHasBeenSet;

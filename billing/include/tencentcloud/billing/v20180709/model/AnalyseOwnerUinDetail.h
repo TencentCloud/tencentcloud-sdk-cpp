@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取使用者uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerUin 使用者uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
                      * 设置使用者uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ownerUin 使用者uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOwnerUin(const std::string& _ownerUin);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 使用者uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;

@@ -48,18 +48,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签绑定的资源类型，当前支持类型："cluster"
+                     * 获取标签绑定的资源类型，当前支持类型：
+1.cluster：集群相关接口，TagSpecification 的 ResourceType 传参为 cluster
+2.machine：节点池相关接口，如：CreateNodePool, DescribeNodePools 等，TagSpecification 的 ResourceType 传参为 machine
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceType 标签绑定的资源类型，当前支持类型："cluster"
+                     * @return ResourceType 标签绑定的资源类型，当前支持类型：
+1.cluster：集群相关接口，TagSpecification 的 ResourceType 传参为 cluster
+2.machine：节点池相关接口，如：CreateNodePool, DescribeNodePools 等，TagSpecification 的 ResourceType 传参为 machine
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置标签绑定的资源类型，当前支持类型："cluster"
+                     * 设置标签绑定的资源类型，当前支持类型：
+1.cluster：集群相关接口，TagSpecification 的 ResourceType 传参为 cluster
+2.machine：节点池相关接口，如：CreateNodePool, DescribeNodePools 等，TagSpecification 的 ResourceType 传参为 machine
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceType 标签绑定的资源类型，当前支持类型："cluster"
+                     * @param _resourceType 标签绑定的资源类型，当前支持类型：
+1.cluster：集群相关接口，TagSpecification 的 ResourceType 传参为 cluster
+2.machine：节点池相关接口，如：CreateNodePool, DescribeNodePools 等，TagSpecification 的 ResourceType 传参为 machine
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,7 +108,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签绑定的资源类型，当前支持类型："cluster"
+                     * 标签绑定的资源类型，当前支持类型：
+1.cluster：集群相关接口，TagSpecification 的 ResourceType 传参为 cluster
+2.machine：节点池相关接口，如：CreateNodePool, DescribeNodePools 等，TagSpecification 的 ResourceType 传参为 machine
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceType;

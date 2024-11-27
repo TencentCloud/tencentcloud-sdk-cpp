@@ -513,6 +513,135 @@ LiveClient::CreateCasterInputPushUrlOutcomeCallable LiveClient::CreateCasterInpu
     return task->get_future();
 }
 
+LiveClient::CreateCasterPgmOutcome LiveClient::CreateCasterPgm(const CreateCasterPgmRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCasterPgm");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCasterPgmResponse rsp = CreateCasterPgmResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCasterPgmOutcome(rsp);
+        else
+            return CreateCasterPgmOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCasterPgmOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateCasterPgmAsync(const CreateCasterPgmRequest& request, const CreateCasterPgmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCasterPgm(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::CreateCasterPgmOutcomeCallable LiveClient::CreateCasterPgmCallable(const CreateCasterPgmRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCasterPgmOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCasterPgm(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::CreateCasterPgmFromPvwOutcome LiveClient::CreateCasterPgmFromPvw(const CreateCasterPgmFromPvwRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCasterPgmFromPvw");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCasterPgmFromPvwResponse rsp = CreateCasterPgmFromPvwResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCasterPgmFromPvwOutcome(rsp);
+        else
+            return CreateCasterPgmFromPvwOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCasterPgmFromPvwOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateCasterPgmFromPvwAsync(const CreateCasterPgmFromPvwRequest& request, const CreateCasterPgmFromPvwAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCasterPgmFromPvw(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::CreateCasterPgmFromPvwOutcomeCallable LiveClient::CreateCasterPgmFromPvwCallable(const CreateCasterPgmFromPvwRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCasterPgmFromPvwOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCasterPgmFromPvw(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::CreateCasterPvwOutcome LiveClient::CreateCasterPvw(const CreateCasterPvwRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCasterPvw");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCasterPvwResponse rsp = CreateCasterPvwResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCasterPvwOutcome(rsp);
+        else
+            return CreateCasterPvwOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCasterPvwOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateCasterPvwAsync(const CreateCasterPvwRequest& request, const CreateCasterPvwAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCasterPvw(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::CreateCasterPvwOutcomeCallable LiveClient::CreateCasterPvwCallable(const CreateCasterPvwRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCasterPvwOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCasterPvw(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::CreateCommonMixStreamOutcome LiveClient::CreateCommonMixStream(const CreateCommonMixStreamRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCommonMixStream");
@@ -7264,6 +7393,49 @@ LiveClient::ModifyPullStreamStatusOutcomeCallable LiveClient::ModifyPullStreamSt
     return task->get_future();
 }
 
+LiveClient::ReleaseCasterOutcome LiveClient::ReleaseCaster(const ReleaseCasterRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleaseCaster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleaseCasterResponse rsp = ReleaseCasterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleaseCasterOutcome(rsp);
+        else
+            return ReleaseCasterOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleaseCasterOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ReleaseCasterAsync(const ReleaseCasterRequest& request, const ReleaseCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReleaseCaster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::ReleaseCasterOutcomeCallable LiveClient::ReleaseCasterCallable(const ReleaseCasterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReleaseCasterOutcome()>>(
+        [this, request]()
+        {
+            return this->ReleaseCaster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::RestartLivePullStreamTaskOutcome LiveClient::RestartLivePullStreamTask(const RestartLivePullStreamTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "RestartLivePullStreamTask");
@@ -7429,6 +7601,92 @@ LiveClient::StartLiveStreamMonitorOutcomeCallable LiveClient::StartLiveStreamMon
         [this, request]()
         {
             return this->StartLiveStreamMonitor(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::StopCasterPgmOutcome LiveClient::StopCasterPgm(const StopCasterPgmRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopCasterPgm");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopCasterPgmResponse rsp = StopCasterPgmResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopCasterPgmOutcome(rsp);
+        else
+            return StopCasterPgmOutcome(o.GetError());
+    }
+    else
+    {
+        return StopCasterPgmOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::StopCasterPgmAsync(const StopCasterPgmRequest& request, const StopCasterPgmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopCasterPgm(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::StopCasterPgmOutcomeCallable LiveClient::StopCasterPgmCallable(const StopCasterPgmRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopCasterPgmOutcome()>>(
+        [this, request]()
+        {
+            return this->StopCasterPgm(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::StopCasterPvwOutcome LiveClient::StopCasterPvw(const StopCasterPvwRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopCasterPvw");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopCasterPvwResponse rsp = StopCasterPvwResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopCasterPvwOutcome(rsp);
+        else
+            return StopCasterPvwOutcome(o.GetError());
+    }
+    else
+    {
+        return StopCasterPvwOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::StopCasterPvwAsync(const StopCasterPvwRequest& request, const StopCasterPvwAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopCasterPvw(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::StopCasterPvwOutcomeCallable LiveClient::StopCasterPvwCallable(const StopCasterPvwRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopCasterPvwOutcome()>>(
+        [this, request]()
+        {
+            return this->StopCasterPvw(request);
         }
     );
 

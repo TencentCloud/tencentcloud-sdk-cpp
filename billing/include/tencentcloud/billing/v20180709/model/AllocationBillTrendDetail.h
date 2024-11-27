@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账单月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Month 账单月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
                      * 设置账单月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _month 账单月份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账单月份展示名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 账单月份展示名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置账单月份展示名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 账单月份展示名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合计费用(折后总额)：分账单元总费用，归集费用(折后总额) + 分摊费用(折后总额)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealTotalCost 合计费用(折后总额)：分账单元总费用，归集费用(折后总额) + 分摊费用(折后总额)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRealTotalCost() const;
 
                     /**
                      * 设置合计费用(折后总额)：分账单元总费用，归集费用(折后总额) + 分摊费用(折后总额)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realTotalCost 合计费用(折后总额)：分账单元总费用，归集费用(折后总额) + 分摊费用(折后总额)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealTotalCost(const std::string& _realTotalCost);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 账单月份
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;
 
                     /**
                      * 账单月份展示名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 合计费用(折后总额)：分账单元总费用，归集费用(折后总额) + 分摊费用(折后总额)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_realTotalCost;
                     bool m_realTotalCostHasBeenSet;

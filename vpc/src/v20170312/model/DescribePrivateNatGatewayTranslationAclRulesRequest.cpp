@@ -29,7 +29,8 @@ DescribePrivateNatGatewayTranslationAclRulesRequest::DescribePrivateNatGatewayTr
     m_translationIpHasBeenSet(false),
     m_originalIpHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribePrivateNatGatewayTranslationAclRulesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void DescribePrivateNatGatewayTranslationAclRulesRequest::SetLimit(const uint64_
 bool DescribePrivateNatGatewayTranslationAclRulesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribePrivateNatGatewayTranslationAclRulesRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void DescribePrivateNatGatewayTranslationAclRulesRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool DescribePrivateNatGatewayTranslationAclRulesRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

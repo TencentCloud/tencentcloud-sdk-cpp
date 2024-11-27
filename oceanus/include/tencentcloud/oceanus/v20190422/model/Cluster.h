@@ -1161,6 +1161,27 @@ namespace TencentCloud
                      */
                     bool MemRatioHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启跨租户弹性网卡
+                     * @return CrossTenantEniMode 是否开启跨租户弹性网卡
+                     * 
+                     */
+                    int64_t GetCrossTenantEniMode() const;
+
+                    /**
+                     * 设置是否开启跨租户弹性网卡
+                     * @param _crossTenantEniMode 是否开启跨租户弹性网卡
+                     * 
+                     */
+                    void SetCrossTenantEniMode(const int64_t& _crossTenantEniMode);
+
+                    /**
+                     * 判断参数 CrossTenantEniMode 是否已赋值
+                     * @return CrossTenantEniMode 是否已赋值
+                     * 
+                     */
+                    bool CrossTenantEniModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1474,6 +1495,12 @@ namespace TencentCloud
                      */
                     int64_t m_memRatio;
                     bool m_memRatioHasBeenSet;
+
+                    /**
+                     * 是否开启跨租户弹性网卡
+                     */
+                    int64_t m_crossTenantEniMode;
+                    bool m_crossTenantEniModeHasBeenSet;
 
                 };
             }

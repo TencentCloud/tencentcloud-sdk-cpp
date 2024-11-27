@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取客户端用户 id,如果未指定则为用户 id。
+                     * @return OriginId 客户端用户 id,如果未指定则为用户 id。
+                     * 
+                     */
+                    std::string GetOriginId() const;
+
+                    /**
+                     * 设置客户端用户 id,如果未指定则为用户 id。
+                     * @param _originId 客户端用户 id,如果未指定则为用户 id。
+                     * 
+                     */
+                    void SetOriginId(const std::string& _originId);
+
+                    /**
+                     * 判断参数 OriginId 是否已赋值
+                     * @return OriginId 是否已赋值
+                     * 
+                     */
+                    bool OriginIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 客户端用户 id,如果未指定则为用户 id。
+                     */
+                    std::string m_originId;
+                    bool m_originIdHasBeenSet;
 
                 };
             }

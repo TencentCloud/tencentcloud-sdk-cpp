@@ -29,7 +29,8 @@ DomainDetailInfo::DomainDetailInfo() :
     m_refererAuthPolicyHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_qUICConfigHasBeenSet(false),
-    m_iPFilterPolicyHasBeenSet(false)
+    m_iPFilterPolicyHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,16 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
         m_iPFilterPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainDetailInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void DomainDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_iPFilterPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -409,5 +428,21 @@ void DomainDetailInfo::SetIPFilterPolicy(const IPFilterPolicy& _iPFilterPolicy)
 bool DomainDetailInfo::IPFilterPolicyHasBeenSet() const
 {
     return m_iPFilterPolicyHasBeenSet;
+}
+
+string DomainDetailInfo::GetType() const
+{
+    return m_type;
+}
+
+void DomainDetailInfo::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DomainDetailInfo::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 属性标签详情
+                * 标签详情
                 */
                 class AttrLabelDetail : public AbstractModel
                 {
@@ -171,6 +171,56 @@ namespace TencentCloud
                      */
                     bool IsUpdatingHasBeenSet() const;
 
+                    /**
+                     * 获取状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StatusDesc 状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStatusDesc() const;
+
+                    /**
+                     * 设置状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _statusDesc 状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatusDesc(const std::string& _statusDesc);
+
+                    /**
+                     * 判断参数 StatusDesc 是否已赋值
+                     * @return StatusDesc 是否已赋值
+                     * 
+                     */
+                    bool StatusDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +257,20 @@ namespace TencentCloud
                      */
                     bool m_isUpdating;
                     bool m_isUpdatingHasBeenSet;
+
+                    /**
+                     * 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_statusDesc;
+                    bool m_statusDescHasBeenSet;
 
                 };
             }

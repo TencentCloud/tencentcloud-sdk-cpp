@@ -67,7 +67,8 @@ Cluster::Cluster() :
     m_agentSerialIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_billingResourceModeHasBeenSet(false),
-    m_memRatioHasBeenSet(false)
+    m_memRatioHasBeenSet(false),
+    m_crossTenantEniModeHasBeenSet(false)
 {
 }
 
@@ -620,6 +621,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_memRatioHasBeenSet = true;
     }
 
+    if (value.HasMember("CrossTenantEniMode") && !value["CrossTenantEniMode"].IsNull())
+    {
+        if (!value["CrossTenantEniMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.CrossTenantEniMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_crossTenantEniMode = value["CrossTenantEniMode"].GetInt64();
+        m_crossTenantEniModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1045,6 +1056,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "MemRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memRatio, allocator);
+    }
+
+    if (m_crossTenantEniModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossTenantEniMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_crossTenantEniMode, allocator);
     }
 
 }
@@ -1800,5 +1819,21 @@ void Cluster::SetMemRatio(const int64_t& _memRatio)
 bool Cluster::MemRatioHasBeenSet() const
 {
     return m_memRatioHasBeenSet;
+}
+
+int64_t Cluster::GetCrossTenantEniMode() const
+{
+    return m_crossTenantEniMode;
+}
+
+void Cluster::SetCrossTenantEniMode(const int64_t& _crossTenantEniMode)
+{
+    m_crossTenantEniMode = _crossTenantEniMode;
+    m_crossTenantEniModeHasBeenSet = true;
+}
+
+bool Cluster::CrossTenantEniModeHasBeenSet() const
+{
+    return m_crossTenantEniModeHasBeenSet;
 }
 

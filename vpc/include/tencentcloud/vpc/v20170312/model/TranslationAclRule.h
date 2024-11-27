@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool ActionHasBeenSet() const;
 
+                    /**
+                     * 获取ACL规则描述
+                     * @return Description ACL规则描述
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置ACL规则描述
+                     * @param _description ACL规则描述
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     uint64_t m_action;
                     bool m_actionHasBeenSet;
+
+                    /**
+                     * ACL规则描述
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

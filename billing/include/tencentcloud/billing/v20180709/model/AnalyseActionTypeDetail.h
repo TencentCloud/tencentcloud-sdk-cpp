@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易类型code
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionType 交易类型code
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionType() const;
 
                     /**
                      * 设置交易类型code
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionType 交易类型code
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionType(const std::string& _actionType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易类型Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionTypeName 交易类型Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionTypeName() const;
 
                     /**
                      * 设置交易类型Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionTypeName 交易类型Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionTypeName(const std::string& _actionTypeName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 交易类型code
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
                      * 交易类型Name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionTypeName;
                     bool m_actionTypeNameHasBeenSet;

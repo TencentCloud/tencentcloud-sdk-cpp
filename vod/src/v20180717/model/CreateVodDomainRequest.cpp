@@ -25,7 +25,8 @@ using namespace std;
 CreateVodDomainRequest::CreateVodDomainRequest() :
     m_domainHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
-    m_accelerateAreaHasBeenSet(false)
+    m_accelerateAreaHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string CreateVodDomainRequest::ToJsonString() const
         string key = "AccelerateArea";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_accelerateArea.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void CreateVodDomainRequest::SetAccelerateArea(const string& _accelerateArea)
 bool CreateVodDomainRequest::AccelerateAreaHasBeenSet() const
 {
     return m_accelerateAreaHasBeenSet;
+}
+
+string CreateVodDomainRequest::GetType() const
+{
+    return m_type;
+}
+
+void CreateVodDomainRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool CreateVodDomainRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 
