@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取企业组织ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgId 企业组织ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOrgId() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取创建者UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostUin 创建者UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHostUin() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取创建者昵称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NickName 创建者昵称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNickName() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取企业组织类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgType 企业组织类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOrgType() const;
@@ -110,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否组织管理员。是：true ，否：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsManager 是否组织管理员。是：true ，否：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsManager() const;
@@ -126,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略类型。财务管理：Financial
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgPolicyType 策略类型。财务管理：Financial
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrgPolicyType() const;
@@ -142,9 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgPolicyName 策略名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrgPolicyName() const;
@@ -158,9 +144,7 @@ namespace TencentCloud
 
                     /**
                      * 获取成员财务权限列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgPermission 成员财务权限列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<OrgPermission> GetOrgPermission() const;
@@ -174,9 +158,7 @@ namespace TencentCloud
 
                     /**
                      * 获取组织根节点ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RootNodeId 组织根节点ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRootNodeId() const;
@@ -190,9 +172,7 @@ namespace TencentCloud
 
                     /**
                      * 获取组织创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 组织创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -206,9 +186,7 @@ namespace TencentCloud
 
                     /**
                      * 获取成员加入时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JoinTime 成员加入时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJoinTime() const;
@@ -222,9 +200,7 @@ namespace TencentCloud
 
                     /**
                      * 获取成员是否允许退出。允许：Allow，不允许：Denied
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAllowQuit 成员是否允许退出。允许：Allow，不允许：Denied
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsAllowQuit() const;
@@ -238,9 +214,7 @@ namespace TencentCloud
 
                     /**
                      * 获取代付者Uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayUin 代付者Uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayUin() const;
@@ -254,9 +228,7 @@ namespace TencentCloud
 
                     /**
                      * 获取代付者名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayName 代付者名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayName() const;
@@ -270,9 +242,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可信服务管理员。是：true，否：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAssignManager 是否可信服务管理员。是：true，否：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsAssignManager() const;
@@ -286,9 +256,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否实名主体管理员。是：true，否：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAuthManager 是否实名主体管理员。是：true，否：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsAuthManager() const;
@@ -304,112 +272,96 @@ namespace TencentCloud
 
                     /**
                      * 企业组织ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_orgId;
                     bool m_orgIdHasBeenSet;
 
                     /**
                      * 创建者UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hostUin;
                     bool m_hostUinHasBeenSet;
 
                     /**
                      * 创建者昵称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
 
                     /**
                      * 企业组织类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_orgType;
                     bool m_orgTypeHasBeenSet;
 
                     /**
                      * 是否组织管理员。是：true ，否：false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isManager;
                     bool m_isManagerHasBeenSet;
 
                     /**
                      * 策略类型。财务管理：Financial
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orgPolicyType;
                     bool m_orgPolicyTypeHasBeenSet;
 
                     /**
                      * 策略名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orgPolicyName;
                     bool m_orgPolicyNameHasBeenSet;
 
                     /**
                      * 成员财务权限列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OrgPermission> m_orgPermission;
                     bool m_orgPermissionHasBeenSet;
 
                     /**
                      * 组织根节点ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_rootNodeId;
                     bool m_rootNodeIdHasBeenSet;
 
                     /**
                      * 组织创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 成员加入时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_joinTime;
                     bool m_joinTimeHasBeenSet;
 
                     /**
                      * 成员是否允许退出。允许：Allow，不允许：Denied
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isAllowQuit;
                     bool m_isAllowQuitHasBeenSet;
 
                     /**
                      * 代付者Uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payUin;
                     bool m_payUinHasBeenSet;
 
                     /**
                      * 代付者名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payName;
                     bool m_payNameHasBeenSet;
 
                     /**
                      * 是否可信服务管理员。是：true，否：false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isAssignManager;
                     bool m_isAssignManagerHasBeenSet;
 
                     /**
                      * 是否实名主体管理员。是：true，否：false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isAuthManager;
                     bool m_isAuthManagerHasBeenSet;

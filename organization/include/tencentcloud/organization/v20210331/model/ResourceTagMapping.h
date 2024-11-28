@@ -51,10 +51,8 @@ namespace TencentCloud
                     /**
                      * 获取资源六段式。腾讯云使用资源六段式描述一个资源。
 例如：qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource 资源六段式。腾讯云使用资源六段式描述一个资源。
 例如：qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
@@ -62,10 +60,8 @@ namespace TencentCloud
                     /**
                      * 设置资源六段式。腾讯云使用资源六段式描述一个资源。
 例如：qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource 资源六段式。腾讯云使用资源六段式描述一个资源。
 例如：qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -79,18 +75,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合规详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComplianceDetails 合规详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TagComplianceDetails GetComplianceDetails() const;
 
                     /**
                      * 设置合规详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _complianceDetails 合规详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComplianceDetails(const TagComplianceDetails& _complianceDetails);
@@ -104,18 +96,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 资源标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tags> GetTags() const;
 
                     /**
                      * 设置资源标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 资源标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tags>& _tags);
@@ -132,21 +120,18 @@ namespace TencentCloud
                     /**
                      * 资源六段式。腾讯云使用资源六段式描述一个资源。
 例如：qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * 合规详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TagComplianceDetails m_complianceDetails;
                     bool m_complianceDetailsHasBeenSet;
 
                     /**
                      * 资源标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tags> m_tags;
                     bool m_tagsHasBeenSet;

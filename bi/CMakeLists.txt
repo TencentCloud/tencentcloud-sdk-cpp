@@ -19,8 +19,10 @@ set(bi_public_header
   )
 
 set(bi_public_header_model
+  include/tencentcloud/bi/v20220105/model/PageScreenVO.h
   include/tencentcloud/bi/v20220105/model/DataId.h
   include/tencentcloud/bi/v20220105/model/DescribeUserRoleListResponse.h
+  include/tencentcloud/bi/v20220105/model/ExportScreenPageResponse.h
   include/tencentcloud/bi/v20220105/model/ModifyProjectResponse.h
   include/tencentcloud/bi/v20220105/model/DeleteProjectRequest.h
   include/tencentcloud/bi/v20220105/model/DescribeUserProjectListResponse.h
@@ -29,11 +31,13 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/ModifyDatasourceResponse.h
   include/tencentcloud/bi/v20220105/model/UserRoleListDataRoleInfo.h
   include/tencentcloud/bi/v20220105/model/ApplyEmbedIntervalRequest.h
-  include/tencentcloud/bi/v20220105/model/EmbedTokenInfo.h
   include/tencentcloud/bi/v20220105/model/ProjectConfigResult.h
+  include/tencentcloud/bi/v20220105/model/EmbedTokenInfo.h
+  include/tencentcloud/bi/v20220105/model/DescribePageWidgetListResponse.h
   include/tencentcloud/bi/v20220105/model/DeleteUserRoleResponse.h
-  include/tencentcloud/bi/v20220105/model/DescribeUserProjectListRequest.h
   include/tencentcloud/bi/v20220105/model/ErrorInfo.h
+  include/tencentcloud/bi/v20220105/model/DescribeUserProjectListRequest.h
+  include/tencentcloud/bi/v20220105/model/DescribePageWidgetListRequest.h
   include/tencentcloud/bi/v20220105/model/CreateDatasourceCloudResponse.h
   include/tencentcloud/bi/v20220105/model/ProjectConfigList.h
   include/tencentcloud/bi/v20220105/model/DeleteUserRoleRequest.h
@@ -46,6 +50,7 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/ModifyUserRoleResponse.h
   include/tencentcloud/bi/v20220105/model/CreateEmbedTokenRequest.h
   include/tencentcloud/bi/v20220105/model/CreateUserRoleProjectResponse.h
+  include/tencentcloud/bi/v20220105/model/PageScreenListVO.h
   include/tencentcloud/bi/v20220105/model/DescribeProjectInfoRequest.h
   include/tencentcloud/bi/v20220105/model/BaseStateAction.h
   include/tencentcloud/bi/v20220105/model/Data.h
@@ -66,7 +71,7 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/DeleteUserRoleProjectRequest.h
   include/tencentcloud/bi/v20220105/model/CreateProjectResponse.h
   include/tencentcloud/bi/v20220105/model/DescribeProjectInfoResponse.h
-  include/tencentcloud/bi/v20220105/model/PermissionComponent.h
+  include/tencentcloud/bi/v20220105/model/ExportScreenPageRequest.h
   include/tencentcloud/bi/v20220105/model/DescribeUserRoleListRequest.h
   include/tencentcloud/bi/v20220105/model/DeleteProjectResponse.h
   include/tencentcloud/bi/v20220105/model/ProjectListData.h
@@ -74,6 +79,8 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/PermissionGroup.h
   include/tencentcloud/bi/v20220105/model/CreateEmbedTokenResponse.h
   include/tencentcloud/bi/v20220105/model/CreateUserRoleProjectRequest.h
+  include/tencentcloud/bi/v20220105/model/WidgetListVO.h
+  include/tencentcloud/bi/v20220105/model/WidgetVO.h
   include/tencentcloud/bi/v20220105/model/DescribeDatasourceListRequest.h
   include/tencentcloud/bi/v20220105/model/ApplyEmbedIntervalResponse.h
   include/tencentcloud/bi/v20220105/model/CreateDatasourceResponse.h
@@ -84,12 +91,15 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/UserIdAndUserName.h
   include/tencentcloud/bi/v20220105/model/DeleteDatasourceResponse.h
   include/tencentcloud/bi/v20220105/model/CreateProjectRequest.h
+  include/tencentcloud/bi/v20220105/model/PermissionComponent.h
   )
 
 set(bi_src
   src/v20220105/BiClient.cpp
+  src/v20220105/model/PageScreenVO.cpp
   src/v20220105/model/DataId.cpp
   src/v20220105/model/DescribeUserRoleListResponse.cpp
+  src/v20220105/model/ExportScreenPageResponse.cpp
   src/v20220105/model/ModifyProjectResponse.cpp
   src/v20220105/model/DeleteProjectRequest.cpp
   src/v20220105/model/DescribeUserProjectListResponse.cpp
@@ -98,11 +108,13 @@ set(bi_src
   src/v20220105/model/ModifyDatasourceResponse.cpp
   src/v20220105/model/UserRoleListDataRoleInfo.cpp
   src/v20220105/model/ApplyEmbedIntervalRequest.cpp
-  src/v20220105/model/EmbedTokenInfo.cpp
   src/v20220105/model/ProjectConfigResult.cpp
+  src/v20220105/model/EmbedTokenInfo.cpp
+  src/v20220105/model/DescribePageWidgetListResponse.cpp
   src/v20220105/model/DeleteUserRoleResponse.cpp
-  src/v20220105/model/DescribeUserProjectListRequest.cpp
   src/v20220105/model/ErrorInfo.cpp
+  src/v20220105/model/DescribeUserProjectListRequest.cpp
+  src/v20220105/model/DescribePageWidgetListRequest.cpp
   src/v20220105/model/CreateDatasourceCloudResponse.cpp
   src/v20220105/model/ProjectConfigList.cpp
   src/v20220105/model/DeleteUserRoleRequest.cpp
@@ -115,6 +127,7 @@ set(bi_src
   src/v20220105/model/ModifyUserRoleResponse.cpp
   src/v20220105/model/CreateEmbedTokenRequest.cpp
   src/v20220105/model/CreateUserRoleProjectResponse.cpp
+  src/v20220105/model/PageScreenListVO.cpp
   src/v20220105/model/DescribeProjectInfoRequest.cpp
   src/v20220105/model/BaseStateAction.cpp
   src/v20220105/model/Data.cpp
@@ -135,7 +148,7 @@ set(bi_src
   src/v20220105/model/DeleteUserRoleProjectRequest.cpp
   src/v20220105/model/CreateProjectResponse.cpp
   src/v20220105/model/DescribeProjectInfoResponse.cpp
-  src/v20220105/model/PermissionComponent.cpp
+  src/v20220105/model/ExportScreenPageRequest.cpp
   src/v20220105/model/DescribeUserRoleListRequest.cpp
   src/v20220105/model/DeleteProjectResponse.cpp
   src/v20220105/model/ProjectListData.cpp
@@ -143,6 +156,8 @@ set(bi_src
   src/v20220105/model/PermissionGroup.cpp
   src/v20220105/model/CreateEmbedTokenResponse.cpp
   src/v20220105/model/CreateUserRoleProjectRequest.cpp
+  src/v20220105/model/WidgetListVO.cpp
+  src/v20220105/model/WidgetVO.cpp
   src/v20220105/model/DescribeDatasourceListRequest.cpp
   src/v20220105/model/ApplyEmbedIntervalResponse.cpp
   src/v20220105/model/CreateDatasourceResponse.cpp
@@ -153,6 +168,7 @@ set(bi_src
   src/v20220105/model/UserIdAndUserName.cpp
   src/v20220105/model/DeleteDatasourceResponse.cpp
   src/v20220105/model/CreateProjectRequest.cpp
+  src/v20220105/model/PermissionComponent.cpp
   )
 
 set(bi_include

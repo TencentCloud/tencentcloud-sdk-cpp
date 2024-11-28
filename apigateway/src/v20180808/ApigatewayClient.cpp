@@ -513,6 +513,49 @@ ApigatewayClient::CreateApiKeyOutcomeCallable ApigatewayClient::CreateApiKeyCall
     return task->get_future();
 }
 
+ApigatewayClient::CreateExclusiveInstancesOutcome ApigatewayClient::CreateExclusiveInstances(const CreateExclusiveInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExclusiveInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExclusiveInstancesResponse rsp = CreateExclusiveInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExclusiveInstancesOutcome(rsp);
+        else
+            return CreateExclusiveInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExclusiveInstancesOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::CreateExclusiveInstancesAsync(const CreateExclusiveInstancesRequest& request, const CreateExclusiveInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateExclusiveInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::CreateExclusiveInstancesOutcomeCallable ApigatewayClient::CreateExclusiveInstancesCallable(const CreateExclusiveInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateExclusiveInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateExclusiveInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::CreateIPStrategyOutcome ApigatewayClient::CreateIPStrategy(const CreateIPStrategyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateIPStrategy");
@@ -2097,6 +2140,49 @@ ApigatewayClient::DescribeIPStrategysStatusOutcomeCallable ApigatewayClient::Des
         [this, request]()
         {
             return this->DescribeIPStrategysStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::DescribeInstancesNetworkConfigOutcome ApigatewayClient::DescribeInstancesNetworkConfig(const DescribeInstancesNetworkConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancesNetworkConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesNetworkConfigResponse rsp = DescribeInstancesNetworkConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesNetworkConfigOutcome(rsp);
+        else
+            return DescribeInstancesNetworkConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesNetworkConfigOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribeInstancesNetworkConfigAsync(const DescribeInstancesNetworkConfigRequest& request, const DescribeInstancesNetworkConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancesNetworkConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribeInstancesNetworkConfigOutcomeCallable ApigatewayClient::DescribeInstancesNetworkConfigCallable(const DescribeInstancesNetworkConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesNetworkConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancesNetworkConfig(request);
         }
     );
 

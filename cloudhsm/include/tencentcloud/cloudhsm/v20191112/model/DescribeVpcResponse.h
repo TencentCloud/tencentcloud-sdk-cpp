@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Vpc对象列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcList Vpc对象列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Vpc> GetVpcList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * Vpc对象列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Vpc> m_vpcList;
                     bool m_vpcListHasBeenSet;

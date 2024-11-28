@@ -83,6 +83,49 @@ TrtcClient::ControlAIConversationOutcomeCallable TrtcClient::ControlAIConversati
     return task->get_future();
 }
 
+TrtcClient::CreateBasicModerationOutcome TrtcClient::CreateBasicModeration(const CreateBasicModerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBasicModeration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBasicModerationResponse rsp = CreateBasicModerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBasicModerationOutcome(rsp);
+        else
+            return CreateBasicModerationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBasicModerationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::CreateBasicModerationAsync(const CreateBasicModerationRequest& request, const CreateBasicModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBasicModeration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::CreateBasicModerationOutcomeCallable TrtcClient::CreateBasicModerationCallable(const CreateBasicModerationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBasicModerationOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBasicModeration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::CreateCloudRecordingOutcome TrtcClient::CreateCloudRecording(const CreateCloudRecordingRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCloudRecording");
@@ -162,6 +205,49 @@ TrtcClient::CreatePictureOutcomeCallable TrtcClient::CreatePictureCallable(const
         [this, request]()
         {
             return this->CreatePicture(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::DeleteBasicModerationOutcome TrtcClient::DeleteBasicModeration(const DeleteBasicModerationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBasicModeration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBasicModerationResponse rsp = DeleteBasicModerationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBasicModerationOutcome(rsp);
+        else
+            return DeleteBasicModerationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBasicModerationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DeleteBasicModerationAsync(const DeleteBasicModerationRequest& request, const DeleteBasicModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBasicModeration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DeleteBasicModerationOutcomeCallable TrtcClient::DeleteBasicModerationCallable(const DeleteBasicModerationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBasicModerationOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBasicModeration(request);
         }
     );
 

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 文件名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置文件名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 文件名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url 文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 文件名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 文件路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

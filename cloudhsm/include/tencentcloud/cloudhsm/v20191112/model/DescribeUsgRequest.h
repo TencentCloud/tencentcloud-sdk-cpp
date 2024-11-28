@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键字
-                     * @return SearchWord 搜索关键字
+                     * 获取过滤条件，支持安全组id
+                     * @return SearchWord 过滤条件，支持安全组id
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置搜索关键字
-                     * @param _searchWord 搜索关键字
+                     * 设置过滤条件，支持安全组id
+                     * @param _searchWord 过滤条件，支持安全组id
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 搜索关键字
+                     * 过滤条件，支持安全组id
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;

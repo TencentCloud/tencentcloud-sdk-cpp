@@ -19,36 +19,48 @@ set(config_public_header
   )
 
 set(config_public_header_model
+  include/tencentcloud/config/v20220802/model/ResourceListInfo.h
+  include/tencentcloud/config/v20220802/model/ListAggregateConfigRulesRequest.h
   include/tencentcloud/config/v20220802/model/ConfigRule.h
   include/tencentcloud/config/v20220802/model/Tag.h
   include/tencentcloud/config/v20220802/model/ListConfigRulesResponse.h
+  include/tencentcloud/config/v20220802/model/DescribeDiscoveredResourceResponse.h
+  include/tencentcloud/config/v20220802/model/ListAggregateConfigRulesResponse.h
   include/tencentcloud/config/v20220802/model/InputParameterForManage.h
   include/tencentcloud/config/v20220802/model/ListConfigRulesRequest.h
   include/tencentcloud/config/v20220802/model/SourceConditionForManage.h
   include/tencentcloud/config/v20220802/model/TriggerType.h
   include/tencentcloud/config/v20220802/model/PutEvaluationsRequest.h
-  include/tencentcloud/config/v20220802/model/ListAggregateConfigRulesRequest.h
-  include/tencentcloud/config/v20220802/model/ListAggregateConfigRulesResponse.h
-  include/tencentcloud/config/v20220802/model/PutEvaluationsResponse.h
+  include/tencentcloud/config/v20220802/model/Filter.h
+  include/tencentcloud/config/v20220802/model/DescribeDiscoveredResourceRequest.h
+  include/tencentcloud/config/v20220802/model/ListDiscoveredResourcesResponse.h
+  include/tencentcloud/config/v20220802/model/ListDiscoveredResourcesRequest.h
   include/tencentcloud/config/v20220802/model/InputParameter.h
+  include/tencentcloud/config/v20220802/model/PutEvaluationsResponse.h
   include/tencentcloud/config/v20220802/model/Evaluation.h
   include/tencentcloud/config/v20220802/model/Annotation.h
   )
 
 set(config_src
   src/v20220802/ConfigClient.cpp
+  src/v20220802/model/ResourceListInfo.cpp
+  src/v20220802/model/ListAggregateConfigRulesRequest.cpp
   src/v20220802/model/ConfigRule.cpp
   src/v20220802/model/Tag.cpp
   src/v20220802/model/ListConfigRulesResponse.cpp
+  src/v20220802/model/DescribeDiscoveredResourceResponse.cpp
+  src/v20220802/model/ListAggregateConfigRulesResponse.cpp
   src/v20220802/model/InputParameterForManage.cpp
   src/v20220802/model/ListConfigRulesRequest.cpp
   src/v20220802/model/SourceConditionForManage.cpp
   src/v20220802/model/TriggerType.cpp
   src/v20220802/model/PutEvaluationsRequest.cpp
-  src/v20220802/model/ListAggregateConfigRulesRequest.cpp
-  src/v20220802/model/ListAggregateConfigRulesResponse.cpp
-  src/v20220802/model/PutEvaluationsResponse.cpp
+  src/v20220802/model/Filter.cpp
+  src/v20220802/model/DescribeDiscoveredResourceRequest.cpp
+  src/v20220802/model/ListDiscoveredResourcesResponse.cpp
+  src/v20220802/model/ListDiscoveredResourcesRequest.cpp
   src/v20220802/model/InputParameter.cpp
+  src/v20220802/model/PutEvaluationsResponse.cpp
   src/v20220802/model/Evaluation.cpp
   src/v20220802/model/Annotation.cpp
   )

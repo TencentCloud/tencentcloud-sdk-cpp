@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId VPC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId VPC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网实例ID，例如：subnet-bthucmmy。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网实例ID，例如：subnet-bthucmmy。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网实例ID，例如：subnet-bthucmmy。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网实例ID，例如：subnet-bthucmmy。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetName 子网名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
                      * 设置子网名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetName 子网名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网的 IPv4 CIDR。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CidrBlock 子网的 IPv4 CIDR。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
                      * 设置子网的 IPv4 CIDR。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cidrBlock 子网的 IPv4 CIDR。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用IP数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailableIpAddressCount 可用IP数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAvailableIpAddressCount() const;
 
                     /**
                      * 设置可用IP数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _availableIpAddressCount 可用IP数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAvailableIpAddressCount(const int64_t& _availableIpAddressCount);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网的 IPv6 CIDR。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv6CidrBlock 子网的 IPv6 CIDR。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIpv6CidrBlock() const;
 
                     /**
                      * 设置子网的 IPv6 CIDR。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipv6CidrBlock 子网的 IPv6 CIDR。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总IP数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalIpAddressCount 总IP数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalIpAddressCount() const;
 
                     /**
                      * 设置总IP数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalIpAddressCount 总IP数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalIpAddressCount(const int64_t& _totalIpAddressCount);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为默认Subnet
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDefault 是否为默认Subnet
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDefault() const;
 
                     /**
                      * 设置是否为默认Subnet
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDefault 是否为默认Subnet
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDefault(const bool& _isDefault);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * VPC实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 子网实例ID，例如：subnet-bthucmmy。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 子网名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
 
                     /**
                      * 子网的 IPv4 CIDR。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;
 
                     /**
                      * 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
                      * 可用IP数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_availableIpAddressCount;
                     bool m_availableIpAddressCountHasBeenSet;
 
                     /**
                      * 子网的 IPv6 CIDR。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ipv6CidrBlock;
                     bool m_ipv6CidrBlockHasBeenSet;
 
                     /**
                      * 总IP数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalIpAddressCount;
                     bool m_totalIpAddressCountHasBeenSet;
 
                     /**
                      * 是否为默认Subnet
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDefault;
                     bool m_isDefaultHasBeenSet;

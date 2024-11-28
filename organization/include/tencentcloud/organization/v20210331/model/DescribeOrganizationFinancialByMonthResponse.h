@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取产品消耗详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 产品消耗详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<OrgFinancialByMonth> GetItems() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 产品消耗详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OrgFinancialByMonth> m_items;
                     bool m_itemsHasBeenSet;

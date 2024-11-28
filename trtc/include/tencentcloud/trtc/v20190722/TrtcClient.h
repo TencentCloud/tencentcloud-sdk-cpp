@@ -25,10 +25,14 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/trtc/v20190722/model/ControlAIConversationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/ControlAIConversationResponse.h>
+#include <tencentcloud/trtc/v20190722/model/CreateBasicModerationRequest.h>
+#include <tencentcloud/trtc/v20190722/model/CreateBasicModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreateCloudRecordingRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreateCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreatePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreatePictureResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DeleteBasicModerationRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DeleteBasicModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudRecordingRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureRequest.h>
@@ -150,12 +154,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ControlAIConversationResponse> ControlAIConversationOutcome;
                 typedef std::future<ControlAIConversationOutcome> ControlAIConversationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::ControlAIConversationRequest&, ControlAIConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlAIConversationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBasicModerationResponse> CreateBasicModerationOutcome;
+                typedef std::future<CreateBasicModerationOutcome> CreateBasicModerationOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::CreateBasicModerationRequest&, CreateBasicModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBasicModerationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCloudRecordingResponse> CreateCloudRecordingOutcome;
                 typedef std::future<CreateCloudRecordingOutcome> CreateCloudRecordingOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreateCloudRecordingRequest&, CreateCloudRecordingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudRecordingAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePictureResponse> CreatePictureOutcome;
                 typedef std::future<CreatePictureOutcome> CreatePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreatePictureRequest&, CreatePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePictureAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBasicModerationResponse> DeleteBasicModerationOutcome;
+                typedef std::future<DeleteBasicModerationOutcome> DeleteBasicModerationOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DeleteBasicModerationRequest&, DeleteBasicModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBasicModerationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCloudRecordingResponse> DeleteCloudRecordingOutcome;
                 typedef std::future<DeleteCloudRecordingOutcome> DeleteCloudRecordingOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DeleteCloudRecordingRequest&, DeleteCloudRecordingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudRecordingAsyncHandler;
@@ -326,6 +336,16 @@ namespace TencentCloud
 
                 /**
                  *接口说明：
+启动终端审核功能，完成房间内的音频审核。
+                 * @param req CreateBasicModerationRequest
+                 * @return CreateBasicModerationOutcome
+                 */
+                CreateBasicModerationOutcome CreateBasicModeration(const Model::CreateBasicModerationRequest &request);
+                void CreateBasicModerationAsync(const Model::CreateBasicModerationRequest& request, const CreateBasicModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBasicModerationOutcomeCallable CreateBasicModerationCallable(const Model::CreateBasicModerationRequest& request);
+
+                /**
+                 *接口说明：
 启动云端录制功能，完成房间内的音视频录制，并上传到指定的云存储。您可以通过此 API 接口把TRTC 房间中的每一路音视频流做单独的录制又或者多路视频画面合流混成一路。
 
 您可以通过此接口实现如下目标：
@@ -352,6 +372,15 @@ namespace TencentCloud
                 CreatePictureOutcome CreatePicture(const Model::CreatePictureRequest &request);
                 void CreatePictureAsync(const Model::CreatePictureRequest& request, const CreatePictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePictureOutcomeCallable CreatePictureCallable(const Model::CreatePictureRequest& request);
+
+                /**
+                 *成功开启审核任务后，可以使用此接口来停止任务。
+                 * @param req DeleteBasicModerationRequest
+                 * @return DeleteBasicModerationOutcome
+                 */
+                DeleteBasicModerationOutcome DeleteBasicModeration(const Model::DeleteBasicModerationRequest &request);
+                void DeleteBasicModerationAsync(const Model::DeleteBasicModerationRequest& request, const DeleteBasicModerationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBasicModerationOutcomeCallable DeleteBasicModerationCallable(const Model::DeleteBasicModerationRequest& request);
 
                 /**
                  *成功开启录制后，可以使用此接口来停止录制任务。停止录制成功后不代表文件全部传输完成，如果未完成后台将会继续上传文件，成功后通过事件回调通知客户文件全部传输完成状态。

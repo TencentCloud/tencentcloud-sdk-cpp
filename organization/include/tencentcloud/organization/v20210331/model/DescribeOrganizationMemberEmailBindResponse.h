@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindId 绑定ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBindId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取申请时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplyTime 申请时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplyTime() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取邮箱地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Email 邮箱地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEmail() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取安全手机号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Phone 安全手机号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhone() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定状态。    未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindStatus 绑定状态。    未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBindStatus() const;
@@ -125,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindTime 绑定时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBindTime() const;
@@ -141,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取失败说明。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 失败说明。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
@@ -157,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取安全手机绑定状态 。 未绑定：0，已绑定：1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhoneBind 安全手机绑定状态 。 未绑定：0，已绑定：1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPhoneBind() const;
@@ -173,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取国际区号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CountryCode 国际区号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCountryCode() const;
@@ -191,63 +173,54 @@ namespace TencentCloud
 
                     /**
                      * 绑定ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_bindId;
                     bool m_bindIdHasBeenSet;
 
                     /**
                      * 申请时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applyTime;
                     bool m_applyTimeHasBeenSet;
 
                     /**
                      * 邮箱地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
 
                     /**
                      * 安全手机号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
                      * 绑定状态。    未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bindStatus;
                     bool m_bindStatusHasBeenSet;
 
                     /**
                      * 绑定时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bindTime;
                     bool m_bindTimeHasBeenSet;
 
                     /**
                      * 失败说明。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 安全手机绑定状态 。 未绑定：0，已绑定：1
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_phoneBind;
                     bool m_phoneBindHasBeenSet;
 
                     /**
                      * 国际区号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_countryCode;
                     bool m_countryCodeHasBeenSet;

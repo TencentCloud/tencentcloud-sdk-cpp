@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取身份ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityId 身份ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIdentityId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 身份ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_identityId;
                     bool m_identityIdHasBeenSet;

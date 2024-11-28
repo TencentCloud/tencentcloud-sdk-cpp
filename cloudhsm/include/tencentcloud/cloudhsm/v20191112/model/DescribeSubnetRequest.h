@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取查找关键字
-                     * @return SearchWord 查找关键字
+                     * 获取过滤条件
+                     * @return SearchWord 过滤条件
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置查找关键字
-                     * @param _searchWord 查找关键字
+                     * 设置过滤条件
+                     * @param _searchWord 过滤条件
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 查找关键字
+                     * 过滤条件
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;

@@ -88,8 +88,8 @@ namespace TencentCloud
                     bool OffsiteFlagHasBeenSet() const;
 
                     /**
-                     * 获取1: 提示7天信任设备 0: 不提示
-                     * @return PromptTrust 1: 提示7天信任设备 0: 不提示
+                     * 获取是否提示信任设备：1: 提示  0: 不提示
+                     * @return PromptTrust 是否提示信任设备：1: 提示  0: 不提示
                      * 
                      */
                     uint64_t GetPromptTrust() const;
@@ -122,7 +122,7 @@ namespace TencentCloud
                     bool m_offsiteFlagHasBeenSet;
 
                     /**
-                     * 1: 提示7天信任设备 0: 不提示
+                     * 是否提示信任设备：1: 提示  0: 不提示
                      */
                     uint64_t m_promptTrust;
                     bool m_promptTrustHasBeenSet;

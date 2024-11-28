@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取身份ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityId 身份ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIdentityId() const;
 
                     /**
                      * 设置身份ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identityId 身份ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentityId(const int64_t& _identityId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取身份名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityAliasName 身份名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdentityAliasName() const;
 
                     /**
                      * 设置身份名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identityAliasName 身份名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentityAliasName(const std::string& _identityAliasName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取身份策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityPolicy 身份策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IdentityPolicy> GetIdentityPolicy() const;
 
                     /**
                      * 设置身份策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identityPolicy 身份策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentityPolicy(const std::vector<IdentityPolicy>& _identityPolicy);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取身份类型。 1-预设、 2-自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityType 身份类型。 1-预设、 2-自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIdentityType() const;
 
                     /**
                      * 设置身份类型。 1-预设、 2-自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identityType 身份类型。 1-预设、 2-自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentityType(const uint64_t& _identityType);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 身份ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_identityId;
                     bool m_identityIdHasBeenSet;
 
                     /**
                      * 身份名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identityAliasName;
                     bool m_identityAliasNameHasBeenSet;
 
                     /**
                      * 描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 身份策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IdentityPolicy> m_identityPolicy;
                     bool m_identityPolicyHasBeenSet;
 
                     /**
                      * 身份类型。 1-预设、 2-自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_identityType;
                     bool m_identityTypeHasBeenSet;
 
                     /**
                      * 更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

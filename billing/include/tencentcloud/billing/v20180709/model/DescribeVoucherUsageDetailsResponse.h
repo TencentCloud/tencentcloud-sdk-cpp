@@ -74,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取代金券使用记录细节
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsageRecords 代金券使用记录细节
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<UsageRecords> GetUsageRecords() const;
@@ -104,7 +102,6 @@ namespace TencentCloud
 
                     /**
                      * 代金券使用记录细节
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UsageRecords> m_usageRecords;
                     bool m_usageRecordsHasBeenSet;

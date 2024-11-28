@@ -208,13 +208,13 @@ namespace TencentCloud
 <li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li>
 <li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li>
 <li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li>
-<li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>
+<li>ASG_AVG_WAN_TRAFFIC_IN：平均外网入带宽</li>
                      * @return PredefinedMetricType 预定义监控项，仅适用于目标追踪策略。取值范围：
 <li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li>
 <li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li>
 <li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li>
 <li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li>
-<li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>
+<li>ASG_AVG_WAN_TRAFFIC_IN：平均外网入带宽</li>
                      * 
                      */
                     std::string GetPredefinedMetricType() const;
@@ -225,13 +225,13 @@ namespace TencentCloud
 <li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li>
 <li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li>
 <li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li>
-<li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>
+<li>ASG_AVG_WAN_TRAFFIC_IN：平均外网入带宽</li>
                      * @param _predefinedMetricType 预定义监控项，仅适用于目标追踪策略。取值范围：
 <li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li>
 <li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li>
 <li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li>
 <li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li>
-<li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>
+<li>ASG_AVG_WAN_TRAFFIC_IN：平均外网入带宽</li>
                      * 
                      */
                     void SetPredefinedMetricType(const std::string& _predefinedMetricType);
@@ -412,7 +412,7 @@ namespace TencentCloud
 <li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li>
 <li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li>
 <li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li>
-<li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>
+<li>ASG_AVG_WAN_TRAFFIC_IN：平均外网入带宽</li>
                      */
                     std::string m_predefinedMetricType;
                     bool m_predefinedMetricTypeHasBeenSet;

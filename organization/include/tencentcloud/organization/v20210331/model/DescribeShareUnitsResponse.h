@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取共享单元列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 共享单元列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ManagerShareUnit> GetItems() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 总数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 共享单元列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ManagerShareUnit> m_items;
                     bool m_itemsHasBeenSet;

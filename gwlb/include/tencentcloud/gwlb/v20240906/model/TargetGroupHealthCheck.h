@@ -101,18 +101,18 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取健康检查端口，探测协议未tcp时，该参数必填。
+                     * 获取健康检查端口，探测协议为tcp时，该参数必填。
 
-                     * @return Port 健康检查端口，探测协议未tcp时，该参数必填。
+                     * @return Port 健康检查端口，探测协议为tcp时，该参数必填。
 
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置健康检查端口，探测协议未tcp时，该参数必填。
+                     * 设置健康检查端口，探测协议为tcp时，该参数必填。
 
-                     * @param _port 健康检查端口，探测协议未tcp时，该参数必填。
+                     * @param _port 健康检查端口，探测协议为tcp时，该参数必填。
 
                      * 
                      */
@@ -227,7 +227,7 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 健康检查端口，探测协议未tcp时，该参数必填。
+                     * 健康检查端口，探测协议为tcp时，该参数必填。
 
                      */
                     int64_t m_port;

@@ -87,6 +87,8 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupMemberListRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupMemberListResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeMarqueeRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeMarqueeResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeQuestionListRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeQuestionListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRecordRequest.h>
@@ -141,6 +143,8 @@
 #include <tencentcloud/lcic/v20220817/model/SendRoomNotificationMessageResponse.h>
 #include <tencentcloud/lcic/v20220817/model/SetAppCustomContentRequest.h>
 #include <tencentcloud/lcic/v20220817/model/SetAppCustomContentResponse.h>
+#include <tencentcloud/lcic/v20220817/model/SetMarqueeRequest.h>
+#include <tencentcloud/lcic/v20220817/model/SetMarqueeResponse.h>
 #include <tencentcloud/lcic/v20220817/model/SetWatermarkRequest.h>
 #include <tencentcloud/lcic/v20220817/model/SetWatermarkResponse.h>
 #include <tencentcloud/lcic/v20220817/model/StartRecordRequest.h>
@@ -263,6 +267,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGroupMemberListResponse> DescribeGroupMemberListOutcome;
                 typedef std::future<DescribeGroupMemberListOutcome> DescribeGroupMemberListOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeGroupMemberListRequest&, DescribeGroupMemberListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupMemberListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMarqueeResponse> DescribeMarqueeOutcome;
+                typedef std::future<DescribeMarqueeOutcome> DescribeMarqueeOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeMarqueeRequest&, DescribeMarqueeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMarqueeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeQuestionListResponse> DescribeQuestionListOutcome;
                 typedef std::future<DescribeQuestionListOutcome> DescribeQuestionListOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeQuestionListRequest&, DescribeQuestionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuestionListAsyncHandler;
@@ -344,6 +351,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetAppCustomContentResponse> SetAppCustomContentOutcome;
                 typedef std::future<SetAppCustomContentOutcome> SetAppCustomContentOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::SetAppCustomContentRequest&, SetAppCustomContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAppCustomContentAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetMarqueeResponse> SetMarqueeOutcome;
+                typedef std::future<SetMarqueeOutcome> SetMarqueeOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::SetMarqueeRequest&, SetMarqueeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetMarqueeAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetWatermarkResponse> SetWatermarkOutcome;
                 typedef std::future<SetWatermarkOutcome> SetWatermarkOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::SetWatermarkRequest&, SetWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetWatermarkAsyncHandler;
@@ -656,6 +666,15 @@ namespace TencentCloud
                 DescribeGroupMemberListOutcomeCallable DescribeGroupMemberListCallable(const Model::DescribeGroupMemberListRequest& request);
 
                 /**
+                 *查询跑马灯配置
+                 * @param req DescribeMarqueeRequest
+                 * @return DescribeMarqueeOutcome
+                 */
+                DescribeMarqueeOutcome DescribeMarquee(const Model::DescribeMarqueeRequest &request);
+                void DescribeMarqueeAsync(const Model::DescribeMarqueeRequest& request, const DescribeMarqueeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMarqueeOutcomeCallable DescribeMarqueeCallable(const Model::DescribeMarqueeRequest& request);
+
+                /**
                  *获取房间提问列表
                  * @param req DescribeQuestionListRequest
                  * @return DescribeQuestionListOutcome
@@ -899,6 +918,15 @@ namespace TencentCloud
                 SetAppCustomContentOutcome SetAppCustomContent(const Model::SetAppCustomContentRequest &request);
                 void SetAppCustomContentAsync(const Model::SetAppCustomContentRequest& request, const SetAppCustomContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetAppCustomContentOutcomeCallable SetAppCustomContentCallable(const Model::SetAppCustomContentRequest& request);
+
+                /**
+                 *设置跑马灯参数设置
+                 * @param req SetMarqueeRequest
+                 * @return SetMarqueeOutcome
+                 */
+                SetMarqueeOutcome SetMarquee(const Model::SetMarqueeRequest &request);
+                void SetMarqueeAsync(const Model::SetMarqueeRequest& request, const SetMarqueeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetMarqueeOutcomeCallable SetMarqueeCallable(const Model::SetMarqueeRequest& request);
 
                 /**
                  *设置水印

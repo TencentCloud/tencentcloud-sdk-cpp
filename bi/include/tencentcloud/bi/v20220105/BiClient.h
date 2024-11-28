@@ -47,6 +47,8 @@
 #include <tencentcloud/bi/v20220105/model/DeleteUserRoleProjectResponse.h>
 #include <tencentcloud/bi/v20220105/model/DescribeDatasourceListRequest.h>
 #include <tencentcloud/bi/v20220105/model/DescribeDatasourceListResponse.h>
+#include <tencentcloud/bi/v20220105/model/DescribePageWidgetListRequest.h>
+#include <tencentcloud/bi/v20220105/model/DescribePageWidgetListResponse.h>
 #include <tencentcloud/bi/v20220105/model/DescribeProjectInfoRequest.h>
 #include <tencentcloud/bi/v20220105/model/DescribeProjectInfoResponse.h>
 #include <tencentcloud/bi/v20220105/model/DescribeProjectListRequest.h>
@@ -57,6 +59,8 @@
 #include <tencentcloud/bi/v20220105/model/DescribeUserRoleListResponse.h>
 #include <tencentcloud/bi/v20220105/model/DescribeUserRoleProjectListRequest.h>
 #include <tencentcloud/bi/v20220105/model/DescribeUserRoleProjectListResponse.h>
+#include <tencentcloud/bi/v20220105/model/ExportScreenPageRequest.h>
+#include <tencentcloud/bi/v20220105/model/ExportScreenPageResponse.h>
 #include <tencentcloud/bi/v20220105/model/ModifyDatasourceRequest.h>
 #include <tencentcloud/bi/v20220105/model/ModifyDatasourceResponse.h>
 #include <tencentcloud/bi/v20220105/model/ModifyDatasourceCloudRequest.h>
@@ -117,6 +121,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDatasourceListResponse> DescribeDatasourceListOutcome;
                 typedef std::future<DescribeDatasourceListOutcome> DescribeDatasourceListOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::DescribeDatasourceListRequest&, DescribeDatasourceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatasourceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePageWidgetListResponse> DescribePageWidgetListOutcome;
+                typedef std::future<DescribePageWidgetListOutcome> DescribePageWidgetListOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::DescribePageWidgetListRequest&, DescribePageWidgetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePageWidgetListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectInfoResponse> DescribeProjectInfoOutcome;
                 typedef std::future<DescribeProjectInfoOutcome> DescribeProjectInfoOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::DescribeProjectInfoRequest&, DescribeProjectInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectInfoAsyncHandler;
@@ -132,6 +139,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserRoleProjectListResponse> DescribeUserRoleProjectListOutcome;
                 typedef std::future<DescribeUserRoleProjectListOutcome> DescribeUserRoleProjectListOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::DescribeUserRoleProjectListRequest&, DescribeUserRoleProjectListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserRoleProjectListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportScreenPageResponse> ExportScreenPageOutcome;
+                typedef std::future<ExportScreenPageOutcome> ExportScreenPageOutcomeCallable;
+                typedef std::function<void(const BiClient*, const Model::ExportScreenPageRequest&, ExportScreenPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportScreenPageAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDatasourceResponse> ModifyDatasourceOutcome;
                 typedef std::future<ModifyDatasourceOutcome> ModifyDatasourceOutcomeCallable;
                 typedef std::function<void(const BiClient*, const Model::ModifyDatasourceRequest&, ModifyDatasourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatasourceAsyncHandler;
@@ -259,6 +269,15 @@ namespace TencentCloud
                 DescribeDatasourceListOutcomeCallable DescribeDatasourceListCallable(const Model::DescribeDatasourceListRequest& request);
 
                 /**
+                 *查询页面组件信息
+                 * @param req DescribePageWidgetListRequest
+                 * @return DescribePageWidgetListOutcome
+                 */
+                DescribePageWidgetListOutcome DescribePageWidgetList(const Model::DescribePageWidgetListRequest &request);
+                void DescribePageWidgetListAsync(const Model::DescribePageWidgetListRequest& request, const DescribePageWidgetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePageWidgetListOutcomeCallable DescribePageWidgetListCallable(const Model::DescribePageWidgetListRequest& request);
+
+                /**
                  *项目详情接口
                  * @param req DescribeProjectInfoRequest
                  * @return DescribeProjectInfoOutcome
@@ -302,6 +321,15 @@ namespace TencentCloud
                 DescribeUserRoleProjectListOutcome DescribeUserRoleProjectList(const Model::DescribeUserRoleProjectListRequest &request);
                 void DescribeUserRoleProjectListAsync(const Model::DescribeUserRoleProjectListRequest& request, const DescribeUserRoleProjectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserRoleProjectListOutcomeCallable DescribeUserRoleProjectListCallable(const Model::DescribeUserRoleProjectListRequest& request);
+
+                /**
+                 *页面截图导出
+                 * @param req ExportScreenPageRequest
+                 * @return ExportScreenPageOutcome
+                 */
+                ExportScreenPageOutcome ExportScreenPage(const Model::ExportScreenPageRequest &request);
+                void ExportScreenPageAsync(const Model::ExportScreenPageRequest& request, const ExportScreenPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportScreenPageOutcomeCallable ExportScreenPageCallable(const Model::ExportScreenPageRequest& request);
 
                 /**
                  *更新数据源

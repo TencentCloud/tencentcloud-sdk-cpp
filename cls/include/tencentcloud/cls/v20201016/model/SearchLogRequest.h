@@ -115,22 +115,34 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取检索语法规则，默认值为0，推荐使用1 (CQL语法)。
-0：Lucene语法，1：CQL语法。
+                     * 获取检索语法规则，默认值为0，推荐使用1 。
+
+- 0：Lucene语法
+- 1：CQL语法（日志服务专用检索语法，控制台默认也使用该语法规则）。
+
 详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
-                     * @return SyntaxRule 检索语法规则，默认值为0，推荐使用1 (CQL语法)。
-0：Lucene语法，1：CQL语法。
+                     * @return SyntaxRule 检索语法规则，默认值为0，推荐使用1 。
+
+- 0：Lucene语法
+- 1：CQL语法（日志服务专用检索语法，控制台默认也使用该语法规则）。
+
 详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
                      * 
                      */
                     uint64_t GetSyntaxRule() const;
 
                     /**
-                     * 设置检索语法规则，默认值为0，推荐使用1 (CQL语法)。
-0：Lucene语法，1：CQL语法。
+                     * 设置检索语法规则，默认值为0，推荐使用1 。
+
+- 0：Lucene语法
+- 1：CQL语法（日志服务专用检索语法，控制台默认也使用该语法规则）。
+
 详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
-                     * @param _syntaxRule 检索语法规则，默认值为0，推荐使用1 (CQL语法)。
-0：Lucene语法，1：CQL语法。
+                     * @param _syntaxRule 检索语法规则，默认值为0，推荐使用1 。
+
+- 0：Lucene语法
+- 1：CQL语法（日志服务专用检索语法，控制台默认也使用该语法规则）。
+
 详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
                      * 
                      */
@@ -446,8 +458,11 @@ namespace TencentCloud
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 检索语法规则，默认值为0，推荐使用1 (CQL语法)。
-0：Lucene语法，1：CQL语法。
+                     * 检索语法规则，默认值为0，推荐使用1 。
+
+- 0：Lucene语法
+- 1：CQL语法（日志服务专用检索语法，控制台默认也使用该语法规则）。
+
 详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
                      */
                     uint64_t m_syntaxRule;

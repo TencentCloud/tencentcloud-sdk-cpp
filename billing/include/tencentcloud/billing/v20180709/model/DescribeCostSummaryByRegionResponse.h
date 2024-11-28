@@ -88,9 +88,9 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取记录数量，NeedRecordNum为0是返回null
+                     * 获取记录数量，NeedRecordNum为0时返回null
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecordNum 记录数量，NeedRecordNum为0是返回null
+                     * @return RecordNum 记录数量，NeedRecordNum为0时返回null
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 记录数量，NeedRecordNum为0是返回null
+                     * 记录数量，NeedRecordNum为0时返回null
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_recordNum;

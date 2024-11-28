@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取授权身份列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 授权身份列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<OrgMemberAuthIdentity> GetItems() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 授权身份列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OrgMemberAuthIdentity> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
                      * 总数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;

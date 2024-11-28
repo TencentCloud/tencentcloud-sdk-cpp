@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户所有的告警策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmConfig 用户所有的告警策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AlarmPolicy> GetAlarmConfig() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 用户所有的告警策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AlarmPolicy> m_alarmConfig;
                     bool m_alarmConfigHasBeenSet;

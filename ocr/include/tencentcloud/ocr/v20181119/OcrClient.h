@@ -127,26 +127,12 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralTextImageWarnResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeIndonesiaIDCardOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeIndonesiaIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeKoreanDrivingLicenseOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeKoreanDrivingLicenseOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeKoreanIDCardOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeKoreanIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeMedicalInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeMedicalInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesDrivingLicenseOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesDrivingLicenseOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesSssIDOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesSssIDOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesTinIDOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesTinIDOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesUMIDOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesUMIDOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesVoteIDOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesVoteIDOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeStoreNameRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeStoreNameResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRRequest.h>
@@ -375,36 +361,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeHealthCodeOCRResponse> RecognizeHealthCodeOCROutcome;
                 typedef std::future<RecognizeHealthCodeOCROutcome> RecognizeHealthCodeOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeHealthCodeOCRRequest&, RecognizeHealthCodeOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeHealthCodeOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeIndonesiaIDCardOCRResponse> RecognizeIndonesiaIDCardOCROutcome;
-                typedef std::future<RecognizeIndonesiaIDCardOCROutcome> RecognizeIndonesiaIDCardOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizeIndonesiaIDCardOCRRequest&, RecognizeIndonesiaIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeIndonesiaIDCardOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeKoreanDrivingLicenseOCRResponse> RecognizeKoreanDrivingLicenseOCROutcome;
                 typedef std::future<RecognizeKoreanDrivingLicenseOCROutcome> RecognizeKoreanDrivingLicenseOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeKoreanDrivingLicenseOCRRequest&, RecognizeKoreanDrivingLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeKoreanDrivingLicenseOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeKoreanIDCardOCRResponse> RecognizeKoreanIDCardOCROutcome;
-                typedef std::future<RecognizeKoreanIDCardOCROutcome> RecognizeKoreanIDCardOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizeKoreanIDCardOCRRequest&, RecognizeKoreanIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeKoreanIDCardOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeMedicalInvoiceOCRResponse> RecognizeMedicalInvoiceOCROutcome;
                 typedef std::future<RecognizeMedicalInvoiceOCROutcome> RecognizeMedicalInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeMedicalInvoiceOCRRequest&, RecognizeMedicalInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeMedicalInvoiceOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeOnlineTaxiItineraryOCRResponse> RecognizeOnlineTaxiItineraryOCROutcome;
                 typedef std::future<RecognizeOnlineTaxiItineraryOCROutcome> RecognizeOnlineTaxiItineraryOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeOnlineTaxiItineraryOCRRequest&, RecognizeOnlineTaxiItineraryOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeOnlineTaxiItineraryOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizePhilippinesDrivingLicenseOCRResponse> RecognizePhilippinesDrivingLicenseOCROutcome;
-                typedef std::future<RecognizePhilippinesDrivingLicenseOCROutcome> RecognizePhilippinesDrivingLicenseOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizePhilippinesDrivingLicenseOCRRequest&, RecognizePhilippinesDrivingLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePhilippinesDrivingLicenseOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizePhilippinesSssIDOCRResponse> RecognizePhilippinesSssIDOCROutcome;
-                typedef std::future<RecognizePhilippinesSssIDOCROutcome> RecognizePhilippinesSssIDOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizePhilippinesSssIDOCRRequest&, RecognizePhilippinesSssIDOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePhilippinesSssIDOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizePhilippinesTinIDOCRResponse> RecognizePhilippinesTinIDOCROutcome;
-                typedef std::future<RecognizePhilippinesTinIDOCROutcome> RecognizePhilippinesTinIDOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizePhilippinesTinIDOCRRequest&, RecognizePhilippinesTinIDOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePhilippinesTinIDOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizePhilippinesUMIDOCRResponse> RecognizePhilippinesUMIDOCROutcome;
-                typedef std::future<RecognizePhilippinesUMIDOCROutcome> RecognizePhilippinesUMIDOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizePhilippinesUMIDOCRRequest&, RecognizePhilippinesUMIDOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePhilippinesUMIDOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizePhilippinesVoteIDOCRResponse> RecognizePhilippinesVoteIDOCROutcome;
-                typedef std::future<RecognizePhilippinesVoteIDOCROutcome> RecognizePhilippinesVoteIDOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizePhilippinesVoteIDOCRRequest&, RecognizePhilippinesVoteIDOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePhilippinesVoteIDOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeStoreNameResponse> RecognizeStoreNameOutcome;
                 typedef std::future<RecognizeStoreNameOutcome> RecognizeStoreNameOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeStoreNameRequest&, RecognizeStoreNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeStoreNameAsyncHandler;
@@ -1499,17 +1464,6 @@ namespace TencentCloud
                 RecognizeHealthCodeOCROutcomeCallable RecognizeHealthCodeOCRCallable(const Model::RecognizeHealthCodeOCRRequest& request);
 
                 /**
-                 *印尼身份证识别
-
-默认接口请求频率限制：5次/秒。
-                 * @param req RecognizeIndonesiaIDCardOCRRequest
-                 * @return RecognizeIndonesiaIDCardOCROutcome
-                 */
-                RecognizeIndonesiaIDCardOCROutcome RecognizeIndonesiaIDCardOCR(const Model::RecognizeIndonesiaIDCardOCRRequest &request);
-                void RecognizeIndonesiaIDCardOCRAsync(const Model::RecognizeIndonesiaIDCardOCRRequest& request, const RecognizeIndonesiaIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeIndonesiaIDCardOCROutcomeCallable RecognizeIndonesiaIDCardOCRCallable(const Model::RecognizeIndonesiaIDCardOCRRequest& request);
-
-                /**
                  *韩国驾驶证识别
                  * @param req RecognizeKoreanDrivingLicenseOCRRequest
                  * @return RecognizeKoreanDrivingLicenseOCROutcome
@@ -1517,15 +1471,6 @@ namespace TencentCloud
                 RecognizeKoreanDrivingLicenseOCROutcome RecognizeKoreanDrivingLicenseOCR(const Model::RecognizeKoreanDrivingLicenseOCRRequest &request);
                 void RecognizeKoreanDrivingLicenseOCRAsync(const Model::RecognizeKoreanDrivingLicenseOCRRequest& request, const RecognizeKoreanDrivingLicenseOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeKoreanDrivingLicenseOCROutcomeCallable RecognizeKoreanDrivingLicenseOCRCallable(const Model::RecognizeKoreanDrivingLicenseOCRRequest& request);
-
-                /**
-                 *韩国身份证识别
-                 * @param req RecognizeKoreanIDCardOCRRequest
-                 * @return RecognizeKoreanIDCardOCROutcome
-                 */
-                RecognizeKoreanIDCardOCROutcome RecognizeKoreanIDCardOCR(const Model::RecognizeKoreanIDCardOCRRequest &request);
-                void RecognizeKoreanIDCardOCRAsync(const Model::RecognizeKoreanIDCardOCRRequest& request, const RecognizeKoreanIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeKoreanIDCardOCROutcomeCallable RecognizeKoreanIDCardOCRCallable(const Model::RecognizeKoreanIDCardOCRRequest& request);
 
                 /**
                  *医疗发票识别目前支持全国统一门诊发票、全国统一住院发票、以及部分地方的门诊和住院发票的识别。
@@ -1548,55 +1493,6 @@ namespace TencentCloud
                 RecognizeOnlineTaxiItineraryOCROutcome RecognizeOnlineTaxiItineraryOCR(const Model::RecognizeOnlineTaxiItineraryOCRRequest &request);
                 void RecognizeOnlineTaxiItineraryOCRAsync(const Model::RecognizeOnlineTaxiItineraryOCRRequest& request, const RecognizeOnlineTaxiItineraryOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeOnlineTaxiItineraryOCROutcomeCallable RecognizeOnlineTaxiItineraryOCRCallable(const Model::RecognizeOnlineTaxiItineraryOCRRequest& request);
-
-                /**
-                 *菲律宾驾驶证识别
-
-默认接口请求频率限制：20次/秒。
-                 * @param req RecognizePhilippinesDrivingLicenseOCRRequest
-                 * @return RecognizePhilippinesDrivingLicenseOCROutcome
-                 */
-                RecognizePhilippinesDrivingLicenseOCROutcome RecognizePhilippinesDrivingLicenseOCR(const Model::RecognizePhilippinesDrivingLicenseOCRRequest &request);
-                void RecognizePhilippinesDrivingLicenseOCRAsync(const Model::RecognizePhilippinesDrivingLicenseOCRRequest& request, const RecognizePhilippinesDrivingLicenseOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizePhilippinesDrivingLicenseOCROutcomeCallable RecognizePhilippinesDrivingLicenseOCRCallable(const Model::RecognizePhilippinesDrivingLicenseOCRRequest& request);
-
-                /**
-                 *菲律宾SSSID/UMID识别
-                 * @param req RecognizePhilippinesSssIDOCRRequest
-                 * @return RecognizePhilippinesSssIDOCROutcome
-                 */
-                RecognizePhilippinesSssIDOCROutcome RecognizePhilippinesSssIDOCR(const Model::RecognizePhilippinesSssIDOCRRequest &request);
-                void RecognizePhilippinesSssIDOCRAsync(const Model::RecognizePhilippinesSssIDOCRRequest& request, const RecognizePhilippinesSssIDOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizePhilippinesSssIDOCROutcomeCallable RecognizePhilippinesSssIDOCRCallable(const Model::RecognizePhilippinesSssIDOCRRequest& request);
-
-                /**
-                 *菲律宾TinID识别
-                 * @param req RecognizePhilippinesTinIDOCRRequest
-                 * @return RecognizePhilippinesTinIDOCROutcome
-                 */
-                RecognizePhilippinesTinIDOCROutcome RecognizePhilippinesTinIDOCR(const Model::RecognizePhilippinesTinIDOCRRequest &request);
-                void RecognizePhilippinesTinIDOCRAsync(const Model::RecognizePhilippinesTinIDOCRRequest& request, const RecognizePhilippinesTinIDOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizePhilippinesTinIDOCROutcomeCallable RecognizePhilippinesTinIDOCRCallable(const Model::RecognizePhilippinesTinIDOCRRequest& request);
-
-                /**
-                 *菲律宾UMID识别
-                 * @param req RecognizePhilippinesUMIDOCRRequest
-                 * @return RecognizePhilippinesUMIDOCROutcome
-                 */
-                RecognizePhilippinesUMIDOCROutcome RecognizePhilippinesUMIDOCR(const Model::RecognizePhilippinesUMIDOCRRequest &request);
-                void RecognizePhilippinesUMIDOCRAsync(const Model::RecognizePhilippinesUMIDOCRRequest& request, const RecognizePhilippinesUMIDOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizePhilippinesUMIDOCROutcomeCallable RecognizePhilippinesUMIDOCRCallable(const Model::RecognizePhilippinesUMIDOCRRequest& request);
-
-                /**
-                 *本接口支持菲律宾VoteID识别，识别字段包括姓名、姓氏、出生日期、婚姻状况、国籍、地址、地区、菲律宾VoteID的VIN等。
-
-默认接口请求频率限制：20次/秒。
-                 * @param req RecognizePhilippinesVoteIDOCRRequest
-                 * @return RecognizePhilippinesVoteIDOCROutcome
-                 */
-                RecognizePhilippinesVoteIDOCROutcome RecognizePhilippinesVoteIDOCR(const Model::RecognizePhilippinesVoteIDOCRRequest &request);
-                void RecognizePhilippinesVoteIDOCRAsync(const Model::RecognizePhilippinesVoteIDOCRRequest& request, const RecognizePhilippinesVoteIDOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizePhilippinesVoteIDOCROutcomeCallable RecognizePhilippinesVoteIDOCRCallable(const Model::RecognizePhilippinesVoteIDOCRRequest& request);
 
                 /**
                  *本接口用于识别门头照文字识别结果以及对应分类标签信息

@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VsmList 资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ResourceInfo> GetVsmList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 资源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ResourceInfo> m_vsmList;
                     bool m_vsmListHasBeenSet;

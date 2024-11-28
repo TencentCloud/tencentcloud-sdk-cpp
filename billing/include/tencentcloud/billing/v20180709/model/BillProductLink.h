@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/billing/v20180709/model/BillItem.h>
 
 
 namespace TencentCloud
@@ -46,7 +47,103 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取子产品编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductCode 子产品编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProductCode() const;
+
+                    /**
+                     * 设置子产品编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productCode 子产品编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductCode(const std::string& _productCode);
+
+                    /**
+                     * 判断参数 ProductCode 是否已赋值
+                     * @return ProductCode 是否已赋值
+                     * 
+                     */
+                    bool ProductCodeHasBeenSet() const;
+
+                    /**
+                     * 获取子产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductCodeName 子产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProductCodeName() const;
+
+                    /**
+                     * 设置子产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productCodeName 子产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductCodeName(const std::string& _productCodeName);
+
+                    /**
+                     * 判断参数 ProductCodeName 是否已赋值
+                     * @return ProductCodeName 是否已赋值
+                     * 
+                     */
+                    bool ProductCodeNameHasBeenSet() const;
+
+                    /**
+                     * 获取组件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Children 组件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<BillItem> GetChildren() const;
+
+                    /**
+                     * 设置组件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _children 组件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChildren(const std::vector<BillItem>& _children);
+
+                    /**
+                     * 判断参数 Children 是否已赋值
+                     * @return Children 是否已赋值
+                     * 
+                     */
+                    bool ChildrenHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 子产品编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productCode;
+                    bool m_productCodeHasBeenSet;
+
+                    /**
+                     * 子产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productCodeName;
+                    bool m_productCodeNameHasBeenSet;
+
+                    /**
+                     * 组件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BillItem> m_children;
+                    bool m_childrenHasBeenSet;
 
                 };
             }

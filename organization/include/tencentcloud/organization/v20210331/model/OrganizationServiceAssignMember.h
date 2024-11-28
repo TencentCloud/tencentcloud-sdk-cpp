@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集团服务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceId 集团服务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetServiceId() const;
 
                     /**
                      * 设置集团服务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceId 集团服务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceId(const uint64_t& _serviceId);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集团服务产品名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 集团服务产品名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置集团服务产品名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productName 集团服务产品名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取委派管理员Uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberUin 委派管理员Uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMemberUin() const;
 
                     /**
                      * 设置委派管理员Uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memberUin 委派管理员Uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemberUin(const int64_t& _memberUin);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取委派管理员名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberName 委派管理员名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMemberName() const;
 
                     /**
                      * 设置委派管理员名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memberName 委派管理员名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemberName(const std::string& _memberName);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取启用状态 。取值：0-服务无启用状态  1-已启用  2-未启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsageStatus 启用状态 。取值：0-服务无启用状态  1-已启用  2-未启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUsageStatus() const;
 
                     /**
                      * 设置启用状态 。取值：0-服务无启用状态  1-已启用  2-未启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usageStatus 启用状态 。取值：0-服务无启用状态  1-已启用  2-未启用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsageStatus(const uint64_t& _usageStatus);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取委派时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 委派时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置委派时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 委派时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取委派管理员管理范围。取值: 1-全部成员  2-部分成员
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ManagementScope 委派管理员管理范围。取值: 1-全部成员  2-部分成员
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetManagementScope() const;
 
                     /**
                      * 设置委派管理员管理范围。取值: 1-全部成员  2-部分成员
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _managementScope 委派管理员管理范围。取值: 1-全部成员  2-部分成员
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetManagementScope(const uint64_t& _managementScope);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取管理的成员Uin列表。ManagementScope值为2时该参数有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ManagementScopeMembers 管理的成员Uin列表。ManagementScope值为2时该参数有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MemberMainInfo> GetManagementScopeMembers() const;
 
                     /**
                      * 设置管理的成员Uin列表。ManagementScope值为2时该参数有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _managementScopeMembers 管理的成员Uin列表。ManagementScope值为2时该参数有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetManagementScopeMembers(const std::vector<MemberMainInfo>& _managementScopeMembers);
@@ -250,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取管理的部门ID列表。ManagementScope值为2时该参数有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ManagementScopeNodes 管理的部门ID列表。ManagementScope值为2时该参数有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NodeMainInfo> GetManagementScopeNodes() const;
 
                     /**
                      * 设置管理的部门ID列表。ManagementScope值为2时该参数有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _managementScopeNodes 管理的部门ID列表。ManagementScope值为2时该参数有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetManagementScopeNodes(const std::vector<NodeMainInfo>& _managementScopeNodes);
@@ -277,63 +241,54 @@ namespace TencentCloud
 
                     /**
                      * 集团服务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_serviceId;
                     bool m_serviceIdHasBeenSet;
 
                     /**
                      * 集团服务产品名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
                      * 委派管理员Uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_memberUin;
                     bool m_memberUinHasBeenSet;
 
                     /**
                      * 委派管理员名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_memberName;
                     bool m_memberNameHasBeenSet;
 
                     /**
                      * 启用状态 。取值：0-服务无启用状态  1-已启用  2-未启用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_usageStatus;
                     bool m_usageStatusHasBeenSet;
 
                     /**
                      * 委派时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 委派管理员管理范围。取值: 1-全部成员  2-部分成员
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_managementScope;
                     bool m_managementScopeHasBeenSet;
 
                     /**
                      * 管理的成员Uin列表。ManagementScope值为2时该参数有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MemberMainInfo> m_managementScopeMembers;
                     bool m_managementScopeMembersHasBeenSet;
 
                     /**
                      * 管理的部门ID列表。ManagementScope值为2时该参数有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodeMainInfo> m_managementScopeNodes;
                     bool m_managementScopeNodesHasBeenSet;

@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回的子网实例列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetList 返回的子网实例列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Subnet> GetSubnetList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 返回的子网实例列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Subnet> m_subnetList;
                     bool m_subnetListHasBeenSet;

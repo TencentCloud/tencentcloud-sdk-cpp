@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组织节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeId 组织节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNodeId() const;
 
                     /**
                      * 设置组织节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeId 组织节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeId(const int64_t& _nodeId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentNodeId 父节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetParentNodeId() const;
 
                     /**
                      * 设置父节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentNodeId 父节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentNodeId(const int64_t& _parentNodeId);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取成员标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 成员标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置成员标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 成员标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -226,49 +198,42 @@ namespace TencentCloud
 
                     /**
                      * 组织节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_nodeId;
                     bool m_nodeIdHasBeenSet;
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 父节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_parentNodeId;
                     bool m_parentNodeIdHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 成员标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

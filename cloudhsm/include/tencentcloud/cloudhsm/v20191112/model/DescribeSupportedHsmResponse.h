@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前地域所支持的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceTypes 当前地域所支持的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DeviceInfo> GetDeviceTypes() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 当前地域所支持的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DeviceInfo> m_deviceTypes;
                     bool m_deviceTypesHasBeenSet;

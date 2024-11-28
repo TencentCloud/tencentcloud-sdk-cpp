@@ -200,10 +200,8 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取安全组详情信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SgList 安全组详情信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取安全组详情信息,如果未配置字段返回null
+                     * @return SgList 安全组详情信息,如果未配置字段返回null
                      * 
                      */
                     std::vector<UsgRuleDetail> GetSgList() const;
@@ -217,9 +215,7 @@ namespace TencentCloud
 
                     /**
                      * 获取子网名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetName 子网名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetName() const;
@@ -233,9 +229,7 @@ namespace TencentCloud
 
                     /**
                      * 获取地域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionName 地域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionName() const;
@@ -249,9 +243,7 @@ namespace TencentCloud
 
                     /**
                      * 获取区域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneName 区域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneName() const;
@@ -265,9 +257,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例是否已经过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Expired 实例是否已经过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetExpired() const;
@@ -281,9 +271,7 @@ namespace TencentCloud
 
                     /**
                      * 获取为正数表示实例距离过期时间剩余秒数，为负数表示实例已经过期多少秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainSeconds 为正数表示实例距离过期时间剩余秒数，为负数表示实例已经过期多少秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRemainSeconds() const;
@@ -297,9 +285,7 @@ namespace TencentCloud
 
                     /**
                      * 获取私有虚拟网络名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcName 私有虚拟网络名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcName() const;
@@ -313,9 +299,7 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC的IPv4 CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcCidrBlock VPC的IPv4 CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcCidrBlock() const;
@@ -329,9 +313,7 @@ namespace TencentCloud
 
                     /**
                      * 获取子网的CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetCidrBlock 子网的CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetCidrBlock() const;
@@ -344,10 +326,8 @@ namespace TencentCloud
                     bool SubnetCidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取资源所关联的Tag
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 资源所关联的Tag
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取资源所关联的标签Tag
+                     * @return Tags 资源所关联的标签Tag
                      * 
                      */
                     std::vector<Tag> GetTags() const;
@@ -361,9 +341,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源续费标识，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 资源续费标识，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRenewFlag() const;
@@ -377,9 +355,7 @@ namespace TencentCloud
 
                     /**
                      * 获取厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Manufacturer 厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetManufacturer() const;
@@ -460,85 +436,73 @@ namespace TencentCloud
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 安全组详情信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 安全组详情信息,如果未配置字段返回null
                      */
                     std::vector<UsgRuleDetail> m_sgList;
                     bool m_sgListHasBeenSet;
 
                     /**
                      * 子网名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
 
                     /**
                      * 地域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;
 
                     /**
                      * 区域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
 
                     /**
                      * 实例是否已经过期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_expired;
                     bool m_expiredHasBeenSet;
 
                     /**
                      * 为正数表示实例距离过期时间剩余秒数，为负数表示实例已经过期多少秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_remainSeconds;
                     bool m_remainSecondsHasBeenSet;
 
                     /**
                      * 私有虚拟网络名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
                      * VPC的IPv4 CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcCidrBlock;
                     bool m_vpcCidrBlockHasBeenSet;
 
                     /**
                      * 子网的CIDR
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetCidrBlock;
                     bool m_subnetCidrBlockHasBeenSet;
 
                     /**
-                     * 资源所关联的Tag
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 资源所关联的标签Tag
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 资源续费标识，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
                      * 厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_manufacturer;
                     bool m_manufacturerHasBeenSet;

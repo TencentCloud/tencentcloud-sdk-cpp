@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SgId 安全组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSgId() const;
 
                     /**
                      * 设置安全组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sgId 安全组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSgId(const std::string& _sgId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SgName 安全组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSgName() const;
 
                     /**
                      * 设置安全组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sgName 安全组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSgName(const std::string& _sgName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SgRemark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSgRemark() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sgRemark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSgRemark(const std::string& _sgRemark);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 安全组Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sgId;
                     bool m_sgIdHasBeenSet;
 
                     /**
                      * 安全组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sgName;
                     bool m_sgNameHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sgRemark;
                     bool m_sgRemarkHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

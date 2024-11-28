@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户的安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SgList 用户的安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SgUnit> GetSgList() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 用户的安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SgUnit> m_sgList;
                     bool m_sgListHasBeenSet;

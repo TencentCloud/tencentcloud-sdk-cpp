@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Vpc名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcName Vpc名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置Vpc名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcName Vpc名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId VpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId VpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为默认VPC
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDefault 是否为默认VPC
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDefault() const;
 
                     /**
                      * 设置是否为默认VPC
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDefault 是否为默认VPC
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDefault(const bool& _isDefault);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * Vpc名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
                      * VpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
                      * 是否为默认VPC
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDefault;
                     bool m_isDefaultHasBeenSet;

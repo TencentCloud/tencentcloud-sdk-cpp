@@ -1416,6 +1416,49 @@ LcicClient::DescribeGroupMemberListOutcomeCallable LcicClient::DescribeGroupMemb
     return task->get_future();
 }
 
+LcicClient::DescribeMarqueeOutcome LcicClient::DescribeMarquee(const DescribeMarqueeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMarquee");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMarqueeResponse rsp = DescribeMarqueeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMarqueeOutcome(rsp);
+        else
+            return DescribeMarqueeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMarqueeOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeMarqueeAsync(const DescribeMarqueeRequest& request, const DescribeMarqueeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMarquee(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeMarqueeOutcomeCallable LcicClient::DescribeMarqueeCallable(const DescribeMarqueeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMarqueeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMarquee(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::DescribeQuestionListOutcome LcicClient::DescribeQuestionList(const DescribeQuestionListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeQuestionList");
@@ -2570,6 +2613,49 @@ LcicClient::SetAppCustomContentOutcomeCallable LcicClient::SetAppCustomContentCa
         [this, request]()
         {
             return this->SetAppCustomContent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::SetMarqueeOutcome LcicClient::SetMarquee(const SetMarqueeRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetMarquee");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetMarqueeResponse rsp = SetMarqueeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetMarqueeOutcome(rsp);
+        else
+            return SetMarqueeOutcome(o.GetError());
+    }
+    else
+    {
+        return SetMarqueeOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::SetMarqueeAsync(const SetMarqueeRequest& request, const SetMarqueeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetMarquee(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::SetMarqueeOutcomeCallable LcicClient::SetMarqueeCallable(const SetMarqueeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetMarqueeOutcome()>>(
+        [this, request]()
+        {
+            return this->SetMarquee(request);
         }
     );
 

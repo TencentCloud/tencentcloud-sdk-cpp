@@ -59,6 +59,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/StartRecordResponse.h
   include/tencentcloud/lcic/v20220817/model/UnbindDocumentFromRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/CreateDocumentResponse.h
+  include/tencentcloud/lcic/v20220817/model/DescribeMarqueeRequest.h
   include/tencentcloud/lcic/v20220817/model/DescribeGroupResponse.h
   include/tencentcloud/lcic/v20220817/model/SetAppCustomContentResponse.h
   include/tencentcloud/lcic/v20220817/model/UnblockKickedUserRequest.h
@@ -87,6 +88,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/DescribeDocumentResponse.h
   include/tencentcloud/lcic/v20220817/model/DeleteGroupMemberResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeGroupMemberListResponse.h
+  include/tencentcloud/lcic/v20220817/model/SetMarqueeRequest.h
   include/tencentcloud/lcic/v20220817/model/ForbidSendMsgRequest.h
   include/tencentcloud/lcic/v20220817/model/DescribeRoomForbiddenUserRequest.h
   include/tencentcloud/lcic/v20220817/model/EventInfo.h
@@ -145,7 +147,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/DeleteSupervisorResponse.h
   include/tencentcloud/lcic/v20220817/model/SetWatermarkResponse.h
   include/tencentcloud/lcic/v20220817/model/RoomInfo.h
-  include/tencentcloud/lcic/v20220817/model/ModifyRoomRequest.h
+  include/tencentcloud/lcic/v20220817/model/DescribeMarqueeResponse.h
   include/tencentcloud/lcic/v20220817/model/AnswerInfo.h
   include/tencentcloud/lcic/v20220817/model/DescribeRoomStatisticsRequest.h
   include/tencentcloud/lcic/v20220817/model/CustomMsgContent.h
@@ -153,6 +155,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/LoginOriginIdResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeQuestionListResponse.h
   include/tencentcloud/lcic/v20220817/model/GetRoomsResponse.h
+  include/tencentcloud/lcic/v20220817/model/SetMarqueeResponse.h
   include/tencentcloud/lcic/v20220817/model/QuestionInfo.h
   include/tencentcloud/lcic/v20220817/model/KickUserFromRoomRequest.h
   include/tencentcloud/lcic/v20220817/model/SetWatermarkRequest.h
@@ -178,6 +181,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/DescribeCurrentMemberListResponse.h
   include/tencentcloud/lcic/v20220817/model/ModifyGroupResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeGroupListResponse.h
+  include/tencentcloud/lcic/v20220817/model/ModifyRoomRequest.h
   include/tencentcloud/lcic/v20220817/model/CustomRecordInfo.h
   include/tencentcloud/lcic/v20220817/model/DescribeDeveloperResponse.h
   include/tencentcloud/lcic/v20220817/model/TextMsgContent.h
@@ -226,6 +230,7 @@ set(lcic_src
   src/v20220817/model/StartRecordResponse.cpp
   src/v20220817/model/UnbindDocumentFromRoomResponse.cpp
   src/v20220817/model/CreateDocumentResponse.cpp
+  src/v20220817/model/DescribeMarqueeRequest.cpp
   src/v20220817/model/DescribeGroupResponse.cpp
   src/v20220817/model/SetAppCustomContentResponse.cpp
   src/v20220817/model/UnblockKickedUserRequest.cpp
@@ -254,6 +259,7 @@ set(lcic_src
   src/v20220817/model/DescribeDocumentResponse.cpp
   src/v20220817/model/DeleteGroupMemberResponse.cpp
   src/v20220817/model/DescribeGroupMemberListResponse.cpp
+  src/v20220817/model/SetMarqueeRequest.cpp
   src/v20220817/model/ForbidSendMsgRequest.cpp
   src/v20220817/model/DescribeRoomForbiddenUserRequest.cpp
   src/v20220817/model/EventInfo.cpp
@@ -312,7 +318,7 @@ set(lcic_src
   src/v20220817/model/DeleteSupervisorResponse.cpp
   src/v20220817/model/SetWatermarkResponse.cpp
   src/v20220817/model/RoomInfo.cpp
-  src/v20220817/model/ModifyRoomRequest.cpp
+  src/v20220817/model/DescribeMarqueeResponse.cpp
   src/v20220817/model/AnswerInfo.cpp
   src/v20220817/model/DescribeRoomStatisticsRequest.cpp
   src/v20220817/model/CustomMsgContent.cpp
@@ -320,6 +326,7 @@ set(lcic_src
   src/v20220817/model/LoginOriginIdResponse.cpp
   src/v20220817/model/DescribeQuestionListResponse.cpp
   src/v20220817/model/GetRoomsResponse.cpp
+  src/v20220817/model/SetMarqueeResponse.cpp
   src/v20220817/model/QuestionInfo.cpp
   src/v20220817/model/KickUserFromRoomRequest.cpp
   src/v20220817/model/SetWatermarkRequest.cpp
@@ -345,6 +352,7 @@ set(lcic_src
   src/v20220817/model/DescribeCurrentMemberListResponse.cpp
   src/v20220817/model/ModifyGroupResponse.cpp
   src/v20220817/model/DescribeGroupListResponse.cpp
+  src/v20220817/model/ModifyRoomRequest.cpp
   src/v20220817/model/CustomRecordInfo.cpp
   src/v20220817/model/DescribeDeveloperResponse.cpp
   src/v20220817/model/TextMsgContent.cpp

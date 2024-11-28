@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SgRules 安全组详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<UsgRuleDetail> GetSgRules() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组详情数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 安全组详情数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 安全组详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UsgRuleDetail> m_sgRules;
                     bool m_sgRulesHasBeenSet;
 
                     /**
                      * 安全组详情数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

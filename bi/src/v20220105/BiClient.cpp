@@ -556,6 +556,49 @@ BiClient::DescribeDatasourceListOutcomeCallable BiClient::DescribeDatasourceList
     return task->get_future();
 }
 
+BiClient::DescribePageWidgetListOutcome BiClient::DescribePageWidgetList(const DescribePageWidgetListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePageWidgetList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePageWidgetListResponse rsp = DescribePageWidgetListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePageWidgetListOutcome(rsp);
+        else
+            return DescribePageWidgetListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePageWidgetListOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::DescribePageWidgetListAsync(const DescribePageWidgetListRequest& request, const DescribePageWidgetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePageWidgetList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BiClient::DescribePageWidgetListOutcomeCallable BiClient::DescribePageWidgetListCallable(const DescribePageWidgetListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePageWidgetListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePageWidgetList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BiClient::DescribeProjectInfoOutcome BiClient::DescribeProjectInfo(const DescribeProjectInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProjectInfo");
@@ -764,6 +807,49 @@ BiClient::DescribeUserRoleProjectListOutcomeCallable BiClient::DescribeUserRoleP
         [this, request]()
         {
             return this->DescribeUserRoleProjectList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BiClient::ExportScreenPageOutcome BiClient::ExportScreenPage(const ExportScreenPageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportScreenPage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportScreenPageResponse rsp = ExportScreenPageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportScreenPageOutcome(rsp);
+        else
+            return ExportScreenPageOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportScreenPageOutcome(outcome.GetError());
+    }
+}
+
+void BiClient::ExportScreenPageAsync(const ExportScreenPageRequest& request, const ExportScreenPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportScreenPage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BiClient::ExportScreenPageOutcomeCallable BiClient::ExportScreenPageCallable(const ExportScreenPageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportScreenPageOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportScreenPage(request);
         }
     );
 

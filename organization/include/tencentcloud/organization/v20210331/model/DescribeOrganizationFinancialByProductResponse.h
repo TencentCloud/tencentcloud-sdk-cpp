@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当月总消耗。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCost 当月总消耗。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTotalCost() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取产品消耗详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 产品消耗详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<OrgProductFinancial> GetItems() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -96,21 +90,18 @@ namespace TencentCloud
 
                     /**
                      * 当月总消耗。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_totalCost;
                     bool m_totalCostHasBeenSet;
 
                     /**
                      * 产品消耗详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OrgProductFinancial> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
                      * 总数目。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

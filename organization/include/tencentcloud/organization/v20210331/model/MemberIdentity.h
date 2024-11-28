@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取身份ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityId 身份ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIdentityId() const;
 
                     /**
                      * 设置身份ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identityId 身份ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentityId(const int64_t& _identityId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取身份名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentityAliasName 身份名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdentityAliasName() const;
 
                     /**
                      * 设置身份名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identityAliasName 身份名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentityAliasName(const std::string& _identityAliasName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 身份ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_identityId;
                     bool m_identityIdHasBeenSet;
 
                     /**
                      * 身份名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identityAliasName;
                     bool m_identityAliasNameHasBeenSet;
