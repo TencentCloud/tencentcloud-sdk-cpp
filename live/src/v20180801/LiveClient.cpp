@@ -126,6 +126,92 @@ LiveClient::AddCasterLayoutInfoOutcomeCallable LiveClient::AddCasterLayoutInfoCa
     return task->get_future();
 }
 
+LiveClient::AddCasterMarkPicInfoOutcome LiveClient::AddCasterMarkPicInfo(const AddCasterMarkPicInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddCasterMarkPicInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddCasterMarkPicInfoResponse rsp = AddCasterMarkPicInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddCasterMarkPicInfoOutcome(rsp);
+        else
+            return AddCasterMarkPicInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return AddCasterMarkPicInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::AddCasterMarkPicInfoAsync(const AddCasterMarkPicInfoRequest& request, const AddCasterMarkPicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddCasterMarkPicInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::AddCasterMarkPicInfoOutcomeCallable LiveClient::AddCasterMarkPicInfoCallable(const AddCasterMarkPicInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddCasterMarkPicInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->AddCasterMarkPicInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::AddCasterMarkWordInfoOutcome LiveClient::AddCasterMarkWordInfo(const AddCasterMarkWordInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddCasterMarkWordInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddCasterMarkWordInfoResponse rsp = AddCasterMarkWordInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddCasterMarkWordInfoOutcome(rsp);
+        else
+            return AddCasterMarkWordInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return AddCasterMarkWordInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::AddCasterMarkWordInfoAsync(const AddCasterMarkWordInfoRequest& request, const AddCasterMarkWordInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddCasterMarkWordInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::AddCasterMarkWordInfoOutcomeCallable LiveClient::AddCasterMarkWordInfoCallable(const AddCasterMarkWordInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddCasterMarkWordInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->AddCasterMarkWordInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::AddCasterOutputInfoOutcome LiveClient::AddCasterOutputInfo(const AddCasterOutputInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "AddCasterOutputInfo");
@@ -1631,6 +1717,92 @@ LiveClient::DeleteCasterLayoutInfoOutcomeCallable LiveClient::DeleteCasterLayout
     return task->get_future();
 }
 
+LiveClient::DeleteCasterMarkPicInfoOutcome LiveClient::DeleteCasterMarkPicInfo(const DeleteCasterMarkPicInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCasterMarkPicInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCasterMarkPicInfoResponse rsp = DeleteCasterMarkPicInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCasterMarkPicInfoOutcome(rsp);
+        else
+            return DeleteCasterMarkPicInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCasterMarkPicInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteCasterMarkPicInfoAsync(const DeleteCasterMarkPicInfoRequest& request, const DeleteCasterMarkPicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCasterMarkPicInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DeleteCasterMarkPicInfoOutcomeCallable LiveClient::DeleteCasterMarkPicInfoCallable(const DeleteCasterMarkPicInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCasterMarkPicInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCasterMarkPicInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DeleteCasterMarkWordInfoOutcome LiveClient::DeleteCasterMarkWordInfo(const DeleteCasterMarkWordInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCasterMarkWordInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCasterMarkWordInfoResponse rsp = DeleteCasterMarkWordInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCasterMarkWordInfoOutcome(rsp);
+        else
+            return DeleteCasterMarkWordInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCasterMarkWordInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteCasterMarkWordInfoAsync(const DeleteCasterMarkWordInfoRequest& request, const DeleteCasterMarkWordInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCasterMarkWordInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DeleteCasterMarkWordInfoOutcomeCallable LiveClient::DeleteCasterMarkWordInfoCallable(const DeleteCasterMarkWordInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCasterMarkWordInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCasterMarkWordInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DeleteCasterOutputInfoOutcome LiveClient::DeleteCasterOutputInfo(const DeleteCasterOutputInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCasterOutputInfo");
@@ -3000,6 +3172,92 @@ LiveClient::DescribeCasterListOutcomeCallable LiveClient::DescribeCasterListCall
         [this, request]()
         {
             return this->DescribeCasterList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeCasterMarkPicInfosOutcome LiveClient::DescribeCasterMarkPicInfos(const DescribeCasterMarkPicInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCasterMarkPicInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCasterMarkPicInfosResponse rsp = DescribeCasterMarkPicInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCasterMarkPicInfosOutcome(rsp);
+        else
+            return DescribeCasterMarkPicInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCasterMarkPicInfosOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeCasterMarkPicInfosAsync(const DescribeCasterMarkPicInfosRequest& request, const DescribeCasterMarkPicInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCasterMarkPicInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeCasterMarkPicInfosOutcomeCallable LiveClient::DescribeCasterMarkPicInfosCallable(const DescribeCasterMarkPicInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCasterMarkPicInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCasterMarkPicInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeCasterMarkWordInfosOutcome LiveClient::DescribeCasterMarkWordInfos(const DescribeCasterMarkWordInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCasterMarkWordInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCasterMarkWordInfosResponse rsp = DescribeCasterMarkWordInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCasterMarkWordInfosOutcome(rsp);
+        else
+            return DescribeCasterMarkWordInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCasterMarkWordInfosOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeCasterMarkWordInfosAsync(const DescribeCasterMarkWordInfosRequest& request, const DescribeCasterMarkWordInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCasterMarkWordInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeCasterMarkWordInfosOutcomeCallable LiveClient::DescribeCasterMarkWordInfosCallable(const DescribeCasterMarkWordInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCasterMarkWordInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCasterMarkWordInfos(request);
         }
     );
 
@@ -6698,6 +6956,92 @@ LiveClient::ModifyCasterLayoutInfoOutcomeCallable LiveClient::ModifyCasterLayout
         [this, request]()
         {
             return this->ModifyCasterLayoutInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::ModifyCasterMarkPicInfoOutcome LiveClient::ModifyCasterMarkPicInfo(const ModifyCasterMarkPicInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCasterMarkPicInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCasterMarkPicInfoResponse rsp = ModifyCasterMarkPicInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCasterMarkPicInfoOutcome(rsp);
+        else
+            return ModifyCasterMarkPicInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCasterMarkPicInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ModifyCasterMarkPicInfoAsync(const ModifyCasterMarkPicInfoRequest& request, const ModifyCasterMarkPicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCasterMarkPicInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::ModifyCasterMarkPicInfoOutcomeCallable LiveClient::ModifyCasterMarkPicInfoCallable(const ModifyCasterMarkPicInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCasterMarkPicInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCasterMarkPicInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::ModifyCasterMarkWordInfoOutcome LiveClient::ModifyCasterMarkWordInfo(const ModifyCasterMarkWordInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCasterMarkWordInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCasterMarkWordInfoResponse rsp = ModifyCasterMarkWordInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCasterMarkWordInfoOutcome(rsp);
+        else
+            return ModifyCasterMarkWordInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCasterMarkWordInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ModifyCasterMarkWordInfoAsync(const ModifyCasterMarkWordInfoRequest& request, const ModifyCasterMarkWordInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCasterMarkWordInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::ModifyCasterMarkWordInfoOutcomeCallable LiveClient::ModifyCasterMarkWordInfoCallable(const ModifyCasterMarkWordInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCasterMarkWordInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCasterMarkWordInfo(request);
         }
     );
 

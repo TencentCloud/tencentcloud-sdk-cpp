@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取疾病名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiseaseName 疾病名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiseaseName() const;
 
                     /**
                      * 设置疾病名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diseaseName 疾病名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiseaseName(const std::string& _diseaseName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPart() const;
 
                     /**
                      * 设置部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPart(const std::string& _part);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _time 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTime(const std::string& _time);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeType 时间类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeType() const;
 
                     /**
                      * 设置时间类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeType 时间类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeType(const std::string& _timeType);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 疾病名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diseaseName;
                     bool m_diseaseNameHasBeenSet;
 
                     /**
                      * 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_part;
                     bool m_partHasBeenSet;
 
                     /**
                      * 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
                      * 时间类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeType;
                     bool m_timeTypeHasBeenSet;

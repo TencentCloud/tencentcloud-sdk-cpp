@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取src
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src src
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置src
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src src
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取value
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value value
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置value
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value value
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * src
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * value
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

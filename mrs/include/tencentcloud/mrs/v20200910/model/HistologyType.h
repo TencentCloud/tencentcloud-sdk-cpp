@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取浸润
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Infiltration 浸润
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInfiltration() const;
 
                     /**
                      * 设置浸润
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _infiltration 浸润
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInfiltration(const std::string& _infiltration);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetIndex() const;
 
                     /**
                      * 设置原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _index 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndex(const std::vector<int64_t>& _index);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 浸润
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_infiltration;
                     bool m_infiltrationHasBeenSet;
 
                     /**
                      * 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_index;
                     bool m_indexHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

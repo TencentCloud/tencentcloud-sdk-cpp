@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取左眼矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LeftEyeVisual 左眼矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetLeftEyeVisual() const;
 
                     /**
                      * 设置左眼矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _leftEyeVisual 左眼矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLeftEyeVisual(const KeyValueItem& _leftEyeVisual);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetText() const;
 
                     /**
                      * 设置矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const KeyValueItem& _text);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取右眼矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RightEyeVisual 右眼矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetRightEyeVisual() const;
 
                     /**
                      * 设置右眼矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rightEyeVisual 右眼矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRightEyeVisual(const KeyValueItem& _rightEyeVisual);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 左眼矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_leftEyeVisual;
                     bool m_leftEyeVisualHasBeenSet;
 
                     /**
                      * 矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 右眼矫正视力
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_rightEyeVisual;
                     bool m_rightEyeVisualHasBeenSet;

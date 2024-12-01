@@ -57,18 +57,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外阴
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vulva 外阴
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GynaecologyVulva GetVulva() const;
 
                     /**
                      * 设置外阴
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulva 外阴
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulva(const GynaecologyVulva& _vulva);
@@ -82,18 +78,14 @@ namespace TencentCloud
 
                     /**
                      * 获取阴道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vagina 阴道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GynaecologyVagina GetVagina() const;
 
                     /**
                      * 设置阴道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vagina 阴道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVagina(const GynaecologyVagina& _vagina);
@@ -107,18 +99,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子宫颈
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cervix 子宫颈
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GynaecologyCervix GetCervix() const;
 
                     /**
                      * 设置子宫颈
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cervix 子宫颈
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCervix(const GynaecologyCervix& _cervix);
@@ -132,18 +120,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子宫
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uterus 子宫
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GynaecologyUterus GetUterus() const;
 
                     /**
                      * 设置子宫
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uterus 子宫
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUterus(const GynaecologyUterus& _uterus);
@@ -157,18 +141,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子宫附件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Adnexal 子宫附件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GynaecologyAdnexal GetAdnexal() const;
 
                     /**
                      * 设置子宫附件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _adnexal 子宫附件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdnexal(const GynaecologyAdnexal& _adnexal);
@@ -182,18 +162,14 @@ namespace TencentCloud
 
                     /**
                      * 获取盆腔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PelvicCavity 盆腔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GynaecologyPelvicCavity GetPelvicCavity() const;
 
                     /**
                      * 设置盆腔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pelvicCavity 盆腔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPelvicCavity(const GynaecologyPelvicCavity& _pelvicCavity);
@@ -207,18 +183,14 @@ namespace TencentCloud
 
                     /**
                      * 获取妇科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Others 妇科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValueItem> GetOthers() const;
 
                     /**
                      * 设置妇科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _others 妇科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOthers(const std::vector<KeyValueItem>& _others);
@@ -232,18 +204,14 @@ namespace TencentCloud
 
                     /**
                      * 获取月经史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MenstrualHistory 月经史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GynaecologyMenstrualHistory GetMenstrualHistory() const;
 
                     /**
                      * 设置月经史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _menstrualHistory 月经史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMenstrualHistory(const GynaecologyMenstrualHistory& _menstrualHistory);
@@ -257,18 +225,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BriefSummary 小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GynaecologyBriefSummary GetBriefSummary() const;
 
                     /**
                      * 设置小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _briefSummary 小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBriefSummary(const GynaecologyBriefSummary& _briefSummary);
@@ -284,63 +248,54 @@ namespace TencentCloud
 
                     /**
                      * 外阴
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GynaecologyVulva m_vulva;
                     bool m_vulvaHasBeenSet;
 
                     /**
                      * 阴道
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GynaecologyVagina m_vagina;
                     bool m_vaginaHasBeenSet;
 
                     /**
                      * 子宫颈
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GynaecologyCervix m_cervix;
                     bool m_cervixHasBeenSet;
 
                     /**
                      * 子宫
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GynaecologyUterus m_uterus;
                     bool m_uterusHasBeenSet;
 
                     /**
                      * 子宫附件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GynaecologyAdnexal m_adnexal;
                     bool m_adnexalHasBeenSet;
 
                     /**
                      * 盆腔
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GynaecologyPelvicCavity m_pelvicCavity;
                     bool m_pelvicCavityHasBeenSet;
 
                     /**
                      * 妇科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValueItem> m_others;
                     bool m_othersHasBeenSet;
 
                     /**
                      * 月经史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GynaecologyMenstrualHistory m_menstrualHistory;
                     bool m_menstrualHistoryHasBeenSet;
 
                     /**
                      * 小结
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GynaecologyBriefSummary m_briefSummary;
                     bool m_briefSummaryHasBeenSet;

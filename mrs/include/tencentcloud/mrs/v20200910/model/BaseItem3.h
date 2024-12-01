@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原始文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原始文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原始文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原始文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取归一化后值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 归一化后值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置归一化后值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 归一化后值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取四点坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 四点坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置四点坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coords 四点坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取第几次
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Order 第几次
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOrder() const;
 
                     /**
                      * 设置第几次
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _order 第几次
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrder(const int64_t& _order);
@@ -176,35 +156,30 @@ namespace TencentCloud
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 原始文本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 归一化后值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 四点坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_coords;
                     bool m_coordsHasBeenSet;
 
                     /**
                      * 第几次
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_order;
                     bool m_orderHasBeenSet;

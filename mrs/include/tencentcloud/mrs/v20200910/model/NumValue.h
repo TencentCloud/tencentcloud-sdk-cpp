@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Num 数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNum() const;
 
                     /**
                      * 设置数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _num 数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNum(const std::string& _num);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnit(const std::string& _unit);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 数值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_num;
                     bool m_numHasBeenSet;
 
                     /**
                      * 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;

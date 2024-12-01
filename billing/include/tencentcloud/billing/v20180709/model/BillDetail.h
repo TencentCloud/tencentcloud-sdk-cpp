@@ -823,6 +823,69 @@ namespace TencentCloud
                      */
                     bool ReserveDetailHasBeenSet() const;
 
+                    /**
+                     * 获取优惠对象
+                     * @return DiscountObject 优惠对象
+                     * 
+                     */
+                    std::string GetDiscountObject() const;
+
+                    /**
+                     * 设置优惠对象
+                     * @param _discountObject 优惠对象
+                     * 
+                     */
+                    void SetDiscountObject(const std::string& _discountObject);
+
+                    /**
+                     * 判断参数 DiscountObject 是否已赋值
+                     * @return DiscountObject 是否已赋值
+                     * 
+                     */
+                    bool DiscountObjectHasBeenSet() const;
+
+                    /**
+                     * 获取优惠类型
+                     * @return DiscountType 优惠类型
+                     * 
+                     */
+                    std::string GetDiscountType() const;
+
+                    /**
+                     * 设置优惠类型
+                     * @param _discountType 优惠类型
+                     * 
+                     */
+                    void SetDiscountType(const std::string& _discountType);
+
+                    /**
+                     * 判断参数 DiscountType 是否已赋值
+                     * @return DiscountType 是否已赋值
+                     * 
+                     */
+                    bool DiscountTypeHasBeenSet() const;
+
+                    /**
+                     * 获取优惠内容
+                     * @return DiscountContent 优惠内容
+                     * 
+                     */
+                    std::string GetDiscountContent() const;
+
+                    /**
+                     * 设置优惠内容
+                     * @param _discountContent 优惠内容
+                     * 
+                     */
+                    void SetDiscountContent(const std::string& _discountContent);
+
+                    /**
+                     * 判断参数 DiscountContent 是否已赋值
+                     * @return DiscountContent 是否已赋值
+                     * 
+                     */
+                    bool DiscountContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1043,6 +1106,24 @@ namespace TencentCloud
                      */
                     std::string m_reserveDetail;
                     bool m_reserveDetailHasBeenSet;
+
+                    /**
+                     * 优惠对象
+                     */
+                    std::string m_discountObject;
+                    bool m_discountObjectHasBeenSet;
+
+                    /**
+                     * 优惠类型
+                     */
+                    std::string m_discountType;
+                    bool m_discountTypeHasBeenSet;
+
+                    /**
+                     * 优惠内容
+                     */
+                    std::string m_discountContent;
+                    bool m_discountContentHasBeenSet;
 
                 };
             }

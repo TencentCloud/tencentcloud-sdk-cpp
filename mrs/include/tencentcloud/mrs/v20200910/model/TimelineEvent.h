@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 事件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置事件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 事件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件子类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubType 事件子类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubType() const;
 
                     /**
                      * 设置事件子类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subType 事件子类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubType(const std::string& _subType);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件发生时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 事件发生时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置事件发生时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _time 事件发生时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTime(const std::string& _time);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 事件值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置事件值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 事件值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取位置坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rectangle 位置坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Rectangle GetRectangle() const;
 
                     /**
                      * 设置位置坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rectangle 位置坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRectangle(const Rectangle& _rectangle);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件发生地点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Place 事件发生地点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPlace() const;
 
                     /**
                      * 设置事件发生地点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _place 事件发生地点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlace(const std::string& _place);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -251,56 +219,48 @@ namespace TencentCloud
 
                     /**
                      * 事件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 原文本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 事件子类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subType;
                     bool m_subTypeHasBeenSet;
 
                     /**
                      * 事件发生时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
                      * 事件值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 位置坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Rectangle m_rectangle;
                     bool m_rectangleHasBeenSet;
 
                     /**
                      * 事件发生地点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_place;
                     bool m_placeHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

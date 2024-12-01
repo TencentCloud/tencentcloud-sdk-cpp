@@ -63,18 +63,14 @@ namespace TencentCloud
 
                     /**
                      * 获取药品名称，包括通用名和商品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 药品名称，包括通用名和商品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfoName GetName() const;
 
                     /**
                      * 设置药品名称，包括通用名和商品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 药品名称，包括通用名和商品名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const BiologicalProductInfoName& _name);
@@ -88,18 +84,14 @@ namespace TencentCloud
 
                     /**
                      * 获取成份和性状
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IngredientAndAppearance 成份和性状
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfoIngredientAndAppearance GetIngredientAndAppearance() const;
 
                     /**
                      * 设置成份和性状
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ingredientAndAppearance 成份和性状
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIngredientAndAppearance(const BiologicalProductInfoIngredientAndAppearance& _ingredientAndAppearance);
@@ -113,18 +105,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接种对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VaccinationTarget 接种对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfoVaccinationTarget GetVaccinationTarget() const;
 
                     /**
                      * 设置接种对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vaccinationTarget 接种对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVaccinationTarget(const BiologicalProductInfoVaccinationTarget& _vaccinationTarget);
@@ -138,18 +126,14 @@ namespace TencentCloud
 
                     /**
                      * 获取作用与用途
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Indications 作用与用途
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfoIndications GetIndications() const;
 
                     /**
                      * 设置作用与用途
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indications 作用与用途
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndications(const BiologicalProductInfoIndications& _indications);
@@ -163,18 +147,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Brochure 规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfoBrochure GetBrochure() const;
 
                     /**
                      * 设置规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _brochure 规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBrochure(const BiologicalProductInfoBrochure& _brochure);
@@ -188,18 +168,14 @@ namespace TencentCloud
 
                     /**
                      * 获取免疫程序和剂量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Dosage 免疫程序和剂量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfoDosage GetDosage() const;
 
                     /**
                      * 设置免疫程序和剂量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dosage 免疫程序和剂量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDosage(const BiologicalProductInfoDosage& _dosage);
@@ -213,18 +189,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不良反应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdverseReaction 不良反应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfoAdverseReaction GetAdverseReaction() const;
 
                     /**
                      * 设置不良反应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _adverseReaction 不良反应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdverseReaction(const BiologicalProductInfoAdverseReaction& _adverseReaction);
@@ -238,18 +210,14 @@ namespace TencentCloud
 
                     /**
                      * 获取禁忌情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Contraindications 禁忌情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfoContraindications GetContraindications() const;
 
                     /**
                      * 设置禁忌情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _contraindications 禁忌情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContraindications(const BiologicalProductInfoContraindications& _contraindications);
@@ -263,18 +231,14 @@ namespace TencentCloud
 
                     /**
                      * 获取注意事项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Precautions 注意事项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfoPrecautions GetPrecautions() const;
 
                     /**
                      * 设置注意事项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _precautions 注意事项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrecautions(const BiologicalProductInfoPrecautions& _precautions);
@@ -288,18 +252,14 @@ namespace TencentCloud
 
                     /**
                      * 获取储存条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Storage 储存条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfoStorage GetStorage() const;
 
                     /**
                      * 设置储存条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _storage 储存条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStorage(const BiologicalProductInfoStorage& _storage);
@@ -313,18 +273,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包装信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Packaging 包装信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfoPackaging GetPackaging() const;
 
                     /**
                      * 设置包装信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packaging 包装信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackaging(const BiologicalProductInfoPackaging& _packaging);
@@ -338,18 +294,14 @@ namespace TencentCloud
 
                     /**
                      * 获取有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidityPeriod 有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfoValidityPeriod GetValidityPeriod() const;
 
                     /**
                      * 设置有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _validityPeriod 有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValidityPeriod(const BiologicalProductInfoValidityPeriod& _validityPeriod);
@@ -363,18 +315,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行标准
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutiveStandards 执行标准
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfoExecutiveStandards GetExecutiveStandards() const;
 
                     /**
                      * 设置执行标准
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executiveStandards 执行标准
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutiveStandards(const BiologicalProductInfoExecutiveStandards& _executiveStandards);
@@ -388,18 +336,14 @@ namespace TencentCloud
 
                     /**
                      * 获取批准文号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Approval 批准文号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfoApproval GetApproval() const;
 
                     /**
                      * 设置批准文号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _approval 批准文号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApproval(const BiologicalProductInfoApproval& _approval);
@@ -413,18 +357,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生产企业名称和地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Manufacturer 生产企业名称和地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfoManufacturer GetManufacturer() const;
 
                     /**
                      * 设置生产企业名称和地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _manufacturer 生产企业名称和地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetManufacturer(const BiologicalProductInfoManufacturer& _manufacturer);
@@ -440,105 +380,90 @@ namespace TencentCloud
 
                     /**
                      * 药品名称，包括通用名和商品名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfoName m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 成份和性状
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfoIngredientAndAppearance m_ingredientAndAppearance;
                     bool m_ingredientAndAppearanceHasBeenSet;
 
                     /**
                      * 接种对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfoVaccinationTarget m_vaccinationTarget;
                     bool m_vaccinationTargetHasBeenSet;
 
                     /**
                      * 作用与用途
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfoIndications m_indications;
                     bool m_indicationsHasBeenSet;
 
                     /**
                      * 规格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfoBrochure m_brochure;
                     bool m_brochureHasBeenSet;
 
                     /**
                      * 免疫程序和剂量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfoDosage m_dosage;
                     bool m_dosageHasBeenSet;
 
                     /**
                      * 不良反应
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfoAdverseReaction m_adverseReaction;
                     bool m_adverseReactionHasBeenSet;
 
                     /**
                      * 禁忌情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfoContraindications m_contraindications;
                     bool m_contraindicationsHasBeenSet;
 
                     /**
                      * 注意事项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfoPrecautions m_precautions;
                     bool m_precautionsHasBeenSet;
 
                     /**
                      * 储存条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfoStorage m_storage;
                     bool m_storageHasBeenSet;
 
                     /**
                      * 包装信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfoPackaging m_packaging;
                     bool m_packagingHasBeenSet;
 
                     /**
                      * 有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfoValidityPeriod m_validityPeriod;
                     bool m_validityPeriodHasBeenSet;
 
                     /**
                      * 执行标准
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfoExecutiveStandards m_executiveStandards;
                     bool m_executiveStandardsHasBeenSet;
 
                     /**
                      * 批准文号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfoApproval m_approval;
                     bool m_approvalHasBeenSet;
 
                     /**
                      * 生产企业名称和地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfoManufacturer m_manufacturer;
                     bool m_manufacturerHasBeenSet;

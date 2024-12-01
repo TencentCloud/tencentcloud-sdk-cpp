@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Part GetPart() const;
 
                     /**
                      * 设置部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPart(const Part& _part);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetIndex() const;
 
                     /**
                      * 设置原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _index 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndex(const std::vector<int64_t>& _index);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部位别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartAlias 部位别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPartAlias() const;
 
                     /**
                      * 设置部位别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partAlias 部位别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPartAlias(const std::string& _partAlias);
@@ -151,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取症状描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SymDescList 症状描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BlockInfo> GetSymDescList() const;
 
                     /**
                      * 设置症状描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _symDescList 症状描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSymDescList(const std::vector<BlockInfo>& _symDescList);
@@ -176,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coords 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
@@ -203,42 +179,36 @@ namespace TencentCloud
 
                     /**
                      * 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Part m_part;
                     bool m_partHasBeenSet;
 
                     /**
                      * 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_index;
                     bool m_indexHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 部位别名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_partAlias;
                     bool m_partAliasHasBeenSet;
 
                     /**
                      * 症状描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BlockInfo> m_symDescList;
                     bool m_symDescListHasBeenSet;
 
                     /**
                      * 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_coords;
                     bool m_coordsHasBeenSet;

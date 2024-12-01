@@ -55,18 +55,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const BlockInfo& _type);
@@ -80,18 +76,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Part GetPart() const;
 
                     /**
                      * 设置部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPart(const Part& _part);
@@ -105,18 +97,14 @@ namespace TencentCloud
 
                     /**
                      * 获取大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Size> GetSize() const;
 
                     /**
                      * 设置大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _size 大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSize(const std::vector<Size>& _size);
@@ -130,18 +118,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多发
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Multiple 多发
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Multiple GetMultiple() const;
 
                     /**
                      * 设置多发
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _multiple 多发
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMultiple(const Multiple& _multiple);
@@ -155,18 +139,14 @@ namespace TencentCloud
 
                     /**
                      * 获取纵横比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AspectRatio 纵横比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AspectRatio GetAspectRatio() const;
 
                     /**
                      * 设置纵横比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aspectRatio 纵横比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAspectRatio(const AspectRatio& _aspectRatio);
@@ -180,18 +160,14 @@ namespace TencentCloud
 
                     /**
                      * 获取边缘
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Edge 边缘
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetEdge() const;
 
                     /**
                      * 设置边缘
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _edge 边缘
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEdge(const BlockInfo& _edge);
@@ -205,18 +181,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内部回声
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InnerEcho 内部回声
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetInnerEcho() const;
 
                     /**
                      * 设置内部回声
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _innerEcho 内部回声
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInnerEcho(const BlockInfo& _innerEcho);
@@ -230,18 +202,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外部回声
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RearEcho 外部回声
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetRearEcho() const;
 
                     /**
                      * 设置外部回声
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rearEcho 外部回声
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRearEcho(const BlockInfo& _rearEcho);
@@ -255,18 +223,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性质地
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Elastic 弹性质地
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Elastic GetElastic() const;
 
                     /**
                      * 设置弹性质地
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elastic 弹性质地
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElastic(const Elastic& _elastic);
@@ -280,18 +244,14 @@ namespace TencentCloud
 
                     /**
                      * 获取形状
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Shape 形状
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetShape() const;
 
                     /**
                      * 设置形状
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shape 形状
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetShape(const BlockInfo& _shape);
@@ -305,18 +265,14 @@ namespace TencentCloud
 
                     /**
                      * 获取形态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShapeAttr 形态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetShapeAttr() const;
 
                     /**
                      * 设置形态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shapeAttr 形态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetShapeAttr(const BlockInfo& _shapeAttr);
@@ -330,18 +286,14 @@ namespace TencentCloud
 
                     /**
                      * 获取皮髓质信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkinMedulla 皮髓质信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetSkinMedulla() const;
 
                     /**
                      * 设置皮髓质信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _skinMedulla 皮髓质信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSkinMedulla(const BlockInfo& _skinMedulla);
@@ -355,18 +307,14 @@ namespace TencentCloud
 
                     /**
                      * 获取变化趋势
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Trend 变化趋势
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetTrend() const;
 
                     /**
                      * 设置变化趋势
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trend 变化趋势
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrend(const BlockInfo& _trend);
@@ -380,18 +328,14 @@ namespace TencentCloud
 
                     /**
                      * 获取钙化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Calcification 钙化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetCalcification() const;
 
                     /**
                      * 设置钙化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _calcification 钙化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCalcification(const BlockInfo& _calcification);
@@ -405,18 +349,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包膜
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Envelope 包膜
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetEnvelope() const;
 
                     /**
                      * 设置包膜
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _envelope 包膜
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvelope(const BlockInfo& _envelope);
@@ -430,18 +370,14 @@ namespace TencentCloud
 
                     /**
                      * 获取强化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enhancement 强化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetEnhancement() const;
 
                     /**
                      * 设置强化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enhancement 强化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnhancement(const BlockInfo& _enhancement);
@@ -455,18 +391,14 @@ namespace TencentCloud
 
                     /**
                      * 获取淋巴结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LymphEnlargement 淋巴结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetLymphEnlargement() const;
 
                     /**
                      * 设置淋巴结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lymphEnlargement 淋巴结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLymphEnlargement(const BlockInfo& _lymphEnlargement);
@@ -480,18 +412,14 @@ namespace TencentCloud
 
                     /**
                      * 获取淋巴门
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LymphDoor 淋巴门
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetLymphDoor() const;
 
                     /**
                      * 设置淋巴门
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lymphDoor 淋巴门
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLymphDoor(const BlockInfo& _lymphDoor);
@@ -505,18 +433,14 @@ namespace TencentCloud
 
                     /**
                      * 获取活动度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Activity 活动度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetActivity() const;
 
                     /**
                      * 设置活动度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activity 活动度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActivity(const BlockInfo& _activity);
@@ -530,18 +454,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operation 手术情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetOperation() const;
 
                     /**
                      * 设置手术情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operation 手术情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperation(const BlockInfo& _operation);
@@ -555,18 +475,14 @@ namespace TencentCloud
 
                     /**
                      * 获取血液cdfi
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CDFI 血液cdfi
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetCDFI() const;
 
                     /**
                      * 设置血液cdfi
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cDFI 血液cdfi
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCDFI(const BlockInfo& _cDFI);
@@ -580,18 +496,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetIndex() const;
 
                     /**
                      * 设置原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _index 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndex(const std::vector<int64_t>& _index);
@@ -605,18 +517,14 @@ namespace TencentCloud
 
                     /**
                      * 获取大小状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SizeStatus 大小状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetSizeStatus() const;
 
                     /**
                      * 设置大小状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sizeStatus 大小状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSizeStatus(const BlockInfo& _sizeStatus);
@@ -630,18 +538,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内部回声分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InnerEchoDistribution 内部回声分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetInnerEchoDistribution() const;
 
                     /**
                      * 设置内部回声分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _innerEchoDistribution 内部回声分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInnerEchoDistribution(const BlockInfo& _innerEchoDistribution);
@@ -655,18 +559,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内部回声类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InnerEchoType 内部回声类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BlockInfo> GetInnerEchoType() const;
 
                     /**
                      * 设置内部回声类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _innerEchoType 内部回声类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInnerEchoType(const std::vector<BlockInfo>& _innerEchoType);
@@ -680,18 +580,14 @@ namespace TencentCloud
 
                     /**
                      * 获取轮廓
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Outline 轮廓
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetOutline() const;
 
                     /**
                      * 设置轮廓
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outline 轮廓
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutline(const BlockInfo& _outline);
@@ -705,18 +601,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Structure 结构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetStructure() const;
 
                     /**
                      * 设置结构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _structure 结构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStructure(const BlockInfo& _structure);
@@ -730,18 +622,14 @@ namespace TencentCloud
 
                     /**
                      * 获取密度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Density 密度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetDensity() const;
 
                     /**
                      * 设置密度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _density 密度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDensity(const BlockInfo& _density);
@@ -755,18 +643,14 @@ namespace TencentCloud
 
                     /**
                      * 获取血管
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vas 血管
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetVas() const;
 
                     /**
                      * 设置血管
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vas 血管
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVas(const BlockInfo& _vas);
@@ -780,18 +664,14 @@ namespace TencentCloud
 
                     /**
                      * 获取囊壁
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cysticwall 囊壁
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetCysticwall() const;
 
                     /**
                      * 设置囊壁
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cysticwall 囊壁
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCysticwall(const BlockInfo& _cysticwall);
@@ -805,18 +685,14 @@ namespace TencentCloud
 
                     /**
                      * 获取被膜
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Capsule 被膜
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetCapsule() const;
 
                     /**
                      * 设置被膜
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _capsule 被膜
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCapsule(const BlockInfo& _capsule);
@@ -855,18 +731,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -880,18 +752,14 @@ namespace TencentCloud
 
                     /**
                      * 获取透声度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Transparent 透声度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetTransparent() const;
 
                     /**
                      * 设置透声度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transparent 透声度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransparent(const BlockInfo& _transparent);
@@ -905,18 +773,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MRI ADC
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MriAdc MRI ADC
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetMriAdc() const;
 
                     /**
                      * 设置MRI ADC
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mriAdc MRI ADC
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMriAdc(const BlockInfo& _mriAdc);
@@ -930,18 +794,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MRI DWI
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MriDwi MRI DWI
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetMriDwi() const;
 
                     /**
                      * 设置MRI DWI
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mriDwi MRI DWI
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMriDwi(const BlockInfo& _mriDwi);
@@ -955,18 +815,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MRI T1信号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MriT1 MRI T1信号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetMriT1() const;
 
                     /**
                      * 设置MRI T1信号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mriT1 MRI T1信号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMriT1(const BlockInfo& _mriT1);
@@ -980,18 +836,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MRI T2信号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MriT2 MRI T2信号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetMriT2() const;
 
                     /**
                      * 设置MRI T2信号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mriT2 MRI T2信号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMriT2(const BlockInfo& _mriT2);
@@ -1005,18 +857,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CT HU值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CtHu CT HU值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetCtHu() const;
 
                     /**
                      * 设置CT HU值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ctHu CT HU值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCtHu(const BlockInfo& _ctHu);
@@ -1030,18 +878,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SUmax值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suvmax SUmax值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetSuvmax() const;
 
                     /**
                      * 设置SUmax值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _suvmax SUmax值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuvmax(const BlockInfo& _suvmax);
@@ -1055,18 +899,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代谢情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metabolism 代谢情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetMetabolism() const;
 
                     /**
                      * 设置代谢情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metabolism 代谢情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetabolism(const BlockInfo& _metabolism);
@@ -1080,18 +920,14 @@ namespace TencentCloud
 
                     /**
                      * 获取放射性摄取
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RadioactiveUptake 放射性摄取
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetRadioactiveUptake() const;
 
                     /**
                      * 设置放射性摄取
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _radioactiveUptake 放射性摄取
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRadioactiveUptake(const BlockInfo& _radioactiveUptake);
@@ -1105,18 +941,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病变
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SymDesc 病变
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetSymDesc() const;
 
                     /**
                      * 设置病变
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _symDesc 病变
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSymDesc(const BlockInfo& _symDesc);
@@ -1130,18 +962,14 @@ namespace TencentCloud
 
                     /**
                      * 获取影像特征
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageFeature 影像特征
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetImageFeature() const;
 
                     /**
                      * 设置影像特征
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageFeature 影像特征
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageFeature(const BlockInfo& _imageFeature);
@@ -1155,18 +983,14 @@ namespace TencentCloud
 
                     /**
                      * 获取在报告图片中的坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 在报告图片中的坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置在报告图片中的坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coords 在报告图片中的坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
@@ -1180,18 +1004,14 @@ namespace TencentCloud
 
                     /**
                      * 获取峡部厚度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsthmusThickness 峡部厚度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Size GetIsthmusThickness() const;
 
                     /**
                      * 设置峡部厚度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isthmusThickness 峡部厚度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsthmusThickness(const Size& _isthmusThickness);
@@ -1207,217 +1027,186 @@ namespace TencentCloud
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Part m_part;
                     bool m_partHasBeenSet;
 
                     /**
                      * 大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Size> m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
                      * 多发
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Multiple m_multiple;
                     bool m_multipleHasBeenSet;
 
                     /**
                      * 纵横比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AspectRatio m_aspectRatio;
                     bool m_aspectRatioHasBeenSet;
 
                     /**
                      * 边缘
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_edge;
                     bool m_edgeHasBeenSet;
 
                     /**
                      * 内部回声
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_innerEcho;
                     bool m_innerEchoHasBeenSet;
 
                     /**
                      * 外部回声
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_rearEcho;
                     bool m_rearEchoHasBeenSet;
 
                     /**
                      * 弹性质地
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Elastic m_elastic;
                     bool m_elasticHasBeenSet;
 
                     /**
                      * 形状
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_shape;
                     bool m_shapeHasBeenSet;
 
                     /**
                      * 形态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_shapeAttr;
                     bool m_shapeAttrHasBeenSet;
 
                     /**
                      * 皮髓质信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_skinMedulla;
                     bool m_skinMedullaHasBeenSet;
 
                     /**
                      * 变化趋势
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_trend;
                     bool m_trendHasBeenSet;
 
                     /**
                      * 钙化
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_calcification;
                     bool m_calcificationHasBeenSet;
 
                     /**
                      * 包膜
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_envelope;
                     bool m_envelopeHasBeenSet;
 
                     /**
                      * 强化
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_enhancement;
                     bool m_enhancementHasBeenSet;
 
                     /**
                      * 淋巴结
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_lymphEnlargement;
                     bool m_lymphEnlargementHasBeenSet;
 
                     /**
                      * 淋巴门
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_lymphDoor;
                     bool m_lymphDoorHasBeenSet;
 
                     /**
                      * 活动度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_activity;
                     bool m_activityHasBeenSet;
 
                     /**
                      * 手术情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_operation;
                     bool m_operationHasBeenSet;
 
                     /**
                      * 血液cdfi
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_cDFI;
                     bool m_cDFIHasBeenSet;
 
                     /**
                      * 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_index;
                     bool m_indexHasBeenSet;
 
                     /**
                      * 大小状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_sizeStatus;
                     bool m_sizeStatusHasBeenSet;
 
                     /**
                      * 内部回声分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_innerEchoDistribution;
                     bool m_innerEchoDistributionHasBeenSet;
 
                     /**
                      * 内部回声类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BlockInfo> m_innerEchoType;
                     bool m_innerEchoTypeHasBeenSet;
 
                     /**
                      * 轮廓
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_outline;
                     bool m_outlineHasBeenSet;
 
                     /**
                      * 结构
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_structure;
                     bool m_structureHasBeenSet;
 
                     /**
                      * 密度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_density;
                     bool m_densityHasBeenSet;
 
                     /**
                      * 血管
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_vas;
                     bool m_vasHasBeenSet;
 
                     /**
                      * 囊壁
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_cysticwall;
                     bool m_cysticwallHasBeenSet;
 
                     /**
                      * 被膜
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_capsule;
                     bool m_capsuleHasBeenSet;
@@ -1431,98 +1220,84 @@ namespace TencentCloud
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 透声度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_transparent;
                     bool m_transparentHasBeenSet;
 
                     /**
                      * MRI ADC
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_mriAdc;
                     bool m_mriAdcHasBeenSet;
 
                     /**
                      * MRI DWI
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_mriDwi;
                     bool m_mriDwiHasBeenSet;
 
                     /**
                      * MRI T1信号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_mriT1;
                     bool m_mriT1HasBeenSet;
 
                     /**
                      * MRI T2信号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_mriT2;
                     bool m_mriT2HasBeenSet;
 
                     /**
                      * CT HU值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_ctHu;
                     bool m_ctHuHasBeenSet;
 
                     /**
                      * SUmax值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_suvmax;
                     bool m_suvmaxHasBeenSet;
 
                     /**
                      * 代谢情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_metabolism;
                     bool m_metabolismHasBeenSet;
 
                     /**
                      * 放射性摄取
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_radioactiveUptake;
                     bool m_radioactiveUptakeHasBeenSet;
 
                     /**
                      * 病变
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_symDesc;
                     bool m_symDescHasBeenSet;
 
                     /**
                      * 影像特征
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_imageFeature;
                     bool m_imageFeatureHasBeenSet;
 
                     /**
                      * 在报告图片中的坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_coords;
                     bool m_coordsHasBeenSet;
 
                     /**
                      * 峡部厚度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Size m_isthmusThickness;
                     bool m_isthmusThicknessHasBeenSet;

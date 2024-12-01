@@ -127,8 +127,6 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralTextImageWarnResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeKoreanDrivingLicenseOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeKoreanDrivingLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeMedicalInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeMedicalInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRRequest.h>
@@ -361,9 +359,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeHealthCodeOCRResponse> RecognizeHealthCodeOCROutcome;
                 typedef std::future<RecognizeHealthCodeOCROutcome> RecognizeHealthCodeOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeHealthCodeOCRRequest&, RecognizeHealthCodeOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeHealthCodeOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeKoreanDrivingLicenseOCRResponse> RecognizeKoreanDrivingLicenseOCROutcome;
-                typedef std::future<RecognizeKoreanDrivingLicenseOCROutcome> RecognizeKoreanDrivingLicenseOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizeKoreanDrivingLicenseOCRRequest&, RecognizeKoreanDrivingLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeKoreanDrivingLicenseOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeMedicalInvoiceOCRResponse> RecognizeMedicalInvoiceOCROutcome;
                 typedef std::future<RecognizeMedicalInvoiceOCROutcome> RecognizeMedicalInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeMedicalInvoiceOCRRequest&, RecognizeMedicalInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeMedicalInvoiceOCRAsyncHandler;
@@ -1462,15 +1457,6 @@ namespace TencentCloud
                 RecognizeHealthCodeOCROutcome RecognizeHealthCodeOCR(const Model::RecognizeHealthCodeOCRRequest &request);
                 void RecognizeHealthCodeOCRAsync(const Model::RecognizeHealthCodeOCRRequest& request, const RecognizeHealthCodeOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeHealthCodeOCROutcomeCallable RecognizeHealthCodeOCRCallable(const Model::RecognizeHealthCodeOCRRequest& request);
-
-                /**
-                 *韩国驾驶证识别
-                 * @param req RecognizeKoreanDrivingLicenseOCRRequest
-                 * @return RecognizeKoreanDrivingLicenseOCROutcome
-                 */
-                RecognizeKoreanDrivingLicenseOCROutcome RecognizeKoreanDrivingLicenseOCR(const Model::RecognizeKoreanDrivingLicenseOCRRequest &request);
-                void RecognizeKoreanDrivingLicenseOCRAsync(const Model::RecognizeKoreanDrivingLicenseOCRRequest& request, const RecognizeKoreanDrivingLicenseOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeKoreanDrivingLicenseOCROutcomeCallable RecognizeKoreanDrivingLicenseOCRCallable(const Model::RecognizeKoreanDrivingLicenseOCRRequest& request);
 
                 /**
                  *医疗发票识别目前支持全国统一门诊发票、全国统一住院发票、以及部分地方的门诊和住院发票的识别。

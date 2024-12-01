@@ -54,18 +54,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-内科-腹部
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Abdomen 体检报告-内科-腹部
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InternalMedicineAbdomen GetAbdomen() const;
 
                     /**
                      * 设置体检报告-内科-腹部
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _abdomen 体检报告-内科-腹部
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAbdomen(const InternalMedicineAbdomen& _abdomen);
@@ -79,18 +75,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-内科-心脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Heart 体检报告-内科-心脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InternalMedicineHeart GetHeart() const;
 
                     /**
                      * 设置体检报告-内科-心脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _heart 体检报告-内科-心脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeart(const InternalMedicineHeart& _heart);
@@ -104,18 +96,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-内科-血管
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vessel 体检报告-内科-血管
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InternalMedicineVessel GetVessel() const;
 
                     /**
                      * 设置体检报告-内科-血管
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vessel 体检报告-内科-血管
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVessel(const InternalMedicineVessel& _vessel);
@@ -129,18 +117,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-内科-呼吸系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RespiratorySystem 体检报告-内科-呼吸系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InternalMedicineRespiratorySystem GetRespiratorySystem() const;
 
                     /**
                      * 设置体检报告-内科-呼吸系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _respiratorySystem 体检报告-内科-呼吸系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRespiratorySystem(const InternalMedicineRespiratorySystem& _respiratorySystem);
@@ -154,18 +138,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-内科-内科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Others 体检报告-内科-内科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValueItem> GetOthers() const;
 
                     /**
                      * 设置体检报告-内科-内科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _others 体检报告-内科-内科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOthers(const std::vector<KeyValueItem>& _others);
@@ -179,18 +159,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告-内科-小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BriefSummary 体检报告-内科-小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InternalMedicineBriefSummary GetBriefSummary() const;
 
                     /**
                      * 设置体检报告-内科-小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _briefSummary 体检报告-内科-小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBriefSummary(const InternalMedicineBriefSummary& _briefSummary);
@@ -206,42 +182,36 @@ namespace TencentCloud
 
                     /**
                      * 体检报告-内科-腹部
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InternalMedicineAbdomen m_abdomen;
                     bool m_abdomenHasBeenSet;
 
                     /**
                      * 体检报告-内科-心脏
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InternalMedicineHeart m_heart;
                     bool m_heartHasBeenSet;
 
                     /**
                      * 体检报告-内科-血管
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InternalMedicineVessel m_vessel;
                     bool m_vesselHasBeenSet;
 
                     /**
                      * 体检报告-内科-呼吸系统
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InternalMedicineRespiratorySystem m_respiratorySystem;
                     bool m_respiratorySystemHasBeenSet;
 
                     /**
                      * 体检报告-内科-内科其他
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValueItem> m_others;
                     bool m_othersHasBeenSet;
 
                     /**
                      * 体检报告-内科-小结
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InternalMedicineBriefSummary m_briefSummary;
                     bool m_briefSummaryHasBeenSet;

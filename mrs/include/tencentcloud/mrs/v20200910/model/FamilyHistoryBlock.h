@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取家庭成员
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelativeHistory 家庭成员
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RelativeHistoryBlock GetRelativeHistory() const;
 
                     /**
                      * 设置家庭成员
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _relativeHistory 家庭成员
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRelativeHistory(const RelativeHistoryBlock& _relativeHistory);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取家族肿瘤史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelativeCancerHistory 家族肿瘤史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RelativeCancerHistoryBlock GetRelativeCancerHistory() const;
 
                     /**
                      * 设置家族肿瘤史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _relativeCancerHistory 家族肿瘤史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRelativeCancerHistory(const RelativeCancerHistoryBlock& _relativeCancerHistory);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取家族遗传史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GeneticHistory 家族遗传史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GeneticHistoryBlock GetGeneticHistory() const;
 
                     /**
                      * 设置家族遗传史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _geneticHistory 家族遗传史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGeneticHistory(const GeneticHistoryBlock& _geneticHistory);
@@ -128,21 +116,18 @@ namespace TencentCloud
 
                     /**
                      * 家庭成员
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RelativeHistoryBlock m_relativeHistory;
                     bool m_relativeHistoryHasBeenSet;
 
                     /**
                      * 家族肿瘤史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RelativeCancerHistoryBlock m_relativeCancerHistory;
                     bool m_relativeCancerHistoryHasBeenSet;
 
                     /**
                      * 家族遗传史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GeneticHistoryBlock m_geneticHistory;
                     bool m_geneticHistoryHasBeenSet;

@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述段落文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 描述段落文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BaseInfo GetText() const;
 
                     /**
                      * 设置描述段落文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 描述段落文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const BaseInfo& _text);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述段落详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Infos 描述段落详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DetailInformation> GetInfos() const;
 
                     /**
                      * 设置描述段落详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _infos 描述段落详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInfos(const std::vector<DetailInformation>& _infos);
@@ -102,14 +94,12 @@ namespace TencentCloud
 
                     /**
                      * 描述段落文本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BaseInfo m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 描述段落详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DetailInformation> m_infos;
                     bool m_infosHasBeenSet;

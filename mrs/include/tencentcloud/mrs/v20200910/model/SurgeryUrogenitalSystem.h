@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取泌尿生殖系统总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 泌尿生殖系统总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetText() const;
 
                     /**
                      * 设置泌尿生殖系统总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 泌尿生殖系统总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const KeyValueItem& _text);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取前列腺
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Prostate 前列腺
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetProstate() const;
 
                     /**
                      * 设置前列腺
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _prostate 前列腺
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProstate(const KeyValueItem& _prostate);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外生殖器（男性）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalReproductiveOrgans 外生殖器（男性）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetExternalReproductiveOrgans() const;
 
                     /**
                      * 设置外生殖器（男性）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _externalReproductiveOrgans 外生殖器（男性）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExternalReproductiveOrgans(const KeyValueItem& _externalReproductiveOrgans);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 泌尿生殖系统总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 前列腺
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_prostate;
                     bool m_prostateHasBeenSet;
 
                     /**
                      * 外生殖器（男性）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_externalReproductiveOrgans;
                     bool m_externalReproductiveOrgansHasBeenSet;

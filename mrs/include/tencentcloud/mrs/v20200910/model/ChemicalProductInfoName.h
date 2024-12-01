@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文本内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 文本内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置文本内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 文本内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GenericName 通用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGenericName() const;
 
                     /**
                      * 设置通用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _genericName 通用名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGenericName(const std::string& _genericName);
@@ -123,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取英文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnName 英文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnName() const;
 
                     /**
                      * 设置英文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enName 英文名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnName(const std::string& _enName);
@@ -148,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取拼音
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pinyin 拼音
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPinyin() const;
 
                     /**
                      * 设置拼音
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pinyin 拼音
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPinyin(const std::string& _pinyin);
@@ -196,14 +180,12 @@ namespace TencentCloud
 
                     /**
                      * 文本内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 通用名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_genericName;
                     bool m_genericNameHasBeenSet;
@@ -217,14 +199,12 @@ namespace TencentCloud
 
                     /**
                      * 英文名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_enName;
                     bool m_enNameHasBeenSet;
 
                     /**
                      * 拼音
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pinyin;
                     bool m_pinyinHasBeenSet;

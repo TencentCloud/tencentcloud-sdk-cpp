@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Norm 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNorm() const;
 
                     /**
                      * 设置归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _norm 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNorm(const std::string& _norm);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnit(const std::string& _unit);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取舒张压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NormDiastolic 舒张压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNormDiastolic() const;
 
                     /**
                      * 设置舒张压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _normDiastolic 舒张压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNormDiastolic(const std::string& _normDiastolic);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取收缩压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NormSystolic 收缩压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNormSystolic() const;
 
                     /**
                      * 设置收缩压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _normSystolic 收缩压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNormSystolic(const std::string& _normSystolic);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_norm;
                     bool m_normHasBeenSet;
 
                     /**
                      * 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
                      * 对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 舒张压
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_normDiastolic;
                     bool m_normDiastolicHasBeenSet;
 
                     /**
                      * 收缩压
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_normSystolic;
                     bool m_normSystolicHasBeenSet;

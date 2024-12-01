@@ -174,6 +174,39 @@ namespace TencentCloud
                      */
                     bool CdcIdHasBeenSet() const;
 
+                    /**
+                     * 获取磁盘名称，长度不超过128 个字符。
+
+该参数正在邀测中，暂未开放使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiskName 磁盘名称，长度不超过128 个字符。
+
+该参数正在邀测中，暂未开放使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDiskName() const;
+
+                    /**
+                     * 设置磁盘名称，长度不超过128 个字符。
+
+该参数正在邀测中，暂未开放使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _diskName 磁盘名称，长度不超过128 个字符。
+
+该参数正在邀测中，暂未开放使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDiskName(const std::string& _diskName);
+
+                    /**
+                     * 判断参数 DiskName 是否已赋值
+                     * @return DiskName 是否已赋值
+                     * 
+                     */
+                    bool DiskNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,6 +243,15 @@ namespace TencentCloud
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
+
+                    /**
+                     * 磁盘名称，长度不超过128 个字符。
+
+该参数正在邀测中，暂未开放使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_diskName;
+                    bool m_diskNameHasBeenSet;
 
                 };
             }

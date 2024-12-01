@@ -45,21 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取appId
                      * @return MiniProgramAppId appId
-                     * 
+                     * @deprecated
                      */
                     std::string GetMiniProgramAppId() const;
 
                     /**
                      * 设置appId
                      * @param _miniProgramAppId appId
-                     * 
+                     * @deprecated
                      */
                     void SetMiniProgramAppId(const std::string& _miniProgramAppId);
 
                     /**
                      * 判断参数 MiniProgramAppId 是否已赋值
                      * @return MiniProgramAppId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MiniProgramAppIdHasBeenSet() const;
 

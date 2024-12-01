@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Grade 等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetGrade() const;
 
                     /**
                      * 设置等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _grade 等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGrade(const BlockInfo& _grade);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Part GetPart() const;
 
                     /**
                      * 设置部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPart(const Part& _part);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetIndex() const;
 
                     /**
                      * 设置原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _index 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndex(const std::vector<int64_t>& _index);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病变
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Symptom 病变
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BlockInfo GetSymptom() const;
 
                     /**
                      * 设置病变
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _symptom 病变
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSymptom(const BlockInfo& _symptom);
@@ -151,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Attrs 属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BlockInfo> GetAttrs() const;
 
                     /**
                      * 设置属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attrs 属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttrs(const std::vector<BlockInfo>& _attrs);
@@ -176,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -201,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coords 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
@@ -228,49 +200,42 @@ namespace TencentCloud
 
                     /**
                      * 等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_grade;
                     bool m_gradeHasBeenSet;
 
                     /**
                      * 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Part m_part;
                     bool m_partHasBeenSet;
 
                     /**
                      * 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_index;
                     bool m_indexHasBeenSet;
 
                     /**
                      * 病变
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_symptom;
                     bool m_symptomHasBeenSet;
 
                     /**
                      * 属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BlockInfo> m_attrs;
                     bool m_attrsHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_coords;
                     bool m_coordsHasBeenSet;

@@ -72,27 +72,27 @@ namespace TencentCloud
                     bool SnHasBeenSet() const;
 
                     /**
-                     * 获取小程序ID
+                     * 获取小程序ID，参数已弃用，不用传参
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelId 小程序ID
+                     * @return ModelId 小程序ID，参数已弃用，不用传参
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetModelId() const;
 
                     /**
-                     * 设置小程序ID
+                     * 设置小程序ID，参数已弃用，不用传参
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelId 小程序ID
+                     * @param _modelId 小程序ID，参数已弃用，不用传参
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetModelId(const std::string& _modelId);
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ModelIdHasBeenSet() const;
 
@@ -101,7 +101,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveNum 激活数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetActiveNum() const;
 
@@ -110,14 +110,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activeNum 激活数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetActiveNum(const int64_t& _activeNum);
 
                     /**
                      * 判断参数 ActiveNum 是否已赋值
                      * @return ActiveNum 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ActiveNumHasBeenSet() const;
 
@@ -131,7 +131,7 @@ namespace TencentCloud
                     bool m_snHasBeenSet;
 
                     /**
-                     * 小程序ID
+                     * 小程序ID，参数已弃用，不用传参
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelId;

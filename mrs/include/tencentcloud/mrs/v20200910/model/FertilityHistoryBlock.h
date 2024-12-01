@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _state 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Norm 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNorm() const;
 
                     /**
                      * 设置归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _norm 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNorm(const std::string& _norm);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取妊娠次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PregCount 妊娠次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPregCount() const;
 
                     /**
                      * 设置妊娠次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pregCount 妊娠次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPregCount(const std::string& _pregCount);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生产次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProduCount 生产次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProduCount() const;
 
                     /**
                      * 设置生产次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _produCount 生产次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProduCount(const std::string& _produCount);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
                      * 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_norm;
                     bool m_normHasBeenSet;
 
                     /**
                      * 对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 妊娠次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pregCount;
                     bool m_pregCountHasBeenSet;
 
                     /**
                      * 生产次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_produCount;
                     bool m_produCountHasBeenSet;

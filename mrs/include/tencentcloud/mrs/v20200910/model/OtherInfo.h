@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取麻醉方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Anesthesia 麻醉方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryAttr GetAnesthesia() const;
 
                     /**
                      * 设置麻醉方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _anesthesia 麻醉方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAnesthesia(const SurgeryAttr& _anesthesia);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取术中出血
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BloodLoss 术中出血
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryAttr GetBloodLoss() const;
 
                     /**
                      * 设置术中出血
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bloodLoss 术中出血
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBloodLoss(const SurgeryAttr& _bloodLoss);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输血
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BloodTransfusion 输血
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryAttr GetBloodTransfusion() const;
 
                     /**
                      * 设置输血
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bloodTransfusion 输血
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBloodTransfusion(const SurgeryAttr& _bloodTransfusion);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术用时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 手术用时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryAttr GetDuration() const;
 
                     /**
                      * 设置手术用时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _duration 手术用时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDuration(const SurgeryAttr& _duration);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 手术开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryAttr GetEndTime() const;
 
                     /**
                      * 设置手术开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 手术开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const SurgeryAttr& _endTime);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 手术结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryAttr GetStartTime() const;
 
                     /**
                      * 设置手术结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 手术结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const SurgeryAttr& _startTime);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 麻醉方法
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryAttr m_anesthesia;
                     bool m_anesthesiaHasBeenSet;
 
                     /**
                      * 术中出血
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryAttr m_bloodLoss;
                     bool m_bloodLossHasBeenSet;
 
                     /**
                      * 输血
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryAttr m_bloodTransfusion;
                     bool m_bloodTransfusionHasBeenSet;
 
                     /**
                      * 手术用时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryAttr m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
                      * 手术开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryAttr m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 手术结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryAttr m_startTime;
                     bool m_startTimeHasBeenSet;

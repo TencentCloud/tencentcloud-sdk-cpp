@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Item 项目原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PhysicalBaseItem GetItem() const;
 
                     /**
                      * 设置项目原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _item 项目原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItem(const PhysicalBaseItem& _item);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取方位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 方位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PhysicalBaseItem GetLocation() const;
 
                     /**
                      * 设置方位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _location 方位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocation(const PhysicalBaseItem& _location);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PhysicalBaseItem GetResult() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _result 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResult(const PhysicalBaseItem& _result);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 项目原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PhysicalBaseItem m_item;
                     bool m_itemHasBeenSet;
 
                     /**
                      * 方位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PhysicalBaseItem m_location;
                     bool m_locationHasBeenSet;
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PhysicalBaseItem m_result;
                     bool m_resultHasBeenSet;

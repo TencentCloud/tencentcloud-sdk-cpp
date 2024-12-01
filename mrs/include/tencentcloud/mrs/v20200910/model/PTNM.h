@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 项目名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置项目名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 项目名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetIndex() const;
 
                     /**
                      * 设置索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _index 索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndex(const std::vector<int64_t>& _index);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pT
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PT pT
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPT() const;
 
                     /**
                      * 设置pT
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pT pT
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPT(const std::string& _pT);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PN pN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPN() const;
 
                     /**
                      * 设置pN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pN pN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPN(const std::string& _pN);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pM
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PM pM
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPM() const;
 
                     /**
                      * 设置pM
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pM pM
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPM(const std::string& _pM);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文对应坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 原文对应坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置原文对应坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coords 原文对应坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
@@ -251,56 +219,48 @@ namespace TencentCloud
 
                     /**
                      * 项目名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 索引
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_index;
                     bool m_indexHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * pT
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pT;
                     bool m_pTHasBeenSet;
 
                     /**
                      * pN
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pN;
                     bool m_pNHasBeenSet;
 
                     /**
                      * pM
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pM;
                     bool m_pMHasBeenSet;
 
                     /**
                      * 原文对应坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_coords;
                     bool m_coordsHasBeenSet;

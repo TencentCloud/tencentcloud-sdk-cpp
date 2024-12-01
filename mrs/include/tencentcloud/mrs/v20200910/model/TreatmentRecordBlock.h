@@ -62,18 +62,14 @@ namespace TencentCloud
 
                     /**
                      * 获取免疫组化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Immunohistochemistry 免疫组化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ImmunohistochemistryBlock GetImmunohistochemistry() const;
 
                     /**
                      * 设置免疫组化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _immunohistochemistry 免疫组化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImmunohistochemistry(const ImmunohistochemistryBlock& _immunohistochemistry);
@@ -87,18 +83,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主诉
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChiefComplaint 主诉
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChiefComplaintBlock GetChiefComplaint() const;
 
                     /**
                      * 设置主诉
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chiefComplaint 主诉
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChiefComplaint(const ChiefComplaintBlock& _chiefComplaint);
@@ -112,18 +104,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionCondition 入院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AdmissionConditionBlock GetAdmissionCondition() const;
 
                     /**
                      * 设置入院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _admissionCondition 入院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdmissionCondition(const AdmissionConditionBlock& _admissionCondition);
@@ -137,18 +125,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查体
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BodyExamination 查体
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BodyExaminationBlock GetBodyExamination() const;
 
                     /**
                      * 设置查体
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bodyExamination 查体
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBodyExamination(const BodyExaminationBlock& _bodyExamination);
@@ -162,18 +146,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionDiagnosis 入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AdmissionDiagnosisBlock GetAdmissionDiagnosis() const;
 
                     /**
                      * 设置入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _admissionDiagnosis 入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdmissionDiagnosis(const AdmissionDiagnosisBlock& _admissionDiagnosis);
@@ -187,18 +167,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入院中医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionTraditionalDiagnosis 入院中医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AdmissionDiagnosisBlock GetAdmissionTraditionalDiagnosis() const;
 
                     /**
                      * 设置入院中医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _admissionTraditionalDiagnosis 入院中医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdmissionTraditionalDiagnosis(const AdmissionDiagnosisBlock& _admissionTraditionalDiagnosis);
@@ -212,18 +188,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入院西医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionModernDiagnosis 入院西医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AdmissionDiagnosisBlock GetAdmissionModernDiagnosis() const;
 
                     /**
                      * 设置入院西医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _admissionModernDiagnosis 入院西医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdmissionModernDiagnosis(const AdmissionDiagnosisBlock& _admissionModernDiagnosis);
@@ -237,18 +209,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病理诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PathologicalDiagnosis 病理诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PathologicalDiagnosisBlock GetPathologicalDiagnosis() const;
 
                     /**
                      * 设置病理诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pathologicalDiagnosis 病理诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPathologicalDiagnosis(const PathologicalDiagnosisBlock& _pathologicalDiagnosis);
@@ -262,18 +230,14 @@ namespace TencentCloud
 
                     /**
                      * 获取现病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiseasePresent 现病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetDiseasePresent() const;
 
                     /**
                      * 设置现病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diseasePresent 现病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiseasePresent(const DiseasePresentBlock& _diseasePresent);
@@ -287,18 +251,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体征
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SymptomsAndSigns 体征
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetSymptomsAndSigns() const;
 
                     /**
                      * 设置体征
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _symptomsAndSigns 体征
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSymptomsAndSigns(const DiseasePresentBlock& _symptomsAndSigns);
@@ -312,18 +272,14 @@ namespace TencentCloud
 
                     /**
                      * 获取辅助检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuxiliaryExamination 辅助检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetAuxiliaryExamination() const;
 
                     /**
                      * 设置辅助检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _auxiliaryExamination 辅助检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuxiliaryExamination(const DiseasePresentBlock& _auxiliaryExamination);
@@ -337,18 +293,14 @@ namespace TencentCloud
 
                     /**
                      * 获取特殊检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecialistExamination 特殊检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetSpecialistExamination() const;
 
                     /**
                      * 设置特殊检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _specialistExamination 特殊检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpecialistExamination(const DiseasePresentBlock& _specialistExamination);
@@ -362,18 +314,14 @@ namespace TencentCloud
 
                     /**
                      * 获取精神检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MentalExamination 精神检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetMentalExamination() const;
 
                     /**
                      * 设置精神检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mentalExamination 精神检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMentalExamination(const DiseasePresentBlock& _mentalExamination);
@@ -387,18 +335,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检查记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckRecord 检查记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetCheckRecord() const;
 
                     /**
                      * 设置检查记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkRecord 检查记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckRecord(const DiseasePresentBlock& _checkRecord);
@@ -412,18 +356,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检查结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InspectResult 检查结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetInspectResult() const;
 
                     /**
                      * 设置检查结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inspectResult 检查结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInspectResult(const DiseasePresentBlock& _inspectResult);
@@ -437,18 +377,14 @@ namespace TencentCloud
 
                     /**
                      * 获取治疗经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckAndTreatmentProcess 治疗经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetCheckAndTreatmentProcess() const;
 
                     /**
                      * 设置治疗经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkAndTreatmentProcess 治疗经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckAndTreatmentProcess(const DiseasePresentBlock& _checkAndTreatmentProcess);
@@ -462,18 +398,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SurgeryCondition 手术经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryConditionBlock GetSurgeryCondition() const;
 
                     /**
                      * 设置手术经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _surgeryCondition 手术经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSurgeryCondition(const SurgeryConditionBlock& _surgeryCondition);
@@ -487,18 +419,14 @@ namespace TencentCloud
 
                     /**
                      * 获取切口愈合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncisionHealing 切口愈合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetIncisionHealing() const;
 
                     /**
                      * 设置切口愈合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _incisionHealing 切口愈合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIncisionHealing(const DiseasePresentBlock& _incisionHealing);
@@ -512,18 +440,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeDiagnosis 出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DischargeDiagnosisBlock GetDischargeDiagnosis() const;
 
                     /**
                      * 设置出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dischargeDiagnosis 出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDischargeDiagnosis(const DischargeDiagnosisBlock& _dischargeDiagnosis);
@@ -537,18 +461,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出院中医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeTraditionalDiagnosis 出院中医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetDischargeTraditionalDiagnosis() const;
 
                     /**
                      * 设置出院中医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dischargeTraditionalDiagnosis 出院中医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDischargeTraditionalDiagnosis(const DiseasePresentBlock& _dischargeTraditionalDiagnosis);
@@ -562,18 +482,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出院西医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeModernDiagnosis 出院西医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DischargeDiagnosisBlock GetDischargeModernDiagnosis() const;
 
                     /**
                      * 设置出院西医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dischargeModernDiagnosis 出院西医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDischargeModernDiagnosis(const DischargeDiagnosisBlock& _dischargeModernDiagnosis);
@@ -587,18 +503,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeCondition 出院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DischargeConditionBlock GetDischargeCondition() const;
 
                     /**
                      * 设置出院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dischargeCondition 出院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDischargeCondition(const DischargeConditionBlock& _dischargeCondition);
@@ -612,18 +524,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出院医嘱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeInstructions 出院医嘱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetDischargeInstructions() const;
 
                     /**
                      * 设置出院医嘱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dischargeInstructions 出院医嘱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDischargeInstructions(const DiseasePresentBlock& _dischargeInstructions);
@@ -637,18 +545,14 @@ namespace TencentCloud
 
                     /**
                      * 获取治疗建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TreatmentSuggestion 治疗建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetTreatmentSuggestion() const;
 
                     /**
                      * 设置治疗建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _treatmentSuggestion 治疗建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTreatmentSuggestion(const DiseasePresentBlock& _treatmentSuggestion);
@@ -662,18 +566,14 @@ namespace TencentCloud
 
                     /**
                      * 获取随访
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FollowUpRequirements 随访
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetFollowUpRequirements() const;
 
                     /**
                      * 设置随访
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _followUpRequirements 随访
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFollowUpRequirements(const DiseasePresentBlock& _followUpRequirements);
@@ -687,18 +587,14 @@ namespace TencentCloud
 
                     /**
                      * 获取治疗情况变化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConditionChanges 治疗情况变化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetConditionChanges() const;
 
                     /**
                      * 设置治疗情况变化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _conditionChanges 治疗情况变化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConditionChanges(const DiseasePresentBlock& _conditionChanges);
@@ -712,18 +608,14 @@ namespace TencentCloud
 
                     /**
                      * 获取收缩压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PulmonaryArterySystolicPressure 收缩压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetPulmonaryArterySystolicPressure() const;
 
                     /**
                      * 设置收缩压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pulmonaryArterySystolicPressure 收缩压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPulmonaryArterySystolicPressure(const DiseasePresentBlock& _pulmonaryArterySystolicPressure);
@@ -737,18 +629,14 @@ namespace TencentCloud
 
                     /**
                      * 获取bclc分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BCLC bclc分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetBCLC() const;
 
                     /**
                      * 设置bclc分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bCLC bclc分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBCLC(const DiseasePresentBlock& _bCLC);
@@ -762,18 +650,14 @@ namespace TencentCloud
 
                     /**
                      * 获取PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PTNM PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PTNMBlock GetPTNM() const;
 
                     /**
                      * 设置PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pTNM PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPTNM(const PTNMBlock& _pTNM);
@@ -787,18 +671,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ECOG评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ECOG ECOG评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetECOG() const;
 
                     /**
                      * 设置ECOG评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eCOG ECOG评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetECOG(const DiseasePresentBlock& _eCOG);
@@ -812,18 +692,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NRS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NRS NRS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetNRS() const;
 
                     /**
                      * 设置NRS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nRS NRS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNRS(const DiseasePresentBlock& _nRS);
@@ -837,18 +713,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kps评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KPS kps评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseasePresentBlock GetKPS() const;
 
                     /**
                      * 设置kps评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kPS kps评分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKPS(const DiseasePresentBlock& _kPS);
@@ -862,18 +734,14 @@ namespace TencentCloud
 
                     /**
                      * 获取癌症分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cancerstaging 癌症分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ClinicalStaging GetCancerstaging() const;
 
                     /**
                      * 设置癌症分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cancerstaging 癌症分期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCancerstaging(const ClinicalStaging& _cancerstaging);
@@ -887,18 +755,14 @@ namespace TencentCloud
 
                     /**
                      * 获取死亡时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeathDate 死亡时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DeathDateBlock GetDeathDate() const;
 
                     /**
                      * 设置死亡时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deathDate 死亡时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeathDate(const DeathDateBlock& _deathDate);
@@ -912,18 +776,14 @@ namespace TencentCloud
 
                     /**
                      * 获取复发日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelapseDate 复发日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RelapseDateBlock GetRelapseDate() const;
 
                     /**
                      * 设置复发日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _relapseDate 复发日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRelapseDate(const RelapseDateBlock& _relapseDate);
@@ -937,18 +797,14 @@ namespace TencentCloud
 
                     /**
                      * 获取观察日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObservationDays 观察日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DeathDateBlock GetObservationDays() const;
 
                     /**
                      * 设置观察日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _observationDays 观察日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObservationDays(const DeathDateBlock& _observationDays);
@@ -962,18 +818,14 @@ namespace TencentCloud
 
                     /**
                      * 获取切口愈合情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncisionHealingText 切口愈合情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIncisionHealingText() const;
 
                     /**
                      * 设置切口愈合情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _incisionHealingText 切口愈合情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIncisionHealingText(const std::string& _incisionHealingText);
@@ -987,18 +839,14 @@ namespace TencentCloud
 
                     /**
                      * 获取辅助检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuxiliaryExaminationText 辅助检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuxiliaryExaminationText() const;
 
                     /**
                      * 设置辅助检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _auxiliaryExaminationText 辅助检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuxiliaryExaminationText(const std::string& _auxiliaryExaminationText);
@@ -1012,18 +860,14 @@ namespace TencentCloud
 
                     /**
                      * 获取特殊检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecialExamText 特殊检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpecialExamText() const;
 
                     /**
                      * 设置特殊检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _specialExamText 特殊检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpecialExamText(const std::string& _specialExamText);
@@ -1037,18 +881,14 @@ namespace TencentCloud
 
                     /**
                      * 获取门诊诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutpatientDiagnosisText 门诊诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutpatientDiagnosisText() const;
 
                     /**
                      * 设置门诊诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outpatientDiagnosisText 门诊诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutpatientDiagnosisText(const std::string& _outpatientDiagnosisText);
@@ -1062,18 +902,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionConditionText 入院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdmissionConditionText() const;
 
                     /**
                      * 设置入院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _admissionConditionText 入院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdmissionConditionText(const std::string& _admissionConditionText);
@@ -1087,18 +923,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊疗经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckAndTreatmentProcessText 诊疗经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckAndTreatmentProcessText() const;
 
                     /**
                      * 设置诊疗经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkAndTreatmentProcessText 诊疗经过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckAndTreatmentProcessText(const std::string& _checkAndTreatmentProcessText);
@@ -1112,18 +944,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体征
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SymptomsAndSignsText 体征
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSymptomsAndSignsText() const;
 
                     /**
                      * 设置体征
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _symptomsAndSignsText 体征
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSymptomsAndSignsText(const std::string& _symptomsAndSignsText);
@@ -1137,18 +965,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出院医嘱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeInstructionsText 出院医嘱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDischargeInstructionsText() const;
 
                     /**
                      * 设置出院医嘱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dischargeInstructionsText 出院医嘱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDischargeInstructionsText(const std::string& _dischargeInstructionsText);
@@ -1162,18 +986,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdmissionDiagnosisText 入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdmissionDiagnosisText() const;
 
                     /**
                      * 设置入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _admissionDiagnosisText 入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdmissionDiagnosisText(const std::string& _admissionDiagnosisText);
@@ -1187,18 +1007,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SurgeryConditionText 手术情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSurgeryConditionText() const;
 
                     /**
                      * 设置手术情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _surgeryConditionText 手术情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSurgeryConditionText(const std::string& _surgeryConditionText);
@@ -1212,18 +1028,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病理诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PathologicalDiagnosisText 病理诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPathologicalDiagnosisText() const;
 
                     /**
                      * 设置病理诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pathologicalDiagnosisText 病理诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPathologicalDiagnosisText(const std::string& _pathologicalDiagnosisText);
@@ -1237,18 +1049,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeConditionText 出院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDischargeConditionText() const;
 
                     /**
                      * 设置出院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dischargeConditionText 出院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDischargeConditionText(const std::string& _dischargeConditionText);
@@ -1262,18 +1070,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检查记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckRecordText 检查记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckRecordText() const;
 
                     /**
                      * 设置检查记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkRecordText 检查记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckRecordText(const std::string& _checkRecordText);
@@ -1287,18 +1091,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主诉
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChiefComplaintText 主诉
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChiefComplaintText() const;
 
                     /**
                      * 设置主诉
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chiefComplaintText 主诉
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChiefComplaintText(const std::string& _chiefComplaintText);
@@ -1312,18 +1112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DischargeDiagnosisText 出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDischargeDiagnosisText() const;
 
                     /**
                      * 设置出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dischargeDiagnosisText 出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDischargeDiagnosisText(const std::string& _dischargeDiagnosisText);
@@ -1339,357 +1135,306 @@ namespace TencentCloud
 
                     /**
                      * 免疫组化
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ImmunohistochemistryBlock m_immunohistochemistry;
                     bool m_immunohistochemistryHasBeenSet;
 
                     /**
                      * 主诉
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChiefComplaintBlock m_chiefComplaint;
                     bool m_chiefComplaintHasBeenSet;
 
                     /**
                      * 入院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AdmissionConditionBlock m_admissionCondition;
                     bool m_admissionConditionHasBeenSet;
 
                     /**
                      * 查体
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BodyExaminationBlock m_bodyExamination;
                     bool m_bodyExaminationHasBeenSet;
 
                     /**
                      * 入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AdmissionDiagnosisBlock m_admissionDiagnosis;
                     bool m_admissionDiagnosisHasBeenSet;
 
                     /**
                      * 入院中医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AdmissionDiagnosisBlock m_admissionTraditionalDiagnosis;
                     bool m_admissionTraditionalDiagnosisHasBeenSet;
 
                     /**
                      * 入院西医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AdmissionDiagnosisBlock m_admissionModernDiagnosis;
                     bool m_admissionModernDiagnosisHasBeenSet;
 
                     /**
                      * 病理诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PathologicalDiagnosisBlock m_pathologicalDiagnosis;
                     bool m_pathologicalDiagnosisHasBeenSet;
 
                     /**
                      * 现病史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_diseasePresent;
                     bool m_diseasePresentHasBeenSet;
 
                     /**
                      * 体征
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_symptomsAndSigns;
                     bool m_symptomsAndSignsHasBeenSet;
 
                     /**
                      * 辅助检查
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_auxiliaryExamination;
                     bool m_auxiliaryExaminationHasBeenSet;
 
                     /**
                      * 特殊检查
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_specialistExamination;
                     bool m_specialistExaminationHasBeenSet;
 
                     /**
                      * 精神检查
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_mentalExamination;
                     bool m_mentalExaminationHasBeenSet;
 
                     /**
                      * 检查记录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_checkRecord;
                     bool m_checkRecordHasBeenSet;
 
                     /**
                      * 检查结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_inspectResult;
                     bool m_inspectResultHasBeenSet;
 
                     /**
                      * 治疗经过
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_checkAndTreatmentProcess;
                     bool m_checkAndTreatmentProcessHasBeenSet;
 
                     /**
                      * 手术经过
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryConditionBlock m_surgeryCondition;
                     bool m_surgeryConditionHasBeenSet;
 
                     /**
                      * 切口愈合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_incisionHealing;
                     bool m_incisionHealingHasBeenSet;
 
                     /**
                      * 出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DischargeDiagnosisBlock m_dischargeDiagnosis;
                     bool m_dischargeDiagnosisHasBeenSet;
 
                     /**
                      * 出院中医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_dischargeTraditionalDiagnosis;
                     bool m_dischargeTraditionalDiagnosisHasBeenSet;
 
                     /**
                      * 出院西医诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DischargeDiagnosisBlock m_dischargeModernDiagnosis;
                     bool m_dischargeModernDiagnosisHasBeenSet;
 
                     /**
                      * 出院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DischargeConditionBlock m_dischargeCondition;
                     bool m_dischargeConditionHasBeenSet;
 
                     /**
                      * 出院医嘱
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_dischargeInstructions;
                     bool m_dischargeInstructionsHasBeenSet;
 
                     /**
                      * 治疗建议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_treatmentSuggestion;
                     bool m_treatmentSuggestionHasBeenSet;
 
                     /**
                      * 随访
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_followUpRequirements;
                     bool m_followUpRequirementsHasBeenSet;
 
                     /**
                      * 治疗情况变化
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_conditionChanges;
                     bool m_conditionChangesHasBeenSet;
 
                     /**
                      * 收缩压
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_pulmonaryArterySystolicPressure;
                     bool m_pulmonaryArterySystolicPressureHasBeenSet;
 
                     /**
                      * bclc分期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_bCLC;
                     bool m_bCLCHasBeenSet;
 
                     /**
                      * PTNM分期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PTNMBlock m_pTNM;
                     bool m_pTNMHasBeenSet;
 
                     /**
                      * ECOG评分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_eCOG;
                     bool m_eCOGHasBeenSet;
 
                     /**
                      * NRS评分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_nRS;
                     bool m_nRSHasBeenSet;
 
                     /**
                      * kps评分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseasePresentBlock m_kPS;
                     bool m_kPSHasBeenSet;
 
                     /**
                      * 癌症分期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClinicalStaging m_cancerstaging;
                     bool m_cancerstagingHasBeenSet;
 
                     /**
                      * 死亡时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DeathDateBlock m_deathDate;
                     bool m_deathDateHasBeenSet;
 
                     /**
                      * 复发日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RelapseDateBlock m_relapseDate;
                     bool m_relapseDateHasBeenSet;
 
                     /**
                      * 观察日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DeathDateBlock m_observationDays;
                     bool m_observationDaysHasBeenSet;
 
                     /**
                      * 切口愈合情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_incisionHealingText;
                     bool m_incisionHealingTextHasBeenSet;
 
                     /**
                      * 辅助检查
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_auxiliaryExaminationText;
                     bool m_auxiliaryExaminationTextHasBeenSet;
 
                     /**
                      * 特殊检查
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_specialExamText;
                     bool m_specialExamTextHasBeenSet;
 
                     /**
                      * 门诊诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outpatientDiagnosisText;
                     bool m_outpatientDiagnosisTextHasBeenSet;
 
                     /**
                      * 入院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_admissionConditionText;
                     bool m_admissionConditionTextHasBeenSet;
 
                     /**
                      * 诊疗经过
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkAndTreatmentProcessText;
                     bool m_checkAndTreatmentProcessTextHasBeenSet;
 
                     /**
                      * 体征
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_symptomsAndSignsText;
                     bool m_symptomsAndSignsTextHasBeenSet;
 
                     /**
                      * 出院医嘱
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dischargeInstructionsText;
                     bool m_dischargeInstructionsTextHasBeenSet;
 
                     /**
                      * 入院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_admissionDiagnosisText;
                     bool m_admissionDiagnosisTextHasBeenSet;
 
                     /**
                      * 手术情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_surgeryConditionText;
                     bool m_surgeryConditionTextHasBeenSet;
 
                     /**
                      * 病理诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pathologicalDiagnosisText;
                     bool m_pathologicalDiagnosisTextHasBeenSet;
 
                     /**
                      * 出院情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dischargeConditionText;
                     bool m_dischargeConditionTextHasBeenSet;
 
                     /**
                      * 检查记录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkRecordText;
                     bool m_checkRecordTextHasBeenSet;
 
                     /**
                      * 主诉
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chiefComplaintText;
                     bool m_chiefComplaintTextHasBeenSet;
 
                     /**
                      * 出院诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dischargeDiagnosisText;
                     bool m_dischargeDiagnosisTextHasBeenSet;

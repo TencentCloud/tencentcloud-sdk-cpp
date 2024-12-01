@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取症状
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Symptom 症状
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SymptomInfo> GetSymptom() const;
 
                     /**
                      * 设置症状
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _symptom 症状
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSymptom(const std::vector<SymptomInfo>& _symptom);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 文本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coords 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
@@ -127,21 +115,18 @@ namespace TencentCloud
 
                     /**
                      * 症状
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SymptomInfo> m_symptom;
                     bool m_symptomHasBeenSet;
 
                     /**
                      * 文本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_coords;
                     bool m_coordsHasBeenSet;

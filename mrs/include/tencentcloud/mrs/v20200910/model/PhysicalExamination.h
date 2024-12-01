@@ -56,18 +56,14 @@ namespace TencentCloud
 
                     /**
                      * 获取一般检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GeneralExamination 一般检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GeneralExaminationBaseItem GetGeneralExamination() const;
 
                     /**
                      * 设置一般检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _generalExamination 一般检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGeneralExamination(const GeneralExaminationBaseItem& _generalExamination);
@@ -81,18 +77,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内科
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternalMedicine 内科
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InternalMedicineBaseItem GetInternalMedicine() const;
 
                     /**
                      * 设置内科
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _internalMedicine 内科
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInternalMedicine(const InternalMedicineBaseItem& _internalMedicine);
@@ -106,18 +98,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外科
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Surgery 外科
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SurgeryBaseItem GetSurgery() const;
 
                     /**
                      * 设置外科
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _surgery 外科
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSurgery(const SurgeryBaseItem& _surgery);
@@ -131,18 +119,14 @@ namespace TencentCloud
 
                     /**
                      * 获取口腔科
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Stomatology 口腔科
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StomatologyBaseItem GetStomatology() const;
 
                     /**
                      * 设置口腔科
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stomatology 口腔科
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStomatology(const StomatologyBaseItem& _stomatology);
@@ -156,18 +140,14 @@ namespace TencentCloud
 
                     /**
                      * 获取眼科
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ophthalmology 眼科
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OphthalmologyBaseItem GetOphthalmology() const;
 
                     /**
                      * 设置眼科
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ophthalmology 眼科
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOphthalmology(const OphthalmologyBaseItem& _ophthalmology);
@@ -181,18 +161,14 @@ namespace TencentCloud
 
                     /**
                      * 获取耳鼻喉科
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Otolaryngology 耳鼻喉科
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OtolaryngologyBaseItem GetOtolaryngology() const;
 
                     /**
                      * 设置耳鼻喉科
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _otolaryngology 耳鼻喉科
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOtolaryngology(const OtolaryngologyBaseItem& _otolaryngology);
@@ -206,18 +182,14 @@ namespace TencentCloud
 
                     /**
                      * 获取妇科
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Gynaecology 妇科
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GynaecologyBaseItem GetGynaecology() const;
 
                     /**
                      * 设置妇科
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gynaecology 妇科
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGynaecology(const GynaecologyBaseItem& _gynaecology);
@@ -231,18 +203,14 @@ namespace TencentCloud
 
                     /**
                      * 获取未标准化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unclassified 未标准化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValueItem> GetUnclassified() const;
 
                     /**
                      * 设置未标准化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unclassified 未标准化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnclassified(const std::vector<KeyValueItem>& _unclassified);
@@ -258,56 +226,48 @@ namespace TencentCloud
 
                     /**
                      * 一般检查
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GeneralExaminationBaseItem m_generalExamination;
                     bool m_generalExaminationHasBeenSet;
 
                     /**
                      * 内科
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InternalMedicineBaseItem m_internalMedicine;
                     bool m_internalMedicineHasBeenSet;
 
                     /**
                      * 外科
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SurgeryBaseItem m_surgery;
                     bool m_surgeryHasBeenSet;
 
                     /**
                      * 口腔科
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StomatologyBaseItem m_stomatology;
                     bool m_stomatologyHasBeenSet;
 
                     /**
                      * 眼科
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OphthalmologyBaseItem m_ophthalmology;
                     bool m_ophthalmologyHasBeenSet;
 
                     /**
                      * 耳鼻喉科
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OtolaryngologyBaseItem m_otolaryngology;
                     bool m_otolaryngologyHasBeenSet;
 
                     /**
                      * 妇科
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GynaecologyBaseItem m_gynaecology;
                     bool m_gynaecologyHasBeenSet;
 
                     /**
                      * 未标准化
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValueItem> m_unclassified;
                     bool m_unclassifiedHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Points 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Point> GetPoints() const;
 
                     /**
                      * 设置坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _points 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPoints(const std::vector<Point>& _points);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Point> m_points;
                     bool m_pointsHasBeenSet;

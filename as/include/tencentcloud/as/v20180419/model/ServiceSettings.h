@@ -158,6 +158,27 @@ RESET：对原有不健康实例进行重装系统操作，可保持数据盘、
                      */
                     bool ReplaceModeHasBeenSet() const;
 
+                    /**
+                     * 获取自动更新实例标签。默认取值为 false，配置后如伸缩组标签发生更新，会同步更新（同步更新仅支持新增、修改标签，暂不支持删除标签）伸缩组内运行中状态实例的标签，同步更新非立即生效，存在一定延迟。
+                     * @return AutoUpdateInstanceTags 自动更新实例标签。默认取值为 false，配置后如伸缩组标签发生更新，会同步更新（同步更新仅支持新增、修改标签，暂不支持删除标签）伸缩组内运行中状态实例的标签，同步更新非立即生效，存在一定延迟。
+                     * 
+                     */
+                    bool GetAutoUpdateInstanceTags() const;
+
+                    /**
+                     * 设置自动更新实例标签。默认取值为 false，配置后如伸缩组标签发生更新，会同步更新（同步更新仅支持新增、修改标签，暂不支持删除标签）伸缩组内运行中状态实例的标签，同步更新非立即生效，存在一定延迟。
+                     * @param _autoUpdateInstanceTags 自动更新实例标签。默认取值为 false，配置后如伸缩组标签发生更新，会同步更新（同步更新仅支持新增、修改标签，暂不支持删除标签）伸缩组内运行中状态实例的标签，同步更新非立即生效，存在一定延迟。
+                     * 
+                     */
+                    void SetAutoUpdateInstanceTags(const bool& _autoUpdateInstanceTags);
+
+                    /**
+                     * 判断参数 AutoUpdateInstanceTags 是否已赋值
+                     * @return AutoUpdateInstanceTags 是否已赋值
+                     * 
+                     */
+                    bool AutoUpdateInstanceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -190,6 +211,12 @@ RESET：对原有不健康实例进行重装系统操作，可保持数据盘、
                      */
                     std::string m_replaceMode;
                     bool m_replaceModeHasBeenSet;
+
+                    /**
+                     * 自动更新实例标签。默认取值为 false，配置后如伸缩组标签发生更新，会同步更新（同步更新仅支持新增、修改标签，暂不支持删除标签）伸缩组内运行中状态实例的标签，同步更新非立即生效，存在一定延迟。
+                     */
+                    bool m_autoUpdateInstanceTags;
+                    bool m_autoUpdateInstanceTagsHasBeenSet;
 
                 };
             }

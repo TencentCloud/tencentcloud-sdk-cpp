@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Grade 等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGrade() const;
 
                     /**
                      * 设置等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _grade 等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGrade(const std::string& _grade);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetIndex() const;
 
                     /**
                      * 设置原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _index 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndex(const std::vector<int64_t>& _index);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_grade;
                     bool m_gradeHasBeenSet;
 
                     /**
                      * 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_index;
                     bool m_indexHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;

@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述部分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 描述部分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MaternityDesc GetDesc() const;
 
                     /**
                      * 设置描述部分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desc 描述部分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesc(const MaternityDesc& _desc);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结论部分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Summary 结论部分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MaternitySummary GetSummary() const;
 
                     /**
                      * 设置结论部分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _summary 结论部分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSummary(const MaternitySummary& _summary);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报告原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrText 报告原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOcrText() const;
 
                     /**
                      * 设置报告原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ocrText 报告原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOcrText(const std::string& _ocrText);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -152,28 +136,24 @@ namespace TencentCloud
 
                     /**
                      * 描述部分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MaternityDesc m_desc;
                     bool m_descHasBeenSet;
 
                     /**
                      * 结论部分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MaternitySummary m_summary;
                     bool m_summaryHasBeenSet;
 
                     /**
                      * 报告原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrText;
                     bool m_ocrTextHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

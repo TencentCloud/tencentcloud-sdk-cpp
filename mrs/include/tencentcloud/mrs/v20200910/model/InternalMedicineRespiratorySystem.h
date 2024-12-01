@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取呼吸系统总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 呼吸系统总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetText() const;
 
                     /**
                      * 设置呼吸系统总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 呼吸系统总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const KeyValueItem& _text);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取胸廓
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Thoracic 胸廓
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetThoracic() const;
 
                     /**
                      * 设置胸廓
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _thoracic 胸廓
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetThoracic(const KeyValueItem& _thoracic);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取痰量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sputum 痰量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetSputum() const;
 
                     /**
                      * 设置痰量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sputum 痰量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSputum(const KeyValueItem& _sputum);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取肺部叩诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LungPercussion 肺部叩诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetLungPercussion() const;
 
                     /**
                      * 设置肺部叩诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lungPercussion 肺部叩诊
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLungPercussion(const KeyValueItem& _lungPercussion);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取肺部听诊其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LungAuscultation 肺部听诊其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValueItem> GetLungAuscultation() const;
 
                     /**
                      * 设置肺部听诊其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lungAuscultation 肺部听诊其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLungAuscultation(const std::vector<KeyValueItem>& _lungAuscultation);
@@ -176,35 +156,30 @@ namespace TencentCloud
 
                     /**
                      * 呼吸系统总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 胸廓
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_thoracic;
                     bool m_thoracicHasBeenSet;
 
                     /**
                      * 痰量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_sputum;
                     bool m_sputumHasBeenSet;
 
                     /**
                      * 肺部叩诊
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_lungPercussion;
                     bool m_lungPercussionHasBeenSet;
 
                     /**
                      * 肺部听诊其他
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValueItem> m_lungAuscultation;
                     bool m_lungAuscultationHasBeenSet;

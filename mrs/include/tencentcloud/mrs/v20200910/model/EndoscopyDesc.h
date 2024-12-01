@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 描述内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置描述内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 描述内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取器官
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Organ 器官
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EndoscopyOrgan> GetOrgan() const;
 
                     /**
                      * 设置器官
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _organ 器官
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrgan(const std::vector<EndoscopyOrgan>& _organ);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coords 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
@@ -127,21 +115,18 @@ namespace TencentCloud
 
                     /**
                      * 描述内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 器官
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EndoscopyOrgan> m_organ;
                     bool m_organHasBeenSet;
 
                     /**
                      * 坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_coords;
                     bool m_coordsHasBeenSet;

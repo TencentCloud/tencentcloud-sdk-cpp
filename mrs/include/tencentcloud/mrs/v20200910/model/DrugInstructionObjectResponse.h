@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取药品说明书消息定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChemicalProductInfo 药品说明书消息定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChemicalProductInfo GetChemicalProductInfo() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取预防用生物制品说明书
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BiologicalProductInfo 预防用生物制品说明书
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BiologicalProductInfo GetBiologicalProductInfo() const;
@@ -81,14 +77,12 @@ namespace TencentCloud
 
                     /**
                      * 药品说明书消息定义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChemicalProductInfo m_chemicalProductInfo;
                     bool m_chemicalProductInfoHasBeenSet;
 
                     /**
                      * 预防用生物制品说明书
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BiologicalProductInfo m_biologicalProductInfo;
                     bool m_biologicalProductInfoHasBeenSet;

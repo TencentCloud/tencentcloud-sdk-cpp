@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CommonName 通用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCommonName() const;
 
                     /**
                      * 设置通用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _commonName 通用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCommonName(const std::string& _commonName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TradeName 商品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTradeName() const;
 
                     /**
                      * 设置商品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tradeName 商品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTradeName(const std::string& _tradeName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用法用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Dosage 用法用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DosageBlock GetDosage() const;
 
                     /**
                      * 设置用法用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dosage 用法用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDosage(const DosageBlock& _dosage);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 通用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_commonName;
                     bool m_commonNameHasBeenSet;
 
                     /**
                      * 商品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tradeName;
                     bool m_tradeNameHasBeenSet;
 
                     /**
                      * 用法用量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DosageBlock m_dosage;
                     bool m_dosageHasBeenSet;
 
                     /**
                      * 值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

@@ -54,7 +54,10 @@ BillDetail::BillDetail() :
     m_idHasBeenSet(false),
     m_regionTypeHasBeenSet(false),
     m_regionTypeNameHasBeenSet(false),
-    m_reserveDetailHasBeenSet(false)
+    m_reserveDetailHasBeenSet(false),
+    m_discountObjectHasBeenSet(false),
+    m_discountTypeHasBeenSet(false),
+    m_discountContentHasBeenSet(false)
 {
 }
 
@@ -433,6 +436,36 @@ CoreInternalOutcome BillDetail::Deserialize(const rapidjson::Value &value)
         m_reserveDetailHasBeenSet = true;
     }
 
+    if (value.HasMember("DiscountObject") && !value["DiscountObject"].IsNull())
+    {
+        if (!value["DiscountObject"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillDetail.DiscountObject` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountObject = string(value["DiscountObject"].GetString());
+        m_discountObjectHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiscountType") && !value["DiscountType"].IsNull())
+    {
+        if (!value["DiscountType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillDetail.DiscountType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountType = string(value["DiscountType"].GetString());
+        m_discountTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiscountContent") && !value["DiscountContent"].IsNull())
+    {
+        if (!value["DiscountContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillDetail.DiscountContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_discountContent = string(value["DiscountContent"].GetString());
+        m_discountContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -730,6 +763,30 @@ void BillDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ReserveDetail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_reserveDetail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_discountObjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiscountObject";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_discountObject.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_discountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiscountType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_discountType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_discountContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiscountContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_discountContent.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1277,5 +1334,53 @@ void BillDetail::SetReserveDetail(const string& _reserveDetail)
 bool BillDetail::ReserveDetailHasBeenSet() const
 {
     return m_reserveDetailHasBeenSet;
+}
+
+string BillDetail::GetDiscountObject() const
+{
+    return m_discountObject;
+}
+
+void BillDetail::SetDiscountObject(const string& _discountObject)
+{
+    m_discountObject = _discountObject;
+    m_discountObjectHasBeenSet = true;
+}
+
+bool BillDetail::DiscountObjectHasBeenSet() const
+{
+    return m_discountObjectHasBeenSet;
+}
+
+string BillDetail::GetDiscountType() const
+{
+    return m_discountType;
+}
+
+void BillDetail::SetDiscountType(const string& _discountType)
+{
+    m_discountType = _discountType;
+    m_discountTypeHasBeenSet = true;
+}
+
+bool BillDetail::DiscountTypeHasBeenSet() const
+{
+    return m_discountTypeHasBeenSet;
+}
+
+string BillDetail::GetDiscountContent() const
+{
+    return m_discountContent;
+}
+
+void BillDetail::SetDiscountContent(const string& _discountContent)
+{
+    m_discountContent = _discountContent;
+    m_discountContentHasBeenSet = true;
+}
+
+bool BillDetail::DiscountContentHasBeenSet() const
+{
+    return m_discountContentHasBeenSet;
 }
 

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Number 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetNumber() const;
 
                     /**
                      * 设置数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _number 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNumber(const std::vector<std::string>& _number);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnit(const std::string& _unit);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Impl 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImpl() const;
 
                     /**
                      * 设置归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _impl 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImpl(const std::string& _impl);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_number;
                     bool m_numberHasBeenSet;
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
                      * 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_impl;
                     bool m_implHasBeenSet;

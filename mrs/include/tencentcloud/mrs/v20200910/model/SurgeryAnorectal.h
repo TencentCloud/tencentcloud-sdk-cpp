@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取肛门直肠总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 肛门直肠总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetText() const;
 
                     /**
                      * 设置肛门直肠总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 肛门直肠总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const KeyValueItem& _text);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取直肠指检
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DigitalRectalExamination 直肠指检
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetDigitalRectalExamination() const;
 
                     /**
                      * 设置直肠指检
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _digitalRectalExamination 直肠指检
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDigitalRectalExamination(const KeyValueItem& _digitalRectalExamination);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取痔疮
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hemorrhoid 痔疮
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetHemorrhoid() const;
 
                     /**
                      * 设置痔疮
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hemorrhoid 痔疮
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHemorrhoid(const KeyValueItem& _hemorrhoid);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 肛门直肠总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 直肠指检
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_digitalRectalExamination;
                     bool m_digitalRectalExaminationHasBeenSet;
 
                     /**
                      * 痔疮
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_hemorrhoid;
                     bool m_hemorrhoidHasBeenSet;

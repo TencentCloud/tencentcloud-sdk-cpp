@@ -24,7 +24,8 @@ SystemDisk::SystemDisk() :
     m_diskTypeHasBeenSet(false),
     m_diskIdHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
-    m_cdcIdHasBeenSet(false)
+    m_cdcIdHasBeenSet(false),
+    m_diskNameHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome SystemDisk::Deserialize(const rapidjson::Value &value)
         m_cdcIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskName") && !value["DiskName"].IsNull())
+    {
+        if (!value["DiskName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SystemDisk.DiskName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskName = string(value["DiskName"].GetString());
+        m_diskNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void SystemDisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CdcId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diskNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diskName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void SystemDisk::SetCdcId(const string& _cdcId)
 bool SystemDisk::CdcIdHasBeenSet() const
 {
     return m_cdcIdHasBeenSet;
+}
+
+string SystemDisk::GetDiskName() const
+{
+    return m_diskName;
+}
+
+void SystemDisk::SetDiskName(const string& _diskName)
+{
+    m_diskName = _diskName;
+    m_diskNameHasBeenSet = true;
+}
+
+bool SystemDisk::DiskNameHasBeenSet() const
+{
+    return m_diskNameHasBeenSet;
 }
 

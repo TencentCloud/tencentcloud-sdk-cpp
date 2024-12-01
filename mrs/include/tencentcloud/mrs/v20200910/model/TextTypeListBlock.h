@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文本类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextTypeList 文本类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TextType> GetTextTypeList() const;
 
                     /**
                      * 设置文本类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _textTypeList 文本类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTextTypeList(const std::vector<TextType>& _textTypeList);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 文本类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TextType> m_textTypeList;
                     bool m_textTypeListHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

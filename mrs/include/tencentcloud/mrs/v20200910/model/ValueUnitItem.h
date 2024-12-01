@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Item 项目原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PhysicalBaseItem GetItem() const;
 
                     /**
                      * 设置项目原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _item 项目原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItem(const PhysicalBaseItem& _item);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PhysicalBaseItem GetResult() const;
 
                     /**
                      * 设置数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _result 数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResult(const PhysicalBaseItem& _result);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PhysicalBaseItem GetUnit() const;
 
                     /**
                      * 设置单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnit(const PhysicalBaseItem& _unit);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -176,35 +156,30 @@ namespace TencentCloud
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 项目原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PhysicalBaseItem m_item;
                     bool m_itemHasBeenSet;
 
                     /**
                      * 数值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PhysicalBaseItem m_result;
                     bool m_resultHasBeenSet;
 
                     /**
                      * 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PhysicalBaseItem m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

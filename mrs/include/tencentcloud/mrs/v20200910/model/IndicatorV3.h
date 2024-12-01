@@ -74,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -99,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检验报告V3结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableIndicators 检验报告V3结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TableIndicators> GetTableIndicators() const;
 
                     /**
                      * 设置检验报告V3结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableIndicators 检验报告V3结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableIndicators(const std::vector<TableIndicators>& _tableIndicators);
@@ -124,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -158,21 +146,18 @@ namespace TencentCloud
 
                     /**
                      * 版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 检验报告V3结论
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TableIndicators> m_tableIndicators;
                     bool m_tableIndicatorsHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

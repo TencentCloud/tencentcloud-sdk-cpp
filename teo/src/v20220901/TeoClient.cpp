@@ -3652,6 +3652,49 @@ TeoClient::DescribeTopL7CacheDataOutcomeCallable TeoClient::DescribeTopL7CacheDa
     return task->get_future();
 }
 
+TeoClient::DescribeZoneConfigImportResultOutcome TeoClient::DescribeZoneConfigImportResult(const DescribeZoneConfigImportResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeZoneConfigImportResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeZoneConfigImportResultResponse rsp = DescribeZoneConfigImportResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeZoneConfigImportResultOutcome(rsp);
+        else
+            return DescribeZoneConfigImportResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeZoneConfigImportResultOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeZoneConfigImportResultAsync(const DescribeZoneConfigImportResultRequest& request, const DescribeZoneConfigImportResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeZoneConfigImportResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeZoneConfigImportResultOutcomeCallable TeoClient::DescribeZoneConfigImportResultCallable(const DescribeZoneConfigImportResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeZoneConfigImportResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeZoneConfigImportResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeZoneSettingOutcome TeoClient::DescribeZoneSetting(const DescribeZoneSettingRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeZoneSetting");
@@ -3867,6 +3910,49 @@ TeoClient::DownloadL7LogsOutcomeCallable TeoClient::DownloadL7LogsCallable(const
     return task->get_future();
 }
 
+TeoClient::ExportZoneConfigOutcome TeoClient::ExportZoneConfig(const ExportZoneConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportZoneConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportZoneConfigResponse rsp = ExportZoneConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportZoneConfigOutcome(rsp);
+        else
+            return ExportZoneConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportZoneConfigOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ExportZoneConfigAsync(const ExportZoneConfigRequest& request, const ExportZoneConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportZoneConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ExportZoneConfigOutcomeCallable TeoClient::ExportZoneConfigCallable(const ExportZoneConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportZoneConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportZoneConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::HandleFunctionRuntimeEnvironmentOutcome TeoClient::HandleFunctionRuntimeEnvironment(const HandleFunctionRuntimeEnvironmentRequest &request)
 {
     auto outcome = MakeRequest(request, "HandleFunctionRuntimeEnvironment");
@@ -3946,6 +4032,49 @@ TeoClient::IdentifyZoneOutcomeCallable TeoClient::IdentifyZoneCallable(const Ide
         [this, request]()
         {
             return this->IdentifyZone(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ImportZoneConfigOutcome TeoClient::ImportZoneConfig(const ImportZoneConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportZoneConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportZoneConfigResponse rsp = ImportZoneConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportZoneConfigOutcome(rsp);
+        else
+            return ImportZoneConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportZoneConfigOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ImportZoneConfigAsync(const ImportZoneConfigRequest& request, const ImportZoneConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImportZoneConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ImportZoneConfigOutcomeCallable TeoClient::ImportZoneConfigCallable(const ImportZoneConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImportZoneConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ImportZoneConfig(request);
         }
     );
 

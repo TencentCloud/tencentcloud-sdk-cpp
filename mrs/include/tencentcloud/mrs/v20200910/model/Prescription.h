@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取药品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MedicineList 药品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Medicine> GetMedicineList() const;
 
                     /**
                      * 设置药品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _medicineList 药品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMedicineList(const std::vector<Medicine>& _medicineList);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 药品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Medicine> m_medicineList;
                     bool m_medicineListHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

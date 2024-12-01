@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取面容与表情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Countenance 面容与表情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetCountenance() const;
 
                     /**
                      * 设置面容与表情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _countenance 面容与表情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCountenance(const KeyValueItem& _countenance);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取精神状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MentalStatus 精神状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetMentalStatus() const;
 
                     /**
                      * 设置精神状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mentalStatus 精神状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMentalStatus(const KeyValueItem& _mentalStatus);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取发育及营养状况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DevelopmentCondition 发育及营养状况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetDevelopmentCondition() const;
 
                     /**
                      * 设置发育及营养状况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _developmentCondition 发育及营养状况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDevelopmentCondition(const KeyValueItem& _developmentCondition);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取记忆力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Memory 记忆力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetMemory() const;
 
                     /**
                      * 设置记忆力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memory 记忆力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemory(const KeyValueItem& _memory);
@@ -151,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取臀围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hipline 臀围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ValueUnitItem GetHipline() const;
 
                     /**
                      * 设置臀围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hipline 臀围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHipline(const ValueUnitItem& _hipline);
@@ -176,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取腰臀比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WaistHipRatio 腰臀比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ValueUnitItem GetWaistHipRatio() const;
 
                     /**
                      * 设置腰臀比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _waistHipRatio 腰臀比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWaistHipRatio(const ValueUnitItem& _waistHipRatio);
@@ -201,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生活嗜好
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Addiction 生活嗜好
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetAddiction() const;
 
                     /**
                      * 设置生活嗜好
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addiction 生活嗜好
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddiction(const KeyValueItem& _addiction);
@@ -226,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生活能力评定
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AbilityOfLifeADL 生活能力评定
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetAbilityOfLifeADL() const;
 
                     /**
                      * 设置生活能力评定
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _abilityOfLifeADL 生活能力评定
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAbilityOfLifeADL(const KeyValueItem& _abilityOfLifeADL);
@@ -251,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取一般检查其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Others 一般检查其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValueItem> GetOthers() const;
 
                     /**
                      * 设置一般检查其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _others 一般检查其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOthers(const std::vector<KeyValueItem>& _others);
@@ -276,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取胸围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChestCircumference 胸围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChestCircumferenceItem GetChestCircumference() const;
 
                     /**
                      * 设置胸围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chestCircumference 胸围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChestCircumference(const ChestCircumferenceItem& _chestCircumference);
@@ -303,70 +263,60 @@ namespace TencentCloud
 
                     /**
                      * 面容与表情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_countenance;
                     bool m_countenanceHasBeenSet;
 
                     /**
                      * 精神状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_mentalStatus;
                     bool m_mentalStatusHasBeenSet;
 
                     /**
                      * 发育及营养状况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_developmentCondition;
                     bool m_developmentConditionHasBeenSet;
 
                     /**
                      * 记忆力
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
                      * 臀围
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ValueUnitItem m_hipline;
                     bool m_hiplineHasBeenSet;
 
                     /**
                      * 腰臀比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ValueUnitItem m_waistHipRatio;
                     bool m_waistHipRatioHasBeenSet;
 
                     /**
                      * 生活嗜好
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_addiction;
                     bool m_addictionHasBeenSet;
 
                     /**
                      * 生活能力评定
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_abilityOfLifeADL;
                     bool m_abilityOfLifeADLHasBeenSet;
 
                     /**
                      * 一般检查其他
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValueItem> m_others;
                     bool m_othersHasBeenSet;
 
                     /**
                      * 胸围
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChestCircumferenceItem m_chestCircumference;
                     bool m_chestCircumferenceHasBeenSet;

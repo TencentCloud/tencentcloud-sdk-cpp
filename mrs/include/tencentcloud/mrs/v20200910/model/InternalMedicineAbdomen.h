@@ -54,18 +54,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内科腹部小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 内科腹部小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetText() const;
 
                     /**
                      * 设置内科腹部小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 内科腹部小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const KeyValueItem& _text);
@@ -79,18 +75,14 @@ namespace TencentCloud
 
                     /**
                      * 获取肝脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Liver 肝脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InternalMedicineAbdomenLiver GetLiver() const;
 
                     /**
                      * 设置肝脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _liver 肝脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLiver(const InternalMedicineAbdomenLiver& _liver);
@@ -104,18 +96,14 @@ namespace TencentCloud
 
                     /**
                      * 获取胆囊
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GallBladder 胆囊
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InternalMedicineAbdomenGallBladder GetGallBladder() const;
 
                     /**
                      * 设置胆囊
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gallBladder 胆囊
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGallBladder(const InternalMedicineAbdomenGallBladder& _gallBladder);
@@ -129,18 +117,14 @@ namespace TencentCloud
 
                     /**
                      * 获取胰腺
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pancreas 胰腺
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InternalMedicineAbdomenPancreas GetPancreas() const;
 
                     /**
                      * 设置胰腺
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pancreas 胰腺
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPancreas(const InternalMedicineAbdomenPancreas& _pancreas);
@@ -154,18 +138,14 @@ namespace TencentCloud
 
                     /**
                      * 获取脾脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Spleen 脾脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InternalMedicineAbdomenSpleen GetSpleen() const;
 
                     /**
                      * 设置脾脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spleen 脾脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpleen(const InternalMedicineAbdomenSpleen& _spleen);
@@ -179,18 +159,14 @@ namespace TencentCloud
 
                     /**
                      * 获取肾脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Kidney 肾脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InternalMedicineAbdomenKidney GetKidney() const;
 
                     /**
                      * 设置肾脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kidney 肾脏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKidney(const InternalMedicineAbdomenKidney& _kidney);
@@ -204,18 +180,14 @@ namespace TencentCloud
 
                     /**
                      * 获取腹部其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Others 腹部其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValueItem> GetOthers() const;
 
                     /**
                      * 设置腹部其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _others 腹部其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOthers(const std::vector<KeyValueItem>& _others);
@@ -231,49 +203,42 @@ namespace TencentCloud
 
                     /**
                      * 内科腹部小结
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 肝脏
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InternalMedicineAbdomenLiver m_liver;
                     bool m_liverHasBeenSet;
 
                     /**
                      * 胆囊
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InternalMedicineAbdomenGallBladder m_gallBladder;
                     bool m_gallBladderHasBeenSet;
 
                     /**
                      * 胰腺
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InternalMedicineAbdomenPancreas m_pancreas;
                     bool m_pancreasHasBeenSet;
 
                     /**
                      * 脾脏
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InternalMedicineAbdomenSpleen m_spleen;
                     bool m_spleenHasBeenSet;
 
                     /**
                      * 肾脏
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InternalMedicineAbdomenKidney m_kidney;
                     bool m_kidneyHasBeenSet;
 
                     /**
                      * 腹部其他
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValueItem> m_others;
                     bool m_othersHasBeenSet;

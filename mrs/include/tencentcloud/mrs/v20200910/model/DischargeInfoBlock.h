@@ -53,18 +53,14 @@ namespace TencentCloud
 
                     /**
                      * 获取疾病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiseaseHistory 疾病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiseaseHistoryBlock GetDiseaseHistory() const;
 
                     /**
                      * 设置疾病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diseaseHistory 疾病史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiseaseHistory(const DiseaseHistoryBlock& _diseaseHistory);
@@ -78,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取个人史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PersonalHistory 个人史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PersonalHistoryBlock GetPersonalHistory() const;
 
                     /**
                      * 设置个人史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _personalHistory 个人史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPersonalHistory(const PersonalHistoryBlock& _personalHistory);
@@ -103,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取药物史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DrugHistory 药物史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DrugHistoryBlock GetDrugHistory() const;
 
                     /**
                      * 设置药物史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _drugHistory 药物史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDrugHistory(const DrugHistoryBlock& _drugHistory);
@@ -128,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取治疗相关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TreatmentRecord 治疗相关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TreatmentRecordBlock GetTreatmentRecord() const;
 
                     /**
                      * 设置治疗相关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _treatmentRecord 治疗相关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTreatmentRecord(const TreatmentRecordBlock& _treatmentRecord);
@@ -153,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文本段落
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParagraphBlock 文本段落
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ParagraphBlock GetParagraphBlock() const;
 
                     /**
                      * 设置文本段落
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _paragraphBlock 文本段落
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParagraphBlock(const ParagraphBlock& _paragraphBlock);
@@ -178,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -205,42 +181,36 @@ namespace TencentCloud
 
                     /**
                      * 疾病史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseaseHistoryBlock m_diseaseHistory;
                     bool m_diseaseHistoryHasBeenSet;
 
                     /**
                      * 个人史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PersonalHistoryBlock m_personalHistory;
                     bool m_personalHistoryHasBeenSet;
 
                     /**
                      * 药物史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DrugHistoryBlock m_drugHistory;
                     bool m_drugHistoryHasBeenSet;
 
                     /**
                      * 治疗相关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TreatmentRecordBlock m_treatmentRecord;
                     bool m_treatmentRecordHasBeenSet;
 
                     /**
                      * 文本段落
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ParagraphBlock m_paragraphBlock;
                     bool m_paragraphBlockHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

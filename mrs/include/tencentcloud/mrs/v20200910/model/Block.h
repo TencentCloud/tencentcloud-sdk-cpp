@@ -72,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Check 诊断信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Check> GetCheck() const;
 
                     /**
                      * 设置诊断信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _check 诊断信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheck(const std::vector<Check>& _check);
@@ -97,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病理报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pathology 病理报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PathologyReport> GetPathology() const;
 
                     /**
                      * 设置病理报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pathology 病理报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPathology(const std::vector<PathologyReport>& _pathology);
@@ -122,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取医学资料
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MedDoc 医学资料
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MedDoc> GetMedDoc() const;
 
                     /**
                      * 设置医学资料
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _medDoc 医学资料
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMedDoc(const std::vector<MedDoc>& _medDoc);
@@ -147,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiagCert 诊断证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DiagCert> GetDiagCert() const;
 
                     /**
                      * 设置诊断证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diagCert 诊断证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiagCert(const std::vector<DiagCert>& _diagCert);
@@ -172,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病案首页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstPage 病案首页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FirstPage> GetFirstPage() const;
 
                     /**
                      * 设置病案首页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _firstPage 病案首页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFirstPage(const std::vector<FirstPage>& _firstPage);
@@ -197,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Indicator 检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Indicator> GetIndicator() const;
 
                     /**
                      * 设置检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indicator 检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndicator(const std::vector<Indicator>& _indicator);
@@ -222,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取门诊病历信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MedicalRecordInfo 门诊病历信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MedicalRecordInfo> GetMedicalRecordInfo() const;
 
                     /**
                      * 设置门诊病历信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _medicalRecordInfo 门诊病历信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMedicalRecordInfo(const std::vector<MedicalRecordInfo>& _medicalRecordInfo);
@@ -247,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出入院信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hospitalization 出入院信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Hospitalization> GetHospitalization() const;
 
                     /**
                      * 设置出入院信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hospitalization 出入院信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHospitalization(const std::vector<Hospitalization>& _hospitalization);
@@ -272,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取手术记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Surgery 手术记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Surgery> GetSurgery() const;
 
                     /**
                      * 设置手术记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _surgery 手术记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSurgery(const std::vector<Surgery>& _surgery);
@@ -297,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取处方单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Prescription 处方单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Prescription> GetPrescription() const;
 
                     /**
                      * 设置处方单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _prescription 处方单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrescription(const std::vector<Prescription>& _prescription);
@@ -322,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取免疫接种证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VaccineCertificate 免疫接种证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VaccineCertificate> GetVaccineCertificate() const;
 
                     /**
                      * 设置免疫接种证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vaccineCertificate 免疫接种证明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVaccineCertificate(const std::vector<VaccineCertificate>& _vaccineCertificate);
@@ -347,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取心电图
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Electrocardiogram 心电图
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Electrocardiogram> GetElectrocardiogram() const;
 
                     /**
                      * 设置心电图
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _electrocardiogram 心电图
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElectrocardiogram(const std::vector<Electrocardiogram>& _electrocardiogram);
@@ -372,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病理报告v2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PathologyV2 病理报告v2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PathologyV2> GetPathologyV2() const;
 
                     /**
                      * 设置病理报告v2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pathologyV2 病理报告v2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPathologyV2(const std::vector<PathologyV2>& _pathologyV2);
@@ -397,18 +345,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内窥镜报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Endoscopy 内窥镜报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Endoscopy> GetEndoscopy() const;
 
                     /**
                      * 设置内窥镜报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endoscopy 内窥镜报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndoscopy(const std::vector<Endoscopy>& _endoscopy);
@@ -422,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取C14检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return C14 C14检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Indicator> GetC14() const;
 
                     /**
                      * 设置C14检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _c14 C14检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetC14(const std::vector<Indicator>& _c14);
@@ -447,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Exame 体检结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Exame> GetExame() const;
 
                     /**
                      * 设置体检结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exame 体检结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExame(const std::vector<Exame>& _exame);
@@ -472,18 +408,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出入院结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MedDocV2 出入院结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DischargeInfoBlock> GetMedDocV2() const;
 
                     /**
                      * 设置出入院结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _medDocV2 出入院结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMedDocV2(const std::vector<DischargeInfoBlock>& _medDocV2);
@@ -497,18 +429,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检验报告v3
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndicatorV3 检验报告v3
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IndicatorV3> GetIndicatorV3() const;
 
                     /**
                      * 设置检验报告v3
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indicatorV3 检验报告v3
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndicatorV3(const std::vector<IndicatorV3>& _indicatorV3);
@@ -522,18 +450,14 @@ namespace TencentCloud
 
                     /**
                      * 获取孕产报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Maternity 孕产报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Maternity> GetMaternity() const;
 
                     /**
                      * 设置孕产报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maternity 孕产报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaternity(const std::vector<Maternity>& _maternity);
@@ -547,18 +471,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timeline 时间轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TimelineInformation> GetTimeline() const;
 
                     /**
                      * 设置时间轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeline 时间轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeline(const std::vector<TimelineInformation>& _timeline);
@@ -572,18 +492,14 @@ namespace TencentCloud
 
                     /**
                      * 获取核酸报告结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Covid 核酸报告结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CovidItemsInfo> GetCovid() const;
 
                     /**
                      * 设置核酸报告结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _covid 核酸报告结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCovid(const std::vector<CovidItemsInfo>& _covid);
@@ -597,18 +513,14 @@ namespace TencentCloud
 
                     /**
                      * 获取眼科报告结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Eye 眼科报告结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EyeItemsInfo> GetEye() const;
 
                     /**
                      * 设置眼科报告结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eye 眼科报告结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEye(const std::vector<EyeItemsInfo>& _eye);
@@ -622,18 +534,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出生证明结构化信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BirthCert 出生证明结构化信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BirthCert> GetBirthCert() const;
 
                     /**
                      * 设置出生证明结构化信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _birthCert 出生证明结构化信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBirthCert(const std::vector<BirthCert>& _birthCert);
@@ -647,18 +555,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文本类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextTypeListBlocks 文本类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TextTypeListBlock> GetTextTypeListBlocks() const;
 
                     /**
                      * 设置文本类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _textTypeListBlocks 文本类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTextTypeListBlocks(const std::vector<TextTypeListBlock>& _textTypeListBlocks);
@@ -672,18 +576,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体检报告信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhysicalExamination 体检报告信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PhysicalExaminationV1 GetPhysicalExamination() const;
 
                     /**
                      * 设置体检报告信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _physicalExamination 体检报告信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPhysicalExamination(const PhysicalExaminationV1& _physicalExamination);
@@ -699,175 +599,150 @@ namespace TencentCloud
 
                     /**
                      * 诊断信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Check> m_check;
                     bool m_checkHasBeenSet;
 
                     /**
                      * 病理报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PathologyReport> m_pathology;
                     bool m_pathologyHasBeenSet;
 
                     /**
                      * 医学资料
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MedDoc> m_medDoc;
                     bool m_medDocHasBeenSet;
 
                     /**
                      * 诊断证明
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DiagCert> m_diagCert;
                     bool m_diagCertHasBeenSet;
 
                     /**
                      * 病案首页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FirstPage> m_firstPage;
                     bool m_firstPageHasBeenSet;
 
                     /**
                      * 检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Indicator> m_indicator;
                     bool m_indicatorHasBeenSet;
 
                     /**
                      * 门诊病历信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MedicalRecordInfo> m_medicalRecordInfo;
                     bool m_medicalRecordInfoHasBeenSet;
 
                     /**
                      * 出入院信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Hospitalization> m_hospitalization;
                     bool m_hospitalizationHasBeenSet;
 
                     /**
                      * 手术记录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Surgery> m_surgery;
                     bool m_surgeryHasBeenSet;
 
                     /**
                      * 处方单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Prescription> m_prescription;
                     bool m_prescriptionHasBeenSet;
 
                     /**
                      * 免疫接种证明
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VaccineCertificate> m_vaccineCertificate;
                     bool m_vaccineCertificateHasBeenSet;
 
                     /**
                      * 心电图
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Electrocardiogram> m_electrocardiogram;
                     bool m_electrocardiogramHasBeenSet;
 
                     /**
                      * 病理报告v2
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PathologyV2> m_pathologyV2;
                     bool m_pathologyV2HasBeenSet;
 
                     /**
                      * 内窥镜报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Endoscopy> m_endoscopy;
                     bool m_endoscopyHasBeenSet;
 
                     /**
                      * C14检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Indicator> m_c14;
                     bool m_c14HasBeenSet;
 
                     /**
                      * 体检结论
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Exame> m_exame;
                     bool m_exameHasBeenSet;
 
                     /**
                      * 出入院结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DischargeInfoBlock> m_medDocV2;
                     bool m_medDocV2HasBeenSet;
 
                     /**
                      * 检验报告v3
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IndicatorV3> m_indicatorV3;
                     bool m_indicatorV3HasBeenSet;
 
                     /**
                      * 孕产报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Maternity> m_maternity;
                     bool m_maternityHasBeenSet;
 
                     /**
                      * 时间轴
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TimelineInformation> m_timeline;
                     bool m_timelineHasBeenSet;
 
                     /**
                      * 核酸报告结论
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CovidItemsInfo> m_covid;
                     bool m_covidHasBeenSet;
 
                     /**
                      * 眼科报告结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EyeItemsInfo> m_eye;
                     bool m_eyeHasBeenSet;
 
                     /**
                      * 出生证明结构化信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BirthCert> m_birthCert;
                     bool m_birthCertHasBeenSet;
 
                     /**
                      * 文本类型列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TextTypeListBlock> m_textTypeListBlocks;
                     bool m_textTypeListBlocksHasBeenSet;
 
                     /**
                      * 体检报告信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PhysicalExaminationV1 m_physicalExamination;
                     bool m_physicalExaminationHasBeenSet;

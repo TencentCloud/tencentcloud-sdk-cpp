@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timeline 时间轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TimelineEvent> GetTimeline() const;
 
                     /**
                      * 设置时间轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeline 时间轴
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeline(const std::vector<TimelineEvent>& _timeline);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 时间轴
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TimelineEvent> m_timeline;
                     bool m_timelineHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

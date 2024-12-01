@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取眼科报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EyeItems 眼科报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EyeItem GetEyeItems() const;
 
                     /**
                      * 设置眼科报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eyeItems 眼科报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEyeItems(const EyeItem& _eyeItems);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 眼科报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EyeItem m_eyeItems;
                     bool m_eyeItemsHasBeenSet;
 
                     /**
                      * 版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

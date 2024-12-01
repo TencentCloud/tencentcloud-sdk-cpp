@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 项目名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置项目名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 项目名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转移数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferNum 转移数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTransferNum() const;
 
                     /**
                      * 设置转移数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transferNum 转移数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransferNum(const int64_t& _transferNum);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _total 总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotal(const int64_t& _total);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetIndex() const;
 
                     /**
                      * 设置索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _index 索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndex(const std::vector<int64_t>& _index);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文对应坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 原文对应坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置原文对应坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coords 原文对应坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 项目名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 转移数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_transferNum;
                     bool m_transferNumHasBeenSet;
 
                     /**
                      * 总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 索引
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_index;
                     bool m_indexHasBeenSet;
 
                     /**
                      * 原文对应坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_coords;
                     bool m_coordsHasBeenSet;

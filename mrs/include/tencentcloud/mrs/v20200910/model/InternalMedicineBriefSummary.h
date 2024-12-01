@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内科小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 内科小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetText() const;
 
                     /**
                      * 设置内科小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 内科小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const KeyValueItem& _text);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 内科小结
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_text;
                     bool m_textHasBeenSet;

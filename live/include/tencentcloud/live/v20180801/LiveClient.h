@@ -27,6 +27,10 @@
 #include <tencentcloud/live/v20180801/model/AddCasterInputInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/AddCasterLayoutInfoRequest.h>
 #include <tencentcloud/live/v20180801/model/AddCasterLayoutInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/AddCasterMarkPicInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/AddCasterMarkPicInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/AddCasterMarkWordInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/AddCasterMarkWordInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/AddCasterOutputInfoRequest.h>
 #include <tencentcloud/live/v20180801/model/AddCasterOutputInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/AddDelayLiveStreamRequest.h>
@@ -97,6 +101,10 @@
 #include <tencentcloud/live/v20180801/model/DeleteCasterInputInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterLayoutInfoRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterLayoutInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteCasterMarkPicInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteCasterMarkPicInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteCasterMarkWordInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteCasterMarkWordInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterOutputInfoRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterOutputInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackRuleRequest.h>
@@ -161,6 +169,10 @@
 #include <tencentcloud/live/v20180801/model/DescribeCasterLayoutInfosResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterMarkPicInfosRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterMarkPicInfosResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterMarkWordInfosRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterMarkWordInfosResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterOutputInfosRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterOutputInfosResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterPlayUrlRequest.h>
@@ -333,6 +345,10 @@
 #include <tencentcloud/live/v20180801/model/ModifyCasterInputInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyCasterLayoutInfoRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyCasterLayoutInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/ModifyCasterMarkPicInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/ModifyCasterMarkPicInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/ModifyCasterMarkWordInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/ModifyCasterMarkWordInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyCasterOutputInfoRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyCasterOutputInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveCallbackTemplateRequest.h>
@@ -415,6 +431,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddCasterLayoutInfoResponse> AddCasterLayoutInfoOutcome;
                 typedef std::future<AddCasterLayoutInfoOutcome> AddCasterLayoutInfoOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::AddCasterLayoutInfoRequest&, AddCasterLayoutInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterLayoutInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddCasterMarkPicInfoResponse> AddCasterMarkPicInfoOutcome;
+                typedef std::future<AddCasterMarkPicInfoOutcome> AddCasterMarkPicInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::AddCasterMarkPicInfoRequest&, AddCasterMarkPicInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterMarkPicInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddCasterMarkWordInfoResponse> AddCasterMarkWordInfoOutcome;
+                typedef std::future<AddCasterMarkWordInfoOutcome> AddCasterMarkWordInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::AddCasterMarkWordInfoRequest&, AddCasterMarkWordInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterMarkWordInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddCasterOutputInfoResponse> AddCasterOutputInfoOutcome;
                 typedef std::future<AddCasterOutputInfoOutcome> AddCasterOutputInfoOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::AddCasterOutputInfoRequest&, AddCasterOutputInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCasterOutputInfoAsyncHandler;
@@ -520,6 +542,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCasterLayoutInfoResponse> DeleteCasterLayoutInfoOutcome;
                 typedef std::future<DeleteCasterLayoutInfoOutcome> DeleteCasterLayoutInfoOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteCasterLayoutInfoRequest&, DeleteCasterLayoutInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterLayoutInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCasterMarkPicInfoResponse> DeleteCasterMarkPicInfoOutcome;
+                typedef std::future<DeleteCasterMarkPicInfoOutcome> DeleteCasterMarkPicInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteCasterMarkPicInfoRequest&, DeleteCasterMarkPicInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterMarkPicInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCasterMarkWordInfoResponse> DeleteCasterMarkWordInfoOutcome;
+                typedef std::future<DeleteCasterMarkWordInfoOutcome> DeleteCasterMarkWordInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteCasterMarkWordInfoRequest&, DeleteCasterMarkWordInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterMarkWordInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCasterOutputInfoResponse> DeleteCasterOutputInfoOutcome;
                 typedef std::future<DeleteCasterOutputInfoOutcome> DeleteCasterOutputInfoOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteCasterOutputInfoRequest&, DeleteCasterOutputInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCasterOutputInfoAsyncHandler;
@@ -616,6 +644,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCasterListResponse> DescribeCasterListOutcome;
                 typedef std::future<DescribeCasterListOutcome> DescribeCasterListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeCasterListRequest&, DescribeCasterListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCasterMarkPicInfosResponse> DescribeCasterMarkPicInfosOutcome;
+                typedef std::future<DescribeCasterMarkPicInfosOutcome> DescribeCasterMarkPicInfosOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeCasterMarkPicInfosRequest&, DescribeCasterMarkPicInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterMarkPicInfosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCasterMarkWordInfosResponse> DescribeCasterMarkWordInfosOutcome;
+                typedef std::future<DescribeCasterMarkWordInfosOutcome> DescribeCasterMarkWordInfosOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeCasterMarkWordInfosRequest&, DescribeCasterMarkWordInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterMarkWordInfosAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCasterOutputInfosResponse> DescribeCasterOutputInfosOutcome;
                 typedef std::future<DescribeCasterOutputInfosOutcome> DescribeCasterOutputInfosOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeCasterOutputInfosRequest&, DescribeCasterOutputInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterOutputInfosAsyncHandler;
@@ -874,6 +908,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCasterLayoutInfoResponse> ModifyCasterLayoutInfoOutcome;
                 typedef std::future<ModifyCasterLayoutInfoOutcome> ModifyCasterLayoutInfoOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyCasterLayoutInfoRequest&, ModifyCasterLayoutInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterLayoutInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCasterMarkPicInfoResponse> ModifyCasterMarkPicInfoOutcome;
+                typedef std::future<ModifyCasterMarkPicInfoOutcome> ModifyCasterMarkPicInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::ModifyCasterMarkPicInfoRequest&, ModifyCasterMarkPicInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterMarkPicInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCasterMarkWordInfoResponse> ModifyCasterMarkWordInfoOutcome;
+                typedef std::future<ModifyCasterMarkWordInfoOutcome> ModifyCasterMarkWordInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::ModifyCasterMarkWordInfoRequest&, ModifyCasterMarkWordInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterMarkWordInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCasterOutputInfoResponse> ModifyCasterOutputInfoOutcome;
                 typedef std::future<ModifyCasterOutputInfoOutcome> ModifyCasterOutputInfoOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyCasterOutputInfoRequest&, ModifyCasterOutputInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterOutputInfoAsyncHandler;
@@ -987,6 +1027,24 @@ namespace TencentCloud
                 AddCasterLayoutInfoOutcome AddCasterLayoutInfo(const Model::AddCasterLayoutInfoRequest &request);
                 void AddCasterLayoutInfoAsync(const Model::AddCasterLayoutInfoRequest& request, const AddCasterLayoutInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddCasterLayoutInfoOutcomeCallable AddCasterLayoutInfoCallable(const Model::AddCasterLayoutInfoRequest& request);
+
+                /**
+                 *该接口用来新增图片水印。
+                 * @param req AddCasterMarkPicInfoRequest
+                 * @return AddCasterMarkPicInfoOutcome
+                 */
+                AddCasterMarkPicInfoOutcome AddCasterMarkPicInfo(const Model::AddCasterMarkPicInfoRequest &request);
+                void AddCasterMarkPicInfoAsync(const Model::AddCasterMarkPicInfoRequest& request, const AddCasterMarkPicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddCasterMarkPicInfoOutcomeCallable AddCasterMarkPicInfoCallable(const Model::AddCasterMarkPicInfoRequest& request);
+
+                /**
+                 *为导播台添加文本配置。
+                 * @param req AddCasterMarkWordInfoRequest
+                 * @return AddCasterMarkWordInfoOutcome
+                 */
+                AddCasterMarkWordInfoOutcome AddCasterMarkWordInfo(const Model::AddCasterMarkWordInfoRequest &request);
+                void AddCasterMarkWordInfoAsync(const Model::AddCasterMarkWordInfoRequest& request, const AddCasterMarkWordInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddCasterMarkWordInfoOutcomeCallable AddCasterMarkWordInfoCallable(const Model::AddCasterMarkWordInfoRequest& request);
 
                 /**
                  *该接口用来新增导播台推流信息。导播台主监启动后，将会将主监画面推向该接口设置的地址。
@@ -1363,6 +1421,24 @@ namespace TencentCloud
                 DeleteCasterLayoutInfoOutcomeCallable DeleteCasterLayoutInfoCallable(const Model::DeleteCasterLayoutInfoRequest& request);
 
                 /**
+                 *该接口用来删除导播台某个Index对应的水印。
+                 * @param req DeleteCasterMarkPicInfoRequest
+                 * @return DeleteCasterMarkPicInfoOutcome
+                 */
+                DeleteCasterMarkPicInfoOutcome DeleteCasterMarkPicInfo(const Model::DeleteCasterMarkPicInfoRequest &request);
+                void DeleteCasterMarkPicInfoAsync(const Model::DeleteCasterMarkPicInfoRequest& request, const DeleteCasterMarkPicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCasterMarkPicInfoOutcomeCallable DeleteCasterMarkPicInfoCallable(const Model::DeleteCasterMarkPicInfoRequest& request);
+
+                /**
+                 *该接口用来删除导播台的文本配置。
+                 * @param req DeleteCasterMarkWordInfoRequest
+                 * @return DeleteCasterMarkWordInfoOutcome
+                 */
+                DeleteCasterMarkWordInfoOutcome DeleteCasterMarkWordInfo(const Model::DeleteCasterMarkWordInfoRequest &request);
+                void DeleteCasterMarkWordInfoAsync(const Model::DeleteCasterMarkWordInfoRequest& request, const DeleteCasterMarkWordInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCasterMarkWordInfoOutcomeCallable DeleteCasterMarkWordInfoCallable(const Model::DeleteCasterMarkWordInfoRequest& request);
+
+                /**
                  *该接口用来删除导播台的推流信息。
 注：若删除推流到腾讯云直播源站配置，即OutputIndex为0，OutputType为1的推流配置，在重新启动主监后，系统会自动重新生成一个推流到腾讯云直播源站配置。
                  * @param req DeleteCasterOutputInfoRequest
@@ -1660,6 +1736,24 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeCasterListOutcome DescribeCasterList(const Model::DescribeCasterListRequest &request);
                 void DescribeCasterListAsync(const Model::DescribeCasterListRequest& request, const DescribeCasterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCasterListOutcomeCallable DescribeCasterListCallable(const Model::DescribeCasterListRequest& request);
+
+                /**
+                 *该接口用来查询某个导播台的水印列表。
+                 * @param req DescribeCasterMarkPicInfosRequest
+                 * @return DescribeCasterMarkPicInfosOutcome
+                 */
+                DescribeCasterMarkPicInfosOutcome DescribeCasterMarkPicInfos(const Model::DescribeCasterMarkPicInfosRequest &request);
+                void DescribeCasterMarkPicInfosAsync(const Model::DescribeCasterMarkPicInfosRequest& request, const DescribeCasterMarkPicInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCasterMarkPicInfosOutcomeCallable DescribeCasterMarkPicInfosCallable(const Model::DescribeCasterMarkPicInfosRequest& request);
+
+                /**
+                 *该接口用来查询某个导播台的文本列表。
+                 * @param req DescribeCasterMarkWordInfosRequest
+                 * @return DescribeCasterMarkWordInfosOutcome
+                 */
+                DescribeCasterMarkWordInfosOutcome DescribeCasterMarkWordInfos(const Model::DescribeCasterMarkWordInfosRequest &request);
+                void DescribeCasterMarkWordInfosAsync(const Model::DescribeCasterMarkWordInfosRequest& request, const DescribeCasterMarkWordInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCasterMarkWordInfosOutcomeCallable DescribeCasterMarkWordInfosCallable(const Model::DescribeCasterMarkWordInfosRequest& request);
 
                 /**
                  *该接口用来查询某个导播台的推流信息列表。
@@ -2489,6 +2583,25 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 ModifyCasterLayoutInfoOutcome ModifyCasterLayoutInfo(const Model::ModifyCasterLayoutInfoRequest &request);
                 void ModifyCasterLayoutInfoAsync(const Model::ModifyCasterLayoutInfoRequest& request, const ModifyCasterLayoutInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCasterLayoutInfoOutcomeCallable ModifyCasterLayoutInfoCallable(const Model::ModifyCasterLayoutInfoRequest& request);
+
+                /**
+                 *该接口用来修改导播台水印信息。
+注意，修改的Index对应的水印需已存在
+                 * @param req ModifyCasterMarkPicInfoRequest
+                 * @return ModifyCasterMarkPicInfoOutcome
+                 */
+                ModifyCasterMarkPicInfoOutcome ModifyCasterMarkPicInfo(const Model::ModifyCasterMarkPicInfoRequest &request);
+                void ModifyCasterMarkPicInfoAsync(const Model::ModifyCasterMarkPicInfoRequest& request, const ModifyCasterMarkPicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCasterMarkPicInfoOutcomeCallable ModifyCasterMarkPicInfoCallable(const Model::ModifyCasterMarkPicInfoRequest& request);
+
+                /**
+                 *该接口用来修改导播台文本配置。
+                 * @param req ModifyCasterMarkWordInfoRequest
+                 * @return ModifyCasterMarkWordInfoOutcome
+                 */
+                ModifyCasterMarkWordInfoOutcome ModifyCasterMarkWordInfo(const Model::ModifyCasterMarkWordInfoRequest &request);
+                void ModifyCasterMarkWordInfoAsync(const Model::ModifyCasterMarkWordInfoRequest& request, const ModifyCasterMarkWordInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCasterMarkWordInfoOutcomeCallable ModifyCasterMarkWordInfoCallable(const Model::ModifyCasterMarkWordInfoRequest& request);
 
                 /**
                  *该接口用来修改导播台的推流信息。

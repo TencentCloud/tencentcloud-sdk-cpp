@@ -53,18 +53,14 @@ namespace TencentCloud
 
                     /**
                      * 获取龋齿
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ToothDecay 龋齿
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StomatologyToothDecay GetToothDecay() const;
 
                     /**
                      * 设置龋齿
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _toothDecay 龋齿
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetToothDecay(const StomatologyToothDecay& _toothDecay);
@@ -78,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取牙龈
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Gingiva 牙龈
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StomatologyGingiva GetGingiva() const;
 
                     /**
                      * 设置牙龈
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gingiva 牙龈
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGingiva(const StomatologyGingiva& _gingiva);
@@ -103,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取牙周
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Periodontics 牙周
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StomatologyPeriodontics GetPeriodontics() const;
 
                     /**
                      * 设置牙周
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _periodontics 牙周
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeriodontics(const StomatologyPeriodontics& _periodontics);
@@ -128,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取口腔其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Others 口腔其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValueItem> GetOthers() const;
 
                     /**
                      * 设置口腔其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _others 口腔其他
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOthers(const std::vector<KeyValueItem>& _others);
@@ -153,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BriefSummary 小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StomatologyBriefSummary GetBriefSummary() const;
 
                     /**
                      * 设置小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _briefSummary 小结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBriefSummary(const StomatologyBriefSummary& _briefSummary);
@@ -180,35 +160,30 @@ namespace TencentCloud
 
                     /**
                      * 龋齿
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StomatologyToothDecay m_toothDecay;
                     bool m_toothDecayHasBeenSet;
 
                     /**
                      * 牙龈
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StomatologyGingiva m_gingiva;
                     bool m_gingivaHasBeenSet;
 
                     /**
                      * 牙周
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StomatologyPeriodontics m_periodontics;
                     bool m_periodonticsHasBeenSet;
 
                     /**
                      * 口腔其他
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValueItem> m_others;
                     bool m_othersHasBeenSet;
 
                     /**
                      * 小结
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StomatologyBriefSummary m_briefSummary;
                     bool m_briefSummaryHasBeenSet;

@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体温
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BodyTemperature 体温
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BodyTemperatureBlock GetBodyTemperature() const;
 
                     /**
                      * 设置体温
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bodyTemperature 体温
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBodyTemperature(const BodyTemperatureBlock& _bodyTemperature);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取脉搏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pulse 脉搏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BodyTemperatureBlock GetPulse() const;
 
                     /**
                      * 设置脉搏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pulse 脉搏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPulse(const BodyTemperatureBlock& _pulse);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取呼吸
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Breathe 呼吸
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BodyTemperatureBlock GetBreathe() const;
 
                     /**
                      * 设置呼吸
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _breathe 呼吸
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBreathe(const BodyTemperatureBlock& _breathe);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取血压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BloodPressure 血压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BloodPressureBlock GetBloodPressure() const;
 
                     /**
                      * 设置血压
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bloodPressure 血压
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBloodPressure(const BloodPressureBlock& _bloodPressure);
@@ -152,28 +136,24 @@ namespace TencentCloud
 
                     /**
                      * 体温
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BodyTemperatureBlock m_bodyTemperature;
                     bool m_bodyTemperatureHasBeenSet;
 
                     /**
                      * 脉搏
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BodyTemperatureBlock m_pulse;
                     bool m_pulseHasBeenSet;
 
                     /**
                      * 呼吸
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BodyTemperatureBlock m_breathe;
                     bool m_breatheHasBeenSet;
 
                     /**
                      * 血压
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BloodPressureBlock m_bloodPressure;
                     bool m_bloodPressureHasBeenSet;

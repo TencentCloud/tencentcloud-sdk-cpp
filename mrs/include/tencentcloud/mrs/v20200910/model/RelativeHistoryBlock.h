@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取成员列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 成员列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RelativeHistoryDetailBlock> GetDetail() const;
 
                     /**
                      * 设置成员列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detail 成员列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetail(const std::vector<RelativeHistoryDetailBlock>& _detail);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 成员列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RelativeHistoryDetailBlock> m_detail;
                     bool m_detailHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 对外输出值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

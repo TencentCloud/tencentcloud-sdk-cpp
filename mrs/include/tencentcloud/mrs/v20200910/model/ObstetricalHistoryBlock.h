@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取婚姻史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarriageHistory 婚姻史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MenstrualHistoryDetailBlock GetMarriageHistory() const;
 
                     /**
                      * 设置婚姻史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _marriageHistory 婚姻史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarriageHistory(const MenstrualHistoryDetailBlock& _marriageHistory);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取婚育史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FertilityHistory 婚育史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FertilityHistoryBlock GetFertilityHistory() const;
 
                     /**
                      * 设置婚育史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fertilityHistory 婚育史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFertilityHistory(const FertilityHistoryBlock& _fertilityHistory);
@@ -102,14 +94,12 @@ namespace TencentCloud
 
                     /**
                      * 婚姻史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MenstrualHistoryDetailBlock m_marriageHistory;
                     bool m_marriageHistoryHasBeenSet;
 
                     /**
                      * 婚育史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FertilityHistoryBlock m_fertilityHistory;
                     bool m_fertilityHistoryHasBeenSet;

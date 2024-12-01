@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取药品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 药品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置药品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 药品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取药物列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DrugList 药物列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DrugListBlock> GetDrugList() const;
 
                     /**
                      * 设置药物列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _drugList 药物列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDrugList(const std::vector<DrugListBlock>& _drugList);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 药品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 药物列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DrugListBlock> m_drugList;
                     bool m_drugListHasBeenSet;
 
                     /**
                      * 归一化值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

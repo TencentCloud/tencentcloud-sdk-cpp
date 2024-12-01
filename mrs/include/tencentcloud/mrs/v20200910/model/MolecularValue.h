@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外显子
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Exon 外显子
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExon() const;
 
                     /**
                      * 设置外显子
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exon 外显子
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExon(const std::string& _exon);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取点位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Position 点位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPosition() const;
 
                     /**
                      * 设置点位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _position 点位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPosition(const std::string& _position);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取阳性或阴性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Positive 阳性或阴性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPositive() const;
 
                     /**
                      * 设置阳性或阴性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _positive 阳性或阴性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPositive(const std::string& _positive);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基因名称原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 基因名称原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置基因名称原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 基因名称原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 外显子
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exon;
                     bool m_exonHasBeenSet;
 
                     /**
                      * 点位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_position;
                     bool m_positionHasBeenSet;
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 阳性或阴性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_positive;
                     bool m_positiveHasBeenSet;
 
                     /**
                      * 基因名称原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;

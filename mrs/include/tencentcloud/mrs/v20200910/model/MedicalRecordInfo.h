@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取就诊日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiagnosisTime 就诊日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiagnosisTime() const;
 
                     /**
                      * 设置就诊日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diagnosisTime 就诊日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiagnosisTime(const std::string& _diagnosisTime);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取就诊科室
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiagnosisDepartmentName 就诊科室
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiagnosisDepartmentName() const;
 
                     /**
                      * 设置就诊科室
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diagnosisDepartmentName 就诊科室
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiagnosisDepartmentName(const std::string& _diagnosisDepartmentName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取就诊医生
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiagnosisDoctorName 就诊医生
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiagnosisDoctorName() const;
 
                     /**
                      * 设置就诊医生
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diagnosisDoctorName 就诊医生
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiagnosisDoctorName(const std::string& _diagnosisDoctorName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取临床诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClinicalDiagnosis 临床诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClinicalDiagnosis() const;
 
                     /**
                      * 设置临床诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clinicalDiagnosis 临床诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClinicalDiagnosis(const std::string& _clinicalDiagnosis);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainNarration 主述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMainNarration() const;
 
                     /**
                      * 设置主述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mainNarration 主述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMainNarration(const std::string& _mainNarration);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取体格检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhysicalExamination 体格检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhysicalExamination() const;
 
                     /**
                      * 设置体格检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _physicalExamination 体格检查
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPhysicalExamination(const std::string& _physicalExamination);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检查结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InspectionFindings 检查结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInspectionFindings() const;
 
                     /**
                      * 设置检查结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inspectionFindings 检查结论
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInspectionFindings(const std::string& _inspectionFindings);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取治疗意见
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TreatmentOpinion 治疗意见
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTreatmentOpinion() const;
 
                     /**
                      * 设置治疗意见
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _treatmentOpinion 治疗意见
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTreatmentOpinion(const std::string& _treatmentOpinion);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _page 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * 就诊日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diagnosisTime;
                     bool m_diagnosisTimeHasBeenSet;
 
                     /**
                      * 就诊科室
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diagnosisDepartmentName;
                     bool m_diagnosisDepartmentNameHasBeenSet;
 
                     /**
                      * 就诊医生
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diagnosisDoctorName;
                     bool m_diagnosisDoctorNameHasBeenSet;
 
                     /**
                      * 临床诊断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clinicalDiagnosis;
                     bool m_clinicalDiagnosisHasBeenSet;
 
                     /**
                      * 主述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mainNarration;
                     bool m_mainNarrationHasBeenSet;
 
                     /**
                      * 体格检查
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_physicalExamination;
                     bool m_physicalExaminationHasBeenSet;
 
                     /**
                      * 检查结论
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inspectionFindings;
                     bool m_inspectionFindingsHasBeenSet;
 
                     /**
                      * 治疗意见
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_treatmentOpinion;
                     bool m_treatmentOpinionHasBeenSet;
 
                     /**
                      * 数据在原PDF文件中的第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文本内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 文本内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置文本内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 文本内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取活性成份的化学名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChemicalName 活性成份的化学名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChemicalName() const;
 
                     /**
                      * 设置活性成份的化学名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chemicalName 活性成份的化学名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChemicalName(const std::string& _chemicalName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取活性成份的化学结构式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChemicalFormula 活性成份的化学结构式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChemicalFormula() const;
 
                     /**
                      * 设置活性成份的化学结构式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chemicalFormula 活性成份的化学结构式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChemicalFormula(const std::string& _chemicalFormula);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取活性成份的分子式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MolecularFormula 活性成份的分子式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMolecularFormula() const;
 
                     /**
                      * 设置活性成份的分子式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _molecularFormula 活性成份的分子式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMolecularFormula(const std::string& _molecularFormula);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取活性成份的分子量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MolecularWeight 活性成份的分子量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMolecularWeight() const;
 
                     /**
                      * 设置活性成份的分子量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _molecularWeight 活性成份的分子量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMolecularWeight(const std::string& _molecularWeight);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 文本内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 活性成份的化学名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chemicalName;
                     bool m_chemicalNameHasBeenSet;
 
                     /**
                      * 活性成份的化学结构式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chemicalFormula;
                     bool m_chemicalFormulaHasBeenSet;
 
                     /**
                      * 活性成份的分子式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_molecularFormula;
                     bool m_molecularFormulaHasBeenSet;
 
                     /**
                      * 活性成份的分子量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_molecularWeight;
                     bool m_molecularWeightHasBeenSet;

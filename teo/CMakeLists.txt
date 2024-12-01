@@ -28,6 +28,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeOriginGroupResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupInfoResponse.h
   include/tencentcloud/teo/v20220901/model/SlowPostConfig.h
+  include/tencentcloud/teo/v20220901/model/OriginRecord.h
   include/tencentcloud/teo/v20220901/model/DescribeConfigGroupVersionDetailResponse.h
   include/tencentcloud/teo/v20220901/model/OriginDetail.h
   include/tencentcloud/teo/v20220901/model/RealtimeLogDeliveryTask.h
@@ -132,7 +133,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/L4ProxyRemoteAuth.h
   include/tencentcloud/teo/v20220901/model/AlgDetectResult.h
   include/tencentcloud/teo/v20220901/model/DefaultServerCertInfo.h
-  include/tencentcloud/teo/v20220901/model/OfflineCache.h
+  include/tencentcloud/teo/v20220901/model/CreateL4ProxyRulesRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackTopDataResponse.h
   include/tencentcloud/teo/v20220901/model/LoadBalancer.h
   include/tencentcloud/teo/v20220901/model/DeleteRulesRequest.h
@@ -181,7 +182,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/CnameStatus.h
   include/tencentcloud/teo/v20220901/model/ServerCertInfo.h
   include/tencentcloud/teo/v20220901/model/DescribeZonesRequest.h
-  include/tencentcloud/teo/v20220901/model/OriginRecord.h
+  include/tencentcloud/teo/v20220901/model/DescribeZoneConfigImportResultResponse.h
   include/tencentcloud/teo/v20220901/model/Tag.h
   include/tencentcloud/teo/v20220901/model/ModifyFunctionRulePriorityRequest.h
   include/tencentcloud/teo/v20220901/model/DeleteSharedCNAMERequest.h
@@ -233,7 +234,8 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/UpgradePlanResponse.h
   include/tencentcloud/teo/v20220901/model/AclConfig.h
   include/tencentcloud/teo/v20220901/model/JITVideoProcess.h
-  include/tencentcloud/teo/v20220901/model/CreateL4ProxyRulesRequest.h
+  include/tencentcloud/teo/v20220901/model/OfflineCache.h
+  include/tencentcloud/teo/v20220901/model/IntelligenceRule.h
   include/tencentcloud/teo/v20220901/model/CreateLoadBalancerResponse.h
   include/tencentcloud/teo/v20220901/model/CreateConfigGroupVersionRequest.h
   include/tencentcloud/teo/v20220901/model/AclUserRule.h
@@ -247,6 +249,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/CreatePlanForZoneResponse.h
   include/tencentcloud/teo/v20220901/model/ModifyL4ProxyRulesStatusResponse.h
   include/tencentcloud/teo/v20220901/model/CheckCnameStatusResponse.h
+  include/tencentcloud/teo/v20220901/model/ImportZoneConfigResponse.h
   include/tencentcloud/teo/v20220901/model/CustomEndpoint.h
   include/tencentcloud/teo/v20220901/model/VerifyOwnershipRequest.h
   include/tencentcloud/teo/v20220901/model/DeleteL4ProxyRequest.h
@@ -331,6 +334,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DropPageConfig.h
   include/tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupInfoRequest.h
   include/tencentcloud/teo/v20220901/model/PartialModule.h
+  include/tencentcloud/teo/v20220901/model/DescribeZoneConfigImportResultRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleStatusRequest.h
   include/tencentcloud/teo/v20220901/model/AccelerateType.h
   include/tencentcloud/teo/v20220901/model/DeliveryCondition.h
@@ -361,6 +365,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/CreateLoadBalancerRequest.h
   include/tencentcloud/teo/v20220901/model/Https.h
   include/tencentcloud/teo/v20220901/model/DescribeOriginGroupHealthStatusRequest.h
+  include/tencentcloud/teo/v20220901/model/ExportZoneConfigRequest.h
   include/tencentcloud/teo/v20220901/model/L4ProxyRule.h
   include/tencentcloud/teo/v20220901/model/AdvancedFilter.h
   include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackDataResponse.h
@@ -377,6 +382,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/AlgDetectSession.h
   include/tencentcloud/teo/v20220901/model/OriginProtectionInfo.h
   include/tencentcloud/teo/v20220901/model/AliasDomain.h
+  include/tencentcloud/teo/v20220901/model/ImportZoneConfigRequest.h
   include/tencentcloud/teo/v20220901/model/IpTableRule.h
   include/tencentcloud/teo/v20220901/model/ModifyFunctionRuleRequest.h
   include/tencentcloud/teo/v20220901/model/IncreasePlanQuotaRequest.h
@@ -411,7 +417,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/StandardDebug.h
   include/tencentcloud/teo/v20220901/model/BindSecurityTemplateToEntityRequest.h
   include/tencentcloud/teo/v20220901/model/IntelligenceRuleItem.h
-  include/tencentcloud/teo/v20220901/model/IntelligenceRule.h
+  include/tencentcloud/teo/v20220901/model/ExportZoneConfigResponse.h
   include/tencentcloud/teo/v20220901/model/PostMaxSize.h
   include/tencentcloud/teo/v20220901/model/DescribeBillingDataResponse.h
   include/tencentcloud/teo/v20220901/model/Filter.h
@@ -477,6 +483,7 @@ set(teo_src
   src/v20220901/model/DescribeOriginGroupResponse.cpp
   src/v20220901/model/DescribeSecurityIPGroupInfoResponse.cpp
   src/v20220901/model/SlowPostConfig.cpp
+  src/v20220901/model/OriginRecord.cpp
   src/v20220901/model/DescribeConfigGroupVersionDetailResponse.cpp
   src/v20220901/model/OriginDetail.cpp
   src/v20220901/model/RealtimeLogDeliveryTask.cpp
@@ -581,7 +588,7 @@ set(teo_src
   src/v20220901/model/L4ProxyRemoteAuth.cpp
   src/v20220901/model/AlgDetectResult.cpp
   src/v20220901/model/DefaultServerCertInfo.cpp
-  src/v20220901/model/OfflineCache.cpp
+  src/v20220901/model/CreateL4ProxyRulesRequest.cpp
   src/v20220901/model/DescribeDDoSAttackTopDataResponse.cpp
   src/v20220901/model/LoadBalancer.cpp
   src/v20220901/model/DeleteRulesRequest.cpp
@@ -630,7 +637,7 @@ set(teo_src
   src/v20220901/model/CnameStatus.cpp
   src/v20220901/model/ServerCertInfo.cpp
   src/v20220901/model/DescribeZonesRequest.cpp
-  src/v20220901/model/OriginRecord.cpp
+  src/v20220901/model/DescribeZoneConfigImportResultResponse.cpp
   src/v20220901/model/Tag.cpp
   src/v20220901/model/ModifyFunctionRulePriorityRequest.cpp
   src/v20220901/model/DeleteSharedCNAMERequest.cpp
@@ -682,7 +689,8 @@ set(teo_src
   src/v20220901/model/UpgradePlanResponse.cpp
   src/v20220901/model/AclConfig.cpp
   src/v20220901/model/JITVideoProcess.cpp
-  src/v20220901/model/CreateL4ProxyRulesRequest.cpp
+  src/v20220901/model/OfflineCache.cpp
+  src/v20220901/model/IntelligenceRule.cpp
   src/v20220901/model/CreateLoadBalancerResponse.cpp
   src/v20220901/model/CreateConfigGroupVersionRequest.cpp
   src/v20220901/model/AclUserRule.cpp
@@ -696,6 +704,7 @@ set(teo_src
   src/v20220901/model/CreatePlanForZoneResponse.cpp
   src/v20220901/model/ModifyL4ProxyRulesStatusResponse.cpp
   src/v20220901/model/CheckCnameStatusResponse.cpp
+  src/v20220901/model/ImportZoneConfigResponse.cpp
   src/v20220901/model/CustomEndpoint.cpp
   src/v20220901/model/VerifyOwnershipRequest.cpp
   src/v20220901/model/DeleteL4ProxyRequest.cpp
@@ -780,6 +789,7 @@ set(teo_src
   src/v20220901/model/DropPageConfig.cpp
   src/v20220901/model/DescribeSecurityIPGroupInfoRequest.cpp
   src/v20220901/model/PartialModule.cpp
+  src/v20220901/model/DescribeZoneConfigImportResultRequest.cpp
   src/v20220901/model/ModifyApplicationProxyRuleStatusRequest.cpp
   src/v20220901/model/AccelerateType.cpp
   src/v20220901/model/DeliveryCondition.cpp
@@ -810,6 +820,7 @@ set(teo_src
   src/v20220901/model/CreateLoadBalancerRequest.cpp
   src/v20220901/model/Https.cpp
   src/v20220901/model/DescribeOriginGroupHealthStatusRequest.cpp
+  src/v20220901/model/ExportZoneConfigRequest.cpp
   src/v20220901/model/L4ProxyRule.cpp
   src/v20220901/model/AdvancedFilter.cpp
   src/v20220901/model/DescribeDDoSAttackDataResponse.cpp
@@ -826,6 +837,7 @@ set(teo_src
   src/v20220901/model/AlgDetectSession.cpp
   src/v20220901/model/OriginProtectionInfo.cpp
   src/v20220901/model/AliasDomain.cpp
+  src/v20220901/model/ImportZoneConfigRequest.cpp
   src/v20220901/model/IpTableRule.cpp
   src/v20220901/model/ModifyFunctionRuleRequest.cpp
   src/v20220901/model/IncreasePlanQuotaRequest.cpp
@@ -860,7 +872,7 @@ set(teo_src
   src/v20220901/model/StandardDebug.cpp
   src/v20220901/model/BindSecurityTemplateToEntityRequest.cpp
   src/v20220901/model/IntelligenceRuleItem.cpp
-  src/v20220901/model/IntelligenceRule.cpp
+  src/v20220901/model/ExportZoneConfigResponse.cpp
   src/v20220901/model/PostMaxSize.cpp
   src/v20220901/model/DescribeBillingDataResponse.cpp
   src/v20220901/model/Filter.cpp

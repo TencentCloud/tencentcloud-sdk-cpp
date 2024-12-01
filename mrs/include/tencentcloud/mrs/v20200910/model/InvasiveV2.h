@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetIndex() const;
 
                     /**
                      * 设置索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _index 索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndex(const std::vector<int64_t>& _index);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Part GetPart() const;
 
                     /**
                      * 设置部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _part 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPart(const Part& _part);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取阴性或阳性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Positive 阴性或阳性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPositive() const;
 
                     /**
                      * 设置阴性或阳性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _positive 阴性或阳性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPositive(const std::string& _positive);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _src 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrc(const std::string& _src);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原文对应坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 原文对应坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置原文对应坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coords 原文对应坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
@@ -177,35 +157,30 @@ namespace TencentCloud
 
                     /**
                      * 索引
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_index;
                     bool m_indexHasBeenSet;
 
                     /**
                      * 部位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Part m_part;
                     bool m_partHasBeenSet;
 
                     /**
                      * 阴性或阳性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_positive;
                     bool m_positiveHasBeenSet;
 
                     /**
                      * 原文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
                      * 原文对应坐标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Coord> m_coords;
                     bool m_coordsHasBeenSet;

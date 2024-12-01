@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取耳总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 耳总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KeyValueItem GetText() const;
 
                     /**
                      * 设置耳总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 耳总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const KeyValueItem& _text);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取听力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hearing 听力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HearingItem GetHearing() const;
 
                     /**
                      * 设置听力
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hearing 听力
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHearing(const HearingItem& _hearing);
@@ -102,14 +94,12 @@ namespace TencentCloud
 
                     /**
                      * 耳总体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KeyValueItem m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 听力
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HearingItem m_hearing;
                     bool m_hearingHasBeenSet;

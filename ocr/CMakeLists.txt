@@ -65,8 +65,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/FlightItem.h
   include/tencentcloud/ocr/v20181119/model/Value.h
   include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeKoreanDrivingLicenseOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeKoreanDrivingLicenseOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/SealInfo.h
   include/tencentcloud/ocr/v20181119/model/InvoiceGeneralInfo.h
   include/tencentcloud/ocr/v20181119/model/TextVatInvoice.h
   include/tencentcloud/ocr/v20181119/model/InstitutionOCRResponse.h
@@ -307,7 +306,6 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/VatInvoiceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/BankCardOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/SealInfo.h
   include/tencentcloud/ocr/v20181119/model/BusinessCardOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/FinanBillOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h
@@ -366,8 +364,7 @@ set(ocr_src
   src/v20181119/model/FlightItem.cpp
   src/v20181119/model/Value.cpp
   src/v20181119/model/EnterpriseLicenseOCRResponse.cpp
-  src/v20181119/model/RecognizeKoreanDrivingLicenseOCRResponse.cpp
-  src/v20181119/model/RecognizeKoreanDrivingLicenseOCRRequest.cpp
+  src/v20181119/model/SealInfo.cpp
   src/v20181119/model/InvoiceGeneralInfo.cpp
   src/v20181119/model/TextVatInvoice.cpp
   src/v20181119/model/InstitutionOCRResponse.cpp
@@ -608,7 +605,6 @@ set(ocr_src
   src/v20181119/model/VatInvoiceOCRResponse.cpp
   src/v20181119/model/QuotaInvoiceOCRRequest.cpp
   src/v20181119/model/BankCardOCRResponse.cpp
-  src/v20181119/model/SealInfo.cpp
   src/v20181119/model/BusinessCardOCRRequest.cpp
   src/v20181119/model/FinanBillOCRRequest.cpp
   src/v20181119/model/QuotaInvoiceOCRResponse.cpp

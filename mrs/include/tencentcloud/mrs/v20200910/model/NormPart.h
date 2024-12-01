@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部位值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPart() const;
 
                     /**
                      * 设置部位值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _part 部位值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPart(const std::string& _part);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部位方向
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartDirection 部位方向
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPartDirection() const;
 
                     /**
                      * 设置部位方向
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partDirection 部位方向
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPartDirection(const std::string& _partDirection);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组织值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tissue 组织值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTissue() const;
 
                     /**
                      * 设置组织值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tissue 组织值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTissue(const std::string& _tissue);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组织方向
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TissueDirection 组织方向
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTissueDirection() const;
 
                     /**
                      * 设置组织方向
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tissueDirection 组织方向
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTissueDirection(const std::string& _tissueDirection);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上级部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Upper 上级部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpper() const;
 
                     /**
                      * 设置上级部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upper 上级部位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpper(const std::string& _upper);
@@ -199,18 +179,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部位详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartDetailList 部位详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PartDesc> GetPartDetailList() const;
 
                     /**
                      * 设置部位详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partDetailList 部位详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPartDetailList(const std::vector<PartDesc>& _partDetailList);
@@ -226,35 +202,30 @@ namespace TencentCloud
 
                     /**
                      * 部位值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_part;
                     bool m_partHasBeenSet;
 
                     /**
                      * 部位方向
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_partDirection;
                     bool m_partDirectionHasBeenSet;
 
                     /**
                      * 组织值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tissue;
                     bool m_tissueHasBeenSet;
 
                     /**
                      * 组织方向
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tissueDirection;
                     bool m_tissueDirectionHasBeenSet;
 
                     /**
                      * 上级部位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_upper;
                     bool m_upperHasBeenSet;
@@ -268,7 +239,6 @@ namespace TencentCloud
 
                     /**
                      * 部位详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PartDesc> m_partDetailList;
                     bool m_partDetailListHasBeenSet;

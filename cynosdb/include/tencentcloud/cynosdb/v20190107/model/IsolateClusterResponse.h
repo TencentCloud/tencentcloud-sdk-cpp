@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务流ID
+                     * 获取任务流ID(后付费或者serverless资源返回，如果需要同步任务状态，请使用DescribeFlow接口)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowId 任务流ID
+                     * @return FlowId 任务流ID(后付费或者serverless资源返回，如果需要同步任务状态，请使用DescribeFlow接口)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -60,9 +60,9 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取退款订单号
+                     * 获取退款订单号(预付费资源返回，如果需要同步订单状态，请使用计费产品的DescribeDealsByCond同步订单状态)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DealNames 退款订单号
+                     * @return DealNames 退款订单号(预付费资源返回，如果需要同步订单状态，请使用计费产品的DescribeDealsByCond同步订单状态)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -78,14 +78,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务流ID
+                     * 任务流ID(后付费或者serverless资源返回，如果需要同步任务状态，请使用DescribeFlow接口)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 退款订单号
+                     * 退款订单号(预付费资源返回，如果需要同步订单状态，请使用计费产品的DescribeDealsByCond同步订单状态)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dealNames;

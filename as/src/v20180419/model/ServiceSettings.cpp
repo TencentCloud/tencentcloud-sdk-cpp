@@ -24,7 +24,8 @@ ServiceSettings::ServiceSettings() :
     m_replaceMonitorUnhealthyHasBeenSet(false),
     m_scalingModeHasBeenSet(false),
     m_replaceLoadBalancerUnhealthyHasBeenSet(false),
-    m_replaceModeHasBeenSet(false)
+    m_replaceModeHasBeenSet(false),
+    m_autoUpdateInstanceTagsHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ServiceSettings::Deserialize(const rapidjson::Value &value)
         m_replaceModeHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoUpdateInstanceTags") && !value["AutoUpdateInstanceTags"].IsNull())
+    {
+        if (!value["AutoUpdateInstanceTags"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSettings.AutoUpdateInstanceTags` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoUpdateInstanceTags = value["AutoUpdateInstanceTags"].GetBool();
+        m_autoUpdateInstanceTagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ServiceSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ReplaceMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_replaceMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoUpdateInstanceTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoUpdateInstanceTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoUpdateInstanceTags, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ServiceSettings::SetReplaceMode(const string& _replaceMode)
 bool ServiceSettings::ReplaceModeHasBeenSet() const
 {
     return m_replaceModeHasBeenSet;
+}
+
+bool ServiceSettings::GetAutoUpdateInstanceTags() const
+{
+    return m_autoUpdateInstanceTags;
+}
+
+void ServiceSettings::SetAutoUpdateInstanceTags(const bool& _autoUpdateInstanceTags)
+{
+    m_autoUpdateInstanceTags = _autoUpdateInstanceTags;
+    m_autoUpdateInstanceTagsHasBeenSet = true;
+}
+
+bool ServiceSettings::AutoUpdateInstanceTagsHasBeenSet() const
+{
+    return m_autoUpdateInstanceTagsHasBeenSet;
 }
 
