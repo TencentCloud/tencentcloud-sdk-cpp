@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/WordResult.h>
 
 
 namespace TencentCloud
@@ -130,6 +131,27 @@ namespace TencentCloud
                      */
                     bool TextHasBeenSet() const;
 
+                    /**
+                     * 获取字词时间戳信息。
+                     * @return Wordlist 字词时间戳信息。
+                     * 
+                     */
+                    std::vector<WordResult> GetWordlist() const;
+
+                    /**
+                     * 设置字词时间戳信息。
+                     * @param _wordlist 字词时间戳信息。
+                     * 
+                     */
+                    void SetWordlist(const std::vector<WordResult>& _wordlist);
+
+                    /**
+                     * 判断参数 Wordlist 是否已赋值
+                     * @return Wordlist 是否已赋值
+                     * 
+                     */
+                    bool WordlistHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +177,12 @@ namespace TencentCloud
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
+
+                    /**
+                     * 字词时间戳信息。
+                     */
+                    std::vector<WordResult> m_wordlist;
+                    bool m_wordlistHasBeenSet;
 
                 };
             }

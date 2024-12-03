@@ -396,6 +396,31 @@ namespace TencentCloud
                      */
                     bool NodeInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取预期副本数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SpecTotalCount 预期副本数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSpecTotalCount() const;
+
+                    /**
+                     * 设置预期副本数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _specTotalCount 预期副本数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSpecTotalCount(const std::string& _specTotalCount);
+
+                    /**
+                     * 判断参数 SpecTotalCount 是否已赋值
+                     * @return SpecTotalCount 是否已赋值
+                     * 
+                     */
+                    bool SpecTotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -495,6 +520,13 @@ namespace TencentCloud
                      */
                     std::string m_nodeInstanceId;
                     bool m_nodeInstanceIdHasBeenSet;
+
+                    /**
+                     * 预期副本数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_specTotalCount;
+                    bool m_specTotalCountHasBeenSet;
 
                 };
             }

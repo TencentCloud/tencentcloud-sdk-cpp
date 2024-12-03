@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace std;
 
-CheckMigrateClusterResponse::CheckMigrateClusterResponse()
+CheckMigrateClusterResponse::CheckMigrateClusterResponse() :
+    m_checkResultHasBeenSet(false),
+    m_itemsHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome CheckMigrateClusterResponse::Deserialize(const string &paylo
     }
 
 
+    if (rsp.HasMember("CheckResult") && !rsp["CheckResult"].IsNull())
+    {
+        if (!rsp["CheckResult"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CheckResult` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkResult = string(rsp["CheckResult"].GetString());
+        m_checkResultHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Items") && !rsp["Items"].IsNull())
+    {
+        if (!rsp["Items"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Items` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Items"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CheckMigrateResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_items.push_back(item);
+        }
+        m_itemsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string CheckMigrateClusterResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_checkResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_checkResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_itemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Items";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string CheckMigrateClusterResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CheckMigrateClusterResponse::GetCheckResult() const
+{
+    return m_checkResult;
+}
+
+bool CheckMigrateClusterResponse::CheckResultHasBeenSet() const
+{
+    return m_checkResultHasBeenSet;
+}
+
+vector<CheckMigrateResult> CheckMigrateClusterResponse::GetItems() const
+{
+    return m_items;
+}
+
+bool CheckMigrateClusterResponse::ItemsHasBeenSet() const
+{
+    return m_itemsHasBeenSet;
+}
 
 

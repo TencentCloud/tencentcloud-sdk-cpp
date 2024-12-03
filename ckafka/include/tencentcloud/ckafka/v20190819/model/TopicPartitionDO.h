@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Partition ID
-                     * @return Partition Partition ID
+                     * 获取Partition 分区ID
+                     * @return Partition Partition 分区ID
                      * 
                      */
                     int64_t GetPartition() const;
 
                     /**
-                     * 设置Partition ID
-                     * @param _partition Partition ID
+                     * 设置Partition 分区ID
+                     * @param _partition Partition 分区ID
                      * 
                      */
                     void SetPartition(const int64_t& _partition);
@@ -133,7 +133,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Partition ID
+                     * Partition 分区ID
                      */
                     int64_t m_partition;
                     bool m_partitionHasBeenSet;

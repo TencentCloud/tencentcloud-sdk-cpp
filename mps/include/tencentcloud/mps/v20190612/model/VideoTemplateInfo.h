@@ -943,6 +943,145 @@ VCRF（Constant Rate Factor）：恒定质量因子，通过设定一个质量�
                      */
                     bool SegmentSpecificInfoHasBeenSet() const;
 
+                    /**
+                     * 获取模版是否开启场景化 
+0：不开启 
+1：开启 
+默认值：0	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScenarioBased 模版是否开启场景化 
+0：不开启 
+1：开启 
+默认值：0	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetScenarioBased() const;
+
+                    /**
+                     * 设置模版是否开启场景化 
+0：不开启 
+1：开启 
+默认值：0	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scenarioBased 模版是否开启场景化 
+0：不开启 
+1：开启 
+默认值：0	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScenarioBased(const int64_t& _scenarioBased);
+
+                    /**
+                     * 判断参数 ScenarioBased 是否已赋值
+                     * @return ScenarioBased 是否已赋值
+                     * 
+                     */
+                    bool ScenarioBasedHasBeenSet() const;
+
+                    /**
+                     * 获取视频场景化，可选值： 
+normal：通用转码场景：通用转码压缩场景。
+pgc：PGC高清影视：压缩时会注重影视剧的观看体验，根据影视剧特性进行ROI编码，同时保留高质量的视频内容和音频。 
+materials_video：高清素材：素材资源类场景，对画质要求极高，较多透明画面内容，在压缩的同时接近视觉无损。 
+ugc：UGC内容：适用于广泛的UGC/短视频场景，针对短视频的特性优化编码码率， 画质提升，提升业务QOS/QOE指标。 
+e-commerce_video：秀场/电商类：压缩时会强调细节清晰度和ROI区域提升，尤其注重保持人脸区域的画质。 
+educational_video：教育类：压缩时会强调文字和图像的清晰度和可读性，以便学生更好地理解内容，确保讲解内容清晰传达。 
+默认值：normal
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SceneType 视频场景化，可选值： 
+normal：通用转码场景：通用转码压缩场景。
+pgc：PGC高清影视：压缩时会注重影视剧的观看体验，根据影视剧特性进行ROI编码，同时保留高质量的视频内容和音频。 
+materials_video：高清素材：素材资源类场景，对画质要求极高，较多透明画面内容，在压缩的同时接近视觉无损。 
+ugc：UGC内容：适用于广泛的UGC/短视频场景，针对短视频的特性优化编码码率， 画质提升，提升业务QOS/QOE指标。 
+e-commerce_video：秀场/电商类：压缩时会强调细节清晰度和ROI区域提升，尤其注重保持人脸区域的画质。 
+educational_video：教育类：压缩时会强调文字和图像的清晰度和可读性，以便学生更好地理解内容，确保讲解内容清晰传达。 
+默认值：normal
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSceneType() const;
+
+                    /**
+                     * 设置视频场景化，可选值： 
+normal：通用转码场景：通用转码压缩场景。
+pgc：PGC高清影视：压缩时会注重影视剧的观看体验，根据影视剧特性进行ROI编码，同时保留高质量的视频内容和音频。 
+materials_video：高清素材：素材资源类场景，对画质要求极高，较多透明画面内容，在压缩的同时接近视觉无损。 
+ugc：UGC内容：适用于广泛的UGC/短视频场景，针对短视频的特性优化编码码率， 画质提升，提升业务QOS/QOE指标。 
+e-commerce_video：秀场/电商类：压缩时会强调细节清晰度和ROI区域提升，尤其注重保持人脸区域的画质。 
+educational_video：教育类：压缩时会强调文字和图像的清晰度和可读性，以便学生更好地理解内容，确保讲解内容清晰传达。 
+默认值：normal
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sceneType 视频场景化，可选值： 
+normal：通用转码场景：通用转码压缩场景。
+pgc：PGC高清影视：压缩时会注重影视剧的观看体验，根据影视剧特性进行ROI编码，同时保留高质量的视频内容和音频。 
+materials_video：高清素材：素材资源类场景，对画质要求极高，较多透明画面内容，在压缩的同时接近视觉无损。 
+ugc：UGC内容：适用于广泛的UGC/短视频场景，针对短视频的特性优化编码码率， 画质提升，提升业务QOS/QOE指标。 
+e-commerce_video：秀场/电商类：压缩时会强调细节清晰度和ROI区域提升，尤其注重保持人脸区域的画质。 
+educational_video：教育类：压缩时会强调文字和图像的清晰度和可读性，以便学生更好地理解内容，确保讲解内容清晰传达。 
+默认值：normal
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSceneType(const std::string& _sceneType);
+
+                    /**
+                     * 判断参数 SceneType 是否已赋值
+                     * @return SceneType 是否已赋值
+                     * 
+                     */
+                    bool SceneTypeHasBeenSet() const;
+
+                    /**
+                     * 获取转码策略，可选值： 
+ultra_compress：极致压缩：相比标准压缩，该策略能在保证一定画质的基础上最大限度压缩码率，极大节约带宽和存储成本。 
+standard_compress：综合最优：平衡压缩率与画质，在保证主观画质没有明显降低的情况下尽可能压缩文件。该策略仅收取音视频极速高清转码费用。 
+high_compress：码率优先：优先保证降低文件体积大小，可能有一定画质损失。该策略仅收取音视频极速高清转码费用。 
+low_compress：画质优先：优先保证画质，压缩出来的文件体积可能相对较大。该策略仅收取音视频极速高清转码费用。 
+默认值：standard_compress 
+注：若需要在电视上观看视频，不建议使用ultra_compress策略。ultra_compress策略计费标准为极速高清转码 + 音视频增强-去毛刺。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CompressType 转码策略，可选值： 
+ultra_compress：极致压缩：相比标准压缩，该策略能在保证一定画质的基础上最大限度压缩码率，极大节约带宽和存储成本。 
+standard_compress：综合最优：平衡压缩率与画质，在保证主观画质没有明显降低的情况下尽可能压缩文件。该策略仅收取音视频极速高清转码费用。 
+high_compress：码率优先：优先保证降低文件体积大小，可能有一定画质损失。该策略仅收取音视频极速高清转码费用。 
+low_compress：画质优先：优先保证画质，压缩出来的文件体积可能相对较大。该策略仅收取音视频极速高清转码费用。 
+默认值：standard_compress 
+注：若需要在电视上观看视频，不建议使用ultra_compress策略。ultra_compress策略计费标准为极速高清转码 + 音视频增强-去毛刺。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCompressType() const;
+
+                    /**
+                     * 设置转码策略，可选值： 
+ultra_compress：极致压缩：相比标准压缩，该策略能在保证一定画质的基础上最大限度压缩码率，极大节约带宽和存储成本。 
+standard_compress：综合最优：平衡压缩率与画质，在保证主观画质没有明显降低的情况下尽可能压缩文件。该策略仅收取音视频极速高清转码费用。 
+high_compress：码率优先：优先保证降低文件体积大小，可能有一定画质损失。该策略仅收取音视频极速高清转码费用。 
+low_compress：画质优先：优先保证画质，压缩出来的文件体积可能相对较大。该策略仅收取音视频极速高清转码费用。 
+默认值：standard_compress 
+注：若需要在电视上观看视频，不建议使用ultra_compress策略。ultra_compress策略计费标准为极速高清转码 + 音视频增强-去毛刺。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _compressType 转码策略，可选值： 
+ultra_compress：极致压缩：相比标准压缩，该策略能在保证一定画质的基础上最大限度压缩码率，极大节约带宽和存储成本。 
+standard_compress：综合最优：平衡压缩率与画质，在保证主观画质没有明显降低的情况下尽可能压缩文件。该策略仅收取音视频极速高清转码费用。 
+high_compress：码率优先：优先保证降低文件体积大小，可能有一定画质损失。该策略仅收取音视频极速高清转码费用。 
+low_compress：画质优先：优先保证画质，压缩出来的文件体积可能相对较大。该策略仅收取音视频极速高清转码费用。 
+默认值：standard_compress 
+注：若需要在电视上观看视频，不建议使用ultra_compress策略。ultra_compress策略计费标准为极速高清转码 + 音视频增强-去毛刺。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCompressType(const std::string& _compressType);
+
+                    /**
+                     * 判断参数 CompressType 是否已赋值
+                     * @return CompressType 是否已赋值
+                     * 
+                     */
+                    bool CompressTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1186,6 +1325,43 @@ VCRF（Constant Rate Factor）：恒定质量因子，通过设定一个质量�
                      */
                     SegmentSpecificInfo m_segmentSpecificInfo;
                     bool m_segmentSpecificInfoHasBeenSet;
+
+                    /**
+                     * 模版是否开启场景化 
+0：不开启 
+1：开启 
+默认值：0	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_scenarioBased;
+                    bool m_scenarioBasedHasBeenSet;
+
+                    /**
+                     * 视频场景化，可选值： 
+normal：通用转码场景：通用转码压缩场景。
+pgc：PGC高清影视：压缩时会注重影视剧的观看体验，根据影视剧特性进行ROI编码，同时保留高质量的视频内容和音频。 
+materials_video：高清素材：素材资源类场景，对画质要求极高，较多透明画面内容，在压缩的同时接近视觉无损。 
+ugc：UGC内容：适用于广泛的UGC/短视频场景，针对短视频的特性优化编码码率， 画质提升，提升业务QOS/QOE指标。 
+e-commerce_video：秀场/电商类：压缩时会强调细节清晰度和ROI区域提升，尤其注重保持人脸区域的画质。 
+educational_video：教育类：压缩时会强调文字和图像的清晰度和可读性，以便学生更好地理解内容，确保讲解内容清晰传达。 
+默认值：normal
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sceneType;
+                    bool m_sceneTypeHasBeenSet;
+
+                    /**
+                     * 转码策略，可选值： 
+ultra_compress：极致压缩：相比标准压缩，该策略能在保证一定画质的基础上最大限度压缩码率，极大节约带宽和存储成本。 
+standard_compress：综合最优：平衡压缩率与画质，在保证主观画质没有明显降低的情况下尽可能压缩文件。该策略仅收取音视频极速高清转码费用。 
+high_compress：码率优先：优先保证降低文件体积大小，可能有一定画质损失。该策略仅收取音视频极速高清转码费用。 
+low_compress：画质优先：优先保证画质，压缩出来的文件体积可能相对较大。该策略仅收取音视频极速高清转码费用。 
+默认值：standard_compress 
+注：若需要在电视上观看视频，不建议使用ultra_compress策略。ultra_compress策略计费标准为极速高清转码 + 音视频增强-去毛刺。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_compressType;
+                    bool m_compressTypeHasBeenSet;
 
                 };
             }

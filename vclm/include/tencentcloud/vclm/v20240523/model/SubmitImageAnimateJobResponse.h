@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID。
-                     * @return JobId 任务ID。
+                     * 获取图片跳舞任务ID。
+                     * @return JobId 图片跳舞任务ID。
                      * 
                      */
                     std::string GetJobId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID。
+                     * 图片跳舞任务ID。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;

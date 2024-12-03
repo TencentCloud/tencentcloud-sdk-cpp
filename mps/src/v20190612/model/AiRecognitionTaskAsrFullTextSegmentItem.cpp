@@ -24,7 +24,8 @@ AiRecognitionTaskAsrFullTextSegmentItem::AiRecognitionTaskAsrFullTextSegmentItem
     m_confidenceHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
     m_endTimeOffsetHasBeenSet(false),
-    m_textHasBeenSet(false)
+    m_textHasBeenSet(false),
+    m_wordlistHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,26 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextSegmentItem::Deserialize(const r
         m_textHasBeenSet = true;
     }
 
+    if (value.HasMember("Wordlist") && !value["Wordlist"].IsNull())
+    {
+        if (!value["Wordlist"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextSegmentItem.Wordlist` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Wordlist"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            WordResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_wordlist.push_back(item);
+        }
+        m_wordlistHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +131,21 @@ void AiRecognitionTaskAsrFullTextSegmentItem::ToJsonObject(rapidjson::Value &val
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wordlistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Wordlist";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_wordlist.begin(); itr != m_wordlist.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -177,5 +213,21 @@ void AiRecognitionTaskAsrFullTextSegmentItem::SetText(const string& _text)
 bool AiRecognitionTaskAsrFullTextSegmentItem::TextHasBeenSet() const
 {
     return m_textHasBeenSet;
+}
+
+vector<WordResult> AiRecognitionTaskAsrFullTextSegmentItem::GetWordlist() const
+{
+    return m_wordlist;
+}
+
+void AiRecognitionTaskAsrFullTextSegmentItem::SetWordlist(const vector<WordResult>& _wordlist)
+{
+    m_wordlist = _wordlist;
+    m_wordlistHasBeenSet = true;
+}
+
+bool AiRecognitionTaskAsrFullTextSegmentItem::WordlistHasBeenSet() const
+{
+    return m_wordlistHasBeenSet;
 }
 

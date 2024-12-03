@@ -146,6 +146,48 @@ namespace TencentCloud
                      */
                     bool PortHasBeenSet() const;
 
+                    /**
+                     * 获取旧 ip 保留时长，单位天
+                     * @return PreserveDuration 旧 ip 保留时长，单位天
+                     * 
+                     */
+                    int64_t GetPreserveDuration() const;
+
+                    /**
+                     * 设置旧 ip 保留时长，单位天
+                     * @param _preserveDuration 旧 ip 保留时长，单位天
+                     * 
+                     */
+                    void SetPreserveDuration(const int64_t& _preserveDuration);
+
+                    /**
+                     * 判断参数 PreserveDuration 是否已赋值
+                     * @return PreserveDuration 是否已赋值
+                     * 
+                     */
+                    bool PreserveDurationHasBeenSet() const;
+
+                    /**
+                     * 获取旧 ip 到期时间
+                     * @return ExpireTime 旧 ip 到期时间
+                     * 
+                     */
+                    std::string GetExpireTime() const;
+
+                    /**
+                     * 设置旧 ip 到期时间
+                     * @param _expireTime 旧 ip 到期时间
+                     * 
+                     */
+                    void SetExpireTime(const std::string& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +217,18 @@ namespace TencentCloud
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
+
+                    /**
+                     * 旧 ip 保留时长，单位天
+                     */
+                    int64_t m_preserveDuration;
+                    bool m_preserveDurationHasBeenSet;
+
+                    /**
+                     * 旧 ip 到期时间
+                     */
+                    std::string m_expireTime;
+                    bool m_expireTimeHasBeenSet;
 
                 };
             }

@@ -321,6 +321,56 @@ namespace TencentCloud
                      */
                     bool ApplicationRuntimeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Apm业务系统id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AmpInstanceId Apm业务系统id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAmpInstanceId() const;
+
+                    /**
+                     * 设置Apm业务系统id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ampInstanceId Apm业务系统id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAmpInstanceId(const std::string& _ampInstanceId);
+
+                    /**
+                     * 判断参数 AmpInstanceId 是否已赋值
+                     * @return AmpInstanceId 是否已赋值
+                     * 
+                     */
+                    bool AmpInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取Apm业务系统Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApmInstanceName Apm业务系统Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApmInstanceName() const;
+
+                    /**
+                     * 设置Apm业务系统Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _apmInstanceName Apm业务系统Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApmInstanceName(const std::string& _apmInstanceName);
+
+                    /**
+                     * 判断参数 ApmInstanceName 是否已赋值
+                     * @return ApmInstanceName 是否已赋值
+                     * 
+                     */
+                    bool ApmInstanceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +449,20 @@ namespace TencentCloud
                      */
                     std::string m_applicationRuntimeType;
                     bool m_applicationRuntimeTypeHasBeenSet;
+
+                    /**
+                     * Apm业务系统id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ampInstanceId;
+                    bool m_ampInstanceIdHasBeenSet;
+
+                    /**
+                     * Apm业务系统Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_apmInstanceName;
+                    bool m_apmInstanceNameHasBeenSet;
 
                 };
             }

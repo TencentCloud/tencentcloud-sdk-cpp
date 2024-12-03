@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取路由ID
-                     * @return RouteId 路由ID
+                     * 获取路由Id
+                     * @return RouteId 路由Id
                      * 
                      */
                     int64_t GetRouteId() const;
 
                     /**
-                     * 设置路由ID
-                     * @param _routeId 路由ID
+                     * 设置路由Id
+                     * @param _routeId 路由Id
                      * 
                      */
                     void SetRouteId(const int64_t& _routeId);
@@ -223,18 +223,18 @@ namespace TencentCloud
                     bool DeleteTimestampHasBeenSet() const;
 
                     /**
-                     * 获取子网信息
+                     * 获取子网Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Subnet 子网信息
+                     * @return Subnet 子网Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnet() const;
 
                     /**
-                     * 设置子网信息
+                     * 设置子网Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subnet 子网信息
+                     * @param _subnet 子网Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -273,18 +273,18 @@ namespace TencentCloud
                     bool BrokerVipListHasBeenSet() const;
 
                     /**
-                     * 获取vpc信息
+                     * 获取私有网络Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VpcId vpc信息
+                     * @return VpcId 私有网络Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置vpc信息
+                     * 设置私有网络Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vpcId vpc信息
+                     * @param _vpcId 私有网络Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -310,7 +310,7 @@ namespace TencentCloud
                     bool m_accessTypeHasBeenSet;
 
                     /**
-                     * 路由ID
+                     * 路由Id
                      */
                     int64_t m_routeId;
                     bool m_routeIdHasBeenSet;
@@ -349,7 +349,7 @@ namespace TencentCloud
                     bool m_deleteTimestampHasBeenSet;
 
                     /**
-                     * 子网信息
+                     * 子网Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnet;
@@ -363,7 +363,7 @@ namespace TencentCloud
                     bool m_brokerVipListHasBeenSet;
 
                     /**
-                     * vpc信息
+                     * 私有网络Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;

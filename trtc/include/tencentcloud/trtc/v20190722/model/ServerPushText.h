@@ -109,6 +109,35 @@ namespace TencentCloud
                      */
                     bool StopAfterPlayHasBeenSet() const;
 
+                    /**
+                     * 获取服务端推送播报音频
+    格式说明：音频以16KHz采样率的单声道格式提供，编码为Base64字符串。
+    输入规则：当提供Audio字段时，将不接受Text字段的输入。系统将直接播放Audio字段中的音频内容。
+                     * @return Audio 服务端推送播报音频
+    格式说明：音频以16KHz采样率的单声道格式提供，编码为Base64字符串。
+    输入规则：当提供Audio字段时，将不接受Text字段的输入。系统将直接播放Audio字段中的音频内容。
+                     * 
+                     */
+                    std::string GetAudio() const;
+
+                    /**
+                     * 设置服务端推送播报音频
+    格式说明：音频以16KHz采样率的单声道格式提供，编码为Base64字符串。
+    输入规则：当提供Audio字段时，将不接受Text字段的输入。系统将直接播放Audio字段中的音频内容。
+                     * @param _audio 服务端推送播报音频
+    格式说明：音频以16KHz采样率的单声道格式提供，编码为Base64字符串。
+    输入规则：当提供Audio字段时，将不接受Text字段的输入。系统将直接播放Audio字段中的音频内容。
+                     * 
+                     */
+                    void SetAudio(const std::string& _audio);
+
+                    /**
+                     * 判断参数 Audio 是否已赋值
+                     * @return Audio 是否已赋值
+                     * 
+                     */
+                    bool AudioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +157,14 @@ namespace TencentCloud
                      */
                     bool m_stopAfterPlay;
                     bool m_stopAfterPlayHasBeenSet;
+
+                    /**
+                     * 服务端推送播报音频
+    格式说明：音频以16KHz采样率的单声道格式提供，编码为Base64字符串。
+    输入规则：当提供Audio字段时，将不接受Text字段的输入。系统将直接播放Audio字段中的音频内容。
+                     */
+                    std::string m_audio;
+                    bool m_audioHasBeenSet;
 
                 };
             }

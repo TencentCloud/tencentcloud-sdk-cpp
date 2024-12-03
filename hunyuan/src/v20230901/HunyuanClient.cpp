@@ -126,6 +126,49 @@ HunyuanClient::ChatCompletionsOutcomeCallable HunyuanClient::ChatCompletionsCall
     return task->get_future();
 }
 
+HunyuanClient::ChatTranslationsOutcome HunyuanClient::ChatTranslations(const ChatTranslationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChatTranslations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChatTranslationsResponse rsp = ChatTranslationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChatTranslationsOutcome(rsp);
+        else
+            return ChatTranslationsOutcome(o.GetError());
+    }
+    else
+    {
+        return ChatTranslationsOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::ChatTranslationsAsync(const ChatTranslationsRequest& request, const ChatTranslationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChatTranslations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::ChatTranslationsOutcomeCallable HunyuanClient::ChatTranslationsCallable(const ChatTranslationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChatTranslationsOutcome()>>(
+        [this, request]()
+        {
+            return this->ChatTranslations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 HunyuanClient::CreateThreadOutcome HunyuanClient::CreateThread(const CreateThreadRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateThread");

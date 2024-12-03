@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Topic名称
-                     * @return TopicName Topic名称
+                     * 获取主题名
+                     * @return TopicName 主题名
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置Topic名称
-                     * @param _topicName Topic名称
+                     * 设置主题名
+                     * @param _topicName 主题名
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取Topic的Id
-                     * @return TopicId Topic的Id
+                     * 获取主题Id
+                     * @return TopicId 主题Id
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置Topic的Id
-                     * @param _topicId Topic的Id
+                     * 设置主题Id
+                     * @param _topicId 主题Id
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -112,7 +112,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Topic名称
+                     * 主题名
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * Topic的Id
+                     * 主题Id
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;

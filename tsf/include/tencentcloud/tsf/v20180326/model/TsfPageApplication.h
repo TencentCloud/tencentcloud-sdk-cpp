@@ -97,6 +97,31 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取获取部署组实例列表返回的原始批次个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SpecTotalCount 获取部署组实例列表返回的原始批次个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSpecTotalCount() const;
+
+                    /**
+                     * 设置获取部署组实例列表返回的原始批次个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _specTotalCount 获取部署组实例列表返回的原始批次个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSpecTotalCount(const int64_t& _specTotalCount);
+
+                    /**
+                     * 判断参数 SpecTotalCount 是否已赋值
+                     * @return SpecTotalCount 是否已赋值
+                     * 
+                     */
+                    bool SpecTotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -112,6 +137,13 @@ namespace TencentCloud
                      */
                     std::vector<ApplicationForPage> m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 获取部署组实例列表返回的原始批次个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_specTotalCount;
+                    bool m_specTotalCountHasBeenSet;
 
                 };
             }

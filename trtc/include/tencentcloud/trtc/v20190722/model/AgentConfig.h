@@ -193,6 +193,35 @@ namespace TencentCloud
                      */
                     bool InterruptSpeechDurationHasBeenSet() const;
 
+                    /**
+                     * 获取控制新一轮对话的触发方式，默认为0。
+- 0表示当服务端语音识别检测出的完整一句话后，自动触发一轮新的对话。
+- 1表示客户端在收到字幕消息后，自行决定是否手动发送聊天信令触发一轮新的对话。
+                     * @return TurnDetectionMode 控制新一轮对话的触发方式，默认为0。
+- 0表示当服务端语音识别检测出的完整一句话后，自动触发一轮新的对话。
+- 1表示客户端在收到字幕消息后，自行决定是否手动发送聊天信令触发一轮新的对话。
+                     * 
+                     */
+                    uint64_t GetTurnDetectionMode() const;
+
+                    /**
+                     * 设置控制新一轮对话的触发方式，默认为0。
+- 0表示当服务端语音识别检测出的完整一句话后，自动触发一轮新的对话。
+- 1表示客户端在收到字幕消息后，自行决定是否手动发送聊天信令触发一轮新的对话。
+                     * @param _turnDetectionMode 控制新一轮对话的触发方式，默认为0。
+- 0表示当服务端语音识别检测出的完整一句话后，自动触发一轮新的对话。
+- 1表示客户端在收到字幕消息后，自行决定是否手动发送聊天信令触发一轮新的对话。
+                     * 
+                     */
+                    void SetTurnDetectionMode(const uint64_t& _turnDetectionMode);
+
+                    /**
+                     * 判断参数 TurnDetectionMode 是否已赋值
+                     * @return TurnDetectionMode 是否已赋值
+                     * 
+                     */
+                    bool TurnDetectionModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +265,14 @@ namespace TencentCloud
                      */
                     uint64_t m_interruptSpeechDuration;
                     bool m_interruptSpeechDurationHasBeenSet;
+
+                    /**
+                     * 控制新一轮对话的触发方式，默认为0。
+- 0表示当服务端语音识别检测出的完整一句话后，自动触发一轮新的对话。
+- 1表示客户端在收到字幕消息后，自行决定是否手动发送聊天信令触发一轮新的对话。
+                     */
+                    uint64_t m_turnDetectionMode;
+                    bool m_turnDetectionModeHasBeenSet;
 
                 };
             }

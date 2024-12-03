@@ -29,6 +29,7 @@ SubmitHunyuanImageJobRequest::SubmitHunyuanImageJobRequest() :
     m_resolutionHasBeenSet(false),
     m_numHasBeenSet(false),
     m_seedHasBeenSet(false),
+    m_clarityHasBeenSet(false),
     m_reviseHasBeenSet(false),
     m_logoAddHasBeenSet(false),
     m_logoParamHasBeenSet(false)
@@ -88,6 +89,14 @@ string SubmitHunyuanImageJobRequest::ToJsonString() const
         string key = "Seed";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_seed, allocator);
+    }
+
+    if (m_clarityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Clarity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clarity.c_str(), allocator).Move(), allocator);
     }
 
     if (m_reviseHasBeenSet)
@@ -217,6 +226,22 @@ void SubmitHunyuanImageJobRequest::SetSeed(const int64_t& _seed)
 bool SubmitHunyuanImageJobRequest::SeedHasBeenSet() const
 {
     return m_seedHasBeenSet;
+}
+
+string SubmitHunyuanImageJobRequest::GetClarity() const
+{
+    return m_clarity;
+}
+
+void SubmitHunyuanImageJobRequest::SetClarity(const string& _clarity)
+{
+    m_clarity = _clarity;
+    m_clarityHasBeenSet = true;
+}
+
+bool SubmitHunyuanImageJobRequest::ClarityHasBeenSet() const
+{
+    return m_clarityHasBeenSet;
 }
 
 int64_t SubmitHunyuanImageJobRequest::GetRevise() const

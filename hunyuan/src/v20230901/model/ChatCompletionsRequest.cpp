@@ -38,7 +38,8 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_enableSpeedSearchHasBeenSet(false),
     m_enableMultimediaHasBeenSet(false),
     m_enableDeepSearchHasBeenSet(false),
-    m_seedHasBeenSet(false)
+    m_seedHasBeenSet(false),
+    m_forceSearchEnhancementHasBeenSet(false)
 {
 }
 
@@ -190,6 +191,14 @@ string ChatCompletionsRequest::ToJsonString() const
         string key = "Seed";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_seed, allocator);
+    }
+
+    if (m_forceSearchEnhancementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForceSearchEnhancement";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forceSearchEnhancement, allocator);
     }
 
 
@@ -454,6 +463,22 @@ void ChatCompletionsRequest::SetSeed(const int64_t& _seed)
 bool ChatCompletionsRequest::SeedHasBeenSet() const
 {
     return m_seedHasBeenSet;
+}
+
+bool ChatCompletionsRequest::GetForceSearchEnhancement() const
+{
+    return m_forceSearchEnhancement;
+}
+
+void ChatCompletionsRequest::SetForceSearchEnhancement(const bool& _forceSearchEnhancement)
+{
+    m_forceSearchEnhancement = _forceSearchEnhancement;
+    m_forceSearchEnhancementHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::ForceSearchEnhancementHasBeenSet() const
+{
+    return m_forceSearchEnhancementHasBeenSet;
 }
 
 

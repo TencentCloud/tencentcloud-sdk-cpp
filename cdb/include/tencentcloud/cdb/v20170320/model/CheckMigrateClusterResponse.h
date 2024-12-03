@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdb/v20170320/model/CheckMigrateResult.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取校验是否通过，通过为pass，失败为fail
+                     * @return CheckResult 校验是否通过，通过为pass，失败为fail
+                     * 
+                     */
+                    std::string GetCheckResult() const;
+
+                    /**
+                     * 判断参数 CheckResult 是否已赋值
+                     * @return CheckResult 是否已赋值
+                     * 
+                     */
+                    bool CheckResultHasBeenSet() const;
+
+                    /**
+                     * 获取校验项
+                     * @return Items 校验项
+                     * 
+                     */
+                    std::vector<CheckMigrateResult> GetItems() const;
+
+                    /**
+                     * 判断参数 Items 是否已赋值
+                     * @return Items 是否已赋值
+                     * 
+                     */
+                    bool ItemsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 校验是否通过，通过为pass，失败为fail
+                     */
+                    std::string m_checkResult;
+                    bool m_checkResultHasBeenSet;
+
+                    /**
+                     * 校验项
+                     */
+                    std::vector<CheckMigrateResult> m_items;
+                    bool m_itemsHasBeenSet;
 
                 };
             }

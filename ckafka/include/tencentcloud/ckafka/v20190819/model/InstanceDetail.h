@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取ckafka集群实例Id
+                     * @return InstanceId ckafka集群实例Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置ckafka集群实例Id
+                     * @param _instanceId ckafka集群实例Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取ckafka集群实例名称
+                     * @return InstanceName ckafka集群实例名称
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置ckafka集群实例名称
+                     * @param _instanceName ckafka集群实例名称
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool VipListHasBeenSet() const;
 
                     /**
-                     * 获取实例的状态。0：创建中，1：运行中，2：删除中：5隔离中， -1 创建失败
-                     * @return Status 实例的状态。0：创建中，1：运行中，2：删除中：5隔离中， -1 创建失败
+                     * 获取实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
+                     * @return Status 实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置实例的状态。0：创建中，1：运行中，2：删除中：5隔离中， -1 创建失败
-                     * @param _status 实例的状态。0：创建中，1：运行中，2：删除中：5隔离中， -1 创建失败
+                     * 设置实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
+                     * @param _status 实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取实例的存储大小，单位GB
-                     * @return DiskSize 实例的存储大小，单位GB
+                     * 获取ckafka集群实例磁盘大小，单位G
+                     * @return DiskSize ckafka集群实例磁盘大小，单位G
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置实例的存储大小，单位GB
-                     * @param _diskSize 实例的存储大小，单位GB
+                     * 设置ckafka集群实例磁盘大小，单位G
+                     * @param _diskSize ckafka集群实例磁盘大小，单位G
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -523,18 +523,18 @@ namespace TencentCloud
                     bool CvmHasBeenSet() const;
 
                     /**
-                     * 获取ckafka实例类型
+                     * 获取ckafka集群实例类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceType ckafka实例类型
+                     * @return InstanceType ckafka集群实例类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置ckafka实例类型
+                     * 设置ckafka集群实例类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceType ckafka实例类型
+                     * @param _instanceType ckafka集群实例类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -548,18 +548,18 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取磁盘类型
+                     * 获取ckafka集群实例磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskType 磁盘类型
+                     * @return DiskType ckafka集群实例磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置磁盘类型
+                     * 设置ckafka集群实例磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _diskType 磁盘类型
+                     * @param _diskType ckafka集群实例磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -673,18 +673,18 @@ namespace TencentCloud
                     bool PartitionNumberHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽类型
+                     * 获取ckafka集群实例公网带宽类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublicNetworkChargeType 公网带宽类型
+                     * @return PublicNetworkChargeType ckafka集群实例公网带宽类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicNetworkChargeType() const;
 
                     /**
-                     * 设置公网带宽类型
+                     * 设置ckafka集群实例公网带宽类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _publicNetworkChargeType 公网带宽类型
+                     * @param _publicNetworkChargeType ckafka集群实例公网带宽类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -698,18 +698,18 @@ namespace TencentCloud
                     bool PublicNetworkChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽值
+                     * 获取公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublicNetwork 公网带宽值
+                     * @return PublicNetwork 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPublicNetwork() const;
 
                     /**
-                     * 设置公网带宽值
+                     * 设置公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _publicNetwork 公网带宽值
+                     * @param _publicNetwork 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -723,18 +723,18 @@ namespace TencentCloud
                     bool PublicNetworkHasBeenSet() const;
 
                     /**
-                     * 获取实例类型
+                     * 获取ckafka集群实例底层集群类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterType 实例类型
+                     * @return ClusterType ckafka集群实例底层集群类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置实例类型
+                     * 设置ckafka集群实例底层集群类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterType 实例类型
+                     * @param _clusterType ckafka集群实例底层集群类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -775,13 +775,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id
+                     * ckafka集群实例Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * ckafka集群实例名称
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -805,7 +805,7 @@ namespace TencentCloud
                     bool m_vipListHasBeenSet;
 
                     /**
-                     * 实例的状态。0：创建中，1：运行中，2：删除中：5隔离中， -1 创建失败
+                     * 实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -817,7 +817,7 @@ namespace TencentCloud
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 实例的存储大小，单位GB
+                     * ckafka集群实例磁盘大小，单位G
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
@@ -910,14 +910,14 @@ namespace TencentCloud
                     bool m_cvmHasBeenSet;
 
                     /**
-                     * ckafka实例类型
+                     * ckafka集群实例类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 磁盘类型
+                     * ckafka集群实例磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskType;
@@ -952,21 +952,21 @@ namespace TencentCloud
                     bool m_partitionNumberHasBeenSet;
 
                     /**
-                     * 公网带宽类型
+                     * ckafka集群实例公网带宽类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicNetworkChargeType;
                     bool m_publicNetworkChargeTypeHasBeenSet;
 
                     /**
-                     * 公网带宽值
+                     * 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;
 
                     /**
-                     * 实例类型
+                     * ckafka集群实例底层集群类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterType;

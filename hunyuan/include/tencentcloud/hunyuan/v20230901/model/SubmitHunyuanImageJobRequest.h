@@ -206,6 +206,35 @@ namespace TencentCloud
                     bool SeedHasBeenSet() const;
 
                     /**
+                     * 获取超分选项，默认不做超分，可选开启。
+ x2：2倍超分
+ x4：4倍超分
+                     * @return Clarity 超分选项，默认不做超分，可选开启。
+ x2：2倍超分
+ x4：4倍超分
+                     * 
+                     */
+                    std::string GetClarity() const;
+
+                    /**
+                     * 设置超分选项，默认不做超分，可选开启。
+ x2：2倍超分
+ x4：4倍超分
+                     * @param _clarity 超分选项，默认不做超分，可选开启。
+ x2：2倍超分
+ x4：4倍超分
+                     * 
+                     */
+                    void SetClarity(const std::string& _clarity);
+
+                    /**
+                     * 判断参数 Clarity 是否已赋值
+                     * @return Clarity 是否已赋值
+                     * 
+                     */
+                    bool ClarityHasBeenSet() const;
+
+                    /**
                      * 获取prompt 扩写开关。1为开启，0为关闭，不传默认开启。
 开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
 如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
@@ -346,6 +375,14 @@ namespace TencentCloud
                      */
                     int64_t m_seed;
                     bool m_seedHasBeenSet;
+
+                    /**
+                     * 超分选项，默认不做超分，可选开启。
+ x2：2倍超分
+ x4：4倍超分
+                     */
+                    std::string m_clarity;
+                    bool m_clarityHasBeenSet;
 
                     /**
                      * prompt 扩写开关。1为开启，0为关闭，不传默认开启。

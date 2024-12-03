@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源类型。EB_COS/EB_ES/EB_CLS
-                     * @return Type 资源类型。EB_COS/EB_ES/EB_CLS
+                     * 获取资源类型。COS/ES/CLS
+                     * @return Type 资源类型。COS/ES/CLS
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置资源类型。EB_COS/EB_ES/EB_CLS
-                     * @param _type 资源类型。EB_COS/EB_ES/EB_CLS
+                     * 设置资源类型。COS/ES/CLS
+                     * @param _type 资源类型。COS/ES/CLS
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -175,7 +175,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源类型。EB_COS/EB_ES/EB_CLS
+                     * 资源类型。COS/ES/CLS
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

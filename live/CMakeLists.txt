@@ -45,6 +45,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/AddLiveWatermarkRequest.h
   include/tencentcloud/live/v20180801/model/CommonMixLayoutParams.h
   include/tencentcloud/live/v20180801/model/DescribeLiveDomainCertRequest.h
+  include/tencentcloud/live/v20180801/model/DescribeLiveEnhanceInfoListRequest.h
   include/tencentcloud/live/v20180801/model/DiagnoseResult.h
   include/tencentcloud/live/v20180801/model/StopRecordTaskRequest.h
   include/tencentcloud/live/v20180801/model/RuleInfo.h
@@ -196,6 +197,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/ScreenshotTask.h
   include/tencentcloud/live/v20180801/model/DeletePullStreamConfigResponse.h
   include/tencentcloud/live/v20180801/model/ModifyLivePlayDomainRequest.h
+  include/tencentcloud/live/v20180801/model/LiveEnhanceInfo.h
   include/tencentcloud/live/v20180801/model/DeleteCasterLayoutInfoResponse.h
   include/tencentcloud/live/v20180801/model/PullPushWatermarkInfo.h
   include/tencentcloud/live/v20180801/model/DescribeGroupProIspPlayInfoListRequest.h
@@ -487,6 +489,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DescribeLivePadTemplatesRequest.h
   include/tencentcloud/live/v20180801/model/EnableLiveDomainRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveTranscodeTotalInfoResponse.h
+  include/tencentcloud/live/v20180801/model/DescribeLiveEnhanceInfoListResponse.h
   include/tencentcloud/live/v20180801/model/CreateLiveTranscodeRuleResponse.h
   include/tencentcloud/live/v20180801/model/CreateLiveTranscodeTemplateResponse.h
   include/tencentcloud/live/v20180801/model/ModifyLivePadTemplateRequest.h
@@ -534,6 +537,7 @@ set(live_src
   src/v20180801/model/AddLiveWatermarkRequest.cpp
   src/v20180801/model/CommonMixLayoutParams.cpp
   src/v20180801/model/DescribeLiveDomainCertRequest.cpp
+  src/v20180801/model/DescribeLiveEnhanceInfoListRequest.cpp
   src/v20180801/model/DiagnoseResult.cpp
   src/v20180801/model/StopRecordTaskRequest.cpp
   src/v20180801/model/RuleInfo.cpp
@@ -685,6 +689,7 @@ set(live_src
   src/v20180801/model/ScreenshotTask.cpp
   src/v20180801/model/DeletePullStreamConfigResponse.cpp
   src/v20180801/model/ModifyLivePlayDomainRequest.cpp
+  src/v20180801/model/LiveEnhanceInfo.cpp
   src/v20180801/model/DeleteCasterLayoutInfoResponse.cpp
   src/v20180801/model/PullPushWatermarkInfo.cpp
   src/v20180801/model/DescribeGroupProIspPlayInfoListRequest.cpp
@@ -976,6 +981,7 @@ set(live_src
   src/v20180801/model/DescribeLivePadTemplatesRequest.cpp
   src/v20180801/model/EnableLiveDomainRequest.cpp
   src/v20180801/model/DescribeLiveTranscodeTotalInfoResponse.cpp
+  src/v20180801/model/DescribeLiveEnhanceInfoListResponse.cpp
   src/v20180801/model/CreateLiveTranscodeRuleResponse.cpp
   src/v20180801/model/CreateLiveTranscodeTemplateResponse.cpp
   src/v20180801/model/ModifyLivePadTemplateRequest.cpp

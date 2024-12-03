@@ -22,7 +22,9 @@ using namespace std;
 
 ValueFrom::ValueFrom() :
     m_fieldRefHasBeenSet(false),
-    m_resourceFieldRefHasBeenSet(false)
+    m_resourceFieldRefHasBeenSet(false),
+    m_configMapKeyRefHasBeenSet(false),
+    m_secretKeyRefHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,40 @@ CoreInternalOutcome ValueFrom::Deserialize(const rapidjson::Value &value)
         m_resourceFieldRefHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigMapKeyRef") && !value["ConfigMapKeyRef"].IsNull())
+    {
+        if (!value["ConfigMapKeyRef"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ValueFrom.ConfigMapKeyRef` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_configMapKeyRef.Deserialize(value["ConfigMapKeyRef"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_configMapKeyRefHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecretKeyRef") && !value["SecretKeyRef"].IsNull())
+    {
+        if (!value["SecretKeyRef"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ValueFrom.SecretKeyRef` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_secretKeyRef.Deserialize(value["SecretKeyRef"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_secretKeyRefHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +124,24 @@ void ValueFrom::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_resourceFieldRef.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_configMapKeyRefHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigMapKeyRef";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_configMapKeyRef.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_secretKeyRefHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretKeyRef";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_secretKeyRef.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -123,5 +177,37 @@ void ValueFrom::SetResourceFieldRef(const ResourceFieldRef& _resourceFieldRef)
 bool ValueFrom::ResourceFieldRefHasBeenSet() const
 {
     return m_resourceFieldRefHasBeenSet;
+}
+
+CommonRef ValueFrom::GetConfigMapKeyRef() const
+{
+    return m_configMapKeyRef;
+}
+
+void ValueFrom::SetConfigMapKeyRef(const CommonRef& _configMapKeyRef)
+{
+    m_configMapKeyRef = _configMapKeyRef;
+    m_configMapKeyRefHasBeenSet = true;
+}
+
+bool ValueFrom::ConfigMapKeyRefHasBeenSet() const
+{
+    return m_configMapKeyRefHasBeenSet;
+}
+
+CommonRef ValueFrom::GetSecretKeyRef() const
+{
+    return m_secretKeyRef;
+}
+
+void ValueFrom::SetSecretKeyRef(const CommonRef& _secretKeyRef)
+{
+    m_secretKeyRef = _secretKeyRef;
+    m_secretKeyRefHasBeenSet = true;
+}
+
+bool ValueFrom::SecretKeyRefHasBeenSet() const
+{
+    return m_secretKeyRefHasBeenSet;
 }
 

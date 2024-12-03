@@ -22,7 +22,8 @@ using namespace std;
 
 TsfPageApplication::TsfPageApplication() :
     m_totalCountHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_specTotalCountHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome TsfPageApplication::Deserialize(const rapidjson::Value &valu
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("SpecTotalCount") && !value["SpecTotalCount"].IsNull())
+    {
+        if (!value["SpecTotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TsfPageApplication.SpecTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_specTotalCount = value["SpecTotalCount"].GetInt64();
+        m_specTotalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +100,14 @@ void TsfPageApplication::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_specTotalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecTotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_specTotalCount, allocator);
     }
 
 }
@@ -124,5 +143,21 @@ void TsfPageApplication::SetContent(const vector<ApplicationForPage>& _content)
 bool TsfPageApplication::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+int64_t TsfPageApplication::GetSpecTotalCount() const
+{
+    return m_specTotalCount;
+}
+
+void TsfPageApplication::SetSpecTotalCount(const int64_t& _specTotalCount)
+{
+    m_specTotalCount = _specTotalCount;
+    m_specTotalCountHasBeenSet = true;
+}
+
+bool TsfPageApplication::SpecTotalCountHasBeenSet() const
+{
+    return m_specTotalCountHasBeenSet;
 }
 

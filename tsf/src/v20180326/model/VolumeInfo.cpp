@@ -23,7 +23,9 @@ using namespace std;
 VolumeInfo::VolumeInfo() :
     m_volumeTypeHasBeenSet(false),
     m_volumeNameHasBeenSet(false),
-    m_volumeConfigHasBeenSet(false)
+    m_volumeConfigHasBeenSet(false),
+    m_configMapOptionsHasBeenSet(false),
+    m_emptyDirOptionHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,43 @@ CoreInternalOutcome VolumeInfo::Deserialize(const rapidjson::Value &value)
         m_volumeConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigMapOptions") && !value["ConfigMapOptions"].IsNull())
+    {
+        if (!value["ConfigMapOptions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VolumeInfo.ConfigMapOptions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ConfigMapOptions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ConfigMapOption item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_configMapOptions.push_back(item);
+        }
+        m_configMapOptionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("EmptyDirOption") && !value["EmptyDirOption"].IsNull())
+    {
+        if (!value["EmptyDirOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VolumeInfo.EmptyDirOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_emptyDirOption.Deserialize(value["EmptyDirOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_emptyDirOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +130,30 @@ void VolumeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "VolumeConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_volumeConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configMapOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigMapOptions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_configMapOptions.begin(); itr != m_configMapOptions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_emptyDirOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmptyDirOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_emptyDirOption.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -142,5 +205,37 @@ void VolumeInfo::SetVolumeConfig(const string& _volumeConfig)
 bool VolumeInfo::VolumeConfigHasBeenSet() const
 {
     return m_volumeConfigHasBeenSet;
+}
+
+vector<ConfigMapOption> VolumeInfo::GetConfigMapOptions() const
+{
+    return m_configMapOptions;
+}
+
+void VolumeInfo::SetConfigMapOptions(const vector<ConfigMapOption>& _configMapOptions)
+{
+    m_configMapOptions = _configMapOptions;
+    m_configMapOptionsHasBeenSet = true;
+}
+
+bool VolumeInfo::ConfigMapOptionsHasBeenSet() const
+{
+    return m_configMapOptionsHasBeenSet;
+}
+
+EmptyDirOption VolumeInfo::GetEmptyDirOption() const
+{
+    return m_emptyDirOption;
+}
+
+void VolumeInfo::SetEmptyDirOption(const EmptyDirOption& _emptyDirOption)
+{
+    m_emptyDirOption = _emptyDirOption;
+    m_emptyDirOptionHasBeenSet = true;
+}
+
+bool VolumeInfo::EmptyDirOptionHasBeenSet() const
+{
+    return m_emptyDirOptionHasBeenSet;
 }
 

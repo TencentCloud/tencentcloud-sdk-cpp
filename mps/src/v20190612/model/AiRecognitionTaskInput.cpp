@@ -21,7 +21,8 @@ using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
 AiRecognitionTaskInput::AiRecognitionTaskInput() :
-    m_definitionHasBeenSet(false)
+    m_definitionHasBeenSet(false),
+    m_userExtParaHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome AiRecognitionTaskInput::Deserialize(const rapidjson::Value &
         m_definitionHasBeenSet = true;
     }
 
+    if (value.HasMember("UserExtPara") && !value["UserExtPara"].IsNull())
+    {
+        if (!value["UserExtPara"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskInput.UserExtPara` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userExtPara = string(value["UserExtPara"].GetString());
+        m_userExtParaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void AiRecognitionTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_userExtParaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserExtPara";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userExtPara.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void AiRecognitionTaskInput::SetDefinition(const uint64_t& _definition)
 bool AiRecognitionTaskInput::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+string AiRecognitionTaskInput::GetUserExtPara() const
+{
+    return m_userExtPara;
+}
+
+void AiRecognitionTaskInput::SetUserExtPara(const string& _userExtPara)
+{
+    m_userExtPara = _userExtPara;
+    m_userExtParaHasBeenSet = true;
+}
+
+bool AiRecognitionTaskInput::UserExtParaHasBeenSet() const
+{
+    return m_userExtParaHasBeenSet;
 }
 

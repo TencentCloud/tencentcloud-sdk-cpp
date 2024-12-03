@@ -27,7 +27,8 @@ AgentConfig::AgentConfig() :
     m_maxIdleTimeHasBeenSet(false),
     m_welcomeMessageHasBeenSet(false),
     m_interruptModeHasBeenSet(false),
-    m_interruptSpeechDurationHasBeenSet(false)
+    m_interruptSpeechDurationHasBeenSet(false),
+    m_turnDetectionModeHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome AgentConfig::Deserialize(const rapidjson::Value &value)
         m_interruptSpeechDurationHasBeenSet = true;
     }
 
+    if (value.HasMember("TurnDetectionMode") && !value["TurnDetectionMode"].IsNull())
+    {
+        if (!value["TurnDetectionMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.TurnDetectionMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_turnDetectionMode = value["TurnDetectionMode"].GetUint64();
+        m_turnDetectionModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void AgentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "InterruptSpeechDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_interruptSpeechDuration, allocator);
+    }
+
+    if (m_turnDetectionModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TurnDetectionMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_turnDetectionMode, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void AgentConfig::SetInterruptSpeechDuration(const uint64_t& _interruptSpeechDur
 bool AgentConfig::InterruptSpeechDurationHasBeenSet() const
 {
     return m_interruptSpeechDurationHasBeenSet;
+}
+
+uint64_t AgentConfig::GetTurnDetectionMode() const
+{
+    return m_turnDetectionMode;
+}
+
+void AgentConfig::SetTurnDetectionMode(const uint64_t& _turnDetectionMode)
+{
+    m_turnDetectionMode = _turnDetectionMode;
+    m_turnDetectionModeHasBeenSet = true;
+}
+
+bool AgentConfig::TurnDetectionModeHasBeenSet() const
+{
+    return m_turnDetectionModeHasBeenSet;
 }
 

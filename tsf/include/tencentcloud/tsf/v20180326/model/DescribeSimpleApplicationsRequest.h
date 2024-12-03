@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool DisableProgramAuthCheckHasBeenSet() const;
 
+                    /**
+                     * 获取查询指定微服务类型的应用列表
+                     * @return MicroserviceTypeList 查询指定微服务类型的应用列表
+                     * 
+                     */
+                    std::vector<std::string> GetMicroserviceTypeList() const;
+
+                    /**
+                     * 设置查询指定微服务类型的应用列表
+                     * @param _microserviceTypeList 查询指定微服务类型的应用列表
+                     * 
+                     */
+                    void SetMicroserviceTypeList(const std::vector<std::string>& _microserviceTypeList);
+
+                    /**
+                     * 判断参数 MicroserviceTypeList 是否已赋值
+                     * @return MicroserviceTypeList 是否已赋值
+                     * 
+                     */
+                    bool MicroserviceTypeListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     bool m_disableProgramAuthCheck;
                     bool m_disableProgramAuthCheckHasBeenSet;
+
+                    /**
+                     * 查询指定微服务类型的应用列表
+                     */
+                    std::vector<std::string> m_microserviceTypeList;
+                    bool m_microserviceTypeListHasBeenSet;
 
                 };
             }

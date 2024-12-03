@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tsf/v20180326/model/ServiceConfig.h>
+#include <tencentcloud/tsf/v20180326/model/ServiceGovernanceConfig.h>
 
 
 namespace TencentCloud
@@ -397,6 +398,231 @@ namespace TencentCloud
                      */
                     bool IgnoreCreateImageRepositoryHasBeenSet() const;
 
+                    /**
+                     * 获取Apm业务系统id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApmInstanceId Apm业务系统id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApmInstanceId() const;
+
+                    /**
+                     * 设置Apm业务系统id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _apmInstanceId Apm业务系统id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApmInstanceId(const std::string& _apmInstanceId);
+
+                    /**
+                     * 判断参数 ApmInstanceId 是否已赋值
+                     * @return ApmInstanceId 是否已赋值
+                     * 
+                     */
+                    bool ApmInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取Apm业务系统Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApmInstanceName Apm业务系统Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApmInstanceName() const;
+
+                    /**
+                     * 设置Apm业务系统Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _apmInstanceName Apm业务系统Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApmInstanceName(const std::string& _apmInstanceName);
+
+                    /**
+                     * 判断参数 ApmInstanceName 是否已赋值
+                     * @return ApmInstanceName 是否已赋值
+                     * 
+                     */
+                    bool ApmInstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取同步删除镜像仓库
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SyncDeleteImageRepository 同步删除镜像仓库
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetSyncDeleteImageRepository() const;
+
+                    /**
+                     * 设置同步删除镜像仓库
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _syncDeleteImageRepository 同步删除镜像仓库
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSyncDeleteImageRepository(const bool& _syncDeleteImageRepository);
+
+                    /**
+                     * 判断参数 SyncDeleteImageRepository 是否已赋值
+                     * @return SyncDeleteImageRepository 是否已赋值
+                     * 
+                     */
+                    bool SyncDeleteImageRepositoryHasBeenSet() const;
+
+                    /**
+                     * 获取应用微服务子类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MicroserviceSubType 应用微服务子类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMicroserviceSubType() const;
+
+                    /**
+                     * 设置应用微服务子类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _microserviceSubType 应用微服务子类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMicroserviceSubType(const std::string& _microserviceSubType);
+
+                    /**
+                     * 判断参数 MicroserviceSubType 是否已赋值
+                     * @return MicroserviceSubType 是否已赋值
+                     * 
+                     */
+                    bool MicroserviceSubTypeHasBeenSet() const;
+
+                    /**
+                     * 获取应用编程语言类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProgramLanguage 应用编程语言类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProgramLanguage() const;
+
+                    /**
+                     * 设置应用编程语言类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _programLanguage 应用编程语言类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProgramLanguage(const std::string& _programLanguage);
+
+                    /**
+                     * 判断参数 ProgramLanguage 是否已赋值
+                     * @return ProgramLanguage 是否已赋值
+                     * 
+                     */
+                    bool ProgramLanguageHasBeenSet() const;
+
+                    /**
+                     * 获取开发框架类型[SpringCloud，Dubbo，Go-GRPC，Other]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FrameworkType 开发框架类型[SpringCloud，Dubbo，Go-GRPC，Other]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFrameworkType() const;
+
+                    /**
+                     * 设置开发框架类型[SpringCloud，Dubbo，Go-GRPC，Other]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _frameworkType 开发框架类型[SpringCloud，Dubbo，Go-GRPC，Other]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFrameworkType(const std::string& _frameworkType);
+
+                    /**
+                     * 判断参数 FrameworkType 是否已赋值
+                     * @return FrameworkType 是否已赋值
+                     * 
+                     */
+                    bool FrameworkTypeHasBeenSet() const;
+
+                    /**
+                     * 获取注册配置治理信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceGovernanceConfig 注册配置治理信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ServiceGovernanceConfig GetServiceGovernanceConfig() const;
+
+                    /**
+                     * 设置注册配置治理信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serviceGovernanceConfig 注册配置治理信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetServiceGovernanceConfig(const ServiceGovernanceConfig& _serviceGovernanceConfig);
+
+                    /**
+                     * 判断参数 ServiceGovernanceConfig 是否已赋值
+                     * @return ServiceGovernanceConfig 是否已赋值
+                     * 
+                     */
+                    bool ServiceGovernanceConfigHasBeenSet() const;
+
+                    /**
+                     * 获取微服务类型列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MicroserviceTypeList 微服务类型列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetMicroserviceTypeList() const;
+
+                    /**
+                     * 设置微服务类型列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _microserviceTypeList 微服务类型列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMicroserviceTypeList(const std::vector<std::string>& _microserviceTypeList);
+
+                    /**
+                     * 判断参数 MicroserviceTypeList 是否已赋值
+                     * @return MicroserviceTypeList 是否已赋值
+                     * 
+                     */
+                    bool MicroserviceTypeListHasBeenSet() const;
+
+                    /**
+                     * 获取是否同时创建镜像仓库
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateSameNameImageRepository 是否同时创建镜像仓库
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetCreateSameNameImageRepository() const;
+
+                    /**
+                     * 设置是否同时创建镜像仓库
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createSameNameImageRepository 是否同时创建镜像仓库
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateSameNameImageRepository(const bool& _createSameNameImageRepository);
+
+                    /**
+                     * 判断参数 CreateSameNameImageRepository 是否已赋值
+                     * @return CreateSameNameImageRepository 是否已赋值
+                     * 
+                     */
+                    bool CreateSameNameImageRepositoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -496,6 +722,69 @@ namespace TencentCloud
                      */
                     bool m_ignoreCreateImageRepository;
                     bool m_ignoreCreateImageRepositoryHasBeenSet;
+
+                    /**
+                     * Apm业务系统id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_apmInstanceId;
+                    bool m_apmInstanceIdHasBeenSet;
+
+                    /**
+                     * Apm业务系统Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_apmInstanceName;
+                    bool m_apmInstanceNameHasBeenSet;
+
+                    /**
+                     * 同步删除镜像仓库
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_syncDeleteImageRepository;
+                    bool m_syncDeleteImageRepositoryHasBeenSet;
+
+                    /**
+                     * 应用微服务子类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_microserviceSubType;
+                    bool m_microserviceSubTypeHasBeenSet;
+
+                    /**
+                     * 应用编程语言类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_programLanguage;
+                    bool m_programLanguageHasBeenSet;
+
+                    /**
+                     * 开发框架类型[SpringCloud，Dubbo，Go-GRPC，Other]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_frameworkType;
+                    bool m_frameworkTypeHasBeenSet;
+
+                    /**
+                     * 注册配置治理信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ServiceGovernanceConfig m_serviceGovernanceConfig;
+                    bool m_serviceGovernanceConfigHasBeenSet;
+
+                    /**
+                     * 微服务类型列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_microserviceTypeList;
+                    bool m_microserviceTypeListHasBeenSet;
+
+                    /**
+                     * 是否同时创建镜像仓库
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_createSameNameImageRepository;
+                    bool m_createSameNameImageRepositoryHasBeenSet;
 
                 };
             }

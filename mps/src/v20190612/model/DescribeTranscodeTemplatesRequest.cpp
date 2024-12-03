@@ -30,7 +30,9 @@ DescribeTranscodeTemplatesRequest::DescribeTranscodeTemplatesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_transcodeTypeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_sceneTypeHasBeenSet(false),
+    m_compressTypeHasBeenSet(false)
 {
 }
 
@@ -108,6 +110,22 @@ string DescribeTranscodeTemplatesRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sceneType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_compressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompressType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_compressType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -244,6 +262,38 @@ void DescribeTranscodeTemplatesRequest::SetName(const string& _name)
 bool DescribeTranscodeTemplatesRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string DescribeTranscodeTemplatesRequest::GetSceneType() const
+{
+    return m_sceneType;
+}
+
+void DescribeTranscodeTemplatesRequest::SetSceneType(const string& _sceneType)
+{
+    m_sceneType = _sceneType;
+    m_sceneTypeHasBeenSet = true;
+}
+
+bool DescribeTranscodeTemplatesRequest::SceneTypeHasBeenSet() const
+{
+    return m_sceneTypeHasBeenSet;
+}
+
+string DescribeTranscodeTemplatesRequest::GetCompressType() const
+{
+    return m_compressType;
+}
+
+void DescribeTranscodeTemplatesRequest::SetCompressType(const string& _compressType)
+{
+    m_compressType = _compressType;
+    m_compressTypeHasBeenSet = true;
+}
+
+bool DescribeTranscodeTemplatesRequest::CompressTypeHasBeenSet() const
+{
+    return m_compressTypeHasBeenSet;
 }
 
 

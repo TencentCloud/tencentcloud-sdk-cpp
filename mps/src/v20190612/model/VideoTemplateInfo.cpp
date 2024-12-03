@@ -44,7 +44,10 @@ VideoTemplateInfo::VideoTemplateInfo() :
     m_bitDepthHasBeenSet(false),
     m_rawPtsHasBeenSet(false),
     m_compressHasBeenSet(false),
-    m_segmentSpecificInfoHasBeenSet(false)
+    m_segmentSpecificInfoHasBeenSet(false),
+    m_scenarioBasedHasBeenSet(false),
+    m_sceneTypeHasBeenSet(false),
+    m_compressTypeHasBeenSet(false)
 {
 }
 
@@ -300,6 +303,36 @@ CoreInternalOutcome VideoTemplateInfo::Deserialize(const rapidjson::Value &value
         m_segmentSpecificInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ScenarioBased") && !value["ScenarioBased"].IsNull())
+    {
+        if (!value["ScenarioBased"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfo.ScenarioBased` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scenarioBased = value["ScenarioBased"].GetInt64();
+        m_scenarioBasedHasBeenSet = true;
+    }
+
+    if (value.HasMember("SceneType") && !value["SceneType"].IsNull())
+    {
+        if (!value["SceneType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfo.SceneType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sceneType = string(value["SceneType"].GetString());
+        m_sceneTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CompressType") && !value["CompressType"].IsNull())
+    {
+        if (!value["CompressType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfo.CompressType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_compressType = string(value["CompressType"].GetString());
+        m_compressTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -498,6 +531,30 @@ void VideoTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_segmentSpecificInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_scenarioBasedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScenarioBased";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scenarioBased, allocator);
+    }
+
+    if (m_sceneTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sceneType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_compressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompressType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_compressType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -885,5 +942,53 @@ void VideoTemplateInfo::SetSegmentSpecificInfo(const SegmentSpecificInfo& _segme
 bool VideoTemplateInfo::SegmentSpecificInfoHasBeenSet() const
 {
     return m_segmentSpecificInfoHasBeenSet;
+}
+
+int64_t VideoTemplateInfo::GetScenarioBased() const
+{
+    return m_scenarioBased;
+}
+
+void VideoTemplateInfo::SetScenarioBased(const int64_t& _scenarioBased)
+{
+    m_scenarioBased = _scenarioBased;
+    m_scenarioBasedHasBeenSet = true;
+}
+
+bool VideoTemplateInfo::ScenarioBasedHasBeenSet() const
+{
+    return m_scenarioBasedHasBeenSet;
+}
+
+string VideoTemplateInfo::GetSceneType() const
+{
+    return m_sceneType;
+}
+
+void VideoTemplateInfo::SetSceneType(const string& _sceneType)
+{
+    m_sceneType = _sceneType;
+    m_sceneTypeHasBeenSet = true;
+}
+
+bool VideoTemplateInfo::SceneTypeHasBeenSet() const
+{
+    return m_sceneTypeHasBeenSet;
+}
+
+string VideoTemplateInfo::GetCompressType() const
+{
+    return m_compressType;
+}
+
+void VideoTemplateInfo::SetCompressType(const string& _compressType)
+{
+    m_compressType = _compressType;
+    m_compressTypeHasBeenSet = true;
+}
+
+bool VideoTemplateInfo::CompressTypeHasBeenSet() const
+{
+    return m_compressTypeHasBeenSet;
 }
 

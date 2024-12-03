@@ -32,7 +32,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/InstanceDbAuditStatus.h
   include/tencentcloud/cdb/v20170320/model/ModifyTimeWindowResponse.h
   include/tencentcloud/cdb/v20170320/model/ParamRecord.h
-  include/tencentcloud/cdb/v20170320/model/ModifyTimeWindowRequest.h
+  include/tencentcloud/cdb/v20170320/model/DescribeParamTemplatesRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeRollbackRangeTimeRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupOverviewRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditInstanceListResponse.h
@@ -236,7 +236,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/LocalBinlogConfig.h
   include/tencentcloud/cdb/v20170320/model/InquiryPriceUpgradeInstancesResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateDBInstanceRequest.h
-  include/tencentcloud/cdb/v20170320/model/DescribeParamTemplatesRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeAccountPrivilegesResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditLogsRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupConfigRequest.h
@@ -282,6 +281,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeInstanceUpgradeCheckJobResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeCloneListRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyInstanceTagRequest.h
+  include/tencentcloud/cdb/v20170320/model/MigrateClusterRoInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeProxySupportParamRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyAutoRenewFlagResponse.h
   include/tencentcloud/cdb/v20170320/model/RollbackTask.h
@@ -348,6 +348,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeAccountPrivilegesRequest.h
   include/tencentcloud/cdb/v20170320/model/CdbSellConfig.h
   include/tencentcloud/cdb/v20170320/model/DescribeSupportedPrivilegesResponse.h
+  include/tencentcloud/cdb/v20170320/model/CheckMigrateResult.h
   include/tencentcloud/cdb/v20170320/model/SlowLogItem.h
   include/tencentcloud/cdb/v20170320/model/DescribeLocalBinlogConfigResponse.h
   include/tencentcloud/cdb/v20170320/model/OpenSSLResponse.h
@@ -443,6 +444,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeAuditInstanceListRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupEncryptionStatusRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceLogToCLSResponse.h
+  include/tencentcloud/cdb/v20170320/model/ModifyTimeWindowRequest.h
   include/tencentcloud/cdb/v20170320/model/AuditLogFile.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditRuleTemplatesRequest.h
   include/tencentcloud/cdb/v20170320/model/RollbackTables.h
@@ -484,7 +486,7 @@ set(cdb_src
   src/v20170320/model/InstanceDbAuditStatus.cpp
   src/v20170320/model/ModifyTimeWindowResponse.cpp
   src/v20170320/model/ParamRecord.cpp
-  src/v20170320/model/ModifyTimeWindowRequest.cpp
+  src/v20170320/model/DescribeParamTemplatesRequest.cpp
   src/v20170320/model/DescribeRollbackRangeTimeRequest.cpp
   src/v20170320/model/DescribeBackupOverviewRequest.cpp
   src/v20170320/model/DescribeAuditInstanceListResponse.cpp
@@ -688,7 +690,6 @@ set(cdb_src
   src/v20170320/model/LocalBinlogConfig.cpp
   src/v20170320/model/InquiryPriceUpgradeInstancesResponse.cpp
   src/v20170320/model/CreateDBInstanceRequest.cpp
-  src/v20170320/model/DescribeParamTemplatesRequest.cpp
   src/v20170320/model/DescribeAccountPrivilegesResponse.cpp
   src/v20170320/model/DescribeAuditLogsRequest.cpp
   src/v20170320/model/DescribeBackupConfigRequest.cpp
@@ -734,6 +735,7 @@ set(cdb_src
   src/v20170320/model/DescribeInstanceUpgradeCheckJobResponse.cpp
   src/v20170320/model/DescribeCloneListRequest.cpp
   src/v20170320/model/ModifyInstanceTagRequest.cpp
+  src/v20170320/model/MigrateClusterRoInfo.cpp
   src/v20170320/model/DescribeProxySupportParamRequest.cpp
   src/v20170320/model/ModifyAutoRenewFlagResponse.cpp
   src/v20170320/model/RollbackTask.cpp
@@ -800,6 +802,7 @@ set(cdb_src
   src/v20170320/model/DescribeAccountPrivilegesRequest.cpp
   src/v20170320/model/CdbSellConfig.cpp
   src/v20170320/model/DescribeSupportedPrivilegesResponse.cpp
+  src/v20170320/model/CheckMigrateResult.cpp
   src/v20170320/model/SlowLogItem.cpp
   src/v20170320/model/DescribeLocalBinlogConfigResponse.cpp
   src/v20170320/model/OpenSSLResponse.cpp
@@ -895,6 +898,7 @@ set(cdb_src
   src/v20170320/model/DescribeAuditInstanceListRequest.cpp
   src/v20170320/model/DescribeBackupEncryptionStatusRequest.cpp
   src/v20170320/model/ModifyDBInstanceLogToCLSResponse.cpp
+  src/v20170320/model/ModifyTimeWindowRequest.cpp
   src/v20170320/model/AuditLogFile.cpp
   src/v20170320/model/DescribeAuditRuleTemplatesRequest.cpp
   src/v20170320/model/RollbackTables.cpp

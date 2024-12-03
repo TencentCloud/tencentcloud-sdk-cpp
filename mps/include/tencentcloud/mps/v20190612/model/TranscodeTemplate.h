@@ -384,6 +384,31 @@ namespace TencentCloud
                      */
                     bool EnhanceConfigHasBeenSet() const;
 
+                    /**
+                     * 获取转码模板别名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AliasName 转码模板别名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAliasName() const;
+
+                    /**
+                     * 设置转码模板别名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aliasName 转码模板别名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAliasName(const std::string& _aliasName);
+
+                    /**
+                     * 判断参数 AliasName 是否已赋值
+                     * @return AliasName 是否已赋值
+                     * 
+                     */
+                    bool AliasNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -479,6 +504,13 @@ namespace TencentCloud
                      */
                     EnhanceConfig m_enhanceConfig;
                     bool m_enhanceConfigHasBeenSet;
+
+                    /**
+                     * 转码模板别名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_aliasName;
+                    bool m_aliasNameHasBeenSet;
 
                 };
             }

@@ -52,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取ckafka集群实例Id
+                     * @return InstanceId ckafka集群实例Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置ckafka集群实例Id
+                     * @param _instanceId ckafka集群实例Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取ckafka集群实例Name
+                     * @return InstanceName ckafka集群实例Name
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置ckafka集群实例Name
+                     * @param _instanceName ckafka集群实例Name
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -157,15 +157,15 @@ namespace TencentCloud
                     bool VportHasBeenSet() const;
 
                     /**
-                     * 获取实例的状态。0：创建中，1：运行中，2：删除中
-                     * @return Status 实例的状态。0：创建中，1：运行中，2：删除中
+                     * 获取实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
+                     * @return Status 实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置实例的状态。0：创建中，1：运行中，2：删除中
-                     * @param _status 实例的状态。0：创建中，1：运行中，2：删除中
+                     * 设置实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
+                     * @param _status 实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -522,18 +522,18 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取跨可用区
+                     * 获取可用区列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ZoneIds 跨可用区
+                     * @return ZoneIds 可用区列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetZoneIds() const;
 
                     /**
-                     * 设置跨可用区
+                     * 设置可用区列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zoneIds 跨可用区
+                     * @param _zoneIds 可用区列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -547,18 +547,18 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取kafka版本信息
+                     * 获取ckafka集群实例版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Version kafka版本信息
+                     * @return Version ckafka集群实例版本
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置kafka版本信息
+                     * 设置ckafka集群实例版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _version kafka版本信息
+                     * @param _version ckafka集群实例版本
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -871,16 +871,87 @@ namespace TencentCloud
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterType 集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterType 集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
+                    /**
+                     * 获取免费分区数量
+                     * @return FreePartitionNumber 免费分区数量
+                     * 
+                     */
+                    int64_t GetFreePartitionNumber() const;
+
+                    /**
+                     * 设置免费分区数量
+                     * @param _freePartitionNumber 免费分区数量
+                     * 
+                     */
+                    void SetFreePartitionNumber(const int64_t& _freePartitionNumber);
+
+                    /**
+                     * 判断参数 FreePartitionNumber 是否已赋值
+                     * @return FreePartitionNumber 是否已赋值
+                     * 
+                     */
+                    bool FreePartitionNumberHasBeenSet() const;
+
+                    /**
+                     * 获取弹性带宽上浮值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ElasticFloatBandwidth 弹性带宽上浮值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetElasticFloatBandwidth() const;
+
+                    /**
+                     * 设置弹性带宽上浮值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _elasticFloatBandwidth 弹性带宽上浮值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetElasticFloatBandwidth(const int64_t& _elasticFloatBandwidth);
+
+                    /**
+                     * 判断参数 ElasticFloatBandwidth 是否已赋值
+                     * @return ElasticFloatBandwidth 是否已赋值
+                     * 
+                     */
+                    bool ElasticFloatBandwidthHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * ckafka集群实例Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * ckafka集群实例Name
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -904,7 +975,7 @@ namespace TencentCloud
                     bool m_vportHasBeenSet;
 
                     /**
-                     * 实例的状态。0：创建中，1：运行中，2：删除中
+                     * 实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -1008,14 +1079,14 @@ namespace TencentCloud
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 跨可用区
+                     * 可用区列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * kafka版本信息
+                     * ckafka集群实例版本
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
@@ -1104,6 +1175,26 @@ namespace TencentCloud
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
+
+                    /**
+                     * 集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
+
+                    /**
+                     * 免费分区数量
+                     */
+                    int64_t m_freePartitionNumber;
+                    bool m_freePartitionNumberHasBeenSet;
+
+                    /**
+                     * 弹性带宽上浮值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_elasticFloatBandwidth;
+                    bool m_elasticFloatBandwidthHasBeenSet;
 
                 };
             }

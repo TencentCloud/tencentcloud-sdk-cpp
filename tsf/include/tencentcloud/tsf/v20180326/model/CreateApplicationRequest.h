@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tsf/v20180326/model/ServiceConfig.h>
+#include <tencentcloud/tsf/v20180326/model/ServiceGovernanceConfig.h>
 
 
 namespace TencentCloud
@@ -274,6 +275,111 @@ namespace TencentCloud
                      */
                     bool ProgramIdListHasBeenSet() const;
 
+                    /**
+                     * 获取apm业务系统id
+                     * @return ApmInstanceId apm业务系统id
+                     * 
+                     */
+                    std::string GetApmInstanceId() const;
+
+                    /**
+                     * 设置apm业务系统id
+                     * @param _apmInstanceId apm业务系统id
+                     * 
+                     */
+                    void SetApmInstanceId(const std::string& _apmInstanceId);
+
+                    /**
+                     * 判断参数 ApmInstanceId 是否已赋值
+                     * @return ApmInstanceId 是否已赋值
+                     * 
+                     */
+                    bool ApmInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取编程语言
+                     * @return ProgramLanguage 编程语言
+                     * 
+                     */
+                    std::string GetProgramLanguage() const;
+
+                    /**
+                     * 设置编程语言
+                     * @param _programLanguage 编程语言
+                     * 
+                     */
+                    void SetProgramLanguage(const std::string& _programLanguage);
+
+                    /**
+                     * 判断参数 ProgramLanguage 是否已赋值
+                     * @return ProgramLanguage 是否已赋值
+                     * 
+                     */
+                    bool ProgramLanguageHasBeenSet() const;
+
+                    /**
+                     * 获取开发框架
+                     * @return FrameworkType 开发框架
+                     * 
+                     */
+                    std::string GetFrameworkType() const;
+
+                    /**
+                     * 设置开发框架
+                     * @param _frameworkType 开发框架
+                     * 
+                     */
+                    void SetFrameworkType(const std::string& _frameworkType);
+
+                    /**
+                     * 判断参数 FrameworkType 是否已赋值
+                     * @return FrameworkType 是否已赋值
+                     * 
+                     */
+                    bool FrameworkTypeHasBeenSet() const;
+
+                    /**
+                     * 获取注册配置治理
+                     * @return ServiceGovernanceConfig 注册配置治理
+                     * 
+                     */
+                    ServiceGovernanceConfig GetServiceGovernanceConfig() const;
+
+                    /**
+                     * 设置注册配置治理
+                     * @param _serviceGovernanceConfig 注册配置治理
+                     * 
+                     */
+                    void SetServiceGovernanceConfig(const ServiceGovernanceConfig& _serviceGovernanceConfig);
+
+                    /**
+                     * 判断参数 ServiceGovernanceConfig 是否已赋值
+                     * @return ServiceGovernanceConfig 是否已赋值
+                     * 
+                     */
+                    bool ServiceGovernanceConfigHasBeenSet() const;
+
+                    /**
+                     * 获取是否创建并关联同名镜像仓库
+                     * @return CreateSameNameImageRepository 是否创建并关联同名镜像仓库
+                     * 
+                     */
+                    bool GetCreateSameNameImageRepository() const;
+
+                    /**
+                     * 设置是否创建并关联同名镜像仓库
+                     * @param _createSameNameImageRepository 是否创建并关联同名镜像仓库
+                     * 
+                     */
+                    void SetCreateSameNameImageRepository(const bool& _createSameNameImageRepository);
+
+                    /**
+                     * 判断参数 CreateSameNameImageRepository 是否已赋值
+                     * @return CreateSameNameImageRepository 是否已赋值
+                     * 
+                     */
+                    bool CreateSameNameImageRepositoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +447,36 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_programIdList;
                     bool m_programIdListHasBeenSet;
+
+                    /**
+                     * apm业务系统id
+                     */
+                    std::string m_apmInstanceId;
+                    bool m_apmInstanceIdHasBeenSet;
+
+                    /**
+                     * 编程语言
+                     */
+                    std::string m_programLanguage;
+                    bool m_programLanguageHasBeenSet;
+
+                    /**
+                     * 开发框架
+                     */
+                    std::string m_frameworkType;
+                    bool m_frameworkTypeHasBeenSet;
+
+                    /**
+                     * 注册配置治理
+                     */
+                    ServiceGovernanceConfig m_serviceGovernanceConfig;
+                    bool m_serviceGovernanceConfigHasBeenSet;
+
+                    /**
+                     * 是否创建并关联同名镜像仓库
+                     */
+                    bool m_createSameNameImageRepository;
+                    bool m_createSameNameImageRepositoryHasBeenSet;
 
                 };
             }

@@ -37,7 +37,9 @@ ImageRepository::ImageRepository() :
     m_applicationIdHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
     m_applicationNameRealHasBeenSet(false),
-    m_publicHasBeenSet(false)
+    m_publicHasBeenSet(false),
+    m_createModeHasBeenSet(false),
+    m_repoNameHasBeenSet(false)
 {
 }
 
@@ -230,6 +232,26 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
         m_publicHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateMode") && !value["CreateMode"].IsNull())
+    {
+        if (!value["CreateMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.CreateMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createMode = string(value["CreateMode"].GetString());
+        m_createModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RepoName") && !value["RepoName"].IsNull())
+    {
+        if (!value["RepoName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.RepoName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repoName = string(value["RepoName"].GetString());
+        m_repoNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -373,6 +395,22 @@ void ImageRepository::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Public";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_public, allocator);
+    }
+
+    if (m_createModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repoNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepoName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repoName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -648,5 +686,37 @@ void ImageRepository::SetPublic(const int64_t& _public)
 bool ImageRepository::PublicHasBeenSet() const
 {
     return m_publicHasBeenSet;
+}
+
+string ImageRepository::GetCreateMode() const
+{
+    return m_createMode;
+}
+
+void ImageRepository::SetCreateMode(const string& _createMode)
+{
+    m_createMode = _createMode;
+    m_createModeHasBeenSet = true;
+}
+
+bool ImageRepository::CreateModeHasBeenSet() const
+{
+    return m_createModeHasBeenSet;
+}
+
+string ImageRepository::GetRepoName() const
+{
+    return m_repoName;
+}
+
+void ImageRepository::SetRepoName(const string& _repoName)
+{
+    m_repoName = _repoName;
+    m_repoNameHasBeenSet = true;
+}
+
+bool ImageRepository::RepoNameHasBeenSet() const
+{
+    return m_repoNameHasBeenSet;
 }
 

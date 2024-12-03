@@ -31,7 +31,9 @@ SimpleApplication::SimpleApplication() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_apigatewayServiceIdHasBeenSet(false),
-    m_applicationRuntimeTypeHasBeenSet(false)
+    m_applicationRuntimeTypeHasBeenSet(false),
+    m_ampInstanceIdHasBeenSet(false),
+    m_apmInstanceNameHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome SimpleApplication::Deserialize(const rapidjson::Value &value
         m_applicationRuntimeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AmpInstanceId") && !value["AmpInstanceId"].IsNull())
+    {
+        if (!value["AmpInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SimpleApplication.AmpInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ampInstanceId = string(value["AmpInstanceId"].GetString());
+        m_ampInstanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApmInstanceName") && !value["ApmInstanceName"].IsNull())
+    {
+        if (!value["ApmInstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SimpleApplication.ApmInstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apmInstanceName = string(value["ApmInstanceName"].GetString());
+        m_apmInstanceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +265,22 @@ void SimpleApplication::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ApplicationRuntimeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_applicationRuntimeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ampInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AmpInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ampInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apmInstanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApmInstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apmInstanceName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +460,37 @@ void SimpleApplication::SetApplicationRuntimeType(const string& _applicationRunt
 bool SimpleApplication::ApplicationRuntimeTypeHasBeenSet() const
 {
     return m_applicationRuntimeTypeHasBeenSet;
+}
+
+string SimpleApplication::GetAmpInstanceId() const
+{
+    return m_ampInstanceId;
+}
+
+void SimpleApplication::SetAmpInstanceId(const string& _ampInstanceId)
+{
+    m_ampInstanceId = _ampInstanceId;
+    m_ampInstanceIdHasBeenSet = true;
+}
+
+bool SimpleApplication::AmpInstanceIdHasBeenSet() const
+{
+    return m_ampInstanceIdHasBeenSet;
+}
+
+string SimpleApplication::GetApmInstanceName() const
+{
+    return m_apmInstanceName;
+}
+
+void SimpleApplication::SetApmInstanceName(const string& _apmInstanceName)
+{
+    m_apmInstanceName = _apmInstanceName;
+    m_apmInstanceNameHasBeenSet = true;
+}
+
+bool SimpleApplication::ApmInstanceNameHasBeenSet() const
+{
+    return m_apmInstanceNameHasBeenSet;
 }
 

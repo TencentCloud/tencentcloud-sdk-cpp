@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/ConfigMapOption.h>
+#include <tencentcloud/tsf/v20180326/model/EmptyDirOption.h>
 
 
 namespace TencentCloud
@@ -109,6 +111,56 @@ namespace TencentCloud
                      */
                     bool VolumeConfigHasBeenSet() const;
 
+                    /**
+                     * 获取-
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigMapOptions -
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ConfigMapOption> GetConfigMapOptions() const;
+
+                    /**
+                     * 设置-
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _configMapOptions -
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConfigMapOptions(const std::vector<ConfigMapOption>& _configMapOptions);
+
+                    /**
+                     * 判断参数 ConfigMapOptions 是否已赋值
+                     * @return ConfigMapOptions 是否已赋值
+                     * 
+                     */
+                    bool ConfigMapOptionsHasBeenSet() const;
+
+                    /**
+                     * 获取-
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EmptyDirOption -
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    EmptyDirOption GetEmptyDirOption() const;
+
+                    /**
+                     * 设置-
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _emptyDirOption -
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEmptyDirOption(const EmptyDirOption& _emptyDirOption);
+
+                    /**
+                     * 判断参数 EmptyDirOption 是否已赋值
+                     * @return EmptyDirOption 是否已赋值
+                     * 
+                     */
+                    bool EmptyDirOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +180,20 @@ namespace TencentCloud
                      */
                     std::string m_volumeConfig;
                     bool m_volumeConfigHasBeenSet;
+
+                    /**
+                     * -
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ConfigMapOption> m_configMapOptions;
+                    bool m_configMapOptionsHasBeenSet;
+
+                    /**
+                     * -
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    EmptyDirOption m_emptyDirOption;
+                    bool m_emptyDirOptionHasBeenSet;
 
                 };
             }

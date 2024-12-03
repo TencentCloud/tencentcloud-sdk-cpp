@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取ckafka集群实例Id
+                     * @return InstanceId ckafka集群实例Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置ckafka集群实例Id
+                     * @param _instanceId ckafka集群实例Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取排行类别(PRO-Topic生产流量/CON-Topic消费流量)
-                     * @return RankingType 排行类别(PRO-Topic生产流量/CON-Topic消费流量)
+                     * 获取排行类别，PRO：Topic生产流量；CON：Topic消费流量
+                     * @return RankingType 排行类别，PRO：Topic生产流量；CON：Topic消费流量
                      * 
                      */
                     std::string GetRankingType() const;
 
                     /**
-                     * 设置排行类别(PRO-Topic生产流量/CON-Topic消费流量)
-                     * @param _rankingType 排行类别(PRO-Topic生产流量/CON-Topic消费流量)
+                     * 设置排行类别，PRO：Topic生产流量；CON：Topic消费流量
+                     * @param _rankingType 排行类别，PRO：Topic生产流量；CON：Topic消费流量
                      * 
                      */
                     void SetRankingType(const std::string& _rankingType);
@@ -150,13 +150,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * ckafka集群实例Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 排行类别(PRO-Topic生产流量/CON-Topic消费流量)
+                     * 排行类别，PRO：Topic生产流量；CON：Topic消费流量
                      */
                     std::string m_rankingType;
                     bool m_rankingTypeHasBeenSet;

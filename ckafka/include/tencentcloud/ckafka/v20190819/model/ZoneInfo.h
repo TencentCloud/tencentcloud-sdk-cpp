@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取zone的id
-                     * @return ZoneId zone的id
+                     * 获取可用区
+                     * @return ZoneId 可用区
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置zone的id
-                     * @param _zoneId zone的id
+                     * 设置可用区
+                     * @param _zoneId 可用区
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool IsInternalAppHasBeenSet() const;
 
                     /**
-                     * 获取app id
-                     * @return AppId app id
+                     * 获取应用标识
+                     * @return AppId 应用标识
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置app id
-                     * @param _appId app id
+                     * 设置应用标识
+                     * @param _appId 应用标识
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool FlagHasBeenSet() const;
 
                     /**
-                     * 获取zone名称
-                     * @return ZoneName zone名称
+                     * 获取可用区名称
+                     * @return ZoneName 可用区名称
                      * 
                      */
                     std::string GetZoneName() const;
 
                     /**
-                     * 设置zone名称
-                     * @param _zoneName zone名称
+                     * 设置可用区名称
+                     * @param _zoneName 可用区名称
                      * 
                      */
                     void SetZoneName(const std::string& _zoneName);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取zone状态
-                     * @return ZoneStatus zone状态
+                     * 获取可用区状态
+                     * @return ZoneStatus 可用区状态
                      * 
                      */
                     int64_t GetZoneStatus() const;
 
                     /**
-                     * 设置zone状态
-                     * @param _zoneStatus zone状态
+                     * 设置可用区状态
+                     * @param _zoneStatus 可用区状态
                      * 
                      */
                     void SetZoneStatus(const int64_t& _zoneStatus);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool ExflagHasBeenSet() const;
 
                     /**
-                     * 获取json对象，key为机型，value true为售罄，false为未售罄
-                     * @return SoldOut json对象，key为机型，value true为售罄，false为未售罄
+                     * 获取true为售罄，false为未售罄
+                     * @return SoldOut true为售罄，false为未售罄
                      * 
                      */
                     std::string GetSoldOut() const;
 
                     /**
-                     * 设置json对象，key为机型，value true为售罄，false为未售罄
-                     * @param _soldOut json对象，key为机型，value true为售罄，false为未售罄
+                     * 设置true为售罄，false为未售罄
+                     * @param _soldOut true为售罄，false为未售罄
                      * 
                      */
                     void SetSoldOut(const std::string& _soldOut);
@@ -264,7 +264,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * zone的id
+                     * 可用区
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
@@ -276,7 +276,7 @@ namespace TencentCloud
                     bool m_isInternalAppHasBeenSet;
 
                     /**
-                     * app id
+                     * 应用标识
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
@@ -288,13 +288,13 @@ namespace TencentCloud
                     bool m_flagHasBeenSet;
 
                     /**
-                     * zone名称
+                     * 可用区名称
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * zone状态
+                     * 可用区状态
                      */
                     int64_t m_zoneStatus;
                     bool m_zoneStatusHasBeenSet;
@@ -306,7 +306,7 @@ namespace TencentCloud
                     bool m_exflagHasBeenSet;
 
                     /**
-                     * json对象，key为机型，value true为售罄，false为未售罄
+                     * true为售罄，false为未售罄
                      */
                     std::string m_soldOut;
                     bool m_soldOutHasBeenSet;

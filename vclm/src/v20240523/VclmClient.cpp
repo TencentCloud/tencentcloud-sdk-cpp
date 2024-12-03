@@ -40,6 +40,49 @@ VclmClient::VclmClient(const Credential &credential, const string &region, const
 }
 
 
+VclmClient::CheckAnimateImageJobOutcome VclmClient::CheckAnimateImageJob(const CheckAnimateImageJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckAnimateImageJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckAnimateImageJobResponse rsp = CheckAnimateImageJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckAnimateImageJobOutcome(rsp);
+        else
+            return CheckAnimateImageJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckAnimateImageJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::CheckAnimateImageJobAsync(const CheckAnimateImageJobRequest& request, const CheckAnimateImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckAnimateImageJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VclmClient::CheckAnimateImageJobOutcomeCallable VclmClient::CheckAnimateImageJobCallable(const CheckAnimateImageJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckAnimateImageJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckAnimateImageJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VclmClient::ConfirmVideoTranslateJobOutcome VclmClient::ConfirmVideoTranslateJob(const ConfirmVideoTranslateJobRequest &request)
 {
     auto outcome = MakeRequest(request, "ConfirmVideoTranslateJob");

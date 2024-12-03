@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取组名称
-                     * @return GroupName 组名称
+                     * 获取消费分组名称
+                     * @return GroupName 消费分组名称
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置组名称
-                     * @param _groupName 组名称
+                     * 设置消费分组名称
+                     * @param _groupName 消费分组名称
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 组名称
+                     * 消费分组名称
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;

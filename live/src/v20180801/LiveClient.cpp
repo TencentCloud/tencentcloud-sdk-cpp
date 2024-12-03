@@ -4168,6 +4168,49 @@ LiveClient::DescribeLiveDomainsOutcomeCallable LiveClient::DescribeLiveDomainsCa
     return task->get_future();
 }
 
+LiveClient::DescribeLiveEnhanceInfoListOutcome LiveClient::DescribeLiveEnhanceInfoList(const DescribeLiveEnhanceInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveEnhanceInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveEnhanceInfoListResponse rsp = DescribeLiveEnhanceInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveEnhanceInfoListOutcome(rsp);
+        else
+            return DescribeLiveEnhanceInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveEnhanceInfoListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveEnhanceInfoListAsync(const DescribeLiveEnhanceInfoListRequest& request, const DescribeLiveEnhanceInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLiveEnhanceInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveEnhanceInfoListOutcomeCallable LiveClient::DescribeLiveEnhanceInfoListCallable(const DescribeLiveEnhanceInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLiveEnhanceInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLiveEnhanceInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeLiveForbidStreamListOutcome LiveClient::DescribeLiveForbidStreamList(const DescribeLiveForbidStreamListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLiveForbidStreamList");

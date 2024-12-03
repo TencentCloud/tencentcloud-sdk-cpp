@@ -473,6 +473,56 @@ namespace TencentCloud
                      */
                     bool PublicHasBeenSet() const;
 
+                    /**
+                     * 获取创建方式：manual | automatic
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateMode 创建方式：manual | automatic
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreateMode() const;
+
+                    /**
+                     * 设置创建方式：manual | automatic
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createMode 创建方式：manual | automatic
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateMode(const std::string& _createMode);
+
+                    /**
+                     * 判断参数 CreateMode 是否已赋值
+                     * @return CreateMode 是否已赋值
+                     * 
+                     */
+                    bool CreateModeHasBeenSet() const;
+
+                    /**
+                     * 获取仓库名，等同reponame字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RepoName 仓库名，等同reponame字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRepoName() const;
+
+                    /**
+                     * 设置仓库名，等同reponame字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _repoName 仓库名，等同reponame字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRepoName(const std::string& _repoName);
+
+                    /**
+                     * 判断参数 RepoName 是否已赋值
+                     * @return RepoName 是否已赋值
+                     * 
+                     */
+                    bool RepoNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -593,6 +643,20 @@ namespace TencentCloud
                      */
                     int64_t m_public;
                     bool m_publicHasBeenSet;
+
+                    /**
+                     * 创建方式：manual | automatic
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createMode;
+                    bool m_createModeHasBeenSet;
+
+                    /**
+                     * 仓库名，等同reponame字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_repoName;
+                    bool m_repoNameHasBeenSet;
 
                 };
             }

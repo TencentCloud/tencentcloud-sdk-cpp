@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool BackupErrorMsgHasBeenSet() const;
 
                     /**
-                     * 获取改库表是否绑定降冷策略
+                     * 获取该库表是否绑定降冷策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsOpenCoolDown 改库表是否绑定降冷策略
+                     * @return IsOpenCoolDown 该库表是否绑定降冷策略
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsOpenCoolDown() const;
 
                     /**
-                     * 设置改库表是否绑定降冷策略
+                     * 设置该库表是否绑定降冷策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isOpenCoolDown 改库表是否绑定降冷策略
+                     * @param _isOpenCoolDown 该库表是否绑定降冷策略
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -266,7 +266,7 @@ namespace TencentCloud
                     bool m_backupErrorMsgHasBeenSet;
 
                     /**
-                     * 改库表是否绑定降冷策略
+                     * 该库表是否绑定降冷策略
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isOpenCoolDown;

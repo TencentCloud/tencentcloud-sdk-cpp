@@ -584,6 +584,39 @@ namespace TencentCloud
                      */
                     bool SeedHasBeenSet() const;
 
+                    /**
+                     * 获取强制搜索增强开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，将强制走AI搜索，当AI搜索结果为空时，由大模型回复兜底话术。
+                     * @return ForceSearchEnhancement 强制搜索增强开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，将强制走AI搜索，当AI搜索结果为空时，由大模型回复兜底话术。
+                     * 
+                     */
+                    bool GetForceSearchEnhancement() const;
+
+                    /**
+                     * 设置强制搜索增强开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，将强制走AI搜索，当AI搜索结果为空时，由大模型回复兜底话术。
+                     * @param _forceSearchEnhancement 强制搜索增强开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，将强制走AI搜索，当AI搜索结果为空时，由大模型回复兜底话术。
+                     * 
+                     */
+                    void SetForceSearchEnhancement(const bool& _forceSearchEnhancement);
+
+                    /**
+                     * 判断参数 ForceSearchEnhancement 是否已赋值
+                     * @return ForceSearchEnhancement 是否已赋值
+                     * 
+                     */
+                    bool ForceSearchEnhancementHasBeenSet() const;
+
                 private:
 
                     /**
@@ -732,6 +765,15 @@ namespace TencentCloud
                      */
                     int64_t m_seed;
                     bool m_seedHasBeenSet;
+
+                    /**
+                     * 强制搜索增强开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，将强制走AI搜索，当AI搜索结果为空时，由大模型回复兜底话术。
+                     */
+                    bool m_forceSearchEnhancement;
+                    bool m_forceSearchEnhancementHasBeenSet;
 
                 };
             }

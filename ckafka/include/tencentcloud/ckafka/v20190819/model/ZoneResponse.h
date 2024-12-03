@@ -280,18 +280,18 @@ namespace TencentCloud
                     bool PhysicalHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽
+                     * 获取公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublicNetwork 公网带宽
+                     * @return PublicNetwork 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicNetwork() const;
 
                     /**
-                     * 设置公网带宽
+                     * 设置公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _publicNetwork 公网带宽
+                     * @param _publicNetwork 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -330,18 +330,18 @@ namespace TencentCloud
                     bool PublicNetworkLimitHasBeenSet() const;
 
                     /**
-                     * 获取请求ID
+                     * 获取请求Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RequestId 请求ID
+                     * @return RequestId 请求Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRequestId() const;
 
                     /**
-                     * 设置请求ID
+                     * 设置请求Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _requestId 请求ID
+                     * @param _requestId 请求Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -522,7 +522,7 @@ namespace TencentCloud
                     bool m_physicalHasBeenSet;
 
                     /**
-                     * 公网带宽
+                     * 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicNetwork;
@@ -536,7 +536,7 @@ namespace TencentCloud
                     bool m_publicNetworkLimitHasBeenSet;
 
                     /**
-                     * 请求ID
+                     * 请求Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_requestId;

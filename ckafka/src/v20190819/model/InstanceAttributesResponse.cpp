@@ -56,7 +56,10 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_remainingPartitionsHasBeenSet(false),
     m_remainingTopicsHasBeenSet(false),
     m_dynamicDiskConfigHasBeenSet(false),
-    m_instanceChargeTypeHasBeenSet(false)
+    m_instanceChargeTypeHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false),
+    m_freePartitionNumberHasBeenSet(false),
+    m_elasticFloatBandwidthHasBeenSet(false)
 {
 }
 
@@ -472,6 +475,36 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const rapidjson::Val
         m_instanceChargeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterType") && !value["ClusterType"].IsNull())
+    {
+        if (!value["ClusterType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterType = string(value["ClusterType"].GetString());
+        m_clusterTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FreePartitionNumber") && !value["FreePartitionNumber"].IsNull())
+    {
+        if (!value["FreePartitionNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.FreePartitionNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_freePartitionNumber = value["FreePartitionNumber"].GetInt64();
+        m_freePartitionNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("ElasticFloatBandwidth") && !value["ElasticFloatBandwidth"].IsNull())
+    {
+        if (!value["ElasticFloatBandwidth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.ElasticFloatBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticFloatBandwidth = value["ElasticFloatBandwidth"].GetInt64();
+        m_elasticFloatBandwidthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -792,6 +825,30 @@ void InstanceAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "InstanceChargeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_freePartitionNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FreePartitionNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_freePartitionNumber, allocator);
+    }
+
+    if (m_elasticFloatBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticFloatBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticFloatBandwidth, allocator);
     }
 
 }
@@ -1371,5 +1428,53 @@ void InstanceAttributesResponse::SetInstanceChargeType(const string& _instanceCh
 bool InstanceAttributesResponse::InstanceChargeTypeHasBeenSet() const
 {
     return m_instanceChargeTypeHasBeenSet;
+}
+
+string InstanceAttributesResponse::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void InstanceAttributesResponse::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetFreePartitionNumber() const
+{
+    return m_freePartitionNumber;
+}
+
+void InstanceAttributesResponse::SetFreePartitionNumber(const int64_t& _freePartitionNumber)
+{
+    m_freePartitionNumber = _freePartitionNumber;
+    m_freePartitionNumberHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::FreePartitionNumberHasBeenSet() const
+{
+    return m_freePartitionNumberHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetElasticFloatBandwidth() const
+{
+    return m_elasticFloatBandwidth;
+}
+
+void InstanceAttributesResponse::SetElasticFloatBandwidth(const int64_t& _elasticFloatBandwidth)
+{
+    m_elasticFloatBandwidth = _elasticFloatBandwidth;
+    m_elasticFloatBandwidthHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::ElasticFloatBandwidthHasBeenSet() const
+{
+    return m_elasticFloatBandwidthHasBeenSet;
 }
 

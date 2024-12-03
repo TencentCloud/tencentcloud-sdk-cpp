@@ -247,6 +247,331 @@ namespace TencentCloud
                      */
                     bool SessionAffinityTimeoutSecondsHasBeenSet() const;
 
+                    /**
+                     * 获取服务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceName 服务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetServiceName() const;
+
+                    /**
+                     * 设置服务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serviceName 服务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetServiceName(const std::string& _serviceName);
+
+                    /**
+                     * 判断参数 ServiceName 是否已赋值
+                     * @return ServiceName 是否已赋值
+                     * 
+                     */
+                    bool ServiceNameHasBeenSet() const;
+
+                    /**
+                     * 获取外部流量策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExternalTrafficStrategy 外部流量策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExternalTrafficStrategy() const;
+
+                    /**
+                     * 设置外部流量策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _externalTrafficStrategy 外部流量策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExternalTrafficStrategy(const std::string& _externalTrafficStrategy);
+
+                    /**
+                     * 判断参数 ExternalTrafficStrategy 是否已赋值
+                     * @return ExternalTrafficStrategy 是否已赋值
+                     * 
+                     */
+                    bool ExternalTrafficStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取外部流量策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExternalTrafficPolicy 外部流量策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExternalTrafficPolicy() const;
+
+                    /**
+                     * 设置外部流量策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _externalTrafficPolicy 外部流量策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExternalTrafficPolicy(const std::string& _externalTrafficPolicy);
+
+                    /**
+                     * 判断参数 ExternalTrafficPolicy 是否已赋值
+                     * @return ExternalTrafficPolicy 是否已赋值
+                     * 
+                     */
+                    bool ExternalTrafficPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡提供者
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LoadBalancerProvisioner 负载均衡提供者
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLoadBalancerProvisioner() const;
+
+                    /**
+                     * 设置负载均衡提供者
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _loadBalancerProvisioner 负载均衡提供者
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLoadBalancerProvisioner(const std::string& _loadBalancerProvisioner);
+
+                    /**
+                     * 判断参数 LoadBalancerProvisioner 是否已赋值
+                     * @return LoadBalancerProvisioner 是否已赋值
+                     * 
+                     */
+                    bool LoadBalancerProvisionerHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LoadBalancingType 负载均衡类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLoadBalancingType() const;
+
+                    /**
+                     * 设置负载均衡类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _loadBalancingType 负载均衡类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLoadBalancingType(const std::string& _loadBalancingType);
+
+                    /**
+                     * 判断参数 LoadBalancingType 是否已赋值
+                     * @return LoadBalancingType 是否已赋值
+                     * 
+                     */
+                    bool LoadBalancingTypeHasBeenSet() const;
+
+                    /**
+                     * 获取k8s负载均衡内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterIp k8s负载均衡内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterIp() const;
+
+                    /**
+                     * 设置k8s负载均衡内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterIp k8s负载均衡内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterIp(const std::string& _clusterIp);
+
+                    /**
+                     * 判断参数 ClusterIp 是否已赋值
+                     * @return ClusterIp 是否已赋值
+                     * 
+                     */
+                    bool ClusterIpHasBeenSet() const;
+
+                    /**
+                     * 获取禁用服务Int记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisableServiceInt 禁用服务Int记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetDisableServiceInt() const;
+
+                    /**
+                     * 设置禁用服务Int记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _disableServiceInt 禁用服务Int记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDisableServiceInt(const uint64_t& _disableServiceInt);
+
+                    /**
+                     * 判断参数 DisableServiceInt 是否已赋值
+                     * @return DisableServiceInt 是否已赋值
+                     * 
+                     */
+                    bool DisableServiceIntHasBeenSet() const;
+
+                    /**
+                     * 获取开启SessionAffinity Int记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OpenSessionAffinityInt 开启SessionAffinity Int记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetOpenSessionAffinityInt() const;
+
+                    /**
+                     * 设置开启SessionAffinity Int记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _openSessionAffinityInt 开启SessionAffinity Int记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOpenSessionAffinityInt(const uint64_t& _openSessionAffinityInt);
+
+                    /**
+                     * 判断参数 OpenSessionAffinityInt 是否已赋值
+                     * @return OpenSessionAffinityInt 是否已赋值
+                     * 
+                     */
+                    bool OpenSessionAffinityIntHasBeenSet() const;
+
+                    /**
+                     * 获取开启HeadlessService int记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HeadlessServiceInt 开启HeadlessService int记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetHeadlessServiceInt() const;
+
+                    /**
+                     * 设置开启HeadlessService int记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _headlessServiceInt 开启HeadlessService int记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHeadlessServiceInt(const uint64_t& _headlessServiceInt);
+
+                    /**
+                     * 判断参数 HeadlessServiceInt 是否已赋值
+                     * @return HeadlessServiceInt 是否已赋值
+                     * 
+                     */
+                    bool HeadlessServiceIntHasBeenSet() const;
+
+                    /**
+                     * 获取服务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Name 服务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置服务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _name 服务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取VPC网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcId VPC网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置VPC网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vpcId VPC网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     * 
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡VIP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LoadBalancingIp 负载均衡VIP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLoadBalancingIp() const;
+
+                    /**
+                     * 设置负载均衡VIP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _loadBalancingIp 负载均衡VIP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLoadBalancingIp(const std::string& _loadBalancingIp);
+
+                    /**
+                     * 判断参数 LoadBalancingIp 是否已赋值
+                     * @return LoadBalancingIp 是否已赋值
+                     * 
+                     */
+                    bool LoadBalancingIpHasBeenSet() const;
+
+                    /**
+                     * 获取负载均衡id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LoadBalancerId 负载均衡id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLoadBalancerId() const;
+
+                    /**
+                     * 设置负载均衡id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _loadBalancerId 负载均衡id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLoadBalancerId(const std::string& _loadBalancerId);
+
+                    /**
+                     * 判断参数 LoadBalancerId 是否已赋值
+                     * @return LoadBalancerId 是否已赋值
+                     * 
+                     */
+                    bool LoadBalancerIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -304,6 +629,97 @@ namespace TencentCloud
                      */
                     int64_t m_sessionAffinityTimeoutSeconds;
                     bool m_sessionAffinityTimeoutSecondsHasBeenSet;
+
+                    /**
+                     * 服务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_serviceName;
+                    bool m_serviceNameHasBeenSet;
+
+                    /**
+                     * 外部流量策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_externalTrafficStrategy;
+                    bool m_externalTrafficStrategyHasBeenSet;
+
+                    /**
+                     * 外部流量策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_externalTrafficPolicy;
+                    bool m_externalTrafficPolicyHasBeenSet;
+
+                    /**
+                     * 负载均衡提供者
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_loadBalancerProvisioner;
+                    bool m_loadBalancerProvisionerHasBeenSet;
+
+                    /**
+                     * 负载均衡类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_loadBalancingType;
+                    bool m_loadBalancingTypeHasBeenSet;
+
+                    /**
+                     * k8s负载均衡内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterIp;
+                    bool m_clusterIpHasBeenSet;
+
+                    /**
+                     * 禁用服务Int记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_disableServiceInt;
+                    bool m_disableServiceIntHasBeenSet;
+
+                    /**
+                     * 开启SessionAffinity Int记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_openSessionAffinityInt;
+                    bool m_openSessionAffinityIntHasBeenSet;
+
+                    /**
+                     * 开启HeadlessService int记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_headlessServiceInt;
+                    bool m_headlessServiceIntHasBeenSet;
+
+                    /**
+                     * 服务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * VPC网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 负载均衡VIP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_loadBalancingIp;
+                    bool m_loadBalancingIpHasBeenSet;
+
+                    /**
+                     * 负载均衡id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_loadBalancerId;
+                    bool m_loadBalancerIdHasBeenSet;
 
                 };
             }

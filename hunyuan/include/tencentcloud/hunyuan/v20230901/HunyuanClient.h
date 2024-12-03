@@ -27,6 +27,8 @@
 #include <tencentcloud/hunyuan/v20230901/model/ActivateServiceResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/ChatCompletionsRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/ChatCompletionsResponse.h>
+#include <tencentcloud/hunyuan/v20230901/model/ChatTranslationsRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/ChatTranslationsResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/CreateThreadRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/CreateThreadResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/FilesDeletionsRequest.h>
@@ -79,6 +81,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChatCompletionsResponse> ChatCompletionsOutcome;
                 typedef std::future<ChatCompletionsOutcome> ChatCompletionsOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::ChatCompletionsRequest&, ChatCompletionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatCompletionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChatTranslationsResponse> ChatTranslationsOutcome;
+                typedef std::future<ChatTranslationsOutcome> ChatTranslationsOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::ChatTranslationsRequest&, ChatTranslationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatTranslationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateThreadResponse> CreateThreadOutcome;
                 typedef std::future<CreateThreadOutcome> CreateThreadOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::CreateThreadRequest&, CreateThreadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateThreadAsyncHandler;
@@ -152,6 +157,20 @@ namespace TencentCloud
                 ChatCompletionsOutcome ChatCompletions(const Model::ChatCompletionsRequest &request);
                 void ChatCompletionsAsync(const Model::ChatCompletionsRequest& request, const ChatCompletionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChatCompletionsOutcomeCallable ChatCompletionsCallable(const Model::ChatCompletionsRequest& request);
+
+                /**
+                 *腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
+
+ 1. 本接口暂不支持返回图片内容。
+ 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。
+ 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。
+ 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。
+                 * @param req ChatTranslationsRequest
+                 * @return ChatTranslationsOutcome
+                 */
+                ChatTranslationsOutcome ChatTranslations(const Model::ChatTranslationsRequest &request);
+                void ChatTranslationsAsync(const Model::ChatTranslationsRequest& request, const ChatTranslationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChatTranslationsOutcomeCallable ChatTranslationsCallable(const Model::ChatTranslationsRequest& request);
 
                 /**
                  *腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。

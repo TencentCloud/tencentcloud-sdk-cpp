@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Acl规则名称
+                     * 获取ACL规则名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleName Acl规则名称
+                     * @return RuleName ACL规则名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置Acl规则名称
+                     * 设置ACL规则名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleName Acl规则名称
+                     * @param _ruleName ACL规则名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
+                     * 获取ckafka集群实例Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 实例ID
+                     * @return InstanceId ckafka集群实例Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
+                     * 设置ckafka集群实例Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceId 实例ID
+                     * @param _instanceId ckafka集群实例Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取匹配类型，目前只支持前缀匹配，枚举值列表：PREFIXED
+                     * 获取ACL规则匹配类型，目前只支持前缀匹配，枚举值列表：PREFIXED
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PatternType 匹配类型，目前只支持前缀匹配，枚举值列表：PREFIXED
+                     * @return PatternType ACL规则匹配类型，目前只支持前缀匹配，枚举值列表：PREFIXED
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPatternType() const;
 
                     /**
-                     * 设置匹配类型，目前只支持前缀匹配，枚举值列表：PREFIXED
+                     * 设置ACL规则匹配类型，目前只支持前缀匹配，枚举值列表：PREFIXED
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _patternType 匹配类型，目前只支持前缀匹配，枚举值列表：PREFIXED
+                     * @param _patternType ACL规则匹配类型，目前只支持前缀匹配，枚举值列表：PREFIXED
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -374,21 +374,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Acl规则名称
+                     * ACL规则名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * ckafka集群实例Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 匹配类型，目前只支持前缀匹配，枚举值列表：PREFIXED
+                     * ACL规则匹配类型，目前只支持前缀匹配，枚举值列表：PREFIXED
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_patternType;

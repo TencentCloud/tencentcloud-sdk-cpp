@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取groupId
-                     * @return Group groupId
+                     * 获取消费分组名称
+                     * @return Group 消费分组名称
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
-                     * 设置groupId
-                     * @param _group groupId
+                     * 设置消费分组名称
+                     * @param _group 消费分组名称
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * groupId
+                     * 消费分组名称
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;

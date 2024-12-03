@@ -34,7 +34,8 @@ TranscodeTemplate::TranscodeTemplate() :
     m_containerTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_enhanceConfigHasBeenSet(false)
+    m_enhanceConfigHasBeenSet(false),
+    m_aliasNameHasBeenSet(false)
 {
 }
 
@@ -211,6 +212,16 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const rapidjson::Value &value
         m_enhanceConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("AliasName") && !value["AliasName"].IsNull())
+    {
+        if (!value["AliasName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranscodeTemplate.AliasName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aliasName = string(value["AliasName"].GetString());
+        m_aliasNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -332,6 +343,14 @@ void TranscodeTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_enhanceConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aliasNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AliasName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aliasName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -559,5 +578,21 @@ void TranscodeTemplate::SetEnhanceConfig(const EnhanceConfig& _enhanceConfig)
 bool TranscodeTemplate::EnhanceConfigHasBeenSet() const
 {
     return m_enhanceConfigHasBeenSet;
+}
+
+string TranscodeTemplate::GetAliasName() const
+{
+    return m_aliasName;
+}
+
+void TranscodeTemplate::SetAliasName(const string& _aliasName)
+{
+    m_aliasName = _aliasName;
+    m_aliasNameHasBeenSet = true;
+}
+
+bool TranscodeTemplate::AliasNameHasBeenSet() const
+{
+    return m_aliasNameHasBeenSet;
 }
 

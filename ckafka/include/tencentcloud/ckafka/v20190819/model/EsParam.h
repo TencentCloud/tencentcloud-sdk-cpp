@@ -50,18 +50,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例资源
+                     * 获取Es实例资源Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Resource 实例资源
+                     * @return Resource Es实例资源Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
-                     * 设置实例资源
+                     * 设置Es实例资源Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resource 实例资源
+                     * @param _resource Es实例资源Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -552,7 +552,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例资源
+                     * Es实例资源Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;

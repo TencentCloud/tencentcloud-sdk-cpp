@@ -40,7 +40,6 @@ namespace TencentCloud
 > * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。
 > * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。
 >
-
                 */
                 class Filter : public AbstractModel
                 {

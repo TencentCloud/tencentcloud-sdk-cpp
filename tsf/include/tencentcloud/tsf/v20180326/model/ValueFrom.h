@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tsf/v20180326/model/FieldRef.h>
 #include <tencentcloud/tsf/v20180326/model/ResourceFieldRef.h>
+#include <tencentcloud/tsf/v20180326/model/CommonRef.h>
 
 
 namespace TencentCloud
@@ -98,6 +99,56 @@ namespace TencentCloud
                      */
                     bool ResourceFieldRefHasBeenSet() const;
 
+                    /**
+                     * 获取k8s env的configMapKeyRef
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigMapKeyRef k8s env的configMapKeyRef
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CommonRef GetConfigMapKeyRef() const;
+
+                    /**
+                     * 设置k8s env的configMapKeyRef
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _configMapKeyRef k8s env的configMapKeyRef
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConfigMapKeyRef(const CommonRef& _configMapKeyRef);
+
+                    /**
+                     * 判断参数 ConfigMapKeyRef 是否已赋值
+                     * @return ConfigMapKeyRef 是否已赋值
+                     * 
+                     */
+                    bool ConfigMapKeyRefHasBeenSet() const;
+
+                    /**
+                     * 获取k8s env 的 secretKeyRef
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecretKeyRef k8s env 的 secretKeyRef
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CommonRef GetSecretKeyRef() const;
+
+                    /**
+                     * 设置k8s env 的 secretKeyRef
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _secretKeyRef k8s env 的 secretKeyRef
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSecretKeyRef(const CommonRef& _secretKeyRef);
+
+                    /**
+                     * 判断参数 SecretKeyRef 是否已赋值
+                     * @return SecretKeyRef 是否已赋值
+                     * 
+                     */
+                    bool SecretKeyRefHasBeenSet() const;
+
                 private:
 
                     /**
@@ -113,6 +164,20 @@ namespace TencentCloud
                      */
                     ResourceFieldRef m_resourceFieldRef;
                     bool m_resourceFieldRefHasBeenSet;
+
+                    /**
+                     * k8s env的configMapKeyRef
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CommonRef m_configMapKeyRef;
+                    bool m_configMapKeyRefHasBeenSet;
+
+                    /**
+                     * k8s env 的 secretKeyRef
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CommonRef m_secretKeyRef;
+                    bool m_secretKeyRefHasBeenSet;
 
                 };
             }

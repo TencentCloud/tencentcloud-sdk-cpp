@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool ApplicationIdListHasBeenSet() const;
 
+                    /**
+                     * 获取查询多种微服务类型的应用
+                     * @return MicroserviceTypeList 查询多种微服务类型的应用
+                     * 
+                     */
+                    std::vector<std::string> GetMicroserviceTypeList() const;
+
+                    /**
+                     * 设置查询多种微服务类型的应用
+                     * @param _microserviceTypeList 查询多种微服务类型的应用
+                     * 
+                     */
+                    void SetMicroserviceTypeList(const std::vector<std::string>& _microserviceTypeList);
+
+                    /**
+                     * 判断参数 MicroserviceTypeList 是否已赋值
+                     * @return MicroserviceTypeList 是否已赋值
+                     * 
+                     */
+                    bool MicroserviceTypeListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_applicationIdList;
                     bool m_applicationIdListHasBeenSet;
+
+                    /**
+                     * 查询多种微服务类型的应用
+                     */
+                    std::vector<std::string> m_microserviceTypeList;
+                    bool m_microserviceTypeListHasBeenSet;
 
                 };
             }

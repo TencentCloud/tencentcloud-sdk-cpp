@@ -124,18 +124,18 @@ namespace TencentCloud
                     bool ResourceHasBeenSet() const;
 
                     /**
-                     * 获取复制存量信息(schema_only不复制, initial全量)，默认位initial
+                     * 获取复制存量信息(schema_only不复制, initial全量)，默认值initial
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SnapshotMode 复制存量信息(schema_only不复制, initial全量)，默认位initial
+                     * @return SnapshotMode 复制存量信息(schema_only不复制, initial全量)，默认值initial
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSnapshotMode() const;
 
                     /**
-                     * 设置复制存量信息(schema_only不复制, initial全量)，默认位initial
+                     * 设置复制存量信息(schema_only不复制, initial全量)，默认值initial
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _snapshotMode 复制存量信息(schema_only不复制, initial全量)，默认位initial
+                     * @param _snapshotMode 复制存量信息(schema_only不复制, initial全量)，默认值initial
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -772,7 +772,7 @@ namespace TencentCloud
                     bool m_resourceHasBeenSet;
 
                     /**
-                     * 复制存量信息(schema_only不复制, initial全量)，默认位initial
+                     * 复制存量信息(schema_only不复制, initial全量)，默认值initial
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_snapshotMode;

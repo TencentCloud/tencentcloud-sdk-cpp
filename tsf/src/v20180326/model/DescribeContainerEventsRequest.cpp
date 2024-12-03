@@ -27,7 +27,11 @@ DescribeContainerEventsRequest::DescribeContainerEventsRequest() :
     m_resourceIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_kindHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_resourceNameHasBeenSet(false),
+    m_searchWordHasBeenSet(false)
 {
 }
 
@@ -76,6 +80,38 @@ string DescribeContainerEventsRequest::ToJsonString() const
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Kind";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kind.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchWordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchWord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_searchWord.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +200,70 @@ void DescribeContainerEventsRequest::SetGroupId(const string& _groupId)
 bool DescribeContainerEventsRequest::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+string DescribeContainerEventsRequest::GetKind() const
+{
+    return m_kind;
+}
+
+void DescribeContainerEventsRequest::SetKind(const string& _kind)
+{
+    m_kind = _kind;
+    m_kindHasBeenSet = true;
+}
+
+bool DescribeContainerEventsRequest::KindHasBeenSet() const
+{
+    return m_kindHasBeenSet;
+}
+
+string DescribeContainerEventsRequest::GetType() const
+{
+    return m_type;
+}
+
+void DescribeContainerEventsRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DescribeContainerEventsRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string DescribeContainerEventsRequest::GetResourceName() const
+{
+    return m_resourceName;
+}
+
+void DescribeContainerEventsRequest::SetResourceName(const string& _resourceName)
+{
+    m_resourceName = _resourceName;
+    m_resourceNameHasBeenSet = true;
+}
+
+bool DescribeContainerEventsRequest::ResourceNameHasBeenSet() const
+{
+    return m_resourceNameHasBeenSet;
+}
+
+string DescribeContainerEventsRequest::GetSearchWord() const
+{
+    return m_searchWord;
+}
+
+void DescribeContainerEventsRequest::SetSearchWord(const string& _searchWord)
+{
+    m_searchWord = _searchWord;
+    m_searchWordHasBeenSet = true;
+}
+
+bool DescribeContainerEventsRequest::SearchWordHasBeenSet() const
+{
+    return m_searchWordHasBeenSet;
 }
 
 

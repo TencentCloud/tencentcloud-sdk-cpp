@@ -126,6 +126,48 @@ namespace TencentCloud
                      */
                     bool PodNameListHasBeenSet() const;
 
+                    /**
+                     * 获取新老版本pod批次标识
+                     * @return DeployVersion 新老版本pod批次标识
+                     * 
+                     */
+                    std::string GetDeployVersion() const;
+
+                    /**
+                     * 设置新老版本pod批次标识
+                     * @param _deployVersion 新老版本pod批次标识
+                     * 
+                     */
+                    void SetDeployVersion(const std::string& _deployVersion);
+
+                    /**
+                     * 判断参数 DeployVersion 是否已赋值
+                     * @return DeployVersion 是否已赋值
+                     * 
+                     */
+                    bool DeployVersionHasBeenSet() const;
+
+                    /**
+                     * 获取任务ID
+                     * @return TaskId 任务ID
+                     * 
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 设置任务ID
+                     * @param _taskId 任务ID
+                     * 
+                     */
+                    void SetTaskId(const std::string& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +193,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_podNameList;
                     bool m_podNameListHasBeenSet;
+
+                    /**
+                     * 新老版本pod批次标识
+                     */
+                    std::string m_deployVersion;
+                    bool m_deployVersionHasBeenSet;
+
+                    /**
+                     * 任务ID
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

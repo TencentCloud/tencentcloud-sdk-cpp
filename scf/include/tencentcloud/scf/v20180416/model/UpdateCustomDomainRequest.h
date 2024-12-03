@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool WafConfigHasBeenSet() const;
 
                     /**
-                     * 获取	路由配置
-                     * @return EndpointsConfig 	路由配置
+                     * 获取路由配置
+                     * @return EndpointsConfig 路由配置
                      * 
                      */
                     std::vector<EndpointsConf> GetEndpointsConfig() const;
 
                     /**
-                     * 设置	路由配置
-                     * @param _endpointsConfig 	路由配置
+                     * 设置路由配置
+                     * @param _endpointsConfig 路由配置
                      * 
                      */
                     void SetEndpointsConfig(const std::vector<EndpointsConf>& _endpointsConfig);
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_wafConfigHasBeenSet;
 
                     /**
-                     * 	路由配置
+                     * 路由配置
                      */
                     std::vector<EndpointsConf> m_endpointsConfig;
                     bool m_endpointsConfigHasBeenSet;

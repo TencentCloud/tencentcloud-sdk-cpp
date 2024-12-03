@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 	端口对象
+                * 端口对象
                 */
                 class ProtocolPort : public AbstractModel
                 {
@@ -134,6 +134,31 @@ namespace TencentCloud
                      */
                     bool NodePortHasBeenSet() const;
 
+                    /**
+                     * 获取端口名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Name 端口名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置端口名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _name 端口名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -160,6 +185,13 @@ namespace TencentCloud
                      */
                     int64_t m_nodePort;
                     bool m_nodePortHasBeenSet;
+
+                    /**
+                     * 端口名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

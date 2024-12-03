@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/vclm/v20240523/model/CheckAnimateImageJobRequest.h>
+#include <tencentcloud/vclm/v20240523/model/CheckAnimateImageJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/ConfirmVideoTranslateJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/ConfirmVideoTranslateJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeImageAnimateJobRequest.h>
@@ -55,6 +57,9 @@ namespace TencentCloud
                 VclmClient(const Credential &credential, const std::string &region);
                 VclmClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CheckAnimateImageJobResponse> CheckAnimateImageJobOutcome;
+                typedef std::future<CheckAnimateImageJobOutcome> CheckAnimateImageJobOutcomeCallable;
+                typedef std::function<void(const VclmClient*, const Model::CheckAnimateImageJobRequest&, CheckAnimateImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAnimateImageJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::ConfirmVideoTranslateJobResponse> ConfirmVideoTranslateJobOutcome;
                 typedef std::future<ConfirmVideoTranslateJobOutcome> ConfirmVideoTranslateJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::ConfirmVideoTranslateJobRequest&, ConfirmVideoTranslateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmVideoTranslateJobAsyncHandler;
@@ -84,6 +89,15 @@ namespace TencentCloud
                 typedef std::function<void(const VclmClient*, const Model::SubmitVideoTranslateJobRequest&, SubmitVideoTranslateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitVideoTranslateJobAsyncHandler;
 
 
+
+                /**
+                 *检查图片跳舞输入图
+                 * @param req CheckAnimateImageJobRequest
+                 * @return CheckAnimateImageJobOutcome
+                 */
+                CheckAnimateImageJobOutcome CheckAnimateImageJob(const Model::CheckAnimateImageJobRequest &request);
+                void CheckAnimateImageJobAsync(const Model::CheckAnimateImageJobRequest& request, const CheckAnimateImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckAnimateImageJobOutcomeCallable CheckAnimateImageJobCallable(const Model::CheckAnimateImageJobRequest& request);
 
                 /**
                  *确认视频转译结果

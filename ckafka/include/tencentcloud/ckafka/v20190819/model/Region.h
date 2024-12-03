@@ -160,18 +160,18 @@ namespace TencentCloud
                     bool RegionCodeV3HasBeenSet() const;
 
                     /**
-                     * 获取NONE:默认值不支持任何特殊机型\nCVM:支持CVM类型
+                     * 获取NONE:默认值不支持任何特殊类型 实例类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Support NONE:默认值不支持任何特殊机型\nCVM:支持CVM类型
+                     * @return Support NONE:默认值不支持任何特殊类型 实例类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSupport() const;
 
                     /**
-                     * 设置NONE:默认值不支持任何特殊机型\nCVM:支持CVM类型
+                     * 设置NONE:默认值不支持任何特殊类型 实例类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _support NONE:默认值不支持任何特殊机型\nCVM:支持CVM类型
+                     * @param _support NONE:默认值不支持任何特殊类型 实例类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -269,7 +269,7 @@ namespace TencentCloud
                     bool m_regionCodeV3HasBeenSet;
 
                     /**
-                     * NONE:默认值不支持任何特殊机型\nCVM:支持CVM类型
+                     * NONE:默认值不支持任何特殊类型 实例类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_support;

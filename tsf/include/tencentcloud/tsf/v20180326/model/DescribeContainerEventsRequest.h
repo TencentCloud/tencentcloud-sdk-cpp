@@ -147,6 +147,90 @@ namespace TencentCloud
                      */
                     bool GroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取event的资源kind
+                     * @return Kind event的资源kind
+                     * 
+                     */
+                    std::string GetKind() const;
+
+                    /**
+                     * 设置event的资源kind
+                     * @param _kind event的资源kind
+                     * 
+                     */
+                    void SetKind(const std::string& _kind);
+
+                    /**
+                     * 判断参数 Kind 是否已赋值
+                     * @return Kind 是否已赋值
+                     * 
+                     */
+                    bool KindHasBeenSet() const;
+
+                    /**
+                     * 获取event 的type
+                     * @return Type event 的type
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置event 的type
+                     * @param _type event 的type
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取资源名称
+                     * @return ResourceName 资源名称
+                     * 
+                     */
+                    std::string GetResourceName() const;
+
+                    /**
+                     * 设置资源名称
+                     * @param _resourceName 资源名称
+                     * 
+                     */
+                    void SetResourceName(const std::string& _resourceName);
+
+                    /**
+                     * 判断参数 ResourceName 是否已赋值
+                     * @return ResourceName 是否已赋值
+                     * 
+                     */
+                    bool ResourceNameHasBeenSet() const;
+
+                    /**
+                     * 获取关键词查询
+                     * @return SearchWord 关键词查询
+                     * 
+                     */
+                    std::string GetSearchWord() const;
+
+                    /**
+                     * 设置关键词查询
+                     * @param _searchWord 关键词查询
+                     * 
+                     */
+                    void SetSearchWord(const std::string& _searchWord);
+
+                    /**
+                     * 判断参数 SearchWord 是否已赋值
+                     * @return SearchWord 是否已赋值
+                     * 
+                     */
+                    bool SearchWordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +262,30 @@ namespace TencentCloud
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
+
+                    /**
+                     * event的资源kind
+                     */
+                    std::string m_kind;
+                    bool m_kindHasBeenSet;
+
+                    /**
+                     * event 的type
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 资源名称
+                     */
+                    std::string m_resourceName;
+                    bool m_resourceNameHasBeenSet;
+
+                    /**
+                     * 关键词查询
+                     */
+                    std::string m_searchWord;
+                    bool m_searchWordHasBeenSet;
 
                 };
             }

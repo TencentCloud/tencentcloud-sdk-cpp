@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流量排行
-                     * @return Result 流量排行
+                     * 获取流量排行返回结果
+                     * @return Result 流量排行返回结果
                      * 
                      */
                     TopicFlowRankingResult GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流量排行
+                     * 流量排行返回结果
                      */
                     TopicFlowRankingResult m_result;
                     bool m_resultHasBeenSet;

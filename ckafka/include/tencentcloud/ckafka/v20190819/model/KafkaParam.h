@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool SelfBuiltHasBeenSet() const;
 
                     /**
-                     * 获取实例资源
-                     * @return Resource 实例资源
+                     * 获取ckafka集群实例Id
+                     * @return Resource ckafka集群实例Id
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
-                     * 设置实例资源
-                     * @param _resource 实例资源
+                     * 设置ckafka集群实例Id
+                     * @param _resource ckafka集群实例Id
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ResourceHasBeenSet() const;
 
                     /**
-                     * 获取Topic名称，多个以“,”分隔
-                     * @return Topic Topic名称，多个以“,”分隔
+                     * 获取主题名，多个以“,”分隔
+                     * @return Topic 主题名，多个以“,”分隔
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置Topic名称，多个以“,”分隔
-                     * @param _topic Topic名称，多个以“,”分隔
+                     * 设置主题名，多个以“,”分隔
+                     * @param _topic 主题名，多个以“,”分隔
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -186,18 +186,18 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取Zone ID
+                     * 获取可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ZoneId Zone ID
+                     * @return ZoneId 可用区
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置Zone ID
+                     * 设置可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _zoneId Zone ID
+                     * @param _zoneId 可用区
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -211,18 +211,18 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取Topic的Id
+                     * 获取主题Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopicId Topic的Id
+                     * @return TopicId 主题Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置Topic的Id
+                     * 设置主题Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _topicId Topic的Id
+                     * @param _topicId 主题Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -494,13 +494,13 @@ namespace TencentCloud
                     bool m_selfBuiltHasBeenSet;
 
                     /**
-                     * 实例资源
+                     * ckafka集群实例Id
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
-                     * Topic名称，多个以“,”分隔
+                     * 主题名，多个以“,”分隔
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
@@ -527,14 +527,14 @@ namespace TencentCloud
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * Zone ID
+                     * 可用区
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * Topic的Id
+                     * 主题Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;

@@ -23,7 +23,8 @@ using namespace std;
 ServerPushText::ServerPushText() :
     m_textHasBeenSet(false),
     m_interruptHasBeenSet(false),
-    m_stopAfterPlayHasBeenSet(false)
+    m_stopAfterPlayHasBeenSet(false),
+    m_audioHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ServerPushText::Deserialize(const rapidjson::Value &value)
         m_stopAfterPlayHasBeenSet = true;
     }
 
+    if (value.HasMember("Audio") && !value["Audio"].IsNull())
+    {
+        if (!value["Audio"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerPushText.Audio` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audio = string(value["Audio"].GetString());
+        m_audioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ServerPushText::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "StopAfterPlay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stopAfterPlay, allocator);
+    }
+
+    if (m_audioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Audio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_audio.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ServerPushText::SetStopAfterPlay(const bool& _stopAfterPlay)
 bool ServerPushText::StopAfterPlayHasBeenSet() const
 {
     return m_stopAfterPlayHasBeenSet;
+}
+
+string ServerPushText::GetAudio() const
+{
+    return m_audio;
+}
+
+void ServerPushText::SetAudio(const string& _audio)
+{
+    m_audio = _audio;
+    m_audioHasBeenSet = true;
+}
+
+bool ServerPushText::AudioHasBeenSet() const
+{
+    return m_audioHasBeenSet;
 }
 

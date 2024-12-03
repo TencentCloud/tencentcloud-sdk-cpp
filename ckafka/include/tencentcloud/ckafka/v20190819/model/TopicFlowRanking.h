@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ReplicaNumHasBeenSet() const;
 
                     /**
-                     * 获取Topic 流量
-                     * @return TopicTraffic Topic 流量
+                     * 获取Topic 流量,单位MB(设置date时以sum方式聚合)
+                     * @return TopicTraffic Topic 流量,单位MB(设置date时以sum方式聚合)
                      * 
                      */
                     std::string GetTopicTraffic() const;
 
                     /**
-                     * 设置Topic 流量
-                     * @param _topicTraffic Topic 流量
+                     * 设置Topic 流量,单位MB(设置date时以sum方式聚合)
+                     * @param _topicTraffic Topic 流量,单位MB(设置date时以sum方式聚合)
                      * 
                      */
                     void SetTopicTraffic(const std::string& _topicTraffic);
@@ -199,7 +199,7 @@ namespace TencentCloud
                     bool m_replicaNumHasBeenSet;
 
                     /**
-                     * Topic 流量
+                     * Topic 流量,单位MB(设置date时以sum方式聚合)
                      */
                     std::string m_topicTraffic;
                     bool m_topicTrafficHasBeenSet;

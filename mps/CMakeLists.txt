@@ -557,6 +557,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DescribeWordSamplesRequest.h
   include/tencentcloud/mps/v20190612/model/AddOnSubtitle.h
   include/tencentcloud/mps/v20190612/model/AwsSQS.h
+  include/tencentcloud/mps/v20190612/model/WordResult.h
   include/tencentcloud/mps/v20190612/model/LiveStreamProcessTask.h
   include/tencentcloud/mps/v20190612/model/QualityControlData.h
   include/tencentcloud/mps/v20190612/model/DescribeOutputRISTSettings.h
@@ -1201,6 +1202,7 @@ set(mps_src
   src/v20190612/model/DescribeWordSamplesRequest.cpp
   src/v20190612/model/AddOnSubtitle.cpp
   src/v20190612/model/AwsSQS.cpp
+  src/v20190612/model/WordResult.cpp
   src/v20190612/model/LiveStreamProcessTask.cpp
   src/v20190612/model/QualityControlData.cpp
   src/v20190612/model/DescribeOutputRISTSettings.cpp

@@ -44,12 +44,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片格式：支持PNG、JPG、JPEG格式；
-图片分辨率：长边分辨率不超过2056；
+                     * 获取图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；
+图片分辨率：长边分辨率范围【192，4096】；
 图片大小：不超过10M；
 图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内
-                     * @return ImageUrl 图片格式：支持PNG、JPG、JPEG格式；
-图片分辨率：长边分辨率不超过2056；
+                     * @return ImageUrl 图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；
+图片分辨率：长边分辨率范围【192，4096】；
 图片大小：不超过10M；
 图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内
                      * 
@@ -57,12 +57,12 @@ namespace TencentCloud
                     std::string GetImageUrl() const;
 
                     /**
-                     * 设置图片格式：支持PNG、JPG、JPEG格式；
-图片分辨率：长边分辨率不超过2056；
+                     * 设置图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；
+图片分辨率：长边分辨率范围【192，4096】；
 图片大小：不超过10M；
 图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内
-                     * @param _imageUrl 图片格式：支持PNG、JPG、JPEG格式；
-图片分辨率：长边分辨率不超过2056；
+                     * @param _imageUrl 图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；
+图片分辨率：长边分辨率范围【192，4096】；
 图片大小：不超过10M；
 图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内
                      * 
@@ -77,15 +77,31 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取图片base64数据。图片格式：支持PNG、JPG、JPEG格式；图片分辨率：长边分辨率不超过2056；图片大小：不超过10M；图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内
-                     * @return ImageBase64 图片base64数据。图片格式：支持PNG、JPG、JPEG格式；图片分辨率：长边分辨率不超过2056；图片大小：不超过10M；图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内
+                     * 获取图片base64数据。
+图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；
+图片分辨率：长边分辨率范围【192，4096】；
+图片大小：不超过10M；
+图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内
+                     * @return ImageBase64 图片base64数据。
+图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；
+图片分辨率：长边分辨率范围【192，4096】；
+图片大小：不超过10M；
+图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内
                      * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
-                     * 设置图片base64数据。图片格式：支持PNG、JPG、JPEG格式；图片分辨率：长边分辨率不超过2056；图片大小：不超过10M；图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内
-                     * @param _imageBase64 图片base64数据。图片格式：支持PNG、JPG、JPEG格式；图片分辨率：长边分辨率不超过2056；图片大小：不超过10M；图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内
+                     * 设置图片base64数据。
+图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；
+图片分辨率：长边分辨率范围【192，4096】；
+图片大小：不超过10M；
+图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内
+                     * @param _imageBase64 图片base64数据。
+图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；
+图片分辨率：长边分辨率范围【192，4096】；
+图片大小：不超过10M；
+图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内
                      * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
@@ -165,18 +181,18 @@ namespace TencentCloud
                     bool EnableBodyJoinsHasBeenSet() const;
 
                     /**
-                     * 获取最终视频是否保留原图的背景（该模式对于tuziwu、huajiangwu不生效）
+                     * 获取最终视频是否保留原图的背景，默认不保留。
 
-                     * @return EnableSegment 最终视频是否保留原图的背景（该模式对于tuziwu、huajiangwu不生效）
+                     * @return EnableSegment 最终视频是否保留原图的背景，默认不保留。
 
                      * 
                      */
                     bool GetEnableSegment() const;
 
                     /**
-                     * 设置最终视频是否保留原图的背景（该模式对于tuziwu、huajiangwu不生效）
+                     * 设置最终视频是否保留原图的背景，默认不保留。
 
-                     * @param _enableSegment 最终视频是否保留原图的背景（该模式对于tuziwu、huajiangwu不生效）
+                     * @param _enableSegment 最终视频是否保留原图的背景，默认不保留。
 
                      * 
                      */
@@ -254,8 +270,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 图片格式：支持PNG、JPG、JPEG格式；
-图片分辨率：长边分辨率不超过2056；
+                     * 图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；
+图片分辨率：长边分辨率范围【192，4096】；
 图片大小：不超过10M；
 图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内
                      */
@@ -263,7 +279,11 @@ namespace TencentCloud
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 图片base64数据。图片格式：支持PNG、JPG、JPEG格式；图片分辨率：长边分辨率不超过2056；图片大小：不超过10M；图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内
+                     * 图片base64数据。
+图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；
+图片分辨率：长边分辨率范围【192，4096】；
+图片大小：不超过10M；
+图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
@@ -288,7 +308,7 @@ namespace TencentCloud
                     bool m_enableBodyJoinsHasBeenSet;
 
                     /**
-                     * 最终视频是否保留原图的背景（该模式对于tuziwu、huajiangwu不生效）
+                     * 最终视频是否保留原图的背景，默认不保留。
 
                      */
                     bool m_enableSegment;

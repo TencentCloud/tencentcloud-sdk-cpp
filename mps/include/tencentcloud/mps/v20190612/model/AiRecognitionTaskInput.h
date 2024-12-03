@@ -67,6 +67,27 @@ namespace TencentCloud
                      */
                     bool DefinitionHasBeenSet() const;
 
+                    /**
+                     * 获取用户扩展字段，一般场景不用填。
+                     * @return UserExtPara 用户扩展字段，一般场景不用填。
+                     * 
+                     */
+                    std::string GetUserExtPara() const;
+
+                    /**
+                     * 设置用户扩展字段，一般场景不用填。
+                     * @param _userExtPara 用户扩展字段，一般场景不用填。
+                     * 
+                     */
+                    void SetUserExtPara(const std::string& _userExtPara);
+
+                    /**
+                     * 判断参数 UserExtPara 是否已赋值
+                     * @return UserExtPara 是否已赋值
+                     * 
+                     */
+                    bool UserExtParaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +95,12 @@ namespace TencentCloud
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
+
+                    /**
+                     * 用户扩展字段，一般场景不用填。
+                     */
+                    std::string m_userExtPara;
+                    bool m_userExtParaHasBeenSet;
 
                 };
             }
