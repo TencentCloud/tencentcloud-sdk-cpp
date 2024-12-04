@@ -48,7 +48,8 @@ FlowCreateApprover::FlowCreateApprover() :
     m_approverSignTypesHasBeenSet(false),
     m_signTypeSelectorHasBeenSet(false),
     m_deadlineHasBeenSet(false),
-    m_intentionHasBeenSet(false)
+    m_intentionHasBeenSet(false),
+    m_signEndpointsHasBeenSet(false)
 {
 }
 
@@ -390,6 +391,19 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_intentionHasBeenSet = true;
     }
 
+    if (value.HasMember("SignEndpoints") && !value["SignEndpoints"].IsNull())
+    {
+        if (!value["SignEndpoints"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.SignEndpoints` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SignEndpoints"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_signEndpoints.push_back((*itr).GetString());
+        }
+        m_signEndpointsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -656,6 +670,19 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_intention.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_signEndpointsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignEndpoints";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_signEndpoints.begin(); itr != m_signEndpoints.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1107,5 +1134,21 @@ void FlowCreateApprover::SetIntention(const Intention& _intention)
 bool FlowCreateApprover::IntentionHasBeenSet() const
 {
     return m_intentionHasBeenSet;
+}
+
+vector<string> FlowCreateApprover::GetSignEndpoints() const
+{
+    return m_signEndpoints;
+}
+
+void FlowCreateApprover::SetSignEndpoints(const vector<string>& _signEndpoints)
+{
+    m_signEndpoints = _signEndpoints;
+    m_signEndpointsHasBeenSet = true;
+}
+
+bool FlowCreateApprover::SignEndpointsHasBeenSet() const
+{
+    return m_signEndpointsHasBeenSet;
 }
 

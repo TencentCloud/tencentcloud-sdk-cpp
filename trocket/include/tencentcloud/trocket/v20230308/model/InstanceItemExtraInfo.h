@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool MaxStorageHasBeenSet() const;
 
                     /**
-                     * 获取专享集群最大保留时间
+                     * 获取专享集群最大保留时间，单位：小时
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxRetention 专享集群最大保留时间
+                     * @return MaxRetention 专享集群最大保留时间，单位：小时
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxRetention() const;
 
                     /**
-                     * 设置专享集群最大保留时间
+                     * 设置专享集群最大保留时间，单位：小时
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxRetention 专享集群最大保留时间
+                     * @param _maxRetention 专享集群最大保留时间，单位：小时
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool MaxRetentionHasBeenSet() const;
 
                     /**
-                     * 获取专项集群最大保留时间
+                     * 获取专项集群最大保留时间，单位：小时
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MinRetention 专项集群最大保留时间
+                     * @return MinRetention 专项集群最大保留时间，单位：小时
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMinRetention() const;
 
                     /**
-                     * 设置专项集群最大保留时间
+                     * 设置专项集群最大保留时间，单位：小时
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _minRetention 专项集群最大保留时间
+                     * @param _minRetention 专项集群最大保留时间，单位：小时
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool MinRetentionHasBeenSet() const;
 
                     /**
-                     * 获取4.0共享集群
+                     * 获取4.0共享集群状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceStatus 4.0共享集群
+                     * @return InstanceStatus 4.0共享集群状态
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceStatus() const;
 
                     /**
-                     * 设置4.0共享集群
+                     * 设置4.0共享集群状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceStatus 4.0共享集群
+                     * @param _instanceStatus 4.0共享集群状态
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -316,21 +316,21 @@ namespace TencentCloud
                     bool m_maxStorageHasBeenSet;
 
                     /**
-                     * 专享集群最大保留时间
+                     * 专享集群最大保留时间，单位：小时
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxRetention;
                     bool m_maxRetentionHasBeenSet;
 
                     /**
-                     * 专项集群最大保留时间
+                     * 专项集群最大保留时间，单位：小时
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_minRetention;
                     bool m_minRetentionHasBeenSet;
 
                     /**
-                     * 4.0共享集群
+                     * 4.0共享集群状态
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceStatus;

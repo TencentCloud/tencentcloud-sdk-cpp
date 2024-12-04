@@ -35,6 +35,8 @@
 #include <tencentcloud/lke/v20231130/model/CreateAttributeLabelResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateCorpRequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateCorpResponse.h>
+#include <tencentcloud/lke/v20231130/model/CreateDocCateRequest.h>
+#include <tencentcloud/lke/v20231130/model/CreateDocCateResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateQARequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateQAResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateQACateRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/lke/v20231130/model/DeleteAttributeLabelResponse.h>
 #include <tencentcloud/lke/v20231130/model/DeleteDocRequest.h>
 #include <tencentcloud/lke/v20231130/model/DeleteDocResponse.h>
+#include <tencentcloud/lke/v20231130/model/DeleteDocCateRequest.h>
+#include <tencentcloud/lke/v20231130/model/DeleteDocCateResponse.h>
 #include <tencentcloud/lke/v20231130/model/DeleteQARequest.h>
 #include <tencentcloud/lke/v20231130/model/DeleteQAResponse.h>
 #include <tencentcloud/lke/v20231130/model/DeleteQACateRequest.h>
@@ -125,6 +129,8 @@
 #include <tencentcloud/lke/v20231130/model/GetTaskStatusResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetWsTokenRequest.h>
 #include <tencentcloud/lke/v20231130/model/GetWsTokenResponse.h>
+#include <tencentcloud/lke/v20231130/model/GroupDocRequest.h>
+#include <tencentcloud/lke/v20231130/model/GroupDocResponse.h>
 #include <tencentcloud/lke/v20231130/model/GroupQARequest.h>
 #include <tencentcloud/lke/v20231130/model/GroupQAResponse.h>
 #include <tencentcloud/lke/v20231130/model/IgnoreUnsatisfiedReplyRequest.h>
@@ -135,10 +141,14 @@
 #include <tencentcloud/lke/v20231130/model/ListAppResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListAppCategoryRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListAppCategoryResponse.h>
+#include <tencentcloud/lke/v20231130/model/ListAppKnowledgeDetailRequest.h>
+#include <tencentcloud/lke/v20231130/model/ListAppKnowledgeDetailResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListAttributeLabelRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListAttributeLabelResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListDocRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListDocResponse.h>
+#include <tencentcloud/lke/v20231130/model/ListDocCateRequest.h>
+#include <tencentcloud/lke/v20231130/model/ListDocCateResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListModelRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListModelResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListQARequest.h>
@@ -161,6 +171,8 @@
 #include <tencentcloud/lke/v20231130/model/ListSelectDocResponse.h>
 #include <tencentcloud/lke/v20231130/model/ListUnsatisfiedReplyRequest.h>
 #include <tencentcloud/lke/v20231130/model/ListUnsatisfiedReplyResponse.h>
+#include <tencentcloud/lke/v20231130/model/ListUsageCallDetailRequest.h>
+#include <tencentcloud/lke/v20231130/model/ListUsageCallDetailResponse.h>
 #include <tencentcloud/lke/v20231130/model/ModifyAppRequest.h>
 #include <tencentcloud/lke/v20231130/model/ModifyAppResponse.h>
 #include <tencentcloud/lke/v20231130/model/ModifyAttributeLabelRequest.h>
@@ -169,6 +181,8 @@
 #include <tencentcloud/lke/v20231130/model/ModifyDocResponse.h>
 #include <tencentcloud/lke/v20231130/model/ModifyDocAttrRangeRequest.h>
 #include <tencentcloud/lke/v20231130/model/ModifyDocAttrRangeResponse.h>
+#include <tencentcloud/lke/v20231130/model/ModifyDocCateRequest.h>
+#include <tencentcloud/lke/v20231130/model/ModifyDocCateResponse.h>
 #include <tencentcloud/lke/v20231130/model/ModifyQARequest.h>
 #include <tencentcloud/lke/v20231130/model/ModifyQAResponse.h>
 #include <tencentcloud/lke/v20231130/model/ModifyQAAttrRangeRequest.h>
@@ -237,6 +251,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCorpResponse> CreateCorpOutcome;
                 typedef std::future<CreateCorpOutcome> CreateCorpOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CreateCorpRequest&, CreateCorpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCorpAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDocCateResponse> CreateDocCateOutcome;
+                typedef std::future<CreateDocCateOutcome> CreateDocCateOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::CreateDocCateRequest&, CreateDocCateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDocCateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateQAResponse> CreateQAOutcome;
                 typedef std::future<CreateQAOutcome> CreateQAOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CreateQARequest&, CreateQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateQAAsyncHandler;
@@ -261,6 +278,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDocResponse> DeleteDocOutcome;
                 typedef std::future<DeleteDocOutcome> DeleteDocOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DeleteDocRequest&, DeleteDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDocAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDocCateResponse> DeleteDocCateOutcome;
+                typedef std::future<DeleteDocCateOutcome> DeleteDocCateOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DeleteDocCateRequest&, DeleteDocCateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDocCateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteQAResponse> DeleteQAOutcome;
                 typedef std::future<DeleteQAOutcome> DeleteQAOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DeleteQARequest&, DeleteQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQAAsyncHandler;
@@ -372,6 +392,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetWsTokenResponse> GetWsTokenOutcome;
                 typedef std::future<GetWsTokenOutcome> GetWsTokenOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::GetWsTokenRequest&, GetWsTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetWsTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::GroupDocResponse> GroupDocOutcome;
+                typedef std::future<GroupDocOutcome> GroupDocOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::GroupDocRequest&, GroupDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GroupDocAsyncHandler;
                 typedef Outcome<Core::Error, Model::GroupQAResponse> GroupQAOutcome;
                 typedef std::future<GroupQAOutcome> GroupQAOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::GroupQARequest&, GroupQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GroupQAAsyncHandler;
@@ -387,12 +410,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListAppCategoryResponse> ListAppCategoryOutcome;
                 typedef std::future<ListAppCategoryOutcome> ListAppCategoryOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListAppCategoryRequest&, ListAppCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAppCategoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListAppKnowledgeDetailResponse> ListAppKnowledgeDetailOutcome;
+                typedef std::future<ListAppKnowledgeDetailOutcome> ListAppKnowledgeDetailOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::ListAppKnowledgeDetailRequest&, ListAppKnowledgeDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAppKnowledgeDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListAttributeLabelResponse> ListAttributeLabelOutcome;
                 typedef std::future<ListAttributeLabelOutcome> ListAttributeLabelOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListAttributeLabelRequest&, ListAttributeLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAttributeLabelAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListDocResponse> ListDocOutcome;
                 typedef std::future<ListDocOutcome> ListDocOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListDocRequest&, ListDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListDocAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListDocCateResponse> ListDocCateOutcome;
+                typedef std::future<ListDocCateOutcome> ListDocCateOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::ListDocCateRequest&, ListDocCateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListDocCateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListModelResponse> ListModelOutcome;
                 typedef std::future<ListModelOutcome> ListModelOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListModelRequest&, ListModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListModelAsyncHandler;
@@ -426,6 +455,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListUnsatisfiedReplyResponse> ListUnsatisfiedReplyOutcome;
                 typedef std::future<ListUnsatisfiedReplyOutcome> ListUnsatisfiedReplyOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ListUnsatisfiedReplyRequest&, ListUnsatisfiedReplyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUnsatisfiedReplyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListUsageCallDetailResponse> ListUsageCallDetailOutcome;
+                typedef std::future<ListUsageCallDetailOutcome> ListUsageCallDetailOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::ListUsageCallDetailRequest&, ListUsageCallDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUsageCallDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAppResponse> ModifyAppOutcome;
                 typedef std::future<ModifyAppOutcome> ModifyAppOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ModifyAppRequest&, ModifyAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppAsyncHandler;
@@ -438,6 +470,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDocAttrRangeResponse> ModifyDocAttrRangeOutcome;
                 typedef std::future<ModifyDocAttrRangeOutcome> ModifyDocAttrRangeOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ModifyDocAttrRangeRequest&, ModifyDocAttrRangeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDocAttrRangeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDocCateResponse> ModifyDocCateOutcome;
+                typedef std::future<ModifyDocCateOutcome> ModifyDocCateOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::ModifyDocCateRequest&, ModifyDocCateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDocCateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyQAResponse> ModifyQAOutcome;
                 typedef std::future<ModifyQAOutcome> ModifyQAOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ModifyQARequest&, ModifyQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyQAAsyncHandler;
@@ -552,6 +587,15 @@ namespace TencentCloud
                 CreateCorpOutcomeCallable CreateCorpCallable(const Model::CreateCorpRequest& request);
 
                 /**
+                 *创建Doc分类
+                 * @param req CreateDocCateRequest
+                 * @return CreateDocCateOutcome
+                 */
+                CreateDocCateOutcome CreateDocCate(const Model::CreateDocCateRequest &request);
+                void CreateDocCateAsync(const Model::CreateDocCateRequest& request, const CreateDocCateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDocCateOutcomeCallable CreateDocCateCallable(const Model::CreateDocCateRequest& request);
+
+                /**
                  *录入问答
                  * @param req CreateQARequest
                  * @return CreateQAOutcome
@@ -625,6 +669,15 @@ namespace TencentCloud
                 DeleteDocOutcome DeleteDoc(const Model::DeleteDocRequest &request);
                 void DeleteDocAsync(const Model::DeleteDocRequest& request, const DeleteDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDocOutcomeCallable DeleteDocCallable(const Model::DeleteDocRequest& request);
+
+                /**
+                 *Doc分类删除
+                 * @param req DeleteDocCateRequest
+                 * @return DeleteDocCateOutcome
+                 */
+                DeleteDocCateOutcome DeleteDocCate(const Model::DeleteDocCateRequest &request);
+                void DeleteDocCateAsync(const Model::DeleteDocCateRequest& request, const DeleteDocCateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDocCateOutcomeCallable DeleteDocCateCallable(const Model::DeleteDocCateRequest& request);
 
                 /**
                  *删除问答
@@ -961,6 +1014,15 @@ namespace TencentCloud
                 GetWsTokenOutcomeCallable GetWsTokenCallable(const Model::GetWsTokenRequest& request);
 
                 /**
+                 *Doc分组
+                 * @param req GroupDocRequest
+                 * @return GroupDocOutcome
+                 */
+                GroupDocOutcome GroupDoc(const Model::GroupDocRequest &request);
+                void GroupDocAsync(const Model::GroupDocRequest& request, const GroupDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GroupDocOutcomeCallable GroupDocCallable(const Model::GroupDocRequest& request);
+
+                /**
                  *QA分组
                  * @param req GroupQARequest
                  * @return GroupQAOutcome
@@ -1006,6 +1068,15 @@ namespace TencentCloud
                 ListAppCategoryOutcomeCallable ListAppCategoryCallable(const Model::ListAppCategoryRequest& request);
 
                 /**
+                 *列表查询知识库容量详情
+                 * @param req ListAppKnowledgeDetailRequest
+                 * @return ListAppKnowledgeDetailOutcome
+                 */
+                ListAppKnowledgeDetailOutcome ListAppKnowledgeDetail(const Model::ListAppKnowledgeDetailRequest &request);
+                void ListAppKnowledgeDetailAsync(const Model::ListAppKnowledgeDetailRequest& request, const ListAppKnowledgeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListAppKnowledgeDetailOutcomeCallable ListAppKnowledgeDetailCallable(const Model::ListAppKnowledgeDetailRequest& request);
+
+                /**
                  *查询属性标签列表
                  * @param req ListAttributeLabelRequest
                  * @return ListAttributeLabelOutcome
@@ -1022,6 +1093,15 @@ namespace TencentCloud
                 ListDocOutcome ListDoc(const Model::ListDocRequest &request);
                 void ListDocAsync(const Model::ListDocRequest& request, const ListDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListDocOutcomeCallable ListDocCallable(const Model::ListDocRequest& request);
+
+                /**
+                 *获取Doc分类
+                 * @param req ListDocCateRequest
+                 * @return ListDocCateOutcome
+                 */
+                ListDocCateOutcome ListDocCate(const Model::ListDocCateRequest &request);
+                void ListDocCateAsync(const Model::ListDocCateRequest& request, const ListDocCateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListDocCateOutcomeCallable ListDocCateCallable(const Model::ListDocCateRequest& request);
 
                 /**
                  *获取模型列表
@@ -1123,6 +1203,15 @@ namespace TencentCloud
                 ListUnsatisfiedReplyOutcomeCallable ListUnsatisfiedReplyCallable(const Model::ListUnsatisfiedReplyRequest& request);
 
                 /**
+                 *列表查询单次调用明细
+                 * @param req ListUsageCallDetailRequest
+                 * @return ListUsageCallDetailOutcome
+                 */
+                ListUsageCallDetailOutcome ListUsageCallDetail(const Model::ListUsageCallDetailRequest &request);
+                void ListUsageCallDetailAsync(const Model::ListUsageCallDetailRequest& request, const ListUsageCallDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListUsageCallDetailOutcomeCallable ListUsageCallDetailCallable(const Model::ListUsageCallDetailRequest& request);
+
+                /**
                  *修改应用请求结构体
                  * @param req ModifyAppRequest
                  * @return ModifyAppOutcome
@@ -1157,6 +1246,15 @@ namespace TencentCloud
                 ModifyDocAttrRangeOutcome ModifyDocAttrRange(const Model::ModifyDocAttrRangeRequest &request);
                 void ModifyDocAttrRangeAsync(const Model::ModifyDocAttrRangeRequest& request, const ModifyDocAttrRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDocAttrRangeOutcomeCallable ModifyDocAttrRangeCallable(const Model::ModifyDocAttrRangeRequest& request);
+
+                /**
+                 *修改Doc分类
+                 * @param req ModifyDocCateRequest
+                 * @return ModifyDocCateOutcome
+                 */
+                ModifyDocCateOutcome ModifyDocCate(const Model::ModifyDocCateRequest &request);
+                void ModifyDocCateAsync(const Model::ModifyDocCateRequest& request, const ModifyDocCateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDocCateOutcomeCallable ModifyDocCateCallable(const Model::ModifyDocCateRequest& request);
 
                 /**
                  *更新问答

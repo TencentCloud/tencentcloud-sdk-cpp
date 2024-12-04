@@ -409,6 +409,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeDBFeaturesRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupSummariesResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBinlogBackupOverviewRequest.h
+  include/tencentcloud/cdb/v20170320/model/InstEventInfo.h
   include/tencentcloud/cdb/v20170320/model/ReloadBalanceProxyNodeRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceSecurityGroupsRequest.h
   include/tencentcloud/cdb/v20170320/model/CloseAuditServiceRequest.h
@@ -863,6 +864,7 @@ set(cdb_src
   src/v20170320/model/DescribeDBFeaturesRequest.cpp
   src/v20170320/model/DescribeBackupSummariesResponse.cpp
   src/v20170320/model/DescribeBinlogBackupOverviewRequest.cpp
+  src/v20170320/model/InstEventInfo.cpp
   src/v20170320/model/ReloadBalanceProxyNodeRequest.cpp
   src/v20170320/model/ModifyDBInstanceSecurityGroupsRequest.cpp
   src/v20170320/model/CloseAuditServiceRequest.cpp

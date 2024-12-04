@@ -298,6 +298,49 @@ LkeClient::CreateCorpOutcomeCallable LkeClient::CreateCorpCallable(const CreateC
     return task->get_future();
 }
 
+LkeClient::CreateDocCateOutcome LkeClient::CreateDocCate(const CreateDocCateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDocCate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDocCateResponse rsp = CreateDocCateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDocCateOutcome(rsp);
+        else
+            return CreateDocCateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDocCateOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::CreateDocCateAsync(const CreateDocCateRequest& request, const CreateDocCateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDocCate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::CreateDocCateOutcomeCallable LkeClient::CreateDocCateCallable(const CreateDocCateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDocCateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDocCate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::CreateQAOutcome LkeClient::CreateQA(const CreateQARequest &request)
 {
     auto outcome = MakeRequest(request, "CreateQA");
@@ -635,6 +678,49 @@ LkeClient::DeleteDocOutcomeCallable LkeClient::DeleteDocCallable(const DeleteDoc
         [this, request]()
         {
             return this->DeleteDoc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::DeleteDocCateOutcome LkeClient::DeleteDocCate(const DeleteDocCateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDocCate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDocCateResponse rsp = DeleteDocCateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDocCateOutcome(rsp);
+        else
+            return DeleteDocCateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDocCateOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DeleteDocCateAsync(const DeleteDocCateRequest& request, const DeleteDocCateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDocCate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DeleteDocCateOutcomeCallable LkeClient::DeleteDocCateCallable(const DeleteDocCateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDocCateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDocCate(request);
         }
     );
 
@@ -2233,6 +2319,49 @@ LkeClient::GetWsTokenOutcomeCallable LkeClient::GetWsTokenCallable(const GetWsTo
     return task->get_future();
 }
 
+LkeClient::GroupDocOutcome LkeClient::GroupDoc(const GroupDocRequest &request)
+{
+    auto outcome = MakeRequest(request, "GroupDoc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GroupDocResponse rsp = GroupDocResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GroupDocOutcome(rsp);
+        else
+            return GroupDocOutcome(o.GetError());
+    }
+    else
+    {
+        return GroupDocOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::GroupDocAsync(const GroupDocRequest& request, const GroupDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GroupDoc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::GroupDocOutcomeCallable LkeClient::GroupDocCallable(const GroupDocRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GroupDocOutcome()>>(
+        [this, request]()
+        {
+            return this->GroupDoc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::GroupQAOutcome LkeClient::GroupQA(const GroupQARequest &request)
 {
     auto outcome = MakeRequest(request, "GroupQA");
@@ -2448,6 +2577,49 @@ LkeClient::ListAppCategoryOutcomeCallable LkeClient::ListAppCategoryCallable(con
     return task->get_future();
 }
 
+LkeClient::ListAppKnowledgeDetailOutcome LkeClient::ListAppKnowledgeDetail(const ListAppKnowledgeDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAppKnowledgeDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAppKnowledgeDetailResponse rsp = ListAppKnowledgeDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAppKnowledgeDetailOutcome(rsp);
+        else
+            return ListAppKnowledgeDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAppKnowledgeDetailOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ListAppKnowledgeDetailAsync(const ListAppKnowledgeDetailRequest& request, const ListAppKnowledgeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListAppKnowledgeDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ListAppKnowledgeDetailOutcomeCallable LkeClient::ListAppKnowledgeDetailCallable(const ListAppKnowledgeDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListAppKnowledgeDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->ListAppKnowledgeDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::ListAttributeLabelOutcome LkeClient::ListAttributeLabel(const ListAttributeLabelRequest &request)
 {
     auto outcome = MakeRequest(request, "ListAttributeLabel");
@@ -2527,6 +2699,49 @@ LkeClient::ListDocOutcomeCallable LkeClient::ListDocCallable(const ListDocReques
         [this, request]()
         {
             return this->ListDoc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::ListDocCateOutcome LkeClient::ListDocCate(const ListDocCateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListDocCate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListDocCateResponse rsp = ListDocCateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListDocCateOutcome(rsp);
+        else
+            return ListDocCateOutcome(o.GetError());
+    }
+    else
+    {
+        return ListDocCateOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ListDocCateAsync(const ListDocCateRequest& request, const ListDocCateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListDocCate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ListDocCateOutcomeCallable LkeClient::ListDocCateCallable(const ListDocCateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListDocCateOutcome()>>(
+        [this, request]()
+        {
+            return this->ListDocCate(request);
         }
     );
 
@@ -3007,6 +3222,49 @@ LkeClient::ListUnsatisfiedReplyOutcomeCallable LkeClient::ListUnsatisfiedReplyCa
     return task->get_future();
 }
 
+LkeClient::ListUsageCallDetailOutcome LkeClient::ListUsageCallDetail(const ListUsageCallDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListUsageCallDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListUsageCallDetailResponse rsp = ListUsageCallDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListUsageCallDetailOutcome(rsp);
+        else
+            return ListUsageCallDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return ListUsageCallDetailOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ListUsageCallDetailAsync(const ListUsageCallDetailRequest& request, const ListUsageCallDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListUsageCallDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ListUsageCallDetailOutcomeCallable LkeClient::ListUsageCallDetailCallable(const ListUsageCallDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListUsageCallDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->ListUsageCallDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::ModifyAppOutcome LkeClient::ModifyApp(const ModifyAppRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyApp");
@@ -3172,6 +3430,49 @@ LkeClient::ModifyDocAttrRangeOutcomeCallable LkeClient::ModifyDocAttrRangeCallab
         [this, request]()
         {
             return this->ModifyDocAttrRange(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::ModifyDocCateOutcome LkeClient::ModifyDocCate(const ModifyDocCateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDocCate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDocCateResponse rsp = ModifyDocCateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDocCateOutcome(rsp);
+        else
+            return ModifyDocCateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDocCateOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ModifyDocCateAsync(const ModifyDocCateRequest& request, const ModifyDocCateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDocCate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ModifyDocCateOutcomeCallable LkeClient::ModifyDocCateCallable(const ModifyDocCateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDocCateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDocCate(request);
         }
     );
 

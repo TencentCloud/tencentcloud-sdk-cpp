@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件名
-                     * @return Name 过滤条件名
+                     * 获取过滤条件参数名
+                     * @return Name 过滤条件参数名
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置过滤条件名
-                     * @param _name 过滤条件名
+                     * 设置过滤条件参数名
+                     * @param _name 过滤条件参数名
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤条件名
+                     * 过滤条件参数名
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

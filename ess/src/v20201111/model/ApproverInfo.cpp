@@ -43,7 +43,8 @@ ApproverInfo::ApproverInfo() :
     m_addSignComponentsLimitsHasBeenSet(false),
     m_signInstructionContentHasBeenSet(false),
     m_deadlineHasBeenSet(false),
-    m_componentsHasBeenSet(false)
+    m_componentsHasBeenSet(false),
+    m_signEndpointsHasBeenSet(false)
 {
 }
 
@@ -328,6 +329,19 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
         m_componentsHasBeenSet = true;
     }
 
+    if (value.HasMember("SignEndpoints") && !value["SignEndpoints"].IsNull())
+    {
+        if (!value["SignEndpoints"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.SignEndpoints` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SignEndpoints"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_signEndpoints.push_back((*itr).GetString());
+        }
+        m_signEndpointsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -553,6 +567,19 @@ void ApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_signEndpointsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignEndpoints";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_signEndpoints.begin(); itr != m_signEndpoints.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -925,5 +952,21 @@ void ApproverInfo::SetComponents(const vector<Component>& _components)
 bool ApproverInfo::ComponentsHasBeenSet() const
 {
     return m_componentsHasBeenSet;
+}
+
+vector<string> ApproverInfo::GetSignEndpoints() const
+{
+    return m_signEndpoints;
+}
+
+void ApproverInfo::SetSignEndpoints(const vector<string>& _signEndpoints)
+{
+    m_signEndpoints = _signEndpoints;
+    m_signEndpointsHasBeenSet = true;
+}
+
+bool ApproverInfo::SignEndpointsHasBeenSet() const
+{
+    return m_signEndpointsHasBeenSet;
 }
 

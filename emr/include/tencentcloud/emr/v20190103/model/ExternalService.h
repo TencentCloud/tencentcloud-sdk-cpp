@@ -69,27 +69,6 @@ namespace TencentCloud
                     bool ShareTypeHasBeenSet() const;
 
                     /**
-                     * 获取自定义参数集合
-                     * @return CustomServiceDefineList 自定义参数集合
-                     * 
-                     */
-                    std::vector<CustomServiceDefine> GetCustomServiceDefineList() const;
-
-                    /**
-                     * 设置自定义参数集合
-                     * @param _customServiceDefineList 自定义参数集合
-                     * 
-                     */
-                    void SetCustomServiceDefineList(const std::vector<CustomServiceDefine>& _customServiceDefineList);
-
-                    /**
-                     * 判断参数 CustomServiceDefineList 是否已赋值
-                     * @return CustomServiceDefineList 是否已赋值
-                     * 
-                     */
-                    bool CustomServiceDefineListHasBeenSet() const;
-
-                    /**
                      * 获取共用组件名
                      * @return Service 共用组件名
                      * 
@@ -131,6 +110,27 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取自定义参数集合
+                     * @return CustomServiceDefineList 自定义参数集合
+                     * 
+                     */
+                    std::vector<CustomServiceDefine> GetCustomServiceDefineList() const;
+
+                    /**
+                     * 设置自定义参数集合
+                     * @param _customServiceDefineList 自定义参数集合
+                     * 
+                     */
+                    void SetCustomServiceDefineList(const std::vector<CustomServiceDefine>& _customServiceDefineList);
+
+                    /**
+                     * 判断参数 CustomServiceDefineList 是否已赋值
+                     * @return CustomServiceDefineList 是否已赋值
+                     * 
+                     */
+                    bool CustomServiceDefineListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -138,12 +138,6 @@ namespace TencentCloud
                      */
                     std::string m_shareType;
                     bool m_shareTypeHasBeenSet;
-
-                    /**
-                     * 自定义参数集合
-                     */
-                    std::vector<CustomServiceDefine> m_customServiceDefineList;
-                    bool m_customServiceDefineListHasBeenSet;
 
                     /**
                      * 共用组件名
@@ -156,6 +150,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 自定义参数集合
+                     */
+                    std::vector<CustomServiceDefine> m_customServiceDefineList;
+                    bool m_customServiceDefineListHasBeenSet;
 
                 };
             }

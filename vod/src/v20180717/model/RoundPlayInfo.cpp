@@ -30,7 +30,8 @@ RoundPlayInfo::RoundPlayInfo() :
     m_playBackModeHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_expiredTimeHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome RoundPlayInfo::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ExpiredTime") && !value["ExpiredTime"].IsNull())
+    {
+        if (!value["ExpiredTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoundPlayInfo.ExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expiredTime = string(value["ExpiredTime"].GetString());
+        m_expiredTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +252,14 @@ void RoundPlayInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiredTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expiredTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -404,5 +423,21 @@ void RoundPlayInfo::SetUpdateTime(const string& _updateTime)
 bool RoundPlayInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string RoundPlayInfo::GetExpiredTime() const
+{
+    return m_expiredTime;
+}
+
+void RoundPlayInfo::SetExpiredTime(const string& _expiredTime)
+{
+    m_expiredTime = _expiredTime;
+    m_expiredTimeHasBeenSet = true;
+}
+
+bool RoundPlayInfo::ExpiredTimeHasBeenSet() const
+{
+    return m_expiredTimeHasBeenSet;
 }
 

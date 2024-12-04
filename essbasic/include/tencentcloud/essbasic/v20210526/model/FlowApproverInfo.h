@@ -1085,6 +1085,31 @@ RecipientId参数获取：
                      */
                     bool IntentionHasBeenSet() const;
 
+                    /**
+                     * 获取进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * @return SignEndpoints 进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * 
+                     */
+                    std::vector<std::string> GetSignEndpoints() const;
+
+                    /**
+                     * 设置进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * @param _signEndpoints 进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     * 
+                     */
+                    void SetSignEndpoints(const std::vector<std::string>& _signEndpoints);
+
+                    /**
+                     * 判断参数 SignEndpoints 是否已赋值
+                     * @return SignEndpoints 是否已赋值
+                     * 
+                     */
+                    bool SignEndpointsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1362,6 +1387,13 @@ RecipientId参数获取：
                      */
                     Intention m_intention;
                     bool m_intentionHasBeenSet;
+
+                    /**
+                     * 进入签署流程的限制，目前支持以下选项：
+<ul><li> <b>空值（默认）</b> :无限制，可在任何场景进入签署流程。</li><li> <b>link</b> :选择此选项后，将无法通过控制台或电子签小程序列表进入填写或签署操作，仅可预览合同。填写或签署流程只能通过短信或发起方提供的专用链接进行。</li></ul>
+                     */
+                    std::vector<std::string> m_signEndpoints;
+                    bool m_signEndpointsHasBeenSet;
 
                 };
             }

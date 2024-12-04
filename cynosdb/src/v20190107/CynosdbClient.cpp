@@ -2276,6 +2276,49 @@ CynosdbClient::DescribeClusterPasswordComplexityOutcomeCallable CynosdbClient::D
     return task->get_future();
 }
 
+CynosdbClient::DescribeClusterTransparentEncryptInfoOutcome CynosdbClient::DescribeClusterTransparentEncryptInfo(const DescribeClusterTransparentEncryptInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterTransparentEncryptInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterTransparentEncryptInfoResponse rsp = DescribeClusterTransparentEncryptInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterTransparentEncryptInfoOutcome(rsp);
+        else
+            return DescribeClusterTransparentEncryptInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterTransparentEncryptInfoOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeClusterTransparentEncryptInfoAsync(const DescribeClusterTransparentEncryptInfoRequest& request, const DescribeClusterTransparentEncryptInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterTransparentEncryptInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeClusterTransparentEncryptInfoOutcomeCallable CynosdbClient::DescribeClusterTransparentEncryptInfoCallable(const DescribeClusterTransparentEncryptInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterTransparentEncryptInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterTransparentEncryptInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeClustersOutcome CynosdbClient::DescribeClusters(const DescribeClustersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusters");
@@ -5322,6 +5365,49 @@ CynosdbClient::OpenClusterReadOnlyInstanceGroupAccessOutcomeCallable CynosdbClie
         [this, request]()
         {
             return this->OpenClusterReadOnlyInstanceGroupAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::OpenClusterTransparentEncryptOutcome CynosdbClient::OpenClusterTransparentEncrypt(const OpenClusterTransparentEncryptRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenClusterTransparentEncrypt");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenClusterTransparentEncryptResponse rsp = OpenClusterTransparentEncryptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenClusterTransparentEncryptOutcome(rsp);
+        else
+            return OpenClusterTransparentEncryptOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenClusterTransparentEncryptOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::OpenClusterTransparentEncryptAsync(const OpenClusterTransparentEncryptRequest& request, const OpenClusterTransparentEncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenClusterTransparentEncrypt(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::OpenClusterTransparentEncryptOutcomeCallable CynosdbClient::OpenClusterTransparentEncryptCallable(const OpenClusterTransparentEncryptRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenClusterTransparentEncryptOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenClusterTransparentEncrypt(request);
         }
     );
 

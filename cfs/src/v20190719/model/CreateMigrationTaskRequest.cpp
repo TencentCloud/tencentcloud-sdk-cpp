@@ -37,7 +37,8 @@ CreateMigrationTaskRequest::CreateMigrationTaskRequest() :
     m_bucketAddressHasBeenSet(false),
     m_listAddressHasBeenSet(false),
     m_fsNameHasBeenSet(false),
-    m_bucketPathHasBeenSet(false)
+    m_bucketPathHasBeenSet(false),
+    m_directionHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,14 @@ string CreateMigrationTaskRequest::ToJsonString() const
         string key = "BucketPath";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_bucketPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_directionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Direction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_direction, allocator);
     }
 
 
@@ -414,6 +423,22 @@ void CreateMigrationTaskRequest::SetBucketPath(const string& _bucketPath)
 bool CreateMigrationTaskRequest::BucketPathHasBeenSet() const
 {
     return m_bucketPathHasBeenSet;
+}
+
+uint64_t CreateMigrationTaskRequest::GetDirection() const
+{
+    return m_direction;
+}
+
+void CreateMigrationTaskRequest::SetDirection(const uint64_t& _direction)
+{
+    m_direction = _direction;
+    m_directionHasBeenSet = true;
+}
+
+bool CreateMigrationTaskRequest::DirectionHasBeenSet() const
+{
+    return m_directionHasBeenSet;
 }
 
 

@@ -28,7 +28,9 @@ CreateRoundPlayRequest::CreateRoundPlayRequest() :
     m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descHasBeenSet(false),
-    m_playBackModeHasBeenSet(false)
+    m_playBackModeHasBeenSet(false),
+    m_roundPlayIdHasBeenSet(false),
+    m_expiredTimeHasBeenSet(false)
 {
 }
 
@@ -92,6 +94,22 @@ string CreateRoundPlayRequest::ToJsonString() const
         string key = "PlayBackMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_playBackMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roundPlayIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoundPlayId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roundPlayId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiredTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_expiredTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +214,38 @@ void CreateRoundPlayRequest::SetPlayBackMode(const string& _playBackMode)
 bool CreateRoundPlayRequest::PlayBackModeHasBeenSet() const
 {
     return m_playBackModeHasBeenSet;
+}
+
+string CreateRoundPlayRequest::GetRoundPlayId() const
+{
+    return m_roundPlayId;
+}
+
+void CreateRoundPlayRequest::SetRoundPlayId(const string& _roundPlayId)
+{
+    m_roundPlayId = _roundPlayId;
+    m_roundPlayIdHasBeenSet = true;
+}
+
+bool CreateRoundPlayRequest::RoundPlayIdHasBeenSet() const
+{
+    return m_roundPlayIdHasBeenSet;
+}
+
+string CreateRoundPlayRequest::GetExpiredTime() const
+{
+    return m_expiredTime;
+}
+
+void CreateRoundPlayRequest::SetExpiredTime(const string& _expiredTime)
+{
+    m_expiredTime = _expiredTime;
+    m_expiredTimeHasBeenSet = true;
+}
+
+bool CreateRoundPlayRequest::ExpiredTimeHasBeenSet() const
+{
+    return m_expiredTimeHasBeenSet;
 }
 
 

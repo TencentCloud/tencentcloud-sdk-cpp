@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdb/v20170320/model/InstEventInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,50 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取事件数。
+                     * @return TotalCount 事件数。
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取事件信息。查询不到信息时，Items为null。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Items 事件信息。查询不到信息时，Items为null。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<InstEventInfo> GetItems() const;
+
+                    /**
+                     * 判断参数 Items 是否已赋值
+                     * @return Items 是否已赋值
+                     * 
+                     */
+                    bool ItemsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 事件数。
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 事件信息。查询不到信息时，Items为null。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<InstEventInfo> m_items;
+                    bool m_itemsHasBeenSet;
 
                 };
             }

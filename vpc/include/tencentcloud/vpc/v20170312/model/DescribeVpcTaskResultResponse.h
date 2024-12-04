@@ -74,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取异步任务详细结果。只用于特殊场景，如批量删除弹性网卡时查询成功的网卡列表和失败的列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 异步任务详细结果。只用于特殊场景，如批量删除弹性网卡时查询成功的网卡列表和失败的列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcTaskResultDetailInfo> GetResult() const;
@@ -104,7 +102,6 @@ namespace TencentCloud
 
                     /**
                      * 异步任务详细结果。只用于特殊场景，如批量删除弹性网卡时查询成功的网卡列表和失败的列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcTaskResultDetailInfo> m_result;
                     bool m_resultHasBeenSet;

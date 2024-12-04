@@ -138,7 +138,7 @@ namespace TencentCloud
                 TextTranslateOutcomeCallable TextTranslateCallable(const Model::TextTranslateRequest& request);
 
                 /**
-                 *文本翻译的批量接口
+                 *批量翻译文本的接口
                  * @param req TextTranslateBatchRequest
                  * @return TextTranslateBatchOutcome
                  */

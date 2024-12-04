@@ -357,6 +357,27 @@ namespace TencentCloud
                      */
                     bool BucketPathHasBeenSet() const;
 
+                    /**
+                     * 获取迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0
+                     * @return Direction 迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0
+                     * 
+                     */
+                    uint64_t GetDirection() const;
+
+                    /**
+                     * 设置迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0
+                     * @param _direction 迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0
+                     * 
+                     */
+                    void SetDirection(const uint64_t& _direction);
+
+                    /**
+                     * 判断参数 Direction 是否已赋值
+                     * @return Direction 是否已赋值
+                     * 
+                     */
+                    bool DirectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -448,6 +469,12 @@ namespace TencentCloud
                      */
                     std::string m_bucketPath;
                     bool m_bucketPathHasBeenSet;
+
+                    /**
+                     * 迁移方向。0: 对象存储迁移至文件系统，1: 文件系统迁移至对象存储。默认 0
+                     */
+                    uint64_t m_direction;
+                    bool m_directionHasBeenSet;
 
                 };
             }

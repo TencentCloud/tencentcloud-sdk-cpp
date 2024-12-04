@@ -1259,6 +1259,31 @@ namespace TencentCloud
                      */
                     bool ConfigDetailHasBeenSet() const;
 
+                    /**
+                     * 获取集群绑定的文件系统数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BindFileSystemNum 集群绑定的文件系统数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBindFileSystemNum() const;
+
+                    /**
+                     * 设置集群绑定的文件系统数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bindFileSystemNum 集群绑定的文件系统数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBindFileSystemNum(const int64_t& _bindFileSystemNum);
+
+                    /**
+                     * 判断参数 BindFileSystemNum 是否已赋值
+                     * @return BindFileSystemNum 是否已赋值
+                     * 
+                     */
+                    bool BindFileSystemNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1595,6 +1620,13 @@ namespace TencentCloud
                      */
                     EmrProductConfigDetail m_configDetail;
                     bool m_configDetailHasBeenSet;
+
+                    /**
+                     * 集群绑定的文件系统数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_bindFileSystemNum;
+                    bool m_bindFileSystemNumHasBeenSet;
 
                 };
             }
