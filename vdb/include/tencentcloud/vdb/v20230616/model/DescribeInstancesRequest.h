@@ -170,6 +170,27 @@ namespace TencentCloud
                     bool EngineVersionsHasBeenSet() const;
 
                     /**
+                     * 获取按照api版本筛选实例
+                     * @return ApiVersions 按照api版本筛选实例
+                     * 
+                     */
+                    std::vector<std::string> GetApiVersions() const;
+
+                    /**
+                     * 设置按照api版本筛选实例
+                     * @param _apiVersions 按照api版本筛选实例
+                     * 
+                     */
+                    void SetApiVersions(const std::vector<std::string>& _apiVersions);
+
+                    /**
+                     * 判断参数 ApiVersions 是否已赋值
+                     * @return ApiVersions 是否已赋值
+                     * 
+                     */
+                    bool ApiVersionsHasBeenSet() const;
+
+                    /**
                      * 获取按照创建时间筛选实例。
                      * @return CreateAt 按照创建时间筛选实例。
                      * 
@@ -353,6 +374,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_engineVersions;
                     bool m_engineVersionsHasBeenSet;
+
+                    /**
+                     * 按照api版本筛选实例
+                     */
+                    std::vector<std::string> m_apiVersions;
+                    bool m_apiVersionsHasBeenSet;
 
                     /**
                      * 按照创建时间筛选实例。

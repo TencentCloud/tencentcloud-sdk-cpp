@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取目标关联的策略列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 目标关联的策略列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ListPoliciesForTarget> GetList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 目标关联的策略列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ListPoliciesForTarget> m_list;
                     bool m_listHasBeenSet;

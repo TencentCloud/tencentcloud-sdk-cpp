@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
+                     * 获取ckafka集群实例Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 实例id
+                     * @return InstanceId ckafka集群实例Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
+                     * 设置ckafka集群实例Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceId 实例id
+                     * @param _instanceId ckafka集群实例Id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取topic名称
+                     * 获取主题名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopicName topic名称
+                     * @return TopicName 主题名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置topic名称
+                     * 设置主题名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _topicName topic名称
+                     * @param _topicName 主题名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取状态码
+                     * 获取操作返回码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReturnCode 状态码
+                     * @return ReturnCode 操作返回码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReturnCode() const;
 
                     /**
-                     * 设置状态码
+                     * 设置操作返回码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _returnCode 状态码
+                     * @param _returnCode 操作返回码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,15 +122,15 @@ namespace TencentCloud
                     bool ReturnCodeHasBeenSet() const;
 
                     /**
-                     * 获取状态消息
-                     * @return Message 状态消息
+                     * 获取操作返回信息
+                     * @return Message 操作返回信息
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置状态消息
-                     * @param _message 状态消息
+                     * 设置操作返回信息
+                     * @param _message 操作返回信息
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -145,28 +145,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id
+                     * ckafka集群实例Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * topic名称
+                     * 主题名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 状态码
+                     * 操作返回码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_returnCode;
                     bool m_returnCodeHasBeenSet;
 
                     /**
-                     * 状态消息
+                     * 操作返回信息
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

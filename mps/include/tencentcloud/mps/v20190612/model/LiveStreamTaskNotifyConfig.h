@@ -47,10 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+                     * 获取通知类型：
+"CMQ"：回调消息写入cmq队列； 
+"URL"： 指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同[解析直播事件通知接口](https://cloud.tencent.com/document/product/862/39229) 的输出参数
 
 <font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
-                     * @return NotifyType 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+                     * @return NotifyType 通知类型：
+"CMQ"：回调消息写入cmq队列； 
+"URL"： 指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同[解析直播事件通知接口](https://cloud.tencent.com/document/product/862/39229) 的输出参数
 
 <font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
                      * 
@@ -58,10 +62,14 @@ namespace TencentCloud
                     std::string GetNotifyType() const;
 
                     /**
-                     * 设置通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+                     * 设置通知类型：
+"CMQ"：回调消息写入cmq队列； 
+"URL"： 指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同[解析直播事件通知接口](https://cloud.tencent.com/document/product/862/39229) 的输出参数
 
 <font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
-                     * @param _notifyType 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+                     * @param _notifyType 通知类型：
+"CMQ"：回调消息写入cmq队列； 
+"URL"： 指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同[解析直播事件通知接口](https://cloud.tencent.com/document/product/862/39229) 的输出参数
 
 <font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
                      * 
@@ -74,6 +82,27 @@ namespace TencentCloud
                      * 
                      */
                     bool NotifyTypeHasBeenSet() const;
+
+                    /**
+                     * 获取HTTP回调地址，NotifyType为URL时必填。
+                     * @return NotifyUrl HTTP回调地址，NotifyType为URL时必填。
+                     * 
+                     */
+                    std::string GetNotifyUrl() const;
+
+                    /**
+                     * 设置HTTP回调地址，NotifyType为URL时必填。
+                     * @param _notifyUrl HTTP回调地址，NotifyType为URL时必填。
+                     * 
+                     */
+                    void SetNotifyUrl(const std::string& _notifyUrl);
+
+                    /**
+                     * 判断参数 NotifyUrl 是否已赋值
+                     * @return NotifyUrl 是否已赋值
+                     * 
+                     */
+                    bool NotifyUrlHasBeenSet() const;
 
                     /**
                      * 获取CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。
@@ -160,27 +189,6 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取HTTP回调地址，NotifyType为URL时必填。
-                     * @return NotifyUrl HTTP回调地址，NotifyType为URL时必填。
-                     * 
-                     */
-                    std::string GetNotifyUrl() const;
-
-                    /**
-                     * 设置HTTP回调地址，NotifyType为URL时必填。
-                     * @param _notifyUrl HTTP回调地址，NotifyType为URL时必填。
-                     * 
-                     */
-                    void SetNotifyUrl(const std::string& _notifyUrl);
-
-                    /**
-                     * 判断参数 NotifyUrl 是否已赋值
-                     * @return NotifyUrl 是否已赋值
-                     * 
-                     */
-                    bool NotifyUrlHasBeenSet() const;
-
-                    /**
                      * 获取用于生成回调签名的 Key。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotifyKey 用于生成回调签名的 Key。
@@ -208,12 +216,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+                     * 通知类型：
+"CMQ"：回调消息写入cmq队列； 
+"URL"： 指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同[解析直播事件通知接口](https://cloud.tencent.com/document/product/862/39229) 的输出参数
 
 <font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;
+
+                    /**
+                     * HTTP回调地址，NotifyType为URL时必填。
+                     */
+                    std::string m_notifyUrl;
+                    bool m_notifyUrlHasBeenSet;
 
                     /**
                      * CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。
@@ -238,12 +254,6 @@ namespace TencentCloud
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
-
-                    /**
-                     * HTTP回调地址，NotifyType为URL时必填。
-                     */
-                    std::string m_notifyUrl;
-                    bool m_notifyUrlHasBeenSet;
 
                     /**
                      * 用于生成回调签名的 Key。

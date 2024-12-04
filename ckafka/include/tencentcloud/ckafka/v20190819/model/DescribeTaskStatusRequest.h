@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务唯一标记
-                     * @return FlowId 任务唯一标记
+                     * 获取流程Id
+                     * @return FlowId 流程Id
                      * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
-                     * 设置任务唯一标记
-                     * @param _flowId 任务唯一标记
+                     * 设置流程Id
+                     * @param _flowId 流程Id
                      * 
                      */
                     void SetFlowId(const int64_t& _flowId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务唯一标记
+                     * 流程Id
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;

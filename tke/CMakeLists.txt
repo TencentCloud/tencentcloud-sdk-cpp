@@ -23,9 +23,11 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/StartMachinesResponse.h
   include/tencentcloud/tke/v20220501/model/NativeNodeInfo.h
   include/tencentcloud/tke/v20220501/model/HealthCheckTemplateRule.h
+  include/tencentcloud/tke/v20220501/model/GPUConfig.h
   include/tencentcloud/tke/v20220501/model/HealthCheckPolicyRule.h
   include/tencentcloud/tke/v20220501/model/DeleteHealthCheckPolicyRequest.h
   include/tencentcloud/tke/v20220501/model/CreateNodePoolResponse.h
+  include/tencentcloud/tke/v20220501/model/TagSpecification.h
   include/tencentcloud/tke/v20220501/model/CreateNativeNodePoolParam.h
   include/tencentcloud/tke/v20220501/model/DescribeNodePoolsResponse.h
   include/tencentcloud/tke/v20220501/model/ExternalNodeInfo.h
@@ -53,7 +55,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/Annotation.h
   include/tencentcloud/tke/v20220501/model/DescribeClusterInstancesRequest.h
   include/tencentcloud/tke/v20220501/model/DeleteHealthCheckPolicyResponse.h
-  include/tencentcloud/tke/v20220501/model/TagSpecification.h
+  include/tencentcloud/tke/v20220501/model/GPUParams.h
   include/tencentcloud/tke/v20220501/model/LifecycleConfig.h
   include/tencentcloud/tke/v20220501/model/RebootMachinesRequest.h
   include/tencentcloud/tke/v20220501/model/ModifyNodePoolResponse.h
@@ -729,9 +731,11 @@ set(tke_src
   src/v20220501/model/StartMachinesResponse.cpp
   src/v20220501/model/NativeNodeInfo.cpp
   src/v20220501/model/HealthCheckTemplateRule.cpp
+  src/v20220501/model/GPUConfig.cpp
   src/v20220501/model/HealthCheckPolicyRule.cpp
   src/v20220501/model/DeleteHealthCheckPolicyRequest.cpp
   src/v20220501/model/CreateNodePoolResponse.cpp
+  src/v20220501/model/TagSpecification.cpp
   src/v20220501/model/CreateNativeNodePoolParam.cpp
   src/v20220501/model/DescribeNodePoolsResponse.cpp
   src/v20220501/model/ExternalNodeInfo.cpp
@@ -759,7 +763,7 @@ set(tke_src
   src/v20220501/model/Annotation.cpp
   src/v20220501/model/DescribeClusterInstancesRequest.cpp
   src/v20220501/model/DeleteHealthCheckPolicyResponse.cpp
-  src/v20220501/model/TagSpecification.cpp
+  src/v20220501/model/GPUParams.cpp
   src/v20220501/model/LifecycleConfig.cpp
   src/v20220501/model/RebootMachinesRequest.cpp
   src/v20220501/model/ModifyNodePoolResponse.cpp

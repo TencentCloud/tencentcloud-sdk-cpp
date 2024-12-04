@@ -187,11 +187,11 @@ namespace TencentCloud
                      * 获取原内网 IPv4 地址保留时长。
 - 单位：天。
 - 取值范围：0、1、2、3、7、15。
-**说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。
+**说明**：保留时长不设置或者设置为0，原网络地址将立即释放。
                      * @return Recycle 原内网 IPv4 地址保留时长。
 - 单位：天。
 - 取值范围：0、1、2、3、7、15。
-**说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。
+**说明**：保留时长不设置或者设置为0，原网络地址将立即释放。
                      * 
                      */
                     int64_t GetRecycle() const;
@@ -200,11 +200,11 @@ namespace TencentCloud
                      * 设置原内网 IPv4 地址保留时长。
 - 单位：天。
 - 取值范围：0、1、2、3、7、15。
-**说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。
+**说明**：保留时长不设置或者设置为0，原网络地址将立即释放。
                      * @param _recycle 原内网 IPv4 地址保留时长。
 - 单位：天。
 - 取值范围：0、1、2、3、7、15。
-**说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。
+**说明**：保留时长不设置或者设置为0，原网络地址将立即释放。
                      * 
                      */
                     void SetRecycle(const int64_t& _recycle);
@@ -282,7 +282,7 @@ namespace TencentCloud
                      * 原内网 IPv4 地址保留时长。
 - 单位：天。
 - 取值范围：0、1、2、3、7、15。
-**说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。
+**说明**：保留时长不设置或者设置为0，原网络地址将立即释放。
                      */
                     int64_t m_recycle;
                     bool m_recycleHasBeenSet;

@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略列表数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 策略列表数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ListPolicyNode> GetList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 策略列表数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ListPolicyNode> m_list;
                     bool m_listHasBeenSet;

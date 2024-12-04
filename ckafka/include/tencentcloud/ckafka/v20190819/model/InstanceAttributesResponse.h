@@ -942,6 +942,27 @@ namespace TencentCloud
                      */
                     bool ElasticFloatBandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取ssl自定义证书id
+                     * @return CustomCertId ssl自定义证书id
+                     * 
+                     */
+                    std::string GetCustomCertId() const;
+
+                    /**
+                     * 设置ssl自定义证书id
+                     * @param _customCertId ssl自定义证书id
+                     * 
+                     */
+                    void SetCustomCertId(const std::string& _customCertId);
+
+                    /**
+                     * 判断参数 CustomCertId 是否已赋值
+                     * @return CustomCertId 是否已赋值
+                     * 
+                     */
+                    bool CustomCertIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1195,6 +1216,12 @@ namespace TencentCloud
                      */
                     int64_t m_elasticFloatBandwidth;
                     bool m_elasticFloatBandwidthHasBeenSet;
+
+                    /**
+                     * ssl自定义证书id
+                     */
+                    std::string m_customCertId;
+                    bool m_customCertIdHasBeenSet;
 
                 };
             }

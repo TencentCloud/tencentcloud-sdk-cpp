@@ -443,15 +443,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取弹性带宽开关 0不开启  1开启（0默认
-                     * @return ElasticBandwidthSwitch 弹性带宽开关 0不开启  1开启（0默认
+                     * 获取弹性带宽开关 0不开启  1开启（0默认)
+                     * @return ElasticBandwidthSwitch 弹性带宽开关 0不开启  1开启（0默认)
                      * 
                      */
                     int64_t GetElasticBandwidthSwitch() const;
 
                     /**
-                     * 设置弹性带宽开关 0不开启  1开启（0默认
-                     * @param _elasticBandwidthSwitch 弹性带宽开关 0不开启  1开启（0默认
+                     * 设置弹性带宽开关 0不开启  1开启（0默认)
+                     * @param _elasticBandwidthSwitch 弹性带宽开关 0不开启  1开启（0默认)
                      * 
                      */
                     void SetElasticBandwidthSwitch(const int64_t& _elasticBandwidthSwitch);
@@ -580,7 +580,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 弹性带宽开关 0不开启  1开启（0默认
+                     * 弹性带宽开关 0不开启  1开启（0默认)
                      */
                     int64_t m_elasticBandwidthSwitch;
                     bool m_elasticBandwidthSwitchHasBeenSet;

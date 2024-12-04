@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建group描述
-                     * @return Result 创建group描述
+                     * 获取创建消费者组返回结果
+                     * @return Result 创建消费者组返回结果
                      * 
                      */
                     JgwOperateResponse GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建group描述
+                     * 创建消费者组返回结果
                      */
                     JgwOperateResponse m_result;
                     bool m_resultHasBeenSet;

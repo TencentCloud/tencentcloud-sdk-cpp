@@ -26,7 +26,8 @@ CreateBasicModerationRequest::CreateBasicModerationRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_roomIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_roomIdTypeHasBeenSet(false)
+    m_roomIdTypeHasBeenSet(false),
+    m_auditStorageParamsHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,15 @@ string CreateBasicModerationRequest::ToJsonString() const
         string key = "RoomIdType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_roomIdType, allocator);
+    }
+
+    if (m_auditStorageParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuditStorageParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_auditStorageParams.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -139,6 +149,22 @@ void CreateBasicModerationRequest::SetRoomIdType(const uint64_t& _roomIdType)
 bool CreateBasicModerationRequest::RoomIdTypeHasBeenSet() const
 {
     return m_roomIdTypeHasBeenSet;
+}
+
+AuditStorageParams CreateBasicModerationRequest::GetAuditStorageParams() const
+{
+    return m_auditStorageParams;
+}
+
+void CreateBasicModerationRequest::SetAuditStorageParams(const AuditStorageParams& _auditStorageParams)
+{
+    m_auditStorageParams = _auditStorageParams;
+    m_auditStorageParamsHasBeenSet = true;
+}
+
+bool CreateBasicModerationRequest::AuditStorageParamsHasBeenSet() const
+{
+    return m_auditStorageParamsHasBeenSet;
 }
 
 

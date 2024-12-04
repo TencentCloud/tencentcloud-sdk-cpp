@@ -97,6 +97,31 @@ namespace TencentCloud
                      */
                     bool PutLibraryAllowedHasBeenSet() const;
 
+                    /**
+                     * 获取内容审核结果: 0-正常;1-涉政;其他待确定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AuditClass 内容审核结果: 0-正常;1-涉政;其他待确定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAuditClass() const;
+
+                    /**
+                     * 设置内容审核结果: 0-正常;1-涉政;其他待确定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _auditClass 内容审核结果: 0-正常;1-涉政;其他待确定
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAuditClass(const int64_t& _auditClass);
+
+                    /**
+                     * 判断参数 AuditClass 是否已赋值
+                     * @return AuditClass 是否已赋值
+                     * 
+                     */
+                    bool AuditClassHasBeenSet() const;
+
                 private:
 
                     /**
@@ -112,6 +137,13 @@ namespace TencentCloud
                      */
                     bool m_putLibraryAllowed;
                     bool m_putLibraryAllowedHasBeenSet;
+
+                    /**
+                     * 内容审核结果: 0-正常;1-涉政;其他待确定
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_auditClass;
+                    bool m_auditClassHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取弹性topic名称
+                     * @return Name 弹性topic名称
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param _name 名称
+                     * 设置弹性topic名称
+                     * @param _name 弹性topic名称
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 名称
+                     * 弹性topic名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

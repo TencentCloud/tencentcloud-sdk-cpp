@@ -146,6 +146,31 @@ namespace TencentCloud
                      */
                     bool FormatHasBeenSet() const;
 
+                    /**
+                     * 获取封装格式短后缀
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShortFormat 封装格式短后缀
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetShortFormat() const;
+
+                    /**
+                     * 设置封装格式短后缀
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shortFormat 封装格式短后缀
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShortFormat(const std::string& _shortFormat);
+
+                    /**
+                     * 判断参数 ShortFormat 是否已赋值
+                     * @return ShortFormat 是否已赋值
+                     * 
+                     */
+                    bool ShortFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +200,13 @@ namespace TencentCloud
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
+
+                    /**
+                     * 封装格式短后缀
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_shortFormat;
+                    bool m_shortFormatHasBeenSet;
 
                 };
             }

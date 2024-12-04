@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待分析视频的URL，目前只支持*不带签名的*COS地址，长度最长1KB
-                     * @return URL 待分析视频的URL，目前只支持*不带签名的*COS地址，长度最长1KB
+                     * 获取待分析视频的URL，目前只支持*不带签名的*COS地址，字段输入内容最大为1KB
+                     * @return URL 待分析视频的URL，目前只支持*不带签名的*COS地址，字段输入内容最大为1KB
                      * 
                      */
                     std::string GetURL() const;
 
                     /**
-                     * 设置待分析视频的URL，目前只支持*不带签名的*COS地址，长度最长1KB
-                     * @param _uRL 待分析视频的URL，目前只支持*不带签名的*COS地址，长度最长1KB
+                     * 设置待分析视频的URL，目前只支持*不带签名的*COS地址，字段输入内容最大为1KB
+                     * @param _uRL 待分析视频的URL，目前只支持*不带签名的*COS地址，字段输入内容最大为1KB
                      * 
                      */
                     void SetURL(const std::string& _uRL);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool URLHasBeenSet() const;
 
                     /**
-                     * 获取待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32B
-                     * @return MD5 待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32B
+                     * 获取待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32
+                     * @return MD5 待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32
                      * 
                      */
                     std::string GetMD5() const;
 
                     /**
-                     * 设置待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32B
-                     * @param _mD5 待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32B
+                     * 设置待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32
+                     * @param _mD5 待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32
                      * 
                      */
                     void SetMD5(const std::string& _mD5);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MD5HasBeenSet() const;
 
                     /**
-                     * 获取待分析视频的名称，指定后可支持筛选，最多64B
-                     * @return Name 待分析视频的名称，指定后可支持筛选，最多64B
+                     * 获取待分析视频的名称，指定后可支持筛选，视频名称的大小长度不能超过64
+                     * @return Name 待分析视频的名称，指定后可支持筛选，视频名称的大小长度不能超过64
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置待分析视频的名称，指定后可支持筛选，最多64B
-                     * @param _name 待分析视频的名称，指定后可支持筛选，最多64B
+                     * 设置待分析视频的名称，指定后可支持筛选，视频名称的大小长度不能超过64
+                     * @param _name 待分析视频的名称，指定后可支持筛选，视频名称的大小长度不能超过64
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -200,19 +200,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待分析视频的URL，目前只支持*不带签名的*COS地址，长度最长1KB
+                     * 待分析视频的URL，目前只支持*不带签名的*COS地址，字段输入内容最大为1KB
                      */
                     std::string m_uRL;
                     bool m_uRLHasBeenSet;
 
                     /**
-                     * 待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32B
+                     * 待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32
                      */
                     std::string m_mD5;
                     bool m_mD5HasBeenSet;
 
                     /**
-                     * 待分析视频的名称，指定后可支持筛选，最多64B
+                     * 待分析视频的名称，指定后可支持筛选，视频名称的大小长度不能超过64
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

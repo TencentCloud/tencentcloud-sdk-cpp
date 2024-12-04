@@ -157,6 +157,31 @@ namespace TencentCloud
                      */
                     bool AppearRectHasBeenSet() const;
 
+                    /**
+                     * 获取人物的personId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PersonId 人物的personId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPersonId() const;
+
+                    /**
+                     * 设置人物的personId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _personId 人物的personId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPersonId(const std::string& _personId);
+
+                    /**
+                     * 判断参数 PersonId 是否已赋值
+                     * @return PersonId 是否已赋值
+                     * 
+                     */
+                    bool PersonIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +214,13 @@ namespace TencentCloud
                      */
                     Rectf m_appearRect;
                     bool m_appearRectHasBeenSet;
+
+                    /**
+                     * 人物的personId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_personId;
+                    bool m_personIdHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cdc专业集群业务参数
-                     * @return CdcId cdc专业集群业务参数
+                     * 获取cdc集群Id
+                     * @return CdcId cdc集群Id
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置cdc专业集群业务参数
-                     * @param _cdcId cdc专业集群业务参数
+                     * 设置cdc集群Id
+                     * @param _cdcId cdc集群Id
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * cdc专业集群业务参数
+                     * cdc集群Id
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;

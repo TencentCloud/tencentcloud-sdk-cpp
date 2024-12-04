@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取缩容应答
+                     * 获取返回结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Result 缩容应答
+                     * @return Result 返回结果
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 缩容应答
+                     * 返回结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScalingDownResp m_result;

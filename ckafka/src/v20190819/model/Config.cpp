@@ -28,7 +28,8 @@ Config::Config() :
     m_uncleanLeaderElectionEnableHasBeenSet(false),
     m_segmentBytesHasBeenSet(false),
     m_maxMessageBytesHasBeenSet(false),
-    m_retentionBytesHasBeenSet(false)
+    m_retentionBytesHasBeenSet(false),
+    m_logMsgTimestampTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
         m_retentionBytesHasBeenSet = true;
     }
 
+    if (value.HasMember("LogMsgTimestampType") && !value["LogMsgTimestampType"].IsNull())
+    {
+        if (!value["LogMsgTimestampType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Config.LogMsgTimestampType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logMsgTimestampType = string(value["LogMsgTimestampType"].GetString());
+        m_logMsgTimestampTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void Config::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "RetentionBytes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_retentionBytes, allocator);
+    }
+
+    if (m_logMsgTimestampTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogMsgTimestampType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logMsgTimestampType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void Config::SetRetentionBytes(const int64_t& _retentionBytes)
 bool Config::RetentionBytesHasBeenSet() const
 {
     return m_retentionBytesHasBeenSet;
+}
+
+string Config::GetLogMsgTimestampType() const
+{
+    return m_logMsgTimestampType;
+}
+
+void Config::SetLogMsgTimestampType(const string& _logMsgTimestampType)
+{
+    m_logMsgTimestampType = _logMsgTimestampType;
+    m_logMsgTimestampTypeHasBeenSet = true;
+}
+
+bool Config::LogMsgTimestampTypeHasBeenSet() const
+{
+    return m_logMsgTimestampTypeHasBeenSet;
 }
 

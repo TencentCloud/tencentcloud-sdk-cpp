@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CreateTask返回的任务ID，最长32B
-                     * @return TaskId CreateTask返回的任务ID，最长32B
+                     * 获取CreateTask返回的任务ID
+                     * @return TaskId CreateTask返回的任务ID
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置CreateTask返回的任务ID，最长32B
-                     * @param _taskId CreateTask返回的任务ID，最长32B
+                     * 设置CreateTask返回的任务ID
+                     * @param _taskId CreateTask返回的任务ID
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * CreateTask返回的任务ID，最长32B
+                     * CreateTask返回的任务ID
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

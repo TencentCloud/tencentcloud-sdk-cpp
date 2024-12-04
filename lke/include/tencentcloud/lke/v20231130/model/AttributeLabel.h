@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 属性标签
+                * 标签值
                 */
                 class AttributeLabel : public AbstractModel
                 {
@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签ID
+                     * 获取标准词ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LabelBizId 标签ID
+                     * @return LabelBizId 标准词ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabelBizId() const;
 
                     /**
-                     * 设置标签ID
+                     * 设置标准词ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _labelBizId 标签ID
+                     * @param _labelBizId 标准词ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool LabelBizIdHasBeenSet() const;
 
                     /**
-                     * 获取标签名称
+                     * 获取标准词名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LabelName 标签名称
+                     * @return LabelName 标准词名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabelName() const;
 
                     /**
-                     * 设置标签名称
+                     * 设置标准词名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _labelName 标签名称
+                     * @param _labelName 标准词名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool LabelNameHasBeenSet() const;
 
                     /**
-                     * 获取相似标签名称
+                     * 获取同义词名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SimilarLabels 相似标签名称
+                     * @return SimilarLabels 同义词名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSimilarLabels() const;
 
                     /**
-                     * 设置相似标签名称
+                     * 设置同义词名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _similarLabels 相似标签名称
+                     * @param _similarLabels 同义词名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签ID
+                     * 标准词ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_labelBizId;
                     bool m_labelBizIdHasBeenSet;
 
                     /**
-                     * 标签名称
+                     * 标准词名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_labelName;
                     bool m_labelNameHasBeenSet;
 
                     /**
-                     * 相似标签名称
+                     * 同义词名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_similarLabels;

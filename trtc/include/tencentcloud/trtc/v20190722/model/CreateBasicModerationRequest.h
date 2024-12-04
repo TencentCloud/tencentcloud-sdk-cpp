@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trtc/v20190722/model/AuditStorageParams.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,27 @@ namespace TencentCloud
                      */
                     bool RoomIdTypeHasBeenSet() const;
 
+                    /**
+                     * 获取音频文件上传到云存储的参数
+                     * @return AuditStorageParams 音频文件上传到云存储的参数
+                     * 
+                     */
+                    AuditStorageParams GetAuditStorageParams() const;
+
+                    /**
+                     * 设置音频文件上传到云存储的参数
+                     * @param _auditStorageParams 音频文件上传到云存储的参数
+                     * 
+                     */
+                    void SetAuditStorageParams(const AuditStorageParams& _auditStorageParams);
+
+                    /**
+                     * 判断参数 AuditStorageParams 是否已赋值
+                     * @return AuditStorageParams 是否已赋值
+                     * 
+                     */
+                    bool AuditStorageParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +173,12 @@ namespace TencentCloud
                      */
                     uint64_t m_roomIdType;
                     bool m_roomIdTypeHasBeenSet;
+
+                    /**
+                     * 音频文件上传到云存储的参数
+                     */
+                    AuditStorageParams m_auditStorageParams;
+                    bool m_auditStorageParamsHasBeenSet;
 
                 };
             }

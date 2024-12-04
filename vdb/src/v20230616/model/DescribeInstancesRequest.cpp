@@ -29,6 +29,7 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_statusHasBeenSet(false),
     m_engineNamesHasBeenSet(false),
     m_engineVersionsHasBeenSet(false),
+    m_apiVersionsHasBeenSet(false),
     m_createAtHasBeenSet(false),
     m_zonesHasBeenSet(false),
     m_orderByHasBeenSet(false),
@@ -119,6 +120,19 @@ string DescribeInstancesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_engineVersions.begin(); itr != m_engineVersions.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_apiVersionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiVersions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_apiVersions.begin(); itr != m_apiVersions.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -294,6 +308,22 @@ void DescribeInstancesRequest::SetEngineVersions(const vector<string>& _engineVe
 bool DescribeInstancesRequest::EngineVersionsHasBeenSet() const
 {
     return m_engineVersionsHasBeenSet;
+}
+
+vector<string> DescribeInstancesRequest::GetApiVersions() const
+{
+    return m_apiVersions;
+}
+
+void DescribeInstancesRequest::SetApiVersions(const vector<string>& _apiVersions)
+{
+    m_apiVersions = _apiVersions;
+    m_apiVersionsHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::ApiVersionsHasBeenSet() const
+{
+    return m_apiVersionsHasBeenSet;
 }
 
 string DescribeInstancesRequest::GetCreateAt() const

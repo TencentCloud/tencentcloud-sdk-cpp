@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ckafka/v20190819/model/Filter.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取ckafka集群实例Id
+                     * @return InstanceId ckafka集群实例Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置ckafka集群实例Id
+                     * @param _instanceId ckafka集群实例Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -147,10 +148,73 @@ namespace TencentCloud
                      */
                     bool AclRuleNameHasBeenSet() const;
 
+                    /**
+                     * 获取根据特定的属性排序(目前支持PartitionNum/CreateTime)
+                     * @return OrderBy 根据特定的属性排序(目前支持PartitionNum/CreateTime)
+                     * 
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置根据特定的属性排序(目前支持PartitionNum/CreateTime)
+                     * @param _orderBy 根据特定的属性排序(目前支持PartitionNum/CreateTime)
+                     * 
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     * 
+                     */
+                    bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取0-顺序、1-倒序
+                     * @return OrderType 0-顺序、1-倒序
+                     * 
+                     */
+                    int64_t GetOrderType() const;
+
+                    /**
+                     * 设置0-顺序、1-倒序
+                     * @param _orderType 0-顺序、1-倒序
+                     * 
+                     */
+                    void SetOrderType(const int64_t& _orderType);
+
+                    /**
+                     * 判断参数 OrderType 是否已赋值
+                     * @return OrderType 是否已赋值
+                     * 
+                     */
+                    bool OrderTypeHasBeenSet() const;
+
+                    /**
+                     * 获取目前支持 ReplicaNum （副本数）筛选
+                     * @return Filters 目前支持 ReplicaNum （副本数）筛选
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置目前支持 ReplicaNum （副本数）筛选
+                     * @param _filters 目前支持 ReplicaNum （副本数）筛选
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例id
+                     * ckafka集群实例Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -178,6 +242,24 @@ namespace TencentCloud
                      */
                     std::string m_aclRuleName;
                     bool m_aclRuleNameHasBeenSet;
+
+                    /**
+                     * 根据特定的属性排序(目前支持PartitionNum/CreateTime)
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
+
+                    /**
+                     * 0-顺序、1-倒序
+                     */
+                    int64_t m_orderType;
+                    bool m_orderTypeHasBeenSet;
+
+                    /**
+                     * 目前支持 ReplicaNum （副本数）筛选
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

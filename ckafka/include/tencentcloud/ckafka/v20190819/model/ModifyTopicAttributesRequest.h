@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。
-                     * @return InstanceId 实例 ID。
+                     * 获取ckafka集群实例Id
+                     * @return InstanceId ckafka集群实例Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。
-                     * @param _instanceId 实例 ID。
+                     * 设置ckafka集群实例Id
+                     * @param _instanceId ckafka集群实例Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名称。
-                     * @return TopicName 主题名称。
+                     * 获取主题名
+                     * @return TopicName 主题名
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置主题名称。
-                     * @param _topicName 主题名称。
+                     * 设置主题名
+                     * @param _topicName 主题名
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool EnableAclRuleHasBeenSet() const;
 
                     /**
-                     * 获取预设ACL规则的名称
-                     * @return AclRuleName 预设ACL规则的名称
+                     * 获取ACL规则名
+                     * @return AclRuleName ACL规则名
                      * 
                      */
                     std::string GetAclRuleName() const;
 
                     /**
-                     * 设置预设ACL规则的名称
-                     * @param _aclRuleName 预设ACL规则的名称
+                     * 设置ACL规则名
+                     * @param _aclRuleName ACL规则名
                      * 
                      */
                     void SetAclRuleName(const std::string& _aclRuleName);
@@ -401,15 +401,15 @@ namespace TencentCloud
                     bool QuotaConsumerByteRateHasBeenSet() const;
 
                     /**
-                     * 获取调整topic副本数
-                     * @return ReplicaNum 调整topic副本数
+                     * 获取topic副本数  最小值 1,最大值 3
+                     * @return ReplicaNum topic副本数  最小值 1,最大值 3
                      * 
                      */
                     int64_t GetReplicaNum() const;
 
                     /**
-                     * 设置调整topic副本数
-                     * @param _replicaNum 调整topic副本数
+                     * 设置topic副本数  最小值 1,最大值 3
+                     * @param _replicaNum topic副本数  最小值 1,最大值 3
                      * 
                      */
                     void SetReplicaNum(const int64_t& _replicaNum);
@@ -424,13 +424,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。
+                     * ckafka集群实例Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题名称。
+                     * 主题名
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
@@ -496,7 +496,7 @@ namespace TencentCloud
                     bool m_enableAclRuleHasBeenSet;
 
                     /**
-                     * 预设ACL规则的名称
+                     * ACL规则名
                      */
                     std::string m_aclRuleName;
                     bool m_aclRuleNameHasBeenSet;
@@ -526,7 +526,7 @@ namespace TencentCloud
                     bool m_quotaConsumerByteRateHasBeenSet;
 
                     /**
-                     * 调整topic副本数
+                     * topic副本数  最小值 1,最大值 3
                      */
                     int64_t m_replicaNum;
                     bool m_replicaNumHasBeenSet;

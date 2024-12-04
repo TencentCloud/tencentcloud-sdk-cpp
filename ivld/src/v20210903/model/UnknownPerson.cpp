@@ -22,7 +22,8 @@ using namespace std;
 
 UnknownPerson::UnknownPerson() :
     m_videoAppearSetHasBeenSet(false),
-    m_putLibraryAllowedHasBeenSet(false)
+    m_putLibraryAllowedHasBeenSet(false),
+    m_auditClassHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome UnknownPerson::Deserialize(const rapidjson::Value &value)
         m_putLibraryAllowedHasBeenSet = true;
     }
 
+    if (value.HasMember("AuditClass") && !value["AuditClass"].IsNull())
+    {
+        if (!value["AuditClass"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnknownPerson.AuditClass` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_auditClass = value["AuditClass"].GetInt64();
+        m_auditClassHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +100,14 @@ void UnknownPerson::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "PutLibraryAllowed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_putLibraryAllowed, allocator);
+    }
+
+    if (m_auditClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuditClass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_auditClass, allocator);
     }
 
 }
@@ -124,5 +143,21 @@ void UnknownPerson::SetPutLibraryAllowed(const bool& _putLibraryAllowed)
 bool UnknownPerson::PutLibraryAllowedHasBeenSet() const
 {
     return m_putLibraryAllowedHasBeenSet;
+}
+
+int64_t UnknownPerson::GetAuditClass() const
+{
+    return m_auditClass;
+}
+
+void UnknownPerson::SetAuditClass(const int64_t& _auditClass)
+{
+    m_auditClass = _auditClass;
+    m_auditClassHasBeenSet = true;
+}
+
+bool UnknownPerson::AuditClassHasBeenSet() const
+{
+    return m_auditClassHasBeenSet;
 }
 

@@ -709,7 +709,7 @@ namespace TencentCloud
                 DeleteDatahubTaskOutcomeCallable DeleteDatahubTaskCallable(const Model::DeleteDatahubTaskRequest& request);
 
                 /**
-                 *删除Datahub主题
+                 *删除DIP主题
                  * @param req DeleteDatahubTopicRequest
                  * @return DeleteDatahubTopicOutcome
                  */
@@ -871,7 +871,7 @@ namespace TencentCloud
                 DescribeDatahubTaskOutcomeCallable DescribeDatahubTaskCallable(const Model::DescribeDatahubTaskRequest& request);
 
                 /**
-                 *查询Datahub任务列表 
+                 *查询Datahub任务列表
                  * @param req DescribeDatahubTasksRequest
                  * @return DescribeDatahubTasksOutcome
                  */

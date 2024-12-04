@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool TransformsParamHasBeenSet() const;
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取任务Id
+                     * @return TaskId 任务Id
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID
-                     * @param _taskId 任务ID
+                     * 设置任务Id
+                     * @param _taskId 任务Id
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -308,7 +308,7 @@ namespace TencentCloud
                     bool m_transformsParamHasBeenSet;
 
                     /**
-                     * 任务ID
+                     * 任务Id
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

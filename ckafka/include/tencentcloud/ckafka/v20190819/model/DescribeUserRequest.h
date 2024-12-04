@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取ckafka集群实例Id
+                     * @return InstanceId ckafka集群实例Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param _instanceId 实例Id
+                     * 设置ckafka集群实例Id
+                     * @param _instanceId ckafka集群实例Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取偏移
-                     * @return Offset 偏移
+                     * 获取偏移量
+                     * @return Offset 偏移量
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移
-                     * @param _offset 偏移
+                     * 设置偏移量
+                     * @param _offset 偏移量
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取本次返回个数
-                     * @return Limit 本次返回个数
+                     * 获取返回数量
+                     * @return Limit 返回数量
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置本次返回个数
-                     * @param _limit 本次返回个数
+                     * 设置返回数量
+                     * @param _limit 返回数量
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Id
+                     * ckafka集群实例Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -141,13 +141,13 @@ namespace TencentCloud
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 偏移
+                     * 偏移量
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 本次返回个数
+                     * 返回数量
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

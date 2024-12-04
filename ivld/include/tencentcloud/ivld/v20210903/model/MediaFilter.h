@@ -36,8 +36,6 @@ namespace TencentCloud
             {
                 /**
                 * 媒资过滤条件
-
-
                 */
                 class MediaFilter : public AbstractModel
                 {

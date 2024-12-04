@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单号
+                     * 获取订单号列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DealNames 订单号
+                     * @return DealNames 订单号列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDealNames() const;
 
                     /**
-                     * 设置订单号
+                     * 设置订单号列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dealNames 订单号
+                     * @param _dealNames 订单号列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单号
+                     * 订单号列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dealNames;

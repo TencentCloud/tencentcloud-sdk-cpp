@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id信息
-                     * @return InstanceId 实例id信息
+                     * 获取ckafka集群实例Id
+                     * @return InstanceId ckafka集群实例Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id信息
-                     * @param _instanceId 实例id信息
+                     * 设置ckafka集群实例Id
+                     * @param _instanceId ckafka集群实例Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
-                     * @return PatternType 匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
+                     * 获取ACL规则匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
+                     * @return PatternType ACL规则匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
                      * 
                      */
                     std::string GetPatternType() const;
 
                     /**
-                     * 设置匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
-                     * @param _patternType 匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
+                     * 设置ACL规则匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
+                     * @param _patternType ACL规则匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
                      * 
                      */
                     void SetPatternType(const std::string& _patternType);
@@ -214,7 +214,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id信息
+                     * ckafka集群实例Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -226,7 +226,7 @@ namespace TencentCloud
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
+                     * ACL规则匹配类型，目前支持前缀匹配与预设策略，枚举值列表：PREFIXED/PRESET
                      */
                     std::string m_patternType;
                     bool m_patternTypeHasBeenSet;

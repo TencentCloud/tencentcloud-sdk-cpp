@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取ckafka集群实例Id
+                     * @return InstanceId ckafka集群实例Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置ckafka集群实例Id
+                     * @param _instanceId ckafka集群实例Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取修改时间
-                     * @return DelayTime 修改时间
+                     * 获取修改删除路由的定时时间
+                     * @return DelayTime 修改删除路由的定时时间
                      * 
                      */
                     std::string GetDelayTime() const;
 
                     /**
-                     * 设置修改时间
-                     * @param _delayTime 修改时间
+                     * 设置修改删除路由的定时时间
+                     * @param _delayTime 修改删除路由的定时时间
                      * 
                      */
                     void SetDelayTime(const std::string& _delayTime);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id
+                     * ckafka集群实例Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 修改时间
+                     * 修改删除路由的定时时间
                      */
                     std::string m_delayTime;
                     bool m_delayTimeHasBeenSet;

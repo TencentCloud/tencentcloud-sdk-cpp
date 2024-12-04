@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取kafka实例id
-                     * @return InstanceId kafka实例id
+                     * 获取ckafka集群实例Id
+                     * @return InstanceId ckafka集群实例Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置kafka实例id
-                     * @param _instanceId kafka实例id
+                     * 设置ckafka集群实例Id
+                     * @param _instanceId ckafka集群实例Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取kafka 消费分组
-                     * @return Group kafka 消费分组
+                     * 获取消费分组名称
+                     * @return Group 消费分组名称
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
-                     * 设置kafka 消费分组
-                     * @param _group kafka 消费分组
+                     * 设置消费分组名称
+                     * @param _group 消费分组名称
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StrategyHasBeenSet() const;
 
                     /**
-                     * 获取表示需要重置的topics， 不填表示全部
-                     * @return Topics 表示需要重置的topics， 不填表示全部
+                     * 获取需要重置的主题名列表， 不填表示全部
+                     * @return Topics 需要重置的主题名列表， 不填表示全部
                      * 
                      */
                     std::vector<std::string> GetTopics() const;
 
                     /**
-                     * 设置表示需要重置的topics， 不填表示全部
-                     * @param _topics 表示需要重置的topics， 不填表示全部
+                     * 设置需要重置的主题名列表， 不填表示全部
+                     * @param _topics 需要重置的主题名列表， 不填表示全部
                      * 
                      */
                     void SetTopics(const std::vector<std::string>& _topics);
@@ -213,13 +213,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * kafka实例id
+                     * ckafka集群实例Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * kafka 消费分组
+                     * 消费分组名称
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_strategyHasBeenSet;
 
                     /**
-                     * 表示需要重置的topics， 不填表示全部
+                     * 需要重置的主题名列表， 不填表示全部
                      */
                     std::vector<std::string> m_topics;
                     bool m_topicsHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka实例id
-                     * @return InstanceId ckafka实例id
+                     * 获取ckafka集群实例Id
+                     * @return InstanceId ckafka集群实例Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka实例id
-                     * @param _instanceId ckafka实例id
+                     * 设置ckafka集群实例Id
+                     * @param _instanceId ckafka集群实例Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取vpc地址
-                     * @return VpcId vpc地址
+                     * 获取私有网络Id
+                     * @return VpcId 私有网络Id
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置vpc地址
-                     * @param _vpcId vpc地址
+                     * 设置私有网络Id
+                     * @param _vpcId 私有网络Id
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网地址
-                     * @return SubnetId 子网地址
+                     * 获取子网Id
+                     * @return SubnetId 子网Id
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网地址
-                     * @param _subnetId 子网地址
+                     * 设置子网Id
+                     * @param _subnetId 子网Id
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka实例id
+                     * ckafka集群实例Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * vpc地址
+                     * 私有网络Id
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网地址
+                     * 子网Id
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;

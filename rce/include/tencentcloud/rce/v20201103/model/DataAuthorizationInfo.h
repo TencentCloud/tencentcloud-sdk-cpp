@@ -310,12 +310,12 @@ namespace TencentCloud
                     bool PrivacyPolicyLinkHasBeenSet() const;
 
                     /**
-                     * 获取是否是用户个人敏感数据。
+                     * 获取是否是用户个人敏感数据（不推荐使用）。
 
 固定填：1。
 
 示例值：1
-                     * @return IsPersonalData 是否是用户个人敏感数据。
+                     * @return IsPersonalData 是否是用户个人敏感数据（不推荐使用）。
 
 固定填：1。
 
@@ -325,12 +325,12 @@ namespace TencentCloud
                     uint64_t GetIsPersonalData() const;
 
                     /**
-                     * 设置是否是用户个人敏感数据。
+                     * 设置是否是用户个人敏感数据（不推荐使用）。
 
 固定填：1。
 
 示例值：1
-                     * @param _isPersonalData 是否是用户个人敏感数据。
+                     * @param _isPersonalData 是否是用户个人敏感数据（不推荐使用）。
 
 固定填：1。
 
@@ -420,7 +420,7 @@ namespace TencentCloud
                     bool m_privacyPolicyLinkHasBeenSet;
 
                     /**
-                     * 是否是用户个人敏感数据。
+                     * 是否是用户个人敏感数据（不推荐使用）。
 
 固定填：1。
 

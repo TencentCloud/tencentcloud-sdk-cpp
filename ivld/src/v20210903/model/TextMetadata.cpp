@@ -24,7 +24,8 @@ TextMetadata::TextMetadata() :
     m_fileSizeHasBeenSet(false),
     m_mD5HasBeenSet(false),
     m_lengthHasBeenSet(false),
-    m_formatHasBeenSet(false)
+    m_formatHasBeenSet(false),
+    m_shortFormatHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome TextMetadata::Deserialize(const rapidjson::Value &value)
         m_formatHasBeenSet = true;
     }
 
+    if (value.HasMember("ShortFormat") && !value["ShortFormat"].IsNull())
+    {
+        if (!value["ShortFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextMetadata.ShortFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_shortFormat = string(value["ShortFormat"].GetString());
+        m_shortFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void TextMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Format";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shortFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShortFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shortFormat.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void TextMetadata::SetFormat(const string& _format)
 bool TextMetadata::FormatHasBeenSet() const
 {
     return m_formatHasBeenSet;
+}
+
+string TextMetadata::GetShortFormat() const
+{
+    return m_shortFormat;
+}
+
+void TextMetadata::SetShortFormat(const string& _shortFormat)
+{
+    m_shortFormat = _shortFormat;
+    m_shortFormatHasBeenSet = true;
+}
+
+bool TextMetadata::ShortFormatHasBeenSet() const
+{
+    return m_shortFormatHasBeenSet;
 }
 

@@ -461,6 +461,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeTenantCcnsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTrafficPackagesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTrafficPackagesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTrafficQosPolicyRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTrafficQosPolicyResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeUsedIpAddressRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeUsedIpAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointRequest.h>
@@ -1446,6 +1448,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTrafficPackagesResponse> DescribeTrafficPackagesOutcome;
                 typedef std::future<DescribeTrafficPackagesOutcome> DescribeTrafficPackagesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeTrafficPackagesRequest&, DescribeTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrafficPackagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTrafficQosPolicyResponse> DescribeTrafficQosPolicyOutcome;
+                typedef std::future<DescribeTrafficQosPolicyOutcome> DescribeTrafficQosPolicyOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeTrafficQosPolicyRequest&, DescribeTrafficQosPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrafficQosPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUsedIpAddressResponse> DescribeUsedIpAddressOutcome;
                 typedef std::future<DescribeUsedIpAddressOutcome> DescribeUsedIpAddressOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeUsedIpAddressRequest&, DescribeUsedIpAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsedIpAddressAsyncHandler;
@@ -4060,6 +4065,15 @@ namespace TencentCloud
                 DescribeTrafficPackagesOutcome DescribeTrafficPackages(const Model::DescribeTrafficPackagesRequest &request);
                 void DescribeTrafficPackagesAsync(const Model::DescribeTrafficPackagesRequest& request, const DescribeTrafficPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTrafficPackagesOutcomeCallable DescribeTrafficPackagesCallable(const Model::DescribeTrafficPackagesRequest& request);
+
+                /**
+                 *查询流量调度规则
+                 * @param req DescribeTrafficQosPolicyRequest
+                 * @return DescribeTrafficQosPolicyOutcome
+                 */
+                DescribeTrafficQosPolicyOutcome DescribeTrafficQosPolicy(const Model::DescribeTrafficQosPolicyRequest &request);
+                void DescribeTrafficQosPolicyAsync(const Model::DescribeTrafficQosPolicyRequest& request, const DescribeTrafficQosPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTrafficQosPolicyOutcomeCallable DescribeTrafficQosPolicyCallable(const Model::DescribeTrafficQosPolicyRequest& request);
 
                 /**
                  *本接口(DescribeUsedIpAddress)用于查询Subnet或者Vpc内的ip的使用情况，

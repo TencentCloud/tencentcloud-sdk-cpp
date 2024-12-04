@@ -26,7 +26,9 @@ AudioMetadata::AudioMetadata() :
     m_durationHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
     m_bitRateHasBeenSet(false),
-    m_formatHasBeenSet(false)
+    m_formatHasBeenSet(false),
+    m_bitDepthHasBeenSet(false),
+    m_shortFormatHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome AudioMetadata::Deserialize(const rapidjson::Value &value)
         m_formatHasBeenSet = true;
     }
 
+    if (value.HasMember("BitDepth") && !value["BitDepth"].IsNull())
+    {
+        if (!value["BitDepth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioMetadata.BitDepth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bitDepth = value["BitDepth"].GetInt64();
+        m_bitDepthHasBeenSet = true;
+    }
+
+    if (value.HasMember("ShortFormat") && !value["ShortFormat"].IsNull())
+    {
+        if (!value["ShortFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioMetadata.ShortFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_shortFormat = string(value["ShortFormat"].GetString());
+        m_shortFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void AudioMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Format";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bitDepthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BitDepth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bitDepth, allocator);
+    }
+
+    if (m_shortFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShortFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shortFormat.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void AudioMetadata::SetFormat(const string& _format)
 bool AudioMetadata::FormatHasBeenSet() const
 {
     return m_formatHasBeenSet;
+}
+
+int64_t AudioMetadata::GetBitDepth() const
+{
+    return m_bitDepth;
+}
+
+void AudioMetadata::SetBitDepth(const int64_t& _bitDepth)
+{
+    m_bitDepth = _bitDepth;
+    m_bitDepthHasBeenSet = true;
+}
+
+bool AudioMetadata::BitDepthHasBeenSet() const
+{
+    return m_bitDepthHasBeenSet;
+}
+
+string AudioMetadata::GetShortFormat() const
+{
+    return m_shortFormat;
+}
+
+void AudioMetadata::SetShortFormat(const string& _shortFormat)
+{
+    m_shortFormat = _shortFormat;
+    m_shortFormatHasBeenSet = true;
+}
+
+bool AudioMetadata::ShortFormatHasBeenSet() const
+{
+    return m_shortFormatHasBeenSet;
 }
 

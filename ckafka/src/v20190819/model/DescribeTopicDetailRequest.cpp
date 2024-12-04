@@ -27,7 +27,10 @@ DescribeTopicDetailRequest::DescribeTopicDetailRequest() :
     m_searchWordHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_aclRuleNameHasBeenSet(false)
+    m_aclRuleNameHasBeenSet(false),
+    m_orderByHasBeenSet(false),
+    m_orderTypeHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -76,6 +79,37 @@ string DescribeTopicDetailRequest::ToJsonString() const
         string key = "AclRuleName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_aclRuleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_orderType, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -164,6 +198,54 @@ void DescribeTopicDetailRequest::SetAclRuleName(const string& _aclRuleName)
 bool DescribeTopicDetailRequest::AclRuleNameHasBeenSet() const
 {
     return m_aclRuleNameHasBeenSet;
+}
+
+string DescribeTopicDetailRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeTopicDetailRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeTopicDetailRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
+}
+
+int64_t DescribeTopicDetailRequest::GetOrderType() const
+{
+    return m_orderType;
+}
+
+void DescribeTopicDetailRequest::SetOrderType(const int64_t& _orderType)
+{
+    m_orderType = _orderType;
+    m_orderTypeHasBeenSet = true;
+}
+
+bool DescribeTopicDetailRequest::OrderTypeHasBeenSet() const
+{
+    return m_orderTypeHasBeenSet;
+}
+
+vector<Filter> DescribeTopicDetailRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeTopicDetailRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeTopicDetailRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

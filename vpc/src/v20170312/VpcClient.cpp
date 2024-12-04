@@ -9457,6 +9457,49 @@ VpcClient::DescribeTrafficPackagesOutcomeCallable VpcClient::DescribeTrafficPack
     return task->get_future();
 }
 
+VpcClient::DescribeTrafficQosPolicyOutcome VpcClient::DescribeTrafficQosPolicy(const DescribeTrafficQosPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrafficQosPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrafficQosPolicyResponse rsp = DescribeTrafficQosPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrafficQosPolicyOutcome(rsp);
+        else
+            return DescribeTrafficQosPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrafficQosPolicyOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeTrafficQosPolicyAsync(const DescribeTrafficQosPolicyRequest& request, const DescribeTrafficQosPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTrafficQosPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeTrafficQosPolicyOutcomeCallable VpcClient::DescribeTrafficQosPolicyCallable(const DescribeTrafficQosPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTrafficQosPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTrafficQosPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeUsedIpAddressOutcome VpcClient::DescribeUsedIpAddress(const DescribeUsedIpAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUsedIpAddress");

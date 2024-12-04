@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主题名称
-                     * @return TopicName 主题名称
+                     * 获取主题名
+                     * @return TopicName 主题名
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置主题名称
-                     * @param _topicName 主题名称
+                     * 设置主题名
+                     * @param _topicName 主题名
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取主题ID
-                     * @return TopicId 主题ID
+                     * 获取主题Id
+                     * @return TopicId 主题Id
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置主题ID
-                     * @param _topicId 主题ID
+                     * 设置主题Id
+                     * @param _topicId 主题Id
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool PartitionNumHasBeenSet() const;
 
                     /**
-                     * 获取副本数
-                     * @return ReplicaNum 副本数
+                     * 获取topic副本数  最小值 1,最大值 3
+                     * @return ReplicaNum topic副本数  最小值 1,最大值 3
                      * 
                      */
                     int64_t GetReplicaNum() const;
 
                     /**
-                     * 设置副本数
-                     * @param _replicaNum 副本数
+                     * 设置topic副本数  最小值 1,最大值 3
+                     * @param _replicaNum topic副本数  最小值 1,最大值 3
                      * 
                      */
                     void SetReplicaNum(const int64_t& _replicaNum);
@@ -391,13 +391,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主题名称
+                     * 主题名
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 主题ID
+                     * 主题Id
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
@@ -409,7 +409,7 @@ namespace TencentCloud
                     bool m_partitionNumHasBeenSet;
 
                     /**
-                     * 副本数
+                     * topic副本数  最小值 1,最大值 3
                      */
                     int64_t m_replicaNum;
                     bool m_replicaNumHasBeenSet;

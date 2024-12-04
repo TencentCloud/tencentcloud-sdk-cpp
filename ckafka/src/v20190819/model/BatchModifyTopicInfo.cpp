@@ -31,7 +31,8 @@ BatchModifyTopicInfo::BatchModifyTopicInfo() :
     m_retentionMsHasBeenSet(false),
     m_retentionBytesHasBeenSet(false),
     m_segmentMsHasBeenSet(false),
-    m_maxMessageBytesHasBeenSet(false)
+    m_maxMessageBytesHasBeenSet(false),
+    m_logMsgTimestampTypeHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome BatchModifyTopicInfo::Deserialize(const rapidjson::Value &va
         m_maxMessageBytesHasBeenSet = true;
     }
 
+    if (value.HasMember("LogMsgTimestampType") && !value["LogMsgTimestampType"].IsNull())
+    {
+        if (!value["LogMsgTimestampType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BatchModifyTopicInfo.LogMsgTimestampType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logMsgTimestampType = string(value["LogMsgTimestampType"].GetString());
+        m_logMsgTimestampTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void BatchModifyTopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "MaxMessageBytes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxMessageBytes, allocator);
+    }
+
+    if (m_logMsgTimestampTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogMsgTimestampType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logMsgTimestampType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void BatchModifyTopicInfo::SetMaxMessageBytes(const int64_t& _maxMessageBytes)
 bool BatchModifyTopicInfo::MaxMessageBytesHasBeenSet() const
 {
     return m_maxMessageBytesHasBeenSet;
+}
+
+string BatchModifyTopicInfo::GetLogMsgTimestampType() const
+{
+    return m_logMsgTimestampType;
+}
+
+void BatchModifyTopicInfo::SetLogMsgTimestampType(const string& _logMsgTimestampType)
+{
+    m_logMsgTimestampType = _logMsgTimestampType;
+    m_logMsgTimestampTypeHasBeenSet = true;
+}
+
+bool BatchModifyTopicInfo::LogMsgTimestampTypeHasBeenSet() const
+{
+    return m_logMsgTimestampTypeHasBeenSet;
 }
 

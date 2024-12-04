@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取（过滤条件）按照实例 ID 过滤。
-                     * @return InstanceId （过滤条件）按照实例 ID 过滤。
+                     * 获取ckafka集群实例Id
+                     * @return InstanceId ckafka集群实例Id
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置（过滤条件）按照实例 ID 过滤。
-                     * @param _instanceId （过滤条件）按照实例 ID 过滤。
+                     * 设置ckafka集群实例Id
+                     * @param _instanceId ckafka集群实例Id
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
-                     * @return GroupList Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
+                     * 获取Kafka 消费分组列表
+                     * @return GroupList Kafka 消费分组列表
                      * 
                      */
                     std::vector<std::string> GetGroupList() const;
 
                     /**
-                     * 设置Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
-                     * @param _groupList Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
+                     * 设置Kafka 消费分组列表
+                     * @param _groupList Kafka 消费分组列表
                      * 
                      */
                     void SetGroupList(const std::vector<std::string>& _groupList);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * （过滤条件）按照实例 ID 过滤。
+                     * ckafka集群实例Id
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
+                     * Kafka 消费分组列表
                      */
                     std::vector<std::string> m_groupList;
                     bool m_groupListHasBeenSet;

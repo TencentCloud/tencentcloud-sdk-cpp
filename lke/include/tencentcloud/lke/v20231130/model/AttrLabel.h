@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 属性标签详情信息
+                * 标签详情信息
                 */
                 class AttrLabel : public AbstractModel
                 {
@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取属性标签来源
+                     * 获取标签来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Source 属性标签来源
+                     * @return Source 标签来源
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSource() const;
 
                     /**
-                     * 设置属性标签来源
+                     * 设置标签来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _source 属性标签来源
+                     * @param _source 标签来源
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取属性ID
+                     * 获取标签ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttrBizId 属性ID
+                     * @return AttrBizId 标签ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAttrBizId() const;
 
                     /**
-                     * 设置属性ID
+                     * 设置标签ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _attrBizId 属性ID
+                     * @param _attrBizId 标签ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool AttrBizIdHasBeenSet() const;
 
                     /**
-                     * 获取属性标识
+                     * 获取标签标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttrKey 属性标识
+                     * @return AttrKey 标签标识
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAttrKey() const;
 
                     /**
-                     * 设置属性标识
+                     * 设置标签标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _attrKey 属性标识
+                     * @param _attrKey 标签标识
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool AttrKeyHasBeenSet() const;
 
                     /**
-                     * 获取属性名称
+                     * 获取标签名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttrName 属性名称
+                     * @return AttrName 标签名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAttrName() const;
 
                     /**
-                     * 设置属性名称
+                     * 设置标签名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _attrName 属性名称
+                     * @param _attrName 标签名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool AttrNameHasBeenSet() const;
 
                     /**
-                     * 获取标签ID
+                     * 获取标签值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Labels 标签ID
+                     * @return Labels 标签值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
-                     * 设置标签ID
+                     * 设置标签值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _labels 标签ID
+                     * @param _labels 标签值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -175,35 +175,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 属性标签来源
+                     * 标签来源
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 属性ID
+                     * 标签ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attrBizId;
                     bool m_attrBizIdHasBeenSet;
 
                     /**
-                     * 属性标识
+                     * 标签标识
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attrKey;
                     bool m_attrKeyHasBeenSet;
 
                     /**
-                     * 属性名称
+                     * 标签名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attrName;
                     bool m_attrNameHasBeenSet;
 
                     /**
-                     * 标签ID
+                     * 标签值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Label> m_labels;

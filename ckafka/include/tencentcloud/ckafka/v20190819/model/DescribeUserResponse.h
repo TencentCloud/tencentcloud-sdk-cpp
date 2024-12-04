@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回结果列表
-                     * @return Result 返回结果列表
+                     * 获取返回结果
+                     * @return Result 返回结果
                      * 
                      */
                     UserResponse GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回结果列表
+                     * 返回结果
                      */
                     UserResponse m_result;
                     bool m_resultHasBeenSet;

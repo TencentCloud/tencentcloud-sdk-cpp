@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取指定SCP策略关联目标列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 指定SCP策略关联目标列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ListTargetsForPolicyNode> GetList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 指定SCP策略关联目标列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ListTargetsForPolicyNode> m_list;
                     bool m_listHasBeenSet;

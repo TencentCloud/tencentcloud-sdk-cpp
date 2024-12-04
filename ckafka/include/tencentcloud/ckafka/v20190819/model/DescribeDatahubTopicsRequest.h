@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询值
-                     * @return SearchWord 查询值
+                     * 获取搜索词
+                     * @return SearchWord 搜索词
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置查询值
-                     * @param _searchWord 查询值
+                     * 设置搜索词
+                     * @param _searchWord 搜索词
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询值
+                     * 搜索词
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;

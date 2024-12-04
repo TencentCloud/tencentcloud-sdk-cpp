@@ -4684,6 +4684,49 @@ IotexplorerClient::InheritCloudStorageUserOutcomeCallable IotexplorerClient::Inh
     return task->get_future();
 }
 
+IotexplorerClient::InvokeCloudStorageAIServiceTaskOutcome IotexplorerClient::InvokeCloudStorageAIServiceTask(const InvokeCloudStorageAIServiceTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "InvokeCloudStorageAIServiceTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InvokeCloudStorageAIServiceTaskResponse rsp = InvokeCloudStorageAIServiceTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InvokeCloudStorageAIServiceTaskOutcome(rsp);
+        else
+            return InvokeCloudStorageAIServiceTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return InvokeCloudStorageAIServiceTaskOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::InvokeCloudStorageAIServiceTaskAsync(const InvokeCloudStorageAIServiceTaskRequest& request, const InvokeCloudStorageAIServiceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InvokeCloudStorageAIServiceTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::InvokeCloudStorageAIServiceTaskOutcomeCallable IotexplorerClient::InvokeCloudStorageAIServiceTaskCallable(const InvokeCloudStorageAIServiceTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InvokeCloudStorageAIServiceTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->InvokeCloudStorageAIServiceTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::InvokeExternalSourceAIServiceTaskOutcome IotexplorerClient::InvokeExternalSourceAIServiceTask(const InvokeExternalSourceAIServiceTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "InvokeExternalSourceAIServiceTask");

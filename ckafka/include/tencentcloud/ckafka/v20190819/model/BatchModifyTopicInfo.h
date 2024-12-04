@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取topic名称
-                     * @return TopicName topic名称
+                     * 获取主题名
+                     * @return TopicName 主题名
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置topic名称
-                     * @param _topicName topic名称
+                     * 设置主题名
+                     * @param _topicName 主题名
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -277,10 +277,31 @@ namespace TencentCloud
                      */
                     bool MaxMessageBytesHasBeenSet() const;
 
+                    /**
+                     * 获取消息保存的时间类型：CreateTime/LogAppendTime
+                     * @return LogMsgTimestampType 消息保存的时间类型：CreateTime/LogAppendTime
+                     * 
+                     */
+                    std::string GetLogMsgTimestampType() const;
+
+                    /**
+                     * 设置消息保存的时间类型：CreateTime/LogAppendTime
+                     * @param _logMsgTimestampType 消息保存的时间类型：CreateTime/LogAppendTime
+                     * 
+                     */
+                    void SetLogMsgTimestampType(const std::string& _logMsgTimestampType);
+
+                    /**
+                     * 判断参数 LogMsgTimestampType 是否已赋值
+                     * @return LogMsgTimestampType 是否已赋值
+                     * 
+                     */
+                    bool LogMsgTimestampTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * topic名称
+                     * 主题名
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
@@ -344,6 +365,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxMessageBytes;
                     bool m_maxMessageBytesHasBeenSet;
+
+                    /**
+                     * 消息保存的时间类型：CreateTime/LogAppendTime
+                     */
+                    std::string m_logMsgTimestampType;
+                    bool m_logMsgTimestampTypeHasBeenSet;
 
                 };
             }

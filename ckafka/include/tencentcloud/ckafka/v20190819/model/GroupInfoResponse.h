@@ -173,15 +173,15 @@ Stable：消费分组中各个消费者已经加入，处于稳定状态
                     bool MembersHasBeenSet() const;
 
                     /**
-                     * 获取Kafka 消费分组
-                     * @return Group Kafka 消费分组
+                     * 获取消费分组名称
+                     * @return Group 消费分组名称
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
-                     * 设置Kafka 消费分组
-                     * @param _group Kafka 消费分组
+                     * 设置消费分组名称
+                     * @param _group 消费分组名称
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -231,7 +231,7 @@ Stable：消费分组中各个消费者已经加入，处于稳定状态
                     bool m_membersHasBeenSet;
 
                     /**
-                     * Kafka 消费分组
+                     * 消费分组名称
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;

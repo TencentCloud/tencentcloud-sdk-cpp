@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导入媒资返回的媒资ID，最长32B
-                     * @return MediaId 导入媒资返回的媒资ID，最长32B
+                     * 获取导入媒资返回的媒资ID
+                     * @return MediaId 导入媒资返回的媒资ID
                      * 
                      */
                     std::string GetMediaId() const;
 
                     /**
-                     * 设置导入媒资返回的媒资ID，最长32B
-                     * @param _mediaId 导入媒资返回的媒资ID，最长32B
+                     * 设置导入媒资返回的媒资ID
+                     * @param _mediaId 导入媒资返回的媒资ID
                      * 
                      */
                     void SetMediaId(const std::string& _mediaId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 导入媒资返回的媒资ID，最长32B
+                     * 导入媒资返回的媒资ID
                      */
                     std::string m_mediaId;
                     bool m_mediaIdHasBeenSet;

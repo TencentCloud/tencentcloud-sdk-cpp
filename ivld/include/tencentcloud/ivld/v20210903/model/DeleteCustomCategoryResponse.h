@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取123
-                     * @return CategoryId 123
+                     * 获取自定义分类ID
+                     * @return CategoryId 自定义分类ID
                      * 
                      */
                     std::string GetCategoryId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 123
+                     * 自定义分类ID
                      */
                     std::string m_categoryId;
                     bool m_categoryIdHasBeenSet;

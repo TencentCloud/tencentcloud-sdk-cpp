@@ -59,7 +59,8 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_instanceChargeTypeHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
     m_freePartitionNumberHasBeenSet(false),
-    m_elasticFloatBandwidthHasBeenSet(false)
+    m_elasticFloatBandwidthHasBeenSet(false),
+    m_customCertIdHasBeenSet(false)
 {
 }
 
@@ -505,6 +506,16 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const rapidjson::Val
         m_elasticFloatBandwidthHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomCertId") && !value["CustomCertId"].IsNull())
+    {
+        if (!value["CustomCertId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.CustomCertId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customCertId = string(value["CustomCertId"].GetString());
+        m_customCertIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -849,6 +860,14 @@ void InstanceAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "ElasticFloatBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_elasticFloatBandwidth, allocator);
+    }
+
+    if (m_customCertIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomCertId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customCertId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1476,5 +1495,21 @@ void InstanceAttributesResponse::SetElasticFloatBandwidth(const int64_t& _elasti
 bool InstanceAttributesResponse::ElasticFloatBandwidthHasBeenSet() const
 {
     return m_elasticFloatBandwidthHasBeenSet;
+}
+
+string InstanceAttributesResponse::GetCustomCertId() const
+{
+    return m_customCertId;
+}
+
+void InstanceAttributesResponse::SetCustomCertId(const string& _customCertId)
+{
+    m_customCertId = _customCertId;
+    m_customCertIdHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::CustomCertIdHasBeenSet() const
+{
+    return m_customCertIdHasBeenSet;
 }
 
