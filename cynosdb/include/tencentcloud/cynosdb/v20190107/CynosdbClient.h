@@ -39,6 +39,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/CloseClusterPasswordComplexityResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseProxyRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseProxyResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CloseProxyEndPointRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CloseProxyEndPointResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseWanRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseWanResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CopyClusterPasswordComplexityRequest.h>
@@ -149,6 +151,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstancesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstancesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeInstancesWithinSameClusterRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeInstancesWithinSameClusterResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeIsolatedInstancesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeIsolatedInstancesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeMaintainPeriodRequest.h>
@@ -363,6 +367,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CloseProxyResponse> CloseProxyOutcome;
                 typedef std::future<CloseProxyOutcome> CloseProxyOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CloseProxyRequest&, CloseProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseProxyEndPointResponse> CloseProxyEndPointOutcome;
+                typedef std::future<CloseProxyEndPointOutcome> CloseProxyEndPointOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CloseProxyEndPointRequest&, CloseProxyEndPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseProxyEndPointAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseWanResponse> CloseWanOutcome;
                 typedef std::future<CloseWanOutcome> CloseWanOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CloseWanRequest&, CloseWanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseWanAsyncHandler;
@@ -528,6 +535,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancesWithinSameClusterResponse> DescribeInstancesWithinSameClusterOutcome;
+                typedef std::future<DescribeInstancesWithinSameClusterOutcome> DescribeInstancesWithinSameClusterOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeInstancesWithinSameClusterRequest&, DescribeInstancesWithinSameClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesWithinSameClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIsolatedInstancesResponse> DescribeIsolatedInstancesOutcome;
                 typedef std::future<DescribeIsolatedInstancesOutcome> DescribeIsolatedInstancesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeIsolatedInstancesRequest&, DescribeIsolatedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIsolatedInstancesAsyncHandler;
@@ -866,6 +876,15 @@ namespace TencentCloud
                 CloseProxyOutcome CloseProxy(const Model::CloseProxyRequest &request);
                 void CloseProxyAsync(const Model::CloseProxyRequest& request, const CloseProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CloseProxyOutcomeCallable CloseProxyCallable(const Model::CloseProxyRequest& request);
+
+                /**
+                 *关闭数据库代理连接地址
+                 * @param req CloseProxyEndPointRequest
+                 * @return CloseProxyEndPointOutcome
+                 */
+                CloseProxyEndPointOutcome CloseProxyEndPoint(const Model::CloseProxyEndPointRequest &request);
+                void CloseProxyEndPointAsync(const Model::CloseProxyEndPointRequest& request, const CloseProxyEndPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseProxyEndPointOutcomeCallable CloseProxyEndPointCallable(const Model::CloseProxyEndPointRequest& request);
 
                 /**
                  *本接口（CloseWan）用于关闭外网。
@@ -1361,6 +1380,15 @@ namespace TencentCloud
                 DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
                 void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
+
+                /**
+                 *本接口(DescribeInstancesWithinSameCluster)用于查询同一集群下实例列表
+                 * @param req DescribeInstancesWithinSameClusterRequest
+                 * @return DescribeInstancesWithinSameClusterOutcome
+                 */
+                DescribeInstancesWithinSameClusterOutcome DescribeInstancesWithinSameCluster(const Model::DescribeInstancesWithinSameClusterRequest &request);
+                void DescribeInstancesWithinSameClusterAsync(const Model::DescribeInstancesWithinSameClusterRequest& request, const DescribeInstancesWithinSameClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesWithinSameClusterOutcomeCallable DescribeInstancesWithinSameClusterCallable(const Model::DescribeInstancesWithinSameClusterRequest& request);
 
                 /**
                  *本接口(DescribeIsolatedInstances)用于查询回收站实例列表。

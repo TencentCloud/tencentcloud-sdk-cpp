@@ -111,15 +111,59 @@ namespace TencentCloud
                     bool RegistryTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
-                     * @return Status 实例状态
+                     * 获取实例状态。有以下状态：
+Pending, 初始化中
+Deploying, 创建中
+Running, 运行中
+Unhealthy, 状态异常
+FailedCreated, 创建失败
+FailedUpdated, 更新失败
+Bucket-Error, 存储桶异常
+Isolate, 待回收
+Deleting, 删除中
+DeleteBucketFailed, 实例删除存储桶失败
+DeleteFailed, 实例删除失败
+                     * @return Status 实例状态。有以下状态：
+Pending, 初始化中
+Deploying, 创建中
+Running, 运行中
+Unhealthy, 状态异常
+FailedCreated, 创建失败
+FailedUpdated, 更新失败
+Bucket-Error, 存储桶异常
+Isolate, 待回收
+Deleting, 删除中
+DeleteBucketFailed, 实例删除存储桶失败
+DeleteFailed, 实例删除失败
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置实例状态
-                     * @param _status 实例状态
+                     * 设置实例状态。有以下状态：
+Pending, 初始化中
+Deploying, 创建中
+Running, 运行中
+Unhealthy, 状态异常
+FailedCreated, 创建失败
+FailedUpdated, 更新失败
+Bucket-Error, 存储桶异常
+Isolate, 待回收
+Deleting, 删除中
+DeleteBucketFailed, 实例删除存储桶失败
+DeleteFailed, 实例删除失败
+                     * @param _status 实例状态。有以下状态：
+Pending, 初始化中
+Deploying, 创建中
+Running, 运行中
+Unhealthy, 状态异常
+FailedCreated, 创建失败
+FailedUpdated, 更新失败
+Bucket-Error, 存储桶异常
+Isolate, 待回收
+Deleting, 删除中
+DeleteBucketFailed, 实例删除存储桶失败
+DeleteFailed, 实例删除失败
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -420,7 +464,18 @@ namespace TencentCloud
                     bool m_registryTypeHasBeenSet;
 
                     /**
-                     * 实例状态
+                     * 实例状态。有以下状态：
+Pending, 初始化中
+Deploying, 创建中
+Running, 运行中
+Unhealthy, 状态异常
+FailedCreated, 创建失败
+FailedUpdated, 更新失败
+Bucket-Error, 存储桶异常
+Isolate, 待回收
+Deleting, 删除中
+DeleteBucketFailed, 实例删除存储桶失败
+DeleteFailed, 实例删除失败
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

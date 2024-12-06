@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/mqtt/v20240516/model/ActivateDeviceCertificateRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/ActivateDeviceCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateAuthorizationPolicyRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateAuthorizationPolicyResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateJWKSAuthenticatorRequest.h>
@@ -41,6 +43,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeAuthenticatorResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeAuthorizationPoliciesRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeAuthorizationPoliciesResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificatesRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificatesResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceListRequest.h>
@@ -75,6 +79,9 @@ namespace TencentCloud
                 MqttClient(const Credential &credential, const std::string &region);
                 MqttClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ActivateDeviceCertificateResponse> ActivateDeviceCertificateOutcome;
+                typedef std::future<ActivateDeviceCertificateOutcome> ActivateDeviceCertificateOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::ActivateDeviceCertificateRequest&, ActivateDeviceCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateDeviceCertificateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAuthorizationPolicyResponse> CreateAuthorizationPolicyOutcome;
                 typedef std::future<CreateAuthorizationPolicyOutcome> CreateAuthorizationPolicyOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::CreateAuthorizationPolicyRequest&, CreateAuthorizationPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuthorizationPolicyAsyncHandler;
@@ -102,6 +109,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuthorizationPoliciesResponse> DescribeAuthorizationPoliciesOutcome;
                 typedef std::future<DescribeAuthorizationPoliciesOutcome> DescribeAuthorizationPoliciesOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeAuthorizationPoliciesRequest&, DescribeAuthorizationPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthorizationPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceCertificatesResponse> DescribeDeviceCertificatesOutcome;
+                typedef std::future<DescribeDeviceCertificatesOutcome> DescribeDeviceCertificatesOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeDeviceCertificatesRequest&, DescribeDeviceCertificatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceCertificatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceResponse> DescribeInstanceOutcome;
                 typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeInstanceRequest&, DescribeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAsyncHandler;
@@ -134,6 +144,15 @@ namespace TencentCloud
                 typedef std::function<void(const MqttClient*, const Model::UpdateAuthorizationPolicyPriorityRequest&, UpdateAuthorizationPolicyPriorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAuthorizationPolicyPriorityAsyncHandler;
 
 
+
+                /**
+                 *生效设备证书
+                 * @param req ActivateDeviceCertificateRequest
+                 * @return ActivateDeviceCertificateOutcome
+                 */
+                ActivateDeviceCertificateOutcome ActivateDeviceCertificate(const Model::ActivateDeviceCertificateRequest &request);
+                void ActivateDeviceCertificateAsync(const Model::ActivateDeviceCertificateRequest& request, const ActivateDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ActivateDeviceCertificateOutcomeCallable ActivateDeviceCertificateCallable(const Model::ActivateDeviceCertificateRequest& request);
 
                 /**
                  *创建MQTT实例的性能测试任务
@@ -217,6 +236,15 @@ namespace TencentCloud
                 DescribeAuthorizationPoliciesOutcomeCallable DescribeAuthorizationPoliciesCallable(const Model::DescribeAuthorizationPoliciesRequest& request);
 
                 /**
+                 *分页查询设备证书
+                 * @param req DescribeDeviceCertificatesRequest
+                 * @return DescribeDeviceCertificatesOutcome
+                 */
+                DescribeDeviceCertificatesOutcome DescribeDeviceCertificates(const Model::DescribeDeviceCertificatesRequest &request);
+                void DescribeDeviceCertificatesAsync(const Model::DescribeDeviceCertificatesRequest& request, const DescribeDeviceCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceCertificatesOutcomeCallable DescribeDeviceCertificatesCallable(const Model::DescribeDeviceCertificatesRequest& request);
+
+                /**
                  *查询实例信息
                  * @param req DescribeInstanceRequest
                  * @return DescribeInstanceOutcome
@@ -229,7 +257,6 @@ namespace TencentCloud
                  *获取实例列表，Filters参数使用说明如下：
 1. InstanceName, 名称模糊查询
 2. InstanceId，实例ID查询
-3. InstanceType, 实例类型查询，支持多选
 3. InstanceStatus，实例状态查询，支持多选
 
 当使用TagFilters查询时，Filters参数失效。

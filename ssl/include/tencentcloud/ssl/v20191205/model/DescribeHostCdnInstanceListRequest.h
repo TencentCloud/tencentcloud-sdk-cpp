@@ -65,27 +65,6 @@ namespace TencentCloud
                     bool CertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取部署资源类型
-                     * @return ResourceType 部署资源类型
-                     * 
-                     */
-                    std::string GetResourceType() const;
-
-                    /**
-                     * 设置部署资源类型
-                     * @param _resourceType 部署资源类型
-                     * 
-                     */
-                    void SetResourceType(const std::string& _resourceType);
-
-                    /**
-                     * 判断参数 ResourceType 是否已赋值
-                     * @return ResourceType 是否已赋值
-                     * 
-                     */
-                    bool ResourceTypeHasBeenSet() const;
-
-                    /**
                      * 获取是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
                      * @return IsCache 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
                      * 
@@ -126,6 +105,27 @@ namespace TencentCloud
                      * 
                      */
                     bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取部署资源类型cdn
+                     * @return ResourceType 部署资源类型cdn
+                     * 
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置部署资源类型cdn
+                     * @param _resourceType 部署资源类型cdn
+                     * 
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * 
+                     */
+                    bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取原证书ID
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取是否异步
-                     * @return AsyncCache 是否异步
+                     * 获取是否异步,0表示否，1表示是，默认为0
+                     * @return AsyncCache 是否异步,0表示否，1表示是，默认为0
                      * 
                      */
                     int64_t GetAsyncCache() const;
 
                     /**
-                     * 设置是否异步
-                     * @param _asyncCache 是否异步
+                     * 设置是否异步,0表示否，1表示是，默认为0
+                     * @param _asyncCache 是否异步,0表示否，1表示是，默认为0
                      * 
                      */
                     void SetAsyncCache(const int64_t& _asyncCache);
@@ -220,12 +220,6 @@ namespace TencentCloud
                     bool m_certificateIdHasBeenSet;
 
                     /**
-                     * 部署资源类型
-                     */
-                    std::string m_resourceType;
-                    bool m_resourceTypeHasBeenSet;
-
-                    /**
                      * 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
                      */
                     uint64_t m_isCache;
@@ -236,6 +230,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 部署资源类型cdn
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 原证书ID
@@ -256,7 +256,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 是否异步
+                     * 是否异步,0表示否，1表示是，默认为0
                      */
                     int64_t m_asyncCache;
                     bool m_asyncCacheHasBeenSet;

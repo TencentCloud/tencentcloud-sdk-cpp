@@ -32,7 +32,8 @@ FlowApproverDetail::FlowApproverDetail() :
     m_approveMessageHasBeenSet(false),
     m_approveTimeHasBeenSet(false),
     m_approveTypeHasBeenSet(false),
-    m_approverRoleNameHasBeenSet(false)
+    m_approverRoleNameHasBeenSet(false),
+    m_signIdHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome FlowApproverDetail::Deserialize(const rapidjson::Value &valu
         m_approverRoleNameHasBeenSet = true;
     }
 
+    if (value.HasMember("SignId") && !value["SignId"].IsNull())
+    {
+        if (!value["SignId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverDetail.SignId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_signId = string(value["SignId"].GetString());
+        m_signIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void FlowApproverDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ApproverRoleName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approverRoleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void FlowApproverDetail::SetApproverRoleName(const string& _approverRoleName)
 bool FlowApproverDetail::ApproverRoleNameHasBeenSet() const
 {
     return m_approverRoleNameHasBeenSet;
+}
+
+string FlowApproverDetail::GetSignId() const
+{
+    return m_signId;
+}
+
+void FlowApproverDetail::SetSignId(const string& _signId)
+{
+    m_signId = _signId;
+    m_signIdHasBeenSet = true;
+}
+
+bool FlowApproverDetail::SignIdHasBeenSet() const
+{
+    return m_signIdHasBeenSet;
 }
 

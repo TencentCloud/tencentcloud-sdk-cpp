@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页数量，默认10。最大1000
-                     * @return Limit 每页数量，默认10。最大1000
+                     * 获取每页数量，默认10。最大值1000，如超过1000按1000处理
+                     * @return Limit 每页数量，默认10。最大值1000，如超过1000按1000处理
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页数量，默认10。最大1000
-                     * @param _limit 每页数量，默认10。最大1000
+                     * 设置每页数量，默认10。最大值1000，如超过1000按1000处理
+                     * @param _limit 每页数量，默认10。最大值1000，如超过1000按1000处理
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -359,15 +359,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取//是否筛选等待签发的证书，传1是筛选，0和null不筛选
-                     * @return IsPendingIssue //是否筛选等待签发的证书，传1是筛选，0和null不筛选
+                     * 获取是否筛选等待签发的证书，传1是筛选，0和null不筛选
+                     * @return IsPendingIssue 是否筛选等待签发的证书，传1是筛选，0和null不筛选
                      * 
                      */
                     int64_t GetIsPendingIssue() const;
 
                     /**
-                     * 设置//是否筛选等待签发的证书，传1是筛选，0和null不筛选
-                     * @param _isPendingIssue //是否筛选等待签发的证书，传1是筛选，0和null不筛选
+                     * 设置是否筛选等待签发的证书，传1是筛选，0和null不筛选
+                     * @param _isPendingIssue 是否筛选等待签发的证书，传1是筛选，0和null不筛选
                      * 
                      */
                     void SetIsPendingIssue(const int64_t& _isPendingIssue);
@@ -388,7 +388,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页数量，默认10。最大1000
+                     * 每页数量，默认10。最大值1000，如超过1000按1000处理
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -472,7 +472,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * //是否筛选等待签发的证书，传1是筛选，0和null不筛选
+                     * 是否筛选等待签发的证书，传1是筛选，0和null不筛选
                      */
                     int64_t m_isPendingIssue;
                     bool m_isPendingIssueHasBeenSet;

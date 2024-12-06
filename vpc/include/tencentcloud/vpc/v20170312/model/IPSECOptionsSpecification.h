@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'SM4', 'NULL'， 默认为AES-CBC-128
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EncryptAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'SM4', 'NULL'， 默认为AES-CBC-128
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEncryptAlgorithm() const;
 
                     /**
                      * 设置加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'SM4', 'NULL'， 默认为AES-CBC-128
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encryptAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'SM4', 'NULL'， 默认为AES-CBC-128
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncryptAlgorithm(const std::string& _encryptAlgorithm);
@@ -98,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IPsec SA lifetime(s)：单位秒，取值范围：180-604800
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IPSECSaLifetimeSeconds IPsec SA lifetime(s)：单位秒，取值范围：180-604800
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIPSECSaLifetimeSeconds() const;
 
                     /**
                      * 设置IPsec SA lifetime(s)：单位秒，取值范围：180-604800
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iPSECSaLifetimeSeconds IPsec SA lifetime(s)：单位秒，取值范围：180-604800
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIPSECSaLifetimeSeconds(const uint64_t& _iPSECSaLifetimeSeconds);
@@ -123,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PfsDhGroup PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPfsDhGroup() const;
 
                     /**
                      * 设置PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pfsDhGroup PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPfsDhGroup(const std::string& _pfsDhGroup);
@@ -148,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IPSECSaLifetimeTraffic IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIPSECSaLifetimeTraffic() const;
 
                     /**
                      * 设置IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iPSECSaLifetimeTraffic IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIPSECSaLifetimeTraffic(const uint64_t& _iPSECSaLifetimeTraffic);
@@ -173,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntegrityAlgorithm 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIntegrityAlgorithm() const;
 
                     /**
                      * 设置认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _integrityAlgorithm 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIntegrityAlgorithm(const std::string& _integrityAlgorithm);
@@ -200,7 +180,6 @@ namespace TencentCloud
 
                     /**
                      * 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'SM4', 'NULL'， 默认为AES-CBC-128
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_encryptAlgorithm;
                     bool m_encryptAlgorithmHasBeenSet;
@@ -214,28 +193,24 @@ namespace TencentCloud
 
                     /**
                      * IPsec SA lifetime(s)：单位秒，取值范围：180-604800
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_iPSECSaLifetimeSeconds;
                     bool m_iPSECSaLifetimeSecondsHasBeenSet;
 
                     /**
                      * PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pfsDhGroup;
                     bool m_pfsDhGroupHasBeenSet;
 
                     /**
                      * IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_iPSECSaLifetimeTraffic;
                     bool m_iPSECSaLifetimeTrafficHasBeenSet;
 
                     /**
                      * 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_integrityAlgorithm;
                     bool m_integrityAlgorithmHasBeenSet;

@@ -24,9 +24,9 @@ using namespace std;
 
 DescribeHostLighthouseInstanceListRequest::DescribeHostLighthouseInstanceListRequest() :
     m_certificateIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
     m_isCacheHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false)
 {
 }
 
@@ -43,14 +43,6 @@ string DescribeHostLighthouseInstanceListRequest::ToJsonString() const
         string key = "CertificateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_resourceTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isCacheHasBeenSet)
@@ -76,6 +68,14 @@ string DescribeHostLighthouseInstanceListRequest::ToJsonString() const
         }
     }
 
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -98,22 +98,6 @@ void DescribeHostLighthouseInstanceListRequest::SetCertificateId(const string& _
 bool DescribeHostLighthouseInstanceListRequest::CertificateIdHasBeenSet() const
 {
     return m_certificateIdHasBeenSet;
-}
-
-string DescribeHostLighthouseInstanceListRequest::GetResourceType() const
-{
-    return m_resourceType;
-}
-
-void DescribeHostLighthouseInstanceListRequest::SetResourceType(const string& _resourceType)
-{
-    m_resourceType = _resourceType;
-    m_resourceTypeHasBeenSet = true;
-}
-
-bool DescribeHostLighthouseInstanceListRequest::ResourceTypeHasBeenSet() const
-{
-    return m_resourceTypeHasBeenSet;
 }
 
 uint64_t DescribeHostLighthouseInstanceListRequest::GetIsCache() const
@@ -146,6 +130,22 @@ void DescribeHostLighthouseInstanceListRequest::SetFilters(const vector<Filter>&
 bool DescribeHostLighthouseInstanceListRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeHostLighthouseInstanceListRequest::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void DescribeHostLighthouseInstanceListRequest::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool DescribeHostLighthouseInstanceListRequest::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
 }
 
 

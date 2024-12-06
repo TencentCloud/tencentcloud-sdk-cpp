@@ -386,7 +386,7 @@ namespace TencentCloud
                 CheckCertificateDomainVerificationOutcomeCallable CheckCertificateDomainVerificationCallable(const Model::CheckCertificateDomainVerificationRequest& request);
 
                 /**
-                 *提交证书订单。
+                 *提交证书订单到CA机构。
                  * @param req CommitCertificateInformationRequest
                  * @return CommitCertificateInformationOutcome
                  */
@@ -395,7 +395,7 @@ namespace TencentCloud
                 CommitCertificateInformationOutcomeCallable CommitCertificateInformationCallable(const Model::CommitCertificateInformationRequest& request);
 
                 /**
-                 *本接口（CompleteCertificate）用于主动触发证书验证。仅非DNSPod和Wotrus品牌证书支持使用此接口。
+                 *本接口（CompleteCertificate）用于主动触发证书验证。DNSPod和Wotrus品牌的证书不支持使用此接口。
                  * @param req CompleteCertificateRequest
                  * @return CompleteCertificateOutcome
                  */

@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取DDOS实例列表
+                     * 获取DDOS实例列表,取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceList DDOS实例列表
+                     * @return InstanceList DDOS实例列表,取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -60,14 +60,37 @@ namespace TencentCloud
                      */
                     bool InstanceListHasBeenSet() const;
 
+                    /**
+                     * 获取总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalCount 总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * DDOS实例列表
+                     * DDOS实例列表,取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DdosInstanceDetail> m_instanceList;
                     bool m_instanceListHasBeenSet;
+
+                    /**
+                     * 总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

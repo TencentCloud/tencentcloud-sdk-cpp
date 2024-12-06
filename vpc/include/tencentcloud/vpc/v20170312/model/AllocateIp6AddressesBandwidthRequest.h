@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,27 @@ namespace TencentCloud
                      */
                     bool BandwidthPackageIdHasBeenSet() const;
 
+                    /**
+                     * 获取需要关联的标签列表。	
+                     * @return Tags 需要关联的标签列表。	
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置需要关联的标签列表。	
+                     * @param _tags 需要关联的标签列表。	
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +173,12 @@ namespace TencentCloud
                      */
                     std::string m_bandwidthPackageId;
                     bool m_bandwidthPackageIdHasBeenSet;
+
+                    /**
+                     * 需要关联的标签列表。	
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

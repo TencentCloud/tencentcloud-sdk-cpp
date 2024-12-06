@@ -298,6 +298,27 @@ namespace TencentCloud
                      */
                     bool ResultHasBeenSet() const;
 
+                    /**
+                     * 获取平均rps, 单位req/s
+                     * @return RPS 平均rps, 单位req/s
+                     * 
+                     */
+                    double GetRPS() const;
+
+                    /**
+                     * 设置平均rps, 单位req/s
+                     * @param _rPS 平均rps, 单位req/s
+                     * 
+                     */
+                    void SetRPS(const double& _rPS);
+
+                    /**
+                     * 判断参数 RPS 是否已赋值
+                     * @return RPS 是否已赋值
+                     * 
+                     */
+                    bool RPSHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,6 +392,12 @@ namespace TencentCloud
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
+
+                    /**
+                     * 平均rps, 单位req/s
+                     */
+                    double m_rPS;
+                    bool m_rPSHasBeenSet;
 
                 };
             }

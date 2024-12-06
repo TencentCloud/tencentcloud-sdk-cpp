@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取apiGateway实例列表
+                     * 获取apiGateway实例列表,如取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceList apiGateway实例列表
+                     * @return InstanceList apiGateway实例列表,如取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool InstanceListHasBeenSet() const;
 
                     /**
-                     * 获取总数
-                     * @return TotalCount 总数
+                     * 获取总数，如取不到值返回0
+                     * @return TotalCount 总数，如取不到值返回0
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -77,14 +77,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * apiGateway实例列表
+                     * apiGateway实例列表,如取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApiGatewayInstanceDetail> m_instanceList;
                     bool m_instanceListHasBeenSet;
 
                     /**
-                     * 总数
+                     * 总数，如取不到值返回0
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

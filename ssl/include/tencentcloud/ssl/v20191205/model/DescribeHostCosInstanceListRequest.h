@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取是否异步	
-                     * @return AsyncCache 是否异步	
+                     * 获取是否异步，0表示否，1表示是
+                     * @return AsyncCache 是否异步，0表示否，1表示是
                      * 
                      */
                     int64_t GetAsyncCache() const;
 
                     /**
-                     * 设置是否异步	
-                     * @param _asyncCache 是否异步	
+                     * 设置是否异步，0表示否，1表示是
+                     * @param _asyncCache 是否异步，0表示否，1表示是
                      * 
                      */
                     void SetAsyncCache(const int64_t& _asyncCache);
@@ -256,7 +256,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 是否异步	
+                     * 是否异步，0表示否，1表示是
                      */
                     int64_t m_asyncCache;
                     bool m_asyncCacheHasBeenSet;

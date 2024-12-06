@@ -118,18 +118,18 @@ namespace TencentCloud
                     bool AddTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建来源，1 通过控制台创建, 2 通过策略语法创建。
+                     * 获取创建来源，1 通过控制台创建, 2 通过策略语法创建
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateMode 创建来源，1 通过控制台创建, 2 通过策略语法创建。
+                     * @return CreateMode 创建来源，1 通过控制台创建, 2 通过策略语法创建
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreateMode() const;
 
                     /**
-                     * 设置创建来源，1 通过控制台创建, 2 通过策略语法创建。
+                     * 设置创建来源，1 通过控制台创建, 2 通过策略语法创建
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createMode 创建来源，1 通过控制台创建, 2 通过策略语法创建。
+                     * @param _createMode 创建来源，1 通过控制台创建, 2 通过策略语法创建
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -143,18 +143,18 @@ namespace TencentCloud
                     bool CreateModeHasBeenSet() const;
 
                     /**
-                     * 获取取值为user和QCS
+                     * 获取取值为User和QCS。User代表自定义策略，QCS代表系统策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PolicyType 取值为user和QCS
+                     * @return PolicyType 取值为User和QCS。User代表自定义策略，QCS代表系统策略
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
-                     * 设置取值为user和QCS
+                     * 设置取值为User和QCS。User代表自定义策略，QCS代表系统策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _policyType 取值为user和QCS
+                     * @param _policyType 取值为User和QCS。User代表自定义策略，QCS代表系统策略
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -243,18 +243,18 @@ namespace TencentCloud
                     bool OperateUinHasBeenSet() const;
 
                     /**
-                     * 获取UinType为0表示OperateUin字段是子账号Uin，如果UinType为1表示OperateUin字段是角色ID
+                     * 获取取值为0和1。OperateUinType为0表示OperateUin字段是子账号Uin。如果OperateUinType为1表示OperateUin字段是角色ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperateUinType UinType为0表示OperateUin字段是子账号Uin，如果UinType为1表示OperateUin字段是角色ID
+                     * @return OperateUinType 取值为0和1。OperateUinType为0表示OperateUin字段是子账号Uin。如果OperateUinType为1表示OperateUin字段是角色ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOperateUinType() const;
 
                     /**
-                     * 设置UinType为0表示OperateUin字段是子账号Uin，如果UinType为1表示OperateUin字段是角色ID
+                     * 设置取值为0和1。OperateUinType为0表示OperateUin字段是子账号Uin。如果OperateUinType为1表示OperateUin字段是角色ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operateUinType UinType为0表示OperateUin字段是子账号Uin，如果UinType为1表示OperateUin字段是角色ID
+                     * @param _operateUinType 取值为0和1。OperateUinType为0表示OperateUin字段是子账号Uin。如果OperateUinType为1表示OperateUin字段是角色ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -268,18 +268,18 @@ namespace TencentCloud
                     bool OperateUinTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否已下线
+                     * 获取是否已下线，1代表已下线，0代表未下线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Deactived 是否已下线
+                     * @return Deactived 是否已下线，1代表已下线，0代表未下线
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDeactived() const;
 
                     /**
-                     * 设置是否已下线
+                     * 设置是否已下线，1代表已下线，0代表未下线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deactived 是否已下线
+                     * @param _deactived 是否已下线，1代表已下线，0代表未下线
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -340,14 +340,14 @@ namespace TencentCloud
                     bool m_addTimeHasBeenSet;
 
                     /**
-                     * 创建来源，1 通过控制台创建, 2 通过策略语法创建。
+                     * 创建来源，1 通过控制台创建, 2 通过策略语法创建
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createMode;
                     bool m_createModeHasBeenSet;
 
                     /**
-                     * 取值为user和QCS
+                     * 取值为User和QCS。User代表自定义策略，QCS代表系统策略
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyType;
@@ -375,14 +375,14 @@ namespace TencentCloud
                     bool m_operateUinHasBeenSet;
 
                     /**
-                     * UinType为0表示OperateUin字段是子账号Uin，如果UinType为1表示OperateUin字段是角色ID
+                     * 取值为0和1。OperateUinType为0表示OperateUin字段是子账号Uin。如果OperateUinType为1表示OperateUin字段是角色ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_operateUinType;
                     bool m_operateUinTypeHasBeenSet;
 
                     /**
-                     * 是否已下线
+                     * 是否已下线，1代表已下线，0代表未下线
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deactived;

@@ -2233,49 +2233,6 @@ TdmqClient::DescribeClustersOutcomeCallable TdmqClient::DescribeClustersCallable
     return task->get_future();
 }
 
-TdmqClient::DescribeCmqDeadLetterSourceQueuesOutcome TdmqClient::DescribeCmqDeadLetterSourceQueues(const DescribeCmqDeadLetterSourceQueuesRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeCmqDeadLetterSourceQueues");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeCmqDeadLetterSourceQueuesResponse rsp = DescribeCmqDeadLetterSourceQueuesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeCmqDeadLetterSourceQueuesOutcome(rsp);
-        else
-            return DescribeCmqDeadLetterSourceQueuesOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeCmqDeadLetterSourceQueuesOutcome(outcome.GetError());
-    }
-}
-
-void TdmqClient::DescribeCmqDeadLetterSourceQueuesAsync(const DescribeCmqDeadLetterSourceQueuesRequest& request, const DescribeCmqDeadLetterSourceQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCmqDeadLetterSourceQueues(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TdmqClient::DescribeCmqDeadLetterSourceQueuesOutcomeCallable TdmqClient::DescribeCmqDeadLetterSourceQueuesCallable(const DescribeCmqDeadLetterSourceQueuesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeCmqDeadLetterSourceQueuesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCmqDeadLetterSourceQueues(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TdmqClient::DescribeCmqQueueDetailOutcome TdmqClient::DescribeCmqQueueDetail(const DescribeCmqQueueDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCmqQueueDetail");

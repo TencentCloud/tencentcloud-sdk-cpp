@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一键更新记录ID
-                     * @return DeployRecordId 一键更新记录ID
+                     * 获取一键更新记录ID,从接口UpdateCertificateInstance获得
+                     * @return DeployRecordId 一键更新记录ID,从接口UpdateCertificateInstance获得
                      * 
                      */
                     std::string GetDeployRecordId() const;
 
                     /**
-                     * 设置一键更新记录ID
-                     * @param _deployRecordId 一键更新记录ID
+                     * 设置一键更新记录ID,从接口UpdateCertificateInstance获得
+                     * @param _deployRecordId 一键更新记录ID,从接口UpdateCertificateInstance获得
                      * 
                      */
                     void SetDeployRecordId(const std::string& _deployRecordId);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一键更新记录ID
+                     * 一键更新记录ID,从接口UpdateCertificateInstance获得
                      */
                     std::string m_deployRecordId;
                     bool m_deployRecordIdHasBeenSet;

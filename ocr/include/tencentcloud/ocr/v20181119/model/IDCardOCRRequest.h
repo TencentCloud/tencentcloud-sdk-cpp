@@ -256,6 +256,27 @@ Config = {"CropIdCard":true,"CropPortrait":true}
                      */
                     bool EnableReflectDetailHasBeenSet() const;
 
+                    /**
+                     * 获取用于控制是否开启日期校验，默认值为true，打开会进行日期校验。
+                     * @return EnableDateVerify 用于控制是否开启日期校验，默认值为true，打开会进行日期校验。
+                     * 
+                     */
+                    bool GetEnableDateVerify() const;
+
+                    /**
+                     * 设置用于控制是否开启日期校验，默认值为true，打开会进行日期校验。
+                     * @param _enableDateVerify 用于控制是否开启日期校验，默认值为true，打开会进行日期校验。
+                     * 
+                     */
+                    void SetEnableDateVerify(const bool& _enableDateVerify);
+
+                    /**
+                     * 判断参数 EnableDateVerify 是否已赋值
+                     * @return EnableDateVerify 是否已赋值
+                     * 
+                     */
+                    bool EnableDateVerifyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -315,6 +336,12 @@ Config = {"CropIdCard":true,"CropPortrait":true}
                      */
                     bool m_enableReflectDetail;
                     bool m_enableReflectDetailHasBeenSet;
+
+                    /**
+                     * 用于控制是否开启日期校验，默认值为true，打开会进行日期校验。
+                     */
+                    bool m_enableDateVerify;
+                    bool m_enableDateVerifyHasBeenSet;
 
                 };
             }

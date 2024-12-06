@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID，根据任务ID查询绑定云资源结果， 最大支持100个
-                     * @return TaskIds 任务ID，根据任务ID查询绑定云资源结果， 最大支持100个
+                     * 获取任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果， 最大支持100个
+                     * @return TaskIds 任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果， 最大支持100个
                      * 
                      */
                     std::vector<std::string> GetTaskIds() const;
 
                     /**
-                     * 设置任务ID，根据任务ID查询绑定云资源结果， 最大支持100个
-                     * @param _taskIds 任务ID，根据任务ID查询绑定云资源结果， 最大支持100个
+                     * 设置任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果， 最大支持100个
+                     * @param _taskIds 任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果， 最大支持100个
                      * 
                      */
                     void SetTaskIds(const std::vector<std::string>& _taskIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID，根据任务ID查询绑定云资源结果， 最大支持100个
+                     * 任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果， 最大支持100个
                      */
                     std::vector<std::string> m_taskIds;
                     bool m_taskIdsHasBeenSet;

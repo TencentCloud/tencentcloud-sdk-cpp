@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待重试部署记录ID
-                     * @return DeployRecordId 待重试部署记录ID
+                     * 获取待重试部署记录ID,通过UpdateCertificateInstance得到部署记录ID
+                     * @return DeployRecordId 待重试部署记录ID,通过UpdateCertificateInstance得到部署记录ID
                      * 
                      */
                     int64_t GetDeployRecordId() const;
 
                     /**
-                     * 设置待重试部署记录ID
-                     * @param _deployRecordId 待重试部署记录ID
+                     * 设置待重试部署记录ID,通过UpdateCertificateInstance得到部署记录ID
+                     * @param _deployRecordId 待重试部署记录ID,通过UpdateCertificateInstance得到部署记录ID
                      * 
                      */
                     void SetDeployRecordId(const int64_t& _deployRecordId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DeployRecordIdHasBeenSet() const;
 
                     /**
-                     * 获取待重试部署记录详情ID
-                     * @return DeployRecordDetailId 待重试部署记录详情ID
+                     * 获取待重试部署记录详情ID,通过DescribeHostUpdateRecordDetail接口获得
+                     * @return DeployRecordDetailId 待重试部署记录详情ID,通过DescribeHostUpdateRecordDetail接口获得
                      * 
                      */
                     int64_t GetDeployRecordDetailId() const;
 
                     /**
-                     * 设置待重试部署记录详情ID
-                     * @param _deployRecordDetailId 待重试部署记录详情ID
+                     * 设置待重试部署记录详情ID,通过DescribeHostUpdateRecordDetail接口获得
+                     * @param _deployRecordDetailId 待重试部署记录详情ID,通过DescribeHostUpdateRecordDetail接口获得
                      * 
                      */
                     void SetDeployRecordDetailId(const int64_t& _deployRecordDetailId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待重试部署记录ID
+                     * 待重试部署记录ID,通过UpdateCertificateInstance得到部署记录ID
                      */
                     int64_t m_deployRecordId;
                     bool m_deployRecordIdHasBeenSet;
 
                     /**
-                     * 待重试部署记录详情ID
+                     * 待重试部署记录详情ID,通过DescribeHostUpdateRecordDetail接口获得
                      */
                     int64_t m_deployRecordDetailId;
                     bool m_deployRecordDetailIdHasBeenSet;

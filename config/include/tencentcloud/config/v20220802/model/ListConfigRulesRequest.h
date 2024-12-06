@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取每页限制
-                     * @return Limit 每页限制
+                     * 获取每页数量。
+取值范围：1~200
+                     * @return Limit 每页数量。
+取值范围：1~200
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页限制
-                     * @param _limit 每页限制
+                     * 设置每页数量。
+取值范围：1~200
+                     * @param _limit 每页数量。
+取值范围：1~200
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -64,15 +68,19 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量。
+取值范围：最小值为0
+                     * @return Offset 偏移量。
+取值范围：最小值为0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置偏移量。
+取值范围：最小值为0
+                     * @param _offset 偏移量。
+取值范围：最小值为0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +93,23 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序类型, 倒序：desc，顺序：asc
-                     * @return OrderType 排序类型, 倒序：desc，顺序：asc
+                     * 获取排序类型(规则名称)。
+倒序：desc，
+顺序：asc
+                     * @return OrderType 排序类型(规则名称)。
+倒序：desc，
+顺序：asc
                      * 
                      */
                     std::string GetOrderType() const;
 
                     /**
-                     * 设置排序类型, 倒序：desc，顺序：asc
-                     * @param _orderType 排序类型, 倒序：desc，顺序：asc
+                     * 设置排序类型(规则名称)。
+倒序：desc，
+顺序：asc
+                     * @param _orderType 排序类型(规则名称)。
+倒序：desc，
+顺序：asc
                      * 
                      */
                     void SetOrderType(const std::string& _orderType);
@@ -106,26 +122,26 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取风险等级
-1：高风险。
-2：中风险。
+                     * 获取风险等级。
+1：高风险，
+2：中风险，
 3：低风险。
-                     * @return RiskLevel 风险等级
-1：高风险。
-2：中风险。
+                     * @return RiskLevel 风险等级。
+1：高风险，
+2：中风险，
 3：低风险。
                      * 
                      */
                     std::vector<uint64_t> GetRiskLevel() const;
 
                     /**
-                     * 设置风险等级
-1：高风险。
-2：中风险。
+                     * 设置风险等级。
+1：高风险，
+2：中风险，
 3：低风险。
-                     * @param _riskLevel 风险等级
-1：高风险。
-2：中风险。
+                     * @param _riskLevel 风险等级。
+1：高风险，
+2：中风险，
 3：低风险。
                      * 
                      */
@@ -139,15 +155,27 @@ namespace TencentCloud
                     bool RiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取规则状态
-                     * @return State 规则状态
+                     * 获取规则状态。
+ACTIVE：启用
+UN_ACTIVE：停用
+
+                     * @return State 规则状态。
+ACTIVE：启用
+UN_ACTIVE：停用
+
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置规则状态
-                     * @param _state 规则状态
+                     * 设置规则状态。
+ACTIVE：启用
+UN_ACTIVE：停用
+
+                     * @param _state 规则状态。
+ACTIVE：启用
+UN_ACTIVE：停用
+
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -160,15 +188,23 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取评估结果
-                     * @return ComplianceResult 评估结果
+                     * 获取评估结果。
+COMPLIANT：合规
+NON_COMPLIANT：不合规
+                     * @return ComplianceResult 评估结果。
+COMPLIANT：合规
+NON_COMPLIANT：不合规
                      * 
                      */
                     std::vector<std::string> GetComplianceResult() const;
 
                     /**
-                     * 设置评估结果
-                     * @param _complianceResult 评估结果
+                     * 设置评估结果。
+COMPLIANT：合规
+NON_COMPLIANT：不合规
+                     * @param _complianceResult 评估结果。
+COMPLIANT：合规
+NON_COMPLIANT：不合规
                      * 
                      */
                     void SetComplianceResult(const std::vector<std::string>& _complianceResult);
@@ -204,40 +240,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 每页限制
+                     * 每页数量。
+取值范围：1~200
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量。
+取值范围：最小值为0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序类型, 倒序：desc，顺序：asc
+                     * 排序类型(规则名称)。
+倒序：desc，
+顺序：asc
                      */
                     std::string m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 风险等级
-1：高风险。
-2：中风险。
+                     * 风险等级。
+1：高风险，
+2：中风险，
 3：低风险。
                      */
                     std::vector<uint64_t> m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
-                     * 规则状态
+                     * 规则状态。
+ACTIVE：启用
+UN_ACTIVE：停用
+
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 评估结果
+                     * 评估结果。
+COMPLIANT：合规
+NON_COMPLIANT：不合规
                      */
                     std::vector<std::string> m_complianceResult;
                     bool m_complianceResultHasBeenSet;

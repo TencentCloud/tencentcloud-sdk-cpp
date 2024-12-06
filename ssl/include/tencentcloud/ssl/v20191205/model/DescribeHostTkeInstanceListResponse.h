@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数
+                     * 获取总数，取不到值返回0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 总数
+                     * @return TotalCount 总数，取不到值返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取CLB实例监听器列表
+                     * 获取tke实例列表，取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceList CLB实例监听器列表
+                     * @return InstanceList tke实例列表，取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,9 +77,9 @@ namespace TencentCloud
                     bool InstanceListHasBeenSet() const;
 
                     /**
-                     * 获取异步刷新总数
+                     * 获取异步刷新总数，取不到值返回0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AsyncTotalNum 异步刷新总数
+                     * @return AsyncTotalNum 异步刷新总数，取不到值返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,9 +93,9 @@ namespace TencentCloud
                     bool AsyncTotalNumHasBeenSet() const;
 
                     /**
-                     * 获取异步刷新当前执行数
+                     * 获取异步刷新当前执行数，取不到值返回0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AsyncOffset 异步刷新当前执行数
+                     * @return AsyncOffset 异步刷新当前执行数，取不到值返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -127,28 +127,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数
+                     * 总数，取不到值返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * CLB实例监听器列表
+                     * tke实例列表，取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TkeInstanceDetail> m_instanceList;
                     bool m_instanceListHasBeenSet;
 
                     /**
-                     * 异步刷新总数
+                     * 异步刷新总数，取不到值返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_asyncTotalNum;
                     bool m_asyncTotalNumHasBeenSet;
 
                     /**
-                     * 异步刷新当前执行数
+                     * 异步刷新当前执行数，取不到值返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_asyncOffset;

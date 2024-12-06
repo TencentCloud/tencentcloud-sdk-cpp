@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Vod实例列表
+                     * 获取Vod实例列表，如果取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceList Vod实例列表
+                     * @return InstanceList Vod实例列表，如果取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool InstanceListHasBeenSet() const;
 
                     /**
-                     * 获取总数
+                     * 获取总数,如果取不到值返回0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 总数
+                     * @return TotalCount 总数,如果取不到值返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,14 +79,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Vod实例列表
+                     * Vod实例列表，如果取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VodInstanceDetail> m_instanceList;
                     bool m_instanceListHasBeenSet;
 
                     /**
-                     * 总数
+                     * 总数,如果取不到值返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;

@@ -14,42 +14,42 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBECMQDEADLETTERSOURCEQUEUESRESPONSE_H_
-#define TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBECMQDEADLETTERSOURCEQUEUESRESPONSE_H_
+#ifndef TENCENTCLOUD_MQTT_V20240516_MODEL_DESCRIBEDEVICECERTIFICATESRESPONSE_H_
+#define TENCENTCLOUD_MQTT_V20240516_MODEL_DESCRIBEDEVICECERTIFICATESRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tdmq/v20200217/model/CmqDeadLetterSource.h>
+#include <tencentcloud/mqtt/v20240516/model/DeviceCertificateItem.h>
 
 
 namespace TencentCloud
 {
-    namespace Tdmq
+    namespace Mqtt
     {
-        namespace V20200217
+        namespace V20240516
         {
             namespace Model
             {
                 /**
-                * DescribeCmqDeadLetterSourceQueues返回参数结构体
+                * DescribeDeviceCertificates返回参数结构体
                 */
-                class DescribeCmqDeadLetterSourceQueuesResponse : public AbstractModel
+                class DescribeDeviceCertificatesResponse : public AbstractModel
                 {
                 public:
-                    DescribeCmqDeadLetterSourceQueuesResponse();
-                    ~DescribeCmqDeadLetterSourceQueuesResponse() = default;
+                    DescribeDeviceCertificatesResponse();
+                    ~DescribeDeviceCertificatesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取满足本次条件的队列个数
-                     * @return TotalCount 满足本次条件的队列个数
+                     * 获取总数
+                     * @return TotalCount 总数
                      * 
                      */
-                    uint64_t GetTotalCount() const;
+                    int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
@@ -59,32 +59,32 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取死信队列源队列
-                     * @return QueueSet 死信队列源队列
+                     * 获取设备证书
+                     * @return Data 设备证书
                      * 
                      */
-                    std::vector<CmqDeadLetterSource> GetQueueSet() const;
+                    std::vector<DeviceCertificateItem> GetData() const;
 
                     /**
-                     * 判断参数 QueueSet 是否已赋值
-                     * @return QueueSet 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool QueueSetHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 满足本次条件的队列个数
+                     * 总数
                      */
-                    uint64_t m_totalCount;
+                    int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 死信队列源队列
+                     * 设备证书
                      */
-                    std::vector<CmqDeadLetterSource> m_queueSet;
-                    bool m_queueSetHasBeenSet;
+                    std::vector<DeviceCertificateItem> m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }
@@ -92,4 +92,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBECMQDEADLETTERSOURCEQUEUESRESPONSE_H_
+#endif // !TENCENTCLOUD_MQTT_V20240516_MODEL_DESCRIBEDEVICECERTIFICATESRESPONSE_H_

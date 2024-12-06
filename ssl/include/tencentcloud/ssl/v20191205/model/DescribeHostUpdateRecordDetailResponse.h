@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数
+                     * 获取总数,如果取不到返回0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 总数
+                     * @return TotalCount 总数,如果取不到返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取证书部署记录列表
+                     * 获取证书部署记录列表，如果取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecordDetailList 证书部署记录列表
+                     * @return RecordDetailList 证书部署记录列表，如果取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,9 +77,9 @@ namespace TencentCloud
                     bool RecordDetailListHasBeenSet() const;
 
                     /**
-                     * 获取成功总数
+                     * 获取成功总数,如果取不到返回0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SuccessTotalCount 成功总数
+                     * @return SuccessTotalCount 成功总数,如果取不到返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,9 +93,9 @@ namespace TencentCloud
                     bool SuccessTotalCountHasBeenSet() const;
 
                     /**
-                     * 获取失败总数
+                     * 获取失败总数,如果取不到返回0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FailedTotalCount 失败总数
+                     * @return FailedTotalCount 失败总数,如果取不到返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -109,9 +109,9 @@ namespace TencentCloud
                     bool FailedTotalCountHasBeenSet() const;
 
                     /**
-                     * 获取部署中总数
+                     * 获取部署中总数,如果取不到返回0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunningTotalCount 部署中总数
+                     * @return RunningTotalCount 部署中总数,如果取不到返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -127,35 +127,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数
+                     * 总数,如果取不到返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 证书部署记录列表
+                     * 证书部署记录列表，如果取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UpdateRecordDetails> m_recordDetailList;
                     bool m_recordDetailListHasBeenSet;
 
                     /**
-                     * 成功总数
+                     * 成功总数,如果取不到返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_successTotalCount;
                     bool m_successTotalCountHasBeenSet;
 
                     /**
-                     * 失败总数
+                     * 失败总数,如果取不到返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_failedTotalCount;
                     bool m_failedTotalCountHasBeenSet;
 
                     /**
-                     * 部署中总数
+                     * 部署中总数,如果取不到返回0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_runningTotalCount;

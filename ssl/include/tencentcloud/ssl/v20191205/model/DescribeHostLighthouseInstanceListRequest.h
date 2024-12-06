@@ -65,27 +65,6 @@ namespace TencentCloud
                     bool CertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取部署资源类型 lighthouse
-                     * @return ResourceType 部署资源类型 lighthouse
-                     * 
-                     */
-                    std::string GetResourceType() const;
-
-                    /**
-                     * 设置部署资源类型 lighthouse
-                     * @param _resourceType 部署资源类型 lighthouse
-                     * 
-                     */
-                    void SetResourceType(const std::string& _resourceType);
-
-                    /**
-                     * 判断参数 ResourceType 是否已赋值
-                     * @return ResourceType 是否已赋值
-                     * 
-                     */
-                    bool ResourceTypeHasBeenSet() const;
-
-                    /**
                      * 获取是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
                      * @return IsCache 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
                      * 
@@ -127,6 +106,27 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取部署资源类型 lighthouse
+                     * @return ResourceType 部署资源类型 lighthouse
+                     * 
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置部署资源类型 lighthouse
+                     * @param _resourceType 部署资源类型 lighthouse
+                     * 
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * 
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,12 +134,6 @@ namespace TencentCloud
                      */
                     std::string m_certificateId;
                     bool m_certificateIdHasBeenSet;
-
-                    /**
-                     * 部署资源类型 lighthouse
-                     */
-                    std::string m_resourceType;
-                    bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
@@ -152,6 +146,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 部署资源类型 lighthouse
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
 
                 };
             }

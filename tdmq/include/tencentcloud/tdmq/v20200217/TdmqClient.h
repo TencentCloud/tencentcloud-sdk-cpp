@@ -125,8 +125,6 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeClusterDetailResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeClustersRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeClustersResponse.h>
-#include <tencentcloud/tdmq/v20200217/model/DescribeCmqDeadLetterSourceQueuesRequest.h>
-#include <tencentcloud/tdmq/v20200217/model/DescribeCmqDeadLetterSourceQueuesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeCmqQueueDetailRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeCmqQueueDetailResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeCmqQueuesRequest.h>
@@ -480,9 +478,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeCmqDeadLetterSourceQueuesResponse> DescribeCmqDeadLetterSourceQueuesOutcome;
-                typedef std::future<DescribeCmqDeadLetterSourceQueuesOutcome> DescribeCmqDeadLetterSourceQueuesOutcomeCallable;
-                typedef std::function<void(const TdmqClient*, const Model::DescribeCmqDeadLetterSourceQueuesRequest&, DescribeCmqDeadLetterSourceQueuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCmqDeadLetterSourceQueuesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCmqQueueDetailResponse> DescribeCmqQueueDetailOutcome;
                 typedef std::future<DescribeCmqQueueDetailOutcome> DescribeCmqQueueDetailOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeCmqQueueDetailRequest&, DescribeCmqQueueDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCmqQueueDetailAsyncHandler;
@@ -1171,7 +1166,9 @@ namespace TencentCloud
                 DeleteTopicsOutcomeCallable DeleteTopicsCallable(const Model::DeleteTopicsRequest& request);
 
                 /**
-                 *获取amqp集群列表
+                 *历史原因，该接口位于tdmq-manager，目前rabbitmq产品没有使用该接口，当前使用的是DescribeRabbitMQVipInstances。不过从调用链上看，线网还有请求流程，所以走预下线流程。
+
+获取amqp集群列表
                  * @param req DescribeAMQPClustersRequest
                  * @return DescribeAMQPClustersOutcome
                  */
@@ -1223,17 +1220,6 @@ namespace TencentCloud
                 DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest &request);
                 void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request);
-
-                /**
-                 *接口很久之前已删除，需下线
-
-枚举cmq死信队列源队列
-                 * @param req DescribeCmqDeadLetterSourceQueuesRequest
-                 * @return DescribeCmqDeadLetterSourceQueuesOutcome
-                 */
-                DescribeCmqDeadLetterSourceQueuesOutcome DescribeCmqDeadLetterSourceQueues(const Model::DescribeCmqDeadLetterSourceQueuesRequest &request);
-                void DescribeCmqDeadLetterSourceQueuesAsync(const Model::DescribeCmqDeadLetterSourceQueuesRequest& request, const DescribeCmqDeadLetterSourceQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeCmqDeadLetterSourceQueuesOutcomeCallable DescribeCmqDeadLetterSourceQueuesCallable(const Model::DescribeCmqDeadLetterSourceQueuesRequest& request);
 
                 /**
                  *查询cmq队列详情
@@ -1767,7 +1753,9 @@ namespace TencentCloud
                 ImportRocketMQTopicsOutcomeCallable ImportRocketMQTopicsCallable(const Model::ImportRocketMQTopicsRequest& request);
 
                 /**
-                 *更新Amqp集群信息
+                 *历史原因，该接口位于tdmq-manager，目前rabbitmq产品没有使用该接口，当前使用的是ModifyRabbitMQVipInstance。不过从调用链上看，线网还有请求流程，所以走预下线流程。
+
+更新Amqp集群信息
                  * @param req ModifyAMQPClusterRequest
                  * @return ModifyAMQPClusterOutcome
                  */

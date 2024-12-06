@@ -28,7 +28,8 @@ ConfirmVideoTranslateJobResponse::ConfirmVideoTranslateJobResponse() :
     m_taskIdHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_jobStatusHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome ConfirmVideoTranslateJobResponse::Deserialize(const string &
         m_messageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("JobStatus") && !rsp["JobStatus"].IsNull())
+    {
+        if (!rsp["JobStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobStatus = rsp["JobStatus"].GetInt64();
+        m_jobStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +175,14 @@ string ConfirmVideoTranslateJobResponse::ToJsonString() const
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jobStatus, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -226,6 +245,16 @@ string ConfirmVideoTranslateJobResponse::GetMessage() const
 bool ConfirmVideoTranslateJobResponse::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+int64_t ConfirmVideoTranslateJobResponse::GetJobStatus() const
+{
+    return m_jobStatus;
+}
+
+bool ConfirmVideoTranslateJobResponse::JobStatusHasBeenSet() const
+{
+    return m_jobStatusHasBeenSet;
 }
 
 

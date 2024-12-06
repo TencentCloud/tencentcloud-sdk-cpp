@@ -384,6 +384,49 @@ CynosdbClient::CloseProxyOutcomeCallable CynosdbClient::CloseProxyCallable(const
     return task->get_future();
 }
 
+CynosdbClient::CloseProxyEndPointOutcome CynosdbClient::CloseProxyEndPoint(const CloseProxyEndPointRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseProxyEndPoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseProxyEndPointResponse rsp = CloseProxyEndPointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseProxyEndPointOutcome(rsp);
+        else
+            return CloseProxyEndPointOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseProxyEndPointOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CloseProxyEndPointAsync(const CloseProxyEndPointRequest& request, const CloseProxyEndPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseProxyEndPoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::CloseProxyEndPointOutcomeCallable CynosdbClient::CloseProxyEndPointCallable(const CloseProxyEndPointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseProxyEndPointOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseProxyEndPoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::CloseWanOutcome CynosdbClient::CloseWan(const CloseWanRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseWan");
@@ -2742,6 +2785,49 @@ CynosdbClient::DescribeInstancesOutcomeCallable CynosdbClient::DescribeInstances
         [this, request]()
         {
             return this->DescribeInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeInstancesWithinSameClusterOutcome CynosdbClient::DescribeInstancesWithinSameCluster(const DescribeInstancesWithinSameClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancesWithinSameCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesWithinSameClusterResponse rsp = DescribeInstancesWithinSameClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesWithinSameClusterOutcome(rsp);
+        else
+            return DescribeInstancesWithinSameClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesWithinSameClusterOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeInstancesWithinSameClusterAsync(const DescribeInstancesWithinSameClusterRequest& request, const DescribeInstancesWithinSameClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancesWithinSameCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeInstancesWithinSameClusterOutcomeCallable CynosdbClient::DescribeInstancesWithinSameClusterCallable(const DescribeInstancesWithinSameClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesWithinSameClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancesWithinSameCluster(request);
         }
     );
 

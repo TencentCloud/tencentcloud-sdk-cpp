@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InstanceIdListHasBeenSet() const;
 
                     /**
-                     * 获取部署的云资源类型
-                     * @return ResourceType 部署的云资源类型
+                     * 获取部署的云资源类型,如clb，cos
+                     * @return ResourceType 部署的云资源类型,如clb，cos
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置部署的云资源类型
-                     * @param _resourceType 部署的云资源类型
+                     * 设置部署的云资源类型,如clb，cos
+                     * @param _resourceType 部署的云资源类型,如clb，cos
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -178,7 +178,7 @@ namespace TencentCloud
                     bool m_instanceIdListHasBeenSet;
 
                     /**
-                     * 部署的云资源类型
+                     * 部署的云资源类型,如clb，cos
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

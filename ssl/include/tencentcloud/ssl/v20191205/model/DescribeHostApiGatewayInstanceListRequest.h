@@ -65,27 +65,6 @@ namespace TencentCloud
                     bool CertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取部署资源类型
-                     * @return ResourceType 部署资源类型
-                     * 
-                     */
-                    std::string GetResourceType() const;
-
-                    /**
-                     * 设置部署资源类型
-                     * @param _resourceType 部署资源类型
-                     * 
-                     */
-                    void SetResourceType(const std::string& _resourceType);
-
-                    /**
-                     * 判断参数 ResourceType 是否已赋值
-                     * @return ResourceType 是否已赋值
-                     * 
-                     */
-                    bool ResourceTypeHasBeenSet() const;
-
-                    /**
                      * 获取是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
                      * @return IsCache 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
                      * 
@@ -128,6 +107,27 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
+                     * 获取部署资源类型apigateway
+                     * @return ResourceType 部署资源类型apigateway
+                     * 
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置部署资源类型apigateway
+                     * @param _resourceType 部署资源类型apigateway
+                     * 
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * 
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
+                    /**
                      * 获取已部署的证书ID
                      * @return OldCertificateId 已部署的证书ID
                      * 
@@ -148,6 +148,48 @@ namespace TencentCloud
                      */
                     bool OldCertificateIdHasBeenSet() const;
 
+                    /**
+                     * 获取每页数量，默认10。	
+                     * @return Limit 每页数量，默认10。	
+                     * 
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置每页数量，默认10。	
+                     * @param _limit 每页数量，默认10。	
+                     * 
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取分页偏移量，从0开始。	
+                     * @return Offset 分页偏移量，从0开始。	
+                     * 
+                     */
+                    std::string GetOffset() const;
+
+                    /**
+                     * 设置分页偏移量，从0开始。	
+                     * @param _offset 分页偏移量，从0开始。	
+                     * 
+                     */
+                    void SetOffset(const std::string& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,12 +197,6 @@ namespace TencentCloud
                      */
                     std::string m_certificateId;
                     bool m_certificateIdHasBeenSet;
-
-                    /**
-                     * 部署资源类型
-                     */
-                    std::string m_resourceType;
-                    bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
@@ -175,10 +211,28 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
+                     * 部署资源类型apigateway
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
+
+                    /**
                      * 已部署的证书ID
                      */
                     std::string m_oldCertificateId;
                     bool m_oldCertificateIdHasBeenSet;
+
+                    /**
+                     * 每页数量，默认10。	
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 分页偏移量，从0开始。	
+                     */
+                    std::string m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

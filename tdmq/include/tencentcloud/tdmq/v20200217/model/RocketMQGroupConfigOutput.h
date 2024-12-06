@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取导入状态
+                     * 获取是否已导入
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Imported 导入状态
+                     * @return Imported 是否已导入
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetImported() const;
 
                     /**
-                     * 设置导入状态
+                     * 设置是否已导入
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _imported 导入状态
+                     * @param _imported 是否已导入
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -163,7 +163,7 @@ namespace TencentCloud
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 导入状态
+                     * 是否已导入
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_imported;

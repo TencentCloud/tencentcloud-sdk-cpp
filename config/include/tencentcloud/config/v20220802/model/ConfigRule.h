@@ -576,18 +576,18 @@ ConfigurationItemChangeNotification：变更触发
                     bool ManageInputParameterHasBeenSet() const;
 
                     /**
-                     * 获取规则名称
+                     * 获取合规包名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CompliancePackName 规则名称
+                     * @return CompliancePackName 合规包名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCompliancePackName() const;
 
                     /**
-                     * 设置规则名称
+                     * 设置合规包名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _compliancePackName 规则名称
+                     * @param _compliancePackName 合规包名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -927,7 +927,7 @@ ConfigurationItemChangeNotification：变更触发
                     bool m_manageInputParameterHasBeenSet;
 
                     /**
-                     * 规则名称
+                     * 合规包名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_compliancePackName;

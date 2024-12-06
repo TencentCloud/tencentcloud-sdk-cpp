@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取WAF实例列表
+                     * 获取WAF实例列表，如果没有取到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceList WAF实例列表
+                     * @return InstanceList WAF实例列表，如果没有取到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * WAF实例列表
+                     * WAF实例列表，如果没有取到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LiveInstanceDetail> m_instanceList;

@@ -65,15 +65,19 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询条件列表
-                     * @return Filters 查询条件列表
+                     * 获取查询条件列表:
+支持TopicName模糊查询
+                     * @return Filters 查询条件列表:
+支持TopicName模糊查询
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询条件列表
-                     * @param _filters 查询条件列表
+                     * 设置查询条件列表:
+支持TopicName模糊查询
+                     * @param _filters 查询条件列表:
+支持TopicName模糊查询
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -136,7 +140,8 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 查询条件列表
+                     * 查询条件列表:
+支持TopicName模糊查询
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

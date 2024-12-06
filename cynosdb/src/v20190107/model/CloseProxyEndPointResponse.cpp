@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdmq/v20200217/model/DescribeCmqDeadLetterSourceQueuesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CloseProxyEndPointResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tdmq::V20200217::Model;
+using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
-DescribeCmqDeadLetterSourceQueuesResponse::DescribeCmqDeadLetterSourceQueuesResponse() :
-    m_totalCountHasBeenSet(false),
-    m_queueSetHasBeenSet(false)
+CloseProxyEndPointResponse::CloseProxyEndPointResponse() :
+    m_flowIdHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeCmqDeadLetterSourceQueuesResponse::Deserialize(const string &payload)
+CoreInternalOutcome CloseProxyEndPointResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +63,50 @@ CoreInternalOutcome DescribeCmqDeadLetterSourceQueuesResponse::Deserialize(const
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
     {
-        if (!rsp["TotalCount"].IsUint64())
+        if (!rsp["FlowId"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
+        m_flowId = rsp["FlowId"].GetInt64();
+        m_flowIdHasBeenSet = true;
     }
 
-    if (rsp.HasMember("QueueSet") && !rsp["QueueSet"].IsNull())
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
     {
-        if (!rsp["QueueSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `QueueSet` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["QueueSet"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["TaskId"].IsInt64())
         {
-            CmqDeadLetterSource item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_queueSet.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_queueSetHasBeenSet = true;
+        m_taskId = rsp["TaskId"].GetInt64();
+        m_taskIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeCmqDeadLetterSourceQueuesResponse::ToJsonString() const
+string CloseProxyEndPointResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_totalCountHasBeenSet)
+    if (m_flowIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
+        string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
+        value.AddMember(iKey, m_flowId, allocator);
     }
 
-    if (m_queueSetHasBeenSet)
+    if (m_taskIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "QueueSet";
+        string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_queueSet.begin(); itr != m_queueSet.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, m_taskId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +121,24 @@ string DescribeCmqDeadLetterSourceQueuesResponse::ToJsonString() const
 }
 
 
-uint64_t DescribeCmqDeadLetterSourceQueuesResponse::GetTotalCount() const
+int64_t CloseProxyEndPointResponse::GetFlowId() const
 {
-    return m_totalCount;
+    return m_flowId;
 }
 
-bool DescribeCmqDeadLetterSourceQueuesResponse::TotalCountHasBeenSet() const
+bool CloseProxyEndPointResponse::FlowIdHasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
+    return m_flowIdHasBeenSet;
 }
 
-vector<CmqDeadLetterSource> DescribeCmqDeadLetterSourceQueuesResponse::GetQueueSet() const
+int64_t CloseProxyEndPointResponse::GetTaskId() const
 {
-    return m_queueSet;
+    return m_taskId;
 }
 
-bool DescribeCmqDeadLetterSourceQueuesResponse::QueueSetHasBeenSet() const
+bool CloseProxyEndPointResponse::TaskIdHasBeenSet() const
 {
-    return m_queueSetHasBeenSet;
+    return m_taskIdHasBeenSet;
 }
 
 

@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取资源类型
-                     * @return ResourceType 资源类型
+                     * 获取支持的资源类型如下,clb,cdn,ddos,waf,apigateway,teo,tke,cos,lighthouse,vod,tcb,tse
+                     * @return ResourceType 支持的资源类型如下,clb,cdn,ddos,waf,apigateway,teo,tke,cos,lighthouse,vod,tcb,tse
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型
-                     * @param _resourceType 资源类型
+                     * 设置支持的资源类型如下,clb,cdn,ddos,waf,apigateway,teo,tke,cos,lighthouse,vod,tcb,tse
+                     * @param _resourceType 支持的资源类型如下,clb,cdn,ddos,waf,apigateway,teo,tke,cos,lighthouse,vod,tcb,tse
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 资源类型
+                     * 支持的资源类型如下,clb,cdn,ddos,waf,apigateway,teo,tke,cos,lighthouse,vod,tcb,tse
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

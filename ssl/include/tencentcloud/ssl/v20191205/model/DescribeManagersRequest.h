@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取公司ID
-                     * @return CompanyId 公司ID
+                     * 获取公司ID,可以从DescribeCompanies接口获取
+                     * @return CompanyId 公司ID,可以从DescribeCompanies接口获取
                      * 
                      */
                     int64_t GetCompanyId() const;
 
                     /**
-                     * 设置公司ID
-                     * @param _companyId 公司ID
+                     * 设置公司ID,可以从DescribeCompanies接口获取
+                     * @param _companyId 公司ID,可以从DescribeCompanies接口获取
                      * 
                      */
                     void SetCompanyId(const int64_t& _companyId);
@@ -220,7 +220,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 公司ID
+                     * 公司ID,可以从DescribeCompanies接口获取
                      */
                     int64_t m_companyId;
                     bool m_companyIdHasBeenSet;

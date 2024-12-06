@@ -48,23 +48,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取单命名空间TPS上线
-                     * @return MaxTpsPerNamespace 单命名空间TPS上线
-                     * 
+                     * 获取单命名空间TPS上限
+                     * @return MaxTpsPerNamespace 单命名空间TPS上限
+                     * @deprecated
                      */
                     uint64_t GetMaxTpsPerNamespace() const;
 
                     /**
-                     * 设置单命名空间TPS上线
-                     * @param _maxTpsPerNamespace 单命名空间TPS上线
-                     * 
+                     * 设置单命名空间TPS上限
+                     * @param _maxTpsPerNamespace 单命名空间TPS上限
+                     * @deprecated
                      */
                     void SetMaxTpsPerNamespace(const uint64_t& _maxTpsPerNamespace);
 
                     /**
                      * 判断参数 MaxTpsPerNamespace 是否已赋值
                      * @return MaxTpsPerNamespace 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MaxTpsPerNamespaceHasBeenSet() const;
 
@@ -289,7 +289,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 单命名空间TPS上线
+                     * 单命名空间TPS上限
                      */
                     uint64_t m_maxTpsPerNamespace;
                     bool m_maxTpsPerNamespaceHasBeenSet;

@@ -45,15 +45,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询条件列表
-                     * @return Filters 查询条件列表
+                     * 获取查询条件列表,支持以下子弹
+InstanceName：集群名模糊搜索
+InstanceId：集群id精确搜索
+InstanceStatus：集群状态搜索
+                     * @return Filters 查询条件列表,支持以下子弹
+InstanceName：集群名模糊搜索
+InstanceId：集群id精确搜索
+InstanceStatus：集群状态搜索
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询条件列表
-                     * @param _filters 查询条件列表
+                     * 设置查询条件列表,支持以下子弹
+InstanceName：集群名模糊搜索
+InstanceId：集群id精确搜索
+InstanceStatus：集群状态搜索
+                     * @param _filters 查询条件列表,支持以下子弹
+InstanceName：集群名模糊搜索
+InstanceId：集群id精确搜索
+InstanceStatus：集群状态搜索
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -131,7 +143,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询条件列表
+                     * 查询条件列表,支持以下子弹
+InstanceName：集群名模糊搜索
+InstanceId：集群id精确搜索
+InstanceStatus：集群状态搜索
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

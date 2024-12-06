@@ -23,9 +23,9 @@ using namespace TencentCloud::Ssl::V20191205::Model;
 using namespace std;
 
 DescribeHostClbInstanceListRequest::DescribeHostClbInstanceListRequest() :
-    m_certificateIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_certificateIdHasBeenSet(false),
     m_isCacheHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_asyncCacheHasBeenSet(false),
@@ -39,14 +39,6 @@ string DescribeHostClbInstanceListRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_certificateIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CertificateId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_offsetHasBeenSet)
     {
@@ -62,6 +54,14 @@ string DescribeHostClbInstanceListRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_certificateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertificateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isCacheHasBeenSet)
@@ -111,22 +111,6 @@ string DescribeHostClbInstanceListRequest::ToJsonString() const
 }
 
 
-string DescribeHostClbInstanceListRequest::GetCertificateId() const
-{
-    return m_certificateId;
-}
-
-void DescribeHostClbInstanceListRequest::SetCertificateId(const string& _certificateId)
-{
-    m_certificateId = _certificateId;
-    m_certificateIdHasBeenSet = true;
-}
-
-bool DescribeHostClbInstanceListRequest::CertificateIdHasBeenSet() const
-{
-    return m_certificateIdHasBeenSet;
-}
-
 uint64_t DescribeHostClbInstanceListRequest::GetOffset() const
 {
     return m_offset;
@@ -157,6 +141,22 @@ void DescribeHostClbInstanceListRequest::SetLimit(const uint64_t& _limit)
 bool DescribeHostClbInstanceListRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeHostClbInstanceListRequest::GetCertificateId() const
+{
+    return m_certificateId;
+}
+
+void DescribeHostClbInstanceListRequest::SetCertificateId(const string& _certificateId)
+{
+    m_certificateId = _certificateId;
+    m_certificateIdHasBeenSet = true;
+}
+
+bool DescribeHostClbInstanceListRequest::CertificateIdHasBeenSet() const
+{
+    return m_certificateIdHasBeenSet;
 }
 
 uint64_t DescribeHostClbInstanceListRequest::GetIsCache() const

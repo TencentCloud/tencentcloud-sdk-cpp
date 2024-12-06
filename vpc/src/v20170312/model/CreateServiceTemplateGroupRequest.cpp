@@ -24,7 +24,8 @@ using namespace std;
 
 CreateServiceTemplateGroupRequest::CreateServiceTemplateGroupRequest() :
     m_serviceTemplateGroupNameHasBeenSet(false),
-    m_serviceTemplateIdsHasBeenSet(false)
+    m_serviceTemplateIdsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,21 @@ string CreateServiceTemplateGroupRequest::ToJsonString() const
         for (auto itr = m_serviceTemplateIds.begin(); itr != m_serviceTemplateIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -94,6 +110,22 @@ void CreateServiceTemplateGroupRequest::SetServiceTemplateIds(const vector<strin
 bool CreateServiceTemplateGroupRequest::ServiceTemplateIdsHasBeenSet() const
 {
     return m_serviceTemplateIdsHasBeenSet;
+}
+
+vector<Tag> CreateServiceTemplateGroupRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateServiceTemplateGroupRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateServiceTemplateGroupRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

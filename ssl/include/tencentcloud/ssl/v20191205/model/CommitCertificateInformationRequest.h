@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取域名验证方式
-                     * @return VerifyType 域名验证方式
+                     * 获取域名验证方式，如 DNS,DNS_AUTO,FILE
+                     * @return VerifyType 域名验证方式，如 DNS,DNS_AUTO,FILE
                      * 
                      */
                     std::string GetVerifyType() const;
 
                     /**
-                     * 设置域名验证方式
-                     * @param _verifyType 域名验证方式
+                     * 设置域名验证方式，如 DNS,DNS_AUTO,FILE
+                     * @param _verifyType 域名验证方式，如 DNS,DNS_AUTO,FILE
                      * 
                      */
                     void SetVerifyType(const std::string& _verifyType);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_certificateIdHasBeenSet;
 
                     /**
-                     * 域名验证方式
+                     * 域名验证方式，如 DNS,DNS_AUTO,FILE
                      */
                     std::string m_verifyType;
                     bool m_verifyTypeHasBeenSet;

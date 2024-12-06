@@ -60,58 +60,72 @@ namespace TencentCloud
                     /**
                      * 获取音频转译任务 ID。
                      * @return TaskId 音频转译任务 ID。
-                     * 
+                     * @deprecated
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取音频转译结果确认 session。	
                      * @return SessionId 音频转译结果确认 session。	
-                     * 
+                     * @deprecated
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取该字段与 DescribeVideoTranslateJob 接口的 Status 功能相同，均表示任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。
-                     * @return Status 该字段与 DescribeVideoTranslateJob 接口的 Status 功能相同，均表示任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。
-                     * 
+                     * 获取任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。
+                     * @return Status 任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。
+                     * @deprecated
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取视频转译任务信息。	
                      * @return Message 视频转译任务信息。	
-                     * 
+                     * @deprecated
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MessageHasBeenSet() const;
+
+                    /**
+                     * 获取任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。
+                     * @return JobStatus 任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。
+                     * 
+                     */
+                    int64_t GetJobStatus() const;
+
+                    /**
+                     * 判断参数 JobStatus 是否已赋值
+                     * @return JobStatus 是否已赋值
+                     * 
+                     */
+                    bool JobStatusHasBeenSet() const;
 
                 private:
 
@@ -134,7 +148,7 @@ namespace TencentCloud
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 该字段与 DescribeVideoTranslateJob 接口的 Status 功能相同，均表示任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。
+                     * 任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -144,6 +158,12 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。
+                     */
+                    int64_t m_jobStatus;
+                    bool m_jobStatusHasBeenSet;
 
                 };
             }

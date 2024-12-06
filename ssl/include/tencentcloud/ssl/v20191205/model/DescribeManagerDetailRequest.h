@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取管理人ID
-                     * @return ManagerId 管理人ID
+                     * 获取管理人ID,可以从describeManagers接口获得
+                     * @return ManagerId 管理人ID,可以从describeManagers接口获得
                      * 
                      */
                     int64_t GetManagerId() const;
 
                     /**
-                     * 设置管理人ID
-                     * @param _managerId 管理人ID
+                     * 设置管理人ID,可以从describeManagers接口获得
+                     * @param _managerId 管理人ID,可以从describeManagers接口获得
                      * 
                      */
                     void SetManagerId(const int64_t& _managerId);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 管理人ID
+                     * 管理人ID,可以从describeManagers接口获得
                      */
                     int64_t m_managerId;
                     bool m_managerIdHasBeenSet;

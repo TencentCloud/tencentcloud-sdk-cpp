@@ -28,7 +28,8 @@ IDCardOCRRequest::IDCardOCRRequest() :
     m_cardSideHasBeenSet(false),
     m_configHasBeenSet(false),
     m_enableRecognitionRectifyHasBeenSet(false),
-    m_enableReflectDetailHasBeenSet(false)
+    m_enableReflectDetailHasBeenSet(false),
+    m_enableDateVerifyHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string IDCardOCRRequest::ToJsonString() const
         string key = "EnableReflectDetail";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableReflectDetail, allocator);
+    }
+
+    if (m_enableDateVerifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDateVerify";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDateVerify, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void IDCardOCRRequest::SetEnableReflectDetail(const bool& _enableReflectDetail)
 bool IDCardOCRRequest::EnableReflectDetailHasBeenSet() const
 {
     return m_enableReflectDetailHasBeenSet;
+}
+
+bool IDCardOCRRequest::GetEnableDateVerify() const
+{
+    return m_enableDateVerify;
+}
+
+void IDCardOCRRequest::SetEnableDateVerify(const bool& _enableDateVerify)
+{
+    m_enableDateVerify = _enableDateVerify;
+    m_enableDateVerifyHasBeenSet = true;
+}
+
+bool IDCardOCRRequest::EnableDateVerifyHasBeenSet() const
+{
+    return m_enableDateVerifyHasBeenSet;
 }
 
 

@@ -24,9 +24,9 @@ using namespace std;
 
 DescribeHostVodInstanceListRequest::DescribeHostVodInstanceListRequest() :
     m_certificateIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
     m_isCacheHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
     m_oldCertificateIdHasBeenSet(false)
 {
 }
@@ -44,14 +44,6 @@ string DescribeHostVodInstanceListRequest::ToJsonString() const
         string key = "CertificateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_resourceTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isCacheHasBeenSet)
@@ -75,6 +67,14 @@ string DescribeHostVodInstanceListRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_oldCertificateIdHasBeenSet)
@@ -109,22 +109,6 @@ bool DescribeHostVodInstanceListRequest::CertificateIdHasBeenSet() const
     return m_certificateIdHasBeenSet;
 }
 
-string DescribeHostVodInstanceListRequest::GetResourceType() const
-{
-    return m_resourceType;
-}
-
-void DescribeHostVodInstanceListRequest::SetResourceType(const string& _resourceType)
-{
-    m_resourceType = _resourceType;
-    m_resourceTypeHasBeenSet = true;
-}
-
-bool DescribeHostVodInstanceListRequest::ResourceTypeHasBeenSet() const
-{
-    return m_resourceTypeHasBeenSet;
-}
-
 uint64_t DescribeHostVodInstanceListRequest::GetIsCache() const
 {
     return m_isCache;
@@ -155,6 +139,22 @@ void DescribeHostVodInstanceListRequest::SetFilters(const vector<Filter>& _filte
 bool DescribeHostVodInstanceListRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeHostVodInstanceListRequest::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void DescribeHostVodInstanceListRequest::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool DescribeHostVodInstanceListRequest::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
 }
 
 string DescribeHostVodInstanceListRequest::GetOldCertificateId() const

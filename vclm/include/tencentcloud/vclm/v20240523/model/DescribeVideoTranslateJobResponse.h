@@ -120,84 +120,84 @@ namespace TencentCloud
                     /**
                      * 获取是否需要确认翻译结果。0：不需要，1：需要。	
                      * @return JobConfirm 是否需要确认翻译结果。0：不需要，1：需要。	
-                     * 
+                     * @deprecated
                      */
                     int64_t GetJobConfirm() const;
 
                     /**
                      * 判断参数 JobConfirm 是否已赋值
                      * @return JobConfirm 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool JobConfirmHasBeenSet() const;
 
                     /**
                      * 获取音频任务 ID。	
                      * @return JobAudioTaskId 音频任务 ID。	
-                     * 
+                     * @deprecated
                      */
                     std::string GetJobAudioTaskId() const;
 
                     /**
                      * 判断参数 JobAudioTaskId 是否已赋值
                      * @return JobAudioTaskId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool JobAudioTaskIdHasBeenSet() const;
 
                     /**
                      * 获取视频审核任务ID。
                      * @return JobVideoModerationId 视频审核任务ID。
-                     * 
+                     * @deprecated
                      */
                     std::string GetJobVideoModerationId() const;
 
                     /**
                      * 判断参数 JobVideoModerationId 是否已赋值
                      * @return JobVideoModerationId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool JobVideoModerationIdHasBeenSet() const;
 
                     /**
                      * 获取音频审核任务 ID。
                      * @return JobAudioModerationId 音频审核任务 ID。
-                     * 
+                     * @deprecated
                      */
                     std::string GetJobAudioModerationId() const;
 
                     /**
                      * 判断参数 JobAudioModerationId 是否已赋值
                      * @return JobAudioModerationId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool JobAudioModerationIdHasBeenSet() const;
 
                     /**
                      * 获取口型驱动任务 ID。
                      * @return JobVideoId 口型驱动任务 ID。
-                     * 
+                     * @deprecated
                      */
                     std::string GetJobVideoId() const;
 
                     /**
                      * 判断参数 JobVideoId 是否已赋值
                      * @return JobVideoId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool JobVideoIdHasBeenSet() const;
 
                     /**
                      * 获取视频素材原始 URL。
                      * @return OriginalVideoUrl 视频素材原始 URL。
-                     * 
+                     * @deprecated
                      */
                     std::string GetOriginalVideoUrl() const;
 
                     /**
                      * 判断参数 OriginalVideoUrl 是否已赋值
                      * @return OriginalVideoUrl 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OriginalVideoUrlHasBeenSet() const;
 
@@ -218,14 +218,14 @@ namespace TencentCloud
                     /**
                      * 获取提交视频转译任务时的 requestId。
                      * @return JobSubmitReqId 提交视频转译任务时的 requestId。
-                     * 
+                     * @deprecated
                      */
                     std::string GetJobSubmitReqId() const;
 
                     /**
                      * 判断参数 JobSubmitReqId 是否已赋值
                      * @return JobSubmitReqId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool JobSubmitReqIdHasBeenSet() const;
 
