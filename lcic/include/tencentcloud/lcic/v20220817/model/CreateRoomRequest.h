@@ -611,15 +611,15 @@ video 纯视频
                     bool LiveTypeHasBeenSet() const;
 
                     /**
-                     * 获取伪直播链接
-                     * @return RecordLiveUrl 伪直播链接
+                     * 获取伪直播链接。 支持的协议以及格式： 协议：HTTP、HTTPS、RTMP、HLS 。格式：FLV、MP3、MP4、MPEG-TS、MOV、MKV、M4A。视频编码：H.264、VP8。音频编码：AAC、OPUS。
+                     * @return RecordLiveUrl 伪直播链接。 支持的协议以及格式： 协议：HTTP、HTTPS、RTMP、HLS 。格式：FLV、MP3、MP4、MPEG-TS、MOV、MKV、M4A。视频编码：H.264、VP8。音频编码：AAC、OPUS。
                      * 
                      */
                     std::string GetRecordLiveUrl() const;
 
                     /**
-                     * 设置伪直播链接
-                     * @param _recordLiveUrl 伪直播链接
+                     * 设置伪直播链接。 支持的协议以及格式： 协议：HTTP、HTTPS、RTMP、HLS 。格式：FLV、MP3、MP4、MPEG-TS、MOV、MKV、M4A。视频编码：H.264、VP8。音频编码：AAC、OPUS。
+                     * @param _recordLiveUrl 伪直播链接。 支持的协议以及格式： 协议：HTTP、HTTPS、RTMP、HLS 。格式：FLV、MP3、MP4、MPEG-TS、MOV、MKV、M4A。视频编码：H.264、VP8。音频编码：AAC、OPUS。
                      * 
                      */
                     void SetRecordLiveUrl(const std::string& _recordLiveUrl);
@@ -899,7 +899,7 @@ video 纯视频
                     bool m_liveTypeHasBeenSet;
 
                     /**
-                     * 伪直播链接
+                     * 伪直播链接。 支持的协议以及格式： 协议：HTTP、HTTPS、RTMP、HLS 。格式：FLV、MP3、MP4、MPEG-TS、MOV、MKV、M4A。视频编码：H.264、VP8。音频编码：AAC、OPUS。
                      */
                     std::string m_recordLiveUrl;
                     bool m_recordLiveUrlHasBeenSet;

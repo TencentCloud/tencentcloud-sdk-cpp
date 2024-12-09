@@ -35,7 +35,8 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 语音全文识别任务控制参数
+                * 语音全文识别任务控制参数。
+<font color=red>注意：本参数已不再维护，推荐使用 AsrTranslateConfigure 参数发起语音翻译识别（当 DstLanguage 不填或填空字符串时，则不进行翻译，计费项和语音全文识别一致）。</font>
                 */
                 class AsrFullTextConfigureInfo : public AbstractModel
                 {

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取需要恢复的对象列表。假设需要恢复的对象名为test，则恢复后的名称为test_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
-                     * @return RestoreObjects 需要恢复的对象列表。假设需要恢复的对象名为test，则恢复后的名称为test_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
+                     * 获取需要恢复的对象列表。假设需要恢复的对象名为user，则恢复后的名称为user_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
+                     * @return RestoreObjects 需要恢复的对象列表。假设需要恢复的对象名为user，则恢复后的名称为user_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
                      * 
                      */
                     std::vector<std::string> GetRestoreObjects() const;
 
                     /**
-                     * 设置需要恢复的对象列表。假设需要恢复的对象名为test，则恢复后的名称为test_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
-                     * @param _restoreObjects 需要恢复的对象列表。假设需要恢复的对象名为test，则恢复后的名称为test_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
+                     * 设置需要恢复的对象列表。假设需要恢复的对象名为user，则恢复后的名称为user_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
+                     * @param _restoreObjects 需要恢复的对象列表。假设需要恢复的对象名为user，则恢复后的名称为user_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
                      * 
                      */
                     void SetRestoreObjects(const std::vector<std::string>& _restoreObjects);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 需要恢复的对象列表。假设需要恢复的对象名为test，则恢复后的名称为test_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
+                     * 需要恢复的对象列表。假设需要恢复的对象名为user，则恢复后的名称为user_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。
                      */
                     std::vector<std::string> m_restoreObjects;
                     bool m_restoreObjectsHasBeenSet;

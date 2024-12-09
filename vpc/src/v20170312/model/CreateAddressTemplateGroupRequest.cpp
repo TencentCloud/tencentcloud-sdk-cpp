@@ -24,7 +24,8 @@ using namespace std;
 
 CreateAddressTemplateGroupRequest::CreateAddressTemplateGroupRequest() :
     m_addressTemplateGroupNameHasBeenSet(false),
-    m_addressTemplateIdsHasBeenSet(false)
+    m_addressTemplateIdsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,21 @@ string CreateAddressTemplateGroupRequest::ToJsonString() const
         for (auto itr = m_addressTemplateIds.begin(); itr != m_addressTemplateIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -94,6 +110,22 @@ void CreateAddressTemplateGroupRequest::SetAddressTemplateIds(const vector<strin
 bool CreateAddressTemplateGroupRequest::AddressTemplateIdsHasBeenSet() const
 {
     return m_addressTemplateIdsHasBeenSet;
+}
+
+vector<Tag> CreateAddressTemplateGroupRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateAddressTemplateGroupRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateAddressTemplateGroupRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

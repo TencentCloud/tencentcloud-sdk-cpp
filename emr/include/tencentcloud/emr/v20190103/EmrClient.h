@@ -27,6 +27,8 @@
 #include <tencentcloud/emr/v20190103/model/AddMetricScaleStrategyResponse.h>
 #include <tencentcloud/emr/v20190103/model/AddUsersForUserManagerRequest.h>
 #include <tencentcloud/emr/v20190103/model/AddUsersForUserManagerResponse.h>
+#include <tencentcloud/emr/v20190103/model/CreateCloudInstanceRequest.h>
+#include <tencentcloud/emr/v20190103/model/CreateCloudInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/CreateClusterRequest.h>
 #include <tencentcloud/emr/v20190103/model/CreateClusterResponse.h>
 #include <tencentcloud/emr/v20190103/model/CreateInstanceRequest.h>
@@ -117,6 +119,8 @@
 #include <tencentcloud/emr/v20190103/model/ModifyAutoScaleStrategyResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyGlobalConfigRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyGlobalConfigResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyPodNumRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyPodNumResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyResourcePoolsRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyResourcePoolsResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigRequest.h>
@@ -173,6 +177,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddUsersForUserManagerResponse> AddUsersForUserManagerOutcome;
                 typedef std::future<AddUsersForUserManagerOutcome> AddUsersForUserManagerOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::AddUsersForUserManagerRequest&, AddUsersForUserManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUsersForUserManagerAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCloudInstanceResponse> CreateCloudInstanceOutcome;
+                typedef std::future<CreateCloudInstanceOutcome> CreateCloudInstanceOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::CreateCloudInstanceRequest&, CreateCloudInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
@@ -308,6 +315,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyGlobalConfigResponse> ModifyGlobalConfigOutcome;
                 typedef std::future<ModifyGlobalConfigOutcome> ModifyGlobalConfigOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyGlobalConfigRequest&, ModifyGlobalConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPodNumResponse> ModifyPodNumOutcome;
+                typedef std::future<ModifyPodNumOutcome> ModifyPodNumOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyPodNumRequest&, ModifyPodNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPodNumAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyResourcePoolsResponse> ModifyResourcePoolsOutcome;
                 typedef std::future<ModifyResourcePoolsOutcome> ModifyResourcePoolsOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyResourcePoolsRequest&, ModifyResourcePoolsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourcePoolsAsyncHandler;
@@ -383,6 +393,15 @@ namespace TencentCloud
                 AddUsersForUserManagerOutcome AddUsersForUserManager(const Model::AddUsersForUserManagerRequest &request);
                 void AddUsersForUserManagerAsync(const Model::AddUsersForUserManagerRequest& request, const AddUsersForUserManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddUsersForUserManagerOutcomeCallable AddUsersForUserManagerCallable(const Model::AddUsersForUserManagerRequest& request);
+
+                /**
+                 *创建EMR容器集群实例
+                 * @param req CreateCloudInstanceRequest
+                 * @return CreateCloudInstanceOutcome
+                 */
+                CreateCloudInstanceOutcome CreateCloudInstance(const Model::CreateCloudInstanceRequest &request);
+                void CreateCloudInstanceAsync(const Model::CreateCloudInstanceRequest& request, const CreateCloudInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudInstanceOutcomeCallable CreateCloudInstanceCallable(const Model::CreateCloudInstanceRequest& request);
 
                 /**
                  *创建EMR集群实例
@@ -792,6 +811,15 @@ namespace TencentCloud
                 ModifyGlobalConfigOutcome ModifyGlobalConfig(const Model::ModifyGlobalConfigRequest &request);
                 void ModifyGlobalConfigAsync(const Model::ModifyGlobalConfigRequest& request, const ModifyGlobalConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyGlobalConfigOutcomeCallable ModifyGlobalConfigCallable(const Model::ModifyGlobalConfigRequest& request);
+
+                /**
+                 *调整Pod数量
+                 * @param req ModifyPodNumRequest
+                 * @return ModifyPodNumOutcome
+                 */
+                ModifyPodNumOutcome ModifyPodNum(const Model::ModifyPodNumRequest &request);
+                void ModifyPodNumAsync(const Model::ModifyPodNumRequest& request, const ModifyPodNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPodNumOutcomeCallable ModifyPodNumCallable(const Model::ModifyPodNumRequest& request);
 
                 /**
                  *刷新YARN的动态资源池。已废弃，请使用`DeployYarnConf`

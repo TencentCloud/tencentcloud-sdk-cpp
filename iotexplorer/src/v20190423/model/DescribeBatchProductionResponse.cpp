@@ -31,7 +31,8 @@ DescribeBatchProductionResponse::DescribeBatchProductionResponse() :
     m_generationMethodHasBeenSet(false),
     m_uploadUrlHasBeenSet(false),
     m_successCountHasBeenSet(false),
-    m_lastFailedReasonHasBeenSet(false)
+    m_lastFailedReasonHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome DescribeBatchProductionResponse::Deserialize(const string &p
         m_lastFailedReasonHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = rsp["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +232,14 @@ string DescribeBatchProductionResponse::ToJsonString() const
         string key = "LastFailedReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastFailedReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +332,16 @@ string DescribeBatchProductionResponse::GetLastFailedReason() const
 bool DescribeBatchProductionResponse::LastFailedReasonHasBeenSet() const
 {
     return m_lastFailedReasonHasBeenSet;
+}
+
+int64_t DescribeBatchProductionResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribeBatchProductionResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

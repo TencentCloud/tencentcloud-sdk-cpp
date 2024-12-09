@@ -109,6 +109,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DeleteCLSDeliveryRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CreateCLSDeliveryResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeServerlessInstanceSpecsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ManualBackupData.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBinlogsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/InquirePriceModifyResponse.h
@@ -134,6 +135,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterTransparentEncryptInfoRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DeleteParamTemplateRequest.h
   include/tencentcloud/cynosdb/v20190107/model/RevokeAccountPrivilegesResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/ServerlessSpec.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailDatabasesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CreateParamTemplateResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesResponse.h
@@ -168,6 +170,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeParamTemplatesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/Addr.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeProjectSecurityGroupsRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/ServerlessZoneStockInfo.h
   include/tencentcloud/cynosdb/v20190107/model/DbInfo.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupDownloadUrlRequest.h
   include/tencentcloud/cynosdb/v20190107/model/InstanceAuditStatus.h
@@ -216,7 +219,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/RollBackClusterRequest.h
   include/tencentcloud/cynosdb/v20190107/model/Module.h
   include/tencentcloud/cynosdb/v20190107/model/OpenClusterTransparentEncryptResponse.h
-  include/tencentcloud/cynosdb/v20190107/model/ProxyVersionInfo.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyBackupConfigRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DisassociateSecurityGroupsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDatabasesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/RemoveClusterSlaveZoneRequest.h
@@ -351,6 +354,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/CynosdbInstanceGroup.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAccountDescriptionResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SetRenewFlagRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeServerlessInstanceSpecsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ProxyGroup.h
   include/tencentcloud/cynosdb/v20190107/model/AddClusterSlaveZoneRequest.h
   include/tencentcloud/cynosdb/v20190107/model/RollbackDatabase.h
@@ -414,7 +418,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeBinlogConfigResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditLogFilesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/SaleRegion.h
-  include/tencentcloud/cynosdb/v20190107/model/ModifyBackupConfigRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/ProxyVersionInfo.h
   include/tencentcloud/cynosdb/v20190107/model/DeleteAuditLogFileRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeIsolatedInstancesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/GrantAccountPrivilegesResponse.h
@@ -530,6 +534,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeAccountAllGrantPrivilegesRequest.cpp
   src/v20190107/model/DeleteCLSDeliveryRequest.cpp
   src/v20190107/model/CreateCLSDeliveryResponse.cpp
+  src/v20190107/model/DescribeServerlessInstanceSpecsResponse.cpp
   src/v20190107/model/ManualBackupData.cpp
   src/v20190107/model/DescribeBinlogsRequest.cpp
   src/v20190107/model/InquirePriceModifyResponse.cpp
@@ -555,6 +560,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeClusterTransparentEncryptInfoRequest.cpp
   src/v20190107/model/DeleteParamTemplateRequest.cpp
   src/v20190107/model/RevokeAccountPrivilegesResponse.cpp
+  src/v20190107/model/ServerlessSpec.cpp
   src/v20190107/model/DescribeClusterDetailDatabasesResponse.cpp
   src/v20190107/model/CreateParamTemplateResponse.cpp
   src/v20190107/model/DescribeAccountAllGrantPrivilegesResponse.cpp
@@ -589,6 +595,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeParamTemplatesResponse.cpp
   src/v20190107/model/Addr.cpp
   src/v20190107/model/DescribeProjectSecurityGroupsRequest.cpp
+  src/v20190107/model/ServerlessZoneStockInfo.cpp
   src/v20190107/model/DbInfo.cpp
   src/v20190107/model/DescribeBackupDownloadUrlRequest.cpp
   src/v20190107/model/InstanceAuditStatus.cpp
@@ -637,7 +644,7 @@ set(cynosdb_src
   src/v20190107/model/RollBackClusterRequest.cpp
   src/v20190107/model/Module.cpp
   src/v20190107/model/OpenClusterTransparentEncryptResponse.cpp
-  src/v20190107/model/ProxyVersionInfo.cpp
+  src/v20190107/model/ModifyBackupConfigRequest.cpp
   src/v20190107/model/DisassociateSecurityGroupsResponse.cpp
   src/v20190107/model/DescribeClusterDatabasesRequest.cpp
   src/v20190107/model/RemoveClusterSlaveZoneRequest.cpp
@@ -772,6 +779,7 @@ set(cynosdb_src
   src/v20190107/model/CynosdbInstanceGroup.cpp
   src/v20190107/model/ModifyAccountDescriptionResponse.cpp
   src/v20190107/model/SetRenewFlagRequest.cpp
+  src/v20190107/model/DescribeServerlessInstanceSpecsRequest.cpp
   src/v20190107/model/ProxyGroup.cpp
   src/v20190107/model/AddClusterSlaveZoneRequest.cpp
   src/v20190107/model/RollbackDatabase.cpp
@@ -835,7 +843,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeBinlogConfigResponse.cpp
   src/v20190107/model/DescribeAuditLogFilesRequest.cpp
   src/v20190107/model/SaleRegion.cpp
-  src/v20190107/model/ModifyBackupConfigRequest.cpp
+  src/v20190107/model/ProxyVersionInfo.cpp
   src/v20190107/model/DeleteAuditLogFileRequest.cpp
   src/v20190107/model/DescribeIsolatedInstancesResponse.cpp
   src/v20190107/model/GrantAccountPrivilegesResponse.cpp

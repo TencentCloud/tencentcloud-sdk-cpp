@@ -179,6 +179,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeResourcesByDealNameResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeRangeRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeRangeResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeServerlessInstanceSpecsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeServerlessInstanceSpecsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeServerlessStrategyRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeServerlessStrategyResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeSupportProxyVersionRequest.h>
@@ -577,6 +579,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRollbackTimeRangeResponse> DescribeRollbackTimeRangeOutcome;
                 typedef std::future<DescribeRollbackTimeRangeOutcome> DescribeRollbackTimeRangeOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeRollbackTimeRangeRequest&, DescribeRollbackTimeRangeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRollbackTimeRangeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServerlessInstanceSpecsResponse> DescribeServerlessInstanceSpecsOutcome;
+                typedef std::future<DescribeServerlessInstanceSpecsOutcome> DescribeServerlessInstanceSpecsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeServerlessInstanceSpecsRequest&, DescribeServerlessInstanceSpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessInstanceSpecsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServerlessStrategyResponse> DescribeServerlessStrategyOutcome;
                 typedef std::future<DescribeServerlessStrategyOutcome> DescribeServerlessStrategyOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeServerlessStrategyRequest&, DescribeServerlessStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessStrategyAsyncHandler;
@@ -1506,6 +1511,15 @@ namespace TencentCloud
                 DescribeRollbackTimeRangeOutcome DescribeRollbackTimeRange(const Model::DescribeRollbackTimeRangeRequest &request);
                 void DescribeRollbackTimeRangeAsync(const Model::DescribeRollbackTimeRangeRequest& request, const DescribeRollbackTimeRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRollbackTimeRangeOutcomeCallable DescribeRollbackTimeRangeCallable(const Model::DescribeRollbackTimeRangeRequest& request);
+
+                /**
+                 *查询Serverless实例可选规格
+                 * @param req DescribeServerlessInstanceSpecsRequest
+                 * @return DescribeServerlessInstanceSpecsOutcome
+                 */
+                DescribeServerlessInstanceSpecsOutcome DescribeServerlessInstanceSpecs(const Model::DescribeServerlessInstanceSpecsRequest &request);
+                void DescribeServerlessInstanceSpecsAsync(const Model::DescribeServerlessInstanceSpecsRequest& request, const DescribeServerlessInstanceSpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServerlessInstanceSpecsOutcomeCallable DescribeServerlessInstanceSpecsCallable(const Model::DescribeServerlessInstanceSpecsRequest& request);
 
                 /**
                  *查询serverless策略

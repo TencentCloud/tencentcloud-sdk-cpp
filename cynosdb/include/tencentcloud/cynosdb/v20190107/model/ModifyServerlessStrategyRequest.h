@@ -281,48 +281,6 @@ namespace TencentCloud
                      */
                     bool MaxRoCountHasBeenSet() const;
 
-                    /**
-                     * 获取集群是否允许扩容，可选范围<li>yes</li><li>no</li>
-                     * @return AutoScaleUp 集群是否允许扩容，可选范围<li>yes</li><li>no</li>
-                     * 
-                     */
-                    std::string GetAutoScaleUp() const;
-
-                    /**
-                     * 设置集群是否允许扩容，可选范围<li>yes</li><li>no</li>
-                     * @param _autoScaleUp 集群是否允许扩容，可选范围<li>yes</li><li>no</li>
-                     * 
-                     */
-                    void SetAutoScaleUp(const std::string& _autoScaleUp);
-
-                    /**
-                     * 判断参数 AutoScaleUp 是否已赋值
-                     * @return AutoScaleUp 是否已赋值
-                     * 
-                     */
-                    bool AutoScaleUpHasBeenSet() const;
-
-                    /**
-                     * 获取集群是否允许缩容，可选范围<li>yes</li><li>no</li>
-                     * @return AutoScaleDown 集群是否允许缩容，可选范围<li>yes</li><li>no</li>
-                     * 
-                     */
-                    std::string GetAutoScaleDown() const;
-
-                    /**
-                     * 设置集群是否允许缩容，可选范围<li>yes</li><li>no</li>
-                     * @param _autoScaleDown 集群是否允许缩容，可选范围<li>yes</li><li>no</li>
-                     * 
-                     */
-                    void SetAutoScaleDown(const std::string& _autoScaleDown);
-
-                    /**
-                     * 判断参数 AutoScaleDown 是否已赋值
-                     * @return AutoScaleDown 是否已赋值
-                     * 
-                     */
-                    bool AutoScaleDownHasBeenSet() const;
-
                 private:
 
                     /**
@@ -392,18 +350,6 @@ namespace TencentCloud
                      */
                     int64_t m_maxRoCount;
                     bool m_maxRoCountHasBeenSet;
-
-                    /**
-                     * 集群是否允许扩容，可选范围<li>yes</li><li>no</li>
-                     */
-                    std::string m_autoScaleUp;
-                    bool m_autoScaleUpHasBeenSet;
-
-                    /**
-                     * 集群是否允许缩容，可选范围<li>yes</li><li>no</li>
-                     */
-                    std::string m_autoScaleDown;
-                    bool m_autoScaleDownHasBeenSet;
 
                 };
             }

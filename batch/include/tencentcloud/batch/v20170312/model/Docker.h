@@ -47,48 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Docker Hub 用户名或 Tencent Registry 用户名
-                     * @return User Docker Hub 用户名或 Tencent Registry 用户名
-                     * 
-                     */
-                    std::string GetUser() const;
-
-                    /**
-                     * 设置Docker Hub 用户名或 Tencent Registry 用户名
-                     * @param _user Docker Hub 用户名或 Tencent Registry 用户名
-                     * 
-                     */
-                    void SetUser(const std::string& _user);
-
-                    /**
-                     * 判断参数 User 是否已赋值
-                     * @return User 是否已赋值
-                     * 
-                     */
-                    bool UserHasBeenSet() const;
-
-                    /**
-                     * 获取Docker Hub 密码或 Tencent Registry 密码
-                     * @return Password Docker Hub 密码或 Tencent Registry 密码
-                     * 
-                     */
-                    std::string GetPassword() const;
-
-                    /**
-                     * 设置Docker Hub 密码或 Tencent Registry 密码
-                     * @param _password Docker Hub 密码或 Tencent Registry 密码
-                     * 
-                     */
-                    void SetPassword(const std::string& _password);
-
-                    /**
-                     * 判断参数 Password 是否已赋值
-                     * @return Password 是否已赋值
-                     * 
-                     */
-                    bool PasswordHasBeenSet() const;
-
-                    /**
                      * 获取Docker Hub填写“[user/repo]:[tag]”，Tencent Registry填写“ccr.ccs.tencentyun.com/[namespace/repo]:[tag]”
                      * @return Image Docker Hub填写“[user/repo]:[tag]”，Tencent Registry填写“ccr.ccs.tencentyun.com/[namespace/repo]:[tag]”
                      * 
@@ -108,6 +66,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ImageHasBeenSet() const;
+
+                    /**
+                     * 获取Docker Hub 用户名或 Tencent Registry 用户名；公共镜像可不填写此参数。
+                     * @return User Docker Hub 用户名或 Tencent Registry 用户名；公共镜像可不填写此参数。
+                     * 
+                     */
+                    std::string GetUser() const;
+
+                    /**
+                     * 设置Docker Hub 用户名或 Tencent Registry 用户名；公共镜像可不填写此参数。
+                     * @param _user Docker Hub 用户名或 Tencent Registry 用户名；公共镜像可不填写此参数。
+                     * 
+                     */
+                    void SetUser(const std::string& _user);
+
+                    /**
+                     * 判断参数 User 是否已赋值
+                     * @return User 是否已赋值
+                     * 
+                     */
+                    bool UserHasBeenSet() const;
+
+                    /**
+                     * 获取Docker Hub 密码或 Tencent Registry 密码；公共镜像可不填写此参数。
+                     * @return Password Docker Hub 密码或 Tencent Registry 密码；公共镜像可不填写此参数。
+                     * 
+                     */
+                    std::string GetPassword() const;
+
+                    /**
+                     * 设置Docker Hub 密码或 Tencent Registry 密码；公共镜像可不填写此参数。
+                     * @param _password Docker Hub 密码或 Tencent Registry 密码；公共镜像可不填写此参数。
+                     * 
+                     */
+                    void SetPassword(const std::string& _password);
+
+                    /**
+                     * 判断参数 Password 是否已赋值
+                     * @return Password 是否已赋值
+                     * 
+                     */
+                    bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取Docker Hub 可以不填，但确保具有公网访问能力。或者是 Tencent Registry 服务地址“ccr.ccs.tencentyun.com”
@@ -200,22 +200,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Docker Hub 用户名或 Tencent Registry 用户名
+                     * Docker Hub填写“[user/repo]:[tag]”，Tencent Registry填写“ccr.ccs.tencentyun.com/[namespace/repo]:[tag]”
+                     */
+                    std::string m_image;
+                    bool m_imageHasBeenSet;
+
+                    /**
+                     * Docker Hub 用户名或 Tencent Registry 用户名；公共镜像可不填写此参数。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * Docker Hub 密码或 Tencent Registry 密码
+                     * Docker Hub 密码或 Tencent Registry 密码；公共镜像可不填写此参数。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
-
-                    /**
-                     * Docker Hub填写“[user/repo]:[tag]”，Tencent Registry填写“ccr.ccs.tencentyun.com/[namespace/repo]:[tag]”
-                     */
-                    std::string m_image;
-                    bool m_imageHasBeenSet;
 
                     /**
                      * Docker Hub 可以不填，但确保具有公网访问能力。或者是 Tencent Registry 服务地址“ccr.ccs.tencentyun.com”

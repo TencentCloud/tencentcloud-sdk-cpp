@@ -25,6 +25,9 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SuperResolutionConfig.h>
+#include <tencentcloud/mps/v20190612/model/ColorEnhanceConfig.h>
+#include <tencentcloud/mps/v20190612/model/SharpEnhanceConfig.h>
+#include <tencentcloud/mps/v20190612/model/FaceEnhanceConfig.h>
 
 
 namespace TencentCloud
@@ -72,6 +75,81 @@ namespace TencentCloud
                      */
                     bool SuperResolutionHasBeenSet() const;
 
+                    /**
+                     * 获取色彩增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColorEnhance 色彩增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ColorEnhanceConfig GetColorEnhance() const;
+
+                    /**
+                     * 设置色彩增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _colorEnhance 色彩增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetColorEnhance(const ColorEnhanceConfig& _colorEnhance);
+
+                    /**
+                     * 判断参数 ColorEnhance 是否已赋值
+                     * @return ColorEnhance 是否已赋值
+                     * 
+                     */
+                    bool ColorEnhanceHasBeenSet() const;
+
+                    /**
+                     * 获取细节增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SharpEnhance 细节增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SharpEnhanceConfig GetSharpEnhance() const;
+
+                    /**
+                     * 设置细节增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sharpEnhance 细节增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSharpEnhance(const SharpEnhanceConfig& _sharpEnhance);
+
+                    /**
+                     * 判断参数 SharpEnhance 是否已赋值
+                     * @return SharpEnhance 是否已赋值
+                     * 
+                     */
+                    bool SharpEnhanceHasBeenSet() const;
+
+                    /**
+                     * 获取人脸增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FaceEnhance 人脸增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    FaceEnhanceConfig GetFaceEnhance() const;
+
+                    /**
+                     * 设置人脸增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _faceEnhance 人脸增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFaceEnhance(const FaceEnhanceConfig& _faceEnhance);
+
+                    /**
+                     * 判断参数 FaceEnhance 是否已赋值
+                     * @return FaceEnhance 是否已赋值
+                     * 
+                     */
+                    bool FaceEnhanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +158,27 @@ namespace TencentCloud
                      */
                     SuperResolutionConfig m_superResolution;
                     bool m_superResolutionHasBeenSet;
+
+                    /**
+                     * 色彩增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ColorEnhanceConfig m_colorEnhance;
+                    bool m_colorEnhanceHasBeenSet;
+
+                    /**
+                     * 细节增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SharpEnhanceConfig m_sharpEnhance;
+                    bool m_sharpEnhanceHasBeenSet;
+
+                    /**
+                     * 人脸增强配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    FaceEnhanceConfig m_faceEnhance;
+                    bool m_faceEnhanceHasBeenSet;
 
                 };
             }

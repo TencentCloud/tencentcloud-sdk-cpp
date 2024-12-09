@@ -23,10 +23,10 @@ using namespace TencentCloud::Aiart::V20221229::Model;
 using namespace std;
 
 GenerateAvatarRequest::GenerateAvatarRequest() :
+    m_typeHasBeenSet(false),
     m_styleHasBeenSet(false),
     m_inputImageHasBeenSet(false),
     m_inputUrlHasBeenSet(false),
-    m_typeHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_logoAddHasBeenSet(false),
     m_logoParamHasBeenSet(false),
@@ -40,6 +40,14 @@ string GenerateAvatarRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_styleHasBeenSet)
     {
@@ -63,14 +71,6 @@ string GenerateAvatarRequest::ToJsonString() const
         string key = "InputUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_inputUrl.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_typeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filterHasBeenSet)
@@ -113,6 +113,22 @@ string GenerateAvatarRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string GenerateAvatarRequest::GetType() const
+{
+    return m_type;
+}
+
+void GenerateAvatarRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool GenerateAvatarRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
 
 string GenerateAvatarRequest::GetStyle() const
 {
@@ -160,22 +176,6 @@ void GenerateAvatarRequest::SetInputUrl(const string& _inputUrl)
 bool GenerateAvatarRequest::InputUrlHasBeenSet() const
 {
     return m_inputUrlHasBeenSet;
-}
-
-string GenerateAvatarRequest::GetType() const
-{
-    return m_type;
-}
-
-void GenerateAvatarRequest::SetType(const string& _type)
-{
-    m_type = _type;
-    m_typeHasBeenSet = true;
-}
-
-bool GenerateAvatarRequest::TypeHasBeenSet() const
-{
-    return m_typeHasBeenSet;
 }
 
 int64_t GenerateAvatarRequest::GetFilter() const

@@ -40,7 +40,8 @@ ElectronicTrainTicketFull::ElectronicTrainTicketFull() :
     m_taxHasBeenSet(false),
     m_buyerHasBeenSet(false),
     m_buyerTaxIDHasBeenSet(false),
-    m_originalNumberHasBeenSet(false)
+    m_originalNumberHasBeenSet(false),
+    m_iDInfoHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,16 @@ CoreInternalOutcome ElectronicTrainTicketFull::Deserialize(const rapidjson::Valu
         m_originalNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("IDInfo") && !value["IDInfo"].IsNull())
+    {
+        if (!value["IDInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ElectronicTrainTicketFull.IDInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iDInfo = string(value["IDInfo"].GetString());
+        m_iDInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +425,14 @@ void ElectronicTrainTicketFull::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "OriginalNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_originalNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iDInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IDInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iDInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -737,5 +756,21 @@ void ElectronicTrainTicketFull::SetOriginalNumber(const string& _originalNumber)
 bool ElectronicTrainTicketFull::OriginalNumberHasBeenSet() const
 {
     return m_originalNumberHasBeenSet;
+}
+
+string ElectronicTrainTicketFull::GetIDInfo() const
+{
+    return m_iDInfo;
+}
+
+void ElectronicTrainTicketFull::SetIDInfo(const string& _iDInfo)
+{
+    m_iDInfo = _iDInfo;
+    m_iDInfoHasBeenSet = true;
+}
+
+bool ElectronicTrainTicketFull::IDInfoHasBeenSet() const
+{
+    return m_iDInfoHasBeenSet;
 }
 

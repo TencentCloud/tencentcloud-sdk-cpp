@@ -44,7 +44,14 @@ AirTransport::AirTransport() :
     m_dateEndHasBeenSet(false),
     m_endorsementHasBeenSet(false),
     m_qRCodeMarkHasBeenSet(false),
-    m_flightItemsHasBeenSet(false)
+    m_flightItemsHasBeenSet(false),
+    m_promptInformationHasBeenSet(false),
+    m_buyerTaxIDHasBeenSet(false),
+    m_buyerHasBeenSet(false),
+    m_receiptNumberHasBeenSet(false),
+    m_invoiceStatusHasBeenSet(false),
+    m_taxRateHasBeenSet(false),
+    m_taxAmountHasBeenSet(false)
 {
 }
 
@@ -303,6 +310,76 @@ CoreInternalOutcome AirTransport::Deserialize(const rapidjson::Value &value)
         m_flightItemsHasBeenSet = true;
     }
 
+    if (value.HasMember("PromptInformation") && !value["PromptInformation"].IsNull())
+    {
+        if (!value["PromptInformation"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AirTransport.PromptInformation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_promptInformation = string(value["PromptInformation"].GetString());
+        m_promptInformationHasBeenSet = true;
+    }
+
+    if (value.HasMember("BuyerTaxID") && !value["BuyerTaxID"].IsNull())
+    {
+        if (!value["BuyerTaxID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AirTransport.BuyerTaxID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_buyerTaxID = string(value["BuyerTaxID"].GetString());
+        m_buyerTaxIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("Buyer") && !value["Buyer"].IsNull())
+    {
+        if (!value["Buyer"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AirTransport.Buyer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_buyer = string(value["Buyer"].GetString());
+        m_buyerHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReceiptNumber") && !value["ReceiptNumber"].IsNull())
+    {
+        if (!value["ReceiptNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AirTransport.ReceiptNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_receiptNumber = string(value["ReceiptNumber"].GetString());
+        m_receiptNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("InvoiceStatus") && !value["InvoiceStatus"].IsNull())
+    {
+        if (!value["InvoiceStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AirTransport.InvoiceStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invoiceStatus = string(value["InvoiceStatus"].GetString());
+        m_invoiceStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaxRate") && !value["TaxRate"].IsNull())
+    {
+        if (!value["TaxRate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AirTransport.TaxRate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taxRate = string(value["TaxRate"].GetString());
+        m_taxRateHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaxAmount") && !value["TaxAmount"].IsNull())
+    {
+        if (!value["TaxAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AirTransport.TaxAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taxAmount = string(value["TaxAmount"].GetString());
+        m_taxAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -507,6 +584,62 @@ void AirTransport::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_promptInformationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromptInformation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_promptInformation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_buyerTaxIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuyerTaxID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_buyerTaxID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_buyerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Buyer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_buyer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_receiptNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReceiptNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_receiptNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invoiceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvoiceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invoiceStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taxRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxRate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taxAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxAmount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -894,5 +1027,117 @@ void AirTransport::SetFlightItems(const vector<FlightItem>& _flightItems)
 bool AirTransport::FlightItemsHasBeenSet() const
 {
     return m_flightItemsHasBeenSet;
+}
+
+string AirTransport::GetPromptInformation() const
+{
+    return m_promptInformation;
+}
+
+void AirTransport::SetPromptInformation(const string& _promptInformation)
+{
+    m_promptInformation = _promptInformation;
+    m_promptInformationHasBeenSet = true;
+}
+
+bool AirTransport::PromptInformationHasBeenSet() const
+{
+    return m_promptInformationHasBeenSet;
+}
+
+string AirTransport::GetBuyerTaxID() const
+{
+    return m_buyerTaxID;
+}
+
+void AirTransport::SetBuyerTaxID(const string& _buyerTaxID)
+{
+    m_buyerTaxID = _buyerTaxID;
+    m_buyerTaxIDHasBeenSet = true;
+}
+
+bool AirTransport::BuyerTaxIDHasBeenSet() const
+{
+    return m_buyerTaxIDHasBeenSet;
+}
+
+string AirTransport::GetBuyer() const
+{
+    return m_buyer;
+}
+
+void AirTransport::SetBuyer(const string& _buyer)
+{
+    m_buyer = _buyer;
+    m_buyerHasBeenSet = true;
+}
+
+bool AirTransport::BuyerHasBeenSet() const
+{
+    return m_buyerHasBeenSet;
+}
+
+string AirTransport::GetReceiptNumber() const
+{
+    return m_receiptNumber;
+}
+
+void AirTransport::SetReceiptNumber(const string& _receiptNumber)
+{
+    m_receiptNumber = _receiptNumber;
+    m_receiptNumberHasBeenSet = true;
+}
+
+bool AirTransport::ReceiptNumberHasBeenSet() const
+{
+    return m_receiptNumberHasBeenSet;
+}
+
+string AirTransport::GetInvoiceStatus() const
+{
+    return m_invoiceStatus;
+}
+
+void AirTransport::SetInvoiceStatus(const string& _invoiceStatus)
+{
+    m_invoiceStatus = _invoiceStatus;
+    m_invoiceStatusHasBeenSet = true;
+}
+
+bool AirTransport::InvoiceStatusHasBeenSet() const
+{
+    return m_invoiceStatusHasBeenSet;
+}
+
+string AirTransport::GetTaxRate() const
+{
+    return m_taxRate;
+}
+
+void AirTransport::SetTaxRate(const string& _taxRate)
+{
+    m_taxRate = _taxRate;
+    m_taxRateHasBeenSet = true;
+}
+
+bool AirTransport::TaxRateHasBeenSet() const
+{
+    return m_taxRateHasBeenSet;
+}
+
+string AirTransport::GetTaxAmount() const
+{
+    return m_taxAmount;
+}
+
+void AirTransport::SetTaxAmount(const string& _taxAmount)
+{
+    m_taxAmount = _taxAmount;
+    m_taxAmountHasBeenSet = true;
+}
+
+bool AirTransport::TaxAmountHasBeenSet() const
+{
+    return m_taxAmountHasBeenSet;
 }
 

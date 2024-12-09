@@ -27,6 +27,8 @@ set(aiart_public_header_model
   include/tencentcloud/aiart/v20221229/model/ResultConfig.h
   include/tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobRequest.h
   include/tencentcloud/aiart/v20221229/model/ReplaceBackgroundRequest.h
+  include/tencentcloud/aiart/v20221229/model/ReplaceBackgroundResponse.h
+  include/tencentcloud/aiart/v20221229/model/ImageOutpaintingRequest.h
   include/tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobRequest.h
   include/tencentcloud/aiart/v20221229/model/QueryDrawPortraitJobResponse.h
   include/tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobResponse.h
@@ -43,7 +45,7 @@ set(aiart_public_header_model
   include/tencentcloud/aiart/v20221229/model/ImageToImageResponse.h
   include/tencentcloud/aiart/v20221229/model/SketchToImageResponse.h
   include/tencentcloud/aiart/v20221229/model/ChangeClothesRequest.h
-  include/tencentcloud/aiart/v20221229/model/ReplaceBackgroundResponse.h
+  include/tencentcloud/aiart/v20221229/model/ImageOutpaintingResponse.h
   include/tencentcloud/aiart/v20221229/model/UploadTrainPortraitImagesResponse.h
   include/tencentcloud/aiart/v20221229/model/QueryTextToImageProJobRequest.h
   include/tencentcloud/aiart/v20221229/model/GenerateAvatarResponse.h
@@ -61,6 +63,8 @@ set(aiart_src
   src/v20221229/model/ResultConfig.cpp
   src/v20221229/model/QueryTrainPortraitModelJobRequest.cpp
   src/v20221229/model/ReplaceBackgroundRequest.cpp
+  src/v20221229/model/ReplaceBackgroundResponse.cpp
+  src/v20221229/model/ImageOutpaintingRequest.cpp
   src/v20221229/model/SubmitTextToImageProJobRequest.cpp
   src/v20221229/model/QueryDrawPortraitJobResponse.cpp
   src/v20221229/model/QueryTrainPortraitModelJobResponse.cpp
@@ -77,7 +81,7 @@ set(aiart_src
   src/v20221229/model/ImageToImageResponse.cpp
   src/v20221229/model/SketchToImageResponse.cpp
   src/v20221229/model/ChangeClothesRequest.cpp
-  src/v20221229/model/ReplaceBackgroundResponse.cpp
+  src/v20221229/model/ImageOutpaintingResponse.cpp
   src/v20221229/model/UploadTrainPortraitImagesResponse.cpp
   src/v20221229/model/QueryTextToImageProJobRequest.cpp
   src/v20221229/model/GenerateAvatarResponse.cpp

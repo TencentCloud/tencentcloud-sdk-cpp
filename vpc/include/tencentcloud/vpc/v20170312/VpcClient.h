@@ -37,6 +37,8 @@
 #include <tencentcloud/vpc/v20170312/model/AdjustPublicAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AllocateAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AllocateAddressesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/AllocateIPv6AddressesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/AllocateIPv6AddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AllocateIp6AddressesBandwidthRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AllocateIp6AddressesBandwidthResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AssignIpv6AddressesRequest.h>
@@ -53,6 +55,8 @@
 #include <tencentcloud/vpc/v20170312/model/AssociateDhcpIpWithAddressIpResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateDirectConnectGatewayNatGatewayRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateDirectConnectGatewayNatGatewayResponse.h>
+#include <tencentcloud/vpc/v20170312/model/AssociateIPv6AddressRequest.h>
+#include <tencentcloud/vpc/v20170312/model/AssociateIPv6AddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateInstancesToCcnRouteTableRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateInstancesToCcnRouteTableResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateNatGatewayAddressRequest.h>
@@ -365,6 +369,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeHighPriorityRouteTablesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeHighPriorityRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeHighPriorityRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeIPv6AddressesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeIPv6AddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeIp6AddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeIp6AddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeIp6TranslatorQuotaRequest.h>
@@ -525,6 +531,8 @@
 #include <tencentcloud/vpc/v20170312/model/DisassociateDhcpIpWithAddressIpResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateDirectConnectGatewayNatGatewayRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateDirectConnectGatewayNatGatewayResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DisassociateIPv6AddressRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DisassociateIPv6AddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateNatGatewayAddressRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateNatGatewayAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateNetworkAclSubnetsRequest.h>
@@ -623,6 +631,10 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyHighPriorityRouteECMPAlgorithmResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyHighPriorityRouteTableAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyHighPriorityRouteTableAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyIPv6AddressesAttributesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyIPv6AddressesAttributesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyIPv6AddressesBandwidthRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyIPv6AddressesBandwidthResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyIp6AddressesBandwidthRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyIp6AddressesBandwidthResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyIp6RuleRequest.h>
@@ -713,6 +725,8 @@
 #include <tencentcloud/vpc/v20170312/model/RejectVpcPeeringConnectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReleaseAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ReleaseAddressesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ReleaseIPv6AddressesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ReleaseIPv6AddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReleaseIp6AddressesBandwidthRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ReleaseIp6AddressesBandwidthResponse.h>
 #include <tencentcloud/vpc/v20170312/model/RemoveBandwidthPackageResourcesRequest.h>
@@ -812,6 +826,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AllocateAddressesResponse> AllocateAddressesOutcome;
                 typedef std::future<AllocateAddressesOutcome> AllocateAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AllocateAddressesRequest&, AllocateAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AllocateAddressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::AllocateIPv6AddressesResponse> AllocateIPv6AddressesOutcome;
+                typedef std::future<AllocateIPv6AddressesOutcome> AllocateIPv6AddressesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::AllocateIPv6AddressesRequest&, AllocateIPv6AddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AllocateIPv6AddressesAsyncHandler;
                 typedef Outcome<Core::Error, Model::AllocateIp6AddressesBandwidthResponse> AllocateIp6AddressesBandwidthOutcome;
                 typedef std::future<AllocateIp6AddressesBandwidthOutcome> AllocateIp6AddressesBandwidthOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AllocateIp6AddressesBandwidthRequest&, AllocateIp6AddressesBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AllocateIp6AddressesBandwidthAsyncHandler;
@@ -836,6 +853,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AssociateDirectConnectGatewayNatGatewayResponse> AssociateDirectConnectGatewayNatGatewayOutcome;
                 typedef std::future<AssociateDirectConnectGatewayNatGatewayOutcome> AssociateDirectConnectGatewayNatGatewayOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AssociateDirectConnectGatewayNatGatewayRequest&, AssociateDirectConnectGatewayNatGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateDirectConnectGatewayNatGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::AssociateIPv6AddressResponse> AssociateIPv6AddressOutcome;
+                typedef std::future<AssociateIPv6AddressOutcome> AssociateIPv6AddressOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::AssociateIPv6AddressRequest&, AssociateIPv6AddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateIPv6AddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssociateInstancesToCcnRouteTableResponse> AssociateInstancesToCcnRouteTableOutcome;
                 typedef std::future<AssociateInstancesToCcnRouteTableOutcome> AssociateInstancesToCcnRouteTableOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AssociateInstancesToCcnRouteTableRequest&, AssociateInstancesToCcnRouteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateInstancesToCcnRouteTableAsyncHandler;
@@ -1304,6 +1324,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHighPriorityRoutesResponse> DescribeHighPriorityRoutesOutcome;
                 typedef std::future<DescribeHighPriorityRoutesOutcome> DescribeHighPriorityRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeHighPriorityRoutesRequest&, DescribeHighPriorityRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHighPriorityRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIPv6AddressesResponse> DescribeIPv6AddressesOutcome;
+                typedef std::future<DescribeIPv6AddressesOutcome> DescribeIPv6AddressesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeIPv6AddressesRequest&, DescribeIPv6AddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPv6AddressesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIp6AddressesResponse> DescribeIp6AddressesOutcome;
                 typedef std::future<DescribeIp6AddressesOutcome> DescribeIp6AddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeIp6AddressesRequest&, DescribeIp6AddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIp6AddressesAsyncHandler;
@@ -1544,6 +1567,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisassociateDirectConnectGatewayNatGatewayResponse> DisassociateDirectConnectGatewayNatGatewayOutcome;
                 typedef std::future<DisassociateDirectConnectGatewayNatGatewayOutcome> DisassociateDirectConnectGatewayNatGatewayOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisassociateDirectConnectGatewayNatGatewayRequest&, DisassociateDirectConnectGatewayNatGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateDirectConnectGatewayNatGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisassociateIPv6AddressResponse> DisassociateIPv6AddressOutcome;
+                typedef std::future<DisassociateIPv6AddressOutcome> DisassociateIPv6AddressOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DisassociateIPv6AddressRequest&, DisassociateIPv6AddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateIPv6AddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisassociateNatGatewayAddressResponse> DisassociateNatGatewayAddressOutcome;
                 typedef std::future<DisassociateNatGatewayAddressOutcome> DisassociateNatGatewayAddressOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisassociateNatGatewayAddressRequest&, DisassociateNatGatewayAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateNatGatewayAddressAsyncHandler;
@@ -1691,6 +1717,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyHighPriorityRouteTableAttributeResponse> ModifyHighPriorityRouteTableAttributeOutcome;
                 typedef std::future<ModifyHighPriorityRouteTableAttributeOutcome> ModifyHighPriorityRouteTableAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyHighPriorityRouteTableAttributeRequest&, ModifyHighPriorityRouteTableAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHighPriorityRouteTableAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyIPv6AddressesAttributesResponse> ModifyIPv6AddressesAttributesOutcome;
+                typedef std::future<ModifyIPv6AddressesAttributesOutcome> ModifyIPv6AddressesAttributesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyIPv6AddressesAttributesRequest&, ModifyIPv6AddressesAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIPv6AddressesAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyIPv6AddressesBandwidthResponse> ModifyIPv6AddressesBandwidthOutcome;
+                typedef std::future<ModifyIPv6AddressesBandwidthOutcome> ModifyIPv6AddressesBandwidthOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyIPv6AddressesBandwidthRequest&, ModifyIPv6AddressesBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIPv6AddressesBandwidthAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyIp6AddressesBandwidthResponse> ModifyIp6AddressesBandwidthOutcome;
                 typedef std::future<ModifyIp6AddressesBandwidthOutcome> ModifyIp6AddressesBandwidthOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyIp6AddressesBandwidthRequest&, ModifyIp6AddressesBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIp6AddressesBandwidthAsyncHandler;
@@ -1826,6 +1858,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReleaseAddressesResponse> ReleaseAddressesOutcome;
                 typedef std::future<ReleaseAddressesOutcome> ReleaseAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ReleaseAddressesRequest&, ReleaseAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseAddressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReleaseIPv6AddressesResponse> ReleaseIPv6AddressesOutcome;
+                typedef std::future<ReleaseIPv6AddressesOutcome> ReleaseIPv6AddressesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ReleaseIPv6AddressesRequest&, ReleaseIPv6AddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseIPv6AddressesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReleaseIp6AddressesBandwidthResponse> ReleaseIp6AddressesBandwidthOutcome;
                 typedef std::future<ReleaseIp6AddressesBandwidthOutcome> ReleaseIp6AddressesBandwidthOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ReleaseIp6AddressesBandwidthRequest&, ReleaseIp6AddressesBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseIp6AddressesBandwidthAsyncHandler;
@@ -1994,6 +2029,19 @@ namespace TencentCloud
                 AllocateAddressesOutcomeCallable AllocateAddressesCallable(const Model::AllocateAddressesRequest& request);
 
                 /**
+                 *本接口（AllocateIPv6Addresses）用于申请一个或多个弹性公网IPv6（简称EIPv6）实例。
+
+- EIPv6 是您在腾讯云某个地域可以独立申请和持有的，固定不变的公网 IPv6 地址，提供与弹性公网 IPv4 一致的产品体验。
+- 通过弹性公网 IPv6，您可以快速将 EIPv6 实例绑定到云资源的内网 IPv6 地址上，实现为云资源快速开通 IPv6 公网带宽。
+- 您还可以按需将 EIPv6 实例绑定到其他云资源上，从而屏蔽实例故障。
+                 * @param req AllocateIPv6AddressesRequest
+                 * @return AllocateIPv6AddressesOutcome
+                 */
+                AllocateIPv6AddressesOutcome AllocateIPv6Addresses(const Model::AllocateIPv6AddressesRequest &request);
+                void AllocateIPv6AddressesAsync(const Model::AllocateIPv6AddressesRequest& request, const AllocateIPv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AllocateIPv6AddressesOutcomeCallable AllocateIPv6AddressesCallable(const Model::AllocateIPv6AddressesRequest& request);
+
+                /**
                  *本接口（AllocateIp6AddressesBandwidth）用于为传统弹性公网 IPv6 实例开通 IPv6 公网带宽。
 
 - 传统弹性公网 IPv6 实例默认仅具备 IPv6 内网通信能力，需为 IPv6 地址分配公网带宽后，才具备 IPv6 公网通信能力。
@@ -2090,6 +2138,18 @@ namespace TencentCloud
                 AssociateDirectConnectGatewayNatGatewayOutcome AssociateDirectConnectGatewayNatGateway(const Model::AssociateDirectConnectGatewayNatGatewayRequest &request);
                 void AssociateDirectConnectGatewayNatGatewayAsync(const Model::AssociateDirectConnectGatewayNatGatewayRequest& request, const AssociateDirectConnectGatewayNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssociateDirectConnectGatewayNatGatewayOutcomeCallable AssociateDirectConnectGatewayNatGatewayCallable(const Model::AssociateDirectConnectGatewayNatGatewayRequest& request);
+
+                /**
+                 *本接口（AssociateIPv6Address）用于将弹性公网IPv6（简称EIPv6）实例绑定到 CVM 或弹性网卡配置的内网 IPv6 地址上。
+
+- 将 EIPv6 绑定到 CVM 上，其本质是将 EIPv6 绑定到 CVM 弹性网卡所配置的内网 IPv6 地址上。
+- 将 EIPv6 绑定到指定网卡的内网 IPv6 时，需确保该内网 IPv6 地址为未绑定状态，才能执行绑定操作。
+                 * @param req AssociateIPv6AddressRequest
+                 * @return AssociateIPv6AddressOutcome
+                 */
+                AssociateIPv6AddressOutcome AssociateIPv6Address(const Model::AssociateIPv6AddressRequest &request);
+                void AssociateIPv6AddressAsync(const Model::AssociateIPv6AddressRequest& request, const AssociateIPv6AddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssociateIPv6AddressOutcomeCallable AssociateIPv6AddressCallable(const Model::AssociateIPv6AddressRequest& request);
 
                 /**
                  *本接口（AssociateInstancesToCcnRouteTable）用于将指定的云联网实例关联到指定的云联网路由表。
@@ -3633,6 +3693,18 @@ namespace TencentCloud
                 DescribeHighPriorityRoutesOutcomeCallable DescribeHighPriorityRoutesCallable(const Model::DescribeHighPriorityRoutesRequest& request);
 
                 /**
+                 *本接口（DescribeIPv6Addresses）用于查询一个或多个弹性公网 IPv6（简称 EIPv6）实例的详细信息。
+
+- 支持查询您在指定地域的弹性公网 IPv6 和传统弹性公网 IPv6 实例信息
+- 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的 EIPv6。
+                 * @param req DescribeIPv6AddressesRequest
+                 * @return DescribeIPv6AddressesOutcome
+                 */
+                DescribeIPv6AddressesOutcome DescribeIPv6Addresses(const Model::DescribeIPv6AddressesRequest &request);
+                void DescribeIPv6AddressesAsync(const Model::DescribeIPv6AddressesRequest& request, const DescribeIPv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIPv6AddressesOutcomeCallable DescribeIPv6AddressesCallable(const Model::DescribeIPv6AddressesRequest& request);
+
+                /**
                  *本接口（DescribeIp6Addresses）用于查询一个或多个传统弹性公网 IPv6 实例的详细信息。
                  * @param req DescribeIp6AddressesRequest
                  * @return DescribeIp6AddressesOutcome
@@ -4407,6 +4479,18 @@ LimitTypes取值范围：
                 DisassociateDirectConnectGatewayNatGatewayOutcomeCallable DisassociateDirectConnectGatewayNatGatewayCallable(const Model::DisassociateDirectConnectGatewayNatGatewayRequest& request);
 
                 /**
+                 *本接口（DisassociateIPv6Address）用于解绑弹性公网 IPv6（简称EIPv6）实例。
+
+- 支持对 CVM、弹性网卡绑定的 EIPv6 实例进行解绑操作。
+- 只有状态为 BIND 和 BIND_ENI 的 EIPv6 实例才能进行解绑操作。
+                 * @param req DisassociateIPv6AddressRequest
+                 * @return DisassociateIPv6AddressOutcome
+                 */
+                DisassociateIPv6AddressOutcome DisassociateIPv6Address(const Model::DisassociateIPv6AddressRequest &request);
+                void DisassociateIPv6AddressAsync(const Model::DisassociateIPv6AddressRequest& request, const DisassociateIPv6AddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateIPv6AddressOutcomeCallable DisassociateIPv6AddressCallable(const Model::DisassociateIPv6AddressRequest& request);
+
+                /**
                  *本接口（DisassociateNatGatewayAddress）用于NAT网关解绑弹性IP。
                  * @param req DisassociateNatGatewayAddressRequest
                  * @return DisassociateNatGatewayAddressOutcome
@@ -4869,7 +4953,27 @@ LimitTypes取值范围：
                 ModifyHighPriorityRouteTableAttributeOutcomeCallable ModifyHighPriorityRouteTableAttributeCallable(const Model::ModifyHighPriorityRouteTableAttributeRequest& request);
 
                 /**
-                 *本接口（ModifyIp6AddressesBandwidt）用于调整传统弹性公网 IPv6 实例的带宽上限。
+                 *本接口（ModifyIPv6AddressesAttributes）用于修改弹性公网 IPv6（简称EIPv6）实例名称。
+
+- 支持对弹性公网 IPv6 和传统弹性公网 IPv6 实例名称进行修改。
+                 * @param req ModifyIPv6AddressesAttributesRequest
+                 * @return ModifyIPv6AddressesAttributesOutcome
+                 */
+                ModifyIPv6AddressesAttributesOutcome ModifyIPv6AddressesAttributes(const Model::ModifyIPv6AddressesAttributesRequest &request);
+                void ModifyIPv6AddressesAttributesAsync(const Model::ModifyIPv6AddressesAttributesRequest& request, const ModifyIPv6AddressesAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyIPv6AddressesAttributesOutcomeCallable ModifyIPv6AddressesAttributesCallable(const Model::ModifyIPv6AddressesAttributesRequest& request);
+
+                /**
+                 *本接口（ModifyIPv6AddressesBandwidth）用于调整弹性公网 IPv6（简称EIPv6）实例的带宽上限。
+                 * @param req ModifyIPv6AddressesBandwidthRequest
+                 * @return ModifyIPv6AddressesBandwidthOutcome
+                 */
+                ModifyIPv6AddressesBandwidthOutcome ModifyIPv6AddressesBandwidth(const Model::ModifyIPv6AddressesBandwidthRequest &request);
+                void ModifyIPv6AddressesBandwidthAsync(const Model::ModifyIPv6AddressesBandwidthRequest& request, const ModifyIPv6AddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyIPv6AddressesBandwidthOutcomeCallable ModifyIPv6AddressesBandwidthCallable(const Model::ModifyIPv6AddressesBandwidthRequest& request);
+
+                /**
+                 *本接口（ModifyIp6AddressesBandwidth）用于调整传统弹性公网 IPv6 实例的带宽上限。
 
 - 仅支持对传统弹性公网 IPv6 实例的带宽上限进行调整。
 - 如需调整弹性公网 IPv6 实例的带宽上限，请使用 ModifyIPv6AddressesBandwidth 接口。
@@ -5301,6 +5405,18 @@ LimitTypes取值范围：
                 ReleaseAddressesOutcomeCallable ReleaseAddressesCallable(const Model::ReleaseAddressesRequest& request);
 
                 /**
+                 *本接口（ReleaseIPv6Addresses）用于释放一个或多个弹性公网IPv6（简称EIPv6）实例。
+
+- 支持对已申请到的弹性公网 IPv6 实例进行释放操作，如需再次使用，请重新申请。
+- 只有状态为 UNBIND 的 EIPv6 实例才能进行释放操作。
+                 * @param req ReleaseIPv6AddressesRequest
+                 * @return ReleaseIPv6AddressesOutcome
+                 */
+                ReleaseIPv6AddressesOutcome ReleaseIPv6Addresses(const Model::ReleaseIPv6AddressesRequest &request);
+                void ReleaseIPv6AddressesAsync(const Model::ReleaseIPv6AddressesRequest& request, const ReleaseIPv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReleaseIPv6AddressesOutcomeCallable ReleaseIPv6AddressesCallable(const Model::ReleaseIPv6AddressesRequest& request);
+
+                /**
                  *本接口（ReleaseIp6AddressesBandwidth）用于为传统弹性公网 IPv6 实例关闭 IPv6 公网带宽。
 
 - 传统弹性公网 IPv6 实例关闭公网带宽后，仍具备 IPv6 内网通信能力。
@@ -5496,8 +5612,7 @@ LimitTypes取值范围：
                 ResetNatGatewayConnectionOutcomeCallable ResetNatGatewayConnectionCallable(const Model::ResetNatGatewayConnectionRequest& request);
 
                 /**
-                 *本接口（ResetRoutes）用于对某个路由表名称和所有路由策略（Route）进行重新设置。<br />
-注意: 调用本接口是先删除当前路由表中所有路由策略, 再保存新提交的路由策略内容, 会引起网络中断。
+                 *本接口（ResetRoutes）用于对某个路由表名称和所有路由策略（Route）进行重新设置。<br /> 注意: 调用本接口时先删除当前路由表中所有路由策略, 再保存新提交的路由策略内容, 会引起网络中断。
                  * @param req ResetRoutesRequest
                  * @return ResetRoutesOutcome
                  */

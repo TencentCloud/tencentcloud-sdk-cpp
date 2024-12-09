@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return Data 无
+                     * 获取查询结果
+                     * @return Data 查询结果
                      * 
                      */
                     std::vector<StaticInfo> GetData() const;
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 查询结果
                      */
                     std::vector<StaticInfo> m_data;
                     bool m_dataHasBeenSet;

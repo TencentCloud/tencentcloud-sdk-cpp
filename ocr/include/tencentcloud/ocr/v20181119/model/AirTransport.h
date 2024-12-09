@@ -551,6 +551,153 @@ namespace TencentCloud
                      */
                     bool FlightItemsHasBeenSet() const;
 
+                    /**
+                     * 获取提示信息
+                     * @return PromptInformation 提示信息
+                     * 
+                     */
+                    std::string GetPromptInformation() const;
+
+                    /**
+                     * 设置提示信息
+                     * @param _promptInformation 提示信息
+                     * 
+                     */
+                    void SetPromptInformation(const std::string& _promptInformation);
+
+                    /**
+                     * 判断参数 PromptInformation 是否已赋值
+                     * @return PromptInformation 是否已赋值
+                     * 
+                     */
+                    bool PromptInformationHasBeenSet() const;
+
+                    /**
+                     * 获取统一社会信用代码/纳税人识别号
+                     * @return BuyerTaxID 统一社会信用代码/纳税人识别号
+                     * 
+                     */
+                    std::string GetBuyerTaxID() const;
+
+                    /**
+                     * 设置统一社会信用代码/纳税人识别号
+                     * @param _buyerTaxID 统一社会信用代码/纳税人识别号
+                     * 
+                     */
+                    void SetBuyerTaxID(const std::string& _buyerTaxID);
+
+                    /**
+                     * 判断参数 BuyerTaxID 是否已赋值
+                     * @return BuyerTaxID 是否已赋值
+                     * 
+                     */
+                    bool BuyerTaxIDHasBeenSet() const;
+
+                    /**
+                     * 获取购买方名称
+                     * @return Buyer 购买方名称
+                     * 
+                     */
+                    std::string GetBuyer() const;
+
+                    /**
+                     * 设置购买方名称
+                     * @param _buyer 购买方名称
+                     * 
+                     */
+                    void SetBuyer(const std::string& _buyer);
+
+                    /**
+                     * 判断参数 Buyer 是否已赋值
+                     * @return Buyer 是否已赋值
+                     * 
+                     */
+                    bool BuyerHasBeenSet() const;
+
+                    /**
+                     * 获取发票号码
+                     * @return ReceiptNumber 发票号码
+                     * 
+                     */
+                    std::string GetReceiptNumber() const;
+
+                    /**
+                     * 设置发票号码
+                     * @param _receiptNumber 发票号码
+                     * 
+                     */
+                    void SetReceiptNumber(const std::string& _receiptNumber);
+
+                    /**
+                     * 判断参数 ReceiptNumber 是否已赋值
+                     * @return ReceiptNumber 是否已赋值
+                     * 
+                     */
+                    bool ReceiptNumberHasBeenSet() const;
+
+                    /**
+                     * 获取开票状态
+                     * @return InvoiceStatus 开票状态
+                     * 
+                     */
+                    std::string GetInvoiceStatus() const;
+
+                    /**
+                     * 设置开票状态
+                     * @param _invoiceStatus 开票状态
+                     * 
+                     */
+                    void SetInvoiceStatus(const std::string& _invoiceStatus);
+
+                    /**
+                     * 判断参数 InvoiceStatus 是否已赋值
+                     * @return InvoiceStatus 是否已赋值
+                     * 
+                     */
+                    bool InvoiceStatusHasBeenSet() const;
+
+                    /**
+                     * 获取增值税税率
+                     * @return TaxRate 增值税税率
+                     * 
+                     */
+                    std::string GetTaxRate() const;
+
+                    /**
+                     * 设置增值税税率
+                     * @param _taxRate 增值税税率
+                     * 
+                     */
+                    void SetTaxRate(const std::string& _taxRate);
+
+                    /**
+                     * 判断参数 TaxRate 是否已赋值
+                     * @return TaxRate 是否已赋值
+                     * 
+                     */
+                    bool TaxRateHasBeenSet() const;
+
+                    /**
+                     * 获取增值税税额
+                     * @return TaxAmount 增值税税额
+                     * 
+                     */
+                    std::string GetTaxAmount() const;
+
+                    /**
+                     * 设置增值税税额
+                     * @param _taxAmount 增值税税额
+                     * 
+                     */
+                    void SetTaxAmount(const std::string& _taxAmount);
+
+                    /**
+                     * 判断参数 TaxAmount 是否已赋值
+                     * @return TaxAmount 是否已赋值
+                     * 
+                     */
+                    bool TaxAmountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -696,6 +843,48 @@ namespace TencentCloud
                      */
                     std::vector<FlightItem> m_flightItems;
                     bool m_flightItemsHasBeenSet;
+
+                    /**
+                     * 提示信息
+                     */
+                    std::string m_promptInformation;
+                    bool m_promptInformationHasBeenSet;
+
+                    /**
+                     * 统一社会信用代码/纳税人识别号
+                     */
+                    std::string m_buyerTaxID;
+                    bool m_buyerTaxIDHasBeenSet;
+
+                    /**
+                     * 购买方名称
+                     */
+                    std::string m_buyer;
+                    bool m_buyerHasBeenSet;
+
+                    /**
+                     * 发票号码
+                     */
+                    std::string m_receiptNumber;
+                    bool m_receiptNumberHasBeenSet;
+
+                    /**
+                     * 开票状态
+                     */
+                    std::string m_invoiceStatus;
+                    bool m_invoiceStatusHasBeenSet;
+
+                    /**
+                     * 增值税税率
+                     */
+                    std::string m_taxRate;
+                    bool m_taxRateHasBeenSet;
+
+                    /**
+                     * 增值税税额
+                     */
+                    std::string m_taxAmount;
+                    bool m_taxAmountHasBeenSet;
 
                 };
             }

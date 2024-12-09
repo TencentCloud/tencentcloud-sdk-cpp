@@ -44,11 +44,40 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取图像类型，默认为人像。
+human：人像头像，仅支持人像图片输入，建议避免上传无人、多人、人像过小的图片。
+pet：萌宠贴纸，仅支持动物图片输入，建议避免上传无动物、多动物、动物过小的图片。
+                     * @return Type 图像类型，默认为人像。
+human：人像头像，仅支持人像图片输入，建议避免上传无人、多人、人像过小的图片。
+pet：萌宠贴纸，仅支持动物图片输入，建议避免上传无动物、多动物、动物过小的图片。
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置图像类型，默认为人像。
+human：人像头像，仅支持人像图片输入，建议避免上传无人、多人、人像过小的图片。
+pet：萌宠贴纸，仅支持动物图片输入，建议避免上传无动物、多动物、动物过小的图片。
+                     * @param _type 图像类型，默认为人像。
+human：人像头像，仅支持人像图片输入，建议避免上传无人、多人、人像过小的图片。
+pet：萌宠贴纸，仅支持动物图片输入，建议避免上传无动物、多动物、动物过小的图片。
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
                      * 获取头像风格，仅在人像模式下生效。
-请在  [百变头像风格列表](https://cloud.tencent.com/document/product/1668/107741) 中选择期望的风格，传入风格编号，不传默认使用 flower 风格。
+若使用人像模式，请在  [百变头像风格列表](https://cloud.tencent.com/document/product/1668/107741) 中选择期望的风格，传入风格编号，不传默认使用 flower 风格。
 若使用萌宠贴纸模式，无需选择风格，该参数不生效。
                      * @return Style 头像风格，仅在人像模式下生效。
-请在  [百变头像风格列表](https://cloud.tencent.com/document/product/1668/107741) 中选择期望的风格，传入风格编号，不传默认使用 flower 风格。
+若使用人像模式，请在  [百变头像风格列表](https://cloud.tencent.com/document/product/1668/107741) 中选择期望的风格，传入风格编号，不传默认使用 flower 风格。
 若使用萌宠贴纸模式，无需选择风格，该参数不生效。
                      * 
                      */
@@ -56,10 +85,10 @@ namespace TencentCloud
 
                     /**
                      * 设置头像风格，仅在人像模式下生效。
-请在  [百变头像风格列表](https://cloud.tencent.com/document/product/1668/107741) 中选择期望的风格，传入风格编号，不传默认使用 flower 风格。
+若使用人像模式，请在  [百变头像风格列表](https://cloud.tencent.com/document/product/1668/107741) 中选择期望的风格，传入风格编号，不传默认使用 flower 风格。
 若使用萌宠贴纸模式，无需选择风格，该参数不生效。
                      * @param _style 头像风格，仅在人像模式下生效。
-请在  [百变头像风格列表](https://cloud.tencent.com/document/product/1668/107741) 中选择期望的风格，传入风格编号，不传默认使用 flower 风格。
+若使用人像模式，请在  [百变头像风格列表](https://cloud.tencent.com/document/product/1668/107741) 中选择期望的风格，传入风格编号，不传默认使用 flower 风格。
 若使用萌宠贴纸模式，无需选择风格，该参数不生效。
                      * 
                      */
@@ -129,35 +158,6 @@ Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                      * 
                      */
                     bool InputUrlHasBeenSet() const;
-
-                    /**
-                     * 获取图像类型，默认为人像。
-human：人像头像，仅支持人像图片输入，建议避免上传无人、多人、人像过小的图片。
-pet：萌宠贴纸，仅支持动物图片输入，建议避免上传无动物、多动物、动物过小的图片。
-                     * @return Type 图像类型，默认为人像。
-human：人像头像，仅支持人像图片输入，建议避免上传无人、多人、人像过小的图片。
-pet：萌宠贴纸，仅支持动物图片输入，建议避免上传无动物、多动物、动物过小的图片。
-                     * 
-                     */
-                    std::string GetType() const;
-
-                    /**
-                     * 设置图像类型，默认为人像。
-human：人像头像，仅支持人像图片输入，建议避免上传无人、多人、人像过小的图片。
-pet：萌宠贴纸，仅支持动物图片输入，建议避免上传无动物、多动物、动物过小的图片。
-                     * @param _type 图像类型，默认为人像。
-human：人像头像，仅支持人像图片输入，建议避免上传无人、多人、人像过小的图片。
-pet：萌宠贴纸，仅支持动物图片输入，建议避免上传无动物、多动物、动物过小的图片。
-                     * 
-                     */
-                    void SetType(const std::string& _type);
-
-                    /**
-                     * 判断参数 Type 是否已赋值
-                     * @return Type 是否已赋值
-                     * 
-                     */
-                    bool TypeHasBeenSet() const;
 
                     /**
                      * 获取输入人像图的质量检测开关，默认开启，仅在人像模式下生效。
@@ -286,8 +286,16 @@ pet：萌宠贴纸，仅支持动物图片输入，建议避免上传无动物�
                 private:
 
                     /**
+                     * 图像类型，默认为人像。
+human：人像头像，仅支持人像图片输入，建议避免上传无人、多人、人像过小的图片。
+pet：萌宠贴纸，仅支持动物图片输入，建议避免上传无动物、多动物、动物过小的图片。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
                      * 头像风格，仅在人像模式下生效。
-请在  [百变头像风格列表](https://cloud.tencent.com/document/product/1668/107741) 中选择期望的风格，传入风格编号，不传默认使用 flower 风格。
+若使用人像模式，请在  [百变头像风格列表](https://cloud.tencent.com/document/product/1668/107741) 中选择期望的风格，传入风格编号，不传默认使用 flower 风格。
 若使用萌宠贴纸模式，无需选择风格，该参数不生效。
                      */
                     std::string m_style;
@@ -308,14 +316,6 @@ Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                      */
                     std::string m_inputUrl;
                     bool m_inputUrlHasBeenSet;
-
-                    /**
-                     * 图像类型，默认为人像。
-human：人像头像，仅支持人像图片输入，建议避免上传无人、多人、人像过小的图片。
-pet：萌宠贴纸，仅支持动物图片输入，建议避免上传无动物、多动物、动物过小的图片。
-                     */
-                    std::string m_type;
-                    bool m_typeHasBeenSet;
 
                     /**
                      * 输入人像图的质量检测开关，默认开启，仅在人像模式下生效。

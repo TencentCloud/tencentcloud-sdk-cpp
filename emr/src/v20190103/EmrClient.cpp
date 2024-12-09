@@ -126,6 +126,49 @@ EmrClient::AddUsersForUserManagerOutcomeCallable EmrClient::AddUsersForUserManag
     return task->get_future();
 }
 
+EmrClient::CreateCloudInstanceOutcome EmrClient::CreateCloudInstance(const CreateCloudInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudInstanceResponse rsp = CreateCloudInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudInstanceOutcome(rsp);
+        else
+            return CreateCloudInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudInstanceOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::CreateCloudInstanceAsync(const CreateCloudInstanceRequest& request, const CreateCloudInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::CreateCloudInstanceOutcomeCallable EmrClient::CreateCloudInstanceCallable(const CreateCloudInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::CreateClusterOutcome EmrClient::CreateCluster(const CreateClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCluster");
@@ -2054,6 +2097,49 @@ EmrClient::ModifyGlobalConfigOutcomeCallable EmrClient::ModifyGlobalConfigCallab
         [this, request]()
         {
             return this->ModifyGlobalConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::ModifyPodNumOutcome EmrClient::ModifyPodNum(const ModifyPodNumRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPodNum");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPodNumResponse rsp = ModifyPodNumResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPodNumOutcome(rsp);
+        else
+            return ModifyPodNumOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPodNumOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyPodNumAsync(const ModifyPodNumRequest& request, const ModifyPodNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPodNum(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ModifyPodNumOutcomeCallable EmrClient::ModifyPodNumCallable(const ModifyPodNumRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPodNumOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPodNum(request);
         }
     );
 

@@ -126,6 +126,49 @@ AiartClient::GenerateAvatarOutcomeCallable AiartClient::GenerateAvatarCallable(c
     return task->get_future();
 }
 
+AiartClient::ImageOutpaintingOutcome AiartClient::ImageOutpainting(const ImageOutpaintingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImageOutpainting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImageOutpaintingResponse rsp = ImageOutpaintingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImageOutpaintingOutcome(rsp);
+        else
+            return ImageOutpaintingOutcome(o.GetError());
+    }
+    else
+    {
+        return ImageOutpaintingOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::ImageOutpaintingAsync(const ImageOutpaintingRequest& request, const ImageOutpaintingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImageOutpainting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::ImageOutpaintingOutcomeCallable AiartClient::ImageOutpaintingCallable(const ImageOutpaintingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImageOutpaintingOutcome()>>(
+        [this, request]()
+        {
+            return this->ImageOutpainting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::ImageToImageOutcome AiartClient::ImageToImage(const ImageToImageRequest &request)
 {
     auto outcome = MakeRequest(request, "ImageToImage");

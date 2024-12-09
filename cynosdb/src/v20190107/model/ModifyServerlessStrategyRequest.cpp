@@ -33,9 +33,7 @@ ModifyServerlessStrategyRequest::ModifyServerlessStrategyRequest() :
     m_minRoCpuHasBeenSet(false),
     m_maxRoCpuHasBeenSet(false),
     m_minRoCountHasBeenSet(false),
-    m_maxRoCountHasBeenSet(false),
-    m_autoScaleUpHasBeenSet(false),
-    m_autoScaleDownHasBeenSet(false)
+    m_maxRoCountHasBeenSet(false)
 {
 }
 
@@ -132,22 +130,6 @@ string ModifyServerlessStrategyRequest::ToJsonString() const
         string key = "MaxRoCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxRoCount, allocator);
-    }
-
-    if (m_autoScaleUpHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AutoScaleUp";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_autoScaleUp.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_autoScaleDownHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AutoScaleDown";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_autoScaleDown.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -332,38 +314,6 @@ void ModifyServerlessStrategyRequest::SetMaxRoCount(const int64_t& _maxRoCount)
 bool ModifyServerlessStrategyRequest::MaxRoCountHasBeenSet() const
 {
     return m_maxRoCountHasBeenSet;
-}
-
-string ModifyServerlessStrategyRequest::GetAutoScaleUp() const
-{
-    return m_autoScaleUp;
-}
-
-void ModifyServerlessStrategyRequest::SetAutoScaleUp(const string& _autoScaleUp)
-{
-    m_autoScaleUp = _autoScaleUp;
-    m_autoScaleUpHasBeenSet = true;
-}
-
-bool ModifyServerlessStrategyRequest::AutoScaleUpHasBeenSet() const
-{
-    return m_autoScaleUpHasBeenSet;
-}
-
-string ModifyServerlessStrategyRequest::GetAutoScaleDown() const
-{
-    return m_autoScaleDown;
-}
-
-void ModifyServerlessStrategyRequest::SetAutoScaleDown(const string& _autoScaleDown)
-{
-    m_autoScaleDown = _autoScaleDown;
-    m_autoScaleDownHasBeenSet = true;
-}
-
-bool ModifyServerlessStrategyRequest::AutoScaleDownHasBeenSet() const
-{
-    return m_autoScaleDownHasBeenSet;
 }
 
 

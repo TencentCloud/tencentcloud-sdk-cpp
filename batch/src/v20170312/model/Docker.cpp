@@ -21,9 +21,9 @@ using namespace TencentCloud::Batch::V20170312::Model;
 using namespace std;
 
 Docker::Docker() :
+    m_imageHasBeenSet(false),
     m_userHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_imageHasBeenSet(false),
     m_serverHasBeenSet(false),
     m_maxRetryCountHasBeenSet(false),
     m_delayOnRetryHasBeenSet(false),
@@ -35,6 +35,16 @@ CoreInternalOutcome Docker::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Image") && !value["Image"].IsNull())
+    {
+        if (!value["Image"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Docker.Image` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_image = string(value["Image"].GetString());
+        m_imageHasBeenSet = true;
+    }
 
     if (value.HasMember("User") && !value["User"].IsNull())
     {
@@ -54,16 +64,6 @@ CoreInternalOutcome Docker::Deserialize(const rapidjson::Value &value)
         }
         m_password = string(value["Password"].GetString());
         m_passwordHasBeenSet = true;
-    }
-
-    if (value.HasMember("Image") && !value["Image"].IsNull())
-    {
-        if (!value["Image"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Docker.Image` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_image = string(value["Image"].GetString());
-        m_imageHasBeenSet = true;
     }
 
     if (value.HasMember("Server") && !value["Server"].IsNull())
@@ -113,6 +113,14 @@ CoreInternalOutcome Docker::Deserialize(const rapidjson::Value &value)
 void Docker::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_imageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Image";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_userHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -127,14 +135,6 @@ void Docker::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_imageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Image";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serverHasBeenSet)
@@ -172,6 +172,22 @@ void Docker::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
 }
 
 
+string Docker::GetImage() const
+{
+    return m_image;
+}
+
+void Docker::SetImage(const string& _image)
+{
+    m_image = _image;
+    m_imageHasBeenSet = true;
+}
+
+bool Docker::ImageHasBeenSet() const
+{
+    return m_imageHasBeenSet;
+}
+
 string Docker::GetUser() const
 {
     return m_user;
@@ -202,22 +218,6 @@ void Docker::SetPassword(const string& _password)
 bool Docker::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
-}
-
-string Docker::GetImage() const
-{
-    return m_image;
-}
-
-void Docker::SetImage(const string& _image)
-{
-    m_image = _image;
-    m_imageHasBeenSet = true;
-}
-
-bool Docker::ImageHasBeenSet() const
-{
-    return m_imageHasBeenSet;
 }
 
 string Docker::GetServer() const

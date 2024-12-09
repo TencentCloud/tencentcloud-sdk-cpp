@@ -3394,6 +3394,49 @@ CynosdbClient::DescribeRollbackTimeRangeOutcomeCallable CynosdbClient::DescribeR
     return task->get_future();
 }
 
+CynosdbClient::DescribeServerlessInstanceSpecsOutcome CynosdbClient::DescribeServerlessInstanceSpecs(const DescribeServerlessInstanceSpecsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServerlessInstanceSpecs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServerlessInstanceSpecsResponse rsp = DescribeServerlessInstanceSpecsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServerlessInstanceSpecsOutcome(rsp);
+        else
+            return DescribeServerlessInstanceSpecsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServerlessInstanceSpecsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeServerlessInstanceSpecsAsync(const DescribeServerlessInstanceSpecsRequest& request, const DescribeServerlessInstanceSpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServerlessInstanceSpecs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeServerlessInstanceSpecsOutcomeCallable CynosdbClient::DescribeServerlessInstanceSpecsCallable(const DescribeServerlessInstanceSpecsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServerlessInstanceSpecsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServerlessInstanceSpecs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeServerlessStrategyOutcome CynosdbClient::DescribeServerlessStrategy(const DescribeServerlessStrategyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeServerlessStrategy");

@@ -1456,7 +1456,9 @@ namespace TencentCloud
                 DescribeRabbitMQVirtualHostOutcomeCallable DescribeRabbitMQVirtualHostCallable(const Model::DescribeRabbitMQVirtualHostRequest& request);
 
                 /**
-                 *RabbitMQ专享版查询虚拟主机列表
+                 *消息队列TDMQ RabbitMQ 有一个存量旧接口没下线，目前实际上已经不在产品中使用：DescribeRabbitMQVirtualHostList，这个接口很久前已经被 DescribeRabbitMQVirtualHost 替换掉。已无用户在调用。
+
+RabbitMQ专享版查询虚拟主机列表
                  * @param req DescribeRabbitMQVirtualHostListRequest
                  * @return DescribeRabbitMQVirtualHostListOutcome
                  */

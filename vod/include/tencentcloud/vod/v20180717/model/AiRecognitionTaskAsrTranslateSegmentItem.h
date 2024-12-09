@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 语音翻译片段。
+                * 语音翻译识别片段。
                 */
                 class AiRecognitionTaskAsrTranslateSegmentItem : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取语音翻译片段置信度。取值：0~100。
-                     * @return Confidence 语音翻译片段置信度。取值：0~100。
+                     * 获取语音翻译识别片段置信度。取值：0~100。
+                     * @return Confidence 语音翻译识别片段置信度。取值：0~100。
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置语音翻译片段置信度。取值：0~100。
-                     * @param _confidence 语音翻译片段置信度。取值：0~100。
+                     * 设置语音翻译识别片段置信度。取值：0~100。
+                     * @param _confidence 语音翻译识别片段置信度。取值：0~100。
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取语音翻译片段起始的偏移时间，单位：秒。
-                     * @return StartTimeOffset 语音翻译片段起始的偏移时间，单位：秒。
+                     * 获取语音翻译识别片段起始的偏移时间，单位：秒。
+                     * @return StartTimeOffset 语音翻译识别片段起始的偏移时间，单位：秒。
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置语音翻译片段起始的偏移时间，单位：秒。
-                     * @param _startTimeOffset 语音翻译片段起始的偏移时间，单位：秒。
+                     * 设置语音翻译识别片段起始的偏移时间，单位：秒。
+                     * @param _startTimeOffset 语音翻译识别片段起始的偏移时间，单位：秒。
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取语音翻译片段终止的偏移时间，单位：秒。
-                     * @return EndTimeOffset 语音翻译片段终止的偏移时间，单位：秒。
+                     * 获取语音翻译识别片段终止的偏移时间，单位：秒。
+                     * @return EndTimeOffset 语音翻译识别片段终止的偏移时间，单位：秒。
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置语音翻译片段终止的偏移时间，单位：秒。
-                     * @param _endTimeOffset 语音翻译片段终止的偏移时间，单位：秒。
+                     * 设置语音翻译识别片段终止的偏移时间，单位：秒。
+                     * @param _endTimeOffset 语音翻译识别片段终止的偏移时间，单位：秒。
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -154,19 +154,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 语音翻译片段置信度。取值：0~100。
+                     * 语音翻译识别片段置信度。取值：0~100。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 语音翻译片段起始的偏移时间，单位：秒。
+                     * 语音翻译识别片段起始的偏移时间，单位：秒。
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * 语音翻译片段终止的偏移时间，单位：秒。
+                     * 语音翻译识别片段终止的偏移时间，单位：秒。
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
