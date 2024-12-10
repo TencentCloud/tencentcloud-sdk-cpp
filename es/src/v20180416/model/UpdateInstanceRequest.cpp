@@ -65,7 +65,8 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_shardAllocationBytesHasBeenSet(false),
     m_readWriteModeHasBeenSet(false),
     m_enableScheduleRecoverGroupHasBeenSet(false),
-    m_enableScheduleOperationDurationHasBeenSet(false)
+    m_enableScheduleOperationDurationHasBeenSet(false),
+    m_enableDestroyProtectionHasBeenSet(false)
 {
 }
 
@@ -446,6 +447,14 @@ string UpdateInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_enableScheduleOperationDuration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableDestroyProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDestroyProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_enableDestroyProtection.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1142,6 +1151,22 @@ void UpdateInstanceRequest::SetEnableScheduleOperationDuration(const EnableSched
 bool UpdateInstanceRequest::EnableScheduleOperationDurationHasBeenSet() const
 {
     return m_enableScheduleOperationDurationHasBeenSet;
+}
+
+string UpdateInstanceRequest::GetEnableDestroyProtection() const
+{
+    return m_enableDestroyProtection;
+}
+
+void UpdateInstanceRequest::SetEnableDestroyProtection(const string& _enableDestroyProtection)
+{
+    m_enableDestroyProtection = _enableDestroyProtection;
+    m_enableDestroyProtectionHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::EnableDestroyProtectionHasBeenSet() const
+{
+    return m_enableDestroyProtectionHasBeenSet;
 }
 
 

@@ -28,7 +28,8 @@ CreateVpcEndPointServiceRequest::CreateVpcEndPointServiceRequest() :
     m_autoAcceptFlagHasBeenSet(false),
     m_serviceInstanceIdHasBeenSet(false),
     m_isPassServiceHasBeenSet(false),
-    m_serviceTypeHasBeenSet(false)
+    m_serviceTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,21 @@ string CreateVpcEndPointServiceRequest::ToJsonString() const
         string key = "ServiceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -189,6 +205,22 @@ void CreateVpcEndPointServiceRequest::SetServiceType(const string& _serviceType)
 bool CreateVpcEndPointServiceRequest::ServiceTypeHasBeenSet() const
 {
     return m_serviceTypeHasBeenSet;
+}
+
+vector<Tag> CreateVpcEndPointServiceRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateVpcEndPointServiceRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateVpcEndPointServiceRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

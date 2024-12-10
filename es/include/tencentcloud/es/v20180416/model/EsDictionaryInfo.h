@@ -152,6 +152,106 @@ namespace TencentCloud
                      */
                     bool UpdateTypeHasBeenSet() const;
 
+                    /**
+                     * 获取ansj启用词词典列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AnsjMain ansj启用词词典列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DictInfo> GetAnsjMain() const;
+
+                    /**
+                     * 设置ansj启用词词典列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ansjMain ansj启用词词典列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAnsjMain(const std::vector<DictInfo>& _ansjMain);
+
+                    /**
+                     * 判断参数 AnsjMain 是否已赋值
+                     * @return AnsjMain 是否已赋值
+                     * 
+                     */
+                    bool AnsjMainHasBeenSet() const;
+
+                    /**
+                     * 获取ansj停用词词典列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AnsjStop ansj停用词词典列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DictInfo> GetAnsjStop() const;
+
+                    /**
+                     * 设置ansj停用词词典列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ansjStop ansj停用词词典列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAnsjStop(const std::vector<DictInfo>& _ansjStop);
+
+                    /**
+                     * 判断参数 AnsjStop 是否已赋值
+                     * @return AnsjStop 是否已赋值
+                     * 
+                     */
+                    bool AnsjStopHasBeenSet() const;
+
+                    /**
+                     * 获取ansj歧义词库列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AnsjAmbiguity ansj歧义词库列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DictInfo> GetAnsjAmbiguity() const;
+
+                    /**
+                     * 设置ansj歧义词库列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ansjAmbiguity ansj歧义词库列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAnsjAmbiguity(const std::vector<DictInfo>& _ansjAmbiguity);
+
+                    /**
+                     * 判断参数 AnsjAmbiguity 是否已赋值
+                     * @return AnsjAmbiguity 是否已赋值
+                     * 
+                     */
+                    bool AnsjAmbiguityHasBeenSet() const;
+
+                    /**
+                     * 获取ansj同义词词典列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AnsjSynonyms ansj同义词词典列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DictInfo> GetAnsjSynonyms() const;
+
+                    /**
+                     * 设置ansj同义词词典列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ansjSynonyms ansj同义词词典列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAnsjSynonyms(const std::vector<DictInfo>& _ansjSynonyms);
+
+                    /**
+                     * 判断参数 AnsjSynonyms 是否已赋值
+                     * @return AnsjSynonyms 是否已赋值
+                     * 
+                     */
+                    bool AnsjSynonymsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +283,34 @@ namespace TencentCloud
                      */
                     std::string m_updateType;
                     bool m_updateTypeHasBeenSet;
+
+                    /**
+                     * ansj启用词词典列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DictInfo> m_ansjMain;
+                    bool m_ansjMainHasBeenSet;
+
+                    /**
+                     * ansj停用词词典列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DictInfo> m_ansjStop;
+                    bool m_ansjStopHasBeenSet;
+
+                    /**
+                     * ansj歧义词库列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DictInfo> m_ansjAmbiguity;
+                    bool m_ansjAmbiguityHasBeenSet;
+
+                    /**
+                     * ansj同义词词典列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DictInfo> m_ansjSynonyms;
+                    bool m_ansjSynonymsHasBeenSet;
 
                 };
             }

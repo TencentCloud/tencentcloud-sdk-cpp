@@ -36,10 +36,14 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/ActivateDeviceCertificateRequest.h
   include/tencentcloud/mqtt/v20240516/model/DescribeInstanceResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeAuthenticatorResponse.h
+  include/tencentcloud/mqtt/v20240516/model/DeleteDeviceCertificateRequest.h
   include/tencentcloud/mqtt/v20240516/model/CreateTopicResponse.h
   include/tencentcloud/mqtt/v20240516/model/ModifyJWTAuthenticatorRequest.h
+  include/tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificateResponse.h
+  include/tencentcloud/mqtt/v20240516/model/RevokedDeviceCertificateRequest.h
   include/tencentcloud/mqtt/v20240516/model/AuthorizationPolicyPriority.h
   include/tencentcloud/mqtt/v20240516/model/CreateAuthorizationPolicyResponse.h
+  include/tencentcloud/mqtt/v20240516/model/DeleteDeviceCertificateResponse.h
   include/tencentcloud/mqtt/v20240516/model/CreateJWTAuthenticatorRequest.h
   include/tencentcloud/mqtt/v20240516/model/DeleteTopicRequest.h
   include/tencentcloud/mqtt/v20240516/model/CreateJWKSAuthenticatorRequest.h
@@ -60,12 +64,16 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/DescribeTopicListResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeAuthenticatorRequest.h
   include/tencentcloud/mqtt/v20240516/model/MQTTInstanceItem.h
+  include/tencentcloud/mqtt/v20240516/model/RevokedDeviceCertificateResponse.h
   include/tencentcloud/mqtt/v20240516/model/DeleteTopicResponse.h
-  include/tencentcloud/mqtt/v20240516/model/ModifyAuthorizationPolicyRequest.h
+  include/tencentcloud/mqtt/v20240516/model/DeactivateDeviceCertificateResponse.h
+  include/tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificateRequest.h
+  include/tencentcloud/mqtt/v20240516/model/DeactivateDeviceCertificateRequest.h
   include/tencentcloud/mqtt/v20240516/model/DescribeInstanceRequest.h
   include/tencentcloud/mqtt/v20240516/model/MQTTAuthenticatorItem.h
   include/tencentcloud/mqtt/v20240516/model/DeleteAuthenticatorResponse.h
   include/tencentcloud/mqtt/v20240516/model/TagFilter.h
+  include/tencentcloud/mqtt/v20240516/model/ModifyAuthorizationPolicyRequest.h
   include/tencentcloud/mqtt/v20240516/model/ActivateDeviceCertificateResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeInstanceListResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeTopicRequest.h
@@ -90,10 +98,14 @@ set(mqtt_src
   src/v20240516/model/ActivateDeviceCertificateRequest.cpp
   src/v20240516/model/DescribeInstanceResponse.cpp
   src/v20240516/model/DescribeAuthenticatorResponse.cpp
+  src/v20240516/model/DeleteDeviceCertificateRequest.cpp
   src/v20240516/model/CreateTopicResponse.cpp
   src/v20240516/model/ModifyJWTAuthenticatorRequest.cpp
+  src/v20240516/model/DescribeDeviceCertificateResponse.cpp
+  src/v20240516/model/RevokedDeviceCertificateRequest.cpp
   src/v20240516/model/AuthorizationPolicyPriority.cpp
   src/v20240516/model/CreateAuthorizationPolicyResponse.cpp
+  src/v20240516/model/DeleteDeviceCertificateResponse.cpp
   src/v20240516/model/CreateJWTAuthenticatorRequest.cpp
   src/v20240516/model/DeleteTopicRequest.cpp
   src/v20240516/model/CreateJWKSAuthenticatorRequest.cpp
@@ -114,12 +126,16 @@ set(mqtt_src
   src/v20240516/model/DescribeTopicListResponse.cpp
   src/v20240516/model/DescribeAuthenticatorRequest.cpp
   src/v20240516/model/MQTTInstanceItem.cpp
+  src/v20240516/model/RevokedDeviceCertificateResponse.cpp
   src/v20240516/model/DeleteTopicResponse.cpp
-  src/v20240516/model/ModifyAuthorizationPolicyRequest.cpp
+  src/v20240516/model/DeactivateDeviceCertificateResponse.cpp
+  src/v20240516/model/DescribeDeviceCertificateRequest.cpp
+  src/v20240516/model/DeactivateDeviceCertificateRequest.cpp
   src/v20240516/model/DescribeInstanceRequest.cpp
   src/v20240516/model/MQTTAuthenticatorItem.cpp
   src/v20240516/model/DeleteAuthenticatorResponse.cpp
   src/v20240516/model/TagFilter.cpp
+  src/v20240516/model/ModifyAuthorizationPolicyRequest.cpp
   src/v20240516/model/ActivateDeviceCertificateResponse.cpp
   src/v20240516/model/DescribeInstanceListResponse.cpp
   src/v20240516/model/DescribeTopicRequest.cpp

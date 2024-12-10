@@ -338,6 +338,27 @@ namespace TencentCloud
                      */
                     bool TaskStatusListHasBeenSet() const;
 
+                    /**
+                     * 获取架构ID
+                     * @return ArchId 架构ID
+                     * 
+                     */
+                    std::string GetArchId() const;
+
+                    /**
+                     * 设置架构ID
+                     * @param _archId 架构ID
+                     * 
+                     */
+                    void SetArchId(const std::string& _archId);
+
+                    /**
+                     * 判断参数 ArchId 是否已赋值
+                     * @return ArchId 是否已赋值
+                     * 
+                     */
+                    bool ArchIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -423,6 +444,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_taskStatusList;
                     bool m_taskStatusListHasBeenSet;
+
+                    /**
+                     * 架构ID
+                     */
+                    std::string m_archId;
+                    bool m_archIdHasBeenSet;
 
                 };
             }

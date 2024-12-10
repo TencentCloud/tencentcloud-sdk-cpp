@@ -195,6 +195,8 @@
 #include <tencentcloud/cam/v20190116/model/UpdateRoleConsoleLoginResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateRoleDescriptionRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateRoleDescriptionResponse.h>
+#include <tencentcloud/cam/v20190116/model/UpdateRoleSessionDurationRequest.h>
+#include <tencentcloud/cam/v20190116/model/UpdateRoleSessionDurationResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateSAMLProviderRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateSAMLProviderResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateUserRequest.h>
@@ -475,6 +477,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateRoleDescriptionResponse> UpdateRoleDescriptionOutcome;
                 typedef std::future<UpdateRoleDescriptionOutcome> UpdateRoleDescriptionOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateRoleDescriptionRequest&, UpdateRoleDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRoleDescriptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateRoleSessionDurationResponse> UpdateRoleSessionDurationOutcome;
+                typedef std::future<UpdateRoleSessionDurationOutcome> UpdateRoleSessionDurationOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::UpdateRoleSessionDurationRequest&, UpdateRoleSessionDurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRoleSessionDurationAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateSAMLProviderResponse> UpdateSAMLProviderOutcome;
                 typedef std::future<UpdateSAMLProviderOutcome> UpdateSAMLProviderOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateSAMLProviderRequest&, UpdateSAMLProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSAMLProviderAsyncHandler;
@@ -1265,6 +1270,15 @@ namespace TencentCloud
                 UpdateRoleDescriptionOutcome UpdateRoleDescription(const Model::UpdateRoleDescriptionRequest &request);
                 void UpdateRoleDescriptionAsync(const Model::UpdateRoleDescriptionRequest& request, const UpdateRoleDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateRoleDescriptionOutcomeCallable UpdateRoleDescriptionCallable(const Model::UpdateRoleDescriptionRequest& request);
+
+                /**
+                 *修改角色会话时长 
+                 * @param req UpdateRoleSessionDurationRequest
+                 * @return UpdateRoleSessionDurationOutcome
+                 */
+                UpdateRoleSessionDurationOutcome UpdateRoleSessionDuration(const Model::UpdateRoleSessionDurationRequest &request);
+                void UpdateRoleSessionDurationAsync(const Model::UpdateRoleSessionDurationRequest& request, const UpdateRoleSessionDurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateRoleSessionDurationOutcomeCallable UpdateRoleSessionDurationCallable(const Model::UpdateRoleSessionDurationRequest& request);
 
                 /**
                  *更新SAML身份提供商信息

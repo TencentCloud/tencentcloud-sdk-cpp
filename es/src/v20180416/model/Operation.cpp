@@ -28,6 +28,7 @@ Operation::Operation() :
     m_resultHasBeenSet(false),
     m_tasksHasBeenSet(false),
     m_progressHasBeenSet(false),
+    m_rollbackTagHasBeenSet(false),
     m_subAccountUinHasBeenSet(false)
 {
 }
@@ -124,6 +125,16 @@ CoreInternalOutcome Operation::Deserialize(const rapidjson::Value &value)
         m_progressHasBeenSet = true;
     }
 
+    if (value.HasMember("RollbackTag") && !value["RollbackTag"].IsNull())
+    {
+        if (!value["RollbackTag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Operation.RollbackTag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rollbackTag = value["RollbackTag"].GetInt64();
+        m_rollbackTagHasBeenSet = true;
+    }
+
     if (value.HasMember("SubAccountUin") && !value["SubAccountUin"].IsNull())
     {
         if (!value["SubAccountUin"].IsString())
@@ -203,6 +214,14 @@ void Operation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_progress, allocator);
+    }
+
+    if (m_rollbackTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollbackTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rollbackTag, allocator);
     }
 
     if (m_subAccountUinHasBeenSet)
@@ -326,6 +345,22 @@ void Operation::SetProgress(const double& _progress)
 bool Operation::ProgressHasBeenSet() const
 {
     return m_progressHasBeenSet;
+}
+
+int64_t Operation::GetRollbackTag() const
+{
+    return m_rollbackTag;
+}
+
+void Operation::SetRollbackTag(const int64_t& _rollbackTag)
+{
+    m_rollbackTag = _rollbackTag;
+    m_rollbackTagHasBeenSet = true;
+}
+
+bool Operation::RollbackTagHasBeenSet() const
+{
+    return m_rollbackTagHasBeenSet;
 }
 
 string Operation::GetSubAccountUin() const

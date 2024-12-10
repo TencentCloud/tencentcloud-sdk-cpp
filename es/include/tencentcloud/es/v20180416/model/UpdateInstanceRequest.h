@@ -1039,6 +1039,27 @@ CLOSE 关闭
                      */
                     bool EnableScheduleOperationDurationHasBeenSet() const;
 
+                    /**
+                     * 获取开启集群保护：OPEN-开启，CLOSE-关闭
+                     * @return EnableDestroyProtection 开启集群保护：OPEN-开启，CLOSE-关闭
+                     * 
+                     */
+                    std::string GetEnableDestroyProtection() const;
+
+                    /**
+                     * 设置开启集群保护：OPEN-开启，CLOSE-关闭
+                     * @param _enableDestroyProtection 开启集群保护：OPEN-开启，CLOSE-关闭
+                     * 
+                     */
+                    void SetEnableDestroyProtection(const std::string& _enableDestroyProtection);
+
+                    /**
+                     * 判断参数 EnableDestroyProtection 是否已赋值
+                     * @return EnableDestroyProtection 是否已赋值
+                     * 
+                     */
+                    bool EnableDestroyProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1319,6 +1340,12 @@ CLOSE 关闭
                      */
                     EnableScheduleOperationDuration m_enableScheduleOperationDuration;
                     bool m_enableScheduleOperationDurationHasBeenSet;
+
+                    /**
+                     * 开启集群保护：OPEN-开启，CLOSE-关闭
+                     */
+                    std::string m_enableDestroyProtection;
+                    bool m_enableDestroyProtectionHasBeenSet;
 
                 };
             }

@@ -3738,6 +3738,49 @@ CamClient::UpdateRoleDescriptionOutcomeCallable CamClient::UpdateRoleDescription
     return task->get_future();
 }
 
+CamClient::UpdateRoleSessionDurationOutcome CamClient::UpdateRoleSessionDuration(const UpdateRoleSessionDurationRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateRoleSessionDuration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateRoleSessionDurationResponse rsp = UpdateRoleSessionDurationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateRoleSessionDurationOutcome(rsp);
+        else
+            return UpdateRoleSessionDurationOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateRoleSessionDurationOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::UpdateRoleSessionDurationAsync(const UpdateRoleSessionDurationRequest& request, const UpdateRoleSessionDurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateRoleSessionDuration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::UpdateRoleSessionDurationOutcomeCallable CamClient::UpdateRoleSessionDurationCallable(const UpdateRoleSessionDurationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateRoleSessionDurationOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateRoleSessionDuration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::UpdateSAMLProviderOutcome CamClient::UpdateSAMLProvider(const UpdateSAMLProviderRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateSAMLProvider");

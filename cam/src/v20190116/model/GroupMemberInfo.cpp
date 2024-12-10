@@ -31,7 +31,8 @@ GroupMemberInfo::GroupMemberInfo() :
     m_emailFlagHasBeenSet(false),
     m_userTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_isReceiverOwnerHasBeenSet(false)
+    m_isReceiverOwnerHasBeenSet(false),
+    m_remarkHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome GroupMemberInfo::Deserialize(const rapidjson::Value &value)
         m_isReceiverOwnerHasBeenSet = true;
     }
 
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GroupMemberInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void GroupMemberInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "IsReceiverOwner";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isReceiverOwner, allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void GroupMemberInfo::SetIsReceiverOwner(const uint64_t& _isReceiverOwner)
 bool GroupMemberInfo::IsReceiverOwnerHasBeenSet() const
 {
     return m_isReceiverOwnerHasBeenSet;
+}
+
+string GroupMemberInfo::GetRemark() const
+{
+    return m_remark;
+}
+
+void GroupMemberInfo::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool GroupMemberInfo::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 

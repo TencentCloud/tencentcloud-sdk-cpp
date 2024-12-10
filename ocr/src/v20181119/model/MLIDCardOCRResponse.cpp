@@ -33,6 +33,7 @@ MLIDCardOCRResponse::MLIDCardOCRResponse() :
     m_advancedInfoHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_birthdayHasBeenSet(false),
+    m_myKadNumberHasBeenSet(false),
     m_warnCardInfosHasBeenSet(false)
 {
 }
@@ -164,6 +165,16 @@ CoreInternalOutcome MLIDCardOCRResponse::Deserialize(const string &payload)
         m_birthdayHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MyKadNumber") && !rsp["MyKadNumber"].IsNull())
+    {
+        if (!rsp["MyKadNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MyKadNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_myKadNumber = string(rsp["MyKadNumber"].GetString());
+        m_myKadNumberHasBeenSet = true;
+    }
+
     if (rsp.HasMember("WarnCardInfos") && !rsp["WarnCardInfos"].IsNull())
     {
         if (!rsp["WarnCardInfos"].IsArray())
@@ -262,6 +273,14 @@ string MLIDCardOCRResponse::ToJsonString() const
         string key = "Birthday";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_birthday.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_myKadNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MyKadNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_myKadNumber.c_str(), allocator).Move(), allocator);
     }
 
     if (m_warnCardInfosHasBeenSet)
@@ -377,6 +396,16 @@ string MLIDCardOCRResponse::GetBirthday() const
 bool MLIDCardOCRResponse::BirthdayHasBeenSet() const
 {
     return m_birthdayHasBeenSet;
+}
+
+string MLIDCardOCRResponse::GetMyKadNumber() const
+{
+    return m_myKadNumber;
+}
+
+bool MLIDCardOCRResponse::MyKadNumberHasBeenSet() const
+{
+    return m_myKadNumberHasBeenSet;
 }
 
 vector<int64_t> MLIDCardOCRResponse::GetWarnCardInfos() const

@@ -25,7 +25,11 @@ EsDictionaryInfo::EsDictionaryInfo() :
     m_stopwordsHasBeenSet(false),
     m_qQDictHasBeenSet(false),
     m_synonymHasBeenSet(false),
-    m_updateTypeHasBeenSet(false)
+    m_updateTypeHasBeenSet(false),
+    m_ansjMainHasBeenSet(false),
+    m_ansjStopHasBeenSet(false),
+    m_ansjAmbiguityHasBeenSet(false),
+    m_ansjSynonymsHasBeenSet(false)
 {
 }
 
@@ -124,6 +128,86 @@ CoreInternalOutcome EsDictionaryInfo::Deserialize(const rapidjson::Value &value)
         m_updateTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AnsjMain") && !value["AnsjMain"].IsNull())
+    {
+        if (!value["AnsjMain"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EsDictionaryInfo.AnsjMain` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AnsjMain"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DictInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ansjMain.push_back(item);
+        }
+        m_ansjMainHasBeenSet = true;
+    }
+
+    if (value.HasMember("AnsjStop") && !value["AnsjStop"].IsNull())
+    {
+        if (!value["AnsjStop"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EsDictionaryInfo.AnsjStop` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AnsjStop"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DictInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ansjStop.push_back(item);
+        }
+        m_ansjStopHasBeenSet = true;
+    }
+
+    if (value.HasMember("AnsjAmbiguity") && !value["AnsjAmbiguity"].IsNull())
+    {
+        if (!value["AnsjAmbiguity"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EsDictionaryInfo.AnsjAmbiguity` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AnsjAmbiguity"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DictInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ansjAmbiguity.push_back(item);
+        }
+        m_ansjAmbiguityHasBeenSet = true;
+    }
+
+    if (value.HasMember("AnsjSynonyms") && !value["AnsjSynonyms"].IsNull())
+    {
+        if (!value["AnsjSynonyms"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EsDictionaryInfo.AnsjSynonyms` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AnsjSynonyms"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DictInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ansjSynonyms.push_back(item);
+        }
+        m_ansjSynonymsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -197,6 +281,66 @@ void EsDictionaryInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "UpdateType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ansjMainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnsjMain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ansjMain.begin(); itr != m_ansjMain.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ansjStopHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnsjStop";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ansjStop.begin(); itr != m_ansjStop.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ansjAmbiguityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnsjAmbiguity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ansjAmbiguity.begin(); itr != m_ansjAmbiguity.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ansjSynonymsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnsjSynonyms";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ansjSynonyms.begin(); itr != m_ansjSynonyms.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -280,5 +424,69 @@ void EsDictionaryInfo::SetUpdateType(const string& _updateType)
 bool EsDictionaryInfo::UpdateTypeHasBeenSet() const
 {
     return m_updateTypeHasBeenSet;
+}
+
+vector<DictInfo> EsDictionaryInfo::GetAnsjMain() const
+{
+    return m_ansjMain;
+}
+
+void EsDictionaryInfo::SetAnsjMain(const vector<DictInfo>& _ansjMain)
+{
+    m_ansjMain = _ansjMain;
+    m_ansjMainHasBeenSet = true;
+}
+
+bool EsDictionaryInfo::AnsjMainHasBeenSet() const
+{
+    return m_ansjMainHasBeenSet;
+}
+
+vector<DictInfo> EsDictionaryInfo::GetAnsjStop() const
+{
+    return m_ansjStop;
+}
+
+void EsDictionaryInfo::SetAnsjStop(const vector<DictInfo>& _ansjStop)
+{
+    m_ansjStop = _ansjStop;
+    m_ansjStopHasBeenSet = true;
+}
+
+bool EsDictionaryInfo::AnsjStopHasBeenSet() const
+{
+    return m_ansjStopHasBeenSet;
+}
+
+vector<DictInfo> EsDictionaryInfo::GetAnsjAmbiguity() const
+{
+    return m_ansjAmbiguity;
+}
+
+void EsDictionaryInfo::SetAnsjAmbiguity(const vector<DictInfo>& _ansjAmbiguity)
+{
+    m_ansjAmbiguity = _ansjAmbiguity;
+    m_ansjAmbiguityHasBeenSet = true;
+}
+
+bool EsDictionaryInfo::AnsjAmbiguityHasBeenSet() const
+{
+    return m_ansjAmbiguityHasBeenSet;
+}
+
+vector<DictInfo> EsDictionaryInfo::GetAnsjSynonyms() const
+{
+    return m_ansjSynonyms;
+}
+
+void EsDictionaryInfo::SetAnsjSynonyms(const vector<DictInfo>& _ansjSynonyms)
+{
+    m_ansjSynonyms = _ansjSynonyms;
+    m_ansjSynonymsHasBeenSet = true;
+}
+
+bool EsDictionaryInfo::AnsjSynonymsHasBeenSet() const
+{
+    return m_ansjSynonymsHasBeenSet;
 }
 

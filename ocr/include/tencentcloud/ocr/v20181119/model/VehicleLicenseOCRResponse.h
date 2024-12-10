@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/TextVehicleFront.h>
 #include <tencentcloud/ocr/v20181119/model/TextVehicleBack.h>
+#include <tencentcloud/ocr/v20181119/model/TextTractorVehicleBack.h>
 
 
 namespace TencentCloud
@@ -143,6 +144,22 @@ WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
                      */
                     bool VehicleLicenseTypeHasBeenSet() const;
 
+                    /**
+                     * 获取拖拉机行驶证副页正面的识别结果，CardSide 为 BACK。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TractorBackInfo 拖拉机行驶证副页正面的识别结果，CardSide 为 BACK。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TextTractorVehicleBack GetTractorBackInfo() const;
+
+                    /**
+                     * 判断参数 TractorBackInfo 是否已赋值
+                     * @return TractorBackInfo 是否已赋值
+                     * 
+                     */
+                    bool TractorBackInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +205,13 @@ WARN_DRIVER_LICENSE_BORDER_INCOMPLETE 边框不完整告警
                      */
                     std::string m_vehicleLicenseType;
                     bool m_vehicleLicenseTypeHasBeenSet;
+
+                    /**
+                     * 拖拉机行驶证副页正面的识别结果，CardSide 为 BACK。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TextTractorVehicleBack m_tractorBackInfo;
+                    bool m_tractorBackInfoHasBeenSet;
 
                 };
             }

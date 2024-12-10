@@ -22,7 +22,8 @@ using namespace std;
 
 AddOnSubtitle::AddOnSubtitle() :
     m_typeHasBeenSet(false),
-    m_subtitleHasBeenSet(false)
+    m_subtitleHasBeenSet(false),
+    m_subtitleNameHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ CoreInternalOutcome AddOnSubtitle::Deserialize(const rapidjson::Value &value)
         m_subtitleHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleName") && !value["SubtitleName"].IsNull())
+    {
+        if (!value["SubtitleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AddOnSubtitle.SubtitleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleName = string(value["SubtitleName"].GetString());
+        m_subtitleNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void AddOnSubtitle::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_subtitle.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subtitleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subtitleName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void AddOnSubtitle::SetSubtitle(const MediaInputInfo& _subtitle)
 bool AddOnSubtitle::SubtitleHasBeenSet() const
 {
     return m_subtitleHasBeenSet;
+}
+
+string AddOnSubtitle::GetSubtitleName() const
+{
+    return m_subtitleName;
+}
+
+void AddOnSubtitle::SetSubtitleName(const string& _subtitleName)
+{
+    m_subtitleName = _subtitleName;
+    m_subtitleNameHasBeenSet = true;
+}
+
+bool AddOnSubtitle::SubtitleNameHasBeenSet() const
+{
+    return m_subtitleNameHasBeenSet;
 }
 

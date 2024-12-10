@@ -23,6 +23,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/ListAttachedRolePoliciesResponse.h
   include/tencentcloud/cam/v20190116/model/CreateMessageReceiverRequest.h
   include/tencentcloud/cam/v20190116/model/UpdateUserOIDCConfigResponse.h
+  include/tencentcloud/cam/v20190116/model/UpdateRoleSessionDurationResponse.h
   include/tencentcloud/cam/v20190116/model/Receiver.h
   include/tencentcloud/cam/v20190116/model/ListAccessKeysRequest.h
   include/tencentcloud/cam/v20190116/model/SetMfaFlagResponse.h
@@ -68,6 +69,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/DescribeSubAccountsRequest.h
   include/tencentcloud/cam/v20190116/model/DeleteUserPermissionsBoundaryRequest.h
   include/tencentcloud/cam/v20190116/model/ListSAMLProvidersRequest.h
+  include/tencentcloud/cam/v20190116/model/UpdateRoleSessionDurationRequest.h
   include/tencentcloud/cam/v20190116/model/CreateAccessKeyResponse.h
   include/tencentcloud/cam/v20190116/model/DeletePolicyVersionResponse.h
   include/tencentcloud/cam/v20190116/model/CreateAccessKeyRequest.h
@@ -237,6 +239,7 @@ set(cam_src
   src/v20190116/model/ListAttachedRolePoliciesResponse.cpp
   src/v20190116/model/CreateMessageReceiverRequest.cpp
   src/v20190116/model/UpdateUserOIDCConfigResponse.cpp
+  src/v20190116/model/UpdateRoleSessionDurationResponse.cpp
   src/v20190116/model/Receiver.cpp
   src/v20190116/model/ListAccessKeysRequest.cpp
   src/v20190116/model/SetMfaFlagResponse.cpp
@@ -282,6 +285,7 @@ set(cam_src
   src/v20190116/model/DescribeSubAccountsRequest.cpp
   src/v20190116/model/DeleteUserPermissionsBoundaryRequest.cpp
   src/v20190116/model/ListSAMLProvidersRequest.cpp
+  src/v20190116/model/UpdateRoleSessionDurationRequest.cpp
   src/v20190116/model/CreateAccessKeyResponse.cpp
   src/v20190116/model/DeletePolicyVersionResponse.cpp
   src/v20190116/model/CreateAccessKeyRequest.cpp

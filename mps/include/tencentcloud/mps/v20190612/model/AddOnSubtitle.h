@@ -109,6 +109,31 @@ namespace TencentCloud
                      */
                     bool SubtitleHasBeenSet() const;
 
+                    /**
+                     * 获取字幕名称	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubtitleName 字幕名称	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubtitleName() const;
+
+                    /**
+                     * 设置字幕名称	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subtitleName 字幕名称	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubtitleName(const std::string& _subtitleName);
+
+                    /**
+                     * 判断参数 SubtitleName 是否已赋值
+                     * @return SubtitleName 是否已赋值
+                     * 
+                     */
+                    bool SubtitleNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -127,6 +152,13 @@ namespace TencentCloud
                      */
                     MediaInputInfo m_subtitle;
                     bool m_subtitleHasBeenSet;
+
+                    /**
+                     * 字幕名称	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subtitleName;
+                    bool m_subtitleNameHasBeenSet;
 
                 };
             }

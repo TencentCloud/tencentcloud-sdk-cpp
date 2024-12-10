@@ -353,7 +353,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthScore 健康得分。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     double GetHealthScore() const;
 
@@ -362,14 +362,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthScore 健康得分。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetHealthScore(const double& _healthScore);
 
                     /**
                      * 判断参数 HealthScore 是否已赋值
                      * @return HealthScore 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool HealthScoreHasBeenSet() const;
 
@@ -378,7 +378,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Warning 异常告警。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetWarning() const;
 
@@ -387,14 +387,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _warning 异常告警。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetWarning(const int64_t& _warning);
 
                     /**
                      * 判断参数 Warning 是否已赋值
                      * @return Warning 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool WarningHasBeenSet() const;
 
@@ -403,7 +403,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Project 所属项目。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetProject() const;
 
@@ -412,14 +412,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _project 所属项目。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetProject(const std::string& _project);
 
                     /**
                      * 判断参数 Project 是否已赋值
                      * @return Project 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ProjectHasBeenSet() const;
 

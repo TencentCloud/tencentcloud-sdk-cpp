@@ -204,6 +204,20 @@ MyKid 儿童卡
                     bool BirthdayHasBeenSet() const;
 
                     /**
+                     * 获取马来身份证背面号码
+                     * @return MyKadNumber 马来身份证背面号码
+                     * 
+                     */
+                    std::string GetMyKadNumber() const;
+
+                    /**
+                     * 判断参数 MyKadNumber 是否已赋值
+                     * @return MyKadNumber 是否已赋值
+                     * 
+                     */
+                    bool MyKadNumberHasBeenSet() const;
+
+                    /**
                      * 获取告警码
 -9101 证件边框不完整告警
 -9102 证件复印件告警
@@ -303,6 +317,12 @@ MyKid 儿童卡
                      */
                     std::string m_birthday;
                     bool m_birthdayHasBeenSet;
+
+                    /**
+                     * 马来身份证背面号码
+                     */
+                    std::string m_myKadNumber;
+                    bool m_myKadNumberHasBeenSet;
 
                     /**
                      * 告警码

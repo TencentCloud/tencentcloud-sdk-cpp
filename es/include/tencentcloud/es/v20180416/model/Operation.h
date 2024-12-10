@@ -196,6 +196,27 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
+                     * 获取回滚标记， 0未回滚 ，1回滚中，2已回滚
+                     * @return RollbackTag 回滚标记， 0未回滚 ，1回滚中，2已回滚
+                     * 
+                     */
+                    int64_t GetRollbackTag() const;
+
+                    /**
+                     * 设置回滚标记， 0未回滚 ，1回滚中，2已回滚
+                     * @param _rollbackTag 回滚标记， 0未回滚 ，1回滚中，2已回滚
+                     * 
+                     */
+                    void SetRollbackTag(const int64_t& _rollbackTag);
+
+                    /**
+                     * 判断参数 RollbackTag 是否已赋值
+                     * @return RollbackTag 是否已赋值
+                     * 
+                     */
+                    bool RollbackTagHasBeenSet() const;
+
+                    /**
                      * 获取操作者Uin
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAccountUin 操作者Uin
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     double m_progress;
                     bool m_progressHasBeenSet;
+
+                    /**
+                     * 回滚标记， 0未回滚 ，1回滚中，2已回滚
+                     */
+                    int64_t m_rollbackTag;
+                    bool m_rollbackTagHasBeenSet;
 
                     /**
                      * 操作者Uin

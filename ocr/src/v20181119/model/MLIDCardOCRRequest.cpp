@@ -24,7 +24,9 @@ using namespace std;
 
 MLIDCardOCRRequest::MLIDCardOCRRequest() :
     m_imageBase64HasBeenSet(false),
+    m_backImageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
+    m_backImageUrlHasBeenSet(false),
     m_retImageHasBeenSet(false)
 {
 }
@@ -44,12 +46,28 @@ string MLIDCardOCRRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_imageBase64.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_backImageBase64HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackImageBase64";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backImageBase64.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_imageUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backImageUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackImageUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backImageUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_retImageHasBeenSet)
@@ -84,6 +102,22 @@ bool MLIDCardOCRRequest::ImageBase64HasBeenSet() const
     return m_imageBase64HasBeenSet;
 }
 
+string MLIDCardOCRRequest::GetBackImageBase64() const
+{
+    return m_backImageBase64;
+}
+
+void MLIDCardOCRRequest::SetBackImageBase64(const string& _backImageBase64)
+{
+    m_backImageBase64 = _backImageBase64;
+    m_backImageBase64HasBeenSet = true;
+}
+
+bool MLIDCardOCRRequest::BackImageBase64HasBeenSet() const
+{
+    return m_backImageBase64HasBeenSet;
+}
+
 string MLIDCardOCRRequest::GetImageUrl() const
 {
     return m_imageUrl;
@@ -98,6 +132,22 @@ void MLIDCardOCRRequest::SetImageUrl(const string& _imageUrl)
 bool MLIDCardOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+string MLIDCardOCRRequest::GetBackImageUrl() const
+{
+    return m_backImageUrl;
+}
+
+void MLIDCardOCRRequest::SetBackImageUrl(const string& _backImageUrl)
+{
+    m_backImageUrl = _backImageUrl;
+    m_backImageUrlHasBeenSet = true;
+}
+
+bool MLIDCardOCRRequest::BackImageUrlHasBeenSet() const
+{
+    return m_backImageUrlHasBeenSet;
 }
 
 bool MLIDCardOCRRequest::GetRetImage() const

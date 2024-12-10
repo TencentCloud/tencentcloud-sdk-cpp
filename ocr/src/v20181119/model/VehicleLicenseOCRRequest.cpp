@@ -25,7 +25,8 @@ using namespace std;
 VehicleLicenseOCRRequest::VehicleLicenseOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_cardSideHasBeenSet(false)
+    m_cardSideHasBeenSet(false),
+    m_tractorCardSideHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string VehicleLicenseOCRRequest::ToJsonString() const
         string key = "CardSide";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cardSide.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tractorCardSideHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TractorCardSide";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tractorCardSide.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void VehicleLicenseOCRRequest::SetCardSide(const string& _cardSide)
 bool VehicleLicenseOCRRequest::CardSideHasBeenSet() const
 {
     return m_cardSideHasBeenSet;
+}
+
+string VehicleLicenseOCRRequest::GetTractorCardSide() const
+{
+    return m_tractorCardSide;
+}
+
+void VehicleLicenseOCRRequest::SetTractorCardSide(const string& _tractorCardSide)
+{
+    m_tractorCardSide = _tractorCardSide;
+    m_tractorCardSideHasBeenSet = true;
+}
+
+bool VehicleLicenseOCRRequest::TractorCardSideHasBeenSet() const
+{
+    return m_tractorCardSideHasBeenSet;
 }
 
 

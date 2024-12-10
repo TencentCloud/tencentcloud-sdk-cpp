@@ -255,6 +255,49 @@ MqttClient::CreateTopicOutcomeCallable MqttClient::CreateTopicCallable(const Cre
     return task->get_future();
 }
 
+MqttClient::DeactivateDeviceCertificateOutcome MqttClient::DeactivateDeviceCertificate(const DeactivateDeviceCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeactivateDeviceCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeactivateDeviceCertificateResponse rsp = DeactivateDeviceCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeactivateDeviceCertificateOutcome(rsp);
+        else
+            return DeactivateDeviceCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeactivateDeviceCertificateOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DeactivateDeviceCertificateAsync(const DeactivateDeviceCertificateRequest& request, const DeactivateDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeactivateDeviceCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DeactivateDeviceCertificateOutcomeCallable MqttClient::DeactivateDeviceCertificateCallable(const DeactivateDeviceCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeactivateDeviceCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeactivateDeviceCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::DeleteAuthenticatorOutcome MqttClient::DeleteAuthenticator(const DeleteAuthenticatorRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAuthenticator");
@@ -334,6 +377,49 @@ MqttClient::DeleteAuthorizationPolicyOutcomeCallable MqttClient::DeleteAuthoriza
         [this, request]()
         {
             return this->DeleteAuthorizationPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::DeleteDeviceCertificateOutcome MqttClient::DeleteDeviceCertificate(const DeleteDeviceCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDeviceCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDeviceCertificateResponse rsp = DeleteDeviceCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDeviceCertificateOutcome(rsp);
+        else
+            return DeleteDeviceCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDeviceCertificateOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DeleteDeviceCertificateAsync(const DeleteDeviceCertificateRequest& request, const DeleteDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDeviceCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DeleteDeviceCertificateOutcomeCallable MqttClient::DeleteDeviceCertificateCallable(const DeleteDeviceCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDeviceCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDeviceCertificate(request);
         }
     );
 
@@ -463,6 +549,49 @@ MqttClient::DescribeAuthorizationPoliciesOutcomeCallable MqttClient::DescribeAut
         [this, request]()
         {
             return this->DescribeAuthorizationPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::DescribeDeviceCertificateOutcome MqttClient::DescribeDeviceCertificate(const DescribeDeviceCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceCertificateResponse rsp = DescribeDeviceCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceCertificateOutcome(rsp);
+        else
+            return DescribeDeviceCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceCertificateOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeDeviceCertificateAsync(const DescribeDeviceCertificateRequest& request, const DescribeDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeviceCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DescribeDeviceCertificateOutcomeCallable MqttClient::DescribeDeviceCertificateCallable(const DescribeDeviceCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeviceCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeviceCertificate(request);
         }
     );
 
@@ -893,6 +1022,49 @@ MqttClient::RegisterDeviceCertificateOutcomeCallable MqttClient::RegisterDeviceC
         [this, request]()
         {
             return this->RegisterDeviceCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::RevokedDeviceCertificateOutcome MqttClient::RevokedDeviceCertificate(const RevokedDeviceCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "RevokedDeviceCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RevokedDeviceCertificateResponse rsp = RevokedDeviceCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RevokedDeviceCertificateOutcome(rsp);
+        else
+            return RevokedDeviceCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return RevokedDeviceCertificateOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::RevokedDeviceCertificateAsync(const RevokedDeviceCertificateRequest& request, const RevokedDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RevokedDeviceCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::RevokedDeviceCertificateOutcomeCallable MqttClient::RevokedDeviceCertificateCallable(const RevokedDeviceCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RevokedDeviceCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->RevokedDeviceCertificate(request);
         }
     );
 

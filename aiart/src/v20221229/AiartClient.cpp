@@ -126,6 +126,49 @@ AiartClient::GenerateAvatarOutcomeCallable AiartClient::GenerateAvatarCallable(c
     return task->get_future();
 }
 
+AiartClient::ImageInpaintingRemovalOutcome AiartClient::ImageInpaintingRemoval(const ImageInpaintingRemovalRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImageInpaintingRemoval");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImageInpaintingRemovalResponse rsp = ImageInpaintingRemovalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImageInpaintingRemovalOutcome(rsp);
+        else
+            return ImageInpaintingRemovalOutcome(o.GetError());
+    }
+    else
+    {
+        return ImageInpaintingRemovalOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::ImageInpaintingRemovalAsync(const ImageInpaintingRemovalRequest& request, const ImageInpaintingRemovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImageInpaintingRemoval(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::ImageInpaintingRemovalOutcomeCallable AiartClient::ImageInpaintingRemovalCallable(const ImageInpaintingRemovalRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImageInpaintingRemovalOutcome()>>(
+        [this, request]()
+        {
+            return this->ImageInpaintingRemoval(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::ImageOutpaintingOutcome AiartClient::ImageOutpainting(const ImageOutpaintingRequest &request)
 {
     auto outcome = MakeRequest(request, "ImageOutpainting");

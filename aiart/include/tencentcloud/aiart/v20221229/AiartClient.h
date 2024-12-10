@@ -27,6 +27,8 @@
 #include <tencentcloud/aiart/v20221229/model/ChangeClothesResponse.h>
 #include <tencentcloud/aiart/v20221229/model/GenerateAvatarRequest.h>
 #include <tencentcloud/aiart/v20221229/model/GenerateAvatarResponse.h>
+#include <tencentcloud/aiart/v20221229/model/ImageInpaintingRemovalRequest.h>
+#include <tencentcloud/aiart/v20221229/model/ImageInpaintingRemovalResponse.h>
 #include <tencentcloud/aiart/v20221229/model/ImageOutpaintingRequest.h>
 #include <tencentcloud/aiart/v20221229/model/ImageOutpaintingResponse.h>
 #include <tencentcloud/aiart/v20221229/model/ImageToImageRequest.h>
@@ -71,6 +73,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GenerateAvatarResponse> GenerateAvatarOutcome;
                 typedef std::future<GenerateAvatarOutcome> GenerateAvatarOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::GenerateAvatarRequest&, GenerateAvatarOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateAvatarAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImageInpaintingRemovalResponse> ImageInpaintingRemovalOutcome;
+                typedef std::future<ImageInpaintingRemovalOutcome> ImageInpaintingRemovalOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::ImageInpaintingRemovalRequest&, ImageInpaintingRemovalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageInpaintingRemovalAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImageOutpaintingResponse> ImageOutpaintingOutcome;
                 typedef std::future<ImageOutpaintingOutcome> ImageOutpaintingOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::ImageOutpaintingRequest&, ImageOutpaintingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageOutpaintingAsyncHandler;
@@ -130,6 +135,16 @@ namespace TencentCloud
                 GenerateAvatarOutcome GenerateAvatar(const Model::GenerateAvatarRequest &request);
                 void GenerateAvatarAsync(const Model::GenerateAvatarRequest& request, const GenerateAvatarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GenerateAvatarOutcomeCallable GenerateAvatarCallable(const Model::GenerateAvatarRequest& request);
+
+                /**
+                 *消除补全接口通过图像 mask 指定需要消除的人、物、文字等区域，在选定区域对图像内容进行消除与重绘补全。
+默认提供1个并发，代表最多能同时处理1个已提交的任务。
+                 * @param req ImageInpaintingRemovalRequest
+                 * @return ImageInpaintingRemovalOutcome
+                 */
+                ImageInpaintingRemovalOutcome ImageInpaintingRemoval(const Model::ImageInpaintingRemovalRequest &request);
+                void ImageInpaintingRemovalAsync(const Model::ImageInpaintingRemovalRequest& request, const ImageInpaintingRemovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImageInpaintingRemovalOutcomeCallable ImageInpaintingRemovalCallable(const Model::ImageInpaintingRemovalRequest& request);
 
                 /**
                  *扩图接口支持对输入图像按指定宽高比实现智能扩图。

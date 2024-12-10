@@ -33,16 +33,22 @@
 #include <tencentcloud/mqtt/v20240516/model/CreateJWTAuthenticatorResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateTopicRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateTopicResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DeactivateDeviceCertificateRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DeactivateDeviceCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteAuthenticatorRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteAuthenticatorResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteAuthorizationPolicyRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteAuthorizationPolicyResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DeleteDeviceCertificateRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DeleteDeviceCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteTopicRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteTopicResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeAuthenticatorRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeAuthenticatorResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeAuthorizationPoliciesRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeAuthorizationPoliciesResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificateRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificatesRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificatesResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceRequest.h>
@@ -63,6 +69,8 @@
 #include <tencentcloud/mqtt/v20240516/model/ModifyTopicResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/RegisterDeviceCertificateRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/RegisterDeviceCertificateResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/RevokedDeviceCertificateRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/RevokedDeviceCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/UpdateAuthorizationPolicyPriorityRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/UpdateAuthorizationPolicyPriorityResponse.h>
 
@@ -94,12 +102,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTopicResponse> CreateTopicOutcome;
                 typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::CreateTopicRequest&, CreateTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeactivateDeviceCertificateResponse> DeactivateDeviceCertificateOutcome;
+                typedef std::future<DeactivateDeviceCertificateOutcome> DeactivateDeviceCertificateOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DeactivateDeviceCertificateRequest&, DeactivateDeviceCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeactivateDeviceCertificateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAuthenticatorResponse> DeleteAuthenticatorOutcome;
                 typedef std::future<DeleteAuthenticatorOutcome> DeleteAuthenticatorOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DeleteAuthenticatorRequest&, DeleteAuthenticatorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuthenticatorAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAuthorizationPolicyResponse> DeleteAuthorizationPolicyOutcome;
                 typedef std::future<DeleteAuthorizationPolicyOutcome> DeleteAuthorizationPolicyOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DeleteAuthorizationPolicyRequest&, DeleteAuthorizationPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuthorizationPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDeviceCertificateResponse> DeleteDeviceCertificateOutcome;
+                typedef std::future<DeleteDeviceCertificateOutcome> DeleteDeviceCertificateOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DeleteDeviceCertificateRequest&, DeleteDeviceCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceCertificateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTopicResponse> DeleteTopicOutcome;
                 typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DeleteTopicRequest&, DeleteTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicAsyncHandler;
@@ -109,6 +123,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuthorizationPoliciesResponse> DescribeAuthorizationPoliciesOutcome;
                 typedef std::future<DescribeAuthorizationPoliciesOutcome> DescribeAuthorizationPoliciesOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeAuthorizationPoliciesRequest&, DescribeAuthorizationPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthorizationPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceCertificateResponse> DescribeDeviceCertificateOutcome;
+                typedef std::future<DescribeDeviceCertificateOutcome> DescribeDeviceCertificateOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeDeviceCertificateRequest&, DescribeDeviceCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceCertificateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceCertificatesResponse> DescribeDeviceCertificatesOutcome;
                 typedef std::future<DescribeDeviceCertificatesOutcome> DescribeDeviceCertificatesOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeDeviceCertificatesRequest&, DescribeDeviceCertificatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceCertificatesAsyncHandler;
@@ -139,6 +156,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RegisterDeviceCertificateResponse> RegisterDeviceCertificateOutcome;
                 typedef std::future<RegisterDeviceCertificateOutcome> RegisterDeviceCertificateOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::RegisterDeviceCertificateRequest&, RegisterDeviceCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterDeviceCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::RevokedDeviceCertificateResponse> RevokedDeviceCertificateOutcome;
+                typedef std::future<RevokedDeviceCertificateOutcome> RevokedDeviceCertificateOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::RevokedDeviceCertificateRequest&, RevokedDeviceCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevokedDeviceCertificateAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateAuthorizationPolicyPriorityResponse> UpdateAuthorizationPolicyPriorityOutcome;
                 typedef std::future<UpdateAuthorizationPolicyPriorityOutcome> UpdateAuthorizationPolicyPriorityOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::UpdateAuthorizationPolicyPriorityRequest&, UpdateAuthorizationPolicyPriorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAuthorizationPolicyPriorityAsyncHandler;
@@ -191,6 +211,15 @@ namespace TencentCloud
                 CreateTopicOutcomeCallable CreateTopicCallable(const Model::CreateTopicRequest& request);
 
                 /**
+                 *失效Ca证书
+                 * @param req DeactivateDeviceCertificateRequest
+                 * @return DeactivateDeviceCertificateOutcome
+                 */
+                DeactivateDeviceCertificateOutcome DeactivateDeviceCertificate(const Model::DeactivateDeviceCertificateRequest &request);
+                void DeactivateDeviceCertificateAsync(const Model::DeactivateDeviceCertificateRequest& request, const DeactivateDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeactivateDeviceCertificateOutcomeCallable DeactivateDeviceCertificateCallable(const Model::DeactivateDeviceCertificateRequest& request);
+
+                /**
                  *根据认证器类型删除一个MQTT认证器
                  * @param req DeleteAuthenticatorRequest
                  * @return DeleteAuthenticatorOutcome
@@ -207,6 +236,15 @@ namespace TencentCloud
                 DeleteAuthorizationPolicyOutcome DeleteAuthorizationPolicy(const Model::DeleteAuthorizationPolicyRequest &request);
                 void DeleteAuthorizationPolicyAsync(const Model::DeleteAuthorizationPolicyRequest& request, const DeleteAuthorizationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAuthorizationPolicyOutcomeCallable DeleteAuthorizationPolicyCallable(const Model::DeleteAuthorizationPolicyRequest& request);
+
+                /**
+                 *删除设备证书
+                 * @param req DeleteDeviceCertificateRequest
+                 * @return DeleteDeviceCertificateOutcome
+                 */
+                DeleteDeviceCertificateOutcome DeleteDeviceCertificate(const Model::DeleteDeviceCertificateRequest &request);
+                void DeleteDeviceCertificateAsync(const Model::DeleteDeviceCertificateRequest& request, const DeleteDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDeviceCertificateOutcomeCallable DeleteDeviceCertificateCallable(const Model::DeleteDeviceCertificateRequest& request);
 
                 /**
                  *删除MQTT主题
@@ -234,6 +272,15 @@ namespace TencentCloud
                 DescribeAuthorizationPoliciesOutcome DescribeAuthorizationPolicies(const Model::DescribeAuthorizationPoliciesRequest &request);
                 void DescribeAuthorizationPoliciesAsync(const Model::DescribeAuthorizationPoliciesRequest& request, const DescribeAuthorizationPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAuthorizationPoliciesOutcomeCallable DescribeAuthorizationPoliciesCallable(const Model::DescribeAuthorizationPoliciesRequest& request);
+
+                /**
+                 *查询设备证书详情接口
+                 * @param req DescribeDeviceCertificateRequest
+                 * @return DescribeDeviceCertificateOutcome
+                 */
+                DescribeDeviceCertificateOutcome DescribeDeviceCertificate(const Model::DescribeDeviceCertificateRequest &request);
+                void DescribeDeviceCertificateAsync(const Model::DescribeDeviceCertificateRequest& request, const DescribeDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceCertificateOutcomeCallable DescribeDeviceCertificateCallable(const Model::DescribeDeviceCertificateRequest& request);
 
                 /**
                  *分页查询设备证书
@@ -332,6 +379,15 @@ namespace TencentCloud
                 RegisterDeviceCertificateOutcome RegisterDeviceCertificate(const Model::RegisterDeviceCertificateRequest &request);
                 void RegisterDeviceCertificateAsync(const Model::RegisterDeviceCertificateRequest& request, const RegisterDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RegisterDeviceCertificateOutcomeCallable RegisterDeviceCertificateCallable(const Model::RegisterDeviceCertificateRequest& request);
+
+                /**
+                 *吊销设备证书
+                 * @param req RevokedDeviceCertificateRequest
+                 * @return RevokedDeviceCertificateOutcome
+                 */
+                RevokedDeviceCertificateOutcome RevokedDeviceCertificate(const Model::RevokedDeviceCertificateRequest &request);
+                void RevokedDeviceCertificateAsync(const Model::RevokedDeviceCertificateRequest& request, const RevokedDeviceCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RevokedDeviceCertificateOutcomeCallable RevokedDeviceCertificateCallable(const Model::RevokedDeviceCertificateRequest& request);
 
                 /**
                  *修改策略规则优先级

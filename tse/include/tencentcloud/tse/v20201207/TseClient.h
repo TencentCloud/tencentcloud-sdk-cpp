@@ -61,6 +61,8 @@
 #include <tencentcloud/tse/v20201207/model/CreateGovernanceServicesResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateNativeGatewayServerGroupRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateNativeGatewayServerGroupResponse.h>
+#include <tencentcloud/tse/v20201207/model/CreateNativeGatewayServiceSourceRequest.h>
+#include <tencentcloud/tse/v20201207/model/CreateNativeGatewayServiceSourceResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateOrUpdateConfigFileAndReleaseRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateOrUpdateConfigFileAndReleaseResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateWafDomainsRequest.h>
@@ -103,6 +105,8 @@
 #include <tencentcloud/tse/v20201207/model/DeleteGovernanceServicesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteNativeGatewayServerGroupRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteNativeGatewayServerGroupResponse.h>
+#include <tencentcloud/tse/v20201207/model/DeleteNativeGatewayServiceSourceRequest.h>
+#include <tencentcloud/tse/v20201207/model/DeleteNativeGatewayServiceSourceResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteWafDomainsRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteWafDomainsResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeAllConfigFileTemplatesRequest.h>
@@ -173,6 +177,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeNacosServerInterfacesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNativeGatewayServerGroupsRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNativeGatewayServerGroupsResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeNativeGatewayServiceSourcesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeNativeGatewayServiceSourcesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeOneCloudNativeAPIGatewayServiceRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeOneCloudNativeAPIGatewayServiceResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribePublicAddressConfigRequest.h>
@@ -225,6 +231,8 @@
 #include <tencentcloud/tse/v20201207/model/ModifyGovernanceServicesResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyNativeGatewayServerGroupRequest.h>
 #include <tencentcloud/tse/v20201207/model/ModifyNativeGatewayServerGroupResponse.h>
+#include <tencentcloud/tse/v20201207/model/ModifyNativeGatewayServiceSourceRequest.h>
+#include <tencentcloud/tse/v20201207/model/ModifyNativeGatewayServiceSourceResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyNetworkAccessStrategyRequest.h>
 #include <tencentcloud/tse/v20201207/model/ModifyNetworkAccessStrategyResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyNetworkBasicInfoRequest.h>
@@ -322,6 +330,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateNativeGatewayServerGroupResponse> CreateNativeGatewayServerGroupOutcome;
                 typedef std::future<CreateNativeGatewayServerGroupOutcome> CreateNativeGatewayServerGroupOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateNativeGatewayServerGroupRequest&, CreateNativeGatewayServerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNativeGatewayServerGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateNativeGatewayServiceSourceResponse> CreateNativeGatewayServiceSourceOutcome;
+                typedef std::future<CreateNativeGatewayServiceSourceOutcome> CreateNativeGatewayServiceSourceOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::CreateNativeGatewayServiceSourceRequest&, CreateNativeGatewayServiceSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNativeGatewayServiceSourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOrUpdateConfigFileAndReleaseResponse> CreateOrUpdateConfigFileAndReleaseOutcome;
                 typedef std::future<CreateOrUpdateConfigFileAndReleaseOutcome> CreateOrUpdateConfigFileAndReleaseOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateOrUpdateConfigFileAndReleaseRequest&, CreateOrUpdateConfigFileAndReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrUpdateConfigFileAndReleaseAsyncHandler;
@@ -385,6 +396,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteNativeGatewayServerGroupResponse> DeleteNativeGatewayServerGroupOutcome;
                 typedef std::future<DeleteNativeGatewayServerGroupOutcome> DeleteNativeGatewayServerGroupOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteNativeGatewayServerGroupRequest&, DeleteNativeGatewayServerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNativeGatewayServerGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteNativeGatewayServiceSourceResponse> DeleteNativeGatewayServiceSourceOutcome;
+                typedef std::future<DeleteNativeGatewayServiceSourceOutcome> DeleteNativeGatewayServiceSourceOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DeleteNativeGatewayServiceSourceRequest&, DeleteNativeGatewayServiceSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNativeGatewayServiceSourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteWafDomainsResponse> DeleteWafDomainsOutcome;
                 typedef std::future<DeleteWafDomainsOutcome> DeleteWafDomainsOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteWafDomainsRequest&, DeleteWafDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWafDomainsAsyncHandler;
@@ -490,6 +504,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNativeGatewayServerGroupsResponse> DescribeNativeGatewayServerGroupsOutcome;
                 typedef std::future<DescribeNativeGatewayServerGroupsOutcome> DescribeNativeGatewayServerGroupsOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeNativeGatewayServerGroupsRequest&, DescribeNativeGatewayServerGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNativeGatewayServerGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNativeGatewayServiceSourcesResponse> DescribeNativeGatewayServiceSourcesOutcome;
+                typedef std::future<DescribeNativeGatewayServiceSourcesOutcome> DescribeNativeGatewayServiceSourcesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeNativeGatewayServiceSourcesRequest&, DescribeNativeGatewayServiceSourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNativeGatewayServiceSourcesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOneCloudNativeAPIGatewayServiceResponse> DescribeOneCloudNativeAPIGatewayServiceOutcome;
                 typedef std::future<DescribeOneCloudNativeAPIGatewayServiceOutcome> DescribeOneCloudNativeAPIGatewayServiceOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeOneCloudNativeAPIGatewayServiceRequest&, DescribeOneCloudNativeAPIGatewayServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOneCloudNativeAPIGatewayServiceAsyncHandler;
@@ -568,6 +585,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyNativeGatewayServerGroupResponse> ModifyNativeGatewayServerGroupOutcome;
                 typedef std::future<ModifyNativeGatewayServerGroupOutcome> ModifyNativeGatewayServerGroupOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ModifyNativeGatewayServerGroupRequest&, ModifyNativeGatewayServerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNativeGatewayServerGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNativeGatewayServiceSourceResponse> ModifyNativeGatewayServiceSourceOutcome;
+                typedef std::future<ModifyNativeGatewayServiceSourceOutcome> ModifyNativeGatewayServiceSourceOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::ModifyNativeGatewayServiceSourceRequest&, ModifyNativeGatewayServiceSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNativeGatewayServiceSourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNetworkAccessStrategyResponse> ModifyNetworkAccessStrategyOutcome;
                 typedef std::future<ModifyNetworkAccessStrategyOutcome> ModifyNetworkAccessStrategyOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ModifyNetworkAccessStrategyRequest&, ModifyNetworkAccessStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetworkAccessStrategyAsyncHandler;
@@ -782,6 +802,15 @@ namespace TencentCloud
                 CreateNativeGatewayServerGroupOutcomeCallable CreateNativeGatewayServerGroupCallable(const Model::CreateNativeGatewayServerGroupRequest& request);
 
                 /**
+                 *创建网关服务来源
+                 * @param req CreateNativeGatewayServiceSourceRequest
+                 * @return CreateNativeGatewayServiceSourceOutcome
+                 */
+                CreateNativeGatewayServiceSourceOutcome CreateNativeGatewayServiceSource(const Model::CreateNativeGatewayServiceSourceRequest &request);
+                void CreateNativeGatewayServiceSourceAsync(const Model::CreateNativeGatewayServiceSourceRequest& request, const CreateNativeGatewayServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNativeGatewayServiceSourceOutcomeCallable CreateNativeGatewayServiceSourceCallable(const Model::CreateNativeGatewayServiceSourceRequest& request);
+
+                /**
                  *创建或更新配置文件并发布配置
                  * @param req CreateOrUpdateConfigFileAndReleaseRequest
                  * @return CreateOrUpdateConfigFileAndReleaseOutcome
@@ -969,6 +998,15 @@ namespace TencentCloud
                 DeleteNativeGatewayServerGroupOutcome DeleteNativeGatewayServerGroup(const Model::DeleteNativeGatewayServerGroupRequest &request);
                 void DeleteNativeGatewayServerGroupAsync(const Model::DeleteNativeGatewayServerGroupRequest& request, const DeleteNativeGatewayServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteNativeGatewayServerGroupOutcomeCallable DeleteNativeGatewayServerGroupCallable(const Model::DeleteNativeGatewayServerGroupRequest& request);
+
+                /**
+                 *删除网关服务来源实例
+                 * @param req DeleteNativeGatewayServiceSourceRequest
+                 * @return DeleteNativeGatewayServiceSourceOutcome
+                 */
+                DeleteNativeGatewayServiceSourceOutcome DeleteNativeGatewayServiceSource(const Model::DeleteNativeGatewayServiceSourceRequest &request);
+                void DeleteNativeGatewayServiceSourceAsync(const Model::DeleteNativeGatewayServiceSourceRequest& request, const DeleteNativeGatewayServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNativeGatewayServiceSourceOutcomeCallable DeleteNativeGatewayServiceSourceCallable(const Model::DeleteNativeGatewayServiceSourceRequest& request);
 
                 /**
                  *删除 WAF 防护域名
@@ -1286,6 +1324,15 @@ namespace TencentCloud
                 DescribeNativeGatewayServerGroupsOutcomeCallable DescribeNativeGatewayServerGroupsCallable(const Model::DescribeNativeGatewayServerGroupsRequest& request);
 
                 /**
+                 *查询网关服务来源实例列表
+                 * @param req DescribeNativeGatewayServiceSourcesRequest
+                 * @return DescribeNativeGatewayServiceSourcesOutcome
+                 */
+                DescribeNativeGatewayServiceSourcesOutcome DescribeNativeGatewayServiceSources(const Model::DescribeNativeGatewayServiceSourcesRequest &request);
+                void DescribeNativeGatewayServiceSourcesAsync(const Model::DescribeNativeGatewayServiceSourcesRequest& request, const DescribeNativeGatewayServiceSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNativeGatewayServiceSourcesOutcomeCallable DescribeNativeGatewayServiceSourcesCallable(const Model::DescribeNativeGatewayServiceSourcesRequest& request);
+
+                /**
                  *获取云原生网关服务详情
                  * @param req DescribeOneCloudNativeAPIGatewayServiceRequest
                  * @return DescribeOneCloudNativeAPIGatewayServiceOutcome
@@ -1518,6 +1565,15 @@ namespace TencentCloud
                 ModifyNativeGatewayServerGroupOutcome ModifyNativeGatewayServerGroup(const Model::ModifyNativeGatewayServerGroupRequest &request);
                 void ModifyNativeGatewayServerGroupAsync(const Model::ModifyNativeGatewayServerGroupRequest& request, const ModifyNativeGatewayServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyNativeGatewayServerGroupOutcomeCallable ModifyNativeGatewayServerGroupCallable(const Model::ModifyNativeGatewayServerGroupRequest& request);
+
+                /**
+                 *修改网关服务来源
+                 * @param req ModifyNativeGatewayServiceSourceRequest
+                 * @return ModifyNativeGatewayServiceSourceOutcome
+                 */
+                ModifyNativeGatewayServiceSourceOutcome ModifyNativeGatewayServiceSource(const Model::ModifyNativeGatewayServiceSourceRequest &request);
+                void ModifyNativeGatewayServiceSourceAsync(const Model::ModifyNativeGatewayServiceSourceRequest& request, const ModifyNativeGatewayServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNativeGatewayServiceSourceOutcomeCallable ModifyNativeGatewayServiceSourceCallable(const Model::ModifyNativeGatewayServiceSourceRequest& request);
 
                 /**
                  *修改云原生API网关实例Kong访问策略，支持白名单或者黑名单。

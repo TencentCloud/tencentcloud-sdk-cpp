@@ -125,6 +125,27 @@ DOUBLE 为行驶证主页正面和副页正面。
                      */
                     bool CardSideHasBeenSet() const;
 
+                    /**
+                     * 获取FRONT为行驶证主页正面（有红色印章的一面），BACK 为拖拉机行驶证副页正面识别
+                     * @return TractorCardSide FRONT为行驶证主页正面（有红色印章的一面），BACK 为拖拉机行驶证副页正面识别
+                     * 
+                     */
+                    std::string GetTractorCardSide() const;
+
+                    /**
+                     * 设置FRONT为行驶证主页正面（有红色印章的一面），BACK 为拖拉机行驶证副页正面识别
+                     * @param _tractorCardSide FRONT为行驶证主页正面（有红色印章的一面），BACK 为拖拉机行驶证副页正面识别
+                     * 
+                     */
+                    void SetTractorCardSide(const std::string& _tractorCardSide);
+
+                    /**
+                     * 判断参数 TractorCardSide 是否已赋值
+                     * @return TractorCardSide 是否已赋值
+                     * 
+                     */
+                    bool TractorCardSideHasBeenSet() const;
+
                 private:
 
                     /**
@@ -149,6 +170,12 @@ DOUBLE 为行驶证主页正面和副页正面。
                      */
                     std::string m_cardSide;
                     bool m_cardSideHasBeenSet;
+
+                    /**
+                     * FRONT为行驶证主页正面（有红色印章的一面），BACK 为拖拉机行驶证副页正面识别
+                     */
+                    std::string m_tractorCardSide;
+                    bool m_tractorCardSideHasBeenSet;
 
                 };
             }
