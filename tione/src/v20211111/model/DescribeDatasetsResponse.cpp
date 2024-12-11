@@ -26,7 +26,8 @@ using namespace std;
 DescribeDatasetsResponse::DescribeDatasetsResponse() :
     m_totalCountHasBeenSet(false),
     m_datasetGroupsHasBeenSet(false),
-    m_datasetIdNumsHasBeenSet(false)
+    m_datasetIdNumsHasBeenSet(false),
+    m_cFSNotReadyHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome DescribeDatasetsResponse::Deserialize(const string &payload)
         m_datasetIdNumsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CFSNotReady") && !rsp["CFSNotReady"].IsNull())
+    {
+        if (!rsp["CFSNotReady"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CFSNotReady` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_cFSNotReady = rsp["CFSNotReady"].GetBool();
+        m_cFSNotReadyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string DescribeDatasetsResponse::ToJsonString() const
         string key = "DatasetIdNums";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_datasetIdNums, allocator);
+    }
+
+    if (m_cFSNotReadyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CFSNotReady";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cFSNotReady, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ uint64_t DescribeDatasetsResponse::GetDatasetIdNums() const
 bool DescribeDatasetsResponse::DatasetIdNumsHasBeenSet() const
 {
     return m_datasetIdNumsHasBeenSet;
+}
+
+bool DescribeDatasetsResponse::GetCFSNotReady() const
+{
+    return m_cFSNotReady;
+}
+
+bool DescribeDatasetsResponse::CFSNotReadyHasBeenSet() const
+{
+    return m_cFSNotReadyHasBeenSet;
 }
 
 

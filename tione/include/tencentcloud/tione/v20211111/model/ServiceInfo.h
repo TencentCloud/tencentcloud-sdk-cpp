@@ -513,6 +513,27 @@ HYBRID_PAID:
                     bool ModelHotUpdateEnableHasBeenSet() const;
 
                     /**
+                     * 获取服务的规格别名
+                     * @return InstanceAlias 服务的规格别名
+                     * 
+                     */
+                    std::string GetInstanceAlias() const;
+
+                    /**
+                     * 设置服务的规格别名
+                     * @param _instanceAlias 服务的规格别名
+                     * 
+                     */
+                    void SetInstanceAlias(const std::string& _instanceAlias);
+
+                    /**
+                     * 判断参数 InstanceAlias 是否已赋值
+                     * @return InstanceAlias 是否已赋值
+                     * 
+                     */
+                    bool InstanceAliasHasBeenSet() const;
+
+                    /**
                      * 获取实例数量调节方式,默认为手动
 支持：自动 - "AUTO", 手动 - "MANUAL"
 注意：此字段可能返回 null，表示取不到有效值。
@@ -993,6 +1014,12 @@ HYBRID_PAID:
                      */
                     bool m_modelHotUpdateEnable;
                     bool m_modelHotUpdateEnableHasBeenSet;
+
+                    /**
+                     * 服务的规格别名
+                     */
+                    std::string m_instanceAlias;
+                    bool m_instanceAliasHasBeenSet;
 
                     /**
                      * 实例数量调节方式,默认为手动

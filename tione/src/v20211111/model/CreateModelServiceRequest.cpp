@@ -55,7 +55,9 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_commandHasBeenSet(false),
     m_serviceEIPHasBeenSet(false),
     m_commandBase64HasBeenSet(false),
-    m_servicePortHasBeenSet(false)
+    m_servicePortHasBeenSet(false),
+    m_deployTypeHasBeenSet(false),
+    m_instancePerReplicasHasBeenSet(false)
 {
 }
 
@@ -358,6 +360,22 @@ string CreateModelServiceRequest::ToJsonString() const
         string key = "ServicePort";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_servicePort, allocator);
+    }
+
+    if (m_deployTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deployType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instancePerReplicasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstancePerReplicas";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instancePerReplicas, allocator);
     }
 
 
@@ -894,6 +912,38 @@ void CreateModelServiceRequest::SetServicePort(const int64_t& _servicePort)
 bool CreateModelServiceRequest::ServicePortHasBeenSet() const
 {
     return m_servicePortHasBeenSet;
+}
+
+string CreateModelServiceRequest::GetDeployType() const
+{
+    return m_deployType;
+}
+
+void CreateModelServiceRequest::SetDeployType(const string& _deployType)
+{
+    m_deployType = _deployType;
+    m_deployTypeHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::DeployTypeHasBeenSet() const
+{
+    return m_deployTypeHasBeenSet;
+}
+
+int64_t CreateModelServiceRequest::GetInstancePerReplicas() const
+{
+    return m_instancePerReplicas;
+}
+
+void CreateModelServiceRequest::SetInstancePerReplicas(const int64_t& _instancePerReplicas)
+{
+    m_instancePerReplicas = _instancePerReplicas;
+    m_instancePerReplicasHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::InstancePerReplicasHasBeenSet() const
+{
+    return m_instancePerReplicasHasBeenSet;
 }
 
 

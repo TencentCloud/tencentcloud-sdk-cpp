@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool HandleParamHasBeenSet() const;
 
                     /**
-                     * 获取图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持
-                     * @return ImageInfoList 图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持
+                     * 获取图片列表，目前只支持传入一张图片，需要是图片base64编码，图片url暂不支持
+                     * @return ImageInfoList 图片列表，目前只支持传入一张图片，需要是图片base64编码，图片url暂不支持
                      * 
                      */
                     std::vector<ImageInfo> GetImageInfoList() const;
 
                     /**
-                     * 设置图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持
-                     * @param _imageInfoList 图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持
+                     * 设置图片列表，目前只支持传入一张图片，需要是图片base64编码，图片url暂不支持
+                     * @param _imageInfoList 图片列表，目前只支持传入一张图片，需要是图片base64编码，图片url暂不支持
                      * 
                      */
                     void SetImageInfoList(const std::vector<ImageInfo>& _imageInfoList);
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_handleParamHasBeenSet;
 
                     /**
-                     * 图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持
+                     * 图片列表，目前只支持传入一张图片，需要是图片base64编码，图片url暂不支持
                      */
                     std::vector<ImageInfo> m_imageInfoList;
                     bool m_imageInfoListHasBeenSet;

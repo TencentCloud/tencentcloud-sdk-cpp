@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool ReleaseAddressHasBeenSet() const;
 
                     /**
-                     * 获取不支持的网络类型，取值范围：<br><li>BASIC：基础网络<br><li>VPC1.0：私有网络VPC1.0
+                     * 获取不支持的网络类型，取值范围：<br><li>BASIC：基础网络</li><li>VPC1.0：私有网络VPC1.0</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UnsupportNetworks 不支持的网络类型，取值范围：<br><li>BASIC：基础网络<br><li>VPC1.0：私有网络VPC1.0
+                     * @return UnsupportNetworks 不支持的网络类型，取值范围：<br><li>BASIC：基础网络</li><li>VPC1.0：私有网络VPC1.0</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUnsupportNetworks() const;
 
                     /**
-                     * 设置不支持的网络类型，取值范围：<br><li>BASIC：基础网络<br><li>VPC1.0：私有网络VPC1.0
+                     * 设置不支持的网络类型，取值范围：<br><li>BASIC：基础网络</li><li>VPC1.0：私有网络VPC1.0</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _unsupportNetworks 不支持的网络类型，取值范围：<br><li>BASIC：基础网络<br><li>VPC1.0：私有网络VPC1.0
+                     * @param _unsupportNetworks 不支持的网络类型，取值范围：<br><li>BASIC：基础网络</li><li>VPC1.0：私有网络VPC1.0</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -132,7 +132,7 @@ namespace TencentCloud
                     bool m_releaseAddressHasBeenSet;
 
                     /**
-                     * 不支持的网络类型，取值范围：<br><li>BASIC：基础网络<br><li>VPC1.0：私有网络VPC1.0
+                     * 不支持的网络类型，取值范围：<br><li>BASIC：基础网络</li><li>VPC1.0：私有网络VPC1.0</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_unsupportNetworks;

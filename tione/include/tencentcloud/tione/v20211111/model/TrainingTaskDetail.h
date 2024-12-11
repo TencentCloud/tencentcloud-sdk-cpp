@@ -138,6 +138,31 @@ namespace TencentCloud
                     bool SubUinHasBeenSet() const;
 
                     /**
+                     * 获取创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubUinName 创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubUinName() const;
+
+                    /**
+                     * 设置创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subUinName 创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubUinName(const std::string& _subUinName);
+
+                    /**
+                     * 判断参数 SubUinName 是否已赋值
+                     * @return SubUinName 是否已赋值
+                     * 
+                     */
+                    bool SubUinNameHasBeenSet() const;
+
+                    /**
                      * 获取地域
                      * @return Region 地域
                      * 
@@ -993,6 +1018,13 @@ namespace TencentCloud
                      */
                     std::string m_subUin;
                     bool m_subUinHasBeenSet;
+
+                    /**
+                     * 创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subUinName;
+                    bool m_subUinNameHasBeenSet;
 
                     /**
                      * 地域

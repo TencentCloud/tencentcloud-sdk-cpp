@@ -839,6 +839,48 @@ HYBRID_PAID:
                      */
                     bool ServicePortHasBeenSet() const;
 
+                    /**
+                     * 获取服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+                     * @return DeployType 服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+                     * 
+                     */
+                    std::string GetDeployType() const;
+
+                    /**
+                     * 设置服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+                     * @param _deployType 服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+                     * 
+                     */
+                    void SetDeployType(const std::string& _deployType);
+
+                    /**
+                     * 判断参数 DeployType 是否已赋值
+                     * @return DeployType 是否已赋值
+                     * 
+                     */
+                    bool DeployTypeHasBeenSet() const;
+
+                    /**
+                     * 获取单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     * @return InstancePerReplicas 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     * 
+                     */
+                    int64_t GetInstancePerReplicas() const;
+
+                    /**
+                     * 设置单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     * @param _instancePerReplicas 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     * 
+                     */
+                    void SetInstancePerReplicas(const int64_t& _instancePerReplicas);
+
+                    /**
+                     * 判断参数 InstancePerReplicas 是否已赋值
+                     * @return InstancePerReplicas 是否已赋值
+                     * 
+                     */
+                    bool InstancePerReplicasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1061,6 +1103,18 @@ HYBRID_PAID:
                      */
                     int64_t m_servicePort;
                     bool m_servicePortHasBeenSet;
+
+                    /**
+                     * 服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+                     */
+                    std::string m_deployType;
+                    bool m_deployTypeHasBeenSet;
+
+                    /**
+                     * 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     */
+                    int64_t m_instancePerReplicas;
+                    bool m_instancePerReplicasHasBeenSet;
 
                 };
             }

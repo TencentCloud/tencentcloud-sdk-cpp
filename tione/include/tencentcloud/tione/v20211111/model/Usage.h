@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生成的token数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompletionTokens 生成的token数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCompletionTokens() const;
 
                     /**
                      * 设置生成的token数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _completionTokens 生成的token数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompletionTokens(const int64_t& _completionTokens);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输入的token数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PromptTokens 输入的token数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPromptTokens() const;
 
                     /**
                      * 设置输入的token数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _promptTokens 输入的token数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPromptTokens(const int64_t& _promptTokens);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总共token数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalTokens 总共token数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalTokens() const;
 
                     /**
                      * 设置总共token数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalTokens 总共token数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalTokens(const int64_t& _totalTokens);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 生成的token数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_completionTokens;
                     bool m_completionTokensHasBeenSet;
 
                     /**
                      * 输入的token数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_promptTokens;
                     bool m_promptTokensHasBeenSet;
 
                     /**
                      * 总共token数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalTokens;
                     bool m_totalTokensHasBeenSet;

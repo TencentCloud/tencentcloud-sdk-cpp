@@ -277,6 +277,27 @@ namespace TencentCloud
                      */
                     bool IsPrivateModelHasBeenSet() const;
 
+                    /**
+                     * 获取模型的类别 多模态MultiModal, 文本大模型 LLM
+                     * @return ModelCategory 模型的类别 多模态MultiModal, 文本大模型 LLM
+                     * 
+                     */
+                    std::string GetModelCategory() const;
+
+                    /**
+                     * 设置模型的类别 多模态MultiModal, 文本大模型 LLM
+                     * @param _modelCategory 模型的类别 多模态MultiModal, 文本大模型 LLM
+                     * 
+                     */
+                    void SetModelCategory(const std::string& _modelCategory);
+
+                    /**
+                     * 判断参数 ModelCategory 是否已赋值
+                     * @return ModelCategory 是否已赋值
+                     * 
+                     */
+                    bool ModelCategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -343,6 +364,12 @@ namespace TencentCloud
                      */
                     bool m_isPrivateModel;
                     bool m_isPrivateModelHasBeenSet;
+
+                    /**
+                     * 模型的类别 多模态MultiModal, 文本大模型 LLM
+                     */
+                    std::string m_modelCategory;
+                    bool m_modelCategoryHasBeenSet;
 
                 };
             }

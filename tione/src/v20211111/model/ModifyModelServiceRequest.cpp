@@ -47,7 +47,8 @@ ModifyModelServiceRequest::ModifyModelServiceRequest() :
     m_commandHasBeenSet(false),
     m_serviceEIPHasBeenSet(false),
     m_commandBase64HasBeenSet(false),
-    m_servicePortHasBeenSet(false)
+    m_servicePortHasBeenSet(false),
+    m_instancePerReplicasHasBeenSet(false)
 {
 }
 
@@ -279,6 +280,14 @@ string ModifyModelServiceRequest::ToJsonString() const
         string key = "ServicePort";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_servicePort, allocator);
+    }
+
+    if (m_instancePerReplicasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstancePerReplicas";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instancePerReplicas, allocator);
     }
 
 
@@ -687,6 +696,22 @@ void ModifyModelServiceRequest::SetServicePort(const int64_t& _servicePort)
 bool ModifyModelServiceRequest::ServicePortHasBeenSet() const
 {
     return m_servicePortHasBeenSet;
+}
+
+int64_t ModifyModelServiceRequest::GetInstancePerReplicas() const
+{
+    return m_instancePerReplicas;
+}
+
+void ModifyModelServiceRequest::SetInstancePerReplicas(const int64_t& _instancePerReplicas)
+{
+    m_instancePerReplicas = _instancePerReplicas;
+    m_instancePerReplicasHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::InstancePerReplicasHasBeenSet() const
+{
+    return m_instancePerReplicasHasBeenSet;
 }
 
 

@@ -685,6 +685,92 @@ TioneClient::DescribeBillingResourceInstanceRunningJobsOutcomeCallable TioneClie
     return task->get_future();
 }
 
+TioneClient::DescribeBillingSpecsOutcome TioneClient::DescribeBillingSpecs(const DescribeBillingSpecsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillingSpecs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillingSpecsResponse rsp = DescribeBillingSpecsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillingSpecsOutcome(rsp);
+        else
+            return DescribeBillingSpecsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillingSpecsOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeBillingSpecsAsync(const DescribeBillingSpecsRequest& request, const DescribeBillingSpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillingSpecs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeBillingSpecsOutcomeCallable TioneClient::DescribeBillingSpecsCallable(const DescribeBillingSpecsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillingSpecsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillingSpecs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribeBillingSpecsPriceOutcome TioneClient::DescribeBillingSpecsPrice(const DescribeBillingSpecsPriceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillingSpecsPrice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillingSpecsPriceResponse rsp = DescribeBillingSpecsPriceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillingSpecsPriceOutcome(rsp);
+        else
+            return DescribeBillingSpecsPriceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillingSpecsPriceOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeBillingSpecsPriceAsync(const DescribeBillingSpecsPriceRequest& request, const DescribeBillingSpecsPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillingSpecsPrice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeBillingSpecsPriceOutcomeCallable TioneClient::DescribeBillingSpecsPriceCallable(const DescribeBillingSpecsPriceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillingSpecsPriceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillingSpecsPrice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::DescribeBuildInImagesOutcome TioneClient::DescribeBuildInImages(const DescribeBuildInImagesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBuildInImages");
@@ -1495,49 +1581,6 @@ TioneClient::PushTrainingMetricsOutcomeCallable TioneClient::PushTrainingMetrics
         [this, request]()
         {
             return this->PushTrainingMetrics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TioneClient::SendChatMessageOutcome TioneClient::SendChatMessage(const SendChatMessageRequest &request)
-{
-    auto outcome = MakeRequest(request, "SendChatMessage");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        SendChatMessageResponse rsp = SendChatMessageResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return SendChatMessageOutcome(rsp);
-        else
-            return SendChatMessageOutcome(o.GetError());
-    }
-    else
-    {
-        return SendChatMessageOutcome(outcome.GetError());
-    }
-}
-
-void TioneClient::SendChatMessageAsync(const SendChatMessageRequest& request, const SendChatMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->SendChatMessage(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TioneClient::SendChatMessageOutcomeCallable TioneClient::SendChatMessageCallable(const SendChatMessageRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<SendChatMessageOutcome()>>(
-        [this, request]()
-        {
-            return this->SendChatMessage(request);
         }
     );
 

@@ -50,7 +50,10 @@ Service::Service() :
     m_createSourceHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_latestVersionHasBeenSet(false),
-    m_resourceGroupSWTypeHasBeenSet(false)
+    m_resourceGroupSWTypeHasBeenSet(false),
+    m_archiveStatusHasBeenSet(false),
+    m_deployTypeHasBeenSet(false),
+    m_instancePerReplicasHasBeenSet(false)
 {
 }
 
@@ -390,6 +393,36 @@ CoreInternalOutcome Service::Deserialize(const rapidjson::Value &value)
         m_resourceGroupSWTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ArchiveStatus") && !value["ArchiveStatus"].IsNull())
+    {
+        if (!value["ArchiveStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.ArchiveStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_archiveStatus = string(value["ArchiveStatus"].GetString());
+        m_archiveStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployType") && !value["DeployType"].IsNull())
+    {
+        if (!value["DeployType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.DeployType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployType = string(value["DeployType"].GetString());
+        m_deployTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstancePerReplicas") && !value["InstancePerReplicas"].IsNull())
+    {
+        if (!value["InstancePerReplicas"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.InstancePerReplicas` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instancePerReplicas = string(value["InstancePerReplicas"].GetString());
+        m_instancePerReplicasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -645,6 +678,30 @@ void Service::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ResourceGroupSWType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceGroupSWType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_archiveStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchiveStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_archiveStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deployType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instancePerReplicasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstancePerReplicas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instancePerReplicas.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1128,5 +1185,53 @@ void Service::SetResourceGroupSWType(const string& _resourceGroupSWType)
 bool Service::ResourceGroupSWTypeHasBeenSet() const
 {
     return m_resourceGroupSWTypeHasBeenSet;
+}
+
+string Service::GetArchiveStatus() const
+{
+    return m_archiveStatus;
+}
+
+void Service::SetArchiveStatus(const string& _archiveStatus)
+{
+    m_archiveStatus = _archiveStatus;
+    m_archiveStatusHasBeenSet = true;
+}
+
+bool Service::ArchiveStatusHasBeenSet() const
+{
+    return m_archiveStatusHasBeenSet;
+}
+
+string Service::GetDeployType() const
+{
+    return m_deployType;
+}
+
+void Service::SetDeployType(const string& _deployType)
+{
+    m_deployType = _deployType;
+    m_deployTypeHasBeenSet = true;
+}
+
+bool Service::DeployTypeHasBeenSet() const
+{
+    return m_deployTypeHasBeenSet;
+}
+
+string Service::GetInstancePerReplicas() const
+{
+    return m_instancePerReplicas;
+}
+
+void Service::SetInstancePerReplicas(const string& _instancePerReplicas)
+{
+    m_instancePerReplicas = _instancePerReplicas;
+    m_instancePerReplicasHasBeenSet = true;
+}
+
+bool Service::InstancePerReplicasHasBeenSet() const
+{
+    return m_instancePerReplicasHasBeenSet;
 }
 

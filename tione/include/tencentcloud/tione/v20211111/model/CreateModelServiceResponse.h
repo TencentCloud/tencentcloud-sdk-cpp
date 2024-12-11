@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取生成的模型服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Service 生成的模型服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Service GetService() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 生成的模型服务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Service m_service;
                     bool m_serviceHasBeenSet;

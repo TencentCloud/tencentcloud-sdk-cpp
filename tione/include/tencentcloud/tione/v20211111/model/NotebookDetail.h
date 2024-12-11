@@ -997,6 +997,90 @@ namespace TencentCloud
                      */
                     bool VolumeSourceGooseFSHasBeenSet() const;
 
+                    /**
+                     * 获取子用户ID
+                     * @return SubUin 子用户ID
+                     * 
+                     */
+                    std::string GetSubUin() const;
+
+                    /**
+                     * 设置子用户ID
+                     * @param _subUin 子用户ID
+                     * 
+                     */
+                    void SetSubUin(const std::string& _subUin);
+
+                    /**
+                     * 判断参数 SubUin 是否已赋值
+                     * @return SubUin 是否已赋值
+                     * 
+                     */
+                    bool SubUinHasBeenSet() const;
+
+                    /**
+                     * 获取调度节点ID
+                     * @return ResourceGroupInstanceId 调度节点ID
+                     * 
+                     */
+                    std::string GetResourceGroupInstanceId() const;
+
+                    /**
+                     * 设置调度节点ID
+                     * @param _resourceGroupInstanceId 调度节点ID
+                     * 
+                     */
+                    void SetResourceGroupInstanceId(const std::string& _resourceGroupInstanceId);
+
+                    /**
+                     * 判断参数 ResourceGroupInstanceId 是否已赋值
+                     * @return ResourceGroupInstanceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取子用户名称
+                     * @return SubUinName 子用户名称
+                     * 
+                     */
+                    std::string GetSubUinName() const;
+
+                    /**
+                     * 设置子用户名称
+                     * @param _subUinName 子用户名称
+                     * 
+                     */
+                    void SetSubUinName(const std::string& _subUinName);
+
+                    /**
+                     * 判断参数 SubUinName 是否已赋值
+                     * @return SubUinName 是否已赋值
+                     * 
+                     */
+                    bool SubUinNameHasBeenSet() const;
+
+                    /**
+                     * 获取任务实例创建时间
+                     * @return JobCreateTime 任务实例创建时间
+                     * 
+                     */
+                    std::string GetJobCreateTime() const;
+
+                    /**
+                     * 设置任务实例创建时间
+                     * @param _jobCreateTime 任务实例创建时间
+                     * 
+                     */
+                    void SetJobCreateTime(const std::string& _jobCreateTime);
+
+                    /**
+                     * 判断参数 JobCreateTime 是否已赋值
+                     * @return JobCreateTime 是否已赋值
+                     * 
+                     */
+                    bool JobCreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1263,6 +1347,30 @@ namespace TencentCloud
                      */
                     GooseFS m_volumeSourceGooseFS;
                     bool m_volumeSourceGooseFSHasBeenSet;
+
+                    /**
+                     * 子用户ID
+                     */
+                    std::string m_subUin;
+                    bool m_subUinHasBeenSet;
+
+                    /**
+                     * 调度节点ID
+                     */
+                    std::string m_resourceGroupInstanceId;
+                    bool m_resourceGroupInstanceIdHasBeenSet;
+
+                    /**
+                     * 子用户名称
+                     */
+                    std::string m_subUinName;
+                    bool m_subUinNameHasBeenSet;
+
+                    /**
+                     * 任务实例创建时间
+                     */
+                    std::string m_jobCreateTime;
+                    bool m_jobCreateTimeHasBeenSet;
 
                 };
             }

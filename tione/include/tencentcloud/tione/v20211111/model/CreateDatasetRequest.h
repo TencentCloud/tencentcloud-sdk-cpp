@@ -24,6 +24,7 @@
 #include <tencentcloud/tione/v20211111/model/CosPathInfo.h>
 #include <tencentcloud/tione/v20211111/model/Tag.h>
 #include <tencentcloud/tione/v20211111/model/SchemaInfo.h>
+#include <tencentcloud/tione/v20211111/model/CFSConfig.h>
 
 
 namespace TencentCloud
@@ -201,11 +202,15 @@ ANNOTATION_TYPE_CLASSIFICATION，图片分类
 ANNOTATION_TYPE_DETECTION，目标检测
 ANNOTATION_TYPE_SEGMENTATION，图片分割
 ANNOTATION_TYPE_TRACKING，目标跟踪
+ANNOTATION_TYPE_OCR，OCR
+ANNOTATION_TYPE_TEXT_CLASSIFICATION，文本分类
                      * @return AnnotationType 标注类型:
 ANNOTATION_TYPE_CLASSIFICATION，图片分类
 ANNOTATION_TYPE_DETECTION，目标检测
 ANNOTATION_TYPE_SEGMENTATION，图片分割
 ANNOTATION_TYPE_TRACKING，目标跟踪
+ANNOTATION_TYPE_OCR，OCR
+ANNOTATION_TYPE_TEXT_CLASSIFICATION，文本分类
                      * 
                      */
                     std::string GetAnnotationType() const;
@@ -216,11 +221,15 @@ ANNOTATION_TYPE_CLASSIFICATION，图片分类
 ANNOTATION_TYPE_DETECTION，目标检测
 ANNOTATION_TYPE_SEGMENTATION，图片分割
 ANNOTATION_TYPE_TRACKING，目标跟踪
+ANNOTATION_TYPE_OCR，OCR
+ANNOTATION_TYPE_TEXT_CLASSIFICATION，文本分类
                      * @param _annotationType 标注类型:
 ANNOTATION_TYPE_CLASSIFICATION，图片分类
 ANNOTATION_TYPE_DETECTION，目标检测
 ANNOTATION_TYPE_SEGMENTATION，图片分割
 ANNOTATION_TYPE_TRACKING，目标跟踪
+ANNOTATION_TYPE_OCR，OCR
+ANNOTATION_TYPE_TEXT_CLASSIFICATION，文本分类
                      * 
                      */
                     void SetAnnotationType(const std::string& _annotationType);
@@ -238,11 +247,19 @@ ANNOTATION_FORMAT_TI，TI平台格式
 ANNOTATION_FORMAT_PASCAL，Pascal Voc
 ANNOTATION_FORMAT_COCO，COCO
 ANNOTATION_FORMAT_FILE，文件目录结构
+ANNOTATION_FORMAT_TEXT_TI，文本类型TI平台格式
+ANNOTATION_FORMAT_TXT，文本类型TXT格式
+ANNOTATION_FORMAT_CSV，文本类型CSV格式
+ANNOTATION_FORMAT_JSON，文本类型JSON格式
                      * @return AnnotationFormat 标注格式:
 ANNOTATION_FORMAT_TI，TI平台格式
 ANNOTATION_FORMAT_PASCAL，Pascal Voc
 ANNOTATION_FORMAT_COCO，COCO
 ANNOTATION_FORMAT_FILE，文件目录结构
+ANNOTATION_FORMAT_TEXT_TI，文本类型TI平台格式
+ANNOTATION_FORMAT_TXT，文本类型TXT格式
+ANNOTATION_FORMAT_CSV，文本类型CSV格式
+ANNOTATION_FORMAT_JSON，文本类型JSON格式
                      * 
                      */
                     std::string GetAnnotationFormat() const;
@@ -253,11 +270,19 @@ ANNOTATION_FORMAT_TI，TI平台格式
 ANNOTATION_FORMAT_PASCAL，Pascal Voc
 ANNOTATION_FORMAT_COCO，COCO
 ANNOTATION_FORMAT_FILE，文件目录结构
+ANNOTATION_FORMAT_TEXT_TI，文本类型TI平台格式
+ANNOTATION_FORMAT_TXT，文本类型TXT格式
+ANNOTATION_FORMAT_CSV，文本类型CSV格式
+ANNOTATION_FORMAT_JSON，文本类型JSON格式
                      * @param _annotationFormat 标注格式:
 ANNOTATION_FORMAT_TI，TI平台格式
 ANNOTATION_FORMAT_PASCAL，Pascal Voc
 ANNOTATION_FORMAT_COCO，COCO
 ANNOTATION_FORMAT_FILE，文件目录结构
+ANNOTATION_FORMAT_TEXT_TI，文本类型TI平台格式
+ANNOTATION_FORMAT_TXT，文本类型TXT格式
+ANNOTATION_FORMAT_CSV，文本类型CSV格式
+ANNOTATION_FORMAT_JSON，文本类型JSON格式
                      * 
                      */
                     void SetAnnotationFormat(const std::string& _annotationFormat);
@@ -312,15 +337,23 @@ ANNOTATION_FORMAT_FILE，文件目录结构
                     bool IsSchemaExistedHasBeenSet() const;
 
                     /**
-                     * 获取导入文件粒度，按行或者按文件
-                     * @return ContentType 导入文件粒度，按行或者按文件
+                     * 获取导入文件粒度
+TYPE_TEXT_LINE，按行
+TYPE_TEXT_FILE，按文件
+                     * @return ContentType 导入文件粒度
+TYPE_TEXT_LINE，按行
+TYPE_TEXT_FILE，按文件
                      * 
                      */
                     std::string GetContentType() const;
 
                     /**
-                     * 设置导入文件粒度，按行或者按文件
-                     * @param _contentType 导入文件粒度，按行或者按文件
+                     * 设置导入文件粒度
+TYPE_TEXT_LINE，按行
+TYPE_TEXT_FILE，按文件
+                     * @param _contentType 导入文件粒度
+TYPE_TEXT_LINE，按行
+TYPE_TEXT_FILE，按文件
                      * 
                      */
                     void SetContentType(const std::string& _contentType);
@@ -331,6 +364,69 @@ ANNOTATION_FORMAT_FILE，文件目录结构
                      * 
                      */
                     bool ContentTypeHasBeenSet() const;
+
+                    /**
+                     * 获取数据集建模一级类别。LLM,CV,STRUCTURE,OTHER
+                     * @return DatasetScene 数据集建模一级类别。LLM,CV,STRUCTURE,OTHER
+                     * 
+                     */
+                    std::string GetDatasetScene() const;
+
+                    /**
+                     * 设置数据集建模一级类别。LLM,CV,STRUCTURE,OTHER
+                     * @param _datasetScene 数据集建模一级类别。LLM,CV,STRUCTURE,OTHER
+                     * 
+                     */
+                    void SetDatasetScene(const std::string& _datasetScene);
+
+                    /**
+                     * 判断参数 DatasetScene 是否已赋值
+                     * @return DatasetScene 是否已赋值
+                     * 
+                     */
+                    bool DatasetSceneHasBeenSet() const;
+
+                    /**
+                     * 获取数据集标签。
+                     * @return SceneTags 数据集标签。
+                     * 
+                     */
+                    std::vector<std::string> GetSceneTags() const;
+
+                    /**
+                     * 设置数据集标签。
+                     * @param _sceneTags 数据集标签。
+                     * 
+                     */
+                    void SetSceneTags(const std::vector<std::string>& _sceneTags);
+
+                    /**
+                     * 判断参数 SceneTags 是否已赋值
+                     * @return SceneTags 是否已赋值
+                     * 
+                     */
+                    bool SceneTagsHasBeenSet() const;
+
+                    /**
+                     * 获取数据集CFS配置。仅支持LLM场景
+                     * @return CFSConfig 数据集CFS配置。仅支持LLM场景
+                     * 
+                     */
+                    CFSConfig GetCFSConfig() const;
+
+                    /**
+                     * 设置数据集CFS配置。仅支持LLM场景
+                     * @param _cFSConfig 数据集CFS配置。仅支持LLM场景
+                     * 
+                     */
+                    void SetCFSConfig(const CFSConfig& _cFSConfig);
+
+                    /**
+                     * 判断参数 CFSConfig 是否已赋值
+                     * @return CFSConfig 是否已赋值
+                     * 
+                     */
+                    bool CFSConfigHasBeenSet() const;
 
                 private:
 
@@ -382,6 +478,8 @@ ANNOTATION_TYPE_CLASSIFICATION，图片分类
 ANNOTATION_TYPE_DETECTION，目标检测
 ANNOTATION_TYPE_SEGMENTATION，图片分割
 ANNOTATION_TYPE_TRACKING，目标跟踪
+ANNOTATION_TYPE_OCR，OCR
+ANNOTATION_TYPE_TEXT_CLASSIFICATION，文本分类
                      */
                     std::string m_annotationType;
                     bool m_annotationTypeHasBeenSet;
@@ -392,6 +490,10 @@ ANNOTATION_FORMAT_TI，TI平台格式
 ANNOTATION_FORMAT_PASCAL，Pascal Voc
 ANNOTATION_FORMAT_COCO，COCO
 ANNOTATION_FORMAT_FILE，文件目录结构
+ANNOTATION_FORMAT_TEXT_TI，文本类型TI平台格式
+ANNOTATION_FORMAT_TXT，文本类型TXT格式
+ANNOTATION_FORMAT_CSV，文本类型CSV格式
+ANNOTATION_FORMAT_JSON，文本类型JSON格式
                      */
                     std::string m_annotationFormat;
                     bool m_annotationFormatHasBeenSet;
@@ -409,10 +511,30 @@ ANNOTATION_FORMAT_FILE，文件目录结构
                     bool m_isSchemaExistedHasBeenSet;
 
                     /**
-                     * 导入文件粒度，按行或者按文件
+                     * 导入文件粒度
+TYPE_TEXT_LINE，按行
+TYPE_TEXT_FILE，按文件
                      */
                     std::string m_contentType;
                     bool m_contentTypeHasBeenSet;
+
+                    /**
+                     * 数据集建模一级类别。LLM,CV,STRUCTURE,OTHER
+                     */
+                    std::string m_datasetScene;
+                    bool m_datasetSceneHasBeenSet;
+
+                    /**
+                     * 数据集标签。
+                     */
+                    std::vector<std::string> m_sceneTags;
+                    bool m_sceneTagsHasBeenSet;
+
+                    /**
+                     * 数据集CFS配置。仅支持LLM场景
+                     */
+                    CFSConfig m_cFSConfig;
+                    bool m_cFSConfigHasBeenSet;
 
                 };
             }

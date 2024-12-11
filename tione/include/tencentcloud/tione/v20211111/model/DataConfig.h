@@ -76,6 +76,35 @@ namespace TencentCloud
                     bool MappingPathHasBeenSet() const;
 
                     /**
+                     * 获取存储用途
+可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataSourceUsage 存储用途
+可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDataSourceUsage() const;
+
+                    /**
+                     * 设置存储用途
+可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataSourceUsage 存储用途
+可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataSourceUsage(const std::string& _dataSourceUsage);
+
+                    /**
+                     * 判断参数 DataSourceUsage 是否已赋值
+                     * @return DataSourceUsage 是否已赋值
+                     * 
+                     */
+                    bool DataSourceUsageHasBeenSet() const;
+
+                    /**
                      * 获取DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceType DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS
@@ -307,6 +336,14 @@ namespace TencentCloud
                      */
                     std::string m_mappingPath;
                     bool m_mappingPathHasBeenSet;
+
+                    /**
+                     * 存储用途
+可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataSourceUsage;
+                    bool m_dataSourceUsageHasBeenSet;
 
                     /**
                      * DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS

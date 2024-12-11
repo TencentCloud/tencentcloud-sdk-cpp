@@ -199,6 +199,48 @@ DatasetScope，数据集范围，SCOPE_DATASET_PRIVATE或SCOPE_DATASET_PUBLIC
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取是否检查CFS。若开启，则在CFS挂载好之前，不会返回数据集列表。
+                     * @return CFSChecking 是否检查CFS。若开启，则在CFS挂载好之前，不会返回数据集列表。
+                     * 
+                     */
+                    bool GetCFSChecking() const;
+
+                    /**
+                     * 设置是否检查CFS。若开启，则在CFS挂载好之前，不会返回数据集列表。
+                     * @param _cFSChecking 是否检查CFS。若开启，则在CFS挂载好之前，不会返回数据集列表。
+                     * 
+                     */
+                    void SetCFSChecking(const bool& _cFSChecking);
+
+                    /**
+                     * 判断参数 CFSChecking 是否已赋值
+                     * @return CFSChecking 是否已赋值
+                     * 
+                     */
+                    bool CFSCheckingHasBeenSet() const;
+
+                    /**
+                     * 获取是否返回CFS详情。
+                     * @return CFSDetail 是否返回CFS详情。
+                     * 
+                     */
+                    bool GetCFSDetail() const;
+
+                    /**
+                     * 设置是否返回CFS详情。
+                     * @param _cFSDetail 是否返回CFS详情。
+                     * 
+                     */
+                    void SetCFSDetail(const bool& _cFSDetail);
+
+                    /**
+                     * 判断参数 CFSDetail 是否已赋值
+                     * @return CFSDetail 是否已赋值
+                     * 
+                     */
+                    bool CFSDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -244,6 +286,18 @@ DatasetScope，数据集范围，SCOPE_DATASET_PRIVATE或SCOPE_DATASET_PUBLIC
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 是否检查CFS。若开启，则在CFS挂载好之前，不会返回数据集列表。
+                     */
+                    bool m_cFSChecking;
+                    bool m_cFSCheckingHasBeenSet;
+
+                    /**
+                     * 是否返回CFS详情。
+                     */
+                    bool m_cFSDetail;
+                    bool m_cFSDetailHasBeenSet;
 
                 };
             }

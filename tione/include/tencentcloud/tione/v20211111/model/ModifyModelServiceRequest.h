@@ -670,6 +670,27 @@ HYBRID_PAID:
                      */
                     bool ServicePortHasBeenSet() const;
 
+                    /**
+                     * 获取单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     * @return InstancePerReplicas 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     * 
+                     */
+                    int64_t GetInstancePerReplicas() const;
+
+                    /**
+                     * 设置单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     * @param _instancePerReplicas 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     * 
+                     */
+                    void SetInstancePerReplicas(const int64_t& _instancePerReplicas);
+
+                    /**
+                     * 判断参数 InstancePerReplicas 是否已赋值
+                     * @return InstancePerReplicas 是否已赋值
+                     * 
+                     */
+                    bool InstancePerReplicasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -844,6 +865,12 @@ HYBRID_PAID:
                      */
                     int64_t m_servicePort;
                     bool m_servicePortHasBeenSet;
+
+                    /**
+                     * 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     */
+                    int64_t m_instancePerReplicas;
+                    bool m_instancePerReplicasHasBeenSet;
 
                 };
             }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tione/v20211111/model/SendChatMessageResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBillingSpecsPriceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,13 +23,12 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
-SendChatMessageResponse::SendChatMessageResponse() :
-    m_answerHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+DescribeBillingSpecsPriceResponse::DescribeBillingSpecsPriceResponse() :
+    m_specsPriceHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome SendChatMessageResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeBillingSpecsPriceResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +62,49 @@ CoreInternalOutcome SendChatMessageResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Answer") && !rsp["Answer"].IsNull())
+    if (rsp.HasMember("SpecsPrice") && !rsp["SpecsPrice"].IsNull())
     {
-        if (!rsp["Answer"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Answer` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_answer = string(rsp["Answer"].GetString());
-        m_answerHasBeenSet = true;
-    }
+        if (!rsp["SpecsPrice"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SpecsPrice` is not array type"));
 
-    if (rsp.HasMember("SessionId") && !rsp["SessionId"].IsNull())
-    {
-        if (!rsp["SessionId"].IsString())
+        const rapidjson::Value &tmpValue = rsp["SpecsPrice"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `SessionId` IsString=false incorrectly").SetRequestId(requestId));
+            SpecPrice item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_specsPrice.push_back(item);
         }
-        m_sessionId = string(rsp["SessionId"].GetString());
-        m_sessionIdHasBeenSet = true;
+        m_specsPriceHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string SendChatMessageResponse::ToJsonString() const
+string DescribeBillingSpecsPriceResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_answerHasBeenSet)
+    if (m_specsPriceHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Answer";
+        string key = "SpecsPrice";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_answer.c_str(), allocator).Move(), allocator);
-    }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    if (m_sessionIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SessionId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+        int i=0;
+        for (auto itr = m_specsPrice.begin(); itr != m_specsPrice.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +119,14 @@ string SendChatMessageResponse::ToJsonString() const
 }
 
 
-string SendChatMessageResponse::GetAnswer() const
+vector<SpecPrice> DescribeBillingSpecsPriceResponse::GetSpecsPrice() const
 {
-    return m_answer;
+    return m_specsPrice;
 }
 
-bool SendChatMessageResponse::AnswerHasBeenSet() const
+bool DescribeBillingSpecsPriceResponse::SpecsPriceHasBeenSet() const
 {
-    return m_answerHasBeenSet;
-}
-
-string SendChatMessageResponse::GetSessionId() const
-{
-    return m_sessionId;
-}
-
-bool SendChatMessageResponse::SessionIdHasBeenSet() const
-{
-    return m_sessionIdHasBeenSet;
+    return m_specsPriceHasBeenSet;
 }
 
 

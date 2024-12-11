@@ -289,15 +289,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。
-                     * @return LoginSettings 实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。
+                     * 获取实例登录设置。通过该参数可以设置实例的登录方式为密钥或保持镜像的原始登录设置。
+                     * @return LoginSettings 实例登录设置。通过该参数可以设置实例的登录方式为密钥或保持镜像的原始登录设置。
                      * 
                      */
                     LoginSettings GetLoginSettings() const;
 
                     /**
-                     * 设置实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。
-                     * @param _loginSettings 实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。
+                     * 设置实例登录设置。通过该参数可以设置实例的登录方式为密钥或保持镜像的原始登录设置。
+                     * @param _loginSettings 实例登录设置。通过该参数可以设置实例的登录方式为密钥或保持镜像的原始登录设置。
                      * 
                      */
                     void SetLoginSettings(const LoginSettings& _loginSettings);
@@ -710,7 +710,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例。
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。
+                     * 实例登录设置。通过该参数可以设置实例的登录方式为密钥或保持镜像的原始登录设置。
                      */
                     LoginSettings m_loginSettings;
                     bool m_loginSettingsHasBeenSet;

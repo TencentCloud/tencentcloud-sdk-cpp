@@ -828,6 +828,81 @@ DEFAULT: 其他来源
                      */
                     bool ResourceGroupSWTypeHasBeenSet() const;
 
+                    /**
+                     * 获取服务的归档状态  Waiting 等待归档中，Archived 已归档
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ArchiveStatus 服务的归档状态  Waiting 等待归档中，Archived 已归档
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetArchiveStatus() const;
+
+                    /**
+                     * 设置服务的归档状态  Waiting 等待归档中，Archived 已归档
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _archiveStatus 服务的归档状态  Waiting 等待归档中，Archived 已归档
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetArchiveStatus(const std::string& _archiveStatus);
+
+                    /**
+                     * 判断参数 ArchiveStatus 是否已赋值
+                     * @return ArchiveStatus 是否已赋值
+                     * 
+                     */
+                    bool ArchiveStatusHasBeenSet() const;
+
+                    /**
+                     * 获取服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeployType 服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDeployType() const;
+
+                    /**
+                     * 设置服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deployType 服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeployType(const std::string& _deployType);
+
+                    /**
+                     * 判断参数 DeployType 是否已赋值
+                     * @return DeployType 是否已赋值
+                     * 
+                     */
+                    bool DeployTypeHasBeenSet() const;
+
+                    /**
+                     * 获取单副本下的实例数，仅在部署类型为DIST时生效，默认1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstancePerReplicas 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstancePerReplicas() const;
+
+                    /**
+                     * 设置单副本下的实例数，仅在部署类型为DIST时生效，默认1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instancePerReplicas 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstancePerReplicas(const std::string& _instancePerReplicas);
+
+                    /**
+                     * 判断参数 InstancePerReplicas 是否已赋值
+                     * @return InstancePerReplicas 是否已赋值
+                     * 
+                     */
+                    bool InstancePerReplicasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1046,6 +1121,27 @@ DEFAULT: 其他来源
                      */
                     std::string m_resourceGroupSWType;
                     bool m_resourceGroupSWTypeHasBeenSet;
+
+                    /**
+                     * 服务的归档状态  Waiting 等待归档中，Archived 已归档
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_archiveStatus;
+                    bool m_archiveStatusHasBeenSet;
+
+                    /**
+                     * 服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deployType;
+                    bool m_deployTypeHasBeenSet;
+
+                    /**
+                     * 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instancePerReplicas;
+                    bool m_instancePerReplicasHasBeenSet;
 
                 };
             }

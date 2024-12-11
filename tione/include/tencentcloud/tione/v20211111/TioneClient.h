@@ -53,6 +53,10 @@
 #include <tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingResourceInstanceRunningJobsRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingResourceInstanceRunningJobsResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBillingSpecsRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBillingSpecsResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBillingSpecsPriceRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBillingSpecsPriceResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBuildInImagesRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBuildInImagesResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeDatasetsRequest.h>
@@ -91,8 +95,6 @@
 #include <tencentcloud/tione/v20211111/model/ModifyModelServiceResponse.h>
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsRequest.h>
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsResponse.h>
-#include <tencentcloud/tione/v20211111/model/SendChatMessageRequest.h>
-#include <tencentcloud/tione/v20211111/model/SendChatMessageResponse.h>
 #include <tencentcloud/tione/v20211111/model/StartNotebookRequest.h>
 #include <tencentcloud/tione/v20211111/model/StartNotebookResponse.h>
 #include <tencentcloud/tione/v20211111/model/StopModelAccelerateTaskRequest.h>
@@ -158,6 +160,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBillingResourceInstanceRunningJobsResponse> DescribeBillingResourceInstanceRunningJobsOutcome;
                 typedef std::future<DescribeBillingResourceInstanceRunningJobsOutcome> DescribeBillingResourceInstanceRunningJobsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeBillingResourceInstanceRunningJobsRequest&, DescribeBillingResourceInstanceRunningJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingResourceInstanceRunningJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBillingSpecsResponse> DescribeBillingSpecsOutcome;
+                typedef std::future<DescribeBillingSpecsOutcome> DescribeBillingSpecsOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeBillingSpecsRequest&, DescribeBillingSpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingSpecsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBillingSpecsPriceResponse> DescribeBillingSpecsPriceOutcome;
+                typedef std::future<DescribeBillingSpecsPriceOutcome> DescribeBillingSpecsPriceOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeBillingSpecsPriceRequest&, DescribeBillingSpecsPriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingSpecsPriceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBuildInImagesResponse> DescribeBuildInImagesOutcome;
                 typedef std::future<DescribeBuildInImagesOutcome> DescribeBuildInImagesOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeBuildInImagesRequest&, DescribeBuildInImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBuildInImagesAsyncHandler;
@@ -215,9 +223,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PushTrainingMetricsResponse> PushTrainingMetricsOutcome;
                 typedef std::future<PushTrainingMetricsOutcome> PushTrainingMetricsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::PushTrainingMetricsRequest&, PushTrainingMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PushTrainingMetricsAsyncHandler;
-                typedef Outcome<Core::Error, Model::SendChatMessageResponse> SendChatMessageOutcome;
-                typedef std::future<SendChatMessageOutcome> SendChatMessageOutcomeCallable;
-                typedef std::function<void(const TioneClient*, const Model::SendChatMessageRequest&, SendChatMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendChatMessageAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartNotebookResponse> StartNotebookOutcome;
                 typedef std::future<StartNotebookOutcome> StartNotebookOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::StartNotebookRequest&, StartNotebookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartNotebookAsyncHandler;
@@ -364,6 +369,24 @@ namespace TencentCloud
                 DescribeBillingResourceInstanceRunningJobsOutcome DescribeBillingResourceInstanceRunningJobs(const Model::DescribeBillingResourceInstanceRunningJobsRequest &request);
                 void DescribeBillingResourceInstanceRunningJobsAsync(const Model::DescribeBillingResourceInstanceRunningJobsRequest& request, const DescribeBillingResourceInstanceRunningJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBillingResourceInstanceRunningJobsOutcomeCallable DescribeBillingResourceInstanceRunningJobsCallable(const Model::DescribeBillingResourceInstanceRunningJobsRequest& request);
+
+                /**
+                 *本接口(DescribeBillingSpecs) 提供查询计费项列表
+                 * @param req DescribeBillingSpecsRequest
+                 * @return DescribeBillingSpecsOutcome
+                 */
+                DescribeBillingSpecsOutcome DescribeBillingSpecs(const Model::DescribeBillingSpecsRequest &request);
+                void DescribeBillingSpecsAsync(const Model::DescribeBillingSpecsRequest& request, const DescribeBillingSpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillingSpecsOutcomeCallable DescribeBillingSpecsCallable(const Model::DescribeBillingSpecsRequest& request);
+
+                /**
+                 *本接口(DescribeBillingSpecsPrice)用于查询按量计费计费项价格。
+                 * @param req DescribeBillingSpecsPriceRequest
+                 * @return DescribeBillingSpecsPriceOutcome
+                 */
+                DescribeBillingSpecsPriceOutcome DescribeBillingSpecsPrice(const Model::DescribeBillingSpecsPriceRequest &request);
+                void DescribeBillingSpecsPriceAsync(const Model::DescribeBillingSpecsPriceRequest& request, const DescribeBillingSpecsPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillingSpecsPriceOutcomeCallable DescribeBillingSpecsPriceCallable(const Model::DescribeBillingSpecsPriceRequest& request);
 
                 /**
                  *获取内置镜像列表
@@ -535,15 +558,6 @@ namespace TencentCloud
                 PushTrainingMetricsOutcome PushTrainingMetrics(const Model::PushTrainingMetricsRequest &request);
                 void PushTrainingMetricsAsync(const Model::PushTrainingMetricsRequest& request, const PushTrainingMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PushTrainingMetricsOutcomeCallable PushTrainingMetricsCallable(const Model::PushTrainingMetricsRequest& request);
-
-                /**
-                 *这是一个供您体验大模型聊天的接口。
-                 * @param req SendChatMessageRequest
-                 * @return SendChatMessageOutcome
-                 */
-                SendChatMessageOutcome SendChatMessage(const Model::SendChatMessageRequest &request);
-                void SendChatMessageAsync(const Model::SendChatMessageRequest& request, const SendChatMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                SendChatMessageOutcomeCallable SendChatMessageCallable(const Model::SendChatMessageRequest& request);
 
                 /**
                  *启动Notebook

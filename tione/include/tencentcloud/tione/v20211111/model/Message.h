@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20211111/model/MultiModalContent.h>
 
 
 namespace TencentCloud
@@ -48,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取角色名。支持三个角色：system、user、assistant，其中system仅开头可出现一次，也可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Role 角色名。支持三个角色：system、user、assistant，其中system仅开头可出现一次，也可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
                      * 设置角色名。支持三个角色：system、user、assistant，其中system仅开头可出现一次，也可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _role 角色名。支持三个角色：system、user、assistant，其中system仅开头可出现一次，也可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRole(const std::string& _role);
@@ -73,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对话输入内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 对话输入内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置对话输入内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 对话输入内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -96,21 +89,46 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取多模态对话输入内容，Content与MultiModalContents两者只需要填写其中一个即可，当对话中包含多模态对话信息时，则填写本参数
+                     * @return MultiModalContents 多模态对话输入内容，Content与MultiModalContents两者只需要填写其中一个即可，当对话中包含多模态对话信息时，则填写本参数
+                     * 
+                     */
+                    std::vector<MultiModalContent> GetMultiModalContents() const;
+
+                    /**
+                     * 设置多模态对话输入内容，Content与MultiModalContents两者只需要填写其中一个即可，当对话中包含多模态对话信息时，则填写本参数
+                     * @param _multiModalContents 多模态对话输入内容，Content与MultiModalContents两者只需要填写其中一个即可，当对话中包含多模态对话信息时，则填写本参数
+                     * 
+                     */
+                    void SetMultiModalContents(const std::vector<MultiModalContent>& _multiModalContents);
+
+                    /**
+                     * 判断参数 MultiModalContents 是否已赋值
+                     * @return MultiModalContents 是否已赋值
+                     * 
+                     */
+                    bool MultiModalContentsHasBeenSet() const;
+
                 private:
 
                     /**
                      * 角色名。支持三个角色：system、user、assistant，其中system仅开头可出现一次，也可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;
 
                     /**
                      * 对话输入内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 多模态对话输入内容，Content与MultiModalContents两者只需要填写其中一个即可，当对话中包含多模态对话信息时，则填写本参数
+                     */
+                    std::vector<MultiModalContent> m_multiModalContents;
+                    bool m_multiModalContentsHasBeenSet;
 
                 };
             }

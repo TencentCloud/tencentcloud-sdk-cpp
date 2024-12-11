@@ -22,6 +22,7 @@ using namespace std;
 
 DataConfig::DataConfig() :
     m_mappingPathHasBeenSet(false),
+    m_dataSourceUsageHasBeenSet(false),
     m_dataSourceTypeHasBeenSet(false),
     m_dataSetSourceHasBeenSet(false),
     m_cOSSourceHasBeenSet(false),
@@ -47,6 +48,16 @@ CoreInternalOutcome DataConfig::Deserialize(const rapidjson::Value &value)
         }
         m_mappingPath = string(value["MappingPath"].GetString());
         m_mappingPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataSourceUsage") && !value["DataSourceUsage"].IsNull())
+    {
+        if (!value["DataSourceUsage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataConfig.DataSourceUsage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataSourceUsage = string(value["DataSourceUsage"].GetString());
+        m_dataSourceUsageHasBeenSet = true;
     }
 
     if (value.HasMember("DataSourceType") && !value["DataSourceType"].IsNull())
@@ -210,6 +221,14 @@ void DataConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, rapidjson::Value(m_mappingPath.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_dataSourceUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataSourceUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataSourceUsage.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_dataSourceTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -307,6 +326,22 @@ void DataConfig::SetMappingPath(const string& _mappingPath)
 bool DataConfig::MappingPathHasBeenSet() const
 {
     return m_mappingPathHasBeenSet;
+}
+
+string DataConfig::GetDataSourceUsage() const
+{
+    return m_dataSourceUsage;
+}
+
+void DataConfig::SetDataSourceUsage(const string& _dataSourceUsage)
+{
+    m_dataSourceUsage = _dataSourceUsage;
+    m_dataSourceUsageHasBeenSet = true;
+}
+
+bool DataConfig::DataSourceUsageHasBeenSet() const
+{
+    return m_dataSourceUsageHasBeenSet;
 }
 
 string DataConfig::GetDataSourceType() const

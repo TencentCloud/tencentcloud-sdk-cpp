@@ -710,6 +710,27 @@ namespace TencentCloud
                      */
                     bool VolumeSourceGooseFSHasBeenSet() const;
 
+                    /**
+                     * 获取子用户名称
+                     * @return SubUinName 子用户名称
+                     * 
+                     */
+                    std::string GetSubUinName() const;
+
+                    /**
+                     * 设置子用户名称
+                     * @param _subUinName 子用户名称
+                     * 
+                     */
+                    void SetSubUinName(const std::string& _subUinName);
+
+                    /**
+                     * 判断参数 SubUinName 是否已赋值
+                     * @return SubUinName 是否已赋值
+                     * 
+                     */
+                    bool SubUinNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -896,6 +917,12 @@ namespace TencentCloud
                      */
                     GooseFS m_volumeSourceGooseFS;
                     bool m_volumeSourceGooseFSHasBeenSet;
+
+                    /**
+                     * 子用户名称
+                     */
+                    std::string m_subUinName;
+                    bool m_subUinNameHasBeenSet;
 
                 };
             }

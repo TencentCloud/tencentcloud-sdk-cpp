@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对话结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 对话结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Message GetMessage() const;
 
                     /**
                      * 设置对话结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 对话结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const Message& _message);
@@ -118,7 +114,6 @@ namespace TencentCloud
 
                     /**
                      * 对话结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Message m_message;
                     bool m_messageHasBeenSet;

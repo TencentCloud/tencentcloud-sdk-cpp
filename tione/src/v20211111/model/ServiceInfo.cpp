@@ -38,6 +38,7 @@ ServiceInfo::ServiceInfo() :
     m_hybridBillingPrepaidReplicasHasBeenSet(false),
     m_oldHybridBillingPrepaidReplicasHasBeenSet(false),
     m_modelHotUpdateEnableHasBeenSet(false),
+    m_instanceAliasHasBeenSet(false),
     m_scaleModeHasBeenSet(false),
     m_cronScaleJobsHasBeenSet(false),
     m_scaleStrategyHasBeenSet(false),
@@ -287,6 +288,16 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         }
         m_modelHotUpdateEnable = value["ModelHotUpdateEnable"].GetBool();
         m_modelHotUpdateEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceAlias") && !value["InstanceAlias"].IsNull())
+    {
+        if (!value["InstanceAlias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.InstanceAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceAlias = string(value["InstanceAlias"].GetString());
+        m_instanceAliasHasBeenSet = true;
     }
 
     if (value.HasMember("ScaleMode") && !value["ScaleMode"].IsNull())
@@ -642,6 +653,14 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ModelHotUpdateEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modelHotUpdateEnable, allocator);
+    }
+
+    if (m_instanceAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceAlias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceAlias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scaleModeHasBeenSet)
@@ -1053,6 +1072,22 @@ void ServiceInfo::SetModelHotUpdateEnable(const bool& _modelHotUpdateEnable)
 bool ServiceInfo::ModelHotUpdateEnableHasBeenSet() const
 {
     return m_modelHotUpdateEnableHasBeenSet;
+}
+
+string ServiceInfo::GetInstanceAlias() const
+{
+    return m_instanceAlias;
+}
+
+void ServiceInfo::SetInstanceAlias(const string& _instanceAlias)
+{
+    m_instanceAlias = _instanceAlias;
+    m_instanceAliasHasBeenSet = true;
+}
+
+bool ServiceInfo::InstanceAliasHasBeenSet() const
+{
+    return m_instanceAliasHasBeenSet;
 }
 
 string ServiceInfo::GetScaleMode() const

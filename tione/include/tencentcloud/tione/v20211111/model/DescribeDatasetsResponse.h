@@ -92,6 +92,20 @@ namespace TencentCloud
                      */
                     bool DatasetIdNumsHasBeenSet() const;
 
+                    /**
+                     * 获取若开启了CFSChecking，则检查CFS是否准备完毕。若CFS未准备完毕，则返回true，并且TotalCount为0，DatasetGroups为空。
+                     * @return CFSNotReady 若开启了CFSChecking，则检查CFS是否准备完毕。若CFS未准备完毕，则返回true，并且TotalCount为0，DatasetGroups为空。
+                     * 
+                     */
+                    bool GetCFSNotReady() const;
+
+                    /**
+                     * 判断参数 CFSNotReady 是否已赋值
+                     * @return CFSNotReady 是否已赋值
+                     * 
+                     */
+                    bool CFSNotReadyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -114,6 +128,12 @@ namespace TencentCloud
                      */
                     uint64_t m_datasetIdNums;
                     bool m_datasetIdNumsHasBeenSet;
+
+                    /**
+                     * 若开启了CFSChecking，则检查CFS是否准备完毕。若CFS未准备完毕，则返回true，并且TotalCount为0，DatasetGroups为空。
+                     */
+                    bool m_cFSNotReady;
+                    bool m_cFSNotReadyHasBeenSet;
 
                 };
             }

@@ -146,6 +146,31 @@ namespace TencentCloud
                      */
                     bool LoginCommandHasBeenSet() const;
 
+                    /**
+                     * 获取登录地址是否改变
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAddressChanged 登录地址是否改变
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsAddressChanged() const;
+
+                    /**
+                     * 设置登录地址是否改变
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isAddressChanged 登录地址是否改变
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsAddressChanged(const bool& _isAddressChanged);
+
+                    /**
+                     * 判断参数 IsAddressChanged 是否已赋值
+                     * @return IsAddressChanged 是否已赋值
+                     * 
+                     */
+                    bool IsAddressChangedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +200,13 @@ namespace TencentCloud
                      */
                     std::string m_loginCommand;
                     bool m_loginCommandHasBeenSet;
+
+                    /**
+                     * 登录地址是否改变
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isAddressChanged;
+                    bool m_isAddressChangedHasBeenSet;
 
                 };
             }

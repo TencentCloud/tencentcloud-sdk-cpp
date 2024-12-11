@@ -65,15 +65,19 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取待确认文本
-                     * @return TranslateResults 待确认文本
+                     * 获取待确认文本。
+如果文本中含有数字，支持将数字配置为SSML语言
+                     * @return TranslateResults 待确认文本。
+如果文本中含有数字，支持将数字配置为SSML语言
                      * 
                      */
                     std::vector<TranslateResult> GetTranslateResults() const;
 
                     /**
-                     * 设置待确认文本
-                     * @param _translateResults 待确认文本
+                     * 设置待确认文本。
+如果文本中含有数字，支持将数字配置为SSML语言
+                     * @param _translateResults 待确认文本。
+如果文本中含有数字，支持将数字配置为SSML语言
                      * 
                      */
                     void SetTranslateResults(const std::vector<TranslateResult>& _translateResults);
@@ -94,7 +98,8 @@ namespace TencentCloud
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 待确认文本
+                     * 待确认文本。
+如果文本中含有数字，支持将数字配置为SSML语言
                      */
                     std::vector<TranslateResult> m_translateResults;
                     bool m_translateResultsHasBeenSet;

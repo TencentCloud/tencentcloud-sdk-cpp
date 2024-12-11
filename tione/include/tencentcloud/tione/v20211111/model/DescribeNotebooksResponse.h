@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotebookSet 详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NotebookSetItem> GetNotebookSet() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NotebookSetItem> m_notebookSet;
                     bool m_notebookSetHasBeenSet;
 
                     /**
                      * 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

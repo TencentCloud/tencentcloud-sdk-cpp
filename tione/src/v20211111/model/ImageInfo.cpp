@@ -27,8 +27,7 @@ ImageInfo::ImageInfo() :
     m_registryIdHasBeenSet(false),
     m_allowSaveAllContentHasBeenSet(false),
     m_imageNameHasBeenSet(false),
-    m_supportDataPipelineHasBeenSet(false),
-    m_imageSecretHasBeenSet(false)
+    m_supportDataPipelineHasBeenSet(false)
 {
 }
 
@@ -107,23 +106,6 @@ CoreInternalOutcome ImageInfo::Deserialize(const rapidjson::Value &value)
         m_supportDataPipelineHasBeenSet = true;
     }
 
-    if (value.HasMember("ImageSecret") && !value["ImageSecret"].IsNull())
-    {
-        if (!value["ImageSecret"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `ImageInfo.ImageSecret` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_imageSecret.Deserialize(value["ImageSecret"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_imageSecretHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -185,15 +167,6 @@ void ImageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "SupportDataPipeline";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportDataPipeline, allocator);
-    }
-
-    if (m_imageSecretHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ImageSecret";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_imageSecret.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -309,21 +282,5 @@ void ImageInfo::SetSupportDataPipeline(const bool& _supportDataPipeline)
 bool ImageInfo::SupportDataPipelineHasBeenSet() const
 {
     return m_supportDataPipelineHasBeenSet;
-}
-
-ImageSecret ImageInfo::GetImageSecret() const
-{
-    return m_imageSecret;
-}
-
-void ImageInfo::SetImageSecret(const ImageSecret& _imageSecret)
-{
-    m_imageSecret = _imageSecret;
-    m_imageSecretHasBeenSet = true;
-}
-
-bool ImageInfo::ImageSecretHasBeenSet() const
-{
-    return m_imageSecretHasBeenSet;
 }
 
