@@ -695,6 +695,64 @@ MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverM
                      */
                     bool FlowDisplayTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否为预览模式，取值如下： <ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>
+                     * @return NeedPreview 是否为预览模式，取值如下： <ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>
+                     * 
+                     */
+                    bool GetNeedPreview() const;
+
+                    /**
+                     * 设置是否为预览模式，取值如下： <ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>
+                     * @param _needPreview 是否为预览模式，取值如下： <ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>
+                     * 
+                     */
+                    void SetNeedPreview(const bool& _needPreview);
+
+                    /**
+                     * 判断参数 NeedPreview 是否已赋值
+                     * @return NeedPreview 是否已赋值
+                     * 
+                     */
+                    bool NeedPreviewHasBeenSet() const;
+
+                    /**
+                     * 获取预览模式下产生的预览链接类型 
+<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>
+<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>
+注: `此参数在NeedPreview 为true时有效`
+
+                     * @return PreviewType 预览模式下产生的预览链接类型 
+<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>
+<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>
+注: `此参数在NeedPreview 为true时有效`
+
+                     * 
+                     */
+                    int64_t GetPreviewType() const;
+
+                    /**
+                     * 设置预览模式下产生的预览链接类型 
+<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>
+<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>
+注: `此参数在NeedPreview 为true时有效`
+
+                     * @param _previewType 预览模式下产生的预览链接类型 
+<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>
+<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>
+注: `此参数在NeedPreview 为true时有效`
+
+                     * 
+                     */
+                    void SetPreviewType(const int64_t& _previewType);
+
+                    /**
+                     * 判断参数 PreviewType 是否已赋值
+                     * @return PreviewType 是否已赋值
+                     * 
+                     */
+                    bool PreviewTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -873,6 +931,22 @@ MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverM
                      */
                     int64_t m_flowDisplayType;
                     bool m_flowDisplayTypeHasBeenSet;
+
+                    /**
+                     * 是否为预览模式，取值如下： <ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>
+                     */
+                    bool m_needPreview;
+                    bool m_needPreviewHasBeenSet;
+
+                    /**
+                     * 预览模式下产生的预览链接类型 
+<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>
+<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>
+注: `此参数在NeedPreview 为true时有效`
+
+                     */
+                    int64_t m_previewType;
+                    bool m_previewTypeHasBeenSet;
 
                 };
             }

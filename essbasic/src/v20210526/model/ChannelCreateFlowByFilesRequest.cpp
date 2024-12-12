@@ -42,7 +42,9 @@ ChannelCreateFlowByFilesRequest::ChannelCreateFlowByFilesRequest() :
     m_ccNotifyTypeHasBeenSet(false),
     m_autoSignSceneHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_flowDisplayTypeHasBeenSet(false)
+    m_flowDisplayTypeHasBeenSet(false),
+    m_needPreviewHasBeenSet(false),
+    m_previewTypeHasBeenSet(false)
 {
 }
 
@@ -239,6 +241,22 @@ string ChannelCreateFlowByFilesRequest::ToJsonString() const
         string key = "FlowDisplayType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_flowDisplayType, allocator);
+    }
+
+    if (m_needPreviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedPreview";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needPreview, allocator);
+    }
+
+    if (m_previewTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_previewType, allocator);
     }
 
 
@@ -567,6 +585,38 @@ void ChannelCreateFlowByFilesRequest::SetFlowDisplayType(const int64_t& _flowDis
 bool ChannelCreateFlowByFilesRequest::FlowDisplayTypeHasBeenSet() const
 {
     return m_flowDisplayTypeHasBeenSet;
+}
+
+bool ChannelCreateFlowByFilesRequest::GetNeedPreview() const
+{
+    return m_needPreview;
+}
+
+void ChannelCreateFlowByFilesRequest::SetNeedPreview(const bool& _needPreview)
+{
+    m_needPreview = _needPreview;
+    m_needPreviewHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::NeedPreviewHasBeenSet() const
+{
+    return m_needPreviewHasBeenSet;
+}
+
+int64_t ChannelCreateFlowByFilesRequest::GetPreviewType() const
+{
+    return m_previewType;
+}
+
+void ChannelCreateFlowByFilesRequest::SetPreviewType(const int64_t& _previewType)
+{
+    m_previewType = _previewType;
+    m_previewTypeHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::PreviewTypeHasBeenSet() const
+{
+    return m_previewTypeHasBeenSet;
 }
 
 

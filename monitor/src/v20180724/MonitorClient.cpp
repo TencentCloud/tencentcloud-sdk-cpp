@@ -298,6 +298,49 @@ MonitorClient::CreateAlarmPolicyOutcomeCallable MonitorClient::CreateAlarmPolicy
     return task->get_future();
 }
 
+MonitorClient::CreateAlarmShieldOutcome MonitorClient::CreateAlarmShield(const CreateAlarmShieldRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAlarmShield");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAlarmShieldResponse rsp = CreateAlarmShieldResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAlarmShieldOutcome(rsp);
+        else
+            return CreateAlarmShieldOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAlarmShieldOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateAlarmShieldAsync(const CreateAlarmShieldRequest& request, const CreateAlarmShieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAlarmShield(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateAlarmShieldOutcomeCallable MonitorClient::CreateAlarmShieldCallable(const CreateAlarmShieldRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAlarmShieldOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAlarmShield(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::CreateAlertRuleOutcome MonitorClient::CreateAlertRule(const CreateAlertRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAlertRule");

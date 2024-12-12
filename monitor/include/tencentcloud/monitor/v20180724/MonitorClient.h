@@ -35,6 +35,8 @@
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmNoticeResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmPolicyRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmPolicyResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreateAlarmShieldRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreateAlarmShieldResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlertRuleRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlertRuleResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateExporterIntegrationRequest.h>
@@ -365,6 +367,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAlarmPolicyResponse> CreateAlarmPolicyOutcome;
                 typedef std::future<CreateAlarmPolicyOutcome> CreateAlarmPolicyOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateAlarmPolicyRequest&, CreateAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAlarmShieldResponse> CreateAlarmShieldOutcome;
+                typedef std::future<CreateAlarmShieldOutcome> CreateAlarmShieldOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreateAlarmShieldRequest&, CreateAlarmShieldOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmShieldAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAlertRuleResponse> CreateAlertRuleOutcome;
                 typedef std::future<CreateAlertRuleOutcome> CreateAlertRuleOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateAlertRuleRequest&, CreateAlertRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlertRuleAsyncHandler;
@@ -868,6 +873,15 @@ namespace TencentCloud
                 CreateAlarmPolicyOutcome CreateAlarmPolicy(const Model::CreateAlarmPolicyRequest &request);
                 void CreateAlarmPolicyAsync(const Model::CreateAlarmPolicyRequest& request, const CreateAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAlarmPolicyOutcomeCallable CreateAlarmPolicyCallable(const Model::CreateAlarmPolicyRequest& request);
+
+                /**
+                 *创建告警屏蔽规则
+                 * @param req CreateAlarmShieldRequest
+                 * @return CreateAlarmShieldOutcome
+                 */
+                CreateAlarmShieldOutcome CreateAlarmShield(const Model::CreateAlarmShieldRequest &request);
+                void CreateAlarmShieldAsync(const Model::CreateAlarmShieldRequest& request, const CreateAlarmShieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAlarmShieldOutcomeCallable CreateAlarmShieldCallable(const Model::CreateAlarmShieldRequest& request);
 
                 /**
                  *创建 Prometheus 告警规则。

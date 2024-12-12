@@ -169,15 +169,23 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递
-                     * @return From 设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递
+                     * 获取设备连接时传递jwt的key；
+username-使用用户名字段传递；
+password-使用密码字段传递
+                     * @return From 设备连接时传递jwt的key；
+username-使用用户名字段传递；
+password-使用密码字段传递
                      * 
                      */
                     std::string GetFrom() const;
 
                     /**
-                     * 设置设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递
-                     * @param _from 设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递
+                     * 设置设备连接时传递jwt的key；
+username-使用用户名字段传递；
+password-使用密码字段传递
+                     * @param _from 设备连接时传递jwt的key；
+username-使用用户名字段传递；
+password-使用密码字段传递
                      * 
                      */
                     void SetFrom(const std::string& _from);
@@ -228,7 +236,9 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递
+                     * 设备连接时传递jwt的key；
+username-使用用户名字段传递；
+password-使用密码字段传递
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;

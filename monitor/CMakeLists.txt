@@ -58,6 +58,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListResponse.h
   include/tencentcloud/monitor/v20180724/model/PrometheusRuleSet.h
   include/tencentcloud/monitor/v20180724/model/DescribeAllNamespacesResponse.h
+  include/tencentcloud/monitor/v20180724/model/CreateAlarmShieldRequest.h
   include/tencentcloud/monitor/v20180724/model/TerminatePrometheusInstancesRequest.h
   include/tencentcloud/monitor/v20180724/model/InstallPluginsResponse.h
   include/tencentcloud/monitor/v20180724/model/ProductSimple.h
@@ -264,6 +265,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/ModifyPrometheusConfigRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeMonitorResourceInfoRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeGrafanaEnvironmentsResponse.h
+  include/tencentcloud/monitor/v20180724/model/CreateAlarmShieldResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListRequest.h
   include/tencentcloud/monitor/v20180724/model/DeletePolicyGroupResponse.h
   include/tencentcloud/monitor/v20180724/model/DeleteGrafanaInstanceRequest.h
@@ -504,6 +506,7 @@ set(monitor_src
   src/v20180724/model/DescribePolicyConditionListResponse.cpp
   src/v20180724/model/PrometheusRuleSet.cpp
   src/v20180724/model/DescribeAllNamespacesResponse.cpp
+  src/v20180724/model/CreateAlarmShieldRequest.cpp
   src/v20180724/model/TerminatePrometheusInstancesRequest.cpp
   src/v20180724/model/InstallPluginsResponse.cpp
   src/v20180724/model/ProductSimple.cpp
@@ -710,6 +713,7 @@ set(monitor_src
   src/v20180724/model/ModifyPrometheusConfigRequest.cpp
   src/v20180724/model/DescribeMonitorResourceInfoRequest.cpp
   src/v20180724/model/DescribeGrafanaEnvironmentsResponse.cpp
+  src/v20180724/model/CreateAlarmShieldResponse.cpp
   src/v20180724/model/DescribePolicyConditionListRequest.cpp
   src/v20180724/model/DeletePolicyGroupResponse.cpp
   src/v20180724/model/DeleteGrafanaInstanceRequest.cpp

@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取证书序列号
-                     * @return CaSn 证书序列号
+                     * 获取Ca证书序列号
+                     * @return CaSn Ca证书序列号
                      * 
                      */
                     std::string GetCaSn() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool CaSnHasBeenSet() const;
 
                     /**
-                     * 获取设备证书sn
-                     * @return DeviceCertificateSn 设备证书sn
+                     * 获取设备证书序列号
+                     * @return DeviceCertificateSn 设备证书序列号
                      * 
                      */
                     std::string GetDeviceCertificateSn() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool DeviceCertificateSnHasBeenSet() const;
 
                     /**
-                     * 获取证书内容
-                     * @return DeviceCertificate 证书内容
+                     * 获取设备证书内容
+                     * @return DeviceCertificate 设备证书内容
                      * 
                      */
                     std::string GetDeviceCertificate() const;
@@ -170,8 +170,8 @@ namespace TencentCloud
                     bool DeviceCertificateHasBeenSet() const;
 
                     /**
-                     * 获取设备证书cn
-                     * @return DeviceCertificateCn 设备证书cn
+                     * 获取设备证书common name
+                     * @return DeviceCertificateCn 设备证书common name
                      * 
                      */
                     std::string GetDeviceCertificateCn() const;
@@ -282,25 +282,25 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 证书序列号
+                     * Ca证书序列号
                      */
                     std::string m_caSn;
                     bool m_caSnHasBeenSet;
 
                     /**
-                     * 设备证书sn
+                     * 设备证书序列号
                      */
                     std::string m_deviceCertificateSn;
                     bool m_deviceCertificateSnHasBeenSet;
 
                     /**
-                     * 证书内容
+                     * 设备证书内容
                      */
                     std::string m_deviceCertificate;
                     bool m_deviceCertificateHasBeenSet;
 
                     /**
-                     * 设备证书cn
+                     * 设备证书common name
                      */
                     std::string m_deviceCertificateCn;
                     bool m_deviceCertificateCnHasBeenSet;

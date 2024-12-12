@@ -44,16 +44,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例类型，
-EXPERIMENT 体验版
+                     * 获取实例类型
 BASIC 基础版
 PRO  专业版
-PLATINUM 铂金版
-                     * @return InstanceType 实例类型，
-EXPERIMENT 体验版
+                     * @return InstanceType 实例类型
 BASIC 基础版
 PRO  专业版
-PLATINUM 铂金版
                      * 
                      */
                     std::string GetInstanceType() const;
@@ -234,8 +230,12 @@ PLATINUM 铂金版
                     bool ClientNumLimitHasBeenSet() const;
 
                     /**
-                     * 获取客户端证书注册方式：JITP，API
-                     * @return DeviceCertificateProvisionType 客户端证书注册方式：JITP，API
+                     * 获取客户端证书注册方式：
+JITP：自动注册
+API：通过API手动注册
+                     * @return DeviceCertificateProvisionType 客户端证书注册方式：
+JITP：自动注册
+API：通过API手动注册
                      * 
                      */
                     std::string GetDeviceCertificateProvisionType() const;
@@ -318,12 +318,8 @@ PLATINUM 铂金版
                     bool DestroyTimeHasBeenSet() const;
 
                     /**
-                     * 获取    TLS,单向认证
-    mTLS,双向认证
-    BYOC;一机一证
-                     * @return X509Mode     TLS,单向认证
-    mTLS,双向认证
-    BYOC;一机一证
+                     * 获取TLS,单向认证    mTLS,双向认证    BYOC;一机一证
+                     * @return X509Mode TLS,单向认证    mTLS,双向认证    BYOC;一机一证
                      * 
                      */
                     std::string GetX509Mode() const;
@@ -380,11 +376,9 @@ PLATINUM 铂金版
                 private:
 
                     /**
-                     * 实例类型，
-EXPERIMENT 体验版
+                     * 实例类型
 BASIC 基础版
 PRO  专业版
-PLATINUM 铂金版
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -462,7 +456,9 @@ PLATINUM 铂金版
                     bool m_clientNumLimitHasBeenSet;
 
                     /**
-                     * 客户端证书注册方式：JITP，API
+                     * 客户端证书注册方式：
+JITP：自动注册
+API：通过API手动注册
                      */
                     std::string m_deviceCertificateProvisionType;
                     bool m_deviceCertificateProvisionTypeHasBeenSet;
@@ -498,9 +494,7 @@ PLATINUM 铂金版
                     bool m_destroyTimeHasBeenSet;
 
                     /**
-                     *     TLS,单向认证
-    mTLS,双向认证
-    BYOC;一机一证
+                     * TLS,单向认证    mTLS,双向认证    BYOC;一机一证
                      */
                     std::string m_x509Mode;
                     bool m_x509ModeHasBeenSet;
