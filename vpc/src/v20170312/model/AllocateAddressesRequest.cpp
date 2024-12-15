@@ -36,6 +36,7 @@ AllocateAddressesRequest::AllocateAddressesRequest() :
     m_bandwidthPackageIdHasBeenSet(false),
     m_addressNameHasBeenSet(false),
     m_dedicatedClusterIdHasBeenSet(false),
+    m_isDedicatedAddressPoolHasBeenSet(false),
     m_egressHasBeenSet(false),
     m_antiDDoSPackageIdHasBeenSet(false),
     m_clientTokenHasBeenSet(false)
@@ -164,6 +165,14 @@ string AllocateAddressesRequest::ToJsonString() const
         string key = "DedicatedClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDedicatedAddressPoolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDedicatedAddressPool";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDedicatedAddressPool, allocator);
     }
 
     if (m_egressHasBeenSet)
@@ -404,6 +413,22 @@ void AllocateAddressesRequest::SetDedicatedClusterId(const string& _dedicatedClu
 bool AllocateAddressesRequest::DedicatedClusterIdHasBeenSet() const
 {
     return m_dedicatedClusterIdHasBeenSet;
+}
+
+bool AllocateAddressesRequest::GetIsDedicatedAddressPool() const
+{
+    return m_isDedicatedAddressPool;
+}
+
+void AllocateAddressesRequest::SetIsDedicatedAddressPool(const bool& _isDedicatedAddressPool)
+{
+    m_isDedicatedAddressPool = _isDedicatedAddressPool;
+    m_isDedicatedAddressPoolHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::IsDedicatedAddressPoolHasBeenSet() const
+{
+    return m_isDedicatedAddressPoolHasBeenSet;
 }
 
 string AllocateAddressesRequest::GetEgress() const

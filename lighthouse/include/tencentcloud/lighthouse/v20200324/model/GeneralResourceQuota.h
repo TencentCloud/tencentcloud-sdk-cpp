@@ -36,8 +36,6 @@ namespace TencentCloud
             {
                 /**
                 * 描述通用资源配额信息。
-
-
                 */
                 class GeneralResourceQuota : public AbstractModel
                 {

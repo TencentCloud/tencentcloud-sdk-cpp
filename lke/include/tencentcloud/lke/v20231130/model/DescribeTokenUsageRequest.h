@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取开始时间戳, 单位为秒
-                     * @return StartTime 开始时间戳, 单位为秒
+                     * 获取开始时间戳, 单位为秒(默认值0)
+                     * @return StartTime 开始时间戳, 单位为秒(默认值0)
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间戳, 单位为秒
-                     * @param _startTime 开始时间戳, 单位为秒
+                     * 设置开始时间戳, 单位为秒(默认值0)
+                     * @param _startTime 开始时间戳, 单位为秒(默认值0)
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间戳, 单位为秒
-                     * @return EndTime 结束时间戳, 单位为秒
+                     * 获取结束时间戳, 单位为秒(默认值0， 必须大于开始时间戳)
+                     * @return EndTime 结束时间戳, 单位为秒(默认值0， 必须大于开始时间戳)
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间戳, 单位为秒
-                     * @param _endTime 结束时间戳, 单位为秒
+                     * 设置结束时间戳, 单位为秒(默认值0， 必须大于开始时间戳)
+                     * @param _endTime 结束时间戳, 单位为秒(默认值0， 必须大于开始时间戳)
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -264,13 +264,13 @@ namespace TencentCloud
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 开始时间戳, 单位为秒
+                     * 开始时间戳, 单位为秒(默认值0)
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间戳, 单位为秒
+                     * 结束时间戳, 单位为秒(默认值0， 必须大于开始时间戳)
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

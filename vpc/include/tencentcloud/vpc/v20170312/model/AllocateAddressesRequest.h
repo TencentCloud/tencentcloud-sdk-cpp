@@ -398,6 +398,43 @@ AnycastEIP是否用于绑定负载均衡。
                     bool DedicatedClusterIdHasBeenSet() const;
 
                     /**
+                     * 获取是否使用独占资源池，默认值：True
+- True：表示使用独占资源池
+- False：表示使用共享资源池
+
+说明：如需使用独占资源池，请 提交工单(https://console.cloud.tencent.com/workorder/category) 咨询，具体费用请咨询商务经理。
+                     * @return IsDedicatedAddressPool 是否使用独占资源池，默认值：True
+- True：表示使用独占资源池
+- False：表示使用共享资源池
+
+说明：如需使用独占资源池，请 提交工单(https://console.cloud.tencent.com/workorder/category) 咨询，具体费用请咨询商务经理。
+                     * 
+                     */
+                    bool GetIsDedicatedAddressPool() const;
+
+                    /**
+                     * 设置是否使用独占资源池，默认值：True
+- True：表示使用独占资源池
+- False：表示使用共享资源池
+
+说明：如需使用独占资源池，请 提交工单(https://console.cloud.tencent.com/workorder/category) 咨询，具体费用请咨询商务经理。
+                     * @param _isDedicatedAddressPool 是否使用独占资源池，默认值：True
+- True：表示使用独占资源池
+- False：表示使用共享资源池
+
+说明：如需使用独占资源池，请 提交工单(https://console.cloud.tencent.com/workorder/category) 咨询，具体费用请咨询商务经理。
+                     * 
+                     */
+                    void SetIsDedicatedAddressPool(const bool& _isDedicatedAddressPool);
+
+                    /**
+                     * 判断参数 IsDedicatedAddressPool 是否已赋值
+                     * @return IsDedicatedAddressPool 是否已赋值
+                     * 
+                     */
+                    bool IsDedicatedAddressPoolHasBeenSet() const;
+
+                    /**
                      * 获取网络出口，当前仅支持精品BGP、静态单线，这2种IP 地址类型的指定出口传入，默认值：center_egress1，其它可选值：center_egress2、center_egress3
                      * @return Egress 网络出口，当前仅支持精品BGP、静态单线，这2种IP 地址类型的指定出口传入，默认值：center_egress1，其它可选值：center_egress2、center_egress3
                      * 
@@ -559,6 +596,16 @@ AnycastEIP是否用于绑定负载均衡。
                      */
                     std::string m_dedicatedClusterId;
                     bool m_dedicatedClusterIdHasBeenSet;
+
+                    /**
+                     * 是否使用独占资源池，默认值：True
+- True：表示使用独占资源池
+- False：表示使用共享资源池
+
+说明：如需使用独占资源池，请 提交工单(https://console.cloud.tencent.com/workorder/category) 咨询，具体费用请咨询商务经理。
+                     */
+                    bool m_isDedicatedAddressPool;
+                    bool m_isDedicatedAddressPoolHasBeenSet;
 
                     /**
                      * 网络出口，当前仅支持精品BGP、静态单线，这2种IP 地址类型的指定出口传入，默认值：center_egress1，其它可选值：center_egress2、center_egress3

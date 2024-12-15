@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取小程序路径
-                     * @return MiniAppPath 小程序路径
+                     * 获取小程序路径，有效时间为7天
+                     * @return MiniAppPath 小程序路径，有效时间为7天
                      * 
                      */
                     std::string GetMiniAppPath() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool MiniAppPathHasBeenSet() const;
 
                     /**
-                     * 获取操作长链
-                     * @return OperateLongUrl 操作长链
+                     * 获取操作长链，有效时间为7天
+                     * @return OperateLongUrl 操作长链，有效时间为7天
                      * 
                      */
                     std::string GetOperateLongUrl() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool OperateLongUrlHasBeenSet() const;
 
                     /**
-                     * 获取操作短链
-                     * @return OperateShortUrl 操作短链
+                     * 获取操作短链，有效时间为7天
+                     * @return OperateShortUrl 操作短链，有效时间为7天
                      * 
                      */
                     std::string GetOperateShortUrl() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool OperateShortUrlHasBeenSet() const;
 
                     /**
-                     * 获取操作二维码
-                     * @return QRCodeUrl 操作二维码
+                     * 获取操作二维码，有效时间为7天
+                     * @return QRCodeUrl 操作二维码，有效时间为7天
                      * 
                      */
                     std::string GetQRCodeUrl() const;
@@ -102,25 +102,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 小程序路径
+                     * 小程序路径，有效时间为7天
                      */
                     std::string m_miniAppPath;
                     bool m_miniAppPathHasBeenSet;
 
                     /**
-                     * 操作长链
+                     * 操作长链，有效时间为7天
                      */
                     std::string m_operateLongUrl;
                     bool m_operateLongUrlHasBeenSet;
 
                     /**
-                     * 操作短链
+                     * 操作短链，有效时间为7天
                      */
                     std::string m_operateShortUrl;
                     bool m_operateShortUrlHasBeenSet;
 
                     /**
-                     * 操作二维码
+                     * 操作二维码，有效时间为7天
                      */
                     std::string m_qRCodeUrl;
                     bool m_qRCodeUrlHasBeenSet;

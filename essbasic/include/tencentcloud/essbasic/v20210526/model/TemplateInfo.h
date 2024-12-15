@@ -121,14 +121,22 @@ namespace TencentCloud
 
                     /**
                      * 获取模板的填充控件列表
+
+[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)
                      * @return Components 模板的填充控件列表
+
+[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)
                      * 
                      */
                     std::vector<Component> GetComponents() const;
 
                     /**
                      * 设置模板的填充控件列表
+
+[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)
                      * @param _components 模板的填充控件列表
+
+[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)
                      * 
                      */
                     void SetComponents(const std::vector<Component>& _components);
@@ -142,14 +150,30 @@ namespace TencentCloud
 
                     /**
                      * 获取此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
+
+[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
+
+
                      * @return Recipients 此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
+
+[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
+
+
                      * 
                      */
                     std::vector<Recipient> GetRecipients() const;
 
                     /**
                      * 设置此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
+
+[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
+
+
                      * @param _recipients 此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
+
+[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
+
+
                      * 
                      */
                     void SetRecipients(const std::vector<Recipient>& _recipients);
@@ -163,14 +187,22 @@ namespace TencentCloud
 
                     /**
                      * 获取此模板中的签署控件列表
+
+[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)
                      * @return SignComponents 此模板中的签署控件列表
+
+[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)
                      * 
                      */
                     std::vector<Component> GetSignComponents() const;
 
                     /**
                      * 设置此模板中的签署控件列表
+
+[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)
                      * @param _signComponents 此模板中的签署控件列表
+
+[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)
                      * 
                      */
                     void SetSignComponents(const std::vector<Component>& _signComponents);
@@ -183,15 +215,27 @@ namespace TencentCloud
                     bool SignComponentsHasBeenSet() const;
 
                     /**
-                     * 获取模板类型：1-静默签；3-普通模板
-                     * @return TemplateType 模板类型：1-静默签；3-普通模板
+                     * 获取模板类型可以分为以下两种：
+
+<b>1</b>：带有<b>本企业自动签署</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。
+<b>3</b>：普通模板，即签署人需要手动进行签署操作。
+                     * @return TemplateType 模板类型可以分为以下两种：
+
+<b>1</b>：带有<b>本企业自动签署</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。
+<b>3</b>：普通模板，即签署人需要手动进行签署操作。
                      * 
                      */
                     int64_t GetTemplateType() const;
 
                     /**
-                     * 设置模板类型：1-静默签；3-普通模板
-                     * @param _templateType 模板类型：1-静默签；3-普通模板
+                     * 设置模板类型可以分为以下两种：
+
+<b>1</b>：带有<b>本企业自动签署</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。
+<b>3</b>：普通模板，即签署人需要手动进行签署操作。
+                     * @param _templateType 模板类型可以分为以下两种：
+
+<b>1</b>：带有<b>本企业自动签署</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。
+<b>3</b>：普通模板，即签署人需要手动进行签署操作。
                      * 
                      */
                     void SetTemplateType(const int64_t& _templateType);
@@ -267,22 +311,30 @@ namespace TencentCloud
                     bool CreatedOnHasBeenSet() const;
 
                     /**
-                     * 获取模板的H5预览链接,有效期5分钟。
-可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
+                     * 获取模板的 H5 预览链接，有效期为 5 分钟。
+您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。
+
+注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PreviewUrl 模板的H5预览链接,有效期5分钟。
-可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
+                     * @return PreviewUrl 模板的 H5 预览链接，有效期为 5 分钟。
+您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。
+
+注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPreviewUrl() const;
 
                     /**
-                     * 设置模板的H5预览链接,有效期5分钟。
-可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
+                     * 设置模板的 H5 预览链接，有效期为 5 分钟。
+您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。
+
+注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _previewUrl 模板的H5预览链接,有效期5分钟。
-可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
+                     * @param _previewUrl 模板的 H5 预览链接，有效期为 5 分钟。
+您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。
+
+注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -491,24 +543,35 @@ namespace TencentCloud
 
                     /**
                      * 模板的填充控件列表
+
+[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)
                      */
                     std::vector<Component> m_components;
                     bool m_componentsHasBeenSet;
 
                     /**
                      * 此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
+
+[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
+
+
                      */
                     std::vector<Recipient> m_recipients;
                     bool m_recipientsHasBeenSet;
 
                     /**
                      * 此模板中的签署控件列表
+
+[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;
 
                     /**
-                     * 模板类型：1-静默签；3-普通模板
+                     * 模板类型可以分为以下两种：
+
+<b>1</b>：带有<b>本企业自动签署</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。
+<b>3</b>：普通模板，即签署人需要手动进行签署操作。
                      */
                     int64_t m_templateType;
                     bool m_templateTypeHasBeenSet;
@@ -532,8 +595,10 @@ namespace TencentCloud
                     bool m_createdOnHasBeenSet;
 
                     /**
-                     * 模板的H5预览链接,有效期5分钟。
-可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
+                     * 模板的 H5 预览链接，有效期为 5 分钟。
+您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。
+
+注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_previewUrl;

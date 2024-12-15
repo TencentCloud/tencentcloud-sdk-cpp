@@ -113,14 +113,26 @@ namespace TencentCloud
 
                     /**
                      * 获取应用模板的执行状态。
+
+- SUCCESS：成功
+- FAILED：失败
                      * @return ApplyState 应用模板的执行状态。
+
+- SUCCESS：成功
+- FAILED：失败
                      * 
                      */
                     std::string GetApplyState() const;
 
                     /**
                      * 设置应用模板的执行状态。
+
+- SUCCESS：成功
+- FAILED：失败
                      * @param _applyState 应用模板的执行状态。
+
+- SUCCESS：成功
+- FAILED：失败
                      * 
                      */
                     void SetApplyState(const std::string& _applyState);
@@ -238,6 +250,9 @@ namespace TencentCloud
 
                     /**
                      * 应用模板的执行状态。
+
+- SUCCESS：成功
+- FAILED：失败
                      */
                     std::string m_applyState;
                     bool m_applyStateHasBeenSet;

@@ -780,7 +780,9 @@ namespace TencentCloud
                 ActivateTWeCallLicenseOutcomeCallable ActivateTWeCallLicenseCallable(const Model::ActivateTWeCallLicenseRequest& request);
 
                 /**
-                 *分配License
+                 *微信VOIP功能调整下线
+
+分配License
                  * @param req AssignTWeCallLicenseRequest
                  * @return AssignTWeCallLicenseOutcome
                  */
@@ -1707,7 +1709,9 @@ namespace TencentCloud
                 GetTWeCallActiveStatusOutcomeCallable GetTWeCallActiveStatusCallable(const Model::GetTWeCallActiveStatusRequest& request);
 
                 /**
-                 *查询TWeCall包列表
+                 *微信VOIP功能调整下线
+
+查询TWeCall包列表
                  * @param req GetTWeCallPkgListRequest
                  * @return GetTWeCallPkgListOutcome
                  */
