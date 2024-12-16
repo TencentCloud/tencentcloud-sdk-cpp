@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool IsDefaultHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return DisableProgramAuthCheck 无
+                     * 获取是否关闭鉴权查询
+                     * @return DisableProgramAuthCheck 是否关闭鉴权查询
                      * 
                      */
                     bool GetDisableProgramAuthCheck() const;
 
                     /**
-                     * 设置无
-                     * @param _disableProgramAuthCheck 无
+                     * 设置是否关闭鉴权查询
+                     * @param _disableProgramAuthCheck 是否关闭鉴权查询
                      * 
                      */
                     void SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck);
@@ -336,7 +336,7 @@ namespace TencentCloud
                     bool m_isDefaultHasBeenSet;
 
                     /**
-                     * 无
+                     * 是否关闭鉴权查询
                      */
                     bool m_disableProgramAuthCheck;
                     bool m_disableProgramAuthCheckHasBeenSet;

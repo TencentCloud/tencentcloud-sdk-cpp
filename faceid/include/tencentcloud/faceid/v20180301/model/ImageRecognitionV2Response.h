@@ -93,6 +93,20 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取调用接口中自定义的描述字段。
+                     * @return Extra 调用接口中自定义的描述字段。
+                     * 
+                     */
+                    std::string GetExtra() const;
+
+                    /**
+                     * 判断参数 Extra 是否已赋值
+                     * @return Extra 是否已赋值
+                     * 
+                     */
+                    bool ExtraHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +130,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 调用接口中自定义的描述字段。
+                     */
+                    std::string m_extra;
+                    bool m_extraHasBeenSet;
 
                 };
             }

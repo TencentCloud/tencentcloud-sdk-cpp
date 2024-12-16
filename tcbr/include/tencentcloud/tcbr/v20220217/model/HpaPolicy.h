@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩缩容类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyType 扩缩容类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
                      * 设置扩缩容类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyType 扩缩容类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyType(const std::string& _policyType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩缩容阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyThreshold 扩缩容阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPolicyThreshold() const;
 
                     /**
                      * 设置扩缩容阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyThreshold 扩缩容阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyThreshold(const uint64_t& _policyThreshold);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 扩缩容类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyType;
                     bool m_policyTypeHasBeenSet;
 
                     /**
                      * 扩缩容阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_policyThreshold;
                     bool m_policyThresholdHasBeenSet;

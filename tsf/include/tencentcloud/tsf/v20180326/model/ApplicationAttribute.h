@@ -121,6 +121,56 @@ namespace TencentCloud
                      */
                     bool GroupCountHasBeenSet() const;
 
+                    /**
+                     * 获取运行中部署组个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RunningGroupCount 运行中部署组个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRunningGroupCount() const;
+
+                    /**
+                     * 设置运行中部署组个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _runningGroupCount 运行中部署组个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRunningGroupCount(const std::string& _runningGroupCount);
+
+                    /**
+                     * 判断参数 RunningGroupCount 是否已赋值
+                     * @return RunningGroupCount 是否已赋值
+                     * 
+                     */
+                    bool RunningGroupCountHasBeenSet() const;
+
+                    /**
+                     * 获取异常部署组个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AbnormalCount 异常部署组个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAbnormalCount() const;
+
+                    /**
+                     * 设置异常部署组个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _abnormalCount 异常部署组个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAbnormalCount(const std::string& _abnormalCount);
+
+                    /**
+                     * 判断参数 AbnormalCount 是否已赋值
+                     * @return AbnormalCount 是否已赋值
+                     * 
+                     */
+                    bool AbnormalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +193,20 @@ namespace TencentCloud
                      */
                     int64_t m_groupCount;
                     bool m_groupCountHasBeenSet;
+
+                    /**
+                     * 运行中部署组个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_runningGroupCount;
+                    bool m_runningGroupCountHasBeenSet;
+
+                    /**
+                     * 异常部署组个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_abnormalCount;
+                    bool m_abnormalCountHasBeenSet;
 
                 };
             }

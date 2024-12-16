@@ -588,6 +588,27 @@ namespace TencentCloud
                      */
                     bool ContactPositionHasBeenSet() const;
 
+                    /**
+                     * 获取是否DV证书。默认false
+                     * @return IsDV 是否DV证书。默认false
+                     * 
+                     */
+                    bool GetIsDV() const;
+
+                    /**
+                     * 设置是否DV证书。默认false
+                     * @param _isDV 是否DV证书。默认false
+                     * 
+                     */
+                    void SetIsDV(const bool& _isDV);
+
+                    /**
+                     * 判断参数 IsDV 是否已赋值
+                     * @return IsDV 是否已赋值
+                     * 
+                     */
+                    bool IsDVHasBeenSet() const;
+
                 private:
 
                     /**
@@ -745,6 +766,12 @@ namespace TencentCloud
                      */
                     std::string m_contactPosition;
                     bool m_contactPositionHasBeenSet;
+
+                    /**
+                     * 是否DV证书。默认false
+                     */
+                    bool m_isDV;
+                    bool m_isDVHasBeenSet;
 
                 };
             }

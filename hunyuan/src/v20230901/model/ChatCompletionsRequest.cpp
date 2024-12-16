@@ -39,7 +39,8 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_enableMultimediaHasBeenSet(false),
     m_enableDeepSearchHasBeenSet(false),
     m_seedHasBeenSet(false),
-    m_forceSearchEnhancementHasBeenSet(false)
+    m_forceSearchEnhancementHasBeenSet(false),
+    m_stopHasBeenSet(false)
 {
 }
 
@@ -199,6 +200,19 @@ string ChatCompletionsRequest::ToJsonString() const
         string key = "ForceSearchEnhancement";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forceSearchEnhancement, allocator);
+    }
+
+    if (m_stopHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Stop";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_stop.begin(); itr != m_stop.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -479,6 +493,22 @@ void ChatCompletionsRequest::SetForceSearchEnhancement(const bool& _forceSearchE
 bool ChatCompletionsRequest::ForceSearchEnhancementHasBeenSet() const
 {
     return m_forceSearchEnhancementHasBeenSet;
+}
+
+vector<string> ChatCompletionsRequest::GetStop() const
+{
+    return m_stop;
+}
+
+void ChatCompletionsRequest::SetStop(const vector<string>& _stop)
+{
+    m_stop = _stop;
+    m_stopHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::StopHasBeenSet() const
+{
+    return m_stopHasBeenSet;
 }
 
 

@@ -40,6 +40,7 @@ BashEventNew::BashEventNew() :
     m_modifyTimeHasBeenSet(false),
     m_ruleCategoryHasBeenSet(false),
     m_regexBashCmdHasBeenSet(false),
+    m_regexExeHasBeenSet(false),
     m_machineTypeHasBeenSet(false),
     m_machineExtraInfoHasBeenSet(false)
 {
@@ -240,6 +241,16 @@ CoreInternalOutcome BashEventNew::Deserialize(const rapidjson::Value &value)
         m_regexBashCmdHasBeenSet = true;
     }
 
+    if (value.HasMember("RegexExe") && !value["RegexExe"].IsNull())
+    {
+        if (!value["RegexExe"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventNew.RegexExe` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regexExe = string(value["RegexExe"].GetString());
+        m_regexExeHasBeenSet = true;
+    }
+
     if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
     {
         if (!value["MachineType"].IsInt64())
@@ -424,6 +435,14 @@ void BashEventNew::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "RegexBashCmd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_regexBashCmd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regexExeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegexExe";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regexExe.c_str(), allocator).Move(), allocator);
     }
 
     if (m_machineTypeHasBeenSet)
@@ -748,6 +767,22 @@ void BashEventNew::SetRegexBashCmd(const string& _regexBashCmd)
 bool BashEventNew::RegexBashCmdHasBeenSet() const
 {
     return m_regexBashCmdHasBeenSet;
+}
+
+string BashEventNew::GetRegexExe() const
+{
+    return m_regexExe;
+}
+
+void BashEventNew::SetRegexExe(const string& _regexExe)
+{
+    m_regexExe = _regexExe;
+    m_regexExeHasBeenSet = true;
+}
+
+bool BashEventNew::RegexExeHasBeenSet() const
+{
+    return m_regexExeHasBeenSet;
 }
 
 int64_t BashEventNew::GetMachineType() const

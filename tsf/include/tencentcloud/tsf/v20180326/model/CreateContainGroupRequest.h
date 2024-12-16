@@ -338,15 +338,23 @@ namespace TencentCloud
                     bool MemRequestHasBeenSet() const;
 
                     /**
-                     * 获取部署组资源类型
-                     * @return GroupResourceType 部署组资源类型
+                     * 获取部署组资源类型；
+DEF — 默认资源类型；
+GW — 网关资源类型；
+                     * @return GroupResourceType 部署组资源类型；
+DEF — 默认资源类型；
+GW — 网关资源类型；
                      * 
                      */
                     std::string GetGroupResourceType() const;
 
                     /**
-                     * 设置部署组资源类型
-                     * @param _groupResourceType 部署组资源类型
+                     * 设置部署组资源类型；
+DEF — 默认资源类型；
+GW — 网关资源类型；
+                     * @param _groupResourceType 部署组资源类型；
+DEF — 默认资源类型；
+GW — 网关资源类型；
                      * 
                      */
                     void SetGroupResourceType(const std::string& _groupResourceType);
@@ -634,7 +642,9 @@ namespace TencentCloud
                     bool m_memRequestHasBeenSet;
 
                     /**
-                     * 部署组资源类型
+                     * 部署组资源类型；
+DEF — 默认资源类型；
+GW — 网关资源类型；
                      */
                     std::string m_groupResourceType;
                     bool m_groupResourceTypeHasBeenSet;

@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取子任务单机并发数限制，默认值为2
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubTaskConcurrency 子任务单机并发数限制，默认值为2
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSubTaskConcurrency() const;
 
                     /**
                      * 设置子任务单机并发数限制，默认值为2
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subTaskConcurrency 子任务单机并发数限制，默认值为2
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubTaskConcurrency(const int64_t& _subTaskConcurrency);
@@ -71,6 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 子任务单机并发数限制，默认值为2
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_subTaskConcurrency;
                     bool m_subTaskConcurrencyHasBeenSet;

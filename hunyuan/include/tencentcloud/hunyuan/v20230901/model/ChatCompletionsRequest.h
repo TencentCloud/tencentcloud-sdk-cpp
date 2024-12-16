@@ -617,6 +617,27 @@ namespace TencentCloud
                      */
                     bool ForceSearchEnhancementHasBeenSet() const;
 
+                    /**
+                     * 获取自定义结束生成字符串
+                     * @return Stop 自定义结束生成字符串
+                     * 
+                     */
+                    std::vector<std::string> GetStop() const;
+
+                    /**
+                     * 设置自定义结束生成字符串
+                     * @param _stop 自定义结束生成字符串
+                     * 
+                     */
+                    void SetStop(const std::vector<std::string>& _stop);
+
+                    /**
+                     * 判断参数 Stop 是否已赋值
+                     * @return Stop 是否已赋值
+                     * 
+                     */
+                    bool StopHasBeenSet() const;
+
                 private:
 
                     /**
@@ -774,6 +795,12 @@ namespace TencentCloud
                      */
                     bool m_forceSearchEnhancement;
                     bool m_forceSearchEnhancementHasBeenSet;
+
+                    /**
+                     * 自定义结束生成字符串
+                     */
+                    std::vector<std::string> m_stop;
+                    bool m_stopHasBeenSet;
 
                 };
             }

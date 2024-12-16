@@ -685,6 +685,49 @@ IotvideoClient::CreateDataForwardOutcomeCallable IotvideoClient::CreateDataForwa
     return task->get_future();
 }
 
+IotvideoClient::CreateDeviceChannelOutcome IotvideoClient::CreateDeviceChannel(const CreateDeviceChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDeviceChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDeviceChannelResponse rsp = CreateDeviceChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDeviceChannelOutcome(rsp);
+        else
+            return CreateDeviceChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDeviceChannelOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::CreateDeviceChannelAsync(const CreateDeviceChannelRequest& request, const CreateDeviceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDeviceChannel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::CreateDeviceChannelOutcomeCallable IotvideoClient::CreateDeviceChannelCallable(const CreateDeviceChannelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDeviceChannelOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDeviceChannel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::CreateForwardRuleOutcome IotvideoClient::CreateForwardRule(const CreateForwardRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateForwardRule");
@@ -721,6 +764,49 @@ IotvideoClient::CreateForwardRuleOutcomeCallable IotvideoClient::CreateForwardRu
         [this, request]()
         {
             return this->CreateForwardRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::CreateFreeCloudStorageOutcome IotvideoClient::CreateFreeCloudStorage(const CreateFreeCloudStorageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFreeCloudStorage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFreeCloudStorageResponse rsp = CreateFreeCloudStorageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFreeCloudStorageOutcome(rsp);
+        else
+            return CreateFreeCloudStorageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFreeCloudStorageOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::CreateFreeCloudStorageAsync(const CreateFreeCloudStorageRequest& request, const CreateFreeCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFreeCloudStorage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::CreateFreeCloudStorageOutcomeCallable IotvideoClient::CreateFreeCloudStorageCallable(const CreateFreeCloudStorageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFreeCloudStorageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFreeCloudStorage(request);
         }
     );
 

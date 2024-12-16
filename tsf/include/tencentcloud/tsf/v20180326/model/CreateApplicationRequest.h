@@ -255,15 +255,15 @@ namespace TencentCloud
                     bool IgnoreCreateImageRepositoryHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ProgramIdList 无
+                     * 获取数据集id列表
+                     * @return ProgramIdList 数据集id列表
                      * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
-                     * 设置无
-                     * @param _programIdList 无
+                     * 设置数据集id列表
+                     * @param _programIdList 数据集id列表
                      * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
@@ -297,15 +297,35 @@ namespace TencentCloud
                     bool ApmInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取编程语言
-                     * @return ProgramLanguage 编程语言
+                     * 获取编程语言;
+J - JAVA；
+C - C/C++；
+P - Python；
+G - Go；
+O - Other；
+                     * @return ProgramLanguage 编程语言;
+J - JAVA；
+C - C/C++；
+P - Python；
+G - Go；
+O - Other；
                      * 
                      */
                     std::string GetProgramLanguage() const;
 
                     /**
-                     * 设置编程语言
-                     * @param _programLanguage 编程语言
+                     * 设置编程语言;
+J - JAVA；
+C - C/C++；
+P - Python；
+G - Go；
+O - Other；
+                     * @param _programLanguage 编程语言;
+J - JAVA；
+C - C/C++；
+P - Python；
+G - Go；
+O - Other；
                      * 
                      */
                     void SetProgramLanguage(const std::string& _programLanguage);
@@ -318,15 +338,15 @@ namespace TencentCloud
                     bool ProgramLanguageHasBeenSet() const;
 
                     /**
-                     * 获取开发框架
-                     * @return FrameworkType 开发框架
+                     * 获取开发框架-SpringCloud/Dubbo/Go-GRPC/Other
+                     * @return FrameworkType 开发框架-SpringCloud/Dubbo/Go-GRPC/Other
                      * 
                      */
                     std::string GetFrameworkType() const;
 
                     /**
-                     * 设置开发框架
-                     * @param _frameworkType 开发框架
+                     * 设置开发框架-SpringCloud/Dubbo/Go-GRPC/Other
+                     * @param _frameworkType 开发框架-SpringCloud/Dubbo/Go-GRPC/Other
                      * 
                      */
                     void SetFrameworkType(const std::string& _frameworkType);
@@ -443,7 +463,7 @@ namespace TencentCloud
                     bool m_ignoreCreateImageRepositoryHasBeenSet;
 
                     /**
-                     * 无
+                     * 数据集id列表
                      */
                     std::vector<std::string> m_programIdList;
                     bool m_programIdListHasBeenSet;
@@ -455,13 +475,18 @@ namespace TencentCloud
                     bool m_apmInstanceIdHasBeenSet;
 
                     /**
-                     * 编程语言
+                     * 编程语言;
+J - JAVA；
+C - C/C++；
+P - Python；
+G - Go；
+O - Other；
                      */
                     std::string m_programLanguage;
                     bool m_programLanguageHasBeenSet;
 
                     /**
-                     * 开发框架
+                     * 开发框架-SpringCloud/Dubbo/Go-GRPC/Other
                      */
                     std::string m_frameworkType;
                     bool m_frameworkTypeHasBeenSet;

@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启高可用
-                     * @return IsHaEnable 是否开启高可用
+                     * 获取是否开启高可用，1 表示开启，0 表示不开启
+                     * @return IsHaEnable 是否开启高可用，1 表示开启，0 表示不开启
                      * 
                      */
                     std::string GetIsHaEnable() const;
 
                     /**
-                     * 设置是否开启高可用
-                     * @param _isHaEnable 是否开启高可用
+                     * 设置是否开启高可用，1 表示开启，0 表示不开启
+                     * @param _isHaEnable 是否开启高可用，1 表示开启，0 表示不开启
                      * 
                      */
                     void SetIsHaEnable(const std::string& _isHaEnable);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool ProgramIdHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ProgramIdList 无
+                     * 获取需要绑定的数据集ID
+                     * @return ProgramIdList 需要绑定的数据集ID
                      * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
-                     * 设置无
-                     * @param _programIdList 无
+                     * 设置需要绑定的数据集ID
+                     * @param _programIdList 需要绑定的数据集ID
                      * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
@@ -270,7 +270,7 @@ namespace TencentCloud
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * 是否开启高可用
+                     * 是否开启高可用，1 表示开启，0 表示不开启
                      */
                     std::string m_isHaEnable;
                     bool m_isHaEnableHasBeenSet;
@@ -282,7 +282,7 @@ namespace TencentCloud
                     bool m_programIdHasBeenSet;
 
                     /**
-                     * 无
+                     * 需要绑定的数据集ID
                      */
                     std::vector<std::string> m_programIdList;
                     bool m_programIdListHasBeenSet;

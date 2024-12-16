@@ -49,10 +49,14 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceChannelRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceChannelResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateExternalSourceAIServiceTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateExternalSourceAIServiceTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateFenceBindRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateFenceBindResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateFreeCloudStorageRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateFreeCloudStorageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateIotVideoCloudStorageRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateIotVideoCloudStorageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaFrequencyRequest.h>
@@ -368,12 +372,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDeviceResponse> CreateDeviceOutcome;
                 typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceRequest&, CreateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDeviceChannelResponse> CreateDeviceChannelOutcome;
+                typedef std::future<CreateDeviceChannelOutcome> CreateDeviceChannelOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceChannelRequest&, CreateDeviceChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateExternalSourceAIServiceTaskResponse> CreateExternalSourceAIServiceTaskOutcome;
                 typedef std::future<CreateExternalSourceAIServiceTaskOutcome> CreateExternalSourceAIServiceTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateExternalSourceAIServiceTaskRequest&, CreateExternalSourceAIServiceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExternalSourceAIServiceTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFenceBindResponse> CreateFenceBindOutcome;
                 typedef std::future<CreateFenceBindOutcome> CreateFenceBindOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateFenceBindRequest&, CreateFenceBindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFenceBindAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFreeCloudStorageResponse> CreateFreeCloudStorageOutcome;
+                typedef std::future<CreateFreeCloudStorageOutcome> CreateFreeCloudStorageOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateFreeCloudStorageRequest&, CreateFreeCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFreeCloudStorageAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateIotVideoCloudStorageResponse> CreateIotVideoCloudStorageOutcome;
                 typedef std::future<CreateIotVideoCloudStorageOutcome> CreateIotVideoCloudStorageOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateIotVideoCloudStorageRequest&, CreateIotVideoCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIotVideoCloudStorageAsyncHandler;
@@ -890,6 +900,15 @@ namespace TencentCloud
                 CreateDeviceOutcomeCallable CreateDeviceCallable(const Model::CreateDeviceRequest& request);
 
                 /**
+                 *创建设备通道
+                 * @param req CreateDeviceChannelRequest
+                 * @return CreateDeviceChannelOutcome
+                 */
+                CreateDeviceChannelOutcome CreateDeviceChannel(const Model::CreateDeviceChannelRequest &request);
+                void CreateDeviceChannelAsync(const Model::CreateDeviceChannelRequest& request, const CreateDeviceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDeviceChannelOutcomeCallable CreateDeviceChannelCallable(const Model::CreateDeviceChannelRequest& request);
+
+                /**
                  *创建外部视频 AI 分析任务
                  * @param req CreateExternalSourceAIServiceTaskRequest
                  * @return CreateExternalSourceAIServiceTaskOutcome
@@ -906,6 +925,15 @@ namespace TencentCloud
                 CreateFenceBindOutcome CreateFenceBind(const Model::CreateFenceBindRequest &request);
                 void CreateFenceBindAsync(const Model::CreateFenceBindRequest& request, const CreateFenceBindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateFenceBindOutcomeCallable CreateFenceBindCallable(const Model::CreateFenceBindRequest& request);
+
+                /**
+                 *开通免费云存服务
+                 * @param req CreateFreeCloudStorageRequest
+                 * @return CreateFreeCloudStorageOutcome
+                 */
+                CreateFreeCloudStorageOutcome CreateFreeCloudStorage(const Model::CreateFreeCloudStorageRequest &request);
+                void CreateFreeCloudStorageAsync(const Model::CreateFreeCloudStorageRequest& request, const CreateFreeCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFreeCloudStorageOutcomeCallable CreateFreeCloudStorageCallable(const Model::CreateFreeCloudStorageRequest& request);
 
                 /**
                  *开通云存服务

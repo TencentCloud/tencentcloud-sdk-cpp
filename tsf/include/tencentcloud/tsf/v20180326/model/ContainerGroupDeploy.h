@@ -33,6 +33,7 @@
 #include <tencentcloud/tsf/v20180326/model/WarmupSetting.h>
 #include <tencentcloud/tsf/v20180326/model/GatewayConfig.h>
 #include <tencentcloud/tsf/v20180326/model/GroupContainerInfo.h>
+#include <tencentcloud/tsf/v20180326/model/ServiceSetting.h>
 
 
 namespace TencentCloud
@@ -1080,6 +1081,31 @@ namespace TencentCloud
                      */
                     bool InternalContainerListHasBeenSet() const;
 
+                    /**
+                     * 获取service列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceSettingList service列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ServiceSetting> GetServiceSettingList() const;
+
+                    /**
+                     * 设置service列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serviceSettingList service列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetServiceSettingList(const std::vector<ServiceSetting>& _serviceSettingList);
+
+                    /**
+                     * 判断参数 ServiceSettingList 是否已赋值
+                     * @return ServiceSettingList 是否已赋值
+                     * 
+                     */
+                    bool ServiceSettingListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1368,6 +1394,13 @@ namespace TencentCloud
                      */
                     std::vector<GroupContainerInfo> m_internalContainerList;
                     bool m_internalContainerListHasBeenSet;
+
+                    /**
+                     * service列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ServiceSetting> m_serviceSettingList;
+                    bool m_serviceSettingListHasBeenSet;
 
                 };
             }

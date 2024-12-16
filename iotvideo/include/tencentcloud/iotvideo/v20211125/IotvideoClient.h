@@ -53,8 +53,12 @@
 #include <tencentcloud/iotvideo/v20211125/model/CreateCloudStorageResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateDataForwardRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateDataForwardResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/CreateDeviceChannelRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/CreateDeviceChannelResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateForwardRuleRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateForwardRuleResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/CreateFreeCloudStorageRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/CreateFreeCloudStorageResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateProductRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateProductResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateTaskFileUrlRequest.h>
@@ -286,9 +290,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDataForwardResponse> CreateDataForwardOutcome;
                 typedef std::future<CreateDataForwardOutcome> CreateDataForwardOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateDataForwardRequest&, CreateDataForwardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataForwardAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDeviceChannelResponse> CreateDeviceChannelOutcome;
+                typedef std::future<CreateDeviceChannelOutcome> CreateDeviceChannelOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::CreateDeviceChannelRequest&, CreateDeviceChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateForwardRuleResponse> CreateForwardRuleOutcome;
                 typedef std::future<CreateForwardRuleOutcome> CreateForwardRuleOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateForwardRuleRequest&, CreateForwardRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateForwardRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFreeCloudStorageResponse> CreateFreeCloudStorageOutcome;
+                typedef std::future<CreateFreeCloudStorageOutcome> CreateFreeCloudStorageOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::CreateFreeCloudStorageRequest&, CreateFreeCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFreeCloudStorageAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateProductResponse> CreateProductOutcome;
                 typedef std::future<CreateProductOutcome> CreateProductOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateProductRequest&, CreateProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProductAsyncHandler;
@@ -686,6 +696,15 @@ namespace TencentCloud
                 CreateDataForwardOutcomeCallable CreateDataForwardCallable(const Model::CreateDataForwardRequest& request);
 
                 /**
+                 *创建设备通道
+                 * @param req CreateDeviceChannelRequest
+                 * @return CreateDeviceChannelOutcome
+                 */
+                CreateDeviceChannelOutcome CreateDeviceChannel(const Model::CreateDeviceChannelRequest &request);
+                void CreateDeviceChannelAsync(const Model::CreateDeviceChannelRequest& request, const CreateDeviceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDeviceChannelOutcomeCallable CreateDeviceChannelCallable(const Model::CreateDeviceChannelRequest& request);
+
+                /**
                  *创建转发规则
                  * @param req CreateForwardRuleRequest
                  * @return CreateForwardRuleOutcome
@@ -693,6 +712,15 @@ namespace TencentCloud
                 CreateForwardRuleOutcome CreateForwardRule(const Model::CreateForwardRuleRequest &request);
                 void CreateForwardRuleAsync(const Model::CreateForwardRuleRequest& request, const CreateForwardRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateForwardRuleOutcomeCallable CreateForwardRuleCallable(const Model::CreateForwardRuleRequest& request);
+
+                /**
+                 *开通免费云存服务
+                 * @param req CreateFreeCloudStorageRequest
+                 * @return CreateFreeCloudStorageOutcome
+                 */
+                CreateFreeCloudStorageOutcome CreateFreeCloudStorage(const Model::CreateFreeCloudStorageRequest &request);
+                void CreateFreeCloudStorageAsync(const Model::CreateFreeCloudStorageRequest& request, const CreateFreeCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFreeCloudStorageOutcomeCallable CreateFreeCloudStorageCallable(const Model::CreateFreeCloudStorageRequest& request);
 
                 /**
                  *创建产品

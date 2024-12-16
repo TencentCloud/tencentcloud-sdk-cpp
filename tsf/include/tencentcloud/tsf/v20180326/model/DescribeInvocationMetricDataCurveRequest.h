@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取查询指标维度
-                     * @return MetricDimensions 查询指标维度
+                     * 获取查询指标维度，不能为空，支持 ServiceName, OperationName, PeerServiceName, PeerOperationName
+                     * @return MetricDimensions 查询指标维度，不能为空，支持 ServiceName, OperationName, PeerServiceName, PeerOperationName
                      * 
                      */
                     std::vector<MetricDimension> GetMetricDimensions() const;
 
                     /**
-                     * 设置查询指标维度
-                     * @param _metricDimensions 查询指标维度
+                     * 设置查询指标维度，不能为空，支持 ServiceName, OperationName, PeerServiceName, PeerOperationName
+                     * @param _metricDimensions 查询指标维度，不能为空，支持 ServiceName, OperationName, PeerServiceName, PeerOperationName
                      * 
                      */
                     void SetMetricDimensions(const std::vector<MetricDimension>& _metricDimensions);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool MetricDimensionsHasBeenSet() const;
 
                     /**
-                     * 获取查询指标名
-                     * @return Metrics 查询指标名
+                     * 获取查询指标名，不能为空.
+                     * @return Metrics 查询指标名，不能为空.
                      * 
                      */
                     std::vector<Metric> GetMetrics() const;
 
                     /**
-                     * 设置查询指标名
-                     * @param _metrics 查询指标名
+                     * 设置查询指标名，不能为空.
+                     * @param _metrics 查询指标名，不能为空.
                      * 
                      */
                     void SetMetrics(const std::vector<Metric>& _metrics);
@@ -212,13 +212,13 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 查询指标维度
+                     * 查询指标维度，不能为空，支持 ServiceName, OperationName, PeerServiceName, PeerOperationName
                      */
                     std::vector<MetricDimension> m_metricDimensions;
                     bool m_metricDimensionsHasBeenSet;
 
                     /**
-                     * 查询指标名
+                     * 查询指标名，不能为空.
                      */
                     std::vector<Metric> m_metrics;
                     bool m_metricsHasBeenSet;

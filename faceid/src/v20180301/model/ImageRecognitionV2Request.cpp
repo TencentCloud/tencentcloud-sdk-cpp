@@ -27,7 +27,8 @@ ImageRecognitionV2Request::ImageRecognitionV2Request() :
     m_nameHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
     m_optionalHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
+    m_encryptionHasBeenSet(false),
+    m_extraHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string ImageRecognitionV2Request::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_encryption.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_extraHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extra";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void ImageRecognitionV2Request::SetEncryption(const Encryption& _encryption)
 bool ImageRecognitionV2Request::EncryptionHasBeenSet() const
 {
     return m_encryptionHasBeenSet;
+}
+
+string ImageRecognitionV2Request::GetExtra() const
+{
+    return m_extra;
+}
+
+void ImageRecognitionV2Request::SetExtra(const string& _extra)
+{
+    m_extra = _extra;
+    m_extraHasBeenSet = true;
+}
+
+bool ImageRecognitionV2Request::ExtraHasBeenSet() const
+{
+    return m_extraHasBeenSet;
 }
 
 

@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return DisableProgramAuthCheck 无
+                     * 获取是否关闭鉴权
+                     * @return DisableProgramAuthCheck 是否关闭鉴权
                      * 
                      */
                     bool GetDisableProgramAuthCheck() const;
 
                     /**
-                     * 设置无
-                     * @param _disableProgramAuthCheck 无
+                     * 设置是否关闭鉴权
+                     * @param _disableProgramAuthCheck 是否关闭鉴权
                      * 
                      */
                     void SetDisableProgramAuthCheck(const bool& _disableProgramAuthCheck);
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 无
+                     * 是否关闭鉴权
                      */
                     bool m_disableProgramAuthCheck;
                     bool m_disableProgramAuthCheckHasBeenSet;

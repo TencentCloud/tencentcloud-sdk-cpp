@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/DataSourceConnectStatus.h>
 
 
 namespace TencentCloud
@@ -896,6 +897,31 @@ namespace TencentCloud
                      */
                     bool DevelopmentParamsHasBeenSet() const;
 
+                    /**
+                     * 获取数据源连接状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConnectStatus 数据源连接状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DataSourceConnectStatus GetConnectStatus() const;
+
+                    /**
+                     * 设置数据源连接状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _connectStatus 数据源连接状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConnectStatus(const DataSourceConnectStatus& _connectStatus);
+
+                    /**
+                     * 判断参数 ConnectStatus 是否已赋值
+                     * @return ConnectStatus 是否已赋值
+                     * 
+                     */
+                    bool ConnectStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1135,6 +1161,13 @@ namespace TencentCloud
                      */
                     std::string m_developmentParams;
                     bool m_developmentParamsHasBeenSet;
+
+                    /**
+                     * 数据源连接状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DataSourceConnectStatus m_connectStatus;
+                    bool m_connectStatusHasBeenSet;
 
                 };
             }

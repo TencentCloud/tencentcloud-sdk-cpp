@@ -37,7 +37,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_payModeHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
-    m_maxTopicNumHasBeenSet(false)
+    m_maxTopicNumHasBeenSet(false),
+    m_zoneIdsHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,19 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "MaxTopicNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxTopicNum, allocator);
+    }
+
+    if (m_zoneIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -435,6 +449,22 @@ void CreateInstanceRequest::SetMaxTopicNum(const int64_t& _maxTopicNum)
 bool CreateInstanceRequest::MaxTopicNumHasBeenSet() const
 {
     return m_maxTopicNumHasBeenSet;
+}
+
+vector<int64_t> CreateInstanceRequest::GetZoneIds() const
+{
+    return m_zoneIds;
+}
+
+void CreateInstanceRequest::SetZoneIds(const vector<int64_t>& _zoneIds)
+{
+    m_zoneIds = _zoneIds;
+    m_zoneIdsHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::ZoneIdsHasBeenSet() const
+{
+    return m_zoneIdsHasBeenSet;
 }
 
 

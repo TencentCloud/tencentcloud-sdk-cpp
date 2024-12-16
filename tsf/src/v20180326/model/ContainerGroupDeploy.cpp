@@ -61,7 +61,8 @@ ContainerGroupDeploy::ContainerGroupDeploy() :
     m_gatewayConfigHasBeenSet(false),
     m_containerNameHasBeenSet(false),
     m_additionalContainerListHasBeenSet(false),
-    m_internalContainerListHasBeenSet(false)
+    m_internalContainerListHasBeenSet(false),
+    m_serviceSettingListHasBeenSet(false)
 {
 }
 
@@ -568,6 +569,26 @@ CoreInternalOutcome ContainerGroupDeploy::Deserialize(const rapidjson::Value &va
         m_internalContainerListHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceSettingList") && !value["ServiceSettingList"].IsNull())
+    {
+        if (!value["ServiceSettingList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDeploy.ServiceSettingList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ServiceSettingList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ServiceSetting item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_serviceSettingList.push_back(item);
+        }
+        m_serviceSettingListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -943,6 +964,21 @@ void ContainerGroupDeploy::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
 
         int i=0;
         for (auto itr = m_internalContainerList.begin(); itr != m_internalContainerList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_serviceSettingListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceSettingList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serviceSettingList.begin(); itr != m_serviceSettingList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -1606,5 +1642,21 @@ void ContainerGroupDeploy::SetInternalContainerList(const vector<GroupContainerI
 bool ContainerGroupDeploy::InternalContainerListHasBeenSet() const
 {
     return m_internalContainerListHasBeenSet;
+}
+
+vector<ServiceSetting> ContainerGroupDeploy::GetServiceSettingList() const
+{
+    return m_serviceSettingList;
+}
+
+void ContainerGroupDeploy::SetServiceSettingList(const vector<ServiceSetting>& _serviceSettingList)
+{
+    m_serviceSettingList = _serviceSettingList;
+    m_serviceSettingListHasBeenSet = true;
+}
+
+bool ContainerGroupDeploy::ServiceSettingListHasBeenSet() const
+{
+    return m_serviceSettingListHasBeenSet;
 }
 

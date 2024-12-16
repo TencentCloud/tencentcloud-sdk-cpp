@@ -164,6 +164,35 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
                      */
                     bool EncryptionHasBeenSet() const;
 
+                    /**
+                     * 获取自定义描述字段。
+- 用于描述调用业务信息，出参中将返回此描述字段。 
+- 每个自定义描述字段支持[1,10]个字符。
+                     * @return Extra 自定义描述字段。
+- 用于描述调用业务信息，出参中将返回此描述字段。 
+- 每个自定义描述字段支持[1,10]个字符。
+                     * 
+                     */
+                    std::string GetExtra() const;
+
+                    /**
+                     * 设置自定义描述字段。
+- 用于描述调用业务信息，出参中将返回此描述字段。 
+- 每个自定义描述字段支持[1,10]个字符。
+                     * @param _extra 自定义描述字段。
+- 用于描述调用业务信息，出参中将返回此描述字段。 
+- 每个自定义描述字段支持[1,10]个字符。
+                     * 
+                     */
+                    void SetExtra(const std::string& _extra);
+
+                    /**
+                     * 判断参数 Extra 是否已赋值
+                     * @return Extra 是否已赋值
+                     * 
+                     */
+                    bool ExtraHasBeenSet() const;
+
                 private:
 
                     /**
@@ -199,6 +228,14 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。
                      */
                     Encryption m_encryption;
                     bool m_encryptionHasBeenSet;
+
+                    /**
+                     * 自定义描述字段。
+- 用于描述调用业务信息，出参中将返回此描述字段。 
+- 每个自定义描述字段支持[1,10]个字符。
+                     */
+                    std::string m_extra;
+                    bool m_extraHasBeenSet;
 
                 };
             }

@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取维度
-                     * @return MetricDimensionValues 维度
+                     * 获取维度，并且 维度 key value 不能为空
+                     * @return MetricDimensionValues 维度，并且 维度 key value 不能为空
                      * 
                      */
                     std::vector<MetricDimensionValue> GetMetricDimensionValues() const;
 
                     /**
-                     * 设置维度
-                     * @param _metricDimensionValues 维度
+                     * 设置维度，并且 维度 key value 不能为空
+                     * @param _metricDimensionValues 维度，并且 维度 key value 不能为空
                      * 
                      */
                     void SetMetricDimensionValues(const std::vector<MetricDimensionValue>& _metricDimensionValues);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool MetricDimensionValuesHasBeenSet() const;
 
                     /**
-                     * 获取指标
-                     * @return Metrics 指标
+                     * 获取指标，并且 key, value 不能为空
+                     * @return Metrics 指标，并且 key, value 不能为空
                      * 
                      */
                     std::vector<Metric> GetMetrics() const;
 
                     /**
-                     * 设置指标
-                     * @param _metrics 指标
+                     * 设置指标，并且 key, value 不能为空
+                     * @param _metrics 指标，并且 key, value 不能为空
                      * 
                      */
                     void SetMetrics(const std::vector<Metric>& _metrics);
@@ -164,13 +164,13 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 维度
+                     * 维度，并且 维度 key value 不能为空
                      */
                     std::vector<MetricDimensionValue> m_metricDimensionValues;
                     bool m_metricDimensionValuesHasBeenSet;
 
                     /**
-                     * 指标
+                     * 指标，并且 key, value 不能为空
                      */
                     std::vector<Metric> m_metrics;
                     bool m_metricsHasBeenSet;

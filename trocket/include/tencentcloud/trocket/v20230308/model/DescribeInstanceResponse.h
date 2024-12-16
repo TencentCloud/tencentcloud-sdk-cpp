@@ -483,6 +483,20 @@ PLATINUM 铂金版
                      */
                     bool TopicNumUpperLimitHasBeenSet() const;
 
+                    /**
+                     * 获取可用区列表
+                     * @return ZoneIds 可用区列表
+                     * 
+                     */
+                    std::vector<int64_t> GetZoneIds() const;
+
+                    /**
+                     * 判断参数 ZoneIds 是否已赋值
+                     * @return ZoneIds 是否已赋值
+                     * 
+                     */
+                    bool ZoneIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -673,6 +687,12 @@ PLATINUM 铂金版
                      */
                     int64_t m_topicNumUpperLimit;
                     bool m_topicNumUpperLimitHasBeenSet;
+
+                    /**
+                     * 可用区列表
+                     */
+                    std::vector<int64_t> m_zoneIds;
+                    bool m_zoneIdsHasBeenSet;
 
                 };
             }

@@ -599,6 +599,49 @@ IotexplorerClient::CreateDeviceOutcomeCallable IotexplorerClient::CreateDeviceCa
     return task->get_future();
 }
 
+IotexplorerClient::CreateDeviceChannelOutcome IotexplorerClient::CreateDeviceChannel(const CreateDeviceChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDeviceChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDeviceChannelResponse rsp = CreateDeviceChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDeviceChannelOutcome(rsp);
+        else
+            return CreateDeviceChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDeviceChannelOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateDeviceChannelAsync(const CreateDeviceChannelRequest& request, const CreateDeviceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDeviceChannel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateDeviceChannelOutcomeCallable IotexplorerClient::CreateDeviceChannelCallable(const CreateDeviceChannelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDeviceChannelOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDeviceChannel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateExternalSourceAIServiceTaskOutcome IotexplorerClient::CreateExternalSourceAIServiceTask(const CreateExternalSourceAIServiceTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateExternalSourceAIServiceTask");
@@ -678,6 +721,49 @@ IotexplorerClient::CreateFenceBindOutcomeCallable IotexplorerClient::CreateFence
         [this, request]()
         {
             return this->CreateFenceBind(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::CreateFreeCloudStorageOutcome IotexplorerClient::CreateFreeCloudStorage(const CreateFreeCloudStorageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFreeCloudStorage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFreeCloudStorageResponse rsp = CreateFreeCloudStorageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFreeCloudStorageOutcome(rsp);
+        else
+            return CreateFreeCloudStorageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFreeCloudStorageOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateFreeCloudStorageAsync(const CreateFreeCloudStorageRequest& request, const CreateFreeCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFreeCloudStorage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateFreeCloudStorageOutcomeCallable IotexplorerClient::CreateFreeCloudStorageCallable(const CreateFreeCloudStorageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFreeCloudStorageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFreeCloudStorage(request);
         }
     );
 

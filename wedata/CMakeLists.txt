@@ -428,6 +428,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/ModifyMonitorStatusResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleTemplatesByPageResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTemplateDimCountResponse.h
+  include/tencentcloud/wedata/v20210820/model/DataSourceConnectStatus.h
   include/tencentcloud/wedata/v20210820/model/DescribeFunctionTypesRequest.h
   include/tencentcloud/wedata/v20210820/model/DimensionCount.h
   include/tencentcloud/wedata/v20210820/model/AttributeItemDTO.h
@@ -1174,6 +1175,7 @@ set(wedata_src
   src/v20210820/model/ModifyMonitorStatusResponse.cpp
   src/v20210820/model/DescribeRuleTemplatesByPageResponse.cpp
   src/v20210820/model/DescribeTemplateDimCountResponse.cpp
+  src/v20210820/model/DataSourceConnectStatus.cpp
   src/v20210820/model/DescribeFunctionTypesRequest.cpp
   src/v20210820/model/DimensionCount.cpp
   src/v20210820/model/AttributeItemDTO.cpp

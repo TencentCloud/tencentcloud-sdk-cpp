@@ -48,7 +48,8 @@ SubmitCertificateInformationRequest::SubmitCertificateInformationRequest() :
     m_contactLastNameHasBeenSet(false),
     m_contactEmailHasBeenSet(false),
     m_contactNumberHasBeenSet(false),
-    m_contactPositionHasBeenSet(false)
+    m_contactPositionHasBeenSet(false),
+    m_isDVHasBeenSet(false)
 {
 }
 
@@ -270,6 +271,14 @@ string SubmitCertificateInformationRequest::ToJsonString() const
         string key = "ContactPosition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_contactPosition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDVHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDV";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDV, allocator);
     }
 
 
@@ -694,6 +703,22 @@ void SubmitCertificateInformationRequest::SetContactPosition(const string& _cont
 bool SubmitCertificateInformationRequest::ContactPositionHasBeenSet() const
 {
     return m_contactPositionHasBeenSet;
+}
+
+bool SubmitCertificateInformationRequest::GetIsDV() const
+{
+    return m_isDV;
+}
+
+void SubmitCertificateInformationRequest::SetIsDV(const bool& _isDV)
+{
+    m_isDV = _isDV;
+    m_isDVHasBeenSet = true;
+}
+
+bool SubmitCertificateInformationRequest::IsDVHasBeenSet() const
+{
+    return m_isDVHasBeenSet;
 }
 
 

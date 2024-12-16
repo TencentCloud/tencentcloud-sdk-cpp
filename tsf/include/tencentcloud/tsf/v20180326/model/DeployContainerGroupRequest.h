@@ -137,21 +137,21 @@ namespace TencentCloud
                     /**
                      * 获取旧版镜像名，如/tsf/nginx
                      * @return Reponame 旧版镜像名，如/tsf/nginx
-                     * 
+                     * @deprecated
                      */
                     std::string GetReponame() const;
 
                     /**
                      * 设置旧版镜像名，如/tsf/nginx
                      * @param _reponame 旧版镜像名，如/tsf/nginx
-                     * 
+                     * @deprecated
                      */
                     void SetReponame(const std::string& _reponame);
 
                     /**
                      * 判断参数 Reponame 是否已赋值
                      * @return Reponame 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ReponameHasBeenSet() const;
 

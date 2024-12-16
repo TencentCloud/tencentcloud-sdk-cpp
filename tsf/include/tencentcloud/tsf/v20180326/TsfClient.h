@@ -1929,7 +1929,7 @@ namespace TencentCloud
                 DescribeContainerGroupAttributeOutcomeCallable DescribeContainerGroupAttributeCallable(const Model::DescribeContainerGroupAttributeRequest& request);
 
                 /**
-                 * 获取部署组详情
+                 *获取部署组详情
                  * @param req DescribeContainerGroupDeployInfoRequest
                  * @return DescribeContainerGroupDeployInfoOutcome
                  */
@@ -1938,7 +1938,7 @@ namespace TencentCloud
                 DescribeContainerGroupDeployInfoOutcomeCallable DescribeContainerGroupDeployInfoCallable(const Model::DescribeContainerGroupDeployInfoRequest& request);
 
                 /**
-                 * 容器部署组详情（已废弃，请使用  DescribeContainerGroupDeployInfo）
+                 *容器部署组详情（已废弃，请使用  DescribeContainerGroupDeployInfo）
                  * @param req DescribeContainerGroupDetailRequest
                  * @return DescribeContainerGroupDetailOutcome
                  */

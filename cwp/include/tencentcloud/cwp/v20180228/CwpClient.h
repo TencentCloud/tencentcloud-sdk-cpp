@@ -133,6 +133,8 @@
 #include <tencentcloud/cwp/v20180228/model/DeletePrivilegeRulesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteProtectDirRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteProtectDirResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DeleteRaspRulesRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DeleteRaspRulesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteReverseShellEventsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteReverseShellEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteReverseShellRulesRequest.h>
@@ -565,6 +567,12 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeRansomDefenseStrategyMachinesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRansomDefenseTrendRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRansomDefenseTrendResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspMaxCpuRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspMaxCpuResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspRuleVulsRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspRuleVulsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspRulesRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspRulesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRecommendedProtectCpuRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRecommendedProtectCpuResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellEventInfoRequest.h>
@@ -957,6 +965,10 @@
 #include <tencentcloud/cwp/v20180228/model/ModifyRansomDefenseEventsStatusResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyRansomDefenseStrategyStatusRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyRansomDefenseStrategyStatusResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyRaspMaxCpuRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyRaspMaxCpuResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyRaspRulesRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyRaspRulesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyReverseShellRulesAggregationRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyReverseShellRulesAggregationResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyRiskDnsPolicyRequest.h>
@@ -1230,6 +1242,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteProtectDirResponse> DeleteProtectDirOutcome;
                 typedef std::future<DeleteProtectDirOutcome> DeleteProtectDirOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DeleteProtectDirRequest&, DeleteProtectDirOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProtectDirAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRaspRulesResponse> DeleteRaspRulesOutcome;
+                typedef std::future<DeleteRaspRulesOutcome> DeleteRaspRulesOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DeleteRaspRulesRequest&, DeleteRaspRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRaspRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteReverseShellEventsResponse> DeleteReverseShellEventsOutcome;
                 typedef std::future<DeleteReverseShellEventsOutcome> DeleteReverseShellEventsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DeleteReverseShellEventsRequest&, DeleteReverseShellEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReverseShellEventsAsyncHandler;
@@ -1878,6 +1893,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRansomDefenseTrendResponse> DescribeRansomDefenseTrendOutcome;
                 typedef std::future<DescribeRansomDefenseTrendOutcome> DescribeRansomDefenseTrendOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeRansomDefenseTrendRequest&, DescribeRansomDefenseTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRansomDefenseTrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRaspMaxCpuResponse> DescribeRaspMaxCpuOutcome;
+                typedef std::future<DescribeRaspMaxCpuOutcome> DescribeRaspMaxCpuOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeRaspMaxCpuRequest&, DescribeRaspMaxCpuOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspMaxCpuAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRaspRuleVulsResponse> DescribeRaspRuleVulsOutcome;
+                typedef std::future<DescribeRaspRuleVulsOutcome> DescribeRaspRuleVulsOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeRaspRuleVulsRequest&, DescribeRaspRuleVulsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspRuleVulsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRaspRulesResponse> DescribeRaspRulesOutcome;
+                typedef std::future<DescribeRaspRulesOutcome> DescribeRaspRulesOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeRaspRulesRequest&, DescribeRaspRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecommendedProtectCpuResponse> DescribeRecommendedProtectCpuOutcome;
                 typedef std::future<DescribeRecommendedProtectCpuOutcome> DescribeRecommendedProtectCpuOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeRecommendedProtectCpuRequest&, DescribeRecommendedProtectCpuOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecommendedProtectCpuAsyncHandler;
@@ -2466,6 +2490,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRansomDefenseStrategyStatusResponse> ModifyRansomDefenseStrategyStatusOutcome;
                 typedef std::future<ModifyRansomDefenseStrategyStatusOutcome> ModifyRansomDefenseStrategyStatusOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyRansomDefenseStrategyStatusRequest&, ModifyRansomDefenseStrategyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRansomDefenseStrategyStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRaspMaxCpuResponse> ModifyRaspMaxCpuOutcome;
+                typedef std::future<ModifyRaspMaxCpuOutcome> ModifyRaspMaxCpuOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ModifyRaspMaxCpuRequest&, ModifyRaspMaxCpuOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRaspMaxCpuAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRaspRulesResponse> ModifyRaspRulesOutcome;
+                typedef std::future<ModifyRaspRulesOutcome> ModifyRaspRulesOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ModifyRaspRulesRequest&, ModifyRaspRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRaspRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyReverseShellRulesAggregationResponse> ModifyReverseShellRulesAggregationOutcome;
                 typedef std::future<ModifyReverseShellRulesAggregationOutcome> ModifyReverseShellRulesAggregationOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyReverseShellRulesAggregationRequest&, ModifyReverseShellRulesAggregationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReverseShellRulesAggregationAsyncHandler;
@@ -3107,6 +3137,15 @@ namespace TencentCloud
                 DeleteProtectDirOutcome DeleteProtectDir(const Model::DeleteProtectDirRequest &request);
                 void DeleteProtectDirAsync(const Model::DeleteProtectDirRequest& request, const DeleteProtectDirAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteProtectDirOutcomeCallable DeleteProtectDirCallable(const Model::DeleteProtectDirRequest& request);
+
+                /**
+                 *删除漏洞防御白名单
+                 * @param req DeleteRaspRulesRequest
+                 * @return DeleteRaspRulesOutcome
+                 */
+                DeleteRaspRulesOutcome DeleteRaspRules(const Model::DeleteRaspRulesRequest &request);
+                void DeleteRaspRulesAsync(const Model::DeleteRaspRulesRequest& request, const DeleteRaspRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRaspRulesOutcomeCallable DeleteRaspRulesCallable(const Model::DeleteRaspRulesRequest& request);
 
                 /**
                  *根据Ids删除反弹Shell事件
@@ -5063,6 +5102,33 @@ namespace TencentCloud
                 DescribeRansomDefenseTrendOutcomeCallable DescribeRansomDefenseTrendCallable(const Model::DescribeRansomDefenseTrendRequest& request);
 
                 /**
+                 *查看漏洞防御最大cpu限制
+                 * @param req DescribeRaspMaxCpuRequest
+                 * @return DescribeRaspMaxCpuOutcome
+                 */
+                DescribeRaspMaxCpuOutcome DescribeRaspMaxCpu(const Model::DescribeRaspMaxCpuRequest &request);
+                void DescribeRaspMaxCpuAsync(const Model::DescribeRaspMaxCpuRequest& request, const DescribeRaspMaxCpuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRaspMaxCpuOutcomeCallable DescribeRaspMaxCpuCallable(const Model::DescribeRaspMaxCpuRequest& request);
+
+                /**
+                 *获取漏洞防御白名单漏洞列表
+                 * @param req DescribeRaspRuleVulsRequest
+                 * @return DescribeRaspRuleVulsOutcome
+                 */
+                DescribeRaspRuleVulsOutcome DescribeRaspRuleVuls(const Model::DescribeRaspRuleVulsRequest &request);
+                void DescribeRaspRuleVulsAsync(const Model::DescribeRaspRuleVulsRequest& request, const DescribeRaspRuleVulsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRaspRuleVulsOutcomeCallable DescribeRaspRuleVulsCallable(const Model::DescribeRaspRuleVulsRequest& request);
+
+                /**
+                 *查询漏洞防御白名单
+                 * @param req DescribeRaspRulesRequest
+                 * @return DescribeRaspRulesOutcome
+                 */
+                DescribeRaspRulesOutcome DescribeRaspRules(const Model::DescribeRaspRulesRequest &request);
+                void DescribeRaspRulesAsync(const Model::DescribeRaspRulesRequest& request, const DescribeRaspRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRaspRulesOutcomeCallable DescribeRaspRulesCallable(const Model::DescribeRaspRulesRequest& request);
+
+                /**
                  *查询推荐购买防护核数
                  * @param req DescribeRecommendedProtectCpuRequest
                  * @return DescribeRecommendedProtectCpuOutcome
@@ -6827,6 +6893,24 @@ namespace TencentCloud
                 ModifyRansomDefenseStrategyStatusOutcome ModifyRansomDefenseStrategyStatus(const Model::ModifyRansomDefenseStrategyStatusRequest &request);
                 void ModifyRansomDefenseStrategyStatusAsync(const Model::ModifyRansomDefenseStrategyStatusRequest& request, const ModifyRansomDefenseStrategyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRansomDefenseStrategyStatusOutcomeCallable ModifyRansomDefenseStrategyStatusCallable(const Model::ModifyRansomDefenseStrategyStatusRequest& request);
+
+                /**
+                 *编辑漏洞防御最大cpu配置
+                 * @param req ModifyRaspMaxCpuRequest
+                 * @return ModifyRaspMaxCpuOutcome
+                 */
+                ModifyRaspMaxCpuOutcome ModifyRaspMaxCpu(const Model::ModifyRaspMaxCpuRequest &request);
+                void ModifyRaspMaxCpuAsync(const Model::ModifyRaspMaxCpuRequest& request, const ModifyRaspMaxCpuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRaspMaxCpuOutcomeCallable ModifyRaspMaxCpuCallable(const Model::ModifyRaspMaxCpuRequest& request);
+
+                /**
+                 *添加漏洞防御白名单
+                 * @param req ModifyRaspRulesRequest
+                 * @return ModifyRaspRulesOutcome
+                 */
+                ModifyRaspRulesOutcome ModifyRaspRules(const Model::ModifyRaspRulesRequest &request);
+                void ModifyRaspRulesAsync(const Model::ModifyRaspRulesRequest& request, const ModifyRaspRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRaspRulesOutcomeCallable ModifyRaspRulesCallable(const Model::ModifyRaspRulesRequest& request);
 
                 /**
                  *编辑反弹Shell规则（支持多服务器选择）

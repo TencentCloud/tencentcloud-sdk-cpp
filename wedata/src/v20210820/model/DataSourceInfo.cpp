@@ -54,7 +54,8 @@ DataSourceInfo::DataSourceInfo() :
     m_showTypeHasBeenSet(false),
     m_productIdHasBeenSet(false),
     m_developmentIdHasBeenSet(false),
-    m_developmentParamsHasBeenSet(false)
+    m_developmentParamsHasBeenSet(false),
+    m_connectStatusHasBeenSet(false)
 {
 }
 
@@ -403,6 +404,23 @@ CoreInternalOutcome DataSourceInfo::Deserialize(const rapidjson::Value &value)
         m_developmentParamsHasBeenSet = true;
     }
 
+    if (value.HasMember("ConnectStatus") && !value["ConnectStatus"].IsNull())
+    {
+        if (!value["ConnectStatus"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfo.ConnectStatus` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_connectStatus.Deserialize(value["ConnectStatus"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_connectStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -680,6 +698,15 @@ void DataSourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "DevelopmentParams";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_developmentParams.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_connectStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_connectStatus.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1227,5 +1254,21 @@ void DataSourceInfo::SetDevelopmentParams(const string& _developmentParams)
 bool DataSourceInfo::DevelopmentParamsHasBeenSet() const
 {
     return m_developmentParamsHasBeenSet;
+}
+
+DataSourceConnectStatus DataSourceInfo::GetConnectStatus() const
+{
+    return m_connectStatus;
+}
+
+void DataSourceInfo::SetConnectStatus(const DataSourceConnectStatus& _connectStatus)
+{
+    m_connectStatus = _connectStatus;
+    m_connectStatusHasBeenSet = true;
+}
+
+bool DataSourceInfo::ConnectStatusHasBeenSet() const
+{
+    return m_connectStatusHasBeenSet;
 }
 

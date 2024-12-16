@@ -32,6 +32,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DeviceActiveResult.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaFrequencyResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateFreeCloudStorageResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyPositionFenceResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceTaskRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageThumbnailListRequest.h
@@ -249,6 +250,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CamTag.h
   include/tencentcloud/iotexplorer/v20190423/model/WXDeviceInfo.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateDeviceChannelRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDevicePackagesResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubDeviceListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/SearchStudioProductResponse.h
@@ -335,12 +337,14 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/PublishBroadcastMessageResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeFenceBindListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/PositionSpaceInfo.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateDeviceChannelResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateTopicPolicyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DirectBindDeviceInFamilyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/Filter.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeBindedProductsRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateFreeCloudStorageRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageDateResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CloudStorageTimeInfo.h
@@ -386,6 +390,7 @@ set(iotexplorer_src
   src/v20190423/model/ControlDeviceDataRequest.cpp
   src/v20190423/model/DeviceActiveResult.cpp
   src/v20190423/model/DeleteLoRaFrequencyResponse.cpp
+  src/v20190423/model/CreateFreeCloudStorageResponse.cpp
   src/v20190423/model/ModifyPositionFenceResponse.cpp
   src/v20190423/model/DescribeCloudStorageAIServiceTaskRequest.cpp
   src/v20190423/model/DescribeCloudStorageThumbnailListRequest.cpp
@@ -603,6 +608,7 @@ set(iotexplorer_src
   src/v20190423/model/DescribeDeviceRequest.cpp
   src/v20190423/model/CamTag.cpp
   src/v20190423/model/WXDeviceInfo.cpp
+  src/v20190423/model/CreateDeviceChannelRequest.cpp
   src/v20190423/model/DescribeDevicePackagesResponse.cpp
   src/v20190423/model/DescribeGatewaySubDeviceListResponse.cpp
   src/v20190423/model/SearchStudioProductResponse.cpp
@@ -689,12 +695,14 @@ set(iotexplorer_src
   src/v20190423/model/PublishBroadcastMessageResponse.cpp
   src/v20190423/model/DescribeFenceBindListRequest.cpp
   src/v20190423/model/PositionSpaceInfo.cpp
+  src/v20190423/model/CreateDeviceChannelResponse.cpp
   src/v20190423/model/CreateTopicRuleRequest.cpp
   src/v20190423/model/CreateTopicPolicyRequest.cpp
   src/v20190423/model/DirectBindDeviceInFamilyRequest.cpp
   src/v20190423/model/DescribeCloudStorageEventsResponse.cpp
   src/v20190423/model/Filter.cpp
   src/v20190423/model/DescribeBindedProductsRequest.cpp
+  src/v20190423/model/CreateFreeCloudStorageRequest.cpp
   src/v20190423/model/DescribeLoRaFrequencyResponse.cpp
   src/v20190423/model/DescribeCloudStorageDateResponse.cpp
   src/v20190423/model/CloudStorageTimeInfo.cpp
