@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
-                     * @return Port 目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
+                     * 获取目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。仅支持6081。
+                     * @return Port 目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。仅支持6081。
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
-                     * @param _port 目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
+                     * 设置目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。仅支持6081。
+                     * @param _port 目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。仅支持6081。
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -131,10 +131,10 @@ namespace TencentCloud
                     /**
                      * 获取网关负载均衡目标组协议。
 - TENCENT_GENEVE ：GENEVE 标准协议
-- AWS_GENEVE：GENEVE 兼容协议（需要提交工单申请开白）
+- AWS_GENEVE：GENEVE 兼容协议
                      * @return Protocol 网关负载均衡目标组协议。
 - TENCENT_GENEVE ：GENEVE 标准协议
-- AWS_GENEVE：GENEVE 兼容协议（需要提交工单申请开白）
+- AWS_GENEVE：GENEVE 兼容协议
                      * 
                      */
                     std::string GetProtocol() const;
@@ -142,10 +142,10 @@ namespace TencentCloud
                     /**
                      * 设置网关负载均衡目标组协议。
 - TENCENT_GENEVE ：GENEVE 标准协议
-- AWS_GENEVE：GENEVE 兼容协议（需要提交工单申请开白）
+- AWS_GENEVE：GENEVE 兼容协议
                      * @param _protocol 网关负载均衡目标组协议。
 - TENCENT_GENEVE ：GENEVE 标准协议
-- AWS_GENEVE：GENEVE 兼容协议（需要提交工单申请开白）
+- AWS_GENEVE：GENEVE 兼容协议
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -239,7 +239,7 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
+                     * 目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。仅支持6081。
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
@@ -253,7 +253,7 @@ namespace TencentCloud
                     /**
                      * 网关负载均衡目标组协议。
 - TENCENT_GENEVE ：GENEVE 标准协议
-- AWS_GENEVE：GENEVE 兼容协议（需要提交工单申请开白）
+- AWS_GENEVE：GENEVE 兼容协议
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

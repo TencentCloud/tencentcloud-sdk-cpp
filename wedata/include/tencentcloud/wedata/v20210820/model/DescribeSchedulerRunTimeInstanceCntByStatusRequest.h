@@ -252,6 +252,27 @@ namespace TencentCloud
                      */
                     bool SortTypeHasBeenSet() const;
 
+                    /**
+                     * 获取项目ID列表，如果传了 ProjectIds，则 ProjectId 不会生效，用于多项目筛选
+                     * @return ProjectIds 项目ID列表，如果传了 ProjectIds，则 ProjectId 不会生效，用于多项目筛选
+                     * 
+                     */
+                    std::vector<std::string> GetProjectIds() const;
+
+                    /**
+                     * 设置项目ID列表，如果传了 ProjectIds，则 ProjectId 不会生效，用于多项目筛选
+                     * @param _projectIds 项目ID列表，如果传了 ProjectIds，则 ProjectId 不会生效，用于多项目筛选
+                     * 
+                     */
+                    void SetProjectIds(const std::vector<std::string>& _projectIds);
+
+                    /**
+                     * 判断参数 ProjectIds 是否已赋值
+                     * @return ProjectIds 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +334,12 @@ namespace TencentCloud
                      */
                     std::string m_sortType;
                     bool m_sortTypeHasBeenSet;
+
+                    /**
+                     * 项目ID列表，如果传了 ProjectIds，则 ProjectId 不会生效，用于多项目筛选
+                     */
+                    std::vector<std::string> m_projectIds;
+                    bool m_projectIdsHasBeenSet;
 
                 };
             }

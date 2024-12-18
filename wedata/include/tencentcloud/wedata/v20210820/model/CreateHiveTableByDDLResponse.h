@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取表名称
-                     * @return Data 表名称
+                     * 获取返回表名称，无论是否异步都有值
+                     * @return Data 返回表名称，无论是否异步都有值
                      * 
                      */
                     std::string GetData() const;
@@ -57,13 +57,33 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取异步任务轮询 id，只有异步才有值
+                     * @return TaskId 异步任务轮询 id，只有异步才有值
+                     * 
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 表名称
+                     * 返回表名称，无论是否异步都有值
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 异步任务轮询 id，只有异步才有值
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取后端服务的转发权重，取值范围：[0, 100]，默认为 10。
-                     * @return Weight 后端服务的转发权重，取值范围：[0, 100]，默认为 10。
+                     * 获取后端服务的转发权重，取值为0或16
+                     * @return Weight 后端服务的转发权重，取值为0或16
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
-                     * 设置后端服务的转发权重，取值范围：[0, 100]，默认为 10。
-                     * @param _weight 后端服务的转发权重，取值范围：[0, 100]，默认为 10。
+                     * 设置后端服务的转发权重，取值为0或16
+                     * @param _weight 后端服务的转发权重，取值为0或16
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -328,7 +328,7 @@ namespace TencentCloud
                     bool m_portHasBeenSet;
 
                     /**
-                     * 后端服务的转发权重，取值范围：[0, 100]，默认为 10。
+                     * 后端服务的转发权重，取值为0或16
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;

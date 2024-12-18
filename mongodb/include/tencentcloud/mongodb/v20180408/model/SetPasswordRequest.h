@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
-                     * @return InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 获取实例ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同
+                     * @return InstanceId 实例ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
-                     * @param _instanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 设置实例ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同
+                     * @param _instanceId 实例ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取实例新密码，至少包含字母、数字和字符（!@#%^*()）中的两种，长度为8-16个字符
-                     * @return Password 实例新密码，至少包含字母、数字和字符（!@#%^*()）中的两种，长度为8-16个字符
+                     * 获取指定账户的新密码， 密码格式为8-32个字符长度，至少包含字母、数字和字符（!@#%^*()_）中的两种
+                     * @return Password 指定账户的新密码， 密码格式为8-32个字符长度，至少包含字母、数字和字符（!@#%^*()_）中的两种
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置实例新密码，至少包含字母、数字和字符（!@#%^*()）中的两种，长度为8-16个字符
-                     * @param _password 实例新密码，至少包含字母、数字和字符（!@#%^*()）中的两种，长度为8-16个字符
+                     * 设置指定账户的新密码， 密码格式为8-32个字符长度，至少包含字母、数字和字符（!@#%^*()_）中的两种
+                     * @param _password 指定账户的新密码， 密码格式为8-32个字符长度，至少包含字母、数字和字符（!@#%^*()_）中的两种
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 实例ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 实例新密码，至少包含字母、数字和字符（!@#%^*()）中的两种，长度为8-16个字符
+                     * 指定账户的新密码， 密码格式为8-32个字符长度，至少包含字母、数字和字符（!@#%^*()_）中的两种
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;

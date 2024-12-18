@@ -27,7 +27,8 @@ DescribeDsParentFolderTreeRequest::DescribeDsParentFolderTreeRequest() :
     m_folderIdHasBeenSet(false),
     m_workflowIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
-    m_displayTypeHasBeenSet(false)
+    m_displayTypeHasBeenSet(false),
+    m_newFolderTreeModeHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeDsParentFolderTreeRequest::ToJsonString() const
         string key = "DisplayType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_displayType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newFolderTreeModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewFolderTreeMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_newFolderTreeMode, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeDsParentFolderTreeRequest::SetDisplayType(const string& _displayTyp
 bool DescribeDsParentFolderTreeRequest::DisplayTypeHasBeenSet() const
 {
     return m_displayTypeHasBeenSet;
+}
+
+bool DescribeDsParentFolderTreeRequest::GetNewFolderTreeMode() const
+{
+    return m_newFolderTreeMode;
+}
+
+void DescribeDsParentFolderTreeRequest::SetNewFolderTreeMode(const bool& _newFolderTreeMode)
+{
+    m_newFolderTreeMode = _newFolderTreeMode;
+    m_newFolderTreeModeHasBeenSet = true;
+}
+
+bool DescribeDsParentFolderTreeRequest::NewFolderTreeModeHasBeenSet() const
+{
+    return m_newFolderTreeModeHasBeenSet;
 }
 
 

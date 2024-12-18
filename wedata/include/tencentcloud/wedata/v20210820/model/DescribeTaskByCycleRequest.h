@@ -105,6 +105,69 @@ namespace TencentCloud
                      */
                     bool WorkflowIdHasBeenSet() const;
 
+                    /**
+                     * 获取项目ID列表筛选
+                     * @return ProjectIds 项目ID列表筛选
+                     * 
+                     */
+                    std::vector<std::string> GetProjectIds() const;
+
+                    /**
+                     * 设置项目ID列表筛选
+                     * @param _projectIds 项目ID列表筛选
+                     * 
+                     */
+                    void SetProjectIds(const std::vector<std::string>& _projectIds);
+
+                    /**
+                     * 判断参数 ProjectIds 是否已赋值
+                     * @return ProjectIds 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdsHasBeenSet() const;
+
+                    /**
+                     * 获取资源组ID列表筛选
+                     * @return ResourceGroupIds 资源组ID列表筛选
+                     * 
+                     */
+                    std::vector<std::string> GetResourceGroupIds() const;
+
+                    /**
+                     * 设置资源组ID列表筛选
+                     * @param _resourceGroupIds 资源组ID列表筛选
+                     * 
+                     */
+                    void SetResourceGroupIds(const std::vector<std::string>& _resourceGroupIds);
+
+                    /**
+                     * 判断参数 ResourceGroupIds 是否已赋值
+                     * @return ResourceGroupIds 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupIdsHasBeenSet() const;
+
+                    /**
+                     * 获取任务类型ID筛选
+                     * @return TaskTypeIdList 任务类型ID筛选
+                     * 
+                     */
+                    std::vector<std::string> GetTaskTypeIdList() const;
+
+                    /**
+                     * 设置任务类型ID筛选
+                     * @param _taskTypeIdList 任务类型ID筛选
+                     * 
+                     */
+                    void SetTaskTypeIdList(const std::vector<std::string>& _taskTypeIdList);
+
+                    /**
+                     * 判断参数 TaskTypeIdList 是否已赋值
+                     * @return TaskTypeIdList 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +187,24 @@ namespace TencentCloud
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
+
+                    /**
+                     * 项目ID列表筛选
+                     */
+                    std::vector<std::string> m_projectIds;
+                    bool m_projectIdsHasBeenSet;
+
+                    /**
+                     * 资源组ID列表筛选
+                     */
+                    std::vector<std::string> m_resourceGroupIds;
+                    bool m_resourceGroupIdsHasBeenSet;
+
+                    /**
+                     * 任务类型ID筛选
+                     */
+                    std::vector<std::string> m_taskTypeIdList;
+                    bool m_taskTypeIdListHasBeenSet;
 
                 };
             }

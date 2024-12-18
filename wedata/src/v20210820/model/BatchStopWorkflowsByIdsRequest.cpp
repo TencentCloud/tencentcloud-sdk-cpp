@@ -25,7 +25,8 @@ using namespace std;
 BatchStopWorkflowsByIdsRequest::BatchStopWorkflowsByIdsRequest() :
     m_workflowIdsHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_killInstanceHasBeenSet(false)
+    m_killInstanceHasBeenSet(false),
+    m_asyncModeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string BatchStopWorkflowsByIdsRequest::ToJsonString() const
         string key = "KillInstance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_killInstance, allocator);
+    }
+
+    if (m_asyncModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asyncMode, allocator);
     }
 
 
@@ -119,6 +128,22 @@ void BatchStopWorkflowsByIdsRequest::SetKillInstance(const bool& _killInstance)
 bool BatchStopWorkflowsByIdsRequest::KillInstanceHasBeenSet() const
 {
     return m_killInstanceHasBeenSet;
+}
+
+bool BatchStopWorkflowsByIdsRequest::GetAsyncMode() const
+{
+    return m_asyncMode;
+}
+
+void BatchStopWorkflowsByIdsRequest::SetAsyncMode(const bool& _asyncMode)
+{
+    m_asyncMode = _asyncMode;
+    m_asyncModeHasBeenSet = true;
+}
+
+bool BatchStopWorkflowsByIdsRequest::AsyncModeHasBeenSet() const
+{
+    return m_asyncModeHasBeenSet;
 }
 
 

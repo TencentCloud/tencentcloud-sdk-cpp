@@ -48,18 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取输入源Index。
-范围[1, 20]
+范围[1, 24]
                      * @return InputIndex 输入源Index。
-范围[1, 20]
+范围[1, 24]
                      * 
                      */
                     int64_t GetInputIndex() const;
 
                     /**
                      * 设置输入源Index。
-范围[1, 20]
+范围[1, 24]
                      * @param _inputIndex 输入源Index。
-范围[1, 20]
+范围[1, 24]
                      * 
                      */
                     void SetInputIndex(const int64_t& _inputIndex);
@@ -355,7 +355,7 @@ namespace TencentCloud
 
                     /**
                      * 输入源Index。
-范围[1, 20]
+范围[1, 24]
                      */
                     int64_t m_inputIndex;
                     bool m_inputIndexHasBeenSet;

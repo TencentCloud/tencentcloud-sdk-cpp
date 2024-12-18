@@ -231,6 +231,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/TaskLogRequest.h
   include/tencentcloud/wedata/v20210820/model/OpsTaskLinkInfoDto.h
   include/tencentcloud/wedata/v20210820/model/ScriptInfoResponse.h
+  include/tencentcloud/wedata/v20210820/model/TaskImportInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsTaskStatusRequest.h
   include/tencentcloud/wedata/v20210820/model/GetFileInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/BaseUser.h
@@ -978,6 +979,7 @@ set(wedata_src
   src/v20210820/model/TaskLogRequest.cpp
   src/v20210820/model/OpsTaskLinkInfoDto.cpp
   src/v20210820/model/ScriptInfoResponse.cpp
+  src/v20210820/model/TaskImportInfo.cpp
   src/v20210820/model/DescribeIntegrationStatisticsTaskStatusRequest.cpp
   src/v20210820/model/GetFileInfoResponse.cpp
   src/v20210820/model/BaseUser.cpp

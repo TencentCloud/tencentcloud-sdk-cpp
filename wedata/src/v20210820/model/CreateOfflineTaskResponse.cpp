@@ -25,6 +25,7 @@ using namespace std;
 
 CreateOfflineTaskResponse::CreateOfflineTaskResponse() :
     m_taskIdHasBeenSet(false),
+    m_arrangeSpaceTaskIdHasBeenSet(false),
     m_dataHasBeenSet(false)
 {
 }
@@ -73,6 +74,16 @@ CoreInternalOutcome CreateOfflineTaskResponse::Deserialize(const string &payload
         m_taskIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ArrangeSpaceTaskId") && !rsp["ArrangeSpaceTaskId"].IsNull())
+    {
+        if (!rsp["ArrangeSpaceTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ArrangeSpaceTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_arrangeSpaceTaskId = string(rsp["ArrangeSpaceTaskId"].GetString());
+        m_arrangeSpaceTaskIdHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
         if (!rsp["Data"].IsString())
@@ -99,6 +110,14 @@ string CreateOfflineTaskResponse::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_arrangeSpaceTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArrangeSpaceTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_arrangeSpaceTaskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataHasBeenSet)
@@ -129,6 +148,16 @@ string CreateOfflineTaskResponse::GetTaskId() const
 bool CreateOfflineTaskResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string CreateOfflineTaskResponse::GetArrangeSpaceTaskId() const
+{
+    return m_arrangeSpaceTaskId;
+}
+
+bool CreateOfflineTaskResponse::ArrangeSpaceTaskIdHasBeenSet() const
+{
+    return m_arrangeSpaceTaskIdHasBeenSet;
 }
 
 string CreateOfflineTaskResponse::GetData() const

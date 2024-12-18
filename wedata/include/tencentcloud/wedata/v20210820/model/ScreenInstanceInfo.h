@@ -271,6 +271,27 @@ namespace TencentCloud
                      */
                     bool FailedNumHasBeenSet() const;
 
+                    /**
+                     * 获取跳过运行总数
+                     * @return SkipRunningNum 跳过运行总数
+                     * 
+                     */
+                    int64_t GetSkipRunningNum() const;
+
+                    /**
+                     * 设置跳过运行总数
+                     * @param _skipRunningNum 跳过运行总数
+                     * 
+                     */
+                    void SetSkipRunningNum(const int64_t& _skipRunningNum);
+
+                    /**
+                     * 判断参数 SkipRunningNum 是否已赋值
+                     * @return SkipRunningNum 是否已赋值
+                     * 
+                     */
+                    bool SkipRunningNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +356,12 @@ namespace TencentCloud
                      */
                     uint64_t m_failedNum;
                     bool m_failedNumHasBeenSet;
+
+                    /**
+                     * 跳过运行总数
+                     */
+                    int64_t m_skipRunningNum;
+                    bool m_skipRunningNumHasBeenSet;
 
                 };
             }

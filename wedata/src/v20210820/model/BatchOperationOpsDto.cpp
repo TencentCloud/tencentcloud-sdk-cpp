@@ -23,7 +23,8 @@ using namespace std;
 BatchOperationOpsDto::BatchOperationOpsDto() :
     m_successCountHasBeenSet(false),
     m_failedCountHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_asyncActionIdHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome BatchOperationOpsDto::Deserialize(const rapidjson::Value &va
         m_totalCountHasBeenSet = true;
     }
 
+    if (value.HasMember("AsyncActionId") && !value["AsyncActionId"].IsNull())
+    {
+        if (!value["AsyncActionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BatchOperationOpsDto.AsyncActionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_asyncActionId = string(value["AsyncActionId"].GetString());
+        m_asyncActionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void BatchOperationOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_asyncActionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncActionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_asyncActionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void BatchOperationOpsDto::SetTotalCount(const int64_t& _totalCount)
 bool BatchOperationOpsDto::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+string BatchOperationOpsDto::GetAsyncActionId() const
+{
+    return m_asyncActionId;
+}
+
+void BatchOperationOpsDto::SetAsyncActionId(const string& _asyncActionId)
+{
+    m_asyncActionId = _asyncActionId;
+    m_asyncActionIdHasBeenSet = true;
+}
+
+bool BatchOperationOpsDto::AsyncActionIdHasBeenSet() const
+{
+    return m_asyncActionIdHasBeenSet;
 }
 

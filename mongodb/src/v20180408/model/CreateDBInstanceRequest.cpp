@@ -35,7 +35,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_projectIdHasBeenSet(false),
     m_securityGroupHasBeenSet(false),
     m_uniqVpcIdHasBeenSet(false),
-    m_uniqSubnetIdHasBeenSet(false)
+    m_uniqSubnetIdHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,14 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "UniqSubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_uniqSubnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -369,6 +378,22 @@ void CreateDBInstanceRequest::SetUniqSubnetId(const string& _uniqSubnetId)
 bool CreateDBInstanceRequest::UniqSubnetIdHasBeenSet() const
 {
     return m_uniqSubnetIdHasBeenSet;
+}
+
+string CreateDBInstanceRequest::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void CreateDBInstanceRequest::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 
 

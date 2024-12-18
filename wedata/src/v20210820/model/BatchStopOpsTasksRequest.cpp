@@ -25,7 +25,8 @@ using namespace std;
 BatchStopOpsTasksRequest::BatchStopOpsTasksRequest() :
     m_taskIdListHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_killInstanceHasBeenSet(false)
+    m_killInstanceHasBeenSet(false),
+    m_asyncModeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string BatchStopOpsTasksRequest::ToJsonString() const
         string key = "KillInstance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_killInstance, allocator);
+    }
+
+    if (m_asyncModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asyncMode, allocator);
     }
 
 
@@ -119,6 +128,22 @@ void BatchStopOpsTasksRequest::SetKillInstance(const bool& _killInstance)
 bool BatchStopOpsTasksRequest::KillInstanceHasBeenSet() const
 {
     return m_killInstanceHasBeenSet;
+}
+
+bool BatchStopOpsTasksRequest::GetAsyncMode() const
+{
+    return m_asyncMode;
+}
+
+void BatchStopOpsTasksRequest::SetAsyncMode(const bool& _asyncMode)
+{
+    m_asyncMode = _asyncMode;
+    m_asyncModeHasBeenSet = true;
+}
+
+bool BatchStopOpsTasksRequest::AsyncModeHasBeenSet() const
+{
+    return m_asyncModeHasBeenSet;
 }
 
 

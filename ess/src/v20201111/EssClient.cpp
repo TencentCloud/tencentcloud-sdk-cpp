@@ -3308,6 +3308,49 @@ EssClient::DescribeOrganizationSealsOutcomeCallable EssClient::DescribeOrganizat
     return task->get_future();
 }
 
+EssClient::DescribeOrganizationVerifyStatusOutcome EssClient::DescribeOrganizationVerifyStatus(const DescribeOrganizationVerifyStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrganizationVerifyStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrganizationVerifyStatusResponse rsp = DescribeOrganizationVerifyStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrganizationVerifyStatusOutcome(rsp);
+        else
+            return DescribeOrganizationVerifyStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrganizationVerifyStatusOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeOrganizationVerifyStatusAsync(const DescribeOrganizationVerifyStatusRequest& request, const DescribeOrganizationVerifyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrganizationVerifyStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeOrganizationVerifyStatusOutcomeCallable EssClient::DescribeOrganizationVerifyStatusCallable(const DescribeOrganizationVerifyStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrganizationVerifyStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrganizationVerifyStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DescribePersonCertificateOutcome EssClient::DescribePersonCertificate(const DescribePersonCertificateRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePersonCertificate");

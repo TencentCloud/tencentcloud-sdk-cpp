@@ -27,6 +27,7 @@ ScreenTaskInfo::ScreenTaskInfo() :
     m_stoppingNumHasBeenSet(false),
     m_stoppedNumHasBeenSet(false),
     m_frozenNumHasBeenSet(false),
+    m_invalidNumHasBeenSet(false),
     m_yearNumHasBeenSet(false),
     m_monthNumHasBeenSet(false),
     m_weekNumHasBeenSet(false),
@@ -99,6 +100,16 @@ CoreInternalOutcome ScreenTaskInfo::Deserialize(const rapidjson::Value &value)
         }
         m_frozenNum = value["FrozenNum"].GetUint64();
         m_frozenNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("InvalidNum") && !value["InvalidNum"].IsNull())
+    {
+        if (!value["InvalidNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScreenTaskInfo.InvalidNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalidNum = value["InvalidNum"].GetUint64();
+        m_invalidNumHasBeenSet = true;
     }
 
     if (value.HasMember("YearNum") && !value["YearNum"].IsNull())
@@ -214,6 +225,14 @@ void ScreenTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "FrozenNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_frozenNum, allocator);
+    }
+
+    if (m_invalidNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvalidNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_invalidNum, allocator);
     }
 
     if (m_yearNumHasBeenSet)
@@ -361,6 +380,22 @@ void ScreenTaskInfo::SetFrozenNum(const uint64_t& _frozenNum)
 bool ScreenTaskInfo::FrozenNumHasBeenSet() const
 {
     return m_frozenNumHasBeenSet;
+}
+
+uint64_t ScreenTaskInfo::GetInvalidNum() const
+{
+    return m_invalidNum;
+}
+
+void ScreenTaskInfo::SetInvalidNum(const uint64_t& _invalidNum)
+{
+    m_invalidNum = _invalidNum;
+    m_invalidNumHasBeenSet = true;
+}
+
+bool ScreenTaskInfo::InvalidNumHasBeenSet() const
+{
+    return m_invalidNumHasBeenSet;
 }
 
 uint64_t ScreenTaskInfo::GetYearNum() const

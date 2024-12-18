@@ -40,7 +40,8 @@ KillScheduleInstancesRequest::KillScheduleInstancesRequest() :
     m_pageSizeHasBeenSet(false),
     m_countHasBeenSet(false),
     m_requestBaseInfoHasBeenSet(false),
-    m_isCountHasBeenSet(false)
+    m_isCountHasBeenSet(false),
+    m_asyncModeHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,14 @@ string KillScheduleInstancesRequest::ToJsonString() const
         string key = "IsCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isCount, allocator);
+    }
+
+    if (m_asyncModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asyncMode, allocator);
     }
 
 
@@ -498,6 +507,22 @@ void KillScheduleInstancesRequest::SetIsCount(const bool& _isCount)
 bool KillScheduleInstancesRequest::IsCountHasBeenSet() const
 {
     return m_isCountHasBeenSet;
+}
+
+bool KillScheduleInstancesRequest::GetAsyncMode() const
+{
+    return m_asyncMode;
+}
+
+void KillScheduleInstancesRequest::SetAsyncMode(const bool& _asyncMode)
+{
+    m_asyncMode = _asyncMode;
+    m_asyncModeHasBeenSet = true;
+}
+
+bool KillScheduleInstancesRequest::AsyncModeHasBeenSet() const
+{
+    return m_asyncModeHasBeenSet;
 }
 
 

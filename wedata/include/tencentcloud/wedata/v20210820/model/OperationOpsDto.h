@@ -146,6 +146,27 @@ namespace TencentCloud
                      */
                     bool ErrorDescHasBeenSet() const;
 
+                    /**
+                     * 获取异步操作记录id
+                     * @return AsyncActionId 异步操作记录id
+                     * 
+                     */
+                    std::string GetAsyncActionId() const;
+
+                    /**
+                     * 设置异步操作记录id
+                     * @param _asyncActionId 异步操作记录id
+                     * 
+                     */
+                    void SetAsyncActionId(const std::string& _asyncActionId);
+
+                    /**
+                     * 判断参数 AsyncActionId 是否已赋值
+                     * @return AsyncActionId 是否已赋值
+                     * 
+                     */
+                    bool AsyncActionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +196,12 @@ namespace TencentCloud
                      */
                     std::string m_errorDesc;
                     bool m_errorDescHasBeenSet;
+
+                    /**
+                     * 异步操作记录id
+                     */
+                    std::string m_asyncActionId;
+                    bool m_asyncActionIdHasBeenSet;
 
                 };
             }

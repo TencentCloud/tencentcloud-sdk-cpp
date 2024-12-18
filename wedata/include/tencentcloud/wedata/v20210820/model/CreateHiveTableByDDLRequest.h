@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool SchemaNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否异步建表
+                     * @return Async 是否异步建表
+                     * 
+                     */
+                    bool GetAsync() const;
+
+                    /**
+                     * 设置是否异步建表
+                     * @param _async 是否异步建表
+                     * 
+                     */
+                    void SetAsync(const bool& _async);
+
+                    /**
+                     * 判断参数 Async 是否已赋值
+                     * @return Async 是否已赋值
+                     * 
+                     */
+                    bool AsyncHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
+
+                    /**
+                     * 是否异步建表
+                     */
+                    bool m_async;
+                    bool m_asyncHasBeenSet;
 
                 };
             }

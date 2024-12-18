@@ -287,7 +287,6 @@ namespace TencentCloud
 
                 /**
                  *本接口(AssignProject)用于指定云数据库实例的所属项目。
-
                  * @param req AssignProjectRequest
                  * @return AssignProjectOutcome
                  */
@@ -369,7 +368,7 @@ namespace TencentCloud
                 DescribeAccountUsersOutcomeCallable DescribeAccountUsersCallable(const Model::DescribeAccountUsersRequest& request);
 
                 /**
-                 *查询异步任务状态接口
+                 *本接口（DescribeAsyncRequestInfo）用于查询异步任务状态接口。
                  * @param req DescribeAsyncRequestInfoRequest
                  * @return DescribeAsyncRequestInfoOutcome
                  */
@@ -405,7 +404,7 @@ namespace TencentCloud
                 DescribeClientConnectionsOutcomeCallable DescribeClientConnectionsCallable(const Model::DescribeClientConnectionsRequest& request);
 
                 /**
-                 *本接口(DescribeCurrentOp)用于查询MongoDB云数据库实例的当前正在执行的操作。
+                 *本接口（DescribeCurrentOp）用于查询云数据库实例的当前正在执行的操作。
                  * @param req DescribeCurrentOpRequest
                  * @return DescribeCurrentOpOutcome
                  */

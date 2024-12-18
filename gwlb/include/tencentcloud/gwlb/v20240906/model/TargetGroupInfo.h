@@ -204,18 +204,26 @@ namespace TencentCloud
                     bool AssociatedRuleHasBeenSet() const;
 
                     /**
-                     * 获取后端协议类型。
+                     * 获取网关负载均衡目标组协议。
+- tencent_geneve ：GENEVE 标准协议
+- aws_geneve：GENEVE 兼容协议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Protocol 后端协议类型。
+                     * @return Protocol 网关负载均衡目标组协议。
+- tencent_geneve ：GENEVE 标准协议
+- aws_geneve：GENEVE 兼容协议
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置后端协议类型。
+                     * 设置网关负载均衡目标组协议。
+- tencent_geneve ：GENEVE 标准协议
+- aws_geneve：GENEVE 兼容协议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _protocol 后端协议类型。
+                     * @param _protocol 网关负载均衡目标组协议。
+- tencent_geneve ：GENEVE 标准协议
+- aws_geneve：GENEVE 兼容协议
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -229,22 +237,22 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取调度算法。
-ip_hash_3：弹性哈希
+                     * 获取均衡算法。
+- ip_hash_3_elastic：弹性哈希
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScheduleAlgorithm 调度算法。
-ip_hash_3：弹性哈希
+                     * @return ScheduleAlgorithm 均衡算法。
+- ip_hash_3_elastic：弹性哈希
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScheduleAlgorithm() const;
 
                     /**
-                     * 设置调度算法。
-ip_hash_3：弹性哈希
+                     * 设置均衡算法。
+- ip_hash_3_elastic：弹性哈希
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scheduleAlgorithm 调度算法。
-ip_hash_3：弹性哈希
+                     * @param _scheduleAlgorithm 均衡算法。
+- ip_hash_3_elastic：弹性哈希
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -404,15 +412,17 @@ ip_hash_3：弹性哈希
                     bool m_associatedRuleHasBeenSet;
 
                     /**
-                     * 后端协议类型。
+                     * 网关负载均衡目标组协议。
+- tencent_geneve ：GENEVE 标准协议
+- aws_geneve：GENEVE 兼容协议
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 调度算法。
-ip_hash_3：弹性哈希
+                     * 均衡算法。
+- ip_hash_3_elastic：弹性哈希
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scheduleAlgorithm;

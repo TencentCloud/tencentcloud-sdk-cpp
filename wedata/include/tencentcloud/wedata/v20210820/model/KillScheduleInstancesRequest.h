@@ -423,6 +423,27 @@ namespace TencentCloud
                      */
                     bool IsCountHasBeenSet() const;
 
+                    /**
+                     * 获取是否异步模式
+                     * @return AsyncMode 是否异步模式
+                     * 
+                     */
+                    bool GetAsyncMode() const;
+
+                    /**
+                     * 设置是否异步模式
+                     * @param _asyncMode 是否异步模式
+                     * 
+                     */
+                    void SetAsyncMode(const bool& _asyncMode);
+
+                    /**
+                     * 判断参数 AsyncMode 是否已赋值
+                     * @return AsyncMode 是否已赋值
+                     * 
+                     */
+                    bool AsyncModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -532,6 +553,12 @@ namespace TencentCloud
                      */
                     bool m_isCount;
                     bool m_isCountHasBeenSet;
+
+                    /**
+                     * 是否异步模式
+                     */
+                    bool m_asyncMode;
+                    bool m_asyncModeHasBeenSet;
 
                 };
             }

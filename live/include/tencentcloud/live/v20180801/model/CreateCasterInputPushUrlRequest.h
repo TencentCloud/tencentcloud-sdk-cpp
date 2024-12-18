@@ -65,18 +65,18 @@ namespace TencentCloud
 
                     /**
                      * 获取请求生成推流地址的输入Index。
-允许范围[1,20]。
+允许范围[1,24]。
                      * @return InputIndex 请求生成推流地址的输入Index。
-允许范围[1,20]。
+允许范围[1,24]。
                      * 
                      */
                     uint64_t GetInputIndex() const;
 
                     /**
                      * 设置请求生成推流地址的输入Index。
-允许范围[1,20]。
+允许范围[1,24]。
                      * @param _inputIndex 请求生成推流地址的输入Index。
-允许范围[1,20]。
+允许范围[1,24]。
                      * 
                      */
                     void SetInputIndex(const uint64_t& _inputIndex);
@@ -127,7 +127,7 @@ namespace TencentCloud
 
                     /**
                      * 请求生成推流地址的输入Index。
-允许范围[1,20]。
+允许范围[1,24]。
                      */
                     uint64_t m_inputIndex;
                     bool m_inputIndexHasBeenSet;

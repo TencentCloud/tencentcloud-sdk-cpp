@@ -188,8 +188,6 @@ namespace TencentCloud
 
                 /**
                  *本接口(SetPassword)用于设置（初始化）MongoDB云数据库实例账户密码。
-
-
                  * @param req SetPasswordRequest
                  * @return SetPasswordOutcome
                  */

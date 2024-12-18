@@ -158,28 +158,28 @@ namespace TencentCloud
                     /**
                      * 获取是否允许欠费消费
                      * @return IsAllowArrears 是否允许欠费消费
-                     * 
+                     * @deprecated
                      */
                     bool GetIsAllowArrears() const;
 
                     /**
                      * 判断参数 IsAllowArrears 是否已赋值
                      * @return IsAllowArrears 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsAllowArrearsHasBeenSet() const;
 
                     /**
                      * 获取是否限制信用额度
                      * @return IsCreditLimited 是否限制信用额度
-                     * 
+                     * @deprecated
                      */
                     bool GetIsCreditLimited() const;
 
                     /**
                      * 判断参数 IsCreditLimited 是否已赋值
                      * @return IsCreditLimited 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsCreditLimitedHasBeenSet() const;
 

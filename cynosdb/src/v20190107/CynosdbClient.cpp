@@ -1975,6 +1975,49 @@ CynosdbClient::DescribeChangedParamsAfterUpgradeOutcomeCallable CynosdbClient::D
     return task->get_future();
 }
 
+CynosdbClient::DescribeClusterDatabaseTablesOutcome CynosdbClient::DescribeClusterDatabaseTables(const DescribeClusterDatabaseTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterDatabaseTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterDatabaseTablesResponse rsp = DescribeClusterDatabaseTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterDatabaseTablesOutcome(rsp);
+        else
+            return DescribeClusterDatabaseTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterDatabaseTablesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeClusterDatabaseTablesAsync(const DescribeClusterDatabaseTablesRequest& request, const DescribeClusterDatabaseTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterDatabaseTables(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeClusterDatabaseTablesOutcomeCallable CynosdbClient::DescribeClusterDatabaseTablesCallable(const DescribeClusterDatabaseTablesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterDatabaseTablesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterDatabaseTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeClusterDatabasesOutcome CynosdbClient::DescribeClusterDatabases(const DescribeClusterDatabasesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterDatabases");

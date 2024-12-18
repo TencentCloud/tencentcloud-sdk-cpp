@@ -289,6 +289,48 @@ false 否
                      */
                     bool IncludeTaskFolderHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用最新模式展示目录树
+                     * @return NewFolderTreeMode 是否使用最新模式展示目录树
+                     * 
+                     */
+                    bool GetNewFolderTreeMode() const;
+
+                    /**
+                     * 设置是否使用最新模式展示目录树
+                     * @param _newFolderTreeMode 是否使用最新模式展示目录树
+                     * 
+                     */
+                    void SetNewFolderTreeMode(const bool& _newFolderTreeMode);
+
+                    /**
+                     * 判断参数 NewFolderTreeMode 是否已赋值
+                     * @return NewFolderTreeMode 是否已赋值
+                     * 
+                     */
+                    bool NewFolderTreeModeHasBeenSet() const;
+
+                    /**
+                     * 获取节点分类ID
+                     * @return TaskNodeId 节点分类ID
+                     * 
+                     */
+                    std::string GetTaskNodeId() const;
+
+                    /**
+                     * 设置节点分类ID
+                     * @param _taskNodeId 节点分类ID
+                     * 
+                     */
+                    void SetTaskNodeId(const std::string& _taskNodeId);
+
+                    /**
+                     * 判断参数 TaskNodeId 是否已赋值
+                     * @return TaskNodeId 是否已赋值
+                     * 
+                     */
+                    bool TaskNodeIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -360,6 +402,18 @@ false 否
                      */
                     bool m_includeTaskFolder;
                     bool m_includeTaskFolderHasBeenSet;
+
+                    /**
+                     * 是否使用最新模式展示目录树
+                     */
+                    bool m_newFolderTreeMode;
+                    bool m_newFolderTreeModeHasBeenSet;
+
+                    /**
+                     * 节点分类ID
+                     */
+                    std::string m_taskNodeId;
+                    bool m_taskNodeIdHasBeenSet;
 
                 };
             }

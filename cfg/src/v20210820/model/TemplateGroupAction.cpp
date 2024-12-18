@@ -35,7 +35,8 @@ TemplateGroupAction::TemplateGroupAction() :
     m_actionApiTypeHasBeenSet(false),
     m_actionAttributeHasBeenSet(false),
     m_actionTypeHasBeenSet(false),
-    m_actionRiskHasBeenSet(false)
+    m_actionRiskHasBeenSet(false),
+    m_failurePerformanceHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome TemplateGroupAction::Deserialize(const rapidjson::Value &val
         m_actionRiskHasBeenSet = true;
     }
 
+    if (value.HasMember("FailurePerformance") && !value["FailurePerformance"].IsNull())
+    {
+        if (!value["FailurePerformance"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateGroupAction.FailurePerformance` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_failurePerformance = string(value["FailurePerformance"].GetString());
+        m_failurePerformanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void TemplateGroupAction::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ActionRisk";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_actionRisk.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_failurePerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailurePerformance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_failurePerformance.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void TemplateGroupAction::SetActionRisk(const string& _actionRisk)
 bool TemplateGroupAction::ActionRiskHasBeenSet() const
 {
     return m_actionRiskHasBeenSet;
+}
+
+string TemplateGroupAction::GetFailurePerformance() const
+{
+    return m_failurePerformance;
+}
+
+void TemplateGroupAction::SetFailurePerformance(const string& _failurePerformance)
+{
+    m_failurePerformance = _failurePerformance;
+    m_failurePerformanceHasBeenSet = true;
+}
+
+bool TemplateGroupAction::FailurePerformanceHasBeenSet() const
+{
+    return m_failurePerformanceHasBeenSet;
 }
 

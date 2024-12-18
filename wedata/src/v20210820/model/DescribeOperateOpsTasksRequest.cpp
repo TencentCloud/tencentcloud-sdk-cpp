@@ -47,7 +47,8 @@ DescribeOperateOpsTasksRequest::DescribeOperateOpsTasksRequest() :
     m_taskTagsHasBeenSet(false),
     m_keyWordHasBeenSet(false),
     m_initStrategyHasBeenSet(false),
-    m_requestResourceTypesHasBeenSet(false)
+    m_requestResourceTypesHasBeenSet(false),
+    m_projectIdsHasBeenSet(false)
 {
 }
 
@@ -265,6 +266,19 @@ string DescribeOperateOpsTasksRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_requestResourceTypes.begin(); itr != m_requestResourceTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_projectIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_projectIds.begin(); itr != m_projectIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -676,6 +690,22 @@ void DescribeOperateOpsTasksRequest::SetRequestResourceTypes(const vector<string
 bool DescribeOperateOpsTasksRequest::RequestResourceTypesHasBeenSet() const
 {
     return m_requestResourceTypesHasBeenSet;
+}
+
+vector<string> DescribeOperateOpsTasksRequest::GetProjectIds() const
+{
+    return m_projectIds;
+}
+
+void DescribeOperateOpsTasksRequest::SetProjectIds(const vector<string>& _projectIds)
+{
+    m_projectIds = _projectIds;
+    m_projectIdsHasBeenSet = true;
+}
+
+bool DescribeOperateOpsTasksRequest::ProjectIdsHasBeenSet() const
+{
+    return m_projectIdsHasBeenSet;
 }
 
 

@@ -36,7 +36,8 @@ License::License() :
     m_issueDateHasBeenSet(false),
     m_activationDateHasBeenSet(false),
     m_expirationDateHasBeenSet(false),
-    m_lifeSpanUnitHasBeenSet(false)
+    m_lifeSpanUnitHasBeenSet(false),
+    m_licenseTypeHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,16 @@ CoreInternalOutcome License::Deserialize(const rapidjson::Value &value)
         m_lifeSpanUnitHasBeenSet = true;
     }
 
+    if (value.HasMember("LicenseType") && !value["LicenseType"].IsNull())
+    {
+        if (!value["LicenseType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `License.LicenseType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_licenseType = string(value["LicenseType"].GetString());
+        m_licenseTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +366,14 @@ void License::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "LifeSpanUnit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lifeSpanUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_licenseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_licenseType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -614,5 +633,21 @@ void License::SetLifeSpanUnit(const string& _lifeSpanUnit)
 bool License::LifeSpanUnitHasBeenSet() const
 {
     return m_lifeSpanUnitHasBeenSet;
+}
+
+string License::GetLicenseType() const
+{
+    return m_licenseType;
+}
+
+void License::SetLicenseType(const string& _licenseType)
+{
+    m_licenseType = _licenseType;
+    m_licenseTypeHasBeenSet = true;
+}
+
+bool License::LicenseTypeHasBeenSet() const
+{
+    return m_licenseTypeHasBeenSet;
 }
 

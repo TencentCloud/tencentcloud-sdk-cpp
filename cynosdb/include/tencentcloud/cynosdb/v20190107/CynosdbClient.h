@@ -113,6 +113,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeChangedParamsAfterUpgradeRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeChangedParamsAfterUpgradeResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterDatabaseTablesRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterDatabaseTablesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterDatabasesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterDatabasesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailRequest.h>
@@ -480,6 +482,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeChangedParamsAfterUpgradeResponse> DescribeChangedParamsAfterUpgradeOutcome;
                 typedef std::future<DescribeChangedParamsAfterUpgradeOutcome> DescribeChangedParamsAfterUpgradeOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeChangedParamsAfterUpgradeRequest&, DescribeChangedParamsAfterUpgradeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChangedParamsAfterUpgradeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterDatabaseTablesResponse> DescribeClusterDatabaseTablesOutcome;
+                typedef std::future<DescribeClusterDatabaseTablesOutcome> DescribeClusterDatabaseTablesOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterDatabaseTablesRequest&, DescribeClusterDatabaseTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterDatabaseTablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterDatabasesResponse> DescribeClusterDatabasesOutcome;
                 typedef std::future<DescribeClusterDatabasesOutcome> DescribeClusterDatabasesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterDatabasesRequest&, DescribeClusterDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterDatabasesAsyncHandler;
@@ -1214,6 +1219,15 @@ namespace TencentCloud
                 DescribeChangedParamsAfterUpgradeOutcome DescribeChangedParamsAfterUpgrade(const Model::DescribeChangedParamsAfterUpgradeRequest &request);
                 void DescribeChangedParamsAfterUpgradeAsync(const Model::DescribeChangedParamsAfterUpgradeRequest& request, const DescribeChangedParamsAfterUpgradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeChangedParamsAfterUpgradeOutcomeCallable DescribeChangedParamsAfterUpgradeCallable(const Model::DescribeChangedParamsAfterUpgradeRequest& request);
+
+                /**
+                 *获取table列表
+                 * @param req DescribeClusterDatabaseTablesRequest
+                 * @return DescribeClusterDatabaseTablesOutcome
+                 */
+                DescribeClusterDatabaseTablesOutcome DescribeClusterDatabaseTables(const Model::DescribeClusterDatabaseTablesRequest &request);
+                void DescribeClusterDatabaseTablesAsync(const Model::DescribeClusterDatabaseTablesRequest& request, const DescribeClusterDatabaseTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterDatabaseTablesOutcomeCallable DescribeClusterDatabaseTablesCallable(const Model::DescribeClusterDatabaseTablesRequest& request);
 
                 /**
                  *本接口（DescribeClusterDatabases）用于获取集群数据库列表。

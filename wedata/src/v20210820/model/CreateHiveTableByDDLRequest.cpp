@@ -30,7 +30,8 @@ CreateHiveTableByDDLRequest::CreateHiveTableByDDLRequest() :
     m_projectIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_inchargeHasBeenSet(false),
-    m_schemaNameHasBeenSet(false)
+    m_schemaNameHasBeenSet(false),
+    m_asyncHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string CreateHiveTableByDDLRequest::ToJsonString() const
         string key = "SchemaName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_asyncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Async";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_async, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void CreateHiveTableByDDLRequest::SetSchemaName(const string& _schemaName)
 bool CreateHiveTableByDDLRequest::SchemaNameHasBeenSet() const
 {
     return m_schemaNameHasBeenSet;
+}
+
+bool CreateHiveTableByDDLRequest::GetAsync() const
+{
+    return m_async;
+}
+
+void CreateHiveTableByDDLRequest::SetAsync(const bool& _async)
+{
+    m_async = _async;
+    m_asyncHasBeenSet = true;
+}
+
+bool CreateHiveTableByDDLRequest::AsyncHasBeenSet() const
+{
+    return m_asyncHasBeenSet;
 }
 
 

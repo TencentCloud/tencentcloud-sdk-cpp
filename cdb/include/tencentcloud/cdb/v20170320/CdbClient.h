@@ -301,6 +301,8 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyNameOrDescByDpIdResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyParamTemplateRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyParamTemplateResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyProtectModeRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyProtectModeResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyRemoteBackupConfigRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyRemoteBackupConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyRoGroupInfoRequest.h>
@@ -794,6 +796,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyParamTemplateResponse> ModifyParamTemplateOutcome;
                 typedef std::future<ModifyParamTemplateOutcome> ModifyParamTemplateOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyParamTemplateRequest&, ModifyParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParamTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyProtectModeResponse> ModifyProtectModeOutcome;
+                typedef std::future<ModifyProtectModeOutcome> ModifyProtectModeOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyProtectModeRequest&, ModifyProtectModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProtectModeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRemoteBackupConfigResponse> ModifyRemoteBackupConfigOutcome;
                 typedef std::future<ModifyRemoteBackupConfigOutcome> ModifyRemoteBackupConfigOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyRemoteBackupConfigRequest&, ModifyRemoteBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRemoteBackupConfigAsyncHandler;
@@ -2172,6 +2177,15 @@ namespace TencentCloud
                 ModifyParamTemplateOutcome ModifyParamTemplate(const Model::ModifyParamTemplateRequest &request);
                 void ModifyParamTemplateAsync(const Model::ModifyParamTemplateRequest& request, const ModifyParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyParamTemplateOutcomeCallable ModifyParamTemplateCallable(const Model::ModifyParamTemplateRequest& request);
+
+                /**
+                 *该接口（ModifyProtectMode）用于修改实例的同步方式。
+                 * @param req ModifyProtectModeRequest
+                 * @return ModifyProtectModeOutcome
+                 */
+                ModifyProtectModeOutcome ModifyProtectMode(const Model::ModifyProtectModeRequest &request);
+                void ModifyProtectModeAsync(const Model::ModifyProtectModeRequest& request, const ModifyProtectModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyProtectModeOutcomeCallable ModifyProtectModeCallable(const Model::ModifyProtectModeRequest& request);
 
                 /**
                  *本接口(ModifyRemoteBackupConfig)用于修改数据库异地备份配置信息。

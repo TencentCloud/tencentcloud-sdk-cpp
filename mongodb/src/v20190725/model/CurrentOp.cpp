@@ -26,10 +26,11 @@ CurrentOp::CurrentOp() :
     m_queryHasBeenSet(false),
     m_opHasBeenSet(false),
     m_replicaSetNameHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_operationHasBeenSet(false),
     m_nodeNameHasBeenSet(false),
-    m_microsecsRunningHasBeenSet(false)
+    m_operationHasBeenSet(false),
+    m_stateHasBeenSet(false),
+    m_microsecsRunningHasBeenSet(false),
+    m_execNodeHasBeenSet(false)
 {
 }
 
@@ -88,14 +89,14 @@ CoreInternalOutcome CurrentOp::Deserialize(const rapidjson::Value &value)
         m_replicaSetNameHasBeenSet = true;
     }
 
-    if (value.HasMember("State") && !value["State"].IsNull())
+    if (value.HasMember("NodeName") && !value["NodeName"].IsNull())
     {
-        if (!value["State"].IsString())
+        if (!value["NodeName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `CurrentOp.State` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentOp.NodeName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_state = string(value["State"].GetString());
-        m_stateHasBeenSet = true;
+        m_nodeName = string(value["NodeName"].GetString());
+        m_nodeNameHasBeenSet = true;
     }
 
     if (value.HasMember("Operation") && !value["Operation"].IsNull())
@@ -108,14 +109,14 @@ CoreInternalOutcome CurrentOp::Deserialize(const rapidjson::Value &value)
         m_operationHasBeenSet = true;
     }
 
-    if (value.HasMember("NodeName") && !value["NodeName"].IsNull())
+    if (value.HasMember("State") && !value["State"].IsNull())
     {
-        if (!value["NodeName"].IsString())
+        if (!value["State"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `CurrentOp.NodeName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CurrentOp.State` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_nodeName = string(value["NodeName"].GetString());
-        m_nodeNameHasBeenSet = true;
+        m_state = string(value["State"].GetString());
+        m_stateHasBeenSet = true;
     }
 
     if (value.HasMember("MicrosecsRunning") && !value["MicrosecsRunning"].IsNull())
@@ -126,6 +127,16 @@ CoreInternalOutcome CurrentOp::Deserialize(const rapidjson::Value &value)
         }
         m_microsecsRunning = value["MicrosecsRunning"].GetUint64();
         m_microsecsRunningHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecNode") && !value["ExecNode"].IsNull())
+    {
+        if (!value["ExecNode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CurrentOp.ExecNode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_execNode = string(value["ExecNode"].GetString());
+        m_execNodeHasBeenSet = true;
     }
 
 
@@ -175,12 +186,12 @@ void CurrentOp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_replicaSetName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_stateHasBeenSet)
+    if (m_nodeNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "State";
+        string key = "NodeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operationHasBeenSet)
@@ -191,12 +202,12 @@ void CurrentOp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_operation.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_nodeNameHasBeenSet)
+    if (m_stateHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NodeName";
+        string key = "State";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
     }
 
     if (m_microsecsRunningHasBeenSet)
@@ -205,6 +216,14 @@ void CurrentOp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "MicrosecsRunning";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_microsecsRunning, allocator);
+    }
+
+    if (m_execNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecNode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_execNode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,20 +309,20 @@ bool CurrentOp::ReplicaSetNameHasBeenSet() const
     return m_replicaSetNameHasBeenSet;
 }
 
-string CurrentOp::GetState() const
+string CurrentOp::GetNodeName() const
 {
-    return m_state;
+    return m_nodeName;
 }
 
-void CurrentOp::SetState(const string& _state)
+void CurrentOp::SetNodeName(const string& _nodeName)
 {
-    m_state = _state;
-    m_stateHasBeenSet = true;
+    m_nodeName = _nodeName;
+    m_nodeNameHasBeenSet = true;
 }
 
-bool CurrentOp::StateHasBeenSet() const
+bool CurrentOp::NodeNameHasBeenSet() const
 {
-    return m_stateHasBeenSet;
+    return m_nodeNameHasBeenSet;
 }
 
 string CurrentOp::GetOperation() const
@@ -322,20 +341,20 @@ bool CurrentOp::OperationHasBeenSet() const
     return m_operationHasBeenSet;
 }
 
-string CurrentOp::GetNodeName() const
+string CurrentOp::GetState() const
 {
-    return m_nodeName;
+    return m_state;
 }
 
-void CurrentOp::SetNodeName(const string& _nodeName)
+void CurrentOp::SetState(const string& _state)
 {
-    m_nodeName = _nodeName;
-    m_nodeNameHasBeenSet = true;
+    m_state = _state;
+    m_stateHasBeenSet = true;
 }
 
-bool CurrentOp::NodeNameHasBeenSet() const
+bool CurrentOp::StateHasBeenSet() const
 {
-    return m_nodeNameHasBeenSet;
+    return m_stateHasBeenSet;
 }
 
 uint64_t CurrentOp::GetMicrosecsRunning() const
@@ -352,5 +371,21 @@ void CurrentOp::SetMicrosecsRunning(const uint64_t& _microsecsRunning)
 bool CurrentOp::MicrosecsRunningHasBeenSet() const
 {
     return m_microsecsRunningHasBeenSet;
+}
+
+string CurrentOp::GetExecNode() const
+{
+    return m_execNode;
+}
+
+void CurrentOp::SetExecNode(const string& _execNode)
+{
+    m_execNode = _execNode;
+    m_execNodeHasBeenSet = true;
+}
+
+bool CurrentOp::ExecNodeHasBeenSet() const
+{
+    return m_execNodeHasBeenSet;
 }
 

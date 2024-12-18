@@ -107,15 +107,27 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件数组，支持TargetGroupVpcId和TargetGroupName。
-                     * @return Filters 过滤条件数组，支持TargetGroupVpcId和TargetGroupName。
+                     * 获取过滤条件数组。
+
+- TargetGroupVpcId - String - 是否必填：否 - （过滤条件）按照目标组所属的私有网络过滤，如“vpc-bhqk****”。
+- TargetGroupName - String - 是否必填：否 - （过滤条件）按照目标组的名称过滤，如“tg_name”
+                     * @return Filters 过滤条件数组。
+
+- TargetGroupVpcId - String - 是否必填：否 - （过滤条件）按照目标组所属的私有网络过滤，如“vpc-bhqk****”。
+- TargetGroupName - String - 是否必填：否 - （过滤条件）按照目标组的名称过滤，如“tg_name”
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件数组，支持TargetGroupVpcId和TargetGroupName。
-                     * @param _filters 过滤条件数组，支持TargetGroupVpcId和TargetGroupName。
+                     * 设置过滤条件数组。
+
+- TargetGroupVpcId - String - 是否必填：否 - （过滤条件）按照目标组所属的私有网络过滤，如“vpc-bhqk****”。
+- TargetGroupName - String - 是否必填：否 - （过滤条件）按照目标组的名称过滤，如“tg_name”
+                     * @param _filters 过滤条件数组。
+
+- TargetGroupVpcId - String - 是否必填：否 - （过滤条件）按照目标组所属的私有网络过滤，如“vpc-bhqk****”。
+- TargetGroupName - String - 是否必填：否 - （过滤条件）按照目标组的名称过滤，如“tg_name”
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -148,7 +160,10 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤条件数组，支持TargetGroupVpcId和TargetGroupName。
+                     * 过滤条件数组。
+
+- TargetGroupVpcId - String - 是否必填：否 - （过滤条件）按照目标组所属的私有网络过滤，如“vpc-bhqk****”。
+- TargetGroupName - String - 是否必填：否 - （过滤条件）按照目标组的名称过滤，如“tg_name”
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

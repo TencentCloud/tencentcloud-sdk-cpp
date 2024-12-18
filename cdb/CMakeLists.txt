@@ -42,6 +42,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/BackupSummaryItem.h
   include/tencentcloud/cdb/v20170320/model/CreateDatabaseRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyInstanceParamRequest.h
+  include/tencentcloud/cdb/v20170320/model/ModifyProtectModeResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateParamTemplateRequest.h
   include/tencentcloud/cdb/v20170320/model/RemoteBackupInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeParamTemplateInfoRequest.h
@@ -227,7 +228,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DeleteRotationPasswordResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeAccountsResponse.h
   include/tencentcloud/cdb/v20170320/model/RollbackTimeRange.h
-  include/tencentcloud/cdb/v20170320/model/AuditLog.h
+  include/tencentcloud/cdb/v20170320/model/ModifyProtectModeRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditRuleTemplateModifyHistoryResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditLogFilesRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyBackupConfigRequest.h
@@ -424,6 +425,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/OfflineIsolatedInstancesRequest.h
   include/tencentcloud/cdb/v20170320/model/InquiryPriceUpgradeInstancesRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyInstanceParamResponse.h
+  include/tencentcloud/cdb/v20170320/model/AuditLog.h
   include/tencentcloud/cdb/v20170320/model/ColumnPrivilege.h
   include/tencentcloud/cdb/v20170320/model/DescribeUploadedFilesResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBPriceRequest.h
@@ -497,6 +499,7 @@ set(cdb_src
   src/v20170320/model/BackupSummaryItem.cpp
   src/v20170320/model/CreateDatabaseRequest.cpp
   src/v20170320/model/ModifyInstanceParamRequest.cpp
+  src/v20170320/model/ModifyProtectModeResponse.cpp
   src/v20170320/model/CreateParamTemplateRequest.cpp
   src/v20170320/model/RemoteBackupInfo.cpp
   src/v20170320/model/DescribeParamTemplateInfoRequest.cpp
@@ -682,7 +685,7 @@ set(cdb_src
   src/v20170320/model/DeleteRotationPasswordResponse.cpp
   src/v20170320/model/DescribeAccountsResponse.cpp
   src/v20170320/model/RollbackTimeRange.cpp
-  src/v20170320/model/AuditLog.cpp
+  src/v20170320/model/ModifyProtectModeRequest.cpp
   src/v20170320/model/DescribeAuditRuleTemplateModifyHistoryResponse.cpp
   src/v20170320/model/DescribeAuditLogFilesRequest.cpp
   src/v20170320/model/ModifyBackupConfigRequest.cpp
@@ -879,6 +882,7 @@ set(cdb_src
   src/v20170320/model/OfflineIsolatedInstancesRequest.cpp
   src/v20170320/model/InquiryPriceUpgradeInstancesRequest.cpp
   src/v20170320/model/ModifyInstanceParamResponse.cpp
+  src/v20170320/model/AuditLog.cpp
   src/v20170320/model/ColumnPrivilege.cpp
   src/v20170320/model/DescribeUploadedFilesResponse.cpp
   src/v20170320/model/DescribeDBPriceRequest.cpp

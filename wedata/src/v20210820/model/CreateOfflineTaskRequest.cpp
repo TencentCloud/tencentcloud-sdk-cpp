@@ -32,7 +32,8 @@ CreateOfflineTaskRequest::CreateOfflineTaskRequest() :
     m_taskNameHasBeenSet(false),
     m_typeIdHasBeenSet(false),
     m_taskActionHasBeenSet(false),
-    m_taskModeHasBeenSet(false)
+    m_taskModeHasBeenSet(false),
+    m_taskImportInfoHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,15 @@ string CreateOfflineTaskRequest::ToJsonString() const
         string key = "TaskMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskImportInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskImportInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskImportInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -289,6 +299,22 @@ void CreateOfflineTaskRequest::SetTaskMode(const string& _taskMode)
 bool CreateOfflineTaskRequest::TaskModeHasBeenSet() const
 {
     return m_taskModeHasBeenSet;
+}
+
+TaskImportInfo CreateOfflineTaskRequest::GetTaskImportInfo() const
+{
+    return m_taskImportInfo;
+}
+
+void CreateOfflineTaskRequest::SetTaskImportInfo(const TaskImportInfo& _taskImportInfo)
+{
+    m_taskImportInfo = _taskImportInfo;
+    m_taskImportInfoHasBeenSet = true;
+}
+
+bool CreateOfflineTaskRequest::TaskImportInfoHasBeenSet() const
+{
+    return m_taskImportInfoHasBeenSet;
 }
 
 

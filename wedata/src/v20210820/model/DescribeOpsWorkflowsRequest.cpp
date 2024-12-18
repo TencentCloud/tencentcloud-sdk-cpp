@@ -35,7 +35,8 @@ DescribeOpsWorkflowsRequest::DescribeOpsWorkflowsRequest() :
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_sortItemHasBeenSet(false),
-    m_sortTypeHasBeenSet(false)
+    m_sortTypeHasBeenSet(false),
+    m_projectIdsHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,19 @@ string DescribeOpsWorkflowsRequest::ToJsonString() const
         string key = "SortType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sortType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_projectIds.begin(); itr != m_projectIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -364,6 +378,22 @@ void DescribeOpsWorkflowsRequest::SetSortType(const string& _sortType)
 bool DescribeOpsWorkflowsRequest::SortTypeHasBeenSet() const
 {
     return m_sortTypeHasBeenSet;
+}
+
+vector<string> DescribeOpsWorkflowsRequest::GetProjectIds() const
+{
+    return m_projectIds;
+}
+
+void DescribeOpsWorkflowsRequest::SetProjectIds(const vector<string>& _projectIds)
+{
+    m_projectIds = _projectIds;
+    m_projectIdsHasBeenSet = true;
+}
+
+bool DescribeOpsWorkflowsRequest::ProjectIdsHasBeenSet() const
+{
+    return m_projectIdsHasBeenSet;
 }
 
 

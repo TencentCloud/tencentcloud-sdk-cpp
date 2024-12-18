@@ -121,6 +121,31 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取异步操作记录的唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AsyncActionId 异步操作记录的唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAsyncActionId() const;
+
+                    /**
+                     * 设置异步操作记录的唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _asyncActionId 异步操作记录的唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAsyncActionId(const std::string& _asyncActionId);
+
+                    /**
+                     * 判断参数 AsyncActionId 是否已赋值
+                     * @return AsyncActionId 是否已赋值
+                     * 
+                     */
+                    bool AsyncActionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +168,13 @@ namespace TencentCloud
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 异步操作记录的唯一id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_asyncActionId;
+                    bool m_asyncActionIdHasBeenSet;
 
                 };
             }

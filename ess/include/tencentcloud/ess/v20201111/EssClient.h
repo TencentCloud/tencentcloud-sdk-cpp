@@ -175,6 +175,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeOrganizationGroupOrganizationsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeOrganizationSealsRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeOrganizationSealsResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeOrganizationVerifyStatusRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeOrganizationVerifyStatusResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribePersonCertificateRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribePersonCertificateResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeSignFaceVideoRequest.h>
@@ -453,6 +455,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOrganizationSealsResponse> DescribeOrganizationSealsOutcome;
                 typedef std::future<DescribeOrganizationSealsOutcome> DescribeOrganizationSealsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeOrganizationSealsRequest&, DescribeOrganizationSealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationSealsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOrganizationVerifyStatusResponse> DescribeOrganizationVerifyStatusOutcome;
+                typedef std::future<DescribeOrganizationVerifyStatusOutcome> DescribeOrganizationVerifyStatusOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeOrganizationVerifyStatusRequest&, DescribeOrganizationVerifyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationVerifyStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePersonCertificateResponse> DescribePersonCertificateOutcome;
                 typedef std::future<DescribePersonCertificateOutcome> DescribePersonCertificateOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribePersonCertificateRequest&, DescribePersonCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePersonCertificateAsyncHandler;
@@ -1925,6 +1930,15 @@ namespace TencentCloud
                 DescribeOrganizationSealsOutcome DescribeOrganizationSeals(const Model::DescribeOrganizationSealsRequest &request);
                 void DescribeOrganizationSealsAsync(const Model::DescribeOrganizationSealsRequest& request, const DescribeOrganizationSealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOrganizationSealsOutcomeCallable DescribeOrganizationSealsCallable(const Model::DescribeOrganizationSealsRequest& request);
+
+                /**
+                 *仅且仅能查询企业本身在电子签的认证状态
+                 * @param req DescribeOrganizationVerifyStatusRequest
+                 * @return DescribeOrganizationVerifyStatusOutcome
+                 */
+                DescribeOrganizationVerifyStatusOutcome DescribeOrganizationVerifyStatus(const Model::DescribeOrganizationVerifyStatusRequest &request);
+                void DescribeOrganizationVerifyStatusAsync(const Model::DescribeOrganizationVerifyStatusRequest& request, const DescribeOrganizationVerifyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOrganizationVerifyStatusOutcomeCallable DescribeOrganizationVerifyStatusCallable(const Model::DescribeOrganizationVerifyStatusRequest& request);
 
                 /**
                  *此接口（DescribePersonCertificate）用于查询个人数字证书信息。<br />注：`1.目前仅用于查询开通了医疗自动签署功能的个人数字证书。`<br />`2.调用此接口需要开通白名单，使用前请联系相关人员开通白名单。`

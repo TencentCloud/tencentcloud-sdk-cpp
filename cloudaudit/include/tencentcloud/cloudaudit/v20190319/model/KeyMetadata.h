@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取作为密钥更容易辨识，更容易被人看懂的别名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alias 作为密钥更容易辨识，更容易被人看懂的别名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置作为密钥更容易辨识，更容易被人看懂的别名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alias 作为密钥更容易辨识，更容易被人看懂的别名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取CMK的全局唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyId CMK的全局唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置CMK的全局唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keyId CMK的全局唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeyId(const std::string& _keyId);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 作为密钥更容易辨识，更容易被人看懂的别名
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
 
                     /**
                      * CMK的全局唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;

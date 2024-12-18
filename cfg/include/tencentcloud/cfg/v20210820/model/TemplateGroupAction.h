@@ -397,6 +397,27 @@ namespace TencentCloud
                      */
                     bool ActionRiskHasBeenSet() const;
 
+                    /**
+                     * 获取故障表现
+                     * @return FailurePerformance 故障表现
+                     * 
+                     */
+                    std::string GetFailurePerformance() const;
+
+                    /**
+                     * 设置故障表现
+                     * @param _failurePerformance 故障表现
+                     * 
+                     */
+                    void SetFailurePerformance(const std::string& _failurePerformance);
+
+                    /**
+                     * 判断参数 FailurePerformance 是否已赋值
+                     * @return FailurePerformance 是否已赋值
+                     * 
+                     */
+                    bool FailurePerformanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -497,6 +518,12 @@ namespace TencentCloud
                      */
                     std::string m_actionRisk;
                     bool m_actionRiskHasBeenSet;
+
+                    /**
+                     * 故障表现
+                     */
+                    std::string m_failurePerformance;
+                    bool m_failurePerformanceHasBeenSet;
 
                 };
             }

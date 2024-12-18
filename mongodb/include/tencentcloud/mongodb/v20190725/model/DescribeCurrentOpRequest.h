@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
-                     * @return InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 获取指定要查询的实例 ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @return InstanceId 指定要查询的实例 ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
-                     * @param _instanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 设置指定要查询的实例 ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @param _instanceId 指定要查询的实例 ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件，操作所属的命名空间namespace，格式为db.collection
-                     * @return Ns 筛选条件，操作所属的命名空间namespace，格式为db.collection
+                     * 获取操作所属的命名空间 namespace，格式为 db.collection。
+                     * @return Ns 操作所属的命名空间 namespace，格式为 db.collection。
                      * 
                      */
                     std::string GetNs() const;
 
                     /**
-                     * 设置筛选条件，操作所属的命名空间namespace，格式为db.collection
-                     * @param _ns 筛选条件，操作所属的命名空间namespace，格式为db.collection
+                     * 设置操作所属的命名空间 namespace，格式为 db.collection。
+                     * @param _ns 操作所属的命名空间 namespace，格式为 db.collection。
                      * 
                      */
                     void SetNs(const std::string& _ns);
@@ -85,15 +85,23 @@ namespace TencentCloud
                     bool NsHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]
-                     * @return MillisecondRunning 筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]
+                     * 获取设置查询筛选条件为操作任务已经执行的时间。
+- 默认值为0，取值范围为[0, 3600000]，单位：毫秒。
+- 结果将返回超过设置时间的操作。
+                     * @return MillisecondRunning 设置查询筛选条件为操作任务已经执行的时间。
+- 默认值为0，取值范围为[0, 3600000]，单位：毫秒。
+- 结果将返回超过设置时间的操作。
                      * 
                      */
                     uint64_t GetMillisecondRunning() const;
 
                     /**
-                     * 设置筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]
-                     * @param _millisecondRunning 筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]
+                     * 设置设置查询筛选条件为操作任务已经执行的时间。
+- 默认值为0，取值范围为[0, 3600000]，单位：毫秒。
+- 结果将返回超过设置时间的操作。
+                     * @param _millisecondRunning 设置查询筛选条件为操作任务已经执行的时间。
+- 默认值为0，取值范围为[0, 3600000]，单位：毫秒。
+- 结果将返回超过设置时间的操作。
                      * 
                      */
                     void SetMillisecondRunning(const uint64_t& _millisecondRunning);
@@ -106,15 +114,15 @@ namespace TencentCloud
                     bool MillisecondRunningHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors
-                     * @return Op 筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors
+                     * 获取设置查询筛选条件为操作任务类型。取值包括：none、update、insert，query、command、getmore、remove 和 killcursors。
+                     * @return Op 设置查询筛选条件为操作任务类型。取值包括：none、update、insert，query、command、getmore、remove 和 killcursors。
                      * 
                      */
                     std::string GetOp() const;
 
                     /**
-                     * 设置筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors
-                     * @param _op 筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors
+                     * 设置设置查询筛选条件为操作任务类型。取值包括：none、update、insert，query、command、getmore、remove 和 killcursors。
+                     * @param _op 设置查询筛选条件为操作任务类型。取值包括：none、update、insert，query、command、getmore、remove 和 killcursors。
                      * 
                      */
                     void SetOp(const std::string& _op);
@@ -127,15 +135,15 @@ namespace TencentCloud
                     bool OpHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件，分片名称
-                     * @return ReplicaSetName 筛选条件，分片名称
+                     * 获取筛选条件，分片名称。
+                     * @return ReplicaSetName 筛选条件，分片名称。
                      * 
                      */
                     std::string GetReplicaSetName() const;
 
                     /**
-                     * 设置筛选条件，分片名称
-                     * @param _replicaSetName 筛选条件，分片名称
+                     * 设置筛选条件，分片名称。
+                     * @param _replicaSetName 筛选条件，分片名称。
                      * 
                      */
                     void SetReplicaSetName(const std::string& _replicaSetName);
@@ -148,19 +156,23 @@ namespace TencentCloud
                     bool ReplicaSetNameHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件，节点状态，可能的取值为：primary
-secondary
-                     * @return State 筛选条件，节点状态，可能的取值为：primary
-secondary
+                     * 获取设置查询筛选条件为节点角色。
+- primary：主节点。
+- secondary：从节点。
+                     * @return State 设置查询筛选条件为节点角色。
+- primary：主节点。
+- secondary：从节点。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置筛选条件，节点状态，可能的取值为：primary
-secondary
-                     * @param _state 筛选条件，节点状态，可能的取值为：primary
-secondary
+                     * 设置设置查询筛选条件为节点角色。
+- primary：主节点。
+- secondary：从节点。
+                     * @param _state 设置查询筛选条件为节点角色。
+- primary：主节点。
+- secondary：从节点。
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -259,38 +271,41 @@ secondary
                 private:
 
                     /**
-                     * 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 指定要查询的实例 ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 筛选条件，操作所属的命名空间namespace，格式为db.collection
+                     * 操作所属的命名空间 namespace，格式为 db.collection。
                      */
                     std::string m_ns;
                     bool m_nsHasBeenSet;
 
                     /**
-                     * 筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]
+                     * 设置查询筛选条件为操作任务已经执行的时间。
+- 默认值为0，取值范围为[0, 3600000]，单位：毫秒。
+- 结果将返回超过设置时间的操作。
                      */
                     uint64_t m_millisecondRunning;
                     bool m_millisecondRunningHasBeenSet;
 
                     /**
-                     * 筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors
+                     * 设置查询筛选条件为操作任务类型。取值包括：none、update、insert，query、command、getmore、remove 和 killcursors。
                      */
                     std::string m_op;
                     bool m_opHasBeenSet;
 
                     /**
-                     * 筛选条件，分片名称
+                     * 筛选条件，分片名称。
                      */
                     std::string m_replicaSetName;
                     bool m_replicaSetNameHasBeenSet;
 
                     /**
-                     * 筛选条件，节点状态，可能的取值为：primary
-secondary
+                     * 设置查询筛选条件为节点角色。
+- primary：主节点。
+- secondary：从节点。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;

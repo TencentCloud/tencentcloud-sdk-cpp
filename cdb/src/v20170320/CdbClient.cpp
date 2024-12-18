@@ -6017,6 +6017,49 @@ CdbClient::ModifyParamTemplateOutcomeCallable CdbClient::ModifyParamTemplateCall
     return task->get_future();
 }
 
+CdbClient::ModifyProtectModeOutcome CdbClient::ModifyProtectMode(const ModifyProtectModeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyProtectMode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyProtectModeResponse rsp = ModifyProtectModeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyProtectModeOutcome(rsp);
+        else
+            return ModifyProtectModeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyProtectModeOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyProtectModeAsync(const ModifyProtectModeRequest& request, const ModifyProtectModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyProtectMode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyProtectModeOutcomeCallable CdbClient::ModifyProtectModeCallable(const ModifyProtectModeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyProtectModeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyProtectMode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::ModifyRemoteBackupConfigOutcome CdbClient::ModifyRemoteBackupConfig(const ModifyRemoteBackupConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRemoteBackupConfig");

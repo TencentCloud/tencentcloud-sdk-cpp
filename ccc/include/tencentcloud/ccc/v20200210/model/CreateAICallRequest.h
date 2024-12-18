@@ -794,6 +794,27 @@ HoaiMy
                     bool NotifyMessageHasBeenSet() const;
 
                     /**
+                     * 获取最大触发AI提示音次数，默认为不限制
+                     * @return NotifyMaxCount 最大触发AI提示音次数，默认为不限制
+                     * 
+                     */
+                    uint64_t GetNotifyMaxCount() const;
+
+                    /**
+                     * 设置最大触发AI提示音次数，默认为不限制
+                     * @param _notifyMaxCount 最大触发AI提示音次数，默认为不限制
+                     * 
+                     */
+                    void SetNotifyMaxCount(const uint64_t& _notifyMaxCount);
+
+                    /**
+                     * 判断参数 NotifyMaxCount 是否已赋值
+                     * @return NotifyMaxCount 是否已赋值
+                     * 
+                     */
+                    bool NotifyMaxCountHasBeenSet() const;
+
+                    /**
                      * 获取<p>和VoiceType字段需要选填一个，这里是使用自己自定义的TTS，VoiceType是系统内置的一些音色</p>
 <ul>
 <li>Tencent TTS<br>
@@ -1329,6 +1350,12 @@ HoaiMy
                      */
                     std::string m_notifyMessage;
                     bool m_notifyMessageHasBeenSet;
+
+                    /**
+                     * 最大触发AI提示音次数，默认为不限制
+                     */
+                    uint64_t m_notifyMaxCount;
+                    bool m_notifyMaxCountHasBeenSet;
 
                     /**
                      * <p>和VoiceType字段需要选填一个，这里是使用自己自定义的TTS，VoiceType是系统内置的一些音色</p>

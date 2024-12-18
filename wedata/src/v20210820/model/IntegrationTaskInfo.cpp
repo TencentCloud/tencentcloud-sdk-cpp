@@ -69,7 +69,10 @@ IntegrationTaskInfo::IntegrationTaskInfo() :
     m_readPhaseHasBeenSet(false),
     m_instanceVersionHasBeenSet(false),
     m_arrangeSpaceTaskIdHasBeenSet(false),
-    m_offlineTaskStatusHasBeenSet(false)
+    m_offlineTaskStatusHasBeenSet(false),
+    m_taskImportInfoHasBeenSet(false),
+    m_businessLatencyHasBeenSet(false),
+    m_currentSyncPositionHasBeenSet(false)
 {
 }
 
@@ -631,6 +634,43 @@ CoreInternalOutcome IntegrationTaskInfo::Deserialize(const rapidjson::Value &val
         m_offlineTaskStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskImportInfo") && !value["TaskImportInfo"].IsNull())
+    {
+        if (!value["TaskImportInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.TaskImportInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_taskImportInfo.Deserialize(value["TaskImportInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_taskImportInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("BusinessLatency") && !value["BusinessLatency"].IsNull())
+    {
+        if (!value["BusinessLatency"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.BusinessLatency` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessLatency = value["BusinessLatency"].GetInt64();
+        m_businessLatencyHasBeenSet = true;
+    }
+
+    if (value.HasMember("CurrentSyncPosition") && !value["CurrentSyncPosition"].IsNull())
+    {
+        if (!value["CurrentSyncPosition"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.CurrentSyncPosition` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentSyncPosition = value["CurrentSyncPosition"].GetInt64();
+        m_currentSyncPositionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1074,6 +1114,31 @@ void IntegrationTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "OfflineTaskStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_offlineTaskStatus, allocator);
+    }
+
+    if (m_taskImportInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskImportInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskImportInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_businessLatencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessLatency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_businessLatency, allocator);
+    }
+
+    if (m_currentSyncPositionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentSyncPosition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentSyncPosition, allocator);
     }
 
 }
@@ -1861,5 +1926,53 @@ void IntegrationTaskInfo::SetOfflineTaskStatus(const int64_t& _offlineTaskStatus
 bool IntegrationTaskInfo::OfflineTaskStatusHasBeenSet() const
 {
     return m_offlineTaskStatusHasBeenSet;
+}
+
+TaskImportInfo IntegrationTaskInfo::GetTaskImportInfo() const
+{
+    return m_taskImportInfo;
+}
+
+void IntegrationTaskInfo::SetTaskImportInfo(const TaskImportInfo& _taskImportInfo)
+{
+    m_taskImportInfo = _taskImportInfo;
+    m_taskImportInfoHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::TaskImportInfoHasBeenSet() const
+{
+    return m_taskImportInfoHasBeenSet;
+}
+
+int64_t IntegrationTaskInfo::GetBusinessLatency() const
+{
+    return m_businessLatency;
+}
+
+void IntegrationTaskInfo::SetBusinessLatency(const int64_t& _businessLatency)
+{
+    m_businessLatency = _businessLatency;
+    m_businessLatencyHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::BusinessLatencyHasBeenSet() const
+{
+    return m_businessLatencyHasBeenSet;
+}
+
+int64_t IntegrationTaskInfo::GetCurrentSyncPosition() const
+{
+    return m_currentSyncPosition;
+}
+
+void IntegrationTaskInfo::SetCurrentSyncPosition(const int64_t& _currentSyncPosition)
+{
+    m_currentSyncPosition = _currentSyncPosition;
+    m_currentSyncPositionHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::CurrentSyncPositionHasBeenSet() const
+{
+    return m_currentSyncPositionHasBeenSet;
 }
 

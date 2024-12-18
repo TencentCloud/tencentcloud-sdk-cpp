@@ -391,6 +391,27 @@ namespace TencentCloud
                      */
                     bool LifeSpanUnitHasBeenSet() const;
 
+                    /**
+                     * 获取授权的类型：Standard正式版/Development开发版/Trial体验版
+                     * @return LicenseType 授权的类型：Standard正式版/Development开发版/Trial体验版
+                     * 
+                     */
+                    std::string GetLicenseType() const;
+
+                    /**
+                     * 设置授权的类型：Standard正式版/Development开发版/Trial体验版
+                     * @param _licenseType 授权的类型：Standard正式版/Development开发版/Trial体验版
+                     * 
+                     */
+                    void SetLicenseType(const std::string& _licenseType);
+
+                    /**
+                     * 判断参数 LicenseType 是否已赋值
+                     * @return LicenseType 是否已赋值
+                     * 
+                     */
+                    bool LicenseTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -490,6 +511,12 @@ namespace TencentCloud
                      */
                     std::string m_lifeSpanUnit;
                     bool m_lifeSpanUnitHasBeenSet;
+
+                    /**
+                     * 授权的类型：Standard正式版/Development开发版/Trial体验版
+                     */
+                    std::string m_licenseType;
+                    bool m_licenseTypeHasBeenSet;
 
                 };
             }

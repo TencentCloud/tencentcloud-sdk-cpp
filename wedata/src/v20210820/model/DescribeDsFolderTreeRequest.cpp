@@ -33,7 +33,9 @@ DescribeDsFolderTreeRequest::DescribeDsFolderTreeRequest() :
     m_includeVirtualTaskHasBeenSet(false),
     m_taskFolderIdHasBeenSet(false),
     m_displayTypeHasBeenSet(false),
-    m_includeTaskFolderHasBeenSet(false)
+    m_includeTaskFolderHasBeenSet(false),
+    m_newFolderTreeModeHasBeenSet(false),
+    m_taskNodeIdHasBeenSet(false)
 {
 }
 
@@ -130,6 +132,22 @@ string DescribeDsFolderTreeRequest::ToJsonString() const
         string key = "IncludeTaskFolder";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_includeTaskFolder, allocator);
+    }
+
+    if (m_newFolderTreeModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewFolderTreeMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_newFolderTreeMode, allocator);
+    }
+
+    if (m_taskNodeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskNodeId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskNodeId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -314,6 +332,38 @@ void DescribeDsFolderTreeRequest::SetIncludeTaskFolder(const bool& _includeTaskF
 bool DescribeDsFolderTreeRequest::IncludeTaskFolderHasBeenSet() const
 {
     return m_includeTaskFolderHasBeenSet;
+}
+
+bool DescribeDsFolderTreeRequest::GetNewFolderTreeMode() const
+{
+    return m_newFolderTreeMode;
+}
+
+void DescribeDsFolderTreeRequest::SetNewFolderTreeMode(const bool& _newFolderTreeMode)
+{
+    m_newFolderTreeMode = _newFolderTreeMode;
+    m_newFolderTreeModeHasBeenSet = true;
+}
+
+bool DescribeDsFolderTreeRequest::NewFolderTreeModeHasBeenSet() const
+{
+    return m_newFolderTreeModeHasBeenSet;
+}
+
+string DescribeDsFolderTreeRequest::GetTaskNodeId() const
+{
+    return m_taskNodeId;
+}
+
+void DescribeDsFolderTreeRequest::SetTaskNodeId(const string& _taskNodeId)
+{
+    m_taskNodeId = _taskNodeId;
+    m_taskNodeIdHasBeenSet = true;
+}
+
+bool DescribeDsFolderTreeRequest::TaskNodeIdHasBeenSet() const
+{
+    return m_taskNodeIdHasBeenSet;
 }
 
 

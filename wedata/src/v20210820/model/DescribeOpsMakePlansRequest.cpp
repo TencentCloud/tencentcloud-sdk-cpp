@@ -32,7 +32,9 @@ DescribeOpsMakePlansRequest::DescribeOpsMakePlansRequest() :
     m_taskIdHasBeenSet(false),
     m_creatorHasBeenSet(false),
     m_minCreateTimeHasBeenSet(false),
-    m_maxCreateTimeHasBeenSet(false)
+    m_maxCreateTimeHasBeenSet(false),
+    m_stateListHasBeenSet(false),
+    m_keywordHasBeenSet(false)
 {
 }
 
@@ -121,6 +123,27 @@ string DescribeOpsMakePlansRequest::ToJsonString() const
         string key = "MaxCreateTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_maxCreateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stateListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StateList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_stateList.begin(); itr != m_stateList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_keywordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +312,38 @@ void DescribeOpsMakePlansRequest::SetMaxCreateTime(const string& _maxCreateTime)
 bool DescribeOpsMakePlansRequest::MaxCreateTimeHasBeenSet() const
 {
     return m_maxCreateTimeHasBeenSet;
+}
+
+vector<int64_t> DescribeOpsMakePlansRequest::GetStateList() const
+{
+    return m_stateList;
+}
+
+void DescribeOpsMakePlansRequest::SetStateList(const vector<int64_t>& _stateList)
+{
+    m_stateList = _stateList;
+    m_stateListHasBeenSet = true;
+}
+
+bool DescribeOpsMakePlansRequest::StateListHasBeenSet() const
+{
+    return m_stateListHasBeenSet;
+}
+
+string DescribeOpsMakePlansRequest::GetKeyword() const
+{
+    return m_keyword;
+}
+
+void DescribeOpsMakePlansRequest::SetKeyword(const string& _keyword)
+{
+    m_keyword = _keyword;
+    m_keywordHasBeenSet = true;
+}
+
+bool DescribeOpsMakePlansRequest::KeywordHasBeenSet() const
+{
+    return m_keywordHasBeenSet;
 }
 
 

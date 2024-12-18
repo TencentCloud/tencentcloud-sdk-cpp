@@ -28,7 +28,8 @@ ObjectType::ObjectType() :
     m_objectTypeJsonParseHasBeenSet(false),
     m_objectHasNewActionHasBeenSet(false),
     m_objectPlatformNameHasBeenSet(false),
-    m_objectSupportTypeHasBeenSet(false)
+    m_objectSupportTypeHasBeenSet(false),
+    m_archLayerHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,16 @@ CoreInternalOutcome ObjectType::Deserialize(const rapidjson::Value &value)
         m_objectSupportTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ArchLayer") && !value["ArchLayer"].IsNull())
+    {
+        if (!value["ArchLayer"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ObjectType.ArchLayer` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_archLayer = value["ArchLayer"].GetInt64();
+        m_archLayerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +213,14 @@ void ObjectType::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ObjectSupportType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_objectSupportType, allocator);
+    }
+
+    if (m_archLayerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchLayer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_archLayer, allocator);
     }
 
 }
@@ -333,5 +352,21 @@ void ObjectType::SetObjectSupportType(const int64_t& _objectSupportType)
 bool ObjectType::ObjectSupportTypeHasBeenSet() const
 {
     return m_objectSupportTypeHasBeenSet;
+}
+
+int64_t ObjectType::GetArchLayer() const
+{
+    return m_archLayer;
+}
+
+void ObjectType::SetArchLayer(const int64_t& _archLayer)
+{
+    m_archLayer = _archLayer;
+    m_archLayerHasBeenSet = true;
+}
+
+bool ObjectType::ArchLayerHasBeenSet() const
+{
+    return m_archLayerHasBeenSet;
 }
 

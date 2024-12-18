@@ -36,7 +36,9 @@ DescribeStatisticInstanceStatusTrendOpsRequest::DescribeStatisticInstanceStatusT
     m_stateListHasBeenSet(false),
     m_aggregationUnitHasBeenSet(false),
     m_averageWindowSizeHasBeenSet(false),
-    m_workflowIdHasBeenSet(false)
+    m_workflowIdHasBeenSet(false),
+    m_projectIdsHasBeenSet(false),
+    m_timePointHasBeenSet(false)
 {
 }
 
@@ -162,6 +164,27 @@ string DescribeStatisticInstanceStatusTrendOpsRequest::ToJsonString() const
         string key = "WorkflowId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workflowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_projectIds.begin(); itr != m_projectIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_timePointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimePoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timePoint, allocator);
     }
 
 
@@ -394,6 +417,38 @@ void DescribeStatisticInstanceStatusTrendOpsRequest::SetWorkflowId(const string&
 bool DescribeStatisticInstanceStatusTrendOpsRequest::WorkflowIdHasBeenSet() const
 {
     return m_workflowIdHasBeenSet;
+}
+
+vector<string> DescribeStatisticInstanceStatusTrendOpsRequest::GetProjectIds() const
+{
+    return m_projectIds;
+}
+
+void DescribeStatisticInstanceStatusTrendOpsRequest::SetProjectIds(const vector<string>& _projectIds)
+{
+    m_projectIds = _projectIds;
+    m_projectIdsHasBeenSet = true;
+}
+
+bool DescribeStatisticInstanceStatusTrendOpsRequest::ProjectIdsHasBeenSet() const
+{
+    return m_projectIdsHasBeenSet;
+}
+
+uint64_t DescribeStatisticInstanceStatusTrendOpsRequest::GetTimePoint() const
+{
+    return m_timePoint;
+}
+
+void DescribeStatisticInstanceStatusTrendOpsRequest::SetTimePoint(const uint64_t& _timePoint)
+{
+    m_timePoint = _timePoint;
+    m_timePointHasBeenSet = true;
+}
+
+bool DescribeStatisticInstanceStatusTrendOpsRequest::TimePointHasBeenSet() const
+{
+    return m_timePointHasBeenSet;
 }
 
 

@@ -193,6 +193,31 @@ namespace TencentCloud
                     bool FrozenNumHasBeenSet() const;
 
                     /**
+                     * 获取无效任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InvalidNum 无效任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetInvalidNum() const;
+
+                    /**
+                     * 设置无效任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _invalidNum 无效任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInvalidNum(const uint64_t& _invalidNum);
+
+                    /**
+                     * 判断参数 InvalidNum 是否已赋值
+                     * @return InvalidNum 是否已赋值
+                     * 
+                     */
+                    bool InvalidNumHasBeenSet() const;
+
+                    /**
                      * 获取年任务
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return YearNum 年任务
@@ -384,6 +409,13 @@ namespace TencentCloud
                      */
                     uint64_t m_frozenNum;
                     bool m_frozenNumHasBeenSet;
+
+                    /**
+                     * 无效任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_invalidNum;
+                    bool m_invalidNumHasBeenSet;
 
                     /**
                      * 年任务

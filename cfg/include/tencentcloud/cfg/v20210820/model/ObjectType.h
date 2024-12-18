@@ -232,6 +232,27 @@ namespace TencentCloud
                      */
                     bool ObjectSupportTypeHasBeenSet() const;
 
+                    /**
+                     * 获取1.接入层 2.逻辑层 3. 数据层
+                     * @return ArchLayer 1.接入层 2.逻辑层 3. 数据层
+                     * 
+                     */
+                    int64_t GetArchLayer() const;
+
+                    /**
+                     * 设置1.接入层 2.逻辑层 3. 数据层
+                     * @param _archLayer 1.接入层 2.逻辑层 3. 数据层
+                     * 
+                     */
+                    void SetArchLayer(const int64_t& _archLayer);
+
+                    /**
+                     * 判断参数 ArchLayer 是否已赋值
+                     * @return ArchLayer 是否已赋值
+                     * 
+                     */
+                    bool ArchLayerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -285,6 +306,12 @@ namespace TencentCloud
                      */
                     int64_t m_objectSupportType;
                     bool m_objectSupportTypeHasBeenSet;
+
+                    /**
+                     * 1.接入层 2.逻辑层 3. 数据层
+                     */
+                    int64_t m_archLayer;
+                    bool m_archLayerHasBeenSet;
 
                 };
             }

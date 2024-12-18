@@ -42,6 +42,7 @@ CreateAICallRequest::CreateAICallRequest() :
     m_endFunctionDescHasBeenSet(false),
     m_notifyDurationHasBeenSet(false),
     m_notifyMessageHasBeenSet(false),
+    m_notifyMaxCountHasBeenSet(false),
     m_customTTSConfigHasBeenSet(false)
 {
 }
@@ -213,6 +214,14 @@ string CreateAICallRequest::ToJsonString() const
         string key = "NotifyMessage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_notifyMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notifyMaxCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyMaxCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_notifyMaxCount, allocator);
     }
 
     if (m_customTTSConfigHasBeenSet)
@@ -533,6 +542,22 @@ void CreateAICallRequest::SetNotifyMessage(const string& _notifyMessage)
 bool CreateAICallRequest::NotifyMessageHasBeenSet() const
 {
     return m_notifyMessageHasBeenSet;
+}
+
+uint64_t CreateAICallRequest::GetNotifyMaxCount() const
+{
+    return m_notifyMaxCount;
+}
+
+void CreateAICallRequest::SetNotifyMaxCount(const uint64_t& _notifyMaxCount)
+{
+    m_notifyMaxCount = _notifyMaxCount;
+    m_notifyMaxCountHasBeenSet = true;
+}
+
+bool CreateAICallRequest::NotifyMaxCountHasBeenSet() const
+{
+    return m_notifyMaxCountHasBeenSet;
 }
 
 string CreateAICallRequest::GetCustomTTSConfig() const

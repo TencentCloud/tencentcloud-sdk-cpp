@@ -84,6 +84,48 @@ namespace TencentCloud
                      */
                     bool PlanIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否异步模式
+                     * @return AsyncMode 是否异步模式
+                     * 
+                     */
+                    bool GetAsyncMode() const;
+
+                    /**
+                     * 设置是否异步模式
+                     * @param _asyncMode 是否异步模式
+                     * 
+                     */
+                    void SetAsyncMode(const bool& _asyncMode);
+
+                    /**
+                     * 判断参数 AsyncMode 是否已赋值
+                     * @return AsyncMode 是否已赋值
+                     * 
+                     */
+                    bool AsyncModeHasBeenSet() const;
+
+                    /**
+                     * 获取补录计划名
+                     * @return PlanName 补录计划名
+                     * 
+                     */
+                    std::string GetPlanName() const;
+
+                    /**
+                     * 设置补录计划名
+                     * @param _planName 补录计划名
+                     * 
+                     */
+                    void SetPlanName(const std::string& _planName);
+
+                    /**
+                     * 判断参数 PlanName 是否已赋值
+                     * @return PlanName 是否已赋值
+                     * 
+                     */
+                    bool PlanNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +139,18 @@ namespace TencentCloud
                      */
                     std::string m_planId;
                     bool m_planIdHasBeenSet;
+
+                    /**
+                     * 是否异步模式
+                     */
+                    bool m_asyncMode;
+                    bool m_asyncModeHasBeenSet;
+
+                    /**
+                     * 补录计划名
+                     */
+                    std::string m_planName;
+                    bool m_planNameHasBeenSet;
 
                 };
             }

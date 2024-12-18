@@ -246,6 +246,56 @@ namespace TencentCloud
                      */
                     bool WaitScheduleTimeHasBeenSet() const;
 
+                    /**
+                     * 获取项目ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectId 项目ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _projectId 项目ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取项目名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectName 项目名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProjectName() const;
+
+                    /**
+                     * 设置项目名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _projectName 项目名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProjectName(const std::string& _projectName);
+
+                    /**
+                     * 判断参数 ProjectName 是否已赋值
+                     * @return ProjectName 是否已赋值
+                     * 
+                     */
+                    bool ProjectNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +353,20 @@ namespace TencentCloud
                      */
                     uint64_t m_waitScheduleTime;
                     bool m_waitScheduleTimeHasBeenSet;
+
+                    /**
+                     * 项目ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 项目名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_projectName;
+                    bool m_projectNameHasBeenSet;
 
                 };
             }

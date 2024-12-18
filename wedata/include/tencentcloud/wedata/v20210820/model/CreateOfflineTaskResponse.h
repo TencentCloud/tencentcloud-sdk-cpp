@@ -60,6 +60,22 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
+                     * 获取导入到编排空间的任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ArrangeSpaceTaskId 导入到编排空间的任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetArrangeSpaceTaskId() const;
+
+                    /**
+                     * 判断参数 ArrangeSpaceTaskId 是否已赋值
+                     * @return ArrangeSpaceTaskId 是否已赋值
+                     * 
+                     */
+                    bool ArrangeSpaceTaskIdHasBeenSet() const;
+
+                    /**
                      * 获取结果
                      * @return Data 结果
                      * 
@@ -81,6 +97,13 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 导入到编排空间的任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_arrangeSpaceTaskId;
+                    bool m_arrangeSpaceTaskIdHasBeenSet;
 
                     /**
                      * 结果

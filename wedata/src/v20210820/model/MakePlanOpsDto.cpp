@@ -45,7 +45,9 @@ MakePlanOpsDto::MakePlanOpsDto() :
     m_taskCountHasBeenSet(false),
     m_completePercentHasBeenSet(false),
     m_successPercentHasBeenSet(false),
-    m_checkParentTypeHasBeenSet(false)
+    m_checkParentTypeHasBeenSet(false),
+    m_sameSelfWorkflowDependTypeHasBeenSet(false),
+    m_selfWorkflowDependencyHasBeenSet(false)
 {
 }
 
@@ -327,6 +329,26 @@ CoreInternalOutcome MakePlanOpsDto::Deserialize(const rapidjson::Value &value)
         m_checkParentTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SameSelfWorkflowDependType") && !value["SameSelfWorkflowDependType"].IsNull())
+    {
+        if (!value["SameSelfWorkflowDependType"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.SameSelfWorkflowDependType` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_sameSelfWorkflowDependType = value["SameSelfWorkflowDependType"].GetBool();
+        m_sameSelfWorkflowDependTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SelfWorkflowDependency") && !value["SelfWorkflowDependency"].IsNull())
+    {
+        if (!value["SelfWorkflowDependency"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.SelfWorkflowDependency` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_selfWorkflowDependency = string(value["SelfWorkflowDependency"].GetString());
+        m_selfWorkflowDependencyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -551,6 +573,22 @@ void MakePlanOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CheckParentType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_checkParentType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sameSelfWorkflowDependTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SameSelfWorkflowDependType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sameSelfWorkflowDependType, allocator);
+    }
+
+    if (m_selfWorkflowDependencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelfWorkflowDependency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_selfWorkflowDependency.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -954,5 +992,37 @@ void MakePlanOpsDto::SetCheckParentType(const string& _checkParentType)
 bool MakePlanOpsDto::CheckParentTypeHasBeenSet() const
 {
     return m_checkParentTypeHasBeenSet;
+}
+
+bool MakePlanOpsDto::GetSameSelfWorkflowDependType() const
+{
+    return m_sameSelfWorkflowDependType;
+}
+
+void MakePlanOpsDto::SetSameSelfWorkflowDependType(const bool& _sameSelfWorkflowDependType)
+{
+    m_sameSelfWorkflowDependType = _sameSelfWorkflowDependType;
+    m_sameSelfWorkflowDependTypeHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::SameSelfWorkflowDependTypeHasBeenSet() const
+{
+    return m_sameSelfWorkflowDependTypeHasBeenSet;
+}
+
+string MakePlanOpsDto::GetSelfWorkflowDependency() const
+{
+    return m_selfWorkflowDependency;
+}
+
+void MakePlanOpsDto::SetSelfWorkflowDependency(const string& _selfWorkflowDependency)
+{
+    m_selfWorkflowDependency = _selfWorkflowDependency;
+    m_selfWorkflowDependencyHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::SelfWorkflowDependencyHasBeenSet() const
+{
+    return m_selfWorkflowDependencyHasBeenSet;
 }
 

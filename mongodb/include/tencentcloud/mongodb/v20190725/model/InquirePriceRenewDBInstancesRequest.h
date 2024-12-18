@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。
-                     * @return InstanceIds 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。
+                     * 获取实例ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。
+                     * @return InstanceIds 实例ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。
-                     * @param _instanceIds 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。
+                     * 设置实例ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。
+                     * @param _instanceIds 实例ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。
+                     * 实例ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/TaskImportInfo.h>
 
 
 namespace TencentCloud
@@ -252,6 +253,27 @@ namespace TencentCloud
                      */
                     bool TaskModeHasBeenSet() const;
 
+                    /**
+                     * 获取导入编排空间配置
+                     * @return TaskImportInfo 导入编排空间配置
+                     * 
+                     */
+                    TaskImportInfo GetTaskImportInfo() const;
+
+                    /**
+                     * 设置导入编排空间配置
+                     * @param _taskImportInfo 导入编排空间配置
+                     * 
+                     */
+                    void SetTaskImportInfo(const TaskImportInfo& _taskImportInfo);
+
+                    /**
+                     * 判断参数 TaskImportInfo 是否已赋值
+                     * @return TaskImportInfo 是否已赋值
+                     * 
+                     */
+                    bool TaskImportInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +335,12 @@ namespace TencentCloud
                      */
                     std::string m_taskMode;
                     bool m_taskModeHasBeenSet;
+
+                    /**
+                     * 导入编排空间配置
+                     */
+                    TaskImportInfo m_taskImportInfo;
+                    bool m_taskImportInfoHasBeenSet;
 
                 };
             }
