@@ -40,6 +40,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageUsersResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStoragePackageConsumeDetailsRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/WifiInfo.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceTaskRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageOrderRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeSpaceFenceEventListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaGatewayResponse.h
@@ -346,6 +347,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeBindedProductsRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateFreeCloudStorageRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceTaskResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageDateResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CloudStorageTimeInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateIotVideoCloudStorageRequest.h
@@ -398,6 +400,7 @@ set(iotexplorer_src
   src/v20190423/model/DescribeCloudStorageUsersResponse.cpp
   src/v20190423/model/DescribeCloudStoragePackageConsumeDetailsRequest.cpp
   src/v20190423/model/WifiInfo.cpp
+  src/v20190423/model/CreateCloudStorageAIServiceTaskRequest.cpp
   src/v20190423/model/DescribeCloudStorageOrderRequest.cpp
   src/v20190423/model/DescribeSpaceFenceEventListResponse.cpp
   src/v20190423/model/DeleteLoRaGatewayResponse.cpp
@@ -704,6 +707,7 @@ set(iotexplorer_src
   src/v20190423/model/DescribeBindedProductsRequest.cpp
   src/v20190423/model/CreateFreeCloudStorageRequest.cpp
   src/v20190423/model/DescribeLoRaFrequencyResponse.cpp
+  src/v20190423/model/CreateCloudStorageAIServiceTaskResponse.cpp
   src/v20190423/model/DescribeCloudStorageDateResponse.cpp
   src/v20190423/model/CloudStorageTimeInfo.cpp
   src/v20190423/model/CreateIotVideoCloudStorageRequest.cpp

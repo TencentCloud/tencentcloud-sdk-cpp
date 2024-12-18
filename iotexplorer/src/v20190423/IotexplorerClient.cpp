@@ -556,6 +556,49 @@ IotexplorerClient::CreateCloudStorageAIServiceOutcomeCallable IotexplorerClient:
     return task->get_future();
 }
 
+IotexplorerClient::CreateCloudStorageAIServiceTaskOutcome IotexplorerClient::CreateCloudStorageAIServiceTask(const CreateCloudStorageAIServiceTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudStorageAIServiceTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudStorageAIServiceTaskResponse rsp = CreateCloudStorageAIServiceTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudStorageAIServiceTaskOutcome(rsp);
+        else
+            return CreateCloudStorageAIServiceTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudStorageAIServiceTaskOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateCloudStorageAIServiceTaskAsync(const CreateCloudStorageAIServiceTaskRequest& request, const CreateCloudStorageAIServiceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudStorageAIServiceTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateCloudStorageAIServiceTaskOutcomeCallable IotexplorerClient::CreateCloudStorageAIServiceTaskCallable(const CreateCloudStorageAIServiceTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudStorageAIServiceTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudStorageAIServiceTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateDeviceOutcome IotexplorerClient::CreateDevice(const CreateDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDevice");

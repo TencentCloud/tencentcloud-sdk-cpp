@@ -47,6 +47,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateBatchProductionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceTaskRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateCloudStorageAIServiceTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceChannelRequest.h>
@@ -369,6 +371,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCloudStorageAIServiceResponse> CreateCloudStorageAIServiceOutcome;
                 typedef std::future<CreateCloudStorageAIServiceOutcome> CreateCloudStorageAIServiceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateCloudStorageAIServiceRequest&, CreateCloudStorageAIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudStorageAIServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCloudStorageAIServiceTaskResponse> CreateCloudStorageAIServiceTaskOutcome;
+                typedef std::future<CreateCloudStorageAIServiceTaskOutcome> CreateCloudStorageAIServiceTaskOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateCloudStorageAIServiceTaskRequest&, CreateCloudStorageAIServiceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudStorageAIServiceTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDeviceResponse> CreateDeviceOutcome;
                 typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceRequest&, CreateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceAsyncHandler;
@@ -889,6 +894,15 @@ namespace TencentCloud
                 CreateCloudStorageAIServiceOutcome CreateCloudStorageAIService(const Model::CreateCloudStorageAIServiceRequest &request);
                 void CreateCloudStorageAIServiceAsync(const Model::CreateCloudStorageAIServiceRequest& request, const CreateCloudStorageAIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCloudStorageAIServiceOutcomeCallable CreateCloudStorageAIServiceCallable(const Model::CreateCloudStorageAIServiceRequest& request);
+
+                /**
+                 *创建设备云存 AI 分析任务
+                 * @param req CreateCloudStorageAIServiceTaskRequest
+                 * @return CreateCloudStorageAIServiceTaskOutcome
+                 */
+                CreateCloudStorageAIServiceTaskOutcome CreateCloudStorageAIServiceTask(const Model::CreateCloudStorageAIServiceTaskRequest &request);
+                void CreateCloudStorageAIServiceTaskAsync(const Model::CreateCloudStorageAIServiceTaskRequest& request, const CreateCloudStorageAIServiceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudStorageAIServiceTaskOutcomeCallable CreateCloudStorageAIServiceTaskCallable(const Model::CreateCloudStorageAIServiceTaskRequest& request);
 
                 /**
                  *创建设备
@@ -1946,7 +1960,9 @@ namespace TencentCloud
                 ModifyTopicRuleOutcomeCallable ModifyTopicRuleCallable(const Model::ModifyTopicRuleRequest& request);
 
                 /**
-                 *发布广播消息
+                 *发布广播消息、发布RRPC消息属于早期服务，目前已停止维护，需要从官网下线。
+
+发布广播消息
                  * @param req PublishBroadcastMessageRequest
                  * @return PublishBroadcastMessageOutcome
                  */
@@ -1973,7 +1989,9 @@ namespace TencentCloud
                 PublishMessageOutcomeCallable PublishMessageCallable(const Model::PublishMessageRequest& request);
 
                 /**
-                 *下发RRPC消息
+                 *发布广播消息、发布RRPC消息属于早期服务，目前已停止维护，需要从官网下线。
+
+下发RRPC消息
                  * @param req PublishRRPCMessageRequest
                  * @return PublishRRPCMessageOutcome
                  */

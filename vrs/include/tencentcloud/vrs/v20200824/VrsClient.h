@@ -35,6 +35,8 @@
 #include <tencentcloud/vrs/v20200824/model/DownloadVRSModelResponse.h>
 #include <tencentcloud/vrs/v20200824/model/GetTrainingTextRequest.h>
 #include <tencentcloud/vrs/v20200824/model/GetTrainingTextResponse.h>
+#include <tencentcloud/vrs/v20200824/model/GetVRSVoiceTypeInfoRequest.h>
+#include <tencentcloud/vrs/v20200824/model/GetVRSVoiceTypeInfoResponse.h>
 #include <tencentcloud/vrs/v20200824/model/GetVRSVoiceTypesRequest.h>
 #include <tencentcloud/vrs/v20200824/model/GetVRSVoiceTypesResponse.h>
 
@@ -69,6 +71,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetTrainingTextResponse> GetTrainingTextOutcome;
                 typedef std::future<GetTrainingTextOutcome> GetTrainingTextOutcomeCallable;
                 typedef std::function<void(const VrsClient*, const Model::GetTrainingTextRequest&, GetTrainingTextOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTrainingTextAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetVRSVoiceTypeInfoResponse> GetVRSVoiceTypeInfoOutcome;
+                typedef std::future<GetVRSVoiceTypeInfoOutcome> GetVRSVoiceTypeInfoOutcomeCallable;
+                typedef std::function<void(const VrsClient*, const Model::GetVRSVoiceTypeInfoRequest&, GetVRSVoiceTypeInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetVRSVoiceTypeInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetVRSVoiceTypesResponse> GetVRSVoiceTypesOutcome;
                 typedef std::future<GetVRSVoiceTypesOutcome> GetVRSVoiceTypesOutcomeCallable;
                 typedef std::function<void(const VrsClient*, const Model::GetVRSVoiceTypesRequest&, GetVRSVoiceTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetVRSVoiceTypesAsyncHandler;
@@ -140,6 +145,15 @@ namespace TencentCloud
                 GetTrainingTextOutcome GetTrainingText(const Model::GetTrainingTextRequest &request);
                 void GetTrainingTextAsync(const Model::GetTrainingTextRequest& request, const GetTrainingTextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetTrainingTextOutcomeCallable GetTrainingTextCallable(const Model::GetTrainingTextRequest& request);
+
+                /**
+                 *该接口用于查询复刻音色详细信息。
+                 * @param req GetVRSVoiceTypeInfoRequest
+                 * @return GetVRSVoiceTypeInfoOutcome
+                 */
+                GetVRSVoiceTypeInfoOutcome GetVRSVoiceTypeInfo(const Model::GetVRSVoiceTypeInfoRequest &request);
+                void GetVRSVoiceTypeInfoAsync(const Model::GetVRSVoiceTypeInfoRequest& request, const GetVRSVoiceTypeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetVRSVoiceTypeInfoOutcomeCallable GetVRSVoiceTypeInfoCallable(const Model::GetVRSVoiceTypeInfoRequest& request);
 
                 /**
                  *查询复刻音色

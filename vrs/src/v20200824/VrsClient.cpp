@@ -298,6 +298,49 @@ VrsClient::GetTrainingTextOutcomeCallable VrsClient::GetTrainingTextCallable(con
     return task->get_future();
 }
 
+VrsClient::GetVRSVoiceTypeInfoOutcome VrsClient::GetVRSVoiceTypeInfo(const GetVRSVoiceTypeInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetVRSVoiceTypeInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetVRSVoiceTypeInfoResponse rsp = GetVRSVoiceTypeInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetVRSVoiceTypeInfoOutcome(rsp);
+        else
+            return GetVRSVoiceTypeInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return GetVRSVoiceTypeInfoOutcome(outcome.GetError());
+    }
+}
+
+void VrsClient::GetVRSVoiceTypeInfoAsync(const GetVRSVoiceTypeInfoRequest& request, const GetVRSVoiceTypeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetVRSVoiceTypeInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VrsClient::GetVRSVoiceTypeInfoOutcomeCallable VrsClient::GetVRSVoiceTypeInfoCallable(const GetVRSVoiceTypeInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetVRSVoiceTypeInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->GetVRSVoiceTypeInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VrsClient::GetVRSVoiceTypesOutcome VrsClient::GetVRSVoiceTypes(const GetVRSVoiceTypesRequest &request)
 {
     auto outcome = MakeRequest(request, "GetVRSVoiceTypes");

@@ -25,7 +25,8 @@ using namespace std;
 
 ChannelCreateFlowByFilesResponse::ChannelCreateFlowByFilesResponse() :
     m_flowIdHasBeenSet(false),
-    m_approversHasBeenSet(false)
+    m_approversHasBeenSet(false),
+    m_previewUrlHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome ChannelCreateFlowByFilesResponse::Deserialize(const string &
         m_approversHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PreviewUrl") && !rsp["PreviewUrl"].IsNull())
+    {
+        if (!rsp["PreviewUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreviewUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewUrl = string(rsp["PreviewUrl"].GetString());
+        m_previewUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string ChannelCreateFlowByFilesResponse::ToJsonString() const
         }
     }
 
+    if (m_previewUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_previewUrl.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ vector<ApproverItem> ChannelCreateFlowByFilesResponse::GetApprovers() const
 bool ChannelCreateFlowByFilesResponse::ApproversHasBeenSet() const
 {
     return m_approversHasBeenSet;
+}
+
+string ChannelCreateFlowByFilesResponse::GetPreviewUrl() const
+{
+    return m_previewUrl;
+}
+
+bool ChannelCreateFlowByFilesResponse::PreviewUrlHasBeenSet() const
+{
+    return m_previewUrlHasBeenSet;
 }
 
 

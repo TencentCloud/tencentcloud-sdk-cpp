@@ -82,6 +82,22 @@ namespace TencentCloud
                      */
                     bool ApproversHasBeenSet() const;
 
+                    /**
+                     * 获取预览链接，有效期5分钟
+注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
+                     * @return PreviewUrl 预览链接，有效期5分钟
+注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
+                     * 
+                     */
+                    std::string GetPreviewUrl() const;
+
+                    /**
+                     * 判断参数 PreviewUrl 是否已赋值
+                     * @return PreviewUrl 是否已赋值
+                     * 
+                     */
+                    bool PreviewUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -100,6 +116,13 @@ namespace TencentCloud
                      */
                     std::vector<ApproverItem> m_approvers;
                     bool m_approversHasBeenSet;
+
+                    /**
+                     * 预览链接，有效期5分钟
+注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
+                     */
+                    std::string m_previewUrl;
+                    bool m_previewUrlHasBeenSet;
 
                 };
             }

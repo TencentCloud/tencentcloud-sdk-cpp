@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取准确度 (<75则认为不合格)
+                     * 获取准确度 (小于75则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PronAccuracy 准确度 (<75则认为不合格)
+                     * @return PronAccuracy 准确度 (小于75则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetPronAccuracy() const;
 
                     /**
-                     * 设置准确度 (<75则认为不合格)
+                     * 设置准确度 (小于75则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pronAccuracy 准确度 (<75则认为不合格)
+                     * @param _pronAccuracy 准确度 (小于75则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool PronAccuracyHasBeenSet() const;
 
                     /**
-                     * 获取流畅度 (<0.95则认为不合格)
+                     * 获取流畅度 (小于0.95则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PronFluency 流畅度 (<0.95则认为不合格)
+                     * @return PronFluency 流畅度 (小于0.95则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetPronFluency() const;
 
                     /**
-                     * 设置流畅度 (<0.95则认为不合格)
+                     * 设置流畅度 (小于0.95则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pronFluency 流畅度 (<0.95则认为不合格)
+                     * @param _pronFluency 流畅度 (小于0.95则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -175,14 +175,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 准确度 (<75则认为不合格)
+                     * 准确度 (小于75则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_pronAccuracy;
                     bool m_pronAccuracyHasBeenSet;
 
                     /**
-                     * 流畅度 (<0.95则认为不合格)
+                     * 流畅度 (小于0.95则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_pronFluency;
