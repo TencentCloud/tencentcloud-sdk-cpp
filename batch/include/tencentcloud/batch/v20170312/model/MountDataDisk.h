@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取挂载点，Linux系统合法路径，或Windows系统盘符,比如"H:\\"
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalPath 挂载点，Linux系统合法路径，或Windows系统盘符,比如"H:\\"
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocalPath() const;
 
                     /**
                      * 设置挂载点，Linux系统合法路径，或Windows系统盘符,比如"H:\\"
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localPath 挂载点，Linux系统合法路径，或Windows系统盘符,比如"H:\\"
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalPath(const std::string& _localPath);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取文件系统类型，Linux系统下支持"EXT3"和"EXT4"两种，默认"EXT3"；Windows系统下仅支持"NTFS"
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSystemType 文件系统类型，Linux系统下支持"EXT3"和"EXT4"两种，默认"EXT3"；Windows系统下仅支持"NTFS"
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileSystemType() const;
 
                     /**
                      * 设置文件系统类型，Linux系统下支持"EXT3"和"EXT4"两种，默认"EXT3"；Windows系统下仅支持"NTFS"
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileSystemType 文件系统类型，Linux系统下支持"EXT3"和"EXT4"两种，默认"EXT3"；Windows系统下仅支持"NTFS"
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileSystemType(const std::string& _fileSystemType);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 挂载点，Linux系统合法路径，或Windows系统盘符,比如"H:\\"
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_localPath;
                     bool m_localPathHasBeenSet;
 
                     /**
                      * 文件系统类型，Linux系统下支持"EXT3"和"EXT4"两种，默认"EXT3"；Windows系统下仅支持"NTFS"
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileSystemType;
                     bool m_fileSystemTypeHasBeenSet;

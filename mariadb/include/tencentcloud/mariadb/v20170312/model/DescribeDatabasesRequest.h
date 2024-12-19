@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID，形如：dcdbt-ow7t8lmc。
-                     * @return InstanceId 实例 ID，形如：dcdbt-ow7t8lmc。
+                     * 获取实例 ID，形如：tdsql-e9tklsgz。
+                     * @return InstanceId 实例 ID，形如：tdsql-e9tklsgz。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID，形如：dcdbt-ow7t8lmc。
-                     * @param _instanceId 实例 ID，形如：dcdbt-ow7t8lmc。
+                     * 设置实例 ID，形如：tdsql-e9tklsgz。
+                     * @param _instanceId 实例 ID，形如：tdsql-e9tklsgz。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID，形如：dcdbt-ow7t8lmc。
+                     * 实例 ID，形如：tdsql-e9tklsgz。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

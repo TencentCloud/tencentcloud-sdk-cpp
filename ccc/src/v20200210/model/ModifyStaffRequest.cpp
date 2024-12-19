@@ -31,7 +31,8 @@ ModifyStaffRequest::ModifyStaffRequest() :
     m_staffNoHasBeenSet(false),
     m_skillGroupIdsHasBeenSet(false),
     m_useMobileCallOutHasBeenSet(false),
-    m_useMobileAcceptHasBeenSet(false)
+    m_useMobileAcceptHasBeenSet(false),
+    m_extensionNumberHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string ModifyStaffRequest::ToJsonString() const
         string key = "UseMobileAccept";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_useMobileAccept, allocator);
+    }
+
+    if (m_extensionNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtensionNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extensionNumber.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -269,6 +278,22 @@ void ModifyStaffRequest::SetUseMobileAccept(const int64_t& _useMobileAccept)
 bool ModifyStaffRequest::UseMobileAcceptHasBeenSet() const
 {
     return m_useMobileAcceptHasBeenSet;
+}
+
+string ModifyStaffRequest::GetExtensionNumber() const
+{
+    return m_extensionNumber;
+}
+
+void ModifyStaffRequest::SetExtensionNumber(const string& _extensionNumber)
+{
+    m_extensionNumber = _extensionNumber;
+    m_extensionNumberHasBeenSet = true;
+}
+
+bool ModifyStaffRequest::ExtensionNumberHasBeenSet() const
+{
+    return m_extensionNumberHasBeenSet;
 }
 
 

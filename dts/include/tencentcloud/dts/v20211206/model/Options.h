@@ -301,6 +301,31 @@ namespace TencentCloud
                     bool AutoRetryTimeRangeMinutesHasBeenSet() const;
 
                     /**
+                     * 获取同步到kafka链路指定位点。目前只支持时间格式：yyyy-mm-dd hh:mm:ss。如果没有指定位点，为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartPosition 同步到kafka链路指定位点。目前只支持时间格式：yyyy-mm-dd hh:mm:ss。如果没有指定位点，为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStartPosition() const;
+
+                    /**
+                     * 设置同步到kafka链路指定位点。目前只支持时间格式：yyyy-mm-dd hh:mm:ss。如果没有指定位点，为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _startPosition 同步到kafka链路指定位点。目前只支持时间格式：yyyy-mm-dd hh:mm:ss。如果没有指定位点，为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStartPosition(const std::string& _startPosition);
+
+                    /**
+                     * 判断参数 StartPosition 是否已赋值
+                     * @return StartPosition 是否已赋值
+                     * 
+                     */
+                    bool StartPositionHasBeenSet() const;
+
+                    /**
                      * 获取同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterBeginCommit 同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
@@ -421,6 +446,13 @@ namespace TencentCloud
                      */
                     int64_t m_autoRetryTimeRangeMinutes;
                     bool m_autoRetryTimeRangeMinutesHasBeenSet;
+
+                    /**
+                     * 同步到kafka链路指定位点。目前只支持时间格式：yyyy-mm-dd hh:mm:ss。如果没有指定位点，为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_startPosition;
+                    bool m_startPositionHasBeenSet;
 
                     /**
                      * 同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持

@@ -259,6 +259,8 @@
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentRoleResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkAccessPointRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkAccessPointResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkSecurityPolicyRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkSecurityPolicyResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRabbitMQUserRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRabbitMQUserResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRabbitMQVipInstanceRequest.h>
@@ -679,6 +681,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPublicNetworkAccessPointResponse> ModifyPublicNetworkAccessPointOutcome;
                 typedef std::future<ModifyPublicNetworkAccessPointOutcome> ModifyPublicNetworkAccessPointOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyPublicNetworkAccessPointRequest&, ModifyPublicNetworkAccessPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPublicNetworkAccessPointAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPublicNetworkSecurityPolicyResponse> ModifyPublicNetworkSecurityPolicyOutcome;
+                typedef std::future<ModifyPublicNetworkSecurityPolicyOutcome> ModifyPublicNetworkSecurityPolicyOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyPublicNetworkSecurityPolicyRequest&, ModifyPublicNetworkSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPublicNetworkSecurityPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRabbitMQUserResponse> ModifyRabbitMQUserOutcome;
                 typedef std::future<ModifyRabbitMQUserOutcome> ModifyRabbitMQUserOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyRabbitMQUserRequest&, ModifyRabbitMQUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRabbitMQUserAsyncHandler;
@@ -1827,6 +1832,15 @@ RabbitMQ专享版查询虚拟主机列表
                 ModifyPublicNetworkAccessPointOutcome ModifyPublicNetworkAccessPoint(const Model::ModifyPublicNetworkAccessPointRequest &request);
                 void ModifyPublicNetworkAccessPointAsync(const Model::ModifyPublicNetworkAccessPointRequest& request, const ModifyPublicNetworkAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPublicNetworkAccessPointOutcomeCallable ModifyPublicNetworkAccessPointCallable(const Model::ModifyPublicNetworkAccessPointRequest& request);
+
+                /**
+                 *修改pulsar专业版公网安全策略
+                 * @param req ModifyPublicNetworkSecurityPolicyRequest
+                 * @return ModifyPublicNetworkSecurityPolicyOutcome
+                 */
+                ModifyPublicNetworkSecurityPolicyOutcome ModifyPublicNetworkSecurityPolicy(const Model::ModifyPublicNetworkSecurityPolicyRequest &request);
+                void ModifyPublicNetworkSecurityPolicyAsync(const Model::ModifyPublicNetworkSecurityPolicyRequest& request, const ModifyPublicNetworkSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPublicNetworkSecurityPolicyOutcomeCallable ModifyPublicNetworkSecurityPolicyCallable(const Model::ModifyPublicNetworkSecurityPolicyRequest& request);
 
                 /**
                  *修改RabbitMQ的用户

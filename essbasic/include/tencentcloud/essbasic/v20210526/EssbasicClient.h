@@ -139,6 +139,8 @@
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateLegalSealQrCodeRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateLegalSealQrCodeResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateOrganizationAuthFileRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateOrganizationAuthFileResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreatePartnerAutoSignAuthUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreatePartnerAutoSignAuthUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreatePersonAuthCertificateImageRequest.h>
@@ -375,6 +377,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLegalSealQrCodeResponse> CreateLegalSealQrCodeOutcome;
                 typedef std::future<CreateLegalSealQrCodeOutcome> CreateLegalSealQrCodeOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateLegalSealQrCodeRequest&, CreateLegalSealQrCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLegalSealQrCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOrganizationAuthFileResponse> CreateOrganizationAuthFileOutcome;
+                typedef std::future<CreateOrganizationAuthFileOutcome> CreateOrganizationAuthFileOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::CreateOrganizationAuthFileRequest&, CreateOrganizationAuthFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationAuthFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePartnerAutoSignAuthUrlResponse> CreatePartnerAutoSignAuthUrlOutcome;
                 typedef std::future<CreatePartnerAutoSignAuthUrlOutcome> CreatePartnerAutoSignAuthUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreatePartnerAutoSignAuthUrlRequest&, CreatePartnerAutoSignAuthUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePartnerAutoSignAuthUrlAsyncHandler;
@@ -1690,6 +1695,20 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
                 CreateLegalSealQrCodeOutcome CreateLegalSealQrCode(const Model::CreateLegalSealQrCodeRequest &request);
                 void CreateLegalSealQrCodeAsync(const Model::CreateLegalSealQrCodeRequest& request, const CreateLegalSealQrCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateLegalSealQrCodeOutcomeCallable CreateLegalSealQrCodeCallable(const Model::CreateLegalSealQrCodeRequest& request);
+
+                /**
+                 *生成合成后的各类企业授权书，包括：
+- 企业认证超管授权书
+- 超管变更授权书
+- 企业注销授权书
+
+注: 需自行保证传入真实的企业/法人/超管信息，否则后续的审核将会拒绝。
+                 * @param req CreateOrganizationAuthFileRequest
+                 * @return CreateOrganizationAuthFileOutcome
+                 */
+                CreateOrganizationAuthFileOutcome CreateOrganizationAuthFile(const Model::CreateOrganizationAuthFileRequest &request);
+                void CreateOrganizationAuthFileAsync(const Model::CreateOrganizationAuthFileRequest& request, const CreateOrganizationAuthFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOrganizationAuthFileOutcomeCallable CreateOrganizationAuthFileCallable(const Model::CreateOrganizationAuthFileRequest& request);
 
                 /**
                  *创建一个用于他方自动签授权的链接（可选择他方授权或我方授权）。通过这个链接，合作方企业可以直接进入小程序，进行自动签授权操作。

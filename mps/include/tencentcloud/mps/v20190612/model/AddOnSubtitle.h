@@ -110,18 +110,22 @@ namespace TencentCloud
                     bool SubtitleHasBeenSet() const;
 
                     /**
-                     * 获取字幕名称	
+                     * 获取字幕名称	。
+注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubtitleName 字幕名称	
+                     * @return SubtitleName 字幕名称	。
+注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubtitleName() const;
 
                     /**
-                     * 设置字幕名称	
+                     * 设置字幕名称	。
+注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subtitleName 字幕名称	
+                     * @param _subtitleName 字幕名称	。
+注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -154,7 +158,8 @@ namespace TencentCloud
                     bool m_subtitleHasBeenSet;
 
                     /**
-                     * 字幕名称	
+                     * 字幕名称	。
+注意：仅支持中文、英文、数字、空格、下划线(_)、短横线(-)、句点(.)和中英文括号，长度不能超过64个字符。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subtitleName;

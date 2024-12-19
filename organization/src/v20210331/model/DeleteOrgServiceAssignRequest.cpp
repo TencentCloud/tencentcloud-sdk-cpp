@@ -23,8 +23,9 @@ using namespace TencentCloud::Organization::V20210331::Model;
 using namespace std;
 
 DeleteOrgServiceAssignRequest::DeleteOrgServiceAssignRequest() :
+    m_memberUinHasBeenSet(false),
     m_serviceIdHasBeenSet(false),
-    m_memberUinHasBeenSet(false)
+    m_productHasBeenSet(false)
 {
 }
 
@@ -35,6 +36,14 @@ string DeleteOrgServiceAssignRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_memberUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_memberUin, allocator);
+    }
+
     if (m_serviceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -43,12 +52,12 @@ string DeleteOrgServiceAssignRequest::ToJsonString() const
         d.AddMember(iKey, m_serviceId, allocator);
     }
 
-    if (m_memberUinHasBeenSet)
+    if (m_productHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MemberUin";
+        string key = "Product";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_memberUin, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -58,6 +67,22 @@ string DeleteOrgServiceAssignRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DeleteOrgServiceAssignRequest::GetMemberUin() const
+{
+    return m_memberUin;
+}
+
+void DeleteOrgServiceAssignRequest::SetMemberUin(const int64_t& _memberUin)
+{
+    m_memberUin = _memberUin;
+    m_memberUinHasBeenSet = true;
+}
+
+bool DeleteOrgServiceAssignRequest::MemberUinHasBeenSet() const
+{
+    return m_memberUinHasBeenSet;
+}
 
 uint64_t DeleteOrgServiceAssignRequest::GetServiceId() const
 {
@@ -75,20 +100,20 @@ bool DeleteOrgServiceAssignRequest::ServiceIdHasBeenSet() const
     return m_serviceIdHasBeenSet;
 }
 
-int64_t DeleteOrgServiceAssignRequest::GetMemberUin() const
+string DeleteOrgServiceAssignRequest::GetProduct() const
 {
-    return m_memberUin;
+    return m_product;
 }
 
-void DeleteOrgServiceAssignRequest::SetMemberUin(const int64_t& _memberUin)
+void DeleteOrgServiceAssignRequest::SetProduct(const string& _product)
 {
-    m_memberUin = _memberUin;
-    m_memberUinHasBeenSet = true;
+    m_product = _product;
+    m_productHasBeenSet = true;
 }
 
-bool DeleteOrgServiceAssignRequest::MemberUinHasBeenSet() const
+bool DeleteOrgServiceAssignRequest::ProductHasBeenSet() const
 {
-    return m_memberUinHasBeenSet;
+    return m_productHasBeenSet;
 }
 
 

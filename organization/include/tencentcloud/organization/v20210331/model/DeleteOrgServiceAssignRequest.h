@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集团服务ID。可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取
-                     * @return ServiceId 集团服务ID。可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取
-                     * 
-                     */
-                    uint64_t GetServiceId() const;
-
-                    /**
-                     * 设置集团服务ID。可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取
-                     * @param _serviceId 集团服务ID。可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取
-                     * 
-                     */
-                    void SetServiceId(const uint64_t& _serviceId);
-
-                    /**
-                     * 判断参数 ServiceId 是否已赋值
-                     * @return ServiceId 是否已赋值
-                     * 
-                     */
-                    bool ServiceIdHasBeenSet() const;
-
-                    /**
                      * 获取委派管理员Uin。
                      * @return MemberUin 委派管理员Uin。
                      * 
@@ -84,19 +63,67 @@ namespace TencentCloud
                      */
                     bool MemberUinHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取集团服务ID。和集团服务产品标识二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取
+                     * @return ServiceId 集团服务ID。和集团服务产品标识二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取
+                     * 
+                     */
+                    uint64_t GetServiceId() const;
 
                     /**
-                     * 集团服务ID。可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取
+                     * 设置集团服务ID。和集团服务产品标识二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取
+                     * @param _serviceId 集团服务ID。和集团服务产品标识二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取
+                     * 
                      */
-                    uint64_t m_serviceId;
-                    bool m_serviceIdHasBeenSet;
+                    void SetServiceId(const uint64_t& _serviceId);
+
+                    /**
+                     * 判断参数 ServiceId 是否已赋值
+                     * @return ServiceId 是否已赋值
+                     * 
+                     */
+                    bool ServiceIdHasBeenSet() const;
+
+                    /**
+                     * 获取集团服务产品标识。和集团服务ID二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取
+                     * @return Product 集团服务产品标识。和集团服务ID二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取
+                     * 
+                     */
+                    std::string GetProduct() const;
+
+                    /**
+                     * 设置集团服务产品标识。和集团服务ID二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取
+                     * @param _product 集团服务产品标识。和集团服务ID二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取
+                     * 
+                     */
+                    void SetProduct(const std::string& _product);
+
+                    /**
+                     * 判断参数 Product 是否已赋值
+                     * @return Product 是否已赋值
+                     * 
+                     */
+                    bool ProductHasBeenSet() const;
+
+                private:
 
                     /**
                      * 委派管理员Uin。
                      */
                     int64_t m_memberUin;
                     bool m_memberUinHasBeenSet;
+
+                    /**
+                     * 集团服务ID。和集团服务产品标识二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取
+                     */
+                    uint64_t m_serviceId;
+                    bool m_serviceIdHasBeenSet;
+
+                    /**
+                     * 集团服务产品标识。和集团服务ID二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取
+                     */
+                    std::string m_product;
+                    bool m_productHasBeenSet;
 
                 };
             }

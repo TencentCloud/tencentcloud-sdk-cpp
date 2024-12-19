@@ -694,7 +694,7 @@ namespace TencentCloud
                 ModifyCustomDnsHostOutcomeCallable ModifyCustomDnsHostCallable(const Model::ModifyCustomDnsHostRequest& request);
 
                 /**
-                 *本接口 ( ModifyDomainDNSBatch) 用于批量域名 DNS 修改 。
+                 *本接口 ( ModifyDomainDNSBatch) 用于批量域名 DNS 修改 。
                  * @param req ModifyDomainDNSBatchRequest
                  * @return ModifyDomainDNSBatchOutcome
                  */

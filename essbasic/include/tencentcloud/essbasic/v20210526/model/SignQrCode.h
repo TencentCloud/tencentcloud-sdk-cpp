@@ -121,6 +121,27 @@ namespace TencentCloud
                      */
                     bool ExpiredTimeHasBeenSet() const;
 
+                    /**
+                     * 获取微信小程序二维码
+                     * @return WeixinQrCodeUrl 微信小程序二维码
+                     * 
+                     */
+                    std::string GetWeixinQrCodeUrl() const;
+
+                    /**
+                     * 设置微信小程序二维码
+                     * @param _weixinQrCodeUrl 微信小程序二维码
+                     * 
+                     */
+                    void SetWeixinQrCodeUrl(const std::string& _weixinQrCodeUrl);
+
+                    /**
+                     * 判断参数 WeixinQrCodeUrl 是否已赋值
+                     * @return WeixinQrCodeUrl 是否已赋值
+                     * 
+                     */
+                    bool WeixinQrCodeUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +164,12 @@ namespace TencentCloud
                      */
                     int64_t m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
+
+                    /**
+                     * 微信小程序二维码
+                     */
+                    std::string m_weixinQrCodeUrl;
+                    bool m_weixinQrCodeUrlHasBeenSet;
 
                 };
             }

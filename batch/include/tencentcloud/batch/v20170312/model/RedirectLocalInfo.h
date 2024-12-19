@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取标准输出重定向本地路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return StdoutLocalPath 标准输出重定向本地路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStdoutLocalPath() const;
 
                     /**
                      * 设置标准输出重定向本地路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stdoutLocalPath 标准输出重定向本地路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStdoutLocalPath(const std::string& _stdoutLocalPath);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取标准错误重定向本地路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return StderrLocalPath 标准错误重定向本地路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStderrLocalPath() const;
 
                     /**
                      * 设置标准错误重定向本地路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stderrLocalPath 标准错误重定向本地路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStderrLocalPath(const std::string& _stderrLocalPath);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取标准输出重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return StdoutLocalFileName 标准输出重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStdoutLocalFileName() const;
 
                     /**
                      * 设置标准输出重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stdoutLocalFileName 标准输出重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStdoutLocalFileName(const std::string& _stdoutLocalFileName);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取标准错误重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return StderrLocalFileName 标准错误重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStderrLocalFileName() const;
 
                     /**
                      * 设置标准错误重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stderrLocalFileName 标准错误重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStderrLocalFileName(const std::string& _stderrLocalFileName);
@@ -134,24 +150,28 @@ namespace TencentCloud
 
                     /**
                      * 标准输出重定向本地路径
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stdoutLocalPath;
                     bool m_stdoutLocalPathHasBeenSet;
 
                     /**
                      * 标准错误重定向本地路径
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stderrLocalPath;
                     bool m_stderrLocalPathHasBeenSet;
 
                     /**
                      * 标准输出重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stdoutLocalFileName;
                     bool m_stdoutLocalFileNameHasBeenSet;
 
                     /**
                      * 标准错误重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stderrLocalFileName;
                     bool m_stderrLocalFileNameHasBeenSet;

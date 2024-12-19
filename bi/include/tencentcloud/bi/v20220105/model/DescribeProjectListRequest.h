@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool ModuleCollectionHasBeenSet() const;
 
+                    /**
+                     * 获取moduleId集合
+                     * @return ModuleIdList moduleId集合
+                     * 
+                     */
+                    std::vector<std::string> GetModuleIdList() const;
+
+                    /**
+                     * 设置moduleId集合
+                     * @param _moduleIdList moduleId集合
+                     * 
+                     */
+                    void SetModuleIdList(const std::vector<std::string>& _moduleIdList);
+
+                    /**
+                     * 判断参数 ModuleIdList 是否已赋值
+                     * @return ModuleIdList 是否已赋值
+                     * 
+                     */
+                    bool ModuleIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_moduleCollection;
                     bool m_moduleCollectionHasBeenSet;
+
+                    /**
+                     * moduleId集合
+                     */
+                    std::vector<std::string> m_moduleIdList;
+                    bool m_moduleIdListHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ StaffInfo::StaffInfo() :
     m_staffNumberHasBeenSet(false),
     m_roleIdHasBeenSet(false),
     m_skillGroupListHasBeenSet(false),
-    m_lastModifyTimestampHasBeenSet(false)
+    m_lastModifyTimestampHasBeenSet(false),
+    m_extensionNumberHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome StaffInfo::Deserialize(const rapidjson::Value &value)
         m_lastModifyTimestampHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtensionNumber") && !value["ExtensionNumber"].IsNull())
+    {
+        if (!value["ExtensionNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaffInfo.ExtensionNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extensionNumber = string(value["ExtensionNumber"].GetString());
+        m_extensionNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void StaffInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "LastModifyTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastModifyTimestamp, allocator);
+    }
+
+    if (m_extensionNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtensionNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extensionNumber.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void StaffInfo::SetLastModifyTimestamp(const int64_t& _lastModifyTimestamp)
 bool StaffInfo::LastModifyTimestampHasBeenSet() const
 {
     return m_lastModifyTimestampHasBeenSet;
+}
+
+string StaffInfo::GetExtensionNumber() const
+{
+    return m_extensionNumber;
+}
+
+void StaffInfo::SetExtensionNumber(const string& _extensionNumber)
+{
+    m_extensionNumber = _extensionNumber;
+    m_extensionNumberHasBeenSet = true;
+}
+
+bool StaffInfo::ExtensionNumberHasBeenSet() const
+{
+    return m_extensionNumberHasBeenSet;
 }
 

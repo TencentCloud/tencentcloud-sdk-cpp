@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取源端路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourcePath 源端路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourcePath() const;
 
                     /**
                      * 设置源端路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourcePath 源端路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourcePath(const std::string& _sourcePath);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取目的端路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestinationPath 目的端路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDestinationPath() const;
 
                     /**
                      * 设置目的端路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _destinationPath 目的端路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDestinationPath(const std::string& _destinationPath);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取挂载配置项参数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MountOptionParameter 挂载配置项参数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMountOptionParameter() const;
 
                     /**
                      * 设置挂载配置项参数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mountOptionParameter 挂载配置项参数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMountOptionParameter(const std::string& _mountOptionParameter);
@@ -113,18 +125,21 @@ namespace TencentCloud
 
                     /**
                      * 源端路径
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourcePath;
                     bool m_sourcePathHasBeenSet;
 
                     /**
                      * 目的端路径
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_destinationPath;
                     bool m_destinationPathHasBeenSet;
 
                     /**
                      * 挂载配置项参数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mountOptionParameter;
                     bool m_mountOptionParameterHasBeenSet;

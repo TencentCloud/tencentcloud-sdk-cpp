@@ -174,18 +174,26 @@ namespace TencentCloud
 
                     /**
                      * 获取转自适应码流输入流参数信息，最多输入10路流。
-注意：各个流的帧率必须保持一致；如果不一致，采用第一个流的帧率作为输出帧率。
+注意：
+1、各个流的帧率必须保持一致；如果不一致，采用第一个流的帧率作为输出帧率。
+2、修改子流信息时需要全量修改添加所有字段值，否则没填字段会使用默认值。
                      * @return StreamInfos 转自适应码流输入流参数信息，最多输入10路流。
-注意：各个流的帧率必须保持一致；如果不一致，采用第一个流的帧率作为输出帧率。
+注意：
+1、各个流的帧率必须保持一致；如果不一致，采用第一个流的帧率作为输出帧率。
+2、修改子流信息时需要全量修改添加所有字段值，否则没填字段会使用默认值。
                      * 
                      */
                     std::vector<AdaptiveStreamTemplate> GetStreamInfos() const;
 
                     /**
                      * 设置转自适应码流输入流参数信息，最多输入10路流。
-注意：各个流的帧率必须保持一致；如果不一致，采用第一个流的帧率作为输出帧率。
+注意：
+1、各个流的帧率必须保持一致；如果不一致，采用第一个流的帧率作为输出帧率。
+2、修改子流信息时需要全量修改添加所有字段值，否则没填字段会使用默认值。
                      * @param _streamInfos 转自适应码流输入流参数信息，最多输入10路流。
-注意：各个流的帧率必须保持一致；如果不一致，采用第一个流的帧率作为输出帧率。
+注意：
+1、各个流的帧率必须保持一致；如果不一致，采用第一个流的帧率作为输出帧率。
+2、修改子流信息时需要全量修改添加所有字段值，否则没填字段会使用默认值。
                      * 
                      */
                     void SetStreamInfos(const std::vector<AdaptiveStreamTemplate>& _streamInfos);
@@ -219,51 +227,51 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取是否为纯音频，0表示视频模版，1表示纯音频模版
+                     * 获取是否为纯音频，0表示视频模板，1表示纯音频模板
 当值为1：
 1. StreamInfos.N.RemoveVideo=1
 2. StreamInfos.N.RemoveAudio=0
 3. StreamInfos.N.Video.Codec=copy
-
 当值为0：
-
 1. StreamInfos.N.Video.Codec不能为copy
 2. StreamInfos.N.Video.Fps不能为null
-                     * @return PureAudio 是否为纯音频，0表示视频模版，1表示纯音频模版
+注意：
+此值只是区分模板类型，任务使用RemoveAudio和RemoveVideo的值
+                     * @return PureAudio 是否为纯音频，0表示视频模板，1表示纯音频模板
 当值为1：
 1. StreamInfos.N.RemoveVideo=1
 2. StreamInfos.N.RemoveAudio=0
 3. StreamInfos.N.Video.Codec=copy
-
 当值为0：
-
 1. StreamInfos.N.Video.Codec不能为copy
 2. StreamInfos.N.Video.Fps不能为null
+注意：
+此值只是区分模板类型，任务使用RemoveAudio和RemoveVideo的值
                      * 
                      */
                     uint64_t GetPureAudio() const;
 
                     /**
-                     * 设置是否为纯音频，0表示视频模版，1表示纯音频模版
+                     * 设置是否为纯音频，0表示视频模板，1表示纯音频模板
 当值为1：
 1. StreamInfos.N.RemoveVideo=1
 2. StreamInfos.N.RemoveAudio=0
 3. StreamInfos.N.Video.Codec=copy
-
 当值为0：
-
 1. StreamInfos.N.Video.Codec不能为copy
 2. StreamInfos.N.Video.Fps不能为null
-                     * @param _pureAudio 是否为纯音频，0表示视频模版，1表示纯音频模版
+注意：
+此值只是区分模板类型，任务使用RemoveAudio和RemoveVideo的值
+                     * @param _pureAudio 是否为纯音频，0表示视频模板，1表示纯音频模板
 当值为1：
 1. StreamInfos.N.RemoveVideo=1
 2. StreamInfos.N.RemoveAudio=0
 3. StreamInfos.N.Video.Codec=copy
-
 当值为0：
-
 1. StreamInfos.N.Video.Codec不能为copy
 2. StreamInfos.N.Video.Fps不能为null
+注意：
+此值只是区分模板类型，任务使用RemoveAudio和RemoveVideo的值
                      * 
                      */
                     void SetPureAudio(const uint64_t& _pureAudio);
@@ -340,7 +348,9 @@ namespace TencentCloud
 
                     /**
                      * 转自适应码流输入流参数信息，最多输入10路流。
-注意：各个流的帧率必须保持一致；如果不一致，采用第一个流的帧率作为输出帧率。
+注意：
+1、各个流的帧率必须保持一致；如果不一致，采用第一个流的帧率作为输出帧率。
+2、修改子流信息时需要全量修改添加所有字段值，否则没填字段会使用默认值。
                      */
                     std::vector<AdaptiveStreamTemplate> m_streamInfos;
                     bool m_streamInfosHasBeenSet;
@@ -352,16 +362,16 @@ namespace TencentCloud
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 是否为纯音频，0表示视频模版，1表示纯音频模版
+                     * 是否为纯音频，0表示视频模板，1表示纯音频模板
 当值为1：
 1. StreamInfos.N.RemoveVideo=1
 2. StreamInfos.N.RemoveAudio=0
 3. StreamInfos.N.Video.Codec=copy
-
 当值为0：
-
 1. StreamInfos.N.Video.Codec不能为copy
 2. StreamInfos.N.Video.Fps不能为null
+注意：
+此值只是区分模板类型，任务使用RemoveAudio和RemoveVideo的值
                      */
                     uint64_t m_pureAudio;
                     bool m_pureAudioHasBeenSet;

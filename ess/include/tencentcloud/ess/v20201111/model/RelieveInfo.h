@@ -35,7 +35,9 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 解除协议文档中内容信息，包括但不限于：解除理由、解除后仍然有效的条款-保留条款、原合同事项处理-费用结算、原合同事项处理-其他事项、其他约定等。
+                * 解除协议文档中内容信息，包括但不限于：解除理由、解除后仍然有效的条款-保留条款、原合同事项处理-费用结算、原合同事项处理-其他事项、其他约定等。下面各种字段在解除协议中的位置参考：
+
+![image](https://qcloudimg.tencent-cloud.cn/raw/5087164cfe5a15fa3ced3180842d5da9.png)
                 */
                 class RelieveInfo : public AbstractModel
                 {
@@ -135,15 +137,15 @@ namespace TencentCloud
                     bool OriginalOtherSettlementHasBeenSet() const;
 
                     /**
-                     * 获取其他约定，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
-                     * @return OtherDeals 其他约定，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
+                     * 获取其他约定（如约定的与解除协议存在冲突的，以【其他约定】为准），最大支持200个字，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
+                     * @return OtherDeals 其他约定（如约定的与解除协议存在冲突的，以【其他约定】为准），最大支持200个字，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
                      * 
                      */
                     std::string GetOtherDeals() const;
 
                     /**
-                     * 设置其他约定，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
-                     * @param _otherDeals 其他约定，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
+                     * 设置其他约定（如约定的与解除协议存在冲突的，以【其他约定】为准），最大支持200个字，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
+                     * @param _otherDeals 其他约定（如约定的与解除协议存在冲突的，以【其他约定】为准），最大支持200个字，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
                      * 
                      */
                     void SetOtherDeals(const std::string& _otherDeals);
@@ -183,7 +185,7 @@ namespace TencentCloud
                     bool m_originalOtherSettlementHasBeenSet;
 
                     /**
-                     * 其他约定，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
+                     * 其他约定（如约定的与解除协议存在冲突的，以【其他约定】为准），最大支持200个字，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。
                      */
                     std::string m_otherDeals;
                     bool m_otherDealsHasBeenSet;

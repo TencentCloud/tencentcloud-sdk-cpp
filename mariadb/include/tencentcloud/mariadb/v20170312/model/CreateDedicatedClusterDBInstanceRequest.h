@@ -255,15 +255,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取db类型，不传默认0
-                     * @return DbVersionId db类型，不传默认0
+                     * 获取db类型，不传默认8.0
+                     * @return DbVersionId db类型，不传默认8.0
                      * 
                      */
                     std::string GetDbVersionId() const;
 
                     /**
-                     * 设置db类型，不传默认0
-                     * @param _dbVersionId db类型，不传默认0
+                     * 设置db类型，不传默认8.0
+                     * @param _dbVersionId db类型，不传默认8.0
                      * 
                      */
                     void SetDbVersionId(const std::string& _dbVersionId);
@@ -653,7 +653,7 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * db类型，不传默认0
+                     * db类型，不传默认8.0
                      */
                     std::string m_dbVersionId;
                     bool m_dbVersionIdHasBeenSet;

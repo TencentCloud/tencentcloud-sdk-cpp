@@ -60,6 +60,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/BindEmployeeUserIdWithClientOpenIdResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowOption.h
+  include/tencentcloud/ess/v20201111/model/CreateOrganizationAuthFileResponse.h
   include/tencentcloud/ess/v20201111/model/FilledComponent.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationRolesRequest.h
   include/tencentcloud/ess/v20201111/model/FlowBatchApproverInfo.h
@@ -115,11 +116,12 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteOrganizationAuthorizationsResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthDetailRequest.h
-  include/tencentcloud/ess/v20201111/model/OrganizationAuthUrl.h
+  include/tencentcloud/ess/v20201111/model/CreateOrganizationAuthFileRequest.h
   include/tencentcloud/ess/v20201111/model/Staff.h
   include/tencentcloud/ess/v20201111/model/ComponentLimit.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesRequest.h
+  include/tencentcloud/ess/v20201111/model/OrganizationCommonInfo.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationSubOrganizationActiveRecordResponse.h
   include/tencentcloud/ess/v20201111/model/ArchiveDynamicFlowResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h
@@ -136,6 +138,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/PdfVerifyResult.h
   include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlResponse.h
   include/tencentcloud/ess/v20201111/model/UserThreeFactor.h
+  include/tencentcloud/ess/v20201111/model/OrganizationAuthUrl.h
   include/tencentcloud/ess/v20201111/model/AuthRecord.h
   include/tencentcloud/ess/v20201111/model/CreateSealPolicyResponse.h
   include/tencentcloud/ess/v20201111/model/FlowApproverUrlInfo.h
@@ -350,6 +353,7 @@ set(ess_src
   src/v20201111/model/BindEmployeeUserIdWithClientOpenIdResponse.cpp
   src/v20201111/model/CreateIntegrationEmployeesRequest.cpp
   src/v20201111/model/CreateFlowOption.cpp
+  src/v20201111/model/CreateOrganizationAuthFileResponse.cpp
   src/v20201111/model/FilledComponent.cpp
   src/v20201111/model/DescribeIntegrationRolesRequest.cpp
   src/v20201111/model/FlowBatchApproverInfo.cpp
@@ -405,11 +409,12 @@ set(ess_src
   src/v20201111/model/CreateOrganizationInfoChangeUrlResponse.cpp
   src/v20201111/model/DeleteOrganizationAuthorizationsResponse.cpp
   src/v20201111/model/DescribeExtendedServiceAuthDetailRequest.cpp
-  src/v20201111/model/OrganizationAuthUrl.cpp
+  src/v20201111/model/CreateOrganizationAuthFileRequest.cpp
   src/v20201111/model/Staff.cpp
   src/v20201111/model/ComponentLimit.cpp
   src/v20201111/model/CreateIntegrationDepartmentResponse.cpp
   src/v20201111/model/DescribeFlowTemplatesRequest.cpp
+  src/v20201111/model/OrganizationCommonInfo.cpp
   src/v20201111/model/CreateIntegrationSubOrganizationActiveRecordResponse.cpp
   src/v20201111/model/ArchiveDynamicFlowResponse.cpp
   src/v20201111/model/DeleteSealPoliciesResponse.cpp
@@ -426,6 +431,7 @@ set(ess_src
   src/v20201111/model/PdfVerifyResult.cpp
   src/v20201111/model/CreateBatchCancelFlowUrlResponse.cpp
   src/v20201111/model/UserThreeFactor.cpp
+  src/v20201111/model/OrganizationAuthUrl.cpp
   src/v20201111/model/AuthRecord.cpp
   src/v20201111/model/CreateSealPolicyResponse.cpp
   src/v20201111/model/FlowApproverUrlInfo.cpp

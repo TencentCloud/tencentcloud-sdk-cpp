@@ -93,6 +93,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateLegalSealQrCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateOrganizationAuthFileRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateOrganizationAuthFileResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationAuthUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationAuthUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationBatchSignUrlRequest.h>
@@ -332,6 +334,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateMultiFlowSignQRCodeResponse> CreateMultiFlowSignQRCodeOutcome;
                 typedef std::future<CreateMultiFlowSignQRCodeOutcome> CreateMultiFlowSignQRCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateMultiFlowSignQRCodeRequest&, CreateMultiFlowSignQRCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMultiFlowSignQRCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOrganizationAuthFileResponse> CreateOrganizationAuthFileOutcome;
+                typedef std::future<CreateOrganizationAuthFileOutcome> CreateOrganizationAuthFileOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateOrganizationAuthFileRequest&, CreateOrganizationAuthFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationAuthFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOrganizationAuthUrlResponse> CreateOrganizationAuthUrlOutcome;
                 typedef std::future<CreateOrganizationAuthUrlOutcome> CreateOrganizationAuthUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateOrganizationAuthUrlRequest&, CreateOrganizationAuthUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationAuthUrlAsyncHandler;
@@ -1332,6 +1337,20 @@ namespace TencentCloud
                 CreateMultiFlowSignQRCodeOutcome CreateMultiFlowSignQRCode(const Model::CreateMultiFlowSignQRCodeRequest &request);
                 void CreateMultiFlowSignQRCodeAsync(const Model::CreateMultiFlowSignQRCodeRequest& request, const CreateMultiFlowSignQRCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateMultiFlowSignQRCodeOutcomeCallable CreateMultiFlowSignQRCodeCallable(const Model::CreateMultiFlowSignQRCodeRequest& request);
+
+                /**
+                 *生成合成后的各类企业授权书，包括：
+- 企业认证超管授权书
+- 超管变更授权书
+- 企业注销授权书
+
+注: 需自行保证传入真实的企业/法人/超管信息，否则后续的审核将会拒绝。
+                 * @param req CreateOrganizationAuthFileRequest
+                 * @return CreateOrganizationAuthFileOutcome
+                 */
+                CreateOrganizationAuthFileOutcome CreateOrganizationAuthFile(const Model::CreateOrganizationAuthFileRequest &request);
+                void CreateOrganizationAuthFileAsync(const Model::CreateOrganizationAuthFileRequest& request, const CreateOrganizationAuthFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOrganizationAuthFileOutcomeCallable CreateOrganizationAuthFileCallable(const Model::CreateOrganizationAuthFileRequest& request);
 
                 /**
                  *本接口（CreateOrganizationAuthUrl）的主要功能是生成合作企业的认证链接。

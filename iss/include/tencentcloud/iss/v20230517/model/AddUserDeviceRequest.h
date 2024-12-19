@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取设备接入协议（1:RTMP,2:GB,3:GW,4:IVCP）
-                     * @return AccessProtocol 设备接入协议（1:RTMP,2:GB,3:GW,4:IVCP）
+                     * 获取设备接入协议（1:RTMP,2:GB,3:GW,6:ISUP）
+                     * @return AccessProtocol 设备接入协议（1:RTMP,2:GB,3:GW,6:ISUP）
                      * 
                      */
                     int64_t GetAccessProtocol() const;
 
                     /**
-                     * 设置设备接入协议（1:RTMP,2:GB,3:GW,4:IVCP）
-                     * @param _accessProtocol 设备接入协议（1:RTMP,2:GB,3:GW,4:IVCP）
+                     * 设置设备接入协议（1:RTMP,2:GB,3:GW,6:ISUP）
+                     * @param _accessProtocol 设备接入协议（1:RTMP,2:GB,3:GW,6:ISUP）
                      * 
                      */
                     void SetAccessProtocol(const int64_t& _accessProtocol);
@@ -387,7 +387,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 设备接入协议（1:RTMP,2:GB,3:GW,4:IVCP）
+                     * 设备接入协议（1:RTMP,2:GB,3:GW,6:ISUP）
                      */
                     int64_t m_accessProtocol;
                     bool m_accessProtocolHasBeenSet;

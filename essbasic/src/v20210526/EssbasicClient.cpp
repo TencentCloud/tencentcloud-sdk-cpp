@@ -2534,6 +2534,49 @@ EssbasicClient::CreateLegalSealQrCodeOutcomeCallable EssbasicClient::CreateLegal
     return task->get_future();
 }
 
+EssbasicClient::CreateOrganizationAuthFileOutcome EssbasicClient::CreateOrganizationAuthFile(const CreateOrganizationAuthFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrganizationAuthFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrganizationAuthFileResponse rsp = CreateOrganizationAuthFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrganizationAuthFileOutcome(rsp);
+        else
+            return CreateOrganizationAuthFileOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrganizationAuthFileOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateOrganizationAuthFileAsync(const CreateOrganizationAuthFileRequest& request, const CreateOrganizationAuthFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOrganizationAuthFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateOrganizationAuthFileOutcomeCallable EssbasicClient::CreateOrganizationAuthFileCallable(const CreateOrganizationAuthFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOrganizationAuthFileOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOrganizationAuthFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreatePartnerAutoSignAuthUrlOutcome EssbasicClient::CreatePartnerAutoSignAuthUrl(const CreatePartnerAutoSignAuthUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePartnerAutoSignAuthUrl");

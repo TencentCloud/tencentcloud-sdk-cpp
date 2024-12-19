@@ -215,6 +215,27 @@ namespace TencentCloud
                      */
                     bool LastModifyTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取座席分机号（1 到 8 打头，4 - 6 位）
+                     * @return ExtensionNumber 座席分机号（1 到 8 打头，4 - 6 位）
+                     * 
+                     */
+                    std::string GetExtensionNumber() const;
+
+                    /**
+                     * 设置座席分机号（1 到 8 打头，4 - 6 位）
+                     * @param _extensionNumber 座席分机号（1 到 8 打头，4 - 6 位）
+                     * 
+                     */
+                    void SetExtensionNumber(const std::string& _extensionNumber);
+
+                    /**
+                     * 判断参数 ExtensionNumber 是否已赋值
+                     * @return ExtensionNumber 是否已赋值
+                     * 
+                     */
+                    bool ExtensionNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +285,12 @@ namespace TencentCloud
                      */
                     int64_t m_lastModifyTimestamp;
                     bool m_lastModifyTimestampHasBeenSet;
+
+                    /**
+                     * 座席分机号（1 到 8 打头，4 - 6 位）
+                     */
+                    std::string m_extensionNumber;
+                    bool m_extensionNumberHasBeenSet;
 
                 };
             }

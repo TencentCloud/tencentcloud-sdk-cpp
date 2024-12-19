@@ -5114,6 +5114,49 @@ TdmqClient::ModifyPublicNetworkAccessPointOutcomeCallable TdmqClient::ModifyPubl
     return task->get_future();
 }
 
+TdmqClient::ModifyPublicNetworkSecurityPolicyOutcome TdmqClient::ModifyPublicNetworkSecurityPolicy(const ModifyPublicNetworkSecurityPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPublicNetworkSecurityPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPublicNetworkSecurityPolicyResponse rsp = ModifyPublicNetworkSecurityPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPublicNetworkSecurityPolicyOutcome(rsp);
+        else
+            return ModifyPublicNetworkSecurityPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPublicNetworkSecurityPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ModifyPublicNetworkSecurityPolicyAsync(const ModifyPublicNetworkSecurityPolicyRequest& request, const ModifyPublicNetworkSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPublicNetworkSecurityPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ModifyPublicNetworkSecurityPolicyOutcomeCallable TdmqClient::ModifyPublicNetworkSecurityPolicyCallable(const ModifyPublicNetworkSecurityPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPublicNetworkSecurityPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPublicNetworkSecurityPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::ModifyRabbitMQUserOutcome TdmqClient::ModifyRabbitMQUser(const ModifyRabbitMQUserRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRabbitMQUser");
